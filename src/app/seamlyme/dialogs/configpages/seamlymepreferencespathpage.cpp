@@ -1,27 +1,31 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+/******************************************************************************
+*   @file   seamlymepreferencespathpage.cpp
+**  @author Douglas S Caskey
+**  @date   14 Jul, 2023
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2023 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   seamlymepreferencespathpage.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,29 +33,29 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2017 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2017 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
 #include "seamlymepreferencespathpage.h"
 #include "ui_seamlymepreferencespathpage.h"
-#include "../../mapplication.h"
+#include "../../application_me.h"
 #include "../vmisc/vseamlymesettings.h"
 
 #include <QDir>
@@ -59,15 +63,15 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 SeamlyMePreferencesPathPage::SeamlyMePreferencesPathPage(QWidget *parent)
-    : QWidget(parent),
-      ui(new Ui::SeamlyMePreferencesPathPage)
+    : QWidget(parent)
+    , ui(new Ui::SeamlyMePreferencesPathPage)
 {
     ui->setupUi(this);
 
-    InitTable();
+    initializeTable();
 
-    connect(ui->defaultButton, &QPushButton::clicked, this, &SeamlyMePreferencesPathPage::DefaultPath);
-    connect(ui->editButton, &QPushButton::clicked, this, &SeamlyMePreferencesPathPage::EditPath);
+    connect(ui->defaultButton, &QPushButton::clicked, this, &SeamlyMePreferencesPathPage::defaultPath);
+    connect(ui->editButton,    &QPushButton::clicked, this, &SeamlyMePreferencesPathPage::editPath);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -77,16 +81,27 @@ SeamlyMePreferencesPathPage::~SeamlyMePreferencesPathPage()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void SeamlyMePreferencesPathPage::Apply()
+void SeamlyMePreferencesPathPage::changeEvent(QEvent *event)
 {
-    VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
-    settings->SetPathIndividualMeasurements(ui->pathTable->item(0, 1)->text());
-    settings->SetPathMultisizeMeasurements(ui->pathTable->item(1, 1)->text());
-    settings->SetPathTemplate(ui->pathTable->item(2, 1)->text());
+    if (event->type() == QEvent::LanguageChange)
+    {
+        ui->retranslateUi(this);
+    }
+    QWidget::changeEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void SeamlyMePreferencesPathPage::DefaultPath()
+void SeamlyMePreferencesPathPage::Apply()
+{
+    VSeamlyMeSettings *settings = qApp->seamlyMeSettings();
+    settings->setIndividualSizePath(ui->pathTable->item(0, 1)->text());
+    settings->setMultisizePath(ui->pathTable->item(1, 1)->text());
+    settings->setTemplatePath(ui->pathTable->item(2, 1)->text());
+    settings->setBodyScansPath(ui->pathTable->item(3, 1)->text());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void SeamlyMePreferencesPathPage::defaultPath()
 {
     const int row = ui->pathTable->currentRow();
     QTableWidgetItem *item = ui->pathTable->item(row, 1);
@@ -96,13 +111,16 @@ void SeamlyMePreferencesPathPage::DefaultPath()
     switch (row)
     {
         case 0: // individual measurements
-            path = VCommonSettings::GetDefPathIndividualMeasurements();
+            path = VCommonSettings::getDefaultIndividualSizePath();
             break;
         case 1: // multisize measurements
-            path = VCommonSettings::GetDefPathMultisizeMeasurements();
+            path = VCommonSettings::getDefaultMultisizePath();
             break;
         case 2: // templates
-            path = VCommonSettings::GetDefPathTemplate();
+            path = VCommonSettings::getDefaultTemplatePath();
+            break;
+        case 3: // body scans
+            path = VCommonSettings::getDefaultBodyScansPath();
             break;
         default:
             break;
@@ -113,7 +131,7 @@ void SeamlyMePreferencesPathPage::DefaultPath()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void SeamlyMePreferencesPathPage::EditPath()
+void SeamlyMePreferencesPathPage::editPath()
 {
     const int row = ui->pathTable->currentRow();
     QTableWidgetItem *item = ui->pathTable->item(row, 1);
@@ -123,14 +141,17 @@ void SeamlyMePreferencesPathPage::EditPath()
     switch (row)
     {
         case 0: // individual measurements
-            path = qApp->SeamlyMeSettings()->GetPathIndividualMeasurements();
+            path = qApp->seamlyMeSettings()->getIndividualSizePath();
             break;
         case 1: // multisize measurements
-            path = qApp->SeamlyMeSettings()->GetPathMultisizeMeasurements();
-            path = VCommonSettings::PrepareMultisizeTables(path);
+            path = qApp->seamlyMeSettings()->getMultisizePath();
+            path = VCommonSettings::prepareMultisizeTables(path);
             break;
         case 2: // templates
-            path = qApp->SeamlyMeSettings()->GetPathTemplate();
+            path = qApp->seamlyMeSettings()->getTemplatePath();
+            break;
+        case 3: // body scans
+            path = qApp->seamlyMeSettings()->getBodyScansPath();
             break;
         default:
             break;
@@ -143,17 +164,22 @@ void SeamlyMePreferencesPathPage::EditPath()
         usedNotExistedDir = directory.mkpath(".");
     }
 
-    const QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"), path,
-                                                          QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+    QString filename = fileDialog(this, tr("Open Directory"), path, QString(""), nullptr,
+                                                              QFileDialog::ShowDirsOnly |
+                                                              QFileDialog::DontResolveSymlinks |
+                                                              QFileDialog::DontUseNativeDialog,
+                                                              QFileDialog::Directory, QFileDialog::AcceptOpen);
+
+    const QString dir = QFileInfo(filename).filePath();
+
+    if (usedNotExistedDir)
+    {
+        QDir directory(path);
+        directory.rmpath(".");
+    }
+
     if (dir.isEmpty())
     {
-        if (usedNotExistedDir)
-        {
-            QDir directory(path);
-            directory.rmpath(".");
-        }
-
-        DefaultPath();
         return;
     }
 
@@ -162,32 +188,47 @@ void SeamlyMePreferencesPathPage::EditPath()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void SeamlyMePreferencesPathPage::InitTable()
+void SeamlyMePreferencesPathPage::initializeTable()
 {
-    ui->pathTable->setRowCount(3);
+    ui->pathTable->setRowCount(4);
     ui->pathTable->setColumnCount(2);
 
-    const VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
+    const VSeamlyMeSettings *settings = qApp->seamlyMeSettings();
 
     {
-        ui->pathTable->setItem(0, 0, new QTableWidgetItem(tr("My Individual Measurements")));
-        QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathIndividualMeasurements());
-        item->setToolTip(settings->GetPathIndividualMeasurements());
+        QTableWidgetItem *item = new QTableWidgetItem(tr("My Individual Measurements"));
+        item->setIcon(QIcon("://icon/32x32/individual_size_file.png"));
+        ui->pathTable->setItem(0, 0, item);
+        item = new QTableWidgetItem(settings->getIndividualSizePath());
+        item->setToolTip(settings->getIndividualSizePath());
         ui->pathTable->setItem(0, 1, item);
     }
 
     {
-        ui->pathTable->setItem(1, 0, new QTableWidgetItem(tr("My Multisize Measurements")));
-        QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathMultisizeMeasurements());
-        item->setToolTip(settings->GetPathMultisizeMeasurements());
+        QTableWidgetItem *item = new QTableWidgetItem(tr("My Multisize Measurements"));
+        item->setIcon(QIcon("://icon/32x32/multisize_size_file.png"));
+        ui->pathTable->setItem(1, 0, item);
+        item = new QTableWidgetItem(settings->getMultisizePath());
+        item->setToolTip(settings->getMultisizePath());
         ui->pathTable->setItem(1, 1, item);
     }
 
     {
-        ui->pathTable->setItem(2, 0, new QTableWidgetItem(tr("My Templates")));
-        QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathTemplate());
-        item->setToolTip(settings->GetPathTemplate());
+        QTableWidgetItem *item = new QTableWidgetItem(tr("My Templates"));
+        item->setIcon(QIcon("://icon/32x32/template_size_file.png"));
+        ui->pathTable->setItem(2, 0, item);
+        item = new QTableWidgetItem(settings->getTemplatePath());
+        item->setToolTip(settings->getTemplatePath());
         ui->pathTable->setItem(2, 1, item);
+    }
+
+    {
+        QTableWidgetItem *item = new QTableWidgetItem(tr("My Body Scans"));
+        item->setIcon(QIcon("://icon/32x32/body_scan.png"));
+        ui->pathTable->setItem(3, 0, item);
+        item = new QTableWidgetItem(settings->getBodyScansPath());
+        item->setToolTip(settings->getBodyScansPath());
+        ui->pathTable->setItem(3, 1, item);
     }
 
     ui->pathTable->verticalHeader()->setDefaultSectionSize(20);

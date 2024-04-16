@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   groups_widget.h
  **  @author Douglas S Caskey
- **  @date   Mar 1, 2023
+ **  @date   11 Jun, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2023 Seamly, LLC
@@ -98,6 +98,8 @@ private slots:
     void              renameGroup(int row, int column);
     void              groupContextMenu(const QPoint &pos);
     void              draftBlockHasGroups(bool value);
+ protected:
+    virtual void      changeEvent(QEvent* event) Q_DECL_OVERRIDE;
 
 private:
     Q_DISABLE_COPY(GroupsWidget)
@@ -111,6 +113,8 @@ private:
     void              fillGroupItemList();
     void              addGroupItem(const quint32 &toolId, const quint32 &objId, const Tool &tooltype);
     void              groupItemContextMenu(const QPoint &pos);
+    void              cellClicked(int row, int column);
+    void              cellDoubleClicked(int row, int column);
     void              itemDoubleClicked(QListWidgetItem *item);
     void              zoomToObject(QSharedPointer<VPointF> point);
     void              setGroupVisibility(QTableWidgetItem *item, const quint32 &groupId, const bool &visible);
@@ -118,6 +122,7 @@ private:
     quint32           attrUInt(const QDomElement &domElement, const QString &name);
     QString           getObjName(quint32 id);
     void              splitterMoved(int pos, int index);
+    void              headerClicked(int index);
 };
 
 #endif // GROUPS_WIDGET_H

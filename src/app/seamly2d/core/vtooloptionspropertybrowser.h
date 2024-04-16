@@ -1,20 +1,29 @@
 /******************************************************************************
- *   @file   vtooloptionspropertybrowser.h
- **  @author Douglas S Caskey
- **  @date   21 Mar, 2023
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program to create and model patterns of clothing.
- **  Copyright (C) 2017-2023 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *****************************************************************************/
+*   @file   vtooloptionspropertybrowser.h
+**  @author Douglas S Caskey
+**  @date   30 Apr, 2023
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2023 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
 
 /************************************************************************
  **
@@ -47,6 +56,7 @@
 #ifndef VTOOLOPTIONSPROPERTYBROWSER_H
 #define VTOOLOPTIONSPROPERTYBROWSER_H
 
+#include <QEvent>
 #include <QObject>
 #include <QMap>
 
@@ -66,19 +76,18 @@ class VToolOptionsPropertyBrowser : public QObject
     Q_OBJECT
 public:
     explicit VToolOptionsPropertyBrowser(const VContainer *data, QDockWidget *parent);
-    void ClearPropertyBrowser();
+    void clearPropertyBrowser();
 
 public slots:
     void itemClicked(QGraphicsItem *item);
-    void UpdateOptions();
-    void RefreshOptions();
+    void updateOptions();
+    void refreshOptions();
 
 private slots:
     void userChangedData(VPE::VProperty *property);
 
 protected:
     Q_DISABLE_COPY(VToolOptionsPropertyBrowser)
-
     const VContainer                *m_data;
     VPE::VPropertyModel             *propertyModel;
     VPE::VPropertyFormView          *formView;
@@ -86,200 +95,201 @@ protected:
     QGraphicsItem                   *currentItem;
     QMap<VPE::VProperty *, QString>  propertyToId;
     QMap<QString, VPE::VProperty *>  idToProperty;
+    QString                          m_centerPointStr;
 
 private:
-    void AddProperty(VPE::VProperty *property, const QString &id);
-    void ShowItemOptions(QGraphicsItem *item);
+    void addProperty(VPE::VProperty *property, const QString &id);
+    void showItemOptions(QGraphicsItem *item);
 
     template<class Tool>
     QMap<QString, quint32> getObjectList(Tool *tool, GOType objType);
 
     template<class Tool>
-    void SetPointName(const QString &name);
+    void setPointName(const QString &name);
 
     template<class Tool>
-    void SetPointName1(const QString &name);
+    void setPointName1(const QString &name);
 
     template<class Tool>
-    void SetPointName2(const QString &name);
+    void setPointName2(const QString &name);
 
     template<class Tool>
-    void SetOperationSuffix(const QString &suffix);
+    void setOperationSuffix(const QString &suffix);
 
     template<class Type>
-    Type GetCrossPoint(const QVariant &value);
+    Type getCrossPoint(const QVariant &value);
 
     template<class Tool>
-    void SetCrossCirclesPoint(const QVariant &value);
+    void setCirclesCrossPoint(const QVariant &value);
 
     template<class Tool>
-    void SetVCrossCurvesPoint(const QVariant &value);
+    void setCurveVCrossPoint(const QVariant &value);
 
     template<class Tool>
-    void SetHCrossCurvesPoint(const QVariant &value);
+    void setCurveHCrossPoint(const QVariant &value);
 
     template<class Tool>
     void setAxisType(const QVariant &value);
 
     template<class Tool>
-    void AddPropertyObjectName(Tool *i, const QString &propertyName, bool readOnly = false);
+    void addPropertyObjectName(Tool *tool, const QString &propertyName, bool readOnly = false);
 
     template<class Tool>
-    void AddPropertyPointName1(Tool *i, const QString &propertyName);
+    void addPropertyPointName1(Tool *tool, const QString &propertyName);
 
     template<class Tool>
-    void AddPropertyPointName2(Tool *i, const QString &propertyName);
+    void addPropertyPointName2(Tool *tool, const QString &propertyName);
 
     template<class Tool>
-    void AddPropertyOperationSuffix(Tool *i, const QString &propertyName, bool readOnly = false);
+    void addPropertyOperationSuffix(Tool *tool, const QString &propertyName, bool readOnly = false);
 
     template<class Tool>
-    void AddPropertyLineName(Tool *i, const QString &propertyName, bool readOnly = false);
+    void addPropertyLineName(Tool *tool, const QString &propertyName, bool readOnly = false);
 
     template<class Tool>
-    void AddPropertyCurveName(Tool *i, const QString &propertyName, const QString &prefix,
+    void addPropertyCurveName(Tool *tool, const QString &propertyName, const QString &prefix,
                               const QString &firstPoint, const QString &secondPoint, bool readOnly = false);
 
     template<class Tool>
-    void AddPropertyCrossPoint(Tool *i, const QString &propertyName);
+    void addPropertyCrossPoint(Tool *tool, const QString &propertyName);
 
     template<class Tool>
-    void AddPropertyVCrossPoint(Tool *i, const QString &propertyName);
+    void addPropertyVCrossPoint(Tool *tool, const QString &propertyName);
 
     template<class Tool>
-    void AddPropertyHCrossPoint(Tool *i, const QString &propertyName);
+    void addPropertyHCrossPoint(Tool *tool, const QString &propertyName);
 
     template<class Tool>
-    void AddPropertyAxisType(Tool *i, const QString &propertyName);
+    void addPropertyAxisType(Tool *tool, const QString &propertyName);
 
     template<class Tool>
-    void AddPropertyLineType(Tool *i, const QString &propertyName);
+    void addPropertyLineType(Tool *tool, const QString &propertyName);
 
     template<class Tool>
-    void AddPropertyCurveLineType(Tool *i, const QString &propertyName);
+    void addPropertyCurveLineType(Tool *tool, const QString &propertyName);
 
     template<class Tool>
-    void AddPropertyLineWeight(Tool *i, const QString &propertyName);
+    void addPropertyLineWeight(Tool *tool, const QString &propertyName);
 
     template<class Tool>
-    void AddPropertyLineColor(Tool *i, const QString &propertyName,  const QString &id);
+    void addPropertyLineColor(Tool *tool, const QString &propertyName,  const QString &id);
 
     template<class Tool>
-    void AddObjectProperty(Tool *tool, const QString &pointName, const QString &propertyName,
+    void addObjectProperty(Tool *tool, const QString &pointName, const QString &propertyName,
                            const QString &id, GOType objType);
 
-    void AddPropertyFormula(const QString &propertyName, const VFormula &formula, const QString &attrName);
-    void AddPropertyParentPointName(const QString &pointName, const QString &propertyName,
+    void addPropertyFormula(const QString &propertyName, const VFormula &formula, const QString &attrName);
+    void addPropertyParentPointName(const QString &pointName, const QString &propertyName,
                                     const QString &propertyAttribute);
 
-    void AddPropertyLabel(const QString &propertyName, const QString &propertyAttribute);
+    void addPropertyLabel(const QString &propertyName, const QString &propertyAttribute);
 
-    QStringList PropertiesList() const;
+    QStringList propertiesList() const;
 
-    void ChangeDataToolSinglePoint(VPE::VProperty *property);
-    void ChangeDataToolEndLine(VPE::VProperty *property);
-    void ChangeDataToolAlongLine(VPE::VProperty *property);
-    void ChangeDataToolArc(VPE::VProperty *property);
-    void ChangeDataToolArcWithLength(VPE::VProperty *property);
-    void ChangeDataToolBisector(VPE::VProperty *property);
-    void ChangeDataToolTrueDarts(VPE::VProperty *property);
-    void ChangeDataToolCutArc(VPE::VProperty *property);
-    void ChangeDataToolCutSpline(VPE::VProperty *property);
-    void ChangeDataToolCutSplinePath(VPE::VProperty *property);
-    void ChangeDataToolHeight(VPE::VProperty *property);
-    void ChangeDataToolLine(VPE::VProperty *property);
-    void ChangeDataToolLineIntersect(VPE::VProperty *property);
-    void ChangeDataToolNormal(VPE::VProperty *property);
-    void ChangeDataToolPointOfContact(VPE::VProperty *property);
-    void ChangeDataToolPointOfIntersection(VPE::VProperty *property);
-    void ChangeDataToolPointOfIntersectionArcs(VPE::VProperty *property);
-    void ChangeDataToolPointOfIntersectionCircles(VPE::VProperty *property);
-    void ChangeDataToolPointOfIntersectionCurves(VPE::VProperty *property);
-    void ChangeDataToolPointFromCircleAndTangent(VPE::VProperty *property);
-    void ChangeDataToolPointFromArcAndTangent(VPE::VProperty *property);
-    void ChangeDataToolShoulderPoint(VPE::VProperty *property);
-    void ChangeDataToolSpline(VPE::VProperty *property);
-    void ChangeDataToolCubicBezier(VPE::VProperty *property);
-    void ChangeDataToolSplinePath(VPE::VProperty *property);
-    void ChangeDataToolCubicBezierPath(VPE::VProperty *property);
-    void ChangeDataToolTriangle(VPE::VProperty *property);
-    void ChangeDataToolLineIntersectAxis(VPE::VProperty *property);
-    void ChangeDataToolCurveIntersectAxis(VPE::VProperty *property);
-    void ChangeDataToolRotation(VPE::VProperty *property);
-    void ChangeDataToolMove(VPE::VProperty *property);
-    void ChangeDataToolMirrorByLine(VPE::VProperty *property);
-    void ChangeDataToolMirrorByAxis(VPE::VProperty *property);
-    void ChangeDataToolEllipticalArc(VPE::VProperty *property);
+    void changeDataToolSinglePoint(VPE::VProperty *property);
+    void changeDataToolEndLine(VPE::VProperty *property);
+    void changeDataToolAlongLine(VPE::VProperty *property);
+    void changeDataToolArc(VPE::VProperty *property);
+    void changeDataToolArcWithLength(VPE::VProperty *property);
+    void changeDataToolBisector(VPE::VProperty *property);
+    void changeDataToolTrueDarts(VPE::VProperty *property);
+    void changeDataToolCutArc(VPE::VProperty *property);
+    void changeDataToolCutSpline(VPE::VProperty *property);
+    void changeDataToolCutSplinePath(VPE::VProperty *property);
+    void changeDataToolHeight(VPE::VProperty *property);
+    void changeDataToolLine(VPE::VProperty *property);
+    void changeDataToolLineIntersect(VPE::VProperty *property);
+    void changeDataToolNormal(VPE::VProperty *property);
+    void changeDataToolPointOfContact(VPE::VProperty *property);
+    void changeDataToolPointOfIntersection(VPE::VProperty *property);
+    void changeDataToolPointOfIntersectionArcs(VPE::VProperty *property);
+    void changeDataToolPointOfIntersectionCircles(VPE::VProperty *property);
+    void changeDataToolPointOfIntersectionCurves(VPE::VProperty *property);
+    void changeDataToolPointFromCircleAndTangent(VPE::VProperty *property);
+    void changeDataToolPointFromArcAndTangent(VPE::VProperty *property);
+    void changeDataToolShoulderPoint(VPE::VProperty *property);
+    void changeDataToolSpline(VPE::VProperty *property);
+    void changeDataToolCubicBezier(VPE::VProperty *property);
+    void changeDataToolSplinePath(VPE::VProperty *property);
+    void changeDataToolCubicBezierPath(VPE::VProperty *property);
+    void changeDataToolTriangle(VPE::VProperty *property);
+    void changeDataToolLineIntersectAxis(VPE::VProperty *property);
+    void changeDataToolCurveIntersectAxis(VPE::VProperty *property);
+    void changeDataToolRotation(VPE::VProperty *property);
+    void changeDataToolMove(VPE::VProperty *property);
+    void changeDataToolMirrorByLine(VPE::VProperty *property);
+    void changeDataToolMirrorByAxis(VPE::VProperty *property);
+    void changeDataToolEllipticalArc(VPE::VProperty *property);
 
-    void ShowOptionsToolSinglePoint(QGraphicsItem *item);
-    void ShowOptionsToolEndLine(QGraphicsItem *item);
-    void ShowOptionsToolAlongLine(QGraphicsItem *item);
-    void ShowOptionsToolArc(QGraphicsItem *item);
-    void ShowOptionsToolArcWithLength(QGraphicsItem *item);
-    void ShowOptionsToolBisector(QGraphicsItem *item);
-    void ShowOptionsToolTrueDarts(QGraphicsItem *item);
-    void ShowOptionsToolCutArc(QGraphicsItem *item);
-    void ShowOptionsToolCutSpline(QGraphicsItem *item);
-    void ShowOptionsToolCutSplinePath(QGraphicsItem *item);
-    void ShowOptionsToolHeight(QGraphicsItem *item);
-    void ShowOptionsToolLine(QGraphicsItem *item);
-    void ShowOptionsToolLineIntersect(QGraphicsItem *item);
-    void ShowOptionsToolNormal(QGraphicsItem *item);
-    void ShowOptionsToolPointOfContact(QGraphicsItem *item);
-    void ShowOptionsToolPointOfIntersection(QGraphicsItem *item);
-    void ShowOptionsToolPointOfIntersectionArcs(QGraphicsItem *item);
-    void ShowOptionsToolPointOfIntersectionCircles(QGraphicsItem *item);
-    void ShowOptionsToolPointOfIntersectionCurves(QGraphicsItem *item);
-    void ShowOptionsToolPointFromCircleAndTangent(QGraphicsItem *item);
-    void ShowOptionsToolPointFromArcAndTangent(QGraphicsItem *item);
-    void ShowOptionsToolShoulderPoint(QGraphicsItem *item);
-    void ShowOptionsToolSpline(QGraphicsItem *item);
-    void ShowOptionsToolCubicBezier(QGraphicsItem *item);
-    void ShowOptionsToolSplinePath(QGraphicsItem *item);
-    void ShowOptionsToolCubicBezierPath(QGraphicsItem *item);
-    void ShowOptionsToolTriangle(QGraphicsItem *item);
-    void ShowOptionsToolLineIntersectAxis(QGraphicsItem *item);
-    void ShowOptionsToolCurveIntersectAxis(QGraphicsItem *item);
-    void ShowOptionsToolRotation(QGraphicsItem *item);
-    void ShowOptionsToolMove(QGraphicsItem *item);
-    void ShowOptionsToolMirrorByLine(QGraphicsItem *item);
-    void ShowOptionsToolMirrorByAxis(QGraphicsItem *item);
-    void ShowOptionsToolEllipticalArc(QGraphicsItem *item);
+    void showOptionsToolSinglePoint(QGraphicsItem *item);
+    void showOptionsToolEndLine(QGraphicsItem *item);
+    void showOptionsToolAlongLine(QGraphicsItem *item);
+    void showOptionsToolArc(QGraphicsItem *item);
+    void showOptionsToolArcWithLength(QGraphicsItem *item);
+    void showOptionsToolBisector(QGraphicsItem *item);
+    void showOptionsToolTrueDarts(QGraphicsItem *item);
+    void showOptionsToolCutArc(QGraphicsItem *item);
+    void showOptionsToolCutSpline(QGraphicsItem *item);
+    void showOptionsToolCutSplinePath(QGraphicsItem *item);
+    void showOptionsToolHeight(QGraphicsItem *item);
+    void showOptionsToolLine(QGraphicsItem *item);
+    void showOptionsToolLineIntersect(QGraphicsItem *item);
+    void showOptionsToolNormal(QGraphicsItem *item);
+    void showOptionsToolPointOfContact(QGraphicsItem *item);
+    void showOptionsToolPointOfIntersection(QGraphicsItem *item);
+    void showOptionsToolPointOfIntersectionArcs(QGraphicsItem *item);
+    void showOptionsToolPointOfIntersectionCircles(QGraphicsItem *item);
+    void showOptionsToolPointOfIntersectionCurves(QGraphicsItem *item);
+    void showOptionsToolPointFromCircleAndTangent(QGraphicsItem *item);
+    void showOptionsToolPointFromArcAndTangent(QGraphicsItem *item);
+    void showOptionsToolShoulderPoint(QGraphicsItem *item);
+    void showOptionsToolSpline(QGraphicsItem *item);
+    void showOptionsToolCubicBezier(QGraphicsItem *item);
+    void showOptionsToolSplinePath(QGraphicsItem *item);
+    void showOptionsToolCubicBezierPath(QGraphicsItem *item);
+    void showOptionsToolTriangle(QGraphicsItem *item);
+    void showOptionsToolLineIntersectAxis(QGraphicsItem *item);
+    void showOptionsToolCurveIntersectAxis(QGraphicsItem *item);
+    void showOptionsToolRotation(QGraphicsItem *item);
+    void showOptionsToolMove(QGraphicsItem *item);
+    void showOptionsToolMirrorByLine(QGraphicsItem *item);
+    void showOptionsToolMirrorByAxis(QGraphicsItem *item);
+    void showOptionsToolEllipticalArc(QGraphicsItem *item);
 
-    void UpdateOptionsToolSinglePoint();
-    void UpdateOptionsToolEndLine();
-    void UpdateOptionsToolAlongLine();
-    void UpdateOptionsToolArc();
-    void UpdateOptionsToolArcWithLength();
-    void UpdateOptionsToolBisector();
-    void UpdateOptionsToolTrueDarts();
-    void UpdateOptionsToolCutArc();
-    void UpdateOptionsToolCutSpline();
-    void UpdateOptionsToolCutSplinePath();
-    void UpdateOptionsToolHeight();
-    void UpdateOptionsToolLine();
-    void UpdateOptionsToolLineIntersect();
-    void UpdateOptionsToolNormal();
-    void UpdateOptionsToolPointOfContact();
-    void UpdateOptionsToolPointOfIntersection();
-    void UpdateOptionsToolPointOfIntersectionArcs();
-    void UpdateOptionsToolPointOfIntersectionCircles();
-    void UpdateOptionsToolPointOfIntersectionCurves();
-    void UpdateOptionsToolPointFromCircleAndTangent();
-    void UpdateOptionsToolPointFromArcAndTangent();
-    void UpdateOptionsToolShoulderPoint();
-    void UpdateOptionsToolSpline();
-    void UpdateOptionsToolCubicBezier();
-    void UpdateOptionsToolSplinePath();
-    void UpdateOptionsToolCubicBezierPath();
-    void UpdateOptionsToolTriangle();
-    void UpdateOptionsToolLineIntersectAxis();
-    void UpdateOptionsToolCurveIntersectAxis();
-    void UpdateOptionsToolRotation();
-    void UpdateOptionsToolMove();
-    void UpdateOptionsToolMirrorByLine();
-    void UpdateOptionsToolMirrorByAxis();
-    void UpdateOptionsToolEllipticalArc();
+    void updateOptionsToolSinglePoint();
+    void updateOptionsToolEndLine();
+    void updateOptionsToolAlongLine();
+    void updateOptionsToolArc();
+    void updateOptionsToolArcWithLength();
+    void updateOptionsToolBisector();
+    void updateOptionsToolTrueDarts();
+    void updateOptionsToolCutArc();
+    void updateOptionsToolCutSpline();
+    void updateOptionsToolCutSplinePath();
+    void updateOptionsToolHeight();
+    void updateOptionsToolLine();
+    void updateOptionsToolLineIntersect();
+    void updateOptionsToolNormal();
+    void updateOptionsToolPointOfContact();
+    void updateOptionsToolPointOfIntersection();
+    void updateOptionsToolPointOfIntersectionArcs();
+    void updateOptionsToolPointOfIntersectionCircles();
+    void updateOptionsToolPointOfIntersectionCurves();
+    void updateOptionsToolPointFromCircleAndTangent();
+    void updateOptionsToolPointFromArcAndTangent();
+    void updateOptionsToolShoulderPoint();
+    void updateOptionsToolSpline();
+    void updateOptionsToolCubicBezier();
+    void updateOptionsToolSplinePath();
+    void updateOptionsToolCubicBezierPath();
+    void updateOptionsToolTriangle();
+    void updateOptionsToolLineIntersectAxis();
+    void updateOptionsToolCurveIntersectAxis();
+    void updateOptionsToolRotation();
+    void updateOptionsToolMove();
+    void updateOptionsToolMirrorByLine();
+    void updateOptionsToolMirrorByAxis();
+    void updateOptionsToolEllipticalArc();
 };
 
 #endif // VTOOLOPTIONSPROPERTYBROWSER_H

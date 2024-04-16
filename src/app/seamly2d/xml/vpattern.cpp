@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   vpattern.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 31, 2022
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2022 Seamly, LLC
@@ -75,7 +75,7 @@
 #include "../vgeometry/vsplinepath.h"
 #include "../vgeometry/vcubicbezier.h"
 #include "../vgeometry/vcubicbezierpath.h"
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
 #include "../vpatterndb/vpiecenode.h"
 #include "../vpatterndb/calculator.h"
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
@@ -97,7 +97,7 @@ namespace
 //---------------------------------------------------------------------------------------------------------------------
 QString FileComment()
 {
-    return QString("Pattern created with Seamly2D v%1 (https://seamly.net).").arg(APP_VERSION_STR);
+    return QString("Pattern created with Seamly2D v%1 (https://seamly.io).").arg(APP_VERSION_STR);
 }
 }
 
@@ -139,7 +139,7 @@ void VPattern::CreateEmptyFile()
     patternElement.appendChild(createElement(TagNotes));
 
     patternElement.appendChild(createElement(TagMeasurements));
-    patternElement.appendChild(createElement(TagIncrements));
+    patternElement.appendChild(createElement(TagVariables));
 
     this->appendChild(patternElement);
     insertBefore(createProcessingInstruction("xml", "version=\"1.0\" encoding=\"UTF-8\""), this->firstChild());
@@ -177,7 +177,7 @@ void VPattern::Parse(const Document &parse)
 
     SCASSERT(draftScene != nullptr)
     SCASSERT(pieceScene != nullptr)
-    QStringList tags = QStringList() << TagDraftBlock << TagIncrements << TagDescription << TagNotes
+    QStringList tags = QStringList() << TagDraftBlock << TagVariables << TagDescription << TagNotes
                                      << TagMeasurements << TagVersion << TagGradation << TagImage << TagUnit
                                      << TagPatternName << TagPatternNum << TagCompanyName << TagCustomerName
                                      << TagPatternLabel;
@@ -212,9 +212,9 @@ void VPattern::Parse(const Document &parse)
                         }
                         parseDraftBlockElement(domElement, parse);
                         break;
-                    case 1: // TagIncrements
-                        qCDebug(vXML, "Tag increments.");
-                        ParseIncrementsElement(domElement);
+                    case 1: // TagVariables
+                        qCDebug(vXML, "Tag variables.");
+                        parseVariablesElement(domElement);
                         break;
                     case 2: // TagDescription
                         qCDebug(vXML, "Tag description.");
@@ -316,9 +316,9 @@ void VPattern::setCurrentData()
                 {
                     ToolExists(id);
                 }
-                catch (VExceptionBadId &e)
+                catch (VExceptionBadId &error)
                 {
-                    Q_UNUSED(e)
+                    Q_UNUSED(error)
                     qCDebug(vXML, "List of tools doesn't contain id= %u", id);
                     return;
                 }
@@ -413,10 +413,10 @@ bool VPattern::SaveDocument(const QString &fileName, QString &error)
     {
         TestUniqueId();
     }
-    catch (const VExceptionWrongId &e)
+    catch (const VExceptionWrongId &error)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error not unique id.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         return false;
     }
 
@@ -438,72 +438,72 @@ bool VPattern::SaveDocument(const QString &fileName, QString &error)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::LiteParseIncrements()
+void VPattern::LiteParseVariables()
 {
     try
     {
-        emit SetEnabledGUI(true);
+        emit setGuiEnabled(true);
 
-        VContainer::ClearUniqueIncrementNames();
-        data->ClearVariables(VarType::Increment);
+        VContainer::clearUniqueVariableNames();
+        data->ClearVariables(VarType::Variable);
 
-        const QDomNodeList tags = elementsByTagName(TagIncrements);
+        const QDomNodeList tags = elementsByTagName(TagVariables);
         if (not tags.isEmpty())
         {
             const QDomNode domElement = tags.at(0);
             if (not domElement.isNull())
             {
-                ParseIncrementsElement(domElement);
+                parseVariablesElement(domElement);
             }
         }
     }
-    catch (const VExceptionUndo &e)
+    catch (const VExceptionUndo &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         /* If user want undo last operation before undo we need finish broken redo operation. For those we post event
          * myself. Later in method customEvent call undo.*/
         QApplication::postEvent(this, new UndoEvent());
         return;
     }
-    catch (const VExceptionObjectError &e)
+    catch (const VExceptionObjectError &error)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")), //-V807
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
+        emit setGuiEnabled(false);
         return;
     }
-    catch (const VExceptionConversionError &e)
+    catch (const VExceptionConversionError &error)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error can't convert value.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
+        emit setGuiEnabled(false);
         return;
     }
-    catch (const VExceptionEmptyParameter &e)
+    catch (const VExceptionEmptyParameter &error)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error empty parameter.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
+        emit setGuiEnabled(false);
         return;
     }
-    catch (const VExceptionWrongId &e)
+    catch (const VExceptionWrongId &error)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error wrong id.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
+        emit setGuiEnabled(false);
         return;
     }
-    catch (VException &e)
+    catch (VException &error)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
+        emit setGuiEnabled(false);
         return;
     }
     catch (const std::bad_alloc &)
     {
         qCCritical(vXML, "%s", qUtf8Printable(tr("Error parsing file (std::bad_alloc).")));
-        emit SetEnabledGUI(false);
+        emit setGuiEnabled(false);
         return;
     }
 }
@@ -519,7 +519,7 @@ void VPattern::LiteParseTree(const Document &parse)
 
     try
     {
-        emit SetEnabledGUI(true);
+        emit setGuiEnabled(true);
         switch (parse)
         {
             case Document::LiteBlockParse:
@@ -535,64 +535,64 @@ void VPattern::LiteParseTree(const Document &parse)
                 break;
         }
     }
-    catch (const VExceptionUndo &e)
+    catch (const VExceptionUndo &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         /* If user want undo last operation before undo we need finish broken redo operation. For those we post event
          * myself. Later in method customEvent call undo.*/
         QApplication::postEvent(this, new UndoEvent());
         return;
     }
-    catch (const VExceptionObjectError &e)
+    catch (const VExceptionObjectError &error)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")), //-V807
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
-        if (not VApplication::IsGUIMode())
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
+        emit setGuiEnabled(false);
+        if (not Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
         return;
     }
-    catch (const VExceptionConversionError &e)
+    catch (const VExceptionConversionError &error)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error can't convert value.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
-        if (not VApplication::IsGUIMode())
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
+        emit setGuiEnabled(false);
+        if (not Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
         return;
     }
-    catch (const VExceptionEmptyParameter &e)
+    catch (const VExceptionEmptyParameter &error)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error empty parameter.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
-        if (not VApplication::IsGUIMode())
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
+        emit setGuiEnabled(false);
+        if (not Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
         return;
     }
-    catch (const VExceptionWrongId &e)
+    catch (const VExceptionWrongId &error)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error wrong id.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
-        if (not VApplication::IsGUIMode())
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
+        emit setGuiEnabled(false);
+        if (not Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
         return;
     }
-    catch (VException &e)
+    catch (VException &error)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
-        if (not VApplication::IsGUIMode())
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
+        emit setGuiEnabled(false);
+        if (not Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -601,8 +601,8 @@ void VPattern::LiteParseTree(const Document &parse)
     catch (const std::bad_alloc &)
     {
         qCCritical(vXML, "%s", qUtf8Printable(tr("Error parsing file (std::bad_alloc).")));
-        emit SetEnabledGUI(false);
-        if (not VApplication::IsGUIMode())
+        emit setGuiEnabled(false);
+        if (not Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -895,10 +895,10 @@ void VPattern::parsePieceElement(QDomElement &domElement, const Document &parse)
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating piece"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -1172,10 +1172,10 @@ void VPattern::ParseLineElement(VMainGraphicsScene *scene, const QDomElement &do
 
         VToolLine::Create(id, firstPoint, secondPoint, lineType, lineWeight, lineColor, scene, this, data, parse, Source::FromFile);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating line"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -1200,58 +1200,68 @@ void VPattern::parseCurrentDraftBlock()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VPattern::GetLabelBase(quint32 index) const
+/**
+ * @brief GetCurrentAlphabet returns the alphabet corresponding to the selected label language.
+ */
+QStringList VPattern::GetCurrentAlphabet() const
 {
-    const QStringList list = VApplication::LabelLanguages();
+    const QStringList list = Application2D::pointNameLanguages();
     const QString def = QStringLiteral("A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z");
     QStringList alphabet;
-    switch (list.indexOf(qApp->Seamly2DSettings()->GetLabelLanguage()))
+    switch (list.indexOf(qApp->Seamly2DSettings()->getPointNameLanguage()))
     {
-        case 0: // de
-        {
-            const QString al = QStringLiteral("A,Ä,B,C,D,E,F,G,H,I,J,K,L,M,N,O,Ö,P,Q,R,S,ß,T,U,Ü,V,W,X,Y,Z");
-            alphabet = al.split(",");
-            break;
-        }
-        case 2: // fr
-        {
-            const QString al = QStringLiteral("A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z");
-            alphabet = al.split(",");
-            break;
-        }
-        case 3: // ru
-        {
-            const QString al = QStringLiteral("А,Б,В,Г,Д,Е,Ж,З,И,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Э,Ю,Я");
-            alphabet = al.split(",");
-            break;
-        }
-        case 4: // uk
-        {
-            const QString al = QStringLiteral("А,Б,В,Г,Д,Е,Ж,З,І,Ї,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Є,Ю,Я");
-            alphabet = al.split(",");
-            break;
-        }
-        case 5: // hr
-        case 7: // bs
-        {
-            const QString al = QStringLiteral("A,B,C,Č,Ć,D,Dž,Ð,E,F,G,H,I,J,K,L,Lj,M,N,Nj,O,P,R,S,Š,T,U,V,Z,Ž");
-            alphabet = al.split(",");
-            break;
-        }
-        case 6: // sr
-        {
-            const QString al = QStringLiteral("А,Б,В,Г,Д,Ђ,Е,Ж,З,И,Ј,К,Л,Љ,М,Н,Њ,О,П,Р,С,Т,Ћ,У,Ф,Х,Ц,Ч,Џ,Ш");
-            alphabet = al.split(",");
-            break;
-        }
-        case 1: // en
-        default: // en
-        {
-            alphabet = def.split(",");
-            break;
-        }
+    case 0: // de
+    {
+        const QString al = QStringLiteral("A,Ä,B,C,D,E,F,G,H,I,J,K,L,M,N,O,Ö,P,Q,R,S,ß,T,U,Ü,V,W,X,Y,Z");
+        alphabet = al.split(",");
+        break;
+    }
+    case 2: // fr
+    {
+        const QString al = QStringLiteral("A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z");
+        alphabet = al.split(",");
+        break;
+    }
+    case 3: // ru
+    {
+        const QString al = QStringLiteral("А,Б,В,Г,Д,Е,Ж,З,И,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Э,Ю,Я");
+        alphabet = al.split(",");
+        break;
+    }
+    case 4: // uk
+    {
+        const QString al = QStringLiteral("А,Б,В,Г,Д,Е,Ж,З,І,Ї,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Є,Ю,Я");
+        alphabet = al.split(",");
+        break;
+    }
+    case 5: // hr
+    case 7: // bs
+    {
+        const QString al = QStringLiteral("A,B,C,Č,Ć,D,Dž,Ð,E,F,G,H,I,J,K,L,Lj,M,N,Nj,O,P,R,S,Š,T,U,V,Z,Ž");
+        alphabet = al.split(",");
+        break;
+    }
+    case 6: // sr
+    {
+        const QString al = QStringLiteral("А,Б,В,Г,Д,Ђ,Е,Ж,З,И,Ј,К,Л,Љ,М,Н,Њ,О,П,Р,С,Т,Ћ,У,Ф,Х,Ц,Ч,Џ,Ш");
+        alphabet = al.split(",");
+        break;
+    }
+    case 1: // en
+    default: // en
+    {
+        alphabet = def.split(",");
+        break;
+    }
     }
 
+    return alphabet;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VPattern::GetLabelBase(quint32 index) const
+{
+    QStringList alphabet = GetCurrentAlphabet();
     QString base;
     const int count = qFloor(index/static_cast<quint32>(alphabet.size()));
     const int number = static_cast<int>(index) - alphabet.size() * count;
@@ -1287,10 +1297,10 @@ void VPattern::ParseToolBasePoint(VMainGraphicsScene *scene, const QDomElement &
         point->setShowPointName(showPointName);
         spoint = VToolBasePoint::Create(id, activeDraftBlock, point, scene, this, data, parse, Source::FromFile);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating single point"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         scene->removeItem(spoint);
         delete spoint;
         throw excep;
@@ -1335,16 +1345,16 @@ void VPattern::ParseToolEndLine(VMainGraphicsScene *scene, QDomElement &domEleme
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of end line"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of end line"), domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -1382,16 +1392,16 @@ void VPattern::ParseToolAlongLine(VMainGraphicsScene *scene, QDomElement &domEle
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point along line"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point along line"), domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -1430,16 +1440,16 @@ void VPattern::ParseToolShoulderPoint(VMainGraphicsScene *scene, QDomElement &do
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of shoulder"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of shoulder"), domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -1478,16 +1488,16 @@ void VPattern::ParseToolNormal(VMainGraphicsScene *scene, QDomElement &domElemen
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of normal"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of normal"), domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -1526,16 +1536,16 @@ void VPattern::ParseToolBisector(VMainGraphicsScene *scene, QDomElement &domElem
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of bisector"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of bisector"), domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -1563,10 +1573,10 @@ void VPattern::ParseToolLineIntersect(VMainGraphicsScene *scene, const QDomEleme
         VToolLineIntersect::Create(id, p1Line1Id, p2Line1Id, p1Line2Id, p2Line2Id, name,
                                    mx, my, showPointName, scene, this, data, parse, Source::FromFile);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of line intersection"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -1602,16 +1612,16 @@ void VPattern::ParseToolPointOfContact(VMainGraphicsScene *scene, QDomElement &d
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of contact"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of contact"), domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -1635,9 +1645,9 @@ void VPattern::ParseNodePoint(const QDomElement &domElement, const Document &par
         {
             point = data->GeometricObject<VPointF>(idObject);
         }
-        catch (const VExceptionBadId &e)
+        catch (const VExceptionBadId &error)
         { // Possible case. Parent was deleted, but the node object is still here.
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             return;// Just ignore
         }
 
@@ -1647,10 +1657,10 @@ void VPattern::ParseNodePoint(const QDomElement &domElement, const Document &par
         data->UpdateGObject(id, nodePoint);
         VNodePoint::Create(this, data, pieceScene, id, idObject, parse, Source::FromFile, "", idTool);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating modeling point"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -1669,10 +1679,10 @@ void VPattern::ParseAnchorPoint(const QDomElement &domElement, const Document &p
         const quint32 idTool = GetParametrUInt(domElement, VAbstractNode::AttrIdTool, NULL_ID_STR);
         AnchorPointTool::Create(id, idObject, NULL_ID, this, data, parse, Source::FromFile, "", idTool);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating anchor point"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -1702,10 +1712,10 @@ void VPattern::ParseToolHeight(VMainGraphicsScene *scene, const QDomElement &dom
         VToolHeight::Create(id, name, lineType, lineWeight, lineColor, basePointId, p1LineId, p2LineId,
                             mx, my, showPointName, scene, this, data, parse, Source::FromFile);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating height"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -1733,10 +1743,10 @@ void VPattern::ParseToolTriangle(VMainGraphicsScene *scene, const QDomElement &d
         VToolTriangle::Create(id, name, axisP1Id, axisP2Id, firstPointId, secondPointId, mx, my, showPointName, scene, this,
                               data, parse, Source::FromFile);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating triangle"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -1766,10 +1776,10 @@ void VPattern::parseIntersectXYTool(VMainGraphicsScene *scene, const QDomElement
         PointIntersectXYTool::Create(id, name, lineType, lineWeight, lineColor, firstPointId, secondPointId,
                                      mx, my, showPointName, scene, this, data, parse, Source::FromFile);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating Intersect XY tool"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -1802,16 +1812,16 @@ void VPattern::ParseToolCutSpline(VMainGraphicsScene *scene, QDomElement &domEle
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating cut spline point"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating cut spline point"), domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -1845,16 +1855,16 @@ void VPattern::ParseToolCutSplinePath(VMainGraphicsScene *scene, QDomElement &do
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating cut spline path point"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating cut spline path point"), domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -1887,16 +1897,16 @@ void VPattern::ParseToolCutArc(VMainGraphicsScene *scene, QDomElement &domElemen
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating cut arc point"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating cut arc point"), domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -1938,18 +1948,18 @@ void VPattern::ParseToolLineIntersectAxis(VMainGraphicsScene *scene, QDomElement
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of intersection line and axis"),
                                     domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of intersection line and axis"),
                                     domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -1989,18 +1999,18 @@ void VPattern::ParseToolCurveIntersectAxis(VMainGraphicsScene *scene, QDomElemen
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of intersection curve and axis"),
                                     domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of intersection curve and axis"),
                                     domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -2030,10 +2040,10 @@ void VPattern::ParseToolPointOfIntersectionArcs(VMainGraphicsScene *scene, const
         VToolPointOfIntersectionArcs::Create(id, name, firstArcId, secondArcId, crossPoint, mx, my, scene, this,
                                              data, parse, Source::FromFile);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of intersection arcs"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -2074,10 +2084,10 @@ void VPattern::ParseToolPointOfIntersectionCircles(VMainGraphicsScene *scene, QD
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of intersection circles"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -2106,10 +2116,10 @@ void VPattern::ParseToolPointOfIntersectionCurves(VMainGraphicsScene *scene, QDo
         VToolPointOfIntersectionCurves::Create(id, name, curve1Id, curve2Id, vCrossPoint, hCrossPoint, mx, my,
                                                showPointName, scene, this, data, parse, Source::FromFile);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point of intersection curves"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -2148,10 +2158,10 @@ void VPattern::ParseToolPointFromCircleAndTangent(VMainGraphicsScene *scene, QDo
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point from circle and tangent"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -2181,10 +2191,10 @@ void VPattern::ParseToolPointFromArcAndTangent(VMainGraphicsScene *scene, const 
         VToolPointFromArcAndTangent::Create(id, name, arcId, tangentId, crossPoint, mx, my,
                                             showPointName, scene, this, data, parse, Source::FromFile);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating point from arc and tangent"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -2226,10 +2236,10 @@ void VPattern::ParseToolTrueDarts(VMainGraphicsScene *scene, const QDomElement &
                                name1, mx1, my1, showPointName1, name2, mx2, my2, showPointName2,
                                scene, this, data, parse, Source::FromFile);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating true darts"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -2268,10 +2278,10 @@ void VPattern::ParseOldToolSpline(VMainGraphicsScene *scene, const QDomElement &
 
         VToolSpline::Create(id, spline, scene, this, data, parse, Source::FromFile);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating simple curve"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -2328,16 +2338,16 @@ void VPattern::ParseToolSpline(VMainGraphicsScene *scene, QDomElement &domElemen
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating simple curve"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating simple interactive spline"), domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -2379,10 +2389,10 @@ void VPattern::ParseToolCubicBezier(VMainGraphicsScene *scene, const QDomElement
 
         VToolCubicBezier::Create(id, spline, scene, this, data, parse, Source::FromFile);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating cubic bezier curve"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -2441,10 +2451,10 @@ void VPattern::ParseOldToolSplinePath(VMainGraphicsScene *scene, const QDomEleme
 
         VToolSplinePath::Create(id, path, scene, this, data, parse, Source::FromFile);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating curve path"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -2529,16 +2539,16 @@ void VPattern::ParseToolSplinePath(VMainGraphicsScene *scene, const QDomElement 
             }
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating curve path"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating interactive spline path"), domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -2592,10 +2602,10 @@ void VPattern::ParseToolCubicBezierPath(VMainGraphicsScene *scene, const QDomEle
 
         VToolCubicBezierPath::Create(id, path, scene, this, data, parse, Source::FromFile);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating cubic bezier path curve"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -2630,18 +2640,18 @@ void VPattern::ParseNodeSpline(const QDomElement &domElement, const Document &pa
                 data->UpdateGObject(id, spl);
             }
         }
-        catch (const VExceptionBadId &e)
+        catch (const VExceptionBadId &error)
         { // Possible case. Parent was deleted, but the node object is still here.
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             return;// Just ignore
         }
 
         VNodeSpline::Create(this, data, id, idObject, parse, Source::FromFile, "", idTool);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating modeling simple curve"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -2676,17 +2686,17 @@ void VPattern::ParseNodeSplinePath(const QDomElement &domElement, const Document
                 data->UpdateGObject(id, spl);
             }
         }
-        catch (const VExceptionBadId &e)
+        catch (const VExceptionBadId &error)
         { // Possible case. Parent was deleted, but the node object is still here.
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             return;// Just ignore
         }
         VNodeSplinePath::Create(this, data, id, idObject, parse, Source::FromFile, "", idTool);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating modeling curve path"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -2725,16 +2735,16 @@ void VPattern::ParseToolArc(VMainGraphicsScene *scene, QDomElement &domElement, 
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating simple arc"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating simple arc"), domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -2780,16 +2790,16 @@ void VPattern::ParseToolEllipticalArc(VMainGraphicsScene *scene, QDomElement &do
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating simple elliptical arc"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating simple elliptical arc"), domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -2811,9 +2821,9 @@ void VPattern::ParseNodeEllipticalArc(const QDomElement &domElement, const Docum
         {
             arc = new VEllipticalArc(*data->GeometricObject<VEllipticalArc>(idObject));
         }
-        catch (const VExceptionBadId &e)
+        catch (const VExceptionBadId &error)
         { // Possible case. Parent was deleted, but the node object is still here.
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             return;// Just ignore
         }
         arc->setIdObject(idObject);
@@ -2821,10 +2831,10 @@ void VPattern::ParseNodeEllipticalArc(const QDomElement &domElement, const Docum
         data->UpdateGObject(id, arc);
         VNodeEllipticalArc::Create(this, data, id, idObject, parse, Source::FromFile, "", idTool);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating modeling elliptical arc"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -2846,9 +2856,9 @@ void VPattern::ParseNodeArc(const QDomElement &domElement, const Document &parse
         {
             arc = new VArc(*data->GeometricObject<VArc>(idObject));
         }
-        catch (const VExceptionBadId &e)
+        catch (const VExceptionBadId &error)
         { // Possible case. Parent was deleted, but the node object is still here.
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             return;// Just ignore
         }
         arc->setIdObject(idObject);
@@ -2856,10 +2866,10 @@ void VPattern::ParseNodeArc(const QDomElement &domElement, const Document &parse
         data->UpdateGObject(id, arc);
         VNodeArc::Create(this, data, id, idObject, parse, Source::FromFile, "", idTool);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating modeling arc"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -2899,16 +2909,16 @@ void VPattern::ParseToolArcWithLength(VMainGraphicsScene *scene, QDomElement &do
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating simple arc"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating simple arc"), domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -2942,16 +2952,16 @@ void VPattern::ParseToolRotation(VMainGraphicsScene *scene, QDomElement &domElem
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating operation of rotation"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating operation of rotation"), domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -2978,10 +2988,10 @@ void VPattern::ParseToolMirrorByLine(VMainGraphicsScene *scene, QDomElement &dom
         VToolMirrorByLine::Create(id, p1, p2, suffix, source, destination, scene, this, data, parse,
                                     Source::FromFile);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating operation of mirror by line"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -3008,10 +3018,10 @@ void VPattern::ParseToolMirrorByAxis(VMainGraphicsScene *scene, QDomElement &dom
         VToolMirrorByAxis::Create(id, origin, axisType, suffix, source, destination, scene, this, data, parse,
                                     Source::FromFile);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating operation of mirror by axis"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -3054,16 +3064,16 @@ void VPattern::ParseToolMove(VMainGraphicsScene *scene, QDomElement &domElement,
             haveLiteChange();
         }
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating operation of moving"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating operation of moving"), domElement);
-        excep.AddMoreInformation(QString("Message:     " + e.GetMsg() + "\n"+ "Expression:  " + e.GetExpr()));
+        excep.AddMoreInformation(QString("Message:     " + error.GetMsg() + "\n"+ "Expression:  " + error.GetExpr()));
         throw excep;
     }
 }
@@ -3089,9 +3099,9 @@ qreal VPattern::EvalFormula(VContainer *data, const QString &formula, bool *ok) 
             (qIsInf(result) || qIsNaN(result)) ? *ok = false : *ok = true;
             return result;
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             *ok = false;
             return 0;
         }
@@ -3099,26 +3109,26 @@ qreal VPattern::EvalFormula(VContainer *data, const QString &formula, bool *ok) 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement VPattern::MakeEmptyIncrement(const QString &name)
+QDomElement VPattern::createEmptyVariable(const QString &name)
 {
-    QDomElement element = createElement(TagIncrement);
-    SetAttribute(element, IncrementName, name);
-    SetAttribute(element, IncrementFormula, QString("0"));
-    SetAttribute(element, IncrementDescription, QString(""));
+    QDomElement element = createElement(TagVariable);
+    SetAttribute(element, VariableName, name);
+    SetAttribute(element, VariableFormula, QString("0"));
+    SetAttribute(element, VariableDescription, QString(""));
     return element;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement VPattern::FindIncrement(const QString &name) const
+QDomElement VPattern::findVariable(const QString &name) const
 {
-    QDomNodeList list = elementsByTagName(TagIncrement);
+    QDomNodeList list = elementsByTagName(TagVariable);
 
     for (int i=0; i < list.size(); ++i)
     {
         const QDomElement domElement = list.at(i).toElement();
         if (domElement.isNull() == false)
         {
-            const QString parameter = domElement.attribute(IncrementName);
+            const QString parameter = domElement.attribute(VariableName);
             if (parameter == name)
             {
                 return domElement;
@@ -3333,10 +3343,10 @@ void VPattern::ParseToolsElement(VMainGraphicsScene *scene, const QDomElement &d
 
                 UnionTool::Create(id, initData);
             }
-            catch (const VExceptionBadId &e)
+            catch (const VExceptionBadId &error)
             {
                 VExceptionObjectError excep(tr("Error creating or updating union pieces"), domElement);
-                excep.AddMoreInformation(e.ErrorMessage());
+                excep.AddMoreInformation(error.ErrorMessage());
                 throw excep;
             }
             break;
@@ -3409,20 +3419,20 @@ void VPattern::ParsePathElement(VMainGraphicsScene *scene, QDomElement &domEleme
 
         VToolInternalPath::Create(id, path, 0, scene, this, data, parse, Source::FromFile, "", idTool);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating a piece path"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ParseIncrementsElement parse increments tag.
+ * @brief parseVariablesElement parse variables tag.
  * @param node tag in xml tree.
  */
-void VPattern::ParseIncrementsElement(const QDomNode &node)
+void VPattern::parseVariablesElement(const QDomNode &node)
 {
     int index = 0;
     QDomNode domNode = node.firstChild();
@@ -3433,25 +3443,25 @@ void VPattern::ParseIncrementsElement(const QDomNode &node)
             const QDomElement domElement = domNode.toElement();
             if (domElement.isNull() == false)
             {
-                if (domElement.tagName() == TagIncrement)
+                if (domElement.tagName() == TagVariable)
                 {
-                    const QString name = GetParametrString(domElement, IncrementName, "");
+                    const QString name = GetParametrString(domElement, VariableName, "");
 
                     QString desc;
                     try
                     {
-                        desc = GetParametrString(domElement, IncrementDescription);
+                        desc = GetParametrString(domElement, VariableDescription);
                     }
-                    catch (VExceptionEmptyParameter &e)
+                    catch (VExceptionEmptyParameter &error)
                     {
-                        Q_UNUSED(e)
+                        Q_UNUSED(error)
                     }
 
-                    const QString formula = GetParametrString(domElement, IncrementFormula, "0");
+                    const QString formula = GetParametrString(domElement, VariableFormula, "0");
                     bool ok = false;
                     const qreal value = EvalFormula(data, formula, &ok);
 
-                    data->AddVariable(name, new VIncrement(data, name, static_cast<quint32>(index), value, formula, ok,
+                    data->AddVariable(name, new CustomVariable(data, name, static_cast<quint32>(index), value, formula, ok,
                                                            desc));
                     ++index;
                 }
@@ -3464,9 +3474,9 @@ void VPattern::ParseIncrementsElement(const QDomNode &node)
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::addEmptyCustomVariable(const QString &name)
 {
-    const QDomElement element = MakeEmptyIncrement(name);
+    const QDomElement element = createEmptyVariable(name);
 
-    const QDomNodeList list = elementsByTagName(TagIncrements);
+    const QDomNodeList list = elementsByTagName(TagVariables);
     list.at(0).appendChild(element);
     emit patternChanged(false);
 }
@@ -3474,10 +3484,10 @@ void VPattern::addEmptyCustomVariable(const QString &name)
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::addEmptyCustomVariableAfter(const QString &after, const QString &name)
 {
-    const QDomElement element = MakeEmptyIncrement(name);
-    const QDomElement sibling = FindIncrement(after);
+    const QDomElement element = createEmptyVariable(name);
+    const QDomElement sibling = findVariable(after);
 
-    const QDomNodeList list = elementsByTagName(TagIncrements);
+    const QDomNodeList list = elementsByTagName(TagVariables);
 
     if (sibling.isNull())
     {
@@ -3493,21 +3503,21 @@ void VPattern::addEmptyCustomVariableAfter(const QString &after, const QString &
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::removeCustomVariable(const QString &name)
 {
-    const QDomNodeList list = elementsByTagName(TagIncrements);
-    list.at(0).removeChild(FindIncrement(name));
+    const QDomNodeList list = elementsByTagName(TagVariables);
+    list.at(0).removeChild(findVariable(name));
     emit patternChanged(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::MoveUpIncrement(const QString &name)
+void VPattern::moveVariableUp(const QString &name)
 {
-    const QDomElement node = FindIncrement(name);
+    const QDomElement node = findVariable(name);
     if (not node.isNull())
     {
-        const QDomElement prSibling = node.previousSiblingElement(TagIncrement);
+        const QDomElement prSibling = node.previousSiblingElement(TagVariable);
         if (not prSibling.isNull())
         {
-            const QDomNodeList list = elementsByTagName(TagIncrements);
+            const QDomNodeList list = elementsByTagName(TagVariables);
             list.at(0).insertBefore(node, prSibling);
         }
     }
@@ -3515,15 +3525,15 @@ void VPattern::MoveUpIncrement(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::MoveDownIncrement(const QString &name)
+void VPattern::moveVariableDown(const QString &name)
 {
-    const QDomElement node = FindIncrement(name);
+    const QDomElement node = findVariable(name);
     if (not node.isNull())
     {
-        const QDomElement nextSibling = node.nextSiblingElement(TagIncrement);
+        const QDomElement nextSibling = node.nextSiblingElement(TagVariable);
         if (not nextSibling.isNull())
         {
-            const QDomNodeList list = elementsByTagName(TagIncrements);
+            const QDomNodeList list = elementsByTagName(TagVariables);
             list.at(0).insertAfter(node, nextSibling);
         }
     }
@@ -3531,34 +3541,34 @@ void VPattern::MoveDownIncrement(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::setIncrementName(const QString &name, const QString &text)
+void VPattern::setVariableName(const QString &name, const QString &text)
 {
-    QDomElement node = FindIncrement(name);
+    QDomElement node = findVariable(name);
     if (not node.isNull())
     {
-        SetAttribute(node, IncrementName, text);
+        SetAttribute(node, VariableName, text);
         emit patternChanged(false);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::SetIncrementFormula(const QString &name, const QString &text)
+void VPattern::setVariableFormula(const QString &name, const QString &text)
 {
-    QDomElement node = FindIncrement(name);
+    QDomElement node = findVariable(name);
     if (not node.isNull())
     {
-        SetAttribute(node, IncrementFormula, text);
+        SetAttribute(node, VariableFormula, text);
         emit patternChanged(false);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::setIncrementDescription(const QString &name, const QString &text)
+void VPattern::setVariableDescription(const QString &name, const QString &text)
 {
-    QDomElement node = FindIncrement(name);
+    QDomElement node = findVariable(name);
     if (not node.isNull())
     {
-        SetAttribute(node, IncrementDescription, text);
+        SetAttribute(node, VariableDescription, text);
         emit patternChanged(false);
     }
 }
@@ -3622,7 +3632,7 @@ void VPattern::replaceNameInFormula(QVector<VFormulaField> &expressions, const Q
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GenerateLabel create name for draft block basepoint.
+ * @brief GenerateLabel create name for draft block basepoints.
  * @param type type of the label.
  * @param reservedName reversed point name. Use when need reserve name, but point is not in data base yet.
  * @return unique name for current draft block.
@@ -3652,7 +3662,11 @@ QString VPattern::GenerateLabel(const LabelType &type, const QString &reservedNa
     }
     else if (type == LabelType::NewLabel)
     {
-        const QString labelBase = GetLabelBase(static_cast<quint32>(getActiveDraftBlockIndex()));
+        QString labelBase = defaultBasePoint;
+        if (defaultBasePoint.isEmpty())
+        {
+            labelBase = GetLabelBase(static_cast<quint32>(getActiveDraftBlockIndex()));
+        }
 
         qint32 num = 1;
         QString name;
@@ -3734,7 +3748,7 @@ void VPattern::SetDefCustom(bool value)
     QDomNodeList tags = elementsByTagName(TagGradation);
     if (tags.isEmpty())
     {
-        qDebug()<<"Can't save attribute "<<AttrCustom<<Q_FUNC_INFO;
+        qWarning() << "Can't save attribute " << AttrCustom << Q_FUNC_INFO;
         return;
     }
 
@@ -3756,7 +3770,7 @@ void VPattern::SetDefCustom(bool value)
     }
     else
     {
-        qDebug()<<"Can't save attribute "<<AttrCustom<<Q_FUNC_INFO;
+        qWarning() << "Can't save attribute " << AttrCustom << Q_FUNC_INFO;
     }
 }
 
@@ -3795,7 +3809,7 @@ void VPattern::SetDefCustomHeight(int value)
     QDomNodeList tags = elementsByTagName(TagGradation);
     if (tags.isEmpty())
     {
-        qDebug()<<"Can't save attribute "<<AttrDefHeight<<Q_FUNC_INFO;
+        qWarning() << "Can't save attribute " << AttrDefHeight << Q_FUNC_INFO;
         return;
     }
 
@@ -3815,7 +3829,7 @@ void VPattern::SetDefCustomHeight(int value)
     }
     else
     {
-        qDebug()<<"Can't save attribute "<<AttrDefHeight<<Q_FUNC_INFO;
+        qWarning() << "Can't save attribute " << AttrDefHeight << Q_FUNC_INFO;
     }
 }
 
@@ -3854,7 +3868,7 @@ void VPattern::SetDefCustomSize(int value)
     QDomNodeList tags = elementsByTagName(TagGradation);
     if (tags.isEmpty())
     {
-        qDebug()<<"Can't save attribute "<<AttrDefSize<<Q_FUNC_INFO;
+        qWarning() << "Can't save attribute " << AttrDefSize << Q_FUNC_INFO;
         return;
     }
 
@@ -3874,12 +3888,12 @@ void VPattern::SetDefCustomSize(int value)
     }
     else
     {
-        qDebug()<<"Can't save attribute "<<AttrDefSize<<Q_FUNC_INFO;
+        qWarning() << "Can't save attribute " << AttrDefSize << Q_FUNC_INFO;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VPattern::IsReadOnly() const
+bool VPattern::isReadOnly() const
 {
     const QDomElement pattern = documentElement();
 
@@ -3918,10 +3932,12 @@ void VPattern::PrepareForParse(const Document &parse)
     if (parse == Document::FullParse)
     {
         TestUniqueId();
+        foreach (ImageItem *item, getBackgroundImageMap().values()) {draftScene->removeItem(item);}
         draftScene->clear();
-        draftScene->InitOrigins();
+        foreach (ImageItem *item, getBackgroundImageMap().values()) {draftScene->addItem(item);}
+        draftScene->initializeOrigins();
         pieceScene->clear();
-        pieceScene->InitOrigins();
+        pieceScene->initializeOrigins();
         data->ClearForFullParse();
         activeDraftBlock.clear();
         patternPieces.clear();
@@ -3936,7 +3952,7 @@ void VPattern::PrepareForParse(const Document &parse)
     else if (parse == Document::LiteParse)
     {
         VContainer::ClearUniqueNames();
-        data->ClearVariables(VarType::Increment);
+        data->ClearVariables(VarType::Variable);
         data->ClearVariables(VarType::LineAngle);
         data->ClearVariables(VarType::LineLength);
         data->ClearVariables(VarType::CurveLength);
@@ -3959,7 +3975,7 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
 QRectF VPattern::ActiveDrawBoundingRect() const
 {
     // This check helps to find missed tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were used.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used.");
 
     QRectF rect;
 
@@ -3978,6 +3994,7 @@ QRectF VPattern::ActiveDrawBoundingRect() const
                 case Tool::Cut:
                 case Tool::Midpoint:// Same as Tool::AlongLine, but tool will never has such type
                 case Tool::ArcIntersectAxis:// Same as Tool::CurveIntersectAxis, but tool will never has such type
+                case Tool::BackgroundImage:
                 case Tool::LAST_ONE_DO_NOT_USE:
                     Q_UNREACHABLE();
                     break;
@@ -4067,7 +4084,7 @@ QRectF VPattern::ToolBoundingRect(const QRectF &rect, const quint32 &id) const
     }
     else
     {
-        qDebug()<<"Can't find tool with id="<<id;
+        qWarning() << "Can't find tool with id=" << id;
     }
     return toolRect;
 }

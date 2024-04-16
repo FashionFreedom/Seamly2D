@@ -94,7 +94,7 @@ void VSimpleCurve::RefreshGeometry(const QSharedPointer<VAbstractCurve> &curve)
     }
     else
     {
-        qWarning() << tr("VSimpleCurve::RefreshGeometry: pointer to curve is null.");
+        qWarning() << "VSimpleCurve::RefreshGeometry: pointer to curve is null.";
     }
 }
 

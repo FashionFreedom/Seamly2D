@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   dialoginternalpath.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,29 +19,27 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   dialoginternalpath.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   22 11, 2016
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2016 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -55,7 +55,7 @@
 #include "visualization/path/vistoolinternalpath.h"
 #include "../../../tools/vabstracttool.h"
 #include "../../../tools/pattern_piece_tool.h"
-#include "../../support/dialogeditwrongformula.h"
+#include "../../support/edit_formula_dialog.h"
 
 #include <QMenu>
 #include <QTimer>
@@ -77,7 +77,7 @@ DialogInternalPath::DialogInternalPath(const VContainer *data, quint32 toolId, Q
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/path.png"));
 
-    InitOkCancel(ui);
+    initializeOkCancel(ui);
 
     InitPathTab();
     InitSeamAllowanceTab();
@@ -145,7 +145,7 @@ void DialogInternalPath::ChosenObject(quint32 id, const SceneObject &type)
                 case (SceneObject::Piece):
                 case (SceneObject::Unknown):
                 default:
-                    qDebug() << "Got wrong scene object. Ignore.";
+                    qWarning() << "Got wrong scene object. Ignore.";
                     break;
             }
         }
@@ -370,7 +370,7 @@ void DialogInternalPath::nodeChanged(int index)
             {
                 this->expandWidthBeforeFormulaTextEdit();
             }
-            w1Formula = qApp->TrVars()->FormulaToUser(w1Formula, qApp->Settings()->GetOsSeparator());
+            w1Formula = qApp->translateVariables()->FormulaToUser(w1Formula, qApp->Settings()->getOsSeparator());
             ui->beforeWidthFormula_PlainTextEdit->setPlainText(w1Formula);
             MoveCursorToEnd(ui->beforeWidthFormula_PlainTextEdit);
 
@@ -387,7 +387,7 @@ void DialogInternalPath::nodeChanged(int index)
             {
                 this->expandWidthAfterFormulaTextEdit();
             }
-            w2Formula = qApp->TrVars()->FormulaToUser(w2Formula, qApp->Settings()->GetOsSeparator());
+            w2Formula = qApp->translateVariables()->FormulaToUser(w2Formula, qApp->Settings()->getOsSeparator());
             ui->afterWidthFormula_PlainTextEdit->setPlainText(w2Formula);
             MoveCursorToEnd(ui->afterWidthFormula_PlainTextEdit);
 
@@ -617,7 +617,7 @@ void DialogInternalPath::evaluateDefaultWidth()
     if (m_saWidth >= 0)
     {
         VContainer *locData = const_cast<VContainer *> (data);
-        locData->AddVariable(currentSeamAllowance, new VIncrement(locData, currentSeamAllowance, 0, m_saWidth,
+        locData->AddVariable(currentSeamAllowance, new CustomVariable(locData, currentSeamAllowance, 0, m_saWidth,
                                                                   QString().setNum(m_saWidth), true,
                                                                   tr("Current seam allowance")));
 
@@ -665,7 +665,7 @@ void DialogInternalPath::evaluateAfterWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::editDefaultSeamAllowanceWidth()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width"));
     dialog->SetFormula(getSeamAllowanceWidthFormula());
     dialog->setCheckLessThanZero(true);
@@ -680,7 +680,7 @@ void DialogInternalPath::editDefaultSeamAllowanceWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::editBeforeSeamAllowanceWidth()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width before"));
     dialog->SetFormula(getSeamAllowanceWidthFormulaBefore());
     dialog->setCheckLessThanZero(true);
@@ -695,7 +695,7 @@ void DialogInternalPath::editBeforeSeamAllowanceWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::editAfterSeamAllowanceWidth()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width after"));
     dialog->SetFormula(getSeamAllowanceWidthFormulaAfter());
     dialog->setCheckLessThanZero(true);
@@ -1105,7 +1105,7 @@ void DialogInternalPath::setSeamAllowanceWidthFormula(const QString &formula)
         return;
     }
 
-    const QString width = qApp->TrVars()->FormulaToUser(formula, qApp->Settings()->GetOsSeparator());
+    const QString width = qApp->translateVariables()->FormulaToUser(formula, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (width.length() > 80)
     {
@@ -1162,7 +1162,7 @@ QString DialogInternalPath::getSeamAllowanceWidthFormula() const
 {
     QString width = ui->widthFormula_PlainTextEdit->toPlainText();
     width.replace("\n", " ");
-    return qApp->TrVars()->TryFormulaFromUser(width, qApp->Settings()->GetOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(width, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1257,7 +1257,7 @@ QString DialogInternalPath::getSeamAllowanceWidthFormulaBefore() const
 {
     QString width = ui->beforeWidthFormula_PlainTextEdit->toPlainText();
     width.replace("\n", " ");
-    return qApp->TrVars()->TryFormulaFromUser(width, qApp->Settings()->GetOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(width, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1265,7 +1265,7 @@ QString DialogInternalPath::getSeamAllowanceWidthFormulaAfter() const
 {
     QString width = ui->afterWidthFormula_PlainTextEdit->toPlainText();
     width.replace("\n", " ");
-    return qApp->TrVars()->TryFormulaFromUser(width, qApp->Settings()->GetOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(width, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

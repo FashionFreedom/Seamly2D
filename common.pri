@@ -44,6 +44,12 @@ win32 {
                        ../../../dist/win/libssl-1_1.dll
 }
 
+# MSVC: force utf-8 source for ° symbol and other utf-8 strings in source files
+# Source: https://stackoverflow.com/questions/48705747/how-utf-8-may-not-work-in-qt-5
+win32:!win32-g++: QMAKE_CXXFLAGS += /utf-8
+
+CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
+
 CONFIG(debug, debug|release){
     # Debug mode, intentionally left empty
 } else {
@@ -77,6 +83,7 @@ defineTest(copyToDestdir) {
                     FILE ~= s,/,\\,g
                     DDIR ~= s,/,\\,g
                 }
+                message("copy:" $$quote($$FILE))
                 QMAKE_POST_LINK += $$VCOPY $$quote($$FILE) $$quote($$DDIR) $$escape_expand(\\n\\t)
             }
 
@@ -133,7 +140,7 @@ CONFIG(debug, debug|release){
     DVCS_HESH=$$system("git rev-parse --short=12 HEAD") #get SHA1 commit hash
     message("common.pri: Latest commit hash:" $${DVCS_HESH})
 
-    isEmpty(DVCS_HESH){       
+    isEmpty(DVCS_HESH){
        DVCS_HESH = \\\"unknown\\\" # if we can't find build revision left unknown.
     } else {
        DVCS_HESH=\\\"Git:$${DVCS_HESH}\\\"

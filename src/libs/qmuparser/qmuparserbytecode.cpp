@@ -1,3 +1,27 @@
+/***************************************************************************
+ **  @file   qmuparserbytecode.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
+
 /***************************************************************************************************
  **
  **  Copyright (C) 2013 Ingo Berg
@@ -548,92 +572,92 @@ void QmuParserByteCode::AsciiDump()
 {
     if (m_vRPN.size() == false)
     {
-        qDebug() << "No bytecode available\n";
+        qWarning() << "No bytecode available\n";
         return;
     }
 
-    qDebug() << "Number of RPN tokens:" << m_vRPN.size() << "\n";
+    qInfo() << "Number of RPN tokens:" << m_vRPN.size() << "\n";
     for (int i=0; i<m_vRPN.size() && m_vRPN.at(i).Cmd!=cmEND; ++i)
     {
-        qDebug() << i << " : \t";
+        qInfo() << i << " : \t";
         switch (m_vRPN.at(i).Cmd)
         {
             case cmVAL:
-                qDebug() << "VAL \t" << "[" << m_vRPN.at(i).Val.data2 << "]\n";
+                qInfo() << "VAL \t" << "[" << m_vRPN.at(i).Val.data2 << "]\n";
                 break;
             case cmVAR:
-                qDebug() << "VAR \t" << "[ADDR: 0x" << QString::number(*m_vRPN.at(i).Val.ptr, 'f', 16) << "]\n";
+                qInfo() << "VAR \t" << "[ADDR: 0x" << QString::number(*m_vRPN.at(i).Val.ptr, 'f', 16) << "]\n";
                 break;
             case cmVARPOW2:
-                qDebug() << "VARPOW2 \t" << "[ADDR: 0x" << QString::number(*m_vRPN.at(i).Val.ptr, 'f', 16) << "]\n";
+                qInfo() << "VARPOW2 \t" << "[ADDR: 0x" << QString::number(*m_vRPN.at(i).Val.ptr, 'f', 16) << "]\n";
                 break;
             case cmVARPOW3:
-                qDebug() << "VARPOW3 \t" << "[ADDR: 0x" << QString::number(*m_vRPN.at(i).Val.ptr, 'f', 16) << "]\n";
+                qInfo() << "VARPOW3 \t" << "[ADDR: 0x" << QString::number(*m_vRPN.at(i).Val.ptr, 'f', 16) << "]\n";
                 break;
             case cmVARPOW4:
-                qDebug() << "VARPOW4 \t" << "[ADDR: 0x" << QString::number(*m_vRPN.at(i).Val.ptr, 'f', 16) << "]\n";
+                qInfo() << "VARPOW4 \t" << "[ADDR: 0x" << QString::number(*m_vRPN.at(i).Val.ptr, 'f', 16) << "]\n";
                 break;
             case cmVARMUL:
-                qDebug() << "VARMUL \t" << "[ADDR: 0x" << QString::number(*m_vRPN.at(i).Val.ptr, 'f', 16) << "]" << " * [" //-V807
+                qInfo() << "VARMUL \t" << "[ADDR: 0x" << QString::number(*m_vRPN.at(i).Val.ptr, 'f', 16) << "]" << " * [" //-V807
                          << m_vRPN.at(i).Val.data << "]" << " + [" << m_vRPN.at(i).Val.data2 << "]\n";
                 break;
             case cmFUNC:
-                qDebug() << "CALL\t" << "[ARG:" << m_vRPN.at(i).Fun.argc << "]" << "[ADDR: 0x" << m_vRPN.at(i).Fun.ptr << "]"
+                qInfo() << "CALL\t" << "[ARG:" << m_vRPN.at(i).Fun.argc << "]" << "[ADDR: 0x" << m_vRPN.at(i).Fun.ptr << "]"
                          << "\n";
                 break;
             case cmFUNC_STR:
-                qDebug() << "CALL STRFUNC\t" << "[ARG:" << m_vRPN.at(i).Fun.argc << "]" << "[IDX:" << m_vRPN.at(i).Fun.idx //-V807
+                qInfo() << "CALL STRFUNC\t" << "[ARG:" << m_vRPN.at(i).Fun.argc << "]" << "[IDX:" << m_vRPN.at(i).Fun.idx //-V807
                          << "]" << "[ADDR: 0x" << m_vRPN.at(i).Fun.ptr << "]\n";
                 break;
             case cmLT:
-                qDebug() << "LT\n";
+                qInfo() << "LT\n";
                 break;
             case cmGT:
-                qDebug() << "GT\n";
+                qInfo() << "GT\n";
                 break;
             case cmLE:
-                qDebug() << "LE\n";
+                qInfo() << "LE\n";
                 break;
             case cmGE:
-                qDebug() << "GE\n";
+                qInfo() << "GE\n";
                 break;
             case cmEQ:
-                qDebug() << "EQ\n";
+                qInfo() << "EQ\n";
                 break;
             case cmNEQ:
-                qDebug() << "NEQ\n";
+                qInfo() << "NEQ\n";
                 break;
             case cmADD:
-                qDebug() << "ADD\n";
+                qInfo() << "ADD\n";
                 break;
             case cmLAND:
-                qDebug() << "&&\n";
+                qInfo() << "&&\n";
                 break;
             case cmLOR:
-                qDebug() << "||\n";
+                qInfo() << "||\n";
                 break;
             case cmSUB:
-                qDebug() << "SUB\n";
+                qInfo() << "SUB\n";
                 break;
             case cmMUL:
-                qDebug() << "MUL\n";
+                qInfo() << "MUL\n";
                 break;
             case cmDIV:
-                qDebug() << "DIV\n";
+                qInfo() << "DIV\n";
                 break;
             case cmPOW:
-                qDebug() << "POW\n";
+                qInfo() << "POW\n";
                 break;
             case cmIF:
-                qDebug() << "IF\t" << "[OFFSET:" << m_vRPN.at(i).Oprt.offset << "]\n";
+                qInfo() << "IF\t" << "[OFFSET:" << m_vRPN.at(i).Oprt.offset << "]\n";
                 break;
             case cmELSE:
-                qDebug() << "ELSE\t" << "[OFFSET:" << m_vRPN.at(i).Oprt.offset << "]\n";
+                qInfo() << "ELSE\t" << "[OFFSET:" << m_vRPN.at(i).Oprt.offset << "]\n";
                 break;
             case cmENDIF:
-                qDebug() << "ENDIF\n"; break;
+                qInfo() << "ENDIF\n"; break;
             case cmASSIGN:
-                qDebug() << "ASSIGN\t" << "[ADDR: 0x" << QString::number(*m_vRPN.at(i).Oprt.ptr, 'f', 16) << "]\n";
+                qInfo() << "ASSIGN\t" << "[ADDR: 0x" << QString::number(*m_vRPN.at(i).Oprt.ptr, 'f', 16) << "]\n";
                 break;
             case cmBO:
             case cmBC:
@@ -647,11 +671,11 @@ void QmuParserByteCode::AsciiDump()
             case cmEND:
             case cmUNKNOWN:
             default:
-                qDebug() << "(unknown code: " << m_vRPN.at(i).Cmd << ")\n";
+                qWarning() << "(unknown code: " << m_vRPN.at(i).Cmd << ")\n";
                 break;
         } // switch cmdCode
     } // while bytecode
 
-    qDebug() << "END";
+    qInfo() << "END";
 }
 } // namespace qmu

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>260</width>
+    <width>350</width>
     <height>190</height>
    </rect>
   </property>
@@ -37,7 +37,6 @@
      <property name="font">
       <font>
        <pointsize>9</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -47,18 +46,20 @@
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <layout class="QFormLayout" name="formLayout">
+        <property name="labelAlignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
         <item row="0" column="0">
          <widget class="QLabel" name="originPoint_Label">
           <property name="minimumSize">
            <size>
-            <width>65</width>
+            <width>100</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -74,14 +75,13 @@
          <widget class="QComboBox" name="originPoint_ComboBox">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -91,14 +91,13 @@
          <widget class="QLabel" name="suffix_Label">
           <property name="minimumSize">
            <size>
-            <width>65</width>
+            <width>100</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -114,14 +113,13 @@
          <widget class="QLineEdit" name="suffix_LineEdit">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -131,14 +129,13 @@
          <widget class="QLabel" name="axisType_Label">
           <property name="minimumSize">
            <size>
-            <width>65</width>
+            <width>100</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -154,14 +151,13 @@
          <widget class="QComboBox" name="axisType_ComboBox">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>

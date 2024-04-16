@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   historyDialog.cpp
  **  @author Douglas S Caskey
- **  @date   Mar 11, 2023
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2015 - 2023 Seamly, LLC
@@ -71,6 +71,8 @@
 #include <QClipboard>
 #include <QCloseEvent>
 #include <QDebug>
+#include <QGuiApplication>
+#include <QScreen>
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -90,9 +92,12 @@ HistoryDialog::HistoryDialog(VContainer *data, VPattern *doc, QWidget *parent)
     setWindowFlags(Qt::Window);
     setWindowFlags((windowFlags() | Qt::WindowStaysOnTopHint | Qt::WindowMaximizeButtonHint) & ~Qt::WindowContextHelpButtonHint);
 
+    //Limit dialog height to 80% of screen size
+    setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
+
     ui->find_LineEdit->installEventFilter(this);
 
-    qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     fillTable();
     initializeTable();
@@ -217,7 +222,7 @@ void HistoryDialog::fillTable()
 
             {
                 QTableWidgetItem *item = new QTableWidgetItem(QString().setNum(rowData.id));
-                item->setTextAlignment(Qt::AlignRight);
+                item->setTextAlignment(Qt::AlignHCenter);
                 item->setSizeHint(QSize(80, 24));
                 item->setData(Qt::UserRole, rowData.id);
                 item->setFlags(item->flags() ^ Qt::ItemIsEditable);
@@ -265,7 +270,7 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
 RowData HistoryDialog::record(const VToolRecord &tool)
 {
     // This check helps to find missed tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were used in history.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used in history.");
 
     RowData rowData;
     const quint32 &toolId = tool.getId();
@@ -273,7 +278,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
     const QDomElement domElement = m_doc->elementById(toolId);
     if (domElement.isElement() == false)
     {
-        qDebug()<<"Can't find element by id"<<Q_FUNC_INFO;
+        qDebug() << "Can't find element by id" << Q_FUNC_INFO;
         return rowData;
     }
     try
@@ -288,6 +293,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
             case Tool::Cut:
             case Tool::Midpoint:// Same as Tool::AlongLine, but tool will never has such type
             case Tool::ArcIntersectAxis:// Same as Tool::CurveIntersectAxis, but tool will never has such type
+            case Tool::BackgroundImage:
             case Tool::LAST_ONE_DO_NOT_USE:
                 Q_UNREACHABLE(); //-V501
                 break;
@@ -417,7 +423,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
             }
 
             case Tool::PointOfContact:
-                rowData.icon = ":/toolicon/32x32/point_of_contact.png";
+                rowData.icon = ":/toolicon/32x32/point_intersect_arc_line.png";
                 rowData.name = tr("%1").arg(getPointName(toolId));
                 rowData.tool = tr("Point Intersect Arc with center %1 & Line %2_%3")
                                   .arg(getPointName(attrUInt(domElement, AttrCenter)))
@@ -600,12 +606,12 @@ RowData HistoryDialog::record(const VToolRecord &tool)
         }
         return rowData;
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
-        qDebug()<<e.ErrorMessage()<<Q_FUNC_INFO;
+        qDebug() << error.ErrorMessage() << Q_FUNC_INFO;
         return rowData;
     }
-    qDebug()<<"Can't create history record for the tool.";
+    qWarning() << "Can't create history record for the tool.";
     return rowData;
 }
 
@@ -699,7 +705,7 @@ bool HistoryDialog::eventFilter(QObject *object, QEvent *event)
             QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
             if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
             {
-                if (qApp->Settings()->GetOsSeparator())
+                if (qApp->Settings()->getOsSeparator())
                 {
                     textEdit->insert(QLocale().decimalPoint());
                 }

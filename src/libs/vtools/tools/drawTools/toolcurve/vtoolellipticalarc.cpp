@@ -1,7 +1,7 @@
 /******************************************************************************
  *   @file   vtoolellipticalarc.cpp
  **  @author Douglas S Caskey
- **  @date   21 Mar, 2023
+ **  @date   17 Sep, 2023
  **
  **  @brief
  **  @copyright
@@ -409,9 +409,9 @@ void VToolEllipticalArc::showContextMenu(QGraphicsSceneContextMenuEvent *event, 
     {
         ContextMenu<DialogEllipticalArc>(event);
     }
-    catch(const VExceptionToolWasDeleted &e)
+    catch(const VExceptionToolWasDeleted &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;//Leave this method immediately!!!
     }
 }
@@ -472,14 +472,14 @@ void VToolEllipticalArc::SetVisualization()
         VisToolEllipticalArc *visual = qobject_cast<VisToolEllipticalArc *>(vis);
         SCASSERT(visual != nullptr)
 
-        const VTranslateVars *trVars = qApp->TrVars();
+        const VTranslateVars *trVars = qApp->translateVariables();
         visual->setObject1Id(elArc->GetCenter().id());
-        visual->setRadius1(trVars->FormulaToUser(elArc->GetFormulaRadius1(), qApp->Settings()->GetOsSeparator()));
-        visual->setRadius2(trVars->FormulaToUser(elArc->GetFormulaRadius2(), qApp->Settings()->GetOsSeparator()));
-        visual->setF1(trVars->FormulaToUser(elArc->GetFormulaF1(), qApp->Settings()->GetOsSeparator()));
-        visual->setF2(trVars->FormulaToUser(elArc->GetFormulaF2(), qApp->Settings()->GetOsSeparator()));
+        visual->setRadius1(trVars->FormulaToUser(elArc->GetFormulaRadius1(), qApp->Settings()->getOsSeparator()));
+        visual->setRadius2(trVars->FormulaToUser(elArc->GetFormulaRadius2(), qApp->Settings()->getOsSeparator()));
+        visual->setF1(trVars->FormulaToUser(elArc->GetFormulaF1(), qApp->Settings()->getOsSeparator()));
+        visual->setF2(trVars->FormulaToUser(elArc->GetFormulaF2(), qApp->Settings()->getOsSeparator()));
         visual->setRotationAngle(trVars->FormulaToUser(elArc->GetFormulaRotationAngle(),
-                                                       qApp->Settings()->GetOsSeparator()));
+                                                       qApp->Settings()->getOsSeparator()));
         visual->setLineStyle(lineTypeToPenStyle(elArc->GetPenStyle()));
         visual->setLineWeight(elArc->getLineWeight());
         visual->RefreshGeometry();

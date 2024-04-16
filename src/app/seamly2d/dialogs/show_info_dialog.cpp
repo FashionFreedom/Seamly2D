@@ -2,14 +2,14 @@
  **
  **  @file   show_info_dialog.cpp
  **  @author DSCaskey <dscaskey@gmail.com>
- **  @date   Nov 6, 2022
+ **  @date   3 Sep, 2023
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  All Rights Reserved.
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2022-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
@@ -33,18 +33,20 @@
 #include <QClipboard>
 #include <QFileDialog>
 #include <QFont>
+#include <QGuiApplication>
 #include <QImage>
 #include <QPageLayout>
 #include <QPixmap>
 #include <QPrinter>
 #include <QPrintDialog>
 #include <QPrintPreviewDialog>
+#include <QScreen>
 #include <QShowEvent>
 #include <QString>
 #include <QTextDocument>
 #include <QtWidgets>
 
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
 #include "../xml/vpattern.h"
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -65,7 +67,10 @@
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
-    qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    //Limit dialog height to 80% of screen size
+    setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
+
+    qApp->Seamly2DSettings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     QByteArray byteArray;
     byteArray.append(doc->GetImage().toUtf8());
@@ -88,7 +93,7 @@
                             .arg(doc->GetPatternName())    //3
                             .arg(doc->GetPatternNumber())  //4
                             .arg(doc->GetVersion())        //5
-                            .arg(UnitsToStr(doc->MUnit())) //6
+                            .arg(UnitsToStr(doc->measurementUnits())) //6
                             .arg(doc->MPath())             //7
                             .arg(doc->GetDescription())    //8
                             .arg(doc->GetNotes())          //9

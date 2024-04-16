@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   dialogvariables.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,38 +19,35 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   dialogvariables.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   November 15, 2013
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
-
 #include "dialogvariables.h"
 #include "ui_dialogvariables.h"
 #include "../vwidgets/vwidgetpopup.h"
@@ -57,13 +56,16 @@
 #include "../qmuparser/qmutokenparser.h"
 #include "../vpatterndb/vtranslatevars.h"
 #include "../vpatterndb/calculator.h"
-#include "../vtools/dialogs/support/dialogeditwrongformula.h"
+#include "../vtools/dialogs/support/edit_formula_dialog.h"
 
 #include <QFileDialog>
 #include <QDir>
+#include <QGuiApplication>
 #include <QMessageBox>
 #include <QCloseEvent>
+#include <QTabBar>
 #include <QTableWidget>
+#include <QScreen>
 #include <QSettings>
 #include <QTableWidgetItem>
 #include <QtNumeric>
@@ -94,13 +96,16 @@ DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *paren
     setWindowFlags(Qt::Window);
     setWindowFlags((windowFlags() | Qt::WindowStaysOnTopHint) & ~Qt::WindowContextHelpButtonHint);
 
+    //Limit dialog height to 80% of screen size
+    setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
+
     ui->name_LineEdit->setClearButtonEnabled(true);
     ui->filter_LineEdit->installEventFilter(this);
 
     formulaBaseHeight = ui->formula_PlainTextEdit->height();
     ui->formula_PlainTextEdit->installEventFilter(this);
 
-    qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     qCDebug(vDialog, "Showing variables.");
     showUnits();
@@ -188,13 +193,13 @@ void DialogVariables::fillCustomVariables(bool freshCall)
     ui->variables_TableWidget->blockSignals(true);
     ui->variables_TableWidget->clearContents();
 
-    const QMap<QString, QSharedPointer<VIncrement> > variables = data->variablesData();
-    QMap<QString, QSharedPointer<VIncrement> >::const_iterator i;
+    const QMap<QString, QSharedPointer<CustomVariable> > variables = data->variablesData();
+    QMap<QString, QSharedPointer<CustomVariable> >::const_iterator i;
     QMap<quint32, QString> map;
     //Sorting QHash by id
     for (i = variables.constBegin(); i != variables.constEnd(); ++i)
     {
-        QSharedPointer<VIncrement> variable = i.value();
+        QSharedPointer<CustomVariable> variable = i.value();
         map.insert(variable->getIndex(), i.key());
     }
 
@@ -204,7 +209,7 @@ void DialogVariables::fillCustomVariables(bool freshCall)
     while (iMap.hasNext())
     {
         iMap.next();
-        QSharedPointer<VIncrement> variable = variables.value(iMap.value());
+        QSharedPointer<CustomVariable> variable = variables.value(iMap.value());
         currentRow++;
 
         addCell(ui->variables_TableWidget, variable->GetName(), currentRow, 0, Qt::AlignVCenter); // name
@@ -214,11 +219,11 @@ void DialogVariables::fillCustomVariables(bool freshCall)
         QString formula;
         try
         {
-            formula = qApp->TrVars()->FormulaToUser(variable->GetFormula(), qApp->Settings()->GetOsSeparator());
+            formula = qApp->translateVariables()->FormulaToUser(variable->GetFormula(), qApp->Settings()->getOsSeparator());
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             formula = variable->GetFormula();
         }
 
@@ -362,7 +367,7 @@ QString DialogVariables::getCustomVariableName() const
     QString name;
     do
     {
-        name = CustomIncrSign + qApp->TrVars()->InternalVarToUser(variable_) + QString().number(num);
+        name = CustomIncrSign + qApp->translateVariables()->InternalVarToUser(variable_) + QString().number(num);
         num++;
     } while (not data->IsUnique(name));
     return name;
@@ -398,7 +403,7 @@ bool DialogVariables::evalVariableFormula(const QString &formula, bool fromUser,
             // Replace line return character with spaces for calc if exist
             if (fromUser)
             {
-                f = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
+                f = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
             }
             else
             {
@@ -419,10 +424,10 @@ bool DialogVariables::evalVariableFormula(const QString &formula, bool fromUser,
             label->setToolTip(tr("Value"));
             return true;
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
-            label->setText(tr("Error") + " (" + postfix + "). " + tr("Parser error: %1").arg(e.GetMsg()));
-            label->setToolTip(tr("Parser error: %1").arg(e.GetMsg()));
+            label->setText(tr("Error") + " (" + postfix + "). " + tr("Parser error: %1").arg(error.GetMsg()));
+            label->setToolTip(tr("Parser error: %1").arg(error.GetMsg()));
             return false;
         }
     }
@@ -518,7 +523,7 @@ void DialogVariables::enablePieces(bool enabled)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogVariables::localUpdateTree()
 {
-    doc->LiteParseIncrements();
+    doc->LiteParseVariables();
     fillCustomVariables();
 }
 
@@ -683,7 +688,7 @@ void DialogVariables::moveUp()
     }
 
     const QTableWidgetItem *name = ui->variables_TableWidget->item(row, 0);
-    doc->MoveUpIncrement(name->text());
+    doc->moveVariableUp(name->text());
 
     hasChanges = true;
     localUpdateTree();
@@ -702,7 +707,7 @@ void DialogVariables::moveDown()
     }
 
     const QTableWidgetItem *name = ui->variables_TableWidget->item(row, 0);
-    doc->MoveDownIncrement(name->text());
+    doc->moveVariableDown(name->text());
 
     hasChanges = true;
     localUpdateTree();
@@ -736,8 +741,8 @@ void DialogVariables::saveCustomVariableName(const QString &text)
         newName = tempName;
     }
 
-    doc->setIncrementName(name->text(), newName);
-    QVector<VFormulaField> expressions = doc->ListIncrementExpressions();
+    doc->setVariableName(name->text(), newName);
+    QVector<VFormulaField> expressions = doc->listVariableExpressions();
     doc->replaceNameInFormula(expressions, name->text(), newName);
     renameCache(name->text(), newName);
 
@@ -760,7 +765,7 @@ void DialogVariables::saveCustomVariableDescription()
     }
 
     const QTableWidgetItem *name = ui->variables_TableWidget->item(row, 0);
-    doc->setIncrementDescription(name->text(), ui->description_PlainTextEdit->toPlainText());
+    doc->setVariableDescription(name->text(), ui->description_PlainTextEdit->toPlainText());
 
     localUpdateTree();
 
@@ -805,7 +810,7 @@ void DialogVariables::saveCustomVariableFormula()
         return;
     }
 
-    QSharedPointer<VIncrement> variable = data->GetVariable<VIncrement>(name->text());
+    QSharedPointer<CustomVariable> variable = data->getVariable<CustomVariable>(name->text());
     if (not evalVariableFormula(text, true, variable->GetData(), ui->calculatedValue_Label))
     {
         return;
@@ -813,12 +818,12 @@ void DialogVariables::saveCustomVariableFormula()
 
     try
     {
-        const QString formula = qApp->TrVars()->FormulaFromUser(text, qApp->Settings()->GetOsSeparator());
-        doc->SetIncrementFormula(name->text(), formula);
+        const QString formula = qApp->translateVariables()->FormulaFromUser(text, qApp->Settings()->getOsSeparator());
+        doc->setVariableFormula(name->text(), formula);
     }
-    catch (qmu::QmuParserError &e) // Just in case something bad will happen
+    catch (qmu::QmuParserError &error) // Just in case something bad will happen
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;
     }
 
@@ -843,12 +848,12 @@ void DialogVariables::Fx()
     }
 
     const QTableWidgetItem *name = ui->variables_TableWidget->item(row, 0);
-    QSharedPointer<VIncrement> variable = data->GetVariable<VIncrement>(name->text());
+    QSharedPointer<CustomVariable> variable = data->getVariable<CustomVariable>(name->text());
 
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(variable->GetData(), NULL_ID, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(variable->GetData(), NULL_ID, this);
     dialog->setWindowTitle(tr("Edit variable"));
-    dialog->SetFormula(qApp->TrVars()->TryFormulaFromUser(ui->formula_PlainTextEdit->toPlainText().replace("\n", " "),
-                                                          qApp->Settings()->GetOsSeparator()));
+    dialog->SetFormula(qApp->translateVariables()->TryFormulaFromUser(ui->formula_PlainTextEdit->toPlainText().replace("\n", " "),
+                                                          qApp->Settings()->getOsSeparator()));
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
     dialog->setPostfix(postfix);//Show unit in dialog label (cm, mm or inch)
 
@@ -856,7 +861,7 @@ void DialogVariables::Fx()
     {
         // Because of the bug need to take QTableWidgetItem twice time. Previous update "killed" the pointer.
         const QTableWidgetItem *name = ui->variables_TableWidget->item(row, 0);
-        doc->SetIncrementFormula(name->text(), dialog->GetFormula());
+        doc->setVariableFormula(name->text(), dialog->GetFormula());
 
         hasChanges = true;
         localUpdateTree();
@@ -903,7 +908,7 @@ bool DialogVariables::eventFilter(QObject *object, QEvent *event)
             QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
             if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
             {
-                if (qApp->Settings()->GetOsSeparator())
+                if (qApp->Settings()->getOsSeparator())
                 {
                     textEdit->insert(QLocale().decimalPoint());
                 }
@@ -939,7 +944,7 @@ void DialogVariables::showEvent(QShowEvent *event)
     }
     // do your init stuff here
 
-    const QSize sz = qApp->Settings()->GetIncrementsDialogSize();
+    const QSize sz = qApp->Settings()->getVariablesDialogSize();
     if (not sz.isEmpty())
     {
         resize(sz);
@@ -956,7 +961,7 @@ void DialogVariables::resizeEvent(QResizeEvent *event)
     // dialog creating, which would
     if (isInitialized)
     {
-        qApp->Settings()->SetIncrementsDialogSize(size());
+        qApp->Settings()->setVariablesDialogSize(size());
     }
     DialogTool::resizeEvent(event);
 }
@@ -970,15 +975,15 @@ void DialogVariables::showCustomVariableDetails()
 
         // name
         const QTableWidgetItem *name = ui->variables_TableWidget->item(ui->variables_TableWidget->currentRow(), 0);
-        QSharedPointer<VIncrement> variable;
+        QSharedPointer<CustomVariable> variable;
 
         try
         {
-            variable = data->GetVariable<VIncrement>(name->text());
+            variable = data->getVariable<CustomVariable>(name->text());
         }
-        catch(const VExceptionBadId &e)
+        catch(const VExceptionBadId &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             enablePieces(false);
             return;
         }
@@ -997,11 +1002,11 @@ void DialogVariables::showCustomVariableDetails()
         QString formula;
         try
         {
-            formula = qApp->TrVars()->FormulaToUser(variable->GetFormula(), qApp->Settings()->GetOsSeparator());
+            formula = qApp->translateVariables()->FormulaToUser(variable->GetFormula(), qApp->Settings()->getOsSeparator());
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             formula = variable->GetFormula();
         }
 

@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   vtranslatevars.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vtranslatevars.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,17 +30,17 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -58,27 +59,27 @@
 #include <QString>
 #include <QtDebug>
 
+#include "pmsystems.h"
+#include "vtranslatemeasurements.h"
 #include "../ifc/ifcdef.h"
+#include "../vmisc/def.h"
+#include "../vmisc/vabstractapplication.h"
 #include "../qmuparser/qmuparsererror.h"
 #include "../qmuparser/qmutokenparser.h"
 #include "../qmuparser/qmutranslation.h"
 #include "../vpatterndb/vtranslatevars.h"
-#include "../vmisc/def.h"
-#include "../vmisc/vabstractapplication.h"
-#include "vtranslatemeasurements.h"
-#include "pmsystems.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 VTranslateVars::VTranslateVars()
-    :VTranslateMeasurements(),
-      PMSystemNames(QMap<QString, qmu::QmuTranslation>()),
-      PMSystemAuthors(QMap<QString, qmu::QmuTranslation>()),
-      PMSystemBooks(QMap<QString, qmu::QmuTranslation>()),
-      variables(QMap<QString, qmu::QmuTranslation>()),
-      functions(QMap<QString, qmu::QmuTranslation>()),
-      postfixOperators(QMap<QString, qmu::QmuTranslation>()),
-      placeholders(QMap<QString, qmu::QmuTranslation>()),
-      stDescriptions(QMap<QString, qmu::QmuTranslation>())
+    : VTranslateMeasurements()
+    , PMSystemNames(QMap<QString, qmu::QmuTranslation>())
+    , PMSystemAuthors(QMap<QString, qmu::QmuTranslation>())
+    , PMSystemBooks(QMap<QString, qmu::QmuTranslation>())
+    , variables(QMap<QString, qmu::QmuTranslation>())
+    , functions(QMap<QString, qmu::QmuTranslation>())
+    , postfixOperators(QMap<QString, qmu::QmuTranslation>())
+    , placeholders(QMap<QString, qmu::QmuTranslation>())
+    , stDescriptions(QMap<QString, qmu::QmuTranslation>())
 {
     InitPatternMakingSystems();
     InitVariables();
@@ -396,33 +397,33 @@ void VTranslateVars::InitPatternMakingSystems()
 //---------------------------------------------------------------------------------------------------------------------
 void VTranslateVars::InitVariables()
 {
-    variables.insert(measurement_, translate("VTranslateVars", "M_", "Left symbol _ in the name"));
-    variables.insert(variable_, translate("VTranslateVars", "Variable_", "Left symbol _ in the name"));
-    variables.insert(line_, translate("VTranslateVars", "Line_", "Left symbol _ in the name"));
-    variables.insert(angleLine_, translate("VTranslateVars", "AngleLine_", "Left symbol _ in the name"));
-    variables.insert(arc_, translate("VTranslateVars", "Arc_", "Left symbol _ in the name"));
-    variables.insert(elarc_, translate("VTranslateVars", "ElArc_", "Left symbol _ in the name"));
-    variables.insert(spl_, translate("VTranslateVars", "Spl_", "Left symbol _ in the name"));
+    variables.insert(measurement_, translate("VTranslateVars", "M_", "Leave the _ symbol in translation"));
+    variables.insert(variable_, translate("VTranslateVars", "Variable_", "Leave the _ symbol in translation"));
+    variables.insert(line_, translate("VTranslateVars", "Line_", "Leave the _ symbol in translation"));
+    variables.insert(angleLine_, translate("VTranslateVars", "AngleLine_", "Leave the _ symbol in translation"));
+    variables.insert(arc_, translate("VTranslateVars", "Arc_", "Leave the _ symbol in translation"));
+    variables.insert(elarc_, translate("VTranslateVars", "ElArc_", "Leave the _ symbol in translation"));
+    variables.insert(spl_, translate("VTranslateVars", "Spl_", "Leave the _ symbol in translation"));
     variables.insert(splPath, translate("VTranslateVars", "SplPath", "Do not add symbol _ to the end of the name"));
-    variables.insert(radiusArc_, translate("VTranslateVars", "RadiusArc_", "Left symbol _ in the name"));
-    variables.insert(radius1ElArc_, translate("VTranslateVars", "Radius1ElArc_", "Left symbol _ in the name"));
-    variables.insert(radius2ElArc_, translate("VTranslateVars", "Radius2ElArc_", "Left symbol _ in the name"));
-    variables.insert(angle1Arc_, translate("VTranslateVars", "Angle1Arc_", "Left symbol _ in the name"));
-    variables.insert(angle2Arc_, translate("VTranslateVars", "Angle2Arc_", "Left symbol _ in the name"));
-    variables.insert(angle1ElArc_, translate("VTranslateVars", "Angle1ElArc_", "Left symbol _ in the name"));
-    variables.insert(angle2ElArc_, translate("VTranslateVars", "Angle2ElArc_", "Left symbol _ in the name"));
-    variables.insert(angle1Spl_, translate("VTranslateVars", "Angle1Spl_", "Left symbol _ in the name"));
-    variables.insert(angle2Spl_, translate("VTranslateVars", "Angle2Spl_", "Left symbol _ in the name"));
+    variables.insert(radiusArc_, translate("VTranslateVars", "RadiusArc_", "Leave the _ symbol in translation"));
+    variables.insert(radius1ElArc_, translate("VTranslateVars", "Radius1ElArc_", "Leave the _ symbol in translation"));
+    variables.insert(radius2ElArc_, translate("VTranslateVars", "Radius2ElArc_", "Leave the _ symbol in translation"));
+    variables.insert(angle1Arc_, translate("VTranslateVars", "Angle1Arc_", "Leave the _ symbol in translation"));
+    variables.insert(angle2Arc_, translate("VTranslateVars", "Angle2Arc_", "Leave the _ symbol in translation"));
+    variables.insert(angle1ElArc_, translate("VTranslateVars", "Angle1ElArc_", "Leave the _ symbol in translation"));
+    variables.insert(angle2ElArc_, translate("VTranslateVars", "Angle2ElArc_", "Leave the _ symbol in translation"));
+    variables.insert(angle1Spl_, translate("VTranslateVars", "Angle1Spl_", "Leave the _ symbol in translation"));
+    variables.insert(angle2Spl_, translate("VTranslateVars", "Angle2Spl_", "Leave the _ symbol in translation"));
     variables.insert(angle1SplPath, translate("VTranslateVars", "Angle1SplPath",
                                               "Do not add symbol _ to the end of the name"));
     variables.insert(angle2SplPath, translate("VTranslateVars", "Angle2SplPath",
                                               "Do not add symbol _ to the end of the name"));
-    variables.insert(seg_, translate("VTranslateVars", "Seg_", "Segment. Left symbol _ in the name"));
+    variables.insert(seg_, translate("VTranslateVars", "Seg_", "Segment. Leave the _ symbol in translation"));
     variables.insert(currentLength, translate("VTranslateVars", "CurrentLength", "Do not add space between words"));
     variables.insert(currentSeamAllowance, translate("VTranslateVars", "CurrentSeamAllowance",
                                                      "Do not add space between words"));
-    variables.insert(c1LengthSpl_, translate("VTranslateVars", "C1LengthSpl_", "Left symbol _ in the name"));
-    variables.insert(c2LengthSpl_, translate("VTranslateVars", "C2LengthSpl_", "Left symbol _ in the name"));
+    variables.insert(c1LengthSpl_, translate("VTranslateVars", "C1LengthSpl_", "Leave the _ symbol in translation"));
+    variables.insert(c2LengthSpl_, translate("VTranslateVars", "C2LengthSpl_", "Leave the _ symbol in translation"));
     variables.insert(c1LengthSplPath, translate("VTranslateVars", "C1LengthSplPath",
                                                 "Do not add symbol _ to the end of the name"));
     variables.insert(c2LengthSplPath, translate("VTranslateVars", "C2LengthSplPath",
@@ -432,41 +433,41 @@ void VTranslateVars::InitVariables()
 //---------------------------------------------------------------------------------------------------------------------
 void VTranslateVars::InitFunctions()
 {
-    functions.insert(degTorad_F, translate("VTranslateVars", "degTorad", "converts degrees to radian"));
-    functions.insert(radTodeg_F, translate("VTranslateVars", "radTodeg", "converts radian to degrees"));
-    functions.insert(sin_F, translate("VTranslateVars", "sin", "sine function working with radians"));
-    functions.insert(cos_F, translate("VTranslateVars", "cos", "cosine function working with radians"));
-    functions.insert(tan_F, translate("VTranslateVars", "tan", "tangent function working with radians"));
-    functions.insert(asin_F, translate("VTranslateVars", "asin", "inverse sine function working with radians"));
-    functions.insert(acos_F, translate("VTranslateVars", "acos", "inverse cosine function working with radians"));
-    functions.insert(atan_F, translate("VTranslateVars", "atan", "inverse tangent function working with radians"));
-    functions.insert(sinh_F, translate("VTranslateVars", "sinh", "hyperbolic sine function"));
-    functions.insert(cosh_F, translate("VTranslateVars", "cosh", "hyperbolic cosine"));
-    functions.insert(tanh_F, translate("VTranslateVars", "tanh", "hyperbolic tangent function"));
-    functions.insert(asinh_F, translate("VTranslateVars", "asinh", "inverse hyperbolic sine function"));
-    functions.insert(acosh_F, translate("VTranslateVars", "acosh", "inverse hyperbolic cosine function"));
-    functions.insert(atanh_F, translate("VTranslateVars", "atanh", "inverse hyperbolic tangent function"));
-    functions.insert(sinD_F, translate("VTranslateVars", "sinD", "sine function working with degrees"));
-    functions.insert(cosD_F, translate("VTranslateVars", "cosD", "cosine function working with degrees"));
-    functions.insert(tanD_F, translate("VTranslateVars", "tanD", "tangent function working with degrees"));
-    functions.insert(asinD_F, translate("VTranslateVars", "asinD", "inverse sine function working with degrees"));
-    functions.insert(acosD_F, translate("VTranslateVars", "acosD", "inverse cosine function working with degrees"));
-    functions.insert(atanD_F, translate("VTranslateVars", "atanD", "inverse tangent function working with degrees"));
-    functions.insert(log2_F, translate("VTranslateVars", "log2", "logarithm to the base 2"));
-    functions.insert(log10_F, translate("VTranslateVars", "log10", "logarithm to the base 10"));
-    functions.insert(log_F, translate("VTranslateVars", "log", "logarithm to the base 10"));
-    functions.insert(ln_F, translate("VTranslateVars", "ln", "logarithm to base e (2.71828...)"));
-    functions.insert(exp_F, translate("VTranslateVars", "exp", "e raised to the power of x"));
-    functions.insert(sqrt_F, translate("VTranslateVars", "sqrt", "square root of a value"));
-    functions.insert(sign_F, translate("VTranslateVars", "sign", "sign function -1 if x<0; 1 if x>0"));
-    functions.insert(rint_F, translate("VTranslateVars", "rint", "round to nearest integer"));
-    functions.insert(abs_F, translate("VTranslateVars", "abs", "absolute value"));
-    functions.insert(min_F, translate("VTranslateVars", "min", "min of all arguments"));
-    functions.insert(max_F, translate("VTranslateVars", "max", "max of all arguments"));
-    functions.insert(sum_F, translate("VTranslateVars", "sum", "sum of all arguments"));
-    functions.insert(avg_F, translate("VTranslateVars", "avg", "mean value of all arguments"));
+    functions.insert(degTorad_F, translate("VTranslateVars", "degTorad", "Converts degrees to radians\nUsage: degTorad(angle θ in degrees)"));
+    functions.insert(radTodeg_F, translate("VTranslateVars", "radTodeg", "Converts radians to degrees\nUsage: radTodeg(angle θ in radians)"));
+    functions.insert(sin_F, translate("VTranslateVars", "sin", "Sine function working with radians\nUsage: sin(angle θ in radians)"));
+    functions.insert(cos_F, translate("VTranslateVars", "cos", "Cosine function working with radians\nUsage: cos(angle θ in radians)"));
+    functions.insert(tan_F, translate("VTranslateVars", "tan", "Tangent function working with radians\nUsage: tan(angle θ in radians)"));
+    functions.insert(asin_F, translate("VTranslateVars", "asin", "Inverse sine function working with radians\nUsage: asin(x)"));
+    functions.insert(acos_F, translate("VTranslateVars", "acos", "Inverse cosine function working with radians\nUsage: acos(x)"));
+    functions.insert(atan_F, translate("VTranslateVars", "atan", "Inverse tangent function working with radians\nUsage: atan(x)"));
+    functions.insert(sinh_F, translate("VTranslateVars", "sinh", "Hyperbolic sine function\nUsage: sinh(angle θ in radians)"));
+    functions.insert(cosh_F, translate("VTranslateVars", "cosh", "Hyperbolic cosine\nUsage: cosh(angle θ in radians)"));
+    functions.insert(tanh_F, translate("VTranslateVars", "tanh", "Hyperbolic tangent function\nUsage: tanh(angle θ in radians)"));
+    functions.insert(asinh_F, translate("VTranslateVars", "asinh", "Inverse Hyperbolic sine function\nUsage: asinh(x)"));
+    functions.insert(acosh_F, translate("VTranslateVars", "acosh", "Inverse Hyperbolic cosine function\nUsage: acosh(x)"));
+    functions.insert(atanh_F, translate("VTranslateVars", "atanh", "Inverse Hyperbolic tangent function\nUsage: atanh(x)"));
+    functions.insert(sinD_F, translate("VTranslateVars", "sinD", "Sine function working with degrees\nUsage: sinD(angle θ in degrees)"));
+    functions.insert(cosD_F, translate("VTranslateVars", "cosD", "Cosine function working with degrees\nUsage: cosD(angle θ in degrees)"));
+    functions.insert(tanD_F, translate("VTranslateVars", "tanD", "Tangent function working with degrees\nUsage: tanD(angle θ in degrees)"));
+    functions.insert(asinD_F, translate("VTranslateVars", "asinD", "Inverse sine function working with degrees\nUsage: asinD(x)"));
+    functions.insert(acosD_F, translate("VTranslateVars", "acosD", "Inverse cosine function working with degrees\nUsage: acosD(x)"));
+    functions.insert(atanD_F, translate("VTranslateVars", "atanD", "Inverse tangent function working with degrees\nUsage: atanD(x)"));
+    functions.insert(log2_F, translate("VTranslateVars", "log2", "Logarithm to the base 2\nUsage: log2(x)"));
+    functions.insert(log10_F, translate("VTranslateVars", "log10", "Logarithm to the base 10\nUsage: log10(x)"));
+    functions.insert(log_F, translate("VTranslateVars", "log", "Logarithm to the base 10\nUsage: log(x)"));
+    functions.insert(ln_F, translate("VTranslateVars", "ln", "Logarithm to base e (2.71828...)\nUsage: ln(x)"));
+    functions.insert(exp_F, translate("VTranslateVars", "exp", "E raised to the power of x\nUsage: exp(x) where e = 2.718"));
+    functions.insert(sqrt_F, translate("VTranslateVars", "sqrt", "Square root of a value\nUsage: sqrt(x)"));
+    functions.insert(sign_F, translate("VTranslateVars", "sign", "Sign function -1 if x<0; 1 if x>0\nUsage: sign(x)"));
+    functions.insert(rint_F, translate("VTranslateVars", "rint", "Round to nearest integer\nUsage: rint(float x)"));
+    functions.insert(abs_F, translate("VTranslateVars", "abs", "Absolute value\nUsage: abs(x)"));
+    functions.insert(min_F, translate("VTranslateVars", "min", "Min of all arguments\nUsage: min(arg 1; arg 2; ... arg n)"));
+    functions.insert(max_F, translate("VTranslateVars", "max", "Max of all arguments\nUsage: max(arg 1; arg 2; ... arg n)"));
+    functions.insert(sum_F, translate("VTranslateVars", "sum", "Sum of all arguments\nUsage: sum(arg 1; arg 2; ... arg n)"));
+    functions.insert(avg_F, translate("VTranslateVars", "avg", "Mean value of all arguments\nUsage: avg(arg 1; arg 2; ... arg n)"));
     functions.insert(fmod_F, translate("VTranslateVars", "fmod",
-                                       "Returns the floating-point remainder of numer/denom (rounded towards zero)"));
+                    "Returns the floating-point remainder of x/y (rounded towards zero)\nUsage: fmod(x; y)"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -761,9 +762,9 @@ QString VTranslateVars::PlaceholderFromUserText(QString text) const
 //---------------------------------------------------------------------------------------------------------------------
 QString VTranslateVars::VarToUser(const QString &var) const
 {
-    if (measurements.contains(var))
+    if (m_measurements.contains(var))
     {
-        return measurements.value(var).translate();
+        return m_measurements.value(var).translate();
     }
 
     if (functions.contains(var))
@@ -919,7 +920,7 @@ QString VTranslateVars::FormulaFromUser(const QString &formula, bool osSeparator
             const qreal d = loc.toDouble(nValues.at(i), &ok);
             if (ok == false)
             {
-                qDebug()<<"Can't convert to double token"<<nValues.at(i);
+                qDebug() << "Can't convert to double token"<<nValues.at(i);
                 continue;//Leave with out translation
             }
 
@@ -944,11 +945,11 @@ QString VTranslateVars::TryFormulaFromUser(const QString &formula, bool osSepara
 {
     try
     {
-        return qApp->TrVars()->FormulaFromUser(formula, osSeparator);
+        return qApp->translateVariables()->FormulaFromUser(formula, osSeparator);
     }
-    catch (qmu::QmuParserError &e)// In case something bad will happen
+    catch (qmu::QmuParserError &error)// In case something bad will happen
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return formula;
     }
 }
@@ -977,13 +978,13 @@ QString VTranslateVars::FormulaToUser(const QString &formula, bool osSeparator) 
         tokens = cal->GetTokens();// Tokens (variables, measurements)
         numbers = cal->GetNumbers();// All numbers in expression for changing decimal separator
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         qDebug() << "\nMath parser error:\n"
-                 << "--------------------------------------\n"
-                 << "Message:     " << e.GetMsg()  << "\n"
-                 << "Expression:  " << e.GetExpr() << "\n"
-                 << "--------------------------------------";
+                   << "--------------------------------------\n"
+                   << "Message:     " << error.GetMsg()  << "\n"
+                   << "Expression:  " << error.GetExpr() << "\n"
+                   << "--------------------------------------";
         return newFormula;
     }
 
@@ -991,10 +992,10 @@ QString VTranslateVars::FormulaToUser(const QString &formula, bool osSeparator) 
     QList<QString> tValues = tokens.values();
     for (int i = 0; i < tKeys.size(); ++i)
     {
-        if (measurements.contains(tValues.at(i)))
+        if (m_measurements.contains(tValues.at(i)))
         {
-            newFormula.replace(tKeys.at(i), tValues.at(i).length(), measurements.value(tValues.at(i)).translate());
-            int bias = tValues.at(i).length() - measurements.value(tValues.at(i)).translate().length();
+            newFormula.replace(tKeys.at(i), tValues.at(i).length(), m_measurements.value(tValues.at(i)).translate());
+            int bias = tValues.at(i).length() - m_measurements.value(tValues.at(i)).translate().length();
             if (bias != 0)
             {// Translated token has different length than original. Position next tokens need to be corrected.
                 CorrectionsPositions(tKeys.at(i), bias, tokens, numbers);
@@ -1060,7 +1061,7 @@ QString VTranslateVars::FormulaToUser(const QString &formula, bool osSeparator) 
             const qreal d = loc.toDouble(nValues.at(i), &ok);
             if (ok == false)
             {
-                qDebug()<<"Can't convert to double token"<<nValues.at(i);
+                qDebug() << "Can't convert to double token"<<nValues.at(i);
                 continue;//Leave with out translation
             }
 
@@ -1101,7 +1102,7 @@ void VTranslateVars::Retranslate()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QMap<QString, qmu::QmuTranslation> VTranslateVars::GetFunctions() const
+QMap<QString, qmu::QmuTranslation> VTranslateVars::getFunctions() const
 {
     return functions;
 }

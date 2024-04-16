@@ -22,8 +22,8 @@
  *****************************************************************************/
 
 
-#ifndef LINEWEIGHT_COMBOBOX_H
-#define LINEWEIGHT_COMBOBOX_H
+#ifndef EXPORT_FORMAT_COMBOBOX_H
+#define EXPORT_FORMAT_COMBOBOX_H
 
 #include <QComboBox>
 #include <QWidget>
@@ -44,7 +44,7 @@ public:
 
     void                init();
 
-    LayoutExportFormat getExportFormat() const;
+    LayoutExportFormat  getExportFormat() const;
     void                setExportFormat(LayoutExportFormat &format);
     static QString      exportFormatDescription(LayoutExportFormat format);
     static QString      makeHelpFormatList();
@@ -62,7 +62,7 @@ private:
     static bool         testPdf();
     static bool         havePdf;
     static bool         tested;
-    LayoutExportFormat m_currentFormat;
+    LayoutExportFormat  m_currentFormat;
 };
 
-#endif
+#endif //EXPORT_FORMAT_COMBOBOX_H

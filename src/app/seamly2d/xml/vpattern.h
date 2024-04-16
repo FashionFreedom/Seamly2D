@@ -93,14 +93,16 @@ public:
     void addEmptyCustomVariable(const QString &name);
     void addEmptyCustomVariableAfter(const QString &after, const QString &name);
     void removeCustomVariable(const QString &name);
-    void MoveUpIncrement(const QString &name);
-    void MoveDownIncrement(const QString &name);
+    void moveVariableUp(const QString &name);
+    void moveVariableDown(const QString &name);
 
-    void setIncrementName(const QString &name, const QString &text);
-    void SetIncrementFormula(const QString &name, const QString &text);
-    void setIncrementDescription(const QString &name, const QString &text);
+    void setVariableName(const QString &name, const QString &text);
+    void setVariableFormula(const QString &name, const QString &text);
+    void setVariableDescription(const QString &name, const QString &text);
 
     void replaceNameInFormula(QVector<VFormulaField> &expressions, const QString &name, const QString &newName);
+
+    QStringList    GetCurrentAlphabet() const;
 
     virtual QString GenerateLabel(const LabelType &type, const QString &reservedName = QString())const Q_DECL_OVERRIDE;
     virtual QString GenerateSuffix(const QString &type) const Q_DECL_OVERRIDE;
@@ -114,10 +116,10 @@ public:
     int  GetDefCustomSize() const;
     void SetDefCustomSize(int value);
 
-    bool IsReadOnly() const;
+    bool isReadOnly() const;
     void SetReadOnly(bool rOnly);
 
-    void LiteParseIncrements();
+    void LiteParseVariables();
 
     static const QString AttrReadOnly;
 
@@ -163,7 +165,7 @@ private:
 
     void           ParsePathElement(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse);
 
-    void           ParseIncrementsElement(const QDomNode &node);
+    void           parseVariablesElement(const QDomNode &node);
     void           PrepareForParse(const Document &parse);
     void           ToolsCommonAttributes(const QDomElement &domElement, quint32 &id);
     void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, QString &name, qreal &mx,
@@ -177,6 +179,7 @@ private:
     template <typename T>
     QRectF         ToolBoundingRect(const QRectF &rec, const quint32 &id) const;
     void           parseCurrentDraftBlock();
+
     QString        GetLabelBase(quint32 index)const;
 
     void ParseToolBasePoint(VMainGraphicsScene *scene, const QDomElement &domElement, const Document &parse);
@@ -239,8 +242,8 @@ private:
 
     qreal EvalFormula(VContainer *data, const QString &formula, bool *ok) const;
 
-    QDomElement MakeEmptyIncrement(const QString &name);
-    QDomElement FindIncrement(const QString &name) const;
+    QDomElement createEmptyVariable(const QString &name);
+    QDomElement findVariable(const QString &name) const;
 
     void GarbageCollector();
 };

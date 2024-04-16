@@ -1,10 +1,10 @@
 /***************************************************************************
  **  @file   vcontainer.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 11, 2022
+ **  @date   17 Sep, 2023
  **
  **  @copyright
- **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
  **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
@@ -72,10 +72,10 @@
 #include "variables/vcurveangle.h"
 #include "variables/vcurvelength.h"
 #include "variables/vcurveclength.h"
-#include "variables/vincrement.h"
+#include "variables/custom_variable.h"
 #include "variables/vlineangle.h"
 #include "variables/vlinelength.h"
-#include "variables/vmeasurement.h"
+#include "variables/measurement_variable.h"
 #include "variables/vvariable.h"
 #include "vtranslatevars.h"
 
@@ -255,7 +255,7 @@ quint32 VContainer::getNextId()
     //But for now better to keep it as it is now.
     if (_id == UINT_MAX)
     {
-        qCritical()<<(tr("Number of free id exhausted."));
+        qCritical() << (tr("Number of free id exhausted."));
     }
     _id++;
     return _id;
@@ -298,7 +298,7 @@ void VContainer::ClearForFullParse()
 
     d->pieces->clear();
     d->piecePaths->clear();
-    ClearVariables(VarType::Increment);
+    ClearVariables(VarType::Variable);
     ClearVariables(VarType::LineAngle);
     ClearVariables(VarType::LineLength);
     ClearVariables(VarType::CurveLength);
@@ -534,15 +534,15 @@ void VContainer::removeCustomVariable(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const QMap<QString, QSharedPointer<VMeasurement> > VContainer::DataMeasurements() const
+const QMap<QString, QSharedPointer<MeasurementVariable> > VContainer::DataMeasurements() const
 {
-    return DataVar<VMeasurement>(VarType::Measurement);
+    return DataVar<MeasurementVariable>(VarType::Measurement);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const QMap<QString, QSharedPointer<VIncrement> > VContainer::variablesData() const
+const QMap<QString, QSharedPointer<CustomVariable> > VContainer::variablesData() const
 {
-    return DataVar<VIncrement>(VarType::Increment);
+    return DataVar<CustomVariable>(VarType::Variable);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -602,7 +602,7 @@ const Unit *VContainer::GetPatternUnit() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const VTranslateVars *VContainer::GetTrVars() const
+const VTranslateVars *VContainer::getTranslateVariables() const
 {
     return d->trVars;
 }
@@ -618,7 +618,7 @@ const QMap<QString, QSharedPointer<T> > VContainer::DataVar(const VarType &type)
     {
         if (i.value()->GetType() == type)
         {
-            QSharedPointer<T> var = GetVariable<T>(i.key());
+            QSharedPointer<T> var = getVariable<T>(i.key());
             map.insert(d->trVars->VarToUser(i.key()), var);
         }
     }
@@ -632,7 +632,7 @@ void VContainer::ClearUniqueNames()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VContainer::ClearUniqueIncrementNames()
+void VContainer::clearUniqueVariableNames()
 {
 	const QList<QString> list = uniqueNames.values();
     ClearUniqueNames();
@@ -651,7 +651,7 @@ void VContainer::ClearUniqueIncrementNames()
  * @brief SetSize set value of size
  * @param size value of size
  */
-void VContainer::SetSize(qreal size)
+void VContainer::setSize(qreal size)
 {
     _size = size;
 }
@@ -661,7 +661,7 @@ void VContainer::SetSize(qreal size)
  * @brief SetGrowth set value of growth
  * @param height value of height
  */
-void VContainer::SetHeight(qreal height)
+void VContainer::setHeight(qreal height)
 {
     _height = height;
 }

@@ -78,8 +78,8 @@ message(seamly2d.pro: Examples: $$[QT_INSTALL_EXAMPLES])
 # Path to resource file.
 win32:RC_FILE = share/resources/seamly2d.rc
 
-# INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES and INSTALL_LABEL_TEMPLATES inside tables.pri
-include(../tables.pri)
+# INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES and INSTALL_LABEL_TEMPLATES inside samples.pri
+include(../samples.pri)
 
 win32 {
     INSTALL_PDFTOPS += ../../../dist/win/pdftops.exe
@@ -115,9 +115,9 @@ unix{
         pixmaps.files += \
             ../../../dist/$${TARGET}.png \
             ../../../dist/seamlyme.png \
-            ../../../dist/application-x-seamly2d-pattern.png \
-            ../../../dist/application-x-seamly2d-i-measurements.png \
-            ../../../dist/application-x-seamly2d-s-measurements.png \
+            ../../../dist/application-x-seamly2d-2d_file.png \
+            ../../../dist/application-x-seamlyme-individual_size_file.png \
+            ../../../dist/application-x-seamlyme-multi_size_file.png \
 
         # Path to multisize measurement after installation
         multisize.path = $$PREFIX/share/$${TARGET}/tables/multisize/
@@ -161,9 +161,9 @@ unix{
         xpdf.files += $${PWD}/../../../dist/macx/bin64/pdftops
 
         # logo on macx.
-        ICON = ../../../dist/Seamly2D.icns
+        ICON = ../../../dist/seamly2d.icns
 
-        QMAKE_INFO_PLIST = $${PWD}/../../../dist/macx/seamly2d/Info.plist
+        QMAKE_INFO_PLIST = $${PWD}/../../../dist/macx/seamly2d/info.plist
 
         # Copy to bundle multisize measurements files
         multisize.path = $${RESOURCES_DIR}/tables/multisize
@@ -178,9 +178,9 @@ unix{
         label.files = $$INSTALL_LABEL_TEMPLATES
 
         icns_resources.path = $${RESOURCES_DIR}
-        icns_resources.files += $$PWD/../../../dist/macx/i-measurements.icns
-        icns_resources.files += $$PWD/../../../dist/macx/s-measurements.icns
-        icns_resources.files += $$PWD/../../../dist/macx/pattern.icns
+        icns_resources.files += $$PWD/../../../dist/macx/individual_size_file.icns
+        icns_resources.files += $$PWD/../../../dist/macx/multi_size_file.icns
+        icns_resources.files += $$PWD/../../../dist/macx/2d_file.icns
 
         QMAKE_BUNDLE_DATA += \
             templates \
@@ -220,6 +220,16 @@ DEPENDPATH += $$PWD/../../libs/vtools
 
 win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vtools/$${DESTDIR}/vtools.lib
 else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vtools/$${DESTDIR}/libvtools.a
+
+#Tools static library (depend on VWidgets, VMisc, VPatternDB)
+unix|win32: LIBS += -L$$OUT_PWD/../../libs/tools/$${DESTDIR}/ -ltools
+
+INCLUDEPATH += $$PWD/../../libs/tools
+INCLUDEPATH += $$OUT_PWD/../../libs/tools/$${UI_DIR} # For UI files
+DEPENDPATH += $$PWD/../../libs/tools
+
+win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/tools/$${DESTDIR}/tools.lib
+else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/tools/$${DESTDIR}/libtools.a
 
 #VWidgets static library
 unix|win32: LIBS += -L$$OUT_PWD/../../libs/vwidgets/$${DESTDIR}/ -lvwidgets

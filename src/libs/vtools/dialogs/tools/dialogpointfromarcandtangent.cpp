@@ -76,7 +76,7 @@ DialogPointFromArcAndTangent::DialogPointFromArcAndTangent(const VContainer *dat
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     DialogTool::CheckState();
 
     FillComboBoxPoints(ui->comboBoxTangentPoint);
@@ -140,7 +140,7 @@ CrossCirclesPoint DialogPointFromArcAndTangent::GetCrossCirclesPoint() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromArcAndTangent::SetCrossCirclesPoint(const CrossCirclesPoint &p)
+void DialogPointFromArcAndTangent::setCirclesCrossPoint(const CrossCirclesPoint &p)
 {
     const qint32 index = ui->comboBoxResult->findData(static_cast<int>(p));
     if (index != -1)

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pattern>
+    <!--Pattern created with Seamly2D v2023.11.20.149 (https://seamly.io).-->
+    <version>0.2.4</version>
+    <unit>cm</unit>
+    <description/>
+    <notes/>
+    <patternLabel/>
+    <measurements>susan.smis</measurements>
+    <increments/>
+    <draftBlock name="Back">
+        <calculation>
+            <point id="1" mx="0.132292" my="0.264583" name="A" type="single" x="-0.878775" y="1.17113"/>
+            <point angle="270" basePoint="1" id="2" length="neck_side_to_waist_b" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="A1" type="endLine"/>
+            <point firstPoint="2" id="3" length="neck_back_to_waist_b * 1.05" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="A2" secondPoint="1" type="alongLine"/>
+            <point angle="270" basePoint="2" id="4" length="height_waist_side_to_hip" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="A3" type="endLine"/>
+            <point firstPoint="2" id="5" length="0.88 * armpit_to_waist_side" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="A4" secondPoint="3" type="alongLine"/>
+            <point angle="0" basePoint="1" id="6" length="0.5 * shoulder_tip_to_shoulder_tip_b" lineColor="black" lineType="dashDotDotLine" mx="0.132292" my="0.264583" name="A5" type="endLine"/>
+            <point angle="0" basePoint="5" id="7" length="0.285 * bust_circ" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="A6" type="endLine"/>
+            <point firstPoint="3" id="8" length="Line_A4_A2 * 0.6" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="A7" secondPoint="5" type="alongLine"/>
+            <point firstPoint="6" id="9" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="A8" secondPoint="8" type="intersectXY"/>
+            <line firstPoint="8" id="10" lineColor="black" lineType="solidLine" secondPoint="9"/>
+            <point firstPoint="7" id="11" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="A9" secondPoint="2" type="intersectXY"/>
+            <point firstPoint="7" id="12" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="A10" secondPoint="4" type="intersectXY"/>
+            <line firstPoint="2" id="13" lineColor="black" lineType="solidLine" secondPoint="11"/>
+            <line firstPoint="4" id="14" lineColor="black" lineType="solidLine" secondPoint="12"/>
+            <line firstPoint="7" id="15" lineColor="black" lineType="solidLine" secondPoint="12"/>
+            <point firstPoint="1" id="16" length="neck_circ * 0.215" lineColor="black" lineType="dashDotDotLine" mx="0.132292" my="0.264583" name="A11" secondPoint="6" type="alongLine"/>
+            <point firstPoint="16" id="17" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="A12" secondPoint="3" type="intersectXY"/>
+            <spline angle1="0" angle2="250" color="black" id="18" kAsm1="1.22" kAsm2="0.66" kCurve="1" point1="3" point4="16" type="simple"/>
+            <line firstPoint="6" id="19" lineColor="black" lineType="dashDotDotLine" secondPoint="9"/>
+            <point center="16" firstPoint="6" id="20" mx="0.132292" my="0.264583" name="A13" radius="shoulder_length" secondPoint="9" type="pointOfContact"/>
+            <line firstPoint="16" id="21" lineColor="black" lineType="dashDotDotLine" secondPoint="20"/>
+            <point angle="0" basePoint="20" id="32" length="Line_A11_A13 * 0.1" lineColor="black" lineType="dashDotDotLine" mx="0.132292" my="0.264583" name="A18" type="endLine"/>
+            <line firstPoint="16" id="33" lineColor="black" lineType="solidLine" secondPoint="32"/>
+            <point angle="0" firstPoint="32" id="34" length="Line_A5_A8" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="A19" secondPoint="16" type="normal"/>
+            <point firstPoint="32" id="35" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="A20" secondPoint="8" type="intersectXY"/>
+            <line firstPoint="32" id="36" lineColor="black" lineType="dashDotDotLine" secondPoint="35"/>
+            <spline color="black" id="37" kCurve="1" type="path">
+                <pathPoint angle="260.133" kAsm1="1" kAsm2="0.673267" pSpline="32"/>
+                <pathPoint angle="269.414" kAsm1="0.797003" kAsm2="1.19812" pSpline="9"/>
+                <pathPoint angle="358.963" kAsm1="1.02006" kAsm2="1" pSpline="7"/>
+            </spline>
+        </calculation>
+        <modeling/>
+        <pieces/>
+        <groups/>
+    </draftBlock>
+    <draftBlock name="Front">
+        <calculation>
+            <point id="27" mx="1.70741" my="0.264583" name="B" type="single" x="65.6021" y="1.00193"/>
+            <point angle="270" basePoint="27" id="28" length="Line_A_A1" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="B1" type="endLine"/>
+            <point angle="270.065" basePoint="28" id="29" length="Line_A1_A3" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="B2" type="endLine"/>
+            <point firstPoint="28" id="30" length="Line_A1_A4" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="B3" secondPoint="27" type="alongLine"/>
+            <point angle="180" basePoint="30" id="31" length="bust_circ * 0.285" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="B4" type="endLine"/>
+            <point firstPoint="28" id="38" length="neck_front_to_waist_flat_f" lineColor="black" lineType="solidLine" mx="1.34343" my="-1.09794" name="B5" secondPoint="27" type="alongLine"/>
+            <point firstPoint="28" id="39" length="neck_side_to_waist_f" lineColor="black" lineType="solidLine" mx="0.732337" my="-0.785496" name="B6" secondPoint="27" type="alongLine"/>
+            <point angle="180" basePoint="39" id="40" length="Line_A_A11" lineColor="black" lineType="dashDotDotLine" mx="0.132292" my="0.264583" name="B7" type="endLine"/>
+            <point angle="180" basePoint="39" id="41" length="shoulder_tip_to_shoulder_tip_f/2" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="B8" type="endLine"/>
+            <point angle="180" basePoint="41" id="42" length="shoulder_length * 0.1" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="B9" type="endLine"/>
+            <line firstPoint="39" id="43" lineColor="black" lineType="dashDotDotLine" secondPoint="30"/>
+            <point firstPoint="39" id="44" length="Line_B6_B3* 0.65" lineColor="black" lineType="none" mx="1.19203" my="0.264583" name="B10" secondPoint="30" type="alongLine"/>
+            <point firstPoint="41" id="45" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="1.7219" my="0.643062" name="B11" secondPoint="44" type="intersectXY"/>
+            <point firstPoint="42" id="46" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="-2.28998" my="0.264583" name="B12" secondPoint="44" type="intersectXY"/>
+            <line firstPoint="46" id="47" lineColor="black" lineType="dashDotDotLine" secondPoint="44"/>
+            <line firstPoint="41" id="48" lineColor="black" lineType="dashDotDotLine" secondPoint="45"/>
+            <spline angle1="300" angle2="180" color="black" id="49" kAsm1="0.25" kAsm2="1.08" kCurve="1" point1="40" point4="38" type="simple"/>
+            <point center="40" firstPoint="41" id="50" mx="0.132292" my="0.264583" name="B13" radius="shoulder_length" secondPoint="45" type="pointOfContact"/>
+            <line firstPoint="40" id="51" lineColor="black" lineType="dashDotDotLine" secondPoint="50"/>
+            <point firstPoint="42" id="52" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="B14" secondPoint="50" type="intersectXY"/>
+            <line firstPoint="50" id="53" lineColor="black" lineType="dashDotDotLine" secondPoint="52"/>
+            <line firstPoint="40" id="54" lineColor="black" lineType="solidLine" secondPoint="52"/>
+            <spline color="black" id="55" kCurve="1" type="path">
+                <pathPoint angle="297.248" kAsm1="1" kAsm2="0.522647" pSpline="52"/>
+                <pathPoint angle="267.363" kAsm1="0.775282" kAsm2="1.76673" pSpline="45"/>
+                <pathPoint angle="179.515" kAsm1="0.791954" kAsm2="1" pSpline="31"/>
+            </spline>
+            <point firstPoint="31" id="56" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="B15" secondPoint="28" type="intersectXY"/>
+            <point firstPoint="31" id="57" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="B16" secondPoint="29" type="intersectXY"/>
+            <line firstPoint="31" id="58" lineColor="black" lineType="solidLine" secondPoint="57"/>
+            <line firstPoint="56" id="59" lineColor="black" lineType="solidLine" secondPoint="28"/>
+            <line firstPoint="57" id="60" lineColor="black" lineType="solidLine" secondPoint="29"/>
+            <point firstPoint="45" id="61" length="shoulder_length * 0.1" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="B17" secondPoint="44" type="alongLine"/>
+        </calculation>
+        <modeling/>
+        <pieces/>
+    </draftBlock>
+</pattern>

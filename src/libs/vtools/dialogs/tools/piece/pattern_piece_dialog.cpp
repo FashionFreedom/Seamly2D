@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   pattern_piece_dialog.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 11, 2022
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2022 Seamly, LLC
@@ -64,19 +64,22 @@
 #include "../vpatterndb/calculator.h"
 #include "../vpatterndb/vpiecenode.h"
 #include "../vpatterndb/vpiecepath.h"
-#include "../../support/dialogeditwrongformula.h"
+#include "../../support/edit_formula_dialog.h"
 #include "../../support/editlabeltemplate_dialog.h"
 #include "../../../tools/pattern_piece_tool.h"
 #include "../../../undocommands/savepiecepathoptions.h"
 
 #include <QColorDialog>
 #include <QFileInfo>
+#include <QLabel>
+#include <QLayoutItem>
 #include <QGuiApplication>
 #include <QKeyEvent>
 #include <QMenu>
 #include <QPixmap>
 #include <QScreen>
 #include <QSound>
+#include <QtDebug>
 #include <QTimer>
 #include <QtNumeric>
 
@@ -102,7 +105,7 @@ QString getFormulaFromUser(QPlainTextEdit *textEdit)
 
     QString formula = textEdit->toPlainText();
     formula.replace("\n", " ");
-    return qApp->TrVars()->TryFormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
 }
 }
 
@@ -132,17 +135,6 @@ PatternPieceDialog::PatternPieceDialog(const VContainer *data, const quint32 &to
     , m_oldData()
     , m_oldGeom()
     , m_oldGrainline()
-    , m_rotationBaseHeight(0)
-    , m_lengthBaseHeight(0)
-    , m_pieceLabelWidthBaseHeight(0)
-    , m_pieceLabelHeightBaseHeight(0)
-    , m_pieceLabelAngleBaseHeight(0)
-    , m_patternLabelWidthBaseHeight(0)
-    , m_patternLabelHeightBaseHeight(0)
-    , m_patternLabelAngleBaseHeight(0)
-    , m_widthFormula(0)
-    , m_beforeWidthFormula(0)
-    , m_afterWidthFormula(0)
     , m_timerWidth(nullptr)
     , m_timerWidthBefore(nullptr)
     , m_timerWidthAfter(nullptr)
@@ -158,7 +150,7 @@ PatternPieceDialog::PatternPieceDialog(const VContainer *data, const quint32 &to
     //Limit dialog height to 80% of screen size
     setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     enableApply(applyAllowed);
 
     initializeMainPathTab();
@@ -302,7 +294,7 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
     setInLayout(piece.isInLayout());
     setPieceLock(piece.isLocked());
 
-    const QString width = qApp->TrVars()->FormulaToUser(piece.getSeamAllowanceWidthFormula(), qApp->Settings()->GetOsSeparator());
+    const QString width = qApp->translateVariables()->FormulaToUser(piece.getSeamAllowanceWidthFormula(), qApp->Settings()->getOsSeparator());
     ui->widthFormula_PlainTextEdit->setPlainText(width);
     m_saWidth = piece.GetSAWidth();
 
@@ -458,7 +450,7 @@ void PatternPieceDialog::ChosenObject(quint32 id, const SceneObject &type)
                 case (SceneObject::Piece):
                 case (SceneObject::Unknown):
                 default:
-                    qDebug() << "Invalid scene object. Ignore.";
+                    qWarning() << "Invalid scene object. Ignore.";
                     break;
             }
         }
@@ -638,46 +630,64 @@ bool PatternPieceDialog::eventFilter(QObject *object, QEvent *event)
             }
             else if (keyEvent->modifiers() & Qt::ShiftModifier)
             {
+                VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
+                NotchType notchType = rowNode.getNotchType();
+                NotchSubType notchSubType = rowNode.getNotchSubType();
                 switch (keyEvent->key())
                 {
-                    case Qt::Key_X:
+                    case Qt::Key_N:
                     {
-                        setNotch(rowItem, false, NotchType::Slit);
+                        setNotch(rowItem, false, NotchType::Slit, notchSubType);
                         return true;
                     }
                     case Qt::Key_S:
                     {
-                        setNotch(rowItem, true, NotchType::Slit);
+                        setNotch(rowItem, true, NotchType::Slit, notchSubType);
                         return true;
                     }
                     case Qt::Key_T:
                     {
-                        setNotch(rowItem, true, NotchType::TNotch);
+                        setNotch(rowItem, true, NotchType::TNotch, notchSubType);
                         return true;
                     }
                     case Qt::Key_U:
                     {
-                        setNotch(rowItem, true, NotchType::UNotch);
+                        setNotch(rowItem, true, NotchType::UNotch, notchSubType);
                         return true;
                     }
                     case Qt::Key_I:
                     {
-                        setNotch(rowItem, true, NotchType::VInternal);
+                        setNotch(rowItem, true, NotchType::VInternal, notchSubType);
                         return true;
                     }
                     case Qt::Key_E:
                     {
-                        setNotch(rowItem, true, NotchType::VExternal);
+                        setNotch(rowItem, true, NotchType::VExternal, notchSubType);
                         return true;
                     }
                     case Qt::Key_C:
                     {
-                        setNotch(rowItem, true, NotchType::Castle);
+                        setNotch(rowItem, true, NotchType::Castle, notchSubType);
                         return true;
                     }
                     case Qt::Key_D:
                     {
-                        setNotch(rowItem, true, NotchType::Diamond);
+                        setNotch(rowItem, true, NotchType::Diamond, notchSubType);
+                        return true;
+                    }
+                    case Qt::Key_F:
+                    {
+                        setNotch(rowItem, true, notchType, NotchSubType::Straightforward);
+                        return true;
+                    }
+                    case Qt::Key_B:
+                    {
+                        setNotch(rowItem, true, notchType, NotchSubType::Bisector);
+                        return true;
+                    }
+                    case Qt::Key_X:
+                    {
+                        setNotch(rowItem, true, notchType, NotchSubType::Intersection);
                         return true;
                     }
                 }
@@ -757,7 +767,7 @@ void PatternPieceDialog::pieceNameChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::pieceColorChanged()
 {
-    const QColor color = QColorDialog::getColor(Qt::white, this, "Select Color", QColorDialog::DontUseNativeDialog);
+    const QColor color = QColorDialog::getColor(Qt::white, this, tr("Select Color"), QColorDialog::DontUseNativeDialog);
 
     if (color.isValid())
     {
@@ -780,6 +790,7 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
     QScopedPointer<QMenu> menu(new QMenu(ui->mainPath_ListWidget));
     NodeInfo info;
     NotchType notchType = NotchType::Slit;
+    NotchSubType notchSubType = NotchSubType::Straightforward;
     bool isNotch = false;
     QListWidgetItem *rowItem = ui->mainPath_ListWidget->item(row);
     SCASSERT(rowItem != nullptr);
@@ -794,6 +805,10 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
     QAction *actionVExternal = nullptr;
     QAction *actionCastle    = nullptr;
     QAction *actionDiamond   = nullptr;
+
+    QAction *actionStraightforward = nullptr;
+    QAction *actionBisector        = nullptr;
+    QAction *actionIntersection    = nullptr;
 
     QAction *actionReverse   = nullptr;
     QAction *actionDuplicate = nullptr;
@@ -813,14 +828,20 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
         actionNotch->setCheckable(true);
         actionNotch->setChecked(rowNode.isNotch());
 
-        actionNone      = notchMenu->addAction( tr("None") + QStringLiteral("\tShift + X"));
-        actionSlit      = notchMenu->addAction(QIcon("://icon/24x24/slit_notch.png"),       tr("Slit") + QStringLiteral("\tShift + S"));
-        actionTNotch    = notchMenu->addAction(QIcon("://icon/24x24/t_notch.png"),          tr("TNotch") + QStringLiteral("\tShift + T"));
-        actionUNotch    = notchMenu->addAction(QIcon("://icon/24x24/u_notch.png"),          tr("UNotch") + QStringLiteral("\tShift + U"));
-        actionVInternal = notchMenu->addAction(QIcon("://icon/24x24/internal_v_notch.png"), tr("VInternal") + QStringLiteral("\tShift + I"));
-        actionVExternal = notchMenu->addAction(QIcon("://icon/24x24/external_v_notch.png"), tr("VExternal") + QStringLiteral("\tShift + E"));
-        actionCastle    = notchMenu->addAction(QIcon("://icon/24x24/castle_notch.png"),     tr("Castle") + QStringLiteral("\tShift + C"));
-        actionDiamond   = notchMenu->addAction(QIcon("://icon/24x24/diamond_notch.png"),    tr("Diamond") + QStringLiteral("\tShift + D"));
+        QMenu *notchTypeMenu = notchMenu->addMenu(tr("Type"));
+        actionNone      = notchTypeMenu->addAction( tr("None") + QStringLiteral("\tShift + N"));
+        actionSlit      = notchTypeMenu->addAction(QIcon("://icon/24x24/slit_notch.png"),       tr("Slit") + QStringLiteral("\tShift + S"));
+        actionTNotch    = notchTypeMenu->addAction(QIcon("://icon/24x24/t_notch.png"),          tr("TNotch") + QStringLiteral("\tShift + T"));
+        actionUNotch    = notchTypeMenu->addAction(QIcon("://icon/24x24/u_notch.png"),          tr("UNotch") + QStringLiteral("\tShift + U"));
+        actionVInternal = notchTypeMenu->addAction(QIcon("://icon/24x24/internal_v_notch.png"), tr("VInternal") + QStringLiteral("\tShift + I"));
+        actionVExternal = notchTypeMenu->addAction(QIcon("://icon/24x24/external_v_notch.png"), tr("VExternal") + QStringLiteral("\tShift + E"));
+        actionCastle    = notchTypeMenu->addAction(QIcon("://icon/24x24/castle_notch.png"),     tr("Castle") + QStringLiteral("\tShift + C"));
+        actionDiamond   = notchTypeMenu->addAction(QIcon("://icon/24x24/diamond_notch.png"),    tr("Diamond") + QStringLiteral("\tShift + D"));
+
+        QMenu *notchSubtypeMenu = notchMenu->addMenu(tr("Subtype"));
+        actionStraightforward = notchSubtypeMenu->addAction(QIcon(), tr("Straightforward") + QStringLiteral("\tShift + F"));
+        actionBisector        = notchSubtypeMenu->addAction(QIcon(), tr("Bisector") + QStringLiteral("\tShift + B"));
+        actionIntersection    = notchSubtypeMenu->addAction(QIcon(), tr("Intersection") + QStringLiteral("\tShift + X"));
     }
 
     QAction *actionExcluded = menu->addAction(tr("Excluded") + QStringLiteral("\tCtrl + E"));
@@ -888,8 +909,23 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
             isNotch = true;
             notchType = NotchType::Diamond;
         }
+        else if (selectedAction == actionStraightforward)
+        {
+            isNotch = true;
+            notchSubType = NotchSubType::Straightforward;
+        }
+        else if (selectedAction == actionBisector)
+        {
+            isNotch = true;
+            notchSubType = NotchSubType::Bisector;
+        }
+        else if (selectedAction == actionIntersection)
+        {
+            isNotch = true;
+            notchSubType = NotchSubType::Intersection;
+        }
 
-        setNotch(rowItem, isNotch, notchType);
+        setNotch(rowItem, isNotch, notchType, notchSubType);
     }
 
     validateObjects(isMainPathValid());
@@ -1029,8 +1065,7 @@ void PatternPieceDialog::enableSeamAllowance(bool enable)
 
     if (!enable)
     {
-        ui->automatic_GroupBox->setEnabled(enable);
-        ui->custom_GroupBox->setEnabled(enable);
+        ui->autoCustom_TabWidget->setEnabled(enable);
     }
     else
     {
@@ -1041,8 +1076,7 @@ void PatternPieceDialog::enableSeamAllowance(bool enable)
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::enableBuiltIn(bool enable)
 {
-    ui->automatic_GroupBox->setEnabled(!enable);
-    ui->custom_GroupBox->setEnabled(!enable);
+    ui->autoCustom_TabWidget->setEnabled(!enable);
 
     if (enable)
     {
@@ -1079,13 +1113,8 @@ void PatternPieceDialog::nodeChanged(int index)
 
             QString w1Formula = node.GetFormulaSABefore();
             enableDefaultButton(ui->beforeDefault_PushButton, w1Formula);
-            w1Formula = qApp->TrVars()->FormulaToUser(w1Formula, qApp->Settings()->GetOsSeparator());
+            w1Formula = qApp->translateVariables()->FormulaToUser(w1Formula, qApp->Settings()->getOsSeparator());
 
-            //Increase textedit box height if needed.
-            if (w1Formula.length() > 80)
-            {
-                this->expandWidthBeforeFormulaTextEdit();
-            }
             ui->beforeWidthFormula_PlainTextEdit->setPlainText(w1Formula);
             MoveCursorToEnd(ui->beforeWidthFormula_PlainTextEdit);
 
@@ -1095,13 +1124,8 @@ void PatternPieceDialog::nodeChanged(int index)
 
             QString w2Formula = node.GetFormulaSAAfter();
             enableDefaultButton(ui->afterDefault_PushButton, w2Formula);
-            w2Formula = qApp->TrVars()->FormulaToUser(w2Formula, qApp->Settings()->GetOsSeparator());
+            w2Formula = qApp->translateVariables()->FormulaToUser(w2Formula, qApp->Settings()->getOsSeparator());
 
-            //Increase textedit box height if needed.
-            if (w2Formula.length() > 80)
-            {
-                this->expandWidthAfterFormulaTextEdit();
-            }
             ui->afterWidthFormula_PlainTextEdit->setPlainText(w2Formula);
             MoveCursorToEnd(ui->afterWidthFormula_PlainTextEdit);
 
@@ -1316,7 +1340,7 @@ void PatternPieceDialog::nodeAngleChanged(int index)
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::enableDefaultBeforeButton()
 {
-    const QString allowance = qApp->TrVars()->FormulaToUser(currentSeamAllowance, qApp->Settings()->GetOsSeparator());
+    const QString allowance = qApp->translateVariables()->FormulaToUser(currentSeamAllowance, qApp->Settings()->getOsSeparator());
     ui->beforeWidthFormula_PlainTextEdit->setPlainText(allowance);
     if (QPushButton *button = qobject_cast<QPushButton*>(sender()))
     {
@@ -1327,7 +1351,7 @@ void PatternPieceDialog::enableDefaultBeforeButton()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::enableDefaultAfterButton()
 {
-    const QString allowance = qApp->TrVars()->FormulaToUser(currentSeamAllowance, qApp->Settings()->GetOsSeparator());
+    const QString allowance = qApp->translateVariables()->FormulaToUser(currentSeamAllowance, qApp->Settings()->getOsSeparator());
     ui->afterWidthFormula_PlainTextEdit->setPlainText(allowance);
     if (QPushButton *button = qobject_cast<QPushButton*>(sender()))
     {
@@ -1412,10 +1436,10 @@ void PatternPieceDialog::pathDialogClosed(int result)
             updateCurrentCustomSARecord();
             updateCurrentInternalPathRecord();
         }
-        catch (const VExceptionBadId &e)
+        catch (const VExceptionBadId &error)
         {
             qCritical("%s\n\n%s\n\n%s", qUtf8Printable(tr("Error. Can't save piece path.")),
-                       qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                       qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         }
     }
     delete m_dialog;
@@ -1668,7 +1692,7 @@ void PatternPieceDialog::updateGrainlineValues()
         try
         {
             formula.replace("\n", " ");
-            formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
+            formula = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
             Calculator calculation;
             qreal calculatedValue = calculation.EvalFormula(data->DataVariables(), formula);
             if (qIsInf(calculatedValue) == true || qIsNaN(calculatedValue) == true)
@@ -1685,12 +1709,12 @@ void PatternPieceDialog::updateGrainlineValues()
                 ChangeColor(labelText, okColor);
             }
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
             formulaValueStr = tr("Error");
             !flagGrainlineAnchor ? ChangeColor(labelText, Qt::red) : ChangeColor(labelText, okColor);
             formulasOK[i] = false;
-            labelValue->setToolTip(tr("Parser error: %1").arg(e.GetMsg()));
+            labelValue->setToolTip(tr("Parser error: %1").arg(error.GetMsg()));
         }
 
         if (formulasOK[i] && formulaValueStr.isEmpty() == false)
@@ -1750,7 +1774,7 @@ void PatternPieceDialog::updatePieceLabelValues()
         try
         {
             formula.replace("\n", " ");
-            formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
+            formula = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
             Calculator calculation;
             qreal calculatedValue = calculation.EvalFormula(data->DataVariables(), formula);
             if (qIsInf(calculatedValue) == true || qIsNaN(calculatedValue) == true)
@@ -1767,12 +1791,12 @@ void PatternPieceDialog::updatePieceLabelValues()
                 ChangeColor(labelText, okColor);
             }
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
             formulaValueStr = tr("Error");
             !flagPieceLabelAnchor ? ChangeColor(labelText, Qt::red) : ChangeColor(labelText, okColor);
             formulasOK[i] = false;
-            labelValue->setToolTip(tr("Parser error: %1").arg(e.GetMsg()));
+            labelValue->setToolTip(tr("Parser error: %1").arg(error.GetMsg()));
         }
 
         if (formulasOK[i] && formulaValueStr.isEmpty() == false)
@@ -1835,7 +1859,7 @@ void PatternPieceDialog::updatePatternLabelValues()
         try
         {
             formula.replace("\n", " ");
-            formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
+            formula = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
             Calculator calculation;
             qreal calculatedValue = calculation.EvalFormula(data->DataVariables(), formula);
             if (qIsInf(calculatedValue) == true || qIsNaN(calculatedValue) == true)
@@ -1852,12 +1876,12 @@ void PatternPieceDialog::updatePatternLabelValues()
                 ChangeColor(labelText, okColor);
             }
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
             formulaValueStr = tr("Error");
             !flagPatternLabelAnchor ? ChangeColor(labelText, Qt::red) : ChangeColor(labelText, okColor);
             formulasOK[i] = false;
-            labelValue->setToolTip(tr("Parser error: %1").arg(e.GetMsg()));
+            labelValue->setToolTip(tr("Parser error: %1").arg(error.GetMsg()));
         }
 
         if (formulasOK[i] && formulaValueStr.isEmpty() == false)
@@ -1957,9 +1981,9 @@ void PatternPieceDialog::editGrainlineFormula()
         return;
     }
 
-    DialogEditWrongFormula dialog(data, NULL_ID, this);
+    EditFormulaDialog dialog(data, NULL_ID, this);
     dialog.setWindowTitle(title);
-    dialog.SetFormula(qApp->TrVars()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->GetOsSeparator()));
+    dialog.SetFormula(qApp->translateVariables()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->getOsSeparator()));
     dialog.setCheckZero(checkForZero);
     if (dialog.exec() == QDialog::Accepted)
     {
@@ -2014,9 +2038,9 @@ void PatternPieceDialog::editPieceLabelFormula()
         return;
     }
 
-    DialogEditWrongFormula dialog(data, NULL_ID, this);
+    EditFormulaDialog dialog(data, NULL_ID, this);
     dialog.setWindowTitle(title);
-    dialog.SetFormula(qApp->TrVars()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->GetOsSeparator()));
+    dialog.SetFormula(qApp->translateVariables()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->getOsSeparator()));
     dialog.setCheckZero(checkForZero);
     if (dialog.exec() == QDialog::Accepted)
     {
@@ -2074,9 +2098,9 @@ void PatternPieceDialog::editPatternLabelFormula()
         return;
     }
 
-    DialogEditWrongFormula dialog(data, NULL_ID, this);
+    EditFormulaDialog dialog(data, NULL_ID, this);
     dialog.setWindowTitle(title);
-    dialog.SetFormula(qApp->TrVars()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->GetOsSeparator()));
+    dialog.SetFormula(qApp->translateVariables()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->getOsSeparator()));
     dialog.setCheckZero(checkForZero);
     if (dialog.exec() == QDialog::Accepted)
     {
@@ -2101,60 +2125,6 @@ void PatternPieceDialog::editPatternLabelFormula()
         }
         updatePatternLabelValues();
     }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void PatternPieceDialog::expandGrainlineRotation()
-{
-    DeployFormula(ui->rotationFormula_LineEdit, ui->showRotation_PushButton, m_rotationBaseHeight);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void PatternPieceDialog::expandGrainlineLength()
-{
-    DeployFormula(ui->lengthFormula_LineEdit, ui->showLength_PushButton, m_lengthBaseHeight);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void PatternPieceDialog::expandPieceLabelWidth()
-{
-    DeployFormula(ui->pieceLabelWidthFormula_LineEdit, ui->showPieceLabelWidth_PushButton,
-                  m_pieceLabelWidthBaseHeight);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void PatternPieceDialog::expandPieceLabelHeight()
-{
-    DeployFormula(ui->pieceLabelHeightFormula_LineEdit, ui->showPieceLabelHeight_PushButton,
-                  m_pieceLabelHeightBaseHeight);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void PatternPieceDialog::expandPieceLabelAngle()
-{
-    DeployFormula(ui->pieceLabelAngleFormula_LineEdit, ui->showPieceLabelAngle_PushButton,
-                  m_pieceLabelAngleBaseHeight);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void PatternPieceDialog::expandPatternLabelWidth()
-{
-    DeployFormula(ui->patternLabelWidthFormula_LineEdit, ui->showPatternLabelWidth_PushButton,
-                  m_patternLabelWidthBaseHeight);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void PatternPieceDialog::expandPatternLabelHeight()
-{
-    DeployFormula(ui->patternLabelHeightFormula_LineEdit, ui->showPatternLabelHeight_PushButton,
-                  m_patternLabelHeightBaseHeight);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void PatternPieceDialog::expandPatternLabelAngle()
-{
-    DeployFormula(ui->patternLabelAngleFormula_LineEdit, ui->showPatternLabelAngle_PushButton,
-                  m_patternLabelAngleBaseHeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2194,7 +2164,7 @@ void PatternPieceDialog::evaluateDefaultWidth()
     if (m_saWidth >= 0)
     {
         VContainer *locData = const_cast<VContainer *> (data);
-        locData->AddVariable(currentSeamAllowance, new VIncrement(locData, currentSeamAllowance, 0, m_saWidth,
+        locData->AddVariable(currentSeamAllowance, new CustomVariable(locData, currentSeamAllowance, 0, m_saWidth,
                                                                   QString().setNum(m_saWidth), true,
                                                                   tr("Current seam allowance")));
 
@@ -2238,7 +2208,7 @@ void PatternPieceDialog::evaluateAfterWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::editDefaultSeamAllowanceWidth()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width"));
     dialog->SetFormula(getSeamAllowanceWidthFormula());
     dialog->setCheckLessThanZero(true);
@@ -2253,7 +2223,7 @@ void PatternPieceDialog::editDefaultSeamAllowanceWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::editBeforeSeamAllowanceWidth()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width before"));
     dialog->SetFormula(getFormulaFromUser(ui->beforeWidthFormula_PlainTextEdit));
     dialog->setCheckLessThanZero(true);
@@ -2268,7 +2238,7 @@ void PatternPieceDialog::editBeforeSeamAllowanceWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::editAfterSeamAllowanceWidth()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width after"));
     dialog->SetFormula(getFormulaFromUser(ui->afterWidthFormula_PlainTextEdit));
     dialog->setCheckLessThanZero(true);
@@ -2307,26 +2277,6 @@ void PatternPieceDialog::afterWidthChanged()
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
 
     ValFormulaChanged(flagAfterFormula, ui->afterWidthFormula_PlainTextEdit, m_timerWidthAfter, postfix);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void PatternPieceDialog::expandWidthFormulaTextEdit()
-{
-    DeployFormula(ui->widthFormula_PlainTextEdit, ui->widthGrow_PushButton, m_widthFormula);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void PatternPieceDialog::expandWidthBeforeFormulaTextEdit()
-{
-    DeployFormula(ui->beforeWidthFormula_PlainTextEdit, ui->beforeWidthGrow_PushButton,
-                  m_beforeWidthFormula);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void PatternPieceDialog::expandWidthAfterFormulaTextEdit()
-{
-    DeployFormula(ui->afterWidthFormula_PlainTextEdit, ui->afterWidthGrow_PushButton,
-                  m_afterWidthFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2941,9 +2891,6 @@ void PatternPieceDialog::initializeSeamAllowanceTab()
     ui->seams_CheckBox->setChecked(qApp->Settings()->getDefaultSeamAllowanceVisibilty());
 
     plainTextEditFormula = ui->widthFormula_PlainTextEdit;
-    this->m_widthFormula = ui->widthFormula_PlainTextEdit->height();
-    this->m_beforeWidthFormula = ui->beforeWidthFormula_PlainTextEdit->height();
-    this->m_afterWidthFormula = ui->afterWidthFormula_PlainTextEdit->height();
 
     ui->widthFormula_PlainTextEdit->installEventFilter(this);
     ui->beforeWidthFormula_PlainTextEdit->installEventFilter(this);
@@ -3000,13 +2947,6 @@ void PatternPieceDialog::initializeSeamAllowanceTab()
             &PatternPieceDialog::beforeWidthChanged);
     connect(ui->afterWidthFormula_PlainTextEdit, &QPlainTextEdit::textChanged, this,
             &PatternPieceDialog::afterWidthChanged);
-
-    connect(ui->widthGrow_PushButton, &QPushButton::clicked, this,
-            &PatternPieceDialog::expandWidthFormulaTextEdit);
-    connect(ui->beforeWidthGrow_PushButton, &QPushButton::clicked,
-            this, &PatternPieceDialog::expandWidthBeforeFormulaTextEdit);
-    connect(ui->afterWidthGrow_PushButton, &QPushButton::clicked, this,
-            &PatternPieceDialog::expandWidthAfterFormulaTextEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3101,10 +3041,6 @@ void PatternPieceDialog::initializeLabelsTab()
     ui->pieceLabelWidthFormula_LineEdit->setPlainText(QString::number(qApp->Settings()->getDefaultLabelWidth()));
     ui->pieceLabelHeightFormula_LineEdit->setPlainText(QString::number(qApp->Settings()->getDefaultLabelHeight()));
 
-    m_pieceLabelWidthBaseHeight  = ui->pieceLabelWidthFormula_LineEdit->height();
-    m_pieceLabelHeightBaseHeight = ui->pieceLabelHeightFormula_LineEdit->height();
-    m_pieceLabelAngleBaseHeight  = ui->pieceLabelAngleFormula_LineEdit->height();
-
     connect(ui->pieceLabel_GroupBox, &QGroupBox::toggled, this, &PatternPieceDialog::enabledPieceLabel);
     initAnchorPoint(ui->pieceLabelCenterAnchor_ComboBox);
     initAnchorPoint(ui->pieceLabelTopLeftAnchor_ComboBox);
@@ -3130,19 +3066,12 @@ void PatternPieceDialog::initializeLabelsTab()
     connect(ui->pieceLabelAngleFormula_LineEdit, &QPlainTextEdit::textChanged, this,
             &PatternPieceDialog::updatePieceLabelValues);
 
-    connect(ui->showPieceLabelWidth_PushButton,  &QPushButton::clicked,
-            this, &PatternPieceDialog::expandPieceLabelWidth);
-    connect(ui->showPieceLabelHeight_PushButton, &QPushButton::clicked,
-            this, &PatternPieceDialog::expandPieceLabelHeight);
-    connect(ui->showPieceLabelAngle_PushButton,  &QPushButton::clicked,
-            this, &PatternPieceDialog::expandPieceLabelAngle);
-
     connect(ui->editPieceLabel_PushButton, &QPushButton::clicked, this, &PatternPieceDialog::editPieceLabel);
 
     if (m_pieceLabelLines.isEmpty())
     {
         VLabelTemplate labelTemplate;
-        QString filename = qApp->Settings()->getDefaultPatternTemplate();
+        QString filename = qApp->Settings()->getDefaultPieceTemplate();
         if (QFileInfo(filename).exists())
         {
             labelTemplate.setXMLContent(VLabelTemplateConverter(filename).Convert());
@@ -3157,10 +3086,6 @@ void PatternPieceDialog::initializeLabelsTab()
 
     ui->patternLabelWidthFormula_LineEdit->setPlainText(QString::number(qApp->Settings()->getDefaultLabelWidth()));
     ui->patternLabelHeightFormula_LineEdit->setPlainText(QString::number(qApp->Settings()->getDefaultLabelHeight()));
-
-    m_patternLabelWidthBaseHeight  = ui->patternLabelWidthFormula_LineEdit->height();
-    m_patternLabelHeightBaseHeight = ui->patternLabelHeightFormula_LineEdit->height();
-    m_patternLabelAngleBaseHeight  = ui->patternLabelAngleFormula_LineEdit->height();
 
     connect(ui->patternLabel_GroupBox, &QGroupBox::toggled, this, &PatternPieceDialog::enabledPatternLabel);
     initAnchorPoint(ui->patternLabelCenterAnchor_ComboBox);
@@ -3186,13 +3111,6 @@ void PatternPieceDialog::initializeLabelsTab()
             &PatternPieceDialog::updatePatternLabelValues);
     connect(ui->patternLabelAngleFormula_LineEdit,  &QPlainTextEdit::textChanged, this,
             &PatternPieceDialog::updatePatternLabelValues);
-
-    connect(ui->showPatternLabelWidth_PushButton,  &QPushButton::clicked,
-            this, &PatternPieceDialog::expandPatternLabelWidth);
-    connect(ui->showPatternLabelHeight_PushButton, &QPushButton::clicked,
-            this, &PatternPieceDialog::expandPatternLabelHeight);
-    connect(ui->showPatternLabelAngle_PushButton,  &QPushButton::clicked,
-            this, &PatternPieceDialog::expandPatternLabelAngle);
 
     connect(ui->editPatternLabel_PushButton, &QPushButton::clicked, this, &PatternPieceDialog::editPatternLabel);
 
@@ -3231,20 +3149,11 @@ void PatternPieceDialog::initializeGrainlineTab()
     connect(ui->rotationFormula_LineEdit, &QPlainTextEdit::textChanged, this,
             &PatternPieceDialog::updateGrainlineValues);
 
-    connect(ui->showRotation_PushButton, &QPushButton::clicked, this,
-            &PatternPieceDialog::expandGrainlineRotation);
-
-    connect(ui->showLength_PushButton, &QPushButton::clicked, this,
-            &PatternPieceDialog::expandGrainlineLength);
-
     enabledGrainline();
 
     ui->arrow_ComboBox->addItem(tr("Both"));
     ui->arrow_ComboBox->addItem(tr("Just front"));
     ui->arrow_ComboBox->addItem(tr("Just rear"));
-
-    m_rotationBaseHeight = ui->rotationFormula_LineEdit->height();
-    m_lengthBaseHeight   = ui->lengthFormula_LineEdit->height();
 
     initAnchorPoint(ui->grainlineCenterAnchor_ComboBox);
     initAnchorPoint(ui->grainlineTopAnchor_ComboBox);
@@ -3330,18 +3239,13 @@ QString PatternPieceDialog::getSeamAllowanceWidthFormula() const
 {
     QString width = ui->widthFormula_PlainTextEdit->toPlainText();
     width.replace("\n", " ");
-    return qApp->TrVars()->TryFormulaFromUser(width, qApp->Settings()->GetOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(width, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::setSeamAllowanceWidthFormula(const QString &formula)
 {
-    const QString width = qApp->TrVars()->FormulaToUser(formula, qApp->Settings()->GetOsSeparator());
-    //Increase textedit box height if needed.
-    if (width.length() > 80)
-    {
-        this->expandWidthFormulaTextEdit();
-    }
+    const QString width = qApp->translateVariables()->FormulaToUser(formula, qApp->Settings()->getOsSeparator());
     ui->widthFormula_PlainTextEdit->setPlainText(width);
 
     PatternPieceVisual *path = qobject_cast<PatternPieceVisual *>(vis);
@@ -3390,12 +3294,7 @@ void PatternPieceDialog::setGrainlineAngle(QString angleFormula)
         angleFormula = QString("0");
     }
 
-    const QString formula = qApp->TrVars()->FormulaToUser(angleFormula, qApp->Settings()->GetOsSeparator());
-    //Increase textedit box height if needed.
-    if (formula.length() > 80)
-    {
-        this->expandGrainlineRotation();
-    }
+    const QString formula = qApp->translateVariables()->FormulaToUser(angleFormula, qApp->Settings()->getOsSeparator());
     ui->rotationFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->rotationFormula_LineEdit);
@@ -3409,13 +3308,7 @@ void PatternPieceDialog::setGrainlineLength(QString lengthFormula)
         lengthFormula = QString().setNum(UnitConvertor(1, Unit::Cm, *data->GetPatternUnit()));
     }
 
-    const QString formula = qApp->TrVars()->FormulaToUser(lengthFormula, qApp->Settings()->GetOsSeparator());
-    //Increase textedit box height if needed.
-    if (formula.length() > 80)
-    {
-        this->expandGrainlineLength();
-    }
-
+    const QString formula = qApp->translateVariables()->FormulaToUser(lengthFormula, qApp->Settings()->getOsSeparator());
     ui->lengthFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->lengthFormula_LineEdit);
@@ -3429,13 +3322,7 @@ void PatternPieceDialog::setPieceLabelWidth(QString widthFormula)
         widthFormula = QString().setNum(UnitConvertor(1, Unit::Cm, *data->GetPatternUnit()));
     }
 
-    const QString formula = qApp->TrVars()->FormulaToUser(widthFormula, qApp->Settings()->GetOsSeparator());
-    //Increase textedit box height if needed.
-    if (formula.length() > 80)
-    {
-        this->expandPieceLabelWidth();
-    }
-
+    const QString formula = qApp->translateVariables()->FormulaToUser(widthFormula, qApp->Settings()->getOsSeparator());
     ui->pieceLabelWidthFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->pieceLabelWidthFormula_LineEdit);
@@ -3449,13 +3336,7 @@ void PatternPieceDialog::setPieceLabelHeight(QString heightFormula)
         heightFormula = QString().setNum(UnitConvertor(1, Unit::Cm, *data->GetPatternUnit()));
     }
 
-    const QString formula = qApp->TrVars()->FormulaToUser(heightFormula, qApp->Settings()->GetOsSeparator());
-    //Increase textedit box height if needed.
-    if (formula.length() > 80)
-    {
-        this->expandPieceLabelHeight();
-    }
-
+    const QString formula = qApp->translateVariables()->FormulaToUser(heightFormula, qApp->Settings()->getOsSeparator());
     ui->pieceLabelHeightFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->pieceLabelHeightFormula_LineEdit);
@@ -3469,13 +3350,7 @@ void PatternPieceDialog::setPieceLabelAngle(QString angleFormula)
         angleFormula = QString("0");
     }
 
-    const QString formula = qApp->TrVars()->FormulaToUser(angleFormula, qApp->Settings()->GetOsSeparator());
-    //Increase textedit box height if needed.
-    if (formula.length() > 80)
-    {
-        this->expandPieceLabelAngle();
-    }
-
+    const QString formula = qApp->translateVariables()->FormulaToUser(angleFormula, qApp->Settings()->getOsSeparator());
     ui->pieceLabelAngleFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->pieceLabelAngleFormula_LineEdit);
@@ -3489,13 +3364,7 @@ void PatternPieceDialog::setPatternLabelWidth(QString widthFormula)
         widthFormula = QString().setNum(UnitConvertor(1, Unit::Cm, *data->GetPatternUnit()));
     }
 
-    const QString formula = qApp->TrVars()->FormulaToUser(widthFormula, qApp->Settings()->GetOsSeparator());
-    //Increase textedit box height if needed.
-    if (formula.length() > 80)
-    {
-        this->expandPatternLabelWidth();
-    }
-
+    const QString formula = qApp->translateVariables()->FormulaToUser(widthFormula, qApp->Settings()->getOsSeparator());
     ui->patternLabelWidthFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->patternLabelWidthFormula_LineEdit);
@@ -3509,13 +3378,7 @@ void PatternPieceDialog::setPatternLabelHeight(QString heightFormula)
         heightFormula = QString().setNum(UnitConvertor(1, Unit::Cm, *data->GetPatternUnit()));
     }
 
-    const QString formula = qApp->TrVars()->FormulaToUser(heightFormula, qApp->Settings()->GetOsSeparator());
-    //Increase textedit box height if needed.
-    if (formula.length() > 80)
-    {
-        this->expandPatternLabelHeight();
-    }
-
+    const QString formula = qApp->translateVariables()->FormulaToUser(heightFormula, qApp->Settings()->getOsSeparator());
     ui->patternLabelHeightFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->patternLabelHeightFormula_LineEdit);
@@ -3529,13 +3392,7 @@ void PatternPieceDialog::setPatternLabelAngle(QString angleFormula)
         angleFormula = QString("0");
     }
 
-    const QString formula = qApp->TrVars()->FormulaToUser(angleFormula, qApp->Settings()->GetOsSeparator());
-    //Increase textedit box height if needed.
-    if (formula.length() > 80)
-    {
-        this->expandPatternLabelAngle();
-    }
-
+    const QString formula = qApp->translateVariables()->FormulaToUser(angleFormula, qApp->Settings()->getOsSeparator());
     ui->patternLabelAngleFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->patternLabelAngleFormula_LineEdit);
@@ -3674,13 +3531,15 @@ QString PatternPieceDialog::createPieceName() const
  * @param rowItem list widget item of the selected row.
  * @param notchType of the selected submenu item.
  */
-void PatternPieceDialog::setNotch(QListWidgetItem *rowItem, bool isNotch, NotchType notchType)
+void PatternPieceDialog::setNotch(QListWidgetItem *rowItem, bool isNotch, NotchType notchType,
+                                  NotchSubType notchSubType)
 {
     VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
     if (rowNode.GetTypeTool() == Tool::NodePoint)
     {
         rowNode.setNotch(isNotch);
         rowNode.setNotchType(notchType);
+        rowNode.setNotchSubType(notchSubType);
         NodeInfo info;
         info = getNodeInfo(rowNode, true);
         rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
@@ -3708,6 +3567,6 @@ qreal PatternPieceDialog::getFormulaValue(QPlainTextEdit *text) const
     Calculator calculation;
     QString formula = text->toPlainText().simplified();
     formula.replace("\n", " ");
-    formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
+    formula = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
     return ToPixel(calculation.EvalFormula(data->DataVariables(), formula), *data->GetPatternUnit());
 }

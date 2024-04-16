@@ -45,7 +45,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: install appimage dependencies
         run: |
@@ -78,7 +78,7 @@ jobs:
           cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
           linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Seamly2D-x86_64.AppImage
           path: Seamly2D-x86_64.AppImage
@@ -90,7 +90,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: jurplel/install-qt-action@v3
         with:
@@ -120,7 +120,13 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
+      - name: xcode version
+        # Qt 5.15.2 currently fails with qglobal.h:45:12: fatal error: 'type_traits' file not found
+        # when using Xcode 15.1+, thus lock working version while we are on Qt5
+        run: |
+          sudo xcode-select -s /Applications/Xcode_14.2.app
 
       - uses: jurplel/install-qt-action@v3
         with:
@@ -164,7 +170,7 @@ jobs:
           fi
           make -j$(sysctl -n hw.logicalcpu)
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Seamly2D-macos.zip
           path: out/Seamly2D-macos.zip
@@ -178,13 +184,9 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: install msvc
-        uses: ilammy/msvc-dev-cmd@v1
-        with:
-          # use Visual C++ 2022 latest, 14.34.xxxx
-          toolset: '14.34'
+      - uses: ilammy/msvc-dev-cmd@v1
 
       - uses: jurplel/install-qt-action@v3
         with:
@@ -212,13 +214,31 @@ jobs:
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
+      - name: setup signing
+        id: setup_signing
+        uses: timheuer/base64-to-file@v1.2
+        env:
+          PFX_BASE64: ${{ secrets.pfx_base64 }}
+        if: ${{ env.PFX_BASE64 }}
+        with:
+          encodedString: ${{ secrets.pfx_base64 }}
+          fileName: seamly2d.pfx
+
+      - name: sign installer
+        env:
+          PFX_BASE64: ${{ secrets.pfx_base64 }}
+        if: ${{ env.PFX_BASE64 }}
+        run: |
+          cd ..\windows-build\
+          SignTool sign /fd SHA256 /f ${{ steps.setup_signing.outputs.filePath }} /p ${{ secrets.pfx_password }} /t http://timestamp.sectigo.com Seamly2D-installer.exe
+
       - name: pack installer file into .zip
         run: |
           cd ..\windows-build\
           C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
           copy Seamly2D-windows.zip ..\Seamly2D\
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Seamly2D-windows.zip
           path: Seamly2D-windows.zip
@@ -232,13 +252,10 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: install msvc
-        uses: ilammy/msvc-dev-cmd@v1
+      - uses: ilammy/msvc-dev-cmd@v1
         with:
-          # use Visual C++ 2022 latest, 14.34.xxxx
-          toolset: '14.34'
           arch: amd64_x86
 
       - uses: jurplel/install-qt-action@v3
@@ -268,13 +285,31 @@ jobs:
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
+      - name: setup signing
+        id: setup_signing
+        uses: timheuer/base64-to-file@v1.2
+        env:
+          PFX_BASE64: ${{ secrets.pfx_base64 }}
+        if: ${{ env.PFX_BASE64 }}
+        with:
+          encodedString: ${{ secrets.pfx_base64 }}
+          fileName: seamly2d.pfx
+
+      - name: sign installer
+        env:
+          PFX_BASE64: ${{ secrets.pfx_base64 }}
+        if: ${{ env.PFX_BASE64 }}
+        run: |
+          cd ..\windows-build\
+          SignTool sign /fd SHA256 /f ${{ steps.setup_signing.outputs.filePath }} /p ${{ secrets.pfx_password }} /t http://timestamp.sectigo.com Seamly2D-installer.exe
+
       - name: pack installer file into .zip
         run: |
           cd ..\windows-build\
           C:\"Program Files"\7-Zip\7z.exe a Seamly2D-win32.zip Seamly2D-installer.exe
           copy Seamly2D-win32.zip ..\Seamly2D\
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Seamly2D-win32.zip
           path: Seamly2D-win32.zip
@@ -288,19 +323,19 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: Seamly2D-x86_64.AppImage
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: Seamly2D-macos.zip
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: Seamly2D-windows.zip
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: Seamly2D-win32.zip
-      - uses: softprops/action-gh-release@v1
+      - uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ env.VERSION_NUMBER }}
           name: ${{ env.VERSION_NUMBER }}
@@ -314,3 +349,21 @@ jobs:
             Seamly2D-macos.zip
             Seamly2D-windows.zip
             Seamly2D-win32.zip
+
+  document:
+    # Deploy Doxygen documentation for scheduled releases (schedule) and manual releases (workflow_dispatch) and pre-releases (push)
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Doxygen GitHub Pages Deploy Action
+        uses: DenverCoder1/doxygen-github-pages-action@60e8d33d954eafb4d54710db8130fb0ad8f7d157
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          # folder where docs are built, must match OUTPUT_DIRECTORY in Doxyfile + html
+          folder: docs/html
+          config_file: Doxyfile
+          # target_folder must match pages config in https://github.com/FashionFreedom/Seamly2D/settings/pages
+          target_folder: docs/
+

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>270</width>
+    <width>350</width>
     <height>338</height>
    </rect>
   </property>
@@ -35,7 +35,6 @@
      <property name="font">
       <font>
        <pointsize>9</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -45,9 +44,59 @@
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <layout class="QFormLayout" name="formLayout">
-        <property name="fieldGrowthPolicy">
-         <enum>QFormLayout::ExpandingFieldsGrow</enum>
+        <property name="labelAlignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="labelEditNamePoint">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Name:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="lineEditNamePoint">
+          <property name="minimumSize">
+           <size>
+            <width>80</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="toolTip">
+           <string>Unique name</string>
+          </property>
+          <property name="placeholderText">
+           <string>Choose unique name.</string>
+          </property>
+         </widget>
+        </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_3">
           <property name="sizePolicy">
@@ -58,13 +107,13 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>80</width>
+            <width>100</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
+            <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -80,65 +129,15 @@
          <widget class="QComboBox" name="comboBoxArc">
           <property name="minimumSize">
            <size>
-            <width>140</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="labelEditNamePoint">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
             <width>80</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
+            <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
-          </property>
-          <property name="text">
-           <string>Point name:</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEditNamePoint">
-          <property name="minimumSize">
-           <size>
-            <width>140</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="toolTip">
-           <string>Unique name</string>
-          </property>
-          <property name="placeholderText">
-           <string>Choose unique name.</string>
           </property>
          </widget>
         </item>
@@ -158,7 +157,6 @@
      <property name="font">
       <font>
        <pointsize>9</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -178,7 +176,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>80</width>
+            <width>100</width>
             <height>0</height>
            </size>
           </property>
@@ -221,7 +219,7 @@
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
+            <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -243,13 +241,13 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>87</width>
+            <width>85</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
+            <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -271,7 +269,7 @@
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>40</width>
+            <width>10</width>
             <height>20</height>
            </size>
           </property>
@@ -352,7 +350,7 @@
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
+            <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
           </property>

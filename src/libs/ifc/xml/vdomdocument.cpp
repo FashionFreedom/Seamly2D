@@ -1,39 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
  **  @file   vdomdocument.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -45,9 +19,36 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
+
+ /************************************************************************
+  **
+  **  @file   vtoolline.cpp
+  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+  **  @date   November 15, 2013
+  **
+  **  @brief
+  **  @copyright
+  **  This source code is part of the Valentina project, a pattern making
+  **  program, whose allow create and modeling patterns of clothing.
+  **  Copyright (C) 2013-2015 Valentina project
+  **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+  **
+  **  Valentina is free software: you can redistribute it and/or modify
+  **  it under the terms of the GNU General Public License as published by
+  **  the Free Software Foundation, either version 3 of the License, or
+  **  (at your option) any later version.
+  **
+  **  Valentina is distributed in the hope that it will be useful,
+  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  **  GNU General Public License for more details.
+  **
+  **  You should have received a copy of the GNU General Public License
+  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+  **
+  *************************************************************************/
 
 #include "vdomdocument.h"
 
@@ -369,10 +370,10 @@ quint32 VDomDocument::GetParametrUInt(const QDomElement &domElement, const QStri
             throw VExceptionConversionError(QObject::tr("Can't convert toUInt parameter"), name);
         }
     }
-    catch (const VExceptionEmptyParameter &e)
+    catch (const VExceptionEmptyParameter &error)
     {
         VExceptionConversionError excep(QObject::tr("Can't convert toUInt parameter"), name);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 
@@ -411,10 +412,10 @@ bool VDomDocument::getParameterBool(const QDomElement &domElement, const QString
                 throw VExceptionConversionError(message, name);
         }
     }
-    catch (const VExceptionEmptyParameter &e)
+    catch (const VExceptionEmptyParameter &error)
     {
         VExceptionConversionError excep(message, name);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 
@@ -516,10 +517,10 @@ qreal VDomDocument::GetParametrDouble(const QDomElement &domElement, const QStri
             throw VExceptionConversionError(message, name);
         }
     }
-    catch (const VExceptionEmptyParameter &e)
+    catch (const VExceptionEmptyParameter &error)
     {
         VExceptionConversionError excep(message, name);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
     return param;
@@ -546,17 +547,17 @@ quint32 VDomDocument::getParameterId(const QDomElement &domElement)
             throw VExceptionWrongId(message, domElement);
         }
     }
-    catch (const VExceptionConversionError &e)
+    catch (const VExceptionConversionError &error)
     {
         VExceptionWrongId excep(message, domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
     return id;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-Unit VDomDocument::MUnit() const
+Unit VDomDocument::measurementUnits() const
 {
     Unit unit = StrToUnits(UniqueTagText(TagUnit, unitCM));
 
@@ -742,7 +743,7 @@ bool VDomDocument::SaveDocument(const QString &fileName, QString &error)
 {
     if (fileName.isEmpty())
     {
-        qDebug()<<"Got empty file name.";
+        qDebug() << "Got empty file name.";
         return false;
     }
     bool success = false;
@@ -805,7 +806,7 @@ bool VDomDocument::setTagText(const QString &tag, const QString &text)
     const QDomNodeList nodeList = this->elementsByTagName(tag);
     if (nodeList.isEmpty())
     {
-        qDebug()<<"Can't save tag "<<tag<<Q_FUNC_INFO;
+        qDebug() << "Can't save tag " << tag << Q_FUNC_INFO;
     }
     else
     {

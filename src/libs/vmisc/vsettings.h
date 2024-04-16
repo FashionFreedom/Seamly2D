@@ -72,14 +72,14 @@ public:
     VSettings(Format format, Scope scope, const QString &organization, const QString &application = QString(),
               QObject *parent = nullptr);
 
-    QString  GetLabelLanguage() const;
-    void     SetLabelLanguage(const QString &value);
+    QString  getPointNameLanguage() const;
+    void     setPointNameLanguage(const QString &value);
 
-    static QString GetDefPathPattern();
-    QString GetPathPattern() const;
+    static QString getDefaultPatternPath();
+    QString getPatternPath() const;
     void SetPathPattern(const QString &value);
 
-    static QString GetDefPathLayout();
+    static QString getDefaultLayoutPath();
     QString getLayoutPath() const;
     void SetPathLayout(const QString &value);
 

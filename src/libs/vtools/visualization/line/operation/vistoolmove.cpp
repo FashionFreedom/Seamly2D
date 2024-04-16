@@ -211,8 +211,8 @@ void VisToolMove::RefreshGeometry()
     {
         Visualization::toolTip = tr("Length = %1%2, angle = %3°, <b>Shift</b> to constrain angle, "
                                     "<b>Mouse click</b> - finish selecting a position")
-                                    .arg(qApp->TrVars()->FormulaToUser(QString::number(qApp->fromPixel(tempLength)),
-                                                                       qApp->Settings()->GetOsSeparator()))
+                                    .arg(qApp->translateVariables()->FormulaToUser(QString::number(qApp->fromPixel(tempLength)),
+                                                                       qApp->Settings()->getOsSeparator()))
                                     .arg(prefix)
                                     .arg(tempAngle);
     }
@@ -220,8 +220,8 @@ void VisToolMove::RefreshGeometry()
     {
     Visualization::toolTip = tr("Length = %1%2, angle = %3°, rotation angle = %4° Hold <b>SHIFT</b> to constrain angle,"
                                 "<b>CTRL</b> - change rotation origin point, <b>Mouse click</b> - finish creating")
-                                .arg(qApp->TrVars()->FormulaToUser(QString::number(qApp->fromPixel(tempLength)),
-                                                                   qApp->Settings()->GetOsSeparator()))
+                                .arg(qApp->translateVariables()->FormulaToUser(QString::number(qApp->fromPixel(tempLength)),
+                                                                   qApp->Settings()->getOsSeparator()))
                                 .arg(prefix)
                                 .arg(tempAngle)
                                 .arg(tempRotation);

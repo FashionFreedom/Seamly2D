@@ -54,11 +54,11 @@
 
 #include <QObject>
 
-class TST_VMeasurements : public QObject
+class TST_Measurements : public QObject
 {
     Q_OBJECT
 public:
-    explicit TST_VMeasurements(QObject *parent = nullptr);
+    explicit TST_Measurements(QObject *parent = nullptr);
 
 private slots:
     void CreateEmptyMultisizeFile();

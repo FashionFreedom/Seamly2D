@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   dialogmove.cpp
+ **  @author Douglas S Caskey
+ **  @date   18 Nov, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   dialogmove.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,17 +30,17 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2016 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -48,6 +49,7 @@
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
+
 
 #include "dialogmove.h"
 
@@ -75,7 +77,7 @@
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../qmuparser/qmudef.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vgeometry/vpointf.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
@@ -124,7 +126,7 @@ DialogMove::DialogMove(const VContainer *data, quint32 toolId, QWidget *parent)
     rotationTimer = new QTimer(this);
     connect(rotationTimer, &QTimer::timeout, this, &DialogMove::evaluateRotation);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
 
     FillComboBoxPoints(ui->rotationPoint_ComboBox);
     ui->rotationPoint_ComboBox->blockSignals(true);
@@ -158,13 +160,13 @@ DialogMove::~DialogMove()
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogMove::GetAngle() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(angleFormula, qApp->Settings()->GetOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(angleFormula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::SetAngle(const QString &value)
 {
-    angleFormula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    angleFormula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     ui->angle_PlainTextEdit->setPlainText(angleFormula);
 
     VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
@@ -177,13 +179,13 @@ void DialogMove::SetAngle(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogMove::GetLength() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(lengthFormula, qApp->Settings()->GetOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(lengthFormula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::SetLength(const QString &value)
 {
-    lengthFormula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    lengthFormula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     ui->length_PlainTextEdit->setPlainText(lengthFormula);
 
     VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
@@ -196,13 +198,13 @@ void DialogMove::SetLength(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogMove::getRotation() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(rotationFormula, qApp->Settings()->GetOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(rotationFormula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::setRotation(const QString &value)
 {
-    rotationFormula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    rotationFormula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     ui->rotation_PlainTextEdit->setPlainText(rotationFormula);
 
     VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
@@ -285,8 +287,8 @@ void DialogMove::ShowDialog(bool click)
 
         if (operation->LengthValue() > 0)
         {
-            angleFormula = qApp->TrVars()->FormulaToUser(operation->Angle(), qApp->Settings()->GetOsSeparator());
-            lengthFormula = qApp->TrVars()->FormulaToUser(operation->Length(), qApp->Settings()->GetOsSeparator());
+            angleFormula = qApp->translateVariables()->FormulaToUser(operation->Angle(), qApp->Settings()->getOsSeparator());
+            lengthFormula = qApp->translateVariables()->FormulaToUser(operation->Length(), qApp->Settings()->getOsSeparator());
             operation->SetAngle(angleFormula);
             operation->SetLength(lengthFormula);
 
@@ -400,7 +402,7 @@ void DialogMove::rotationChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::editAngleFormula()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit angle"));
     dialog->SetFormula(GetAngle());
     dialog->setPostfix(degreeSymbol);
@@ -414,7 +416,7 @@ void DialogMove::editAngleFormula()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::editLengthFormula()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit length"));
     dialog->SetFormula(GetLength());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -428,7 +430,7 @@ void DialogMove::editLengthFormula()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::editRotationFormula()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit rotation"));
     dialog->SetFormula(getRotation());
     dialog->setPostfix(degreeSymbol);
@@ -484,7 +486,7 @@ void DialogMove::originChanged(const QString &text)
 {
     VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
     SCASSERT(operation != nullptr)
-    if (text == "Center Point")
+    if (text == tr("Center point"))
     {
         operation->setOriginPointId(NULL_ID);
         useOriginPoint = false;

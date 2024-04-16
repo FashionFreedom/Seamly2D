@@ -168,9 +168,9 @@ bool TST_QmuTokenParser::IsSingleFromUser(const QString &formula)
         tokens = cal->GetTokens();// Tokens (variables, measurements)
         numbers = cal->GetNumbers();// All numbers in expression
     }
-    catch (const qmu::QmuParserError &e)
+    catch (const qmu::QmuParserError &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return false;// something wrong with formula, say no
     }
 

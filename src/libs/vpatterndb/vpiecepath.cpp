@@ -1,10 +1,10 @@
 /***************************************************************************
  **  @file   vpiecepath.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 11, 2022
+ **  @date   17 Sep, 2023
  **
  **  @copyright
- **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
  **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
@@ -148,7 +148,7 @@ int IndexOfNode(const QVector<VPieceNode> &list, quint32 id)
             return i;
         }
     }
-    qDebug()<<"Can't find node.";
+    qDebug() << "Can't find node:" << id;
     return -1;
 }
 }
@@ -316,7 +316,7 @@ QVector<QPointF> VPiecePath::PathPoints(const VContainer *data) const
                 }
                 break;
             default:
-                qDebug() << "Got wrong tool type. Ignore." << static_cast<char>(at(i).GetTypeTool());
+                qWarning() << "Got wrong tool type. Ignore." << static_cast<char>(at(i).GetTypeTool());
                 break;
         }
     }
@@ -379,7 +379,7 @@ QVector<VSAPoint> VPiecePath::SeamAllowancePoints(const VContainer *data, qreal 
                 }
                 break;
             default:
-                qDebug() << "Got wrong tool type. Ignore." << static_cast<char>(node.GetTypeTool());
+                qWarning() << "Got wrong tool type. Ignore." << static_cast<char>(node.GetTypeTool());
                 break;
         }
     }
@@ -521,7 +521,7 @@ void VPiecePath::NodeOnEdge(quint32 index, VPieceNode &p1, VPieceNode &p2) const
     const QVector<VPieceNode> list = ListNodePoint();
     if (index > static_cast<quint32>(list.size()))
     {
-        qDebug()<<"Wrong edge index index ="<<index;
+        qWarning() << "Wrong edge index index =" << index;
         return;
     }
     p1 = list.at(static_cast<int>(index));
@@ -561,7 +561,7 @@ bool VPiecePath::OnEdge(quint32 p1, quint32 p2) const
     const QVector<VPieceNode> list = ListNodePoint();
     if (list.size() < 2)
     {
-        qDebug()<<"Not enough points.";
+        qDebug() << "Not enough points.";
         return false;
     }
     int i = IndexOfNode(list, p1);
@@ -599,13 +599,13 @@ bool VPiecePath::OnEdge(quint32 p1, quint32 p2) const
  * located arcs or splines ignore this.
  * @param p1 id first point.
  * @param p2 id second point.
- * @return edge index or -1 if points don't located on edge
+ * @return edge index or -1 if points are not located on edge
  */
 int VPiecePath::Edge(quint32 p1, quint32 p2) const
 {
     if (OnEdge(p1, p2) == false)
     {
-        qDebug()<<"Points don't on edge.";
+        qDebug() << "Points are not located on edge.";
         return -1;
     }
 
@@ -740,7 +740,7 @@ QPointF VPiecePath::NodePreviousPoint(const VContainer *data, int i) const
             }
                 break;
             default:
-                qDebug() << "Got wrong tool type. Ignore." << static_cast<char>(node.GetTypeTool());
+                qWarning() << "Got wrong tool type. Ignore." << static_cast<char>(node.GetTypeTool());
                 break;
         }
     }
@@ -792,7 +792,7 @@ QPointF VPiecePath::NodeNextPoint(const VContainer *data, int i) const
             }
                 break;
             default:
-                qDebug()<<"Got wrong tool type. Ignore."<< static_cast<char>(node.GetTypeTool());
+                qWarning() << "Got wrong tool type. Ignore." << static_cast<char>(node.GetTypeTool());
                 break;
         }
     }
@@ -810,7 +810,7 @@ int VPiecePath::indexOfNode(const QVector<VPieceNode> &nodes, quint32 id)
             return i;
         }
     }
-    qDebug()<<"Can't find node.";
+    qDebug() << "Can't find node:" << id;
     return -1;
 }
 

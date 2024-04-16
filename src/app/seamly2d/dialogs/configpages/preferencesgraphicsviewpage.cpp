@@ -1,34 +1,30 @@
-/************************************************************************
- **
- **  @file   PreferencesGraphicsViewPage.cpp
- **  @author DS Caskey
- **  @date   10.17.2020
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2017 Seamly2D project
- **  All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+ /***************************************************************************
+  **  @file   PreferencesGraphicsViewPage.cpp
+  **  @author Douglas S Caskey
+  **  @date   26 Oct, 2023
+  **
+  **  @copyright
+  **  Copyright (C) 2017 - 2023 Seamly, LLC
+  **  https://github.com/fashionfreedom/seamly2d
+  **
+  **  @brief
+  **  Seamly2D is free software: you can redistribute it and/or modify
+  **  it under the terms of the GNU General Public License as published by
+  **  the Free Software Foundation, either version 3 of the License, or
+  **  (at your option) any later version.
+  **
+  **  Seamly2D is distributed in the hope that it will be useful,
+  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  **  GNU General Public License for more details.
+  **
+  **  You should have received a copy of the GNU General Public License
+  **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
+  **************************************************************************/
 
 #include "preferencesgraphicsviewpage.h"
 #include "ui_preferencesgraphicsviewpage.h"
-#include "../../core/vapplication.h"
+#include "../../core/application_2d.h"
 #include "../vpatterndb/pmsystems.h"
 #include "../vmisc/logging.h"
 #include "../vtools/tools/vabstracttool.h"
@@ -270,6 +266,16 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
 PreferencesGraphicsViewPage::~PreferencesGraphicsViewPage ()
 {
     delete ui;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PreferencesGraphicsViewPage::changeEvent(QEvent *event)
+{
+    if (event->type() == QEvent::LanguageChange)
+    {
+        ui->retranslateUi(this);
+    }
+    QWidget::changeEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -1,13 +1,15 @@
-/***************************************************************************
- **  @file   vpatternconverter.h
+/******************************************************************************
+ *   @file   vpatternconverter.h
  **  @author Douglas S Caskey
- **  @date   Dec 27, 2022
- **
- **  @copyright
- **  Copyright (C) 2017 - 2022 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
+ **  @date   14 Jul, 2023
  **
  **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -19,8 +21,9 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
 
 /**************************************************************************
  **
@@ -63,7 +66,7 @@
 #include <QVector>
 #include <QtGlobal>
 
-#include "vabstractconverter.h"
+#include "abstract_converter.h"
 
 class QDomElement;
 
@@ -77,20 +80,20 @@ public:
     static const QString PatternMaxVerStr;
     static const QString CurrentSchema;
     static Q_DECL_CONSTEXPR const int PatternMinVer = CONVERTER_VERSION_CHECK(0, 1, 0);
-    static Q_DECL_CONSTEXPR const int PatternMaxVer = CONVERTER_VERSION_CHECK(0, 6, 8);
+    static Q_DECL_CONSTEXPR const int PatternMaxVer = CONVERTER_VERSION_CHECK(0, 6, 9);
 
 protected:
-    virtual int     MinVer() const Q_DECL_OVERRIDE;
-    virtual int     MaxVer() const Q_DECL_OVERRIDE;
+    virtual int     minVer() const override;
+    virtual int     maxVer() const override;
 
-    virtual QString MinVerStr() const Q_DECL_OVERRIDE;
-    virtual QString MaxVerStr() const Q_DECL_OVERRIDE;
+    virtual QString minVerStr() const override;
+    virtual QString maxVerStr() const override;
 
-    virtual QString XSDSchema(int ver) const Q_DECL_OVERRIDE;
-    virtual void    ApplyPatches() Q_DECL_OVERRIDE;
-    virtual void    DowngradeToCurrentMaxVersion() Q_DECL_OVERRIDE;
+    virtual QString getSchema(int ver) const override;
+    virtual void    applyPatches() override;
+    virtual void    downgradeToCurrentMaxVersion() override;
 
-    virtual bool    IsReadOnly() const Q_DECL_OVERRIDE;
+    virtual bool    isReadOnly() const override;
 
 private:
     Q_DISABLE_COPY(VPatternConverter)
@@ -138,6 +141,7 @@ private:
     void          toVersion0_6_6();
     void          toVersion0_6_7();
     void          toVersion0_6_8();
+    void          toVersion0_6_9();
 
     void          TagUnitToV0_2_0();
     void          TagIncrementToV0_2_0();
@@ -193,25 +197,25 @@ private:
 };
 
 //---------------------------------------------------------------------------------------------------------------------
-inline int VPatternConverter::MinVer() const
+inline int VPatternConverter::minVer() const
 {
     return PatternMinVer;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-inline int VPatternConverter::MaxVer() const
+inline int VPatternConverter::maxVer() const
 {
     return PatternMaxVer;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-inline QString VPatternConverter::MinVerStr() const
+inline QString VPatternConverter::minVerStr() const
 {
     return PatternMinVerStr;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-inline QString VPatternConverter::MaxVerStr() const
+inline QString VPatternConverter::maxVerStr() const
 {
     return PatternMaxVerStr;
 }

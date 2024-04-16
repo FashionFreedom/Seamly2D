@@ -1,37 +1,13 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   vcommonsettings.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   15 7, 2015
+/******************************************************************************
+ *   @file   vcommonsettings.cpp
+ **  @author Douglas S Caskey
+ **  @date   14 Jul, 2023
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -46,6 +22,34 @@
  **
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
+
+/************************************************************************
+ **
+ **  @file   vcommonsettings.h
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   15 7, 2015
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2015 Valentina project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -75,23 +79,31 @@ public:
     static QString       StandardTemplatesPath();
 
     static QString       PrepareStandardTemplates(const QString &currentPath);
-    static QString       PrepareMultisizeTables(const QString &currentPath);
+    static QString       prepareMultisizeTables(const QString &currentPath);
 
-    static QString       GetDefPathIndividualMeasurements();
-    QString              GetPathIndividualMeasurements() const;
-    void                 SetPathIndividualMeasurements(const QString &value);
+    static QString       getDefaultIndividualSizePath();
+    QString              getIndividualSizePath() const;
+    void                 setIndividualSizePath(const QString &value);
 
-    static QString       GetDefPathMultisizeMeasurements();
-    QString              GetPathMultisizeMeasurements() const;
-    void                 SetPathMultisizeMeasurements(const QString &value);
+    static QString       getDefaultMultisizePath();
+    QString              getMultisizePath() const;
+    void                 setMultisizePath(const QString &value);
 
-    static QString       GetDefPathTemplate();
-    QString              GetPathTemplate() const;
-    void                 SetPathTemplate(const QString &value);
+    static QString       getDefaultBodyScansPath();
+    QString              getBodyScansPath() const;
+    void                 setBodyScansPath(const QString &value);
 
-    static QString       GetDefPathLabelTemplate();
-    QString              GetPathLabelTemplate() const;
+    static QString       getDefaultTemplatePath();
+    QString              getTemplatePath() const;
+    void                 setTemplatePath(const QString &value);
+
+    static QString       getDefaultLabelTemplatePath();
+    QString              getLabelTemplatePath() const;
     void                 SetPathLabelTemplate(const QString &value);
+
+    static QString       getDefaultImageFilePath();
+    QString              getImageFilePath() const;
+    void                 setImageFilePath(const QString &value);
 
     QString              getDefaultPatternTemplate() const;
     void                 setDefaultPatternTemplate(const QString &text);
@@ -99,11 +111,14 @@ public:
     QString              getDefaultPieceTemplate() const;
     void                 setDefaultPieceTemplate(const QString &text);
 
-    bool                 GetOsSeparator() const;
-    void                 SetOsSeparator(const bool &value);
+    bool                 getShowWelcome() const;
+    void                 setShowWelcome(const bool &value);
+
+    bool                 getOsSeparator() const;
+    void                 setOsSeparator(const bool &value);
 
     bool                 GetAutosaveState() const;
-    void                 SetAutosaveState(const bool &value);
+    void                 setAutosaveState(const bool &value);
 
     int                  getAutosaveInterval() const;
     void                 setAutosaveInterval(const int &value);
@@ -120,8 +135,8 @@ public:
     bool                 GetSendReportState() const;
     void                 SetSendReportState(const bool &value);
 
-    QString              GetLocale() const;
-    void                 SetLocale(const QString &value);
+    QString              getLocale() const;
+    void                 setLocale(const QString &value);
 
     QString              GetPMSystemCode() const;
     void                 SetPMSystemCode(const QString &value);
@@ -246,8 +261,41 @@ public:
     bool                 getConstrainModKey() const;
     void                 setConstrainModKey(const bool &value);
 
+    QString              getCompanyName() const;
+    void                 setCompanyName(const QString &value);
+
+    QString              getContact() const;
+    void                 setContact(const QString &value);
+
+    QString              getAddress() const;
+    void                 setAddress(const QString &value);
+
+    QString              getCity() const;
+    void                 setCity(const QString &value);
+
+    QString              getState() const;
+    void                 setState(const QString &value);
+
+    QString              getZipcode() const;
+    void                 setZipcode(const QString &value);
+
+    QString              getCountry() const;
+    void                 setCountry(const QString &value);
+
+    QString              getTelephone() const;
+    void                 setTelephone(const QString &value);
+
+    QString              getFax() const;
+    void                 setFax(const QString &value);
+
+    QString              getEmail() const;
+    void                 setEmail(const QString &value);
+
+    QString              getWebsite() const;
+    void                 setWebsite(const QString &value);
+
     int                  GetUndoCount() const;
-    void                 SetUndoCount(const int &value);
+    void                 setUndoCount(const int &value);
 
     QString              getSound() const;
     QString              getSelectionSound() const;
@@ -277,8 +325,8 @@ public:
     QSize                GetFormulaWizardDialogSize() const;
     void                 SetFormulaWizardDialogSize(const QSize& sz);
 
-    QSize                GetIncrementsDialogSize() const;
-    void                 SetIncrementsDialogSize(const QSize& sz);
+    QSize                getVariablesDialogSize() const;
+    void                 setVariablesDialogSize(const QSize& sz);
 
     int                  GetLatestSkippedVersion() const;
     void                 SetLatestSkippedVersion(int value);
