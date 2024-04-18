@@ -65,7 +65,7 @@ EditGroupDialog::EditGroupDialog(const VContainer *data, const quint32 &toolId, 
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/group.png"));
 
-    InitOkCancel(ui);
+    initializeOkCancel(ui);
     DialogTool::CheckState();
 
     connect(ui->lineEditName, &QLineEdit::textChanged, this, &EditGroupDialog::NameChanged);

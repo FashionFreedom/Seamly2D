@@ -92,7 +92,7 @@ bool VInternalVariable::Filter(quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VInternalVariable::IsNotUsed() const
+bool VInternalVariable::isNotUsed() const
 {
     return false;
 }

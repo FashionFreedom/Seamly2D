@@ -58,15 +58,15 @@
 #include <QString>
 #include <QtDebug>
 
+#include "pmsystems.h"
+#include "vtranslatemeasurements.h"
 #include "../ifc/ifcdef.h"
+#include "../vmisc/def.h"
+#include "../vmisc/vabstractapplication.h"
 #include "../qmuparser/qmuparsererror.h"
 #include "../qmuparser/qmutokenparser.h"
 #include "../qmuparser/qmutranslation.h"
 #include "../vpatterndb/vtranslatevars.h"
-#include "../vmisc/def.h"
-#include "../vmisc/vabstractapplication.h"
-#include "vtranslatemeasurements.h"
-#include "pmsystems.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 VTranslateVars::VTranslateVars()
@@ -432,41 +432,41 @@ void VTranslateVars::InitVariables()
 //---------------------------------------------------------------------------------------------------------------------
 void VTranslateVars::InitFunctions()
 {
-    functions.insert(degTorad_F, translate("VTranslateVars", "degTorad", "converts degrees to radian"));
-    functions.insert(radTodeg_F, translate("VTranslateVars", "radTodeg", "converts radian to degrees"));
-    functions.insert(sin_F, translate("VTranslateVars", "sin", "sine function working with radians"));
-    functions.insert(cos_F, translate("VTranslateVars", "cos", "cosine function working with radians"));
-    functions.insert(tan_F, translate("VTranslateVars", "tan", "tangent function working with radians"));
-    functions.insert(asin_F, translate("VTranslateVars", "asin", "inverse sine function working with radians"));
-    functions.insert(acos_F, translate("VTranslateVars", "acos", "inverse cosine function working with radians"));
-    functions.insert(atan_F, translate("VTranslateVars", "atan", "inverse tangent function working with radians"));
-    functions.insert(sinh_F, translate("VTranslateVars", "sinh", "hyperbolic sine function"));
-    functions.insert(cosh_F, translate("VTranslateVars", "cosh", "hyperbolic cosine"));
-    functions.insert(tanh_F, translate("VTranslateVars", "tanh", "hyperbolic tangent function"));
-    functions.insert(asinh_F, translate("VTranslateVars", "asinh", "inverse hyperbolic sine function"));
-    functions.insert(acosh_F, translate("VTranslateVars", "acosh", "inverse hyperbolic cosine function"));
-    functions.insert(atanh_F, translate("VTranslateVars", "atanh", "inverse hyperbolic tangent function"));
-    functions.insert(sinD_F, translate("VTranslateVars", "sinD", "sine function working with degrees"));
-    functions.insert(cosD_F, translate("VTranslateVars", "cosD", "cosine function working with degrees"));
-    functions.insert(tanD_F, translate("VTranslateVars", "tanD", "tangent function working with degrees"));
-    functions.insert(asinD_F, translate("VTranslateVars", "asinD", "inverse sine function working with degrees"));
-    functions.insert(acosD_F, translate("VTranslateVars", "acosD", "inverse cosine function working with degrees"));
-    functions.insert(atanD_F, translate("VTranslateVars", "atanD", "inverse tangent function working with degrees"));
-    functions.insert(log2_F, translate("VTranslateVars", "log2", "logarithm to the base 2"));
-    functions.insert(log10_F, translate("VTranslateVars", "log10", "logarithm to the base 10"));
-    functions.insert(log_F, translate("VTranslateVars", "log", "logarithm to the base 10"));
-    functions.insert(ln_F, translate("VTranslateVars", "ln", "logarithm to base e (2.71828...)"));
-    functions.insert(exp_F, translate("VTranslateVars", "exp", "e raised to the power of x"));
-    functions.insert(sqrt_F, translate("VTranslateVars", "sqrt", "square root of a value"));
-    functions.insert(sign_F, translate("VTranslateVars", "sign", "sign function -1 if x<0; 1 if x>0"));
-    functions.insert(rint_F, translate("VTranslateVars", "rint", "round to nearest integer"));
-    functions.insert(abs_F, translate("VTranslateVars", "abs", "absolute value"));
-    functions.insert(min_F, translate("VTranslateVars", "min", "min of all arguments"));
-    functions.insert(max_F, translate("VTranslateVars", "max", "max of all arguments"));
-    functions.insert(sum_F, translate("VTranslateVars", "sum", "sum of all arguments"));
-    functions.insert(avg_F, translate("VTranslateVars", "avg", "mean value of all arguments"));
+    functions.insert(degTorad_F, translate("VTranslateVars", "degTorad", "Converts degrees to radians\nUsage: degTorad(angle θ in degrees)"));
+    functions.insert(radTodeg_F, translate("VTranslateVars", "radTodeg", "Converts radians to degrees\nUsage: radTodeg(angle θ in radians)"));
+    functions.insert(sin_F, translate("VTranslateVars", "sin", "Sine function working with radians\nUsage: sin(angle θ in radians)"));
+    functions.insert(cos_F, translate("VTranslateVars", "cos", "Cosine function working with radians\nUsage: cos(angle θ in radians)"));
+    functions.insert(tan_F, translate("VTranslateVars", "tan", "Tangent function working with radians\nUsage: tan(angle θ in radians)"));
+    functions.insert(asin_F, translate("VTranslateVars", "asin", "Inverse sine function working with radians\nUsage: asin(x)"));
+    functions.insert(acos_F, translate("VTranslateVars", "acos", "Inverse cosine function working with radians\nUsage: acos(x)"));
+    functions.insert(atan_F, translate("VTranslateVars", "atan", "Inverse tangent function working with radians\nUsage: atan(x)"));
+    functions.insert(sinh_F, translate("VTranslateVars", "sinh", "Hyperbolic sine function\nUsage: sinh(angle θ in radians)"));
+    functions.insert(cosh_F, translate("VTranslateVars", "cosh", "Hyperbolic cosine\nUsage: cosh(angle θ in radians)"));
+    functions.insert(tanh_F, translate("VTranslateVars", "tanh", "Hyperbolic tangent function\nUsage: tanh(angle θ in radians)"));
+    functions.insert(asinh_F, translate("VTranslateVars", "asinh", "Inverse Hyperbolic sine function\nUsage: asinh(x)"));
+    functions.insert(acosh_F, translate("VTranslateVars", "acosh", "Inverse Hyperbolic cosine function\nUsage: acosh(x)"));
+    functions.insert(atanh_F, translate("VTranslateVars", "atanh", "Inverse Hyperbolic tangent function\nUsage: atanh(x)"));
+    functions.insert(sinD_F, translate("VTranslateVars", "sinD", "Sine function working with degrees\nUsage: sinD(angle θ in degrees)"));
+    functions.insert(cosD_F, translate("VTranslateVars", "cosD", "Cosine function working with degrees\nUsage: cosD(angle θ in degrees)"));
+    functions.insert(tanD_F, translate("VTranslateVars", "tanD", "Tangent function working with degrees\nUsage: tanD(angle θ in degrees)"));
+    functions.insert(asinD_F, translate("VTranslateVars", "asinD", "Inverse sine function working with degrees\nUsage: asinD(x)"));
+    functions.insert(acosD_F, translate("VTranslateVars", "acosD", "Inverse cosine function working with degrees\nUsage: acosD(x)"));
+    functions.insert(atanD_F, translate("VTranslateVars", "atanD", "Inverse tangent function working with degrees\nUsage: atanD(x)"));
+    functions.insert(log2_F, translate("VTranslateVars", "log2", "Logarithm to the base 2\nUsage: log2(x)"));
+    functions.insert(log10_F, translate("VTranslateVars", "log10", "Logarithm to the base 10\nUsage: log10(x)"));
+    functions.insert(log_F, translate("VTranslateVars", "log", "Logarithm to the base 10\nUsage: log(x)"));
+    functions.insert(ln_F, translate("VTranslateVars", "ln", "Logarithm to base e (2.71828...)\nUsage: ln(x)"));
+    functions.insert(exp_F, translate("VTranslateVars", "exp", "E raised to the power of x\nUsage: exp(x) where e = 2.718"));
+    functions.insert(sqrt_F, translate("VTranslateVars", "sqrt", "Square root of a value\nUsage: sqrt(x)"));
+    functions.insert(sign_F, translate("VTranslateVars", "sign", "Sign function -1 if x<0; 1 if x>0\nUsage: sign(x)"));
+    functions.insert(rint_F, translate("VTranslateVars", "rint", "Round to nearest integer\nUsage: rint(float x)"));
+    functions.insert(abs_F, translate("VTranslateVars", "abs", "Absolute value\nUsage: abs(x)"));
+    functions.insert(min_F, translate("VTranslateVars", "min", "Min of all arguments\nUsage: min(arg 1; arg 2; ... arg n)"));
+    functions.insert(max_F, translate("VTranslateVars", "max", "Max of all arguments\nUsage: max(arg 1; arg 2; ... arg n)"));
+    functions.insert(sum_F, translate("VTranslateVars", "sum", "Sum of all arguments\nUsage: sum(arg 1; arg 2; ... arg n)"));
+    functions.insert(avg_F, translate("VTranslateVars", "avg", "Mean value of all arguments\nUsage: avg(arg 1; arg 2; ... arg n)"));
     functions.insert(fmod_F, translate("VTranslateVars", "fmod",
-                                       "Returns the floating-point remainder of numer/denom (rounded towards zero)"));
+                    "Returns the floating-point remainder of x/y (rounded towards zero)\nUsage: fmod(x; y)"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -761,9 +761,9 @@ QString VTranslateVars::PlaceholderFromUserText(QString text) const
 //---------------------------------------------------------------------------------------------------------------------
 QString VTranslateVars::VarToUser(const QString &var) const
 {
-    if (measurements.contains(var))
+    if (m_measurements.contains(var))
     {
-        return measurements.value(var).translate();
+        return m_measurements.value(var).translate();
     }
 
     if (functions.contains(var))
@@ -991,10 +991,10 @@ QString VTranslateVars::FormulaToUser(const QString &formula, bool osSeparator) 
     QList<QString> tValues = tokens.values();
     for (int i = 0; i < tKeys.size(); ++i)
     {
-        if (measurements.contains(tValues.at(i)))
+        if (m_measurements.contains(tValues.at(i)))
         {
-            newFormula.replace(tKeys.at(i), tValues.at(i).length(), measurements.value(tValues.at(i)).translate());
-            int bias = tValues.at(i).length() - measurements.value(tValues.at(i)).translate().length();
+            newFormula.replace(tKeys.at(i), tValues.at(i).length(), m_measurements.value(tValues.at(i)).translate());
+            int bias = tValues.at(i).length() - m_measurements.value(tValues.at(i)).translate().length();
             if (bias != 0)
             {// Translated token has different length than original. Position next tokens need to be corrected.
                 CorrectionsPositions(tKeys.at(i), bias, tokens, numbers);
@@ -1101,7 +1101,7 @@ void VTranslateVars::Retranslate()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QMap<QString, qmu::QmuTranslation> VTranslateVars::GetFunctions() const
+QMap<QString, qmu::QmuTranslation> VTranslateVars::getFunctions() const
 {
     return functions;
 }

@@ -81,7 +81,7 @@ public:
     QTransform    transform() const;
     void          setCurrentTransform(const QTransform &transform);
     void          swapTransforms();
-    void          SetDisableTools(bool disable, const QString &draftBlockName);
+    void          setToolsDisabled(bool disable, const QString &draftBlockName);
     QPointF       getScenePos() const;
 
     QRectF        visibleItemsBoundingRect() const;

@@ -55,7 +55,7 @@
 #include "visualization/path/vistoolinternalpath.h"
 #include "../../../tools/vabstracttool.h"
 #include "../../../tools/pattern_piece_tool.h"
-#include "../../support/dialogeditwrongformula.h"
+#include "../../support/edit_formula_dialog.h"
 
 #include <QMenu>
 #include <QTimer>
@@ -77,7 +77,7 @@ DialogInternalPath::DialogInternalPath(const VContainer *data, quint32 toolId, Q
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/path.png"));
 
-    InitOkCancel(ui);
+    initializeOkCancel(ui);
 
     InitPathTab();
     InitSeamAllowanceTab();
@@ -665,7 +665,7 @@ void DialogInternalPath::evaluateAfterWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::editDefaultSeamAllowanceWidth()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width"));
     dialog->SetFormula(getSeamAllowanceWidthFormula());
     dialog->setCheckLessThanZero(true);
@@ -680,7 +680,7 @@ void DialogInternalPath::editDefaultSeamAllowanceWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::editBeforeSeamAllowanceWidth()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width before"));
     dialog->SetFormula(getSeamAllowanceWidthFormulaBefore());
     dialog->setCheckLessThanZero(true);
@@ -695,7 +695,7 @@ void DialogInternalPath::editBeforeSeamAllowanceWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::editAfterSeamAllowanceWidth()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width after"));
     dialog->SetFormula(getSeamAllowanceWidthFormulaAfter());
     dialog->setCheckLessThanZero(true);

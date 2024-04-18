@@ -40,13 +40,13 @@ ExpandingTextEdit::ExpandingTextEdit(const QString &text, QWidget *parent)
 //---------------------------------------------------------------------------------------------------------------------
 void ExpandingTextEdit::focusInEvent(QFocusEvent *e)
 {
-    setFixedHeight(64);
     QPlainTextEdit::focusInEvent(e);
+    setFixedHeight(64);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void ExpandingTextEdit::focusOutEvent(QFocusEvent *e)
 {
-    setFixedHeight(28);
     QPlainTextEdit::focusOutEvent(e);
+    setFixedHeight(28);
 }

@@ -2,6 +2,7 @@
 # This need for corect working file translations.pro
 
 HEADERS += \
+    $$PWD/support/edit_formula_dialog.h \
     $$PWD/support/editlabeltemplate_dialog.h \
     $$PWD/tooldialogs.h \
     $$PWD/tools/addtogroup_dialog.h \
@@ -29,7 +30,6 @@ HEADERS += \
     $$PWD/tools/dialogsplinepath.h \
     $$PWD/tools/dialogtool.h \
     $$PWD/tools/dialogtriangle.h \
-    $$PWD/support/dialogeditwrongformula.h \
     $$PWD/support/dialogundo.h \
     $$PWD/tools/dialogtruedarts.h \
     $$PWD/tools/dialogpointofintersectioncurves.h \
@@ -50,6 +50,7 @@ HEADERS += \
     $$PWD/tools/union_dialog.h
 
 SOURCES += \
+    $$PWD/support/edit_formula_dialog.cpp \
     $$PWD/support/editlabeltemplate_dialog.cpp \
     $$PWD/tools/addtogroup_dialog.cpp \
     $$PWD/tools/anchorpoint_dialog.cpp \
@@ -76,7 +77,6 @@ SOURCES += \
     $$PWD/tools/dialogsplinepath.cpp \
     $$PWD/tools/dialogtool.cpp \
     $$PWD/tools/dialogtriangle.cpp \
-    $$PWD/support/dialogeditwrongformula.cpp \
     $$PWD/support/dialogundo.cpp \
     $$PWD/tools/dialogtruedarts.cpp \
     $$PWD/tools/dialogpointofintersectioncurves.cpp \
@@ -97,6 +97,7 @@ SOURCES += \
     $$PWD/tools/union_dialog.cpp
 
 FORMS += \
+    $$PWD/support/edit_formula_dialog.ui \
     $$PWD/support/editlabeltemplate_dialog.ui \
     $$PWD/tools/addtogroup_dialog.ui \
     $$PWD/tools/anchorpoint_dialog.ui \
@@ -122,7 +123,6 @@ FORMS += \
     $$PWD/tools/dialogspline.ui \
     $$PWD/tools/dialogsplinepath.ui \
     $$PWD/tools/dialogtriangle.ui \
-    $$PWD/support/dialogeditwrongformula.ui \
     $$PWD/support/dialogundo.ui \
     $$PWD/tools/dialogtruedarts.ui \
     $$PWD/tools/dialogpointofintersectioncurves.ui \
