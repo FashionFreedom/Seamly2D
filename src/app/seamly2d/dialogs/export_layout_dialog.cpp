@@ -763,7 +763,7 @@ void ExportLayoutDialog::writeSettings() const
  */
 QString ExportLayoutDialog::modeString() const
 {
-    QString modeStr = QStringLiteral("");
+    QString modeStr = QStringLiteral();
     if (qApp->Seamly2DSettings()->useModeType())
     {
         switch (m_mode)
