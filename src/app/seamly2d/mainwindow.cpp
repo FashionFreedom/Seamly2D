@@ -6338,7 +6338,7 @@ void MainWindow::createActions()
 
     connect(ui->aboutSeamly2D_Action, &QAction::triggered, this, [this]()
     {
-        DialogAboutApp *aboutDialog = new DialogAboutApp(this);
+        About2DAppDialog *aboutDialog = new About2DAppDialog(this);
         aboutDialog->setAttribute(Qt::WA_DeleteOnClose, true);
         aboutDialog->show();
     });

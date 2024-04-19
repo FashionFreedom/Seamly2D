@@ -424,7 +424,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogAboutApp</name>
+    <name>About2DAppDialog</name>
     <message>
         <location filename="../../src/app/seamly2d/dialogs/dialogaboutapp.ui" line="+29"/>
         <source>About Seamly2D</source>
