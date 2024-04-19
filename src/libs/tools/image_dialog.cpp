@@ -59,11 +59,10 @@
 #include <Qt>
 #include <new>
 
-
-
 //---------------------------------------------------------------------------------------------------------------------
-ImageDialog::ImageDialog(DraftImage image, qreal minDimension, qreal maxDimension)
-    : ui(new Ui::ImageDialog)
+ImageDialog::ImageDialog(DraftImage image, qreal minDimension, qreal maxDimension, QWidget *parent)
+    : QDialog(parent)
+    , ui(new Ui::ImageDialog)
     , m_image(image)
     , m_pixmapWidth(image.pixmap.width())
     , m_pixmapHeight(image.pixmap.height())
@@ -82,7 +81,6 @@ ImageDialog::ImageDialog(DraftImage image, qreal minDimension, qreal maxDimensio
 
     updateImage();
 
-    connect(ui->name_LineEdit,        &QLineEdit::textChanged,        this, &ImageDialog::nameChanged);
     connect(ui->xPosition_DoubleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
             this, &ImageDialog::xPosChanged);
     connect(ui->yPosition_DoubleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
@@ -127,7 +125,7 @@ void ImageDialog::updateImage()
 {
     blockSignals(true);
     ui->idText_Label->setNum(static_cast<double>(m_image.id));
-    ui->name_LineEdit->setText(m_image.name);
+    ui->filename_Label->setText(m_image.name);
     ui->lockImage_ToolButton->setChecked(m_image.locked);
     setXPos(m_image.xPos);
     setYPos(m_image.yPos);
@@ -159,8 +157,9 @@ void ImageDialog::updateImage()
 
 void ImageDialog::enableWidgets()
 {
-    ui->name_LineEdit->setEnabled(!m_image.locked);
     ui->lockImage_ToolButton->setEnabled(true);
+    ui->idText_Label->setEnabled(!m_image.locked);
+    ui->filename_Label->setEnabled(!m_image.locked);
     ui->xPosition_DoubleSpinBox->setEnabled(!m_image.locked);
     ui->yPosition_DoubleSpinBox->setEnabled(!m_image.locked);
     ui->width_DoubleSpinBox->setEnabled(!m_image.locked);
@@ -182,7 +181,7 @@ QString ImageDialog::getName() const
 void ImageDialog::setName(const QString &name)
 {
     m_image.name = name;
-    ui->name_LineEdit->setText(name);
+    ui->filename_Label->setText(name);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -389,45 +388,6 @@ void ImageDialog::setOpacity(const qreal &opacity)
     m_image.opacity = opacity;
     ui->opacity_DoubleSpinBox->setValue(opacity);
     ui->opacity_DoubleSpinBox->blockSignals(false);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void ImageDialog::nameChanged(const QString &name)
-{
-    QPushButton *bOk = ui->buttonBox->button(QDialogButtonBox::Ok);
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(true);
-
-    QPalette palette = ui->name_LineEdit->palette();
-    palette.setColor(ui->name_Label->foregroundRole(), Qt::black);
-    //alette.setColor(ui->name_LineEdit->foregroundRole(), Qt::black);
-
-    if (name.isEmpty())
-    {
-        bOk->setEnabled(false);
-        palette.setColor(ui->name_Label->foregroundRole(), Qt::red);
-        //palette.setColor(ui->name_LineEdit->foregroundRole(), Qt::red);
-    }
-    else
-    {
-        if (m_image.name != name)
-        {
-            QRegularExpression rx(NameRegExp());
-            //if (!rx.match(name).hasMatch() || !VContainer::IsUnique(name))
-            if (!VContainer::IsUnique(name))
-            {
-                bOk->setEnabled(false);
-                palette.setColor(ui->name_Label->foregroundRole(), Qt::red);
-                //palette.setColor(ui->name_LineEdit->foregroundRole(), Qt::red);
-            }
-            else
-            {
-                setName(name);
-            }
-        }
-    }
-    ui->name_Label->setPalette(palette);
-    //ui->name_LineEdit->setPalette(palette);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -135,9 +135,6 @@ void ShowInfoDialog::showEvent(QShowEvent *event)
         return;
     }
 
-    setMaximumSize(size());
-    setMinimumSize(size());
-
     m_isInitialized = true;//first show windows are held
 }
 

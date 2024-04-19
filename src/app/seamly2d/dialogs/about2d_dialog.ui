@@ -100,7 +100,7 @@
           </font>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="about_tab">
           <attribute name="title">
@@ -115,7 +115,7 @@
                 <string>Copy build data to clipboard</string>
                </property>
                <property name="text">
-                <string>...</string>
+                <string/>
                </property>
                <property name="icon">
                 <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
@@ -166,7 +166,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>Version</string>
+                  <string>Version:</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -193,7 +193,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>Version</string>
+                  <string notr="true">Version</string>
                  </property>
                 </widget>
                </item>
@@ -245,7 +245,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>Revision</string>
+                  <string notr="true">Revision</string>
                  </property>
                 </widget>
                </item>
@@ -380,7 +380,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>CPU</string>
+                  <string notr="true">CPU</string>
                  </property>
                 </widget>
                </item>
@@ -425,7 +425,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>Compiler</string>
+                  <string notr="true">Compiler</string>
                  </property>
                 </widget>
                </item>
@@ -559,7 +559,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>446</width>
+                <width>453</width>
                 <height>599</height>
                </rect>
               </property>
@@ -599,7 +599,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -624,7 +624,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -715,7 +715,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -762,7 +762,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -809,7 +809,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -887,7 +887,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -934,7 +934,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -981,7 +981,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -1065,7 +1065,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -1090,7 +1090,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -1115,7 +1115,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -1140,7 +1140,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -1165,7 +1165,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -1228,7 +1228,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>Systemcodec:</string>
+                       <string>System codec:</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1256,7 +1256,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -1347,7 +1347,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -1372,7 +1372,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -1397,7 +1397,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                      </widget>
                     </item>
@@ -1519,7 +1519,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>TextLabel</string>
+                       <string notr="true">TextLabel</string>
                       </property>
                       <property name="wordWrap">
                        <bool>true</bool>
@@ -1552,7 +1552,7 @@
          </widget>
          <widget class="QWidget" name="contributors_tab">
           <attribute name="title">
-           <string notr="true">Contributors</string>
+           <string>Contributors</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_12">
            <item>
@@ -1568,7 +1568,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>460</width>
+                <width>470</width>
                 <height>516</height>
                </rect>
               </property>

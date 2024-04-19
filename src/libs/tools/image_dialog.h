@@ -50,7 +50,7 @@ class ImageDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit         ImageDialog(DraftImage image, qreal minDimension, qreal maxDimension);
+    explicit         ImageDialog(DraftImage image, qreal minDimension, qreal maxDimension, QWidget *parent);
     virtual         ~ImageDialog();
 
     DraftImage       getImage() const;
@@ -98,7 +98,6 @@ public:
     void             setOpacity(const qreal &opacity);
 
 private slots:
-    void             nameChanged(const QString &name);
     void             originChanged(const QString &text);
     void             lockChanged(bool checked);
     void             alignmentChanged();

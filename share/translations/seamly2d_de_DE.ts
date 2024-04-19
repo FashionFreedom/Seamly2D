@@ -2,6 +2,200 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
+    <name>About2DAppDialog</name>
+    <message>
+        <location filename="../../src/app/seamly2d/dialogs/about2d_dialog.ui" line="+41"/>
+        <source>About Seamly2D</source>
+        <translation>Über Seamly2D</translation>
+    </message>
+    <message>
+        <location filename="../../src/app/seamly2d/dialogs/about2d_dialog.cpp" line="+113"/>
+        <source>Web site : %1</source>
+        <translation>Webseite: %1</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Cannot open your default browser</source>
+        <translation>Standardbrowser kann nicht geöffnet werden</translation>
+    </message>
+    <message>
+        <location line="+49"/>
+        <source>Left to right</source>
+        <translation>Von links nach rechts</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Right to left</source>
+        <translation>Von rechts nach links</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Automatic</source>
+        <translation>Automatisch</translation>
+    </message>
+    <message>
+        <location line="-75"/>
+        <location line="+39"/>
+        <source>Built on %1 at %2</source>
+        <translation>Erstellt von %1 auf %2</translation>
+    </message>
+    <message>
+        <location filename="../../src/app/seamly2d/dialogs/about2d_dialog.ui" line="+66"/>
+        <source>About</source>
+        <translation>Über</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Copy build data to clipboard</source>
+        <translation>Baudaten in die Zwischenablage kopieren</translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <source>Seamly 2D</source>
+        <translation>Seamly 2D</translation>
+    </message>
+    <message>
+        <location line="+428"/>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <location line="-310"/>
+        <location line="+380"/>
+        <source>Build date:</source>
+        <translation>Erstellungsdatum:</translation>
+    </message>
+    <message>
+        <location line="-335"/>
+        <source>Qt Version:</source>
+        <translation>Qt-Version:</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <location line="+381"/>
+        <location line="+125"/>
+        <source>CPU:</source>
+        <translation>CPU:</translation>
+    </message>
+    <message>
+        <location line="-461"/>
+        <location line="+289"/>
+        <source>Compiler:</source>
+        <translation>Compiler:</translation>
+    </message>
+    <message>
+        <location line="-150"/>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <location line="+128"/>
+        <source>Revision:</source>
+        <translation>Revision:</translation>
+    </message>
+    <message>
+        <location line="-499"/>
+        <location line="+615"/>
+        <source>Version:</source>
+        <translation>Version:</translation>
+    </message>
+    <message>
+        <location line="+46"/>
+        <source>Architecture</source>
+        <translation>Architektur</translation>
+    </message>
+    <message>
+        <location line="+79"/>
+        <source>OS:</source>
+        <translation>OS:</translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <source>OS Version:</source>
+        <translation>OS-Version:</translation>
+    </message>
+    <message>
+        <location line="+52"/>
+        <source>Locale</source>
+        <translation>Standort</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>Country:</source>
+        <translation>Land:</translation>
+    </message>
+    <message>
+        <location line="+147"/>
+        <source>Decimal point:</source>
+        <translation>Dezimalpunkt:</translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>Script name:</source>
+        <translation>Skriptname:</translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>System codec:</source>
+        <translation>System-Codec:</translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <source>Language:</source>
+        <translation>Sprache:</translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>Text direction:</source>
+        <translation>Textrichtung:</translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>Name:</source>
+        <translation>Bezeichnung:</translation>
+    </message>
+    <message>
+        <location line="+97"/>
+        <source>Positive sign:</source>
+        <translation>Positives Vorzeichen:</translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>Negative sign:</source>
+        <translation>Negatives Vorzeichen:</translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <source>Application</source>
+        <translation>Anmeldung</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>Arguments:</source>
+        <translation>Argumente:</translation>
+    </message>
+    <message>
+        <location line="+61"/>
+        <source>Contributors</source>
+        <translation>Mitwirkende</translation>
+    </message>
+    <message>
+        <location line="+142"/>
+        <source>Check For Updates</source>
+        <translation>Nach Updates suchen</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Downloading installer %p% complete</source>
+        <translation>Installationsprogramm runterladen</translation>
+    </message>
+    <message>
+        <location filename="../../src/app/seamly2d/dialogs/about2d_dialog.cpp" line="-45"/>
+        <source>unknown</source>
+        <translation>unbekannt</translation>
+    </message>
+</context>
+<context>
     <name>AddDraftBlock</name>
     <message>
         <location filename="../../src/libs/vtools/undocommands/add_draftblock.cpp" line="+67"/>
@@ -80,7 +274,7 @@
 <context>
     <name>Application2D</name>
     <message>
-        <location filename="../../src/app/seamly2d/core/application_2d.cpp" line="+363"/>
+        <location filename="../../src/app/seamly2d/core/application_2d.cpp" line="+359"/>
         <source>Error parsing file. Program will be terminated.</source>
         <translation>Fehler beim Verarbeiten der Datei. Das Programm wird geschlossen.</translation>
     </message>
@@ -421,59 +615,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/libs/vtools/undocommands/deletepiece.cpp" line="+75"/>
         <source>delete tool</source>
         <translation>Löschwerkzeug</translation>
-    </message>
-</context>
-<context>
-    <name>About2DAppDialog</name>
-    <message>
-        <location filename="../../src/app/seamly2d/dialogs/dialogaboutapp.ui" line="+29"/>
-        <source>About Seamly2D</source>
-        <translation>Über Seamly2D</translation>
-    </message>
-    <message>
-        <location line="+66"/>
-        <source>Seamly2D version</source>
-        <translation>Seamly2D-Version</translation>
-    </message>
-    <message>
-        <location line="+98"/>
-        <source>Contributors</source>
-        <translation>Mitwirkende</translation>
-    </message>
-    <message>
-        <location filename="../../src/app/seamly2d/dialogs/dialogaboutapp.cpp" line="+103"/>
-        <source>Web site : %1</source>
-        <translation>Webseite: %1</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Cannot open your default browser</source>
-        <translation>Standardbrowser kann nicht geöffnet werden</translation>
-    </message>
-    <message>
-        <location line="-17"/>
-        <source>Build revision: %1</source>
-        <translation>Build Revision: %1</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Built on %1 at %2</source>
-        <translation>Erstellt von %1 auf %2</translation>
-    </message>
-    <message>
-        <location filename="../../src/app/seamly2d/dialogs/dialogaboutapp.ui" line="+177"/>
-        <source>Check For Updates</source>
-        <translation>Nach Updates suchen</translation>
-    </message>
-    <message>
-        <location line="-13"/>
-        <source>Downloading installer %p% complete</source>
-        <translation>Installationsprogramm runterladen</translation>
-    </message>
-    <message>
-        <location filename="../../src/app/seamly2d/dialogs/dialogaboutapp.cpp" line="-7"/>
-        <source>unknown</source>
-        <translation>unbekannt</translation>
     </message>
 </context>
 <context>
@@ -5097,7 +5238,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="-45"/>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -5764,6 +5905,187 @@ for writing</source>
     </message>
 </context>
 <context>
+    <name>ImageDialog</name>
+    <message>
+        <location filename="../../src/libs/tools/image_dialog.ui" line="+35"/>
+        <source>Image Properties</source>
+        <translation>Bild-Eigenschaften</translation>
+    </message>
+    <message>
+        <location line="+36"/>
+        <source>Selection</source>
+        <translation>Auswahl</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>Id:</source>
+        <translation>Id:</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Id</source>
+        <translation>Id</translation>
+    </message>
+    <message>
+        <location line="+31"/>
+        <source>Name:</source>
+        <translation>Bezeichnung:</translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>Lock Image:</source>
+        <translation>Bild sperren:</translation>
+    </message>
+    <message>
+        <location line="+67"/>
+        <source>Geometry</source>
+        <translation>Geometrie</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Switch between px and pattern units</source>
+        <translation>Umschalten zwischen px- und Muster-Einheiten</translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>PX</source>
+        <translation>PX</translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <source>Unit:</source>
+        <translation>Einheit:</translation>
+    </message>
+    <message>
+        <location line="+58"/>
+        <source>X Position:</source>
+        <translation>X Position:</translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <location line="+67"/>
+        <location line="+176"/>
+        <location line="+67"/>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <location line="-276"/>
+        <source>Y Position:</source>
+        <translation>Y Position:</translation>
+    </message>
+    <message>
+        <location line="+66"/>
+        <source>Lock aspect ratio</source>
+        <translation>Seitenverhältnis sperren</translation>
+    </message>
+    <message>
+        <location line="+57"/>
+        <source>Lock Aspect:</source>
+        <translation>Aspekt sperren:</translation>
+    </message>
+    <message>
+        <location line="+53"/>
+        <source>Width:</source>
+        <translation>Breite:</translation>
+    </message>
+    <message>
+        <location line="+67"/>
+        <source>Height:</source>
+        <translation>Höhe:</translation>
+    </message>
+    <message>
+        <location line="+67"/>
+        <source>X Scale:</source>
+        <translation>X Skala:</translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <location line="+64"/>
+        <location line="+177"/>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <location line="-210"/>
+        <source>Y Scale:</source>
+        <translation>Y Skala:</translation>
+    </message>
+    <message>
+        <location line="+83"/>
+        <source>Rotation:</source>
+        <translation>Drehung:</translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <source>°</source>
+        <translation>°</translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Attributes</source>
+        <translation>Eigenschaften</translation>
+    </message>
+    <message>
+        <location line="+35"/>
+        <source>Opacity:</source>
+        <translation>Opazität:</translation>
+    </message>
+</context>
+<context>
+    <name>ImageItem</name>
+    <message>
+        <location filename="../../src/libs/tools/image_item.cpp" line="+295"/>
+        <source>Properties</source>
+        <translation>Eigenschaften</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Lock</source>
+        <translation>Sperre</translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Order</source>
+        <translation>Bestellung</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Bring to top</source>
+        <translation>Nach oben bringen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Move up</source>
+        <translation>Nachrücken</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Move down</source>
+        <translation>Nach unten gehen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Send to bottom</source>
+        <translation>Nach unten senden</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Delete</source>
+        <translation>Löschen</translation>
+    </message>
+    <message>
+        <location line="+283"/>
+        <source>&lt;b&gt;Image (%7)&lt;/b&gt;: Size(%2%1, %3%1); Pos(%4%1, %5%1); Rot(%6°)%8</source>
+        <translation>&lt;b&gt;Bild (%7)&lt;/b&gt;: Size(%2%1, %3%1); Pos(%4%1, %5%1); Rot(%6°)%8</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source> - &lt;b&gt;Aspect ratio locked&lt;/b&gt;</source>
+        <translation>- &lt;b&gt;Seitenverhältnis gesperrt&lt;/b&gt;</translation>
+    </message>
+</context>
+<context>
     <name>InsertNodesDialog</name>
     <message>
         <location filename="../../src/libs/vtools/dialogs/tools/insert_nodes_dialog.ui" line="+42"/>
@@ -5869,10 +6191,34 @@ for writing</source>
 <context>
     <name>InternalStrings</name>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/dialogaboutapp.cpp" line="+9"/>
         <location filename="../../src/app/seamlyme/dialogs/dialogaboutseamlyme.cpp" line="+9"/>
         <source>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLICH DER GARANTIE FÜR DESIGN, GEBRAUCHSFÄHIGKEIT UND EIGNUNG FÜR EINEN BESTIMMTEN ZWECK zur Verfügung gestellt.</translation>
+    </message>
+    <message>
+        <location filename="../../src/app/seamly2d/dialogs/about2d_dialog.cpp" line="+11"/>
+        <source>Seamly2D is an application for computer-aided design of garment patterns.
+
+Seamly2D is a free (open source) software.
+
+All brand or product names are trademarks or registered trademarks of their respective holders.
+
+© 2017-2024 Seamly2D Project.
+
+Portions of this software © 2008-2024 The Qt Company Ltd.
+
+The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
+        <translation>Seamly2D ist eine Anwendung für den computergestützten Entwurf von Bekleidungsmustern.
+
+Seamly2D ist eine kostenlose (Open Source) Software.
+
+Alle Marken- oder Produktnamen sind Marken oder eingetragene Marken der jeweiligen Inhaber.
+
+© 2017-2024 Seamly2D Project.
+
+Teile dieser Software © 2008-2024 The Qt Company Ltd.
+
+Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLICH DER GARANTIE FÜR DESIGN, GEBRAUCHSFÄHIGKEIT UND EIGNUNG FÜR EINEN BESTIMMTEN ZWECK zur Verfügung gestellt.</translation>
     </message>
 </context>
 <context>
@@ -6149,7 +6495,7 @@ for writing</source>
     </message>
     <message>
         <location filename="../../src/app/seamly2d/dialogs/layoutsettings_dialog.cpp" line="+615"/>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -6735,14 +7081,16 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <location line="+454"/>
         <source>Images will not be saved</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Bilder werden nicht gespeichert</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Please note that the images can not be saved and that they are not affected by the undo and redo functions in the current version of the software.
 
 You may want to take a screenshot of the image properties dialog before closing the software to be able to recreate identically the image when opening the software again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte beachten Sie, dass die Bilder nicht gespeichert werden können und dass sie von den Rückgängig- und Wiederherstellungsfunktionen in der aktuellen Version der Software nicht betroffen sind.
+
+Es empfiehlt sich, vor dem Schließen der Software einen Screenshot des Dialogs mit den Bildeigenschaften zu machen, damit Sie das Bild beim erneuten Öffnen der Software identisch wiederherstellen können.</translation>
     </message>
     <message>
         <location line="+1212"/>
@@ -7430,9 +7778,14 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>A, L</translation>
     </message>
     <message>
-        <location line="+123"/>
+        <location line="-875"/>
+        <source>Tools for inserting or modifying images.</source>
+        <translation>Werkzeuge zum Einfügen oder Ändern von Bildern.</translation>
+    </message>
+    <message>
+        <location line="+998"/>
         <source>Point on Curve (O, C)</source>
-        <translation type="unfinished"></translation>
+        <translation>Punkt auf Kurve (O, C)</translation>
     </message>
     <message>
         <location line="+290"/>
@@ -7995,9 +8348,11 @@ You may want to take a screenshot of the image properties dialog before closing 
     </message>
     <message>
         <location filename="../../src/app/seamly2d/mainwindow.ui" line="+30"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+56"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1720"/>
+        <location line="+9"/>
+        <location line="+1767"/>
         <source>Import Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Bild importieren</translation>
     </message>
     <message>
         <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+451"/>
@@ -8310,15 +8665,10 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Unterverzeichnis hinzufügen  (I, P)</translation>
     </message>
     <message>
-        <location line="-2067"/>
-        <source>Tools for inserting or modifying images. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+19"/>
+        <location line="-2048"/>
         <location line="+2446"/>
         <source>Import Image (Alt + I)</source>
-        <translation type="unfinished"></translation>
+        <translation>Bild importieren</translation>
     </message>
     <message>
         <location line="-2308"/>
@@ -8341,7 +8691,7 @@ You may want to take a screenshot of the image properties dialog before closing 
     <message>
         <location line="-1468"/>
         <source>Contains information about custom and internal variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Enthält Informationen über benutzerdefinierte und interne Variablen</translation>
     </message>
     <message>
         <location line="+144"/>
@@ -8681,27 +9031,27 @@ You may want to take a screenshot of the image properties dialog before closing 
     <message>
         <location line="+144"/>
         <source>Toggle Point Name Text (V, P)</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktnamen-Text umschalten (V, P)</translation>
     </message>
     <message>
         <location line="+209"/>
-        <source>Images tools </source>
-        <translation type="unfinished"></translation>
+        <source>Images tools</source>
+        <translation>Bilder-Tools</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Delete</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Align</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausrichten</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Sperre</translation>
     </message>
     <message>
         <location line="+54"/>
@@ -8716,7 +9066,7 @@ You may want to take a screenshot of the image properties dialog before closing 
     <message>
         <location line="+18"/>
         <source>Alt+I</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+I</translation>
     </message>
     <message>
         <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2491"/>
@@ -8876,34 +9226,28 @@ You may want to take a screenshot of the image properties dialog before closing 
     <message>
         <location line="+278"/>
         <location line="+9"/>
-        <source>Can&apos;t read image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-9"/>
-        <location line="+9"/>
         <source>Could not read the image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Bild konnte nicht gelesen werden.</translation>
     </message>
     <message>
         <location line="-9"/>
-        <source>It may be corrupted...</source>
-        <translation type="unfinished"></translation>
+        <source>File may be corrupted...</source>
+        <translation>Die Datei könnte beschädigt sein...</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>It may be corrupted or empty...</source>
-        <translation type="unfinished"></translation>
+        <source>File may be corrupted or empty...</source>
+        <translation>Die Datei kann beschädigt oder leer sein...</translation>
     </message>
     <message>
         <location line="+40"/>
         <source>Confirm deletion</source>
-        <translation type="unfinished">Löschvorgang bestätigen</translation>
+        <translation>Löschvorgang bestätigen</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Do you really want to delete?</source>
-        <translation type="unfinished">Möchtest Du wirklich löschen?</translation>
+        <translation>Möchtest Du wirklich löschen?</translation>
     </message>
     <message>
         <location filename="../../src/app/seamly2d/mainwindow.ui" line="-4437"/>
@@ -8911,12 +9255,12 @@ You may want to take a screenshot of the image properties dialog before closing 
         <location line="+3"/>
         <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+91"/>
         <source>Images</source>
-        <translation type="unfinished">Bilder</translation>
+        <translation>Bilder</translation>
     </message>
     <message>
         <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+16"/>
         <source>Open Image File</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilddatei öffnen</translation>
     </message>
     <message>
         <location line="+1059"/>
@@ -11379,7 +11723,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <location line="+12"/>
         <source>Do not show welcome screen</source>
-        <translation></translation>
+        <translation>Willkommensbildschirm nicht anzeigen</translation>
     </message>
     <message>
         <location line="+207"/>
@@ -11942,7 +12286,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <location line="+27"/>
         <source>My Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Meine Bilder</translation>
     </message>
     <message>
         <location line="-54"/>
@@ -12241,7 +12585,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../../src/libs/vmisc/projectversion.cpp" line="+134"/>
+        <location filename="../../src/libs/vmisc/projectversion.cpp" line="+143"/>
         <source>Based on Qt %1 (%2, %3 bit)</source>
         <translation>Basierend auf Qt %1 (%2, %3 Bit)</translation>
     </message>
@@ -12659,12 +13003,12 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <location filename="../../src/libs/vwidgets/resize_handle.cpp" line="+630"/>
         <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center - &lt;b&gt; Aspect ratio locked &lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Drücken Sie &lt;b&gt;CTRL&lt;/b&gt; zum Skalieren um die Mitte herum - &lt;b&gt; Seitenverhältnis gesperrt &lt;/b&gt;</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center, &lt;b&gt;SHIFT&lt;/b&gt; to scale uniformly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Drücken Sie &lt;b&gt;CTRL&lt;/b&gt;, um um die Mitte herum zu skalieren, &lt;b&gt;SHIFT&lt;/b&gt;, um gleichmäßig zu skalieren.</translation>
     </message>
 </context>
 <context>
@@ -12887,8 +13231,8 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <location line="+22"/>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12904,7 +13248,7 @@ When unchecked the period is used.</source>
     </message>
     <message>
         <location line="+25"/>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12965,8 +13309,8 @@ You can change this setting in the SeamlyMe preferences.</source>
     </message>
     <message>
         <location line="+22"/>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12977,7 +13321,7 @@ When unchecked the period is used.</source>
     </message>
     <message>
         <location line="+190"/>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -13849,17 +14193,17 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <location line="+6"/>
         <source>Images</source>
-        <translation type="unfinished">Bilder</translation>
+        <translation>Bilder</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Import Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Bild importieren</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Alt + I</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt + I</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -15951,7 +16295,7 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <location line="+42"/>
         <source>images</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilder</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -19409,7 +19753,7 @@ Usage: fmod(x; y)</comment>
 <context>
     <name>vNoisyHandler</name>
     <message>
-        <location filename="../../src/app/seamly2d/core/application_2d.cpp" line="-252"/>
+        <location filename="../../src/app/seamly2d/core/application_2d.cpp" line="-248"/>
         <source>DEBUG:</source>
         <translation>Fehlerbehebung:</translation>
     </message>

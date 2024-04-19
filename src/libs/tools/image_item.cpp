@@ -341,7 +341,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
     if (selectedAction == actionProperties)
     {
-        ImageDialog *dialog = new ImageDialog(m_image, m_minDimension, m_maxDimension);
+        ImageDialog *dialog = new ImageDialog(m_image, m_minDimension, m_maxDimension, qApp->getMainWindow());
         connect(dialog, &ImageDialog::applyClicked, this, &ImageItem::updateImageAndHandles);
 
         if (dialog->exec() == QDialog::Accepted)
@@ -481,7 +481,7 @@ void ImageItem::keyReleaseEvent(QKeyEvent *event)
 }
 
 void ImageItem::initializeItem()
-{ 
+{
     setFlag(QGraphicsItem::ItemIsMovable, true);
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     setFlag(QGraphicsItem::ItemIsFocusable, true); // For keyboard input focus
