@@ -92,7 +92,7 @@ About2DAppDialog::About2DAppDialog(QWidget *parent)
     }
 	ui->version_value->setText(QString("Seamly2D %1").arg(APP_VERSION_STR));
 	ui->revision_value->setText(revision);
-    QLocale sysloc = QLocale::QLocale();
+    QLocale sysloc = QLocale();
 	QDate date = sysloc.toDate(QString(__DATE__).simplified(), QLatin1String("MMM d yyyy"));
 	ui->buildDate_value->setText(tr("Built on %1 at %2").arg(date.toString()).arg(__TIME__));
 	ui->qtVersion_value->setText(QLatin1String(qVersion()));
