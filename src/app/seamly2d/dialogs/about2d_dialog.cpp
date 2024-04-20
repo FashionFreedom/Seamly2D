@@ -92,8 +92,8 @@ About2DAppDialog::About2DAppDialog(QWidget *parent)
     }
 	ui->version_value->setText(QString("Seamly2D %1").arg(APP_VERSION_STR));
 	ui->revision_value->setText(revision);
-    QLocale sysloc = QLocale();
-	QDate date = sysloc.toDate(QString(__DATE__).simplified(), QLatin1String("MMM d yyyy"));
+
+	QDate date = QLocale::c().toDate(QString(__DATE__).simplified(), QLatin1String("MMM d yyyy"));
 	ui->buildDate_value->setText(tr("Built on %1 at %2").arg(date.toString()).arg(__TIME__));
 	ui->qtVersion_value->setText(QLatin1String(qVersion()));
     ui->cpu_value->setText(QSysInfo::buildCpuArchitecture());
@@ -151,6 +151,7 @@ About2DAppDialog::About2DAppDialog(QWidget *parent)
     ui->sysOS_value->setText(os);
     ui->sysOSVersion_value->setText(QSysInfo::productVersion());
 
+    QLocale sysloc = QLocale();
     ui->sysLocale_value->setText(sysloc.name());
     ui->sysLocaleCountry_value->setText(QLocale::countryToString(sysloc.country()));
     ui->sysLocalLang_value->setText(QLocale::languageToString(sysloc.language()));
