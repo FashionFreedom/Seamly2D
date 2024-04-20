@@ -61,7 +61,7 @@ public:
     QString          getName() const;
     void             setName(const QString &name);
 
-    Position       getOriginPoint() const;
+    Position         getOriginPoint() const;
     void             setOriginPoint(const int &index);
 
     qreal            getXPos() const;
@@ -98,6 +98,7 @@ public:
     void             setOpacity(const qreal &opacity);
 
 private slots:
+    void             nameChanged(const QString &name);
     void             originChanged(const QString &text);
     void             lockChanged(bool checked);
     void             alignmentChanged();

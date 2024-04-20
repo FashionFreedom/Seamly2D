@@ -233,14 +233,11 @@ QToolButton:!checked {
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLabel" name="filename_Label">
+         <widget class="QLineEdit" name="name_LineEdit">
           <property name="font">
            <font>
             <bold>false</bold>
            </font>
-          </property>
-          <property name="text">
-           <string notr="true">filename</string>
           </property>
          </widget>
         </item>
