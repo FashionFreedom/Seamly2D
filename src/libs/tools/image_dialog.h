@@ -50,7 +50,7 @@ class ImageDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit         ImageDialog(DraftImage image, qreal minDimension, qreal maxDimension);
+    explicit         ImageDialog(DraftImage image, qreal minDimension, qreal maxDimension, QWidget *parent);
     virtual         ~ImageDialog();
 
     DraftImage       getImage() const;
@@ -61,7 +61,7 @@ public:
     QString          getName() const;
     void             setName(const QString &name);
 
-    Position       getOriginPoint() const;
+    Position         getOriginPoint() const;
     void             setOriginPoint(const int &index);
 
     qreal            getXPos() const;

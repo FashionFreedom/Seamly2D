@@ -1671,7 +1671,7 @@ void  MainWindow::addImage(DraftImage image)
     if(!imageReader.canRead())
     {
         qCDebug(vMainWindow, "Can't read image");
-        QMessageBox::critical(this, tr("Can't read image"), tr("Could not read the image.") + "\n" + tr("It may be corrupted..."), QMessageBox::Ok);
+        QMessageBox::critical(this, tr("Import Image"), tr("Could not read the image.") + "\n" + tr("File may be corrupted..."), QMessageBox::Ok);
         return;
     }
 
@@ -1680,7 +1680,7 @@ void  MainWindow::addImage(DraftImage image)
     if(image.pixmap.isNull())
     {
         qCDebug(vMainWindow, "Can't read image");
-        QMessageBox::critical(this, tr("Can't read image"), tr("Could not read the image.") + "\n" + tr("It may be corrupted or empty..."), QMessageBox::Ok);
+        QMessageBox::critical(this, tr("Import Image"), tr("Could not read the image.") + "\n" + tr("File may be corrupted or empty..."), QMessageBox::Ok);
         return;
     }
 
@@ -6338,7 +6338,7 @@ void MainWindow::createActions()
 
     connect(ui->aboutSeamly2D_Action, &QAction::triggered, this, [this]()
     {
-        DialogAboutApp *aboutDialog = new DialogAboutApp(this);
+        About2DAppDialog *aboutDialog = new About2DAppDialog(this);
         aboutDialog->setAttribute(Qt::WA_DeleteOnClose, true);
         aboutDialog->show();
     });
