@@ -66,7 +66,7 @@
       <widget class="QLabel" name="label">
        <property name="minimumSize">
         <size>
-         <width>90</width>
+         <width>60</width>
          <height>0</height>
         </size>
        </property>
@@ -77,7 +77,7 @@
         <pixmap resource="../../../libs/vmisc/share/resources/icon.qrc">:/icon/logos/seamly2d_vertical.png</pixmap>
        </property>
        <property name="scaledContents">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -559,7 +559,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>446</width>
+                <width>453</width>
                 <height>599</height>
                </rect>
               </property>
@@ -1568,7 +1568,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>450</width>
+                <width>470</width>
                 <height>516</height>
                </rect>
               </property>
