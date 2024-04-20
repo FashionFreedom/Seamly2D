@@ -37,7 +37,7 @@
         <location line="-75"/>
         <location line="+39"/>
         <source>Built on %1 at %2</source>
-        <translation>Erstellt von %1 auf %2</translation>
+        <translation>Erstellt am %1 um %2</translation>
     </message>
     <message>
         <location filename="../../src/app/seamly2d/dialogs/about2d_dialog.ui" line="+66"/>
@@ -657,7 +657,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+85"/>
         <source>Built on %1 at %2</source>
-        <translation>Erstellt von %1 auf %2</translation>
+        <translation>Erstellt am %1 um %2</translation>
     </message>
     <message>
         <location line="+7"/>
