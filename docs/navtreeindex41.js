@@ -1,5 +1,7 @@
 var NAVTREEINDEX41 =
 {
+"da/d5d/classVMainGraphicsView.html#a1acab2c8d6d72e090b11b07bbb4d8fa2":[1,0,351,17],
+"da/d5d/classVMainGraphicsView.html#a23740285ac6c147e0a9328f84c681455":[1,0,351,5],
 "da/d5d/classVMainGraphicsView.html#a28662f62231266b6999b8827335d9859":[1,0,351,38],
 "da/d5d/classVMainGraphicsView.html#a2b99dac31f68c2ed74674adc00d2e1a7":[1,0,351,10],
 "da/d5d/classVMainGraphicsView.html#a34ef2e7cfed8655063c0fd8e3a01c92d":[1,0,351,36],
@@ -119,8 +121,6 @@ var NAVTREEINDEX41 =
 "da/d7f/classVGrainlineData.html#adf922c37db7a0aba2fcdf9ea2140f6e3":[1,0,290,11],
 "da/d7f/classVGrainlineData.html#af6d8fa3f0d4195129853175d2b4817db":[1,0,290,6],
 "da/d7f/classVGrainlineData.html#afe86a204b4f9e38b25729106bbbad83c":[1,0,290,14],
-"da/d80/dialogaboutapp_8h.html":[2,0,0,0,0,1,8],
-"da/d80/dialogaboutapp_8h_source.html":[2,0,0,0,0,1,8],
 "da/d81/vinternalvariable__p_8h.html":[2,0,0,1,10,1,20],
 "da/d81/vinternalvariable__p_8h_source.html":[2,0,0,1,10,1,20],
 "da/d89/vabstractoperation_8h.html":[2,0,0,1,13,1,0,0,2],

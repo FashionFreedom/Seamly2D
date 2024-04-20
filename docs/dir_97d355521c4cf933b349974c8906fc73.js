@@ -1,6 +1,10 @@
 var dir_97d355521c4cf933b349974c8906fc73 =
 [
     [ "configpages", "dir_e4923d2acd3e9053b6364af89cb1744b.html", "dir_e4923d2acd3e9053b6364af89cb1744b" ],
+    [ "about2d_dialog.cpp", "d9/d7f/about2d__dialog_8cpp.html", null ],
+    [ "about2d_dialog.h", "de/da1/about2d__dialog_8h.html", [
+      [ "About2DAppDialog", "df/d22/classAbout2DAppDialog.html", "df/d22/classAbout2DAppDialog" ]
+    ] ],
     [ "abstractlayout_dialog.cpp", "dd/db4/abstractlayout__dialog_8cpp.html", null ],
     [ "abstractlayout_dialog.h", "d7/d9e/abstractlayout__dialog_8h.html", [
       [ "AbstractLayoutDialog", "df/dc3/classAbstractLayoutDialog.html", "df/dc3/classAbstractLayoutDialog" ]
@@ -12,10 +16,6 @@ var dir_97d355521c4cf933b349974c8906fc73 =
     [ "decimalchart_dialog.cpp", "dd/dc2/decimalchart__dialog_8cpp.html", null ],
     [ "decimalchart_dialog.h", "dc/d9a/decimalchart__dialog_8h.html", [
       [ "DecimalChartDialog", "db/dda/classDecimalChartDialog.html", "db/dda/classDecimalChartDialog" ]
-    ] ],
-    [ "dialogaboutapp.cpp", "dd/d64/dialogaboutapp_8cpp.html", null ],
-    [ "dialogaboutapp.h", "da/d80/dialogaboutapp_8h.html", [
-      [ "DialogAboutApp", "de/d06/classDialogAboutApp.html", "de/d06/classDialogAboutApp" ]
     ] ],
     [ "dialogdatetimeformats.cpp", "da/dbc/dialogdatetimeformats_8cpp.html", null ],
     [ "dialogdatetimeformats.h", "d5/d11/dialogdatetimeformats_8h.html", [

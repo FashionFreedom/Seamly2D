@@ -66,6 +66,7 @@ var annotated_dup =
       [ "VStandardPropertyFactory", "d1/d5a/classVPE_1_1VStandardPropertyFactory.html", "d1/d5a/classVPE_1_1VStandardPropertyFactory" ],
       [ "VWidgetPropertyPrivate", "df/da8/classVPE_1_1VWidgetPropertyPrivate.html", "df/da8/classVPE_1_1VWidgetPropertyPrivate" ]
     ] ],
+    [ "About2DAppDialog", "df/d22/classAbout2DAppDialog.html", "df/d22/classAbout2DAppDialog" ],
     [ "AbstractLayoutDialog", "df/dc3/classAbstractLayoutDialog.html", "df/dc3/classAbstractLayoutDialog" ],
     [ "AbstractMConverter", "d8/d6b/classAbstractMConverter.html", "d8/d6b/classAbstractMConverter" ],
     [ "AbstractTest", "d0/d9b/classAbstractTest.html", "d0/d9b/classAbstractTest" ],
@@ -99,7 +100,6 @@ var annotated_dup =
     [ "DelGroup", "d5/dbd/classDelGroup.html", "d5/dbd/classDelGroup" ],
     [ "DelTool", "d9/d22/classDelTool.html", "d9/d22/classDelTool" ],
     [ "DestinationItem", "de/d14/structDestinationItem.html", "de/d14/structDestinationItem" ],
-    [ "DialogAboutApp", "de/d06/classDialogAboutApp.html", "de/d06/classDialogAboutApp" ],
     [ "DialogAboutSeamlyMe", "d7/d3a/classDialogAboutSeamlyMe.html", "d7/d3a/classDialogAboutSeamlyMe" ],
     [ "DialogAlongLine", "dd/d63/classDialogAlongLine.html", "dd/d63/classDialogAlongLine" ],
     [ "DialogArc", "db/d4d/classDialogArc.html", "db/d4d/classDialogArc" ],

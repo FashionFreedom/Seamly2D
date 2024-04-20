@@ -1,6 +1,6 @@
 var classImageDialog =
 [
-    [ "ImageDialog", "d3/db4/classImageDialog.html#aebb6e846c376ed713d2d63c860f68d98", null ],
+    [ "ImageDialog", "d3/db4/classImageDialog.html#a9a6318491d18fc7ccda36a3f4aa1cc12", null ],
     [ "~ImageDialog", "d3/db4/classImageDialog.html#a851b2388c9108c67018c100f1697ba43", null ],
     [ "alignmentChanged", "d3/db4/classImageDialog.html#a8a0813980ccbe0f157917994c85cfd66", null ],
     [ "applyClicked", "d3/db4/classImageDialog.html#a8646e9c889936aa92241038969d601e9", null ],

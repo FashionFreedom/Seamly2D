@@ -1,13 +1,5 @@
 var NAVTREEINDEX62 =
 {
-"df/d02/classVPE_1_1VBoolProperty.html#a2062d983db2055ddcd1da9061d0bc365":[1,0,2,2,5],
-"df/d02/classVPE_1_1VBoolProperty.html#a2570ead346d6cc6ce4cb5fb39d8fce84":[1,0,2,2,1],
-"df/d02/classVPE_1_1VBoolProperty.html#a49ed2213df114c4febf1abea4d4e006d":[1,0,2,2,2],
-"df/d02/classVPE_1_1VBoolProperty.html#a568c75aa31f6397c3c4aba37dbc0ccd4":[1,0,2,2,4],
-"df/d02/classVPE_1_1VBoolProperty.html#a650fb54db76bfa86f7d964448dc65be5":[1,0,2,2,6],
-"df/d02/classVPE_1_1VBoolProperty.html#a7678cd03b526355c7ccf68300e23f5b6":[1,0,2,2,7],
-"df/d02/classVPE_1_1VBoolProperty.html#aa8a1522574c47f3ac5687948c471b66a":[1,0,2,2,0],
-"df/d02/classVPE_1_1VBoolProperty.html#ad0b60ae5bfa07e42d9f9ba428aba2312":[1,0,2,2,3],
 "df/d02/classVPE_1_1VBoolProperty.html#ad774968bc111f6af36671b72102f9e2a":[1,0,2,2,8],
 "df/d03/classVSplinePoint.html":[1,0,390],
 "df/d03/classVSplinePoint.html#a03c217f2f3d234b9f3df11fea30949d7":[1,0,390,10],
@@ -85,6 +77,15 @@ var NAVTREEINDEX62 =
 "df/d18/qmuparserbase_8h_source.html":[2,0,0,1,2,7],
 "df/d1e/image__item_8cpp.html":[2,0,0,1,3,2],
 "df/d1e/image__item_8cpp_source.html":[2,0,0,1,3,2],
+"df/d22/classAbout2DAppDialog.html":[1,0,3],
+"df/d22/classAbout2DAppDialog.html#a3e6b5c3556dd96e5dbf479773c88e5a5":[1,0,3,7],
+"df/d22/classAbout2DAppDialog.html#a43e179127828479e1c688c380775295e":[1,0,3,3],
+"df/d22/classAbout2DAppDialog.html#a5ae1e60070b6ed0bada4a230d365d23c":[1,0,3,6],
+"df/d22/classAbout2DAppDialog.html#a6dc05c75802fc0219b1971cfa6782fb7":[1,0,3,1],
+"df/d22/classAbout2DAppDialog.html#a921fd5507d3a44680a76e13678ac65b2":[1,0,3,2],
+"df/d22/classAbout2DAppDialog.html#aa73ecbc5c61f5430bb17280dd0e3f096":[1,0,3,5],
+"df/d22/classAbout2DAppDialog.html#ac92cbfe4b84006172632f46e3bb15549":[1,0,3,4],
+"df/d22/classAbout2DAppDialog.html#adb3d30a1173e5bad9de3fe963d18bb26":[1,0,3,0],
 "df/d22/seamlymepreferencesconfigurationpage_8h.html":[2,0,0,0,1,0,0,1],
 "df/d22/seamlymepreferencesconfigurationpage_8h_source.html":[2,0,0,0,1,0,0,1],
 "df/d25/vnodeellipticalarc_8h.html":[2,0,0,1,13,1,1,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX62 =
 "df/d5e/classVToolSpline.html#a27ac09221f73a5134a383879c3de121d":[1,0,430,17],
 "df/d5e/classVToolSpline.html#a28b0360672a37cc9620d21c7c4fd3a2e":[1,0,430,25],
 "df/d5e/classVToolSpline.html#a32f7136aea49822365139277f98398ba":[1,0,430,19],
-"df/d5e/classVToolSpline.html#a337d02d2eef0b1988c07799b6fa87778":[1,0,430,12],
-"df/d5e/classVToolSpline.html#a44626c72ddc0c28e90d93bceb31f57aa":[1,0,430,5]
+"df/d5e/classVToolSpline.html#a337d02d2eef0b1988c07799b6fa87778":[1,0,430,12]
 };

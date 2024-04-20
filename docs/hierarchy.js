@@ -53,13 +53,13 @@ var hierarchy =
       [ "PieceFillComboBox", "d8/d5b/classPieceFillComboBox.html", null ]
     ] ],
     [ "QDialog", null, [
+      [ "About2DAppDialog", "df/d22/classAbout2DAppDialog.html", null ],
       [ "AbstractLayoutDialog", "df/dc3/classAbstractLayoutDialog.html", [
         [ "ExportLayoutDialog", "de/dbd/classExportLayoutDialog.html", null ],
         [ "LayoutSettingsDialog", "db/d32/classLayoutSettingsDialog.html", null ]
       ] ],
       [ "CalculatorDialog", "dc/d3d/classCalculatorDialog.html", null ],
       [ "DecimalChartDialog", "db/dda/classDecimalChartDialog.html", null ],
-      [ "DialogAboutApp", "de/d06/classDialogAboutApp.html", null ],
       [ "DialogAboutSeamlyMe", "d7/d3a/classDialogAboutSeamlyMe.html", null ],
       [ "DialogDateTimeFormats", "da/d06/classDialogDateTimeFormats.html", null ],
       [ "DialogExportToCSV", "dc/d09/classDialogExportToCSV.html", null ],

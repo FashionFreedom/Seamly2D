@@ -1,5 +1,6 @@
 var NAVTREEINDEX63 =
 {
+"df/d5e/classVToolSpline.html#a44626c72ddc0c28e90d93bceb31f57aa":[1,0,430,5],
 "df/d5e/classVToolSpline.html#a44da0e4b270c808f748ff696ec1aaf44":[1,0,430,3],
 "df/d5e/classVToolSpline.html#a47a2777b200f2296a5c5894c8b78ab28":[1,0,430,10],
 "df/d5e/classVToolSpline.html#a4a66ef6a3431602831e4e3d3b1989f2e":[1,0,430,2],
@@ -227,10 +228,10 @@ var NAVTREEINDEX63 =
 "df/dbf/qmuparsertest_8cpp.html#a95d5533a83afb20e4994d936f88ca43c":[2,0,0,1,2,16,0],
 "df/dbf/qmuparsertest_8cpp.html#ae19b1bb38c280d8cd89fd8db1098ad87":[2,0,0,1,2,16,1],
 "df/dbf/qmuparsertest_8cpp_source.html":[2,0,0,1,2,16],
-"df/dc3/classAbstractLayoutDialog.html":[1,0,3],
-"df/dc3/classAbstractLayoutDialog.html#a309e202c3fecafb72e69fe8fc73b724f":[1,0,3,2],
-"df/dc3/classAbstractLayoutDialog.html#a4743e2084b3b5cf4798b46d12b9759cd":[1,0,3,1],
-"df/dc3/classAbstractLayoutDialog.html#a603fab080ba0182f253b35dbb4e51f92":[1,0,3,0],
+"df/dc3/classAbstractLayoutDialog.html":[1,0,4],
+"df/dc3/classAbstractLayoutDialog.html#a309e202c3fecafb72e69fe8fc73b724f":[1,0,4,2],
+"df/dc3/classAbstractLayoutDialog.html#a4743e2084b3b5cf4798b46d12b9759cd":[1,0,4,1],
+"df/dc3/classAbstractLayoutDialog.html#a603fab080ba0182f253b35dbb4e51f92":[1,0,4,0],
 "df/dc8/Seamly2DTest_2qttestmainlambda_8cpp.html":[2,0,0,2,2,0],
 "df/dc8/Seamly2DTest_2qttestmainlambda_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[2,0,0,2,2,0,1],
 "df/dc8/Seamly2DTest_2qttestmainlambda_8cpp_source.html":[2,0,0,2,2,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX63 =
 "df/dca/classMoveGroupItem.html#acd8f087a6f44e4f6a50ef597f6434e4b":[1,0,125,9],
 "df/dca/classMoveGroupItem.html#ae09f46fbec7c1ac8543a3810f520eff6":[1,0,125,4],
 "df/dce/color__combobox_8h.html":[2,0,0,1,14,2],
-"df/dce/color__combobox_8h_source.html":[2,0,0,1,14,2],
-"df/dcf/toggle__piecelock_8cpp.html":[2,0,0,1,13,2,43]
+"df/dce/color__combobox_8h_source.html":[2,0,0,1,14,2]
 };

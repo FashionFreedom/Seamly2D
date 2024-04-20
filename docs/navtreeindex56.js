@@ -1,7 +1,5 @@
 var NAVTREEINDEX56 =
 {
-"dd/dfe/classVAbstractPiece.html#a8d4c20a6c785a17240a40de2173ac3ce":[1,0,238,9],
-"dd/dfe/classVAbstractPiece.html#a8e4b8bc754d27b36d2f13ce79e09ad02":[1,0,238,40],
 "dd/dfe/classVAbstractPiece.html#a90390db9fdb7bb4c09b947703b02de57":[1,0,238,3],
 "dd/dfe/classVAbstractPiece.html#a90743784b27c6ef036650a7aa438117f":[1,0,238,49],
 "dd/dfe/classVAbstractPiece.html#a91440f1d032a865c23b973fc076ee16b":[1,0,238,38],
@@ -99,14 +97,6 @@ var NAVTREEINDEX56 =
 "de/d04/classVUndoCommand.html#af6db4e8675af953b970e1f1b304ff0c0":[1,0,436,15],
 "de/d04/vabstractsimple_8cpp.html":[2,0,0,1,14,37],
 "de/d04/vabstractsimple_8cpp_source.html":[2,0,0,1,14,37],
-"de/d06/classDialogAboutApp.html":[1,0,36],
-"de/d06/classDialogAboutApp.html#a416cd070c09d56b8743bce87f95bc3c0":[1,0,36,5],
-"de/d06/classDialogAboutApp.html#a486aa8631cfdfd266cf6371ef584762d":[1,0,36,0],
-"de/d06/classDialogAboutApp.html#a4b6ec212a494bd16c48042ed58fea22d":[1,0,36,1],
-"de/d06/classDialogAboutApp.html#a558e078de9aa4c48b9e2b4f148dec538":[1,0,36,4],
-"de/d06/classDialogAboutApp.html#a616b1df661134471cd9f7dddefc0c5af":[1,0,36,6],
-"de/d06/classDialogAboutApp.html#a6aa2cd74995d4af0d22c4335b1e82b23":[1,0,36,2],
-"de/d06/classDialogAboutApp.html#a6ab235d6af64588d9cd3f2c95a36c943":[1,0,36,3],
 "de/d06/vlinelength__p_8h.html":[2,0,0,1,10,1,26],
 "de/d06/vlinelength__p_8h_source.html":[2,0,0,1,10,1,26],
 "de/d09/classVException.html":[1,0,274],
@@ -249,5 +239,15 @@ var NAVTREEINDEX56 =
 "de/d0f/classVCommonSettings.html#a5ed6c7d2db0544ff3fb5e26047f8d35d":[1,0,251,221],
 "de/d0f/classVCommonSettings.html#a5ef9bc375f971d115c1f9f0828fe6eaf":[1,0,251,142],
 "de/d0f/classVCommonSettings.html#a5f1f743f01a0ce6f0375cbc278985ee1":[1,0,251,63],
-"de/d0f/classVCommonSettings.html#a5f841f1d4bd01c385951e01eee886821":[1,0,251,39]
+"de/d0f/classVCommonSettings.html#a5f841f1d4bd01c385951e01eee886821":[1,0,251,39],
+"de/d0f/classVCommonSettings.html#a5faa885bd781d4d5bdeaf9fd054f4657":[1,0,251,65],
+"de/d0f/classVCommonSettings.html#a5fca7269aeb7655adf57ccdb02b8c955":[1,0,251,10],
+"de/d0f/classVCommonSettings.html#a618a4f0a322196b2e969098c1d7baacc":[1,0,251,148],
+"de/d0f/classVCommonSettings.html#a631d9e5e6024bcb539985bcdc598ac6f":[1,0,251,170],
+"de/d0f/classVCommonSettings.html#a655de81a24980dc870b060aa75d2db5f":[1,0,251,104],
+"de/d0f/classVCommonSettings.html#a65ff162cf4b645f0ed578cfbea2fb0b9":[1,0,251,100],
+"de/d0f/classVCommonSettings.html#a660e99725f5b45e1dd59ab555091e90e":[1,0,251,127],
+"de/d0f/classVCommonSettings.html#a66488ce528530f2453907a94dd6d60ec":[1,0,251,189],
+"de/d0f/classVCommonSettings.html#a6735144cd77637c6e3dada26d532cc51":[1,0,251,177],
+"de/d0f/classVCommonSettings.html#a67fabe5cb064a1775a3d95c8882942e5":[1,0,251,257]
 };

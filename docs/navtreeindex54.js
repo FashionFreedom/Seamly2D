@@ -1,7 +1,5 @@
 var NAVTREEINDEX54 =
 {
-"dd/db0/namespaceQT__WARNING__POP.html#a4ae7c3935926cc7368e77120e031e369":[0,0,20,6],
-"dd/db0/namespaceQT__WARNING__POP.html#a4cd01162be10b9883de62bd8b8563c19":[0,0,20,24],
 "dd/db0/namespaceQT__WARNING__POP.html#a4d92301e6d64e2f90c125187f579e8b7":[0,0,20,20],
 "dd/db0/namespaceQT__WARNING__POP.html#a517f1b59f7e127ce69a3f634c2b73ea9":[0,0,20,12],
 "dd/db0/namespaceQT__WARNING__POP.html#a532e873910f7322e9a2fde0a3be192f2":[0,0,20,38],
@@ -40,8 +38,8 @@ var NAVTREEINDEX54 =
 "dd/db2/qmutranslation_8cpp_source.html":[2,0,0,1,2,23],
 "dd/db2/vsettings_8h.html":[2,0,0,1,8,24],
 "dd/db2/vsettings_8h_source.html":[2,0,0,1,8,24],
-"dd/db4/abstractlayout__dialog_8cpp.html":[2,0,0,0,0,1,1],
-"dd/db4/abstractlayout__dialog_8cpp_source.html":[2,0,0,0,0,1,1],
+"dd/db4/abstractlayout__dialog_8cpp.html":[2,0,0,0,0,1,3],
+"dd/db4/abstractlayout__dialog_8cpp_source.html":[2,0,0,0,0,1,3],
 "dd/db4/test_2ParserTest_2stable_8cpp.html":[2,0,0,2,1,1],
 "dd/db4/test_2ParserTest_2stable_8cpp_source.html":[2,0,0,2,1,1],
 "dd/dbe/namespaceanonymous__namespace_02vtoolmove_8cpp_03.html":[0,0,18],
@@ -49,8 +47,8 @@ var NAVTREEINDEX54 =
 "dd/dbe/vcubicbezierpath_8h.html":[2,0,0,1,6,21],
 "dd/dbe/vcubicbezierpath_8h.html#a9f5db8159f12d6dba68b009485376713":[2,0,0,1,6,21,1],
 "dd/dbe/vcubicbezierpath_8h_source.html":[2,0,0,1,6,21],
-"dd/dc2/decimalchart__dialog_8cpp.html":[2,0,0,0,0,1,5],
-"dd/dc2/decimalchart__dialog_8cpp_source.html":[2,0,0,0,0,1,5],
+"dd/dc2/decimalchart__dialog_8cpp.html":[2,0,0,0,0,1,7],
+"dd/dc2/decimalchart__dialog_8cpp_source.html":[2,0,0,0,0,1,7],
 "dd/dc4/classUtils_1_1CheckableMessageBox.html":[1,0,1,1],
 "dd/dc4/classUtils_1_1CheckableMessageBox.html#a03f27a7b0bcdf1453de4d3972e283dc8":[1,0,1,1,12],
 "dd/dc4/classUtils_1_1CheckableMessageBox.html#a0bb1ba3ba531e124dfb8d1b129755c47":[1,0,1,1,10],
@@ -249,5 +247,7 @@ var NAVTREEINDEX54 =
 "dd/de9/measurements__def_8cpp.html#a5b0cdd1b14850e501d2ad383e4614bd3":[2,0,0,1,10,4,223],
 "dd/de9/measurements__def_8cpp.html#a5cb2d5993d36534d8b5daf5a4d7a6553":[2,0,0,1,10,4,4],
 "dd/de9/measurements__def_8cpp.html#a5d0bad29455fb501ab9d58cbb74c5012":[2,0,0,1,10,4,62],
-"dd/de9/measurements__def_8cpp.html#a5ed746f198e17d8b4c2284bec5555406":[2,0,0,1,10,4,205]
+"dd/de9/measurements__def_8cpp.html#a5ed746f198e17d8b4c2284bec5555406":[2,0,0,1,10,4,205],
+"dd/de9/measurements__def_8cpp.html#a608844cdcbc8ed8298afd8632add67cb":[2,0,0,1,10,4,117],
+"dd/de9/measurements__def_8cpp.html#a6117d672d75c9b6147063d6714028893":[2,0,0,1,10,4,188]
 };

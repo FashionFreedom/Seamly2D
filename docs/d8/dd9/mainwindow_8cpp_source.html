@@ -1770,7 +1770,7 @@ $(document).ready(function(){initNavTree('d8/dd9/mainwindow_8cpp_source.html','.
 <div class="line"><a name="l01671"></a><span class="lineno"> 1671</span>&#160;    <span class="keywordflow">if</span>(!imageReader.canRead())</div>
 <div class="line"><a name="l01672"></a><span class="lineno"> 1672</span>&#160;    {</div>
 <div class="line"><a name="l01673"></a><span class="lineno"> 1673</span>&#160;        qCDebug(vMainWindow, <span class="stringliteral">&quot;Can&#39;t read image&quot;</span>);</div>
-<div class="line"><a name="l01674"></a><span class="lineno"> 1674</span>&#160;        QMessageBox::critical(<span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Can&#39;t read image&quot;</span>), tr(<span class="stringliteral">&quot;Could not read the image.&quot;</span>) + <span class="stringliteral">&quot;\n&quot;</span> + tr(<span class="stringliteral">&quot;It may be corrupted...&quot;</span>), QMessageBox::Ok);</div>
+<div class="line"><a name="l01674"></a><span class="lineno"> 1674</span>&#160;        QMessageBox::critical(<span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Import Image&quot;</span>), tr(<span class="stringliteral">&quot;Could not read the image.&quot;</span>) + <span class="stringliteral">&quot;\n&quot;</span> + tr(<span class="stringliteral">&quot;File may be corrupted...&quot;</span>), QMessageBox::Ok);</div>
 <div class="line"><a name="l01675"></a><span class="lineno"> 1675</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l01676"></a><span class="lineno"> 1676</span>&#160;    }</div>
 <div class="line"><a name="l01677"></a><span class="lineno"> 1677</span>&#160; </div>
@@ -1779,7 +1779,7 @@ $(document).ready(function(){initNavTree('d8/dd9/mainwindow_8cpp_source.html','.
 <div class="line"><a name="l01680"></a><span class="lineno"> 1680</span>&#160;    <span class="keywordflow">if</span>(image.<a class="code" href="../../d3/df8/structDraftImage.html#a00f0a22fa97ecfb4f03d4daa73763c2a">pixmap</a>.isNull())</div>
 <div class="line"><a name="l01681"></a><span class="lineno"> 1681</span>&#160;    {</div>
 <div class="line"><a name="l01682"></a><span class="lineno"> 1682</span>&#160;        qCDebug(vMainWindow, <span class="stringliteral">&quot;Can&#39;t read image&quot;</span>);</div>
-<div class="line"><a name="l01683"></a><span class="lineno"> 1683</span>&#160;        QMessageBox::critical(<span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Can&#39;t read image&quot;</span>), tr(<span class="stringliteral">&quot;Could not read the image.&quot;</span>) + <span class="stringliteral">&quot;\n&quot;</span> + tr(<span class="stringliteral">&quot;It may be corrupted or empty...&quot;</span>), QMessageBox::Ok);</div>
+<div class="line"><a name="l01683"></a><span class="lineno"> 1683</span>&#160;        QMessageBox::critical(<span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Import Image&quot;</span>), tr(<span class="stringliteral">&quot;Could not read the image.&quot;</span>) + <span class="stringliteral">&quot;\n&quot;</span> + tr(<span class="stringliteral">&quot;File may be corrupted or empty...&quot;</span>), QMessageBox::Ok);</div>
 <div class="line"><a name="l01684"></a><span class="lineno"> 1684</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l01685"></a><span class="lineno"> 1685</span>&#160;    }</div>
 <div class="line"><a name="l01686"></a><span class="lineno"> 1686</span>&#160; </div>
@@ -6437,7 +6437,7 @@ $(document).ready(function(){initNavTree('d8/dd9/mainwindow_8cpp_source.html','.
 <div class="line"><a name="l06338"></a><span class="lineno"> 6338</span>&#160; </div>
 <div class="line"><a name="l06339"></a><span class="lineno"> 6339</span>&#160;    connect(ui-&gt;aboutSeamly2D_Action, &amp;QAction::triggered, <span class="keyword">this</span>, [<span class="keyword">this</span>]()</div>
 <div class="line"><a name="l06340"></a><span class="lineno"> 6340</span>&#160;    {</div>
-<div class="line"><a name="l06341"></a><span class="lineno"> 6341</span>&#160;        DialogAboutApp *aboutDialog = new DialogAboutApp(this);</div>
+<div class="line"><a name="l06341"></a><span class="lineno"> 6341</span>&#160;        About2DAppDialog *aboutDialog = new About2DAppDialog(this);</div>
 <div class="line"><a name="l06342"></a><span class="lineno"> 6342</span>&#160;        aboutDialog-&gt;setAttribute(Qt::WA_DeleteOnClose, true);</div>
 <div class="line"><a name="l06343"></a><span class="lineno"> 6343</span>&#160;        aboutDialog-&gt;show();</div>
 <div class="line"><a name="l06344"></a><span class="lineno"> 6344</span>&#160;    });</div>
@@ -8821,7 +8821,7 @@ $(document).ready(function(){initNavTree('d8/dd9/mainwindow_8cpp_source.html','.
 <div class="ttc" id="amainwindow_8cpp_html_af4373a076cd610e657f7e1d63486e337"><div class="ttname"><a href="../../d8/dd9/mainwindow_8cpp.html#af4373a076cd610e657f7e1d63486e337">strQShortcut</a></div><div class="ttdeci">const QString strQShortcut</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd9/mainwindow_8cpp_source.html#l00142">mainwindow.cpp:142</a></div></div>
 <div class="ttc" id="amainwindow_8h_html"><div class="ttname"><a href="../../d9/d53/mainwindow_8h.html">mainwindow.h</a></div></div>
 <div class="ttc" id="anamespaceQT__WARNING__POP_html"><div class="ttname"><a href="../../dd/db0/namespaceQT__WARNING__POP.html">QT_WARNING_POP</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d9f/union__tool_8cpp_source.html#l00133">union_tool.cpp:134</a></div></div>
-<div class="ttc" id="anamespaceUi_html"><div class="ttname"><a href="../../db/d3c/namespaceUi.html">Ui</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d73/calculator__dialog_8h_source.html#l00037">calculator_dialog.h:38</a></div></div>
+<div class="ttc" id="anamespaceUi_html"><div class="ttname"><a href="../../db/d3c/namespaceUi.html">Ui</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/da1/about2d__dialog_8h_source.html#l00059">about2d_dialog.h:60</a></div></div>
 <div class="ttc" id="aoptions_8h_html"><div class="ttname"><a href="../../d7/d5b/options_8h.html">options.h</a></div></div>
 <div class="ttc" id="apattern__piece__tool_8h_html"><div class="ttname"><a href="../../d1/d19/pattern__piece__tool_8h.html">pattern_piece_tool.h</a></div></div>
 <div class="ttc" id="aprojectversion_8h_html_a92673e33f27532767749b79edb8ef806"><div class="ttname"><a href="../../dc/d73/projectversion_8h.html#a92673e33f27532767749b79edb8ef806">APP_VERSION</a></div><div class="ttdeci">#define APP_VERSION</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d73/projectversion_8h_source.html#l00067">projectversion.h:67</a></div></div>

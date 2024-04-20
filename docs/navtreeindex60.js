@@ -1,15 +1,5 @@
 var NAVTREEINDEX60 =
 {
-"de/d57/delaunay_8cpp.html#a4a0d7bda859bcb85c8290449bea45166":[2,0,0,1,9,0,41],
-"de/d57/delaunay_8cpp.html#a4f1edcce092bac87e753bb575664e05f":[2,0,0,1,9,0,32],
-"de/d57/delaunay_8cpp.html#a54acedc88b333086c70793fe22ded73a":[2,0,0,1,9,0,35],
-"de/d57/delaunay_8cpp.html#a6308549d307ed2b27b8c66aabd00ab91":[2,0,0,1,9,0,22],
-"de/d57/delaunay_8cpp.html#a7e42e11a9434b785d263d129d887a36c":[2,0,0,1,9,0,10],
-"de/d57/delaunay_8cpp.html#a7f695524dd6dd9872ea5f13c2c7abc54":[2,0,0,1,9,0,44],
-"de/d57/delaunay_8cpp.html#a851d2a69042f141d2776e63f22373568":[2,0,0,1,9,0,16],
-"de/d57/delaunay_8cpp.html#a85627d6cf4b6b278d4fe7e3d41baba5d":[2,0,0,1,9,0,33],
-"de/d57/delaunay_8cpp.html#a89d1434c21fa3924532aedd98b99203b":[2,0,0,1,9,0,40],
-"de/d57/delaunay_8cpp.html#a90e75654441ce941ff936d76b99c6b7e":[2,0,0,1,9,0,29],
 "de/d57/delaunay_8cpp.html#a9ecfa28fe1f5bfe47e9e09794c4dc9eb":[2,0,0,1,9,0,31],
 "de/d57/delaunay_8cpp.html#ab0b20b9c10d44463c8c4b06b0d94081a":[2,0,0,1,9,0,11],
 "de/d57/delaunay_8cpp.html#ab8551802efb9fcdd01a8a07aec737c2e":[2,0,0,1,9,0,14],
@@ -160,6 +150,8 @@ var NAVTREEINDEX60 =
 "de/d98/classVPE_1_1VPointFProperty.html#af53aa245559efa4656ca2860b8b330ae":[1,0,2,17,2],
 "de/d9c/vistoolrotation_8h.html":[2,0,0,1,13,3,0,0,9],
 "de/d9c/vistoolrotation_8h_source.html":[2,0,0,1,13,3,0,0,9],
+"de/da1/about2d__dialog_8h.html":[2,0,0,0,0,1,2],
+"de/da1/about2d__dialog_8h_source.html":[2,0,0,0,0,1,2],
 "de/da4/vistoolmirrorbyaxis_8cpp.html":[2,0,0,1,13,3,0,0,2],
 "de/da4/vistoolmirrorbyaxis_8cpp_source.html":[2,0,0,1,13,3,0,0,2],
 "de/da5/classVNodeDetailData.html":[1,0,354],
@@ -249,5 +241,13 @@ var NAVTREEINDEX60 =
 "de/db1/classMoveSpline.html#a03fd4dfef710283d8d8a64ce25e02ee7":[1,0,129,7],
 "de/db1/classMoveSpline.html#a2067e753c47d41901d8cab168d03ee16":[1,0,129,4],
 "de/db1/classMoveSpline.html#a25322bd604ba33f08b6c7c93580b63f7":[1,0,129,2],
-"de/db1/classMoveSpline.html#a291755823e69951c19603baf9ea1f808":[1,0,129,1]
+"de/db1/classMoveSpline.html#a291755823e69951c19603baf9ea1f808":[1,0,129,1],
+"de/db1/classMoveSpline.html#a45a43f0f16cc71d7ec8e32e7072ab22c":[1,0,129,9],
+"de/db1/classMoveSpline.html#a7e834743334ad00a5dda1b339bfcf71d":[1,0,129,0],
+"de/db1/classMoveSpline.html#a827dbde4ed90ce0dd2b2498b20d03950":[1,0,129,5],
+"de/db1/classMoveSpline.html#a879290d630a155abda66b683728f17b7":[1,0,129,10],
+"de/db1/classMoveSpline.html#ac76eabb216c3bacedfbb0bc72b346975":[1,0,129,11],
+"de/db1/classMoveSpline.html#ad1c1cbcb24f9355190cf47ac850300e1":[1,0,129,8],
+"de/db1/classMoveSpline.html#aea1ac7a3eaaa85b993fb97cbf342f4f3":[1,0,129,6],
+"de/db1/classMoveSpline.html#afe90ed2254d0517847b573c6bd3e408e":[1,0,129,3]
 };

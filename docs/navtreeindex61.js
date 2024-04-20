@@ -1,13 +1,5 @@
 var NAVTREEINDEX61 =
 {
-"de/db1/classMoveSpline.html#a45a43f0f16cc71d7ec8e32e7072ab22c":[1,0,129,9],
-"de/db1/classMoveSpline.html#a7e834743334ad00a5dda1b339bfcf71d":[1,0,129,0],
-"de/db1/classMoveSpline.html#a827dbde4ed90ce0dd2b2498b20d03950":[1,0,129,5],
-"de/db1/classMoveSpline.html#a879290d630a155abda66b683728f17b7":[1,0,129,10],
-"de/db1/classMoveSpline.html#ac76eabb216c3bacedfbb0bc72b346975":[1,0,129,11],
-"de/db1/classMoveSpline.html#ad1c1cbcb24f9355190cf47ac850300e1":[1,0,129,8],
-"de/db1/classMoveSpline.html#aea1ac7a3eaaa85b993fb97cbf342f4f3":[1,0,129,6],
-"de/db1/classMoveSpline.html#afe90ed2254d0517847b573c6bd3e408e":[1,0,129,3],
 "de/db2/classVNodeEllipticalArc.html":[1,0,355],
 "de/db2/classVNodeEllipticalArc.html#a06bbd343247203e39e53339be6f88e29":[1,0,355,5],
 "de/db2/classVNodeEllipticalArc.html#a0e98e2c47e6a4bf62896336ad4bbcfd7":[1,0,355,1],
@@ -249,5 +241,13 @@ var NAVTREEINDEX61 =
 "df/d01/classdx__ifaceBlock.html#af5a38899b82901f43d6db5b98f74ba9b":[1,0,84,1],
 "df/d01/tst__vabstractpiece_8cpp.html":[2,0,0,2,2,15],
 "df/d01/tst__vabstractpiece_8cpp_source.html":[2,0,0,2,2,15],
-"df/d02/classVPE_1_1VBoolProperty.html":[1,0,2,2]
+"df/d02/classVPE_1_1VBoolProperty.html":[1,0,2,2],
+"df/d02/classVPE_1_1VBoolProperty.html#a2062d983db2055ddcd1da9061d0bc365":[1,0,2,2,5],
+"df/d02/classVPE_1_1VBoolProperty.html#a2570ead346d6cc6ce4cb5fb39d8fce84":[1,0,2,2,1],
+"df/d02/classVPE_1_1VBoolProperty.html#a49ed2213df114c4febf1abea4d4e006d":[1,0,2,2,2],
+"df/d02/classVPE_1_1VBoolProperty.html#a568c75aa31f6397c3c4aba37dbc0ccd4":[1,0,2,2,4],
+"df/d02/classVPE_1_1VBoolProperty.html#a650fb54db76bfa86f7d964448dc65be5":[1,0,2,2,6],
+"df/d02/classVPE_1_1VBoolProperty.html#a7678cd03b526355c7ccf68300e23f5b6":[1,0,2,2,7],
+"df/d02/classVPE_1_1VBoolProperty.html#aa8a1522574c47f3ac5687948c471b66a":[1,0,2,2,0],
+"df/d02/classVPE_1_1VBoolProperty.html#ad0b60ae5bfa07e42d9f9ba428aba2312":[1,0,2,2,3]
 };

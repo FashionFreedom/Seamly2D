@@ -141,6 +141,8 @@ var NAVTREEINDEX38 =
 "d9/d7c/vcurveangle_8h.html#af68c47ff6642e872b4310543f239cdbea86ddc7f99c252c737f68b51cb2eb155c":[2,0,0,1,10,1,10,1,1],
 "d9/d7c/vcurveangle_8h.html#af68c47ff6642e872b4310543f239cdbeacdd4d1ae135feaff377724ee90678d31":[2,0,0,1,10,1,10,1,0],
 "d9/d7c/vcurveangle_8h_source.html":[2,0,0,1,10,1,10],
+"d9/d7f/about2d__dialog_8cpp.html":[2,0,0,0,0,1,1],
+"d9/d7f/about2d__dialog_8cpp_source.html":[2,0,0,0,0,1,1],
 "d9/d83/namespaceanonymous__namespace_02vnodedetail_8cpp_03.html":[0,0,10],
 "d9/d83/namespaceanonymous__namespace_02vnodedetail_8cpp_03.html#a50bbfe1b012b69fe33a8c700788e4db1":[0,0,10,3],
 "d9/d83/namespaceanonymous__namespace_02vnodedetail_8cpp_03.html#a6333f8827e9243cf90c85518487730c6":[0,0,10,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX38 =
 "d9/da4/classVSplinePath.html#aea8bb4f90bcdfa6a476c6de1a658f4c2":[1,0,388,18],
 "d9/da4/classVSplinePath.html#af082f54a34aac44299bc8d458b7048ec":[1,0,388,4],
 "d9/da4/classVSplinePath.html#af10b3df48dbd202daee5e44e20c97cf6":[1,0,388,21],
-"d9/da4/classVSplinePath.html#af27a29fd9fadb6956121c78eb7f04724":[1,0,388,25],
-"d9/da4/classVSplinePath.html#af5082a51346471e62baeae9ff6e1534c":[1,0,388,5],
-"d9/da4/classVSplinePath.html#af68928e0444cb84aaa248d17e54f93b8":[1,0,388,12]
+"d9/da4/classVSplinePath.html#af27a29fd9fadb6956121c78eb7f04724":[1,0,388,25]
 };

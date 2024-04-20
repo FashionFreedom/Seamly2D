@@ -174,8 +174,6 @@ var NAVTREEINDEX53 =
 "dd/d64/classDialogLayoutProgress.html#ae12c5962e68131157d6fc4b5649257f8":[1,0,54,0],
 "dd/d64/classDialogLayoutProgress.html#af48fe0e699c060ab40453792c44beb2c":[1,0,54,7],
 "dd/d64/classDialogLayoutProgress.html#afa0588929e261a2f921e13c7a327997a":[1,0,54,11],
-"dd/d64/dialogaboutapp_8cpp.html":[2,0,0,0,0,1,7],
-"dd/d64/dialogaboutapp_8cpp_source.html":[2,0,0,0,0,1,7],
 "dd/d66/vdxfengine_8cpp.html":[2,0,0,1,4,6],
 "dd/d66/vdxfengine_8cpp.html#a57ba69f8cab7f2e93df640016c3c75b5":[2,0,0,1,4,6,1],
 "dd/d66/vdxfengine_8cpp.html#a729f20bd8f0a91bfd800f67f67c42bcc":[2,0,0,1,4,6,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX53 =
 "dd/db0/namespaceQT__WARNING__POP.html#a3e7f4f3f85b62aa2fb29c336cdef1dc2":[0,0,20,29],
 "dd/db0/namespaceQT__WARNING__POP.html#a45cec81b7cea447cfcc3a6591776429c":[0,0,20,19],
 "dd/db0/namespaceQT__WARNING__POP.html#a45f580e64d1aa76c7aaf8fa6fd6a68f3":[0,0,20,21],
-"dd/db0/namespaceQT__WARNING__POP.html#a4734b4d2e0dfa026a60068bbb834e3ad":[0,0,20,9]
+"dd/db0/namespaceQT__WARNING__POP.html#a4734b4d2e0dfa026a60068bbb834e3ad":[0,0,20,9],
+"dd/db0/namespaceQT__WARNING__POP.html#a4ae7c3935926cc7368e77120e031e369":[0,0,20,6],
+"dd/db0/namespaceQT__WARNING__POP.html#a4cd01162be10b9883de62bd8b8563c19":[0,0,20,24]
 };
