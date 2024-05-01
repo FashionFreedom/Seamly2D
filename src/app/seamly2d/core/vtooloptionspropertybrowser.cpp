@@ -2781,11 +2781,6 @@ void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
     addObjectProperty(tool, spl.GetP4().name(), tr("Second point:"), AttrSecondPoint, GOType::Point);
 
     addPropertyLabel(tr("Geometry"), AttrName);
-    VFormula angle1(spl.GetStartAngleFormula(), tool->getData());
-    angle1.setCheckZero(false);
-    angle1.setToolId(tool->getId());
-    angle1.setPostfix(degreeSymbol);
-    addPropertyFormula(tr("C1: angle:"), angle1, AttrAngle1);
 
     VFormula length1(spl.GetC1LengthFormula(), tool->getData());
     length1.setCheckZero(false);
@@ -2793,17 +2788,23 @@ void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
     length1.setPostfix(UnitsToStr(qApp->patternUnit()));
     addPropertyFormula(tr("C1: length:"), length1, AttrLength1);
 
-    VFormula angle2(spl.GetEndAngleFormula(), tool->getData());
-    angle2.setCheckZero(false);
-    angle2.setToolId(tool->getId());
-    angle2.setPostfix(degreeSymbol);
-    addPropertyFormula(tr("C2: angle:"), angle2, AttrAngle2);
+    VFormula angle1(spl.GetStartAngleFormula(), tool->getData());
+    angle1.setCheckZero(false);
+    angle1.setToolId(tool->getId());
+    angle1.setPostfix(degreeSymbol);
+    addPropertyFormula(tr("C1: angle:"), angle1, AttrAngle1);
 
     VFormula length2(spl.GetC2LengthFormula(), tool->getData());
     length2.setCheckZero(false);
     length2.setToolId(tool->getId());
     length2.setPostfix(UnitsToStr(qApp->patternUnit()));
     addPropertyFormula(tr("C2: length:"), length2, AttrLength2);
+
+    VFormula angle2(spl.GetEndAngleFormula(), tool->getData());
+    angle2.setCheckZero(false);
+    angle2.setToolId(tool->getId());
+    angle2.setPostfix(degreeSymbol);
+    addPropertyFormula(tr("C2: angle:"), angle2, AttrAngle2);
 
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
