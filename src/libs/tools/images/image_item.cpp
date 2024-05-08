@@ -80,8 +80,10 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
 {
     initializeItem();
 
-    m_boundingRect = QRectF(m_image.xPos, m_image.yPos, m_image.xPos + m_image.width, m_image.yPos + m_image.height);
+    m_boundingRect = QRectF(m_image.xPos - m_image.xOrigin, m_image.yPos - m_image.yOrigin, m_image.width, m_image.height);
     m_handleRect   = m_boundingRect.adjusted(HANDLE_SIZE/2, HANDLE_SIZE/2, -HANDLE_SIZE/2, -HANDLE_SIZE/2);
+    m_origin = m_boundingRect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
+
 
     if (m_image.order == 0)
     {
@@ -139,14 +141,22 @@ void ImageItem::setImage(DraftImage image)
     m_image = image;
 }
 
+
+void ImageItem::setOrigin(qreal xOrigin, qreal yOrigin)
+{
+    m_image.xOrigin = xOrigin;
+    m_image.yOrigin = yOrigin;
+}
+
+
 void  ImageItem::updateImage()
 {
     prepareGeometryChange();
 
-    setTransformOriginPoint(m_boundingRect.topLeft());
+    setTransformOriginPoint(m_origin);
     setRotation(m_image.rotation);
 
-    setPos(m_image.xPos - m_boundingRect.topLeft().x(), m_image.yPos - m_boundingRect.topLeft().y());
+    setPos(m_image.xPos - m_origin.x(), m_image.yPos - m_origin.y());
 
     m_boundingRect.setSize(QSizeF(m_image.width, m_image.height));
 
@@ -411,7 +421,7 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
         {
             SetItemOverrideCursor(this, cursorArrowCloseHand, 1, 1);
-            m_offset = event->pos() - m_boundingRect.topLeft();
+            m_offset = event->pos() - m_origin;
         }
     }
     if (m_selectionType == SelectionType::ByMouseRelease)
@@ -494,8 +504,10 @@ void ImageItem::updateFromHandles(QRectF rect)
 {
     prepareGeometryChange();
 
-    m_image.xPos = mapToScene(rect.topLeft()).x();
-    m_image.yPos = mapToScene(rect.topLeft()).y();
+    m_origin = rect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
+
+    m_image.xPos = mapToScene(m_origin).x();
+    m_image.yPos = mapToScene(m_origin).y();
     m_image.width = rect.width();
     m_image.height = rect.height();
 
@@ -509,6 +521,7 @@ void ImageItem::updateFromHandles(QRectF rect)
 void ImageItem::updateImageAndHandles(DraftImage image)
 {
     m_image = image;
+    m_origin = m_boundingRect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
     updateImage();
     m_resizeHandles->setParentRect(m_boundingRect);
     m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
