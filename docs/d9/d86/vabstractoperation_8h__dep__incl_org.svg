@@ -87,34 +87,34 @@
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="../../d2/d51/dialogmove_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1500.5,-151 1500.5,-181 1625.5,-181 1625.5,-151 1500.5,-151"/>
-<text text-anchor="start" x="1508.5" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="1563" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogmove.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node12 -->
-<g id="edge13" class="edge">
-<title>Node1&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M1425.34,-301.55C1448.74,-292.86 1473.93,-280.91 1494,-265 1523.52,-241.61 1545.79,-202.3 1556.3,-181.28"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1424.03,-298.3 1415.79,-304.96 1426.38,-304.89 1424.03,-298.3"/>
-</g>
-<!-- Node13 -->
-<g id="node13" class="node">
-<title>Node13</title>
-<g id="a_node13"><a xlink:href="../../d4/d1d/dialogmove_8h.html" target="_top" xlink:title=" ">
+<g id="a_node12"><a xlink:href="../../d4/d1d/dialogmove_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="1363,-229 1363,-259 1485,-259 1485,-229 1363,-229"/>
 <text text-anchor="start" x="1371" y="-247" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
 <text text-anchor="middle" x="1424" y="-236" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogmove.h</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node13 -->
-<g id="edge14" class="edge">
-<title>Node1&#45;&gt;Node13</title>
+<!-- Node1&#45;&gt;Node12 -->
+<g id="edge13" class="edge">
+<title>Node1&#45;&gt;Node12</title>
 <path fill="none" stroke="midnightblue" d="M1379.52,-293.99C1390.18,-282.25 1402.22,-268.99 1411.08,-259.23"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1376.9,-291.67 1372.77,-301.43 1382.08,-296.38 1376.9,-291.67"/>
+</g>
+<!-- Node13 -->
+<g id="node13" class="node">
+<title>Node13</title>
+<g id="a_node13"><a xlink:href="../../d2/d51/dialogmove_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1500.5,-151 1500.5,-181 1625.5,-181 1625.5,-151 1500.5,-151"/>
+<text text-anchor="start" x="1508.5" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="1563" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogmove.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node13 -->
+<g id="edge17" class="edge">
+<title>Node1&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M1425.34,-301.55C1448.74,-292.86 1473.93,-280.91 1494,-265 1523.52,-241.61 1545.79,-202.3 1556.3,-181.28"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1424.03,-298.3 1415.79,-304.96 1426.38,-304.89 1424.03,-298.3"/>
 </g>
 <!-- Node15 -->
 <g id="node15" class="node">
@@ -326,15 +326,15 @@
 <path fill="none" stroke="midnightblue" d="M514.06,-225.13C494.84,-216.8 476.4,-204.65 465,-187 454.88,-171.32 454.2,-160.22 465,-145 483.56,-118.84 515.32,-104.8 545.68,-97.31"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="512.95,-228.46 523.53,-228.92 515.55,-221.96 512.95,-228.46"/>
 </g>
-<!-- Node13&#45;&gt;Node6 -->
-<g id="edge15" class="edge">
-<title>Node13&#45;&gt;Node6</title>
+<!-- Node12&#45;&gt;Node6 -->
+<g id="edge14" class="edge">
+<title>Node12&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M1381.78,-224.87C1350.49,-211.44 1308.46,-193.39 1279.7,-181.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1380.55,-228.15 1391.12,-228.88 1383.31,-221.72 1380.55,-228.15"/>
 </g>
-<!-- Node13&#45;&gt;Node12 -->
-<g id="edge16" class="edge">
-<title>Node13&#45;&gt;Node12</title>
+<!-- Node12&#45;&gt;Node13 -->
+<g id="edge15" class="edge">
+<title>Node12&#45;&gt;Node13</title>
 <path fill="none" stroke="midnightblue" d="M1458.75,-224C1483.14,-210.66 1515.22,-193.12 1537.32,-181.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1456.91,-221.01 1449.82,-228.88 1460.27,-227.16 1456.91,-221.01"/>
 </g>
@@ -349,9 +349,9 @@
 </a>
 </g>
 </g>
-<!-- Node13&#45;&gt;Node14 -->
-<g id="edge17" class="edge">
-<title>Node13&#45;&gt;Node14</title>
+<!-- Node12&#45;&gt;Node14 -->
+<g id="edge16" class="edge">
+<title>Node12&#45;&gt;Node14</title>
 <path fill="none" stroke="midnightblue" d="M1423.68,-218.66C1423.54,-208.33 1423.39,-196.44 1423.26,-186.68"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1420.18,-218.75 1423.81,-228.7 1427.18,-218.66 1420.18,-218.75"/>
 </g>
