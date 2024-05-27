@@ -53,94 +53,92 @@
  **
  *************************************************************************/
 
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "mainwindow.h"                       // Include main window header
+#include "ui_mainwindow.h"                    // Include main window UI header
 
-#include "../vgeometry/vspline.h"
-#include "../ifc/exception/vexceptionobjecterror.h"
-#include "../ifc/exception/vexceptionconversionerror.h"
-#include "../ifc/exception/vexceptionemptyparameter.h"
-#include "../ifc/exception/vexceptionwrongid.h"
-#include "../ifc/exception/vexceptionundo.h"
-#include "version.h"
-#include "core/application_2d.h"
-#include "../vmisc/customevents.h"
-#include "../vmisc/vsettings.h"
-#include "../vmisc/def.h"
-#include "../vmisc/qxtcsvmodel.h"
-#include "../vmisc/dialogs/dialogexporttocsv.h"
-#include "undocommands/rename_draftblock.h"
-#include "core/vtooloptionspropertybrowser.h"
-#include "options.h"
-#include "../ifc/xml/vpatternconverter.h"
-#include "../vmisc/logging.h"
-#include "../vformat/measurements.h"
-#include "../ifc/xml/multi_size_converter.h"
-#include "../ifc/xml/individual_size_converter.h"
-#include "../vwidgets/vwidgetpopup.h"
-#include "../vwidgets/vmaingraphicsscene.h"
-#include "../vwidgets/mouse_coordinates.h"
-#include "../vtools/tools/drawTools/drawtools.h"
-#include "../vtools/dialogs/tooldialogs.h"
-#include "tools/pattern_piece_tool.h"
-#include "tools/nodeDetails/vtoolinternalpath.h"
-#include "tools/nodeDetails/anchorpoint_tool.h"
-#include "tools/union_tool.h"
-#include "dialogs/dialogs.h"
-#include "../vpropertyexplorer/checkablemessagebox.h"
-#include "../vtools/undocommands/addgroup.h"
-#include "../tools/image_item.h"
-#include "dialogs/calculator_dialog.h"
-#include "dialogs/decimalchart_dialog.h"
-#include "../vtools/undocommands/label/showpointname.h"
-#include "../vpatterndb/vpiecepath.h"
-#include "../qmuparser/qmuparsererror.h"
-#include "../vtools/dialogs/support/editlabeltemplate_dialog.h"
+#include "../vgeometry/vspline.h"             // Include vspline header for geometric operations
+#include "../ifc/exception/vexceptionobjecterror.h"  // Include exception handling for object errors
+#include "../ifc/exception/vexceptionconversionerror.h"  // Include exception handling for conversion errors
+#include "../ifc/exception/vexceptionemptyparameter.h"  // Include exception handling for empty parameter errors
+#include "../ifc/exception/vexceptionwrongid.h"  // Include exception handling for wrong ID errors
+#include "../ifc/exception/vexceptionundo.h"  // Include exception handling for undo operations
+#include "version.h"                          // Include version header
+#include "core/application_2d.h"              // Include 2D application core header
+#include "../vmisc/customevents.h"            // Include custom events header
+#include "../vmisc/vsettings.h"               // Include settings header
+#include "../vmisc/def.h"                     // Include definitions header
+#include "../vmisc/qxtcsvmodel.h"             // Include CSV model header
+#include "../vmisc/dialogs/dialogexporttocsv.h"  // Include dialog for exporting to CSV
+#include "undocommands/rename_draftblock.h"   // Include undo command for renaming draft block
+#include "core/vtooloptionspropertybrowser.h"  // Include property browser for tool options
+#include "options.h"                          // Include options header
+#include "../ifc/xml/vpatternconverter.h"     // Include pattern converter header
+#include "../vmisc/logging.h"                 // Include logging header
+#include "../vformat/measurements.h"          // Include measurements header
+#include "../ifc/xml/multi_size_converter.h"  // Include multi-size converter header
+#include "../ifc/xml/individual_size_converter.h"  // Include individual size converter header
+#include "../vwidgets/vwidgetpopup.h"         // Include widget popup header
+#include "../vwidgets/vmaingraphicsscene.h"   // Include main graphics scene header
+#include "../vwidgets/mouse_coordinates.h"    // Include mouse coordinates header
+#include "../vtools/tools/drawTools/drawtools.h"  // Include drawing tools header
+#include "../vtools/dialogs/tooldialogs.h"    // Include tool dialogs header
+#include "tools/pattern_piece_tool.h"         // Include pattern piece tool header
+#include "tools/nodeDetails/vtoolinternalpath.h"  // Include internal path tool header
+#include "tools/nodeDetails/anchorpoint_tool.h"  // Include anchor point tool header
+#include "tools/union_tool.h"                 // Include union tool header
+#include "dialogs/dialogs.h"                  // Include dialogs header
+#include "../vpropertyexplorer/checkablemessagebox.h"  // Include checkable message box header
+#include "../vtools/undocommands/addgroup.h"  // Include undo command for adding group
+#include "../tools/image_item.h"              // Include image item header
+#include "dialogs/calculator_dialog.h"        // Include calculator dialog header
+#include "dialogs/decimalchart_dialog.h"      // Include decimal chart dialog header
+#include "../vtools/undocommands/label/showpointname.h"  // Include undo command for showing point name
+#include "../vpatterndb/vpiecepath.h"         // Include piece path header
+#include "../qmuparser/qmuparsererror.h"      // Include parser error header
+#include "../vtools/dialogs/support/editlabeltemplate_dialog.h"  // Include label template edit dialog header
 
-#include <QInputDialog>
-#include <QtDebug>
-#include <QMessageBox>
-#include <QShowEvent>
-#include <QScrollBar>
-#include <QFileDialog>
-#include <QSourceLocation>
-#include <QUndoStack>
-#include <QAction>
-#include <QProcess>
-#include <QSettings>
-#include <QTimer>
-#include <QtGlobal>
-#include <QDesktopWidget>
-#include <QDesktopServices>
-#include <chrono>
-#include <thread>
-#include <QFileSystemWatcher>
-#include <QComboBox>
-#include <QFontComboBox>
-#include <QTextCodec>
-#include <QDoubleSpinBox>
-#include <QToolBar>
-#include <QImageReader>
-#include <QSharedPointer>
+#include <QInputDialog>                       // Include input dialog header
+#include <QtDebug>                            // Include Qt debugging header
+#include <QMessageBox>                        // Include message box header
+#include <QShowEvent>                         // Include show event header
+#include <QScrollBar>                         // Include scroll bar header
+#include <QFileDialog>                        // Include file dialog header
+#include <QSourceLocation>                    // Include source location header
+#include <QUndoStack>                         // Include undo stack header
+#include <QAction>                            // Include action header
+#include <QProcess>                           // Include process header
+#include <QSettings>                          // Include settings header
+#include <QTimer>                             // Include timer header
+#include <QtGlobal>                           // Include global Qt header
+#include <QDesktopWidget>                     // Include desktop widget header
+#include <QDesktopServices>                   // Include desktop services header
+#include <chrono>                             // Include chrono header for time utilities
+#include <thread>                             // Include thread header for multithreading
+#include <QFileSystemWatcher>                 // Include file system watcher header
+#include <QComboBox>                          // Include combo box header
+#include <QFontComboBox>                      // Include font combo box header
+#include <QTextCodec>                         // Include text codec header
+#include <QDoubleSpinBox>                     // Include double spin box header
+#include <QToolBar>                           // Include tool bar header
+#include <QImageReader>                       // Include image reader header
+#include <QSharedPointer>                     // Include shared pointer header
 
 #if defined(Q_OS_MAC)
-#include <QMimeData>
-#include <QDrag>
+#include <QMimeData>                          // Include MIME data header for macOS
+#include <QDrag>                              // Include drag header for macOS
 #endif //defined(Q_OS_MAC)
 
 QT_WARNING_PUSH
-QT_WARNING_DISABLE_CLANG("-Wmissing-prototypes")
-QT_WARNING_DISABLE_INTEL(1418)
-
-Q_LOGGING_CATEGORY(vMainWindow, "v.mainwindow")
-
+QT_WARNING_DISABLE_CLANG("-Wmissing-prototypes")  // Disable missing prototypes warning for Clang
+QT_WARNING_DISABLE_INTEL(1418)                   // Disable specific Intel warning
+Q_LOGGING_CATEGORY(vMainWindow, "v.mainwindow")  // Define logging category for main window
 QT_WARNING_POP
 
-const QString autosavePrefix = QStringLiteral(".autosave");
+const QString autosavePrefix = QStringLiteral(".autosave");  // Define autosave prefix
 
-// String below need for getting translation for key Ctrl
-const QString strQShortcut   = QStringLiteral("QShortcut"); // Context
-const QString strCtrl        = QStringLiteral("Ctrl"); // String
+// String below needed for getting translation for key Ctrl
+const QString strQShortcut   = QStringLiteral("QShortcut"); // Context for translations
+const QString strCtrl        = QStringLiteral("Ctrl"); // String for translation
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -148,180 +146,226 @@ const QString strCtrl        = QStringLiteral("Ctrl"); // String
  * @param parent parent widget.
  */
 MainWindow::MainWindow(QWidget *parent)
-    : MainWindowsNoGUI(parent)
-    , ui(new Ui::MainWindow)
-    , watcher(new QFileSystemWatcher(this))
-    , currentTool(Tool::Arrow)
-    , lastUsedTool(Tool::Arrow)
-    , draftScene(nullptr)
-    , pieceScene(nullptr)
-    , mouseCoordinates(nullptr)
-    , infoToolButton(nullptr)
-    , helpLabel(nullptr)
-    , isInitialized(false)
-    , mChanges(false)
-    , mChangesAsked(true)
-    , patternReadOnly(false)
-    , dialogTable(nullptr)
-    , dialogTool()
-    , historyDialog(nullptr)
-    , fontComboBox(nullptr)
-    , fontSizeComboBox(nullptr)
-    , draftBlockComboBox(nullptr)
-    , draftBlockLabel(nullptr)
-    , mode(Draw::Calculation)
-    , currentBlockIndex(0)
-    , currentToolBoxIndex(0)
-    , isToolOptionsDockVisible(true)
-    , isGroupsDockVisible(true)
-    , isLayoutsDockVisible(false)
-    , isToolboxDockVisible(true)
-    , drawMode(true)
-    , recentFileActs()
-    , separatorAct(nullptr)
-    , leftGoToStage(nullptr)
-    , rightGoToStage(nullptr)
-    , autoSaveTimer(nullptr)
-    , guiEnabled(true)
-    , gradationHeights(nullptr)
-    , gradationSizes(nullptr)
-    , gradationHeightsLabel(nullptr)
-    , gradationSizesLabel(nullptr)
-    , toolProperties(nullptr)
-    , groupsWidget(nullptr)
-    , patternPiecesWidget(nullptr)
-    , lock(nullptr)
-    , zoomScaleSpinBox(nullptr)
-    , m_penToolBar(nullptr)
-    , m_penReset(nullptr)
-    , m_zoomToPointComboBox(nullptr)
-{
-    for (int i = 0; i < MaxRecentFiles; ++i)
-    {
-        recentFileActs[i] = nullptr;
-    }
+    // main window for Seamly2D application
 
-    createActions();
-    initializeScenes();
+    : MainWindowsNoGUI(parent)                 // Call base class constructor
+    , ui(new Ui::MainWindow)                   // Initialize UI
+    , watcher(new QFileSystemWatcher(this))    // Initialize file system watcher
+    , currentTool(Tool::Arrow)                 // Initialize current tool
+    , lastUsedTool(Tool::Arrow)                // Initialize last used tool
+    , draftScene(nullptr)                      // Initialize draft scene
+    , pieceScene(nullptr)                      // Initialize piece scene
+    , mouseCoordinates(nullptr)                // Initialize mouse coordinates
+    , infoToolButton(nullptr)                  // Initialize info tool button
+    , helpLabel(nullptr)                       // Initialize help label
+    , isInitialized(false)                     // Initialize initialization flag
+    , mChanges(false)                          // Initialize changes flag
+    , mChangesAsked(true)                      // Initialize changes asked flag
+    , patternReadOnly(false)                   // Initialize pattern read-only flag
+    , dialogTable(nullptr)                     // Initialize dialog table
+    , dialogTool()                             // Initialize dialog tool
+    , historyDialog(nullptr)                   // Initialize history dialog
+    , fontComboBox(nullptr)                    // Initialize font combo box
+    , fontSizeComboBox(nullptr)                // Initialize font size combo box
+    , draftBlockComboBox(nullptr)              // Initialize draft block combo box
+    , draftBlockLabel(nullptr)                 // Initialize draft block label
+    , mode(Draw::Calculation)                  // Initialize mode
+    , currentBlockIndex(0)                     // Initialize current block index
+    , currentToolBoxIndex(0)                   // Initialize current tool box index
+    , isToolOptionsDockVisible(true)           // Initialize tool options dock visibility
+    , isGroupsDockVisible(true)                // Initialize groups dock visibility
+    , isLayoutsDockVisible(false)              // Initialize layouts dock visibility
+    , isToolboxDockVisible(true)               // Initialize toolbox dock visibility
+    , drawMode(true)                           // Initialize draw mode
+    , recentFileActs()                         // Initialize recent file actions
+    , separatorAct(nullptr)                    // Initialize separator action
+    , leftGoToStage(nullptr)                   // Initialize left go-to stage
+    , rightGoToStage(nullptr)                  // Initialize right go-to stage
+    , autoSaveTimer(nullptr)                   // Initialize auto-save timer
+    , guiEnabled(true)                         // Initialize GUI enabled flag
+    , gradationHeights(nullptr)                // Initialize gradation heights
+    , gradationSizes(nullptr)                  // Initialize gradation sizes
+    , gradationHeightsLabel(nullptr)           // Initialize gradation heights label
+    , gradationSizesLabel(nullptr)             // Initialize gradation sizes label
+    , toolProperties(nullptr)                  // Initialize tool properties
+    , groupsWidget(nullptr)                    // Initialize groups widget
+    , patternPiecesWidget(nullptr)             // Initialize pattern pieces widget
+    , lock(nullptr)                            // Initialize lock
+    , zoomScaleSpinBox(nullptr)                // Initialize zoom scale spin box
+    , m_penToolBar(nullptr)                    // Initialize pen tool bar
+    , m_penReset(nullptr)                      // Initialize pen reset
+    , m_zoomToPointComboBox(nullptr)           // Initialize zoom to point combo box
 
-    doc = new VPattern(pattern, &mode, draftScene, pieceScene);
-    connect(doc, &VPattern::ClearMainWindow, this, &MainWindow::Clear);
-    connect(doc, &VPattern::patternChanged, this, &MainWindow::patternChangesWereSaved);
-    connect(doc, &VPattern::UndoCommand, this, &MainWindow::fullParseFile);
-    connect(doc, &VPattern::setGuiEnabled, this, &MainWindow::setGuiEnabled);
-    connect(doc, &VPattern::CheckLayout, this, [this]()
     {
-        if (pattern->DataPieces()->count() == 0)
+        for (int i = 0; i < MaxRecentFiles; ++i)
         {
-            if(!ui->showDraftMode->isChecked())
-            {
-                showDraftMode(true);
-            }
+            recentFileActs[i] = nullptr;           // Initialize recent file actions array
         }
-    });
-    connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::changeDraftBlockGlobally);
-    connect(doc, &VPattern::CheckLayout, this, [&](){
-        this->updateZoomToPointComboBox(draftPointNamesList());
-    });
-    qApp->setCurrentDocument(doc);
-    qApp->setCurrentData(pattern);
 
-    initializeDocksContain();
-    createMenus();
-    initializeDraftToolBar();
-    initializePointNameToolBar();
-    initializeModesToolBar();
-    initializeToolButtons();
-    showMaximized();
-    initPenToolBar();
+        createActions();                           // Create actions
+        initializeScenes();                        // Initialize scenes
 
-    helpLabel = new QLabel(QObject::tr("Create new pattern piece to start working."));
-    ui->statusBar->addWidget(helpLabel);
+        doc = new VPattern(pattern, &mode, draftScene, pieceScene);  // Create new VPattern object
+        // Connecting various signals to slots for handling application events
+        connect(doc, &VPattern::ClearMainWindow, this, &MainWindow::Clear);
+        connect(doc, &VPattern::patternChanged, this, &MainWindow::patternChangesWereSaved);
+        connect(doc, &VPattern::UndoCommand, this, &MainWindow::fullParseFile);
+        connect(doc, &VPattern::setGuiEnabled, this, &MainWindow::setGuiEnabled);
 
-    initializeToolsToolBar();
-
-    connect(qApp->getUndoStack(), &QUndoStack::cleanChanged, this, &MainWindow::patternChangesWereSaved);
-
-    initializeAutoSave();
-
-    ui->draft_ToolBox->setCurrentIndex(0);
-
-    ReadSettings();
-    initializeToolBarVisibility();
-
-    setCurrentFile("");
-    WindowsLocale();
-
-    connect(ui->listWidget, &QListWidget::currentRowChanged, this, &MainWindow::showLayoutPages);
-
-    connect(watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::MeasurementsChanged);
-    connect(qApp, &QApplication::focusChanged, this, [this](QWidget *old, QWidget *now)
-    {
-        if (old == nullptr && isAncestorOf(now) == true)
-        {// focus IN
-            static bool asking = false;
-            if (!asking && mChanges && not mChangesAsked)
+        // Check layout and show draft mode if no data pieces are present
+        connect(doc, &VPattern::CheckLayout, this, [this]()
+        {
+            if (pattern->DataPieces()->count() == 0)
             {
-                asking = true;
-                mChangesAsked = true;
-                const auto answer = QMessageBox::question(this, tr("Measurements"),
-                                                 tr("Measurements were changed. Do you want to sync measurements now?"),
-                                                          QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes);
-                if (answer == QMessageBox::Yes)
+                if (!ui->showDraftMode->isChecked())
                 {
-                    SyncMeasurements();
+                    showDraftMode(true);
                 }
-                asking = false;
             }
-        }
+        });
 
-        // In case we will need it
-        // else if (isAncestorOf(old) == true && now == nullptr)
-        // focus OUT
-    });
+        // Connect to change the draft block globally
+        connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::changeDraftBlockGlobally);
 
-#if defined(Q_OS_MAC)
-    // On Mac default icon size is 32x32.
-    ui->draft_ToolBar->setIconSize(QSize(24, 24));
-    ui->mode_ToolBar->setIconSize(QSize(24, 24));
-    ui->edit_Toolbar->setIconSize(QSize(24, 24));
-    ui->zoom_ToolBar->setIconSize(QSize(24, 24));
+        // Update the zoom-to-point combo box when the layout is checked
+        connect(doc, &VPattern::CheckLayout, this, [&]()
+        {
+            this->updateZoomToPointComboBox(draftPointNamesList());
+        });
 
-    setUnifiedTitleAndToolBarOnMac(true);
+        // Set the current document and data for the application
+        qApp->setCurrentDocument(doc);
+        qApp->setCurrentData(pattern);
 
-    // Mac OS Dock Menu
-    QMenu *menu = new QMenu(this);
+        // Initialize the docks and containers
+        initializeDocksContain();
+        // Create menus for the application
+        createMenus();
+        // Initialize toolbars for draft, point name, and modes
+        initializeDraftToolBar();
+        initializePointNameToolBar();
+        initializeModesToolBar();
+        // Initialize tool buttons and show the main window maximized
+        initializeToolButtons();
+        showMaximized();
+        // Initialize the pen toolbar
+        initPenToolBar();
 
-    QAction *newPattern_Action = menu->addAction(tr("New pattern"));
-    newPattern_Action->setMenuRole(QAction::NoRole);
-    connect(newPattern_Action, &QAction::triggered, this, &MainWindow::New);
+        // Create a help label and add it to the status bar
+        helpLabel = new QLabel(QObject::tr("Create new pattern piece to start working."));
+        ui->statusBar->addWidget(helpLabel);
 
-    QAction *openPattern_Action = menu->addAction(tr("Open pattern"));
-    openPattern_Action->setMenuRole(QAction::NoRole);
-    connect(openPattern_Action, &QAction::triggered, this, &MainWindow::Open);
+        // Initialize the tools toolbar
+        initializeToolsToolBar();
 
-    QAction *openSeamlyMe_Action = menu->addAction(tr("Create/Edit measurements"));
-    openSeamlyMe_Action->setMenuRole(QAction::NoRole);
-    connect(openSeamlyMe_Action, &QAction::triggered, this, &MainWindow::CreateMeasurements);
+        // Connect the undo stack cleanChanged signal to the patternChangesWereSaved slot
+        connect(qApp->getUndoStack(), &QUndoStack::cleanChanged, this, &MainWindow::patternChangesWereSaved);
 
-    QAction *appPreferences_Action = menu->addAction(tr("Preferences"));
-    appPreferences_Action->setMenuRole(QAction::NoRole);
-    connect(appPreferences_Action, &QAction::triggered, this, &MainWindow::Preferences);
+        // Initialize pattern auto-save functionality
+        initializeAutoSave();
 
-    menu->setAsDockMenu();
+        // Set the current index for the draft toolbox
+        ui->draft_ToolBox->setCurrentIndex(0);
 
-#endif //defined(Q_OS_MAC)
-}
+        // Read application settings and initialize toolbar visibility
+        ReadSettings();
+        initializeToolBarVisibility();
+
+        // Set the current file to an empty string and apply Windows locale settings
+        setCurrentFile("");
+        WindowsLocale();
+
+        // Connect the list widget's currentRowChanged signal to the showLayoutPages slot
+        connect(ui->listWidget, &QListWidget::currentRowChanged, this, &MainWindow::showLayoutPages);
+
+        // Connect file system watcher to handle measurement changes
+        connect(watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::MeasurementsChanged);
+
+        // Connect application focus change event to sync measurements if they were changed
+        connect(qApp, &QApplication::focusChanged, this, [this](QWidget *old, QWidget *now)
+        {
+            if (old == nullptr && isAncestorOf(now) == true)
+            {   // Focus IN
+                static bool asking = false;
+                if (!asking && mChanges && !mChangesAsked)
+                {
+                    asking = true;
+                    mChangesAsked = true;
+                    const auto answer = QMessageBox::question(this, tr("Measurements"),
+                                                            tr("Measurements were changed. Do you want to sync measurements now?"),
+                                                            QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+                    if (answer == QMessageBox::Yes)
+                    {
+                        SyncMeasurements();
+                    }
+                    asking = false;
+                }
+            }
+
+            // In case we will need it
+            // else if (isAncestorOf(old) == true && now == nullptr)
+            // focus OUT
+        });
+
+        #if defined(Q_OS_MAC)
+        // On Mac, set icon sizes for various toolbars and unify title and toolbar
+        ui->draft_ToolBar->setIconSize(QSize(24, 24));
+        ui->mode_ToolBar->setIconSize(QSize(24, 24));
+        ui->edit_Toolbar->setIconSize(QSize(24, 24));
+        ui->zoom_ToolBar->setIconSize(QSize(24, 24));
+
+        setUnifiedTitleAndToolBarOnMac(true);
+
+        // Create and set up the Mac OS Dock Menu
+        QMenu *menu = new QMenu(this);
+
+        // Create a new QAction for creating a new pattern and add it to the menu
+        QAction *newPattern_Action = menu->addAction(tr("New pattern"));
+        // Set the menu role to NoRole to avoid conflicts with the system menu roles        
+        newPattern_Action->setMenuRole(QAction::NoRole);
+        // Connect the triggered signal of the new pattern action to the New slot of MainWindow        
+        connect(newPattern_Action, &QAction::triggered, this, &MainWindow::New);
+
+        // Create a new QAction for opening a pattern and add it to the menu
+        QAction *openPattern_Action = menu->addAction(tr("Open pattern"));
+        // Set the menu role to NoRole to avoid conflicts with the system menu roles 
+        openPattern_Action->setMenuRole(QAction::NoRole);
+        // Connect the triggered signal of the open pattern action to the New slot of MainWindow
+        connect(openPattern_Action, &QAction::triggered, this, &MainWindow::Open);
+
+        // Create a new QAction for opening the SeamlyMe app and add it to the menu
+        QAction *openSeamlyMe_Action = menu->addAction(tr("Create/Edit measurements"));
+        // Set the menu role to NoRole to avoid conflicts with the system menu roles
+        openSeamlyMe_Action->setMenuRole(QAction::NoRole);
+        // Connect the triggered signal of the Open SeamlyMe action to the New slot of MainWindow
+        connect(openSeamlyMe_Action, &QAction::triggered, this, &MainWindow::CreateMeasurements);
+
+        // Create a new QAction for opening Seamly2D's Preferences and add it to the menu
+        QAction *appPreferences_Action = menu->addAction(tr("Preferences"));
+        // Set the menu role to NoRole to avoid conflicts with the system menu roles
+        appPreferences_Action->setMenuRole(QAction::NoRole);
+        // Connect the triggered signal of the open Preferences action to the New slot of MainWindow
+        connect(appPreferences_Action, &QAction::triggered, this, &MainWindow::Preferences);
+
+        // Set the menu as the application's dock menu (macOS specific feature)
+        // This makes the menu accessible from the application's dock icon
+        menu->setAsDockMenu();
+
+        #endif //defined(Q_OS_MAC)
+    }
 
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::addDraftBlock(const QString &blockName)
 {
+    // Attempt to append a new draft block with the given name
     if (doc->appendDraftBlock(blockName) == false)
     {
+        // Log a warning if the draft block creation fails
         qCWarning(vMainWindow, "Error creating draft block with the name %s.", qUtf8Printable(blockName));
         return;
     }
 
+    // Initialize scenes if this is the first draft block
     if (draftBlockComboBox->count() == 0)
     {
         draftScene->initializeOrigins();
@@ -329,22 +373,28 @@ void MainWindow::addDraftBlock(const QString &blockName)
         pieceScene->initializeOrigins();
     }
 
+    // Temporarily block signals to prevent unwanted signal handling during changes
     draftBlockComboBox->blockSignals(true);
+    // Add the new block name to the combo box
     draftBlockComboBox->addItem(blockName);
 
+    // Clear graphical objects in the pattern
     pattern->ClearGObjects();
-    //Create single point
-    emit ui->view->itemClicked(nullptr);//hide options previous tool
+
+    // Create a single point (spoint) for the new draft block
+    emit ui->view->itemClicked(nullptr); // Hide options from the previous tool
     const QString label = doc->GenerateLabel(LabelType::NewPatternPiece);
     const QPointF startPosition = draftBlockStartPosition();
     VPointF *point = new VPointF(startPosition.x(), startPosition.y(), label, 5, 10);
     auto spoint = VToolBasePoint::Create(0, blockName, point, draftScene, doc, pattern, Document::FullParse,
-                                         Source::FromGui);
+                                        Source::FromGui);
     ui->view->itemClicked(spoint);
 
+    // Enable tools and widgets
     setToolsEnabled(true);
     setWidgetsEnabled(true);
 
+    // Set the combo box to the new draft block
     const qint32 index = draftBlockComboBox->findText(blockName);
     if (index != -1)
     { // -1 for not found
@@ -354,37 +404,49 @@ void MainWindow::addDraftBlock(const QString &blockName)
     {
         draftBlockComboBox->setCurrentIndex(0);
     }
-    draftBlockComboBox->blockSignals(false);
+    draftBlockComboBox->blockSignals(false); // Unblock signals
 
-    // Show best for new PP
+    // Adjust the view to fit the new pattern piece
     VMainGraphicsView::NewSceneRect(ui->view->scene(), ui->view, spoint);
     ui->view->zoom100Percent();
 
+    // Enable the new draft action and clear the help label
     ui->newDraft_Action->setEnabled(true);
     helpLabel->setText("");
+
+    // Update the groups widget
     groupsWidget->updateGroups();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QPointF MainWindow::draftBlockStartPosition() const
 {
+    // Define the starting positions for the origin
     const qreal originX = 30.0;
     const qreal originY = 40.0;
+    // Define the margin to be added between blocks
     const qreal margin = 40.0;
+
+    // Check if there is more than one draft block
     if (draftBlockComboBox->count() > 1)
     {
+        // Get the bounding rectangle of all visible items in the draft scene
         const QRectF rect = draftScene->visibleItemsBoundingRect();
+        // Determine the starting position based on the bounding rectangle dimensions
         if (rect.width() <= rect.height())
         {
+            // If the width is less than or equal to the height, position the new block to the right of the existing blocks
             return QPointF(rect.width()+margin, originY);
         }
         else
         {
+            // If the height is less than the width, position the new block below the existing blocks
             return QPointF(originX, rect.height()+margin);
         }
     }
     else
     {
+        // If there is only one or no draft block, use the defined origin positions
         return QPointF(originX, originY);
     }
 }
@@ -392,12 +454,20 @@ QPointF MainWindow::draftBlockStartPosition() const
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::initializeScenes()
 {
+    // initializes a VMainGraphicsScene object as draftScene, sets it as the currentScene, 
+    // and then connects various signals from MainWindow to slots in 
+    // draftScene to enable different types of item selections and movements.
+
+    // Create a new draft scene and set it as the current scene
     draftScene = new VMainGraphicsScene(this);
     currentScene = draftScene;
     qApp->setCurrentScene(&currentScene);
+
+    // Connect signals for enabling item movements and selections in the draft scene
     connect(this, &MainWindow::EnableItemMove, draftScene, &VMainGraphicsScene::EnableItemMove);
     connect(this, &MainWindow::ItemsSelection, draftScene, &VMainGraphicsScene::ItemsSelection);
 
+    // Connect signals for enabling various types of selections in the draft scene
     connect(this, &MainWindow::EnableLabelSelection, draftScene, &VMainGraphicsScene::ToggleLabelSelection);
     connect(this, &MainWindow::EnablePointSelection, draftScene, &VMainGraphicsScene::TogglePointSelection);
     connect(this, &MainWindow::EnableLineSelection, draftScene, &VMainGraphicsScene::ToggleLineSelection);
@@ -406,6 +476,7 @@ void MainWindow::initializeScenes()
     connect(this, &MainWindow::EnableSplineSelection, draftScene, &VMainGraphicsScene::ToggleSplineSelection);
     connect(this, &MainWindow::EnableSplinePathSelection, draftScene, &VMainGraphicsScene::ToggleSplinePathSelection);
 
+    // set up connections for hover effects in the draft scene
     connect(this, &MainWindow::EnableLabelHover, draftScene, &VMainGraphicsScene::ToggleLabelHover);
     connect(this, &MainWindow::EnablePointHover, draftScene, &VMainGraphicsScene::TogglePointHover);
     connect(this, &MainWindow::EnableLineHover, draftScene, &VMainGraphicsScene::ToggleLineHover);
@@ -414,32 +485,48 @@ void MainWindow::initializeScenes()
     connect(this, &MainWindow::EnableSplineHover, draftScene, &VMainGraphicsScene::ToggleSplineHover);
     connect(this, &MainWindow::EnableSplinePathHover, draftScene, &VMainGraphicsScene::ToggleSplinePathHover);
 
+    // Connect the draft scene's mouse move signal to the MainWindow's MouseMove slot
     connect(draftScene, &VMainGraphicsScene::mouseMove, this, &MainWindow::MouseMove);
 
+    // Create a new piece scene
     pieceScene = new VMainGraphicsScene(this);
+    
+    // Connect signals for enabling item movements in the piece scene
     connect(this, &MainWindow::EnableItemMove, pieceScene, &VMainGraphicsScene::EnableItemMove);
 
+    // Connect signals for enabling various types of selections in the piece scene
     connect(this, &MainWindow::EnableNodeLabelSelection, pieceScene, &VMainGraphicsScene::ToggleNodeLabelSelection);
     connect(this, &MainWindow::EnableNodePointSelection, pieceScene, &VMainGraphicsScene::ToggleNodePointSelection);
     connect(this, &MainWindow::enablePieceSelection, pieceScene, &VMainGraphicsScene::togglePieceSelection);
 
+    // Connect signals for enabling various types of hover effects in the piece scene
     connect(this, &MainWindow::EnableNodeLabelHover, pieceScene, &VMainGraphicsScene::ToggleNodeLabelHover);
     connect(this, &MainWindow::EnableNodePointHover, pieceScene, &VMainGraphicsScene::ToggleNodePointHover);
     connect(this, &MainWindow::enablePieceHover, pieceScene, &VMainGraphicsScene::togglePieceHover);
 
+    // Connect the piece scene's mouse move signal to the MainWindow's MouseMove slot
     connect(pieceScene, &VMainGraphicsScene::mouseMove, this, &MainWindow::MouseMove);
 
+    //sets the currentScene to be displayed in the UI view
     ui->view->setScene(currentScene);
-
+    
+    // Set the transforms of the draft and piece scenes to match the current view's transform
     draftScene->setCurrentTransform(ui->view->transform());
     pieceScene->setCurrentTransform(ui->view->transform());
 
+    // Connect the view's mouse release signal to the MainWindow's EndVisualization slot
     connect(ui->view, &VMainGraphicsView::mouseRelease, this, [this](){EndVisualization(true);});
+    // Connect the view's zoom scale changed signal to the MainWindow's zoomScaleChanged slot    
     connect(ui->view, &VMainGraphicsView::signalZoomScaleChanged, this, &MainWindow::zoomScaleChanged);
 
+    // Set the size policy for the view to be expanding both horizontally and vertically
     QSizePolicy policy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    // Set the horizontal stretch factor to 12 for the view's size policy
     policy.setHorizontalStretch(12);
+    // Apply the size policy to the view
     ui->view->setSizePolicy(policy);
+
+    // Set the scene view in the application to the current view
     qApp->setSceneView(ui->view);
 }
 
@@ -489,7 +576,7 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
             if (measurements->measurementUnits() == Unit::Inch)
             {
                 qCCritical(vMainWindow, "%s\n\n%s", qUtf8Printable(tr("Wrong units.")),
-                          qUtf8Printable(tr("Application doesn't support multisize table with inches.")));
+                            qUtf8Printable(tr("Application doesn't support multisize table with inches.")));
                 measurements->clear();
                 if (!Application2D::isGUIMode())
                 {
@@ -503,7 +590,7 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
     catch (VException &exception)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File exception.")),
-                   qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
+                    qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
         measurements->clear();
         if (!Application2D::isGUIMode())
         {
