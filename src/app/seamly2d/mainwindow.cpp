@@ -155,61 +155,60 @@ const QString strCtrl        = QStringLiteral("Ctrl"); // String for translation
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief MainWindow constructor.
+ * @brief Seamly2D MainWindow constructor.
  * @param parent parent widget.
  */
 MainWindow::MainWindow(QWidget *parent)
-    // main window for Seamly2D application
+    
+    : MainWindowsNoGUI(parent)                 
+    , ui(new Ui::MainWindow)                   
+    , watcher(new QFileSystemWatcher(this))    
+    , currentTool(Tool::Arrow)                 
+    , lastUsedTool(Tool::Arrow)                
+    , draftScene(nullptr)                      
+    , pieceScene(nullptr)                      
+    , mouseCoordinates(nullptr)                
+    , infoToolButton(nullptr)                  
+    , helpLabel(nullptr)                       
+    , isInitialized(false)                     
+    , mChanges(false)                          
+    , mChangesAsked(true)                      
+    , patternReadOnly(false)                   
+    , dialogTable(nullptr)                     
+    , dialogTool()                             
+    , historyDialog(nullptr)                   
+    , fontComboBox(nullptr)                    
+    , fontSizeComboBox(nullptr)                
+    , draftBlockComboBox(nullptr)              
+    , draftBlockLabel(nullptr)                 
+    , mode(Draw::Calculation)                  
+    , currentBlockIndex(0)                     
+    , currentToolBoxIndex(0)                   
+    , isToolOptionsDockVisible(true)           
+    , isGroupsDockVisible(true)                
+    , isLayoutsDockVisible(false)              
+    , isToolboxDockVisible(true)               
+    , drawMode(true)                           
+    , recentFileActs()                         
+    , separatorAct(nullptr)                    
+    , leftGoToStage(nullptr)                   
+    , rightGoToStage(nullptr)                  
+    , autoSaveTimer(nullptr)                   
+    , guiEnabled(true)                         
+    , gradationHeights(nullptr)                
+    , gradationSizes(nullptr)                  
+    , gradationHeightsLabel(nullptr)           
+    , gradationSizesLabel(nullptr)             
+    , toolProperties(nullptr)                  
+    , groupsWidget(nullptr)                    
+    , patternPiecesWidget(nullptr)             
+    , lock(nullptr)                            
+    , zoomScaleSpinBox(nullptr)                
+    , m_penToolBar(nullptr)                    
+    , m_penReset(nullptr)                      
+    , m_zoomToPointComboBox(nullptr)           
 
-    : MainWindowsNoGUI(parent)                 // Call base class constructor
-    , ui(new Ui::MainWindow)                   // Initialize UI
-    , watcher(new QFileSystemWatcher(this))    // Initialize file system watcher
-    , currentTool(Tool::Arrow)                 // Initialize current tool
-    , lastUsedTool(Tool::Arrow)                // Initialize last used tool
-    , draftScene(nullptr)                      // Initialize draft scene
-    , pieceScene(nullptr)                      // Initialize piece scene
-    , mouseCoordinates(nullptr)                // Initialize mouse coordinates
-    , infoToolButton(nullptr)                  // Initialize info tool button
-    , helpLabel(nullptr)                       // Initialize help label
-    , isInitialized(false)                     // Initialize initialization flag
-    , mChanges(false)                          // Initialize changes flag
-    , mChangesAsked(true)                      // Initialize changes asked flag
-    , patternReadOnly(false)                   // Initialize pattern read-only flag
-    , dialogTable(nullptr)                     // Initialize dialog table
-    , dialogTool()                             // Initialize dialog tool
-    , historyDialog(nullptr)                   // Initialize history dialog
-    , fontComboBox(nullptr)                    // Initialize font combo box
-    , fontSizeComboBox(nullptr)                // Initialize font size combo box
-    , draftBlockComboBox(nullptr)              // Initialize draft block combo box
-    , draftBlockLabel(nullptr)                 // Initialize draft block label
-    , mode(Draw::Calculation)                  // Initialize mode
-    , currentBlockIndex(0)                     // Initialize current block index
-    , currentToolBoxIndex(0)                   // Initialize current tool box index
-    , isToolOptionsDockVisible(true)           // Initialize tool options dock visibility
-    , isGroupsDockVisible(true)                // Initialize groups dock visibility
-    , isLayoutsDockVisible(false)              // Initialize layouts dock visibility
-    , isToolboxDockVisible(true)               // Initialize toolbox dock visibility
-    , drawMode(true)                           // Initialize draw mode
-    , recentFileActs()                         // Initialize recent file actions
-    , separatorAct(nullptr)                    // Initialize separator action
-    , leftGoToStage(nullptr)                   // Initialize left go-to stage
-    , rightGoToStage(nullptr)                  // Initialize right go-to stage
-    , autoSaveTimer(nullptr)                   // Initialize auto-save timer
-    , guiEnabled(true)                         // Initialize GUI enabled flag
-    , gradationHeights(nullptr)                // Initialize gradation heights
-    , gradationSizes(nullptr)                  // Initialize gradation sizes
-    , gradationHeightsLabel(nullptr)           // Initialize gradation heights label
-    , gradationSizesLabel(nullptr)             // Initialize gradation sizes label
-    , toolProperties(nullptr)                  // Initialize tool properties
-    , groupsWidget(nullptr)                    // Initialize groups widget
-    , patternPiecesWidget(nullptr)             // Initialize pattern pieces widget
-    , lock(nullptr)                            // Initialize lock
-    , zoomScaleSpinBox(nullptr)                // Initialize zoom scale spin box
-    , m_penToolBar(nullptr)                    // Initialize pen tool bar
-    , m_penReset(nullptr)                      // Initialize pen reset
-    , m_zoomToPointComboBox(nullptr)           // Initialize zoom to point combo box
-
-    // main Seamly2D application 
+    // define Seamly2D main window
     {
         for (int i = 0; i < MaxRecentFiles; ++i)
         {
@@ -219,8 +218,10 @@ MainWindow::MainWindow(QWidget *parent)
         createActions();                           // Create actions
         initializeScenes();                        // Initialize scenes
 
+        // TODO: brief comment on what VPattern object does (everything is stored to the VPattern object)
         doc = new VPattern(pattern, &mode, draftScene, pieceScene);  // Create new VPattern object
-        // Connect signals to slots for handling application events
+
+        // Connect signals to slots for handling application events in the doc VPattern object
         connect(doc, &VPattern::ClearMainWindow, this, &MainWindow::Clear);
         connect(doc, &VPattern::patternChanged, this, &MainWindow::patternChangesWereSaved);
         connect(doc, &VPattern::UndoCommand, this, &MainWindow::fullParseFile);
@@ -229,6 +230,7 @@ MainWindow::MainWindow(QWidget *parent)
         // Check layout and show draft mode if no data pieces are present
         connect(doc, &VPattern::CheckLayout, this, [this]()
         {
+            // TODO: define where the current pattern is defined
             if (pattern->DataPieces()->count() == 0)
             {
                 if (!ui->showDraftMode->isChecked())
@@ -238,19 +240,20 @@ MainWindow::MainWindow(QWidget *parent)
             }
         });
 
-        // Connect signals to slots to change the draft block globally
+        // Connect signals to slots to change the draft block 
         connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::changeDraftBlockGlobally);
 
-        // Update the zoom-to-point combo box when the layout is checked
+        // Check layout and update the zoom-to-point combo box
         connect(doc, &VPattern::CheckLayout, this, [&]()
         {
             this->updateZoomToPointComboBox(draftPointNamesList());
         });
 
-        // Set the current document and data for the application
+        // Set the current document and data for the application to the current VPattern object containing the current pattern
         qApp->setCurrentDocument(doc);
         qApp->setCurrentData(pattern);
 
+        // initialize docks to contain the toolbars and create menuts
         initializeDocksContain();       
         createMenus();
 
@@ -274,11 +277,8 @@ MainWindow::MainWindow(QWidget *parent)
         // Connect the undo stack cleanChanged signal to the patternChangesWereSaved slot
         connect(qApp->getUndoStack(), &QUndoStack::cleanChanged, this, &MainWindow::patternChangesWereSaved);
 
-        // Initialize pattern auto-save functionality
-        initializeAutoSave();
-
-        // Set the current index for the draft toolbox
-        ui->draft_ToolBox->setCurrentIndex(0);
+        initializeAutoSave();                       // Initialize pattern auto-save functionality
+        ui->draft_ToolBox->setCurrentIndex(0);      // Set the current index for the draft toolbox
 
         // Read application settings and initialize toolbar visibility
         ReadSettings();
@@ -289,8 +289,8 @@ MainWindow::MainWindow(QWidget *parent)
         WindowsLocale();
 
         connect(ui->listWidget, &QListWidget::currentRowChanged, this, &MainWindow::showLayoutPages);   // Connect the list widget's currentRowChanged signal to the showLayoutPages slot  
-        connect(watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::MeasurementsChanged);     // Connect file system watcher to handle measurement changes
-        // Connect application focus change event to sync measurements if they were changed
+        connect(watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::MeasurementsChanged);     // Connect file system watcher to handle measurement changes      
+        // sync measurements if they were changed
         connect(qApp, &QApplication::focusChanged, this, [this](QWidget *old, QWidget *now)            
         {
             if (old == nullptr && isAncestorOf(now) == true)
@@ -362,6 +362,10 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
 //---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief addDraftBlock Create a new draft block.
+ * @param blockName blockname string.
+ */
 void MainWindow::addDraftBlock(const QString &blockName)
 {
     // Attempt to append a new draft block with the given name
@@ -425,6 +429,10 @@ void MainWindow::addDraftBlock(const QString &blockName)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief draftBlockStartPosition Define origin for draft scene.
+ * @param 
+ */
 QPointF MainWindow::draftBlockStartPosition() const
 {
     // Define the starting positions for the origin
@@ -458,6 +466,10 @@ QPointF MainWindow::draftBlockStartPosition() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief initializeScenes Initialize draftScene and pieceScene.
+ * @param 
+ */
 void MainWindow::initializeScenes()
 {
     // initializes a VMainGraphicsScene object as draftScene, sets it as the currentScene, 
