@@ -53,90 +53,103 @@
  **
  *************************************************************************/
 
-#include "mainwindow.h"                       // Include main window header
-#include "ui_mainwindow.h"                    // Include main window UI header
+// Seamly application headers
+#include "core/application_2d.h"              
+#include "version.h"                          
+#include "options.h"                          
+#include "mainwindow.h"                       
+#include "ui_mainwindow.h" 
+#include "../ifc/xml/vpatternconverter.h"     
+#include "../vmisc/customevents.h"  
+#include "../vmisc/def.h" 
+#include "../vmisc/logging.h"                          
+#include "../vmisc/vsettings.h"
+#include "../vwidgets/vmaingraphicsscene.h" 
+#include "../vwidgets/mouse_coordinates.h" 
+#include "../vwidgets/vwidgetpopup.h" 
 
-#include "../vgeometry/vspline.h"             // Include vspline header for geometric operations
-#include "../ifc/exception/vexceptionobjecterror.h"  // Include exception handling for object errors
-#include "../ifc/exception/vexceptionconversionerror.h"  // Include exception handling for conversion errors
-#include "../ifc/exception/vexceptionemptyparameter.h"  // Include exception handling for empty parameter errors
-#include "../ifc/exception/vexceptionwrongid.h"  // Include exception handling for wrong ID errors
-#include "../ifc/exception/vexceptionundo.h"  // Include exception handling for undo operations
-#include "version.h"                          // Include version header
-#include "core/application_2d.h"              // Include 2D application core header
-#include "../vmisc/customevents.h"            // Include custom events header
-#include "../vmisc/vsettings.h"               // Include settings header
-#include "../vmisc/def.h"                     // Include definitions header
-#include "../vmisc/qxtcsvmodel.h"             // Include CSV model header
-#include "../vmisc/dialogs/dialogexporttocsv.h"  // Include dialog for exporting to CSV
-#include "undocommands/rename_draftblock.h"   // Include undo command for renaming draft block
-#include "core/vtooloptionspropertybrowser.h"  // Include property browser for tool options
-#include "options.h"                          // Include options header
-#include "../ifc/xml/vpatternconverter.h"     // Include pattern converter header
-#include "../vmisc/logging.h"                 // Include logging header
-#include "../vformat/measurements.h"          // Include measurements header
-#include "../ifc/xml/multi_size_converter.h"  // Include multi-size converter header
-#include "../ifc/xml/individual_size_converter.h"  // Include individual size converter header
-#include "../vwidgets/vwidgetpopup.h"         // Include widget popup header
-#include "../vwidgets/vmaingraphicsscene.h"   // Include main graphics scene header
-#include "../vwidgets/mouse_coordinates.h"    // Include mouse coordinates header
-#include "../vtools/tools/drawTools/drawtools.h"  // Include drawing tools header
-#include "../vtools/dialogs/tooldialogs.h"    // Include tool dialogs header
-#include "tools/pattern_piece_tool.h"         // Include pattern piece tool header
-#include "tools/nodeDetails/vtoolinternalpath.h"  // Include internal path tool header
-#include "tools/nodeDetails/anchorpoint_tool.h"  // Include anchor point tool header
-#include "tools/union_tool.h"                 // Include union tool header
-#include "dialogs/dialogs.h"                  // Include dialogs header
-#include "../vpropertyexplorer/checkablemessagebox.h"  // Include checkable message box header
-#include "../vtools/undocommands/addgroup.h"  // Include undo command for adding group
-#include "../tools/image_item.h"              // Include image item header
-#include "dialogs/calculator_dialog.h"        // Include calculator dialog header
-#include "dialogs/decimalchart_dialog.h"      // Include decimal chart dialog header
-#include "../vtools/undocommands/label/showpointname.h"  // Include undo command for showing point name
-#include "../vpatterndb/vpiecepath.h"         // Include piece path header
-#include "../qmuparser/qmuparsererror.h"      // Include parser error header
-#include "../vtools/dialogs/support/editlabeltemplate_dialog.h"  // Include label template edit dialog header
+// Seamly exception handling headers
+#include "../ifc/exception/vexceptionobjecterror.h"  
+#include "../ifc/exception/vexceptionconversionerror.h"  
+#include "../ifc/exception/vexceptionemptyparameter.h"  
+#include "../ifc/exception/vexceptionwrongid.h"  
+#include "../ifc/exception/vexceptionundo.h"  
+#include "../vpropertyexplorer/checkablemessagebox.h"  
 
-#include <QInputDialog>                       // Include input dialog header
-#include <QtDebug>                            // Include Qt debugging header
-#include <QMessageBox>                        // Include message box header
-#include <QShowEvent>                         // Include show event header
-#include <QScrollBar>                         // Include scroll bar header
-#include <QFileDialog>                        // Include file dialog header
-#include <QSourceLocation>                    // Include source location header
-#include <QUndoStack>                         // Include undo stack header
-#include <QAction>                            // Include action header
-#include <QProcess>                           // Include process header
-#include <QSettings>                          // Include settings header
-#include <QTimer>                             // Include timer header
-#include <QtGlobal>                           // Include global Qt header
-#include <QDesktopWidget>                     // Include desktop widget header
-#include <QDesktopServices>                   // Include desktop services header
-#include <chrono>                             // Include chrono header for time utilities
-#include <thread>                             // Include thread header for multithreading
-#include <QFileSystemWatcher>                 // Include file system watcher header
-#include <QComboBox>                          // Include combo box header
-#include <QFontComboBox>                      // Include font combo box header
-#include <QTextCodec>                         // Include text codec header
-#include <QDoubleSpinBox>                     // Include double spin box header
-#include <QToolBar>                           // Include tool bar header
-#include <QImageReader>                       // Include image reader header
-#include <QSharedPointer>                     // Include shared pointer header
+// Seamly dialog headers
+#include "dialogs/dialogs.h"                  
+#include "dialogs/calculator_dialog.h"        
+#include "dialogs/decimalchart_dialog.h"
+#include "../vmisc/dialogs/dialogexporttocsv.h"   
+#include "../vtools/dialogs/tooldialogs.h"   
+#include "../vtools/dialogs/support/editlabeltemplate_dialog.h"  
 
+// Seamly tool headers
+#include "core/vtooloptionspropertybrowser.h"  
+#include "../vtools/tools/drawTools/drawtools.h"  
+#include "tools/pattern_piece_tool.h"         
+#include "tools/nodeDetails/vtoolinternalpath.h"  
+#include "tools/nodeDetails/anchorpoint_tool.h"  
+#include "tools/union_tool.h"                 
+#include "../tools/image_item.h" 
+#include "../vgeometry/vspline.h"             
+
+// Seamly undo command headers
+#include "../vtools/undocommands/addgroup.h"
+#include "../vtools/undocommands/label/showpointname.h"
+#include "undocommands/rename_draftblock.h"  
+
+// SeamlyMe headers
+#include "../ifc/xml/multi_size_converter.h"  
+#include "../ifc/xml/individual_size_converter.h"  
+#include "../vformat/measurements.h" 
+#include "../vmisc/qxtcsvmodel.h"             
+
+// external library headers
+#include "../qmuparser/qmuparsererror.h"
+
+// Qt headers 
+#include <QInputDialog>                       
+#include <QFileDialog>                        
+#include <QtDebug>                            
+#include <QMessageBox>                        
+#include <QShowEvent>                         
+#include <QScrollBar>                         
+#include <QSourceLocation>                    
+#include <QUndoStack>                         
+#include <QAction>                            
+#include <QProcess>                           
+#include <QSettings>                          
+#include <QTimer>                             
+#include <QtGlobal>                          
+#include <QDesktopWidget>                     
+#include <QDesktopServices>                   
+#include <chrono>                             
+#include <thread>                             
+#include <QFileSystemWatcher>                 
+#include <QComboBox>                          
+#include <QFontComboBox>                      
+#include <QTextCodec>                         
+#include <QDoubleSpinBox>                     
+#include <QToolBar>                           
+#include <QImageReader>                       
+#include <QSharedPointer>                     
+
+// compiler directives
 #if defined(Q_OS_MAC)
-#include <QMimeData>                          // Include MIME data header for macOS
-#include <QDrag>                              // Include drag header for macOS
+#include <QMimeData>                          
+#include <QDrag>                              
 #endif //defined(Q_OS_MAC)
 
 QT_WARNING_PUSH
-QT_WARNING_DISABLE_CLANG("-Wmissing-prototypes")  // Disable missing prototypes warning for Clang
-QT_WARNING_DISABLE_INTEL(1418)                   // Disable specific Intel warning
-Q_LOGGING_CATEGORY(vMainWindow, "v.mainwindow")  // Define logging category for main window
+QT_WARNING_DISABLE_CLANG("-Wmissing-prototypes")  
+QT_WARNING_DISABLE_INTEL(1418)                   
+Q_LOGGING_CATEGORY(vMainWindow, "v.mainwindow")  
 QT_WARNING_POP
 
-const QString autosavePrefix = QStringLiteral(".autosave");  // Define autosave prefix
-
-// String below needed for getting translation for key Ctrl
+// translation settings
+const QString autosavePrefix = QStringLiteral(".autosave");  
+// enable key Ctrl shortcuts
 const QString strQShortcut   = QStringLiteral("QShortcut"); // Context for translations
 const QString strCtrl        = QStringLiteral("Ctrl"); // String for translation
 
@@ -196,6 +209,7 @@ MainWindow::MainWindow(QWidget *parent)
     , m_penReset(nullptr)                      // Initialize pen reset
     , m_zoomToPointComboBox(nullptr)           // Initialize zoom to point combo box
 
+    // main Seamly2D application 
     {
         for (int i = 0; i < MaxRecentFiles; ++i)
         {
@@ -206,7 +220,7 @@ MainWindow::MainWindow(QWidget *parent)
         initializeScenes();                        // Initialize scenes
 
         doc = new VPattern(pattern, &mode, draftScene, pieceScene);  // Create new VPattern object
-        // Connecting various signals to slots for handling application events
+        // Connect signals to slots for handling application events
         connect(doc, &VPattern::ClearMainWindow, this, &MainWindow::Clear);
         connect(doc, &VPattern::patternChanged, this, &MainWindow::patternChangesWereSaved);
         connect(doc, &VPattern::UndoCommand, this, &MainWindow::fullParseFile);
@@ -224,7 +238,7 @@ MainWindow::MainWindow(QWidget *parent)
             }
         });
 
-        // Connect to change the draft block globally
+        // Connect signals to slots to change the draft block globally
         connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::changeDraftBlockGlobally);
 
         // Update the zoom-to-point combo box when the layout is checked
@@ -237,25 +251,24 @@ MainWindow::MainWindow(QWidget *parent)
         qApp->setCurrentDocument(doc);
         qApp->setCurrentData(pattern);
 
-        // Initialize the docks and containers
-        initializeDocksContain();
-        // Create menus for the application
+        initializeDocksContain();       
         createMenus();
+
         // Initialize toolbars for draft, point name, and modes
         initializeDraftToolBar();
         initializePointNameToolBar();
         initializeModesToolBar();
+
         // Initialize tool buttons and show the main window maximized
         initializeToolButtons();
         showMaximized();
-        // Initialize the pen toolbar
+
         initPenToolBar();
 
         // Create a help label and add it to the status bar
         helpLabel = new QLabel(QObject::tr("Create new pattern piece to start working."));
         ui->statusBar->addWidget(helpLabel);
 
-        // Initialize the tools toolbar
         initializeToolsToolBar();
 
         // Connect the undo stack cleanChanged signal to the patternChangesWereSaved slot
@@ -275,14 +288,10 @@ MainWindow::MainWindow(QWidget *parent)
         setCurrentFile("");
         WindowsLocale();
 
-        // Connect the list widget's currentRowChanged signal to the showLayoutPages slot
-        connect(ui->listWidget, &QListWidget::currentRowChanged, this, &MainWindow::showLayoutPages);
-
-        // Connect file system watcher to handle measurement changes
-        connect(watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::MeasurementsChanged);
-
+        connect(ui->listWidget, &QListWidget::currentRowChanged, this, &MainWindow::showLayoutPages);   // Connect the list widget's currentRowChanged signal to the showLayoutPages slot  
+        connect(watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::MeasurementsChanged);     // Connect file system watcher to handle measurement changes
         // Connect application focus change event to sync measurements if they were changed
-        connect(qApp, &QApplication::focusChanged, this, [this](QWidget *old, QWidget *now)
+        connect(qApp, &QApplication::focusChanged, this, [this](QWidget *old, QWidget *now)            
         {
             if (old == nullptr && isAncestorOf(now) == true)
             {   // Focus IN
@@ -313,38 +322,36 @@ MainWindow::MainWindow(QWidget *parent)
         ui->mode_ToolBar->setIconSize(QSize(24, 24));
         ui->edit_Toolbar->setIconSize(QSize(24, 24));
         ui->zoom_ToolBar->setIconSize(QSize(24, 24));
-
         setUnifiedTitleAndToolBarOnMac(true);
 
-        // Create and set up the Mac OS Dock Menu
-        QMenu *menu = new QMenu(this);
+        QMenu *menu = new QMenu(this);      // Create and set up the Mac OS Dock Menu
 
         // Create a new QAction for creating a new pattern and add it to the menu
+        // Set the menu role to NoRole to avoid conflicts with the system menu roles
+        // Connect the triggered signal of the new pattern action to the New slot of MainWindow         
         QAction *newPattern_Action = menu->addAction(tr("New pattern"));
-        // Set the menu role to NoRole to avoid conflicts with the system menu roles        
         newPattern_Action->setMenuRole(QAction::NoRole);
-        // Connect the triggered signal of the new pattern action to the New slot of MainWindow        
         connect(newPattern_Action, &QAction::triggered, this, &MainWindow::New);
 
         // Create a new QAction for opening a pattern and add it to the menu
-        QAction *openPattern_Action = menu->addAction(tr("Open pattern"));
-        // Set the menu role to NoRole to avoid conflicts with the system menu roles 
-        openPattern_Action->setMenuRole(QAction::NoRole);
+        // Set the menu role to NoRole to avoid conflicts with the system menu roles
         // Connect the triggered signal of the open pattern action to the New slot of MainWindow
+        QAction *openPattern_Action = menu->addAction(tr("Open pattern"));
+        openPattern_Action->setMenuRole(QAction::NoRole);
         connect(openPattern_Action, &QAction::triggered, this, &MainWindow::Open);
 
         // Create a new QAction for opening the SeamlyMe app and add it to the menu
-        QAction *openSeamlyMe_Action = menu->addAction(tr("Create/Edit measurements"));
         // Set the menu role to NoRole to avoid conflicts with the system menu roles
-        openSeamlyMe_Action->setMenuRole(QAction::NoRole);
         // Connect the triggered signal of the Open SeamlyMe action to the New slot of MainWindow
+        QAction *openSeamlyMe_Action = menu->addAction(tr("Create/Edit measurements"));
+        openSeamlyMe_Action->setMenuRole(QAction::NoRole);
         connect(openSeamlyMe_Action, &QAction::triggered, this, &MainWindow::CreateMeasurements);
 
         // Create a new QAction for opening Seamly2D's Preferences and add it to the menu
-        QAction *appPreferences_Action = menu->addAction(tr("Preferences"));
         // Set the menu role to NoRole to avoid conflicts with the system menu roles
-        appPreferences_Action->setMenuRole(QAction::NoRole);
         // Connect the triggered signal of the open Preferences action to the New slot of MainWindow
+        QAction *appPreferences_Action = menu->addAction(tr("Preferences"));
+        appPreferences_Action->setMenuRole(QAction::NoRole);
         connect(appPreferences_Action, &QAction::triggered, this, &MainWindow::Preferences);
 
         // Set the menu as the application's dock menu (macOS specific feature)
@@ -373,9 +380,8 @@ void MainWindow::addDraftBlock(const QString &blockName)
         pieceScene->initializeOrigins();
     }
 
-    // Temporarily block signals to prevent unwanted signal handling during changes
+    // Temporarily block signals to prevent unwanted signal handling during changes & add the new block name to the combo box
     draftBlockComboBox->blockSignals(true);
-    // Add the new block name to the combo box
     draftBlockComboBox->addItem(blockName);
 
     // Clear graphical objects in the pattern
@@ -507,7 +513,7 @@ void MainWindow::initializeScenes()
     // Connect the piece scene's mouse move signal to the MainWindow's MouseMove slot
     connect(pieceScene, &VMainGraphicsScene::mouseMove, this, &MainWindow::MouseMove);
 
-    //sets the currentScene to be displayed in the UI view
+    // sets the currentScene to be displayed in the UI view
     ui->view->setScene(currentScene);
     
     // Set the transforms of the draft and piece scenes to match the current view's transform
@@ -519,12 +525,10 @@ void MainWindow::initializeScenes()
     // Connect the view's zoom scale changed signal to the MainWindow's zoomScaleChanged slot    
     connect(ui->view, &VMainGraphicsView::signalZoomScaleChanged, this, &MainWindow::zoomScaleChanged);
 
-    // Set the size policy for the view to be expanding both horizontally and vertically
+    // Set the size policy for the view to be expandable both horizontally and vertically
     QSizePolicy policy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    // Set the horizontal stretch factor to 12 for the view's size policy
-    policy.setHorizontalStretch(12);
-    // Apply the size policy to the view
-    ui->view->setSizePolicy(policy);
+    policy.setHorizontalStretch(12);    // Set the horizontal stretch factor to 12 for the view's size policy
+    ui->view->setSizePolicy(policy);    // Apply the size policy to the view
 
     // Set the scene view in the application to the current view
     qApp->setSceneView(ui->view);
