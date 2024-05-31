@@ -19,7 +19,7 @@
         <translation>No se puede abrir su navegador por defecto</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+50"/>
         <source>Left to right</source>
         <translation>De izquierda a derecha</translation>
     </message>
@@ -34,7 +34,7 @@
         <translation>Automático</translation>
     </message>
     <message>
-        <location line="-75"/>
+        <location line="-76"/>
         <location line="+39"/>
         <source>Built on %1 at %2</source>
         <translation>Construido el %1 a la %2</translation>
@@ -3111,7 +3111,7 @@ p, li { white-space: pre-wrap; }
         <translation>Sin imagen</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/dialogpatternproperties.cpp" line="+803"/>
+        <location filename="../../src/app/seamly2d/dialogs/dialogpatternproperties.cpp" line="+800"/>
         <source>Delete image</source>
         <translation>Borrar imagen</translation>
     </message>
@@ -5281,7 +5281,7 @@ para la escritura</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>Unable to get exclusive access to file
+        <source>Unable to get exclusive access to file 
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -5973,12 +5973,12 @@ Do you want to download it?</source>
         <translation>Nombre:</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+28"/>
         <source>Lock Image:</source>
         <translation>Imagen de bloqueo:</translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+82"/>
         <source>Geometry</source>
         <translation>Geometría</translation>
     </message>
@@ -6005,13 +6005,13 @@ Do you want to download it?</source>
     <message>
         <location line="+33"/>
         <location line="+67"/>
-        <location line="+176"/>
+        <location line="+179"/>
         <location line="+67"/>
         <source>px</source>
         <translation>px</translation>
     </message>
     <message>
-        <location line="-276"/>
+        <location line="-279"/>
         <source>Y Position:</source>
         <translation>Y Posición:</translation>
     </message>
@@ -6026,7 +6026,7 @@ Do you want to download it?</source>
         <translation>Aspecto de la cerradura:</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+56"/>
         <source>Width:</source>
         <translation>Anchura:</translation>
     </message>
@@ -6536,7 +6536,7 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
     </message>
     <message>
         <location filename="../../src/app/seamly2d/dialogs/layoutsettings_dialog.cpp" line="+615"/>
-        <source>Margins go beyond printing.
+        <source>Margins go beyond printing. 
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -10131,7 +10131,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <location line="+22"/>
-        <location filename="../../src/libs/vtools/dialogs/tools/piece/pattern_piece_dialog.cpp" line="+1331"/>
+        <location filename="../../src/libs/vtools/dialogs/tools/piece/pattern_piece_dialog.cpp" line="+1359"/>
         <source>PatternPiece</source>
         <translation>Pieza de Patrón</translation>
     </message>
@@ -10210,7 +10210,7 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <location line="-3488"/>
         <location line="+69"/>
-        <location filename="../../src/libs/vtools/dialogs/tools/piece/pattern_piece_dialog.cpp" line="-2634"/>
+        <location filename="../../src/libs/vtools/dialogs/tools/piece/pattern_piece_dialog.cpp" line="-2662"/>
         <location line="+2152"/>
         <source>None</source>
         <translation>Ninguno</translation>
@@ -10524,12 +10524,12 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <location line="+259"/>
-        <location line="+1029"/>
+        <location line="+1032"/>
         <source>Length:</source>
         <translation>Longitud:</translation>
     </message>
     <message>
-        <location line="-699"/>
+        <location line="-702"/>
         <source>Arrows</source>
         <translation>Flechas</translation>
     </message>
@@ -10632,7 +10632,12 @@ Press enter to temporarily add it to the list.</source>
         <translation> Ancho:</translation>
     </message>
     <message>
-        <location line="+136"/>
+        <location line="+68"/>
+        <source>  °</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+71"/>
         <source>Reset notch length to default.</source>
         <translation>Restablecer la longitud del piquete a su valor predeterminado.</translation>
     </message>
@@ -10855,7 +10860,7 @@ Press enter to temporarily add it to the list.</source>
         <translation>Justo detrás</translation>
     </message>
     <message>
-        <location filename="../../src/libs/vtools/dialogs/tools/piece/pattern_piece_dialog.ui" line="-436"/>
+        <location filename="../../src/libs/vtools/dialogs/tools/piece/pattern_piece_dialog.ui" line="-439"/>
         <source>Show notch on the cut line.</source>
         <translation>Mostrar el piquete en la línea de corte.</translation>
     </message>
@@ -11503,7 +11508,7 @@ Press enter to temporarily add it to the list.</source>
         <translation>Unidad por defecto:</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.cpp" line="+319"/>
+        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.cpp" line="+316"/>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
         <translation>La unidad predeterminada se ha actualizado y se utilizará para el próximo patrón que cree.</translation>
     </message>
@@ -12529,7 +12534,7 @@ actualización:</translation>
         <translation>Datos de etiqueta (formato de fecha/hora)</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencespatternpage.cpp" line="+320"/>
+        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencespatternpage.cpp" line="+341"/>
         <source>Slit</source>
         <translation>Abertura</translation>
     </message>
@@ -12604,7 +12609,7 @@ actualización:</translation>
         <translation>Etiqueta de pieza:</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencespatternpage.cpp" line="-62"/>
+        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencespatternpage.cpp" line="-86"/>
         <source>Label template</source>
         <translation>Plantilla de etiqueta</translation>
     </message>
@@ -13289,13 +13294,19 @@ actualización:</translation>
     </message>
     <message>
         <location line="+22"/>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+74"/>
+        <source>When checked the Welcome window will not be displayed. 
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-47"/>
         <source>GUI language:</source>
         <translation>GUI Idioma:</translation>
     </message>
@@ -13305,13 +13316,7 @@ When unchecked the period is used.</source>
         <translation>Establece el idioma utilizado para SeamlyMe.</translation>
     </message>
     <message>
-        <location line="+25"/>
-        <source>When checked the Welcome window will not be displayed.
-You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
+        <location line="+29"/>
         <source>Do not show again</source>
         <translation>No volver a mostrar</translation>
     </message>
@@ -13366,25 +13371,18 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Separador decimal:</translation>
     </message>
     <message>
-        <location line="+22"/>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+27"/>
-        <source>GUI language:</source>
-        <translation>GUI Idioma:</translation>
-    </message>
-    <message>
-        <location line="+190"/>
-        <source>When checked the Welcome window will not be displayed.
+        <location line="+239"/>
+        <source>When checked the Welcome window will not be displayed. 
 You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="-190"/>
+        <source>GUI language:</source>
+        <translation>GUI Idioma:</translation>
+    </message>
+    <message>
+        <location line="+194"/>
         <source>Do not show again</source>
         <translation>No volver a mostrar</translation>
     </message>
@@ -13421,7 +13419,14 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Elija las unidades, el separador decimal, el idioma y el sonido de selección que prefiera. (Puede cambiarlos más adelante.)</translation>
     </message>
     <message>
-        <location line="+159"/>
+        <location line="+91"/>
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+68"/>
         <source>Sound:</source>
         <translation>Sonido:</translation>
     </message>
@@ -14557,7 +14562,7 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>&lt;estilo de tabla=tamaño de fuente:11pt; font-weight:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Empresa: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt; b&gt;Cliente: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Nombre del patrón:&lt;/b&gt;&lt;/td&gt;&lt;td&gt; %3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;N.º de patrón: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Versión: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Unidades: &lt;/b&gt;&lt;/td&gt; &lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Medidas:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt; tr&gt;&lt;td align = right&gt;&lt;b&gt;Descripción: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Notas: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Imagen: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10 &lt;/td&gt;&lt;tr&gt;&lt;/table&gt;</translation>
     </message>
     <message>
-        <location line="+100"/>
+        <location line="+97"/>
         <source>Info files</source>
         <translation>Archivos de información</translation>
     </message>
@@ -17342,13 +17347,13 @@ load in SeamlyME as usual.
         <location line="+15"/>
         <location line="+68"/>
         <location line="+147"/>
-        <location line="+195"/>
+        <location line="+196"/>
         <source>Length:</source>
         <translation>Longitud:</translation>
     </message>
     <message>
-        <location line="-564"/>
-        <location line="+506"/>
+        <location line="-565"/>
+        <location line="+507"/>
         <location line="+22"/>
         <location line="+20"/>
         <location line="+15"/>
@@ -17356,7 +17361,7 @@ load in SeamlyME as usual.
         <translation>Ángulo:</translation>
     </message>
     <message>
-        <location line="-546"/>
+        <location line="-547"/>
         <location line="+65"/>
         <location line="+103"/>
         <location line="+19"/>
@@ -17365,14 +17370,14 @@ load in SeamlyME as usual.
         <location line="+42"/>
         <location line="+99"/>
         <location line="+25"/>
-        <location line="+44"/>
+        <location line="+45"/>
         <location line="+55"/>
         <location line="+14"/>
         <source>First point:</source>
         <translation>Primer punto:</translation>
     </message>
     <message>
-        <location line="-484"/>
+        <location line="-485"/>
         <location line="+65"/>
         <location line="+103"/>
         <location line="+19"/>
@@ -17381,46 +17386,46 @@ load in SeamlyME as usual.
         <location line="+42"/>
         <location line="+99"/>
         <location line="+25"/>
-        <location line="+44"/>
+        <location line="+45"/>
         <location line="+55"/>
         <location line="+14"/>
         <source>Second point:</source>
         <translation>Segundo punto:</translation>
     </message>
     <message>
-        <location line="-465"/>
+        <location line="-466"/>
         <location line="+22"/>
         <location line="+273"/>
-        <location line="+272"/>
+        <location line="+273"/>
         <source>Center point:</source>
         <translation>Punto central:</translation>
     </message>
     <message>
-        <location line="-564"/>
+        <location line="-565"/>
         <location line="+22"/>
         <location line="+190"/>
         <location line="+49"/>
         <location line="+4"/>
-        <location line="+302"/>
+        <location line="+303"/>
         <location line="+1"/>
         <source>Radius:</source>
         <translation>Radio:</translation>
     </message>
     <message>
-        <location line="-567"/>
+        <location line="-568"/>
         <location line="+22"/>
-        <location line="+546"/>
+        <location line="+547"/>
         <source>First angle:</source>
         <translation>Primer ángulo:</translation>
     </message>
     <message>
-        <location line="-567"/>
-        <location line="+568"/>
+        <location line="-568"/>
+        <location line="+569"/>
         <source>Second angle:</source>
         <translation>Segundo ángulo:</translation>
     </message>
     <message>
-        <location line="-608"/>
+        <location line="-609"/>
         <location line="+21"/>
         <location line="+22"/>
         <location line="+22"/>
@@ -17430,7 +17435,7 @@ load in SeamlyME as usual.
         <location line="+45"/>
         <location line="+35"/>
         <location line="+103"/>
-        <location line="+46"/>
+        <location line="+47"/>
         <location line="+21"/>
         <location line="+17"/>
         <location line="+16"/>
@@ -17441,14 +17446,14 @@ load in SeamlyME as usual.
         <translation>Color:</translation>
     </message>
     <message>
-        <location line="-531"/>
+        <location line="-532"/>
         <location line="+282"/>
-        <location line="+69"/>
+        <location line="+70"/>
         <source>Third point:</source>
         <translation>Tercer punto:</translation>
     </message>
     <message>
-        <location line="-332"/>
+        <location line="-333"/>
         <source>Point 1 label:</source>
         <translation>Etiqueta del punto 1:</translation>
     </message>
@@ -17481,24 +17486,24 @@ load in SeamlyME as usual.
     <message>
         <location line="-215"/>
         <location line="+15"/>
-        <location line="+374"/>
+        <location line="+375"/>
         <source>Curve:</source>
         <translation>Curva:</translation>
     </message>
     <message>
-        <location line="-358"/>
-        <location line="+410"/>
+        <location line="-359"/>
+        <location line="+411"/>
         <source>First line point:</source>
         <translation>Primer punto de línea:</translation>
     </message>
     <message>
-        <location line="-409"/>
-        <location line="+410"/>
+        <location line="-410"/>
+        <location line="+411"/>
         <source>Second line point:</source>
         <translation>Segundo punto de línea:</translation>
     </message>
     <message>
-        <location line="-330"/>
+        <location line="-331"/>
         <source>Center of arc:</source>
         <translation>Centro del arco:</translation>
     </message>
@@ -17563,7 +17568,7 @@ load in SeamlyME as usual.
         <location line="+17"/>
         <location line="+14"/>
         <location line="+24"/>
-        <location line="+45"/>
+        <location line="+46"/>
         <location line="+22"/>
         <location line="+16"/>
         <location line="+15"/>
@@ -17574,27 +17579,27 @@ load in SeamlyME as usual.
         <translation>Nombre:</translation>
     </message>
     <message>
-        <location line="-207"/>
+        <location line="-201"/>
         <source>C1: angle:</source>
         <translation>C1: ángulo:</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-6"/>
         <source>C1: length:</source>
         <translation>C1: longitud:</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+18"/>
         <source>C2: angle:</source>
         <translation>C2: ángulo:</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-6"/>
         <source>C2: length:</source>
         <translation>C2: longitud:</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+92"/>
         <location line="+22"/>
         <location line="+68"/>
         <source>Axis point:</source>
@@ -17630,7 +17635,7 @@ load in SeamlyME as usual.
         <translation>Cuarto punto:</translation>
     </message>
     <message>
-        <location line="-432"/>
+        <location line="-433"/>
         <location line="+21"/>
         <location line="+22"/>
         <location line="+22"/>
@@ -17640,7 +17645,7 @@ load in SeamlyME as usual.
         <location line="+45"/>
         <location line="+35"/>
         <location line="+103"/>
-        <location line="+46"/>
+        <location line="+47"/>
         <location line="+21"/>
         <location line="+17"/>
         <location line="+16"/>
@@ -17651,12 +17656,12 @@ load in SeamlyME as usual.
         <translation>Tipo de línea:</translation>
     </message>
     <message>
-        <location line="-355"/>
+        <location line="-356"/>
         <source>Point - Intersect XY</source>
         <translation>Punto - Intersección XY</translation>
     </message>
     <message>
-        <location line="+280"/>
+        <location line="+281"/>
         <source>Rotation</source>
         <translation>Rotación</translation>
     </message>
@@ -17681,7 +17686,7 @@ load in SeamlyME as usual.
         <translation>Reflejar por Eje</translation>
     </message>
     <message>
-        <location line="-609"/>
+        <location line="-610"/>
         <location line="+15"/>
         <location line="+21"/>
         <location line="+21"/>
@@ -17704,7 +17709,7 @@ load in SeamlyME as usual.
         <location line="+17"/>
         <location line="+14"/>
         <location line="+24"/>
-        <location line="+45"/>
+        <location line="+46"/>
         <location line="+22"/>
         <location line="+16"/>
         <location line="+15"/>
@@ -17719,7 +17724,7 @@ load in SeamlyME as usual.
         <translation>Selección</translation>
     </message>
     <message>
-        <location line="-621"/>
+        <location line="-622"/>
         <source>Coordinates</source>
         <translation>Coordenadas</translation>
     </message>
@@ -17743,7 +17748,7 @@ load in SeamlyME as usual.
         <location line="+37"/>
         <location line="+32"/>
         <location line="+24"/>
-        <location line="+113"/>
+        <location line="+114"/>
         <location line="+22"/>
         <location line="+20"/>
         <location line="+15"/>
@@ -17752,7 +17757,7 @@ load in SeamlyME as usual.
         <translation>Geometría</translation>
     </message>
     <message>
-        <location line="-605"/>
+        <location line="-606"/>
         <location line="+21"/>
         <location line="+22"/>
         <location line="+22"/>
@@ -17762,7 +17767,7 @@ load in SeamlyME as usual.
         <location line="+45"/>
         <location line="+35"/>
         <location line="+103"/>
-        <location line="+46"/>
+        <location line="+47"/>
         <location line="+21"/>
         <location line="+17"/>
         <location line="+16"/>
@@ -17773,7 +17778,7 @@ load in SeamlyME as usual.
         <translation>Propiedades</translation>
     </message>
     <message>
-        <location line="-609"/>
+        <location line="-610"/>
         <location line="+21"/>
         <location line="+22"/>
         <location line="+22"/>
@@ -17783,7 +17788,7 @@ load in SeamlyME as usual.
         <location line="+45"/>
         <location line="+35"/>
         <location line="+103"/>
-        <location line="+46"/>
+        <location line="+47"/>
         <location line="+21"/>
         <location line="+17"/>
         <location line="+16"/>
@@ -17794,7 +17799,7 @@ load in SeamlyME as usual.
         <translation>Grosor de línea:</translation>
     </message>
     <message>
-        <location line="-604"/>
+        <location line="-605"/>
         <source>Point - On Line</source>
         <translation>Punto - En Línea</translation>
     </message>
@@ -17950,7 +17955,7 @@ load in SeamlyME as usual.
         <translation>Curva - Interactiva</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+47"/>
         <source>Curve - Fixed</source>
         <translation>Curva - Fija</translation>
     </message>
@@ -17995,9 +18000,9 @@ load in SeamlyME as usual.
         <translation>Arco - Elíptico</translation>
     </message>
     <message>
-        <location line="-564"/>
+        <location line="-565"/>
         <location line="+22"/>
-        <location line="+545"/>
+        <location line="+546"/>
         <location line="+102"/>
         <location line="+41"/>
         <location line="+895"/>
@@ -18005,8 +18010,8 @@ load in SeamlyME as usual.
         <translation>Arco_</translation>
     </message>
     <message>
-        <location line="-1255"/>
-        <location line="+45"/>
+        <location line="-1256"/>
+        <location line="+46"/>
         <location line="+866"/>
         <location line="+67"/>
         <source>Spl_</source>
@@ -18024,7 +18029,7 @@ load in SeamlyME as usual.
         <translation>Línea_</translation>
     </message>
     <message>
-        <location line="-3263"/>
+        <location line="-3264"/>
         <source>Center point</source>
         <translation>Punto central</translation>
     </message>
