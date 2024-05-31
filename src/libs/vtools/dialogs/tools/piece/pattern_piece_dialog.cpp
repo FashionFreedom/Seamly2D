@@ -1,26 +1,26 @@
-/***************************************************************************
- **  @file   pattern_piece_dialog.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2022 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//  @file   pattern_piece_dialog.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
+//  Copyright (C) 2017-2024 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 
 /************************************************************************
  **
@@ -2910,7 +2910,7 @@ void PatternPieceDialog::initializeSeamAllowanceTab()
 
     // Initialize the default seam allowance, convert the value if app unit is different than pattern unit
     m_saWidth = UnitConvertor(qApp->Settings()->GetDefaultSeamAllowance(),
-                              StrToUnits(qApp->Settings()->GetUnit()), qApp->patternUnit());
+                              StrToUnits(qApp->Settings()->getUnit()), qApp->patternUnit());
 
     ui->widthFormula_PlainTextEdit->setPlainText(qApp->LocaleToString(m_saWidth));
 
@@ -3179,8 +3179,36 @@ void PatternPieceDialog::initializeNotchesTab()
 {
     initializeNotchesList();
 
-    ui->notchLength_DoubleSpinBox->setValue(qApp->Settings()->getDefaultNotchLength());
-    ui->notchWidth_DoubleSpinBox->setValue(qApp->Settings()->getDefaultNotchWidth());
+    switch (qApp->patternUnit())
+    {
+        case Unit::Cm:
+            {
+                ui->notchLength_DoubleSpinBox->setMaximum(4);
+                ui->notchWidth_DoubleSpinBox->setMaximum(1.25);
+                break;
+            }
+        case Unit::Mm:
+            {
+                ui->notchLength_DoubleSpinBox->setMaximum(40);
+                ui->notchWidth_DoubleSpinBox->setMaximum(12.50);
+                break;
+            }
+        case Unit::Inch:
+        default:
+            {
+                ui->notchLength_DoubleSpinBox->setMaximum(1.50);
+                ui->notchWidth_DoubleSpinBox->setMaximum(.50);
+                break;
+            }
+    }
+    QString unitStr = QString(" " + UnitsToStr(qApp->patternUnit(), true)).left(3);
+    ui->notchLength_DoubleSpinBox->setValue(UnitConvertor(qApp->Settings()->getDefaultNotchLength(),
+                              StrToUnits(qApp->Settings()->getUnit()), qApp->patternUnit()));
+
+    ui->notchLength_DoubleSpinBox->setSuffix(unitStr);
+    ui->notchWidth_DoubleSpinBox->setValue(UnitConvertor(qApp->Settings()->getDefaultNotchWidth(),
+                              StrToUnits(qApp->Settings()->getUnit()), qApp->patternUnit()));
+    ui->notchWidth_DoubleSpinBox->setSuffix(unitStr);
     ui->showNotch_CheckBox->setChecked(qApp->Settings()->showSeamAllowanceNotch());
     ui->showSeamlineNotch_CheckBox->setChecked(qApp->Settings()->showSeamlineNotch());
 

@@ -4783,7 +4783,7 @@ void MainWindow::New()
         if (newPattern.exec() == QDialog::Accepted)
         {
             draftBlockName = newPattern.name();
-            qApp->setPatternUnit(newPattern.PatternUnit());
+            qApp->setPatternUnit(newPattern.patternUnit());
             qCDebug(vMainWindow, "Draft Block name: %s", qUtf8Printable(draftBlockName));
         }
         else
