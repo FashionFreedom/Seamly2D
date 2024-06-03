@@ -120,7 +120,7 @@ var classVCommonSettings =
     [ "GetToolbarsState", "de/d0f/classVCommonSettings.html#a71322609e2f341ddfd42060ec96b594e", null ],
     [ "getToolBarStyle", "de/d0f/classVCommonSettings.html#a970e00ac32bde12c9493e227d901ead1", null ],
     [ "GetUndoCount", "de/d0f/classVCommonSettings.html#aafd9b5f6ad126ed1cd71ee6728968776", null ],
-    [ "GetUnit", "de/d0f/classVCommonSettings.html#affd51f901b3d3104dc31b76810723ddc", null ],
+    [ "getUnit", "de/d0f/classVCommonSettings.html#a35dc0f5062e5ab57489ba6b1a6b6f4d2", null ],
     [ "GetUserDefinedDateFormats", "de/d0f/classVCommonSettings.html#af142efc95380d4542ae350b9146dd8d7", null ],
     [ "GetUserDefinedTimeFormats", "de/d0f/classVCommonSettings.html#a7429fa53ae91ccc37ec016ff0709618c", null ],
     [ "getUseToolColor", "de/d0f/classVCommonSettings.html#a3b45f4343f55e9ebd4c2d9ebef0e59ec", null ],

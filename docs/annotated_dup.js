@@ -165,6 +165,7 @@ var annotated_dup =
     [ "HistoryDialog", "d1/d42/classHistoryDialog.html", "d1/d42/classHistoryDialog" ],
     [ "ImageDialog", "d3/db4/classImageDialog.html", "d3/db4/classImageDialog" ],
     [ "ImageItem", "d6/da8/classImageItem.html", "d6/da8/classImageItem" ],
+    [ "ImageTool", "df/d5b/classImageTool.html", "df/d5b/classImageTool" ],
     [ "IndividualSizeConverter", "d8/dfc/classIndividualSizeConverter.html", "d8/dfc/classIndividualSizeConverter" ],
     [ "InsertNodesDialog", "d6/d55/classInsertNodesDialog.html", "d6/d55/classInsertNodesDialog" ],
     [ "IntersectCirclesDialog", "d0/d09/classIntersectCirclesDialog.html", "d0/d09/classIntersectCirclesDialog" ],
