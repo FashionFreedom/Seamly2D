@@ -19,7 +19,7 @@
         <translation>Δεν είναι δυνατό το άνοιγμα του προεπιλεγμένου περιηγητή</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+50"/>
         <source>Left to right</source>
         <translation type="unfinished"></translation>
     </message>
@@ -34,7 +34,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-75"/>
+        <location line="-76"/>
         <location line="+39"/>
         <source>Built on %1 at %2</source>
         <translation type="unfinished"></translation>
@@ -3073,7 +3073,7 @@ p, li { white-space: pre-wrap; }
         <translation>Χωρίς εικόνα</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/dialogpatternproperties.cpp" line="+803"/>
+        <location filename="../../src/app/seamly2d/dialogs/dialogpatternproperties.cpp" line="+800"/>
         <source>Delete image</source>
         <translation>Διαγραφή εικόνας</translation>
     </message>
@@ -5929,12 +5929,12 @@ Do you want to download it?</source>
         <translation type="unfinished">Όνομα:</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+28"/>
         <source>Lock Image:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+82"/>
         <source>Geometry</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5961,13 +5961,13 @@ Do you want to download it?</source>
     <message>
         <location line="+33"/>
         <location line="+67"/>
-        <location line="+176"/>
+        <location line="+179"/>
         <location line="+67"/>
         <source>px</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-276"/>
+        <location line="-279"/>
         <source>Y Position:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5982,7 +5982,7 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+56"/>
         <source>Width:</source>
         <translation type="unfinished">Φάρδος:</translation>
     </message>
@@ -10055,7 +10055,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <location line="+22"/>
-        <location filename="../../src/libs/vtools/dialogs/tools/piece/pattern_piece_dialog.cpp" line="+1331"/>
+        <location filename="../../src/libs/vtools/dialogs/tools/piece/pattern_piece_dialog.cpp" line="+1359"/>
         <source>PatternPiece</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10134,7 +10134,7 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <location line="-3488"/>
         <location line="+69"/>
-        <location filename="../../src/libs/vtools/dialogs/tools/piece/pattern_piece_dialog.cpp" line="-2634"/>
+        <location filename="../../src/libs/vtools/dialogs/tools/piece/pattern_piece_dialog.cpp" line="-2662"/>
         <location line="+2152"/>
         <source>None</source>
         <translation type="unfinished">Κανένα</translation>
@@ -10448,12 +10448,12 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <location line="+259"/>
-        <location line="+1029"/>
+        <location line="+1032"/>
         <source>Length:</source>
         <translation type="unfinished">Μήκος:</translation>
     </message>
     <message>
-        <location line="-699"/>
+        <location line="-702"/>
         <source>Arrows</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10556,7 +10556,12 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+136"/>
+        <location line="+68"/>
+        <source>  °</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+71"/>
         <source>Reset notch length to default.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10779,7 +10784,7 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished">Μόνο πίσω</translation>
     </message>
     <message>
-        <location filename="../../src/libs/vtools/dialogs/tools/piece/pattern_piece_dialog.ui" line="-436"/>
+        <location filename="../../src/libs/vtools/dialogs/tools/piece/pattern_piece_dialog.ui" line="-439"/>
         <source>Show notch on the cut line.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11427,7 +11432,7 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished">Προεπιλεγμένη μονάδα:</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.cpp" line="+319"/>
+        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.cpp" line="+316"/>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
         <translation type="unfinished">Οι προεπιλεγμένες μονάδες έχουν ενημερωθεί και θα χρησιμοποιηθούν ως προεπιλογή για το επόμενο πατρόν που θα δημιουργήσετε.</translation>
     </message>
@@ -12452,7 +12457,7 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencespatternpage.cpp" line="+320"/>
+        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencespatternpage.cpp" line="+341"/>
         <source>Slit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12527,7 +12532,7 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencespatternpage.cpp" line="-62"/>
+        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencespatternpage.cpp" line="-86"/>
         <source>Label template</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14479,7 +14484,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+100"/>
+        <location line="+97"/>
         <source>Info files</source>
         <translation type="unfinished"></translation>
     </message>
@@ -17255,13 +17260,13 @@ load in SeamlyME as usual.
         <location line="+15"/>
         <location line="+68"/>
         <location line="+147"/>
-        <location line="+195"/>
+        <location line="+196"/>
         <source>Length:</source>
         <translation type="unfinished">Μήκος:</translation>
     </message>
     <message>
-        <location line="-564"/>
-        <location line="+506"/>
+        <location line="-565"/>
+        <location line="+507"/>
         <location line="+22"/>
         <location line="+20"/>
         <location line="+15"/>
@@ -17269,7 +17274,7 @@ load in SeamlyME as usual.
         <translation type="unfinished">Γωνία:</translation>
     </message>
     <message>
-        <location line="-546"/>
+        <location line="-547"/>
         <location line="+65"/>
         <location line="+103"/>
         <location line="+19"/>
@@ -17278,14 +17283,14 @@ load in SeamlyME as usual.
         <location line="+42"/>
         <location line="+99"/>
         <location line="+25"/>
-        <location line="+44"/>
+        <location line="+45"/>
         <location line="+55"/>
         <location line="+14"/>
         <source>First point:</source>
         <translation type="unfinished">Πρώτο σημείο:</translation>
     </message>
     <message>
-        <location line="-484"/>
+        <location line="-485"/>
         <location line="+65"/>
         <location line="+103"/>
         <location line="+19"/>
@@ -17294,46 +17299,46 @@ load in SeamlyME as usual.
         <location line="+42"/>
         <location line="+99"/>
         <location line="+25"/>
-        <location line="+44"/>
+        <location line="+45"/>
         <location line="+55"/>
         <location line="+14"/>
         <source>Second point:</source>
         <translation type="unfinished">Δεύτερο σημείο:</translation>
     </message>
     <message>
-        <location line="-465"/>
+        <location line="-466"/>
         <location line="+22"/>
         <location line="+273"/>
-        <location line="+272"/>
+        <location line="+273"/>
         <source>Center point:</source>
         <translation type="unfinished">Κεντρικό σημείο:</translation>
     </message>
     <message>
-        <location line="-564"/>
+        <location line="-565"/>
         <location line="+22"/>
         <location line="+190"/>
         <location line="+49"/>
         <location line="+4"/>
-        <location line="+302"/>
+        <location line="+303"/>
         <location line="+1"/>
         <source>Radius:</source>
         <translation type="unfinished">Ακτίνα:</translation>
     </message>
     <message>
-        <location line="-567"/>
+        <location line="-568"/>
         <location line="+22"/>
-        <location line="+546"/>
+        <location line="+547"/>
         <source>First angle:</source>
         <translation>Πρώτη γωνία:</translation>
     </message>
     <message>
-        <location line="-567"/>
-        <location line="+568"/>
+        <location line="-568"/>
+        <location line="+569"/>
         <source>Second angle:</source>
         <translation>Δεύτερη γωνία:</translation>
     </message>
     <message>
-        <location line="-608"/>
+        <location line="-609"/>
         <location line="+21"/>
         <location line="+22"/>
         <location line="+22"/>
@@ -17343,7 +17348,7 @@ load in SeamlyME as usual.
         <location line="+45"/>
         <location line="+35"/>
         <location line="+103"/>
-        <location line="+46"/>
+        <location line="+47"/>
         <location line="+21"/>
         <location line="+17"/>
         <location line="+16"/>
@@ -17354,14 +17359,14 @@ load in SeamlyME as usual.
         <translation type="unfinished">Χρώμα:</translation>
     </message>
     <message>
-        <location line="-531"/>
+        <location line="-532"/>
         <location line="+282"/>
-        <location line="+69"/>
+        <location line="+70"/>
         <source>Third point:</source>
         <translation type="unfinished">Τρίτο σημείο:</translation>
     </message>
     <message>
-        <location line="-332"/>
+        <location line="-333"/>
         <source>Point 1 label:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -17394,24 +17399,24 @@ load in SeamlyME as usual.
     <message>
         <location line="-215"/>
         <location line="+15"/>
-        <location line="+374"/>
+        <location line="+375"/>
         <source>Curve:</source>
         <translation type="unfinished">Καμπύλη:</translation>
     </message>
     <message>
-        <location line="-358"/>
-        <location line="+410"/>
+        <location line="-359"/>
+        <location line="+411"/>
         <source>First line point:</source>
         <translation type="unfinished">Πρώτο σημείο γραμμής:</translation>
     </message>
     <message>
-        <location line="-409"/>
-        <location line="+410"/>
+        <location line="-410"/>
+        <location line="+411"/>
         <source>Second line point:</source>
         <translation type="unfinished">Δεύτερο σημείο γραμμής:</translation>
     </message>
     <message>
-        <location line="-330"/>
+        <location line="-331"/>
         <source>Center of arc:</source>
         <translation type="unfinished">Κέντρο του κύκλου:</translation>
     </message>
@@ -17476,7 +17481,7 @@ load in SeamlyME as usual.
         <location line="+17"/>
         <location line="+14"/>
         <location line="+24"/>
-        <location line="+45"/>
+        <location line="+46"/>
         <location line="+22"/>
         <location line="+16"/>
         <location line="+15"/>
@@ -17487,27 +17492,27 @@ load in SeamlyME as usual.
         <translation>Όνομα:</translation>
     </message>
     <message>
-        <location line="-207"/>
+        <location line="-201"/>
         <source>C1: angle:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-6"/>
         <source>C1: length:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+18"/>
         <source>C2: angle:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-6"/>
         <source>C2: length:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+92"/>
         <location line="+22"/>
         <location line="+68"/>
         <source>Axis point:</source>
@@ -17543,7 +17548,7 @@ load in SeamlyME as usual.
         <translation type="unfinished">Τέταρτο σημείο:</translation>
     </message>
     <message>
-        <location line="-432"/>
+        <location line="-433"/>
         <location line="+21"/>
         <location line="+22"/>
         <location line="+22"/>
@@ -17553,7 +17558,7 @@ load in SeamlyME as usual.
         <location line="+45"/>
         <location line="+35"/>
         <location line="+103"/>
-        <location line="+46"/>
+        <location line="+47"/>
         <location line="+21"/>
         <location line="+17"/>
         <location line="+16"/>
@@ -17564,12 +17569,12 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-355"/>
+        <location line="-356"/>
         <source>Point - Intersect XY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+280"/>
+        <location line="+281"/>
         <source>Rotation</source>
         <translation type="unfinished">Περιστροφή</translation>
     </message>
@@ -17594,7 +17599,7 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-609"/>
+        <location line="-610"/>
         <location line="+15"/>
         <location line="+21"/>
         <location line="+21"/>
@@ -17617,7 +17622,7 @@ load in SeamlyME as usual.
         <location line="+17"/>
         <location line="+14"/>
         <location line="+24"/>
-        <location line="+45"/>
+        <location line="+46"/>
         <location line="+22"/>
         <location line="+16"/>
         <location line="+15"/>
@@ -17632,7 +17637,7 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-621"/>
+        <location line="-622"/>
         <source>Coordinates</source>
         <translation type="unfinished">Συντεταγμένες</translation>
     </message>
@@ -17656,7 +17661,7 @@ load in SeamlyME as usual.
         <location line="+37"/>
         <location line="+32"/>
         <location line="+24"/>
-        <location line="+113"/>
+        <location line="+114"/>
         <location line="+22"/>
         <location line="+20"/>
         <location line="+15"/>
@@ -17665,7 +17670,7 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-605"/>
+        <location line="-606"/>
         <location line="+21"/>
         <location line="+22"/>
         <location line="+22"/>
@@ -17675,7 +17680,7 @@ load in SeamlyME as usual.
         <location line="+45"/>
         <location line="+35"/>
         <location line="+103"/>
-        <location line="+46"/>
+        <location line="+47"/>
         <location line="+21"/>
         <location line="+17"/>
         <location line="+16"/>
@@ -17686,7 +17691,7 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-609"/>
+        <location line="-610"/>
         <location line="+21"/>
         <location line="+22"/>
         <location line="+22"/>
@@ -17696,7 +17701,7 @@ load in SeamlyME as usual.
         <location line="+45"/>
         <location line="+35"/>
         <location line="+103"/>
-        <location line="+46"/>
+        <location line="+47"/>
         <location line="+21"/>
         <location line="+17"/>
         <location line="+16"/>
@@ -17707,7 +17712,7 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-604"/>
+        <location line="-605"/>
         <source>Point - On Line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -17863,7 +17868,7 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+47"/>
         <source>Curve - Fixed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -17908,9 +17913,9 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-564"/>
+        <location line="-565"/>
         <location line="+22"/>
-        <location line="+545"/>
+        <location line="+546"/>
         <location line="+102"/>
         <location line="+41"/>
         <location line="+895"/>
@@ -17918,8 +17923,8 @@ load in SeamlyME as usual.
         <translation type="unfinished">Τόξο_</translation>
     </message>
     <message>
-        <location line="-1255"/>
-        <location line="+45"/>
+        <location line="-1256"/>
+        <location line="+46"/>
         <location line="+866"/>
         <location line="+67"/>
         <source>Spl_</source>
@@ -17937,7 +17942,7 @@ load in SeamlyME as usual.
         <translation type="unfinished">Γραμμή_</translation>
     </message>
     <message>
-        <location line="-3263"/>
+        <location line="-3264"/>
         <source>Center point</source>
         <translation type="unfinished">Κεντρικό σημείο</translation>
     </message>
