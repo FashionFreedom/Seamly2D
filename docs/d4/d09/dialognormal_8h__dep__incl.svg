@@ -5,69 +5,69 @@
  -->
 <!-- Title: src/libs/vtools/dialogs/tools/dialognormal.h Pages: 1 -->
 <svg width="455pt" height="128pt"
- viewBox="0.00 0.00 455.00 128.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ viewBox="0.00 0.00 454.50 128.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 124)">
 <title>src/libs/vtools/dialogs/tools/dialognormal.h</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-124 451,-124 451,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-124 450.5,-124 450.5,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="149.5,-89.5 149.5,-119.5 271.5,-119.5 271.5,-89.5 149.5,-89.5"/>
-<text text-anchor="start" x="157.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="210.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialognormal.h</text>
+<polygon fill="#bfbfbf" stroke="black" points="145,-89.5 145,-119.5 267,-119.5 267,-89.5 145,-89.5"/>
+<text text-anchor="start" x="153" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="206" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialognormal.h</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="../../da/df4/dialognormal_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="0,-11.5 0,-41.5 131,-41.5 131,-11.5 0,-11.5"/>
+<g id="a_node2"><a xlink:href="../../df/ded/tooldialogs_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="0,-11.5 0,-41.5 122,-41.5 122,-11.5 0,-11.5"/>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="65.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialognormal.cpp</text>
+<text text-anchor="middle" x="61" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tooldialogs.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M174.58,-84.67C149.1,-71.32 115.44,-53.68 92.29,-41.54"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="173.08,-87.84 183.57,-89.38 176.33,-81.64 173.08,-87.84"/>
+<path fill="none" stroke="midnightblue" d="M170.08,-84.67C144.6,-71.32 110.94,-53.68 87.79,-41.54"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="168.58,-87.84 179.07,-89.38 171.83,-81.64 168.58,-87.84"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="../../df/ded/tooldialogs_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="149.5,-11.5 149.5,-41.5 271.5,-41.5 271.5,-11.5 149.5,-11.5"/>
-<text text-anchor="start" x="157.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="210.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tooldialogs.h</text>
+<g id="a_node3"><a xlink:href="../../da/df4/dialognormal_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="140.5,-11.5 140.5,-41.5 271.5,-41.5 271.5,-11.5 140.5,-11.5"/>
+<text text-anchor="start" x="148.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="206" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialognormal.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M210.5,-79.09C210.5,-66.76 210.5,-52.22 210.5,-41.73"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="207,-79.2 210.5,-89.2 214,-79.21 207,-79.2"/>
+<path fill="none" stroke="midnightblue" d="M206,-79.09C206,-66.76 206,-52.22 206,-41.73"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="202.5,-79.2 206,-89.2 209.5,-79.21 202.5,-79.2"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
 <g id="a_node4"><a xlink:href="../../d4/ddb/vtoolnormal_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="290,-0.5 290,-52.5 447,-52.5 447,-0.5 290,-0.5"/>
-<text text-anchor="start" x="298" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
-<text text-anchor="start" x="298" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/drawTools/toolpoint</text>
-<text text-anchor="start" x="298" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/toolsinglepoint/toollinepoint</text>
-<text text-anchor="middle" x="368.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vtoolnormal.cpp</text>
+<polygon fill="white" stroke="black" points="289.5,-0.5 289.5,-52.5 446.5,-52.5 446.5,-0.5 289.5,-0.5"/>
+<text text-anchor="start" x="297.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
+<text text-anchor="start" x="297.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/drawTools/toolpoint</text>
+<text text-anchor="start" x="297.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/toolsinglepoint/toollinepoint</text>
+<text text-anchor="middle" x="368" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vtoolnormal.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M249.06,-84.95C269.28,-75.22 294.35,-63.17 316.29,-52.62"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="247.34,-81.89 239.85,-89.38 250.38,-88.2 247.34,-81.89"/>
+<path fill="none" stroke="midnightblue" d="M245.26,-85.08C266.04,-75.33 291.87,-63.22 314.46,-52.62"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="243.66,-81.97 236.09,-89.38 246.63,-88.3 243.66,-81.97"/>
 </g>
 </g>
 </svg>
