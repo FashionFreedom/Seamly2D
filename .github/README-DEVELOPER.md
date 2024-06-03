@@ -44,9 +44,9 @@ ___________________________________________________
   $ make -j$(nproc)
   $ sudo make install
   ```
-  _Note: The default prefix for command `make install` is `/usr`.  To define another prefix, build with qmake's PREFIX option. This example sets `/usr/local` as the new prefix for Seamly's installation binary files:_
+  _Note: The default prefix for command `make install` is `/usr`.  To define another prefix, install with an INSTALL_ROOT specified. This example sets `/usr/local` as the new prefix for Seamly's installation binary files:_
     ```
-    $ qmake PREFIX=/usr/local Seamly2D.pro
+    $ sudo make INSTALL_ROOT=/usr/local install
     ```
 * Copy pdftops to Seamly build directory if you need to create post script (.ps and .eps) pattern piece layouts.
 
