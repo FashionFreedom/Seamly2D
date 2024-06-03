@@ -103,6 +103,9 @@ $(document).ready(function(){initNavTree('dc/df8/classVContainerData.html','../.
 </div><!--header-->
 <div class="contents">
 
+<p>A data container class that uses Qt's implicit sharing mechanism.  
+ <a href="../../dc/df8/classVContainerData.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for VContainerData:</div>
@@ -124,6 +127,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5bb37aaf37f2b52d5a905bf4e8a1dade"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/df8/classVContainerData.html#a5bb37aaf37f2b52d5a905bf4e8a1dade">VContainerData</a> (const <a class="el" href="../../dc/df8/classVContainerData.html">VContainerData</a> &amp;data)</td></tr>
 <tr class="separator:a5bb37aaf37f2b52d5a905bf4e8a1dade"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51194555880879e21faa00310499ff2a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/df8/classVContainerData.html#a51194555880879e21faa00310499ff2a">~VContainerData</a> ()</td></tr>
+<tr class="memdesc:a51194555880879e21faa00310499ff2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <a class="el" href="../../dc/df8/classVContainerData.html" title="A data container class that uses Qt&#39;s implicit sharing mechanism.">VContainerData</a>.  <a href="../../dc/df8/classVContainerData.html#a51194555880879e21faa00310499ff2a">More...</a><br /></td></tr>
 <tr class="separator:a51194555880879e21faa00310499ff2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -149,8 +153,20 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a6046dbec6db02e0a3f6a8e3dc7bfc341"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00090">90</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
+<div class="textblock"><p>A data container class that uses Qt's implicit sharing mechanism. </p>
+<p>The <a class="el" href="../../dc/df8/classVContainerData.html" title="A data container class that uses Qt&#39;s implicit sharing mechanism.">VContainerData</a> class is designed to efficiently manage shared data using Qt's implicit sharing (copy-on-write) mechanism. It contains several hash maps and shared pointers to handle various elements.</p>
+<p>The class inherits from QSharedData to leverage Qt's implicit sharing. It has two constructors: one for initializing its member variables and another for copying the contents from another instance. The class manages the following members:</p>
+<ul>
+<li><code>gObjects</code>: A hash map mapping a quint32 to a shared pointer of <a class="el" href="../../d1/de7/classVGObject.html" title="The VGObject class keep information graphical objects.">VGObject</a>.</li>
+<li><code>variables</code>: A hash map mapping a QString to a shared pointer of <a class="el" href="../../d4/d3d/classVInternalVariable.html">VInternalVariable</a>.</li>
+<li><code>pieces</code>: A shared pointer to a hash map mapping a quint32 to <a class="el" href="../../d0/dab/classVPiece.html">VPiece</a>.</li>
+<li><code>piecePaths</code>: A shared pointer to a hash map mapping a quint32 to <a class="el" href="../../df/de1/classVPiecePath.html">VPiecePath</a>.</li>
+<li><code>trVars</code>: A pointer to a <a class="el" href="../../dc/dbc/classVTranslateVars.html">VTranslateVars</a> object.</li>
+<li><code>patternUnit</code>: A pointer to a Unit object.</li>
+</ul>
+<p>The class provides a constructor for initializing these members and a copy constructor to create copies of the data container. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00115">115</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a862905fed70202c8734183a979d0a7c1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a862905fed70202c8734183a979d0a7c1">&#9670;&nbsp;</a></span>VContainerData() <span class="overload">[1/2]</span></h2>
@@ -186,7 +202,7 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00094">94</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00119">119</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
 
 </div>
 </div>
@@ -214,7 +230,7 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00103">103</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00128">128</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
 
 </div>
 </div>
@@ -241,7 +257,13 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00724">724</a> of file <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html">vcontainer.cpp</a>.</p>
+<p>Destructor for <a class="el" href="../../dc/df8/classVContainerData.html" title="A data container class that uses Qt&#39;s implicit sharing mechanism.">VContainerData</a>. </p>
+<p>This method handles cleanup when a <a class="el" href="../../dc/df8/classVContainerData.html" title="A data container class that uses Qt&#39;s implicit sharing mechanism.">VContainerData</a> object is destroyed.</p>
+<ul>
+<li>The destructor is defined but currently does not perform any specific actions. </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01293">1293</a> of file <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html">vcontainer.cpp</a>.</p>
 
 </div>
 </div>
@@ -287,7 +309,7 @@ Private Member Functions</h2></td></tr>
 
 <p>gObjects graphicals objects of pattern. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00118">118</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00143">143</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
 
 </div>
 </div>
@@ -303,7 +325,7 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00129">129</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00154">154</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
 
 </div>
 </div>
@@ -319,7 +341,7 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00126">126</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00151">151</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
 
 </div>
 </div>
@@ -335,7 +357,7 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00125">125</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00150">150</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
 
 </div>
 </div>
@@ -351,7 +373,7 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00128">128</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00153">153</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
 
 </div>
 </div>
@@ -369,7 +391,7 @@ Private Member Functions</h2></td></tr>
 
 <p>variables container for measurements, custom variables, lines lengths, lines angles, arcs lengths, curve lengths </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00123">123</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00148">148</a> of file <a class="el" href="../../d3/df7/vcontainer_8h_source.html">vcontainer.h</a>.</p>
 
 </div>
 </div>
