@@ -89,7 +89,7 @@
 #include "dialogs/dialogs.h"
 #include "../vpropertyexplorer/checkablemessagebox.h"
 #include "../vtools/undocommands/addgroup.h"
-#include "../tools/image_item.h"
+#include "../tools/images/image_tool.h"
 #include "dialogs/calculator_dialog.h"
 #include "dialogs/decimalchart_dialog.h"
 #include "../vtools/undocommands/label/showpointname.h"
@@ -120,8 +120,8 @@
 #include <QTextCodec>
 #include <QDoubleSpinBox>
 #include <QToolBar>
-#include <QImageReader>
 #include <QSharedPointer>
+#include <QImageReader>
 
 #if defined(Q_OS_MAC)
 #include <QMimeData>
@@ -1637,126 +1637,6 @@ void MainWindow::ClosedInsertNodesDialog(int result)
     doc->LiteParseTree(Document::LiteParse);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-void MainWindow::handleImportImage()
-{
-    qCDebug(vMainWindow, "Add Image");
-    ui->draft_ToolBox->setCurrentWidget(ui->backgroundImage_Page);
-    ui->importImage_ToolButton->setChecked(true);
-
-    QString filename = getImageFilename();
-    qCDebug(vMainWindow, "Image filename: %s", qUtf8Printable(filename));
-
-    DraftImage image;
-    QFileInfo f(filename);
-    if (filename.isEmpty())
-    {
-        ui->importImage_ToolButton->setChecked(false);
-        return;
-    }
-    image.name = f.baseName();
-    image.filename = filename;
-    image.units = qApp->patternUnit();
-
-    addImage(image);
-}
-
-void  MainWindow::addImage(DraftImage image)
-{
-    static bool firstImportImage = false;
-    QImageReader imageReader(image.filename);
-
-    image.id = VContainer::getNextId();
-
-    if(!imageReader.canRead())
-    {
-        qCDebug(vMainWindow, "Can't read image");
-        QMessageBox::critical(this, tr("Import Image"), tr("Could not read the image.") + "\n" + tr("File may be corrupted..."), QMessageBox::Ok);
-        return;
-    }
-
-    image.pixmap = QPixmap::fromImageReader(&imageReader);
-
-    if(image.pixmap.isNull())
-    {
-        qCDebug(vMainWindow, "Can't read image");
-        QMessageBox::critical(this, tr("Import Image"), tr("Could not read the image.") + "\n" + tr("File may be corrupted or empty..."), QMessageBox::Ok);
-        return;
-    }
-
-    if (image.width == 0 || image.height == 0)
-    {
-        image.width  = image.pixmap.width();
-        image.height = image.pixmap.height();
-    }
-
-    ImageItem *item = new ImageItem(doc, image);
-    doc->addBackgroundImage(image.id, item);
-    draftScene->addItem(item);
-    //Need error dialog
-
-    //connect(this, &MainWindow::EnableImageSelection, item, &ImageItem::enableSelection);
-    //connect(this, &MainWindow::EnableImageHover, item, &ImageItem::enableHovering);
-
-    connect(item, &ImageItem::deleteImage, this, &MainWindow::handleDeleteImage);
-    //connect(item, &ImageItem::imageSelected, this, &MainWindow::handleImageSelected);
-    connect(item, &ImageItem::setStatusMessage, this, &MainWindow::setStatusMessage);
-
-    ui->importImage_ToolButton->setChecked(false);
-
-    if(!firstImportImage)
-    {
-       qCDebug(vMainWindow, "Inside first import image");
-       InfoUnsavedImages(&firstImportImage);
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void MainWindow::handleDeleteImage(quint32 id)
-{
-    qCDebug(vMainWindow, "delete Image");
-    bool deleteConfirmed = true;
-
-    if (qApp->Settings()->getConfirmItemDelete())
-    {
-        Utils::CheckableMessageBox msgBox(qApp->getMainWindow());
-        msgBox.setWindowTitle(tr("Confirm deletion"));
-        msgBox.setText(tr("Do you really want to delete?"));
-        msgBox.setStandardButtons(QDialogButtonBox::Yes | QDialogButtonBox::No);
-        msgBox.setDefaultButton(QDialogButtonBox::No);
-        msgBox.setIconPixmap(QApplication::style()->standardIcon(QStyle::SP_MessageBoxQuestion).pixmap(32, 32) );
-
-        int dialogResult = msgBox.exec();
-
-        if (dialogResult != QDialog::Accepted)
-        {
-            deleteConfirmed = false;
-        }
-
-        qApp->Settings()->setConfirmItemDelete(not msgBox.isChecked());
-
-    }
-
-    if (deleteConfirmed)
-    {
-        ImageItem *item = doc->getBackgroundImage(id);
-        if (item)
-        {
-            doc->removeBackgroundImage(id);
-            item->deleteImageItem();
-        }
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void MainWindow::handleImageSelected(quint32 id)
-{
-    ImageItem *item = doc->getBackgroundImage(id);
-    if (item)
-    {
-        // May be useful in the development of the background-image feature
-    }
-}
 
 //--------------------------------------------------------------------------------------------------------------------
 void MainWindow::setStatusMessage(QString message)
@@ -1765,47 +1645,34 @@ void MainWindow::setStatusMessage(QString message)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::handleLockImage(bool state)
+void MainWindow::handleImageTool()
 {
-    qCDebug(vMainWindow, "lock Image = %s",  state ? "True" : "False");
-}
+    qCDebug(vMainWindow, "Add Image");
+    ui->draft_ToolBox->setCurrentWidget(ui->backgroundImage_Page);
+    ui->importImage_ToolButton->setChecked(true);
 
-//---------------------------------------------------------------------------------------------------------------------
-void MainWindow::handleAlignImage()
-{
-    qCDebug(vMainWindow, "align Image");
-}
+    QString filename = getImageFilename();
+    QImageReader reader(filename);
 
-//---------------------------------------------------------------------------------------------------------------------
-void MainWindow::handleLockImageAspect(bool state)
-{
-    qCDebug(vMainWindow, "lock Image Aspect= %s",  state ? "True" : "False");
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void MainWindow::updateImage(DraftImage image)
-{
-    qCDebug(vMainWindow, "Id = %d", image.id);
-    qCDebug(vMainWindow, "Name = %s", qUtf8Printable(image.name));
-    qCDebug(vMainWindow, "Filename = %s", qUtf8Printable(image.filename));
-    qCDebug(vMainWindow, "lock Image = %s", image.locked ? "True" : "False");
-    qCDebug(vMainWindow, "Anchor = %d", static_cast<int>(image.anchor));
-    qCDebug(vMainWindow, "Xpos = %f", image.xPos);
-    qCDebug(vMainWindow, "YPos = %f", image.yPos);
-    qCDebug(vMainWindow, "Width = %f", image.width);
-    qCDebug(vMainWindow, "Height = %f", image.height);
-    qCDebug(vMainWindow, "lock Image Aspect = %s",  image.aspectLocked ? "True" : "False");
-    qCDebug(vMainWindow, "Units = %d", static_cast<int>(image.units));
-    qCDebug(vMainWindow, "Rotation = %f", image.rotation);
-    qCDebug(vMainWindow, "Visible = %s",  image.visible ? "True" : "False");
-    qCDebug(vMainWindow, "Opacity = %f", image.opacity);
-    qCDebug(vMainWindow, "Order = %d\n", static_cast<int>(image.order));
-
-    ImageItem *item = static_cast<ImageItem *>(qApp->getCurrentScene()->focusItem());
-    if (item)
+    if (!filename.isEmpty() && reader.canRead())
     {
-        item->setImage(image);
+        ImageTool *image_tool = new ImageTool(this, doc, draftScene, filename);
+        if(image_tool->creationWasSuccessful)
+        {
+            connect(image_tool, &ImageTool::setStatusMessage, this, &MainWindow::setStatusMessage);
+        }
+        else
+        {
+            image_tool->deleteLater();
+        }
     }
+    else
+    {
+        qCDebug(vMainWindow, "Can't load image");
+        QMessageBox::critical(this, tr("Import Image"), tr("Could not load the image."), QMessageBox::Ok);
+    }
+
+    ui->importImage_ToolButton->setChecked(false);
 }
 
 
@@ -1833,6 +1700,7 @@ QString MainWindow::getImageFilename()
 
     return filename;
 }
+
 
 //Pieces
 //---------------------------------------------------------------------------------------------------------------------
@@ -3001,7 +2869,7 @@ void MainWindow::initializeToolButtons()
     connect(ui->exportPiecesAs_ToolButton, &QToolButton::clicked, this, &MainWindow::exportPiecesAs);
     connect(ui->ellipticalArc_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleEllipticalArcTool);
     connect(ui->anchorPoint_ToolButton,    &QToolButton::clicked, this, &MainWindow::handleAnchorPointTool);
-    connect(ui->importImage_ToolButton,    &QToolButton::clicked, this, &MainWindow::handleImportImage);
+    connect(ui->importImage_ToolButton,    &QToolButton::clicked, this, &MainWindow::handleImageTool);
     connect(ui->insertNodes_ToolButton,    &QToolButton::clicked, this, &MainWindow::handleInsertNodesTool);
 }
 
@@ -3458,8 +3326,7 @@ void MainWindow::handleImagesMenu()
     else if (selectedAction == action_ImportImage)
     {
         ui->draft_ToolBox->setCurrentWidget(ui->backgroundImage_Page);
-        ui->importImage_ToolButton->setChecked(true);
-        handleImportImage();
+        handleImageTool();
     }
 }
 
@@ -4783,7 +4650,7 @@ void MainWindow::New()
         if (newPattern.exec() == QDialog::Accepted)
         {
             draftBlockName = newPattern.name();
-            qApp->setPatternUnit(newPattern.PatternUnit());
+            qApp->setPatternUnit(newPattern.patternUnit());
             qCDebug(vMainWindow, "Draft Block name: %s", qUtf8Printable(draftBlockName));
         }
         else
@@ -5317,32 +5184,7 @@ bool MainWindow::MaybeSave()
     }
     return true;
 }
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief InfoUnsavedImages is called when the user imports his first image.
- */
-void MainWindow::InfoUnsavedImages(bool *firstImportImage)
-{
-    if (guiEnabled)
-    {
-        QScopedPointer<QMessageBox> messageBox(new QMessageBox(QMessageBox::Information,
-                                                                tr("Images will not be saved"),
-                                                                tr("Please note that the images can not be saved and that they are not affected "
-                                                                   "by the undo and redo functions in the current version of the software.\n\n"
-                                                                   "You may want to take a screenshot of the image properties dialog before closing the software "
-                                                                   "to be able to recreate identically the image when opening the software again."),
-                                                                QMessageBox::NoButton,
-                                                                this,Qt::Sheet));
 
-        messageBox->setWindowModality(Qt::ApplicationModal);
-        messageBox->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint
-                                                 & ~Qt::WindowMaximizeButtonHint
-                                                 & ~Qt::WindowMinimizeButtonHint);
-
-        messageBox->exec();
-        *firstImportImage = true;
-    }
-}
 
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::UpdateRecentFileActions()
@@ -5365,6 +5207,7 @@ void MainWindow::UpdateRecentFileActions()
 
     separatorAct->setVisible(numRecentFiles > 0);
 }
+
 
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::createMenus()
@@ -6196,12 +6039,8 @@ void MainWindow::createActions()
     connect(ui->importImage_Action, &QAction::triggered, this, [this]
     {
         ui->draft_ToolBox->setCurrentWidget(ui->backgroundImage_Page);
-        ui->importImage_ToolButton->setChecked(true);
-        handleImportImage();
+        handleImageTool();
     });
-    //connect(ui->deleteImage_Action, &QAction::triggered, this, &MainWindow::handleDeleteImage);
-    //connect(ui->lockImage_Action, &QAction::triggered, this, &MainWindow::handleLockImage);
-    //connect(ui->alignImage_Action, &QAction::triggered, this, &MainWindow::handleAlignImage);
 
     //Tools->Layout submenu actions
     connect(ui->newPrintLayout_Action, &QAction::triggered, this, [this]

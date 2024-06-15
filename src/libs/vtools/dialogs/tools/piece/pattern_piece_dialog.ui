@@ -5347,6 +5347,9 @@ QListWidget::item:selected {
                     <property name="keyboardTracking">
                      <bool>false</bool>
                     </property>
+                    <property name="suffix">
+                     <string>  °</string>
+                    </property>
                     <property name="decimals">
                      <number>3</number>
                     </property>
@@ -5703,8 +5706,8 @@ QListWidget::item:selected {
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../../../vmisc/share/resources/icon.qrc"/>
   <include location="../../../../vmisc/share/resources/theme.qrc"/>
+  <include location="../../../../vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -5741,7 +5744,7 @@ QListWidget::item:selected {
   </connection>
  </connections>
  <buttongroups>
-  <buttongroup name="notchType_ButtonGroup"/>
   <buttongroup name="notchSubType_ButtonGroup"/>
+  <buttongroup name="notchType_ButtonGroup"/>
  </buttongroups>
 </ui>

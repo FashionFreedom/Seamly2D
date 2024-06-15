@@ -55,8 +55,8 @@
  * @brief ImageItem default constructor.
  * @param parent parent object.
  */
-ImageItem::ImageItem(VAbstractPattern *doc, DraftImage image, QGraphicsItem *parent)
-    : QGraphicsItem(parent)
+ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
+    : QObject(parent)
     , m_doc(doc)
     , m_offset(QPointF(0.0, 0.0))
     , m_boundingRect(QRectF())

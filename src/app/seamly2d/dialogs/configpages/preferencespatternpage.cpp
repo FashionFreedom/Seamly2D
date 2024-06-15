@@ -1,29 +1,26 @@
-/******************************************************************************
-*   @file   preferencespatternpage.h
-**  @author Douglas S Caskey
-**  @date   26 Oct, 2023
-**
-**  @brief
-**  @copyright
-**  This source code is part of the Seamly2D project, a pattern making
-**  program to create and model patterns of clothing.
-**  Copyright (C) 2017-2023 Seamly2D project
-**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
-**
-**  Seamly2D is free software: you can redistribute it and/or modify
-**  it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation, either version 3 of the License, or
-**  (at your option) any later version.
-**
-**  Seamly2D is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
-**
-*************************************************************************/
+//  @file   preferencespatternpage.cpp
+//  @author Douglas S Caskey
+//  @date   26 Oct, 2023
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
+//  Copyright (C) 2017-2024 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 
 /************************************************************************
  **
@@ -169,7 +166,7 @@ void PreferencesPatternPage::initDefaultSeamAllowance()
     ui->hideSeamLine_CheckBox->setChecked(qApp->Seamly2DSettings()->isHideSeamLine());
     ui->showSeamAllowances_CheckBox->setChecked(qApp->Seamly2DSettings()->getDefaultSeamAllowanceVisibilty());
     ui->defaultSeamAllowance_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->GetDefaultSeamAllowance());
-    ui->defaultSeamAllowance_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
+    ui->defaultSeamAllowance_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->getUnit()), true));
 
     int index = ui->defaultSeamColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultSeamColor());
     if (index != -1)
@@ -288,9 +285,9 @@ void PreferencesPatternPage::initializeLabelsTab()
     ui->showPieceLabels_CheckBox->setChecked(qApp->Seamly2DSettings()->showPieceLabels());
 
     ui->defaultLabelWidth_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultLabelWidth());
-    ui->defaultLabelWidth_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
+    ui->defaultLabelWidth_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->getUnit()), true));
     ui->defaultLabelHeight_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultLabelHeight());
-    ui->defaultLabelHeight_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
+    ui->defaultLabelHeight_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->getUnit()), true));
 
     int index = ui->defaultLabelColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultLabelColor());
     if (index != -1)
@@ -317,6 +314,30 @@ void PreferencesPatternPage::initializeLabelsTab()
 //---------------------------------------------------------------------------------------------------------------------
 void PreferencesPatternPage::initNotches()
 {
+    const Unit units = StrToUnits(qApp->Seamly2DSettings()->getUnit());
+    switch (units)
+    {
+        case Unit::Cm:
+            {
+                ui->defaultNotchLength_DoubleSpinBox->setMaximum(4);
+                ui->defaultNotchWidth_DoubleSpinBox->setMaximum(1.25);
+                break;
+            }
+        case Unit::Mm:
+            {
+                ui->defaultNotchLength_DoubleSpinBox->setMaximum(40);
+                ui->defaultNotchWidth_DoubleSpinBox->setMaximum(12.50);
+                break;
+            }
+        case Unit::Inch:
+        default:
+            {
+                ui->defaultNotchLength_DoubleSpinBox->setMaximum(1.50);
+                ui->defaultNotchWidth_DoubleSpinBox->setMaximum(.50);
+                break;
+            }
+    }
+
     ui->defaultNotchType_ComboBox->addItem(QIcon(), tr("Slit"),       "slit");
     ui->defaultNotchType_ComboBox->addItem(QIcon(), tr("T Notch"),    "tNotch");
     ui->defaultNotchType_ComboBox->addItem(QIcon(), tr("U Notch"),    "uNotch");
@@ -340,9 +361,9 @@ void PreferencesPatternPage::initNotches()
     ui->showSeamlineNotch_CheckBox->setChecked(qApp->Seamly2DSettings()->showSeamlineNotch());
     ui->showSeamAllowanceNotch_CheckBox->setChecked(qApp->Seamly2DSettings()->showSeamAllowanceNotch());
     ui->defaultNotchLength_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultNotchLength());
-    ui->defaultNotchLength_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
+    ui->defaultNotchLength_DoubleSpinBox->setSuffix(" " + UnitsToStr(units, true));
     ui->defaultNotchWidth_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultNotchWidth());
-    ui->defaultNotchWidth_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
+    ui->defaultNotchWidth_DoubleSpinBox->setSuffix(" " + UnitsToStr(units, true));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -351,7 +372,7 @@ void PreferencesPatternPage::initGrainlines()
     ui->showGrainlines_CheckBox->setChecked(qApp->Seamly2DSettings()->getDefaultGrainlineVisibilty());
 
     ui->defaultGrainlineLength_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultGrainlineLength());
-    ui->defaultGrainlineLength_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
+    ui->defaultGrainlineLength_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->getUnit()), true));
 
     int index = ui->defaultGrainlineColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultGrainlineColor());
     if (index != -1)
