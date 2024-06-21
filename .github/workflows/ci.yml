@@ -162,6 +162,8 @@ jobs:
         env:
           APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
         run: |
+          # see https://github.com/actions/runner-images/issues/7522
+          echo killing XProtect...; sudo pkill -9 XProtect >/dev/null || true;
           # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
           if [ -n "$APPLE_SIGN_IDENTITY" ] ; then
             qmake Seamly2D.pro -config release CONFIG+=noTests CONFIG+=macSign
