@@ -6154,7 +6154,7 @@ void MainWindow::createActions()
     connect(ui->wiki_Action, &QAction::triggered, this, []()
     {
         qCDebug(vMainWindow, "Showing online help");
-        QDesktopServices::openUrl(QUrl(QStringLiteral("https://wiki.seamly.net/wiki/Main_Page")));
+        QDesktopServices::openUrl(QUrl(QStringLiteral("https://wiki.seamly.io/wiki/Main_Page")));
     });
 
     connect(ui->forum_Action, &QAction::triggered, this, []()
