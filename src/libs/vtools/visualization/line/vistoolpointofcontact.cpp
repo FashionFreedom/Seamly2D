@@ -113,7 +113,7 @@ void VisToolPointOfContact::RefreshGeometry()
                                                                     static_cast<QPointF>(*second));
                     DrawPoint(point, fPoint, mainColor);
 
-                    circle->setRect(PointRect(radius));
+                    circle->setRect(pointRect(radius));
                     DrawPoint(circle, static_cast<QPointF>(*third), supportColor, Qt::DashLine);
                 }
             }
