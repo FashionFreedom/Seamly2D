@@ -117,45 +117,44 @@
 <g id="node4" class="node">
 <title>Node4</title>
 <g id="a_node4"><a xlink:href="../../dc/d68/classVAbstractConverter.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="489,-1096 489,-1439 682,-1439 682,-1096 489,-1096"/>
-<text text-anchor="middle" x="585.5" y="-1427" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractConverter</text>
-<polyline fill="none" stroke="black" points="489,-1420 682,-1420 "/>
-<text text-anchor="start" x="497" y="-1408" font-family="Helvetica,sans-Serif" font-size="10.00"># m_ver</text>
-<text text-anchor="start" x="497" y="-1397" font-family="Helvetica,sans-Serif" font-size="10.00"># m_convertedFileName</text>
-<text text-anchor="start" x="497" y="-1386" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_tmpFile</text>
-<polyline fill="none" stroke="black" points="489,-1379 682,-1379 "/>
-<text text-anchor="start" x="497" y="-1367" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractConverter()</text>
-<text text-anchor="start" x="497" y="-1356" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractConverter()</text>
-<text text-anchor="start" x="497" y="-1345" font-family="Helvetica,sans-Serif" font-size="10.00">+ Convert()</text>
-<text text-anchor="start" x="497" y="-1334" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCurrentFormatVarsion()</text>
-<text text-anchor="start" x="497" y="-1323" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetVersionStr()</text>
-<text text-anchor="start" x="497" y="-1312" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetVersion()</text>
-<text text-anchor="start" x="497" y="-1301" font-family="Helvetica,sans-Serif" font-size="10.00"># ValidateInputFile()</text>
-<text text-anchor="start" x="497" y="-1290" font-family="Helvetica,sans-Serif" font-size="10.00"># InvalidVersion()</text>
-<text text-anchor="start" x="497" y="-1279" font-family="Helvetica,sans-Serif" font-size="10.00"># Save()</text>
-<text text-anchor="start" x="497" y="-1268" font-family="Helvetica,sans-Serif" font-size="10.00"># setVersion()</text>
-<text text-anchor="start" x="497" y="-1257" font-family="Helvetica,sans-Serif" font-size="10.00"># minVer()</text>
-<text text-anchor="start" x="497" y="-1246" font-family="Helvetica,sans-Serif" font-size="10.00"># maxVer()</text>
-<text text-anchor="start" x="497" y="-1235" font-family="Helvetica,sans-Serif" font-size="10.00"># minVerStr()</text>
-<text text-anchor="start" x="497" y="-1224" font-family="Helvetica,sans-Serif" font-size="10.00"># maxVerStr()</text>
-<text text-anchor="start" x="497" y="-1213" font-family="Helvetica,sans-Serif" font-size="10.00"># getSchema()</text>
-<text text-anchor="start" x="497" y="-1202" font-family="Helvetica,sans-Serif" font-size="10.00"># applyPatches()</text>
-<text text-anchor="start" x="497" y="-1191" font-family="Helvetica,sans-Serif" font-size="10.00"># downgradeToCurrentMaxVersion()</text>
-<text text-anchor="start" x="497" y="-1180" font-family="Helvetica,sans-Serif" font-size="10.00"># isReadOnly()</text>
-<text text-anchor="start" x="497" y="-1169" font-family="Helvetica,sans-Serif" font-size="10.00"># Replace()</text>
-<text text-anchor="start" x="497" y="-1158" font-family="Helvetica,sans-Serif" font-size="10.00"># CorrectionsPositions()</text>
-<text text-anchor="start" x="497" y="-1147" font-family="Helvetica,sans-Serif" font-size="10.00"># BiasTokens()</text>
-<text text-anchor="start" x="497" y="-1136" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ReserveFile()</text>
-<text text-anchor="start" x="497" y="-1125" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ValidateVersion()</text>
-<text text-anchor="start" x="497" y="-1114" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; removeVersionNumber()</text>
-<text text-anchor="start" x="497" y="-1103" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; removeBakExtension()</text>
+<polygon fill="white" stroke="black" points="489,-1101.5 489,-1433.5 682,-1433.5 682,-1101.5 489,-1101.5"/>
+<text text-anchor="middle" x="585.5" y="-1421.5" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractConverter</text>
+<polyline fill="none" stroke="black" points="489,-1414.5 682,-1414.5 "/>
+<text text-anchor="start" x="497" y="-1402.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_ver</text>
+<text text-anchor="start" x="497" y="-1391.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_convertedFileName</text>
+<text text-anchor="start" x="497" y="-1380.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_tmpFile</text>
+<polyline fill="none" stroke="black" points="489,-1373.5 682,-1373.5 "/>
+<text text-anchor="start" x="497" y="-1361.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractConverter()</text>
+<text text-anchor="start" x="497" y="-1350.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractConverter()</text>
+<text text-anchor="start" x="497" y="-1339.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Convert()</text>
+<text text-anchor="start" x="497" y="-1328.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getCurrentFormatVersion()</text>
+<text text-anchor="start" x="497" y="-1317.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getVersionStr()</text>
+<text text-anchor="start" x="497" y="-1306.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetVersion()</text>
+<text text-anchor="start" x="497" y="-1295.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ValidateInputFile()</text>
+<text text-anchor="start" x="497" y="-1284.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InvalidVersion()</text>
+<text text-anchor="start" x="497" y="-1273.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Save()</text>
+<text text-anchor="start" x="497" y="-1262.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setVersion()</text>
+<text text-anchor="start" x="497" y="-1251.5" font-family="Helvetica,sans-Serif" font-size="10.00"># minVer()</text>
+<text text-anchor="start" x="497" y="-1240.5" font-family="Helvetica,sans-Serif" font-size="10.00"># maxVer()</text>
+<text text-anchor="start" x="497" y="-1229.5" font-family="Helvetica,sans-Serif" font-size="10.00"># minVerStr()</text>
+<text text-anchor="start" x="497" y="-1218.5" font-family="Helvetica,sans-Serif" font-size="10.00"># maxVerStr()</text>
+<text text-anchor="start" x="497" y="-1207.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getSchema()</text>
+<text text-anchor="start" x="497" y="-1196.5" font-family="Helvetica,sans-Serif" font-size="10.00"># applyPatches()</text>
+<text text-anchor="start" x="497" y="-1185.5" font-family="Helvetica,sans-Serif" font-size="10.00"># downgradeToCurrentMaxVersion()</text>
+<text text-anchor="start" x="497" y="-1174.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isReadOnly()</text>
+<text text-anchor="start" x="497" y="-1163.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Replace()</text>
+<text text-anchor="start" x="497" y="-1152.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CorrectionsPositions()</text>
+<text text-anchor="start" x="497" y="-1141.5" font-family="Helvetica,sans-Serif" font-size="10.00"># BiasTokens()</text>
+<text text-anchor="start" x="497" y="-1130.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; saveBackupFile()</text>
+<text text-anchor="start" x="497" y="-1119.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ValidateVersion()</text>
+<text text-anchor="start" x="497" y="-1108.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; removeBakExtension()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M649.07,-1724.19C635.93,-1629.98 621.25,-1524.74 609.31,-1439.16"/>
+<path fill="none" stroke="midnightblue" d="M649.04,-1723.98C635.63,-1627.82 620.61,-1520.19 608.55,-1433.71"/>
 <polygon fill="none" stroke="midnightblue" points="645.61,-1724.72 650.46,-1734.14 652.54,-1723.76 645.61,-1724.72"/>
 </g>
 <!-- Node10 -->
@@ -315,8 +314,8 @@
 <!-- Node4&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
 <title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M584.45,-1085.91C574.26,-999.09 546.81,-900.37 479.5,-837 415.01,-776.29 353.22,-855.62 283.5,-801 245.58,-771.29 224.66,-720.19 213.47,-679.68"/>
-<polygon fill="none" stroke="midnightblue" points="580.97,-1086.34 585.55,-1095.9 587.93,-1085.57 580.97,-1086.34"/>
+<path fill="none" stroke="midnightblue" d="M585.07,-1091.37C575.39,-1003.25 548.22,-901.7 479.5,-837 415.01,-776.29 353.22,-855.62 283.5,-801 245.58,-771.29 224.66,-720.19 213.47,-679.68"/>
+<polygon fill="none" stroke="midnightblue" points="581.6,-1091.9 586.11,-1101.49 588.57,-1091.19 581.6,-1091.9"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
@@ -347,8 +346,8 @@
 <!-- Node4&#45;&gt;Node8 -->
 <g id="edge7" class="edge">
 <title>Node4&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M547.27,-1085.93C529.26,-1008.53 505.91,-917.58 479.5,-837 466.56,-797.51 449.73,-755.06 434.13,-718.21"/>
-<polygon fill="none" stroke="midnightblue" points="543.88,-1086.84 549.55,-1095.79 550.7,-1085.26 543.88,-1086.84"/>
+<path fill="none" stroke="midnightblue" d="M548.55,-1091.46C530.37,-1012.88 506.54,-919.5 479.5,-837 466.56,-797.51 449.73,-755.06 434.13,-718.21"/>
+<polygon fill="none" stroke="midnightblue" points="545.2,-1092.49 550.85,-1101.45 552.02,-1090.92 545.2,-1092.49"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
@@ -394,8 +393,8 @@
 <!-- Node4&#45;&gt;Node9 -->
 <g id="edge8" class="edge">
 <title>Node4&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M589.69,-1085.74C591.75,-996.72 594.23,-889.64 596.3,-800.51"/>
-<polygon fill="none" stroke="midnightblue" points="586.18,-1085.88 589.45,-1095.95 593.18,-1086.04 586.18,-1085.88"/>
+<path fill="none" stroke="midnightblue" d="M589.56,-1091.39C591.64,-1001.29 594.19,-891.58 596.29,-800.57"/>
+<polygon fill="none" stroke="midnightblue" points="586.06,-1091.35 589.32,-1101.43 593.05,-1091.52 586.06,-1091.35"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">

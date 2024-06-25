@@ -1,5 +1,13 @@
 var NAVTREEINDEX64 =
 {
+"df/dc3/classAbstractLayoutDialog.html#a4743e2084b3b5cf4798b46d12b9759cd":[1,0,4,1],
+"df/dc3/classAbstractLayoutDialog.html#a603fab080ba0182f253b35dbb4e51f92":[1,0,4,0],
+"df/dc8/Seamly2DTest_2qttestmainlambda_8cpp.html":[2,0,0,2,2,0],
+"df/dc8/Seamly2DTest_2qttestmainlambda_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[2,0,0,2,2,0,1],
+"df/dc8/Seamly2DTest_2qttestmainlambda_8cpp_source.html":[2,0,0,2,2,0],
+"df/dc8/vtest_8cpp.html":[2,0,0,1,12,4],
+"df/dc8/vtest_8cpp_source.html":[2,0,0,1,12,4],
+"df/dca/classMoveGroupItem.html":[1,0,126],
 "df/dca/classMoveGroupItem.html#a11c22d8f8547e5d3c3a58df7278d3c7d":[1,0,126,2],
 "df/dca/classMoveGroupItem.html#a1c13b3e915a79348d6707983f0453aa7":[1,0,126,3],
 "df/dca/classMoveGroupItem.html#a1ff25edc89259b2bc1d4609f93ea0f9e":[1,0,126,6],
@@ -241,13 +249,5 @@ var NAVTREEINDEX64 =
 "df/df7/tst__vellipticalarc_8h.html":[2,0,0,2,2,24],
 "df/df7/tst__vellipticalarc_8h_source.html":[2,0,0,2,2,24],
 "df/dfb/classVSplineData.html":[1,0,388],
-"df/dfb/classVSplineData.html#a0acbfd245da00604e3b090c7b92fda3f":[1,0,388,0],
-"df/dfb/classVSplineData.html#a0d8c2dd8d90c2080b0f1e97a01a003c1":[1,0,388,6],
-"df/dfb/classVSplineData.html#a1d3df8ca72c0480dbadaf3c99831e4e9":[1,0,388,17],
-"df/dfb/classVSplineData.html#a28114bd61de08b69a78ca478c9d79e98":[1,0,388,9],
-"df/dfb/classVSplineData.html#a481ae3f743cd57ea689a858c17732eef":[1,0,388,10],
-"df/dfb/classVSplineData.html#a67bf83a8112e5494b8b697cd0c5916e2":[1,0,388,5],
-"df/dfb/classVSplineData.html#a7e60fd4ccaf4f61faba349cea331a2bc":[1,0,388,2],
-"df/dfb/classVSplineData.html#a959f21c22d33cdbc555e69fee148b098":[1,0,388,12],
-"df/dfb/classVSplineData.html#a9858cca0eeee816f953182148349db4d":[1,0,388,14]
+"df/dfb/classVSplineData.html#a0acbfd245da00604e3b090c7b92fda3f":[1,0,388,0]
 };

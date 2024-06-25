@@ -1,5 +1,8 @@
 var NAVTREEINDEX53 =
 {
+"dd/d3c/vsysexits_8h_source.html":[2,0,0,1,8,25],
+"dd/d40/vpatternlabeldata_8cpp.html":[2,0,0,1,10,0,7],
+"dd/d40/vpatternlabeldata_8cpp_source.html":[2,0,0,1,10,0,7],
 "dd/d41/editgroup__dialog_8cpp.html":[2,0,0,1,13,0,1,71],
 "dd/d41/editgroup__dialog_8cpp_source.html":[2,0,0,1,13,0,1,71],
 "dd/d43/dialogundo_8cpp.html":[2,0,0,1,13,0,0,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX53 =
 "dd/db0/namespaceQT__WARNING__POP.html#a45cec81b7cea447cfcc3a6591776429c":[0,0,20,19],
 "dd/db0/namespaceQT__WARNING__POP.html#a45f580e64d1aa76c7aaf8fa6fd6a68f3":[0,0,20,21],
 "dd/db0/namespaceQT__WARNING__POP.html#a4734b4d2e0dfa026a60068bbb834e3ad":[0,0,20,9],
-"dd/db0/namespaceQT__WARNING__POP.html#a4ae7c3935926cc7368e77120e031e369":[0,0,20,6],
-"dd/db0/namespaceQT__WARNING__POP.html#a4cd01162be10b9883de62bd8b8563c19":[0,0,20,24],
-"dd/db0/namespaceQT__WARNING__POP.html#a4d92301e6d64e2f90c125187f579e8b7":[0,0,20,20],
-"dd/db0/namespaceQT__WARNING__POP.html#a517f1b59f7e127ce69a3f634c2b73ea9":[0,0,20,12]
+"dd/db0/namespaceQT__WARNING__POP.html#a4ae7c3935926cc7368e77120e031e369":[0,0,20,6]
 };

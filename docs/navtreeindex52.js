@@ -1,5 +1,8 @@
 var NAVTREEINDEX52 =
 {
+"dc/df1/commandoptions_8cpp.html#ae4ea3c0a02221d92bbab0594dd68e840":[2,0,0,1,8,1,25],
+"dc/df1/commandoptions_8cpp.html#ae693e0bbfddf0b9d7b6adf03aaed4be7":[2,0,0,1,8,1,12],
+"dc/df1/commandoptions_8cpp.html#aebcda0e2f197d4277641977c1a5a3dbc":[2,0,0,1,8,1,35],
 "dc/df1/commandoptions_8cpp.html#af158f308a779782c81e8b740118915ba":[2,0,0,1,8,1,5],
 "dc/df1/commandoptions_8cpp.html#af5fddb1ef75a9c9bb9dde3fcf80c5264":[2,0,0,1,8,1,39],
 "dc/df1/commandoptions_8cpp.html#afad3ac5008f378073e3e916175917853":[2,0,0,1,8,1,18],
@@ -246,8 +249,5 @@ var NAVTREEINDEX52 =
 "dd/d3c/vsysexits_8h.html#acd6e9a5b0784920ba4da723303067732":[2,0,0,1,8,25,8],
 "dd/d3c/vsysexits_8h.html#ace5592c1834b3dc5e3e3ba1dda6f7577":[2,0,0,1,8,25,1],
 "dd/d3c/vsysexits_8h.html#ad6039d7d5e331f7bb41c83d43fffee06":[2,0,0,1,8,25,11],
-"dd/d3c/vsysexits_8h.html#aeb1fefab9812666fc860eec071ae5fdc":[2,0,0,1,8,25,13],
-"dd/d3c/vsysexits_8h_source.html":[2,0,0,1,8,25],
-"dd/d40/vpatternlabeldata_8cpp.html":[2,0,0,1,10,0,7],
-"dd/d40/vpatternlabeldata_8cpp_source.html":[2,0,0,1,10,0,7]
+"dd/d3c/vsysexits_8h.html#aeb1fefab9812666fc860eec071ae5fdc":[2,0,0,1,8,25,13]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX21 =
 {
+"d5/d2c/vpatternconverter_8cpp.html#a4415a8e385c864e9b667bf27f68a3da8":[2,0,0,1,1,1,14,89],
+"d5/d2c/vpatternconverter_8cpp.html#a463f5b85362ce8da242e73f4b9e121a6":[2,0,0,1,1,1,14,63],
 "d5/d2c/vpatternconverter_8cpp.html#a474cb9d165e1d71d30960793bf65308b":[2,0,0,1,1,1,14,86],
 "d5/d2c/vpatternconverter_8cpp.html#a4b021a3106a48a61d6f60428d6dcbdc7":[2,0,0,1,1,1,14,121],
 "d5/d2c/vpatternconverter_8cpp.html#a4d4f2b6e1c909cf6b8057a7c80a81d82":[2,0,0,1,1,1,14,97],
@@ -247,7 +249,5 @@ var NAVTREEINDEX21 =
 "d5/d41/classPatternPieceDialog.html#a706e514243b99402b4ecafec7e24e87d":[1,0,139,96],
 "d5/d41/classPatternPieceDialog.html#a71fecfb244439faa7b88dc2dc3d02357":[1,0,139,85],
 "d5/d41/classPatternPieceDialog.html#a722dfd9939f8db0a7d6abe43cf43b37d":[1,0,139,61],
-"d5/d41/classPatternPieceDialog.html#a7299f206bb7c7f548bcc398fb301b7c9":[1,0,139,20],
-"d5/d41/classPatternPieceDialog.html#a740eecfdb4d5e0fa7c8c2ac0c031b072":[1,0,139,52],
-"d5/d41/classPatternPieceDialog.html#a741effd334809e25b7fcd6e3cb9017ff":[1,0,139,73]
+"d5/d41/classPatternPieceDialog.html#a7299f206bb7c7f548bcc398fb301b7c9":[1,0,139,20]
 };

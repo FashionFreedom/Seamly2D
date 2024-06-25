@@ -1,5 +1,13 @@
 var NAVTREEINDEX63 =
 {
+"df/d5e/classDialogSplinePath.html#ad65707a56989e43cf6f8fe46ca79e620":[1,0,74,12],
+"df/d5e/classDialogSplinePath.html#ad75039500386dc57cbd89f5182012ac3":[1,0,74,20],
+"df/d5e/classDialogSplinePath.html#ad8731a83a3696e177bf2be5786bf8734":[1,0,74,30],
+"df/d5e/classDialogSplinePath.html#adce00e1fd2e6c0b64150628289713f61":[1,0,74,25],
+"df/d5e/classDialogSplinePath.html#add151ff24c186c035d0f6d7516f6439f":[1,0,74,49],
+"df/d5e/classDialogSplinePath.html#aeb2979ea065f076860e48ca0d720d5ca":[1,0,74,10],
+"df/d5e/classDialogSplinePath.html#af4b6d364da0c3d78b1188b3ef0565bbd":[1,0,74,52],
+"df/d5e/classDialogSplinePath.html#af686ec38bcdb52ccfeb7276c0845b5e0":[1,0,74,19],
 "df/d5e/classVPE_1_1VAbstractPropertyFactory.html":[1,0,2,22],
 "df/d5e/classVPE_1_1VAbstractPropertyFactory.html#a08f185741993de9b143cfe10fb1bf064":[1,0,2,22,0],
 "df/d5e/classVPE_1_1VAbstractPropertyFactory.html#a7c62748a001b610eb3c67b7511ef143f":[1,0,2,22,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX63 =
 "df/dbf/qmuparsertest_8cpp.html#ae19b1bb38c280d8cd89fd8db1098ad87":[2,0,0,1,2,16,1],
 "df/dbf/qmuparsertest_8cpp_source.html":[2,0,0,1,2,16],
 "df/dc3/classAbstractLayoutDialog.html":[1,0,4],
-"df/dc3/classAbstractLayoutDialog.html#a309e202c3fecafb72e69fe8fc73b724f":[1,0,4,2],
-"df/dc3/classAbstractLayoutDialog.html#a4743e2084b3b5cf4798b46d12b9759cd":[1,0,4,1],
-"df/dc3/classAbstractLayoutDialog.html#a603fab080ba0182f253b35dbb4e51f92":[1,0,4,0],
-"df/dc8/Seamly2DTest_2qttestmainlambda_8cpp.html":[2,0,0,2,2,0],
-"df/dc8/Seamly2DTest_2qttestmainlambda_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[2,0,0,2,2,0,1],
-"df/dc8/Seamly2DTest_2qttestmainlambda_8cpp_source.html":[2,0,0,2,2,0],
-"df/dc8/vtest_8cpp.html":[2,0,0,1,12,4],
-"df/dc8/vtest_8cpp_source.html":[2,0,0,1,12,4],
-"df/dca/classMoveGroupItem.html":[1,0,126]
+"df/dc3/classAbstractLayoutDialog.html#a309e202c3fecafb72e69fe8fc73b724f":[1,0,4,2]
 };

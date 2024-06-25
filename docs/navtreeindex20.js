@@ -1,5 +1,7 @@
 var NAVTREEINDEX20 =
 {
+"d4/dc9/classPiecesWidget.html#ac537e04de5a89909cd40834d28ec48ac":[1,0,146,13],
+"d4/dc9/classPiecesWidget.html#ac6bb78b6db34fdc506dee3fcbae60b40":[1,0,146,24],
 "d4/dc9/classPiecesWidget.html#ad613899bfff5bef6d873f5bc675ac01b":[1,0,146,26],
 "d4/dc9/classPiecesWidget.html#ae28e12fbf8b4df4072ceea995983f116":[1,0,146,5],
 "d4/dcc/dialogaboutseamlyme_8h.html":[2,0,0,0,1,0,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX20 =
 "d5/d2c/vpatternconverter_8cpp.html#a3b9279b37b873be23f4c5f73fcd460f6":[2,0,0,1,1,1,14,52],
 "d5/d2c/vpatternconverter_8cpp.html#a3cf885f8b9f50cee2ef4285d5ec3f088":[2,0,0,1,1,1,14,67],
 "d5/d2c/vpatternconverter_8cpp.html#a420a550c351f74a087883c30900e646c":[2,0,0,1,1,1,14,29],
-"d5/d2c/vpatternconverter_8cpp.html#a439c6835ba5e3ae23ba6d529c962b9a1":[2,0,0,1,1,1,14,84],
-"d5/d2c/vpatternconverter_8cpp.html#a4415a8e385c864e9b667bf27f68a3da8":[2,0,0,1,1,1,14,89],
-"d5/d2c/vpatternconverter_8cpp.html#a463f5b85362ce8da242e73f4b9e121a6":[2,0,0,1,1,1,14,63]
+"d5/d2c/vpatternconverter_8cpp.html#a439c6835ba5e3ae23ba6d529c962b9a1":[2,0,0,1,1,1,14,84]
 };

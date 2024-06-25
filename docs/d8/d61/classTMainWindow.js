@@ -34,7 +34,7 @@ var classTMainWindow =
     [ "InitComboBoxUnits", "d8/d61/classTMainWindow.html#a76ee17ae2b293c824181a57a4f68c030", null ],
     [ "InitGender", "d8/d61/classTMainWindow.html#a58cdeb07dab4d2ac164587eec512b5c8", null ],
     [ "initializeTable", "d8/d61/classTMainWindow.html#a7b02486625b24433f53ce5b3e5793c25", null ],
-    [ "InitUnits", "d8/d61/classTMainWindow.html#ae463e9fa98d19afbe071b90f5f777c98", null ],
+    [ "initUnits", "d8/d61/classTMainWindow.html#a911730921ec28707dcf9606c1b534e21", null ],
     [ "InitWindow", "d8/d61/classTMainWindow.html#a3689ca2513ad4df3c1139ba56c529628", null ],
     [ "LoadFile", "d8/d61/classTMainWindow.html#a61adfc3636f92fd73f84b886dff9fa1b", null ],
     [ "LoadFromExistingFile", "d8/d61/classTMainWindow.html#a99468c28429fa36a05c245b4e7f0c043", null ],
