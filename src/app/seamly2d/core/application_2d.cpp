@@ -127,7 +127,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     }
 #endif
 
-    // this is another one that doesn't make sense as just a debug message.  pretty serious
+    // This is another one that doesn't make sense as just a debug message.  pretty serious
     // sign of a problem
     // http://www.developer.nokia.com/Community/Wiki/QPainter::begin:Paint_device_returned_engine_%3D%3D_0_(Known_Issue)
     if ((type == QtDebugMsg) && msg.contains(QStringLiteral("QPainter::begin"))
@@ -145,7 +145,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
         type = QtDebugMsg;
     }
 
-    // only the GUI thread should display message boxes.  If you are
+    // Only the GUI thread should display message boxes.  If you are
     // writing a multithreaded application and the error happens on
     // a non-GUI thread, you'll have to queue the message to the GUI
     QCoreApplication *instance = QCoreApplication::instance();
@@ -192,8 +192,8 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
 
     if (isGuiThread)
     {
-        //fixme: trying to make sure there are no save/load dialogs are opened, because error message during them will
-        //lead to crash
+        // fixme: trying to make sure that no save/load dialogs are opened, because an error message
+        // during them will lead to a crash
         const bool topWinAllowsPop = (QApplication::activeModalWidget() == nullptr) ||
                 !QApplication::activeModalWidget()->inherits("QFileDialog");
 
@@ -264,13 +264,10 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
 
 #define DefWidth 1.2//mm
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Application2D constructor.
- * @param argc number arguments.
- * @param argv command line.
- */
-Application2D::Application2D(int &argc, char **argv)
+// @brief Application2D constructor.
+// @param argc number arguments.
+// @param argv command line.
+ Application2D::Application2D(int &argc, char **argv)
     : VAbstractApplication(argc, argv)
     , m_trVars(nullptr)
     , m_autoSaveTimer(nullptr)
@@ -302,11 +299,8 @@ Application2D::~Application2D()
     VCommandLine::Reset();
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief startNewSeamly2D start Seamly2D in new process, send path to pattern file in argument.
- * @param fileName path to pattern file.
- */
+// @brief startNewSeamly2D start Seamly2D in new process, send path to pattern file in argument.
+// @param fileName path to pattern file.
 void Application2D::startNewSeamly2D(const QString &fileName)
 {
     qCDebug(vApp, "Open new detached process.");
@@ -340,13 +334,10 @@ void Application2D::startNewSeamly2D(const QString &fileName)
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief notify Reimplemented from QApplication::notify().
- * @param receiver receiver.
- * @param event event.
- * @return value that is returned from the receiver's event handler.
- */
+// @brief notify Reimplemented from QApplication::notify().
+// @param receiver receiver.
+// @param event event.
+// @return value that is returned from the receiver's event handler.
 // reimplemented from QApplication so we can throw exceptions in slots
 bool Application2D::notify(QObject *receiver, QEvent *event)
 {
@@ -397,9 +388,9 @@ bool Application2D::notify(QObject *receiver, QEvent *event)
                    qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         return true;
     }
-    // These last two cases are special. I found that we can't show here a modal dialog with an error message.
-    // Somehow program doesn't wait until an error dialog will be closed. But if ignore the exception the program will
-    // hang.
+    // These last two cases are special. I found that we can't show a modal dialog here with an error message.
+    // Somehow the program doesn't wait until an error dialog is closed, but if the exception is ignored
+    // the program will hang.
     catch (const qmu::QmuParserError &error)
     {
         qCCritical(vApp, "%s", qUtf8Printable(tr("Parser error: %1. Program will be terminated.").arg(error.GetMsg())));
@@ -600,6 +591,7 @@ void Application2D::initOptions()
     QDir().mkpath(settings->getDefaultMultisizePath());
     QDir().mkpath(settings->getDefaultTemplatePath());
     QDir().mkpath(settings->getDefaultLabelTemplatePath());
+    QDir().mkpath(settings->getDefaultBackupFilePath());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -652,7 +644,7 @@ bool Application2D::event(QEvent *event)
 {
     switch(event->type())
     {
-        // In Mac OS X the QFileOpenEvent event is generated when user perform "Open With" from Finder (this event is
+        // In Mac OS X the QFileOpenEvent event is generated when user performs "Open With" from Finder (this event is
         // Mac specific).
         case QEvent::FileOpen:
         {
@@ -685,12 +677,9 @@ bool Application2D::event(QEvent *event)
     return VAbstractApplication::event(event);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief openSettings get acsses to application settings.
- *
- * Because we can create object in constructor we open file separately.
- */
+
+// @brief openSettings get acsses to application settings.
+// Because we can create object in constructor we open file separately.
 void Application2D::openSettings()
 {
     settings = new VSettings(QSettings::IniFormat, QSettings::UserScope, QCoreApplication::organizationName(),
@@ -710,10 +699,7 @@ bool Application2D::isGUIMode()
     return (VCommandLine::instance != nullptr) && VCommandLine::instance->IsGuiEnabled();
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief isAppInGUIMode little hack that allow to have access to application state from VAbstractApplication class.
- */
+// @brief isAppInGUIMode little hack that allows to have access to application state from VAbstractApplication class.
 bool Application2D::isAppInGUIMode() const
 {
     return isGUIMode();

@@ -822,7 +822,7 @@ void MainWindow::ApplyDialog(VMainGraphicsScene *scene)
     }
     else
     { // Or update associated tool with data
-        DrawTool * vtool = qobject_cast<DrawTool *>(dialogTool->GetAssociatedTool());
+        DrawTool *vtool = qobject_cast<DrawTool *>(dialogTool->GetAssociatedTool());
         SCASSERT(vtool != nullptr)
         vtool->FullUpdateFromGuiApply();
     }
@@ -1983,7 +1983,7 @@ void MainWindow::handleExportToCSV()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::LoadIndividual()
 {
-    const QString filter = tr("Individual measurements") + QLatin1String(" (*.") + smisExt +
+    const QString filter = tr("Individual measurements") + QLatin1String(" (*.* *.") + smisExt +
                                                            QLatin1String(" *.") + vitExt  + QLatin1String(")");
 
     //Use standard path to individual measurements
@@ -2036,7 +2036,7 @@ void MainWindow::LoadIndividual()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::LoadMultisize()
 {
-    const QString filter = tr("Multisize measurements")  + QLatin1String(" (*.") + smmsExt +
+    const QString filter = tr("Multisize measurements")  + QLatin1String(" (*.* *.") + smmsExt +
                                                            QLatin1String(" *.") + vstExt  + QLatin1String(")");
 
     //Use standard path to multisize measurements
@@ -3213,7 +3213,7 @@ void MainWindow::handlePieceMenu()
     QMenu menu;
 
     QAction *action_Piece        = menu.addAction(QIcon(":/toolicon/32x32/new_detail.png"),   tr("New Pattern Piece") + "\tN, P");
-    QAction *action_AnchorPoint  = menu.addAction(QIcon(":/toolicon/32x32/anchor_point.png"), tr("Add AnchorPoint") + "\tA, P");
+    QAction *action_AnchorPoint  = menu.addAction(QIcon(":/icon/32x32/anchor_point.png"),     tr("Add AnchorPoint") + "\tA, P");
     QAction *action_InternalPath = menu.addAction(QIcon(":/toolicon/32x32/path.png"),         tr("Create Internal Path") + "\tI, N");
     QAction *action_InsertNodes  = menu.addAction(QIcon(":/toolicon/32x32/insert_nodes_icon.png"), tr("Insert Nodes in Path") + "\tI, P");
 
@@ -4156,7 +4156,7 @@ void MainWindow::Open()
 {
     qCDebug(vMainWindow, "Opening new file.");
 
-    const QString filter = tr("Pattern files") + QLatin1String(" (*.") + valExt +
+    const QString filter = tr("Pattern files") + QLatin1String(" (*.* *.") + valExt +
                            QLatin1String(" *.") + sm2dExt + QLatin1String(")");
 
     //Get list last open files
@@ -5697,12 +5697,7 @@ void MainWindow::createActions()
         emit ui->view->itemClicked(nullptr);
         refreshLabels();
     });
-/**
-    connect(ui->toggleAnchorPoints_Action, &QAction::triggered, this, [this](bool checked)
-    {
-        qApp->Seamly2DSettings()->setShowAnchorPoints(checked);
-    });
-**/
+
     connect(ui->increaseSize_Action, &QAction::triggered, this, [this]()
     {
         int index = qMin(fontSizeComboBox->currentIndex() + 1, fontSizeComboBox->count()-1);
@@ -6360,8 +6355,8 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
     try
     {
         VPatternConverter converter(fileName);
-        m_curFileFormatVersion = converter.GetCurrentFormatVarsion();
-        m_curFileFormatVersionStr = converter.GetVersionStr();
+        m_curFileFormatVersion = converter.getCurrentFormatVersion();
+        m_curFileFormatVersionStr = converter.getVersionStr();
         doc->setXMLContent(converter.Convert());
         if (!customMeasureFile.isEmpty())
         {
@@ -6551,11 +6546,8 @@ void MainWindow::Preferences()
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::updateViewToolbar);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::resetPanShortcuts);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, [this](){emit doc->FullUpdateFromFile();});
-        //connect(dialog.data(), &DialogPreferences::updateProperties,
-        //        toolProperties, &VToolOptionsPropertyBrowser::refreshOptions);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::initPropertyEditor);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::initBasePointComboBox);
-
         connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollBars);
         connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollAnimations);
 
@@ -6935,7 +6927,7 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                 QString filename;
                 if (patternType == MeasurementsType::Multisize)
                 {
-                    const QString filter = tr("Multisize measurements") + QLatin1String(" (*.") + smmsExt +
+                    const QString filter = tr("Multisize measurements") + QLatin1String(" (*.* *.") + smmsExt +
                                                                           QLatin1String(" *.") + vstExt +
                                                                           QLatin1String(")");
                     //Use standard path to multisize measurements
@@ -6947,7 +6939,7 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                 }
                 else if (patternType == MeasurementsType::Individual)
                 {
-                    const QString filter = tr("Individual measurements") + QLatin1String(" (*.") + smisExt +
+                    const QString filter = tr("Individual measurements") + QLatin1String(" (*.* *.") + smisExt +
                                                                            QLatin1String(" *.") + vitExt +
                                                                            QLatin1String(")");
                     //Use standard path to individual measurements
@@ -6972,10 +6964,10 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                 }
                 else
                 {
-                    const QString filter = tr("Individual measurements") + QLatin1String(" (*.") + smisExt +
+                    const QString filter = tr("Individual measurements") + QLatin1String(" (*.* *.") + smisExt +
                                                                            QLatin1String(" *.") + vitExt  +
                                                                            QLatin1String(");;") +
-                                           tr("Multisize measurements")  + QLatin1String(" (*.") + smmsExt +
+                                           tr("Multisize measurements")  + QLatin1String(" (*.* *.") + smmsExt +
                                                                            QLatin1String(" *.") + vstExt  +
                                                                            QLatin1String(")");
 

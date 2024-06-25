@@ -102,6 +102,10 @@ public:
     QString              getImageFilePath() const;
     void                 setImageFilePath(const QString &value);
 
+    static QString       getDefaultBackupFilePath();
+    QString              getBackupFilePath() const;
+    void                 setBackupFilePath(const QString &value);
+
     QString              getDefaultPatternTemplate() const;
     void                 setDefaultPatternTemplate(const QString &text);
 
@@ -113,6 +117,9 @@ public:
 
     bool                 getOsSeparator() const;
     void                 setOsSeparator(const bool &value);
+
+    bool                 getConvertBackupEnabled() const;
+    void                 setConvertBackupEnabled(const bool &value);
 
     bool                 GetAutosaveState() const;
     void                 setAutosaveState(const bool &value);
