@@ -1185,8 +1185,7 @@ void VContainer::setHeight(qreal height)
  * - The method returns the value of the static member variable `_size`.
  * - This size value is used in various calculations and operations.
  */
-qreal VContainer::
-+
+qreal VContainer::size()
 {
     return _size;
 }
