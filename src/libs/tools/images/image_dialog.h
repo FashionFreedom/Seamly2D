@@ -61,7 +61,6 @@ public:
     QString          getName() const;
     void             setName(const QString &name);
 
-    Position         getOriginPoint() const;
     void             setOriginPoint(const int &index);
 
     qreal            getXPos() const;

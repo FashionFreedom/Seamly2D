@@ -74,6 +74,7 @@ public:
 
     DraftImage       getImage();
     void             setImage(DraftImage image);
+    void             setOrigin(qreal xOrigin, qreal yOrigin);
     void             updateImage();
     void             updateImageAndHandles(DraftImage image);
 
@@ -104,6 +105,7 @@ protected:
 private:
     VAbstractPattern  *m_doc;
     QPointF            m_offset;
+    QPointF            m_origin;
     QRectF             m_boundingRect;
     QRectF             m_handleRect;
     QRectF             m_actualRect;
