@@ -734,8 +734,8 @@ void LayoutSettingsDialog::InitPaperUnits()
     ui->comboBoxPaperSizeUnit->addItem(tr("Pixels"), QVariant(UnitsToStr(Unit::Px)));
 
     // set default unit
-    oldPaperUnit = StrToUnits(qApp->Seamly2DSettings()->GetUnit());
-    const qint32 indexUnit = ui->comboBoxPaperSizeUnit->findData(qApp->Seamly2DSettings()->GetUnit());
+    oldPaperUnit = StrToUnits(qApp->Seamly2DSettings()->getUnit());
+    const qint32 indexUnit = ui->comboBoxPaperSizeUnit->findData(qApp->Seamly2DSettings()->getUnit());
     if (indexUnit != -1)
     {
         ui->comboBoxPaperSizeUnit->setCurrentIndex(indexUnit);
@@ -750,8 +750,8 @@ void LayoutSettingsDialog::InitLayoutUnits()
     ui->comboBoxLayoutUnit->addItem(tr("Inches"), QVariant(UnitsToStr(Unit::Inch)));
 
     // set default unit
-    oldLayoutUnit = StrToUnits(qApp->Seamly2DSettings()->GetUnit());
-    const qint32 indexUnit = ui->comboBoxLayoutUnit->findData(qApp->Seamly2DSettings()->GetUnit());
+    oldLayoutUnit = StrToUnits(qApp->Seamly2DSettings()->getUnit());
+    const qint32 indexUnit = ui->comboBoxLayoutUnit->findData(qApp->Seamly2DSettings()->getUnit());
     if (indexUnit != -1)
     {
         ui->comboBoxLayoutUnit->setCurrentIndex(indexUnit);

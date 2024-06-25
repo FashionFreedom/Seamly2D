@@ -241,7 +241,7 @@ void NewMeasurementsDialog::initializeUnits(const MeasurementsType &type)
     if (type == MeasurementsType::Individual)
     {
         ui->comboBoxUnit->addItem(tr("Inches"), static_cast<int>(Unit::Inch));
-        index = ui->comboBoxUnit->findData(static_cast<int>(StrToUnits(qApp->seamlyMeSettings()->GetUnit())));
+        index = ui->comboBoxUnit->findData(static_cast<int>(StrToUnits(qApp->seamlyMeSettings()->getUnit())));
     }
     else
     {

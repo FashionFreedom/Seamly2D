@@ -234,18 +234,9 @@ private slots:
     void handleAnchorPointTool(bool checked);
     void handleInsertNodesTool(bool checked);
 
-    void       handleImportImage();
-    void       addImage(DraftImage image);
+    void handleImageTool();
 
-    void handleDeleteImage(quint32 id);
-    void handleImageSelected(quint32 id);
-    void handleLockImage(bool state);
-    void handleAlignImage();
-    void updateImage(DraftImage image);
-    void handleLockImageAspect(bool state);
     void setStatusMessage(QString message);
-    QString  getImageFilename();
-
 
     void handlePatternPieceTool(bool checked);
     void handleUnionTool(bool checked);
@@ -391,6 +382,8 @@ private:
     void                              handlePieceMenu();
     void                              handleLayoutMenu();
     void                              handleImagesMenu();
+    QString                           getImageFilename();
+
 
     void                              CancelTool();
 
@@ -432,7 +425,6 @@ private:
     void               WriteSettings();
 
     bool               MaybeSave();
-    void               InfoUnsavedImages(bool * firstImportImage);
     void               UpdateRecentFileActions();
 
     void               createMenus();

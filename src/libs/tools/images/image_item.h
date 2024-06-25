@@ -53,7 +53,7 @@ class ImageItem : public QObject, public QGraphicsItem
     Q_INTERFACES(QGraphicsItem)
 
 public:
-    explicit         ImageItem(VAbstractPattern *doc, DraftImage image, QGraphicsItem *parent = nullptr);
+    explicit         ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image);
     virtual         ~ImageItem() = default;
 
     virtual int      type() const override {return Type;}
