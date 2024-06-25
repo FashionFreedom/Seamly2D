@@ -1,5 +1,7 @@
 var NAVTREEINDEX45 =
 {
+"db/d5b/moveoperationlabel_8cpp_source.html":[2,0,0,1,13,2,0,6],
+"db/d5c/groups__widget_8cpp.html":[2,0,0,0,0,1,24],
 "db/d5c/groups__widget_8cpp_source.html":[2,0,0,0,0,1,24],
 "db/d5c/vposition_8h.html":[2,0,0,1,7,27],
 "db/d5c/vposition_8h_source.html":[2,0,0,1,7,27],
@@ -247,7 +249,5 @@ var NAVTREEINDEX45 =
 "db/dbd/classVCubicBezierPathData.html#a1d9d6b163ceac7d980be2dab0174d959":[1,0,261,0],
 "db/dbd/classVCubicBezierPathData.html#a43532b27091afef63fabc9fd22ed49d4":[1,0,261,3],
 "db/dbd/classVCubicBezierPathData.html#a954b9b760a2ea7b1646ac8a8fd22d3b5":[1,0,261,4],
-"db/dc1/vabstractfloatitemdata_8h.html":[2,0,0,1,10,0,2],
-"db/dc1/vabstractfloatitemdata_8h_source.html":[2,0,0,1,10,0,2],
-"db/dc2/app_2seamlyme_2stable_8cpp.html":[2,0,0,0,1,4]
+"db/dc1/vabstractfloatitemdata_8h.html":[2,0,0,1,10,0,2]
 };

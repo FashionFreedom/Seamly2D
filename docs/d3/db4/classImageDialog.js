@@ -10,7 +10,6 @@ var classImageDialog =
     [ "getImage", "d3/db4/classImageDialog.html#af27a8dce08c1a9c955f3f2c0649d0895", null ],
     [ "getName", "d3/db4/classImageDialog.html#a51db37760c8c2f6b1df4a5d573e8c3e5", null ],
     [ "getOpacity", "d3/db4/classImageDialog.html#aaa4f4081b53d0bae6c2499537fb1e3ee", null ],
-    [ "getOriginPoint", "d3/db4/classImageDialog.html#aba120aa4507a7ecc5e67f4c1bfd39b34", null ],
     [ "getRotation", "d3/db4/classImageDialog.html#aac560916549c595f7f233712c0f346eb", null ],
     [ "getWidth", "d3/db4/classImageDialog.html#aa8995abbae3b8329e774a853e8ce9477", null ],
     [ "getXPos", "d3/db4/classImageDialog.html#ab237b87810ef34b04d01dcc0a0fe458d", null ],

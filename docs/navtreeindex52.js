@@ -1,5 +1,7 @@
 var NAVTREEINDEX52 =
 {
+"dc/df1/commandoptions_8cpp.html#af158f308a779782c81e8b740118915ba":[2,0,0,1,8,1,5],
+"dc/df1/commandoptions_8cpp.html#af5fddb1ef75a9c9bb9dde3fcf80c5264":[2,0,0,1,8,1,39],
 "dc/df1/commandoptions_8cpp.html#afad3ac5008f378073e3e916175917853":[2,0,0,1,8,1,18],
 "dc/df1/commandoptions_8cpp.html#aff4ad50bde8019d48c2f14f4ee5e63ad":[2,0,0,1,8,1,47],
 "dc/df1/commandoptions_8cpp_source.html":[2,0,0,1,8,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX52 =
 "dd/d3c/vsysexits_8h.html#aeb1fefab9812666fc860eec071ae5fdc":[2,0,0,1,8,25,13],
 "dd/d3c/vsysexits_8h_source.html":[2,0,0,1,8,25],
 "dd/d40/vpatternlabeldata_8cpp.html":[2,0,0,1,10,0,7],
-"dd/d40/vpatternlabeldata_8cpp_source.html":[2,0,0,1,10,0,7],
-"dd/d41/editgroup__dialog_8cpp.html":[2,0,0,1,13,0,1,71],
-"dd/d41/editgroup__dialog_8cpp_source.html":[2,0,0,1,13,0,1,71]
+"dd/d40/vpatternlabeldata_8cpp_source.html":[2,0,0,1,10,0,7]
 };

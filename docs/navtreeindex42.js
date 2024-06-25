@@ -1,5 +1,7 @@
 var NAVTREEINDEX42 =
 {
+"da/d92/namespaceqmu.html#ad311f0f8965a636a58064bdeb48e2897":[0,0,19,22],
+"da/d92/namespaceqmu.html#ad33dfb1577aa6c2b711f15b462d3fa3e":[0,0,19,17],
 "da/d92/namespaceqmu.html#ad5e24bbfcff27493b743fbb63870b1a2":[0,0,19,44],
 "da/d92/namespaceqmu.html#ae0295fe011e57d36df11d85fbfe23710":[0,0,19,23],
 "da/d92/namespaceqmu.html#af10feebbbc72442f8f3ef8102497b6f2":[0,0,19,54],
@@ -247,7 +249,5 @@ var NAVTREEINDEX42 =
 "da/de3/classVisToolPointOfIntersectionArcs.html#a7cda83bd70856740094aa0b768ae47ed":[1,0,325,3],
 "da/de3/classVisToolPointOfIntersectionArcs.html#a86f14c699e6efa75c51f11ca8e2be671":[1,0,325,12],
 "da/de3/classVisToolPointOfIntersectionArcs.html#a9d658199a418db9fd4da735919ac2332":[1,0,325,6],
-"da/de3/classVisToolPointOfIntersectionArcs.html#a9ee525a7359943a9aedb8dcba5bd1444":[1,0,325,10],
-"da/de3/classVisToolPointOfIntersectionArcs.html#abfce9669c817395dfc349bd0b6a83052":[1,0,325,11],
-"da/de3/classVisToolPointOfIntersectionArcs.html#ad0de1f168601a1e4080c2f1601a26ff6":[1,0,325,4]
+"da/de3/classVisToolPointOfIntersectionArcs.html#a9ee525a7359943a9aedb8dcba5bd1444":[1,0,325,10]
 };

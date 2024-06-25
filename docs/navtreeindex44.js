@@ -1,5 +1,7 @@
 var NAVTREEINDEX44 =
 {
+"db/d30/vlinecolorproperty_8h.html":[2,0,0,1,11,0,24],
+"db/d30/vlinecolorproperty_8h_source.html":[2,0,0,1,11,0,24],
 "db/d32/classLayoutSettingsDialog.html":[1,0,111],
 "db/d32/classLayoutSettingsDialog.html#a0091e6a31c014df6bd4bcf00423ac7a9":[1,0,111,19],
 "db/d32/classLayoutSettingsDialog.html#a021bfee729c109afd00c2261ffa8fca6":[1,0,111,31],
@@ -247,7 +249,5 @@ var NAVTREEINDEX44 =
 "db/d57/classVPointF.html#adf84b2a73939bc1f11e3b1532cb19eb7":[1,0,375,9],
 "db/d57/classVPointF.html#ae1761dc9edc264ed9bd6b024cce33f11":[1,0,375,7],
 "db/d57/classVPointF.html#afd0c99a6d66fd913b5691c2384d713a5":[1,0,375,24],
-"db/d5b/moveoperationlabel_8cpp.html":[2,0,0,1,13,2,0,6],
-"db/d5b/moveoperationlabel_8cpp_source.html":[2,0,0,1,13,2,0,6],
-"db/d5c/groups__widget_8cpp.html":[2,0,0,0,0,1,24]
+"db/d5b/moveoperationlabel_8cpp.html":[2,0,0,1,13,2,0,6]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX64 =
 {
+"df/dca/classMoveGroupItem.html#a11c22d8f8547e5d3c3a58df7278d3c7d":[1,0,126,2],
+"df/dca/classMoveGroupItem.html#a1c13b3e915a79348d6707983f0453aa7":[1,0,126,3],
 "df/dca/classMoveGroupItem.html#a1ff25edc89259b2bc1d4609f93ea0f9e":[1,0,126,6],
 "df/dca/classMoveGroupItem.html#a2d4cd25bc3e7a3ff6c1bf2d3f3f27475":[1,0,126,8],
 "df/dca/classMoveGroupItem.html#a6a80a39b5dbd9211ee33afad04da6c30":[1,0,126,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX64 =
 "df/dfb/classVSplineData.html#a67bf83a8112e5494b8b697cd0c5916e2":[1,0,388,5],
 "df/dfb/classVSplineData.html#a7e60fd4ccaf4f61faba349cea331a2bc":[1,0,388,2],
 "df/dfb/classVSplineData.html#a959f21c22d33cdbc555e69fee148b098":[1,0,388,12],
-"df/dfb/classVSplineData.html#a9858cca0eeee816f953182148349db4d":[1,0,388,14],
-"df/dfb/classVSplineData.html#a99fc27d0338bcbeb3ecdd1c87da12372":[1,0,388,16],
-"df/dfb/classVSplineData.html#a9c830b520a9672f10f0b574d9241f70c":[1,0,388,1]
+"df/dfb/classVSplineData.html#a9858cca0eeee816f953182148349db4d":[1,0,388,14]
 };

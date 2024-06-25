@@ -1,5 +1,7 @@
 var NAVTREEINDEX61 =
 {
+"de/db2/classVNodeEllipticalArc.html#a0e98e2c47e6a4bf62896336ad4bbcfd7":[1,0,356,1],
+"de/db2/classVNodeEllipticalArc.html#a1f64fd63885ebfa6ed70233dcd0a2c7f":[1,0,356,8],
 "de/db2/classVNodeEllipticalArc.html#a72c194fed4239ee331d2bc804d705e70":[1,0,356,3],
 "de/db2/classVNodeEllipticalArc.html#aa431979d0e99367af25b1e8928b88ca2":[1,0,356,6],
 "de/db2/classVNodeEllipticalArc.html#aa43da250f1c02f940dbd33468abd03de":[1,0,356,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX61 =
 "df/d02/classVPE_1_1VBoolProperty.html#aa8a1522574c47f3ac5687948c471b66a":[1,0,2,2,0],
 "df/d02/classVPE_1_1VBoolProperty.html#ad0b60ae5bfa07e42d9f9ba428aba2312":[1,0,2,2,3],
 "df/d02/classVPE_1_1VBoolProperty.html#ad774968bc111f6af36671b72102f9e2a":[1,0,2,2,8],
-"df/d03/classVSplinePoint.html":[1,0,391],
-"df/d03/classVSplinePoint.html#a03c217f2f3d234b9f3df11fea30949d7":[1,0,391,10],
-"df/d03/classVSplinePoint.html#a3560854a9ae356d319ed1f92260f6459":[1,0,391,15]
+"df/d03/classVSplinePoint.html":[1,0,391]
 };

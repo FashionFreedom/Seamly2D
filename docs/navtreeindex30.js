@@ -1,5 +1,7 @@
 var NAVTREEINDEX30 =
 {
+"d7/d3f/classTST__VSpline.html#aa0fadfcecc78a58927ddbd6902907c33":[1,0,216,1],
+"d7/d3f/classTST__VSpline.html#aed8cbef4327c688f56258af88d539078":[1,0,216,9],
 "d7/d3f/classTST__VSpline.html#aeecd997b11bd8e3903ef8de7179ad1be":[1,0,216,11],
 "d7/d41/classVExceptionObjectError.html":[1,0,279],
 "d7/d41/classVExceptionObjectError.html#a1e4fdccfb166d24e31e10517e3711f4d":[1,0,279,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX30 =
 "d7/d8c/classDialogTrueDarts.html#a858087e07153c29cf777c80dee9d5b49":[1,0,77,30],
 "d7/d8c/classDialogTrueDarts.html#a870f68bdd7411734e195ad83f4d6968e":[1,0,77,20],
 "d7/d8c/classDialogTrueDarts.html#a901a51967438a41068aa9c8862f7b514":[1,0,77,22],
-"d7/d8c/classDialogTrueDarts.html#a9d5c79ac4c20d3c123177e813792f2e8":[1,0,77,19],
-"d7/d8c/classDialogTrueDarts.html#aa28d73c2da94d2b2857b9f58f0f90680":[1,0,77,24],
-"d7/d8c/classDialogTrueDarts.html#aa398386f5c692d8d9fa03f5c62096004":[1,0,77,6]
+"d7/d8c/classDialogTrueDarts.html#a9d5c79ac4c20d3c123177e813792f2e8":[1,0,77,19]
 };

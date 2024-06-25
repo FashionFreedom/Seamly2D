@@ -168,6 +168,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a17ab4cdb00c46678ef01e0512424494a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af855c99ad2c88aabbcfebad71898638c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da8/classImageItem.html#af855c99ad2c88aabbcfebad71898638c">setImage</a> (<a class="el" href="../../d3/df8/structDraftImage.html">DraftImage</a> image)</td></tr>
 <tr class="separator:af855c99ad2c88aabbcfebad71898638c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94cc76a78ccfaa8bb0ebc0f4507fcdb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da8/classImageItem.html#aa94cc76a78ccfaa8bb0ebc0f4507fcdb">setOrigin</a> (qreal xOrigin, qreal yOrigin)</td></tr>
+<tr class="separator:aa94cc76a78ccfaa8bb0ebc0f4507fcdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bd80afd0774cb598d9f22f4058b127d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da8/classImageItem.html#a5bd80afd0774cb598d9f22f4058b127d">updateImage</a> ()</td></tr>
 <tr class="separator:a5bd80afd0774cb598d9f22f4058b127d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfd0f8f16836d32e9b514815819656d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da8/classImageItem.html#adfd0f8f16836d32e9b514815819656d6">updateImageAndHandles</a> (<a class="el" href="../../d3/df8/structDraftImage.html">DraftImage</a> image)</td></tr>
@@ -225,6 +227,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a9ee709e94b2840af2938a29c596b22a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a162cad55dbbd102d827b5f0cfef69602"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da8/classImageItem.html#a162cad55dbbd102d827b5f0cfef69602">m_offset</a></td></tr>
 <tr class="separator:a162cad55dbbd102d827b5f0cfef69602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04ff809910444fc9962b8c67e364b338"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da8/classImageItem.html#a04ff809910444fc9962b8c67e364b338">m_origin</a></td></tr>
+<tr class="separator:a04ff809910444fc9962b8c67e364b338"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae13593619fb6e1ef5bf498061ca0c6dd"><td class="memItemLeft" align="right" valign="top">QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da8/classImageItem.html#ae13593619fb6e1ef5bf498061ca0c6dd">m_boundingRect</a></td></tr>
 <tr class="separator:ae13593619fb6e1ef5bf498061ca0c6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab86c2312bf5128066cf0d14dee7d7186"><td class="memItemLeft" align="right" valign="top">QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da8/classImageItem.html#ab86c2312bf5128066cf0d14dee7d7186">m_handleRect</a></td></tr>
@@ -337,7 +341,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">58</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00195">DraftImage::aspectLocked</a>, <a class="el" href="../../d4/da4/def_8h.html#ab8c951c98d26f226ee3fd55d9e80a241a36229f8b8a947054c77f27000d893a74">ByMouseRelease</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l03133">VAbstractPattern::getBackgroundImageMap()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00063">HANDLE_SIZE</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00192">DraftImage::height</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00483">initializeItem()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00186">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00107">m_boundingRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00105">m_doc</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00108">m_handleRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00124">m_maxDimension</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00123">m_minDimension</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00110">m_resizeHandles</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00067">maxImageZvalue</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00544">moveToTop()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00200">DraftImage::order</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00093">ResizeHandlesItem::parentIsLocked()</a>, <a class="el" href="../../d4/da4/def_8h.html#a474a10f771dff4181411f5ff47029582a3de4e8ddb0f11db7071012c6998c25e1">ResizeHandlesItem</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00197">DraftImage::rotation</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00087">ResizeHandlesItem::setLockAspectRatio()</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00108">ResizeHandlesItem::setParentRotation()</a>, <a class="el" href="../../d6/da8/classImageItem.html#a13e3ea8aa62cdff061de035470e7f01f">setStatusMessage()</a>, <a class="el" href="../../d0/de9/classResizeHandlesItem.html#a8355781cd37524f84849535542dbaffd">ResizeHandlesItem::setStatusMessage()</a>, <a class="el" href="../../d0/de9/classResizeHandlesItem.html#a105409fc3e6dcd2660005bef7d6ff63a">ResizeHandlesItem::sizeChanged()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00493">updateFromHandles()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00142">updateImage()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00191">DraftImage::width</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00189">DraftImage::xPos</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00190">DraftImage::yPos</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00197">DraftImage::aspectLocked</a>, <a class="el" href="../../d4/da4/def_8h.html#ab8c951c98d26f226ee3fd55d9e80a241a36229f8b8a947054c77f27000d893a74">ByMouseRelease</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l03133">VAbstractPattern::getBackgroundImageMap()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00063">HANDLE_SIZE</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00194">DraftImage::height</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00493">initializeItem()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00187">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00109">m_boundingRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00106">m_doc</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00110">m_handleRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00126">m_maxDimension</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00125">m_minDimension</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00108">m_origin</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00112">m_resizeHandles</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00067">maxImageZvalue</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00557">moveToTop()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00202">DraftImage::order</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00093">ResizeHandlesItem::parentIsLocked()</a>, <a class="el" href="../../d4/da4/def_8h.html#a474a10f771dff4181411f5ff47029582a3de4e8ddb0f11db7071012c6998c25e1">ResizeHandlesItem</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00199">DraftImage::rotation</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00087">ResizeHandlesItem::setLockAspectRatio()</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00108">ResizeHandlesItem::setParentRotation()</a>, <a class="el" href="../../d6/da8/classImageItem.html#a13e3ea8aa62cdff061de035470e7f01f">setStatusMessage()</a>, <a class="el" href="../../d0/de9/classResizeHandlesItem.html#a8355781cd37524f84849535542dbaffd">ResizeHandlesItem::setStatusMessage()</a>, <a class="el" href="../../d0/de9/classResizeHandlesItem.html#a105409fc3e6dcd2660005bef7d6ff63a">ResizeHandlesItem::sizeChanged()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00503">updateFromHandles()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00152">updateImage()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00193">DraftImage::width</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00188">DraftImage::xOrigin</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00191">DraftImage::xPos</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00189">DraftImage::yOrigin</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00192">DraftImage::yPos</a>.</p>
 
 </div>
 </div>
@@ -390,9 +394,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00110">110</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00112">112</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00107">m_boundingRect</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00109">m_boundingRect</a>.</p>
 
 </div>
 </div>
@@ -428,9 +432,9 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00287">287</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00297">297</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d3/db4/classImageDialog.html#a8646e9c889936aa92241038969d601e9">ImageDialog::applyClicked()</a>, <a class="el" href="../../d6/da8/classImageItem.html#ae7ebee3393bed32b190f20fca8c193ff">deleteImage()</a>, <a class="el" href="../../d2/d47/image__dialog_8cpp_source.html#l00114">ImageDialog::getImage()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00182">DraftImage::id</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00186">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00124">m_maxDimension</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00123">m_minDimension</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00122">m_selectable</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00578">moveDown()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00527">moveToBottom()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00544">moveToTop()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00558">moveUp()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00068">qApp</a>, <a class="el" href="../../d6/da8/classImageItem.html#a82296b4d1ce5f41e6dc679f6390707d1">showContextMenu()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00509">updateImageAndHandles()</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/db4/classImageDialog.html#a8646e9c889936aa92241038969d601e9">ImageDialog::applyClicked()</a>, <a class="el" href="../../d6/da8/classImageItem.html#ae7ebee3393bed32b190f20fca8c193ff">deleteImage()</a>, <a class="el" href="../../d2/d47/image__dialog_8cpp_source.html#l00114">ImageDialog::getImage()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00183">DraftImage::id</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00187">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00126">m_maxDimension</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00125">m_minDimension</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00124">m_selectable</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00591">moveDown()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00540">moveToBottom()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00557">moveToTop()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00571">moveUp()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00068">qApp</a>, <a class="el" href="../../d6/da8/classImageItem.html#a82296b4d1ce5f41e6dc679f6390707d1">showContextMenu()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00521">updateImageAndHandles()</a>.</p>
 
 </div>
 </div>
@@ -458,7 +462,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d9/da3/image__tool_8cpp_source.html#l00094">ImageTool::addImage()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00287">contextMenuEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00468">keyReleaseEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/da3/image__tool_8cpp_source.html#l00094">ImageTool::addImage()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00297">contextMenuEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00478">keyReleaseEvent()</a>.</p>
 
 </div>
 </div>
@@ -477,9 +481,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00520">520</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00533">533</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00527">moveToBottom()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00540">moveToBottom()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d9/da3/image__tool_8cpp_source.html#l00145">ImageTool::handleDeleteImage()</a>.</p>
 
@@ -501,7 +505,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00218">218</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00228">228</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
 </div>
 </div>
@@ -521,9 +525,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00210">210</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00220">220</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00122">m_selectable</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00124">m_selectable</a>.</p>
 
 </div>
 </div>
@@ -542,9 +546,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00132">132</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00134">134</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>.</p>
 
 </div>
 </div>
@@ -580,9 +584,9 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00228">228</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00238">238</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00171">cursorArrowOpenHand</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00186">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00116">m_isHovered</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00110">m_resizeHandles</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00122">m_selectable</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00068">qApp</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00194">SetItemOverrideCursor()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00598">showImageStatusMessage()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00171">cursorArrowOpenHand</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00187">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00118">m_isHovered</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00112">m_resizeHandles</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00124">m_selectable</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00068">qApp</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00194">SetItemOverrideCursor()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00611">showImageStatusMessage()</a>.</p>
 
 </div>
 </div>
@@ -618,9 +622,9 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00254">254</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00264">264</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00186">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00116">m_isHovered</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00110">m_resizeHandles</a>, and <a class="el" href="../../d6/da8/classImageItem.html#a13e3ea8aa62cdff061de035470e7f01f">setStatusMessage()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00187">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00118">m_isHovered</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00112">m_resizeHandles</a>, and <a class="el" href="../../d6/da8/classImageItem.html#a13e3ea8aa62cdff061de035470e7f01f">setStatusMessage()</a>.</p>
 
 </div>
 </div>
@@ -648,9 +652,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00272">272</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00282">282</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00186">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00598">showImageStatusMessage()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00187">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00611">showImageStatusMessage()</a>.</p>
 
 </div>
 </div>
@@ -678,7 +682,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00391">mousePressEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00447">mouseReleaseEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00401">mousePressEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00457">mouseReleaseEvent()</a>.</p>
 
 </div>
 </div>
@@ -706,7 +710,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00142">updateImage()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00152">updateImage()</a>.</p>
 
 </div>
 </div>
@@ -733,7 +737,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00483">483</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00493">493</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>.</p>
 
@@ -763,9 +767,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00468">468</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00478">478</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/da8/classImageItem.html#ae7ebee3393bed32b190f20fca8c193ff">deleteImage()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00182">DraftImage::id</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00186">DraftImage::locked</a>, and <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/da8/classImageItem.html#ae7ebee3393bed32b190f20fca8c193ff">deleteImage()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00183">DraftImage::id</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00187">DraftImage::locked</a>, and <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>.</p>
 
 </div>
 </div>
@@ -793,9 +797,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00431">431</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00441">441</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00106">m_offset</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00598">showImageStatusMessage()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00142">updateImage()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00189">DraftImage::xPos</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00190">DraftImage::yPos</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00107">m_offset</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00611">showImageStatusMessage()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00152">updateImage()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00191">DraftImage::xPos</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00192">DraftImage::yPos</a>.</p>
 
 </div>
 </div>
@@ -823,9 +827,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00391">391</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00401">401</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#ab8c951c98d26f226ee3fd55d9e80a241a36229f8b8a947054c77f27000d893a74">ByMouseRelease</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00172">cursorArrowCloseHand</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00182">DraftImage::id</a>, <a class="el" href="../../d6/da8/classImageItem.html#abd55173a883cd4c40fb16d08e9e15740">imageSelected()</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00107">m_boundingRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00115">m_mousePressed</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00106">m_offset</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00122">m_selectable</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00117">m_selectionType</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00194">SetItemOverrideCursor()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#ab8c951c98d26f226ee3fd55d9e80a241a36229f8b8a947054c77f27000d893a74">ByMouseRelease</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00172">cursorArrowCloseHand</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00183">DraftImage::id</a>, <a class="el" href="../../d6/da8/classImageItem.html#abd55173a883cd4c40fb16d08e9e15740">imageSelected()</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00117">m_mousePressed</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00107">m_offset</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00108">m_origin</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00124">m_selectable</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_selectionType</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00194">SetItemOverrideCursor()</a>.</p>
 
 </div>
 </div>
@@ -853,9 +857,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00447">447</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00457">457</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#ab8c951c98d26f226ee3fd55d9e80a241a36229f8b8a947054c77f27000d893a74">ByMouseRelease</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00171">cursorArrowOpenHand</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00182">DraftImage::id</a>, <a class="el" href="../../d6/da8/classImageItem.html#abd55173a883cd4c40fb16d08e9e15740">imageSelected()</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00115">m_mousePressed</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00117">m_selectionType</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00194">SetItemOverrideCursor()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#ab8c951c98d26f226ee3fd55d9e80a241a36229f8b8a947054c77f27000d893a74">ByMouseRelease</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00171">cursorArrowOpenHand</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00183">DraftImage::id</a>, <a class="el" href="../../d6/da8/classImageItem.html#abd55173a883cd4c40fb16d08e9e15740">imageSelected()</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00117">m_mousePressed</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_selectionType</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00194">SetItemOverrideCursor()</a>.</p>
 
 </div>
 </div>
@@ -874,11 +878,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00578">578</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00591">591</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l03133">VAbstractPattern::getBackgroundImageMap()</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00105">m_doc</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00067">maxImageZvalue</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00200">DraftImage::order</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00142">updateImage()</a>.</p>
+<p class="reference">References <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l03133">VAbstractPattern::getBackgroundImageMap()</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00106">m_doc</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00067">maxImageZvalue</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00202">DraftImage::order</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00152">updateImage()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00287">contextMenuEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00297">contextMenuEvent()</a>.</p>
 
 </div>
 </div>
@@ -897,11 +901,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00527">527</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00540">540</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l03133">VAbstractPattern::getBackgroundImageMap()</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00105">m_doc</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00200">DraftImage::order</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00142">updateImage()</a>.</p>
+<p class="reference">References <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l03133">VAbstractPattern::getBackgroundImageMap()</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00106">m_doc</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00202">DraftImage::order</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00152">updateImage()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00287">contextMenuEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00520">deleteImageItem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00297">contextMenuEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00533">deleteImageItem()</a>.</p>
 
 </div>
 </div>
@@ -920,11 +924,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00544">544</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00557">557</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l03133">VAbstractPattern::getBackgroundImageMap()</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00105">m_doc</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00067">maxImageZvalue</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00200">DraftImage::order</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00142">updateImage()</a>.</p>
+<p class="reference">References <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l03133">VAbstractPattern::getBackgroundImageMap()</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00106">m_doc</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00067">maxImageZvalue</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00202">DraftImage::order</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00152">updateImage()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00287">contextMenuEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00297">contextMenuEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>.</p>
 
 </div>
 </div>
@@ -943,11 +947,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00558">558</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00571">571</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l03133">VAbstractPattern::getBackgroundImageMap()</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00105">m_doc</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00067">maxImageZvalue</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00200">DraftImage::order</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00142">updateImage()</a>.</p>
+<p class="reference">References <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l03133">VAbstractPattern::getBackgroundImageMap()</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00106">m_doc</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00067">maxImageZvalue</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00202">DraftImage::order</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00152">updateImage()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00287">contextMenuEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00297">contextMenuEvent()</a>.</p>
 
 </div>
 </div>
@@ -991,9 +995,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00181">181</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00191">191</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00192">DraftImage::height</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00186">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00107">m_boundingRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00116">m_isHovered</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00118">m_transformationMode</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00185">DraftImage::pixmap</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00068">qApp</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00191">DraftImage::width</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00194">DraftImage::height</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00187">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00109">m_boundingRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00118">m_isHovered</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00120">m_transformationMode</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00186">DraftImage::pixmap</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00068">qApp</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00193">DraftImage::width</a>.</p>
 
 </div>
 </div>
@@ -1013,9 +1017,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00137">137</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00139">139</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>.</p>
 
 </div>
 </div>
@@ -1035,11 +1039,43 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00163">163</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00173">173</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00186">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, and <a class="el" href="../../d6/da8/classImageItem.html#a13e3ea8aa62cdff061de035470e7f01f">setStatusMessage()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00187">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, and <a class="el" href="../../d6/da8/classImageItem.html#a13e3ea8aa62cdff061de035470e7f01f">setStatusMessage()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00142">updateImage()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00152">updateImage()</a>.</p>
+
+</div>
+</div>
+<a id="aa94cc76a78ccfaa8bb0ebc0f4507fcdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa94cc76a78ccfaa8bb0ebc0f4507fcdb">&#9670;&nbsp;</a></span>setOrigin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageItem::setOrigin </td>
+          <td>(</td>
+          <td class="paramtype">qreal&#160;</td>
+          <td class="paramname"><em>xOrigin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qreal&#160;</td>
+          <td class="paramname"><em>yOrigin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00145">145</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00188">DraftImage::xOrigin</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00189">DraftImage::yOrigin</a>.</p>
 
 </div>
 </div>
@@ -1067,9 +1103,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00116">116</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00118">118</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00063">HANDLE_SIZE</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00192">DraftImage::height</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00107">m_boundingRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00108">m_handleRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_pixmapHeight</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00120">m_pixmapWidth</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00185">DraftImage::pixmap</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00191">DraftImage::width</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00189">DraftImage::xPos</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00190">DraftImage::yPos</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00063">HANDLE_SIZE</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00194">DraftImage::height</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00109">m_boundingRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00110">m_handleRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00123">m_pixmapHeight</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00122">m_pixmapWidth</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00186">DraftImage::pixmap</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00193">DraftImage::width</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00191">DraftImage::xPos</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00192">DraftImage::yPos</a>.</p>
 
 </div>
 </div>
@@ -1097,7 +1133,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d9/da3/image__tool_8cpp_source.html#l00094">ImageTool::addImage()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00254">hoverLeaveEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00163">setLock()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00598">showImageStatusMessage()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/da3/image__tool_8cpp_source.html#l00094">ImageTool::addImage()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00264">hoverLeaveEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00173">setLock()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00611">showImageStatusMessage()</a>.</p>
 
 </div>
 </div>
@@ -1125,7 +1161,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00287">contextMenuEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00297">contextMenuEvent()</a>.</p>
 
 </div>
 </div>
@@ -1152,11 +1188,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00598">598</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00611">611</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00195">DraftImage::aspectLocked</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00192">DraftImage::height</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00183">DraftImage::name</a>, <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889ad7e2c9feaded425c8f73763ccf7397a2">Px</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00068">qApp</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00197">DraftImage::rotation</a>, <a class="el" href="../../d6/da8/classImageItem.html#a13e3ea8aa62cdff061de035470e7f01f">setStatusMessage()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00196">DraftImage::units</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00729">UnitsToStr()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00191">DraftImage::width</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00189">DraftImage::xPos</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00190">DraftImage::yPos</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00197">DraftImage::aspectLocked</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00194">DraftImage::height</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00184">DraftImage::name</a>, <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889ad7e2c9feaded425c8f73763ccf7397a2">Px</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00068">qApp</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00199">DraftImage::rotation</a>, <a class="el" href="../../d6/da8/classImageItem.html#a13e3ea8aa62cdff061de035470e7f01f">setStatusMessage()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00198">DraftImage::units</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00729">UnitsToStr()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00193">DraftImage::width</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00191">DraftImage::xPos</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00192">DraftImage::yPos</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00228">hoverEnterEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00272">hoverMoveEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00431">mouseMoveEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00238">hoverEnterEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00282">hoverMoveEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00441">mouseMoveEvent()</a>.</p>
 
 </div>
 </div>
@@ -1213,9 +1249,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00493">493</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00503">503</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00192">DraftImage::height</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00107">m_boundingRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00142">updateImage()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00191">DraftImage::width</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00189">DraftImage::xPos</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00190">DraftImage::yPos</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00194">DraftImage::height</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00109">m_boundingRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00108">m_origin</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00152">updateImage()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00193">DraftImage::width</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00188">DraftImage::xOrigin</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00191">DraftImage::xPos</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00189">DraftImage::yOrigin</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00192">DraftImage::yPos</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>.</p>
 
@@ -1236,11 +1272,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00142">142</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00152">152</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00192">DraftImage::height</a>, <a class="el" href="../../d6/da8/classImageItem.html#a3b539253b5bde2050a58a0b82610eadc">imageUpdated()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00186">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00107">m_boundingRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00199">DraftImage::opacity</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00200">DraftImage::order</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00197">DraftImage::rotation</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00163">setLock()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00198">DraftImage::visible</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00191">DraftImage::width</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00189">DraftImage::xPos</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00190">DraftImage::yPos</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00194">DraftImage::height</a>, <a class="el" href="../../d6/da8/classImageItem.html#a3b539253b5bde2050a58a0b82610eadc">imageUpdated()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00187">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00109">m_boundingRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00108">m_origin</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00201">DraftImage::opacity</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00202">DraftImage::order</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00199">DraftImage::rotation</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00173">setLock()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00200">DraftImage::visible</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00193">DraftImage::width</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00191">DraftImage::xPos</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00192">DraftImage::yPos</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00431">mouseMoveEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00578">moveDown()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00527">moveToBottom()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00544">moveToTop()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00558">moveUp()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00493">updateFromHandles()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00509">updateImageAndHandles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00441">mouseMoveEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00591">moveDown()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00540">moveToBottom()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00557">moveToTop()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00571">moveUp()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00503">updateFromHandles()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00521">updateImageAndHandles()</a>.</p>
 
 </div>
 </div>
@@ -1260,11 +1296,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00509">509</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00521">521</a> of file <a class="el" href="../../df/d1e/image__item_8cpp_source.html">image_item.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00195">DraftImage::aspectLocked</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00186">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00107">m_boundingRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00110">m_resizeHandles</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00093">ResizeHandlesItem::parentIsLocked()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00197">DraftImage::rotation</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00087">ResizeHandlesItem::setLockAspectRatio()</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00079">ResizeHandlesItem::setParentRect()</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00108">ResizeHandlesItem::setParentRotation()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00142">updateImage()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00197">DraftImage::aspectLocked</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00187">DraftImage::locked</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00109">m_boundingRect</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">m_image</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00108">m_origin</a>, <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00112">m_resizeHandles</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00093">ResizeHandlesItem::parentIsLocked()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00199">DraftImage::rotation</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00087">ResizeHandlesItem::setLockAspectRatio()</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00079">ResizeHandlesItem::setParentRect()</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00108">ResizeHandlesItem::setParentRotation()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00152">updateImage()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00188">DraftImage::xOrigin</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00189">DraftImage::yOrigin</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00287">contextMenuEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00297">contextMenuEvent()</a>.</p>
 
 </div>
 </div>
@@ -1289,7 +1325,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00109">109</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00111">111</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
 </div>
 </div>
@@ -1313,7 +1349,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00114">114</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00116">116</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
 </div>
 </div>
@@ -1337,7 +1373,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00113">113</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00115">115</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
 </div>
 </div>
@@ -1361,9 +1397,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00107">107</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00109">109</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00110">boundingRect()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00391">mousePressEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00181">paint()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00116">setPixmap()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00493">updateFromHandles()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00142">updateImage()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00509">updateImageAndHandles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00112">boundingRect()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00191">paint()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00118">setPixmap()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00503">updateFromHandles()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00152">updateImage()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00521">updateImageAndHandles()</a>.</p>
 
 </div>
 </div>
@@ -1387,9 +1423,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00105">105</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00106">106</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00578">moveDown()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00527">moveToBottom()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00544">moveToTop()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00558">moveUp()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00591">moveDown()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00540">moveToBottom()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00557">moveToTop()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00571">moveUp()</a>.</p>
 
 </div>
 </div>
@@ -1413,9 +1449,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00108">108</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00110">110</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00116">setPixmap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00118">setPixmap()</a>.</p>
 
 </div>
 </div>
@@ -1439,9 +1475,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">119</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">121</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00287">contextMenuEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00132">getImage()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00228">hoverEnterEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00254">hoverLeaveEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00272">hoverMoveEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00468">keyReleaseEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00431">mouseMoveEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00391">mousePressEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00447">mouseReleaseEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00578">moveDown()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00527">moveToBottom()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00544">moveToTop()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00558">moveUp()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00181">paint()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00137">setImage()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00163">setLock()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00116">setPixmap()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00598">showImageStatusMessage()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00493">updateFromHandles()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00142">updateImage()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00509">updateImageAndHandles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00297">contextMenuEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00134">getImage()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00238">hoverEnterEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00264">hoverLeaveEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00282">hoverMoveEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00478">keyReleaseEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00441">mouseMoveEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00401">mousePressEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00457">mouseReleaseEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00591">moveDown()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00540">moveToBottom()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00557">moveToTop()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00571">moveUp()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00191">paint()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00139">setImage()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00173">setLock()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00145">setOrigin()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00118">setPixmap()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00611">showImageStatusMessage()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00503">updateFromHandles()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00152">updateImage()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00521">updateImageAndHandles()</a>.</p>
 
 </div>
 </div>
@@ -1465,9 +1501,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00116">116</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00118">118</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00228">hoverEnterEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00254">hoverLeaveEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00181">paint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00238">hoverEnterEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00264">hoverLeaveEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00191">paint()</a>.</p>
 
 </div>
 </div>
@@ -1491,9 +1527,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00124">124</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00126">126</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00287">contextMenuEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00297">contextMenuEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>.</p>
 
 </div>
 </div>
@@ -1517,9 +1553,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00123">123</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00125">125</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00287">contextMenuEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00297">contextMenuEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>.</p>
 
 </div>
 </div>
@@ -1543,9 +1579,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00115">115</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00117">117</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00391">mousePressEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00447">mouseReleaseEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00401">mousePressEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00457">mouseReleaseEvent()</a>.</p>
 
 </div>
 </div>
@@ -1569,9 +1605,35 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00106">106</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00107">107</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00431">mouseMoveEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00391">mousePressEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00441">mouseMoveEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00401">mousePressEvent()</a>.</p>
+
+</div>
+</div>
+<a id="a04ff809910444fc9962b8c67e364b338"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04ff809910444fc9962b8c67e364b338">&#9670;&nbsp;</a></span>m_origin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF ImageItem::m_origin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00108">108</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00401">mousePressEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00503">updateFromHandles()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00152">updateImage()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00521">updateImageAndHandles()</a>.</p>
 
 </div>
 </div>
@@ -1595,9 +1657,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00121">121</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00123">123</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00116">setPixmap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00118">setPixmap()</a>.</p>
 
 </div>
 </div>
@@ -1621,9 +1683,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00120">120</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00122">122</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00116">setPixmap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00118">setPixmap()</a>.</p>
 
 </div>
 </div>
@@ -1647,9 +1709,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00110">110</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00112">112</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00228">hoverEnterEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00254">hoverLeaveEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00509">updateImageAndHandles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00238">hoverEnterEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00264">hoverLeaveEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00521">updateImageAndHandles()</a>.</p>
 
 </div>
 </div>
@@ -1673,7 +1735,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00111">111</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00113">113</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
 </div>
 </div>
@@ -1697,7 +1759,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00112">112</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00114">114</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
 </div>
 </div>
@@ -1721,9 +1783,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00122">122</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00124">124</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00287">contextMenuEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00210">enableSelection()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00228">hoverEnterEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00391">mousePressEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00297">contextMenuEvent()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00220">enableSelection()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00238">hoverEnterEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00401">mousePressEvent()</a>.</p>
 
 </div>
 </div>
@@ -1747,9 +1809,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00117">117</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00119">119</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00391">mousePressEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00447">mouseReleaseEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00401">mousePressEvent()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00457">mouseReleaseEvent()</a>.</p>
 
 </div>
 </div>
@@ -1773,9 +1835,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00118">118</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00120">120</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00181">paint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00191">paint()</a>.</p>
 
 </div>
 </div>
@@ -1801,7 +1863,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d8d/image__item_8h_source.html#l00067">67</a> of file <a class="el" href="../../d1/d8d/image__item_8h_source.html">image_item.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00578">moveDown()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00544">moveToTop()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00558">moveUp()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00591">moveDown()</a>, <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00557">moveToTop()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00571">moveUp()</a>.</p>
 
 </div>
 </div>

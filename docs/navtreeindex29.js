@@ -1,5 +1,7 @@
 var NAVTREEINDEX29 =
 {
+"d6/deb/classVDomDocument.html#a6b5a395b56c42f809d7803f61777cead":[1,0,269,2],
+"d6/deb/classVDomDocument.html#a7281671f7a4a0bb0465d62b150cd00a2":[1,0,269,3],
 "d6/deb/classVDomDocument.html#a78e5ffde77275389652c56349dd0288a":[1,0,269,15],
 "d6/deb/classVDomDocument.html#a843909d075d1c079ee63e7e7c7b61d94":[1,0,269,24],
 "d6/deb/classVDomDocument.html#a86fe2212ec54746e3e0b01dbb676e130":[1,0,269,22],
@@ -247,7 +249,5 @@ var NAVTREEINDEX29 =
 "d7/d3f/classTST__VSpline.html#a4c0bb74f50aa2ecf3b8bc3e80e9cad33":[1,0,216,4],
 "d7/d3f/classTST__VSpline.html#a5814f6526486570980934d17990bb591":[1,0,216,0],
 "d7/d3f/classTST__VSpline.html#a768942c8765eb1888d911c60afe2c606":[1,0,216,8],
-"d7/d3f/classTST__VSpline.html#a9ef31ba1cc0f61bb6a1d9191c84e8cf0":[1,0,216,5],
-"d7/d3f/classTST__VSpline.html#aa0fadfcecc78a58927ddbd6902907c33":[1,0,216,1],
-"d7/d3f/classTST__VSpline.html#aed8cbef4327c688f56258af88d539078":[1,0,216,9]
+"d7/d3f/classTST__VSpline.html#a9ef31ba1cc0f61bb6a1d9191c84e8cf0":[1,0,216,5]
 };

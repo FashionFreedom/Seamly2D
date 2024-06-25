@@ -34,9 +34,9 @@
 <text text-anchor="start" x="19.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ enableWidgets()</text>
 <text text-anchor="start" x="19.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getName()</text>
 <text text-anchor="start" x="19.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setName()</text>
-<text text-anchor="start" x="19.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getOriginPoint()</text>
-<text text-anchor="start" x="19.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOriginPoint()</text>
-<text text-anchor="start" x="19.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 22 more...</text>
+<text text-anchor="start" x="19.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOriginPoint()</text>
+<text text-anchor="start" x="19.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getXPos()</text>
+<text text-anchor="start" x="19.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 21 more...</text>
 <text text-anchor="start" x="19.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; nameChanged()</text>
 <text text-anchor="start" x="19.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; originChanged()</text>
 <text text-anchor="start" x="19.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; lockChanged()</text>
@@ -82,12 +82,12 @@
 <text text-anchor="start" x="82" y="-538.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ filename</text>
 <text text-anchor="start" x="82" y="-527.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ pixmap</text>
 <text text-anchor="start" x="82" y="-516.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ locked</text>
-<text text-anchor="start" x="82" y="-505.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ origin</text>
-<text text-anchor="start" x="82" y="-494.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ anchor</text>
-<text text-anchor="start" x="82" y="-483.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ xPos</text>
-<text text-anchor="start" x="82" y="-472.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ yPos</text>
-<text text-anchor="start" x="82" y="-461.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ width</text>
-<text text-anchor="start" x="82" y="-450.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 9 more...</text>
+<text text-anchor="start" x="82" y="-505.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ xOrigin</text>
+<text text-anchor="start" x="82" y="-494.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ yOrigin</text>
+<text text-anchor="start" x="82" y="-483.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ anchor</text>
+<text text-anchor="start" x="82" y="-472.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ xPos</text>
+<text text-anchor="start" x="82" y="-461.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ yPos</text>
+<text text-anchor="start" x="82" y="-450.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 10 more...</text>
 <polyline fill="none" stroke="black" points="74,-443.5 164,-443.5 "/>
 <text text-anchor="start" x="82" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DraftImage()</text>
 </a>

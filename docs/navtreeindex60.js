@@ -1,5 +1,7 @@
 var NAVTREEINDEX60 =
 {
+"de/d57/delaunay_8cpp.html#ab8551802efb9fcdd01a8a07aec737c2e":[2,0,0,1,9,0,14],
+"de/d57/delaunay_8cpp.html#ab98a1964ec6972e33cfa16eb39c96e85":[2,0,0,1,9,0,36],
 "de/d57/delaunay_8cpp.html#acad288135fe2637d785642eff7263779":[2,0,0,1,9,0,7],
 "de/d57/delaunay_8cpp.html#add4e84af378b21ff6824d144f0350c49":[2,0,0,1,9,0,12],
 "de/d57/delaunay_8cpp.html#addbffd92b232279b1944460add17a333":[2,0,0,1,9,0,26],
@@ -247,7 +249,5 @@ var NAVTREEINDEX60 =
 "de/db1/classMoveSpline.html#aea1ac7a3eaaa85b993fb97cbf342f4f3":[1,0,130,6],
 "de/db1/classMoveSpline.html#afe90ed2254d0517847b573c6bd3e408e":[1,0,130,3],
 "de/db2/classVNodeEllipticalArc.html":[1,0,356],
-"de/db2/classVNodeEllipticalArc.html#a06bbd343247203e39e53339be6f88e29":[1,0,356,5],
-"de/db2/classVNodeEllipticalArc.html#a0e98e2c47e6a4bf62896336ad4bbcfd7":[1,0,356,1],
-"de/db2/classVNodeEllipticalArc.html#a1f64fd63885ebfa6ed70233dcd0a2c7f":[1,0,356,8]
+"de/db2/classVNodeEllipticalArc.html#a06bbd343247203e39e53339be6f88e29":[1,0,356,5]
 };

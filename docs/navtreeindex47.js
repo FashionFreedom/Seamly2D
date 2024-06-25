@@ -1,5 +1,7 @@
 var NAVTREEINDEX47 =
 {
+"db/dda/classVAbstractApplication.html#a83712518dcd81978d3f54ef8cb77bf7f":[1,0,223,38],
+"db/dda/classVAbstractApplication.html#a884c9e99ce93e12379b60ca08808f37f":[1,0,223,12],
 "db/dda/classVAbstractApplication.html#a92886d256c5e9be89659da9dcc191107":[1,0,223,14],
 "db/dda/classVAbstractApplication.html#aa523d00ae2255695600de4ab3ca0712d":[1,0,223,31],
 "db/dda/classVAbstractApplication.html#aa76510ae070b475c90495d3606ecf1c6":[1,0,223,48],
@@ -247,7 +249,5 @@ var NAVTREEINDEX47 =
 "dc/d0f/libs_2vobj_2stable_8h_source.html":[2,0,0,1,9,4],
 "dc/d10/classDialogCurveIntersectAxis.html":[1,0,44],
 "dc/d10/classDialogCurveIntersectAxis.html#a011ecc936b49383cc95b7759c7f8798d":[1,0,44,16],
-"dc/d10/classDialogCurveIntersectAxis.html#a166a54d336f56ec5055f014f3fbc3154":[1,0,44,19],
-"dc/d10/classDialogCurveIntersectAxis.html#a16899054bd5536f0ac5a8d9bf5127b0e":[1,0,44,4],
-"dc/d10/classDialogCurveIntersectAxis.html#a2af75909a181cb0c5afaff534ede501f":[1,0,44,24]
+"dc/d10/classDialogCurveIntersectAxis.html#a166a54d336f56ec5055f014f3fbc3154":[1,0,44,19]
 };

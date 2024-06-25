@@ -10,14 +10,15 @@ var structDraftImage =
     [ "name", "d3/df8/structDraftImage.html#aab851b86248ac80c65b4c0d9fec966ee", null ],
     [ "opacity", "d3/df8/structDraftImage.html#ac20434dee482b42c0427353fcdcc5166", null ],
     [ "order", "d3/df8/structDraftImage.html#a371accfd4fd976498da39270869cea03", null ],
-    [ "origin", "d3/df8/structDraftImage.html#ac8d89869b5ac72fa3bf89ca281381435", null ],
     [ "pixmap", "d3/df8/structDraftImage.html#a00f0a22fa97ecfb4f03d4daa73763c2a", null ],
     [ "rotation", "d3/df8/structDraftImage.html#a5954a4891839509a814a9f8843cbc625", null ],
     [ "units", "d3/df8/structDraftImage.html#ab702f8a6aa5a000da6a33f8a35e477c9", null ],
     [ "visible", "d3/df8/structDraftImage.html#aa23f6fa152451fb998e6c4feb13b15d2", null ],
     [ "width", "d3/df8/structDraftImage.html#a85e97a8ec43231f9c633912342b2762f", null ],
+    [ "xOrigin", "d3/df8/structDraftImage.html#a9505118f62bf1114f14640fad35ca397", null ],
     [ "xPos", "d3/df8/structDraftImage.html#ab3f10ff04e1ccdb759e24fba1a2a651a", null ],
     [ "xScale", "d3/df8/structDraftImage.html#a49de2812500ac116cf16464928baf570", null ],
+    [ "yOrigin", "d3/df8/structDraftImage.html#ade19919e7bf407c7d58cc5dc2b377727", null ],
     [ "yPos", "d3/df8/structDraftImage.html#a0a9132127972cfab6d9881e17100d04b", null ],
     [ "yScale", "d3/df8/structDraftImage.html#a170b321103fde66cb756faaac7729657", null ]
 ];

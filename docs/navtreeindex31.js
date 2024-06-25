@@ -1,5 +1,7 @@
 var NAVTREEINDEX31 =
 {
+"d7/d8c/classDialogTrueDarts.html#aa28d73c2da94d2b2857b9f58f0f90680":[1,0,77,24],
+"d7/d8c/classDialogTrueDarts.html#aa398386f5c692d8d9fa03f5c62096004":[1,0,77,6],
 "d7/d8c/classDialogTrueDarts.html#aa529cf8a86cd24c140d7152753f8e521":[1,0,77,15],
 "d7/d8c/classDialogTrueDarts.html#aa76e7d409c327e2b5a8c755313512962":[1,0,77,17],
 "d7/d8c/classDialogTrueDarts.html#ab6e4fff33bf5e572d16209a2e78f757a":[1,0,77,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX31 =
 "d7/de8/dxfdef_8h.html#a76a334d2cdefeb4fca03969a8d1acbe8ad73325cdb1cb4f9a1ed11bdab879321d":[2,0,0,1,4,1,0,0],
 "d7/de8/dxfdef_8h.html#ace496644c3ff2b5994d5b3a2437064ff":[2,0,0,1,4,1,2],
 "d7/de8/dxfdef_8h_source.html":[2,0,0,1,4,1],
-"d7/dea/vtoolcutspline_8h.html":[2,0,0,1,13,1,0,2,1,0,5],
-"d7/dea/vtoolcutspline_8h_source.html":[2,0,0,1,13,1,0,2,1,0,5],
-"d7/deb/classCalculatorUtil.html":[1,0,23]
+"d7/dea/vtoolcutspline_8h.html":[2,0,0,1,13,1,0,2,1,0,5]
 };

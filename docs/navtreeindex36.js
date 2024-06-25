@@ -1,5 +1,7 @@
 var NAVTREEINDEX36 =
 {
+"d8/dba/classVAbstractPattern.html#af411279aac4c763979d5dfab59465538":[1,0,238,60],
+"d8/dba/classVAbstractPattern.html#af41a02351134bc71ec7453adbb4ba669":[1,0,238,305],
 "d8/dba/classVAbstractPattern.html#af6d4f4bc63329ac5cc5d15d876955b7a":[1,0,238,217],
 "d8/dba/classVAbstractPattern.html#af74aecba2ced4e8ebf002a5c12e1861c":[1,0,238,146],
 "d8/dba/classVAbstractPattern.html#af79005b7f4c156b5c33ec55acb92d957":[1,0,238,96],
@@ -247,7 +249,5 @@ var NAVTREEINDEX36 =
 "d9/d22/classDelTool.html#aceecdec08bfa8c7a150c45ddebcf05c7":[1,0,35,6],
 "d9/d23/seamlymepreferencesconfigurationpage_8cpp.html":[2,0,0,0,1,0,0,0],
 "d9/d23/seamlymepreferencesconfigurationpage_8cpp_source.html":[2,0,0,0,1,0,0,0],
-"d9/d26/qxtcsvmodel_8cpp.html":[2,0,0,1,8,11],
-"d9/d26/qxtcsvmodel_8cpp.html#a506f1d83f188b625349e541ae3ac4cea":[2,0,0,1,8,11,1],
-"d9/d26/qxtcsvmodel_8cpp_source.html":[2,0,0,1,8,11]
+"d9/d26/qxtcsvmodel_8cpp.html":[2,0,0,1,8,11]
 };

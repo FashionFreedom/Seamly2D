@@ -1,5 +1,7 @@
 var NAVTREEINDEX48 =
 {
+"dc/d10/classDialogCurveIntersectAxis.html#a16899054bd5536f0ac5a8d9bf5127b0e":[1,0,44,4],
+"dc/d10/classDialogCurveIntersectAxis.html#a2af75909a181cb0c5afaff534ede501f":[1,0,44,24],
 "dc/d10/classDialogCurveIntersectAxis.html#a2d219face234d414d4d7f9c08d13bd3e":[1,0,44,29],
 "dc/d10/classDialogCurveIntersectAxis.html#a353ab9c9c41a48013e08c3679aa150ab":[1,0,44,5],
 "dc/d10/classDialogCurveIntersectAxis.html#a3659f6dea879cb7cacbbbf1ddead8d98":[1,0,44,20],
@@ -247,7 +249,5 @@ var NAVTREEINDEX48 =
 "dc/d3e/classVCommandLine.html#acf399129df57be33455533399a0107a6":[1,0,251,27],
 "dc/d3e/classVCommandLine.html#ad503fbc8dd0ee22648cb1e979313b33a":[1,0,251,0],
 "dc/d3e/classVCommandLine.html#add2cbe8d5202f1fd283363bca5e22190":[1,0,251,10],
-"dc/d3e/classVCommandLine.html#ae56e17de2eb6926e72c8617b2c79b298":[1,0,251,8],
-"dc/d3e/classVCommandLine.html#ae9ad6d8619fb7d02f335df04eb305107":[1,0,251,19],
-"dc/d3e/classVCommandLine.html#af6fad6ad5512d4987d84f919abda02b7":[1,0,251,11]
+"dc/d3e/classVCommandLine.html#ae56e17de2eb6926e72c8617b2c79b298":[1,0,251,8]
 };

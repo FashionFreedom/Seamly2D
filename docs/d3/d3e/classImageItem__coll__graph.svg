@@ -64,16 +64,16 @@ var sectionId = 'dynsection-1';
 <polyline fill="none" stroke="black" points="217.36,-401.5 378.36,-401.5 "/>
 <text text-anchor="start" x="225.36" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ maxImageZvalue</text>
 <text text-anchor="start" x="225.36" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_offset</text>
-<text text-anchor="start" x="225.36" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_boundingRect</text>
-<text text-anchor="start" x="225.36" y="-356.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_handleRect</text>
-<text text-anchor="start" x="225.36" y="-345.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_actualRect</text>
-<text text-anchor="start" x="225.36" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_resizePosition</text>
-<text text-anchor="start" x="225.36" y="-323.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_rotateLine</text>
-<text text-anchor="start" x="225.36" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_angleHandle</text>
-<text text-anchor="start" x="225.36" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_angle</text>
-<text text-anchor="start" x="225.36" y="-290.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_mousePressed</text>
-<text text-anchor="start" x="225.36" y="-279.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_isHovered</text>
-<text text-anchor="start" x="225.36" y="-268.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
+<text text-anchor="start" x="225.36" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_origin</text>
+<text text-anchor="start" x="225.36" y="-356.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_boundingRect</text>
+<text text-anchor="start" x="225.36" y="-345.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_handleRect</text>
+<text text-anchor="start" x="225.36" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_actualRect</text>
+<text text-anchor="start" x="225.36" y="-323.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_resizePosition</text>
+<text text-anchor="start" x="225.36" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_rotateLine</text>
+<text text-anchor="start" x="225.36" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_angleHandle</text>
+<text text-anchor="start" x="225.36" y="-290.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_angle</text>
+<text text-anchor="start" x="225.36" y="-279.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_mousePressed</text>
+<text text-anchor="start" x="225.36" y="-268.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
 <polyline fill="none" stroke="black" points="217.36,-261.5 378.36,-261.5 "/>
 <text text-anchor="start" x="225.36" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ImageItem()</text>
 <text text-anchor="start" x="225.36" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~ImageItem()</text>
@@ -85,7 +85,7 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="225.36" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ moveUp()</text>
 <text text-anchor="start" x="225.36" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ moveDown()</text>
 <text text-anchor="start" x="225.36" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getImage()</text>
-<text text-anchor="start" x="225.36" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
+<text text-anchor="start" x="225.36" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
 <text text-anchor="start" x="225.36" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverEnterEvent()</text>
 <text text-anchor="start" x="225.36" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverMoveEvent()</text>
 <text text-anchor="start" x="225.36" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverLeaveEvent()</text>
@@ -279,12 +279,12 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="260.86" y="-901.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ filename</text>
 <text text-anchor="start" x="260.86" y="-890.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ pixmap</text>
 <text text-anchor="start" x="260.86" y="-879.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ locked</text>
-<text text-anchor="start" x="260.86" y="-868.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ origin</text>
-<text text-anchor="start" x="260.86" y="-857.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ anchor</text>
-<text text-anchor="start" x="260.86" y="-846.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ xPos</text>
-<text text-anchor="start" x="260.86" y="-835.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ yPos</text>
-<text text-anchor="start" x="260.86" y="-824.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ width</text>
-<text text-anchor="start" x="260.86" y="-813.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 9 more...</text>
+<text text-anchor="start" x="260.86" y="-868.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ xOrigin</text>
+<text text-anchor="start" x="260.86" y="-857.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ yOrigin</text>
+<text text-anchor="start" x="260.86" y="-846.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ anchor</text>
+<text text-anchor="start" x="260.86" y="-835.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ xPos</text>
+<text text-anchor="start" x="260.86" y="-824.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ yPos</text>
+<text text-anchor="start" x="260.86" y="-813.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 10 more...</text>
 <polyline fill="none" stroke="black" points="252.86,-806.5 342.86,-806.5 "/>
 <text text-anchor="start" x="260.86" y="-794.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DraftImage()</text>
 </a>

@@ -1,5 +1,7 @@
 var NAVTREEINDEX53 =
 {
+"dd/d41/editgroup__dialog_8cpp.html":[2,0,0,1,13,0,1,71],
+"dd/d41/editgroup__dialog_8cpp_source.html":[2,0,0,1,13,0,1,71],
 "dd/d43/dialogundo_8cpp.html":[2,0,0,1,13,0,0,0],
 "dd/d43/dialogundo_8cpp_source.html":[2,0,0,1,13,0,0,0],
 "dd/d44/classVSeamlyMeSettings.html":[1,0,383],
@@ -247,7 +249,5 @@ var NAVTREEINDEX53 =
 "dd/db0/namespaceQT__WARNING__POP.html#a4ae7c3935926cc7368e77120e031e369":[0,0,20,6],
 "dd/db0/namespaceQT__WARNING__POP.html#a4cd01162be10b9883de62bd8b8563c19":[0,0,20,24],
 "dd/db0/namespaceQT__WARNING__POP.html#a4d92301e6d64e2f90c125187f579e8b7":[0,0,20,20],
-"dd/db0/namespaceQT__WARNING__POP.html#a517f1b59f7e127ce69a3f634c2b73ea9":[0,0,20,12],
-"dd/db0/namespaceQT__WARNING__POP.html#a532e873910f7322e9a2fde0a3be192f2":[0,0,20,38],
-"dd/db0/namespaceQT__WARNING__POP.html#a5736c077b3b3069a8f171feceae4310f":[0,0,20,50]
+"dd/db0/namespaceQT__WARNING__POP.html#a517f1b59f7e127ce69a3f634c2b73ea9":[0,0,20,12]
 };

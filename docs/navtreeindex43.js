@@ -1,5 +1,7 @@
 var NAVTREEINDEX43 =
 {
+"da/de3/classVisToolPointOfIntersectionArcs.html#abfce9669c817395dfc349bd0b6a83052":[1,0,325,11],
+"da/de3/classVisToolPointOfIntersectionArcs.html#ad0de1f168601a1e4080c2f1601a26ff6":[1,0,325,4],
 "da/de3/classVisToolPointOfIntersectionArcs.html#ad71403b71b3b946adb6eec9dd5727b27":[1,0,325,8],
 "da/de3/classVisToolPointOfIntersectionArcs.html#ade3b48ba1f3180990db62c56c29ca45a":[1,0,325,5],
 "da/de3/classVisToolPointOfIntersectionArcs.html#ae26262103e629c79c5b84d9853020b86":[1,0,325,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX43 =
 "db/d28/vsettings_8cpp.html#afe08e293ff54709b6b3afa9992665100":[2,0,0,1,8,23,0],
 "db/d28/vsettings_8cpp_source.html":[2,0,0,1,8,23],
 "db/d29/vpropertydelegate_8cpp.html":[2,0,0,1,11,11],
-"db/d29/vpropertydelegate_8cpp_source.html":[2,0,0,1,11,11],
-"db/d30/vlinecolorproperty_8h.html":[2,0,0,1,11,0,24],
-"db/d30/vlinecolorproperty_8h_source.html":[2,0,0,1,11,0,24]
+"db/d29/vpropertydelegate_8cpp_source.html":[2,0,0,1,11,11]
 };
