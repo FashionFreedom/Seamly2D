@@ -68,7 +68,7 @@ public:
     QString GetOrientation() const;
     void    SetOrientation(const QString &val);
 
-    QString GetRotationWay() const;
+    QString getRotationWay() const;
     void    SetRotationWay(const QString &val);
 
     QString GetTilt() const;

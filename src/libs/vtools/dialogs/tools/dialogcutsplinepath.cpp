@@ -135,12 +135,12 @@ void DialogCutSplinePath::SetPointName(const QString &value)
 // @param value name
 void DialogCutSplinePath::setDirection(const QString &value)
 {
-    ChangeCurrentData(ui->direction_ComboBox, value);
+    changeCurrentData(ui->direction_ComboBox, value);
 }
 
 QString DialogCutSplinePath::getDirection() const
 {
-    return GetComboBoxCurrentData(ui->direction_ComboBox, "forward");
+    return getComboBoxCurrentData(ui->direction_ComboBox, "forward");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -273,7 +273,7 @@ quint32 DialogCutSplinePath::getSplinePathId() const
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogCutSplinePath::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -282,5 +282,5 @@ QString DialogCutSplinePath::getLineColor() const
 //---------------------------------------------------------------------------------------------------------------------
 void DialogCutSplinePath::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }

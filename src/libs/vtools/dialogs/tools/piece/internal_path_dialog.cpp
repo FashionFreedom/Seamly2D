@@ -1062,28 +1062,28 @@ void InternalPathDialog::setType(PiecePathType type)
 /// @return line color
  QString InternalPathDialog::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 /// @brief setLineColor set color of the line
 /// @param value type
 void InternalPathDialog::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 /// @brief getLineType get the type of line
 /// @param linetype as a QT::Penstyle
 Qt::PenStyle InternalPathDialog::getLineType() const
 {
-    return lineTypeToPenStyle(GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine));
+    return lineTypeToPenStyle(getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine));
 }
 
 /// @brief setLineType set type of the line
 /// @param value linetype
 void InternalPathDialog::setLineType(const Qt::PenStyle &type)
 {
-    ChangeCurrentData(ui->lineType_ComboBox, PenStyleToLineType(type));
+    changeCurrentData(ui->lineType_ComboBox, PenStyleToLineType(type));
     vis->setLineStyle(type);
 }
 
@@ -1091,14 +1091,14 @@ void InternalPathDialog::setLineType(const Qt::PenStyle &type)
 /// @return lineweight
 QString InternalPathDialog::getLineWeight() const
 {
-        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "1.00");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "1.00");
 }
 
 /// @brief setLineWeight set weight of the lines
 /// @param value type
 void InternalPathDialog::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    changeCurrentData(ui->lineWeight_ComboBox, value);
     vis->setLineWeight(value);
 }
 

@@ -315,7 +315,7 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
     ui->letter_LineEdit->setText(m_oldData.GetLetter());
     ui->annotation_LineEdit->setText(m_oldData.GetAnnotation());
     ui->orientation_ComboBox->setCurrentText(m_oldData.GetOrientation());
-    ui->rotation_ComboBox->setCurrentText(m_oldData.GetRotationWay());
+    ui->rotation_ComboBox->setCurrentText(m_oldData.getRotationWay());
     ui->tilt_ComboBox->setCurrentText(m_oldData.GetTilt());
     ui->foldPosition_ComboBox->setCurrentText(m_oldData.GetFoldPosition());
 
@@ -331,7 +331,7 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
     changeCurrentData(ui->pieceLabelBottomRightAnchor_ComboBox, m_oldData.bottomRightAnchorPoint());
     setPieceLabelWidth(m_oldData.GetLabelWidth());
     setPieceLabelHeight(m_oldData.GetLabelHeight());
-    setPieceLabelAngle(m_oldData.GetRotation());
+    setPieceLabelAngle(m_oldData.getRotation());
 
     m_oldGeom = piece.GetPatternInfo();
     ui->patternLabel_GroupBox->setChecked(m_oldGeom.IsVisible());
@@ -340,15 +340,15 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
     changeCurrentData(ui->patternLabelBottomRightAnchor_ComboBox, m_oldGeom.bottomRightAnchorPoint());
     setPatternLabelWidth(m_oldGeom.GetLabelWidth());
     setPatternLabelHeight(m_oldGeom.GetLabelHeight());
-    setPatternLabelAngle(m_oldGeom.GetRotation());
+    setPatternLabelAngle(m_oldGeom.getRotation());
 
     m_oldGrainline = piece.GetGrainlineGeometry();
     ui->grainline_GroupBox->setChecked(m_oldGrainline.IsVisible());
     changeCurrentData(ui->grainlineCenterAnchor_ComboBox, m_oldGrainline.centerAnchorPoint());
     changeCurrentData(ui->grainlineTopAnchor_ComboBox, m_oldGrainline.topAnchorPoint());
     changeCurrentData(ui->grainlineBottomAnchor_ComboBox, m_oldGrainline.bottomAnchorPoint());
-    setGrainlineAngle(m_oldGrainline.GetRotation());
-    setGrainlineLength(m_oldGrainline.GetLength());
+    setGrainlineAngle(m_oldGrainline.getRotation());
+    setGrainlineLength(m_oldGrainline.getLength());
 
     validateObjects(isMainPathValid());
     enabledGrainline();

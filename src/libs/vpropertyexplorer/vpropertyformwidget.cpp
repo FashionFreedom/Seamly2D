@@ -173,14 +173,14 @@ void VPE::VPropertyFormWidget::buildEditor(VProperty* property, QFormLayout* for
     {
         //QLabel *label = new QLabel("<b>"+property->getName()+"</b>");
         QLabel *label = new QLabel(property->getName());
-        label->setMinimumWidth(80);
+        label->setMinimumWidth(90);
         label->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         formLayout->addRow(label, tmpEditor);
     }
     else if (type == Property::Label)
     {
         QLabel *label = new QLabel("<b>"+property->getName()+"</b>");
-        label->setMinimumWidth(80);
+        label->setMinimumWidth(90);
         label->setAlignment(Qt::AlignLeft);
         formLayout->addRow(label, tmpEditor);
         formLayout->setLabelAlignment(Qt::AlignLeft);
@@ -188,7 +188,7 @@ void VPE::VPropertyFormWidget::buildEditor(VProperty* property, QFormLayout* for
     else
     {
         QLabel *label = new QLabel(property->getName());
-        label->setMinimumWidth(80);
+        label->setMinimumWidth(90);
         label->setAlignment(Qt::AlignRight);
         formLayout->addRow(label, tmpEditor);
         formLayout->setFormAlignment(Qt::AlignTop);

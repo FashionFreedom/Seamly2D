@@ -86,7 +86,7 @@ public:
     QString        GetF2() const;
     void           SetF2(const QString &value);
 
-    QString        GetRotationAngle() const;
+    QString        getRotationAngle() const;
     void           SetRotationAngle(const QString &value);
 
     QString        getPenStyle() const;

@@ -704,7 +704,7 @@ void VLayoutGenerator::SetAutoCrop(bool value)
 
 //---------------------------------------------------------------------------------------------------------------------
 // cppcheck-suppress unusedFunction
-int VLayoutGenerator::GetRotationIncrease() const
+int VLayoutGenerator::getRotationIncrease() const
 {
     return m_rotationIncrement;
 }

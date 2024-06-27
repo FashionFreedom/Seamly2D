@@ -100,7 +100,7 @@
           </font>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="about_tab">
           <attribute name="title">
@@ -353,7 +353,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>CPU:</string>
+                  <string notr="true">CPU:</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -734,7 +734,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>CPU:</string>
+                       <string notr="true">CPU:</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -859,7 +859,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>CPU:</string>
+                       <string notr="true">CPU:</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -906,7 +906,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>OS:</string>
+                       <string notr="true">OS:</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

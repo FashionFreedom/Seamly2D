@@ -82,7 +82,7 @@ public:
 
     QString         GetFormulaRotationAngle () const;
     void            SetFormulaRotationAngle (const QString &formula, qreal value);
-    qreal           GetRotationAngle() const;
+    qreal           getRotationAngle() const;
 
     QString         GetFormulaRadius1 () const;
     void            SetFormulaRadius1 (const QString &formula, qreal value);

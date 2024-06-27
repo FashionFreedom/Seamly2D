@@ -137,7 +137,7 @@ VToolEllipticalArc* VToolEllipticalArc::Create(QSharedPointer<DialogTool> dialog
     QString radius2          = dialogTool->GetRadius2();
     QString f1               = dialogTool->GetF1();
     QString f2               = dialogTool->GetF2();
-    QString rotationAngle    = dialogTool->GetRotationAngle();
+    QString rotationAngle    = dialogTool->getRotationAngle();
     const QString color      = dialogTool->getLineColor();
     const QString penStyle   = dialogTool->getPenStyle();
     const QString lineWeight = dialogTool->getLineWeight();
@@ -440,7 +440,7 @@ void VToolEllipticalArc::SaveDialog(QDomElement &domElement)
     doc->SetAttribute(domElement, AttrRadius2,       dialogTool->GetRadius2());
     doc->SetAttribute(domElement, AttrAngle1,        dialogTool->GetF1());
     doc->SetAttribute(domElement, AttrAngle2,        dialogTool->GetF2());
-    doc->SetAttribute(domElement, AttrRotationAngle, dialogTool->GetRotationAngle());
+    doc->SetAttribute(domElement, AttrRotationAngle, dialogTool->getRotationAngle());
     doc->SetAttribute(domElement, AttrColor,         dialogTool->getLineColor());
     doc->SetAttribute(domElement, AttrPenStyle,      dialogTool->getPenStyle());
     doc->SetAttribute(domElement, AttrLineWeight,    dialogTool->getLineWeight());

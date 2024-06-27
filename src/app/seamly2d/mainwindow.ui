@@ -2377,8 +2377,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>120</width>
-              <height>82</height>
+              <width>98</width>
+              <height>28</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2511,8 +2511,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>120</width>
-              <height>82</height>
+              <width>100</width>
+              <height>54</height>
              </rect>
             </property>
             <attribute name="icon">
@@ -2915,7 +2915,7 @@
     <string>Add Objects to Group (G)</string>
    </property>
    <property name="shortcut">
-    <string>G</string>
+    <string notr="true">G</string>
    </property>
   </action>
   <action name="rotation_Action">
@@ -2936,7 +2936,7 @@
     <string>Rotate Selected Objects (R)</string>
    </property>
    <property name="shortcut">
-    <string>R</string>
+    <string notr="true">R</string>
    </property>
   </action>
   <action name="mirrorByLine_Action">
@@ -2954,7 +2954,7 @@
     <string>Mirror Objects by Line (M, L)</string>
    </property>
    <property name="shortcut">
-    <string>M, L</string>
+    <string notr="true">M, L</string>
    </property>
   </action>
   <action name="mirrorByAxis_Action">
@@ -2972,7 +2972,7 @@
     <string>Mirror Objects by Axis (M, A)</string>
    </property>
    <property name="shortcut">
-    <string>M, A</string>
+    <string notr="true">M, A</string>
    </property>
   </action>
   <action name="move_Action">
@@ -2990,7 +2990,7 @@
     <string>Move Objects (Alt+M)</string>
    </property>
    <property name="shortcut">
-    <string>Alt+M</string>
+    <string notr="true">Alt+M</string>
    </property>
   </action>
   <action name="trueDarts_Action">
@@ -3008,7 +3008,7 @@
     <string>True Darts (T, D)</string>
    </property>
    <property name="shortcut">
-    <string>T, D</string>
+    <string notr="true">T, D</string>
    </property>
   </action>
   <action name="ellipticalArc_Action">
@@ -3029,7 +3029,7 @@
     <string>Arc - Elliptical (Alt+E)</string>
    </property>
    <property name="shortcut">
-    <string>Alt+E</string>
+    <string notr="true">Alt+E</string>
    </property>
   </action>
   <action name="midpoint_Action">
@@ -3047,7 +3047,7 @@
     <string>Point - Midpoint on Line (Shift+O, Shift+L)</string>
    </property>
    <property name="shortcut">
-    <string>Shift+O, Shift+L</string>
+    <string notr="true">Shift+O, Shift+L</string>
    </property>
   </action>
   <action name="pointAlongLine_Action">
@@ -3065,7 +3065,7 @@
     <string>Point - On Line (O, L)</string>
    </property>
    <property name="shortcut">
-    <string>O, L</string>
+    <string notr="true">O, L</string>
    </property>
   </action>
   <action name="pointAtDistanceAngle_Action">
@@ -3086,7 +3086,7 @@
     <string>Point - Length and Angle (L, A)</string>
    </property>
    <property name="shortcut">
-    <string>L, A</string>
+    <string notr="true">L, A</string>
    </property>
   </action>
   <action name="pointAlongPerpendicular_Action">
@@ -3104,7 +3104,7 @@
     <string>Point - On Perpendicular (O, P)</string>
    </property>
    <property name="shortcut">
-    <string>O, P</string>
+    <string notr="true">O, P</string>
    </property>
   </action>
   <action name="bisector_Action">
@@ -3122,7 +3122,7 @@
     <string>Point - On Bisector (O, B)</string>
    </property>
    <property name="shortcut">
-    <string>O, B</string>
+    <string notr="true">O, B</string>
    </property>
   </action>
   <action name="pointOnShoulder_Action">
@@ -3140,7 +3140,7 @@
     <string>Point - Length to Line (P, S)</string>
    </property>
    <property name="shortcut">
-    <string>P, S</string>
+    <string notr="true">P, S</string>
    </property>
   </action>
   <action name="pointOfContact_Action">
@@ -3158,7 +3158,7 @@
     <string>Point - Intersect Arc and Line (A, L)</string>
    </property>
    <property name="shortcut">
-    <string>A, L</string>
+    <string notr="true">A, L</string>
    </property>
   </action>
   <action name="triangle_Action">
@@ -3176,7 +3176,7 @@
     <string>Point - Intersect Axis and Triangle (X, T)</string>
    </property>
    <property name="shortcut">
-    <string>X, T</string>
+    <string notr="true">X, T</string>
    </property>
   </action>
   <action name="pointIntersectXY_Action">
@@ -3194,7 +3194,7 @@
     <string>Point - Intersect XY (X, Y)</string>
    </property>
    <property name="shortcut">
-    <string>X, Y</string>
+    <string notr="true">X, Y</string>
    </property>
   </action>
   <action name="perpendicularPoint_Action">
@@ -3212,7 +3212,7 @@
     <string>Point - Intersect Line and Perpendicular (L, P)</string>
    </property>
    <property name="shortcut">
-    <string>L, P</string>
+    <string notr="true">L, P</string>
    </property>
   </action>
   <action name="pointIntersectAxis_Action">
@@ -3230,7 +3230,7 @@
     <string>Point - Intersect Line and Axis (L, X)</string>
    </property>
    <property name="shortcut">
-    <string>L, X</string>
+    <string notr="true">L, X</string>
    </property>
   </action>
   <action name="lineIntersect_Action">
@@ -3248,7 +3248,7 @@
     <string>Point - Intersect Lines (I, L)</string>
    </property>
    <property name="shortcut">
-    <string>I, L</string>
+    <string notr="true">I, L</string>
    </property>
   </action>
   <action name="curve_Action">
@@ -3266,7 +3266,7 @@
     <string>Curve - Interactive (Alt+C)</string>
    </property>
    <property name="shortcut">
-    <string>Alt+C</string>
+    <string notr="true">Alt+C</string>
    </property>
   </action>
   <action name="pointAlongCurve_Action">
@@ -3284,7 +3284,7 @@
     <string>Point on Curve (O, C)</string>
    </property>
    <property name="shortcut">
-    <string>O, C</string>
+    <string notr="true">O, C</string>
    </property>
   </action>
   <action name="curveWithCPs_Action">
@@ -3302,7 +3302,7 @@
     <string>Curve - Fixed (Alt+Shift+C)</string>
    </property>
    <property name="shortcut">
-    <string>Alt+Shift+C</string>
+    <string notr="true">Alt+Shift+C</string>
    </property>
   </action>
   <action name="spline_Action">
@@ -3320,7 +3320,7 @@
     <string>Spline - Interactive (Alt+S)</string>
    </property>
    <property name="shortcut">
-    <string>Alt+S</string>
+    <string notr="true">Alt+S</string>
    </property>
   </action>
   <action name="pointAlongSpline_Action">
@@ -3338,7 +3338,7 @@
     <string>Point on Spline (O, S)</string>
    </property>
    <property name="shortcut">
-    <string>O, S</string>
+    <string notr="true">O, S</string>
    </property>
   </action>
   <action name="splineWithCPs_Action">
@@ -3356,7 +3356,7 @@
     <string>Spline - Fixed (Alt+Shift+S)</string>
    </property>
    <property name="shortcut">
-    <string>Alt+Shift+S</string>
+    <string notr="true">Alt+Shift+S</string>
    </property>
   </action>
   <action name="curveIntersectCurve_Action">
@@ -3377,7 +3377,7 @@
     <string>Point - Intersect Curves (I, C)</string>
    </property>
    <property name="shortcut">
-    <string>I, C</string>
+    <string notr="true">I, C</string>
    </property>
   </action>
   <action name="splineIntersectAxis_Action">
@@ -3398,7 +3398,7 @@
     <string>Point - Intersect Curve and Axis (C, X)</string>
    </property>
    <property name="shortcut">
-    <string>C, X</string>
+    <string notr="true">C, X</string>
    </property>
   </action>
   <action name="arcTool_Action">
@@ -3419,7 +3419,7 @@
     <string>Arc - Radius and Angles (Alt+A)</string>
    </property>
    <property name="shortcut">
-    <string>Alt+A</string>
+    <string notr="true">Alt+A</string>
    </property>
   </action>
   <action name="pointAlongArc_Action">
@@ -3437,7 +3437,7 @@
     <string>Point on Arc (O, A)</string>
    </property>
    <property name="shortcut">
-    <string>O, A</string>
+    <string notr="true">O, A</string>
    </property>
   </action>
   <action name="arcIntersectAxis_Action">
@@ -3455,7 +3455,7 @@
     <string>Intersect Arc and Axis (A, X)</string>
    </property>
    <property name="shortcut">
-    <string>A, X</string>
+    <string notr="true">A, X</string>
    </property>
   </action>
   <action name="arcIntersectArc_Action">
@@ -3473,7 +3473,7 @@
     <string>Intersect Arcs (I, A)</string>
    </property>
    <property name="shortcut">
-    <string>I, A</string>
+    <string notr="true">I, A</string>
    </property>
   </action>
   <action name="circleIntersect_Action">
@@ -3491,7 +3491,7 @@
     <string>Intersect Circles (Shift+I, Shift+C)</string>
    </property>
    <property name="shortcut">
-    <string>Shift+I, Shift+C</string>
+    <string notr="true">Shift+I, Shift+C</string>
    </property>
   </action>
   <action name="circleTangent_Action">
@@ -3509,7 +3509,7 @@
     <string>Intersect Circle and Tangent (C, T)</string>
    </property>
    <property name="shortcut">
-    <string>C, T</string>
+    <string notr="true">C, T</string>
    </property>
   </action>
   <action name="arcTangent_Action">
@@ -3527,7 +3527,7 @@
     <string>Intersect Arc and Tangent (A, T)</string>
    </property>
    <property name="shortcut">
-    <string>A, T</string>
+    <string notr="true">A, T</string>
    </property>
   </action>
   <action name="arcWithLength_Action">
@@ -3548,7 +3548,7 @@
     <string>Arc - Radius and Length (Alt+Shift+A)</string>
    </property>
    <property name="shortcut">
-    <string>Alt+Shift+A</string>
+    <string notr="true">Alt+Shift+A</string>
    </property>
   </action>
   <action name="aboutQt_Action">
@@ -3572,6 +3572,9 @@
    </property>
    <property name="toolTip">
     <string>About Seamly2D</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
    </property>
    <property name="menuRole">
     <enum>QAction::AboutRole</enum>
@@ -3768,7 +3771,7 @@
     <string>Shortcuts</string>
    </property>
    <property name="shortcut">
-    <string>K</string>
+    <string notr="true">K</string>
    </property>
   </action>
   <action name="lastTool_Action">
@@ -4024,6 +4027,9 @@
    <property name="text">
     <string>Forum</string>
    </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
    </property>
@@ -4033,7 +4039,7 @@
     <string>Export Variables to CSV</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+E</string>
+    <string notr="true">Ctrl+E</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -4066,6 +4072,9 @@
   <action name="labelTemplateEditor_Action">
    <property name="text">
     <string>Label Template Editor...</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
    </property>
   </action>
   <action name="zoomToPrevious_Action">
@@ -4140,7 +4149,7 @@
     <string>Zoom 100%</string>
    </property>
    <property name="iconText">
-    <string>100%</string>
+    <string notr="true">100%</string>
    </property>
    <property name="toolTip">
     <string>Zoom to 100 percent (Ctrl+0)</string>
@@ -4163,6 +4172,9 @@
    <property name="toolTip">
     <string>Point Tools</string>
    </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
   </action>
   <action name="lines_Action">
    <property name="enabled">
@@ -4177,6 +4189,9 @@
    </property>
    <property name="toolTip">
     <string>Line Tools</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
    </property>
   </action>
   <action name="lineTool_Action">
@@ -4211,6 +4226,9 @@
    <property name="toolTip">
     <string>Curve Tools</string>
    </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
   </action>
   <action name="arcs_Action">
    <property name="enabled">
@@ -4225,6 +4243,9 @@
    </property>
    <property name="toolTip">
     <string>Arc Tools</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
    </property>
   </action>
   <action name="modifications_Action">
@@ -4241,6 +4262,9 @@
    <property name="toolTip">
     <string>Operations Tools</string>
    </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
   </action>
   <action name="layout_Action">
    <property name="enabled">
@@ -4256,6 +4280,9 @@
    <property name="toolTip">
     <string>Layout Tools</string>
    </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
   </action>
   <action name="pieces_Action">
    <property name="enabled">
@@ -4270,6 +4297,9 @@
    </property>
    <property name="toolTip">
     <string>Piece tools</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
    </property>
   </action>
   <action name="addPiece_Action">
@@ -4287,7 +4317,7 @@
     <string>Add New Pattern Piece (N, P)</string>
    </property>
    <property name="shortcut">
-    <string>N, P</string>
+    <string notr="true">N, P</string>
    </property>
   </action>
   <action name="newPrintLayout_Action">
@@ -4305,7 +4335,7 @@
     <string>Create New Print Layout (N, L)</string>
    </property>
    <property name="shortcut">
-    <string>N, L</string>
+    <string notr="true">N, L</string>
    </property>
   </action>
   <action name="exportLayout_Action">
@@ -4323,7 +4353,7 @@
     <string>Export Layout (E, L)</string>
    </property>
    <property name="shortcut">
-    <string>E, L</string>
+    <string notr="true">E, L</string>
    </property>
   </action>
   <action name="anchorPoint_Action">
@@ -4341,7 +4371,7 @@
     <string>Add Anchor Point (A, P)</string>
    </property>
    <property name="shortcut">
-    <string>A, P</string>
+    <string notr="true">A, P</string>
    </property>
   </action>
   <action name="internalPath_Action">
@@ -4359,7 +4389,7 @@
     <string>Add Internal Path (I, P)</string>
    </property>
    <property name="shortcut">
-    <string>I, P</string>
+    <string notr="true">I, P</string>
    </property>
   </action>
   <action name="insertNodes_Action">
@@ -4377,7 +4407,7 @@
     <string>Insert Nodes (I, N)</string>
    </property>
    <property name="shortcut">
-    <string>I, N</string>
+    <string notr="true">I, N</string>
    </property>
   </action>
   <action name="union_Action">
@@ -4392,7 +4422,7 @@
     <string>Unite 2 Pieces (U)</string>
    </property>
    <property name="shortcut">
-    <string>U</string>
+    <string notr="true">U</string>
    </property>
   </action>
   <action name="exportPieces_Action">
@@ -4410,7 +4440,7 @@
     <string>Export Pieces (E, P)</string>
    </property>
    <property name="shortcut">
-    <string>E, P</string>
+    <string notr="true">E, P</string>
    </property>
   </action>
   <action name="details_Action">
@@ -4426,6 +4456,9 @@
    </property>
    <property name="toolTip">
     <string>Detail tools</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
    </property>
   </action>
   <action name="showPointNames_Action">
@@ -4449,7 +4482,7 @@
     <string>Toggle Point Name Text (V, P)</string>
    </property>
    <property name="shortcut">
-    <string>V, P</string>
+    <string notr="true">V, P</string>
    </property>
   </action>
   <action name="increaseSize_Action">
@@ -4467,7 +4500,7 @@
     <string>Increase Text Size (Ctrl+])</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+]</string>
+    <string notr="true">Ctrl+]</string>
    </property>
   </action>
   <action name="decreaseSize_Action">
@@ -4485,7 +4518,7 @@
     <string>Decrease Text Size (Ctrl+[)</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+[</string>
+    <string notr="true">Ctrl+[</string>
    </property>
   </action>
   <action name="useToolColor_Action">
@@ -4509,7 +4542,7 @@
     <string>Use Tool Color (T)</string>
    </property>
    <property name="shortcut">
-    <string>V, T</string>
+    <string notr="true">V, T</string>
    </property>
   </action>
   <action name="toggleAxisOrigin_Action">
@@ -4533,7 +4566,7 @@
     <string>Toggle Axis Origin (V, A)</string>
    </property>
    <property name="shortcut">
-    <string>V, A</string>
+    <string notr="true">V, A</string>
    </property>
   </action>
   <action name="toggleWireframe_Action">
@@ -4554,7 +4587,7 @@
     <string>Toggle Wireframe Mode (V, W)</string>
    </property>
    <property name="shortcut">
-    <string>V, W</string>
+    <string notr="true">V, W</string>
    </property>
   </action>
   <action name="toggleGrainLines_Action">
@@ -4575,7 +4608,7 @@
     <string>Toggle Grainlines (V, G)</string>
    </property>
    <property name="shortcut">
-    <string>V, G</string>
+    <string notr="true">V, G</string>
    </property>
   </action>
   <action name="toggleLabels_Action">
@@ -4596,7 +4629,7 @@
     <string>Toggle Labels (V, L)</string>
    </property>
    <property name="shortcut">
-    <string>V, L</string>
+    <string notr="true">V, L</string>
    </property>
   </action>
   <action name="calculator_Action">
@@ -4608,7 +4641,7 @@
     <string>Calculator</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+Shift+C</string>
+    <string notr="true">Ctrl+Shift+C</string>
    </property>
   </action>
   <action name="decimalChart_Action">
@@ -4620,7 +4653,7 @@
     <string>Decimal Chart</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+Shift+D</string>
+    <string notr="true">Ctrl+Shift+D</string>
    </property>
   </action>
   <action name="exportDraftBlocks_Action">
@@ -4638,7 +4671,7 @@
     <string>Export Draft Blocks (E, D)</string>
    </property>
    <property name="shortcut">
-    <string>E, D</string>
+    <string notr="true">E, D</string>
    </property>
   </action>
   <action name="actionExport">
@@ -4656,6 +4689,9 @@
    </property>
    <property name="text">
     <string>Images tools</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
    </property>
   </action>
   <action name="deleteImage_Action">
@@ -4703,7 +4739,7 @@
     <string>Seam Allowance</string>
    </property>
    <property name="shortcut">
-    <string>V, S</string>
+    <string notr="true">V, S</string>
    </property>
   </action>
   <action name="documentInfo_Action">
@@ -4721,7 +4757,7 @@
     <string>Display document Info</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+I</string>
+    <string notr="true">Ctrl+I</string>
    </property>
   </action>
   <action name="zoomToPoint_Action">
@@ -4757,7 +4793,7 @@
     <string>Import Image (Alt + I)</string>
    </property>
    <property name="shortcut">
-    <string>Alt+I</string>
+    <string notr="true">Alt+I</string>
    </property>
   </action>
   <action name="previousDraftBlock_Action">

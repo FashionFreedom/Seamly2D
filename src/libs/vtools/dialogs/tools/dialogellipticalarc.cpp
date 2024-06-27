@@ -369,10 +369,10 @@ void DialogEllipticalArc::SetF2(const QString &value)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetRotationAngle return formula rotation angle of elliptical arc
+ * @brief getRotationAngle return formula rotation angle of elliptical arc
  * @return formula
  */
-QString DialogEllipticalArc::GetRotationAngle() const
+QString DialogEllipticalArc::getRotationAngle() const
 {
     return qApp->translateVariables()->TryFormulaFromUser(rotationAngle, qApp->Settings()->getOsSeparator());
 }
@@ -588,7 +588,7 @@ void DialogEllipticalArc::FXRotationAngle()
 {
     EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit rotation angle"));
-    dialog->SetFormula(GetRotationAngle());
+    dialog->SetFormula(getRotationAngle());
     dialog->setPostfix(degreeSymbol);
     if (dialog->exec() == QDialog::Accepted)
     {
@@ -747,7 +747,7 @@ void DialogEllipticalArc::pointNameChanged()
                            GetRadius2().toDouble(),
                            GetF1().toDouble(),
                            GetF2().toDouble(),
-                           GetRotationAngle().toDouble());
+                           getRotationAngle().toDouble());
 
         if (!data->IsUnique(arc.name()))
         {

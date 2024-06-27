@@ -251,13 +251,13 @@ void VLayoutPaper::SetRotate(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief GetRotationIncrease gets the rotation increment.
+/// @brief getRotationIncrease gets the rotation increment.
 ///
 /// This method gets the rotation increment.
 ///
 /// @returns int rotation increment.
 //---------------------------------------------------------------------------------------------------------------------
-int VLayoutPaper::GetRotationIncrease() const
+int VLayoutPaper::getRotationIncrease() const
 {
     return d->globalRotationIncrease;
 }
