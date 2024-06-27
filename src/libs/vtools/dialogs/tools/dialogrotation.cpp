@@ -103,6 +103,7 @@ DialogRotation::DialogRotation(const VContainer *data, const quint32 &toolId, QW
     setDialogPosition();
 
     ui->plainTextEditFormula->installEventFilter(this);
+    ui->plainTextEditFormula->setToolTip(makeAngleTooltip());
     ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix(qApp->Settings()->getRotateSuffix()));
 
     angleTimer = new QTimer(this);
@@ -138,7 +139,7 @@ quint32 DialogRotation::getOriginPointId() const
 //---------------------------------------------------------------------------------------------------------------------
 void DialogRotation::setOriginPointId(const quint32 &value)
 {
-    ChangeCurrentData(ui->rotation_ComboBox, value);
+    changeCurrentData(ui->rotation_ComboBox, value);
     VisToolRotation *operation = qobject_cast<VisToolRotation *>(vis);
     SCASSERT(operation != nullptr)
     operation->SetOriginPointId(value);
@@ -345,7 +346,7 @@ void DialogRotation::angleChanged()
 {
     labelEditFormula = ui->editAngle_Label;
     labelResultCalculation = ui->resultAngle_Label;
-    ValFormulaChanged(angleFlag, ui->plainTextEditFormula, angleTimer, degreeSymbol);
+    formulaValueChanged(angleFlag, ui->plainTextEditFormula, angleTimer, degreeSymbol);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

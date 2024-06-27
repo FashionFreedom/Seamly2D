@@ -326,29 +326,29 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
     ui->arrow_ComboBox->setCurrentIndex(int(piece.GetGrainlineGeometry().getArrowType()));
 
     ui->pieceLabel_GroupBox->setChecked(m_oldData.IsVisible());
-    ChangeCurrentData(ui->pieceLabelCenterAnchor_ComboBox, m_oldData.centerAnchorPoint());
-    ChangeCurrentData(ui->pieceLabelTopLeftAnchor_ComboBox, m_oldData.topLeftAnchorPoint());
-    ChangeCurrentData(ui->pieceLabelBottomRightAnchor_ComboBox, m_oldData.bottomRightAnchorPoint());
+    changeCurrentData(ui->pieceLabelCenterAnchor_ComboBox, m_oldData.centerAnchorPoint());
+    changeCurrentData(ui->pieceLabelTopLeftAnchor_ComboBox, m_oldData.topLeftAnchorPoint());
+    changeCurrentData(ui->pieceLabelBottomRightAnchor_ComboBox, m_oldData.bottomRightAnchorPoint());
     setPieceLabelWidth(m_oldData.GetLabelWidth());
     setPieceLabelHeight(m_oldData.GetLabelHeight());
     setPieceLabelAngle(m_oldData.GetRotation());
 
     m_oldGeom = piece.GetPatternInfo();
     ui->patternLabel_GroupBox->setChecked(m_oldGeom.IsVisible());
-    ChangeCurrentData(ui->patternLabelCenterAnchor_ComboBox, m_oldGeom.centerAnchorPoint());
-    ChangeCurrentData(ui->patternLabelTopLeftAnchor_ComboBox, m_oldGeom.topLeftAnchorPoint());
-    ChangeCurrentData(ui->patternLabelBottomRightAnchor_ComboBox, m_oldGeom.bottomRightAnchorPoint());
+    changeCurrentData(ui->patternLabelCenterAnchor_ComboBox, m_oldGeom.centerAnchorPoint());
+    changeCurrentData(ui->patternLabelTopLeftAnchor_ComboBox, m_oldGeom.topLeftAnchorPoint());
+    changeCurrentData(ui->patternLabelBottomRightAnchor_ComboBox, m_oldGeom.bottomRightAnchorPoint());
     setPatternLabelWidth(m_oldGeom.GetLabelWidth());
     setPatternLabelHeight(m_oldGeom.GetLabelHeight());
     setPatternLabelAngle(m_oldGeom.GetRotation());
 
     m_oldGrainline = piece.GetGrainlineGeometry();
     ui->grainline_GroupBox->setChecked(m_oldGrainline.IsVisible());
-    ChangeCurrentData(ui->grainlineCenterAnchor_ComboBox, m_oldGrainline.centerAnchorPoint());
-    ChangeCurrentData(ui->grainlineTopAnchor_ComboBox, m_oldGrainline.topAnchorPoint());
-    ChangeCurrentData(ui->grainlineBottomAnchor_ComboBox, m_oldGrainline.bottomAnchorPoint());
-    setGrainlineAngle(m_oldGrainline.getRotation());
-    setGrainlineLength(m_oldGrainline.getLength());
+    changeCurrentData(ui->grainlineCenterAnchor_ComboBox, m_oldGrainline.centerAnchorPoint());
+    changeCurrentData(ui->grainlineTopAnchor_ComboBox, m_oldGrainline.topAnchorPoint());
+    changeCurrentData(ui->grainlineBottomAnchor_ComboBox, m_oldGrainline.bottomAnchorPoint());
+    setGrainlineAngle(m_oldGrainline.GetRotation());
+    setGrainlineLength(m_oldGrainline.GetLength());
 
     validateObjects(isMainPathValid());
     enabledGrainline();
@@ -2295,7 +2295,7 @@ void PatternPieceDialog::defaultWidthChanged()
     labelEditFormula = ui->widthEdit_Label;
     labelResultCalculation = ui->widthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagFormula, ui->widthFormula_PlainTextEdit, m_timerWidth, postfix);
+    formulaValueChanged(flagFormula, ui->widthFormula_PlainTextEdit, m_timerWidth, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2305,7 +2305,7 @@ void PatternPieceDialog::beforeWidthChanged()
     labelResultCalculation = ui->beforeWidthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
 
-    ValFormulaChanged(flagBeforeFormula, ui->beforeWidthFormula_PlainTextEdit, m_timerWidthBefore, postfix);
+    formulaValueChanged(flagBeforeFormula, ui->beforeWidthFormula_PlainTextEdit, m_timerWidthBefore, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2315,7 +2315,7 @@ void PatternPieceDialog::afterWidthChanged()
     labelResultCalculation = ui->afterWidthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
 
-    ValFormulaChanged(flagAfterFormula, ui->afterWidthFormula_PlainTextEdit, m_timerWidthAfter, postfix);
+    formulaValueChanged(flagAfterFormula, ui->afterWidthFormula_PlainTextEdit, m_timerWidthAfter, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2606,14 +2606,14 @@ void PatternPieceDialog::setPieceColor(const QString &color)
 //---------------------------------------------------------------------------------------------------------------------
 QString PatternPieceDialog::getPieceFill() const
 {
-    QString value =  GetComboBoxCurrentData(ui->fill_ComboBox, FillNone);
+    QString value =  getComboBoxCurrentData(ui->fill_ComboBox, FillNone);
     return value;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::setPieceFill(const QString &value)
 {
-    ChangeCurrentData(ui->fill_ComboBox, value);
+    changeCurrentData(ui->fill_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -123,7 +123,7 @@ private:
     void NameChanged(QLabel *labelEditNamePoint, const QString &pointD1Name, const QString &pointD2Name,
                      QLineEdit *secondPointName, bool &flagName);
 
-    void FillComboBoxs(const quint32 &ch1, const quint32 &ch2);
+    void fillComboBoxes(const quint32 &ch1, const quint32 &ch2);
 
     void CheckName(QLineEdit* edit, QLabel *labelEditNamePoint, const QString &pointD1Name, const QString &pointD2Name,
                    QLineEdit *secondPointName, bool &flagName);

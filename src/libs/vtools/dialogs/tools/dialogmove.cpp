@@ -111,8 +111,10 @@ DialogMove::DialogMove(const VContainer *data, quint32 toolId, QWidget *parent)
     setDialogPosition();
 
     ui->angle_PlainTextEdit->installEventFilter(this);
+    ui->angle_PlainTextEdit->setToolTip(makeAngleTooltip());
     ui->length_PlainTextEdit->installEventFilter(this);
     ui->rotation_PlainTextEdit->installEventFilter(this);
+    ui->rotation_PlainTextEdit->setToolTip(makeAngleTooltip());
 
     ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix(qApp->Settings()->getMoveSuffix()));
 
@@ -235,7 +237,7 @@ quint32 DialogMove::getOriginPointId() const
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::setOriginPointId(const quint32 &value)
 {
-    ChangeCurrentData(ui->rotationPoint_ComboBox, value);
+    changeCurrentData(ui->rotationPoint_ComboBox, value);
     VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
     SCASSERT(operation != nullptr)
     operation->setOriginPointId(value);
@@ -379,7 +381,7 @@ void DialogMove::angleChanged()
 {
     labelEditFormula = ui->editAngle_Label;
     labelResultCalculation = ui->angleResult_Label;
-    ValFormulaChanged(angleFlag, ui->angle_PlainTextEdit, angleTimer, degreeSymbol);
+    formulaValueChanged(angleFlag, ui->angle_PlainTextEdit, angleTimer, degreeSymbol);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -387,7 +389,7 @@ void DialogMove::lengthChanged()
 {
     labelEditFormula = ui->editLength_Label;
     labelResultCalculation = ui->lengthResult_Label;
-    ValFormulaChanged(lengthFlag, ui->length_PlainTextEdit, lengthTimer, degreeSymbol);
+    formulaValueChanged(lengthFlag, ui->length_PlainTextEdit, lengthTimer, degreeSymbol);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -395,7 +397,7 @@ void DialogMove::rotationChanged()
 {
     labelEditFormula = ui->editRotation_Label;
     labelResultCalculation = ui->rotationResult_Label;
-    ValFormulaChanged(rotationFlag, ui->rotation_PlainTextEdit, rotationTimer, degreeSymbol);
+    formulaValueChanged(rotationFlag, ui->rotation_PlainTextEdit, rotationTimer, degreeSymbol);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

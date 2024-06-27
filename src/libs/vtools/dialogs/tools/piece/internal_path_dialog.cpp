@@ -778,7 +778,7 @@ void InternalPathDialog::defaultWidthChanged()
     labelEditFormula = ui->widthEdit_Label;
     labelResultCalculation = ui->widthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagFormula, ui->widthFormula_PlainTextEdit, m_timerWidth, postfix);
+    formulaValueChanged(flagFormula, ui->widthFormula_PlainTextEdit, m_timerWidth, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -788,7 +788,7 @@ void InternalPathDialog::beforeWidthChanged()
     labelResultCalculation = ui->beforeWidthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
     bool flagFormula = false;
-    ValFormulaChanged(flagFormula, ui->beforeWidthFormula_PlainTextEdit, m_timerWidthBefore, postfix);
+    formulaValueChanged(flagFormula, ui->beforeWidthFormula_PlainTextEdit, m_timerWidthBefore, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -798,7 +798,7 @@ void InternalPathDialog::afterWidthChanged()
     labelResultCalculation = ui->afterWidthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
     bool flagFormula = false;
-    ValFormulaChanged(flagFormula, ui->afterWidthFormula_PlainTextEdit, m_timerWidthAfter, postfix);
+    formulaValueChanged(flagFormula, ui->afterWidthFormula_PlainTextEdit, m_timerWidthAfter, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1264,7 +1264,7 @@ QString InternalPathDialog::getSeamAllowanceWidthFormula() const
 //---------------------------------------------------------------------------------------------------------------------
 void InternalPathDialog::SetPiecesList(const QVector<quint32> &list)
 {
-    FillComboBoxPiecesList(ui->piece_ComboBox, list);
+    fillComboBoxPiecesList(ui->piece_ComboBox, list);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

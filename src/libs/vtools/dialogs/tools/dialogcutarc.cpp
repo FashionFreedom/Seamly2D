@@ -96,7 +96,7 @@ DialogCutArc::DialogCutArc(const VContainer *data, const quint32 &toolId, QWidge
     flagFormula = false;
     DialogTool::CheckState();
 
-    FillComboBoxArcs(ui->comboBoxArc);
+    fillComboBoxArcs(ui->comboBoxArc);
 
     int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
     if (index != -1)

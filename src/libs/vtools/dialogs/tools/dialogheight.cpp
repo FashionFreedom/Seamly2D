@@ -156,7 +156,7 @@ void DialogHeight::SetPointName(const QString &value)
  */
 QString DialogHeight::getLineType() const
 {
-    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+    return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -166,7 +166,7 @@ QString DialogHeight::getLineType() const
  */
 void DialogHeight::setLineType(const QString &value)
 {
-    ChangeCurrentData(ui->lineType_ComboBox, value);
+    changeCurrentData(ui->lineType_ComboBox, value);
     vis->setLineStyle(lineTypeToPenStyle(value));
 }
 
@@ -177,7 +177,7 @@ void DialogHeight::setLineType(const QString &value)
  */
 QString DialogHeight::getLineWeight() const
 {
-        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -187,20 +187,20 @@ QString DialogHeight::getLineWeight() const
  */
 void DialogHeight::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    changeCurrentData(ui->lineWeight_ComboBox, value);
     vis->setLineWeight(value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogHeight::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogHeight::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

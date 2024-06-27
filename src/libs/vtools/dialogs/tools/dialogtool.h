@@ -1,26 +1,24 @@
-//-----------------------------------------------------------------------------
-//  @file   dialogtool.h
-//  @author Douglas S Caskey
-//  @date   Dec 11, 2022
+// @file   dialogtool.h
+// @author Douglas S Caskey
+// @date   17 Sep, 2023
 //
-//  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
+// @copyright
+// Copyright (C) 2017 - 2024 Seamly, LLC
+// https://github.com/fashionfreedom/seamly2d
 //
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
+// @brief
+// Seamly2D is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
 //
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
+// Seamly2D is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
 //
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+// You should have received a copy of the GNU General Public License
+// along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
 
 //-----------------------------------------------------------------------------
 //  @file   dialogtool.h
@@ -239,25 +237,25 @@ protected:
     virtual void     closeEvent ( QCloseEvent * event ) Q_DECL_OVERRIDE;
     virtual void     showEvent( QShowEvent *event ) Q_DECL_OVERRIDE;
 
-    void             FillComboBoxPiecesList(QComboBox *box, const QVector<quint32> &list);
+    void             fillComboBoxPiecesList(QComboBox *box, const QVector<quint32> &list);
     void             fillComboBoxPoints(QComboBox *box, FillComboBox rule = FillComboBox::Whole,
                                         const quint32 &ch1 = NULL_ID, const quint32 &ch2 = NULL_ID)const;
-    void             FillComboBoxArcs(QComboBox *box, FillComboBox rule = FillComboBox::Whole,
+    void             fillComboBoxArcs(QComboBox *box, FillComboBox rule = FillComboBox::Whole,
                                       const quint32 &ch1 = NULL_ID, const quint32 &ch2 = NULL_ID)const;
-    void             FillComboBoxSplines(QComboBox *box)const;
-    void             FillComboBoxSplinesPath(QComboBox *box)const;
-    void             FillComboBoxCurves(QComboBox *box)const;
-    void             FillComboBoxTypeLine(QComboBox *box, const QMap<QString, QIcon> &stylesPics) const;
-    void             FillComboBoxLineColors(QComboBox *box)const;
-    void             FillComboBoxCrossCirclesPoints(QComboBox *box) const;
-    void             FillComboBoxVCrossCurvesPoint(QComboBox *box) const;
-    void             FillComboBoxHCrossCurvesPoint(QComboBox *box) const;
+    void             fillComboBoxSplines(QComboBox *box)const;
+    void             fillComboBoxSplinesPath(QComboBox *box)const;
+    void             fillComboBoxCurves(QComboBox *box)const;
+    void             fillComboBoxLineType(QComboBox *box, const QMap<QString, QIcon> &stylesPics) const;
+    void             fillComboBoxLineColors(QComboBox *box)const;
+    void             fillComboBoxCrossCirclesPoints(QComboBox *box) const;
+    void             fillComboBoxVCrossCurvesPoint(QComboBox *box) const;
+    void             fillComboBoxHCrossCurvesPoint(QComboBox *box) const;
 
     virtual void     CheckState();
-    QString          GetComboBoxCurrentData(const QComboBox *box, const QString &def)const;
-    void             ChangeCurrentData(QComboBox *box, const QVariant &value) const;
-    void             ValFormulaChanged(bool &flag, QLineEdit *edit, QTimer * timer, const QString &postfix = QString());
-    void             ValFormulaChanged(bool &flag, QPlainTextEdit *edit, QTimer * timer,
+    QString          getComboBoxCurrentData(const QComboBox *box, const QString &def)const;
+    void             changeCurrentData(QComboBox *box, const QVariant &value) const;
+    void             formulaValueChanged(bool &flag, QLineEdit *edit, QTimer * timer, const QString &postfix = QString());
+    void             formulaValueChanged(bool &flag, QPlainTextEdit *edit, QTimer * timer,
                                        const QString &postfix = QString());
     qreal            Eval(const QString &text, bool &flag, QLabel *label, const QString &postfix,
                           bool checkZero = true, bool checkLessThanZero = false);
@@ -321,6 +319,7 @@ protected:
 
     void             initializeNodeAngles(QComboBox *box);
     void             setDialogPosition();
+    QString          makeAngleTooltip() const;
 
 private:
     void             FillList(QComboBox *box, const QMap<QString, quint32> &list)const;

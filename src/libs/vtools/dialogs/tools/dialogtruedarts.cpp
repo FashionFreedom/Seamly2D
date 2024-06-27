@@ -99,7 +99,7 @@ DialogTrueDarts::DialogTrueDarts(const VContainer *data, const quint32 &toolId, 
     initializeOkCancelApply(ui);
     CheckState();
 
-    FillComboBoxs(ch1, ch2);
+    fillComboBoxes(ch1, ch2);
 
     connect(ui->lineEditFirstNewDartPoint,  &QLineEdit::textChanged, this, &DialogTrueDarts::NameDartPoint1Changed);
     connect(ui->lineEditSecondNewDartPoint, &QLineEdit::textChanged, this, &DialogTrueDarts::NameDartPoint2Changed);
@@ -236,7 +236,7 @@ void DialogTrueDarts::SetChildrenId(const quint32 &ch1, const quint32 &ch2)
 {
     this->ch1 = ch1;
     this->ch2 = ch2;
-    FillComboBoxs(ch1, ch2);
+    fillComboBoxes(ch1, ch2);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -425,7 +425,7 @@ void DialogTrueDarts::NameChanged(QLabel *labelEditNamePoint, const QString &poi
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogTrueDarts::FillComboBoxs(const quint32 &ch1, const quint32 &ch2)
+void DialogTrueDarts::fillComboBoxes(const quint32 &ch1, const quint32 &ch2)
 {
     fillComboBoxPoints(ui->comboBoxFirstBasePoint, FillComboBox::NoChildren, ch1, ch2);
     fillComboBoxPoints(ui->comboBoxSecondBasePoint, FillComboBox::NoChildren, ch1, ch2);

@@ -96,7 +96,7 @@ DialogCutSpline::DialogCutSpline(const VContainer *data, const quint32 &toolId, 
     flagFormula = false;
     DialogTool::CheckState();
 
-    FillComboBoxSplines(ui->comboBoxSpline);
+    fillComboBoxSplines(ui->comboBoxSpline);
 
     int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
     if (index != -1)

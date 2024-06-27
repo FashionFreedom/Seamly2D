@@ -96,13 +96,14 @@ DialogCurveIntersectAxis::DialogCurveIntersectAxis(const VContainer *data, const
     labelEditNamePoint = ui->pointName_Label;
     this->formulaBaseHeightAngle = plainTextEditFormula->height();
     plainTextEditFormula->installEventFilter(this);
+    plainTextEditFormula->setToolTip(makeAngleTooltip());
 
     initializeOkCancelApply(ui);
     flagFormula = false;
     DialogTool::CheckState();
 
     fillComboBoxPoints(ui->axisPoint_ComboBox);
-    FillComboBoxCurves(ui->curve_ComboBox);
+    fillComboBoxCurves(ui->curve_ComboBox);
 
     int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
     if (index != -1)
@@ -147,13 +148,13 @@ void DialogCurveIntersectAxis::SetPointName(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogCurveIntersectAxis::getLineType() const
 {
-    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+    return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogCurveIntersectAxis::setLineType(const QString &value)
 {
-    ChangeCurrentData(ui->lineType_ComboBox, value);
+    changeCurrentData(ui->lineType_ComboBox, value);
     vis->setLineStyle(lineTypeToPenStyle(value));
 }
 
@@ -164,7 +165,7 @@ void DialogCurveIntersectAxis::setLineType(const QString &value)
  */
 QString DialogCurveIntersectAxis::getLineWeight() const
 {
-        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -174,7 +175,7 @@ QString DialogCurveIntersectAxis::getLineWeight() const
  */
 void DialogCurveIntersectAxis::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    changeCurrentData(ui->lineWeight_ComboBox, value);
     vis->setLineWeight(value);
 }
 
@@ -242,7 +243,7 @@ void DialogCurveIntersectAxis::setCurveId(const quint32 &value)
  */
  QString DialogCurveIntersectAxis::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -251,7 +252,7 @@ void DialogCurveIntersectAxis::setCurveId(const quint32 &value)
  */
 void DialogCurveIntersectAxis::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -345,7 +346,7 @@ void DialogCurveIntersectAxis::EvalAngle()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogCurveIntersectAxis::AngleTextChanged()
 {
-    ValFormulaChanged(flagError, plainTextEditFormula, timerFormula, degreeSymbol);
+    formulaValueChanged(flagError, plainTextEditFormula, timerFormula, degreeSymbol);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

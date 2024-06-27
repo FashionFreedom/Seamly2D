@@ -117,7 +117,9 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
     formulaBaseHeightLength2 = ui->plainTextEditLength2F->height();
 
     ui->plainTextEditAngle1F->installEventFilter(this);
+    ui->plainTextEditAngle1F->setToolTip(makeAngleTooltip());
     ui->plainTextEditAngle2F->installEventFilter(this);
+    ui->plainTextEditAngle2F->setToolTip(makeAngleTooltip());
     ui->plainTextEditLength1F->installEventFilter(this);
     ui->plainTextEditLength2F->installEventFilter(this);
 
@@ -298,7 +300,7 @@ void DialogSpline::Angle1Changed()
 {
     labelEditFormula = ui->labelEditAngle1;
     labelResultCalculation = ui->labelResultAngle1;
-    ValFormulaChanged(flagAngle1, ui->plainTextEditAngle1F, timerAngle1, degreeSymbol);
+    formulaValueChanged(flagAngle1, ui->plainTextEditAngle1F, timerAngle1, degreeSymbol);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -306,7 +308,7 @@ void DialogSpline::Angle2Changed()
 {
     labelEditFormula = ui->labelEditAngle2;
     labelResultCalculation = ui->labelResultAngle2;
-    ValFormulaChanged(flagAngle2, ui->plainTextEditAngle2F, timerAngle2, degreeSymbol);
+    formulaValueChanged(flagAngle2, ui->plainTextEditAngle2F, timerAngle2, degreeSymbol);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -315,7 +317,7 @@ void DialogSpline::Length1Changed()
     labelEditFormula = ui->labelEditLength1;
     labelResultCalculation = ui->labelResultLength1;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagLength1, ui->plainTextEditLength1F, timerLength1, postfix);
+    formulaValueChanged(flagLength1, ui->plainTextEditLength1F, timerLength1, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -324,7 +326,7 @@ void DialogSpline::Length2Changed()
     labelEditFormula = ui->labelEditLength2;
     labelResultCalculation = ui->labelResultLength2;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagLength2, ui->plainTextEditLength2F, timerLength2, postfix);
+    formulaValueChanged(flagLength2, ui->plainTextEditLength2F, timerLength2, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -659,25 +661,25 @@ void DialogSpline::SetSpline(const VSpline &spline)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogSpline::getPenStyle() const
 {
-    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+    return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSpline::setPenStyle(const QString &value)
 {
-    ChangeCurrentData(ui->lineType_ComboBox, value);
+    changeCurrentData(ui->lineType_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogSpline::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSpline::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -687,7 +689,7 @@ void DialogSpline::setLineColor(const QString &value)
  */
 QString DialogSpline::getLineWeight() const
 {
-        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -697,6 +699,6 @@ QString DialogSpline::getLineWeight() const
  */
 void DialogSpline::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    changeCurrentData(ui->lineWeight_ComboBox, value);
     vis->setLineWeight(value);
 }
