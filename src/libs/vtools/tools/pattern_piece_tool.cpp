@@ -350,7 +350,7 @@ void PatternPieceTool::addPieceLabel(VAbstractPattern *doc, QDomElement &domElem
     doc->SetAttribute(domData, VAbstractPattern::AttrLetter,       data.GetLetter());
     doc->SetAttribute(domData, VAbstractPattern::AttrAnnotation,   data.GetAnnotation());
     doc->SetAttribute(domData, VAbstractPattern::AttrOrientation,  data.GetOrientation());
-    doc->SetAttribute(domData, VAbstractPattern::AttrRotationWay,  data.GetRotationWay());
+    doc->SetAttribute(domData, VAbstractPattern::AttrRotationWay,  data.getRotationWay());
     doc->SetAttribute(domData, VAbstractPattern::AttrTilt,         data.GetTilt());
     doc->SetAttribute(domData, VAbstractPattern::AttrFoldPosition, data.GetFoldPosition());
     doc->SetAttribute(domData, VAbstractPattern::AttrQuantity,     data.GetQuantity());
@@ -361,7 +361,7 @@ void PatternPieceTool::addPieceLabel(VAbstractPattern *doc, QDomElement &domElem
     doc->SetAttribute(domData, VAbstractPattern::AttrWidth,        data.GetLabelWidth());
     doc->SetAttribute(domData, AttrHeight,                         data.GetLabelHeight());
     doc->SetAttribute(domData, AttrFont,                           data.getFontSize());
-    doc->SetAttribute(domData, VAbstractPattern::AttrRotation,     data.GetRotation());
+    doc->SetAttribute(domData, VAbstractPattern::AttrRotation,     data.getRotation());
 
     if (data.centerAnchorPoint() > NULL_ID)
     {
@@ -406,7 +406,7 @@ void PatternPieceTool::addPatternLabel(VAbstractPattern *doc, QDomElement &domEl
     doc->SetAttribute(domData, VAbstractPattern::AttrWidth,    data.GetLabelWidth());
     doc->SetAttribute(domData, AttrHeight,                     data.GetLabelHeight());
     doc->SetAttribute(domData, AttrFont,                       data.getFontSize());
-    doc->SetAttribute(domData, VAbstractPattern::AttrRotation, data.GetRotation());
+    doc->SetAttribute(domData, VAbstractPattern::AttrRotation, data.getRotation());
 
     if (data.centerAnchorPoint() > NULL_ID)
     {
@@ -1751,13 +1751,13 @@ VPieceItem::MoveTypes PatternPieceTool::findLabelGeometry(const VPatternLabelDat
     VPieceItem::MoveTypes restrictions = VPieceItem::AllModifications;
     try
     {
-        if (!qmu::QmuTokenParser::IsSingle(labelData.GetRotation()))
+        if (!qmu::QmuTokenParser::IsSingle(labelData.getRotation()))
         {
             restrictions &= ~ VPieceItem::IsRotatable;
         }
 
         Calculator cal1;
-        rotationAngle = cal1.EvalFormula(VAbstractTool::data.DataVariables(), labelData.GetRotation());
+        rotationAngle = cal1.EvalFormula(VAbstractTool::data.DataVariables(), labelData.getRotation());
     }
     catch(qmu::QmuParserError &error)
     {

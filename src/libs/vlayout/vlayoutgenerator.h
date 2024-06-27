@@ -107,7 +107,7 @@ public:
     bool         GetRotate() const;
     void         SetRotate(bool value);
 
-    int          GetRotationIncrease() const;
+    int          getRotationIncrease() const;
     void         SetRotationIncrease(int value);
 
     bool         GetAutoCrop() const;

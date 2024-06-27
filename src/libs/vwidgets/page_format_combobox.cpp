@@ -57,11 +57,11 @@ void PageFormatCombobox::init()
     const QIcon icoPaper("://icon/16x16/template.png");
     const QIcon icoRoll("://icon/16x16/roll.png");
 
-    addItem(QIcon(icoPaper), tr("A0"),        QVariant(static_cast<int>(PaperSizeFormat::A0)));
-    addItem(QIcon(icoPaper), tr("A1"),        QVariant(static_cast<int>(PaperSizeFormat::A1)));
-    addItem(QIcon(icoPaper), tr("A2"),        QVariant(static_cast<int>(PaperSizeFormat::A2)));
-    addItem(QIcon(icoPaper), tr("A3"),        QVariant(static_cast<int>(PaperSizeFormat::A3)));
-    addItem(QIcon(icoPaper), tr("A4"),        QVariant(static_cast<int>(PaperSizeFormat::A4)));
+    addItem(QIcon(icoPaper), QString("A0"),   QVariant(static_cast<int>(PaperSizeFormat::A0)));
+    addItem(QIcon(icoPaper), QString("A1"),   QVariant(static_cast<int>(PaperSizeFormat::A1)));
+    addItem(QIcon(icoPaper), QString("A2"),   QVariant(static_cast<int>(PaperSizeFormat::A2)));
+    addItem(QIcon(icoPaper), QString("A3"),   QVariant(static_cast<int>(PaperSizeFormat::A3)));
+    addItem(QIcon(icoPaper), QString("A4"),   QVariant(static_cast<int>(PaperSizeFormat::A4)));
     addItem(QIcon(icoPaper), tr("Letter"),    QVariant(static_cast<int>(PaperSizeFormat::Letter)));
     addItem(QIcon(icoPaper), tr("Legal"),     QVariant(static_cast<int>(PaperSizeFormat::Legal)));
     addItem(QIcon(icoPaper), tr("Tabloid"),   QVariant(static_cast<int>(PaperSizeFormat::Tabloid)));

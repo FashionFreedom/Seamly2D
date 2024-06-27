@@ -325,7 +325,7 @@ QListWidget::item:selected {
         <enum>QFrame::Sunken</enum>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>6</number>
        </property>
        <widget class="QWidget" name="properties_Page">
         <layout class="QVBoxLayout" name="verticalLayout_19">
@@ -350,7 +350,7 @@ QListWidget::item:selected {
             </font>
            </property>
            <property name="title">
-            <string>Poperties</string>
+            <string>Properties</string>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_31">
             <item>
@@ -776,12 +776,12 @@ QListWidget::item:selected {
                 </item>
                 <item>
                  <property name="text">
-                  <string>CW X</string>
+                  <string notr="true">CW X</string>
                  </property>
                 </item>
                 <item>
                  <property name="text">
-                  <string>CCW X</string>
+                  <string notr="true">CCW X</string>
                  </property>
                 </item>
                </widget>
@@ -5369,7 +5369,7 @@ QListWidget::item:selected {
                      <bool>false</bool>
                     </property>
                     <property name="suffix">
-                     <string>  °</string>
+                     <string notr="true">  °</string>
                     </property>
                     <property name="decimals">
                      <number>3</number>

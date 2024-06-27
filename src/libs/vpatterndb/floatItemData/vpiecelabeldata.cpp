@@ -110,7 +110,7 @@ void VPieceLabelData::SetOrientation(const QString &val)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VPieceLabelData::GetRotationWay() const
+QString VPieceLabelData::getRotationWay() const
 {
     return d->m_rotation;
 }

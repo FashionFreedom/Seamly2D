@@ -1504,6 +1504,7 @@ void  DialogTool::setDialogPosition()
             break;
         }
     }
+}
 QString DialogTool::makeAngleTooltip() const
 {
     const QString toolTip = QString("<table width = 370>"

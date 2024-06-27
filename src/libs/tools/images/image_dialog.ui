@@ -35,7 +35,7 @@
    <string>Image Properties</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../vmisc/share/resources/theme.qrc">
+   <iconset resource="../../vmisc/share/resources/theme.qrc">
     <normaloff>:/icons/win.icon.theme/16x16/actions/preferences-other.png</normaloff>:/icons/win.icon.theme/16x16/actions/preferences-other.png</iconset>
   </property>
   <property name="sizeGripEnabled">
@@ -217,7 +217,7 @@ QToolButton:!checked {
            <string notr="true">...</string>
           </property>
           <property name="icon">
-           <iconset resource="../vmisc/share/resources/icon.qrc">
+           <iconset resource="../../vmisc/share/resources/icon.qrc">
             <normaloff>:/icon/32x32/lock_off.png</normaloff>
             <normalon>:/icon/32x32/lock_on.png</normalon>:/icon/32x32/lock_off.png</iconset>
           </property>
@@ -289,10 +289,10 @@ QToolButton:!checked {
 </string>
           </property>
           <property name="text">
-           <string>PX</string>
+           <string notr="true">PX</string>
           </property>
           <property name="icon">
-           <iconset resource="../vmisc/share/resources/icon.qrc">
+           <iconset resource="../../vmisc/share/resources/icon.qrc">
             <normaloff>:/icon/32x32/units_in_on.png</normaloff>
             <normalon>:/icon/32x32/units_px_on.png</normalon>
             <selectedoff>:/icon/32x32/units_in_on.png</selectedoff>
@@ -427,7 +427,7 @@ QToolButton:!checked {
            <bool>false</bool>
           </property>
           <property name="suffix">
-           <string>px</string>
+           <string notr="true">px</string>
           </property>
           <property name="decimals">
            <number>0</number>
@@ -494,7 +494,7 @@ QToolButton:!checked {
            <bool>false</bool>
           </property>
           <property name="suffix">
-           <string>px</string>
+           <string notr="true">px</string>
           </property>
           <property name="decimals">
            <number>0</number>
@@ -542,7 +542,7 @@ QToolButton:!checked {
            <string notr="true">...</string>
           </property>
           <property name="icon">
-           <iconset resource="../vmisc/share/resources/icon.qrc">
+           <iconset resource="../../vmisc/share/resources/icon.qrc">
             <normaloff>:/icon/32x32/lock_off.png</normaloff>
             <normalon>:/icon/32x32/lock_on.png</normalon>:/icon/32x32/lock_off.png</iconset>
           </property>
@@ -673,7 +673,7 @@ QToolButton:!checked {
              <bool>false</bool>
             </property>
             <property name="suffix">
-             <string>px</string>
+             <string notr="true">px</string>
             </property>
             <property name="decimals">
              <number>0</number>
@@ -740,7 +740,7 @@ QToolButton:!checked {
              <bool>false</bool>
             </property>
             <property name="suffix">
-             <string>px</string>
+             <string notr="true">px</string>
             </property>
             <property name="decimals">
              <number>0</number>
@@ -807,7 +807,7 @@ QToolButton:!checked {
              <bool>false</bool>
             </property>
             <property name="suffix">
-             <string>%</string>
+             <string notr="true">%</string>
             </property>
             <property name="decimals">
              <number>2</number>
@@ -871,7 +871,7 @@ QToolButton:!checked {
              <bool>false</bool>
             </property>
             <property name="suffix">
-             <string>%</string>
+             <string notr="true">%</string>
             </property>
             <property name="decimals">
              <number>2</number>
@@ -954,7 +954,7 @@ QToolButton:!checked {
            <bool>false</bool>
           </property>
           <property name="suffix">
-           <string>°</string>
+           <string notr="true">°</string>
           </property>
           <property name="decimals">
            <number>3</number>
@@ -1048,7 +1048,7 @@ QToolButton:!checked {
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
           </property>
           <property name="suffix">
-           <string>%</string>
+           <string notr="true">%</string>
           </property>
           <property name="decimals">
            <number>0</number>
@@ -1092,8 +1092,8 @@ QToolButton:!checked {
   </layout>
  </widget>
  <resources>
-  <include location="../vmisc/share/resources/icon.qrc"/>
-  <include location="../vmisc/share/resources/theme.qrc"/>
+  <include location="../../vmisc/share/resources/theme.qrc"/>
+  <include location="../../vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections>
   <connection>

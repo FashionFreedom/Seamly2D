@@ -246,12 +246,12 @@ void DialogCutArc::SetPointName(const QString &value)
 // @param value name
 void DialogCutArc::setDirection(const QString &value)
 {
-    ChangeCurrentData(ui->direction_ComboBox, value);
+    changeCurrentData(ui->direction_ComboBox, value);
 }
 
 QString DialogCutArc::getDirection() const
 {
-    return GetComboBoxCurrentData(ui->direction_ComboBox, "forward");
+    return getComboBoxCurrentData(ui->direction_ComboBox, "forward");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -278,7 +278,7 @@ quint32 DialogCutArc::getArcId() const
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogCutArc::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -287,5 +287,5 @@ QString DialogCutArc::getLineColor() const
 //---------------------------------------------------------------------------------------------------------------------
 void DialogCutArc::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }

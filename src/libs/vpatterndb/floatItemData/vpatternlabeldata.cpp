@@ -103,7 +103,7 @@ void VPatternLabelData::SetFontSize(int iSize)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VPatternLabelData::GetRotation() const
+QString VPatternLabelData::getRotation() const
 {
     return d->m_pieceLabelAngle;
 }

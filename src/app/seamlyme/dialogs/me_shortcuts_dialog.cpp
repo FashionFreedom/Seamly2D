@@ -85,7 +85,7 @@ MeShortcutsDialog::MeShortcutsDialog(QWidget *parent)
                                 .arg(tr("Export to CSV")).arg(tr("Ctrl+E"))
                                 .arg(tr("Exit")).arg(tr("Ctrl+Q"))
                                 .arg(tr("Help"))
-                                .arg(tr("Keyboard Shortcuts")).arg(tr("K"))
+                                .arg(tr("Keyboard Shortcuts")).arg(QString("K"))
                                 .arg(tr("Find previous")).arg(tr("Ctrl+Shift+G"))
                                 .arg(tr("Find next")).arg(tr("Ctrl+G"));
 

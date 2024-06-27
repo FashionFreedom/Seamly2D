@@ -63,7 +63,7 @@ public:
     int     getFontSize() const;
     void    SetFontSize(int iSize);
 
-    QString GetRotation() const;
+    QString getRotation() const;
     void    SetRotation(const QString &dRot);
 
     quint32 centerAnchorPoint() const;

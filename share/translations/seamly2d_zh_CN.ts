@@ -56,10 +56,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>CPU:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Compiler:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -77,10 +73,6 @@
     </message>
     <message>
         <source>Architecture</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OS:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -375,14 +367,6 @@
 <context>
     <name>CalculatorUtil</name>
     <message>
-        <source>.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>±</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Backspace</source>
         <translation type="unfinished"></translation>
     </message>
@@ -395,59 +379,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>MC</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>MR</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>MS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>M+</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>÷</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>×</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>+</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sqrt</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>x²</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>1/x</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>=</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Calculator</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>####</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -722,15 +654,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Attributes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -819,11 +742,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geometry</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1096,11 +1014,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geometry</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1467,18 +1380,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Second Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1547,11 +1448,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geometry</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1869,11 +1765,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Attributes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2045,15 +1936,6 @@ p, li { white-space: pre-wrap; }
         <source>Edit rotation</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>DialogNewPattern</name>
@@ -2166,10 +2048,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotatation Angle&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. &lt;br/&gt;&lt;br/&gt;Rotation angle is added to the angle of the perpendicular.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2603,11 +2481,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select rotation point that is not part of the list of objects</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3054,6 +2927,14 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Result Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle Calculation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3829,14 +3710,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>+</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Margins</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4263,10 +4136,6 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Base Point</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4466,19 +4335,11 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>PX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unit:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>X Position:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>px</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4506,19 +4367,11 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Y Scale:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Rotation:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>°</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4758,7 +4611,7 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Staus:</source>
+        <source>Status:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6097,15 +5950,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>G</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Rotation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>R</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6113,15 +5958,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>M, L</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Mirror by Axis</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>M, A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6133,27 +5970,11 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>T, D</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Midpoint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>P, S</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Intersect XY</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>X, Y</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>I, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6166,30 +5987,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Alt+A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A, X</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>I, A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>I, C</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>C, T</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A, T</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6258,10 +6055,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>K</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6353,15 +6146,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>N, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>New Print Layout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>N, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6369,15 +6154,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>E, L</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Anchor Point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A, P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6385,15 +6162,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>I, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Insert Nodes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>I, N</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6401,15 +6170,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>U</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Export Pieces</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>E, P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6421,19 +6182,11 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>V, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Increase Text Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Increase Text Size (Ctrl+])</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ctrl+]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6445,19 +6198,11 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Ctrl+[</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Use Tool Color</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Use Tool Color (T)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>V, T</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6469,19 +6214,11 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>V, A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Wireframe Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Toggle Wireframe Mode (V, W)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>V, W</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6493,10 +6230,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>V, G</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Labels</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6505,15 +6238,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>V, L</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Calculator</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ctrl+Shift+C</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6521,15 +6246,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Ctrl+Shift+D</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Export Draft Blocks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>E, D</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6538,10 +6255,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Seam Allowance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>V, S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6554,10 +6267,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Display document Info</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ctrl+I</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6897,15 +6606,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>O, L</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Length and Angle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>L, A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6913,15 +6614,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>O, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>On Bisector</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>O, B</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6937,23 +6630,11 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>X, T</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Intersect Line and Perpendicular</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>L, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Intersect Line and Axis</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>L, X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6966,10 +6647,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point on Curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>O, C</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6993,10 +6670,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>O, S</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Spline - Fixed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7013,10 +6686,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>C, X</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Radius and Angles</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7030,10 +6699,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point on Arc (O, A)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>O, A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7134,10 +6799,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Alt+I</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7313,10 +6974,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Ctrl+E</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>untitled</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7359,10 +7016,6 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Zoom 100%</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7529,10 +7182,6 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Keyboard Shortcuts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>K</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7801,26 +7450,6 @@ Press enter to temporarily add it to the list.</source>
 <context>
     <name>PageFormatCombobox</name>
     <message>
-        <source>A0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Letter</source>
         <translation type="unfinished">信</translation>
     </message>
@@ -7901,10 +7530,6 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Notches </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Poperties</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7993,14 +7618,6 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Tilt:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>CW X</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>CCW X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8261,10 +7878,6 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source> Width:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>  °</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9253,122 +8866,6 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>7</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>8</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>9</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>10</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>10.5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>11</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>12</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>13</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>14</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>15</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>16</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>18</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>20</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>22</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>24</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>26</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>28</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>32</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>36</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>40</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>44</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>48</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>54</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>60</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>66</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>72</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>80</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>96</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The quick brown fox jumps over the lazy dog</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9471,14 +8968,6 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Speed:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9728,7 +9217,7 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>LInetype:</source>
+        <source>Linetype:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9862,18 +9351,6 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>mm</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>cm</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>inch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Property</source>
         <extracomment>The text that appears in the first column header</extracomment>
         <translation type="unfinished"></translation>
@@ -9881,10 +9358,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Value</source>
         <extracomment>The text that appears in the second column header</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>px</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9976,10 +9449,6 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Forward (from start point)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10001,6 +9470,14 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Can not extend internal path &apos;%1&apos; end point to cut line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>inch</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10403,17 +9880,6 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>When checked the Welcome window will not be displayed. 
-You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation type="unfinished">GUI语言:</translation>
     </message>
@@ -10441,6 +9907,14 @@ You can change this setting in the SeamlyMe preferences.</source>
         <source>Inches</source>
         <translation type="unfinished">英寸</translation>
     </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10467,11 +9941,6 @@ You can change this setting in the SeamlyMe preferences.</source>
     <message>
         <source>GUI language:</source>
         <translation type="unfinished">GUI语言:</translation>
-    </message>
-    <message>
-        <source>When checked the Welcome window will not be displayed. 
-You can change this setting in the Seamly2D preferences.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Do not show again</source>
@@ -10502,17 +9971,19 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Sound:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Sets the node selection click  sound.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10927,10 +10398,6 @@ When unchecked the period is used.</source>
     </message>
     <message>
         <source>Point - Intersect Curves</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point - Intersect Curve and Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -12500,14 +11967,6 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Pattern making program.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern file.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Gap width must be used together with shift units.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12621,6 +12080,34 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Set height value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seamly2D open source patternmaking program.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seamly2D pattern file (.sm2d)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The page height</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The left margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The right margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The top margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The bottom margin</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

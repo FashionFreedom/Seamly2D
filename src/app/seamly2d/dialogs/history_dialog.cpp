@@ -303,13 +303,13 @@ RowData HistoryDialog::record(const VToolRecord &tool)
 
             case Tool::BasePoint:
                 rowData.icon = ":/toolicon/32x32/point_basepoint_icon.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Base Point");
                 break;
 
             case Tool::EndLine:
                 rowData.icon = ":/toolicon/32x32/segment.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point Length and Angle from point %1")
                                   .arg(getPointName(attrUInt(domElement, AttrBasePoint)));
                 break;
@@ -326,7 +326,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
 
             case Tool::AlongLine:
                 rowData.icon = ":/toolicon/32x32/along_line.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point On Line %1_%2")
                                   .arg(getPointName(attrUInt(domElement, AttrFirstPoint)))
                                   .arg(getPointName(attrUInt(domElement, AttrSecondPoint)));
@@ -334,13 +334,13 @@ RowData HistoryDialog::record(const VToolRecord &tool)
 
             case Tool::ShoulderPoint:
                 rowData.icon = ":/toolicon/32x32/shoulder.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point Length to Line");
                 break;
 
             case Tool::Normal:
                 rowData.icon = ":/toolicon/32x32/normal.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point On Perpendicular %1_%2")
                                  .arg(getPointName(attrUInt(domElement, AttrFirstPoint)))
                                  .arg(getPointName(attrUInt(domElement, AttrSecondPoint)));
@@ -348,7 +348,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
 
             case Tool::Bisector:
                 rowData.icon = ":/toolicon/32x32/bisector.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point On Bisector %1_%2_%3")
                                  .arg(getPointName(attrUInt(domElement, AttrFirstPoint)))
                                  .arg(getPointName(attrUInt(domElement, AttrSecondPoint)))
@@ -357,7 +357,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
 
             case Tool::LineIntersect:
                 rowData.icon = ":/toolicon/32x32/intersect.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point Intersect Lines %1_%2 and %3_%4")
                                  .arg(getPointName(attrUInt(domElement, AttrP1Line1)))
                                  .arg(getPointName(attrUInt(domElement, AttrP2Line1)))
@@ -370,7 +370,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
                 const QSharedPointer<VSpline> spl = data->GeometricObject<VSpline>(toolId);
                 SCASSERT(!spl.isNull())
                 rowData.icon = ":/toolicon/32x32/spline.png";
-                rowData.name = tr("%1").arg(spl->NameForHistory(tr("Spl_")));
+                rowData.name = spl->NameForHistory(tr("Spl_"));
                 rowData.tool = tr("Curve Interactive");
                 break;
             }
@@ -380,7 +380,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
                 const QSharedPointer<VCubicBezier> spl = data->GeometricObject<VCubicBezier>(toolId);
                 SCASSERT(!spl.isNull())
                 rowData.icon = ":/toolicon/32x32/cubic_bezier.png";
-                rowData.name = tr("%1").arg(spl->NameForHistory(tr("Spl_")));
+                rowData.name = spl->NameForHistory(tr("Spl_"));
                 rowData.tool = tr("Curve Fixed");
                 break;
             }
@@ -390,7 +390,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
                 const QSharedPointer<VArc> arc = data->GeometricObject<VArc>(toolId);
                 SCASSERT(!arc.isNull())
                 rowData.icon = ":/toolicon/32x32/arc.png";
-                rowData.name = tr("%1").arg(arc->NameForHistory(tr("Arc_")));
+                rowData.name = arc->NameForHistory(tr("Arc_"));
                 rowData.tool = tr("Arc Radius & Angles");
                 break;
             }
@@ -400,8 +400,8 @@ RowData HistoryDialog::record(const VToolRecord &tool)
                 const QSharedPointer<VArc> arc = data->GeometricObject<VArc>(toolId);
                 SCASSERT(!arc.isNull())
                 rowData.icon = ":/toolicon/32x32/arc_with_length.png";
-                rowData.name =tr("%1").arg(arc->NameForHistory(tr("Arc_")));
-                rowData.tool =tr("Arc Radius & Length %1") .arg(arc->NameForHistory(tr("Arc_")));
+                rowData.name = arc->NameForHistory(tr("Arc_"));
+                rowData.tool = tr("Arc Radius & Length %1") .arg(arc->NameForHistory(tr("Arc_")));
                 break;
             }
 
@@ -410,7 +410,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
                 const QSharedPointer<VSplinePath> splPath = data->GeometricObject<VSplinePath>(toolId);
                 SCASSERT(!splPath.isNull())
                 rowData.icon = ":/toolicon/32x32/splinePath.png";
-                rowData.name = tr("%1").arg(splPath->NameForHistory(tr("SplPath_")));
+                rowData.name = splPath->NameForHistory(tr("SplPath_"));
                 rowData.tool = tr("Spline Interactive");
                 break;
             }
@@ -420,14 +420,14 @@ RowData HistoryDialog::record(const VToolRecord &tool)
                 const QSharedPointer<VCubicBezierPath> splPath = data->GeometricObject<VCubicBezierPath>(toolId);
                 SCASSERT(!splPath.isNull())
                 rowData.icon = ":/toolicon/32x32/cubic_bezier_path.png";
-                rowData.name = tr("%1").arg(splPath->NameForHistory(tr("SplPath_")));
+                rowData.name = splPath->NameForHistory(tr("SplPath_"));
                 rowData.tool = tr("Spline Fixed");
                 break;
             }
 
             case Tool::PointOfContact:
                 rowData.icon = ":/toolicon/32x32/point_intersect_arc_line.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point Intersect Arc with center %1 & Line %2_%3")
                                   .arg(getPointName(attrUInt(domElement, AttrCenter)))
                                   .arg(getPointName(attrUInt(domElement, AttrFirstPoint)))
@@ -436,7 +436,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
 
             case Tool::Height:
                 rowData.icon = ":/toolicon/32x32/height.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point Intersect Line %1_%2 & Perpendicular %3")
                                   .arg(getPointName(attrUInt(domElement, AttrP1Line)))
                                   .arg(getPointName(attrUInt(domElement, AttrP2Line)))
@@ -445,7 +445,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
 
             case Tool::Triangle:
                 rowData.icon = ":/toolicon/32x32/triangle.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point Intersect Axis %1_%2 & Triangle points %3 and %4")
                                   .arg(getPointName(attrUInt(domElement, AttrAxisP1)))
                                   .arg(getPointName(attrUInt(domElement, AttrAxisP2)))
@@ -455,7 +455,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
 
             case Tool::PointOfIntersection:
                 rowData.icon = ":/toolicon/32x32/point_intersectxy_icon.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point Intersect XY of points %1 and %2")
                                   .arg(getPointName(attrUInt(domElement, AttrFirstPoint)))
                                   .arg(getPointName(attrUInt(domElement, AttrSecondPoint)));
@@ -466,7 +466,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
                 const QSharedPointer<VArc> arc = data->GeometricObject<VArc>(attrUInt(domElement, AttrArc));
                 SCASSERT(!arc.isNull())
                 rowData.icon = ":/toolicon/32x32/arc_cut.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point On Arc");
                 break;
             }
@@ -477,7 +477,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
                 const QSharedPointer<VAbstractCubicBezier> spl = data->GeometricObject<VAbstractCubicBezier>(splineId);
                 SCASSERT(!spl.isNull())
                 rowData.icon = ":/toolicon/32x32/spline_cut_point.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point On Curve");
                 break;
             }
@@ -489,14 +489,14 @@ RowData HistoryDialog::record(const VToolRecord &tool)
                 data->GeometricObject<VAbstractCubicBezierPath>(splinePathId);
                 SCASSERT(!splPath.isNull())
                 rowData.icon = ":/toolicon/32x32/splinePath_cut_point.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point On Spline");
                 break;
             }
 
             case Tool::LineIntersectAxis:
                 rowData.icon = ":/toolicon/32x32/line_intersect_axis.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("%Point Intersect Line & %1_%2 and Axis through point %3")
                                  .arg(getPointName(attrUInt(domElement, AttrP1Line)))
                                  .arg(getPointName(attrUInt(domElement, AttrP2Line)))
@@ -505,44 +505,44 @@ RowData HistoryDialog::record(const VToolRecord &tool)
 
             case Tool::CurveIntersectAxis:
                 rowData.icon = ":/toolicon/32x32/arc_intersect_axis.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point Intersect Curve & Axis through point %1")
                                   .arg(getPointName(attrUInt(domElement, AttrBasePoint)));
                 break;
 
             case Tool::PointOfIntersectionArcs:
                 rowData.icon = ":/toolicon/32x32/point_of_intersection_arcs.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point Intersect Arcs");
                 break;
 
             case Tool::PointOfIntersectionCircles:
                 rowData.icon = ":/toolicon/32x32/point_of_intersection_circles.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("%1 - Point Intersect Circles");
                 break;
 
             case Tool::PointOfIntersectionCurves:
                 rowData.icon = ":/toolicon/32x32/intersection_curves.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point Intersect Curves");
                 break;
 
             case Tool::PointFromCircleAndTangent:
                 rowData.icon = ":/toolicon/32x32/point_from_circle_and_tangent.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point Intersect Circle & Tangent");
                 break;
 
             case Tool::PointFromArcAndTangent:
                 rowData.icon = ":/toolicon/32x32/point_from_arc_and_tangent.png";
-                rowData.name = tr("%1").arg(getPointName(toolId));
+                rowData.name = getPointName(toolId);
                 rowData.tool = tr("Point Intersect Arc & Tangent");
                 break;
 
             case Tool::TrueDarts:
                 rowData.icon = ":/toolicon/32x32/true_darts.png";
-                rowData.name = tr("");
+                rowData.name = QString("");
                 rowData.tool = tr("True Dart %1_%2_%3")
                                  .arg(getPointName(attrUInt(domElement, AttrDartP1)))
                                  .arg(getPointName(attrUInt(domElement, AttrDartP2)))
@@ -554,14 +554,14 @@ RowData HistoryDialog::record(const VToolRecord &tool)
                 const QSharedPointer<VEllipticalArc> elArc = data->GeometricObject<VEllipticalArc>(toolId);
                 SCASSERT(!elArc.isNull())
                 rowData.icon = ":/toolicon/32x32/el_arc.png";
-                rowData.name = tr("%1").arg(elArc->NameForHistory(tr("ElArc_")));
+                rowData.name = elArc->NameForHistory(tr("ElArc_"));
                 rowData.tool = tr("Arc Elliptical with length %1").arg(elArc->GetLength());
                 break;
 
             }
             case Tool::Rotation:
                 rowData.icon = ":/toolicon/32x32/rotation.png";
-                rowData.name = tr("");
+                rowData.name = QString("");
                 rowData.tool = tr("Rotation around point %1. Suffix %2")
                                   .arg(getPointName(attrUInt(domElement, AttrCenter)),
                                        m_doc->GetParametrString(domElement, AttrSuffix, QString()));
@@ -569,7 +569,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
 
             case Tool::MirrorByLine:
                 rowData.icon = ":/toolicon/32x32/mirror_by_line.png";
-                rowData.name = tr("");
+                rowData.name = QString("");
                 rowData.tool = tr("Mirror by Line %1_%2. Suffix %3")
                                   .arg(getPointName(attrUInt(domElement, AttrP1Line)))
                                   .arg(getPointName(attrUInt(domElement, AttrP2Line)),
@@ -578,7 +578,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
 
             case Tool::MirrorByAxis:
                 rowData.icon = ":/toolicon/32x32/mirror_by_axis.png";
-                rowData.name = tr("");
+                rowData.name = QString("");
                 rowData.tool = tr("Mirror by Axis through %1 point. Suffix %2")
                                   .arg(getPointName(attrUInt(domElement, AttrCenter)),
                                        m_doc->GetParametrString(domElement, AttrSuffix, QString()));
@@ -586,7 +586,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
 
             case Tool::Move:
                 rowData.icon = ":/toolicon/32x32/move.png";
-                rowData.name = tr("");
+                rowData.name = QString("");
                 rowData.tool = tr("Move - rotate around point %1. Suffix %2")
                                   .arg(getPointName(attrUInt(domElement, AttrCenter)),
                                        m_doc->GetParametrString(domElement, AttrSuffix, QString()));

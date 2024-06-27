@@ -119,7 +119,7 @@ bool findLabelGeometry(const VPatternLabelData &labelData, const VContainer *pat
     try
     {
         Calculator cal1;
-        rotationAngle = cal1.EvalFormula(pattern->DataVariables(), labelData.GetRotation());
+        rotationAngle = cal1.EvalFormula(pattern->DataVariables(), labelData.getRotation());
     }
     catch(qmu::QmuParserError &error)
     {
