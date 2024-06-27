@@ -155,13 +155,13 @@ void DialogCubicBezier::SetSpline(const VCubicBezier &spline)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogCubicBezier::getPenStyle() const
 {
-    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+    return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogCubicBezier::setPenStyle(const QString &value)
 {
-    ChangeCurrentData(ui->lineType_ComboBox, value);
+    changeCurrentData(ui->lineType_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -171,7 +171,7 @@ void DialogCubicBezier::setPenStyle(const QString &value)
  */
 QString DialogCubicBezier::getLineWeight() const
 {
-        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -181,19 +181,19 @@ QString DialogCubicBezier::getLineWeight() const
  */
 void DialogCubicBezier::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    changeCurrentData(ui->lineWeight_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogCubicBezier::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogCubicBezier::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

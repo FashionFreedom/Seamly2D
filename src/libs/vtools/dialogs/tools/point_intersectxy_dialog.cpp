@@ -198,7 +198,7 @@ void PointIntersectXYDialog::setSecondPointId(const quint32 &value)
  */
 QString PointIntersectXYDialog::getLineType() const
 {
-    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeDashLine);
+    return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeDashLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -208,7 +208,7 @@ QString PointIntersectXYDialog::getLineType() const
  */
 void PointIntersectXYDialog::setLineType(const QString &value)
 {
-    ChangeCurrentData(ui->lineType_ComboBox, value);
+    changeCurrentData(ui->lineType_ComboBox, value);
     vis->setLineStyle(lineTypeToPenStyle(value));
 }
 
@@ -219,7 +219,7 @@ void PointIntersectXYDialog::setLineType(const QString &value)
  */
 QString PointIntersectXYDialog::getLineWeight() const
 {
-        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -229,7 +229,7 @@ QString PointIntersectXYDialog::getLineWeight() const
  */
 void PointIntersectXYDialog::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    changeCurrentData(ui->lineWeight_ComboBox, value);
     vis->setLineWeight(value);
 }
 
@@ -241,7 +241,7 @@ void PointIntersectXYDialog::setLineWeight(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString PointIntersectXYDialog::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, qApp->Settings()->getSecondarySupportColor());
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, qApp->Settings()->getSecondarySupportColor());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -252,7 +252,7 @@ QString PointIntersectXYDialog::getLineColor() const
 //---------------------------------------------------------------------------------------------------------------------
 void PointIntersectXYDialog::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

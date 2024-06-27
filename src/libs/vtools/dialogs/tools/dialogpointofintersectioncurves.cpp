@@ -83,10 +83,10 @@ DialogPointOfIntersectionCurves::DialogPointOfIntersectionCurves(const VContaine
     initializeOkCancelApply(ui);
     CheckState();
 
-    FillComboBoxCurves(ui->comboBoxCurve1);
-    FillComboBoxCurves(ui->comboBoxCurve2);
-    FillComboBoxVCrossCurvesPoint(ui->verticalTake_ComboBox);
-    FillComboBoxHCrossCurvesPoint(ui->horizontalTake_ComboBox);
+    fillComboBoxCurves(ui->comboBoxCurve1);
+    fillComboBoxCurves(ui->comboBoxCurve2);
+    fillComboBoxVCrossCurvesPoint(ui->verticalTake_ComboBox);
+    fillComboBoxHCrossCurvesPoint(ui->horizontalTake_ComboBox);
 
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogPointOfIntersectionCurves::NamePointChanged);
     connect(ui->comboBoxCurve1, &QComboBox::currentTextChanged, this, &DialogPointOfIntersectionCurves::CurveChanged);

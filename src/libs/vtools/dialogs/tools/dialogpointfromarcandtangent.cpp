@@ -81,8 +81,8 @@ DialogPointFromArcAndTangent::DialogPointFromArcAndTangent(const VContainer *dat
     DialogTool::CheckState();
 
     fillComboBoxPoints(ui->comboBoxTangentPoint);
-    FillComboBoxArcs(ui->comboBoxArc);
-    FillComboBoxCrossCirclesPoints(ui->comboBoxResult);
+    fillComboBoxArcs(ui->comboBoxArc);
+    fillComboBoxCrossCirclesPoints(ui->comboBoxResult);
 
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogPointFromArcAndTangent::NamePointChanged);
 

@@ -101,6 +101,7 @@ DialogLineIntersectAxis::DialogLineIntersectAxis(const VContainer *data, const q
     labelEditNamePoint = ui->labelEditNamePoint;
     this->formulaBaseHeightAngle = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
+    ui->plainTextEditFormula->setToolTip(makeAngleTooltip());
 
     initializeOkCancelApply(ui);
     flagFormula = false;
@@ -159,13 +160,13 @@ void DialogLineIntersectAxis::SetPointName(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogLineIntersectAxis::getLineType() const
 {
-    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+    return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogLineIntersectAxis::setLineType(const QString &value)
 {
-    ChangeCurrentData(ui->lineType_ComboBox, value);
+    changeCurrentData(ui->lineType_ComboBox, value);
     vis->setLineStyle(lineTypeToPenStyle(value));
 }
 
@@ -176,7 +177,7 @@ void DialogLineIntersectAxis::setLineType(const QString &value)
  */
 QString DialogLineIntersectAxis::getLineWeight() const
 {
-        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -186,20 +187,20 @@ QString DialogLineIntersectAxis::getLineWeight() const
  */
 void DialogLineIntersectAxis::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    changeCurrentData(ui->lineWeight_ComboBox, value);
     vis->setLineWeight(value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogLineIntersectAxis::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogLineIntersectAxis::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -380,7 +381,7 @@ void DialogLineIntersectAxis::EvalAngle()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogLineIntersectAxis::AngleTextChanged()
 {
-    ValFormulaChanged(flagError, ui->plainTextEditFormula, timerFormula, degreeSymbol);
+    formulaValueChanged(flagError, ui->plainTextEditFormula, timerFormula, degreeSymbol);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

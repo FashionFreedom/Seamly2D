@@ -96,7 +96,7 @@ DialogCutSplinePath::DialogCutSplinePath(const VContainer *data, const quint32 &
     flagFormula = false;
     DialogTool::CheckState();
 
-    FillComboBoxSplinesPath(ui->comboBoxSplinePath);
+    fillComboBoxSplinesPath(ui->comboBoxSplinePath);
 
     int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
     if (index != -1)

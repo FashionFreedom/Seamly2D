@@ -1,26 +1,24 @@
-//-----------------------------------------------------------------------------
-//  @file   dialogline.cpp
-//  @author Douglas S Caskey
-//  @date   30 Apr, 2023
+// @file   dialogline.cpp
+// @author Douglas S Caskey
+// @date   26 Jun, 2024
 //
-//  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
+// @copyright
+// Copyright (C) 2017 - 2024 Seamly, LLC
+// https://github.com/fashionfreedom/seamly2d
 //
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
+// @brief
+// Seamly2D is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
 //
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
+// Seamly2D is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
 //
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+// You should have received a copy of the GNU General Public License
+// along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
 
 //-----------------------------------------------------------------------------
 //  @file   dialogline.cpp
@@ -155,7 +153,7 @@ void DialogLine::setLineName()
  */
 QString DialogLine::getLineType() const
 {
-    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+    return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -165,7 +163,7 @@ QString DialogLine::getLineType() const
  */
 void DialogLine::setLineType(const QString &value)
 {
-    ChangeCurrentData(ui->lineType_ComboBox, value);
+    changeCurrentData(ui->lineType_ComboBox, value);
     vis->setLineStyle(lineTypeToPenStyle(value));
 }
 
@@ -176,7 +174,7 @@ void DialogLine::setLineType(const QString &value)
  */
 QString DialogLine::getLineWeight() const
 {
-        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -186,20 +184,20 @@ QString DialogLine::getLineWeight() const
  */
 void DialogLine::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    changeCurrentData(ui->lineWeight_ComboBox, value);
     vis->setLineWeight(value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogLine::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogLine::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

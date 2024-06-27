@@ -159,35 +159,35 @@ QMap<quint32, quint32>  EditGroupDialog::getGroupData() const
 //---------------------------------------------------------------------------------------------------------------------
 QString  EditGroupDialog::getColor() const
 {
-    return GetComboBoxCurrentData(ui->groupColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->groupColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void  EditGroupDialog::setColor(const QString &color)
 {
-    ChangeCurrentData(ui->groupColor_ComboBox, color);
+    changeCurrentData(ui->groupColor_ComboBox, color);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString  EditGroupDialog::getLineType() const
 {
-    return GetComboBoxCurrentData(ui->groupLineType_ComboBox, LineTypeSolidLine);
+    return getComboBoxCurrentData(ui->groupLineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void  EditGroupDialog::setLineType(const QString &type)
 {
-    ChangeCurrentData(ui->groupLineType_ComboBox, type);
+    changeCurrentData(ui->groupLineType_ComboBox, type);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString  EditGroupDialog::getLineWeight() const
 {
-    return GetComboBoxCurrentData(ui->groupLineWeight_ComboBox, "0.35");
+    return getComboBoxCurrentData(ui->groupLineWeight_ComboBox, "0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void  EditGroupDialog::setLineWeight(const QString &weight)
 {
-    ChangeCurrentData(ui->groupLineWeight_ComboBox, weight);
+    changeCurrentData(ui->groupLineWeight_ComboBox, weight);
 }
