@@ -131,9 +131,13 @@ DialogShoulderPoint::DialogShoulderPoint(const VContainer *data, const quint32 &
 
     vis = new VisToolShoulderPoint(data);
 
-    // Call after initialization vis!!!!
-    setLineType(LineTypeDashLine);
-    setLineWeight("0.35");
+    // Call after visual initialized.
+    // If true current pen overides the default tool pen
+    if(!qApp->Settings()->useCurrentPen())
+    {
+        setLineType(LineTypeDashLine);
+        setLineWeight("0.35");
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
