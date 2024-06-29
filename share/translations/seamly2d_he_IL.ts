@@ -6032,17 +6032,22 @@ Do you want to download it?</source>
 <context>
     <name>ImageItem</name>
     <message>
-        <location filename="../../src/libs/tools/images/image_item.cpp" line="+295"/>
+        <location filename="../../src/libs/tools/images/image_item.cpp" line="+333"/>
         <source>Properties</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Lock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+16"/>
+        <source>Change Origin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Order</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6067,12 +6072,12 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+17"/>
         <source>Delete</source>
         <translation type="unfinished">למחוק</translation>
     </message>
     <message>
-        <location line="+283"/>
+        <location line="+329"/>
         <source>&lt;b&gt;Image (%7)&lt;/b&gt;: Size(%2%1, %3%1); Pos(%4%1, %5%1); Rot(%6°)%8</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12618,7 +12623,7 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/libs/vmisc/def.cpp" line="+735"/>
+        <location filename="../../src/libs/vmisc/def.cpp" line="+736"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>

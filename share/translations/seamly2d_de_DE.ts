@@ -6037,17 +6037,22 @@ for writing</source>
 <context>
     <name>ImageItem</name>
     <message>
-        <location filename="../../src/libs/tools/images/image_item.cpp" line="+295"/>
+        <location filename="../../src/libs/tools/images/image_item.cpp" line="+333"/>
         <source>Properties</source>
         <translation>Eigenschaften</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Lock</source>
         <translation>Sperre</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+16"/>
+        <source>Change Origin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Order</source>
         <translation>Bestellung</translation>
     </message>
@@ -6072,12 +6077,12 @@ for writing</source>
         <translation>Nach unten senden</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+17"/>
         <source>Delete</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <location line="+283"/>
+        <location line="+329"/>
         <source>&lt;b&gt;Image (%7)&lt;/b&gt;: Size(%2%1, %3%1); Pos(%4%1, %5%1); Rot(%6°)%8</source>
         <translation>&lt;b&gt;Bild (%7)&lt;/b&gt;: Size(%2%1, %3%1); Pos(%4%1, %5%1); Rot(%6°)%8</translation>
     </message>
@@ -12643,7 +12648,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Erstelle ein neues Schnittteil, um mit der Arbeit zu beginnen.</translation>
     </message>
     <message>
-        <location filename="../../src/libs/vmisc/def.cpp" line="+735"/>
+        <location filename="../../src/libs/vmisc/def.cpp" line="+736"/>
         <source>mm</source>
         <translation>mm</translation>
     </message>
