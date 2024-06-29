@@ -145,8 +145,13 @@ void ImageItem::setImage(DraftImage image)
 
 void ImageItem::setOrigin(qreal xOrigin, qreal yOrigin)
 {
+    //m_image.xOrigin / m_image.yOrigin  is the distance between the top left corner of the image and the image origin
+    //m_origin is the distance between the real origin of the QGraphicsItem and the image origin
+
     m_image.xOrigin = xOrigin;
     m_image.yOrigin = yOrigin;
+
+    m_origin = m_boundingRect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
 }
 
 
@@ -215,6 +220,19 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 
     painter->setRenderHint(QPainter::SmoothPixmapTransform, (m_transformationMode == Qt::SmoothTransformation));
     painter->drawPixmap(m_boundingRect.x(), m_boundingRect.y(), m_image.width, m_image.height, m_image.pixmap);
+
+    if (m_origin != m_boundingRect.topLeft())
+    {
+        painter->save();
+        painter->setPen(QPen(Qt::blue, 2, Qt::SolidLine));
+        qreal x1 = qMax(m_origin.x() - 8, m_boundingRect.x());
+        qreal y1 = qMax(m_origin.y() - 8, m_boundingRect.y());
+        qreal x2 = qMin(m_origin.x() + 8, m_boundingRect.x() + m_boundingRect.width());
+        qreal y2 = qMin(m_origin.y() + 8, m_boundingRect.y() + m_boundingRect.height());
+        painter->drawLine(QLineF(x1, m_origin.y(), x2, m_origin.y()));
+        painter->drawLine(QLineF(m_origin.x(), y1, m_origin.x(), y2));
+        painter->restore();
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -462,6 +480,17 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             event->accept();
         }
     }
+
+    if(m_selectNewOrigin)
+    {
+        m_image.xOrigin = event->pos().x() - m_boundingRect.topLeft().x();
+        m_image.yOrigin = event->pos().y() - m_boundingRect.topLeft().y();
+
+        m_origin = m_boundingRect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
+
+        m_image.xPos = mapToScene(event->pos()).x();
+        m_image.yPos = mapToScene(event->pos()).y();
+    }
 }
 
 void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
@@ -493,6 +522,14 @@ void ImageItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     if (m_selectionType == SelectionType::ByMouseRelease)
     {
         emit imageSelected(m_image.id);
+    }
+
+    if(m_selectNewOrigin)
+    {
+        m_selectNewOrigin = false;
+        setFlag(QGraphicsItem::ItemIsMovable, true);
+        SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
+        m_resizeHandles->show();
     }
 
     m_mousePressed = false;
@@ -538,6 +575,13 @@ void ImageItem::updateFromHandles(QRectF rect)
 {
     prepareGeometryChange();
 
+    //The image origin is moved so that it stays at the same place on the image
+    //The image origin is different from the QGraphicsItem origin, see below
+    m_image.xOrigin = m_image.xOrigin / m_image.width * rect.width();
+    m_image.yOrigin = m_image.yOrigin / m_image.height * rect.height();
+
+    //m_image.xOrigin / m_image.yOrigin  is the distance between the top left corner of the image and the image origin
+    //m_origin is the distance between the real origin of the QGraphicsItem and the image origin
     m_origin = rect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
 
     m_image.xPos = mapToScene(m_origin).x();
