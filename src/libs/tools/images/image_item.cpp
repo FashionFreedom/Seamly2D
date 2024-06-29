@@ -77,6 +77,7 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
     , m_selectable(true)
     , m_minDimension(16)
     , m_maxDimension(60000)
+    , m_selectNewOrigin(false)
 {
     initializeItem();
 
@@ -238,7 +239,7 @@ void ImageItem::enableHovering(bool enable)
 void ImageItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     m_isHovered = true;
-    if (m_selectable && flags() & QGraphicsItem::ItemIsMovable)
+    if (flags() & QGraphicsItem::ItemIsMovable)
     {
         SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
     }
@@ -247,9 +248,18 @@ void ImageItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
         setCursor(qApp->getSceneView()->viewport()->cursor());
     }
 
+    //override cursor if in new origin selection mode
+    if (m_selectNewOrigin)
+    {
+        SetItemOverrideCursor(this, cursorImageOrigin, 16, 16);
+    }
+
     if (!m_image.locked)
     {
-        m_resizeHandles->show();
+        if (!m_selectNewOrigin)
+        {
+            m_resizeHandles->show();
+        }
         showImageStatusMessage();
     }
 
@@ -303,6 +313,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
     QMenu menu;
     QAction *actionProperties = menu.addAction(QIcon::fromTheme("preferences-other"), tr("Properties"));
+    actionProperties->setEnabled(!m_selectNewOrigin);
 
     QAction *actionLock = menu.addAction(tr("Lock"));
     if (m_image.locked){
@@ -313,11 +324,16 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     }
     actionLock->setCheckable(true);
     actionLock->setChecked(m_image.locked);
+    actionLock->setEnabled(!m_selectNewOrigin);
 
     // QAction *actionShow = menu.addAction(QIcon("://icon/32x32/visible_on.png"), tr("Show"));
     // actionShow->setCheckable(true);
     // actionShow->setChecked(m_image.visible);
     // actionShow->setEnabled(!m_image.locked);
+
+    QAction *actionOrigin = menu.addAction(tr("Change Origin"));
+    actionOrigin->setIcon(QIcon(cursorImageOrigin));
+    actionOrigin->setEnabled(!m_image.locked && !m_selectNewOrigin);
 
     QAction *actionSeparator = new QAction(this);
     actionSeparator->setSeparator(true);
@@ -330,10 +346,11 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     QAction *actionMoveDn = orderMenu->addAction(tr("Move down"));
     QAction *actionMoveBottom = orderMenu->addAction(tr("Send to bottom"));
 
-    actionMoveTop->setEnabled(!m_image.locked);
-    actionMoveUp->setEnabled(!m_image.locked);
-    actionMoveDn->setEnabled(!m_image.locked);
-    actionMoveBottom->setEnabled(!m_image.locked);
+    orderMenu->setEnabled(!m_image.locked && !m_selectNewOrigin);
+    actionMoveTop->setEnabled(!m_image.locked && !m_selectNewOrigin);
+    actionMoveUp->setEnabled(!m_image.locked && !m_selectNewOrigin);
+    actionMoveDn->setEnabled(!m_image.locked && !m_selectNewOrigin);
+    actionMoveBottom->setEnabled(!m_image.locked && !m_selectNewOrigin);
 
     //actionMoveTop->setShortcut(QKeySequence(Qt::ControlModifier + Qt::Key_Home));
     //actionMoveUp->setShortcut(QKeySequence(Qt::ControlModifier + Qt::Key_PageUp));
@@ -345,7 +362,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     menu.addAction(actionSeparator);
 
     QAction *actionDelete = menu.addAction(QIcon("://icon/32x32/trashcan.png"), tr("Delete"));
-    actionDelete->setEnabled(!m_image.locked);
+    actionDelete->setEnabled(!m_image.locked && !m_selectNewOrigin);
 
     QAction *selectedAction = menu.exec(event->screenPos());
 
@@ -368,6 +385,15 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     // {
     //     SetVisible(selectedAction->isChecked());
     // }
+    else if (selectedAction == actionOrigin)
+    {
+        if (!m_image.locked)
+        {
+            m_selectNewOrigin = true;
+            setFlag(QGraphicsItem::ItemIsMovable, false);
+            m_resizeHandles->hide();
+        }
+    }
     else if (selectedAction == actionDelete)
     {
         if (!m_image.locked)
@@ -483,6 +509,14 @@ void ImageItem::keyReleaseEvent(QKeyEvent *event)
         if (!m_image.locked && isSelected())
         {
             emit deleteImage(m_image.id);
+        }
+        case Qt::Key_Escape:
+        if (m_selectNewOrigin)
+        {
+            m_selectNewOrigin = false;
+            setFlag(QGraphicsItem::ItemIsMovable, true);
+            SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
+            m_resizeHandles->show();
         }
         default:
             break;
