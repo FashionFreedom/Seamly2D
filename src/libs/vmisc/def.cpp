@@ -171,6 +171,7 @@ const QStringList labelTemplatePlaceholders = QStringList() << pl_size
 const QString cursorArrowOpenHand  = QStringLiteral("://cursor/cursor-arrow-openhand.png");
 const QString cursorArrowCloseHand = QStringLiteral("://cursor/cursor-arrow-closehand.png");
 const QString cursorResizeArrow = QStringLiteral("://cursor/arrow_resize_cursor.png");
+const QString cursorImageOrigin = QStringLiteral("://cursor/image_origin_cursor.png");
 
 // From documantation: If you use QStringLiteral you should avoid declaring the same literal in multiple places: This
 // furthermore blows up the binary sizes.
