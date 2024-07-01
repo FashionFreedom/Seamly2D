@@ -98,6 +98,9 @@ DialogCutSpline::DialogCutSpline(const VContainer *data, const quint32 &toolId, 
 
     FillComboBoxSplines(ui->comboBoxSpline);
 
+    ui->direction_ComboBox->addItem(tr("Forward (from start point)"), "forward");
+    ui->direction_ComboBox->addItem(tr("Backward (from end point)"), "backward");
+
     connect(ui->toolButtonExprLength, &QPushButton::clicked, this, &DialogCutSpline::FXLength);
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogCutSpline::NamePointChanged);
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogCutSpline::FormulaChanged);
@@ -121,6 +124,22 @@ void DialogCutSpline::SetPointName(const QString &value)
 {
     pointName = value;
     ui->lineEditNamePoint->setText(pointName);
+}
+
+
+// @brief setDirection set the direction
+// @param value name
+void DialogCutSpline::setDirection(const QString &value)
+{
+    ChangeCurrentData(ui->direction_ComboBox, value);
+    VisToolCutSpline *path = qobject_cast<VisToolCutSpline *>(vis);
+    SCASSERT(path != nullptr)
+    path->setDirection(value);
+}
+
+QString DialogCutSpline::getDirection() const
+{
+    return GetComboBoxCurrentData(ui->direction_ComboBox, "forward");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -194,6 +213,7 @@ void DialogCutSpline::SaveData()
     SCASSERT(path != nullptr)
 
     path->setObject1Id(getSplineId());
+    path->setDirection(getDirection());
     path->setLength(formula);
     path->RefreshGeometry();
 }

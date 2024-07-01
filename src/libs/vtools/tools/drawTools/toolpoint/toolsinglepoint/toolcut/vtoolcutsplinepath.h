@@ -79,10 +79,10 @@ public:
 
     static VToolCutSplinePath *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene,
                                       VAbstractPattern *doc, VContainer *data);
-    static VToolCutSplinePath *Create(const quint32 _id, const QString &pointName, QString &formula,
-                                      quint32 splinePathId, qreal mx, qreal my, bool showPointName,
-                                      VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
-                                      const Document &parse, const Source &typeCreation);
+    static VToolCutSplinePath *Create(const quint32 _id, const QString &pointName, QString &direction,
+                                      QString &formula, quint32 splinePathId, qreal mx, qreal my,
+                                      bool showPointName, VMainGraphicsScene *scene, VAbstractPattern *doc,
+                                      VContainer *data, const Document &parse, const Source &typeCreation);
     static const QString ToolType;
     static const QString AttrSplinePath;
     virtual int          type() const Q_DECL_OVERRIDE {return Type;}
@@ -107,8 +107,9 @@ protected:
 private:
     Q_DISABLE_COPY(VToolCutSplinePath)
 
-    VToolCutSplinePath(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &formula,
-                       const quint32 &splinePathId, const Source &typeCreation, QGraphicsItem * parent = nullptr);
+    VToolCutSplinePath(VAbstractPattern *doc, VContainer *data, const quint32 &id, QString &direction,
+                       const QString &formula, const quint32 &splinePathId, const Source &typeCreation,
+                       QGraphicsItem * parent = nullptr);
 };
 
 #endif // VTOOLCUTSPLINEPATH_H

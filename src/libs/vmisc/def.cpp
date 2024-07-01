@@ -589,6 +589,40 @@ void initHighDpiScaling(int argc, char *argv[])
 }
 //---------------------------------------------------------------------------------------------------------------------
 
+const QString strForward   = QStringLiteral("forward");
+const QString strBackward  = QStringLiteral("backward");
+
+QString directionToString(Direction type)
+{
+    switch(type)
+    {
+        case Direction::Forward:
+            return strForward;
+        case Direction::Backward:
+            return strBackward;
+            default:
+                break;
+    }
+    return strForward;
+}
+
+Direction stringToDirection(const QString &value)
+{
+    const QStringList values = QStringList() << strForward << strBackward;
+
+    switch(values.indexOf(value))
+    {
+        case 0:
+            return Direction::Forward;
+        case 1:
+            return Direction::Backward;
+            default:
+                break;
+    }
+    return Direction::Forward;
+}
+
+
 const QString strSlit      = QStringLiteral("slit");
 const QString strTNotch    = QStringLiteral("tNotch");
 const QString strUNotch    = QStringLiteral("uNotch");

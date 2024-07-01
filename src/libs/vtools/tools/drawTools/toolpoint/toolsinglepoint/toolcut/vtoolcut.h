@@ -72,9 +72,9 @@ class VToolCut : public VToolSinglePoint
 {
     Q_OBJECT
 public:
-                  VToolCut(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &formula,
-                           const quint32 &curveCutId, QGraphicsItem * parent = nullptr);
-                           
+                  VToolCut(VAbstractPattern *doc, VContainer *data, const quint32 &id, QString &direction,
+                           const QString &formula, const quint32 &curveCutId, QGraphicsItem * parent = nullptr);
+
     virtual int   type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::Cut)};
 
@@ -86,15 +86,18 @@ public:
     quint32       getCurveCutId() const;
     void          setCurveCutId(const quint32 &value);
 
+    QString       getDirection() const;
+    void          setDirection(const QString &value);
+
 public slots:
     virtual void  Disable(bool disable, const QString &draftBlockName) Q_DECL_OVERRIDE;
     virtual void  piecesMode(bool mode) Q_DECL_OVERRIDE;
     virtual void  FullUpdateFromFile() Q_DECL_OVERRIDE;
 
 protected:
+    QString       m_direction;
     /** @brief formula keep formula of length */
     QString       formula;
-
     quint32       curveCutId;
     bool          m_piecesMode;
 
