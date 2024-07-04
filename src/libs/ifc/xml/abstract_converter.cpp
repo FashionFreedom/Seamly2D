@@ -226,15 +226,15 @@ void VAbstractConverter::saveBackupFile() const
     {
         QString error;
         const QFileInfo info(removeBakExtension(m_convertedFileName));
-        const QString baseFileName = info.baseName();
+        QString baseFileName = info.baseName();
+
+        // replace any spaces in filename with underscore to pevent
+        // errors when opening file in Linux through the command line.
+        baseFileName.replace(" ", "_");
 
         const QString path = qApp->Settings()->getBackupFilePath();
         QString backupFileName;
-        backupFileName = QString("%1/%2%3.%4")
-                                .arg(path)
-                                .arg(baseFileName)
-                                .arg(" (Backup)")
-                                .arg(info.completeSuffix());
+        backupFileName = QString("%1/%2%3.%4").arg(path, baseFileName, "_(backup)", info.completeSuffix());
 
         if (!SafeCopy(m_convertedFileName, backupFileName, error))
         {
