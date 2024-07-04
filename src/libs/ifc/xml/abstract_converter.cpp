@@ -232,7 +232,11 @@ void VAbstractConverter::saveBackupFile() const
         // errors when opening file in Linux through the command line.
         baseFileName.replace(" ", "_");
 
-        const QString path = qApp->Settings()->getBackupFilePath();
+        QString path = qApp->Settings()->getBackupFilePath();
+        if (!info.exists(path))
+        {
+            path = info.absoluteDir().absolutePath();
+        }
         QString backupFileName;
         backupFileName = QString("%1/%2%3.%4").arg(path, baseFileName, "_(backup)", info.completeSuffix());
 
