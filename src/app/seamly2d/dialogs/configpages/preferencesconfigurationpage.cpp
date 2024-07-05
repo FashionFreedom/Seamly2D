@@ -85,7 +85,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
                           QRegularExpression::CaseInsensitiveOption);
     ui->email_LineEdit->setValidator(new QRegularExpressionValidator(rx, this));
 
-    //Designer Info
+    // Designer Info
     ui->companyName_LineEdit->setText(qApp->Seamly2DSettings()->getCompanyName());
     ui->contact_LineEdit->setText(qApp->Seamly2DSettings()->getContact());
     ui->address_LineEdit->setText(qApp->Seamly2DSettings()->getAddress());
@@ -100,11 +100,11 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
 
     connect(ui->email_LineEdit, &QLineEdit::textChanged, this, &PreferencesConfigurationPage::adjustTextColor);
 
-    //Editing
+    // Editing
     // Undo
     ui->undoCount_SpinBox->setValue(qApp->Seamly2DSettings()->GetUndoCount());
 
-    //Selection sound
+    // Selection sound
     int index = ui->selectionSound_ComboBox->findText(qApp->Seamly2DSettings()->getSound());
     if (index != -1)
     {
@@ -119,13 +119,6 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     // Warnings
     ui->confirmItemDelete_CheckBox->setChecked(qApp->Seamly2DSettings()->getConfirmItemDelete());
     ui->confirmFormatRewriting_CheckBox->setChecked(qApp->Seamly2DSettings()->getConfirmFormatRewriting());
-    // Send crash reports
-    //ui->sendReportCheck->setChecked(qApp->Seamly2DSettings()->GetSendReportState());
-    //ui->description = new QLabel(tr("After each crash Seamly2D collects information that may help us fix the "
-    //                                "problem. We do not collect any personal information. Find more about what %1"
-    //                                "kind of information%2 we collect.")
-    //                             .arg("<a href=\"https://wiki.seamly.net/wiki/UserManual:Crash_reports\">")
-    //                             .arg("</a>"));
 
     // Default operations suffixes
     ui->moveSuffix_ComboBox->addItem(tr("None"), "");
@@ -180,7 +173,8 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
 
     // File handling
-    // Autosave
+    // Backups
+    ui->convertBackupEnabled_CheckBox->setChecked(qApp->Seamly2DSettings()->getConvertBackupEnabled());
     ui->autoSave_CheckBox->setChecked(qApp->Seamly2DSettings()->GetAutosaveState());
     ui->autoInterval_Spinbox->setValue(qApp->Seamly2DSettings()->getAutosaveInterval());
 
@@ -197,7 +191,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
         m_defaultExportFormatChanged = true;
     });
 
-    //-------------------- Startup
+    // Startup
     ui->showWelcome_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowWelcome());
 
     // Language
@@ -212,7 +206,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     ui->osOptionCheck->setChecked(qApp->Seamly2DSettings()->getOsSeparator());
 
     // Unit setup
-    InitUnits();
+    initUnits();
     connect(ui->unitCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
     {
         m_unitChanged = true;
@@ -242,7 +236,7 @@ PreferencesConfigurationPage::~PreferencesConfigurationPage()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesConfigurationPage::Apply()
+void PreferencesConfigurationPage::apply()
 {
     if(!ui->email_LineEdit->text().isEmpty() && !ui->email_LineEdit->hasAcceptableInput())
     {
@@ -254,7 +248,7 @@ void PreferencesConfigurationPage::Apply()
 
     VSettings *settings = qApp->Seamly2DSettings();
 
-    //Designer Info
+    // Designer Info
     settings->setCompanyName(ui->companyName_LineEdit->text());
     settings->setContact(ui->contact_LineEdit->text());
     settings->setAddress(ui->address_LineEdit->text());
@@ -279,6 +273,8 @@ void PreferencesConfigurationPage::Apply()
     }
     settings->setConfirmItemDelete(ui->confirmItemDelete_CheckBox->isChecked());
     settings->setConfirmFormatRewriting(ui->confirmFormatRewriting_CheckBox->isChecked());
+
+    settings->setConvertBackupEnabled(ui->convertBackupEnabled_CheckBox->isChecked());
 
     settings->setAutosaveState(ui->autoSave_CheckBox->isChecked());
     settings->setAutosaveInterval(ui->autoInterval_Spinbox->value());
@@ -373,7 +369,7 @@ void PreferencesConfigurationPage::setPointNameComboBox(const QStringList &list)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesConfigurationPage::InitUnits()
+void PreferencesConfigurationPage::initUnits()
 {
     ui->unitCombo->addItem(tr("Centimeters"), unitCM);
     ui->unitCombo->addItem(tr("Millimeters"), unitMM);

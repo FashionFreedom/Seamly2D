@@ -68,6 +68,7 @@
 
 int main(int argc, char *argv[])
 {
+    // Initialize resources for the application
     Q_INIT_RESOURCE(cursor);
     Q_INIT_RESOURCE(icon);
     Q_INIT_RESOURCE(schema);
@@ -77,9 +78,11 @@ int main(int argc, char *argv[])
     Q_INIT_RESOURCE(toolicon);
     Q_INIT_RESOURCE(sounds);
 
+    // Check if the Qt version is at least 5.15.2
     QT_REQUIRE_VERSION(argc, argv, "5.15.2");
 
-    // Need to internally move a node inside a piece main path
+    // Register meta-type stream operators for VPieceNode
+    // This is needed to internally move a node inside a piece main path
     qRegisterMetaTypeStreamOperators<VPieceNode>("VPieceNode");
 
     //------------------------------------------------------------------------
@@ -89,40 +92,52 @@ int main(int argc, char *argv[])
     qputenv("QT_MAC_WANTS_LAYER", "1");
     //------------------------------------------------------------------------
 
-#ifndef Q_OS_MAC // supports natively
+#ifndef Q_OS_MAC // High DPI scaling is supported natively on macOS
+    // Initialize high DPI scaling for non-macOS platforms
     initHighDpiScaling(argc, argv);
 #endif //Q_OS_MAC
 
+    // Create the application instance
     Application2D app(argc, argv);
+    // Initialize application options
     app.initOptions();
 
+    // Retrieve the application settings
     auto settings = qApp->Seamly2DSettings();
-    // its named showWelcome, but true means "do not show welcome again" and thus we invert it here
+    // The 'showWelcome' setting indicates whether to show the welcome dialog
+    // 'true' means "do not show welcome again", so we invert it here
     bool showWelcome = !settings->getShowWelcome();
 
     if (showWelcome)
     {
+        // Show the welcome dialog if needed
         SeamlyWelcomeDialog *dialog = new SeamlyWelcomeDialog();
         dialog->setAttribute(Qt::WA_DeleteOnClose, true);
         dialog->exec();
+        // Load translations based on the locale setting
         app.loadTranslations(settings->getLocale());
     }
 
+    // Create the main window
     MainWindow window;
 #if !defined(Q_OS_MAC)
+    // Set the window icon for non-macOS platforms
     app.setWindowIcon(QIcon(":/icon/64x64/icon64x64.png"));
 #endif // !defined(Q_OS_MAC)
+    // Set the main window for the application
     app.setMainWindow(&window);
 
     int msec = 0;
-    //Before we load pattern show window.
+    // Show the main window before loading the pattern if in GUI mode
     if (Application2D::isGUIMode())
     {
         window.show();
-        msec = 15; // set delay for correct the first fitbest zoom
+        msec = 15; // set delay for correct initial zoom
     }
 
+    // Process command line arguments after a delay
     QTimer::singleShot(msec, &window, &MainWindow::processCommandLine);
 
+    // Start the application event loop
     return app.exec();
 }

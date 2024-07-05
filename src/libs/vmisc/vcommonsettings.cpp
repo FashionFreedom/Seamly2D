@@ -79,6 +79,7 @@ const QString settingPathsMultisizeMeasurements          = QStringLiteral("paths
 const QString settingPathsTemplates                      = QStringLiteral("paths/templates");
 const QString settingPathsBodyScans                      = QStringLiteral("paths/bodyscans");
 const QString settingPathsLabelTemplate                  = QStringLiteral("paths/labels");
+const QString settingBackupPath                          = QStringLiteral("paths/backups");
 
 const QString settingConfigurationCompanyName            = QStringLiteral("graphicsview/companyName");
 const QString settingConfigurationContact                = QStringLiteral("graphicsview/contact");
@@ -94,6 +95,8 @@ const QString settingConfigurationWebsite                = QStringLiteral("graph
 
 const QString settingConfigurationShowWelcome            = QStringLiteral("configuration/showWelcome");
 const QString settingConfigurationOsSeparator            = QStringLiteral("configuration/osSeparator");
+
+const QString settingConfigurationConvertBackup          = QStringLiteral("configuration/backup/convertBackupEnabled");
 const QString settingConfigurationAutosaveState          = QStringLiteral("configuration/autosave/state");
 const QString settingConfigurationAutosaveTime           = QStringLiteral("configuration/autosave/time");
 
@@ -527,6 +530,24 @@ void VCommonSettings::setImageFilePath(const QString &text)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultBackupFilePath()
+{
+    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("backups");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getBackupFilePath() const
+{
+    return value(settingBackupPath, getDefaultBackupFilePath()).toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setBackupFilePath(const QString &text)
+{
+    setValue(settingBackupPath, text);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultPatternTemplate() const
 {
     return value(settingDefaultPatternTemplate, getLabelTemplatePath() + "default_pattern_label.xml").toString();
@@ -572,6 +593,18 @@ bool VCommonSettings::getOsSeparator() const
 void VCommonSettings::setOsSeparator(const bool &value)
 {
     setValue(settingConfigurationOsSeparator, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getConvertBackupEnabled() const
+{
+    return value(settingConfigurationConvertBackup, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setConvertBackupEnabled(const bool &value)
+{
+    setValue(settingConfigurationConvertBackup, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

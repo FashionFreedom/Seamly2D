@@ -274,7 +274,7 @@
 <context>
     <name>Application2D</name>
     <message>
-        <location filename="../../src/app/seamly2d/core/application_2d.cpp" line="+359"/>
+        <location filename="../../src/app/seamly2d/core/application_2d.cpp" line="+350"/>
         <source>Error parsing file. Program will be terminated.</source>
         <translation>Fout bij uitpakken bestand. Programma wordt beëindigd.</translation>
     </message>
@@ -5909,7 +5909,7 @@ Do you want to download it?</source>
 <context>
     <name>ImageDialog</name>
     <message>
-        <location filename="../../src/libs/tools/image_dialog.ui" line="+35"/>
+        <location filename="../../src/libs/tools/images/image_dialog.ui" line="+35"/>
         <source>Image Properties</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6037,7 +6037,7 @@ Do you want to download it?</source>
 <context>
     <name>ImageItem</name>
     <message>
-        <location filename="../../src/libs/tools/image_item.cpp" line="+295"/>
+        <location filename="../../src/libs/tools/images/image_item.cpp" line="+295"/>
         <source>Properties</source>
         <translation type="unfinished">Eigenschappen</translation>
     </message>
@@ -6084,6 +6084,61 @@ Do you want to download it?</source>
     <message>
         <location line="+8"/>
         <source> - &lt;b&gt;Aspect ratio locked&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ImageTool</name>
+    <message>
+        <location filename="../../src/libs/tools/images/image_tool.cpp" line="+54"/>
+        <location line="+25"/>
+        <location line="+24"/>
+        <location line="+9"/>
+        <source>Import Image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-58"/>
+        <location line="+25"/>
+        <source>Could not load the image.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <location line="+9"/>
+        <source>Could not read the image.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-9"/>
+        <source>File may be corrupted...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>File may be corrupted or empty...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+43"/>
+        <source>Confirm deletion</source>
+        <translation type="unfinished">Bevestig verwijdering</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Do you really want to delete?</source>
+        <translation type="unfinished">Wil je dit echt verwijderen?</translation>
+    </message>
+    <message>
+        <location line="+43"/>
+        <source>Images will not be saved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Please note that the images can not be saved and that they are not affected by the undo and redo functions in the current version of the software.
+
+You may want to take a screenshot of the image properties dialog before closing the software to be able to recreate identically the image when opening the software again.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6702,12 +6757,12 @@ Apply settings anyway?</source>
         <location line="-728"/>
         <location line="+735"/>
         <location line="+3"/>
-        <location line="+3779"/>
+        <location line="+3786"/>
         <source>Point</source>
         <translation>Punt</translation>
     </message>
     <message>
-        <location line="-3454"/>
+        <location line="-3461"/>
         <source>Tools for creating lines.</source>
         <translation>Gereedschap om lijnen te maken.</translation>
     </message>
@@ -6715,13 +6770,13 @@ Apply settings anyway?</source>
         <location line="-1032"/>
         <location line="+1039"/>
         <location line="+3"/>
-        <location line="+2899"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+3105"/>
+        <location line="+2906"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+2973"/>
         <source>Line</source>
         <translation>Lijn</translation>
     </message>
     <message>
-        <location line="-2805"/>
+        <location line="-2812"/>
         <source>Tools for creating curves.</source>
         <translation>Gereedschap om krommes te maken.</translation>
     </message>
@@ -6756,7 +6811,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <location line="+11"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2838"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2706"/>
         <source>Measurements</source>
         <translation>Maten</translation>
     </message>
@@ -6792,7 +6847,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <location line="+18"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+5023"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+4890"/>
         <source>Save</source>
         <translation>Opslaan</translation>
     </message>
@@ -6807,7 +6862,7 @@ Apply settings anyway?</source>
         <translation>Opslaan patroon</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+18"/>
         <source>Save &amp;As...</source>
         <translation>Opslaan &amp;als...</translation>
     </message>
@@ -6817,19 +6872,19 @@ Apply settings anyway?</source>
         <translation>Sla nog niet opgeslagen patroon op</translation>
     </message>
     <message>
-        <location line="-2475"/>
+        <location line="-2476"/>
         <location line="+2160"/>
         <source>Details</source>
         <translation>Details</translation>
     </message>
     <message>
-        <location line="+393"/>
+        <location line="+394"/>
         <source>Pointer tools</source>
         <translation>Aanwijzer gereedschap</translation>
     </message>
     <message>
-        <location line="-2640"/>
-        <location line="+2724"/>
+        <location line="-2641"/>
+        <location line="+2725"/>
         <source>History</source>
         <translation>Geschiedenis</translation>
     </message>
@@ -6849,27 +6904,27 @@ Apply settings anyway?</source>
         <translation>E&amp;xit</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-4983"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-4850"/>
         <source>Preferences</source>
         <translation>Voorkeuren</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="+131"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="+132"/>
         <source>Report bug</source>
         <translation>Rapporteer fout</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+35"/>
         <source>Show online help</source>
         <translation>Toon online help</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+6029"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+5863"/>
         <source>About Qt</source>
         <translation>Over Qt</translation>
     </message>
     <message>
-        <location line="-2216"/>
+        <location line="-2183"/>
         <source>Save as</source>
         <translation>Opslaan als</translation>
     </message>
@@ -6879,17 +6934,17 @@ Apply settings anyway?</source>
         <translation>Kon bestand niet opslaan</translation>
     </message>
     <message>
-        <location line="-2027"/>
+        <location line="-2026"/>
         <location line="+46"/>
-        <location line="+2131"/>
-        <location line="+2796"/>
+        <location line="+2130"/>
+        <location line="+2760"/>
         <location line="+20"/>
         <location line="+29"/>
         <source>Open file</source>
         <translation>Open bestand</translation>
     </message>
     <message>
-        <location line="-2704"/>
+        <location line="-2668"/>
         <location line="+52"/>
         <source>Error parsing file.</source>
         <translation>Fout bij uitpakken bestand.</translation>
@@ -6926,46 +6981,46 @@ Apply settings anyway?</source>
         <translation>Bestand opgeslagen</translation>
     </message>
     <message>
-        <location line="+2375"/>
+        <location line="+2339"/>
         <source>untitled.sm2d</source>
         <translation>zonder titel.sm2d</translation>
     </message>
     <message>
-        <location line="-2249"/>
+        <location line="-2213"/>
         <source>The pattern has been modified.
 Do you want to save your changes?</source>
         <translation>Het patroon is aangepast.
 Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
-        <location line="-3314"/>
-        <location line="+3420"/>
+        <location line="-3313"/>
+        <location line="+3395"/>
         <source>&amp;Undo</source>
         <translation>&amp;Ongedaan maken</translation>
     </message>
     <message>
-        <location line="-3419"/>
-        <location line="+3431"/>
+        <location line="-3394"/>
+        <location line="+3406"/>
         <source>&amp;Redo</source>
         <translation>&amp;Opnieuw doen</translation>
     </message>
     <message>
-        <location line="+2293"/>
+        <location line="+2281"/>
         <source>This file already opened in another window.</source>
         <translation>Dit bestand is al geopend in een ander raamwerk.</translation>
     </message>
     <message>
-        <location line="-7201"/>
+        <location line="-7032"/>
         <source>Wrong units.</source>
         <translation>Verkeerde eenheden.</translation>
     </message>
     <message>
-        <location line="+6108"/>
+        <location line="+5942"/>
         <source>File loaded</source>
         <translation>Bestand geladen</translation>
     </message>
     <message>
-        <location line="+425"/>
+        <location line="+422"/>
         <source>Seamly2D didn&apos;t shut down correctly. Do you want reopen files (%1) you had open?</source>
         <translation>Seamly2D  is niet correct gesloten. Wil je de geopende bestanden(%1) heropenen?</translation>
     </message>
@@ -6975,26 +7030,26 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Heropen bestanden.</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3445"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3448"/>
         <location line="+2218"/>
         <location line="+3"/>
-        <location line="+364"/>
+        <location line="+365"/>
         <source>Layout</source>
         <translation>Opmaak</translation>
     </message>
     <message>
-        <location line="-334"/>
+        <location line="-335"/>
         <source>Settings</source>
         <translation>Instellingen</translation>
     </message>
     <message>
         <location line="-2477"/>
-        <location line="+3741"/>
+        <location line="+3745"/>
         <source>Print</source>
         <translation>Afdrukken</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+18"/>
         <source>Print tiled PDF</source>
         <translation>Druk papierfomaatindeling PDF af</translation>
     </message>
@@ -7004,7 +7059,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Verdeel en sla een opmaak op in kleinere pagina&apos;s ( voor normale printers)</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+15"/>
         <source>Print preview</source>
         <translation>Druk voorbeeldweergave af</translation>
     </message>
@@ -7014,82 +7069,70 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Druk voorbeeldweergave van originele opmaak af</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+33"/>
         <source>Export As...</source>
         <translation>Export als...</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-3043"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-3007"/>
         <location line="+20"/>
         <location line="+23"/>
-        <location line="+2783"/>
+        <location line="+2747"/>
         <source>Layout mode</source>
         <translation>Opmaak modus</translation>
     </message>
     <message>
-        <location line="-1529"/>
+        <location line="-1493"/>
         <source>Unsaved changes</source>
         <translation>Niet opgeslagen veranderingen</translation>
     </message>
     <message>
-        <location line="-3126"/>
+        <location line="-3125"/>
         <location line="+56"/>
         <source>Measurements loaded</source>
         <translation>Maten geladen</translation>
     </message>
     <message>
-        <location line="+5099"/>
+        <location line="+5062"/>
         <source>You can&apos;t export empty scene.</source>
         <translation>U kunt geen lege beelden exporteren.</translation>
     </message>
     <message>
-        <location line="-6828"/>
-        <location line="+6737"/>
+        <location line="-6659"/>
+        <location line="+6568"/>
         <source>Measurement file contains invalid known measurement(s).</source>
         <translation>Maten bestand bevat ongeldige bekende ma(a)t(en).</translation>
     </message>
     <message>
-        <location line="-6754"/>
-        <location line="+6715"/>
+        <location line="-6585"/>
+        <location line="+6546"/>
         <source>Measurement file has unknown format.</source>
         <translation>Maten bestand heeft een onbekende indeling.</translation>
     </message>
     <message>
-        <location line="-6588"/>
+        <location line="-6419"/>
         <source>Measurement files types have not match.</source>
         <translation>Maten bestanden types komen niet overeen.</translation>
     </message>
     <message>
-        <location line="+1769"/>
+        <location line="+1637"/>
         <source>Couldn&apos;t sync measurements.</source>
         <translation>Kan maten niet synchroniseren.</translation>
     </message>
     <message>
-        <location line="+2485"/>
+        <location line="+2484"/>
         <location line="+30"/>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Kan maten niet bijwerken.</translation>
     </message>
     <message>
-        <location line="+454"/>
-        <source>Images will not be saved</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Please note that the images can not be saved and that they are not affected by the undo and redo functions in the current version of the software.
-
-You may want to take a screenshot of the image properties dialog before closing the software to be able to recreate identically the image when opening the software again.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1212"/>
+        <location line="+1634"/>
         <location line="+11"/>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Het maten bestand &apos;%1&apos; kon niet gevonden worden.</translation>
     </message>
     <message>
-        <location line="+520"/>
+        <location line="+517"/>
         <source>Loading measurements file</source>
         <translation>Laden maten bestand</translation>
     </message>
@@ -7125,12 +7168,12 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Alsublieft, verstrek éen invoer bestand.</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-66"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-69"/>
         <source>Print an original layout</source>
         <translation>Druk een originele opmaak af</translation>
     </message>
     <message>
-        <location line="+48"/>
+        <location line="+51"/>
         <source>Preview tiled PDF</source>
         <translation>Bekijk vooraf papierformaatindeling PDF</translation>
     </message>
@@ -7140,7 +7183,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Druk voorbeeldweergave papierformaatindeling opmaak af</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5219"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5182"/>
         <source>Measurements unloaded</source>
         <translation>Maten niet geladen</translation>
     </message>
@@ -7150,7 +7193,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>kan maten niet ontladen. Sommigen worden gebruikt in het patroon.</translation>
     </message>
     <message>
-        <location line="-1965"/>
+        <location line="-1833"/>
         <source>New pattern</source>
         <translation>Nieuw patroon</translation>
     </message>
@@ -7165,7 +7208,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Creër/verander maten</translation>
     </message>
     <message>
-        <location line="+4987"/>
+        <location line="+4854"/>
         <source>Save...</source>
         <translation>Sla op...</translation>
     </message>
@@ -7175,7 +7218,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Niet opslaan</translation>
     </message>
     <message>
-        <location line="+2365"/>
+        <location line="+2329"/>
         <location line="+6"/>
         <location line="+7"/>
         <source>Locking file</source>
@@ -7207,29 +7250,29 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Onbekende fout gebeurd, bijvoorbeeld een volledige partitie voorkomt het schrijven uit het vergrendelingsbestand.</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-1960"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-1967"/>
         <location line="+3"/>
         <source>Operations</source>
         <translation>Bewerkingen</translation>
     </message>
     <message>
-        <location line="+1816"/>
+        <location line="+1818"/>
         <source>Close pattern</source>
         <translation>Sluit patroon</translation>
     </message>
     <message>
-        <location line="-2891"/>
+        <location line="-2893"/>
         <source>Tool pointer</source>
         <translation>Gereedschap aanwijzer</translation>
     </message>
     <message>
-        <location line="+2833"/>
+        <location line="+2835"/>
         <location line="+3"/>
         <source>Original zoom</source>
         <translation>Originele zoom</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5284"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5247"/>
         <source>Height:</source>
         <translation>Hoogte:</translation>
     </message>
@@ -7239,12 +7282,12 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Maat:</translation>
     </message>
     <message>
-        <location line="+4646"/>
+        <location line="+4609"/>
         <source>The measurements file &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
         <translation>Het maten bestand&lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; kon niet gevonden worden. Wil je de bestanden locatie bijwerken?</translation>
     </message>
     <message>
-        <location line="-6803"/>
+        <location line="-6634"/>
         <source>Measurements were changed. Do you want to sync measurements now?</source>
         <translation>Maten zijn gewijzigd. Wil je ze nu synchroniseren?</translation>
     </message>
@@ -7254,12 +7297,12 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Graderen ondersteunt geen inches</translation>
     </message>
     <message>
-        <location line="+1819"/>
+        <location line="+1687"/>
         <source>Measurements have been synced</source>
         <translation>Maten zijn gesynchroniseerd</translation>
     </message>
     <message>
-        <location line="+1883"/>
+        <location line="+1882"/>
         <source>The document has no write permissions.</source>
         <translation>Dit document kan niet gewijzigd worden.</translation>
     </message>
@@ -7279,12 +7322,12 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Het bestand is niet bewaard</translation>
     </message>
     <message>
-        <location line="+3309"/>
+        <location line="+3273"/>
         <source>read only</source>
         <translation>alleen lezen</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="+229"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="+234"/>
         <source>Load Individual</source>
         <translation>Laad individueel</translation>
     </message>
@@ -7339,37 +7382,37 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Laad maten niet als ze niet gebruikt worden in een patroon-bestand</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5465"/>
-        <location line="+4993"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5428"/>
+        <location line="+4956"/>
         <location line="+25"/>
         <source>Individual measurements</source>
         <translation>Individuele maten</translation>
     </message>
     <message>
-        <location line="-4965"/>
-        <location line="+4928"/>
+        <location line="-4928"/>
+        <location line="+4891"/>
         <location line="+40"/>
         <source>Multisize measurements</source>
         <translation>Multimaten maten</translation>
     </message>
     <message>
-        <location line="-3050"/>
+        <location line="-3014"/>
         <location line="+203"/>
         <source>Pattern files</source>
         <translation>Patroonbestanden</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-260"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-264"/>
         <source>Wiki</source>
         <translation>Wiki</translation>
     </message>
     <message>
-        <location line="+271"/>
+        <location line="+275"/>
         <source>Forum</source>
         <translation>Forum</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2232"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2231"/>
         <source>Name</source>
         <translation>Naam</translation>
     </message>
@@ -7384,17 +7427,17 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Formule</translation>
     </message>
     <message>
-        <location line="+1965"/>
+        <location line="+1964"/>
         <source>You can&apos;t use Layout mode yet.</source>
         <translation>Je kunt Layout mode nog niet gebruiken.</translation>
     </message>
     <message>
-        <location line="-3535"/>
+        <location line="-3402"/>
         <source>Application doesn&apos;t support multisize table with inches.</source>
         <translation>Applicatie ondersteunt niet het meerdere maten tabel met inches.</translation>
     </message>
     <message>
-        <location line="+6903"/>
+        <location line="+6734"/>
         <source>Couldn&apos;t set size. Need a file with multisize measurements.</source>
         <translation>Kon de maat niet vaststellen. Heb een bestand nodig met meerdere maten metingen.</translation>
     </message>
@@ -7404,7 +7447,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Kon de hoogte niet vaststellen. Heb een bestand nodig met meerdere maten metingen.</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3928"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3935"/>
         <source>Preview</source>
         <translation>Voorbeeldweergave</translation>
     </message>
@@ -7436,12 +7479,12 @@ You may want to take a screenshot of the image properties dialog before closing 
     <message>
         <location line="+93"/>
         <location line="+1853"/>
-        <location line="+616"/>
+        <location line="+617"/>
         <source>Piece</source>
         <translation>Patroondeel</translation>
     </message>
     <message>
-        <location line="-2417"/>
+        <location line="-2418"/>
         <source>Utilities</source>
         <translation>Hulpmiddelen</translation>
     </message>
@@ -7477,8 +7520,8 @@ You may want to take a screenshot of the image properties dialog before closing 
     </message>
     <message>
         <location line="+88"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5464"/>
-        <location line="+1889"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5427"/>
+        <location line="+1888"/>
         <source>Group Manager</source>
         <translation>Groepenbeheer</translation>
     </message>
@@ -7544,29 +7587,29 @@ You may want to take a screenshot of the image properties dialog before closing 
     </message>
     <message>
         <location line="+512"/>
-        <location line="+2878"/>
+        <location line="+2885"/>
         <source>Line between 2 Points (Alt+L)</source>
         <translation>Lijn tussen 2 Punten (Alt+L)</translation>
     </message>
     <message>
-        <location line="-2280"/>
+        <location line="-2287"/>
         <source>Tools for performing operations on objects</source>
         <translation>Gereedschap om bewerkingen uit te voeren op groepen objecten</translation>
     </message>
     <message>
         <location line="+60"/>
-        <location line="+968"/>
+        <location line="+969"/>
         <source>Rotate Selected Objects (R)</source>
         <translation>Draai geselecteerde objecten (R)</translation>
     </message>
     <message>
-        <location line="-838"/>
-        <location line="+2534"/>
+        <location line="-839"/>
+        <location line="+2541"/>
         <source>Export Draft Blocks (E, D)</source>
         <translation>Exporteer Tekenblok (E,D)</translation>
     </message>
     <message>
-        <location line="-2496"/>
+        <location line="-2503"/>
         <source>Tools for adding pattern pieces.</source>
         <translation>Gereedschap om Patroondelen toe te voegen.</translation>
     </message>
@@ -7583,17 +7626,17 @@ You may want to take a screenshot of the image properties dialog before closing 
     </message>
     <message>
         <location line="+25"/>
-        <location line="+1975"/>
+        <location line="+1982"/>
         <source>Unite 2 Pieces (U)</source>
         <translation>Verenig 2 Patroondelen (U)</translation>
     </message>
     <message>
-        <location line="-1770"/>
+        <location line="-1777"/>
         <source>View Toolbar</source>
         <translation>Werkbalk Bekijk</translation>
     </message>
     <message>
-        <location line="+116"/>
+        <location line="+117"/>
         <location line="+3"/>
         <source>Draft</source>
         <translation>Teken</translation>
@@ -7656,7 +7699,7 @@ You may want to take a screenshot of the image properties dialog before closing 
     </message>
     <message>
         <location line="+12"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-575"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-574"/>
         <source>Mirror by Line</source>
         <translation>Spiegel over Lijn</translation>
     </message>
@@ -7768,12 +7811,12 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>A, L</translation>
     </message>
     <message>
-        <location line="-875"/>
+        <location line="-876"/>
         <source>Tools for inserting or modifying images.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+998"/>
+        <location line="+999"/>
         <source>Point on Curve (O, C)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7828,7 +7871,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Uitzoomen (Ctrl+-)</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+39"/>
         <source>Fit All</source>
         <translation>Toon Alles</translation>
     </message>
@@ -7854,7 +7897,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Afsluiten</translation>
     </message>
     <message>
-        <location line="+35"/>
+        <location line="+36"/>
         <source>Shortcuts</source>
         <translation>Sneltoetsen</translation>
     </message>
@@ -7879,7 +7922,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Draai controlepunten en richting Kromme om (V, C)</translation>
     </message>
     <message>
-        <location line="+128"/>
+        <location line="+132"/>
         <source>Load multisize</source>
         <translation>Laad meerdere maten in</translation>
     </message>
@@ -8205,7 +8248,7 @@ You may want to take a screenshot of the image properties dialog before closing 
     </message>
     <message>
         <location line="+9"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+2874"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+2840"/>
         <source>Calculator</source>
         <translation>Rekenmachine</translation>
     </message>
@@ -8226,7 +8269,7 @@ You may want to take a screenshot of the image properties dialog before closing 
     </message>
     <message>
         <location line="+12"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-3004"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2970"/>
         <source>Export Draft Blocks</source>
         <translation>Exporteer Tekenblok</translation>
     </message>
@@ -8271,7 +8314,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Ctrl+I</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2644"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2512"/>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>Matenbestand bevat niet alle benodigde maten.</translation>
     </message>
@@ -8306,7 +8349,12 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>&lt;b&gt;Gereedschap::Bewerkingen - Echte Figuurnaden:&lt;/b&gt; Kies het eerste punt van de basislijn</translation>
     </message>
     <message>
-        <location line="+439"/>
+        <location line="+141"/>
+        <source>Could not load the image.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+166"/>
         <location line="+594"/>
         <source>Draft Block:</source>
         <translation>Tekenblok:</translation>
@@ -8343,14 +8391,13 @@ You may want to take a screenshot of the image properties dialog before closing 
     </message>
     <message>
         <location filename="../../src/app/seamly2d/mainwindow.ui" line="+30"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1720"/>
-        <location line="+9"/>
-        <location line="+1767"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1590"/>
+        <location line="+1646"/>
         <source>Import Image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+451"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+450"/>
         <source>Piece mode</source>
         <translation>Patroondeel modus</translation>
     </message>
@@ -8360,8 +8407,8 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>U kunt de Patroondeel modus nog niet gebruiken. Maak eerst tenminste één patroondeel.</translation>
     </message>
     <message>
-        <location line="-1923"/>
-        <location line="+1963"/>
+        <location line="-1922"/>
+        <location line="+1962"/>
         <source>Pattern Pieces</source>
         <translation>Patroondelen</translation>
     </message>
@@ -8376,7 +8423,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>U kunt de Opmaak modus nog niet gebruiken. Maak eerst tenminste één patroondeel.</translation>
     </message>
     <message>
-        <location line="+2382"/>
+        <location line="+2349"/>
         <source>Name:</source>
         <translation>Naam:</translation>
     </message>
@@ -8396,7 +8443,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>De opdracht kan niet worden uitgevoerd omdat de naam van het tekenblok al bestaat.</translation>
     </message>
     <message>
-        <location line="+396"/>
+        <location line="+393"/>
         <source>You don&apos;t have any pieces to export. Please, include at least one piece in layout.</source>
         <translation>U hebt nog geen patroondelen om uit te voeren. Voeg tenminste één patroondeel toe aan de Opmaak.</translation>
     </message>
@@ -8411,7 +8458,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Kan patroondelen niet exporteren.</translation>
     </message>
     <message>
-        <location line="-5274"/>
+        <location line="-5105"/>
         <source>&lt;b&gt;Tool::Piece - Add New Pattern Piece:&lt;/b&gt; Select main path of objects clockwise.</source>
         <translation>&lt;b&gt;Gereedschap::Patroondeel - Voeg een nieuw Patroondeel toe:&lt;/b&gt; Selecteer een pad van objecten met de klok mee.</translation>
     </message>
@@ -8431,146 +8478,146 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>&lt;b&gt;Gereedschap::Patroondeel - Voeg kernpunten toe:&lt;/b&gt; Druk &lt;b&gt;%1&lt;/b&gt; voor meervoudige selectie. Druk &lt;b&gt;ENTER&lt;/b&gt; om de selectie te bevestigen</translation>
     </message>
     <message>
-        <location line="+240"/>
+        <location line="+108"/>
         <source>&lt;b&gt;Tool::Details - Union:&lt;/b&gt; Select pattern piece</source>
         <translation>&lt;b&gt;Gereedschap::Patroondeel - Vereniging:&lt;/b&gt; Selecteer een patroondeel</translation>
     </message>
     <message>
-        <location line="+2927"/>
+        <location line="+2926"/>
         <source>Draft block %1</source>
         <translation>Tekenblok %1</translation>
     </message>
     <message>
-        <location line="+1117"/>
+        <location line="+1088"/>
         <source>Draft Block %1</source>
         <translation>Tekenblok %1</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3770"/>
-        <location line="+2144"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3777"/>
+        <location line="+2145"/>
         <source>Point - On Bisector (O, B)</source>
         <translation>Punt - Op Bisectrice (O, B)</translation>
     </message>
     <message>
-        <location line="-2118"/>
-        <location line="+2136"/>
+        <location line="-2119"/>
+        <location line="+2137"/>
         <source>Point - Length to Line (P, S)</source>
         <translation>Punt - Lengte tot Lijn (P, S)</translation>
     </message>
     <message>
-        <location line="-2110"/>
-        <location line="+2128"/>
+        <location line="-2111"/>
+        <location line="+2129"/>
         <source>Point - Intersect Arc and Line (A, L)</source>
         <translation>Punt - Snijpunt As en Lijn (A, L)</translation>
     </message>
     <message>
-        <location line="-2102"/>
-        <location line="+2120"/>
+        <location line="-2103"/>
+        <location line="+2121"/>
         <source>Point - Intersect Axis and Triangle (X, T)</source>
         <translation>Punt - Snijpunt As en Driehoek (X, T)</translation>
     </message>
     <message>
-        <location line="-2094"/>
-        <location line="+2112"/>
+        <location line="-2095"/>
+        <location line="+2113"/>
         <source>Point - Intersect XY (X, Y)</source>
         <translation>Punt - snijpunt XY (X, Y)</translation>
     </message>
     <message>
-        <location line="-2086"/>
-        <location line="+2104"/>
+        <location line="-2087"/>
+        <location line="+2105"/>
         <source>Point - Intersect Line and Perpendicular (L, P)</source>
         <translation>Punt - Snijpunt Lijn en Loodrechte (L, P)</translation>
     </message>
     <message>
-        <location line="-2078"/>
-        <location line="+2096"/>
+        <location line="-2079"/>
+        <location line="+2097"/>
         <source>Point - Intersect Line and Axis (L, X)</source>
         <translation>Punt - Snijpunt Lijn en As (L, X)</translation>
     </message>
     <message>
-        <location line="-2070"/>
-        <location line="+1944"/>
+        <location line="-2071"/>
+        <location line="+1945"/>
         <source>Point - On Perpendicular (O, P)</source>
         <translation>Punt - Op Loodrechte (O, P)</translation>
     </message>
     <message>
-        <location line="-1918"/>
-        <location line="+1900"/>
+        <location line="-1919"/>
+        <location line="+1901"/>
         <source>Point - Length and Angle (L, A)</source>
         <translation>Punt - Lengte en Hoek (L, A)</translation>
     </message>
     <message>
-        <location line="-1874"/>
-        <location line="+1853"/>
+        <location line="-1875"/>
+        <location line="+1854"/>
         <source>Point - On Line (O, L)</source>
         <translation>Punt - Op Lijn (O, L)</translation>
     </message>
     <message>
-        <location line="-1827"/>
-        <location line="+1809"/>
+        <location line="-1828"/>
+        <location line="+1810"/>
         <source>Point - Midpoint on Line (Shift+O, Shift+L)</source>
         <translation>Punt - Middelpunt op Lijn (Shift+O, Shift+L)</translation>
     </message>
     <message>
-        <location line="-1711"/>
-        <location line="+1912"/>
+        <location line="-1712"/>
+        <location line="+1913"/>
         <source>Point - Intersect Lines (I, L)</source>
         <translation>Punt - Snijpunt Lijnen (I, L)</translation>
     </message>
     <message>
-        <location line="-1834"/>
-        <location line="+1852"/>
+        <location line="-1835"/>
+        <location line="+1853"/>
         <source>Curve - Interactive (Alt+C)</source>
         <translation>Kromme - Interactief (Alt+C)</translation>
     </message>
     <message>
-        <location line="-1826"/>
-        <location line="+1880"/>
+        <location line="-1827"/>
+        <location line="+1881"/>
         <source>Spline - Interactive (Alt+S)</source>
         <translation>Spline - Interactief (Alt+S)</translation>
     </message>
     <message>
-        <location line="-1854"/>
-        <location line="+1836"/>
+        <location line="-1855"/>
+        <location line="+1837"/>
         <source>Curve - Fixed (Alt+Shift+C)</source>
         <translation>Kromme - Vast (A;lt+Shift+C)</translation>
     </message>
     <message>
-        <location line="-1810"/>
-        <location line="+1864"/>
+        <location line="-1811"/>
+        <location line="+1865"/>
         <source>Spline - Fixed (Alt+Shift+S)</source>
         <translation>Spline - Vast (Alt+Shift+S)</translation>
     </message>
     <message>
-        <location line="-1838"/>
+        <location line="-1839"/>
         <source>Point - On Spline (O, S)</source>
         <translation>Punt - Op Spline (O, S)</translation>
     </message>
     <message>
         <location line="+26"/>
-        <location line="+1833"/>
+        <location line="+1834"/>
         <source>Point - Intersect Curves (I, C)</source>
         <translation>Punt - Snijpunte Krommes (I, C)</translation>
     </message>
     <message>
-        <location line="-1807"/>
-        <location line="+1828"/>
+        <location line="-1808"/>
+        <location line="+1829"/>
         <source>Point - Intersect Curve and Axis (C, X)</source>
         <translation>Punt - Snijpunte Kromme en As (C, X)</translation>
     </message>
     <message>
-        <location line="-1802"/>
+        <location line="-1803"/>
         <source>Point - On Curve (O, C)</source>
         <translation>Punt - Op Kromme (O, C)</translation>
     </message>
     <message>
         <location line="+72"/>
-        <location line="+1751"/>
+        <location line="+1752"/>
         <source>Arc - Radius and Angles (Alt+A)</source>
         <translation>Boog - Straal en Hoeken (Alt+A)</translation>
     </message>
     <message>
-        <location line="-1725"/>
+        <location line="-1726"/>
         <source>Point - On Arc (O, A)</source>
         <translation>Punt - Op Boog (O, A)</translation>
     </message>
@@ -8601,96 +8648,96 @@ You may want to take a screenshot of the image properties dialog before closing 
     </message>
     <message>
         <location line="+26"/>
-        <location line="+1698"/>
+        <location line="+1699"/>
         <source>Arc - Radius and Length (Alt+Shift+A)</source>
         <translation>Boog - Straal en Lengte (Alt+Shift+A)</translation>
     </message>
     <message>
-        <location line="-1672"/>
-        <location line="+1153"/>
+        <location line="-1673"/>
+        <location line="+1154"/>
         <source>Arc - Elliptical (Alt+E)</source>
         <translation>Boog - Ellipsvormig (Alt+E)</translation>
     </message>
     <message>
-        <location line="-1035"/>
-        <location line="+960"/>
+        <location line="-1036"/>
+        <location line="+961"/>
         <source>Mirror Objects by Line (M, L)</source>
         <translation>Spiegel Objecten over LIjn (M, L)</translation>
     </message>
     <message>
-        <location line="-934"/>
-        <location line="+952"/>
+        <location line="-935"/>
+        <location line="+953"/>
         <source>Mirror Objects by Axis (M, A)</source>
         <translation>Spiegel Objecten over As (M, A)</translation>
     </message>
     <message>
-        <location line="-926"/>
-        <location line="+944"/>
+        <location line="-927"/>
+        <location line="+945"/>
         <source>Move Objects (Alt+M)</source>
         <translation>Verplaats Objecten (Alt+M)</translation>
     </message>
     <message>
-        <location line="-918"/>
-        <location line="+936"/>
+        <location line="-919"/>
+        <location line="+937"/>
         <source>True Darts (T, D)</source>
         <translation>Echte Figuurnaden (T, D)</translation>
     </message>
     <message>
-        <location line="-838"/>
-        <location line="+2111"/>
+        <location line="-839"/>
+        <location line="+2118"/>
         <source>Add New Pattern Piece (N, P)</source>
         <translation>Voeg nieuw Patroondeel toe (N, P)</translation>
     </message>
     <message>
-        <location line="-2085"/>
-        <location line="+2139"/>
+        <location line="-2092"/>
+        <location line="+2146"/>
         <source>Add Anchor Point (A, P)</source>
         <translation>Voeg Ankerpunt toe (A, P)</translation>
     </message>
     <message>
-        <location line="-2113"/>
-        <location line="+2149"/>
+        <location line="-2120"/>
+        <location line="+2156"/>
         <source>Insert Nodes (I, N)</source>
         <translation>Voeg kernpunten in (I, N)</translation>
     </message>
     <message>
-        <location line="-2123"/>
-        <location line="+2105"/>
+        <location line="-2130"/>
+        <location line="+2112"/>
         <source>Add Internal Path (I, P)</source>
         <translation>Voeg binnenpad toe (I, P)</translation>
     </message>
     <message>
-        <location line="-2048"/>
-        <location line="+2446"/>
+        <location line="-2055"/>
+        <location line="+2453"/>
         <source>Import Image (Alt + I)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2308"/>
-        <location line="+1961"/>
+        <location line="-2315"/>
+        <location line="+1968"/>
         <source>Export Pieces (E, P)</source>
         <translation>Exporteer Patroondelen (E, P)</translation>
     </message>
     <message>
-        <location line="-1850"/>
+        <location line="-1857"/>
         <source>New Print Layout (N, L)</source>
         <translation>Nieuwe afdrukopmaak (N, L)</translation>
     </message>
     <message>
         <location line="+26"/>
-        <location line="+1313"/>
+        <location line="+1320"/>
         <location line="+424"/>
         <source>Export Layout (E, L)</source>
         <translation>Exporteer Opmaak (E, L)</translation>
     </message>
     <message>
-        <location line="-1468"/>
+        <location line="-1474"/>
         <source>Contains information about custom and internal variables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+144"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2605"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2575"/>
         <source>Alt+M</source>
         <translation>Alt+M</translation>
     </message>
@@ -9004,12 +9051,12 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Alt+Shift+A</translation>
     </message>
     <message>
-        <location line="+229"/>
+        <location line="+231"/>
         <source>Activate last used tool (Ctrl+Shift+L)</source>
         <translation>Gebruik Laatstgebruikte Gereedschap (Ctrl+Shift+L)</translation>
     </message>
     <message>
-        <location line="+271"/>
+        <location line="+275"/>
         <source>Zoom to Selected (Ctrl+Right)</source>
         <translation>Zoom in op geselecteerd object (Ctrl+Rechts)</translation>
     </message>
@@ -9069,7 +9116,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2491"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2359"/>
         <source>Please provide additional measurements: %1</source>
         <translation>Voeg extra maten toe: %1</translation>
     </message>
@@ -9224,36 +9271,10 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>&lt;b&gt;Gereedschap::Boog - Ellipsvormig:&lt;/b&gt; Kies middelpunt van ellispvormige boog</translation>
     </message>
     <message>
-        <location line="+278"/>
-        <location line="+9"/>
-        <source>Could not read the image.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-9"/>
-        <source>File may be corrupted...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>File may be corrupted or empty...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+40"/>
-        <source>Confirm deletion</source>
-        <translation>Bevestig verwijdering</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Do you really want to delete?</source>
-        <translation>Wil je dit echt verwijderen?</translation>
-    </message>
-    <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-4437"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-4444"/>
         <location line="+1976"/>
         <location line="+3"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+91"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+286"/>
         <source>Images</source>
         <translation>Afbeeldingen</translation>
     </message>
@@ -9263,7 +9284,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1059"/>
+        <location line="+1060"/>
         <source>Zoom to Point</source>
         <translation>Zoom in op Punt</translation>
     </message>
@@ -9284,7 +9305,7 @@ You may want to take a screenshot of the image properties dialog before closing 
     </message>
     <message>
         <location filename="../../src/app/seamly2d/mainwindow.ui" line="-354"/>
-        <location line="+973"/>
+        <location line="+974"/>
         <source>Add Objects to Group (G)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9295,7 +9316,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1850"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1718"/>
         <source>Add Group Objects</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9305,7 +9326,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2646"/>
+        <location line="+2513"/>
         <location line="+121"/>
         <source>Can not save file.</source>
         <translation type="unfinished"></translation>
@@ -9322,41 +9343,41 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="+1118"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="+1124"/>
         <source>Ctrl+E</source>
         <translation>Ctrl+E</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2039"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2038"/>
         <source>untitled</source>
         <translation>zonder titel</translation>
     </message>
     <message>
-        <location line="+2075"/>
+        <location line="+2074"/>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
         <translation>Kon bestand niet exclusief openen. Dit bestand wordt al gebruikt in een ander venster. Verwacht botsingen als er twee copieën van het programma draaien.</translation>
     </message>
     <message>
-        <location line="-1449"/>
+        <location line="-1448"/>
         <source>Pen Toolbar</source>
         <translation>Werkbalk Pen</translation>
     </message>
     <message>
-        <location line="+2684"/>
+        <location line="+2659"/>
         <source>Toolbars</source>
         <translation>Werkbalken</translation>
     </message>
     <message>
-        <location line="-4911"/>
+        <location line="-4754"/>
         <location line="+39"/>
         <location line="+63"/>
-        <location line="+5883"/>
+        <location line="+5717"/>
         <location line="+90"/>
         <source>File exception.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+199"/>
+        <location line="+196"/>
         <location line="+67"/>
         <location line="+486"/>
         <location line="+24"/>
@@ -9364,12 +9385,12 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-3259"/>
+        <location line="-3223"/>
         <source>pattern</source>
         <translation>patroon</translation>
     </message>
     <message>
-        <location line="-1546"/>
+        <location line="-1545"/>
         <source>Base name used for new points.
 Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
@@ -11420,7 +11441,7 @@ Press enter to temporarily add it to the list.</source>
 <context>
     <name>PreferencesConfigurationPage</name>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.ui" line="+1004"/>
+        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.ui" line="+1024"/>
         <source>Interval:</source>
         <translation>Interval:</translation>
     </message>
@@ -11440,7 +11461,7 @@ Press enter to temporarily add it to the list.</source>
         <translation>Standaardwaarde eenheid:</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.cpp" line="+316"/>
+        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.cpp" line="+312"/>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
         <translation>De standaardwaarde van de eenheid is opgewaardeerd en zal worden gebruikt  als de standaardbasis voor uw volgende patrooncreatie.</translation>
     </message>
@@ -11455,7 +11476,7 @@ Press enter to temporarily add it to the list.</source>
         <translation>Inches</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.ui" line="-982"/>
+        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.ui" line="-1002"/>
         <source>Editing</source>
         <translation>Bewerken</translation>
     </message>
@@ -11521,11 +11542,21 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <location line="+24"/>
+        <source>Backups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Create backup file when converting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>Enable Autosave</source>
         <translation>Sta Automatisch Opslaan toe</translation>
     </message>
     <message>
-        <location line="+57"/>
+        <location line="+58"/>
         <source> min</source>
         <translation> min</translation>
     </message>
@@ -11560,7 +11591,7 @@ Press enter to temporarily add it to the list.</source>
         <translation>Decimaal scheidingsteken:</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.cpp" line="-249"/>
+        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.cpp" line="-252"/>
         <location line="+12"/>
         <location line="+13"/>
         <location line="+13"/>
@@ -11608,12 +11639,12 @@ Press enter to temporarily add it to the list.</source>
         <translation>_MBL</translation>
     </message>
     <message>
-        <location line="+208"/>
+        <location line="+211"/>
         <source>Millimeters</source>
         <translation>Millimeters</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.ui" line="-795"/>
+        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.ui" line="-815"/>
         <source>Selection sound</source>
         <translation>Geluid bij selectie</translation>
     </message>
@@ -11688,7 +11719,7 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.cpp" line="-130"/>
+        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.cpp" line="-132"/>
         <source>Email verification</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11699,12 +11730,12 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <location line="-39"/>
-        <location line="+147"/>
+        <location line="+149"/>
         <source>User locale</source>
         <translation>Lokalisatie gebruiker</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.ui" line="+827"/>
+        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencesconfigurationpage.ui" line="+847"/>
         <source>Startup</source>
         <translation>Startup</translation>
     </message>
@@ -12262,7 +12293,7 @@ Press enter to temporarily add it to the list.</source>
         <translation>Bewerk</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencespathpage.cpp" line="+191"/>
+        <location filename="../../src/app/seamly2d/dialogs/configpages/preferencespathpage.cpp" line="+195"/>
         <source>Open Directory</source>
         <translation>Open Map</translation>
     </message>
@@ -12282,7 +12313,12 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-54"/>
+        <location line="+9"/>
+        <source>My Backups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-63"/>
         <source>My Patterns</source>
         <translation>Mijn patronen</translation>
     </message>
@@ -12586,7 +12622,7 @@ Press enter to temporarily add it to the list.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2543"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2411"/>
         <source>Create new pattern piece to start working.</source>
         <translation>Maak een nieuw patroondeel om te gaan werken.</translation>
     </message>
@@ -12628,7 +12664,7 @@ Press enter to temporarily add it to the list.</source>
         <translation>voeg kernpunt toe</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+1731"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+1599"/>
         <source>Changes applied.</source>
         <translation>Wijzigingen zijn toegepast.</translation>
     </message>
@@ -15527,7 +15563,7 @@ load in SeamlyME as usual.
 <context>
     <name>VAbstractConverter</name>
     <message>
-        <location filename="../../src/libs/ifc/xml/abstract_converter.cpp" line="+137"/>
+        <location filename="../../src/libs/ifc/xml/abstract_converter.cpp" line="+132"/>
         <source>Couldn&apos;t get version information.</source>
         <translation>Kon geen versie informatie krijgen.</translation>
     </message>
@@ -15537,7 +15573,7 @@ load in SeamlyME as usual.
         <translation>Te veel etiketten &lt;%1&gt; in bestand.</translation>
     </message>
     <message>
-        <location line="+113"/>
+        <location line="+71"/>
         <source>Version &quot;%1&quot; invalid.</source>
         <translation>Versie &quot;%1&quot; ongeldig.</translation>
     </message>
@@ -15547,7 +15583,7 @@ load in SeamlyME as usual.
         <translation>Versie &quot;0.0.0&quot; ongeldig.</translation>
     </message>
     <message>
-        <location line="+92"/>
+        <location line="+87"/>
         <source>Invalid version. Minimum supported version is %1</source>
         <translation>Ongeldige versie. Minimale ondersteunde versie is %1</translation>
     </message>
@@ -15567,17 +15603,17 @@ load in SeamlyME as usual.
         <translation>Kon de versie niet veranderen.</translation>
     </message>
     <message>
-        <location line="-135"/>
+        <location line="-136"/>
         <source>Error creating a reserv copy: %1.</source>
         <translation>Fout bij het maken van reserve bestand: %1.</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+61"/>
         <source>Unexpected version &quot;%1&quot;.</source>
         <translation>Onverwachte versie &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location line="-251"/>
+        <location line="-204"/>
         <source>Error Opening a temp file: %1.</source>
         <translation>Fout bij het openen van een tijdelijk bestand: %1.</translation>
     </message>
@@ -16262,7 +16298,7 @@ load in SeamlyME as usual.
 <context>
     <name>VCommonSettings</name>
     <message>
-        <location filename="../../src/libs/vmisc/vcommonsettings.cpp" line="+412"/>
+        <location filename="../../src/libs/vmisc/vcommonsettings.cpp" line="+415"/>
         <location line="+21"/>
         <source>measurements</source>
         <translation>maten</translation>
@@ -16293,7 +16329,12 @@ load in SeamlyME as usual.
         <translation>labelsjablonen</translation>
     </message>
     <message>
-        <location line="-39"/>
+        <location line="+18"/>
+        <source>backups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-57"/>
         <source>bodyscans</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16301,55 +16342,55 @@ load in SeamlyME as usual.
 <context>
     <name>VContainer</name>
     <message>
-        <location filename="../../src/libs/vpatterndb/vcontainer.h" line="+271"/>
-        <location line="+50"/>
+        <location filename="../../src/libs/vpatterndb/vcontainer.h" line="+407"/>
+        <location line="+65"/>
         <source>Can&apos;t find object</source>
         <translation>Kan het object niet vinden</translation>
     </message>
     <message>
-        <location line="-30"/>
-        <location line="+25"/>
-        <location line="+90"/>
+        <location line="-45"/>
+        <location line="+40"/>
+        <location line="+153"/>
         <source>Can&apos;t cast object</source>
         <translation>Kan het object niet verplaatsen</translation>
     </message>
     <message>
-        <location line="-57"/>
+        <location line="-87"/>
         <source>Can&apos;t find object. Type mismatch.</source>
         <translation>Kan het object niet vinden. Soort komt niet overeen.</translation>
     </message>
     <message>
-        <location filename="../../src/libs/vpatterndb/vcontainer.cpp" line="+258"/>
+        <location filename="../../src/libs/vpatterndb/vcontainer.cpp" line="+417"/>
         <source>Number of free id exhausted.</source>
         <translation>Hoeveelheid aan gratis id is verbruikt.</translation>
     </message>
     <message>
-        <location line="+168"/>
+        <location line="+264"/>
         <source>Can&apos;t create a curve with type &apos;%1&apos;</source>
         <translation>Kan geen kromme maken van soort &apos;%1&apos;</translation>
     </message>
     <message>
-        <location line="-246"/>
+        <location line="-424"/>
         <source>Can&apos;t find object: </source>
         <translation>Kan het object niet vinden: </translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+28"/>
         <source>Can&apos;t find piece: </source>
         <translation>Kan het patroondeel niet vinden: </translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+28"/>
         <source>Can&apos;t find path: </source>
         <translation>Kan het pad niet vinden: </translation>
     </message>
     <message>
-        <location filename="../../src/libs/vpatterndb/vcontainer.h" line="-68"/>
+        <location filename="../../src/libs/vpatterndb/vcontainer.h" line="-116"/>
         <source>Can&apos;t find object Id: </source>
         <translation>Kan het objecxt Id niet vinden: </translation>
     </message>
     <message>
-        <location line="+62"/>
+        <location line="+110"/>
         <source>Can&apos;t cast object.</source>
         <translation>Kan het object niet kiezen.</translation>
     </message>
@@ -19744,7 +19785,7 @@ Usage: fmod(x; y)</comment>
 <context>
     <name>vNoisyHandler</name>
     <message>
-        <location filename="../../src/app/seamly2d/core/application_2d.cpp" line="-248"/>
+        <location filename="../../src/app/seamly2d/core/application_2d.cpp" line="-239"/>
         <source>DEBUG:</source>
         <translation>FOUTEN OPSPOREN:</translation>
     </message>
