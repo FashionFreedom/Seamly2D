@@ -325,187 +325,191 @@ $(document).ready(function(){initNavTree('d0/d08/abstract__converter_8cpp_source
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    {</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        QString error;</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keyword">const</span> QFileInfo info(<a class="code" href="../../dc/d68/classVAbstractConverter.html#a8a9aef5523cb78b278fb5336a6fdd1c7">removeBakExtension</a>(<a class="code" href="../../dc/d68/classVAbstractConverter.html#ad8b075a504b0375d8b4b07a437c13446">m_convertedFileName</a>));</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keyword">const</span> QString baseFileName = info.baseName();</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        QString baseFileName = info.baseName();</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keyword">const</span> QString path = <a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getBackupFilePath();</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        QString backupFileName;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        backupFileName = QString(<span class="stringliteral">&quot;%1/%2%3.%4&quot;</span>)</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                                .arg(path)</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                                .arg(baseFileName)</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                                .arg(<span class="stringliteral">&quot; (Backup)&quot;</span>)</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                .arg(info.completeSuffix());</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../d6/deb/classVDomDocument.html#ab7e2c541d5f3b0a74e88de301223f4cd">SafeCopy</a>(<a class="code" href="../../dc/d68/classVAbstractConverter.html#ad8b075a504b0375d8b4b07a437c13446">m_convertedFileName</a>, backupFileName, error))</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor">#ifdef Q_OS_WIN32</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        qt_ntfs_permission_lookup++; <span class="comment">// turn checking on</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*Q_OS_WIN32*/</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> isFileWritable = info.isWritable();</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="comment">// replace any spaces in filename with underscore to pevent</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="comment">// errors when opening file in Linux through the command line.</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        baseFileName.replace(<span class="stringliteral">&quot; &quot;</span>, <span class="stringliteral">&quot;_&quot;</span>);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        QString path = <a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getBackupFilePath();</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">if</span> (!info.exists(path))</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        {</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            path = info.absoluteDir().absolutePath();</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        }</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        QString backupFileName;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        backupFileName = QString(<span class="stringliteral">&quot;%1/%2%3.%4&quot;</span>).arg(path, baseFileName, <span class="stringliteral">&quot;_(backup)&quot;</span>, info.completeSuffix());</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../d6/deb/classVDomDocument.html#ab7e2c541d5f3b0a74e88de301223f4cd">SafeCopy</a>(<a class="code" href="../../dc/d68/classVAbstractConverter.html#ad8b075a504b0375d8b4b07a437c13446">m_convertedFileName</a>, backupFileName, error))</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        {</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="preprocessor">#ifdef Q_OS_WIN32</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        qt_ntfs_permission_lookup--; <span class="comment">// turn it off again</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        qt_ntfs_permission_lookup++; <span class="comment">// turn checking on</span></div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*Q_OS_WIN32*/</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="../../dc/d68/classVAbstractConverter.html#a1928ef00c89059485827cb4fcad04014">isReadOnly</a>() &amp;&amp; isFileWritable)</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                <span class="keyword">const</span> QString errorMsg(tr(<span class="stringliteral">&quot;Error creating a reserv copy: %1.&quot;</span>).arg(error));</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="../../de/d09/classVException.html">VException</a>(errorMsg);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            }</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        }</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    }</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;}</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno"><a class="line" href="../../dc/d68/classVAbstractConverter.html#a4a9fe798f769c6441cba22cad35d7f51">  259</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d68/classVAbstractConverter.html#a4a9fe798f769c6441cba22cad35d7f51">VAbstractConverter::Replace</a>(QString &amp;formula, <span class="keyword">const</span> QString &amp;newName, <span class="keywordtype">int</span> position, <span class="keyword">const</span> QString &amp;token,</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                                 <span class="keywordtype">int</span> &amp;bias)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    formula.replace(position, token.length(), newName);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    bias = token.length() - newName.length();</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno"><a class="line" href="../../dc/d68/classVAbstractConverter.html#aa154603e35eba9a31c58456ab482dda7">  267</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d68/classVAbstractConverter.html#aa154603e35eba9a31c58456ab482dda7">VAbstractConverter::CorrectionsPositions</a>(<span class="keywordtype">int</span> position, <span class="keywordtype">int</span> bias, <a class="code" href="../../d0/d4c/classQMap.html">QMap&lt;int, QString&gt;</a> &amp;tokens)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">if</span> (bias == 0)</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    {</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">return</span>;<span class="comment">// Nothing to correct;</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    }</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <a class="code" href="../../dc/d68/classVAbstractConverter.html#a5f7be87cb04e0ca5dbfdf2c5d9fae52c">BiasTokens</a>(position, bias, tokens);</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;}</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno"><a class="line" href="../../dc/d68/classVAbstractConverter.html#a5f7be87cb04e0ca5dbfdf2c5d9fae52c">  278</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d68/classVAbstractConverter.html#a5f7be87cb04e0ca5dbfdf2c5d9fae52c">VAbstractConverter::BiasTokens</a>(<span class="keywordtype">int</span> position, <span class="keywordtype">int</span> bias, <a class="code" href="../../d0/d4c/classQMap.html">QMap&lt;int, QString&gt;</a> &amp;tokens)</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;{</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <a class="code" href="../../d0/d4c/classQMap.html">QMap&lt;int, QString&gt;</a> newTokens;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <a class="code" href="../../d0/d4c/classQMap.html">QMap&lt;int, QString&gt;::const_iterator</a> i = tokens.constBegin();</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">while</span> (i != tokens.constEnd())</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    {</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordflow">if</span> (i.key()&lt;= position)</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        { <span class="comment">// Tokens before position &quot;position&quot; did not change his positions.</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            newTokens.insert(i.key(), i.value());</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        }</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        {</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            newTokens.insert(i.key()-bias, i.value());</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> isFileWritable = info.isWritable();</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="preprocessor">#ifdef Q_OS_WIN32</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        qt_ntfs_permission_lookup--; <span class="comment">// turn it off again</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*Q_OS_WIN32*/</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="../../dc/d68/classVAbstractConverter.html#a1928ef00c89059485827cb4fcad04014">isReadOnly</a>() &amp;&amp; isFileWritable)</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                <span class="keyword">const</span> QString errorMsg(tr(<span class="stringliteral">&quot;Error creating a reserv copy: %1.&quot;</span>).arg(error));</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="../../de/d09/classVException.html">VException</a>(errorMsg);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            }</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    }</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;}</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="../../dc/d68/classVAbstractConverter.html#a4a9fe798f769c6441cba22cad35d7f51">  263</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d68/classVAbstractConverter.html#a4a9fe798f769c6441cba22cad35d7f51">VAbstractConverter::Replace</a>(QString &amp;formula, <span class="keyword">const</span> QString &amp;newName, <span class="keywordtype">int</span> position, <span class="keyword">const</span> QString &amp;token,</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                                 <span class="keywordtype">int</span> &amp;bias)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    formula.replace(position, token.length(), newName);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    bias = token.length() - newName.length();</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;}</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno"><a class="line" href="../../dc/d68/classVAbstractConverter.html#aa154603e35eba9a31c58456ab482dda7">  271</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d68/classVAbstractConverter.html#aa154603e35eba9a31c58456ab482dda7">VAbstractConverter::CorrectionsPositions</a>(<span class="keywordtype">int</span> position, <span class="keywordtype">int</span> bias, <a class="code" href="../../d0/d4c/classQMap.html">QMap&lt;int, QString&gt;</a> &amp;tokens)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">if</span> (bias == 0)</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordflow">return</span>;<span class="comment">// Nothing to correct;</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <a class="code" href="../../dc/d68/classVAbstractConverter.html#a5f7be87cb04e0ca5dbfdf2c5d9fae52c">BiasTokens</a>(position, bias, tokens);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="../../dc/d68/classVAbstractConverter.html#a5f7be87cb04e0ca5dbfdf2c5d9fae52c">  282</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d68/classVAbstractConverter.html#a5f7be87cb04e0ca5dbfdf2c5d9fae52c">VAbstractConverter::BiasTokens</a>(<span class="keywordtype">int</span> position, <span class="keywordtype">int</span> bias, <a class="code" href="../../d0/d4c/classQMap.html">QMap&lt;int, QString&gt;</a> &amp;tokens)</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;{</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <a class="code" href="../../d0/d4c/classQMap.html">QMap&lt;int, QString&gt;</a> newTokens;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <a class="code" href="../../d0/d4c/classQMap.html">QMap&lt;int, QString&gt;::const_iterator</a> i = tokens.constBegin();</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordflow">while</span> (i != tokens.constEnd())</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keywordflow">if</span> (i.key()&lt;= position)</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        { <span class="comment">// Tokens before position &quot;position&quot; did not change his positions.</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            newTokens.insert(i.key(), i.value());</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        }</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        ++i;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    }</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    tokens = newTokens;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno"><a class="line" href="../../dc/d68/classVAbstractConverter.html#a668bef779f47938b2435c0ca592445e8">  298</a></span>&#160;Q_NORETURN <span class="keywordtype">void</span> <a class="code" href="../../dc/d68/classVAbstractConverter.html#a668bef779f47938b2435c0ca592445e8">VAbstractConverter::InvalidVersion</a>(<span class="keywordtype">int</span> ver)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordflow">if</span> (ver &lt; <a class="code" href="../../dc/d68/classVAbstractConverter.html#aea71a20c117b3636cbf26628e214e3df">minVer</a>())</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    {</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="keyword">const</span> QString errorMsg(tr(<span class="stringliteral">&quot;Invalid version. Minimum supported version is %1&quot;</span>).arg(<a class="code" href="../../dc/d68/classVAbstractConverter.html#abff16c0846c1c269b3be1db226524942">minVerStr</a>()));</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../de/d09/classVException.html">VException</a>(errorMsg);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keywordflow">if</span> (ver &gt; <a class="code" href="../../dc/d68/classVAbstractConverter.html#ac335db2362ed6580ebddc879e55734c1">maxVer</a>())</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    {</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keyword">const</span> QString errorMsg(tr(<span class="stringliteral">&quot;Invalid version. Maximum supported version is %1&quot;</span>).arg(<a class="code" href="../../dc/d68/classVAbstractConverter.html#a2c197b70971474a4f8ecf9dcee28d496">maxVerStr</a>()));</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../de/d09/classVException.html">VException</a>(errorMsg);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    }</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keyword">const</span> QString errorMsg(tr(<span class="stringliteral">&quot;Unexpected version \&quot;%1\&quot;.&quot;</span>).arg(ver, 0, 16));</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="keywordflow">throw</span> <a class="code" href="../../de/d09/classVException.html">VException</a>(errorMsg);</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;}</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            newTokens.insert(i.key()-bias, i.value());</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        ++i;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    tokens = newTokens;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno"><a class="line" href="../../dc/d68/classVAbstractConverter.html#a668bef779f47938b2435c0ca592445e8">  302</a></span>&#160;Q_NORETURN <span class="keywordtype">void</span> <a class="code" href="../../dc/d68/classVAbstractConverter.html#a668bef779f47938b2435c0ca592445e8">VAbstractConverter::InvalidVersion</a>(<span class="keywordtype">int</span> ver)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">if</span> (ver &lt; <a class="code" href="../../dc/d68/classVAbstractConverter.html#aea71a20c117b3636cbf26628e214e3df">minVer</a>())</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    {</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keyword">const</span> QString errorMsg(tr(<span class="stringliteral">&quot;Invalid version. Minimum supported version is %1&quot;</span>).arg(<a class="code" href="../../dc/d68/classVAbstractConverter.html#abff16c0846c1c269b3be1db226524942">minVerStr</a>()));</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../de/d09/classVException.html">VException</a>(errorMsg);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">if</span> (ver &gt; <a class="code" href="../../dc/d68/classVAbstractConverter.html#ac335db2362ed6580ebddc879e55734c1">maxVer</a>())</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="keyword">const</span> QString errorMsg(tr(<span class="stringliteral">&quot;Invalid version. Maximum supported version is %1&quot;</span>).arg(<a class="code" href="../../dc/d68/classVAbstractConverter.html#a2c197b70971474a4f8ecf9dcee28d496">maxVerStr</a>()));</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../de/d09/classVException.html">VException</a>(errorMsg);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    }</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno"><a class="line" href="../../dc/d68/classVAbstractConverter.html#aa9bb1ef0ced9213b9edb7f57f11a89df">  317</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d68/classVAbstractConverter.html#aa9bb1ef0ced9213b9edb7f57f11a89df">VAbstractConverter::ValidateInputFile</a>(<span class="keyword">const</span> QString &amp;currentSchema)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    QString schema;</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    {</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        schema = <a class="code" href="../../dc/d68/classVAbstractConverter.html#a649a2f45390390851c37feb5b4f46edc">getSchema</a>(<a class="code" href="../../dc/d68/classVAbstractConverter.html#ac7802ae1c36c2bf136bfc94d65a3bea9">m_ver</a>);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    }</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code" href="../../de/d09/classVException.html">VException</a> &amp;error)</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keyword">const</span> QString errorMsg(tr(<span class="stringliteral">&quot;Unexpected version \&quot;%1\&quot;.&quot;</span>).arg(ver, 0, 16));</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">throw</span> <a class="code" href="../../de/d09/classVException.html">VException</a>(errorMsg);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno"><a class="line" href="../../dc/d68/classVAbstractConverter.html#aa9bb1ef0ced9213b9edb7f57f11a89df">  321</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d68/classVAbstractConverter.html#aa9bb1ef0ced9213b9edb7f57f11a89df">VAbstractConverter::ValidateInputFile</a>(<span class="keyword">const</span> QString &amp;currentSchema)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    QString schema;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">try</span></div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../dc/d68/classVAbstractConverter.html#ac7802ae1c36c2bf136bfc94d65a3bea9">m_ver</a> &lt; <a class="code" href="../../dc/d68/classVAbstractConverter.html#aea71a20c117b3636cbf26628e214e3df">minVer</a>())</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        { <span class="comment">// Version less than minimally supported version. Can&#39;t do anything.</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="keywordflow">throw</span>;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        }</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../dc/d68/classVAbstractConverter.html#ac7802ae1c36c2bf136bfc94d65a3bea9">m_ver</a> &gt; <a class="code" href="../../dc/d68/classVAbstractConverter.html#ac335db2362ed6580ebddc879e55734c1">maxVer</a>())</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        { <span class="comment">// Version bigger than maximum supported version. We still have a chance to open the file.</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            { <span class="comment">// Try to open like the current version.</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                <a class="code" href="../../d6/deb/classVDomDocument.html#a49eb5f686268f8ecab6faab3ee4ae1f0">ValidateXML</a>(currentSchema, <a class="code" href="../../dc/d68/classVAbstractConverter.html#ad8b075a504b0375d8b4b07a437c13446">m_convertedFileName</a>);</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            }</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code" href="../../de/d09/classVException.html">VException</a> &amp;exp)</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            { <span class="comment">// Nope, we can&#39;t.</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                Q_UNUSED(exp)</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                <span class="keywordflow">throw</span> error;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            }</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        }</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        { <span class="comment">// Unexpected version. Most time mean that we do not catch all versions between min and max.</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            <span class="keywordflow">throw</span>;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        schema = <a class="code" href="../../dc/d68/classVAbstractConverter.html#a649a2f45390390851c37feb5b4f46edc">getSchema</a>(<a class="code" href="../../dc/d68/classVAbstractConverter.html#ac7802ae1c36c2bf136bfc94d65a3bea9">m_ver</a>);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    }</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code" href="../../de/d09/classVException.html">VException</a> &amp;error)</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    {</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../dc/d68/classVAbstractConverter.html#ac7802ae1c36c2bf136bfc94d65a3bea9">m_ver</a> &lt; <a class="code" href="../../dc/d68/classVAbstractConverter.html#aea71a20c117b3636cbf26628e214e3df">minVer</a>())</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        { <span class="comment">// Version less than minimally supported version. Can&#39;t do anything.</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            <span class="keywordflow">throw</span>;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        }</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../dc/d68/classVAbstractConverter.html#ac7802ae1c36c2bf136bfc94d65a3bea9">m_ver</a> &gt; <a class="code" href="../../dc/d68/classVAbstractConverter.html#ac335db2362ed6580ebddc879e55734c1">maxVer</a>())</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        { <span class="comment">// Version bigger than maximum supported version. We still have a chance to open the file.</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            { <span class="comment">// Try to open like the current version.</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                <a class="code" href="../../d6/deb/classVDomDocument.html#a49eb5f686268f8ecab6faab3ee4ae1f0">ValidateXML</a>(currentSchema, <a class="code" href="../../dc/d68/classVAbstractConverter.html#ad8b075a504b0375d8b4b07a437c13446">m_convertedFileName</a>);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            }</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code" href="../../de/d09/classVException.html">VException</a> &amp;exp)</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            { <span class="comment">// Nope, we can&#39;t.</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                Q_UNUSED(exp)</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                <span class="keywordflow">throw</span> error;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            }</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        }</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="keywordflow">return</span>; <span class="comment">// All is fine and we can try to convert to current max version.</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    }</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <a class="code" href="../../d6/deb/classVDomDocument.html#a49eb5f686268f8ecab6faab3ee4ae1f0">ValidateXML</a>(schema, <a class="code" href="../../dc/d68/classVAbstractConverter.html#ad8b075a504b0375d8b4b07a437c13446">m_convertedFileName</a>);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;}</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno"><a class="line" href="../../dc/d68/classVAbstractConverter.html#a828b502d62876f9c4c2572baf6d25f07">  354</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d68/classVAbstractConverter.html#a828b502d62876f9c4c2572baf6d25f07">VAbstractConverter::Save</a>()</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;{</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    {</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <a class="code" href="../../d6/deb/classVDomDocument.html#a8dd4b44bf243c35092c40916985f894f">TestUniqueId</a>();</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    }</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="../../d9/dcf/classVExceptionWrongId.html">VExceptionWrongId</a> &amp;error)</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        { <span class="comment">// Unexpected version. Most time mean that we do not catch all versions between min and max.</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            <span class="keywordflow">throw</span>;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">return</span>; <span class="comment">// All is fine and we can try to convert to current max version.</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    }</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <a class="code" href="../../d6/deb/classVDomDocument.html#a49eb5f686268f8ecab6faab3ee4ae1f0">ValidateXML</a>(schema, <a class="code" href="../../dc/d68/classVAbstractConverter.html#ad8b075a504b0375d8b4b07a437c13446">m_convertedFileName</a>);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;}</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno"><a class="line" href="../../dc/d68/classVAbstractConverter.html#a828b502d62876f9c4c2572baf6d25f07">  358</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d68/classVAbstractConverter.html#a828b502d62876f9c4c2572baf6d25f07">VAbstractConverter::Save</a>()</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;{</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keywordflow">try</span></div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    {</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        Q_UNUSED(error)</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <a class="code" href="../../de/d09/classVException.html">VException</a> ex(tr(<span class="stringliteral">&quot;Error no unique id.&quot;</span>));</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordflow">throw</span> ex;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    }</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <a class="code" href="../../dc/d68/classVAbstractConverter.html#af1c2995d6e46e2df2d36f02f8fd9dbc3">m_tmpFile</a>.resize(0);<span class="comment">//clear previous content</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> indent = 4;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    QTextStream out(&amp;<a class="code" href="../../dc/d68/classVAbstractConverter.html#af1c2995d6e46e2df2d36f02f8fd9dbc3">m_tmpFile</a>);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    out.setCodec(<span class="stringliteral">&quot;UTF-8&quot;</span>);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    save(out, indent);</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dc/d68/classVAbstractConverter.html#af1c2995d6e46e2df2d36f02f8fd9dbc3">m_tmpFile</a>.flush())</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    {</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <a class="code" href="../../de/d09/classVException.html">VException</a> e(<a class="code" href="../../dc/d68/classVAbstractConverter.html#af1c2995d6e46e2df2d36f02f8fd9dbc3">m_tmpFile</a>.errorString());</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="keywordflow">throw</span> e;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    }</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;}</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno"><a class="line" href="../../dc/d68/classVAbstractConverter.html#a1adcae025864358de024ca542201ab41">  381</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d68/classVAbstractConverter.html#a1adcae025864358de024ca542201ab41">VAbstractConverter::setVersion</a>(<span class="keyword">const</span> QString &amp;version)</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;{</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <a class="code" href="../../dc/d68/classVAbstractConverter.html#a63b7d841ce2e60e5e0732b1504ee66ca">ValidateVersion</a>(version);</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/deb/classVDomDocument.html#a988591c04a3fcf92472ad456a82c1e63">setTagText</a>(<a class="code" href="../../d6/deb/classVDomDocument.html#ab8e9f3f325f6e16787f1729059fd3f14">TagVersion</a>, version) == <span class="keyword">false</span>)</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    {</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <a class="code" href="../../de/d09/classVException.html">VException</a> e(tr(<span class="stringliteral">&quot;Could not change version.&quot;</span>));</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="keywordflow">throw</span> e;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    }</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;}</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <a class="code" href="../../d6/deb/classVDomDocument.html#a8dd4b44bf243c35092c40916985f894f">TestUniqueId</a>();</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    }</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="../../d9/dcf/classVExceptionWrongId.html">VExceptionWrongId</a> &amp;error)</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    {</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        Q_UNUSED(error)</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <a class="code" href="../../de/d09/classVException.html">VException</a> ex(tr(<span class="stringliteral">&quot;Error no unique id.&quot;</span>));</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="keywordflow">throw</span> ex;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    }</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <a class="code" href="../../dc/d68/classVAbstractConverter.html#af1c2995d6e46e2df2d36f02f8fd9dbc3">m_tmpFile</a>.resize(0);<span class="comment">//clear previous content</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> indent = 4;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    QTextStream out(&amp;<a class="code" href="../../dc/d68/classVAbstractConverter.html#af1c2995d6e46e2df2d36f02f8fd9dbc3">m_tmpFile</a>);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    out.setCodec(<span class="stringliteral">&quot;UTF-8&quot;</span>);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    save(out, indent);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dc/d68/classVAbstractConverter.html#af1c2995d6e46e2df2d36f02f8fd9dbc3">m_tmpFile</a>.flush())</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <a class="code" href="../../de/d09/classVException.html">VException</a> e(<a class="code" href="../../dc/d68/classVAbstractConverter.html#af1c2995d6e46e2df2d36f02f8fd9dbc3">m_tmpFile</a>.errorString());</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="keywordflow">throw</span> e;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;}</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno"><a class="line" href="../../dc/d68/classVAbstractConverter.html#a1adcae025864358de024ca542201ab41">  385</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d68/classVAbstractConverter.html#a1adcae025864358de024ca542201ab41">VAbstractConverter::setVersion</a>(<span class="keyword">const</span> QString &amp;version)</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;{</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <a class="code" href="../../dc/d68/classVAbstractConverter.html#a63b7d841ce2e60e5e0732b1504ee66ca">ValidateVersion</a>(version);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/deb/classVDomDocument.html#a988591c04a3fcf92472ad456a82c1e63">setTagText</a>(<a class="code" href="../../d6/deb/classVDomDocument.html#ab8e9f3f325f6e16787f1729059fd3f14">TagVersion</a>, version) == <span class="keyword">false</span>)</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    {</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <a class="code" href="../../de/d09/classVException.html">VException</a> e(tr(<span class="stringliteral">&quot;Could not change version.&quot;</span>));</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">throw</span> e;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    }</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;}</div>
 <div class="ttc" id="aabstract__converter_8h_html"><div class="ttname"><a href="../../d0/da1/abstract__converter_8h.html">abstract_converter.h</a></div></div>
 <div class="ttc" id="aapplication__2d_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d61/application__2d_8h_source.html#l00068">application_2d.h:68</a></div></div>
 <div class="ttc" id="aclassQMap_html"><div class="ttname"><a href="../../d0/d4c/classQMap.html">QMap&lt; int, QString &gt;</a></div></div>
 <div class="ttc" id="aclassVAbstractConverter_html_a04af3b2a1ba2a7025007c74c6c95835c"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a04af3b2a1ba2a7025007c74c6c95835c">VAbstractConverter::GetVersion</a></div><div class="ttdeci">static int GetVersion(const QString &amp;version)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00156">abstract_converter.cpp:156</a></div></div>
 <div class="ttc" id="aclassVAbstractConverter_html_a1928ef00c89059485827cb4fcad04014"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a1928ef00c89059485827cb4fcad04014">VAbstractConverter::isReadOnly</a></div><div class="ttdeci">virtual bool isReadOnly() const =0</div></div>
-<div class="ttc" id="aclassVAbstractConverter_html_a1adcae025864358de024ca542201ab41"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a1adcae025864358de024ca542201ab41">VAbstractConverter::setVersion</a></div><div class="ttdeci">void setVersion(const QString &amp;version)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00381">abstract_converter.cpp:381</a></div></div>
+<div class="ttc" id="aclassVAbstractConverter_html_a1adcae025864358de024ca542201ab41"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a1adcae025864358de024ca542201ab41">VAbstractConverter::setVersion</a></div><div class="ttdeci">void setVersion(const QString &amp;version)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00385">abstract_converter.cpp:385</a></div></div>
 <div class="ttc" id="aclassVAbstractConverter_html_a2c197b70971474a4f8ecf9dcee28d496"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a2c197b70971474a4f8ecf9dcee28d496">VAbstractConverter::maxVerStr</a></div><div class="ttdeci">virtual QString maxVerStr() const =0</div></div>
 <div class="ttc" id="aclassVAbstractConverter_html_a493e411fb2c42d9c9d8986a115db98f5"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a493e411fb2c42d9c9d8986a115db98f5">VAbstractConverter::Convert</a></div><div class="ttdeci">QString Convert()</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00090">abstract_converter.cpp:90</a></div></div>
-<div class="ttc" id="aclassVAbstractConverter_html_a4a9fe798f769c6441cba22cad35d7f51"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a4a9fe798f769c6441cba22cad35d7f51">VAbstractConverter::Replace</a></div><div class="ttdeci">void Replace(QString &amp;formula, const QString &amp;newName, int position, const QString &amp;token, int &amp;bias) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00259">abstract_converter.cpp:259</a></div></div>
-<div class="ttc" id="aclassVAbstractConverter_html_a5f7be87cb04e0ca5dbfdf2c5d9fae52c"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a5f7be87cb04e0ca5dbfdf2c5d9fae52c">VAbstractConverter::BiasTokens</a></div><div class="ttdeci">static void BiasTokens(int position, int bias, QMap&lt; int, QString &gt; &amp;tokens)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00278">abstract_converter.cpp:278</a></div></div>
+<div class="ttc" id="aclassVAbstractConverter_html_a4a9fe798f769c6441cba22cad35d7f51"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a4a9fe798f769c6441cba22cad35d7f51">VAbstractConverter::Replace</a></div><div class="ttdeci">void Replace(QString &amp;formula, const QString &amp;newName, int position, const QString &amp;token, int &amp;bias) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00263">abstract_converter.cpp:263</a></div></div>
+<div class="ttc" id="aclassVAbstractConverter_html_a5f7be87cb04e0ca5dbfdf2c5d9fae52c"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a5f7be87cb04e0ca5dbfdf2c5d9fae52c">VAbstractConverter::BiasTokens</a></div><div class="ttdeci">static void BiasTokens(int position, int bias, QMap&lt; int, QString &gt; &amp;tokens)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00282">abstract_converter.cpp:282</a></div></div>
 <div class="ttc" id="aclassVAbstractConverter_html_a62d4e700ea692951357490678669d919"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a62d4e700ea692951357490678669d919">VAbstractConverter::applyPatches</a></div><div class="ttdeci">virtual void applyPatches()=0</div></div>
 <div class="ttc" id="aclassVAbstractConverter_html_a63b7d841ce2e60e5e0732b1504ee66ca"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a63b7d841ce2e60e5e0732b1504ee66ca">VAbstractConverter::ValidateVersion</a></div><div class="ttdeci">static void ValidateVersion(const QString &amp;version)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00203">abstract_converter.cpp:203</a></div></div>
 <div class="ttc" id="aclassVAbstractConverter_html_a649a2f45390390851c37feb5b4f46edc"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a649a2f45390390851c37feb5b4f46edc">VAbstractConverter::getSchema</a></div><div class="ttdeci">virtual QString getSchema(int ver) const =0</div></div>
-<div class="ttc" id="aclassVAbstractConverter_html_a668bef779f47938b2435c0ca592445e8"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a668bef779f47938b2435c0ca592445e8">VAbstractConverter::InvalidVersion</a></div><div class="ttdeci">Q_NORETURN void InvalidVersion(int ver) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00298">abstract_converter.cpp:298</a></div></div>
+<div class="ttc" id="aclassVAbstractConverter_html_a668bef779f47938b2435c0ca592445e8"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a668bef779f47938b2435c0ca592445e8">VAbstractConverter::InvalidVersion</a></div><div class="ttdeci">Q_NORETURN void InvalidVersion(int ver) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00302">abstract_converter.cpp:302</a></div></div>
 <div class="ttc" id="aclassVAbstractConverter_html_a73f95b7ed2990e56afca738907282110"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a73f95b7ed2990e56afca738907282110">VAbstractConverter::getVersionStr</a></div><div class="ttdeci">QString getVersionStr() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00127">abstract_converter.cpp:127</a></div></div>
-<div class="ttc" id="aclassVAbstractConverter_html_a828b502d62876f9c4c2572baf6d25f07"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a828b502d62876f9c4c2572baf6d25f07">VAbstractConverter::Save</a></div><div class="ttdeci">void Save()</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00354">abstract_converter.cpp:354</a></div></div>
+<div class="ttc" id="aclassVAbstractConverter_html_a828b502d62876f9c4c2572baf6d25f07"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a828b502d62876f9c4c2572baf6d25f07">VAbstractConverter::Save</a></div><div class="ttdeci">void Save()</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00358">abstract_converter.cpp:358</a></div></div>
 <div class="ttc" id="aclassVAbstractConverter_html_a8a9aef5523cb78b278fb5336a6fdd1c7"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#a8a9aef5523cb78b278fb5336a6fdd1c7">VAbstractConverter::removeBakExtension</a></div><div class="ttdeci">static QString removeBakExtension(const QString &amp;fileName)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00188">abstract_converter.cpp:188</a></div></div>
-<div class="ttc" id="aclassVAbstractConverter_html_aa154603e35eba9a31c58456ab482dda7"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#aa154603e35eba9a31c58456ab482dda7">VAbstractConverter::CorrectionsPositions</a></div><div class="ttdeci">void CorrectionsPositions(int position, int bias, QMap&lt; int, QString &gt; &amp;tokens) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00267">abstract_converter.cpp:267</a></div></div>
-<div class="ttc" id="aclassVAbstractConverter_html_aa9bb1ef0ced9213b9edb7f57f11a89df"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#aa9bb1ef0ced9213b9edb7f57f11a89df">VAbstractConverter::ValidateInputFile</a></div><div class="ttdeci">void ValidateInputFile(const QString &amp;currentSchema) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00317">abstract_converter.cpp:317</a></div></div>
+<div class="ttc" id="aclassVAbstractConverter_html_aa154603e35eba9a31c58456ab482dda7"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#aa154603e35eba9a31c58456ab482dda7">VAbstractConverter::CorrectionsPositions</a></div><div class="ttdeci">void CorrectionsPositions(int position, int bias, QMap&lt; int, QString &gt; &amp;tokens) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00271">abstract_converter.cpp:271</a></div></div>
+<div class="ttc" id="aclassVAbstractConverter_html_aa9bb1ef0ced9213b9edb7f57f11a89df"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#aa9bb1ef0ced9213b9edb7f57f11a89df">VAbstractConverter::ValidateInputFile</a></div><div class="ttdeci">void ValidateInputFile(const QString &amp;currentSchema) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00321">abstract_converter.cpp:321</a></div></div>
 <div class="ttc" id="aclassVAbstractConverter_html_abef94b13583319e9f1e63164fd68689c"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#abef94b13583319e9f1e63164fd68689c">VAbstractConverter::getCurrentFormatVersion</a></div><div class="ttdeci">int getCurrentFormatVersion() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/abstract__converter_8cpp_source.html#l00121">abstract_converter.cpp:121</a></div></div>
 <div class="ttc" id="aclassVAbstractConverter_html_abff16c0846c1c269b3be1db226524942"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#abff16c0846c1c269b3be1db226524942">VAbstractConverter::minVerStr</a></div><div class="ttdeci">virtual QString minVerStr() const =0</div></div>
 <div class="ttc" id="aclassVAbstractConverter_html_ac335db2362ed6580ebddc879e55734c1"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#ac335db2362ed6580ebddc879e55734c1">VAbstractConverter::maxVer</a></div><div class="ttdeci">virtual int maxVer() const =0</div></div>
