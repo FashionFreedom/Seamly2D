@@ -1,5 +1,6 @@
 var NAVTREEINDEX63 =
 {
+"df/d5e/classDialogSplinePath.html#ac7b0d70a9684850d04a0b0389b61a728":[1,0,74,14],
 "df/d5e/classDialogSplinePath.html#ad65707a56989e43cf6f8fe46ca79e620":[1,0,74,12],
 "df/d5e/classDialogSplinePath.html#ad75039500386dc57cbd89f5182012ac3":[1,0,74,20],
 "df/d5e/classDialogSplinePath.html#ad8731a83a3696e177bf2be5786bf8734":[1,0,74,30],
@@ -20,10 +21,10 @@ var NAVTREEINDEX63 =
 "df/d5e/classVToolSpline.html#a28b0360672a37cc9620d21c7c4fd3a2e":[1,0,431,25],
 "df/d5e/classVToolSpline.html#a32f7136aea49822365139277f98398ba":[1,0,431,19],
 "df/d5e/classVToolSpline.html#a337d02d2eef0b1988c07799b6fa87778":[1,0,431,12],
+"df/d5e/classVToolSpline.html#a3a9dabbc88488948e7ecc02266bc3812":[1,0,431,2],
 "df/d5e/classVToolSpline.html#a44626c72ddc0c28e90d93bceb31f57aa":[1,0,431,5],
 "df/d5e/classVToolSpline.html#a44da0e4b270c808f748ff696ec1aaf44":[1,0,431,3],
 "df/d5e/classVToolSpline.html#a47a2777b200f2296a5c5894c8b78ab28":[1,0,431,10],
-"df/d5e/classVToolSpline.html#a4a66ef6a3431602831e4e3d3b1989f2e":[1,0,431,2],
 "df/d5e/classVToolSpline.html#a4adfc8704e02e04515ec42aa4d4bb5b4":[1,0,431,14],
 "df/d5e/classVToolSpline.html#a512369cc756e715d0e03c5cf5573bd19":[1,0,431,23],
 "df/d5e/classVToolSpline.html#a5eadbffa3e982f3e4512c87d1071e686":[1,0,431,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX63 =
 "df/dbf/qmuparsertest_8cpp.html#a95d5533a83afb20e4994d936f88ca43c":[2,0,0,1,2,16,0],
 "df/dbf/qmuparsertest_8cpp.html#ae19b1bb38c280d8cd89fd8db1098ad87":[2,0,0,1,2,16,1],
 "df/dbf/qmuparsertest_8cpp_source.html":[2,0,0,1,2,16],
-"df/dc3/classAbstractLayoutDialog.html":[1,0,4],
-"df/dc3/classAbstractLayoutDialog.html#a309e202c3fecafb72e69fe8fc73b724f":[1,0,4,2]
+"df/dc3/classAbstractLayoutDialog.html":[1,0,4]
 };

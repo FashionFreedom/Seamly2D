@@ -6,7 +6,7 @@ var classVToolCubicBezierPath =
     [ "Create", "d1/d95/classVToolCubicBezierPath.html#a1d22f16a703872f2373c14d83031e267", null ],
     [ "Create", "d1/d95/classVToolCubicBezierPath.html#a0513eda19ff4174655e054138ee1a7b9", null ],
     [ "getSplinePath", "d1/d95/classVToolCubicBezierPath.html#aabfad499e1ff99980a1c22bf57181c08", null ],
-    [ "RefreshGeometry", "d1/d95/classVToolCubicBezierPath.html#abd71b5aa181dda510befc47a63c9be8e", null ],
+    [ "refreshGeometry", "d1/d95/classVToolCubicBezierPath.html#a926439d66588c7e1d4b7989e0fc768fa", null ],
     [ "RemoveReferens", "d1/d95/classVToolCubicBezierPath.html#a19fe17d8d66bb23a11e3c2c9286dbb78", null ],
     [ "SaveDialog", "d1/d95/classVToolCubicBezierPath.html#acf1e4da85e87d2d5c30ebc098d316690", null ],
     [ "SaveOptions", "d1/d95/classVToolCubicBezierPath.html#a76111843d6f1c7d04b41229cce4713c0", null ],

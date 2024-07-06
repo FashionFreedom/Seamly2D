@@ -38,15 +38,15 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="../../dd/dcb/classVControlPointSpline.html" target="_top" xlink:title="The VControlPointSpline class control spline point.">
+<g id="a_node3"><a xlink:href="../../dd/dcb/classVControlPointSpline.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="1.5,-0.5 1.5,-255.5 141.5,-255.5 141.5,-0.5 1.5,-0.5"/>
 <text text-anchor="middle" x="71.5" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">VControlPointSpline</text>
 <polyline fill="none" stroke="black" points="1.5,-236.5 141.5,-236.5 "/>
-<text text-anchor="start" x="9.5" y="-224.5" font-family="Helvetica,sans-Serif" font-size="10.00"># controlLine</text>
-<text text-anchor="start" x="9.5" y="-213.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; indexSpline</text>
-<text text-anchor="start" x="9.5" y="-202.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; position</text>
-<text text-anchor="start" x="9.5" y="-191.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; freeAngle</text>
-<text text-anchor="start" x="9.5" y="-180.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; freeLength</text>
+<text text-anchor="start" x="9.5" y="-224.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_controlLine</text>
+<text text-anchor="start" x="9.5" y="-213.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_splineIndex</text>
+<text text-anchor="start" x="9.5" y="-202.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_position</text>
+<text text-anchor="start" x="9.5" y="-191.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_freeAngle</text>
+<text text-anchor="start" x="9.5" y="-180.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_freeLength</text>
 <polyline fill="none" stroke="black" points="1.5,-173.5 141.5,-173.5 "/>
 <text text-anchor="start" x="9.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VControlPointSpline()</text>
 <text text-anchor="start" x="9.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VControlPointSpline()</text>

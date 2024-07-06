@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 1634;
+var viewWidth = 1641;
 var viewHeight = 3645;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,7 +54,7 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>VToolCutSpline</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-3641 1630,-3641 1630,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-3641 1637,-3641 1637,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
@@ -858,46 +858,46 @@ var sectionId = 'dynsection-1';
 <g id="node25" class="node">
 <title>Node25</title>
 <g id="a_node25"><a xlink:href="../../dd/da2/classVScaledLine.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1517.5,-2555.5 1517.5,-2678.5 1624.5,-2678.5 1624.5,-2555.5 1517.5,-2555.5"/>
-<text text-anchor="middle" x="1571" y="-2666.5" font-family="Helvetica,sans-Serif" font-size="10.00">VScaledLine</text>
-<polyline fill="none" stroke="black" points="1517.5,-2659.5 1624.5,-2659.5 "/>
-<text text-anchor="start" x="1525.5" y="-2647.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; basicWidth</text>
-<polyline fill="none" stroke="black" points="1517.5,-2640.5 1624.5,-2640.5 "/>
-<text text-anchor="start" x="1525.5" y="-2628.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
-<text text-anchor="start" x="1525.5" y="-2617.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
-<text text-anchor="start" x="1525.5" y="-2606.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VScaledLine()</text>
-<text text-anchor="start" x="1525.5" y="-2595.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1525.5" y="-2584.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
-<text text-anchor="start" x="1525.5" y="-2573.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetBasicWidth()</text>
-<text text-anchor="start" x="1525.5" y="-2562.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setBasicWidth()</text>
+<polygon fill="white" stroke="black" points="1517,-2555.5 1517,-2678.5 1633,-2678.5 1633,-2555.5 1517,-2555.5"/>
+<text text-anchor="middle" x="1575" y="-2666.5" font-family="Helvetica,sans-Serif" font-size="10.00">VScaledLine</text>
+<polyline fill="none" stroke="black" points="1517,-2659.5 1633,-2659.5 "/>
+<text text-anchor="start" x="1525" y="-2647.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_defaultWidth</text>
+<polyline fill="none" stroke="black" points="1517,-2640.5 1633,-2640.5 "/>
+<text text-anchor="start" x="1525" y="-2628.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
+<text text-anchor="start" x="1525" y="-2617.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
+<text text-anchor="start" x="1525" y="-2606.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VScaledLine()</text>
+<text text-anchor="start" x="1525" y="-2595.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1525" y="-2584.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
+<text text-anchor="start" x="1525" y="-2573.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultWidth()</text>
+<text text-anchor="start" x="1525" y="-2562.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDefaultWidth()</text>
 </a>
 </g>
 </g>
 <!-- Node25&#45;&gt;Node21 -->
 <g id="edge26" class="edge">
 <title>Node25&#45;&gt;Node21</title>
-<path fill="none" stroke="#404040" d="M1571.04,-2555.41C1569.01,-2474.3 1557.93,-2327.48 1508,-2214 1472.5,-2133.3 1408.76,-2056 1357.21,-2001.6"/>
-<polygon fill="none" stroke="#404040" points="1357.02,-2001.4 1349.98,-1999.83 1348.72,-1992.73 1355.76,-1994.3 1357.02,-2001.4"/>
-<text text-anchor="middle" x="1542.5" y="-2188" font-family="Helvetica,sans-Serif" font-size="10.00"> #m_pointLeader</text>
+<path fill="none" stroke="#404040" d="M1574.29,-2555.39C1571.28,-2474.26 1558.56,-2327.42 1508,-2214 1472.17,-2133.61 1408.61,-2056.42 1357.22,-2001.99"/>
+<polygon fill="none" stroke="#404040" points="1357.04,-2001.8 1350.01,-2000.22 1348.76,-1993.12 1355.8,-1994.7 1357.04,-2001.8"/>
+<text text-anchor="middle" x="1537.5" y="-2188" font-family="Helvetica,sans-Serif" font-size="10.00"> #m_pointLeader</text>
 </g>
 <!-- Node26 -->
 <g id="node26" class="node">
 <title>Node26</title>
 <g id="a_node26"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="1516,-3271 1516,-3328 1626,-3328 1626,-3271 1516,-3271"/>
-<text text-anchor="middle" x="1571" y="-3316" font-family="Helvetica,sans-Serif" font-size="10.00">QGraphicsLineItem</text>
-<polyline fill="none" stroke="#bfbfbf" points="1516,-3309 1626,-3309 "/>
-<text text-anchor="middle" x="1571" y="-3297" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#bfbfbf" points="1516,-3290 1626,-3290 "/>
-<text text-anchor="middle" x="1571" y="-3278" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="#bfbfbf" points="1520,-3271 1520,-3328 1630,-3328 1630,-3271 1520,-3271"/>
+<text text-anchor="middle" x="1575" y="-3316" font-family="Helvetica,sans-Serif" font-size="10.00">QGraphicsLineItem</text>
+<polyline fill="none" stroke="#bfbfbf" points="1520,-3309 1630,-3309 "/>
+<text text-anchor="middle" x="1575" y="-3297" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#bfbfbf" points="1520,-3290 1630,-3290 "/>
+<text text-anchor="middle" x="1575" y="-3278" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node26&#45;&gt;Node25 -->
 <g id="edge27" class="edge">
 <title>Node26&#45;&gt;Node25</title>
-<path fill="none" stroke="midnightblue" d="M1571,-3260.83C1571,-3148.69 1571,-2816.31 1571,-2678.7"/>
-<polygon fill="none" stroke="midnightblue" points="1567.5,-3260.98 1571,-3270.98 1574.5,-3260.98 1567.5,-3260.98"/>
+<path fill="none" stroke="midnightblue" d="M1575,-3260.83C1575,-3148.69 1575,-2816.31 1575,-2678.7"/>
+<polygon fill="none" stroke="midnightblue" points="1571.5,-3260.98 1575,-3270.98 1578.5,-3260.98 1571.5,-3260.98"/>
 </g>
 </g>
 </svg>

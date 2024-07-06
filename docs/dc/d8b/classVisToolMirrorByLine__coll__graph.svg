@@ -262,26 +262,26 @@ var sectionId = 'dynsection-1';
 <g id="node7" class="node">
 <title>Node7</title>
 <g id="a_node7"><a xlink:href="../../dd/da2/classVScaledLine.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="249.5,-745.5 249.5,-868.5 356.5,-868.5 356.5,-745.5 249.5,-745.5"/>
-<text text-anchor="middle" x="303" y="-856.5" font-family="Helvetica,sans-Serif" font-size="10.00">VScaledLine</text>
-<polyline fill="none" stroke="black" points="249.5,-849.5 356.5,-849.5 "/>
-<text text-anchor="start" x="257.5" y="-837.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; basicWidth</text>
-<polyline fill="none" stroke="black" points="249.5,-830.5 356.5,-830.5 "/>
-<text text-anchor="start" x="257.5" y="-818.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
-<text text-anchor="start" x="257.5" y="-807.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
-<text text-anchor="start" x="257.5" y="-796.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VScaledLine()</text>
-<text text-anchor="start" x="257.5" y="-785.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="257.5" y="-774.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
-<text text-anchor="start" x="257.5" y="-763.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetBasicWidth()</text>
-<text text-anchor="start" x="257.5" y="-752.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setBasicWidth()</text>
+<polygon fill="white" stroke="black" points="247,-745.5 247,-868.5 363,-868.5 363,-745.5 247,-745.5"/>
+<text text-anchor="middle" x="305" y="-856.5" font-family="Helvetica,sans-Serif" font-size="10.00">VScaledLine</text>
+<polyline fill="none" stroke="black" points="247,-849.5 363,-849.5 "/>
+<text text-anchor="start" x="255" y="-837.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_defaultWidth</text>
+<polyline fill="none" stroke="black" points="247,-830.5 363,-830.5 "/>
+<text text-anchor="start" x="255" y="-818.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
+<text text-anchor="start" x="255" y="-807.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
+<text text-anchor="start" x="255" y="-796.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VScaledLine()</text>
+<text text-anchor="start" x="255" y="-785.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="255" y="-774.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
+<text text-anchor="start" x="255" y="-763.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultWidth()</text>
+<text text-anchor="start" x="255" y="-752.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDefaultWidth()</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node3 -->
 <g id="edge6" class="edge">
 <title>Node7&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M289.29,-735.18C278.48,-679.35 263.38,-601.4 252.02,-542.71"/>
-<polygon fill="none" stroke="midnightblue" points="285.92,-736.18 291.25,-745.34 292.79,-734.85 285.92,-736.18"/>
+<path fill="none" stroke="midnightblue" d="M290.95,-735.53C279.81,-679.68 264.22,-601.52 252.49,-542.71"/>
+<polygon fill="none" stroke="midnightblue" points="287.51,-736.21 292.9,-745.34 294.38,-734.84 287.51,-736.21"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
@@ -299,8 +299,8 @@ var sectionId = 'dynsection-1';
 <!-- Node8&#45;&gt;Node7 -->
 <g id="edge7" class="edge">
 <title>Node8&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M314.07,-1258.25C312,-1174.17 307.01,-970.9 304.49,-868.74"/>
-<polygon fill="none" stroke="midnightblue" points="310.58,-1258.45 314.32,-1268.36 317.57,-1258.28 310.58,-1258.45"/>
+<path fill="none" stroke="midnightblue" d="M314.23,-1258.25C312.5,-1174.17 308.34,-970.9 306.24,-868.74"/>
+<polygon fill="none" stroke="midnightblue" points="310.73,-1258.44 314.43,-1268.36 317.73,-1258.3 310.73,-1258.44"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">

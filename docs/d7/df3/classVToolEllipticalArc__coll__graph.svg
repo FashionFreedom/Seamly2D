@@ -94,7 +94,7 @@ var sectionId = 'dynsection-1';
 <polygon fill="white" stroke="black" points="1062,-304.5 1062,-812.5 1244,-812.5 1244,-304.5 1062,-304.5"/>
 <text text-anchor="middle" x="1153" y="-800.5" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractSpline</text>
 <polyline fill="none" stroke="black" points="1062,-793.5 1244,-793.5 "/>
-<text text-anchor="start" x="1070" y="-781.5" font-family="Helvetica,sans-Serif" font-size="10.00"># sceneType</text>
+<text text-anchor="start" x="1070" y="-781.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_sceneType</text>
 <text text-anchor="start" x="1070" y="-770.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_isHovered</text>
 <text text-anchor="start" x="1070" y="-759.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_piecesMode</text>
 <polyline fill="none" stroke="black" points="1062,-752.5 1244,-752.5 "/>
@@ -104,7 +104,7 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="1070" y="-707.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
 <text text-anchor="start" x="1070" y="-696.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
 <text text-anchor="start" x="1070" y="-685.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTagName()</text>
-<text text-anchor="start" x="1070" y="-674.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowHandles()</text>
+<text text-anchor="start" x="1070" y="-674.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ showHandles()</text>
 <text text-anchor="start" x="1070" y="-663.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineColor()</text>
 <text text-anchor="start" x="1070" y="-652.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineColor()</text>
 <text text-anchor="start" x="1070" y="-641.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetPenStyle()</text>
@@ -119,7 +119,7 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="1070" y="-542.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AllowHover()</text>
 <text text-anchor="start" x="1070" y="-531.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AllowSelecting()</text>
 <text text-anchor="start" x="1070" y="-520.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ makeToolTip()</text>
-<text text-anchor="start" x="1070" y="-509.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RefreshGeometry()</text>
+<text text-anchor="start" x="1070" y="-509.5" font-family="Helvetica,sans-Serif" font-size="10.00"># refreshGeometry()</text>
 <text text-anchor="start" x="1070" y="-498.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowTool()</text>
 <text text-anchor="start" x="1070" y="-487.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverEnterEvent()</text>
 <text text-anchor="start" x="1070" y="-476.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverLeaveEvent()</text>
@@ -131,13 +131,13 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="1070" y="-410.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
 <text text-anchor="start" x="1070" y="-399.5" font-family="Helvetica,sans-Serif" font-size="10.00"># refreshCtrlPoints()</text>
 <text text-anchor="start" x="1070" y="-388.5" font-family="Helvetica,sans-Serif" font-size="10.00"># contextMenuEvent()</text>
-<text text-anchor="start" x="1070" y="-377.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CorrectedSpline()</text>
+<text text-anchor="start" x="1070" y="-377.5" font-family="Helvetica,sans-Serif" font-size="10.00"># correctedSpline()</text>
 <text text-anchor="start" x="1070" y="-366.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowToolVisualization()</text>
-<text text-anchor="start" x="1070" y="-355.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InitSplineToolConnections()</text>
-<text text-anchor="start" x="1070" y="-344.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InitSplinePathToolConnections()</text>
-<text text-anchor="start" x="1070" y="-333.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InitArcToolConnections()</text>
-<text text-anchor="start" x="1070" y="-322.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InitElArcToolConnections()</text>
-<text text-anchor="start" x="1070" y="-311.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitDefShape()</text>
+<text text-anchor="start" x="1070" y="-355.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initSplineToolConnections()</text>
+<text text-anchor="start" x="1070" y="-344.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initSplinePathToolConnections()</text>
+<text text-anchor="start" x="1070" y="-333.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initArcToolConnections()</text>
+<text text-anchor="start" x="1070" y="-322.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initElArcToolConnections()</text>
+<text text-anchor="start" x="1070" y="-311.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initDefShape()</text>
 </a>
 </g>
 </g>
@@ -725,7 +725,7 @@ var sectionId = 'dynsection-1';
 <title>Node20&#45;&gt;Node2</title>
 <path fill="none" stroke="#404040" d="M1307.95,-1030.96C1294.44,-989.84 1267.61,-908.21 1240.02,-824.26"/>
 <polygon fill="none" stroke="#404040" points="1239.95,-824.07 1234.28,-819.62 1236.21,-812.67 1241.88,-817.12 1239.95,-824.07"/>
-<text text-anchor="middle" x="1283" y="-834" font-family="Helvetica,sans-Serif" font-size="10.00"> #controlPoints</text>
+<text text-anchor="middle" x="1290.5" y="-834" font-family="Helvetica,sans-Serif" font-size="10.00"> #m_controlPoints</text>
 </g>
 </g>
 </svg>

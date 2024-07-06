@@ -1,5 +1,6 @@
 var NAVTREEINDEX64 =
 {
+"df/dc3/classAbstractLayoutDialog.html#a309e202c3fecafb72e69fe8fc73b724f":[1,0,4,2],
 "df/dc3/classAbstractLayoutDialog.html#a4743e2084b3b5cf4798b46d12b9759cd":[1,0,4,1],
 "df/dc3/classAbstractLayoutDialog.html#a603fab080ba0182f253b35dbb4e51f92":[1,0,4,0],
 "df/dc8/Seamly2DTest_2qttestmainlambda_8cpp.html":[2,0,0,2,2,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX64 =
 "df/df5/vtextgraphicsitem_8cpp_source.html":[2,0,0,1,14,61],
 "df/df7/tst__vellipticalarc_8h.html":[2,0,0,2,2,24],
 "df/df7/tst__vellipticalarc_8h_source.html":[2,0,0,2,2,24],
-"df/dfb/classVSplineData.html":[1,0,388],
-"df/dfb/classVSplineData.html#a0acbfd245da00604e3b090c7b92fda3f":[1,0,388,0]
+"df/dfb/classVSplineData.html":[1,0,388]
 };

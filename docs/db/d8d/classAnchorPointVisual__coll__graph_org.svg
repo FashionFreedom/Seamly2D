@@ -186,26 +186,26 @@
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:href="../../dd/da2/classVScaledLine.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="249.5,-498.5 249.5,-621.5 356.5,-621.5 356.5,-498.5 249.5,-498.5"/>
-<text text-anchor="middle" x="303" y="-609.5" font-family="Helvetica,sans-Serif" font-size="10.00">VScaledLine</text>
-<polyline fill="none" stroke="black" points="249.5,-602.5 356.5,-602.5 "/>
-<text text-anchor="start" x="257.5" y="-590.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; basicWidth</text>
-<polyline fill="none" stroke="black" points="249.5,-583.5 356.5,-583.5 "/>
-<text text-anchor="start" x="257.5" y="-571.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
-<text text-anchor="start" x="257.5" y="-560.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
-<text text-anchor="start" x="257.5" y="-549.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VScaledLine()</text>
-<text text-anchor="start" x="257.5" y="-538.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="257.5" y="-527.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
-<text text-anchor="start" x="257.5" y="-516.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetBasicWidth()</text>
-<text text-anchor="start" x="257.5" y="-505.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setBasicWidth()</text>
+<polygon fill="white" stroke="black" points="247,-498.5 247,-621.5 363,-621.5 363,-498.5 247,-498.5"/>
+<text text-anchor="middle" x="305" y="-609.5" font-family="Helvetica,sans-Serif" font-size="10.00">VScaledLine</text>
+<polyline fill="none" stroke="black" points="247,-602.5 363,-602.5 "/>
+<text text-anchor="start" x="255" y="-590.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_defaultWidth</text>
+<polyline fill="none" stroke="black" points="247,-583.5 363,-583.5 "/>
+<text text-anchor="start" x="255" y="-571.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
+<text text-anchor="start" x="255" y="-560.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
+<text text-anchor="start" x="255" y="-549.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VScaledLine()</text>
+<text text-anchor="start" x="255" y="-538.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="255" y="-527.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
+<text text-anchor="start" x="255" y="-516.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultWidth()</text>
+<text text-anchor="start" x="255" y="-505.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDefaultWidth()</text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node2 -->
 <g id="edge5" class="edge">
 <title>Node6&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M289.29,-488.18C278.48,-432.35 263.38,-354.4 252.02,-295.71"/>
-<polygon fill="none" stroke="midnightblue" points="285.92,-489.18 291.25,-498.34 292.79,-487.85 285.92,-489.18"/>
+<path fill="none" stroke="midnightblue" d="M290.95,-488.53C279.81,-432.68 264.22,-354.52 252.49,-295.71"/>
+<polygon fill="none" stroke="midnightblue" points="287.51,-489.21 292.9,-498.34 294.38,-487.84 287.51,-489.21"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
@@ -223,8 +223,8 @@
 <!-- Node7&#45;&gt;Node6 -->
 <g id="edge6" class="edge">
 <title>Node7&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M314.07,-1011.25C312,-927.17 307.01,-723.9 304.49,-621.74"/>
-<polygon fill="none" stroke="midnightblue" points="310.58,-1011.45 314.32,-1021.36 317.57,-1011.28 310.58,-1011.45"/>
+<path fill="none" stroke="midnightblue" d="M314.23,-1011.25C312.5,-927.17 308.34,-723.9 306.24,-621.74"/>
+<polygon fill="none" stroke="midnightblue" points="310.73,-1011.44 314.43,-1021.36 317.73,-1011.3 310.73,-1011.44"/>
 </g>
 </g>
 </svg>

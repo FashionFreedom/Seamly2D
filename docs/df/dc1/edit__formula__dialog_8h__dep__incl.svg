@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 4054;
+var viewWidth = 4052;
 var viewHeight = 128;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,15 +54,15 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>src/libs/vtools/dialogs/support/edit_formula_dialog.h</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-124 4049.5,-124 4049.5,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-124 4047.5,-124 4047.5,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="1959,-78.5 1959,-119.5 2081,-119.5 2081,-78.5 1959,-78.5"/>
-<text text-anchor="start" x="1967" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="start" x="1967" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/support/edit_formula</text>
-<text text-anchor="middle" x="2020" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">_dialog.h</text>
+<polygon fill="#bfbfbf" stroke="black" points="1958,-78.5 1958,-119.5 2080,-119.5 2080,-78.5 1958,-78.5"/>
+<text text-anchor="start" x="1966" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="start" x="1966" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/support/edit_formula</text>
+<text text-anchor="middle" x="2019" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">_dialog.h</text>
 </a>
 </g>
 </g>
@@ -80,56 +80,56 @@ var sectionId = 'dynsection-1';
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M1948.41,-98.25C1648.36,-98.95 491.07,-97.88 131,-42 128.13,-41.55 125.21,-41.03 122.27,-40.44"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1948.72,-101.75 1958.71,-98.23 1948.71,-94.75 1948.72,-101.75"/>
+<path fill="none" stroke="midnightblue" d="M1947.44,-98.25C1647.55,-98.94 490.88,-97.85 131,-42 128.13,-41.55 125.21,-41.03 122.27,-40.44"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1947.76,-101.75 1957.75,-98.23 1947.74,-94.75 1947.76,-101.75"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d6/d5d/dialogalongline_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="140,-6 140,-36 282,-36 282,-6 140,-6"/>
+<g id="a_node3"><a xlink:href="../../d1/d37/dialogarc_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="140,-6 140,-36 262,-36 262,-6 140,-6"/>
 <text text-anchor="start" x="148" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="211" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogalongline.cpp</text>
+<text text-anchor="middle" x="201" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogarc.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M1948.49,-97.71C1664.91,-96.24 618.97,-87.78 291,-42 280.93,-40.59 270.3,-38.43 260.18,-36.04"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1948.63,-101.21 1958.65,-97.76 1948.67,-94.21 1948.63,-101.21"/>
+<path fill="none" stroke="midnightblue" d="M1947.62,-98.05C1662.15,-97.9 602.14,-93.8 271,-42 262.13,-40.61 252.8,-38.46 243.94,-36.07"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1947.84,-101.55 1957.84,-98.06 1947.85,-94.55 1947.84,-101.55"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d1/d37/dialogarc_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="300,-6 300,-36 422,-36 422,-6 300,-6"/>
-<text text-anchor="start" x="308" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="361" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogarc.cpp</text>
+<g id="a_node4"><a xlink:href="../../d2/d29/dialogarcwithlength_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="280,-6 280,-36 444,-36 444,-6 280,-6"/>
+<text text-anchor="start" x="288" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="362" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogarcwithlength.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M1948.94,-97.79C1680.68,-96.63 729.64,-89.2 431,-42 422.14,-40.6 412.8,-38.44 403.95,-36.04"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1948.93,-101.29 1958.95,-97.83 1948.96,-94.29 1948.93,-101.29"/>
+<path fill="none" stroke="midnightblue" d="M1947.31,-97.16C1680.88,-93.75 747.96,-79.38 453,-42 441.77,-40.58 429.87,-38.44 418.52,-36.08"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1947.58,-100.66 1957.63,-97.29 1947.67,-93.66 1947.58,-100.66"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d2/d29/dialogarcwithlength_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="440,-6 440,-36 604,-36 604,-6 440,-6"/>
-<text text-anchor="start" x="448" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="522" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogarcwithlength.cpp</text>
+<g id="a_node5"><a xlink:href="../../d6/d5d/dialogalongline_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="462,-6 462,-36 604,-36 604,-6 462,-6"/>
+<text text-anchor="start" x="470" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="533" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogalongline.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
 <title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M1948.64,-96.83C1700.42,-92.48 875.48,-75.8 613,-42 601.77,-40.55 589.88,-38.4 578.52,-36.04"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1948.92,-100.33 1958.98,-97.01 1949.04,-93.33 1948.92,-100.33"/>
+<path fill="none" stroke="midnightblue" d="M1947.66,-97.09C1699.49,-93.63 874.79,-79.53 613,-42 603.08,-40.58 592.6,-38.44 582.62,-36.08"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1947.94,-100.6 1957.99,-97.24 1948.04,-93.6 1947.94,-100.6"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
@@ -144,331 +144,331 @@ var sectionId = 'dynsection-1';
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M1948.7,-96.81C1718.5,-92.65 996.62,-77.08 766,-42 756.56,-40.56 746.6,-38.42 737.11,-36.06"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1948.91,-100.31 1958.97,-96.99 1949.03,-93.31 1948.91,-100.31"/>
+<path fill="none" stroke="midnightblue" d="M1947.36,-96.8C1716.91,-92.63 996.3,-77.04 766,-42 756.56,-40.56 746.6,-38.42 737.11,-36.06"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1947.58,-100.3 1957.64,-96.98 1947.7,-93.31 1947.58,-100.3"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="../../dd/d39/dialogcurveintersectaxis_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="775.5,-6 775.5,-36 962.5,-36 962.5,-6 775.5,-6"/>
+<g id="a_node7"><a xlink:href="../../d9/d90/dialogcutarc_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="775.5,-6 775.5,-36 902.5,-36 902.5,-6 775.5,-6"/>
 <text text-anchor="start" x="783.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="869" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogcurveintersectaxis.cpp</text>
+<text text-anchor="middle" x="839" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogcutarc.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
 <g id="edge6" class="edge">
 <title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M1948.85,-97.59C1779.14,-95.86 1337.51,-87.03 972,-42 959.62,-40.47 946.48,-38.33 933.89,-36.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1948.87,-101.09 1958.9,-97.68 1948.94,-94.09 1948.87,-101.09"/>
+<path fill="none" stroke="midnightblue" d="M1947.79,-96.45C1735.93,-91.52 1111.86,-74.56 911,-42 902.04,-40.55 892.59,-38.39 883.6,-36.03"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1947.79,-99.95 1957.87,-96.68 1947.95,-92.95 1947.79,-99.95"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="../../df/ded/tooldialogs_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="981,-6 981,-36 1103,-36 1103,-6 981,-6"/>
-<text text-anchor="start" x="989" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="1042" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tooldialogs.h</text>
+<g id="a_node8"><a xlink:href="../../d3/d2e/dialogcutspline_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="920.5,-6 920.5,-36 1061.5,-36 1061.5,-6 920.5,-6"/>
+<text text-anchor="start" x="928.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="991" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogcutspline.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node8 -->
 <g id="edge7" class="edge">
 <title>Node1&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M1948.64,-98.82C1794.65,-99.46 1420.14,-94.88 1112,-42 1103.4,-40.53 1094.36,-38.39 1085.73,-36.06"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1948.92,-102.32 1958.91,-98.77 1948.89,-95.32 1948.92,-102.32"/>
+<path fill="none" stroke="midnightblue" d="M1947.68,-98.37C1788.97,-98.21 1394.99,-92.26 1070,-42 1060.35,-40.51 1050.17,-38.37 1040.43,-36.04"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1947.79,-101.87 1957.79,-98.38 1947.79,-94.87 1947.79,-101.87"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="../../d9/d90/dialogcutarc_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1121.5,-6 1121.5,-36 1248.5,-36 1248.5,-6 1121.5,-6"/>
-<text text-anchor="start" x="1129.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="1185" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogcutarc.cpp</text>
+<g id="a_node9"><a xlink:href="../../df/d30/dialogcutsplinepath_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1079.5,-6 1079.5,-36 1242.5,-36 1242.5,-6 1079.5,-6"/>
+<text text-anchor="start" x="1087.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="1161" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogcutsplinepath.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node9 -->
 <g id="edge8" class="edge">
 <title>Node1&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M1948.4,-97.45C1812.58,-95.36 1508.57,-85.73 1257,-42 1248.31,-40.49 1239.15,-38.37 1230.4,-36.07"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1948.62,-100.95 1958.67,-97.59 1948.72,-93.95 1948.62,-100.95"/>
+<path fill="none" stroke="midnightblue" d="M1947.65,-96.27C1811.52,-92.2 1505.6,-79.37 1251,-42 1240.39,-40.44 1229.17,-38.33 1218.38,-36.06"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1947.84,-99.78 1957.94,-96.57 1948.05,-92.78 1947.84,-99.78"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="../../d3/d2e/dialogcutspline_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1266.5,-6 1266.5,-36 1407.5,-36 1407.5,-6 1266.5,-6"/>
-<text text-anchor="start" x="1274.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="1337" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogcutspline.cpp</text>
+<g id="a_node10"><a xlink:href="../../dd/d39/dialogcurveintersectaxis_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1260.5,-6 1260.5,-36 1447.5,-36 1447.5,-6 1260.5,-6"/>
+<text text-anchor="start" x="1268.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="1354" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogcurveintersectaxis.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node10 -->
 <g id="edge9" class="edge">
 <title>Node1&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M1948.42,-94.97C1834.86,-89.35 1606.73,-74.78 1416,-42 1406.8,-40.42 1397.09,-38.32 1387.75,-36.08"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1948.56,-98.48 1958.72,-95.47 1948.9,-91.49 1948.56,-98.48"/>
+<path fill="none" stroke="midnightblue" d="M1947.62,-93.01C1840.63,-85.06 1632.52,-67.73 1457,-42 1445.47,-40.31 1433.26,-38.21 1421.44,-36.02"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1947.42,-96.51 1957.65,-93.75 1947.93,-89.53 1947.42,-96.51"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="../../df/d30/dialogcutsplinepath_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1425.5,-6 1425.5,-36 1588.5,-36 1588.5,-6 1425.5,-6"/>
-<text text-anchor="start" x="1433.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="1507" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogcutsplinepath.cpp</text>
+<g id="a_node11"><a xlink:href="../../df/ded/tooldialogs_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1466,-6 1466,-36 1588,-36 1588,-6 1466,-6"/>
+<text text-anchor="start" x="1474" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="1527" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tooldialogs.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node11 -->
 <g id="edge10" class="edge">
 <title>Node1&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M1949,-90.43C1864.91,-81.04 1720.75,-63.59 1598,-42 1588.12,-40.26 1577.69,-38.19 1567.56,-36.06"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1948.63,-93.91 1958.95,-91.54 1949.4,-86.95 1948.63,-93.91"/>
+<path fill="none" stroke="midnightblue" d="M1947.75,-91.76C1863.42,-83.63 1719.03,-67.39 1597,-42 1589.08,-40.35 1580.75,-38.28 1572.7,-36.09"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1947.44,-95.24 1957.73,-92.71 1948.11,-88.27 1947.44,-95.24"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="../../d9/d68/dialogellipticalarc_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1607,-6 1607,-36 1761,-36 1761,-6 1607,-6"/>
-<text text-anchor="start" x="1615" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="1684" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogellipticalarc.cpp</text>
+<g id="a_node12"><a xlink:href="../../d3/d15/dialogendline_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1606.5,-6 1606.5,-36 1739.5,-36 1739.5,-6 1606.5,-6"/>
+<text text-anchor="start" x="1614.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="1673" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogendline.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node12 -->
 <g id="edge11" class="edge">
 <title>Node1&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M1948.77,-82.21C1898.73,-71.07 1830.24,-55.75 1770,-42 1761.63,-40.09 1752.81,-38.06 1744.13,-36.05"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1948.32,-85.69 1958.84,-84.45 1949.84,-78.86 1948.32,-85.69"/>
+<path fill="none" stroke="midnightblue" d="M1948.02,-84.34C1893.44,-73.58 1816.23,-57.81 1749,-42 1741.16,-40.16 1732.9,-38.1 1724.83,-36.03"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1947.46,-87.8 1957.94,-86.29 1948.81,-80.93 1947.46,-87.8"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
-<g id="a_node13"><a xlink:href="../../d3/d15/dialogendline_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1779.5,-6 1779.5,-36 1912.5,-36 1912.5,-6 1779.5,-6"/>
-<text text-anchor="start" x="1787.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="1846" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogendline.cpp</text>
+<g id="a_node13"><a xlink:href="../../d9/d68/dialogellipticalarc_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1758,-6 1758,-36 1912,-36 1912,-6 1758,-6"/>
+<text text-anchor="start" x="1766" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="1835" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogellipticalarc.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node13 -->
 <g id="edge12" class="edge">
 <title>Node1&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M1965.7,-74.28C1937.02,-61.76 1902.79,-46.81 1878.3,-36.11"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1964.63,-77.63 1975.19,-78.43 1967.43,-71.22 1964.63,-77.63"/>
+<path fill="none" stroke="midnightblue" d="M1962.37,-74.61C1931.88,-62.02 1895.28,-46.9 1869.15,-36.11"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1961.04,-77.85 1971.62,-78.43 1963.71,-71.38 1961.04,-77.85"/>
 </g>
 <!-- Node14 -->
 <g id="node14" class="node">
 <title>Node14</title>
 <g id="a_node14"><a xlink:href="../../de/d3c/dialoglineintersectaxis_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1931,-6 1931,-36 2109,-36 2109,-6 1931,-6"/>
-<text text-anchor="start" x="1939" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="2020" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialoglineintersectaxis.cpp</text>
+<polygon fill="white" stroke="black" points="1930,-6 1930,-36 2108,-36 2108,-6 1930,-6"/>
+<text text-anchor="start" x="1938" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="2019" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialoglineintersectaxis.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node14 -->
 <g id="edge13" class="edge">
 <title>Node1&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M2020,-68.28C2020,-57.25 2020,-45.25 2020,-36.23"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2016.5,-68.43 2020,-78.43 2023.5,-68.43 2016.5,-68.43"/>
+<path fill="none" stroke="midnightblue" d="M2019,-68.28C2019,-57.25 2019,-45.25 2019,-36.23"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2015.5,-68.43 2019,-78.43 2022.5,-68.43 2015.5,-68.43"/>
 </g>
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="../../da/df4/dialognormal_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="2127.5,-6 2127.5,-36 2258.5,-36 2258.5,-6 2127.5,-6"/>
-<text text-anchor="start" x="2135.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="2193" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialognormal.cpp</text>
+<g id="a_node15"><a xlink:href="../../d2/d51/dialogmove_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="2125.5,-6 2125.5,-36 2250.5,-36 2250.5,-6 2125.5,-6"/>
+<text text-anchor="start" x="2133.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="2188" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogmove.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node15 -->
 <g id="edge14" class="edge">
 <title>Node1&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M2073.99,-74.28C2102.5,-61.76 2136.54,-46.81 2160.89,-36.11"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2072.3,-71.2 2064.55,-78.43 2075.12,-77.61 2072.3,-71.2"/>
+<path fill="none" stroke="midnightblue" d="M2071.74,-74.28C2099.6,-61.76 2132.84,-46.81 2156.63,-36.11"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2070.21,-71.13 2062.52,-78.43 2073.08,-77.52 2070.21,-71.13"/>
 </g>
 <!-- Node16 -->
 <g id="node16" class="node">
 <title>Node16</title>
-<g id="a_node16"><a xlink:href="../../d2/d51/dialogmove_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="2276.5,-6 2276.5,-36 2401.5,-36 2401.5,-6 2276.5,-6"/>
-<text text-anchor="start" x="2284.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="2339" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogmove.cpp</text>
+<g id="a_node16"><a xlink:href="../../da/df4/dialognormal_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="2268.5,-6 2268.5,-36 2399.5,-36 2399.5,-6 2268.5,-6"/>
+<text text-anchor="start" x="2276.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="2334" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialognormal.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node16 -->
 <g id="edge15" class="edge">
 <title>Node1&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M2091.12,-82.98C2140.82,-72.23 2208.66,-57.05 2268,-42 2275.32,-40.14 2283.04,-38.08 2290.59,-36"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2090.15,-79.61 2081.11,-85.14 2091.62,-86.45 2090.15,-79.61"/>
+<path fill="none" stroke="midnightblue" d="M2090.05,-82.19C2138.13,-71.32 2203.02,-56.32 2260,-42 2267.49,-40.12 2275.38,-38.06 2283.11,-36.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2089.04,-78.83 2080.06,-84.44 2090.58,-85.66 2089.04,-78.83"/>
 </g>
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
 <g id="a_node17"><a xlink:href="../../d9/df4/dialogpointofcontact_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="2419.5,-6 2419.5,-36 2586.5,-36 2586.5,-6 2419.5,-6"/>
-<text text-anchor="start" x="2427.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="2503" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogpointofcontact.cpp</text>
+<polygon fill="white" stroke="black" points="2417.5,-6 2417.5,-36 2584.5,-36 2584.5,-6 2417.5,-6"/>
+<text text-anchor="start" x="2425.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="2501" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogpointofcontact.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node17 -->
 <g id="edge16" class="edge">
 <title>Node1&#45;&gt;Node17</title>
-<path fill="none" stroke="midnightblue" d="M2091.44,-89.33C2170.02,-79.44 2299.91,-62 2411,-42 2420.81,-40.23 2431.17,-38.17 2441.26,-36.06"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2090.66,-85.9 2081.17,-90.62 2091.53,-92.85 2090.66,-85.9"/>
+<path fill="none" stroke="midnightblue" d="M2090.26,-89.32C2168.63,-79.41 2298.19,-61.97 2409,-42 2418.81,-40.23 2429.17,-38.17 2439.26,-36.06"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2089.5,-85.89 2080.01,-90.61 2090.37,-92.83 2089.5,-85.89"/>
 </g>
 <!-- Node18 -->
 <g id="node18" class="node">
 <title>Node18</title>
-<g id="a_node18"><a xlink:href="../../d3/d23/dialogshoulderpoint_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="2605,-6 2605,-36 2769,-36 2769,-6 2605,-6"/>
-<text text-anchor="start" x="2613" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="2687" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogshoulderpoint.cpp</text>
+<g id="a_node18"><a xlink:href="../../dc/d64/dialogrotation_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="2602.5,-6 2602.5,-36 2737.5,-36 2737.5,-6 2602.5,-6"/>
+<text text-anchor="start" x="2610.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="2670" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogrotation.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node18 -->
 <g id="edge17" class="edge">
 <title>Node1&#45;&gt;Node18</title>
-<path fill="none" stroke="midnightblue" d="M2091.5,-93.8C2200.73,-86.77 2415.5,-70.51 2596,-42 2606.39,-40.36 2617.36,-38.26 2627.96,-36.05"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2091.02,-90.33 2081.26,-94.46 2091.46,-97.31 2091.02,-90.33"/>
+<path fill="none" stroke="midnightblue" d="M2090.53,-94.72C2199.77,-88.89 2414.43,-74.16 2594,-42 2602.86,-40.41 2612.21,-38.31 2621.2,-36.07"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2090.09,-91.24 2080.29,-95.26 2090.46,-98.23 2090.09,-91.24"/>
 </g>
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:href="../../dc/d64/dialogrotation_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="2787.5,-6 2787.5,-36 2922.5,-36 2922.5,-6 2787.5,-6"/>
-<text text-anchor="start" x="2795.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="2855" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogrotation.cpp</text>
+<g id="a_node19"><a xlink:href="../../d3/d23/dialogshoulderpoint_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="2756,-6 2756,-36 2920,-36 2920,-6 2756,-6"/>
+<text text-anchor="start" x="2764" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="2838" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogshoulderpoint.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node19 -->
 <g id="edge18" class="edge">
 <title>Node1&#45;&gt;Node19</title>
-<path fill="none" stroke="midnightblue" d="M2091.57,-97C2226.65,-94.17 2528.04,-83.35 2778,-42 2787.27,-40.47 2797.04,-38.34 2806.4,-36.04"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2091.29,-93.51 2081.36,-97.21 2091.43,-100.51 2091.29,-93.51"/>
+<path fill="none" stroke="midnightblue" d="M2090.49,-95.81C2221.36,-91.07 2508,-77.28 2747,-42 2757.72,-40.42 2769.06,-38.29 2779.97,-36.02"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2090.07,-92.32 2080.2,-96.18 2090.32,-99.32 2090.07,-92.32"/>
 </g>
 <!-- Node20 -->
 <g id="node20" class="node">
 <title>Node20</title>
 <g id="a_node20"><a xlink:href="../../df/de5/dialogspline_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="2941,-6 2941,-36 3067,-36 3067,-6 2941,-6"/>
-<text text-anchor="start" x="2949" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="3004" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogspline.cpp</text>
+<polygon fill="white" stroke="black" points="2938,-6 2938,-36 3064,-36 3064,-6 2938,-6"/>
+<text text-anchor="start" x="2946" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="3001" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogspline.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node20 -->
 <g id="edge19" class="edge">
 <title>Node1&#45;&gt;Node20</title>
-<path fill="none" stroke="midnightblue" d="M2091.35,-98.68C2245.79,-99.04 2622.12,-93.96 2932,-42 2940.83,-40.52 2950.13,-38.38 2959,-36.05"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2091.07,-95.18 2081.06,-98.64 2091.05,-102.18 2091.07,-95.18"/>
+<path fill="none" stroke="midnightblue" d="M2090.48,-98.66C2244.76,-98.99 2619.99,-93.84 2929,-42 2937.83,-40.52 2947.13,-38.38 2956,-36.05"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2090.21,-95.16 2080.2,-98.63 2090.19,-102.16 2090.21,-95.16"/>
 </g>
 <!-- Node21 -->
 <g id="node21" class="node">
 <title>Node21</title>
-<g id="a_node21"><a xlink:href="../../dc/dc2/dialogsplinepath_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="3085,-6 3085,-36 3233,-36 3233,-6 3085,-6"/>
-<text text-anchor="start" x="3093" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="3159" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogsplinepath.cpp</text>
+<g id="a_node21"><a xlink:href="../../d5/de8/intersect__circles__dialog_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="3082,-0.5 3082,-41.5 3208,-41.5 3208,-0.5 3082,-0.5"/>
+<text text-anchor="start" x="3090" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="start" x="3090" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/intersect_circles</text>
+<text text-anchor="middle" x="3145" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_dialog.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node21 -->
 <g id="edge20" class="edge">
 <title>Node1&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M2091.22,-98.71C2262.08,-99.44 2708.36,-95.58 3076,-42 3086.12,-40.53 3096.81,-38.39 3107.04,-36.06"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2091.12,-95.21 2081.1,-98.66 2091.08,-102.21 2091.12,-95.21"/>
+<path fill="none" stroke="midnightblue" d="M2090.24,-96.24C2295.07,-90.85 2883.04,-73.05 3073,-42 3075.94,-41.52 3078.94,-40.96 3081.96,-40.35"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2090.1,-92.74 2080.2,-96.5 2090.29,-99.74 2090.1,-92.74"/>
 </g>
 <!-- Node22 -->
 <g id="node22" class="node">
 <title>Node22</title>
-<g id="a_node22"><a xlink:href="../../d5/de8/intersect__circles__dialog_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="3251,-0.5 3251,-41.5 3377,-41.5 3377,-0.5 3251,-0.5"/>
-<text text-anchor="start" x="3259" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="start" x="3259" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/intersect_circles</text>
-<text text-anchor="middle" x="3314" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_dialog.cpp</text>
+<g id="a_node22"><a xlink:href="../../d5/d5a/intersect__circletangent__dialog_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="3226,-0.5 3226,-41.5 3384,-41.5 3384,-0.5 3226,-0.5"/>
+<text text-anchor="start" x="3234" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="start" x="3234" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/intersect_circletangent</text>
+<text text-anchor="middle" x="3305" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_dialog.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node22 -->
 <g id="edge21" class="edge">
 <title>Node1&#45;&gt;Node22</title>
-<path fill="none" stroke="midnightblue" d="M2091.44,-96.84C2317.93,-92.82 3018.16,-77.75 3242,-42 3244.95,-41.53 3247.94,-40.98 3250.96,-40.38"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2091.28,-93.34 2081.34,-97.01 2091.4,-100.34 2091.28,-93.34"/>
+<path fill="none" stroke="midnightblue" d="M2090.47,-96.32C2313.88,-90.8 2997.28,-71.86 3217,-42 3219.95,-41.6 3222.95,-41.15 3225.97,-40.65"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2090.09,-92.83 2080.18,-96.57 2090.26,-99.82 2090.09,-92.83"/>
 </g>
 <!-- Node23 -->
 <g id="node23" class="node">
 <title>Node23</title>
-<g id="a_node23"><a xlink:href="../../d5/d5a/intersect__circletangent__dialog_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="3395,-0.5 3395,-41.5 3553,-41.5 3553,-0.5 3395,-0.5"/>
-<text text-anchor="start" x="3403" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="start" x="3403" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/intersect_circletangent</text>
-<text text-anchor="middle" x="3474" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_dialog.cpp</text>
+<g id="a_node23"><a xlink:href="../../dc/d82/dialoginternalpath_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="3401.5,-6 3401.5,-36 3586.5,-36 3586.5,-6 3401.5,-6"/>
+<text text-anchor="start" x="3409.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="3494" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/piece/dialoginternalpath.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node23 -->
 <g id="edge22" class="edge">
 <title>Node1&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M2091.36,-96.79C2334.86,-92.41 3132.02,-75.78 3386,-42 3388.95,-41.61 3391.95,-41.16 3394.97,-40.68"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2091.15,-93.3 2081.21,-96.98 2091.27,-100.3 2091.15,-93.3"/>
+<path fill="none" stroke="midnightblue" d="M2090.32,-96.55C2334.65,-91.37 3136.93,-72.39 3393,-42 3405.34,-40.54 3418.42,-38.39 3430.93,-36.05"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2090.07,-93.06 2080.14,-96.77 2090.22,-100.06 2090.07,-93.06"/>
 </g>
 <!-- Node24 -->
 <g id="node24" class="node">
 <title>Node24</title>
-<g id="a_node24"><a xlink:href="../../dc/d82/dialoginternalpath_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="3570.5,-6 3570.5,-36 3755.5,-36 3755.5,-6 3570.5,-6"/>
-<text text-anchor="start" x="3578.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="3663" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/piece/dialoginternalpath.cpp</text>
+<g id="a_node24"><a xlink:href="../../dc/dc2/dialogsplinepath_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="3605,-6 3605,-36 3753,-36 3753,-6 3605,-6"/>
+<text text-anchor="start" x="3613" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="3679" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogsplinepath.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node24 -->
 <g id="edge23" class="edge">
 <title>Node1&#45;&gt;Node24</title>
-<path fill="none" stroke="midnightblue" d="M2091.46,-96.92C2354.91,-92.68 3271.52,-75.82 3562,-42 3574.43,-40.55 3587.61,-38.4 3600.21,-36.04"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2091.2,-93.42 2081.25,-97.08 2091.31,-100.42 2091.2,-93.42"/>
+<path fill="none" stroke="midnightblue" d="M2090.77,-97.37C2358.55,-94.7 3299.19,-82.61 3596,-42 3606.43,-40.57 3617.45,-38.4 3627.95,-36"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2090.36,-93.87 2080.4,-97.47 2090.43,-100.87 2090.36,-93.87"/>
 </g>
 <!-- Node25 -->
 <g id="node25" class="node">
 <title>Node25</title>
 <g id="a_node25"><a xlink:href="../../de/d46/pattern__piece__dialog_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="3773.5,-0.5 3773.5,-41.5 3916.5,-41.5 3916.5,-0.5 3773.5,-0.5"/>
-<text text-anchor="start" x="3781.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="start" x="3781.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/piece/pattern_piece</text>
-<text text-anchor="middle" x="3845" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_dialog.cpp</text>
+<polygon fill="white" stroke="black" points="3771.5,-0.5 3771.5,-41.5 3914.5,-41.5 3914.5,-0.5 3771.5,-0.5"/>
+<text text-anchor="start" x="3779.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="start" x="3779.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/piece/pattern_piece</text>
+<text text-anchor="middle" x="3843" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_dialog.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node25 -->
 <g id="edge24" class="edge">
 <title>Node1&#45;&gt;Node25</title>
-<path fill="none" stroke="midnightblue" d="M2091.21,-97.74C2376.01,-96.36 3433.62,-88.2 3765,-42 3767.69,-41.62 3770.43,-41.19 3773.18,-40.72"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2090.99,-94.24 2081.01,-97.78 2091.03,-101.24 2090.99,-94.24"/>
+<path fill="none" stroke="midnightblue" d="M2090.61,-97.7C2375.77,-96.21 3431.12,-87.65 3762,-42 3765.01,-41.58 3768.08,-41.1 3771.16,-40.57"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2090.37,-94.2 2080.39,-97.75 2090.41,-101.2 2090.37,-94.2"/>
 </g>
 <!-- Node26 -->
 <g id="node26" class="node">
 <title>Node26</title>
 <g id="a_node26"><a xlink:href="../../d9/d4e/vabstracttool_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="3934.5,-6 3934.5,-36 4045.5,-36 4045.5,-6 3934.5,-6"/>
-<text text-anchor="start" x="3942.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
-<text text-anchor="middle" x="3990" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/vabstracttool.cpp</text>
+<polygon fill="white" stroke="black" points="3932.5,-6 3932.5,-36 4043.5,-36 4043.5,-6 3932.5,-6"/>
+<text text-anchor="start" x="3940.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
+<text text-anchor="middle" x="3988" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/vabstracttool.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node26 -->
 <g id="edge25" class="edge">
 <title>Node1&#45;&gt;Node26</title>
-<path fill="none" stroke="midnightblue" d="M2091.42,-97.06C2415.84,-92.62 3742.81,-72.72 3926,-42 3934.15,-40.63 3942.7,-38.49 3950.81,-36.1"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2091.16,-93.56 2081.21,-97.2 2091.25,-100.56 2091.16,-93.56"/>
+<path fill="none" stroke="midnightblue" d="M2090.38,-97.06C2414.63,-92.61 3740.91,-72.7 3924,-42 3932.15,-40.63 3940.7,-38.49 3948.81,-36.1"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2090.13,-93.56 2080.17,-97.2 2090.22,-100.56 2090.13,-93.56"/>
 </g>
 </g>
 </svg>
