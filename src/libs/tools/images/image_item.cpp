@@ -349,7 +349,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     // actionShow->setChecked(m_image.visible);
     // actionShow->setEnabled(!m_image.locked);
 
-    QAction *actionOrigin = menu.addAction(tr("Change Origin"));
+    QAction *actionOrigin = menu.addAction(tr("Move Origin"));
     actionOrigin->setIcon(QIcon(cursorImageOrigin));
     actionOrigin->setEnabled(!m_image.locked && !m_selectNewOrigin);
 
