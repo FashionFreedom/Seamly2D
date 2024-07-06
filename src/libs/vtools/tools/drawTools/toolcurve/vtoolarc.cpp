@@ -93,7 +93,7 @@ VToolArc::VToolArc(VAbstractPattern *doc, VContainer *data, quint32 id, const So
                    QGraphicsItem *parent)
     : VAbstractSpline(doc, data, id, parent)
 {
-    sceneType = SceneObject::Arc;
+    m_sceneType = SceneObject::Arc;
 
     this->setFlag(QGraphicsItem::ItemIsFocusable, true);// For keyboard input focus
 
@@ -202,7 +202,7 @@ VToolArc* VToolArc::Create(const quint32 _id, const quint32 &center, QString &ra
         VDrawTool::AddRecord(id, Tool::Arc, doc);
         VToolArc *toolArc = new VToolArc(doc, data, id, typeCreation);
         scene->addItem(toolArc);
-        InitArcToolConnections(scene, toolArc);
+        initArcToolConnections(scene, toolArc);
         VAbstractPattern::AddTool(id, toolArc);
         doc->IncrementReferens(c.getIdTool());
         return toolArc;

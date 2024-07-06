@@ -88,7 +88,7 @@ VToolEllipticalArc::VToolEllipticalArc(VAbstractPattern *doc, VContainer *data, 
                                        QGraphicsItem *parent)
     :VAbstractSpline(doc, data, id, parent)
 {
-    sceneType = SceneObject::ElArc;
+    m_sceneType = SceneObject::ElArc;
 
     this->setFlag(QGraphicsItem::ItemIsFocusable, true);// For keyboard input focus
 
@@ -209,7 +209,7 @@ VToolEllipticalArc* VToolEllipticalArc::Create(const quint32 _id, const quint32 
         VDrawTool::AddRecord(id, Tool::EllipticalArc, doc);
         VToolEllipticalArc *toolEllipticalArc = new VToolEllipticalArc(doc, data, id, typeCreation);
         scene->addItem(toolEllipticalArc);
-        InitElArcToolConnections(scene, toolEllipticalArc);
+        initElArcToolConnections(scene, toolEllipticalArc);
         VAbstractPattern::AddTool(id, toolEllipticalArc);
         doc->IncrementReferens(c.getIdTool());
         return toolEllipticalArc;

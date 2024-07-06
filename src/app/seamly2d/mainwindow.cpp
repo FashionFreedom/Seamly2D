@@ -218,11 +218,9 @@ MainWindow::MainWindow(QWidget *parent)
                 showDraftMode(true);
             }
         }
-    });
-    connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::changeDraftBlockGlobally);
-    connect(doc, &VPattern::CheckLayout, this, [&](){
         this->updateZoomToPointComboBox(draftPointNamesList());
     });
+    connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::changeDraftBlockGlobally);
     qApp->setCurrentDocument(doc);
     qApp->setCurrentData(pattern);
 
@@ -2509,9 +2507,13 @@ void MainWindow::initializeToolsToolBar()
     ui->zoomToPoint_Action->setShortcuts(zoomToPointShortcuts);
     connect(ui->zoomToPoint_Action, &QAction::triggered, this, &MainWindow::showZoomToPointDialog);
 
+    if (m_zoomToPointComboBox != nullptr)
+    {
+        delete m_zoomToPointComboBox;
+    }
     m_zoomToPointComboBox = new QComboBox(ui->zoom_ToolBar);
     m_zoomToPointComboBox->setEnabled(false);
-    m_zoomToPointComboBox->setToolTip(ui->zoomToPoint_Action->toolTip());
+    m_zoomToPointComboBox->setToolTip(tr("Zoom to point (Ctrl + Alt + P)"));
     ui->zoom_ToolBar->addWidget(m_zoomToPointComboBox);
     connect(m_zoomToPointComboBox, &QComboBox::currentTextChanged, this, &MainWindow::zoomToPoint);
 
