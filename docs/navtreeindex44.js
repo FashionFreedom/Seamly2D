@@ -1,5 +1,8 @@
 var NAVTREEINDEX44 =
 {
+"db/d28/vsettings_8cpp.html#ae8f8c508a39f71a2c117797c92265bbd":[2,0,0,1,8,23,18],
+"db/d28/vsettings_8cpp.html#aea961388dcc49ca23884f52790f2654d":[2,0,0,1,8,23,8],
+"db/d28/vsettings_8cpp.html#aeeae12a9e716a36285066894137cee19":[2,0,0,1,8,23,24],
 "db/d28/vsettings_8cpp.html#afe08e293ff54709b6b3afa9992665100":[2,0,0,1,8,23,0],
 "db/d28/vsettings_8cpp_source.html":[2,0,0,1,8,23],
 "db/d29/vpropertydelegate_8cpp.html":[2,0,0,1,11,11],
@@ -246,8 +249,5 @@ var NAVTREEINDEX44 =
 "db/d57/classVPointF.html#a8c2bba0832e74582e35f55904bfc845f":[1,0,375,3],
 "db/d57/classVPointF.html#aa2124a8469c6a99052c267a1501f9912":[1,0,375,19],
 "db/d57/classVPointF.html#abc43653b42695e82d69fa37bf9630c74":[1,0,375,6],
-"db/d57/classVPointF.html#ac40b6b39ec65f96390adb8f296d69cf5":[1,0,375,23],
-"db/d57/classVPointF.html#ac4aee0e2c249996c1b344687bd343e48":[1,0,375,1],
-"db/d57/classVPointF.html#ac93f3b1b9d223fc05a43c8346114a3bc":[1,0,375,25],
-"db/d57/classVPointF.html#ade607c2f7c70e05130b635c134bd71dd":[1,0,375,12]
+"db/d57/classVPointF.html#ac40b6b39ec65f96390adb8f296d69cf5":[1,0,375,23]
 };

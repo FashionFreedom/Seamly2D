@@ -1,5 +1,8 @@
 var NAVTREEINDEX47 =
 {
+"db/dda/classVAbstractApplication.html#a66802fa332e70eed60f483f1a725bef1":[1,0,223,4],
+"db/dda/classVAbstractApplication.html#a6f59fff51e1dd866f7366475dedfb449":[1,0,223,35],
+"db/dda/classVAbstractApplication.html#a788c21e17e61da37d8640b8b528c144d":[1,0,223,44],
 "db/dda/classVAbstractApplication.html#a7f8f1033b717fb83f76d40aea526db87":[1,0,223,32],
 "db/dda/classVAbstractApplication.html#a823b7e97a16df7584127a53635ecc3fa":[1,0,223,13],
 "db/dda/classVAbstractApplication.html#a8284d973270795306e00c450aaca6700":[1,0,223,45],
@@ -246,8 +249,5 @@ var NAVTREEINDEX47 =
 "dc/d0a/classVToolMirrorByLine.html#ac841aad2670ef4386d52a282dc61406b":[1,0,419,2],
 "dc/d0a/classVToolMirrorByLine.html#ad6a4373d5c684aeec0d68488afd03d67":[1,0,419,4],
 "dc/d0a/classVToolMirrorByLine.html#aea791c69d7e33709b03a28a4f95a5088":[1,0,419,18],
-"dc/d0a/classVToolMirrorByLine.html#aeb49f66b3ea1bc695ed45a4ed5edfef5":[1,0,419,7],
-"dc/d0e/movedoublelabel_8cpp.html":[2,0,0,1,13,2,0,2],
-"dc/d0e/movedoublelabel_8cpp_source.html":[2,0,0,1,13,2,0,2],
-"dc/d0f/libs_2vobj_2stable_8h.html":[2,0,0,1,9,4]
+"dc/d0a/classVToolMirrorByLine.html#aeb49f66b3ea1bc695ed45a4ed5edfef5":[1,0,419,7]
 };

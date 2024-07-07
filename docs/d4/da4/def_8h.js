@@ -398,6 +398,7 @@ var def_8h =
     [ "cosh_F", "d4/da4/def_8h.html#ab086d134c6a1009fa00962fa54d9e93e", null ],
     [ "cursorArrowCloseHand", "d4/da4/def_8h.html#a7b39ab83231e23ee686ecabe02567714", null ],
     [ "cursorArrowOpenHand", "d4/da4/def_8h.html#a0f35c65ac737bad188895abceeadcf48", null ],
+    [ "cursorImageOrigin", "d4/da4/def_8h.html#a0ed43aa25e0c560ad126c4b1bf2dd9c7", null ],
     [ "cursorResizeArrow", "d4/da4/def_8h.html#ae4fa6eb3ba78af5a547e5b7d27ec6366", null ],
     [ "degreeSymbol", "d4/da4/def_8h.html#a9d57cde0b2077de64d37157baa0e9d10", null ],
     [ "degTorad_F", "d4/da4/def_8h.html#ad0679d063111d3e8aceaf2a91d243398", null ],

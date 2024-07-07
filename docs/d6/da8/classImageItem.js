@@ -55,6 +55,7 @@ var classImageItem =
     [ "m_rotateLine", "d6/da8/classImageItem.html#a8e3db9815b502ee2e439db0e15857142", null ],
     [ "m_selectable", "d6/da8/classImageItem.html#a4c70bcd880dcb17b87d38c5374b800d6", null ],
     [ "m_selectionType", "d6/da8/classImageItem.html#ae18d95885a5803f15c0599cb8abc5be9", null ],
+    [ "m_selectNewOrigin", "d6/da8/classImageItem.html#aec9eca546de3f877f99033644ff5f68d", null ],
     [ "m_transformationMode", "d6/da8/classImageItem.html#afa75da956704d5f8c7d09ae003783e40", null ],
     [ "maxImageZvalue", "d6/da8/classImageItem.html#a1feda5457a74143e8d548acba78342b7", null ]
 ];

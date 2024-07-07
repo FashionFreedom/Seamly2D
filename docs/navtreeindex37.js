@@ -1,5 +1,8 @@
 var NAVTREEINDEX37 =
 {
+"d9/d22/classDelTool.html#a6617c5dbec1faeb7c0d09c3e2c01f260":[1,0,35,0],
+"d9/d22/classDelTool.html#a9311509f0213ea63fe0279f7b0152d43":[1,0,35,5],
+"d9/d22/classDelTool.html#aa9702893e4dab3bc1987c6db24c0ba84":[1,0,35,4],
 "d9/d22/classDelTool.html#aceecdec08bfa8c7a150c45ddebcf05c7":[1,0,35,6],
 "d9/d23/seamlymepreferencesconfigurationpage_8cpp.html":[2,0,0,0,1,0,0,0],
 "d9/d23/seamlymepreferencesconfigurationpage_8cpp_source.html":[2,0,0,0,1,0,0,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX37 =
 "d9/d68/dialogellipticalarc_8cpp_source.html":[2,0,0,1,13,0,1,25],
 "d9/d69/vgobject__p_8h.html":[2,0,0,1,6,29],
 "d9/d69/vgobject__p_8h_source.html":[2,0,0,1,6,29],
-"d9/d6d/classMeasurementDoc.html":[1,0,118],
-"d9/d6d/classMeasurementDoc.html#a00ba9699d7c24bd2c320da50646721c8":[1,0,118,67],
-"d9/d6d/classMeasurementDoc.html#a05ee0216be7eb91e627fd822dcecf0bf":[1,0,118,14],
-"d9/d6d/classMeasurementDoc.html#a0ab00843f48eb7307b0c3eeacb7991cf":[1,0,118,25]
+"d9/d6d/classMeasurementDoc.html":[1,0,118]
 };

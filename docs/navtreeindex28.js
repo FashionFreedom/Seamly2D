@@ -1,5 +1,7 @@
 var NAVTREEINDEX28 =
 {
+"d6/d84/delaunay_8h.html#abe705106bcafe02255601006bece14dc":[2,0,0,1,9,1,6],
+"d6/d84/delaunay_8h_source.html":[2,0,0,1,9,1],
 "d6/d89/classTST__VAbstractPiece.html":[1,0,205],
 "d6/d89/classTST__VAbstractPiece.html#a06e95da2c33a228fce1b0b8a2c8e3309":[1,0,205,17],
 "d6/d89/classTST__VAbstractPiece.html#a0dd8b2d902240f5dd9ab114f8655d1c4":[1,0,205,15],
@@ -113,7 +115,7 @@ var NAVTREEINDEX28 =
 "d6/da8/classImageItem.html#a144818d49f85b893ab981a14b56a7f6d":[1,0,101,16],
 "d6/da8/classImageItem.html#a162cad55dbbd102d827b5f0cfef69602":[1,0,101,46],
 "d6/da8/classImageItem.html#a17ab4cdb00c46678ef01e0512424494a":[1,0,101,8],
-"d6/da8/classImageItem.html#a1feda5457a74143e8d548acba78342b7":[1,0,101,56],
+"d6/da8/classImageItem.html#a1feda5457a74143e8d548acba78342b7":[1,0,101,57],
 "d6/da8/classImageItem.html#a249241c39cc771557f96dc73ac78bcd4":[1,0,101,0],
 "d6/da8/classImageItem.html#a263e42eed5f447b7c428c6582226d842":[1,0,101,43],
 "d6/da8/classImageItem.html#a2cd5bffef29f98576969ef78f20fa7d6":[1,0,101,15],
@@ -155,10 +157,11 @@ var NAVTREEINDEX28 =
 "d6/da8/classImageItem.html#ae971f33ac8e266f52edb7cf51c92724b":[1,0,101,49],
 "d6/da8/classImageItem.html#ae9cc2c13b27d78c1b63c7c53157d837c":[1,0,101,20],
 "d6/da8/classImageItem.html#aec306613f6bbdbc5aa394df37471f1ab":[1,0,101,37],
+"d6/da8/classImageItem.html#aec9eca546de3f877f99033644ff5f68d":[1,0,101,55],
 "d6/da8/classImageItem.html#af1e0719aeeb561be022b7e0b6df41a20":[1,0,101,48],
 "d6/da8/classImageItem.html#af855c99ad2c88aabbcfebad71898638c":[1,0,101,24],
 "d6/da8/classImageItem.html#af9c8632937947e3771c64ab7441ec7b6":[1,0,101,2],
-"d6/da8/classImageItem.html#afa75da956704d5f8c7d09ae003783e40":[1,0,101,55],
+"d6/da8/classImageItem.html#afa75da956704d5f8c7d09ae003783e40":[1,0,101,56],
 "d6/da8/classImageItem.html#afcdcaa29a2f2c513ce5838d4a4c91bf3":[1,0,101,41],
 "d6/da8/classImageItem.html#afeae59e7d35a22b089f850bcef1b585a":[1,0,101,1],
 "d6/dae/mouse__coordinates_8h.html":[2,0,0,1,14,16],
@@ -246,8 +249,5 @@ var NAVTREEINDEX28 =
 "d6/deb/classVDomDocument.html#a0adad76775f408c27ded217805c2b6a2":[1,0,269,28],
 "d6/deb/classVDomDocument.html#a0c5421eaa5675ae09a895f78d87026eb":[1,0,269,38],
 "d6/deb/classVDomDocument.html#a14e129a4d0d66b87adb48c38e46c0f37":[1,0,269,12],
-"d6/deb/classVDomDocument.html#a2267524a506a06da9664911c0f0760ea":[1,0,269,10],
-"d6/deb/classVDomDocument.html#a278a792a3d216ccd935a4fd163d0d0a8":[1,0,269,14],
-"d6/deb/classVDomDocument.html#a3190cc38f15720c8204d00716fad8469":[1,0,269,37],
-"d6/deb/classVDomDocument.html#a49eb5f686268f8ecab6faab3ee4ae1f0":[1,0,269,36]
+"d6/deb/classVDomDocument.html#a2267524a506a06da9664911c0f0760ea":[1,0,269,10]
 };
