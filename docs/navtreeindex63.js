@@ -1,5 +1,9 @@
 var NAVTREEINDEX63 =
 {
+"df/d5e/classDialogSplinePath.html#ab26f3abd2d86e216f03fc2b7691e00aa":[1,0,74,9],
+"df/d5e/classDialogSplinePath.html#ab66bffb85deb7a52bc6767ae740dfdd4":[1,0,74,48],
+"df/d5e/classDialogSplinePath.html#ab94d2f506d56c25842c0eb1a79bba75b":[1,0,74,4],
+"df/d5e/classDialogSplinePath.html#abb8b68eda71dbb12359a2c4aff2f8ba2":[1,0,74,32],
 "df/d5e/classDialogSplinePath.html#abd8cd0eac5ebec27f293a0288a630a2f":[1,0,74,41],
 "df/d5e/classDialogSplinePath.html#abf007437d13ff4d54facea694243c97f":[1,0,74,16],
 "df/d5e/classDialogSplinePath.html#ac440173e2f303cea2bf5e1baf4d04097":[1,0,74,29],
@@ -245,9 +249,5 @@ var NAVTREEINDEX63 =
 "df/dba/vpiecenode__p_8h_source.html":[2,0,0,1,10,23],
 "df/dba/vseamlymesettings_8cpp.html":[2,0,0,1,8,21],
 "df/dba/vseamlymesettings_8cpp.html#a81e60c38d4ebf840401f4beff170ebac":[2,0,0,1,8,21,0],
-"df/dba/vseamlymesettings_8cpp.html#aa552e31f884d779f0169278961812092":[2,0,0,1,8,21,1],
-"df/dba/vseamlymesettings_8cpp.html#ae5f745c6d41d6c868e98f5b5896a59c5":[2,0,0,1,8,21,2],
-"df/dba/vseamlymesettings_8cpp_source.html":[2,0,0,1,8,21],
-"df/dbf/qmuparsertest_8cpp.html":[2,0,0,1,2,16],
-"df/dbf/qmuparsertest_8cpp.html#a95d5533a83afb20e4994d936f88ca43c":[2,0,0,1,2,16,0]
+"df/dba/vseamlymesettings_8cpp.html#aa552e31f884d779f0169278961812092":[2,0,0,1,8,21,1]
 };

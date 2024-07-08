@@ -1,5 +1,7 @@
 var NAVTREEINDEX47 =
 {
+"db/dda/classVAbstractApplication.html#a62efee28a6929615e17eb77f79d57caa":[1,0,223,2],
+"db/dda/classVAbstractApplication.html#a63c2326cbf6b742e49a9005a60d29206":[1,0,223,15],
 "db/dda/classVAbstractApplication.html#a66802fa332e70eed60f483f1a725bef1":[1,0,223,4],
 "db/dda/classVAbstractApplication.html#a6f59fff51e1dd866f7366475dedfb449":[1,0,223,35],
 "db/dda/classVAbstractApplication.html#a788c21e17e61da37d8640b8b528c144d":[1,0,223,44],
@@ -247,7 +249,5 @@ var NAVTREEINDEX47 =
 "dc/d0a/classVToolMirrorByLine.html#abaec0fe134df2e161944e4b044e3fc88":[1,0,419,13],
 "dc/d0a/classVToolMirrorByLine.html#abcdd9d772c6b9a98561ffc1d1ccb19dd":[1,0,419,8],
 "dc/d0a/classVToolMirrorByLine.html#ac841aad2670ef4386d52a282dc61406b":[1,0,419,2],
-"dc/d0a/classVToolMirrorByLine.html#ad6a4373d5c684aeec0d68488afd03d67":[1,0,419,4],
-"dc/d0a/classVToolMirrorByLine.html#aea791c69d7e33709b03a28a4f95a5088":[1,0,419,18],
-"dc/d0a/classVToolMirrorByLine.html#aeb49f66b3ea1bc695ed45a4ed5edfef5":[1,0,419,7]
+"dc/d0a/classVToolMirrorByLine.html#ad6a4373d5c684aeec0d68488afd03d67":[1,0,419,4]
 };

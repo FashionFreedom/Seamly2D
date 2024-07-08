@@ -1,5 +1,7 @@
 var NAVTREEINDEX40 =
 {
+"da/d19/classGraphicsViewZoom.html#ab14ea54555d5d608bb209dabb525748e":[1,0,94,11],
+"da/d19/classGraphicsViewZoom.html#ab44d25f42d7907724e88135becb33301":[1,0,94,17],
 "da/d19/classGraphicsViewZoom.html#ab4983f6c6de03a1b70215deb48f93707":[1,0,94,14],
 "da/d19/classGraphicsViewZoom.html#ab9e4a53bf3517b5de8383e48185d00bd":[1,0,94,3],
 "da/d19/classGraphicsViewZoom.html#abbf02babadfac5b5c895f779035e2c3c":[1,0,94,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX40 =
 "da/d5b/classShowInfoDialog.html#abacaa3209f4cb20060fff97da0bdb1a1":[1,0,182,3],
 "da/d5b/pieceanchorpoint__visual_8cpp.html":[2,0,0,1,13,3,1,2],
 "da/d5b/pieceanchorpoint__visual_8cpp_source.html":[2,0,0,1,13,3,1,2],
-"da/d5c/deletepiece_8cpp.html":[2,0,0,1,13,2,15],
-"da/d5c/deletepiece_8cpp_source.html":[2,0,0,1,13,2,15],
-"da/d5d/classVMainGraphicsView.html":[1,0,352]
+"da/d5c/deletepiece_8cpp.html":[2,0,0,1,13,2,15]
 };

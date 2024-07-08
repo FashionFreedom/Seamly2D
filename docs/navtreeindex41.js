@@ -1,5 +1,7 @@
 var NAVTREEINDEX41 =
 {
+"da/d5c/deletepiece_8cpp_source.html":[2,0,0,1,13,2,15],
+"da/d5d/classVMainGraphicsView.html":[1,0,352],
 "da/d5d/classVMainGraphicsView.html#a047c488365d0cca98e3e9d762a0a1f8d":[1,0,352,25],
 "da/d5d/classVMainGraphicsView.html#a04fd7868d89457789c65c79c42f274ae":[1,0,352,30],
 "da/d5d/classVMainGraphicsView.html#a06ff4f39bb4cdc27b83a7ddab94da42f":[1,0,352,31],
@@ -247,7 +249,5 @@ var NAVTREEINDEX41 =
 "da/d92/namespaceqmu.html#ac481fc7d79e5c9a0caf95fd0f6c1b15c":[0,0,19,42],
 "da/d92/namespaceqmu.html#ac92df0e2b8122ae534ea1deb864cf05e":[0,0,19,26],
 "da/d92/namespaceqmu.html#acaa263a8aa528f88f6a222d99abbfdd8":[0,0,19,52],
-"da/d92/namespaceqmu.html#acaa263a8aa528f88f6a222d99abbfdd8a076260b88357b292901a87cbf087be53":[0,0,19,52,6],
-"da/d92/namespaceqmu.html#acaa263a8aa528f88f6a222d99abbfdd8a0a043fc2dd73b912246d658e5fb18d43":[0,0,19,52,1],
-"da/d92/namespaceqmu.html#acaa263a8aa528f88f6a222d99abbfdd8a0e1fdba556dc0cbc0b2763d13927a8e8":[0,0,19,52,2]
+"da/d92/namespaceqmu.html#acaa263a8aa528f88f6a222d99abbfdd8a076260b88357b292901a87cbf087be53":[0,0,19,52,6]
 };

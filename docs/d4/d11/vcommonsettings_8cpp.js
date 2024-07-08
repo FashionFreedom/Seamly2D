@@ -107,6 +107,7 @@ var vcommonsettings_8cpp =
     [ "settingGraphicsViewShowToolsToolBar", "d4/d11/vcommonsettings_8cpp.html#addb48bad6c259e5cbdec076831344533", null ],
     [ "settingGraphicsViewTertiaryColor", "d4/d11/vcommonsettings_8cpp.html#a4b0abdc5578b3badb71003b000ece7e5", null ],
     [ "settingGraphicsViewToolBarStyle", "d4/d11/vcommonsettings_8cpp.html#ad330f54fe0ce445593b4355b3899ebd3", null ],
+    [ "settingGraphicsViewUseDefaultPen", "d4/d11/vcommonsettings_8cpp.html#aaa648520c0933dd4a840db329f919b27", null ],
     [ "settingGraphicsViewWireframe", "d4/d11/vcommonsettings_8cpp.html#a591f10e03500689dff19e38006a64c5a", null ],
     [ "settingGraphicsViewZoomDoubleClick", "d4/d11/vcommonsettings_8cpp.html#a046b05ae883a9622db898c0ce2e75f6e", null ],
     [ "settingGraphicsViewZoomModKey", "d4/d11/vcommonsettings_8cpp.html#a575ea546167572da1fc244fcac637a5e", null ],

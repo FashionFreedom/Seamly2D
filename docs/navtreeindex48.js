@@ -1,5 +1,7 @@
 var NAVTREEINDEX48 =
 {
+"dc/d0a/classVToolMirrorByLine.html#aea791c69d7e33709b03a28a4f95a5088":[1,0,419,18],
+"dc/d0a/classVToolMirrorByLine.html#aeb49f66b3ea1bc695ed45a4ed5edfef5":[1,0,419,7],
 "dc/d0e/movedoublelabel_8cpp.html":[2,0,0,1,13,2,0,2],
 "dc/d0e/movedoublelabel_8cpp_source.html":[2,0,0,1,13,2,0,2],
 "dc/d0f/libs_2vobj_2stable_8h.html":[2,0,0,1,9,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX48 =
 "dc/d3e/classVCommandLine.html#a6c973fe004418eb62f7015a6ca9081dc":[1,0,251,15],
 "dc/d3e/classVCommandLine.html#a706457e068420b4d4fab477113bd0f5b":[1,0,251,7],
 "dc/d3e/classVCommandLine.html#a726e083c6a52d77fb79bf4aa8a7c5f4e":[1,0,251,6],
-"dc/d3e/classVCommandLine.html#a80c5a70e0f4aa77675b5a1a63192f490":[1,0,251,13],
-"dc/d3e/classVCommandLine.html#a87abfdb29ffb704172bff3b27647ed93":[1,0,251,22],
-"dc/d3e/classVCommandLine.html#a8d3cce9fe8102719fc2a597e174d9111":[1,0,251,9]
+"dc/d3e/classVCommandLine.html#a80c5a70e0f4aa77675b5a1a63192f490":[1,0,251,13]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX29 =
 {
+"d6/deb/classVDomDocument.html#a14e129a4d0d66b87adb48c38e46c0f37":[1,0,269,12],
+"d6/deb/classVDomDocument.html#a2267524a506a06da9664911c0f0760ea":[1,0,269,10],
 "d6/deb/classVDomDocument.html#a278a792a3d216ccd935a4fd163d0d0a8":[1,0,269,14],
 "d6/deb/classVDomDocument.html#a3190cc38f15720c8204d00716fad8469":[1,0,269,37],
 "d6/deb/classVDomDocument.html#a49eb5f686268f8ecab6faab3ee4ae1f0":[1,0,269,36],
@@ -247,7 +249,5 @@ var NAVTREEINDEX29 =
 "d7/d3d/vistoolcutsplinepath_8cpp.html":[2,0,0,1,13,3,1,18],
 "d7/d3d/vistoolcutsplinepath_8cpp_source.html":[2,0,0,1,13,3,1,18],
 "d7/d3f/classTST__VSpline.html":[1,0,216],
-"d7/d3f/classTST__VSpline.html#a088dbaf5e5be1124e36144dbc6f16b43":[1,0,216,7],
-"d7/d3f/classTST__VSpline.html#a11d684efbb9746053d8cdd013bd10443":[1,0,216,2],
-"d7/d3f/classTST__VSpline.html#a1f3bfae7de6a42a69766753c3b96bae9":[1,0,216,10]
+"d7/d3f/classTST__VSpline.html#a088dbaf5e5be1124e36144dbc6f16b43":[1,0,216,7]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX34 =
 {
+"d8/d83/vboolproperty_8cpp_source.html":[2,0,0,1,11,0,7],
+"d8/d87/vistooltriangle_8h.html":[2,0,0,1,13,3,0,38],
 "d8/d87/vistooltriangle_8h_source.html":[2,0,0,1,13,3,0,38],
 "d8/d8a/classVLayoutGenerator.html":[1,0,337],
 "d8/d8a/classVLayoutGenerator.html#a01475255b0aaf904c57bb3f69bce13ba":[1,0,337,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX34 =
 "d8/dba/classVAbstractPattern.html#a2cd696662e79956907d1e89c472be648":[1,0,238,193],
 "d8/dba/classVAbstractPattern.html#a2d75e182babd1d4c2ca3dbe4364b28cc":[1,0,238,189],
 "d8/dba/classVAbstractPattern.html#a2e53f114162aebf5a7d8fd1f98cd2365":[1,0,238,244],
-"d8/dba/classVAbstractPattern.html#a2f37cc865847f27e0e1b9745b2b88068":[1,0,238,174],
-"d8/dba/classVAbstractPattern.html#a2f4da766b7d4f7bcd48082e54f7d4581":[1,0,238,114],
-"d8/dba/classVAbstractPattern.html#a2fa15d62cc4c7b16fc6d059433bd3617":[1,0,238,185]
+"d8/dba/classVAbstractPattern.html#a2f37cc865847f27e0e1b9745b2b88068":[1,0,238,174]
 };

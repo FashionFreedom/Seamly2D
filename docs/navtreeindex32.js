@@ -1,5 +1,7 @@
 var NAVTREEINDEX32 =
 {
+"d7/de8/dxfdef_8h.html#a3dd1db4b7a6f61c5d2004d1580acec27a78463a384a5aa4fad5fa73e2f506ecfc":[2,0,0,1,4,1,1,0],
+"d7/de8/dxfdef_8h.html#a73fa4d3086af765e2c5d827f786a4631":[2,0,0,1,4,1,3],
 "d7/de8/dxfdef_8h.html#a76a334d2cdefeb4fca03969a8d1acbe8":[2,0,0,1,4,1,0],
 "d7/de8/dxfdef_8h.html#a76a334d2cdefeb4fca03969a8d1acbe8a3040cc6624f5c309963dee141936b299":[2,0,0,1,4,1,0,2],
 "d7/de8/dxfdef_8h.html#a76a334d2cdefeb4fca03969a8d1acbe8a3be6521a73bcafce5b38459ec548bd11":[2,0,0,1,4,1,0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX32 =
 "d8/d38/classVCurveLength.html#ae257b80c95918290a5b694f23ff0138c":[1,0,264,3],
 "d8/d3d/classAnchorPointVisual.html":[1,0,16],
 "d8/d3d/classAnchorPointVisual.html#a2f78761327bb500a28e9cf4c1b252947":[1,0,16,1],
-"d8/d3d/classAnchorPointVisual.html#a7c28b56e669bd3036b85b81e480e4721":[1,0,16,0],
-"d8/d3d/classAnchorPointVisual.html#a7e9d14d1fb43d3f63991931de8e7ad28":[1,0,16,4],
-"d8/d3d/classAnchorPointVisual.html#a8b7b8fd8f1b4d12916158bd411d20fc1":[1,0,16,2]
+"d8/d3d/classAnchorPointVisual.html#a7c28b56e669bd3036b85b81e480e4721":[1,0,16,0]
 };

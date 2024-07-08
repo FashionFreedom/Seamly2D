@@ -1,5 +1,9 @@
 var NAVTREEINDEX62 =
 {
+"df/d01/classdx__ifaceBlock.html#ab56fee5975ea6d5b52470c30c38b88e8":[1,0,84,3],
+"df/d01/classdx__ifaceBlock.html#ac59a8abaa891409ddd4cec23acd75187":[1,0,84,0],
+"df/d01/classdx__ifaceBlock.html#af5a38899b82901f43d6db5b98f74ba9b":[1,0,84,1],
+"df/d01/tst__vabstractpiece_8cpp.html":[2,0,0,2,2,15],
 "df/d01/tst__vabstractpiece_8cpp_source.html":[2,0,0,2,2,15],
 "df/d02/classVPE_1_1VBoolProperty.html":[1,0,2,2],
 "df/d02/classVPE_1_1VBoolProperty.html#a2062d983db2055ddcd1da9061d0bc365":[1,0,2,2,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX62 =
 "df/d5e/classDialogSplinePath.html#aa063c03b6a2a388c5bb9854e7838f204":[1,0,74,26],
 "df/d5e/classDialogSplinePath.html#aa0dcfca382c8f1c2212ca42119b03cc2":[1,0,74,3],
 "df/d5e/classDialogSplinePath.html#aa6a4ade791d6d2bed3a633109623ef16":[1,0,74,37],
-"df/d5e/classDialogSplinePath.html#aad64c951ec66796f6943a3e1c17b309f":[1,0,74,42],
-"df/d5e/classDialogSplinePath.html#ab26f3abd2d86e216f03fc2b7691e00aa":[1,0,74,9],
-"df/d5e/classDialogSplinePath.html#ab66bffb85deb7a52bc6767ae740dfdd4":[1,0,74,48],
-"df/d5e/classDialogSplinePath.html#ab94d2f506d56c25842c0eb1a79bba75b":[1,0,74,4],
-"df/d5e/classDialogSplinePath.html#abb8b68eda71dbb12359a2c4aff2f8ba2":[1,0,74,32]
+"df/d5e/classDialogSplinePath.html#aad64c951ec66796f6943a3e1c17b309f":[1,0,74,42]
 };

@@ -265,6 +265,7 @@ var classVCommonSettings =
     [ "setToolBarStyle", "de/d0f/classVCommonSettings.html#a67fabe5cb064a1775a3d95c8882942e5", null ],
     [ "setUndoCount", "de/d0f/classVCommonSettings.html#a1b06cf8203544a4c2b546ed24e89a5fd", null ],
     [ "SetUnit", "de/d0f/classVCommonSettings.html#a983cd6706d879b02dd317b37d3619b97", null ],
+    [ "setUseCurrentPen", "de/d0f/classVCommonSettings.html#a058dcc1a6cb1bdf822fdce815569791e", null ],
     [ "setUseLastExportFormat", "de/d0f/classVCommonSettings.html#a33b1731409f36c12883b5d29464048ec", null ],
     [ "setUseModeType", "de/d0f/classVCommonSettings.html#ad894935ca0ce6f9217de78a2b4945f1e", null ],
     [ "SetUserDefinedDateFormats", "de/d0f/classVCommonSettings.html#a86f4deda19434852bded81a9573667a3", null ],
@@ -289,6 +290,7 @@ var classVCommonSettings =
     [ "showSeamAllowances", "de/d0f/classVCommonSettings.html#a3344031296f69b1f027690aa4c48790f", null ],
     [ "showSeamlineNotch", "de/d0f/classVCommonSettings.html#a46226f8f525ff2e3d9c8c2982c52b353", null ],
     [ "StandardTemplatesPath", "de/d0f/classVCommonSettings.html#a4102587c49af0c02a473adc29a808884", null ],
+    [ "useCurrentPen", "de/d0f/classVCommonSettings.html#ab6b99bd0b2bf218afadcc1e70a5f23a2", null ],
     [ "useLastExportFormat", "de/d0f/classVCommonSettings.html#a33582d4f160f3ba0c669932d425107d0", null ],
     [ "useModeType", "de/d0f/classVCommonSettings.html#a88b31bf6c37bde8820a80b3ac28b4a5e", null ],
     [ "unixStandardSharePath", "de/d0f/classVCommonSettings.html#a8255af76f09b99f162be4cef80c2755d", null ]

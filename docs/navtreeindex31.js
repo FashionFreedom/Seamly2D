@@ -1,5 +1,7 @@
 var NAVTREEINDEX31 =
 {
+"d7/d8c/classDialogTrueDarts.html#a628ccf2077e78bc42f48c4199b904178":[1,0,77,25],
+"d7/d8c/classDialogTrueDarts.html#a62fcba8a45d977b9cef32aa78b2d7c9a":[1,0,77,8],
 "d7/d8c/classDialogTrueDarts.html#a672f7bc9a609e73509b1db11538b3950":[1,0,77,14],
 "d7/d8c/classDialogTrueDarts.html#a6e08e146615171c89e7c27db86cd6917":[1,0,77,2],
 "d7/d8c/classDialogTrueDarts.html#a84b470aa3f90a537950125fd4d1875a3":[1,0,77,21],
@@ -247,7 +249,5 @@ var NAVTREEINDEX31 =
 "d7/de7/doubleline__point__tool_8h_source.html":[2,0,0,1,13,1,0,2,1,1,1],
 "d7/de8/dxfdef_8h.html":[2,0,0,1,4,1],
 "d7/de8/dxfdef_8h.html#a3dd1db4b7a6f61c5d2004d1580acec27":[2,0,0,1,4,1,1],
-"d7/de8/dxfdef_8h.html#a3dd1db4b7a6f61c5d2004d1580acec27a216ab40cda5c7c00ff42a4efb1827d89":[2,0,0,1,4,1,1,1],
-"d7/de8/dxfdef_8h.html#a3dd1db4b7a6f61c5d2004d1580acec27a78463a384a5aa4fad5fa73e2f506ecfc":[2,0,0,1,4,1,1,0],
-"d7/de8/dxfdef_8h.html#a73fa4d3086af765e2c5d827f786a4631":[2,0,0,1,4,1,3]
+"d7/de8/dxfdef_8h.html#a3dd1db4b7a6f61c5d2004d1580acec27a216ab40cda5c7c00ff42a4efb1827d89":[2,0,0,1,4,1,1,1]
 };

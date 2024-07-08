@@ -1,5 +1,7 @@
 var NAVTREEINDEX45 =
 {
+"db/d57/classVPointF.html#abc43653b42695e82d69fa37bf9630c74":[1,0,375,6],
+"db/d57/classVPointF.html#ac40b6b39ec65f96390adb8f296d69cf5":[1,0,375,23],
 "db/d57/classVPointF.html#ac4aee0e2c249996c1b344687bd343e48":[1,0,375,1],
 "db/d57/classVPointF.html#ac93f3b1b9d223fc05a43c8346114a3bc":[1,0,375,25],
 "db/d57/classVPointF.html#ade607c2f7c70e05130b635c134bd71dd":[1,0,375,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX45 =
 "db/db8/vpatterndb_2calculator_8h.html":[2,0,0,1,10,3],
 "db/db8/vpatterndb_2calculator_8h_source.html":[2,0,0,1,10,3],
 "db/dbb/classTST__VPiece.html":[1,0,213],
-"db/dbb/classTST__VPiece.html#a4eb6cce081132afd4d7bd4e49afdec68":[1,0,213,1],
-"db/dbb/classTST__VPiece.html#a5dca90ba03e6e4501a6b9eb2db0a8eba":[1,0,213,2],
-"db/dbb/classTST__VPiece.html#a73549d6dc8f43b8bcc8f7d97d1ea7f03":[1,0,213,0]
+"db/dbb/classTST__VPiece.html#a4eb6cce081132afd4d7bd4e49afdec68":[1,0,213,1]
 };

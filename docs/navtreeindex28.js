@@ -1,5 +1,7 @@
 var NAVTREEINDEX28 =
 {
+"d6/d84/delaunay_8h.html#ab98a1964ec6972e33cfa16eb39c96e85":[2,0,0,1,9,1,10],
+"d6/d84/delaunay_8h.html#abc6a5bf457ef3a37aed461cdcb3c8fbc":[2,0,0,1,9,1,3],
 "d6/d84/delaunay_8h.html#abe705106bcafe02255601006bece14dc":[2,0,0,1,9,1,6],
 "d6/d84/delaunay_8h_source.html":[2,0,0,1,9,1],
 "d6/d89/classTST__VAbstractPiece.html":[1,0,205],
@@ -247,7 +249,5 @@ var NAVTREEINDEX28 =
 "d6/deb/classVDomDocument.html#a035e4a009f8f79f3f8e04e8aa43d56dc":[1,0,269,4],
 "d6/deb/classVDomDocument.html#a0529f100ec3ca1152a296f9cc59ef7f3":[1,0,269,11],
 "d6/deb/classVDomDocument.html#a0adad76775f408c27ded217805c2b6a2":[1,0,269,28],
-"d6/deb/classVDomDocument.html#a0c5421eaa5675ae09a895f78d87026eb":[1,0,269,38],
-"d6/deb/classVDomDocument.html#a14e129a4d0d66b87adb48c38e46c0f37":[1,0,269,12],
-"d6/deb/classVDomDocument.html#a2267524a506a06da9664911c0f0760ea":[1,0,269,10]
+"d6/deb/classVDomDocument.html#a0c5421eaa5675ae09a895f78d87026eb":[1,0,269,38]
 };

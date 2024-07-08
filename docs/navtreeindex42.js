@@ -1,5 +1,7 @@
 var NAVTREEINDEX42 =
 {
+"da/d92/namespaceqmu.html#acaa263a8aa528f88f6a222d99abbfdd8a0a043fc2dd73b912246d658e5fb18d43":[0,0,19,52,1],
+"da/d92/namespaceqmu.html#acaa263a8aa528f88f6a222d99abbfdd8a0e1fdba556dc0cbc0b2763d13927a8e8":[0,0,19,52,2],
 "da/d92/namespaceqmu.html#acaa263a8aa528f88f6a222d99abbfdd8a0f9a9444fb69e6aa9db6667c968fcb15":[0,0,19,52,0],
 "da/d92/namespaceqmu.html#acaa263a8aa528f88f6a222d99abbfdd8a118481b77676ee56c8db31df3773da2a":[0,0,19,52,4],
 "da/d92/namespaceqmu.html#acaa263a8aa528f88f6a222d99abbfdd8a2d038cf11d2e96ecb3d7995ed46de415":[0,0,19,52,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX42 =
 "da/de1/vpiecepath_8cpp_source.html":[2,0,0,1,10,24],
 "da/de1/vtoolpointofintersectioncurves_8cpp.html":[2,0,0,1,13,1,0,2,1,18],
 "da/de1/vtoolpointofintersectioncurves_8cpp_source.html":[2,0,0,1,13,1,0,2,1,18],
-"da/de3/classVisToolPointOfIntersectionArcs.html":[1,0,325],
-"da/de3/classVisToolPointOfIntersectionArcs.html#a3073c6a0f97c1c7ebb5bed9371c7fbfe":[1,0,325,9],
-"da/de3/classVisToolPointOfIntersectionArcs.html#a4ce3d8e3a746b9ebbdaa914534b61b6f":[1,0,325,0]
+"da/de3/classVisToolPointOfIntersectionArcs.html":[1,0,325]
 };
