@@ -1,27 +1,26 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//  @file   vtoolspline.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @copyright
+//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vtoolspline.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -67,14 +66,12 @@
 
 template <class T> class QSharedPointer;
 
-/**
- * @brief The VToolSpline class tool for creation spline. I mean bezier curve.
- */
+// @brief The VToolSpline class tool for creation spline. I mean bezier curve.
 class VToolSpline:public VAbstractSpline
 {
     Q_OBJECT
 public:
-    virtual      ~VToolSpline() =default;
+    virtual      ~VToolSpline() = default;
     virtual void  setDialog() Q_DECL_OVERRIDE;
     static VToolSpline *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene, VAbstractPattern *doc,
                                VContainer *data);
@@ -96,7 +93,7 @@ public:
     virtual void  ShowVisualization(bool show) Q_DECL_OVERRIDE;
 
 public slots:
-    void          ControlPointChangePosition(const qint32 &indexSpline, const SplinePointPosition &position,
+    void          controlPointPositionChanged(const qint32 &splineIndex, const SplinePointPosition &position,
                                              const QPointF &pos);
     virtual void  EnableToolMove(bool move) Q_DECL_OVERRIDE;
 

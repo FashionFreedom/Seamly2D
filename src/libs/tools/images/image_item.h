@@ -124,6 +124,7 @@ private:
     bool               m_selectable;
     qreal              m_minDimension;
     qreal              m_maxDimension;
+    bool               m_selectNewOrigin;
 
     void               initializeItem();
     void               updateFromHandles(QRectF rect);

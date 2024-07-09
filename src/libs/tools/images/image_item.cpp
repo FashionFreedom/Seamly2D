@@ -77,6 +77,7 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
     , m_selectable(true)
     , m_minDimension(16)
     , m_maxDimension(60000)
+    , m_selectNewOrigin(false)
 {
     initializeItem();
 
@@ -144,8 +145,13 @@ void ImageItem::setImage(DraftImage image)
 
 void ImageItem::setOrigin(qreal xOrigin, qreal yOrigin)
 {
+    //m_image.xOrigin / m_image.yOrigin  is the distance between the top left corner of the image and the image origin
+    //m_origin is the distance between the real origin of the QGraphicsItem and the image origin
+
     m_image.xOrigin = xOrigin;
     m_image.yOrigin = yOrigin;
+
+    m_origin = m_boundingRect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
 }
 
 
@@ -214,6 +220,19 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 
     painter->setRenderHint(QPainter::SmoothPixmapTransform, (m_transformationMode == Qt::SmoothTransformation));
     painter->drawPixmap(m_boundingRect.x(), m_boundingRect.y(), m_image.width, m_image.height, m_image.pixmap);
+
+    if (m_origin != m_boundingRect.topLeft())
+    {
+        painter->save();
+        painter->setPen(QPen(Qt::blue, 2, Qt::SolidLine));
+        qreal x1 = qMax(m_origin.x() - 8, m_boundingRect.x());
+        qreal y1 = qMax(m_origin.y() - 8, m_boundingRect.y());
+        qreal x2 = qMin(m_origin.x() + 8, m_boundingRect.x() + m_boundingRect.width());
+        qreal y2 = qMin(m_origin.y() + 8, m_boundingRect.y() + m_boundingRect.height());
+        painter->drawLine(QLineF(x1, m_origin.y(), x2, m_origin.y()));
+        painter->drawLine(QLineF(m_origin.x(), y1, m_origin.x(), y2));
+        painter->restore();
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -238,7 +257,7 @@ void ImageItem::enableHovering(bool enable)
 void ImageItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     m_isHovered = true;
-    if (m_selectable && flags() & QGraphicsItem::ItemIsMovable)
+    if (flags() & QGraphicsItem::ItemIsMovable)
     {
         SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
     }
@@ -247,9 +266,18 @@ void ImageItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
         setCursor(qApp->getSceneView()->viewport()->cursor());
     }
 
+    //override cursor if in new origin selection mode
+    if (m_selectNewOrigin)
+    {
+        SetItemOverrideCursor(this, cursorImageOrigin, 16, 16);
+    }
+
     if (!m_image.locked)
     {
-        m_resizeHandles->show();
+        if (!m_selectNewOrigin)
+        {
+            m_resizeHandles->show();
+        }
         showImageStatusMessage();
     }
 
@@ -303,6 +331,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
     QMenu menu;
     QAction *actionProperties = menu.addAction(QIcon::fromTheme("preferences-other"), tr("Properties"));
+    actionProperties->setEnabled(!m_selectNewOrigin);
 
     QAction *actionLock = menu.addAction(tr("Lock"));
     if (m_image.locked){
@@ -313,11 +342,16 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     }
     actionLock->setCheckable(true);
     actionLock->setChecked(m_image.locked);
+    actionLock->setEnabled(!m_selectNewOrigin);
 
     // QAction *actionShow = menu.addAction(QIcon("://icon/32x32/visible_on.png"), tr("Show"));
     // actionShow->setCheckable(true);
     // actionShow->setChecked(m_image.visible);
     // actionShow->setEnabled(!m_image.locked);
+
+    QAction *actionOrigin = menu.addAction(tr("Move Origin"));
+    actionOrigin->setIcon(QIcon(cursorImageOrigin));
+    actionOrigin->setEnabled(!m_image.locked && !m_selectNewOrigin);
 
     QAction *actionSeparator = new QAction(this);
     actionSeparator->setSeparator(true);
@@ -330,10 +364,11 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     QAction *actionMoveDn = orderMenu->addAction(tr("Move down"));
     QAction *actionMoveBottom = orderMenu->addAction(tr("Send to bottom"));
 
-    actionMoveTop->setEnabled(!m_image.locked);
-    actionMoveUp->setEnabled(!m_image.locked);
-    actionMoveDn->setEnabled(!m_image.locked);
-    actionMoveBottom->setEnabled(!m_image.locked);
+    orderMenu->setEnabled(!m_image.locked && !m_selectNewOrigin);
+    actionMoveTop->setEnabled(!m_image.locked && !m_selectNewOrigin);
+    actionMoveUp->setEnabled(!m_image.locked && !m_selectNewOrigin);
+    actionMoveDn->setEnabled(!m_image.locked && !m_selectNewOrigin);
+    actionMoveBottom->setEnabled(!m_image.locked && !m_selectNewOrigin);
 
     //actionMoveTop->setShortcut(QKeySequence(Qt::ControlModifier + Qt::Key_Home));
     //actionMoveUp->setShortcut(QKeySequence(Qt::ControlModifier + Qt::Key_PageUp));
@@ -345,7 +380,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     menu.addAction(actionSeparator);
 
     QAction *actionDelete = menu.addAction(QIcon("://icon/32x32/trashcan.png"), tr("Delete"));
-    actionDelete->setEnabled(!m_image.locked);
+    actionDelete->setEnabled(!m_image.locked && !m_selectNewOrigin);
 
     QAction *selectedAction = menu.exec(event->screenPos());
 
@@ -368,6 +403,15 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     // {
     //     SetVisible(selectedAction->isChecked());
     // }
+    else if (selectedAction == actionOrigin)
+    {
+        if (!m_image.locked)
+        {
+            m_selectNewOrigin = true;
+            setFlag(QGraphicsItem::ItemIsMovable, false);
+            m_resizeHandles->hide();
+        }
+    }
     else if (selectedAction == actionDelete)
     {
         if (!m_image.locked)
@@ -436,6 +480,17 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             event->accept();
         }
     }
+
+    if(m_selectNewOrigin)
+    {
+        m_image.xOrigin = event->pos().x() - m_boundingRect.topLeft().x();
+        m_image.yOrigin = event->pos().y() - m_boundingRect.topLeft().y();
+
+        m_origin = m_boundingRect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
+
+        m_image.xPos = mapToScene(event->pos()).x();
+        m_image.yPos = mapToScene(event->pos()).y();
+    }
 }
 
 void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
@@ -469,6 +524,14 @@ void ImageItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
         emit imageSelected(m_image.id);
     }
 
+    if(m_selectNewOrigin)
+    {
+        m_selectNewOrigin = false;
+        setFlag(QGraphicsItem::ItemIsMovable, true);
+        SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
+        m_resizeHandles->show();
+    }
+
     m_mousePressed = false;
 
     QGraphicsItem::mouseReleaseEvent(event);
@@ -483,6 +546,14 @@ void ImageItem::keyReleaseEvent(QKeyEvent *event)
         if (!m_image.locked && isSelected())
         {
             emit deleteImage(m_image.id);
+        }
+        case Qt::Key_Escape:
+        if (m_selectNewOrigin)
+        {
+            m_selectNewOrigin = false;
+            setFlag(QGraphicsItem::ItemIsMovable, true);
+            SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
+            m_resizeHandles->show();
         }
         default:
             break;
@@ -504,6 +575,13 @@ void ImageItem::updateFromHandles(QRectF rect)
 {
     prepareGeometryChange();
 
+    //The image origin is moved so that it stays at the same place on the image
+    //The image origin is different from the QGraphicsItem origin, see below
+    m_image.xOrigin = m_image.xOrigin / m_image.width * rect.width();
+    m_image.yOrigin = m_image.yOrigin / m_image.height * rect.height();
+
+    //m_image.xOrigin / m_image.yOrigin  is the distance between the top left corner of the image and the image origin
+    //m_origin is the distance between the real origin of the QGraphicsItem and the image origin
     m_origin = rect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
 
     m_image.xPos = mapToScene(m_origin).x();

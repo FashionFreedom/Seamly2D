@@ -220,6 +220,9 @@ public:
     bool                 isPanActiveSpaceKey() const;
     void                 setPanActiveSpaceKey(const bool &value);
 
+    bool                 useCurrentPen() const;
+    void                 setUseCurrentPen(const bool &value);
+
     int                  getZoomSpeedFactor() const;
     void                 setZoomSpeedFactor(const int &factor);
 

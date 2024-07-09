@@ -136,6 +136,7 @@ const QString settingGraphicsViewAngleDelta              = QStringLiteral("graph
 const QString settingGraphicsViewZoomModKey              = QStringLiteral("graphicsview/zoomModKey");
 const QString settingGraphicsViewZoomDoubleClick         = QStringLiteral("graphicsview/zoomDoubleClick");
 const QString settingGraphicsViewPanActiveSpaceKey       = QStringLiteral("graphicsview/panActiveSpaceKey");
+const QString settingGraphicsViewUseDefaultPen       = QStringLiteral("graphicsview/useCurrentPen");
 const QString settingGraphicsViewZoomSpeedFactor         = QStringLiteral("graphicsview/zoomSpeedFactor");
 const QString settingGraphicsViewExportQuality           = QStringLiteral("graphicsview/exportQuality");
 const QString settingGraphicsViewZoomRBPositiveColor     = QStringLiteral("graphicsview/zoomRBPositiveColor");
@@ -1012,6 +1013,18 @@ bool VCommonSettings::isPanActiveSpaceKey() const
 void VCommonSettings::setPanActiveSpaceKey(const bool &value)
 {
     setValue(settingGraphicsViewPanActiveSpaceKey, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::useCurrentPen() const
+{
+    return value(settingGraphicsViewUseDefaultPen, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setUseCurrentPen(const bool &value)
+{
+    setValue(settingGraphicsViewUseDefaultPen, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
