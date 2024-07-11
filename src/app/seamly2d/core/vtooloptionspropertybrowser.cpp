@@ -746,7 +746,14 @@ void VToolOptionsPropertyBrowser::addPropertyLineColor(Tool *tool, const QString
     addProperty(lineColorProperty, id);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+// @brief Adds a directionproperty.
+//
+// Adds a direction combobox property to the Property Editor form widget. Gets the combobox index to
+// the tool's direction. Throws a warning if the property is not found in the combobox item list.
+// If the index exists it sets the combobox index to the tool's direction. 
+//
+// @tparam tool Tool of the property.
+// @param propertyName Name of the property.
 template<class Tool>
 void VToolOptionsPropertyBrowser::addPropertyDirection(Tool *tool, const QString &propertyName)
 {

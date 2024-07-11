@@ -368,7 +368,11 @@ QMap<QString, QString> lineWeightList()
     return map;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//
+// @brief Creates a QMap of the direction items
+//
+// Map is used by the direction property combobox in the Prperty Editor. It contains the item texts,
+// and the QVarient string values which corresponds to the attributes for the xml direction tag.
 QMap<QString, QString> directionList()
 {
     QMap<QString, QString> map;
