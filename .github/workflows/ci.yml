@@ -258,13 +258,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Remove preinstalled mingw
-        # we use the same mingw from Qt tools instead of the github actions hosted runner one, so that its as close as possible to developer setup
-        # in addition, the code was not compiling with the provided one and just failing with a nondescript "error 1"
-        shell: bash
-        run: |
-          choco uninstall mingw -y
-
       - uses: jurplel/install-qt-action@v3
         with:
           version: ${{ env.QT_VERSION }}
