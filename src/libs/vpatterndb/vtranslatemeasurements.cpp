@@ -57,7 +57,21 @@
 #include "../qmuparser/qmutranslation.h"
 #include "measurements_def.h"
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Constructs a VTranslateMeasurements object.
+ * 
+ * This constructor initializes a VTranslateMeasurements instance by setting up the internal maps for measurements, GUI texts, descriptions,
+ * numbers, and formulas. It also calls the `InitMeasurements` method to initialize measurement data.
+ * 
+ * @details
+ * - The constructor initializes the following member variables:
+ *   - `m_measurements`: A QMap to store measurement translations.
+ *   - `m_guiTexts`: A QMap to store GUI text translations.
+ *   - `m_descriptions`: A QMap to store description translations.
+ *   - `m_numbers`: A QMap to store measurement numbers.
+ *   - `m_formulas`: A QMap to store measurement formulas.
+ * - The `InitMeasurements` method is called to populate these maps with initial data.
+ */
 VTranslateMeasurements::VTranslateMeasurements()
     : m_measurements(QMap<QString, qmu::QmuTranslation>())
     , m_guiTexts(QMap<QString, qmu::QmuTranslation>())
@@ -68,18 +82,35 @@ VTranslateMeasurements::VTranslateMeasurements()
     InitMeasurements();
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Destructor for VTranslateMeasurements.
+ * 
+ * This method handles cleanup when a VTranslateMeasurements object is destroyed.
+ * 
+ * @details
+ * - The destructor is defined but currently does not perform any specific actions.
+ * - It ensures that any resources managed by VTranslateMeasurements are properly released when the object is destroyed.
+ */
 VTranslateMeasurements::~VTranslateMeasurements()
 {}
 
-//---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief MeasurementsFromUser translate measurement to internal look.
- * @param newFormula [in|out] expression to translate
- * @param position token position
- * @param token token to translate
- * @param bias hold change of length between translated and origin token string
- * @return true if was found measurement with same name.
+ * @brief Translates a user-provided measurement token into an internal representation.
+ * 
+ * This method translates a user-provided measurement token into an internal representation and updates the provided formula.
+ * 
+ * @param newFormula The formula to update with the internal representation.
+ * @param position The position in the formula where the token is located.
+ * @param token The user-provided measurement token to translate.
+ * @param bias The bias value to update based on the length difference between the token and its internal representation.
+ * @return bool True if the token was successfully translated, false otherwise.
+ * 
+ * @details
+ * - The method iterates over the `m_measurements` map to find a matching translation for the provided token.
+ * - If a match is found, it replaces the token in `newFormula` with its internal representation.
+ * - It updates the `bias` value to reflect the length difference between the token and its internal representation.
+ * - If a match is found and the replacement is made, the method returns true.
+ * - If no match is found, the method returns false.
  */
 bool VTranslateMeasurements::MeasurementsFromUser(QString &newFormula, int position, const QString &token,
                                                   int &bias) const
@@ -98,7 +129,19 @@ bool VTranslateMeasurements::MeasurementsFromUser(QString &newFormula, int posit
     return false;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Translates an internal measurement representation to a user-friendly string.
+ * 
+ * This method converts an internal measurement representation to its corresponding user-friendly string.
+ * 
+ * @param measurement The internal measurement representation to translate.
+ * @return QString The user-friendly string corresponding to the measurement.
+ * 
+ * @details
+ * - The method checks if the `m_measurements` map contains the specified measurement.
+ * - If the measurement is found, it returns the user-friendly translation.
+ * - If the measurement is not found, it returns the original measurement string.
+ */
 QString VTranslateMeasurements::MToUser(const QString &measurement) const
 {
     if (m_measurements.contains(measurement))
@@ -111,7 +154,19 @@ QString VTranslateMeasurements::MToUser(const QString &measurement) const
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Retrieves the number associated with a given measurement.
+ * 
+ * This method returns the number associated with the specified measurement.
+ * 
+ * @param measurement The measurement for which to retrieve the number.
+ * @return QString The number associated with the measurement, or an empty string if the measurement is not found.
+ * 
+ * @details
+ * - The method checks if the `m_numbers` map contains the specified measurement.
+ * - If the measurement is found, it returns the associated number.
+ * - If the measurement is not found, it returns an empty string.
+ */
 QString VTranslateMeasurements::MNumber(const QString &measurement) const
 {
     if (m_numbers.contains(measurement))
@@ -124,13 +179,36 @@ QString VTranslateMeasurements::MNumber(const QString &measurement) const
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Retrieves the formula associated with a given measurement.
+ * 
+ * This method returns the formula associated with the specified measurement.
+ * 
+ * @param measurement The measurement for which to retrieve the formula.
+ * @return QString The formula associated with the measurement.
+ * 
+ * @details
+ * - The method retrieves the formula from the `m_formulas` map using the specified measurement.
+ * - If the measurement is not found in the map, it returns an empty string.
+ */
 QString VTranslateMeasurements::MFormula(const QString &measurement) const
 {
     return m_formulas.value(measurement);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Retrieves the GUI text associated with a given measurement.
+ * 
+ * This method returns the GUI text associated with the specified measurement.
+ * 
+ * @param measurement The measurement for which to retrieve the GUI text.
+ * @return QString The GUI text associated with the measurement, or the original measurement string if not found.
+ * 
+ * @details
+ * - The method checks if the `m_guiTexts` map contains the specified measurement.
+ * - If the measurement is found, it returns the translated GUI text.
+ * - If the measurement is not found, it returns the original measurement string.
+ */
 QString VTranslateMeasurements::guiText(const QString &measurement) const
 {
     if (m_guiTexts.contains(measurement))
@@ -143,7 +221,19 @@ QString VTranslateMeasurements::guiText(const QString &measurement) const
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Retrieves the description associated with a given measurement.
+ * 
+ * This method returns the description associated with the specified measurement.
+ * 
+ * @param measurement The measurement for which to retrieve the description.
+ * @return QString The description associated with the measurement, or the original measurement string if not found.
+ * 
+ * @details
+ * - The method checks if the `m_descriptions` map contains the specified measurement.
+ * - If the measurement is found, it returns the translated description.
+ * - If the measurement is not found, it returns the original measurement string.
+ */
 QString VTranslateMeasurements::Description(const QString &measurement) const
 {
     if (m_descriptions.contains(measurement))
@@ -156,7 +246,15 @@ QString VTranslateMeasurements::Description(const QString &measurement) const
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Retranslates all measurement-related data.
+ * 
+ * This method clears all existing measurement-related data and reinitializes it.
+ * 
+ * @details
+ * - The method clears the `m_measurements`, `m_guiTexts`, `m_descriptions`, `m_numbers`, and `m_formulas` maps.
+ * - It calls the `InitMeasurements` method to reinitialize the measurement data.
+ */
 void VTranslateMeasurements::Retranslate()
 {
     m_measurements.clear();
@@ -167,7 +265,31 @@ void VTranslateMeasurements::Retranslate()
     InitMeasurements();
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initializes all measurement groups.
+ * 
+ * This method initializes all predefined groups of measurements.
+ * 
+ * @details
+ * - The method calls initialization functions for each predefined measurement group:
+ *   - `InitGroupA()`: Direct Height
+ *   - `InitGroupB()`: Direct Width
+ *   - `InitGroupC()`: Indentation
+ *   - `InitGroupD()`: Circumference and Arc
+ *   - `InitGroupE()`: Vertical
+ *   - `InitGroupF()`: Horizontal
+ *   - `InitGroupG()`: Bust
+ *   - `InitGroupH()`: Balance
+ *   - `InitGroupI()`: Arm
+ *   - `InitGroupJ()`: Leg
+ *   - `InitGroupK()`: Crotch and Rise
+ *   - `InitGroupL()`: Hand
+ *   - `InitGroupM()`: Foot
+ *   - `InitGroupN()`: Head
+ *   - `InitGroupO()`: Men & Tailoring
+ *   - `InitGroupP()`: Historical & Specialty
+ *   - `InitGroupQ()`: Patternmaking measurements
+ */
 void VTranslateMeasurements::InitMeasurements()
 {
     InitGroupA(); // Direct Height
@@ -189,7 +311,25 @@ void VTranslateMeasurements::InitMeasurements()
     InitGroupQ(); // Patternmaking measurements
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initializes a single measurement with its related data.
+ * 
+ * This method sets up a measurement by inserting its translations, number, and formula into the corresponding maps.
+ * 
+ * @param name The name of the measurement.
+ * @param m The translation for the measurement.
+ * @param g The GUI text translation for the measurement.
+ * @param d The description translation for the measurement.
+ * @param number The number associated with the measurement.
+ * @param formula The formula associated with the measurement (optional).
+ * 
+ * @details
+ * - The method inserts the provided translation for the measurement into the `m_measurements` map.
+ * - It inserts the provided GUI text translation into the `m_guiTexts` map.
+ * - It inserts the provided description translation into the `m_descriptions` map.
+ * - It inserts the provided number into the `m_numbers` map.
+ * - It inserts the provided formula into the `m_formulas` map.
+ */
 void VTranslateMeasurements::InitMeasurement(const QString &name, const qmu::QmuTranslation &m,
                                              const qmu::QmuTranslation &g, const qmu::QmuTranslation &d,
                                              const QString &number, const QString &formula)
@@ -201,9 +341,56 @@ void VTranslateMeasurements::InitMeasurement(const QString &name, const qmu::Qmu
     m_formulas.insert(name, formula);
 }
 
+/**
+ * @def translate(context, source, disambiguation)
+ * @brief Macro for translating strings using QmuTranslation.
+ * 
+ * This macro simplifies the process of translating strings using the QmuTranslation class.
+ * 
+ * @param context The context in which the translation occurs.
+ * @param source The source string to translate.
+ * @param disambiguation An optional disambiguation string to differentiate between similar translations.
+ * 
+ * @details
+ * - The macro calls `QmuTranslation::translate` with the provided context, source string, and disambiguation.
+ */
 #define translate(context, source, disambiguation) qmu::QmuTranslation::translate((context), (source), (disambiguation))
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initialize group A measurements.
+ * 
+ * This function sets up the translations for various height measurements. It ensures that each measurement has a corresponding 
+ * translated name and description, which are essential for accurate data representation in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Height: Total: Measures the vertical distance from the crown of the head to the floor.
+ * - Height: Neck Back: Measures the vertical distance from the neck back (cervicale vertebra) to the floor.
+ * - Height: Scapula: Measures the vertical distance from the scapula (blade point) to the floor.
+ * - Height: Armpit: Measures the vertical distance from the armpit to the floor.
+ * - Height: Waist Side: Measures the vertical distance from the waist side to the floor.
+ * - Height: Hip: Measures the vertical distance from the hip level to the floor.
+ * - Height: Gluteal Fold: Measures the vertical distance from the gluteal fold to the floor.
+ * - Height: Knee: Measures the vertical distance from the fold at the back of the knee to the floor.
+ * - Height: Calf: Measures the vertical distance from the widest point of the calf to the floor.
+ * - Height: Ankle High: Measures the vertical distance from the deepest indentation of the back of the ankle to the floor.
+ * - Height: Ankle: Measures the vertical distance from the point where the front leg meets the foot to the floor.
+ * - Height: Highhip: Measures the vertical distance from the highhip level to the floor.
+ * - Height: Waist Front: Measures the vertical distance from the waist front to the floor.
+ * - Height: Bustpoint: Measures the vertical distance from the bustpoint to the floor.
+ * - Height: Shoulder Tip: Measures the vertical distance from the shoulder tip to the floor.
+ * - Height: Neck Front: Measures the vertical distance from the neck front to the floor.
+ * - Height: Neck Side: Measures the vertical distance from the neck side to the floor.
+ * - Height: Neck Back to Knee: Measures the vertical distance from the neck back to the fold at the back of the knee.
+ * - Height: Waist Side to Knee: Measures the vertical distance from the waist side to the fold at the back of the knee.
+ * - Height: Waist Side to Hip: Measures the vertical distance from the waist side to the hip level.
+ * - Height: Knee to Ankle: Measures the vertical distance from the fold at the back of the knee to the point where the front leg meets the foot.
+ * - Height: Neck Back to Waist Side: Measures the vertical distance from the neck back to the waist side.
+ * - Height: Waist Back: Measures the vertical height from the waist back to the floor.
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupA()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
@@ -376,7 +563,23 @@ void VTranslateMeasurements::InitGroupA()
     //=================================================================================================================
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initialize group B measurements.
+ * 
+ * This function sets up the translations for various body width measurements. It ensures that each measurement has a corresponding 
+ * translated name and description, which are essential for accurate data representation in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Width: Shoulder: Measures the horizontal distance from shoulder tip to shoulder tip.
+ * - Width: Bust: Measures the horizontal distance from bust side to bust side.
+ * - Width: Waist: Measures the horizontal distance from waist side to waist side.
+ * - Width: Hip: Measures the horizontal distance from hip side to hip side.
+ * - Width: Abdomen to Hip: Measures the horizontal distance from the greatest abdomen prominence to the greatest hip prominence.
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupB()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
@@ -423,7 +626,21 @@ void VTranslateMeasurements::InitGroupB()
     //=================================================================================================================
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initialize group C measurements.
+ * 
+ * This function sets up the translations for various body indentation measurements. It ensures that each measurement has a corresponding 
+ * translated name and description, which are essential for accurate data representation in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Indent: Neck Back: Measures the horizontal distance from the scapula (blade point) to the back of the neck.
+ * - Indent: Waist Back: Measures the horizontal distance between a flat stick, placed to touch the hip and scapula, and the back of the waist.
+ * - Indent: Ankle High: Measures the horizontal distance between a flat stick, placed perpendicular to the heel, and the greatest indentation of the ankle.
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupC()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
@@ -456,7 +673,23 @@ void VTranslateMeasurements::InitGroupC()
     //=================================================================================================================
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initialize group D measurements.
+ * 
+ * This function sets up the translations for various hand measurements. It ensures that each measurement has a corresponding 
+ * translated name and description, which are essential for accurate data representation in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Hand Palm Length: Measures the length from the wrist line to the base of the middle finger.
+ * - Hand Length: Measures the length from the wrist line to the end of the middle finger.
+ * - Hand Palm Width: Measures the width of the palm at its widest part.
+ * - Hand Palm Circumference: Measures the circumference of the palm at its widest part.
+ * - Hand Circumference: Measures the circumference around the widest part of the hand with the thumb tucked toward the smallest finger and the fingers close together.
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupD()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
@@ -501,7 +734,22 @@ void VTranslateMeasurements::InitGroupD()
     //=================================================================================================================
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initialize group E measurements.
+ * 
+ * This function sets up the translations for various foot measurements. It ensures that each measurement has a corresponding 
+ * translated name and description, which are essential for accurate data representation in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Foot Width: Measures the width at the widest part of the foot.
+ * - Foot Length: Measures the length from the back of the heel to the end of the longest toe.
+ * - Foot Circumference: Measures the circumference around the widest part of the foot.
+ * - Foot Instep Circumference: Measures the circumference at the tallest part of the instep.
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupE()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
@@ -540,7 +788,25 @@ void VTranslateMeasurements::InitGroupE()
     //=================================================================================================================
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+
+/**
+ * @brief Initialize group F measurements.
+ * 
+ * This function sets up the translations for various head measurements. The function ensures that each measurement has 
+ * a corresponding translated name and description, which are required for accurate data representation in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Head Circumference: Measures the circumference at the largest level of the head.
+ * - Head Length: Measures the vertical distance from the head crown to the bottom of the jaw.
+ * - Head Depth: Measures the horizontal distance from the front of the forehead to the back of the head.
+ * - Head Width: Measures the horizontal distance from one side of the head to the other at its widest part.
+ * - Head Crown to Neck Back: Measures the vertical distance from the crown of the head to the back of the neck.
+ * - Head Chin to Neck Back: Measures the vertical distance from the chin to the back of the neck.
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupF()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
@@ -595,7 +861,32 @@ void VTranslateMeasurements::InitGroupF()
     //=================================================================================================================
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initialize group G measurements.
+ * 
+ * This function sets up the translations for various body circumference and arc measurements. It ensures that each measurement has a corresponding 
+ * translated name and description, which are essential for accurate data representation in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Neck circumference, midsection: Measures the circumference of the neck midsection, about halfway between jaw and torso.
+ * - Neck circumference: Measures the neck circumference at the base of the neck, touching the neck back, sides, and front.
+ * - Highbust circumference: Measures the circumference at highbust, following the shortest distance between armfolds across the chest, high under armpits.
+ * - Bust circumference: Measures the circumference around the bust, parallel to the floor.
+ * - Lowbust circumference: Measures the circumference around the lowbust under the breasts, parallel to the floor.
+ * - Rib circumference: Measures the circumference around the ribs at the level of the lowest rib at the side, parallel to the floor.
+ * - Waist circumference: Measures the circumference around the waist, following natural contours, typically higher in back.
+ * - Highhip circumference: Measures the circumference around the highhip where abdomen protrusion is greatest, parallel to the floor.
+ * - Hip circumference: Measures the circumference around the hip where hip protrusion is greatest, parallel to the floor.
+ * - Various arcs: Measures arcs around the neck, highbust, bust, lowbust, rib, waist, highhip, and hip from side to side across the front and back.
+ * - Body circumference at armfold level: Measures around the arms and torso at armfold level.
+ * - Body circumference at bust level: Measures around the arms and torso at bust level.
+ * - Body circumference of full torso: Measures the circumference around the torso from mid-shoulder around the crotch back up to mid-shoulder.
+ * - Hip circumference, including abdomen: Measures at the hip level, including the depth of the abdomen.
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupG()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
@@ -954,7 +1245,61 @@ void VTranslateMeasurements::InitGroupG()
     //=================================================================================================================
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initialize group H measurements.
+ * 
+ * This function sets up the translations for various measurements from the neck, shoulder, and torso regions to other body parts. 
+ * It ensures that each measurement has a corresponding translated name and description, which are essential for accurate data representation 
+ * in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Neck Front to Waist Front: Measures from the neck front, over tape between breast points, down to waist front.
+ * - Neck Front to Waist Front flat: Measures from the neck front down between breasts to waist front.
+ * - Armpit to Waist Side: Measures from the armpit down to the waist side.
+ * - Shoulder Tip to Waist Side, front: Measures from the shoulder tip, curving around the armscye front, then down to the waist side.
+ * - Neck Side to Waist level, front: Measures from the neck side straight down front to the waist level.
+ * - Neck Side to Waist level, through Bustpoint: Measures from the neck side over the bust point to the waist level, forming a straight line.
+ * - Neck Front to Highbust Front: Measures from the neck front down to the highbust front.
+ * - Highbust Front to Waist Front: Measures from the highbust front to the waist front, using tape to bridge the gap between bust points.
+ * - Neck Front to Bust Front: Measures from the neck front down to the bust front, requiring tape to cover the gap between bust points.
+ * - Bust Front to Waist Front: Measures from the bust front down to the waist level.
+ * - Lowbust Front to Waist Front: Measures from the lowbust front down to the waist front.
+ * - Rib Side to Waist Side: Measures from the lowest rib at the side down to the waist side.
+ * - Shoulder Tip to Armfold Front: Measures from the shoulder tip around the armscye down to the armfold front.
+ * - Neck Side to Bust level, front: Measures from the neck side straight down front to the bust level.
+ * - Neck Side to Highbust level, front: Measures from the neck side straight down front to the highbust level.
+ * - Shoulder center to Highbust level, front: Measures from the mid-shoulder down front to the highbust level, aimed at the bust point.
+ * - Shoulder Tip to Waist Side, back: Measures from the shoulder tip, curving around the armscye back, then down to the waist side.
+ * - Neck Side to Waist level, back: Measures from the neck side straight down back to the waist level.
+ * - Neck Back to Waist Back: Measures from the neck back down to the waist back.
+ * - Neck Side to Waist level, through Scapula: Measures from the neck side across the scapula down to the waist level, forming a straight line.
+ * - Neck Back to Highbust Back: Measures from the neck back down to the highbust back.
+ * - Highbust Back to Waist Back: Measures from the highbust back down to the waist back.
+ * - Neck Back to Bust Back: Measures from the neck back down to the bust back.
+ * - Bust Back to Waist Back: Measures from the bust back down to the waist level.
+ * - Lowbust Back to Waist Back: Measures from the lowbust back down to the waist back.
+ * - Shoulder Tip to Armfold Back: Measures from the shoulder tip around the armscye down to the armfold back.
+ * - Neck Side to Bust level, back: Measures from the neck side straight down back to the bust level.
+ * - Neck Side to Highbust level, back: Measures from the neck side straight down back to the highbust level.
+ * - Shoulder center to Highbust level, back: Measures from the mid-shoulder down back to the highbust level, aimed through the scapula.
+ * - Waist Front to Highhip Front: Measures from the waist front to the highhip front.
+ * - Waist Front to Hip Front: Measures from the waist front to the hip front.
+ * - Waist Side to Highhip Side: Measures from the waist side to the highhip side.
+ * - Waist Back to Highhip Back: Measures from the waist back down to the highhip back.
+ * - Waist Back to Hip Back: Measures from the waist back down to the hip back, requiring tape to cover the gap between the buttocks.
+ * - Waist Side to Hip Side: Measures from the waist side to the hip side.
+ * - Shoulder Slope Angle from Neck Side: Measures the angle formed by the line from the neck side to the shoulder tip and the line from the neck side parallel to the floor.
+ * - Shoulder Slope length from Neck Side: Measures the vertical distance between the neck side and the shoulder tip.
+ * - Shoulder Slope Angle from Neck Back: Measures the angle formed by the line from the neck back to the shoulder tip and the line from the neck back parallel to the floor.
+ * - Shoulder Slope length from Neck Back: Measures the vertical distance between the neck back and the shoulder tip.
+ * - Shoulder Slope Angle from Shoulder Tip: Measures the angle formed by the line from the neck side to the shoulder tip and the vertical line at the shoulder tip.
+ * - Neck Back to Across Back: Measures from the neck back down to the level of the across back measurement.
+ * - Across Back to Waist back: Measures from the middle of the across back down to the waist back.
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupH()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
@@ -1259,7 +1604,33 @@ void VTranslateMeasurements::InitGroupH()
     //=================================================================================================================
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initialize group I measurements.
+ * 
+ * This function sets up the translations for various measurements related to the shoulders, chest, and back. 
+ * It ensures that each measurement has a corresponding translated name and description, which are essential for accurate data representation 
+ * in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Shoulder length: Measures from the neck side to the shoulder tip.
+ * - Shoulder Tip to Shoulder Tip, front: Measures from shoulder tip to shoulder tip across the front.
+ * - Across Chest: Measures from armscye to armscye at the narrowest width across the chest.
+ * - Armfold to Armfold, front: Measures the shortest distance between armfolds across the front.
+ * - Shoulder Tip to Shoulder Tip, front, half: Measures half the distance from shoulder tip to shoulder tip across the front.
+ * - Across Chest, half: Measures half the width across the chest.
+ * - Shoulder Tip to Shoulder Tip, back: Measures from shoulder tip to shoulder tip across the back.
+ * - Across Back: Measures from armscye to armscye at the narrowest width of the back.
+ * - Armfold to Armfold, back: Measures from armfold to armfold across the back.
+ * - Shoulder Tip to Shoulder Tip, back, half: Measures half the distance from shoulder tip to shoulder tip across the back.
+ * - Across Back, half: Measures half the width across the back.
+ * - Neck Front to Shoulder Tip: Measures from the neck front to the shoulder tip.
+ * - Neck Back to Shoulder Tip: Measures from the neck back to the shoulder tip.
+ * - Neck Width: Measures the width between the "legs" of an unclosed necklace or chain draped around the neck.
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupI()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
@@ -1370,7 +1741,30 @@ void VTranslateMeasurements::InitGroupI()
     //=================================================================================================================
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initialize group J measurements.
+ * 
+ * This function sets up the translations for various measurements related to the bust and its position relative to other body parts. 
+ * It ensures that each measurement has a corresponding translated name and description, which are essential for accurate data representation 
+ * in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Bustpoint to Bustpoint: Measures the distance from one bustpoint to the other.
+ * - Bustpoint to Neck Side: Measures from the neck side to the bustpoint.
+ * - Bustpoint to Lowbust: Measures from the bustpoint down to the lowbust level, following the curve of the bust or chest.
+ * - Bustpoint to Waist level: Measures from the bustpoint straight down to the waist level, forming a straight line.
+ * - Bustpoint to Bustpoint, half: Measures half of the distance from one bustpoint to the other.
+ * - Bustpoint, Neck Side to Waist level: Measures from the neck side to the bustpoint, then straight down to the waist level.
+ * - Bustpoint to Shoulder Tip: Measures from the bustpoint to the shoulder tip.
+ * - Bustpoint to Waist Front: Measures from the bustpoint to the waist front, in a straight line.
+ * - Bustpoint to Bustpoint Halter: Measures from one bustpoint around the neck back down to the other bustpoint.
+ * - Bustpoint to Shoulder Center: Measures from the center of the shoulder to the bustpoint.
+ * - Bustpoint to Neck Front: Measures from the neck front to the bustpoint.
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupJ()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
@@ -1457,7 +1851,32 @@ void VTranslateMeasurements::InitGroupJ()
     //=================================================================================================================
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initialize group K measurements.
+ * 
+ * This function sets up the translations for various diagonal measurements between the neck, shoulder, and waist regions, 
+ * as well as measurements to armfold and bust side. It ensures that each measurement has a corresponding translated name 
+ * and description, which are essential for accurate data representation in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Shoulder Tip to Waist Front: Measures from the shoulder tip diagonally to the waist front.
+ * - Neck Front to Waist Side: Measures from the neck front diagonally to the waist side.
+ * - Neck Side to Waist Side, front: Measures from the neck side diagonally across the front to the waist side.
+ * - Shoulder Tip to Waist Back: Measures from the shoulder tip diagonally to the waist back.
+ * - Shoulder Tip to Waist Back, with 1in (2.54cm) offset: Measures from the shoulder tip diagonally to a point marked 1in (2.54cm) outward from the waist back.
+ * - Neck Back to Waist Side: Measures from the neck back diagonally across the back to the waist side.
+ * - Neck Side to Waist Side, back: Measures from the neck side diagonally across the back to the waist side.
+ * - Neck Side to Armfold Front: Measures from the neck side diagonally to the armfold front.
+ * - Neck Side to Highbust Side, front: Measures from the neck side diagonally across the front to the highbust side (armpit).
+ * - Neck Side to Bust Side, front: Measures from the neck side diagonally across the front to the bust side.
+ * - Neck Side to Armfold Back: Measures from the neck side diagonally to the armfold back.
+ * - Neck Side to Highbust Side, back: Measures from the neck side diagonally across the back to the highbust side (armpit).
+ * - Neck Side to Bust Side, back: Measures from the neck side diagonally across the back to the bust side.
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupK()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
@@ -1561,7 +1980,40 @@ void VTranslateMeasurements::InitGroupK()
     //=================================================================================================================
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initialize group L measurements.
+ * 
+ * This function sets up the translations for various arm measurements. It ensures that each measurement has a corresponding 
+ * translated name and description, which are essential for accurate data representation in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Arm: Shoulder Tip to Wrist, bent: Measures from the shoulder tip around the elbow to the radial wrist bone with the arm bent.
+ * - Arm: Shoulder Tip to Elbow, bent: Measures from the shoulder tip to the elbow tip with the arm bent.
+ * - Arm: Elbow to Wrist, bent: Measures from the elbow tip to the wrist with the arm bent.
+ * - Arm: Elbow circumference, bent: Measures the circumference of the elbow with the arm bent.
+ * - Arm: Shoulder Tip to Wrist: Measures from the shoulder tip to the wrist bone with the arm straight.
+ * - Arm: Shoulder Tip to Elbow: Measures from the shoulder tip to the elbow tip with the arm straight.
+ * - Arm: Elbow to Wrist: Measures from the elbow to the wrist with the arm straight.
+ * - Arm: Armpit to Wrist, inside: Measures from the armpit to the ulna wrist bone with the arm straight.
+ * - Arm: Armpit to Elbow, inside: Measures from the armpit to the inner elbow with the arm straight.
+ * - Arm: Elbow to Wrist, inside: Measures from the inside elbow to the wrist.
+ * - Arm: Upper Arm circumference: Measures the arm circumference at the armpit level.
+ * - Arm: Above Elbow circumference: Measures the arm circumference at the bicep level.
+ * - Arm: Elbow circumference: Measures the elbow circumference with the arm straight.
+ * - Arm: Lower Arm circumference: Measures the arm circumference where the lower arm is widest.
+ * - Arm: Wrist circumference: Measures the wrist circumference.
+ * - Arm: Shoulder Tip to Armfold line: Measures from the shoulder tip down to the armpit level.
+ * - Arm: Neck Side to Wrist: Measures from the neck side to the wrist.
+ * - Arm: Neck Side to Finger Tip: Measures from the neck side down the arm to the tip of the middle finger.
+ * - Armscye: Circumference: Measures the armscye circumference through the shoulder tip and armpit.
+ * - Armscye: Length: Measures the vertical distance from the shoulder tip to the armpit.
+ * - Armscye: Width: Measures the horizontal distance between the armscye front and armscye back.
+ * - Arm: Neck side to Elbow: Measures from the neck side over the shoulder tip down to the elbow.
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupL()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
@@ -1729,7 +2181,32 @@ void VTranslateMeasurements::InitGroupL()
     //=================================================================================================================
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initialize group M measurements.
+ * 
+ * This function sets up the translations for various leg measurements. It ensures that each measurement has a corresponding 
+ * translated name and description, which are essential for accurate data representation in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Leg: Crotch to floor: Measures from crotch level down to the floor with feet close together.
+ * - Leg: Waist Side to floor: Measures from the waist side along the curve to the hip level, then straight down to the floor.
+ * - Leg: Thigh Upper circumference: Measures the thigh circumference at the fullest part of the upper thigh near the crotch.
+ * - Leg: Thigh Middle circumference: Measures the thigh circumference about halfway between the crotch and knee.
+ * - Leg: Knee circumference: Measures the knee circumference with a straight leg.
+ * - Leg: Knee Small circumference: Measures the leg circumference just below the knee.
+ * - Leg: Calf circumference: Measures the calf circumference at the largest part of the lower leg.
+ * - Leg: Ankle High circumference: Measures the ankle circumference where the indentation at the back of the ankle is the deepest.
+ * - Leg: Ankle circumference: Measures the ankle circumference where the front of the leg meets the top of the foot.
+ * - Leg: Knee circumference, bent: Measures the knee circumference with the leg bent.
+ * - Leg: Ankle diagonal circumference: Measures the ankle circumference diagonally from the top of the foot to the bottom of the heel.
+ * - Leg: Crotch to Ankle: Measures from the crotch to the ankle.
+ * - Leg: Waist Side to Ankle: Measures from the waist side to the ankle.
+ * - Leg: Waist Side to Knee: Measures from the waist side along the curve to the hip level, then straight down to the knee level.
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupM()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
@@ -1840,7 +2317,26 @@ void VTranslateMeasurements::InitGroupM()
     //=================================================================================================================
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initialize group N measurements.
+ * 
+ * This function sets up the translations for various measurements related to the crotch and rise lengths. It ensures that each 
+ * measurement has a corresponding translated name and description, which are essential for accurate data representation in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Crotch length: Measures from the waist front down between the legs and up to the waist back with tape across the gap between the buttocks at hip level.
+ * - Crotch length, back: Measures from the waist back to mid-crotch.
+ * - Crotch length, front: Measures from the waist front to the start of the vagina or the end of the testicles.
+ * - Rise length, side, sitting: Measures from the waist side around the hip curve down to the surface while seated on a hard surface.
+ * - Rise length, diagonal: Measures from the waist side diagonally to a string tied at the top of the leg while seated on a hard surface.
+ * - Rise length, back: Measures the vertical distance from the waist back to the crotch level.
+ * - Rise length, front: Measures the vertical distance from the waist front to the crotch level.
+ * - Rise length, side: Measures the vertical distance from the waist side down to the crotch level.
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupN()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
@@ -1912,7 +2408,32 @@ void VTranslateMeasurements::InitGroupN()
     //=================================================================================================================
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initialize group O measurements.
+ * 
+ * This function sets up the translations for various measurements related to the torso and arm, ensuring that each 
+ * measurement has a corresponding translated name and description. These translations are crucial for accurate data representation in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Neck Back to Waist Front: Measures from the neck back around the neck side down to the waist front.
+ * - Waist to Waist Halter: Measures from the waist level around the neck back to the waist level.
+ * - Natural Waist circumference: Measures the torso circumference at men's natural side abdominal obliques indentation or just below the navel level.
+ * - Natural Waist arc, front: Measures from side to side at the natural waist level across the front.
+ * - Natural Waist arc, back: Measures from side to side at natural waist level across the back.
+ * - Waist Front to Natural Waist Front: Measures the length from the waist front to the natural waist front.
+ * - Waist Back to Natural Waist Back: Measures the length from the waist back to the natural waist back.
+ * - Arm: Neck Back to Elbow, high bend: Measures from the neck back to the elbow tip with the arm bent and the elbow out.
+ * - Arm: Neck Back to Wrist, high bend: Measures from the neck back to the elbow tip to the wrist bone with the arm bent and the elbow out.
+ * - Arm: Neck Side to Elbow, high bend: Measures from the neck side to the elbow tip with the arm bent and the elbow out.
+ * - Arm: Neck Side to Wrist, high bend: Measures from the neck side to the elbow tip to the wrist bone with the arm bent and the elbow out.
+ * - Arm: Across Back Center to Elbow, high bend: Measures from the middle of the back to the elbow tip with the arm bent and the elbow out.
+ * - Arm: Across Back Center to Wrist, high bend: Measures from the middle of the back to the elbow tip to the wrist bone with the arm bent and the elbow out.
+ * - Arm: Armscye Back Center to Wrist, high bend: Measures from the armscye back to the elbow tip with the arm bent and the elbow out.
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupO()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
@@ -2028,7 +2549,30 @@ void VTranslateMeasurements::InitGroupO()
     //=================================================================================================================
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initialize group P measurements.
+ * 
+ * This function sets up the translations for various measurements related to different body dimensions, ensuring that each 
+ * measurement has a corresponding translated name and description. These translations are crucial for accurate data representation in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Neck Back to Bust Front: Measures from the neck back, over the shoulder, to the bust front.
+ * - Neck Back to Armfold Front: Measures from the neck back, over the shoulder, to the armfold front.
+ * - Neck Back, over Shoulder, to Waist Side: Measures from the neck back, over the shoulder, down the chest to the waist side.
+ * - Highbust Back, over Shoulder, to Armfold Front: Measures from the highbust back, over the shoulder, to the armfold front.
+ * - Highbust Back, over Shoulder, to Waist Front: Measures from the highbust back, over the shoulder touching the neck side, to the waist front.
+ * - Neck Back, to Armfold Front, to Neck Back: Measures from the neck back, over the shoulder to the armfold front, under the arm, and return to start.
+ * - Across Back Center, circled around Shoulder: Measures from the center of the across back, over the shoulder, under the arm, and return to start.
+ * - Neck Back, to Armfold Front, to Highbust Back: Measures from the neck back, over the shoulder to the armfold front, under the arm to the highbust back.
+ * - Armfold to Armfold, front, curved through Bust Front: Measures in a curve from the armfold left front through the bust front, curved back up to the armfold right front.
+ * - Armfold to Bust Front: Measures from the armfold front to the bust front, the shortest distance between the two, as straight as possible.
+ * - Highbust Back, over Shoulder, to Highbust level: Measures from the highbust back, over the shoulder, then aim at the bustpoint, stopping measurement at the highbust level.
+ * - Armscye: Arc: Measures from the armscye at across chest over the shoulder tip to the armscye at across back.
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupP()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
@@ -2130,7 +2674,21 @@ void VTranslateMeasurements::InitGroupP()
     //=================================================================================================================
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Initialize group Q measurements.
+ * 
+ * This function sets up the translations for various measurements related to dart widths in patternmaking, ensuring that each 
+ * measurement has a corresponding translated name and description. These translations are crucial for accurate data representation in different languages.
+ * 
+ * @details
+ * The measurements initialized in this function include:
+ * - Dart Width: Shoulder: Information pulled from pattern charts in some patternmaking systems, such as Winifred P. Aldrich's "Metric Pattern Cutting".
+ * - Dart Width: Bust: Information pulled from pattern charts in some patternmaking systems, such as Winifred P. Aldrich's "Metric Pattern Cutting".
+ * - Dart Width: Waist: Information pulled from pattern charts in some patternmaking systems, such as Winifred P. Aldrich's "Metric Pattern Cutting".
+ * 
+ * Note: Variables and functions cannot be used directly in this function because the lupdate tool does not recognize strings 
+ * contained within variables, which prevents those strings from being marked for translation.
+ */
 void VTranslateMeasurements::InitGroupQ()
 {
     //Note. We can't use here function and variables because lupdate tool doesn't see string in variables and doesn't
