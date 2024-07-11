@@ -231,7 +231,7 @@ jobs:
       - name: sign installer
         env:
           PFX_BASE64: ${{ secrets.pfx_base64 }}
-        if: ${{ env.PFX_BASE64 }}
+        if: false # temporarily disable signing until #1104 is solved, then revert to ${{ env.PFX_BASE64 }}        run: |
         run: |
           cd ..\windows-build\
           SignTool sign /fd SHA256 /f ${{ steps.setup_signing.outputs.filePath }} /p ${{ secrets.pfx_password }} /t http://timestamp.sectigo.com Seamly2D-installer.exe
