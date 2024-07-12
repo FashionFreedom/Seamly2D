@@ -58,6 +58,7 @@
 #include <QBrush>
 #include <QIcon>
 #include <QMap>
+#include <QObject>
 #include <QPainter>
 #include <QPen>
 #include <QPixmap>
