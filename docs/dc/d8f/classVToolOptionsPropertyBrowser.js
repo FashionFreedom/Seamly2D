@@ -7,6 +7,7 @@ var classVToolOptionsPropertyBrowser =
     [ "addPropertyCrossPoint", "dc/d8f/classVToolOptionsPropertyBrowser.html#a3a2e79f4f4b3f0736b2365334225c46a", null ],
     [ "addPropertyCurveLineType", "dc/d8f/classVToolOptionsPropertyBrowser.html#a8b7ee3d9ada5ba304d0a00bf2df40807", null ],
     [ "addPropertyCurveName", "dc/d8f/classVToolOptionsPropertyBrowser.html#a2cb6df54cbfb86aca3adb1eb2ae0ef14", null ],
+    [ "addPropertyDirection", "dc/d8f/classVToolOptionsPropertyBrowser.html#a32a6228b387b0d3eaed6fdb35712e445", null ],
     [ "addPropertyFormula", "dc/d8f/classVToolOptionsPropertyBrowser.html#abdaeef46d0e5e4c1ad393bf473f418e3", null ],
     [ "addPropertyHCrossPoint", "dc/d8f/classVToolOptionsPropertyBrowser.html#a93916662ec70e17bd9a5a0670579e5bd", null ],
     [ "addPropertyLabel", "dc/d8f/classVToolOptionsPropertyBrowser.html#a9eabec9402ec6bb4342db65452428fc8", null ],

@@ -16,6 +16,10 @@ var def_8h =
     [ "SceneSize", "d4/da4/def_8h.html#a8084f95d171e33ef73bf44aed20a4378", null ],
     [ "V_FALLTHROUGH", "d4/da4/def_8h.html#a380cf399715eea06631207dd0f18de71", null ],
     [ "ToolVisHolderType", "d4/da4/def_8h.html#acb16ac88f43c4dcfdc9e43baf22da452", null ],
+    [ "Direction", "d4/da4/def_8h.html#a1b2993a5d049d3ac565a9a8d0209084a", [
+      [ "Forward", "d4/da4/def_8h.html#a1b2993a5d049d3ac565a9a8d0209084aa67d2f6740a8eaebf4d5c6f79be8da481", null ],
+      [ "Backward", "d4/da4/def_8h.html#a1b2993a5d049d3ac565a9a8d0209084aab3263eb38f8903efc271cc7a760da510", null ]
+    ] ],
     [ "GHeights", "d4/da4/def_8h.html#a4b7c0f8c2e84b979340816a0d8e6767c", [
       [ "ALL", "d4/da4/def_8h.html#a4b7c0f8c2e84b979340816a0d8e6767ca5fb1f955b45e38e31789286a1790398d", null ],
       [ "H50", "d4/da4/def_8h.html#a4b7c0f8c2e84b979340816a0d8e6767cad1b0e30914a2c99c4d610fbc7affbd63", null ],
@@ -351,6 +355,7 @@ var def_8h =
     [ "convertToSet", "d4/da4/def_8h.html#a6b9749227c2564c8dbbfa13237418429", null ],
     [ "convertToSet", "d4/da4/def_8h.html#a3d3286b5877ab04c2718a0054be0c9ea", null ],
     [ "darkenPixmap", "d4/da4/def_8h.html#a3f58bf4b46e94f75893d1e8005582a80", null ],
+    [ "directionToString", "d4/da4/def_8h.html#a2e4bae6ace9ea7638b5174f65c4bb4c2", null ],
     [ "fileDialog", "d4/da4/def_8h.html#a58e50c3dcf5e9d809ad9f6f4a64f254c", null ],
     [ "FromPixel", "d4/da4/def_8h.html#ad344c39a9d756b7ae9a7c0fb7ab4767b", null ],
     [ "GetMinPrinterFields", "d4/da4/def_8h.html#add7320b6951a9336f34f515402f29388", null ],
@@ -367,6 +372,7 @@ var def_8h =
     [ "RelativeMPath", "d4/da4/def_8h.html#a70500634183359838388ccd270379787", null ],
     [ "SetItemOverrideCursor", "d4/da4/def_8h.html#ac50ba30a64d21ea38312134c435a5a34", null ],
     [ "ShowInGraphicalShell", "d4/da4/def_8h.html#a7b1907f9df8d8f726641e41137e42fe9", null ],
+    [ "stringToDirection", "d4/da4/def_8h.html#a0f5ef2298723cb5f383b195f71422bc3", null ],
     [ "stringToNotchSubType", "d4/da4/def_8h.html#afe3d74de98705f0a262de22f028cbb1d", null ],
     [ "stringToNotchType", "d4/da4/def_8h.html#ade9d3157f89470d2e21387fd88334fd9", null ],
     [ "strippedName", "d4/da4/def_8h.html#a87d0bbeb72fd3f881aec730edcfb9248", null ],

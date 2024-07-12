@@ -446,6 +446,7 @@ var hierarchy =
       [ "VLayoutGenerator", "d8/d8a/classVLayoutGenerator.html", null ],
       [ "VPE::VProperty", "db/df9/classVPE_1_1VProperty.html", [
         [ "VFormulaProperty", "df/d53/classVFormulaProperty.html", null ],
+        [ "VPE::DirectionProperty", "df/d74/classVPE_1_1DirectionProperty.html", null ],
         [ "VPE::LineTypeProperty", "d5/daa/classVPE_1_1LineTypeProperty.html", null ],
         [ "VPE::LineWeightProperty", "d8/ddf/classVPE_1_1LineWeightProperty.html", null ],
         [ "VPE::PlainTextProperty", "d6/d0b/classVPE_1_1PlainTextProperty.html", null ],

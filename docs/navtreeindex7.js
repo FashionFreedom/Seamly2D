@@ -1,5 +1,14 @@
 var NAVTREEINDEX7 =
 {
+"d1/de7/classVGObject.html#a1a0486d2fe696c580a1c4d31c7097eb0":[1,0,289,31],
+"d1/de7/classVGObject.html#a1e04049160703519875f9647f238eb9c":[1,0,289,5],
+"d1/de7/classVGObject.html#a1ef91cb41647e4bd5a93da616ed5e645":[1,0,289,6],
+"d1/de7/classVGObject.html#a26474388e3837e3984bf52543aede141":[1,0,289,24],
+"d1/de7/classVGObject.html#a290ccb753f6a061bbb263d6c2879dfdf":[1,0,289,0],
+"d1/de7/classVGObject.html#a2c4ba515566c606663ce28ca67e01933":[1,0,289,9],
+"d1/de7/classVGObject.html#a3015e9c2e0dda69cd4a81e1f25dc1263":[1,0,289,26],
+"d1/de7/classVGObject.html#a3ffc95524099af4edd57b017863fed61":[1,0,289,27],
+"d1/de7/classVGObject.html#a4a0e1a72e7f0a197c5e4e24336350e4f":[1,0,289,11],
 "d1/de7/classVGObject.html#a502259e60c007a3ad11a738151aa1c0b":[1,0,289,23],
 "d1/de7/classVGObject.html#a503181efc48d49b416daca9480c15793":[1,0,289,20],
 "d1/de7/classVGObject.html#a5b3e92a581ef188fa7dd2977f3c5c3e8":[1,0,289,2],
@@ -110,6 +119,8 @@ var NAVTREEINDEX7 =
 "d2/d16/classCustomVariable.html#afcdb07983871174bb116373b95e726bb":[1,0,26,5],
 "d2/d18/vexceptionemptyparameter_8h.html":[2,0,0,1,1,0,7],
 "d2/d18/vexceptionemptyparameter_8h_source.html":[2,0,0,1,1,0,7],
+"d2/d1d/direction__property_8cpp.html":[2,0,0,1,11,0,1],
+"d2/d1d/direction__property_8cpp_source.html":[2,0,0,1,11,0,1],
 "d2/d1e/custom__variable_8cpp.html":[2,0,0,1,10,1,0],
 "d2/d1e/custom__variable_8cpp_source.html":[2,0,0,1,10,1,0],
 "d2/d21/classVisToolEndLine.html":[1,0,313],
@@ -238,16 +249,5 @@ var NAVTREEINDEX7 =
 "d2/d43/classDialogLineIntersectAxis.html#aa5772a41b7cc2c271aba7ca9cd89a8dc":[1,0,57,0],
 "d2/d43/classDialogLineIntersectAxis.html#aacbadf2597ec36102a4c41a5068206fb":[1,0,57,23],
 "d2/d43/classDialogLineIntersectAxis.html#aadcd4880d38bb8e18f09618d3b00bc5f":[1,0,57,29],
-"d2/d43/classDialogLineIntersectAxis.html#ac21153318d65941e67dfdbf782b8976c":[1,0,57,26],
-"d2/d43/classDialogLineIntersectAxis.html#ac8b0e0fbf7967d35cf7455c9b0bf3009":[1,0,57,8],
-"d2/d43/classDialogLineIntersectAxis.html#ac933cda9aeb76385ecf7b268a8afc4ec":[1,0,57,30],
-"d2/d43/classDialogLineIntersectAxis.html#ad3d87c4fc4c5e409e114c1698d24eb91":[1,0,57,21],
-"d2/d43/classDialogLineIntersectAxis.html#ad6ff2df6df12b3488c128e4d9f7a430b":[1,0,57,5],
-"d2/d43/classDialogLineIntersectAxis.html#ae8f7a2a4697a457e2a9b0234d7e6edff":[1,0,57,11],
-"d2/d43/classDialogLineIntersectAxis.html#aedb8c2a38620e08ffc1b780493b258fe":[1,0,57,1],
-"d2/d43/tst__vcommandline_8h.html":[2,0,0,2,2,20],
-"d2/d43/tst__vcommandline_8h_source.html":[2,0,0,2,2,20],
-"d2/d44/classVArcData.html":[1,0,246],
-"d2/d44/classVArcData.html#a169efe9da229f24813f5a353bc87be71":[1,0,246,5],
-"d2/d44/classVArcData.html#a5452fb8d7e6823ba87886157e0805d0b":[1,0,246,0]
+"d2/d43/classDialogLineIntersectAxis.html#ac21153318d65941e67dfdbf782b8976c":[1,0,57,26]
 };

@@ -1077,33 +1077,36 @@ var sectionId = 'dynsection-0';
 <g id="node22" class="node">
 <title>Node22</title>
 <g id="a_node22"><a xlink:href="../../d0/d8a/classVToolCut.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1155,-441 1155,-652 1299,-652 1299,-441 1155,-441"/>
-<text text-anchor="middle" x="1227" y="-640" font-family="Helvetica,sans-Serif" font-size="10.00">VToolCut</text>
-<polyline fill="none" stroke="black" points="1155,-633 1299,-633 "/>
-<text text-anchor="start" x="1163" y="-621" font-family="Helvetica,sans-Serif" font-size="10.00"># formula</text>
-<text text-anchor="start" x="1163" y="-610" font-family="Helvetica,sans-Serif" font-size="10.00"># curveCutId</text>
-<text text-anchor="start" x="1163" y="-599" font-family="Helvetica,sans-Serif" font-size="10.00"># m_piecesMode</text>
-<polyline fill="none" stroke="black" points="1155,-592 1299,-592 "/>
-<text text-anchor="start" x="1163" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ VToolCut()</text>
-<text text-anchor="start" x="1163" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1163" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormula()</text>
-<text text-anchor="start" x="1163" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormula()</text>
-<text text-anchor="start" x="1163" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ CurveName()</text>
-<text text-anchor="start" x="1163" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ getCurveCutId()</text>
-<text text-anchor="start" x="1163" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCurveCutId()</text>
-<text text-anchor="start" x="1163" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ Disable()</text>
-<text text-anchor="start" x="1163" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">+ piecesMode()</text>
-<text text-anchor="start" x="1163" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromFile()</text>
-<text text-anchor="start" x="1163" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00"># RefreshGeometry()</text>
-<text text-anchor="start" x="1163" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="1163" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowToolVisualization()</text>
+<polygon fill="white" stroke="black" points="1155,-424.5 1155,-668.5 1299,-668.5 1299,-424.5 1155,-424.5"/>
+<text text-anchor="middle" x="1227" y="-656.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolCut</text>
+<polyline fill="none" stroke="black" points="1155,-649.5 1299,-649.5 "/>
+<text text-anchor="start" x="1163" y="-637.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_direction</text>
+<text text-anchor="start" x="1163" y="-626.5" font-family="Helvetica,sans-Serif" font-size="10.00"># formula</text>
+<text text-anchor="start" x="1163" y="-615.5" font-family="Helvetica,sans-Serif" font-size="10.00"># curveCutId</text>
+<text text-anchor="start" x="1163" y="-604.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_piecesMode</text>
+<polyline fill="none" stroke="black" points="1155,-597.5 1299,-597.5 "/>
+<text text-anchor="start" x="1163" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VToolCut()</text>
+<text text-anchor="start" x="1163" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1163" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormula()</text>
+<text text-anchor="start" x="1163" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormula()</text>
+<text text-anchor="start" x="1163" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CurveName()</text>
+<text text-anchor="start" x="1163" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getCurveCutId()</text>
+<text text-anchor="start" x="1163" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCurveCutId()</text>
+<text text-anchor="start" x="1163" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDirection()</text>
+<text text-anchor="start" x="1163" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDirection()</text>
+<text text-anchor="start" x="1163" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Disable()</text>
+<text text-anchor="start" x="1163" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ piecesMode()</text>
+<text text-anchor="start" x="1163" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromFile()</text>
+<text text-anchor="start" x="1163" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RefreshGeometry()</text>
+<text text-anchor="start" x="1163" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="1163" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowToolVisualization()</text>
 </a>
 </g>
 </g>
 <!-- Node16&#45;&gt;Node22 -->
 <g id="edge21" class="edge">
 <title>Node16&#45;&gt;Node22</title>
-<path fill="none" stroke="midnightblue" d="M1269.81,-794.38C1261.31,-745.33 1252.52,-694.64 1245.13,-652.05"/>
+<path fill="none" stroke="midnightblue" d="M1269.83,-794.49C1262.4,-751.6 1254.74,-707.45 1247.99,-668.55"/>
 <polygon fill="none" stroke="midnightblue" points="1266.41,-795.24 1271.57,-804.49 1273.31,-794.04 1266.41,-795.24"/>
 </g>
 <!-- Node26 -->
@@ -1481,8 +1484,8 @@ var sectionId = 'dynsection-0';
 <!-- Node22&#45;&gt;Node23 -->
 <g id="edge22" class="edge">
 <title>Node22&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M1198.86,-431.23C1186.7,-403.3 1169.44,-376.22 1145,-358 1040.53,-280.09 959.08,-399.08 854,-322 830.12,-304.48 813.86,-277.27 802.87,-250.22"/>
-<polygon fill="none" stroke="midnightblue" points="1195.74,-432.83 1202.79,-440.73 1202.2,-430.15 1195.74,-432.83"/>
+<path fill="none" stroke="midnightblue" d="M1191.11,-414.98C1179.66,-393.03 1164.65,-372.65 1145,-358 1040.53,-280.09 959.08,-399.08 854,-322 830.12,-304.48 813.86,-277.27 802.87,-250.22"/>
+<polygon fill="none" stroke="midnightblue" points="1188.07,-416.72 1195.65,-424.13 1194.34,-413.61 1188.07,-416.72"/>
 </g>
 <!-- Node24 -->
 <g id="node24" class="node">
@@ -1512,8 +1515,8 @@ var sectionId = 'dynsection-0';
 <!-- Node22&#45;&gt;Node24 -->
 <g id="edge23" class="edge">
 <title>Node22&#45;&gt;Node24</title>
-<path fill="none" stroke="midnightblue" d="M1196.58,-431.38C1184.48,-404.05 1167.81,-377.25 1145,-358 1094.25,-315.18 1051.08,-364.42 1000,-322 979.21,-304.74 964.07,-280.29 953.16,-255.68"/>
-<polygon fill="none" stroke="midnightblue" points="1193.39,-432.82 1200.51,-440.66 1199.83,-430.09 1193.39,-432.82"/>
+<path fill="none" stroke="midnightblue" d="M1188.63,-414.85C1177.45,-393.47 1163.18,-373.34 1145,-358 1094.25,-315.18 1051.08,-364.42 1000,-322 979.21,-304.74 964.07,-280.29 953.16,-255.68"/>
+<polygon fill="none" stroke="midnightblue" points="1185.63,-416.69 1193.23,-424.08 1191.9,-413.57 1185.63,-416.69"/>
 </g>
 <!-- Node25 -->
 <g id="node25" class="node">
@@ -1544,8 +1547,8 @@ var sectionId = 'dynsection-0';
 <!-- Node22&#45;&gt;Node25 -->
 <g id="edge24" class="edge">
 <title>Node22&#45;&gt;Node25</title>
-<path fill="none" stroke="midnightblue" d="M1181.29,-431.66C1159.54,-377.49 1133.77,-313.33 1112.83,-261.18"/>
-<polygon fill="none" stroke="midnightblue" points="1178.05,-432.98 1185.02,-440.96 1184.54,-430.38 1178.05,-432.98"/>
+<path fill="none" stroke="midnightblue" d="M1174.64,-415.1C1154.42,-364.76 1131.68,-308.12 1112.84,-261.21"/>
+<polygon fill="none" stroke="midnightblue" points="1171.4,-416.45 1178.38,-424.42 1177.9,-413.84 1171.4,-416.45"/>
 </g>
 <!-- Node28 -->
 <g id="node28" class="node">

@@ -1,7 +1,7 @@
 var classVToolCutArc =
 [
-    [ "VToolCutArc", "d1/d98/classVToolCutArc.html#a7bc035d60ec10b0b7c643695ce89f476", null ],
-    [ "Create", "d1/d98/classVToolCutArc.html#a681e82539c8ef8820eda8b90d0b90c5a", null ],
+    [ "VToolCutArc", "d1/d98/classVToolCutArc.html#a6355f01cdd99141b00468d6bbd362c6a", null ],
+    [ "Create", "d1/d98/classVToolCutArc.html#a69d728393495ec62e0b92bd4bfa2f030", null ],
     [ "Create", "d1/d98/classVToolCutArc.html#a5806f839dc8b4b5085685fd294603e52", null ],
     [ "makeToolTip", "d1/d98/classVToolCutArc.html#afbe13f6de9bce835f71bfa6aca585089", null ],
     [ "ReadToolAttributes", "d1/d98/classVToolCutArc.html#aa7084d6ee20b7dd54f104934dbdc2294", null ],

@@ -504,100 +504,106 @@ var sectionId = 'dynsection-0';
 <g id="node12" class="node">
 <title>Node12</title>
 <g id="a_node12"><a xlink:href="../../d9/d64/classDialogCutArc.html" target="_top" xlink:title="The DialogCutArc class dialog for ToolCutArc.">
-<polygon fill="white" stroke="black" points="1479.5,-204 1479.5,-426 1628.5,-426 1628.5,-204 1479.5,-204"/>
-<text text-anchor="middle" x="1554" y="-414" font-family="Helvetica,sans-Serif" font-size="10.00">DialogCutArc</text>
-<polyline fill="none" stroke="black" points="1479.5,-407 1628.5,-407 "/>
-<text text-anchor="start" x="1487.5" y="-395" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="1487.5" y="-384" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formula</text>
-<text text-anchor="start" x="1487.5" y="-373" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeight</text>
-<polyline fill="none" stroke="black" points="1479.5,-366 1628.5,-366 "/>
-<text text-anchor="start" x="1487.5" y="-354" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogCutArc()</text>
-<text text-anchor="start" x="1487.5" y="-343" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogCutArc()</text>
-<text text-anchor="start" x="1487.5" y="-332" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPointName()</text>
-<text text-anchor="start" x="1487.5" y="-321" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormula()</text>
-<text text-anchor="start" x="1487.5" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormula()</text>
-<text text-anchor="start" x="1487.5" y="-299" font-family="Helvetica,sans-Serif" font-size="10.00">+ getArcId()</text>
-<text text-anchor="start" x="1487.5" y="-288" font-family="Helvetica,sans-Serif" font-size="10.00">+ setArcId()</text>
-<text text-anchor="start" x="1487.5" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
-<text text-anchor="start" x="1487.5" y="-266" font-family="Helvetica,sans-Serif" font-size="10.00">+ DeployFormulaTextEdit()</text>
-<text text-anchor="start" x="1487.5" y="-255" font-family="Helvetica,sans-Serif" font-size="10.00">+ FormulaTextChanged()</text>
-<text text-anchor="start" x="1487.5" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">+ FXLength()</text>
-<text text-anchor="start" x="1487.5" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
-<text text-anchor="start" x="1487.5" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
-<text text-anchor="start" x="1487.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
+<polygon fill="white" stroke="black" points="1479.5,-193 1479.5,-437 1628.5,-437 1628.5,-193 1479.5,-193"/>
+<text text-anchor="middle" x="1554" y="-425" font-family="Helvetica,sans-Serif" font-size="10.00">DialogCutArc</text>
+<polyline fill="none" stroke="black" points="1479.5,-418 1628.5,-418 "/>
+<text text-anchor="start" x="1487.5" y="-406" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="1487.5" y="-395" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formula</text>
+<text text-anchor="start" x="1487.5" y="-384" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeight</text>
+<polyline fill="none" stroke="black" points="1479.5,-377 1628.5,-377 "/>
+<text text-anchor="start" x="1487.5" y="-365" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogCutArc()</text>
+<text text-anchor="start" x="1487.5" y="-354" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogCutArc()</text>
+<text text-anchor="start" x="1487.5" y="-343" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPointName()</text>
+<text text-anchor="start" x="1487.5" y="-332" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDirection()</text>
+<text text-anchor="start" x="1487.5" y="-321" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDirection()</text>
+<text text-anchor="start" x="1487.5" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormula()</text>
+<text text-anchor="start" x="1487.5" y="-299" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormula()</text>
+<text text-anchor="start" x="1487.5" y="-288" font-family="Helvetica,sans-Serif" font-size="10.00">+ getArcId()</text>
+<text text-anchor="start" x="1487.5" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">+ setArcId()</text>
+<text text-anchor="start" x="1487.5" y="-266" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
+<text text-anchor="start" x="1487.5" y="-255" font-family="Helvetica,sans-Serif" font-size="10.00">+ DeployFormulaTextEdit()</text>
+<text text-anchor="start" x="1487.5" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">+ FormulaTextChanged()</text>
+<text text-anchor="start" x="1487.5" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">+ FXLength()</text>
+<text text-anchor="start" x="1487.5" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
+<text text-anchor="start" x="1487.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
+<text text-anchor="start" x="1487.5" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node12 -->
 <g id="edge11" class="edge">
 <title>Node1&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M3637.74,-1003.55C3268.29,-986.33 1935.81,-905.75 1637,-630 1581.27,-578.57 1561.19,-494.5 1554.68,-426.29"/>
+<path fill="none" stroke="midnightblue" d="M3637.74,-1003.55C3268.29,-986.33 1935.81,-905.75 1637,-630 1584.17,-581.24 1563.37,-503.17 1555.81,-437.07"/>
 <polygon fill="none" stroke="midnightblue" points="3637.72,-1007.06 3647.87,-1004.02 3638.04,-1000.06 3637.72,-1007.06"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
 <g id="a_node13"><a xlink:href="../../d0/dd9/classDialogCutSpline.html" target="_top" xlink:title="The DialogCutSpline class dialog for ToolCutSpline.">
-<polygon fill="white" stroke="black" points="1646.5,-209.5 1646.5,-420.5 1795.5,-420.5 1795.5,-209.5 1646.5,-209.5"/>
-<text text-anchor="middle" x="1721" y="-408.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogCutSpline</text>
-<polyline fill="none" stroke="black" points="1646.5,-401.5 1795.5,-401.5 "/>
-<text text-anchor="start" x="1654.5" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="1654.5" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formula</text>
-<text text-anchor="start" x="1654.5" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeight</text>
-<polyline fill="none" stroke="black" points="1646.5,-360.5 1795.5,-360.5 "/>
-<text text-anchor="start" x="1654.5" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogCutSpline()</text>
-<text text-anchor="start" x="1654.5" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogCutSpline()</text>
-<text text-anchor="start" x="1654.5" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPointName()</text>
-<text text-anchor="start" x="1654.5" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormula()</text>
-<text text-anchor="start" x="1654.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormula()</text>
-<text text-anchor="start" x="1654.5" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSplineId()</text>
-<text text-anchor="start" x="1654.5" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSplineId()</text>
-<text text-anchor="start" x="1654.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
-<text text-anchor="start" x="1654.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DeployFormulaTextEdit()</text>
-<text text-anchor="start" x="1654.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FXLength()</text>
-<text text-anchor="start" x="1654.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
-<text text-anchor="start" x="1654.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
-<text text-anchor="start" x="1654.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
+<polygon fill="white" stroke="black" points="1646.5,-198.5 1646.5,-431.5 1795.5,-431.5 1795.5,-198.5 1646.5,-198.5"/>
+<text text-anchor="middle" x="1721" y="-419.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogCutSpline</text>
+<polyline fill="none" stroke="black" points="1646.5,-412.5 1795.5,-412.5 "/>
+<text text-anchor="start" x="1654.5" y="-400.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="1654.5" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formula</text>
+<text text-anchor="start" x="1654.5" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeight</text>
+<polyline fill="none" stroke="black" points="1646.5,-371.5 1795.5,-371.5 "/>
+<text text-anchor="start" x="1654.5" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogCutSpline()</text>
+<text text-anchor="start" x="1654.5" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogCutSpline()</text>
+<text text-anchor="start" x="1654.5" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPointName()</text>
+<text text-anchor="start" x="1654.5" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDirection()</text>
+<text text-anchor="start" x="1654.5" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDirection()</text>
+<text text-anchor="start" x="1654.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormula()</text>
+<text text-anchor="start" x="1654.5" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormula()</text>
+<text text-anchor="start" x="1654.5" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSplineId()</text>
+<text text-anchor="start" x="1654.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSplineId()</text>
+<text text-anchor="start" x="1654.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
+<text text-anchor="start" x="1654.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DeployFormulaTextEdit()</text>
+<text text-anchor="start" x="1654.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FXLength()</text>
+<text text-anchor="start" x="1654.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
+<text text-anchor="start" x="1654.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
+<text text-anchor="start" x="1654.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node13 -->
 <g id="edge12" class="edge">
 <title>Node1&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M3637.73,-1001.93C3287.26,-979.55 2075.88,-884.71 1804,-630 1747.21,-576.8 1727.53,-489.71 1721.45,-420.73"/>
+<path fill="none" stroke="midnightblue" d="M3637.73,-1001.93C3287.26,-979.55 2075.88,-884.71 1804,-630 1750.2,-579.59 1729.7,-498.77 1722.53,-431.74"/>
 <polygon fill="none" stroke="midnightblue" points="3637.64,-1005.43 3647.84,-1002.57 3638.09,-998.45 3637.64,-1005.43"/>
 </g>
 <!-- Node14 -->
 <g id="node14" class="node">
 <title>Node14</title>
 <g id="a_node14"><a xlink:href="../../d8/d15/classDialogCutSplinePath.html" target="_top" xlink:title="The DialogCutSplinePath class dialog for ToolCutSplinePath.">
-<polygon fill="white" stroke="black" points="1813.5,-209.5 1813.5,-420.5 1962.5,-420.5 1962.5,-209.5 1813.5,-209.5"/>
-<text text-anchor="middle" x="1888" y="-408.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogCutSplinePath</text>
-<polyline fill="none" stroke="black" points="1813.5,-401.5 1962.5,-401.5 "/>
-<text text-anchor="start" x="1821.5" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="1821.5" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formula</text>
-<text text-anchor="start" x="1821.5" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeight</text>
-<polyline fill="none" stroke="black" points="1813.5,-360.5 1962.5,-360.5 "/>
-<text text-anchor="start" x="1821.5" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogCutSplinePath()</text>
-<text text-anchor="start" x="1821.5" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogCutSplinePath()</text>
-<text text-anchor="start" x="1821.5" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPointName()</text>
-<text text-anchor="start" x="1821.5" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormula()</text>
-<text text-anchor="start" x="1821.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormula()</text>
-<text text-anchor="start" x="1821.5" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSplinePathId()</text>
-<text text-anchor="start" x="1821.5" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSplinePathId()</text>
-<text text-anchor="start" x="1821.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
-<text text-anchor="start" x="1821.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DeployFormulaTextEdit()</text>
-<text text-anchor="start" x="1821.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FXLength()</text>
-<text text-anchor="start" x="1821.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
-<text text-anchor="start" x="1821.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
-<text text-anchor="start" x="1821.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
+<polygon fill="white" stroke="black" points="1813.5,-198.5 1813.5,-431.5 1962.5,-431.5 1962.5,-198.5 1813.5,-198.5"/>
+<text text-anchor="middle" x="1888" y="-419.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogCutSplinePath</text>
+<polyline fill="none" stroke="black" points="1813.5,-412.5 1962.5,-412.5 "/>
+<text text-anchor="start" x="1821.5" y="-400.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="1821.5" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formula</text>
+<text text-anchor="start" x="1821.5" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeight</text>
+<polyline fill="none" stroke="black" points="1813.5,-371.5 1962.5,-371.5 "/>
+<text text-anchor="start" x="1821.5" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogCutSplinePath()</text>
+<text text-anchor="start" x="1821.5" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogCutSplinePath()</text>
+<text text-anchor="start" x="1821.5" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPointName()</text>
+<text text-anchor="start" x="1821.5" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDirection()</text>
+<text text-anchor="start" x="1821.5" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDirection()</text>
+<text text-anchor="start" x="1821.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormula()</text>
+<text text-anchor="start" x="1821.5" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormula()</text>
+<text text-anchor="start" x="1821.5" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSplinePathId()</text>
+<text text-anchor="start" x="1821.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSplinePathId()</text>
+<text text-anchor="start" x="1821.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
+<text text-anchor="start" x="1821.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DeployFormulaTextEdit()</text>
+<text text-anchor="start" x="1821.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FXLength()</text>
+<text text-anchor="start" x="1821.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
+<text text-anchor="start" x="1821.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
+<text text-anchor="start" x="1821.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node14 -->
 <g id="edge13" class="edge">
 <title>Node1&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M3637.92,-1000.03C3307.53,-972.19 2216.15,-863.8 1971,-630 1914.79,-576.39 1895.04,-489.56 1888.79,-420.78"/>
+<path fill="none" stroke="midnightblue" d="M3637.92,-1000.03C3307.53,-972.19 2216.15,-863.8 1971,-630 1917.75,-579.22 1897.22,-498.61 1889.89,-431.79"/>
 <polygon fill="none" stroke="midnightblue" points="3637.68,-1003.52 3647.94,-1000.87 3638.27,-996.55 3637.68,-1003.52"/>
 </g>
 <!-- Node15 -->

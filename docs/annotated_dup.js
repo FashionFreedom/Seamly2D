@@ -22,6 +22,7 @@ var annotated_dup =
       [ "CheckableMessageBox", "dd/dc4/classUtils_1_1CheckableMessageBox.html", "dd/dc4/classUtils_1_1CheckableMessageBox" ]
     ] ],
     [ "VPE", "de/d21/namespaceVPE.html", [
+      [ "DirectionProperty", "df/d74/classVPE_1_1DirectionProperty.html", "df/d74/classVPE_1_1DirectionProperty" ],
       [ "LineWeightProperty", "d8/ddf/classVPE_1_1LineWeightProperty.html", "d8/ddf/classVPE_1_1LineWeightProperty" ],
       [ "PlainTextProperty", "d6/d0b/classVPE_1_1PlainTextProperty.html", "d6/d0b/classVPE_1_1PlainTextProperty" ],
       [ "VBoolProperty", "df/d02/classVPE_1_1VBoolProperty.html", "df/d02/classVPE_1_1VBoolProperty" ],

@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"d0/d91/measurements__def_8h.html#a83a8d73b968178bee6e47a329e8bcf85":[2,0,0,1,10,5,230],
+"d0/d91/measurements__def_8h.html#a83aa60c4d6479c3f870d591ad9196cf2":[2,0,0,1,10,5,29],
+"d0/d91/measurements__def_8h.html#a83ee941b575892ef86b979be5e91646e":[2,0,0,1,10,5,172],
 "d0/d91/measurements__def_8h.html#a84526ae2653681d40cfe6a1a8511575f":[2,0,0,1,10,5,0],
 "d0/d91/measurements__def_8h.html#a855928e88ae3f0cfb5a9bc15f73fa8f7":[2,0,0,1,10,5,13],
 "d0/d91/measurements__def_8h.html#a87d4daa9375e0becbbe34ab4dc24f589":[2,0,0,1,10,5,92],
@@ -139,8 +142,8 @@ var NAVTREEINDEX2 =
 "d0/d91/measurements__def_8h_source.html":[2,0,0,1,10,5],
 "d0/d93/individual__size__converter_8h.html":[2,0,0,1,1,1,5],
 "d0/d93/individual__size__converter_8h_source.html":[2,0,0,1,1,1,5],
-"d0/d93/vobjectproperty_8h.html":[2,0,0,1,11,0,30],
-"d0/d93/vobjectproperty_8h_source.html":[2,0,0,1,11,0,30],
+"d0/d93/vobjectproperty_8h.html":[2,0,0,1,11,0,32],
+"d0/d93/vobjectproperty_8h_source.html":[2,0,0,1,11,0,32],
 "d0/d9a/vabstractmainwindow_8h.html":[2,0,0,1,14,36],
 "d0/d9a/vabstractmainwindow_8h_source.html":[2,0,0,1,14,36],
 "d0/d9a/vpropertydelegate_8h.html":[2,0,0,1,11,12],
@@ -246,8 +249,5 @@ var NAVTREEINDEX2 =
 "d0/dab/classVPiece.html#a7891c795349eaa692aa8c65316fc60da":[1,0,366,5],
 "d0/dab/classVPiece.html#a7b3346f5cbebff66dd4e8f908ba4d62b":[1,0,366,50],
 "d0/dab/classVPiece.html#a7cf8d1dff45a2948315327351f1e0e4a":[1,0,366,19],
-"d0/dab/classVPiece.html#a84ef5d6f411e53506b166308b312f6f5":[1,0,366,63],
-"d0/dab/classVPiece.html#a84f3eb9ca46ef0775d8cc60170c24bff":[1,0,366,45],
-"d0/dab/classVPiece.html#a85ff9c8d58ab81997d1f292c29860750":[1,0,366,51],
-"d0/dab/classVPiece.html#a8d0ada81223a2ee5f2c3040283555afe":[1,0,366,57]
+"d0/dab/classVPiece.html#a84ef5d6f411e53506b166308b312f6f5":[1,0,366,63]
 };
