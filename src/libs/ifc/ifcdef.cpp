@@ -58,13 +58,13 @@
 #include <QBrush>
 #include <QIcon>
 #include <QMap>
+#include <QObject>
 #include <QPainter>
 #include <QPen>
 #include <QPixmap>
 #include <QString>
 
 #include "../vmisc/diagnostic.h"
-#include "qobject.h"
 
 const QString CustomMSign    = QStringLiteral("@");
 const QString CustomIncrSign = QStringLiteral("#");
