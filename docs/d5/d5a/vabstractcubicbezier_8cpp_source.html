@@ -98,47 +98,47 @@ $(document).ready(function(){initNavTree('d5/d5a/vabstractcubicbezier_8cpp_sourc
 </div><!--header-->
 <div class="contents">
 <a href="../../d5/d5a/vabstractcubicbezier_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **  @file   vabstractcubicbezier.cpp</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **  @author Douglas S Caskey</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **  @date   17 Sep, 2023</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> **  @copyright</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **  Copyright (C) 2017 - 2023 Seamly, LLC</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **  https://github.com/fashionfreedom/seamly2d</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> **  @brief</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> **  (at your option) any later version.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> **  GNU General Public License for more details.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> **  You should have received a copy of the GNU General Public License</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> **  along with Seamly2D. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> **************************************************************************/</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *                                                                         *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *   Copyright (C) 2017  Seamly, LLC                                       *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                                                                         *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *   https://github.com/fashionfreedom/seamly2d                             *</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *                                                                         *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> ***************************************************************************</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> **  (at your option) any later version.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> **  GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> **  You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> **  along with Seamly2D.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> **************************************************************************</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> ************************************************************************</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> **</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> **  @file   vabstractcubicbezier.cpp</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> **  @author Roman Telezhynskyi &lt;dismine(at)gmail.com&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> **  @date   8 3, 2016</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> **</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> **  @brief</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> **  @copyright</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> **  This source code is part of the Valentina project, a pattern making</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> **  This source code is part of the Valentine project, a pattern making</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> **  program, whose allow create and modeling patterns of clothing.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> **  Copyright (C) 2016 Valentina project</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> **  &lt;https://bitbucket.org/dismine/valentina&gt; All Rights Reserved.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> **  Copyright (C) 2016 Seamly2D project</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> **  &lt;https://github.com/fashionfreedom/seamly2d&gt; All Rights Reserved.</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **  Valentina is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> **  (at your option) any later version.</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **  Valentina is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> **  GNU General Public License for more details.</span></div>
@@ -335,7 +335,7 @@ $(document).ready(function(){initNavTree('d5/d5a/vabstractcubicbezier_8cpp_sourc
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment"> * @param py list у coordinat spline points.</span></div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00238"></a><span class="lineno"><a class="line" href="../../dd/d51/classVAbstractCubicBezier.html#ad7ecdd5b74c1e2468b0a9a20d3cbafc0">  238</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d51/classVAbstractCubicBezier.html#ad7ecdd5b74c1e2468b0a9a20d3cbafc0">VAbstractCubicBezier::PointBezier_r</a>(qreal x1, qreal y1, qreal x2, qreal y2, qreal x3, qreal y3, qreal x4, qreal y4,</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                                         qint16 level, <a class="code" href="../../d5/dc2/classQVector.html">QVector&lt;qreal&gt;</a> &amp;px, <a class="code" href="../../d5/dc2/classQVector.html">QVector&lt;qreal&gt;</a> &amp;py)</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                                         qint16 level, QVector&lt;qreal&gt; &amp;px, QVector&lt;qreal&gt; &amp;py)</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;{</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">if</span> (px.size() &gt;= 2)</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    {</div>
@@ -630,14 +630,14 @@ $(document).ready(function(){initNavTree('d5/d5a/vabstractcubicbezier_8cpp_sourc
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;<span class="comment"> * @param p4 last spline point.</span></div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;<span class="comment"> * @return list of points.</span></div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00534"></a><span class="lineno"><a class="line" href="../../dd/d51/classVAbstractCubicBezier.html#aa86affaf553069238c7b3a54926668d3">  534</a></span>&#160;<a class="code" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> <a class="code" href="../../dd/d51/classVAbstractCubicBezier.html#aa86affaf553069238c7b3a54926668d3">VAbstractCubicBezier::GetCubicBezierPoints</a>(<span class="keyword">const</span> QPointF &amp;p1, <span class="keyword">const</span> QPointF &amp;p2, <span class="keyword">const</span> QPointF &amp;p3,</div>
+<div class="line"><a name="l00534"></a><span class="lineno"><a class="line" href="../../dd/d51/classVAbstractCubicBezier.html#aa86affaf553069238c7b3a54926668d3">  534</a></span>&#160;QVector&lt;QPointF&gt; <a class="code" href="../../dd/d51/classVAbstractCubicBezier.html#aa86affaf553069238c7b3a54926668d3">VAbstractCubicBezier::GetCubicBezierPoints</a>(<span class="keyword">const</span> QPointF &amp;p1, <span class="keyword">const</span> QPointF &amp;p2, <span class="keyword">const</span> QPointF &amp;p3,</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                                                            <span class="keyword">const</span> QPointF &amp;p4)</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;{</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <a class="code" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> pvector;</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <a class="code" href="../../d5/dc2/classQVector.html">QVector&lt;qreal&gt;</a> x;</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    <a class="code" href="../../d5/dc2/classQVector.html">QVector&lt;qreal&gt;</a> y;</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    <a class="code" href="../../d5/dc2/classQVector.html">QVector&lt;qreal&gt;</a>&amp; wx = x;</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <a class="code" href="../../d5/dc2/classQVector.html">QVector&lt;qreal&gt;</a>&amp; wy = y;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    QVector&lt;QPointF&gt; pvector;</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    QVector&lt;qreal&gt; x;</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    QVector&lt;qreal&gt; y;</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    QVector&lt;qreal&gt;&amp; wx = x;</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    QVector&lt;qreal&gt;&amp; wy = y;</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    x.append ( p1.x () );</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    y.append ( p1.y () );</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <a class="code" href="../../dd/d51/classVAbstractCubicBezier.html#ad7ecdd5b74c1e2468b0a9a20d3cbafc0">PointBezier_r</a> ( p1.x (), p1.y (), p2.x (), p2.y (),</div>
@@ -670,7 +670,7 @@ $(document).ready(function(){initNavTree('d5/d5a/vabstractcubicbezier_8cpp_sourc
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    <span class="keywordflow">if</span> (t &lt; 0 || t &gt; 1)</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    {</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;        qDebug() &lt;&lt; <span class="stringliteral">&quot;Wrong value t.&quot;</span>;</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;        qDebug()&lt;&lt;<span class="stringliteral">&quot;Wrong value t.&quot;</span>;</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    }</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    QLineF seg1_2 ( <span class="keyword">static_cast&lt;</span>QPointF<span class="keyword">&gt;</span>(<a class="code" href="../../dd/d51/classVAbstractCubicBezier.html#a278f808b16778d6a9cf53d3559de5a0e">GetP1</a> ()), <a class="code" href="../../dd/d51/classVAbstractCubicBezier.html#ac4f098ca3e5ac1bacdf251d689a7963f">GetControlPoint1</a> () );</div>
@@ -699,7 +699,6 @@ $(document).ready(function(){initNavTree('d5/d5a/vabstractcubicbezier_8cpp_sourc
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160; </div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dd/d51/classVAbstractCubicBezier.html#a68a6dd911bd8ba0fc0b78efc450c5d4f">LengthBezier</a> ( <span class="keyword">static_cast&lt;</span>QPointF<span class="keyword">&gt;</span>(<a class="code" href="../../dd/d51/classVAbstractCubicBezier.html#a278f808b16778d6a9cf53d3559de5a0e">GetP1</a>()), p12, p123, p1234);</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;}</div>
-<div class="ttc" id="aclassQVector_html"><div class="ttname"><a href="../../d5/dc2/classQVector.html">QVector&lt; qreal &gt;</a></div></div>
 <div class="ttc" id="aclassVAbstractBezier_html"><div class="ttname"><a href="../../dd/dc4/classVAbstractBezier.html">VAbstractBezier</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d94/vabstractbezier_8h_source.html#l00059">vabstractbezier.h:60</a></div></div>
 <div class="ttc" id="aclassVAbstractBezier_html_a75fce9c9e6d26d6d37727dcfd1ce7495"><div class="ttname"><a href="../../dd/dc4/classVAbstractBezier.html#a75fce9c9e6d26d6d37727dcfd1ce7495">VAbstractBezier::operator=</a></div><div class="ttdeci">VAbstractBezier &amp; operator=(const VAbstractBezier &amp;curve)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dab/vabstractbezier_8cpp_source.html#l00067">vabstractbezier.cpp:67</a></div></div>
 <div class="ttc" id="aclassVAbstractCubicBezier_html"><div class="ttname"><a href="../../dd/d51/classVAbstractCubicBezier.html">VAbstractCubicBezier</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7c/vabstractcubicbezier_8h_source.html#l00067">vabstractcubicbezier.h:68</a></div></div>
@@ -724,9 +723,9 @@ $(document).ready(function(){initNavTree('d5/d5a/vabstractcubicbezier_8cpp_sourc
 <div class="ttc" id="aclassVAbstractCurve_html_aeaa28efd8cdaa6c8df14dea9e20caa84"><div class="ttname"><a href="../../dc/d55/classVAbstractCurve.html#aeaa28efd8cdaa6c8df14dea9e20caa84">VAbstractCurve::GetLength</a></div><div class="ttdeci">virtual qreal GetLength() const =0</div></div>
 <div class="ttc" id="aclassVGObject_html_a3015e9c2e0dda69cd4a81e1f25dc1263"><div class="ttname"><a href="../../d1/de7/classVGObject.html#a3015e9c2e0dda69cd4a81e1f25dc1263">VGObject::name</a></div><div class="ttdeci">virtual QString name() const</div><div class="ttdoc">name return name graphical object.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d37/vgobject_8cpp_source.html#l00148">vgobject.cpp:148</a></div></div>
 <div class="ttc" id="aclassVGObject_html_ac52a0bdf810d43fb282f65a58933ea75"><div class="ttname"><a href="../../d1/de7/classVGObject.html#ac52a0bdf810d43fb282f65a58933ea75">VGObject::setName</a></div><div class="ttdeci">void setName(const QString &amp;name)</div><div class="ttdoc">setName set name graphical object.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d37/vgobject_8cpp_source.html#l00158">vgobject.cpp:158</a></div></div>
-<div class="ttc" id="adef_8cpp_html_a12779d274def02429c146c527d104027"><div class="ttname"><a href="../../d6/d0b/def_8cpp.html#a12779d274def02429c146c527d104027">ToPixel</a></div><div class="ttdeci">double ToPixel(double val, const Unit &amp;unit)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d0b/def_8cpp_source.html#l00220">def.cpp:220</a></div></div>
+<div class="ttc" id="adef_8cpp_html_a12779d274def02429c146c527d104027"><div class="ttname"><a href="../../d6/d0b/def_8cpp.html#a12779d274def02429c146c527d104027">ToPixel</a></div><div class="ttdeci">double ToPixel(double val, const Unit &amp;unit)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d0b/def_8cpp_source.html#l00229">def.cpp:229</a></div></div>
 <div class="ttc" id="adef_8h_html_aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92"><div class="ttname"><a href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Unit::Mm</a></div><div class="ttdeci">@ Mm</div></div>
-<div class="ttc" id="aifcdef_8h_html_a473d8fd4862f8f0be8c4edde634dbf22"><div class="ttname"><a href="../../d3/da5/ifcdef_8h.html#a473d8fd4862f8f0be8c4edde634dbf22">SPL_</a></div><div class="ttdeci">#define SPL_</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/ifcdef_8h_source.html#l00240">ifcdef.h:240</a></div></div>
+<div class="ttc" id="aifcdef_8h_html_a473d8fd4862f8f0be8c4edde634dbf22"><div class="ttname"><a href="../../d3/da5/ifcdef_8h.html#a473d8fd4862f8f0be8c4edde634dbf22">SPL_</a></div><div class="ttdeci">#define SPL_</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/ifcdef_8h_source.html#l00238">ifcdef.h:238</a></div></div>
 <div class="ttc" id="avabstractcubicbezier_8h_html"><div class="ttname"><a href="../../d6/d7c/vabstractcubicbezier_8h.html">vabstractcubicbezier.h</a></div></div>
 <div class="ttc" id="avgeometrydef_8h_html_a6bf870a878c696639c3936fa7e9729b9"><div class="ttname"><a href="../../d5/d9d/vgeometrydef_8h.html#a6bf870a878c696639c3936fa7e9729b9">GOType</a></div><div class="ttdeci">GOType</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d9d/vgeometrydef_8h_source.html#l00056">vgeometrydef.h:56</a></div></div>
 <div class="ttc" id="avgeometrydef_8h_html_a85a66cf8eff1eceb62457cf1931ddf1a"><div class="ttname"><a href="../../d5/d9d/vgeometrydef_8h.html#a85a66cf8eff1eceb62457cf1931ddf1a">Draw</a></div><div class="ttdeci">Draw</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d9d/vgeometrydef_8h_source.html#l00055">vgeometrydef.h:55</a></div></div>

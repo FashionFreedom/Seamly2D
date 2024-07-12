@@ -164,8 +164,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad7625c794c7b8a8910d6fcbdc15369cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8d4edd46df74f7dab8f53aea728f505"><td class="memItemLeft" align="right" valign="top">DRW::Version&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#aa8d4edd46df74f7dab8f53aea728f505">GetVersion</a> () const</td></tr>
 <tr class="separator:aa8d4edd46df74f7dab8f53aea728f505"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a617a58528fa16e2bdb70161105178a16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#a617a58528fa16e2bdb70161105178a16">setVersion</a> (DRW::Version version)</td></tr>
-<tr class="separator:a617a58528fa16e2bdb70161105178a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc069c048f30926cf124d06ba8e2bbed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#acc069c048f30926cf124d06ba8e2bbed">SetVersion</a> (DRW::Version version)</td></tr>
+<tr class="separator:acc069c048f30926cf124d06ba8e2bbed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72aeba49f5229202d9ed93a117399544"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#a72aeba49f5229202d9ed93a117399544">SetBinaryFormat</a> (bool binary)</td></tr>
 <tr class="separator:a72aeba49f5229202d9ed93a117399544"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6efc7e45591aa2a4d3c2859f5fe9eede"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#a6efc7e45591aa2a4d3c2859f5fe9eede">IsBinaryFormat</a> () const</td></tr>
@@ -179,7 +179,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac963f66b03ffa32cb348b410731e792f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#ac963f66b03ffa32cb348b410731e792f">setInsunits</a> (const <a class="el" href="../../d7/de8/dxfdef_8h.html#a76a334d2cdefeb4fca03969a8d1acbe8">VarInsunits</a> &amp;var)</td></tr>
 <tr class="separator:ac963f66b03ffa32cb348b410731e792f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fef8c52c417e42163d69fad35d1ddc2"><td class="memTemplParams" colspan="2">template&lt;class P , class V &gt; </td></tr>
-<tr class="memitem:a9fef8c52c417e42163d69fad35d1ddc2"><td class="memTemplItemLeft" align="right" valign="top">P *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#a9fef8c52c417e42163d69fad35d1ddc2">CreateAAMAPolygon</a> (const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; QPointF &gt; &amp;polygon, const QString &amp;layer, bool forceClosed)</td></tr>
+<tr class="memitem:a9fef8c52c417e42163d69fad35d1ddc2"><td class="memTemplItemLeft" align="right" valign="top">P *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#a9fef8c52c417e42163d69fad35d1ddc2">CreateAAMAPolygon</a> (const QVector&lt; QPointF &gt; &amp;polygon, const QString &amp;layer, bool forceClosed)</td></tr>
 <tr class="separator:a9fef8c52c417e42163d69fad35d1ddc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
@@ -188,7 +188,7 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a667087f8113c399acf20919ce16289d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf528d92ab1e5cf2b437349045e920a8"><td class="memItemLeft" align="right" valign="top">Q_REQUIRED_RESULT double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#abf528d92ab1e5cf2b437349045e920a8">ToPixel</a> (double val, const <a class="el" href="../../d7/de8/dxfdef_8h.html#a76a334d2cdefeb4fca03969a8d1acbe8">VarInsunits</a> &amp;unit) const</td></tr>
 <tr class="separator:abf528d92ab1e5cf2b437349045e920a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e64211dabeb86576cca981aff41a30d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#a6e64211dabeb86576cca981aff41a30d">ExportToAAMA</a> (const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; <a class="el" href="../../df/de5/classVLayoutPiece.html">VLayoutPiece</a> &gt; &amp;details)</td></tr>
+<tr class="memitem:a6e64211dabeb86576cca981aff41a30d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#a6e64211dabeb86576cca981aff41a30d">ExportToAAMA</a> (const QVector&lt; <a class="el" href="../../df/de5/classVLayoutPiece.html">VLayoutPiece</a> &gt; &amp;details)</td></tr>
 <tr class="separator:a6e64211dabeb86576cca981aff41a30d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3829f1344ef540379b614ef79d2352fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#a3829f1344ef540379b614ef79d2352fd">ExportAAMAOutline</a> (<a class="el" href="../../df/d01/classdx__ifaceBlock.html">dx_ifaceBlock</a> *detailBlock, const <a class="el" href="../../df/de5/classVLayoutPiece.html">VLayoutPiece</a> &amp;detail)</td></tr>
 <tr class="separator:a3829f1344ef540379b614ef79d2352fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,16 +202,16 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a897bfd9c60d56146e9068df58250f58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7da41ae448f5a20827902048a93bb4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#ac7da41ae448f5a20827902048a93bb4e">ExportAAMAText</a> (<a class="el" href="../../df/d01/classdx__ifaceBlock.html">dx_ifaceBlock</a> *detailBlock, const <a class="el" href="../../df/de5/classVLayoutPiece.html">VLayoutPiece</a> &amp;detail)</td></tr>
 <tr class="separator:ac7da41ae448f5a20827902048a93bb4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6431276b91eb2065053763cb14592c03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#a6431276b91eb2065053763cb14592c03">ExportAAMAGlobalText</a> (const <a class="el" href="../../dd/daa/classQSharedPointer.html">QSharedPointer</a>&lt; <a class="el" href="../../de/d1b/classdx__iface.html">dx_iface</a> &gt; &amp;<a class="el" href="../../db/dd6/classVDxfEngine.html#a0debdc8eeb3f4902e4ada89113fb7930">input</a>, const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; <a class="el" href="../../df/de5/classVLayoutPiece.html">VLayoutPiece</a> &gt; &amp;details)</td></tr>
+<tr class="memitem:a6431276b91eb2065053763cb14592c03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#a6431276b91eb2065053763cb14592c03">ExportAAMAGlobalText</a> (const <a class="el" href="../../dd/daa/classQSharedPointer.html">QSharedPointer</a>&lt; <a class="el" href="../../de/d1b/classdx__iface.html">dx_iface</a> &gt; &amp;<a class="el" href="../../db/dd6/classVDxfEngine.html#a0debdc8eeb3f4902e4ada89113fb7930">input</a>, const QVector&lt; <a class="el" href="../../df/de5/classVLayoutPiece.html">VLayoutPiece</a> &gt; &amp;details)</td></tr>
 <tr class="separator:a6431276b91eb2065053763cb14592c03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa406af3b9e95e6f27da061b909fbc955"><td class="memItemLeft" align="right" valign="top">Q_REQUIRED_RESULT DRW_Entity *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#aa406af3b9e95e6f27da061b909fbc955">AAMAPolygon</a> (const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; QPointF &gt; &amp;polygon, const QString &amp;layer, bool forceClosed)</td></tr>
+<tr class="memitem:aa406af3b9e95e6f27da061b909fbc955"><td class="memItemLeft" align="right" valign="top">Q_REQUIRED_RESULT DRW_Entity *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#aa406af3b9e95e6f27da061b909fbc955">AAMAPolygon</a> (const QVector&lt; QPointF &gt; &amp;polygon, const QString &amp;layer, bool forceClosed)</td></tr>
 <tr class="separator:aa406af3b9e95e6f27da061b909fbc955"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbf3ccc1ce1ad5cce42b46a15412fece"><td class="memItemLeft" align="right" valign="top">Q_REQUIRED_RESULT DRW_Entity *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#afbf3ccc1ce1ad5cce42b46a15412fece">AAMALine</a> (const QLineF &amp;line, const QString &amp;layer)</td></tr>
 <tr class="separator:afbf3ccc1ce1ad5cce42b46a15412fece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a404692e3fa0a39c022fd382ea28aaaff"><td class="memItemLeft" align="right" valign="top">Q_REQUIRED_RESULT DRW_Entity *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#a404692e3fa0a39c022fd382ea28aaaff">AAMAText</a> (const QPointF &amp;pos, const QString &amp;text, const QString &amp;layer)</td></tr>
 <tr class="separator:a404692e3fa0a39c022fd382ea28aaaff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2d0de8bf5d09da997cc6d270b677649"><td class="memTemplParams" colspan="2">template&lt;class P , class V &gt; </td></tr>
-<tr class="memitem:ac2d0de8bf5d09da997cc6d270b677649"><td class="memTemplItemLeft" align="right" valign="top">Q_REQUIRED_RESULT P *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#ac2d0de8bf5d09da997cc6d270b677649">CreateAAMAPolygon</a> (const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; QPointF &gt; &amp;polygon, const QString &amp;layer, bool forceClosed)</td></tr>
+<tr class="memitem:ac2d0de8bf5d09da997cc6d270b677649"><td class="memTemplItemLeft" align="right" valign="top">Q_REQUIRED_RESULT P *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/dd6/classVDxfEngine.html#ac2d0de8bf5d09da997cc6d270b677649">CreateAAMAPolygon</a> (const QVector&lt; QPointF &gt; &amp;polygon, const QString &amp;layer, bool forceClosed)</td></tr>
 <tr class="separator:ac2d0de8bf5d09da997cc6d270b677649"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -351,7 +351,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">DRW_Entity * VDxfEngine::AAMAPolygon </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; QPointF &gt; &amp;&#160;</td>
+          <td class="paramtype">const QVector&lt; QPointF &gt; &amp;&#160;</td>
           <td class="paramname"><em>polygon</em>, </td>
         </tr>
         <tr>
@@ -476,7 +476,7 @@ template&lt;class P , class V &gt; </div>
         <tr>
           <td class="memname">P* VDxfEngine::CreateAAMAPolygon </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; QPointF &gt; &amp;&#160;</td>
+          <td class="paramtype">const QVector&lt; QPointF &gt; &amp;&#160;</td>
           <td class="paramname"><em>polygon</em>, </td>
         </tr>
         <tr>
@@ -519,7 +519,7 @@ template&lt;class P , class V &gt; </div>
         <tr>
           <td class="memname">Q_REQUIRED_RESULT P* VDxfEngine::CreateAAMAPolygon </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; QPointF &gt; &amp;&#160;</td>
+          <td class="paramtype">const QVector&lt; QPointF &gt; &amp;&#160;</td>
           <td class="paramname"><em>polygon</em>, </td>
         </tr>
         <tr>
@@ -976,7 +976,7 @@ template&lt;class P , class V &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; <a class="el" href="../../df/de5/classVLayoutPiece.html">VLayoutPiece</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const QVector&lt; <a class="el" href="../../df/de5/classVLayoutPiece.html">VLayoutPiece</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>details</em>&#160;</td>
         </tr>
         <tr>
@@ -1222,7 +1222,7 @@ template&lt;class P , class V &gt; </div>
         <tr>
           <td class="memname">QT_WARNING_POP bool VDxfEngine::ExportToAAMA </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; <a class="el" href="../../df/de5/classVLayoutPiece.html">VLayoutPiece</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const QVector&lt; <a class="el" href="../../df/de5/classVLayoutPiece.html">VLayoutPiece</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>details</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1583,14 +1583,14 @@ template&lt;class P , class V &gt; </div>
 
 </div>
 </div>
-<a id="a617a58528fa16e2bdb70161105178a16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a617a58528fa16e2bdb70161105178a16">&#9670;&nbsp;</a></span>setVersion()</h2>
+<a id="acc069c048f30926cf124d06ba8e2bbed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc069c048f30926cf124d06ba8e2bbed">&#9670;&nbsp;</a></span>SetVersion()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void VDxfEngine::setVersion </td>
+          <td class="memname">void VDxfEngine::SetVersion </td>
           <td>(</td>
           <td class="paramtype">DRW::Version&#160;</td>
           <td class="paramname"><em>version</em></td><td>)</td>
@@ -1603,7 +1603,7 @@ template&lt;class P , class V &gt; </div>
 
 <p class="reference">References <a class="el" href="../../d8/d96/vdxfengine_8h_source.html#l00100">m_version</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/de5/vdxfpaintdevice_8cpp_source.html#l00116">VDxfPaintDevice::setVersion()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/de5/vdxfpaintdevice_8cpp_source.html#l00116">VDxfPaintDevice::SetVersion()</a>.</p>
 
 </div>
 </div>
@@ -1832,7 +1832,7 @@ template&lt;class P , class V &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d96/vdxfengine_8h_source.html#l00100">100</a> of file <a class="el" href="../../d8/d96/vdxfengine_8h_source.html">vdxfengine.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d66/vdxfengine_8cpp_source.html#l00780">AAMAPolygon()</a>, <a class="el" href="../../dd/d66/vdxfengine_8cpp_source.html#l00096">begin()</a>, <a class="el" href="../../dd/d66/vdxfengine_8cpp_source.html#l00142">drawPath()</a>, <a class="el" href="../../dd/d66/vdxfengine_8cpp_source.html#l00231">drawPolygon()</a>, <a class="el" href="../../dd/d66/vdxfengine_8cpp_source.html#l00607">ExportToAAMA()</a>, <a class="el" href="../../dd/d66/vdxfengine_8cpp_source.html#l00443">GetVersion()</a>, and <a class="el" href="../../dd/d66/vdxfengine_8cpp_source.html#l00449">setVersion()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/d66/vdxfengine_8cpp_source.html#l00780">AAMAPolygon()</a>, <a class="el" href="../../dd/d66/vdxfengine_8cpp_source.html#l00096">begin()</a>, <a class="el" href="../../dd/d66/vdxfengine_8cpp_source.html#l00142">drawPath()</a>, <a class="el" href="../../dd/d66/vdxfengine_8cpp_source.html#l00231">drawPolygon()</a>, <a class="el" href="../../dd/d66/vdxfengine_8cpp_source.html#l00607">ExportToAAMA()</a>, <a class="el" href="../../dd/d66/vdxfengine_8cpp_source.html#l00443">GetVersion()</a>, and <a class="el" href="../../dd/d66/vdxfengine_8cpp_source.html#l00449">SetVersion()</a>.</p>
 
 </div>
 </div>
