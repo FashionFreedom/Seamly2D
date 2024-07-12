@@ -1159,6 +1159,18 @@ p, li { white-space: pre-wrap; }
         <source>Name:</source>
         <translation>Naam:</translation>
     </message>
+    <message>
+        <source>Direction :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forward (from start point)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backward (from end point)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogCutSpline</name>
@@ -1214,6 +1226,18 @@ p, li { white-space: pre-wrap; }
         <source>Name:</source>
         <translation>Naam:</translation>
     </message>
+    <message>
+        <source>Direction :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forward (from start point)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backward (from end point)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogCutSplinePath</name>
@@ -1268,6 +1292,18 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Name:</source>
         <translation>Naam:</translation>
+    </message>
+    <message>
+        <source>Direction :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forward (from start point)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backward (from end point)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9826,6 +9862,14 @@ Press enter to temporarily add it to the list.</source>
         <source>%1</source>
         <translation>%1</translation>
     </message>
+    <message>
+        <source>Forward (from start point)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backward (from end point)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -13812,6 +13856,10 @@ load in SeamlyME as usual.
     <message>
         <source>Center point</source>
         <translation>Middelste punt</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

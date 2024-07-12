@@ -1157,6 +1157,18 @@ p, li { white-space: pre-wrap; }
         <source>Name:</source>
         <translation>Bezeichnung:</translation>
     </message>
+    <message>
+        <source>Direction :</source>
+        <translation>Richtung :</translation>
+    </message>
+    <message>
+        <source>Forward (from start point)</source>
+        <translation>Vorwärts (vom Startpunkt)</translation>
+    </message>
+    <message>
+        <source>Backward (from end point)</source>
+        <translation>Rückwärts (vom Endpunkt)</translation>
+    </message>
 </context>
 <context>
     <name>DialogCutSpline</name>
@@ -1212,6 +1224,18 @@ p, li { white-space: pre-wrap; }
         <source>Name:</source>
         <translation>Bezeichnung:</translation>
     </message>
+    <message>
+        <source>Direction :</source>
+        <translation>Richtung :</translation>
+    </message>
+    <message>
+        <source>Forward (from start point)</source>
+        <translation>Vorwärts (vom Startpunkt)</translation>
+    </message>
+    <message>
+        <source>Backward (from end point)</source>
+        <translation>Rückwärts (vom Endpunkt)</translation>
+    </message>
 </context>
 <context>
     <name>DialogCutSplinePath</name>
@@ -1266,6 +1290,18 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Name:</source>
         <translation>Bezeichnung:</translation>
+    </message>
+    <message>
+        <source>Direction :</source>
+        <translation>Richtung :</translation>
+    </message>
+    <message>
+        <source>Forward (from start point)</source>
+        <translation>Vorwärts (vom Startpunkt)</translation>
+    </message>
+    <message>
+        <source>Backward (from end point)</source>
+        <translation>Rückwärts (vom Endpunkt)</translation>
     </message>
 </context>
 <context>
@@ -4107,10 +4143,10 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>FvUpdater</name>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation>Exklusiver Zugriff auf die Datei kann nicht gewährt werden 
+        <translation>Exklusiver Zugriff auf die Datei kann nicht gewährt werden
 %1
 Möglicherweise wird die Datei bereits heruntergeladen.</translation>
     </message>
@@ -4768,7 +4804,7 @@ for writing</source>
     </message>
     <message>
         <source>Move Origin</source>
-        <translation type="unfinished"></translation>
+        <translation>Ursprung verschieben</translation>
     </message>
 </context>
 <context>
@@ -5143,10 +5179,10 @@ Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLIC
         <translation>Absteigender Bereich</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
-        <translation>Ränder gehen über den Druck hinaus. 
+        <translation>Ränder gehen über den Druck hinaus.
 
 Einstellungen trotzdem anwenden?</translation>
     </message>
@@ -9442,11 +9478,11 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>Pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Stift</translation>
     </message>
     <message>
         <source>Always use current pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwenden Sie immer den aktuellen Stift</translation>
     </message>
 </context>
 <context>
@@ -9841,6 +9877,14 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>%1</source>
         <translation>%1</translation>
+    </message>
+    <message>
+        <source>Forward (from start point)</source>
+        <translation>Vorwärts (vom Startpunkt)</translation>
+    </message>
+    <message>
+        <source>Backward (from end point)</source>
+        <translation>Rückwärts (vom Endpunkt)</translation>
     </message>
 </context>
 <context>
@@ -10242,17 +10286,17 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Dezimaltrennzeichen:</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
-        <translation>Legt fest, welches Dezimaltrennzeichen verwendet werden soll. 
-Wenn das Kontrollkästchen aktiviert ist, wird das Trennzeichen für das Gebietsschema des Benutzers verwendet. 
+        <translation>Legt fest, welches Dezimaltrennzeichen verwendet werden soll.
+Wenn das Kontrollkästchen aktiviert ist, wird das Trennzeichen für das Gebietsschema des Benutzers verwendet.
 Wenn es nicht markiert ist, wird der Punkt verwendet.</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
-        <translation>Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt. 
+        <translation>Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt.
 Sie können diese Einstellung in den SeamlyMe-Einstellungen ändern.</translation>
     </message>
     <message>
@@ -10307,9 +10351,9 @@ Sie können diese Einstellung in den SeamlyMe-Einstellungen ändern.</translatio
         <translation>Dezimaltrennzeichen:</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
-        <translation>Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt. 
+        <translation>Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt.
 Sie können diese Einstellung in den Seamly2D-Voreinstellungen ändern.</translation>
     </message>
     <message>
@@ -10345,11 +10389,11 @@ Sie können diese Einstellung in den Seamly2D-Voreinstellungen ändern.</transla
         <translation>Bitte wählen Sie Ihre bevorzugten Einheiten, das Dezimaltrennzeichen, die Sprache und den Auswahlton. (Sie können diese Angaben später ändern.)</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
-        <translation>Legt fest, welches Dezimaltrennzeichen verwendet werden soll. 
-Wenn das Kontrollkästchen aktiviert ist, wird das Trennzeichen für das Gebietsschema des Benutzers verwendet. 
+        <translation>Legt fest, welches Dezimaltrennzeichen verwendet werden soll.
+Wenn das Kontrollkästchen aktiviert ist, wird das Trennzeichen für das Gebietsschema des Benutzers verwendet.
 Wenn es nicht markiert ist, wird der Punkt verwendet.</translation>
     </message>
     <message>
@@ -13836,6 +13880,10 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Center point</source>
         <translation>Mittelpunkt</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Richtung:</translation>
     </message>
 </context>
 <context>

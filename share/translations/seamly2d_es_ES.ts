@@ -1191,6 +1191,18 @@ p, li { white-space: pre-wrap; }
         <source>Name:</source>
         <translation>Nombre:</translation>
     </message>
+    <message>
+        <source>Direction :</source>
+        <translation>Dirección :</translation>
+    </message>
+    <message>
+        <source>Forward (from start point)</source>
+        <translation>Adelante (desde el punto de inicio)</translation>
+    </message>
+    <message>
+        <source>Backward (from end point)</source>
+        <translation>Hacia atrás (desde el punto final)</translation>
+    </message>
 </context>
 <context>
     <name>DialogCutSpline</name>
@@ -1246,6 +1258,18 @@ p, li { white-space: pre-wrap; }
         <source>Name:</source>
         <translation>Nombre:</translation>
     </message>
+    <message>
+        <source>Direction :</source>
+        <translation>Dirección :</translation>
+    </message>
+    <message>
+        <source>Forward (from start point)</source>
+        <translation>Adelante (desde el punto de inicio)</translation>
+    </message>
+    <message>
+        <source>Backward (from end point)</source>
+        <translation>Hacia atrás (desde el punto final)</translation>
+    </message>
 </context>
 <context>
     <name>DialogCutSplinePath</name>
@@ -1300,6 +1324,18 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Name:</source>
         <translation>Nombre:</translation>
+    </message>
+    <message>
+        <source>Direction :</source>
+        <translation>Dirección :</translation>
+    </message>
+    <message>
+        <source>Forward (from start point)</source>
+        <translation>Adelante (desde el punto de inicio)</translation>
+    </message>
+    <message>
+        <source>Backward (from end point)</source>
+        <translation>Hacia atrás (desde el punto final)</translation>
     </message>
 </context>
 <context>
@@ -4166,10 +4202,10 @@ for writing</source>
 para la escritura</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation>No se puede obtener acceso exclusivo al archivo 
+        <translation>No se puede obtener acceso exclusivo al archivo
 %1
 Posiblemente el archivo ya está siendo descargado.</translation>
     </message>
@@ -4809,7 +4845,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Move Origin</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover origen</translation>
     </message>
 </context>
 <context>
@@ -5184,10 +5220,10 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
         <translation>Área descendente</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
-        <translation>Los márgenes van más allá de la impresión. 
+        <translation>Los márgenes van más allá de la impresión.
 
 ¿Aplicar ajustes de todos modos?</translation>
     </message>
@@ -9499,11 +9535,11 @@ actualización:</translation>
     </message>
     <message>
         <source>Pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Bolígrafo</translation>
     </message>
     <message>
         <source>Always use current pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilice siempre el lápiz actual</translation>
     </message>
 </context>
 <context>
@@ -9899,6 +9935,14 @@ actualización:</translation>
     <message>
         <source>%1</source>
         <translation>%1</translation>
+    </message>
+    <message>
+        <source>Forward (from start point)</source>
+        <translation>Adelante (desde el punto de inicio)</translation>
+    </message>
+    <message>
+        <source>Backward (from end point)</source>
+        <translation>Hacia atrás (desde el punto final)</translation>
     </message>
 </context>
 <context>
@@ -10300,17 +10344,17 @@ actualización:</translation>
         <translation>Separador decimal:</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
-        <translation>Selecciona el carácter separador decimal a utilizar. 
-Si está marcada, se utiliza el separador de la configuración regional del usuario. 
+        <translation>Selecciona el carácter separador decimal a utilizar.
+Si está marcada, se utiliza el separador de la configuración regional del usuario.
 Si no se selecciona, se utiliza el punto.</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
-        <translation>Si esta opción está seleccionada, no se mostrará la ventana de bienvenida. 
+        <translation>Si esta opción está seleccionada, no se mostrará la ventana de bienvenida.
 Puede cambiar esta configuración en las preferencias de SeamlyMe.</translation>
     </message>
     <message>
@@ -10365,9 +10409,9 @@ Puede cambiar esta configuración en las preferencias de SeamlyMe.</translation>
         <translation>Separador decimal:</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
-        <translation>Si esta opción está seleccionada, no se mostrará la ventana de bienvenida. 
+        <translation>Si esta opción está seleccionada, no se mostrará la ventana de bienvenida.
 Puede cambiar esta configuración en las preferencias de Seamly2D.</translation>
     </message>
     <message>
@@ -10403,11 +10447,11 @@ Puede cambiar esta configuración en las preferencias de Seamly2D.</translation>
         <translation>Elija las unidades, el separador decimal, el idioma y el sonido de selección que prefiera. (Puede cambiarlos más adelante.)</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
-        <translation>Selecciona el carácter separador decimal a utilizar. 
-Si está marcada, se utiliza el separador de la configuración regional del usuario. 
+        <translation>Selecciona el carácter separador decimal a utilizar.
+Si está marcada, se utiliza el separador de la configuración regional del usuario.
 Si no se selecciona, se utiliza el punto.</translation>
     </message>
     <message>
@@ -13894,6 +13938,10 @@ load in SeamlyME as usual.
     <message>
         <source>Center point</source>
         <translation>Punto central</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Dirección:</translation>
     </message>
 </context>
 <context>

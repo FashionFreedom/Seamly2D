@@ -39,5 +39,6 @@
 #include "plugins/vlinecolorproperty.h"
 #include "plugins/vlabelproperty.h"
 #include "plugins/plaintext_property.h"
+#include "plugins/direction_property.h"
 
 #endif // VPROPERTIES_H

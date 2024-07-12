@@ -205,6 +205,15 @@ struct DraftImage
 Q_DECLARE_METATYPE(DraftImage)
 Q_DECLARE_TYPEINFO(DraftImage, Q_MOVABLE_TYPE);
 
+enum class Direction : unsigned char
+{
+    Forward = 0, // Default
+    Backward
+};
+
+QString      directionToString(Direction type);
+Direction    stringToDirection(const QString &value);
+
 enum class NotchType : unsigned char
 {
     Slit = 0, // Default
