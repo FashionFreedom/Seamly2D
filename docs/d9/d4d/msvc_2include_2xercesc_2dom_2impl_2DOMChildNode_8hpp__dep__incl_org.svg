@@ -142,24 +142,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="../../dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="871.5,-78.5 871.5,-119.5 1015.5,-119.5 1015.5,-78.5 871.5,-78.5"/>
-<text text-anchor="start" x="879.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
-<text text-anchor="start" x="879.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
-<text text-anchor="middle" x="943.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMCasts.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node5&#45;&gt;Node6 -->
-<g id="edge5" class="edge">
-<title>Node5&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M667.94,-155.72C742.58,-139.09 817.69,-124.11 871.29,-113.72"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="666.88,-152.37 657.89,-157.96 668.41,-159.2 666.88,-152.37"/>
-</g>
-<!-- Node7 -->
-<g id="node7" class="node">
-<title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d4/da4/msvc_2include_2xercesc_2dom_2impl_2DOMElementNSImpl_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="../../d4/da4/msvc_2include_2xercesc_2dom_2impl_2DOMElementNSImpl_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="513.5,-78.5 513.5,-119.5 657.5,-119.5 657.5,-78.5 513.5,-78.5"/>
 <text text-anchor="start" x="521.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
 <text text-anchor="start" x="521.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
@@ -167,16 +150,33 @@
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node7 -->
-<g id="edge6" class="edge">
-<title>Node5&#45;&gt;Node7</title>
+<!-- Node5&#45;&gt;Node6 -->
+<g id="edge5" class="edge">
+<title>Node5&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M585.5,-146.3C585.5,-137.3 585.5,-127.65 585.5,-119.51"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="582,-146.43 585.5,-156.43 589,-146.43 582,-146.43"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="../../db/d0c/msvc_2include_2xercesc_2dom_2impl_2XSDElementNSImpl_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node8"><a xlink:href="../../dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="871.5,-78.5 871.5,-119.5 1015.5,-119.5 1015.5,-78.5 871.5,-78.5"/>
+<text text-anchor="start" x="879.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
+<text text-anchor="start" x="879.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
+<text text-anchor="middle" x="943.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMCasts.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node5&#45;&gt;Node8 -->
+<g id="edge7" class="edge">
+<title>Node5&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M667.94,-155.72C742.58,-139.09 817.69,-124.11 871.29,-113.72"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="666.88,-152.37 657.89,-157.96 668.41,-159.2 666.88,-152.37"/>
+</g>
+<!-- Node7 -->
+<g id="node7" class="node">
+<title>Node7</title>
+<g id="a_node7"><a xlink:href="../../db/d0c/msvc_2include_2xercesc_2dom_2impl_2XSDElementNSImpl_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="513.5,-0.5 513.5,-41.5 657.5,-41.5 657.5,-0.5 513.5,-0.5"/>
 <text text-anchor="start" x="521.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
 <text text-anchor="start" x="521.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
@@ -184,15 +184,15 @@
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node8 -->
-<g id="edge7" class="edge">
-<title>Node7&#45;&gt;Node8</title>
+<!-- Node6&#45;&gt;Node7 -->
+<g id="edge6" class="edge">
+<title>Node6&#45;&gt;Node7</title>
 <path fill="none" stroke="midnightblue" d="M585.5,-68.3C585.5,-59.3 585.5,-49.65 585.5,-41.51"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="582,-68.43 585.5,-78.43 589,-68.43 582,-68.43"/>
 </g>
-<!-- Node11&#45;&gt;Node6 -->
+<!-- Node11&#45;&gt;Node8 -->
 <g id="edge11" class="edge">
-<title>Node11&#45;&gt;Node6</title>
+<title>Node11&#45;&gt;Node8</title>
 <path fill="none" stroke="midnightblue" d="M1079.53,-152.75C1052.1,-142.11 1019.95,-129.65 993.8,-119.51"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1078.44,-156.08 1089.03,-156.43 1080.97,-149.55 1078.44,-156.08"/>
 </g>

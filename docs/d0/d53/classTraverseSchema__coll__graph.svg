@@ -3033,77 +3033,72 @@ var sectionId = 'dynsection-1';
 <g id="node19" class="node">
 <title>Node44</title>
 <g id="a_node19"><a xlink:href="../../d3/df6/classXMLEntityHandler.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="6726.5,-1888.5 6726.5,-2429.5 6857.5,-2429.5 6857.5,-1888.5 6726.5,-1888.5"/>
-<text text-anchor="middle" x="6792" y="-2417.5" font-family="Helvetica,sans-Serif" font-size="10.00">XMLEntityHandler</text>
-<polyline fill="none" stroke="black" points="6726.5,-2410.5 6857.5,-2410.5 "/>
-<text text-anchor="middle" x="6792" y="-2398.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="6726.5,-2391.5 6857.5,-2391.5 "/>
-<text text-anchor="start" x="6734.5" y="-2379.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~XMLEntityHandler()</text>
-<text text-anchor="start" x="6734.5" y="-2368.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~XMLEntityHandler()</text>
-<text text-anchor="start" x="6734.5" y="-2357.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~XMLEntityHandler()</text>
-<text text-anchor="start" x="6734.5" y="-2346.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ endInputSource()</text>
-<text text-anchor="start" x="6734.5" y="-2335.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ expandSystemId()</text>
-<text text-anchor="start" x="6734.5" y="-2324.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ resetEntities()</text>
-<text text-anchor="start" x="6734.5" y="-2313.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ resolveEntity()</text>
-<text text-anchor="start" x="6734.5" y="-2302.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ startInputSource()</text>
-<text text-anchor="start" x="6734.5" y="-2291.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ endInputSource()</text>
-<text text-anchor="start" x="6734.5" y="-2280.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ expandSystemId()</text>
-<text text-anchor="start" x="6734.5" y="-2269.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ resetEntities()</text>
-<text text-anchor="start" x="6734.5" y="-2258.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ resolveEntity()</text>
-<text text-anchor="start" x="6734.5" y="-2247.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ startInputSource()</text>
-<text text-anchor="start" x="6734.5" y="-2236.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ endInputSource()</text>
-<text text-anchor="start" x="6734.5" y="-2225.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ expandSystemId()</text>
-<text text-anchor="start" x="6734.5" y="-2214.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ resetEntities()</text>
-<text text-anchor="start" x="6734.5" y="-2203.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ resolveEntity()</text>
-<text text-anchor="start" x="6734.5" y="-2192.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ startInputSource()</text>
-<text text-anchor="start" x="6734.5" y="-2181.5" font-family="Helvetica,sans-Serif" font-size="10.00">* ~XMLEntityHandler()</text>
-<text text-anchor="start" x="6734.5" y="-2170.5" font-family="Helvetica,sans-Serif" font-size="10.00">* ~XMLEntityHandler()</text>
-<text text-anchor="start" x="6734.5" y="-2159.5" font-family="Helvetica,sans-Serif" font-size="10.00">* ~XMLEntityHandler()</text>
-<text text-anchor="start" x="6734.5" y="-2148.5" font-family="Helvetica,sans-Serif" font-size="10.00">* endInputSource()</text>
-<text text-anchor="start" x="6734.5" y="-2137.5" font-family="Helvetica,sans-Serif" font-size="10.00">* expandSystemId()</text>
-<text text-anchor="start" x="6734.5" y="-2126.5" font-family="Helvetica,sans-Serif" font-size="10.00">* resetEntities()</text>
-<text text-anchor="start" x="6734.5" y="-2115.5" font-family="Helvetica,sans-Serif" font-size="10.00">* resolveEntity()</text>
-<text text-anchor="start" x="6734.5" y="-2104.5" font-family="Helvetica,sans-Serif" font-size="10.00">* startInputSource()</text>
-<text text-anchor="start" x="6734.5" y="-2093.5" font-family="Helvetica,sans-Serif" font-size="10.00">* endInputSource()</text>
-<text text-anchor="start" x="6734.5" y="-2082.5" font-family="Helvetica,sans-Serif" font-size="10.00">* expandSystemId()</text>
-<text text-anchor="start" x="6734.5" y="-2071.5" font-family="Helvetica,sans-Serif" font-size="10.00">* resetEntities()</text>
-<text text-anchor="start" x="6734.5" y="-2060.5" font-family="Helvetica,sans-Serif" font-size="10.00">* resolveEntity()</text>
-<text text-anchor="start" x="6734.5" y="-2049.5" font-family="Helvetica,sans-Serif" font-size="10.00">* startInputSource()</text>
-<text text-anchor="start" x="6734.5" y="-2038.5" font-family="Helvetica,sans-Serif" font-size="10.00">* endInputSource()</text>
-<text text-anchor="start" x="6734.5" y="-2027.5" font-family="Helvetica,sans-Serif" font-size="10.00">* expandSystemId()</text>
-<text text-anchor="start" x="6734.5" y="-2016.5" font-family="Helvetica,sans-Serif" font-size="10.00">* resetEntities()</text>
-<text text-anchor="start" x="6734.5" y="-2005.5" font-family="Helvetica,sans-Serif" font-size="10.00">* resolveEntity()</text>
-<text text-anchor="start" x="6734.5" y="-1994.5" font-family="Helvetica,sans-Serif" font-size="10.00">* startInputSource()</text>
-<text text-anchor="start" x="6734.5" y="-1983.5" font-family="Helvetica,sans-Serif" font-size="10.00">* XMLEntityHandler()</text>
-<text text-anchor="start" x="6734.5" y="-1972.5" font-family="Helvetica,sans-Serif" font-size="10.00">* XMLEntityHandler()</text>
-<text text-anchor="start" x="6734.5" y="-1961.5" font-family="Helvetica,sans-Serif" font-size="10.00">* XMLEntityHandler()</text>
-<text text-anchor="start" x="6734.5" y="-1950.5" font-family="Helvetica,sans-Serif" font-size="10.00">* XMLEntityHandler()</text>
-<text text-anchor="start" x="6734.5" y="-1939.5" font-family="Helvetica,sans-Serif" font-size="10.00">* operator=()</text>
-<text text-anchor="start" x="6734.5" y="-1928.5" font-family="Helvetica,sans-Serif" font-size="10.00">* XMLEntityHandler()</text>
-<text text-anchor="start" x="6734.5" y="-1917.5" font-family="Helvetica,sans-Serif" font-size="10.00">* operator=()</text>
-<text text-anchor="start" x="6734.5" y="-1906.5" font-family="Helvetica,sans-Serif" font-size="10.00">* XMLEntityHandler()</text>
-<text text-anchor="start" x="6734.5" y="-1895.5" font-family="Helvetica,sans-Serif" font-size="10.00">* operator=()</text>
+<polygon fill="white" stroke="black" points="6726.5,-1916 6726.5,-2402 6857.5,-2402 6857.5,-1916 6726.5,-1916"/>
+<text text-anchor="middle" x="6792" y="-2390" font-family="Helvetica,sans-Serif" font-size="10.00">XMLEntityHandler</text>
+<polyline fill="none" stroke="black" points="6726.5,-2383 6857.5,-2383 "/>
+<text text-anchor="middle" x="6792" y="-2371" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="6726.5,-2364 6857.5,-2364 "/>
+<text text-anchor="start" x="6734.5" y="-2352" font-family="Helvetica,sans-Serif" font-size="10.00">+ endInputSource()</text>
+<text text-anchor="start" x="6734.5" y="-2341" font-family="Helvetica,sans-Serif" font-size="10.00">+ expandSystemId()</text>
+<text text-anchor="start" x="6734.5" y="-2330" font-family="Helvetica,sans-Serif" font-size="10.00">+ resetEntities()</text>
+<text text-anchor="start" x="6734.5" y="-2319" font-family="Helvetica,sans-Serif" font-size="10.00">+ resolveEntity()</text>
+<text text-anchor="start" x="6734.5" y="-2308" font-family="Helvetica,sans-Serif" font-size="10.00">+ startInputSource()</text>
+<text text-anchor="start" x="6734.5" y="-2297" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~XMLEntityHandler()</text>
+<text text-anchor="start" x="6734.5" y="-2286" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~XMLEntityHandler()</text>
+<text text-anchor="start" x="6734.5" y="-2275" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~XMLEntityHandler()</text>
+<text text-anchor="start" x="6734.5" y="-2264" font-family="Helvetica,sans-Serif" font-size="10.00">+ endInputSource()</text>
+<text text-anchor="start" x="6734.5" y="-2253" font-family="Helvetica,sans-Serif" font-size="10.00">+ expandSystemId()</text>
+<text text-anchor="start" x="6734.5" y="-2242" font-family="Helvetica,sans-Serif" font-size="10.00">+ resetEntities()</text>
+<text text-anchor="start" x="6734.5" y="-2231" font-family="Helvetica,sans-Serif" font-size="10.00">+ resolveEntity()</text>
+<text text-anchor="start" x="6734.5" y="-2220" font-family="Helvetica,sans-Serif" font-size="10.00">+ startInputSource()</text>
+<text text-anchor="start" x="6734.5" y="-2209" font-family="Helvetica,sans-Serif" font-size="10.00">+ endInputSource()</text>
+<text text-anchor="start" x="6734.5" y="-2198" font-family="Helvetica,sans-Serif" font-size="10.00">+ expandSystemId()</text>
+<text text-anchor="start" x="6734.5" y="-2187" font-family="Helvetica,sans-Serif" font-size="10.00">+ resetEntities()</text>
+<text text-anchor="start" x="6734.5" y="-2176" font-family="Helvetica,sans-Serif" font-size="10.00">+ resolveEntity()</text>
+<text text-anchor="start" x="6734.5" y="-2165" font-family="Helvetica,sans-Serif" font-size="10.00">+ startInputSource()</text>
+<text text-anchor="start" x="6734.5" y="-2154" font-family="Helvetica,sans-Serif" font-size="10.00">* ~XMLEntityHandler()</text>
+<text text-anchor="start" x="6734.5" y="-2143" font-family="Helvetica,sans-Serif" font-size="10.00">* ~XMLEntityHandler()</text>
+<text text-anchor="start" x="6734.5" y="-2132" font-family="Helvetica,sans-Serif" font-size="10.00">* ~XMLEntityHandler()</text>
+<text text-anchor="start" x="6734.5" y="-2121" font-family="Helvetica,sans-Serif" font-size="10.00">* endInputSource()</text>
+<text text-anchor="start" x="6734.5" y="-2110" font-family="Helvetica,sans-Serif" font-size="10.00">* expandSystemId()</text>
+<text text-anchor="start" x="6734.5" y="-2099" font-family="Helvetica,sans-Serif" font-size="10.00">* resetEntities()</text>
+<text text-anchor="start" x="6734.5" y="-2088" font-family="Helvetica,sans-Serif" font-size="10.00">* resolveEntity()</text>
+<text text-anchor="start" x="6734.5" y="-2077" font-family="Helvetica,sans-Serif" font-size="10.00">* startInputSource()</text>
+<text text-anchor="start" x="6734.5" y="-2066" font-family="Helvetica,sans-Serif" font-size="10.00">* endInputSource()</text>
+<text text-anchor="start" x="6734.5" y="-2055" font-family="Helvetica,sans-Serif" font-size="10.00">* expandSystemId()</text>
+<text text-anchor="start" x="6734.5" y="-2044" font-family="Helvetica,sans-Serif" font-size="10.00">* resetEntities()</text>
+<text text-anchor="start" x="6734.5" y="-2033" font-family="Helvetica,sans-Serif" font-size="10.00">* resolveEntity()</text>
+<text text-anchor="start" x="6734.5" y="-2022" font-family="Helvetica,sans-Serif" font-size="10.00">* startInputSource()</text>
+<text text-anchor="start" x="6734.5" y="-2011" font-family="Helvetica,sans-Serif" font-size="10.00">* XMLEntityHandler()</text>
+<text text-anchor="start" x="6734.5" y="-2000" font-family="Helvetica,sans-Serif" font-size="10.00">* XMLEntityHandler()</text>
+<text text-anchor="start" x="6734.5" y="-1989" font-family="Helvetica,sans-Serif" font-size="10.00">* XMLEntityHandler()</text>
+<text text-anchor="start" x="6734.5" y="-1978" font-family="Helvetica,sans-Serif" font-size="10.00">* XMLEntityHandler()</text>
+<text text-anchor="start" x="6734.5" y="-1967" font-family="Helvetica,sans-Serif" font-size="10.00">* operator=()</text>
+<text text-anchor="start" x="6734.5" y="-1956" font-family="Helvetica,sans-Serif" font-size="10.00">* XMLEntityHandler()</text>
+<text text-anchor="start" x="6734.5" y="-1945" font-family="Helvetica,sans-Serif" font-size="10.00">* operator=()</text>
+<text text-anchor="start" x="6734.5" y="-1934" font-family="Helvetica,sans-Serif" font-size="10.00">* XMLEntityHandler()</text>
+<text text-anchor="start" x="6734.5" y="-1923" font-family="Helvetica,sans-Serif" font-size="10.00">* operator=()</text>
 </a>
 </g>
 </g>
 <!-- Node44&#45;&gt;Node1 -->
 <g id="edge176" class="edge">
 <title>Node44&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M6812.18,-1888.41C6820.42,-1765.46 6828.95,-1617.94 6833,-1485 6849.81,-932.69 6766.23,-666.81 6308,-358 6147.5,-249.83 3116.06,-171.81 2566.17,-158.51"/>
+<path fill="none" stroke="#404040" d="M6810.32,-1915.97C6819.1,-1787.93 6828.65,-1628.04 6833,-1485 6849.81,-932.69 6766.23,-666.81 6308,-358 6147.5,-249.83 3116.06,-171.81 2566.17,-158.51"/>
 <polygon fill="none" stroke="#404040" points="2566.02,-158.51 2559.93,-162.36 2554.02,-158.22 2560.12,-154.36 2566.02,-158.51"/>
 <text text-anchor="middle" x="6794" y="-844" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;fEntityHandler</text>
 </g>
 <!-- Node44&#45;&gt;Node40 -->
 <g id="edge62" class="edge">
 <title>Node44&#45;&gt;Node40</title>
-<path fill="none" stroke="#404040" d="M6784.3,-1888.2C6765.1,-1750.46 6716.48,-1593.3 6600,-1503 6552.38,-1466.08 6109.14,-1516.87 6058,-1485 6025.1,-1464.49 6043.96,-1435.87 6017,-1408 5899.95,-1287 5718.65,-1202.15 5615.31,-1160.46"/>
+<path fill="none" stroke="#404040" d="M6787.8,-1915.74C6771.34,-1771.93 6724.33,-1599.38 6600,-1503 6552.38,-1466.08 6109.14,-1516.87 6058,-1485 6025.1,-1464.49 6043.96,-1435.87 6017,-1408 5899.95,-1287 5718.65,-1202.15 5615.31,-1160.46"/>
 <polygon fill="none" stroke="#404040" points="5615.16,-1160.4 5608.11,-1161.89 5604.02,-1155.95 5611.08,-1154.46 5615.16,-1160.4"/>
 <text text-anchor="middle" x="6108" y="-1444" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;fUserEntityHandler</text>
 </g>
 <!-- Node44&#45;&gt;Node69 -->
 <g id="edge132" class="edge">
 <title>Node44&#45;&gt;Node69</title>
-<path fill="none" stroke="#404040" d="M6815.08,-1888.2C6815.76,-1737.57 6795.42,-1551.87 6712,-1408 6647.72,-1297.15 6519.36,-1218.47 6429.01,-1173.95"/>
+<path fill="none" stroke="#404040" d="M6814.72,-1915.8C6818.04,-1760.76 6800.59,-1560.79 6712,-1408 6647.72,-1297.15 6519.36,-1218.47 6429.01,-1173.95"/>
 <polygon fill="none" stroke="#404040" points="6428.98,-1173.94 6421.83,-1174.92 6418.18,-1168.7 6425.33,-1167.72 6428.98,-1173.94"/>
 <text text-anchor="middle" x="6788" y="-1444" font-family="Helvetica,sans-Serif" font-size="10.00"> #fEntityHandler</text>
 </g>

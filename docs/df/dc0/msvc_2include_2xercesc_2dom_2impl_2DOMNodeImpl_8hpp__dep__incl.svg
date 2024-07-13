@@ -296,24 +296,7 @@ var sectionId = 'dynsection-1';
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="../../dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1415.41,-78.5 1415.41,-119.5 1559.41,-119.5 1559.41,-78.5 1415.41,-78.5"/>
-<text text-anchor="start" x="1423.41" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
-<text text-anchor="start" x="1423.41" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
-<text text-anchor="middle" x="1487.41" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMCasts.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node9&#45;&gt;Node10 -->
-<g id="edge10" class="edge">
-<title>Node9&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M1049.79,-155.84C1183.96,-131.26 1329.95,-115.05 1415.15,-106.64"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1048.94,-152.44 1039.74,-157.7 1050.21,-159.32 1048.94,-152.44"/>
-</g>
-<!-- Node11 -->
-<g id="node11" class="node">
-<title>Node11</title>
-<g id="a_node11"><a xlink:href="../../d4/da4/msvc_2include_2xercesc_2dom_2impl_2DOMElementNSImpl_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="../../d4/da4/msvc_2include_2xercesc_2dom_2impl_2DOMElementNSImpl_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="895.41,-78.5 895.41,-119.5 1039.41,-119.5 1039.41,-78.5 895.41,-78.5"/>
 <text text-anchor="start" x="903.41" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
 <text text-anchor="start" x="903.41" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
@@ -321,16 +304,33 @@ var sectionId = 'dynsection-1';
 </a>
 </g>
 </g>
-<!-- Node9&#45;&gt;Node11 -->
-<g id="edge11" class="edge">
-<title>Node9&#45;&gt;Node11</title>
+<!-- Node9&#45;&gt;Node10 -->
+<g id="edge10" class="edge">
+<title>Node9&#45;&gt;Node10</title>
 <path fill="none" stroke="midnightblue" d="M967.41,-146.3C967.41,-137.3 967.41,-127.65 967.41,-119.51"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="963.91,-146.43 967.41,-156.43 970.91,-146.43 963.91,-146.43"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="../../db/d0c/msvc_2include_2xercesc_2dom_2impl_2XSDElementNSImpl_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node12"><a xlink:href="../../dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1415.41,-78.5 1415.41,-119.5 1559.41,-119.5 1559.41,-78.5 1415.41,-78.5"/>
+<text text-anchor="start" x="1423.41" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
+<text text-anchor="start" x="1423.41" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
+<text text-anchor="middle" x="1487.41" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMCasts.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node9&#45;&gt;Node12 -->
+<g id="edge12" class="edge">
+<title>Node9&#45;&gt;Node12</title>
+<path fill="none" stroke="midnightblue" d="M1049.79,-155.84C1183.96,-131.26 1329.95,-115.05 1415.15,-106.64"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1048.94,-152.44 1039.74,-157.7 1050.21,-159.32 1048.94,-152.44"/>
+</g>
+<!-- Node11 -->
+<g id="node11" class="node">
+<title>Node11</title>
+<g id="a_node11"><a xlink:href="../../db/d0c/msvc_2include_2xercesc_2dom_2impl_2XSDElementNSImpl_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="895.41,-0.5 895.41,-41.5 1039.41,-41.5 1039.41,-0.5 895.41,-0.5"/>
 <text text-anchor="start" x="903.41" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
 <text text-anchor="start" x="903.41" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
@@ -338,15 +338,15 @@ var sectionId = 'dynsection-1';
 </a>
 </g>
 </g>
-<!-- Node11&#45;&gt;Node12 -->
-<g id="edge12" class="edge">
-<title>Node11&#45;&gt;Node12</title>
+<!-- Node10&#45;&gt;Node11 -->
+<g id="edge11" class="edge">
+<title>Node10&#45;&gt;Node11</title>
 <path fill="none" stroke="midnightblue" d="M967.41,-68.3C967.41,-59.3 967.41,-49.65 967.41,-41.51"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="963.91,-68.43 967.41,-78.43 970.91,-68.43 963.91,-68.43"/>
 </g>
-<!-- Node17&#45;&gt;Node10 -->
+<!-- Node17&#45;&gt;Node12 -->
 <g id="edge18" class="edge">
-<title>Node17&#45;&gt;Node10</title>
+<title>Node17&#45;&gt;Node12</title>
 <path fill="none" stroke="midnightblue" d="M1762.97,-155.72C1688.32,-139.09 1613.21,-124.11 1559.62,-113.72"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1762.5,-159.2 1773.02,-157.96 1764.03,-152.37 1762.5,-159.2"/>
 </g>
