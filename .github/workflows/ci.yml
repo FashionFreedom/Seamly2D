@@ -43,7 +43,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: install appimage dependencies
         run: |
@@ -81,7 +81,7 @@ jobs:
           cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
           linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Seamly2D-x86_64.AppImage
           path: Seamly2D-x86_64.AppImage
@@ -93,7 +93,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: jurplel/install-qt-action@v3
         with:
@@ -128,7 +128,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: jurplel/install-qt-action@v3
         with:
@@ -173,7 +173,7 @@ jobs:
           fi
           make -j$(sysctl -n hw.logicalcpu)
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Seamly2D-macos.zip
           path: out/Seamly2D-macos.zip
@@ -187,7 +187,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: ilammy/msvc-dev-cmd@v1
 
@@ -242,7 +242,7 @@ jobs:
           C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
           copy Seamly2D-windows.zip ..\Seamly2D\
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Seamly2D-windows.zip
           path: Seamly2D-windows.zip
@@ -256,7 +256,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: jurplel/install-qt-action@v3
         with:
@@ -296,7 +296,7 @@ jobs:
           C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows-mingw.zip Seamly2D-installer.exe
           copy Seamly2D-windows-mingw.zip ..\Seamly2D\
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Seamly2D-windows-mingw.zip
           path: Seamly2D-windows-mingw.zip
@@ -310,16 +310,16 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: Seamly2D-x86_64.AppImage
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: Seamly2D-macos.zip
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: Seamly2D-windows.zip
-      - uses: softprops/action-gh-release@v1
+      - uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ env.VERSION_NUMBER }}
           name: ${{ env.VERSION_NUMBER }}
@@ -340,7 +340,7 @@ jobs:
 
     steps:
       - name: Doxygen GitHub Pages Deploy Action
-        uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
+        uses: DenverCoder1/doxygen-github-pages-action@60e8d33d954eafb4d54710db8130fb0ad8f7d157
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
