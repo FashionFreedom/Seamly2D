@@ -7,7 +7,7 @@ var classVToolCubicBezier =
     [ "FirstPointName", "de/d2b/classVToolCubicBezier.html#a8e7843668c48653e892e7b388eae47c9", null ],
     [ "ForthPointName", "de/d2b/classVToolCubicBezier.html#a8911be9c0b23547a004ee4e2df2efe4c", null ],
     [ "getSpline", "de/d2b/classVToolCubicBezier.html#a62cdac8ce8c1124bb665efdd4820f647", null ],
-    [ "RefreshGeometry", "de/d2b/classVToolCubicBezier.html#a2495a2ea0cff2638c8bd8d78f59dfbe1", null ],
+    [ "refreshGeometry", "de/d2b/classVToolCubicBezier.html#aa15119d5e3cd5fc40a35325c2e095b73", null ],
     [ "RemoveReferens", "de/d2b/classVToolCubicBezier.html#aceae5797bdfc8b43fae799eda0924876", null ],
     [ "SaveDialog", "de/d2b/classVToolCubicBezier.html#a7081e71cb63c4515a3abdea54bffc4e9", null ],
     [ "SaveOptions", "de/d2b/classVToolCubicBezier.html#a01e7cc3df9d49a41ab7191c925a56219", null ],

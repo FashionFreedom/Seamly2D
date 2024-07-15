@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 2502;
+var viewWidth = 2660;
 var viewHeight = 777;
 var sectionId = 'dynsection-0';
 </script>
@@ -54,29 +54,29 @@ var sectionId = 'dynsection-0';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>VPE::VProperty</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-773 2497.5,-773 2497.5,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-773 2655.5,-773 2655.5,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="1179,-485.5 1179,-674.5 1307,-674.5 1307,-485.5 1179,-485.5"/>
-<text text-anchor="middle" x="1243" y="-662.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VProperty</text>
-<polyline fill="none" stroke="black" points="1179,-655.5 1307,-655.5 "/>
-<text text-anchor="start" x="1187" y="-643.5" font-family="Helvetica,sans-Serif" font-size="10.00"># d_ptr</text>
-<polyline fill="none" stroke="black" points="1179,-636.5 1307,-636.5 "/>
-<text text-anchor="start" x="1187" y="-624.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VProperty()</text>
-<text text-anchor="start" x="1187" y="-613.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VProperty()</text>
-<text text-anchor="start" x="1187" y="-602.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1187" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
-<text text-anchor="start" x="1187" y="-580.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setData()</text>
-<text text-anchor="start" x="1187" y="-569.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
-<text text-anchor="start" x="1187" y="-558.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
-<text text-anchor="start" x="1187" y="-547.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setEditorData()</text>
-<text text-anchor="start" x="1187" y="-536.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
-<text text-anchor="start" x="1187" y="-525.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ flags()</text>
-<text text-anchor="start" x="1187" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 29 more...</text>
-<text text-anchor="start" x="1187" y="-503.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ childValueChanged()</text>
-<text text-anchor="start" x="1187" y="-492.5" font-family="Helvetica,sans-Serif" font-size="10.00"># VProperty()</text>
+<polygon fill="#bfbfbf" stroke="black" points="1268,-485.5 1268,-674.5 1396,-674.5 1396,-485.5 1268,-485.5"/>
+<text text-anchor="middle" x="1332" y="-662.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VProperty</text>
+<polyline fill="none" stroke="black" points="1268,-655.5 1396,-655.5 "/>
+<text text-anchor="start" x="1276" y="-643.5" font-family="Helvetica,sans-Serif" font-size="10.00"># d_ptr</text>
+<polyline fill="none" stroke="black" points="1268,-636.5 1396,-636.5 "/>
+<text text-anchor="start" x="1276" y="-624.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VProperty()</text>
+<text text-anchor="start" x="1276" y="-613.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VProperty()</text>
+<text text-anchor="start" x="1276" y="-602.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1276" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
+<text text-anchor="start" x="1276" y="-580.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setData()</text>
+<text text-anchor="start" x="1276" y="-569.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
+<text text-anchor="start" x="1276" y="-558.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
+<text text-anchor="start" x="1276" y="-547.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setEditorData()</text>
+<text text-anchor="start" x="1276" y="-536.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
+<text text-anchor="start" x="1276" y="-525.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ flags()</text>
+<text text-anchor="start" x="1276" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 29 more...</text>
+<text text-anchor="start" x="1276" y="-503.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ childValueChanged()</text>
+<text text-anchor="start" x="1276" y="-492.5" font-family="Helvetica,sans-Serif" font-size="10.00"># VProperty()</text>
 </a>
 </g>
 </g>
@@ -108,66 +108,63 @@ var sectionId = 'dynsection-0';
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M1168.74,-578.78C949.11,-576.82 307.39,-561.38 137,-449 123.94,-440.39 112.95,-428.59 103.78,-415.62"/>
-<polygon fill="none" stroke="midnightblue" points="1168.85,-582.28 1178.87,-578.86 1168.9,-575.28 1168.85,-582.28"/>
+<path fill="none" stroke="midnightblue" d="M1257.45,-579.52C1025.81,-579.82 322.93,-570.48 137,-449 123.91,-440.45 112.89,-428.67 103.71,-415.72"/>
+<polygon fill="none" stroke="midnightblue" points="1257.8,-583.02 1267.79,-579.5 1257.79,-576.02 1257.8,-583.02"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d5/daa/classVPE_1_1LineTypeProperty.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="146,-210 146,-432 286,-432 286,-210 146,-210"/>
-<text text-anchor="middle" x="216" y="-420" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::LineTypeProperty</text>
-<polyline fill="none" stroke="black" points="146,-413 286,-413 "/>
-<text text-anchor="start" x="154" y="-401" font-family="Helvetica,sans-Serif" font-size="10.00"># m_lineTypes</text>
-<text text-anchor="start" x="154" y="-390" font-family="Helvetica,sans-Serif" font-size="10.00"># m_indexList</text>
-<text text-anchor="start" x="154" y="-379" font-family="Helvetica,sans-Serif" font-size="10.00"># m_iconWidth</text>
-<text text-anchor="start" x="154" y="-368" font-family="Helvetica,sans-Serif" font-size="10.00"># m_iconHeight</text>
-<polyline fill="none" stroke="black" points="146,-361 286,-361 "/>
-<text text-anchor="start" x="154" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ LineTypeProperty()</text>
-<text text-anchor="start" x="154" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~LineTypeProperty()</text>
-<text text-anchor="start" x="154" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
-<text text-anchor="start" x="154" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
-<text text-anchor="start" x="154" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
-<text text-anchor="start" x="154" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineTypes()</text>
-<text text-anchor="start" x="154" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineTypes()</text>
-<text text-anchor="start" x="154" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
-<text text-anchor="start" x="154" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="154" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
-<text text-anchor="start" x="154" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ indexOfLineType()</text>
-<text text-anchor="start" x="154" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00">+ currentIndexChanged()</text>
-<text text-anchor="start" x="154" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; createIcon()</text>
+<g id="a_node4"><a xlink:href="../../df/d74/classVPE_1_1DirectionProperty.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="146,-226.5 146,-415.5 286,-415.5 286,-226.5 146,-226.5"/>
+<text text-anchor="middle" x="216" y="-403.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::DirectionProperty</text>
+<polyline fill="none" stroke="black" points="146,-396.5 286,-396.5 "/>
+<text text-anchor="start" x="154" y="-384.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_directions</text>
+<text text-anchor="start" x="154" y="-373.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_indexList</text>
+<polyline fill="none" stroke="black" points="146,-366.5 286,-366.5 "/>
+<text text-anchor="start" x="154" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DirectionProperty()</text>
+<text text-anchor="start" x="154" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DirectionProperty()</text>
+<text text-anchor="start" x="154" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
+<text text-anchor="start" x="154" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
+<text text-anchor="start" x="154" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
+<text text-anchor="start" x="154" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDirections()</text>
+<text text-anchor="start" x="154" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDirections()</text>
+<text text-anchor="start" x="154" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
+<text text-anchor="start" x="154" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="154" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<text text-anchor="start" x="154" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ indexOfDirection()</text>
+<text text-anchor="start" x="154" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ currentIndexChanged()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M1168.44,-576.83C970.91,-569.85 439.38,-542.63 295,-449 287.59,-444.2 280.76,-438.43 274.48,-432.04"/>
-<polygon fill="none" stroke="midnightblue" points="1168.6,-580.34 1178.72,-577.19 1168.84,-573.35 1168.6,-580.34"/>
+<path fill="none" stroke="midnightblue" d="M1257.52,-577.83C1047.44,-573.29 455.04,-551.47 295,-449 281.55,-440.39 270,-428.59 260.22,-415.62"/>
+<polygon fill="none" stroke="midnightblue" points="1257.76,-581.34 1267.83,-578.05 1257.91,-574.34 1257.76,-581.34"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d8/ddf/classVPE_1_1LineWeightProperty.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="../../d5/daa/classVPE_1_1LineTypeProperty.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="304,-210 304,-432 444,-432 444,-210 304,-210"/>
-<text text-anchor="middle" x="374" y="-420" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::LineWeightProperty</text>
+<text text-anchor="middle" x="374" y="-420" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::LineTypeProperty</text>
 <polyline fill="none" stroke="black" points="304,-413 444,-413 "/>
-<text text-anchor="start" x="312" y="-401" font-family="Helvetica,sans-Serif" font-size="10.00"># m_lineWeights</text>
+<text text-anchor="start" x="312" y="-401" font-family="Helvetica,sans-Serif" font-size="10.00"># m_lineTypes</text>
 <text text-anchor="start" x="312" y="-390" font-family="Helvetica,sans-Serif" font-size="10.00"># m_indexList</text>
 <text text-anchor="start" x="312" y="-379" font-family="Helvetica,sans-Serif" font-size="10.00"># m_iconWidth</text>
 <text text-anchor="start" x="312" y="-368" font-family="Helvetica,sans-Serif" font-size="10.00"># m_iconHeight</text>
 <polyline fill="none" stroke="black" points="304,-361 444,-361 "/>
-<text text-anchor="start" x="312" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ LineWeightProperty()</text>
-<text text-anchor="start" x="312" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~LineWeightProperty()</text>
+<text text-anchor="start" x="312" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ LineTypeProperty()</text>
+<text text-anchor="start" x="312" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~LineTypeProperty()</text>
 <text text-anchor="start" x="312" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
 <text text-anchor="start" x="312" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
 <text text-anchor="start" x="312" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
-<text text-anchor="start" x="312" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineWeights()</text>
-<text text-anchor="start" x="312" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineWeights()</text>
+<text text-anchor="start" x="312" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineTypes()</text>
+<text text-anchor="start" x="312" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineTypes()</text>
 <text text-anchor="start" x="312" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
 <text text-anchor="start" x="312" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
 <text text-anchor="start" x="312" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
-<text text-anchor="start" x="312" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ indexOfLineWeight()</text>
+<text text-anchor="start" x="312" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ indexOfLineType()</text>
 <text text-anchor="start" x="312" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00">+ currentIndexChanged()</text>
 <text text-anchor="start" x="312" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; createIcon()</text>
 </a>
@@ -176,503 +173,537 @@ var sectionId = 'dynsection-0';
 <!-- Node1&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
 <title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M1168.85,-574.55C995.57,-562.95 569.95,-527.09 453,-449 445.77,-444.17 439.07,-438.43 432.9,-432.1"/>
-<polygon fill="none" stroke="midnightblue" points="1168.69,-578.05 1178.9,-575.22 1169.15,-571.06 1168.69,-578.05"/>
+<path fill="none" stroke="midnightblue" d="M1257.93,-575.95C1070.98,-567.02 585.44,-535.88 453,-449 445.73,-444.23 439,-438.53 432.81,-432.23"/>
+<polygon fill="none" stroke="midnightblue" points="1257.79,-579.45 1267.95,-576.42 1258.12,-572.45 1257.79,-579.45"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="../../d6/d0b/classVPE_1_1PlainTextProperty.html" target="_top" xlink:title="Class for holding a plain text property.">
-<polygon fill="white" stroke="black" points="462.5,-199 462.5,-443 603.5,-443 603.5,-199 462.5,-199"/>
-<text text-anchor="middle" x="533" y="-431" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::PlainTextProperty</text>
-<polyline fill="none" stroke="black" points="462.5,-424 603.5,-424 "/>
-<text text-anchor="start" x="470.5" y="-412" font-family="Helvetica,sans-Serif" font-size="10.00"># m_readOnly</text>
-<text text-anchor="start" x="470.5" y="-401" font-family="Helvetica,sans-Serif" font-size="10.00"># m_typeForParent</text>
-<text text-anchor="start" x="470.5" y="-390" font-family="Helvetica,sans-Serif" font-size="10.00"># m_osSeparator</text>
-<polyline fill="none" stroke="black" points="462.5,-383 603.5,-383 "/>
-<text text-anchor="start" x="470.5" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">+ PlainTextProperty()</text>
-<text text-anchor="start" x="470.5" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00">+ PlainTextProperty()</text>
-<text text-anchor="start" x="470.5" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
-<text text-anchor="start" x="470.5" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
-<text text-anchor="start" x="470.5" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ setReadOnly()</text>
-<text text-anchor="start" x="470.5" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOsSeparator()</text>
-<text text-anchor="start" x="470.5" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ setClearButtonEnable()</text>
-<text text-anchor="start" x="470.5" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSetting()</text>
-<text text-anchor="start" x="470.5" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSetting()</text>
-<text text-anchor="start" x="470.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSettingKeys()</text>
-<text text-anchor="start" x="470.5" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="470.5" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
-<text text-anchor="start" x="470.5" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ updateParent()</text>
-<text text-anchor="start" x="470.5" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTypeForParent()</text>
-<text text-anchor="start" x="470.5" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTypeForParent()</text>
-<text text-anchor="start" x="470.5" y="-206" font-family="Helvetica,sans-Serif" font-size="10.00"># eventFilter()</text>
+<g id="a_node6"><a xlink:href="../../d8/ddf/classVPE_1_1LineWeightProperty.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="462,-210 462,-432 602,-432 602,-210 462,-210"/>
+<text text-anchor="middle" x="532" y="-420" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::LineWeightProperty</text>
+<polyline fill="none" stroke="black" points="462,-413 602,-413 "/>
+<text text-anchor="start" x="470" y="-401" font-family="Helvetica,sans-Serif" font-size="10.00"># m_lineWeights</text>
+<text text-anchor="start" x="470" y="-390" font-family="Helvetica,sans-Serif" font-size="10.00"># m_indexList</text>
+<text text-anchor="start" x="470" y="-379" font-family="Helvetica,sans-Serif" font-size="10.00"># m_iconWidth</text>
+<text text-anchor="start" x="470" y="-368" font-family="Helvetica,sans-Serif" font-size="10.00"># m_iconHeight</text>
+<polyline fill="none" stroke="black" points="462,-361 602,-361 "/>
+<text text-anchor="start" x="470" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ LineWeightProperty()</text>
+<text text-anchor="start" x="470" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~LineWeightProperty()</text>
+<text text-anchor="start" x="470" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
+<text text-anchor="start" x="470" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
+<text text-anchor="start" x="470" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
+<text text-anchor="start" x="470" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineWeights()</text>
+<text text-anchor="start" x="470" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineWeights()</text>
+<text text-anchor="start" x="470" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
+<text text-anchor="start" x="470" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="470" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<text text-anchor="start" x="470" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ indexOfLineWeight()</text>
+<text text-anchor="start" x="470" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00">+ currentIndexChanged()</text>
+<text text-anchor="start" x="470" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; createIcon()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M1168.54,-571.08C1021.77,-554.28 701.61,-511.46 612,-449 609.12,-447 606.33,-444.85 603.62,-442.58"/>
-<polygon fill="none" stroke="midnightblue" points="1168.47,-574.59 1178.8,-572.24 1169.26,-567.64 1168.47,-574.59"/>
+<path fill="none" stroke="midnightblue" d="M1257.47,-573.21C1095.18,-559.4 715.97,-520.25 611,-449 603.91,-444.19 597.34,-438.51 591.26,-432.26"/>
+<polygon fill="none" stroke="midnightblue" points="1257.58,-576.73 1267.84,-574.08 1258.17,-569.76 1257.58,-576.73"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d8/d90/classVPE_1_1QVector3DProperty.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="621.5,-237.5 621.5,-404.5 758.5,-404.5 758.5,-237.5 621.5,-237.5"/>
-<text text-anchor="middle" x="690" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::QVector3DProperty</text>
-<polyline fill="none" stroke="black" points="621.5,-385.5 758.5,-385.5 "/>
-<text text-anchor="middle" x="690" y="-373.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="621.5,-366.5 758.5,-366.5 "/>
-<text text-anchor="start" x="629.5" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ QVector3DProperty()</text>
-<text text-anchor="start" x="629.5" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~QVector3DProperty()</text>
-<text text-anchor="start" x="629.5" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
-<text text-anchor="start" x="629.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ flags()</text>
-<text text-anchor="start" x="629.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getVector()</text>
-<text text-anchor="start" x="629.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setVector()</text>
-<text text-anchor="start" x="629.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setVector()</text>
-<text text-anchor="start" x="629.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="629.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
-<text text-anchor="start" x="629.5" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
-<text text-anchor="start" x="629.5" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getValue()</text>
+<g id="a_node7"><a xlink:href="../../d6/d0b/classVPE_1_1PlainTextProperty.html" target="_top" xlink:title="Class for holding a plain text property.">
+<polygon fill="white" stroke="black" points="620.5,-199 620.5,-443 761.5,-443 761.5,-199 620.5,-199"/>
+<text text-anchor="middle" x="691" y="-431" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::PlainTextProperty</text>
+<polyline fill="none" stroke="black" points="620.5,-424 761.5,-424 "/>
+<text text-anchor="start" x="628.5" y="-412" font-family="Helvetica,sans-Serif" font-size="10.00"># m_readOnly</text>
+<text text-anchor="start" x="628.5" y="-401" font-family="Helvetica,sans-Serif" font-size="10.00"># m_typeForParent</text>
+<text text-anchor="start" x="628.5" y="-390" font-family="Helvetica,sans-Serif" font-size="10.00"># m_osSeparator</text>
+<polyline fill="none" stroke="black" points="620.5,-383 761.5,-383 "/>
+<text text-anchor="start" x="628.5" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">+ PlainTextProperty()</text>
+<text text-anchor="start" x="628.5" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00">+ PlainTextProperty()</text>
+<text text-anchor="start" x="628.5" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
+<text text-anchor="start" x="628.5" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
+<text text-anchor="start" x="628.5" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ setReadOnly()</text>
+<text text-anchor="start" x="628.5" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOsSeparator()</text>
+<text text-anchor="start" x="628.5" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ setClearButtonEnable()</text>
+<text text-anchor="start" x="628.5" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSetting()</text>
+<text text-anchor="start" x="628.5" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSetting()</text>
+<text text-anchor="start" x="628.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSettingKeys()</text>
+<text text-anchor="start" x="628.5" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="628.5" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<text text-anchor="start" x="628.5" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ updateParent()</text>
+<text text-anchor="start" x="628.5" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTypeForParent()</text>
+<text text-anchor="start" x="628.5" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTypeForParent()</text>
+<text text-anchor="start" x="628.5" y="-206" font-family="Helvetica,sans-Serif" font-size="10.00"># eventFilter()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
 <g id="edge6" class="edge">
 <title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M1168.85,-575.37C1068.64,-567.02 888.68,-539.52 768,-449 752.27,-437.2 739,-421.21 728.13,-404.56"/>
-<polygon fill="none" stroke="midnightblue" points="1168.64,-578.86 1178.89,-576.16 1169.19,-571.88 1168.64,-578.86"/>
+<path fill="none" stroke="midnightblue" d="M1257.75,-579.33C1142.74,-576.28 919.25,-555.74 770,-449 767.15,-446.96 764.38,-444.78 761.69,-442.49"/>
+<polygon fill="none" stroke="midnightblue" points="1257.78,-582.83 1267.86,-579.56 1257.94,-575.84 1257.78,-582.83"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="../../d4/de6/classVPE_1_1SpinboxProperty.html" target="_top" xlink:title="Class for holding an integer property.">
-<polygon fill="white" stroke="black" points="777,-221 777,-421 899,-421 899,-221 777,-221"/>
-<text text-anchor="middle" x="838" y="-409" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::SpinboxProperty</text>
-<polyline fill="none" stroke="black" points="777,-402 899,-402 "/>
-<text text-anchor="start" x="785" y="-390" font-family="Helvetica,sans-Serif" font-size="10.00"># minValue</text>
-<text text-anchor="start" x="785" y="-379" font-family="Helvetica,sans-Serif" font-size="10.00"># maxValue</text>
-<text text-anchor="start" x="785" y="-368" font-family="Helvetica,sans-Serif" font-size="10.00"># singleStep</text>
-<text text-anchor="start" x="785" y="-357" font-family="Helvetica,sans-Serif" font-size="10.00"># StandardMin</text>
-<text text-anchor="start" x="785" y="-346" font-family="Helvetica,sans-Serif" font-size="10.00"># StandardMax</text>
-<polyline fill="none" stroke="black" points="777,-339 899,-339 "/>
-<text text-anchor="start" x="785" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ SpinboxProperty()</text>
-<text text-anchor="start" x="785" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ SpinboxProperty()</text>
-<text text-anchor="start" x="785" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
-<text text-anchor="start" x="785" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
-<text text-anchor="start" x="785" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSetting()</text>
-<text text-anchor="start" x="785" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSetting()</text>
-<text text-anchor="start" x="785" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSettingKeys()</text>
-<text text-anchor="start" x="785" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="785" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
-<text text-anchor="start" x="785" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00">+ valueChanged()</text>
+<g id="a_node8"><a xlink:href="../../d8/d90/classVPE_1_1QVector3DProperty.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="779.5,-237.5 779.5,-404.5 916.5,-404.5 916.5,-237.5 779.5,-237.5"/>
+<text text-anchor="middle" x="848" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::QVector3DProperty</text>
+<polyline fill="none" stroke="black" points="779.5,-385.5 916.5,-385.5 "/>
+<text text-anchor="middle" x="848" y="-373.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="779.5,-366.5 916.5,-366.5 "/>
+<text text-anchor="start" x="787.5" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ QVector3DProperty()</text>
+<text text-anchor="start" x="787.5" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~QVector3DProperty()</text>
+<text text-anchor="start" x="787.5" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
+<text text-anchor="start" x="787.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ flags()</text>
+<text text-anchor="start" x="787.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getVector()</text>
+<text text-anchor="start" x="787.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setVector()</text>
+<text text-anchor="start" x="787.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setVector()</text>
+<text text-anchor="start" x="787.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="787.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<text text-anchor="start" x="787.5" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
+<text text-anchor="start" x="787.5" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getValue()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node8 -->
 <g id="edge7" class="edge">
 <title>Node1&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M1168.67,-565.58C1095.18,-549.06 983.12,-514.7 908,-449 898.81,-440.96 890.59,-431.41 883.3,-421.21"/>
-<polygon fill="none" stroke="midnightblue" points="1168.26,-569.08 1178.77,-567.8 1169.75,-562.24 1168.26,-569.08"/>
+<path fill="none" stroke="midnightblue" d="M1257.76,-570.97C1170.35,-558.22 1024.6,-526.31 926,-449 910.73,-437.03 897.71,-421.17 886.94,-404.73"/>
+<polygon fill="none" stroke="midnightblue" points="1257.48,-574.46 1267.87,-572.4 1258.45,-567.53 1257.48,-574.46"/>
 </g>
-<!-- Node10 -->
-<g id="node10" class="node">
-<title>Node10</title>
-<g id="a_node10"><a xlink:href="../../df/d02/classVPE_1_1VBoolProperty.html" target="_top" xlink:title="The VBoolProperty can take two states: True or False.">
-<polygon fill="white" stroke="black" points="917.5,-254 917.5,-388 1030.5,-388 1030.5,-254 917.5,-254"/>
-<text text-anchor="middle" x="974" y="-376" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VBoolProperty</text>
-<polyline fill="none" stroke="black" points="917.5,-369 1030.5,-369 "/>
-<text text-anchor="start" x="925.5" y="-357" font-family="Helvetica,sans-Serif" font-size="10.00"># TrueText</text>
-<text text-anchor="start" x="925.5" y="-346" font-family="Helvetica,sans-Serif" font-size="10.00"># FalseText</text>
-<polyline fill="none" stroke="black" points="917.5,-339 1030.5,-339 "/>
-<text text-anchor="start" x="925.5" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ VBoolProperty()</text>
-<text text-anchor="start" x="925.5" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VBoolProperty()</text>
-<text text-anchor="start" x="925.5" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
-<text text-anchor="start" x="925.5" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+ setData()</text>
-<text text-anchor="start" x="925.5" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ flags()</text>
-<text text-anchor="start" x="925.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="925.5" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<!-- Node9 -->
+<g id="node9" class="node">
+<title>Node9</title>
+<g id="a_node9"><a xlink:href="../../d4/de6/classVPE_1_1SpinboxProperty.html" target="_top" xlink:title="Class for holding an integer property.">
+<polygon fill="white" stroke="black" points="935,-221 935,-421 1057,-421 1057,-221 935,-221"/>
+<text text-anchor="middle" x="996" y="-409" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::SpinboxProperty</text>
+<polyline fill="none" stroke="black" points="935,-402 1057,-402 "/>
+<text text-anchor="start" x="943" y="-390" font-family="Helvetica,sans-Serif" font-size="10.00"># minValue</text>
+<text text-anchor="start" x="943" y="-379" font-family="Helvetica,sans-Serif" font-size="10.00"># maxValue</text>
+<text text-anchor="start" x="943" y="-368" font-family="Helvetica,sans-Serif" font-size="10.00"># singleStep</text>
+<text text-anchor="start" x="943" y="-357" font-family="Helvetica,sans-Serif" font-size="10.00"># StandardMin</text>
+<text text-anchor="start" x="943" y="-346" font-family="Helvetica,sans-Serif" font-size="10.00"># StandardMax</text>
+<polyline fill="none" stroke="black" points="935,-339 1057,-339 "/>
+<text text-anchor="start" x="943" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ SpinboxProperty()</text>
+<text text-anchor="start" x="943" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ SpinboxProperty()</text>
+<text text-anchor="start" x="943" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
+<text text-anchor="start" x="943" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
+<text text-anchor="start" x="943" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSetting()</text>
+<text text-anchor="start" x="943" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSetting()</text>
+<text text-anchor="start" x="943" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSettingKeys()</text>
+<text text-anchor="start" x="943" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="943" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<text text-anchor="start" x="943" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00">+ valueChanged()</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node10 -->
-<g id="edge9" class="edge">
-<title>Node1&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M1169.87,-544.75C1127.59,-522.16 1075.68,-489.31 1039,-449 1023,-431.41 1009.86,-409.16 999.68,-388.21"/>
-<polygon fill="none" stroke="midnightblue" points="1168.25,-547.86 1178.73,-549.41 1171.51,-541.66 1168.25,-547.86"/>
+<!-- Node1&#45;&gt;Node9 -->
+<g id="edge8" class="edge">
+<title>Node1&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M1258.51,-556.83C1200.63,-536.37 1120.84,-501.21 1066,-449 1057.34,-440.75 1049.48,-431.2 1042.43,-421.1"/>
+<polygon fill="none" stroke="midnightblue" points="1257.37,-560.14 1267.97,-560.11 1259.67,-553.52 1257.37,-560.14"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="../../da/d5e/classVPE_1_1VColorProperty.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1048.5,-259.5 1048.5,-382.5 1163.5,-382.5 1163.5,-259.5 1048.5,-259.5"/>
-<text text-anchor="middle" x="1106" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VColorProperty</text>
-<polyline fill="none" stroke="black" points="1048.5,-363.5 1163.5,-363.5 "/>
-<text text-anchor="middle" x="1106" y="-351.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="1048.5,-344.5 1163.5,-344.5 "/>
-<text text-anchor="start" x="1056.5" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VColorProperty()</text>
-<text text-anchor="start" x="1056.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
-<text text-anchor="start" x="1056.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
-<text text-anchor="start" x="1056.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setEditorData()</text>
-<text text-anchor="start" x="1056.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
-<text text-anchor="start" x="1056.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1056.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<g id="a_node11"><a xlink:href="../../df/d02/classVPE_1_1VBoolProperty.html" target="_top" xlink:title="The VBoolProperty can take two states: True or False.">
+<polygon fill="white" stroke="black" points="1075.5,-254 1075.5,-388 1188.5,-388 1188.5,-254 1075.5,-254"/>
+<text text-anchor="middle" x="1132" y="-376" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VBoolProperty</text>
+<polyline fill="none" stroke="black" points="1075.5,-369 1188.5,-369 "/>
+<text text-anchor="start" x="1083.5" y="-357" font-family="Helvetica,sans-Serif" font-size="10.00"># TrueText</text>
+<text text-anchor="start" x="1083.5" y="-346" font-family="Helvetica,sans-Serif" font-size="10.00"># FalseText</text>
+<polyline fill="none" stroke="black" points="1075.5,-339 1188.5,-339 "/>
+<text text-anchor="start" x="1083.5" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ VBoolProperty()</text>
+<text text-anchor="start" x="1083.5" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VBoolProperty()</text>
+<text text-anchor="start" x="1083.5" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
+<text text-anchor="start" x="1083.5" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+ setData()</text>
+<text text-anchor="start" x="1083.5" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ flags()</text>
+<text text-anchor="start" x="1083.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1083.5" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node11 -->
 <g id="edge10" class="edge">
 <title>Node1&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M1186.76,-476.5C1181.75,-467.21 1176.77,-457.94 1172,-449 1160.49,-427.4 1148.07,-403.62 1137.14,-382.54"/>
-<polygon fill="none" stroke="midnightblue" points="1183.74,-478.27 1191.58,-485.39 1189.9,-474.93 1183.74,-478.27"/>
+<path fill="none" stroke="midnightblue" d="M1260.38,-518.43C1238.44,-497.78 1215.3,-473.64 1197,-449 1183.19,-430.41 1170.8,-408.45 1160.63,-388.08"/>
+<polygon fill="none" stroke="midnightblue" points="1258.05,-521.05 1267.76,-525.3 1262.82,-515.93 1258.05,-521.05"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="../../d6/dd6/classVPE_1_1VEmptyProperty.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1181.5,-248.5 1181.5,-393.5 1304.5,-393.5 1304.5,-248.5 1181.5,-248.5"/>
-<text text-anchor="middle" x="1243" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VEmptyProperty</text>
-<polyline fill="none" stroke="black" points="1181.5,-374.5 1304.5,-374.5 "/>
-<text text-anchor="middle" x="1243" y="-362.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="1181.5,-355.5 1304.5,-355.5 "/>
-<text text-anchor="start" x="1189.5" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VEmptyProperty()</text>
-<text text-anchor="start" x="1189.5" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VEmptyProperty()</text>
-<text text-anchor="start" x="1189.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
-<text text-anchor="start" x="1189.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
-<text text-anchor="start" x="1189.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
-<text text-anchor="start" x="1189.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ flags()</text>
-<text text-anchor="start" x="1189.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1189.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
-<text text-anchor="start" x="1189.5" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00"># VEmptyProperty()</text>
+<g id="a_node12"><a xlink:href="../../da/d5e/classVPE_1_1VColorProperty.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1206.5,-259.5 1206.5,-382.5 1321.5,-382.5 1321.5,-259.5 1206.5,-259.5"/>
+<text text-anchor="middle" x="1264" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VColorProperty</text>
+<polyline fill="none" stroke="black" points="1206.5,-363.5 1321.5,-363.5 "/>
+<text text-anchor="middle" x="1264" y="-351.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="1206.5,-344.5 1321.5,-344.5 "/>
+<text text-anchor="start" x="1214.5" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VColorProperty()</text>
+<text text-anchor="start" x="1214.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
+<text text-anchor="start" x="1214.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
+<text text-anchor="start" x="1214.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setEditorData()</text>
+<text text-anchor="start" x="1214.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
+<text text-anchor="start" x="1214.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1214.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node12 -->
 <g id="edge11" class="edge">
 <title>Node1&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M1243,-475.46C1243,-448.02 1243,-419.01 1243,-393.68"/>
-<polygon fill="none" stroke="midnightblue" points="1239.5,-475.49 1243,-485.49 1246.5,-475.49 1239.5,-475.49"/>
+<path fill="none" stroke="midnightblue" d="M1304.68,-475.76C1296.32,-444.15 1287.39,-410.41 1280.04,-382.62"/>
+<polygon fill="none" stroke="midnightblue" points="1301.32,-476.72 1307.26,-485.49 1308.08,-474.93 1301.32,-476.72"/>
 </g>
-<!-- Node14 -->
-<g id="node14" class="node">
-<title>Node14</title>
-<g id="a_node14"><a xlink:href="../../d2/dcb/classVPE_1_1VEnumProperty.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1323,-221 1323,-421 1463,-421 1463,-221 1323,-221"/>
-<text text-anchor="middle" x="1393" y="-409" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VEnumProperty</text>
-<polyline fill="none" stroke="black" points="1323,-402 1463,-402 "/>
-<text text-anchor="start" x="1331" y="-390" font-family="Helvetica,sans-Serif" font-size="10.00"># EnumerationLiterals</text>
-<polyline fill="none" stroke="black" points="1323,-383 1463,-383 "/>
-<text text-anchor="start" x="1331" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">+ VEnumProperty()</text>
-<text text-anchor="start" x="1331" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VEnumProperty()</text>
-<text text-anchor="start" x="1331" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
-<text text-anchor="start" x="1331" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
-<text text-anchor="start" x="1331" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
-<text text-anchor="start" x="1331" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLiterals()</text>
-<text text-anchor="start" x="1331" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLiterals()</text>
-<text text-anchor="start" x="1331" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
-<text text-anchor="start" x="1331" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1331" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
-<text text-anchor="start" x="1331" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSetting()</text>
-<text text-anchor="start" x="1331" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSetting()</text>
-<text text-anchor="start" x="1331" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSettingKeys()</text>
-<text text-anchor="start" x="1331" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00">+ currentIndexChanged()</text>
+<!-- Node13 -->
+<g id="node13" class="node">
+<title>Node13</title>
+<g id="a_node13"><a xlink:href="../../d6/dd6/classVPE_1_1VEmptyProperty.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1339.5,-248.5 1339.5,-393.5 1462.5,-393.5 1462.5,-248.5 1339.5,-248.5"/>
+<text text-anchor="middle" x="1401" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VEmptyProperty</text>
+<polyline fill="none" stroke="black" points="1339.5,-374.5 1462.5,-374.5 "/>
+<text text-anchor="middle" x="1401" y="-362.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="1339.5,-355.5 1462.5,-355.5 "/>
+<text text-anchor="start" x="1347.5" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VEmptyProperty()</text>
+<text text-anchor="start" x="1347.5" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VEmptyProperty()</text>
+<text text-anchor="start" x="1347.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
+<text text-anchor="start" x="1347.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
+<text text-anchor="start" x="1347.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
+<text text-anchor="start" x="1347.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ flags()</text>
+<text text-anchor="start" x="1347.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1347.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<text text-anchor="start" x="1347.5" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00"># VEmptyProperty()</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node14 -->
-<g id="edge13" class="edge">
-<title>Node1&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M1302.78,-476.58C1313.46,-458.29 1324.56,-439.26 1335.18,-421.07"/>
-<polygon fill="none" stroke="midnightblue" points="1299.6,-475.09 1297.58,-485.49 1305.64,-478.62 1299.6,-475.09"/>
+<!-- Node1&#45;&gt;Node13 -->
+<g id="edge12" class="edge">
+<title>Node1&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M1359.7,-475.82C1367.1,-448.28 1374.93,-419.12 1381.76,-393.68"/>
+<polygon fill="none" stroke="midnightblue" points="1356.32,-474.92 1357.11,-485.49 1363.08,-476.74 1356.32,-474.92"/>
 </g>
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="../../dc/d8e/classVPE_1_1VFileProperty.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1481.5,-237.5 1481.5,-404.5 1590.5,-404.5 1590.5,-237.5 1481.5,-237.5"/>
-<text text-anchor="middle" x="1536" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VFileProperty</text>
-<polyline fill="none" stroke="black" points="1481.5,-385.5 1590.5,-385.5 "/>
-<text text-anchor="middle" x="1536" y="-373.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="1481.5,-366.5 1590.5,-366.5 "/>
-<text text-anchor="start" x="1489.5" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VFileProperty()</text>
-<text text-anchor="start" x="1489.5" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VFileProperty()</text>
-<text text-anchor="start" x="1489.5" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFileFilters()</text>
-<text text-anchor="start" x="1489.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFileFilters()</text>
-<text text-anchor="start" x="1489.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFile()</text>
-<text text-anchor="start" x="1489.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFile()</text>
-<text text-anchor="start" x="1489.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
-<text text-anchor="start" x="1489.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
-<text text-anchor="start" x="1489.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setEditorData()</text>
-<text text-anchor="start" x="1489.5" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
-<text text-anchor="start" x="1489.5" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
+<g id="a_node15"><a xlink:href="../../d2/dcb/classVPE_1_1VEnumProperty.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1481,-221 1481,-421 1621,-421 1621,-221 1481,-221"/>
+<text text-anchor="middle" x="1551" y="-409" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VEnumProperty</text>
+<polyline fill="none" stroke="black" points="1481,-402 1621,-402 "/>
+<text text-anchor="start" x="1489" y="-390" font-family="Helvetica,sans-Serif" font-size="10.00"># EnumerationLiterals</text>
+<polyline fill="none" stroke="black" points="1481,-383 1621,-383 "/>
+<text text-anchor="start" x="1489" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">+ VEnumProperty()</text>
+<text text-anchor="start" x="1489" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VEnumProperty()</text>
+<text text-anchor="start" x="1489" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
+<text text-anchor="start" x="1489" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
+<text text-anchor="start" x="1489" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
+<text text-anchor="start" x="1489" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLiterals()</text>
+<text text-anchor="start" x="1489" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLiterals()</text>
+<text text-anchor="start" x="1489" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
+<text text-anchor="start" x="1489" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1489" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<text text-anchor="start" x="1489" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSetting()</text>
+<text text-anchor="start" x="1489" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSetting()</text>
+<text text-anchor="start" x="1489" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSettingKeys()</text>
+<text text-anchor="start" x="1489" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00">+ currentIndexChanged()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node15 -->
 <g id="edge14" class="edge">
 <title>Node1&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M1316.53,-550.67C1365.48,-528.84 1428.55,-494.66 1472,-449 1484.26,-436.12 1494.68,-420.44 1503.33,-404.56"/>
-<polygon fill="none" stroke="midnightblue" points="1315.01,-547.51 1307.25,-554.73 1317.82,-553.93 1315.01,-547.51"/>
+<path fill="none" stroke="midnightblue" d="M1403.89,-518.29C1426.59,-497.46 1450.96,-473.26 1471,-449 1478.22,-440.26 1485.3,-430.83 1492.07,-421.18"/>
+<polygon fill="none" stroke="midnightblue" points="1401.31,-515.9 1396.27,-525.22 1406.02,-521.08 1401.31,-515.9"/>
 </g>
 <!-- Node16 -->
 <g id="node16" class="node">
 <title>Node16</title>
-<g id="a_node16"><a xlink:href="../../db/df1/classVPE_1_1VLabelProperty.html" target="_top" xlink:title="Class for holding a string property.">
-<polygon fill="white" stroke="black" points="1608.5,-232 1608.5,-410 1727.5,-410 1727.5,-232 1608.5,-232"/>
-<text text-anchor="middle" x="1668" y="-398" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VLabelProperty</text>
-<polyline fill="none" stroke="black" points="1608.5,-391 1727.5,-391 "/>
-<text text-anchor="start" x="1616.5" y="-379" font-family="Helvetica,sans-Serif" font-size="10.00"># typeForParent</text>
-<polyline fill="none" stroke="black" points="1608.5,-372 1727.5,-372 "/>
-<text text-anchor="start" x="1616.5" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLabelProperty()</text>
-<text text-anchor="start" x="1616.5" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLabelProperty()</text>
-<text text-anchor="start" x="1616.5" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
-<text text-anchor="start" x="1616.5" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
-<text text-anchor="start" x="1616.5" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSetting()</text>
-<text text-anchor="start" x="1616.5" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSetting()</text>
-<text text-anchor="start" x="1616.5" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSettingKeys()</text>
-<text text-anchor="start" x="1616.5" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1616.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
-<text text-anchor="start" x="1616.5" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ updateParent()</text>
-<text text-anchor="start" x="1616.5" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTypeForParent()</text>
-<text text-anchor="start" x="1616.5" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTypeForParent()</text>
+<g id="a_node16"><a xlink:href="../../dc/d8e/classVPE_1_1VFileProperty.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1639.5,-237.5 1639.5,-404.5 1748.5,-404.5 1748.5,-237.5 1639.5,-237.5"/>
+<text text-anchor="middle" x="1694" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VFileProperty</text>
+<polyline fill="none" stroke="black" points="1639.5,-385.5 1748.5,-385.5 "/>
+<text text-anchor="middle" x="1694" y="-373.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="1639.5,-366.5 1748.5,-366.5 "/>
+<text text-anchor="start" x="1647.5" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VFileProperty()</text>
+<text text-anchor="start" x="1647.5" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VFileProperty()</text>
+<text text-anchor="start" x="1647.5" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFileFilters()</text>
+<text text-anchor="start" x="1647.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFileFilters()</text>
+<text text-anchor="start" x="1647.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFile()</text>
+<text text-anchor="start" x="1647.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFile()</text>
+<text text-anchor="start" x="1647.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
+<text text-anchor="start" x="1647.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
+<text text-anchor="start" x="1647.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setEditorData()</text>
+<text text-anchor="start" x="1647.5" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
+<text text-anchor="start" x="1647.5" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node16 -->
 <g id="edge15" class="edge">
 <title>Node1&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M1317.41,-567.77C1395.4,-552.66 1517.69,-519.12 1599,-449 1611.54,-438.18 1622.2,-424.5 1631.12,-410.16"/>
-<polygon fill="none" stroke="midnightblue" points="1316.36,-564.41 1307.18,-569.7 1317.65,-571.29 1316.36,-564.41"/>
+<path fill="none" stroke="midnightblue" d="M1406.04,-562.02C1471.73,-543.69 1566.82,-508.77 1630,-449 1643.18,-436.53 1654.07,-420.75 1662.9,-404.59"/>
+<polygon fill="none" stroke="midnightblue" points="1404.89,-558.7 1396.16,-564.71 1406.73,-565.45 1404.89,-558.7"/>
 </g>
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="../../d6/d22/classVPE_1_1VLineColorProperty.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1746,-215.5 1746,-426.5 1886,-426.5 1886,-215.5 1746,-215.5"/>
-<text text-anchor="middle" x="1816" y="-414.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VLineColorProperty</text>
-<polyline fill="none" stroke="black" points="1746,-407.5 1886,-407.5 "/>
-<text text-anchor="start" x="1754" y="-395.5" font-family="Helvetica,sans-Serif" font-size="10.00"># colors</text>
-<text text-anchor="start" x="1754" y="-384.5" font-family="Helvetica,sans-Serif" font-size="10.00"># indexList</text>
-<text text-anchor="start" x="1754" y="-373.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_iconWidth</text>
-<text text-anchor="start" x="1754" y="-362.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_iconHeight</text>
-<polyline fill="none" stroke="black" points="1746,-355.5 1886,-355.5 "/>
-<text text-anchor="start" x="1754" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLineColorProperty()</text>
-<text text-anchor="start" x="1754" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VLineColorProperty()</text>
-<text text-anchor="start" x="1754" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
-<text text-anchor="start" x="1754" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
-<text text-anchor="start" x="1754" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
-<text text-anchor="start" x="1754" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setColors()</text>
-<text text-anchor="start" x="1754" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getColors()</text>
-<text text-anchor="start" x="1754" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
-<text text-anchor="start" x="1754" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1754" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
-<text text-anchor="start" x="1754" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ indexOfColor()</text>
-<text text-anchor="start" x="1754" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ currentIndexChanged()</text>
+<g id="a_node17"><a xlink:href="../../db/df1/classVPE_1_1VLabelProperty.html" target="_top" xlink:title="Class for holding a string property.">
+<polygon fill="white" stroke="black" points="1766.5,-232 1766.5,-410 1885.5,-410 1885.5,-232 1766.5,-232"/>
+<text text-anchor="middle" x="1826" y="-398" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VLabelProperty</text>
+<polyline fill="none" stroke="black" points="1766.5,-391 1885.5,-391 "/>
+<text text-anchor="start" x="1774.5" y="-379" font-family="Helvetica,sans-Serif" font-size="10.00"># typeForParent</text>
+<polyline fill="none" stroke="black" points="1766.5,-372 1885.5,-372 "/>
+<text text-anchor="start" x="1774.5" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLabelProperty()</text>
+<text text-anchor="start" x="1774.5" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLabelProperty()</text>
+<text text-anchor="start" x="1774.5" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
+<text text-anchor="start" x="1774.5" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
+<text text-anchor="start" x="1774.5" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSetting()</text>
+<text text-anchor="start" x="1774.5" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSetting()</text>
+<text text-anchor="start" x="1774.5" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSettingKeys()</text>
+<text text-anchor="start" x="1774.5" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1774.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<text text-anchor="start" x="1774.5" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ updateParent()</text>
+<text text-anchor="start" x="1774.5" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTypeForParent()</text>
+<text text-anchor="start" x="1774.5" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTypeForParent()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node17 -->
 <g id="edge16" class="edge">
 <title>Node1&#45;&gt;Node17</title>
-<path fill="none" stroke="midnightblue" d="M1317.34,-576.09C1420.62,-568.62 1609.11,-542.15 1736,-449 1744.72,-442.6 1752.71,-434.94 1759.99,-426.59"/>
-<polygon fill="none" stroke="midnightblue" points="1317.05,-572.61 1307.31,-576.78 1317.53,-579.59 1317.05,-572.61"/>
+<path fill="none" stroke="midnightblue" d="M1406.35,-573.28C1498.05,-562.72 1654.34,-532.87 1757,-449 1770.02,-438.36 1780.95,-424.6 1789.99,-410.06"/>
+<polygon fill="none" stroke="midnightblue" points="1405.88,-569.81 1396.32,-574.39 1406.64,-576.77 1405.88,-569.81"/>
 </g>
 <!-- Node18 -->
 <g id="node18" class="node">
 <title>Node18</title>
-<g id="a_node18"><a xlink:href="../../d5/d82/classVPE_1_1VObjectProperty.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1904,-221 1904,-421 2044,-421 2044,-221 1904,-221"/>
-<text text-anchor="middle" x="1974" y="-409" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VObjectProperty</text>
-<polyline fill="none" stroke="black" points="1904,-402 2044,-402 "/>
-<text text-anchor="start" x="1912" y="-390" font-family="Helvetica,sans-Serif" font-size="10.00"># m_objects</text>
-<text text-anchor="start" x="1912" y="-379" font-family="Helvetica,sans-Serif" font-size="10.00"># m_indexList</text>
-<polyline fill="none" stroke="black" points="1904,-372 2044,-372 "/>
-<text text-anchor="start" x="1912" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00">+ VObjectProperty()</text>
-<text text-anchor="start" x="1912" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VObjectProperty()</text>
-<text text-anchor="start" x="1912" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
-<text text-anchor="start" x="1912" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
-<text text-anchor="start" x="1912" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
-<text text-anchor="start" x="1912" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ setObjectsList()</text>
-<text text-anchor="start" x="1912" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+ getObjects()</text>
-<text text-anchor="start" x="1912" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
-<text text-anchor="start" x="1912" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1912" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
-<text text-anchor="start" x="1912" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ indexOfObject()</text>
-<text text-anchor="start" x="1912" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ currentIndexChanged()</text>
-<text text-anchor="start" x="1912" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00"># fillListItems()</text>
+<g id="a_node18"><a xlink:href="../../d6/d22/classVPE_1_1VLineColorProperty.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1904,-215.5 1904,-426.5 2044,-426.5 2044,-215.5 1904,-215.5"/>
+<text text-anchor="middle" x="1974" y="-414.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VLineColorProperty</text>
+<polyline fill="none" stroke="black" points="1904,-407.5 2044,-407.5 "/>
+<text text-anchor="start" x="1912" y="-395.5" font-family="Helvetica,sans-Serif" font-size="10.00"># colors</text>
+<text text-anchor="start" x="1912" y="-384.5" font-family="Helvetica,sans-Serif" font-size="10.00"># indexList</text>
+<text text-anchor="start" x="1912" y="-373.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_iconWidth</text>
+<text text-anchor="start" x="1912" y="-362.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_iconHeight</text>
+<polyline fill="none" stroke="black" points="1904,-355.5 2044,-355.5 "/>
+<text text-anchor="start" x="1912" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLineColorProperty()</text>
+<text text-anchor="start" x="1912" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VLineColorProperty()</text>
+<text text-anchor="start" x="1912" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
+<text text-anchor="start" x="1912" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
+<text text-anchor="start" x="1912" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
+<text text-anchor="start" x="1912" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setColors()</text>
+<text text-anchor="start" x="1912" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getColors()</text>
+<text text-anchor="start" x="1912" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
+<text text-anchor="start" x="1912" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1912" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<text text-anchor="start" x="1912" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ indexOfColor()</text>
+<text text-anchor="start" x="1912" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ currentIndexChanged()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node18 -->
 <g id="edge17" class="edge">
 <title>Node1&#45;&gt;Node18</title>
-<path fill="none" stroke="midnightblue" d="M1317.21,-571.65C1467.57,-555.59 1801.77,-513.55 1895,-449 1905.99,-441.39 1915.76,-431.7 1924.35,-421.08"/>
-<polygon fill="none" stroke="midnightblue" points="1316.72,-568.19 1307.15,-572.72 1317.46,-575.15 1316.72,-568.19"/>
+<path fill="none" stroke="midnightblue" d="M1406.18,-579.23C1521.09,-576.04 1744.45,-555.31 1894,-449 1902.92,-442.66 1911.07,-434.98 1918.45,-426.57"/>
+<polygon fill="none" stroke="midnightblue" points="1405.99,-575.73 1396.08,-579.47 1406.16,-582.73 1405.99,-575.73"/>
 </g>
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:href="../../de/d98/classVPE_1_1VPointFProperty.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="2062,-237.5 2062,-404.5 2184,-404.5 2184,-237.5 2062,-237.5"/>
-<text text-anchor="middle" x="2123" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VPointFProperty</text>
-<polyline fill="none" stroke="black" points="2062,-385.5 2184,-385.5 "/>
-<text text-anchor="middle" x="2123" y="-373.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2062,-366.5 2184,-366.5 "/>
-<text text-anchor="start" x="2070" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VPointFProperty()</text>
-<text text-anchor="start" x="2070" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VPointFProperty()</text>
-<text text-anchor="start" x="2070" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
-<text text-anchor="start" x="2070" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ flags()</text>
-<text text-anchor="start" x="2070" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPointF()</text>
-<text text-anchor="start" x="2070" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPointF()</text>
-<text text-anchor="start" x="2070" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPointF()</text>
-<text text-anchor="start" x="2070" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="2070" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
-<text text-anchor="start" x="2070" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
-<text text-anchor="start" x="2070" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getValue()</text>
+<g id="a_node19"><a xlink:href="../../d5/d82/classVPE_1_1VObjectProperty.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="2062,-221 2062,-421 2202,-421 2202,-221 2062,-221"/>
+<text text-anchor="middle" x="2132" y="-409" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VObjectProperty</text>
+<polyline fill="none" stroke="black" points="2062,-402 2202,-402 "/>
+<text text-anchor="start" x="2070" y="-390" font-family="Helvetica,sans-Serif" font-size="10.00"># m_objects</text>
+<text text-anchor="start" x="2070" y="-379" font-family="Helvetica,sans-Serif" font-size="10.00"># m_indexList</text>
+<polyline fill="none" stroke="black" points="2062,-372 2202,-372 "/>
+<text text-anchor="start" x="2070" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00">+ VObjectProperty()</text>
+<text text-anchor="start" x="2070" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VObjectProperty()</text>
+<text text-anchor="start" x="2070" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
+<text text-anchor="start" x="2070" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
+<text text-anchor="start" x="2070" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
+<text text-anchor="start" x="2070" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ setObjectsList()</text>
+<text text-anchor="start" x="2070" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+ getObjects()</text>
+<text text-anchor="start" x="2070" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
+<text text-anchor="start" x="2070" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="2070" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<text text-anchor="start" x="2070" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ indexOfObject()</text>
+<text text-anchor="start" x="2070" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ currentIndexChanged()</text>
+<text text-anchor="start" x="2070" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00"># fillListItems()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node19 -->
 <g id="edge18" class="edge">
 <title>Node1&#45;&gt;Node19</title>
-<path fill="none" stroke="midnightblue" d="M1317.1,-575.31C1493.93,-565.24 1934.66,-532.25 2053,-449 2068.96,-437.77 2081.67,-421.7 2091.64,-404.75"/>
-<polygon fill="none" stroke="midnightblue" points="1316.9,-571.82 1307.11,-575.87 1317.29,-578.81 1316.9,-571.82"/>
+<path fill="none" stroke="midnightblue" d="M1406.53,-573.21C1568.82,-559.4 1948.03,-520.25 2053,-449 2064.06,-441.49 2073.87,-431.86 2082.49,-421.27"/>
+<polygon fill="none" stroke="midnightblue" points="1405.83,-569.76 1396.16,-574.08 1406.42,-576.73 1405.83,-569.76"/>
 </g>
 <!-- Node20 -->
 <g id="node20" class="node">
 <title>Node20</title>
-<g id="a_node20"><a xlink:href="../../d9/d73/classVPE_1_1VShortcutProperty.html" target="_top" xlink:title="This property can be used to handle key shortcuts.">
-<polygon fill="white" stroke="black" points="2202,-248.5 2202,-393.5 2334,-393.5 2334,-248.5 2202,-248.5"/>
-<text text-anchor="middle" x="2268" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VShortcutProperty</text>
-<polyline fill="none" stroke="black" points="2202,-374.5 2334,-374.5 "/>
-<text text-anchor="middle" x="2268" y="-362.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2202,-355.5 2334,-355.5 "/>
-<text text-anchor="start" x="2210" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VShortcutProperty()</text>
-<text text-anchor="start" x="2210" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VShortcutProperty()</text>
-<text text-anchor="start" x="2210" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
-<text text-anchor="start" x="2210" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
-<text text-anchor="start" x="2210" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setEditorData()</text>
-<text text-anchor="start" x="2210" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
-<text text-anchor="start" x="2210" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="2210" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
-<text text-anchor="start" x="2210" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
+<g id="a_node20"><a xlink:href="../../de/d98/classVPE_1_1VPointFProperty.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="2220,-237.5 2220,-404.5 2342,-404.5 2342,-237.5 2220,-237.5"/>
+<text text-anchor="middle" x="2281" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VPointFProperty</text>
+<polyline fill="none" stroke="black" points="2220,-385.5 2342,-385.5 "/>
+<text text-anchor="middle" x="2281" y="-373.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2220,-366.5 2342,-366.5 "/>
+<text text-anchor="start" x="2228" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VPointFProperty()</text>
+<text text-anchor="start" x="2228" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VPointFProperty()</text>
+<text text-anchor="start" x="2228" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
+<text text-anchor="start" x="2228" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ flags()</text>
+<text text-anchor="start" x="2228" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPointF()</text>
+<text text-anchor="start" x="2228" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPointF()</text>
+<text text-anchor="start" x="2228" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPointF()</text>
+<text text-anchor="start" x="2228" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="2228" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<text text-anchor="start" x="2228" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
+<text text-anchor="start" x="2228" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getValue()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node20 -->
 <g id="edge19" class="edge">
 <title>Node1&#45;&gt;Node20</title>
-<path fill="none" stroke="midnightblue" d="M1317.19,-577.06C1514.91,-570.61 2049.24,-544.56 2193,-449 2213.26,-435.53 2228.81,-414.57 2240.36,-393.53"/>
-<polygon fill="none" stroke="midnightblue" points="1317.07,-573.56 1307.18,-577.37 1317.29,-580.55 1317.07,-573.56"/>
+<path fill="none" stroke="midnightblue" d="M1406.34,-576.36C1593.95,-568.39 2080.9,-539.34 2211,-449 2227.13,-437.8 2239.93,-421.63 2249.93,-404.57"/>
+<polygon fill="none" stroke="midnightblue" points="1406.14,-572.86 1396.29,-576.77 1406.43,-579.85 1406.14,-572.86"/>
 </g>
 <!-- Node21 -->
 <g id="node21" class="node">
 <title>Node21</title>
-<g id="a_node21"><a xlink:href="../../d7/d7b/classVPE_1_1VStringProperty.html" target="_top" xlink:title="Class for holding a string property.">
-<polygon fill="white" stroke="black" points="2352.5,-193.5 2352.5,-448.5 2493.5,-448.5 2493.5,-193.5 2352.5,-193.5"/>
-<text text-anchor="middle" x="2423" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VStringProperty</text>
-<polyline fill="none" stroke="black" points="2352.5,-429.5 2493.5,-429.5 "/>
-<text text-anchor="start" x="2360.5" y="-417.5" font-family="Helvetica,sans-Serif" font-size="10.00"># readOnly</text>
-<text text-anchor="start" x="2360.5" y="-406.5" font-family="Helvetica,sans-Serif" font-size="10.00"># typeForParent</text>
-<text text-anchor="start" x="2360.5" y="-395.5" font-family="Helvetica,sans-Serif" font-size="10.00"># clearButton</text>
-<text text-anchor="start" x="2360.5" y="-384.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_osSeparator</text>
-<polyline fill="none" stroke="black" points="2352.5,-377.5 2493.5,-377.5 "/>
-<text text-anchor="start" x="2360.5" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VStringProperty()</text>
-<text text-anchor="start" x="2360.5" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VStringProperty()</text>
-<text text-anchor="start" x="2360.5" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
-<text text-anchor="start" x="2360.5" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
-<text text-anchor="start" x="2360.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setReadOnly()</text>
-<text text-anchor="start" x="2360.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOsSeparator()</text>
-<text text-anchor="start" x="2360.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setClearButtonEnable()</text>
-<text text-anchor="start" x="2360.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSetting()</text>
-<text text-anchor="start" x="2360.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSetting()</text>
-<text text-anchor="start" x="2360.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSettingKeys()</text>
-<text text-anchor="start" x="2360.5" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="2360.5" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
-<text text-anchor="start" x="2360.5" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ updateParent()</text>
-<text text-anchor="start" x="2360.5" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTypeForParent()</text>
-<text text-anchor="start" x="2360.5" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTypeForParent()</text>
-<text text-anchor="start" x="2360.5" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00"># eventFilter()</text>
+<g id="a_node21"><a xlink:href="../../d9/d73/classVPE_1_1VShortcutProperty.html" target="_top" xlink:title="This property can be used to handle key shortcuts.">
+<polygon fill="white" stroke="black" points="2360,-248.5 2360,-393.5 2492,-393.5 2492,-248.5 2360,-248.5"/>
+<text text-anchor="middle" x="2426" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VShortcutProperty</text>
+<polyline fill="none" stroke="black" points="2360,-374.5 2492,-374.5 "/>
+<text text-anchor="middle" x="2426" y="-362.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2360,-355.5 2492,-355.5 "/>
+<text text-anchor="start" x="2368" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VShortcutProperty()</text>
+<text text-anchor="start" x="2368" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VShortcutProperty()</text>
+<text text-anchor="start" x="2368" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
+<text text-anchor="start" x="2368" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
+<text text-anchor="start" x="2368" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setEditorData()</text>
+<text text-anchor="start" x="2368" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
+<text text-anchor="start" x="2368" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="2368" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<text text-anchor="start" x="2368" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node21 -->
 <g id="edge20" class="edge">
 <title>Node1&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M1317.42,-578.4C1536.01,-575.37 2171.53,-557.26 2343,-449 2346.19,-446.98 2349.28,-444.79 2352.27,-442.44"/>
-<polygon fill="none" stroke="midnightblue" points="1317.28,-574.9 1307.33,-578.53 1317.37,-581.9 1317.28,-574.9"/>
+<path fill="none" stroke="midnightblue" d="M1406.4,-577.83C1614.13,-573.29 2195.26,-551.51 2351,-449 2371.32,-435.63 2386.89,-414.69 2398.43,-393.64"/>
+<polygon fill="none" stroke="midnightblue" points="1406.13,-574.34 1396.21,-578.05 1406.28,-581.33 1406.13,-574.34"/>
+</g>
+<!-- Node22 -->
+<g id="node22" class="node">
+<title>Node22</title>
+<g id="a_node22"><a xlink:href="../../d7/d7b/classVPE_1_1VStringProperty.html" target="_top" xlink:title="Class for holding a string property.">
+<polygon fill="white" stroke="black" points="2510.5,-193.5 2510.5,-448.5 2651.5,-448.5 2651.5,-193.5 2510.5,-193.5"/>
+<text text-anchor="middle" x="2581" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VStringProperty</text>
+<polyline fill="none" stroke="black" points="2510.5,-429.5 2651.5,-429.5 "/>
+<text text-anchor="start" x="2518.5" y="-417.5" font-family="Helvetica,sans-Serif" font-size="10.00"># readOnly</text>
+<text text-anchor="start" x="2518.5" y="-406.5" font-family="Helvetica,sans-Serif" font-size="10.00"># typeForParent</text>
+<text text-anchor="start" x="2518.5" y="-395.5" font-family="Helvetica,sans-Serif" font-size="10.00"># clearButton</text>
+<text text-anchor="start" x="2518.5" y="-384.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_osSeparator</text>
+<polyline fill="none" stroke="black" points="2510.5,-377.5 2651.5,-377.5 "/>
+<text text-anchor="start" x="2518.5" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VStringProperty()</text>
+<text text-anchor="start" x="2518.5" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VStringProperty()</text>
+<text text-anchor="start" x="2518.5" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
+<text text-anchor="start" x="2518.5" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
+<text text-anchor="start" x="2518.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setReadOnly()</text>
+<text text-anchor="start" x="2518.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOsSeparator()</text>
+<text text-anchor="start" x="2518.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setClearButtonEnable()</text>
+<text text-anchor="start" x="2518.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSetting()</text>
+<text text-anchor="start" x="2518.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSetting()</text>
+<text text-anchor="start" x="2518.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSettingKeys()</text>
+<text text-anchor="start" x="2518.5" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="2518.5" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<text text-anchor="start" x="2518.5" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ updateParent()</text>
+<text text-anchor="start" x="2518.5" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTypeForParent()</text>
+<text text-anchor="start" x="2518.5" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTypeForParent()</text>
+<text text-anchor="start" x="2518.5" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00"># eventFilter()</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node22 -->
+<g id="edge21" class="edge">
+<title>Node1&#45;&gt;Node22</title>
+<path fill="none" stroke="midnightblue" d="M1406.31,-578.99C1633.93,-577.7 2317.26,-564.12 2501,-449 2504.2,-446.99 2507.3,-444.81 2510.29,-442.47"/>
+<polygon fill="none" stroke="midnightblue" points="1406.12,-575.49 1396.14,-579.04 1406.16,-582.49 1406.12,-575.49"/>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="1215,-711.5 1215,-768.5 1271,-768.5 1271,-711.5 1215,-711.5"/>
-<text text-anchor="middle" x="1243" y="-756.5" font-family="Helvetica,sans-Serif" font-size="10.00">QObject</text>
-<polyline fill="none" stroke="#bfbfbf" points="1215,-749.5 1271,-749.5 "/>
-<text text-anchor="middle" x="1243" y="-737.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#bfbfbf" points="1215,-730.5 1271,-730.5 "/>
-<text text-anchor="middle" x="1243" y="-718.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="#bfbfbf" points="1304,-711.5 1304,-768.5 1360,-768.5 1360,-711.5 1304,-711.5"/>
+<text text-anchor="middle" x="1332" y="-756.5" font-family="Helvetica,sans-Serif" font-size="10.00">QObject</text>
+<polyline fill="none" stroke="#bfbfbf" points="1304,-749.5 1360,-749.5 "/>
+<text text-anchor="middle" x="1332" y="-737.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#bfbfbf" points="1304,-730.5 1360,-730.5 "/>
+<text text-anchor="middle" x="1332" y="-718.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M1243,-701.22C1243,-693.01 1243,-683.99 1243,-674.68"/>
-<polygon fill="none" stroke="midnightblue" points="1239.5,-701.48 1243,-711.48 1246.5,-701.48 1239.5,-701.48"/>
+<path fill="none" stroke="midnightblue" d="M1332,-701.22C1332,-693.01 1332,-683.99 1332,-674.68"/>
+<polygon fill="none" stroke="midnightblue" points="1328.5,-701.48 1332,-711.48 1335.5,-701.48 1328.5,-701.48"/>
 </g>
-<!-- Node9 -->
-<g id="node9" class="node">
-<title>Node9</title>
-<g id="a_node9"><a xlink:href="../../dc/de2/classVPE_1_1DoubleSpinboxProperty.html" target="_top" xlink:title="Class for holding a double property.">
-<polygon fill="white" stroke="black" points="760,-0.5 760,-156.5 916,-156.5 916,-0.5 760,-0.5"/>
-<text text-anchor="middle" x="838" y="-144.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::DoubleSpinboxProperty</text>
-<polyline fill="none" stroke="black" points="760,-137.5 916,-137.5 "/>
-<text text-anchor="start" x="768" y="-125.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Precision</text>
-<text text-anchor="start" x="768" y="-114.5" font-family="Helvetica,sans-Serif" font-size="10.00"># StandardPrecision</text>
-<polyline fill="none" stroke="black" points="760,-107.5 916,-107.5 "/>
-<text text-anchor="start" x="768" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DoubleSpinboxProperty()</text>
-<text text-anchor="start" x="768" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DoubleSpinboxProperty()</text>
-<text text-anchor="start" x="768" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
-<text text-anchor="start" x="768" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
-<text text-anchor="start" x="768" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSetting()</text>
-<text text-anchor="start" x="768" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSetting()</text>
-<text text-anchor="start" x="768" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSettingKeys()</text>
-<text text-anchor="start" x="768" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="768" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<!-- Node10 -->
+<g id="node10" class="node">
+<title>Node10</title>
+<g id="a_node10"><a xlink:href="../../dc/de2/classVPE_1_1DoubleSpinboxProperty.html" target="_top" xlink:title="Class for holding a double property.">
+<polygon fill="white" stroke="black" points="918,-0.5 918,-156.5 1074,-156.5 1074,-0.5 918,-0.5"/>
+<text text-anchor="middle" x="996" y="-144.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::DoubleSpinboxProperty</text>
+<polyline fill="none" stroke="black" points="918,-137.5 1074,-137.5 "/>
+<text text-anchor="start" x="926" y="-125.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Precision</text>
+<text text-anchor="start" x="926" y="-114.5" font-family="Helvetica,sans-Serif" font-size="10.00"># StandardPrecision</text>
+<polyline fill="none" stroke="black" points="918,-107.5 1074,-107.5 "/>
+<text text-anchor="start" x="926" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DoubleSpinboxProperty()</text>
+<text text-anchor="start" x="926" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DoubleSpinboxProperty()</text>
+<text text-anchor="start" x="926" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
+<text text-anchor="start" x="926" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
+<text text-anchor="start" x="926" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSetting()</text>
+<text text-anchor="start" x="926" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSetting()</text>
+<text text-anchor="start" x="926" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSettingKeys()</text>
+<text text-anchor="start" x="926" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="926" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node9 -->
-<g id="edge8" class="edge">
-<title>Node8&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M838,-210.73C838,-192.53 838,-174 838,-156.81"/>
-<polygon fill="none" stroke="midnightblue" points="834.5,-210.79 838,-220.79 841.5,-210.79 834.5,-210.79"/>
+<!-- Node9&#45;&gt;Node10 -->
+<g id="edge9" class="edge">
+<title>Node9&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M996,-210.73C996,-192.53 996,-174 996,-156.81"/>
+<polygon fill="none" stroke="midnightblue" points="992.5,-210.79 996,-220.79 999.5,-210.79 992.5,-210.79"/>
 </g>
-<!-- Node13 -->
-<g id="node13" class="node">
-<title>Node13</title>
-<g id="a_node13"><a xlink:href="../../df/d07/classVPE_1_1VWidgetProperty.html" target="_top" xlink:title="This property holds a QWidget and displays it, if the view supports that. If not, it will behave like...">
-<polygon fill="white" stroke="black" points="1180,-22.5 1180,-134.5 1306,-134.5 1306,-22.5 1180,-22.5"/>
-<text text-anchor="middle" x="1243" y="-122.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VWidgetProperty</text>
-<polyline fill="none" stroke="black" points="1180,-115.5 1306,-115.5 "/>
-<text text-anchor="middle" x="1243" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="1180,-96.5 1306,-96.5 "/>
-<text text-anchor="start" x="1188" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VWidgetProperty()</text>
-<text text-anchor="start" x="1188" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VWidgetProperty()</text>
-<text text-anchor="start" x="1188" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getWidget()</text>
-<text text-anchor="start" x="1188" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setWidget()</text>
-<text text-anchor="start" x="1188" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1188" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<!-- Node14 -->
+<g id="node14" class="node">
+<title>Node14</title>
+<g id="a_node14"><a xlink:href="../../df/d07/classVPE_1_1VWidgetProperty.html" target="_top" xlink:title="This property holds a QWidget and displays it, if the view supports that. If not, it will behave like...">
+<polygon fill="white" stroke="black" points="1338,-22.5 1338,-134.5 1464,-134.5 1464,-22.5 1338,-22.5"/>
+<text text-anchor="middle" x="1401" y="-122.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VWidgetProperty</text>
+<polyline fill="none" stroke="black" points="1338,-115.5 1464,-115.5 "/>
+<text text-anchor="middle" x="1401" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="1338,-96.5 1464,-96.5 "/>
+<text text-anchor="start" x="1346" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VWidgetProperty()</text>
+<text text-anchor="start" x="1346" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VWidgetProperty()</text>
+<text text-anchor="start" x="1346" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getWidget()</text>
+<text text-anchor="start" x="1346" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setWidget()</text>
+<text text-anchor="start" x="1346" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1346" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
 </a>
 </g>
 </g>
-<!-- Node12&#45;&gt;Node13 -->
-<g id="edge12" class="edge">
-<title>Node12&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M1243,-238.08C1243,-203.99 1243,-165.32 1243,-134.69"/>
-<polygon fill="none" stroke="midnightblue" points="1239.5,-238.49 1243,-248.49 1246.5,-238.49 1239.5,-238.49"/>
+<!-- Node13&#45;&gt;Node14 -->
+<g id="edge13" class="edge">
+<title>Node13&#45;&gt;Node14</title>
+<path fill="none" stroke="midnightblue" d="M1401,-238.08C1401,-203.99 1401,-165.32 1401,-134.69"/>
+<polygon fill="none" stroke="midnightblue" points="1397.5,-238.49 1401,-248.49 1404.5,-238.49 1397.5,-238.49"/>
 </g>
 </g>
 </svg>

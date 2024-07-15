@@ -10,7 +10,7 @@ var vsettings_8cpp =
     [ "settingCommunityUseProxy", "db/d28/vsettings_8cpp.html#ad655dd425fbbf6ff0c0bbbe874279b99", null ],
     [ "settingCommunityUsername", "db/d28/vsettings_8cpp.html#aea961388dcc49ca23884f52790f2654d", null ],
     [ "settingCommunityUserPassword", "db/d28/vsettings_8cpp.html#a4d6ed1da0617224523a7edd32fe36da7", null ],
-    [ "settingConfigurationLabelLanguage", "db/d28/vsettings_8cpp.html#adcf6bb57ca9b6d812c5af211d4c8ca85", null ],
+    [ "settingConfigurationPointLanguage", "db/d28/vsettings_8cpp.html#a47b3d658d44fe95a9ceb63a870f83fdb", null ],
     [ "settingFields", "db/d28/vsettings_8cpp.html#a782ecb55f386a2d3f6de561a1802731d", null ],
     [ "settingIgnoreFields", "db/d28/vsettings_8cpp.html#a60f6ad3fe10e8dba6695e143c957034e", null ],
     [ "settingLayoutAutoCrop", "db/d28/vsettings_8cpp.html#a29b6fb0b013cf25159991ac9fe897136", null ],

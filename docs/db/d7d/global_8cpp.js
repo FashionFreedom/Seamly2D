@@ -1,8 +1,8 @@
 var global_8cpp =
 [
     [ "correctColor", "db/d7d/global_8cpp.html#a9b9f769370ea4d46dd631409eeb7bf5b", null ],
-    [ "ItemShapeFromPath", "db/d7d/global_8cpp.html#a5c3249b6978a84dc3934735b467b02d4", null ],
-    [ "PointRect", "db/d7d/global_8cpp.html#a3807c5cf77e9a4366ce5cd238b694275", null ],
+    [ "itemShapeFromPath", "db/d7d/global_8cpp.html#aba310f803d156f4ddf980fd6f7f24f5c", null ],
+    [ "pointRect", "db/d7d/global_8cpp.html#a727e022a994af96878f27777ab331af5", null ],
     [ "scaleCircleSize", "db/d7d/global_8cpp.html#a4c4949f8eb7810c58750e1fa26829d5e", null ],
     [ "scaledRadius", "db/d7d/global_8cpp.html#a616656278306146bc53c60e0dcaec695", null ],
     [ "scaleRectSize", "db/d7d/global_8cpp.html#a9ba0be559ee9d17092d093e687a9476f", null ],

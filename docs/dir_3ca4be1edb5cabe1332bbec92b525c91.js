@@ -1,5 +1,15 @@
 var dir_3ca4be1edb5cabe1332bbec92b525c91 =
 [
+    [ "custom_variable.cpp", "d2/d1e/custom__variable_8cpp.html", null ],
+    [ "custom_variable.h", "d2/d6c/custom__variable_8h.html", "d2/d6c/custom__variable_8h" ],
+    [ "custom_variable_p.h", "d3/d02/custom__variable__p_8h.html", [
+      [ "CustomVariableData", "dc/d49/classCustomVariableData.html", "dc/d49/classCustomVariableData" ]
+    ] ],
+    [ "measurement_variable.cpp", "d4/da4/measurement__variable_8cpp.html", null ],
+    [ "measurement_variable.h", "d7/d1e/measurement__variable_8h.html", "d7/d1e/measurement__variable_8h" ],
+    [ "measurement_variable_p.h", "d7/d8a/measurement__variable__p_8h.html", [
+      [ "MeasurementVariableData", "d3/d99/classMeasurementVariableData.html", "d3/d99/classMeasurementVariableData" ]
+    ] ],
     [ "varcradius.cpp", "d4/dfb/varcradius_8cpp.html", null ],
     [ "varcradius.h", "d1/d1c/varcradius_8h.html", [
       [ "VArcRadius", "d1/dd4/classVArcRadius.html", "d1/dd4/classVArcRadius" ]
@@ -20,11 +30,6 @@ var dir_3ca4be1edb5cabe1332bbec92b525c91 =
     [ "vcurvevariable_p.h", "d2/dec/vcurvevariable__p_8h.html", [
       [ "VCurveVariableData", "d2/d03/classVCurveVariableData.html", "d2/d03/classVCurveVariableData" ]
     ] ],
-    [ "vincrement.cpp", "d6/de6/vincrement_8cpp.html", null ],
-    [ "vincrement.h", "d9/d7e/vincrement_8h.html", "d9/d7e/vincrement_8h" ],
-    [ "vincrement_p.h", "d1/de1/vincrement__p_8h.html", [
-      [ "VIncrementData", "d3/d87/classVIncrementData.html", "d3/d87/classVIncrementData" ]
-    ] ],
     [ "vinternalvariable.cpp", "dc/de4/vinternalvariable_8cpp.html", null ],
     [ "vinternalvariable.h", "d4/df4/vinternalvariable_8h.html", "d4/df4/vinternalvariable_8h" ],
     [ "vinternalvariable_p.h", "da/d81/vinternalvariable__p_8h.html", [
@@ -39,11 +44,6 @@ var dir_3ca4be1edb5cabe1332bbec92b525c91 =
     [ "vlinelength.h", "dd/d2a/vlinelength_8h.html", "dd/d2a/vlinelength_8h" ],
     [ "vlinelength_p.h", "de/d06/vlinelength__p_8h.html", [
       [ "VLengthLineData", "d6/d08/classVLengthLineData.html", "d6/d08/classVLengthLineData" ]
-    ] ],
-    [ "vmeasurement.cpp", "dd/d62/vmeasurement_8cpp.html", null ],
-    [ "vmeasurement.h", "d0/dee/vmeasurement_8h.html", "d0/dee/vmeasurement_8h" ],
-    [ "vmeasurement_p.h", "d6/dc1/vmeasurement__p_8h.html", [
-      [ "VMeasurementData", "d1/d7b/classVMeasurementData.html", "d1/d7b/classVMeasurementData" ]
     ] ],
     [ "vvariable.cpp", "d2/d74/vvariable_8cpp.html", null ],
     [ "vvariable.h", "dd/d6e/vvariable_8h.html", "dd/d6e/vvariable_8h" ],

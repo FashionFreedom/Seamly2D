@@ -57,7 +57,7 @@ var classMainWindowsNoGUI =
     [ "RestoreTextAfterDXF", "de/d1a/classMainWindowsNoGUI.html#afbb09cac06eddc5692e26d3991075f42", null ],
     [ "ScenePreview", "de/d1a/classMainWindowsNoGUI.html#a6b882cd81c7dc5bbddf434ceed6b3268", null ],
     [ "SetPrinterSettings", "de/d1a/classMainWindowsNoGUI.html#ac0e046cfd088a84c5ed1dd21e005ffd4", null ],
-    [ "SetSizeHeightForIndividualM", "de/d1a/classMainWindowsNoGUI.html#a94efd542e03e9ba30d4675e9afc2cabd", null ],
+    [ "setSizeHeightForIndividualM", "de/d1a/classMainWindowsNoGUI.html#aea2618e8f96b9a6c3ba5933fda82a83f", null ],
     [ "toolLayoutSettings", "de/d1a/classMainWindowsNoGUI.html#ab9d879cd44ece72a64e4b1b34e0a501f", null ],
     [ "actionDockWidgetGroups", "de/d1a/classMainWindowsNoGUI.html#a5cca42614372a568bc0ddf435ccd824b", null ],
     [ "actionDockWidgetLayouts", "de/d1a/classMainWindowsNoGUI.html#adc9a136aa7d4a3228c9ad78d71d3f9a3", null ],

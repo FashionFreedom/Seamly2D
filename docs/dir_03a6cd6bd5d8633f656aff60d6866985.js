@@ -9,10 +9,6 @@ var dir_03a6cd6bd5d8633f656aff60d6866985 =
     [ "dialogmdatabase.h", "d0/d0b/dialogmdatabase_8h.html", [
       [ "MeasurementDatabaseDialog", "d3/d63/classMeasurementDatabaseDialog.html", "d3/d63/classMeasurementDatabaseDialog" ]
     ] ],
-    [ "dialognewmeasurements.cpp", "de/d0a/dialognewmeasurements_8cpp.html", null ],
-    [ "dialognewmeasurements.h", "db/deb/dialognewmeasurements_8h.html", [
-      [ "DialogNewMeasurements", "d9/de2/classDialogNewMeasurements.html", "d9/de2/classDialogNewMeasurements" ]
-    ] ],
     [ "dialogseamlymepreferences.cpp", "dd/db1/dialogseamlymepreferences_8cpp.html", null ],
     [ "dialogseamlymepreferences.h", "d0/d74/dialogseamlymepreferences_8h.html", [
       [ "DialogSeamlyMePreferences", "d5/d8a/classDialogSeamlyMePreferences.html", "d5/d8a/classDialogSeamlyMePreferences" ]
@@ -20,5 +16,13 @@ var dir_03a6cd6bd5d8633f656aff60d6866985 =
     [ "me_shortcuts_dialog.cpp", "d6/d8e/me__shortcuts__dialog_8cpp.html", null ],
     [ "me_shortcuts_dialog.h", "d3/d41/me__shortcuts__dialog_8h.html", [
       [ "MeShortcutsDialog", "dd/d67/classMeShortcutsDialog.html", "dd/d67/classMeShortcutsDialog" ]
+    ] ],
+    [ "me_welcome_dialog.cpp", "dc/d74/me__welcome__dialog_8cpp.html", null ],
+    [ "me_welcome_dialog.h", "d3/d5b/me__welcome__dialog_8h.html", [
+      [ "SeamlyMeWelcomeDialog", "d5/d64/classSeamlyMeWelcomeDialog.html", "d5/d64/classSeamlyMeWelcomeDialog" ]
+    ] ],
+    [ "new_measurements_dialog.cpp", "d7/d31/new__measurements__dialog_8cpp.html", null ],
+    [ "new_measurements_dialog.h", "d6/d9d/new__measurements__dialog_8h.html", [
+      [ "NewMeasurementsDialog", "dc/da3/classNewMeasurementsDialog.html", "dc/da3/classNewMeasurementsDialog" ]
     ] ]
 ];

@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 257;
+var viewWidth = 264;
 var viewHeight = 920;
 var sectionId = 'dynsection-0';
 </script>
@@ -54,22 +54,22 @@ var sectionId = 'dynsection-0';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>VisToolLine</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-916 253,-916 253,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-916 260,-916 260,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="66,-0.5 66,-112.5 188,-112.5 188,-0.5 66,-0.5"/>
-<text text-anchor="middle" x="127" y="-100.5" font-family="Helvetica,sans-Serif" font-size="10.00">VisToolLine</text>
-<polyline fill="none" stroke="black" points="66,-93.5 188,-93.5 "/>
-<text text-anchor="start" x="74" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; point2Id</text>
-<polyline fill="none" stroke="black" points="66,-74.5 188,-74.5 "/>
-<text text-anchor="start" x="74" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VisToolLine()</text>
-<text text-anchor="start" x="74" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VisToolLine()</text>
-<text text-anchor="start" x="74" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RefreshGeometry()</text>
-<text text-anchor="start" x="74" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPoint2Id()</text>
-<text text-anchor="start" x="74" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="74" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00"># DrawLine()</text>
+<polygon fill="#bfbfbf" stroke="black" points="68,-0.5 68,-112.5 190,-112.5 190,-0.5 68,-0.5"/>
+<text text-anchor="middle" x="129" y="-100.5" font-family="Helvetica,sans-Serif" font-size="10.00">VisToolLine</text>
+<polyline fill="none" stroke="black" points="68,-93.5 190,-93.5 "/>
+<text text-anchor="start" x="76" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; point2Id</text>
+<polyline fill="none" stroke="black" points="68,-74.5 190,-74.5 "/>
+<text text-anchor="start" x="76" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VisToolLine()</text>
+<text text-anchor="start" x="76" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VisToolLine()</text>
+<text text-anchor="start" x="76" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RefreshGeometry()</text>
+<text text-anchor="start" x="76" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPoint2Id()</text>
+<text text-anchor="start" x="76" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="76" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00"># DrawLine()</text>
 </a>
 </g>
 </g>
@@ -77,30 +77,30 @@ var sectionId = 'dynsection-0';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="../../de/d0e/classVisLine.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="78,-149.5 78,-316.5 176,-316.5 176,-149.5 78,-149.5"/>
-<text text-anchor="middle" x="127" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">VisLine</text>
-<polyline fill="none" stroke="black" points="78,-297.5 176,-297.5 "/>
-<text text-anchor="middle" x="127" y="-285.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="78,-278.5 176,-278.5 "/>
-<text text-anchor="start" x="86" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VisLine()</text>
-<text text-anchor="start" x="86" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VisLine()</text>
-<text text-anchor="start" x="86" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="86" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CorrectAngle()</text>
-<text text-anchor="start" x="86" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Ray()</text>
-<text text-anchor="start" x="86" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Ray()</text>
-<text text-anchor="start" x="86" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Axis()</text>
-<text text-anchor="start" x="86" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Axis()</text>
-<text text-anchor="start" x="86" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initPen()</text>
-<text text-anchor="start" x="86" y="-167.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddOnScene()</text>
-<text text-anchor="start" x="86" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00"># DrawRay()</text>
+<polygon fill="white" stroke="black" points="80,-149.5 80,-316.5 178,-316.5 178,-149.5 80,-149.5"/>
+<text text-anchor="middle" x="129" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">VisLine</text>
+<polyline fill="none" stroke="black" points="80,-297.5 178,-297.5 "/>
+<text text-anchor="middle" x="129" y="-285.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="80,-278.5 178,-278.5 "/>
+<text text-anchor="start" x="88" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VisLine()</text>
+<text text-anchor="start" x="88" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VisLine()</text>
+<text text-anchor="start" x="88" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="88" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CorrectAngle()</text>
+<text text-anchor="start" x="88" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Ray()</text>
+<text text-anchor="start" x="88" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Ray()</text>
+<text text-anchor="start" x="88" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Axis()</text>
+<text text-anchor="start" x="88" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Axis()</text>
+<text text-anchor="start" x="88" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initPen()</text>
+<text text-anchor="start" x="88" y="-167.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddOnScene()</text>
+<text text-anchor="start" x="88" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00"># DrawRay()</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M127,-139.23C127,-130.27 127,-121.39 127,-112.97"/>
-<polygon fill="none" stroke="midnightblue" points="123.5,-139.35 127,-149.35 130.5,-139.35 123.5,-139.35"/>
+<path fill="none" stroke="midnightblue" d="M129,-139.23C129,-130.27 129,-121.39 129,-112.97"/>
+<polygon fill="none" stroke="midnightblue" points="125.5,-139.35 129,-149.35 132.5,-139.35 125.5,-139.35"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -155,8 +155,8 @@ var sectionId = 'dynsection-0';
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M106.44,-343.17C108.16,-334.07 109.82,-325.25 111.4,-316.83"/>
-<polygon fill="none" stroke="midnightblue" points="102.97,-342.68 104.56,-353.15 109.85,-343.97 102.97,-342.68"/>
+<path fill="none" stroke="midnightblue" d="M107.82,-343.17C109.59,-334.07 111.3,-325.25 112.93,-316.83"/>
+<polygon fill="none" stroke="midnightblue" points="104.35,-342.67 105.88,-353.15 111.22,-344 104.35,-342.67"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
@@ -181,45 +181,45 @@ var sectionId = 'dynsection-0';
 <g id="node5" class="node">
 <title>Node5</title>
 <g id="a_node5"><a xlink:href="../../dd/da2/classVScaledLine.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="140.5,-524 140.5,-647 247.5,-647 247.5,-524 140.5,-524"/>
-<text text-anchor="middle" x="194" y="-635" font-family="Helvetica,sans-Serif" font-size="10.00">VScaledLine</text>
-<polyline fill="none" stroke="black" points="140.5,-628 247.5,-628 "/>
-<text text-anchor="start" x="148.5" y="-616" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; basicWidth</text>
-<polyline fill="none" stroke="black" points="140.5,-609 247.5,-609 "/>
-<text text-anchor="start" x="148.5" y="-597" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
-<text text-anchor="start" x="148.5" y="-586" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
-<text text-anchor="start" x="148.5" y="-575" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VScaledLine()</text>
-<text text-anchor="start" x="148.5" y="-564" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="148.5" y="-553" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
-<text text-anchor="start" x="148.5" y="-542" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetBasicWidth()</text>
-<text text-anchor="start" x="148.5" y="-531" font-family="Helvetica,sans-Serif" font-size="10.00">+ setBasicWidth()</text>
+<polygon fill="white" stroke="black" points="140,-524 140,-647 256,-647 256,-524 140,-524"/>
+<text text-anchor="middle" x="198" y="-635" font-family="Helvetica,sans-Serif" font-size="10.00">VScaledLine</text>
+<polyline fill="none" stroke="black" points="140,-628 256,-628 "/>
+<text text-anchor="start" x="148" y="-616" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_defaultWidth</text>
+<polyline fill="none" stroke="black" points="140,-609 256,-609 "/>
+<text text-anchor="start" x="148" y="-597" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
+<text text-anchor="start" x="148" y="-586" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
+<text text-anchor="start" x="148" y="-575" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VScaledLine()</text>
+<text text-anchor="start" x="148" y="-564" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="148" y="-553" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
+<text text-anchor="start" x="148" y="-542" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultWidth()</text>
+<text text-anchor="start" x="148" y="-531" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDefaultWidth()</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node2 -->
 <g id="edge4" class="edge">
 <title>Node5&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M180.49,-513.84C169.59,-456.82 154.24,-376.51 142.78,-316.54"/>
-<polygon fill="none" stroke="midnightblue" points="177.09,-514.68 182.41,-523.85 183.97,-513.37 177.09,-514.68"/>
+<path fill="none" stroke="midnightblue" d="M184.09,-513.84C172.86,-456.82 157.05,-376.51 145.25,-316.54"/>
+<polygon fill="none" stroke="midnightblue" points="180.69,-514.71 186.06,-523.85 187.56,-513.36 180.69,-514.71"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="139,-854.5 139,-911.5 249,-911.5 249,-854.5 139,-854.5"/>
-<text text-anchor="middle" x="194" y="-899.5" font-family="Helvetica,sans-Serif" font-size="10.00">QGraphicsLineItem</text>
-<polyline fill="none" stroke="#bfbfbf" points="139,-892.5 249,-892.5 "/>
-<text text-anchor="middle" x="194" y="-880.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#bfbfbf" points="139,-873.5 249,-873.5 "/>
-<text text-anchor="middle" x="194" y="-861.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="#bfbfbf" points="143,-854.5 143,-911.5 253,-911.5 253,-854.5 143,-854.5"/>
+<text text-anchor="middle" x="198" y="-899.5" font-family="Helvetica,sans-Serif" font-size="10.00">QGraphicsLineItem</text>
+<polyline fill="none" stroke="#bfbfbf" points="143,-892.5 253,-892.5 "/>
+<text text-anchor="middle" x="198" y="-880.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#bfbfbf" points="143,-873.5 253,-873.5 "/>
+<text text-anchor="middle" x="198" y="-861.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node5 -->
 <g id="edge5" class="edge">
 <title>Node6&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M194,-844.16C194,-794.4 194,-706.38 194,-647.24"/>
-<polygon fill="none" stroke="midnightblue" points="190.5,-844.47 194,-854.47 197.5,-844.47 190.5,-844.47"/>
+<path fill="none" stroke="midnightblue" d="M198,-844.16C198,-794.4 198,-706.38 198,-647.24"/>
+<polygon fill="none" stroke="midnightblue" points="194.5,-844.47 198,-854.47 201.5,-844.47 194.5,-844.47"/>
 </g>
 </g>
 </svg>

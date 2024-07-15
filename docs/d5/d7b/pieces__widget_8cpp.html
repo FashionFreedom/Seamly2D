@@ -93,6 +93,8 @@ $(document).ready(function(){initNavTree('d5/d7b/pieces__widget_8cpp.html','../.
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">pieces_widget.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -100,6 +102,7 @@ $(document).ready(function(){initNavTree('d5/d7b/pieces__widget_8cpp.html','../.
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d7/d18/pieces__widget_8h_source.html">pieces_widget.h</a>&quot;</code><br />
 <code>#include &quot;ui_pieces_widget.h&quot;</code><br />
 <code>#include &quot;../ifc/xml/vabstractpattern.h&quot;</code><br />
+<code>#include &quot;../vpatterndb/floatItemData/vpiecelabeldata.h&quot;</code><br />
 <code>#include &quot;../vpatterndb/vcontainer.h&quot;</code><br />
 <code>#include &quot;../vmisc/vabstractapplication.h&quot;</code><br />
 <code>#include &quot;../vtools/tools/pattern_piece_tool.h&quot;</code><br />
@@ -109,8 +112,11 @@ $(document).ready(function(){initNavTree('d5/d7b/pieces__widget_8cpp.html','../.
 <code>#include &quot;../vwidgets/piece_tablewidgetitem.h&quot;</code><br />
 <code>#include &quot;../vwidgets/vmaingraphicsscene.h&quot;</code><br />
 <code>#include &lt;QColorDialog&gt;</code><br />
+<code>#include &lt;QList&gt;</code><br />
 <code>#include &lt;QMenu&gt;</code><br />
+<code>#include &lt;QPainter&gt;</code><br />
 <code>#include &lt;QPixmap&gt;</code><br />
+<code>#include &lt;QRegularExpression&gt;</code><br />
 <code>#include &lt;QTableWidget&gt;</code><br />
 <code>#include &lt;QUndoStack&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -121,6 +127,47 @@ Include dependency graph for pieces_widget.cpp:</div>
 </div>
 </div>
 <p><a href="../../d5/d7b/pieces__widget_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a28058f70322c00eacb48599400efaa2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d7b/pieces__widget_8cpp.html#a28058f70322c00eacb48599400efaa2d">BASE_10</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a28058f70322c00eacb48599400efaa2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a9a231e30b47bc0345749c8bd1e5077"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d7b/pieces__widget_8cpp.html#a7a9a231e30b47bc0345749c8bd1e5077">MAX_LENGTH</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a7a9a231e30b47bc0345749c8bd1e5077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a28058f70322c00eacb48599400efaa2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28058f70322c00eacb48599400efaa2d">&#9670;&nbsp;</a></span>BASE_10</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BASE_10&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00075">75</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7a9a231e30b47bc0345749c8bd1e5077"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a9a231e30b47bc0345749c8bd1e5077">&#9670;&nbsp;</a></span>MAX_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_LENGTH&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00076">76</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

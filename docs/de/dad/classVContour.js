@@ -20,7 +20,7 @@ var classVContour =
     [ "GlobalEdgesCount", "de/dad/classVContour.html#ad1b1aab850bc3e6ebb24a5bfc2ab0307", null ],
     [ "operator=", "de/dad/classVContour.html#a29a62fab7a2bca9ff381ed0a8fc54d88", null ],
     [ "SetContour", "de/dad/classVContour.html#acf3cfdff65132a26088a8ac7c4ba2f5b", null ],
-    [ "SetHeight", "de/dad/classVContour.html#a3f0cb48a7bee0549c17612ddd9cf900c", null ],
+    [ "setHeight", "de/dad/classVContour.html#a53ad8282a08b79e6c017db3e0efb4200", null ],
     [ "SetShift", "de/dad/classVContour.html#a7fadcbea91f2b9204fe4c5e357fb9cb8", null ],
     [ "SetWidth", "de/dad/classVContour.html#a6f1f168a3727cc8ff343d6ecaa95db15", null ],
     [ "Swap", "de/dad/classVContour.html#a99965137a6e434c51e4c880a85c4a5f9", null ],

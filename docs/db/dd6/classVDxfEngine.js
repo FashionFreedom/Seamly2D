@@ -40,7 +40,7 @@ var classVDxfEngine =
     [ "setMeasurement", "db/dd6/classVDxfEngine.html#a09437439f2e6d15080a846d1d4c8c46e", null ],
     [ "setResolution", "db/dd6/classVDxfEngine.html#aad26a240bd94aaec7862f78d7ca32270", null ],
     [ "setSize", "db/dd6/classVDxfEngine.html#a7eaec96a4c04a0acc933119b4124515d", null ],
-    [ "SetVersion", "db/dd6/classVDxfEngine.html#acc069c048f30926cf124d06ba8e2bbed", null ],
+    [ "setVersion", "db/dd6/classVDxfEngine.html#a617a58528fa16e2bdb70161105178a16", null ],
     [ "ToPixel", "db/dd6/classVDxfEngine.html#abf528d92ab1e5cf2b437349045e920a8", null ],
     [ "type", "db/dd6/classVDxfEngine.html#af1c0efa0d7fe1ea8111c188d41273743", null ],
     [ "updateState", "db/dd6/classVDxfEngine.html#ac34d16cb523840e547d6a58af0686dc7", null ],

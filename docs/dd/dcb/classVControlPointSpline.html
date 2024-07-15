@@ -108,9 +108,6 @@ $(document).ready(function(){initNavTree('dd/dcb/classVControlPointSpline.html',
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="../../dd/dcb/classVControlPointSpline.html" title="The VControlPointSpline class control spline point.">VControlPointSpline</a> class control spline point.  
- <a href="../../dd/dcb/classVControlPointSpline.html#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for VControlPointSpline:</div>
@@ -127,9 +124,9 @@ Collaboration diagram for VControlPointSpline:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ae94da048bd3689f2849961b40f2ac50d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="../../dd/dcb/classVControlPointSpline.html#ae94da048bd3689f2849961b40f2ac50da8fabbaeeb086101439168262b5c3dc5e">Type</a> = UserType + static_cast&lt;int&gt;(Vis::ControlPointSpline)
+<tr class="memitem:ab56c109a68bc47715a116ba63e7ea42c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="../../dd/dcb/classVControlPointSpline.html#ab56c109a68bc47715a116ba63e7ea42ca8fabbaeeb086101439168262b5c3dc5e">Type</a> = UserType + static_cast&lt;int&gt;(Vis::ControlPointSpline)
  }</td></tr>
-<tr class="separator:ae94da048bd3689f2849961b40f2ac50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ab56c109a68bc47715a116ba63e7ea42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classSceneRect"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classSceneRect')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../d3/db3/classSceneRect.html">SceneRect</a></td></tr>
 <tr class="memitem:a8c2d5a6157fd5bd32447e0aae1ee5e45 inherit pub_types_classSceneRect"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="../../d3/db3/classSceneRect.html#a8c2d5a6157fd5bd32447e0aae1ee5e45a7d1fe139281727cd2df095907657cc18">Type</a> = UserType + static_cast&lt;int&gt;(Vis::ScenePoint)
  }</td></tr>
@@ -137,29 +134,26 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:af8061c04c9bce3af6c52ce31b4318885"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#af8061c04c9bce3af6c52ce31b4318885">refreshCtrlPoint</a> (const qint32 &amp;<a class="el" href="../../dd/dcb/classVControlPointSpline.html#a3763da52a53d7e54ac25675306576f52">indexSpline</a>, <a class="el" href="../../d5/d9d/vgeometrydef_8h.html#aea380938ffc14e1e5baefe358e7f1d8f">SplinePointPosition</a> pos, const QPointF &amp;controlPoint, const QPointF &amp;splinePoint, bool <a class="el" href="../../dd/dcb/classVControlPointSpline.html#a83d573a84063b576ed9810628496acb7">freeAngle</a>=true, bool <a class="el" href="../../dd/dcb/classVControlPointSpline.html#a04d60a2ae37260629bbd735464afb086">freeLength</a>=true)</td></tr>
-<tr class="memdesc:af8061c04c9bce3af6c52ce31b4318885"><td class="mdescLeft">&#160;</td><td class="mdescRight">refreshCtrlPoint refresh the control point.  <a href="../../dd/dcb/classVControlPointSpline.html#af8061c04c9bce3af6c52ce31b4318885">More...</a><br /></td></tr>
-<tr class="separator:af8061c04c9bce3af6c52ce31b4318885"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84b7bb11f5ea10ca13192cc32202b239"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#a84b7bb11f5ea10ca13192cc32202b239">refreshCtrlPoint</a> (const qint32 &amp;splineIndex, <a class="el" href="../../d5/d9d/vgeometrydef_8h.html#aea380938ffc14e1e5baefe358e7f1d8f">SplinePointPosition</a> pos, const QPointF &amp;controlPoint, const QPointF &amp;splinePoint, bool freeAngle=true, bool freeLength=true)</td></tr>
+<tr class="separator:a84b7bb11f5ea10ca13192cc32202b239"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0d0e2d7437a1f00aee4dce6d41d77fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#ac0d0e2d7437a1f00aee4dce6d41d77fa">setEnabledPoint</a> (bool enable)</td></tr>
-<tr class="memdesc:ac0d0e2d7437a1f00aee4dce6d41d77fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">setEnabledPoint disable or enable control point.  <a href="../../dd/dcb/classVControlPointSpline.html#ac0d0e2d7437a1f00aee4dce6d41d77fa">More...</a><br /></td></tr>
 <tr class="separator:ac0d0e2d7437a1f00aee4dce6d41d77fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:a960bde2e1ffe6a52e13e25fe7b0c2e4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#a960bde2e1ffe6a52e13e25fe7b0c2e4b">ControlPointChangePosition</a> (const qint32 &amp;<a class="el" href="../../dd/dcb/classVControlPointSpline.html#a3763da52a53d7e54ac25675306576f52">indexSpline</a>, <a class="el" href="../../d5/d9d/vgeometrydef_8h.html#aea380938ffc14e1e5baefe358e7f1d8f">SplinePointPosition</a> <a class="el" href="../../dd/dcb/classVControlPointSpline.html#aa6bf0b4bd21092951836cb55c5e05c25">position</a>, const QPointF &amp;pos)</td></tr>
-<tr class="memdesc:a960bde2e1ffe6a52e13e25fe7b0c2e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ControlPointChangePosition emit when control point change position.  <a href="../../dd/dcb/classVControlPointSpline.html#a960bde2e1ffe6a52e13e25fe7b0c2e4b">More...</a><br /></td></tr>
-<tr class="separator:a960bde2e1ffe6a52e13e25fe7b0c2e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adab23362a0cd4947b5cbeeebef0bc49d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#adab23362a0cd4947b5cbeeebef0bc49d">controlPointPositionChanged</a> (const qint32 &amp;splineIndex, <a class="el" href="../../d5/d9d/vgeometrydef_8h.html#aea380938ffc14e1e5baefe358e7f1d8f">SplinePointPosition</a> position, const QPointF &amp;pos)</td></tr>
+<tr class="separator:adab23362a0cd4947b5cbeeebef0bc49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84e6656056a357238d07fe2bef9ba397"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#a84e6656056a357238d07fe2bef9ba397">showContextMenu</a> (QGraphicsSceneContextMenuEvent *event)</td></tr>
-<tr class="memdesc:a84e6656056a357238d07fe2bef9ba397"><td class="mdescLeft">&#160;</td><td class="mdescRight">showContextMenu emit when need show tool's context menu.  <a href="../../dd/dcb/classVControlPointSpline.html#a84e6656056a357238d07fe2bef9ba397">More...</a><br /></td></tr>
 <tr class="separator:a84e6656056a357238d07fe2bef9ba397"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fff1eace21e4219022ac49359e07066"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#a7fff1eace21e4219022ac49359e07066">selected</a> (bool selected)</td></tr>
+<tr class="separator:a7fff1eace21e4219022ac49359e07066"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae8f7b68ae35b4e917e4dd6d4b55295a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#ae8f7b68ae35b4e917e4dd6d4b55295a2">VControlPointSpline</a> (const qint32 &amp;<a class="el" href="../../dd/dcb/classVControlPointSpline.html#a3763da52a53d7e54ac25675306576f52">indexSpline</a>, <a class="el" href="../../d5/d9d/vgeometrydef_8h.html#aea380938ffc14e1e5baefe358e7f1d8f">SplinePointPosition</a> <a class="el" href="../../dd/dcb/classVControlPointSpline.html#aa6bf0b4bd21092951836cb55c5e05c25">position</a>, QGraphicsItem *parent=nullptr)</td></tr>
-<tr class="separator:ae8f7b68ae35b4e917e4dd6d4b55295a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b7e47bc8ed3978fa8b0d4482032044a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#a4b7e47bc8ed3978fa8b0d4482032044a">VControlPointSpline</a> (const qint32 &amp;<a class="el" href="../../dd/dcb/classVControlPointSpline.html#a3763da52a53d7e54ac25675306576f52">indexSpline</a>, <a class="el" href="../../d5/d9d/vgeometrydef_8h.html#aea380938ffc14e1e5baefe358e7f1d8f">SplinePointPosition</a> <a class="el" href="../../dd/dcb/classVControlPointSpline.html#aa6bf0b4bd21092951836cb55c5e05c25">position</a>, const QPointF &amp;controlPoint, const QPointF &amp;splinePoint, bool <a class="el" href="../../dd/dcb/classVControlPointSpline.html#a83d573a84063b576ed9810628496acb7">freeAngle</a>, bool <a class="el" href="../../dd/dcb/classVControlPointSpline.html#a04d60a2ae37260629bbd735464afb086">freeLength</a>, QGraphicsItem *parent=nullptr)</td></tr>
-<tr class="memdesc:a4b7e47bc8ed3978fa8b0d4482032044a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../dd/dcb/classVControlPointSpline.html" title="The VControlPointSpline class control spline point.">VControlPointSpline</a> constructor.  <a href="../../dd/dcb/classVControlPointSpline.html#a4b7e47bc8ed3978fa8b0d4482032044a">More...</a><br /></td></tr>
-<tr class="separator:a4b7e47bc8ed3978fa8b0d4482032044a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8c9b2ba94f26cce270632cff58832e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#af8c9b2ba94f26cce270632cff58832e3">VControlPointSpline</a> (const qint32 &amp;splineIndex, <a class="el" href="../../d5/d9d/vgeometrydef_8h.html#aea380938ffc14e1e5baefe358e7f1d8f">SplinePointPosition</a> position, QGraphicsItem *parent=nullptr)</td></tr>
+<tr class="separator:af8c9b2ba94f26cce270632cff58832e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b191500d1ed78280e70d70842252ea3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#a3b191500d1ed78280e70d70842252ea3">VControlPointSpline</a> (const qint32 &amp;splineIndex, <a class="el" href="../../d5/d9d/vgeometrydef_8h.html#aea380938ffc14e1e5baefe358e7f1d8f">SplinePointPosition</a> position, const QPointF &amp;controlPoint, bool freeAngle, bool freeLength, QGraphicsItem *parent=nullptr)</td></tr>
+<tr class="separator:a3b191500d1ed78280e70d70842252ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2eeb98e9c71cc5191aa9c5e138a3885"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#ab2eeb98e9c71cc5191aa9c5e138a3885">~VControlPointSpline</a> ()=default</td></tr>
 <tr class="separator:ab2eeb98e9c71cc5191aa9c5e138a3885"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8cc9041fdbe0ffdf5b6f4eebb127e46"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#ab8cc9041fdbe0ffdf5b6f4eebb127e46">type</a> () const Q_DECL_OVERRIDE</td></tr>
@@ -177,14 +171,13 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ab2a0907d0d99855085cac8ae1600052b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#ab2a0907d0d99855085cac8ae1600052b">hoverEnterEvent</a> (QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE</td></tr>
-<tr class="memdesc:ab2a0907d0d99855085cac8ae1600052b"><td class="mdescLeft">&#160;</td><td class="mdescRight">hoverEnterEvent handle hover enter events.  <a href="../../dd/dcb/classVControlPointSpline.html#ab2a0907d0d99855085cac8ae1600052b">More...</a><br /></td></tr>
 <tr class="separator:ab2a0907d0d99855085cac8ae1600052b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae951a273cb147384857f02174e56dc40"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#ae951a273cb147384857f02174e56dc40">hoverLeaveEvent</a> (QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE</td></tr>
 <tr class="separator:ae951a273cb147384857f02174e56dc40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a390c9c43cb9415320f0f1d59b49105d3"><td class="memItemLeft" align="right" valign="top">QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#a390c9c43cb9415320f0f1d59b49105d3">itemChange</a> (GraphicsItemChange change, const QVariant &amp;value) Q_DECL_OVERRIDE</td></tr>
-<tr class="memdesc:a390c9c43cb9415320f0f1d59b49105d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">itemChange handle item change.  <a href="../../dd/dcb/classVControlPointSpline.html#a390c9c43cb9415320f0f1d59b49105d3">More...</a><br /></td></tr>
 <tr class="separator:a390c9c43cb9415320f0f1d59b49105d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a638fa2d28a43ed2b6f63991cc2f0349a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#a638fa2d28a43ed2b6f63991cc2f0349a">mousePressEvent</a> (QGraphicsSceneMouseEvent *event) Q_DECL_OVERRIDE</td></tr>
+<tr class="memdesc:a638fa2d28a43ed2b6f63991cc2f0349a"><td class="mdescLeft">&#160;</td><td class="mdescRight">mousePressEvent handle mouse press events.  <a href="../../dd/dcb/classVControlPointSpline.html#a638fa2d28a43ed2b6f63991cc2f0349a">More...</a><br /></td></tr>
 <tr class="separator:a638fa2d28a43ed2b6f63991cc2f0349a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1222c99c266cbe33cb737da330c0e4c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#ab1222c99c266cbe33cb737da330c0e4c">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *event) Q_DECL_OVERRIDE</td></tr>
 <tr class="separator:ab1222c99c266cbe33cb737da330c0e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,9 +193,9 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ac64e07f2becb4ceeca83019fa8b681fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/da2/classVScaledLine.html">VScaledLine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#ac64e07f2becb4ceeca83019fa8b681fb">controlLine</a></td></tr>
-<tr class="memdesc:ac64e07f2becb4ceeca83019fa8b681fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">controlLine pointer to line control point.  <a href="../../dd/dcb/classVControlPointSpline.html#ac64e07f2becb4ceeca83019fa8b681fb">More...</a><br /></td></tr>
-<tr class="separator:ac64e07f2becb4ceeca83019fa8b681fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a368de19134dc586229357680e5fb3245"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/da2/classVScaledLine.html">VScaledLine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#a368de19134dc586229357680e5fb3245">m_controlLine</a></td></tr>
+<tr class="memdesc:a368de19134dc586229357680e5fb3245"><td class="mdescLeft">&#160;</td><td class="mdescRight">m_controlLine pointer to line control point.  <a href="../../dd/dcb/classVControlPointSpline.html#a368de19134dc586229357680e5fb3245">More...</a><br /></td></tr>
+<tr class="separator:a368de19134dc586229357680e5fb3245"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classSceneRect"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classSceneRect')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d3/db3/classSceneRect.html">SceneRect</a></td></tr>
 <tr class="memitem:a91e46b85ce194104b384c302bfc31c53 inherit pro_attribs_classSceneRect"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db3/classSceneRect.html#a91e46b85ce194104b384c302bfc31c53">m_rectColor</a></td></tr>
 <tr class="separator:a91e46b85ce194104b384c302bfc31c53 inherit pro_attribs_classSceneRect"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -223,24 +216,23 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a3763da52a53d7e54ac25675306576f52"><td class="memItemLeft" align="right" valign="top">qint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#a3763da52a53d7e54ac25675306576f52">indexSpline</a></td></tr>
-<tr class="memdesc:a3763da52a53d7e54ac25675306576f52"><td class="mdescLeft">&#160;</td><td class="mdescRight">indexSpline index spline in list..  <a href="../../dd/dcb/classVControlPointSpline.html#a3763da52a53d7e54ac25675306576f52">More...</a><br /></td></tr>
-<tr class="separator:a3763da52a53d7e54ac25675306576f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6bf0b4bd21092951836cb55c5e05c25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d9d/vgeometrydef_8h.html#aea380938ffc14e1e5baefe358e7f1d8f">SplinePointPosition</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#aa6bf0b4bd21092951836cb55c5e05c25">position</a></td></tr>
-<tr class="memdesc:aa6bf0b4bd21092951836cb55c5e05c25"><td class="mdescLeft">&#160;</td><td class="mdescRight">position position point in spline.  <a href="../../dd/dcb/classVControlPointSpline.html#aa6bf0b4bd21092951836cb55c5e05c25">More...</a><br /></td></tr>
-<tr class="separator:aa6bf0b4bd21092951836cb55c5e05c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83d573a84063b576ed9810628496acb7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#a83d573a84063b576ed9810628496acb7">freeAngle</a></td></tr>
-<tr class="separator:a83d573a84063b576ed9810628496acb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04d60a2ae37260629bbd735464afb086"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#a04d60a2ae37260629bbd735464afb086">freeLength</a></td></tr>
-<tr class="separator:a04d60a2ae37260629bbd735464afb086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a379885b648d29927d9d65da3bfa36203"><td class="memItemLeft" align="right" valign="top">qint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#a379885b648d29927d9d65da3bfa36203">m_splineIndex</a></td></tr>
+<tr class="memdesc:a379885b648d29927d9d65da3bfa36203"><td class="mdescLeft">&#160;</td><td class="mdescRight">m_splineIndex index of spline in list.  <a href="../../dd/dcb/classVControlPointSpline.html#a379885b648d29927d9d65da3bfa36203">More...</a><br /></td></tr>
+<tr class="separator:a379885b648d29927d9d65da3bfa36203"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a349bbbb149e6c10bfb56357fe1733b93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d9d/vgeometrydef_8h.html#aea380938ffc14e1e5baefe358e7f1d8f">SplinePointPosition</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#a349bbbb149e6c10bfb56357fe1733b93">m_position</a></td></tr>
+<tr class="memdesc:a349bbbb149e6c10bfb56357fe1733b93"><td class="mdescLeft">&#160;</td><td class="mdescRight">m_position position of point in spline.  <a href="../../dd/dcb/classVControlPointSpline.html#a349bbbb149e6c10bfb56357fe1733b93">More...</a><br /></td></tr>
+<tr class="separator:a349bbbb149e6c10bfb56357fe1733b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8069ece9170f376b22542b82673c2ac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#af8069ece9170f376b22542b82673c2ac">m_freeAngle</a></td></tr>
+<tr class="separator:af8069ece9170f376b22542b82673c2ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84dab00cae5c854ffeb2a36f4e4e96bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/classVControlPointSpline.html#a84dab00cae5c854ffeb2a36f4e4e96bc">m_freeLength</a></td></tr>
+<tr class="separator:a84dab00cae5c854ffeb2a36f4e4e96bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="../../dd/dcb/classVControlPointSpline.html" title="The VControlPointSpline class control spline point.">VControlPointSpline</a> class control spline point. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00072">72</a> of file <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>.</p>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00069">69</a> of file <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="ae94da048bd3689f2849961b40f2ac50d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae94da048bd3689f2849961b40f2ac50d">&#9670;&nbsp;</a></span>anonymous enum</h2>
+<a id="ab56c109a68bc47715a116ba63e7ea42c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab56c109a68bc47715a116ba63e7ea42c">&#9670;&nbsp;</a></span>anonymous enum</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -251,16 +243,16 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae94da048bd3689f2849961b40f2ac50da8fabbaeeb086101439168262b5c3dc5e"></a>Type&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab56c109a68bc47715a116ba63e7ea42ca8fabbaeeb086101439168262b5c3dc5e"></a>Type&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00084">84</a> of file <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00081">81</a> of file <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae8f7b68ae35b4e917e4dd6d4b55295a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8f7b68ae35b4e917e4dd6d4b55295a2">&#9670;&nbsp;</a></span>VControlPointSpline() <span class="overload">[1/2]</span></h2>
+<a id="af8c9b2ba94f26cce270632cff58832e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8c9b2ba94f26cce270632cff58832e3">&#9670;&nbsp;</a></span>VControlPointSpline() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,7 +261,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">VControlPointSpline::VControlPointSpline </td>
           <td>(</td>
           <td class="paramtype">const qint32 &amp;&#160;</td>
-          <td class="paramname"><em>indexSpline</em>, </td>
+          <td class="paramname"><em>splineIndex</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -291,14 +283,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00078">78</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00080">80</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00271">init()</a>.</p>
+<p class="reference">References <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00287">init()</a>.</p>
 
 </div>
 </div>
-<a id="a4b7e47bc8ed3978fa8b0d4482032044a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b7e47bc8ed3978fa8b0d4482032044a">&#9670;&nbsp;</a></span>VControlPointSpline() <span class="overload">[2/2]</span></h2>
+<a id="a3b191500d1ed78280e70d70842252ea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b191500d1ed78280e70d70842252ea3">&#9670;&nbsp;</a></span>VControlPointSpline() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -307,7 +299,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">VControlPointSpline::VControlPointSpline </td>
           <td>(</td>
           <td class="paramtype">const qint32 &amp;&#160;</td>
-          <td class="paramname"><em>indexSpline</em>, </td>
+          <td class="paramname"><em>splineIndex</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -320,12 +312,6 @@ Private Attributes</h2></td></tr>
           <td></td>
           <td class="paramtype">const QPointF &amp;&#160;</td>
           <td class="paramname"><em>controlPoint</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QPointF &amp;&#160;</td>
-          <td class="paramname"><em>splinePoint</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -353,21 +339,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="../../dd/dcb/classVControlPointSpline.html" title="The VControlPointSpline class control spline point.">VControlPointSpline</a> constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">indexSpline</td><td>index spline in list. </td></tr>
-    <tr><td class="paramname">position</td><td>position point in spline. </td></tr>
-    <tr><td class="paramname">controlPoint</td><td>control point. </td></tr>
-    <tr><td class="paramname">splinePoint</td><td>spline point. </td></tr>
-    <tr><td class="paramname">parent</td><td>parent object. </td></tr>
-  </table>
-  </dd>
-</dl>
-
 <p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00098">98</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00271">init()</a>, and <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00283">setCtrlLine()</a>.</p>
+<p class="reference">References <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00287">init()</a>.</p>
 
 </div>
 </div>
@@ -421,14 +395,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00265">265</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00281">281</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../dd/dcb/classVControlPointSpline.html#a84e6656056a357238d07fe2bef9ba397">showContextMenu()</a>.</p>
 
 </div>
 </div>
-<a id="a960bde2e1ffe6a52e13e25fe7b0c2e4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a960bde2e1ffe6a52e13e25fe7b0c2e4b">&#9670;&nbsp;</a></span>ControlPointChangePosition</h2>
+<a id="adab23362a0cd4947b5cbeeebef0bc49d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adab23362a0cd4947b5cbeeebef0bc49d">&#9670;&nbsp;</a></span>controlPointPositionChanged</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -437,10 +411,10 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void VControlPointSpline::ControlPointChangePosition </td>
+          <td class="memname">void VControlPointSpline::controlPointPositionChanged </td>
           <td>(</td>
           <td class="paramtype">const qint32 &amp;&#160;</td>
-          <td class="paramname"><em>indexSpline</em>, </td>
+          <td class="paramname"><em>splineIndex</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -467,17 +441,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>ControlPointChangePosition emit when control point change position. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">indexSpline</td><td>index spline in list. </td></tr>
-    <tr><td class="paramname">position</td><td>position point in spline. </td></tr>
-    <tr><td class="paramname">pos</td><td>new posotion. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00159">itemChange()</a>, <a class="el" href="../../d0/d39/vtoolspline_8cpp_source.html#l00104">VToolSpline::VToolSpline()</a>, and <a class="el" href="../../d8/d1f/vtoolsplinepath_8cpp_source.html#l00109">VToolSplinePath::VToolSplinePath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00163">itemChange()</a>, <a class="el" href="../../d0/d39/vtoolspline_8cpp_source.html#l00101">VToolSpline::VToolSpline()</a>, and <a class="el" href="../../d8/d1f/vtoolsplinepath_8cpp_source.html#l00106">VToolSplinePath::VToolSplinePath()</a>.</p>
 
 </div>
 </div>
@@ -505,19 +469,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>hoverEnterEvent handle hover enter events. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>hover move event. </td></tr>
-  </table>
-  </dd>
-</dl>
-
 <p>Reimplemented from <a class="el" href="../../d3/db3/classSceneRect.html#a6fc0de5f66f244b08bcb08420dc0c1a4">SceneRect</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00133">133</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00139">139</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00189">cursorArrowOpenHand</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00127">freeAngle</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00128">freeLength</a>, <a class="el" href="../../d8/d76/scene__rect_8cpp_source.html#l00090">SceneRect::hoverEnterEvent()</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00204">SetItemOverrideCursor()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00171">cursorArrowOpenHand</a>, <a class="el" href="../../d8/d76/scene__rect_8cpp_source.html#l00087">SceneRect::hoverEnterEvent()</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00117">m_freeAngle</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00118">m_freeLength</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00195">SetItemOverrideCursor()</a>.</p>
 
 </div>
 </div>
@@ -547,9 +503,9 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d3/db3/classSceneRect.html#a7632ef38d888a3805c76d4fd86f46218">SceneRect</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00143">143</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00150">150</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00127">freeAngle</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00128">freeLength</a>, and <a class="el" href="../../d8/d76/scene__rect_8cpp_source.html#l00097">SceneRect::hoverLeaveEvent()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d76/scene__rect_8cpp_source.html#l00094">SceneRect::hoverLeaveEvent()</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00117">m_freeAngle</a>, and <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00118">m_freeLength</a>.</p>
 
 </div>
 </div>
@@ -576,11 +532,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00271">271</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00287">287</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00110">controlLine</a>, <a class="el" href="../../d4/d50/scalesceneitems_8cpp_source.html#l00088">VScaledLine::setBasicWidth()</a>, <a class="el" href="../../d8/d76/scene__rect_8cpp_source.html#l00073">SceneRect::setOnlyPoint()</a>, and <a class="el" href="../../db/d7d/global_8cpp_source.html#l00061">widthHairLine</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00103">m_controlLine</a>, <a class="el" href="../../d4/d50/scalesceneitems_8cpp_source.html#l00087">VScaledLine::setDefaultWidth()</a>, <a class="el" href="../../d8/d76/scene__rect_8cpp_source.html#l00070">SceneRect::setOnlyPoint()</a>, and <a class="el" href="../../db/d7d/global_8cpp_source.html#l00061">widthHairLine</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00078">VControlPointSpline()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00080">VControlPointSpline()</a>.</p>
 
 </div>
 </div>
@@ -618,19 +574,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>itemChange handle item change. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">change</td><td>change. </td></tr>
-    <tr><td class="paramname">value</td><td>value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>value. </dd></dl>
+<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00163">163</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00159">159</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00110">controlLine</a>, <a class="el" href="../../dd/dcb/classVControlPointSpline.html#a960bde2e1ffe6a52e13e25fe7b0c2e4b">ControlPointChangePosition()</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00127">freeAngle</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00128">freeLength</a>, <a class="el" href="../../d1/d88/vmaingraphicsscene_8cpp_source.html#l00244">VMainGraphicsScene::getScenePos()</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00122">indexSpline</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00125">position</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00317">SCASSERT</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00863">VMainGraphicsView::SceneVisibleArea()</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/dcb/classVControlPointSpline.html#adab23362a0cd4947b5cbeeebef0bc49d">controlPointPositionChanged()</a>, <a class="el" href="../../d1/d88/vmaingraphicsscene_8cpp_source.html#l00246">VMainGraphicsScene::getScenePos()</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00103">m_controlLine</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00117">m_freeAngle</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00118">m_freeLength</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00115">m_position</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00114">m_splineIndex</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00415">SCASSERT</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00859">VMainGraphicsView::SceneVisibleArea()</a>, and <a class="el" href="../../dd/dcb/classVControlPointSpline.html#a7fff1eace21e4219022ac49359e07066">selected()</a>.</p>
 
 </div>
 </div>
@@ -658,9 +604,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00239">239</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
+<p>mousePressEvent handle mouse press events. </p>
 
-<p class="reference">References <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00190">cursorArrowCloseHand</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00127">freeAngle</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00128">freeLength</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00204">SetItemOverrideCursor()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00247">247</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00172">cursorArrowCloseHand</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00117">m_freeAngle</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00118">m_freeLength</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00195">SetItemOverrideCursor()</a>.</p>
 
 </div>
 </div>
@@ -688,9 +636,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00252">252</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00267">267</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00189">cursorArrowOpenHand</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00127">freeAngle</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00128">freeLength</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00204">SetItemOverrideCursor()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00171">cursorArrowOpenHand</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00117">m_freeAngle</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00118">m_freeLength</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00195">SetItemOverrideCursor()</a>.</p>
 
 </div>
 </div>
@@ -736,14 +684,14 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d3/db3/classSceneRect.html#a43036c626d002e8cb5c1b183cb501ea4">SceneRect</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00119">119</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00121">121</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00110">controlLine</a>, <a class="el" href="../../db/d7d/global_8cpp_source.html#l00080">correctColor()</a>, and <a class="el" href="../../d8/d76/scene__rect_8cpp_source.html#l00054">SceneRect::paint()</a>.</p>
+<p class="reference">References <a class="el" href="../../db/d7d/global_8cpp_source.html#l00080">correctColor()</a>, <a class="el" href="../../da/d37/vgobject_8cpp_source.html#l00391">VGObject::LineIntersectCircle()</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00103">m_controlLine</a>, <a class="el" href="../../d8/d76/scene__rect_8cpp_source.html#l00051">SceneRect::paint()</a>, <a class="el" href="../../db/d7d/global_8cpp_source.html#l00104">scaledRadius()</a>, and <a class="el" href="../../db/d7d/global_8cpp_source.html#l00063">sceneScale()</a>.</p>
 
 </div>
 </div>
-<a id="af8061c04c9bce3af6c52ce31b4318885"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8061c04c9bce3af6c52ce31b4318885">&#9670;&nbsp;</a></span>refreshCtrlPoint</h2>
+<a id="a84b7bb11f5ea10ca13192cc32202b239"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84b7bb11f5ea10ca13192cc32202b239">&#9670;&nbsp;</a></span>refreshCtrlPoint</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -755,7 +703,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">void VControlPointSpline::refreshCtrlPoint </td>
           <td>(</td>
           <td class="paramtype">const qint32 &amp;&#160;</td>
-          <td class="paramname"><em>indexSpline</em>, </td>
+          <td class="paramname"><em>splineIndex</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -800,20 +748,37 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>refreshCtrlPoint refresh the control point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">indexSpline</td><td>index spline in list. </td></tr>
-    <tr><td class="paramname">pos</td><td>position point in spline. </td></tr>
-    <tr><td class="paramname">controlPoint</td><td>control point. </td></tr>
-    <tr><td class="paramname">splinePoint</td><td>spline point. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00319">319</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00299">299</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00117">m_freeAngle</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00118">m_freeLength</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00115">m_position</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00114">m_splineIndex</a>, and <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00301">setCtrlLine()</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00127">freeAngle</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00128">freeLength</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00122">indexSpline</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00125">position</a>, and <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00283">setCtrlLine()</a>.</p>
+</div>
+</div>
+<a id="a7fff1eace21e4219022ac49359e07066"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fff1eace21e4219022ac49359e07066">&#9670;&nbsp;</a></span>selected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VControlPointSpline::selected </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>selected</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00163">itemChange()</a>.</p>
 
 </div>
 </div>
@@ -851,11 +816,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00283">283</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00301">301</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00110">controlLine</a>, <a class="el" href="../../da/d37/vgobject_8cpp_source.html#l00391">VGObject::LineIntersectCircle()</a>, <a class="el" href="../../db/d7d/global_8cpp_source.html#l00103">scaledRadius()</a>, and <a class="el" href="../../db/d7d/global_8cpp_source.html#l00063">sceneScale()</a>.</p>
+<p class="reference">References <a class="el" href="../../da/d37/vgobject_8cpp_source.html#l00391">VGObject::LineIntersectCircle()</a>, <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00103">m_controlLine</a>, <a class="el" href="../../db/d7d/global_8cpp_source.html#l00104">scaledRadius()</a>, and <a class="el" href="../../db/d7d/global_8cpp_source.html#l00063">sceneScale()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00299">refreshCtrlPoint()</a>, and <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00098">VControlPointSpline()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00319">refreshCtrlPoint()</a>.</p>
 
 </div>
 </div>
@@ -883,19 +848,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>setEnabledPoint disable or enable control point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">enable</td><td>true - enable. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00334">334</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00317">317</a> of file <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html">vcontrolpointspline.cpp</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00103">m_controlLine</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00110">controlLine</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d0/d39/vtoolspline_8cpp_source.html#l00104">VToolSpline::VToolSpline()</a>, and <a class="el" href="../../d8/d1f/vtoolsplinepath_8cpp_source.html#l00109">VToolSplinePath::VToolSplinePath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d39/vtoolspline_8cpp_source.html#l00101">VToolSpline::VToolSpline()</a>, and <a class="el" href="../../d8/d1f/vtoolsplinepath_8cpp_source.html#l00106">VToolSplinePath::VToolSplinePath()</a>.</p>
 
 </div>
 </div>
@@ -923,15 +880,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>showContextMenu emit when need show tool's context menu. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>context menu event. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00265">contextMenuEvent()</a>, <a class="el" href="../../d0/d39/vtoolspline_8cpp_source.html#l00104">VToolSpline::VToolSpline()</a>, and <a class="el" href="../../d8/d1f/vtoolsplinepath_8cpp_source.html#l00109">VToolSplinePath::VToolSplinePath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00281">contextMenuEvent()</a>, <a class="el" href="../../d0/d39/vtoolspline_8cpp_source.html#l00101">VToolSpline::VToolSpline()</a>, and <a class="el" href="../../d8/d1f/vtoolsplinepath_8cpp_source.html#l00106">VToolSplinePath::VToolSplinePath()</a>.</p>
 
 </div>
 </div>
@@ -960,15 +909,15 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d3/db3/classSceneRect.html#a8b96d4e5e355cd1073f88a142a6577ad">SceneRect</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00083">83</a> of file <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00080">80</a> of file <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00084">Type</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00081">Type</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ac64e07f2becb4ceeca83019fa8b681fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac64e07f2becb4ceeca83019fa8b681fb">&#9670;&nbsp;</a></span>controlLine</h2>
+<a id="a368de19134dc586229357680e5fb3245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a368de19134dc586229357680e5fb3245">&#9670;&nbsp;</a></span>m_controlLine</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -977,7 +926,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../dd/da2/classVScaledLine.html">VScaledLine</a>* VControlPointSpline::controlLine</td>
+          <td class="memname"><a class="el" href="../../dd/da2/classVScaledLine.html">VScaledLine</a>* VControlPointSpline::m_controlLine</td>
         </tr>
       </table>
   </td>
@@ -987,16 +936,16 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>controlLine pointer to line control point. </p>
+<p>m_controlLine pointer to line control point. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00110">110</a> of file <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00103">103</a> of file <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00271">init()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00159">itemChange()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00119">paint()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00283">setCtrlLine()</a>, and <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00317">setEnabledPoint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00287">init()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00163">itemChange()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00121">paint()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00301">setCtrlLine()</a>, and <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00334">setEnabledPoint()</a>.</p>
 
 </div>
 </div>
-<a id="a83d573a84063b576ed9810628496acb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83d573a84063b576ed9810628496acb7">&#9670;&nbsp;</a></span>freeAngle</h2>
+<a id="af8069ece9170f376b22542b82673c2ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8069ece9170f376b22542b82673c2ac">&#9670;&nbsp;</a></span>m_freeAngle</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1005,7 +954,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool VControlPointSpline::freeAngle</td>
+          <td class="memname">bool VControlPointSpline::m_freeAngle</td>
         </tr>
       </table>
   </td>
@@ -1015,14 +964,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00127">127</a> of file <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00117">117</a> of file <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00133">hoverEnterEvent()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00143">hoverLeaveEvent()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00159">itemChange()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00239">mousePressEvent()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00252">mouseReleaseEvent()</a>, and <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00299">refreshCtrlPoint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00139">hoverEnterEvent()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00150">hoverLeaveEvent()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00163">itemChange()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00247">mousePressEvent()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00267">mouseReleaseEvent()</a>, and <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00319">refreshCtrlPoint()</a>.</p>
 
 </div>
 </div>
-<a id="a04d60a2ae37260629bbd735464afb086"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04d60a2ae37260629bbd735464afb086">&#9670;&nbsp;</a></span>freeLength</h2>
+<a id="a84dab00cae5c854ffeb2a36f4e4e96bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84dab00cae5c854ffeb2a36f4e4e96bc">&#9670;&nbsp;</a></span>m_freeLength</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1031,7 +980,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool VControlPointSpline::freeLength</td>
+          <td class="memname">bool VControlPointSpline::m_freeLength</td>
         </tr>
       </table>
   </td>
@@ -1041,14 +990,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00128">128</a> of file <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00118">118</a> of file <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00133">hoverEnterEvent()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00143">hoverLeaveEvent()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00159">itemChange()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00239">mousePressEvent()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00252">mouseReleaseEvent()</a>, and <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00299">refreshCtrlPoint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00139">hoverEnterEvent()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00150">hoverLeaveEvent()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00163">itemChange()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00247">mousePressEvent()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00267">mouseReleaseEvent()</a>, and <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00319">refreshCtrlPoint()</a>.</p>
 
 </div>
 </div>
-<a id="a3763da52a53d7e54ac25675306576f52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3763da52a53d7e54ac25675306576f52">&#9670;&nbsp;</a></span>indexSpline</h2>
+<a id="a349bbbb149e6c10bfb56357fe1733b93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a349bbbb149e6c10bfb56357fe1733b93">&#9670;&nbsp;</a></span>m_position</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1057,7 +1006,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">qint32 VControlPointSpline::indexSpline</td>
+          <td class="memname"><a class="el" href="../../d5/d9d/vgeometrydef_8h.html#aea380938ffc14e1e5baefe358e7f1d8f">SplinePointPosition</a> VControlPointSpline::m_position</td>
         </tr>
       </table>
   </td>
@@ -1067,16 +1016,16 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>indexSpline index spline in list.. </p>
+<p>m_position position of point in spline. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00122">122</a> of file <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00115">115</a> of file <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00159">itemChange()</a>, and <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00299">refreshCtrlPoint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00163">itemChange()</a>, and <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00319">refreshCtrlPoint()</a>.</p>
 
 </div>
 </div>
-<a id="aa6bf0b4bd21092951836cb55c5e05c25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6bf0b4bd21092951836cb55c5e05c25">&#9670;&nbsp;</a></span>position</h2>
+<a id="a379885b648d29927d9d65da3bfa36203"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a379885b648d29927d9d65da3bfa36203">&#9670;&nbsp;</a></span>m_splineIndex</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1085,7 +1034,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d5/d9d/vgeometrydef_8h.html#aea380938ffc14e1e5baefe358e7f1d8f">SplinePointPosition</a> VControlPointSpline::position</td>
+          <td class="memname">qint32 VControlPointSpline::m_splineIndex</td>
         </tr>
       </table>
   </td>
@@ -1095,11 +1044,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>position position point in spline. </p>
+<p>m_splineIndex index of spline in list. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00125">125</a> of file <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html#l00114">114</a> of file <a class="el" href="../../d8/d13/vcontrolpointspline_8h_source.html">vcontrolpointspline.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00159">itemChange()</a>, and <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00299">refreshCtrlPoint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00163">itemChange()</a>, and <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00319">refreshCtrlPoint()</a>.</p>
 
 </div>
 </div>

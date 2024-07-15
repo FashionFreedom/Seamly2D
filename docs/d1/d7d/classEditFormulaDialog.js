@@ -30,7 +30,7 @@ var classEditFormulaDialog =
     [ "setPostfix", "d1/d7d/classEditFormulaDialog.html#ad1aea8c58778ba445c27fecba1f1fd20", null ],
     [ "showEvent", "d1/d7d/classEditFormulaDialog.html#aedb06a6ddda0154ad24ad75c98be65ad", null ],
     [ "showFunctions", "d1/d7d/classEditFormulaDialog.html#aa4bc382d202b07ba90fb20e0f0d6478c", null ],
-    [ "showMeasurements", "d1/d7d/classEditFormulaDialog.html#acddf850fd883ed51af24dde066f80963", null ],
+    [ "showMeasurements", "d1/d7d/classEditFormulaDialog.html#abf3572a7978331b5431a010717b9be46", null ],
     [ "showVariable", "d1/d7d/classEditFormulaDialog.html#abe38a6ecf3165bb67ca6531929e9b9d7", null ],
     [ "tabChanged", "d1/d7d/classEditFormulaDialog.html#aa743c053e5cc2859bfec46ba36590a69", null ],
     [ "undoFormula", "d1/d7d/classEditFormulaDialog.html#a97b37c30e2015ea7492320b8ba6a1270", null ],

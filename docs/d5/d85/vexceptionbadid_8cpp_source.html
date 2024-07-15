@@ -98,47 +98,47 @@ $(document).ready(function(){initNavTree('d5/d85/vexceptionbadid_8cpp_source.htm
 </div><!--header-->
 <div class="contents">
 <a href="../../d5/d85/vexceptionbadid_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *                                                                         *</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *   Copyright (C) 2017  Seamly, LLC                                       *</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                                                                         *</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *   https://github.com/fashionfreedom/seamly2d                             *</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *                                                                         *</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> ***************************************************************************</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> **  (at your option) any later version.</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> **  GNU General Public License for more details.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> **  You should have received a copy of the GNU General Public License</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> **  along with Seamly2D.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> **************************************************************************</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> ************************************************************************</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **  @file   vexceptionbadid.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **  @author Douglas S Caskey</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **  @date   17 Sep, 2023</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> **  @copyright</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **  Copyright (C) 2017 - 2023 Seamly, LLC</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **  https://github.com/fashionfreedom/seamly2d</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> **  @brief</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> **  (at your option) any later version.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> **  GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> **  You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> **  along with Seamly2D. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> **************************************************************************/</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/************************************************************************</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> **  @file   vexceptionbadid.cpp</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> **  @author Roman Telezhynskyi &lt;dismine(at)gmail.com&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> **  @date   November 15, 2013</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> **</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> **  @brief</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> **  @copyright</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> **  This source code is part of the Valentine project, a pattern making</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> **  This source code is part of the Valentina project, a pattern making</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> **  program, whose allow create and modeling patterns of clothing.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> **  Copyright (C) 2013-2015 Seamly2D project</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> **  &lt;https://github.com/fashionfreedom/seamly2d&gt; All Rights Reserved.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> **  Copyright (C) 2013 Valentina project</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> **  &lt;https://bitbucket.org/dismine/valentina&gt; All Rights Reserved.</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **  Valentina is free software: you can redistribute it and/or modify</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> **  (at your option) any later version.</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **  Valentina is distributed in the hope that it will be useful,</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> **  GNU General Public License for more details.</span></div>
@@ -159,66 +159,70 @@ $(document).ready(function(){initNavTree('d5/d85/vexceptionbadid_8cpp_source.htm
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"> * @param id id</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../de/da9/classVExceptionBadId.html#a1606112ae14cf3e51546347f30234f36">   62</a></span>&#160;<a class="code" href="../../de/da9/classVExceptionBadId.html#a1606112ae14cf3e51546347f30234f36">VExceptionBadId::VExceptionBadId</a>(<span class="keyword">const</span> QString &amp;error, <span class="keyword">const</span> quint32 &amp;<span class="keywordtype">id</span>)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    :<a class="code" href="../../de/d09/classVException.html">VException</a>(error), id(id), key(QString()){}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"> * @brief VExceptionBadId exception bad id</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"> * @param error string with error</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"> * @param key string key</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../de/da9/classVExceptionBadId.html#a535754be7bb8da35443172b0237fa0bf">   71</a></span>&#160;<a class="code" href="../../de/da9/classVExceptionBadId.html#a1606112ae14cf3e51546347f30234f36">VExceptionBadId::VExceptionBadId</a>(<span class="keyword">const</span> QString &amp;error, <span class="keyword">const</span> QString &amp;key)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    :<a class="code" href="../../de/d09/classVException.html">VException</a>(error), id(<a class="code" href="../../d3/da5/ifcdef_8h.html#a59d6223ecf7b4cea9bdae1e3db83c5ff">NULL_ID</a>), key(key){}</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"> * @brief VExceptionBadId copy constructor</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"> * @param e exception</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../de/da9/classVExceptionBadId.html#a2cdc28b19a7432ecd143e82294d0ef96">   79</a></span>&#160;<a class="code" href="../../de/da9/classVExceptionBadId.html#a1606112ae14cf3e51546347f30234f36">VExceptionBadId::VExceptionBadId</a>(<span class="keyword">const</span> <a class="code" href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a> &amp;e)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    :<a class="code" href="../../de/d09/classVException.html">VException</a>(e), id(e.BadId()), key(e.BadKey()){}</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../de/da9/classVExceptionBadId.html#a1ff74a2beb73377cd3acdd895e6da61f">   83</a></span>&#160;<a class="code" href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a> &amp;<a class="code" href="../../de/da9/classVExceptionBadId.html#a1ff74a2beb73377cd3acdd895e6da61f">VExceptionBadId::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a> &amp;e)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> ( &amp;e == <span class="keyword">this</span> )</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="../../de/d09/classVException.html#ab27d8cb624f122a27652ce7121541be0">VException::operator=</a>(e);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    this-&gt;<span class="keywordtype">id</span> = e.<a class="code" href="../../de/da9/classVExceptionBadId.html#ad42ffd5a46f220623bccc642d04639e3">BadId</a>();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    this-&gt;<a class="code" href="../../de/da9/classVExceptionBadId.html#a175a32f2db349170b706fafb49440836">key</a> = e.<a class="code" href="../../de/da9/classVExceptionBadId.html#a194f8b1fc56724a986bbd446d8fbd4d7">BadKey</a>();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment"> * @brief ErrorMessage return main error message</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment"> * @return main error message</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../de/da9/classVExceptionBadId.html#abbfc04f0381b327fbbcd247776db2fe8">  100</a></span>&#160;QString <a class="code" href="../../de/da9/classVExceptionBadId.html#abbfc04f0381b327fbbcd247776db2fe8">VExceptionBadId::ErrorMessage</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    QString <a class="code" href="../../de/d09/classVException.html#a6a2a1fb4627830eecbec7ad04642095d">error</a>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/da9/classVExceptionBadId.html#a175a32f2db349170b706fafb49440836">key</a>.isEmpty())</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="../../de/d09/classVException.html#a6a2a1fb4627830eecbec7ad04642095d">error</a> = QString(<span class="stringliteral">&quot;ExceptionBadId: %1, id = %2&quot;</span>).arg(this-&gt;error).arg(<span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    : <a class="code" href="../../de/d09/classVException.html">VException</a>(error)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    , id(id)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    , key(QString()){}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"> * @brief VExceptionBadId exception bad id</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"> * @param error string with error</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> * @param key string key</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../de/da9/classVExceptionBadId.html#a535754be7bb8da35443172b0237fa0bf">   73</a></span>&#160;<a class="code" href="../../de/da9/classVExceptionBadId.html#a1606112ae14cf3e51546347f30234f36">VExceptionBadId::VExceptionBadId</a>(<span class="keyword">const</span> QString &amp;error, <span class="keyword">const</span> QString &amp;key)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    : <a class="code" href="../../de/d09/classVException.html">VException</a>(error), id(<a class="code" href="../../d3/da5/ifcdef_8h.html#a59d6223ecf7b4cea9bdae1e3db83c5ff">NULL_ID</a>), key(key){}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"> * @brief VExceptionBadId copy constructor</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"> * @param e exception</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../de/da9/classVExceptionBadId.html#a23a58f2589af572c514ef04b62e1e6fc">   81</a></span>&#160;<a class="code" href="../../de/da9/classVExceptionBadId.html#a1606112ae14cf3e51546347f30234f36">VExceptionBadId::VExceptionBadId</a>(<span class="keyword">const</span> <a class="code" href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a> &amp;error)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    : <a class="code" href="../../de/d09/classVException.html">VException</a>(error)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    , id(error.BadId())</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    , key(error.BadKey()){}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../de/da9/classVExceptionBadId.html#aef18926c10dba428e1b8280d8e4ab9db">   87</a></span>&#160;<a class="code" href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a> &amp;<a class="code" href="../../de/da9/classVExceptionBadId.html#aef18926c10dba428e1b8280d8e4ab9db">VExceptionBadId::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a> &amp;error)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> ( &amp;<a class="code" href="../../de/d09/classVException.html#a6a2a1fb4627830eecbec7ad04642095d">error</a> == <span class="keyword">this</span> )</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="../../de/d09/classVException.html#a4ce329894003a0af46aa676a832a1bf0">VException::operator=</a>(<a class="code" href="../../de/d09/classVException.html#a6a2a1fb4627830eecbec7ad04642095d">error</a>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    this-&gt;<span class="keywordtype">id</span> = error.<a class="code" href="../../de/da9/classVExceptionBadId.html#ad42ffd5a46f220623bccc642d04639e3">BadId</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    this-&gt;<a class="code" href="../../de/da9/classVExceptionBadId.html#a175a32f2db349170b706fafb49440836">key</a> = error.<a class="code" href="../../de/da9/classVExceptionBadId.html#a194f8b1fc56724a986bbd446d8fbd4d7">BadKey</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"> * @brief ErrorMessage return main error message</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"> * @return main error message</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="../../de/da9/classVExceptionBadId.html#abbfc04f0381b327fbbcd247776db2fe8">  104</a></span>&#160;QString <a class="code" href="../../de/da9/classVExceptionBadId.html#abbfc04f0381b327fbbcd247776db2fe8">VExceptionBadId::ErrorMessage</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    QString <a class="code" href="../../de/d09/classVException.html#a6a2a1fb4627830eecbec7ad04642095d">error</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/da9/classVExceptionBadId.html#a175a32f2db349170b706fafb49440836">key</a>.isEmpty())</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="../../de/d09/classVException.html#a6a2a1fb4627830eecbec7ad04642095d">error</a> = QString(<span class="stringliteral">&quot;ExceptionBadId: %1, id = %2&quot;</span>).arg(this-&gt;error).arg(<a class="code" href="../../de/da9/classVExceptionBadId.html#a175a32f2db349170b706fafb49440836">key</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="../../de/d09/classVException.html#a6a2a1fb4627830eecbec7ad04642095d">error</a> = QString(<span class="stringliteral">&quot;ExceptionBadId: %1, id = %2&quot;</span>).arg(this-&gt;error).arg(<span class="keywordtype">id</span>);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d09/classVException.html#a6a2a1fb4627830eecbec7ad04642095d">error</a>;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="../../de/d09/classVException.html#a6a2a1fb4627830eecbec7ad04642095d">error</a> = QString(<span class="stringliteral">&quot;ExceptionBadId: %1, id = %2&quot;</span>).arg(this-&gt;error).arg(<a class="code" href="../../de/da9/classVExceptionBadId.html#a175a32f2db349170b706fafb49440836">key</a>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d09/classVException.html#a6a2a1fb4627830eecbec7ad04642095d">error</a>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
 <div class="ttc" id="aclassVExceptionBadId_html"><div class="ttname"><a href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a></div><div class="ttdoc">The VExceptionBadId class for exception bad id.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d13/vexceptionbadid_8h_source.html#l00065">vexceptionbadid.h:66</a></div></div>
 <div class="ttc" id="aclassVExceptionBadId_html_a1606112ae14cf3e51546347f30234f36"><div class="ttname"><a href="../../de/da9/classVExceptionBadId.html#a1606112ae14cf3e51546347f30234f36">VExceptionBadId::VExceptionBadId</a></div><div class="ttdeci">VExceptionBadId(const QString &amp;error, const quint32 &amp;id)</div><div class="ttdoc">VExceptionBadId exception bad id.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d85/vexceptionbadid_8cpp_source.html#l00062">vexceptionbadid.cpp:62</a></div></div>
 <div class="ttc" id="aclassVExceptionBadId_html_a175a32f2db349170b706fafb49440836"><div class="ttname"><a href="../../de/da9/classVExceptionBadId.html#a175a32f2db349170b706fafb49440836">VExceptionBadId::key</a></div><div class="ttdeci">QString key</div><div class="ttdoc">key key</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d13/vexceptionbadid_8h_source.html#l00081">vexceptionbadid.h:81</a></div></div>
 <div class="ttc" id="aclassVExceptionBadId_html_a194f8b1fc56724a986bbd446d8fbd4d7"><div class="ttname"><a href="../../de/da9/classVExceptionBadId.html#a194f8b1fc56724a986bbd446d8fbd4d7">VExceptionBadId::BadKey</a></div><div class="ttdeci">QString BadKey() const</div><div class="ttdoc">BadKey return bad key.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d13/vexceptionbadid_8h_source.html#l00099">vexceptionbadid.h:99</a></div></div>
-<div class="ttc" id="aclassVExceptionBadId_html_a1ff74a2beb73377cd3acdd895e6da61f"><div class="ttname"><a href="../../de/da9/classVExceptionBadId.html#a1ff74a2beb73377cd3acdd895e6da61f">VExceptionBadId::operator=</a></div><div class="ttdeci">VExceptionBadId &amp; operator=(const VExceptionBadId &amp;e)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d85/vexceptionbadid_8cpp_source.html#l00083">vexceptionbadid.cpp:83</a></div></div>
-<div class="ttc" id="aclassVExceptionBadId_html_abbfc04f0381b327fbbcd247776db2fe8"><div class="ttname"><a href="../../de/da9/classVExceptionBadId.html#abbfc04f0381b327fbbcd247776db2fe8">VExceptionBadId::ErrorMessage</a></div><div class="ttdeci">virtual QString ErrorMessage() const Q_DECL_OVERRIDE</div><div class="ttdoc">ErrorMessage return main error message.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d85/vexceptionbadid_8cpp_source.html#l00100">vexceptionbadid.cpp:100</a></div></div>
+<div class="ttc" id="aclassVExceptionBadId_html_abbfc04f0381b327fbbcd247776db2fe8"><div class="ttname"><a href="../../de/da9/classVExceptionBadId.html#abbfc04f0381b327fbbcd247776db2fe8">VExceptionBadId::ErrorMessage</a></div><div class="ttdeci">virtual QString ErrorMessage() const Q_DECL_OVERRIDE</div><div class="ttdoc">ErrorMessage return main error message.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d85/vexceptionbadid_8cpp_source.html#l00104">vexceptionbadid.cpp:104</a></div></div>
 <div class="ttc" id="aclassVExceptionBadId_html_ad42ffd5a46f220623bccc642d04639e3"><div class="ttname"><a href="../../de/da9/classVExceptionBadId.html#ad42ffd5a46f220623bccc642d04639e3">VExceptionBadId::BadId</a></div><div class="ttdeci">quint32 BadId() const</div><div class="ttdoc">BadId return bad id.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d13/vexceptionbadid_8h_source.html#l00089">vexceptionbadid.h:89</a></div></div>
+<div class="ttc" id="aclassVExceptionBadId_html_aef18926c10dba428e1b8280d8e4ab9db"><div class="ttname"><a href="../../de/da9/classVExceptionBadId.html#aef18926c10dba428e1b8280d8e4ab9db">VExceptionBadId::operator=</a></div><div class="ttdeci">VExceptionBadId &amp; operator=(const VExceptionBadId &amp;error)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d85/vexceptionbadid_8cpp_source.html#l00087">vexceptionbadid.cpp:87</a></div></div>
 <div class="ttc" id="aclassVException_html"><div class="ttname"><a href="../../de/d09/classVException.html">VException</a></div><div class="ttdoc">The VException class parent for all exception. Could be use for abstract exception.</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d44/vexception_8h_source.html#l00065">vexception.h:66</a></div></div>
+<div class="ttc" id="aclassVException_html_a4ce329894003a0af46aa676a832a1bf0"><div class="ttname"><a href="../../de/d09/classVException.html#a4ce329894003a0af46aa676a832a1bf0">VException::operator=</a></div><div class="ttdeci">VException &amp; operator=(const VException &amp;error)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d9d/vexception_8cpp_source.html#l00083">vexception.cpp:83</a></div></div>
 <div class="ttc" id="aclassVException_html_a6a2a1fb4627830eecbec7ad04642095d"><div class="ttname"><a href="../../de/d09/classVException.html#a6a2a1fb4627830eecbec7ad04642095d">VException::error</a></div><div class="ttdeci">QString error</div><div class="ttdoc">error string with error</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d44/vexception_8h_source.html#l00088">vexception.h:88</a></div></div>
-<div class="ttc" id="aclassVException_html_ab27d8cb624f122a27652ce7121541be0"><div class="ttname"><a href="../../de/d09/classVException.html#ab27d8cb624f122a27652ce7121541be0">VException::operator=</a></div><div class="ttdeci">VException &amp; operator=(const VException &amp;e)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d9d/vexception_8cpp_source.html#l00081">vexception.cpp:81</a></div></div>
 <div class="ttc" id="aifcdef_8h_html_a59d6223ecf7b4cea9bdae1e3db83c5ff"><div class="ttname"><a href="../../d3/da5/ifcdef_8h.html#a59d6223ecf7b4cea9bdae1e3db83c5ff">NULL_ID</a></div><div class="ttdeci">#define NULL_ID</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/ifcdef_8h_source.html#l00076">ifcdef.h:76</a></div></div>
 <div class="ttc" id="avexception_8h_html"><div class="ttname"><a href="../../d1/d44/vexception_8h.html">vexception.h</a></div></div>
 <div class="ttc" id="avexceptionbadid_8h_html"><div class="ttname"><a href="../../d4/d13/vexceptionbadid_8h.html">vexceptionbadid.h</a></div></div>

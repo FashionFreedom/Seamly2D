@@ -1,6 +1,14 @@
 var dir_97d355521c4cf933b349974c8906fc73 =
 [
     [ "configpages", "dir_e4923d2acd3e9053b6364af89cb1744b.html", "dir_e4923d2acd3e9053b6364af89cb1744b" ],
+    [ "about2d_dialog.cpp", "d9/d7f/about2d__dialog_8cpp.html", null ],
+    [ "about2d_dialog.h", "de/da1/about2d__dialog_8h.html", [
+      [ "About2DAppDialog", "df/d22/classAbout2DAppDialog.html", "df/d22/classAbout2DAppDialog" ]
+    ] ],
+    [ "abstractlayout_dialog.cpp", "dd/db4/abstractlayout__dialog_8cpp.html", null ],
+    [ "abstractlayout_dialog.h", "d7/d9e/abstractlayout__dialog_8h.html", [
+      [ "AbstractLayoutDialog", "df/dc3/classAbstractLayoutDialog.html", "df/dc3/classAbstractLayoutDialog" ]
+    ] ],
     [ "calculator_dialog.cpp", "d7/dfa/calculator__dialog_8cpp.html", null ],
     [ "calculator_dialog.h", "d7/d73/calculator__dialog_8h.html", [
       [ "CalculatorDialog", "dc/d3d/classCalculatorDialog.html", "dc/d3d/classCalculatorDialog" ]
@@ -9,22 +17,13 @@ var dir_97d355521c4cf933b349974c8906fc73 =
     [ "decimalchart_dialog.h", "dc/d9a/decimalchart__dialog_8h.html", [
       [ "DecimalChartDialog", "db/dda/classDecimalChartDialog.html", "db/dda/classDecimalChartDialog" ]
     ] ],
-    [ "dialogaboutapp.cpp", "dd/d64/dialogaboutapp_8cpp.html", null ],
-    [ "dialogaboutapp.h", "da/d80/dialogaboutapp_8h.html", [
-      [ "DialogAboutApp", "de/d06/classDialogAboutApp.html", "de/d06/classDialogAboutApp" ]
-    ] ],
     [ "dialogdatetimeformats.cpp", "da/dbc/dialogdatetimeformats_8cpp.html", null ],
     [ "dialogdatetimeformats.h", "d5/d11/dialogdatetimeformats_8h.html", [
       [ "DialogDateTimeFormats", "da/d06/classDialogDateTimeFormats.html", "da/d06/classDialogDateTimeFormats" ]
     ] ],
-    [ "dialoghistory.cpp", "d3/df3/dialoghistory_8cpp.html", null ],
     [ "dialoglayoutprogress.cpp", "d6/d89/dialoglayoutprogress_8cpp.html", null ],
     [ "dialoglayoutprogress.h", "d3/d03/dialoglayoutprogress_8h.html", [
       [ "DialogLayoutProgress", "dd/d64/classDialogLayoutProgress.html", "dd/d64/classDialogLayoutProgress" ]
-    ] ],
-    [ "dialoglayoutsettings.cpp", "db/def/dialoglayoutsettings_8cpp.html", null ],
-    [ "dialoglayoutsettings.h", "d2/d2b/dialoglayoutsettings_8h.html", [
-      [ "DialogLayoutSettings", "da/d20/classDialogLayoutSettings.html", "da/d20/classDialogLayoutSettings" ]
     ] ],
     [ "dialognewpattern.cpp", "de/d87/dialognewpattern_8cpp.html", null ],
     [ "dialognewpattern.h", "dd/d10/dialognewpattern_8h.html", [
@@ -56,7 +55,11 @@ var dir_97d355521c4cf933b349974c8906fc73 =
       [ "RowData", "da/d35/structRowData.html", "da/d35/structRowData" ],
       [ "HistoryDialog", "d1/d42/classHistoryDialog.html", "d1/d42/classHistoryDialog" ]
     ] ],
-    [ "pieces_widget.cpp", "d5/d7b/pieces__widget_8cpp.html", null ],
+    [ "layoutsettings_dialog.cpp", "d0/dfa/layoutsettings__dialog_8cpp.html", null ],
+    [ "layoutsettings_dialog.h", "d3/dd8/layoutsettings__dialog_8h.html", [
+      [ "LayoutSettingsDialog", "db/d32/classLayoutSettingsDialog.html", "db/d32/classLayoutSettingsDialog" ]
+    ] ],
+    [ "pieces_widget.cpp", "d5/d7b/pieces__widget_8cpp.html", "d5/d7b/pieces__widget_8cpp" ],
     [ "pieces_widget.h", "d7/d18/pieces__widget_8h.html", [
       [ "PiecesWidget", "d4/dc9/classPiecesWidget.html", "d4/dc9/classPiecesWidget" ]
     ] ],
@@ -68,8 +71,8 @@ var dir_97d355521c4cf933b349974c8906fc73 =
     [ "show_info_dialog.h", "dd/de2/show__info__dialog_8h.html", [
       [ "ShowInfoDialog", "da/d5b/classShowInfoDialog.html", "da/d5b/classShowInfoDialog" ]
     ] ],
-    [ "vabstractlayoutdialog.cpp", "d5/de4/vabstractlayoutdialog_8cpp.html", null ],
-    [ "vabstractlayoutdialog.h", "d5/d48/vabstractlayoutdialog_8h.html", [
-      [ "VAbstractLayoutDialog", "d1/dbb/classVAbstractLayoutDialog.html", "d1/dbb/classVAbstractLayoutDialog" ]
+    [ "welcome_dialog.cpp", "df/d69/welcome__dialog_8cpp.html", null ],
+    [ "welcome_dialog.h", "d3/de1/welcome__dialog_8h.html", [
+      [ "SeamlyWelcomeDialog", "d4/d8f/classSeamlyWelcomeDialog.html", "d4/d8f/classSeamlyWelcomeDialog" ]
     ] ]
 ];
