@@ -135,9 +135,13 @@ DialogAlongLine::DialogAlongLine(const VContainer *data, const quint32 &toolId, 
 
     vis = new VisToolAlongLine(data);
 
-    // Call after initialization vis!!!!
-    setLineType(LineTypeNone);//By default don't show line
-    setLineWeight("0.35");
+    // Call after visual initialized.
+    // If true current pen overides the default tool pen
+    if(!qApp->Settings()->useCurrentPen())
+    {
+        setLineType(LineTypeNone);  //By default don't show line
+        setLineWeight("0.35");
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------

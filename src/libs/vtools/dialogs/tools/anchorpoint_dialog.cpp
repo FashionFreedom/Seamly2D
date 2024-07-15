@@ -64,7 +64,7 @@ AnchorPointDialog::AnchorPointDialog(const VContainer *data, quint32 toolId, QWi
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
-    setWindowIcon(QIcon(":/toolicon/32x32/anchor_point.png"));
+    setWindowIcon(QIcon(":/icon/32x32/anchor_point.png"));
 
     initializeOkCancel(ui);
 

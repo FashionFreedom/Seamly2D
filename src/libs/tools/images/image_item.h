@@ -53,7 +53,7 @@ class ImageItem : public QObject, public QGraphicsItem
     Q_INTERFACES(QGraphicsItem)
 
 public:
-    explicit         ImageItem(VAbstractPattern *doc, DraftImage image, QGraphicsItem *parent = nullptr);
+    explicit         ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image);
     virtual         ~ImageItem() = default;
 
     virtual int      type() const override {return Type;}
@@ -74,6 +74,7 @@ public:
 
     DraftImage       getImage();
     void             setImage(DraftImage image);
+    void             setOrigin(qreal xOrigin, qreal yOrigin);
     void             updateImage();
     void             updateImageAndHandles(DraftImage image);
 
@@ -104,6 +105,7 @@ protected:
 private:
     VAbstractPattern  *m_doc;
     QPointF            m_offset;
+    QPointF            m_origin;
     QRectF             m_boundingRect;
     QRectF             m_handleRect;
     QRectF             m_actualRect;
@@ -122,6 +124,7 @@ private:
     bool               m_selectable;
     qreal              m_minDimension;
     qreal              m_maxDimension;
+    bool               m_selectNewOrigin;
 
     void               initializeItem();
     void               updateFromHandles(QRectF rect);

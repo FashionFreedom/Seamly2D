@@ -69,7 +69,7 @@
 #include "vtoolrecord.h"
 #include "../vmisc/def.h"
 #include "../vwidgets/pen_toolbar.h"
-#include "../../tools/image_item.h"
+#include "../../tools/images/image_item.h"
 
 class QDomElement;
 class VPiecePath;

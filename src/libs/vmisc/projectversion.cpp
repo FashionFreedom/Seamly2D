@@ -115,6 +115,15 @@ QString compilerString()
 #elif defined(Q_CC_GNU)
     return QLatin1String("GCC " ) + QLatin1String(__VERSION__);
 #elif defined(Q_CC_MSVC)
+
+    if (_MSC_VER >= 1930) // 1930: MSVC 2022 (yearly release cycle)
+    {
+        return QLatin1String("MSVC ") + QString::number(2022);
+    }
+    if (_MSC_VER >= 1920) // 1920: MSVC 2019 (yearly release cycle)
+    {
+        return QLatin1String("MSVC ") + QString::number(2019);
+    }
     if (_MSC_VER >= 1800) // 1800: MSVC 2013 (yearly release cycle)
     {
         return QLatin1String("MSVC ") + QString::number(2008 + ((_MSC_VER / 100) - 13));

@@ -67,17 +67,16 @@ class Application2D;// use in define
 #endif
 #define qApp (static_cast<Application2D*>(VAbstractApplication::instance()))
 
-/**
- * @brief The Application2D class reimplamentation QApplication class.
- */
+
+// @brief The Application2D class reimplamentation QApplication class.
 class Application2D : public VAbstractApplication
 {
     Q_OBJECT
 public:
-                                       Application2D(int &argc, char ** argv);
+                                       Application2D(int &argc, char **argv);
     virtual                           ~Application2D() Q_DECL_OVERRIDE;
     static void                        startNewSeamly2D(const QString &fileName = QString());
-    virtual bool                       notify(QObject * receiver, QEvent * event) Q_DECL_OVERRIDE;
+    virtual bool                       notify(QObject *receiver, QEvent *event) Q_DECL_OVERRIDE;
 
     void                               initOptions();
 

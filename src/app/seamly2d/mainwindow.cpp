@@ -89,7 +89,7 @@
 #include "dialogs/dialogs.h"
 #include "../vpropertyexplorer/checkablemessagebox.h"
 #include "../vtools/undocommands/addgroup.h"
-#include "../tools/image_item.h"
+#include "../tools/images/image_tool.h"
 #include "dialogs/calculator_dialog.h"
 #include "dialogs/decimalchart_dialog.h"
 #include "../vtools/undocommands/label/showpointname.h"
@@ -120,8 +120,8 @@
 #include <QTextCodec>
 #include <QDoubleSpinBox>
 #include <QToolBar>
-#include <QImageReader>
 #include <QSharedPointer>
+#include <QImageReader>
 
 #if defined(Q_OS_MAC)
 #include <QMimeData>
@@ -218,11 +218,9 @@ MainWindow::MainWindow(QWidget *parent)
                 showDraftMode(true);
             }
         }
-    });
-    connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::changeDraftBlockGlobally);
-    connect(doc, &VPattern::CheckLayout, this, [&](){
         this->updateZoomToPointComboBox(draftPointNamesList());
     });
+    connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::changeDraftBlockGlobally);
     qApp->setCurrentDocument(doc);
     qApp->setCurrentData(pattern);
 
@@ -822,7 +820,7 @@ void MainWindow::ApplyDialog(VMainGraphicsScene *scene)
     }
     else
     { // Or update associated tool with data
-        DrawTool * vtool = qobject_cast<DrawTool *>(dialogTool->GetAssociatedTool());
+        DrawTool *vtool = qobject_cast<DrawTool *>(dialogTool->GetAssociatedTool());
         SCASSERT(vtool != nullptr)
         vtool->FullUpdateFromGuiApply();
     }
@@ -1637,126 +1635,6 @@ void MainWindow::ClosedInsertNodesDialog(int result)
     doc->LiteParseTree(Document::LiteParse);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-void MainWindow::handleImportImage()
-{
-    qCDebug(vMainWindow, "Add Image");
-    ui->draft_ToolBox->setCurrentWidget(ui->backgroundImage_Page);
-    ui->importImage_ToolButton->setChecked(true);
-
-    QString filename = getImageFilename();
-    qCDebug(vMainWindow, "Image filename: %s", qUtf8Printable(filename));
-
-    DraftImage image;
-    QFileInfo f(filename);
-    if (filename.isEmpty())
-    {
-        ui->importImage_ToolButton->setChecked(false);
-        return;
-    }
-    image.name = f.baseName();
-    image.filename = filename;
-    image.units = qApp->patternUnit();
-
-    addImage(image);
-}
-
-void  MainWindow::addImage(DraftImage image)
-{
-    static bool firstImportImage = false;
-    QImageReader imageReader(image.filename);
-
-    image.id = VContainer::getNextId();
-
-    if(!imageReader.canRead())
-    {
-        qCDebug(vMainWindow, "Can't read image");
-        QMessageBox::critical(this, tr("Can't read image"), tr("Could not read the image.") + "\n" + tr("It may be corrupted..."), QMessageBox::Ok);
-        return;
-    }
-
-    image.pixmap = QPixmap::fromImageReader(&imageReader);
-
-    if(image.pixmap.isNull())
-    {
-        qCDebug(vMainWindow, "Can't read image");
-        QMessageBox::critical(this, tr("Can't read image"), tr("Could not read the image.") + "\n" + tr("It may be corrupted or empty..."), QMessageBox::Ok);
-        return;
-    }
-
-    if (image.width == 0 || image.height == 0)
-    {
-        image.width  = image.pixmap.width();
-        image.height = image.pixmap.height();
-    }
-
-    ImageItem *item = new ImageItem(doc, image);
-    doc->addBackgroundImage(image.id, item);
-    draftScene->addItem(item);
-    //Need error dialog
-
-    //connect(this, &MainWindow::EnableImageSelection, item, &ImageItem::enableSelection);
-    //connect(this, &MainWindow::EnableImageHover, item, &ImageItem::enableHovering);
-
-    connect(item, &ImageItem::deleteImage, this, &MainWindow::handleDeleteImage);
-    //connect(item, &ImageItem::imageSelected, this, &MainWindow::handleImageSelected);
-    connect(item, &ImageItem::setStatusMessage, this, &MainWindow::setStatusMessage);
-
-    ui->importImage_ToolButton->setChecked(false);
-
-    if(!firstImportImage)
-    {
-       qCDebug(vMainWindow, "Inside first import image");
-       InfoUnsavedImages(&firstImportImage);
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void MainWindow::handleDeleteImage(quint32 id)
-{
-    qCDebug(vMainWindow, "delete Image");
-    bool deleteConfirmed = true;
-
-    if (qApp->Settings()->getConfirmItemDelete())
-    {
-        Utils::CheckableMessageBox msgBox(qApp->getMainWindow());
-        msgBox.setWindowTitle(tr("Confirm deletion"));
-        msgBox.setText(tr("Do you really want to delete?"));
-        msgBox.setStandardButtons(QDialogButtonBox::Yes | QDialogButtonBox::No);
-        msgBox.setDefaultButton(QDialogButtonBox::No);
-        msgBox.setIconPixmap(QApplication::style()->standardIcon(QStyle::SP_MessageBoxQuestion).pixmap(32, 32) );
-
-        int dialogResult = msgBox.exec();
-
-        if (dialogResult != QDialog::Accepted)
-        {
-            deleteConfirmed = false;
-        }
-
-        qApp->Settings()->setConfirmItemDelete(not msgBox.isChecked());
-
-    }
-
-    if (deleteConfirmed)
-    {
-        ImageItem *item = doc->getBackgroundImage(id);
-        if (item)
-        {
-            doc->removeBackgroundImage(id);
-            item->deleteImageItem();
-        }
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void MainWindow::handleImageSelected(quint32 id)
-{
-    ImageItem *item = doc->getBackgroundImage(id);
-    if (item)
-    {
-        // May be useful in the development of the background-image feature
-    }
-}
 
 //--------------------------------------------------------------------------------------------------------------------
 void MainWindow::setStatusMessage(QString message)
@@ -1765,47 +1643,34 @@ void MainWindow::setStatusMessage(QString message)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::handleLockImage(bool state)
+void MainWindow::handleImageTool()
 {
-    qCDebug(vMainWindow, "lock Image = %s",  state ? "True" : "False");
-}
+    qCDebug(vMainWindow, "Add Image");
+    ui->draft_ToolBox->setCurrentWidget(ui->backgroundImage_Page);
+    ui->importImage_ToolButton->setChecked(true);
 
-//---------------------------------------------------------------------------------------------------------------------
-void MainWindow::handleAlignImage()
-{
-    qCDebug(vMainWindow, "align Image");
-}
+    QString filename = getImageFilename();
+    QImageReader reader(filename);
 
-//---------------------------------------------------------------------------------------------------------------------
-void MainWindow::handleLockImageAspect(bool state)
-{
-    qCDebug(vMainWindow, "lock Image Aspect= %s",  state ? "True" : "False");
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void MainWindow::updateImage(DraftImage image)
-{
-    qCDebug(vMainWindow, "Id = %d", image.id);
-    qCDebug(vMainWindow, "Name = %s", qUtf8Printable(image.name));
-    qCDebug(vMainWindow, "Filename = %s", qUtf8Printable(image.filename));
-    qCDebug(vMainWindow, "lock Image = %s", image.locked ? "True" : "False");
-    qCDebug(vMainWindow, "Anchor = %d", static_cast<int>(image.anchor));
-    qCDebug(vMainWindow, "Xpos = %f", image.xPos);
-    qCDebug(vMainWindow, "YPos = %f", image.yPos);
-    qCDebug(vMainWindow, "Width = %f", image.width);
-    qCDebug(vMainWindow, "Height = %f", image.height);
-    qCDebug(vMainWindow, "lock Image Aspect = %s",  image.aspectLocked ? "True" : "False");
-    qCDebug(vMainWindow, "Units = %d", static_cast<int>(image.units));
-    qCDebug(vMainWindow, "Rotation = %f", image.rotation);
-    qCDebug(vMainWindow, "Visible = %s",  image.visible ? "True" : "False");
-    qCDebug(vMainWindow, "Opacity = %f", image.opacity);
-    qCDebug(vMainWindow, "Order = %d\n", static_cast<int>(image.order));
-
-    ImageItem *item = static_cast<ImageItem *>(qApp->getCurrentScene()->focusItem());
-    if (item)
+    if (!filename.isEmpty() && reader.canRead())
     {
-        item->setImage(image);
+        ImageTool *image_tool = new ImageTool(this, doc, draftScene, filename);
+        if(image_tool->creationWasSuccessful)
+        {
+            connect(image_tool, &ImageTool::setStatusMessage, this, &MainWindow::setStatusMessage);
+        }
+        else
+        {
+            image_tool->deleteLater();
+        }
     }
+    else
+    {
+        qCDebug(vMainWindow, "Can't load image");
+        QMessageBox::critical(this, tr("Import Image"), tr("Could not load the image."), QMessageBox::Ok);
+    }
+
+    ui->importImage_ToolButton->setChecked(false);
 }
 
 
@@ -1833,6 +1698,7 @@ QString MainWindow::getImageFilename()
 
     return filename;
 }
+
 
 //Pieces
 //---------------------------------------------------------------------------------------------------------------------
@@ -2115,7 +1981,7 @@ void MainWindow::handleExportToCSV()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::LoadIndividual()
 {
-    const QString filter = tr("Individual measurements") + QLatin1String(" (*.") + smisExt +
+    const QString filter = tr("Individual measurements") + QLatin1String(" (*.* *.") + smisExt +
                                                            QLatin1String(" *.") + vitExt  + QLatin1String(")");
 
     //Use standard path to individual measurements
@@ -2168,7 +2034,7 @@ void MainWindow::LoadIndividual()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::LoadMultisize()
 {
-    const QString filter = tr("Multisize measurements")  + QLatin1String(" (*.") + smmsExt +
+    const QString filter = tr("Multisize measurements")  + QLatin1String(" (*.* *.") + smmsExt +
                                                            QLatin1String(" *.") + vstExt  + QLatin1String(")");
 
     //Use standard path to multisize measurements
@@ -2641,9 +2507,13 @@ void MainWindow::initializeToolsToolBar()
     ui->zoomToPoint_Action->setShortcuts(zoomToPointShortcuts);
     connect(ui->zoomToPoint_Action, &QAction::triggered, this, &MainWindow::showZoomToPointDialog);
 
+    if (m_zoomToPointComboBox != nullptr)
+    {
+        delete m_zoomToPointComboBox;
+    }
     m_zoomToPointComboBox = new QComboBox(ui->zoom_ToolBar);
     m_zoomToPointComboBox->setEnabled(false);
-    m_zoomToPointComboBox->setToolTip(ui->zoomToPoint_Action->toolTip());
+    m_zoomToPointComboBox->setToolTip(tr("Zoom to point (Ctrl + Alt + P)"));
     ui->zoom_ToolBar->addWidget(m_zoomToPointComboBox);
     connect(m_zoomToPointComboBox, &QComboBox::currentTextChanged, this, &MainWindow::zoomToPoint);
 
@@ -3001,7 +2871,7 @@ void MainWindow::initializeToolButtons()
     connect(ui->exportPiecesAs_ToolButton, &QToolButton::clicked, this, &MainWindow::exportPiecesAs);
     connect(ui->ellipticalArc_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleEllipticalArcTool);
     connect(ui->anchorPoint_ToolButton,    &QToolButton::clicked, this, &MainWindow::handleAnchorPointTool);
-    connect(ui->importImage_ToolButton,    &QToolButton::clicked, this, &MainWindow::handleImportImage);
+    connect(ui->importImage_ToolButton,    &QToolButton::clicked, this, &MainWindow::handleImageTool);
     connect(ui->insertNodes_ToolButton,    &QToolButton::clicked, this, &MainWindow::handleInsertNodesTool);
 }
 
@@ -3345,7 +3215,7 @@ void MainWindow::handlePieceMenu()
     QMenu menu;
 
     QAction *action_Piece        = menu.addAction(QIcon(":/toolicon/32x32/new_detail.png"),   tr("New Pattern Piece") + "\tN, P");
-    QAction *action_AnchorPoint  = menu.addAction(QIcon(":/toolicon/32x32/anchor_point.png"), tr("Add AnchorPoint") + "\tA, P");
+    QAction *action_AnchorPoint  = menu.addAction(QIcon(":/icon/32x32/anchor_point.png"),     tr("Add AnchorPoint") + "\tA, P");
     QAction *action_InternalPath = menu.addAction(QIcon(":/toolicon/32x32/path.png"),         tr("Create Internal Path") + "\tI, N");
     QAction *action_InsertNodes  = menu.addAction(QIcon(":/toolicon/32x32/insert_nodes_icon.png"), tr("Insert Nodes in Path") + "\tI, P");
 
@@ -3458,8 +3328,7 @@ void MainWindow::handleImagesMenu()
     else if (selectedAction == action_ImportImage)
     {
         ui->draft_ToolBox->setCurrentWidget(ui->backgroundImage_Page);
-        ui->importImage_ToolButton->setChecked(true);
-        handleImportImage();
+        handleImageTool();
     }
 }
 
@@ -4289,7 +4158,7 @@ void MainWindow::Open()
 {
     qCDebug(vMainWindow, "Opening new file.");
 
-    const QString filter = tr("Pattern files") + QLatin1String(" (*.") + valExt +
+    const QString filter = tr("Pattern files") + QLatin1String(" (*.* *.") + valExt +
                            QLatin1String(" *.") + sm2dExt + QLatin1String(")");
 
     //Get list last open files
@@ -4783,7 +4652,7 @@ void MainWindow::New()
         if (newPattern.exec() == QDialog::Accepted)
         {
             draftBlockName = newPattern.name();
-            qApp->setPatternUnit(newPattern.PatternUnit());
+            qApp->setPatternUnit(newPattern.patternUnit());
             qCDebug(vMainWindow, "Draft Block name: %s", qUtf8Printable(draftBlockName));
         }
         else
@@ -5317,32 +5186,7 @@ bool MainWindow::MaybeSave()
     }
     return true;
 }
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief InfoUnsavedImages is called when the user imports his first image.
- */
-void MainWindow::InfoUnsavedImages(bool *firstImportImage)
-{
-    if (guiEnabled)
-    {
-        QScopedPointer<QMessageBox> messageBox(new QMessageBox(QMessageBox::Information,
-                                                                tr("Images will not be saved"),
-                                                                tr("Please note that the images can not be saved and that they are not affected "
-                                                                   "by the undo and redo functions in the current version of the software.\n\n"
-                                                                   "You may want to take a screenshot of the image properties dialog before closing the software "
-                                                                   "to be able to recreate identically the image when opening the software again."),
-                                                                QMessageBox::NoButton,
-                                                                this,Qt::Sheet));
 
-        messageBox->setWindowModality(Qt::ApplicationModal);
-        messageBox->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint
-                                                 & ~Qt::WindowMaximizeButtonHint
-                                                 & ~Qt::WindowMinimizeButtonHint);
-
-        messageBox->exec();
-        *firstImportImage = true;
-    }
-}
 
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::UpdateRecentFileActions()
@@ -5365,6 +5209,7 @@ void MainWindow::UpdateRecentFileActions()
 
     separatorAct->setVisible(numRecentFiles > 0);
 }
+
 
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::createMenus()
@@ -5854,12 +5699,7 @@ void MainWindow::createActions()
         emit ui->view->itemClicked(nullptr);
         refreshLabels();
     });
-/**
-    connect(ui->toggleAnchorPoints_Action, &QAction::triggered, this, [this](bool checked)
-    {
-        qApp->Seamly2DSettings()->setShowAnchorPoints(checked);
-    });
-**/
+
     connect(ui->increaseSize_Action, &QAction::triggered, this, [this]()
     {
         int index = qMin(fontSizeComboBox->currentIndex() + 1, fontSizeComboBox->count()-1);
@@ -6196,12 +6036,8 @@ void MainWindow::createActions()
     connect(ui->importImage_Action, &QAction::triggered, this, [this]
     {
         ui->draft_ToolBox->setCurrentWidget(ui->backgroundImage_Page);
-        ui->importImage_ToolButton->setChecked(true);
-        handleImportImage();
+        handleImageTool();
     });
-    //connect(ui->deleteImage_Action, &QAction::triggered, this, &MainWindow::handleDeleteImage);
-    //connect(ui->lockImage_Action, &QAction::triggered, this, &MainWindow::handleLockImage);
-    //connect(ui->alignImage_Action, &QAction::triggered, this, &MainWindow::handleAlignImage);
 
     //Tools->Layout submenu actions
     connect(ui->newPrintLayout_Action, &QAction::triggered, this, [this]
@@ -6315,7 +6151,7 @@ void MainWindow::createActions()
     connect(ui->wiki_Action, &QAction::triggered, this, []()
     {
         qCDebug(vMainWindow, "Showing online help");
-        QDesktopServices::openUrl(QUrl(QStringLiteral("https://wiki.seamly.net/wiki/Main_Page")));
+        QDesktopServices::openUrl(QUrl(QStringLiteral("https://wiki.seamly.io/wiki/Main_Page")));
     });
 
     connect(ui->forum_Action, &QAction::triggered, this, []()
@@ -6338,7 +6174,7 @@ void MainWindow::createActions()
 
     connect(ui->aboutSeamly2D_Action, &QAction::triggered, this, [this]()
     {
-        DialogAboutApp *aboutDialog = new DialogAboutApp(this);
+        About2DAppDialog *aboutDialog = new About2DAppDialog(this);
         aboutDialog->setAttribute(Qt::WA_DeleteOnClose, true);
         aboutDialog->show();
     });
@@ -6521,8 +6357,8 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
     try
     {
         VPatternConverter converter(fileName);
-        m_curFileFormatVersion = converter.GetCurrentFormatVarsion();
-        m_curFileFormatVersionStr = converter.GetVersionStr();
+        m_curFileFormatVersion = converter.getCurrentFormatVersion();
+        m_curFileFormatVersionStr = converter.getVersionStr();
         doc->setXMLContent(converter.Convert());
         if (!customMeasureFile.isEmpty())
         {
@@ -6712,11 +6548,8 @@ void MainWindow::Preferences()
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::updateViewToolbar);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::resetPanShortcuts);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, [this](){emit doc->FullUpdateFromFile();});
-        //connect(dialog.data(), &DialogPreferences::updateProperties,
-        //        toolProperties, &VToolOptionsPropertyBrowser::refreshOptions);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::initPropertyEditor);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::initBasePointComboBox);
-
         connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollBars);
         connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollAnimations);
 
@@ -7096,7 +6929,7 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                 QString filename;
                 if (patternType == MeasurementsType::Multisize)
                 {
-                    const QString filter = tr("Multisize measurements") + QLatin1String(" (*.") + smmsExt +
+                    const QString filter = tr("Multisize measurements") + QLatin1String(" (*.* *.") + smmsExt +
                                                                           QLatin1String(" *.") + vstExt +
                                                                           QLatin1String(")");
                     //Use standard path to multisize measurements
@@ -7108,7 +6941,7 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                 }
                 else if (patternType == MeasurementsType::Individual)
                 {
-                    const QString filter = tr("Individual measurements") + QLatin1String(" (*.") + smisExt +
+                    const QString filter = tr("Individual measurements") + QLatin1String(" (*.* *.") + smisExt +
                                                                            QLatin1String(" *.") + vitExt +
                                                                            QLatin1String(")");
                     //Use standard path to individual measurements
@@ -7133,10 +6966,10 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                 }
                 else
                 {
-                    const QString filter = tr("Individual measurements") + QLatin1String(" (*.") + smisExt +
+                    const QString filter = tr("Individual measurements") + QLatin1String(" (*.* *.") + smisExt +
                                                                            QLatin1String(" *.") + vitExt  +
                                                                            QLatin1String(");;") +
-                                           tr("Multisize measurements")  + QLatin1String(" (*.") + smmsExt +
+                                           tr("Multisize measurements")  + QLatin1String(" (*.* *.") + smmsExt +
                                                                            QLatin1String(" *.") + vstExt  +
                                                                            QLatin1String(")");
 

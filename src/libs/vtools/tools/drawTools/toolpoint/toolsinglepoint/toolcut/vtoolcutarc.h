@@ -77,7 +77,7 @@ public:
 
     static VToolCutArc *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene, VAbstractPattern *doc,
                                 VContainer *data);
-    static VToolCutArc *Create(const quint32 _id, const QString &pointName, QString &formula, quint32 arcId,
+    static VToolCutArc *Create(const quint32 _id, const QString &pointName, QString &direction, QString &formula, quint32 arcId,
                                 qreal mx, qreal my, bool showPointName, VMainGraphicsScene *scene,
                                 VAbstractPattern *doc, VContainer *data, const Document &parse,
                                 const Source &typeCreation);
@@ -101,7 +101,7 @@ private:
     Q_DISABLE_COPY(VToolCutArc)
 
                          VToolCutArc(VAbstractPattern *doc, VContainer *data, const quint32 &id,
-                                     const QString &formula, const quint32 &arcId, const Source &typeCreation,
-                                     QGraphicsItem * parent = nullptr);
+                                     QString &direction, const QString &formula, const quint32 &arcId,
+                                     const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };
 #endif // VTOOLCUTARC_H

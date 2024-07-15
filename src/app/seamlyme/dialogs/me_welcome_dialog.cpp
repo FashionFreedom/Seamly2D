@@ -127,7 +127,7 @@ void SeamlyMeWelcomeDialog::initUnits(const MeasurementsType &type)
     ui->units_ComboBox->addItem(tr("Inches")     , unitINCH);
 
     // set default unit
-    const qint32 index = ui->units_ComboBox->findData(settings->GetUnit());
+    const qint32 index = ui->units_ComboBox->findData(settings->getUnit());
     if (index != -1)
     {
         ui->units_ComboBox->setCurrentIndex(index);

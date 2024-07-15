@@ -1,29 +1,26 @@
-/******************************************************************************
-*   @file   preferencesconfigurationpage.h
-**  @author Douglas S Caskey
-**  @date   26 Oct, 2023
-**
-**  @brief
-**  @copyright
-**  This source code is part of the Seamly2D project, a pattern making
-**  program to create and model patterns of clothing.
-**  Copyright (C) 2017-2023 Seamly2D project
-**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
-**
-**  Seamly2D is free software: you can redistribute it and/or modify
-**  it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation, either version 3 of the License, or
-**  (at your option) any later version.
-**
-**  Seamly2D is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
-**
-*************************************************************************/
+//  @file   preferencesconfigurationpage.cpp
+//  @author Douglas S Caskey
+//  @date   26 Oct, 2023
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
+//  Copyright (C) 2017-2024 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 
 /************************************************************************
  **
@@ -88,7 +85,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
                           QRegularExpression::CaseInsensitiveOption);
     ui->email_LineEdit->setValidator(new QRegularExpressionValidator(rx, this));
 
-    //Designer Info
+    // Designer Info
     ui->companyName_LineEdit->setText(qApp->Seamly2DSettings()->getCompanyName());
     ui->contact_LineEdit->setText(qApp->Seamly2DSettings()->getContact());
     ui->address_LineEdit->setText(qApp->Seamly2DSettings()->getAddress());
@@ -103,11 +100,11 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
 
     connect(ui->email_LineEdit, &QLineEdit::textChanged, this, &PreferencesConfigurationPage::adjustTextColor);
 
-    //Editing
+    // Editing
     // Undo
     ui->undoCount_SpinBox->setValue(qApp->Seamly2DSettings()->GetUndoCount());
 
-    //Selection sound
+    // Selection sound
     int index = ui->selectionSound_ComboBox->findText(qApp->Seamly2DSettings()->getSound());
     if (index != -1)
     {
@@ -122,13 +119,6 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     // Warnings
     ui->confirmItemDelete_CheckBox->setChecked(qApp->Seamly2DSettings()->getConfirmItemDelete());
     ui->confirmFormatRewriting_CheckBox->setChecked(qApp->Seamly2DSettings()->getConfirmFormatRewriting());
-    // Send crash reports
-    //ui->sendReportCheck->setChecked(qApp->Seamly2DSettings()->GetSendReportState());
-    //ui->description = new QLabel(tr("After each crash Seamly2D collects information that may help us fix the "
-    //                                "problem. We do not collect any personal information. Find more about what %1"
-    //                                "kind of information%2 we collect.")
-    //                             .arg("<a href=\"https://wiki.seamly.net/wiki/UserManual:Crash_reports\">")
-    //                             .arg("</a>"));
 
     // Default operations suffixes
     ui->moveSuffix_ComboBox->addItem(tr("None"), "");
@@ -183,7 +173,8 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
 
     // File handling
-    // Autosave
+    // Backups
+    ui->convertBackupEnabled_CheckBox->setChecked(qApp->Seamly2DSettings()->getConvertBackupEnabled());
     ui->autoSave_CheckBox->setChecked(qApp->Seamly2DSettings()->GetAutosaveState());
     ui->autoInterval_Spinbox->setValue(qApp->Seamly2DSettings()->getAutosaveInterval());
 
@@ -200,7 +191,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
         m_defaultExportFormatChanged = true;
     });
 
-    //-------------------- Startup
+    // Startup
     ui->showWelcome_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowWelcome());
 
     // Language
@@ -215,7 +206,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     ui->osOptionCheck->setChecked(qApp->Seamly2DSettings()->getOsSeparator());
 
     // Unit setup
-    InitUnits();
+    initUnits();
     connect(ui->unitCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
     {
         m_unitChanged = true;
@@ -245,7 +236,7 @@ PreferencesConfigurationPage::~PreferencesConfigurationPage()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesConfigurationPage::Apply()
+void PreferencesConfigurationPage::apply()
 {
     if(!ui->email_LineEdit->text().isEmpty() && !ui->email_LineEdit->hasAcceptableInput())
     {
@@ -257,7 +248,7 @@ void PreferencesConfigurationPage::Apply()
 
     VSettings *settings = qApp->Seamly2DSettings();
 
-    //Designer Info
+    // Designer Info
     settings->setCompanyName(ui->companyName_LineEdit->text());
     settings->setContact(ui->contact_LineEdit->text());
     settings->setAddress(ui->address_LineEdit->text());
@@ -282,6 +273,8 @@ void PreferencesConfigurationPage::Apply()
     }
     settings->setConfirmItemDelete(ui->confirmItemDelete_CheckBox->isChecked());
     settings->setConfirmFormatRewriting(ui->confirmFormatRewriting_CheckBox->isChecked());
+
+    settings->setConvertBackupEnabled(ui->convertBackupEnabled_CheckBox->isChecked());
 
     settings->setAutosaveState(ui->autoSave_CheckBox->isChecked());
     settings->setAutosaveInterval(ui->autoInterval_Spinbox->value());
@@ -376,14 +369,14 @@ void PreferencesConfigurationPage::setPointNameComboBox(const QStringList &list)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesConfigurationPage::InitUnits()
+void PreferencesConfigurationPage::initUnits()
 {
     ui->unitCombo->addItem(tr("Centimeters"), unitCM);
     ui->unitCombo->addItem(tr("Millimeters"), unitMM);
     ui->unitCombo->addItem(tr("Inches"), unitINCH);
 
     // set default unit
-    const qint32 indexUnit = ui->unitCombo->findData(qApp->Seamly2DSettings()->GetUnit());
+    const qint32 indexUnit = ui->unitCombo->findData(qApp->Seamly2DSettings()->getUnit());
     if (indexUnit != -1)
     {
         ui->unitCombo->setCurrentIndex(indexUnit);

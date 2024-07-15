@@ -59,11 +59,10 @@
 #include <Qt>
 #include <new>
 
-
-
 //---------------------------------------------------------------------------------------------------------------------
-ImageDialog::ImageDialog(DraftImage image, qreal minDimension, qreal maxDimension)
-    : ui(new Ui::ImageDialog)
+ImageDialog::ImageDialog(DraftImage image, qreal minDimension, qreal maxDimension, QWidget *parent)
+    : QDialog(parent)
+    , ui(new Ui::ImageDialog)
     , m_image(image)
     , m_pixmapWidth(image.pixmap.width())
     , m_pixmapHeight(image.pixmap.height())
@@ -82,7 +81,7 @@ ImageDialog::ImageDialog(DraftImage image, qreal minDimension, qreal maxDimensio
 
     updateImage();
 
-    connect(ui->name_LineEdit,        &QLineEdit::textChanged,        this, &ImageDialog::nameChanged);
+    connect(ui->name_LineEdit, &QLineEdit::textChanged, this, &ImageDialog::nameChanged);
     connect(ui->xPosition_DoubleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
             this, &ImageDialog::xPosChanged);
     connect(ui->yPosition_DoubleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
@@ -159,8 +158,9 @@ void ImageDialog::updateImage()
 
 void ImageDialog::enableWidgets()
 {
-    ui->name_LineEdit->setEnabled(!m_image.locked);
     ui->lockImage_ToolButton->setEnabled(true);
+    ui->idText_Label->setEnabled(!m_image.locked);
+    ui->name_LineEdit->setEnabled(!m_image.locked);
     ui->xPosition_DoubleSpinBox->setEnabled(!m_image.locked);
     ui->yPosition_DoubleSpinBox->setEnabled(!m_image.locked);
     ui->width_DoubleSpinBox->setEnabled(!m_image.locked);
@@ -185,11 +185,6 @@ void ImageDialog::setName(const QString &name)
     ui->name_LineEdit->setText(name);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-Position ImageDialog::getOriginPoint() const
-{
-    return m_image.origin;
-}
 
 //---------------------------------------------------------------------------------------------------------------------
 void ImageDialog::setOriginPoint(const int &index)
@@ -390,6 +385,7 @@ void ImageDialog::setOpacity(const qreal &opacity)
     ui->opacity_DoubleSpinBox->setValue(opacity);
     ui->opacity_DoubleSpinBox->blockSignals(false);
 }
+
 
 //---------------------------------------------------------------------------------------------------------------------
 void ImageDialog::nameChanged(const QString &name)

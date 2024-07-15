@@ -64,7 +64,7 @@
      <x>0</x>
      <y>0</y>
      <width>1100</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="file_Menu">
@@ -901,7 +901,7 @@
               <string/>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>5</number>
              </property>
              <property name="tabSpacing">
               <number>4</number>
@@ -911,8 +911,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>118</width>
-                <height>294</height>
+                <width>128</width>
+                <height>288</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -1258,8 +1258,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>124</width>
-                <height>59</height>
+                <width>128</width>
+                <height>58</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -1356,8 +1356,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>124</width>
-                <height>200</height>
+                <width>128</width>
+                <height>196</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -1616,8 +1616,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>124</width>
-                <height>231</height>
+                <width>128</width>
+                <height>226</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -1896,8 +1896,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>124</width>
-                <height>184</height>
+                <width>128</width>
+                <height>180</height>
                </rect>
               </property>
               <property name="toolTip">
@@ -2118,8 +2118,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>124</width>
-                <height>98</height>
+                <width>128</width>
+                <height>96</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -2195,8 +2195,8 @@
                   <string notr="true">...</string>
                  </property>
                  <property name="icon">
-                  <iconset resource="share/resources/toolicon.qrc">
-                   <normaloff>:/toolicon/32x32/anchor_point.png</normaloff>:/toolicon/32x32/anchor_point.png</iconset>
+                  <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+                   <normaloff>:/icon/32x32/anchor_point.png</normaloff>:/icon/32x32/anchor_point.png</iconset>
                  </property>
                  <property name="iconSize">
                   <size>
@@ -2268,8 +2268,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>124</width>
-                <height>61</height>
+                <width>128</width>
+                <height>56</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -2279,7 +2279,7 @@
                </sizepolicy>
               </property>
               <property name="toolTip">
-               <string>Tools for inserting or modifying images. </string>
+               <string>Tools for inserting or modifying images.</string>
               </property>
               <attribute name="icon">
                <iconset resource="share/resources/toolicon.qrc">
@@ -2374,8 +2374,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>120</width>
-              <height>82</height>
+              <width>98</width>
+              <height>28</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2508,8 +2508,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>120</width>
-              <height>82</height>
+              <width>100</width>
+              <height>54</height>
              </rect>
             </property>
             <attribute name="icon">
@@ -2695,7 +2695,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-save-as"/>
+    <iconset theme="document-save-as">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Save &amp;As...</string>
@@ -3666,7 +3667,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="zoom-original"/>
+    <iconset theme="zoom-original">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Original zoom</string>
@@ -3738,7 +3740,8 @@
   </action>
   <action name="wiki_Action">
    <property name="icon">
-    <iconset theme="help-contents"/>
+    <iconset theme="help-contents">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Wiki</string>
@@ -3811,7 +3814,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-print"/>
+    <iconset theme="document-print">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Print</string>
@@ -3828,7 +3832,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-print"/>
+    <iconset theme="document-print">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Print tiled PDF</string>
@@ -3845,7 +3850,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-print-preview"/>
+    <iconset theme="document-print-preview">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Print preview</string>
@@ -3862,7 +3868,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-print-preview"/>
+    <iconset theme="document-print-preview">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Preview tiled PDF</string>
@@ -4322,7 +4329,7 @@
    </property>
    <property name="icon">
     <iconset resource="share/resources/toolicon.qrc">
-     <normaloff>:/toolicon/32x32/anchor_point.png</normaloff>:/toolicon/32x32/anchor_point.png</iconset>
+     <normaloff>:/icon/32x32/anchor_point.png</normaloff>:/icon/32x32/anchor_point.png</iconset>
    </property>
    <property name="text">
     <string>Anchor Point</string>
@@ -4645,7 +4652,7 @@
      <normaloff>:/toolicon/32x32/image_menu_icon.png</normaloff>:/toolicon/32x32/image_menu_icon.png</iconset>
    </property>
    <property name="text">
-    <string>Images tools </string>
+    <string>Images tools</string>
    </property>
   </action>
   <action name="deleteImage_Action">

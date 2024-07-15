@@ -746,6 +746,28 @@ void VToolOptionsPropertyBrowser::addPropertyLineColor(Tool *tool, const QString
     addProperty(lineColorProperty, id);
 }
 
+// @brief Adds a directionproperty.
+//
+// Adds a direction combobox property to the Property Editor form widget. Gets the combobox index to
+// the tool's direction. Throws a warning if the property is not found in the combobox item list.
+// If the index exists it sets the combobox index to the tool's direction. 
+//
+// @tparam tool Tool of the property.
+// @param propertyName Name of the property.
+template<class Tool>
+void VToolOptionsPropertyBrowser::addPropertyDirection(Tool *tool, const QString &propertyName)
+{
+    VPE::DirectionProperty *directionProperty = new VPE::DirectionProperty(propertyName);
+    directionProperty->setDirections(directionList());
+    const qint32 index = VPE::DirectionProperty::indexOfDirection(directionList(), tool->getDirection());
+    if (index == -1)
+    {
+        qWarning() << "Can't find direction" << tool->getDirection() <<  "in list";
+    }
+    directionProperty->setValue(index);
+    addProperty(directionProperty, AttrDirection);
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
 void VToolOptionsPropertyBrowser::addObjectProperty(Tool *tool, const QString &pointName,
@@ -1395,6 +1417,9 @@ void VToolOptionsPropertyBrowser::changeDataToolCutArc(VPE::VProperty *property)
         case 13: // AttrArc
             tool->setCurveCutId(value.toInt());
             break;
+        case 62: // AttrDiretion
+            tool->setDirection(value.toString());
+            break;
         default:
             qWarning() << "Unknown property type. id = "<<id;
             break;
@@ -1422,6 +1447,9 @@ void VToolOptionsPropertyBrowser::changeDataToolCutSpline(VPE::VProperty *proper
         case 46: // AttrCurve
             tool->setCurveCutId(value.toInt());
             break;
+        case 62: // AttrDiretion
+            tool->setDirection(value.toString());
+            break;
         default:
             qWarning() << "Unknown property type. id = "<<id;
             break;
@@ -1448,6 +1476,9 @@ void VToolOptionsPropertyBrowser::changeDataToolCutSplinePath(VPE::VProperty *pr
             break;
         case 46: // AttrCurve
             tool->setCurveCutId(value.toInt());
+            break;
+        case 62: // AttrDiretion
+            tool->setDirection(value.toString());
             break;
         default:
             qWarning() << "Unknown property type. id = "<<id;
@@ -2510,6 +2541,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolCutArc(QGraphicsItem *item)
     addPropertyLabel(tr("Selection"), AttrName);
     addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->CurveName(), tr("Arc:"), AttrArc, GOType::Arc);
+    addPropertyDirection(tool, tr("Direction:"));
 
     addPropertyLabel(tr("Geometry"), AttrName);
     addPropertyFormula(tr("Length:"), tool->GetFormula(), AttrLength);
@@ -2525,6 +2557,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolCutSpline(QGraphicsItem *item)
     addPropertyLabel(tr("Selection"), AttrName);
     addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->CurveName(), tr("Curve:"), AttrCurve, GOType::Curve);
+    addPropertyDirection(tool, tr("Direction:"));
 
     addPropertyLabel(tr("Geometry"), AttrName);
     addPropertyFormula(tr("Length:"), tool->GetFormula(), AttrLength);
@@ -2540,6 +2573,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolCutSplinePath(QGraphicsItem *it
     addPropertyLabel(tr("Selection"), AttrName);
     addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->CurveName(), tr("Curve:"), AttrCurve, GOType::Path);
+    addPropertyDirection(tool, tr("Direction:"));
 
     addPropertyLabel(tr("Geometry"), AttrName);
     addPropertyFormula(tr("Length:"), tool->GetFormula(), AttrLength);
@@ -2781,11 +2815,6 @@ void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
     addObjectProperty(tool, spl.GetP4().name(), tr("Second point:"), AttrSecondPoint, GOType::Point);
 
     addPropertyLabel(tr("Geometry"), AttrName);
-    VFormula angle1(spl.GetStartAngleFormula(), tool->getData());
-    angle1.setCheckZero(false);
-    angle1.setToolId(tool->getId());
-    angle1.setPostfix(degreeSymbol);
-    addPropertyFormula(tr("C1: angle:"), angle1, AttrAngle1);
 
     VFormula length1(spl.GetC1LengthFormula(), tool->getData());
     length1.setCheckZero(false);
@@ -2793,17 +2822,23 @@ void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
     length1.setPostfix(UnitsToStr(qApp->patternUnit()));
     addPropertyFormula(tr("C1: length:"), length1, AttrLength1);
 
-    VFormula angle2(spl.GetEndAngleFormula(), tool->getData());
-    angle2.setCheckZero(false);
-    angle2.setToolId(tool->getId());
-    angle2.setPostfix(degreeSymbol);
-    addPropertyFormula(tr("C2: angle:"), angle2, AttrAngle2);
+    VFormula angle1(spl.GetStartAngleFormula(), tool->getData());
+    angle1.setCheckZero(false);
+    angle1.setToolId(tool->getId());
+    angle1.setPostfix(degreeSymbol);
+    addPropertyFormula(tr("C1: angle:"), angle1, AttrAngle1);
 
     VFormula length2(spl.GetC2LengthFormula(), tool->getData());
     length2.setCheckZero(false);
     length2.setToolId(tool->getId());
     length2.setPostfix(UnitsToStr(qApp->patternUnit()));
     addPropertyFormula(tr("C2: length:"), length2, AttrLength2);
+
+    VFormula angle2(spl.GetEndAngleFormula(), tool->getData());
+    angle2.setCheckZero(false);
+    angle2.setToolId(tool->getId());
+    angle2.setPostfix(degreeSymbol);
+    addPropertyFormula(tr("C2: angle:"), angle2, AttrAngle2);
 
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
@@ -3264,6 +3299,11 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCutArc()
         idToProperty[AttrArc]->setValue(index);
     }
 
+    {
+        const qint32 index = VPE::DirectionProperty::indexOfDirection(directionList(), tool->getDirection());
+        idToProperty[AttrDirection]->setValue(index);
+    }
+
     QVariant valueFormula;
     valueFormula.setValue(tool->GetFormula());
     idToProperty[AttrLength]->setValue(valueFormula);
@@ -3282,6 +3322,11 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCutSpline()
         idToProperty[AttrCurve]->setValue(index);
     }
 
+    {
+        const qint32 index = VPE::DirectionProperty::indexOfDirection(directionList(), tool->getDirection());
+        idToProperty[AttrDirection]->setValue(index);
+    }
+
     QVariant valueFormula;
     valueFormula.setValue(tool->GetFormula());
     idToProperty[AttrLength]->setValue(valueFormula);
@@ -3298,6 +3343,11 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCutSplinePath()
         const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::SplinePath),
                                                                                tool->CurveName());
         idToProperty[AttrCurve]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::DirectionProperty::indexOfDirection(directionList(), tool->getDirection());
+        idToProperty[AttrDirection]->setValue(index);
     }
 
     QVariant valueFormula;
@@ -4138,6 +4188,7 @@ QStringList VToolOptionsPropertyBrowser::propertiesList() const
                                             << AttrPoint4                         /* 58 */
                                             << AttrPenStyle                       /* 59 */
                                             << AttrLineWeight                     /* 60 */
-                                            << AttrObjName;                      /* 61 */
+                                            << AttrObjName                        /* 61 */
+                                            << AttrDirection;                     /* 62 */
     return attr;
 }
