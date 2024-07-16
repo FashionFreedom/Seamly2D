@@ -35,7 +35,7 @@ var classVMainGraphicsScene =
     [ "getVerScrollBar", "d7/df5/classVMainGraphicsScene.html#aee943aaa54463ae4f9ad3d1854e43bac", null ],
     [ "HighlightItem", "d7/df5/classVMainGraphicsScene.html#ac86bfda94b9602581e791ad6c8e8eff2", null ],
     [ "highlightPiece", "d7/df5/classVMainGraphicsScene.html#aa0836ce7ea805eb13e6fe95e30f114d8", null ],
-    [ "initializeOrigins", "d7/df5/classVMainGraphicsScene.html#aeac77bc86ddffeb56df95eb4e76e2315", null ],
+    [ "InitOrigins", "d7/df5/classVMainGraphicsScene.html#a7d4ea21783b3229b7863c019487b0b14", null ],
     [ "ItemClicked", "d7/df5/classVMainGraphicsScene.html#a2fe325ba995d440e5ca28e7a9ef05114", null ],
     [ "ItemSelection", "d7/df5/classVMainGraphicsScene.html#a49a1330b5831af7d923ec0f402f29554", null ],
     [ "ItemsSelection", "d7/df5/classVMainGraphicsScene.html#ae261af060b0adeff1458c52ccc17e91a", null ],

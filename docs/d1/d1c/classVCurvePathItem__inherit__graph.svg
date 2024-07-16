@@ -333,84 +333,78 @@ var sectionId = 'dynsection-0';
 <g id="node11" class="node">
 <title>Node11</title>
 <g id="a_node11"><a xlink:href="../../d7/d4b/classVisToolCutArc.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="966,-94 966,-250 1088,-250 1088,-94 966,-94"/>
-<text text-anchor="middle" x="1027" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00">VisToolCutArc</text>
-<polyline fill="none" stroke="black" points="966,-231 1088,-231 "/>
-<text text-anchor="start" x="974" y="-219" font-family="Helvetica,sans-Serif" font-size="10.00"># point</text>
-<text text-anchor="start" x="974" y="-208" font-family="Helvetica,sans-Serif" font-size="10.00"># arc1</text>
-<text text-anchor="start" x="974" y="-197" font-family="Helvetica,sans-Serif" font-size="10.00"># arc2</text>
-<text text-anchor="start" x="974" y="-186" font-family="Helvetica,sans-Serif" font-size="10.00"># m_length</text>
-<text text-anchor="start" x="974" y="-175" font-family="Helvetica,sans-Serif" font-size="10.00"># m_direction</text>
+<polygon fill="white" stroke="black" points="966,-105 966,-239 1088,-239 1088,-105 966,-105"/>
+<text text-anchor="middle" x="1027" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">VisToolCutArc</text>
+<polyline fill="none" stroke="black" points="966,-220 1088,-220 "/>
+<text text-anchor="start" x="974" y="-208" font-family="Helvetica,sans-Serif" font-size="10.00"># point</text>
+<text text-anchor="start" x="974" y="-197" font-family="Helvetica,sans-Serif" font-size="10.00"># arc1</text>
+<text text-anchor="start" x="974" y="-186" font-family="Helvetica,sans-Serif" font-size="10.00"># arc2</text>
+<text text-anchor="start" x="974" y="-175" font-family="Helvetica,sans-Serif" font-size="10.00"># length</text>
 <polyline fill="none" stroke="black" points="966,-168 1088,-168 "/>
 <text text-anchor="start" x="974" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ VisToolCutArc()</text>
 <text text-anchor="start" x="974" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VisToolCutArc()</text>
 <text text-anchor="start" x="974" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+ RefreshGeometry()</text>
-<text text-anchor="start" x="974" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDirection()</text>
-<text text-anchor="start" x="974" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLength()</text>
-<text text-anchor="start" x="974" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="974" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLength()</text>
+<text text-anchor="start" x="974" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node11 -->
 <g id="edge10" class="edge">
 <title>Node4&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M1083.21,-419.99C1071.95,-370.51 1056.41,-302.26 1044.53,-250.04"/>
+<path fill="none" stroke="midnightblue" d="M1083.2,-419.97C1071.14,-366.98 1054.18,-292.45 1042.05,-239.15"/>
 <polygon fill="none" stroke="midnightblue" points="1079.84,-420.96 1085.47,-429.94 1086.66,-419.41 1079.84,-420.96"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
 <g id="a_node12"><a xlink:href="../../d1/dcd/classVisToolCutSpline.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1106.5,-94 1106.5,-250 1231.5,-250 1231.5,-94 1106.5,-94"/>
-<text text-anchor="middle" x="1169" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00">VisToolCutSpline</text>
-<polyline fill="none" stroke="black" points="1106.5,-231 1231.5,-231 "/>
-<text text-anchor="start" x="1114.5" y="-219" font-family="Helvetica,sans-Serif" font-size="10.00"># point</text>
-<text text-anchor="start" x="1114.5" y="-208" font-family="Helvetica,sans-Serif" font-size="10.00"># spl1</text>
-<text text-anchor="start" x="1114.5" y="-197" font-family="Helvetica,sans-Serif" font-size="10.00"># spl2</text>
-<text text-anchor="start" x="1114.5" y="-186" font-family="Helvetica,sans-Serif" font-size="10.00"># m_length</text>
-<text text-anchor="start" x="1114.5" y="-175" font-family="Helvetica,sans-Serif" font-size="10.00"># m_direction</text>
+<polygon fill="white" stroke="black" points="1106.5,-105 1106.5,-239 1231.5,-239 1231.5,-105 1106.5,-105"/>
+<text text-anchor="middle" x="1169" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">VisToolCutSpline</text>
+<polyline fill="none" stroke="black" points="1106.5,-220 1231.5,-220 "/>
+<text text-anchor="start" x="1114.5" y="-208" font-family="Helvetica,sans-Serif" font-size="10.00"># point</text>
+<text text-anchor="start" x="1114.5" y="-197" font-family="Helvetica,sans-Serif" font-size="10.00"># spl1</text>
+<text text-anchor="start" x="1114.5" y="-186" font-family="Helvetica,sans-Serif" font-size="10.00"># spl2</text>
+<text text-anchor="start" x="1114.5" y="-175" font-family="Helvetica,sans-Serif" font-size="10.00"># length</text>
 <polyline fill="none" stroke="black" points="1106.5,-168 1231.5,-168 "/>
 <text text-anchor="start" x="1114.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ VisToolCutSpline()</text>
 <text text-anchor="start" x="1114.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VisToolCutSpline()</text>
 <text text-anchor="start" x="1114.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+ RefreshGeometry()</text>
-<text text-anchor="start" x="1114.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDirection()</text>
-<text text-anchor="start" x="1114.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLength()</text>
-<text text-anchor="start" x="1114.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1114.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLength()</text>
+<text text-anchor="start" x="1114.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node12 -->
 <g id="edge11" class="edge">
 <title>Node4&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M1112.79,-419.99C1124.05,-370.51 1139.59,-302.26 1151.47,-250.04"/>
+<path fill="none" stroke="midnightblue" d="M1112.8,-419.97C1124.86,-366.98 1141.82,-292.45 1153.95,-239.15"/>
 <polygon fill="none" stroke="midnightblue" points="1109.34,-419.41 1110.53,-429.94 1116.16,-420.96 1109.34,-419.41"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
 <g id="a_node13"><a xlink:href="../../d4/dd9/classVisToolCutSplinePath.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1250,-94 1250,-250 1396,-250 1396,-94 1250,-94"/>
-<text text-anchor="middle" x="1323" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00">VisToolCutSplinePath</text>
-<polyline fill="none" stroke="black" points="1250,-231 1396,-231 "/>
-<text text-anchor="start" x="1258" y="-219" font-family="Helvetica,sans-Serif" font-size="10.00"># point</text>
-<text text-anchor="start" x="1258" y="-208" font-family="Helvetica,sans-Serif" font-size="10.00"># splPath1</text>
-<text text-anchor="start" x="1258" y="-197" font-family="Helvetica,sans-Serif" font-size="10.00"># splPath2</text>
-<text text-anchor="start" x="1258" y="-186" font-family="Helvetica,sans-Serif" font-size="10.00"># m_length</text>
-<text text-anchor="start" x="1258" y="-175" font-family="Helvetica,sans-Serif" font-size="10.00"># m_direction</text>
+<polygon fill="white" stroke="black" points="1250,-105 1250,-239 1396,-239 1396,-105 1250,-105"/>
+<text text-anchor="middle" x="1323" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">VisToolCutSplinePath</text>
+<polyline fill="none" stroke="black" points="1250,-220 1396,-220 "/>
+<text text-anchor="start" x="1258" y="-208" font-family="Helvetica,sans-Serif" font-size="10.00"># point</text>
+<text text-anchor="start" x="1258" y="-197" font-family="Helvetica,sans-Serif" font-size="10.00"># splPath1</text>
+<text text-anchor="start" x="1258" y="-186" font-family="Helvetica,sans-Serif" font-size="10.00"># splPath2</text>
+<text text-anchor="start" x="1258" y="-175" font-family="Helvetica,sans-Serif" font-size="10.00"># length</text>
 <polyline fill="none" stroke="black" points="1250,-168 1396,-168 "/>
 <text text-anchor="start" x="1258" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ VisToolCutSplinePath()</text>
 <text text-anchor="start" x="1258" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VisToolCutSplinePath()</text>
 <text text-anchor="start" x="1258" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+ RefreshGeometry()</text>
-<text text-anchor="start" x="1258" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDirection()</text>
-<text text-anchor="start" x="1258" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLength()</text>
-<text text-anchor="start" x="1258" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1258" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLength()</text>
+<text text-anchor="start" x="1258" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node13 -->
 <g id="edge12" class="edge">
 <title>Node4&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M1154.15,-438.06C1182.61,-412.32 1216.27,-378.65 1241,-344 1261.46,-315.32 1279.15,-280.75 1292.8,-250.21"/>
+<path fill="none" stroke="midnightblue" d="M1154.15,-438.06C1182.61,-412.32 1216.27,-378.65 1241,-344 1263.95,-311.84 1283.4,-272.26 1297.59,-239.28"/>
 <polygon fill="none" stroke="midnightblue" points="1151.78,-435.49 1146.66,-444.77 1156.44,-440.71 1151.78,-435.49"/>
 </g>
 <!-- Node14 -->

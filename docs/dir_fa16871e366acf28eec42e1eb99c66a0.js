@@ -35,10 +35,6 @@ var dir_fa16871e366acf28eec42e1eb99c66a0 =
     [ "nonscalingfill_pathitem.h", "dd/d15/nonscalingfill__pathitem_8h.html", [
       [ "NonScalingFillPathItem", "df/d63/classNonScalingFillPathItem.html", "df/d63/classNonScalingFillPathItem" ]
     ] ],
-    [ "page_format_combobox.cpp", "d2/d28/page__format__combobox_8cpp.html", null ],
-    [ "page_format_combobox.h", "d3/d86/page__format__combobox_8h.html", [
-      [ "PageFormatCombobox", "db/d44/classPageFormatCombobox.html", "db/d44/classPageFormatCombobox" ]
-    ] ],
     [ "pen.cpp", "dc/de4/pen_8cpp.html", "dc/de4/pen_8cpp" ],
     [ "pen.h", "da/d10/pen_8h.html", [
       [ "Pen", "d9/de7/classPen.html", "d9/de7/classPen" ]
@@ -51,11 +47,6 @@ var dir_fa16871e366acf28eec42e1eb99c66a0 =
     [ "piece_tablewidgetitem.cpp", "da/db4/piece__tablewidgetitem_8cpp.html", null ],
     [ "piece_tablewidgetitem.h", "dc/d1b/piece__tablewidgetitem_8h.html", [
       [ "PieceTableWidgetItem", "d7/df0/classPieceTableWidgetItem.html", "d7/df0/classPieceTableWidgetItem" ]
-    ] ],
-    [ "resize_handle.cpp", "d1/daa/resize__handle_8cpp.html", "d1/daa/resize__handle_8cpp" ],
-    [ "resize_handle.h", "db/d8d/resize__handle_8h.html", [
-      [ "ResizeHandlesItem", "d0/de9/classResizeHandlesItem.html", "d0/de9/classResizeHandlesItem" ],
-      [ "HandleItem", "d0/dc5/classResizeHandlesItem_1_1HandleItem.html", "d0/dc5/classResizeHandlesItem_1_1HandleItem" ]
     ] ],
     [ "scalesceneitems.cpp", "d4/d50/scalesceneitems_8cpp.html", null ],
     [ "scalesceneitems.h", "da/daf/scalesceneitems_8h.html", [

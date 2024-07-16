@@ -1,7 +1,6 @@
 var ifcdef_8cpp =
 [
     [ "curveLineTypeList", "de/d31/ifcdef_8cpp.html#a8ad6f21e8d2fbe2cea20fe7eee6af77a", null ],
-    [ "directionList", "de/d31/ifcdef_8cpp.html#a710bc5e0136a7f7421a4fca92f39470c", null ],
     [ "lineTypeList", "de/d31/ifcdef_8cpp.html#a74dbfe9da3d270bd4c54aa0120f900e0", null ],
     [ "LineTypes", "de/d31/ifcdef_8cpp.html#a71924e5b0ca1bf43364edbf093fa239f", null ],
     [ "lineTypeToPenStyle", "de/d31/ifcdef_8cpp.html#aed7354461477f562d0c10d0fbbd4eab6", null ],
@@ -47,7 +46,6 @@ var ifcdef_8cpp =
     [ "AttrDartP1", "de/d31/ifcdef_8cpp.html#a99113e095826ef4e76670d07a16430e0", null ],
     [ "AttrDartP2", "de/d31/ifcdef_8cpp.html#a80eec24b17d92655932fdc5493680447", null ],
     [ "AttrDartP3", "de/d31/ifcdef_8cpp.html#ac61fa56def489e867aba336694057b21", null ],
-    [ "AttrDirection", "de/d31/ifcdef_8cpp.html#a94fc4767f7c46b397467d815d59acddb", null ],
     [ "AttrDuplicate", "de/d31/ifcdef_8cpp.html#a1105faa3848cb2f2fbc8b47dcd336797", null ],
     [ "AttrFirstArc", "de/d31/ifcdef_8cpp.html#a497d952a1b6a67067433cf4d1ecb69d7", null ],
     [ "AttrFirstPoint", "de/d31/ifcdef_8cpp.html#a3572c5564adcfc0b4fab1f00e35eb9dd", null ],

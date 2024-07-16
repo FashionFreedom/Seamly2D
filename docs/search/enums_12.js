@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['variabletab_19159',['VariableTab',['../d7/d4c/edit__formula__dialog_8h.html#a81e56be3c50376239982abe0269ec928',1,'edit_formula_dialog.h']]],
-  ['varinsunits_19160',['VarInsunits',['../d7/de8/dxfdef_8h.html#a76a334d2cdefeb4fca03969a8d1acbe8',1,'dxfdef.h']]],
-  ['varmeasurement_19161',['VarMeasurement',['../d7/de8/dxfdef_8h.html#a3dd1db4b7a6f61c5d2004d1580acec27',1,'dxfdef.h']]],
-  ['vartype_19162',['VarType',['../d4/da4/def_8h.html#a76d9a90fa899857cf4616065998e6178',1,'def.h']]],
-  ['vcrosscurvespoint_19163',['VCrossCurvesPoint',['../d0/d89/vabstractpattern_8h.html#a968324ddec8a7f7498fc97a24f0498de',1,'vabstractpattern.h']]],
-  ['vis_19164',['Vis',['../d4/da4/def_8h.html#a474a10f771dff4181411f5ff47029582',1,'def.h']]]
+  ['undobutton_31872',['UndoButton',['../d0/d29/dialogundo_8h.html#ac195b3af2ae694e22fe0c38122781ac2',1,'dialogundo.h']]],
+  ['undocommand_31873',['UndoCommand',['../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6',1,'vundocommand.h']]],
+  ['unit_31874',['Unit',['../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889',1,'def.h']]],
+  ['unrepflags_31875',['UnRepFlags',['../d1/df2/classXMLFormatter.html#a81a2e32d442280c7bf2725a8c93cf48e',1,'XMLFormatter::UnRepFlags()'],['../d1/df2/classXMLFormatter.html#a81a2e32d442280c7bf2725a8c93cf48e',1,'XMLFormatter::UnRepFlags()'],['../d1/df2/classXMLFormatter.html#a81a2e32d442280c7bf2725a8c93cf48e',1,'XMLFormatter::UnRepFlags()']]],
+  ['unrepopts_31876',['UnRepOpts',['../de/d49/classXMLTranscoder.html#a0189aaebdb21f66d5f75383b68a88977',1,'XMLTranscoder::UnRepOpts()'],['../de/d49/classXMLTranscoder.html#a0189aaebdb21f66d5f75383b68a88977',1,'XMLTranscoder::UnRepOpts()'],['../de/d49/classXMLTranscoder.html#a0189aaebdb21f66d5f75383b68a88977',1,'XMLTranscoder::UnRepOpts()']]],
+  ['utctype_31877',['utcType',['../d1/d3f/classXMLDateTime.html#a3217ca01951c75b10a175ef39663ff1d',1,'XMLDateTime::utcType()'],['../d1/d3f/classXMLDateTime.html#a3217ca01951c75b10a175ef39663ff1d',1,'XMLDateTime::utcType()'],['../d1/d3f/classXMLDateTime.html#a3217ca01951c75b10a175ef39663ff1d',1,'XMLDateTime::utcType()']]]
 ];
