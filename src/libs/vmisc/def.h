@@ -165,7 +165,8 @@ struct DraftImage
       filename(""),
       pixmap(),
       locked(false),
-      origin(Position::Center),
+      xOrigin(0.0),
+      yOrigin(0.0),
       anchor(0),
       xPos(0.0),
       yPos(0.0),
@@ -184,7 +185,8 @@ struct DraftImage
     QString        filename;
     QPixmap        pixmap;
     bool           locked;
-    Position     origin;
+    qreal          xOrigin;
+    qreal          yOrigin;
     quint32        anchor;
     qreal          xPos;
     qreal          yPos;
@@ -202,6 +204,15 @@ struct DraftImage
 
 Q_DECLARE_METATYPE(DraftImage)
 Q_DECLARE_TYPEINFO(DraftImage, Q_MOVABLE_TYPE);
+
+enum class Direction : unsigned char
+{
+    Forward = 0, // Default
+    Backward
+};
+
+QString      directionToString(Direction type);
+Direction    stringToDirection(const QString &value);
 
 enum class NotchType : unsigned char
 {
@@ -520,6 +531,7 @@ extern const QStringList labelTemplatePlaceholders;
 extern const QString cursorArrowOpenHand;
 extern const QString cursorArrowCloseHand;
 extern const QString cursorResizeArrow;
+extern const QString cursorImageOrigin;
 
 extern const QString degreeSymbol;
 extern const QString trueStr;

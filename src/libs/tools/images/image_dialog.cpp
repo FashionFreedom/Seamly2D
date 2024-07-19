@@ -185,11 +185,6 @@ void ImageDialog::setName(const QString &name)
     ui->name_LineEdit->setText(name);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-Position ImageDialog::getOriginPoint() const
-{
-    return m_image.origin;
-}
 
 //---------------------------------------------------------------------------------------------------------------------
 void ImageDialog::setOriginPoint(const int &index)

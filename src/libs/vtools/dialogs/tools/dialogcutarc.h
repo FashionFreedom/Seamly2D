@@ -79,6 +79,9 @@ public:
 
     void              SetPointName(const QString &value);
 
+    QString           getDirection() const;
+    void              setDirection(const QString &value);
+
     QString           GetFormula() const;
     void              SetFormula(const QString &value);
 

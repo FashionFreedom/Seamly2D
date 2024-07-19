@@ -1,33 +1,26 @@
-/******************************************************************************
- *   @file   abstract_converter.cpp
- **  @author Douglas S Caskey
- **  @date  17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program to create and model patterns of clothing.
- **  Copyright (C) 2017-2023 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+ //  @file   abstract_converter.cpp
+ //  @author Douglas S Caskey
+ //  @date   24 Jun, 2024
+ //
+ //  @brief
+ //  @copyright
+ //  This source code is part of the Seamly2D project, a pattern making
+ //  program to create and model patterns of clothing.
+ //  Copyright (C) 2017-2024 Seamly2D project
+ //  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ //
+ //  Seamly2D is free software: you can redistribute it and/or modify
+ //  it under the terms of the GNU General Public License as published by
+ //  the Free Software Foundation, either version 3 of the License, or
+ //  (at your option) any later version.
+ //
+ //  Seamly2D is distributed in the hope that it will be useful,
+ //  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ //  GNU General Public License for more details.
+ //
+ //  You should have received a copy of the GNU General Public License
+ //  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 
  /************************************************************************
  **
@@ -74,9 +67,11 @@
 #include <QStringDataPtr>
 #include <QStringList>
 
+#include "vdomdocument.h"
 #include "../exception/vexception.h"
 #include "../exception/vexceptionwrongid.h"
-#include "vdomdocument.h"
+#include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vsettings.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractConverter::VAbstractConverter(const QString &fileName)
@@ -86,7 +81,7 @@ VAbstractConverter::VAbstractConverter(const QString &fileName)
     , m_tmpFile()
 {
     setXMLContent(m_convertedFileName);// Throw an exception on error
-    m_ver = GetVersion(GetVersionStr());
+    m_ver = GetVersion(getVersionStr());
 
     qInfo() << "VAbstractConverter::GetVersion() = " << m_ver;
 }
@@ -101,7 +96,7 @@ QString VAbstractConverter::Convert()
 
     if (!isReadOnly())
     {
-        ReserveFile();
+        saveBackupFile();
     }
 
     if (m_tmpFile.open())
@@ -123,13 +118,13 @@ QString VAbstractConverter::Convert()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VAbstractConverter::GetCurrentFormatVarsion() const
+int VAbstractConverter::getCurrentFormatVersion() const
 {
     return m_ver;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VAbstractConverter::GetVersionStr() const
+QString VAbstractConverter::getVersionStr() const
 {
     const QDomNodeList nodeList = this->elementsByTagName(TagVersion);
     if (nodeList.isEmpty())
@@ -150,7 +145,7 @@ QString VAbstractConverter::GetVersionStr() const
         const QDomElement domElement = domNode.toElement();
         if (domElement.isNull() == false)
         {
-            qInfo() << " VAbstractConverter::GetVersionStr()" << domElement.text();
+            qInfo() << " VAbstractConverter::getVersionStr()" << domElement.text();
             return domElement.text();
         }
     }
@@ -187,51 +182,9 @@ int VAbstractConverter::GetVersion(const QString &version)
     return (major<<16)|(minor<<8)|(patch);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-QString VAbstractConverter::removeVersionNumber(const QString& fileName)
-{
-    // This method removes different instances of version numbers for the filename:
-    // 1. Regular, old format version: myPattern(v0.6.0).val
-    // 2. Messed up, "recursive" old format: myPattern(v0(v0.6.0).6.0).val.bak
-    // 3. New format: myPattern_v060.val
-    // For all the above cases the return value should be: myPattern.<ext>
-
-    const QRegularExpression newVersionRx(QStringLiteral("_v\\d\\d\\d"));
-    QString fileNameWithoutVersion;
-    int dotPos = fileName.lastIndexOf(QLatin1Char('.'));
-    int versionPos = fileName.indexOf(QLatin1String("(v"));
-
-    if (versionPos > 0)
-    {
-        // Old format version number should be removed until the last ')' if present
-        int lastParenthesisPos = fileName.lastIndexOf(QLatin1Char(')'));
-        if (lastParenthesisPos > versionPos && lastParenthesisPos < dotPos)
-        {
-            dotPos = lastParenthesisPos + 1;
-        }
-
-        fileNameWithoutVersion = fileName.left(versionPos);
-    }
-    else if ((versionPos = fileName.indexOf(newVersionRx)) > -1)
-    {
-        // New format version number should be removed until the first '.' (if present)
-        dotPos = fileName.indexOf(QLatin1Char('.'), versionPos);
-        fileNameWithoutVersion = fileName.left(versionPos);
-    }
-    else
-    {
-        fileNameWithoutVersion = fileName;
-    }
-
-    if (versionPos > -1 && dotPos > versionPos)
-    {
-        fileNameWithoutVersion += fileName.mid(dotPos);
-    }
-
-    return fileNameWithoutVersion;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
+// @brief Removes single or repeated '.bak' extension (as long as it is at the end of \arg fileName)
+// @Param filename file to backup
+// @Return newfileName
 QString VAbstractConverter::removeBakExtension(const QString &fileName)
 {
     QString newFileName = fileName;
@@ -265,32 +218,30 @@ void VAbstractConverter::ValidateVersion(const QString &version)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractConverter::ReserveFile() const
+void VAbstractConverter::saveBackupFile() const
 {
-    //It's not possible in all cases make conversion without lose data.
-    //For such cases we will store old version in a reserve file.
-    QString error;
-    const QFileInfo info(removeVersionNumber(removeBakExtension(m_convertedFileName)));
-    const QString baseNameWithoutVersion = info.baseName();
-    const QString versionWithoutDots = GetVersionStr().remove(QLatin1Char('.'));
-    const QString baseFileName = QString("%1_v%2")
-            .arg(baseNameWithoutVersion)
-            .arg(versionWithoutDots);
-    QString sequencePart;
-    int sequenceNumber = 1;
-    QString reserveFileName;
-
-    do {
-        reserveFileName = QString("%1/%2%3.%4")
-                              .arg(info.absoluteDir().absolutePath())
-                              .arg(baseFileName)
-                              .arg(sequencePart)
-                              .arg(info.completeSuffix());
-        sequencePart = QString("_(%1)").arg(++sequenceNumber);
-    } while (QFileInfo(reserveFileName).exists());
-
-    if (!SafeCopy(m_convertedFileName, reserveFileName, error))
+    //It's not possible in all cases to convert file without a loss of data.
+    //For such cases we will save a backup of the old version.
+    if (qApp->Settings()->getConvertBackupEnabled())
     {
+        QString error;
+        const QFileInfo info(removeBakExtension(m_convertedFileName));
+        QString baseFileName = info.baseName();
+
+        // replace any spaces in filename with underscore to pevent
+        // errors when opening file in Linux through the command line.
+        baseFileName.replace(" ", "_");
+
+        QString path = qApp->Settings()->getBackupFilePath();
+        if (!info.exists(path))
+        {
+            path = info.absoluteDir().absolutePath();
+        }
+        QString backupFileName;
+        backupFileName = QString("%1/%2%3.%4").arg(path, baseFileName, "_(backup)", info.completeSuffix());
+
+        if (!SafeCopy(m_convertedFileName, backupFileName, error))
+        {
 #ifdef Q_OS_WIN32
         qt_ntfs_permission_lookup++; // turn checking on
 #endif /*Q_OS_WIN32*/
@@ -299,10 +250,11 @@ void VAbstractConverter::ReserveFile() const
         qt_ntfs_permission_lookup--; // turn it off again
 #endif /*Q_OS_WIN32*/
 
-        if (!isReadOnly() && isFileWritable)
-        {
-            const QString errorMsg(tr("Error creating a reserv copy: %1.").arg(error));
-            throw VException(errorMsg);
+            if (!isReadOnly() && isFileWritable)
+            {
+                const QString errorMsg(tr("Error creating a reserv copy: %1.").arg(error));
+                throw VException(errorMsg);
+            }
         }
     }
 }

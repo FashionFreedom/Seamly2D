@@ -204,6 +204,9 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     // Pan Zoom while Space Key pressed
     ui->panActiveSpacePressed_CheckBox->setChecked(qApp->Seamly2DSettings()->isPanActiveSpaceKey());
 
+    // Always use current pen
+    ui->useCurrentPen_checkBox->setChecked(qApp->Seamly2DSettings()->useCurrentPen());
+
 // Font preferences
     // Pattern piece labels font
     //QFont labelFont = qApp->Seamly2DSettings()->getLabelFont();
@@ -377,6 +380,9 @@ void PreferencesGraphicsViewPage::Apply()
 
     // Pan Zoom while Space key pressed
     settings->setPanActiveSpaceKey(ui->panActiveSpacePressed_CheckBox->isChecked());
+
+    // Always use current pen
+    settings->setUseCurrentPen(ui->useCurrentPen_checkBox->isChecked());
 
     //Fonts
     settings->setLabelFont(ui->labelFont_ComboBox->currentFont());

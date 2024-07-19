@@ -958,7 +958,7 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_6">
        <item>
-        <widget class="QGroupBox" name="autoSave_CheckBox">
+        <widget class="QGroupBox" name="backup_Groupbox">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -978,12 +978,32 @@
           </font>
          </property>
          <property name="title">
-          <string>Enable Autosave</string>
+          <string>Backups</string>
          </property>
          <property name="checkable">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QCheckBox" name="convertBackupEnabled_CheckBox">
+            <property name="text">
+             <string>Create backup file when converting</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="autoSave_CheckBox">
+            <property name="text">
+             <string>Enable Autosave</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>

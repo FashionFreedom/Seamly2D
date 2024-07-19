@@ -959,7 +959,7 @@ QPainterPath PatternPieceTool::shape() const
     }
     else
     {
-        return ItemShapeFromPath(m_mainPath + m_cutPath, pen());
+        return itemShapeFromPath(m_mainPath + m_cutPath, pen());
     }
 }
 

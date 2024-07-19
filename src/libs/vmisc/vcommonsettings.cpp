@@ -1,26 +1,26 @@
-/***************************************************************************
- **  @file   vcommonsettings.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//  @file   vcommonsettings.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
+//  Copyright (C) 2017-2024 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 
 /************************************************************************
  **
@@ -79,6 +79,7 @@ const QString settingPathsMultisizeMeasurements          = QStringLiteral("paths
 const QString settingPathsTemplates                      = QStringLiteral("paths/templates");
 const QString settingPathsBodyScans                      = QStringLiteral("paths/bodyscans");
 const QString settingPathsLabelTemplate                  = QStringLiteral("paths/labels");
+const QString settingBackupPath                          = QStringLiteral("paths/backups");
 
 const QString settingConfigurationCompanyName            = QStringLiteral("graphicsview/companyName");
 const QString settingConfigurationContact                = QStringLiteral("graphicsview/contact");
@@ -94,6 +95,8 @@ const QString settingConfigurationWebsite                = QStringLiteral("graph
 
 const QString settingConfigurationShowWelcome            = QStringLiteral("configuration/showWelcome");
 const QString settingConfigurationOsSeparator            = QStringLiteral("configuration/osSeparator");
+
+const QString settingConfigurationConvertBackup          = QStringLiteral("configuration/backup/convertBackupEnabled");
 const QString settingConfigurationAutosaveState          = QStringLiteral("configuration/autosave/state");
 const QString settingConfigurationAutosaveTime           = QStringLiteral("configuration/autosave/time");
 
@@ -133,6 +136,7 @@ const QString settingGraphicsViewAngleDelta              = QStringLiteral("graph
 const QString settingGraphicsViewZoomModKey              = QStringLiteral("graphicsview/zoomModKey");
 const QString settingGraphicsViewZoomDoubleClick         = QStringLiteral("graphicsview/zoomDoubleClick");
 const QString settingGraphicsViewPanActiveSpaceKey       = QStringLiteral("graphicsview/panActiveSpaceKey");
+const QString settingGraphicsViewUseDefaultPen       = QStringLiteral("graphicsview/useCurrentPen");
 const QString settingGraphicsViewZoomSpeedFactor         = QStringLiteral("graphicsview/zoomSpeedFactor");
 const QString settingGraphicsViewExportQuality           = QStringLiteral("graphicsview/exportQuality");
 const QString settingGraphicsViewZoomRBPositiveColor     = QStringLiteral("graphicsview/zoomRBPositiveColor");
@@ -527,6 +531,24 @@ void VCommonSettings::setImageFilePath(const QString &text)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultBackupFilePath()
+{
+    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("backups");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getBackupFilePath() const
+{
+    return value(settingBackupPath, getDefaultBackupFilePath()).toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setBackupFilePath(const QString &text)
+{
+    setValue(settingBackupPath, text);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultPatternTemplate() const
 {
     return value(settingDefaultPatternTemplate, getLabelTemplatePath() + "default_pattern_label.xml").toString();
@@ -572,6 +594,18 @@ bool VCommonSettings::getOsSeparator() const
 void VCommonSettings::setOsSeparator(const bool &value)
 {
     setValue(settingConfigurationOsSeparator, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getConvertBackupEnabled() const
+{
+    return value(settingConfigurationConvertBackup, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setConvertBackupEnabled(const bool &value)
+{
+    setValue(settingConfigurationConvertBackup, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -679,7 +713,7 @@ void VCommonSettings::SetPMSystemCode(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetUnit() const
+QString VCommonSettings::getUnit() const
 {
     return value(settingConfigurationUnit,
                  QLocale().measurementSystem() == QLocale::MetricSystem ? unitCM : unitINCH).toString();
@@ -979,6 +1013,18 @@ bool VCommonSettings::isPanActiveSpaceKey() const
 void VCommonSettings::setPanActiveSpaceKey(const bool &value)
 {
     setValue(settingGraphicsViewPanActiveSpaceKey, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::useCurrentPen() const
+{
+    return value(settingGraphicsViewUseDefaultPen, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setUseCurrentPen(const bool &value)
+{
+    setValue(settingGraphicsViewUseDefaultPen, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1510,7 +1556,24 @@ void VCommonSettings::setShowSeamAllowanceNotch(bool value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultNotchLength() const
 {
-   return value(settingDefaultNotchLength, .250).toReal();
+    double maxValue;
+
+    const Unit units = StrToUnits(getUnit());
+
+    switch (units)
+    {
+        case Unit::Mm:
+            maxValue = 40;
+            break;
+        case Unit::Inch:
+            maxValue = 1.5;
+            break;
+        default:
+        case Unit::Cm:
+            maxValue = 4;
+            break;
+   }
+   return value(settingDefaultNotchLength, maxValue).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1522,7 +1585,24 @@ void VCommonSettings::setDefaultNotchLength(const qreal &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultNotchWidth() const
 {
-   return value(settingDefaultNotchWidth, .250).toReal();
+   double maxValue;
+
+   const Unit units = StrToUnits(getUnit());
+
+   switch (units)
+   {
+       case Unit::Mm:
+           maxValue = 12.50;
+           break;
+       case Unit::Inch:
+           maxValue = 0.50;
+           break;
+       default:
+       case Unit::Cm:
+           maxValue = 1.25;
+           break;
+   }
+   return value(settingDefaultNotchWidth, maxValue).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1643,7 +1723,7 @@ QChar VCommonSettings::GetDefCSVSeparator() const
 //---------------------------------------------------------------------------------------------------------------------
 void VCommonSettings::SetDefaultSeamAllowance(double value)
 {
-    setValue(settingPatternDefaultSeamAllowance, UnitConvertor(value, StrToUnits(GetUnit()), Unit::Cm));
+    setValue(settingPatternDefaultSeamAllowance, UnitConvertor(value, StrToUnits(getUnit()), Unit::Cm));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1655,9 +1735,9 @@ double VCommonSettings::GetDefaultSeamAllowance()
 {
     double defaultValue;
 
-    const Unit globalUnit = StrToUnits(GetUnit());
+    const Unit units = StrToUnits(getUnit());
 
-    switch (globalUnit)
+    switch (units)
     {
         case Unit::Mm:
             defaultValue = 10;
@@ -1686,7 +1766,7 @@ double VCommonSettings::GetDefaultSeamAllowance()
     }
     else
     {
-        val = UnitConvertor(val, Unit::Cm, globalUnit);
+        val = UnitConvertor(val, Unit::Cm, units);
     }
 
     return val;

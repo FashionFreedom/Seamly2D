@@ -15,7 +15,7 @@ SUBDIRS = \
 out.depends = src
 
 qtPrepareTool(LUPDATE, lupdate)
-lupdate.commands = $$LUPDATE -noobsolete -locations relative $$shell_path($${PWD}/share/translations/translations.pro)
+lupdate.commands = $$LUPDATE -noobsolete -locations none $$shell_path($${PWD}/share/translations/translations.pro)
 lupdate.commands += && $$LUPDATE -noobsolete $$shell_path($${PWD}/share/translations/measurements.pro)
 
 QMAKE_EXTRA_TARGETS += lupdate

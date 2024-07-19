@@ -70,6 +70,7 @@ public:
     virtual ~VisToolCutSplinePath() Q_DECL_EQ_DEFAULT;
 
     virtual void RefreshGeometry() Q_DECL_OVERRIDE;
+    void         setDirection(const QString &direction);
     void         setLength(const QString &expression);
     virtual int  type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Vis::ToolCutSpline)};
@@ -78,7 +79,8 @@ protected:
     VScaledEllipse *point;
     VCurvePathItem *splPath1;
     VCurvePathItem *splPath2;
-    qreal           length;
+    qreal           m_length;
+    QString         m_direction;
 };
 
 #endif // VISTOOLCUTSPLINEPATH_H

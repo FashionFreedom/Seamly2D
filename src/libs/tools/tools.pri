@@ -2,15 +2,17 @@
 # This need for correct working file translations.pro
 
 HEADERS += \
-    $$PWD/image_dialog.h \
+    $$PWD/images/image_dialog.h \
+    $$PWD/images/image_tool.h \
     $$PWD/stable.h \
-    $$PWD/image_item.h
+    $$PWD/images/image_item.h
 
 SOURCES += \
-    $$PWD/image_dialog.cpp \
-    $$PWD/image_item.cpp
+    $$PWD/images/image_dialog.cpp \
+    $$PWD/images/image_item.cpp \
+    $$PWD/images/image_tool.cpp
 
 FORMS += \
-    $$PWD/image_dialog.ui
+    $$PWD/images/image_dialog.ui
 
 *msvc*:SOURCES += $$PWD/stable.cpp

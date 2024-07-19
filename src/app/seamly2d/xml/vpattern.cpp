@@ -1799,11 +1799,14 @@ void VPattern::ParseToolCutSpline(VMainGraphicsScene *scene, QDomElement &domEle
         bool showPointName = true;
 
         PointsCommonAttributes(domElement, id, name, mx, my, showPointName);
-        const QString formula = GetParametrString(domElement, AttrLength, "0");
-        QString f = formula;//need for saving fixed formula;
-        const quint32 splineId = GetParametrUInt(domElement, VToolCutSpline::AttrSpline, NULL_ID_STR);
+        QString direction       = GetParametrString(domElement, AttrDirection, "forward");
+        const QString formula   = GetParametrString(domElement, AttrLength, "0");
+        QString f               = formula;//need for saving fixed formula;
+        const quint32 splineId  = GetParametrUInt(domElement, VToolCutSpline::AttrSpline, NULL_ID_STR);
 
-        VToolCutSpline::Create(id, name, f, splineId, mx, my, showPointName, scene, this, data, parse, Source::FromFile);
+        VToolCutSpline::Create(id, name, direction, f, splineId, mx, my, showPointName, scene, this,
+                               data, parse, Source::FromFile);
+
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
         {
@@ -1841,12 +1844,13 @@ void VPattern::ParseToolCutSplinePath(VMainGraphicsScene *scene, QDomElement &do
         bool showPointName = true;
 
         PointsCommonAttributes(domElement, id, name, mx, my, showPointName);
-        const QString formula = GetParametrString(domElement, AttrLength, "0");
-        QString f = formula;//need for saving fixed formula;
+        QString direction          = GetParametrString(domElement, AttrDirection, "forward");
+        const QString formula      = GetParametrString(domElement, AttrLength, "0");
+        QString f = formula; //need for saving fixed formula;
         const quint32 splinePathId = GetParametrUInt(domElement, VToolCutSplinePath::AttrSplinePath,
                                                      NULL_ID_STR);
 
-        VToolCutSplinePath::Create(id, name, f, splinePathId, mx, my, showPointName, scene, this, data, parse, Source::FromFile);
+        VToolCutSplinePath::Create(id, name, direction, f, splinePathId, mx, my, showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
         {
@@ -1884,11 +1888,12 @@ void VPattern::ParseToolCutArc(VMainGraphicsScene *scene, QDomElement &domElemen
         bool showPointName = true;
 
         PointsCommonAttributes(domElement, id, name, mx, my, showPointName);
+        QString direction     = GetParametrString(domElement, AttrDirection, "forward");
         const QString formula = GetParametrString(domElement, AttrLength, "0");
         QString f = formula;//need for saving fixed formula;
-        const quint32 arcId = GetParametrUInt(domElement, AttrArc, NULL_ID_STR);
+        const quint32 arcId   = GetParametrUInt(domElement, AttrArc, NULL_ID_STR);
 
-        VToolCutArc::Create(id, name, f, arcId, mx, my, showPointName, scene, this, data, parse, Source::FromFile);
+        VToolCutArc::Create(id, name, direction, f, arcId, mx, my, showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
         {

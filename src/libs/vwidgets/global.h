@@ -1,27 +1,26 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//  @file   global.h
+//  @author Douglas S Caskey
+//  @date   22 Jun, 2024
+//
+//  @copyright
+//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
 
- ************************************************************************
+/************************************************************************
  **
  **  @file
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -68,16 +67,13 @@ class QRectF;
 class QPainterPath;
 class QPen;
 
-qreal sceneScale(QGraphicsScene *scene);
-
-QColor correctColor(const QGraphicsItem *item, const QColor &color);
-
-QRectF PointRect(qreal radius);
-qreal  scaledRadius(qreal scale);
-void   scaleCircleSize(QGraphicsEllipseItem *item, qreal scale);
-void   scaleRectSize(QGraphicsRectItem *item, qreal scale);
-qreal  scaleWidth(qreal width, qreal scale);
-
-QPainterPath ItemShapeFromPath(const QPainterPath &path, const QPen &pen);
+qreal        sceneScale(QGraphicsScene *scene);
+QColor       correctColor(const QGraphicsItem *item, const QColor &color);
+QRectF       pointRect(qreal radius);
+qreal        scaledRadius(qreal scale);
+void         scaleCircleSize(QGraphicsEllipseItem *item, qreal scale);
+void         scaleRectSize(QGraphicsRectItem *item, qreal scale);
+qreal        scaleWidth(qreal width, qreal scale);
+QPainterPath itemShapeFromPath(const QPainterPath &path, const QPen &pen);
 
 #endif // GLOBAL_H

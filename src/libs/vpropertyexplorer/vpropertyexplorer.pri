@@ -2,6 +2,7 @@
 # This is needed for correct working of file translations.pro
 
 SOURCES += \
+    $$PWD/plugins/direction_property.cpp \
     $$PWD/plugins/expandingtextedit.cpp \
     $$PWD/plugins/lineweight_property.cpp \
     $$PWD/plugins/plaintext_property.cpp \
@@ -38,6 +39,7 @@ SOURCES += \
 *msvc*:SOURCES += $$PWD/stable.cpp
 
 HEADERS +=\
+    $$PWD/plugins/direction_property.h \
     $$PWD/plugins/expandingtextedit.h \
     $$PWD/plugins/lineweight_property.h \
     $$PWD/plugins/plaintext_property.h \

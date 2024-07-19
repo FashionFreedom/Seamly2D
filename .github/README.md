@@ -57,7 +57,7 @@ GNU General Public License for more details.
 
 ![GPLv3](img/GPLv3_Logo-121x60px.png)
 
-See our [LICENSE.md](LICENSE.md) file or go to [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html) for further information.
+See our [LICENSE.md](../LICENSE.md) file or go to [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html) for further information.
 
 Other components released under:  
 * QMuParser - [Simplified BSD license](https://opensource.org/licenses/BSD-2-Clause)

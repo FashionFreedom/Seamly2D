@@ -86,7 +86,7 @@ VToolCubicBezierPath::VToolCubicBezierPath(VAbstractPattern *doc, VContainer *da
                                            const Source &typeCreation, QGraphicsItem *parent)
     : VAbstractSpline(doc, data, id, parent)
 {
-    sceneType = SceneObject::SplinePath;
+    m_sceneType = SceneObject::SplinePath;
 
     this->setFlag(QGraphicsItem::ItemIsFocusable, true);// For keyboard input focus
 
@@ -159,7 +159,7 @@ VToolCubicBezierPath *VToolCubicBezierPath::Create(const quint32 _id, VCubicBezi
         VDrawTool::AddRecord(id, Tool::CubicBezierPath, doc);
         VToolCubicBezierPath *spl = new VToolCubicBezierPath(doc, data, id, typeCreation);
         scene->addItem(spl);
-        InitSplinePathToolConnections(scene, spl);
+        initSplinePathToolConnections(scene, spl);
         VAbstractPattern::AddTool(id, spl);
         return spl;
     }
@@ -265,7 +265,7 @@ void VToolCubicBezierPath::SetVisualization()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolCubicBezierPath::RefreshGeometry()
+void VToolCubicBezierPath::refreshGeometry()
 {
     QSharedPointer<VCubicBezierPath> splPath = VAbstractTool::data.GeometricObject<VCubicBezierPath>(m_id);
     setPath(splPath->GetPath());
