@@ -44,7 +44,7 @@
       </property>
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>5</horstretch>
+        <horstretch>12</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
@@ -1258,7 +1258,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>128</width>
+                <width>111</width>
                 <height>58</height>
                </rect>
               </property>
@@ -2374,8 +2374,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>98</width>
-              <height>28</height>
+              <width>120</width>
+              <height>82</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2508,8 +2508,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>100</width>
-              <height>54</height>
+              <width>120</width>
+              <height>82</height>
              </rect>
             </property>
             <attribute name="icon">
@@ -4328,7 +4328,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="share/resources/toolicon.qrc">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
      <normaloff>:/icon/32x32/anchor_point.png</normaloff>:/icon/32x32/anchor_point.png</iconset>
    </property>
    <property name="text">
@@ -4768,8 +4768,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
   <include location="../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections/>
 </ui>
