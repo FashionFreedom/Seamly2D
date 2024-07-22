@@ -7,6 +7,9 @@ var namespaces_dup =
       [ "CreateLayoutPath", "df/da0/namespaceanonymous__namespace_02mainwindowsnogui_8cpp_03.html#adc02e3f28db0229af91f2077610c4b9d", null ],
       [ "RemoveLayoutPath", "df/da0/namespaceanonymous__namespace_02mainwindowsnogui_8cpp_03.html#aba458b4f78f014b23015631f3a439456", null ]
     ] ],
+    [ "anonymous_namespace{measurements.cpp}", "dc/d48/namespaceanonymous__namespace_02measurements_8cpp_03.html", [
+      [ "FileComment", "dc/d48/namespaceanonymous__namespace_02measurements_8cpp_03.html#a6cfc6f484e575ef4a1ed713c707803ef", null ]
+    ] ],
     [ "anonymous_namespace{pattern_piece_dialog.cpp}", "d7/d49/namespaceanonymous__namespace_02pattern__piece__dialog_8cpp_03.html", [
       [ "enableDefaultButton", "d7/d49/namespaceanonymous__namespace_02pattern__piece__dialog_8cpp_03.html#af04aa336f20ec8424e3ff06065363df1", null ],
       [ "getFormulaFromUser", "d7/d49/namespaceanonymous__namespace_02pattern__piece__dialog_8cpp_03.html#a6e4259470f736c8f847d8d04b3fef36d", null ]
@@ -26,11 +29,20 @@ var namespaces_dup =
       [ "PrepareStandardFiles", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a3abe77374f88330d2dce8aa3fc77479c", null ],
       [ "SymlinkCopyDirRecursive", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a8dd613aa76590f88f4a60fee8b89ae13", null ],
       [ "pointNameSize", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a7136b7a2ed9ead08f0f849054160457b", null ],
+      [ "settingBackupPath", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a33d50aa96456f560a5ac1845a77a682c", null ],
+      [ "settingConfigurationAddress", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a7308b7a66e0e6d69b9b7aab47d4253d3", null ],
       [ "settingConfigurationAutosaveState", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a7daef37ab258f5781330620fd1c881f0", null ],
       [ "settingConfigurationAutosaveTime", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a3a9b2311b6fa39fad1eb5a4c529d641d", null ],
+      [ "settingConfigurationCity", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aad6035303a156424a369fa4f57eecc09", null ],
+      [ "settingConfigurationCompanyName", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a71c5b03e39599dd6054a38b03738d2af", null ],
       [ "settingConfigurationConfirmFormatRewriting", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a6a57436127a960cc5e975205c9a12e17", null ],
       [ "settingConfigurationConfirmItemDeletion", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a383eace7ddf02e795eb92a0ac415ddc0", null ],
+      [ "settingConfigurationContact", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#af7dfb4be23d1ac75b179fc001d42d2a1", null ],
+      [ "settingConfigurationConvertBackup", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#af3a7aadbf0ceff542f027954d041320c", null ],
+      [ "settingConfigurationCountry", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a72776bdfb821593edb5c7e285dec3a6b", null ],
+      [ "settingConfigurationEmail", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a9ced3ec46d8885be49c579fd2affed58", null ],
       [ "settingConfigurationExportFormat", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a97304289062448ab19cf7f468ff251db", null ],
+      [ "settingConfigurationFax", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a432e70947dc777475bd71f014d59f8a7", null ],
       [ "settingConfigurationLocale", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a466e58d60d4df94c653ae24efd557bed", null ],
       [ "settingConfigurationMirrorByAxisSuffix", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#acea79ab1f171b09b76c99884725b0a5a", null ],
       [ "settingConfigurationMirrorByLineSuffix", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a8463c1243a8c59bfb78650df8b04e890", null ],
@@ -38,9 +50,14 @@ var namespaces_dup =
       [ "settingConfigurationOsSeparator", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a6e9567caa6878f26427f31829687c72a", null ],
       [ "settingConfigurationRotateSuffix", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a49808ed294e367be1fa93861f1f5c36c", null ],
       [ "settingConfigurationSendReportState", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aae86da731199bc98a2ad66f72db5c901", null ],
+      [ "settingConfigurationShowWelcome", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a541bb478fb63027bbd5b3c10e9fefe33", null ],
+      [ "settingConfigurationState", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ad5165727659916350befceb487d7d367", null ],
+      [ "settingConfigurationTelephone", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a6ff734082fe6c60dbcba93cf3dc4ddde", null ],
       [ "settingConfigurationUnit", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aa446a2e6f60f80bd44c6063ad3c6a549", null ],
       [ "settingConfigurationUseLastExportFormat", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a5336a2c97b7997d42fd907bef02d3876", null ],
       [ "settingConfigurationUseModeType", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a32f3a6d833ff322d97945a7dc55de0a8", null ],
+      [ "settingConfigurationWebsite", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aa73a3646dd1fb16f5c5feadb668f8c6d", null ],
+      [ "settingConfigurationZipcode", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aac76a27ab53523fe8438f71ec0ff048f", null ],
       [ "settingCSVCodec", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ae2e04e3d2b5006ca63dddad4e4c885cc", null ],
       [ "settingCSVSeparator", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a0c4b1d5c81a1286cd8cc5a71c9a83ff0", null ],
       [ "settingCSVWithHeader", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a464c6501262ea18e1b0902086c26b006", null ],
@@ -114,18 +131,20 @@ var namespaces_dup =
       [ "settingGraphicsViewShowToolsToolBar", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#addb48bad6c259e5cbdec076831344533", null ],
       [ "settingGraphicsViewTertiaryColor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a4b0abdc5578b3badb71003b000ece7e5", null ],
       [ "settingGraphicsViewToolBarStyle", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ad330f54fe0ce445593b4355b3899ebd3", null ],
+      [ "settingGraphicsViewUseDefaultPen", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aaa648520c0933dd4a840db329f919b27", null ],
       [ "settingGraphicsViewWireframe", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a591f10e03500689dff19e38006a64c5a", null ],
       [ "settingGraphicsViewZoomDoubleClick", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a046b05ae883a9622db898c0ce2e75f6e", null ],
       [ "settingGraphicsViewZoomModKey", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a575ea546167572da1fc244fcac637a5e", null ],
       [ "settingGraphicsViewZoomRBNegativeColor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aedefb6549602aaba61af1b775475ff7b", null ],
       [ "settingGraphicsViewZoomRBPositiveColor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a0dfede5003a30a9408c3063eb66a92b4", null ],
       [ "settingGraphicsViewZoomSpeedFactor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a26cf87afb2f980c1ec7cd2fd63e9f02d", null ],
-      [ "settingIncrementsDialogSize", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ad87078c497f9ce2af67cf71afa612e72", null ],
+      [ "settingImagesPath", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a13498b0f2dc5512d31e522096d1484ad", null ],
       [ "settingLabelDateFormat", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a9960810b30624736af9c63c4ea1bdb78", null ],
       [ "settingLabelTimeFormat", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a400d4d80c42541aab7c2d1572ae4339e", null ],
       [ "settingLabelUserDateFormats", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a55a4ea7793a79bc584e55669b40e6d7c", null ],
       [ "settingLabelUserTimeFormats", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a963422ce8f013135de5d22a96c0ef172", null ],
       [ "settingLatestSkippedVersion", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a057fa48d101cde9aa147dd59534486e8", null ],
+      [ "settingPathsBodyScans", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ade216e15a69dff3a6e8c9786c180d592", null ],
       [ "settingPathsIndividualMeasurements", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a2637561a27c415fd5d43d96cc585ba2e", null ],
       [ "settingPathsLabelTemplate", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#acfd4254aeddc1d40c0425558b4f0b42f", null ],
       [ "settingPathsMultisizeMeasurements", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a71547d95fb3ded7735c8d75fda092ad2", null ],
@@ -147,7 +166,8 @@ var namespaces_dup =
       [ "settingShowPatternLabels", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a20c760cc67cf66c34b84d18821c46cbe", null ],
       [ "settingShowPieceLabels", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ae878122ddcaae25fa2369875ccac14b6", null ],
       [ "settingShowSeamAllowances", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aead542985bef57407eb367a8c7c0da1f", null ],
-      [ "settingToolSeamAllowanceDialogSize", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a91bf7a4d63951d137db9cb09112c61d2", null ]
+      [ "settingToolSeamAllowanceDialogSize", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a91bf7a4d63951d137db9cb09112c61d2", null ],
+      [ "settingVariablesDialogSize", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a724bd4de8bb4e50cd42068755d13f6fe", null ]
     ] ],
     [ "anonymous_namespace{vdomdocument.cpp}", "d6/db9/namespaceanonymous__namespace_02vdomdocument_8cpp_03.html", [
       [ "SaveNodeCanonically", "d6/db9/namespaceanonymous__namespace_02vdomdocument_8cpp_03.html#a48dca2f0db8a0c3d00d69eff6118f8bf", null ]
@@ -161,9 +181,6 @@ var namespaces_dup =
       [ "PieceLabelText", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a9d5be9c5672d55404b37efffeccaa53f", null ],
       [ "PrepareAllowance", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#ad74a963f5f1e9c33334369640b35ada9", null ],
       [ "RotatePoint", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#ac9b8474c898648af470a9dde3441a5e8", null ]
-    ] ],
-    [ "anonymous_namespace{vmeasurements.cpp}", "db/d5f/namespaceanonymous__namespace_02vmeasurements_8cpp_03.html", [
-      [ "FileComment", "db/d5f/namespaceanonymous__namespace_02vmeasurements_8cpp_03.html#a7531de103f9a1b36e7ea3963a8ff7e57", null ]
     ] ],
     [ "anonymous_namespace{vnodedetail.cpp}", "d9/d83/namespaceanonymous__namespace_02vnodedetail_8cpp_03.html", [
       [ "ConvertAfter", "d9/d83/namespaceanonymous__namespace_02vnodedetail_8cpp_03.html#a6333f8827e9243cf90c85518487730c6", null ],
@@ -199,7 +216,7 @@ var namespaces_dup =
       [ "settingCommunityUseProxy", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#ad655dd425fbbf6ff0c0bbbe874279b99", null ],
       [ "settingCommunityUsername", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#aea961388dcc49ca23884f52790f2654d", null ],
       [ "settingCommunityUserPassword", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a4d6ed1da0617224523a7edd32fe36da7", null ],
-      [ "settingConfigurationLabelLanguage", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#adcf6bb57ca9b6d812c5af211d4c8ca85", null ],
+      [ "settingConfigurationPointLanguage", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a47b3d658d44fe95a9ceb63a870f83fdb", null ],
       [ "settingFields", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a782ecb55f386a2d3f6de561a1802731d", null ],
       [ "settingIgnoreFields", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a60f6ad3fe10e8dba6695e143c957034e", null ],
       [ "settingLayoutAutoCrop", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a29b6fb0b013cf25159991ac9fe897136", null ],

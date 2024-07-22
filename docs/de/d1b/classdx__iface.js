@@ -7,7 +7,7 @@ var classdx__iface =
     [ "AddBlock", "de/d1b/classdx__iface.html#a2a4cb5cb793d07fbcdea0ad8888969d3", null ],
     [ "AddDefLayers", "de/d1b/classdx__iface.html#a761b6dec69345355efc0f9d851e91f22", null ],
     [ "AddEntity", "de/d1b/classdx__iface.html#a717ea28ab64a19a2063587135c62ce4c", null ],
-    [ "AddFont", "de/d1b/classdx__iface.html#ac4e3aa1c54d3cdabe4c2a99f66eaed93", null ],
+    [ "AddFont", "de/d1b/classdx__iface.html#a0790ef9175f268b8feaf904dedcc9582", null ],
     [ "AddQtLTypes", "de/d1b/classdx__iface.html#a4bc695489404db4c875575ef5b2e15e6", null ],
     [ "fileExport", "de/d1b/classdx__iface.html#aaaa95a5336b8fa149984192018f9f76e", null ],
     [ "InitAppId", "de/d1b/classdx__iface.html#a4a90e04f197174961a230d540763e0ca", null ],

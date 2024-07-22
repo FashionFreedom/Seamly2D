@@ -7,8 +7,6 @@ var classIntersectCirclesDialog =
     [ "Circle1RadiusChanged", "d0/d09/classIntersectCirclesDialog.html#a38093d56e5d4b5fe41eecea9bbfa0d76", null ],
     [ "Circle2RadiusChanged", "d0/d09/classIntersectCirclesDialog.html#ac917042b619a69459d890bce04255a52", null ],
     [ "closeEvent", "d0/d09/classIntersectCirclesDialog.html#a2f39c11160fcdd716bb5ea9f398bdba2", null ],
-    [ "DeployCircle1RadiusTextEdit", "d0/d09/classIntersectCirclesDialog.html#a060befb35f64855b0f8b6cb999961d8a", null ],
-    [ "DeployCircle2RadiusTextEdit", "d0/d09/classIntersectCirclesDialog.html#abed81b873b178b2e5021276a0177ee5a", null ],
     [ "EvalCircle1Radius", "d0/d09/classIntersectCirclesDialog.html#ac5c45cdf8b68624d68c911a1f8350850", null ],
     [ "EvalCircle2Radius", "d0/d09/classIntersectCirclesDialog.html#ab43ce67fd86609ba592f0b2643110b73", null ],
     [ "FXCircle1Radius", "d0/d09/classIntersectCirclesDialog.html#a178a6f53a8a09601b940cdeecbd0fba2", null ],

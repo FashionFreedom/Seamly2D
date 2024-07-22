@@ -16,7 +16,7 @@ var classVDxfPaintDevice =
     [ "setMeasurement", "d4/da6/classVDxfPaintDevice.html#ad2db47830068128819e21d783712e1c1", null ],
     [ "setResolution", "d4/da6/classVDxfPaintDevice.html#a9b1b6b710536f3c95b2b937ec4b4853e", null ],
     [ "setSize", "d4/da6/classVDxfPaintDevice.html#aefb4b62638827786e4b74eea23126014", null ],
-    [ "SetVersion", "d4/da6/classVDxfPaintDevice.html#acb34895712b956f08ec8092af9360af7", null ],
+    [ "setVersion", "d4/da6/classVDxfPaintDevice.html#a3261b05731b29461c06efb8731d20063", null ],
     [ "engine", "d4/da6/classVDxfPaintDevice.html#a7079291bad3c0041c37c0f02bae5c136", null ],
     [ "fileName", "d4/da6/classVDxfPaintDevice.html#afd14327f7a978f5a3337df94c03ad0f1", null ]
 ];

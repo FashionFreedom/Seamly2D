@@ -1,6 +1,10 @@
 var dir_089e271760586872816ceb2d9372fbe0 =
 [
     [ "Vector3d", "dir_01889396b94d5a2685f896c005fb76b8.html", "dir_01889396b94d5a2685f896c005fb76b8" ],
+    [ "direction_property.cpp", "d2/d1d/direction__property_8cpp.html", null ],
+    [ "direction_property.h", "d1/d38/direction__property_8h.html", [
+      [ "DirectionProperty", "df/d74/classVPE_1_1DirectionProperty.html", "df/d74/classVPE_1_1DirectionProperty" ]
+    ] ],
     [ "expandingtextedit.cpp", "dc/ddf/expandingtextedit_8cpp.html", null ],
     [ "expandingtextedit.h", "d5/d39/expandingtextedit_8h.html", [
       [ "ExpandingTextEdit", "db/dac/classExpandingTextEdit.html", "db/dac/classExpandingTextEdit" ]

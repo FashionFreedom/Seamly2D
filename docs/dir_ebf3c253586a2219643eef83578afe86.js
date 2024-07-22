@@ -1,10 +1,18 @@
 var dir_ebf3c253586a2219643eef83578afe86 =
 [
-    [ "vabstractconverter.cpp", "d4/d9f/vabstractconverter_8cpp.html", null ],
-    [ "vabstractconverter.h", "df/de4/vabstractconverter_8h.html", "df/de4/vabstractconverter_8h" ],
-    [ "vabstractmconverter.cpp", "dd/d2b/vabstractmconverter_8cpp.html", null ],
-    [ "vabstractmconverter.h", "d6/d2d/vabstractmconverter_8h.html", [
-      [ "VAbstractMConverter", "d8/d87/classVAbstractMConverter.html", "d8/d87/classVAbstractMConverter" ]
+    [ "abstract_converter.cpp", "d0/d08/abstract__converter_8cpp.html", null ],
+    [ "abstract_converter.h", "d0/da1/abstract__converter_8h.html", "d0/da1/abstract__converter_8h" ],
+    [ "abstract_m_converter.cpp", "de/dec/abstract__m__converter_8cpp.html", null ],
+    [ "abstract_m_converter.h", "da/d2c/abstract__m__converter_8h.html", [
+      [ "AbstractMConverter", "d8/d6b/classAbstractMConverter.html", "d8/d6b/classAbstractMConverter" ]
+    ] ],
+    [ "individual_size_converter.cpp", "d5/d6e/individual__size__converter_8cpp.html", "d5/d6e/individual__size__converter_8cpp" ],
+    [ "individual_size_converter.h", "d0/d93/individual__size__converter_8h.html", [
+      [ "IndividualSizeConverter", "d8/dfc/classIndividualSizeConverter.html", "d8/dfc/classIndividualSizeConverter" ]
+    ] ],
+    [ "multi_size_converter.cpp", "d9/d94/multi__size__converter_8cpp.html", "d9/d94/multi__size__converter_8cpp" ],
+    [ "multi_size_converter.h", "d5/d4c/multi__size__converter_8h.html", [
+      [ "MultiSizeConverter", "d6/d91/classMultiSizeConverter.html", "d6/d91/classMultiSizeConverter" ]
     ] ],
     [ "vabstractpattern.cpp", "de/d7d/vabstractpattern_8cpp.html", "de/d7d/vabstractpattern_8cpp" ],
     [ "vabstractpattern.h", "d0/d89/vabstractpattern_8h.html", "d0/d89/vabstractpattern_8h" ],
@@ -23,13 +31,5 @@ var dir_ebf3c253586a2219643eef83578afe86 =
     [ "vtoolrecord.cpp", "d6/d6f/vtoolrecord_8cpp.html", null ],
     [ "vtoolrecord.h", "d9/d47/vtoolrecord_8h.html", [
       [ "VToolRecord", "de/da8/classVToolRecord.html", "de/da8/classVToolRecord" ]
-    ] ],
-    [ "vvitconverter.cpp", "d5/dba/vvitconverter_8cpp.html", "d5/dba/vvitconverter_8cpp" ],
-    [ "vvitconverter.h", "d1/d8f/vvitconverter_8h.html", [
-      [ "VVITConverter", "d3/d19/classVVITConverter.html", "d3/d19/classVVITConverter" ]
-    ] ],
-    [ "vvstconverter.cpp", "d0/dd6/vvstconverter_8cpp.html", "d0/dd6/vvstconverter_8cpp" ],
-    [ "vvstconverter.h", "d2/d10/vvstconverter_8h.html", [
-      [ "VVSTConverter", "d8/d2a/classVVSTConverter.html", "d8/d2a/classVVSTConverter" ]
     ] ]
 ];

@@ -34,7 +34,7 @@
 <text text-anchor="start" x="105" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
 <text text-anchor="start" x="105" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
 <text text-anchor="start" x="105" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="105" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RefreshGeometry()</text>
+<text text-anchor="start" x="105" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00"># refreshGeometry()</text>
 <text text-anchor="start" x="105" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
 <text text-anchor="start" x="105" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolCubicBezier()</text>
 <text text-anchor="start" x="105" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; SetSplineAttributes()</text>
@@ -48,8 +48,8 @@
 <polygon fill="white" stroke="black" points="70,-303.5 70,-822.5 252,-822.5 252,-303.5 70,-303.5"/>
 <text text-anchor="middle" x="161" y="-810.5" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractSpline</text>
 <polyline fill="none" stroke="black" points="70,-803.5 252,-803.5 "/>
-<text text-anchor="start" x="78" y="-791.5" font-family="Helvetica,sans-Serif" font-size="10.00"># controlPoints</text>
-<text text-anchor="start" x="78" y="-780.5" font-family="Helvetica,sans-Serif" font-size="10.00"># sceneType</text>
+<text text-anchor="start" x="78" y="-791.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_controlPoints</text>
+<text text-anchor="start" x="78" y="-780.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_sceneType</text>
 <text text-anchor="start" x="78" y="-769.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_isHovered</text>
 <text text-anchor="start" x="78" y="-758.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_piecesMode</text>
 <polyline fill="none" stroke="black" points="70,-751.5 252,-751.5 "/>
@@ -59,7 +59,7 @@
 <text text-anchor="start" x="78" y="-706.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
 <text text-anchor="start" x="78" y="-695.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
 <text text-anchor="start" x="78" y="-684.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTagName()</text>
-<text text-anchor="start" x="78" y="-673.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowHandles()</text>
+<text text-anchor="start" x="78" y="-673.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ showHandles()</text>
 <text text-anchor="start" x="78" y="-662.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineColor()</text>
 <text text-anchor="start" x="78" y="-651.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineColor()</text>
 <text text-anchor="start" x="78" y="-640.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetPenStyle()</text>
@@ -74,7 +74,7 @@
 <text text-anchor="start" x="78" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AllowHover()</text>
 <text text-anchor="start" x="78" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AllowSelecting()</text>
 <text text-anchor="start" x="78" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ makeToolTip()</text>
-<text text-anchor="start" x="78" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RefreshGeometry()</text>
+<text text-anchor="start" x="78" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00"># refreshGeometry()</text>
 <text text-anchor="start" x="78" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowTool()</text>
 <text text-anchor="start" x="78" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverEnterEvent()</text>
 <text text-anchor="start" x="78" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverLeaveEvent()</text>
@@ -86,13 +86,13 @@
 <text text-anchor="start" x="78" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
 <text text-anchor="start" x="78" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00"># refreshCtrlPoints()</text>
 <text text-anchor="start" x="78" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00"># contextMenuEvent()</text>
-<text text-anchor="start" x="78" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CorrectedSpline()</text>
+<text text-anchor="start" x="78" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00"># correctedSpline()</text>
 <text text-anchor="start" x="78" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowToolVisualization()</text>
-<text text-anchor="start" x="78" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InitSplineToolConnections()</text>
-<text text-anchor="start" x="78" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InitSplinePathToolConnections()</text>
-<text text-anchor="start" x="78" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InitArcToolConnections()</text>
-<text text-anchor="start" x="78" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InitElArcToolConnections()</text>
-<text text-anchor="start" x="78" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitDefShape()</text>
+<text text-anchor="start" x="78" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initSplineToolConnections()</text>
+<text text-anchor="start" x="78" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initSplinePathToolConnections()</text>
+<text text-anchor="start" x="78" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initArcToolConnections()</text>
+<text text-anchor="start" x="78" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initElArcToolConnections()</text>
+<text text-anchor="start" x="78" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initDefShape()</text>
 </a>
 </g>
 </g>

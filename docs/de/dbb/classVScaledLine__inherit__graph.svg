@@ -59,18 +59,18 @@ var sectionId = 'dynsection-0';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="1545.5,-887.5 1545.5,-1010.5 1652.5,-1010.5 1652.5,-887.5 1545.5,-887.5"/>
+<polygon fill="#bfbfbf" stroke="black" points="1541,-887.5 1541,-1010.5 1657,-1010.5 1657,-887.5 1541,-887.5"/>
 <text text-anchor="middle" x="1599" y="-998.5" font-family="Helvetica,sans-Serif" font-size="10.00">VScaledLine</text>
-<polyline fill="none" stroke="black" points="1545.5,-991.5 1652.5,-991.5 "/>
-<text text-anchor="start" x="1553.5" y="-979.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; basicWidth</text>
-<polyline fill="none" stroke="black" points="1545.5,-972.5 1652.5,-972.5 "/>
-<text text-anchor="start" x="1553.5" y="-960.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
-<text text-anchor="start" x="1553.5" y="-949.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
-<text text-anchor="start" x="1553.5" y="-938.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VScaledLine()</text>
-<text text-anchor="start" x="1553.5" y="-927.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1553.5" y="-916.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
-<text text-anchor="start" x="1553.5" y="-905.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetBasicWidth()</text>
-<text text-anchor="start" x="1553.5" y="-894.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setBasicWidth()</text>
+<polyline fill="none" stroke="black" points="1541,-991.5 1657,-991.5 "/>
+<text text-anchor="start" x="1549" y="-979.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_defaultWidth</text>
+<polyline fill="none" stroke="black" points="1541,-972.5 1657,-972.5 "/>
+<text text-anchor="start" x="1549" y="-960.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
+<text text-anchor="start" x="1549" y="-949.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
+<text text-anchor="start" x="1549" y="-938.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VScaledLine()</text>
+<text text-anchor="start" x="1549" y="-927.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1549" y="-916.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
+<text text-anchor="start" x="1549" y="-905.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultWidth()</text>
+<text text-anchor="start" x="1549" y="-894.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDefaultWidth()</text>
 </a>
 </g>
 </g>

@@ -6,8 +6,8 @@ var dir_223cdb8d508b79a19c2b95144d044f4d =
     [ "calculator.h", "db/db8/vpatterndb_2calculator_8h.html", [
       [ "Calculator", "d8/dbe/classCalculator.html", "d8/dbe/classCalculator" ]
     ] ],
-    [ "measurements.cpp", "d9/de3/measurements_8cpp.html", "d9/de3/measurements_8cpp" ],
-    [ "measurements.h", "dc/db7/measurements_8h.html", "dc/db7/measurements_8h" ],
+    [ "measurements_def.cpp", "dd/de9/measurements__def_8cpp.html", "dd/de9/measurements__def_8cpp" ],
+    [ "measurements_def.h", "d0/d91/measurements__def_8h.html", "d0/d91/measurements__def_8h" ],
     [ "pmsystems.cpp", "d4/d4f/pmsystems_8cpp.html", "d4/d4f/pmsystems_8cpp" ],
     [ "pmsystems.h", "d0/d32/pmsystems_8h.html", "d0/d32/pmsystems_8h" ],
     [ "stable.cpp", "d2/d50/libs_2vpatterndb_2stable_8cpp.html", null ],

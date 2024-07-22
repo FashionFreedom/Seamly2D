@@ -1,15 +1,5 @@
 var searchData=
 [
-  ['unexpectedeofexception_2ehpp_18439',['UnexpectedEOFException.hpp',['../d7/dd9/msvc_2include_2xercesc_2util_2UnexpectedEOFException_8hpp.html',1,'(Global Namespace)'],['../d1/d88/mingw_2include_2xercesc_2util_2UnexpectedEOFException_8hpp.html',1,'(Global Namespace)'],['../d3/d38/macx_2include_2xercesc_2util_2UnexpectedEOFException_8hpp.html',1,'(Global Namespace)']]],
-  ['unichartable_2ehpp_18440',['UniCharTable.hpp',['../dc/d7b/macx_2include_2xercesc_2util_2regx_2UniCharTable_8hpp.html',1,'(Global Namespace)'],['../d6/da4/mingw_2include_2xercesc_2util_2regx_2UniCharTable_8hpp.html',1,'(Global Namespace)'],['../de/de3/msvc_2include_2xercesc_2util_2regx_2UniCharTable_8hpp.html',1,'(Global Namespace)']]],
-  ['unicoderangefactory_2ehpp_18441',['UnicodeRangeFactory.hpp',['../d4/d30/macx_2include_2xercesc_2util_2regx_2UnicodeRangeFactory_8hpp.html',1,'(Global Namespace)'],['../d1/d35/mingw_2include_2xercesc_2util_2regx_2UnicodeRangeFactory_8hpp.html',1,'(Global Namespace)'],['../d8/db9/msvc_2include_2xercesc_2util_2regx_2UnicodeRangeFactory_8hpp.html',1,'(Global Namespace)']]],
-  ['union_5fdialog_2ecpp_18442',['union_dialog.cpp',['../d8/dda/union__dialog_8cpp.html',1,'']]],
-  ['union_5fdialog_2eh_18443',['union_dialog.h',['../da/dfb/union__dialog_8h.html',1,'']]],
-  ['union_5ftool_2ecpp_18444',['union_tool.cpp',['../d4/d9f/union__tool_8cpp.html',1,'']]],
-  ['union_5ftool_2eh_18445',['union_tool.h',['../d4/d42/union__tool_8h.html',1,'']]],
-  ['uniondatatypevalidator_2ehpp_18446',['UnionDatatypeValidator.hpp',['../d4/dac/msvc_2include_2xercesc_2validators_2datatype_2UnionDatatypeValidator_8hpp.html',1,'(Global Namespace)'],['../d6/d47/mingw_2include_2xercesc_2validators_2datatype_2UnionDatatypeValidator_8hpp.html',1,'(Global Namespace)'],['../de/d1e/macx_2include_2xercesc_2validators_2datatype_2UnionDatatypeValidator_8hpp.html',1,'(Global Namespace)']]],
-  ['uniontoken_2ehpp_18447',['UnionToken.hpp',['../d8/de9/msvc_2include_2xercesc_2util_2regx_2UnionToken_8hpp.html',1,'(Global Namespace)'],['../d7/dd7/mingw_2include_2xercesc_2util_2regx_2UnionToken_8hpp.html',1,'(Global Namespace)'],['../d5/dcf/macx_2include_2xercesc_2util_2regx_2UnionToken_8hpp.html',1,'(Global Namespace)']]],
-  ['unsupportedencodingexception_2ehpp_18448',['UnsupportedEncodingException.hpp',['../db/d8c/macx_2include_2xercesc_2util_2UnsupportedEncodingException_8hpp.html',1,'(Global Namespace)'],['../d6/d16/mingw_2include_2xercesc_2util_2UnsupportedEncodingException_8hpp.html',1,'(Global Namespace)'],['../de/d3f/msvc_2include_2xercesc_2util_2UnsupportedEncodingException_8hpp.html',1,'(Global Namespace)']]],
-  ['urlinputsource_2ehpp_18449',['URLInputSource.hpp',['../d8/dd6/msvc_2include_2xercesc_2framework_2URLInputSource_8hpp.html',1,'(Global Namespace)'],['../de/d5b/mingw_2include_2xercesc_2framework_2URLInputSource_8hpp.html',1,'(Global Namespace)'],['../d9/d2a/macx_2include_2xercesc_2framework_2URLInputSource_8hpp.html',1,'(Global Namespace)']]],
-  ['utfdataformatexception_2ehpp_18450',['UTFDataFormatException.hpp',['../d9/db3/macx_2include_2xercesc_2util_2UTFDataFormatException_8hpp.html',1,'(Global Namespace)'],['../db/d5d/mingw_2include_2xercesc_2util_2UTFDataFormatException_8hpp.html',1,'(Global Namespace)'],['../d6/d10/msvc_2include_2xercesc_2util_2UTFDataFormatException_8hpp.html',1,'(Global Namespace)']]]
+  ['welcome_5fdialog_2ecpp_11148',['welcome_dialog.cpp',['../df/d69/welcome__dialog_8cpp.html',1,'']]],
+  ['welcome_5fdialog_2eh_11149',['welcome_dialog.h',['../d3/de1/welcome__dialog_8h.html',1,'']]]
 ];

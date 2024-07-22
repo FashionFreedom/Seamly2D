@@ -3,6 +3,7 @@ var classPreferencesGraphicsViewPage =
     [ "PreferencesGraphicsViewPage", "d9/d0d/classPreferencesGraphicsViewPage.html#a166fa35cb6d424ce9cbcb18888d32615", null ],
     [ "~PreferencesGraphicsViewPage", "d9/d0d/classPreferencesGraphicsViewPage.html#a775d091de0ef8ca86b77c3f01923bda0", null ],
     [ "Apply", "d9/d0d/classPreferencesGraphicsViewPage.html#a7ab74aeef13e337c500207e6f50a1547", null ],
+    [ "changeEvent", "d9/d0d/classPreferencesGraphicsViewPage.html#a7c2b987abc4b63e3330bcad08de10093", null ],
     [ "m_orginAxisColorChanged", "d9/d0d/classPreferencesGraphicsViewPage.html#a397858979758484023bea6c3b82c2eee", null ],
     [ "m_pointNameColorChanged", "d9/d0d/classPreferencesGraphicsViewPage.html#a468f28fa033b0242173b0dc66cc3877e", null ],
     [ "m_pointNameHoverColorChanged", "d9/d0d/classPreferencesGraphicsViewPage.html#ac4f046d17d5f107c6d79fcd8530bf004", null ],

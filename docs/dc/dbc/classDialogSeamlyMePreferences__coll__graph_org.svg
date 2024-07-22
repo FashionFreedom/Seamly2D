@@ -13,14 +13,15 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="76.5,-0.5 76.5,-134.5 261.5,-134.5 261.5,-0.5 76.5,-0.5"/>
-<text text-anchor="middle" x="169" y="-122.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogSeamlyMePreferences</text>
-<polyline fill="none" stroke="black" points="76.5,-115.5 261.5,-115.5 "/>
-<text text-anchor="start" x="84.5" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="84.5" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_isInitialized</text>
-<polyline fill="none" stroke="black" points="76.5,-85.5 261.5,-85.5 "/>
-<text text-anchor="start" x="84.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogSeamlyMePreferences()</text>
-<text text-anchor="start" x="84.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogSeamlyMePreferences()</text>
+<polygon fill="#bfbfbf" stroke="black" points="76.5,-0.5 76.5,-145.5 261.5,-145.5 261.5,-0.5 76.5,-0.5"/>
+<text text-anchor="middle" x="169" y="-133.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogSeamlyMePreferences</text>
+<polyline fill="none" stroke="black" points="76.5,-126.5 261.5,-126.5 "/>
+<text text-anchor="start" x="84.5" y="-114.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="84.5" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_isInitialized</text>
+<polyline fill="none" stroke="black" points="76.5,-96.5 261.5,-96.5 "/>
+<text text-anchor="start" x="84.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogSeamlyMePreferences()</text>
+<text text-anchor="start" x="84.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogSeamlyMePreferences()</text>
+<text text-anchor="start" x="84.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># changeEvent()</text>
 <text text-anchor="start" x="84.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showEvent()</text>
 <text text-anchor="start" x="84.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00"># resizeEvent()</text>
 <text text-anchor="start" x="84.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Apply()</text>
@@ -33,46 +34,47 @@
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="0,-232 0,-289 56,-289 56,-232 0,-232"/>
-<text text-anchor="middle" x="28" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">QDialog</text>
-<polyline fill="none" stroke="#bfbfbf" points="0,-270 56,-270 "/>
-<text text-anchor="middle" x="28" y="-258" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#bfbfbf" points="0,-251 56,-251 "/>
-<text text-anchor="middle" x="28" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="#bfbfbf" points="0,-237.5 0,-294.5 56,-294.5 56,-237.5 0,-237.5"/>
+<text text-anchor="middle" x="28" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">QDialog</text>
+<polyline fill="none" stroke="#bfbfbf" points="0,-275.5 56,-275.5 "/>
+<text text-anchor="middle" x="28" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#bfbfbf" points="0,-256.5 56,-256.5 "/>
+<text text-anchor="middle" x="28" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M42.93,-222.55C48.98,-209.29 56.54,-194.53 65,-182 75.91,-165.83 89.06,-149.65 102.28,-134.78"/>
-<polygon fill="none" stroke="midnightblue" points="39.65,-221.33 38.8,-231.89 46.05,-224.16 39.65,-221.33"/>
+<path fill="none" stroke="midnightblue" d="M44.65,-228.38C50.52,-216.72 57.52,-204.01 65,-193 75.87,-177 88.63,-160.78 101.43,-145.69"/>
+<polygon fill="none" stroke="midnightblue" points="41.47,-226.92 40.21,-237.44 47.76,-230 41.47,-226.92"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="../../d7/d92/classSeamlyMePreferencesPathPage.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="74.5,-199 74.5,-322 263.5,-322 263.5,-199 74.5,-199"/>
-<text text-anchor="middle" x="169" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00">SeamlyMePreferencesPathPage</text>
-<polyline fill="none" stroke="black" points="74.5,-303 263.5,-303 "/>
-<text text-anchor="start" x="82.5" y="-291" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<polyline fill="none" stroke="black" points="74.5,-284 263.5,-284 "/>
-<text text-anchor="start" x="82.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ SeamlyMePreferencesPathPage()</text>
-<text text-anchor="start" x="82.5" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~SeamlyMePreferencesPath</text>
-<text text-anchor="start" x="82.5" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">Page()</text>
-<text text-anchor="start" x="82.5" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ Apply()</text>
-<text text-anchor="start" x="82.5" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitTable()</text>
-<text text-anchor="start" x="82.5" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; DefaultPath()</text>
-<text text-anchor="start" x="82.5" y="-206" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; EditPath()</text>
+<polygon fill="white" stroke="black" points="74.5,-199 74.5,-333 263.5,-333 263.5,-199 74.5,-199"/>
+<text text-anchor="middle" x="169" y="-321" font-family="Helvetica,sans-Serif" font-size="10.00">SeamlyMePreferencesPathPage</text>
+<polyline fill="none" stroke="black" points="74.5,-314 263.5,-314 "/>
+<text text-anchor="start" x="82.5" y="-302" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<polyline fill="none" stroke="black" points="74.5,-295 263.5,-295 "/>
+<text text-anchor="start" x="82.5" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">+ SeamlyMePreferencesPathPage()</text>
+<text text-anchor="start" x="82.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~SeamlyMePreferencesPath</text>
+<text text-anchor="start" x="82.5" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">Page()</text>
+<text text-anchor="start" x="82.5" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ Apply()</text>
+<text text-anchor="start" x="82.5" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00"># changeEvent()</text>
+<text text-anchor="start" x="82.5" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initializeTable()</text>
+<text text-anchor="start" x="82.5" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; defaultPath()</text>
+<text text-anchor="start" x="82.5" y="-206" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; editPath()</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node1 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M169,-198.8C169,-182.29 169,-164.16 169,-146.82"/>
-<polygon fill="none" stroke="#404040" points="169,-146.66 165,-140.66 169,-134.66 173,-140.66 169,-146.66"/>
-<text text-anchor="middle" x="202.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_pathPage</text>
+<path fill="none" stroke="#404040" d="M169,-198.73C169,-185.62 169,-171.69 169,-158.07"/>
+<polygon fill="none" stroke="#404040" points="169,-157.69 165,-151.69 169,-145.69 173,-151.69 169,-157.69"/>
+<text text-anchor="middle" x="202.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_pathPage</text>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
@@ -90,14 +92,14 @@
 <!-- Node4&#45;&gt;Node3 -->
 <g id="edge3" class="edge">
 <title>Node4&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M250.38,-367.89C239.78,-354.03 227.37,-337.81 215.48,-322.27"/>
-<polygon fill="none" stroke="midnightblue" points="247.87,-370.37 256.72,-376.19 253.43,-366.12 247.87,-370.37"/>
+<path fill="none" stroke="midnightblue" d="M249.62,-368.32C241.03,-357.53 231.31,-345.31 221.66,-333.19"/>
+<polygon fill="none" stroke="midnightblue" points="246.98,-370.63 255.94,-376.28 252.46,-366.27 246.98,-370.63"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
 <g id="a_node5"><a xlink:href="../../df/de0/classSeamlyMePreferencesConfigurationPage.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="281.5,-182.5 281.5,-338.5 496.5,-338.5 496.5,-182.5 281.5,-182.5"/>
+<polygon fill="white" stroke="black" points="281.5,-193.5 281.5,-338.5 496.5,-338.5 496.5,-193.5 281.5,-193.5"/>
 <text text-anchor="middle" x="389" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">SeamlyMePreferencesConfigurationPage</text>
 <polyline fill="none" stroke="black" points="281.5,-319.5 496.5,-319.5 "/>
 <text text-anchor="start" x="289.5" y="-307.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
@@ -111,22 +113,21 @@
 <text text-anchor="start" x="289.5" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00">Page()</text>
 <text text-anchor="start" x="289.5" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Apply()</text>
 <text text-anchor="start" x="289.5" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00"># changeEvent()</text>
-<text text-anchor="start" x="289.5" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; RetranslateUi()</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
 <g id="edge5" class="edge">
 <title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M305.92,-368.16C312.99,-359.08 320.87,-348.96 328.88,-338.69"/>
-<polygon fill="none" stroke="midnightblue" points="303.05,-366.15 299.67,-376.19 308.57,-370.45 303.05,-366.15"/>
+<path fill="none" stroke="midnightblue" d="M306.79,-368.47C314.26,-359.24 322.58,-348.98 330.98,-338.61"/>
+<polygon fill="none" stroke="midnightblue" points="304.04,-366.3 300.46,-376.28 309.48,-370.71 304.04,-366.3"/>
 </g>
 <!-- Node5&#45;&gt;Node1 -->
 <g id="edge4" class="edge">
 <title>Node5&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M300.15,-182.36C285.04,-169.25 269.38,-155.65 254.36,-142.61"/>
-<polygon fill="none" stroke="#404040" points="254.17,-142.44 247.01,-141.53 245.11,-134.57 252.26,-135.49 254.17,-142.44"/>
-<text text-anchor="middle" x="333.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_configurationPage</text>
+<path fill="none" stroke="#404040" d="M306.45,-193.34C291.61,-180.45 276.06,-166.94 260.97,-153.84"/>
+<polygon fill="none" stroke="#404040" points="260.7,-153.62 253.55,-152.7 251.64,-145.75 258.8,-146.66 260.7,-153.62"/>
+<text text-anchor="middle" x="333.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_configurationPage</text>
 </g>
 </g>
 </svg>

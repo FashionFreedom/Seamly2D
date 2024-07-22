@@ -1,5 +1,6 @@
 var namespaceVPE =
 [
+    [ "DirectionProperty", "df/d74/classVPE_1_1DirectionProperty.html", "df/d74/classVPE_1_1DirectionProperty" ],
     [ "LineWeightProperty", "d8/ddf/classVPE_1_1LineWeightProperty.html", "d8/ddf/classVPE_1_1LineWeightProperty" ],
     [ "PlainTextProperty", "d6/d0b/classVPE_1_1PlainTextProperty.html", "d6/d0b/classVPE_1_1PlainTextProperty" ],
     [ "VBoolProperty", "df/d02/classVPE_1_1VBoolProperty.html", "df/d02/classVPE_1_1VBoolProperty" ],
