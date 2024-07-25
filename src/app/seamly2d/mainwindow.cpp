@@ -1650,24 +1650,28 @@ void MainWindow::handleImageTool()
     ui->importImage_ToolButton->setChecked(true);
 
     QString filename = getImageFilename();
-    QImageReader reader(filename);
 
-    if (!filename.isEmpty() && reader.canRead())
+    if(!filename.isEmpty())
     {
-        ImageTool *image_tool = new ImageTool(this, doc, draftScene, filename);
-        if(image_tool->creationWasSuccessful)
+        QImageReader reader(filename);
+
+        if (reader.canRead())
         {
-            connect(image_tool, &ImageTool::setStatusMessage, this, &MainWindow::setStatusMessage);
+            ImageTool *image_tool = new ImageTool(this, doc, draftScene, filename);
+            if(image_tool->creationWasSuccessful)
+            {
+                connect(image_tool, &ImageTool::setStatusMessage, this, &MainWindow::setStatusMessage);
+            }
+            else
+            {
+                image_tool->deleteLater();
+            }
         }
         else
         {
-            image_tool->deleteLater();
+            qCDebug(vMainWindow, "Can't load image");
+            QMessageBox::critical(this, tr("Import Image"), tr("Could not load the image."), QMessageBox::Ok);
         }
-    }
-    else
-    {
-        qCDebug(vMainWindow, "Can't load image");
-        QMessageBox::critical(this, tr("Import Image"), tr("Could not load the image."), QMessageBox::Ok);
     }
 
     ui->importImage_ToolButton->setChecked(false);
