@@ -64,7 +64,7 @@ public:
     virtual void     paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                            QWidget *widget = nullptr) override;
 
-    static constexpr qreal      maxImageZvalue = -100;
+    static constexpr qint32      maxImageZvalue = -100;
 
     void             moveToBottom();
     void             moveToTop();
@@ -119,6 +119,7 @@ private:
     SelectionType      m_selectionType;
     bool               m_transformationMode;
     DraftImage         m_image;
+    QPixmap            m_pixmap;
     qreal              m_pixmapWidth;
     qreal              m_pixmapHeight;
     bool               m_selectable;
