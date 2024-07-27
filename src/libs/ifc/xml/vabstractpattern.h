@@ -318,6 +318,7 @@ public:
     static const QString TagLine;
 
     static const QString TagDraftImages;
+    static const QString TagDraftImage;
     static const QString AttrId;
     static const QString AttrFilename;
     static const QString AttrLocked;
@@ -327,10 +328,15 @@ public:
     static const QString AttrHeight;
     static const QString AttrXScale;
     static const QString AttrYScale ;
-    static const QString AttrAspectLocked;
     static const QString AttrUnits;
     static const QString AttrOpacity;
     static const QString AttrOrder;
+    static const QString AttrAspectRatio;
+    static const QString AttrSource;
+    static const QString AttrXOffset;
+    static const QString AttrYOffset;
+    static const QString AttrBasepoint;
+
 
     static const QString AttrName;
     static const QString AttrVisible;
