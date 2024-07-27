@@ -127,6 +127,8 @@ const QString settingGraphicsViewShowDetailsToolBar      = QStringLiteral("graph
 const QString settingGraphicsViewShowLayoutToolBar       = QStringLiteral("graphicsview/showLayoutToolbar");
 
 const QString settingGraphicsViewShowScrollBars          = QStringLiteral("graphicsview/showScrollBars");
+const QString settingGraphicsViewAutoScroll              = QStringLiteral("graphicsview/autoScroll");
+const QString settingGraphicsViewAutoScrollSpeed         = QStringLiteral("graphicsview/autoScrollSpeed");
 const QString settingGraphicsViewScrollBarWidth          = QStringLiteral("graphicsview/scrollBarWidth");
 const QString settingGraphicsViewScrollDuration          = QStringLiteral("graphicsview/scrollDuration");
 const QString settingGraphicsViewScrollUpdateInterval    = QStringLiteral("graphicsview/scrollUpdateInterval");
@@ -921,13 +923,37 @@ void VCommonSettings::setShowLayoutToolBar(const bool &value)
 //---------------------------------------------------------------------------------------------------------------------
 bool  VCommonSettings::getShowScrollBars() const
 {
-    return value(settingGraphicsViewShowScrollBars, 1).toBool();
+    return value(settingGraphicsViewShowScrollBars, true).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VCommonSettings::setShowScrollBars(const bool  &value)
 {
     setValue(settingGraphicsViewShowScrollBars, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool  VCommonSettings::getAutoScroll() const
+{
+    return value(settingGraphicsViewAutoScroll, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setAutoScroll(const bool  &value)
+{
+    setValue(settingGraphicsViewAutoScroll, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::getAutoScrollSpeed() const
+{
+    return value(settingGraphicsViewAutoScrollSpeed, 200).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setAutoScrollSpeed(const int &speed)
+{
+    setValue(settingGraphicsViewAutoScrollSpeed, speed);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

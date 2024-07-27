@@ -1,62 +1,64 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//  ---------------------------------------------------------------------------
+//  @file   vmaingraphicsview.cpp
+//  @author Douglas S Caskey
+//  @date   25 Aug, 2024
+//
+//  @copyright
+//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//  ---------------------------------------------------------------------------
 
- ************************************************************************
- **
- **  @file   vmaingraphicsview.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//  ---------------------------------------------------------------------------
+//  @file   vmaingraphicsview.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   November 15, 2013
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2015 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//  ---------------------------------------------------------------------------
 
 #include "vmaingraphicsview.h"
 
+#include <QAbstractScrollArea>
 #include <QApplication>
 #include <QCursor>
 #include <QEvent>
 #include <QFlags>
+#include <QGesture>
 #include <QGraphicsItem>
 #include <QGraphicsScene>
+#include <QGuiApplication>
 #include <QLineF>
 #include <QList>
 #include <QMessageLogger>
@@ -64,16 +66,13 @@
 #include <QGestureEvent>
 #include <QPainter>
 #include <QPoint>
+#include <QScreen>
 #include <QScrollBar>
+#include <QThread>
 #include <QTimeLine>
 #include <QTransform>
 #include <QWheelEvent>
-#include <QGesture>
 #include <QWidget>
-#include <QGuiApplication>
-#include <QScreen>
-#include <QAbstractScrollArea>
-#include <QScreen>
 
 #include "../vmisc/logging.h"
 #include "../vmisc/def.h"
@@ -113,7 +112,7 @@ GraphicsViewZoom::GraphicsViewZoom(QGraphicsView* view)
 {
     m_view->viewport()->installEventFilter(this);
 
-    //Enable gestures for the view widget
+    // Enable gestures for the view widget
     m_view->viewport()->grabGesture(Qt::PinchGesture);
     m_view->viewport()->grabGesture(Qt::PanGesture);
     m_view->setMouseTracking(true);
@@ -159,6 +158,7 @@ void GraphicsViewZoom::gentleZoom(qreal factor)
 
 //---------------------------------------------------------------------------------------------------------------------
 // cppcheck-suppress unusedFunction
+
 void GraphicsViewZoom::setModifiers(Qt::KeyboardModifiers modifiers)
 {
   m_modifiers = modifiers;
@@ -166,6 +166,7 @@ void GraphicsViewZoom::setModifiers(Qt::KeyboardModifiers modifiers)
 
 //---------------------------------------------------------------------------------------------------------------------
 // cppcheck-suppress unusedFunction
+
 void GraphicsViewZoom::setZoomSpeedFactor(qreal value)
 {
     m_zoomSpeedFactor = value;
@@ -232,12 +233,11 @@ void GraphicsViewZoom::animFinished()
     m_numScheduledVerticalScrollings = 0;
     verticalScrollAnim->stop();
 
-    /*
-     * In moust cases cursor position on view doesn't change, but for scene after scrolling position will be different.
-     * We are goint to check changes and save new value.
-     * If don't do that we will zoom using old value cursor position on scene. It is not what we expect.
-     * Almoust the same we do in method GraphicsViewZoom::eventFilter.
-     */
+    // In most cases cursor position on view doesn't change, but for scene after scrolling position will be different.
+    // We are goint to check changes and save new value.
+    // If don't do that we will zoom using old value cursor position on scene. It is not what we expect.
+    // Almost the same we do in method GraphicsViewZoom::eventFilter.
+
     const QPoint pos = m_view->mapFromGlobal(QCursor::pos());
     const QPointF delta = targetScenePos - m_view->mapToScene(pos);
     if (qAbs(delta.x()) > 5 || qAbs(delta.y()) > 5)
@@ -255,11 +255,8 @@ bool GraphicsViewZoom::eventFilter(QObject *object, QEvent *event)
 
     if (event->type() == QEvent::MouseMove)
     {
-        /*
-         * Here we are saving cursor position on view and scene.
-         * This data need for gentleZoom().
-         * Almoust the same we do in method GraphicsViewZoom::animFinished.
-         */
+        // Here we are saving cursor position on view and scene. This data is needed for gentleZoom().
+        // Almost the same that we do in method GraphicsViewZoom::animFinished.
         QMouseEvent* mouse_event = static_cast<QMouseEvent*>(event);
         QPointF delta = targetViewPos - mouse_event->pos();
         if (qAbs(delta.x()) > 5 || qAbs(delta.y()) > 5)
@@ -340,7 +337,6 @@ void GraphicsViewZoom::panTriggered(QPanGesture *gesture)
     qCDebug(vGraphicsViewZoom) << "panTriggered():" << gesture;
     horizontalOffset += delta.x();
     verticalOffset += delta.y();
-    //m_view->scrollContentsBy(horizontalOffset, verticalOffset);
 }
 
 void GraphicsViewZoom::pinchTriggered(QPinchGesture *gesture)
@@ -359,13 +355,12 @@ void GraphicsViewZoom::fictiveSceneRect(QGraphicsScene *sc, QGraphicsView *view)
     SCASSERT(sc != nullptr)
     SCASSERT(view != nullptr)
 
-    //Calculate view rect
-    //to receive the currently visible area, map the widgets bounds to the scene
+    // Calculate view rect to receive the currently visible area, map the widgets bounds to the scene
     const QPointF a = view->mapToScene(0, 0 );
     const QPointF b = view->mapToScene(view->viewport()->width(), view->viewport()->height());
     QRectF viewRect = QRectF( a, b );
 
-    //Scale view
+    // Scale view
     QLineF topLeftRay(viewRect.center(), viewRect.topLeft());
     topLeftRay.setLength(topLeftRay.length()*2);
 
@@ -374,10 +369,10 @@ void GraphicsViewZoom::fictiveSceneRect(QGraphicsScene *sc, QGraphicsView *view)
 
     viewRect = QRectF(topLeftRay.p2(), bottomRightRay.p2());
 
-    //Calculate scene rect
+    // Calculate scene rect
     const QRectF sceneRect = sc->sceneRect();
 
-    //Unite two rects
+    // Unite two rects
     const QRectF newRect = sceneRect.united(viewRect);
 
     sc->setSceneRect(newRect);
@@ -407,7 +402,8 @@ bool GraphicsViewZoom::startVerticalScrollings(QWheelEvent *wheel_event)
 
     m_numScheduledVerticalScrollings += numSteps;
     if (m_numScheduledVerticalScrollings * numSteps < 0)
-    {  // if user moved the wheel in another direction, we reset previously scheduled scalings
+    {
+        // if user moved the wheel in another direction, we reset previously scheduled scalings
         m_numScheduledVerticalScrollings = numSteps;
     }
 
@@ -444,7 +440,8 @@ bool GraphicsViewZoom::startHorizontalScrollings(QWheelEvent *wheel_event)
 
     m_numScheduledHorizontalScrollings += numSteps;
     if (m_numScheduledHorizontalScrollings * numSteps < 0)
-    {  // if user moved the wheel in another direction, we reset previously scheduled scalings
+    {
+        // if user moved the wheel in another direction, we reset previously scheduled scalings
         m_numScheduledHorizontalScrollings = numSteps;
     }
 
@@ -459,11 +456,10 @@ bool GraphicsViewZoom::startHorizontalScrollings(QWheelEvent *wheel_event)
 
 Q_LOGGING_CATEGORY(vMainGraphicsView, "vmaingraphicsview")
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VMainGraphicsView constructor.
- * @param parent parent object.
- */
+
+// @brief VMainGraphicsView constructor.
+// @param parent parent object.
+
 VMainGraphicsView::VMainGraphicsView(QWidget *parent)
     : QGraphicsView(parent)
     , curMagnifier(new QCursor(QPixmap(":/cursor/magnifier_cursor.png"), 2, 2))
@@ -623,11 +619,10 @@ void VMainGraphicsView::setRubberBandColor(QRubberBand *band, const QColor &colo
     isRubberBandColorSet = true;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief mousePressEvent handle mouse press events.
- * @param event mouse press event.
- */
+
+// @brief mousePressEvent handle mouse press events.
+// @param event mouse press event.
+
 void VMainGraphicsView::mousePressEvent(QMouseEvent *event)
 {
     switch (event->button())
@@ -714,12 +709,14 @@ void VMainGraphicsView::mouseMoveEvent(QMouseEvent *event)
 {
     if ( (dragMode() == QGraphicsView::ScrollHandDrag) ||  isPanDragActive  )
     {
-        QScrollBar *hBar = horizontalScrollBar();
-        QScrollBar *vBar = verticalScrollBar();
+        QScrollBar *horz = horizontalScrollBar();
+        QScrollBar *vert = verticalScrollBar();
         const QPoint delta = event->pos() - m_ptStartPos;
-        hBar->setValue(hBar->value() + (isRightToLeft() ? delta.x() : -delta.x()));
-        vBar->setValue(vBar->value() - delta.y());
+        horz->setValue(horz->value() + (isRightToLeft() ? delta.x() : -delta.x()));
+        vert->setValue(vert->value() - delta.y());
         m_ptStartPos = event->pos();
+        unsigned long delay = static_cast<unsigned long>(200 + (200 - qApp->Settings()->getAutoScrollSpeed()));
+        QThread::msleep(10000); // delay is the inverse of the speed
     }
     else if ( isRubberBandActive )
     {
@@ -745,11 +742,9 @@ void VMainGraphicsView::mouseMoveEvent(QMouseEvent *event)
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief mouseReleaseEvent handle mouse release events.
- * @param event mouse release event.
- */
+// @brief mouseReleaseEvent handle mouse release events.
+// @param event mouse release event.
+
 void VMainGraphicsView::mouseReleaseEvent(QMouseEvent *event)
 {
     QGraphicsView::mouseReleaseEvent ( event ); // First because need to hide a rubber band
@@ -795,6 +790,41 @@ void VMainGraphicsView::mouseDoubleClickEvent(QMouseEvent *event)
     QGraphicsView::mouseDoubleClickEvent(event);
 }
 
+//  @brief ensureRectVisible ensure that bounding rectangle is visible in view
+//
+//  This function ensures that the given rectangle stays in view with a delay to control the scroll speed
+//
+//  @param rect bounding rectangle
+//  @param xmargin width margins added to the width of rectangle
+//  @param y margin height margin added to height of the rectangle
+//
+//  @details
+//  - Check if Autoscroll is true - if false then do not scroll.
+//  - Call ensureVisible to scroll scene to keep rect visile in the view.
+//  - Check if rect has moved since scrolling - if not do nothing.
+//  - Convert preferred speed to a delay in msec. More speed = less delay, less speed = more delay
+//    min speed = 0 / maxspeed = 400 / default speed = 200.
+//  - Call msleep for delay in msecs - which has the effect of slowing down the scrolling down.
+
+void VMainGraphicsView::ensureRectVisible(const QRectF &rect, int xmargin, int ymargin)
+{
+    if (!qApp->Settings()->getAutoScroll())
+    {
+        return;
+    }
+    const int horz = horizontalScrollBar()->value();
+    const int vert = verticalScrollBar()->value();
+
+    ensureVisible(rect, xmargin, ymargin);
+
+    if (horz != horizontalScrollBar()->value() || vert != verticalScrollBar()->value())
+    {
+        int speed = qApp->Settings()->getAutoScrollSpeed();
+        unsigned long delay = static_cast<unsigned long>(200 + (200 - speed)); // delay is the inverse of the speed
+        QThread::msleep(delay);
+    }
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 qreal VMainGraphicsView::MinScale()
 {
@@ -825,12 +855,10 @@ void VMainGraphicsView::allowRubberBand(bool value)
     isallowRubberBand = value;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief NewSceneRect calculate scene rect what contains all items and doesn't less that size of scene view.
- * @param sc scene.
- * @param view view.
- */
+// @brief NewSceneRect calculate scene rect what contains all items and doesn't less that size of scene view.
+// @param sc scene.
+// @param view view.
+
  void VMainGraphicsView::NewSceneRect(QGraphicsScene *sc, QGraphicsView *view, QGraphicsItem *item)
  {
     SCASSERT(sc != nullptr)
