@@ -57,6 +57,7 @@
 #include "../vtools/tools/union_tool.h"
 #include "../vtools/tools/drawTools/drawtools.h"
 #include "../vtools/tools/nodeDetails/nodedetails.h"
+#include "../tools/images/image_tool.h"
 #include "../ifc/exception/vexceptionobjecterror.h"
 #include "../ifc/exception/vexceptionwrongid.h"
 #include "../ifc/exception/vexceptionconversionerror.h"
@@ -683,7 +684,7 @@ VNodeDetail VPattern::parsePieceNode(const QDomElement &domElement) const
  */
 void VPattern::parseDraftBlockElement(const QDomNode &node, const Document &parse)
 {
-    QStringList tags = QStringList() << TagCalculation << TagModeling << TagPieces << TagGroups;
+    QStringList tags = QStringList() << TagCalculation << TagModeling << TagPieces << TagGroups << TagDraftImages;
     QDomNode domNode = node.firstChild();
     while (domNode.isNull() == false)
     {
@@ -710,6 +711,10 @@ void VPattern::parseDraftBlockElement(const QDomNode &node, const Document &pars
                     case 3: // TagGroups
                         qCDebug(vXML, "Tag groups.");
                         parseGroups(domElement);
+                        break;
+                    case 4: // TagDraftImages
+                        qCDebug(vXML, "Tag draft images.");
+                        parseDraftImages(domElement, parse);
                         break;
                     default:
                         VException e(tr("Wrong tag name '%1'.").arg(domElement.tagName()));
@@ -797,6 +802,37 @@ void VPattern::ParseDrawMode(const QDomNode &node, const Document &parse, const 
         }
     }
 }
+
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief ParseDraftImages parses draft images.
+ * @param node node.
+ */
+void VPattern::parseDraftImages(const QDomNode &node, const Document &parse)
+{
+    SCASSERT(draftScene != nullptr)
+    SCASSERT(pieceScene != nullptr)
+
+    const QDomNodeList nodeList = node.childNodes();
+    const qint32 num = nodeList.size();
+    for (qint32 i = 0; i < num; ++i)
+    {
+        QDomElement domElement = nodeList.at(i).toElement();
+        if (domElement.isNull() == false)
+        {
+            if (domElement.tagName()==TagDraftImage)
+            {
+                qCDebug(vXML, "Tag image.");
+                parseImageElement(domElement, parse);
+            }else{
+                VException e(tr("Wrong tag name '%1'.").arg(domElement.tagName()));
+                throw e;
+            }
+        }
+    }
+}
+
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -902,6 +938,54 @@ void VPattern::parsePieceElement(QDomElement &domElement, const Document &parse)
         throw excep;
     }
 }
+
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief parseImageElement parse image tag.
+ * @param domElement tag in xml tree.
+ */
+void VPattern::parseImageElement(QDomElement &domElement, const Document &parse)
+{
+    Q_ASSERT_X(not domElement.isNull(), Q_FUNC_INFO, "domElement is null");
+
+    DraftImage image;
+
+    image.id = getParameterId(domElement);
+    image.name = GetParametrString(domElement, AttrName, tr("Image_name"));
+    image.filename = GetParametrString(domElement, AttrSource);
+    image.width = GetParametrDouble(domElement, AttrWidth, "0.0");
+    image.height = GetParametrDouble(domElement, AttrHeight, "0.0");
+    image.xPos = GetParametrDouble(domElement, AttrXPos, "0.0");
+    image.yPos = GetParametrDouble(domElement, AttrYPos, "0.0");
+    image.rotation = GetParametrDouble(domElement, AttrRotation, "0.0");
+    image.aspectLocked = getParameterBool(domElement, AttrAspectRatio, falseStr);
+    image.locked = getParameterBool(domElement, AttrLocked, falseStr);
+    image.units = StrToUnits(GetParametrString(domElement, AttrUnits, "px"));
+    image.opacity = GetParametrDouble(domElement, AttrOpacity, "1.0");
+    image.order = qint32(GetParametrDouble(domElement, AttrOrder, "0"));
+    image.xOrigin = GetParametrDouble(domElement, AttrXOffset, "0.0");
+    image.yOrigin = GetParametrDouble(domElement, AttrYOffset, "0.0");
+    image.basepoint = GetParametrUInt(domElement, AttrBasepoint, 0);
+    image.visible = getParameterBool(domElement, AttrVisible, trueStr);
+
+    if(parse == Document::FullParse){
+        ImageTool *image_tool = new ImageTool(this, this, draftScene, image);
+        if(image_tool->creationWasSuccessful)
+        {
+            //connect(image_tool, &ImageTool::setStatusMessage, this, &MainWindow::setStatusMessage);
+        }
+        else
+        {
+            image_tool->deleteLater();
+        }
+    }
+    else
+    {
+        getBackgroundImage(image.id)->updateImageAndHandles(image);
+    }
+}
+
 
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::parsePieceNodes(const QDomElement &domElement, VPiece &piece, qreal width, bool closed) const
@@ -3937,15 +4021,14 @@ void VPattern::PrepareForParse(const Document &parse)
     if (parse == Document::FullParse)
     {
         TestUniqueId();
-        foreach (ImageItem *item, getBackgroundImageMap().values()) {draftScene->removeItem(item);}
         draftScene->clear();
-        foreach (ImageItem *item, getBackgroundImageMap().values()) {draftScene->addItem(item);}
         draftScene->initializeOrigins();
         pieceScene->clear();
         pieceScene->initializeOrigins();
         data->ClearForFullParse();
         activeDraftBlock.clear();
         patternPieces.clear();
+        clearBackgroundImageMap();
 
         qDeleteAll(toolsOnRemove);//Remove all invisible on a scene objects.
         toolsOnRemove.clear();
