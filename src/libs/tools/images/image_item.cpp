@@ -36,6 +36,7 @@
 
 #include <QColor>
 #include <QEvent>
+#include <QImageReader>
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsView>
@@ -81,6 +82,17 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
 {
     initializeItem();
 
+    QImageReader imageReader(m_image.filename);
+    m_pixmap = QPixmap::fromImageReader(&imageReader);
+    m_pixmapWidth = m_pixmap.width();
+    m_pixmapHeight = m_pixmap.height();
+
+    if (m_image.width == 0 || m_image.height == 0)
+    {
+        m_image.width  = m_pixmapWidth;
+        m_image.height = m_pixmapHeight;
+    }
+
     m_boundingRect = QRectF(m_image.xPos - m_image.xOrigin, m_image.yPos - m_image.yOrigin, m_image.width, m_image.height);
     m_handleRect   = m_boundingRect.adjusted(HANDLE_SIZE/2, HANDLE_SIZE/2, -HANDLE_SIZE/2, -HANDLE_SIZE/2);
     m_origin = m_boundingRect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
@@ -88,10 +100,10 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
 
     if (m_image.order == 0)
     {
-        qreal   minZValue = maxImageZvalue+1;
+        qint32   minZValue = maxImageZvalue+1;
         foreach (ImageItem *item, m_doc->getBackgroundImageMap().values())
         {
-                minZValue = qMin(minZValue, item->m_image.order);
+            minZValue = qMin(minZValue, item->m_image.order);
         }
         m_image.order = minZValue-1;
         moveToTop();
@@ -120,7 +132,7 @@ void ImageItem::setPixmap(const QPixmap &pixmap)
 {
     prepareGeometryChange();
 
-    m_image.pixmap = pixmap;
+    m_pixmap = pixmap;
 
     m_pixmapWidth  = pixmap.width();
     m_pixmapHeight = pixmap.height();
@@ -219,7 +231,7 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     }
 
     painter->setRenderHint(QPainter::SmoothPixmapTransform, (m_transformationMode == Qt::SmoothTransformation));
-    painter->drawPixmap(m_boundingRect.x(), m_boundingRect.y(), m_image.width, m_image.height, m_image.pixmap);
+    painter->drawPixmap(m_boundingRect.x(), m_boundingRect.y(), m_image.width, m_image.height, m_pixmap);
 
     if (m_origin != m_boundingRect.topLeft())
     {
@@ -386,7 +398,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
     if (selectedAction == actionProperties)
     {
-        ImageDialog *dialog = new ImageDialog(m_image, m_minDimension, m_maxDimension, qApp->getMainWindow());
+        ImageDialog *dialog = new ImageDialog(m_image, m_minDimension, m_maxDimension, m_pixmapWidth, m_pixmapHeight, qApp->getMainWindow());
         connect(dialog, &ImageDialog::applyClicked, this, &ImageItem::updateImageAndHandles);
 
         if (dialog->exec() == QDialog::Accepted)
@@ -617,7 +629,7 @@ void ImageItem::deleteImageItem()
 
 void ImageItem::moveToBottom()
 {
-    qreal   minZValue = m_image.order;
+    qint32   minZValue = m_image.order;
     foreach (ImageItem *item, m_doc->getBackgroundImageMap().values())
     {
         if (item != this && item->m_image.order < m_image.order)

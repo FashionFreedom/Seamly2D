@@ -60,12 +60,12 @@
 #include <new>
 
 //---------------------------------------------------------------------------------------------------------------------
-ImageDialog::ImageDialog(DraftImage image, qreal minDimension, qreal maxDimension, QWidget *parent)
+ImageDialog::ImageDialog(DraftImage image, qreal minDimension, qreal maxDimension, qreal pixmapWidth, qreal pixmapHeight, QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::ImageDialog)
     , m_image(image)
-    , m_pixmapWidth(image.pixmap.width())
-    , m_pixmapHeight(image.pixmap.height())
+    , m_pixmapWidth(pixmapWidth)
+    , m_pixmapHeight(pixmapHeight)
     , m_maxDimension(maxDimension)
     , m_minDimension(minDimension)
     , m_minOpacity(5)
@@ -143,7 +143,6 @@ void ImageDialog::updateImage()
     qDebug("Name = %s", qUtf8Printable(m_image.name));
     qDebug("Filename = %s", qUtf8Printable(m_image.filename));
     qDebug("lock Image = %s", m_image.locked ? "True" : "False");
-    qDebug("Anchor = %d", static_cast<int>(m_image.anchor));
     qDebug("Xpos = %f", m_image.xPos);
     qDebug("YPos = %f", m_image.yPos);
     qDebug("Width = %f", m_image.width);
@@ -153,7 +152,7 @@ void ImageDialog::updateImage()
     qDebug("Rotation = %f", m_image.rotation);
     qDebug("Visible = %s",  m_image.visible ? "True" : "False");
     qDebug("Opacity = %f", m_image.opacity);
-    qDebug("Order = %d\n", static_cast<int>(m_image.order));
+    qDebug("Order = %d\n", static_cast<qint32>(m_image.order));
 }
 
 void ImageDialog::enableWidgets()
