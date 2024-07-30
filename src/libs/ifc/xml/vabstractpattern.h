@@ -478,10 +478,10 @@ signals:
     void           ClearMainWindow();
     void           UndoCommand();
     void           setGuiEnabled(bool enabled);
-    void           CheckLayout();
+    void           patternParsed();
     void           UpdateInLayoutList(quint32 id);
     void           showPiece(quint32 id);
-    void           setCurrentDraftBlock(const QString &patterPiece);
+    void           setCurrentDraftBlock(const QString &draftblock);
     void           patternHasGroups(bool value);
     void           updateGroups();
 
