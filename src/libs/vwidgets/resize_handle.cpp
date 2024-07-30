@@ -79,6 +79,7 @@ QRectF ResizeHandlesItem::boundingRect() const
 void ResizeHandlesItem::setParentRect(const QRectF & rect)
 {
     m_parentRect = rect;
+    m_sizeChangedExternally = true;
     updateHandlePositions();
 }
 
@@ -194,7 +195,14 @@ void ResizeHandlesItem::updateHandlePositions()
         item->setFlag(ItemSendsGeometryChanges, true);
     }
 
-    emit sizeChanged(m_parentRect);
+    if(!m_sizeChangedExternally)
+    {
+        emit sizeChangedFromHandles(m_parentRect);
+    }
+    else
+    {
+        m_sizeChangedExternally = false;
+    }
 }
 
 /**
