@@ -2233,6 +2233,25 @@ QDomElement VAbstractPattern::createGroups()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QDomElement VAbstractPattern::createDraftImages()
+{
+    QDomElement draftBlock;
+    if (getActiveDraftElement(draftBlock))
+    {
+        QDomElement backgroundImages = draftBlock.firstChildElement(TagDraftImages);
+
+        if (backgroundImages.isNull())
+        {
+            backgroundImages = createElement(TagDraftImages);
+            draftBlock.appendChild(backgroundImages);
+        }
+
+        return backgroundImages;
+    }
+    return QDomElement();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QDomElement VAbstractPattern::createGroup(quint32 groupId, const QString &name, const QString &color, const QString &type,
                                           const QString &weight, const QMap<quint32, quint32> &groupData)
 {

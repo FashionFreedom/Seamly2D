@@ -86,7 +86,7 @@ public:
     void             deleteImageItem();
 
 signals:
-    void             imageUpdated(DraftImage image);
+    void             imageNeedsSave();
     void             showContextMenu(QGraphicsSceneContextMenuEvent *event);
     void             deleteImage(quint32 id);
     void             imageSelected(quint32 id);
@@ -126,6 +126,7 @@ private:
     qreal              m_minDimension;
     qreal              m_maxDimension;
     bool               m_selectNewOrigin;
+    bool               m_imageWasMoved;
 
     void               initializeItem();
     void               updateFromHandles(QRectF rect);
