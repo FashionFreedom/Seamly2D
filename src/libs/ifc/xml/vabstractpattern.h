@@ -278,6 +278,8 @@ public:
     QString                        useGroupLineType(quint32 toolId, QString type);
     QString                        useGroupLineWeight(quint32 toolId, QString weight);
 
+    QDomElement                    createDraftImages();
+
     QPair<bool, QMap<quint32, quint32> > parseItemElement(const QDomElement &domElement);
 
     static const QString TagPattern;

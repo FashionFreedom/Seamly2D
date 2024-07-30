@@ -969,11 +969,12 @@ void VPattern::parseImageElement(QDomElement &domElement, const Document &parse)
     image.basepoint = GetParametrUInt(domElement, AttrBasepoint, 0);
     image.visible = getParameterBool(domElement, AttrVisible, trueStr);
 
-    if(parse == Document::FullParse){
+    if(parse == Document::FullParse)
+    {
         ImageTool *image_tool = new ImageTool(this, this, draftScene, image);
         if(image_tool->creationWasSuccessful)
         {
-            //connect(image_tool, &ImageTool::setStatusMessage, this, &MainWindow::setStatusMessage);
+            connect(image_tool, &ImageTool::setStatusMessage, this, [this](QString message) {emit setStatusMessage(message);});
         }
         else
         {
