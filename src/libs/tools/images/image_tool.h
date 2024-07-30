@@ -59,14 +59,11 @@ protected slots:
     void        handleImageSelected(quint32 id);
 
 private:
-    static bool m_firstImportImage;
-
     VAbstractPattern    *m_doc;
     VMainGraphicsScene  *m_draftScene;
     QDomElement         m_oldDomElement;
 
     void        addImage(const Source &typeCreation);
-    void        InfoUnsavedImages();
 
     void             saveOptions(QDomElement &tag);
     void             saveChanges();
