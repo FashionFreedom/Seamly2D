@@ -98,7 +98,7 @@ public:
 
 
 signals:
-    void               sizeChanged(QRectF rect);
+    void               sizeChangedFromHandles(QRectF rect);
     void               setStatusMessage(QString message);
 
 private:
@@ -111,6 +111,8 @@ private:
     qreal              m_parentRotation;
     qreal              m_minDimension;
     qreal              m_maxDimension;
+
+    bool               m_sizeChangedExternally;
 };
 
 #endif //RESIZE_HANDLE_H
