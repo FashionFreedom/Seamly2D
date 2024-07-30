@@ -43,7 +43,6 @@
 
 Q_LOGGING_CATEGORY(vImageTool, "v.imageTool")
 
-bool ImageTool::m_firstImportImage = true;
 
 ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene *draftScene, QString filename)
     : QObject(parent),
@@ -123,13 +122,6 @@ void  ImageTool::addImage(const Source &typeCreation)
     connect(imageItem, &ImageItem::setStatusMessage, this, [this](QString message) {emit setStatusMessage(message);});
     connect(imageItem, &ImageItem::imageNeedsSave, this, &ImageTool::saveChanges);
 
-
-    if(m_firstImportImage)
-    {
-        qCDebug(vImageTool, "This is the first time an image is loaded.");
-        InfoUnsavedImages();
-    }
-
     creationWasSuccessful = true;
 }
 
@@ -181,31 +173,6 @@ void ImageTool::handleImageSelected(quint32 id)
     {
         // May be useful in the development of the background-image feature
     }
-}
-
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief InfoUnsavedImages is called when the user imports his first image.
- */
-void ImageTool::InfoUnsavedImages()
-{
-        QScopedPointer<QMessageBox> messageBox(new QMessageBox(QMessageBox::Information,
-                                                               tr("Images will not be saved"),
-                                                               tr("Please note that the images can not be saved and that they are not affected "
-                                                                  "by the undo and redo functions in the current version of the software.\n\n"
-                                                                  "You may want to take a screenshot of the image properties dialog before closing the software "
-                                                                  "to be able to recreate identically the image when opening the software again."),
-                                                               QMessageBox::NoButton,
-                                                               nullptr,Qt::Sheet));
-
-        messageBox->setWindowModality(Qt::ApplicationModal);
-        messageBox->setWindowFlags(Qt::WindowFlags() & ~Qt::WindowContextHelpButtonHint
-                                   & ~Qt::WindowMaximizeButtonHint
-                                   & ~Qt::WindowMinimizeButtonHint);
-
-        messageBox->exec();
-        m_firstImportImage = false;
 }
 
 
