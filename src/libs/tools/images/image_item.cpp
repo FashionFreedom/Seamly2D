@@ -116,7 +116,7 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
     m_resizeHandles->setParentRotation(m_image.rotation);
     m_resizeHandles->parentIsLocked(m_image.locked);
     m_resizeHandles->setVisible(m_image.locked);
-    connect(m_resizeHandles, &ResizeHandlesItem::sizeChanged, this, &ImageItem::updateFromHandles);
+    connect(m_resizeHandles, &ResizeHandlesItem::sizeChangedFromHandles, this, &ImageItem::updateFromHandles);
     connect(m_resizeHandles, &ResizeHandlesItem::setStatusMessage, this, [this](QString message) {emit setStatusMessage(message);});
 }
 
