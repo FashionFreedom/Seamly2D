@@ -116,6 +116,7 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
     m_resizeHandles->setParentRotation(m_image.rotation);
     m_resizeHandles->parentIsLocked(m_image.locked);
     m_resizeHandles->setVisible(m_image.locked);
+    connect(m_resizeHandles, &ResizeHandlesItem::imageNeedsSave, this, [this]() {emit imageNeedsSave();});
     connect(m_resizeHandles, &ResizeHandlesItem::sizeChangedFromHandles, this, &ImageItem::updateFromHandles);
     connect(m_resizeHandles, &ResizeHandlesItem::setStatusMessage, this, [this](QString message) {emit setStatusMessage(message);});
 }
@@ -184,8 +185,6 @@ void  ImageItem::updateImage()
     setLock(m_image.locked);
 
     setZValue(m_image.order);
-
-    emit imageUpdated(m_image);
 }
 
 void ImageItem::setLock(bool checked)
@@ -404,12 +403,14 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         if (dialog->exec() == QDialog::Accepted)
         {
             updateImageAndHandles(dialog->getImage());
+            emit imageNeedsSave();
         }
     }
     else if (selectedAction == actionLock)
     {
         m_image.locked = !m_image.locked;
         updateImageAndHandles(m_image);
+        emit imageNeedsSave();
     }
     // else if (selectedAction == actionShow)
     // {
@@ -435,18 +436,22 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     else if (selectedAction == actionMoveTop)
     {
         moveToTop();
+        emit imageNeedsSave();
     }
     else if (selectedAction == actionMoveUp)
     {
         moveUp();
+        emit imageNeedsSave();
     }
     else if (selectedAction == actionMoveDn)
     {
         moveDown();
+        emit imageNeedsSave();
     }
     else if (selectedAction == actionMoveBottom)
     {
         moveToBottom();
+        emit imageNeedsSave();
     }
 
     emit showContextMenu(event);
@@ -511,6 +516,8 @@ void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
     if (flags() & QGraphicsItem::ItemIsMovable && event->buttons() & Qt::LeftButton)
     {
+        m_imageWasMoved = true;
+
         m_image.xPos = mapToScene(event->pos() - m_offset).x();
         m_image.yPos = mapToScene(event->pos() - m_offset).y();
 
@@ -523,6 +530,11 @@ void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 void ImageItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
+    if(m_imageWasMoved){
+        m_imageWasMoved = false;
+        emit imageNeedsSave();
+    }
+
     if (flags() & QGraphicsItem::ItemIsMovable)
     {
         if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
@@ -542,10 +554,10 @@ void ImageItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
         setFlag(QGraphicsItem::ItemIsMovable, true);
         SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
         m_resizeHandles->show();
+        emit imageNeedsSave();
     }
 
     m_mousePressed = false;
-
     QGraphicsItem::mouseReleaseEvent(event);
 }
 
@@ -555,18 +567,18 @@ void ImageItem::keyReleaseEvent(QKeyEvent *event)
     switch (event->key())
     {
         case Qt::Key_Delete:
-        if (!m_image.locked && isSelected())
-        {
-            emit deleteImage(m_image.id);
-        }
+            if (!m_image.locked && isSelected())
+            {
+                emit deleteImage(m_image.id);
+            }
         case Qt::Key_Escape:
-        if (m_selectNewOrigin)
-        {
-            m_selectNewOrigin = false;
-            setFlag(QGraphicsItem::ItemIsMovable, true);
-            SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
-            m_resizeHandles->show();
-        }
+            if (m_selectNewOrigin)
+            {
+                m_selectNewOrigin = false;
+                setFlag(QGraphicsItem::ItemIsMovable, true);
+                SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
+                m_resizeHandles->show();
+            }
         default:
             break;
     }

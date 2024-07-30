@@ -123,6 +123,9 @@ public:
 
     static const QString AttrReadOnly;
 
+signals:
+    void             setStatusMessage(QString message);
+
 public slots:
     virtual void LiteParseTree(const Document &parse) Q_DECL_OVERRIDE;
 

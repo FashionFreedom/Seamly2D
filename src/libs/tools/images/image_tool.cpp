@@ -36,6 +36,11 @@
 #include "image_item.h"
 #include "../vpropertyexplorer/checkablemessagebox.h"
 
+#include "../../vtools/undocommands/deltool.h"
+#include "../../vtools/undocommands/savetooloptions.h"
+#include "../../vtools/undocommands/addimage.h"
+
+
 Q_LOGGING_CATEGORY(vImageTool, "v.imageTool")
 
 bool ImageTool::m_firstImportImage = true;
@@ -61,7 +66,7 @@ ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene 
     image.filename = filename;
     image.units = qApp->patternUnit();
 
-    addImage();
+    addImage(Source::FromGui);
 }
 
 
@@ -87,36 +92,24 @@ ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene 
         image.name = f.baseName();
     }
 
-    addImage();
+    addImage(Source::FromFile);
 }
 
 
-void  ImageTool::addImage()
+void  ImageTool::addImage(const Source &typeCreation)
 {
     QImageReader imageReader(image.filename);
 
-    image.id = VContainer::getNextId();
+    if (typeCreation == Source::FromGui)
+    {
+        image.id = VContainer::getNextId();
+    }
 
     if(!imageReader.canRead())
     {
         qCDebug(vImageTool, "Can't read image");
         QMessageBox::critical(nullptr, tr("Import Image"), tr("Could not read the image.") + "\n" + tr("File may be corrupted..."), QMessageBox::Ok);
         return;
-    }
-
-    image.pixmap = QPixmap::fromImageReader(&imageReader);
-
-    if(image.pixmap.isNull())
-    {
-        qCDebug(vImageTool, "Can't read image");
-        QMessageBox::critical(nullptr, tr("Import Image"), tr("Could not read the image.") + "\n" + tr("File may be corrupted or empty..."), QMessageBox::Ok);
-        return;
-    }
-
-    if (image.width == 0 || image.height == 0)
-    {
-        image.width  = image.pixmap.width();
-        image.height = image.pixmap.height();
     }
 
     imageItem = new ImageItem(this, m_doc, image);
@@ -129,6 +122,7 @@ void  ImageTool::addImage()
     connect(imageItem, &ImageItem::deleteImage, this, &ImageTool::handleDeleteImage);
     //connect(item, &ImageItem::imageSelected, this, &MainWindow::handleImageSelected);
     connect(imageItem, &ImageItem::setStatusMessage, this, [this](QString message) {emit setStatusMessage(message);});
+    connect(imageItem, &ImageItem::imageNeedsSave, this, &ImageTool::saveChanges);
 
 
     if(m_firstImportImage)
@@ -171,9 +165,11 @@ void ImageTool::handleDeleteImage(quint32 id)
 
     if (deleteConfirmed)
     {
-        m_doc->removeBackgroundImage(id);
         imageItem->deleteImageItem();
-        deleteLater();
+
+        DelTool *delTool = new DelTool(m_doc, id);
+        connect(delTool, &DelTool::NeedFullParsing, m_doc, &VAbstractPattern::NeedFullParsing);
+        qApp->getUndoStack()->push(delTool);
     }
 }
 
@@ -211,4 +207,69 @@ void ImageTool::InfoUnsavedImages()
 
         messageBox->exec();
         m_firstImportImage = false;
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief addToFile add tag with informations about image into file.
+ */
+void ImageTool::addToFile()
+{
+    QDomElement domElement = m_doc->createElement(VAbstractPattern::TagDraftImage);
+
+    saveOptions(domElement);
+
+    AddImage *cmd = new AddImage(domElement, m_doc);
+    connect(cmd, &AddImage::NeedFullParsing, m_doc, &VAbstractPattern::NeedFullParsing);
+    qApp->getUndoStack()->push(cmd);
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+void ImageTool::saveOptions(QDomElement &tag)
+{
+    image = imageItem->getImage();
+
+    m_doc->SetAttribute(tag, VDomDocument::AttrId, image.id);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrName,  image.name);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrSource, image.filename);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrWidth,  image.width);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrHeight, image.height);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrUnits,  UnitsToStr(image.units));
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrXPos,   image.xPos);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrYPos,   image.yPos);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrOpacity, image.opacity);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrRotation, image.rotation);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrAspectRatio, image.aspectLocked);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrVisible, image.visible);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrLocked, image.locked);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrBasepoint, image.basepoint);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrOrder, qreal(image.order));
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrXOffset, image.xOrigin);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrYOffset, image.yOrigin);
+}
+
+void ImageTool::saveChanges()
+{
+    qCDebug(vImageTool, "Saving image options");
+
+    quint32 id = imageItem->getImage().id;
+    QDomElement domElement = m_doc->elementById(id, VAbstractPattern::TagDraftImage);
+    if (domElement.isElement())
+    {
+        QDomElement newDomElement = domElement.cloneNode().toElement();
+
+        saveOptions(newDomElement);
+
+        SaveToolOptions *saveOptions = new SaveToolOptions(domElement, newDomElement, m_doc, id);
+        connect(saveOptions, &SaveToolOptions::NeedLiteParsing, m_doc, &VAbstractPattern::LiteParseTree);
+        qApp->getUndoStack()->push(saveOptions);
+    }
+    else
+    {
+        qCDebug(vUndo, "Can't get node by id = %u.", id);
+        return;
+    }
+
 }

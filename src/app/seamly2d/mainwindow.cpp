@@ -220,6 +220,7 @@ MainWindow::MainWindow(QWidget *parent)
         connect(doc, &VPattern::patternChanged,  this, &MainWindow::patternChangesWereSaved);
         connect(doc, &VPattern::UndoCommand,     this, &MainWindow::fullParseFile);
         connect(doc, &VPattern::setGuiEnabled,   this, &MainWindow::setGuiEnabled);
+        connect(doc, &VPattern::setStatusMessage, this, &MainWindow::setStatusMessage);
 
         // After a pattern is parsed show draft block scene if any draft blocks exist
         // AND the View->Draft menu item is checked.
@@ -1750,6 +1751,7 @@ void MainWindow::handleImageTool()
             if(image_tool->creationWasSuccessful)
             {
                 connect(image_tool, &ImageTool::setStatusMessage, this, &MainWindow::setStatusMessage);
+                image_tool->addToFile();
             }
             else
             {

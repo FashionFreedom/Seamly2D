@@ -67,7 +67,7 @@ private:
 
             ResizeHandlesItem *m_parent;
             Position           m_handlePosition;
-            bool               m_isHovered;
+            bool               m_coloredHandles;
             qreal              m_scalingFactor;
             qreal              m_minDimension;
             qreal              m_maxDimension;
@@ -100,6 +100,7 @@ public:
 signals:
     void               sizeChangedFromHandles(QRectF rect);
     void               setStatusMessage(QString message);
+    void               imageNeedsSave();
 
 private:
     void               updateHandlePositions();
