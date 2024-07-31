@@ -188,6 +188,7 @@ private slots:
     void exportDraftBlocksAs();
 
     void handleArrowTool(bool checked);
+    void handleMeasurementTool(bool checked);
     void handlePointAtDistanceAngleTool(bool checked);
     void handleAlongLineTool(bool checked);
     void handleMidpointTool(bool checked);

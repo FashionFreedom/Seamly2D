@@ -2910,6 +2910,7 @@ void MainWindow::zoomToPoint(const QString &pointName)
 void MainWindow::initializeToolButtons()
 {
     connect(ui->arrowPointer_ToolButton, &QToolButton::clicked, this, &MainWindow::handleArrowTool);
+    connect(ui->measure_ToolButton, &QToolButton::clicked, this, &MainWindow::handleMeasurementTool);
 
     // This check helps to find missed tools
     Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Check if all tools were connected.");
@@ -3685,6 +3686,17 @@ void  MainWindow::handleArrowTool(bool checked)
         ui->arrow_Action->setChecked(true);
     }
 }
+
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief handleMeasurementTool enable measurement tool.
+ */
+void  MainWindow::handleMeasurementTool(bool checked)
+{
+    qCDebug(vMainWindow, "Measurement tool");
+}
+
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -5069,6 +5081,8 @@ void MainWindow::setToolsEnabled(bool enable)
     ui->arrowPointer_ToolButton->setEnabled(draftTools || pieceTools);
     ui->arrowPointer_ToolButton->setChecked(draftTools || pieceTools);
     ui->arrow_Action->setChecked(draftTools || pieceTools);
+
+    ui->measure_ToolButton->setEnabled(draftTools || pieceTools);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

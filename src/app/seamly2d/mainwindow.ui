@@ -49,10 +49,10 @@
        </sizepolicy>
       </property>
       <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOn</enum>
+       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOn</enum>
       </property>
       <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOn</enum>
+       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOn</enum>
       </property>
      </widget>
     </item>
@@ -64,7 +64,7 @@
      <x>0</x>
      <y>0</y>
      <width>1100</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="file_Menu">
@@ -359,7 +359,7 @@
     <string>File Toolbar</string>
    </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
+    <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -385,7 +385,7 @@
     <string>Mode ToolBar</string>
    </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
+    <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -410,7 +410,7 @@
     <string>Pattern Toolbar</string>
    </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
+    <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -433,7 +433,7 @@
     <string>Edit Toolbar</string>
    </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
+    <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -465,7 +465,7 @@
     </size>
    </property>
    <property name="allowedAreas">
-    <set>Qt::RightDockWidgetArea</set>
+    <set>Qt::DockWidgetArea::RightDockWidgetArea</set>
    </property>
    <property name="windowTitle">
     <string>Layout Pages</string>
@@ -502,10 +502,10 @@
         </size>
        </property>
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::Shape::StyledPanel</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
+        <enum>QFrame::Shadow::Sunken</enum>
        </property>
        <property name="tabKeyNavigation">
         <bool>true</bool>
@@ -520,22 +520,22 @@
         </size>
        </property>
        <property name="movement">
-        <enum>QListView::Static</enum>
+        <enum>QListView::Movement::Static</enum>
        </property>
        <property name="flow">
-        <enum>QListView::TopToBottom</enum>
+        <enum>QListView::Flow::TopToBottom</enum>
        </property>
        <property name="isWrapping" stdset="0">
         <bool>false</bool>
        </property>
        <property name="resizeMode">
-        <enum>QListView::Adjust</enum>
+        <enum>QListView::ResizeMode::Adjust</enum>
        </property>
        <property name="spacing">
         <number>10</number>
        </property>
        <property name="viewMode">
-        <enum>QListView::IconMode</enum>
+        <enum>QListView::ViewMode::IconMode</enum>
        </property>
       </widget>
      </item>
@@ -572,7 +572,7 @@
     <string>Zoom ToolBar</string>
    </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
+    <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -592,7 +592,7 @@
   </widget>
   <widget class="QToolBar" name="tools_ToolBox_ToolBar">
    <property name="contextMenuPolicy">
-    <enum>Qt::DefaultContextMenu</enum>
+    <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
    </property>
    <property name="windowTitle">
     <string>Toolbox ToolBar</string>
@@ -788,7 +788,7 @@
     <bool>false</bool>
    </property>
    <property name="allowedAreas">
-    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+    <set>Qt::DockWidgetArea::LeftDockWidgetArea|Qt::DockWidgetArea::RightDockWidgetArea</set>
    </property>
    <property name="windowTitle">
     <string>Toolbox</string>
@@ -831,32 +831,65 @@
         <number>6</number>
        </property>
        <item>
-        <widget class="QToolButton" name="arrowPointer_ToolButton">
-         <property name="enabled">
-          <bool>false</bool>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="sizeConstraint">
+          <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
          </property>
-         <property name="toolTip">
-          <string>Tool pointer</string>
-         </property>
-         <property name="text">
-          <string notr="true">...</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-           <normaloff>:/icon/32x32/arrow_cursor.png</normaloff>:/icon/32x32/arrow_cursor.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-        </widget>
+         <item>
+          <widget class="QToolButton" name="arrowPointer_ToolButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="toolTip">
+            <string>Tool pointer</string>
+           </property>
+           <property name="text">
+            <string notr="true">...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+             <normaloff>:/icon/32x32/arrow_cursor.png</normaloff>:/icon/32x32/arrow_cursor.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="measure_ToolButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="toolTip">
+            <string>Measurement tool</string>
+           </property>
+           <property name="text">
+            <string notr="true">...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+             <normaloff>:/icon/32x32/units_black.png</normaloff>:/icon/32x32/units_black.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
-       <item alignment="Qt::AlignTop">
+       <item alignment="Qt::AlignmentFlag::AlignTop">
         <widget class="QStackedWidget" name="toolbox_StackedWidget">
          <property name="minimumSize">
           <size>
@@ -911,8 +944,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>128</width>
-                <height>288</height>
+                <width>118</width>
+                <height>294</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -948,7 +981,7 @@
               </attribute>
               <layout class="QFormLayout" name="formLayout_6">
                <property name="fieldGrowthPolicy">
-                <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+                <enum>QFormLayout::FieldGrowthPolicy::AllNonFixedFieldsGrow</enum>
                </property>
                <property name="verticalSpacing">
                 <number>4</number>
@@ -1258,8 +1291,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>111</width>
-                <height>58</height>
+                <width>124</width>
+                <height>59</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -1356,8 +1389,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>128</width>
-                <height>196</height>
+                <width>124</width>
+                <height>200</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -1616,8 +1649,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>128</width>
-                <height>226</height>
+                <width>110</width>
+                <height>231</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -1896,8 +1929,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>128</width>
-                <height>180</height>
+                <width>124</width>
+                <height>184</height>
                </rect>
               </property>
               <property name="toolTip">
@@ -2118,8 +2151,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>128</width>
-                <height>96</height>
+                <width>124</width>
+                <height>98</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -2268,8 +2301,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>128</width>
-                <height>56</height>
+                <width>124</width>
+                <height>61</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -2524,7 +2557,7 @@
             </attribute>
             <layout class="QFormLayout" name="formLayout_15">
              <property name="fieldGrowthPolicy">
-              <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+              <enum>QFormLayout::FieldGrowthPolicy::AllNonFixedFieldsGrow</enum>
              </property>
              <property name="verticalSpacing">
               <number>4</number>
@@ -2599,6 +2632,19 @@
          </widget>
         </widget>
        </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
       </layout>
      </item>
     </layout>
@@ -2642,7 +2688,7 @@
     <string notr="true">Ctrl+N</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="actionOpen">
@@ -2663,7 +2709,7 @@
     <string notr="true">Ctrl+O</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="save_Action">
@@ -2687,7 +2733,7 @@
     <string notr="true">Ctrl+S</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="saveAs_Action">
@@ -2695,8 +2741,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-save-as">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-save-as"/>
    </property>
    <property name="text">
     <string>Save &amp;As...</string>
@@ -2708,7 +2753,7 @@
     <string notr="true">Ctrl+Shift+S</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="showDraftMode">
@@ -2738,7 +2783,7 @@
     <string notr="true">Shift+D</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="pieceMode_Action">
@@ -2762,7 +2807,7 @@
     <string notr="true">Shift+P</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="arrow_Action">
@@ -2804,7 +2849,7 @@
     <string notr="true">Ctrl+Shift+N</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="renameDraft_Action">
@@ -2825,7 +2870,7 @@
     <string notr="true">F2</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="table_Action">
@@ -2849,7 +2894,7 @@
     <string notr="true">Ctrl+T</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="history_Action">
@@ -2870,7 +2915,7 @@
     <string notr="true">Ctrl+H</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="layoutMode_Action">
@@ -2894,7 +2939,7 @@
     <string notr="true">Shift+L</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="group_Action">
@@ -3556,7 +3601,7 @@
     <string notr="true"/>
    </property>
    <property name="menuRole">
-    <enum>QAction::AboutQtRole</enum>
+    <enum>QAction::MenuRole::AboutQtRole</enum>
    </property>
   </action>
   <action name="aboutSeamly2D_Action">
@@ -3571,7 +3616,7 @@
     <string>About Seamly2D</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::AboutRole</enum>
+    <enum>QAction::MenuRole::AboutRole</enum>
    </property>
   </action>
   <action name="exit_Action">
@@ -3589,7 +3634,7 @@
     <string notr="true">Ctrl+Q</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::QuitRole</enum>
+    <enum>QAction::MenuRole::QuitRole</enum>
    </property>
   </action>
   <action name="appPreferences_Action">
@@ -3600,7 +3645,7 @@
     <string notr="true">Ctrl+,</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::PreferencesRole</enum>
+    <enum>QAction::MenuRole::PreferencesRole</enum>
    </property>
   </action>
   <action name="patternPreferences_Action">
@@ -3611,7 +3656,7 @@
     <string notr="true">Ctrl+Shift+,</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="zoomIn_Action">
@@ -3635,7 +3680,7 @@
     <string notr="true">Ctrl++</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="zoomOut_Action">
@@ -3659,7 +3704,7 @@
     <string notr="true">Ctrl+-</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="actionZoomOriginal">
@@ -3667,8 +3712,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="zoom-original">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="zoom-original"/>
    </property>
    <property name="text">
     <string>Original zoom</string>
@@ -3680,7 +3724,7 @@
     <string notr="true"/>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="zoomToFit_Action">
@@ -3704,7 +3748,7 @@
     <string notr="true">Ctrl+=</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="reportBug_Action">
@@ -3718,7 +3762,7 @@
     <string notr="true"/>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="closePattern_Action">
@@ -3735,13 +3779,12 @@
     <string notr="true">Ctrl+W</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="wiki_Action">
    <property name="icon">
-    <iconset theme="help-contents">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="help-contents"/>
    </property>
    <property name="text">
     <string>Wiki</string>
@@ -3753,7 +3796,7 @@
     <string notr="true"/>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="shortcuts_Action">
@@ -3782,7 +3825,7 @@
     <string notr="true">Ctrl+Shift+L</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="toggleControlPoints_Action">
@@ -3806,7 +3849,7 @@
     <string notr="true">V, C</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="print_Action">
@@ -3814,8 +3857,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-print">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-print"/>
    </property>
    <property name="text">
     <string>Print</string>
@@ -3832,8 +3874,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-print">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-print"/>
    </property>
    <property name="text">
     <string>Print tiled PDF</string>
@@ -3850,8 +3891,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-print-preview">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-print-preview"/>
    </property>
    <property name="text">
     <string>Print preview</string>
@@ -3868,8 +3908,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-print-preview">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-print-preview"/>
    </property>
    <property name="text">
     <string>Preview tiled PDF</string>
@@ -3917,7 +3956,7 @@
     <string notr="true"/>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="loadMultisize_Action">
@@ -3941,7 +3980,7 @@
     <string notr="true"/>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="openSeamlyMe_Action">
@@ -3959,7 +3998,7 @@
     <string notr="true">Ctrl+M</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="editCurrent_Action">
@@ -3976,7 +4015,7 @@
     <string notr="true"/>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="syncMeasurements_Action">
@@ -3997,7 +4036,7 @@
     <string notr="true"/>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="unloadMeasurements_Action">
@@ -4014,7 +4053,7 @@
     <string notr="true"/>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="forum_Action">
@@ -4022,7 +4061,7 @@
     <string>Forum</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="exportVariablesToCSV_Action">
@@ -4033,7 +4072,7 @@
     <string>Ctrl+E</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="zoomToSelected_Action">
@@ -4057,7 +4096,7 @@
     <string notr="true">Ctrl+Right</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="labelTemplateEditor_Action">
