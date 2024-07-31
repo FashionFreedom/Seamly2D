@@ -174,6 +174,13 @@
     </message>
 </context>
 <context>
+    <name>AddImage</name>
+    <message>
+        <source>add image</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddPiece</name>
     <message>
         <source>add piece</source>
@@ -4143,14 +4150,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>FvUpdater</name>
     <message>
-        <source>Unable to get exclusive access to file
-%1
-Possibly the file is already being downloaded.</source>
-        <translation>Exklusiver Zugriff auf die Datei kann nicht gewährt werden
-%1
-Möglicherweise wird die Datei bereits heruntergeladen.</translation>
-    </message>
-    <message>
         <source>Feed download failed: %1.</source>
         <translation>Feed download ist fehlgeschlagen: %1.</translation>
     </message>
@@ -4185,6 +4184,12 @@ Möchtest Du diesen downloaden?</translation>
 %1
 for writing</source>
         <translation>Date %1 kann nicht zum schreiben geöffnet werden</translation>
+    </message>
+    <message>
+        <source>Unable to get exclusive access to file 
+%1
+Possibly the file is already being downloaded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4826,28 +4831,12 @@ for writing</source>
         <translation>Die Datei könnte beschädigt sein...</translation>
     </message>
     <message>
-        <source>File may be corrupted or empty...</source>
-        <translation>Die Datei kann beschädigt oder leer sein...</translation>
-    </message>
-    <message>
         <source>Confirm deletion</source>
         <translation>Löschvorgang bestätigen</translation>
     </message>
     <message>
         <source>Do you really want to delete?</source>
         <translation>Möchtest Du wirklich löschen?</translation>
-    </message>
-    <message>
-        <source>Images will not be saved</source>
-        <translation>Die Bilder werden nicht gespeichert</translation>
-    </message>
-    <message>
-        <source>Please note that the images can not be saved and that they are not affected by the undo and redo functions in the current version of the software.
-
-You may want to take a screenshot of the image properties dialog before closing the software to be able to recreate identically the image when opening the software again.</source>
-        <translation>Bitte beachten Sie, dass die Bilder nicht gespeichert werden können und dass sie von den Rückgängig- und Wiederherstellungsfunktionen in der aktuellen Version der Software nicht betroffen sind.
-
-Es empfiehlt sich, vor dem Schließen der Software einen Screenshot des Dialogs mit den Bildeigenschaften zu machen, damit Sie das Bild beim erneuten Öffnen der Software identisch wiederherstellen können.</translation>
     </message>
 </context>
 <context>
@@ -5179,14 +5168,6 @@ Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLIC
         <translation>Absteigender Bereich</translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
-
-Apply settings anyway?</source>
-        <translation>Ränder gehen über den Druck hinaus.
-
-Einstellungen trotzdem anwenden?</translation>
-    </message>
-    <message>
         <source>Centimeters</source>
         <translation>Zentimeter</translation>
     </message>
@@ -5312,6 +5293,12 @@ Einstellungen trotzdem anwenden?</translation>
     <message>
         <source>Millimeters</source>
         <translation>Millimeter</translation>
+    </message>
+    <message>
+        <source>Margins go beyond printing. 
+
+Apply settings anyway?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10286,20 +10273,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Dezimaltrennzeichen:</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
-When unchecked the period is used.</source>
-        <translation>Legt fest, welches Dezimaltrennzeichen verwendet werden soll.
-Wenn das Kontrollkästchen aktiviert ist, wird das Trennzeichen für das Gebietsschema des Benutzers verwendet.
-Wenn es nicht markiert ist, wird der Punkt verwendet.</translation>
-    </message>
-    <message>
-        <source>When checked the Welcome window will not be displayed.
-You can change this setting in the SeamlyMe preferences.</source>
-        <translation>Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt.
-Sie können diese Einstellung in den SeamlyMe-Einstellungen ändern.</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Sprache der Benutzeroberfläche:</translation>
     </message>
@@ -10327,6 +10300,17 @@ Sie können diese Einstellung in den SeamlyMe-Einstellungen ändern.</translatio
         <source>Inches</source>
         <translation>Zoll</translation>
     </message>
+    <message>
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed. 
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10349,12 +10333,6 @@ Sie können diese Einstellung in den SeamlyMe-Einstellungen ändern.</translatio
     <message>
         <source>Decimal separator:</source>
         <translation>Dezimaltrennzeichen:</translation>
-    </message>
-    <message>
-        <source>When checked the Welcome window will not be displayed.
-You can change this setting in the Seamly2D preferences.</source>
-        <translation>Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt.
-Sie können diese Einstellung in den Seamly2D-Voreinstellungen ändern.</translation>
     </message>
     <message>
         <source>GUI language:</source>
@@ -10389,20 +10367,23 @@ Sie können diese Einstellung in den Seamly2D-Voreinstellungen ändern.</transla
         <translation>Bitte wählen Sie Ihre bevorzugten Einheiten, das Dezimaltrennzeichen, die Sprache und den Auswahlton. (Sie können diese Angaben später ändern.)</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
-When unchecked the period is used.</source>
-        <translation>Legt fest, welches Dezimaltrennzeichen verwendet werden soll.
-Wenn das Kontrollkästchen aktiviert ist, wird das Trennzeichen für das Gebietsschema des Benutzers verwendet.
-Wenn es nicht markiert ist, wird der Punkt verwendet.</translation>
-    </message>
-    <message>
         <source>Sound:</source>
         <translation>Ton:</translation>
     </message>
     <message>
         <source>Sets the node selection click  sound.</source>
         <translation>Legt den Klickton für die Knotenauswahl fest.</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed. 
+You can change this setting in the Seamly2D preferences.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13159,6 +13140,10 @@ wie gewohnt in SeamlyME laden können.
         <source>Error creating or updating union pieces</source>
         <translation>Fehler beim Anlegen oder Aktualisieren der Verbindungsschnittteile</translation>
     </message>
+    <message>
+        <source>Image_name</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>VPoster</name>
@@ -14958,210 +14943,6 @@ wie gewohnt in SeamlyME laden können.
         <translation>wOnFold</translation>
     </message>
     <message>
-        <source>degTorad</source>
-        <comment>Converts degrees to radians
-Usage: degTorad(angle θ in degrees)</comment>
-        <translation>degTorad</translation>
-    </message>
-    <message>
-        <source>radTodeg</source>
-        <comment>Converts radians to degrees
-Usage: radTodeg(angle θ in radians)</comment>
-        <translation>radTodeg</translation>
-    </message>
-    <message>
-        <source>sin</source>
-        <comment>Sine function working with radians
-Usage: sin(angle θ in radians)</comment>
-        <translation>sin</translation>
-    </message>
-    <message>
-        <source>cos</source>
-        <comment>Cosine function working with radians
-Usage: cos(angle θ in radians)</comment>
-        <translation>cos</translation>
-    </message>
-    <message>
-        <source>tan</source>
-        <comment>Tangent function working with radians
-Usage: tan(angle θ in radians)</comment>
-        <translation>tan</translation>
-    </message>
-    <message>
-        <source>asin</source>
-        <comment>Inverse sine function working with radians
-Usage: asin(x)</comment>
-        <translation>asin</translation>
-    </message>
-    <message>
-        <source>acos</source>
-        <comment>Inverse cosine function working with radians
-Usage: acos(x)</comment>
-        <translation>acos</translation>
-    </message>
-    <message>
-        <source>atan</source>
-        <comment>Inverse tangent function working with radians
-Usage: atan(x)</comment>
-        <translation>atan</translation>
-    </message>
-    <message>
-        <source>sinh</source>
-        <comment>Hyperbolic sine function
-Usage: sinh(angle θ in radians)</comment>
-        <translation>sinh</translation>
-    </message>
-    <message>
-        <source>cosh</source>
-        <comment>Hyperbolic cosine
-Usage: cosh(angle θ in radians)</comment>
-        <translation>cosh</translation>
-    </message>
-    <message>
-        <source>tanh</source>
-        <comment>Hyperbolic tangent function
-Usage: tanh(angle θ in radians)</comment>
-        <translation>tanh</translation>
-    </message>
-    <message>
-        <source>asinh</source>
-        <comment>Inverse Hyperbolic sine function
-Usage: asinh(x)</comment>
-        <translation>asinh</translation>
-    </message>
-    <message>
-        <source>acosh</source>
-        <comment>Inverse Hyperbolic cosine function
-Usage: acosh(x)</comment>
-        <translation>acosh</translation>
-    </message>
-    <message>
-        <source>atanh</source>
-        <comment>Inverse Hyperbolic tangent function
-Usage: atanh(x)</comment>
-        <translation>atanh</translation>
-    </message>
-    <message>
-        <source>sinD</source>
-        <comment>Sine function working with degrees
-Usage: sinD(angle θ in degrees)</comment>
-        <translation>sinD</translation>
-    </message>
-    <message>
-        <source>cosD</source>
-        <comment>Cosine function working with degrees
-Usage: cosD(angle θ in degrees)</comment>
-        <translation>cosD</translation>
-    </message>
-    <message>
-        <source>tanD</source>
-        <comment>Tangent function working with degrees
-Usage: tanD(angle θ in degrees)</comment>
-        <translation>tanD</translation>
-    </message>
-    <message>
-        <source>asinD</source>
-        <comment>Inverse sine function working with degrees
-Usage: asinD(x)</comment>
-        <translation>asinD</translation>
-    </message>
-    <message>
-        <source>acosD</source>
-        <comment>Inverse cosine function working with degrees
-Usage: acosD(x)</comment>
-        <translation>acosD</translation>
-    </message>
-    <message>
-        <source>atanD</source>
-        <comment>Inverse tangent function working with degrees
-Usage: atanD(x)</comment>
-        <translation>atanD</translation>
-    </message>
-    <message>
-        <source>log2</source>
-        <comment>Logarithm to the base 2
-Usage: log2(x)</comment>
-        <translation>log2</translation>
-    </message>
-    <message>
-        <source>log10</source>
-        <comment>Logarithm to the base 10
-Usage: log10(x)</comment>
-        <translation>log10</translation>
-    </message>
-    <message>
-        <source>log</source>
-        <comment>Logarithm to the base 10
-Usage: log(x)</comment>
-        <translation>log</translation>
-    </message>
-    <message>
-        <source>ln</source>
-        <comment>Logarithm to base e (2.71828...)
-Usage: ln(x)</comment>
-        <translation>ln</translation>
-    </message>
-    <message>
-        <source>exp</source>
-        <comment>E raised to the power of x
-Usage: exp(x) where e = 2.718</comment>
-        <translation>exp</translation>
-    </message>
-    <message>
-        <source>sqrt</source>
-        <comment>Square root of a value
-Usage: sqrt(x)</comment>
-        <translation>sqrt</translation>
-    </message>
-    <message>
-        <source>sign</source>
-        <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
-Usage: sign(x)</comment>
-        <translation>sign</translation>
-    </message>
-    <message>
-        <source>rint</source>
-        <comment>Round to nearest integer
-Usage: rint(float x)</comment>
-        <translation>rint</translation>
-    </message>
-    <message>
-        <source>abs</source>
-        <comment>Absolute value
-Usage: abs(x)</comment>
-        <translation>abs</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <comment>Min of all arguments
-Usage: min(arg 1; arg 2; ... arg n)</comment>
-        <translation>min</translation>
-    </message>
-    <message>
-        <source>max</source>
-        <comment>Max of all arguments
-Usage: max(arg 1; arg 2; ... arg n)</comment>
-        <translation>max</translation>
-    </message>
-    <message>
-        <source>sum</source>
-        <comment>Sum of all arguments
-Usage: sum(arg 1; arg 2; ... arg n)</comment>
-        <translation>sum</translation>
-    </message>
-    <message>
-        <source>avg</source>
-        <comment>Mean value of all arguments
-Usage: avg(arg 1; arg 2; ... arg n)</comment>
-        <translation>avg</translation>
-    </message>
-    <message>
-        <source>fmod</source>
-        <comment>Returns the floating-point remainder of x/y (rounded towards zero)
-Usage: fmod(x; y)</comment>
-        <translation>fmod</translation>
-    </message>
-    <message>
         <source>M_</source>
         <comment>Leave the _ symbol in translation</comment>
         <translation>M_</translation>
@@ -15255,6 +15036,244 @@ Usage: fmod(x; y)</comment>
         <source>C2LengthSpl_</source>
         <comment>Leave the _ symbol in translation</comment>
         <translation>C2LängeSpl_</translation>
+    </message>
+    <message>
+        <source>degTorad</source>
+        <comment>Converts degrees to radians
+Usage: degTorad(angle θ in degrees) → returns an angle in radians
+Example: degTorad(180) = 3.14159</comment>
+        <translation type="unfinished">degTorad</translation>
+    </message>
+    <message>
+        <source>radTodeg</source>
+        <comment>Converts radians to degrees
+Usage: radTodeg(angle θ in radians)  → returns an angle in degrees
+Example: radTodeg(3.14159) = 180</comment>
+        <translation type="unfinished">radTodeg</translation>
+    </message>
+    <message>
+        <source>sin</source>
+        <comment>Sine function working with radians
+Usage: sin(angle θ in radians) → returns a number between -1 and 1
+Example: sin(90) = 0.893997</comment>
+        <translation type="unfinished">sin</translation>
+    </message>
+    <message>
+        <source>cos</source>
+        <comment>Cosine function working with radians
+Usage: cos(angle θ in radians) → returns a number between -1 and 1
+Example: cos(1) = 0.540302</comment>
+        <translation type="unfinished">cos</translation>
+    </message>
+    <message>
+        <source>tan</source>
+        <comment>Tangent function working with radians
+Usage: tan(angle θ in radians)
+Example: tan(1) = 1.55741</comment>
+        <translation type="unfinished">tan</translation>
+    </message>
+    <message>
+        <source>asin</source>
+        <comment>Inverse sine function working with radians
+Usage: asin(x between -1 and 1) → returns an angle in radians
+Example: asin(-1) = -1.5708</comment>
+        <translation type="unfinished">asin</translation>
+    </message>
+    <message>
+        <source>acos</source>
+        <comment>Inverse cosine function working with radians
+Usage: acos(x between -1 and 1) → returns an angle in radians
+Example: acos(0.1) = 1.47063</comment>
+        <translation type="unfinished">acos</translation>
+    </message>
+    <message>
+        <source>atan</source>
+        <comment>Inverse tangent function working with radians
+Usage: atan(x) → returns an angle in radians
+Example: atan(1) = 0.78538</comment>
+        <translation type="unfinished">atan</translation>
+    </message>
+    <message>
+        <source>sinh</source>
+        <comment>Hyperbolic sine function
+Usage: sinh(θ)
+Example: sinh(1) = 1.1752</comment>
+        <translation type="unfinished">sinh</translation>
+    </message>
+    <message>
+        <source>cosh</source>
+        <comment>Hyperbolic cosine
+Usage: cosh(θ) → returns a number greater than or equal to 1
+Example: cosh(0) = 1</comment>
+        <translation type="unfinished">cosh</translation>
+    </message>
+    <message>
+        <source>tanh</source>
+        <comment>Hyperbolic tangent function
+Usage: tanh(θ) → returns a number between -1 and 1 (excluded)
+Example: tanh(1) = 0.761594</comment>
+        <translation type="unfinished">tanh</translation>
+    </message>
+    <message>
+        <source>asinh</source>
+        <comment>Inverse Hyperbolic sine function
+Usage: asinh(x)
+Example: asinh(90) = 5.19299</comment>
+        <translation type="unfinished">asinh</translation>
+    </message>
+    <message>
+        <source>acosh</source>
+        <comment>Inverse Hyperbolic cosine function
+Usage: acosh(x greater than or equal to 1)
+Example: acosh(2) = 1.31696</comment>
+        <translation type="unfinished">acosh</translation>
+    </message>
+    <message>
+        <source>atanh</source>
+        <comment>Inverse Hyperbolic tangent function
+Usage: atanh(x between -1 and 1 (excluded))
+Example: atanh(0,99) = 2.64665</comment>
+        <translation type="unfinished">atanh</translation>
+    </message>
+    <message>
+        <source>sinD</source>
+        <comment>Sine function working with degrees
+Usage: sinD(angle θ in degrees) → returns a number between -1 and 1
+Example: sinD(90) = 1</comment>
+        <translation type="unfinished">sinD</translation>
+    </message>
+    <message>
+        <source>cosD</source>
+        <comment>Cosine function working with degrees
+Usage: cosD(angle θ in degrees) → returns a number between -1 and 1
+Example: cosD(180) = -1</comment>
+        <translation type="unfinished">cosD</translation>
+    </message>
+    <message>
+        <source>tanD</source>
+        <comment>Tangent function working with degrees
+Usage: tanD(angle θ in degrees)
+Example: tanD(45) = 1</comment>
+        <translation type="unfinished">tanD</translation>
+    </message>
+    <message>
+        <source>asinD</source>
+        <comment>Inverse sine function working with degrees
+Usage: asinD(x between -1 and 1) → returns an angle in degrees
+Example: asinD(1) = 90</comment>
+        <translation type="unfinished">asinD</translation>
+    </message>
+    <message>
+        <source>acosD</source>
+        <comment>Inverse cosine function working with degrees
+Usage: acosD(x between -1 and 1) → returns an angle in degrees
+Example: acosD(-1) = 180</comment>
+        <translation type="unfinished">acosD</translation>
+    </message>
+    <message>
+        <source>atanD</source>
+        <comment>Inverse tangent function working with degrees
+Usage: atanD(x) → returns an angle in degrees
+Example: atanD(1) = 45</comment>
+        <translation type="unfinished">atanD</translation>
+    </message>
+    <message>
+        <source>log2</source>
+        <comment>Logarithm to the base 2
+Usage: log2(x greater than 0)
+Example: log2(10) = 3.32193</comment>
+        <translation type="unfinished">log2</translation>
+    </message>
+    <message>
+        <source>log10</source>
+        <comment>Logarithm to the base 10 (same as log(x))
+Usage: log10(x greater than 0)
+Example: log10(10) = 1</comment>
+        <translation type="unfinished">log10</translation>
+    </message>
+    <message>
+        <source>log</source>
+        <comment>Logarithm to the base 10
+Usage: log(x greater than 0)
+Example: log(10) = 1</comment>
+        <translation type="unfinished">log</translation>
+    </message>
+    <message>
+        <source>ln</source>
+        <comment>Logarithm to base e (2.71828...)
+Usage: ln(x greater than 0)
+Example: ln(10) = 2.30259</comment>
+        <translation type="unfinished">ln</translation>
+    </message>
+    <message>
+        <source>exp</source>
+        <comment>e raised to the power of x where e = 2.718
+Usage: exp(x) → returns a positive number
+Example: exp(2) = 7.38906</comment>
+        <translation type="unfinished">exp</translation>
+    </message>
+    <message>
+        <source>sqrt</source>
+        <comment>Square root of a value
+Usage: sqrt(x greater than or equal to 0) → returns a positive number
+Example: sqrt(4) = 2</comment>
+        <translation type="unfinished">sqrt</translation>
+    </message>
+    <message>
+        <source>sign</source>
+        <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
+Usage: sign(x) → returns -1, 0 or 1
+Example: sign(-3) = -1</comment>
+        <translation type="unfinished">sign</translation>
+    </message>
+    <message>
+        <source>rint</source>
+        <comment>Round to nearest integer
+Usage: rint(x) → returns an integer number
+Example: rint(2.3) = 2</comment>
+        <translation type="unfinished">rint</translation>
+    </message>
+    <message>
+        <source>abs</source>
+        <comment>Absolute value
+Usage: abs(x) → returns a positive number
+Example: abs(-5) = 5</comment>
+        <translation type="unfinished">abs</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <comment>Min of all arguments
+Usage: min(arg 1; arg 2; ... arg n)
+Example: min(2;3;4) = 2</comment>
+        <translation type="unfinished">min</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <comment>Max of all arguments
+Usage: max(arg 1; arg 2; ... arg n)
+Example: max(2;3;4) = 4</comment>
+        <translation type="unfinished">max</translation>
+    </message>
+    <message>
+        <source>sum</source>
+        <comment>Sum of all arguments
+Usage: sum(arg 1; arg 2; ... arg n)
+Example: sum(2;3;4) = 9</comment>
+        <translation type="unfinished">sum</translation>
+    </message>
+    <message>
+        <source>avg</source>
+        <comment>Mean value of all arguments
+Usage: avg(arg 1; arg 2; ... arg n)
+Example: avg(2;3;4) = 3</comment>
+        <translation type="unfinished">avg</translation>
+    </message>
+    <message>
+        <source>fmod</source>
+        <comment>Returns the floating-point remainder of x/y (rounded towards zero)
+Usage: fmod(x; y)
+Example: fmod(3.3;2) = 1.3</comment>
+        <translation type="unfinished">fmod</translation>
     </message>
 </context>
 <context>
