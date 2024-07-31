@@ -63,7 +63,7 @@ private:
     VMainGraphicsScene  *m_draftScene;
     QDomElement         m_oldDomElement;
 
-    void        addImage(const Source &typeCreation);
+    void        addImage();
 
     void             saveOptions(QDomElement &tag);
     void             saveChanges();
