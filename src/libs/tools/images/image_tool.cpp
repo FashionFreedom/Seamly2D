@@ -44,6 +44,7 @@
 Q_LOGGING_CATEGORY(vImageTool, "v.imageTool")
 
 
+//Constructor called from GUI
 ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene *draftScene, QString filename)
     : QObject(parent),
     m_doc(doc),
@@ -64,10 +65,12 @@ ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene 
     image.filename = filename;
     image.units = qApp->patternUnit();
 
-    addImage(Source::FromGui);
+    image.id = VContainer::getNextId();
+
+    addImage();
 }
 
-
+//Constructor called when file is full-parsed
 ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene *draftScene, DraftImage image)
     : QObject(parent),
     image(image),
@@ -90,18 +93,13 @@ ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene 
         image.name = f.baseName();
     }
 
-    addImage(Source::FromFile);
+    addImage();
 }
 
 
-void  ImageTool::addImage(const Source &typeCreation)
+void  ImageTool::addImage()
 {
     QImageReader imageReader(image.filename);
-
-    if (typeCreation == Source::FromGui)
-    {
-        image.id = VContainer::getNextId();
-    }
 
     if(!imageReader.canRead())
     {
