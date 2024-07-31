@@ -649,6 +649,7 @@ void ImageItem::moveToBottom()
             minZValue = qMin(minZValue, item->m_image.order);
             item->m_image.order++;
             item->updateImage();
+            emit item->imageNeedsSave();
         }
     }
     m_image.order = minZValue;
@@ -664,6 +665,7 @@ void ImageItem::moveToTop()
         {
             item->m_image.order--;
             item->updateImage();
+            emit item->imageNeedsSave();
         }
     }
     m_image.order = maxImageZvalue;
@@ -683,6 +685,7 @@ void ImageItem::moveUp()
         {
             item->m_image.order--;
             item->updateImage();
+            emit item->imageNeedsSave();
         }
     }
     m_image.order ++;
@@ -703,6 +706,7 @@ void ImageItem::moveDown()
         {
             item->m_image.order++;
             item->updateImage();
+            emit item->imageNeedsSave();
         }
     }
     m_image.order --;
