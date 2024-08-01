@@ -715,8 +715,6 @@ void VMainGraphicsView::mouseMoveEvent(QMouseEvent *event)
         horz->setValue(horz->value() + (isRightToLeft() ? delta.x() : -delta.x()));
         vert->setValue(vert->value() - delta.y());
         m_ptStartPos = event->pos();
-        unsigned long delay = static_cast<unsigned long>(200 + (200 - qApp->Settings()->getAutoScrollSpeed()));
-        QThread::msleep(10000); // delay is the inverse of the speed
     }
     else if ( isRubberBandActive )
     {

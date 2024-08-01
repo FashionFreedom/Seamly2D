@@ -1874,6 +1874,11 @@
           </item>
           <item>
            <widget class="QCheckBox" name="autoscroll_CheckBox">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Autoscroll</string>
             </property>
@@ -2050,6 +2055,11 @@ border-radius: 4px;
           </item>
           <item>
            <widget class="QGroupBox" name="mouseWheel_GroupBox">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
             <property name="title">
              <string>Mouse wheel</string>
             </property>
