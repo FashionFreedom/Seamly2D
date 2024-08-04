@@ -23,7 +23,7 @@ Learn more about Seamly2D by joining our friendly, active user [forum](https://f
 
 ## Supported platforms:  
    * Windows 10 & 11 (32-bit and 64-bit)
-   * Most current Linux distros via [Flathub](https://flathub.org/apps/details/net.seamly.seamly2d)
+   * Most current Linux distros via [Flathub](https://flathub.org/apps/details/io.seamly.seamly2d)
    * macOS High Sierra 10.13 (64-bit) or later
 
 ## Download Seamly2D:
