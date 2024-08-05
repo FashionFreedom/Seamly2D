@@ -88,6 +88,10 @@ class LayoutToolBox;
 class QToolButton;
 class QDoubleSpinBox;
 class QFontComboBox;
+
+struct DraftImage;
+class ImageItem;
+
 class MouseCoordinates;
 class PenToolBar;
 
