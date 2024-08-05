@@ -1,128 +1,127 @@
-/******************************************************************************
- *   @file   mainwindow.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2022 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   mainwindow.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2022 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   mainwindow.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   mainwindow.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   November 15, 2013
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
+// Seamly application headers
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "../vgeometry/vspline.h"
+#include "options.h"
+#include "version.h"
+#include "core/application_2d.h"
+#include "core/vtooloptionspropertybrowser.h"
+#include "dialogs/dialogs.h"
+#include "dialogs/calculator_dialog.h"
+#include "dialogs/decimalchart_dialog.h"
 #include "../ifc/exception/vexceptionobjecterror.h"
 #include "../ifc/exception/vexceptionconversionerror.h"
 #include "../ifc/exception/vexceptionemptyparameter.h"
 #include "../ifc/exception/vexceptionwrongid.h"
 #include "../ifc/exception/vexceptionundo.h"
-#include "version.h"
-#include "core/application_2d.h"
-#include "../vmisc/customevents.h"
-#include "../vmisc/vsettings.h"
-#include "../vmisc/def.h"
-#include "../vmisc/qxtcsvmodel.h"
-#include "../vmisc/dialogs/dialogexporttocsv.h"
-#include "undocommands/rename_draftblock.h"
-#include "core/vtooloptionspropertybrowser.h"
-#include "options.h"
-#include "../ifc/xml/vpatternconverter.h"
-#include "../vmisc/logging.h"
-#include "../vformat/measurements.h"
-#include "../ifc/xml/multi_size_converter.h"
 #include "../ifc/xml/individual_size_converter.h"
-#include "../vwidgets/vwidgetpopup.h"
-#include "../vwidgets/vmaingraphicsscene.h"
-#include "../vwidgets/mouse_coordinates.h"
-#include "../vtools/tools/drawTools/drawtools.h"
-#include "../vtools/dialogs/tooldialogs.h"
-#include "tools/pattern_piece_tool.h"
-#include "tools/nodeDetails/vtoolinternalpath.h"
-#include "tools/nodeDetails/anchorpoint_tool.h"
-#include "tools/union_tool.h"
-#include "dialogs/dialogs.h"
-#include "../vpropertyexplorer/checkablemessagebox.h"
-#include "../vtools/undocommands/addgroup.h"
+#include "../ifc/xml/multi_size_converter.h"
+#include "../ifc/xml/vpatternconverter.h"
 #include "../tools/images/image_tool.h"
-#include "dialogs/calculator_dialog.h"
-#include "dialogs/decimalchart_dialog.h"
-#include "../vtools/undocommands/label/showpointname.h"
+#include "../vformat/measurements.h"
+#include "../vgeometry/vspline.h"
+#include "../vmisc/customevents.h"
+#include "../vmisc/def.h"
+#include "../vmisc/logging.h"
+#include "../vmisc/qxtcsvmodel.h"
+#include "../vmisc/vsettings.h"
+#include "../vmisc/dialogs/dialogexporttocsv.h"
 #include "../vpatterndb/vpiecepath.h"
+#include "../vpropertyexplorer/checkablemessagebox.h"
 #include "../qmuparser/qmuparsererror.h"
+#include "../vtools/dialogs/tooldialogs.h"
 #include "../vtools/dialogs/support/editlabeltemplate_dialog.h"
+#include "../vtools/tools/pattern_piece_tool.h"
+#include "../vtools/tools/union_tool.h"
+#include "../vtools/tools/drawTools/drawtools.h"
+#include "../vtools/tools/nodeDetails/anchorpoint_tool.h"
+#include "../vtools/tools/nodeDetails/vtoolinternalpath.h"
+#include "../vtools/undocommands/addgroup.h"
+#include "../vtools/undocommands/rename_draftblock.h"
+#include "../vtools/undocommands/label/showpointname.h"
+#include "../vwidgets/mouse_coordinates.h"
+#include "../vwidgets/vmaingraphicsscene.h"
+#include "../vwidgets/vwidgetpopup.h"
 
-#include <QInputDialog>
-#include <QtDebug>
-#include <QMessageBox>
-#include <QShowEvent>
-#include <QScrollBar>
-#include <QFileDialog>
-#include <QSourceLocation>
-#include <QUndoStack>
-#include <QAction>
-#include <QProcess>
-#include <QSettings>
-#include <QTimer>
-#include <QtGlobal>
-#include <QDesktopWidget>
-#include <QDesktopServices>
 #include <chrono>
 #include <thread>
-#include <QFileSystemWatcher>
+#include <QAction>
 #include <QComboBox>
-#include <QFontComboBox>
-#include <QTextCodec>
+#include <QDesktopServices>
+#include <QDesktopWidget>
 #include <QDoubleSpinBox>
-#include <QToolBar>
-#include <QSharedPointer>
+#include <QFileDialog>
+#include <QFileSystemWatcher>
+#include <QFontComboBox>
 #include <QImageReader>
+#include <QInputDialog>
+#include <QMessageBox>
+#include <QProcess>
+#include <QScrollBar>
+#include <QSettings>
+#include <QSharedPointer>
+#include <QShowEvent>
+#include <QSourceLocation>
+#include <QTextCodec>
+#include <QTimer>
+#include <QToolBar>
+#include <QtDebug>
+#include <QtGlobal>
+#include <QUndoStack>
 
+// compiler directives
 #if defined(Q_OS_MAC)
 #include <QMimeData>
 #include <QDrag>
@@ -131,22 +130,23 @@
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_CLANG("-Wmissing-prototypes")
 QT_WARNING_DISABLE_INTEL(1418)
-
 Q_LOGGING_CATEGORY(vMainWindow, "v.mainwindow")
-
 QT_WARNING_POP
 
-const QString autosavePrefix = QStringLiteral(".autosave");
+// autosave extension postfix
+const QString autosavePostfix = QStringLiteral(".autosave");
 
-// String below need for getting translation for key Ctrl
-const QString strQShortcut   = QStringLiteral("QShortcut"); // Context
-const QString strCtrl        = QStringLiteral("Ctrl"); // String
+// Strings for dynamically translating "Ctrl" in the status bar tool tips
+const QString strQShortcut = QStringLiteral("QShortcut");
+const QString strCtrl      = QStringLiteral("Ctrl");
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief MainWindow constructor.
- * @param parent parent widget.
- */
+
+//  @brief Seamly2D MainWindow constructor.
+//
+//  This is the constructor for the Mainwindow class.
+//
+//  @param parent parent widget.
+
 MainWindow::MainWindow(QWidget *parent)
     : MainWindowsNoGUI(parent)
     , ui(new Ui::MainWindow)
@@ -195,131 +195,172 @@ MainWindow::MainWindow(QWidget *parent)
     , m_penToolBar(nullptr)
     , m_penReset(nullptr)
     , m_zoomToPointComboBox(nullptr)
-{
-    for (int i = 0; i < MaxRecentFiles; ++i)
-    {
-        recentFileActs[i] = nullptr;
-    }
 
-    createActions();
-    initializeScenes();
-
-    doc = new VPattern(pattern, &mode, draftScene, pieceScene);
-    connect(doc, &VPattern::ClearMainWindow, this, &MainWindow::Clear);
-    connect(doc, &VPattern::patternChanged, this, &MainWindow::patternChangesWereSaved);
-    connect(doc, &VPattern::UndoCommand, this, &MainWindow::fullParseFile);
-    connect(doc, &VPattern::setGuiEnabled, this, &MainWindow::setGuiEnabled);
-    connect(doc, &VPattern::CheckLayout, this, [this]()
+    // define Seamly2D main window
     {
-        if (pattern->DataPieces()->count() == 0)
+        // Initialize recent file actions array.
+        for (int i = 0; i < MaxRecentFiles; ++i)
         {
-            if(!ui->showDraftMode->isChecked())
+            recentFileActs[i] = nullptr;
+        }
+
+        createActions();
+        initializeScenes();
+
+        // Create instance of VPattern (a dom document) that represents the XML documnet.
+        // Arguments:
+        //  - pattern - is the data VContainer that is initialized in MainWindowsNoGUI.
+        //  - mode - initial mode is Draw::Calculation.
+        //  - draftScene - draft mode scene.
+        //  - pieceScene - piece mode scene.
+        doc = new VPattern(pattern, &mode, draftScene, pieceScene);
+
+        // Connect signals to slots for handling application events in the doc VPattern object.
+        connect(doc, &VPattern::ClearMainWindow, this, &MainWindow::Clear);
+        connect(doc, &VPattern::patternChanged,  this, &MainWindow::patternChangesWereSaved);
+        connect(doc, &VPattern::UndoCommand,     this, &MainWindow::fullParseFile);
+        connect(doc, &VPattern::setGuiEnabled,   this, &MainWindow::setGuiEnabled);
+
+        // After a pattern is parsed show draft block scene if any draft blocks exist
+        // AND the View->Draft menu item is checked.
+        connect(doc, &VPattern::patternParsed, this, [this]()
+        {
+            if ((pattern->DataPieces()->count() == 0) && (!ui->showDraftMode->isChecked()))
             {
                 showDraftMode(true);
             }
-        }
-        this->updateZoomToPointComboBox(draftPointNamesList());
-    });
-    connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::changeDraftBlockGlobally);
-    qApp->setCurrentDocument(doc);
-    qApp->setCurrentData(pattern);
+        });
 
-    initializeDocksContain();
-    createMenus();
-    initializeDraftToolBar();
-    initializePointNameToolBar();
-    initializeModesToolBar();
-    initializeToolButtons();
-    showMaximized();
-    initPenToolBar();
+        // The setCurrentDraftBlock signal is emitted in various undo commands to set the current draft block.
+        connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::changeDraftBlockGlobally);
 
-    helpLabel = new QLabel(QObject::tr("Create new pattern piece to start working."));
-    ui->statusBar->addWidget(helpLabel);
+        // After a pattern is parsed update the zoom-to-point combo box.
+        connect(doc, &VPattern::patternParsed, this, [&]()
+        {
+            this->updateZoomToPointComboBox(draftPointNamesList());
+        });
 
-    initializeToolsToolBar();
+        qApp->setCurrentDocument(doc); // Set the applications current XML document.
+        qApp->setCurrentData(pattern); // set the current data container.
 
-    connect(qApp->getUndoStack(), &QUndoStack::cleanChanged, this, &MainWindow::patternChangesWereSaved);
+        // initialize docks to contain the toolbars and create menuts.
+        initializeDocksContain();
+        createMenus();
 
-    initializeAutoSave();
+        // Initialize toolbars for draft, point name, and modes.
+        initializeDraftToolBar();
+        initializePointNameToolBar();
+        initializeModesToolBar();
 
-    ui->draft_ToolBox->setCurrentIndex(0);
+        // Initialize tool buttons and show the main window maximized.
+        initializeToolButtons();
+        showMaximized();
 
-    ReadSettings();
-    initializeToolBarVisibility();
+        initPenToolBar();
 
-    setCurrentFile("");
-    WindowsLocale();
+        // Create a help label and add it to the status bar.
+        helpLabel = new QLabel(QObject::tr("Create new pattern piece to start working."));
+        ui->statusBar->addWidget(helpLabel);
 
-    connect(ui->listWidget, &QListWidget::currentRowChanged, this, &MainWindow::showLayoutPages);
+        initializeToolsToolBar();
 
-    connect(watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::MeasurementsChanged);
-    connect(qApp, &QApplication::focusChanged, this, [this](QWidget *old, QWidget *now)
-    {
-        if (old == nullptr && isAncestorOf(now) == true)
-        {// focus IN
-            static bool asking = false;
-            if (!asking && mChanges && not mChangesAsked)
-            {
-                asking = true;
-                mChangesAsked = true;
-                const auto answer = QMessageBox::question(this, tr("Measurements"),
-                                                 tr("Measurements were changed. Do you want to sync measurements now?"),
-                                                          QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes);
-                if (answer == QMessageBox::Yes)
+        // Whenever undo / redo changes are made need to update the saved state of the document.
+        connect(qApp->getUndoStack(), &QUndoStack::cleanChanged, this, &MainWindow::patternChangesWereSaved);
+
+        initializeAutoSave();                       // Initialize pattern auto-save functionality.
+        ui->draft_ToolBox->setCurrentIndex(0);      // Set the current index for the draft toolbox.
+
+        // Read application settings and initialize toolbar visibility.
+        ReadSettings();
+        initializeToolBarVisibility();
+
+        setCurrentFile(""); // Set a new unsaved pattern filename to an empty string.
+        WindowsLocale();    // Set the mainwindow locale based on the OS seperator set in the prefs.
+
+        // Show the layout page that is selected in the Layout Pages dock.
+        connect(ui->listWidget, &QListWidget::currentRowChanged, this, &MainWindow::showLayoutPages);
+
+        // Handle changes made to a measurment file.
+        connect(watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::MeasurementsChanged);
+
+        // Sync measurements if they were changed.
+        connect(qApp, &QApplication::focusChanged, this, [this](QWidget *old, QWidget *now)
+        {
+            if (old == nullptr && isAncestorOf(now) == true)
+            {   // Focus IN
+                static bool asking = false;
+                if (!asking && mChanges && !mChangesAsked)
                 {
-                    SyncMeasurements();
+                    asking = true;
+                    mChangesAsked = true;
+                    const auto answer = QMessageBox::question(this, tr("Measurements"),
+                                                            tr("Measurements were changed. Do you want to sync measurements now?"),
+                                                            QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+                    if (answer == QMessageBox::Yes)
+                    {
+                        SyncMeasurements();
+                    }
+                    asking = false;
                 }
-                asking = false;
             }
-        }
 
-        // In case we will need it
-        // else if (isAncestorOf(old) == true && now == nullptr)
-        // focus OUT
-    });
+            // In case we will need it
+            // else if (isAncestorOf(old) == true && now == nullptr)
+            // focus OUT
+        });
 
-#if defined(Q_OS_MAC)
-    // On Mac default icon size is 32x32.
-    ui->draft_ToolBar->setIconSize(QSize(24, 24));
-    ui->mode_ToolBar->setIconSize(QSize(24, 24));
-    ui->edit_Toolbar->setIconSize(QSize(24, 24));
-    ui->zoom_ToolBar->setIconSize(QSize(24, 24));
+        #if defined(Q_OS_MAC)
+            // Set MacOS specific icon sizes for various toolbars and unify title and toolbar.
+            ui->draft_ToolBar->setIconSize(QSize(24, 24));
+            ui->mode_ToolBar->setIconSize(QSize(24, 24));
+            ui->edit_Toolbar->setIconSize(QSize(24, 24));
+            ui->zoom_ToolBar->setIconSize(QSize(24, 24));
+            setUnifiedTitleAndToolBarOnMac(true);
 
-    setUnifiedTitleAndToolBarOnMac(true);
+            // Set up the MacOS specific Dock Menu.
+            // Add QAction items to menu and set their menu role to NoRole to avoid conflicts with the system menu roles.
+            // Connect each menu item's triggered signal to the corresponding slot in MainWindow.
+            QMenu *menu = new QMenu(this);
 
-    // Mac OS Dock Menu
-    QMenu *menu = new QMenu(this);
+            QAction *newPattern_Action = menu->addAction(tr("New pattern"));
+            newPattern_Action->setMenuRole(QAction::NoRole);
+            connect(newPattern_Action, &QAction::triggered, this, &MainWindow::New);
 
-    QAction *newPattern_Action = menu->addAction(tr("New pattern"));
-    newPattern_Action->setMenuRole(QAction::NoRole);
-    connect(newPattern_Action, &QAction::triggered, this, &MainWindow::New);
+            QAction *openPattern_Action = menu->addAction(tr("Open pattern"));
+            openPattern_Action->setMenuRole(QAction::NoRole);
+            connect(openPattern_Action, &QAction::triggered, this, &MainWindow::Open);
 
-    QAction *openPattern_Action = menu->addAction(tr("Open pattern"));
-    openPattern_Action->setMenuRole(QAction::NoRole);
-    connect(openPattern_Action, &QAction::triggered, this, &MainWindow::Open);
+            QAction *openSeamlyMe_Action = menu->addAction(tr("Create/Edit measurements"));
+            openSeamlyMe_Action->setMenuRole(QAction::NoRole);
+            connect(openSeamlyMe_Action, &QAction::triggered, this, &MainWindow::CreateMeasurements);
 
-    QAction *openSeamlyMe_Action = menu->addAction(tr("Create/Edit measurements"));
-    openSeamlyMe_Action->setMenuRole(QAction::NoRole);
-    connect(openSeamlyMe_Action, &QAction::triggered, this, &MainWindow::CreateMeasurements);
+            QAction *appPreferences_Action = menu->addAction(tr("Preferences"));
+            appPreferences_Action->setMenuRole(QAction::NoRole);
+            connect(appPreferences_Action, &QAction::triggered, this, &MainWindow::Preferences);
 
-    QAction *appPreferences_Action = menu->addAction(tr("Preferences"));
-    appPreferences_Action->setMenuRole(QAction::NoRole);
-    connect(appPreferences_Action, &QAction::triggered, this, &MainWindow::Preferences);
+            menu->setAsDockMenu();
 
-    menu->setAsDockMenu();
+        #endif //defined(Q_OS_MAC)
+    }
 
-#endif //defined(Q_OS_MAC)
-}
 
-//---------------------------------------------------------------------------------------------------------------------
+//  @brief addDraftBlock Create a new draft block.
+//
+//  This method adds a draft block the the draft scene and the dradft block combobox
+//
+//  @param blockName blockname string.
+
 void MainWindow::addDraftBlock(const QString &blockName)
 {
+    // Check if draft block with the given name does not aleady exist.
     if (doc->appendDraftBlock(blockName) == false)
     {
+        // Log a warning and return if the draft block addition fails.
         qCWarning(vMainWindow, "Error creating draft block with the name %s.", qUtf8Printable(blockName));
         return;
     }
 
+    // Initialize scenes if this is the first draft block.
     if (draftBlockComboBox->count() == 0)
     {
         draftScene->initializeOrigins();
@@ -327,104 +368,153 @@ void MainWindow::addDraftBlock(const QString &blockName)
         pieceScene->initializeOrigins();
     }
 
+    // Temporarily block signals to prevent unwanted signal when adding new block name to the combo box.
     draftBlockComboBox->blockSignals(true);
     draftBlockComboBox->addItem(blockName);
 
+    // Clear graphical objects in the pattern data container.
     pattern->ClearGObjects();
-    //Create single point
-    emit ui->view->itemClicked(nullptr);//hide options previous tool
+
+    // Create a single point (spoint) for the new draft block.
+    emit ui->view->itemClicked(nullptr);  // Clear Property Editor with non valid tool selection.
     const QString label = doc->GenerateLabel(LabelType::NewPatternPiece);
     const QPointF startPosition = draftBlockStartPosition();
     VPointF *point = new VPointF(startPosition.x(), startPosition.y(), label, 5, 10);
     auto spoint = VToolBasePoint::Create(0, blockName, point, draftScene, doc, pattern, Document::FullParse,
-                                         Source::FromGui);
+                                        Source::FromGui);
     ui->view->itemClicked(spoint);
 
+    // Enable tool buttons, too menus, and docks.
     setToolsEnabled(true);
     setWidgetsEnabled(true);
 
+    // Set the combo box index to the new draft block if index >-1 else set index to firstblock item 0.
     const qint32 index = draftBlockComboBox->findText(blockName);
     if (index != -1)
-    { // -1 for not found
+    {
         draftBlockComboBox->setCurrentIndex(index);
     }
     else
     {
         draftBlockComboBox->setCurrentIndex(0);
     }
-    draftBlockComboBox->blockSignals(false);
+    draftBlockComboBox->blockSignals(false); // Unblock signals.
 
-    // Show best for new PP
+    // Adjust the view to fit the new pattern piece.
     VMainGraphicsView::NewSceneRect(ui->view->scene(), ui->view, spoint);
     ui->view->zoom100Percent();
 
+    // Enable the new draft action and clear the help label.
     ui->newDraft_Action->setEnabled(true);
     helpLabel->setText("");
+
+    // Update the groups dock.
     groupsWidget->updateGroups();
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+
+//  @brief draftBlockStartPosition Set start position for draft block.
+//
+//  This method determines where to place the next draft block.
+//
+//  @return QPointF position of base point of next draft block
+//
+//  @details
+//   - Declare and initialize the x & y start positions, and offset between draft blocks.
+//   - Check if there is more than one draft block.
+//   - If there is more than one get the bounding rect of all the visible items in the draftscene.
+//     to determine the placement of the next draft block.
+//   - If the rect width is less than or equal to the height, position the new block to the right of
+//     the existing blocks else position the new block below the existing blocks.
+//   - If this is the first draft block use the default positions.
+
 QPointF MainWindow::draftBlockStartPosition() const
 {
-    const qreal originX = 30.0;
-    const qreal originY = 40.0;
-    const qreal margin = 40.0;
+    const qreal xPosStart = 30.0;
+    const qreal yPosStart = 40.0;
+    const qreal offset = 40.0;
+
     if (draftBlockComboBox->count() > 1)
     {
         const QRectF rect = draftScene->visibleItemsBoundingRect();
+
         if (rect.width() <= rect.height())
         {
-            return QPointF(rect.width()+margin, originY);
+            return QPointF(rect.width() + offset, yPosStart);
         }
         else
         {
-            return QPointF(originX, rect.height()+margin);
+            return QPointF(xPosStart, rect.height() + offset);
         }
     }
-    else
-    {
-        return QPointF(originX, originY);
-    }
+    return QPointF(xPosStart, yPosStart);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+
+//  @brief initializeScenes Initialize scenes.
+//
+//  This method initializes the draft and piece mode graphics scenes.
+//
+//  @details
+//  - Create the draft mode scene and set it as the current scene.
+//  - Connects move, selection, and hover signals from MainWindow to slots in
+//    draftScene to toggle whether item is movable, selectable, or accepts hover events.
+//  - Connect mouse move events in the draft scene and display coordinates & units in status bar.
+//  - Create the piece mode scene.
+//  - Connects move, selection, and hover signals from MainWindow to slots in the
+//    piece scene to toggle whether item is movable, selectable, or accepts hover events.
+//  - Connect mouse move events in the piece scene and display coordinates & units in status bar.
+//  - Set the current scene for the view to the current scene.
+//  - Set the transforms of the draft and piece scenes to match the current view's transform.
+//  - Set the scene view in the application to the current view.
+
 void MainWindow::initializeScenes()
 {
     draftScene = new VMainGraphicsScene(this);
     currentScene = draftScene;
     qApp->setCurrentScene(&currentScene);
+
+    // Draft scene Move events
     connect(this, &MainWindow::EnableItemMove, draftScene, &VMainGraphicsScene::EnableItemMove);
     connect(this, &MainWindow::ItemsSelection, draftScene, &VMainGraphicsScene::ItemsSelection);
 
-    connect(this, &MainWindow::EnableLabelSelection, draftScene, &VMainGraphicsScene::ToggleLabelSelection);
-    connect(this, &MainWindow::EnablePointSelection, draftScene, &VMainGraphicsScene::TogglePointSelection);
-    connect(this, &MainWindow::EnableLineSelection, draftScene, &VMainGraphicsScene::ToggleLineSelection);
-    connect(this, &MainWindow::EnableArcSelection, draftScene, &VMainGraphicsScene::ToggleArcSelection);
-    connect(this, &MainWindow::EnableElArcSelection, draftScene, &VMainGraphicsScene::ToggleElArcSelection);
-    connect(this, &MainWindow::EnableSplineSelection, draftScene, &VMainGraphicsScene::ToggleSplineSelection);
+    // Draft scene Selection events
+    connect(this, &MainWindow::EnableLabelSelection,      draftScene, &VMainGraphicsScene::ToggleLabelSelection);
+    connect(this, &MainWindow::EnablePointSelection,      draftScene, &VMainGraphicsScene::TogglePointSelection);
+    connect(this, &MainWindow::EnableLineSelection,       draftScene, &VMainGraphicsScene::ToggleLineSelection);
+    connect(this, &MainWindow::EnableArcSelection,        draftScene, &VMainGraphicsScene::ToggleArcSelection);
+    connect(this, &MainWindow::EnableElArcSelection,      draftScene, &VMainGraphicsScene::ToggleElArcSelection);
+    connect(this, &MainWindow::EnableSplineSelection,     draftScene, &VMainGraphicsScene::ToggleSplineSelection);
     connect(this, &MainWindow::EnableSplinePathSelection, draftScene, &VMainGraphicsScene::ToggleSplinePathSelection);
 
-    connect(this, &MainWindow::EnableLabelHover, draftScene, &VMainGraphicsScene::ToggleLabelHover);
-    connect(this, &MainWindow::EnablePointHover, draftScene, &VMainGraphicsScene::TogglePointHover);
-    connect(this, &MainWindow::EnableLineHover, draftScene, &VMainGraphicsScene::ToggleLineHover);
-    connect(this, &MainWindow::EnableArcHover, draftScene, &VMainGraphicsScene::ToggleArcHover);
-    connect(this, &MainWindow::EnableElArcHover, draftScene, &VMainGraphicsScene::ToggleElArcHover);
-    connect(this, &MainWindow::EnableSplineHover, draftScene, &VMainGraphicsScene::ToggleSplineHover);
+    // Draft scene Hover events
+    connect(this, &MainWindow::EnableLabelHover,      draftScene, &VMainGraphicsScene::ToggleLabelHover);
+    connect(this, &MainWindow::EnablePointHover,      draftScene, &VMainGraphicsScene::TogglePointHover);
+    connect(this, &MainWindow::EnableLineHover,       draftScene, &VMainGraphicsScene::ToggleLineHover);
+    connect(this, &MainWindow::EnableArcHover,        draftScene, &VMainGraphicsScene::ToggleArcHover);
+    connect(this, &MainWindow::EnableElArcHover,      draftScene, &VMainGraphicsScene::ToggleElArcHover);
+    connect(this, &MainWindow::EnableSplineHover,     draftScene, &VMainGraphicsScene::ToggleSplineHover);
     connect(this, &MainWindow::EnableSplinePathHover, draftScene, &VMainGraphicsScene::ToggleSplinePathHover);
 
+    // Draft scene Mouse move events
     connect(draftScene, &VMainGraphicsScene::mouseMove, this, &MainWindow::MouseMove);
 
     pieceScene = new VMainGraphicsScene(this);
+
+    // Piece scene Move events
     connect(this, &MainWindow::EnableItemMove, pieceScene, &VMainGraphicsScene::EnableItemMove);
 
+    // Piece scene Selection events
     connect(this, &MainWindow::EnableNodeLabelSelection, pieceScene, &VMainGraphicsScene::ToggleNodeLabelSelection);
     connect(this, &MainWindow::EnableNodePointSelection, pieceScene, &VMainGraphicsScene::ToggleNodePointSelection);
-    connect(this, &MainWindow::enablePieceSelection, pieceScene, &VMainGraphicsScene::togglePieceSelection);
+    connect(this, &MainWindow::enablePieceSelection,     pieceScene, &VMainGraphicsScene::togglePieceSelection);
 
+    // Piece scene Hover events
     connect(this, &MainWindow::EnableNodeLabelHover, pieceScene, &VMainGraphicsScene::ToggleNodeLabelHover);
     connect(this, &MainWindow::EnableNodePointHover, pieceScene, &VMainGraphicsScene::ToggleNodePointHover);
-    connect(this, &MainWindow::enablePieceHover, pieceScene, &VMainGraphicsScene::togglePieceHover);
+    connect(this, &MainWindow::enablePieceHover,     pieceScene, &VMainGraphicsScene::togglePieceHover);
 
+    // Piece scene Mouse move events
     connect(pieceScene, &VMainGraphicsScene::mouseMove, this, &MainWindow::MouseMove);
 
     ui->view->setScene(currentScene);
@@ -432,12 +522,13 @@ void MainWindow::initializeScenes()
     draftScene->setCurrentTransform(ui->view->transform());
     pieceScene->setCurrentTransform(ui->view->transform());
 
+    // Mouse release signal sent from view when tool is done drawing visual, so we call
+    // EndVisualization(ture) to show tool dialog.
     connect(ui->view, &VMainGraphicsView::mouseRelease, this, [this](){EndVisualization(true);});
+
+    // When view sends signal that the view has zoomed, we need to update the zoom spinbox in the zoom toolbar.
     connect(ui->view, &VMainGraphicsView::signalZoomScaleChanged, this, &MainWindow::zoomScaleChanged);
 
-    QSizePolicy policy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    policy.setHorizontalStretch(12);
-    ui->view->setSizePolicy(policy);
     qApp->setSceneView(ui->view);
 }
 
@@ -466,12 +557,12 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
         if (measurements->Type() == MeasurementsType::Multisize)
         {
             MultiSizeConverter converter(fileName);
-            measurements->setXMLContent(converter.Convert());// Read again after conversion
+            measurements->setXMLContent(converter.Convert());  // Read again after conversion
         }
         else
         {
             IndividualSizeConverter converter(fileName);
-            measurements->setXMLContent(converter.Convert());// Read again after conversion
+            measurements->setXMLContent(converter.Convert());  // Read again after conversion
         }
 
         if (!measurements->eachKnownNameIsValid())
@@ -487,7 +578,7 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
             if (measurements->measurementUnits() == Unit::Inch)
             {
                 qCCritical(vMainWindow, "%s\n\n%s", qUtf8Printable(tr("Wrong units.")),
-                          qUtf8Printable(tr("Application doesn't support multisize table with inches.")));
+                            qUtf8Printable(tr("Application doesn't support multisize table with inches.")));
                 measurements->clear();
                 if (!Application2D::isGUIMode())
                 {
@@ -501,7 +592,7 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
     catch (VException &exception)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File exception.")),
-                   qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
+                    qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
         measurements->clear();
         if (!Application2D::isGUIMode())
         {
@@ -649,15 +740,14 @@ void MainWindow::checkRequiredMeasurements(const MeasurementDoc *measurements)
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetToolButton set tool and show dialog.
- * @param checked true if tool button checked.
- * @param t tool type.
- * @param cursor path tool cursor icon.
- * @param toolTip first tooltipe.
- * @param closeDialogSlot function what handle after close dialog.
- */
+
+//  @brief SetToolButton set tool and show dialog.
+//  @param checked true if tool button checked.
+//  @param t tool type.
+//  @param cursor path tool cursor icon.
+//  @param toolTip first tooltipe.
+//  @param closeDialogSlot method to handle close of dialog.
+
 template <typename Dialog, typename Func>
 void MainWindow::SetToolButton(bool checked, Tool t, const QString &cursor, const QString &toolTip,
                                Func closeDialogSlot)
@@ -708,7 +798,7 @@ void MainWindow::SetToolButton(bool checked, Tool t, const QString &cursor, cons
         connect(scene, &VMainGraphicsScene::SelectedObject, dialogTool.data(), &DialogTool::SelectedObject);
         connect(dialogTool.data(), &DialogTool::DialogClosed, this, closeDialogSlot);
         connect(dialogTool.data(), &DialogTool::ToolTip, this, &MainWindow::ShowToolTip);
-        emit ui->view->itemClicked(nullptr);
+        emit ui->view->itemClicked(nullptr);  // Clear Property Editor with non valid tool selection
     }
     else
     {
@@ -719,17 +809,16 @@ void MainWindow::SetToolButton(bool checked, Tool t, const QString &cursor, cons
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+
+//  @brief SetToolButtonWithApply set tool and show dialog.
+//  @param checked true if tool button checked.
+//  @param t tool type.
+//  @param cursor path tool cursor icon.
+//  @param toolTip first tooltipe.
+//  @param closeDialogSlot method to handle close of dialog.
+//  @param applyDialogSlot method to handle apply in dialog.
+
 template <typename Dialog, typename Func, typename Func2>
-/**
- * @brief SetToolButtonWithApply set tool and show dialog.
- * @param checked true if tool button checked.
- * @param t tool type.
- * @param cursor path tool cursor icon.
- * @param toolTip first tooltipe.
- * @param closeDialogSlot function to handle close of dialog.
- * @param applyDialogSlot function to handle apply in dialog.
- */
 void MainWindow::SetToolButtonWithApply(bool checked, Tool t, const QString &cursor, const QString &toolTip,
                                         Func closeDialogSlot, Func2 applyDialogSlot)
 {
@@ -1650,24 +1739,28 @@ void MainWindow::handleImageTool()
     ui->importImage_ToolButton->setChecked(true);
 
     QString filename = getImageFilename();
-    QImageReader reader(filename);
 
-    if (!filename.isEmpty() && reader.canRead())
+    if(!filename.isEmpty())
     {
-        ImageTool *image_tool = new ImageTool(this, doc, draftScene, filename);
-        if(image_tool->creationWasSuccessful)
+        QImageReader reader(filename);
+
+        if (reader.canRead())
         {
-            connect(image_tool, &ImageTool::setStatusMessage, this, &MainWindow::setStatusMessage);
+            ImageTool *image_tool = new ImageTool(this, doc, draftScene, filename);
+            if(image_tool->creationWasSuccessful)
+            {
+                connect(image_tool, &ImageTool::setStatusMessage, this, &MainWindow::setStatusMessage);
+            }
+            else
+            {
+                image_tool->deleteLater();
+            }
         }
         else
         {
-            image_tool->deleteLater();
+            qCDebug(vMainWindow, "Can't load image");
+            QMessageBox::critical(this, tr("Import Image"), tr("Could not load the image."), QMessageBox::Ok);
         }
-    }
-    else
-    {
-        qCDebug(vMainWindow, "Can't load image");
-        QMessageBox::critical(this, tr("Import Image"), tr("Could not load the image."), QMessageBox::Ok);
     }
 
     ui->importImage_ToolButton->setChecked(false);
@@ -3332,11 +3425,16 @@ void MainWindow::handleImagesMenu()
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief mouseMove save mouse position and show user.
- * @param scenePos position mouse.
- */
+
+// @brief mouseMove Handle mouse novement.
+//
+// This method takes the mouse postion in the scene and displays the coordinates & units in the status bar.
+//
+// @param scenePos position mouse.
+//
+// @details
+//  - If the MouseCoordinates class exists calls the updateCoordinates() method which formats and displays
+//    the mouse coordinates and units in framed labels in the status bar.
 void MainWindow::MouseMove(const QPointF &scenePos)
 {
     if (mouseCoordinates)
@@ -3362,12 +3460,12 @@ void MainWindow::CancelTool()
 
     currentScene->setFocus(Qt::OtherFocusReason);
     currentScene->clearSelection();
-    emit ui->view->itemClicked(nullptr);           // Hide visualization to avoid a crash
+    emit ui->view->itemClicked(nullptr);      // Clear Property Editor with non valid tool selection
 
-    ui->zoomPan_Action->setChecked(false);         //Disable Pan Zoom
+    ui->zoomPan_Action->setChecked(false);    // Disable Pan Zoom
     ui->view->zoomPanEnabled(false);
 
-    ui->zoomToArea_Action->setChecked(false);      //Disable Zoom to Area
+    ui->zoomToArea_Action->setChecked(false); // Disable Zoom to Area
     ui->view->zoomToAreaEnabled(false);
 
     switch (currentTool)
@@ -3781,7 +3879,7 @@ void MainWindow::showPieceMode(bool checked)
         SaveCurrentScene();
 
         currentScene = pieceScene;
-        emit ui->view->itemClicked(nullptr);
+        emit ui->view->itemClicked(nullptr); // Clear Property Editor with non valid tool selection
         ui->view->setScene(currentScene);
         RestoreCurrentScene();
 
@@ -3900,7 +3998,7 @@ void MainWindow::showLayoutMode(bool checked)
         }
 
         currentScene = tempSceneLayout;
-        emit ui->view->itemClicked(nullptr);
+        emit ui->view->itemClicked(nullptr);  // Clear Property Editor with non valid tool selection
         ui->view->setScene(currentScene);
 
         if (mode == Draw::Calculation)
@@ -4038,7 +4136,7 @@ bool MainWindow::SaveAs()
         return result;
     }
 
-    QFile::remove(qApp->getFilePath() + autosavePrefix);
+    QFile::remove(qApp->getFilePath() + autosavePostfix);
     m_curFileFormatVersion = VPatternConverter::PatternMaxVer;
     m_curFileFormatVersionStr = VPatternConverter::PatternMaxVerStr;
 
@@ -4132,7 +4230,7 @@ bool MainWindow::Save()
         bool result = SavePattern(qApp->getFilePath(), error);
         if (result)
         {
-            QFile::remove(qApp->getFilePath() + autosavePrefix);
+            QFile::remove(qApp->getFilePath() + autosavePostfix);
             m_curFileFormatVersion = VPatternConverter::PatternMaxVer;
             m_curFileFormatVersionStr = VPatternConverter::PatternMaxVerStr;
         }
@@ -4284,7 +4382,7 @@ void MainWindow::FileClosedCorrect()
     qApp->Seamly2DSettings()->SetRestoreFileList(restoreFiles);
 
     // Remove autosave file
-    QFile autofile(qApp->getFilePath() + autosavePrefix);
+    QFile autofile(qApp->getFilePath() + autosavePostfix);
     if (autofile.exists())
     {
         autofile.remove();
@@ -5049,7 +5147,7 @@ void MainWindow::AutoSavePattern()
 
     if (qApp->getFilePath().isEmpty() == false && this->isWindowModified() == true)
     {
-        QString autofile = qApp->getFilePath() + autosavePrefix;
+        QString autofile = qApp->getFilePath() + autosavePostfix;
         QString error;
         SavePattern(autofile, error);
     }
@@ -5057,7 +5155,7 @@ void MainWindow::AutoSavePattern()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief setCurrentFile the function is called to reset the state of a few variables when a file
+ * @brief setCurrentFile method is called to reset the state of a few variables when a file
  * is loaded or saved, or when the user starts editing a new file (in which case fileName is empty).
  * @param fileName file name.
  */
@@ -5661,14 +5759,14 @@ void MainWindow::createActions()
     connect(ui->toggleWireframe_Action, &QAction::triggered, this, [this](bool checked)
     {
         qApp->Seamly2DSettings()->setWireframe(checked);
-        emit ui->view->itemClicked(nullptr);
+        emit ui->view->itemClicked(nullptr);  // Clear Property Editor with non valid tool selection
         upDateScenes();
     });
 
     connect(ui->toggleControlPoints_Action, &QAction::triggered, this, [this](bool checked)
     {
         qApp->Seamly2DSettings()->setShowControlPoints(checked);
-        emit ui->view->itemClicked(nullptr);
+        emit ui->view->itemClicked(nullptr);  // Clear Property Editor with non valid tool selection
         draftScene->enablePiecesMode(checked);
     });
 
@@ -5682,21 +5780,21 @@ void MainWindow::createActions()
     connect(ui->toggleSeamAllowances_Action, &QAction::triggered, this, [this](bool checked)
     {
         qApp->Seamly2DSettings()->setShowSeamAllowances(checked);
-        emit ui->view->itemClicked(nullptr);
+        emit ui->view->itemClicked(nullptr);  // Clear Property Editor with non valid tool selection
         refreshSeamAllowances();
     });
 
     connect(ui->toggleGrainLines_Action, &QAction::triggered, this, [this](bool checked)
     {
         qApp->Seamly2DSettings()->setShowGrainlines(checked);
-        emit ui->view->itemClicked(nullptr);
+        emit ui->view->itemClicked(nullptr);  // Clear Property Editor with non valid tool selection
         refreshGrainLines();
     });
 
     connect(ui->toggleLabels_Action, &QAction::triggered, this, [this](bool checked)
     {
         qApp->Seamly2DSettings()->setShowLabels(checked);
-        emit ui->view->itemClicked(nullptr);
+        emit ui->view->itemClicked(nullptr);  // Clear Property Editor with non valid tool selection
         refreshLabels();
     });
 
@@ -6844,7 +6942,7 @@ void MainWindow::ReopenFilesAfterCrash(QStringList &args)
         QStringList restoreFiles;
         for (int i = 0; i < files.size(); ++i)
         {
-            QFile file(files.at(i) + autosavePrefix);
+            QFile file(files.at(i) + autosavePostfix);
             if (file.exists())
             {
                 restoreFiles.append(files.at(i));
@@ -6865,9 +6963,9 @@ void MainWindow::ReopenFilesAfterCrash(QStringList &args)
                 for (int i = 0; i < restoreFiles.size(); ++i)
                 {
                     QString error;
-                    if (VDomDocument::SafeCopy(restoreFiles.at(i) + autosavePrefix, restoreFiles.at(i), error))
+                    if (VDomDocument::SafeCopy(restoreFiles.at(i) + autosavePostfix, restoreFiles.at(i), error))
                     {
-                        QFile autoFile(restoreFiles.at(i) + autosavePrefix);
+                        QFile autoFile(restoreFiles.at(i) + autosavePostfix);
                         autoFile.remove();
                         LoadPattern(restoreFiles.at(i));
                         args.removeAll(restoreFiles.at(i));// Do not open file twice after we restore him.
@@ -6875,7 +6973,7 @@ void MainWindow::ReopenFilesAfterCrash(QStringList &args)
                     else
                     {
                         qCWarning(vMainWindow, "Could not copy %s%s to %s %s",
-                                qUtf8Printable(restoreFiles.at(i)), qUtf8Printable(autosavePrefix),
+                                qUtf8Printable(restoreFiles.at(i)), qUtf8Printable(autosavePostfix),
                                 qUtf8Printable(restoreFiles.at(i)), qUtf8Printable(error));
                     }
                 }

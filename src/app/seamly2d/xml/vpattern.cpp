@@ -260,7 +260,7 @@ void VPattern::Parse(const Document &parse)
         }
         domNode = domNode.nextSibling();
     }
-    emit CheckLayout();
+    emit patternParsed();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1196,7 +1196,7 @@ void VPattern::parseCurrentDraftBlock()
     {
         parseDraftBlockElement(domElement, Document::LiteParse);
     }
-    emit CheckLayout();
+    emit patternParsed();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
