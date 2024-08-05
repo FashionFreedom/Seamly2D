@@ -89,7 +89,7 @@ class QToolButton;
 class QDoubleSpinBox;
 class QFontComboBox;
 
-class DraftImage;
+struct DraftImage;
 class ImageItem;
 
 class MouseCoordinates;

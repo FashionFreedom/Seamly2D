@@ -81,10 +81,6 @@ int main(int argc, char *argv[])
     // Check if the Qt version is at least 5.15.2
     QT_REQUIRE_VERSION(argc, argv, "5.15.2");
 
-    // Register meta-type stream operators for VPieceNode
-    // This is needed to internally move a node inside a piece main path
-    qRegisterMetaTypeStreamOperators<VPieceNode>("VPieceNode");
-
     //------------------------------------------------------------------------
     // On macOS, correct WebView / QtQuick compositing and stacking requires running
     // Qt in layer-backed mode, which again requires rendering on the Gui thread.

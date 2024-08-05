@@ -60,7 +60,7 @@
 #include <QGuiApplication>
 #include <QMessageBox>
 #include <QScreen>
-#include <QSound>
+#include <QSoundEffect>
 #include <QSysInfo>
 #include <QtDebug>
 #include <QTextCodec>
@@ -75,8 +75,9 @@ About2DAppDialog::About2DAppDialog(QWidget *parent)
     : QDialog(parent)
 	, ui(new Ui::About2DAppDialog)
 	, m_isInitialized(false)
-    , m_beep(new QSound(qApp->Settings()->getSelectionSound()))
+    , m_beep(new QSoundEffect())
 {
+    m_beep->setSource(QUrl(qApp->Settings()->getSelectionSound()));
 	ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
@@ -182,6 +183,7 @@ About2DAppDialog::About2DAppDialog(QWidget *parent)
 About2DAppDialog::~About2DAppDialog()
 {
 	delete ui;
+    delete m_beep;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

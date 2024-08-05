@@ -54,7 +54,7 @@
 #define ABOUT2D_DIALOG_H
 
 #include <QDialog>
-#include <QSound>
+#include <QSoundEffect>
 
 namespace Ui
 {
@@ -78,7 +78,7 @@ public slots:
 private:
     Ui::About2DAppDialog *ui;
     bool                  m_isInitialized;
-    QSound               *m_beep;
+    QSoundEffect         *m_beep;
     Q_DISABLE_COPY(About2DAppDialog)
 
     void                  copyToClipboard();

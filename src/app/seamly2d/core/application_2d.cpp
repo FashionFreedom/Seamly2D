@@ -76,7 +76,6 @@
 #include <QMessageBox>
 #include <QThread>
 #include <QDateTime>
-#include <QtXmlPatterns>
 #include <QIcon>
 
 QT_WARNING_PUSH

@@ -33,9 +33,6 @@
 #include <QPen>
 #include <QPixmap>
 #include <QSize>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
 #include <QWidget>
 
 #include "../ifc/ifcdef.h"

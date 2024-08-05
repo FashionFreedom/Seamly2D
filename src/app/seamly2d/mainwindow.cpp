@@ -6286,6 +6286,7 @@ void MainWindow::createActions()
     {
         About2DAppDialog *aboutDialog = new About2DAppDialog(this);
         aboutDialog->setAttribute(Qt::WA_DeleteOnClose, true);
+        aboutDialog->adjustSize(); // Silence warning "Cannot set geometry"
         aboutDialog->show();
     });
 

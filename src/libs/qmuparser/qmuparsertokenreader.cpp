@@ -526,7 +526,7 @@ bool QmuParserTokenReader::IsArgSep ( token_type &a_Tok )
         QString szSep;
         szSep.resize(2);
         szSep[0] = m_cArgSep;
-        szSep[1] = 0;
+        szSep[1] = '\0';
 
         if ( m_iSynFlags & noARG_SEP )
         {
