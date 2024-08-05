@@ -92,10 +92,16 @@
 #include "../vpatterndb/variables/varcradius.h"
 #include "../vpatterndb/variables/vcurveangle.h"
 #include "../vpatterndb/variables/vcurvelength.h"
-#include "../vpatterndb/variables/vincrement.h"
+#include "../vpatterndb/variables/custom_variable.h"
 #include "../vpatterndb/variables/vlineangle.h"
 #include "../vpatterndb/variables/vlinelength.h"
-#include "../vpatterndb/variables/vmeasurement.h"
+#include "../vpatterndb/variables/measurement_variable.h"
+#include "../ifc/xml/vdomdocument.h"
+#include "../vmisc/def.h"
+#include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vcommonsettings.h"
+#include "../tools/dialogtool.h"
+#include "ui_edit_formula_dialog.h"
 
 template <class T> class QSharedPointer;
 
@@ -205,8 +211,8 @@ void EditFormulaDialog::valueChanged(int row)
     {
         case VariableTab::Measurements:
         {
-            const QString name = qApp->TrVars()->VarFromUser(item->text());
-            const QSharedPointer<VMeasurement> measurements = data->GetVariable<VMeasurement>(name);
+            const QString name = qApp->translateVariables()->VarFromUser(item->text());
+            const QSharedPointer<MeasurementVariable> measurements = data->getVariable<MeasurementVariable>(name);
             const QString desc = (measurements->getGuiText() == "") ? "" : QString("\nDescription: %1").arg(measurements->getGuiText());
             setDescription(item->text(), *data->DataVariables()->value(name)->GetValue(),
                            UnitsToStr(qApp->patternUnit(), true), tr("Measurement"), desc);
@@ -214,7 +220,7 @@ void EditFormulaDialog::valueChanged(int row)
         }
         case VariableTab::Custom:
         {
-            const QSharedPointer<VIncrement> variables = data->GetVariable<VIncrement>(item->text());
+            const QSharedPointer<CustomVariable> variables = data->getVariable<CustomVariable>(item->text());
             const QString desc =(variables->GetDescription() == "") ? "" : QString("\nDescription: %1").arg(variables->GetDescription());
             setDescription(item->text(), *data->DataVariables()->value(item->text())->GetValue(),
                            UnitsToStr(qApp->patternUnit(), true), tr("Custom Variable"), desc);
@@ -223,35 +229,35 @@ void EditFormulaDialog::valueChanged(int row)
         case VariableTab::LineLengths:
             {
                 setDescription(item->text(),
-                        *data->GetVariable<VLengthLine>(qApp->TrVars()->VarFromUser(item->text()))->GetValue(),
+                        *data->getVariable<VLengthLine>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
                         UnitsToStr(qApp->patternUnit(), true), tr("Line length"), "");
                 break;
             }
         case VariableTab::CurveLengths:
         {
             setDescription(item->text(),
-                           *data->GetVariable<VCurveLength>(qApp->TrVars()->VarFromUser(item->text()))->GetValue(),
+                           *data->getVariable<VCurveLength>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
                            UnitsToStr(qApp->patternUnit(), true), tr("Curve length"), "");
             break;
         }
         case VariableTab::LineAngles:
         {
             setDescription(item->text(),
-                           *data->GetVariable<VLineAngle>(qApp->TrVars()->VarFromUser(item->text()))->GetValue(),
+                           *data->getVariable<VLineAngle>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
                            degreeSymbol, tr("Line Angle"), "");
             break;
         }
         case VariableTab::ArcRadii:
         {
             setDescription(item->text(),
-                           *data->GetVariable<VArcRadius>(qApp->TrVars()->VarFromUser(item->text()))->GetValue(),
+                           *data->getVariable<VArcRadius>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
                            UnitsToStr(qApp->patternUnit(), true), tr("Arc radius"), "");
             break;
         }
         case VariableTab::CurveAngles:
         {
             setDescription(item->text(),
-                           *data->GetVariable<VCurveAngle>(qApp->TrVars()->VarFromUser(item->text()))->GetValue(),
+                           *data->getVariable<VCurveAngle>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
                            degreeSymbol, tr("Curve angle"), "");
         break;
         }
@@ -514,7 +520,7 @@ void EditFormulaDialog::resizeEvent(QResizeEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::SetFormula(const QString &value)
 {
-    m_formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    m_formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     m_undoFormula = m_formula;
     ui->plainTextEditFormula->setPlainText(m_formula);
     MoveCursorToEnd(ui->plainTextEditFormula);
@@ -541,7 +547,7 @@ void EditFormulaDialog::setPostfix(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString EditFormulaDialog::GetFormula() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(m_formula, qApp->Settings()->GetOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(m_formula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -612,7 +618,7 @@ void EditFormulaDialog::showVariable(const QMap<key, val> &var)
  * @brief showMeasurements show measurements in table
  * @param var container with measurements
  */
-void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<VMeasurement> > &var)
+void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<MeasurementVariable> > &var)
 {
     ui->tableWidget->blockSignals(true);
     ui->tableWidget->clearContents();
@@ -620,7 +626,7 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<VMea
     ui->tableWidget->setColumnHidden(ColumnFullName, false);
     ui->description_Label->setText("");
 
-    QMapIterator<QString, QSharedPointer<VMeasurement>> iMap(var);
+    QMapIterator<QString, QSharedPointer<MeasurementVariable>> iMap(var);
     while (iMap.hasNext())
     {
         iMap.next();
@@ -641,7 +647,7 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<VMea
             }
             else
             {
-                itemFullName->setText(qApp->TrVars()->guiText(iMap.value()->GetName()));
+                itemFullName->setText(qApp->translateVariables()->guiText(iMap.value()->GetName()));
             }
 
             itemFullName->setToolTip(itemFullName->text());
@@ -666,8 +672,8 @@ void EditFormulaDialog::showFunctions()
     ui->tableWidget->setColumnHidden(ColumnFullName, true);
     ui->description_Label->setText("");
 
-    QMap<QString, qmu::QmuTranslation>::const_iterator i = qApp->TrVars()->getFunctions().constBegin();
-    while (i != qApp->TrVars()->getFunctions().constEnd())
+    QMap<QString, qmu::QmuTranslation>::const_iterator i = qApp->translateVariables()->getFunctions().constBegin();
+    while (i != qApp->translateVariables()->getFunctions().constEnd())
     {
         ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
         QTableWidgetItem *item = new QTableWidgetItem(i.value().translate());

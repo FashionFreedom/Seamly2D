@@ -77,12 +77,12 @@ public:
 
     static VToolCutSpline *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene, VAbstractPattern *doc,
                                   VContainer *data);
-    static VToolCutSpline *Create(const quint32 _id, const QString &pointName, QString &formula,
-                                  const quint32 &splineId, qreal mx, qreal my, bool showPointName,
+
+    static VToolCutSpline *Create(const quint32 _id, const QString &pointName, QString &direction,
+                                  QString &formula, const quint32 &splineId, qreal mx, qreal my, bool showPointName,
                                   VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
-                                  const Document &parse,
-                                  const Source &typeCreation);
-                                  
+                                  const Document &parse, const Source &typeCreation);
+
     static const QString ToolType;
     static const QString AttrSpline;
     virtual int          type() const Q_DECL_OVERRIDE {return Type;}
@@ -103,7 +103,7 @@ private:
     Q_DISABLE_COPY(VToolCutSpline)
 
                           VToolCutSpline(VAbstractPattern *doc, VContainer *data, const quint32 &id,
-                                         const QString &formula, const quint32 &splineId,
+                                         QString &direction, const QString &formula, const quint32 &splineId,
                                          const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };
 

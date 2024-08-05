@@ -131,7 +131,7 @@ int VContour::GetHeight() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VContour::SetHeight(int height)
+void VContour::setHeight(int height)
 {
     d->paperHeight = height;
 }

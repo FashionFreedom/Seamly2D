@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   savepieceoptions.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 11, 2022
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2022 Seamly, LLC
@@ -109,7 +109,7 @@ void SavePieceOptions::undo()
     }
     else
     {
-        qCDebug(vUndo, "Can't find piece with id = %u.", nodeId);
+        qCWarning(vUndo, "Can't find piece with id = %u.", nodeId);
         return;
     }
 }
@@ -141,7 +141,7 @@ void SavePieceOptions::redo()
     }
     else
     {
-        qCDebug(vUndo, "Can't find piece with id = %u.", nodeId);
+        qCWarning(vUndo, "Can't find piece with id = %u.", nodeId);
         return;
     }
 }

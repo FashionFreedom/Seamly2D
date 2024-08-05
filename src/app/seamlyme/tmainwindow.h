@@ -1,13 +1,13 @@
 /******************************************************************************
  *   @file   tmainwindow.h
  **  @author Douglas S Caskey
- **  @date   13 May, 2023
+ **  @date   25 Jan, 2024
  **
  **  @brief
  **  @copyright
  **  This source code is part of the Seamly2D project, a pattern making
  **  program to create and model patterns of clothing.
- **  Copyright (C) 2017-2023 Seamly2D project
+ **  Copyright (C) 2017-2024 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -36,7 +36,7 @@
  **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
  **  Copyright (C) 2015 Valentina project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
  **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
@@ -60,7 +60,6 @@
 
 #include "../vmisc/def.h"
 #include "../vmisc/vlockguard.h"
-#include "../vformat/vmeasurements.h"
 #include "../vmisc/vtablesearch.h"
 #include "../vwidgets/vabstractmainwindow.h"
 #include "dialogs/me_shortcuts_dialog.h"
@@ -72,6 +71,8 @@ namespace Ui
 
 class QLabel;
 class MeShortcutsDialog;
+class MeasurementDoc;
+class VContainer;
 
 class TMainWindow : public VAbstractMainWindow
 {
@@ -110,6 +111,8 @@ private slots:
     void                OpenMultisize();
     void                OpenTemplate();
     void                CreateFromExisting();
+    //void                handleBodyScanner1();
+    void                handleBodyScanner2();
     void                Preferences();
     void                ToolBarStyles();
 
@@ -150,8 +153,6 @@ private slots:
 
     void                ShowMData();
 
-    void                DeployFormula();
-
     void                SaveMName(const QString &text);
     void                SaveMValue();
     void                SaveMBaseValue(double value);
@@ -165,7 +166,7 @@ private slots:
 private:
     Q_DISABLE_COPY(TMainWindow)
     Ui::TMainWindow    *ui;
-    VMeasurements      *individualMeasurements;
+    MeasurementDoc     *individualMeasurements;
     VContainer         *data;
     Unit                mUnit;
     Unit                pUnit;
@@ -176,7 +177,7 @@ private:
     QComboBox          *gradationHeights;
     QComboBox          *gradationSizes;
     QComboBox          *comboBoxUnits;
-    int                 formulaBaseHeight;
+
     std::shared_ptr<VLockGuard<char>> lock;
     QSharedPointer<VTableSearch>      search;
     QLabel             *labelGradationHeights;
@@ -185,7 +186,7 @@ private:
     QAction            *actionDockDiagram;
     bool                dockDiagramVisible;
     bool                isInitialized;
-    bool                mIsReadOnly;
+    bool                m_isReadOnly;
     enum { MaxRecentFiles = 5 };
     QAction            *recentFileActs[MaxRecentFiles];
     QAction            *separatorAct;
@@ -193,9 +194,9 @@ private:
 
     void                SetupMenu();
     void                InitWindow();
-    void                InitTable();
+    void                initializeTable();
     void                SetDecimals();
-    void                InitUnits();
+    void                initUnits();
     void                InitComboBoxUnits();
     void                InitGender(QComboBox *gender);
 

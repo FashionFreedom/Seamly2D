@@ -46,6 +46,8 @@ win32 {
 # Source: https://stackoverflow.com/questions/48705747/how-utf-8-may-not-work-in-qt-5
 win32:!win32-g++: QMAKE_CXXFLAGS += /utf-8
 
+CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
+
 CONFIG(debug, debug|release){
     # Debug mode, intentionally left empty
 } else {
@@ -79,6 +81,7 @@ defineTest(copyToDestdir) {
                     FILE ~= s,/,\\,g
                     DDIR ~= s,/,\\,g
                 }
+                message("copy:" $$quote($$FILE))
                 QMAKE_POST_LINK += $$VCOPY $$quote($$FILE) $$quote($$DDIR) $$escape_expand(\\n\\t)
             }
 

@@ -1,27 +1,28 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//  @file   preferencesconfigurationpage.cpp
+//  @author Douglas S Caskey
+//  @date   26 Oct, 2023
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
+//  Copyright (C) 2017-2024 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   preferencesconfigurationpage.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,29 +30,29 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2017 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2017 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  if not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
 #include "preferencesconfigurationpage.h"
 #include "ui_preferencesconfigurationpage.h"
-#include "../../core/vapplication.h"
+#include "../../core/application_2d.h"
 #include "../vpatterndb/pmsystems.h"
 #include "../vwidgets/export_format_combobox.h"
 
@@ -59,6 +60,8 @@
 #include <QDirIterator>
 #include <QMessageBox>
 #include <QSoundEffect>
+#include <QRegularExpression>
+#include <QRegularExpressionValidator>
 #include <QTimer>
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -66,7 +69,6 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::PreferencesConfigurationPage)
     , m_langChanged(false)
-    , m_systemChanged()
     , m_unitChanged(false)
     , m_labelLangChanged(false)
     , m_selectionSoundChanged(false)
@@ -79,11 +81,30 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
-    //Editing
+    QRegularExpression rx("\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b",
+                          QRegularExpression::CaseInsensitiveOption);
+    ui->email_LineEdit->setValidator(new QRegularExpressionValidator(rx, this));
+
+    // Designer Info
+    ui->companyName_LineEdit->setText(qApp->Seamly2DSettings()->getCompanyName());
+    ui->contact_LineEdit->setText(qApp->Seamly2DSettings()->getContact());
+    ui->address_LineEdit->setText(qApp->Seamly2DSettings()->getAddress());
+    ui->city_LineEdit->setText(qApp->Seamly2DSettings()->getCity());
+    ui->state_LineEdit->setText(qApp->Seamly2DSettings()->getState());
+    ui->zipcode_LineEdit->setText(qApp->Seamly2DSettings()->getZipcode());
+    ui->country_LineEdit->setText(qApp->Seamly2DSettings()->getCountry());
+    ui->telephone_LineEdit->setText(qApp->Seamly2DSettings()->getTelephone());
+    ui->fax_LineEdit->setText(qApp->Seamly2DSettings()->getFax());
+    ui->email_LineEdit->setText(qApp->Seamly2DSettings()->getEmail());
+    ui->website_LineEdit->setText(qApp->Seamly2DSettings()->getWebsite());
+
+    connect(ui->email_LineEdit, &QLineEdit::textChanged, this, &PreferencesConfigurationPage::adjustTextColor);
+
+    // Editing
     // Undo
     ui->undoCount_SpinBox->setValue(qApp->Seamly2DSettings()->GetUndoCount());
 
-    //Selection sound
+    // Selection sound
     int index = ui->selectionSound_ComboBox->findText(qApp->Seamly2DSettings()->getSound());
     if (index != -1)
     {
@@ -100,34 +121,6 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     // Warnings
     ui->confirmItemDelete_CheckBox->setChecked(qApp->Seamly2DSettings()->getConfirmItemDelete());
     ui->confirmFormatRewriting_CheckBox->setChecked(qApp->Seamly2DSettings()->getConfirmFormatRewriting());
-    // Send crash reports
-    //ui->sendReportCheck->setChecked(qApp->Seamly2DSettings()->GetSendReportState());
-    //ui->description = new QLabel(tr("After each crash Seamly2D collects information that may help us fix the "
-    //                                "problem. We do not collect any personal information. Find more about what %1"
-    //                                "kind of information%2 we collect.")
-    //                             .arg("<a href=\"https://wiki.seamly.net/wiki/UserManual:Crash_reports\">")
-    //                             .arg("</a>"));
-
-    // Pattern Making System
-    InitPMSystems(ui->systemCombo);
-    ui->systemBookValueLabel->setFixedHeight(4 * QFontMetrics(ui->systemBookValueLabel->font()).lineSpacing());
-    connect(ui->systemCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
-    {
-        m_systemChanged = true;
-        QString text = qApp->TrVars()->PMSystemAuthor(ui->systemCombo->currentData().toString());
-        ui->systemAuthorValueLabel->setText(text);
-        ui->systemAuthorValueLabel->setToolTip(text);
-
-        text = qApp->TrVars()->PMSystemBook(ui->systemCombo->currentData().toString());
-        ui->systemBookValueLabel->setPlainText(text);
-    });
-
-    // set default pattern making system
-    index = ui->systemCombo->findData(qApp->Seamly2DSettings()->GetPMSystemCode());
-    if (index != -1)
-    {
-        ui->systemCombo->setCurrentIndex(index);
-    }
 
     // Default operations suffixes
     ui->moveSuffix_ComboBox->addItem(tr("None"), "");
@@ -182,7 +175,8 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
 
     // File handling
-    // Autosave
+    // Backups
+    ui->convertBackupEnabled_CheckBox->setChecked(qApp->Seamly2DSettings()->getConvertBackupEnabled());
     ui->autoSave_CheckBox->setChecked(qApp->Seamly2DSettings()->GetAutosaveState());
     ui->autoInterval_Spinbox->setValue(qApp->Seamly2DSettings()->getAutosaveInterval());
 
@@ -199,6 +193,9 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
         m_defaultExportFormatChanged = true;
     });
 
+    // Startup
+    ui->showWelcome_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowWelcome());
+
     // Language
     InitLanguages(ui->langCombo);
     connect(ui->langCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
@@ -207,18 +204,18 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
 
     // Decimal separator setup
-    ui->osOptionCheck->setText(tr("With OS options") + QString(" (%1)").arg(QLocale().decimalPoint()));
-    ui->osOptionCheck->setChecked(qApp->Seamly2DSettings()->GetOsSeparator());
+    ui->osOptionCheck->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
+    ui->osOptionCheck->setChecked(qApp->Seamly2DSettings()->getOsSeparator());
 
     // Unit setup
-    InitUnits();
+    initUnits();
     connect(ui->unitCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
     {
         m_unitChanged = true;
     });
-    SetLabelComboBox(VApplication::LabelLanguages());
+    setPointNameComboBox(Application2D::pointNameLanguages());
 
-    index = ui->labelCombo->findData(qApp->Seamly2DSettings()->GetLabelLanguage());
+    index = ui->labelCombo->findData(qApp->Seamly2DSettings()->getPointNameLanguage());
     if (index == -1)
     {
         index = ui->labelCombo->findData("en");
@@ -241,13 +238,35 @@ PreferencesConfigurationPage::~PreferencesConfigurationPage()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesConfigurationPage::Apply()
+void PreferencesConfigurationPage::apply()
 {
+    if(!ui->email_LineEdit->text().isEmpty() && !ui->email_LineEdit->hasAcceptableInput())
+    {
+        QMessageBox::warning(this, tr("Email verification"),
+                             tr("Email format is not valid."), QMessageBox::Ok);
+
+        ui->email_LineEdit->setText(QString(""));
+    }
+
     VSettings *settings = qApp->Seamly2DSettings();
+
+    // Designer Info
+    settings->setCompanyName(ui->companyName_LineEdit->text());
+    settings->setContact(ui->contact_LineEdit->text());
+    settings->setAddress(ui->address_LineEdit->text());
+    settings->setCity(ui->city_LineEdit->text());
+    settings->setState(ui->state_LineEdit->text());
+    settings->setZipcode(ui->zipcode_LineEdit->text());
+    settings->setCountry(ui->country_LineEdit->text());
+    settings->setTelephone(ui->telephone_LineEdit->text());
+    settings->setFax(ui->fax_LineEdit->text());
+    settings->setEmail(ui->email_LineEdit->text());
+    settings->setWebsite(ui->website_LineEdit->text());
+
     /* Maximum number of commands in undo stack may only be set when the undo stack is empty, since setting it on a
      * non-empty stack might delete the command at the current index. Calling setUndoLimit() on a non-empty stack
      * prints a warning and does nothing.*/
-    settings->SetUndoCount(ui->undoCount_SpinBox->value());
+    settings->setUndoCount(ui->undoCount_SpinBox->value());
     if (m_selectionSoundChanged)
     {
         const QString locale = qvariant_cast<QString>(ui->selectionSound_ComboBox->currentText());
@@ -257,7 +276,9 @@ void PreferencesConfigurationPage::Apply()
     settings->setConfirmItemDelete(ui->confirmItemDelete_CheckBox->isChecked());
     settings->setConfirmFormatRewriting(ui->confirmFormatRewriting_CheckBox->isChecked());
 
-    settings->SetAutosaveState(ui->autoSave_CheckBox->isChecked());
+    settings->setConvertBackupEnabled(ui->convertBackupEnabled_CheckBox->isChecked());
+
+    settings->setAutosaveState(ui->autoSave_CheckBox->isChecked());
     settings->setAutosaveInterval(ui->autoInterval_Spinbox->value());
 
     QTimer *autoSaveTimer = qApp->getAutoSaveTimer();
@@ -274,18 +295,14 @@ void PreferencesConfigurationPage::Apply()
         m_defaultExportFormatChanged = false;
     }
 
-    settings->SetOsSeparator(ui->osOptionCheck->isChecked());
-    //settings->SetSendReportState(ui->sendReportCheck->isChecked());
+    settings->setShowWelcome(ui->showWelcome_CheckBox->isChecked());
+    settings->setOsSeparator(ui->osOptionCheck->isChecked());
 
-    if (m_langChanged || m_systemChanged)
+    if (m_langChanged)
     {
         const QString locale = qvariant_cast<QString>(ui->langCombo->currentData());
-        settings->SetLocale(locale);
+        settings->setLocale(locale);
         m_langChanged = false;
-
-        const QString code = qvariant_cast<QString>(ui->systemCombo->currentData());
-        settings->SetPMSystemCode(code);
-        m_systemChanged = false;
 
         qApp->loadTranslations(locale);
     }
@@ -301,7 +318,7 @@ void PreferencesConfigurationPage::Apply()
     if (m_labelLangChanged)
     {
         const QString locale = qvariant_cast<QString>(ui->labelCombo->currentData());
-        settings->SetLabelLanguage(locale);
+        settings->setPointNameLanguage(locale);
         m_labelLangChanged = false;
     }
     if (m_moveSuffixChanged)
@@ -335,15 +352,14 @@ void PreferencesConfigurationPage::changeEvent(QEvent *event)
 {
     if (event->type() == QEvent::LanguageChange)
     {
-        // retranslate designer form (single inheritance approach)
-        RetranslateUi();
+        ui->retranslateUi(this);
+        ui->osOptionCheck->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
     }
-    // remember to call base class implementation
     QWidget::changeEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesConfigurationPage::SetLabelComboBox(const QStringList &list)
+void PreferencesConfigurationPage::setPointNameComboBox(const QStringList &list)
 {
     for (int i = 0; i < list.size(); ++i)
     {
@@ -355,27 +371,24 @@ void PreferencesConfigurationPage::SetLabelComboBox(const QStringList &list)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesConfigurationPage::InitUnits()
+void PreferencesConfigurationPage::initUnits()
 {
     ui->unitCombo->addItem(tr("Centimeters"), unitCM);
     ui->unitCombo->addItem(tr("Millimeters"), unitMM);
     ui->unitCombo->addItem(tr("Inches"), unitINCH);
 
     // set default unit
-    const qint32 indexUnit = ui->unitCombo->findData(qApp->Seamly2DSettings()->GetUnit());
+    const qint32 indexUnit = ui->unitCombo->findData(qApp->Seamly2DSettings()->getUnit());
     if (indexUnit != -1)
     {
         ui->unitCombo->setCurrentIndex(indexUnit);
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-void PreferencesConfigurationPage::RetranslateUi()
+void PreferencesConfigurationPage::adjustTextColor()
 {
-    ui->osOptionCheck->setText(tr("With OS options") + QString(" (%1)").arg(QLocale().decimalPoint()));
-    //ui->description->setText(tr("After each crash Seamly2D collects information that may help us fix the "
-    //                            "problem. We do not collect any personal information. Find more about what %1"
-    //                            "kind of information%2 we collect.")
-    //                         .arg("<a href=\"https://wiki.seamly.net/wiki/UserManual:Crash_reports\">")
-    //                         .arg("</a>"));
+    if(!ui->email_LineEdit->hasAcceptableInput())
+        ui->email_LineEdit->setStyleSheet("QLineEdit {color: red;}");
+    else
+        ui->email_LineEdit->setStyleSheet("QLineEdit {color: black;}");
 }

@@ -96,9 +96,13 @@ PointIntersectXYDialog::PointIntersectXYDialog(const VContainer *data, const qui
     vis = new PointIntersectXYVisual(data);
     vis->VisualMode(NULL_ID);//Show vertical axis
 
-    // Call after initialization vis!!!!
-    setLineType(LineTypeDashLine);
-    setLineWeight("0.35");
+    // Call after visual initialized.
+    // If true current pen overides the default tool pen
+    if(!qApp->Settings()->useCurrentPen())
+    {
+        setLineType(LineTypeDashLine);
+        setLineWeight("0.35");
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------

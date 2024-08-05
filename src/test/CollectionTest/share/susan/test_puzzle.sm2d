@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pattern>
+    <!--Pattern created with Seamly2D v2023.11.20.149 (https://seamly.io).-->
+    <version>0.2.4</version>
+    <unit>cm</unit>
+    <description/>
+    <notes/>
+    <patternLabel/>
+    <measurements>susan.smis</measurements>
+    <increments/>
+    <draftBlock name="Front">
+        <calculation>
+            <point id="1" mx="0.132292" my="0.264583" name="A" type="single" x="0.926042" y="1.05833"/>
+            <point angle="290" basePoint="1" id="2" length="50" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="A1" type="endLine"/>
+            <point angle="0" basePoint="1" id="3" length="30" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="A2" type="endLine"/>
+            <spline angle1="229.381" angle2="41.6325" color="black" id="4" kAsm1="0.962941" kAsm2="1.00054" kCurve="1" point1="3" point4="2" type="simple"/>
+            <point id="5" length="Spl_A2_A1/2" mx="0.132292" my="0.264583" name="A3" spline="4" type="cutSpline"/>
+            <line firstPoint="1" id="8" lineColor="black" lineType="solidLine" secondPoint="5"/>
+            <point firstPoint="1" id="9" length="Line_A_A3/2" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="A4" secondPoint="5" type="alongLine"/>
+            <line firstPoint="3" id="10" lineColor="black" lineType="solidLine" secondPoint="9"/>
+            <point firstPoint="1" id="11" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="A5" secondPoint="2" type="intersectXY"/>
+            <line firstPoint="1" id="12" lineColor="black" lineType="solidLine" secondPoint="11"/>
+            <line firstPoint="2" id="13" lineColor="black" lineType="solidLine" secondPoint="11"/>
+        </calculation>
+        <modeling>
+            <point id="14" idObject="1" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <point id="15" idObject="2" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <point id="16" idObject="11" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <point id="17" idObject="1" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <point id="19" idObject="1" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <point id="20" idObject="5" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <spline id="21" idObject="4" inUse="true" type="modelingSpline"/>
+            <point id="22" idObject="2" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <point id="23" idObject="1" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <point id="25" idObject="1" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <point id="26" idObject="3" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <point id="27" idObject="9" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <point id="28" idObject="1" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <point id="30" idObject="3" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <spline id="31" idObject="4" inUse="true" type="modelingSpline"/>
+            <point id="32" idObject="5" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <point id="33" idObject="9" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+        </modeling>
+        <pieces>
+            <piece closed="1" id="18" mx="-24.6622" my="3.94145" name="Detail" seamAllowance="1" version="2" width="1">
+                <data annotation="" foldPosition="" fontSize="0" height="" letter="" mx="0" my="0" onFold="false" orientation="" quantity="1" rotation="" rotationWay="" tilt="" visible="false" width=""/>
+                <patternInfo fontSize="0" height="" mx="0" my="0" rotation="" visible="false" width=""/>
+                <grainline arrows="0" length="" mx="0" my="0" rotation="" visible="false"/>
+                <nodes>
+                    <node idObject="14" type="NodePoint"/>
+                    <node idObject="15" type="NodePoint"/>
+                    <node idObject="16" type="NodePoint"/>
+                    <node idObject="17" type="NodePoint"/>
+                </nodes>
+            </piece>
+            <piece closed="1" id="24" mx="-11.7117" my="4.05406" name="Detail" seamAllowance="1" version="2" width="1">
+                <data annotation="" foldPosition="" fontSize="0" height="" letter="" mx="0" my="0" onFold="false" orientation="" quantity="1" rotation="" rotationWay="" tilt="" visible="false" width=""/>
+                <patternInfo fontSize="0" height="" mx="0" my="0" rotation="" visible="false" width=""/>
+                <grainline arrows="0" length="" mx="0" my="0" rotation="" visible="false"/>
+                <nodes>
+                    <node idObject="19" type="NodePoint"/>
+                    <node idObject="20" type="NodePoint"/>
+                    <node idObject="21" reverse="0" type="NodeSpline"/>
+                    <node idObject="22" type="NodePoint"/>
+                    <node idObject="23" type="NodePoint"/>
+                </nodes>
+            </piece>
+            <piece closed="1" id="29" mx="0.337838" my="-6.47523" name="Detail" seamAllowance="1" version="2" width="1">
+                <data annotation="" foldPosition="" fontSize="0" height="" letter="" mx="0" my="0" onFold="false" orientation="" quantity="1" rotation="" rotationWay="" tilt="" visible="false" width=""/>
+                <patternInfo fontSize="0" height="" mx="0" my="0" rotation="" visible="false" width=""/>
+                <grainline arrows="0" length="" mx="0" my="0" rotation="" visible="false"/>
+                <nodes>
+                    <node idObject="25" type="NodePoint"/>
+                    <node idObject="26" type="NodePoint"/>
+                    <node idObject="27" type="NodePoint"/>
+                    <node idObject="28" type="NodePoint"/>
+                </nodes>
+            </piece>
+            <piece closed="1" id="35" mx="7.71397" my="-3.94145" name="Detail" seamAllowance="1" version="2" width="1">
+                <data annotation="" foldPosition="" fontSize="0" height="" letter="" mx="0" my="0" onFold="false" orientation="" quantity="1" rotation="" rotationWay="" tilt="" visible="false" width=""/>
+                <patternInfo fontSize="0" height="" mx="0" my="0" rotation="" visible="false" width=""/>
+                <grainline arrows="0" length="" mx="0" my="0" rotation="" visible="false"/>
+                <nodes>
+                    <node idObject="30" type="NodePoint"/>
+                    <node idObject="31" reverse="0" type="NodeSpline"/>
+                    <node idObject="32" type="NodePoint"/>
+                    <node idObject="33" type="NodePoint"/>
+                </nodes>
+            </piece>
+        </pieces>
+        <groups/>
+    </draftBlock>
+</pattern>

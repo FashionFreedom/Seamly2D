@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vtoolcutsplinepath.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,29 +19,27 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   vtoolcutsplinepath.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   15 12, 2013
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -95,9 +95,10 @@ const QString VToolCutSplinePath::AttrSplinePath = QStringLiteral("splinePath");
  * @param parent parent object.
  */
 VToolCutSplinePath::VToolCutSplinePath(VAbstractPattern *doc, VContainer *data, const quint32 &id,
-                                       const QString &formula, const quint32 &splinePathId,
-                                       const Source &typeCreation, QGraphicsItem *parent)
-    :VToolCut(doc, data, id, formula, splinePathId, parent)
+                                       QString &direction, const QString &formula,
+                                       const quint32 &splinePathId, const Source &typeCreation,
+                                       QGraphicsItem *parent)
+    : VToolCut(doc, data, id, direction, formula, splinePathId, parent)
 {
     ToolCreation(typeCreation);
 }
@@ -108,10 +109,11 @@ VToolCutSplinePath::VToolCutSplinePath(VAbstractPattern *doc, VContainer *data, 
  */
 void VToolCutSplinePath::setDialog()
 {
-    SCASSERT(not m_dialog.isNull())
+    SCASSERT(!m_dialog.isNull())
     QSharedPointer<DialogCutSplinePath> dialogTool = m_dialog.objectCast<DialogCutSplinePath>();
-    SCASSERT(not dialogTool.isNull())
+    SCASSERT(!dialogTool.isNull())
     const QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(m_id);
+    dialogTool->setDirection(m_direction);
     dialogTool->SetFormula(formula);
     dialogTool->setSplinePathId(curveCutId);
     dialogTool->SetPointName(point->name());
@@ -128,13 +130,14 @@ void VToolCutSplinePath::setDialog()
 VToolCutSplinePath* VToolCutSplinePath::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
                                                VAbstractPattern *doc, VContainer *data)
 {
-    SCASSERT(not dialog.isNull())
+    SCASSERT(!dialog.isNull())
     QSharedPointer<DialogCutSplinePath> dialogTool = dialog.objectCast<DialogCutSplinePath>();
-    SCASSERT(not dialogTool.isNull())
+    SCASSERT(!dialogTool.isNull())
     const QString pointName = dialogTool->getPointName();
+    QString direction       = dialogTool->getDirection();
     QString formula = dialogTool->GetFormula();
     const quint32 splinePathId = dialogTool->getSplinePathId();
-    VToolCutSplinePath* point = Create(0, pointName, formula, splinePathId, 5, 10, true, scene, doc, data,
+    VToolCutSplinePath* point = Create(0, pointName, direction, formula, splinePathId, 5, 10, true, scene, doc, data,
                                        Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
@@ -158,21 +161,29 @@ VToolCutSplinePath* VToolCutSplinePath::Create(QSharedPointer<DialogTool> dialog
  * @param parse parser file mode.
  * @param typeCreation way we create this tool.
  */
-VToolCutSplinePath* VToolCutSplinePath::Create(const quint32 _id, const QString &pointName, QString &formula,
-                                               quint32 splinePathId, qreal mx, qreal my, bool showPointName,
-                                               VMainGraphicsScene *scene, VAbstractPattern *doc,
-                                               VContainer *data, const Document &parse, const Source &typeCreation)
+VToolCutSplinePath* VToolCutSplinePath::Create(const quint32 _id, const QString &pointName, QString &direction,
+                                               QString &formula, quint32 splinePathId, qreal mx, qreal my,
+                                               bool showPointName, VMainGraphicsScene *scene,
+                                               VAbstractPattern *doc, VContainer *data, const Document &parse,
+                                               const Source &typeCreation)
 {
     const auto splPath = data->GeometricObject<VAbstractCubicBezierPath>(splinePathId);
     SCASSERT(splPath != nullptr)
 
-    const qreal result = CheckFormula(_id, formula, data);
+    qreal splLength = qApp->fromPixel(splPath->GetLength());
+    QString adjFormula = formula;
+    if (direction == "backward")
+    {
+        adjFormula = QString("%1 - %2").arg(splLength).arg(formula);
+    }
+
+    const qreal length = CheckFormula(_id, adjFormula, data);
 
     quint32 id = _id;
     VSplinePath *splPath1 = nullptr;
     VSplinePath *splPath2 = nullptr;
-    
-    VPointF *p = VToolCutSplinePath::CutSplinePath(qApp->toPixel(result), splPath, pointName, &splPath1, &splPath2);
+
+    VPointF *p = VToolCutSplinePath::CutSplinePath(qApp->toPixel(length), splPath, pointName, &splPath1, &splPath2);
     p->setShowPointName(showPointName);
 
     SCASSERT(splPath1 != nullptr)
@@ -205,7 +216,7 @@ VToolCutSplinePath* VToolCutSplinePath::Create(const quint32 _id, const QString 
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::CutSplinePath, doc);
-        VToolCutSplinePath *point = new VToolCutSplinePath(doc, data, id, formula, splinePathId, typeCreation);
+        VToolCutSplinePath *point = new VToolCutSplinePath(doc, data, id, direction, formula, splinePathId, typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
         VAbstractPattern::AddTool(id, point);
@@ -308,9 +319,9 @@ void VToolCutSplinePath::showContextMenu(QGraphicsSceneContextMenuEvent *event, 
     {
         ContextMenu<DialogCutSplinePath>(event, id);
     }
-    catch(const VExceptionToolWasDeleted &e)
+    catch(const VExceptionToolWasDeleted &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;//Leave this method immediately!!!
     }
 }
@@ -321,10 +332,11 @@ void VToolCutSplinePath::showContextMenu(QGraphicsSceneContextMenuEvent *event, 
  */
 void VToolCutSplinePath::SaveDialog(QDomElement &domElement)
 {
-    SCASSERT(not m_dialog.isNull())
+    SCASSERT(!m_dialog.isNull())
     QSharedPointer<DialogCutSplinePath> dialogTool = m_dialog.objectCast<DialogCutSplinePath>();
-    SCASSERT(not dialogTool.isNull())
+    SCASSERT(!dialogTool.isNull())
     doc->SetAttribute(domElement, AttrName, dialogTool->getPointName());
+    doc->SetAttribute(domElement, AttrDirection, dialogTool->getDirection());
     doc->SetAttribute(domElement, AttrLength, dialogTool->GetFormula());
     doc->SetAttribute(domElement, AttrSplinePath, QString().setNum(dialogTool->getSplinePathId()));
 }
@@ -334,6 +346,7 @@ void VToolCutSplinePath::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> 
 {
     VToolCut::SaveOptions(tag, obj);
 
+    doc->SetAttribute(tag, AttrDirection, m_direction);
     doc->SetAttribute(tag, AttrType, ToolType);
     doc->SetAttribute(tag, AttrLength, formula);
     doc->SetAttribute(tag, AttrSplinePath, curveCutId);
@@ -342,20 +355,22 @@ void VToolCutSplinePath::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolCutSplinePath::ReadToolAttributes(const QDomElement &domElement)
 {
-    formula = doc->GetParametrString(domElement, AttrLength, "");
-    curveCutId = doc->GetParametrUInt(domElement, AttrSplinePath, NULL_ID_STR);
+    m_direction = doc->GetParametrString(domElement, AttrDirection, "forward");
+    formula     = doc->GetParametrString(domElement, AttrLength, "");
+    curveCutId  = doc->GetParametrUInt(domElement, AttrSplinePath, NULL_ID_STR);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolCutSplinePath::SetVisualization()
 {
-    if (not vis.isNull())
+    if (!vis.isNull())
     {
         VisToolCutSplinePath *visual = qobject_cast<VisToolCutSplinePath *>(vis);
         SCASSERT(visual != nullptr)
 
         visual->setObject1Id(curveCutId);
-        visual->setLength(qApp->TrVars()->FormulaToUser(formula, qApp->Settings()->GetOsSeparator()));
+        visual->setDirection(m_direction);
+        visual->setLength(qApp->translateVariables()->FormulaToUser(formula, qApp->Settings()->getOsSeparator()));
 
         const QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(curveCutId);
         visual->setLineStyle(lineTypeToPenStyle(curve->GetPenStyle()));
@@ -369,7 +384,7 @@ QString VToolCutSplinePath::makeToolTip() const
 {
     const auto splPath = VAbstractTool::data.GeometricObject<VAbstractCubicBezierPath>(curveCutId);
 
-    const QString expression = qApp->TrVars()->FormulaToUser(formula, qApp->Settings()->GetOsSeparator());
+    const QString expression = qApp->translateVariables()->FormulaToUser(formula, qApp->Settings()->getOsSeparator());
     const qreal length = Visualization::FindVal(expression, VAbstractTool::data.DataVariables());
 
     VSplinePath *splPath1 = nullptr;

@@ -30,6 +30,7 @@ LANGUAGES += \
     en_US \
     en_CA \
     en_IN \
+    en_GB \
     ro_RO \
     zh_CN \
     pt_BR \

@@ -71,7 +71,12 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 VisToolCutSpline::VisToolCutSpline(const VContainer *data, QGraphicsItem *parent)
-    :VisPath(data, parent), point(nullptr), spl1(nullptr), spl2(nullptr), length(0)
+    : VisPath(data, parent)
+    , point(nullptr)
+    , spl1(nullptr)
+    , spl2(nullptr)
+    , m_length(0)
+    , m_direction("")
 {
     spl1 = InitItem<VCurvePathItem>(Qt::darkGreen, this);
     spl1->setFlag(QGraphicsItem::ItemStacksBehindParent, false);
@@ -90,14 +95,19 @@ void VisToolCutSpline::RefreshGeometry()
     {
         const auto spl = Visualization::data->GeometricObject<VAbstractCubicBezier>(object1Id);
         DrawPath(this, spl->GetPath(), spl->DirectionArrows(), supportColor, lineStyle, lineWeight, Qt::RoundCap);
+        qreal length = m_length;
+        if (m_direction == "backward")
+        {
+            length = spl->GetLength() - m_length;
+        }
 
-        if (not qFuzzyIsNull(length))
+        if (!qFuzzyIsNull(length))
         {
             QPointF spl1p2;
             QPointF spl1p3;
             QPointF spl2p2;
             QPointF spl2p3;
-            const QPointF p = spl->CutSpline (length, spl1p2, spl1p3, spl2p2, spl2p3 );
+            const QPointF p = spl->CutSpline(length, spl1p2, spl1p3, spl2p2, spl2p3);
 
             const VSpline sp1 = VSpline(spl->GetP1(), spl1p2, spl1p3, VPointF(p));
             const VSpline sp2 = VSpline(VPointF(p), spl2p2, spl2p3, spl->GetP4());
@@ -110,8 +120,13 @@ void VisToolCutSpline::RefreshGeometry()
     }
 }
 
+void VisToolCutSpline::setDirection(const QString &direction)
+{
+    m_direction = direction;
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 void VisToolCutSpline::setLength(const QString &expression)
 {
-    length = FindLength(expression, Visualization::data->DataVariables());
+    m_length = FindLength(expression, Visualization::data->DataVariables());
 }

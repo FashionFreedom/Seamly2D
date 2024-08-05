@@ -175,6 +175,7 @@ extern const QString AttrShowPointName;
 extern const QString AttrShowPointName1;
 extern const QString AttrShowPointName2;
 extern const QString AttrAlias;
+extern const QString AttrDirection;
 
 extern const QString LineTypeNone;
 extern const QString LineTypeSolidLine;
@@ -190,6 +191,7 @@ QMap<QString, QString> lineTypeList();
 QMap<QString, QString> curveLineTypeList();
 
 QMap<QString, QString> lineWeightList();
+QMap<QString, QString> directionList();
 
 extern const QString LineWeightByGroup;
 extern const QString LineTypeByGroup;

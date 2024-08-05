@@ -1,19 +1,13 @@
-/**************************************************************************
- **
+/***************************************************************************
  **  @file   vdrawtool.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
  **  @author Douglas S Caskey
- **  @date   7.23.2022
+ **  @date   17 Sep, 2023
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2022 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -25,9 +19,36 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
+
+/************************************************************************
+ **  @file   vdrawtool.h
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   November 15, 2013
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2013 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
+
 #ifndef VDRAWTOOL_H
 #define VDRAWTOOL_H
 
@@ -143,7 +164,7 @@ private:
 template <typename Dialog>
 /**
  * @brief ContextMenu show context menu for tool.
- * @param itemId id of point. 
+ * @param itemId id of point.
  * @param event context menu event.
  * @param showRemove true - tool enable option delete.
  * @param ref true - do not ignore referens value.
@@ -165,9 +186,9 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
         {
             itemType = data.GetGObject(itemId)->getType();
         }
-        catch (const VExceptionBadId &e)
+        catch (const VExceptionBadId &error)
         { // Possible case. Parent was deleted, but the node object is still here.
-            qWarning() << qUtf8Printable(e.ErrorMessage());
+            qWarning() << qUtf8Printable(error.ErrorMessage());
         }
     }
 
@@ -351,11 +372,11 @@ QString VDrawTool::ObjectName(quint32 id) const
     {
         return data.GeometricObject<T>(id)->name();
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
-        qCDebug(vTool, "Error! Couldn't get object name by id = %s. %s %s", qUtf8Printable(QString().setNum(id)),
-                qUtf8Printable(e.ErrorMessage()),
-                qUtf8Printable(e.DetailedInformation()));
+        qCWarning(vTool, "Error! Couldn't get object name by id = %s. %s %s", qUtf8Printable(QString().setNum(id)),
+                qUtf8Printable(error.ErrorMessage()),
+                qUtf8Printable(error.DetailedInformation()));
         return QString("");// Return empty string for property browser
     }
 }

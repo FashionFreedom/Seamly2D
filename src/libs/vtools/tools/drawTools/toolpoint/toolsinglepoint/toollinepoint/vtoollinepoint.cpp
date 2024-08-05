@@ -108,7 +108,7 @@ VToolLinePoint::VToolLinePoint(VAbstractPattern *doc, VContainer *data, const qu
     QPointF point1 = static_cast<QPointF>(*data->GeometricObject<VPointF>(basePointId));
     QPointF point2 = static_cast<QPointF>(*data->GeometricObject<VPointF>(id));
     mainLine = new VScaledLine(QLineF(point1 - point2, QPointF()), this);
-    mainLine->setBasicWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
+    mainLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
     mainLine->setFlag(QGraphicsItem::ItemStacksBehindParent, true);
 }
 
@@ -142,7 +142,7 @@ void VToolLinePoint::RefreshGeometry()
     QPointF point = static_cast<QPointF>(*VDrawTool::data.GeometricObject<VPointF>(m_id));
     QPointF basePoint = static_cast<QPointF>(*VDrawTool::data.GeometricObject<VPointF>(basePointId));
 
-    mainLine->setBasicWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
+    mainLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
     mainLine->setLine(QLineF(basePoint - point, QPointF()));
 }
 
@@ -169,14 +169,14 @@ void VToolLinePoint::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj
 //---------------------------------------------------------------------------------------------------------------------
 void VToolLinePoint::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
-    mainLine->setBasicWidth(ToPixel(m_lineWeight.toDouble() + 1, Unit::Mm));
+    mainLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble() + 1, Unit::Mm));
     VToolSinglePoint::hoverEnterEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolLinePoint::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
-    mainLine->setBasicWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
+    mainLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
     VToolSinglePoint::hoverLeaveEvent(event);
 }
 

@@ -67,9 +67,10 @@
 #include "../vtoolsinglepoint.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolCut::VToolCut(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &formula,
-                   const quint32 &curveCutId, QGraphicsItem *parent)
+VToolCut::VToolCut(VAbstractPattern *doc, VContainer *data, const quint32 &id, QString &direction,
+                   const QString &formula, const quint32 &curveCutId, QGraphicsItem *parent)
     : VToolSinglePoint(doc, data, id, QColor(qApp->Settings()->getPointNameColor()), parent)
+    , m_direction(direction)
     , formula(formula)
     , curveCutId(curveCutId)
     , m_piecesMode(false)
@@ -117,6 +118,19 @@ void VToolCut::setCurveCutId(const quint32 &value)
         QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
         SaveOption(obj);
     }
+}
+
+QString VToolCut::getDirection() const
+{
+    return m_direction;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolCut::setDirection(const QString &value)
+{
+        m_direction = value;
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+        SaveOption(obj);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

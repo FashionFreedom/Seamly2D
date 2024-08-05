@@ -66,7 +66,7 @@ QMap<QString, QString> PreparePlaceholders(const VAbstractPattern *doc)
     QMap<QString, QString> placeholders;
 
     // Pattern tags
-    QLocale locale(qApp->Settings()->GetLocale());
+    QLocale locale(qApp->Settings()->getLocale());
 
     const QString date = locale.toString(QDate::currentDate(), doc->GetLabelDateFormat());
     placeholders.insert(pl_date, date);

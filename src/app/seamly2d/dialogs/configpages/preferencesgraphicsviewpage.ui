@@ -11,21 +11,21 @@
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
-    <width>485</width>
-    <height>570</height>
+    <width>100</width>
+    <height>100</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>485</width>
-    <height>570</height>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="font">
@@ -43,7 +43,7 @@
    <item>
     <widget class="QTabWidget" name="graphicsViewTabWidget">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -56,8 +56,8 @@
      </property>
      <property name="maximumSize">
       <size>
-       <width>465</width>
-       <height>550</height>
+       <width>16777215</width>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
@@ -75,44 +75,45 @@
       <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="appearanceTab">
       <attribute name="title">
        <string>Appearance</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_7">
+      <layout class="QVBoxLayout" name="verticalLayout_11">
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item>
-          <widget class="QGroupBox" name="toolbarsGroupBox">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>420</width>
-             <height>300</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>420</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>9</pointsize>
-            </font>
-           </property>
-           <property name="title">
-            <string>Toolbars</string>
-           </property>
-           <layout class="QVBoxLayout" name="verticalLayout_10">
+        <widget class="QGroupBox" name="toolbarsGroupBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="title">
+          <string>Toolbars</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
             <item>
              <widget class="QCheckBox" name="toolBarStyle_CheckBox">
               <property name="sizePolicy">
@@ -136,9 +137,16 @@
             </item>
             <item>
              <widget class="QGroupBox" name="groupBox_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="title">
@@ -257,87 +265,91 @@
              </widget>
             </item>
            </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QGroupBox" name="outputGroupBox">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>420</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>420</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>9</pointsize>
-            </font>
-           </property>
-           <property name="title">
-            <string>Graphical output</string>
-           </property>
-           <layout class="QVBoxLayout" name="verticalLayout_11">
-            <item>
-             <widget class="QCheckBox" name="graphicsOutput_CheckBox">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Use anti-aliasing</string>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="outputGroupBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="title">
+          <string>Graphical output</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_10">
+          <item>
+           <widget class="QCheckBox" name="graphicsOutput_CheckBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Use anti-aliasing</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>129</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </widget>
@@ -348,11 +360,22 @@
       <layout class="QVBoxLayout" name="verticalLayout_19">
        <item>
         <widget class="QGroupBox" name="labelFont_GroupBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>420</width>
            <height>0</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <bold>true</bold>
+          </font>
          </property>
          <property name="title">
           <string>Label</string>
@@ -364,7 +387,7 @@
              <widget class="QLabel" name="labelFont_Label">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>85</width>
                 <height>0</height>
                </size>
               </property>
@@ -391,7 +414,7 @@
              <widget class="QFontComboBox" name="labelFont_ComboBox">
               <property name="minimumSize">
                <size>
-                <width>200</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
@@ -409,7 +432,7 @@
              <widget class="QLabel" name="fontSize_Label">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>85</width>
                 <height>0</height>
                </size>
               </property>
@@ -434,7 +457,7 @@
               </property>
               <property name="maximumSize">
                <size>
-                <width>120</width>
+                <width>16777215</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -608,11 +631,22 @@
        </item>
        <item>
         <widget class="QGroupBox" name="pointNameFont_GroupBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>420</width>
            <height>0</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <bold>true</bold>
+          </font>
          </property>
          <property name="title">
           <string>Point Names</string>
@@ -624,7 +658,7 @@
              <widget class="QLabel" name="pointNameFont_Label">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>85</width>
                 <height>0</height>
                </size>
               </property>
@@ -656,9 +690,7 @@
                </size>
               </property>
               <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
+               <font/>
               </property>
               <property name="styleSheet">
                <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -669,7 +701,7 @@
              <widget class="QLabel" name="pointNameFontSize_Label">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>85</width>
                 <height>0</height>
                </size>
               </property>
@@ -691,7 +723,7 @@
              <widget class="QComboBox" name="pointNameFontSize_ComboBox">
               <property name="maximumSize">
                <size>
-                <width>120</width>
+                <width>16777215</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -868,11 +900,22 @@
        </item>
        <item>
         <widget class="QGroupBox" name="pointNameFont_GroupBox_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>420</width>
            <height>0</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <bold>true</bold>
+          </font>
          </property>
          <property name="title">
           <string>GUI</string>
@@ -884,7 +927,7 @@
              <widget class="QLabel" name="guiFont_Label">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>85</width>
                 <height>0</height>
                </size>
               </property>
@@ -916,9 +959,7 @@
                </size>
               </property>
               <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
+               <font/>
               </property>
               <property name="styleSheet">
                <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -929,7 +970,7 @@
              <widget class="QLabel" name="guiFontSize_Label">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>85</width>
                 <height>0</height>
                </size>
               </property>
@@ -951,7 +992,7 @@
              <widget class="QComboBox" name="guiFontSize_ComboBox">
               <property name="maximumSize">
                <size>
-                <width>120</width>
+                <width>16777215</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -1149,26 +1190,27 @@
        <item>
         <widget class="QGroupBox" name="zoomRubberBandGroupBox">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="minimumSize">
           <size>
-           <width>420</width>
+           <width>0</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>420</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
          <property name="font">
           <font>
            <pointsize>9</pointsize>
+           <bold>true</bold>
           </font>
          </property>
          <property name="title">
@@ -1180,7 +1222,7 @@
             <item row="0" column="0">
              <widget class="QLabel" name="zrbPositiveColorLabel">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -1188,7 +1230,7 @@
               <property name="minimumSize">
                <size>
                 <width>85</width>
-                <height>14</height>
+                <height>0</height>
                </size>
               </property>
               <property name="font">
@@ -1235,7 +1277,7 @@
             <item row="1" column="0">
              <widget class="QLabel" name="zrbNegativeColorLabel">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -1243,12 +1285,12 @@
               <property name="minimumSize">
                <size>
                 <width>85</width>
-                <height>14</height>
+                <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>120</width>
+                <width>16777215</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -1301,26 +1343,27 @@
        <item>
         <widget class="QGroupBox" name="pointNames_GroupBox">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="minimumSize">
           <size>
-           <width>420</width>
+           <width>0</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>420</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
          <property name="font">
           <font>
            <pointsize>9</pointsize>
+           <bold>true</bold>
           </font>
          </property>
          <property name="title">
@@ -1332,7 +1375,7 @@
             <item row="0" column="0">
              <widget class="QLabel" name="pontNameColor_Label">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -1340,7 +1383,7 @@
               <property name="minimumSize">
                <size>
                 <width>85</width>
-                <height>14</height>
+                <height>0</height>
                </size>
               </property>
               <property name="font">
@@ -1387,7 +1430,7 @@
             <item row="1" column="0">
              <widget class="QLabel" name="pontNameHoverColor_Label">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -1395,12 +1438,12 @@
               <property name="minimumSize">
                <size>
                 <width>85</width>
-                <height>14</height>
+                <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>120</width>
+                <width>16777215</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -1453,26 +1496,27 @@
        <item>
         <widget class="QGroupBox" name="drawing_GroupBox">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="minimumSize">
           <size>
-           <width>420</width>
+           <width>0</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>420</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
          <property name="font">
           <font>
            <pointsize>9</pointsize>
+           <bold>true</bold>
           </font>
          </property>
          <property name="title">
@@ -1484,7 +1528,7 @@
             <item row="0" column="0">
              <widget class="QLabel" name="axisOrginColor_Label">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -1492,7 +1536,7 @@
               <property name="minimumSize">
                <size>
                 <width>85</width>
-                <height>14</height>
+                <height>0</height>
                </size>
               </property>
               <property name="font">
@@ -1543,204 +1587,209 @@
        </item>
        <item>
         <widget class="QGroupBox" name="selection_GroupBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>110</height>
+           <height>0</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <bold>true</bold>
+          </font>
          </property>
          <property name="title">
           <string>Selection</string>
          </property>
-         <widget class="QWidget" name="layoutWidget">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>20</y>
-            <width>401</width>
-            <height>80</height>
-           </rect>
-          </property>
-          <layout class="QFormLayout" name="formLayout_9">
-           <item row="0" column="0">
-            <widget class="QLabel" name="primarySupportColor_Label">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>85</width>
-               <height>14</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Primary:</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="ColorComboBox" name="primarySupportColor_ComboBox">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>200</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="maxVisibleItems">
-              <number>15</number>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>40</width>
-               <height>14</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="secondarySupportColor_Label">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>85</width>
-               <height>14</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>120</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Secondary:</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="ColorComboBox" name="secondarySupportColor_ComboBox">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>200</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="maxVisibleItems">
-              <number>15</number>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>40</width>
-               <height>14</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="tertiarySupportColor_Laabel">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>85</width>
-               <height>14</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>120</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Tertiary:</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="ColorComboBox" name="tertiarySupportColor_ComboBox">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>200</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="maxVisibleItems">
-              <number>15</number>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>40</width>
-               <height>14</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
+         <layout class="QVBoxLayout" name="verticalLayout_22">
+          <item>
+           <layout class="QFormLayout" name="formLayout_9">
+            <item row="0" column="0">
+             <widget class="QLabel" name="primarySupportColor_Label">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>85</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Primary:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="ColorComboBox" name="primarySupportColor_ComboBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="maxVisibleItems">
+               <number>15</number>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>40</width>
+                <height>14</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="secondarySupportColor_Label">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>85</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Secondary:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="ColorComboBox" name="secondarySupportColor_ComboBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="maxVisibleItems">
+               <number>15</number>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>40</width>
+                <height>14</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="tertiarySupportColor_Laabel">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>85</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Tertiary:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="ColorComboBox" name="tertiarySupportColor_ComboBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="maxVisibleItems">
+               <number>15</number>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>40</width>
+                <height>14</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </widget>
        </item>
        <item>
@@ -1766,26 +1815,27 @@
        <item>
         <widget class="QGroupBox" name="scrollBarGroupBox">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="minimumSize">
           <size>
-           <width>420</width>
-           <height>150</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>420</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
          <property name="font">
           <font>
            <pointsize>9</pointsize>
+           <bold>true</bold>
           </font>
          </property>
          <property name="title">
@@ -1834,7 +1884,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>90</width>
+                <width>110</width>
                 <height>14</height>
                </size>
               </property>
@@ -1888,7 +1938,7 @@
              <widget class="QLabel" name="scrollDurationLabel">
               <property name="minimumSize">
                <size>
-                <width>90</width>
+                <width>110</width>
                 <height>0</height>
                </size>
               </property>
@@ -1945,7 +1995,7 @@
              <widget class="QLabel" name="scrollUpdateIntervalLabel">
               <property name="minimumSize">
                <size>
-                <width>90</width>
+                <width>110</width>
                 <height>0</height>
                </size>
               </property>
@@ -2002,7 +2052,7 @@
              <widget class="QLabel" name="label_3">
               <property name="minimumSize">
                <size>
-                <width>90</width>
+                <width>110</width>
                 <height>0</height>
                </size>
               </property>
@@ -2052,7 +2102,7 @@
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>240</width>
+                  <width>16777215</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -2162,26 +2212,27 @@ border-radius: 4px;
        <item>
         <widget class="QGroupBox" name="zoomGroupBox">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="minimumSize">
           <size>
-           <width>420</width>
-           <height>80</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>420</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
          <property name="font">
           <font>
            <pointsize>9</pointsize>
+           <bold>true</bold>
           </font>
          </property>
          <property name="title">
@@ -2221,7 +2272,7 @@ border-radius: 4px;
              <widget class="QLabel" name="label">
               <property name="minimumSize">
                <size>
-                <width>90</width>
+                <width>110</width>
                 <height>0</height>
                </size>
               </property>
@@ -2231,7 +2282,7 @@ border-radius: 4px;
                </font>
               </property>
               <property name="text">
-               <string>          Speed:</string>
+               <string>Speed:</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2280,7 +2331,7 @@ border-radius: 4px;
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>225</width>
+                  <width>16777215</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -2402,28 +2453,29 @@ border-radius: 4px;
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_16">
        <item>
-        <widget class="QGroupBox" name="constainGroupBox">
+        <widget class="QGroupBox" name="constaints_GroupBox">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="minimumSize">
           <size>
-           <width>420</width>
+           <width>0</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>420</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
          <property name="font">
           <font>
            <pointsize>9</pointsize>
+           <bold>true</bold>
           </font>
          </property>
          <property name="title">
@@ -2459,7 +2511,7 @@ border-radius: 4px;
              </font>
             </property>
             <property name="text">
-             <string>Use CTRL Modifier</string>
+             <string>Use CTRL modifier</string>
             </property>
             <property name="checked">
              <bool>true</bool>
@@ -2478,8 +2530,8 @@ border-radius: 4px;
               </property>
               <property name="minimumSize">
                <size>
-                <width>90</width>
-                <height>14</height>
+                <width>85</width>
+                <height>0</height>
                </size>
               </property>
               <property name="font">
@@ -2550,22 +2602,29 @@ border-radius: 4px;
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox">
+        <widget class="QGroupBox" name="zoom_GroupBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
-           <width>420</width>
+           <width>0</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>420</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
          <property name="font">
           <font>
            <pointsize>9</pointsize>
+           <bold>true</bold>
           </font>
          </property>
          <property name="title">
@@ -2604,15 +2663,22 @@ border-radius: 4px;
        </item>
        <item>
         <widget class="QGroupBox" name="export_GroupBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>60</height>
+           <height>0</height>
           </size>
          </property>
          <property name="font">
           <font>
            <pointsize>9</pointsize>
+           <bold>true</bold>
           </font>
          </property>
          <property name="title">
@@ -2625,7 +2691,7 @@ border-radius: 4px;
              <widget class="QLabel" name="quality_Label">
               <property name="minimumSize">
                <size>
-                <width>90</width>
+                <width>85</width>
                 <height>0</height>
                </size>
               </property>
@@ -2784,6 +2850,33 @@ border-radius: 4px;
              </layout>
             </item>
            </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="pen_GroupBox">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="title">
+          <string>Pen</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_23">
+          <item>
+           <widget class="QCheckBox" name="useCurrentPen_checkBox">
+            <property name="text">
+             <string>Always use current pen</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>

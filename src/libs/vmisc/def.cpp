@@ -1,37 +1,16 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
+/************************************************************************
  **  @file   def.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   11 6, 2015
  **
+ **  @author DS Caskey
+ **  @date   Jul 31, 2022
+ **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
+ **  Copyright (C) 2013-2022 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -51,11 +30,14 @@
 
 #include "def.h"
 
+#include "vabstractapplication.h"
+
 #include <QApplication>
 #include <QChar>
 #include <QColor>
 #include <QComboBox>
 #include <QCursor>
+#include <QFileDialog>
 #include <QDir>
 #include <QDirIterator>
 #include <QFileInfo>
@@ -76,8 +58,6 @@
 #include <QGraphicsItem>
 #include <QDesktopServices>
 #include <QUrl>
-
-#include "vabstractapplication.h"
 
 //functions
 const QString degTorad_F = QStringLiteral("degTorad");
@@ -186,19 +166,28 @@ const QStringList labelTemplatePlaceholders = QStringList() << pl_size
                                                             << pl_wCut
                                                             << pl_wOnFold;
 
-const QString cursorArrowOpenHand = QStringLiteral("://cursor/cursor-arrow-openhand.png");
+const QString cursorArrowOpenHand  = QStringLiteral("://cursor/cursor-arrow-openhand.png");
 const QString cursorArrowCloseHand = QStringLiteral("://cursor/cursor-arrow-closehand.png");
+const QString cursorResizeArrow = QStringLiteral("://cursor/arrow_resize_cursor.png");
+const QString cursorImageOrigin = QStringLiteral("://cursor/image_origin_cursor.png");
 
 // From documantation: If you use QStringLiteral you should avoid declaring the same literal in multiple places: This
 // furthermore blows up the binary sizes.
 const QString degreeSymbol = QStringLiteral("°");
-const QString trueStr = QStringLiteral("true");
-const QString falseStr = QStringLiteral("false");
+const QString trueStr      = QStringLiteral("true");
+const QString falseStr     = QStringLiteral("false");
 
-const QString unitMM   = QStringLiteral("mm");
-const QString unitCM   = QStringLiteral("cm");
-const QString unitINCH = QStringLiteral("inch");
-const QString unitPX   = QStringLiteral("px");
+const QString unitMM       = QStringLiteral("mm");
+const QString unitCM       = QStringLiteral("cm");
+const QString unitINCH     = QStringLiteral("inch");
+const QString unitPX       = QStringLiteral("px");
+
+const QString valExt       = QStringLiteral("val");
+const QString vitExt       = QStringLiteral("vit");
+const QString vstExt       = QStringLiteral("vst");
+const QString sm2dExt      = QStringLiteral("sm2d");
+const QString smisExt      = QStringLiteral("smis");
+const QString smmsExt      = QStringLiteral("smms");
 
 //---------------------------------------------------------------------------------------------------------------------
 void SetItemOverrideCursor(QGraphicsItem *item, const QString &pixmapPath, int hotX, int hotY)
@@ -375,8 +364,8 @@ QStringList SupportedLocales()
                                               << QStringLiteral("ro_RO")
                                               << QStringLiteral("zh_CN")
                                               << QStringLiteral("pt_BR")
-                                              << QStringLiteral("el_GR");
-
+                                              << QStringLiteral("el_GR")
+                                              << QStringLiteral("en_GB");
     return locales;
 }
 
@@ -399,7 +388,7 @@ QString strippedName(const QString &fullFileName)
 QString makeHeaderName(const QString &name)
 {
     QString headerStr = QObject::tr("%1").arg(name);
-    return headerStr.left(1).toUpper();
+    return headerStr.at(0).toUpper();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -432,6 +421,45 @@ QString AbsoluteMPath(const QString &patternPath, const QString &relativeMPath)
     }
 
     return QFileInfo(QFileInfo(patternPath).absoluteDir(), relativeMPath).absoluteFilePath();
+}
+
+QString fileDialog(QWidget *parent, const QString &title,  const QString &dir, const QString &filter,
+                   QString *selectedFilter, QFileDialog::Options options, QFileDialog::FileMode mode,
+                   QFileDialog::AcceptMode accept)
+{
+    QFileDialog dialog(parent, title, dir, filter);
+    dialog.setWindowFlags(dialog.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    dialog.setOptions(options);
+    dialog.setFileMode(mode);
+    dialog.setAcceptMode(accept);
+    dialog.setSupportedSchemes(QStringList(QStringLiteral("file")));
+    if (selectedFilter && !selectedFilter->isEmpty())
+    {
+        dialog.selectNameFilter(*selectedFilter);
+    }
+
+    QUrl selectedUrl;
+    if (dialog.exec() == QDialog::Accepted)
+    {
+        if (selectedFilter)
+        {
+            *selectedFilter = dialog.selectedNameFilter();
+        }
+        selectedUrl = dialog.selectedUrls().value(0);
+    }
+    else
+    {
+        selectedUrl = QUrl();
+    }
+
+    if (selectedUrl.isLocalFile() || selectedUrl.isEmpty())
+    {
+        return selectedUrl.toLocalFile();
+    }
+    else
+    {
+        return selectedUrl.toString();
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -546,7 +574,7 @@ bool IsOptionSet(int argc, char *argv[], const char *option)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void InitHighDpiScaling(int argc, char *argv[])
+void initHighDpiScaling(int argc, char *argv[])
 {
     /* For more info see: http://doc.qt.io/qt-5/highdpi.html */
     if (IsOptionSet(argc, argv, qPrintable(QLatin1String("--") + LONG_OPTION_NO_HDPI_SCALING)))
@@ -559,6 +587,40 @@ void InitHighDpiScaling(int argc, char *argv[])
     }
 }
 //---------------------------------------------------------------------------------------------------------------------
+
+const QString strForward   = QStringLiteral("forward");
+const QString strBackward  = QStringLiteral("backward");
+
+QString directionToString(Direction type)
+{
+    switch(type)
+    {
+        case Direction::Forward:
+            return strForward;
+        case Direction::Backward:
+            return strBackward;
+            default:
+                break;
+    }
+    return strForward;
+}
+
+Direction stringToDirection(const QString &value)
+{
+    const QStringList values = QStringList() << strForward << strBackward;
+
+    switch(values.indexOf(value))
+    {
+        case 0:
+            return Direction::Forward;
+        case 1:
+            return Direction::Backward;
+            default:
+                break;
+    }
+    return Direction::Forward;
+}
+
 
 const QString strSlit      = QStringLiteral("slit");
 const QString strTNotch    = QStringLiteral("tNotch");
@@ -770,7 +832,7 @@ void InitLanguages(QComboBox *combobox)
     }
 
     // set default translators and language checked
-    qint32 index = combobox->findData(qApp->Settings()->GetLocale());
+    qint32 index = combobox->findData(qApp->Settings()->getLocale());
     if (index != -1)
     {
         combobox->setCurrentIndex(index);

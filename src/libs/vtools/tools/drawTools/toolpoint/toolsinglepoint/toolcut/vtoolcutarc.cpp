@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vtoolcutarc.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,29 +19,27 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   vtoolcutarc.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   7 1, 2014
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2014 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -88,9 +88,10 @@ const QString VToolCutArc::ToolType = QStringLiteral("cutArc");
  * @param typeCreation way we create this tool.
  * @param parent parent object.
  */
-VToolCutArc::VToolCutArc(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &formula,
-                         const quint32 &arcId, const Source &typeCreation, QGraphicsItem * parent)
-    :VToolCut(doc, data, id, formula, arcId, parent)
+VToolCutArc::VToolCutArc(VAbstractPattern *doc, VContainer *data, const quint32 &id, QString &direction,
+                         const QString &formula, const quint32 &arcId, const Source &typeCreation,
+                         QGraphicsItem * parent)
+    :VToolCut(doc, data, id, direction, formula, arcId, parent)
 {
     ToolCreation(typeCreation);
 }
@@ -101,10 +102,11 @@ VToolCutArc::VToolCutArc(VAbstractPattern *doc, VContainer *data, const quint32 
  */
 void VToolCutArc::setDialog()
 {
-    SCASSERT(not m_dialog.isNull())
+    SCASSERT(!m_dialog.isNull())
     QSharedPointer<DialogCutArc> dialogTool = m_dialog.objectCast<DialogCutArc>();
-    SCASSERT(not dialogTool.isNull())
+    SCASSERT(!dialogTool.isNull())
     const QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(m_id);
+    dialogTool->setDirection(m_direction);
     dialogTool->SetFormula(formula);
     dialogTool->setArcId(curveCutId);
     dialogTool->SetPointName(point->name());
@@ -121,13 +123,14 @@ void VToolCutArc::setDialog()
 VToolCutArc* VToolCutArc::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene, VAbstractPattern *doc,
                                  VContainer *data)
 {
-    SCASSERT(not dialog.isNull())
+    SCASSERT(!dialog.isNull())
     QSharedPointer<DialogCutArc> dialogTool = dialog.objectCast<DialogCutArc>();
-    SCASSERT(not dialogTool.isNull())
+    SCASSERT(!dialogTool.isNull())
     const QString pointName = dialogTool->getPointName();
-    QString formula = dialogTool->GetFormula();
-    const quint32 arcId = dialogTool->getArcId();
-    VToolCutArc* point = Create(0, pointName, formula, arcId, 5, 10, true, scene, doc, data, Document::FullParse,
+    QString direction       = dialogTool->getDirection();
+    QString formula         = dialogTool->GetFormula();
+    const quint32 arcId     = dialogTool->getArcId();
+    VToolCutArc* point = Create(0, pointName, direction, formula, arcId, 5, 10, true, scene, doc, data, Document::FullParse,
                                 Source::FromGui);
     if (point != nullptr)
     {
@@ -151,17 +154,25 @@ VToolCutArc* VToolCutArc::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
  * @param parse parser file mode.
  * @param typeCreation way we create this tool.
  */
-VToolCutArc* VToolCutArc::Create(const quint32 _id, const QString &pointName, QString &formula, quint32 arcId,
-                                 qreal mx, qreal my, bool showPointName, VMainGraphicsScene *scene, VAbstractPattern *doc,
+VToolCutArc* VToolCutArc::Create(const quint32 _id, const QString &pointName, QString &direction,
+                                 QString &formula, quint32 arcId, qreal mx, qreal my, bool showPointName,
+                                 VMainGraphicsScene *scene, VAbstractPattern *doc,
                                  VContainer *data, const Document &parse, const Source &typeCreation)
 {
     const QSharedPointer<VArc> arc = data->GeometricObject<VArc>(arcId);
+    SCASSERT(arc != nullptr)
 
-    const qreal result = CheckFormula(_id, formula, data);
+    qreal arcLength = qApp->fromPixel(arc->GetLength());
+    QString adjFormula = formula;
+    if (direction == "backward")
+    {
+        adjFormula = QString("%1 - %2").arg(arcLength).arg(formula);
+    }
+    const qreal length = CheckFormula(_id, adjFormula, data);
 
     VArc arc1;
     VArc arc2;
-    QPointF point = arc->CutArc(qApp->toPixel(result), arc1, arc2);
+    QPointF point = arc->CutArc(qApp->toPixel(length), arc1, arc2);
 
     quint32 id = _id;
     VPointF *p = new VPointF(point, pointName, mx, my);
@@ -194,7 +205,7 @@ VToolCutArc* VToolCutArc::Create(const quint32 _id, const QString &pointName, QS
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::CutArc, doc);
-        VToolCutArc *point = new VToolCutArc(doc, data, id, formula, arcId, typeCreation);
+        VToolCutArc *point = new VToolCutArc(doc, data, id, direction, formula, arcId, typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
         VAbstractPattern::AddTool(id, point);
@@ -221,9 +232,9 @@ void VToolCutArc::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32
     {
         ContextMenu<DialogCutArc>(event, id);
     }
-    catch(const VExceptionToolWasDeleted &e)
+    catch(const VExceptionToolWasDeleted &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;//Leave this method immediately!!!
     }
 }
@@ -234,10 +245,11 @@ void VToolCutArc::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32
  */
 void VToolCutArc::SaveDialog(QDomElement &domElement)
 {
-    SCASSERT(not m_dialog.isNull())
+    SCASSERT(!m_dialog.isNull())
     QSharedPointer<DialogCutArc> dialogTool = m_dialog.objectCast<DialogCutArc>();
-    SCASSERT(not dialogTool.isNull())
+    SCASSERT(!dialogTool.isNull())
     doc->SetAttribute(domElement, AttrName, dialogTool->getPointName());
+    doc->SetAttribute(domElement, AttrDirection, dialogTool->getDirection());
     doc->SetAttribute(domElement, AttrLength, dialogTool->GetFormula());
     doc->SetAttribute(domElement, AttrArc, QString().setNum(dialogTool->getArcId()));
 }
@@ -247,6 +259,7 @@ void VToolCutArc::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 {
     VToolCut::SaveOptions(tag, obj);
 
+    doc->SetAttribute(tag, AttrDirection, m_direction);
     doc->SetAttribute(tag, AttrType, ToolType);
     doc->SetAttribute(tag, AttrLength, formula);
     doc->SetAttribute(tag, AttrArc, curveCutId);
@@ -255,20 +268,22 @@ void VToolCutArc::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 //---------------------------------------------------------------------------------------------------------------------
 void VToolCutArc::ReadToolAttributes(const QDomElement &domElement)
 {
-    formula = doc->GetParametrString(domElement, AttrLength, "");
-    curveCutId = doc->GetParametrUInt(domElement, AttrArc, NULL_ID_STR);
+    m_direction = doc->GetParametrString(domElement, AttrDirection, "forward");
+    formula     = doc->GetParametrString(domElement, AttrLength, "");
+    curveCutId  = doc->GetParametrUInt(domElement, AttrArc, NULL_ID_STR);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolCutArc::SetVisualization()
 {
-    if (not vis.isNull())
+    if (!vis.isNull())
     {
         VisToolCutArc *visual = qobject_cast<VisToolCutArc *>(vis);
         SCASSERT(visual != nullptr)
 
         visual->setObject1Id(curveCutId);
-        visual->setLength(qApp->TrVars()->FormulaToUser(formula, qApp->Settings()->GetOsSeparator()));
+        visual->setDirection(m_direction);
+        visual->setLength(qApp->translateVariables()->FormulaToUser(formula, qApp->Settings()->getOsSeparator()));
 
         const QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(curveCutId);
         visual->setLineStyle(lineTypeToPenStyle(curve->GetPenStyle()));
@@ -282,7 +297,7 @@ QString VToolCutArc::makeToolTip() const
 {
     const QSharedPointer<VArc> arc = VAbstractTool::data.GeometricObject<VArc>(curveCutId);
 
-    const QString expression = qApp->TrVars()->FormulaToUser(formula, qApp->Settings()->GetOsSeparator());
+    const QString expression = qApp->translateVariables()->FormulaToUser(formula, qApp->Settings()->getOsSeparator());
     const qreal length = Visualization::FindVal(expression, VAbstractTool::data.DataVariables());
 
     const QString arcStr = tr("Arc");

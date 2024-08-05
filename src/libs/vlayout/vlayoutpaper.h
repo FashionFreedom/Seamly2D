@@ -87,7 +87,7 @@ public:
 	void    Swap(VLayoutPaper &paper) Q_DECL_NOTHROW;
 
     int     GetHeight() const;
-    void    SetHeight(int height);
+    void    setHeight(int height);
 
     int     GetWidth() const;
     void    SetWidth(int width);

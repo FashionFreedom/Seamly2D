@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>270</width>
+    <width>350</width>
     <height>467</height>
    </rect>
   </property>
@@ -35,7 +35,6 @@
      <property name="font">
       <font>
        <pointsize>9</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -44,11 +43,42 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
+       <layout class="QFormLayout" name="formLayout">
+        <property name="labelAlignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <item row="0" column="0">
          <widget class="QLabel" name="labelEditNamePoint">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Name:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="lineEditNamePoint">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -62,36 +92,6 @@
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Point name:</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEditNamePoint">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>140</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -103,11 +103,7 @@
           </property>
          </widget>
         </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
+        <item row="1" column="0">
          <widget class="QLabel" name="labelAxisPoint">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -117,14 +113,13 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>80</width>
+            <width>100</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -136,40 +131,10 @@
           </property>
          </widget>
         </item>
-        <item>
+        <item row="1" column="1">
          <widget class="QComboBox" name="comboBoxAxisPoint">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>140</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>9</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="toolTip">
-           <string>Axis Point</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QLabel" name="labelFirstLinePoint">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -183,7 +148,31 @@
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="toolTip">
+           <string>Axis Point</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="labelFirstLinePoint">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -195,40 +184,10 @@
           </property>
          </widget>
         </item>
-        <item>
+        <item row="2" column="1">
          <widget class="QComboBox" name="comboBoxFirstLinePoint">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>140</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>9</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="toolTip">
-           <string>First point of line</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_4">
-        <item>
-         <widget class="QLabel" name="labelSecondLinePoint">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -242,7 +201,31 @@
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="toolTip">
+           <string>First point of line</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="labelSecondLinePoint">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -254,7 +237,7 @@
           </property>
          </widget>
         </item>
-        <item>
+        <item row="3" column="1">
          <widget class="QComboBox" name="comboBoxSecondLinePoint">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -264,14 +247,13 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>140</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -296,7 +278,6 @@
      <property name="font">
       <font>
        <pointsize>9</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -316,7 +297,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>80</width>
+            <width>100</width>
             <height>0</height>
            </size>
           </property>
@@ -357,6 +338,12 @@
             </disabled>
            </palette>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
           <property name="text">
            <string>Angle:</string>
           </property>
@@ -375,7 +362,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>87</width>
+            <width>85</width>
             <height>0</height>
            </size>
           </property>
@@ -394,7 +381,7 @@
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>40</width>
+            <width>10</width>
             <height>20</height>
            </size>
           </property>
@@ -475,7 +462,7 @@
           </property>
           <property name="toolTip">
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o'clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o'clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="tabChangesFocus">
            <bool>true</bool>
@@ -501,7 +488,6 @@
      <property name="font">
       <font>
        <pointsize>9</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -521,7 +507,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>80</width>
+            <width>100</width>
             <height>0</height>
            </size>
           </property>
@@ -534,7 +520,6 @@
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -556,7 +541,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>140</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
@@ -569,7 +554,6 @@
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -585,7 +569,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>80</width>
+            <width>100</width>
             <height>0</height>
            </size>
           </property>
@@ -598,7 +582,6 @@
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -620,14 +603,13 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>140</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -643,7 +625,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>80</width>
+            <width>100</width>
             <height>0</height>
            </size>
           </property>
@@ -656,7 +638,6 @@
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -678,14 +659,13 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>140</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
