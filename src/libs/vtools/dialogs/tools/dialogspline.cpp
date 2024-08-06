@@ -329,7 +329,7 @@ void DialogSpline::Length2Changed()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSpline::FXAngle1()
 {
-    auto dialog = new EditFormulaDialog(data, toolId, this);
+    auto dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit first control point angle"));
     QString angle1F = qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditAngle1F->toPlainText(),
                                                          qApp->Settings()->getOsSeparator());
@@ -352,7 +352,7 @@ void DialogSpline::FXAngle1()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSpline::FXAngle2()
 {
-    auto dialog = new EditFormulaDialog(data, toolId, this);
+    auto dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit second control point angle"));
     QString angle2F = qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditAngle2F->toPlainText(),
                                                          qApp->Settings()->getOsSeparator());
@@ -375,7 +375,7 @@ void DialogSpline::FXAngle2()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSpline::FXLength1()
 {
-    auto dialog = new EditFormulaDialog(data, toolId, this);
+    auto dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit first control point length"));
     QString length1F = qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditLength1F->toPlainText(),
                                                           qApp->Settings()->getOsSeparator());
@@ -398,7 +398,7 @@ void DialogSpline::FXLength1()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSpline::FXLength2()
 {
-    auto dialog = new EditFormulaDialog(data, toolId, this);
+    auto dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit second control point length"));
     QString length2F = qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditLength2F->toPlainText(),
                                                           qApp->Settings()->getOsSeparator());

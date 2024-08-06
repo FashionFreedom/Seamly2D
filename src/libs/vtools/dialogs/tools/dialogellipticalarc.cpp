@@ -520,7 +520,7 @@ void DialogEllipticalArc::CheckAngles()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::FXRadius1()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit radius1"));
     dialog->SetFormula(GetRadius1());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -534,7 +534,7 @@ void DialogEllipticalArc::FXRadius1()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::FXRadius2()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit radius2"));
     dialog->SetFormula(GetRadius2());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -548,7 +548,7 @@ void DialogEllipticalArc::FXRadius2()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::FXF1()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit first angle"));
     dialog->SetFormula(GetF1());
     dialog->setPostfix(degreeSymbol);
@@ -562,7 +562,7 @@ void DialogEllipticalArc::FXF1()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::FXF2()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit second angle"));
     dialog->SetFormula(GetF2());
     dialog->setPostfix(degreeSymbol);
@@ -576,7 +576,7 @@ void DialogEllipticalArc::FXF2()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::FXRotationAngle()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit rotation angle"));
     dialog->SetFormula(GetRotationAngle());
     dialog->setPostfix(degreeSymbol);

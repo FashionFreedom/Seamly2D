@@ -272,7 +272,7 @@ void IntersectCircleTangentDialog::CircleRadiusChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void IntersectCircleTangentDialog::FXCircleRadius()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit radius"));
     dialog->SetFormula(GetCircleRadius());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));

@@ -304,7 +304,7 @@ void IntersectCirclesDialog::Circle2RadiusChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void IntersectCirclesDialog::FXCircle1Radius()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit first circle radius"));
     dialog->SetFormula(GetFirstCircleRadius());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -318,7 +318,7 @@ void IntersectCirclesDialog::FXCircle1Radius()
 //---------------------------------------------------------------------------------------------------------------------
 void IntersectCirclesDialog::FXCircle2Radius()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit second circle radius"));
     dialog->SetFormula(GetSecondCircleRadius());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));

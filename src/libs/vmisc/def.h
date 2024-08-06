@@ -62,6 +62,14 @@ class QGraphicsItem;
 
 #define HANDLE_SIZE 12
 
+// Bit flags to identify parent dialog type for the Edit Formula dialog and which tabs to hide
+enum DialogSource : quint16
+{
+    ToolDialog        = 511, // 0000 0001 1111 1111
+    VariableDialog    = 259, // 0000 0001 0000 0011
+    MeasurementDialog = 257  // 0000 0001 0000 0001
+};
+
 enum class Position : char
 {
     TopLeft = 0,

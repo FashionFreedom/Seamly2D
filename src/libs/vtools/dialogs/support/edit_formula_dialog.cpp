@@ -108,7 +108,8 @@ template <class T> class QSharedPointer;
 enum {ColumnName = 0, ColumnFullName};
 
 //---------------------------------------------------------------------------------------------------------------------
-EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &toolId, QWidget *parent)
+EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &toolId, const quint16 &source,
+                                     QWidget *parent)
     : DialogTool(data, toolId, parent)
     , ui(new Ui::EditFormulaDialog)
     , m_formula(QString())
@@ -117,6 +118,7 @@ EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &tool
     , m_checkLessThanZero(false)
     , m_postfix(QString())
     , m_restoreCursor(false)
+    , m_source(source)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -564,10 +566,14 @@ void EditFormulaDialog::initializeVariables()
     connect(ui->menuTab_ListWidget,  &QListWidget::currentRowChanged, this, ClearFilterFormulaInputs);
     connect(ui->checkBoxHideEmpty,   &QCheckBox::stateChanged,        this, &EditFormulaDialog::measurements);
 
-    // Set the selection highlight rect larger than just the item text
+
     for (int i = 0; i < ui->menuTab_ListWidget->count(); ++i)
     {
+        // Set the selection highlight rect larger than just the item text
         ui->menuTab_ListWidget->item(i)->setSizeHint(QSize(ui->menuTab_ListWidget->width(), 50));
+
+        // Set the visibility of tab item depending on source i.e., the parent dialog.
+        ui->menuTab_ListWidget->item(i)->setHidden(!(m_source & (1 << i)));
     }
 }
 
