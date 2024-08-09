@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vabstracttool.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,29 +19,27 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   vabstracttool.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   November 15, 2013
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -188,19 +188,19 @@ qreal VAbstractTool::CheckFormula(const quint32 &toolId, QString &formula, VCont
 
         if (qIsInf(result) || qIsNaN(result))
         {
-            qDebug() << "Invalid the formula value";
+            qWarning() << "Invalid the formula value";
             return 0;
         }
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
         qDebug() << "\nMath parser error:\n"
-                 << "--------------------------------------\n"
-                 << "Message:     " << e.GetMsg()  << "\n"
-                 << "Expression:  " << e.GetExpr() << "\n"
-                 << "--------------------------------------";
+                   << "--------------------------------------\n"
+                   << "Message:     " << error.GetMsg()  << "\n"
+                   << "Expression:  " << error.GetExpr() << "\n"
+                   << "--------------------------------------";
 
-        if (qApp->IsAppInGUIMode())
+        if (qApp->isAppInGUIMode())
         {
             QScopedPointer<DialogUndo> dialogUndo(new DialogUndo(qApp->getMainWindow()));
             forever
@@ -224,7 +224,7 @@ qreal VAbstractTool::CheckFormula(const quint32 &toolId, QString &formula, VCont
 
                             if (qIsInf(result) || qIsNaN(result))
                             {
-                                qDebug() << "Invalid the formula value";
+                                qWarning() << "Invalid the formula value";
                                 return 0;
                             }
 
@@ -286,7 +286,7 @@ void VAbstractTool::deleteTool(bool ask)
     }
     else
     {
-        qCDebug(vTool, "Can't delete, tool has children.");
+        qCWarning(vTool, "Can't delete, tool has children.");
     }
 }
 
@@ -460,7 +460,7 @@ QPixmap VAbstractTool::createColorIcon(const int w, const int h, const QString &
 
     const QRect rectangle = QRect(1, 1, w-2, h-2);
 
-    qDebug()<<"createColorIcon - color = "<< color;
+    qDebug() << "createColorIcon - color = " << color;
 
     if (color == "No Group")
     {
@@ -668,7 +668,7 @@ QDomElement VAbstractTool::AddSANode(VAbstractPattern *doc, const QString &tagNa
             doc->SetAttribute(nod, AttrType, VAbstractPattern::NodeSplinePath);
             break;
         default:
-            qDebug()<<"May be wrong tool type!!! Ignoring."<<Q_FUNC_INFO;
+            qWarning() << "May be wrong tool type!!! Ignoring."<<Q_FUNC_INFO;
             break;
     }
 
@@ -770,7 +770,7 @@ quint32 VAbstractTool::PrepareNode(const VPieceNode &node, VMainGraphicsScene *s
             VNodeSplinePath::Create(doc, data, id, node.GetId(), Document::FullParse, Source::FromGui);
             break;
         default:
-            qDebug()<<"May be wrong tool type!!! Ignoring."<<Q_FUNC_INFO;
+            qWarning() << "May be wrong tool type!!! Ignoring."<<Q_FUNC_INFO;
             break;
     }
     return id;

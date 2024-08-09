@@ -272,7 +272,7 @@ QVector<T> VAbstractPiece::CorrectEquidistantPoints(const QVector<T> &points, bo
 {
     if (points.size()<4)//Better don't check if only three points. We can destroy equidistant.
     {
-        qDebug()<<"Only three points.";
+        qDebug() << "Only three points.";
         return points;
     }
 

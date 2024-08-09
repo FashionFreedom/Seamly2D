@@ -63,13 +63,13 @@ TST_VLayoutDetail::TST_VLayoutDetail(QObject *parent)
 //---------------------------------------------------------------------------------------------------------------------
 void TST_VLayoutDetail::RemoveDublicates() const
 {
-    qDebug()<<"Case 1.";
+    qDebug() << "Case 1.";
     Case1();
 
-    qDebug()<<"Case 2.";
+    qDebug() << "Case 2.";
     Case2();
 
-    qDebug()<<"Case 3.";
+    qDebug() << "Case 3.";
     Case3();
 }
 

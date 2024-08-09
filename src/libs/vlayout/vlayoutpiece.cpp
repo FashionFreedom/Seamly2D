@@ -1,10 +1,10 @@
 /***************************************************************************
  **  @file   vlayoutpiece.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 27, 2022
+ **  @date  17 Sep, 2023
  **
  **  @copyright
- **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
  **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
@@ -119,9 +119,9 @@ bool FindLabelGeometry(const VPatternLabelData &labelData, const VContainer *pat
         Calculator cal1;
         rotationAngle = cal1.EvalFormula(pattern->DataVariables(), labelData.GetRotation());
     }
-    catch(qmu::QmuParserError &e)
+    catch(qmu::QmuParserError &error)
     {
-        Q_UNUSED(e);
+        Q_UNUSED(error);
         return false;
     }
 
@@ -158,9 +158,9 @@ bool FindLabelGeometry(const VPatternLabelData &labelData, const VContainer *pat
         Calculator cal2;
         labelHeight = cal2.EvalFormula(pattern->DataVariables(), labelData.GetLabelHeight());
     }
-    catch(qmu::QmuParserError &e)
+    catch(qmu::QmuParserError &error)
     {
-        Q_UNUSED(e);
+        Q_UNUSED(error);
         return false;
     }
 
@@ -235,9 +235,9 @@ bool FindGrainlineGeometry(const VGrainlineData& data, const VContainer *pattern
         length = cal2.EvalFormula(pattern->DataVariables(), data.GetLength());
         length = ToPixel(length, *pattern->GetPatternUnit());
     }
-    catch(qmu::QmuParserError &e)
+    catch(qmu::QmuParserError &error)
     {
-        Q_UNUSED(e);
+        Q_UNUSED(error);
         return false;
     }
 
@@ -496,7 +496,7 @@ void VLayoutPiece::setSeamAllowancePoints(const QVector<QPointF> &points, bool s
         }
         else if (not IsSeamAllowanceBuiltIn())
         {
-            qWarning()<<"Seam allowance is empty.";
+            qWarning() << "Seam allowance is empty.";
             SetSeamAllowance(false);
         }
     }

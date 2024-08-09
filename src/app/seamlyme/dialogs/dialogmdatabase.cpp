@@ -1,27 +1,31 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+/******************************************************************************
+*   @file   dialogmdatabase.cpp
+**  @author Douglas S Caskey
+**  @date   3 Sep, 2023
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2023 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   dialogmdatabase.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,33 +33,34 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
-
 #include "dialogmdatabase.h"
 #include "ui_dialogmdatabase.h"
-#include "../mapplication.h"
-#include "../vpatterndb/measurements.h"
+#include "../application_me.h"
+#include "../vpatterndb/measurements_def.h"
 
+#include <QGuiApplication>
 #include <QKeyEvent>
 #include <QMenu>
+#include <QScreen>
 #include <QSvgRenderer>
 #include <QtSvg>
 
@@ -85,8 +90,10 @@ MeasurementDatabaseDialog::MeasurementDatabaseDialog(const QStringList &list, QW
     , groupQ(nullptr)
 {
     ui->setupUi(this);
-    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    //Limit dialog height to 80% of screen size
+    setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 #if defined(Q_OS_MAC)
     setWindowFlags(Qt::Window);
 #endif
@@ -188,7 +195,7 @@ void MeasurementDatabaseDialog::retranslateGroups()
 QString MeasurementDatabaseDialog::imageUrl(const QString &number)
 {
     QString imgUrl("<img src=\"wrong.png\" align=\"center\"/>"); // In case of error
-    const QString filePath = QString("://diagrams/%1.svg").arg(MapDiagrams(qApp->TrVars(), number));
+    const QString filePath = QString("://diagrams/%1.svg").arg(MapDiagrams(qApp->translateVariables(), number));
     if (QFileInfo::exists(filePath))
     {
         // Load your SVG
@@ -349,7 +356,7 @@ void MeasurementDatabaseDialog::showDescription(QTreeWidgetItem *item, int colum
     }
 
     const QString name = item->data(0, Qt::UserRole).toString();
-    const VTranslateVars *trv = qApp->TrVars();
+    const VTranslateVars *trv = qApp->translateVariables();
     const QString number = trv->MNumber(name);
 
     const QString text = QString("<p align=\"center\" style=\"font-variant: normal; font-style: normal; font-weight: "
@@ -498,7 +505,7 @@ void MeasurementDatabaseDialog::addMeasurement(QTreeWidgetItem *group, const QSt
         updateChecks(item, 0);
     }
 
-    const QString text = qApp->TrVars()->MNumber(name) + ". " + qApp->TrVars()->MToUser(name);
+    const QString text = qApp->translateVariables()->MNumber(name) + ". " + qApp->translateVariables()->MToUser(name);
     item->setText(0, text);
     item->setToolTip(0, text);
     item->setData(0, Qt::UserRole, name);
@@ -507,13 +514,13 @@ void MeasurementDatabaseDialog::addMeasurement(QTreeWidgetItem *group, const QSt
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDatabaseDialog::readSettings()
 {
-    restoreGeometry(qApp->SeamlyMeSettings()->getDataBaseGeometry());
+    restoreGeometry(qApp->seamlyMeSettings()->getDataBaseGeometry());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDatabaseDialog::writeSettings()
 {
-    qApp->SeamlyMeSettings()->setDataBaseGeometry(saveGeometry());
+    qApp->seamlyMeSettings()->setDataBaseGeometry(saveGeometry());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -583,7 +590,7 @@ void MeasurementDatabaseDialog::retranslateGroup(QTreeWidgetItem *group, const Q
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDatabaseDialog::retranslateMeasurement(QTreeWidgetItem *group, int index, const QString &name)
 {
-    const QString text = qApp->TrVars()->MNumber(name) + ". " + qApp->TrVars()->MToUser(name);
+    const QString text = qApp->translateVariables()->MNumber(name) + ". " + qApp->translateVariables()->MToUser(name);
 
     QTreeWidgetItem *item = group->child(index);
     item->setText(0, text);

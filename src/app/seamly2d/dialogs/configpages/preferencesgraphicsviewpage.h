@@ -1,16 +1,13 @@
-/************************************************************************
- **
+/***************************************************************************
  **  @file   PreferencesGraphicsViewPage.h
- **  @author DS Caskey
- **  @date   10.17.2020
+ **  @author Douglas S Caskey
+ **  @date   26 Oct, 2023
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2017 Seamly2D project
- **  All Rights Reserved.
- **
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -22,9 +19,8 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+ **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
 #ifndef PREFERENCES_GRAPHICSVIEWPAGE_H
 #define PREFERENCES_GRAPHICSVIEWPAGE_H
@@ -47,6 +43,7 @@ public:
     void                              Apply();
 
 protected:
+    virtual void                      changeEvent(QEvent* event) Q_DECL_OVERRIDE;
 
 private:
     Q_DISABLE_COPY(PreferencesGraphicsViewPage )

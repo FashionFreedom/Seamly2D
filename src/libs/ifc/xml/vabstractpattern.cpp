@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   vabstractpattern.cpp
  **  @author Douglas S Caskey
- **  @date   Mar 1, 2023
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2023 Seamly, LLC
@@ -28,8 +28,15 @@
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   15 6, 2015
  **
+ **  @author Douglas S Caskey
+ **  @date   7.31.2022
+ **
  **  @brief
  **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2013-2022 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
  **  Copyright (C) 2015 Valentina project
@@ -52,6 +59,20 @@
 
 #include "vabstractpattern.h"
 
+#include "vdomdocument.h"
+#include "vpatternconverter.h"
+#include "vtoolrecord.h"
+#include "../exception/vexceptionemptyparameter.h"
+#include "../exception/vexceptionobjecterror.h"
+#include "../exception/vexceptionconversionerror.h"
+#include "../ifc/ifcdef.h"
+#include "../ifc/exception/vexceptionbadid.h"
+#include "../qmuparser/qmutokenparser.h"
+#include "../vmisc/vabstractapplication.h"
+#include "../vpatterndb/vcontainer.h"
+#include "../vpatterndb/vpiecenode.h"
+#include "../vtools/tools/vdatatool.h"
+
 #include <QDomNode>
 #include <QDomNodeList>
 #include <QLatin1String>
@@ -61,21 +82,6 @@
 #include <QSet>
 #include <QString>
 #include <QtDebug>
-
-#include "vdomdocument.h"
-#include "vpatternconverter.h"
-#include "vtoolrecord.h"
-#include "../exception/vexceptionemptyparameter.h"
-#include "../exception/vexceptionobjecterror.h"
-#include "../exception/vexceptionconversionerror.h"
-#include "../ifc/exception/vexceptionbadid.h"
-#include "../ifc/ifcdef.h"
-#include "../vmisc/vabstractapplication.h"
-#include "../vmisc/vcommonsettings.h"
-#include "../vpatterndb/vcontainer.h"
-#include "../vpatterndb/vpiecenode.h"
-#include "../qmuparser/qmutokenparser.h"
-#include "../vtools/tools/vdatatool.h"
 
 class QDomElement;
 
@@ -88,8 +94,8 @@ const QString VAbstractPattern::TagDescription          = QStringLiteral("descri
 const QString VAbstractPattern::TagNotes                = QStringLiteral("notes");
 const QString VAbstractPattern::TagImage                = QStringLiteral("image");
 const QString VAbstractPattern::TagMeasurements         = QStringLiteral("measurements");
-const QString VAbstractPattern::TagIncrements           = QStringLiteral("increments");
-const QString VAbstractPattern::TagIncrement            = QStringLiteral("increment");
+const QString VAbstractPattern::TagVariables            = QStringLiteral("variables");
+const QString VAbstractPattern::TagVariable             = QStringLiteral("variable");
 const QString VAbstractPattern::TagDraftBlock           = QStringLiteral("draftBlock");
 const QString VAbstractPattern::TagGroups               = QStringLiteral("groups");
 const QString VAbstractPattern::TagGroup                = QStringLiteral("group");
@@ -115,6 +121,21 @@ const QString VAbstractPattern::TagPath                 = QStringLiteral("path")
 const QString VAbstractPattern::TagNodes                = QStringLiteral("nodes");
 const QString VAbstractPattern::TagNode                 = QStringLiteral("node");
 const QString VAbstractPattern::TagLine                 = QStringLiteral("line");
+
+const QString VAbstractPattern::TagDraftImages          = QStringLiteral("draftImages");
+const QString VAbstractPattern::AttrId                  = QStringLiteral("id");
+const QString VAbstractPattern::AttrFilename            = QStringLiteral("filename");
+const QString VAbstractPattern::AttrLocked              = QStringLiteral("locked");
+const QString VAbstractPattern::AttrAnchor              = QStringLiteral("anchor");
+const QString VAbstractPattern::AttrXPos                = QStringLiteral("xPos");
+const QString VAbstractPattern::AttrYPos                = QStringLiteral("yPos");
+const QString VAbstractPattern::AttrHeight              = QStringLiteral("height");
+const QString VAbstractPattern::AttrXScale              = QStringLiteral("xScale");
+const QString VAbstractPattern::AttrYScale              = QStringLiteral("yScale");
+const QString VAbstractPattern::AttrAspectLocked        = QStringLiteral("aspectLocked");
+const QString VAbstractPattern::AttrUnits               = QStringLiteral("units");
+const QString VAbstractPattern::AttrOpacity             = QStringLiteral("opacity");
+const QString VAbstractPattern::AttrOrder               = QStringLiteral("order");
 
 const QString VAbstractPattern::AttrName                = QStringLiteral("name");
 const QString VAbstractPattern::AttrVisible             = QStringLiteral("visible");
@@ -215,9 +236,9 @@ const QString VAbstractPattern::AttrDefHeight           = QStringLiteral("defHei
 const QString VAbstractPattern::AttrDefSize             = QStringLiteral("defSize");
 const QString VAbstractPattern::AttrExtension           = QStringLiteral("extension");
 
-const QString VAbstractPattern::IncrementName           = QStringLiteral("name");
-const QString VAbstractPattern::IncrementFormula        = QStringLiteral("formula");
-const QString VAbstractPattern::IncrementDescription    = QStringLiteral("description");
+const QString VAbstractPattern::VariableName           = QStringLiteral("name");
+const QString VAbstractPattern::VariableFormula        = QStringLiteral("formula");
+const QString VAbstractPattern::VariableDescription    = QStringLiteral("description");
 
 const QString VAbstractPattern::NodeArc                 = QStringLiteral("NodeArc");
 const QString VAbstractPattern::NodeElArc               = QStringLiteral("NodeElArc");
@@ -238,9 +259,9 @@ void ReadExpressionAttribute(QVector<VFormulaField> &expressions, const QDomElem
     {
         formula.expression = VDomDocument::GetParametrString(element, attribute);
     }
-    catch (VExceptionEmptyParameter &e)
+    catch (VExceptionEmptyParameter &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;
     }
 
@@ -259,6 +280,7 @@ VAbstractPattern::VAbstractPattern(QObject *parent)
     , m_DefaultLineColor(qApp->Settings()->getDefaultLineColor())
     , m_DefaultLineWeight(qApp->Settings()->getDefaultLineWeight())
     , m_DefaultLineType(qApp->Settings()->getDefaultLineType())
+    , defaultBasePoint(QString())
     , lastSavedExportFormat(QString())
     , cursor(0)
     , toolsOnRemove(QVector<VDataTool*>())
@@ -273,10 +295,10 @@ QStringList VAbstractPattern::ListMeasurements() const
     QSet<QString> measurements;
     QSet<QString> others;
 
-    const QStringList increments = ListIncrements();
-    for (int i=0; i < increments.size(); ++i)
+    const QStringList variables = listVariables();
+    for (int i=0; i < variables.size(); ++i)
     {
-        others.insert(increments.at(i));
+        others.insert(variables.at(i));
     }
 
     const QVector<VFormulaField> expressions = ListExpressions();
@@ -537,18 +559,18 @@ QDomElement VAbstractPattern::getDraftBlockElement(const QString &name)
  */
 bool VAbstractPattern::renameDraftBlock(const QString &oldName, const QString &newName)
 {
-    Q_ASSERT_X(not newName.isEmpty(), Q_FUNC_INFO, "new name draft block is empty");
-    Q_ASSERT_X(not oldName.isEmpty(), Q_FUNC_INFO, "old name draft block is empty");
+    Q_ASSERT_X(!newName.isEmpty(), Q_FUNC_INFO, "new name draft block is empty");
+    Q_ASSERT_X(!oldName.isEmpty(), Q_FUNC_INFO, "old name draft block is empty");
 
     if (draftBlockNameExists(oldName) == false)
     {
-        qDebug()<<"Do not exist draft block with name"<<oldName;
+        qDebug() << "Draft block does not exist with name" << oldName;
         return false;
     }
 
     if (draftBlockNameExists(newName))
     {
-        qDebug()<<"Already exist draft block with name"<<newName;
+        qDebug() << "Draft block already exists with name" << newName;
         return false;
     }
 
@@ -566,7 +588,7 @@ bool VAbstractPattern::renameDraftBlock(const QString &oldName, const QString &n
     }
     else
     {
-        qDebug()<<"Can't find draft block node with name"<<oldName<<Q_FUNC_INFO;
+        qDebug() << "Can't find draft block node with name" << oldName << Q_FUNC_INFO;
         return false;
     }
 }
@@ -618,6 +640,12 @@ void VAbstractPattern::setDefaultPen(Pen pen)
   m_DefaultLineColor  = pen.color;
   m_DefaultLineWeight = pen.lineWeight;
   m_DefaultLineType   = pen.lineType;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPattern::setDefaultBasePoint(QString basePoint)
+{
+    defaultBasePoint = basePoint;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -891,7 +919,7 @@ void VAbstractPattern::SetMPath(const QString &path)
     }
     else
     {
-        qDebug()<<"Can't save path to measurements"<<Q_FUNC_INFO;
+        qWarning() << "Can't save path to measurements" << Q_FUNC_INFO;
     }
 }
 
@@ -1049,7 +1077,7 @@ void VAbstractPattern::SetGradationHeights(const QMap<GHeights, bool> &options)
     QDomNodeList tags = elementsByTagName(TagGradation);
     if (tags.isEmpty())
     {
-        qDebug()<<"Can't save tag "<<TagGradation<<Q_FUNC_INFO;
+        qWarning() << "Can't save tag " << TagGradation << Q_FUNC_INFO;
         return;
     }
 
@@ -1243,7 +1271,7 @@ void VAbstractPattern::SetGradationSizes(const QMap<GSizes, bool> &options)
     QDomNodeList tags = elementsByTagName(TagGradation);
     if (tags.isEmpty())
     {
-        qDebug()<<"Can't save tag "<<TagGradation<<Q_FUNC_INFO;
+        qWarning() << "Can't save tag " << TagGradation << Q_FUNC_INFO;
         return;
     }
 
@@ -1574,7 +1602,7 @@ QString VAbstractPattern::GetVersion() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::SetVersion()
+void VAbstractPattern::setVersion()
 {
     setTagText(TagVersion, VPatternConverter::PatternMaxVerStr);
     emit patternChanged(false);
@@ -1709,7 +1737,7 @@ QDomElement VAbstractPattern::CheckTagExists(const QString &tag)
     {
         const QStringList tags = QStringList() << TagUnit << TagImage << TagDescription << TagNotes
                                          << TagGradation << TagPatternName << TagPatternNum << TagCompanyName
-                                         << TagCustomerName << TagPatternLabel;
+                                         << TagCustomerName << TagPatternLabel << TagDraftImages;
         switch (tags.indexOf(tag))
         {
             case 1: //TagImage
@@ -1749,6 +1777,9 @@ QDomElement VAbstractPattern::CheckTagExists(const QString &tag)
             case 9: // TagPatternLabel
                 element = createElement(TagPatternLabel);
                 break;
+            case 10: // TagDraftImages
+                element = createElement(TagDraftImages);
+                break;
             case 0: //TagUnit (Mandatory tag)
             default:
                 return QDomElement();
@@ -1772,7 +1803,7 @@ void VAbstractPattern::InsertTag(const QStringList &tags, const QDomElement &ele
             break;
         }
     }
-    SetVersion();
+    setVersion();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1798,25 +1829,25 @@ int VAbstractPattern::getActiveDraftBlockIndex() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList VAbstractPattern::ListIncrements() const
+QStringList VAbstractPattern::listVariables() const
 {
-    QStringList increments;
-    const QDomNodeList list = elementsByTagName(TagIncrement);
+    QStringList variables;
+    const QDomNodeList list = elementsByTagName(TagVariable);
     for (int i=0; i < list.size(); ++i)
     {
         const QDomElement dom = list.at(i).toElement();
 
         try
         {
-            increments.append(GetParametrString(dom, IncrementName));
+            variables.append(GetParametrString(dom, VariableName));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
     }
 
-    return increments;
+    return variables;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1831,7 +1862,7 @@ QVector<VFormulaField> VAbstractPattern::ListExpressions() const
     list << ListArcExpressions();
     list << ListElArcExpressions();
     list << ListSplineExpressions();
-    list << ListIncrementExpressions();
+    list << listVariableExpressions();
     list << ListOperationExpressions();
     list << ListPathExpressions();
     list << ListPieceExpressions();
@@ -1845,7 +1876,7 @@ QVector<VFormulaField> VAbstractPattern::ListPointExpressions() const
     // Check if new tool doesn't bring new attribute with a formula.
     // If no just increment a number.
     // If new tool bring absolutely new type and has formula(s) create new method to cover it.
-    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53);
+    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54);
 
     QVector<VFormulaField> expressions;
     const QDomNodeList list = elementsByTagName(TagPoint);
@@ -1871,7 +1902,7 @@ QVector<VFormulaField> VAbstractPattern::ListArcExpressions() const
     // Check if new tool doesn't bring new attribute with a formula.
     // If no just increment number.
     // If new tool bring absolutely new type and has formula(s) create new method to cover it.
-    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53);
+    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54);
 
     QVector<VFormulaField> expressions;
     const QDomNodeList list = elementsByTagName(TagArc);
@@ -1895,7 +1926,7 @@ QVector<VFormulaField> VAbstractPattern::ListElArcExpressions() const
     // Check if new tool doesn't bring new attribute with a formula.
     // If no just increment number.
     // If new tool bring absolutely new type and has formula(s) create new method to cover it.
-    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53);
+    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54);
 
     QVector<VFormulaField> expressions;
     const QDomNodeList list = elementsByTagName(TagElArc);
@@ -1928,7 +1959,7 @@ QVector<VFormulaField> VAbstractPattern::ListPathPointExpressions() const
     // Check if new tool doesn't bring new attribute with a formula.
     // If no just increment number.
     // If new tool bring absolutely new type and has formula(s) create new method to cover it.
-    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53);
+    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54);
 
     QVector<VFormulaField> expressions;
     const QDomNodeList list = elementsByTagName(AttrPathPoint);
@@ -1946,15 +1977,15 @@ QVector<VFormulaField> VAbstractPattern::ListPathPointExpressions() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<VFormulaField> VAbstractPattern::ListIncrementExpressions() const
+QVector<VFormulaField> VAbstractPattern::listVariableExpressions() const
 {
     QVector<VFormulaField> expressions;
-    const QDomNodeList list = elementsByTagName(TagIncrement);
+    const QDomNodeList list = elementsByTagName(TagVariable);
     for (int i=0; i < list.size(); ++i)
     {
         const QDomElement dom = list.at(i).toElement();
 
-        ReadExpressionAttribute(expressions, dom, IncrementFormula);
+        ReadExpressionAttribute(expressions, dom, VariableFormula);
     }
 
     return expressions;
@@ -1966,7 +1997,7 @@ QVector<VFormulaField> VAbstractPattern::ListOperationExpressions() const
     // Check if new tool doesn't bring new attribute with a formula.
     // If no just increment number.
     // If new tool bring absolutely new type and has formula(s) create new method to cover it.
-    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53);
+    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54);
 
     QVector<VFormulaField> expressions;
     const QDomNodeList list = elementsByTagName(TagOperation);
@@ -1988,7 +2019,7 @@ QVector<VFormulaField> VAbstractPattern::ListNodesExpressions(const QDomElement 
     // Check if new tool doesn't bring new attribute with a formula.
     // If no just increment number.
     // If new tool bring absolutely new type and has formula(s) create new method to cover it.
-    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53);
+    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54);
 
     QVector<VFormulaField> expressions;
 
@@ -2011,7 +2042,7 @@ QVector<VFormulaField> VAbstractPattern::ListPathExpressions() const
     // Check if new tool doesn't bring new attribute with a formula.
     // If no just increment number.
     // If new tool bring absolutely new type and has formula(s) create new method to cover it.
-    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53);
+    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54);
 
     QVector<VFormulaField> expressions;
     const QDomNodeList list = elementsByTagName(TagPath);
@@ -2049,7 +2080,7 @@ QVector<VFormulaField> VAbstractPattern::ListPieceExpressions() const
     // Check if new tool doesn't bring new attribute with a formula.
     // If no just increment number.
     // If new tool bring absolutely new type and has formula(s) create new method to cover it.
-    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53);
+    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54);
 
     QVector<VFormulaField> expressions;
     const QDomNodeList list = elementsByTagName(TagPiece);
@@ -2150,10 +2181,10 @@ QPair<bool, QMap<quint32, quint32> > VAbstractPattern::parseItemElement(const QD
 
         return group;
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating group"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
@@ -3094,4 +3125,33 @@ QString VAbstractPattern::useGroupLineWeight(quint32 toolId, QString weight)
     {
         return weight;
     }
+}
+
+
+QMap<qint32, ImageItem *> VAbstractPattern::getBackgroundImageMap()
+{
+    return m_imageMap;
+}
+
+
+void VAbstractPattern::addBackgroundImage(qint32 id, ImageItem *item)
+{
+    m_imageMap.insert(id, item);
+}
+
+
+void VAbstractPattern::removeBackgroundImage(qint32 id)
+{
+    m_imageMap.remove(id);
+}
+
+
+ImageItem* VAbstractPattern::getBackgroundImage(qint32 id)
+{
+    return m_imageMap.value(id);
+}
+
+void VAbstractPattern::clearBackgroundImageMap()
+{
+    m_imageMap.clear();
 }

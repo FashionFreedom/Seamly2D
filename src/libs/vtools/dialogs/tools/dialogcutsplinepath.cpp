@@ -98,6 +98,9 @@ DialogCutSplinePath::DialogCutSplinePath(const VContainer *data, const quint32 &
 
     FillComboBoxSplinesPath(ui->comboBoxSplinePath);
 
+    ui->direction_ComboBox->addItem(tr("Forward (from start point)"), "forward");
+    ui->direction_ComboBox->addItem(tr("Backward (from end point)"), "backward");
+
     connect(ui->toolButtonExprLength, &QPushButton::clicked, this, &DialogCutSplinePath::FXLength);
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogCutSplinePath::NamePointChanged);
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogCutSplinePath::FormulaChanged);
@@ -123,6 +126,18 @@ void DialogCutSplinePath::SetPointName(const QString &value)
     ui->lineEditNamePoint->setText(pointName);
 }
 
+// @brief setDirection set the direction
+// @param value name
+void DialogCutSplinePath::setDirection(const QString &value)
+{
+    ChangeCurrentData(ui->direction_ComboBox, value);
+}
+
+QString DialogCutSplinePath::getDirection() const
+{
+    return GetComboBoxCurrentData(ui->direction_ComboBox, "forward");
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief SetFormula set string of formula
@@ -130,7 +145,7 @@ void DialogCutSplinePath::SetPointName(const QString &value)
  */
 void DialogCutSplinePath::SetFormula(const QString &value)
 {
-    formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed. TODO : see if I can get the max number of caracters in one line
     // of this PlainTextEdit to change 80 to this value
     if (formula.length() > 80)
@@ -194,6 +209,7 @@ void DialogCutSplinePath::SaveData()
     SCASSERT(path != nullptr)
 
     path->setObject1Id(getSplinePathId());
+    path->setDirection(getDirection());
     path->setLength(formula);
     path->RefreshGeometry();
 }
@@ -238,7 +254,7 @@ void DialogCutSplinePath::ShowVisualization()
  */
 QString DialogCutSplinePath::GetFormula() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

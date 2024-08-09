@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   editlabeltemplate_dialog.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 26, 2022
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2022 Seamly, LLC
@@ -313,7 +313,7 @@ void EditLabelTemplateDialog::NewTemplate()
 void EditLabelTemplateDialog::ExportTemplate()
 {
     QString filters(tr("Label template") + QLatin1String("(*.xml)"));
-    QString dir = qApp->Settings()->GetPathLabelTemplate();
+    QString dir = qApp->Settings()->getLabelTemplatePath();
 
     bool usedNotExistedDir = false;
     QDir directory(dir);
@@ -384,7 +384,7 @@ void EditLabelTemplateDialog::ImportTemplate()
 
     QString filter(tr("Label template") + QLatin1String("(*.xml)"));
     const QString fileName = QFileDialog::getOpenFileName(this, tr("Import template"),
-                                                          qApp->Settings()->GetPathLabelTemplate(), filter, nullptr,
+                                                          qApp->Settings()->getLabelTemplatePath(), filter, nullptr,
                                                           QFileDialog::DontUseNativeDialog);
     if (fileName.isEmpty())
     {
@@ -397,10 +397,10 @@ void EditLabelTemplateDialog::ImportTemplate()
         ltemplate.setXMLContent(VLabelTemplateConverter(fileName).Convert());
         SetTemplate(ltemplate.ReadLines());
     }
-    catch (VException &e)
+    catch (VException &error)
     {
-        qCritical("%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")), qUtf8Printable(e.ErrorMessage()),
-                  qUtf8Printable(e.DetailedInformation()));
+        qCritical("%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")), qUtf8Printable(error.ErrorMessage()),
+                  qUtf8Printable(error.DetailedInformation()));
     }
 }
 
@@ -481,7 +481,7 @@ void EditLabelTemplateDialog::InitPlaceholdersMenu()
     {
         auto value = i.value();
         QAction *action = m_placeholdersMenu->addAction(value.first);
-        action->setData(per + qApp->TrVars()->PlaceholderToUser(i.key()) + per);
+        action->setData(per + qApp->translateVariables()->PlaceholderToUser(i.key()) + per);
         connect(action, &QAction::triggered, this, &EditLabelTemplateDialog::InsertPlaceholder);
         ++i;
     }
@@ -491,7 +491,7 @@ void EditLabelTemplateDialog::InitPlaceholdersMenu()
 void EditLabelTemplateDialog::InitPlaceholders()
 {
     // Pattern tags
-    QLocale locale(qApp->Settings()->GetLocale());
+    QLocale locale(qApp->Settings()->getLocale());
 
     const QString date = locale.toString(QDate::currentDate(), m_doc->GetLabelDateFormat());
     m_placeholders.insert(pl_date, qMakePair(tr("Date"), date));
@@ -572,7 +572,7 @@ QVector<VLabelTemplateLine> EditLabelTemplateDialog::GetTemplate() const
         if (lineItem)
         {
             VLabelTemplateLine line;
-            line.line = qApp->TrVars()->PlaceholderFromUserText(lineItem->text());
+            line.line = qApp->translateVariables()->PlaceholderFromUserText(lineItem->text());
             line.alignment = lineItem->textAlignment();
             line.fontSizeIncrement = lineItem->data(Qt::UserRole).toInt();
 
@@ -597,7 +597,7 @@ void EditLabelTemplateDialog::SetTemplate(const QVector<VLabelTemplateLine> &lin
 
     for (int i=0; i<lines.size(); ++i)
     {
-        QListWidgetItem *item = new QListWidgetItem(qApp->TrVars()->PlaceholderToUserText(lines.at(i).line));
+        QListWidgetItem *item = new QListWidgetItem(qApp->translateVariables()->PlaceholderToUserText(lines.at(i).line));
         item->setTextAlignment(lines.at(i).alignment);
         item->setData(Qt::UserRole, lines.at(i).fontSizeIncrement);
 

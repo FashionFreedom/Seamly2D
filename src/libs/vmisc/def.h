@@ -1,12 +1,14 @@
 /************************************************************************
- **
  **  @file   def.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   11 4, 2015
  **
+ **  @author Douglas S Caskey
+ **  @date   7.31.2022
+ **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
  **  Copyright (C) 2013 - 2022 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
@@ -30,12 +32,14 @@
 #define DEF_H
 
 #include <qcompilerdetection.h>
+#include <QFileDialog>
 #include <QLineF>
 #include <QString>
 #include <QStringList>
 #include <Qt>
 #include <QtGlobal>
 #include <QPrinter>
+#include <QPixmap>
 #include <csignal>
 #ifdef Q_OS_WIN
     #include <windows.h>
@@ -55,6 +59,40 @@ class VTranslateMeasurements;
 class QGraphicsItem;
 
 #define SceneSize 50000
+
+#define HANDLE_SIZE 12
+
+enum class Position : char
+{
+    TopLeft = 0,
+    Top,
+    TopRight,
+    Right,
+    BottomRight,
+    Bottom,
+    BottomLeft,
+    Left,
+    Center
+};
+
+enum class PaperSizeFormat : char { A0 = 0,
+                                    A1,
+                                    A2,
+                                    A3,
+                                    A4,
+                                    Letter,
+                                    Legal,
+                                    Tabloid,
+                                    AnsiC,
+                                    AnsiD,
+                                    AnsiE,
+                                    Roll24in,     // Be careful when changing order roll type
+                                    Roll30in,     // Used also for showing icon
+                                    Roll36in,
+                                    Roll42in,
+                                    Roll44in,
+                                    Custom
+};
 
 enum class LayoutExportFormat : char
 {
@@ -118,6 +156,63 @@ enum class PieceNodeAngle : unsigned char
     ByFirstEdgeRightAngle,
     BySecondEdgeRightAngle
 };
+
+struct DraftImage
+{
+    DraftImage()
+    : id(0),
+      name(""),
+      filename(""),
+      pixmap(),
+      locked(false),
+      xOrigin(0.0),
+      yOrigin(0.0),
+      anchor(0),
+      xPos(0.0),
+      yPos(0.0),
+      width(0.0),
+      height(0.0),
+      aspectLocked(false),
+      units(Unit::Px),
+      rotation(0.0),
+      visible(true),
+      opacity(100.0),
+      order(0)
+     {}
+
+    quint32        id;
+    QString        name;
+    QString        filename;
+    QPixmap        pixmap;
+    bool           locked;
+    qreal          xOrigin;
+    qreal          yOrigin;
+    quint32        anchor;
+    qreal          xPos;
+    qreal          yPos;
+    qreal          width;
+    qreal          height;
+    qreal          xScale;
+    qreal          yScale;
+    bool           aspectLocked;
+    Unit           units;
+    qreal          rotation;
+    bool           visible;
+    qreal          opacity;
+    qreal          order;
+};
+
+Q_DECLARE_METATYPE(DraftImage)
+Q_DECLARE_TYPEINFO(DraftImage, Q_MOVABLE_TYPE);
+
+enum class Direction : unsigned char
+{
+    Forward = 0, // Default
+    Backward
+};
+
+QString      directionToString(Direction type);
+Direction    stringToDirection(const QString &value);
 
 enum class NotchType : unsigned char
 {
@@ -212,6 +307,7 @@ enum class Tool : ToolVisHolderType
     EllipticalArc,
     AnchorPoint,
     InsertNodes,
+    BackgroundImage,
     LAST_ONE_DO_NOT_USE //add new stuffs above this, this constant must be last and never used
 };
 
@@ -270,10 +366,12 @@ enum class Vis : ToolVisHolderType
     TextGraphicsItem,
     ScenePoint,
     ArrowedLineItem,
+    BackgroundImageItem,
+    ResizeHandlesItem,
     LAST_ONE_DO_NOT_USE //add new types above this, this constant must be last and never used
 };
 
-enum class VarType : char { Measurement, Increment, LineLength, CurveLength, CurveCLength, LineAngle, CurveAngle,
+enum class VarType : char { Measurement, Variable, LineLength, CurveLength, CurveCLength, LineAngle, CurveAngle,
                             ArcRadius, Unknown };
 
 static const int heightStep = 6;
@@ -353,7 +451,7 @@ enum class GSizes : unsigned char { ALL,
 
 extern const QString LONG_OPTION_NO_HDPI_SCALING;
 bool IsOptionSet(int argc, char *argv[], const char *option);
-void InitHighDpiScaling(int argc, char *argv[]);
+void initHighDpiScaling(int argc, char *argv[]);
 
 // functions
 extern const QString degTorad_F;
@@ -432,6 +530,8 @@ extern const QStringList labelTemplatePlaceholders;
 
 extern const QString cursorArrowOpenHand;
 extern const QString cursorArrowCloseHand;
+extern const QString cursorResizeArrow;
+extern const QString cursorImageOrigin;
 
 extern const QString degreeSymbol;
 extern const QString trueStr;
@@ -447,6 +547,13 @@ extern const QString unitMM;
 extern const QString unitCM;
 extern const QString unitINCH;
 extern const QString unitPX;
+
+extern const QString valExt;
+extern const QString vitExt;
+extern const QString vstExt;
+extern const QString sm2dExt;
+extern const QString smisExt;
+extern const QString smmsExt;
 
 void SetItemOverrideCursor(QGraphicsItem *item, const QString & pixmapPath, int hotX = -1, int hotY = -1);
 
@@ -465,6 +572,9 @@ QString makeHeaderName(const QString &name);
 Q_REQUIRED_RESULT QString strippedName(const QString &fullFileName);
 Q_REQUIRED_RESULT QString RelativeMPath(const QString &patternPath, const QString &absoluteMPath);
 Q_REQUIRED_RESULT QString AbsoluteMPath(const QString &patternPath, const QString &relativeMPath);
+Q_REQUIRED_RESULT QString fileDialog(QWidget *parent, const QString &title,  const QString &dir,
+                                     const QString &filter, QString *selectedFilter, QFileDialog::Options options,
+                                     QFileDialog::FileMode mode,  QFileDialog::AcceptMode accept);
 
 Q_REQUIRED_RESULT QSharedPointer<QPrinter> PreparePrinter(const QPrinterInfo &info,
                                                           QPrinter::PrinterMode mode = QPrinter::ScreenResolution);

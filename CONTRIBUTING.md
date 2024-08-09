@@ -3,7 +3,7 @@
 Thanks for contributing to Seamly code, documentation, translations, website, and wiki!
 
 ## How to Contact Us
-If you need any help or have any questions, need a lengthy discussion or share documentation, ask on the forum at https://forum.seamly.net. Our users and coders hang out there frequently. You can always find someone there.
+If you need any help or have any questions, need a lengthy discussion or share documentation, ask on the forum at https://forum.seamly.io. Our users and coders hang out there frequently. You can always find someone there.
 Alternatively, if you leave a comment on a repo issue we'll quickly get back to you.
 
 ## How we work

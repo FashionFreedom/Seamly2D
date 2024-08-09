@@ -32,10 +32,12 @@
 #include "export_layout_dialog.h"
 #include "ui_export_layout_dialog.h"
 #include "../options.h"
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
+#include "../vmisc/def.h"
 #include "../vmisc/vsettings.h"
 #include "../ifc/exception/vexception.h"
 #include "../vwidgets/export_format_combobox.h"
+#include "../vwidgets/page_format_combobox.h"
 
 #include <QDir>
 #include <QFileDialog>
@@ -50,7 +52,7 @@ const QString fileNameRegExp = QStringLiteral("^[\\p{L}\\p{Nd}\\-. _]+$");
 
 //---------------------------------------------------------------------------------------------------------------------
 ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &fileName, QWidget *parent)
-    : VAbstractLayoutDialog(parent)
+    : AbstractLayoutDialog(parent)
     , ui(new Ui::ExportLayoutDialog)
     , m_count(count)
     , m_isInitialized(false)
@@ -63,7 +65,7 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
     ui->path_LineEdit->setClearButtonEnabled(true);
     ui->filename_LineEdit->setClearButtonEnabled(true);
 
-    qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Seamly2DSettings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     m_SaveButton = ui->buttonBox->button(QDialogButtonBox::Save);
     SCASSERT(m_SaveButton != nullptr)
@@ -72,7 +74,7 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
     ui->filename_LineEdit->setValidator( new QRegularExpressionValidator(QRegularExpression(fileNameRegExp), this));
 
     const QString mask = fileName + modeString();
-    if (VApplication::IsGUIMode())
+    if (Application2D::isGUIMode())
     {
         ui->filename_LineEdit->setText(mask);
     }
@@ -185,8 +187,6 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
 //---------------------------------------------------------------------------------------------------------------------
 void ExportLayoutDialog::initTemplates(QComboBox *templates_ComboBox)
 {
-    VAbstractLayoutDialog::initTemplates(templates_ComboBox);
-
     // remove the custom format,
     int indexCustom = templates_ComboBox->count() -1;
     templates_ComboBox->removeItem(indexCustom);
@@ -686,11 +686,11 @@ void ExportLayoutDialog::readSettings()
     // read Template
     QSizeF size = QSizeF(settings->getTiledPDFPaperWidth(Unit::Mm), settings->getTiledPDFPaperHeight(Unit::Mm));
 
-    const int max = static_cast<int>(PaperSizeTemplate::Custom);
+    const int max = static_cast<int>(PaperSizeFormat::Custom);
     for (int i=0; i < max; ++i)
     {
 
-        const QSizeF tmplSize = getTemplateSize(static_cast<PaperSizeTemplate>(i), Unit::Mm);
+        const QSizeF tmplSize = getTemplateSize(static_cast<PaperSizeFormat>(i), Unit::Mm);
         if (size == tmplSize)
         {
             ui->templates_ComboBox->setCurrentIndex(i);
@@ -732,8 +732,8 @@ void ExportLayoutDialog::writeSettings() const
     settings->setExportQuality(ui->quality_Slider->value());
 
     // write Template
-    PaperSizeTemplate temp;
-    temp = static_cast<PaperSizeTemplate>(ui->templates_ComboBox->currentData().toInt());
+    PaperSizeFormat temp;
+    temp = static_cast<PaperSizeFormat>(ui->templates_ComboBox->currentData().toInt());
     const QSizeF size = getTemplateSize(temp, Unit::Mm);
 
     settings->setTiledPDFPaperHeight(size.height(),Unit::Mm);
@@ -763,7 +763,7 @@ void ExportLayoutDialog::writeSettings() const
  */
 QString ExportLayoutDialog::modeString() const
 {
-    QString modeStr = QStringLiteral();
+    QString modeStr = QStringLiteral("");
     if (qApp->Seamly2DSettings()->useModeType())
     {
         switch (m_mode)

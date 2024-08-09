@@ -697,14 +697,10 @@ void VMainGraphicsView::mousePressEvent(QMouseEvent *event)
         }
         case Qt::MiddleButton:
         {
-            const QList<QGraphicsItem *> list = items(event->pos());
-            if (list.size() == 0)
-            {// Only when the user clicks on the scene background
-                m_ptStartPos = event->pos();
-                QGraphicsView::setDragMode(QGraphicsView::ScrollHandDrag);
-                event->accept();
-                viewport()->setCursor(Qt::ClosedHandCursor);
-            }
+            m_ptStartPos = event->pos();
+            QGraphicsView::setDragMode(QGraphicsView::ScrollHandDrag);
+            event->accept();
+            viewport()->setCursor(Qt::ClosedHandCursor);
             break;
         }
         default:
@@ -730,7 +726,7 @@ void VMainGraphicsView::mouseMoveEvent(QMouseEvent *event)
           endPoint = event->pos();
           if (!isRubberBandColorSet)
           {
-              if ( (endPoint.x() < startPoint.x()) | (endPoint.y() < startPoint.y()) )
+              if ( (endPoint.x() < startPoint.x()) || (endPoint.y() < startPoint.y()) )
               {
                 setRubberBandColor(rubberBand, qApp->Settings()->getZoomRBNegativeColor());
               }

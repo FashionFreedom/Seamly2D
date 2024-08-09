@@ -81,7 +81,7 @@ extern const QString APP_VERSION_STR;
 #define VER_LEGALCOPYRIGHT_STR      "Copyright © 2014-2022 Seamly2D Team"
 #define VER_LEGALTRADEMARKS1_STR    "All Rights Reserved"
 #define VER_LEGALTRADEMARKS2_STR    VER_LEGALTRADEMARKS1_STR
-#define VER_COMPANYDOMAIN_STR       "https://seamly.net"
+#define VER_COMPANYDOMAIN_STR       "https://seamly.io"
 
 QString compilerString();
 QString buildCompatibilityString();

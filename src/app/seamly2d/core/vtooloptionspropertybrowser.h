@@ -56,6 +56,7 @@
 #ifndef VTOOLOPTIONSPROPERTYBROWSER_H
 #define VTOOLOPTIONSPROPERTYBROWSER_H
 
+#include <QEvent>
 #include <QObject>
 #include <QMap>
 
@@ -87,7 +88,6 @@ private slots:
 
 protected:
     Q_DISABLE_COPY(VToolOptionsPropertyBrowser)
-
     const VContainer                *m_data;
     VPE::VPropertyModel             *propertyModel;
     VPE::VPropertyFormView          *formView;
@@ -95,6 +95,7 @@ protected:
     QGraphicsItem                   *currentItem;
     QMap<VPE::VProperty *, QString>  propertyToId;
     QMap<QString, VPE::VProperty *>  idToProperty;
+    QString                          m_centerPointStr;
 
 private:
     void addProperty(VPE::VProperty *property, const QString &id);
@@ -172,6 +173,9 @@ private:
 
     template<class Tool>
     void addPropertyLineColor(Tool *tool, const QString &propertyName,  const QString &id);
+
+    template<class Tool>
+    void addPropertyDirection(Tool *tool, const QString &propertyName);
 
     template<class Tool>
     void addObjectProperty(Tool *tool, const QString &pointName, const QString &propertyName,

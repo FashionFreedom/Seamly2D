@@ -1,27 +1,28 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//  @file   preferencespathpage.cpp
+//  @author Douglas S Caskey
+//  @date   24 Jun, 2024
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
+//  Copyright (C) 2017-2024 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   preferencespathpage.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2017 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2017 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -53,22 +54,23 @@
 #include "ui_preferencespathpage.h"
 #include "../vmisc/vsettings.h"
 #include "../../options.h"
-#include "../../core/vapplication.h"
+#include "../../core/application_2d.h"
 
 #include <QDir>
 #include <QFileDialog>
+#include <QFileInfo>
 
 //---------------------------------------------------------------------------------------------------------------------
 PreferencesPathPage::PreferencesPathPage(QWidget *parent)
-    : QWidget(parent),
-      ui(new Ui::PreferencesPathPage)
+    : QWidget(parent)
+    , ui(new Ui::PreferencesPathPage)
 {
     ui->setupUi(this);
 
-    InitTable();
+    initializeTable();
 
-    connect(ui->defaultButton, &QPushButton::clicked, this, &PreferencesPathPage::DefaultPath);
-    connect(ui->editButton, &QPushButton::clicked, this, &PreferencesPathPage::EditPath);
+    connect(ui->defaultButton, &QPushButton::clicked, this, &PreferencesPathPage::defaultPath);
+    connect(ui->editButton, &QPushButton::clicked, this, &PreferencesPathPage::editPath);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -78,19 +80,31 @@ PreferencesPathPage::~PreferencesPathPage()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesPathPage::Apply()
+void PreferencesPathPage::changeEvent(QEvent *event)
 {
-    VSettings *settings = qApp->Seamly2DSettings();
-    settings->SetPathIndividualMeasurements(ui->pathTable->item(0, 1)->text());
-    settings->SetPathMultisizeMeasurements(ui->pathTable->item(1, 1)->text());
-    settings->SetPathPattern(ui->pathTable->item(2, 1)->text());
-    settings->SetPathLayout(ui->pathTable->item(3, 1)->text());
-    settings->SetPathTemplate(ui->pathTable->item(4, 1)->text());
-    settings->SetPathLabelTemplate(ui->pathTable->item(5, 1)->text());
+    if (event->type() == QEvent::LanguageChange)
+    {
+        ui->retranslateUi(this);
+    }
+    QWidget::changeEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesPathPage::DefaultPath()
+void PreferencesPathPage::Apply()
+{
+    VSettings *settings = qApp->Seamly2DSettings();
+    settings->SetPathPattern(ui->pathTable->item(0, 1)->text());
+    settings->setTemplatePath(ui->pathTable->item(1, 1)->text());
+    settings->setIndividualSizePath(ui->pathTable->item(2, 1)->text());
+    settings->setMultisizePath(ui->pathTable->item(3, 1)->text());
+    settings->SetPathLayout(ui->pathTable->item(4, 1)->text());
+    settings->SetPathLabelTemplate(ui->pathTable->item(5, 1)->text());
+    settings->setImageFilePath(ui->pathTable->item(6, 1)->text());
+    settings->setBackupFilePath(ui->pathTable->item(7, 1)->text());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PreferencesPathPage::defaultPath()
 {
     const int row = ui->pathTable->currentRow();
     QTableWidgetItem *item = ui->pathTable->item(row, 1);
@@ -100,23 +114,29 @@ void PreferencesPathPage::DefaultPath()
 
     switch (row)
     {
-        case 1: // multisize measurements
-            path = VCommonSettings::GetDefPathMultisizeMeasurements();
+        case 0: // pattern path
+            path = VSettings::getDefaultPatternPath();
             break;
-        case 2: // pattern path
-            path = VSettings::GetDefPathPattern();
+        case 1: // templates
+            path = VCommonSettings::getDefaultTemplatePath();
             break;
-        case 0: // individual measurements
-            path = VCommonSettings::GetDefPathIndividualMeasurements();
+        case 2: // individual measurements
+            path = VCommonSettings::getDefaultIndividualSizePath();
             break;
-        case 3: // layout path
-            path = VSettings::GetDefPathLayout();
+        case 3: // multisize measurements
+            path = VCommonSettings::getDefaultMultisizePath();
             break;
-        case 4: // templates
-            path = VCommonSettings::GetDefPathTemplate();
+        case 4: // layout path
+            path = VSettings::getDefaultLayoutPath();
             break;
         case 5: // label templates
-            path = VSettings::GetDefPathLabelTemplate();
+            path = VSettings::getDefaultLabelTemplatePath();
+            break;
+        case 6: // images
+            path = VSettings::getDefaultImageFilePath();
+            break;
+        case 7: // backups
+            path = VSettings::getDefaultBackupFilePath();
             break;
         default:
             break;
@@ -127,7 +147,7 @@ void PreferencesPathPage::DefaultPath()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesPathPage::EditPath()
+void PreferencesPathPage::editPath()
 {
     const int row = ui->pathTable->currentRow();
     QTableWidgetItem *item = ui->pathTable->item(row, 1);
@@ -136,25 +156,31 @@ void PreferencesPathPage::EditPath()
     QString path;
     switch (row)
     {
-        case 0: // individual measurements
-            path = qApp->Seamly2DSettings()->GetPathIndividualMeasurements();
+        case 0: // pattern path
+            path = qApp->Seamly2DSettings()->getPatternPath();
             break;
-        case 1: // multisize measurements
-            path = qApp->Seamly2DSettings()->GetPathMultisizeMeasurements();
-            path = VCommonSettings::PrepareMultisizeTables(path);
+        case 1: // templates
+            path = qApp->Seamly2DSettings()->getTemplatePath();
             break;
-        case 2: // pattern path
-            path = qApp->Seamly2DSettings()->GetPathPattern();
+        case 2: // individual measurements
+            path = qApp->Seamly2DSettings()->getIndividualSizePath();
             break;
-        case 3: // layout path
+        case 3: // multisize measurements
+            path = qApp->Seamly2DSettings()->getMultisizePath();
+            path = VCommonSettings::prepareMultisizeTables(path);
+            break;
+        case 4: // layout path
             path = qApp->Seamly2DSettings()->getLayoutPath();
             break;
-        case 4: // templates
-            path = qApp->Seamly2DSettings()->GetPathTemplate();
-            break;
         case 5: // label templates
-            path = qApp->Seamly2DSettings()->GetPathLabelTemplate();
+            path = qApp->Seamly2DSettings()->getLabelTemplatePath();
             break;
+        case 6: // images
+                path = qApp->Seamly2DSettings()->getImageFilePath();
+                break;
+        case 7: // backups
+                path = qApp->Seamly2DSettings()->getBackupFilePath();
+                break;
         default:
             break;
     }
@@ -166,79 +192,107 @@ void PreferencesPathPage::EditPath()
         usedNotExistedDir = directory.mkpath(".");
     }
 
-    const QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"), path,
-                                                          QFileDialog::ShowDirsOnly
-                                                          | QFileDialog::DontResolveSymlinks
-                                                          | QFileDialog::DontUseNativeDialog);
-    if (dir.isEmpty())
-    {
-        if (usedNotExistedDir)
-        {
-            QDir directory(path);
-            directory.rmpath(".");
-        }
-        DefaultPath();
-        return;
-    }
+    QString filename = fileDialog(this, tr("Open Directory"), path, QString(""), nullptr,
+                                                              QFileDialog::ShowDirsOnly |
+                                                              QFileDialog::DontResolveSymlinks |
+                                                              QFileDialog::DontUseNativeDialog,
+                                                              QFileDialog::Directory, QFileDialog::AcceptOpen);
 
-    item->setText(dir);
-    item->setToolTip(dir);
+    const QString dir = QFileInfo(filename).filePath();
 
     if (usedNotExistedDir)
     {
         QDir directory(path);
         directory.rmpath(".");
     }
+
+    if (dir.isEmpty())
+    {
+        return;
+    }
+
+    item->setText(dir);
+    item->setToolTip(dir);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesPathPage::InitTable()
+void PreferencesPathPage::initializeTable()
 {
-    ui->pathTable->setRowCount(6);
+    ui->pathTable->setRowCount(8);
     ui->pathTable->setColumnCount(2);
 
     const VSettings *settings = qApp->Seamly2DSettings();
 
     {
-        ui->pathTable->setItem(0, 0, new QTableWidgetItem(tr("My Individual Measurements")));
-        QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathIndividualMeasurements());
-        item->setToolTip(settings->GetPathIndividualMeasurements());
+        QTableWidgetItem *item = new QTableWidgetItem(tr("My Patterns"));
+        item->setIcon(QIcon("://icon/32x32/seamly2d_file.png"));
+        ui->pathTable->setItem(0, 0, item);
+        item = new QTableWidgetItem(settings->getPatternPath());
+        item->setToolTip(settings->getPatternPath());
         ui->pathTable->setItem(0, 1, item);
     }
 
     {
-        ui->pathTable->setItem(1, 0, new QTableWidgetItem(tr("My Multisize Measurements")));
-        QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathMultisizeMeasurements());
-        item->setToolTip(settings->GetPathMultisizeMeasurements());
+        QTableWidgetItem *item = new QTableWidgetItem(tr("My Templates"));
+        item->setIcon(QIcon("://icon/32x32/template_size_file.png"));
+        ui->pathTable->setItem(1, 0, item);
+        item = new QTableWidgetItem(settings->getTemplatePath());
+        item->setToolTip(settings->getTemplatePath());
         ui->pathTable->setItem(1, 1, item);
     }
 
     {
-        ui->pathTable->setItem(2, 0, new QTableWidgetItem(tr("My Patterns")));
-        QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathPattern());
-        item->setToolTip(settings->GetPathPattern());
+        QTableWidgetItem *item = new QTableWidgetItem(tr("My Individual Measurements"));
+        item->setIcon(QIcon("://icon/32x32/individual_size_file.png"));
+        ui->pathTable->setItem(2, 0, item);
+        item = new QTableWidgetItem(settings->getIndividualSizePath());
+        item->setToolTip(settings->getIndividualSizePath());
         ui->pathTable->setItem(2, 1, item);
     }
 
     {
-        ui->pathTable->setItem(3, 0, new QTableWidgetItem(tr("My Layouts")));
-        QTableWidgetItem *item = new QTableWidgetItem(settings->getLayoutPath());
-        item->setToolTip(settings->getLayoutPath());
+        QTableWidgetItem *item = new QTableWidgetItem(tr("My Multisize Measurements"));
+        item->setIcon(QIcon("://icon/32x32/multisize_size_file.png"));
+        ui->pathTable->setItem(3, 0, item);
+        item = new QTableWidgetItem(settings->getMultisizePath());
+        item->setToolTip(settings->getMultisizePath());
         ui->pathTable->setItem(3, 1, item);
     }
 
     {
-        ui->pathTable->setItem(4, 0, new QTableWidgetItem(tr("My Templates")));
-        QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathTemplate());
-        item->setToolTip(settings->GetPathTemplate());
+        QTableWidgetItem *item = new QTableWidgetItem(tr("My Layouts"));
+        item->setIcon(QIcon("://icon/32x32/layout.png"));
+        ui->pathTable->setItem(4, 0, item);
+        item = new QTableWidgetItem(settings->getLayoutPath());
+        item->setToolTip(settings->getLayoutPath());
         ui->pathTable->setItem(4, 1, item);
     }
 
     {
-        ui->pathTable->setItem(5, 0, new QTableWidgetItem(tr("My label templates")));
-        QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathLabelTemplate());
-        item->setToolTip(settings->GetPathLabelTemplate());
+        QTableWidgetItem *item = new QTableWidgetItem(tr("My Label Templates"));
+        item->setIcon(QIcon("://icon/32x32/labels.png"));
+        ui->pathTable->setItem(5, 0, item);
+        item = new QTableWidgetItem(settings->getLabelTemplatePath());
+        item->setToolTip(settings->getLabelTemplatePath());
         ui->pathTable->setItem(5, 1, item);
+    }
+
+    {
+        QTableWidgetItem *item = new QTableWidgetItem(tr("My Images"));
+        item->setIcon(QIcon("://icon/32x32/add_image.png"));
+        ui->pathTable->setItem(6, 0, item);
+        item = new QTableWidgetItem(settings->getImageFilePath());
+        item->setToolTip(settings->getImageFilePath());
+        ui->pathTable->setItem(6, 1, item);
+    }
+
+    {
+        QTableWidgetItem *item = new QTableWidgetItem(tr("My Backups"));
+        item->setIcon(QIcon("://icon/32x32/backup_files.png"));
+        ui->pathTable->setItem(7, 0, item);
+        item = new QTableWidgetItem(settings->getBackupFilePath());
+        item->setToolTip(settings->getBackupFilePath());
+        ui->pathTable->setItem(7, 1, item);
     }
 
     ui->pathTable->verticalHeader()->setDefaultSectionSize(20);

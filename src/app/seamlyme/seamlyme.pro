@@ -38,12 +38,8 @@ RESOURCES += \
     share/resources/seamlymeicon.qrc \
     share/resources/diagrams.qrc
 
-# INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES and INSTALL_LABEL_TEMPLATES inside tables.pri
-include(../tables.pri)
-
-win32 {
-    copyToDestdir($$INSTALL_STANDARD_TEMPLATES, $$shell_path($${OUT_PWD}/$${DESTDIR}/tables/templates))
-}
+# INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES and INSTALL_LABEL_TEMPLATES inside samples.pri
+include(../samples.pri)
 
 include(../translations.pri)
 
@@ -79,9 +75,9 @@ unix{
         #languages added inside translations.pri
 
         # logo on macx.
-        ICON = $${PWD}/../../../dist/SeamlyMe.icns
+        ICON = $${PWD}/../../../dist/seamlyme.icns
 
-        QMAKE_INFO_PLIST = $${PWD}/../../../dist/macx/seamlyme/Info.plist
+        QMAKE_INFO_PLIST = $${PWD}/../../../dist/macx/seamlyme/info.plist
 
         # Copy to bundle multisize measurements files
         multisize.path = $${RESOURCES_DIR}/tables/multisize
@@ -92,8 +88,8 @@ unix{
         templates.files = $$INSTALL_STANDARD_TEMPLATES
 
         format.path = $${RESOURCES_DIR}
-        format.files += $$PWD/../../../dist/macx/i-measurements.icns
-        format.files += $$PWD/../../../dist/macx/s-measurements.icns
+        format.files += $$PWD/../../../dist/macx/individual_size_file.icns
+        format.files += $$PWD/../../../dist/macx/multi_size_file.icns
 
         QMAKE_BUNDLE_DATA += \
             templates \
@@ -235,6 +231,10 @@ macx: LIBS += -L$${PWD}/../../libs/xerces-c/macx/lib -lxerces-c
 else:unix: LIBS += -lxerces-c
 win32:!win32-g++: LIBS += -L$${PWD}/../../libs/xerces-c/msvc/lib -lxerces-c_3
 win32-g++: LIBS += -L$${PWD}/../../libs/xerces-c/mingw/lib -lxerces-c
+
+win32 {
+    copyToDestdir($${PWD}/$$INSTALL_XERCES, $$shell_path($${OUT_PWD}/$$DESTDIR))
+}
 
 macx{
     APPLE_SIGN_IDENTITY = $$shell_quote($(APPLE_SIGN_IDENTITY))

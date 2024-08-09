@@ -69,7 +69,12 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 VisToolCutArc::VisToolCutArc(const VContainer *data, QGraphicsItem *parent)
-    :VisPath(data, parent), point(nullptr), arc1(nullptr), arc2(nullptr), length(0)
+    : VisPath(data, parent)
+    , point(nullptr)
+    , arc1(nullptr)
+    , arc2(nullptr)
+    , m_length(0)
+    , m_direction("forward")
 {
     arc1 = InitItem<VCurvePathItem>(Qt::darkGreen, this);
     arc1->setFlag(QGraphicsItem::ItemStacksBehindParent, false);
@@ -89,11 +94,16 @@ void VisToolCutArc::RefreshGeometry()
         const QSharedPointer<VArc> arc = Visualization::data->GeometricObject<VArc>(object1Id);
         DrawPath(this, arc->GetPath(), arc->DirectionArrows(), supportColor, lineStyle, lineWeight, Qt::RoundCap);
 
-        if (not qFuzzyIsNull(length))
+        if (m_direction == "backward")
+        {
+            m_length = arc->GetLength() - m_length;
+        }
+
+        if (!qFuzzyIsNull(m_length))
         {
             VArc ar1;
             VArc ar2;
-            QPointF p = arc->CutArc(length, ar1, ar2);
+            QPointF p = arc->CutArc(m_length, ar1, ar2);
             DrawPoint(point, p, mainColor);
 
             DrawPath(arc1, ar1.GetPath(), ar1.DirectionArrows(), Qt::darkGreen, lineStyle, lineWeight, Qt::RoundCap);
@@ -102,8 +112,13 @@ void VisToolCutArc::RefreshGeometry()
     }
 }
 
+void VisToolCutArc::setDirection(const QString &direction)
+{
+    m_direction = direction;
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 void VisToolCutArc::setLength(const QString &expression)
 {
-    length = FindLength(expression, Visualization::data->DataVariables());
+    m_length = FindLength(expression, Visualization::data->DataVariables());
 }

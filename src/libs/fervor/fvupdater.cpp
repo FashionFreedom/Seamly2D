@@ -1,5 +1,32 @@
-/***************************************************************************************************
+/***************************************************************************
+ **  @file   fvupdater.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
+
+/***************************************************************************************************
+ **  @file   fvupdater.cpp
+ **
+ **  @brief
+ **  @copyright
  **  Copyright (c) 2012 Linas Valiukas and others.
  **
  **  Permission is hereby granted, free of charge, to any person obtaining a copy of this
@@ -46,7 +73,7 @@
 #include <QProcess>
 #include <QtConcurrent/QtConcurrent>
 #include "../ifc/exception/vexception.h"
-#include "../ifc/xml/vabstractconverter.h"
+#include "../ifc/xml/abstract_converter.h"
 #include "../vmisc/projectversion.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
@@ -59,7 +86,7 @@ QPointer<FvUpdater> FvUpdater::m_Instance;
 FvUpdater *FvUpdater::sharedUpdater() {
 	static QMutex mutex;
 	if (m_Instance.isNull()) {
-		mutex.lock();
+        mutex.lock();
 		m_Instance = new FvUpdater;
 		mutex.unlock();
 	}
@@ -70,7 +97,7 @@ FvUpdater *FvUpdater::sharedUpdater() {
 //---------------------------------------------------------------------------------------------------------------------
 void FvUpdater::drop() {
 	static QMutex mutex;
-	mutex.lock();
+    mutex.lock();
 	delete m_Instance;
 	mutex.unlock();
 }

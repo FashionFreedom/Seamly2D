@@ -70,7 +70,7 @@ enum VariableTab {Measurements=0, Custom=1, LineLengths= 2, LineAngles=3, CurveL
                CPLengths=6, ArcRadii=7, Functions=8};
 
 template <class T> class QSharedPointer;
-class VMeasurement;
+class MeasurementVariable;
 
 namespace Ui
 {
@@ -140,7 +140,7 @@ private:
 
     template <class key, class val>
     void         showVariable(const QMap<key, val> &var);
-    void         showMeasurements(const QMap<QString, QSharedPointer<VMeasurement> > &var);
+    void         showMeasurements(const QMap<QString, QSharedPointer<MeasurementVariable> > &var);
     void         showFunctions();
 
     void         setDescription(const QString &name, qreal value, const QString &unit,

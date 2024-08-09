@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   mainwindowsnogui.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 31, 2022
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2022 Seamly, LLC
@@ -51,11 +51,11 @@
  *************************************************************************/
 
 #include "mainwindowsnogui.h"
-#include "core/vapplication.h"
+#include "core/application_2d.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vobj/vobjpaintdevice.h"
 #include "../vdxf/vdxfpaintdevice.h"
-#include "dialogs/dialoglayoutsettings.h"
+#include "dialogs/layoutsettings_dialog.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../vlayout/vlayoutgenerator.h"
 #include "dialogs/dialoglayoutprogress.h"
@@ -64,7 +64,7 @@
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
 #include "../vpatterndb/floatItemData/vpatternlabeldata.h"
 #include "../vpatterndb/floatItemData/vgrainlinedata.h"
-#include "../vpatterndb/measurements.h"
+#include "../vpatterndb/measurements_def.h"
 #include "../vtools/tools/vabstracttool.h"
 #include "../vtools/tools/pattern_piece_tool.h"
 
@@ -95,7 +95,7 @@ bool CreateLayoutPath(const QString &path)
     bool usedNotExistedDir = true;
     QDir dir(path);
     dir.setPath(path);
-    if (not dir.exists(path))
+    if (!dir.exists(path))
     {
         usedNotExistedDir = dir.mkpath(".");
     }
@@ -118,7 +118,7 @@ MainWindowsNoGUI::MainWindowsNoGUI(QWidget *parent)
       pieceList(),
       currentScene(nullptr),
       tempSceneLayout(nullptr),
-      pattern(new VContainer(qApp->TrVars(), qApp->patternUnitP())),
+      pattern(new VContainer(qApp->translateVariables(), qApp->patternUnitP())),
       doc(nullptr),
       papers(),
       shadows(),
@@ -162,7 +162,7 @@ void MainWindowsNoGUI::toolLayoutSettings(QToolButton *tButton, bool checked)
     {
         VLayoutGenerator lGenerator;
 
-        DialogLayoutSettings layout(&lGenerator, this);
+        LayoutSettingsDialog layout(&lGenerator, this);
         if (layout.exec() == QDialog::Rejected)
         {
             tButton->setChecked(false);
@@ -183,7 +183,7 @@ bool MainWindowsNoGUI::LayoutSettings(VLayoutGenerator& lGenerator)
 {
     lGenerator.setPieces(pieceList);
     DialogLayoutProgress progress(pieceList.count(), this);
-    if (VApplication::IsGUIMode())
+    if (Application2D::isGUIMode())
     {
         connect(&lGenerator, &VLayoutGenerator::Start,     &progress,   &DialogLayoutProgress::Start);
         connect(&lGenerator, &VLayoutGenerator::Arranged,  &progress,   &DialogLayoutProgress::Arranged);
@@ -213,7 +213,7 @@ bool MainWindowsNoGUI::LayoutSettings(VLayoutGenerator& lGenerator)
             isAutoCrop = lGenerator.GetAutoCrop();
             isUnitePages = lGenerator.IsUnitePages();
             isLayoutStale = false;
-            if (VApplication::IsGUIMode())
+            if (Application2D::isGUIMode())
             {
                 QApplication::alert(this);
             }
@@ -221,7 +221,7 @@ bool MainWindowsNoGUI::LayoutSettings(VLayoutGenerator& lGenerator)
         case LayoutErrors::ProcessStoped:
         case LayoutErrors::PrepareLayoutError:
         case LayoutErrors::EmptyPaperError:
-            if (VApplication::IsGUIMode())
+            if (Application2D::isGUIMode())
             {
                 QApplication::alert(this);
             }
@@ -310,7 +310,7 @@ void MainWindowsNoGUI::ExportFlatLayout(const ExportLayoutDialog &dialog, const 
 {
     const QString path = dialog.path();
     bool usedNotExistedDir = CreateLayoutPath(path);
-    if (not usedNotExistedDir)
+    if (!usedNotExistedDir)
     {
         qCritical() << tr("Can't create a path");
         return;
@@ -401,7 +401,7 @@ void MainWindowsNoGUI::ExportApparelLayout(const ExportLayoutDialog &dialog, con
 {
     const QString path = dialog.path();
     bool usedNotExistedDir = CreateLayoutPath(path);
-    if (not usedNotExistedDir)
+    if (!usedNotExistedDir)
     {
         qCritical() << tr("Can't create a path");
         return;
@@ -451,7 +451,7 @@ void MainWindowsNoGUI::ExportApparelLayout(const ExportLayoutDialog &dialog, con
             AAMADxfFile(name, DRW::AC1027, dialog.isBinaryDXFFormat(), size, pieces);
             break;
         default:
-            qDebug() << "Can't recognize file type." << Q_FUNC_INFO;
+            qWarning() << "Can't recognize file type." << Q_FUNC_INFO;
             break;
     }
 
@@ -535,7 +535,7 @@ void MainWindowsNoGUI::PrintPages(QPrinter *printer)
     const double scale = qMin(xscale, yscale);
 
     QPainter painter;
-    if (not painter.begin(printer))
+    if (!painter.begin(printer))
     { // failed to open file
         qWarning("failed to open file, is it writable?");
         return;
@@ -600,7 +600,7 @@ void MainWindowsNoGUI::PrintPages(QPrinter *printer)
 
     const int numPages = lastPage - firstPage + 1;
     int copyCount = 1;
-    if (not printer->supportsMultipleCopies())
+    if (!printer->supportsMultipleCopies())
     {
         copyCount = printer->copyCount();
     }
@@ -611,9 +611,9 @@ void MainWindowsNoGUI::PrintPages(QPrinter *printer)
         {
             if (i != 0 || j != 0)
             {
-                if (not printer->newPage())
+                if (!printer->newPage())
                 {
-                    qWarning("failed in flushing page to disk, disk full?");
+                    qWarning("Failed in flushing page to disk, disk may be full.");
                     return;
                 }
             }
@@ -680,9 +680,9 @@ void MainWindowsNoGUI::PrintPages(QPrinter *printer)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindowsNoGUI::PrintPreviewOrigin()
 {
-    if (not isPagesUniform())
+    if (!isPagesUniform())
     {
-        qCritical()<<tr("For previewing multipage document all sheet should have the same size.");
+        qCritical() << tr("For previewing multipage document all sheet should have the same size.");
         return;
     }
 
@@ -700,9 +700,9 @@ void MainWindowsNoGUI::PrintPreviewTiled()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindowsNoGUI::PrintOrigin()
 {
-    if (not isPagesUniform())
+    if (!isPagesUniform())
     {
-        qCritical()<<tr("For printing multipages document all sheet should have the same size.");
+        qCritical() << tr("For printing multipages document all sheet should have the same size.");
         return;
     }
 
@@ -776,7 +776,7 @@ void MainWindowsNoGUI::refreshSeamAllowances()
 QVector<VLayoutPiece> MainWindowsNoGUI::preparePiecesForLayout(const QHash<quint32, VPiece> &pieces)
 {
     QVector<VLayoutPiece> pieceList;
-    if (not pieces.isEmpty())
+    if (!pieces.isEmpty())
     {
         QHash<quint32, VPiece>::const_iterator i = pieces.constBegin();
         while (i != pieces.constEnd())
@@ -809,7 +809,7 @@ QIcon MainWindowsNoGUI::ScenePreview(int i) const
         // Create the image with the exact size of the shrunk scene
         image = QImage(QSize(static_cast<qint32>(r.width()), static_cast<qint32>(r.height())), QImage::Format_RGB32);
 
-        if (not image.isNull())
+        if (!image.isNull())
         {
             image.fill(Qt::white);
             QPainter painter(&image);
@@ -822,7 +822,7 @@ QIcon MainWindowsNoGUI::ScenePreview(int i) const
         }
         else
         {
-            qWarning()<<"Cannot create image. Size too big";
+            qWarning() << "Cannot create image. Size too big";
         }
     }
     else
@@ -1018,7 +1018,7 @@ void MainWindowsNoGUI::exportPDF(const QString &name, QGraphicsRectItem *paper, 
     const QRectF sourceRect = paper->rect();
     const QRectF targetRect = QRectF(QPoint(0,0), QPoint(sourceRect.width(),sourceRect.height()));
     QSizeF size(FromPixel(sourceRect.width() + margins.left() + margins.right(), Unit::Mm),
-                FromPixel(sourceRect.height() + margins.top() + margins.bottom(), Unit::Mm));    
+                FromPixel(sourceRect.height() + margins.top() + margins.bottom(), Unit::Mm));
     QPageSize pageSize(size, QPageSize::Unit::Millimeter);
     printer.setPageSize(pageSize);
 
@@ -1066,9 +1066,9 @@ void MainWindowsNoGUI::PdfTiledFile(const QString &name)
     SetPrinterSettings(&printer, PrintType::PrintPDF);
 
     // Call IsPagesFit after setting a printer settings and check if pages is not bigger than printer's paper size
-    if (not isTiled && not IsPagesFit(printer.pageLayout().fullRectPixels(printer.resolution()).size()))
+    if (!isTiled && not IsPagesFit(printer.pageLayout().fullRectPixels(printer.resolution()).size()))
     {
-        qWarning()<<tr("Pages will be cropped because they do not fit printer paper size.");
+        qWarning() << tr("Pages will be cropped because they do not fit printer paper size.");
     }
 
     printer.setOutputFileName(name);
@@ -1171,7 +1171,7 @@ void MainWindowsNoGUI::FlatDxfFile(const QString &name, int version, bool binary
     generator.setFileName(name);
     generator.setSize(paper->rect().size().toSize());
     generator.setResolution(PrintDPI);
-    generator.SetVersion(static_cast<DRW::Version>(version));
+    generator.setVersion(static_cast<DRW::Version>(version));
     generator.SetBinaryFormat(binary);
     generator.setInsunits(VarInsunits::Millimeters);// Decided to always use mm. See issue #745
 
@@ -1192,7 +1192,7 @@ void MainWindowsNoGUI::AAMADxfFile(const QString &name, int version, bool binary
     generator.setFileName(name);
     generator.setSize(size);
     generator.setResolution(PrintDPI);
-    generator.SetVersion(static_cast<DRW::Version>(version));
+    generator.setVersion(static_cast<DRW::Version>(version));
     generator.SetBinaryFormat(binary);
     generator.setInsunits(VarInsunits::Millimeters);// Decided to always use mm. See issue #745
     generator.ExportToAAMA(pieces);
@@ -1370,7 +1370,7 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
     printer->setCreator(QGuiApplication::applicationDisplayName()+" "+QCoreApplication::applicationVersion());
     printer->setPageOrientation(QPageLayout::Orientation::Portrait);
 
-    if (not isTiled)
+    if (!isTiled)
     {
         QSizeF size = QSizeF(FromPixel(paperSize.width(), Unit::Mm), FromPixel(paperSize.height(), Unit::Mm));
         if (isAutoCrop || isUnitePages)
@@ -1413,7 +1413,7 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
 
     qreal left, top, right, bottom;
 
-    if (not isTiled)
+    if (!isTiled)
     {
         QMarginsF pageMargin = QMarginsF(UnitConvertor(margins, Unit::Px, Unit::Mm));
         left = pageMargin.left();
@@ -1444,7 +1444,7 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
     }
 
     const bool success = printer->setPageMargins(QMarginsF(left, top, right, bottom), QPageLayout::Millimeter);
-    if (not success)
+    if (!success)
     {
         qWarning() << tr("Cannot set printer margins");
     }
@@ -1506,7 +1506,7 @@ bool MainWindowsNoGUI::IsLayoutGrayscale() const
             // Restore
             RestorePaper(i);
 
-            if (not image.isGrayscale())
+            if (!image.isGrayscale())
             {
                 return false;
             }
@@ -1713,7 +1713,7 @@ void MainWindowsNoGUI::ExportScene(const ExportLayoutDialog &dialog, const QList
                     paper->setVisible(true);
                     break;
                 default:
-                    qDebug() << "Can't recognize file type." << Q_FUNC_INFO;
+                    qWarning() << "Can't recognize file type." << Q_FUNC_INFO;
                     break;
             }
             paper->setPen(QPen(Qt::black, 1));
@@ -1735,26 +1735,26 @@ QString MainWindowsNoGUI::FileName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindowsNoGUI::SetSizeHeightForIndividualM() const
+void MainWindowsNoGUI::setSizeHeightForIndividualM() const
 {
     const QHash<QString, QSharedPointer<VInternalVariable> > * vars = pattern->DataVariables();
 
     if (vars->contains(size_M))
     {
-        VContainer::SetSize(*vars->value(size_M)->GetValue());
+        VContainer::setSize(*vars->value(size_M)->GetValue());
     }
     else
     {
-        VContainer::SetSize(0);
+        VContainer::setSize(0);
     }
 
     if (vars->contains(height_M))
     {
-        VContainer::SetHeight(*vars->value(height_M)->GetValue());
+        VContainer::setHeight(*vars->value(height_M)->GetValue());
     }
     else
     {
-        VContainer::SetHeight(0);
+        VContainer::setHeight(0);
     }
 
     doc->SetPatternWasChanged(true);

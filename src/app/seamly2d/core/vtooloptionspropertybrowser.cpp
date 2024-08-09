@@ -1,7 +1,7 @@
 /******************************************************************************
 *   @file   vtooloptionspropertybrowser.cpp
 **  @author Douglas S Caskey
-**  @date   30 Apr, 2023
+**  @date   17 Sep, 2023
 **
 **  @brief
 **  @copyright
@@ -56,7 +56,7 @@
 #include "vtooloptionspropertybrowser.h"
 
 #include "vformulaproperty.h"
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
 #include "../ifc/ifcdef.h"
 #include "../vgeometry/vcubicbezier.h"
 #include "../vgeometry/vcubicbezierpath.h"
@@ -74,6 +74,7 @@
 #include "../vwidgets/vcurvepathitem.h"
 
 #include <QDockWidget>
+//#include <QEvent>
 #include <QHBoxLayout>
 #include <QDebug>
 #include <QRegularExpression>
@@ -87,6 +88,7 @@ VToolOptionsPropertyBrowser::VToolOptionsPropertyBrowser(const VContainer *data,
     , currentItem(nullptr)
     , propertyToId(QMap<VPE::VProperty *, QString>())
     , idToProperty(QMap<QString, VPE::VProperty *>())
+    , m_centerPointStr(tr("Center point"))
 {
     propertyModel = new VPE::VPropertyModel(this);
     formView = new VPE::VPropertyFormView(propertyModel, parent);
@@ -115,7 +117,7 @@ void VToolOptionsPropertyBrowser::clearPropertyBrowser()
 void VToolOptionsPropertyBrowser::showItemOptions(QGraphicsItem *item)
 {
     // This check helps to find missing tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were used in switch.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used in switch.");
 
     switch (item->type())
     {
@@ -242,7 +244,7 @@ void VToolOptionsPropertyBrowser::updateOptions()
     }
 
     // This check helps to find missing tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were used in switch.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used in switch.");
 
     switch (currentItem->type())
     {
@@ -387,7 +389,7 @@ void VToolOptionsPropertyBrowser::userChangedData(VPE::VProperty *property)
     }
 
     // This check helps to find missing tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were used in switch.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used in switch.");
 
     switch (currentItem->type())
     {
@@ -508,6 +510,11 @@ void VToolOptionsPropertyBrowser::itemClicked(QGraphicsItem *item)
         {
             return;
         }
+
+        if(item->type() == QGraphicsItem::UserType + static_cast<int>(Tool::BackgroundImage))
+        {
+            item = nullptr;
+        }
     }
 
     if (currentItem == item && item != nullptr)
@@ -554,7 +561,7 @@ void VToolOptionsPropertyBrowser::addPropertyObjectName(Tool *tool, const QStrin
 {
     VPE::VStringProperty *itemName = new VPE::VStringProperty(propertyName);
     readOnly == true ? itemName->setClearButtonEnable(false) : itemName->setClearButtonEnable(true);
-    itemName->setValue(qApp->TrVars()->VarToUser(tool->name()));
+    itemName->setValue(qApp->translateVariables()->VarToUser(tool->name()));
     itemName->setReadOnly(readOnly);
     addProperty(itemName, AttrName);
 }
@@ -637,7 +644,7 @@ template<class Tool>
 void VToolOptionsPropertyBrowser::addPropertyCrossPoint(Tool *tool, const QString &propertyName)
 {
     VPE::VEnumProperty* itemProperty = new VPE::VEnumProperty(propertyName);
-    itemProperty->setLiterals(QStringList()<< tr("First point") << tr("Second point"));
+    itemProperty->setLiterals(QStringList() <<  tr("First point") << tr("Second point"));
     itemProperty->setValue(static_cast<int>(tool->GetCrossCirclesPoint())-1);
     addProperty(itemProperty, AttrCrossPoint);
 }
@@ -647,7 +654,7 @@ template<class Tool>
 void VToolOptionsPropertyBrowser::addPropertyVCrossPoint(Tool *tool, const QString &propertyName)
 {
     auto *itemProperty = new VPE::VEnumProperty(propertyName);
-    itemProperty->setLiterals(QStringList()<< tr("Highest point") << tr("Lowest point"));
+    itemProperty->setLiterals(QStringList() <<  tr("Highest point") << tr("Lowest point"));
     itemProperty->setValue(static_cast<int>(tool->GetVCrossPoint())-1);
     addProperty(itemProperty, AttrVCrossPoint);
 }
@@ -657,7 +664,7 @@ template<class Tool>
 void VToolOptionsPropertyBrowser::addPropertyHCrossPoint(Tool *tool, const QString &propertyName)
 {
     auto *itemProperty = new VPE::VEnumProperty(propertyName);
-    itemProperty->setLiterals(QStringList()<< tr("Leftmost point") << tr("Rightmost point"));
+    itemProperty->setLiterals(QStringList() <<  tr("Leftmost point") << tr("Rightmost point"));
     itemProperty->setValue(static_cast<int>(tool->GetHCrossPoint())-1);
     addProperty(itemProperty, AttrHCrossPoint);
 }
@@ -667,7 +674,7 @@ template<class Tool>
 void VToolOptionsPropertyBrowser::addPropertyAxisType(Tool *tool, const QString &propertyName)
 {
     auto *itemProperty = new VPE::VEnumProperty(propertyName);
-    itemProperty->setLiterals(QStringList()<< tr("Vertical axis") << tr("Horizontal axis"));
+    itemProperty->setLiterals(QStringList() <<  tr("Vertical axis") << tr("Horizontal axis"));
     itemProperty->setValue(static_cast<int>(tool->getAxisType())-1);
     addProperty(itemProperty, AttrAxisType);
 }
@@ -688,7 +695,7 @@ void VToolOptionsPropertyBrowser::addPropertyLineType(Tool *tool, const QString 
     const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypes, tool->getLineType());
     if (index == -1)
     {
-        qWarning()<<"Can't find line type" << tool->getLineType()<<"in list";
+        qWarning() << "Can't find line type" << tool->getLineType() << "in list";
     }
     lineTypeProperty->setValue(index);
     addProperty(lineTypeProperty, AttrLineType);
@@ -703,7 +710,7 @@ void VToolOptionsPropertyBrowser::addPropertyCurveLineType(Tool *tool, const QSt
     const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
     if (index == -1)
     {
-        qWarning()<<"Can't find line type" << tool->getLineType()<<"in list";
+        qWarning() << "Can't find line type" << tool->getLineType() <<  "in list";
     }
     penStyleProperty->setValue(index);
     addProperty(penStyleProperty, AttrPenStyle);
@@ -718,7 +725,7 @@ void VToolOptionsPropertyBrowser::addPropertyLineWeight(Tool *tool, const QStrin
     const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
     if (index == -1)
     {
-        qWarning()<<"Can't find line weight" << tool->getLineWeight()<<"in list";
+        qWarning() << "Can't find line weight" << tool->getLineWeight() <<  "in list";
     }
     lineWeightProperty->setValue(index);
     addProperty(lineWeightProperty, AttrLineWeight);
@@ -733,10 +740,32 @@ void VToolOptionsPropertyBrowser::addPropertyLineColor(Tool *tool, const QString
     const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
     if (index == -1)
     {
-        qWarning()<<"Can't find line color" << tool->getLineColor()<<"in list";
+        qWarning() << "Can't find line color" << tool->getLineColor() <<  "in list";
     }
     lineColorProperty->setValue(index);
     addProperty(lineColorProperty, id);
+}
+
+// @brief Adds a directionproperty.
+//
+// Adds a direction combobox property to the Property Editor form widget. Gets the combobox index to
+// the tool's direction. Throws a warning if the property is not found in the combobox item list.
+// If the index exists it sets the combobox index to the tool's direction. 
+//
+// @tparam tool Tool of the property.
+// @param propertyName Name of the property.
+template<class Tool>
+void VToolOptionsPropertyBrowser::addPropertyDirection(Tool *tool, const QString &propertyName)
+{
+    VPE::DirectionProperty *directionProperty = new VPE::DirectionProperty(propertyName);
+    directionProperty->setDirections(directionList());
+    const qint32 index = VPE::DirectionProperty::indexOfDirection(directionList(), tool->getDirection());
+    if (index == -1)
+    {
+        qWarning() << "Can't find direction" << tool->getDirection() <<  "in list";
+    }
+    directionProperty->setValue(index);
+    addProperty(directionProperty, AttrDirection);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -750,7 +779,7 @@ void VToolOptionsPropertyBrowser::addObjectProperty(Tool *tool, const QString &p
     const qint32 index = VPE::VObjectProperty::indexOfObject(list, pointName);
     if (index == -1)
     {
-        qWarning()<<"Can't find point" << pointName << "in list";
+        qWarning() << "Can't find point" << pointName << "in list";
     }
     pointsProperty->setValue(index);
     addProperty(pointsProperty, id);
@@ -888,7 +917,7 @@ endLoop:
 
     if (tool->type() == VToolMove::Type)
     {
-        map.insert("Center point", NULL_ID);
+        map.insert(m_centerPointStr, NULL_ID);
     }
     return map;
 }
@@ -916,7 +945,7 @@ void VToolOptionsPropertyBrowser::setPointName(const QString &name)
     }
     else
     {
-        qWarning()<<"Can't cast item";
+        qWarning() << "Can't cast item";
     }
 }
 
@@ -943,7 +972,7 @@ void VToolOptionsPropertyBrowser::setPointName1(const QString &name)
     }
     else
     {
-        qWarning()<<"Can't cast item";
+        qWarning() << "Can't cast item";
     }
 }
 
@@ -970,7 +999,7 @@ void VToolOptionsPropertyBrowser::setPointName2(const QString &name)
     }
     else
     {
-        qWarning()<<"Can't cast item";
+        qWarning() << "Can't cast item";
     }
 }
 
@@ -1007,7 +1036,7 @@ void VToolOptionsPropertyBrowser::setOperationSuffix(const QString &suffix)
     }
     else
     {
-        qWarning()<<"Can't cast item";
+        qWarning() << "Can't cast item";
     }
 }
 
@@ -1045,7 +1074,7 @@ void VToolOptionsPropertyBrowser::setCirclesCrossPoint(const QVariant &value)
     }
     else
     {
-        qWarning()<<"Can't cast item";
+        qWarning() << "Can't cast item";
     }
 }
 
@@ -1059,7 +1088,7 @@ void VToolOptionsPropertyBrowser::setCurveVCrossPoint(const QVariant &value)
     }
     else
     {
-        qWarning()<<"Can't cast item";
+        qWarning() << "Can't cast item";
     }
 }
 
@@ -1073,7 +1102,7 @@ void VToolOptionsPropertyBrowser::setCurveHCrossPoint(const QVariant &value)
     }
     else
     {
-        qWarning()<<"Can't cast item";
+        qWarning() << "Can't cast item";
     }
 }
 
@@ -1087,7 +1116,7 @@ void VToolOptionsPropertyBrowser::setAxisType(const QVariant &value)
     }
     else
     {
-        qWarning()<<"Can't cast item";
+        qWarning() << "Can't cast item";
     }
 }
 
@@ -1118,7 +1147,7 @@ void VToolOptionsPropertyBrowser::changeDataToolSinglePoint(VPE::VProperty *prop
             tool->SetBasePointPos(value.toPointF());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1157,7 +1186,7 @@ void VToolOptionsPropertyBrowser::changeDataToolEndLine(VPE::VProperty *property
             tool->SetBasePointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1196,7 +1225,7 @@ void VToolOptionsPropertyBrowser::changeDataToolAlongLine(VPE::VProperty *proper
             tool->SetSecondPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1239,7 +1268,7 @@ void VToolOptionsPropertyBrowser::changeDataToolArc(VPE::VProperty *property)
             tool->SetPenStyle(value.toString());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1281,7 +1310,7 @@ void VToolOptionsPropertyBrowser::changeDataToolArcWithLength(VPE::VProperty *pr
             tool->SetPenStyle(value.toString());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1323,7 +1352,7 @@ void VToolOptionsPropertyBrowser::changeDataToolBisector(VPE::VProperty *propert
             tool->SetThirdPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1362,7 +1391,7 @@ void VToolOptionsPropertyBrowser::changeDataToolTrueDarts(VPE::VProperty *proper
             tool->SetDartP3Id(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1388,8 +1417,11 @@ void VToolOptionsPropertyBrowser::changeDataToolCutArc(VPE::VProperty *property)
         case 13: // AttrArc
             tool->setCurveCutId(value.toInt());
             break;
+        case 62: // AttrDiretion
+            tool->setDirection(value.toString());
+            break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1415,8 +1447,11 @@ void VToolOptionsPropertyBrowser::changeDataToolCutSpline(VPE::VProperty *proper
         case 46: // AttrCurve
             tool->setCurveCutId(value.toInt());
             break;
+        case 62: // AttrDiretion
+            tool->setDirection(value.toString());
+            break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1442,8 +1477,11 @@ void VToolOptionsPropertyBrowser::changeDataToolCutSplinePath(VPE::VProperty *pr
         case 46: // AttrCurve
             tool->setCurveCutId(value.toInt());
             break;
+        case 62: // AttrDiretion
+            tool->setDirection(value.toString());
+            break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1482,7 +1520,7 @@ void VToolOptionsPropertyBrowser::changeDataToolHeight(VPE::VProperty *property)
             tool->SetP2LineId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1515,7 +1553,7 @@ void VToolOptionsPropertyBrowser::changeDataToolLine(VPE::VProperty *property)
             tool->SetSecondPoint(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1548,7 +1586,7 @@ void VToolOptionsPropertyBrowser::changeDataToolLineIntersect(VPE::VProperty *pr
             tool->SetP2Line2(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1590,7 +1628,7 @@ void VToolOptionsPropertyBrowser::changeDataToolNormal(VPE::VProperty *property)
             tool->SetSecondPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1623,7 +1661,7 @@ void VToolOptionsPropertyBrowser::changeDataToolPointOfContact(VPE::VProperty *p
             tool->SetSecondPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1659,7 +1697,7 @@ void VToolOptionsPropertyBrowser::changeDataToolPointOfIntersection(VPE::VProper
             tool->setLineWeight(value.toString());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1692,7 +1730,7 @@ void VToolOptionsPropertyBrowser::changeDataToolPointOfIntersectionArcs(VPE::VPr
             tool->SetSecondArcId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1731,7 +1769,7 @@ void VToolOptionsPropertyBrowser::changeDataToolPointOfIntersectionCircles(VPE::
             tool->SetSecondCircleCenterId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1770,7 +1808,7 @@ void VToolOptionsPropertyBrowser::changeDataToolPointOfIntersectionCurves(VPE::V
             tool->SetSecondCurveId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1806,7 +1844,7 @@ void VToolOptionsPropertyBrowser::changeDataToolPointFromCircleAndTangent(VPE::V
             tool->SetTangentPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1839,7 +1877,7 @@ void VToolOptionsPropertyBrowser::changeDataToolPointFromArcAndTangent(VPE::VPro
             tool->SetArcId(value.toInt());
             break;;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1881,7 +1919,7 @@ void VToolOptionsPropertyBrowser::changeDataToolShoulderPoint(VPE::VProperty *pr
             tool->setPShoulder(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -1955,7 +1993,7 @@ void VToolOptionsPropertyBrowser::changeDataToolSpline(VPE::VProperty *property)
             tool->setLineWeight(value.toString());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -2009,7 +2047,7 @@ void VToolOptionsPropertyBrowser::changeDataToolCubicBezier(VPE::VProperty *prop
             tool->setSpline(spline);
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -2039,7 +2077,7 @@ void VToolOptionsPropertyBrowser::changeDataToolSplinePath(VPE::VProperty *prope
             tool->setLineWeight(value.toString());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -2069,7 +2107,7 @@ void VToolOptionsPropertyBrowser::changeDataToolCubicBezierPath(VPE::VProperty *
             tool->setLineWeight(value.toString());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -2102,7 +2140,7 @@ void VToolOptionsPropertyBrowser::changeDataToolTriangle(VPE::VProperty *propert
             tool->SetSecondPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -2144,7 +2182,7 @@ void VToolOptionsPropertyBrowser::changeDataToolLineIntersectAxis(VPE::VProperty
             tool->SetSecondPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -2183,7 +2221,7 @@ void VToolOptionsPropertyBrowser::changeDataToolCurveIntersectAxis(VPE::VPropert
             tool->setCurveId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -2210,7 +2248,7 @@ void VToolOptionsPropertyBrowser::changeDataToolRotation(VPE::VProperty *propert
             tool->setOriginPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -2243,7 +2281,7 @@ void VToolOptionsPropertyBrowser::changeDataToolMove(VPE::VProperty *property)
             tool->setOriginPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -2270,7 +2308,7 @@ void VToolOptionsPropertyBrowser::changeDataToolMirrorByLine(VPE::VProperty *pro
             tool->setSecondLinePointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -2300,7 +2338,7 @@ void VToolOptionsPropertyBrowser::changeDataToolMirrorByAxis(VPE::VProperty *pro
             tool->setOriginPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -2348,7 +2386,7 @@ void VToolOptionsPropertyBrowser::changeDataToolEllipticalArc(VPE::VProperty *pr
             tool->setCenter(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
@@ -2361,7 +2399,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolSinglePoint(QGraphicsItem *item
     formView->setTitle(tr("Base point"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
 
     VPE::VPointFProperty* itemCoordinates = new VPE::VPointFProperty(tr("Coordinates"));
     itemCoordinates->setValue(tool->GetBasePointPos());
@@ -2376,7 +2414,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolEndLine(QGraphicsItem *item)
     formView->setTitle(tr("Point - Length and Angle"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->BasePointName(), tr("Base point:"), AttrBasePoint, GOType::Point);
 
     addPropertyLabel(tr("Geometry"), AttrName);
@@ -2397,7 +2435,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolAlongLine(QGraphicsItem *item)
     formView->setTitle(tr("Point - On Line"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->BasePointName(), tr("First point:"), AttrBasePoint, GOType::Point);
     addObjectProperty(tool, tool->SecondPointName(), tr("Second point:"), AttrSecondPoint, GOType::Point);
 
@@ -2462,7 +2500,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolBisector(QGraphicsItem *item)
     formView->setTitle(tr("Point - On Bisector"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->FirstPointName(), tr("First point:"), AttrFirstPoint, GOType::Point);
     addObjectProperty(tool, tool->BasePointName(), tr("Second point:"), AttrBasePoint, GOType::Point);
     addObjectProperty(tool, tool->ThirdPointName(), tr("Third point:"), AttrThirdPoint, GOType::Point);
@@ -2501,8 +2539,9 @@ void VToolOptionsPropertyBrowser::showOptionsToolCutArc(QGraphicsItem *item)
     formView->setTitle(tr("Point - On Arc"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->CurveName(), tr("Arc:"), AttrArc, GOType::Arc);
+    addPropertyDirection(tool, tr("Direction:"));
 
     addPropertyLabel(tr("Geometry"), AttrName);
     addPropertyFormula(tr("Length:"), tool->GetFormula(), AttrLength);
@@ -2516,8 +2555,9 @@ void VToolOptionsPropertyBrowser::showOptionsToolCutSpline(QGraphicsItem *item)
     formView->setTitle(tr("Point - On Curve"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->CurveName(), tr("Curve:"), AttrCurve, GOType::Curve);
+    addPropertyDirection(tool, tr("Direction:"));
 
     addPropertyLabel(tr("Geometry"), AttrName);
     addPropertyFormula(tr("Length:"), tool->GetFormula(), AttrLength);
@@ -2531,8 +2571,9 @@ void VToolOptionsPropertyBrowser::showOptionsToolCutSplinePath(QGraphicsItem *it
     formView->setTitle(tr("Point - On Spline"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->CurveName(), tr("Curve:"), AttrCurve, GOType::Path);
+    addPropertyDirection(tool, tr("Direction:"));
 
     addPropertyLabel(tr("Geometry"), AttrName);
     addPropertyFormula(tr("Length:"), tool->GetFormula(), AttrLength);
@@ -2546,7 +2587,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolHeight(QGraphicsItem *item)
     formView->setTitle(tr("Point - Intersect Line and Perpendicular"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->BasePointName(), tr("Base point:"), AttrBasePoint, GOType::Point);
     addObjectProperty(tool, tool->FirstLinePointName(), tr("First line point:"), AttrP1Line, GOType::Point);
     addObjectProperty(tool, tool->SecondLinePointName(), tr("Second line point:"), AttrP2Line, GOType::Point);
@@ -2583,7 +2624,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolLineIntersect(QGraphicsItem *it
     formView->setTitle(tr("Point - Intersect Lines"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addPropertyLabel(tr("First line"), AttrName);
     addObjectProperty(tool, tool->Line1P1Name(), tr("First point:"), AttrP1Line1, GOType::Point);
     addObjectProperty(tool, tool->Line1P2Name(), tr("Second point:"), AttrP2Line1, GOType::Point);
@@ -2600,7 +2641,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolNormal(QGraphicsItem *item)
     formView->setTitle(tr("Point - On Perpendicular"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
 
     addPropertyLabel(tr("Geometry"), AttrName);
     addPropertyFormula(tr("Length:"), tool->GetFormulaLength(), AttrLength);
@@ -2628,7 +2669,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolPointOfContact(QGraphicsItem *i
     formView->setTitle(tr("Point - Intersect Arc and Line"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->ArcCenterPointName(), tr("Center of arc:"), AttrCenter, GOType::Point);
     addObjectProperty(tool, tool->FirstPointName(), tr("1st line point:"), AttrFirstPoint, GOType::Point);
     addObjectProperty(tool, tool->SecondPointName(), tr("2nd line point:"), AttrSecondPoint, GOType::Point);
@@ -2645,7 +2686,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolPointOfIntersection(QGraphicsIt
     formView->setTitle(tr("Point - Intersect XY"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->firstPointName(), tr("First point:"), AttrFirstPoint, GOType::Point);
     addObjectProperty(tool, tool->secondPointName(), tr("Second point:"), AttrSecondPoint, GOType::Point);
 
@@ -2663,7 +2704,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolPointOfIntersectionArcs(QGraphi
     formView->setTitle(tr("Point - Intersect Arcs"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->FirstArcName(), tr("First arc:"), AttrFirstArc, GOType::Arc);
     addObjectProperty(tool, tool->SecondArcName(), tr("Second arc:"), AttrSecondArc, GOType::Arc);
     addPropertyCrossPoint(tool, tr("Take:"));
@@ -2677,7 +2718,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolPointOfIntersectionCircles(QGra
     formView->setTitle(tr("Point - Intersect Circles"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addPropertyCrossPoint(tool, tr("Take:"));
 
     addPropertyLabel(tr("Geometry"), AttrName);
@@ -2698,7 +2739,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolPointOfIntersectionCurves(QGrap
     formView->setTitle(tr("Point - Intersect Curves"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->FirstCurveName(), tr("First curve:"), AttrCurve1, GOType::AllCurves);
     addObjectProperty(tool, tool->SecondCurveName(), tr("Second curve:"), AttrCurve2, GOType::AllCurves);
     addPropertyVCrossPoint(tool, tr("Vertical take:"));
@@ -2713,7 +2754,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolPointFromCircleAndTangent(QGrap
     formView->setTitle(tr("Point - Intersect Circle and Tangent"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->CircleCenterPointName(), tr("Center point:"), AttrCCenter, GOType::Point);
     addObjectProperty(tool, tool->TangentPointName(), tr("Tangent point:"), AttrTangent, GOType::Point);
 
@@ -2730,7 +2771,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolPointFromArcAndTangent(QGraphic
     formView->setTitle(tr("Point - Intersect Arc and Tangent"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->TangentPointName(), tr("Tangent point:"), AttrTangent, GOType::Point);
     addObjectProperty(tool, tool->ArcName(), tr("Arc:"), AttrArc, GOType::Arc);
     addPropertyCrossPoint(tool, tr("Take:"));
@@ -2744,7 +2785,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolShoulderPoint(QGraphicsItem *it
     formView->setTitle(tr("Point - Length to Line"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->BasePointName(), tr("First point:"), AttrBasePoint, GOType::Point);
     addObjectProperty(tool, tool->SecondPointName(), tr("Second point:"), AttrSecondPoint, GOType::Point);
     addObjectProperty(tool, tool->ShoulderPointName(), tr("Third point:"), AttrThirdPoint, GOType::Point);
@@ -2774,11 +2815,6 @@ void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
     addObjectProperty(tool, spl.GetP4().name(), tr("Second point:"), AttrSecondPoint, GOType::Point);
 
     addPropertyLabel(tr("Geometry"), AttrName);
-    VFormula angle1(spl.GetStartAngleFormula(), tool->getData());
-    angle1.setCheckZero(false);
-    angle1.setToolId(tool->getId());
-    angle1.setPostfix(degreeSymbol);
-    addPropertyFormula(tr("C1: angle:"), angle1, AttrAngle1);
 
     VFormula length1(spl.GetC1LengthFormula(), tool->getData());
     length1.setCheckZero(false);
@@ -2786,17 +2822,23 @@ void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
     length1.setPostfix(UnitsToStr(qApp->patternUnit()));
     addPropertyFormula(tr("C1: length:"), length1, AttrLength1);
 
-    VFormula angle2(spl.GetEndAngleFormula(), tool->getData());
-    angle2.setCheckZero(false);
-    angle2.setToolId(tool->getId());
-    angle2.setPostfix(degreeSymbol);
-    addPropertyFormula(tr("C2: angle:"), angle2, AttrAngle2);
+    VFormula angle1(spl.GetStartAngleFormula(), tool->getData());
+    angle1.setCheckZero(false);
+    angle1.setToolId(tool->getId());
+    angle1.setPostfix(degreeSymbol);
+    addPropertyFormula(tr("C1: angle:"), angle1, AttrAngle1);
 
     VFormula length2(spl.GetC2LengthFormula(), tool->getData());
     length2.setCheckZero(false);
     length2.setToolId(tool->getId());
     length2.setPostfix(UnitsToStr(qApp->patternUnit()));
     addPropertyFormula(tr("C2: length:"), length2, AttrLength2);
+
+    VFormula angle2(spl.GetEndAngleFormula(), tool->getData());
+    angle2.setCheckZero(false);
+    angle2.setToolId(tool->getId());
+    angle2.setPostfix(degreeSymbol);
+    addPropertyFormula(tr("C2: angle:"), angle2, AttrAngle2);
 
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
@@ -2866,7 +2908,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolTriangle(QGraphicsItem *item)
 
     formView->setTitle(tr("Point - Intersect Axis and Triangle"));
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->AxisP1Name(), tr("1st axis point:"), AttrAxisP1, GOType::Point);
     addObjectProperty(tool, tool->AxisP2Name(), tr("2nd axis point:"), AttrAxisP2, GOType::Point);
     addObjectProperty(tool, tool->FirstPointName(), tr("First point:"), AttrFirstPoint, GOType::Point);
@@ -2881,7 +2923,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolLineIntersectAxis(QGraphicsItem
     formView->setTitle(tr("Point - Intersect Line and Axis"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->BasePointName(), tr("Axis point:"), AttrBasePoint, GOType::Point);
     addObjectProperty(tool, tool->FirstLinePoint(), tr("First point:"), AttrFirstPoint, GOType::Point);
     addObjectProperty(tool, tool->SecondLinePoint(), tr("Second point:"), AttrSecondPoint, GOType::Point);
@@ -2903,7 +2945,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolCurveIntersectAxis(QGraphicsIte
     formView->setTitle(tr("Point - Intersect Curve and Axis"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->BasePointName(), tr("Axis point:"), AttrBasePoint, GOType::Point);
 
     addObjectProperty(tool, tool->CurveName(), tr("Curve:"), AttrCurve, GOType::AllCurves);
@@ -2941,8 +2983,8 @@ void VToolOptionsPropertyBrowser::showOptionsToolMove(QGraphicsItem *item)
 
     addPropertyLabel(tr("Selection"), AttrName);
     addPropertyOperationSuffix(tool, tr("Suffix:"));
-    addObjectProperty(tool, tool->getOriginPointName(), tr("Origin point:"), AttrCenter, GOType::Point);
-
+    QString originPointName = tool->getOriginPointName();
+    addObjectProperty(tool, originPointName, tr("Origin point:"), AttrCenter, GOType::Point);
     addPropertyLabel(tr("Geometry"), AttrName);
     addPropertyFormula(tr("Angle:"), tool->GetFormulaAngle(), AttrAngle);
     addPropertyFormula(tr("Length:"), tool->GetFormulaLength(), AttrLength);
@@ -3257,6 +3299,11 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCutArc()
         idToProperty[AttrArc]->setValue(index);
     }
 
+    {
+        const qint32 index = VPE::DirectionProperty::indexOfDirection(directionList(), tool->getDirection());
+        idToProperty[AttrDirection]->setValue(index);
+    }
+
     QVariant valueFormula;
     valueFormula.setValue(tool->GetFormula());
     idToProperty[AttrLength]->setValue(valueFormula);
@@ -3275,6 +3322,11 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCutSpline()
         idToProperty[AttrCurve]->setValue(index);
     }
 
+    {
+        const qint32 index = VPE::DirectionProperty::indexOfDirection(directionList(), tool->getDirection());
+        idToProperty[AttrDirection]->setValue(index);
+    }
+
     QVariant valueFormula;
     valueFormula.setValue(tool->GetFormula());
     idToProperty[AttrLength]->setValue(valueFormula);
@@ -3291,6 +3343,11 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCutSplinePath()
         const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::SplinePath),
                                                                                tool->CurveName());
         idToProperty[AttrCurve]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::DirectionProperty::indexOfDirection(directionList(), tool->getDirection());
+        idToProperty[AttrDirection]->setValue(index);
     }
 
     QVariant valueFormula;
@@ -3791,7 +3848,7 @@ void VToolOptionsPropertyBrowser::updateOptionsToolSplinePath()
 {
     VToolSplinePath *tool = qgraphicsitem_cast<VToolSplinePath *>(currentItem);
 
-    idToProperty[AttrName]->setValue(qApp->TrVars()->VarToUser(tool->name()));
+    idToProperty[AttrName]->setValue(qApp->translateVariables()->VarToUser(tool->name()));
 
     idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(),
                                                                             tool->getLineColor()));
@@ -3813,7 +3870,7 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezierPath()
 {
     VToolCubicBezierPath *tool = qgraphicsitem_cast<VToolCubicBezierPath *>(currentItem);
 
-    idToProperty[AttrName]->setValue(qApp->TrVars()->VarToUser(tool->name()));
+    idToProperty[AttrName]->setValue(qApp->translateVariables()->VarToUser(tool->name()));
 
     idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(),
                                                                             tool->getLineColor()));
@@ -4131,6 +4188,7 @@ QStringList VToolOptionsPropertyBrowser::propertiesList() const
                                             << AttrPoint4                         /* 58 */
                                             << AttrPenStyle                       /* 59 */
                                             << AttrLineWeight                     /* 60 */
-                                            << AttrObjName;                      /* 61 */
+                                            << AttrObjName                        /* 61 */
+                                            << AttrDirection;                     /* 62 */
     return attr;
 }

@@ -98,6 +98,9 @@ DialogCutArc::DialogCutArc(const VContainer *data, const quint32 &toolId, QWidge
 
     FillComboBoxArcs(ui->comboBoxArc);
 
+    ui->direction_ComboBox->addItem(tr("Forward (from start point)"), "forward");
+    ui->direction_ComboBox->addItem(tr("Backward (from end point)"), "backward");
+
     connect(ui->toolButtonExprLength, &QPushButton::clicked, this, &DialogCutArc::FXLength);
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogCutArc::NamePointChanged);
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogCutArc::FormulaTextChanged);
@@ -178,6 +181,7 @@ void DialogCutArc::SaveData()
     SCASSERT(path != nullptr)
 
     path->setObject1Id(getArcId());
+    path->setDirection(getDirection());
     path->setLength(formula);
     path->RefreshGeometry();
 }
@@ -210,7 +214,7 @@ void DialogCutArc::setArcId(const quint32 &value)
  */
 void DialogCutArc::SetFormula(const QString &value)
 {
-    formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (formula.length() > 80)
     {
@@ -236,6 +240,18 @@ void DialogCutArc::SetPointName(const QString &value)
     ui->lineEditNamePoint->setText(pointName);
 }
 
+// @brief setDirection set the direction
+// @param value name
+void DialogCutArc::setDirection(const QString &value)
+{
+    ChangeCurrentData(ui->direction_ComboBox, value);
+}
+
+QString DialogCutArc::getDirection() const
+{
+    return GetComboBoxCurrentData(ui->direction_ComboBox, "forward");
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief GetFormula return string with formula length
@@ -243,7 +259,7 @@ void DialogCutArc::SetPointName(const QString &value)
  */
 QString DialogCutArc::GetFormula() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

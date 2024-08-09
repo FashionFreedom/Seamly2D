@@ -77,13 +77,13 @@ PenToolBar::PenToolBar( const QString &title, QWidget *parent )
 
     QToolButton *resetButton = new QToolButton;
     resetButton->setIcon(QIcon(":/icons/win.icon.theme/24x24/actions/edit-undo.png"));
-    resetButton->setToolTip ("Reset current pen to defaults");
+    resetButton->setToolTip(tr("Reset current pen to defaults"));
     addWidget(resetButton);
     connect(resetButton, &QToolButton::clicked, this, &PenToolBar::penReset);
 
     QToolButton *savePresetButton = new QToolButton;
     savePresetButton->setIcon(QIcon(":/icons/win.icon.theme/24x24/actions/document-save-as.png"));
-    savePresetButton->setToolTip ("Save current pen preset");
+    savePresetButton->setToolTip(tr("Save current pen preset"));
     addWidget(savePresetButton);
     connect(savePresetButton, &QToolButton::clicked, this, &PenToolBar::savePreset);
 }

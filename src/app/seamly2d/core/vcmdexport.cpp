@@ -27,13 +27,16 @@
  *************************************************************************/
 
 #include "vcmdexport.h"
-#include "../dialogs/dialoglayoutsettings.h"
+#include "../dialogs/layoutsettings_dialog.h"
 #include "../vwidgets/export_format_combobox.h"
 #include "../ifc/xml/vdomdocument.h"
-#include "../vformat/vmeasurements.h"
+#include "../vformat/measurements.h"
 #include "../vmisc/commandoptions.h"
+#include "../vmisc/def.h"
 #include "../vmisc/vsettings.h"
 #include "../vlayout/vlayoutgenerator.h"
+#include "../vwidgets/page_format_combobox.h"
+
 #include <QDebug>
 
 VCommandLinePtr VCommandLine::instance = nullptr;
@@ -48,7 +51,7 @@ VCommandLine::VCommandLine() : parser(), optionsUsed(), optionsIndex(), isGuiEna
     parser.addVersionOption();
     parser.addPositionalArgument("filename", translate("VCommandLine", "Pattern file."));
 
-    InitOptions(optionsUsed, optionsIndex);
+    initOptions(optionsUsed, optionsIndex);
 
     VCommandLineOptions::const_iterator i = optionsUsed.constBegin();
     while (i != optionsUsed.constEnd())
@@ -59,19 +62,19 @@ VCommandLine::VCommandLine() : parser(), optionsUsed(), optionsIndex(), isGuiEna
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VCommandLine::Lo2Px(const QString &src, const DialogLayoutSettings &converter)
+qreal VCommandLine::Lo2Px(const QString &src, const LayoutSettingsDialog &converter)
 {
     return converter.LayoutToPixels(src.toDouble());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VCommandLine::Pg2Px(const QString& src, const DialogLayoutSettings& converter)
+qreal VCommandLine::Pg2Px(const QString& src, const LayoutSettingsDialog& converter)
 {
     return converter.PageToPixels(src.toDouble());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommandLine::InitOptions(VCommandLineOptions &options, QMap<QString, int> &optionsIndex)
+void VCommandLine::initOptions(VCommandLineOptions &options, QMap<QString, int> &optionsIndex)
 {
     int index = 0;
     //keep in mind order here - that is how user will see it, so group-up for usability
@@ -119,7 +122,7 @@ void VCommandLine::InitOptions(VCommandLineOptions &options, QMap<QString, int> 
                                           translate("VCommandLine", "Set size value a pattern file, that was opened "
                                                                     "with multisize measurements (export mode). Valid "
                                                                     "values: %1cm.")
-                                                                .arg(VMeasurement::WholeListSizes(Unit::Cm).join(", ")),
+                                                                .arg(MeasurementVariable::WholeListSizes(Unit::Cm).join(", ")),
                                           translate("VCommandLine", "The size value")));
 
     optionsIndex.insert(LONG_OPTION_GRADATIONHEIGHT, index++);
@@ -127,7 +130,7 @@ void VCommandLine::InitOptions(VCommandLineOptions &options, QMap<QString, int> 
                                           translate("VCommandLine", "Set height value a pattern file, that was opened "
                                                                     "with multisize measurements (export mode). Valid "
                                                                     "values: %1cm.")
-                                                              .arg(VMeasurement::WholeListHeights(Unit::Cm).join(", ")),
+                                                              .arg(MeasurementVariable::WholeListHeights(Unit::Cm).join(", ")),
                                           translate("VCommandLine", "The height value")));
 
     //=================================================================================================================
@@ -135,7 +138,7 @@ void VCommandLine::InitOptions(VCommandLineOptions &options, QMap<QString, int> 
     options.append(new QCommandLineOption(QStringList() << SINGLE_OPTION_PAGETEMPLATE << LONG_OPTION_PAGETEMPLATE,
                                           translate("VCommandLine", "Number corresponding to page template (default = "
                                                                     "0, export mode):") +
-                                                                    DialogLayoutSettings::MakeHelpTemplateList(),
+                                                                    PageFormatCombobox::MakeHelpTemplateList(),
                                           translate("VCommandLine", "Template number"), "0"));
 
     optionsIndex.insert(LONG_OPTION_PAGEW, index++);
@@ -255,7 +258,7 @@ void VCommandLine::InitOptions(VCommandLineOptions &options, QMap<QString, int> 
     optionsIndex.insert(LONG_OPTION_GROUPPING, index++);
     options.append(new QCommandLineOption(QStringList() << SINGLE_OPTION_GROUPPING << LONG_OPTION_GROUPPING,
                                           translate("VCommandLine", "Sets layout groupping cases (export mode): %1.")
-                                          .arg(DialogLayoutSettings::MakeGroupsHelp()),
+                                          .arg(LayoutSettingsDialog::MakeGroupsHelp()),
                                           translate("VCommandLine", "Grouping type"), "2"));
 
     optionsIndex.insert(LONG_OPTION_TEST, index++);
@@ -280,7 +283,7 @@ VLayoutGeneratorPtr VCommandLine::DefaultGenerator() const
     //this functions covers all options found into layout setup dialog, nothing to add here, unless dialog extended
 
     VLayoutGeneratorPtr res(new VLayoutGenerator());
-    DialogLayoutSettings diag(res.get(), nullptr, true);
+    LayoutSettingsDialog diag(res.get(), nullptr, true);
 
     {
         //just anonymous namespace ...don' like to have a,b,c,d everywhere defined
@@ -542,14 +545,14 @@ bool VCommandLine::IsExportEnabled() const
 }
 
 //------------------------------------------------------------------------------------------------------
-DialogLayoutSettings::PaperSizeTemplate VCommandLine::OptPaperSize() const
+PaperSizeFormat VCommandLine::OptPaperSize() const
 {
     int ppsize = 0;
     if (parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_PAGETEMPLATE))))
     {
         ppsize = parser.value(*optionsUsed.value(optionsIndex.value(LONG_OPTION_PAGETEMPLATE))).toInt();
     }
-    return static_cast<DialogLayoutSettings::PaperSizeTemplate>(ppsize);
+    return static_cast<PaperSizeFormat>(ppsize);
 }
 
 //------------------------------------------------------------------------------------------------------
@@ -677,7 +680,7 @@ bool VCommandLine::IsSetGradationHeight() const
 QString VCommandLine::OptGradationSize() const
 {
     const QString size = parser.value(*optionsUsed.value(optionsIndex.value(LONG_OPTION_GRADATIONSIZE)));
-    if (VMeasurement::IsGradationSizeValid(size))
+    if (MeasurementVariable::IsGradationSizeValid(size))
     {
         return size;
     }
@@ -692,7 +695,7 @@ QString VCommandLine::OptGradationSize() const
 QString VCommandLine::OptGradationHeight() const
 {
     const QString height = parser.value(*optionsUsed.value(optionsIndex.value(LONG_OPTION_GRADATIONHEIGHT)));
-    if (VMeasurement::IsGradationHeightValid(height))
+    if (MeasurementVariable::IsGradationHeightValid(height))
     {
         return height;
     }

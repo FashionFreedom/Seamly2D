@@ -132,9 +132,13 @@ DialogBisector::DialogBisector(const VContainer *data, const quint32 &toolId, QW
 
     vis = new VisToolBisector(data);
 
-    // Call after initialization vis!!!!
-    setLineType(LineTypeDashLine);
-    setLineWeight("0.35");
+    // Call after visual initialized.
+    // If true current pen overides the default tool pen
+    if(!qApp->Settings()->useCurrentPen())
+    {
+        setLineType(LineTypeDashLine);
+        setLineWeight("0.35");
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -341,7 +345,7 @@ void DialogBisector::setLineColor(const QString &value)
  */
 void DialogBisector::SetFormula(const QString &value)
 {
-    formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (formula.length() > 80)
     {
@@ -432,7 +436,7 @@ void DialogBisector::closeEvent(QCloseEvent *event)
  */
 QString DialogBisector::GetFormula() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -137,14 +137,14 @@ void IntersectCircleTangentDialog::SetCircleCenterId(const quint32 &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString IntersectCircleTangentDialog::GetCircleRadius() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditRadius->toPlainText(),
-                                              qApp->Settings()->GetOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditRadius->toPlainText(),
+                                              qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void IntersectCircleTangentDialog::SetCircleRadius(const QString &value)
 {
-    const QString formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    const QString formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (formula.length() > 80)
     {

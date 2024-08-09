@@ -122,7 +122,7 @@ jobs:
 
   macos:
     name: 'macOS: Build'
-    runs-on: macos-latest
+    runs-on: macos-13
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
@@ -165,6 +165,8 @@ jobs:
         env:
           APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
         run: |
+          # see https://github.com/actions/runner-images/issues/7522
+          echo killing XProtect...; sudo pkill -9 XProtect >/dev/null || true;
           # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
           if [ -n "$APPLE_SIGN_IDENTITY" ] ; then
             qmake Seamly2D.pro -config release CONFIG+=noTests CONFIG+=macSign
@@ -231,7 +233,7 @@ jobs:
       - name: sign installer
         env:
           PFX_BASE64: ${{ secrets.pfx_base64 }}
-        if: false # temporarily disable signing until #1104 is solved, then revert to ${{ env.PFX_BASE64 }}        run: |
+        if: false # temporarily disable signing until #1104 is solved, then revert to ${{ env.PFX_BASE64 }}
         run: |
           cd ..\windows-build\
           SignTool sign /fd SHA256 /f ${{ steps.setup_signing.outputs.filePath }} /p ${{ secrets.pfx_password }} /t http://timestamp.sectigo.com Seamly2D-installer.exe
@@ -257,6 +259,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: amd64_x86
 
       - uses: jurplel/install-qt-action@v3
         with:
@@ -290,6 +295,24 @@ jobs:
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
+      - name: setup signing
+        id: setup_signing
+        uses: timheuer/base64-to-file@v1.2
+        env:
+          PFX_BASE64: ${{ secrets.pfx_base64 }}
+        if: ${{ env.PFX_BASE64 }}
+        with:
+          encodedString: ${{ secrets.pfx_base64 }}
+          fileName: seamly2d.pfx
+
+      - name: sign installer
+        env:
+          PFX_BASE64: ${{ secrets.pfx_base64 }}
+        if: false # temporarily disable signing until #1104 is solved, then revert to ${{ env.PFX_BASE64 }}
+        run: |
+          cd ..\windows-build\
+          SignTool sign /fd SHA256 /f ${{ steps.setup_signing.outputs.filePath }} /p ${{ secrets.pfx_password }} /t http://timestamp.sectigo.com Seamly2D-installer.exe
+
       - name: pack installer file into .zip
         run: |
           cd ..\windows-build\
@@ -319,6 +342,9 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: Seamly2D-windows.zip
+      - uses: actions/download-artifact@v4
+        with:
+          name: Seamly2D-win32.zip
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ env.VERSION_NUMBER }}

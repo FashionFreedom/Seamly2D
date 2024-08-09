@@ -42,9 +42,16 @@ win32 {
                        ../../../dist/win/libssl-1_1.dll
 }
 
+# Ensure xerces-c_3_2.xll is deployed into the target fodler
+win32 {
+    INSTALL_XERCES = ../../libs/xerces-c/msvc/lib/xerces-c_3_2.dll
+}
+
 # MSVC: force utf-8 source for ° symbol and other utf-8 strings in source files
 # Source: https://stackoverflow.com/questions/48705747/how-utf-8-may-not-work-in-qt-5
 win32:!win32-g++: QMAKE_CXXFLAGS += /utf-8
+
+CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
 
 CONFIG(debug, debug|release){
     # Debug mode, intentionally left empty
@@ -79,6 +86,7 @@ defineTest(copyToDestdir) {
                     FILE ~= s,/,\\,g
                     DDIR ~= s,/,\\,g
                 }
+                message("copy:" $$quote($$FILE))
                 QMAKE_POST_LINK += $$VCOPY $$quote($$FILE) $$quote($$DDIR) $$escape_expand(\\n\\t)
             }
 

@@ -1,27 +1,28 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//  @file   dialognewpattern.cpp
+//  @author Douglas S Caskey
+//  @date   12 Nov, 2023
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
+//  Copyright (C) 2017-2024 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   dialognewpattern.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,29 +30,29 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2014 Seamly2D project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
 #include "dialognewpattern.h"
 #include "ui_dialognewpattern.h"
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
 #include "../vmisc/vsettings.h"
 #include "../vpatterndb/vcontainer.h"
 
@@ -64,13 +65,17 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 DialogNewPattern::DialogNewPattern(VContainer *data, const QString &patternPieceName, QWidget *parent)
-    :QDialog(parent), ui(new Ui::DialogNewPattern), data(data), isInitialized(false)
+    : QDialog(parent)
+    , ui(new Ui::DialogNewPattern)
+    , data(data)
+    , isInitialized(false)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
     ui->lineEditName->setClearButtonEnabled(true);
 
-    qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Seamly2DSettings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     QRect position = this->frameGeometry();
     position.moveCenter(QGuiApplication::primaryScreen()->availableGeometry().center());
@@ -78,7 +83,7 @@ DialogNewPattern::DialogNewPattern(VContainer *data, const QString &patternPiece
 
     ui->lineEditName->setText(patternPieceName);
 
-    InitUnits();
+    initUnits();
     CheckState();
     connect(ui->lineEditName, &QLineEdit::textChanged, this, &DialogNewPattern::CheckState);
 }
@@ -90,7 +95,7 @@ DialogNewPattern::~DialogNewPattern()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-Unit DialogNewPattern::PatternUnit() const
+Unit DialogNewPattern::patternUnit() const
 {
     const qint32 index = ui->comboBoxUnits->currentIndex();
     return StrToUnits(ui->comboBoxUnits->itemData(index).toString());
@@ -132,14 +137,14 @@ void DialogNewPattern::showEvent(QShowEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogNewPattern::InitUnits()
+void DialogNewPattern::initUnits()
 {
     ui->comboBoxUnits->addItem(tr("Centimeters"), QVariant(UnitsToStr(Unit::Cm)));
     ui->comboBoxUnits->addItem(tr("Millimeters"), QVariant(UnitsToStr(Unit::Mm)));
     ui->comboBoxUnits->addItem(tr("Inches"), QVariant(UnitsToStr(Unit::Inch)));
 
     // set default unit
-    const qint32 indexUnit = ui->comboBoxUnits->findData(qApp->Seamly2DSettings()->GetUnit());
+    const qint32 indexUnit = ui->comboBoxUnits->findData(qApp->Seamly2DSettings()->getUnit());
     if (indexUnit != -1)
     {
         ui->comboBoxUnits->setCurrentIndex(indexUnit);

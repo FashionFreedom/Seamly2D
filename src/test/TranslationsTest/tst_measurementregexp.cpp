@@ -54,7 +54,7 @@
 
 #include "../vmisc/logging.h"
 #include "../vpatterndb/vtranslatevars.h"
-#include "../vpatterndb/measurements.h"
+#include "../vpatterndb/measurements_def.h"
 #include "../ifc/ifcdef.h"
 
 #include <QtTest>
@@ -96,7 +96,7 @@ void TST_MeasurementRegExp::initTestCase()
         QFAIL("Unsupported locale code.");
     }
 
-    if (LoadMeasurements(m_locale) != NoError)
+    if (loadMeasurements(m_locale) != NoError)
     {
         const QString message = QString("Couldn't load measurements. Locale = %1")
                                         .arg(m_locale);
@@ -189,7 +189,7 @@ QStringList TST_MeasurementRegExp::AllNames()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int TST_MeasurementRegExp::LoadMeasurements(const QString &checkedLocale)
+int TST_MeasurementRegExp::loadMeasurements(const QString &checkedLocale)
 {
     const QString path = TranslationsPath();
     const QString file = QString("measurements_%1.qm").arg(checkedLocale);

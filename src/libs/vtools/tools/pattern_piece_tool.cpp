@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   pattern_piece_tool.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 27, 2022
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2022 Seamly, LLC
@@ -149,7 +149,7 @@ PatternPieceTool *PatternPieceTool::Create(quint32 id, VPiece newPiece, QString 
 {
     if (typeCreation == Source::FromGui || typeCreation == Source::FromTool)
     {
-        data->AddVariable(currentSeamAllowance, new VIncrement(data, currentSeamAllowance, 0, newPiece.GetSAWidth(),
+        data->AddVariable(currentSeamAllowance, new CustomVariable(data, currentSeamAllowance, 0, newPiece.GetSAWidth(),
                                                                width, true, tr("Current seam allowance")));
         id = data->AddPiece(newPiece);
     }
@@ -158,7 +158,7 @@ PatternPieceTool *PatternPieceTool::Create(quint32 id, VPiece newPiece, QString 
         const qreal calcWidth = CheckFormula(id, width, data);
         newPiece.setSeamAllowanceWidthFormula(width, calcWidth);
 
-        data->AddVariable(currentSeamAllowance, new VIncrement(data, currentSeamAllowance, 0, calcWidth,
+        data->AddVariable(currentSeamAllowance, new CustomVariable(data, currentSeamAllowance, 0, calcWidth,
                                                                width, true, tr("Current seam allowance")));
 
         data->UpdatePiece(id, newPiece);
@@ -194,9 +194,9 @@ void PatternPieceTool::Remove(bool ask)
     {
         deleteTool(ask);
     }
-    catch(const VExceptionToolWasDeleted &e)
+    catch(const VExceptionToolWasDeleted &error)
     {
-        Q_UNUSED(e);
+        Q_UNUSED(error);
         return;//Leave this method immediately!!!
     }
 }
@@ -688,7 +688,7 @@ void PatternPieceTool::UpdateGrainline()
     const VPiece piece = VAbstractTool::data.GetPiece(m_id);
     const VGrainlineData &data = piece.GetGrainlineGeometry();
 
-    qDebug()<<"Update Grainline IsVisible() = "<< data.IsVisible();
+    qDebug() << "Update Grainline IsVisible() = " << data.IsVisible();
 
     if (data.IsVisible() & qApp->Settings()->showGrainlines())
     {
@@ -960,7 +960,7 @@ QPainterPath PatternPieceTool::shape() const
     }
     else
     {
-        return ItemShapeFromPath(m_mainPath + m_cutPath, pen());
+        return itemShapeFromPath(m_mainPath + m_cutPath, pen());
     }
 }
 
@@ -1051,21 +1051,12 @@ QVariant PatternPieceTool::itemChange(QGraphicsItem::GraphicsItemChange change, 
                     const QRectF viewRect = VMainGraphicsView::SceneVisibleArea(view);
                     const QRectF itemRect = mapToScene(boundingRect()|childrenBoundingRect()).boundingRect();
 
-                    // If item's rect is bigger than view's rect ensureVisible works very unstable.
-                    if (itemRect.height() + 2*ymargin < viewRect.height() &&
-                        itemRect.width() + 2*xmargin < viewRect.width())
-                    {
-                        view->ensureVisible(itemRect, xmargin, ymargin);
-                    }
-                    else
-                    {
-                        // Ensure visible only small rect around a cursor
-                        VMainGraphicsScene *currentScene = qobject_cast<VMainGraphicsScene *>(scene());
-                        SCASSERT(currentScene);
-                        const QPointF cursorPosition = currentScene->getScenePos();
-                        view->ensureVisible(QRectF(cursorPosition.x()-5/scale, cursorPosition.y()-5/scale,
-                                                   10/scale, 10/scale));
-                    }
+                    // Ensure visible only small rect around a cursor
+                    VMainGraphicsScene *currentScene = qobject_cast<VMainGraphicsScene *>(scene());
+                    SCASSERT(currentScene);
+                    const QPointF cursorPosition = currentScene->getScenePos();
+                    view->ensureVisible(QRectF(cursorPosition.x()-5/scale, cursorPosition.y()-5/scale,
+                                               10/scale, 10/scale));
                 }
             }
 
@@ -1213,7 +1204,7 @@ void PatternPieceTool::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
     QAction *showGrainline = menu.addAction(QIcon("://icon/32x32/grainline.png"), tr("Show Grainline") + "\tG");
     showGrainline->setCheckable(true);
-    qDebug()<<"Grainline IsVisible() = "<< piece.GetGrainlineGeometry().IsVisible();
+    qDebug() << "Grainline IsVisible() = " << piece.GetGrainlineGeometry().IsVisible();
     showGrainline->setChecked(piece.GetGrainlineGeometry().IsVisible());
 
     QAction *showPatternLabel = menu.addAction(QIcon("://icon/32x32/pattern_label.png"), tr("Show Pattern Label") + "\t[");
@@ -1290,9 +1281,9 @@ void PatternPieceTool::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         {
             deleteTool();
         }
-        catch(const VExceptionToolWasDeleted &e)
+        catch(const VExceptionToolWasDeleted &error)
         {
-            Q_UNUSED(e);
+            Q_UNUSED(error);
             return;//Leave this method immediately!!!
         }
         return; //Leave this method immediately after call!!!
@@ -1312,9 +1303,9 @@ void PatternPieceTool::keyReleaseEvent(QKeyEvent *event)
                 {
                     deleteTool();
                 }
-                catch(const VExceptionToolWasDeleted &e)
+                catch(const VExceptionToolWasDeleted &error)
                 {
-                    Q_UNUSED(e);
+                    Q_UNUSED(error);
                     return;//Leave this method immediately!!!
                 }
             }
@@ -1367,6 +1358,10 @@ void PatternPieceTool::keyReleaseEvent(QKeyEvent *event)
 
         case Qt::Key_S:
             {
+                if (event->modifiers() & Qt::ControlModifier)
+                {
+                    break;
+                }
                 toggleSeamAllowance(!piece.IsSeamAllowance());
                 break;
             }
@@ -1478,7 +1473,7 @@ PatternPieceTool::PatternPieceTool(VAbstractPattern *doc, VContainer *data, cons
     connect(m_grainLine, &VGrainlineItem::itemRotated, this, &PatternPieceTool::SaveRotateGrainline);
 
     connect(doc, &VAbstractPattern::UpdatePatternLabel, this, &PatternPieceTool::UpdatePatternLabel);
-    connect(doc, &VAbstractPattern::CheckLayout,        this, &PatternPieceTool::updatePieceDetails);
+    connect(doc, &VAbstractPattern::patternParsed,        this, &PatternPieceTool::updatePieceDetails);
 
     connect(m_pieceScene, &VMainGraphicsScene::DimensionsChanged, this, &PatternPieceTool::updatePieceDetails);
     connect(m_pieceScene, &VMainGraphicsScene::LanguageChanged,   this, &PatternPieceTool::retranslateUi);
@@ -1604,9 +1599,9 @@ VPieceItem::MoveTypes PatternPieceTool::FindLabelGeometry(const VPatternLabelDat
         Calculator cal1;
         rotationAngle = cal1.EvalFormula(VAbstractTool::data.DataVariables(), labelData.GetRotation());
     }
-    catch(qmu::QmuParserError &e)
+    catch(qmu::QmuParserError &error)
     {
-        Q_UNUSED(e);
+        Q_UNUSED(error);
         return VPieceItem::Error;
     }
 
@@ -1657,9 +1652,9 @@ VPieceItem::MoveTypes PatternPieceTool::FindLabelGeometry(const VPatternLabelDat
             restrictions &= ~ VPieceItem::IsResizable;
         }
     }
-    catch(qmu::QmuParserError &e)
+    catch(qmu::QmuParserError &error)
     {
-        Q_UNUSED(e);
+        Q_UNUSED(error);
         return VPieceItem::Error;
     }
 
@@ -1743,9 +1738,9 @@ VPieceItem::MoveTypes PatternPieceTool::FindGrainlineGeometry(const VGrainlineDa
         Calculator cal2;
         length = cal2.EvalFormula(VAbstractTool::data.DataVariables(), data.GetLength());
     }
-    catch(qmu::QmuParserError &e)
+    catch(qmu::QmuParserError &error)
     {
-        Q_UNUSED(e);
+        Q_UNUSED(error);
         return VPieceItem::Error;
     }
 
@@ -1820,7 +1815,7 @@ void PatternPieceTool::initializeNode(const VPieceNode &node, VMainGraphicsScene
             doc->IncrementReferens(data->GetGObject(node.GetId())->getIdTool());
             break;
         default:
-            qDebug()<<"Get wrong tool type. Ignore.";
+            qDebug() << "Get wrong tool type. Ignore.";
             break;
     }
 }
