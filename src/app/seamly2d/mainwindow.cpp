@@ -1770,9 +1770,10 @@ void MainWindow::handleImageTool()
 //---------------------------------------------------------------------------------------------------------------------
 QString MainWindow::getImageFilename()
 {
-    const QString filter = tr("Images") + QLatin1String(" (*.bmp *.jpg *.png *.svg *.tf);;") +
+    const QString filter = tr("Images") + QLatin1String(" (*.bmp *.jpg *.jpeg *.png *.svg *.tf);;") +
                            "BMP" + QLatin1String(" (*.bmp);;") +
                            "JPG" + QLatin1String(" (*.jpg);;") +
+                           "JPEG" + QLatin1String(" (*.jpeg);;") +
                            "PNG" + QLatin1String(" (*.png);;") +
                            "SVG" + QLatin1String(" (*.svg);;") +
                            "TIF" + QLatin1String(" (*.tf)");
