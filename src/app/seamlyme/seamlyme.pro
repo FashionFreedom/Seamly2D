@@ -232,6 +232,10 @@ else:unix: LIBS += -lxerces-c
 win32:!win32-g++: LIBS += -L$${PWD}/../../libs/xerces-c/msvc/lib -lxerces-c_3
 win32-g++: LIBS += -L$${PWD}/../../libs/xerces-c/mingw/lib -lxerces-c
 
+win32 {
+    copyToDestdir($${PWD}/$$INSTALL_XERCES, $$shell_path($${OUT_PWD}/$$DESTDIR))
+}
+
 macx{
     APPLE_SIGN_IDENTITY = $$shell_quote($(APPLE_SIGN_IDENTITY))
 
