@@ -135,7 +135,7 @@ signals:
     void          ItemClicked(QGraphicsItem* pItem);
 
     /**
-     * @brief ChosenObject send option choosed object.
+     * @brief ChosenObject send option Chosen object.
      * @param id object id.
      * @param type object scene type.
      */

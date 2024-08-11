@@ -146,7 +146,7 @@ void VSimplePoint::deletePoint()
 //---------------------------------------------------------------------------------------------------------------------
 void VSimplePoint::pointChosen()
 {
-    emit Choosed(id);
+    emit Chosen(id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -187,7 +187,7 @@ void VSimplePoint::mousePressEvent(QGraphicsSceneMouseEvent *event)
         {
             if (event->button() == Qt::LeftButton)
             {
-                emit Choosed(id);
+                emit Chosen(id);
             }
         }
     }
@@ -202,7 +202,7 @@ void VSimplePoint::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
         {
             if (event->button() == Qt::LeftButton)
             {
-                emit Choosed(id);
+                emit Chosen(id);
             }
         }
         VScenePoint::mouseReleaseEvent(event);

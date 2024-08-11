@@ -99,7 +99,7 @@ bool UnionDialog::retainPieces() const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ChoosedObject gets id and type of selected object. Save correct data and ignore wrong.
+ * @brief ChosenObject gets id and type of selected object. Save correct data and ignore wrong.
  * @param id id of point or piece
  * @param type type of object
  */

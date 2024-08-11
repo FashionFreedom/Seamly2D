@@ -688,7 +688,7 @@ void VToolOptionsPropertyBrowser::addPropertyLineType(Tool *tool, const QString 
     QMap<QString, QString> lineTypes = lineTypeList();
     if (tool->type() == VToolLine::Type)
     {
-        lineTypes.remove(LineTypeNone);
+        lineTypes = lineTypeNoPenRemovedList();
     }
     lineTypeProperty->setLineTypes(lineTypes);
 
@@ -706,8 +706,8 @@ template<class Tool>
 void VToolOptionsPropertyBrowser::addPropertyCurveLineType(Tool *tool, const QString &propertyName)
 {
     VPE::LineTypeProperty *penStyleProperty = new VPE::LineTypeProperty(propertyName);
-    penStyleProperty->setLineTypes(curveLineTypeList());
-    const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
+    penStyleProperty->setLineTypes(lineTypeNoPenRemovedList());
+    const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeNoPenRemovedList(), tool->GetPenStyle());
     if (index == -1)
     {
         qWarning() << "Can't find line type" << tool->getLineType() <<  "in list";
@@ -750,7 +750,7 @@ void VToolOptionsPropertyBrowser::addPropertyLineColor(Tool *tool, const QString
 //
 // Adds a direction combobox property to the Property Editor form widget. Gets the combobox index to
 // the tool's direction. Throws a warning if the property is not found in the combobox item list.
-// If the index exists it sets the combobox index to the tool's direction. 
+// If the index exists it sets the combobox index to the tool's direction.
 //
 // @tparam tool Tool of the property.
 // @param propertyName Name of the property.
@@ -2606,7 +2606,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolLine(QGraphicsItem *item)
     formView->setTitle(tr("Line"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyLineName(tool, AttrObjName, true);
+    addPropertyLineName(tool, tr("Name:"), true);
     addObjectProperty(tool, tool->FirstPointName(), tr("First point:"), AttrFirstPoint, GOType::Point);
     addObjectProperty(tool, tool->SecondPointName(), tr("Second point:"), AttrSecondPoint, GOType::Point);
 
@@ -3155,7 +3155,7 @@ void VToolOptionsPropertyBrowser::updateOptionsToolArc()
     }
 
     {
-        const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeNoPenRemovedList(), tool->GetPenStyle());
         idToProperty[AttrPenStyle]->setValue(index);
     }
 
@@ -3196,7 +3196,7 @@ void VToolOptionsPropertyBrowser::updateOptionsToolArcWithLength()
     }
 
     {
-        const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeNoPenRemovedList(), tool->GetPenStyle());
         idToProperty[AttrPenStyle]->setValue(index);
     }
 
@@ -3409,7 +3409,7 @@ void VToolOptionsPropertyBrowser::updateOptionsToolLine()
     }
 
     {
-        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeList(), tool->getLineType());
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeNoPenRemovedList(), tool->getLineType());
         idToProperty[AttrLineType]->setValue(index);
     }
 
@@ -3788,7 +3788,7 @@ void VToolOptionsPropertyBrowser::updateOptionsToolSpline()
                                                                             tool->getLineColor()));
 
     {
-        const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeNoPenRemovedList(), tool->GetPenStyle());
         idToProperty[AttrPenStyle]->setValue(index);
     }
 
@@ -3809,7 +3809,7 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezier()
                                                                             tool->getLineColor()));
 
     {
-        const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeNoPenRemovedList(), tool->GetPenStyle());
         idToProperty[AttrPenStyle]->setValue(index);
     }
 
@@ -3854,7 +3854,7 @@ void VToolOptionsPropertyBrowser::updateOptionsToolSplinePath()
                                                                             tool->getLineColor()));
 
     {
-        const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeNoPenRemovedList(), tool->GetPenStyle());
         idToProperty[AttrPenStyle]->setValue(index);
     }
 
@@ -3876,7 +3876,7 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezierPath()
                                                                             tool->getLineColor()));
 
     {
-        const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeNoPenRemovedList(), tool->GetPenStyle());
         idToProperty[AttrPenStyle]->setValue(index);
     }
 
@@ -4114,7 +4114,7 @@ void VToolOptionsPropertyBrowser::updateOptionsToolEllipticalArc()
     }
 
     {
-        const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeNoPenRemovedList(), tool->GetPenStyle());
         idToProperty[AttrPenStyle]->setValue(index);
     }
 

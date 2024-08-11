@@ -188,7 +188,7 @@ QStringList            LineTypes();
 Qt::PenStyle           lineTypeToPenStyle(const QString &lineType);
 QString                PenStyleToLineType(Qt::PenStyle penStyle);
 QMap<QString, QString> lineTypeList();
-QMap<QString, QString> curveLineTypeList();
+QMap<QString, QString> lineTypeNoPenRemovedList();
 
 QMap<QString, QString> lineWeightList();
 QMap<QString, QString> directionList();
