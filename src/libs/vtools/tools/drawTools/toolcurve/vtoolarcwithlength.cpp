@@ -381,7 +381,7 @@ QString VToolArcWithLength::makeToolTip() const
 {
     const QSharedPointer<VArc> arc = VAbstractTool::data.GeometricObject<VArc>(m_id);
 
-    const QString toolTip = QString("<table>"
+    const QString toolTip = QString("<table style=font-size:11pt; font-weight:600>"
                                     "<tr>"
                                         "<td align ='right'><b>%12: </b></td>" // Tool name
                                         "<td align ='left'>%13</td>"

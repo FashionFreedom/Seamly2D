@@ -398,7 +398,7 @@ QString VToolBasePoint::makeToolTip() const
 {
     const QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(m_id);
 
-    const QString toolTipStr = QString("<table>"
+    const QString toolTipStr = QString("<table style=font-size:11pt; font-weight:600>"
                                        "<tr> <td><b>%1:</b> %2</td> </tr>"
                                        "</table>")
                                        .arg(tr("Name"))

@@ -747,7 +747,7 @@ QString VAbstractOperation::complexPointToolTip(quint32 itemId) const
 {
     const QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(itemId);
 
-    const QString toolTipStr = QString("<table>"
+    const QString toolTipStr = QString("<table style=font-size:11pt; font-weight:600>"
                                        "<tr> <td><b>%1:</b> %2</td> </tr>"
                                        "%3"
                                        "</table>")
@@ -760,7 +760,7 @@ QString VAbstractOperation::complexCurveToolTip(quint32 itemId) const
 {
     const QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(itemId);
 
-    const QString toolTipStr = QString("<table>"
+    const QString toolTipStr = QString("<table style=font-size:11pt; font-weight:600>"
                                        "<tr> <td><b>  %1:</b> %2</td> </tr>"
                                        "<tr> <td><b>%3:</b> %4 %5</td> </tr>"
                                        "%6"

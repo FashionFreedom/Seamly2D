@@ -397,7 +397,7 @@ QString VToolCutSplinePath::makeToolTip() const
     const QString curveStr = tr("Curve");
     const QString lengthStr = tr("length");
 
-    const QString toolTip = QString("<table>"
+    const QString toolTip = QString("<table style=font-size:11pt; font-weight:600>"
                                     "<tr> <td><b>%6:</b> %7</td> </tr>"
                                     "<tr> <td><b>%1:</b> %2 %3</td> </tr>"
                                     "<tr> <td><b>%8:</b> %9</td> </tr>"
