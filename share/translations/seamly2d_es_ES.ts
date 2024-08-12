@@ -4202,14 +4202,6 @@ for writing</source>
 para la escritura</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
-%1
-Possibly the file is already being downloaded.</source>
-        <translation>No se puede obtener acceso exclusivo al archivo
-%1
-Posiblemente el archivo ya está siendo descargado.</translation>
-    </message>
-    <message>
         <source>File download failed: %1.</source>
         <translation>Error al descargar el archivo: %1.</translation>
     </message>
@@ -4226,6 +4218,12 @@ Posiblemente el archivo ya está siendo descargado.</translation>
 Do you want to download it?</source>
         <translation>Una nueva versión %1 está disponible.
 ¿Quiere descargarla?</translation>
+    </message>
+    <message>
+        <source>Unable to get exclusive access to file
+%1
+Possibly the file is already being downloaded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5220,14 +5218,6 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
         <translation>Área descendente</translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
-
-Apply settings anyway?</source>
-        <translation>Los márgenes van más allá de la impresión.
-
-¿Aplicar ajustes de todos modos?</translation>
-    </message>
-    <message>
         <source>Centimeters</source>
         <translation>Centímetros</translation>
     </message>
@@ -5353,6 +5343,12 @@ Apply settings anyway?</source>
         <source>None</source>
         <comment>Printer</comment>
         <translation>Ninguno</translation>
+    </message>
+    <message>
+        <source>Margins go beyond printing.
+
+Apply settings anyway?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6295,40 +6291,16 @@ Do you want to save your changes?</source>
         <translation>Zoom para Previo (Control+Izquierda)</translation>
     </message>
     <message>
-        <source>Ctrl+Left</source>
-        <translation>Ctrl+Left</translation>
-    </message>
-    <message>
         <source>Area</source>
         <translation>Área</translation>
-    </message>
-    <message>
-        <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
     </message>
     <message>
         <source>Pan</source>
         <translation>Pan</translation>
     </message>
     <message>
-        <source>Z, P</source>
-        <translation>Z, P</translation>
-    </message>
-    <message>
-        <source>Zoom 1:1</source>
-        <translation>Zoom 1:1</translation>
-    </message>
-    <message>
-        <source>1:1</source>
-        <translation>1:1</translation>
-    </message>
-    <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
         <translation>Zoom al 100 por ciento (Control+0)</translation>
-    </message>
-    <message>
-        <source>Ctrl+0</source>
-        <translation>Ctrl+0</translation>
     </message>
     <message>
         <source>Point Tools</source>
@@ -7151,10 +7123,6 @@ Do you want to save your changes?</source>
         <translation>Zoom al punto (Control + Alt + P)</translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation>Ctrl+Alt+P</translation>
-    </message>
-    <message>
         <source>Alt+I</source>
         <translation>Alt+I</translation>
     </message>
@@ -7355,10 +7323,6 @@ Do you want to save your changes?</source>
         <translation>Alejar (Control+-)</translation>
     </message>
     <message>
-        <source>Zoom to Fit All(Ctrl+=)</source>
-        <translation>Zoom para ajustar todo (Control+=)</translation>
-    </message>
-    <message>
         <source>Toolbars</source>
         <translation>Barras de Herramientas</translation>
     </message>
@@ -7382,6 +7346,18 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Default</source>
         <translation>Predeterminado</translation>
+    </message>
+    <message>
+        <source>Zoom to Fit All(Ctrl+9)</source>
+        <translation>Zoom para ajustar todo (Control+=9)</translation>
+    </message>
+    <message>
+        <source>Zoom 100%</source>
+        <translation>Zoom 100%</translation>
+    </message>
+    <message>
+        <source>100%</source>
+        <translation>100%</translation>
     </message>
 </context>
 <context>
@@ -10344,20 +10320,6 @@ actualización:</translation>
         <translation>Separador decimal:</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
-When unchecked the period is used.</source>
-        <translation>Selecciona el carácter separador decimal a utilizar.
-Si está marcada, se utiliza el separador de la configuración regional del usuario.
-Si no se selecciona, se utiliza el punto.</translation>
-    </message>
-    <message>
-        <source>When checked the Welcome window will not be displayed.
-You can change this setting in the SeamlyMe preferences.</source>
-        <translation>Si esta opción está seleccionada, no se mostrará la ventana de bienvenida.
-Puede cambiar esta configuración en las preferencias de SeamlyMe.</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>GUI Idioma:</translation>
     </message>
@@ -10385,6 +10347,17 @@ Puede cambiar esta configuración en las preferencias de SeamlyMe.</translation>
         <source>Inches</source>
         <translation>Pulgadas</translation>
     </message>
+    <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10407,12 +10380,6 @@ Puede cambiar esta configuración en las preferencias de SeamlyMe.</translation>
     <message>
         <source>Decimal separator:</source>
         <translation>Separador decimal:</translation>
-    </message>
-    <message>
-        <source>When checked the Welcome window will not be displayed.
-You can change this setting in the Seamly2D preferences.</source>
-        <translation>Si esta opción está seleccionada, no se mostrará la ventana de bienvenida.
-Puede cambiar esta configuración en las preferencias de Seamly2D.</translation>
     </message>
     <message>
         <source>GUI language:</source>
@@ -10447,20 +10414,23 @@ Puede cambiar esta configuración en las preferencias de Seamly2D.</translation>
         <translation>Elija las unidades, el separador decimal, el idioma y el sonido de selección que prefiera. (Puede cambiarlos más adelante.)</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
-When unchecked the period is used.</source>
-        <translation>Selecciona el carácter separador decimal a utilizar.
-Si está marcada, se utiliza el separador de la configuración regional del usuario.
-Si no se selecciona, se utiliza el punto.</translation>
-    </message>
-    <message>
         <source>Sound:</source>
         <translation>Sonido:</translation>
     </message>
     <message>
         <source>Sets the node selection click  sound.</source>
         <translation>Establece el sonido del clic de selección del nodo.</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the Seamly2D preferences.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10629,10 +10599,6 @@ Si no se selecciona, se utiliza el punto.</translation>
         <translation>Control+-</translation>
     </message>
     <message>
-        <source>Zoom 1:1</source>
-        <translation>Zoom 1:1</translation>
-    </message>
-    <message>
         <source>Ctrl+0</source>
         <translation>Control+0</translation>
     </message>
@@ -10647,10 +10613,6 @@ Si no se selecciona, se utiliza el punto.</translation>
     <message>
         <source>Fit All</source>
         <translation>Ajustar todo</translation>
-    </message>
-    <message>
-        <source>Ctrl+=</source>
-        <translation>Control+=</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -10681,16 +10643,8 @@ Si no se selecciona, se utiliza el punto.</translation>
         <translation>Pan</translation>
     </message>
     <message>
-        <source>Z, P</source>
-        <translation>Z, P</translation>
-    </message>
-    <message>
         <source>Show Name Text</source>
         <translation>Mostrar texto del nombre</translation>
-    </message>
-    <message>
-        <source>V, P</source>
-        <translation>V, P</translation>
     </message>
     <message>
         <source>Increase Text Size</source>
@@ -10717,48 +10671,24 @@ Si no se selecciona, se utiliza el punto.</translation>
         <translation>Marco de Alambre</translation>
     </message>
     <message>
-        <source>V, W</source>
-        <translation>V, W</translation>
-    </message>
-    <message>
         <source>Curve Control Points</source>
         <translation>Puntos de control de curvas</translation>
-    </message>
-    <message>
-        <source>V, C</source>
-        <translation>V, C</translation>
     </message>
     <message>
         <source>Axis Origin</source>
         <translation>Origen del eje</translation>
     </message>
     <message>
-        <source>V, A</source>
-        <translation>V, A</translation>
-    </message>
-    <message>
         <source>Seam Allowance</source>
         <translation>Márgenes de costura</translation>
-    </message>
-    <message>
-        <source>V, S</source>
-        <translation>V, S</translation>
     </message>
     <message>
         <source>Grainlines</source>
         <translation>Dirección del hilo</translation>
     </message>
     <message>
-        <source>V, G</source>
-        <translation>V, G</translation>
-    </message>
-    <message>
         <source>Labels</source>
         <translation>Etiquetas</translation>
-    </message>
-    <message>
-        <source>V, L</source>
-        <translation>V, L</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -10805,10 +10735,6 @@ Si no se selecciona, se utiliza el punto.</translation>
         <translation>Cambiar nombre de Nuevo bloque de borrador</translation>
     </message>
     <message>
-        <source>F2</source>
-        <translation>F2</translation>
-    </message>
-    <message>
         <source>Point</source>
         <translation>Punto</translation>
     </message>
@@ -10817,80 +10743,40 @@ Si no se selecciona, se utiliza el punto.</translation>
         <translation>Longitud y Ángulo</translation>
     </message>
     <message>
-        <source>L, A</source>
-        <translation>L, A</translation>
-    </message>
-    <message>
         <source>On Line</source>
         <translation>En Línea</translation>
-    </message>
-    <message>
-        <source>O, L</source>
-        <translation>O, L</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
         <translation>En Perpendicular</translation>
     </message>
     <message>
-        <source>O, P</source>
-        <translation>O, P</translation>
-    </message>
-    <message>
         <source>On Bisector</source>
         <translation>En Bisectriz</translation>
-    </message>
-    <message>
-        <source>O, B</source>
-        <translation>O, B</translation>
     </message>
     <message>
         <source>Length to Line</source>
         <translation>Longitud a Línea</translation>
     </message>
     <message>
-        <source>P, S</source>
-        <translation>P, S</translation>
-    </message>
-    <message>
         <source>Intersect Arc and Line</source>
         <translation>Intersección de Arco y Línea</translation>
-    </message>
-    <message>
-        <source>A, L</source>
-        <translation>A, L</translation>
     </message>
     <message>
         <source>Intersect Axis and Triangle</source>
         <translation>Intersección Eje y Triángulo</translation>
     </message>
     <message>
-        <source>X, T</source>
-        <translation>X, T</translation>
-    </message>
-    <message>
         <source>Intersect XY</source>
         <translation>intersección de XY</translation>
-    </message>
-    <message>
-        <source>X, Y</source>
-        <translation>X, Y</translation>
     </message>
     <message>
         <source>Intersect Line and Perpendicular</source>
         <translation>Intersección de Línea y Perpendicular</translation>
     </message>
     <message>
-        <source>L, P</source>
-        <translation>L, P</translation>
-    </message>
-    <message>
         <source>Intersect Line and Axis</source>
         <translation>Intersección Línea y Eje</translation>
-    </message>
-    <message>
-        <source>L, X</source>
-        <translation>L, X</translation>
     </message>
     <message>
         <source>Midpoint On Line</source>
@@ -10911,10 +10797,6 @@ Si no se selecciona, se utiliza el punto.</translation>
     <message>
         <source>Point - Intersect Lines</source>
         <translation>Punto - Intersección de Líneas</translation>
-    </message>
-    <message>
-        <source>I, L</source>
-        <translation>I, L</translation>
     </message>
     <message>
         <source>Curves</source>
@@ -10957,32 +10839,16 @@ Si no se selecciona, se utiliza el punto.</translation>
         <translation>Punto - En curva</translation>
     </message>
     <message>
-        <source>O, C</source>
-        <translation>O, C</translation>
-    </message>
-    <message>
         <source>Point - On Spline	</source>
         <translation>Punto - En Spline	</translation>
-    </message>
-    <message>
-        <source>O, S</source>
-        <translation>O, S</translation>
     </message>
     <message>
         <source>Point - Intersect Curves</source>
         <translation>Punto - Intersección de Curvas</translation>
     </message>
     <message>
-        <source>I, C</source>
-        <translation>I, C</translation>
-    </message>
-    <message>
         <source>Point - Intersect Curve and Axis</source>
         <translation>Punto - Intersección Curva y Eje</translation>
-    </message>
-    <message>
-        <source>C, X</source>
-        <translation>C, X</translation>
     </message>
     <message>
         <source>Arcs</source>
@@ -11009,24 +10875,12 @@ Si no se selecciona, se utiliza el punto.</translation>
         <translation>Punto - En Arco</translation>
     </message>
     <message>
-        <source>O, A</source>
-        <translation>O, A</translation>
-    </message>
-    <message>
         <source>Point - Intersect Arc and Axis</source>
         <translation>Punto - Intersección Arco y Eje</translation>
     </message>
     <message>
-        <source>A, X</source>
-        <translation>A, X</translation>
-    </message>
-    <message>
         <source>Point - Intersect Arcs</source>
         <translation>Punto - Intersección de Arcos</translation>
-    </message>
-    <message>
-        <source>I, A</source>
-        <translation>I, A</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
@@ -11041,16 +10895,8 @@ Si no se selecciona, se utiliza el punto.</translation>
         <translation>Punto - Intersección Círculo y Tangente</translation>
     </message>
     <message>
-        <source>C, T</source>
-        <translation>C, T</translation>
-    </message>
-    <message>
         <source>Point - Intersect Arc and Tangent</source>
         <translation>Punto - Intersección Arco y Tangente</translation>
-    </message>
-    <message>
-        <source>A, T</source>
-        <translation>A, T</translation>
     </message>
     <message>
         <source>Elliptical Arc</source>
@@ -11069,32 +10915,16 @@ Si no se selecciona, se utiliza el punto.</translation>
         <translation>Aañadir Objetos al Grupo</translation>
     </message>
     <message>
-        <source>G</source>
-        <translation>G</translation>
-    </message>
-    <message>
         <source>Rotation</source>
         <translation>Rotación</translation>
-    </message>
-    <message>
-        <source>R</source>
-        <translation>R</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
         <translation>Reflejar por Línea</translation>
     </message>
     <message>
-        <source>M, L</source>
-        <translation>M, L</translation>
-    </message>
-    <message>
         <source>Mirror by Axis</source>
         <translation>Reflejar por Eje</translation>
-    </message>
-    <message>
-        <source>M, A</source>
-        <translation>M, A</translation>
     </message>
     <message>
         <source>Move</source>
@@ -11109,16 +10939,8 @@ Si no se selecciona, se utiliza el punto.</translation>
         <translation>Pinzas Correctas</translation>
     </message>
     <message>
-        <source>T, D</source>
-        <translation>T, D</translation>
-    </message>
-    <message>
         <source>Export Draft Blocks</source>
         <translation>Exportar bloques de borrador</translation>
-    </message>
-    <message>
-        <source>E, D</source>
-        <translation>E, D</translation>
     </message>
     <message>
         <source>Images</source>
@@ -11141,36 +10963,16 @@ Si no se selecciona, se utiliza el punto.</translation>
         <translation>Nueva Pieza de Patrón</translation>
     </message>
     <message>
-        <source>N, P</source>
-        <translation>N, P</translation>
-    </message>
-    <message>
         <source>Anchor Point</source>
         <translation>Punto de Anclaje</translation>
-    </message>
-    <message>
-        <source>A, P</source>
-        <translation>A, P</translation>
     </message>
     <message>
         <source>Internal Path</source>
         <translation>Ruta Interna</translation>
     </message>
     <message>
-        <source>I, P</source>
-        <translation>I, P</translation>
-    </message>
-    <message>
-        <source>I, N</source>
-        <translation>I, N</translation>
-    </message>
-    <message>
         <source>Edit Properties</source>
         <translation>Editar Propiedades</translation>
-    </message>
-    <message>
-        <source>P</source>
-        <translation>P</translation>
     </message>
     <message>
         <source>Toggle Lock</source>
@@ -11185,16 +10987,8 @@ Si no se selecciona, se utiliza el punto.</translation>
         <translation>Incluir en el maquetación</translation>
     </message>
     <message>
-        <source>I</source>
-        <translation>I</translation>
-    </message>
-    <message>
         <source>Forbid Flipping</source>
         <translation>Prohibir voltear</translation>
-    </message>
-    <message>
-        <source>F</source>
-        <translation>F</translation>
     </message>
     <message>
         <source>Raise To Top</source>
@@ -11233,16 +11027,8 @@ Si no se selecciona, se utiliza el punto.</translation>
         <translation>Unir piezas</translation>
     </message>
     <message>
-        <source>U</source>
-        <translation>U</translation>
-    </message>
-    <message>
         <source>Export Pieces</source>
         <translation>Exportar Piezas</translation>
-    </message>
-    <message>
-        <source>E, P</source>
-        <translation>E, P</translation>
     </message>
     <message>
         <source>Layout</source>
@@ -11253,16 +11039,8 @@ Si no se selecciona, se utiliza el punto.</translation>
         <translation>Nuevo Maquetación</translation>
     </message>
     <message>
-        <source>N, L</source>
-        <translation>N, L</translation>
-    </message>
-    <message>
         <source>Export Layout</source>
         <translation>Exportar maquetación</translation>
-    </message>
-    <message>
-        <source>E, L</source>
-        <translation>E, L</translation>
     </message>
     <message>
         <source>Last Tool</source>
@@ -11309,16 +11087,8 @@ Si no se selecciona, se utiliza el punto.</translation>
         <translation>Atajos de Teclado</translation>
     </message>
     <message>
-        <source>K</source>
-        <translation>K</translation>
-    </message>
-    <message>
         <source>Shift+P</source>
         <translation>Mayúsculas+P</translation>
-    </message>
-    <message>
-        <source>T</source>
-        <translation>T</translation>
     </message>
     <message>
         <source>Export PDF</source>
@@ -11327,6 +11097,14 @@ Si no se selecciona, se utiliza el punto.</translation>
     <message>
         <source>Insert Nodes</source>
         <translation>Insertar nodos</translation>
+    </message>
+    <message>
+        <source>Zoom 100%</source>
+        <translation>Zoom 100%</translation>
+    </message>
+    <message>
+        <source>Ctrl+9</source>
+        <translation>Control+9</translation>
     </message>
 </context>
 <context>
@@ -15213,244 +14991,6 @@ load in SeamlyME as usual.
         <translation>wLomo</translation>
     </message>
     <message>
-        <source>degTorad</source>
-        <comment>Converts degrees to radians
-Usage: degTorad(angle θ in degrees)</comment>
-        <translatorcomment>Convierte grados a radianes Uso: degTorad(ángulo θ en grados)</translatorcomment>
-        <translation></translation>
-    </message>
-    <message>
-        <source>radTodeg</source>
-        <comment>Converts radians to degrees
-Usage: radTodeg(angle θ in radians)</comment>
-        <translatorcomment>Convierte radianes a grados Uso: radTodeg(ángulo θ en radianes)</translatorcomment>
-        <translation>radTodeg</translation>
-    </message>
-    <message>
-        <source>sin</source>
-        <comment>Sine function working with radians
-Usage: sin(angle θ in radians)</comment>
-        <translatorcomment>Función seno trabaja con radianes Uso: sin(ángulo θ en radianes)</translatorcomment>
-        <translation>sin</translation>
-    </message>
-    <message>
-        <source>cos</source>
-        <comment>Cosine function working with radians
-Usage: cos(angle θ in radians)</comment>
-        <translatorcomment>Función coseno trabaja con radianes Uso: cos(ángulo θ en radianes)</translatorcomment>
-        <translation>cos</translation>
-    </message>
-    <message>
-        <source>tan</source>
-        <comment>Tangent function working with radians
-Usage: tan(angle θ in radians)</comment>
-        <translatorcomment>Función tangente trabaja con radianes Uso: tan(ángulo θ en radianes)</translatorcomment>
-        <translation>tan</translation>
-    </message>
-    <message>
-        <source>asin</source>
-        <comment>Inverse sine function working with radians
-Usage: asin(x)</comment>
-        <translatorcomment>Función seno inverso trabaja con radianes Uso: asin(x)</translatorcomment>
-        <translation>asin</translation>
-    </message>
-    <message>
-        <source>acos</source>
-        <comment>Inverse cosine function working with radians
-Usage: acos(x)</comment>
-        <translatorcomment>Función coseno inverso trabaja con radianes Uso: acos(x)</translatorcomment>
-        <translation>acos</translation>
-    </message>
-    <message>
-        <source>atan</source>
-        <comment>Inverse tangent function working with radians
-Usage: atan(x)</comment>
-        <translatorcomment>Función tangente inversa trabaja con radianes Uso: atan(x)</translatorcomment>
-        <translation>atan</translation>
-    </message>
-    <message>
-        <source>sinh</source>
-        <comment>Hyperbolic sine function
-Usage: sinh(angle θ in radians)</comment>
-        <translatorcomment>Función seno hiperbólica Uso: sinh(ángulo θ en radianes)</translatorcomment>
-        <translation>sinh</translation>
-    </message>
-    <message>
-        <source>cosh</source>
-        <comment>Hyperbolic cosine
-Usage: cosh(angle θ in radians)</comment>
-        <translatorcomment>Uso del coseno hiperbólico: cosh (ángulo θ en radianes)</translatorcomment>
-        <translation>cosh</translation>
-    </message>
-    <message>
-        <source>tanh</source>
-        <comment>Hyperbolic tangent function
-Usage: tanh(angle θ in radians)</comment>
-        <translatorcomment>Función tangente hiperbólica Uso: tanh(ángulo θ en radianes)</translatorcomment>
-        <translation>tanh</translation>
-    </message>
-    <message>
-        <source>asinh</source>
-        <comment>Inverse Hyperbolic sine function
-Usage: asinh(x)</comment>
-        <translatorcomment>Función seno hiperbólica inversa Uso: asinh(x)</translatorcomment>
-        <translation>asinh</translation>
-    </message>
-    <message>
-        <source>acosh</source>
-        <comment>Inverse Hyperbolic cosine function
-Usage: acosh(x)</comment>
-        <translatorcomment>Función coseno hiperbólica inversa Uso: acosh(x)</translatorcomment>
-        <translation>acosh</translation>
-    </message>
-    <message>
-        <source>atanh</source>
-        <comment>Inverse Hyperbolic tangent function
-Usage: atanh(x)</comment>
-        <translatorcomment>Función tangente hiperbólica inversa Uso: atanh(x)</translatorcomment>
-        <translation>atanh</translation>
-    </message>
-    <message>
-        <source>sinD</source>
-        <comment>Sine function working with degrees
-Usage: sinD(angle θ in degrees)</comment>
-        <translatorcomment>Función seno trabaja con grados Uso: sinD(ángulo θ en grados)</translatorcomment>
-        <translation>sinD</translation>
-    </message>
-    <message>
-        <source>cosD</source>
-        <comment>Cosine function working with degrees
-Usage: cosD(angle θ in degrees)</comment>
-        <translatorcomment>Función coseno trabaja con grados Uso: cosD(ángulo θ en grados)</translatorcomment>
-        <translation>cosD</translation>
-    </message>
-    <message>
-        <source>tanD</source>
-        <comment>Tangent function working with degrees
-Usage: tanD(angle θ in degrees)</comment>
-        <translatorcomment>Función tangente trabaja con grados Uso: tanD(ángulo θ en grados)</translatorcomment>
-        <translation>tanD</translation>
-    </message>
-    <message>
-        <source>asinD</source>
-        <comment>Inverse sine function working with degrees
-Usage: asinD(x)</comment>
-        <translatorcomment>Función seno inverso trabaja con grados Uso: asinD(x)</translatorcomment>
-        <translation>asinD</translation>
-    </message>
-    <message>
-        <source>acosD</source>
-        <comment>Inverse cosine function working with degrees
-Usage: acosD(x)</comment>
-        <translatorcomment>Función coseno inverso trabaja con grados Uso: acosD(x)</translatorcomment>
-        <translation>acosD</translation>
-    </message>
-    <message>
-        <source>atanD</source>
-        <comment>Inverse tangent function working with degrees
-Usage: atanD(x)</comment>
-        <translatorcomment>Función tangente inversa trabaja con grados Uso: atanD(x)</translatorcomment>
-        <translation>atanD</translation>
-    </message>
-    <message>
-        <source>log2</source>
-        <comment>Logarithm to the base 2
-Usage: log2(x)</comment>
-        <translatorcomment>Logaritmo en base 2 Uso: log2(x)</translatorcomment>
-        <translation>log2</translation>
-    </message>
-    <message>
-        <source>log10</source>
-        <comment>Logarithm to the base 10
-Usage: log10(x)</comment>
-        <translatorcomment>Logaritmo en base 10 Uso: log10(x)</translatorcomment>
-        <translation>log10</translation>
-    </message>
-    <message>
-        <source>log</source>
-        <comment>Logarithm to the base 10
-Usage: log(x)</comment>
-        <translatorcomment>Logaritmo en base 10 Uso: log(x)</translatorcomment>
-        <translation>log</translation>
-    </message>
-    <message>
-        <source>ln</source>
-        <comment>Logarithm to base e (2.71828...)
-Usage: ln(x)</comment>
-        <translatorcomment>Logaritmo en base e (2,71828...) Uso: ln(x)</translatorcomment>
-        <translation>in</translation>
-    </message>
-    <message>
-        <source>exp</source>
-        <comment>E raised to the power of x
-Usage: exp(x) where e = 2.718</comment>
-        <translatorcomment>E elevado a la potencia x Uso: exp(x) donde e = 2,718</translatorcomment>
-        <translation>exp</translation>
-    </message>
-    <message>
-        <source>sqrt</source>
-        <comment>Square root of a value
-Usage: sqrt(x)</comment>
-        <translatorcomment>Raíz cuadrada de un valor Uso: sqrt(x)</translatorcomment>
-        <translation>sqrt</translation>
-    </message>
-    <message>
-        <source>sign</source>
-        <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
-Usage: sign(x)</comment>
-        <translatorcomment>Función de signo -1 si x&lt;0; 1 si x&gt;0 Uso: signo(x)</translatorcomment>
-        <translation>sign</translation>
-    </message>
-    <message>
-        <source>rint</source>
-        <comment>Round to nearest integer
-Usage: rint(float x)</comment>
-        <translatorcomment>Redondear al entero más cercano Uso: rint(float x)</translatorcomment>
-        <translation>rint</translation>
-    </message>
-    <message>
-        <source>abs</source>
-        <comment>Absolute value
-Usage: abs(x)</comment>
-        <translatorcomment>Valor absoluto Uso: abs(x)</translatorcomment>
-        <translation>abs</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <comment>Min of all arguments
-Usage: min(arg 1; arg 2; ... arg n)</comment>
-        <translatorcomment>Mínimo de todos los argumentos Uso: min(arg 1; arg 2; ... arg n)</translatorcomment>
-        <translation>min</translation>
-    </message>
-    <message>
-        <source>max</source>
-        <comment>Max of all arguments
-Usage: max(arg 1; arg 2; ... arg n)</comment>
-        <translatorcomment>Máximo de todos los argumentos Uso: max(arg 1; arg 2; ... arg n)</translatorcomment>
-        <translation>max</translation>
-    </message>
-    <message>
-        <source>sum</source>
-        <comment>Sum of all arguments
-Usage: sum(arg 1; arg 2; ... arg n)</comment>
-        <translatorcomment>Suma de todos los argumentos Uso: suma(arg 1; arg 2; ... arg n)</translatorcomment>
-        <translation>sum</translation>
-    </message>
-    <message>
-        <source>avg</source>
-        <comment>Mean value of all arguments
-Usage: avg(arg 1; arg 2; ... arg n)</comment>
-        <translatorcomment>Valor medio de todos los argumentos Uso: avg(arg 1; arg 2; ... arg n)</translatorcomment>
-        <translation>avg</translation>
-    </message>
-    <message>
-        <source>fmod</source>
-        <comment>Returns the floating-point remainder of x/y (rounded towards zero)
-Usage: fmod(x; y)</comment>
-        <translatorcomment>Devuelve el resto en coma flotante de x/y (redondeado hacia cero) Uso: fmod(x; y)</translatorcomment>
-        <translation>fmod</translation>
-    </message>
-    <message>
         <source>M_</source>
         <comment>Leave the _ symbol in translation</comment>
         <translation>M_</translation>
@@ -15539,6 +15079,244 @@ Usage: fmod(x; y)</comment>
         <source>C2LengthSpl_</source>
         <comment>Leave the _ symbol in translation</comment>
         <translation>C2LengthSpl_</translation>
+    </message>
+    <message>
+        <source>degTorad</source>
+        <comment>Converts degrees to radians
+Usage: degTorad(angle θ in degrees) → returns an angle in radians
+Example: degTorad(180) = 3.14159</comment>
+        <translation>degTorad</translation>
+    </message>
+    <message>
+        <source>radTodeg</source>
+        <comment>Converts radians to degrees
+Usage: radTodeg(angle θ in radians)  → returns an angle in degrees
+Example: radTodeg(3.14159) = 180</comment>
+        <translation>radTodeg</translation>
+    </message>
+    <message>
+        <source>sin</source>
+        <comment>Sine function working with radians
+Usage: sin(angle θ in radians) → returns a number between -1 and 1
+Example: sin(90) = 0.893997</comment>
+        <translation>sin</translation>
+    </message>
+    <message>
+        <source>cos</source>
+        <comment>Cosine function working with radians
+Usage: cos(angle θ in radians) → returns a number between -1 and 1
+Example: cos(1) = 0.540302</comment>
+        <translation>cos</translation>
+    </message>
+    <message>
+        <source>tan</source>
+        <comment>Tangent function working with radians
+Usage: tan(angle θ in radians)
+Example: tan(1) = 1.55741</comment>
+        <translation>tan</translation>
+    </message>
+    <message>
+        <source>asin</source>
+        <comment>Inverse sine function working with radians
+Usage: asin(x between -1 and 1) → returns an angle in radians
+Example: asin(-1) = -1.5708</comment>
+        <translation>asin</translation>
+    </message>
+    <message>
+        <source>acos</source>
+        <comment>Inverse cosine function working with radians
+Usage: acos(x between -1 and 1) → returns an angle in radians
+Example: acos(0.1) = 1.47063</comment>
+        <translation>acos</translation>
+    </message>
+    <message>
+        <source>atan</source>
+        <comment>Inverse tangent function working with radians
+Usage: atan(x) → returns an angle in radians
+Example: atan(1) = 0.78538</comment>
+        <translation>atan</translation>
+    </message>
+    <message>
+        <source>sinh</source>
+        <comment>Hyperbolic sine function
+Usage: sinh(θ)
+Example: sinh(1) = 1.1752</comment>
+        <translation type="unfinished">sinh</translation>
+    </message>
+    <message>
+        <source>cosh</source>
+        <comment>Hyperbolic cosine
+Usage: cosh(θ) → returns a number greater than or equal to 1
+Example: cosh(0) = 1</comment>
+        <translation type="unfinished">cosh</translation>
+    </message>
+    <message>
+        <source>tanh</source>
+        <comment>Hyperbolic tangent function
+Usage: tanh(θ) → returns a number between -1 and 1 (excluded)
+Example: tanh(1) = 0.761594</comment>
+        <translation type="unfinished">tanh</translation>
+    </message>
+    <message>
+        <source>asinh</source>
+        <comment>Inverse Hyperbolic sine function
+Usage: asinh(x)
+Example: asinh(90) = 5.19299</comment>
+        <translation type="unfinished">asinh</translation>
+    </message>
+    <message>
+        <source>acosh</source>
+        <comment>Inverse Hyperbolic cosine function
+Usage: acosh(x greater than or equal to 1)
+Example: acosh(2) = 1.31696</comment>
+        <translation type="unfinished">acosh</translation>
+    </message>
+    <message>
+        <source>atanh</source>
+        <comment>Inverse Hyperbolic tangent function
+Usage: atanh(x between -1 and 1 (excluded))
+Example: atanh(0,99) = 2.64665</comment>
+        <translation type="unfinished">atanh</translation>
+    </message>
+    <message>
+        <source>sinD</source>
+        <comment>Sine function working with degrees
+Usage: sinD(angle θ in degrees) → returns a number between -1 and 1
+Example: sinD(90) = 1</comment>
+        <translation type="unfinished">sinD</translation>
+    </message>
+    <message>
+        <source>cosD</source>
+        <comment>Cosine function working with degrees
+Usage: cosD(angle θ in degrees) → returns a number between -1 and 1
+Example: cosD(180) = -1</comment>
+        <translation type="unfinished">cosD</translation>
+    </message>
+    <message>
+        <source>tanD</source>
+        <comment>Tangent function working with degrees
+Usage: tanD(angle θ in degrees)
+Example: tanD(45) = 1</comment>
+        <translation type="unfinished">tanD</translation>
+    </message>
+    <message>
+        <source>asinD</source>
+        <comment>Inverse sine function working with degrees
+Usage: asinD(x between -1 and 1) → returns an angle in degrees
+Example: asinD(1) = 90</comment>
+        <translation type="unfinished">asinD</translation>
+    </message>
+    <message>
+        <source>acosD</source>
+        <comment>Inverse cosine function working with degrees
+Usage: acosD(x between -1 and 1) → returns an angle in degrees
+Example: acosD(-1) = 180</comment>
+        <translation type="unfinished">acosD</translation>
+    </message>
+    <message>
+        <source>atanD</source>
+        <comment>Inverse tangent function working with degrees
+Usage: atanD(x) → returns an angle in degrees
+Example: atanD(1) = 45</comment>
+        <translation type="unfinished">atanD</translation>
+    </message>
+    <message>
+        <source>log2</source>
+        <comment>Logarithm to the base 2
+Usage: log2(x greater than 0)
+Example: log2(10) = 3.32193</comment>
+        <translation type="unfinished">log2</translation>
+    </message>
+    <message>
+        <source>log10</source>
+        <comment>Logarithm to the base 10 (same as log(x))
+Usage: log10(x greater than 0)
+Example: log10(10) = 1</comment>
+        <translation type="unfinished">log10</translation>
+    </message>
+    <message>
+        <source>log</source>
+        <comment>Logarithm to the base 10
+Usage: log(x greater than 0)
+Example: log(10) = 1</comment>
+        <translation type="unfinished">log</translation>
+    </message>
+    <message>
+        <source>ln</source>
+        <comment>Logarithm to base e (2.71828...)
+Usage: ln(x greater than 0)
+Example: ln(10) = 2.30259</comment>
+        <translation type="unfinished">in</translation>
+    </message>
+    <message>
+        <source>exp</source>
+        <comment>e raised to the power of x where e = 2.718
+Usage: exp(x) → returns a positive number
+Example: exp(2) = 7.38906</comment>
+        <translation type="unfinished">exp</translation>
+    </message>
+    <message>
+        <source>sqrt</source>
+        <comment>Square root of a value
+Usage: sqrt(x greater than or equal to 0) → returns a positive number
+Example: sqrt(4) = 2</comment>
+        <translation type="unfinished">sqrt</translation>
+    </message>
+    <message>
+        <source>sign</source>
+        <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
+Usage: sign(x) → returns -1, 0 or 1
+Example: sign(-3) = -1</comment>
+        <translation type="unfinished">sign</translation>
+    </message>
+    <message>
+        <source>rint</source>
+        <comment>Round to nearest integer
+Usage: rint(x) → returns an integer number
+Example: rint(2.3) = 2</comment>
+        <translation type="unfinished">rint</translation>
+    </message>
+    <message>
+        <source>abs</source>
+        <comment>Absolute value
+Usage: abs(x) → returns a positive number
+Example: abs(-5) = 5</comment>
+        <translation type="unfinished">abs</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <comment>Min of all arguments
+Usage: min(arg 1; arg 2; ... arg n)
+Example: min(2;3;4) = 2</comment>
+        <translation type="unfinished">min</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <comment>Max of all arguments
+Usage: max(arg 1; arg 2; ... arg n)
+Example: max(2;3;4) = 4</comment>
+        <translation type="unfinished">max</translation>
+    </message>
+    <message>
+        <source>sum</source>
+        <comment>Sum of all arguments
+Usage: sum(arg 1; arg 2; ... arg n)
+Example: sum(2;3;4) = 9</comment>
+        <translation type="unfinished">sum</translation>
+    </message>
+    <message>
+        <source>avg</source>
+        <comment>Mean value of all arguments
+Usage: avg(arg 1; arg 2; ... arg n)
+Example: avg(2;3;4) = 3</comment>
+        <translation type="unfinished">avg</translation>
+    </message>
+    <message>
+        <source>fmod</source>
+        <comment>Returns the floating-point remainder of x/y (rounded towards zero)
+Usage: fmod(x; y)
+Example: fmod(3.3;2) = 1.3</comment>
+        <translation type="unfinished">fmod</translation>
     </message>
 </context>
 <context>
