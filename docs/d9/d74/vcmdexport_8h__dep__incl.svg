@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 4472;
+var viewWidth = 4471;
 var viewHeight = 173;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,14 +54,14 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>src/app/seamly2d/core/vcmdexport.h</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-169 4468,-169 4468,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-169 4467,-169 4467,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="1977,-134.5 1977,-164.5 2104,-164.5 2104,-134.5 1977,-134.5"/>
-<text text-anchor="start" x="1985" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/core</text>
-<text text-anchor="middle" x="2040.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vcmdexport.h</text>
+<polygon fill="#bfbfbf" stroke="black" points="1901,-134.5 1901,-164.5 2028,-164.5 2028,-134.5 1901,-134.5"/>
+<text text-anchor="start" x="1909" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/core</text>
+<text text-anchor="middle" x="1964.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vcmdexport.h</text>
 </a>
 </g>
 </g>
@@ -69,33 +69,33 @@ var sectionId = 'dynsection-1';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="../../d7/d61/application__2d_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1977,-67.5 1977,-97.5 2104,-97.5 2104,-67.5 1977,-67.5"/>
-<text text-anchor="start" x="1985" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/core</text>
-<text text-anchor="middle" x="2040.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/application_2d.h</text>
+<polygon fill="white" stroke="black" points="1901,-67.5 1901,-97.5 2028,-97.5 2028,-67.5 1901,-67.5"/>
+<text text-anchor="start" x="1909" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/core</text>
+<text text-anchor="middle" x="1964.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/application_2d.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M2040.5,-124.11C2040.5,-115.15 2040.5,-105.32 2040.5,-97.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2037,-124.4 2040.5,-134.4 2044,-124.4 2037,-124.4"/>
+<path fill="none" stroke="midnightblue" d="M1964.5,-124.11C1964.5,-115.15 1964.5,-105.32 1964.5,-97.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1961,-124.4 1964.5,-134.4 1968,-124.4 1961,-124.4"/>
 </g>
 <!-- Node28 -->
 <g id="node28" class="node">
 <title>Node28</title>
 <g id="a_node28"><a xlink:href="../../df/d9b/vcmdexport_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="2122,-67.5 2122,-97.5 2249,-97.5 2249,-67.5 2122,-67.5"/>
-<text text-anchor="start" x="2130" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/core</text>
-<text text-anchor="middle" x="2185.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vcmdexport.cpp</text>
+<polygon fill="white" stroke="black" points="2046,-67.5 2046,-97.5 2173,-97.5 2173,-67.5 2046,-67.5"/>
+<text text-anchor="start" x="2054" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/core</text>
+<text text-anchor="middle" x="2109.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vcmdexport.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node28 -->
 <g id="edge27" class="edge">
 <title>Node1&#45;&gt;Node28</title>
-<path fill="none" stroke="midnightblue" d="M2081.17,-130.27C2104.26,-119.92 2132.74,-107.15 2154.1,-97.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2079.66,-127.11 2071.96,-134.4 2082.52,-133.5 2079.66,-127.11"/>
+<path fill="none" stroke="midnightblue" d="M2005.17,-130.27C2028.26,-119.92 2056.74,-107.15 2078.1,-97.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2003.66,-127.11 1995.96,-134.4 2006.52,-133.5 2003.66,-127.11"/>
 </g>
 <!-- Node29 -->
 <g id="node29" class="node">
@@ -109,8 +109,8 @@ var sectionId = 'dynsection-1';
 <!-- Node1&#45;&gt;Node29 -->
 <g id="edge28" class="edge">
 <title>Node1&#45;&gt;Node29</title>
-<path fill="none" stroke="midnightblue" d="M1966.37,-145.71C1687.74,-135.22 703.79,-98.16 402.7,-86.82"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1966.64,-149.22 1976.77,-146.1 1966.9,-142.23 1966.64,-149.22"/>
+<path fill="none" stroke="midnightblue" d="M1890.78,-145.6C1621.82,-135 693.86,-98.44 402.65,-86.97"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1890.7,-149.1 1900.83,-145.99 1890.97,-142.1 1890.7,-149.1"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -125,358 +125,358 @@ var sectionId = 'dynsection-1';
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M1966.83,-81.24C1662.2,-79.92 499.97,-72.22 135.5,-31 132.71,-30.68 129.87,-30.32 127.01,-29.91"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1966.86,-84.74 1976.87,-81.29 1966.89,-77.74 1966.86,-84.74"/>
+<path fill="none" stroke="midnightblue" d="M1890.36,-81.15C1592.74,-79.46 484.08,-70.62 135.5,-31 132.71,-30.68 129.87,-30.31 127.01,-29.9"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1890.58,-84.65 1900.6,-81.2 1890.62,-77.65 1890.58,-84.65"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="../../dd/db4/abstractlayout__dialog_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="2726.5,-0.5 2726.5,-30.5 2872.5,-30.5 2872.5,-0.5 2726.5,-0.5"/>
-<text text-anchor="start" x="2734.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="2799.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/abstractlayout_dialog.cpp</text>
+<g id="a_node4"><a xlink:href="../../d9/d7f/about2d__dialog_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="2650,-0.5 2650,-30.5 2791,-30.5 2791,-0.5 2650,-0.5"/>
+<text text-anchor="start" x="2658" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="2720.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/about2d_dialog.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node2&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M2114.14,-67.06C2381.97,-33.44 2453.69,-62.08 2717.5,-31 2720.37,-30.66 2723.29,-30.29 2726.24,-29.89"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2113.6,-63.6 2104.12,-68.33 2114.48,-70.54 2113.6,-63.6"/>
+<path fill="none" stroke="midnightblue" d="M2038.14,-67.06C2305.97,-33.46 2377.79,-62.94 2641.5,-31 2644.27,-30.66 2647.09,-30.29 2649.93,-29.89"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2037.6,-63.6 2028.12,-68.33 2038.48,-70.54 2037.6,-63.6"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d9/d7f/about2d__dialog_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="2891,-0.5 2891,-30.5 3032,-30.5 3032,-0.5 2891,-0.5"/>
-<text text-anchor="start" x="2899" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="2961.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/about2d_dialog.cpp</text>
+<g id="a_node5"><a xlink:href="../../d7/dfa/calculator__dialog_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="2809,-0.5 2809,-30.5 2950,-30.5 2950,-0.5 2809,-0.5"/>
+<text text-anchor="start" x="2817" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="2879.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/calculator_dialog.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
 <title>Node2&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M2114.25,-67.06C2454.46,-26.45 2545.29,-69.18 2881.5,-31 2884.59,-30.65 2887.73,-30.25 2890.9,-29.82"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2113.62,-63.61 2104.11,-68.28 2114.46,-70.56 2113.62,-63.61"/>
+<path fill="none" stroke="midnightblue" d="M2038.19,-67.07C2376.24,-26.67 2466.52,-69.35 2800.5,-31 2803.27,-30.68 2806.09,-30.32 2808.94,-29.94"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2037.62,-63.61 2028.11,-68.29 2038.46,-70.56 2037.62,-63.61"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="../../d7/dfa/calculator__dialog_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="3050,-0.5 3050,-30.5 3191,-30.5 3191,-0.5 3050,-0.5"/>
-<text text-anchor="start" x="3058" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="3120.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/calculator_dialog.cpp</text>
+<g id="a_node6"><a xlink:href="../../d2/d2d/preferencesconfigurationpage_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="2968,-0.5 2968,-30.5 3215,-30.5 3215,-0.5 2968,-0.5"/>
+<text text-anchor="start" x="2976" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="3091.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/configpages/preferencesconfigurationpage.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node2&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M2114.18,-67.08C2525.17,-19.57 2634.55,-76.01 3041.5,-31 3044.27,-30.69 3047.09,-30.35 3049.94,-29.97"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2113.63,-63.62 2104.11,-68.25 2114.45,-70.57 2113.63,-63.62"/>
+<path fill="none" stroke="midnightblue" d="M2038.12,-67.08C2446.48,-19.58 2553.83,-61.16 2959.5,-31 2962.26,-30.79 2965.05,-30.58 2967.86,-30.35"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2037.63,-63.61 2028.11,-68.25 2038.45,-70.56 2037.63,-63.61"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d2/d2d/preferencesconfigurationpage_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="3209,-0.5 3209,-30.5 3456,-30.5 3456,-0.5 3209,-0.5"/>
-<text text-anchor="start" x="3217" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="3332.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/configpages/preferencesconfigurationpage.cpp</text>
+<g id="a_node7"><a xlink:href="../../d9/d70/preferencesgraphicsviewpage_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="3233.5,-0.5 3233.5,-30.5 3481.5,-30.5 3481.5,-0.5 3233.5,-0.5"/>
+<text text-anchor="start" x="3241.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="3357.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/configpages/preferencesgraphicsviewpage.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node7 -->
 <g id="edge6" class="edge">
 <title>Node2&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M2114.09,-67.09C2595.43,-12.46 2721.65,-65.18 3200.5,-31 3203.26,-30.8 3206.05,-30.59 3208.86,-30.37"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2113.64,-63.62 2104.1,-68.23 2114.44,-70.57 2113.64,-63.62"/>
+<path fill="none" stroke="midnightblue" d="M2038.22,-67.08C2563.66,-8.14 2701.32,-67.4 3224.5,-31 3227.4,-30.8 3230.33,-30.58 3233.28,-30.35"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2037.65,-63.62 2028.1,-68.22 2038.43,-70.58 2037.65,-63.62"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="../../dc/d20/preferencespathpage_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="3474,-0.5 3474,-30.5 3679,-30.5 3679,-0.5 3474,-0.5"/>
-<text text-anchor="start" x="3482" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="3576.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/configpages/preferencespathpage.cpp</text>
+<g id="a_node8"><a xlink:href="../../d2/d00/vtooloptionspropertybrowser_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="3499.5,-0.5 3499.5,-30.5 3679.5,-30.5 3679.5,-0.5 3499.5,-0.5"/>
+<text text-anchor="start" x="3507.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/core</text>
+<text text-anchor="middle" x="3589.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vtooloptionspropertybrowser.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node8 -->
 <g id="edge7" class="edge">
 <title>Node2&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M2114.28,-67.08C2712.64,-1.08 2869.6,-77.73 3465.5,-31 3468.21,-30.79 3470.96,-30.55 3473.73,-30.3"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2113.65,-63.62 2104.1,-68.21 2114.43,-70.58 2113.65,-63.62"/>
+<path fill="none" stroke="midnightblue" d="M2038.08,-67.1C2681.27,3.27 2850.16,-85.63 3490.5,-31 3493.44,-30.75 3496.43,-30.47 3499.45,-30.16"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2037.66,-63.63 2028.1,-68.2 2038.42,-70.58 2037.66,-63.63"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="../../d2/d00/vtooloptionspropertybrowser_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="3697.5,-0.5 3697.5,-30.5 3877.5,-30.5 3877.5,-0.5 3697.5,-0.5"/>
-<text text-anchor="start" x="3705.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/core</text>
-<text text-anchor="middle" x="3787.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vtooloptionspropertybrowser.cpp</text>
+<g id="a_node9"><a xlink:href="../../dc/d20/preferencespathpage_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="3698,-0.5 3698,-30.5 3903,-30.5 3903,-0.5 3698,-0.5"/>
+<text text-anchor="start" x="3706" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="3800.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/configpages/preferencespathpage.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node9 -->
 <g id="edge8" class="edge">
 <title>Node2&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M2114.14,-67.1C2811.23,8.55 2994.12,-89.57 3688.5,-31 3691.44,-30.75 3694.43,-30.47 3697.45,-30.17"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2113.66,-63.63 2104.1,-68.19 2114.42,-70.59 2113.66,-63.63"/>
+<path fill="none" stroke="midnightblue" d="M2038.08,-67.1C2768.82,11.91 2959.93,-85.95 3688.5,-31 3691.53,-30.77 3694.6,-30.52 3697.71,-30.24"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2037.66,-63.63 2028.1,-68.19 2038.42,-70.59 2037.66,-63.63"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="../../d9/d70/preferencesgraphicsviewpage_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="3895.5,-0.5 3895.5,-30.5 4143.5,-30.5 4143.5,-0.5 3895.5,-0.5"/>
-<text text-anchor="start" x="3903.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="4019.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/configpages/preferencesgraphicsviewpage.cpp</text>
+<g id="a_node10"><a xlink:href="../../dc/d63/preferencespatternpage_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="3921.5,-0.5 3921.5,-30.5 4139.5,-30.5 4139.5,-0.5 3921.5,-0.5"/>
+<text text-anchor="start" x="3929.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="4030.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/configpages/preferencespatternpage.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node10 -->
 <g id="edge9" class="edge">
 <title>Node2&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M2114.23,-67.09C2898.8,17.25 3103.33,-81.54 3886.5,-31 3889.4,-30.81 3892.33,-30.61 3895.28,-30.39"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2113.67,-63.63 2104.1,-68.18 2114.42,-70.59 2113.67,-63.63"/>
+<path fill="none" stroke="midnightblue" d="M2038.14,-67.12C2468.12,-22.82 3500.05,-60.22 3912.5,-31 3915.38,-30.8 3918.3,-30.57 3921.25,-30.33"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2037.68,-63.65 2028.1,-68.18 2038.41,-70.61 2037.68,-63.65"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="../../dd/dc2/decimalchart__dialog_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="4162,-0.5 4162,-30.5 4303,-30.5 4303,-0.5 4162,-0.5"/>
-<text text-anchor="start" x="4170" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="4232.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/decimalchart_dialog.cpp</text>
+<g id="a_node11"><a xlink:href="../../dd/db4/abstractlayout__dialog_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="4157.5,-0.5 4157.5,-30.5 4303.5,-30.5 4303.5,-0.5 4157.5,-0.5"/>
+<text text-anchor="start" x="4165.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="4230.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/abstractlayout_dialog.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node11 -->
 <g id="edge10" class="edge">
 <title>Node2&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M2114.08,-67.11C3016.43,28.58 3253.83,-119.79 4152.5,-31 4155.59,-30.69 4158.74,-30.33 4161.92,-29.93"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2113.67,-63.63 2104.1,-68.17 2114.41,-70.59 2113.67,-63.63"/>
+<path fill="none" stroke="midnightblue" d="M2038.08,-67.11C2972.27,31.72 3217.77,-120.66 4148.5,-31 4151.38,-30.72 4154.31,-30.4 4157.26,-30.04"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2037.67,-63.63 2028.1,-68.17 2038.41,-70.59 2037.67,-63.63"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="../../d6/d89/dialoglayoutprogress_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="4321,-0.5 4321,-30.5 4464,-30.5 4464,-0.5 4321,-0.5"/>
-<text text-anchor="start" x="4329" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="4392.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/dialoglayoutprogress.cpp</text>
+<g id="a_node12"><a xlink:href="../../dd/dc2/decimalchart__dialog_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="4322,-0.5 4322,-30.5 4463,-30.5 4463,-0.5 4322,-0.5"/>
+<text text-anchor="start" x="4330" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="4392.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/decimalchart_dialog.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node12 -->
 <g id="edge11" class="edge">
 <title>Node2&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M2114.14,-67.1C3087.2,35.52 3343.04,-126.15 4312.5,-31 4315.17,-30.74 4317.88,-30.44 4320.62,-30.1"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2113.67,-63.63 2104.1,-68.17 2114.41,-70.59 2113.67,-63.63"/>
+<path fill="none" stroke="midnightblue" d="M2038.32,-67.1C2556.98,-14.4 3812.6,-79.93 4312.5,-31 4315.59,-30.7 4318.74,-30.34 4321.92,-29.94"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2037.68,-63.65 2028.1,-68.17 2038.41,-70.61 2037.68,-63.65"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
-<g id="a_node13"><a xlink:href="../../de/d87/dialognewpattern_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="521,-0.5 521,-30.5 662,-30.5 662,-0.5 521,-0.5"/>
+<g id="a_node13"><a xlink:href="../../d6/d89/dialoglayoutprogress_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="521,-0.5 521,-30.5 664,-30.5 664,-0.5 521,-0.5"/>
 <text text-anchor="start" x="529" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="591.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/dialognewpattern.cpp</text>
+<text text-anchor="middle" x="592.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/dialoglayoutprogress.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node13 -->
 <g id="edge12" class="edge">
 <title>Node2&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M1966.51,-80.16C1719.7,-75.48 925.87,-58.6 671.5,-31 668.41,-30.67 665.27,-30.28 662.09,-29.86"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1966.74,-83.67 1976.81,-80.36 1966.87,-76.67 1966.74,-83.67"/>
+<path fill="none" stroke="midnightblue" d="M1890.52,-82.17C1692.55,-83.19 1134.38,-81.02 673.5,-31 670.52,-30.68 667.48,-30.31 664.41,-29.9"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1890.82,-85.67 1900.8,-82.11 1890.78,-78.67 1890.82,-85.67"/>
 </g>
 <!-- Node14 -->
 <g id="node14" class="node">
 <title>Node14</title>
-<g id="a_node14"><a xlink:href="../../dc/d63/preferencespatternpage_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="680.5,-0.5 680.5,-30.5 898.5,-30.5 898.5,-0.5 680.5,-0.5"/>
-<text text-anchor="start" x="688.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="789.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/configpages/preferencespatternpage.cpp</text>
+<g id="a_node14"><a xlink:href="../../de/d87/dialognewpattern_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="682,-0.5 682,-30.5 823,-30.5 823,-0.5 682,-0.5"/>
+<text text-anchor="start" x="690" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="752.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/dialognewpattern.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node14 -->
 <g id="edge13" class="edge">
 <title>Node2&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M1966.69,-80.17C1785.94,-76.47 1306.83,-64.1 908.5,-31 905.29,-30.73 902.02,-30.44 898.73,-30.14"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1966.81,-83.67 1976.87,-80.37 1966.95,-76.67 1966.81,-83.67"/>
+<path fill="none" stroke="midnightblue" d="M1890.54,-81.64C1709.47,-81.24 1229.7,-75.65 832.5,-31 829.41,-30.65 826.27,-30.26 823.09,-29.83"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1890.74,-85.14 1900.75,-81.66 1890.75,-78.14 1890.74,-85.14"/>
 </g>
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
 <g id="a_node15"><a xlink:href="../../d5/d18/dialogpatternproperties_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="917,-0.5 917,-30.5 1072,-30.5 1072,-0.5 917,-0.5"/>
-<text text-anchor="start" x="925" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="994.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/dialogpatternproperties.cpp</text>
+<polygon fill="white" stroke="black" points="841,-0.5 841,-30.5 996,-30.5 996,-0.5 841,-0.5"/>
+<text text-anchor="start" x="849" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="918.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/dialogpatternproperties.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node15 -->
 <g id="edge14" class="edge">
 <title>Node2&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M1966.62,-80.44C1805.45,-77.51 1410.31,-66.94 1081.5,-31 1078.46,-30.67 1075.36,-30.3 1072.23,-29.9"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1966.84,-83.94 1976.9,-80.62 1966.96,-76.94 1966.84,-83.94"/>
+<path fill="none" stroke="midnightblue" d="M1890.62,-80.44C1729.45,-77.51 1334.31,-66.94 1005.5,-31 1002.46,-30.67 999.36,-30.3 996.23,-29.9"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1890.84,-83.94 1900.9,-80.62 1890.96,-76.94 1890.84,-83.94"/>
 </g>
 <!-- Node16 -->
 <g id="node16" class="node">
 <title>Node16</title>
 <g id="a_node16"><a xlink:href="../../d5/dc5/dialogpreferences_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1090,-0.5 1090,-30.5 1231,-30.5 1231,-0.5 1090,-0.5"/>
-<text text-anchor="start" x="1098" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="1160.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/dialogpreferences.cpp</text>
+<polygon fill="white" stroke="black" points="1014,-0.5 1014,-30.5 1155,-30.5 1155,-0.5 1014,-0.5"/>
+<text text-anchor="start" x="1022" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="1084.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/dialogpreferences.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node16 -->
 <g id="edge15" class="edge">
 <title>Node2&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M1966.46,-79.7C1824.96,-75.63 1506.51,-63.39 1240.5,-31 1237.42,-30.62 1234.27,-30.21 1231.1,-29.76"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1966.66,-83.21 1976.75,-79.99 1966.85,-76.21 1966.66,-83.21"/>
+<path fill="none" stroke="midnightblue" d="M1890.46,-79.7C1748.96,-75.63 1430.51,-63.39 1164.5,-31 1161.42,-30.62 1158.27,-30.21 1155.1,-29.76"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1890.66,-83.21 1900.75,-79.99 1890.85,-76.21 1890.66,-83.21"/>
 </g>
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
 <g id="a_node17"><a xlink:href="../../dd/d54/export__layout__dialog_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1249,-0.5 1249,-30.5 1392,-30.5 1392,-0.5 1249,-0.5"/>
-<text text-anchor="start" x="1257" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="1320.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/export_layout_dialog.cpp</text>
+<polygon fill="white" stroke="black" points="1173,-0.5 1173,-30.5 1316,-30.5 1316,-0.5 1173,-0.5"/>
+<text text-anchor="start" x="1181" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="1244.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/export_layout_dialog.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node17 -->
 <g id="edge16" class="edge">
 <title>Node2&#45;&gt;Node17</title>
-<path fill="none" stroke="midnightblue" d="M1966.69,-78.03C1847.47,-71.89 1605.27,-57.23 1401.5,-31 1398.52,-30.62 1395.49,-30.2 1392.43,-29.76"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1966.63,-81.53 1976.8,-78.54 1966.99,-74.54 1966.63,-81.53"/>
+<path fill="none" stroke="midnightblue" d="M1890.69,-78.03C1771.47,-71.89 1529.27,-57.23 1325.5,-31 1322.52,-30.62 1319.49,-30.2 1316.43,-29.76"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1890.63,-81.53 1900.8,-78.54 1890.99,-74.54 1890.63,-81.53"/>
 </g>
 <!-- Node18 -->
 <g id="node18" class="node">
 <title>Node18</title>
 <g id="a_node18"><a xlink:href="../../db/d5c/groups__widget_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1410,-0.5 1410,-30.5 1551,-30.5 1551,-0.5 1410,-0.5"/>
-<text text-anchor="start" x="1418" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="1480.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/groups_widget.cpp</text>
+<polygon fill="white" stroke="black" points="1334,-0.5 1334,-30.5 1475,-30.5 1475,-0.5 1334,-0.5"/>
+<text text-anchor="start" x="1342" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="1404.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/groups_widget.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node18 -->
 <g id="edge17" class="edge">
 <title>Node2&#45;&gt;Node18</title>
-<path fill="none" stroke="midnightblue" d="M1966.62,-75.45C1872.19,-67.32 1703.76,-51.49 1560.5,-31 1557.43,-30.56 1554.29,-30.09 1551.12,-29.6"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1966.38,-78.94 1976.65,-76.31 1966.98,-71.97 1966.38,-78.94"/>
+<path fill="none" stroke="midnightblue" d="M1890.62,-75.45C1796.19,-67.32 1627.76,-51.49 1484.5,-31 1481.43,-30.56 1478.29,-30.09 1475.12,-29.6"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1890.38,-78.94 1900.65,-76.31 1890.98,-71.97 1890.38,-78.94"/>
 </g>
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
 <g id="a_node19"><a xlink:href="../../d0/dfa/layoutsettings__dialog_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1569,-0.5 1569,-30.5 1714,-30.5 1714,-0.5 1569,-0.5"/>
-<text text-anchor="start" x="1577" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="1641.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/layoutsettings_dialog.cpp</text>
+<polygon fill="white" stroke="black" points="1493,-0.5 1493,-30.5 1638,-30.5 1638,-0.5 1493,-0.5"/>
+<text text-anchor="start" x="1501" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="1565.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/layoutsettings_dialog.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node19 -->
 <g id="edge18" class="edge">
 <title>Node2&#45;&gt;Node19</title>
-<path fill="none" stroke="midnightblue" d="M1966.96,-70.15C1902.67,-60.14 1806.84,-45.01 1723.5,-31 1720.51,-30.5 1717.45,-29.98 1714.37,-29.45"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1966.58,-73.63 1977,-71.71 1967.65,-66.71 1966.58,-73.63"/>
+<path fill="none" stroke="midnightblue" d="M1890.96,-70.15C1826.67,-60.14 1730.84,-45.01 1647.5,-31 1644.51,-30.5 1641.45,-29.98 1638.37,-29.45"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1890.58,-73.63 1901,-71.71 1891.65,-66.71 1890.58,-73.63"/>
 </g>
 <!-- Node20 -->
 <g id="node20" class="node">
 <title>Node20</title>
-<g id="a_node20"><a xlink:href="../../df/d69/welcome__dialog_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1732,-0.5 1732,-30.5 1873,-30.5 1873,-0.5 1732,-0.5"/>
-<text text-anchor="start" x="1740" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="1802.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/welcome_dialog.cpp</text>
+<g id="a_node20"><a xlink:href="../../d2/df4/show__info__dialog_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1656,-0.5 1656,-30.5 1797,-30.5 1797,-0.5 1656,-0.5"/>
+<text text-anchor="start" x="1664" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="1726.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/show_info_dialog.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node20 -->
 <g id="edge19" class="edge">
 <title>Node2&#45;&gt;Node20</title>
-<path fill="none" stroke="midnightblue" d="M1979.04,-64.71C1940.31,-54.14 1890.87,-40.63 1854.17,-30.61"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1978.58,-68.22 1989.15,-67.48 1980.43,-61.46 1978.58,-68.22"/>
+<path fill="none" stroke="midnightblue" d="M1903.04,-64.71C1864.31,-54.14 1814.87,-40.63 1778.17,-30.61"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1902.58,-68.22 1913.15,-67.48 1904.43,-61.46 1902.58,-68.22"/>
 </g>
 <!-- Node21 -->
 <g id="node21" class="node">
 <title>Node21</title>
-<g id="a_node21"><a xlink:href="../../dd/d84/shortcuts__dialog_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1891,-0.5 1891,-30.5 2032,-30.5 2032,-0.5 1891,-0.5"/>
-<text text-anchor="start" x="1899" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="1961.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/shortcuts_dialog.cpp</text>
+<g id="a_node21"><a xlink:href="../../df/d69/welcome__dialog_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1815,-0.5 1815,-30.5 1956,-30.5 1956,-0.5 1815,-0.5"/>
+<text text-anchor="start" x="1823" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="1885.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/welcome_dialog.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node21 -->
 <g id="edge20" class="edge">
 <title>Node2&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M2015.44,-60.88C2003.44,-51.01 1989.37,-39.43 1978.61,-30.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2013.41,-63.75 2023.36,-67.4 2017.86,-58.34 2013.41,-63.75"/>
+<path fill="none" stroke="midnightblue" d="M1939.44,-60.88C1927.44,-51.01 1913.37,-39.43 1902.61,-30.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1937.41,-63.75 1947.36,-67.4 1941.86,-58.34 1937.41,-63.75"/>
 </g>
 <!-- Node22 -->
 <g id="node22" class="node">
 <title>Node22</title>
-<g id="a_node22"><a xlink:href="../../dc/d14/app_2seamly2d_2main_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="145,-6 145,-25 296,-25 296,-6 145,-6"/>
-<text text-anchor="middle" x="220.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/main.cpp</text>
+<g id="a_node22"><a xlink:href="../../dd/d84/shortcuts__dialog_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1974,-0.5 1974,-30.5 2115,-30.5 2115,-0.5 1974,-0.5"/>
+<text text-anchor="start" x="1982" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
+<text text-anchor="middle" x="2044.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/shortcuts_dialog.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node22 -->
 <g id="edge21" class="edge">
 <title>Node2&#45;&gt;Node22</title>
-<path fill="none" stroke="midnightblue" d="M1966.42,-80.73C1678.73,-77.5 635.21,-63.76 305.5,-31 291.79,-29.64 276.96,-27.38 263.58,-25.05"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1966.7,-84.23 1976.74,-80.84 1966.78,-77.23 1966.7,-84.23"/>
+<path fill="none" stroke="midnightblue" d="M1989.87,-60.88C2002.03,-51.01 2016.28,-39.43 2027.18,-30.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1987.41,-58.37 1981.86,-67.4 1991.83,-63.81 1987.41,-58.37"/>
 </g>
 <!-- Node23 -->
 <g id="node23" class="node">
 <title>Node23</title>
-<g id="a_node23"><a xlink:href="../../d2/df4/show__info__dialog_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="2050,-0.5 2050,-30.5 2191,-30.5 2191,-0.5 2050,-0.5"/>
-<text text-anchor="start" x="2058" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="2120.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/show_info_dialog.cpp</text>
+<g id="a_node23"><a xlink:href="../../dc/d14/app_2seamly2d_2main_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="145,-6 145,-25 296,-25 296,-6 145,-6"/>
+<text text-anchor="middle" x="220.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/main.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node23 -->
 <g id="edge22" class="edge">
 <title>Node2&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M2065.87,-60.88C2078.03,-51.01 2092.28,-39.43 2103.18,-30.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2063.41,-58.37 2057.86,-67.4 2067.83,-63.81 2063.41,-58.37"/>
+<path fill="none" stroke="midnightblue" d="M1890.86,-80.62C1611.86,-77.06 619.7,-62.43 305.5,-31 291.8,-29.63 276.96,-27.37 263.58,-25.04"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1890.83,-84.12 1900.88,-80.74 1890.92,-77.12 1890.83,-84.12"/>
 </g>
 <!-- Node24 -->
 <g id="node24" class="node">
 <title>Node24</title>
 <g id="a_node24"><a xlink:href="../../d8/de8/mainwindowsnogui_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="2209,-6 2209,-25 2430,-25 2430,-6 2209,-6"/>
-<text text-anchor="middle" x="2319.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/mainwindowsnogui.cpp</text>
+<polygon fill="white" stroke="black" points="2133,-6 2133,-25 2354,-25 2354,-6 2133,-6"/>
+<text text-anchor="middle" x="2243.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/mainwindowsnogui.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node24 -->
 <g id="edge23" class="edge">
 <title>Node2&#45;&gt;Node24</title>
-<path fill="none" stroke="midnightblue" d="M2110.68,-65.15C2165.43,-52.39 2239.27,-35.19 2282.89,-25.03"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2109.64,-61.8 2100.7,-67.48 2111.23,-68.62 2109.64,-61.8"/>
+<path fill="none" stroke="midnightblue" d="M2034.68,-65.15C2089.43,-52.39 2163.27,-35.19 2206.89,-25.03"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2033.64,-61.8 2024.7,-67.48 2035.23,-68.62 2033.64,-61.8"/>
 </g>
 <!-- Node25 -->
 <g id="node25" class="node">
 <title>Node25</title>
 <g id="a_node25"><a xlink:href="../../d3/d49/vpattern_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="2448,-0.5 2448,-30.5 2573,-30.5 2573,-0.5 2448,-0.5"/>
-<text text-anchor="start" x="2456" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/xml</text>
-<text text-anchor="middle" x="2510.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vpattern.cpp</text>
+<polygon fill="white" stroke="black" points="2372,-0.5 2372,-30.5 2497,-30.5 2497,-0.5 2372,-0.5"/>
+<text text-anchor="start" x="2380" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/xml</text>
+<text text-anchor="middle" x="2434.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vpattern.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node25 -->
 <g id="edge24" class="edge">
 <title>Node2&#45;&gt;Node25</title>
-<path fill="none" stroke="midnightblue" d="M2114.31,-66.97C2259.32,-45.16 2298.73,-53.1 2439.5,-31 2442.23,-30.57 2445.02,-30.11 2447.84,-29.62"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2113.5,-63.55 2104.14,-68.52 2114.56,-70.47 2113.5,-63.55"/>
+<path fill="none" stroke="midnightblue" d="M2038.31,-66.97C2183.32,-45.16 2222.73,-53.1 2363.5,-31 2366.23,-30.57 2369.02,-30.11 2371.84,-29.62"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2037.5,-63.55 2028.14,-68.52 2038.56,-70.47 2037.5,-63.55"/>
 </g>
 <!-- Node26 -->
 <g id="node26" class="node">
@@ -490,24 +490,24 @@ var sectionId = 'dynsection-1';
 <!-- Node2&#45;&gt;Node26 -->
 <g id="edge25" class="edge">
 <title>Node2&#45;&gt;Node26</title>
-<path fill="none" stroke="midnightblue" d="M1966.49,-81.82C1745.28,-82.17 1069.9,-78.93 512.5,-31 495.97,-29.58 478.05,-27.34 461.82,-25.03"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1966.68,-85.32 1976.68,-81.8 1966.67,-78.32 1966.68,-85.32"/>
+<path fill="none" stroke="midnightblue" d="M1890.5,-81.63C1676.58,-81.44 1039.12,-76.75 512.5,-31 495.97,-29.56 478.05,-27.32 461.82,-25.02"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1890.67,-85.13 1900.67,-81.64 1890.67,-78.13 1890.67,-85.13"/>
 </g>
 <!-- Node27 -->
 <g id="node27" class="node">
 <title>Node27</title>
 <g id="a_node27"><a xlink:href="../../d9/da3/image__tool_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="2591,-0.5 2591,-30.5 2708,-30.5 2708,-0.5 2591,-0.5"/>
-<text text-anchor="start" x="2599" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/tools/images</text>
-<text text-anchor="middle" x="2649.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/image_tool.cpp</text>
+<polygon fill="white" stroke="black" points="2515,-0.5 2515,-30.5 2632,-30.5 2632,-0.5 2515,-0.5"/>
+<text text-anchor="start" x="2523" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/tools/images</text>
+<text text-anchor="middle" x="2573.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/image_tool.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node27 -->
 <g id="edge26" class="edge">
 <title>Node2&#45;&gt;Node27</title>
-<path fill="none" stroke="midnightblue" d="M2114.16,-67.04C2322.37,-39.28 2378.86,-60.71 2582.5,-31 2585.21,-30.6 2587.97,-30.16 2590.76,-29.69"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2113.57,-63.59 2104.13,-68.4 2114.51,-70.52 2113.57,-63.59"/>
+<path fill="none" stroke="midnightblue" d="M2038.16,-67.04C2246.37,-39.28 2302.86,-60.71 2506.5,-31 2509.21,-30.6 2511.97,-30.16 2514.76,-29.69"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2037.57,-63.59 2028.13,-68.4 2038.51,-70.52 2037.57,-63.59"/>
 </g>
 <!-- Node29&#45;&gt;Node3 -->
 <g id="edge29" class="edge">
@@ -515,9 +515,9 @@ var sectionId = 'dynsection-1';
 <path fill="none" stroke="midnightblue" d="M271.67,-70.41C229.17,-59.4 163.9,-42.5 117.79,-30.56"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="270.87,-73.82 281.43,-72.94 272.62,-67.04 270.87,-73.82"/>
 </g>
-<!-- Node29&#45;&gt;Node22 -->
+<!-- Node29&#45;&gt;Node23 -->
 <g id="edge30" class="edge">
-<title>Node29&#45;&gt;Node22</title>
+<title>Node29&#45;&gt;Node23</title>
 <path fill="none" stroke="midnightblue" d="M293.41,-66.92C274.83,-54.07 248.38,-35.78 232.98,-25.13"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="291.61,-69.93 301.82,-72.73 295.59,-64.17 291.61,-69.93"/>
 </g>
