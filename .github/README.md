@@ -42,6 +42,7 @@ ___________________________________________________
 ## Seamly2D Developer Resources:
    * [Developer README](README-DEVELOPER.md) - _current_
    * [Developer Wiki](https://github.com/FashionFreedom/Seamly2D/wiki) - _needs updating_
+   * [Doxygen docs](https://fashionfreedom.github.io/Seamly2D/)
 ___________________________________________________
 ## LICENSING
 
