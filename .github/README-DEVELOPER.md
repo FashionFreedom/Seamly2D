@@ -8,7 +8,7 @@
 * Check the sections below for your operating system to find additional installation requirements.
 
 ## Code Documentation
-    * [Doxygen Docs](https://fashionfreedom.github.io/Seamly2D/)
+   * [Doxygen Docs](https://fashionfreedom.github.io/Seamly2D/)
 
 ## Development methods and styles:
    * [GitHub Flow workflow](https://githubflow.github.io)
