@@ -196,6 +196,18 @@ public:
     bool                 getShowLayoutToolBar() const;
     void                 setShowLayoutToolBar(const bool &value);
 
+    bool                 useSecondMonitor() const;
+    void                 setUseSecondMonitor(const bool &value);
+
+    int                  getDialogPosition() const;
+    void                 setDialogPosition(const int &value);
+
+    int                  getXOffset() const;
+    void                 setXOffset(const int &value);
+
+    int                  getYOffset() const;
+    void                 setYOffset(const int &value);
+
     bool                 getShowScrollBars() const;
     void                 setShowScrollBars(const bool &value);
 
