@@ -67,7 +67,7 @@ private:
 
             ResizeHandlesItem *m_parent;
             Position           m_handlePosition;
-            bool               m_coloredHandles;
+            bool               m_handleIsHighlighted;
             qreal              m_scalingFactor;
             qreal              m_minDimension;
             qreal              m_maxDimension;
