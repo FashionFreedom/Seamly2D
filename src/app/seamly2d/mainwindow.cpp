@@ -1739,7 +1739,7 @@ void MainWindow::handleImageTool()
     ui->draft_ToolBox->setCurrentWidget(ui->backgroundImage_Page);
     ui->importImage_ToolButton->setChecked(true);
 
-    QString filename = getImageFilename();
+    QString filename = getImageFilename(this);
 
     if(!filename.isEmpty())
     {
@@ -1766,32 +1766,6 @@ void MainWindow::handleImageTool()
     }
 
     ui->importImage_ToolButton->setChecked(false);
-}
-
-
-//---------------------------------------------------------------------------------------------------------------------
-QString MainWindow::getImageFilename()
-{
-    const QString filter = tr("Images") + QLatin1String(" (*.bmp *.jpg *.png *.svg *.tf);;") +
-                           "BMP" + QLatin1String(" (*.bmp);;") +
-                           "JPG" + QLatin1String(" (*.jpg);;") +
-                           "PNG" + QLatin1String(" (*.png);;") +
-                           "SVG" + QLatin1String(" (*.svg);;") +
-                           "TIF" + QLatin1String(" (*.tf)");
-
-    const QString path = qApp->Seamly2DSettings()->getImageFilePath();
-
-    bool usedNotExistedDir = false;
-    QDir directory(path);
-    if (!directory.exists())
-    {
-        usedNotExistedDir = directory.mkpath(".");
-    }
-
-    const QString filename = QFileDialog::getOpenFileName(this, tr("Open Image File"), path, filter, nullptr,
-                                                          QFileDialog::DontUseNativeDialog);
-
-    return filename;
 }
 
 
