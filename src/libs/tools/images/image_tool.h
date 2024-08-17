@@ -36,6 +36,9 @@
 #include "../ifc/xml/vabstractpattern.h"
 #include "vmaingraphicsscene.h"
 
+QString          getImageFilename(QWidget *parent);
+
+
 class ImageTool : public QObject
 {
     Q_OBJECT
