@@ -979,6 +979,7 @@ void VPattern::parseImageElement(QDomElement &domElement, const Document &parse)
         else
         {
             image_tool->deleteLater();
+            ParentNodeById(image.id).removeChild(domElement); //this way the broken image is not light-parsed in the future
         }
     }
     else

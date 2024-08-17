@@ -44,6 +44,39 @@
 Q_LOGGING_CATEGORY(vImageTool, "v.imageTool")
 
 
+//---------------------------------------------------------------------------------------------------------------------
+QString getImageFilename(QWidget *parent)
+{
+    const QString filter = QObject::tr("Images") + QLatin1String(" (*.bmp *.gif *.jpeg *.jpg *.pbm *.pgm *.png *.ppm *.svg *.tif *.xbm *.xpm);;") +
+                           "BMP" + QLatin1String(" (*.bmp);;") +
+                           "GIF" + QLatin1String(" (*.gif);;") +
+                           "JPEG" + QLatin1String(" (*.jpeg);;") +
+                           "JPG" + QLatin1String(" (*.jpg);;") +
+                           "PBM" + QLatin1String(" (*.pbm);;") +
+                           "PGM" + QLatin1String(" (*.pgm);;") +
+                           "PNG" + QLatin1String(" (*.png);;") +
+                           "PPM" + QLatin1String(" (*.ppm);;") +
+                           "SVG" + QLatin1String(" (*.svg);;") +
+                           "TIF" + QLatin1String(" (*.tif);;") +
+                           "XBM" + QLatin1String(" (*.xbm);;") +
+                           "XPM" + QLatin1String(" (*.xpm)");
+
+    const QString path = qApp->Seamly2DSettings()->getImageFilePath();
+
+    bool usedNotExistedDir = false;
+    QDir directory(path);
+    if (!directory.exists())
+    {
+        usedNotExistedDir = directory.mkpath(".");
+    }
+
+    const QString filename = QFileDialog::getOpenFileName(parent, QObject::tr("Open Image File"), path, filter, nullptr,
+                                                          QFileDialog::DontUseNativeDialog);
+
+    return filename;
+}
+
+
 //Constructor called from GUI
 ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene *draftScene, QString filename)
     : QObject(parent),
@@ -71,26 +104,63 @@ ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene 
 }
 
 //Constructor called when file is full-parsed
-ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene *draftScene, DraftImage image)
+ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene *draftScene, DraftImage img)
     : QObject(parent),
-    image(image),
+    image(img),
     m_doc(doc),
     m_draftScene(draftScene)
 {
     qCDebug(vImageTool, "Image filename: %s", qUtf8Printable(image.filename));
 
-    if (image.filename.isEmpty())
-    {
-        qCDebug(vImageTool, "Can't load image");
-        QMessageBox::critical(nullptr, tr("Import Image"), tr("Could not load the image."), QMessageBox::Ok);
-        return;
-    }
+    QFileInfo fileInfo(image.filename);
 
-    QFileInfo f(image.filename);
+    if (!fileInfo.exists())
+    {
+        const QString text = tr("The image <br/><br/> <b>%1</b> <br/><br/> could not be found. Do you "
+                                "want to update the file location?").arg(image.filename);
+        QMessageBox::StandardButton result = QMessageBox::question(nullptr, tr("Loading image"), text,
+                                                                   QMessageBox::Yes | QMessageBox::No,
+                                                                   QMessageBox::Yes);
+        if (result == QMessageBox::No)
+        {
+            return;
+        }
+        else
+        {
+            bool askAgain = true;
+            while(askAgain)
+            {
+                image.filename = getImageFilename(nullptr);
+                if (image.filename.isEmpty())
+                {
+                    qCDebug(vImageTool, "No image selected");
+                    QMessageBox::critical(nullptr, tr("Import Image"), tr("No image was selected..."), QMessageBox::Ok);
+                    continue;
+                }
+
+                QImageReader imageReader(image.filename);
+
+                if(!imageReader.canRead())
+                {
+                    qCDebug(vImageTool, "Can't read image");
+                    QMessageBox::critical(nullptr, tr("Import Image"), tr("Could not read the image.") + "\n" + tr("File may be corrupted..."), QMessageBox::Ok);
+                    continue;
+                }
+                askAgain = false;
+            }
+            image.name = fileInfo.baseName();
+
+            QDomElement domElement = m_doc->elementById(image.id, VAbstractPattern::TagDraftImage);
+            QDomElement newDomElement = domElement.cloneNode().toElement();
+            m_doc->SetAttribute(newDomElement, VAbstractPattern::AttrName,  image.name);
+            m_doc->SetAttribute(newDomElement, VAbstractPattern::AttrSource, image.filename);
+            domElement.parentNode().replaceChild(newDomElement, domElement);
+        }
+    }
 
     if (image.name.isEmpty())
     {
-        image.name = f.baseName();
+        image.name = fileInfo.baseName();
     }
 
     addImage();
