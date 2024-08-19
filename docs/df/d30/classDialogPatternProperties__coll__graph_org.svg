@@ -103,14 +103,14 @@
 <text text-anchor="start" x="686.5" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parsePieceNode()</text>
 <text text-anchor="start" x="686.5" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parseDraftBlockElement()</text>
 <text text-anchor="start" x="686.5" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParseDrawMode()</text>
-<text text-anchor="start" x="686.5" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parsePieceElement()</text>
-<text text-anchor="start" x="686.5" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parsePieceNodes()</text>
-<text text-anchor="start" x="686.5" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParsePieceDataTag()</text>
-<text text-anchor="start" x="686.5" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParsePiecePatternInfo()</text>
-<text text-anchor="start" x="686.5" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParsePieceGrainline()</text>
-<text text-anchor="start" x="686.5" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parsePatternPieces()</text>
-<text text-anchor="start" x="686.5" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParsePointElement()</text>
-<text text-anchor="start" x="686.5" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 64 more...</text>
+<text text-anchor="start" x="686.5" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parseDraftImages()</text>
+<text text-anchor="start" x="686.5" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parseImageElement()</text>
+<text text-anchor="start" x="686.5" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parsePieceElement()</text>
+<text text-anchor="start" x="686.5" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parsePieceNodes()</text>
+<text text-anchor="start" x="686.5" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParsePieceDataTag()</text>
+<text text-anchor="start" x="686.5" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParsePiecePatternInfo()</text>
+<text text-anchor="start" x="686.5" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParsePieceGrainline()</text>
+<text text-anchor="start" x="686.5" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 66 more...</text>
 </a>
 </g>
 </g>
@@ -138,7 +138,7 @@
 <text text-anchor="start" x="527" y="-1578.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagNotes</text>
 <text text-anchor="start" x="527" y="-1567.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagMeasurements</text>
 <text text-anchor="start" x="527" y="-1556.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagVariables</text>
-<text text-anchor="start" x="527" y="-1545.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 142 more...</text>
+<text text-anchor="start" x="527" y="-1545.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 147 more...</text>
 <text text-anchor="start" x="527" y="-1534.5" font-family="Helvetica,sans-Serif" font-size="10.00"># activeDraftBlock</text>
 <text text-anchor="start" x="527" y="-1523.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineColor</text>
 <text text-anchor="start" x="527" y="-1512.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineWeight</text>
@@ -160,7 +160,7 @@
 <text text-anchor="start" x="527" y="-1339.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getActiveDraftBlockName()</text>
 <text text-anchor="start" x="527" y="-1328.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draftBlockNameExists()</text>
 <text text-anchor="start" x="527" y="-1317.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draftBlockCount()</text>
-<text text-anchor="start" x="527" y="-1306.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 96 more...</text>
+<text text-anchor="start" x="527" y="-1306.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 97 more...</text>
 <text text-anchor="start" x="527" y="-1295.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTool()</text>
 <text text-anchor="start" x="527" y="-1284.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AddTool()</text>
 <text text-anchor="start" x="527" y="-1273.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RemoveTool()</text>

@@ -84,14 +84,14 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="23.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parsePieceNode()</text>
 <text text-anchor="start" x="23.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parseDraftBlockElement()</text>
 <text text-anchor="start" x="23.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParseDrawMode()</text>
-<text text-anchor="start" x="23.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parsePieceElement()</text>
-<text text-anchor="start" x="23.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parsePieceNodes()</text>
-<text text-anchor="start" x="23.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParsePieceDataTag()</text>
-<text text-anchor="start" x="23.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParsePiecePatternInfo()</text>
-<text text-anchor="start" x="23.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParsePieceGrainline()</text>
-<text text-anchor="start" x="23.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parsePatternPieces()</text>
-<text text-anchor="start" x="23.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParsePointElement()</text>
-<text text-anchor="start" x="23.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 64 more...</text>
+<text text-anchor="start" x="23.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parseDraftImages()</text>
+<text text-anchor="start" x="23.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parseImageElement()</text>
+<text text-anchor="start" x="23.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parsePieceElement()</text>
+<text text-anchor="start" x="23.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; parsePieceNodes()</text>
+<text text-anchor="start" x="23.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParsePieceDataTag()</text>
+<text text-anchor="start" x="23.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParsePiecePatternInfo()</text>
+<text text-anchor="start" x="23.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParsePieceGrainline()</text>
+<text text-anchor="start" x="23.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 66 more...</text>
 </a>
 </g>
 </g>
@@ -112,7 +112,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="17" y="-1143.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagNotes</text>
 <text text-anchor="start" x="17" y="-1132.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagMeasurements</text>
 <text text-anchor="start" x="17" y="-1121.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagVariables</text>
-<text text-anchor="start" x="17" y="-1110.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 142 more...</text>
+<text text-anchor="start" x="17" y="-1110.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 147 more...</text>
 <text text-anchor="start" x="17" y="-1099.5" font-family="Helvetica,sans-Serif" font-size="10.00"># activeDraftBlock</text>
 <text text-anchor="start" x="17" y="-1088.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineColor</text>
 <text text-anchor="start" x="17" y="-1077.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineWeight</text>
@@ -139,7 +139,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="17" y="-849.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getActiveDraftBlockName()</text>
 <text text-anchor="start" x="17" y="-838.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draftBlockNameExists()</text>
 <text text-anchor="start" x="17" y="-827.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draftBlockCount()</text>
-<text text-anchor="start" x="17" y="-816.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 96 more...</text>
+<text text-anchor="start" x="17" y="-816.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 97 more...</text>
 <text text-anchor="start" x="17" y="-805.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTool()</text>
 <text text-anchor="start" x="17" y="-794.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AddTool()</text>
 <text text-anchor="start" x="17" y="-783.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RemoveTool()</text>

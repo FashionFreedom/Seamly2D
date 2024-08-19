@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['halfedge_5fs_9750',['halfedge_s',['../d3/d38/structhalfedge__s.html',1,'']]],
-  ['handleitem_9751',['HandleItem',['../d0/dc5/classResizeHandlesItem_1_1HandleItem.html',1,'ResizeHandlesItem']]],
-  ['historydialog_9752',['HistoryDialog',['../d1/d42/classHistoryDialog.html',1,'']]]
+  ['halfedge_5fs_9780',['halfedge_s',['../d3/d38/structhalfedge__s.html',1,'']]],
+  ['handleitem_9781',['HandleItem',['../d0/dc5/classResizeHandlesItem_1_1HandleItem.html',1,'ResizeHandlesItem']]],
+  ['historydialog_9782',['HistoryDialog',['../d1/d42/classHistoryDialog.html',1,'']]]
 ];

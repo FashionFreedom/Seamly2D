@@ -110,13 +110,13 @@ $(document).ready(function(){initNavTree('d0/de9/classResizeHandlesItem.html','.
 <div class="dynheader">
 Inheritance diagram for ResizeHandlesItem:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d0d/classResizeHandlesItem__inherit__graph.svg" width="230" height="463"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d0d/classResizeHandlesItem__inherit__graph.svg" width="232" height="478"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Collaboration diagram for ResizeHandlesItem:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/deb/classResizeHandlesItem__coll__graph.svg" width="450" height="478"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/deb/classResizeHandlesItem__coll__graph.svg" width="450" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -133,10 +133,12 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:a105409fc3e6dcd2660005bef7d6ff63a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de9/classResizeHandlesItem.html#a105409fc3e6dcd2660005bef7d6ff63a">sizeChanged</a> (QRectF rect)</td></tr>
-<tr class="separator:a105409fc3e6dcd2660005bef7d6ff63a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bc8d1381fa0ac98c6eb0077b4f9fcb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de9/classResizeHandlesItem.html#a9bc8d1381fa0ac98c6eb0077b4f9fcb4">sizeChangedFromHandles</a> (QRectF rect)</td></tr>
+<tr class="separator:a9bc8d1381fa0ac98c6eb0077b4f9fcb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8355781cd37524f84849535542dbaffd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de9/classResizeHandlesItem.html#a8355781cd37524f84849535542dbaffd">setStatusMessage</a> (QString message)</td></tr>
 <tr class="separator:a8355781cd37524f84849535542dbaffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d6fbb1241a24c5ee5e6ce1cdc0f2a9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de9/classResizeHandlesItem.html#a7d6fbb1241a24c5ee5e6ce1cdc0f2a9f">imageNeedsSave</a> ()</td></tr>
+<tr class="separator:a7d6fbb1241a24c5ee5e6ce1cdc0f2a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -201,6 +203,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a0d9316123a68627adb3287a49a6a585f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07d4c64f631b228ef9aeccd877dbff54"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de9/classResizeHandlesItem.html#a07d4c64f631b228ef9aeccd877dbff54">m_maxDimension</a></td></tr>
 <tr class="separator:a07d4c64f631b228ef9aeccd877dbff54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a047baee51c5c33a708e18106155cb0c8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de9/classResizeHandlesItem.html#a047baee51c5c33a708e18106155cb0c8">m_sizeChangedExternally</a></td></tr>
+<tr class="separator:a047baee51c5c33a708e18106155cb0c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -269,7 +273,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00043">43</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a2ad9d63b69c4a10a5cc9cad923133bc4">Bottom</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a98e5a1c44509157ebcaf46c515c78875">BottomLeft</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a9146bfc669fddc88db2c4d89297d0e9a">BottomRight</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a945d5e233cf7d6240f6b783b36a374ff">Left</a>, <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00107">m_handleItems</a>, <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00108">m_parentRect</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a92b09c7c48c520c3c55e497875da437c">Right</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008aa4ffdcf0dc1f31b9acaf295d75b51d00">Top</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008ab32beb056fbfe36afbabc6c88c81ab36">TopLeft</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a1d85a557894c340c318493f33bfa8efb">TopRight</a>, and <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00154">updateHandlePositions()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a2ad9d63b69c4a10a5cc9cad923133bc4">Bottom</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a98e5a1c44509157ebcaf46c515c78875">BottomLeft</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a9146bfc669fddc88db2c4d89297d0e9a">BottomRight</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a945d5e233cf7d6240f6b783b36a374ff">Left</a>, <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00108">m_handleItems</a>, <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00109">m_parentRect</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a92b09c7c48c520c3c55e497875da437c">Right</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008aa4ffdcf0dc1f31b9acaf295d75b51d00">Top</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008ab32beb056fbfe36afbabc6c88c81ab36">TopLeft</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a1d85a557894c340c318493f33bfa8efb">TopRight</a>, and <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00155">updateHandlePositions()</a>.</p>
 
 </div>
 </div>
@@ -329,7 +333,34 @@ Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00063">HANDLE_SIZE</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00235">ResizeHandlesItem::HandleItem::paint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00243">ResizeHandlesItem::HandleItem::paint()</a>.</p>
+
+</div>
+</div>
+<a id="a7d6fbb1241a24c5ee5e6ce1cdc0f2a9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d6fbb1241a24c5ee5e6ce1cdc0f2a9f">&#9670;&nbsp;</a></span>imageNeedsSave</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ResizeHandlesItem::imageNeedsSave </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00059">ImageItem::ImageItem()</a>.</p>
 
 </div>
 </div>
@@ -383,7 +414,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00127">127</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00128">128</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
 
 </div>
 </div>
@@ -403,11 +434,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00093">93</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00094">94</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00063">HANDLE_SIZE</a>, <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00107">m_handleItems</a>, <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00110">m_parentIsLocked</a>, and <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00108">m_parentRect</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00063">HANDLE_SIZE</a>, <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00108">m_handleItems</a>, <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00111">m_parentIsLocked</a>, and <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00109">m_parentRect</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem::ImageItem()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00599">ImageItem::updateImageAndHandles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00059">ImageItem::ImageItem()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00623">ImageItem::updateImageAndHandles()</a>.</p>
 
 </div>
 </div>
@@ -427,7 +458,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00143">143</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00144">144</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
 
 </div>
 </div>
@@ -447,7 +478,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00148">148</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00149">149</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
 
 </div>
 </div>
@@ -467,7 +498,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00147">147</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00148">148</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
 
 </div>
 </div>
@@ -487,7 +518,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00144">144</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00145">145</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
 
 </div>
 </div>
@@ -517,9 +548,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00115">115</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00116">116</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00113">m_maxDimension</a>, and <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00112">m_minDimension</a>.</p>
+<p class="reference">References <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00114">m_maxDimension</a>, and <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00113">m_minDimension</a>.</p>
 
 </div>
 </div>
@@ -539,11 +570,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00087">87</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00088">88</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00109">m_lockAspectRatio</a>.</p>
+<p class="reference">References <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00110">m_lockAspectRatio</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem::ImageItem()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00599">ImageItem::updateImageAndHandles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00059">ImageItem::ImageItem()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00623">ImageItem::updateImageAndHandles()</a>.</p>
 
 </div>
 </div>
@@ -565,9 +596,9 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00079">79</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00108">m_parentRect</a>, and <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00154">updateHandlePositions()</a>.</p>
+<p class="reference">References <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00109">m_parentRect</a>, <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00116">m_sizeChangedExternally</a>, and <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00155">updateHandlePositions()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00599">ImageItem::updateImageAndHandles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00623">ImageItem::updateImageAndHandles()</a>.</p>
 
 </div>
 </div>
@@ -587,11 +618,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00108">108</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00109">109</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00111">m_parentRotation</a>.</p>
+<p class="reference">References <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00112">m_parentRotation</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem::ImageItem()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00599">ImageItem::updateImageAndHandles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00059">ImageItem::ImageItem()</a>, and <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00623">ImageItem::updateImageAndHandles()</a>.</p>
 
 </div>
 </div>
@@ -611,7 +642,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00142">142</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00143">143</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
 
 </div>
 </div>
@@ -639,7 +670,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem::ImageItem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00059">ImageItem::ImageItem()</a>.</p>
 
 </div>
 </div>
@@ -659,7 +690,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00141">141</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00142">142</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
 
 </div>
 </div>
@@ -679,7 +710,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00145">145</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00146">146</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
 
 </div>
 </div>
@@ -699,12 +730,12 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00146">146</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00147">147</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a105409fc3e6dcd2660005bef7d6ff63a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a105409fc3e6dcd2660005bef7d6ff63a">&#9670;&nbsp;</a></span>sizeChanged</h2>
+<a id="a9bc8d1381fa0ac98c6eb0077b4f9fcb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bc8d1381fa0ac98c6eb0077b4f9fcb4">&#9670;&nbsp;</a></span>sizeChangedFromHandles</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -713,7 +744,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ResizeHandlesItem::sizeChanged </td>
+          <td class="memname">void ResizeHandlesItem::sizeChangedFromHandles </td>
           <td>(</td>
           <td class="paramtype">QRectF&#160;</td>
           <td class="paramname"><em>rect</em></td><td>)</td>
@@ -727,7 +758,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00058">ImageItem::ImageItem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d1e/image__item_8cpp_source.html#l00059">ImageItem::ImageItem()</a>.</p>
 
 </div>
 </div>
@@ -786,9 +817,9 @@ Private Attributes</h2></td></tr>
 <p>updateHandlePositions update handle positions on new parent bounding rect. </p>
 <dl class="section return"><dt>Returns</dt><dd>void. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00154">154</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00155">155</a> of file <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html">resize_handle.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a2ad9d63b69c4a10a5cc9cad923133bc4">Bottom</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a98e5a1c44509157ebcaf46c515c78875">BottomLeft</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a9146bfc669fddc88db2c4d89297d0e9a">BottomRight</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a4f1f6016fc9f3f2353c0cc7c67b292bd">Center</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a945d5e233cf7d6240f6b783b36a374ff">Left</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00224">ResizeHandlesItem::HandleItem::position()</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a92b09c7c48c520c3c55e497875da437c">Right</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008aa4ffdcf0dc1f31b9acaf295d75b51d00">Top</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008ab32beb056fbfe36afbabc6c88c81ab36">TopLeft</a>, and <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a1d85a557894c340c318493f33bfa8efb">TopRight</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a2ad9d63b69c4a10a5cc9cad923133bc4">Bottom</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a98e5a1c44509157ebcaf46c515c78875">BottomLeft</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a9146bfc669fddc88db2c4d89297d0e9a">BottomRight</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a4f1f6016fc9f3f2353c0cc7c67b292bd">Center</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a945d5e233cf7d6240f6b783b36a374ff">Left</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00232">ResizeHandlesItem::HandleItem::position()</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a92b09c7c48c520c3c55e497875da437c">Right</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008aa4ffdcf0dc1f31b9acaf295d75b51d00">Top</a>, <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008ab32beb056fbfe36afbabc6c88c81ab36">TopLeft</a>, and <a class="el" href="../../d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a1d85a557894c340c318493f33bfa8efb">TopRight</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00043">ResizeHandlesItem()</a>, and <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00079">setParentRect()</a>.</p>
 
@@ -815,9 +846,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00107">107</a> of file <a class="el" href="../../db/d8d/resize__handle_8h_source.html">resize_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00108">108</a> of file <a class="el" href="../../db/d8d/resize__handle_8h_source.html">resize_handle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00093">parentIsLocked()</a>, and <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00043">ResizeHandlesItem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00094">parentIsLocked()</a>, and <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00043">ResizeHandlesItem()</a>.</p>
 
 </div>
 </div>
@@ -841,9 +872,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00109">109</a> of file <a class="el" href="../../db/d8d/resize__handle_8h_source.html">resize_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00110">110</a> of file <a class="el" href="../../db/d8d/resize__handle_8h_source.html">resize_handle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00087">setLockAspectRatio()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00088">setLockAspectRatio()</a>.</p>
 
 </div>
 </div>
@@ -867,9 +898,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00113">113</a> of file <a class="el" href="../../db/d8d/resize__handle_8h_source.html">resize_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00114">114</a> of file <a class="el" href="../../db/d8d/resize__handle_8h_source.html">resize_handle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00478">ResizeHandlesItem::HandleItem::limitPosition()</a>, and <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00115">setLimitDimensions()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00486">ResizeHandlesItem::HandleItem::limitPosition()</a>, and <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00116">setLimitDimensions()</a>.</p>
 
 </div>
 </div>
@@ -893,9 +924,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00112">112</a> of file <a class="el" href="../../db/d8d/resize__handle_8h_source.html">resize_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00113">113</a> of file <a class="el" href="../../db/d8d/resize__handle_8h_source.html">resize_handle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00478">ResizeHandlesItem::HandleItem::limitPosition()</a>, and <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00115">setLimitDimensions()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00486">ResizeHandlesItem::HandleItem::limitPosition()</a>, and <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00116">setLimitDimensions()</a>.</p>
 
 </div>
 </div>
@@ -919,9 +950,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00110">110</a> of file <a class="el" href="../../db/d8d/resize__handle_8h_source.html">resize_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00111">111</a> of file <a class="el" href="../../db/d8d/resize__handle_8h_source.html">resize_handle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00203">ResizeHandlesItem::HandleItem::HandleItem()</a>, and <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00093">parentIsLocked()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00211">ResizeHandlesItem::HandleItem::HandleItem()</a>, and <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00094">parentIsLocked()</a>.</p>
 
 </div>
 </div>
@@ -945,9 +976,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00108">108</a> of file <a class="el" href="../../db/d8d/resize__handle_8h_source.html">resize_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00109">109</a> of file <a class="el" href="../../db/d8d/resize__handle_8h_source.html">resize_handle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00093">parentIsLocked()</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00043">ResizeHandlesItem()</a>, and <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00079">setParentRect()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00094">parentIsLocked()</a>, <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00043">ResizeHandlesItem()</a>, and <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00079">setParentRect()</a>.</p>
 
 </div>
 </div>
@@ -971,9 +1002,35 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00111">111</a> of file <a class="el" href="../../db/d8d/resize__handle_8h_source.html">resize_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00112">112</a> of file <a class="el" href="../../db/d8d/resize__handle_8h_source.html">resize_handle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00108">setParentRotation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00109">setParentRotation()</a>.</p>
+
+</div>
+</div>
+<a id="a047baee51c5c33a708e18106155cb0c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a047baee51c5c33a708e18106155cb0c8">&#9670;&nbsp;</a></span>m_sizeChangedExternally</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ResizeHandlesItem::m_sizeChangedExternally</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../db/d8d/resize__handle_8h_source.html#l00116">116</a> of file <a class="el" href="../../db/d8d/resize__handle_8h_source.html">resize_handle.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/daa/resize__handle_8cpp_source.html#l00079">setParentRect()</a>.</p>
 
 </div>
 </div>

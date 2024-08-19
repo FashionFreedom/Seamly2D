@@ -8,8 +8,6 @@ var dir_7e8ff2031a5a716e38917818906ccef3 =
     [ "image_item.h", "d1/d8d/image__item_8h.html", [
       [ "ImageItem", "d6/da8/classImageItem.html", "d6/da8/classImageItem" ]
     ] ],
-    [ "image_tool.cpp", "d9/da3/image__tool_8cpp.html", null ],
-    [ "image_tool.h", "d0/dbf/image__tool_8h.html", [
-      [ "ImageTool", "df/d5b/classImageTool.html", "df/d5b/classImageTool" ]
-    ] ]
+    [ "image_tool.cpp", "d9/da3/image__tool_8cpp.html", "d9/da3/image__tool_8cpp" ],
+    [ "image_tool.h", "d0/dbf/image__tool_8h.html", "d0/dbf/image__tool_8h" ]
 ];

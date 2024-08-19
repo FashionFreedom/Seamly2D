@@ -476,6 +476,7 @@ var hierarchy =
         [ "AddDraftBlock", "d2/d4d/classAddDraftBlock.html", null ],
         [ "AddGroup", "d2/d67/classAddGroup.html", null ],
         [ "AddGroupItem", "da/d3a/classAddGroupItem.html", null ],
+        [ "AddImage", "df/d11/classAddImage.html", null ],
         [ "AddPiece", "dc/d9d/classAddPiece.html", null ],
         [ "AddToCalc", "d6/db3/classAddToCalc.html", null ],
         [ "DelGroup", "d5/dbd/classDelGroup.html", null ],

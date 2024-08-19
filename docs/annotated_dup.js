@@ -75,6 +75,7 @@ var annotated_dup =
     [ "AddDraftBlock", "d2/d4d/classAddDraftBlock.html", "d2/d4d/classAddDraftBlock" ],
     [ "AddGroup", "d2/d67/classAddGroup.html", "d2/d67/classAddGroup" ],
     [ "AddGroupItem", "da/d3a/classAddGroupItem.html", "da/d3a/classAddGroupItem" ],
+    [ "AddImage", "df/d11/classAddImage.html", "df/d11/classAddImage" ],
     [ "AddPiece", "dc/d9d/classAddPiece.html", "dc/d9d/classAddPiece" ],
     [ "AddToCalc", "d6/db3/classAddToCalc.html", "d6/db3/classAddToCalc" ],
     [ "AddToGroupDialog", "d1/dde/classAddToGroupDialog.html", "d1/dde/classAddToGroupDialog" ],
