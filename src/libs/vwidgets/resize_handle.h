@@ -67,7 +67,7 @@ private:
 
             ResizeHandlesItem *m_parent;
             Position           m_handlePosition;
-            bool               m_isHovered;
+            bool               m_handleIsHighlighted;
             qreal              m_scalingFactor;
             qreal              m_minDimension;
             qreal              m_maxDimension;
@@ -98,8 +98,9 @@ public:
 
 
 signals:
-    void               sizeChanged(QRectF rect);
+    void               sizeChangedFromHandles(QRectF rect);
     void               setStatusMessage(QString message);
+    void               imageNeedsSave();
 
 private:
     void               updateHandlePositions();
@@ -111,6 +112,8 @@ private:
     qreal              m_parentRotation;
     qreal              m_minDimension;
     qreal              m_maxDimension;
+
+    bool               m_sizeChangedExternally;
 };
 
 #endif //RESIZE_HANDLE_H

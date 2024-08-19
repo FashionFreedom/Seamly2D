@@ -36,11 +36,41 @@
 #include "image_item.h"
 #include "../vpropertyexplorer/checkablemessagebox.h"
 
+#include "../../vtools/undocommands/deltool.h"
+#include "../../vtools/undocommands/savetooloptions.h"
+#include "../../vtools/undocommands/addimage.h"
+
+
 Q_LOGGING_CATEGORY(vImageTool, "v.imageTool")
 
-bool ImageTool::m_firstImportImage = true;
+
+//---------------------------------------------------------------------------------------------------------------------
+QString getImageFilename(QWidget *parent)
+{
+    const QString filter = QObject::tr("Images") + QLatin1String(" (*.bmp *.jpg *.png *.svg *.tf);;") +
+                           "BMP" + QLatin1String(" (*.bmp);;") +
+                           "JPG" + QLatin1String(" (*.jpg);;") +
+                           "PNG" + QLatin1String(" (*.png);;") +
+                           "SVG" + QLatin1String(" (*.svg);;") +
+                           "TIF" + QLatin1String(" (*.tf)");
+
+    const QString path = qApp->Seamly2DSettings()->getImageFilePath();
+
+    bool usedNotExistedDir = false;
+    QDir directory(path);
+    if (!directory.exists())
+    {
+        usedNotExistedDir = directory.mkpath(".");
+    }
+
+    const QString filename = QFileDialog::getOpenFileName(parent, QObject::tr("Open Image File"), path, filter, nullptr,
+                                                          QFileDialog::DontUseNativeDialog);
+
+    return filename;
+}
 
 
+//Constructor called from GUI
 ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene *draftScene, QString filename)
     : QObject(parent),
     m_doc(doc),
@@ -61,30 +91,69 @@ ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene 
     image.filename = filename;
     image.units = qApp->patternUnit();
 
+    image.id = VContainer::getNextId();
+
     addImage();
 }
 
-
-ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene *draftScene, DraftImage image)
+//Constructor called when file is full-parsed
+ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene *draftScene, DraftImage img)
     : QObject(parent),
-    image(image),
+    image(img),
     m_doc(doc),
     m_draftScene(draftScene)
 {
     qCDebug(vImageTool, "Image filename: %s", qUtf8Printable(image.filename));
 
-    if (image.filename.isEmpty())
-    {
-        qCDebug(vImageTool, "Can't load image");
-        QMessageBox::critical(nullptr, tr("Import Image"), tr("Could not load the image."), QMessageBox::Ok);
-        return;
-    }
+    QFileInfo fileInfo(image.filename);
 
-    QFileInfo f(image.filename);
+    if (!fileInfo.exists())
+    {
+        const QString text = tr("The image <br/><br/> <b>%1</b> <br/><br/> could not be found. Do you "
+                                "want to update the file location?").arg(image.filename);
+        QMessageBox::StandardButton result = QMessageBox::question(nullptr, tr("Loading image"), text,
+                                                                   QMessageBox::Yes | QMessageBox::No,
+                                                                   QMessageBox::Yes);
+        if (result == QMessageBox::No)
+        {
+            return;
+        }
+        else
+        {
+            bool askAgain = true;
+            while(askAgain)
+            {
+                image.filename = getImageFilename(nullptr);
+                if (image.filename.isEmpty())
+                {
+                    qCDebug(vImageTool, "No image selected");
+                    QMessageBox::critical(nullptr, tr("Import Image"), tr("No image was selected..."), QMessageBox::Ok);
+                    continue;
+                }
+
+                QImageReader imageReader(image.filename);
+
+                if(!imageReader.canRead())
+                {
+                    qCDebug(vImageTool, "Can't read image");
+                    QMessageBox::critical(nullptr, tr("Import Image"), tr("Could not read the image.") + "\n" + tr("File may be corrupted..."), QMessageBox::Ok);
+                    continue;
+                }
+                askAgain = false;
+            }
+            image.name = fileInfo.baseName();
+
+            QDomElement domElement = m_doc->elementById(image.id, VAbstractPattern::TagDraftImage);
+            QDomElement newDomElement = domElement.cloneNode().toElement();
+            m_doc->SetAttribute(newDomElement, VAbstractPattern::AttrName,  image.name);
+            m_doc->SetAttribute(newDomElement, VAbstractPattern::AttrSource, image.filename);
+            domElement.parentNode().replaceChild(newDomElement, domElement);
+        }
+    }
 
     if (image.name.isEmpty())
     {
-        image.name = f.baseName();
+        image.name = fileInfo.baseName();
     }
 
     addImage();
@@ -95,28 +164,11 @@ void  ImageTool::addImage()
 {
     QImageReader imageReader(image.filename);
 
-    image.id = VContainer::getNextId();
-
     if(!imageReader.canRead())
     {
         qCDebug(vImageTool, "Can't read image");
         QMessageBox::critical(nullptr, tr("Import Image"), tr("Could not read the image.") + "\n" + tr("File may be corrupted..."), QMessageBox::Ok);
         return;
-    }
-
-    image.pixmap = QPixmap::fromImageReader(&imageReader);
-
-    if(image.pixmap.isNull())
-    {
-        qCDebug(vImageTool, "Can't read image");
-        QMessageBox::critical(nullptr, tr("Import Image"), tr("Could not read the image.") + "\n" + tr("File may be corrupted or empty..."), QMessageBox::Ok);
-        return;
-    }
-
-    if (image.width == 0 || image.height == 0)
-    {
-        image.width  = image.pixmap.width();
-        image.height = image.pixmap.height();
     }
 
     imageItem = new ImageItem(this, m_doc, image);
@@ -129,13 +181,7 @@ void  ImageTool::addImage()
     connect(imageItem, &ImageItem::deleteImage, this, &ImageTool::handleDeleteImage);
     //connect(item, &ImageItem::imageSelected, this, &MainWindow::handleImageSelected);
     connect(imageItem, &ImageItem::setStatusMessage, this, [this](QString message) {emit setStatusMessage(message);});
-
-
-    if(m_firstImportImage)
-    {
-        qCDebug(vImageTool, "This is the first time an image is loaded.");
-        InfoUnsavedImages();
-    }
+    connect(imageItem, &ImageItem::imageNeedsSave, this, &ImageTool::saveChanges);
 
     creationWasSuccessful = true;
 }
@@ -171,9 +217,11 @@ void ImageTool::handleDeleteImage(quint32 id)
 
     if (deleteConfirmed)
     {
-        m_doc->removeBackgroundImage(id);
         imageItem->deleteImageItem();
-        deleteLater();
+
+        DelTool *delTool = new DelTool(m_doc, id);
+        connect(delTool, &DelTool::NeedFullParsing, m_doc, &VAbstractPattern::NeedFullParsing);
+        qApp->getUndoStack()->push(delTool);
     }
 }
 
@@ -191,24 +239,64 @@ void ImageTool::handleImageSelected(quint32 id)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief InfoUnsavedImages is called when the user imports his first image.
+ * @brief addToFile add tag with informations about image into file.
  */
-void ImageTool::InfoUnsavedImages()
+void ImageTool::addToFile()
 {
-        QScopedPointer<QMessageBox> messageBox(new QMessageBox(QMessageBox::Information,
-                                                               tr("Images will not be saved"),
-                                                               tr("Please note that the images can not be saved and that they are not affected "
-                                                                  "by the undo and redo functions in the current version of the software.\n\n"
-                                                                  "You may want to take a screenshot of the image properties dialog before closing the software "
-                                                                  "to be able to recreate identically the image when opening the software again."),
-                                                               QMessageBox::NoButton,
-                                                               nullptr,Qt::Sheet));
+    QDomElement domElement = m_doc->createElement(VAbstractPattern::TagDraftImage);
 
-        messageBox->setWindowModality(Qt::ApplicationModal);
-        messageBox->setWindowFlags(Qt::WindowFlags() & ~Qt::WindowContextHelpButtonHint
-                                   & ~Qt::WindowMaximizeButtonHint
-                                   & ~Qt::WindowMinimizeButtonHint);
+    saveOptions(domElement);
 
-        messageBox->exec();
-        m_firstImportImage = false;
+    AddImage *cmd = new AddImage(domElement, m_doc);
+    connect(cmd, &AddImage::NeedFullParsing, m_doc, &VAbstractPattern::NeedFullParsing);
+    qApp->getUndoStack()->push(cmd);
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+void ImageTool::saveOptions(QDomElement &tag)
+{
+    image = imageItem->getImage();
+
+    m_doc->SetAttribute(tag, VDomDocument::AttrId, image.id);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrName,  image.name);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrSource, image.filename);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrWidth,  image.width);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrHeight, image.height);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrUnits,  UnitsToStr(image.units));
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrXPos,   image.xPos);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrYPos,   image.yPos);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrOpacity, image.opacity);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrRotation, image.rotation);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrAspectRatio, image.aspectLocked);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrVisible, image.visible);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrLocked, image.locked);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrBasepoint, image.basepoint);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrOrder, qreal(image.order));
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrXOffset, image.xOrigin);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrYOffset, image.yOrigin);
+}
+
+void ImageTool::saveChanges()
+{
+    qCDebug(vImageTool, "Saving image options");
+
+    quint32 id = imageItem->getImage().id;
+    QDomElement domElement = m_doc->elementById(id, VAbstractPattern::TagDraftImage);
+    if (domElement.isElement())
+    {
+        QDomElement newDomElement = domElement.cloneNode().toElement();
+
+        saveOptions(newDomElement);
+
+        SaveToolOptions *saveOptions = new SaveToolOptions(domElement, newDomElement, m_doc, id);
+        connect(saveOptions, &SaveToolOptions::NeedLiteParsing, m_doc, &VAbstractPattern::LiteParseTree);
+        qApp->getUndoStack()->push(saveOptions);
+    }
+    else
+    {
+        qCDebug(vUndo, "Can't get node by id = %u.", id);
+        return;
+    }
+
 }
