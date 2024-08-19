@@ -1768,7 +1768,6 @@ void MainWindow::handleImageTool()
     ui->importImage_ToolButton->setChecked(false);
 }
 
-
 //Pieces
 //---------------------------------------------------------------------------------------------------------------------
 /**

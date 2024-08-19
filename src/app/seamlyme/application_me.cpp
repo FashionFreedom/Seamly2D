@@ -261,10 +261,15 @@ ApplicationME::ApplicationME(int &argc, char **argv)
     setOrganizationDomain(VER_COMPANYDOMAIN_STR);
     // Setting the Application version
     setApplicationVersion(APP_VERSION_STR);
-    // We have been running SeamlyMe in two different cases.
+
+    // We have been running SeamlyMe in two different cases on macOS.
     // The first inside own bundle where info.plist is works fine, but the second,
     // when we run inside Seamly2D's bundle, require direct setting the icon.
+#if defined(Q_OS_MAC)
+    setWindowIcon(QIcon(":/seamlymeicon/1024x1024/logo_mac.png"));
+#else //defined(Q_OS_MAC)
     setWindowIcon(QIcon(":/seamlymeicon/64x64/logo.png"));
+#endif
 }
 
 //---------------------------------------------------------------------------------------------------------------------
