@@ -1,7 +1,7 @@
 /******************************************************************************
- **  @file   image_tool.h
+ **  @file   addimage.h
  **  @author Evans PERRET
- **  @date   April 21, 2024
+ **  @date   July 28, 2024
  **
  **  @brief
  **  @copyright
@@ -25,51 +25,29 @@
  **
  *****************************************************************************/
 
-#ifndef IMAGE_TOOL_H
-#define IMAGE_TOOL_H
+#ifndef ADDIMAGE_H
+#define ADDIMAGE_H
 
+#include <qcompilerdetection.h>
+#include <QDomElement>
+#include <QMetaObject>
 #include <QObject>
 #include <QString>
-#include <QDomElement>
+#include <QtGlobal>
 
-#include "../vmisc/def.h"
-#include "../ifc/xml/vabstractpattern.h"
-#include "vmaingraphicsscene.h"
+#include "vundocommand.h"
 
-QString          getImageFilename(QWidget *parent);
-
-
-class ImageTool : public QObject
+class AddImage : public VUndoCommand
 {
     Q_OBJECT
-
 public:
-    explicit ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene *draftScene, QString filename);
-    explicit ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene *draftScene, DraftImage image);
-
-    bool        creationWasSuccessful=false;
-
-    DraftImage  image;
-    ImageItem*  imageItem;
-
-    void             addToFile();
-
-signals:
-    void             setStatusMessage(QString message);
-
-protected slots:
-    void        handleDeleteImage(quint32 id);
-    void        handleImageSelected(quint32 id);
+    AddImage(const QDomElement &xml, VAbstractPattern *doc, QUndoCommand *parent = nullptr);
+    virtual  ~AddImage();
+    virtual   void  undo() Q_DECL_OVERRIDE; // cppcheck-suppress unusedFunction
+    virtual   void  redo() Q_DECL_OVERRIDE; // cppcheck-suppress unusedFunction
 
 private:
-    VAbstractPattern    *m_doc;
-    VMainGraphicsScene  *m_draftScene;
-    QDomElement         m_oldDomElement;
-
-    void        addImage();
-
-    void             saveOptions(QDomElement &tag);
-    void             saveChanges();
+    Q_DISABLE_COPY(AddImage)
 };
 
-#endif // IMAGE_TOOL_H
+#endif // ADDIMAGE_H

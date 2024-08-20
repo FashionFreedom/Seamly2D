@@ -174,6 +174,13 @@
     </message>
 </context>
 <context>
+    <name>AddImage</name>
+    <message>
+        <source>add image</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddPiece</name>
     <message>
         <source>add piece</source>
@@ -4826,26 +4833,12 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>File may be corrupted or empty...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Confirm deletion</source>
         <translation type="unfinished">Bevestig verwijdering</translation>
     </message>
     <message>
         <source>Do you really want to delete?</source>
         <translation type="unfinished">Wil je dit echt verwijderen?</translation>
-    </message>
-    <message>
-        <source>Images will not be saved</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please note that the images can not be saved and that they are not affected by the undo and redo functions in the current version of the software.
-
-You may want to take a screenshot of the image properties dialog before closing the software to be able to recreate identically the image when opening the software again.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12922,6 +12915,10 @@ load in SeamlyME as usual.
     <message>
         <source>Error creating or updating union pieces</source>
         <translation>Fout bij het maken of bijwerken van verenigde patroondelen</translation>
+    </message>
+    <message>
+        <source>Image_name</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

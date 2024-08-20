@@ -174,6 +174,13 @@
     </message>
 </context>
 <context>
+    <name>AddImage</name>
+    <message>
+        <source>add image</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddPiece</name>
     <message>
         <source>add piece</source>
@@ -4824,28 +4831,12 @@ Possibly the file is already being downloaded.</source>
         <translation>Die Datei könnte beschädigt sein...</translation>
     </message>
     <message>
-        <source>File may be corrupted or empty...</source>
-        <translation>Die Datei kann beschädigt oder leer sein...</translation>
-    </message>
-    <message>
         <source>Confirm deletion</source>
         <translation>Löschvorgang bestätigen</translation>
     </message>
     <message>
         <source>Do you really want to delete?</source>
         <translation>Möchtest Du wirklich löschen?</translation>
-    </message>
-    <message>
-        <source>Images will not be saved</source>
-        <translation>Die Bilder werden nicht gespeichert</translation>
-    </message>
-    <message>
-        <source>Please note that the images can not be saved and that they are not affected by the undo and redo functions in the current version of the software.
-
-You may want to take a screenshot of the image properties dialog before closing the software to be able to recreate identically the image when opening the software again.</source>
-        <translation>Bitte beachten Sie, dass die Bilder nicht gespeichert werden können und dass sie von den Rückgängig- und Wiederherstellungsfunktionen in der aktuellen Version der Software nicht betroffen sind.
-
-Es empfiehlt sich, vor dem Schließen der Software einen Screenshot des Dialogs mit den Bildeigenschaften zu machen, damit Sie das Bild beim erneuten Öffnen der Software identisch wiederherstellen können.</translation>
     </message>
 </context>
 <context>
@@ -5305,7 +5296,6 @@ Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLIC
     </message>
     <message>
         <source>Margins go beyond printing.
-
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12936,6 +12926,10 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Error creating or updating union pieces</source>
         <translation>Fehler beim Anlegen oder Aktualisieren der Verbindungsschnittteile</translation>
+    </message>
+    <message>
+        <source>Image_name</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

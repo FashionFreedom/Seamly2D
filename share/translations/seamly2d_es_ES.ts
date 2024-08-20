@@ -174,6 +174,13 @@
     </message>
 </context>
 <context>
+    <name>AddImage</name>
+    <message>
+        <source>add image</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddPiece</name>
     <message>
         <source>add piece</source>
@@ -4865,28 +4872,12 @@ Possibly the file is already being downloaded.</source>
         <translation>El archivo puede estar dañado...</translation>
     </message>
     <message>
-        <source>File may be corrupted or empty...</source>
-        <translation>El archivo puede estar dañado o vacío...</translation>
-    </message>
-    <message>
         <source>Confirm deletion</source>
         <translation>Confirmar la eliminación</translation>
     </message>
     <message>
         <source>Do you really want to delete?</source>
         <translation>¿Realmente quiere eliminarlo?</translation>
-    </message>
-    <message>
-        <source>Images will not be saved</source>
-        <translation>Las imágenes no se guardarán</translation>
-    </message>
-    <message>
-        <source>Please note that the images can not be saved and that they are not affected by the undo and redo functions in the current version of the software.
-
-You may want to take a screenshot of the image properties dialog before closing the software to be able to recreate identically the image when opening the software again.</source>
-        <translation>Tenga en cuenta que las imágenes no se pueden guardar y que no se ven afectadas por las funciones de deshacer y rehacer de la versión actual del software.
-
-Es posible que desee tomar una captura de pantalla del cuadro de diálogo de propiedades de la imagen antes de cerrar el software para poder recrear idénticamente la imagen al abrir de nuevo el software.</translation>
     </message>
 </context>
 <context>
@@ -5346,7 +5337,6 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
     </message>
     <message>
         <source>Margins go beyond printing.
-
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12994,6 +12984,10 @@ load in SeamlyME as usual.
     <message>
         <source>Error creating or updating union pieces</source>
         <translation>Error al crear o actualizar la unión de piezas</translation>
+    </message>
+    <message>
+        <source>Image_name</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
