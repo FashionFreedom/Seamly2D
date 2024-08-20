@@ -1457,11 +1457,11 @@ void DialogTool::FillCombo(QComboBox *box, GOType gType, FillComboBox rule, cons
 //  - Positions include Top left, Top right, Center, Bottom Left, and Botton right corner of screen.
 void  DialogTool::setDialogPosition()
 {
-    int   position   = qApp->Settings()->getDialogPosition();
+    int position = qApp->Settings()->getDialogPosition();
     QRect screenRect = m_screen->availableGeometry();
     QRect dialogRect = frameGeometry();
 
-    switch(position)
+    switch(static_cast<DialogPosition>(position))
     {
         case DialogPosition::TopLeft:
         {
