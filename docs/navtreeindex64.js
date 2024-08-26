@@ -1,5 +1,10 @@
 var NAVTREEINDEX64 =
 {
+"df/d94/classSavePiecePathOptions.html#af847b540978a07a6f52a27459ec54d8b":[1,0,173,1],
+"df/d94/vnodespline_8cpp.html":[2,0,0,1,13,1,1,11],
+"df/d94/vnodespline_8cpp_source.html":[2,0,0,1,13,1,1,11],
+"df/d95/vemptyproperty_8h.html":[2,0,0,1,11,0,16],
+"df/d95/vemptyproperty_8h_source.html":[2,0,0,1,11,0,16],
 "df/d98/vnodearc_8h.html":[2,0,0,1,13,1,1,6],
 "df/d98/vnodearc_8h_source.html":[2,0,0,1,13,1,1,6],
 "df/d9a/classDialogBisector.html":[1,0,42],
@@ -244,10 +249,5 @@ var NAVTREEINDEX64 =
 "df/de1/classVPiecePath.html#af9920700731879dc087d68611edaf6de":[1,0,374,12],
 "df/de1/classVPiecePath.html#afa5aa57c418da11a6dace9d51bf8529b":[1,0,374,30],
 "df/de1/classVPiecePath.html#afde87be9430a339c040e3ac6516c8d8c":[1,0,374,15],
-"df/de5/classVLayoutPiece.html":[1,0,341],
-"df/de5/classVLayoutPiece.html#a003008a1860e4422feedad37a556f40d":[1,0,341,61],
-"df/de5/classVLayoutPiece.html#a04c7a5fbb40d796fb9b507e90141df63":[1,0,341,46],
-"df/de5/classVLayoutPiece.html#a0a4897a627b04d016aac5b2c1f9b746e":[1,0,341,16],
-"df/de5/classVLayoutPiece.html#a0c182856cae87f3640ea823dd84fec93":[1,0,341,58],
-"df/de5/classVLayoutPiece.html#a0d84b83675502744bbfb5eeb68ca8d16":[1,0,341,7]
+"df/de5/classVLayoutPiece.html":[1,0,341]
 };

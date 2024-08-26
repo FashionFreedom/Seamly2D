@@ -1,5 +1,10 @@
 var NAVTREEINDEX62 =
 {
+"de/dc8/intersect__circletangent__visual_8h.html":[2,0,0,1,13,3,0,6],
+"de/dc8/intersect__circletangent__visual_8h_source.html":[2,0,0,1,13,3,0,6],
+"de/dca/variables_8h.html":[2,0,0,1,10,10],
+"de/dca/variables_8h_source.html":[2,0,0,1,10,10],
+"de/dcf/classPreferencesPatternPage.html":[1,0,157],
 "de/dcf/classPreferencesPatternPage.html#a069067f75cf85e6ef62f0b39868f7ad7":[1,0,157,10],
 "de/dcf/classPreferencesPatternPage.html#a07ffb18d00d0f7d910889a9003f7f0d7":[1,0,157,8],
 "de/dcf/classPreferencesPatternPage.html#a14306db5b8c63a78585b82a7034b0672":[1,0,157,5],
@@ -244,10 +249,5 @@ var NAVTREEINDEX62 =
 "df/d51/qmudef_8cpp.html#a4c03a92b86f91e7e4ab59a095ad64226a171ddac284aabc7eb158d7e72effe15c":[2,0,0,1,2,0,0,1],
 "df/d51/qmudef_8cpp.html#a4c03a92b86f91e7e4ab59a095ad64226a3e5bdd94d86f35221254965300f96a80":[2,0,0,1,2,0,0,2],
 "df/d51/qmudef_8cpp.html#a4c03a92b86f91e7e4ab59a095ad64226a45c02701e464a28017b4f94128d10e77":[2,0,0,1,2,0,0,0],
-"df/d51/qmudef_8cpp.html#a4c03a92b86f91e7e4ab59a095ad64226a4d2312d27fa78117b16bc1ba15da28a9":[2,0,0,1,2,0,0,4],
-"df/d51/qmudef_8cpp.html#a4c03a92b86f91e7e4ab59a095ad64226ae0975713475b374678e591a1f220157e":[2,0,0,1,2,0,0,3],
-"df/d51/qmudef_8cpp.html#a57056eb53637c7add1c67d688c884585":[2,0,0,1,2,0,4],
-"df/d51/qmudef_8cpp.html#a5d74787dedbc4e11c1ab15bf487e61f8":[2,0,0,1,2,0,1],
-"df/d51/qmudef_8cpp.html#a5d74787dedbc4e11c1ab15bf487e61f8a08a60d7f2229646a3e0950e80bd84aa4":[2,0,0,1,2,0,1,3],
-"df/d51/qmudef_8cpp.html#a5d74787dedbc4e11c1ab15bf487e61f8a1ff76aa808bb8209a13fcdbaf330587e":[2,0,0,1,2,0,1,0]
+"df/d51/qmudef_8cpp.html#a4c03a92b86f91e7e4ab59a095ad64226a4d2312d27fa78117b16bc1ba15da28a9":[2,0,0,1,2,0,0,4]
 };

@@ -1633,54 +1633,55 @@ var sectionId = 'dynsection-0';
 <g id="node38" class="node">
 <title>Node38</title>
 <g id="a_node38"><a xlink:href="../../d1/d7d/classEditFormulaDialog.html" target="_top" xlink:title="The EditFormulaDialog class dialog for editing wrong formula.">
-<polygon fill="white" stroke="black" points="5935.5,-94 5935.5,-536 6084.5,-536 6084.5,-94 5935.5,-94"/>
-<text text-anchor="middle" x="6010" y="-524" font-family="Helvetica,sans-Serif" font-size="10.00">EditFormulaDialog</text>
-<polyline fill="none" stroke="black" points="5935.5,-517 6084.5,-517 "/>
-<text text-anchor="start" x="5943.5" y="-505" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="5943.5" y="-494" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_formula</text>
-<text text-anchor="start" x="5943.5" y="-483" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_undoFormula</text>
-<text text-anchor="start" x="5943.5" y="-472" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_checkZero</text>
-<text text-anchor="start" x="5943.5" y="-461" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_checkLessThanZero</text>
-<text text-anchor="start" x="5943.5" y="-450" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_postfix</text>
-<text text-anchor="start" x="5943.5" y="-439" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_restoreCursor</text>
-<polyline fill="none" stroke="black" points="5935.5,-432 6084.5,-432 "/>
-<text text-anchor="start" x="5943.5" y="-420" font-family="Helvetica,sans-Serif" font-size="10.00">+ EditFormulaDialog()</text>
-<text text-anchor="start" x="5943.5" y="-409" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~EditFormulaDialog()</text>
-<text text-anchor="start" x="5943.5" y="-398" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormula()</text>
-<text text-anchor="start" x="5943.5" y="-387" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormula()</text>
-<text text-anchor="start" x="5943.5" y="-376" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCheckZero()</text>
-<text text-anchor="start" x="5943.5" y="-365" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCheckLessThanZero()</text>
-<text text-anchor="start" x="5943.5" y="-354" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPostfix()</text>
-<text text-anchor="start" x="5943.5" y="-343" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogAccepted()</text>
-<text text-anchor="start" x="5943.5" y="-332" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogRejected()</text>
-<text text-anchor="start" x="5943.5" y="-321" font-family="Helvetica,sans-Serif" font-size="10.00">+ EvalFormula()</text>
-<text text-anchor="start" x="5943.5" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00">+ valueChanged()</text>
-<text text-anchor="start" x="5943.5" y="-299" font-family="Helvetica,sans-Serif" font-size="10.00">+ tabChanged()</text>
-<text text-anchor="start" x="5943.5" y="-288" font-family="Helvetica,sans-Serif" font-size="10.00">+ insertVariable()</text>
-<text text-anchor="start" x="5943.5" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">+ insertValue()</text>
-<text text-anchor="start" x="5943.5" y="-266" font-family="Helvetica,sans-Serif" font-size="10.00">+ measurements()</text>
-<text text-anchor="start" x="5943.5" y="-255" font-family="Helvetica,sans-Serif" font-size="10.00">+ lineLengths()</text>
-<text text-anchor="start" x="5943.5" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">+ arcRadii()</text>
-<text text-anchor="start" x="5943.5" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">and 6 more...</text>
-<text text-anchor="start" x="5943.5" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00"># CheckState()</text>
-<text text-anchor="start" x="5943.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
-<text text-anchor="start" x="5943.5" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00"># showEvent()</text>
-<text text-anchor="start" x="5943.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00"># resizeEvent()</text>
-<text text-anchor="start" x="5943.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initializeVariables()</text>
-<text text-anchor="start" x="5943.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showVariable()</text>
-<text text-anchor="start" x="5943.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showMeasurements()</text>
-<text text-anchor="start" x="5943.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showFunctions()</text>
-<text text-anchor="start" x="5943.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setDescription()</text>
-<text text-anchor="start" x="5943.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; clearFormula()</text>
-<text text-anchor="start" x="5943.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; undoFormula()</text>
-<text text-anchor="start" x="5943.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; filterVariables()</text>
+<polygon fill="white" stroke="black" points="5935.5,-88.5 5935.5,-541.5 6084.5,-541.5 6084.5,-88.5 5935.5,-88.5"/>
+<text text-anchor="middle" x="6010" y="-529.5" font-family="Helvetica,sans-Serif" font-size="10.00">EditFormulaDialog</text>
+<polyline fill="none" stroke="black" points="5935.5,-522.5 6084.5,-522.5 "/>
+<text text-anchor="start" x="5943.5" y="-510.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="5943.5" y="-499.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_formula</text>
+<text text-anchor="start" x="5943.5" y="-488.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_undoFormula</text>
+<text text-anchor="start" x="5943.5" y="-477.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_checkZero</text>
+<text text-anchor="start" x="5943.5" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_checkLessThanZero</text>
+<text text-anchor="start" x="5943.5" y="-455.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_postfix</text>
+<text text-anchor="start" x="5943.5" y="-444.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_restoreCursor</text>
+<text text-anchor="start" x="5943.5" y="-433.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_source</text>
+<polyline fill="none" stroke="black" points="5935.5,-426.5 6084.5,-426.5 "/>
+<text text-anchor="start" x="5943.5" y="-414.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EditFormulaDialog()</text>
+<text text-anchor="start" x="5943.5" y="-403.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~EditFormulaDialog()</text>
+<text text-anchor="start" x="5943.5" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormula()</text>
+<text text-anchor="start" x="5943.5" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormula()</text>
+<text text-anchor="start" x="5943.5" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCheckZero()</text>
+<text text-anchor="start" x="5943.5" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCheckLessThanZero()</text>
+<text text-anchor="start" x="5943.5" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPostfix()</text>
+<text text-anchor="start" x="5943.5" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogAccepted()</text>
+<text text-anchor="start" x="5943.5" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogRejected()</text>
+<text text-anchor="start" x="5943.5" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EvalFormula()</text>
+<text text-anchor="start" x="5943.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ valueChanged()</text>
+<text text-anchor="start" x="5943.5" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ tabChanged()</text>
+<text text-anchor="start" x="5943.5" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ insertVariable()</text>
+<text text-anchor="start" x="5943.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ insertValue()</text>
+<text text-anchor="start" x="5943.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ measurements()</text>
+<text text-anchor="start" x="5943.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ lineLengths()</text>
+<text text-anchor="start" x="5943.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ arcRadii()</text>
+<text text-anchor="start" x="5943.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 6 more...</text>
+<text text-anchor="start" x="5943.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CheckState()</text>
+<text text-anchor="start" x="5943.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
+<text text-anchor="start" x="5943.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showEvent()</text>
+<text text-anchor="start" x="5943.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00"># resizeEvent()</text>
+<text text-anchor="start" x="5943.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initializeVariables()</text>
+<text text-anchor="start" x="5943.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showVariable()</text>
+<text text-anchor="start" x="5943.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showMeasurements()</text>
+<text text-anchor="start" x="5943.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showFunctions()</text>
+<text text-anchor="start" x="5943.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setDescription()</text>
+<text text-anchor="start" x="5943.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; clearFormula()</text>
+<text text-anchor="start" x="5943.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; undoFormula()</text>
+<text text-anchor="start" x="5943.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; filterVariables()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node38 -->
 <g id="edge37" class="edge">
 <title>Node1&#45;&gt;Node38</title>
-<path fill="none" stroke="midnightblue" d="M3828.19,-1004.39C4208.33,-990.07 5612.3,-918.15 5927,-630 5954.55,-604.77 5973.4,-571.57 5986.21,-536.22"/>
+<path fill="none" stroke="midnightblue" d="M3828.19,-1004.39C4208.33,-990.07 5612.3,-918.15 5927,-630 5953.1,-606.11 5971.39,-575.06 5984.13,-541.8"/>
 <polygon fill="none" stroke="midnightblue" points="3827.91,-1000.9 3818.05,-1004.77 3828.17,-1007.9 3827.91,-1000.9"/>
 </g>
 <!-- Node39 -->

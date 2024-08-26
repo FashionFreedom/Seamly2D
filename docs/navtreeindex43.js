@@ -1,5 +1,10 @@
 var NAVTREEINDEX43 =
 {
+"da/dd0/classDialogVariables.html#a3d8e83dedc884152e44611a8c974540b":[1,0,80,4],
+"da/dd0/classDialogVariables.html#a484ad90fdd0f75a1613afc93c24b4ba3":[1,0,80,12],
+"da/dd0/classDialogVariables.html#a5225facf7c66ec63ee374b8db6334e66":[1,0,80,30],
+"da/dd0/classDialogVariables.html#a5854e72c3a398a07f2899194ae3bccbb":[1,0,80,22],
+"da/dd0/classDialogVariables.html#a5e578a03bfb98adec86f1c993f2fe86b":[1,0,80,17],
 "da/dd0/classDialogVariables.html#a6c8e4078ba28a1a44467b04b6db6f6a1":[1,0,80,35],
 "da/dd0/classDialogVariables.html#a6d698e2a171f37272818c1e86baf51ca":[1,0,80,0],
 "da/dd0/classDialogVariables.html#a7251acefe1ab7e151b5348cd06ab7218":[1,0,80,41],
@@ -244,10 +249,5 @@ var NAVTREEINDEX43 =
 "db/d0a/vabstractcubicbezierpath_8cpp_source.html":[2,0,0,1,6,9],
 "db/d11/dialogmirrorbyline_8h.html":[2,0,0,1,13,0,1,42],
 "db/d11/dialogmirrorbyline_8h_source.html":[2,0,0,1,13,0,1,42],
-"db/d11/vformula_8cpp.html":[2,0,0,1,10,13],
-"db/d11/vformula_8cpp_source.html":[2,0,0,1,10,13],
-"db/d14/classQxtPrivate.html":[1,0,166],
-"db/d14/classQxtPrivate.html#a4ce78973fe45d42d57536f4ee068dc79":[1,0,166,6],
-"db/d14/classQxtPrivate.html#a52c65876fecf578bcafed6a34ef5302f":[1,0,166,1],
-"db/d14/classQxtPrivate.html#a795119eb3c84d0788a8c6c24fc440166":[1,0,166,7]
+"db/d11/vformula_8cpp.html":[2,0,0,1,10,13]
 };

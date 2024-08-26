@@ -1,6 +1,6 @@
 var classEditFormulaDialog =
 [
-    [ "EditFormulaDialog", "d1/d7d/classEditFormulaDialog.html#a73b34ee070f104b337e0b5a45e52b28c", null ],
+    [ "EditFormulaDialog", "d1/d7d/classEditFormulaDialog.html#afce436d81a2e1e06b8960e991be90d7d", null ],
     [ "~EditFormulaDialog", "d1/d7d/classEditFormulaDialog.html#a80531d6b3c0f570c34808659dfc870fb", null ],
     [ "arcRadii", "d1/d7d/classEditFormulaDialog.html#aa72dd32486c3832cbb28cb282d26b2f4", null ],
     [ "CheckState", "d1/d7d/classEditFormulaDialog.html#aab8863b0b9841c83d922e68897b641ed", null ],
@@ -40,6 +40,7 @@ var classEditFormulaDialog =
     [ "m_formula", "d1/d7d/classEditFormulaDialog.html#a77c8769dff87afd45a289438ef977625", null ],
     [ "m_postfix", "d1/d7d/classEditFormulaDialog.html#a00a0ff8ed19ea884156de118f7522c8f", null ],
     [ "m_restoreCursor", "d1/d7d/classEditFormulaDialog.html#ac1a00125a492fc3a56dfe389ac518470", null ],
+    [ "m_source", "d1/d7d/classEditFormulaDialog.html#a50e67818db401e7fc6d12e6c8420977b", null ],
     [ "m_undoFormula", "d1/d7d/classEditFormulaDialog.html#a9cd0a0e7dec6f51ce9f873d9e107eb5f", null ],
     [ "ui", "d1/d7d/classEditFormulaDialog.html#acdbbf0fe6f67e253b2bb9f5d82356507", null ]
 ];

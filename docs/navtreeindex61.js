@@ -1,5 +1,10 @@
 var NAVTREEINDEX61 =
 {
+"de/da5/classVNodeDetailData.html#a0f47874be6a46835dfccc945098d1253":[1,0,356,5],
+"de/da5/classVNodeDetailData.html#a14a11e2b7838e38b2baa9bd87cdbf9cd":[1,0,356,1],
+"de/da5/classVNodeDetailData.html#a31e6a898f3ca0e7b80123b1151258e3e":[1,0,356,4],
+"de/da5/classVNodeDetailData.html#a41b980636f948537fcbea62cc14c43c2":[1,0,356,7],
+"de/da5/classVNodeDetailData.html#a42a5998d4380921598e98ea25671c338":[1,0,356,9],
 "de/da5/classVNodeDetailData.html#a444a07ebd724be444719b545abf8c671":[1,0,356,6],
 "de/da5/classVNodeDetailData.html#a652bff55d0b43de41882b9b1dd7c2865":[1,0,356,0],
 "de/da5/classVNodeDetailData.html#a807f808619971c1896d61547606cbbbc":[1,0,356,8],
@@ -244,10 +249,5 @@ var NAVTREEINDEX61 =
 "de/dc5/dialogheight_8cpp.html":[2,0,0,1,13,0,1,31],
 "de/dc5/dialogheight_8cpp_source.html":[2,0,0,1,13,0,1,31],
 "de/dc5/set__piece__color_8cpp.html":[2,0,0,1,13,2,43],
-"de/dc5/set__piece__color_8cpp_source.html":[2,0,0,1,13,2,43],
-"de/dc8/intersect__circletangent__visual_8h.html":[2,0,0,1,13,3,0,6],
-"de/dc8/intersect__circletangent__visual_8h_source.html":[2,0,0,1,13,3,0,6],
-"de/dca/variables_8h.html":[2,0,0,1,10,10],
-"de/dca/variables_8h_source.html":[2,0,0,1,10,10],
-"de/dcf/classPreferencesPatternPage.html":[1,0,157]
+"de/dc5/set__piece__color_8cpp_source.html":[2,0,0,1,13,2,43]
 };

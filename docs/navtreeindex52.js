@@ -1,5 +1,10 @@
 var NAVTREEINDEX52 =
 {
+"dc/de2/classVPE_1_1DoubleSpinboxProperty.html#a8ee2eba69baa743f806343bcbd84ada7":[1,0,2,16,10],
+"dc/de2/classVPE_1_1DoubleSpinboxProperty.html#a9a2cf896d90bd99688d359eaf412717f":[1,0,2,16,7],
+"dc/de2/classVPE_1_1DoubleSpinboxProperty.html#af864a616195a93e5859a736870db5d7e":[1,0,2,16,6],
+"dc/de3/vserializedproperty_8h.html":[2,0,0,1,11,32],
+"dc/de3/vserializedproperty_8h_source.html":[2,0,0,1,11,32],
 "dc/de4/pen_8cpp.html":[2,0,0,1,14,21],
 "dc/de4/pen_8cpp.html#ab049c3231b09759ad421903a1c730d16":[2,0,0,1,14,21,0],
 "dc/de4/pen_8cpp_source.html":[2,0,0,1,14,21],
@@ -244,10 +249,5 @@ var NAVTREEINDEX52 =
 "dd/d25/classIntersectCirclesVisual.html#a97db2bdfbb13010edd2fce40c66ba1d0":[1,0,108,17],
 "dd/d25/classIntersectCirclesVisual.html#ab56269006e2dd8600999f035270fe062":[1,0,108,7],
 "dd/d25/classIntersectCirclesVisual.html#ab740b9fa5dc7cd656ea5af37b24cc762":[1,0,108,8],
-"dd/d25/classIntersectCirclesVisual.html#ad59dcf4afe6dead1e024660aa507aef4":[1,0,108,0],
-"dd/d25/classIntersectCirclesVisual.html#ad7fa1566691e0a3173bc33298d771ccc":[1,0,108,11],
-"dd/d25/classIntersectCirclesVisual.html#ae529cf48c8480d826565b5eb1ba0a55f":[1,0,108,4],
-"dd/d25/classIntersectCirclesVisual.html#ae55d0be557f2295c8e3a9130820adf34":[1,0,108,19],
-"dd/d25/classIntersectCirclesVisual.html#aebd09a215e649109f48eac647df37844":[1,0,108,15],
-"dd/d2a/vlinelength_8h.html":[2,0,0,1,10,1,25]
+"dd/d25/classIntersectCirclesVisual.html#ad59dcf4afe6dead1e024660aa507aef4":[1,0,108,0]
 };

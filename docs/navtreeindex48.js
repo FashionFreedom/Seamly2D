@@ -1,5 +1,10 @@
 var NAVTREEINDEX48 =
 {
+"dc/d08/classVToolSplinePath.html#a1b6903f12da87dc62f9fd5552cee8c06":[1,0,433,28],
+"dc/d08/classVToolSplinePath.html#a1b7944ddf83d0eac242035cce02f1258":[1,0,433,22],
+"dc/d08/classVToolSplinePath.html#a2595d294d9e3ae951cfdcdfff0f2a2b0":[1,0,433,19],
+"dc/d08/classVToolSplinePath.html#a3064157a70402bfaa782b382659e5146":[1,0,433,32],
+"dc/d08/classVToolSplinePath.html#a30e5f4592576ea7a28e092ba867f6d3d":[1,0,433,24],
 "dc/d08/classVToolSplinePath.html#a337aefc086f03ba5cb0accfd83729249":[1,0,433,30],
 "dc/d08/classVToolSplinePath.html#a3df6bb1bd3c20fb6ea8b82bf393341f0":[1,0,433,5],
 "dc/d08/classVToolSplinePath.html#a46e624f3d430621cd344d6066173e38e":[1,0,433,7],
@@ -244,10 +249,5 @@ var NAVTREEINDEX48 =
 "dc/d2b/classVToolLine.html#accf69e397d5358a4c308dc84dfc2111b":[1,0,415,39],
 "dc/d2b/classVToolLine.html#ae89573342d9b54398c76b772c2df056c":[1,0,415,8],
 "dc/d2b/classVToolLine.html#aeecd68f3484c2a7ed929e0db22279adb":[1,0,415,17],
-"dc/d2b/classVToolLine.html#afca6cd48062e3cb7cdf96e21fef39056":[1,0,415,30],
-"dc/d2b/classVToolLine.html#afe42453b4381f735b8d0b73dcb2444b3":[1,0,415,19],
-"dc/d2b/libs_2vtools_2stable_8cpp.html":[2,0,0,1,13,4],
-"dc/d2b/libs_2vtools_2stable_8cpp_source.html":[2,0,0,1,13,4],
-"dc/d32/vlinetypeproperty_8cpp.html":[2,0,0,1,11,0,27],
-"dc/d32/vlinetypeproperty_8cpp_source.html":[2,0,0,1,11,0,27]
+"dc/d2b/classVToolLine.html#afca6cd48062e3cb7cdf96e21fef39056":[1,0,415,30]
 };

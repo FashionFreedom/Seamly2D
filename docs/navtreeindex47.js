@@ -1,5 +1,10 @@
 var NAVTREEINDEX47 =
 {
+"db/dd6/classVDxfEngine.html#a95ae747a7b2aa780bdeed29d3ebb5357":[1,0,272,52],
+"db/dd6/classVDxfEngine.html#a9fef8c52c417e42163d69fad35d1ddc2":[1,0,272,6],
+"db/dd6/classVDxfEngine.html#aa1d271015fe969ccaef703f276c9f984":[1,0,272,51],
+"db/dd6/classVDxfEngine.html#aa2084857a315a0df34526b519b28839d":[1,0,272,22],
+"db/dd6/classVDxfEngine.html#aa406af3b9e95e6f27da061b909fbc955":[1,0,272,3],
 "db/dd6/classVDxfEngine.html#aa6b79ed5488e4c35e190015c43d5f4a5":[1,0,272,1],
 "db/dd6/classVDxfEngine.html#aa8d4edd46df74f7dab8f53aea728f505":[1,0,272,32],
 "db/dd6/classVDxfEngine.html#aad26a240bd94aaec7862f78d7ca32270":[1,0,272,38],
@@ -244,10 +249,5 @@ var NAVTREEINDEX47 =
 "dc/d08/classVToolSplinePath.html#a0695ab939dbb0e4fe2d6881ce9c1acae":[1,0,433,4],
 "dc/d08/classVToolSplinePath.html#a0b07f1461d243c2d21fce799dcf85c1d":[1,0,433,20],
 "dc/d08/classVToolSplinePath.html#a0c6e1e92040d6af931fc680513db6c02":[1,0,433,6],
-"dc/d08/classVToolSplinePath.html#a18ec6c4f9305a2b0086eba845229722a":[1,0,433,23],
-"dc/d08/classVToolSplinePath.html#a1b6903f12da87dc62f9fd5552cee8c06":[1,0,433,28],
-"dc/d08/classVToolSplinePath.html#a1b7944ddf83d0eac242035cce02f1258":[1,0,433,22],
-"dc/d08/classVToolSplinePath.html#a2595d294d9e3ae951cfdcdfff0f2a2b0":[1,0,433,19],
-"dc/d08/classVToolSplinePath.html#a3064157a70402bfaa782b382659e5146":[1,0,433,32],
-"dc/d08/classVToolSplinePath.html#a30e5f4592576ea7a28e092ba867f6d3d":[1,0,433,24]
+"dc/d08/classVToolSplinePath.html#a18ec6c4f9305a2b0086eba845229722a":[1,0,433,23]
 };

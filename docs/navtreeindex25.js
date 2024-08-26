@@ -1,5 +1,10 @@
 var NAVTREEINDEX25 =
 {
+"d5/de4/classVToolPointFromArcAndTangent.html#a4da840f6a4e387d48398acb719df7f80":[1,0,424,21],
+"d5/de4/classVToolPointFromArcAndTangent.html#a514c9074c863ae72a540e41b549495dc":[1,0,424,23],
+"d5/de4/classVToolPointFromArcAndTangent.html#a575928b22227899bad33082b679db473":[1,0,424,7],
+"d5/de4/classVToolPointFromArcAndTangent.html#a5db8d4d84e13ebc36284c3c1383d4d1c":[1,0,424,1],
+"d5/de4/classVToolPointFromArcAndTangent.html#a5e703dd3b80d51ef489cec45ccf683f1":[1,0,424,19],
 "d5/de4/classVToolPointFromArcAndTangent.html#a6dba8a9ef18545dc498ad11fcc031666":[1,0,424,8],
 "d5/de4/classVToolPointFromArcAndTangent.html#a6fccb99b13ff6bcc072d36484a2df43e":[1,0,424,13],
 "d5/de4/classVToolPointFromArcAndTangent.html#a85f7a95fa128bb800f3bd584e620ace9":[1,0,424,3],
@@ -244,10 +249,5 @@ var NAVTREEINDEX25 =
 "d6/d1a/classMainWindow.html#a17e4845bda0f2cf644d71d63433425a6":[1,0,116,227],
 "d6/d1a/classMainWindow.html#a181f83586d63e1cd00b59c5a8d99f006":[1,0,116,199],
 "d6/d1a/classMainWindow.html#a1822d1c9343887a30eeb892f996a5e24":[1,0,116,193],
-"d6/d1a/classMainWindow.html#a1b6fe8f5319d0e2617b0e9d70b10c2b7":[1,0,116,129],
-"d6/d1a/classMainWindow.html#a1dac39047d349b76aa2fafe29cc93cdf":[1,0,116,79],
-"d6/d1a/classMainWindow.html#a1e254009c7e2a606cb90a1787b79a5cd":[1,0,116,61],
-"d6/d1a/classMainWindow.html#a1ee720a503872fff029a4d9c18dfdf90":[1,0,116,131],
-"d6/d1a/classMainWindow.html#a1f7714e70dd6bbaefabaeee09eb5d6da":[1,0,116,255],
-"d6/d1a/classMainWindow.html#a1f80f98c12910994f497219d41f7bd6a":[1,0,116,2]
+"d6/d1a/classMainWindow.html#a1b6fe8f5319d0e2617b0e9d70b10c2b7":[1,0,116,129]
 };

@@ -1,5 +1,10 @@
 var NAVTREEINDEX39 =
 {
+"d9/d92/libs_2vwidgets_2calculator_2main_8cpp.html":[2,0,0,1,14,0,4],
+"d9/d92/libs_2vwidgets_2calculator_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[2,0,0,1,14,0,4,0],
+"d9/d92/libs_2vwidgets_2calculator_2main_8cpp_source.html":[2,0,0,1,14,0,4],
+"d9/d93/classVPieceNodeData.html":[1,0,373],
+"d9/d93/classVPieceNodeData.html#a0de715ee9eef8053c05e6cc82f8ab2b8":[1,0,373,5],
 "d9/d93/classVPieceNodeData.html#a13263b128600c8440111ff1f28fe983a":[1,0,373,16],
 "d9/d93/classVPieceNodeData.html#a1a4e62247e6e58634e38997ca5a2c96a":[1,0,373,13],
 "d9/d93/classVPieceNodeData.html#a2a27e960ab101500409693a658ce056b":[1,0,373,2],
@@ -244,10 +249,5 @@ var NAVTREEINDEX39 =
 "da/d06/classDialogDateTimeFormats.html#ad9cb605d75d5491c365d79ea9642551d":[1,0,49,9],
 "da/d06/classDialogDateTimeFormats.html#aeab739ed68c059cfae7cf89b01becc82":[1,0,49,8],
 "da/d06/classDialogDateTimeFormats.html#af21accebe54693568421c663efb9b281":[1,0,49,11],
-"da/d06/classDialogDateTimeFormats.html#af30a83f2d4b6bb3e03d1b4f86fcdbaf1":[1,0,49,16],
-"da/d10/deletepiece_8h.html":[2,0,0,1,13,2,18],
-"da/d10/deletepiece_8h_source.html":[2,0,0,1,13,2,18],
-"da/d10/pen_8h.html":[2,0,0,1,14,22],
-"da/d10/pen_8h_source.html":[2,0,0,1,14,22],
-"da/d10/tst__seamly2dcommandline_8cpp.html":[2,0,0,2,0,3]
+"da/d06/classDialogDateTimeFormats.html#af30a83f2d4b6bb3e03d1b4f86fcdbaf1":[1,0,49,16]
 };

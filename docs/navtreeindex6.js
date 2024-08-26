@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"d1/d99/classVExceptionConversionError.html#ae52a3d2c384e8f4a3d0b0811813c8d16":[1,0,278,0],
 "d1/d9e/structdel__point2d__t.html":[1,0,30],
 "d1/d9e/structdel__point2d__t.html#a0b5cced1ce8f655eb9eedd71f8484d8f":[1,0,30,1],
 "d1/d9e/structdel__point2d__t.html#a94e4e02a59789e5b9dbbedf3f48a98fb":[1,0,30,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "d1/de1/classVisToolInternalPath.html#a78c3d7f1aaf5ec8a4d050e509b016f9c":[1,0,316,9],
 "d1/de1/classVisToolInternalPath.html#a8b666d27b2361cccb17a279bb0174543":[1,0,316,8],
 "d1/de1/classVisToolInternalPath.html#a93c9a25a8ea2497e535e91fae2b3d495":[1,0,316,7],
-"d1/de1/classVisToolInternalPath.html#ac07666b092574dbab22664f7826151ec":[1,0,316,3],
-"d1/de6/vabstracttool_8h.html":[2,0,0,1,13,1,8]
+"d1/de1/classVisToolInternalPath.html#ac07666b092574dbab22664f7826151ec":[1,0,316,3]
 };

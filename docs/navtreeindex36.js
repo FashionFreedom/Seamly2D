@@ -1,5 +1,10 @@
 var NAVTREEINDEX36 =
 {
+"d8/dba/classVAbstractPattern.html#abaea099d70fb4766d397c0a18ff8268f":[1,0,239,313],
+"d8/dba/classVAbstractPattern.html#abaede9a4c1f908e3828ce5e770e9f6ee":[1,0,239,251],
+"d8/dba/classVAbstractPattern.html#abb2536178c4afa8d7240589e285881bf":[1,0,239,125],
+"d8/dba/classVAbstractPattern.html#abc62b4ad20d0efcf008bcfc01a40462e":[1,0,239,206],
+"d8/dba/classVAbstractPattern.html#abc72813c6ad43b99d7c614c80e5b5b4e":[1,0,239,15],
 "d8/dba/classVAbstractPattern.html#abcb22a2fffcfbd48d34d7078527d4d7d":[1,0,239,148],
 "d8/dba/classVAbstractPattern.html#abe4933bc31e9abb4a8a3076e39ec4bb0":[1,0,239,123],
 "d8/dba/classVAbstractPattern.html#abf005a297db1be31b520d602103a67f3":[1,0,239,178],
@@ -244,10 +249,5 @@ var NAVTREEINDEX36 =
 "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#ad74a963f5f1e9c33334369640b35ada9":[0,0,9,6],
 "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#af8aeb7c96e510de59b36203f2e1b8529":[0,0,9,2],
 "d8/dfd/vspline_8h.html":[2,0,0,1,6,34],
-"d8/dfd/vspline_8h.html#a5e0873aef2c4d5edbf4b846bfa39e8d5":[2,0,0,1,6,34,1],
-"d8/dfd/vspline_8h_source.html":[2,0,0,1,6,34],
-"d9/d00/adddetnode_8h.html":[2,0,0,1,13,2,6],
-"d9/d00/adddetnode_8h_source.html":[2,0,0,1,13,2,6],
-"d9/d01/classVisToolTriangle.html":[1,0,332],
-"d9/d01/classVisToolTriangle.html#a06879a1b25a444347c6b046402df0dbd":[1,0,332,1]
+"d8/dfd/vspline_8h.html#a5e0873aef2c4d5edbf4b846bfa39e8d5":[2,0,0,1,6,34,1]
 };

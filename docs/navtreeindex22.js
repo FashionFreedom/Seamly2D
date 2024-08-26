@@ -1,5 +1,10 @@
 var NAVTREEINDEX22 =
 {
+"d5/d41/classPatternPieceDialog.html#a2e2bdb1842ecc05380c23bf9e5017648":[1,0,140,136],
+"d5/d41/classPatternPieceDialog.html#a2e9d0b2ccd9f42de606b36ca8c6b307c":[1,0,140,146],
+"d5/d41/classPatternPieceDialog.html#a2f14848281d76825396266988556b93a":[1,0,140,159],
+"d5/d41/classPatternPieceDialog.html#a2fb45903ab2ec94970f07760929786b2":[1,0,140,42],
+"d5/d41/classPatternPieceDialog.html#a2fe43d4cdac84552a180c2f24eb70856":[1,0,140,57],
 "d5/d41/classPatternPieceDialog.html#a30323fd95b23b60531660795b26786fe":[1,0,140,18],
 "d5/d41/classPatternPieceDialog.html#a3154fe6d192d4792a55334f7e13c1f40":[1,0,140,138],
 "d5/d41/classPatternPieceDialog.html#a336147fd5c20cf7738da40d59f3a30d5":[1,0,140,105],
@@ -244,10 +249,5 @@ var NAVTREEINDEX22 =
 "d5/d68/classVToolPointOfIntersectionCurves.html#a90bed7432185b5c3141ccd619664f8d8":[1,0,427,15],
 "d5/d68/classVToolPointOfIntersectionCurves.html#a9fa4a6e8b12d4da714cbf37a5a546d87":[1,0,427,18],
 "d5/d68/classVToolPointOfIntersectionCurves.html#aa04d505ff2ae5782133d588bc2202157":[1,0,427,2],
-"d5/d68/classVToolPointOfIntersectionCurves.html#aaa6e4a3efb62ae324449c3b17b39887b":[1,0,427,27],
-"d5/d68/classVToolPointOfIntersectionCurves.html#aac6c8c6925fcaaf2f2fe3deac628ebc3":[1,0,427,13],
-"d5/d68/classVToolPointOfIntersectionCurves.html#aba8561d5d80b38004bc6835298d71eab":[1,0,427,20],
-"d5/d68/classVToolPointOfIntersectionCurves.html#abaf5a33f1ed6a0b0c7e579007e180b3f":[1,0,427,25],
-"d5/d68/classVToolPointOfIntersectionCurves.html#ad62e16b0d0a65f13771e0f79e728aa6b":[1,0,427,0],
-"d5/d68/classVToolPointOfIntersectionCurves.html#ad80ec10e546aabcfab71d2be3edff844":[1,0,427,16]
+"d5/d68/classVToolPointOfIntersectionCurves.html#aaa6e4a3efb62ae324449c3b17b39887b":[1,0,427,27]
 };

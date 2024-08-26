@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"d3/d0c/point__intersectxy__dialog_8cpp_source.html":[2,0,0,1,13,0,1,79],
 "d3/d0f/vpointf__p_8h.html":[2,0,0,1,6,32],
 "d3/d0f/vpointf__p_8h_source.html":[2,0,0,1,6,32],
 "d3/d15/dialogendline_8cpp.html":[2,0,0,1,13,0,1,27],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "d3/d63/classMeasurementDatabaseDialog.html#a740a34d15362aa2b752d9293b4b73007":[1,0,118,16],
 "d3/d63/classMeasurementDatabaseDialog.html#a773f78e825c3b8ab508cef2a0def7a00":[1,0,118,5],
 "d3/d63/classMeasurementDatabaseDialog.html#a7fdfb5534701d78a3aed864a85c42a9e":[1,0,118,39],
-"d3/d63/classMeasurementDatabaseDialog.html#a847ac6f48c6a209ea20015b12c939d54":[1,0,118,0],
-"d3/d63/classMeasurementDatabaseDialog.html#a8b5f6522a6ba8677199de982e77ebc49":[1,0,118,42]
+"d3/d63/classMeasurementDatabaseDialog.html#a847ac6f48c6a209ea20015b12c939d54":[1,0,118,0]
 };

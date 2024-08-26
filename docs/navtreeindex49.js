@@ -1,5 +1,10 @@
 var NAVTREEINDEX49 =
 {
+"dc/d2b/classVToolLine.html#afe42453b4381f735b8d0b73dcb2444b3":[1,0,415,19],
+"dc/d2b/libs_2vtools_2stable_8cpp.html":[2,0,0,1,13,4],
+"dc/d2b/libs_2vtools_2stable_8cpp_source.html":[2,0,0,1,13,4],
+"dc/d32/vlinetypeproperty_8cpp.html":[2,0,0,1,11,0,27],
+"dc/d32/vlinetypeproperty_8cpp_source.html":[2,0,0,1,11,0,27],
 "dc/d34/dialogheight_8h.html":[2,0,0,1,13,0,1,32],
 "dc/d34/dialogheight_8h_source.html":[2,0,0,1,13,0,1,32],
 "dc/d3b/classVScenePoint.html":[1,0,383],
@@ -244,10 +249,5 @@ var NAVTREEINDEX49 =
 "dc/d76/floatitemdef_8h.html#ad65d3ab4b803afe5820275a9c5fb1566a6de074b83537939d2c2dc39001f2b640":[2,0,0,1,10,0,0,0,1],
 "dc/d76/floatitemdef_8h.html#ad65d3ab4b803afe5820275a9c5fb1566afb7b7a4a17ddb945bf15c77f1855b5c0":[2,0,0,1,10,0,0,0,2],
 "dc/d76/floatitemdef_8h_source.html":[2,0,0,1,10,0,0],
-"dc/d79/structpoint2d__s.html":[1,0,149],
-"dc/d79/structpoint2d__s.html#a1b7dac869c74baf89d4c651a51e8df52":[1,0,149,3],
-"dc/d79/structpoint2d__s.html#aa3ba48149e1b1bdde17159698cbdd5dd":[1,0,149,0],
-"dc/d79/structpoint2d__s.html#aaed108d192519666cd776c9566fdba24":[1,0,149,2],
-"dc/d79/structpoint2d__s.html#ab8fe5ae8ac0a0b4d6a2070f997d7513a":[1,0,149,1],
-"dc/d82/dialoginternalpath_8cpp.html":[2,0,0,1,13,0,1,0,0]
+"dc/d79/structpoint2d__s.html":[1,0,149]
 };

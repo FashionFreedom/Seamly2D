@@ -1,5 +1,10 @@
 var NAVTREEINDEX44 =
 {
+"db/d11/vformula_8cpp_source.html":[2,0,0,1,10,13],
+"db/d14/classQxtPrivate.html":[1,0,166],
+"db/d14/classQxtPrivate.html#a4ce78973fe45d42d57536f4ee068dc79":[1,0,166,6],
+"db/d14/classQxtPrivate.html#a52c65876fecf578bcafed6a34ef5302f":[1,0,166,1],
+"db/d14/classQxtPrivate.html#a795119eb3c84d0788a8c6c24fc440166":[1,0,166,7],
 "db/d14/classQxtPrivate.html#a8a154f41226663dc0e9ddf1692f71be0":[1,0,166,2],
 "db/d14/classQxtPrivate.html#a94b205997d27c08ee1611f3022b6145f":[1,0,166,4],
 "db/d14/classQxtPrivate.html#aad1eaeb08caa3232a0cf4fcb356977fd":[1,0,166,0],
@@ -244,10 +249,5 @@ var NAVTREEINDEX44 =
 "db/d4d/classDialogArc.html#a78c91fc943b2bf7e01691c350cfd88e5":[1,0,40,15],
 "db/d4d/classDialogArc.html#a7db4da9fa77c885cc7ccdc4691f24ad0":[1,0,40,7],
 "db/d4d/classDialogArc.html#a8644c6d02a4271c1ce56f33f25aef252":[1,0,40,13],
-"db/d4d/classDialogArc.html#a881228a5b07f8038ca07c154ebb2f16e":[1,0,40,46],
-"db/d4d/classDialogArc.html#a8aa50aa84575f6f3037ec7cca6db2175":[1,0,40,30],
-"db/d4d/classDialogArc.html#a8dce9590617b0fa4e8ea33279b832e8f":[1,0,40,12],
-"db/d4d/classDialogArc.html#a957351d79e48f5a4320e12411496cb57":[1,0,40,34],
-"db/d4d/classDialogArc.html#a9881f7a9ef3bc10f66c78cfbc4a066d5":[1,0,40,0],
-"db/d4d/classDialogArc.html#a9f58ac7c1f13153e92e9215e3ac8fcfe":[1,0,40,37]
+"db/d4d/classDialogArc.html#a881228a5b07f8038ca07c154ebb2f16e":[1,0,40,46]
 };

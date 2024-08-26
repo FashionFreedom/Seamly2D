@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"d3/d63/classMeasurementDatabaseDialog.html#a8b5f6522a6ba8677199de982e77ebc49":[1,0,118,42],
 "d3/d63/classMeasurementDatabaseDialog.html#a8c4fa762ff6942ca557208b0fa36a9be":[1,0,118,21],
 "d3/d63/classMeasurementDatabaseDialog.html#a8f24b2157314146856b14ee2da9707d9":[1,0,118,31],
 "d3/d63/classMeasurementDatabaseDialog.html#a99cb610e3630978b03107ab55b972db1":[1,0,118,53],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "d3/da5/ifcdef_8h.html#a1be08446df3762d4a2c30338257d7c27":[2,0,0,1,1,3,115],
 "d3/da5/ifcdef_8h.html#a1c1fb2b1b5785a8988a97715935d85e7":[2,0,0,1,1,3,64],
 "d3/da5/ifcdef_8h.html#a1cdd65f1d5a03b524b94c43453cc0535":[2,0,0,1,1,3,132],
-"d3/da5/ifcdef_8h.html#a1cfd95c0c70c83257941709fb6b83b35":[2,0,0,1,1,3,93],
-"d3/da5/ifcdef_8h.html#a1e6fd405dd4229f1acca2689b55790cf":[2,0,0,1,1,3,77]
+"d3/da5/ifcdef_8h.html#a1cfd95c0c70c83257941709fb6b83b35":[2,0,0,1,1,3,93]
 };

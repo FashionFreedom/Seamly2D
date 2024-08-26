@@ -1,5 +1,10 @@
 var NAVTREEINDEX60 =
 {
+"de/d31/ifcdef_8cpp.html#afb06ea4fedd2e52b5a3cccfcad1432e2":[2,0,0,1,1,2,119],
+"de/d31/ifcdef_8cpp.html#afb8b1265c7f505ee8cb5c02f6121d59c":[2,0,0,1,1,2,159],
+"de/d31/ifcdef_8cpp.html#afd184140313b5d5a4b037bb9b1c3d4c7":[2,0,0,1,1,2,149],
+"de/d31/ifcdef_8cpp_source.html":[2,0,0,1,1,2],
+"de/d32/structdelaunay__s.html":[1,0,32],
 "de/d32/structdelaunay__s.html#a3ff04e33b3b11e87cebc00029dbef1a7":[1,0,32,4],
 "de/d32/structdelaunay__s.html#a467e64a45b77a33c380acbe9755619bc":[1,0,32,1],
 "de/d32/structdelaunay__s.html#a8f6dab799cf1e2bd667a8233bdfc7bdb":[1,0,32,2],
@@ -244,10 +249,5 @@ var NAVTREEINDEX60 =
 "de/da1/about2d__dialog_8h_source.html":[2,0,0,0,0,1,2],
 "de/da4/vistoolmirrorbyaxis_8cpp.html":[2,0,0,1,13,3,0,0,2],
 "de/da4/vistoolmirrorbyaxis_8cpp_source.html":[2,0,0,1,13,3,0,0,2],
-"de/da5/classVNodeDetailData.html":[1,0,356],
-"de/da5/classVNodeDetailData.html#a0f47874be6a46835dfccc945098d1253":[1,0,356,5],
-"de/da5/classVNodeDetailData.html#a14a11e2b7838e38b2baa9bd87cdbf9cd":[1,0,356,1],
-"de/da5/classVNodeDetailData.html#a31e6a898f3ca0e7b80123b1151258e3e":[1,0,356,4],
-"de/da5/classVNodeDetailData.html#a41b980636f948537fcbea62cc14c43c2":[1,0,356,7],
-"de/da5/classVNodeDetailData.html#a42a5998d4380921598e98ea25671c338":[1,0,356,9]
+"de/da5/classVNodeDetailData.html":[1,0,356]
 };

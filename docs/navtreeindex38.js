@@ -1,5 +1,10 @@
 var NAVTREEINDEX38 =
 {
+"d9/d54/classVAbstractArc.html#ae930d749a318dac397bd6cdc01ee6ba2":[1,0,225,6],
+"d9/d54/classVAbstractArc.html#afad394dead5f91806c20cbe84e00f31e":[1,0,225,15],
+"d9/d54/classVAbstractArc.html#afe862f50e5d74694f2232029a3b8b189":[1,0,225,19],
+"d9/d54/dialoggroup_8h.html":[2,0,0,1,13,0,1,30],
+"d9/d54/dialoggroup_8h_source.html":[2,0,0,1,13,0,1,30],
 "d9/d5e/rename__draftblock_8cpp.html":[2,0,0,1,13,2,35],
 "d9/d5e/rename__draftblock_8cpp_source.html":[2,0,0,1,13,2,35],
 "d9/d61/savetooloptions_8cpp.html":[2,0,0,1,13,2,41],
@@ -244,10 +249,5 @@ var NAVTREEINDEX38 =
 "d9/d8f/vexceptionobjecterror_8h.html":[2,0,0,1,1,0,9],
 "d9/d8f/vexceptionobjecterror_8h_source.html":[2,0,0,1,1,0,9],
 "d9/d90/dialogcutarc_8cpp.html":[2,0,0,1,13,0,1,19],
-"d9/d90/dialogcutarc_8cpp_source.html":[2,0,0,1,13,0,1,19],
-"d9/d92/libs_2vwidgets_2calculator_2main_8cpp.html":[2,0,0,1,14,0,4],
-"d9/d92/libs_2vwidgets_2calculator_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[2,0,0,1,14,0,4,0],
-"d9/d92/libs_2vwidgets_2calculator_2main_8cpp_source.html":[2,0,0,1,14,0,4],
-"d9/d93/classVPieceNodeData.html":[1,0,373],
-"d9/d93/classVPieceNodeData.html#a0de715ee9eef8053c05e6cc82f8ab2b8":[1,0,373,5]
+"d9/d90/dialogcutarc_8cpp_source.html":[2,0,0,1,13,0,1,19]
 };
