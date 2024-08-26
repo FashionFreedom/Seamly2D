@@ -1,8 +1,8 @@
 var ifcdef_8cpp =
 [
-    [ "curveLineTypeList", "de/d31/ifcdef_8cpp.html#a8ad6f21e8d2fbe2cea20fe7eee6af77a", null ],
     [ "directionList", "de/d31/ifcdef_8cpp.html#a710bc5e0136a7f7421a4fca92f39470c", null ],
     [ "lineTypeList", "de/d31/ifcdef_8cpp.html#a74dbfe9da3d270bd4c54aa0120f900e0", null ],
+    [ "lineTypeNoPenRemovedList", "de/d31/ifcdef_8cpp.html#abeca2428b042b26a5865e749f4ca0457", null ],
     [ "LineTypes", "de/d31/ifcdef_8cpp.html#a71924e5b0ca1bf43364edbf093fa239f", null ],
     [ "lineTypeToPenStyle", "de/d31/ifcdef_8cpp.html#aed7354461477f562d0c10d0fbbd4eab6", null ],
     [ "lineWeightList", "de/d31/ifcdef_8cpp.html#aef065dd568bce47c294c18bdcc447eac", null ],

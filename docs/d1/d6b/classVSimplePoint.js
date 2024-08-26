@@ -4,7 +4,7 @@ var classVSimplePoint =
     [ "~VSimplePoint", "d1/d6b/classVSimplePoint.html#aa31cf1e7de37b252975cacd595f3750d", null ],
     [ "allowTextHover", "d1/d6b/classVSimplePoint.html#a72715b2a0a1d91f67ecf667e170ce217", null ],
     [ "allowTextSelectable", "d1/d6b/classVSimplePoint.html#a791ce500a6ec8ef8484590fe342997d6", null ],
-    [ "Choosed", "d1/d6b/classVSimplePoint.html#a4af0666c2a9f5e9e6d503419720ee469", null ],
+    [ "Chosen", "d1/d6b/classVSimplePoint.html#ae1eae14c8c4e1635c514f665c440180d", null ],
     [ "contextMenuEvent", "d1/d6b/classVSimplePoint.html#a0a7503edf7d42c8081711b77e9fb93a1", null ],
     [ "deletePoint", "d1/d6b/classVSimplePoint.html#a03d41a9a17e327ef93fc8c714a7c222c", null ],
     [ "EnableToolMove", "d1/d6b/classVSimplePoint.html#a3d7f3dbe2861e699a6f50c83c8d5f6d0", null ],
