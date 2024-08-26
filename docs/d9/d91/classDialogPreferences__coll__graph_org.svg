@@ -164,31 +164,32 @@
 <g id="node7" class="node">
 <title>Node7</title>
 <g id="a_node7"><a xlink:href="../../d9/d0d/classPreferencesGraphicsViewPage.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="622,-221 622,-410 816,-410 816,-221 622,-221"/>
-<text text-anchor="middle" x="719" y="-398" font-family="Helvetica,sans-Serif" font-size="10.00">PreferencesGraphicsViewPage</text>
-<polyline fill="none" stroke="black" points="622,-391 816,-391 "/>
-<text text-anchor="start" x="630" y="-379" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="630" y="-368" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_zrbPositiveColorChanged</text>
-<text text-anchor="start" x="630" y="-357" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_zrbNegativeColorChanged</text>
-<text text-anchor="start" x="630" y="-346" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_pointNameColorChanged</text>
-<text text-anchor="start" x="630" y="-335" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_pointNameHoverColorChanged</text>
-<text text-anchor="start" x="630" y="-324" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_orginAxisColorChanged</text>
-<text text-anchor="start" x="630" y="-313" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_primarySupportColorChanged</text>
-<text text-anchor="start" x="630" y="-302" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_secondarySupportColorChanged</text>
-<text text-anchor="start" x="630" y="-291" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_tertiarySupportColorChanged</text>
-<polyline fill="none" stroke="black" points="622,-284 816,-284 "/>
-<text text-anchor="start" x="630" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+ PreferencesGraphicsViewPage()</text>
-<text text-anchor="start" x="630" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~PreferencesGraphicsView</text>
-<text text-anchor="start" x="630" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">Page()</text>
-<text text-anchor="start" x="630" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ Apply()</text>
-<text text-anchor="start" x="630" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00"># changeEvent()</text>
+<polygon fill="white" stroke="black" points="622,-215.5 622,-415.5 816,-415.5 816,-215.5 622,-215.5"/>
+<text text-anchor="middle" x="719" y="-403.5" font-family="Helvetica,sans-Serif" font-size="10.00">PreferencesGraphicsViewPage</text>
+<polyline fill="none" stroke="black" points="622,-396.5 816,-396.5 "/>
+<text text-anchor="start" x="630" y="-384.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="630" y="-373.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_zrbPositiveColorChanged</text>
+<text text-anchor="start" x="630" y="-362.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_zrbNegativeColorChanged</text>
+<text text-anchor="start" x="630" y="-351.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_pointNameColorChanged</text>
+<text text-anchor="start" x="630" y="-340.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_pointNameHoverColorChanged</text>
+<text text-anchor="start" x="630" y="-329.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_orginAxisColorChanged</text>
+<text text-anchor="start" x="630" y="-318.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_primarySupportColorChanged</text>
+<text text-anchor="start" x="630" y="-307.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_secondarySupportColorChanged</text>
+<text text-anchor="start" x="630" y="-296.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_tertiarySupportColorChanged</text>
+<polyline fill="none" stroke="black" points="622,-289.5 816,-289.5 "/>
+<text text-anchor="start" x="630" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PreferencesGraphicsViewPage()</text>
+<text text-anchor="start" x="630" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~PreferencesGraphicsView</text>
+<text text-anchor="start" x="630" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">Page()</text>
+<text text-anchor="start" x="630" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Apply()</text>
+<text text-anchor="start" x="630" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00"># enableOffsets()</text>
+<text text-anchor="start" x="630" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00"># changeEvent()</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node7 -->
 <g id="edge9" class="edge">
 <title>Node4&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M478.76,-494.16C515.86,-484.58 571.56,-466.69 613,-438 624.62,-429.95 635.79,-420.35 646.22,-410.13"/>
+<path fill="none" stroke="midnightblue" d="M478.76,-494.16C515.86,-484.58 571.56,-466.69 613,-438 622.55,-431.39 631.79,-423.73 640.57,-415.53"/>
 <polygon fill="none" stroke="midnightblue" points="477.67,-490.82 468.81,-496.64 479.36,-497.61 477.67,-490.82"/>
 </g>
 <!-- Node5&#45;&gt;Node1 -->
@@ -208,7 +209,7 @@
 <!-- Node7&#45;&gt;Node1 -->
 <g id="edge8" class="edge">
 <title>Node7&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M645.08,-220.99C634.91,-210.86 624.13,-201.26 613,-193 556.28,-150.9 482.29,-119.17 427.08,-99.1"/>
+<path fill="none" stroke="#404040" d="M639.16,-215.22C630.76,-207.23 621.99,-199.67 613,-193 556.28,-150.9 482.29,-119.17 427.08,-99.1"/>
 <polygon fill="none" stroke="#404040" points="426.9,-99.04 419.9,-100.78 415.6,-95 422.59,-93.25 426.9,-99.04"/>
 <text text-anchor="middle" x="624.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_graphicsPage</text>
 </g>

@@ -1,5 +1,14 @@
 var NAVTREEINDEX10 =
 {
+"d3/d0f/vpointf__p_8h.html":[2,0,0,1,6,32],
+"d3/d0f/vpointf__p_8h_source.html":[2,0,0,1,6,32],
+"d3/d15/dialogendline_8cpp.html":[2,0,0,1,13,0,1,27],
+"d3/d15/dialogendline_8cpp_source.html":[2,0,0,1,13,0,1,27],
+"d3/d16/classVAbstractNode.html":[1,0,237],
+"d3/d16/classVAbstractNode.html#a0efb37bc43a2bc4a1728dea922d774e8":[1,0,237,6],
+"d3/d16/classVAbstractNode.html#a1c5ee04f20dca7cb64bd7ef2620e1fb0":[1,0,237,19],
+"d3/d16/classVAbstractNode.html#a201252bad756a36aef9fd4696524612b":[1,0,237,20],
+"d3/d16/classVAbstractNode.html#a20f6b9dd538fc932428eb6a1bc212acb":[1,0,237,15],
 "d3/d16/classVAbstractNode.html#a2cecc6036115efe25d8054a1c71252c7":[1,0,237,17],
 "d3/d16/classVAbstractNode.html#a2d887cfb63bedf3d644beaff1ab771d9":[1,0,237,9],
 "d3/d16/classVAbstractNode.html#a31b0c1cef193038037155a8bf7e78fd5":[1,0,237,18],
@@ -240,14 +249,5 @@ var NAVTREEINDEX10 =
 "d3/d63/classMeasurementDatabaseDialog.html#a773f78e825c3b8ab508cef2a0def7a00":[1,0,118,5],
 "d3/d63/classMeasurementDatabaseDialog.html#a7fdfb5534701d78a3aed864a85c42a9e":[1,0,118,39],
 "d3/d63/classMeasurementDatabaseDialog.html#a847ac6f48c6a209ea20015b12c939d54":[1,0,118,0],
-"d3/d63/classMeasurementDatabaseDialog.html#a8b5f6522a6ba8677199de982e77ebc49":[1,0,118,42],
-"d3/d63/classMeasurementDatabaseDialog.html#a8c4fa762ff6942ca557208b0fa36a9be":[1,0,118,21],
-"d3/d63/classMeasurementDatabaseDialog.html#a8f24b2157314146856b14ee2da9707d9":[1,0,118,31],
-"d3/d63/classMeasurementDatabaseDialog.html#a99cb610e3630978b03107ab55b972db1":[1,0,118,53],
-"d3/d63/classMeasurementDatabaseDialog.html#a9afa449990fdeb981bd4111d5736c2d5":[1,0,118,25],
-"d3/d63/classMeasurementDatabaseDialog.html#aa525e3df7d744e721cb78587c3ccd0fe":[1,0,118,45],
-"d3/d63/classMeasurementDatabaseDialog.html#aa643373dd9904f6d7f82773d673b17a2":[1,0,118,40],
-"d3/d63/classMeasurementDatabaseDialog.html#aa8056387b7cf64c1a7288e3a2145c0b7":[1,0,118,36],
-"d3/d63/classMeasurementDatabaseDialog.html#aab816cc548d739bc0be421756ccb2bd6":[1,0,118,34],
-"d3/d63/classMeasurementDatabaseDialog.html#aaec7a69060c9ba9db92ea9f194f897cc":[1,0,118,19]
+"d3/d63/classMeasurementDatabaseDialog.html#a8b5f6522a6ba8677199de982e77ebc49":[1,0,118,42]
 };
