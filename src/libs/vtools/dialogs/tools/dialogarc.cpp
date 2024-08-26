@@ -425,7 +425,7 @@ void DialogArc::F2Changed()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArc::FXRadius()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit radius"));
     dialog->SetFormula(getRadius());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -439,7 +439,7 @@ void DialogArc::FXRadius()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArc::FXF1()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit first angle"));
     dialog->SetFormula(getF1());
     dialog->setPostfix(degreeSymbol);
@@ -453,7 +453,7 @@ void DialogArc::FXF1()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArc::FXF2()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit second angle"));
     dialog->SetFormula(getF2());
     dialog->setPostfix(degreeSymbol);

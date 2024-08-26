@@ -1518,7 +1518,7 @@ void TMainWindow::Fx()
 		return;
 	}
 
-	EditFormulaDialog *dialog = new EditFormulaDialog(meash->GetData(), NULL_ID, this);
+	EditFormulaDialog *dialog = new EditFormulaDialog(meash->GetData(), NULL_ID, MeasurementDialog, this);
 	dialog->setWindowTitle(tr("Edit measurement"));
 	dialog->SetFormula(qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditFormula->toPlainText().replace("\n", " "),
 														  true));

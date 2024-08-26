@@ -178,7 +178,7 @@ void DialogAlongLine::PointChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogAlongLine::FXLength()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit length"));
     dialog->SetFormula(GetFormula());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));

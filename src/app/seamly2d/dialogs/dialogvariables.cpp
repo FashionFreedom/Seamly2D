@@ -850,7 +850,7 @@ void DialogVariables::Fx()
     const QTableWidgetItem *name = ui->variables_TableWidget->item(row, 0);
     QSharedPointer<CustomVariable> variable = data->getVariable<CustomVariable>(name->text());
 
-    EditFormulaDialog *dialog = new EditFormulaDialog(variable->GetData(), NULL_ID, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(variable->GetData(), NULL_ID, VariableDialog, this);
     dialog->setWindowTitle(tr("Edit variable"));
     dialog->SetFormula(qApp->translateVariables()->TryFormulaFromUser(ui->formula_PlainTextEdit->toPlainText().replace("\n", " "),
                                                           qApp->Settings()->getOsSeparator()));

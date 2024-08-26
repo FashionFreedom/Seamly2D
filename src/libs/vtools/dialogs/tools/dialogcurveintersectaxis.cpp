@@ -357,7 +357,7 @@ void DialogCurveIntersectAxis::DeployAngleTextEdit()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogCurveIntersectAxis::FXAngle()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit angle"));
     dialog->SetFormula(GetAngle());
     dialog->setPostfix(degreeSymbol);

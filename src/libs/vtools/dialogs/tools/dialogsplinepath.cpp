@@ -546,7 +546,7 @@ void DialogSplinePath::Length2Changed()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::FXAngle1()
 {
-    auto dialog = new EditFormulaDialog(data, toolId, this);
+    auto dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit first control point angle"));
 
     QString angle1F = qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditAngle1F->toPlainText().replace("\n", " "),
@@ -571,7 +571,7 @@ void DialogSplinePath::FXAngle1()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::FXAngle2()
 {
-    auto dialog = new EditFormulaDialog(data, toolId, this);
+    auto dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit second control point angle"));
 
     QString angle2F = qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditAngle2F->toPlainText().replace("\n", " "),
@@ -596,7 +596,7 @@ void DialogSplinePath::FXAngle2()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::FXLength1()
 {
-    auto dialog = new EditFormulaDialog(data, toolId, this);
+    auto dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit first control point length"));
 
     QString length1F = qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditLength1F->toPlainText().replace("\n", " "),
@@ -621,7 +621,7 @@ void DialogSplinePath::FXLength1()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::FXLength2()
 {
-    auto dialog = new EditFormulaDialog(data, toolId, this);
+    auto dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit second control point length"));
 
     QString length2F = qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditLength2F->toPlainText().replace("\n", " "),

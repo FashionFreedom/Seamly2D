@@ -89,7 +89,8 @@ class EditFormulaDialog : public DialogTool
 {
     Q_OBJECT
 public:
-                 EditFormulaDialog(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
+                 EditFormulaDialog(const VContainer *data, const quint32 &toolId,
+                                   const quint16 &source, QWidget *parent = nullptr);
     virtual     ~EditFormulaDialog() Q_DECL_OVERRIDE;
 
     QString      GetFormula() const;
@@ -135,6 +136,7 @@ private:
     bool         m_checkLessThanZero;
     QString      m_postfix;
     bool         m_restoreCursor;
+    quint16      m_source;
 
     void         initializeVariables();
 

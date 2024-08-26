@@ -373,7 +373,7 @@ void DialogArcWithLength::LengthChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArcWithLength::FXRadius()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit radius"));
     dialog->SetFormula(GetRadius());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -387,7 +387,7 @@ void DialogArcWithLength::FXRadius()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArcWithLength::FXF1()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit the first angle"));
     dialog->SetFormula(GetF1());
     dialog->setPostfix(degreeSymbol);
@@ -401,7 +401,7 @@ void DialogArcWithLength::FXF1()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArcWithLength::FXLength()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit the arc length"));
     dialog->SetFormula(GetLength());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));

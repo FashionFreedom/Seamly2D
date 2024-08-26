@@ -119,7 +119,7 @@ void VFormulaPropertyEditor::SetFormula(const VFormula& formula)
 void VFormulaPropertyEditor::onToolButtonClicked()
 {
     EditFormulaDialog* dialog = new EditFormulaDialog(formula.getData(), formula.getToolId(),
-                                                                qApp->getMainWindow());
+                                                      ToolDialog, qApp->getMainWindow());
     dialog->setCheckZero(formula.getCheckZero());
     dialog->setPostfix(formula.getPostfix());
     dialog->SetFormula(formula.GetFormula(FormulaType::FromUser));

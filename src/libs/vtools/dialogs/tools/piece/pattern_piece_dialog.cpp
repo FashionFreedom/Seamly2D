@@ -1984,7 +1984,7 @@ void PatternPieceDialog::editGrainlineFormula()
         return;
     }
 
-    EditFormulaDialog dialog(data, NULL_ID, this);
+    EditFormulaDialog dialog(data, NULL_ID, ToolDialog, this);
     dialog.setWindowTitle(title);
     dialog.SetFormula(qApp->translateVariables()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->getOsSeparator()));
     dialog.setCheckZero(checkForZero);
@@ -2041,7 +2041,7 @@ void PatternPieceDialog::editPieceLabelFormula()
         return;
     }
 
-    EditFormulaDialog dialog(data, NULL_ID, this);
+    EditFormulaDialog dialog(data, NULL_ID, ToolDialog, this);
     dialog.setWindowTitle(title);
     dialog.SetFormula(qApp->translateVariables()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->getOsSeparator()));
     dialog.setCheckZero(checkForZero);
@@ -2101,7 +2101,7 @@ void PatternPieceDialog::editPatternLabelFormula()
         return;
     }
 
-    EditFormulaDialog dialog(data, NULL_ID, this);
+    EditFormulaDialog dialog(data, NULL_ID, ToolDialog, this);
     dialog.setWindowTitle(title);
     dialog.SetFormula(qApp->translateVariables()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->getOsSeparator()));
     dialog.setCheckZero(checkForZero);
@@ -2211,7 +2211,7 @@ void PatternPieceDialog::evaluateAfterWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::editDefaultSeamAllowanceWidth()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit seam allowance width"));
     dialog->SetFormula(getSeamAllowanceWidthFormula());
     dialog->setCheckLessThanZero(true);
@@ -2226,7 +2226,7 @@ void PatternPieceDialog::editDefaultSeamAllowanceWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::editBeforeSeamAllowanceWidth()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit seam allowance width before"));
     dialog->SetFormula(getFormulaFromUser(ui->beforeWidthFormula_PlainTextEdit));
     dialog->setCheckLessThanZero(true);
@@ -2241,7 +2241,7 @@ void PatternPieceDialog::editBeforeSeamAllowanceWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::editAfterSeamAllowanceWidth()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit seam allowance width after"));
     dialog->SetFormula(getFormulaFromUser(ui->afterWidthFormula_PlainTextEdit));
     dialog->setCheckLessThanZero(true);

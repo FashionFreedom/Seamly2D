@@ -401,7 +401,7 @@ void DialogMove::rotationChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::editAngleFormula()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit angle"));
     dialog->SetFormula(GetAngle());
     dialog->setPostfix(degreeSymbol);
@@ -415,7 +415,7 @@ void DialogMove::editAngleFormula()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::editLengthFormula()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit length"));
     dialog->SetFormula(GetLength());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -429,7 +429,7 @@ void DialogMove::editLengthFormula()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::editRotationFormula()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit rotation"));
     dialog->SetFormula(getRotation());
     dialog->setPostfix(degreeSymbol);
