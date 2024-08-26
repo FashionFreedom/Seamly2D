@@ -1258,7 +1258,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>111</width>
+                <width>128</width>
                 <height>58</height>
                </rect>
               </property>
@@ -3632,7 +3632,7 @@
     <string>Zoom In (Ctrl++)</string>
    </property>
    <property name="shortcut">
-    <string notr="true">Ctrl++</string>
+    <string notr="true"/>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -3656,7 +3656,7 @@
     <string>Zoom Out (Ctrl+-)</string>
    </property>
    <property name="shortcut">
-    <string notr="true">Ctrl+-</string>
+    <string notr="true"/>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -3698,10 +3698,10 @@
     <string>Fit</string>
    </property>
    <property name="toolTip">
-    <string>Zoom to Fit All(Ctrl+=)</string>
+    <string>Zoom to Fit All(Ctrl+9)</string>
    </property>
    <property name="shortcut">
-    <string notr="true">Ctrl+=</string>
+    <string notr="true">Ctrl+9</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -4080,7 +4080,7 @@
     <string>Zoom to Previous (Ctrl+Left)</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+Left</string>
+    <string notr="true">Ctrl+Left</string>
    </property>
   </action>
   <action name="zoomToArea_Action">
@@ -4101,7 +4101,7 @@
     <string>Zoom to selected Area (Ctrl+A)</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+A</string>
+    <string notr="true">Ctrl+A</string>
    </property>
   </action>
   <action name="zoomPan_Action">
@@ -4122,7 +4122,7 @@
     <string>Pan Work Area (Z, P)</string>
    </property>
    <property name="shortcut">
-    <string>Z, P</string>
+    <string notr="true">Z, P</string>
    </property>
   </action>
   <action name="zoom100Percent_Action">
@@ -4134,16 +4134,16 @@
      <normaloff>:/icons/win.icon.theme/24x24/actions/zoom_100_percent.png</normaloff>:/icons/win.icon.theme/24x24/actions/zoom_100_percent.png</iconset>
    </property>
    <property name="text">
-    <string>Zoom 1:1</string>
+    <string>Zoom 100%</string>
    </property>
    <property name="iconText">
-    <string>1:1</string>
+    <string>100%</string>
    </property>
    <property name="toolTip">
     <string>Zoom to 100 percent (Ctrl+0)</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+0</string>
+    <string notr="true">Ctrl+0</string>
    </property>
   </action>
   <action name="points_Action">
@@ -4736,7 +4736,7 @@
     <string>Zoom to point (Ctrl + Alt + P)</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+Alt+P</string>
+    <string notr="true">Ctrl+Alt+P</string>
    </property>
   </action>
   <action name="importImage_Action">
@@ -4768,8 +4768,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
   <include location="../../libs/vmisc/share/resources/theme.qrc"/>
+  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>
 </ui>

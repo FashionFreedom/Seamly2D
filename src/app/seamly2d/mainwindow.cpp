@@ -2548,7 +2548,7 @@ void MainWindow::initializeToolsToolBar()
     connect(ui->zoom100Percent_Action, &QAction::triggered, ui->view, &VMainGraphicsView::zoom100Percent);
 
     QList<QKeySequence> zoomToFitShortcuts;
-    zoomToFitShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Equal));
+    zoomToFitShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_9));
     ui->zoomToFit_Action->setShortcuts(zoomToFitShortcuts);
     connect(ui->zoomToFit_Action, &QAction::triggered, ui->view, &VMainGraphicsView::zoomToFit);
 
@@ -2592,7 +2592,7 @@ void MainWindow::initializeToolsToolBar()
     zoomScaleSpinBox = new QDoubleSpinBox();
     zoomScaleSpinBox->setDecimals(1);
     zoomScaleSpinBox->setAlignment(Qt::AlignRight);
-    zoomScaleSpinBox->setSingleStep(0.1);
+    zoomScaleSpinBox->setSingleStep(1);
     zoomScaleSpinBox->setMinimum(qFloor(VMainGraphicsView::MinScale()*1000)/10.0);
     zoomScaleSpinBox->setMaximum(qFloor(VMainGraphicsView::MaxScale()*1000)/10.0);
     zoomScaleSpinBox->setSuffix("%");

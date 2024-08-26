@@ -4171,7 +4171,7 @@ for writing</source>
         <translation>Kan bestand %1 niet openen voor schrijven</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -5160,7 +5160,7 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Kleiner wordend gebied</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -6181,10 +6181,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Pas Aan</translation>
     </message>
     <message>
-        <source>Zoom to Fit All(Ctrl+=)</source>
-        <translation>Zoom om alles te tonen (Ctrl+=)</translation>
-    </message>
-    <message>
         <source>Report bug...</source>
         <translation>Rapporteer fout...</translation>
     </message>
@@ -6241,40 +6237,16 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Zoom op vorige (Ctrl+Links)</translation>
     </message>
     <message>
-        <source>Ctrl+Left</source>
-        <translation>Ctrl+Links</translation>
-    </message>
-    <message>
         <source>Area</source>
         <translation>Gebied</translation>
-    </message>
-    <message>
-        <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
     </message>
     <message>
         <source>Pan</source>
         <translation>Toon Panorama</translation>
     </message>
     <message>
-        <source>Z, P</source>
-        <translation>Z, P</translation>
-    </message>
-    <message>
-        <source>Zoom 1:1</source>
-        <translation>Zoom 1:1</translation>
-    </message>
-    <message>
-        <source>1:1</source>
-        <translation>1:1</translation>
-    </message>
-    <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
         <translation>Zoom naar 100 percent (Ctrl+0)</translation>
-    </message>
-    <message>
-        <source>Ctrl+0</source>
-        <translation>Ctrl+0</translation>
     </message>
     <message>
         <source>Point Tools</source>
@@ -7097,10 +7069,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Zoom in op punt (Ctrl+Alt+P)</translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation>Ctrl+Alt+P</translation>
-    </message>
-    <message>
         <source>Alt+I</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7320,6 +7288,18 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Default</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom to Fit All(Ctrl+9)</source>
+        <translation>Zoom om alles te tonen (Ctrl+9)</translation>
+    </message>
+    <message>
+        <source>Zoom 100%</source>
+        <translation>Zoom 100%</translation>
+    </message>
+    <message>
+        <source>100%</source>
+        <translation>100%</translation>
     </message>
 </context>
 <context>
@@ -10307,8 +10287,8 @@ Press enter to temporarily add it to the list.</source>
         <translation>Decimaal scheidingsteken:</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10321,7 +10301,7 @@ When unchecked the period is used.</source>
         <translation>Stelt de taal in die wordt gebruikt voor SeamlyMe.</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10369,8 +10349,8 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Decimaal scheidingsteken:</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10379,7 +10359,7 @@ When unchecked the period is used.</source>
         <translation>GUI taal:</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10586,10 +10566,6 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Ctrl+-</translation>
     </message>
     <message>
-        <source>Zoom 1:1</source>
-        <translation>Zoom 1:1</translation>
-    </message>
-    <message>
         <source>Ctrl+0</source>
         <translation>Ctrl+0</translation>
     </message>
@@ -10604,10 +10580,6 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Fit All</source>
         <translation>Toon Ales</translation>
-    </message>
-    <message>
-        <source>Ctrl+=</source>
-        <translation>Ctrl+=</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -10638,16 +10610,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Toon Panorama</translation>
     </message>
     <message>
-        <source>Z, P</source>
-        <translation>Z, P</translation>
-    </message>
-    <message>
         <source>Show Name Text</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>V, P</source>
-        <translation>V, P</translation>
     </message>
     <message>
         <source>Increase Text Size</source>
@@ -10674,48 +10638,24 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>V, W</source>
-        <translation>V, W</translation>
-    </message>
-    <message>
         <source>Curve Control Points</source>
         <translation>Controlepunten Kromme</translation>
-    </message>
-    <message>
-        <source>V, C</source>
-        <translation>V, C</translation>
     </message>
     <message>
         <source>Axis Origin</source>
         <translation>Oorsprong van de as</translation>
     </message>
     <message>
-        <source>V, A</source>
-        <translation>V, A</translation>
-    </message>
-    <message>
         <source>Seam Allowance</source>
         <translation>Naadtoeslag</translation>
-    </message>
-    <message>
-        <source>V, S</source>
-        <translation>V, S</translation>
     </message>
     <message>
         <source>Grainlines</source>
         <translation>Recht-van-draad</translation>
     </message>
     <message>
-        <source>V, G</source>
-        <translation>V, G</translation>
-    </message>
-    <message>
         <source>Labels</source>
         <translation>Labels</translation>
-    </message>
-    <message>
-        <source>V, L</source>
-        <translation>V, L</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -10762,10 +10702,6 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Hernoem Tekenblok</translation>
     </message>
     <message>
-        <source>F2</source>
-        <translation>F2</translation>
-    </message>
-    <message>
         <source>Point</source>
         <translation>Punt</translation>
     </message>
@@ -10774,80 +10710,40 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Lengte en Hoek</translation>
     </message>
     <message>
-        <source>L, A</source>
-        <translation>L, A</translation>
-    </message>
-    <message>
         <source>On Line</source>
         <translation>Op Lijn</translation>
-    </message>
-    <message>
-        <source>O, L</source>
-        <translation>O, L</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
         <translation>Op Loodrechte</translation>
     </message>
     <message>
-        <source>O, P</source>
-        <translation>O, P</translation>
-    </message>
-    <message>
         <source>On Bisector</source>
         <translation>Op Bisectrice</translation>
-    </message>
-    <message>
-        <source>O, B</source>
-        <translation>O, B</translation>
     </message>
     <message>
         <source>Length to Line</source>
         <translation>Lengte tot Lijn</translation>
     </message>
     <message>
-        <source>P, S</source>
-        <translation>P, S</translation>
-    </message>
-    <message>
         <source>Intersect Arc and Line</source>
         <translation>Snijpunt Boog en Lijn</translation>
-    </message>
-    <message>
-        <source>A, L</source>
-        <translation>A, L</translation>
     </message>
     <message>
         <source>Intersect Axis and Triangle</source>
         <translation>Snijpunt As en Driehoek</translation>
     </message>
     <message>
-        <source>X, T</source>
-        <translation>X, T</translation>
-    </message>
-    <message>
         <source>Intersect XY</source>
         <translation>Snijpunt XY</translation>
-    </message>
-    <message>
-        <source>X, Y</source>
-        <translation>X, Y</translation>
     </message>
     <message>
         <source>Intersect Line and Perpendicular</source>
         <translation>Snijpunt Lijn en Loodrechte</translation>
     </message>
     <message>
-        <source>L, P</source>
-        <translation>L, P</translation>
-    </message>
-    <message>
         <source>Intersect Line and Axis</source>
         <translation>Snijpunt - Lijn en As</translation>
-    </message>
-    <message>
-        <source>L, X</source>
-        <translation>L, X</translation>
     </message>
     <message>
         <source>Midpoint On Line</source>
@@ -10868,10 +10764,6 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Point - Intersect Lines</source>
         <translation>Punt - Snijpunt Lijnen</translation>
-    </message>
-    <message>
-        <source>I, L</source>
-        <translation>I, L</translation>
     </message>
     <message>
         <source>Curves</source>
@@ -10914,32 +10806,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Punt - Op Kromme</translation>
     </message>
     <message>
-        <source>O, C</source>
-        <translation>O, C</translation>
-    </message>
-    <message>
         <source>Point - On Spline	</source>
         <translation>Punt - Op Spline	</translation>
-    </message>
-    <message>
-        <source>O, S</source>
-        <translation>O, S</translation>
     </message>
     <message>
         <source>Point - Intersect Curves</source>
         <translation>Punt - Snijpunt Krommes</translation>
     </message>
     <message>
-        <source>I, C</source>
-        <translation>I, C</translation>
-    </message>
-    <message>
         <source>Point - Intersect Curve and Axis</source>
         <translation>Punt - Snijpunt Kromme en As</translation>
-    </message>
-    <message>
-        <source>C, X</source>
-        <translation>C, X</translation>
     </message>
     <message>
         <source>Arcs</source>
@@ -10966,24 +10842,12 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Punt - Op Boog</translation>
     </message>
     <message>
-        <source>O, A</source>
-        <translation>O, A</translation>
-    </message>
-    <message>
         <source>Point - Intersect Arc and Axis</source>
         <translation>Punt - Snijpunt Boog en As</translation>
     </message>
     <message>
-        <source>A, X</source>
-        <translation>A, X</translation>
-    </message>
-    <message>
         <source>Point - Intersect Arcs</source>
         <translation>Punt - Snijpunt Bogen</translation>
-    </message>
-    <message>
-        <source>I, A</source>
-        <translation>I, A</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
@@ -10998,16 +10862,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Punt - Snijpunt Cirkel en Raaklijn</translation>
     </message>
     <message>
-        <source>C, T</source>
-        <translation>C, T</translation>
-    </message>
-    <message>
         <source>Point - Intersect Arc and Tangent</source>
         <translation>Punt - Snijpunt Boog en Raaklijn</translation>
-    </message>
-    <message>
-        <source>A, T</source>
-        <translation>A, T</translation>
     </message>
     <message>
         <source>Elliptical Arc</source>
@@ -11026,32 +10882,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>G</source>
-        <translation>G</translation>
-    </message>
-    <message>
         <source>Rotation</source>
         <translation>Draaiing</translation>
-    </message>
-    <message>
-        <source>R</source>
-        <translation>R</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
         <translation>Spiegel over Lijn</translation>
     </message>
     <message>
-        <source>M, L</source>
-        <translation>M,L</translation>
-    </message>
-    <message>
         <source>Mirror by Axis</source>
         <translation>Spiegel over As</translation>
-    </message>
-    <message>
-        <source>M, A</source>
-        <translation>M, A</translation>
     </message>
     <message>
         <source>Move</source>
@@ -11066,16 +10906,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Echte Figuurnaden</translation>
     </message>
     <message>
-        <source>T, D</source>
-        <translation>T, D</translation>
-    </message>
-    <message>
         <source>Export Draft Blocks</source>
         <translation>Exporteer Tekenblok</translation>
-    </message>
-    <message>
-        <source>E, D</source>
-        <translation>E, D</translation>
     </message>
     <message>
         <source>Images</source>
@@ -11098,36 +10930,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Nieuw Patroondeel</translation>
     </message>
     <message>
-        <source>N, P</source>
-        <translation>N, P</translation>
-    </message>
-    <message>
         <source>Anchor Point</source>
         <translation>Ankerpunt</translation>
-    </message>
-    <message>
-        <source>A, P</source>
-        <translation>A, P</translation>
     </message>
     <message>
         <source>Internal Path</source>
         <translation>Binnenpad</translation>
     </message>
     <message>
-        <source>I, P</source>
-        <translation>I, P</translation>
-    </message>
-    <message>
-        <source>I, N</source>
-        <translation>I, N</translation>
-    </message>
-    <message>
         <source>Edit Properties</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>P</source>
-        <translation>P</translation>
     </message>
     <message>
         <source>Toggle Lock</source>
@@ -11142,16 +10954,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>In Opmaak opnemen</translation>
     </message>
     <message>
-        <source>I</source>
-        <translation>I</translation>
-    </message>
-    <message>
         <source>Forbid Flipping</source>
         <translation>Flipping verbieden</translation>
-    </message>
-    <message>
-        <source>F</source>
-        <translation>F</translation>
     </message>
     <message>
         <source>Raise To Top</source>
@@ -11190,16 +10994,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Verenig 2 Patroondelen (U)</translation>
     </message>
     <message>
-        <source>U</source>
-        <translation>U</translation>
-    </message>
-    <message>
         <source>Export Pieces</source>
         <translation>Exporteer Patroondelen</translation>
-    </message>
-    <message>
-        <source>E, P</source>
-        <translation>E, P</translation>
     </message>
     <message>
         <source>Layout</source>
@@ -11210,16 +11006,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Nieuwe Opmaak</translation>
     </message>
     <message>
-        <source>N, L</source>
-        <translation>N, L</translation>
-    </message>
-    <message>
         <source>Export Layout</source>
         <translation>Exporteer Opmaak</translation>
-    </message>
-    <message>
-        <source>E, L</source>
-        <translation>E, L</translation>
     </message>
     <message>
         <source>Last Tool</source>
@@ -11266,16 +11054,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>K</source>
-        <translation>K</translation>
-    </message>
-    <message>
         <source>Shift+P</source>
         <translation>Shift+P</translation>
-    </message>
-    <message>
-        <source>T</source>
-        <translation>T</translation>
     </message>
     <message>
         <source>Export PDF</source>
@@ -11284,6 +11064,14 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Insert Nodes</source>
         <translation>Voeg kernpunten in</translation>
+    </message>
+    <message>
+        <source>Zoom 100%</source>
+        <translation>Zoom 100%</translation>
+    </message>
+    <message>
+        <source>Ctrl+9</source>
+        <translation>Ctrl+9</translation>
     </message>
 </context>
 <context>

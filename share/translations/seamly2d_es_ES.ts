@@ -4227,7 +4227,7 @@ Do you want to download it?</source>
 ¿Quiere descargarla?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -5336,8 +5336,7 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
         <translation>Ninguno</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
-
+        <source>Margins go beyond printing.
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6282,40 +6281,16 @@ Do you want to save your changes?</source>
         <translation>Zoom para Previo (Control+Izquierda)</translation>
     </message>
     <message>
-        <source>Ctrl+Left</source>
-        <translation>Ctrl+Left</translation>
-    </message>
-    <message>
         <source>Area</source>
         <translation>Área</translation>
-    </message>
-    <message>
-        <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
     </message>
     <message>
         <source>Pan</source>
         <translation>Pan</translation>
     </message>
     <message>
-        <source>Z, P</source>
-        <translation>Z, P</translation>
-    </message>
-    <message>
-        <source>Zoom 1:1</source>
-        <translation>Zoom 1:1</translation>
-    </message>
-    <message>
-        <source>1:1</source>
-        <translation>1:1</translation>
-    </message>
-    <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
         <translation>Zoom al 100 por ciento (Control+0)</translation>
-    </message>
-    <message>
-        <source>Ctrl+0</source>
-        <translation>Ctrl+0</translation>
     </message>
     <message>
         <source>Point Tools</source>
@@ -7138,10 +7113,6 @@ Do you want to save your changes?</source>
         <translation>Zoom al punto (Control + Alt + P)</translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation>Ctrl+Alt+P</translation>
-    </message>
-    <message>
         <source>Alt+I</source>
         <translation>Alt+I</translation>
     </message>
@@ -7342,10 +7313,6 @@ Do you want to save your changes?</source>
         <translation>Alejar (Control+-)</translation>
     </message>
     <message>
-        <source>Zoom to Fit All(Ctrl+=)</source>
-        <translation>Zoom para ajustar todo (Control+=)</translation>
-    </message>
-    <message>
         <source>Toolbars</source>
         <translation>Barras de Herramientas</translation>
     </message>
@@ -7369,6 +7336,18 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Default</source>
         <translation>Predeterminado</translation>
+    </message>
+    <message>
+        <source>Zoom to Fit All(Ctrl+9)</source>
+        <translation>Zoom para ajustar todo (Control+=9)</translation>
+    </message>
+    <message>
+        <source>Zoom 100%</source>
+        <translation>Zoom 100%</translation>
+    </message>
+    <message>
+        <source>100%</source>
+        <translation>100%</translation>
     </message>
 </context>
 <context>
@@ -10403,13 +10382,13 @@ actualización:</translation>
         <translation>Pulgadas</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10477,13 +10456,13 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Establece el sonido del clic de selección del nodo.</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10654,10 +10633,6 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Control+-</translation>
     </message>
     <message>
-        <source>Zoom 1:1</source>
-        <translation>Zoom 1:1</translation>
-    </message>
-    <message>
         <source>Ctrl+0</source>
         <translation>Control+0</translation>
     </message>
@@ -10672,10 +10647,6 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Fit All</source>
         <translation>Ajustar todo</translation>
-    </message>
-    <message>
-        <source>Ctrl+=</source>
-        <translation>Control+=</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -10706,16 +10677,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Pan</translation>
     </message>
     <message>
-        <source>Z, P</source>
-        <translation>Z, P</translation>
-    </message>
-    <message>
         <source>Show Name Text</source>
         <translation>Mostrar texto del nombre</translation>
-    </message>
-    <message>
-        <source>V, P</source>
-        <translation>V, P</translation>
     </message>
     <message>
         <source>Increase Text Size</source>
@@ -10742,48 +10705,24 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Marco de Alambre</translation>
     </message>
     <message>
-        <source>V, W</source>
-        <translation>V, W</translation>
-    </message>
-    <message>
         <source>Curve Control Points</source>
         <translation>Puntos de control de curvas</translation>
-    </message>
-    <message>
-        <source>V, C</source>
-        <translation>V, C</translation>
     </message>
     <message>
         <source>Axis Origin</source>
         <translation>Origen del eje</translation>
     </message>
     <message>
-        <source>V, A</source>
-        <translation>V, A</translation>
-    </message>
-    <message>
         <source>Seam Allowance</source>
         <translation>Márgenes de costura</translation>
-    </message>
-    <message>
-        <source>V, S</source>
-        <translation>V, S</translation>
     </message>
     <message>
         <source>Grainlines</source>
         <translation>Dirección del hilo</translation>
     </message>
     <message>
-        <source>V, G</source>
-        <translation>V, G</translation>
-    </message>
-    <message>
         <source>Labels</source>
         <translation>Etiquetas</translation>
-    </message>
-    <message>
-        <source>V, L</source>
-        <translation>V, L</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -10830,10 +10769,6 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Cambiar nombre de Nuevo bloque de borrador</translation>
     </message>
     <message>
-        <source>F2</source>
-        <translation>F2</translation>
-    </message>
-    <message>
         <source>Point</source>
         <translation>Punto</translation>
     </message>
@@ -10842,80 +10777,40 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Longitud y Ángulo</translation>
     </message>
     <message>
-        <source>L, A</source>
-        <translation>L, A</translation>
-    </message>
-    <message>
         <source>On Line</source>
         <translation>En Línea</translation>
-    </message>
-    <message>
-        <source>O, L</source>
-        <translation>O, L</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
         <translation>En Perpendicular</translation>
     </message>
     <message>
-        <source>O, P</source>
-        <translation>O, P</translation>
-    </message>
-    <message>
         <source>On Bisector</source>
         <translation>En Bisectriz</translation>
-    </message>
-    <message>
-        <source>O, B</source>
-        <translation>O, B</translation>
     </message>
     <message>
         <source>Length to Line</source>
         <translation>Longitud a Línea</translation>
     </message>
     <message>
-        <source>P, S</source>
-        <translation>P, S</translation>
-    </message>
-    <message>
         <source>Intersect Arc and Line</source>
         <translation>Intersección de Arco y Línea</translation>
-    </message>
-    <message>
-        <source>A, L</source>
-        <translation>A, L</translation>
     </message>
     <message>
         <source>Intersect Axis and Triangle</source>
         <translation>Intersección Eje y Triángulo</translation>
     </message>
     <message>
-        <source>X, T</source>
-        <translation>X, T</translation>
-    </message>
-    <message>
         <source>Intersect XY</source>
         <translation>intersección de XY</translation>
-    </message>
-    <message>
-        <source>X, Y</source>
-        <translation>X, Y</translation>
     </message>
     <message>
         <source>Intersect Line and Perpendicular</source>
         <translation>Intersección de Línea y Perpendicular</translation>
     </message>
     <message>
-        <source>L, P</source>
-        <translation>L, P</translation>
-    </message>
-    <message>
         <source>Intersect Line and Axis</source>
         <translation>Intersección Línea y Eje</translation>
-    </message>
-    <message>
-        <source>L, X</source>
-        <translation>L, X</translation>
     </message>
     <message>
         <source>Midpoint On Line</source>
@@ -10936,10 +10831,6 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Point - Intersect Lines</source>
         <translation>Punto - Intersección de Líneas</translation>
-    </message>
-    <message>
-        <source>I, L</source>
-        <translation>I, L</translation>
     </message>
     <message>
         <source>Curves</source>
@@ -10982,32 +10873,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Punto - En curva</translation>
     </message>
     <message>
-        <source>O, C</source>
-        <translation>O, C</translation>
-    </message>
-    <message>
         <source>Point - On Spline	</source>
         <translation>Punto - En Spline	</translation>
-    </message>
-    <message>
-        <source>O, S</source>
-        <translation>O, S</translation>
     </message>
     <message>
         <source>Point - Intersect Curves</source>
         <translation>Punto - Intersección de Curvas</translation>
     </message>
     <message>
-        <source>I, C</source>
-        <translation>I, C</translation>
-    </message>
-    <message>
         <source>Point - Intersect Curve and Axis</source>
         <translation>Punto - Intersección Curva y Eje</translation>
-    </message>
-    <message>
-        <source>C, X</source>
-        <translation>C, X</translation>
     </message>
     <message>
         <source>Arcs</source>
@@ -11034,24 +10909,12 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Punto - En Arco</translation>
     </message>
     <message>
-        <source>O, A</source>
-        <translation>O, A</translation>
-    </message>
-    <message>
         <source>Point - Intersect Arc and Axis</source>
         <translation>Punto - Intersección Arco y Eje</translation>
     </message>
     <message>
-        <source>A, X</source>
-        <translation>A, X</translation>
-    </message>
-    <message>
         <source>Point - Intersect Arcs</source>
         <translation>Punto - Intersección de Arcos</translation>
-    </message>
-    <message>
-        <source>I, A</source>
-        <translation>I, A</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
@@ -11066,16 +10929,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Punto - Intersección Círculo y Tangente</translation>
     </message>
     <message>
-        <source>C, T</source>
-        <translation>C, T</translation>
-    </message>
-    <message>
         <source>Point - Intersect Arc and Tangent</source>
         <translation>Punto - Intersección Arco y Tangente</translation>
-    </message>
-    <message>
-        <source>A, T</source>
-        <translation>A, T</translation>
     </message>
     <message>
         <source>Elliptical Arc</source>
@@ -11094,32 +10949,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Aañadir Objetos al Grupo</translation>
     </message>
     <message>
-        <source>G</source>
-        <translation>G</translation>
-    </message>
-    <message>
         <source>Rotation</source>
         <translation>Rotación</translation>
-    </message>
-    <message>
-        <source>R</source>
-        <translation>R</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
         <translation>Reflejar por Línea</translation>
     </message>
     <message>
-        <source>M, L</source>
-        <translation>M, L</translation>
-    </message>
-    <message>
         <source>Mirror by Axis</source>
         <translation>Reflejar por Eje</translation>
-    </message>
-    <message>
-        <source>M, A</source>
-        <translation>M, A</translation>
     </message>
     <message>
         <source>Move</source>
@@ -11134,16 +10973,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Pinzas Correctas</translation>
     </message>
     <message>
-        <source>T, D</source>
-        <translation>T, D</translation>
-    </message>
-    <message>
         <source>Export Draft Blocks</source>
         <translation>Exportar bloques de borrador</translation>
-    </message>
-    <message>
-        <source>E, D</source>
-        <translation>E, D</translation>
     </message>
     <message>
         <source>Images</source>
@@ -11166,36 +10997,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Nueva Pieza de Patrón</translation>
     </message>
     <message>
-        <source>N, P</source>
-        <translation>N, P</translation>
-    </message>
-    <message>
         <source>Anchor Point</source>
         <translation>Punto de Anclaje</translation>
-    </message>
-    <message>
-        <source>A, P</source>
-        <translation>A, P</translation>
     </message>
     <message>
         <source>Internal Path</source>
         <translation>Ruta Interna</translation>
     </message>
     <message>
-        <source>I, P</source>
-        <translation>I, P</translation>
-    </message>
-    <message>
-        <source>I, N</source>
-        <translation>I, N</translation>
-    </message>
-    <message>
         <source>Edit Properties</source>
         <translation>Editar Propiedades</translation>
-    </message>
-    <message>
-        <source>P</source>
-        <translation>P</translation>
     </message>
     <message>
         <source>Toggle Lock</source>
@@ -11210,16 +11021,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Incluir en el maquetación</translation>
     </message>
     <message>
-        <source>I</source>
-        <translation>I</translation>
-    </message>
-    <message>
         <source>Forbid Flipping</source>
         <translation>Prohibir voltear</translation>
-    </message>
-    <message>
-        <source>F</source>
-        <translation>F</translation>
     </message>
     <message>
         <source>Raise To Top</source>
@@ -11258,16 +11061,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Unir piezas</translation>
     </message>
     <message>
-        <source>U</source>
-        <translation>U</translation>
-    </message>
-    <message>
         <source>Export Pieces</source>
         <translation>Exportar Piezas</translation>
-    </message>
-    <message>
-        <source>E, P</source>
-        <translation>E, P</translation>
     </message>
     <message>
         <source>Layout</source>
@@ -11278,16 +11073,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Nuevo Maquetación</translation>
     </message>
     <message>
-        <source>N, L</source>
-        <translation>N, L</translation>
-    </message>
-    <message>
         <source>Export Layout</source>
         <translation>Exportar maquetación</translation>
-    </message>
-    <message>
-        <source>E, L</source>
-        <translation>E, L</translation>
     </message>
     <message>
         <source>Last Tool</source>
@@ -11334,16 +11121,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Atajos de Teclado</translation>
     </message>
     <message>
-        <source>K</source>
-        <translation>K</translation>
-    </message>
-    <message>
         <source>Shift+P</source>
         <translation>Mayúsculas+P</translation>
-    </message>
-    <message>
-        <source>T</source>
-        <translation>T</translation>
     </message>
     <message>
         <source>Export PDF</source>
@@ -11352,6 +11131,14 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Insert Nodes</source>
         <translation>Insertar nodos</translation>
+    </message>
+    <message>
+        <source>Zoom 100%</source>
+        <translation>Zoom 100%</translation>
+    </message>
+    <message>
+        <source>Ctrl+9</source>
+        <translation>Control+9</translation>
     </message>
 </context>
 <context>
@@ -15336,56 +15123,56 @@ load in SeamlyME as usual.
         <comment>Converts degrees to radians
 Usage: degTorad(angle θ in degrees) → returns an angle in radians
 Example: degTorad(180) = 3.14159</comment>
-        <translation type="unfinished"></translation>
+        <translation>degTorad</translation>
     </message>
     <message>
         <source>radTodeg</source>
         <comment>Converts radians to degrees
 Usage: radTodeg(angle θ in radians)  → returns an angle in degrees
 Example: radTodeg(3.14159) = 180</comment>
-        <translation type="unfinished">radTodeg</translation>
+        <translation>radTodeg</translation>
     </message>
     <message>
         <source>sin</source>
         <comment>Sine function working with radians
 Usage: sin(angle θ in radians) → returns a number between -1 and 1
 Example: sin(90) = 0.893997</comment>
-        <translation type="unfinished">sin</translation>
+        <translation>sin</translation>
     </message>
     <message>
         <source>cos</source>
         <comment>Cosine function working with radians
 Usage: cos(angle θ in radians) → returns a number between -1 and 1
 Example: cos(1) = 0.540302</comment>
-        <translation type="unfinished">cos</translation>
+        <translation>cos</translation>
     </message>
     <message>
         <source>tan</source>
         <comment>Tangent function working with radians
 Usage: tan(angle θ in radians)
 Example: tan(1) = 1.55741</comment>
-        <translation type="unfinished">tan</translation>
+        <translation>tan</translation>
     </message>
     <message>
         <source>asin</source>
         <comment>Inverse sine function working with radians
 Usage: asin(x between -1 and 1) → returns an angle in radians
 Example: asin(-1) = -1.5708</comment>
-        <translation type="unfinished">asin</translation>
+        <translation>asin</translation>
     </message>
     <message>
         <source>acos</source>
         <comment>Inverse cosine function working with radians
 Usage: acos(x between -1 and 1) → returns an angle in radians
 Example: acos(0.1) = 1.47063</comment>
-        <translation type="unfinished">acos</translation>
+        <translation>acos</translation>
     </message>
     <message>
         <source>atan</source>
         <comment>Inverse tangent function working with radians
 Usage: atan(x) → returns an angle in radians
 Example: atan(1) = 0.78538</comment>
-        <translation type="unfinished">atan</translation>
+        <translation>atan</translation>
     </message>
     <message>
         <source>sinh</source>
