@@ -633,7 +633,7 @@ void VAbstractOperation::InitCurve(quint32 id, VContainer *data, GOType curveTyp
     {
         showContextMenu(event, id);
     });
-    connect(curve, &VSimpleCurve::Choosed, this, [this, sceneType](quint32 id)
+    connect(curve, &VSimpleCurve::Chosen, this, [this, sceneType](quint32 id)
     {
         emit chosenTool(id, sceneType);
     });
@@ -701,7 +701,7 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                 point->setParentItem(this);
                 point->SetType(GOType::Point);
                 point->setToolTip(complexPointToolTip(item.id));
-                connect(point, &VSimplePoint::Choosed, this, [this](quint32 id)
+                connect(point, &VSimplePoint::Chosen, this, [this](quint32 id)
                 {
                     emit chosenTool(id, SceneObject::Point);
                 });

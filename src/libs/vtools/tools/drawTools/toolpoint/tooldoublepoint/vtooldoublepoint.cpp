@@ -90,7 +90,7 @@ VToolDoublePoint::VToolDoublePoint(VAbstractPattern *doc, VContainer *data, quin
     firstPoint = new VSimplePoint(p1id, QColor(qApp->Settings()->getPointNameColor()));
     firstPoint->setParentItem(this);
     firstPoint->setToolTip(complexToolTip(p1id));
-    connect(firstPoint, &VSimplePoint::Choosed, this, &VToolDoublePoint::point1Chosen);
+    connect(firstPoint, &VSimplePoint::Chosen, this, &VToolDoublePoint::point1Chosen);
     connect(firstPoint, &VSimplePoint::Selected, this, &VToolDoublePoint::point1Selected);
     connect(firstPoint, &VSimplePoint::showContextMenu, this, &VToolDoublePoint::showContextMenu);
     connect(firstPoint, &VSimplePoint::Delete, this, &VToolDoublePoint::deletePoint);
@@ -100,7 +100,7 @@ VToolDoublePoint::VToolDoublePoint(VAbstractPattern *doc, VContainer *data, quin
     secondPoint = new VSimplePoint(p2id, QColor(qApp->Settings()->getPointNameColor()));
     secondPoint->setParentItem(this);
     secondPoint->setToolTip(complexToolTip(p2id));
-    connect(secondPoint, &VSimplePoint::Choosed, this, &VToolDoublePoint::point2Chosen);
+    connect(secondPoint, &VSimplePoint::Chosen, this, &VToolDoublePoint::point2Chosen);
     connect(secondPoint, &VSimplePoint::Selected, this, &VToolDoublePoint::point2Selected);
     connect(secondPoint, &VSimplePoint::showContextMenu, this, &VToolDoublePoint::showContextMenu);
     connect(secondPoint, &VSimplePoint::Delete, this, &VToolDoublePoint::deletePoint);
