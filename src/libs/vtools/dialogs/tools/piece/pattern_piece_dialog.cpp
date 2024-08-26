@@ -147,6 +147,9 @@ PatternPieceDialog::PatternPieceDialog(const VContainer *data, const quint32 &to
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/new_piece.png"));
 
+    // Set the position that the dialog opens based on user preference. 
+    setDialogPosition();
+
     //Limit dialog height to 80% of screen size
     setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 

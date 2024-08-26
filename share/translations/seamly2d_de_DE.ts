@@ -9471,6 +9471,50 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Always use current pen</source>
         <translation>Verwenden Sie immer den aktuellen Stift</translation>
     </message>
+    <message>
+        <source>Dialogs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open on second monitor if available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bottom left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bottom right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Offset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X Offset:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y Offset:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>

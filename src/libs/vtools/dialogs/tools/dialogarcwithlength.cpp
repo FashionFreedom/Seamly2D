@@ -91,6 +91,9 @@ DialogArcWithLength::DialogArcWithLength(const VContainer *data, const quint32 &
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/arc_with_length.png"));
 
+    // Set the position that the dialog opens based on user preference.
+    setDialogPosition();
+
     m_Id  = data->getId() + 1;
 
     plainTextEditFormula = ui->plainTextEditRadius;
@@ -113,7 +116,7 @@ DialogArcWithLength::DialogArcWithLength(const VContainer *data, const quint32 &
 
     initializeOkCancelApply(ui);
 
-    FillComboBoxPoints(ui->centerPoint_ComboBox);
+    fillComboBoxPoints(ui->centerPoint_ComboBox);
 
     int index = ui->lineType_ComboBox->findData(LineTypeNone);
     if (index != -1)
@@ -447,7 +450,7 @@ void DialogArcWithLength::CheckState()
 {
     SCASSERT(ok_Button != nullptr)
     ok_Button->setEnabled(flagRadius && flagF1 && flagLength);
-    // In case dialog hasn't apply button
+    // In case dialog does not have an apply button
     if (apply_Button != nullptr)
     {
         apply_Button->setEnabled(ok_Button->isEnabled());
