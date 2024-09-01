@@ -969,6 +969,8 @@ void VPattern::parseImageElement(QDomElement &domElement, const Document &parse)
     image.basepoint = GetParametrUInt(domElement, AttrBasepoint, 0);
     image.visible = getParameterBool(domElement, AttrVisible, trueStr);
 
+    VContainer::UpdateId(image.id);
+
     if(parse == Document::FullParse)
     {
         ImageTool *image_tool = new ImageTool(this, this, draftScene, image);
