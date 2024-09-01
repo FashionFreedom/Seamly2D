@@ -382,6 +382,7 @@ private:
     void                              handlePieceMenu();
     void                              handleLayoutMenu();
     void                              handleImagesMenu();
+    QString                           getImageFilename();
 
 
     void                              CancelTool();

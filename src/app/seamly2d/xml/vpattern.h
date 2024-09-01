@@ -123,9 +123,6 @@ public:
 
     static const QString AttrReadOnly;
 
-signals:
-    void             setStatusMessage(QString message);
-
 public slots:
     virtual void LiteParseTree(const Document &parse) Q_DECL_OVERRIDE;
 
@@ -144,8 +141,6 @@ private:
 
     void           parseDraftBlockElement(const QDomNode &node, const Document &parse);
     void           ParseDrawMode(const QDomNode &node, const Document &parse, const Draw &mode);
-    void           parseDraftImages(const QDomNode &node, const Document &parse);
-    void           parseImageElement(QDomElement &domElement, const Document &parse);
     void           parsePieceElement(QDomElement &domElement, const Document &parse);
     void           parsePieceNodes(const QDomElement &domElement, VPiece &piece, qreal width, bool closed) const;
     void           ParsePieceDataTag(const QDomElement &domElement, VPiece &piece) const;

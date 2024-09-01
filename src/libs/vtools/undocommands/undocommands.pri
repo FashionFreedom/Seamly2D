@@ -28,7 +28,6 @@ HEADERS += \
     $$PWD/delgroup.h \
     $$PWD/label/moveabstractlabel.h \
     $$PWD/addpiece.h \
-    $$PWD/addimage.h \
     $$PWD/deletepiece.h \
     $$PWD/movepiece.h \
     $$PWD/savepieceoptions.h \
@@ -62,10 +61,8 @@ SOURCES += \
     $$PWD/delgroup.cpp \
     $$PWD/label/moveabstractlabel.cpp \
     $$PWD/addpiece.cpp \
-    $$PWD/addimage.cpp \
     $$PWD/deletepiece.cpp \
     $$PWD/movepiece.cpp \
     $$PWD/savepieceoptions.cpp \
     $$PWD/togglepieceinlayout.cpp \
     $$PWD/savepiecepathoptions.cpp
-
