@@ -174,13 +174,6 @@
     </message>
 </context>
 <context>
-    <name>AddImage</name>
-    <message>
-        <source>add image</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>AddPiece</name>
     <message>
         <source>add piece</source>
@@ -4150,6 +4143,14 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>FvUpdater</name>
     <message>
+        <source>Unable to get exclusive access to file
+%1
+Possibly the file is already being downloaded.</source>
+        <translation>Exklusiver Zugriff auf die Datei kann nicht gewährt werden
+%1
+Möglicherweise wird die Datei bereits heruntergeladen.</translation>
+    </message>
+    <message>
         <source>Feed download failed: %1.</source>
         <translation>Feed download ist fehlgeschlagen: %1.</translation>
     </message>
@@ -4831,12 +4832,28 @@ Possibly the file is already being downloaded.</source>
         <translation>Die Datei könnte beschädigt sein...</translation>
     </message>
     <message>
+        <source>File may be corrupted or empty...</source>
+        <translation>Die Datei kann beschädigt oder leer sein...</translation>
+    </message>
+    <message>
         <source>Confirm deletion</source>
         <translation>Löschvorgang bestätigen</translation>
     </message>
     <message>
         <source>Do you really want to delete?</source>
         <translation>Möchtest Du wirklich löschen?</translation>
+    </message>
+    <message>
+        <source>Images will not be saved</source>
+        <translation>Die Bilder werden nicht gespeichert</translation>
+    </message>
+    <message>
+        <source>Please note that the images can not be saved and that they are not affected by the undo and redo functions in the current version of the software.
+
+You may want to take a screenshot of the image properties dialog before closing the software to be able to recreate identically the image when opening the software again.</source>
+        <translation>Bitte beachten Sie, dass die Bilder nicht gespeichert werden können und dass sie von den Rückgängig- und Wiederherstellungsfunktionen in der aktuellen Version der Software nicht betroffen sind.
+
+Es empfiehlt sich, vor dem Schließen der Software einen Screenshot des Dialogs mit den Bildeigenschaften zu machen, damit Sie das Bild beim erneuten Öffnen der Software identisch wiederherstellen können.</translation>
     </message>
 </context>
 <context>
@@ -5166,6 +5183,14 @@ Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLIC
     <message>
         <source>Descending area</source>
         <translation>Absteigender Bereich</translation>
+    </message>
+    <message>
+        <source>Margins go beyond printing.
+
+Apply settings anyway?</source>
+        <translation>Ränder gehen über den Druck hinaus.
+
+Einstellungen trotzdem anwenden?</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -10296,6 +10321,20 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Dezimaltrennzeichen:</translation>
     </message>
     <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation>Legt fest, welches Dezimaltrennzeichen verwendet werden soll.
+Wenn das Kontrollkästchen aktiviert ist, wird das Trennzeichen für das Gebietsschema des Benutzers verwendet.
+Wenn es nicht markiert ist, wird der Punkt verwendet.</translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation>Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt.
+Sie können diese Einstellung in den SeamlyMe-Einstellungen ändern.</translation>
+    </message>
+    <message>
         <source>GUI language:</source>
         <translation>Sprache der Benutzeroberfläche:</translation>
     </message>
@@ -10358,6 +10397,12 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Dezimaltrennzeichen:</translation>
     </message>
     <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the Seamly2D preferences.</source>
+        <translation>Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt.
+Sie können diese Einstellung in den Seamly2D-Voreinstellungen ändern.</translation>
+    </message>
+    <message>
         <source>GUI language:</source>
         <translation>Sprache der Benutzeroberfläche:</translation>
     </message>
@@ -10388,6 +10433,14 @@ You can change this setting in the SeamlyMe preferences.</source>
     <message>
         <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
         <translation>Bitte wählen Sie Ihre bevorzugten Einheiten, das Dezimaltrennzeichen, die Sprache und den Auswahlton. (Sie können diese Angaben später ändern.)</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation>Legt fest, welches Dezimaltrennzeichen verwendet werden soll.
+Wenn das Kontrollkästchen aktiviert ist, wird das Trennzeichen für das Gebietsschema des Benutzers verwendet.
+Wenn es nicht markiert ist, wird der Punkt verwendet.</translation>
     </message>
     <message>
         <source>Sound:</source>
@@ -10730,4144 +10783,4345 @@ You can change this setting in the Seamly2D preferences.</source>
         <source>Length to Line</source>
         <translation>Länge auf einer Linie</translation>
     </message>
-    <message>
-        <source>Intersect Arc and Line</source>
-        <translation>Schneidet Bogen und Linie</translation>
-    </message>
-    <message>
-        <source>Intersect Axis and Triangle</source>
-        <translation>Schneidet Achse und Dreieck</translation>
-    </message>
-    <message>
-        <source>Intersect XY</source>
-        <translation>Schneidet XY</translation>
-    </message>
-    <message>
-        <source>Intersect Line and Perpendicular</source>
-        <translation>Schneidet Linie und Senkrechte</translation>
-    </message>
-    <message>
-        <source>Intersect Line and Axis</source>
-        <translation>Schneidet Linie und Achse</translation>
-    </message>
-    <message>
-        <source>Midpoint On Line</source>
-        <translation>Mittelpunkt auf einer Linie</translation>
-    </message>
-    <message>
-        <source>Shift+O, Shift+L</source>
-        <translation>Umschalt+O, Umschalt+L</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Linie</translation>
-    </message>
-    <message>
-        <source>Alt+L</source>
-        <translation>Alt+L</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Lines</source>
-        <translation>Punkt - Schneidet Linien</translation>
-    </message>
-    <message>
-        <source>Curves</source>
-        <translation>Kurve</translation>
-    </message>
-    <message>
-        <source>Curve - Interactive</source>
-        <translation>Kurve - Interaktiv</translation>
-    </message>
-    <message>
-        <source>Alt+C</source>
-        <translation>Alt+C</translation>
-    </message>
-    <message>
-        <source>Spline - Interactive</source>
-        <translation>Spline - Interaktiv</translation>
-    </message>
-    <message>
-        <source>Alt+S</source>
-        <translation>Alt+S</translation>
-    </message>
-    <message>
-        <source>Curve - Fixed</source>
-        <translation>Kurve - Fixiert</translation>
-    </message>
-    <message>
-        <source>Alt+Shift+C</source>
-        <translation>Alt+Umschalt+C</translation>
-    </message>
-    <message>
-        <source>Spline - Fixed</source>
-        <translation>Spline - Fixiert</translation>
-    </message>
-    <message>
-        <source>Alt+Shift+S</source>
-        <translation>Alt+Umschalt+S</translation>
-    </message>
-    <message>
-        <source>Point - On Curve</source>
-        <translation>Punkt - Auf Kurve</translation>
-    </message>
-    <message>
-        <source>Point - On Spline	</source>
-        <translation>Punkt - Auf Spline	</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Curves</source>
-        <translation>Punkt - Schneidet Kurven</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Curve and Axis</source>
-        <translation>Punkt - Schneidet Kurve und Achse</translation>
-    </message>
-    <message>
-        <source>Arcs</source>
-        <translation>Bögen</translation>
-    </message>
-    <message>
-        <source>Arc - Radius and Angle</source>
-        <translation>Bogen - Radius und Winkel</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Arc - Radius and Length</source>
-        <translation>Bogen - Radius und Länge</translation>
-    </message>
-    <message>
-        <source>Alt+Shift+A</source>
-        <translation>Alt+Umschalt+A</translation>
-    </message>
-    <message>
-        <source>Point - On Arc</source>
-        <translation>Punkt - Auf einem Bogen</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arc and Axis</source>
-        <translation>Punkt - Schneidet Bogen und Achse</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arcs</source>
-        <translation>Punkt - Schneidet Bögen</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Circles</source>
-        <translation>Punkt - Schneidet Kreise</translation>
-    </message>
-    <message>
-        <source>Shift+I, Shift+C</source>
-        <translation>Umschalt+I, Umschalt+C</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Circle and Tangent</source>
-        <translation>Punkt - Schneidet Kreis und Tangente</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arc and Tangent</source>
-        <translation>Punkt - Schneidet Bogen und Tangente</translation>
-    </message>
-    <message>
-        <source>Elliptical Arc</source>
-        <translation>Bogen - Elliptisch</translation>
-    </message>
-    <message>
-        <source>Alt+E</source>
-        <translation>Alt+E</translation>
-    </message>
-    <message>
-        <source>Operations</source>
-        <translation>Arbeitsabläufe</translation>
-    </message>
-    <message>
-        <source>Add Objects to Group</source>
-        <translation>Objekte zur Gruppe hinzufügen</translation>
-    </message>
-    <message>
-        <source>Rotation</source>
-        <translation>Drehung</translation>
-    </message>
-    <message>
-        <source>Mirror by Line</source>
-        <translation>Spiegeln an einer Linie</translation>
-    </message>
-    <message>
-        <source>Mirror by Axis</source>
-        <translation>Spiegeln an einer Achse</translation>
-    </message>
-    <message>
-        <source>Move</source>
-        <translation>Bewegen</translation>
-    </message>
-    <message>
-        <source>Alt+M</source>
-        <translation>Alt+M</translation>
-    </message>
-    <message>
-        <source>True Darts</source>
-        <translation>Abnäherlänge ausgleichen</translation>
-    </message>
-    <message>
-        <source>Export Draft Blocks</source>
-        <translation>Exportiere Entwurfsblöcke</translation>
-    </message>
-    <message>
-        <source>Images</source>
-        <translation>Bilder</translation>
-    </message>
-    <message>
-        <source>Import Image</source>
-        <translation>Bild importieren</translation>
-    </message>
-    <message>
-        <source>Alt + I</source>
-        <translation>Alt + I</translation>
-    </message>
-    <message>
-        <source>Pattern Piece</source>
-        <translation>Schnittteil</translation>
-    </message>
-    <message>
-        <source>New Pattern Piece</source>
-        <translation>Neues Schnittteil</translation>
-    </message>
-    <message>
-        <source>Anchor Point</source>
-        <translation>Anker Punkt</translation>
-    </message>
-    <message>
-        <source>Internal Path</source>
-        <translation>Unterverzeichnis</translation>
-    </message>
-    <message>
-        <source>Edit Properties</source>
-        <translation>Eigenschaften bearbeiten</translation>
-    </message>
-    <message>
-        <source>Toggle Lock</source>
-        <translation>Knebelschloss</translation>
-    </message>
-    <message>
-        <source>Ctrl+L</source>
-        <translation>Strg+L</translation>
-    </message>
-    <message>
-        <source>Include in Layout</source>
-        <translation>In das Layout aufnehmen</translation>
-    </message>
-    <message>
-        <source>Forbid Flipping</source>
-        <translation>Drehen Ausschließen</translation>
-    </message>
-    <message>
-        <source>Raise To Top</source>
-        <translation>Anheben nach oben</translation>
-    </message>
-    <message>
-        <source>Ctrl+Home</source>
-        <translation>Strg+Home</translation>
-    </message>
-    <message>
-        <source>Lower To Bottom</source>
-        <translation>Unten nach unten</translation>
-    </message>
-    <message>
-        <source>Ctrl+End</source>
-        <translation>Strg+End</translation>
-    </message>
-    <message>
-        <source>Rename</source>
-        <translation>Umbenennen</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Löschen</translation>
-    </message>
-    <message>
-        <source>Del</source>
-        <translation>Del</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation>Details</translation>
-    </message>
-    <message>
-        <source>Unite Pieces</source>
-        <translation>Teile zusammenfügen</translation>
-    </message>
-    <message>
-        <source>Export Pieces</source>
-        <translation>Schnitteile Exportieren</translation>
-    </message>
-    <message>
-        <source>Layout</source>
-        <translation>Layout</translation>
-    </message>
-    <message>
-        <source>New Layout</source>
-        <translation>Neue Layout</translation>
-    </message>
-    <message>
-        <source>Export Layout</source>
-        <translation>Layout Exportieren</translation>
-    </message>
-    <message>
-        <source>Last Tool</source>
-        <translation>Letztes Werkzeug</translation>
-    </message>
-    <message>
-        <source>Ctrl+Shift+L</source>
-        <translation>Strg+Umschalt+L</translation>
-    </message>
-    <message>
-        <source>History</source>
-        <translation>Chronik</translation>
-    </message>
-    <message>
-        <source>Ctrl+H</source>
-        <translation>Strg+H</translation>
-    </message>
-    <message>
-        <source>Utilities</source>
-        <translation>Dienstprogramme</translation>
-    </message>
-    <message>
-        <source>Calculator</source>
-        <translation>Taschenrechner</translation>
-    </message>
-    <message>
-        <source>Ctrl+Shift+C</source>
-        <translation>Strg+Umschalt+C</translation>
-    </message>
-    <message>
-        <source>Decimal Chart</source>
-        <translation>Dezimal Tabelle</translation>
-    </message>
-    <message>
-        <source>Ctrl+Shift+D</source>
-        <translation>Strg+Umschalt+D</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation>Hilfe</translation>
-    </message>
-    <message>
-        <source>Keyboard Shortcuts</source>
-        <translation>Tastaturkurzbefehle</translation>
-    </message>
-    <message>
-        <source>Shift+P</source>
-        <translation>Umschalt+P</translation>
-    </message>
-    <message>
-        <source>Export PDF</source>
-        <translation>PDF exportieren</translation>
-    </message>
-    <message>
-        <source>Insert Nodes</source>
-        <translation>Füge Knoten ein</translation>
-    </message>
-    <message>
-        <source>Seamly2D Shortcuts</source>
-        <translation>Seamly2D Verknüpfungen</translation>
-    </message>
-    <message>
-        <source>Zoom 100%</source>
-        <translation>Zoom 100%</translation>
-    </message>
-    <message>
-        <source>Ctrl+9</source>
-        <translation>Strg+9</translation>
-    </message>
-</context>
-<context>
-    <name>ShowDoublePointName</name>
-    <message>
-        <source>toggle the first dart visibility</source>
-        <translation>Umschalten der erster Abnäher Sichtbarkeit</translation>
-    </message>
-    <message>
-        <source>toggle the second dart visibility</source>
-        <translation>Umschalten der zweiten  Abnäher Sichtbarkeit</translation>
-    </message>
-</context>
-<context>
-    <name>ShowInfoDialog</name>
-    <message>
-        <source>Document Information</source>
-        <translation>Dokument Information</translation>
-    </message>
-    <message>
-        <source>Copy info to clipboard</source>
-        <translation>Info in die Zwischenablage kopieren</translation>
-    </message>
-    <message>
-        <source>Export info as PDF</source>
-        <translation>Als PDF exportieren</translation>
-    </message>
-    <message>
-        <source>Send info to the Printer</source>
-        <translation>Info an den Drucker senden</translation>
-    </message>
-    <message>
-        <source>&lt;table style=font-size:11pt; font-weight:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Company:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Customer:    &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Pattern Name:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Pattern No:  &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Version:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Units:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Measurements:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Description: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Notes:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Image:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/table&gt;</source>
-        <translation>&lt;Tabellenstil=Schriftgröße:11pt; Schriftstärke:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Firma:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = rights&gt;&lt;b&gt;Kunde:    &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Schnittmuster Bezeichnung:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Schnittmuster Nummer  &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Version:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Einheiten:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Maße:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Beschreibung: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Anmerkungen:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Image:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/Tabelle &gt;</translation>
-    </message>
-    <message>
-        <source>Info files</source>
-        <translation>Info Dateien</translation>
-    </message>
-    <message>
-        <source>Export PDF</source>
-        <translation>PDF exportieren</translation>
-    </message>
-    <message>
-        <source>_info</source>
-        <translation>_Info</translation>
-    </message>
-</context>
-<context>
-    <name>ShowOperationPointName</name>
-    <message>
-        <source>toggle point visibility</source>
-        <translation>Punktsichtbarkeit umschalten</translation>
-    </message>
-</context>
-<context>
-    <name>ShowPointName</name>
-    <message>
-        <source>toggle point visibility</source>
-        <translation>Punktsichtbarkeit umschalten</translation>
-    </message>
-</context>
-<context>
-    <name>TMainWindow</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Select New for creation measurement file.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Neu auswählen, um eine neue Maßdatei zu erstellen.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Bezeichnung</translation>
-    </message>
-    <message>
-        <source>Calculated value</source>
-        <translation>Berechneter Wert</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation>Formel</translation>
-    </message>
-    <message>
-        <source>Base value</source>
-        <translation>Basiswert</translation>
-    </message>
-    <message>
-        <source>In sizes</source>
-        <translation>In Größen</translation>
-    </message>
-    <message>
-        <source>In heights</source>
-        <translation>In Körperhöhe</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation>Details</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Bezeichnung:</translation>
-    </message>
-    <message>
-        <source>Formula:</source>
-        <translation>Formel:</translation>
-    </message>
-    <message>
-        <source>Base value:</source>
-        <translation>Basiswert:</translation>
-    </message>
-    <message>
-        <source>In sizes:</source>
-        <translation>In Größen:</translation>
-    </message>
-    <message>
-        <source>In heights:</source>
-        <translation>In Körperhöhen:</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation>Beschreibung:</translation>
-    </message>
-    <message>
-        <source>Move measurement up</source>
-        <translation>Maß nach oben bewegen</translation>
-    </message>
-    <message>
-        <source>Move measurement down</source>
-        <translation>Maß nach unten bewegen</translation>
-    </message>
-    <message>
-        <source>Calculated value:</source>
-        <translation>Berechneter Wert:</translation>
-    </message>
-    <message>
-        <source>Full name:</source>
-        <translation>Vollständige Bezeichnung:</translation>
-    </message>
-    <message>
-        <source>Information</source>
-        <translation>Information</translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation>Typ:</translation>
-    </message>
-    <message>
-        <source>Measurement type</source>
-        <translation>Maßsatztyp</translation>
-    </message>
-    <message>
-        <source>Path:</source>
-        <translation>Verzeichnis:</translation>
-    </message>
-    <message>
-        <source>Show in Explorer</source>
-        <translation>Im Dateiexplorer anzeigen</translation>
-    </message>
-    <message>
-        <source>Base size:</source>
-        <translation>Basisgröße:</translation>
-    </message>
-    <message>
-        <source>Base size value</source>
-        <translation>Wert der Basisgröße</translation>
-    </message>
-    <message>
-        <source>Base height:</source>
-        <translation>Basiskörperhöhe:</translation>
-    </message>
-    <message>
-        <source>Base height value</source>
-        <translation>Wert der Basiskörperhöhe</translation>
-    </message>
-    <message>
-        <source>Given name:</source>
-        <translation>Vorname:</translation>
-    </message>
-    <message>
-        <source>Family name:</source>
-        <translation>Nachname:</translation>
-    </message>
-    <message>
-        <source>Birth date:</source>
-        <translation>Geburtsdatum:</translation>
-    </message>
-    <message>
-        <source>Email:</source>
-        <translation>Email:</translation>
-    </message>
-    <message>
-        <source>Notes:</source>
-        <translation>Notiz:</translation>
-    </message>
-    <message>
-        <source>File</source>
-        <translation>Datei</translation>
-    </message>
-    <message>
-        <source>Window</source>
-        <translation>Fenster</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation>Hilfe</translation>
-    </message>
-    <message>
-        <source>Measurements</source>
-        <translation>Maße</translation>
-    </message>
-    <message>
-        <source>Menu</source>
-        <translation>Menü</translation>
-    </message>
-    <message>
-        <source>Gradation</source>
-        <translation>Gradierung</translation>
-    </message>
-    <message>
-        <source>Open individual ...</source>
-        <translation>Individuelle öffnen...</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Speichern</translation>
-    </message>
-    <message>
-        <source>Save As ...</source>
-        <translation>Speichern als ...</translation>
-    </message>
-    <message>
-        <source>About &amp;Qt</source>
-        <translation>Über &amp;Qt</translation>
-    </message>
-    <message>
-        <source>About SeamlyMe</source>
-        <translation>Über SeamlyMe</translation>
-    </message>
-    <message>
-        <source>New</source>
-        <translation>Neu</translation>
-    </message>
-    <message>
-        <source>Add known</source>
-        <translation>Bekanntes Maß hinzufügen</translation>
-    </message>
-    <message>
-        <source>Add custom</source>
-        <translation>Individuelles Maß hinzufügen</translation>
-    </message>
-    <message>
-        <source>Read only</source>
-        <translation>Nur lesen</translation>
-    </message>
-    <message>
-        <source>Database</source>
-        <translation>Datenbank</translation>
-    </message>
-    <message>
-        <source>Show information about all known measurement</source>
-        <translation>Informationen zu allen bekannten Maßen anzeigen</translation>
-    </message>
-    <message>
-        <source>Preferences</source>
-        <translation>Einstellungen</translation>
-    </message>
-    <message>
-        <source>untitled %1</source>
-        <translation>unbenannt %1</translation>
-    </message>
-    <message>
-        <source>This file already opened in another window.</source>
-        <translation>Diese Datei ist bereits in einem anderen Fenster geöffnet.</translation>
-    </message>
-    <message>
-        <source>File error.</source>
-        <translation>Dateifehler.</translation>
-    </message>
-    <message>
-        <source>Could not save file</source>
-        <translation>Datei konnte nicht gespeichert werden</translation>
-    </message>
-    <message>
-        <source>Save as</source>
-        <translation>Speichern als</translation>
-    </message>
-    <message>
-        <source>&amp;New Window</source>
-        <translation>&amp;Neues Fenster</translation>
-    </message>
-    <message>
-        <source>Edit measurement</source>
-        <translation>Maß bearbeiten</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Fehler</translation>
-    </message>
-    <message>
-        <source>Empty field.</source>
-        <translation>Leeres Eingabefeld.</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation>Auswertungsfehler: %1</translation>
-    </message>
-    <message>
-        <source>Individual measurements</source>
-        <translation>Individuelle Maße</translation>
-    </message>
-    <message>
-        <source>untitled</source>
-        <translation>ohne Titel</translation>
-    </message>
-    <message>
-        <source>Unsaved changes</source>
-        <translation>Ungespeicherte Änderungen</translation>
-    </message>
-    <message>
-        <source>Measurements have been modified.
-Do you want to save your changes?</source>
-        <translation>Maße wurden geändert. Sollen die Änderungen gespeichert werden?</translation>
-    </message>
-    <message>
-        <source>Empty field</source>
-        <translation>Leeres Eingabefeld</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Wert</translation>
-    </message>
-    <message>
-        <source>Open file</source>
-        <translation>Datei öffnen</translation>
-    </message>
-    <message>
-        <source>Import from a pattern</source>
-        <translation>Von einem Schnittteil importieren</translation>
-    </message>
-    <message>
-        <source>Pattern unit:</source>
-        <translation>Schnittteil Einheit:</translation>
-    </message>
-    <message>
-        <source>Find:</source>
-        <translation>Finden:</translation>
-    </message>
-    <message>
-        <source>Find Previous</source>
-        <translation>Vorheriges suchen</translation>
-    </message>
-    <message>
-        <source>Ctrl+Shift+G</source>
-        <translation>Strg+Shift+G</translation>
-    </message>
-    <message>
-        <source>Find Next</source>
-        <translation>Nächstes finden</translation>
-    </message>
-    <message>
-        <source>Ctrl+G</source>
-        <translation>Ctrl+G</translation>
-    </message>
-    <message>
-        <source>Failed to lock. This file already opened in another window.</source>
-        <translation>Sperren fehlgeschlagen. Diese Datei ist bereits in einem anderen Fenster geöffnet.</translation>
-    </message>
-    <message>
-        <source>File contains invalid known measurement(s).</source>
-        <translation>Datei enthält ungültige bekannte Maße.</translation>
-    </message>
-    <message>
-        <source>File has unknown format.</source>
-        <translation>Unbekanntes Dateiformat.</translation>
-    </message>
-    <message>
-        <source>Full name</source>
-        <translation>Vollständige Bezeichnung</translation>
-    </message>
-    <message>
-        <source>File &apos;%1&apos; doesn&apos;t exist!</source>
-        <translation>Datei &apos;%1&apos; existiert nicht!</translation>
-    </message>
-    <message>
-        <source>The name of known measurement forbidden to change.</source>
-        <translation>Die Bezeichnung bekannter Maße kann nicht geändert werden.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find measurement &apos;%1&apos;.</source>
-        <translation>Maß &apos;%1&apos; kann nicht gefunden werden.</translation>
-    </message>
-    <message>
-        <source>The full name of known measurement forbidden to change.</source>
-        <translation>Die vollständige Bezeichnung bekannter Maße kann nicht geändert werden.</translation>
-    </message>
-    <message>
-        <source>Function Wizard</source>
-        <translation>Funktionsassistent</translation>
-    </message>
-    <message>
-        <source>Move measurement top</source>
-        <translation>Maß nach ganz oben bewegen</translation>
-    </message>
-    <message>
-        <source>Move measurement bottom</source>
-        <translation>Maß nach ganz unten bewegen</translation>
-    </message>
-    <message>
-        <source>Delete measurement</source>
-        <translation>Maß löschen</translation>
-    </message>
-    <message>
-        <source>Gender:</source>
-        <translation>Geschlecht:</translation>
-    </message>
-    <message>
-        <source>PM system:</source>
-        <translation>Schnittmustersystem:</translation>
-    </message>
-    <message>
-        <source>Create from existing ...</source>
-        <translation>Erstellen aus vorhandenem...</translation>
-    </message>
-    <message>
-        <source>Create from existing file</source>
-        <translation>Aus vorhandener Datei erstellen</translation>
-    </message>
-    <message>
-        <source>Select file</source>
-        <translation>Datei auswählen</translation>
-    </message>
-    <message>
-        <source>Measurement diagram</source>
-        <translation>Maßdiagramm</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; Schriftgröße:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;Zentrum\&quot;&gt;Unbekanntes Maß&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; Schriftgröße:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;Zentrumr&quot;&gt;Unbekanntes Maß&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>About Qt</source>
-        <translation>Über QT</translation>
-    </message>
-    <message>
-        <source>File was not saved yet.</source>
-        <translation>Datei wurde noch nicht gesichert.</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>Suche</translation>
-    </message>
-    <message>
-        <source>Measurement&apos;s name in a formula</source>
-        <translation>Name des Maßes in einer Formel</translation>
-    </message>
-    <message>
-        <source>Measurement&apos;s name in a formula.</source>
-        <translation>Name des Maßes in einer Formel.</translation>
-    </message>
-    <message>
-        <source>Measurement&apos;s human-readable name.</source>
-        <translation>Name des Maßes für Menschen lesbar.</translation>
-    </message>
-    <message>
-        <source>Save...</source>
-        <translation>Speichern...</translation>
-    </message>
-    <message>
-        <source>Don&apos;t Save</source>
-        <translation>Nicht Speichern</translation>
-    </message>
-    <message>
-        <source>Locking file</source>
-        <translation>Datei wird gesperrt</translation>
-    </message>
-    <message>
-        <source>The lock file could not be created, for lack of permissions.</source>
-        <translation>Die Sperrdatei konnte aufgrund fehlender Berechtigungen nicht erstellt werden.</translation>
-    </message>
-    <message>
-        <source>Unknown error happened, for instance a full partition prevented writing out the lock file.</source>
-        <translation>Ein unbekannter Fehler ist aufgetreten, zum Beispiel hat eine volle Festplattenpartition verhindert, dass die Sperrdatei geschrieben werden konnte.</translation>
-    </message>
-    <message>
-        <source>Export to CSV</source>
-        <translation>Als CSV exportieren</translation>
-    </message>
-    <message>
-        <source>Show in Finder</source>
-        <translation>Im Finder anzeigen</translation>
-    </message>
-    <message>
-        <source>Customer&apos;s name</source>
-        <translation>Vorname des Kunden</translation>
-    </message>
-    <message>
-        <source>Customer&apos;s family name</source>
-        <translation>Nachname des Kunden</translation>
-    </message>
-    <message>
-        <source>Customer&apos;s email address</source>
-        <translation>Emailadresse des Kunden</translation>
-    </message>
-    <message>
-        <source>Height:</source>
-        <translation>Körperhöhe:</translation>
-    </message>
-    <message>
-        <source>Size:</source>
-        <translation>Größe:</translation>
-    </message>
-    <message>
-        <source>All files</source>
-        <translation>Alle Dateien</translation>
-    </message>
-    <message>
-        <source>The measurements document has no write permissions.</source>
-        <translation>Das Maße Dokument hat keine Schreibberechtigung.</translation>
-    </message>
-    <message>
-        <source>Cannot set permissions for %1 to writable.</source>
-        <translation>Kann keine Erlaubniss für %1 als schreibbar setzen.</translation>
-    </message>
-    <message>
-        <source>Could not save the file.</source>
-        <translation>Kann die Datei nicht sichern.</translation>
-    </message>
-    <message>
-        <source>Could not save the file</source>
-        <translation>Kann die Datei nicht sichern</translation>
-    </message>
-    <message>
-        <source>read only</source>
-        <translation>Nur lesen</translation>
-    </message>
-    <message>
-        <source>Multisize measurements</source>
-        <translation>Mehrgrößen Maße</translation>
-    </message>
-    <message>
-        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Ungültiges Ergebnis: Der Wert ist unendlich oder NaN, Bitte die Berechnung prüfen.</translation>
-    </message>
-    <message>
-        <source>Empty</source>
-        <translation>Leer</translation>
-    </message>
-    <message>
-        <source>Open multisize ...</source>
-        <translation>Mehrgrößen öffnen...</translation>
-    </message>
-    <message>
-        <source>Export from multisize measurements is not supported.</source>
-        <translation>Der Export von Mehrgrößen Maßen wird nicht unterstützt.</translation>
-    </message>
-    <message>
-        <source>Ctrl+O</source>
-        <translation>Strg+O</translation>
-    </message>
-    <message>
-        <source>Ctrl+S</source>
-        <translation>Strg+S</translation>
-    </message>
-    <message>
-        <source>Ctrl+Shift+S</source>
-        <translation>Ctrl+Umschalt+S</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Beenden</translation>
-    </message>
-    <message>
-        <source>Ctrl+Q</source>
-        <translation>Strg+Q</translation>
-    </message>
-    <message>
-        <source>Ctrl+N</source>
-        <translation>Strg+N</translation>
-    </message>
-    <message>
-        <source>Ctrl+Shift+O</source>
-        <translation>Strg+Umschalt+O</translation>
-    </message>
-    <message>
-        <source>Ctrl+,</source>
-        <translation>Strg+,</translation>
-    </message>
-    <message>
-        <source>Shortcuts</source>
-        <translation>Verknüpfungen</translation>
-    </message>
-    <message>
-        <source>K</source>
-        <translation>K</translation>
-    </message>
-    <message>
-        <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
-        <translation>Fehler beim Sperren. Diese Datei ist bereits in einem anderen Fenster geöffnet. Beim Arbeiten mit zwei Kopien des Programms kommt es zu Kollisionen.</translation>
-    </message>
-    <message>
-        <source>Print</source>
-        <translation>Drucken</translation>
-    </message>
-    <message>
-        <source>Ctrl+P</source>
-        <translation>Strg+P</translation>
-    </message>
-    <message>
-        <source>Number</source>
-        <translation>Nummer</translation>
-    </message>
-    <message>
-        <source>Ctrl+E</source>
-        <translation>Strg+E</translation>
-    </message>
-    <message>
-        <source>Copy to clipboard</source>
-        <translation>In die Zwischenablage kopieren</translation>
-    </message>
-    <message>
-        <source>Open template ...</source>
-        <translation>Vorlage öffnen ...</translation>
-    </message>
-    <message>
-        <source>Ctrl+Alt+O</source>
-        <translation>Strg+Alt+O</translation>
-    </message>
-    <message>
-        <source>Pattern files</source>
-        <translation>Schnittmusterdateien</translation>
-    </message>
-    <message>
-        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Diese Datei ist bereits in einem anderen Fenster geöffnet.Ignorieren, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
-    </message>
-    <message>
-        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Die Sperrdatei konnte aufgrund fehlender Berechtigungen nicht erstellt werden. Ignorieren, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
-    </message>
-    <message>
-        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Ein unbekannter Fehler ist aufgetreten, zum Beispiel hat eine volle Festplattenpartition verhindert, dass die Sperrdatei geschrieben werden konnte. Ignorieren, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
-    </message>
-    <message>
-        <source>Import body scan as</source>
-        <translation>Körperscan importieren als</translation>
-    </message>
-    <message>
-        <source>3D Measure Up</source>
-        <translation>3D Measure Up</translation>
-    </message>
-    <message>
-        <source>3D Look</source>
-        <translation>3D Look</translation>
-    </message>
-    <message>
-        <source>unknown</source>
-        <comment>gender</comment>
-        <translation>unbekannt</translation>
-    </message>
-    <message>
-        <source>male</source>
-        <comment>gender</comment>
-        <translation>männlich</translation>
-    </message>
-    <message>
-        <source>female</source>
-        <comment>gender</comment>
-        <translation>weiblich</translation>
-    </message>
-    <message>
-        <source>To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.
-</source>
-        <translation>Um einen 3DLook-Körperscan zu verwenden, muss die Datei in das SeamlyME-Format konvertiert werden.
-</translation>
-    </message>
-    <message>
-        <source>Attach your 3DLook file to an email and send to convert@seamly.io.
+	    <message>
+		<source>Intersect Arc and Line</source>
+		<translation>Schneidet Bogen und Linie</translation>
+	    </message>
+	    <message>
+		<source>Intersect Axis and Triangle</source>
+		<translation>Schneidet Achse und Dreieck</translation>
+	    </message>
+	    <message>
+		<source>Intersect XY</source>
+		<translation>Schneidet XY</translation>
+	    </message>
+	    <message>
+		<source>Intersect Line and Perpendicular</source>
+		<translation>Schneidet Linie und Senkrechte</translation>
+	    </message>
+	    <message>
+		<source>Intersect Line and Axis</source>
+		<translation>Schneidet Linie und Achse</translation>
+	    </message>
+	    <message>
+		<source>Midpoint On Line</source>
+		<translation>Mittelpunkt auf einer Linie</translation>
+	    </message>
+	    <message>
+		<source>Shift+O, Shift+L</source>
+		<translation>Umschalt+O, Umschalt+L</translation>
+	    </message>
+	    <message>
+		<source>Line</source>
+		<translation>Linie</translation>
+	    </message>
+	    <message>
+		<source>Alt+L</source>
+		<translation>Alt+L</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Lines</source>
+		<translation>Punkt - Schneidet Linien</translation>
+	    </message>
+	    <message>
+		<source>Curves</source>
+		<translation>Kurve</translation>
+	    </message>
+	    <message>
+		<source>Curve - Interactive</source>
+		<translation>Kurve - Interaktiv</translation>
+	    </message>
+	    <message>
+		<source>Alt+C</source>
+		<translation>Alt+C</translation>
+	    </message>
+	    <message>
+		<source>Spline - Interactive</source>
+		<translation>Spline - Interaktiv</translation>
+	    </message>
+	    <message>
+		<source>Alt+S</source>
+		<translation>Alt+S</translation>
+	    </message>
+	    <message>
+		<source>Curve - Fixed</source>
+		<translation>Kurve - Fixiert</translation>
+	    </message>
+	    <message>
+		<source>Alt+Shift+C</source>
+		<translation>Alt+Umschalt+C</translation>
+	    </message>
+	    <message>
+		<source>Spline - Fixed</source>
+		<translation>Spline - Fixiert</translation>
+	    </message>
+	    <message>
+		<source>Alt+Shift+S</source>
+		<translation>Alt+Umschalt+S</translation>
+	    </message>
+	    <message>
+		<source>Point - On Curve</source>
+		<translation>Punkt - Auf Kurve</translation>
+	    </message>
+	    <message>
+		<source>Point - On Spline	</source>
+		<translation>Punkt - Auf Spline	</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Curves</source>
+		<translation>Punkt - Schneidet Kurven</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Curve and Axis</source>
+		<translation>Punkt - Schneidet Kurve und Achse</translation>
+	    </message>
+	    <message>
+		<source>Arcs</source>
+		<translation>Bögen</translation>
+	    </message>
+	    <message>
+		<source>Arc - Radius and Angle</source>
+		<translation>Bogen - Radius und Winkel</translation>
+	    </message>
+	    <message>
+		<source>Alt+A</source>
+		<translation>Alt+A</translation>
+	    </message>
+	    <message>
+		<source>Arc - Radius and Length</source>
+		<translation>Bogen - Radius und Länge</translation>
+	    </message>
+	    <message>
+		<source>Alt+Shift+A</source>
+		<translation>Alt+Umschalt+A</translation>
+	    </message>
+	    <message>
+		<source>Point - On Arc</source>
+		<translation>Punkt - Auf einem Bogen</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Arc and Axis</source>
+		<translation>Punkt - Schneidet Bogen und Achse</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Arcs</source>
+		<translation>Punkt - Schneidet Bögen</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Circles</source>
+		<translation>Punkt - Schneidet Kreise</translation>
+	    </message>
+	    <message>
+		<source>Shift+I, Shift+C</source>
+		<translation>Umschalt+I, Umschalt+C</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Circle and Tangent</source>
+		<translation>Punkt - Schneidet Kreis und Tangente</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Arc and Tangent</source>
+		<translation>Punkt - Schneidet Bogen und Tangente</translation>
+	    </message>
+	    <message>
+		<source>Elliptical Arc</source>
+		<translation>Bogen - Elliptisch</translation>
+	    </message>
+	    <message>
+		<source>Alt+E</source>
+		<translation>Alt+E</translation>
+	    </message>
+	    <message>
+		<source>Operations</source>
+		<translation>Arbeitsabläufe</translation>
+	    </message>
+	    <message>
+		<source>Add Objects to Group</source>
+		<translation>Objekte zur Gruppe hinzufügen</translation>
+	    </message>
+	    <message>
+		<source>Rotation</source>
+		<translation>Drehung</translation>
+	    </message>
+	    <message>
+		<source>Mirror by Line</source>
+		<translation>Spiegeln an einer Linie</translation>
+	    </message>
+	    <message>
+		<source>Mirror by Axis</source>
+		<translation>Spiegeln an einer Achse</translation>
+	    </message>
+	    <message>
+		<source>Move</source>
+		<translation>Bewegen</translation>
+	    </message>
+	    <message>
+		<source>Alt+M</source>
+		<translation>Alt+M</translation>
+	    </message>
+	    <message>
+		<source>True Darts</source>
+		<translation>Abnäherlänge ausgleichen</translation>
+	    </message>
+	    <message>
+		<source>Export Draft Blocks</source>
+		<translation>Exportiere Entwurfsblöcke</translation>
+	    </message>
+	    <message>
+		<source>Images</source>
+		<translation>Bilder</translation>
+	    </message>
+	    <message>
+		<source>Import Image</source>
+		<translation>Bild importieren</translation>
+	    </message>
+	    <message>
+		<source>Alt + I</source>
+		<translation>Alt + I</translation>
+	    </message>
+	    <message>
+		<source>Pattern Piece</source>
+		<translation>Schnittteil</translation>
+	    </message>
+	    <message>
+		<source>New Pattern Piece</source>
+		<translation>Neues Schnittteil</translation>
+	    </message>
+	    <message>
+		<source>Anchor Point</source>
+		<translation>Anker Punkt</translation>
+	    </message>
+	    <message>
+		<source>Internal Path</source>
+		<translation>Unterverzeichnis</translation>
+	    </message>
+	    <message>
+		<source>Edit Properties</source>
+		<translation>Eigenschaften bearbeiten</translation>
+	    </message>
+	    <message>
+		<source>Toggle Lock</source>
+		<translation>Knebelschloss</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+L</source>
+		<translation>Strg+L</translation>
+	    </message>
+	    <message>
+		<source>Include in Layout</source>
+		<translation>In das Layout aufnehmen</translation>
+	    </message>
+	    <message>
+		<source>Forbid Flipping</source>
+		<translation>Drehen Ausschließen</translation>
+	    </message>
+	    <message>
+		<source>Raise To Top</source>
+		<translation>Anheben nach oben</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+Home</source>
+		<translation>Strg+Home</translation>
+	    </message>
+	    <message>
+		<source>Lower To Bottom</source>
+		<translation>Unten nach unten</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+End</source>
+		<translation>Strg+End</translation>
+	    </message>
+	    <message>
+		<source>Rename</source>
+		<translation>Umbenennen</translation>
+	    </message>
+	    <message>
+		<source>Delete</source>
+		<translation>Löschen</translation>
+	    </message>
+	    <message>
+		<source>Del</source>
+		<translation>Del</translation>
+	    </message>
+	    <message>
+		<source>Details</source>
+		<translation>Details</translation>
+	    </message>
+	    <message>
+		<source>Unite Pieces</source>
+		<translation>Teile zusammenfügen</translation>
+	    </message>
+	    <message>
+		<source>Export Pieces</source>
+		<translation>Schnitteile Exportieren</translation>
+	    </message>
+	    <message>
+		<source>Layout</source>
+		<translation>Layout</translation>
+	    </message>
+	    <message>
+		<source>New Layout</source>
+		<translation>Neue Layout</translation>
+	    </message>
+	    <message>
+		<source>Export Layout</source>
+		<translation>Layout Exportieren</translation>
+	    </message>
+	    <message>
+		<source>Last Tool</source>
+		<translation>Letztes Werkzeug</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+Shift+L</source>
+		<translation>Strg+Umschalt+L</translation>
+	    </message>
+	    <message>
+		<source>History</source>
+		<translation>Chronik</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+H</source>
+		<translation>Strg+H</translation>
+	    </message>
+	    <message>
+		<source>Utilities</source>
+		<translation>Dienstprogramme</translation>
+	    </message>
+	    <message>
+		<source>Calculator</source>
+		<translation>Taschenrechner</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+Shift+C</source>
+		<translation>Strg+Umschalt+C</translation>
+	    </message>
+	    <message>
+		<source>Decimal Chart</source>
+		<translation>Dezimal Tabelle</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+Shift+D</source>
+		<translation>Strg+Umschalt+D</translation>
+	    </message>
+	    <message>
+		<source>Help</source>
+		<translation>Hilfe</translation>
+	    </message>
+	    <message>
+		<source>Keyboard Shortcuts</source>
+		<translation>Tastaturkurzbefehle</translation>
+	    </message>
+	    <message>
+		<source>Shift+P</source>
+		<translation>Umschalt+P</translation>
+	    </message>
+	    <message>
+		<source>Export PDF</source>
+		<translation>PDF exportieren</translation>
+	    </message>
+	    <message>
+		<source>Insert Nodes</source>
+		<translation>Füge Knoten ein</translation>
+	    </message>
+	    <message>
+		<source>Seamly2D Shortcuts</source>
+		<translation>Seamly2D Verknüpfungen</translation>
+	    </message>
+	    <message>
+		<source>Zoom 100%</source>
+		<translation>Zoom 100%</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+9</source>
+		<translation>Strg+9</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>ShowDoublePointName</name>
+	    <message>
+		<source>toggle the first dart visibility</source>
+		<translation>Umschalten der erster Abnäher Sichtbarkeit</translation>
+	    </message>
+	    <message>
+		<source>toggle the second dart visibility</source>
+		<translation>Umschalten der zweiten  Abnäher Sichtbarkeit</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>ShowInfoDialog</name>
+	    <message>
+		<source>Document Information</source>
+		<translation>Dokument Information</translation>
+	    </message>
+	    <message>
+		<source>Copy info to clipboard</source>
+		<translation>Info in die Zwischenablage kopieren</translation>
+	    </message>
+	    <message>
+		<source>Export info as PDF</source>
+		<translation>Als PDF exportieren</translation>
+	    </message>
+	    <message>
+		<source>Send info to the Printer</source>
+		<translation>Info an den Drucker senden</translation>
+	    </message>
+	    <message>
+		<source>&lt;table style=font-size:11pt; font-weight:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Company:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Customer:    &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Pattern Name:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Pattern No:  &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Version:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Units:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Measurements:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Description: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Notes:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Image:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/table&gt;</source>
+		<translation>&lt;Tabellenstil=Schriftgröße:11pt; Schriftstärke:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Firma:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = rights&gt;&lt;b&gt;Kunde:    &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Schnittmuster Bezeichnung:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Schnittmuster Nummer  &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Version:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Einheiten:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Maße:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Beschreibung: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Anmerkungen:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Image:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/Tabelle &gt;</translation>
+	    </message>
+	    <message>
+		<source>Info files</source>
+		<translation>Info Dateien</translation>
+	    </message>
+	    <message>
+		<source>Export PDF</source>
+		<translation>PDF exportieren</translation>
+	    </message>
+	    <message>
+		<source>_info</source>
+		<translation>_Info</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>ShowOperationPointName</name>
+	    <message>
+		<source>toggle point visibility</source>
+		<translation>Punktsichtbarkeit umschalten</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>ShowPointName</name>
+	    <message>
+		<source>toggle point visibility</source>
+		<translation>Punktsichtbarkeit umschalten</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>TMainWindow</name>
+	    <message>
+		<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Select New for creation measurement file.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+		<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Neu auswählen, um eine neue Maßdatei zu erstellen.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+	    </message>
+	    <message>
+		<source>Name</source>
+		<translation>Bezeichnung</translation>
+	    </message>
+	    <message>
+		<source>Calculated value</source>
+		<translation>Berechneter Wert</translation>
+	    </message>
+	    <message>
+		<source>Formula</source>
+		<translation>Formel</translation>
+	    </message>
+	    <message>
+		<source>Base value</source>
+		<translation>Basiswert</translation>
+	    </message>
+	    <message>
+		<source>In sizes</source>
+		<translation>In Größen</translation>
+	    </message>
+	    <message>
+		<source>In heights</source>
+		<translation>In Körperhöhe</translation>
+	    </message>
+	    <message>
+		<source>Details</source>
+		<translation>Details</translation>
+	    </message>
+	    <message>
+		<source>Name:</source>
+		<translation>Bezeichnung:</translation>
+	    </message>
+	    <message>
+		<source>Formula:</source>
+		<translation>Formel:</translation>
+	    </message>
+	    <message>
+		<source>Base value:</source>
+		<translation>Basiswert:</translation>
+	    </message>
+	    <message>
+		<source>In sizes:</source>
+		<translation>In Größen:</translation>
+	    </message>
+	    <message>
+		<source>In heights:</source>
+		<translation>In Körperhöhen:</translation>
+	    </message>
+	    <message>
+		<source>Description:</source>
+		<translation>Beschreibung:</translation>
+	    </message>
+	    <message>
+		<source>Move measurement up</source>
+		<translation>Maß nach oben bewegen</translation>
+	    </message>
+	    <message>
+		<source>Move measurement down</source>
+		<translation>Maß nach unten bewegen</translation>
+	    </message>
+	    <message>
+		<source>Calculated value:</source>
+		<translation>Berechneter Wert:</translation>
+	    </message>
+	    <message>
+		<source>Full name:</source>
+		<translation>Vollständige Bezeichnung:</translation>
+	    </message>
+	    <message>
+		<source>Information</source>
+		<translation>Information</translation>
+	    </message>
+	    <message>
+		<source>Type:</source>
+		<translation>Typ:</translation>
+	    </message>
+	    <message>
+		<source>Measurement type</source>
+		<translation>Maßsatztyp</translation>
+	    </message>
+	    <message>
+		<source>Path:</source>
+		<translation>Verzeichnis:</translation>
+	    </message>
+	    <message>
+		<source>Show in Explorer</source>
+		<translation>Im Dateiexplorer anzeigen</translation>
+	    </message>
+	    <message>
+		<source>Base size:</source>
+		<translation>Basisgröße:</translation>
+	    </message>
+	    <message>
+		<source>Base size value</source>
+		<translation>Wert der Basisgröße</translation>
+	    </message>
+	    <message>
+		<source>Base height:</source>
+		<translation>Basiskörperhöhe:</translation>
+	    </message>
+	    <message>
+		<source>Base height value</source>
+		<translation>Wert der Basiskörperhöhe</translation>
+	    </message>
+	    <message>
+		<source>Given name:</source>
+		<translation>Vorname:</translation>
+	    </message>
+	    <message>
+		<source>Family name:</source>
+		<translation>Nachname:</translation>
+	    </message>
+	    <message>
+		<source>Birth date:</source>
+		<translation>Geburtsdatum:</translation>
+	    </message>
+	    <message>
+		<source>Email:</source>
+		<translation>Email:</translation>
+	    </message>
+	    <message>
+		<source>Notes:</source>
+		<translation>Notiz:</translation>
+	    </message>
+	    <message>
+		<source>File</source>
+		<translation>Datei</translation>
+	    </message>
+	    <message>
+		<source>Window</source>
+		<translation>Fenster</translation>
+	    </message>
+	    <message>
+		<source>Help</source>
+		<translation>Hilfe</translation>
+	    </message>
+	    <message>
+		<source>Measurements</source>
+		<translation>Maße</translation>
+	    </message>
+	    <message>
+		<source>Menu</source>
+		<translation>Menü</translation>
+	    </message>
+	    <message>
+		<source>Gradation</source>
+		<translation>Gradierung</translation>
+	    </message>
+	    <message>
+		<source>Open individual ...</source>
+		<translation>Individuelle öffnen...</translation>
+	    </message>
+	    <message>
+		<source>Save</source>
+		<translation>Speichern</translation>
+	    </message>
+	    <message>
+		<source>Save As ...</source>
+		<translation>Speichern als ...</translation>
+	    </message>
+	    <message>
+		<source>About &amp;Qt</source>
+		<translation>Über &amp;Qt</translation>
+	    </message>
+	    <message>
+		<source>About SeamlyMe</source>
+		<translation>Über SeamlyMe</translation>
+	    </message>
+	    <message>
+		<source>New</source>
+		<translation>Neu</translation>
+	    </message>
+	    <message>
+		<source>Add known</source>
+		<translation>Bekanntes Maß hinzufügen</translation>
+	    </message>
+	    <message>
+		<source>Add custom</source>
+		<translation>Individuelles Maß hinzufügen</translation>
+	    </message>
+	    <message>
+		<source>Read only</source>
+		<translation>Nur lesen</translation>
+	    </message>
+	    <message>
+		<source>Database</source>
+		<translation>Datenbank</translation>
+	    </message>
+	    <message>
+		<source>Show information about all known measurement</source>
+		<translation>Informationen zu allen bekannten Maßen anzeigen</translation>
+	    </message>
+	    <message>
+		<source>Preferences</source>
+		<translation>Einstellungen</translation>
+	    </message>
+	    <message>
+		<source>untitled %1</source>
+		<translation>unbenannt %1</translation>
+	    </message>
+	    <message>
+		<source>This file already opened in another window.</source>
+		<translation>Diese Datei ist bereits in einem anderen Fenster geöffnet.</translation>
+	    </message>
+	    <message>
+		<source>File error.</source>
+		<translation>Dateifehler.</translation>
+	    </message>
+	    <message>
+		<source>Could not save file</source>
+		<translation>Datei konnte nicht gespeichert werden</translation>
+	    </message>
+	    <message>
+		<source>Save as</source>
+		<translation>Speichern als</translation>
+	    </message>
+	    <message>
+		<source>&amp;New Window</source>
+		<translation>&amp;Neues Fenster</translation>
+	    </message>
+	    <message>
+		<source>Edit measurement</source>
+		<translation>Maß bearbeiten</translation>
+	    </message>
+	    <message>
+		<source>Error</source>
+		<translation>Fehler</translation>
+	    </message>
+	    <message>
+		<source>Empty field.</source>
+		<translation>Leeres Eingabefeld.</translation>
+	    </message>
+	    <message>
+		<source>Parser error: %1</source>
+		<translation>Auswertungsfehler: %1</translation>
+	    </message>
+	    <message>
+		<source>Individual measurements</source>
+		<translation>Individuelle Maße</translation>
+	    </message>
+	    <message>
+		<source>untitled</source>
+		<translation>ohne Titel</translation>
+	    </message>
+	    <message>
+		<source>Unsaved changes</source>
+		<translation>Ungespeicherte Änderungen</translation>
+	    </message>
+	    <message>
+		<source>Measurements have been modified.
+	Do you want to save your changes?</source>
+		<translation>Maße wurden geändert. Sollen die Änderungen gespeichert werden?</translation>
+	    </message>
+	    <message>
+		<source>Empty field</source>
+		<translation>Leeres Eingabefeld</translation>
+	    </message>
+	    <message>
+		<source>Value</source>
+		<translation>Wert</translation>
+	    </message>
+	    <message>
+		<source>Open file</source>
+		<translation>Datei öffnen</translation>
+	    </message>
+	    <message>
+		<source>Import from a pattern</source>
+		<translation>Von einem Schnittteil importieren</translation>
+	    </message>
+	    <message>
+		<source>Pattern unit:</source>
+		<translation>Schnittteil Einheit:</translation>
+	    </message>
+	    <message>
+		<source>Find:</source>
+		<translation>Finden:</translation>
+	    </message>
+	    <message>
+		<source>Find Previous</source>
+		<translation>Vorheriges suchen</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+Shift+G</source>
+		<translation>Strg+Shift+G</translation>
+	    </message>
+	    <message>
+		<source>Find Next</source>
+		<translation>Nächstes finden</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+G</source>
+		<translation>Ctrl+G</translation>
+	    </message>
+	    <message>
+		<source>Failed to lock. This file already opened in another window.</source>
+		<translation>Sperren fehlgeschlagen. Diese Datei ist bereits in einem anderen Fenster geöffnet.</translation>
+	    </message>
+	    <message>
+		<source>File contains invalid known measurement(s).</source>
+		<translation>Datei enthält ungültige bekannte Maße.</translation>
+	    </message>
+	    <message>
+		<source>File has unknown format.</source>
+		<translation>Unbekanntes Dateiformat.</translation>
+	    </message>
+	    <message>
+		<source>Full name</source>
+		<translation>Vollständige Bezeichnung</translation>
+	    </message>
+	    <message>
+		<source>File &apos;%1&apos; doesn&apos;t exist!</source>
+		<translation>Datei &apos;%1&apos; existiert nicht!</translation>
+	    </message>
+	    <message>
+		<source>The name of known measurement forbidden to change.</source>
+		<translation>Die Bezeichnung bekannter Maße kann nicht geändert werden.</translation>
+	    </message>
+	    <message>
+		<source>Can&apos;t find measurement &apos;%1&apos;.</source>
+		<translation>Maß &apos;%1&apos; kann nicht gefunden werden.</translation>
+	    </message>
+	    <message>
+		<source>The full name of known measurement forbidden to change.</source>
+		<translation>Die vollständige Bezeichnung bekannter Maße kann nicht geändert werden.</translation>
+	    </message>
+	    <message>
+		<source>Function Wizard</source>
+		<translation>Funktionsassistent</translation>
+	    </message>
+	    <message>
+		<source>Move measurement top</source>
+		<translation>Maß nach ganz oben bewegen</translation>
+	    </message>
+	    <message>
+		<source>Move measurement bottom</source>
+		<translation>Maß nach ganz unten bewegen</translation>
+	    </message>
+	    <message>
+		<source>Delete measurement</source>
+		<translation>Maß löschen</translation>
+	    </message>
+	    <message>
+		<source>Gender:</source>
+		<translation>Geschlecht:</translation>
+	    </message>
+	    <message>
+		<source>PM system:</source>
+		<translation>Schnittmustersystem:</translation>
+	    </message>
+	    <message>
+		<source>Create from existing ...</source>
+		<translation>Erstellen aus vorhandenem...</translation>
+	    </message>
+	    <message>
+		<source>Create from existing file</source>
+		<translation>Aus vorhandener Datei erstellen</translation>
+	    </message>
+	    <message>
+		<source>Select file</source>
+		<translation>Datei auswählen</translation>
+	    </message>
+	    <message>
+		<source>Measurement diagram</source>
+		<translation>Maßdiagramm</translation>
+	    </message>
+	    <message>
+		<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+		<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; Schriftgröße:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;Zentrum\&quot;&gt;Unbekanntes Maß&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+	    </message>
+	    <message>
+		<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+		<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; Schriftgröße:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;Zentrumr&quot;&gt;Unbekanntes Maß&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+	    </message>
+	    <message>
+		<source>About Qt</source>
+		<translation>Über QT</translation>
+	    </message>
+	    <message>
+		<source>File was not saved yet.</source>
+		<translation>Datei wurde noch nicht gesichert.</translation>
+	    </message>
+	    <message>
+		<source>Search</source>
+		<translation>Suche</translation>
+	    </message>
+	    <message>
+		<source>Measurement&apos;s name in a formula</source>
+		<translation>Name des Maßes in einer Formel</translation>
+	    </message>
+	    <message>
+		<source>Measurement&apos;s name in a formula.</source>
+		<translation>Name des Maßes in einer Formel.</translation>
+	    </message>
+	    <message>
+		<source>Measurement&apos;s human-readable name.</source>
+		<translation>Name des Maßes für Menschen lesbar.</translation>
+	    </message>
+	    <message>
+		<source>Save...</source>
+		<translation>Speichern...</translation>
+	    </message>
+	    <message>
+		<source>Don&apos;t Save</source>
+		<translation>Nicht Speichern</translation>
+	    </message>
+	    <message>
+		<source>Locking file</source>
+		<translation>Datei wird gesperrt</translation>
+	    </message>
+	    <message>
+		<source>The lock file could not be created, for lack of permissions.</source>
+		<translation>Die Sperrdatei konnte aufgrund fehlender Berechtigungen nicht erstellt werden.</translation>
+	    </message>
+	    <message>
+		<source>Unknown error happened, for instance a full partition prevented writing out the lock file.</source>
+		<translation>Ein unbekannter Fehler ist aufgetreten, zum Beispiel hat eine volle Festplattenpartition verhindert, dass die Sperrdatei geschrieben werden konnte.</translation>
+	    </message>
+	    <message>
+		<source>Export to CSV</source>
+		<translation>Als CSV exportieren</translation>
+	    </message>
+	    <message>
+		<source>Show in Finder</source>
+		<translation>Im Finder anzeigen</translation>
+	    </message>
+	    <message>
+		<source>Customer&apos;s name</source>
+		<translation>Vorname des Kunden</translation>
+	    </message>
+	    <message>
+		<source>Customer&apos;s family name</source>
+		<translation>Nachname des Kunden</translation>
+	    </message>
+	    <message>
+		<source>Customer&apos;s email address</source>
+		<translation>Emailadresse des Kunden</translation>
+	    </message>
+	    <message>
+		<source>Height:</source>
+		<translation>Körperhöhe:</translation>
+	    </message>
+	    <message>
+		<source>Size:</source>
+		<translation>Größe:</translation>
+	    </message>
+	    <message>
+		<source>All files</source>
+		<translation>Alle Dateien</translation>
+	    </message>
+	    <message>
+		<source>The measurements document has no write permissions.</source>
+		<translation>Das Maße Dokument hat keine Schreibberechtigung.</translation>
+	    </message>
+	    <message>
+		<source>Cannot set permissions for %1 to writable.</source>
+		<translation>Kann keine Erlaubniss für %1 als schreibbar setzen.</translation>
+	    </message>
+	    <message>
+		<source>Could not save the file.</source>
+		<translation>Kann die Datei nicht sichern.</translation>
+	    </message>
+	    <message>
+		<source>Could not save the file</source>
+		<translation>Kann die Datei nicht sichern</translation>
+	    </message>
+	    <message>
+		<source>read only</source>
+		<translation>Nur lesen</translation>
+	    </message>
+	    <message>
+		<source>Multisize measurements</source>
+		<translation>Mehrgrößen Maße</translation>
+	    </message>
+	    <message>
+		<source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
+		<translation>Ungültiges Ergebnis: Der Wert ist unendlich oder NaN, Bitte die Berechnung prüfen.</translation>
+	    </message>
+	    <message>
+		<source>Empty</source>
+		<translation>Leer</translation>
+	    </message>
+	    <message>
+		<source>Open multisize ...</source>
+		<translation>Mehrgrößen öffnen...</translation>
+	    </message>
+	    <message>
+		<source>Export from multisize measurements is not supported.</source>
+		<translation>Der Export von Mehrgrößen Maßen wird nicht unterstützt.</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+O</source>
+		<translation>Strg+O</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+S</source>
+		<translation>Strg+S</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+Shift+S</source>
+		<translation>Ctrl+Umschalt+S</translation>
+	    </message>
+	    <message>
+		<source>Exit</source>
+		<translation>Beenden</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+Q</source>
+		<translation>Strg+Q</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+N</source>
+		<translation>Strg+N</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+Shift+O</source>
+		<translation>Strg+Umschalt+O</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+,</source>
+		<translation>Strg+,</translation>
+	    </message>
+	    <message>
+		<source>Shortcuts</source>
+		<translation>Verknüpfungen</translation>
+	    </message>
+	    <message>
+		<source>K</source>
+		<translation>K</translation>
+	    </message>
+	    <message>
+		<source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
+		<translation>Fehler beim Sperren. Diese Datei ist bereits in einem anderen Fenster geöffnet. Beim Arbeiten mit zwei Kopien des Programms kommt es zu Kollisionen.</translation>
+	    </message>
+	    <message>
+		<source>Print</source>
+		<translation>Drucken</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+P</source>
+		<translation>Strg+P</translation>
+	    </message>
+	    <message>
+		<source>Number</source>
+		<translation>Nummer</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+E</source>
+		<translation>Strg+E</translation>
+	    </message>
+	    <message>
+		<source>Copy to clipboard</source>
+		<translation>In die Zwischenablage kopieren</translation>
+	    </message>
+	    <message>
+		<source>Open template ...</source>
+		<translation>Vorlage öffnen ...</translation>
+	    </message>
+	    <message>
+		<source>Ctrl+Alt+O</source>
+		<translation>Strg+Alt+O</translation>
+	    </message>
+	    <message>
+		<source>Pattern files</source>
+		<translation>Schnittmusterdateien</translation>
+	    </message>
+	    <message>
+		<source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+		<translation>Diese Datei ist bereits in einem anderen Fenster geöffnet.Ignorieren, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
+	    </message>
+	    <message>
+		<source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+		<translation>Die Sperrdatei konnte aufgrund fehlender Berechtigungen nicht erstellt werden. Ignorieren, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
+	    </message>
+	    <message>
+		<source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+		<translation>Ein unbekannter Fehler ist aufgetreten, zum Beispiel hat eine volle Festplattenpartition verhindert, dass die Sperrdatei geschrieben werden konnte. Ignorieren, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
+	    </message>
+	    <message>
+		<source>Import body scan as</source>
+		<translation>Körperscan importieren als</translation>
+	    </message>
+	    <message>
+		<source>3D Measure Up</source>
+		<translation>3D Measure Up</translation>
+	    </message>
+	    <message>
+		<source>3D Look</source>
+		<translation>3D Look</translation>
+	    </message>
+	    <message>
+		<source>unknown</source>
+		<comment>gender</comment>
+		<translation>unbekannt</translation>
+	    </message>
+	    <message>
+		<source>male</source>
+		<comment>gender</comment>
+		<translation>männlich</translation>
+	    </message>
+	    <message>
+		<source>female</source>
+		<comment>gender</comment>
+		<translation>weiblich</translation>
+	    </message>
+	    <message>
+		<source>To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.
+	</source>
+		<translation>Um einen 3DLook-Körperscan zu verwenden, muss die Datei in das SeamlyME-Format konvertiert werden.
+	</translation>
+	    </message>
+	    <message>
+		<source>Attach your 3DLook file to an email and send to convert@seamly.io.
 
-</source>
-        <translation>Hängen Sie Ihre 3DLook-Datei an eine E-Mail an und senden Sie sie an convert@seamly.io.
+	</source>
+		<translation>Hängen Sie Ihre 3DLook-Datei an eine E-Mail an und senden Sie sie an convert@seamly.io.
 
-</translation>
-    </message>
-    <message>
-        <source>You will recieve an email with the converted file, which you can then
-load in SeamlyME as usual.
+	</translation>
+	    </message>
+	    <message>
+		<source>You will recieve an email with the converted file, which you can then
+	load in SeamlyME as usual.
 
-</source>
-        <translation>Sie erhalten eine E-Mail mit der konvertierten Datei, die Sie dann
-wie gewohnt in SeamlyME laden können.
+	</source>
+		<translation>Sie erhalten eine E-Mail mit der konvertierten Datei, die Sie dann
+	wie gewohnt in SeamlyME laden können.
 
-</translation>
-    </message>
-    <message>
-        <source>Convert 3DLook file:</source>
-        <translation>3DLook-Datei konvertieren:</translation>
-    </message>
-</context>
-<context>
-    <name>TogglePieceInLayout</name>
-    <message>
-        <source>Piece in Layout List</source>
-        <translation>Schnittteil in Layoutliste</translation>
-    </message>
-    <message>
-        <source>Include piece in layout changed: </source>
-        <translation>Schnittteil in das Layout übernehmen wurde geändert: </translation>
-    </message>
-    <message>
-        <source>Include</source>
-        <translation>Einschließen</translation>
-    </message>
-    <message>
-        <source>Exclude</source>
-        <translation>Ausschließen</translation>
-    </message>
-</context>
-<context>
-    <name>TogglePieceLock</name>
-    <message>
-        <source>Pattern piece lock</source>
-        <translation>Schnittteil sperren</translation>
-    </message>
-    <message>
-        <source>Piece lock changed: </source>
-        <translation>Schnittteil sperren wurde geändert: </translation>
-    </message>
-    <message>
-        <source>Locked</source>
-        <translation>Gesperrt</translation>
-    </message>
-    <message>
-        <source>Unlocked</source>
-        <translation>Entsperrt</translation>
-    </message>
-</context>
-<context>
-    <name>Tool</name>
-    <message>
-        <source>First point</source>
-        <translation>Erster Punkt</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation>Zweiter Punkt</translation>
-    </message>
-    <message>
-        <source>Highest point</source>
-        <translation>Oberster Punkt</translation>
-    </message>
-    <message>
-        <source>Lowest point</source>
-        <translation>Unterster Punkt</translation>
-    </message>
-    <message>
-        <source>Leftmost point</source>
-        <translation>Punkt ganz links</translation>
-    </message>
-    <message>
-        <source>Rightmost point</source>
-        <translation>Punkt ganz rechts</translation>
-    </message>
-    <message>
-        <source>Vertical axis</source>
-        <translation>Vertikale Achse</translation>
-    </message>
-    <message>
-        <source>Horizontal axis</source>
-        <translation>Horizontale Achse</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <translation>Linie_</translation>
-    </message>
-</context>
-<context>
-    <name>UnionDialog</name>
-    <message>
-        <source>Union tool</source>
-        <translation>Verbindungswerkzeug</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do you really want to unite details?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sollen die Details wirklich vereinigt werden?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Retain original pieces</source>
-        <translation>Die Original Schnittteile zurückbehalten</translation>
-    </message>
-    <message>
-        <source>Select the first point</source>
-        <translation>Den ersten Punkt auswählen</translation>
-    </message>
-    <message>
-        <source>Pattern piece should have at least two points and three objects</source>
-        <translation>Das Schnittteil soll mindestens zwei Punkte und drei Objekte haben</translation>
-    </message>
-    <message>
-        <source>Select a second point</source>
-        <translation>Einen zweiten Punkt auswählen</translation>
-    </message>
-    <message>
-        <source>Select a unique point</source>
-        <translation>Einen eindeutigen Punkt auswählen</translation>
-    </message>
-    <message>
-        <source>Select a piece</source>
-        <translation>Ein Schnittteil auswählen</translation>
-    </message>
-    <message>
-        <source>Select a point on edge</source>
-        <translation>Einen Punkt am Rand auswählen</translation>
-    </message>
-</context>
-<context>
-    <name>UnionTool</name>
-    <message>
-        <source>union pieces</source>
-        <translation>Verbindungsschnittteile</translation>
-    </message>
-</context>
-<context>
-    <name>Utils::CheckableMessageBox</name>
-    <message>
-        <source>Do not ask again</source>
-        <translation>Nicht erneut fragen</translation>
-    </message>
-    <message>
-        <source>Do not &amp;ask again</source>
-        <translation>Nicht erneut &amp;fragen</translation>
-    </message>
-    <message>
-        <source>Do not &amp;show again</source>
-        <translation>Nicht mehr &amp;anzeigen</translation>
-    </message>
-</context>
-<context>
-    <name>VAbstractConverter</name>
-    <message>
-        <source>Couldn&apos;t get version information.</source>
-        <translation>Versionsinformation konnte nicht gelesen werden.</translation>
-    </message>
-    <message>
-        <source>Too many tags &lt;%1&gt; in file.</source>
-        <translation>Zu viele Tags &lt;%1&gt; in der Datei.</translation>
-    </message>
-    <message>
-        <source>Version &quot;%1&quot; invalid.</source>
-        <translation>Version &quot;%1&quot; ist ungültig.</translation>
-    </message>
-    <message>
-        <source>Version &quot;0.0.0&quot; invalid.</source>
-        <translation>Version &quot;0.0.0&quot; ist ungültig.</translation>
-    </message>
-    <message>
-        <source>Invalid version. Minimum supported version is %1</source>
-        <translation>Ungültige Version. Minimal unterstützte Version ist%1</translation>
-    </message>
-    <message>
-        <source>Invalid version. Maximum supported version is %1</source>
-        <translation>Ungültige Version. Maximal unterstützte Version ist%1</translation>
-    </message>
-    <message>
-        <source>Error no unique id.</source>
-        <translation>Fehler: uneindeutige ID.</translation>
-    </message>
-    <message>
-        <source>Could not change version.</source>
-        <translation>Versionsnummer konnte nicht geändert werden.</translation>
-    </message>
-    <message>
-        <source>Error creating a reserv copy: %1.</source>
-        <translation>Fehler bei der Erstellung einer Reservekopie : %1.</translation>
-    </message>
-    <message>
-        <source>Unexpected version &quot;%1&quot;.</source>
-        <translation>Unerwartete Version &quot;%1&quot;.</translation>
-    </message>
-    <message>
-        <source>Error Opening a temp file: %1.</source>
-        <translation>Fehler beim Öffnen einer temporären Datei %1.</translation>
-    </message>
-</context>
-<context>
-    <name>VAbstractCubicBezierPath</name>
-    <message>
-        <source>Can&apos;t cut this spline</source>
-        <translation>Spline kann nicht unterteilt werden</translation>
-    </message>
-</context>
-<context>
-    <name>VAbstractMainWindow</name>
-    <message>
-        <source>Confirm format rewriting</source>
-        <translation>Umschreiben des Formats bestätigen</translation>
-    </message>
-    <message>
-        <source>This file is using previous format version v%1. The current is v%2. Saving the file with this app version will update the format version for this file. This may prevent you from be able to open the file with older app versions. Do you really want to continue?</source>
-        <translation>Diese Datei verwendet die vorherige Formatversion v%1. Die aktuelle Version ist v%2. Wenn Sie die Datei mit dieser Anwendungsversion speichern, wird die Formatversion für diese Datei aktualisiert. Dies kann dazu führen, dass Sie die Datei nicht mehr mit älteren Programmversionen öffnen können. Möchten Sie wirklich fortfahren?</translation>
-    </message>
-    <message>
-        <source>Comma-Separated Values</source>
-        <translation>Komma-getrennte Werte</translation>
-    </message>
-    <message>
-        <source>Export to CSV</source>
-        <translation>Als CSV exportieren</translation>
-    </message>
-</context>
-<context>
-    <name>VAbstractOperation</name>
-    <message>
-        <source>Name</source>
-        <translation>Bezeichnung</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Länge</translation>
-    </message>
-</context>
-<context>
-    <name>VAbstractPattern</name>
-    <message>
-        <source>Can&apos;t find tool in table.</source>
-        <translation>Werkzeug kann in der Tabelle nicht gefunden werden.</translation>
-    </message>
-    <message>
-        <source>Error creating or updating group</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren der Gruppe</translation>
-    </message>
-    <message>
-        <source>New group</source>
-        <translation>Neue Gruppe</translation>
-    </message>
-    <message>
-        <source>New group 2</source>
-        <translation>Neue Gruppe 2</translation>
-    </message>
-</context>
-<context>
-    <name>VAbstractPieceData</name>
-    <message>
-        <source>Piece</source>
-        <translation>Stück</translation>
-    </message>
-</context>
-<context>
-    <name>VAbstractSpline</name>
-    <message>
-        <source>Length</source>
-        <translation>Länge</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Bezeichnung</translation>
-    </message>
-</context>
-<context>
-    <name>VAbstractTool</name>
-    <message>
-        <source>Confirm deletion</source>
-        <translation>Löschvorgang bestätigen</translation>
-    </message>
-    <message>
-        <source>Do you really want to delete?</source>
-        <translation>Möchtest Du wirklich löschen?</translation>
-    </message>
-    <message>
-        <source>Edit wrong formula</source>
-        <translation>Falsche Formel bearbeitet</translation>
-    </message>
-    <message>
-        <source>Green</source>
-        <translation>Grün</translation>
-    </message>
-    <message>
-        <source>Blue</source>
-        <translation>Blau</translation>
-    </message>
-    <message>
-        <source>Dark Red</source>
-        <translation>Dunkelrot</translation>
-    </message>
-    <message>
-        <source>Dark Green</source>
-        <translation>Dunkelgrün</translation>
-    </message>
-    <message>
-        <source>Dark Blue</source>
-        <translation>Dunkelblau</translation>
-    </message>
-    <message>
-        <source>Yellow</source>
-        <translation>Gelb</translation>
-    </message>
-    <message>
-        <source>Light Salmon</source>
-        <translation>Helles Lachsrosa</translation>
-    </message>
-    <message>
-        <source>Goldenrod</source>
-        <translation>Goldrute</translation>
-    </message>
-    <message>
-        <source>Orange</source>
-        <translation>Orange</translation>
-    </message>
-    <message>
-        <source>Deep Pink</source>
-        <translation>Dunkelrosa</translation>
-    </message>
-    <message>
-        <source>Violet</source>
-        <translation>Violett</translation>
-    </message>
-    <message>
-        <source>Dark Violet</source>
-        <translation>Dunkelviolett</translation>
-    </message>
-    <message>
-        <source>Medium Sea Green</source>
-        <translation>Mittleres Meeresgrün</translation>
-    </message>
-    <message>
-        <source>Lime</source>
-        <translation>Linie</translation>
-    </message>
-    <message>
-        <source>Deep Sky Blue</source>
-        <translation>Tiefes Himmelsblau</translation>
-    </message>
-    <message>
-        <source>Corn Flower Blue</source>
-        <translation>Kornblumenblau</translation>
-    </message>
-    <message>
-        <source>Black</source>
-        <translation>Schwarz</translation>
-    </message>
-    <message>
-        <source>Gold</source>
-        <translation>Gold</translation>
-    </message>
-    <message>
-        <source>Forest Green</source>
-        <translation>Waldgrün</translation>
-    </message>
-    <message>
-        <source>Lawn Green</source>
-        <translation>Rasengrün</translation>
-    </message>
-    <message>
-        <source>Lime Green</source>
-        <translation>Lindgrün</translation>
-    </message>
-    <message>
-        <source>Green Yellow</source>
-        <translation>Grün Gelb</translation>
-    </message>
-    <message>
-        <source>Sandy Brown</source>
-        <translation>Sandiges Braun</translation>
-    </message>
-    <message>
-        <source>Orange Red</source>
-        <translation>Orangerot</translation>
-    </message>
-    <message>
-        <source>Maroon</source>
-        <translation>Kastanienbraun</translation>
-    </message>
-    <message>
-        <source>Pink</source>
-        <translation>Rosa</translation>
-    </message>
-    <message>
-        <source>Hot Pink</source>
-        <translation>Leuchtendes Pink</translation>
-    </message>
-    <message>
-        <source>Blue Violet</source>
-        <translation>Blauviolett</translation>
-    </message>
-    <message>
-        <source>Medium Violet Red</source>
-        <translation>Mittleres Rotviolett</translation>
-    </message>
-    <message>
-        <source>Indigo</source>
-        <translation>Indigo</translation>
-    </message>
-    <message>
-        <source>Purple</source>
-        <translation>Lila</translation>
-    </message>
-    <message>
-        <source>Plum</source>
-        <translation>Pflaume</translation>
-    </message>
-    <message>
-        <source>Turquoise</source>
-        <translation>Türkis</translation>
-    </message>
-    <message>
-        <source>Medium Turquoise</source>
-        <translation>Mittleres Türkis</translation>
-    </message>
-    <message>
-        <source>Powder Blue</source>
-        <translation>Puderblau</translation>
-    </message>
-    <message>
-        <source>Light Sky Blue</source>
-        <translation>Helles Himmelsblau</translation>
-    </message>
-    <message>
-        <source>Navy</source>
-        <translation>Marineblau</translation>
-    </message>
-    <message>
-        <source>Magenta</source>
-        <translation>Magenta</translation>
-    </message>
-    <message>
-        <source>Dark Slate Grey</source>
-        <translation>Dunkles Schiefergrau</translation>
-    </message>
-    <message>
-        <source>Grey</source>
-        <translation>Grau</translation>
-    </message>
-    <message>
-        <source>Gainsboro</source>
-        <translatorcomment>englischer Mler</translatorcomment>
-        <translation>Gainsboro</translation>
-    </message>
-    <message>
-        <source>Dark Sea Green</source>
-        <translation>Dunkles Meeresgrün</translation>
-    </message>
-    <message>
-        <source>Light Grey</source>
-        <translation>Hellgrau</translation>
-    </message>
-    <message>
-        <source>Light Steel Blue</source>
-        <translation>Helles Stahlblau</translation>
-    </message>
-    <message>
-        <source>Biege</source>
-        <translatorcomment>ist schon deutsch</translatorcomment>
-        <translation>Beige</translation>
-    </message>
-    <message>
-        <source>Thistle</source>
-        <translation>Distelfarben</translation>
-    </message>
-    <message>
-        <source>Silver</source>
-        <translation>Silber</translation>
-    </message>
-    <message>
-        <source>White Smoke</source>
-        <translation>Rauchweiß</translation>
-    </message>
-    <message>
-        <source>White</source>
-        <translation>Weiß</translation>
-    </message>
-    <message>
-        <source>Dark Grey</source>
-        <translation>Dunkelgrau</translation>
-    </message>
-    <message>
-        <source>Cadet Blue</source>
-        <translation>Kadettenblau</translation>
-    </message>
-    <message>
-        <source>Dark Khaki</source>
-        <translation>Dunkles Khaki</translation>
-    </message>
-    <message>
-        <source>Tan</source>
-        <translatorcomment>oder auch Gelbbraun</translatorcomment>
-        <translation>Hellbraun</translation>
-    </message>
-</context>
-<context>
-    <name>VCommandLine</name>
-    <message>
-        <source>Path to custom measure file (export mode).</source>
-        <translation>Pfad zur individuellen Maßdatei (Exportmodus).</translation>
-    </message>
-    <message>
-        <source>The measure file</source>
-        <translation>Die Maßsatzdatei</translation>
-    </message>
-    <message>
-        <source>Format number</source>
-        <translation>Format Nummer</translation>
-    </message>
-    <message>
-        <source>Template number</source>
-        <translation>Vorlagennummer</translation>
-    </message>
-    <message>
-        <source>The page width</source>
-        <translation>Die Seitenbreite</translation>
-    </message>
-    <message>
-        <source>The measure unit</source>
-        <translation>Die Maßeinheit</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Winkel</translation>
-    </message>
-    <message>
-        <source>Auto crop unused length (export mode).</source>
-        <translation>Automatisches Zuschneiden der ungenutzten Länge (Exportmodus).</translation>
-    </message>
-    <message>
-        <source>Layout units (as paper&apos;s one except px, export mode).</source>
-        <translation>Layout -Einheiten (eines Papiers mit Ausnahme von px, Export-Modus).</translation>
-    </message>
-    <message>
-        <source>The unit</source>
-        <translation>Die Einheit</translation>
-    </message>
-    <message>
-        <source>The gap width</source>
-        <translation>Die Spaltenbreite</translation>
-    </message>
-    <message>
-        <source>Grouping type</source>
-        <translation>Gruppentyp</translation>
-    </message>
-    <message>
-        <source>Cannot use pageformat and page explicit size/units together.</source>
-        <translation>Seitenformat und explizite Größe/Einheiten der Seite können nicht zusammen verwendet werden.</translation>
-    </message>
-    <message>
-        <source>Page height, width, units must be used all 3 at once.</source>
-        <translation>Höhe, Breite und Einheiten der Seite müssen alle 3 auf einmal benutzt werden.</translation>
-    </message>
-    <message>
-        <source>Invalid rotation value. That must be one of predefined values.</source>
-        <translation>Ungültiger Rotationswert. Dies muss ein vordefinierter Wert sein.</translation>
-    </message>
-    <message>
-        <source>Unknown page templated selected.</source>
-        <translation>Unbekannte Seitenvorlage verwendet.</translation>
-    </message>
-    <message>
-        <source>Unsupported paper units.</source>
-        <translation>Nicht unterstützte Papiergröße.</translation>
-    </message>
-    <message>
-        <source>Unsupported layout units.</source>
-        <translation>Nicht unterstützte Layouteinheiten.</translation>
-    </message>
-    <message>
-        <source>Export options can be used with single input file only.</source>
-        <translation>Exportoptionen können nur mit einer Eingabedatei verwendet werden.</translation>
-    </message>
-    <message>
-        <source>Test option can be used with single input file only.</source>
-        <translation>Testoption kann nur mit einer Eingabedatei verwendet werden.</translation>
-    </message>
-    <message>
-        <source>The base filename of exported layout files. Use it to enable console export mode.</source>
-        <translation>Der Basisdateiname der exportierten Layout-Dateien. Verwenden Sie diesen, um den Export-Konsolen-Modus zu aktivieren.</translation>
-    </message>
-    <message>
-        <source>The base filename of layout files</source>
-        <translation>Der Basisdateiname der Layoutdateien</translation>
-    </message>
-    <message>
-        <source>The destination folder</source>
-        <translation>Der Zielordner</translation>
-    </message>
-    <message>
-        <source>The size value</source>
-        <translation>Die Basisgröße</translation>
-    </message>
-    <message>
-        <source>The height value</source>
-        <translation>Die Basiskörperhöhe</translation>
-    </message>
-    <message>
-        <source>Page width in current units like 12.0 (cannot be used with &quot;%1&quot;, export mode).</source>
-        <translation>Seitenbreite in der derzeitigen Einheit wie 12.0 (kann nicht mit &quot;%1&quot; benutzt werden, Exportmodus).</translation>
-    </message>
-    <message>
-        <source>Page height in current units like 12.0 (cannot be used with &quot;%1&quot;, export mode).</source>
-        <translation>Seitenhöhe in der derzeitigen Einheit wie 12.0 (kann nicht mit &quot;%1&quot; benutzt werden, Exportmodus).</translation>
-    </message>
-    <message>
-        <source>Invalid gradation size value.</source>
-        <translation>Ungültiges Größen Gradierungsmaß.</translation>
-    </message>
-    <message>
-        <source>Invalid gradation height value.</source>
-        <translation>Ungültiges Längen Körperhöhen Gradierungsmaß.</translation>
-    </message>
-    <message>
-        <source>Pattern making program.</source>
-        <translation>Schnittmusterprogramm.</translation>
-    </message>
-    <message>
-        <source>Pattern file.</source>
-        <translation>Schnittmusterdatei.</translation>
-    </message>
-    <message>
-        <source>Gap width must be used together with shift units.</source>
-        <translation>Die Spaltenbreite muss zusammen mit Verschiebungseinheiten genutzt werden.</translation>
-    </message>
-    <message>
-        <source>Left margin must be used together with page units.</source>
-        <translation>Der linke Rand muss zusammen mit Seiteneinheiten genutzt werden.</translation>
-    </message>
-    <message>
-        <source>Right margin must be used together with page units.</source>
-        <translation>Der rechte Rand muss zusammen mit Seiteneinheiten genutzt werden.</translation>
-    </message>
-    <message>
-        <source>Top margin must be used together with page units.</source>
-        <translation>Der obere Rand muss zusammen mit Seiteneinheiten genutzt werden.</translation>
-    </message>
-    <message>
-        <source>Bottom margin must be used together with page units.</source>
-        <translation>Der untere Rand muss zusammen mit Seiteneinheiten genutzt werden.</translation>
-    </message>
-    <message>
-        <source>The path to output destination folder. By default the directory at which the application was started.</source>
-        <translation>Der Pfad zum Zielordner. Standardmäßig das Verzeichnis, in dem das Programm gestartet wurde.</translation>
-    </message>
-    <message>
-        <source>Page height/width measure units (cannot be used with &quot;%1&quot;, export mode). Valid values: %2.</source>
-        <translation>Einheiten für die Seitenhöhe/-breite (kann nicht mit &quot;%1&quot;, Exportmodus, benutzt werden). Gültige Werte: %2.</translation>
-    </message>
-    <message>
-        <source>Ignore margins printing (export mode). Disable value keys: &quot;%1&quot;, &quot;%2&quot;, &quot;%3&quot;, &quot;%4&quot;. Set all margins to 0.</source>
-        <translation>Ignorieren der Seitenränder zum Druck (Export-Modus). Deaktiviert Werte-Schlüssel: &quot;%1&quot;, &quot;%2&quot;, &quot;%3&quot;, &quot;%4&quot;. Setzen Sie alle Seitenränder auf 0.</translation>
-    </message>
-    <message>
-        <source>Page left margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
-        <translation>Linker Seitenrand in der derzeitigen Größe wie 3.0 (Exportmodus). Wenn kein Wert eingegeben wird, wird die Einstellung des Standarddruckers verwendet. Oder 0, falls kein Drucker gefunden werden kann. Der Wert wird ignoriert, falls &quot;%1&quot; verwendet wird.</translation>
-    </message>
-    <message>
-        <source>Page right margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
-        <translation>Rechter Seitenrand in der derzeitigen Größe wie 3.0 (Exportmodus). Wenn kein Wert eingegeben wird, wird die Einstellung des Standarddruckers verwendet. Oder 0, falls kein Drucker gefunden werden kann. Der Wert wird ignoriert, falls &quot;%1&quot; verwendet wird.</translation>
-    </message>
-    <message>
-        <source>Page top margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
-        <translation>Oberer Seitenrand in der derzeitigen Größe wie 3.0 (Exportmodus). Wenn kein Wert eingegeben wird, wird die Einstellung des Standarddruckers verwendet. Oder 0, falls kein Drucker gefunden werden kann. Der Wert wird ignoriert, falls &quot;%1&quot; verwendet wird.</translation>
-    </message>
-    <message>
-        <source>Page bottom margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
-        <translation>Unterer Seitenrand in der derzeitigen Größe wie 3.0 (Exportmodus). Wenn kein Wert eingegeben wird, wird die Einstellung des Standarddruckers verwendet. Oder 0, falls kein Drucker gefunden werden kann. Der Wert wird ignoriert, falls &quot;%1&quot; verwendet wird.</translation>
-    </message>
-    <message>
-        <source>Rotation in degrees (one of predefined, export mode). Default value is 180. 0 is no-rotate. Valid values: %1. Each value show how many times details will be rotated. For example 180 mean two times (360/180=2) by 180 degree.</source>
-        <translation>Drehung in Grad (eins der vordefinierten, Exportmodus). Standardwert ist 180. 0 bedeutet keine Drehung. Gültige erte: %1. Jeder Wert zeigt, wie oft Details gedreht werden sollen. Zum Beispiel bedeutet 180, dass das Detail zweimal im 180 Grad gedreht word (360/180=2).</translation>
-    </message>
-    <message>
-        <source>Unite pages if possible (export mode). Maximum value limited by QImage that supports only a maximum of 32768x32768 px images.</source>
-        <translation>Seiten verbinden, falls möglich (Exportmodus). Maximaler Wert wird durch QImage limitiert, das nur Bilder mit bis zu 32768 x 32768 Pixeln unterstützt.</translation>
-    </message>
-    <message>
-        <source>Save length of the sheet if set (export mode). The option tells the program to use as much as possible width of sheet. Quality of a layout can be worse when this option was used.</source>
-        <translation>Speichern der Blattlänge, falls gesetzt (Export-Modus). Diese Einstellung sagt dem Programm, möglichst viel der Breite eines Blattes zu benutzen. Die Qualität der Anordnung kann sich verschlechtern, wenn diese Einstellung benutzt wurde.</translation>
-    </message>
-    <message>
-        <source>The layout gap width x2, measured in layout units (export mode). Set distance between details and a detail and a sheet.</source>
-        <translation>Die Layout-Spaltbreite x2, gemessen in Layout-Einheiten. (Export-Modus). Legt den Abstand zwischen Details und einem Detail und einem Blatt fest.</translation>
-    </message>
-    <message>
-        <source>Sets layout groupping cases (export mode): %1.</source>
-        <translation>Legt Layoutgruppierungsfälle fest (Export-Modus): %1.</translation>
-    </message>
-    <message>
-        <source>Run the program in a test mode. The program in this mode loads a single pattern file and silently quit without showing the main window. The key have priority before key &apos;%1&apos;.</source>
-        <translation>Das Programm in einem Testmodus laufen lassen. In diesem Modus lädt das Programm eine einzelne Schnittmuster-Datei und schließt still, ohne das Hauptfenster zu zeigen. Der Schlüssel hat Vorrang vor dem Schlüssel &apos;%1&apos;.</translation>
-    </message>
-    <message>
-        <source>Shift/Offset layout length measured in layout units (export mode). The option show how many points along edge will be used in creating a layout.</source>
-        <translation>Verschieben der gemessenen Layoutlängen in Layouteinheiten (Exportmodus). Die Option zeigt, wie viele Punkte entlang der Kante verwendet werden, um ein Layout zu erstellen.</translation>
-    </message>
-    <message>
-        <source>Shift/Offset length</source>
-        <translation>Verschiebungs-/Ausgleichslänge</translation>
-    </message>
-    <message>
-        <source>Shift/Offset length must be used together with shift units.</source>
-        <translation>Die Verschiebungs-/Ausgleichslänge muss zusammen mit Verschiebungseinheiten genutzt werden.</translation>
-    </message>
-    <message>
-        <source>Number corresponding to output format (default = 0, export mode):</source>
-        <translation>Anzahl entspricht Ausgabeformat (default = 0 , Export -Modus):</translation>
-    </message>
-    <message>
-        <source>Number corresponding to page template (default = 0, export mode):</source>
-        <translation>Anzahl entsprechend Seitenvorlage (Standard = 0, Exportmodus):</translation>
-    </message>
-    <message>
-        <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
-        <translation>Hohe dpi Skalierung deaktivieren. Diese Option wählen wenn es Probleme mit der Skalierung (StandardSkalierung aaktiviert). Alternativ können die %1 Umgebungsvariablen genutzt werden.</translation>
-    </message>
-    <message>
-        <source>Export dxf in binary form.</source>
-        <translation>DXF in binärer Form exportieren.</translation>
-    </message>
-    <message>
-        <source>Export text as paths.</source>
-        <translation>Text als Verzeichnis exportieren.</translation>
-    </message>
-    <message>
-        <source>Export only details. Export details as they positioned in the details mode. Any layout related options will be ignored.</source>
-        <translation>Nur Details exportieren. Details so wie thie im Detailsmodus posiotioniert sind exportieren. Jeglliche Layoutspezifischen Optionen werden ignoriert.</translation>
-    </message>
-    <message>
-        <source>Set size value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
-        <translation>Größenwert einer Schnittteildatei setzen, die mit Standardmaßen (Exportmodus) geöffnet wurde. Gültige Werte: %1cm.</translation>
-    </message>
-    <message>
-        <source>Set height value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
-        <translation>Körperhöhenwert einer Schnittteildatei setzen, die mit Standardmaßen (Exportmodus) geöffnet wurde. Gültige Werte: %1cm.</translation>
-    </message>
-</context>
-<context>
-    <name>VCommonSettings</name>
-    <message>
-        <source>measurements</source>
-        <translation>Maße</translation>
-    </message>
-    <message>
-        <source>individual</source>
-        <translation>Individuell</translation>
-    </message>
-    <message>
-        <source>multisize</source>
-        <translation>Mehrgröße</translation>
-    </message>
-    <message>
-        <source>templates</source>
-        <translation>Vorlagen</translation>
-    </message>
-    <message>
-        <source>images</source>
-        <translation>Bilder</translation>
-    </message>
-    <message>
-        <source>label templates</source>
-        <translation>etikett_vorlagen</translation>
-    </message>
-    <message>
-        <source>backups</source>
-        <translation>datensicherungen</translation>
-    </message>
-    <message>
-        <source>bodyscans</source>
-        <translation>körperscans</translation>
-    </message>
-</context>
-<context>
-    <name>VContainer</name>
-    <message>
-        <source>Can&apos;t find object</source>
-        <translation>Objekt kann nicht gefunden werden</translation>
-    </message>
-    <message>
-        <source>Can&apos;t cast object</source>
-        <translation>Objekt kann nicht gelesen werden</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find object. Type mismatch.</source>
-        <translation>Objekt kann nicht gefunden werden. Falscher Typ.</translation>
-    </message>
-    <message>
-        <source>Number of free id exhausted.</source>
-        <translation>Anzahl der freien id&apos;s aufgebraucht.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t create a curve with type &apos;%1&apos;</source>
-        <translation>Kurve vom Typ &apos;%1&apos; kann nicht erstellt werden</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find object: </source>
-        <translation>Objekt kann nicht gefunden werden: </translation>
-    </message>
-    <message>
-        <source>Can&apos;t find piece: </source>
-        <translation>Schnittteil kann nicht gefunden werden: </translation>
-    </message>
-    <message>
-        <source>Can&apos;t find path: </source>
-        <translation>Verzeichnis kann nicht gefunden werden: </translation>
-    </message>
-    <message>
-        <source>Can&apos;t find object Id: </source>
-        <translation>Objekt Id kann nicht gefunden werden: </translation>
-    </message>
-    <message>
-        <source>Can&apos;t cast object.</source>
-        <translation>Objekt kann nicht ausgeworfen werden.</translation>
-    </message>
-</context>
-<context>
-    <name>VCubicBezierPath</name>
-    <message>
-        <source>Not enough points to create the spline.</source>
-        <translation>Nicht genügend Punkte vorhanden, um die Spline zu erstellen.</translation>
-    </message>
-    <message>
-        <source>This spline does not exist.</source>
-        <translation>Diese Spline existiert nicht.</translation>
-    </message>
-</context>
-<context>
-    <name>VDomDocument</name>
-    <message>
-        <source>Can&apos;t open file %1:
-%2.</source>
-        <translation>Konnte Datei nicht öffnen %1: %2.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t open schema file %1:
-%2.</source>
-        <translation>Konnte Schemadatei nicht öffnen %1:
-%2.</translation>
-    </message>
-    <message>
-        <source>Validation error file %3 in line %1 column %2</source>
-        <translation>Fehler bei der Gültigkeitsprüfung in Datei %3, Zeile %1, Spalte %2</translation>
-    </message>
-    <message>
-        <source>Parsing error file %3 in line %1 column %2</source>
-        <translation>Auswertungsfehler in Datei %3, Zeile %1, Spalte %2</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t get node</source>
-        <translation>Konnte&apos;t Knoten nicht erhalten</translation>
-    </message>
-    <message>
-        <source>This id is not unique.</source>
-        <translation>Diese ID ist nicht eindeutig.</translation>
-    </message>
-    <message>
-        <source>Could not load schema file &apos;%1&apos;.</source>
-        <translation>Konnte Schemadatei %1 nicht laden.</translation>
-    </message>
-    <message>
-        <source>Fail to write Canonical XML.</source>
-        <translation>Canonical XML kann nicht geschrieben werden.</translation>
-    </message>
-    <message>
-        <source>&lt;empty&gt;</source>
-        <translation>&lt;leer&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>VDrawTool</name>
-    <message>
-        <source>Delete</source>
-        <translation>Löschen</translation>
-    </message>
-    <message>
-        <source>Properties</source>
-        <translation>Eigenschaften</translation>
-    </message>
-    <message>
-        <source>Show Point Name</source>
-        <translation>Punktbezeichnung anzeigen</translation>
-    </message>
-    <message>
-        <source>Add Group Object</source>
-        <translation>Gruppen Objekt hinzufügen</translation>
-    </message>
-    <message>
-        <source>Remove Group Object</source>
-        <translation>Gruppen Objekt entfernen</translation>
-    </message>
-</context>
-<context>
-    <name>VException</name>
-    <message>
-        <source>Exception: %1</source>
-        <translation>Ausnahme: %1</translation>
-    </message>
-</context>
-<context>
-    <name>VFormula</name>
-    <message>
-        <source>Error</source>
-        <translation>Fehler</translation>
-    </message>
-</context>
-<context>
-    <name>VFormulaProperty</name>
-    <message>
-        <source>Formula:</source>
-        <translation>Formel:</translation>
-    </message>
-</context>
-<context>
-    <name>VLayoutPiece</name>
-    <message>
-        <source>Piece %1 doesn&apos;t have shape.</source>
-        <translation>Schnittteil %1 hat keine Form.</translation>
-    </message>
-</context>
-<context>
-    <name>VNodePoint</name>
-    <message>
-        <source>Show Point Name</source>
-        <translation>Bezeichnung des Punktes anzeigen</translation>
-    </message>
-</context>
-<context>
-    <name>VPE::VBoolProperty</name>
-    <message>
-        <source>True</source>
-        <translation>Wahr</translation>
-    </message>
-    <message>
-        <source>False</source>
-        <translation>Falsch</translation>
-    </message>
-</context>
-<context>
-    <name>VPE::VFileEditWidget</name>
-    <message>
-        <source>Directory</source>
-        <translation>Verzeichnis</translation>
-    </message>
-    <message>
-        <source>Open File</source>
-        <translation>Datei öffnen</translation>
-    </message>
-</context>
-<context>
-    <name>VPattern</name>
-    <message>
-        <source>Error parsing file.</source>
-        <translation>Fehler beim Auswerten der Datei.</translation>
-    </message>
-    <message>
-        <source>Error can&apos;t convert value.</source>
-        <translation>Fehler: Wert kann nicht konvertiert werden.</translation>
-    </message>
-    <message>
-        <source>Error empty parameter.</source>
-        <translation>Fehler: leerer Parameter.</translation>
-    </message>
-    <message>
-        <source>Error wrong id.</source>
-        <translation>Fehler: falsche ID.</translation>
-    </message>
-    <message>
-        <source>Error parsing file (std::bad_alloc).</source>
-        <translation>Fehler beim Auswerten der Datei  (std::bad_alloc).</translation>
-    </message>
-    <message>
-        <source>Error creating or updating single point</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Punkt&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating point of end line</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Punkt mit Abstand und Winkel&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating point along line</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Punkt auf einer Linie&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating point of shoulder</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Spezieller Punkt an der Schulter&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating point of normal</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Punkt auf einer Senkrechten&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating point of bisector</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Winkelhalbierende&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating point of contact</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Schnittpunkt Kreis und Gerade&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating modeling point</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Punkt&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating height</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Lotfußpunkt&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating triangle</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Dreieck&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating cut spline point</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Kurvensegment&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating cut spline path point</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Pfadsegment&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating cut arc point</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Kreisbogen&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating point of intersection line and axis</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Laufender Schnittpunkt auf Linie&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating point of intersection curve and axis</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Laufender Schnittpunkt auf Kurve&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating line</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Linie&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating simple curve</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Kurve&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating curve path</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Gekrümmter Pfad&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating modeling simple curve</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Kurve Detail&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating modeling curve path</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren der Modellierung des  vom Typ &quot;Pfad Detail&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating simple arc</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des einfachen Bogens&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating modeling arc</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren der Bogenmodellierung &quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating point of intersection arcs</source>
-        <translation>Fehler beim Erstellen oder Aktualisieren des Bogen Schnittpunktes</translation>
-    </message>
-    <message>
-        <source>Error creating or updating point of intersection circles</source>
-        <translation>Fehler beim Erstellen oder Aktualisieren der Kreis Schnittpunktes</translation>
-    </message>
-    <message>
-        <source>Error creating or updating point from circle and tangent</source>
-        <translation>Fehler beim Erstellen oder Aktualisieren des Punktes von Kreis und Tangente</translation>
-    </message>
-    <message>
-        <source>Error creating or updating point from arc and tangent</source>
-        <translation>Fehler beim Erstellen oder Aktualisieren des Punktes von Bogen und Tangente</translation>
-    </message>
-    <message>
-        <source>Error creating or updating true darts</source>
-        <translation>Fehler beim Erstellen oder Aktualisieren des Abnäherausgleichs</translation>
-    </message>
-    <message>
-        <source>Wrong tag name &apos;%1&apos;.</source>
-        <translation>Falsche  Markenbezeichnung &apos;%1&apos;.</translation>
-    </message>
-    <message>
-        <source>Unknown point type &apos;%1&apos;.</source>
-        <translation>Unbekannter Punkt Typ &apos;%1&apos;.</translation>
-    </message>
-    <message>
-        <source>Unknown spline type &apos;%1&apos;.</source>
-        <translation>Unbekannte Spline Typ &apos;%1&apos;.</translation>
-    </message>
-    <message>
-        <source>Unknown arc type &apos;%1&apos;.</source>
-        <translation>Unbekannter Bogen Typ &apos;%1&apos;.</translation>
-    </message>
-    <message>
-        <source>Unknown tools type &apos;%1&apos;.</source>
-        <translation>Unbekannter Werkzeug Typen &apos;%1&apos;.</translation>
-    </message>
-    <message>
-        <source>Error not unique id.</source>
-        <translation>Fehler: uneindeutige ID.</translation>
-    </message>
-    <message>
-        <source>Error creating or updating point of intersection curves</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren vom Punkt der Schnittkurven&quot;</translation>
-    </message>
-    <message>
-        <source>Error creating or updating simple interactive spline</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren der einfachen interaktiven Spline</translation>
-    </message>
-    <message>
-        <source>Error creating or updating interactive spline path</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des interaktiven Splinepfades</translation>
-    </message>
-    <message>
-        <source>Error creating or updating cubic bezier curve</source>
-        <translation>Fehler beim Erstellen oder Aktualisieren der kubischen Bezierkurve</translation>
-    </message>
-    <message>
-        <source>Error creating or updating cubic bezier path curve</source>
-        <translation>Fehler beim Erstellen oder Aktualisieren des Pfades der kubischen Bezierkurve</translation>
-    </message>
-    <message>
-        <source>Error creating or updating operation of rotation</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Operation Drehung</translation>
-    </message>
-    <message>
-        <source>Unknown operation type &apos;%1&apos;.</source>
-        <translation>Unbekannte Betriebsart &apos;%1&apos;.</translation>
-    </message>
-    <message>
-        <source>Error creating or updating operation of moving</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Operation Bewegen</translation>
-    </message>
-    <message>
-        <source>Error creating or updating point of line intersection</source>
-        <translation>Fehler beim Erstellen oder Aktualisieren von Punkt des Linienschnittpunkts</translation>
-    </message>
-    <message>
-        <source>Error creating or updating simple elliptical arc</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des einfachen elliptischen Bogens</translation>
-    </message>
-    <message>
-        <source>Unknown elliptical arc type &apos;%1&apos;.</source>
-        <translation>Unbekannter elliptischer Bogen Typ &apos;%1&apos;.</translation>
-    </message>
-    <message>
-        <source>Error creating or updating modeling elliptical arc</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren modellieren elliptischer Bogen</translation>
-    </message>
-    <message>
-        <source>Unnamed path</source>
-        <translation>Unbenannter Pfad</translation>
-    </message>
-    <message>
-        <source>Error creating or updating a piece path</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren eines Schnittteil Verzeichnisses</translation>
-    </message>
-    <message>
-        <source>Error creating or updating anchor point</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Ankerpunkts</translation>
-    </message>
-    <message>
-        <source>Error creating or updating Intersect XY tool</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Schnittpunkts XY Werkzeugs</translation>
-    </message>
-    <message>
-        <source>Error creating or updating operation of mirror by line</source>
-        <translation>Fehler beim Erstellen oder Aktualisieren der Spiegeln an einer Linie Operation</translation>
-    </message>
-    <message>
-        <source>Error creating or updating operation of mirror by axis</source>
-        <translation>Fehler beim Erstellen oder Aktualisieren der Spiegeln an einer Achse Operation</translation>
-    </message>
-    <message>
-        <source>Piece</source>
-        <translation>Stück</translation>
-    </message>
-    <message>
-        <source>white</source>
-        <translation>Weiß</translation>
-    </message>
-    <message>
-        <source>nobrush</source>
-        <translation>kein Pinsel</translation>
-    </message>
-    <message>
-        <source>Error creating or updating piece</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren eines Schnittteils</translation>
-    </message>
-    <message>
-        <source>Error creating or updating union pieces</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren der Verbindungsschnittteile</translation>
-    </message>
-    <message>
-        <source>Image_name</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>VPoster</name>
-    <message>
-        <source>Grid ( %1 , %2 )</source>
-        <translation>Raster ( %1 , %2 )</translation>
-    </message>
-    <message>
-        <source>Page %1 of %2</source>
-        <translation>Seite %1 von %2</translation>
-    </message>
-    <message>
-        <source>Sheet %1 of %2</source>
-        <translation>Blatt %1 von %2</translation>
-    </message>
-</context>
-<context>
-    <name>VSettings</name>
-    <message>
-        <source>patterns</source>
-        <translation>Muster</translation>
-    </message>
-    <message>
-        <source>layouts</source>
-        <translation>Layouts</translation>
-    </message>
-</context>
-<context>
-    <name>VSplinePath</name>
-    <message>
-        <source>Not enough points to create the spline.</source>
-        <translation>Nicht genügend Punkte vorhanden, um die Spline zu erstellen.</translation>
-    </message>
-    <message>
-        <source>This spline does not exist.</source>
-        <translation>Diese Spline existiert nicht.</translation>
-    </message>
-</context>
-<context>
-    <name>VToolAlongLine</name>
-    <message>
-        <source>Length</source>
-        <translation>Länge</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Winkel</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Bezeichnung</translation>
-    </message>
-</context>
-<context>
-    <name>VToolArc</name>
-    <message>
-        <source>Start angle</source>
-        <translation>Anfangswinkel</translation>
-    </message>
-    <message>
-        <source>     Length</source>
-        <translation>     Länge</translation>
-    </message>
-    <message>
-        <source>     Radius</source>
-        <translation>     Radius</translation>
-    </message>
-    <message>
-        <source>  End angle</source>
-        <translation>  Abschlusswinkel</translation>
-    </message>
-    <message>
-        <source>      Label</source>
-        <translation>      Etikett</translation>
-    </message>
-</context>
-<context>
-    <name>VToolArcWithLength</name>
-    <message>
-        <source>Start angle</source>
-        <translation>Anfangswinkel</translation>
-    </message>
-    <message>
-        <source>     Length</source>
-        <translation>     Länge</translation>
-    </message>
-    <message>
-        <source>     Radius</source>
-        <translation>     Radius</translation>
-    </message>
-    <message>
-        <source>  End angle</source>
-        <translation>  Abschlusswinkel</translation>
-    </message>
-    <message>
-        <source>      Name</source>
-        <translation>      Bezeichnung</translation>
-    </message>
-    <message>
-        <source>      Tool</source>
-        <translation>      Werkzeug</translation>
-    </message>
-    <message>
-        <source>Arc - Radius and Length</source>
-        <translation>Bogen - Radius und Länge</translation>
-    </message>
-</context>
-<context>
-    <name>VToolBasePoint</name>
-    <message>
-        <source>Name</source>
-        <translation>Bezeichnung</translation>
-    </message>
-</context>
-<context>
-    <name>VToolCurveIntersectAxis</name>
-    <message>
-        <source>&lt;b&gt;&lt;big&gt;Can not create intersection point %1 from point %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;to curve %3 with an axis angle of %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Kann keinen Schnittpunkt %1 von Punkt %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;zur Kurve %3 mit einem Achsenwinkel von %4 erstellen°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;den Startpunkt als Platzhalter benutzen bis das Mustter korrigiert ist.</translation>
-    </message>
-    <message>
-        <source>Intersection Point of Curve &amp; Axis</source>
-        <translation>Schnittpunkt von Kurve &amp; Achse</translation>
-    </message>
-</context>
-<context>
-    <name>VToolCutArc</name>
-    <message>
-        <source>Arc</source>
-        <translation>Bogen</translation>
-    </message>
-    <message>
-        <source>length</source>
-        <translation>Länge</translation>
-    </message>
-    <message>
-        <source>start angle</source>
-        <translation>Anfangswinkel</translation>
-    </message>
-    <message>
-        <source>end angle</source>
-        <translation>Endwinkel</translation>
-    </message>
-    <message>
-        <source>radius</source>
-        <translation>Radius</translation>
-    </message>
-    <message>
-        <source>label</source>
-        <translation>Etikett</translation>
-    </message>
-</context>
-<context>
-    <name>VToolCutSpline</name>
-    <message>
-        <source>Curve</source>
-        <translation>Kurve</translation>
-    </message>
-    <message>
-        <source>length</source>
-        <translation>Länge</translation>
-    </message>
-    <message>
-        <source>label</source>
-        <translation>Etikett</translation>
-    </message>
-</context>
-<context>
-    <name>VToolCutSplinePath</name>
-    <message>
-        <source>Curve</source>
-        <translation>Kurve</translation>
-    </message>
-    <message>
-        <source>length</source>
-        <translation>Länge</translation>
-    </message>
-    <message>
-        <source>label</source>
-        <translation>Etikett</translation>
-    </message>
-</context>
-<context>
-    <name>VToolDoublePoint</name>
-    <message>
-        <source>Name</source>
-        <translation>Bezeichnung</translation>
-    </message>
-</context>
-<context>
-    <name>VToolEllipticalArc</name>
-    <message>
-        <source>Start angle</source>
-        <translation>Anfangswinkel</translation>
-    </message>
-    <message>
-        <source>     Length</source>
-        <translation>     Länge</translation>
-    </message>
-    <message>
-        <source>    Radius</source>
-        <translation>    Radius</translation>
-    </message>
-    <message>
-        <source>  End angle</source>
-        <translation>  Endwinkel</translation>
-    </message>
-    <message>
-        <source>      Label</source>
-        <translation>      Etikett</translation>
-    </message>
-</context>
-<context>
-    <name>VToolHeight</name>
-    <message>
-        <source>Length</source>
-        <translation>Länge</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Winkel</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Bezeichnung</translation>
-    </message>
-</context>
-<context>
-    <name>VToolLine</name>
-    <message>
-        <source>Length</source>
-        <translation>Länge</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Winkel</translation>
-    </message>
-</context>
-<context>
-    <name>VToolLineIntersect</name>
-    <message>
-        <source>Name</source>
-        <translation>Bezeichnung</translation>
-    </message>
-</context>
-<context>
-    <name>VToolLineIntersectAxis</name>
-    <message>
-        <source>Length</source>
-        <translation>Länge</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Winkel</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Bezeichnung</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Line and Axis&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Schnittpunkt kann nicht gefunden werden %1 von&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Linie und Achse&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Anfangspunkt als Platzhalter verwenden bis Schnittteil korrigiert ist.</translation>
-    </message>
-    <message>
-        <source>Intersect Line and Axis</source>
-        <translation>Schneidet Linie und Achse</translation>
-    </message>
-</context>
-<context>
-    <name>VToolLinePoint</name>
-    <message>
-        <source>Length</source>
-        <translation>Länge</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Winkel</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Bezeichnung</translation>
-    </message>
-</context>
-<context>
-    <name>VToolMirrorByAxis</name>
-    <message>
-        <source>Origin point</source>
-        <translation>Ausgangspunkt</translation>
-    </message>
-</context>
-<context>
-    <name>VToolMirrorByLine</name>
-    <message>
-        <source>First line point</source>
-        <translation>Erster Punkt der Linie</translation>
-    </message>
-    <message>
-        <source>Second line point</source>
-        <translation>Zweiter Punkt der Linie</translation>
-    </message>
-</context>
-<context>
-    <name>VToolMove</name>
-    <message>
-        <source>Center point</source>
-        <translation>Mittelpunkt</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Winkel</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Länge</translation>
-    </message>
-    <message>
-        <source>Rotation point</source>
-        <translation>Rotationspunkt</translation>
-    </message>
-    <message>
-        <source>Rotation angle</source>
-        <translation>Rotationswinkel</translation>
-    </message>
-</context>
-<context>
-    <name>VToolOptionsPropertyBrowser</name>
-    <message>
-        <source>Base point</source>
-        <translation>Ausgangspunkt</translation>
-    </message>
-    <message>
-        <source>True darts</source>
-        <translation>Abnäherlänge ausgleichen</translation>
-    </message>
-    <message>
-        <source>Base point:</source>
-        <translation>Startpunkt:</translation>
-    </message>
-    <message>
-        <source>Length:</source>
-        <translation>Länge:</translation>
-    </message>
-    <message>
-        <source>Angle:</source>
-        <translation>Winkel:</translation>
-    </message>
-    <message>
-        <source>First point:</source>
-        <translation>Erster Punkt:</translation>
-    </message>
-    <message>
-        <source>Second point:</source>
-        <translation>Zweiter Punkt:</translation>
-    </message>
-    <message>
-        <source>Center point:</source>
-        <translation>Mittelpunkt:</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation>Radius:</translation>
-    </message>
-    <message>
-        <source>First angle:</source>
-        <translation>Erster Winkel:</translation>
-    </message>
-    <message>
-        <source>Second angle:</source>
-        <translation>Zweiter Winkel:</translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation>Farbe:</translation>
-    </message>
-    <message>
-        <source>Third point:</source>
-        <translation>Dritter Punkt:</translation>
-    </message>
-    <message>
-        <source>Point 1 label:</source>
-        <translation>Bezeichnung des Punktes 1:</translation>
-    </message>
-    <message>
-        <source>Point 2 label:</source>
-        <translation>Bezeichnung des Punktes 2:</translation>
-    </message>
-    <message>
-        <source>First base point:</source>
-        <translation>Erster Ausgangspunkt:</translation>
-    </message>
-    <message>
-        <source>Second base point:</source>
-        <translation>Zweiter Ausgangspunkt:</translation>
-    </message>
-    <message>
-        <source>First dart point:</source>
-        <translation>Erster Abnäherpunkt:</translation>
-    </message>
-    <message>
-        <source>Arc:</source>
-        <translation>Bogen:</translation>
-    </message>
-    <message>
-        <source>Curve:</source>
-        <translation>Kurve:</translation>
-    </message>
-    <message>
-        <source>First line point:</source>
-        <translation>Erster Punkt der Linie:</translation>
-    </message>
-    <message>
-        <source>Second line point:</source>
-        <translation>Zweiter Punkt der Linie:</translation>
-    </message>
-    <message>
-        <source>Center of arc:</source>
-        <translation>Mittelpunkt des Bogens:</translation>
-    </message>
-    <message>
-        <source>First arc:</source>
-        <translation>Erster Bogen:</translation>
-    </message>
-    <message>
-        <source>Second arc:</source>
-        <translation>Zweiter Bogen:</translation>
-    </message>
-    <message>
-        <source>Take:</source>
-        <translation>Nehmen:</translation>
-    </message>
-    <message>
-        <source>First curve:</source>
-        <translation>Erste Kurve:</translation>
-    </message>
-    <message>
-        <source>Second curve:</source>
-        <translation>Zweite Kurve:</translation>
-    </message>
-    <message>
-        <source>Tangent point:</source>
-        <translation>Tangentenpunkt:</translation>
-    </message>
-    <message>
-        <source>Circle radius:</source>
-        <translation>Kreisradius:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Bezeichnung:</translation>
-    </message>
-    <message>
-        <source>C1: angle:</source>
-        <translation>C1 Winkel:</translation>
-    </message>
-    <message>
-        <source>C1: length:</source>
-        <translation>C1: Länge:</translation>
-    </message>
-    <message>
-        <source>C2: angle:</source>
-        <translation>C2: Winkel:</translation>
-    </message>
-    <message>
-        <source>C2: length:</source>
-        <translation>C2: Länge:</translation>
-    </message>
-    <message>
-        <source>Axis point:</source>
-        <translation>Achsenpunkt:</translation>
-    </message>
-    <message>
-        <source>Suffix:</source>
-        <translation>Suffix:</translation>
-    </message>
-    <message>
-        <source>Axis type:</source>
-        <translation>Achsentyp:</translation>
-    </message>
-    <message>
-        <source>Rotation angle:</source>
-        <translation>Drehwinkel:</translation>
-    </message>
-    <message>
-        <source>Fourth point:</source>
-        <translation>Vierter Punkt:</translation>
-    </message>
-    <message>
-        <source>Linetype:</source>
-        <translation>Linientyp:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect XY</source>
-        <translation>Punkt - schneidet XY</translation>
-    </message>
-    <message>
-        <source>Rotation</source>
-        <translation>Drehung</translation>
-    </message>
-    <message>
-        <source>Rotation point:</source>
-        <translation>Drehpunkt:</translation>
-    </message>
-    <message>
-        <source>Move</source>
-        <translation>Bewegen</translation>
-    </message>
-    <message>
-        <source>Mirror by Line</source>
-        <translation>Spiegeln an einer Linie</translation>
-    </message>
-    <message>
-        <source>Mirror by Axis</source>
-        <translation>Spiegeln an einer Achse</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Auswahl</translation>
-    </message>
-    <message>
-        <source>Coordinates</source>
-        <translation>Koordinaten</translation>
-    </message>
-    <message>
-        <source>Point - Length and Angle</source>
-        <translation>Punkt - Länge und Winkel</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Geometrie</translation>
-    </message>
-    <message>
-        <source>Attributes</source>
-        <translation>Eigenschaften</translation>
-    </message>
-    <message>
-        <source>Lineweight:</source>
-        <translation>Linienstärke:</translation>
-    </message>
-    <message>
-        <source>Point - On Line</source>
-        <translation>Punkt - auf Linie</translation>
-    </message>
-    <message>
-        <source>Arc - Radius and Angles</source>
-        <translation>Bogen - Radius und Winkel</translation>
-    </message>
-    <message>
-        <source>Arc - Radius and Length</source>
-        <translation>Bogen - Radius und Länge</translation>
-    </message>
-    <message>
-        <source>Point - On Bisector</source>
-        <translation>Punkt - auf Winkelhalbierender</translation>
-    </message>
-    <message>
-        <source>Second dart point:</source>
-        <translation>Zweiter Abnäherpunkt:</translation>
-    </message>
-    <message>
-        <source>Third dart point:</source>
-        <translation>Dritter Abnäherpunkt:</translation>
-    </message>
-    <message>
-        <source>Point - On Arc</source>
-        <translation>Punkt - auf Bogen</translation>
-    </message>
-    <message>
-        <source>Point - On Curve</source>
-        <translation>Punkt - auf Kurve</translation>
-    </message>
-    <message>
-        <source>Point - On Spline</source>
-        <translation>Punkt - auf Spline</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Line and Perpendicular</source>
-        <translation>Punkt - schneidet Linie und Senkrechte</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Linie</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Lines</source>
-        <translation>Punkt - schneidet Linien</translation>
-    </message>
-    <message>
-        <source>First line</source>
-        <translation>Erste Linie</translation>
-    </message>
-    <message>
-        <source>Second line</source>
-        <translation>Zweite Linie</translation>
-    </message>
-    <message>
-        <source>Point - On Perpendicular</source>
-        <translation>Punkt - auf einer Senkrechten</translation>
-    </message>
-    <message>
-        <source>Rotation:</source>
-        <translation>Drehung:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arc and Line</source>
-        <translation>Punkt - schneidet Bogen und Linie</translation>
-    </message>
-    <message>
-        <source>1st line point:</source>
-        <translation>Erster Linienpunkt:</translation>
-    </message>
-    <message>
-        <source>2nd line point:</source>
-        <translation>Zweiter Linienpunkt:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arcs</source>
-        <translation>Punkt - schneidet Bögen</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Circles</source>
-        <translation>Punkt - schneidet Kreise</translation>
-    </message>
-    <message>
-        <source>First circle:</source>
-        <translation>Erster Kreis:</translation>
-    </message>
-    <message>
-        <source>Center:</source>
-        <translation>Mitte:</translation>
-    </message>
-    <message>
-        <source>Second circle:</source>
-        <translation>Zweiter Kreis:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Curves</source>
-        <translation>Punkt - schneidet Kurven</translation>
-    </message>
-    <message>
-        <source>Vertical take:</source>
-        <translation>Vertikale Aufnahme:</translation>
-    </message>
-    <message>
-        <source>Horizontal take:</source>
-        <translation>Horizontale Aufnahme:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Circle and Tangent</source>
-        <translation>Punkt - schneidet Kreis und Tangente</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arc and Tangent</source>
-        <translation>Punkt - schneidet Bogen und Tangente</translation>
-    </message>
-    <message>
-        <source>Point - Length to Line</source>
-        <translation>Punkt - Länge zur Linie</translation>
-    </message>
-    <message>
-        <source>Curve - Interactive</source>
-        <translation>Kurve - interaktiv</translation>
-    </message>
-    <message>
-        <source>Curve - Fixed</source>
-        <translation>Kurve - fixiert</translation>
-    </message>
-    <message>
-        <source>Spline - Interactive</source>
-        <translation>Spline - interaktiv</translation>
-    </message>
-    <message>
-        <source>Spline - Fixed</source>
-        <translation>Spline - fixiert</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Axis and Triangle</source>
-        <translation>Punkt - schneidet Achse und Dreieck</translation>
-    </message>
-    <message>
-        <source>1st axis point:</source>
-        <translation>Erster Achsenpunkt:</translation>
-    </message>
-    <message>
-        <source>2nd axis point:</source>
-        <translation>Zweiter Achsenpunkt:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Line and Axis</source>
-        <translation>Punkt - schneidet Linie und Achse</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Curve and Axis</source>
-        <translation>Punkt - schneidet Kurve und Achse</translation>
-    </message>
-    <message>
-        <source>Origin point:</source>
-        <translation>Ausgangspunkt:</translation>
-    </message>
-    <message>
-        <source>Arc - Elliptical</source>
-        <translation>Bogen - elliptisch</translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <translation>Bogen_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <translation>Spl_</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <translation>SplVerzeichnis</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <translation>Linie_</translation>
-    </message>
-    <message>
-        <source>Center point</source>
-        <translation>Mittelpunkt</translation>
-    </message>
-    <message>
-        <source>Direction:</source>
-        <translation>Richtung:</translation>
-    </message>
-</context>
-<context>
-    <name>VToolPointFromArcAndTangent</name>
-    <message>
-        <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;%2 and Tangent&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Schnittpunkt kann nicht gefunden werden %1 von &lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;%2 und Tangente&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Ausgangspunkt als Platzhalter benutzen bis Schnittteil korrigiert ist.</translation>
-    </message>
-    <message>
-        <source>Intersect Arc and Tangent</source>
-        <translation>Schneidet Bogen und Tangente</translation>
-    </message>
-</context>
-<context>
-    <name>VToolPointOfContact</name>
-    <message>
-        <source>Length</source>
-        <translation>Länge</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Winkel</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Bezeichnung</translation>
-    </message>
-</context>
-<context>
-    <name>VToolPointOfIntersectionArcs</name>
-    <message>
-        <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Arcs&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Schnittpunkt der Bögen kann nicht gefunden werden %1 von Bögen&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Ausgangspunkt als Platzhalter benutzen bis Schnittteil korrigiert ist.</translation>
-    </message>
-    <message>
-        <source>Point Intersect Arcs</source>
-        <translation>Punkt schneidet Bögen</translation>
-    </message>
-</context>
-<context>
-    <name>VToolPointOfIntersectionCurves</name>
-    <message>
-        <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Curves&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Schnittpunkt kann nicht gefunden werden %1 der Kurven&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Ausgangspunkt als Platzhalter benutzen bis Schnittteil korrigiert ist.</translation>
-    </message>
-    <message>
-        <source>Point Intersect Curves</source>
-        <translation>Punkt schneidet Kurven</translation>
-    </message>
-</context>
-<context>
-    <name>VToolRotation</name>
-    <message>
-        <source>  Origin point</source>
-        <translation>  Ausgangspunkt</translation>
-    </message>
-    <message>
-        <source>Rotation angle</source>
-        <translation>Drehwinkel</translation>
-    </message>
-</context>
-<context>
-    <name>VToolShoulderPoint</name>
-    <message>
-        <source>Length</source>
-        <translation>Länge</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Winkel</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Bezeichnung</translation>
-    </message>
-</context>
-<context>
-    <name>VTranslateVars</name>
-    <message>
-        <source>Bunka</source>
-        <comment>System name</comment>
-        <translation>Bunka</translation>
-    </message>
-    <message>
-        <source>Bunka Fashion College</source>
-        <comment>Author name</comment>
-        <translation>Bunka Fashion College</translation>
-    </message>
-    <message>
-        <source>Fundamentals of Garment Design</source>
-        <comment>Book name</comment>
-        <translation>Fundamentals of Garment Design</translation>
-    </message>
-    <message>
-        <source>Barnfield and Richard</source>
-        <comment>System name</comment>
-        <translation>Barnfield und Richard</translation>
-    </message>
-    <message>
-        <source>Jo Barnfield and Andrew Richards</source>
-        <comment>Author name</comment>
-        <translation>Jo Barnfield und Andrew Richards</translation>
-    </message>
-    <message>
-        <source>Pattern Making Primer</source>
-        <comment>Book name</comment>
-        <translation>Pattern Making Primer</translation>
-    </message>
-    <message>
-        <source>Friendship/Women</source>
-        <comment>System name</comment>
-        <translation>Friendship/Women</translation>
-    </message>
-    <message>
-        <source>Elizabeth Friendship</source>
-        <comment>Author name</comment>
-        <translation>Elizabeth Friendship</translation>
-    </message>
-    <message>
-        <source>Creating Historical Clothes - Pattern Cutting from the 16th to the 19th Centuries</source>
-        <comment>Book name</comment>
-        <translation>Creating Historical Clothes - Pattern Cutting from the 16th to the 19th Centuries</translation>
-    </message>
-    <message>
-        <source>Morris, K.</source>
-        <comment>System name</comment>
-        <translation>Morris, K.</translation>
-    </message>
-    <message>
-        <source>Karen Morris</source>
-        <comment>Author name</comment>
-        <translation>Karen Morris</translation>
-    </message>
-    <message>
-        <source>Sewing Lingerie that Fits</source>
-        <comment>Book name</comment>
-        <translation>Sewing Lingerie that Fits</translation>
-    </message>
-    <message>
-        <source>Castro</source>
-        <comment>System name</comment>
-        <translation>Castro</translation>
-    </message>
-    <message>
-        <source>Lucia Mors de Castro</source>
-        <comment>Author name</comment>
-        <translation>Lucia Mors de Castro</translation>
-    </message>
-    <message>
-        <source>Patternmaking in Practic</source>
-        <comment>Book name</comment>
-        <translation>Patternmaking in Practice</translation>
-    </message>
-    <message>
-        <source>Kim &amp; Uh</source>
-        <comment>System name</comment>
-        <translation>Kim &amp; Uh</translation>
-    </message>
-    <message>
-        <source>Injoo Kim and Mykyung Uh</source>
-        <comment>Author name</comment>
-        <translation>Injoo Kim and Mykyung Uh</translation>
-    </message>
-    <message>
-        <source>Apparel Making in Fashion Design</source>
-        <comment>Book name</comment>
-        <translation>Apparel Making in Fashion Design</translation>
-    </message>
-    <message>
-        <source>Waugh</source>
-        <comment>System name</comment>
-        <translation>Waugh</translation>
-    </message>
-    <message>
-        <source>Norah Waugh</source>
-        <comment>Author name</comment>
-        <translation>Norah Waugh</translation>
-    </message>
-    <message>
-        <source>Corsets and Crinolines</source>
-        <comment>Book name</comment>
-        <translation>Corsets and Crinolines</translation>
-    </message>
-    <message>
-        <source>Grimble</source>
-        <comment>System name</comment>
-        <translation>Grimble</translation>
-    </message>
-    <message>
-        <source>Frances Grimble</source>
-        <comment>Author name</comment>
-        <translation>Frances Grimble</translation>
-    </message>
-    <message>
-        <source>Fashions of the Gilded Age</source>
-        <comment>Book name</comment>
-        <translation>Fashions of the Gilded Age</translation>
-    </message>
-    <message>
-        <source>Thornton&apos;s International System</source>
-        <comment>System name</comment>
-        <translation>Thorntons internationales System</translation>
-    </message>
-    <message>
-        <source>ed. R. L. Shep</source>
-        <comment>Author name</comment>
-        <translation>Ed. R. L. Shep</translation>
-    </message>
-    <message>
-        <source>The Great War: Styles and Patterns of the 1910s</source>
-        <comment>Book name</comment>
-        <translation>The Great War: Styles and Patterns of the 1910s</translation>
-    </message>
-    <message>
-        <source>Hillhouse &amp; Mansfield</source>
-        <comment>System name</comment>
-        <translation>Hillhouse &amp; Mansfield</translation>
-    </message>
-    <message>
-        <source>Marion S. Hillhouse and Evelyn A. Mansfield</source>
-        <comment>Author name</comment>
-        <translation>Marion S. Hillhouse und Evelyn A. Mansfield</translation>
-    </message>
-    <message>
-        <source>Dress Design: Draping and Flat Pattern Making</source>
-        <comment>Book name</comment>
-        <translation>Dress Design: Draping and Flat Pattern Making</translation>
-    </message>
-    <message>
-        <source>Pivnick</source>
-        <comment>System name</comment>
-        <translation>Pivnick</translation>
-    </message>
-    <message>
-        <source>Esther Kaplan Pivnick</source>
-        <comment>Author name</comment>
-        <translation>Esther Kaplan Pivnick</translation>
-    </message>
-    <message>
-        <source>How to Design Beautiful Clothes: Designing and Pattern Making</source>
-        <comment>Book name</comment>
-        <translation>How to Design Beautiful Clothes: Designing and Pattern Making</translation>
-    </message>
-    <message>
-        <source>Minister &amp; Son</source>
-        <comment>System name</comment>
-        <translation>Minister &amp; Sohn</translation>
-    </message>
-    <message>
-        <source>Edward Minister &amp; Son, ed. R. L. Shep</source>
-        <comment>Author name</comment>
-        <translation>Edward Minister &amp; Sohn, ed. R. L. Shep</translation>
-    </message>
-    <message>
-        <source>The Complete Guide to Practical Cutting (1853)</source>
-        <comment>Book name</comment>
-        <translation>The Complete Guide to Practical Cutting (1853)</translation>
-    </message>
-    <message>
-        <source>Strickland</source>
-        <comment>System name</comment>
-        <translation>Strickland</translation>
-    </message>
-    <message>
-        <source>Gertrude Strickland</source>
-        <comment>Author name</comment>
-        <translation>Gertrude Strickland</translation>
-    </message>
-    <message>
-        <source>A Tailoring Manual</source>
-        <comment>Book name</comment>
-        <translation>A Tailoring Manual</translation>
-    </message>
-    <message>
-        <source>Loh &amp; Lewis</source>
-        <comment>System name</comment>
-        <translation>Loh &amp; Lewis</translation>
-    </message>
-    <message>
-        <source>May Loh and Diehl Lewis</source>
-        <comment>Author name</comment>
-        <translation>May Loh und Diehl Lewis</translation>
-    </message>
-    <message>
-        <source>Patternless Fashion Design</source>
-        <comment>Book name</comment>
-        <translation>Patternless Fashion Design</translation>
-    </message>
-    <message>
-        <source>Morris, F. R.</source>
-        <comment>System name</comment>
-        <translation>Morris, F. R.</translation>
-    </message>
-    <message>
-        <source>F. R. Morris</source>
-        <comment>Author name</comment>
-        <translation>F. R. Morris</translation>
-    </message>
-    <message>
-        <source>Ladies Garment Cutting and Making</source>
-        <comment>Book name</comment>
-        <translation>Ladies Garment Cutting and Making</translation>
-    </message>
-    <message>
-        <source>Mason</source>
-        <comment>System name</comment>
-        <translation>Mason</translation>
-    </message>
-    <message>
-        <source>Gertrude Mason</source>
-        <comment>Author name</comment>
-        <translation>Gertrude Mason</translation>
-    </message>
-    <message>
-        <source>Gertrude Mason&apos;s Patternmaking Book</source>
-        <comment>Book name</comment>
-        <translation>Gertrude Mason&apos;s Patternmaking Book</translation>
-    </message>
-    <message>
-        <source>Kimata</source>
-        <comment>System name</comment>
-        <translation>Kimata</translation>
-    </message>
-    <message>
-        <source>K. Kimata</source>
-        <comment>Author name</comment>
-        <translation>K. Kimata</translation>
-    </message>
-    <message>
-        <source>K.Kimata&apos;s Simplified Drafting Book for Dressmaking</source>
-        <comment>Book name</comment>
-        <translation>K.Kimata&apos;s Simplified Drafting Book for Dressmaking</translation>
-    </message>
-    <message>
-        <source>Master Designer</source>
-        <comment>System name</comment>
-        <translation>Master Designer</translation>
-    </message>
-    <message>
-        <source>The Master Designer (Chicago, IL)</source>
-        <comment>Author name</comment>
-        <translation>The Master Designer (Chicago, IL)</translation>
-    </message>
-    <message>
-        <source>Master Designer&apos;s System of Designing, Cutting and Grading</source>
-        <comment>Book name</comment>
-        <translation>Master Designer&apos;s System of Designing, Cutting and Grading</translation>
-    </message>
-    <message>
-        <source>Kopp</source>
-        <comment>System name</comment>
-        <translation>Kopp</translation>
-    </message>
-    <message>
-        <source>Ernestine Kopp, Vittorina Rolfo, Beatrice Zelin, Lee Gross</source>
-        <comment>Author name</comment>
-        <translation>Ernestine Kopp, Vittorina Rolfo, Beatrice Zelin, Lee Gross</translation>
-    </message>
-    <message>
-        <source>How to Draft Basic Patterns</source>
-        <comment>Book name</comment>
-        <translation>How to Draft Basic Patterns</translation>
-    </message>
-    <message>
-        <source>Ekern</source>
-        <comment>System name</comment>
-        <translation>Ekern</translation>
-    </message>
-    <message>
-        <source>Doris Ekern</source>
-        <comment>Author name</comment>
-        <translation>Doris Ekern</translation>
-    </message>
-    <message>
-        <source>Slacks Cut-to-Fit for Your Figure</source>
-        <comment>Book name</comment>
-        <translation>Slacks Cut-to-Fit for Your Figure</translation>
-    </message>
-    <message>
-        <source>Doyle</source>
-        <comment>System name</comment>
-        <translation>Doyle</translation>
-    </message>
-    <message>
-        <source>Sarah J. Doyle</source>
-        <comment>Author name</comment>
-        <translation>Sarah J. Doyle</translation>
-    </message>
-    <message>
-        <source>Sarah&apos;s Key to Pattern Drafting</source>
-        <comment>Book name</comment>
-        <translation>Sarah&apos;s Key to Pattern Drafting</translation>
-    </message>
-    <message>
-        <source>Shelton</source>
-        <comment>System name</comment>
-        <translation>Shelton</translation>
-    </message>
-    <message>
-        <source>Karla J. Shelton</source>
-        <comment>Author name</comment>
-        <translation>Karla J. Shelton</translation>
-    </message>
-    <message>
-        <source>Design and Sew Jeans</source>
-        <comment>Book name</comment>
-        <translation>Design and Sew Jeans</translation>
-    </message>
-    <message>
-        <source>Lady Boutique</source>
-        <comment>System name</comment>
-        <translation>Lady Boutique</translation>
-    </message>
-    <message>
-        <source>Lady Boutique</source>
-        <comment>Author name</comment>
-        <translation>Lady Boutique</translation>
-    </message>
-    <message>
-        <source>Lady Boutique magazine (Japan)</source>
-        <comment>Book name</comment>
-        <translation>Lady Boutique magazine (Japan)</translation>
-    </message>
-    <message>
-        <source>Rohr</source>
-        <comment>System name</comment>
-        <translation>Rohr</translation>
-    </message>
-    <message>
-        <source>M. Rohr</source>
-        <comment>Author name</comment>
-        <translation>M. Rohr</translation>
-    </message>
-    <message>
-        <source>Pattern Drafting and Grading: Women&apos;s nd Misses&apos; Garment Design</source>
-        <comment>Book name</comment>
-        <translation>Pattern Drafting and Grading: Women&apos;s and Misses&apos; Garment Design</translation>
-    </message>
-    <message>
-        <source>Moore</source>
-        <comment>System name</comment>
-        <translation>Moore</translation>
-    </message>
-    <message>
-        <source>Dorothy Moore</source>
-        <comment>Author name</comment>
-        <translation>Dorothy Moore</translation>
-    </message>
-    <message>
-        <source>Dorothy Moore&apos;s Pattern Drafting and Dressmaking</source>
-        <comment>Book name</comment>
-        <translation>Dorothy Moore&apos;s Pattern Drafting and Dressmaking</translation>
-    </message>
-    <message>
-        <source>Abling</source>
-        <comment>System name</comment>
-        <translation>Abling</translation>
-    </message>
-    <message>
-        <source>Bina Abling</source>
-        <comment>Author name</comment>
-        <translation>Bina Abling</translation>
-    </message>
-    <message>
-        <source>Integrating Draping, Drafting and Drawing</source>
-        <comment>Book name</comment>
-        <translation>Integrating Draping, Drafting and Drawing</translation>
-    </message>
-    <message>
-        <source>Fukomoto</source>
-        <comment>System name</comment>
-        <translation>Fukomoto</translation>
-    </message>
-    <message>
-        <source>Sue S. Fukomoto</source>
-        <comment>Author name</comment>
-        <translation>Sue S. Fukomoto</translation>
-    </message>
-    <message>
-        <source>Scientific Pattern Drafting as taught at Style Center School of Costume Design, Dressmaking and Millinery</source>
-        <comment>Book name</comment>
-        <translation>Scientific Pattern Drafting as taught at Style Center School of Costume Design, Dressmaking and Millinery</translation>
-    </message>
-    <message>
-        <source>Dressmaking International</source>
-        <comment>System name</comment>
-        <translation>Dressmaking International</translation>
-    </message>
-    <message>
-        <source>Dressmaking International</source>
-        <comment>Author name</comment>
-        <translation>Dressmaking International</translation>
-    </message>
-    <message>
-        <source>Dressmaking International magazine (Japan)</source>
-        <comment>Book name</comment>
-        <translation>Dressmaking International magazine (Japan)</translation>
-    </message>
-    <message>
-        <source>Erwin</source>
-        <comment>System name</comment>
-        <translation>Erwin</translation>
-    </message>
-    <message>
-        <source>Mabel D. Erwin</source>
-        <comment>Author name</comment>
-        <translation>Mabel D. Erwin</translation>
-    </message>
-    <message>
-        <source>Practical Dress Design</source>
-        <comment>Book name</comment>
-        <translation>Practical Dress Design</translation>
-    </message>
-    <message>
-        <source>Gough</source>
-        <comment>System name</comment>
-        <translation>Gough</translation>
-    </message>
-    <message>
-        <source>E. L. G. Gough</source>
-        <comment>Author name</comment>
-        <translation>E. L. G. Gough</translation>
-    </message>
-    <message>
-        <source>Principles of Garment Cutting</source>
-        <comment>Book name</comment>
-        <translation>Principles of Garment Cutting</translation>
-    </message>
-    <message>
-        <source>Allemong</source>
-        <comment>System name</comment>
-        <translation>Allemong</translation>
-    </message>
-    <message>
-        <source>Elizabeth M. Allemong</source>
-        <comment>Author name</comment>
-        <translation>Elizabeth M. Allemong</translation>
-    </message>
-    <message>
-        <source>European Cut</source>
-        <comment>Book name</comment>
-        <translation>European Cut</translation>
-    </message>
-    <message>
-        <source>McCunn</source>
-        <comment>System name</comment>
-        <translation>McCunn</translation>
-    </message>
-    <message>
-        <source>Donald H. McCunn</source>
-        <comment>Author name</comment>
-        <translation>Donald H. McCunn</translation>
-    </message>
-    <message>
-        <source>How to Make Your Own Sewing Patterns</source>
-        <comment>Book name</comment>
-        <translation>How to Make Your Own Sewing Patterns</translation>
-    </message>
-    <message>
-        <source>Zarapkar</source>
-        <comment>System name</comment>
-        <translation>Zarapkar</translation>
-    </message>
-    <message>
-        <source>Shri K. R. Zarapkar and Shri Arvind K. Zarapkar</source>
-        <comment>Author name</comment>
-        <translation>Shri K. R. Zarapkar and Shri Arvind K. Zarapkar</translation>
-    </message>
-    <message>
-        <source>Zarapkar System of Cutting</source>
-        <comment>Book name</comment>
-        <translation>Zarapkar System of Cutting</translation>
-    </message>
-    <message>
-        <source>Kunick</source>
-        <comment>System name</comment>
-        <translation>Kunick</translation>
-    </message>
-    <message>
-        <source>Philip Kunick</source>
-        <comment>Author name</comment>
-        <translation>Philip Kunick</translation>
-    </message>
-    <message>
-        <source>Sizing, Pattern Construction and Grading for Women&apos;s and Children&apos;s Garments</source>
-        <comment>Book name</comment>
-        <translation>Sizing, Pattern Construction and Grading for Women&apos;s and Children&apos;s Garments</translation>
-    </message>
-    <message>
-        <source>Handford</source>
-        <comment>System name</comment>
-        <translation>Handford</translation>
-    </message>
-    <message>
-        <source>Jack Handford</source>
-        <comment>Author name</comment>
-        <translation>Jack Handford</translation>
-    </message>
-    <message>
-        <source>Professional Patternmaking for Designers: Women&apos;s Wear, Men&apos;s Casual Wear</source>
-        <comment>Book name</comment>
-        <translation>Professional Patternmaking for Designers: Women&apos;s Wear, Men&apos;s Casual Wear</translation>
-    </message>
-    <message>
-        <source>Davis</source>
-        <comment>System name</comment>
-        <translation>Davis</translation>
-    </message>
-    <message>
-        <source>R. I. Davis</source>
-        <comment>Author name</comment>
-        <translation>R. I. Davis</translation>
-    </message>
-    <message>
-        <source>Men&apos;s 17th &amp; 18th Century Costume, Cut &amp; Fashion</source>
-        <comment>Book name</comment>
-        <translation>Men&apos;s 17th &amp; 18th Century Costume, Cut &amp; Fashion</translation>
-    </message>
-    <message>
-        <source>MacLochlainn</source>
-        <comment>System name</comment>
-        <translation>MacLochlainn</translation>
-    </message>
-    <message>
-        <source>Jason MacLochlainn</source>
-        <comment>Author name</comment>
-        <translation>Jason MacLochlainn</translation>
-    </message>
-    <message>
-        <source>The Victorian Tailor: An Introduction to Period Tailoring</source>
-        <comment>Book name</comment>
-        <translation>The Victorian Tailor: An Introduction to Period Tailoring</translation>
-    </message>
-    <message>
-        <source>Joseph-Armstrong</source>
-        <comment>System name</comment>
-        <translation>Joseph-Armstrong</translation>
-    </message>
-    <message>
-        <source>Helen Joseph-Armstrong</source>
-        <comment>Author name</comment>
-        <translation>Helen Joseph-Armstrong</translation>
-    </message>
-    <message>
-        <source>Patternmaking for Fashion Design</source>
-        <comment>Book name</comment>
-        <translation>Patternmaking for Fashion Design</translation>
-    </message>
-    <message>
-        <source>Supreme System</source>
-        <comment>System name</comment>
-        <translation>Supreme System</translation>
-    </message>
-    <message>
-        <source>Frederick T. Croonberg</source>
-        <comment>Author name</comment>
-        <translation>Frederick T. Croonberg</translation>
-    </message>
-    <message>
-        <source>The Blue Book of Men&apos;s Tailoring, Grand Edition of Supreme System for Producing Mens Garments (1907)</source>
-        <comment>Book name</comment>
-        <translation>The Blue Book of Men&apos;s Tailoring, Grand Edition of Supreme System for Producing Mens Garments (1907)</translation>
-    </message>
-    <message>
-        <source>Sugino</source>
-        <comment>System name</comment>
-        <translation>Sugino</translation>
-    </message>
-    <message>
-        <source>Dressmaking</source>
-        <comment>Author name</comment>
-        <translation>Dressmaking</translation>
-    </message>
-    <message>
-        <source>Pattern Drafting Vols. I, II, III (Japan)</source>
-        <comment>Book name</comment>
-        <translation>Pattern Drafting Vols. I, II, III (Japan)</translation>
-    </message>
-    <message>
-        <source>Centre Point System</source>
-        <comment>System name</comment>
-        <translation>Centre Point System</translation>
-    </message>
-    <message>
-        <source>Louis Devere</source>
-        <comment>Author name</comment>
-        <translation>Louis Devere</translation>
-    </message>
-    <message>
-        <source>The Handbook of Practical Cutting on the Centre Point System</source>
-        <comment>Book name</comment>
-        <translation>The Handbook of Practical Cutting on the Centre Point System</translation>
-    </message>
-    <message>
-        <source>Aldrich/Men</source>
-        <comment>System name</comment>
-        <translation>Aldrich/Herren</translation>
-    </message>
-    <message>
-        <source>Winifred Aldrich</source>
-        <comment>Author name</comment>
-        <translation>Winifred Aldrich</translation>
-    </message>
-    <message>
-        <source>Metric Pattern Cutting for Menswear</source>
-        <comment>Book name</comment>
-        <translation>Metric Pattern Cutting for Menswear</translation>
-    </message>
-    <message>
-        <source>Aldrich/Women</source>
-        <comment>System name</comment>
-        <translation>Aldrich/Damen</translation>
-    </message>
-    <message>
-        <source>Metric Pattern Cutting for Women&apos;s Wear</source>
-        <comment>Book name</comment>
-        <translation>Metric Pattern Cutting for Women&apos;s Wear</translation>
-    </message>
-    <message>
-        <source>Kershaw</source>
-        <comment>System name</comment>
-        <translation>Kershaw</translation>
-    </message>
-    <message>
-        <source>Gareth Kershaw</source>
-        <comment>Author name</comment>
-        <translation>Gareth Kershaw</translation>
-    </message>
-    <message>
-        <source>Patternmaking for Menswear</source>
-        <comment>Book name</comment>
-        <translation>Patternmaking for Menswear</translation>
-    </message>
-    <message>
-        <source>Gilewska</source>
-        <comment>System name</comment>
-        <translation>Gilewska</translation>
-    </message>
-    <message>
-        <source>Teresa Gilewska</source>
-        <comment>Author name</comment>
-        <translation>Teresa Gilewska</translation>
-    </message>
-    <message>
-        <source>Pattern-Drafting for Fashion: The Basics</source>
-        <comment>Book name</comment>
-        <translation>Pattern-Drafting for Fashion: The Basics</translation>
-    </message>
-    <message>
-        <source>Lo</source>
-        <comment>System name</comment>
-        <translation>Lo</translation>
-    </message>
-    <message>
-        <source>Dennic Chunman Lo</source>
-        <comment>Author name</comment>
-        <translation>Dennic Chunman Lo</translation>
-    </message>
-    <message>
-        <source>Pattern Cutting</source>
-        <comment>Book name</comment>
-        <translation>Pattern Cutting</translation>
-    </message>
-    <message>
-        <source>Bray</source>
-        <comment>System name</comment>
-        <translation>Bray</translation>
-    </message>
-    <message>
-        <source>Natalie Bray</source>
-        <comment>Author name</comment>
-        <translation>Natalie Bray</translation>
-    </message>
-    <message>
-        <source>Dress Pattern Designing: The Basic Principles of Cut and Fit</source>
-        <comment>Book name</comment>
-        <translation>Schnittmuster-Design: Die Grundlagen des Zuschneidens und Anpassens</translation>
-    </message>
-    <message>
-        <source>Knowles/Men</source>
-        <comment>System name</comment>
-        <translation>Knowles/Herren</translation>
-    </message>
-    <message>
-        <source>Lori A. Knowles</source>
-        <comment>Author name</comment>
-        <translation>Lori A. Knowles</translation>
-    </message>
-    <message>
-        <source>The Practical Guide to Patternmaking for Fashion Designers: Menswear</source>
-        <comment>Book name</comment>
-        <translation>The Practical Guide to Patternmaking for Fashion Designers: Menswear</translation>
-    </message>
-    <message>
-        <source>Friendship/Men</source>
-        <comment>System name</comment>
-        <translation>Friendship/Men</translation>
-    </message>
-    <message>
-        <source>Pattern Cutting for Men&apos;s Costume</source>
-        <comment>Book name</comment>
-        <translation>Pattern Cutting for Men&apos;s Costume</translation>
-    </message>
-    <message>
-        <source>Brown</source>
-        <comment>System name</comment>
-        <translation>Brown</translation>
-    </message>
-    <message>
-        <source>P. Clement Brown</source>
-        <comment>Author name</comment>
-        <translation>P. Clement Brown</translation>
-    </message>
-    <message>
-        <source>Art in Dress</source>
-        <comment>Book name</comment>
-        <translation>Art in Dress</translation>
-    </message>
-    <message>
-        <source>Mitchell</source>
-        <comment>System name</comment>
-        <translation>Mitchell</translation>
-    </message>
-    <message>
-        <source>Jno. J. Mitchell</source>
-        <comment>Author name</comment>
-        <translation>Jno. J. Mitchell</translation>
-    </message>
-    <message>
-        <source>&quot;Standard&quot; Work on Cutting (Men&apos;s Garments) 1886: The Art and Science of Garment Cutting</source>
-        <comment>Book name</comment>
-        <translation>&quot;Standard&quot; Work on Cutting (Men&apos;s Garments) 1886: The Art and Science of Garment Cutting</translation>
-    </message>
-    <message>
-        <source>GOST 17917-86</source>
-        <comment>System name</comment>
-        <translation>GOST 17917-86</translation>
-    </message>
-    <message>
-        <source>Ministry of consumer industry of the USSR</source>
-        <comment>Author name</comment>
-        <translation>Ministry of consumer industry of the USSR</translation>
-    </message>
-    <message>
-        <source>Standard figure boys</source>
-        <comment>Book name</comment>
-        <translation>Standard figure boys</translation>
-    </message>
-    <message>
-        <source>Eddy</source>
-        <comment>System name</comment>
-        <translation>Eddy</translation>
-    </message>
-    <message>
-        <source>Josephine F. Eddy and Elizabeth C. B. Wiley</source>
-        <comment>Author name</comment>
-        <translation>Josephine F. Eddy und Elizabeth C. B. Wiley</translation>
-    </message>
-    <message>
-        <source>Pattern and Dress Design</source>
-        <comment>Book name</comment>
-        <translation>Pattern and Dress Design</translation>
-    </message>
-    <message>
-        <source>Knowles/Women</source>
-        <comment>System name</comment>
-        <translation>Knowles/Damen</translation>
-    </message>
-    <message>
-        <source>Practical Guide to Patternmaking for Fashion Designers: Juniors, Misses, and Women</source>
-        <comment>Book name</comment>
-        <translation>Praktischer Leitfaden zur Mustererstellung für Modedesigner:JuniorInnen, und Frauen</translation>
-    </message>
-    <message>
-        <source>American Garment Cutter</source>
-        <comment>System name</comment>
-        <translation>American Garment Cutter</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <comment>System name</comment>
-        <translation>Keine</translation>
-    </message>
-    <message>
-        <source>Seamly2D team</source>
-        <comment>Author name</comment>
-        <translation>Seamly2D Team</translation>
-    </message>
-    <message>
-        <source>Seamly2D&apos;s internal standard</source>
-        <comment>Book name</comment>
-        <translation>Seamly2D&apos;s interner Standard</translation>
-    </message>
-    <message>
-        <source>cm</source>
-        <comment>centimeter</comment>
-        <translation>cm</translation>
-    </message>
-    <message>
-        <source>mm</source>
-        <comment>millimeter</comment>
-        <translation>mm</translation>
-    </message>
-    <message>
-        <source>in</source>
-        <comment>inch</comment>
-        <translation>zoll</translation>
-    </message>
-    <message>
-        <source>SplPath</source>
-        <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>SplVerzeichnis</translation>
-    </message>
-    <message>
-        <source>Angle1SplPath</source>
-        <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>Winkel1SplVerzeichnis</translation>
-    </message>
-    <message>
-        <source>Angle2SplPath</source>
-        <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>Winkel2SplVerzeichnis</translation>
-    </message>
-    <message>
-        <source>CurrentLength</source>
-        <comment>Do not add space between words</comment>
-        <translation>AktuelleLänge</translation>
-    </message>
-    <message>
-        <source>size</source>
-        <comment>placeholder</comment>
-        <translation>Größe</translation>
-    </message>
-    <message>
-        <source>height</source>
-        <comment>placeholder</comment>
-        <translation>Körperhöhe</translation>
-    </message>
-    <message>
-        <source>C1LengthSplPath</source>
-        <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>C1LängeSplVerzeichnis</translation>
-    </message>
-    <message>
-        <source>C2LengthSplPath</source>
-        <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>C2LängeSplVerzeichnis</translation>
-    </message>
-    <message>
-        <source>CurrentSeamAllowance</source>
-        <comment>Do not add space between words</comment>
-        <translation>AktuelleNahtzugabe</translation>
-    </message>
-    <message>
-        <source>date</source>
-        <comment>placeholder</comment>
-        <translation>Datum</translation>
-    </message>
-    <message>
-        <source>time</source>
-        <comment>placeholder</comment>
-        <translation>Zeit</translation>
-    </message>
-    <message>
-        <source>patternName</source>
-        <comment>placeholder</comment>
-        <translation>Name des Schnittmusters</translation>
-    </message>
-    <message>
-        <source>patternNumber</source>
-        <comment>placeholder</comment>
-        <translation>Nummer des Schnittmusters</translation>
-    </message>
-    <message>
-        <source>author</source>
-        <comment>placeholder</comment>
-        <translation>Autor</translation>
-    </message>
-    <message>
-        <source>customer</source>
-        <comment>placeholder</comment>
-        <translation>Kunde</translation>
-    </message>
-    <message>
-        <source>pExt</source>
-        <comment>placeholder</comment>
-        <translation>pExt</translation>
-    </message>
-    <message>
-        <source>pFileName</source>
-        <comment>placeholder</comment>
-        <translation>pDateiname</translation>
-    </message>
-    <message>
-        <source>mFileName</source>
-        <comment>placeholder</comment>
-        <translation>mDateiname</translation>
-    </message>
-    <message>
-        <source>mExt</source>
-        <comment>placeholder</comment>
-        <translation>mExt</translation>
-    </message>
-    <message>
-        <source>pLetter</source>
-        <comment>placeholder</comment>
-        <translation>pBuchstabe</translation>
-    </message>
-    <message>
-        <source>pAnnotation</source>
-        <comment>placeholder</comment>
-        <translation>pAnmerkung</translation>
-    </message>
-    <message>
-        <source>pOrientation</source>
-        <comment>placeholder</comment>
-        <translation>pOrientierung</translation>
-    </message>
-    <message>
-        <source>pRotation</source>
-        <comment>placeholder</comment>
-        <translation>pDrehung</translation>
-    </message>
-    <message>
-        <source>pTilt</source>
-        <comment>placeholder</comment>
-        <translation>pNeigung</translation>
-    </message>
-    <message>
-        <source>pFoldPosition</source>
-        <comment>placeholder</comment>
-        <translation>pPosition des Bruchs</translation>
-    </message>
-    <message>
-        <source>pName</source>
-        <comment>placeholder</comment>
-        <translation>pBezeichnung</translation>
-    </message>
-    <message>
-        <source>pQuantity</source>
-        <comment>placeholder</comment>
-        <translation>pMenge</translation>
-    </message>
-    <message>
-        <source>mFabric</source>
-        <comment>placeholder</comment>
-        <translation>mStoff</translation>
-    </message>
-    <message>
-        <source>mLining</source>
-        <comment>placeholder</comment>
-        <translation>mFutter</translation>
-    </message>
-    <message>
-        <source>mInterfacing</source>
-        <comment>placeholder</comment>
-        <translation>mSchnittstelle</translation>
-    </message>
-    <message>
-        <source>mInterlining</source>
-        <comment>placeholder</comment>
-        <translation>mEinlage</translation>
-    </message>
-    <message>
-        <source>wCut</source>
-        <comment>placeholder</comment>
-        <translation>wSchnitt</translation>
-    </message>
-    <message>
-        <source>wOnFold</source>
-        <comment>placeholder</comment>
-        <translation>wOnFold</translation>
-    </message>
-    <message>
-        <source>M_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>M_</translation>
-    </message>
-    <message>
-        <source>Variable_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Variab_</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Linie_</translation>
-    </message>
-    <message>
-        <source>AngleLine_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Winkellinie_</translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Bogen_</translation>
-    </message>
-    <message>
-        <source>ElArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>ElBogen_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Spl_</translation>
-    </message>
-    <message>
-        <source>RadiusArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>RadiusBogen_</translation>
-    </message>
-    <message>
-        <source>Radius1ElArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Radius1ElBogen_</translation>
-    </message>
-    <message>
-        <source>Radius2ElArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Radius2ElBogen_</translation>
-    </message>
-    <message>
-        <source>Angle1Arc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Winkel1Bogen_</translation>
-    </message>
-    <message>
-        <source>Angle2Arc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Winkel2Bogen_</translation>
-    </message>
-    <message>
-        <source>Angle1ElArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Winkel1ElBogen_</translation>
-    </message>
-    <message>
-        <source>Angle2ElArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Winkel2ElBogen_</translation>
-    </message>
-    <message>
-        <source>Angle1Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Winkel1Spl_</translation>
-    </message>
-    <message>
-        <source>Angle2Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Winkel2Spl_</translation>
-    </message>
-    <message>
-        <source>Seg_</source>
-        <comment>Segment. Leave the _ symbol in translation</comment>
-        <translation>Seg_</translation>
-    </message>
-    <message>
-        <source>C1LengthSpl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>C1LängeSpl_</translation>
-    </message>
-    <message>
-        <source>C2LengthSpl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>C2LängeSpl_</translation>
-    </message>
+	</translation>
+	    </message>
+	    <message>
+		<source>Convert 3DLook file:</source>
+		<translation>3DLook-Datei konvertieren:</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>TogglePieceInLayout</name>
+	    <message>
+		<source>Piece in Layout List</source>
+		<translation>Schnittteil in Layoutliste</translation>
+	    </message>
+	    <message>
+		<source>Include piece in layout changed: </source>
+		<translation>Schnittteil in das Layout übernehmen wurde geändert: </translation>
+	    </message>
+	    <message>
+		<source>Include</source>
+		<translation>Einschließen</translation>
+	    </message>
+	    <message>
+		<source>Exclude</source>
+		<translation>Ausschließen</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>TogglePieceLock</name>
+	    <message>
+		<source>Pattern piece lock</source>
+		<translation>Schnittteil sperren</translation>
+	    </message>
+	    <message>
+		<source>Piece lock changed: </source>
+		<translation>Schnittteil sperren wurde geändert: </translation>
+	    </message>
+	    <message>
+		<source>Locked</source>
+		<translation>Gesperrt</translation>
+	    </message>
+	    <message>
+		<source>Unlocked</source>
+		<translation>Entsperrt</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>Tool</name>
+	    <message>
+		<source>First point</source>
+		<translation>Erster Punkt</translation>
+	    </message>
+	    <message>
+		<source>Second point</source>
+		<translation>Zweiter Punkt</translation>
+	    </message>
+	    <message>
+		<source>Highest point</source>
+		<translation>Oberster Punkt</translation>
+	    </message>
+	    <message>
+		<source>Lowest point</source>
+		<translation>Unterster Punkt</translation>
+	    </message>
+	    <message>
+		<source>Leftmost point</source>
+		<translation>Punkt ganz links</translation>
+	    </message>
+	    <message>
+		<source>Rightmost point</source>
+		<translation>Punkt ganz rechts</translation>
+	    </message>
+	    <message>
+		<source>Vertical axis</source>
+		<translation>Vertikale Achse</translation>
+	    </message>
+	    <message>
+		<source>Horizontal axis</source>
+		<translation>Horizontale Achse</translation>
+	    </message>
+	    <message>
+		<source>Line_</source>
+		<translation>Linie_</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>UnionDialog</name>
+	    <message>
+		<source>Union tool</source>
+		<translation>Verbindungswerkzeug</translation>
+	    </message>
+	    <message>
+		<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do you really want to unite details?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+		<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sollen die Details wirklich vereinigt werden?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+	    </message>
+	    <message>
+		<source>Retain original pieces</source>
+		<translation>Die Original Schnittteile zurückbehalten</translation>
+	    </message>
+	    <message>
+		<source>Select the first point</source>
+		<translation>Den ersten Punkt auswählen</translation>
+	    </message>
+	    <message>
+		<source>Pattern piece should have at least two points and three objects</source>
+		<translation>Das Schnittteil soll mindestens zwei Punkte und drei Objekte haben</translation>
+	    </message>
+	    <message>
+		<source>Select a second point</source>
+		<translation>Einen zweiten Punkt auswählen</translation>
+	    </message>
+	    <message>
+		<source>Select a unique point</source>
+		<translation>Einen eindeutigen Punkt auswählen</translation>
+	    </message>
+	    <message>
+		<source>Select a piece</source>
+		<translation>Ein Schnittteil auswählen</translation>
+	    </message>
+	    <message>
+		<source>Select a point on edge</source>
+		<translation>Einen Punkt am Rand auswählen</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>UnionTool</name>
+	    <message>
+		<source>union pieces</source>
+		<translation>Verbindungsschnittteile</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>Utils::CheckableMessageBox</name>
+	    <message>
+		<source>Do not ask again</source>
+		<translation>Nicht erneut fragen</translation>
+	    </message>
+	    <message>
+		<source>Do not &amp;ask again</source>
+		<translation>Nicht erneut &amp;fragen</translation>
+	    </message>
+	    <message>
+		<source>Do not &amp;show again</source>
+		<translation>Nicht mehr &amp;anzeigen</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VAbstractConverter</name>
+	    <message>
+		<source>Couldn&apos;t get version information.</source>
+		<translation>Versionsinformation konnte nicht gelesen werden.</translation>
+	    </message>
+	    <message>
+		<source>Too many tags &lt;%1&gt; in file.</source>
+		<translation>Zu viele Tags &lt;%1&gt; in der Datei.</translation>
+	    </message>
+	    <message>
+		<source>Version &quot;%1&quot; invalid.</source>
+		<translation>Version &quot;%1&quot; ist ungültig.</translation>
+	    </message>
+	    <message>
+		<source>Version &quot;0.0.0&quot; invalid.</source>
+		<translation>Version &quot;0.0.0&quot; ist ungültig.</translation>
+	    </message>
+	    <message>
+		<source>Invalid version. Minimum supported version is %1</source>
+		<translation>Ungültige Version. Minimal unterstützte Version ist%1</translation>
+	    </message>
+	    <message>
+		<source>Invalid version. Maximum supported version is %1</source>
+		<translation>Ungültige Version. Maximal unterstützte Version ist%1</translation>
+	    </message>
+	    <message>
+		<source>Error no unique id.</source>
+		<translation>Fehler: uneindeutige ID.</translation>
+	    </message>
+	    <message>
+		<source>Could not change version.</source>
+		<translation>Versionsnummer konnte nicht geändert werden.</translation>
+	    </message>
+	    <message>
+		<source>Error creating a reserv copy: %1.</source>
+		<translation>Fehler bei der Erstellung einer Reservekopie : %1.</translation>
+	    </message>
+	    <message>
+		<source>Unexpected version &quot;%1&quot;.</source>
+		<translation>Unerwartete Version &quot;%1&quot;.</translation>
+	    </message>
+	    <message>
+		<source>Error Opening a temp file: %1.</source>
+		<translation>Fehler beim Öffnen einer temporären Datei %1.</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VAbstractCubicBezierPath</name>
+	    <message>
+		<source>Can&apos;t cut this spline</source>
+		<translation>Spline kann nicht unterteilt werden</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VAbstractMainWindow</name>
+	    <message>
+		<source>Confirm format rewriting</source>
+		<translation>Umschreiben des Formats bestätigen</translation>
+	    </message>
+	    <message>
+		<source>This file is using previous format version v%1. The current is v%2. Saving the file with this app version will update the format version for this file. This may prevent you from be able to open the file with older app versions. Do you really want to continue?</source>
+		<translation>Diese Datei verwendet die vorherige Formatversion v%1. Die aktuelle Version ist v%2. Wenn Sie die Datei mit dieser Anwendungsversion speichern, wird die Formatversion für diese Datei aktualisiert. Dies kann dazu führen, dass Sie die Datei nicht mehr mit älteren Programmversionen öffnen können. Möchten Sie wirklich fortfahren?</translation>
+	    </message>
+	    <message>
+		<source>Comma-Separated Values</source>
+		<translation>Komma-getrennte Werte</translation>
+	    </message>
+	    <message>
+		<source>Export to CSV</source>
+		<translation>Als CSV exportieren</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VAbstractOperation</name>
+	    <message>
+		<source>Name</source>
+		<translation>Bezeichnung</translation>
+	    </message>
+	    <message>
+		<source>Length</source>
+		<translation>Länge</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VAbstractPattern</name>
+	    <message>
+		<source>Can&apos;t find tool in table.</source>
+		<translation>Werkzeug kann in der Tabelle nicht gefunden werden.</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating group</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren der Gruppe</translation>
+	    </message>
+	    <message>
+		<source>New group</source>
+		<translation>Neue Gruppe</translation>
+	    </message>
+	    <message>
+		<source>New group 2</source>
+		<translation>Neue Gruppe 2</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VAbstractPieceData</name>
+	    <message>
+		<source>Piece</source>
+		<translation>Stück</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VAbstractSpline</name>
+	    <message>
+		<source>Length</source>
+		<translation>Länge</translation>
+	    </message>
+	    <message>
+		<source>Name</source>
+		<translation>Bezeichnung</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VAbstractTool</name>
+	    <message>
+		<source>Confirm deletion</source>
+		<translation>Löschvorgang bestätigen</translation>
+	    </message>
+	    <message>
+		<source>Do you really want to delete?</source>
+		<translation>Möchtest Du wirklich löschen?</translation>
+	    </message>
+	    <message>
+		<source>Edit wrong formula</source>
+		<translation>Falsche Formel bearbeitet</translation>
+	    </message>
+	    <message>
+		<source>Green</source>
+		<translation>Grün</translation>
+	    </message>
+	    <message>
+		<source>Blue</source>
+		<translation>Blau</translation>
+	    </message>
+	    <message>
+		<source>Dark Red</source>
+		<translation>Dunkelrot</translation>
+	    </message>
+	    <message>
+		<source>Dark Green</source>
+		<translation>Dunkelgrün</translation>
+	    </message>
+	    <message>
+		<source>Dark Blue</source>
+		<translation>Dunkelblau</translation>
+	    </message>
+	    <message>
+		<source>Yellow</source>
+		<translation>Gelb</translation>
+	    </message>
+	    <message>
+		<source>Light Salmon</source>
+		<translation>Helles Lachsrosa</translation>
+	    </message>
+	    <message>
+		<source>Goldenrod</source>
+		<translation>Goldrute</translation>
+	    </message>
+	    <message>
+		<source>Orange</source>
+		<translation>Orange</translation>
+	    </message>
+	    <message>
+		<source>Deep Pink</source>
+		<translation>Dunkelrosa</translation>
+	    </message>
+	    <message>
+		<source>Violet</source>
+		<translation>Violett</translation>
+	    </message>
+	    <message>
+		<source>Dark Violet</source>
+		<translation>Dunkelviolett</translation>
+	    </message>
+	    <message>
+		<source>Medium Sea Green</source>
+		<translation>Mittleres Meeresgrün</translation>
+	    </message>
+	    <message>
+		<source>Lime</source>
+		<translation>Linie</translation>
+	    </message>
+	    <message>
+		<source>Deep Sky Blue</source>
+		<translation>Tiefes Himmelsblau</translation>
+	    </message>
+	    <message>
+		<source>Corn Flower Blue</source>
+		<translation>Kornblumenblau</translation>
+	    </message>
+	    <message>
+		<source>Black</source>
+		<translation>Schwarz</translation>
+	    </message>
+	    <message>
+		<source>Gold</source>
+		<translation>Gold</translation>
+	    </message>
+	    <message>
+		<source>Forest Green</source>
+		<translation>Waldgrün</translation>
+	    </message>
+	    <message>
+		<source>Lawn Green</source>
+		<translation>Rasengrün</translation>
+	    </message>
+	    <message>
+		<source>Lime Green</source>
+		<translation>Lindgrün</translation>
+	    </message>
+	    <message>
+		<source>Green Yellow</source>
+		<translation>Grün Gelb</translation>
+	    </message>
+	    <message>
+		<source>Sandy Brown</source>
+		<translation>Sandiges Braun</translation>
+	    </message>
+	    <message>
+		<source>Orange Red</source>
+		<translation>Orangerot</translation>
+	    </message>
+	    <message>
+		<source>Maroon</source>
+		<translation>Kastanienbraun</translation>
+	    </message>
+	    <message>
+		<source>Pink</source>
+		<translation>Rosa</translation>
+	    </message>
+	    <message>
+		<source>Hot Pink</source>
+		<translation>Leuchtendes Pink</translation>
+	    </message>
+	    <message>
+		<source>Blue Violet</source>
+		<translation>Blauviolett</translation>
+	    </message>
+	    <message>
+		<source>Medium Violet Red</source>
+		<translation>Mittleres Rotviolett</translation>
+	    </message>
+	    <message>
+		<source>Indigo</source>
+		<translation>Indigo</translation>
+	    </message>
+	    <message>
+		<source>Purple</source>
+		<translation>Lila</translation>
+	    </message>
+	    <message>
+		<source>Plum</source>
+		<translation>Pflaume</translation>
+	    </message>
+	    <message>
+		<source>Turquoise</source>
+		<translation>Türkis</translation>
+	    </message>
+	    <message>
+		<source>Medium Turquoise</source>
+		<translation>Mittleres Türkis</translation>
+	    </message>
+	    <message>
+		<source>Powder Blue</source>
+		<translation>Puderblau</translation>
+	    </message>
+	    <message>
+		<source>Light Sky Blue</source>
+		<translation>Helles Himmelsblau</translation>
+	    </message>
+	    <message>
+		<source>Navy</source>
+		<translation>Marineblau</translation>
+	    </message>
+	    <message>
+		<source>Magenta</source>
+		<translation>Magenta</translation>
+	    </message>
+	    <message>
+		<source>Dark Slate Grey</source>
+		<translation>Dunkles Schiefergrau</translation>
+	    </message>
+	    <message>
+		<source>Grey</source>
+		<translation>Grau</translation>
+	    </message>
+	    <message>
+		<source>Gainsboro</source>
+		<translatorcomment>englischer Mler</translatorcomment>
+		<translation>Gainsboro</translation>
+	    </message>
+	    <message>
+		<source>Dark Sea Green</source>
+		<translation>Dunkles Meeresgrün</translation>
+	    </message>
+	    <message>
+		<source>Light Grey</source>
+		<translation>Hellgrau</translation>
+	    </message>
+	    <message>
+		<source>Light Steel Blue</source>
+		<translation>Helles Stahlblau</translation>
+	    </message>
+	    <message>
+		<source>Biege</source>
+		<translatorcomment>ist schon deutsch</translatorcomment>
+		<translation>Beige</translation>
+	    </message>
+	    <message>
+		<source>Thistle</source>
+		<translation>Distelfarben</translation>
+	    </message>
+	    <message>
+		<source>Silver</source>
+		<translation>Silber</translation>
+	    </message>
+	    <message>
+		<source>White Smoke</source>
+		<translation>Rauchweiß</translation>
+	    </message>
+	    <message>
+		<source>White</source>
+		<translation>Weiß</translation>
+	    </message>
+	    <message>
+		<source>Dark Grey</source>
+		<translation>Dunkelgrau</translation>
+	    </message>
+	    <message>
+		<source>Cadet Blue</source>
+		<translation>Kadettenblau</translation>
+	    </message>
+	    <message>
+		<source>Dark Khaki</source>
+		<translation>Dunkles Khaki</translation>
+	    </message>
+	    <message>
+		<source>Tan</source>
+		<translatorcomment>oder auch Gelbbraun</translatorcomment>
+		<translation>Hellbraun</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VCommandLine</name>
+	    <message>
+		<source>Path to custom measure file (export mode).</source>
+		<translation>Pfad zur individuellen Maßdatei (Exportmodus).</translation>
+	    </message>
+	    <message>
+		<source>The measure file</source>
+		<translation>Die Maßsatzdatei</translation>
+	    </message>
+	    <message>
+		<source>Format number</source>
+		<translation>Format Nummer</translation>
+	    </message>
+	    <message>
+		<source>Template number</source>
+		<translation>Vorlagennummer</translation>
+	    </message>
+	    <message>
+		<source>The page width</source>
+		<translation>Die Seitenbreite</translation>
+	    </message>
+	    <message>
+		<source>The measure unit</source>
+		<translation>Die Maßeinheit</translation>
+	    </message>
+	    <message>
+		<source>Angle</source>
+		<translation>Winkel</translation>
+	    </message>
+	    <message>
+		<source>Auto crop unused length (export mode).</source>
+		<translation>Automatisches Zuschneiden der ungenutzten Länge (Exportmodus).</translation>
+	    </message>
+	    <message>
+		<source>Layout units (as paper&apos;s one except px, export mode).</source>
+		<translation>Layout -Einheiten (eines Papiers mit Ausnahme von px, Export-Modus).</translation>
+	    </message>
+	    <message>
+		<source>The unit</source>
+		<translation>Die Einheit</translation>
+	    </message>
+	    <message>
+		<source>The gap width</source>
+		<translation>Die Spaltenbreite</translation>
+	    </message>
+	    <message>
+		<source>Grouping type</source>
+		<translation>Gruppentyp</translation>
+	    </message>
+	    <message>
+		<source>Cannot use pageformat and page explicit size/units together.</source>
+		<translation>Seitenformat und explizite Größe/Einheiten der Seite können nicht zusammen verwendet werden.</translation>
+	    </message>
+	    <message>
+		<source>Page height, width, units must be used all 3 at once.</source>
+		<translation>Höhe, Breite und Einheiten der Seite müssen alle 3 auf einmal benutzt werden.</translation>
+	    </message>
+	    <message>
+		<source>Invalid rotation value. That must be one of predefined values.</source>
+		<translation>Ungültiger Rotationswert. Dies muss ein vordefinierter Wert sein.</translation>
+	    </message>
+	    <message>
+		<source>Unknown page templated selected.</source>
+		<translation>Unbekannte Seitenvorlage verwendet.</translation>
+	    </message>
+	    <message>
+		<source>Unsupported paper units.</source>
+		<translation>Nicht unterstützte Papiergröße.</translation>
+	    </message>
+	    <message>
+		<source>Unsupported layout units.</source>
+		<translation>Nicht unterstützte Layouteinheiten.</translation>
+	    </message>
+	    <message>
+		<source>Export options can be used with single input file only.</source>
+		<translation>Exportoptionen können nur mit einer Eingabedatei verwendet werden.</translation>
+	    </message>
+	    <message>
+		<source>Test option can be used with single input file only.</source>
+		<translation>Testoption kann nur mit einer Eingabedatei verwendet werden.</translation>
+	    </message>
+	    <message>
+		<source>The base filename of exported layout files. Use it to enable console export mode.</source>
+		<translation>Der Basisdateiname der exportierten Layout-Dateien. Verwenden Sie diesen, um den Export-Konsolen-Modus zu aktivieren.</translation>
+	    </message>
+	    <message>
+		<source>The base filename of layout files</source>
+		<translation>Der Basisdateiname der Layoutdateien</translation>
+	    </message>
+	    <message>
+		<source>The destination folder</source>
+		<translation>Der Zielordner</translation>
+	    </message>
+	    <message>
+		<source>The size value</source>
+		<translation>Die Basisgröße</translation>
+	    </message>
+	    <message>
+		<source>The height value</source>
+		<translation>Die Basiskörperhöhe</translation>
+	    </message>
+	    <message>
+		<source>Page width in current units like 12.0 (cannot be used with &quot;%1&quot;, export mode).</source>
+		<translation>Seitenbreite in der derzeitigen Einheit wie 12.0 (kann nicht mit &quot;%1&quot; benutzt werden, Exportmodus).</translation>
+	    </message>
+	    <message>
+		<source>Page height in current units like 12.0 (cannot be used with &quot;%1&quot;, export mode).</source>
+		<translation>Seitenhöhe in der derzeitigen Einheit wie 12.0 (kann nicht mit &quot;%1&quot; benutzt werden, Exportmodus).</translation>
+	    </message>
+	    <message>
+		<source>Invalid gradation size value.</source>
+		<translation>Ungültiges Größen Gradierungsmaß.</translation>
+	    </message>
+	    <message>
+		<source>Invalid gradation height value.</source>
+		<translation>Ungültiges Längen Körperhöhen Gradierungsmaß.</translation>
+	    </message>
+	    <message>
+		<source>Pattern making program.</source>
+		<translation>Schnittmusterprogramm.</translation>
+	    </message>
+	    <message>
+		<source>Pattern file.</source>
+		<translation>Schnittmusterdatei.</translation>
+	    </message>
+	    <message>
+		<source>Gap width must be used together with shift units.</source>
+		<translation>Die Spaltenbreite muss zusammen mit Verschiebungseinheiten genutzt werden.</translation>
+	    </message>
+	    <message>
+		<source>Left margin must be used together with page units.</source>
+		<translation>Der linke Rand muss zusammen mit Seiteneinheiten genutzt werden.</translation>
+	    </message>
+	    <message>
+		<source>Right margin must be used together with page units.</source>
+		<translation>Der rechte Rand muss zusammen mit Seiteneinheiten genutzt werden.</translation>
+	    </message>
+	    <message>
+		<source>Top margin must be used together with page units.</source>
+		<translation>Der obere Rand muss zusammen mit Seiteneinheiten genutzt werden.</translation>
+	    </message>
+	    <message>
+		<source>Bottom margin must be used together with page units.</source>
+		<translation>Der untere Rand muss zusammen mit Seiteneinheiten genutzt werden.</translation>
+	    </message>
+	    <message>
+		<source>The path to output destination folder. By default the directory at which the application was started.</source>
+		<translation>Der Pfad zum Zielordner. Standardmäßig das Verzeichnis, in dem das Programm gestartet wurde.</translation>
+	    </message>
+	    <message>
+		<source>Page height/width measure units (cannot be used with &quot;%1&quot;, export mode). Valid values: %2.</source>
+		<translation>Einheiten für die Seitenhöhe/-breite (kann nicht mit &quot;%1&quot;, Exportmodus, benutzt werden). Gültige Werte: %2.</translation>
+	    </message>
+	    <message>
+		<source>Ignore margins printing (export mode). Disable value keys: &quot;%1&quot;, &quot;%2&quot;, &quot;%3&quot;, &quot;%4&quot;. Set all margins to 0.</source>
+		<translation>Ignorieren der Seitenränder zum Druck (Export-Modus). Deaktiviert Werte-Schlüssel: &quot;%1&quot;, &quot;%2&quot;, &quot;%3&quot;, &quot;%4&quot;. Setzen Sie alle Seitenränder auf 0.</translation>
+	    </message>
+	    <message>
+		<source>Page left margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
+		<translation>Linker Seitenrand in der derzeitigen Größe wie 3.0 (Exportmodus). Wenn kein Wert eingegeben wird, wird die Einstellung des Standarddruckers verwendet. Oder 0, falls kein Drucker gefunden werden kann. Der Wert wird ignoriert, falls &quot;%1&quot; verwendet wird.</translation>
+	    </message>
+	    <message>
+		<source>Page right margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
+		<translation>Rechter Seitenrand in der derzeitigen Größe wie 3.0 (Exportmodus). Wenn kein Wert eingegeben wird, wird die Einstellung des Standarddruckers verwendet. Oder 0, falls kein Drucker gefunden werden kann. Der Wert wird ignoriert, falls &quot;%1&quot; verwendet wird.</translation>
+	    </message>
+	    <message>
+		<source>Page top margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
+		<translation>Oberer Seitenrand in der derzeitigen Größe wie 3.0 (Exportmodus). Wenn kein Wert eingegeben wird, wird die Einstellung des Standarddruckers verwendet. Oder 0, falls kein Drucker gefunden werden kann. Der Wert wird ignoriert, falls &quot;%1&quot; verwendet wird.</translation>
+	    </message>
+	    <message>
+		<source>Page bottom margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
+		<translation>Unterer Seitenrand in der derzeitigen Größe wie 3.0 (Exportmodus). Wenn kein Wert eingegeben wird, wird die Einstellung des Standarddruckers verwendet. Oder 0, falls kein Drucker gefunden werden kann. Der Wert wird ignoriert, falls &quot;%1&quot; verwendet wird.</translation>
+	    </message>
+	    <message>
+		<source>Rotation in degrees (one of predefined, export mode). Default value is 180. 0 is no-rotate. Valid values: %1. Each value show how many times details will be rotated. For example 180 mean two times (360/180=2) by 180 degree.</source>
+		<translation>Drehung in Grad (eins der vordefinierten, Exportmodus). Standardwert ist 180. 0 bedeutet keine Drehung. Gültige erte: %1. Jeder Wert zeigt, wie oft Details gedreht werden sollen. Zum Beispiel bedeutet 180, dass das Detail zweimal im 180 Grad gedreht word (360/180=2).</translation>
+	    </message>
+	    <message>
+		<source>Unite pages if possible (export mode). Maximum value limited by QImage that supports only a maximum of 32768x32768 px images.</source>
+		<translation>Seiten verbinden, falls möglich (Exportmodus). Maximaler Wert wird durch QImage limitiert, das nur Bilder mit bis zu 32768 x 32768 Pixeln unterstützt.</translation>
+	    </message>
+	    <message>
+		<source>Save length of the sheet if set (export mode). The option tells the program to use as much as possible width of sheet. Quality of a layout can be worse when this option was used.</source>
+		<translation>Speichern der Blattlänge, falls gesetzt (Export-Modus). Diese Einstellung sagt dem Programm, möglichst viel der Breite eines Blattes zu benutzen. Die Qualität der Anordnung kann sich verschlechtern, wenn diese Einstellung benutzt wurde.</translation>
+	    </message>
+	    <message>
+		<source>The layout gap width x2, measured in layout units (export mode). Set distance between details and a detail and a sheet.</source>
+		<translation>Die Layout-Spaltbreite x2, gemessen in Layout-Einheiten. (Export-Modus). Legt den Abstand zwischen Details und einem Detail und einem Blatt fest.</translation>
+	    </message>
+	    <message>
+		<source>Sets layout groupping cases (export mode): %1.</source>
+		<translation>Legt Layoutgruppierungsfälle fest (Export-Modus): %1.</translation>
+	    </message>
+	    <message>
+		<source>Run the program in a test mode. The program in this mode loads a single pattern file and silently quit without showing the main window. The key have priority before key &apos;%1&apos;.</source>
+		<translation>Das Programm in einem Testmodus laufen lassen. In diesem Modus lädt das Programm eine einzelne Schnittmuster-Datei und schließt still, ohne das Hauptfenster zu zeigen. Der Schlüssel hat Vorrang vor dem Schlüssel &apos;%1&apos;.</translation>
+	    </message>
+	    <message>
+		<source>Shift/Offset layout length measured in layout units (export mode). The option show how many points along edge will be used in creating a layout.</source>
+		<translation>Verschieben der gemessenen Layoutlängen in Layouteinheiten (Exportmodus). Die Option zeigt, wie viele Punkte entlang der Kante verwendet werden, um ein Layout zu erstellen.</translation>
+	    </message>
+	    <message>
+		<source>Shift/Offset length</source>
+		<translation>Verschiebungs-/Ausgleichslänge</translation>
+	    </message>
+	    <message>
+		<source>Shift/Offset length must be used together with shift units.</source>
+		<translation>Die Verschiebungs-/Ausgleichslänge muss zusammen mit Verschiebungseinheiten genutzt werden.</translation>
+	    </message>
+	    <message>
+		<source>Number corresponding to output format (default = 0, export mode):</source>
+		<translation>Anzahl entspricht Ausgabeformat (default = 0 , Export -Modus):</translation>
+	    </message>
+	    <message>
+		<source>Number corresponding to page template (default = 0, export mode):</source>
+		<translation>Anzahl entsprechend Seitenvorlage (Standard = 0, Exportmodus):</translation>
+	    </message>
+	    <message>
+		<source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
+		<translation>Hohe dpi Skalierung deaktivieren. Diese Option wählen wenn es Probleme mit der Skalierung (StandardSkalierung aaktiviert). Alternativ können die %1 Umgebungsvariablen genutzt werden.</translation>
+	    </message>
+	    <message>
+		<source>Export dxf in binary form.</source>
+		<translation>DXF in binärer Form exportieren.</translation>
+	    </message>
+	    <message>
+		<source>Export text as paths.</source>
+		<translation>Text als Verzeichnis exportieren.</translation>
+	    </message>
+	    <message>
+		<source>Export only details. Export details as they positioned in the details mode. Any layout related options will be ignored.</source>
+		<translation>Nur Details exportieren. Details so wie thie im Detailsmodus posiotioniert sind exportieren. Jeglliche Layoutspezifischen Optionen werden ignoriert.</translation>
+	    </message>
+	    <message>
+		<source>Set size value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
+		<translation>Größenwert einer Schnittteildatei setzen, die mit Standardmaßen (Exportmodus) geöffnet wurde. Gültige Werte: %1cm.</translation>
+	    </message>
+	    <message>
+		<source>Set height value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
+		<translation>Körperhöhenwert einer Schnittteildatei setzen, die mit Standardmaßen (Exportmodus) geöffnet wurde. Gültige Werte: %1cm.</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VCommonSettings</name>
+	    <message>
+		<source>measurements</source>
+		<translation>Maße</translation>
+	    </message>
+	    <message>
+		<source>individual</source>
+		<translation>Individuell</translation>
+	    </message>
+	    <message>
+		<source>multisize</source>
+		<translation>Mehrgröße</translation>
+	    </message>
+	    <message>
+		<source>templates</source>
+		<translation>Vorlagen</translation>
+	    </message>
+	    <message>
+		<source>images</source>
+		<translation>Bilder</translation>
+	    </message>
+	    <message>
+		<source>label templates</source>
+		<translation>etikett_vorlagen</translation>
+	    </message>
+	    <message>
+		<source>backups</source>
+		<translation>datensicherungen</translation>
+	    </message>
+	    <message>
+		<source>bodyscans</source>
+		<translation>körperscans</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VContainer</name>
+	    <message>
+		<source>Can&apos;t find object</source>
+		<translation>Objekt kann nicht gefunden werden</translation>
+	    </message>
+	    <message>
+		<source>Can&apos;t cast object</source>
+		<translation>Objekt kann nicht gelesen werden</translation>
+	    </message>
+	    <message>
+		<source>Can&apos;t find object. Type mismatch.</source>
+		<translation>Objekt kann nicht gefunden werden. Falscher Typ.</translation>
+	    </message>
+	    <message>
+		<source>Number of free id exhausted.</source>
+		<translation>Anzahl der freien id&apos;s aufgebraucht.</translation>
+	    </message>
+	    <message>
+		<source>Can&apos;t create a curve with type &apos;%1&apos;</source>
+		<translation>Kurve vom Typ &apos;%1&apos; kann nicht erstellt werden</translation>
+	    </message>
+	    <message>
+		<source>Can&apos;t find object: </source>
+		<translation>Objekt kann nicht gefunden werden: </translation>
+	    </message>
+	    <message>
+		<source>Can&apos;t find piece: </source>
+		<translation>Schnittteil kann nicht gefunden werden: </translation>
+	    </message>
+	    <message>
+		<source>Can&apos;t find path: </source>
+		<translation>Verzeichnis kann nicht gefunden werden: </translation>
+	    </message>
+	    <message>
+		<source>Can&apos;t find object Id: </source>
+		<translation>Objekt Id kann nicht gefunden werden: </translation>
+	    </message>
+	    <message>
+		<source>Can&apos;t cast object.</source>
+		<translation>Objekt kann nicht ausgeworfen werden.</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VCubicBezierPath</name>
+	    <message>
+		<source>Not enough points to create the spline.</source>
+		<translation>Nicht genügend Punkte vorhanden, um die Spline zu erstellen.</translation>
+	    </message>
+	    <message>
+		<source>This spline does not exist.</source>
+		<translation>Diese Spline existiert nicht.</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VDomDocument</name>
+	    <message>
+		<source>Can&apos;t open file %1:
+	%2.</source>
+		<translation>Konnte Datei nicht öffnen %1: %2.</translation>
+	    </message>
+	    <message>
+		<source>Can&apos;t open schema file %1:
+	%2.</source>
+		<translation>Konnte Schemadatei nicht öffnen %1:
+	%2.</translation>
+	    </message>
+	    <message>
+		<source>Validation error file %3 in line %1 column %2</source>
+		<translation>Fehler bei der Gültigkeitsprüfung in Datei %3, Zeile %1, Spalte %2</translation>
+	    </message>
+	    <message>
+		<source>Parsing error file %3 in line %1 column %2</source>
+		<translation>Auswertungsfehler in Datei %3, Zeile %1, Spalte %2</translation>
+	    </message>
+	    <message>
+		<source>Couldn&apos;t get node</source>
+		<translation>Konnte&apos;t Knoten nicht erhalten</translation>
+	    </message>
+	    <message>
+		<source>This id is not unique.</source>
+		<translation>Diese ID ist nicht eindeutig.</translation>
+	    </message>
+	    <message>
+		<source>Could not load schema file &apos;%1&apos;.</source>
+		<translation>Konnte Schemadatei %1 nicht laden.</translation>
+	    </message>
+	    <message>
+		<source>Fail to write Canonical XML.</source>
+		<translation>Canonical XML kann nicht geschrieben werden.</translation>
+	    </message>
+	    <message>
+		<source>&lt;empty&gt;</source>
+		<translation>&lt;leer&gt;</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VDrawTool</name>
+	    <message>
+		<source>Delete</source>
+		<translation>Löschen</translation>
+	    </message>
+	    <message>
+		<source>Properties</source>
+		<translation>Eigenschaften</translation>
+	    </message>
+	    <message>
+		<source>Show Point Name</source>
+		<translation>Punktbezeichnung anzeigen</translation>
+	    </message>
+	    <message>
+		<source>Add Group Object</source>
+		<translation>Gruppen Objekt hinzufügen</translation>
+	    </message>
+	    <message>
+		<source>Remove Group Object</source>
+		<translation>Gruppen Objekt entfernen</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VException</name>
+	    <message>
+		<source>Exception: %1</source>
+		<translation>Ausnahme: %1</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VFormula</name>
+	    <message>
+		<source>Error</source>
+		<translation>Fehler</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VFormulaProperty</name>
+	    <message>
+		<source>Formula:</source>
+		<translation>Formel:</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VLayoutPiece</name>
+	    <message>
+		<source>Piece %1 doesn&apos;t have shape.</source>
+		<translation>Schnittteil %1 hat keine Form.</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VNodePoint</name>
+	    <message>
+		<source>Show Point Name</source>
+		<translation>Bezeichnung des Punktes anzeigen</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VPE::VBoolProperty</name>
+	    <message>
+		<source>True</source>
+		<translation>Wahr</translation>
+	    </message>
+	    <message>
+		<source>False</source>
+		<translation>Falsch</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VPE::VFileEditWidget</name>
+	    <message>
+		<source>Directory</source>
+		<translation>Verzeichnis</translation>
+	    </message>
+	    <message>
+		<source>Open File</source>
+		<translation>Datei öffnen</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VPattern</name>
+	    <message>
+		<source>Error parsing file.</source>
+		<translation>Fehler beim Auswerten der Datei.</translation>
+	    </message>
+	    <message>
+		<source>Error can&apos;t convert value.</source>
+		<translation>Fehler: Wert kann nicht konvertiert werden.</translation>
+	    </message>
+	    <message>
+		<source>Error empty parameter.</source>
+		<translation>Fehler: leerer Parameter.</translation>
+	    </message>
+	    <message>
+		<source>Error wrong id.</source>
+		<translation>Fehler: falsche ID.</translation>
+	    </message>
+	    <message>
+		<source>Error parsing file (std::bad_alloc).</source>
+		<translation>Fehler beim Auswerten der Datei  (std::bad_alloc).</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating single point</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Punkt&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating point of end line</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Punkt mit Abstand und Winkel&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating point along line</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Punkt auf einer Linie&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating point of shoulder</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Spezieller Punkt an der Schulter&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating point of normal</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Punkt auf einer Senkrechten&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating point of bisector</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Winkelhalbierende&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating point of contact</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Schnittpunkt Kreis und Gerade&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating modeling point</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Punkt&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating height</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Lotfußpunkt&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating triangle</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Dreieck&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating cut spline point</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Kurvensegment&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating cut spline path point</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Pfadsegment&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating cut arc point</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Kreisbogen&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating point of intersection line and axis</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Laufender Schnittpunkt auf Linie&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating point of intersection curve and axis</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Laufender Schnittpunkt auf Kurve&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating line</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Linie&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating simple curve</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Kurve&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating curve path</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Gekrümmter Pfad&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating modeling simple curve</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Kurve Detail&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating modeling curve path</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren der Modellierung des  vom Typ &quot;Pfad Detail&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating simple arc</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des einfachen Bogens&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating modeling arc</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren der Bogenmodellierung &quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating point of intersection arcs</source>
+		<translation>Fehler beim Erstellen oder Aktualisieren des Bogen Schnittpunktes</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating point of intersection circles</source>
+		<translation>Fehler beim Erstellen oder Aktualisieren der Kreis Schnittpunktes</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating point from circle and tangent</source>
+		<translation>Fehler beim Erstellen oder Aktualisieren des Punktes von Kreis und Tangente</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating point from arc and tangent</source>
+		<translation>Fehler beim Erstellen oder Aktualisieren des Punktes von Bogen und Tangente</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating true darts</source>
+		<translation>Fehler beim Erstellen oder Aktualisieren des Abnäherausgleichs</translation>
+	    </message>
+	    <message>
+		<source>Wrong tag name &apos;%1&apos;.</source>
+		<translation>Falsche  Markenbezeichnung &apos;%1&apos;.</translation>
+	    </message>
+	    <message>
+		<source>Unknown point type &apos;%1&apos;.</source>
+		<translation>Unbekannter Punkt Typ &apos;%1&apos;.</translation>
+	    </message>
+	    <message>
+		<source>Unknown spline type &apos;%1&apos;.</source>
+		<translation>Unbekannte Spline Typ &apos;%1&apos;.</translation>
+	    </message>
+	    <message>
+		<source>Unknown arc type &apos;%1&apos;.</source>
+		<translation>Unbekannter Bogen Typ &apos;%1&apos;.</translation>
+	    </message>
+	    <message>
+		<source>Unknown tools type &apos;%1&apos;.</source>
+		<translation>Unbekannter Werkzeug Typen &apos;%1&apos;.</translation>
+	    </message>
+	    <message>
+		<source>Error not unique id.</source>
+		<translation>Fehler: uneindeutige ID.</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating point of intersection curves</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren vom Punkt der Schnittkurven&quot;</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating simple interactive spline</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren der einfachen interaktiven Spline</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating interactive spline path</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des interaktiven Splinepfades</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating cubic bezier curve</source>
+		<translation>Fehler beim Erstellen oder Aktualisieren der kubischen Bezierkurve</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating cubic bezier path curve</source>
+		<translation>Fehler beim Erstellen oder Aktualisieren des Pfades der kubischen Bezierkurve</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating operation of rotation</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Operation Drehung</translation>
+	    </message>
+	    <message>
+		<source>Unknown operation type &apos;%1&apos;.</source>
+		<translation>Unbekannte Betriebsart &apos;%1&apos;.</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating operation of moving</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Operation Bewegen</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating point of line intersection</source>
+		<translation>Fehler beim Erstellen oder Aktualisieren von Punkt des Linienschnittpunkts</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating simple elliptical arc</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des einfachen elliptischen Bogens</translation>
+	    </message>
+	    <message>
+		<source>Unknown elliptical arc type &apos;%1&apos;.</source>
+		<translation>Unbekannter elliptischer Bogen Typ &apos;%1&apos;.</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating modeling elliptical arc</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren modellieren elliptischer Bogen</translation>
+	    </message>
+	    <message>
+		<source>Unnamed path</source>
+		<translation>Unbenannter Pfad</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating a piece path</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren eines Schnittteil Verzeichnisses</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating anchor point</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Ankerpunkts</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating Intersect XY tool</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren des Schnittpunkts XY Werkzeugs</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating operation of mirror by line</source>
+		<translation>Fehler beim Erstellen oder Aktualisieren der Spiegeln an einer Linie Operation</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating operation of mirror by axis</source>
+		<translation>Fehler beim Erstellen oder Aktualisieren der Spiegeln an einer Achse Operation</translation>
+	    </message>
+	    <message>
+		<source>Piece</source>
+		<translation>Stück</translation>
+	    </message>
+	    <message>
+		<source>white</source>
+		<translation>Weiß</translation>
+	    </message>
+	    <message>
+		<source>nobrush</source>
+		<translation>kein Pinsel</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating piece</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren eines Schnittteils</translation>
+	    </message>
+	    <message>
+		<source>Error creating or updating union pieces</source>
+		<translation>Fehler beim Anlegen oder Aktualisieren der Verbindungsschnittteile</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VPoster</name>
+	    <message>
+		<source>Grid ( %1 , %2 )</source>
+		<translation>Raster ( %1 , %2 )</translation>
+	    </message>
+	    <message>
+		<source>Page %1 of %2</source>
+		<translation>Seite %1 von %2</translation>
+	    </message>
+	    <message>
+		<source>Sheet %1 of %2</source>
+		<translation>Blatt %1 von %2</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VSettings</name>
+	    <message>
+		<source>patterns</source>
+		<translation>Muster</translation>
+	    </message>
+	    <message>
+		<source>layouts</source>
+		<translation>Layouts</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VSplinePath</name>
+	    <message>
+		<source>Not enough points to create the spline.</source>
+		<translation>Nicht genügend Punkte vorhanden, um die Spline zu erstellen.</translation>
+	    </message>
+	    <message>
+		<source>This spline does not exist.</source>
+		<translation>Diese Spline existiert nicht.</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolAlongLine</name>
+	    <message>
+		<source>Length</source>
+		<translation>Länge</translation>
+	    </message>
+	    <message>
+		<source>Angle</source>
+		<translation>Winkel</translation>
+	    </message>
+	    <message>
+		<source>Name</source>
+		<translation>Bezeichnung</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolArc</name>
+	    <message>
+		<source>Start angle</source>
+		<translation>Anfangswinkel</translation>
+	    </message>
+	    <message>
+		<source>     Length</source>
+		<translation>     Länge</translation>
+	    </message>
+	    <message>
+		<source>     Radius</source>
+		<translation>     Radius</translation>
+	    </message>
+	    <message>
+		<source>  End angle</source>
+		<translation>  Abschlusswinkel</translation>
+	    </message>
+	    <message>
+		<source>      Label</source>
+		<translation>      Etikett</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolArcWithLength</name>
+	    <message>
+		<source>Start angle</source>
+		<translation>Anfangswinkel</translation>
+	    </message>
+	    <message>
+		<source>     Length</source>
+		<translation>     Länge</translation>
+	    </message>
+	    <message>
+		<source>     Radius</source>
+		<translation>     Radius</translation>
+	    </message>
+	    <message>
+		<source>  End angle</source>
+		<translation>  Abschlusswinkel</translation>
+	    </message>
+	    <message>
+		<source>      Name</source>
+		<translation>      Bezeichnung</translation>
+	    </message>
+	    <message>
+		<source>      Tool</source>
+		<translation>      Werkzeug</translation>
+	    </message>
+	    <message>
+		<source>Arc - Radius and Length</source>
+		<translation>Bogen - Radius und Länge</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolBasePoint</name>
+	    <message>
+		<source>Name</source>
+		<translation>Bezeichnung</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolCurveIntersectAxis</name>
+	    <message>
+		<source>&lt;b&gt;&lt;big&gt;Can not create intersection point %1 from point %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;to curve %3 with an axis angle of %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
+		<translation>&lt;b&gt;&lt;big&gt;Kann keinen Schnittpunkt %1 von Punkt %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;zur Kurve %3 mit einem Achsenwinkel von %4 erstellen°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;den Startpunkt als Platzhalter benutzen bis das Mustter korrigiert ist.</translation>
+	    </message>
+	    <message>
+		<source>Intersection Point of Curve &amp; Axis</source>
+		<translation>Schnittpunkt von Kurve &amp; Achse</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolCutArc</name>
+	    <message>
+		<source>Arc</source>
+		<translation>Bogen</translation>
+	    </message>
+	    <message>
+		<source>length</source>
+		<translation>Länge</translation>
+	    </message>
+	    <message>
+		<source>start angle</source>
+		<translation>Anfangswinkel</translation>
+	    </message>
+	    <message>
+		<source>end angle</source>
+		<translation>Endwinkel</translation>
+	    </message>
+	    <message>
+		<source>radius</source>
+		<translation>Radius</translation>
+	    </message>
+	    <message>
+		<source>label</source>
+		<translation>Etikett</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolCutSpline</name>
+	    <message>
+		<source>Curve</source>
+		<translation>Kurve</translation>
+	    </message>
+	    <message>
+		<source>length</source>
+		<translation>Länge</translation>
+	    </message>
+	    <message>
+		<source>label</source>
+		<translation>Etikett</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolCutSplinePath</name>
+	    <message>
+		<source>Curve</source>
+		<translation>Kurve</translation>
+	    </message>
+	    <message>
+		<source>length</source>
+		<translation>Länge</translation>
+	    </message>
+	    <message>
+		<source>label</source>
+		<translation>Etikett</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolDoublePoint</name>
+	    <message>
+		<source>Name</source>
+		<translation>Bezeichnung</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolEllipticalArc</name>
+	    <message>
+		<source>Start angle</source>
+		<translation>Anfangswinkel</translation>
+	    </message>
+	    <message>
+		<source>     Length</source>
+		<translation>     Länge</translation>
+	    </message>
+	    <message>
+		<source>    Radius</source>
+		<translation>    Radius</translation>
+	    </message>
+	    <message>
+		<source>  End angle</source>
+		<translation>  Endwinkel</translation>
+	    </message>
+	    <message>
+		<source>      Label</source>
+		<translation>      Etikett</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolHeight</name>
+	    <message>
+		<source>Length</source>
+		<translation>Länge</translation>
+	    </message>
+	    <message>
+		<source>Angle</source>
+		<translation>Winkel</translation>
+	    </message>
+	    <message>
+		<source>Name</source>
+		<translation>Bezeichnung</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolLine</name>
+	    <message>
+		<source>Length</source>
+		<translation>Länge</translation>
+	    </message>
+	    <message>
+		<source>Angle</source>
+		<translation>Winkel</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolLineIntersect</name>
+	    <message>
+		<source>Name</source>
+		<translation>Bezeichnung</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolLineIntersectAxis</name>
+	    <message>
+		<source>Length</source>
+		<translation>Länge</translation>
+	    </message>
+	    <message>
+		<source>Angle</source>
+		<translation>Winkel</translation>
+	    </message>
+	    <message>
+		<source>Name</source>
+		<translation>Bezeichnung</translation>
+	    </message>
+	    <message>
+		<source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Line and Axis&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
+		<translation>&lt;b&gt;&lt;big&gt;Schnittpunkt kann nicht gefunden werden %1 von&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Linie und Achse&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Anfangspunkt als Platzhalter verwenden bis Schnittteil korrigiert ist.</translation>
+	    </message>
+	    <message>
+		<source>Intersect Line and Axis</source>
+		<translation>Schneidet Linie und Achse</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolLinePoint</name>
+	    <message>
+		<source>Length</source>
+		<translation>Länge</translation>
+	    </message>
+	    <message>
+		<source>Angle</source>
+		<translation>Winkel</translation>
+	    </message>
+	    <message>
+		<source>Name</source>
+		<translation>Bezeichnung</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolMirrorByAxis</name>
+	    <message>
+		<source>Origin point</source>
+		<translation>Ausgangspunkt</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolMirrorByLine</name>
+	    <message>
+		<source>First line point</source>
+		<translation>Erster Punkt der Linie</translation>
+	    </message>
+	    <message>
+		<source>Second line point</source>
+		<translation>Zweiter Punkt der Linie</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolMove</name>
+	    <message>
+		<source>Center point</source>
+		<translation>Mittelpunkt</translation>
+	    </message>
+	    <message>
+		<source>Angle</source>
+		<translation>Winkel</translation>
+	    </message>
+	    <message>
+		<source>Length</source>
+		<translation>Länge</translation>
+	    </message>
+	    <message>
+		<source>Rotation point</source>
+		<translation>Rotationspunkt</translation>
+	    </message>
+	    <message>
+		<source>Rotation angle</source>
+		<translation>Rotationswinkel</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolOptionsPropertyBrowser</name>
+	    <message>
+		<source>Base point</source>
+		<translation>Ausgangspunkt</translation>
+	    </message>
+	    <message>
+		<source>True darts</source>
+		<translation>Abnäherlänge ausgleichen</translation>
+	    </message>
+	    <message>
+		<source>Base point:</source>
+		<translation>Startpunkt:</translation>
+	    </message>
+	    <message>
+		<source>Length:</source>
+		<translation>Länge:</translation>
+	    </message>
+	    <message>
+		<source>Angle:</source>
+		<translation>Winkel:</translation>
+	    </message>
+	    <message>
+		<source>First point:</source>
+		<translation>Erster Punkt:</translation>
+	    </message>
+	    <message>
+		<source>Second point:</source>
+		<translation>Zweiter Punkt:</translation>
+	    </message>
+	    <message>
+		<source>Center point:</source>
+		<translation>Mittelpunkt:</translation>
+	    </message>
+	    <message>
+		<source>Radius:</source>
+		<translation>Radius:</translation>
+	    </message>
+	    <message>
+		<source>First angle:</source>
+		<translation>Erster Winkel:</translation>
+	    </message>
+	    <message>
+		<source>Second angle:</source>
+		<translation>Zweiter Winkel:</translation>
+	    </message>
+	    <message>
+		<source>Color:</source>
+		<translation>Farbe:</translation>
+	    </message>
+	    <message>
+		<source>Third point:</source>
+		<translation>Dritter Punkt:</translation>
+	    </message>
+	    <message>
+		<source>Point 1 label:</source>
+		<translation>Bezeichnung des Punktes 1:</translation>
+	    </message>
+	    <message>
+		<source>Point 2 label:</source>
+		<translation>Bezeichnung des Punktes 2:</translation>
+	    </message>
+	    <message>
+		<source>First base point:</source>
+		<translation>Erster Ausgangspunkt:</translation>
+	    </message>
+	    <message>
+		<source>Second base point:</source>
+		<translation>Zweiter Ausgangspunkt:</translation>
+	    </message>
+	    <message>
+		<source>First dart point:</source>
+		<translation>Erster Abnäherpunkt:</translation>
+	    </message>
+	    <message>
+		<source>Arc:</source>
+		<translation>Bogen:</translation>
+	    </message>
+	    <message>
+		<source>Curve:</source>
+		<translation>Kurve:</translation>
+	    </message>
+	    <message>
+		<source>First line point:</source>
+		<translation>Erster Punkt der Linie:</translation>
+	    </message>
+	    <message>
+		<source>Second line point:</source>
+		<translation>Zweiter Punkt der Linie:</translation>
+	    </message>
+	    <message>
+		<source>Center of arc:</source>
+		<translation>Mittelpunkt des Bogens:</translation>
+	    </message>
+	    <message>
+		<source>First arc:</source>
+		<translation>Erster Bogen:</translation>
+	    </message>
+	    <message>
+		<source>Second arc:</source>
+		<translation>Zweiter Bogen:</translation>
+	    </message>
+	    <message>
+		<source>Take:</source>
+		<translation>Nehmen:</translation>
+	    </message>
+	    <message>
+		<source>First curve:</source>
+		<translation>Erste Kurve:</translation>
+	    </message>
+	    <message>
+		<source>Second curve:</source>
+		<translation>Zweite Kurve:</translation>
+	    </message>
+	    <message>
+		<source>Tangent point:</source>
+		<translation>Tangentenpunkt:</translation>
+	    </message>
+	    <message>
+		<source>Circle radius:</source>
+		<translation>Kreisradius:</translation>
+	    </message>
+	    <message>
+		<source>Name:</source>
+		<translation>Bezeichnung:</translation>
+	    </message>
+	    <message>
+		<source>C1: angle:</source>
+		<translation>C1 Winkel:</translation>
+	    </message>
+	    <message>
+		<source>C1: length:</source>
+		<translation>C1: Länge:</translation>
+	    </message>
+	    <message>
+		<source>C2: angle:</source>
+		<translation>C2: Winkel:</translation>
+	    </message>
+	    <message>
+		<source>C2: length:</source>
+		<translation>C2: Länge:</translation>
+	    </message>
+	    <message>
+		<source>Axis point:</source>
+		<translation>Achsenpunkt:</translation>
+	    </message>
+	    <message>
+		<source>Suffix:</source>
+		<translation>Suffix:</translation>
+	    </message>
+	    <message>
+		<source>Axis type:</source>
+		<translation>Achsentyp:</translation>
+	    </message>
+	    <message>
+		<source>Rotation angle:</source>
+		<translation>Drehwinkel:</translation>
+	    </message>
+	    <message>
+		<source>Fourth point:</source>
+		<translation>Vierter Punkt:</translation>
+	    </message>
+	    <message>
+		<source>Linetype:</source>
+		<translation>Linientyp:</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect XY</source>
+		<translation>Punkt - schneidet XY</translation>
+	    </message>
+	    <message>
+		<source>Rotation</source>
+		<translation>Drehung</translation>
+	    </message>
+	    <message>
+		<source>Rotation point:</source>
+		<translation>Drehpunkt:</translation>
+	    </message>
+	    <message>
+		<source>Move</source>
+		<translation>Bewegen</translation>
+	    </message>
+	    <message>
+		<source>Mirror by Line</source>
+		<translation>Spiegeln an einer Linie</translation>
+	    </message>
+	    <message>
+		<source>Mirror by Axis</source>
+		<translation>Spiegeln an einer Achse</translation>
+	    </message>
+	    <message>
+		<source>Selection</source>
+		<translation>Auswahl</translation>
+	    </message>
+	    <message>
+		<source>Coordinates</source>
+		<translation>Koordinaten</translation>
+	    </message>
+	    <message>
+		<source>Point - Length and Angle</source>
+		<translation>Punkt - Länge und Winkel</translation>
+	    </message>
+	    <message>
+		<source>Geometry</source>
+		<translation>Geometrie</translation>
+	    </message>
+	    <message>
+		<source>Attributes</source>
+		<translation>Eigenschaften</translation>
+	    </message>
+	    <message>
+		<source>Lineweight:</source>
+		<translation>Linienstärke:</translation>
+	    </message>
+	    <message>
+		<source>Point - On Line</source>
+		<translation>Punkt - auf Linie</translation>
+	    </message>
+	    <message>
+		<source>Arc - Radius and Angles</source>
+		<translation>Bogen - Radius und Winkel</translation>
+	    </message>
+	    <message>
+		<source>Arc - Radius and Length</source>
+		<translation>Bogen - Radius und Länge</translation>
+	    </message>
+	    <message>
+		<source>Point - On Bisector</source>
+		<translation>Punkt - auf Winkelhalbierender</translation>
+	    </message>
+	    <message>
+		<source>Second dart point:</source>
+		<translation>Zweiter Abnäherpunkt:</translation>
+	    </message>
+	    <message>
+		<source>Third dart point:</source>
+		<translation>Dritter Abnäherpunkt:</translation>
+	    </message>
+	    <message>
+		<source>Point - On Arc</source>
+		<translation>Punkt - auf Bogen</translation>
+	    </message>
+	    <message>
+		<source>Point - On Curve</source>
+		<translation>Punkt - auf Kurve</translation>
+	    </message>
+	    <message>
+		<source>Point - On Spline</source>
+		<translation>Punkt - auf Spline</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Line and Perpendicular</source>
+		<translation>Punkt - schneidet Linie und Senkrechte</translation>
+	    </message>
+	    <message>
+		<source>Line</source>
+		<translation>Linie</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Lines</source>
+		<translation>Punkt - schneidet Linien</translation>
+	    </message>
+	    <message>
+		<source>First line</source>
+		<translation>Erste Linie</translation>
+	    </message>
+	    <message>
+		<source>Second line</source>
+		<translation>Zweite Linie</translation>
+	    </message>
+	    <message>
+		<source>Point - On Perpendicular</source>
+		<translation>Punkt - auf einer Senkrechten</translation>
+	    </message>
+	    <message>
+		<source>Rotation:</source>
+		<translation>Drehung:</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Arc and Line</source>
+		<translation>Punkt - schneidet Bogen und Linie</translation>
+	    </message>
+	    <message>
+		<source>1st line point:</source>
+		<translation>Erster Linienpunkt:</translation>
+	    </message>
+	    <message>
+		<source>2nd line point:</source>
+		<translation>Zweiter Linienpunkt:</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Arcs</source>
+		<translation>Punkt - schneidet Bögen</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Circles</source>
+		<translation>Punkt - schneidet Kreise</translation>
+	    </message>
+	    <message>
+		<source>First circle:</source>
+		<translation>Erster Kreis:</translation>
+	    </message>
+	    <message>
+		<source>Center:</source>
+		<translation>Mitte:</translation>
+	    </message>
+	    <message>
+		<source>Second circle:</source>
+		<translation>Zweiter Kreis:</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Curves</source>
+		<translation>Punkt - schneidet Kurven</translation>
+	    </message>
+	    <message>
+		<source>Vertical take:</source>
+		<translation>Vertikale Aufnahme:</translation>
+	    </message>
+	    <message>
+		<source>Horizontal take:</source>
+		<translation>Horizontale Aufnahme:</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Circle and Tangent</source>
+		<translation>Punkt - schneidet Kreis und Tangente</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Arc and Tangent</source>
+		<translation>Punkt - schneidet Bogen und Tangente</translation>
+	    </message>
+	    <message>
+		<source>Point - Length to Line</source>
+		<translation>Punkt - Länge zur Linie</translation>
+	    </message>
+	    <message>
+		<source>Curve - Interactive</source>
+		<translation>Kurve - interaktiv</translation>
+	    </message>
+	    <message>
+		<source>Curve - Fixed</source>
+		<translation>Kurve - fixiert</translation>
+	    </message>
+	    <message>
+		<source>Spline - Interactive</source>
+		<translation>Spline - interaktiv</translation>
+	    </message>
+	    <message>
+		<source>Spline - Fixed</source>
+		<translation>Spline - fixiert</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Axis and Triangle</source>
+		<translation>Punkt - schneidet Achse und Dreieck</translation>
+	    </message>
+	    <message>
+		<source>1st axis point:</source>
+		<translation>Erster Achsenpunkt:</translation>
+	    </message>
+	    <message>
+		<source>2nd axis point:</source>
+		<translation>Zweiter Achsenpunkt:</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Line and Axis</source>
+		<translation>Punkt - schneidet Linie und Achse</translation>
+	    </message>
+	    <message>
+		<source>Point - Intersect Curve and Axis</source>
+		<translation>Punkt - schneidet Kurve und Achse</translation>
+	    </message>
+	    <message>
+		<source>Origin point:</source>
+		<translation>Ausgangspunkt:</translation>
+	    </message>
+	    <message>
+		<source>Arc - Elliptical</source>
+		<translation>Bogen - elliptisch</translation>
+	    </message>
+	    <message>
+		<source>Arc_</source>
+		<translation>Bogen_</translation>
+	    </message>
+	    <message>
+		<source>Spl_</source>
+		<translation>Spl_</translation>
+	    </message>
+	    <message>
+		<source>SplPath_</source>
+		<translation>SplVerzeichnis</translation>
+	    </message>
+	    <message>
+		<source>Line_</source>
+		<translation>Linie_</translation>
+	    </message>
+	    <message>
+		<source>Center point</source>
+		<translation>Mittelpunkt</translation>
+	    </message>
+	    <message>
+		<source>Direction:</source>
+		<translation>Richtung:</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolPointFromArcAndTangent</name>
+	    <message>
+		<source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;%2 and Tangent&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
+		<translation>&lt;b&gt;&lt;big&gt;Schnittpunkt kann nicht gefunden werden %1 von &lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;%2 und Tangente&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Ausgangspunkt als Platzhalter benutzen bis Schnittteil korrigiert ist.</translation>
+	    </message>
+	    <message>
+		<source>Intersect Arc and Tangent</source>
+		<translation>Schneidet Bogen und Tangente</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolPointOfContact</name>
+	    <message>
+		<source>Length</source>
+		<translation>Länge</translation>
+	    </message>
+	    <message>
+		<source>Angle</source>
+		<translation>Winkel</translation>
+	    </message>
+	    <message>
+		<source>Name</source>
+		<translation>Bezeichnung</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolPointOfIntersectionArcs</name>
+	    <message>
+		<source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Arcs&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
+		<translation>&lt;b&gt;&lt;big&gt;Schnittpunkt der Bögen kann nicht gefunden werden %1 von Bögen&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Ausgangspunkt als Platzhalter benutzen bis Schnittteil korrigiert ist.</translation>
+	    </message>
+	    <message>
+		<source>Point Intersect Arcs</source>
+		<translation>Punkt schneidet Bögen</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolPointOfIntersectionCurves</name>
+	    <message>
+		<source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Curves&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
+		<translation>&lt;b&gt;&lt;big&gt;Schnittpunkt kann nicht gefunden werden %1 der Kurven&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Ausgangspunkt als Platzhalter benutzen bis Schnittteil korrigiert ist.</translation>
+	    </message>
+	    <message>
+		<source>Point Intersect Curves</source>
+		<translation>Punkt schneidet Kurven</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolRotation</name>
+	    <message>
+		<source>  Origin point</source>
+		<translation>  Ausgangspunkt</translation>
+	    </message>
+	    <message>
+		<source>Rotation angle</source>
+		<translation>Drehwinkel</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VToolShoulderPoint</name>
+	    <message>
+		<source>Length</source>
+		<translation>Länge</translation>
+	    </message>
+	    <message>
+		<source>Angle</source>
+		<translation>Winkel</translation>
+	    </message>
+	    <message>
+		<source>Name</source>
+		<translation>Bezeichnung</translation>
+	    </message>
+	</context>
+	<context>
+	    <name>VTranslateVars</name>
+	    <message>
+		<source>Bunka</source>
+		<comment>System name</comment>
+		<translation>Bunka</translation>
+	    </message>
+	    <message>
+		<source>Bunka Fashion College</source>
+		<comment>Author name</comment>
+		<translation>Bunka Fashion College</translation>
+	    </message>
+	    <message>
+		<source>Fundamentals of Garment Design</source>
+		<comment>Book name</comment>
+		<translation>Fundamentals of Garment Design</translation>
+	    </message>
+	    <message>
+		<source>Barnfield and Richard</source>
+		<comment>System name</comment>
+		<translation>Barnfield und Richard</translation>
+	    </message>
+	    <message>
+		<source>Jo Barnfield and Andrew Richards</source>
+		<comment>Author name</comment>
+		<translation>Jo Barnfield und Andrew Richards</translation>
+	    </message>
+	    <message>
+		<source>Pattern Making Primer</source>
+		<comment>Book name</comment>
+		<translation>Pattern Making Primer</translation>
+	    </message>
+	    <message>
+		<source>Friendship/Women</source>
+		<comment>System name</comment>
+		<translation>Friendship/Women</translation>
+	    </message>
+	    <message>
+		<source>Elizabeth Friendship</source>
+		<comment>Author name</comment>
+		<translation>Elizabeth Friendship</translation>
+	    </message>
+	    <message>
+		<source>Creating Historical Clothes - Pattern Cutting from the 16th to the 19th Centuries</source>
+		<comment>Book name</comment>
+		<translation>Creating Historical Clothes - Pattern Cutting from the 16th to the 19th Centuries</translation>
+	    </message>
+	    <message>
+		<source>Morris, K.</source>
+		<comment>System name</comment>
+		<translation>Morris, K.</translation>
+	    </message>
+	    <message>
+		<source>Karen Morris</source>
+		<comment>Author name</comment>
+		<translation>Karen Morris</translation>
+	    </message>
+	    <message>
+		<source>Sewing Lingerie that Fits</source>
+		<comment>Book name</comment>
+		<translation>Sewing Lingerie that Fits</translation>
+	    </message>
+	    <message>
+		<source>Castro</source>
+		<comment>System name</comment>
+		<translation>Castro</translation>
+	    </message>
+	    <message>
+		<source>Lucia Mors de Castro</source>
+		<comment>Author name</comment>
+		<translation>Lucia Mors de Castro</translation>
+	    </message>
+	    <message>
+		<source>Patternmaking in Practic</source>
+		<comment>Book name</comment>
+		<translation>Patternmaking in Practice</translation>
+	    </message>
+	    <message>
+		<source>Kim &amp; Uh</source>
+		<comment>System name</comment>
+		<translation>Kim &amp; Uh</translation>
+	    </message>
+	    <message>
+		<source>Injoo Kim and Mykyung Uh</source>
+		<comment>Author name</comment>
+		<translation>Injoo Kim and Mykyung Uh</translation>
+	    </message>
+	    <message>
+		<source>Apparel Making in Fashion Design</source>
+		<comment>Book name</comment>
+		<translation>Apparel Making in Fashion Design</translation>
+	    </message>
+	    <message>
+		<source>Waugh</source>
+		<comment>System name</comment>
+		<translation>Waugh</translation>
+	    </message>
+	    <message>
+		<source>Norah Waugh</source>
+		<comment>Author name</comment>
+		<translation>Norah Waugh</translation>
+	    </message>
+	    <message>
+		<source>Corsets and Crinolines</source>
+		<comment>Book name</comment>
+		<translation>Corsets and Crinolines</translation>
+	    </message>
+	    <message>
+		<source>Grimble</source>
+		<comment>System name</comment>
+		<translation>Grimble</translation>
+	    </message>
+	    <message>
+		<source>Frances Grimble</source>
+		<comment>Author name</comment>
+		<translation>Frances Grimble</translation>
+	    </message>
+	    <message>
+		<source>Fashions of the Gilded Age</source>
+		<comment>Book name</comment>
+		<translation>Fashions of the Gilded Age</translation>
+	    </message>
+	    <message>
+		<source>Thornton&apos;s International System</source>
+		<comment>System name</comment>
+		<translation>Thorntons internationales System</translation>
+	    </message>
+	    <message>
+		<source>ed. R. L. Shep</source>
+		<comment>Author name</comment>
+		<translation>Ed. R. L. Shep</translation>
+	    </message>
+	    <message>
+		<source>The Great War: Styles and Patterns of the 1910s</source>
+		<comment>Book name</comment>
+		<translation>The Great War: Styles and Patterns of the 1910s</translation>
+	    </message>
+	    <message>
+		<source>Hillhouse &amp; Mansfield</source>
+		<comment>System name</comment>
+		<translation>Hillhouse &amp; Mansfield</translation>
+	    </message>
+	    <message>
+		<source>Marion S. Hillhouse and Evelyn A. Mansfield</source>
+		<comment>Author name</comment>
+		<translation>Marion S. Hillhouse und Evelyn A. Mansfield</translation>
+	    </message>
+	    <message>
+		<source>Dress Design: Draping and Flat Pattern Making</source>
+		<comment>Book name</comment>
+		<translation>Dress Design: Draping and Flat Pattern Making</translation>
+	    </message>
+	    <message>
+		<source>Pivnick</source>
+		<comment>System name</comment>
+		<translation>Pivnick</translation>
+	    </message>
+	    <message>
+		<source>Esther Kaplan Pivnick</source>
+		<comment>Author name</comment>
+		<translation>Esther Kaplan Pivnick</translation>
+	    </message>
+	    <message>
+		<source>How to Design Beautiful Clothes: Designing and Pattern Making</source>
+		<comment>Book name</comment>
+		<translation>How to Design Beautiful Clothes: Designing and Pattern Making</translation>
+	    </message>
+	    <message>
+		<source>Minister &amp; Son</source>
+		<comment>System name</comment>
+		<translation>Minister &amp; Sohn</translation>
+	    </message>
+	    <message>
+		<source>Edward Minister &amp; Son, ed. R. L. Shep</source>
+		<comment>Author name</comment>
+		<translation>Edward Minister &amp; Sohn, ed. R. L. Shep</translation>
+	    </message>
+	    <message>
+		<source>The Complete Guide to Practical Cutting (1853)</source>
+		<comment>Book name</comment>
+		<translation>The Complete Guide to Practical Cutting (1853)</translation>
+	    </message>
+	    <message>
+		<source>Strickland</source>
+		<comment>System name</comment>
+		<translation>Strickland</translation>
+	    </message>
+	    <message>
+		<source>Gertrude Strickland</source>
+		<comment>Author name</comment>
+		<translation>Gertrude Strickland</translation>
+	    </message>
+	    <message>
+		<source>A Tailoring Manual</source>
+		<comment>Book name</comment>
+		<translation>A Tailoring Manual</translation>
+	    </message>
+	    <message>
+		<source>Loh &amp; Lewis</source>
+		<comment>System name</comment>
+		<translation>Loh &amp; Lewis</translation>
+	    </message>
+	    <message>
+		<source>May Loh and Diehl Lewis</source>
+		<comment>Author name</comment>
+		<translation>May Loh und Diehl Lewis</translation>
+	    </message>
+	    <message>
+		<source>Patternless Fashion Design</source>
+		<comment>Book name</comment>
+		<translation>Patternless Fashion Design</translation>
+	    </message>
+	    <message>
+		<source>Morris, F. R.</source>
+		<comment>System name</comment>
+		<translation>Morris, F. R.</translation>
+	    </message>
+	    <message>
+		<source>F. R. Morris</source>
+		<comment>Author name</comment>
+		<translation>F. R. Morris</translation>
+	    </message>
+	    <message>
+		<source>Ladies Garment Cutting and Making</source>
+		<comment>Book name</comment>
+		<translation>Ladies Garment Cutting and Making</translation>
+	    </message>
+	    <message>
+		<source>Mason</source>
+		<comment>System name</comment>
+		<translation>Mason</translation>
+	    </message>
+	    <message>
+		<source>Gertrude Mason</source>
+		<comment>Author name</comment>
+		<translation>Gertrude Mason</translation>
+	    </message>
+	    <message>
+		<source>Gertrude Mason&apos;s Patternmaking Book</source>
+		<comment>Book name</comment>
+		<translation>Gertrude Mason&apos;s Patternmaking Book</translation>
+	    </message>
+	    <message>
+		<source>Kimata</source>
+		<comment>System name</comment>
+		<translation>Kimata</translation>
+	    </message>
+	    <message>
+		<source>K. Kimata</source>
+		<comment>Author name</comment>
+		<translation>K. Kimata</translation>
+	    </message>
+	    <message>
+		<source>K.Kimata&apos;s Simplified Drafting Book for Dressmaking</source>
+		<comment>Book name</comment>
+		<translation>K.Kimata&apos;s Simplified Drafting Book for Dressmaking</translation>
+	    </message>
+	    <message>
+		<source>Master Designer</source>
+		<comment>System name</comment>
+		<translation>Master Designer</translation>
+	    </message>
+	    <message>
+		<source>The Master Designer (Chicago, IL)</source>
+		<comment>Author name</comment>
+		<translation>The Master Designer (Chicago, IL)</translation>
+	    </message>
+	    <message>
+		<source>Master Designer&apos;s System of Designing, Cutting and Grading</source>
+		<comment>Book name</comment>
+		<translation>Master Designer&apos;s System of Designing, Cutting and Grading</translation>
+	    </message>
+	    <message>
+		<source>Kopp</source>
+		<comment>System name</comment>
+		<translation>Kopp</translation>
+	    </message>
+	    <message>
+		<source>Ernestine Kopp, Vittorina Rolfo, Beatrice Zelin, Lee Gross</source>
+		<comment>Author name</comment>
+		<translation>Ernestine Kopp, Vittorina Rolfo, Beatrice Zelin, Lee Gross</translation>
+	    </message>
+	    <message>
+		<source>How to Draft Basic Patterns</source>
+		<comment>Book name</comment>
+		<translation>How to Draft Basic Patterns</translation>
+	    </message>
+	    <message>
+		<source>Ekern</source>
+		<comment>System name</comment>
+		<translation>Ekern</translation>
+	    </message>
+	    <message>
+		<source>Doris Ekern</source>
+		<comment>Author name</comment>
+		<translation>Doris Ekern</translation>
+	    </message>
+	    <message>
+		<source>Slacks Cut-to-Fit for Your Figure</source>
+		<comment>Book name</comment>
+		<translation>Slacks Cut-to-Fit for Your Figure</translation>
+	    </message>
+	    <message>
+		<source>Doyle</source>
+		<comment>System name</comment>
+		<translation>Doyle</translation>
+	    </message>
+	    <message>
+		<source>Sarah J. Doyle</source>
+		<comment>Author name</comment>
+		<translation>Sarah J. Doyle</translation>
+	    </message>
+	    <message>
+		<source>Sarah&apos;s Key to Pattern Drafting</source>
+		<comment>Book name</comment>
+		<translation>Sarah&apos;s Key to Pattern Drafting</translation>
+	    </message>
+	    <message>
+		<source>Shelton</source>
+		<comment>System name</comment>
+		<translation>Shelton</translation>
+	    </message>
+	    <message>
+		<source>Karla J. Shelton</source>
+		<comment>Author name</comment>
+		<translation>Karla J. Shelton</translation>
+	    </message>
+	    <message>
+		<source>Design and Sew Jeans</source>
+		<comment>Book name</comment>
+		<translation>Design and Sew Jeans</translation>
+	    </message>
+	    <message>
+		<source>Lady Boutique</source>
+		<comment>System name</comment>
+		<translation>Lady Boutique</translation>
+	    </message>
+	    <message>
+		<source>Lady Boutique</source>
+		<comment>Author name</comment>
+		<translation>Lady Boutique</translation>
+	    </message>
+	    <message>
+		<source>Lady Boutique magazine (Japan)</source>
+		<comment>Book name</comment>
+		<translation>Lady Boutique magazine (Japan)</translation>
+	    </message>
+	    <message>
+		<source>Rohr</source>
+		<comment>System name</comment>
+		<translation>Rohr</translation>
+	    </message>
+	    <message>
+		<source>M. Rohr</source>
+		<comment>Author name</comment>
+		<translation>M. Rohr</translation>
+	    </message>
+	    <message>
+		<source>Pattern Drafting and Grading: Women&apos;s nd Misses&apos; Garment Design</source>
+		<comment>Book name</comment>
+		<translation>Pattern Drafting and Grading: Women&apos;s and Misses&apos; Garment Design</translation>
+	    </message>
+	    <message>
+		<source>Moore</source>
+		<comment>System name</comment>
+		<translation>Moore</translation>
+	    </message>
+	    <message>
+		<source>Dorothy Moore</source>
+		<comment>Author name</comment>
+		<translation>Dorothy Moore</translation>
+	    </message>
+	    <message>
+		<source>Dorothy Moore&apos;s Pattern Drafting and Dressmaking</source>
+		<comment>Book name</comment>
+		<translation>Dorothy Moore&apos;s Pattern Drafting and Dressmaking</translation>
+	    </message>
+	    <message>
+		<source>Abling</source>
+		<comment>System name</comment>
+		<translation>Abling</translation>
+	    </message>
+	    <message>
+		<source>Bina Abling</source>
+		<comment>Author name</comment>
+		<translation>Bina Abling</translation>
+	    </message>
+	    <message>
+		<source>Integrating Draping, Drafting and Drawing</source>
+		<comment>Book name</comment>
+		<translation>Integrating Draping, Drafting and Drawing</translation>
+	    </message>
+	    <message>
+		<source>Fukomoto</source>
+		<comment>System name</comment>
+		<translation>Fukomoto</translation>
+	    </message>
+	    <message>
+		<source>Sue S. Fukomoto</source>
+		<comment>Author name</comment>
+		<translation>Sue S. Fukomoto</translation>
+	    </message>
+	    <message>
+		<source>Scientific Pattern Drafting as taught at Style Center School of Costume Design, Dressmaking and Millinery</source>
+		<comment>Book name</comment>
+		<translation>Scientific Pattern Drafting as taught at Style Center School of Costume Design, Dressmaking and Millinery</translation>
+	    </message>
+	    <message>
+		<source>Dressmaking International</source>
+		<comment>System name</comment>
+		<translation>Dressmaking International</translation>
+	    </message>
+	    <message>
+		<source>Dressmaking International</source>
+		<comment>Author name</comment>
+		<translation>Dressmaking International</translation>
+	    </message>
+	    <message>
+		<source>Dressmaking International magazine (Japan)</source>
+		<comment>Book name</comment>
+		<translation>Dressmaking International magazine (Japan)</translation>
+	    </message>
+	    <message>
+		<source>Erwin</source>
+		<comment>System name</comment>
+		<translation>Erwin</translation>
+	    </message>
+	    <message>
+		<source>Mabel D. Erwin</source>
+		<comment>Author name</comment>
+		<translation>Mabel D. Erwin</translation>
+	    </message>
+	    <message>
+		<source>Practical Dress Design</source>
+		<comment>Book name</comment>
+		<translation>Practical Dress Design</translation>
+	    </message>
+	    <message>
+		<source>Gough</source>
+		<comment>System name</comment>
+		<translation>Gough</translation>
+	    </message>
+	    <message>
+		<source>E. L. G. Gough</source>
+		<comment>Author name</comment>
+		<translation>E. L. G. Gough</translation>
+	    </message>
+	    <message>
+		<source>Principles of Garment Cutting</source>
+		<comment>Book name</comment>
+		<translation>Principles of Garment Cutting</translation>
+	    </message>
+	    <message>
+		<source>Allemong</source>
+		<comment>System name</comment>
+		<translation>Allemong</translation>
+	    </message>
+	    <message>
+		<source>Elizabeth M. Allemong</source>
+		<comment>Author name</comment>
+		<translation>Elizabeth M. Allemong</translation>
+	    </message>
+	    <message>
+		<source>European Cut</source>
+		<comment>Book name</comment>
+		<translation>European Cut</translation>
+	    </message>
+	    <message>
+		<source>McCunn</source>
+		<comment>System name</comment>
+		<translation>McCunn</translation>
+	    </message>
+	    <message>
+		<source>Donald H. McCunn</source>
+		<comment>Author name</comment>
+		<translation>Donald H. McCunn</translation>
+	    </message>
+	    <message>
+		<source>How to Make Your Own Sewing Patterns</source>
+		<comment>Book name</comment>
+		<translation>How to Make Your Own Sewing Patterns</translation>
+	    </message>
+	    <message>
+		<source>Zarapkar</source>
+		<comment>System name</comment>
+		<translation>Zarapkar</translation>
+	    </message>
+	    <message>
+		<source>Shri K. R. Zarapkar and Shri Arvind K. Zarapkar</source>
+		<comment>Author name</comment>
+		<translation>Shri K. R. Zarapkar and Shri Arvind K. Zarapkar</translation>
+	    </message>
+	    <message>
+		<source>Zarapkar System of Cutting</source>
+		<comment>Book name</comment>
+		<translation>Zarapkar System of Cutting</translation>
+	    </message>
+	    <message>
+		<source>Kunick</source>
+		<comment>System name</comment>
+		<translation>Kunick</translation>
+	    </message>
+	    <message>
+		<source>Philip Kunick</source>
+		<comment>Author name</comment>
+		<translation>Philip Kunick</translation>
+	    </message>
+	    <message>
+		<source>Sizing, Pattern Construction and Grading for Women&apos;s and Children&apos;s Garments</source>
+		<comment>Book name</comment>
+		<translation>Sizing, Pattern Construction and Grading for Women&apos;s and Children&apos;s Garments</translation>
+	    </message>
+	    <message>
+		<source>Handford</source>
+		<comment>System name</comment>
+		<translation>Handford</translation>
+	    </message>
+	    <message>
+		<source>Jack Handford</source>
+		<comment>Author name</comment>
+		<translation>Jack Handford</translation>
+	    </message>
+	    <message>
+		<source>Professional Patternmaking for Designers: Women&apos;s Wear, Men&apos;s Casual Wear</source>
+		<comment>Book name</comment>
+		<translation>Professional Patternmaking for Designers: Women&apos;s Wear, Men&apos;s Casual Wear</translation>
+	    </message>
+	    <message>
+		<source>Davis</source>
+		<comment>System name</comment>
+		<translation>Davis</translation>
+	    </message>
+	    <message>
+		<source>R. I. Davis</source>
+		<comment>Author name</comment>
+		<translation>R. I. Davis</translation>
+	    </message>
+	    <message>
+		<source>Men&apos;s 17th &amp; 18th Century Costume, Cut &amp; Fashion</source>
+		<comment>Book name</comment>
+		<translation>Men&apos;s 17th &amp; 18th Century Costume, Cut &amp; Fashion</translation>
+	    </message>
+	    <message>
+		<source>MacLochlainn</source>
+		<comment>System name</comment>
+		<translation>MacLochlainn</translation>
+	    </message>
+	    <message>
+		<source>Jason MacLochlainn</source>
+		<comment>Author name</comment>
+		<translation>Jason MacLochlainn</translation>
+	    </message>
+	    <message>
+		<source>The Victorian Tailor: An Introduction to Period Tailoring</source>
+		<comment>Book name</comment>
+		<translation>The Victorian Tailor: An Introduction to Period Tailoring</translation>
+	    </message>
+	    <message>
+		<source>Joseph-Armstrong</source>
+		<comment>System name</comment>
+		<translation>Joseph-Armstrong</translation>
+	    </message>
+	    <message>
+		<source>Helen Joseph-Armstrong</source>
+		<comment>Author name</comment>
+		<translation>Helen Joseph-Armstrong</translation>
+	    </message>
+	    <message>
+		<source>Patternmaking for Fashion Design</source>
+		<comment>Book name</comment>
+		<translation>Patternmaking for Fashion Design</translation>
+	    </message>
+	    <message>
+		<source>Supreme System</source>
+		<comment>System name</comment>
+		<translation>Supreme System</translation>
+	    </message>
+	    <message>
+		<source>Frederick T. Croonberg</source>
+		<comment>Author name</comment>
+		<translation>Frederick T. Croonberg</translation>
+	    </message>
+	    <message>
+		<source>The Blue Book of Men&apos;s Tailoring, Grand Edition of Supreme System for Producing Mens Garments (1907)</source>
+		<comment>Book name</comment>
+		<translation>The Blue Book of Men&apos;s Tailoring, Grand Edition of Supreme System for Producing Mens Garments (1907)</translation>
+	    </message>
+	    <message>
+		<source>Sugino</source>
+		<comment>System name</comment>
+		<translation>Sugino</translation>
+	    </message>
+	    <message>
+		<source>Dressmaking</source>
+		<comment>Author name</comment>
+		<translation>Dressmaking</translation>
+	    </message>
+	    <message>
+		<source>Pattern Drafting Vols. I, II, III (Japan)</source>
+		<comment>Book name</comment>
+		<translation>Pattern Drafting Vols. I, II, III (Japan)</translation>
+	    </message>
+	    <message>
+		<source>Centre Point System</source>
+		<comment>System name</comment>
+		<translation>Centre Point System</translation>
+	    </message>
+	    <message>
+		<source>Louis Devere</source>
+		<comment>Author name</comment>
+		<translation>Louis Devere</translation>
+	    </message>
+	    <message>
+		<source>The Handbook of Practical Cutting on the Centre Point System</source>
+		<comment>Book name</comment>
+		<translation>The Handbook of Practical Cutting on the Centre Point System</translation>
+	    </message>
+	    <message>
+		<source>Aldrich/Men</source>
+		<comment>System name</comment>
+		<translation>Aldrich/Herren</translation>
+	    </message>
+	    <message>
+		<source>Winifred Aldrich</source>
+		<comment>Author name</comment>
+		<translation>Winifred Aldrich</translation>
+	    </message>
+	    <message>
+		<source>Metric Pattern Cutting for Menswear</source>
+		<comment>Book name</comment>
+		<translation>Metric Pattern Cutting for Menswear</translation>
+	    </message>
+	    <message>
+		<source>Aldrich/Women</source>
+		<comment>System name</comment>
+		<translation>Aldrich/Damen</translation>
+	    </message>
+	    <message>
+		<source>Metric Pattern Cutting for Women&apos;s Wear</source>
+		<comment>Book name</comment>
+		<translation>Metric Pattern Cutting for Women&apos;s Wear</translation>
+	    </message>
+	    <message>
+		<source>Kershaw</source>
+		<comment>System name</comment>
+		<translation>Kershaw</translation>
+	    </message>
+	    <message>
+		<source>Gareth Kershaw</source>
+		<comment>Author name</comment>
+		<translation>Gareth Kershaw</translation>
+	    </message>
+	    <message>
+		<source>Patternmaking for Menswear</source>
+		<comment>Book name</comment>
+		<translation>Patternmaking for Menswear</translation>
+	    </message>
+	    <message>
+		<source>Gilewska</source>
+		<comment>System name</comment>
+		<translation>Gilewska</translation>
+	    </message>
+	    <message>
+		<source>Teresa Gilewska</source>
+		<comment>Author name</comment>
+		<translation>Teresa Gilewska</translation>
+	    </message>
+	    <message>
+		<source>Pattern-Drafting for Fashion: The Basics</source>
+		<comment>Book name</comment>
+		<translation>Pattern-Drafting for Fashion: The Basics</translation>
+	    </message>
+	    <message>
+		<source>Lo</source>
+		<comment>System name</comment>
+		<translation>Lo</translation>
+	    </message>
+	    <message>
+		<source>Dennic Chunman Lo</source>
+		<comment>Author name</comment>
+		<translation>Dennic Chunman Lo</translation>
+	    </message>
+	    <message>
+		<source>Pattern Cutting</source>
+		<comment>Book name</comment>
+		<translation>Pattern Cutting</translation>
+	    </message>
+	    <message>
+		<source>Bray</source>
+		<comment>System name</comment>
+		<translation>Bray</translation>
+	    </message>
+	    <message>
+		<source>Natalie Bray</source>
+		<comment>Author name</comment>
+		<translation>Natalie Bray</translation>
+	    </message>
+	    <message>
+		<source>Dress Pattern Designing: The Basic Principles of Cut and Fit</source>
+		<comment>Book name</comment>
+		<translation>Schnittmuster-Design: Die Grundlagen des Zuschneidens und Anpassens</translation>
+	    </message>
+	    <message>
+		<source>Knowles/Men</source>
+		<comment>System name</comment>
+		<translation>Knowles/Herren</translation>
+	    </message>
+	    <message>
+		<source>Lori A. Knowles</source>
+		<comment>Author name</comment>
+		<translation>Lori A. Knowles</translation>
+	    </message>
+	    <message>
+		<source>The Practical Guide to Patternmaking for Fashion Designers: Menswear</source>
+		<comment>Book name</comment>
+		<translation>The Practical Guide to Patternmaking for Fashion Designers: Menswear</translation>
+	    </message>
+	    <message>
+		<source>Friendship/Men</source>
+		<comment>System name</comment>
+		<translation>Friendship/Men</translation>
+	    </message>
+	    <message>
+		<source>Pattern Cutting for Men&apos;s Costume</source>
+		<comment>Book name</comment>
+		<translation>Pattern Cutting for Men&apos;s Costume</translation>
+	    </message>
+	    <message>
+		<source>Brown</source>
+		<comment>System name</comment>
+		<translation>Brown</translation>
+	    </message>
+	    <message>
+		<source>P. Clement Brown</source>
+		<comment>Author name</comment>
+		<translation>P. Clement Brown</translation>
+	    </message>
+	    <message>
+		<source>Art in Dress</source>
+		<comment>Book name</comment>
+		<translation>Art in Dress</translation>
+	    </message>
+	    <message>
+		<source>Mitchell</source>
+		<comment>System name</comment>
+		<translation>Mitchell</translation>
+	    </message>
+	    <message>
+		<source>Jno. J. Mitchell</source>
+		<comment>Author name</comment>
+		<translation>Jno. J. Mitchell</translation>
+	    </message>
+	    <message>
+		<source>&quot;Standard&quot; Work on Cutting (Men&apos;s Garments) 1886: The Art and Science of Garment Cutting</source>
+		<comment>Book name</comment>
+		<translation>&quot;Standard&quot; Work on Cutting (Men&apos;s Garments) 1886: The Art and Science of Garment Cutting</translation>
+	    </message>
+	    <message>
+		<source>GOST 17917-86</source>
+		<comment>System name</comment>
+		<translation>GOST 17917-86</translation>
+	    </message>
+	    <message>
+		<source>Ministry of consumer industry of the USSR</source>
+		<comment>Author name</comment>
+		<translation>Ministry of consumer industry of the USSR</translation>
+	    </message>
+	    <message>
+		<source>Standard figure boys</source>
+		<comment>Book name</comment>
+		<translation>Standard figure boys</translation>
+	    </message>
+	    <message>
+		<source>Eddy</source>
+		<comment>System name</comment>
+		<translation>Eddy</translation>
+	    </message>
+	    <message>
+		<source>Josephine F. Eddy and Elizabeth C. B. Wiley</source>
+		<comment>Author name</comment>
+		<translation>Josephine F. Eddy und Elizabeth C. B. Wiley</translation>
+	    </message>
+	    <message>
+		<source>Pattern and Dress Design</source>
+		<comment>Book name</comment>
+		<translation>Pattern and Dress Design</translation>
+	    </message>
+	    <message>
+		<source>Knowles/Women</source>
+		<comment>System name</comment>
+		<translation>Knowles/Damen</translation>
+	    </message>
+	    <message>
+		<source>Practical Guide to Patternmaking for Fashion Designers: Juniors, Misses, and Women</source>
+		<comment>Book name</comment>
+		<translation>Praktischer Leitfaden zur Mustererstellung für Modedesigner:JuniorInnen, und Frauen</translation>
+	    </message>
+	    <message>
+		<source>American Garment Cutter</source>
+		<comment>System name</comment>
+		<translation>American Garment Cutter</translation>
+	    </message>
+	    <message>
+		<source>None</source>
+		<comment>System name</comment>
+		<translation>Keine</translation>
+	    </message>
+	    <message>
+		<source>Seamly2D team</source>
+		<comment>Author name</comment>
+		<translation>Seamly2D Team</translation>
+	    </message>
+	    <message>
+		<source>Seamly2D&apos;s internal standard</source>
+		<comment>Book name</comment>
+		<translation>Seamly2D&apos;s interner Standard</translation>
+	    </message>
+	    <message>
+		<source>cm</source>
+		<comment>centimeter</comment>
+		<translation>cm</translation>
+	    </message>
+	    <message>
+		<source>mm</source>
+		<comment>millimeter</comment>
+		<translation>mm</translation>
+	    </message>
+	    <message>
+		<source>in</source>
+		<comment>inch</comment>
+		<translation>zoll</translation>
+	    </message>
+	    <message>
+		<source>SplPath</source>
+		<comment>Do not add symbol _ to the end of the name</comment>
+		<translation>SplVerzeichnis</translation>
+	    </message>
+	    <message>
+		<source>Angle1SplPath</source>
+		<comment>Do not add symbol _ to the end of the name</comment>
+		<translation>Winkel1SplVerzeichnis</translation>
+	    </message>
+	    <message>
+		<source>Angle2SplPath</source>
+		<comment>Do not add symbol _ to the end of the name</comment>
+		<translation>Winkel2SplVerzeichnis</translation>
+	    </message>
+	    <message>
+		<source>CurrentLength</source>
+		<comment>Do not add space between words</comment>
+		<translation>AktuelleLänge</translation>
+	    </message>
+	    <message>
+		<source>size</source>
+		<comment>placeholder</comment>
+		<translation>Größe</translation>
+	    </message>
+	    <message>
+		<source>height</source>
+		<comment>placeholder</comment>
+		<translation>Körperhöhe</translation>
+	    </message>
+	    <message>
+		<source>C1LengthSplPath</source>
+		<comment>Do not add symbol _ to the end of the name</comment>
+		<translation>C1LängeSplVerzeichnis</translation>
+	    </message>
+	    <message>
+		<source>C2LengthSplPath</source>
+		<comment>Do not add symbol _ to the end of the name</comment>
+		<translation>C2LängeSplVerzeichnis</translation>
+	    </message>
+	    <message>
+		<source>CurrentSeamAllowance</source>
+		<comment>Do not add space between words</comment>
+		<translation>AktuelleNahtzugabe</translation>
+	    </message>
+	    <message>
+		<source>date</source>
+		<comment>placeholder</comment>
+		<translation>Datum</translation>
+	    </message>
+	    <message>
+		<source>time</source>
+		<comment>placeholder</comment>
+		<translation>Zeit</translation>
+	    </message>
+	    <message>
+		<source>patternName</source>
+		<comment>placeholder</comment>
+		<translation>Name des Schnittmusters</translation>
+	    </message>
+	    <message>
+		<source>patternNumber</source>
+		<comment>placeholder</comment>
+		<translation>Nummer des Schnittmusters</translation>
+	    </message>
+	    <message>
+		<source>author</source>
+		<comment>placeholder</comment>
+		<translation>Autor</translation>
+	    </message>
+	    <message>
+		<source>customer</source>
+		<comment>placeholder</comment>
+		<translation>Kunde</translation>
+	    </message>
+	    <message>
+		<source>pExt</source>
+		<comment>placeholder</comment>
+		<translation>pExt</translation>
+	    </message>
+	    <message>
+		<source>pFileName</source>
+		<comment>placeholder</comment>
+		<translation>pDateiname</translation>
+	    </message>
+	    <message>
+		<source>mFileName</source>
+		<comment>placeholder</comment>
+		<translation>mDateiname</translation>
+	    </message>
+	    <message>
+		<source>mExt</source>
+		<comment>placeholder</comment>
+		<translation>mExt</translation>
+	    </message>
+	    <message>
+		<source>pLetter</source>
+		<comment>placeholder</comment>
+		<translation>pBuchstabe</translation>
+	    </message>
+	    <message>
+		<source>pAnnotation</source>
+		<comment>placeholder</comment>
+		<translation>pAnmerkung</translation>
+	    </message>
+	    <message>
+		<source>pOrientation</source>
+		<comment>placeholder</comment>
+		<translation>pOrientierung</translation>
+	    </message>
+	    <message>
+		<source>pRotation</source>
+		<comment>placeholder</comment>
+		<translation>pDrehung</translation>
+	    </message>
+	    <message>
+		<source>pTilt</source>
+		<comment>placeholder</comment>
+		<translation>pNeigung</translation>
+	    </message>
+	    <message>
+		<source>pFoldPosition</source>
+		<comment>placeholder</comment>
+		<translation>pPosition des Bruchs</translation>
+	    </message>
+	    <message>
+		<source>pName</source>
+		<comment>placeholder</comment>
+		<translation>pBezeichnung</translation>
+	    </message>
+	    <message>
+		<source>pQuantity</source>
+		<comment>placeholder</comment>
+		<translation>pMenge</translation>
+	    </message>
+	    <message>
+		<source>mFabric</source>
+		<comment>placeholder</comment>
+		<translation>mStoff</translation>
+	    </message>
+	    <message>
+		<source>mLining</source>
+		<comment>placeholder</comment>
+		<translation>mFutter</translation>
+	    </message>
+	    <message>
+		<source>mInterfacing</source>
+		<comment>placeholder</comment>
+		<translation>mSchnittstelle</translation>
+	    </message>
+	    <message>
+		<source>mInterlining</source>
+		<comment>placeholder</comment>
+		<translation>mEinlage</translation>
+	    </message>
+	    <message>
+		<source>wCut</source>
+		<comment>placeholder</comment>
+		<translation>wSchnitt</translation>
+	    </message>
+	    <message>
+		<source>wOnFold</source>
+		<comment>placeholder</comment>
+		<translation>wOnFold</translation>
+	    </message>
+	    <message>
+		<source>degTorad</source>
+		<comment>Converts degrees to radians
+	Usage: degTorad(angle θ in degrees)</comment>
+		<translation>degTorad</translation>
+	    </message>
+	    <message>
+		<source>radTodeg</source>
+		<comment>Converts radians to degrees
+	Usage: radTodeg(angle θ in radians)</comment>
+		<translation>radTodeg</translation>
+	    </message>
+	    <message>
+		<source>sin</source>
+		<comment>Sine function working with radians
+	Usage: sin(angle θ in radians)</comment>
+		<translation>sin</translation>
+	    </message>
+	    <message>
+		<source>cos</source>
+		<comment>Cosine function working with radians
+	Usage: cos(angle θ in radians)</comment>
+		<translation>cos</translation>
+	    </message>
+	    <message>
+		<source>tan</source>
+		<comment>Tangent function working with radians
+	Usage: tan(angle θ in radians)</comment>
+		<translation>tan</translation>
+	    </message>
+	    <message>
+		<source>asin</source>
+		<comment>Inverse sine function working with radians
+	Usage: asin(x)</comment>
+		<translation>asin</translation>
+	    </message>
+	    <message>
+		<source>acos</source>
+		<comment>Inverse cosine function working with radians
+	Usage: acos(x)</comment>
+		<translation>acos</translation>
+	    </message>
+	    <message>
+		<source>atan</source>
+		<comment>Inverse tangent function working with radians
+	Usage: atan(x)</comment>
+		<translation>atan</translation>
+	    </message>
+	    <message>
+		<source>sinh</source>
+		<comment>Hyperbolic sine function
+	Usage: sinh(angle θ in radians)</comment>
+		<translation>sinh</translation>
+	    </message>
+	    <message>
+		<source>cosh</source>
+		<comment>Hyperbolic cosine
+	Usage: cosh(angle θ in radians)</comment>
+		<translation>cosh</translation>
+	    </message>
+	    <message>
+		<source>tanh</source>
+		<comment>Hyperbolic tangent function
+	Usage: tanh(angle θ in radians)</comment>
+		<translation>tanh</translation>
+	    </message>
+	    <message>
+		<source>asinh</source>
+		<comment>Inverse Hyperbolic sine function
+	Usage: asinh(x)</comment>
+		<translation>asinh</translation>
+	    </message>
+	    <message>
+		<source>acosh</source>
+		<comment>Inverse Hyperbolic cosine function
+	Usage: acosh(x)</comment>
+		<translation>acosh</translation>
+	    </message>
+	    <message>
+		<source>atanh</source>
+		<comment>Inverse Hyperbolic tangent function
+	Usage: atanh(x)</comment>
+		<translation>atanh</translation>
+	    </message>
+	    <message>
+		<source>sinD</source>
+		<comment>Sine function working with degrees
+	Usage: sinD(angle θ in degrees)</comment>
+		<translation>sinD</translation>
+	    </message>
+	    <message>
+		<source>cosD</source>
+		<comment>Cosine function working with degrees
+	Usage: cosD(angle θ in degrees)</comment>
+		<translation>cosD</translation>
+	    </message>
+	    <message>
+		<source>tanD</source>
+		<comment>Tangent function working with degrees
+	Usage: tanD(angle θ in degrees)</comment>
+		<translation>tanD</translation>
+	    </message>
+	    <message>
+		<source>asinD</source>
+		<comment>Inverse sine function working with degrees
+	Usage: asinD(x)</comment>
+		<translation>asinD</translation>
+	    </message>
+	    <message>
+		<source>acosD</source>
+		<comment>Inverse cosine function working with degrees
+	Usage: acosD(x)</comment>
+		<translation>acosD</translation>
+	    </message>
+	    <message>
+		<source>atanD</source>
+		<comment>Inverse tangent function working with degrees
+	Usage: atanD(x)</comment>
+		<translation>atanD</translation>
+	    </message>
+	    <message>
+		<source>log2</source>
+		<comment>Logarithm to the base 2
+	Usage: log2(x)</comment>
+		<translation>log2</translation>
+	    </message>
+	    <message>
+		<source>log10</source>
+		<comment>Logarithm to the base 10
+	Usage: log10(x)</comment>
+		<translation>log10</translation>
+	    </message>
+	    <message>
+		<source>log</source>
+		<comment>Logarithm to the base 10
+	Usage: log(x)</comment>
+		<translation>log</translation>
+	    </message>
+	    <message>
+		<source>ln</source>
+		<comment>Logarithm to base e (2.71828...)
+	Usage: ln(x)</comment>
+		<translation>ln</translation>
+	    </message>
+	    <message>
+		<source>exp</source>
+		<comment>E raised to the power of x
+	Usage: exp(x) where e = 2.718</comment>
+		<translation>exp</translation>
+	    </message>
+	    <message>
+		<source>sqrt</source>
+		<comment>Square root of a value
+	Usage: sqrt(x)</comment>
+		<translation>sqrt</translation>
+	    </message>
+	    <message>
+		<source>sign</source>
+		<comment>Sign function -1 if x&lt;0; 1 if x&gt;0
+	Usage: sign(x)</comment>
+		<translation>sign</translation>
+	    </message>
+	    <message>
+		<source>rint</source>
+		<comment>Round to nearest integer
+	Usage: rint(float x)</comment>
+		<translation>rint</translation>
+	    </message>
+	    <message>
+		<source>abs</source>
+		<comment>Absolute value
+	Usage: abs(x)</comment>
+		<translation>abs</translation>
+	    </message>
+	    <message>
+		<source>min</source>
+		<comment>Min of all arguments
+	Usage: min(arg 1; arg 2; ... arg n)</comment>
+		<translation>min</translation>
+	    </message>
+	    <message>
+		<source>max</source>
+		<comment>Max of all arguments
+	Usage: max(arg 1; arg 2; ... arg n)</comment>
+		<translation>max</translation>
+	    </message>
+	    <message>
+		<source>sum</source>
+		<comment>Sum of all arguments
+	Usage: sum(arg 1; arg 2; ... arg n)</comment>
+		<translation>sum</translation>
+	    </message>
+	    <message>
+		<source>avg</source>
+		<comment>Mean value of all arguments
+	Usage: avg(arg 1; arg 2; ... arg n)</comment>
+		<translation>avg</translation>
+	    </message>
+	    <message>
+		<source>fmod</source>
+		<comment>Returns the floating-point remainder of x/y (rounded towards zero)
+	Usage: fmod(x; y)</comment>
+		<translation>fmod</translation>
+	    </message>
+	    <message>
+		<source>M_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>M_</translation>
+	    </message>
+	    <message>
+		<source>Variable_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>Variab_</translation>
+	    </message>
+	    <message>
+		<source>Line_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>Linie_</translation>
+	    </message>
+	    <message>
+		<source>AngleLine_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>Winkellinie_</translation>
+	    </message>
+	    <message>
+		<source>Arc_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>Bogen_</translation>
+	    </message>
+	    <message>
+		<source>ElArc_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>ElBogen_</translation>
+	    </message>
+	    <message>
+		<source>Spl_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>Spl_</translation>
+	    </message>
+	    <message>
+		<source>RadiusArc_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>RadiusBogen_</translation>
+	    </message>
+	    <message>
+		<source>Radius1ElArc_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>Radius1ElBogen_</translation>
+	    </message>
+	    <message>
+		<source>Radius2ElArc_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>Radius2ElBogen_</translation>
+	    </message>
+	    <message>
+		<source>Angle1Arc_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>Winkel1Bogen_</translation>
+	    </message>
+	    <message>
+		<source>Angle2Arc_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>Winkel2Bogen_</translation>
+	    </message>
+	    <message>
+		<source>Angle1ElArc_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>Winkel1ElBogen_</translation>
+	    </message>
+	    <message>
+		<source>Angle2ElArc_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>Winkel2ElBogen_</translation>
+	    </message>
+	    <message>
+		<source>Angle1Spl_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>Winkel1Spl_</translation>
+	    </message>
+	    <message>
+		<source>Angle2Spl_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>Winkel2Spl_</translation>
+	    </message>
+	    <message>
+		<source>Seg_</source>
+		<comment>Segment. Leave the _ symbol in translation</comment>
+		<translation>Seg_</translation>
+	    </message>
+	    <message>
+		<source>C1LengthSpl_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>C1LängeSpl_</translation>
+	    </message>
+	    <message>
+		<source>C2LengthSpl_</source>
+		<comment>Leave the _ symbol in translation</comment>
+		<translation>C2LängeSpl_</translation>
+	    </message>
+<<<<<<< HEAD
     <message>
         <source>degTorad</source>
         <comment>Converts degrees to radians

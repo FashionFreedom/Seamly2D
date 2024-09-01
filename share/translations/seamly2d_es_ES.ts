@@ -174,13 +174,6 @@
     </message>
 </context>
 <context>
-    <name>AddImage</name>
-    <message>
-        <source>add image</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>AddPiece</name>
     <message>
         <source>add piece</source>
@@ -4209,6 +4202,14 @@ for writing</source>
 para la escritura</translation>
     </message>
     <message>
+        <source>Unable to get exclusive access to file
+%1
+Possibly the file is already being downloaded.</source>
+        <translation>No se puede obtener acceso exclusivo al archivo
+%1
+Posiblemente el archivo ya está siendo descargado.</translation>
+    </message>
+    <message>
         <source>File download failed: %1.</source>
         <translation>Error al descargar el archivo: %1.</translation>
     </message>
@@ -4872,12 +4873,28 @@ Possibly the file is already being downloaded.</source>
         <translation>El archivo puede estar dañado...</translation>
     </message>
     <message>
+        <source>File may be corrupted or empty...</source>
+        <translation>El archivo puede estar dañado o vacío...</translation>
+    </message>
+    <message>
         <source>Confirm deletion</source>
         <translation>Confirmar la eliminación</translation>
     </message>
     <message>
         <source>Do you really want to delete?</source>
         <translation>¿Realmente quiere eliminarlo?</translation>
+    </message>
+    <message>
+        <source>Images will not be saved</source>
+        <translation>Las imágenes no se guardarán</translation>
+    </message>
+    <message>
+        <source>Please note that the images can not be saved and that they are not affected by the undo and redo functions in the current version of the software.
+
+You may want to take a screenshot of the image properties dialog before closing the software to be able to recreate identically the image when opening the software again.</source>
+        <translation>Tenga en cuenta que las imágenes no se pueden guardar y que no se ven afectadas por las funciones de deshacer y rehacer de la versión actual del software.
+
+Es posible que desee tomar una captura de pantalla del cuadro de diálogo de propiedades de la imagen antes de cerrar el software para poder recrear idénticamente la imagen al abrir de nuevo el software.</translation>
     </message>
 </context>
 <context>
@@ -5207,6 +5224,14 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
     <message>
         <source>Descending area</source>
         <translation>Área descendente</translation>
+    </message>
+    <message>
+        <source>Margins go beyond printing.
+
+Apply settings anyway?</source>
+        <translation>Los márgenes van más allá de la impresión.
+
+¿Aplicar ajustes de todos modos?</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -10354,6 +10379,20 @@ actualización:</translation>
         <translation>Separador decimal:</translation>
     </message>
     <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation>Selecciona el carácter separador decimal a utilizar.
+Si está marcada, se utiliza el separador de la configuración regional del usuario.
+Si no se selecciona, se utiliza el punto.</translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation>Si esta opción está seleccionada, no se mostrará la ventana de bienvenida.
+Puede cambiar esta configuración en las preferencias de SeamlyMe.</translation>
+    </message>
+    <message>
         <source>GUI language:</source>
         <translation>GUI Idioma:</translation>
     </message>
@@ -10416,6 +10455,12 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Separador decimal:</translation>
     </message>
     <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the Seamly2D preferences.</source>
+        <translation>Si esta opción está seleccionada, no se mostrará la ventana de bienvenida.
+Puede cambiar esta configuración en las preferencias de Seamly2D.</translation>
+    </message>
+    <message>
         <source>GUI language:</source>
         <translation>GUI Idioma:</translation>
     </message>
@@ -10446,6 +10491,14 @@ You can change this setting in the SeamlyMe preferences.</source>
     <message>
         <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
         <translation>Elija las unidades, el separador decimal, el idioma y el sonido de selección que prefiera. (Puede cambiarlos más adelante.)</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation>Selecciona el carácter separador decimal a utilizar.
+Si está marcada, se utiliza el separador de la configuración regional del usuario.
+Si no se selecciona, se utiliza el punto.</translation>
     </message>
     <message>
         <source>Sound:</source>
@@ -13028,10 +13081,6 @@ load in SeamlyME as usual.
     <message>
         <source>Error creating or updating union pieces</source>
         <translation>Error al crear o actualizar la unión de piezas</translation>
-    </message>
-    <message>
-        <source>Image_name</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

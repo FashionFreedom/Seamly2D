@@ -220,7 +220,6 @@ MainWindow::MainWindow(QWidget *parent)
         connect(doc, &VPattern::patternChanged,  this, &MainWindow::patternChangesWereSaved);
         connect(doc, &VPattern::UndoCommand,     this, &MainWindow::fullParseFile);
         connect(doc, &VPattern::setGuiEnabled,   this, &MainWindow::setGuiEnabled);
-        connect(doc, &VPattern::setStatusMessage, this, &MainWindow::setStatusMessage);
 
         // After a pattern is parsed show draft block scene if any draft blocks exist
         // AND the View->Draft menu item is checked.
@@ -1739,7 +1738,7 @@ void MainWindow::handleImageTool()
     ui->draft_ToolBox->setCurrentWidget(ui->backgroundImage_Page);
     ui->importImage_ToolButton->setChecked(true);
 
-    QString filename = getImageFilename(this);
+    QString filename = getImageFilename();
 
     if(!filename.isEmpty())
     {
@@ -1751,7 +1750,6 @@ void MainWindow::handleImageTool()
             if(image_tool->creationWasSuccessful)
             {
                 connect(image_tool, &ImageTool::setStatusMessage, this, &MainWindow::setStatusMessage);
-                image_tool->addToFile();
             }
             else
             {
@@ -1767,6 +1765,34 @@ void MainWindow::handleImageTool()
 
     ui->importImage_ToolButton->setChecked(false);
 }
+
+
+//---------------------------------------------------------------------------------------------------------------------
+QString MainWindow::getImageFilename()
+{
+    const QString filter = tr("Images") + QLatin1String(" (*.bmp *.jpg *.jpeg *.png *.svg *.tf);;") +
+                           "BMP" + QLatin1String(" (*.bmp);;") +
+                           "JPG" + QLatin1String(" (*.jpg);;") +
+                           "JPEG" + QLatin1String(" (*.jpeg);;") +
+                           "PNG" + QLatin1String(" (*.png);;") +
+                           "SVG" + QLatin1String(" (*.svg);;") +
+                           "TIF" + QLatin1String(" (*.tf)");
+
+    const QString path = qApp->Seamly2DSettings()->getImageFilePath();
+
+    bool usedNotExistedDir = false;
+    QDir directory(path);
+    if (!directory.exists())
+    {
+        usedNotExistedDir = directory.mkpath(".");
+    }
+
+    const QString filename = QFileDialog::getOpenFileName(this, tr("Open Image File"), path, filter, nullptr,
+                                                          QFileDialog::DontUseNativeDialog);
+
+    return filename;
+}
+
 
 //Pieces
 //---------------------------------------------------------------------------------------------------------------------

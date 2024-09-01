@@ -30,14 +30,10 @@
 
 #include <QObject>
 #include <QString>
-#include <QDomElement>
 
 #include "../vmisc/def.h"
 #include "../ifc/xml/vabstractpattern.h"
 #include "vmaingraphicsscene.h"
-
-QString          getImageFilename(QWidget *parent);
-
 
 class ImageTool : public QObject
 {
@@ -52,8 +48,6 @@ public:
     DraftImage  image;
     ImageItem*  imageItem;
 
-    void             addToFile();
-
 signals:
     void             setStatusMessage(QString message);
 
@@ -62,14 +56,13 @@ protected slots:
     void        handleImageSelected(quint32 id);
 
 private:
+    static bool m_firstImportImage;
+
     VAbstractPattern    *m_doc;
     VMainGraphicsScene  *m_draftScene;
-    QDomElement         m_oldDomElement;
 
     void        addImage();
-
-    void             saveOptions(QDomElement &tag);
-    void             saveChanges();
+    void        InfoUnsavedImages();
 };
 
 #endif // IMAGE_TOOL_H

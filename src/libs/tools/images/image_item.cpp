@@ -36,7 +36,6 @@
 
 #include <QColor>
 #include <QEvent>
-#include <QImageReader>
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsView>
@@ -82,17 +81,6 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
 {
     initializeItem();
 
-    QImageReader imageReader(m_image.filename);
-    m_pixmap = QPixmap::fromImageReader(&imageReader);
-    m_pixmapWidth = m_pixmap.width();
-    m_pixmapHeight = m_pixmap.height();
-
-    if (m_image.width == 0 || m_image.height == 0)
-    {
-        m_image.width  = m_pixmapWidth;
-        m_image.height = m_pixmapHeight;
-    }
-
     m_boundingRect = QRectF(m_image.xPos - m_image.xOrigin, m_image.yPos - m_image.yOrigin, m_image.width, m_image.height);
     m_handleRect   = m_boundingRect.adjusted(HANDLE_SIZE/2, HANDLE_SIZE/2, -HANDLE_SIZE/2, -HANDLE_SIZE/2);
     m_origin = m_boundingRect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
@@ -100,10 +88,10 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
 
     if (m_image.order == 0)
     {
-        qint32   minZValue = maxImageZvalue+1;
+        qreal   minZValue = maxImageZvalue+1;
         foreach (ImageItem *item, m_doc->getBackgroundImageMap().values())
         {
-            minZValue = qMin(minZValue, item->m_image.order);
+                minZValue = qMin(minZValue, item->m_image.order);
         }
         m_image.order = minZValue-1;
         moveToTop();
@@ -116,8 +104,7 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
     m_resizeHandles->setParentRotation(m_image.rotation);
     m_resizeHandles->parentIsLocked(m_image.locked);
     m_resizeHandles->setVisible(m_image.locked);
-    connect(m_resizeHandles, &ResizeHandlesItem::imageNeedsSave, this, [this]() {emit imageNeedsSave();});
-    connect(m_resizeHandles, &ResizeHandlesItem::sizeChangedFromHandles, this, &ImageItem::updateFromHandles);
+    connect(m_resizeHandles, &ResizeHandlesItem::sizeChanged, this, &ImageItem::updateFromHandles);
     connect(m_resizeHandles, &ResizeHandlesItem::setStatusMessage, this, [this](QString message) {emit setStatusMessage(message);});
 }
 
@@ -133,7 +120,7 @@ void ImageItem::setPixmap(const QPixmap &pixmap)
 {
     prepareGeometryChange();
 
-    m_pixmap = pixmap;
+    m_image.pixmap = pixmap;
 
     m_pixmapWidth  = pixmap.width();
     m_pixmapHeight = pixmap.height();
@@ -185,6 +172,8 @@ void  ImageItem::updateImage()
     setLock(m_image.locked);
 
     setZValue(m_image.order);
+
+    emit imageUpdated(m_image);
 }
 
 void ImageItem::setLock(bool checked)
@@ -230,7 +219,7 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     }
 
     painter->setRenderHint(QPainter::SmoothPixmapTransform, (m_transformationMode == Qt::SmoothTransformation));
-    painter->drawPixmap(m_boundingRect.x(), m_boundingRect.y(), m_image.width, m_image.height, m_pixmap);
+    painter->drawPixmap(m_boundingRect.x(), m_boundingRect.y(), m_image.width, m_image.height, m_image.pixmap);
 
     if (m_origin != m_boundingRect.topLeft())
     {
@@ -397,20 +386,18 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
     if (selectedAction == actionProperties)
     {
-        ImageDialog *dialog = new ImageDialog(m_image, m_minDimension, m_maxDimension, m_pixmapWidth, m_pixmapHeight, qApp->getMainWindow());
+        ImageDialog *dialog = new ImageDialog(m_image, m_minDimension, m_maxDimension, qApp->getMainWindow());
         connect(dialog, &ImageDialog::applyClicked, this, &ImageItem::updateImageAndHandles);
 
         if (dialog->exec() == QDialog::Accepted)
         {
             updateImageAndHandles(dialog->getImage());
-            emit imageNeedsSave();
         }
     }
     else if (selectedAction == actionLock)
     {
         m_image.locked = !m_image.locked;
         updateImageAndHandles(m_image);
-        emit imageNeedsSave();
     }
     // else if (selectedAction == actionShow)
     // {
@@ -436,22 +423,18 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     else if (selectedAction == actionMoveTop)
     {
         moveToTop();
-        emit imageNeedsSave();
     }
     else if (selectedAction == actionMoveUp)
     {
         moveUp();
-        emit imageNeedsSave();
     }
     else if (selectedAction == actionMoveDn)
     {
         moveDown();
-        emit imageNeedsSave();
     }
     else if (selectedAction == actionMoveBottom)
     {
         moveToBottom();
-        emit imageNeedsSave();
     }
 
     emit showContextMenu(event);
@@ -516,8 +499,6 @@ void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
     if (flags() & QGraphicsItem::ItemIsMovable && event->buttons() & Qt::LeftButton)
     {
-        m_imageWasMoved = true;
-
         m_image.xPos = mapToScene(event->pos() - m_offset).x();
         m_image.yPos = mapToScene(event->pos() - m_offset).y();
 
@@ -530,11 +511,6 @@ void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 void ImageItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
-    if(m_imageWasMoved){
-        m_imageWasMoved = false;
-        emit imageNeedsSave();
-    }
-
     if (flags() & QGraphicsItem::ItemIsMovable)
     {
         if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
@@ -554,10 +530,10 @@ void ImageItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
         setFlag(QGraphicsItem::ItemIsMovable, true);
         SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
         m_resizeHandles->show();
-        emit imageNeedsSave();
     }
 
     m_mousePressed = false;
+
     QGraphicsItem::mouseReleaseEvent(event);
 }
 
@@ -567,18 +543,18 @@ void ImageItem::keyReleaseEvent(QKeyEvent *event)
     switch (event->key())
     {
         case Qt::Key_Delete:
-            if (!m_image.locked && isSelected())
-            {
-                emit deleteImage(m_image.id);
-            }
+        if (!m_image.locked && isSelected())
+        {
+            emit deleteImage(m_image.id);
+        }
         case Qt::Key_Escape:
-            if (m_selectNewOrigin)
-            {
-                m_selectNewOrigin = false;
-                setFlag(QGraphicsItem::ItemIsMovable, true);
-                SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
-                m_resizeHandles->show();
-            }
+        if (m_selectNewOrigin)
+        {
+            m_selectNewOrigin = false;
+            setFlag(QGraphicsItem::ItemIsMovable, true);
+            SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
+            m_resizeHandles->show();
+        }
         default:
             break;
     }
@@ -641,7 +617,7 @@ void ImageItem::deleteImageItem()
 
 void ImageItem::moveToBottom()
 {
-    qint32   minZValue = m_image.order;
+    qreal   minZValue = m_image.order;
     foreach (ImageItem *item, m_doc->getBackgroundImageMap().values())
     {
         if (item != this && item->m_image.order < m_image.order)
@@ -649,7 +625,6 @@ void ImageItem::moveToBottom()
             minZValue = qMin(minZValue, item->m_image.order);
             item->m_image.order++;
             item->updateImage();
-            emit item->imageNeedsSave();
         }
     }
     m_image.order = minZValue;
@@ -665,7 +640,6 @@ void ImageItem::moveToTop()
         {
             item->m_image.order--;
             item->updateImage();
-            emit item->imageNeedsSave();
         }
     }
     m_image.order = maxImageZvalue;
@@ -685,7 +659,6 @@ void ImageItem::moveUp()
         {
             item->m_image.order--;
             item->updateImage();
-            emit item->imageNeedsSave();
         }
     }
     m_image.order ++;
@@ -706,7 +679,6 @@ void ImageItem::moveDown()
         {
             item->m_image.order++;
             item->updateImage();
-            emit item->imageNeedsSave();
         }
     }
     m_image.order --;

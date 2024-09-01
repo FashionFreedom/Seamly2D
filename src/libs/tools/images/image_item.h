@@ -64,7 +64,7 @@ public:
     virtual void     paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                            QWidget *widget = nullptr) override;
 
-    static constexpr qint32      maxImageZvalue = -100;
+    static constexpr qreal      maxImageZvalue = -100;
 
     void             moveToBottom();
     void             moveToTop();
@@ -86,7 +86,7 @@ public:
     void             deleteImageItem();
 
 signals:
-    void             imageNeedsSave();
+    void             imageUpdated(DraftImage image);
     void             showContextMenu(QGraphicsSceneContextMenuEvent *event);
     void             deleteImage(quint32 id);
     void             imageSelected(quint32 id);
@@ -119,14 +119,12 @@ private:
     SelectionType      m_selectionType;
     bool               m_transformationMode;
     DraftImage         m_image;
-    QPixmap            m_pixmap;
     qreal              m_pixmapWidth;
     qreal              m_pixmapHeight;
     bool               m_selectable;
     qreal              m_minDimension;
     qreal              m_maxDimension;
     bool               m_selectNewOrigin;
-    bool               m_imageWasMoved;
 
     void               initializeItem();
     void               updateFromHandles(QRectF rect);

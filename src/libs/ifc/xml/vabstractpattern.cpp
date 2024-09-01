@@ -124,8 +124,7 @@ const QString VAbstractPattern::TagNodes                = QStringLiteral("nodes"
 const QString VAbstractPattern::TagNode                 = QStringLiteral("node");
 const QString VAbstractPattern::TagLine                 = QStringLiteral("line");
 
-const QString VAbstractPattern::TagDraftImages          = QStringLiteral("images");
-const QString VAbstractPattern::TagDraftImage           = QStringLiteral("image");
+const QString VAbstractPattern::TagDraftImages          = QStringLiteral("draftImages");
 const QString VAbstractPattern::AttrId                  = QStringLiteral("id");
 const QString VAbstractPattern::AttrFilename            = QStringLiteral("filename");
 const QString VAbstractPattern::AttrLocked              = QStringLiteral("locked");
@@ -135,15 +134,10 @@ const QString VAbstractPattern::AttrYPos                = QStringLiteral("yPos")
 const QString VAbstractPattern::AttrHeight              = QStringLiteral("height");
 const QString VAbstractPattern::AttrXScale              = QStringLiteral("xScale");
 const QString VAbstractPattern::AttrYScale              = QStringLiteral("yScale");
-const QString VAbstractPattern::AttrAspectRatio         = QStringLiteral("aspectRatio");
+const QString VAbstractPattern::AttrAspectLocked        = QStringLiteral("aspectLocked");
 const QString VAbstractPattern::AttrUnits               = QStringLiteral("units");
 const QString VAbstractPattern::AttrOpacity             = QStringLiteral("opacity");
 const QString VAbstractPattern::AttrOrder               = QStringLiteral("order");
-const QString VAbstractPattern::AttrSource              = QStringLiteral("src");
-const QString VAbstractPattern::AttrXOffset             = QStringLiteral("xOffset");
-const QString VAbstractPattern::AttrYOffset             = QStringLiteral("yOffset");
-const QString VAbstractPattern::AttrBasepoint           = QStringLiteral("basepoint");
-
 
 const QString VAbstractPattern::AttrName                = QStringLiteral("name");
 const QString VAbstractPattern::AttrVisible             = QStringLiteral("visible");
@@ -2228,25 +2222,6 @@ QDomElement VAbstractPattern::createGroups()
         }
 
         return groups;
-    }
-    return QDomElement();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-QDomElement VAbstractPattern::createDraftImages()
-{
-    QDomElement draftBlock;
-    if (getActiveDraftElement(draftBlock))
-    {
-        QDomElement backgroundImages = draftBlock.firstChildElement(TagDraftImages);
-
-        if (backgroundImages.isNull())
-        {
-            backgroundImages = createElement(TagDraftImages);
-            draftBlock.appendChild(backgroundImages);
-        }
-
-        return backgroundImages;
     }
     return QDomElement();
 }
