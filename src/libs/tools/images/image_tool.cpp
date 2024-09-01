@@ -47,12 +47,19 @@ Q_LOGGING_CATEGORY(vImageTool, "v.imageTool")
 //---------------------------------------------------------------------------------------------------------------------
 QString getImageFilename(QWidget *parent)
 {
-    const QString filter = QObject::tr("Images") + QLatin1String(" (*.bmp *.jpg *.png *.svg *.tf);;") +
+    const QString filter = QObject::tr("Images") + QLatin1String(" (*.bmp *.gif *.jpeg *.jpg *.pbm *.pgm *.png *.ppm *.svg *.tif *.xbm *.xpm);;") +
                            "BMP" + QLatin1String(" (*.bmp);;") +
+                           "GIF" + QLatin1String(" (*.gif);;") +
+                           "JPEG" + QLatin1String(" (*.jpeg);;") +
                            "JPG" + QLatin1String(" (*.jpg);;") +
+                           "PBM" + QLatin1String(" (*.pbm);;") +
+                           "PGM" + QLatin1String(" (*.pgm);;") +
                            "PNG" + QLatin1String(" (*.png);;") +
+                           "PPM" + QLatin1String(" (*.ppm);;") +
                            "SVG" + QLatin1String(" (*.svg);;") +
-                           "TIF" + QLatin1String(" (*.tf)");
+                           "TIF" + QLatin1String(" (*.tif);;") +
+                           "XBM" + QLatin1String(" (*.xbm);;") +
+                           "XPM" + QLatin1String(" (*.xpm)");
 
     const QString path = qApp->Seamly2DSettings()->getImageFilePath();
 
