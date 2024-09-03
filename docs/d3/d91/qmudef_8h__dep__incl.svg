@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 1198;
+var viewWidth = 1201;
 var viewHeight = 508;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,14 +54,14 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>src/libs/qmuparser/qmudef.h</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-504 1194,-504 1194,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-504 1197,-504 1197,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="290,-469.5 290,-499.5 397,-499.5 397,-469.5 290,-469.5"/>
-<text text-anchor="start" x="298" y="-487.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
-<text text-anchor="middle" x="343.5" y="-476.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmudef.h</text>
+<polygon fill="#bfbfbf" stroke="black" points="906,-469.5 906,-499.5 1013,-499.5 1013,-469.5 906,-469.5"/>
+<text text-anchor="start" x="914" y="-487.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
+<text text-anchor="middle" x="959.5" y="-476.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmudef.h</text>
 </a>
 </g>
 </g>
@@ -69,409 +69,409 @@ var sectionId = 'dynsection-1';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="../../df/d51/qmudef_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="119,-402.5 119,-432.5 226,-432.5 226,-402.5 119,-402.5"/>
-<text text-anchor="start" x="127" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
-<text text-anchor="middle" x="172.5" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmudef.cpp</text>
+<polygon fill="white" stroke="black" points="682,-402.5 682,-432.5 789,-432.5 789,-402.5 682,-402.5"/>
+<text text-anchor="start" x="690" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
+<text text-anchor="middle" x="735.5" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmudef.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M296.98,-465.82C269.5,-455.37 235.17,-442.32 209.53,-432.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="295.8,-469.11 306.4,-469.4 298.29,-462.57 295.8,-469.11"/>
+<path fill="none" stroke="midnightblue" d="M901.19,-466.58C864.81,-456.02 818.53,-442.59 784.13,-432.61"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="900.59,-470.05 911.17,-469.48 902.54,-463.33 900.59,-470.05"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="../../dd/da6/qmuparserbytecode_8h.html" target="_top" xlink:title="Definition of the parser bytecode class.">
-<polygon fill="white" stroke="black" points="326.5,-402.5 326.5,-432.5 452.5,-432.5 452.5,-402.5 326.5,-402.5"/>
-<text text-anchor="start" x="334.5" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
-<text text-anchor="middle" x="389.5" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparserbytecode.h</text>
+<g id="a_node3"><a xlink:href="../../d1/d4b/qmuparserbytecode_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="846,-335.5 846,-365.5 983,-365.5 983,-335.5 846,-335.5"/>
+<text text-anchor="start" x="854" y="-353.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
+<text text-anchor="middle" x="914.5" y="-342.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparserbytecode.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M359.31,-461.16C366.02,-451.68 373.63,-440.92 379.54,-432.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="356.4,-459.21 353.48,-469.4 362.12,-463.26 356.4,-459.21"/>
-</g>
-<!-- Node21 -->
-<g id="node21" class="node">
-<title>Node21</title>
-<g id="a_node21"><a xlink:href="../../df/dbf/qmuparsertest_8cpp.html" target="_top" xlink:title="This file contains the implementation of parser test cases.">
-<polygon fill="white" stroke="black" points="281,-134.5 281,-164.5 392,-164.5 392,-134.5 281,-134.5"/>
-<text text-anchor="start" x="289" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
-<text text-anchor="middle" x="336.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparsertest.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node21 -->
-<g id="edge30" class="edge">
-<title>Node1&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M317.73,-462.58C291.44,-438.73 254.5,-397.09 254.5,-351.5 254.5,-351.5 254.5,-351.5 254.5,-282.5 254.5,-245.31 253.68,-232.47 273.5,-201 282.99,-185.94 298.57,-173.39 311.86,-164.57"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="315.67,-465.43 325.49,-469.4 320.29,-460.17 315.67,-465.43"/>
-</g>
-<!-- Node22 -->
-<g id="node22" class="node">
-<title>Node22</title>
-<g id="a_node22"><a xlink:href="../../d0/d70/qmuparserbase_8cpp.html" target="_top" xlink:title="This file contains the basic implementation of the muparser engine.">
-<polygon fill="white" stroke="black" points="282.5,-268.5 282.5,-298.5 398.5,-298.5 398.5,-268.5 282.5,-268.5"/>
-<text text-anchor="start" x="290.5" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
-<text text-anchor="middle" x="340.5" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparserbase.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node22 -->
-<g id="edge28" class="edge">
-<title>Node1&#45;&gt;Node22</title>
-<path fill="none" stroke="midnightblue" d="M328.73,-460.47C324.19,-452.15 319.79,-442.47 317.5,-433 307.24,-390.67 308.26,-377.56 317.5,-335 320.32,-322.01 326.78,-308.35 332.14,-298.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="325.75,-462.32 333.8,-469.21 331.8,-458.8 325.75,-462.32"/>
-</g>
-<!-- Node23 -->
-<g id="node23" class="node">
-<title>Node23</title>
-<g id="a_node23"><a xlink:href="../../df/d10/qmuparsertokenreader_8cpp.html" target="_top" xlink:title="This file contains the parser token reader implementation.">
-<polygon fill="white" stroke="black" points="542.5,-268.5 542.5,-298.5 692.5,-298.5 692.5,-268.5 542.5,-268.5"/>
-<text text-anchor="start" x="550.5" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
-<text text-anchor="middle" x="617.5" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparsertokenreader.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node23 -->
-<g id="edge29" class="edge">
-<title>Node1&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M407.14,-472.57C466.88,-458.71 553.58,-428.62 598.5,-366 613.07,-345.69 616.64,-315.88 617.41,-298.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="406.06,-469.22 397.06,-474.81 407.58,-476.05 406.06,-469.22"/>
-</g>
-<!-- Node24 -->
-<g id="node24" class="node">
-<title>Node24</title>
-<g id="a_node24"><a xlink:href="../../d1/d4b/qmuparserbytecode_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="452,-335.5 452,-365.5 589,-365.5 589,-335.5 452,-335.5"/>
-<text text-anchor="start" x="460" y="-353.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
-<text text-anchor="middle" x="520.5" y="-342.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparserbytecode.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node24 -->
-<g id="edge27" class="edge">
-<title>Node1&#45;&gt;Node24</title>
-<path fill="none" stroke="midnightblue" d="M401.55,-465.83C421.84,-457.88 443.92,-447.05 461.5,-433 485.11,-414.13 503.75,-383.55 513.36,-365.7"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="400.2,-462.6 392.07,-469.4 402.67,-469.15 400.2,-462.6"/>
+<path fill="none" stroke="midnightblue" d="M946.13,-460.47C941.64,-452.04 936.91,-442.28 933.5,-433 925.08,-410.09 919.53,-382.15 916.71,-365.65"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="943.12,-462.27 951.01,-469.34 949.25,-458.9 943.12,-462.27"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="../../df/d18/qmuparserbase_8h.html" target="_top" xlink:title="This file contains the class definition of the qmuparser engine.">
-<polygon fill="white" stroke="black" points="327,-335.5 327,-365.5 434,-365.5 434,-335.5 327,-335.5"/>
-<text text-anchor="start" x="335" y="-353.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
-<text text-anchor="middle" x="380.5" y="-342.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparserbase.h</text>
+<g id="a_node4"><a xlink:href="../../d0/d70/qmuparserbase_8cpp.html" target="_top" xlink:title="This file contains the basic implementation of the muparser engine.">
+<polygon fill="white" stroke="black" points="739.5,-268.5 739.5,-298.5 855.5,-298.5 855.5,-268.5 739.5,-268.5"/>
+<text text-anchor="start" x="747.5" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
+<text text-anchor="middle" x="797.5" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparserbase.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node4 -->
+<!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
-<title>Node3&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M386.16,-392.4C384.91,-383.37 383.53,-373.41 382.45,-365.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="382.71,-392.97 387.55,-402.4 389.64,-392.01 382.71,-392.97"/>
-</g>
-<!-- Node3&#45;&gt;Node24 -->
-<g id="edge26" class="edge">
-<title>Node3&#45;&gt;Node24</title>
-<path fill="none" stroke="midnightblue" d="M427.08,-397.85C447.79,-387.58 473.09,-375.03 492.13,-365.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="425.33,-394.82 417.93,-402.4 428.44,-401.09 425.33,-394.82"/>
+<title>Node1&#45;&gt;Node4</title>
+<path fill="none" stroke="midnightblue" d="M932.94,-463C906.02,-441.19 864.46,-404.57 836.5,-366 820.85,-344.41 808.79,-315.55 802.45,-298.6"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="930.8,-465.76 940.8,-469.28 935.17,-460.3 930.8,-465.76"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d6/dc3/qmuparser_8h.html" target="_top" xlink:title="Definition of the standard floating point parser.">
-<polygon fill="white" stroke="black" points="417,-268.5 417,-298.5 524,-298.5 524,-268.5 417,-268.5"/>
-<text text-anchor="start" x="425" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
-<text text-anchor="middle" x="470.5" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparser.h</text>
+<g id="a_node5"><a xlink:href="../../dd/da6/qmuparserbytecode_8h.html" target="_top" xlink:title="Definition of the parser bytecode class.">
+<polygon fill="white" stroke="black" points="942.5,-402.5 942.5,-432.5 1068.5,-432.5 1068.5,-402.5 942.5,-402.5"/>
+<text text-anchor="start" x="950.5" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
+<text text-anchor="middle" x="1005.5" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparserbytecode.h</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node5 -->
+<!-- Node1&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
-<title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M408.26,-329.45C422.11,-319.45 438.52,-307.6 451.01,-298.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="406.09,-326.7 400.03,-335.4 410.18,-332.38 406.09,-326.7"/>
+<title>Node1&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M975.31,-461.16C982.02,-451.68 989.63,-440.92 995.54,-432.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="972.4,-459.21 969.48,-469.4 978.12,-463.26 972.4,-459.21"/>
 </g>
-<!-- Node4&#45;&gt;Node22 -->
-<g id="edge24" class="edge">
-<title>Node4&#45;&gt;Node22</title>
-<path fill="none" stroke="midnightblue" d="M366.57,-326.87C360.78,-317.46 354.24,-306.83 349.16,-298.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="363.6,-328.71 371.82,-335.4 369.56,-325.05 363.6,-328.71"/>
+<!-- Node23 -->
+<g id="node23" class="node">
+<title>Node23</title>
+<g id="a_node23"><a xlink:href="../../df/dbf/qmuparsertest_8cpp.html" target="_top" xlink:title="This file contains the implementation of parser test cases.">
+<polygon fill="white" stroke="black" points="969,-134.5 969,-164.5 1080,-164.5 1080,-134.5 969,-134.5"/>
+<text text-anchor="start" x="977" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
+<text text-anchor="middle" x="1024.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparsertest.cpp</text>
+</a>
 </g>
-<!-- Node4&#45;&gt;Node23 -->
-<g id="edge25" class="edge">
-<title>Node4&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M441.7,-332.71C480.27,-322.14 529.5,-308.63 566.05,-298.61"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="440.35,-329.46 431.63,-335.48 442.2,-336.21 440.35,-329.46"/>
+</g>
+<!-- Node1&#45;&gt;Node23 -->
+<g id="edge30" class="edge">
+<title>Node1&#45;&gt;Node23</title>
+<path fill="none" stroke="midnightblue" d="M1023.2,-472.85C1087.54,-458.01 1177.5,-424.26 1177.5,-351.5 1177.5,-351.5 1177.5,-351.5 1177.5,-282.5 1177.5,-244.74 1179.02,-228.83 1153.5,-201 1134.4,-180.17 1105.66,-167.82 1080.15,-160.56"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1022.12,-469.5 1013.11,-475.07 1023.63,-476.34 1022.12,-469.5"/>
+</g>
+<!-- Node24 -->
+<g id="node24" class="node">
+<title>Node24</title>
+<g id="a_node24"><a xlink:href="../../df/d10/qmuparsertokenreader_8cpp.html" target="_top" xlink:title="This file contains the parser token reader implementation.">
+<polygon fill="white" stroke="black" points="999.5,-268.5 999.5,-298.5 1149.5,-298.5 1149.5,-268.5 999.5,-268.5"/>
+<text text-anchor="start" x="1007.5" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
+<text text-anchor="middle" x="1074.5" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparsertokenreader.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node24 -->
+<g id="edge29" class="edge">
+<title>Node1&#45;&gt;Node24</title>
+<path fill="none" stroke="midnightblue" d="M1020.71,-465.85C1040.4,-458.06 1061.29,-447.33 1077.5,-433 1112.62,-401.95 1132.44,-379.09 1116.5,-335 1111.38,-320.84 1100.38,-307.86 1090.91,-298.6"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1019.29,-462.65 1011.17,-469.45 1021.76,-469.2 1019.29,-462.65"/>
+</g>
+<!-- Node5&#45;&gt;Node3 -->
+<g id="edge28" class="edge">
+<title>Node5&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M977.43,-396.45C963.43,-386.45 946.84,-374.6 934.21,-365.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="975.58,-399.43 985.75,-402.4 979.65,-393.74 975.58,-399.43"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="../../d7/da3/qmuformulabase_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="674.5,-201.5 674.5,-231.5 786.5,-231.5 786.5,-201.5 674.5,-201.5"/>
-<text text-anchor="start" x="682.5" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
-<text text-anchor="middle" x="730.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuformulabase.h</text>
+<g id="a_node6"><a xlink:href="../../df/d18/qmuparserbase_8h.html" target="_top" xlink:title="This file contains the class definition of the qmuparser engine.">
+<polygon fill="white" stroke="black" points="1001,-335.5 1001,-365.5 1108,-365.5 1108,-335.5 1001,-335.5"/>
+<text text-anchor="start" x="1009" y="-353.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
+<text text-anchor="middle" x="1054.5" y="-342.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparserbase.h</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node5&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M533.83,-266.67C576.76,-255.94 632.98,-241.88 674.32,-231.55"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="532.91,-263.29 524.06,-269.11 534.61,-270.08 532.91,-263.29"/>
+<path fill="none" stroke="midnightblue" d="M1022.34,-394.16C1029.49,-384.68 1037.6,-373.92 1043.89,-365.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1019.36,-392.3 1016.13,-402.4 1024.95,-396.52 1019.36,-392.3"/>
 </g>
-<!-- Node19 -->
-<g id="node19" class="node">
-<title>Node19</title>
-<g id="a_node19"><a xlink:href="../../da/d59/qmuparser_8cpp.html" target="_top" xlink:title="Implementation of the standard floating point QmuParser.">
-<polygon fill="white" stroke="black" points="283,-201.5 283,-231.5 390,-231.5 390,-201.5 283,-201.5"/>
-<text text-anchor="start" x="291" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
-<text text-anchor="middle" x="336.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparser.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node5&#45;&gt;Node19 -->
-<g id="edge20" class="edge">
-<title>Node5&#45;&gt;Node19</title>
-<path fill="none" stroke="midnightblue" d="M432.35,-263.99C411.11,-253.69 385.09,-241.07 365.52,-231.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="430.9,-267.18 441.42,-268.4 433.95,-260.88 430.9,-267.18"/>
-</g>
-<!-- Node20 -->
-<g id="node20" class="node">
-<title>Node20</title>
-<g id="a_node20"><a xlink:href="../../db/dfa/qmuparsertest_8h.html" target="_top" xlink:title="This file contains the parser test class.">
-<polygon fill="white" stroke="black" points="447,-201.5 447,-231.5 554,-231.5 554,-201.5 447,-201.5"/>
-<text text-anchor="start" x="455" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
-<text text-anchor="middle" x="500.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparsertest.h</text>
-</a>
-</g>
-</g>
-<!-- Node5&#45;&gt;Node20 -->
-<g id="edge21" class="edge">
-<title>Node5&#45;&gt;Node20</title>
-<path fill="none" stroke="midnightblue" d="M481.22,-259.28C485.49,-250.02 490.27,-239.66 494,-231.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="478.02,-257.85 477.01,-268.4 484.38,-260.78 478.02,-257.85"/>
-</g>
-<!-- Node5&#45;&gt;Node21 -->
-<g id="edge23" class="edge">
-<title>Node5&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M452.45,-260.14C438.41,-243.24 418.09,-219.82 398.5,-201 384.78,-187.82 367.99,-174.29 355.35,-164.55"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="450.12,-262.82 459.18,-268.32 455.53,-258.37 450.12,-262.82"/>
+<!-- Node6&#45;&gt;Node4 -->
+<g id="edge26" class="edge">
+<title>Node6&#45;&gt;Node4</title>
+<path fill="none" stroke="midnightblue" d="M991.03,-333.45C948.78,-322.76 893.78,-308.85 853.21,-298.59"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="990.38,-336.89 1000.94,-335.95 992.1,-330.11 990.38,-336.89"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d4/d67/qmuformulabase_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="904,-134.5 904,-164.5 1027,-164.5 1027,-134.5 904,-134.5"/>
-<text text-anchor="start" x="912" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
-<text text-anchor="middle" x="965.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuformulabase.cpp</text>
+<g id="a_node7"><a xlink:href="../../d6/dc3/qmuparser_8h.html" target="_top" xlink:title="Definition of the standard floating point parser.">
+<polygon fill="white" stroke="black" points="874,-268.5 874,-298.5 981,-298.5 981,-268.5 874,-268.5"/>
+<text text-anchor="start" x="882" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
+<text text-anchor="middle" x="927.5" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparser.h</text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node7 -->
 <g id="edge6" class="edge">
 <title>Node6&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M791.18,-198.71C829.43,-188.14 878.24,-174.63 914.48,-164.61"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="789.91,-195.44 781.2,-201.48 791.77,-202.18 789.91,-195.44"/>
+<path fill="none" stroke="midnightblue" d="M1017.8,-330.71C997.77,-320.46 973.38,-307.98 955,-298.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1016.45,-333.96 1026.94,-335.4 1019.64,-327.72 1016.45,-333.96"/>
+</g>
+<!-- Node6&#45;&gt;Node24 -->
+<g id="edge27" class="edge">
+<title>Node6&#45;&gt;Node24</title>
+<path fill="none" stroke="midnightblue" d="M1061.82,-325.7C1064.63,-316.59 1067.73,-306.49 1070.17,-298.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1058.44,-324.81 1058.84,-335.4 1065.13,-326.87 1058.44,-324.81"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="../../db/d75/qmutokenparser_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="779,-134.5 779,-164.5 886,-164.5 886,-134.5 779,-134.5"/>
-<text text-anchor="start" x="787" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
-<text text-anchor="middle" x="832.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmutokenparser.h</text>
+<g id="a_node8"><a xlink:href="../../da/d59/qmuparser_8cpp.html" target="_top" xlink:title="Implementation of the standard floating point QmuParser.">
+<polygon fill="white" stroke="black" points="1038,-201.5 1038,-231.5 1145,-231.5 1145,-201.5 1038,-201.5"/>
+<text text-anchor="start" x="1046" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
+<text text-anchor="middle" x="1091.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparser.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node8 -->
+<!-- Node7&#45;&gt;Node8 -->
 <g id="edge7" class="edge">
-<title>Node6&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M761.08,-196.02C776.95,-185.9 795.98,-173.77 810.41,-164.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="759.18,-193.07 752.63,-201.4 762.95,-198.97 759.18,-193.07"/>
-</g>
-<!-- Node14 -->
-<g id="node14" class="node">
-<title>Node14</title>
-<g id="a_node14"><a xlink:href="../../db/db8/vpatterndb_2calculator_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="410,-134.5 410,-164.5 517,-164.5 517,-134.5 410,-134.5"/>
-<text text-anchor="start" x="418" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpatterndb</text>
-<text text-anchor="middle" x="463.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/calculator.h</text>
-</a>
-</g>
-</g>
-<!-- Node6&#45;&gt;Node14 -->
-<g id="edge14" class="edge">
-<title>Node6&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M664.48,-199.43C619.2,-188.4 559.88,-173.96 517.44,-163.63"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="663.66,-202.83 674.2,-201.79 665.31,-196.03 663.66,-202.83"/>
+<title>Node7&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M972.46,-264.68C998.76,-254.26 1031.5,-241.28 1055.98,-231.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="971.09,-261.46 963.09,-268.4 973.67,-267.97 971.09,-261.46"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="../../dd/d20/qmutokenparser_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1071,-67.5 1071,-97.5 1190,-97.5 1190,-67.5 1071,-67.5"/>
-<text text-anchor="start" x="1079" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
-<text text-anchor="middle" x="1130.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmutokenparser.cpp</text>
+<g id="a_node9"><a xlink:href="../../d7/da3/qmuformulabase_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="729.5,-201.5 729.5,-231.5 841.5,-231.5 841.5,-201.5 729.5,-201.5"/>
+<text text-anchor="start" x="737.5" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
+<text text-anchor="middle" x="785.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuformulabase.h</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node9 -->
+<!-- Node7&#45;&gt;Node9 -->
 <g id="edge8" class="edge">
-<title>Node8&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M896.18,-133.87C961.57,-119.36 1025.36,-105.71 1070.56,-96.13"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="895.11,-130.52 886.1,-136.11 896.63,-137.35 895.11,-130.52"/>
+<title>Node7&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M887.37,-264.13C864.81,-253.8 837.08,-241.11 816.25,-231.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="886.14,-267.42 896.69,-268.4 889.05,-261.05 886.14,-267.42"/>
+</g>
+<!-- Node22 -->
+<g id="node22" class="node">
+<title>Node22</title>
+<g id="a_node22"><a xlink:href="../../db/dfa/qmuparsertest_8h.html" target="_top" xlink:title="This file contains the parser test class.">
+<polygon fill="white" stroke="black" points="874,-201.5 874,-231.5 981,-231.5 981,-201.5 874,-201.5"/>
+<text text-anchor="start" x="882" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
+<text text-anchor="middle" x="927.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuparsertest.h</text>
+</a>
+</g>
+</g>
+<!-- Node7&#45;&gt;Node22 -->
+<g id="edge23" class="edge">
+<title>Node7&#45;&gt;Node22</title>
+<path fill="none" stroke="midnightblue" d="M927.5,-258.11C927.5,-249.15 927.5,-239.32 927.5,-231.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="924,-258.4 927.5,-268.4 931,-258.4 924,-258.4"/>
+</g>
+<!-- Node7&#45;&gt;Node23 -->
+<g id="edge25" class="edge">
+<title>Node7&#45;&gt;Node23</title>
+<path fill="none" stroke="midnightblue" d="M958.05,-262.32C969.03,-253.94 980.84,-243.48 989.5,-232 1005.36,-210.98 1015.65,-181.68 1020.73,-164.54"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="955.87,-259.58 949.87,-268.31 960.01,-265.22 955.87,-259.58"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="../../d9/de3/measurements_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="570.5,-73 570.5,-92 760.5,-92 760.5,-73 570.5,-73"/>
-<text text-anchor="middle" x="665.5" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vformat/measurements.cpp</text>
+<g id="a_node10"><a xlink:href="../../d4/d67/qmuformulabase_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="828,-134.5 828,-164.5 951,-164.5 951,-134.5 828,-134.5"/>
+<text text-anchor="start" x="836" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
+<text text-anchor="middle" x="889.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmuformulabase.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node10 -->
+<!-- Node9&#45;&gt;Node10 -->
 <g id="edge9" class="edge">
-<title>Node8&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M786.57,-130.62C754.24,-118.04 712.43,-101.77 687.36,-92.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="785.67,-134.03 796.26,-134.4 788.21,-127.51 785.67,-134.03"/>
+<title>Node9&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M816.68,-196.02C832.86,-185.9 852.27,-173.77 866.98,-164.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="814.69,-193.13 808.07,-201.4 818.4,-199.06 814.69,-193.13"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="../../d5/d81/vsplinepoint_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="820,-0.5 820,-30.5 927,-30.5 927,-0.5 820,-0.5"/>
-<text text-anchor="start" x="828" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vgeometry</text>
-<text text-anchor="middle" x="873.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vsplinepoint.cpp</text>
+<g id="a_node11"><a xlink:href="../../db/d75/qmutokenparser_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="235,-134.5 235,-164.5 342,-164.5 342,-134.5 235,-134.5"/>
+<text text-anchor="start" x="243" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
+<text text-anchor="middle" x="288.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmutokenparser.h</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node11 -->
+<!-- Node9&#45;&gt;Node11 -->
 <g id="edge10" class="edge">
-<title>Node8&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M868.07,-128.69C878.93,-120.69 889.55,-110.39 895.5,-98 906.22,-75.67 893.2,-47.31 883.11,-30.6"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="866.07,-125.82 859.8,-134.36 870.03,-131.59 866.07,-125.82"/>
-</g>
-<!-- Node12 -->
-<g id="node12" class="node">
-<title>Node12</title>
-<g id="a_node12"><a xlink:href="../../da/db2/vsplinepoint__p_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="779,-67.5 779,-97.5 886,-97.5 886,-67.5 779,-67.5"/>
-<text text-anchor="start" x="787" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vgeometry</text>
-<text text-anchor="middle" x="832.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vsplinepoint_p.h</text>
-</a>
-</g>
-</g>
-<!-- Node8&#45;&gt;Node12 -->
-<g id="edge11" class="edge">
-<title>Node8&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M832.5,-124.11C832.5,-115.15 832.5,-105.32 832.5,-97.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="829,-124.4 832.5,-134.4 836,-124.4 829,-124.4"/>
-</g>
-<!-- Node13 -->
-<g id="node13" class="node">
-<title>Node13</title>
-<g id="a_node13"><a xlink:href="../../de/d3e/vtranslatevars_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="942.5,-67.5 942.5,-97.5 1052.5,-97.5 1052.5,-67.5 942.5,-67.5"/>
-<text text-anchor="start" x="950.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpatterndb</text>
-<text text-anchor="middle" x="997.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vtranslatevars.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node8&#45;&gt;Node13 -->
-<g id="edge13" class="edge">
-<title>Node8&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M877.73,-130.68C904.19,-120.26 937.13,-107.28 961.77,-97.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="876.32,-127.47 868.3,-134.4 878.89,-133.99 876.32,-127.47"/>
-</g>
-<!-- Node12&#45;&gt;Node11 -->
-<g id="edge12" class="edge">
-<title>Node12&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M846.78,-58.87C852.71,-49.46 859.41,-38.83 864.62,-30.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="843.77,-57.07 841.4,-67.4 849.69,-60.81 843.77,-57.07"/>
-</g>
-<!-- Node14&#45;&gt;Node10 -->
-<g id="edge15" class="edge">
-<title>Node14&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M517.05,-131.27C556.41,-118.6 608.21,-101.93 639.06,-92.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="515.78,-128 507.33,-134.4 517.92,-134.66 515.78,-128"/>
-</g>
-<!-- Node15 -->
-<g id="node15" class="node">
-<title>Node15</title>
-<g id="a_node15"><a xlink:href="../../dd/d70/vlayoutpiece_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="375,-73 375,-92 552,-92 552,-73 375,-73"/>
-<text text-anchor="middle" x="463.5" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vlayout/vlayoutpiece.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node14&#45;&gt;Node15 -->
-<g id="edge16" class="edge">
-<title>Node14&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M463.5,-124.25C463.5,-113.02 463.5,-100.38 463.5,-92.19"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="460,-124.4 463.5,-134.4 467,-124.4 460,-124.4"/>
-</g>
-<!-- Node16 -->
-<g id="node16" class="node">
-<title>Node16</title>
-<g id="a_node16"><a xlink:href="../../db/d8e/vpatterndb_2calculator_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="0,-67.5 0,-97.5 107,-97.5 107,-67.5 0,-67.5"/>
-<text text-anchor="start" x="8" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpatterndb</text>
-<text text-anchor="middle" x="53.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/calculator.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node14&#45;&gt;Node16 -->
-<g id="edge17" class="edge">
-<title>Node14&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M399.86,-134.02C273.03,-112.09 237.97,-119.99 115.5,-98 112.78,-97.51 110,-96.98 107.2,-96.42"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="399.5,-137.51 409.96,-135.79 400.72,-130.61 399.5,-137.51"/>
+<title>Node9&#45;&gt;Node11</title>
+<path fill="none" stroke="midnightblue" d="M719.52,-206.87C620.07,-193.86 433.67,-169.49 342.08,-157.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="719.08,-210.34 729.45,-208.17 719.99,-203.4 719.08,-210.34"/>
 </g>
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="../../db/d11/vformula_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="125,-67.5 125,-97.5 232,-97.5 232,-67.5 125,-67.5"/>
-<text text-anchor="start" x="133" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpatterndb</text>
-<text text-anchor="middle" x="178.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vformula.cpp</text>
+<g id="a_node17"><a xlink:href="../../db/db8/vpatterndb_2calculator_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="703,-134.5 703,-164.5 810,-164.5 810,-134.5 703,-134.5"/>
+<text text-anchor="start" x="711" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpatterndb</text>
+<text text-anchor="middle" x="756.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/calculator.h</text>
 </a>
 </g>
 </g>
-<!-- Node14&#45;&gt;Node17 -->
+<!-- Node9&#45;&gt;Node17 -->
+<g id="edge17" class="edge">
+<title>Node9&#45;&gt;Node17</title>
+<path fill="none" stroke="midnightblue" d="M775.01,-191.99C770.91,-182.8 766.35,-172.58 762.78,-164.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="771.94,-193.69 779.21,-201.4 778.33,-190.84 771.94,-193.69"/>
+</g>
+<!-- Node12 -->
+<g id="node12" class="node">
+<title>Node12</title>
+<g id="a_node12"><a xlink:href="../../dd/d20/qmutokenparser_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="295,-67.5 295,-97.5 414,-97.5 414,-67.5 295,-67.5"/>
+<text text-anchor="start" x="303" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/qmuparser</text>
+<text text-anchor="middle" x="354.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/qmutokenparser.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node11&#45;&gt;Node12 -->
+<g id="edge11" class="edge">
+<title>Node11&#45;&gt;Node12</title>
+<path fill="none" stroke="midnightblue" d="M310.01,-127.31C319.91,-117.56 331.39,-106.26 340.21,-97.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="307.49,-124.89 302.82,-134.4 312.4,-129.87 307.49,-124.89"/>
+</g>
+<!-- Node13 -->
+<g id="node13" class="node">
+<title>Node13</title>
+<g id="a_node13"><a xlink:href="../../d9/de3/measurements_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="432.5,-73 432.5,-92 622.5,-92 622.5,-73 432.5,-73"/>
+<text text-anchor="middle" x="527.5" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vformat/measurements.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node11&#45;&gt;Node13 -->
+<g id="edge12" class="edge">
+<title>Node11&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M349.79,-131.83C396.57,-119.11 459.09,-102.11 496.14,-92.03"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="348.8,-128.47 340.07,-134.48 350.63,-135.23 348.8,-128.47"/>
+</g>
+<!-- Node14 -->
+<g id="node14" class="node">
+<title>Node14</title>
+<g id="a_node14"><a xlink:href="../../d5/d81/vsplinepoint_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="0,-0.5 0,-30.5 107,-30.5 107,-0.5 0,-0.5"/>
+<text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vgeometry</text>
+<text text-anchor="middle" x="53.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vsplinepoint.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node11&#45;&gt;Node14 -->
+<g id="edge13" class="edge">
+<title>Node11&#45;&gt;Node14</title>
+<path fill="none" stroke="midnightblue" d="M224.7,-144.99C156.68,-139.76 55.51,-127.18 31.5,-98 15.49,-78.53 30.92,-48.43 42.78,-30.78"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="224.67,-148.5 234.9,-145.74 225.18,-141.52 224.67,-148.5"/>
+</g>
+<!-- Node15 -->
+<g id="node15" class="node">
+<title>Node15</title>
+<g id="a_node15"><a xlink:href="../../da/db2/vsplinepoint__p_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="41,-67.5 41,-97.5 148,-97.5 148,-67.5 41,-67.5"/>
+<text text-anchor="start" x="49" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vgeometry</text>
+<text text-anchor="middle" x="94.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vsplinepoint_p.h</text>
+</a>
+</g>
+</g>
+<!-- Node11&#45;&gt;Node15 -->
+<g id="edge14" class="edge">
+<title>Node11&#45;&gt;Node15</title>
+<path fill="none" stroke="midnightblue" d="M236.54,-131.09C205.23,-120.6 165.86,-107.41 136.51,-97.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="235.81,-134.54 246.4,-134.4 238.03,-127.9 235.81,-134.54"/>
+</g>
+<!-- Node16 -->
+<g id="node16" class="node">
+<title>Node16</title>
+<g id="a_node16"><a xlink:href="../../de/d3e/vtranslatevars_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="166.5,-67.5 166.5,-97.5 276.5,-97.5 276.5,-67.5 166.5,-67.5"/>
+<text text-anchor="start" x="174.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpatterndb</text>
+<text text-anchor="middle" x="221.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vtranslatevars.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node11&#45;&gt;Node16 -->
+<g id="edge16" class="edge">
+<title>Node11&#45;&gt;Node16</title>
+<path fill="none" stroke="midnightblue" d="M266.66,-127.31C256.61,-117.56 244.96,-106.26 236.01,-97.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="264.35,-129.94 273.96,-134.4 269.22,-124.92 264.35,-129.94"/>
+</g>
+<!-- Node15&#45;&gt;Node14 -->
+<g id="edge15" class="edge">
+<title>Node15&#45;&gt;Node14</title>
+<path fill="none" stroke="midnightblue" d="M80.22,-58.87C74.29,-49.46 67.59,-38.83 62.38,-30.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="77.31,-60.81 85.6,-67.4 83.23,-57.07 77.31,-60.81"/>
+</g>
+<!-- Node17&#45;&gt;Node13 -->
 <g id="edge18" class="edge">
-<title>Node14&#45;&gt;Node17</title>
-<path fill="none" stroke="midnightblue" d="M399.85,-133.86C327.79,-117.5 308.49,-113.6 240.5,-98 237.81,-97.38 235.05,-96.75 232.26,-96.1"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="399.36,-137.34 409.89,-136.14 400.91,-130.51 399.36,-137.34"/>
+<title>Node17&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M697.21,-131.67C652.45,-118.97 592.9,-102.06 557.55,-92.03"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="696.52,-135.11 707.09,-134.48 698.43,-128.38 696.52,-135.11"/>
 </g>
 <!-- Node18 -->
 <g id="node18" class="node">
 <title>Node18</title>
-<g id="a_node18"><a xlink:href="../../d8/dba/vpiecenode_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="250,-67.5 250,-97.5 357,-97.5 357,-67.5 250,-67.5"/>
-<text text-anchor="start" x="258" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpatterndb</text>
-<text text-anchor="middle" x="303.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vpiecenode.cpp</text>
+<g id="a_node18"><a xlink:href="../../dd/d70/vlayoutpiece_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1016,-73 1016,-92 1193,-92 1193,-73 1016,-73"/>
+<text text-anchor="middle" x="1104.5" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vlayout/vlayoutpiece.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node14&#45;&gt;Node18 -->
+<!-- Node17&#45;&gt;Node18 -->
 <g id="edge19" class="edge">
-<title>Node14&#45;&gt;Node18</title>
-<path fill="none" stroke="midnightblue" d="M419.3,-130.54C393.7,-120.14 361.93,-107.24 338.15,-97.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="418.2,-133.87 428.78,-134.4 420.84,-127.39 418.2,-133.87"/>
+<title>Node17&#45;&gt;Node18</title>
+<path fill="none" stroke="midnightblue" d="M820.16,-133.72C906.2,-116.26 995.66,-101.08 1051.1,-92.03"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="819.33,-130.31 810.23,-135.74 820.73,-137.17 819.33,-130.31"/>
 </g>
-<!-- Node20&#45;&gt;Node21 -->
+<!-- Node19 -->
+<g id="node19" class="node">
+<title>Node19</title>
+<g id="a_node19"><a xlink:href="../../db/d8e/vpatterndb_2calculator_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="641,-67.5 641,-97.5 748,-97.5 748,-67.5 641,-67.5"/>
+<text text-anchor="start" x="649" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpatterndb</text>
+<text text-anchor="middle" x="694.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/calculator.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node17&#45;&gt;Node19 -->
+<g id="edge20" class="edge">
+<title>Node17&#45;&gt;Node19</title>
+<path fill="none" stroke="midnightblue" d="M736.02,-127.02C726.78,-117.34 716.13,-106.17 707.93,-97.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="733.61,-129.58 743.05,-134.4 738.68,-124.74 733.61,-129.58"/>
+</g>
+<!-- Node20 -->
+<g id="node20" class="node">
+<title>Node20</title>
+<g id="a_node20"><a xlink:href="../../db/d11/vformula_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="766,-67.5 766,-97.5 873,-97.5 873,-67.5 766,-67.5"/>
+<text text-anchor="start" x="774" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpatterndb</text>
+<text text-anchor="middle" x="819.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vformula.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node17&#45;&gt;Node20 -->
+<g id="edge21" class="edge">
+<title>Node17&#45;&gt;Node20</title>
+<path fill="none" stroke="midnightblue" d="M777.31,-127.02C786.7,-117.34 797.52,-106.17 805.86,-97.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="774.62,-124.78 770.17,-134.4 779.64,-129.65 774.62,-124.78"/>
+</g>
+<!-- Node21 -->
+<g id="node21" class="node">
+<title>Node21</title>
+<g id="a_node21"><a xlink:href="../../d8/dba/vpiecenode_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="891,-67.5 891,-97.5 998,-97.5 998,-67.5 891,-67.5"/>
+<text text-anchor="start" x="899" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpatterndb</text>
+<text text-anchor="middle" x="944.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vpiecenode.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node17&#45;&gt;Node21 -->
 <g id="edge22" class="edge">
-<title>Node20&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M455.54,-197.68C429.24,-187.26 396.5,-174.28 372.02,-164.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="454.33,-200.97 464.91,-201.4 456.91,-194.46 454.33,-200.97"/>
+<title>Node17&#45;&gt;Node21</title>
+<path fill="none" stroke="midnightblue" d="M806.85,-131.09C837.2,-120.6 875.35,-107.41 903.79,-97.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="805.6,-127.82 797.29,-134.4 807.89,-134.44 805.6,-127.82"/>
+</g>
+<!-- Node22&#45;&gt;Node23 -->
+<g id="edge24" class="edge">
+<title>Node22&#45;&gt;Node23</title>
+<path fill="none" stroke="midnightblue" d="M957,-195.73C972.01,-185.68 989.9,-173.68 1003.49,-164.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="954.91,-192.92 948.55,-201.4 958.8,-198.74 954.91,-192.92"/>
 </g>
 </g>
 </svg>
