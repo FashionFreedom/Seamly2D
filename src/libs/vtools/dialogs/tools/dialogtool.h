@@ -97,7 +97,7 @@ class QPlainTextEdit;
 class VAbstractTool;
 
 enum class FillComboBox : char {Whole, NoChildren};
-enum class DialogPosition : char {Offset = -7, BottomRight, BottomLeft, Center, TopRight, TopLeft};
+enum class DialogPosition : signed char {Offset = -7, BottomRight, BottomLeft, Center, TopRight, TopLeft};
 
 /**
  * @brief The DialogTool class parent for all dialog of tools.
