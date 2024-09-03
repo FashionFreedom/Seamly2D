@@ -15,7 +15,7 @@ var searchData=
   ['objects_5054',['objects',['../d7/dba/classVisOperation.html#ab701bfa2c29b52f99836d415f784acf7',1,'VisOperation']]],
   ['objectselected_5055',['ObjectSelected',['../d7/d15/classVAbstractOperation.html#a828d50958e48bbacb9d9b2e79e182142',1,'VAbstractOperation']]],
   ['objfile_5056',['ObjFile',['../de/d1a/classMainWindowsNoGUI.html#a422ced3503069fe6c2371d9eb7c433eb',1,'MainWindowsNoGUI']]],
-  ['offset_5057',['Offset',['../d1/d30/dialogtool_8h.html#ab8f611ddef0d168c5fd334749f9f1ec2adfd0a82c4bf37b1e90b690a22a20692e',1,'dialogtool.h']]],
+  ['offset_5057',['Offset',['../d1/d30/dialogtool_8h.html#abc68dcea697b89a6ed3d87e93bf65e77adfd0a82c4bf37b1e90b690a22a20692e',1,'dialogtool.h']]],
   ['offset_5058',['offset',['../d2/daa/structNotchData.html#ab1ab76f7386b511449b1b052f3759f14',1,'NotchData::offset()'],['../dc/d14/structqmu_1_1SToken.html#a4881e086262737088ac95951f09e16fd',1,'qmu::SToken::offset()']]],
   ['ok_5059',['Ok',['../d5/d8a/classDialogSeamlyMePreferences.html#aa129708acf01113bacc2eb4d1fe64228',1,'DialogSeamlyMePreferences::Ok()'],['../d1/d61/classDialogPreferences.html#a7ade214a73d7d5eeb10c32f5adadc943',1,'DialogPreferences::Ok()'],['../d4/d15/classDialogPatternProperties.html#a914ebdf054a4f1939a3fd56be5bd29d3',1,'DialogPatternProperties::Ok()']]],
   ['ok_5fbutton_5060',['ok_Button',['../d2/d7b/classDialogTool.html#a36d26ab1674aa213ce63fff219d0820e',1,'DialogTool']]],
