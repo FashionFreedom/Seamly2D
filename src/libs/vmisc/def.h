@@ -62,6 +62,14 @@ class QGraphicsItem;
 
 #define HANDLE_SIZE 12
 
+// Bit flags to identify parent dialog type for the Edit Formula dialog and which tabs to hide
+enum DialogSource : quint16
+{
+    ToolDialog        = 511, // 0000 0001 1111 1111
+    VariableDialog    = 259, // 0000 0001 0000 0011
+    MeasurementDialog = 257  // 0000 0001 0000 0001
+};
+
 enum class Position : char
 {
     TopLeft = 0,
@@ -163,11 +171,9 @@ struct DraftImage
     : id(0),
       name(""),
       filename(""),
-      pixmap(),
       locked(false),
       xOrigin(0.0),
       yOrigin(0.0),
-      anchor(0),
       xPos(0.0),
       yPos(0.0),
       width(0.0),
@@ -177,17 +183,16 @@ struct DraftImage
       rotation(0.0),
       visible(true),
       opacity(100.0),
-      order(0)
+      order(0),
+      basepoint(0)
      {}
 
     quint32        id;
     QString        name;
     QString        filename;
-    QPixmap        pixmap;
     bool           locked;
     qreal          xOrigin;
     qreal          yOrigin;
-    quint32        anchor;
     qreal          xPos;
     qreal          yPos;
     qreal          width;
@@ -199,7 +204,8 @@ struct DraftImage
     qreal          rotation;
     bool           visible;
     qreal          opacity;
-    qreal          order;
+    qint32         order;
+    quint32        basepoint;
 };
 
 Q_DECLARE_METATYPE(DraftImage)

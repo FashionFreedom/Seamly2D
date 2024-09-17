@@ -212,7 +212,7 @@ qreal VAbstractTool::CheckFormula(const quint32 &toolId, QString &formula, VCont
                     const UndoButton resultUndo = dialogUndo->Result();
                     if (resultUndo == UndoButton::Fix)
                     {
-                        auto *dialog = new EditFormulaDialog(data, toolId, qApp->getMainWindow());
+                        auto *dialog = new EditFormulaDialog(data, toolId, ToolDialog, qApp->getMainWindow());
                         dialog->setWindowTitle(tr("Edit wrong formula"));
                         dialog->SetFormula(formula);
                         if (dialog->exec() == QDialog::Accepted)

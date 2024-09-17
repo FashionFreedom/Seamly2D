@@ -278,6 +278,8 @@ public:
     QString                        useGroupLineType(quint32 toolId, QString type);
     QString                        useGroupLineWeight(quint32 toolId, QString weight);
 
+    QDomElement                    createDraftImages();
+
     QPair<bool, QMap<quint32, quint32> > parseItemElement(const QDomElement &domElement);
 
     static const QString TagPattern;
@@ -318,6 +320,7 @@ public:
     static const QString TagLine;
 
     static const QString TagDraftImages;
+    static const QString TagDraftImage;
     static const QString AttrId;
     static const QString AttrFilename;
     static const QString AttrLocked;
@@ -327,10 +330,15 @@ public:
     static const QString AttrHeight;
     static const QString AttrXScale;
     static const QString AttrYScale ;
-    static const QString AttrAspectLocked;
     static const QString AttrUnits;
     static const QString AttrOpacity;
     static const QString AttrOrder;
+    static const QString AttrAspectRatio;
+    static const QString AttrSource;
+    static const QString AttrXOffset;
+    static const QString AttrYOffset;
+    static const QString AttrBasepoint;
+
 
     static const QString AttrName;
     static const QString AttrVisible;
@@ -478,10 +486,10 @@ signals:
     void           ClearMainWindow();
     void           UndoCommand();
     void           setGuiEnabled(bool enabled);
-    void           CheckLayout();
+    void           patternParsed();
     void           UpdateInLayoutList(quint32 id);
     void           showPiece(quint32 id);
-    void           setCurrentDraftBlock(const QString &patterPiece);
+    void           setCurrentDraftBlock(const QString &draftblock);
     void           patternHasGroups(bool value);
     void           updateGroups();
 

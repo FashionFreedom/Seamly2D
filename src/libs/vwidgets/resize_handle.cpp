@@ -79,6 +79,7 @@ QRectF ResizeHandlesItem::boundingRect() const
 void ResizeHandlesItem::setParentRect(const QRectF & rect)
 {
     m_parentRect = rect;
+    m_sizeChangedExternally = true;
     updateHandlePositions();
 }
 
@@ -194,7 +195,14 @@ void ResizeHandlesItem::updateHandlePositions()
         item->setFlag(ItemSendsGeometryChanges, true);
     }
 
-    emit sizeChanged(m_parentRect);
+    if(!m_sizeChangedExternally)
+    {
+        emit sizeChangedFromHandles(m_parentRect);
+    }
+    else
+    {
+        m_sizeChangedExternally = false;
+    }
 }
 
 /**
@@ -204,7 +212,7 @@ ResizeHandlesItem::HandleItem::HandleItem(Position position, ResizeHandlesItem* 
     : QGraphicsRectItem(-HANDLE_SIZE/2, -HANDLE_SIZE/2, HANDLE_SIZE, HANDLE_SIZE, parent)
     , m_parent(parent)
     , m_handlePosition(position)
-    , m_isHovered(false)
+    , m_handleIsHighlighted(false)
     , m_minDimension(parent->m_minDimension)
     , m_maxDimension(parent->m_maxDimension)
 {
@@ -240,7 +248,7 @@ void ResizeHandlesItem::HandleItem::paint(QPainter *painter, const QStyleOptionG
     if (!m_parent->m_parentIsLocked)
     {
         painter->setPen(QPen(Qt::white, 1, Qt::SolidLine));
-        painter->setBrush(m_isHovered ? QColor(Qt::red) : QColor(Qt::darkGray));
+        painter->setBrush(m_handleIsHighlighted ? QColor(Qt::red) : QColor(Qt::darkGray));
         painter->drawEllipse(boundingRect());
     }
     else
@@ -613,7 +621,7 @@ QPointF ResizeHandlesItem::HandleItem::limitPosition(const QPointF& newPos)
  */
 void ResizeHandlesItem::HandleItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
-    m_isHovered = true;
+    m_handleIsHighlighted = true;
 
     if (!m_parent->m_parentIsLocked)
     {
@@ -648,7 +656,7 @@ void ResizeHandlesItem::HandleItem::hoverEnterEvent(QGraphicsSceneHoverEvent *ev
  */
 void ResizeHandlesItem::HandleItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
-    m_isHovered = false;
+    m_handleIsHighlighted = false;
 
     if (!m_parent->m_parentIsLocked)
     {
@@ -673,7 +681,6 @@ void ResizeHandlesItem::HandleItem::mousePressEvent(QGraphicsSceneMouseEvent *ev
     }
 
     m_scalingFactor = m_parent->m_parentRect.width() / m_parent->m_parentRect.height();
-
     QGraphicsItem::mousePressEvent(event);
 }
 
@@ -712,6 +719,8 @@ void ResizeHandlesItem::HandleItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *
     }
     //emit handleSelected(m_handlePosition, false);
 
+    m_handleIsHighlighted = false;
+    emit m_parent->imageNeedsSave();
     QGraphicsItem::mouseReleaseEvent(event);
 }
 

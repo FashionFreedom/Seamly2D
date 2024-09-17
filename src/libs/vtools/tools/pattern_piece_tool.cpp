@@ -1462,7 +1462,7 @@ PatternPieceTool::PatternPieceTool(VAbstractPattern *doc, VContainer *data, cons
     connect(m_grainLine, &VGrainlineItem::itemRotated, this, &PatternPieceTool::SaveRotateGrainline);
 
     connect(doc, &VAbstractPattern::UpdatePatternLabel, this, &PatternPieceTool::UpdatePatternLabel);
-    connect(doc, &VAbstractPattern::CheckLayout,        this, &PatternPieceTool::updatePieceDetails);
+    connect(doc, &VAbstractPattern::patternParsed,        this, &PatternPieceTool::updatePieceDetails);
 
     connect(m_pieceScene, &VMainGraphicsScene::DimensionsChanged, this, &PatternPieceTool::updatePieceDetails);
     connect(m_pieceScene, &VMainGraphicsScene::LanguageChanged,   this, &PatternPieceTool::retranslateUi);

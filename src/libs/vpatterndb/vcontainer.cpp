@@ -404,14 +404,12 @@ quint32 VContainer::getId()
  * - It increments the static member variable `_id` to generate the next unique ID.
  * - The method returns the new value of `_id`.
  *
- * @note Currently, the method simply increments the ID without reusing free IDs. This approach saves time but may need
- * improvement in the future to reuse free IDs within the set of values.
+ * @note Currently, the method simply increments the ID without reusing free IDs.
  */
 quint32 VContainer::getNextId()
 {
-    //TODO. Current count of ids are very big and allow us save time before someone will reach its max value.
-    //Better way, of cource, is to seek free ids inside the set of values and reuse them.
-    //But for now better to keep it as it is now.
+    //Because UINT_MAX is so big, it's impossible to run out of ids
+    //We don't try to reuse free ids to avoid the complexity of tracking them
     if (_id == UINT_MAX)
     {
         qCritical() << (tr("Number of free id exhausted."));

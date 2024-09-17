@@ -174,6 +174,13 @@
     </message>
 </context>
 <context>
+    <name>AddImage</name>
+    <message>
+        <source>add image</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddPiece</name>
     <message>
         <source>add piece</source>
@@ -4824,28 +4831,12 @@ Possibly the file is already being downloaded.</source>
         <translation>Die Datei könnte beschädigt sein...</translation>
     </message>
     <message>
-        <source>File may be corrupted or empty...</source>
-        <translation>Die Datei kann beschädigt oder leer sein...</translation>
-    </message>
-    <message>
         <source>Confirm deletion</source>
         <translation>Löschvorgang bestätigen</translation>
     </message>
     <message>
         <source>Do you really want to delete?</source>
         <translation>Möchtest Du wirklich löschen?</translation>
-    </message>
-    <message>
-        <source>Images will not be saved</source>
-        <translation>Die Bilder werden nicht gespeichert</translation>
-    </message>
-    <message>
-        <source>Please note that the images can not be saved and that they are not affected by the undo and redo functions in the current version of the software.
-
-You may want to take a screenshot of the image properties dialog before closing the software to be able to recreate identically the image when opening the software again.</source>
-        <translation>Bitte beachten Sie, dass die Bilder nicht gespeichert werden können und dass sie von den Rückgängig- und Wiederherstellungsfunktionen in der aktuellen Version der Software nicht betroffen sind.
-
-Es empfiehlt sich, vor dem Schließen der Software einen Screenshot des Dialogs mit den Bildeigenschaften zu machen, damit Sie das Bild beim erneuten Öffnen der Software identisch wiederherstellen können.</translation>
     </message>
 </context>
 <context>
@@ -5305,7 +5296,6 @@ Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLIC
     </message>
     <message>
         <source>Margins go beyond printing.
-
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6198,10 +6188,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Passen</translation>
     </message>
     <message>
-        <source>Zoom to Fit All(Ctrl+=)</source>
-        <translation>Zoom um alle zu sehen (Strg+=)</translation>
-    </message>
-    <message>
         <source>Report bug...</source>
         <translation>Programmfehler melden...</translation>
     </message>
@@ -6258,40 +6244,16 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Zoom zum Vorherigen (Strg+Links)</translation>
     </message>
     <message>
-        <source>Ctrl+Left</source>
-        <translation>Strg+Links</translation>
-    </message>
-    <message>
         <source>Area</source>
         <translation>Gebiet</translation>
-    </message>
-    <message>
-        <source>Ctrl+A</source>
-        <translation>Strg+A</translation>
     </message>
     <message>
         <source>Pan</source>
         <translation>Pan</translation>
     </message>
     <message>
-        <source>Z, P</source>
-        <translation>Z, P</translation>
-    </message>
-    <message>
-        <source>Zoom 1:1</source>
-        <translation>Zoom 1:1</translation>
-    </message>
-    <message>
-        <source>1:1</source>
-        <translation>1:1</translation>
-    </message>
-    <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
         <translation>Zoom auf 100 Prozent (Strg+0)</translation>
-    </message>
-    <message>
-        <source>Ctrl+0</source>
-        <translation>Strg+0</translation>
     </message>
     <message>
         <source>Point Tools</source>
@@ -7106,10 +7068,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Zoom zum Punkt (Strg + Alt + P)</translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation>Strg+Alt+P</translation>
-    </message>
-    <message>
         <source>Alt+I</source>
         <translation>Alt+I</translation>
     </message>
@@ -7338,6 +7296,18 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Default</source>
         <translation>Standard</translation>
+    </message>
+    <message>
+        <source>Zoom to Fit All(Ctrl+9)</source>
+        <translation>Zoom um alle zu sehen (Strg+9)</translation>
+    </message>
+    <message>
+        <source>Zoom 100%</source>
+        <translation>Zoom 100%</translation>
+    </message>
+    <message>
+        <source>100%</source>
+        <translation>100%</translation>
     </message>
 </context>
 <context>
@@ -9481,12 +9451,48 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Verwenden Sie immer den aktuellen Stift</translation>
     </message>
     <message>
-        <source>Autoscroll</source>
+        <source>Dialogs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Mouse wheel</source>
-        <translation>Mausrad</translation>
+        <source>Open on second monitor if available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bottom left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bottom right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Offset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X Offset:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y Offset:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10565,10 +10571,6 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Strg+-</translation>
     </message>
     <message>
-        <source>Zoom 1:1</source>
-        <translation>Zoom 1:1</translation>
-    </message>
-    <message>
         <source>Ctrl+0</source>
         <translation>Strg+0</translation>
     </message>
@@ -10583,10 +10585,6 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Fit All</source>
         <translation>Alles passend</translation>
-    </message>
-    <message>
-        <source>Ctrl+=</source>
-        <translation>Strg+=</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -10617,16 +10615,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Pan</translation>
     </message>
     <message>
-        <source>Z, P</source>
-        <translation>Z, P</translation>
-    </message>
-    <message>
         <source>Show Name Text</source>
         <translation>Namenstext Anzeigen</translation>
-    </message>
-    <message>
-        <source>V, P</source>
-        <translation>V, P</translation>
     </message>
     <message>
         <source>Increase Text Size</source>
@@ -10653,48 +10643,24 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Wireframe</translation>
     </message>
     <message>
-        <source>V, W</source>
-        <translation>V, W</translation>
-    </message>
-    <message>
         <source>Curve Control Points</source>
         <translation>Kurven Kontrollpunkte</translation>
-    </message>
-    <message>
-        <source>V, C</source>
-        <translation>V, C</translation>
     </message>
     <message>
         <source>Axis Origin</source>
         <translation>Ausgangsachse</translation>
     </message>
     <message>
-        <source>V, A</source>
-        <translation>V, A</translation>
-    </message>
-    <message>
         <source>Seam Allowance</source>
         <translation>Nahtzugabe</translation>
-    </message>
-    <message>
-        <source>V, S</source>
-        <translation>V, S</translation>
     </message>
     <message>
         <source>Grainlines</source>
         <translation>Fadenlauf</translation>
     </message>
     <message>
-        <source>V, G</source>
-        <translation>V, G</translation>
-    </message>
-    <message>
         <source>Labels</source>
         <translation>Etiketten</translation>
-    </message>
-    <message>
-        <source>V, L</source>
-        <translation>V, L</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -10741,10 +10707,6 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Entwurfsblock umbenennen</translation>
     </message>
     <message>
-        <source>F2</source>
-        <translation>F2</translation>
-    </message>
-    <message>
         <source>Point</source>
         <translation>Punkt</translation>
     </message>
@@ -10753,80 +10715,40 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Länge und Winkel</translation>
     </message>
     <message>
-        <source>L, A</source>
-        <translation>L, A</translation>
-    </message>
-    <message>
         <source>On Line</source>
         <translation>Auf Linie</translation>
-    </message>
-    <message>
-        <source>O, L</source>
-        <translation>O, L</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
         <translation>Auf Senkrechter</translation>
     </message>
     <message>
-        <source>O, P</source>
-        <translation>O, P</translation>
-    </message>
-    <message>
         <source>On Bisector</source>
         <translation>Auf Winkelhalbierender</translation>
-    </message>
-    <message>
-        <source>O, B</source>
-        <translation>O, B</translation>
     </message>
     <message>
         <source>Length to Line</source>
         <translation>Länge auf einer Linie</translation>
     </message>
     <message>
-        <source>P, S</source>
-        <translation>P, S</translation>
-    </message>
-    <message>
         <source>Intersect Arc and Line</source>
         <translation>Schneidet Bogen und Linie</translation>
-    </message>
-    <message>
-        <source>A, L</source>
-        <translation>A, L</translation>
     </message>
     <message>
         <source>Intersect Axis and Triangle</source>
         <translation>Schneidet Achse und Dreieck</translation>
     </message>
     <message>
-        <source>X, T</source>
-        <translation>X, T</translation>
-    </message>
-    <message>
         <source>Intersect XY</source>
         <translation>Schneidet XY</translation>
-    </message>
-    <message>
-        <source>X, Y</source>
-        <translation>X, Y</translation>
     </message>
     <message>
         <source>Intersect Line and Perpendicular</source>
         <translation>Schneidet Linie und Senkrechte</translation>
     </message>
     <message>
-        <source>L, P</source>
-        <translation>L, P</translation>
-    </message>
-    <message>
         <source>Intersect Line and Axis</source>
         <translation>Schneidet Linie und Achse</translation>
-    </message>
-    <message>
-        <source>L, X</source>
-        <translation>L, X</translation>
     </message>
     <message>
         <source>Midpoint On Line</source>
@@ -10847,10 +10769,6 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Point - Intersect Lines</source>
         <translation>Punkt - Schneidet Linien</translation>
-    </message>
-    <message>
-        <source>I, L</source>
-        <translation>I, L</translation>
     </message>
     <message>
         <source>Curves</source>
@@ -10893,32 +10811,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Punkt - Auf Kurve</translation>
     </message>
     <message>
-        <source>O, C</source>
-        <translation>O, C</translation>
-    </message>
-    <message>
         <source>Point - On Spline	</source>
         <translation>Punkt - Auf Spline	</translation>
-    </message>
-    <message>
-        <source>O, S</source>
-        <translation>O, S</translation>
     </message>
     <message>
         <source>Point - Intersect Curves</source>
         <translation>Punkt - Schneidet Kurven</translation>
     </message>
     <message>
-        <source>I, C</source>
-        <translation>I, C</translation>
-    </message>
-    <message>
         <source>Point - Intersect Curve and Axis</source>
         <translation>Punkt - Schneidet Kurve und Achse</translation>
-    </message>
-    <message>
-        <source>C, X</source>
-        <translation>C, X</translation>
     </message>
     <message>
         <source>Arcs</source>
@@ -10945,24 +10847,12 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Punkt - Auf einem Bogen</translation>
     </message>
     <message>
-        <source>O, A</source>
-        <translation>O, A</translation>
-    </message>
-    <message>
         <source>Point - Intersect Arc and Axis</source>
         <translation>Punkt - Schneidet Bogen und Achse</translation>
     </message>
     <message>
-        <source>A, X</source>
-        <translation>A, X</translation>
-    </message>
-    <message>
         <source>Point - Intersect Arcs</source>
         <translation>Punkt - Schneidet Bögen</translation>
-    </message>
-    <message>
-        <source>I, A</source>
-        <translation>I, A</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
@@ -10977,16 +10867,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Punkt - Schneidet Kreis und Tangente</translation>
     </message>
     <message>
-        <source>C, T</source>
-        <translation>C, T</translation>
-    </message>
-    <message>
         <source>Point - Intersect Arc and Tangent</source>
         <translation>Punkt - Schneidet Bogen und Tangente</translation>
-    </message>
-    <message>
-        <source>A, T</source>
-        <translation>A, T</translation>
     </message>
     <message>
         <source>Elliptical Arc</source>
@@ -11005,32 +10887,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Objekte zur Gruppe hinzufügen</translation>
     </message>
     <message>
-        <source>G</source>
-        <translation>G</translation>
-    </message>
-    <message>
         <source>Rotation</source>
         <translation>Drehung</translation>
-    </message>
-    <message>
-        <source>R</source>
-        <translation>R</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
         <translation>Spiegeln an einer Linie</translation>
     </message>
     <message>
-        <source>M, L</source>
-        <translation>M, L</translation>
-    </message>
-    <message>
         <source>Mirror by Axis</source>
         <translation>Spiegeln an einer Achse</translation>
-    </message>
-    <message>
-        <source>M, A</source>
-        <translation>M, A</translation>
     </message>
     <message>
         <source>Move</source>
@@ -11045,16 +10911,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Abnäherlänge ausgleichen</translation>
     </message>
     <message>
-        <source>T, D</source>
-        <translation>T, D,</translation>
-    </message>
-    <message>
         <source>Export Draft Blocks</source>
         <translation>Exportiere Entwurfsblöcke</translation>
-    </message>
-    <message>
-        <source>E, D</source>
-        <translation>E, D</translation>
     </message>
     <message>
         <source>Images</source>
@@ -11077,36 +10935,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Neues Schnittteil</translation>
     </message>
     <message>
-        <source>N, P</source>
-        <translation>N, P</translation>
-    </message>
-    <message>
         <source>Anchor Point</source>
         <translation>Anker Punkt</translation>
-    </message>
-    <message>
-        <source>A, P</source>
-        <translation>A, P</translation>
     </message>
     <message>
         <source>Internal Path</source>
         <translation>Unterverzeichnis</translation>
     </message>
     <message>
-        <source>I, P</source>
-        <translation>I, P</translation>
-    </message>
-    <message>
-        <source>I, N</source>
-        <translation>I, N</translation>
-    </message>
-    <message>
         <source>Edit Properties</source>
         <translation>Eigenschaften bearbeiten</translation>
-    </message>
-    <message>
-        <source>P</source>
-        <translation>P</translation>
     </message>
     <message>
         <source>Toggle Lock</source>
@@ -11121,16 +10959,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>In das Layout aufnehmen</translation>
     </message>
     <message>
-        <source>I</source>
-        <translation>I</translation>
-    </message>
-    <message>
         <source>Forbid Flipping</source>
         <translation>Drehen Ausschließen</translation>
-    </message>
-    <message>
-        <source>F</source>
-        <translation>F</translation>
     </message>
     <message>
         <source>Raise To Top</source>
@@ -11169,16 +10999,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Teile zusammenfügen</translation>
     </message>
     <message>
-        <source>U</source>
-        <translation>U</translation>
-    </message>
-    <message>
         <source>Export Pieces</source>
         <translation>Schnitteile Exportieren</translation>
-    </message>
-    <message>
-        <source>E, P</source>
-        <translation>E, P</translation>
     </message>
     <message>
         <source>Layout</source>
@@ -11189,16 +11011,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Neue Layout</translation>
     </message>
     <message>
-        <source>N, L</source>
-        <translation>N, L</translation>
-    </message>
-    <message>
         <source>Export Layout</source>
         <translation>Layout Exportieren</translation>
-    </message>
-    <message>
-        <source>E, L</source>
-        <translation>E, L</translation>
     </message>
     <message>
         <source>Last Tool</source>
@@ -11245,16 +11059,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Tastaturkurzbefehle</translation>
     </message>
     <message>
-        <source>K</source>
-        <translation>K</translation>
-    </message>
-    <message>
         <source>Shift+P</source>
         <translation>Umschalt+P</translation>
-    </message>
-    <message>
-        <source>T</source>
-        <translation>T</translation>
     </message>
     <message>
         <source>Export PDF</source>
@@ -11267,6 +11073,14 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Seamly2D Shortcuts</source>
         <translation>Seamly2D Verknüpfungen</translation>
+    </message>
+    <message>
+        <source>Zoom 100%</source>
+        <translation>Zoom 100%</translation>
+    </message>
+    <message>
+        <source>Ctrl+9</source>
+        <translation>Strg+9</translation>
     </message>
 </context>
 <context>
@@ -13156,6 +12970,10 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Error creating or updating union pieces</source>
         <translation>Fehler beim Anlegen oder Aktualisieren der Verbindungsschnittteile</translation>
+    </message>
+    <message>
+        <source>Image_name</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -15055,239 +14873,238 @@ wie gewohnt in SeamlyME laden können.
         <comment>Converts degrees to radians
 Usage: degTorad(angle θ in degrees) → returns an angle in radians
 Example: degTorad(180) = 3.14159</comment>
-        <translation type="unfinished">degTorad</translation>
+        <translation>degTorad</translation>
     </message>
     <message>
         <source>radTodeg</source>
         <comment>Converts radians to degrees
 Usage: radTodeg(angle θ in radians)  → returns an angle in degrees
 Example: radTodeg(3.14159) = 180</comment>
-        <translation type="unfinished">radTodeg</translation>
+        <translation>radTodeg</translation>
     </message>
     <message>
         <source>sin</source>
         <comment>Sine function working with radians
 Usage: sin(angle θ in radians) → returns a number between -1 and 1
 Example: sin(90) = 0.893997</comment>
-        <translatorcomment>Sinusfunktion im Bogenmaß Verwendung: sin(Winkel θ im Bogenmaß) → liefert eine Zahl zwischen -1 und 1 Beispiel: sin(90) = 0,893997</translatorcomment>
-        <translation type="unfinished">sin</translation>
+        <translation>sin</translation>
     </message>
     <message>
         <source>cos</source>
         <comment>Cosine function working with radians
 Usage: cos(angle θ in radians) → returns a number between -1 and 1
 Example: cos(1) = 0.540302</comment>
-        <translation type="unfinished">cos</translation>
+        <translation>cos</translation>
     </message>
     <message>
         <source>tan</source>
         <comment>Tangent function working with radians
 Usage: tan(angle θ in radians)
 Example: tan(1) = 1.55741</comment>
-        <translation type="unfinished">tan</translation>
+        <translation>tan</translation>
     </message>
     <message>
         <source>asin</source>
         <comment>Inverse sine function working with radians
 Usage: asin(x between -1 and 1) → returns an angle in radians
 Example: asin(-1) = -1.5708</comment>
-        <translation type="unfinished">asin</translation>
+        <translation>asin</translation>
     </message>
     <message>
         <source>acos</source>
         <comment>Inverse cosine function working with radians
 Usage: acos(x between -1 and 1) → returns an angle in radians
 Example: acos(0.1) = 1.47063</comment>
-        <translation type="unfinished">acos</translation>
+        <translation>acos</translation>
     </message>
     <message>
         <source>atan</source>
         <comment>Inverse tangent function working with radians
 Usage: atan(x) → returns an angle in radians
 Example: atan(1) = 0.78538</comment>
-        <translation type="unfinished">atan</translation>
+        <translation>atan</translation>
     </message>
     <message>
         <source>sinh</source>
         <comment>Hyperbolic sine function
 Usage: sinh(θ)
 Example: sinh(1) = 1.1752</comment>
-        <translation type="unfinished">sinh</translation>
+        <translation>sinh</translation>
     </message>
     <message>
         <source>cosh</source>
         <comment>Hyperbolic cosine
 Usage: cosh(θ) → returns a number greater than or equal to 1
 Example: cosh(0) = 1</comment>
-        <translation type="unfinished">cosh</translation>
+        <translation>cosh</translation>
     </message>
     <message>
         <source>tanh</source>
         <comment>Hyperbolic tangent function
 Usage: tanh(θ) → returns a number between -1 and 1 (excluded)
 Example: tanh(1) = 0.761594</comment>
-        <translation type="unfinished">tanh</translation>
+        <translation>tanh</translation>
     </message>
     <message>
         <source>asinh</source>
         <comment>Inverse Hyperbolic sine function
 Usage: asinh(x)
 Example: asinh(90) = 5.19299</comment>
-        <translation type="unfinished">asinh</translation>
+        <translation>asinh</translation>
     </message>
     <message>
         <source>acosh</source>
         <comment>Inverse Hyperbolic cosine function
 Usage: acosh(x greater than or equal to 1)
 Example: acosh(2) = 1.31696</comment>
-        <translation type="unfinished">acosh</translation>
+        <translation>acosh</translation>
     </message>
     <message>
         <source>atanh</source>
         <comment>Inverse Hyperbolic tangent function
 Usage: atanh(x between -1 and 1 (excluded))
 Example: atanh(0,99) = 2.64665</comment>
-        <translation type="unfinished">atanh</translation>
+        <translation>atanh</translation>
     </message>
     <message>
         <source>sinD</source>
         <comment>Sine function working with degrees
 Usage: sinD(angle θ in degrees) → returns a number between -1 and 1
 Example: sinD(90) = 1</comment>
-        <translation type="unfinished">sinD</translation>
+        <translation>sinD</translation>
     </message>
     <message>
         <source>cosD</source>
         <comment>Cosine function working with degrees
 Usage: cosD(angle θ in degrees) → returns a number between -1 and 1
 Example: cosD(180) = -1</comment>
-        <translation type="unfinished">cosD</translation>
+        <translation>cosD</translation>
     </message>
     <message>
         <source>tanD</source>
         <comment>Tangent function working with degrees
 Usage: tanD(angle θ in degrees)
 Example: tanD(45) = 1</comment>
-        <translation type="unfinished">tanD</translation>
+        <translation>tanD</translation>
     </message>
     <message>
         <source>asinD</source>
         <comment>Inverse sine function working with degrees
 Usage: asinD(x between -1 and 1) → returns an angle in degrees
 Example: asinD(1) = 90</comment>
-        <translation type="unfinished">asinD</translation>
+        <translation>asinD</translation>
     </message>
     <message>
         <source>acosD</source>
         <comment>Inverse cosine function working with degrees
 Usage: acosD(x between -1 and 1) → returns an angle in degrees
 Example: acosD(-1) = 180</comment>
-        <translation type="unfinished">acosD</translation>
+        <translation>acosD</translation>
     </message>
     <message>
         <source>atanD</source>
         <comment>Inverse tangent function working with degrees
 Usage: atanD(x) → returns an angle in degrees
 Example: atanD(1) = 45</comment>
-        <translation type="unfinished">atanD</translation>
+        <translation>atanD</translation>
     </message>
     <message>
         <source>log2</source>
         <comment>Logarithm to the base 2
 Usage: log2(x greater than 0)
 Example: log2(10) = 3.32193</comment>
-        <translation type="unfinished">log2</translation>
+        <translation>log2</translation>
     </message>
     <message>
         <source>log10</source>
         <comment>Logarithm to the base 10 (same as log(x))
 Usage: log10(x greater than 0)
 Example: log10(10) = 1</comment>
-        <translation type="unfinished">log10</translation>
+        <translation>log10</translation>
     </message>
     <message>
         <source>log</source>
         <comment>Logarithm to the base 10
 Usage: log(x greater than 0)
 Example: log(10) = 1</comment>
-        <translation type="unfinished">log</translation>
+        <translation>log</translation>
     </message>
     <message>
         <source>ln</source>
         <comment>Logarithm to base e (2.71828...)
 Usage: ln(x greater than 0)
 Example: ln(10) = 2.30259</comment>
-        <translation type="unfinished">ln</translation>
+        <translation>ln</translation>
     </message>
     <message>
         <source>exp</source>
         <comment>e raised to the power of x where e = 2.718
 Usage: exp(x) → returns a positive number
 Example: exp(2) = 7.38906</comment>
-        <translation type="unfinished">exp</translation>
+        <translation>exp</translation>
     </message>
     <message>
         <source>sqrt</source>
         <comment>Square root of a value
 Usage: sqrt(x greater than or equal to 0) → returns a positive number
 Example: sqrt(4) = 2</comment>
-        <translation type="unfinished">sqrt</translation>
+        <translation>sqrt</translation>
     </message>
     <message>
         <source>sign</source>
         <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
 Usage: sign(x) → returns -1, 0 or 1
 Example: sign(-3) = -1</comment>
-        <translation type="unfinished">sign</translation>
+        <translation>sign</translation>
     </message>
     <message>
         <source>rint</source>
         <comment>Round to nearest integer
 Usage: rint(x) → returns an integer number
 Example: rint(2.3) = 2</comment>
-        <translation type="unfinished">rint</translation>
+        <translation>rint</translation>
     </message>
     <message>
         <source>abs</source>
         <comment>Absolute value
 Usage: abs(x) → returns a positive number
 Example: abs(-5) = 5</comment>
-        <translation type="unfinished">abs</translation>
+        <translation>abs</translation>
     </message>
     <message>
         <source>min</source>
         <comment>Min of all arguments
 Usage: min(arg 1; arg 2; ... arg n)
 Example: min(2;3;4) = 2</comment>
-        <translation type="unfinished">min</translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>max</source>
         <comment>Max of all arguments
 Usage: max(arg 1; arg 2; ... arg n)
 Example: max(2;3;4) = 4</comment>
-        <translation type="unfinished">max</translation>
+        <translation>max</translation>
     </message>
     <message>
         <source>sum</source>
         <comment>Sum of all arguments
 Usage: sum(arg 1; arg 2; ... arg n)
 Example: sum(2;3;4) = 9</comment>
-        <translation type="unfinished">sum</translation>
+        <translation>sum</translation>
     </message>
     <message>
         <source>avg</source>
         <comment>Mean value of all arguments
 Usage: avg(arg 1; arg 2; ... arg n)
 Example: avg(2;3;4) = 3</comment>
-        <translation type="unfinished">avg</translation>
+        <translation>avg</translation>
     </message>
     <message>
         <source>fmod</source>
         <comment>Returns the floating-point remainder of x/y (rounded towards zero)
 Usage: fmod(x; y)
 Example: fmod(3.3;2) = 1.3</comment>
-        <translation type="unfinished">fmod</translation>
+        <translation>fmod</translation>
     </message>
 </context>
 <context>

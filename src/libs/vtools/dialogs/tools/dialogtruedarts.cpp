@@ -1,53 +1,51 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//-----------------------------------------------------------------------------
+//  @file   dialogtruedarts.cpp
+//  @author Douglas S Caskey
+//  @date   14 Aug, 2024
+//
+//  @copyright
+//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
- ************************************************************************
- **
- **  @file   dialogtruedarts.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   12 6, 2015
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   dialogtruedarts.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   12 Jun, 2015
+//
+//  @copyright
+//  Copyright (C) 2013 Valentina project.
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published
+//  by the Free Software Foundation, either version 3 of the License,
+//  or (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 #include "dialogtruedarts.h"
 
@@ -86,6 +84,9 @@ DialogTrueDarts::DialogTrueDarts(const VContainer *data, const quint32 &toolId, 
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/true_darts.png"));
+
+    // Set the position that the dialog opens based on user preference.
+    setDialogPosition();
 
     ui->lineEditFirstNewDartPoint->setClearButtonEnabled(true);
     ui->lineEditSecondNewDartPoint->setClearButtonEnabled(true);
@@ -402,7 +403,7 @@ void DialogTrueDarts::CheckState()
 {
     SCASSERT(ok_Button != nullptr)
     ok_Button->setEnabled(flagName1 && flagName2 && flagError);
-    // In case dialog hasn't apply button
+    // In case dialog does not have an apply button
     if (apply_Button != nullptr)
     {
         apply_Button->setEnabled(ok_Button->isEnabled());
@@ -426,11 +427,11 @@ void DialogTrueDarts::NameChanged(QLabel *labelEditNamePoint, const QString &poi
 //---------------------------------------------------------------------------------------------------------------------
 void DialogTrueDarts::FillComboBoxs(const quint32 &ch1, const quint32 &ch2)
 {
-    FillComboBoxPoints(ui->comboBoxFirstBasePoint, FillComboBox::NoChildren, ch1, ch2);
-    FillComboBoxPoints(ui->comboBoxSecondBasePoint, FillComboBox::NoChildren, ch1, ch2);
-    FillComboBoxPoints(ui->comboBoxFirstDartPoint, FillComboBox::NoChildren, ch1, ch2);
-    FillComboBoxPoints(ui->comboBoxSecondDartPoint, FillComboBox::NoChildren, ch1, ch2);
-    FillComboBoxPoints(ui->comboBoxThirdDartPoint, FillComboBox::NoChildren, ch1, ch2);
+    fillComboBoxPoints(ui->comboBoxFirstBasePoint, FillComboBox::NoChildren, ch1, ch2);
+    fillComboBoxPoints(ui->comboBoxSecondBasePoint, FillComboBox::NoChildren, ch1, ch2);
+    fillComboBoxPoints(ui->comboBoxFirstDartPoint, FillComboBox::NoChildren, ch1, ch2);
+    fillComboBoxPoints(ui->comboBoxSecondDartPoint, FillComboBox::NoChildren, ch1, ch2);
+    fillComboBoxPoints(ui->comboBoxThirdDartPoint, FillComboBox::NoChildren, ch1, ch2);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

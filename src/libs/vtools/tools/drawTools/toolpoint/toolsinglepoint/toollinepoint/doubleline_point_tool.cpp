@@ -185,7 +185,7 @@ QString DoubleLinePointTool::makeToolTip() const
     const QLineF line1(static_cast<QPointF>(*point1), static_cast<QPointF>(*point3));
     const QLineF line2(static_cast<QPointF>(*point2), static_cast<QPointF>(*point3));
 
-    const QString toolTip = QString("<table>"
+    const QString toolTip = QString("<table style=font-size:11pt; font-weight:600>"
                                         "<tr>"
                                             "<td align ='right'><b>%9: </b></td>" // Tool name
                                             "<td align ='left'>Intersect XY</td>"

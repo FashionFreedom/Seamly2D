@@ -126,6 +126,11 @@ const QString settingGraphicsViewShowPieceToolBar        = QStringLiteral("graph
 const QString settingGraphicsViewShowDetailsToolBar      = QStringLiteral("graphicsview/showDetailsToolbar");
 const QString settingGraphicsViewShowLayoutToolBar       = QStringLiteral("graphicsview/showLayoutToolbar");
 
+const QString settingGraphicsViewDialogPosition          = QStringLiteral("graphicsview/dialogPosition");
+const QString settingGraphicsUseSecondMonitor            = QStringLiteral("graphicsview/useSecondMonitor");
+const QString settingGraphicsViewXOffset                 = QStringLiteral("graphicsview/xOffset");
+const QString settingGraphicsViewYOffset                 = QStringLiteral("graphicsview/yOffset");
+
 const QString settingGraphicsViewShowScrollBars          = QStringLiteral("graphicsview/showScrollBars");
 const QString settingGraphicsViewAutoScroll              = QStringLiteral("graphicsview/autoScroll");
 const QString settingGraphicsViewAutoScrollSpeed         = QStringLiteral("graphicsview/autoScrollSpeed");
@@ -918,6 +923,54 @@ bool VCommonSettings::getShowLayoutToolBar() const
 void VCommonSettings::setShowLayoutToolBar(const bool &value)
 {
     setValue(settingGraphicsViewShowLayoutToolBar, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::useSecondMonitor() const
+{
+    return value(settingGraphicsUseSecondMonitor, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setUseSecondMonitor(const bool &value)
+{
+    setValue(settingGraphicsUseSecondMonitor, value);
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::getDialogPosition() const
+{
+    return value(settingGraphicsViewDialogPosition, -4).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDialogPosition(const int &value)
+{
+    setValue(settingGraphicsViewDialogPosition, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::getXOffset() const
+{
+    return value(settingGraphicsViewXOffset, 0).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setXOffset(const int &value)
+{
+    setValue(settingGraphicsViewXOffset, value);
+}
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::getYOffset() const
+{
+    return value(settingGraphicsViewYOffset, 0).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setYOffset(const int &value)
+{
+    setValue(settingGraphicsViewYOffset, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

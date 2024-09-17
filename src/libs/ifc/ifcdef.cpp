@@ -229,7 +229,7 @@ QString PenStyleToLineType(Qt::PenStyle penStyle)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QMap<QString, QString> curveLineTypeList()
+QMap<QString, QString> lineTypeNoPenRemovedList()
 {
     QMap<QString, QString> map = lineTypeList();
     map.remove(LineTypeNone);

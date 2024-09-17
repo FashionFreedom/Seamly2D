@@ -491,7 +491,7 @@ QString VToolEllipticalArc::makeToolTip() const
 {
     const QSharedPointer<VEllipticalArc> elArc = VAbstractTool::data.GeometricObject<VEllipticalArc>(m_id);
 
-    const QString toolTip = QString("<table>"
+    const QString toolTip = QString("<table style=font-size:11pt; font-weight:600>"
                                     "<tr> <td><b>%12:</b> %13</td> </tr>"
                                     "<tr> <td><b>%1:</b> %2 %3</td> </tr>"
                                     "<tr> <td><b>%4:</b> %5 %3</td> </tr>"

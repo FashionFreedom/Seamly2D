@@ -99,9 +99,9 @@ void VSimpleCurve::RefreshGeometry(const QSharedPointer<VAbstractCurve> &curve)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSimpleCurve::CurveChoosed()
+void VSimpleCurve::CurveChosen()
 {
-    emit Choosed(id);
+    emit Chosen(id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -130,7 +130,7 @@ void VSimpleCurve::mousePressEvent(QGraphicsSceneMouseEvent *event)
     {
         if (event->button() == Qt::LeftButton)
         {
-            emit Choosed(id);
+            emit Chosen(id);
         }
     }
 }
@@ -142,7 +142,7 @@ void VSimpleCurve::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     {
         if (event->button() == Qt::LeftButton)
         {
-            emit Choosed(id);
+            emit Chosen(id);
         }
     }
     QGraphicsPathItem::mouseReleaseEvent(event);

@@ -174,6 +174,13 @@
     </message>
 </context>
 <context>
+    <name>AddImage</name>
+    <message>
+        <source>add image</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddPiece</name>
     <message>
         <source>add piece</source>
@@ -4821,26 +4828,12 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>File may be corrupted or empty...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Confirm deletion</source>
         <translation type="unfinished">Підтвердіть видалення</translation>
     </message>
     <message>
         <source>Do you really want to delete?</source>
         <translation type="unfinished">Ви дійсно хочете видалити?</translation>
-    </message>
-    <message>
-        <source>Images will not be saved</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please note that the images can not be saved and that they are not affected by the undo and redo functions in the current version of the software.
-
-You may want to take a screenshot of the image properties dialog before closing the software to be able to recreate identically the image when opening the software again.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6182,10 +6175,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Zoom to Fit All(Ctrl+=)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Report bug...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6242,15 +6231,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Ctrl+Left</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Area</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ctrl+A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6258,23 +6239,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Z, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Zoom 1:1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>1:1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ctrl+0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7098,10 +7063,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Alt+I</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7321,6 +7282,18 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Default</source>
         <translation type="unfinished">По замовчуванню</translation>
+    </message>
+    <message>
+        <source>Zoom to Fit All(Ctrl+9)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom 100%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>100%</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9463,11 +9436,47 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Autoscroll</source>
+        <source>Dialogs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Mouse wheel</source>
+        <source>Open on second monitor if available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bottom left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bottom right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Offset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X Offset:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y Offset:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10551,10 +10560,6 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Zoom 1:1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Ctrl+0</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10568,10 +10573,6 @@ When unchecked the period is used.</source>
     </message>
     <message>
         <source>Fit All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ctrl+=</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10603,15 +10604,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Z, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Show Name Text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>V, P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10639,15 +10632,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>V, W</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Curve Control Points</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>V, C</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10655,15 +10640,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>V, A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Seam Allowance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>V, S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10671,16 +10648,8 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>V, G</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Labels</source>
         <translation type="unfinished">Мітки</translation>
-    </message>
-    <message>
-        <source>V, L</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -10727,10 +10696,6 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>F2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Point</source>
         <translation type="unfinished">Точка</translation>
     </message>
@@ -10739,15 +10704,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>L, A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>On Line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>O, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10755,15 +10712,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>O, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>On Bisector</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>O, B</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10771,15 +10720,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>P, S</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Intersect Arc and Line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10787,15 +10728,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>X, T</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Intersect XY</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>X, Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10803,15 +10736,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>L, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Intersect Line and Axis</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>L, X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10832,10 +10757,6 @@ When unchecked the period is used.</source>
     </message>
     <message>
         <source>Point - Intersect Lines</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>I, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10879,15 +10800,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>O, C</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Point - On Spline	</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>O, S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10895,15 +10808,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>I, C</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Point - Intersect Curve and Axis</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>C, X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10931,23 +10836,11 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>O, A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Point - Intersect Arc and Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>A, X</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Point - Intersect Arcs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>I, A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10963,15 +10856,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>C, T</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Point - Intersect Arc and Tangent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A, T</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10991,31 +10876,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>G</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Rotation</source>
         <translation type="unfinished">Поворот</translation>
-    </message>
-    <message>
-        <source>R</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mirror by Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>M, L</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Mirror by Axis</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>M, A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11031,15 +10900,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>T, D</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Export Draft Blocks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>E, D</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11063,15 +10924,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>N, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Anchor Point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A, P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11079,19 +10932,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>I, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>I, N</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Edit Properties</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11107,15 +10948,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>I</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Forbid Flipping</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>F</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11155,15 +10988,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>U</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Export Pieces</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>E, P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11175,15 +11000,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>N, L</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Export Layout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>E, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11231,15 +11048,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>K</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Shift+P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>T</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11248,6 +11057,14 @@ When unchecked the period is used.</source>
     </message>
     <message>
         <source>Insert Nodes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom 100%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+9</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13129,6 +12946,10 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Error creating or updating union pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image_name</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -633,7 +633,7 @@ void VAbstractOperation::InitCurve(quint32 id, VContainer *data, GOType curveTyp
     {
         showContextMenu(event, id);
     });
-    connect(curve, &VSimpleCurve::Choosed, this, [this, sceneType](quint32 id)
+    connect(curve, &VSimpleCurve::Chosen, this, [this, sceneType](quint32 id)
     {
         emit chosenTool(id, sceneType);
     });
@@ -701,7 +701,7 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                 point->setParentItem(this);
                 point->SetType(GOType::Point);
                 point->setToolTip(complexPointToolTip(item.id));
-                connect(point, &VSimplePoint::Choosed, this, [this](quint32 id)
+                connect(point, &VSimplePoint::Chosen, this, [this](quint32 id)
                 {
                     emit chosenTool(id, SceneObject::Point);
                 });
@@ -747,7 +747,7 @@ QString VAbstractOperation::complexPointToolTip(quint32 itemId) const
 {
     const QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(itemId);
 
-    const QString toolTipStr = QString("<table>"
+    const QString toolTipStr = QString("<table style=font-size:11pt; font-weight:600>"
                                        "<tr> <td><b>%1:</b> %2</td> </tr>"
                                        "%3"
                                        "</table>")
@@ -760,7 +760,7 @@ QString VAbstractOperation::complexCurveToolTip(quint32 itemId) const
 {
     const QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(itemId);
 
-    const QString toolTipStr = QString("<table>"
+    const QString toolTipStr = QString("<table style=font-size:11pt; font-weight:600>"
                                        "<tr> <td><b>  %1:</b> %2</td> </tr>"
                                        "<tr> <td><b>%3:</b> %4 %5</td> </tr>"
                                        "%6"
