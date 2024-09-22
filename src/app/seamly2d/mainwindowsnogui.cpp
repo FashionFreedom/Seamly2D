@@ -894,6 +894,20 @@ void MainWindowsNoGUI::exportSVG(const QString &name, QGraphicsRectItem *paper, 
     svgGenerator.generate();
 }
 
+void MainWindowsNoGUI::exportSVG(const QString &name, QGraphicsRectItem *paper, const QList<QGraphicsItem *> &pieces) const
+{
+    SvgGenerator svgGenerator(paper, name, doc->GetDescription(), static_cast<int>(PrintDPI));
+
+    for (int pieceNb=0; pieceNb<pieces.size(); pieceNb++)
+    {
+        QGraphicsScene *scene = new VMainGraphicsScene();
+        scene->addItem(pieces.at(pieceNb));
+        svgGenerator.addSvgFromScene(scene);
+    }
+
+    svgGenerator.generate();
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief exportPNG save layout to png file.
@@ -1622,7 +1636,7 @@ void MainWindowsNoGUI::ExportScene(const ExportLayoutDialog &dialog, const QList
             {
                 case LayoutExportFormat::SVG:
                     paper->setVisible(false);
-                    exportSVG(name, paper, scene);
+                    exportSVG(name, paper, pieces.at(i));
                     paper->setVisible(true);
                     break;
                 case LayoutExportFormat::PDF:
