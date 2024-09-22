@@ -3,6 +3,7 @@
 
 SOURCES += \
     $$PWD/measurements.cpp \
+    $$PWD/svg_generator.cpp \
     $$PWD/vlabeltemplate.cpp
 
 *msvc*:SOURCES += $$PWD/stable.cpp
@@ -10,4 +11,5 @@ SOURCES += \
 HEADERS += \
     $$PWD/measurements.h \
     $$PWD/stable.h \
+    $$PWD/svg_generator.h \
     $$PWD/vlabeltemplate.h
