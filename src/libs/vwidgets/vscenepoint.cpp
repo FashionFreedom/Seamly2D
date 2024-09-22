@@ -89,7 +89,7 @@ void VScenePoint::paint(QPainter *painter, const QStyleOptionGraphicsItem *optio
     setPointPen(scale);
     scaleCircleSize(this, scale * .75);
 
-    if (qApp->Settings()->getPointNameSize()*scale < 6 || !qApp->Settings()->getHidePointNames())
+    if (!qApp->Settings()->getHidePointNames())
     {
         m_pointName->setVisible(false);
         m_pointLeader->setVisible(false);
