@@ -29,12 +29,10 @@
 
 #include "svg_generator.h"
 #include <QFile>
-#include <QDir>
 #include <QDebug>
 #include <QSvgGenerator>
 #include <QGraphicsItem>
 #include <QPainter>
-#include <QFileInfo>
 #include <QBuffer>
 
 SvgGenerator::SvgGenerator(QGraphicsRectItem *paper, QString name, QString description, int resolution):
