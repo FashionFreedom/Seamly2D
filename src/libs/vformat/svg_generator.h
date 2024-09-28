@@ -4,6 +4,8 @@
  **  @date   September 21, 2024
  **
  **  @brief
+ **  Custom SVG generator to handle groups in SVGs
+ **
  **  @copyright
  **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
