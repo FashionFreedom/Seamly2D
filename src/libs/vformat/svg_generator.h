@@ -41,19 +41,14 @@ public:
 
 
 private:
-    bool loadSvgIntoDom(QDomDocument &domDocument, const QString &filePath);
-    QDomDocument mergeSvgDoms(const QList<QDomDocument> &domList);
-    QString getTempFilePath(int id);
+    QDomDocument mergeSvgDoms();
 
-    int m_svgCounter;
     QGraphicsRectItem *m_paper;
     QString m_filepath;
-    QString m_folderPath;
-    QString m_name;
     QString m_description;
     int m_resolution;
-    QString m_tempSvgFolderName;
-    QString m_tempSvgPrefix;
+
+    QList<QDomDocument> m_domList;
 };
 
 #endif // SVG_GENERATOR_H

@@ -33,52 +33,31 @@
 #include <QGraphicsItem>
 #include <QPainter>
 #include <QFileInfo>
+#include <QBuffer>
 
 SvgGenerator::SvgGenerator(QGraphicsRectItem *paper, QString name, QString description, int resolution):
-    m_svgCounter(0),
     m_paper(paper),
     m_filepath(name),
     m_description(description),
-    m_resolution(resolution),
-    m_tempSvgPrefix("tempSvg")
+    m_resolution(resolution)
 {
-    QFileInfo fileInfo(m_filepath);
-    m_folderPath = fileInfo.absolutePath();
-    m_name = fileInfo.baseName();
-    m_tempSvgFolderName = m_tempSvgPrefix + "_" + m_name;
 }
 
 
-bool SvgGenerator::loadSvgIntoDom(QDomDocument &domDocument, const QString &filePath)
+QDomDocument SvgGenerator::mergeSvgDoms()
 {
-    QFile file(filePath);
-    if (!file.open(QIODevice::ReadOnly)) {
-        qDebug() << "Error : Impossible to open the SVG file :" << filePath;
-        return false;
-    }
-    if (!domDocument.setContent(&file)) {
-        qDebug() << "Error : Impossible to load the SVG content in the QDomDocument.";
-        file.close();
-        return false;
-    }
-    file.close();
-    return true;
-}
-
-QDomDocument SvgGenerator::mergeSvgDoms(const QList<QDomDocument> &domList)
-{
-    /*domList contains DOM representations of multiple SVG
+    /* m_domList contains DOM representations of multiple SVGs
     Assuming each svg contains a main group containing every graphical item of the svg,
     this function adds to the first svg of the list all the main groups of the other svgs,
     thus creating a single svg with each svg of the list in it, every svg being in its own group.
     This function is used in order to create svgs containing groups*/
 
-    if (domList.isEmpty()) {
+    if (m_domList.isEmpty()) {
         qDebug() << "Error : the SVG list is empty";
         return QDomDocument();
     }
 
-    QDomDocument mergedSvg = domList.at(0);
+    QDomDocument mergedSvg = m_domList.at(0);
 
     QDomElement mergedSvgRoot = mergedSvg.documentElement();
     if (mergedSvgRoot.tagName() != "svg") {
@@ -86,8 +65,8 @@ QDomDocument SvgGenerator::mergeSvgDoms(const QList<QDomDocument> &domList)
         return QDomDocument();
     }
 
-    for (int i = 1; i < domList.size(); ++i) {
-        QDomDocument domSvg = domList.at(i);
+    for (int i = 1; i < m_domList.size(); ++i) {
+        QDomDocument domSvg = m_domList.at(i);
         QDomElement svgRoot = domSvg.documentElement();
         if (svgRoot.tagName() != "svg") {
             qDebug() << "Error : the SVG does not contain a <svg> tag.";
@@ -107,10 +86,12 @@ QDomDocument SvgGenerator::mergeSvgDoms(const QList<QDomDocument> &domList)
 
 void SvgGenerator::addSvgFromScene(QGraphicsScene *scene)
 {
-    m_svgCounter++;
+    QByteArray byteArray;
+    QBuffer buffer(&byteArray);
+    buffer.open(QIODevice::WriteOnly);
 
     QSvgGenerator svgGenerator;
-    svgGenerator.setFileName(getTempFilePath(m_svgCounter));
+    svgGenerator.setOutputDevice(&buffer);
     svgGenerator.setSize(m_paper->rect().size().toSize());
     svgGenerator.setViewBox(m_paper->rect());
     svgGenerator.setTitle(QObject::tr("Pattern"));
@@ -124,59 +105,31 @@ void SvgGenerator::addSvgFromScene(QGraphicsScene *scene)
     painter.setBrush ( QBrush ( Qt::NoBrush ) );
     scene->render(&painter, m_paper->rect(), m_paper->rect(), Qt::IgnoreAspectRatio);
     painter.end();
+
+    QDomDocument domDoc;
+    if (domDoc.setContent(byteArray)) {
+        m_domList.append(domDoc);
+    } else {
+        qDebug() << "Error : Impossible to load the SVG content in the QDomDocument.";
+    }
+
+    buffer.close();
 }
 
 
 void SvgGenerator::generate()
 {
-    QList<QDomDocument> domList;
-
-    for(int i = 1; i <= m_svgCounter; i++)
-    {
-        QDomDocument domDoc;
-        QString path = getTempFilePath(i);
-        QFile file(path);
-        if (!file.exists()) {
-            qDebug() << "Error : the SVG file does not exist.";
-            continue;
-        }
-        loadSvgIntoDom(domDoc, path);
-        domList.append(domDoc);
-
-        if (!file.remove()) {
-            qDebug() << "Error : unable to remove " << path;
-        }
-    }
-
-    QDomDocument mergedSvg = mergeSvgDoms(domList);
+    QDomDocument mergedSvg = mergeSvgDoms();
 
     QFile outputFile(m_filepath);
     if (!outputFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
         qDebug() << "Error : Couldn't write the output file.";
+        return;
     }
 
     QTextStream stream(&outputFile);
     stream << mergedSvg.toString();
     outputFile.close();
 
-    QDir dir(m_folderPath);
-    if(!dir.rmdir(m_tempSvgFolderName))
-    {
-        qDebug() << "Error : Couldn't remove the temp SVG folder.";
-    }
-
     qDebug() << "Merged SVG Generated!";
-}
-
-
-QString SvgGenerator::getTempFilePath(int id)
-{
-    QDir dir(m_folderPath);
-    if (!dir.cd(m_tempSvgFolderName))
-    {
-        dir.mkdir(m_tempSvgFolderName);
-        dir.cd(m_tempSvgFolderName);
-    }
-
-    return dir.path() + "/" + m_tempSvgPrefix + "_" + m_name + "_" + QString::number(id) + ".svg";
 }
