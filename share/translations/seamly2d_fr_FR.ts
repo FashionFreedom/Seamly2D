@@ -4835,6 +4835,18 @@ Do you want to download it?</source>
         <source>Do you really want to delete?</source>
         <translation type="unfinished">Voulez vous vraiment supprimer?</translation>
     </message>
+    <message>
+        <source>The image &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Loading image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No image was selected...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InsertNodesDialog</name>
@@ -7196,10 +7208,6 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation type="unfinished">Images</translation>
     </message>
     <message>
-        <source>Open Image File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Zoom to Point</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7354,10 +7362,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Can&apos;t create a path</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern</source>
-        <translation>Patron</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
@@ -9881,6 +9885,18 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Backward (from end point)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Images</source>
+        <translation type="unfinished">Images</translation>
+    </message>
+    <message>
+        <source>Open Image File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern</source>
+        <translation type="unfinished">Patron</translation>
     </message>
 </context>
 <context>
