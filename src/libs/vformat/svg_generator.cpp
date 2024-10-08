@@ -35,6 +35,8 @@
 #include <QPainter>
 #include <QBuffer>
 
+
+//---------------------------------------------------------------------------------------------------------------------
 SvgGenerator::SvgGenerator(QGraphicsRectItem *paper, QString name, QString description, int resolution):
     m_paper(paper),
     m_filepath(name),
@@ -44,17 +46,18 @@ SvgGenerator::SvgGenerator(QGraphicsRectItem *paper, QString name, QString descr
 }
 
 
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Merge all the SVGs in the m_domList list into a single SVG
+ * @return The merged SVG as a DOM document
+ * @details m_domList contains DOM representations of multiple SVGs
+            Assuming each svg contains a main group containing every graphical item of the svg,
+            this function adds to the first svg of the list all the main groups of the other svgs,
+            thus creating a single svg with each svg of the list in it, every svg being in its own group.
+            This function is used in order to create svgs containing groups
+ */
 QDomDocument SvgGenerator::mergeSvgDoms()
 {
-    /*@brief Merge all the SVGs in the m_domList list into a single SVG
-     @return The merged SVG as a DOM document
-     @details m_domList contains DOM representations of multiple SVGs
-     Assuming each svg contains a main group containing every graphical item of the svg,
-     this function adds to the first svg of the list all the main groups of the other svgs,
-     thus creating a single svg with each svg of the list in it, every svg being in its own group.
-     This function is used in order to create svgs containing groups
-     */
-
     if (m_domList.isEmpty()) {
         qDebug() << "Error : the SVG list is empty";
         return QDomDocument();
@@ -87,14 +90,18 @@ QDomDocument SvgGenerator::mergeSvgDoms()
     return mergedSvg;
 }
 
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Add a new SVG to the list of SVGs to be merged into a single SVG
+ * @param scene : the scene that must be converted to SVG
+ * @return void
+ * @details This function creates a SVG from the given scene and converts it into
+            a DOM that is added to the m_domList list of SVGs to be merged.
+*/
 void SvgGenerator::addSvgFromScene(QGraphicsScene *scene)
 {
-    /*@brief Add a new SVG to the list of SVGs to be merged into a single SVG
-      @param scene : the scene that must be converted to SVG
-      @return void
-      @details This function creates a SVG from the given scene and converts it into
-      a DOM that is added to the m_domList list of SVGs to be merged.
-    */
+
 
     QByteArray byteArray;
     QBuffer buffer(&byteArray);
@@ -127,13 +134,16 @@ void SvgGenerator::addSvgFromScene(QGraphicsScene *scene)
 }
 
 
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Generate the merged SVG where each previously given scene is grouped separately.
+ * @return void
+ * @details This function merges the SVGs of the m_domList list and writes the result
+            in a file at the path given in the constructor.
+*/
 void SvgGenerator::generate()
 {
-    /*@brief Generate the merged SVG where each previously given scene is grouped separately.
-      @return void
-      @details This function merges the SVGs of the m_domList list and writes the result
-      in a file at the path given in the constructor.
-    */
+
 
     QDomDocument mergedSvg = mergeSvgDoms();
 
