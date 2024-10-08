@@ -27,6 +27,7 @@ var classMainWindowsNoGUI =
     [ "exportPPM", "de/d1a/classMainWindowsNoGUI.html#a10aef447444a6bdf12b83c5206fa303d", null ],
     [ "exportPS", "de/d1a/classMainWindowsNoGUI.html#a99f9b0c9a35f5d5213b34fe18a16ec2c", null ],
     [ "ExportScene", "de/d1a/classMainWindowsNoGUI.html#af36a453bc068cae275af7e10a80b496a", null ],
+    [ "exportSVG", "de/d1a/classMainWindowsNoGUI.html#a510c301d0ed21860bab65c99d969d56e", null ],
     [ "exportSVG", "de/d1a/classMainWindowsNoGUI.html#a19f4cef7661e4d67cd2ef45a5e99fd92", null ],
     [ "exportTIF", "de/d1a/classMainWindowsNoGUI.html#a32cae85342cc5a8ca1f5d666c0000b38", null ],
     [ "FileName", "de/d1a/classMainWindowsNoGUI.html#af85873aa29a5e5f613df448357ba741b", null ],

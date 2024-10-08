@@ -251,6 +251,7 @@ var annotated_dup =
     [ "ShowOperationPointName", "dc/d9b/classShowOperationPointName.html", "dc/d9b/classShowOperationPointName" ],
     [ "ShowPointName", "d8/d2c/classShowPointName.html", "d8/d2c/classShowPointName" ],
     [ "SourceItem", "d9/d96/structSourceItem.html", "d9/d96/structSourceItem" ],
+    [ "SvgGenerator", "d3/d0b/classSvgGenerator.html", "d3/d0b/classSvgGenerator" ],
     [ "TestApplication2D", "d8/dd6/classTestApplication2D.html", "d8/dd6/classTestApplication2D" ],
     [ "TextLine", "d8/de6/structTextLine.html", "d8/de6/structTextLine" ],
     [ "TMainWindow", "d8/d61/classTMainWindow.html", "d8/d61/classTMainWindow" ],

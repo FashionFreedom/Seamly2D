@@ -321,6 +321,7 @@ var hierarchy =
     ] ],
     [ "QList< T >", "d1/d4a/classQList.html", null ],
     [ "QList< QCommandLineOption * >", "d1/d4a/classQList.html", null ],
+    [ "QList< QDomDocument >", "d1/d4a/classQList.html", null ],
     [ "QList< QGraphicsItem * >", "d1/d4a/classQList.html", null ],
     [ "QList< QGraphicsScene * >", "d1/d4a/classQList.html", null ],
     [ "QList< QList< QGraphicsItem * > >", "d1/d4a/classQList.html", null ],
@@ -660,6 +661,7 @@ var hierarchy =
     [ "VPE::VPropertyFormWidgetPrivate::SEditorWidget", "d9/d9b/structVPE_1_1VPropertyFormWidgetPrivate_1_1SEditorWidget.html", null ],
     [ "SourceItem", "d9/d96/structSourceItem.html", null ],
     [ "qmu::SToken", "dc/d14/structqmu_1_1SToken.html", null ],
+    [ "SvgGenerator", "d3/d0b/classSvgGenerator.html", null ],
     [ "TextLine", "d8/de6/structTextLine.html", null ],
     [ "UnionToolInitData", "d9/d2d/structUnionToolInitData.html", null ],
     [ "VAbstractFloatItemData", "d4/dc0/classVAbstractFloatItemData.html", [
