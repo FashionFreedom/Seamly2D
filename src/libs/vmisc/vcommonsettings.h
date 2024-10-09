@@ -211,6 +211,12 @@ public:
     bool                 getShowScrollBars() const;
     void                 setShowScrollBars(const bool &value);
 
+    bool                 getAutoScroll() const;
+    void                 setAutoScroll(const bool &value);
+
+    int                  getAutoScrollSpeed() const;
+    void                 setAutoScrollSpeed(const int &speed);
+
     int                  getScrollBarWidth() const;
     void                 setScrollBarWidth(const int &width);
 
