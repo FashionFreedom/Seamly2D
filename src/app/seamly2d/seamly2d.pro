@@ -12,7 +12,7 @@ include(../../../common.pri)
 
 # Here we don't see "network" library, but, i think, "printsupport" depend on this library, so we still need this
 # library in installer.
-QT       += core gui widgets xml svg printsupport xmlpatterns multimedia
+QT       += core gui widgets xml svg printsupport xmlpatterns multimedia help
 
 # We want create executable file
 TEMPLATE = app
@@ -80,6 +80,8 @@ win32:RC_FILE = share/resources/seamly2d.rc
 
 # INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES and INSTALL_LABEL_TEMPLATES inside samples.pri
 include(../samples.pri)
+
+include(../docs.pri)
 
 win32 {
     INSTALL_PDFTOPS += ../../../dist/win/pdftops.exe
