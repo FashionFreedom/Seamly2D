@@ -9,6 +9,7 @@ HEADERS += \
     $$PWD/dialogs.h \
     $$PWD/dialogpatternproperties.h \
     $$PWD/dialognewpattern.h \
+    $$PWD/helpbrowser.h \
     $$PWD/layoutsettings_dialog.h \
     $$PWD/dialoglayoutprogress.h \
     $$PWD/dialogvariables.h \
@@ -33,6 +34,7 @@ SOURCES += \
     $$PWD/decimalchart_dialog.cpp \
     $$PWD/dialogpatternproperties.cpp \
     $$PWD/dialognewpattern.cpp \
+    $$PWD/helpbrowser.cpp \
     $$PWD/layoutsettings_dialog.cpp \
     $$PWD/dialoglayoutprogress.cpp \
     $$PWD/dialogvariables.cpp \

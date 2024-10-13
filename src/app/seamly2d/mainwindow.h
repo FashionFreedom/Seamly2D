@@ -278,6 +278,8 @@ private slots:
     void ChangedSize(int index);
     void ChangedHeight(int index);
 
+    void createHelpWindow();
+
 private:
     Q_DISABLE_COPY(MainWindow)
     /** @brief ui keeps information about user interface */
@@ -491,6 +493,8 @@ private:
     void ToolSelectOperationObjects() const;
     void ToolSelectGroupObjects() const;
     void selectPieceTool() const;
+
+    QDockWidget*        helpWindow;
 };
 
 #endif // MAINWINDOW_H

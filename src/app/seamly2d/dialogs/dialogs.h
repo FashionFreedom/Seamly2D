@@ -64,5 +64,6 @@
 #include "dialogs/decimalchart_dialog.h"
 #include "dialogs/shortcuts_dialog.h"
 #include "dialogs/show_info_dialog.h"
+#include "helpbrowser.h"
 
 #endif // DIALOGS_H

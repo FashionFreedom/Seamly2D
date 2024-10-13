@@ -120,6 +120,10 @@
 #include <QtDebug>
 #include <QtGlobal>
 #include <QUndoStack>
+#include <QHelpEngineCore>
+#include <QSplitter>
+#include <QHelpContentWidget>
+#include <QHelpIndexWidget>
 
 // compiler directives
 #if defined(Q_OS_MAC)
@@ -264,6 +268,9 @@ MainWindow::MainWindow(QWidget *parent)
         ui->statusBar->addWidget(helpLabel);
 
         initializeToolsToolBar();
+
+        // Initialize help window
+        createHelpWindow();
 
         // Whenever undo / redo changes are made need to update the saved state of the document.
         connect(qApp->getUndoStack(), &QUndoStack::cleanChanged, this, &MainWindow::patternChangesWereSaved);
@@ -6215,6 +6222,11 @@ void MainWindow::createActions()
     });
 
     //Help menu
+    connect(ui->inAppDoc_Action, &QAction::triggered, this, [this]()
+    {
+        qCDebug(vMainWindow, "Showing in-app documentation");
+        helpWindow->show();
+    });
     connect(ui->shortcuts_Action, &QAction::triggered, this, [this]()
     {
         ShortcutsDialog *shortcutsDialog = new ShortcutsDialog(this);
@@ -7911,4 +7923,40 @@ void MainWindow::selectPieceTool() const
     emit ItemsSelection(SelectionType::ByMouseRelease);
 
     ui->view->allowRubberBand(false);
+}
+
+
+void MainWindow::createHelpWindow(){
+    QString helpFile = QCoreApplication::applicationDirPath() + "/docs/seamly.qhc";
+    if (!QFile::exists(helpFile)) {
+        qWarning() << "Help file not found at:" << helpFile;
+    }
+
+    QHelpEngine* helpEngine = new QHelpEngine(helpFile);
+    helpEngine->setupData();
+
+    QTabWidget *tWidget = new QTabWidget;
+    tWidget->setMaximumWidth(200);
+    tWidget->addTab(helpEngine->contentWidget(), "Contents");
+    tWidget->addTab(helpEngine->indexWidget(), "Index");
+
+    HelpBrowser *textViewer = new HelpBrowser(helpEngine);
+    textViewer->setSource(QUrl("qthelp://seamly.io.seamly2d/doc/html/seamly2d.html"));
+    connect(helpEngine->contentWidget(), SIGNAL(linkActivated(QUrl)), textViewer,
+            SLOT(setSource(QUrl)));
+
+    connect(helpEngine->indexWidget(), SIGNAL(linkActivated(QUrl, QString)),
+            textViewer, SLOT(setSource(QUrl)));
+
+    QSplitter *horizSplitter = new QSplitter(Qt::Horizontal);
+    horizSplitter->insertWidget(0, tWidget);
+    horizSplitter->insertWidget(1, textViewer);
+    horizSplitter->hide();
+
+    helpWindow = new QDockWidget(tr("Seamly Documentation"), this);
+    helpWindow->setObjectName("Help_Window");
+    helpWindow->setWidget(horizSplitter);
+    helpWindow->hide();
+    addDockWidget(Qt::BottomDockWidgetArea, helpWindow);
+    helpWindow->setFloating(true);
 }
