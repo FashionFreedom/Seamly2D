@@ -468,10 +468,10 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
     }
 
     // Special for not selectable item first need to call standard mousePressEvent then accept event
-    //QGraphicsItem::mousePressEvent(event);
+    // QGraphicsItem::mousePressEvent(event);
 
     // Somehow clicking on non selectable object does not clear previous selections.
-    if (not (flags() & ItemIsSelectable) && scene())
+    if (!(flags() & ItemIsSelectable) && scene())
     {
         scene()->clearSelection();
     }
@@ -514,7 +514,7 @@ void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     prepareGeometryChange();
 
-    if (flags() & QGraphicsItem::ItemIsMovable && event->buttons() & Qt::LeftButton)
+    if (flags() & QGraphicsItem::ItemIsMovable && event->button() == Qt::LeftButton)
     {
         m_imageWasMoved = true;
 
@@ -524,6 +524,29 @@ void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         showImageStatusMessage();
         updateImage();
         scene()->update();
+    }
+
+    // Each time an item is moved the scene rect is recalculated. In some cases this can cause infinite redrawing
+    // That's why we wait till the scene is finished drawing before scrolling again.
+    static bool changeFinished = true;
+
+    if (changeFinished)
+    {
+        changeFinished = false;
+
+        const QList<QGraphicsView *> viewList = scene()->views();
+        if (!viewList.isEmpty())
+        {
+            if (VMainGraphicsView *view = qobject_cast<VMainGraphicsView *>(viewList.at(0)))
+            {
+                // Ensure only small rect around a cursor is visible.
+                VMainGraphicsScene *currentScene = qobject_cast<VMainGraphicsScene *>(scene());
+                SCASSERT(currentScene)
+                const QPointF cursorPosition = currentScene->getScenePos();
+                view->ensureRectVisible(QRectF(cursorPosition.x() - 5, cursorPosition.y() - 5, 10, 10));
+            }
+        }
+        changeFinished = true;
     }
 }
 

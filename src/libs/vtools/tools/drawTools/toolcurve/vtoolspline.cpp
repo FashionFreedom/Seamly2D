@@ -1,3 +1,4 @@
+//  ---------------------------------------------------------------------------
 //  @file   vtoolspline.cpp
 //  @author Douglas S Caskey
 //  @date   17 Sep, 2023
@@ -19,33 +20,33 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//  ---------------------------------------------------------------------------
 
-/************************************************************************
- **  @file   vtoolspline.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//  ---------------------------------------------------------------------------
+//  @file   vtoolspline.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   November 15, 2013
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2015 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//  ---------------------------------------------------------------------------
 
 #include "vtoolspline.h"
 
@@ -450,9 +451,10 @@ void VToolSpline::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         connect(moveSpl, &MoveSpline::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
         qApp->getUndoStack()->push(moveSpl);
 
-        // Each time we move something we call recalculation scene rect. In some cases this can cause moving
-        // objects positions. And this cause infinite redrawing. That's why we wait the finish of saving the last move.
+        // Each time an item is moved the scene rect is recalculated. In some cases this can cause infinite redrawing
+        // That's why we wait till the scene is finished drawing before scrolling again.
         static bool changeFinished = true;
+
         if (changeFinished)
         {
            changeFinished = false;
@@ -460,12 +462,13 @@ void VToolSpline::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
            const QList<QGraphicsView *> viewList = scene()->views();
            if (!viewList.isEmpty())
            {
-               if (QGraphicsView *view = viewList.at(0))
+               if (VMainGraphicsView *view = qobject_cast<VMainGraphicsView *>(viewList.at(0)))
                {
+                   // Ensure only small rect around a cursor is visible.
                    VMainGraphicsScene *currentScene = qobject_cast<VMainGraphicsScene *>(scene());
                    SCASSERT(currentScene)
                    const QPointF cursorPosition = currentScene->getScenePos();
-                   view->ensureVisible(QRectF(cursorPosition.x()-5, cursorPosition.y()-5, 10, 10));
+                   view->ensureRectVisible(QRectF(cursorPosition.x() - 5, cursorPosition.y() - 5, 10, 10));
                }
            }
            changeFinished = true;

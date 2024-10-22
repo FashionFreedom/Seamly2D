@@ -1,3 +1,4 @@
+//  ---------------------------------------------------------------------------
 //  @file   vtoolsplinepath.cpp
 //  @author Douglas S Caskey
 //  @date   17 Sep, 2023
@@ -19,33 +20,33 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//  ---------------------------------------------------------------------------
 
-/************************************************************************
- **  @file   vtoolsplinepath.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2013 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//  ---------------------------------------------------------------------------
+//  @file   vtoolsplinepath.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   November 15, 2013
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2013 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//  ---------------------------------------------------------------------------
 
 #include "vtoolsplinepath.h"
 
@@ -103,6 +104,7 @@ const QString VToolSplinePath::OldToolType = QStringLiteral("path");
 // @param id object id in container.
 // @param typeCreation way we create this tool.
 // @param parent parent object.
+
 VToolSplinePath::VToolSplinePath(VAbstractPattern *doc, VContainer *data, quint32 id, const Source &typeCreation,
                                  QGraphicsItem *parent)
     : VAbstractSpline(doc, data, id, parent)
@@ -149,6 +151,7 @@ VToolSplinePath::VToolSplinePath(VAbstractPattern *doc, VContainer *data, quint3
 }
 
 // @brief setDialog set dialog when user want change tool option.
+
 void VToolSplinePath::setDialog()
 {
     SCASSERT(!m_dialog.isNull())
@@ -166,6 +169,7 @@ void VToolSplinePath::setDialog()
 // @param scene pointer to scene.
 // @param doc dom document container.
 // @param data container with variables.
+
 VToolSplinePath* VToolSplinePath::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
                                          VAbstractPattern *doc, VContainer *data)
 {
@@ -198,6 +202,7 @@ VToolSplinePath* VToolSplinePath::Create(QSharedPointer<DialogTool> dialog, VMai
 // @param data container with variables.
 // @param parse parser file mode.
 // @param typeCreation way we create this tool.
+
 VToolSplinePath* VToolSplinePath::Create(const quint32 _id, VSplinePath *path, VMainGraphicsScene *scene,
                                          VAbstractPattern *doc, VContainer *data, const Document &parse,
                                          const Source &typeCreation)
@@ -270,6 +275,7 @@ VToolSplinePath *VToolSplinePath::Create(const quint32 _id, const QVector<quint3
 // @param splineIndex position spline in spline list.
 // @param position position point in spline.
 // @param pos new position.
+
 void VToolSplinePath::controlPointPositionChanged(const qint32 &splineIndex, const SplinePointPosition &position,
                                                  const QPointF &pos)
 {
@@ -298,6 +304,7 @@ void VToolSplinePath::EnableToolMove(bool move)
 // @param spl spline what was changed.
 // @param splPath spline path.
 // @param splineIndex index spline in spline path.
+
 void VToolSplinePath::updateControlPoints(const VSpline &spl, VSplinePath &splPath, const qint32 &splineIndex) const
 {
     VSplinePoint point = splPath.GetSplinePoint(splineIndex, SplinePointPosition::FirstPoint);
@@ -340,6 +347,7 @@ void VToolSplinePath::SetSplinePathAttributes(QDomElement &domElement, const VSp
 // @param doc dom document container.
 // @param element tag in file.
 // @param path spline path.
+
 void VToolSplinePath::UpdatePathPoints(VAbstractPattern *doc, QDomElement &element, const VSplinePath &path)
 {
     VDomDocument::RemoveAllChildren(element);
@@ -373,6 +381,7 @@ void VToolSplinePath::ShowVisualization(bool show)
 
 // @brief contextMenuEvent handle context menu events.
 // @param event context menu event.
+
 void VToolSplinePath::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     Q_UNUSED(id)
@@ -391,6 +400,7 @@ void VToolSplinePath::showContextMenu(QGraphicsSceneContextMenuEvent *event, qui
 // @brief AddPathPoint write path point to pattern file.
 // @param domElement dom element.
 // @param splPoint spline path point.
+
 void VToolSplinePath::AddPathPoint(VAbstractPattern *doc, QDomElement &domElement, const VSplinePoint &splPoint)
 {
     SCASSERT(doc != nullptr)
@@ -421,6 +431,7 @@ void VToolSplinePath::AddPathPoint(VAbstractPattern *doc, QDomElement &domElemen
 }
 
 // @brief RemoveReferens decrement value of reference.
+
 void VToolSplinePath::RemoveReferens()
 {
     const QSharedPointer<VSplinePath> splPath = VAbstractTool::data.GeometricObject<VSplinePath>(m_id);
@@ -431,6 +442,7 @@ void VToolSplinePath::RemoveReferens()
 }
 
 // @brief SaveDialog save options into file after change in dialog.
+
 void VToolSplinePath::SaveDialog(QDomElement &domElement)
 {
     SCASSERT(!m_dialog.isNull())
@@ -472,6 +484,7 @@ void VToolSplinePath::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &ob
 
 // @brief mousePressEvent  handle mouse press events.
 // @param event mouse release event.
+
 void VToolSplinePath::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if (flags() & QGraphicsItem::ItemIsMovable)
@@ -493,6 +506,7 @@ void VToolSplinePath::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 // @brief mouseReleaseEvent  handle mouse release events.
 // @param event mouse release event.
+
 void VToolSplinePath::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     if (flags() & QGraphicsItem::ItemIsMovable)
@@ -508,6 +522,7 @@ void VToolSplinePath::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 // @brief mouseMoveEvent  handle mouse move events.
 // @param event mouse move event.
+
 void VToolSplinePath::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     // Don't need to check if left mouse button was pressed. According to the Qt documentation "If you do receive this
@@ -565,8 +580,8 @@ void VToolSplinePath::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         connect(moveSplPath, &VUndoCommand::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
         qApp->getUndoStack()->push(moveSplPath);
 
-        // Each time we move something we call recalculation scene rect. In some cases this can cause moving
-        // objects positions. And this cause infinite redrawing. That's why we wait the finish of saving the last move.
+        // Each time an item is moved the scene rect is recalculated. In some cases this can cause infinite redrawing
+        // That's why we wait till the scene is finished drawing before scrolling again.
         static bool changeFinished = true;
         if (changeFinished)
         {
@@ -575,12 +590,12 @@ void VToolSplinePath::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
            const QList<QGraphicsView *> viewList = scene()->views();
            if (!viewList.isEmpty())
            {
-               if (QGraphicsView *view = viewList.at(0))
+               if (VMainGraphicsView *view = qobject_cast<VMainGraphicsView *>(viewList.at(0)))
                {
                    VMainGraphicsScene *currentScene = qobject_cast<VMainGraphicsScene *>(scene());
                    SCASSERT(currentScene)
                    const QPointF cursorPosition = currentScene->getScenePos();
-                   view->ensureVisible(QRectF(cursorPosition.x()-5, cursorPosition.y()-5, 10, 10));
+                   view->ensureRectVisible(QRectF(cursorPosition.x() - 5, cursorPosition.y() - 5, 10, 10));
                }
            }
            changeFinished = true;
@@ -590,6 +605,7 @@ void VToolSplinePath::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
 // @brief hoverEnterEvent handle hover enter events.
 // @param event hover enter event.
+
 void VToolSplinePath::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     if (flags() & QGraphicsItem::ItemIsMovable)
@@ -608,6 +624,7 @@ void VToolSplinePath::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 
 // @brief hoverLeaveEvent handle hover leave events.
 // @param event hover leave event.
+
 void VToolSplinePath::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
     if (flags() & QGraphicsItem::ItemIsMovable)
@@ -641,7 +658,7 @@ bool VToolSplinePath::IsMovable(int index) const
 {
     const auto splPath = VAbstractTool::data.GeometricObject<VSplinePath>(m_id);
 
-    //index == -1 - can delete, but decided to left
+    // index == -1 - can delete, but decided to left
     if (index == -1 || index < 1 || index > splPath->CountSubSpl())
     {
         return false;

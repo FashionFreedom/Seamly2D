@@ -185,6 +185,13 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     // Navigation preferences
     // Show Scroll Bars
     ui->showScrollBars_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowScrollBars());
+    ui->autoscroll_CheckBox->setChecked(qApp->Seamly2DSettings()->getAutoScroll());
+    connect(ui->autoscroll_CheckBox, &QCheckBox::stateChanged, this, [this]()
+    {
+        ui->autoScrollSpeed_Slider->setEnabled(ui->autoscroll_CheckBox->isChecked());
+    });
+    ui->autoScrollSpeed_Slider->setValue(qApp->Seamly2DSettings()->getAutoScrollSpeed());
+    ui->autoScrollSpeed_Slider->setEnabled(ui->autoscroll_CheckBox->isChecked());
 
     // Scroll Bar Width
     ui->scrollBarWidth_SpinBox->setValue(qApp->Seamly2DSettings()->getScrollBarWidth());
@@ -380,6 +387,8 @@ void PreferencesGraphicsViewPage::Apply()
     // Navigation preferences
     // Scroll Bars
     settings->setShowScrollBars(ui->showScrollBars_CheckBox->isChecked());
+    settings->setAutoScroll(ui->autoscroll_CheckBox->isChecked());
+    settings->setAutoScrollSpeed(ui->autoScrollSpeed_Slider->value());
     settings->setScrollBarWidth(ui->scrollBarWidth_SpinBox->value());
     settings->setScrollDuration(ui->scrollDuration_SpinBox->value());
     settings->setScrollUpdateInterval(ui->scrollUpdateInterval_SpinBox->value());
