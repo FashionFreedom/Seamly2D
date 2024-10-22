@@ -4171,12 +4171,6 @@ for writing</source>
         <translation>Kan bestand %1 niet openen voor schrijven</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
-%1
-Possibly the file is already being downloaded.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>File download failed: %1.</source>
         <translation>Download bestand mislukt: %1.</translation>
     </message>
@@ -4192,6 +4186,12 @@ Possibly the file is already being downloaded.</source>
         <source>A new release %1 is available.
 Do you want to download it?</source>
         <translation>Een nieuwe versie %1 is beschikbaar. Wil je het downloaden?</translation>
+    </message>
+    <message>
+        <source>Unable to get exclusive access to file 
+%1
+Possibly the file is already being downloaded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4840,6 +4840,18 @@ Do you want to download it?</source>
         <source>Do you really want to delete?</source>
         <translation type="unfinished">Wil je dit echt verwijderen?</translation>
     </message>
+    <message>
+        <source>The image &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Loading image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No image was selected...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InsertNodesDialog</name>
@@ -5160,12 +5172,6 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Kleiner wordend gebied</translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
-
-Apply settings anyway?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Centimeters</source>
         <translation>Centimeters</translation>
     </message>
@@ -5291,6 +5297,12 @@ Apply settings anyway?</source>
     <message>
         <source>Millimeters</source>
         <translation>Millimeters</translation>
+    </message>
+    <message>
+        <source>Margins go beyond printing. 
+
+Apply settings anyway?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7201,10 +7213,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Afbeeldingen</translation>
     </message>
     <message>
-        <source>Open Image File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Zoom to Point</source>
         <translation>Zoom in op Punt</translation>
     </message>
@@ -7359,10 +7367,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Can&apos;t create a path</source>
         <translation>Kan geen pad maken</translation>
-    </message>
-    <message>
-        <source>Pattern</source>
-        <translation>Patroon</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
@@ -9887,6 +9891,18 @@ Press enter to temporarily add it to the list.</source>
         <source>Backward (from end point)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Images</source>
+        <translation type="unfinished">Afbeeldingen</translation>
+    </message>
+    <message>
+        <source>Open Image File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern</source>
+        <translation type="unfinished">Patroon</translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -10287,23 +10303,12 @@ Press enter to temporarily add it to the list.</source>
         <translation>Decimaal scheidingsteken:</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>GUI taal:</translation>
     </message>
     <message>
         <source>Sets the language used for SeamlyMe.</source>
         <translation>Stelt de taal in die wordt gebruikt voor SeamlyMe.</translation>
-    </message>
-    <message>
-        <source>When checked the Welcome window will not be displayed.
-You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Do not show again</source>
@@ -10324,6 +10329,17 @@ You can change this setting in the SeamlyMe preferences.</source>
     <message>
         <source>Inches</source>
         <translation>Inches</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed. 
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10349,19 +10365,8 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Decimaal scheidingsteken:</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>GUI taal:</translation>
-    </message>
-    <message>
-        <source>When checked the Welcome window will not be displayed.
-You can change this setting in the Seamly2D preferences.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Do not show again</source>
@@ -10398,6 +10403,17 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Sets the node selection click  sound.</source>
         <translation>Stelt het klikgeluid van de knooppuntselectie in.</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed. 
+You can change this setting in the Seamly2D preferences.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

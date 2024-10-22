@@ -67,6 +67,7 @@
 #include "../vpatterndb/measurements_def.h"
 #include "../vtools/tools/vabstracttool.h"
 #include "../vtools/tools/pattern_piece_tool.h"
+#include "../../libs/vformat/svg_generator.h"
 
 #include <QFileDialog>
 #include <QFileInfo>
@@ -888,21 +889,23 @@ QList<QGraphicsScene *> MainWindowsNoGUI::CreateScenes(const QList<QGraphicsItem
  */
 void MainWindowsNoGUI::exportSVG(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene) const
 {
-    QSvgGenerator generator;
-    generator.setFileName(name);
-    generator.setSize(paper->rect().size().toSize());
-    generator.setViewBox(paper->rect());
-    generator.setTitle(tr("Pattern"));
-    generator.setDescription(doc->GetDescription());
-    generator.setResolution(static_cast<int>(PrintDPI));
-    QPainter painter;
-    painter.begin(&generator);
-    painter.setFont( QFont( "Arial", 8, QFont::Normal ) );
-    painter.setRenderHint(QPainter::Antialiasing, true);
-    //painter.setPen(QPen(Qt::black, widthHairLine, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-    painter.setBrush ( QBrush ( Qt::NoBrush ) );
-    scene->render(&painter, paper->rect(), paper->rect(), Qt::IgnoreAspectRatio);
-    painter.end();
+    SvgGenerator svgGenerator(paper, name, doc->GetDescription(), static_cast<int>(PrintDPI));
+    svgGenerator.addSvgFromScene(scene);
+    svgGenerator.generate();
+}
+
+void MainWindowsNoGUI::exportSVG(const QString &name, QGraphicsRectItem *paper, const QList<QGraphicsItem *> &pieces) const
+{
+    SvgGenerator svgGenerator(paper, name, doc->GetDescription(), static_cast<int>(PrintDPI));
+
+    for (int pieceNb=0; pieceNb<pieces.size(); pieceNb++)
+    {
+        QGraphicsScene *scene = new VMainGraphicsScene();
+        scene->addItem(pieces.at(pieceNb));
+        svgGenerator.addSvgFromScene(scene);
+    }
+
+    svgGenerator.generate();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1633,7 +1636,7 @@ void MainWindowsNoGUI::ExportScene(const ExportLayoutDialog &dialog, const QList
             {
                 case LayoutExportFormat::SVG:
                     paper->setVisible(false);
-                    exportSVG(name, paper, scene);
+                    exportSVG(name, paper, pieces.at(i));
                     paper->setVisible(true);
                     break;
                 case LayoutExportFormat::PDF:

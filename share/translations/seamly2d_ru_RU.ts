@@ -4864,6 +4864,18 @@ Do you want to download it?</source>
         <source>Do you really want to delete?</source>
         <translation type="unfinished">Вы точно хотите удалить?</translation>
     </message>
+    <message>
+        <source>The image &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Loading image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No image was selected...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InsertNodesDialog</name>
@@ -7221,10 +7233,6 @@ Do you want to save your changes?</source>
         <translation>Изображения</translation>
     </message>
     <message>
-        <source>Open Image File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Zoom to Point</source>
         <translation>Зум до точки</translation>
     </message>
@@ -7383,10 +7391,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Can&apos;t create a path</source>
         <translation>Невозможно создать контур</translation>
-    </message>
-    <message>
-        <source>Pattern</source>
-        <translation>Выкройка</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
@@ -9913,6 +9917,18 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Backward (from end point)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Images</source>
+        <translation type="unfinished">Изображения</translation>
+    </message>
+    <message>
+        <source>Open Image File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern</source>
+        <translation type="unfinished">Выкройка</translation>
     </message>
 </context>
 <context>

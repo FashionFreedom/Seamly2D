@@ -4186,7 +4186,7 @@ for writing</source>
         <translation>Date %1 kann nicht zum schreiben geöffnet werden</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
+        <source>Unable to get exclusive access to file 
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4838,6 +4838,18 @@ Possibly the file is already being downloaded.</source>
         <source>Do you really want to delete?</source>
         <translation>Möchtest Du wirklich löschen?</translation>
     </message>
+    <message>
+        <source>The image &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Loading image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No image was selected...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InsertNodesDialog</name>
@@ -5295,7 +5307,8 @@ Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLIC
         <translation>Millimeter</translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
+        <source>Margins go beyond printing. 
+
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7200,10 +7213,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Bilder</translation>
     </message>
     <message>
-        <source>Open Image File</source>
-        <translation>Bilddatei öffnen</translation>
-    </message>
-    <message>
         <source>Zoom to Point</source>
         <translation>Zoom zum Punkt</translation>
     </message>
@@ -7367,10 +7376,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Can&apos;t create a path</source>
         <translation>Ein Verzeichnis kann nicht erstellt werden</translation>
-    </message>
-    <message>
-        <source>Pattern</source>
-        <translation>Schnittmuster</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
@@ -9896,6 +9901,18 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Backward (from end point)</source>
         <translation>Rückwärts (vom Endpunkt)</translation>
     </message>
+    <message>
+        <source>Images</source>
+        <translation type="unfinished">Bilder</translation>
+    </message>
+    <message>
+        <source>Open Image File</source>
+        <translation type="unfinished">Bilddatei öffnen</translation>
+    </message>
+    <message>
+        <source>Pattern</source>
+        <translation type="unfinished">Schnittmuster</translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -10324,13 +10341,13 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Zoll</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed.
+        <source>When checked the Welcome window will not be displayed. 
 You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10398,13 +10415,13 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Legt den Klickton für die Knotenauswahl fest.</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed.
+        <source>When checked the Welcome window will not be displayed. 
 You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
