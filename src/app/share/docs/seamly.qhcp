@@ -3,17 +3,17 @@
     <docFiles>
         <generate>
             <file>
-                <input>seamly2d.qhp</input>
-                <output>seamly2d.qch</output>
+                <input>en.qhp</input>
+                <output>en.qch</output>
             </file>
             <file>
-                <input>seamlyme.qhp</input>
-                <output>seamlyme.qch</output>
+                <input>fr.qhp</input>
+                <output>fr.qch</output>
             </file>
         </generate>
         <register>
-            <file>seamly2d.qch</file>
-            <file>seamlyme.qch</file>
+            <file>en.qch</file>
+            <file>fr.qch</file>
         </register>
     </docFiles>
 </QHelpCollectionProject>

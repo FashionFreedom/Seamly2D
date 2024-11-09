@@ -7941,7 +7941,7 @@ void MainWindow::createHelpWindow(){
     tWidget->addTab(helpEngine->indexWidget(), "Index");
 
     HelpBrowser *textViewer = new HelpBrowser(helpEngine);
-    textViewer->setSource(QUrl("qthelp://seamly.io.seamly2d/doc/html/seamly2d.html"));
+    textViewer->setSource(QUrl("qthelp://seamly.io.en/doc/en/seamly.html"));
     connect(helpEngine->contentWidget(), SIGNAL(linkActivated(QUrl)), textViewer,
             SLOT(setSource(QUrl)));
 

@@ -1,7 +1,7 @@
 HELP_COLLECTION_FILES += \
     $${PWD}/share/docs/seamly.qhc \
-    $${PWD}/share/docs/seamly2d.qch \
-    $${PWD}/share/docs/seamlyme.qch
+    $${PWD}/share/docs/en.qch \
+    $${PWD}/share/docs/fr.qch
 
 win32
 {
@@ -9,12 +9,12 @@ win32
 }
 
 DISTFILES += \
-    $$PWD/share/docs/html/seamly2d.html \
-    $$PWD/share/docs/html/seamlyme.html \
+    $$PWD/share/docs/en.qch \
+    $$PWD/share/docs/en.qhp \
+    $$PWD/share/docs/en/seamly.html \
+    $$PWD/share/docs/fr.qch \
+    $$PWD/share/docs/fr.qhp \
+    $$PWD/share/docs/fr/seamly.html \
     $$PWD/share/docs/readme.txt \
     $$PWD/share/docs/seamly.qhc \
-    $$PWD/share/docs/seamly.qhcp \
-    $$PWD/share/docs/seamly2d.qch \
-    $$PWD/share/docs/seamly2d.qhp \
-    $$PWD/share/docs/seamlyme.qch \
-    $$PWD/share/docs/seamlyme.qhp
+    $$PWD/share/docs/seamly.qhcp
