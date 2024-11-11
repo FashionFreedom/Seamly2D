@@ -67,11 +67,10 @@
 #include "ui_dialogcutsplinepath.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief DialogCutSplinePath create dialog.
- * @param data container with data
- * @param parent parent widget
- */
+/// @brief DialogCutSplinePath create dialog.
+/// @param data container with data
+/// @param parent parent widget
+//---------------------------------------------------------------------------------------------------------------------
 DialogCutSplinePath::DialogCutSplinePath(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : DialogTool(data, toolId, parent)
     , ui(new Ui::DialogCutSplinePath)
@@ -99,6 +98,12 @@ DialogCutSplinePath::DialogCutSplinePath(const VContainer *data, const quint32 &
 
     FillComboBoxSplinesPath(ui->comboBoxSplinePath);
 
+    int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
+    if (index != -1)
+    {
+        ui->lineColor_ComboBox->setCurrentIndex(index);
+    }
+
     ui->direction_ComboBox->addItem(tr("Forward (from start point)"), "forward");
     ui->direction_ComboBox->addItem(tr("Backward (from end point)"), "backward");
 
@@ -117,10 +122,9 @@ DialogCutSplinePath::~DialogCutSplinePath()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetPointName set name of point
- * @param value name
- */
+/// @brief SetPointName set name of point
+/// @param value name
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCutSplinePath::SetPointName(const QString &value)
 {
     pointName = value;
@@ -140,10 +144,9 @@ QString DialogCutSplinePath::getDirection() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetFormula set string of formula
- * @param value formula
- */
+/// @brief SetFormula set string of formula
+/// @param value formula
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCutSplinePath::SetFormula(const QString &value)
 {
     formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
@@ -163,10 +166,9 @@ void DialogCutSplinePath::SetFormula(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setSplineId set id spline
- * @param value id
- */
+/// @brief setSplineId set id spline
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCutSplinePath::setSplinePathId(const quint32 &value)
 {
     setCurrentSplinePathId(ui->comboBoxSplinePath, value);
@@ -177,11 +179,10 @@ void DialogCutSplinePath::setSplinePathId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
- * @param id id of point or detail
- * @param type type of object
- */
+/// @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
+/// @param id id of point or detail
+/// @param type type of object
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCutSplinePath::ChosenObject(quint32 id, const SceneObject &type)
 {
     if (prepare == false)// After first choose we ignore all objects
@@ -249,21 +250,37 @@ void DialogCutSplinePath::ShowVisualization()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetFormula return string of formula
- * @return formula
- */
+/// @brief GetFormula return string of formula
+/// @return formula
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogCutSplinePath::GetFormula() const
 {
     return qApp->translateVariables()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getSplineId return id base point of line
- * @return id
- */
+/// @brief getSplineId return id base point of line
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogCutSplinePath::getSplinePathId() const
 {
     return getCurrentObjectId(ui->comboBoxSplinePath);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief getLineColor get the color of line
+/// @return QString name of color
+//---------------------------------------------------------------------------------------------------------------------
+QString DialogCutSplinePath::getLineColor() const
+{
+    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief setLineColor set color of the line
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
+void DialogCutSplinePath::setLineColor(const QString &value)
+{
+    ChangeCurrentData(ui->lineColor_ComboBox, value);
 }

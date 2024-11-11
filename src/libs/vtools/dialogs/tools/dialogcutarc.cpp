@@ -67,11 +67,10 @@
 #include "ui_dialogcutarc.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief DialogCutArc create dialog.
- * @param data container with data
- * @param parent parent widget
- */
+/// @brief DialogCutArc create dialog.
+/// @param data container with data
+/// @param parent parent widget
+//---------------------------------------------------------------------------------------------------------------------
 DialogCutArc::DialogCutArc(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : DialogTool(data, toolId, parent)
     , ui(new Ui::DialogCutArc)
@@ -98,6 +97,12 @@ DialogCutArc::DialogCutArc(const VContainer *data, const quint32 &toolId, QWidge
     DialogTool::CheckState();
 
     FillComboBoxArcs(ui->comboBoxArc);
+
+    int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
+    if (index != -1)
+    {
+        ui->lineColor_ComboBox->setCurrentIndex(index);
+    }
 
     ui->direction_ComboBox->addItem(tr("Forward (from start point)"), "forward");
     ui->direction_ComboBox->addItem(tr("Backward (from end point)"), "backward");
@@ -149,11 +154,10 @@ DialogCutArc::~DialogCutArc()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
- * @param id id of point or detail
- * @param type type of object
- */
+/// @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
+/// @param id id of point or detail
+/// @param type type of object
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCutArc::ChosenObject(quint32 id, const SceneObject &type)
 {
     if (prepare == false)// After first choose we ignore all objects
@@ -195,10 +199,9 @@ void DialogCutArc::closeEvent(QCloseEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setArcId set id of arc
- * @param value id
- */
+/// @brief setArcId set id of arc
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCutArc::setArcId(const quint32 &value)
 {
     setCurrentArcId(ui->comboBoxArc, value);
@@ -209,10 +212,9 @@ void DialogCutArc::setArcId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetFormula set string with formula length
- * @param value string with formula
- */
+/// @brief SetFormula set string with formula length
+/// @param value string with formula
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCutArc::SetFormula(const QString &value)
 {
     formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
@@ -231,10 +233,9 @@ void DialogCutArc::SetFormula(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetPointName set name point on arc
- * @param value name
- */
+/// @brief SetPointName set name point on arc
+/// @param value name
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCutArc::SetPointName(const QString &value)
 {
     pointName = value;
@@ -254,21 +255,37 @@ QString DialogCutArc::getDirection() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetFormula return string with formula length
- * @return formula
- */
+/// @brief GetFormula return string with formula length
+/// @return formula
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogCutArc::GetFormula() const
 {
     return qApp->translateVariables()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getArcId return id of arc
- * @return id
- */
+/// @brief getArcId return id of arc
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogCutArc::getArcId() const
 {
     return getCurrentObjectId(ui->comboBoxArc);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief getLineColor get the color of line
+/// @return QString name of color
+//---------------------------------------------------------------------------------------------------------------------
+QString DialogCutArc::getLineColor() const
+{
+    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief setLineColor set color of the line
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
+void DialogCutArc::setLineColor(const QString &value)
+{
+    ChangeCurrentData(ui->lineColor_ComboBox, value);
 }

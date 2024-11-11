@@ -176,6 +176,10 @@ private:
     void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, QString &name, qreal &mx,
                                           qreal &my, bool &labelVisible, QString &lineType,
                                           QString &lineWeight, QString &lineColor);
+
+    void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, QString &name, qreal &mx,
+                                          qreal &my, bool &labelVisible, QString &lineColor);
+
     void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, QString &name, qreal &mx,
                                           qreal &my, bool &labelVisible);
     void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, qreal &mx, qreal &my);

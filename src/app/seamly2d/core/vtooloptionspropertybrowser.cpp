@@ -1420,6 +1420,9 @@ void VToolOptionsPropertyBrowser::changeDataToolCutArc(VPE::VProperty *property)
         case 62: // AttrDiretion
             tool->setDirection(value.toString());
             break;
+        case 26: // AttrLineColor
+            tool->setLineColor(value.toString());
+            break;
         default:
             qWarning() << "Unknown property type. id = "<<id;
             break;
@@ -1450,6 +1453,9 @@ void VToolOptionsPropertyBrowser::changeDataToolCutSpline(VPE::VProperty *proper
         case 62: // AttrDiretion
             tool->setDirection(value.toString());
             break;
+        case 26: // AttrLineColor
+            tool->setLineColor(value.toString());
+            break;
         default:
             qWarning() << "Unknown property type. id = "<<id;
             break;
@@ -1479,6 +1485,9 @@ void VToolOptionsPropertyBrowser::changeDataToolCutSplinePath(VPE::VProperty *pr
             break;
         case 62: // AttrDiretion
             tool->setDirection(value.toString());
+            break;
+        case 26: // AttrLineColor
+            tool->setLineColor(value.toString());
             break;
         default:
             qWarning() << "Unknown property type. id = "<<id;
@@ -2545,6 +2554,9 @@ void VToolOptionsPropertyBrowser::showOptionsToolCutArc(QGraphicsItem *item)
 
     addPropertyLabel(tr("Geometry"), AttrName);
     addPropertyFormula(tr("Length:"), tool->GetFormula(), AttrLength);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrLineColor);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2561,6 +2573,9 @@ void VToolOptionsPropertyBrowser::showOptionsToolCutSpline(QGraphicsItem *item)
 
     addPropertyLabel(tr("Geometry"), AttrName);
     addPropertyFormula(tr("Length:"), tool->GetFormula(), AttrLength);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrLineColor);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2577,6 +2592,9 @@ void VToolOptionsPropertyBrowser::showOptionsToolCutSplinePath(QGraphicsItem *it
 
     addPropertyLabel(tr("Geometry"), AttrName);
     addPropertyFormula(tr("Length:"), tool->GetFormula(), AttrLength);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrLineColor);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3307,6 +3325,11 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCutArc()
     QVariant valueFormula;
     valueFormula.setValue(tool->GetFormula());
     idToProperty[AttrLength]->setValue(valueFormula);
+
+    {
+        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+        idToProperty[AttrLineColor]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3330,6 +3353,11 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCutSpline()
     QVariant valueFormula;
     valueFormula.setValue(tool->GetFormula());
     idToProperty[AttrLength]->setValue(valueFormula);
+
+    {
+        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+        idToProperty[AttrLineColor]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3353,6 +3381,11 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCutSplinePath()
     QVariant valueFormula;
     valueFormula.setValue(tool->GetFormula());
     idToProperty[AttrLength]->setValue(valueFormula);
+
+    {
+        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+        idToProperty[AttrLineColor]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------

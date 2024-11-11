@@ -67,11 +67,10 @@
 #include "ui_dialogcutspline.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief DialogCutSpline create dialog.
- * @param data container with data
- * @param parent parent widget
- */
+/// @brief DialogCutSpline create dialog.
+/// @param data container with data
+/// @param parent parent widget
+//---------------------------------------------------------------------------------------------------------------------
 DialogCutSpline::DialogCutSpline(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : DialogTool(data, toolId, parent)
     , ui(new Ui::DialogCutSpline)
@@ -99,6 +98,12 @@ DialogCutSpline::DialogCutSpline(const VContainer *data, const quint32 &toolId, 
 
     FillComboBoxSplines(ui->comboBoxSpline);
 
+    int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
+    if (index != -1)
+    {
+        ui->lineColor_ComboBox->setCurrentIndex(index);
+    }
+
     ui->direction_ComboBox->addItem(tr("Forward (from start point)"), "forward");
     ui->direction_ComboBox->addItem(tr("Backward (from end point)"), "backward");
 
@@ -117,19 +122,19 @@ DialogCutSpline::~DialogCutSpline()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetPointName set name of point
- * @param value name
- */
-void DialogCutSpline::SetPointName(const QString &value)
+/// @brief setPointName set name of point
+/// @param value name
+//---------------------------------------------------------------------------------------------------------------------
+void DialogCutSpline::setPointName(const QString &value)
 {
     pointName = value;
     ui->lineEditNamePoint->setText(pointName);
 }
 
-
-// @brief setDirection set the direction
-// @param value name
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief setDirection set the direction
+/// @param value name
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCutSpline::setDirection(const QString &value)
 {
     ChangeCurrentData(ui->direction_ComboBox, value);
@@ -138,17 +143,21 @@ void DialogCutSpline::setDirection(const QString &value)
     path->setDirection(value);
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief getDirection get the direction of the spline
+/// @return QString direction
+//---------------------------------------------------------------------------------------------------------------------
+
 QString DialogCutSpline::getDirection() const
 {
     return GetComboBoxCurrentData(ui->direction_ComboBox, "forward");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetFormula set string of formula
- * @param value formula
- */
-void DialogCutSpline::SetFormula(const QString &value)
+/// @brief setFormula set string of formula
+/// @param value formula
+//---------------------------------------------------------------------------------------------------------------------
+void DialogCutSpline::setFormula(const QString &value)
 {
     formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed. TODO : see if I can get the max number of caracters in one line
@@ -167,10 +176,9 @@ void DialogCutSpline::SetFormula(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setSplineId set id spline
- * @param value id
- */
+/// @brief setSplineId set id spline
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCutSpline::setSplineId(const quint32 &value)
 {
     setCurrentSplineId(ui->comboBoxSpline, value);
@@ -181,11 +189,28 @@ void DialogCutSpline::setSplineId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
- * @param id id of point or detail
- * @param type type of object
- */
+/// @brief getLineColor get the color of line
+/// @return QString name of color
+//---------------------------------------------------------------------------------------------------------------------
+QString DialogCutSpline::getLineColor() const
+{
+    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief setLineColor set color of the line
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
+void DialogCutSpline::setLineColor(const QString &value)
+{
+    ChangeCurrentData(ui->lineColor_ComboBox, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
+/// @param id id of point or detail
+/// @param type type of object
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCutSpline::ChosenObject(quint32 id, const SceneObject &type)
 {
     if (prepare == false)// After first choose we ignore all objects
@@ -237,11 +262,11 @@ void DialogCutSpline::FXLength()
 {
     EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit length"));
-    dialog->SetFormula(GetFormula());
+    dialog->SetFormula(getFormula());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
     if (dialog->exec() == QDialog::Accepted)
     {
-        SetFormula(dialog->GetFormula());
+        setFormula(dialog->GetFormula());
     }
     delete dialog;
 }
@@ -253,20 +278,18 @@ void DialogCutSpline::ShowVisualization()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetFormula return string of formula
- * @return formula
- */
-QString DialogCutSpline::GetFormula() const
+/// @brief getFormula return string of formula
+/// @return formula
+//---------------------------------------------------------------------------------------------------------------------
+QString DialogCutSpline::getFormula() const
 {
     return qApp->translateVariables()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getSplineId return id base point of line
- * @return id
- */
+/// @brief getSplineId return id base point of line
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogCutSpline::getSplineId() const
 {
     return getCurrentObjectId(ui->comboBoxSpline);
