@@ -1175,6 +1175,14 @@ p, li { white-space: pre-wrap; }
         <source>Backward (from end point)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Colore:</translation>
+    </message>
 </context>
 <context>
     <name>DialogCutSpline</name>
@@ -1242,6 +1250,14 @@ p, li { white-space: pre-wrap; }
         <source>Backward (from end point)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Colore:</translation>
+    </message>
 </context>
 <context>
     <name>DialogCutSplinePath</name>
@@ -1308,6 +1324,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Backward (from end point)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Colore:</translation>
     </message>
 </context>
 <context>

@@ -57,7 +57,7 @@
     </message>
     <message>
         <source>CPU:</source>
-        <translation type="unfinished"></translation>
+        <translation>CPU:</translation>
     </message>
     <message>
         <source>Compiler:</source>
@@ -81,7 +81,7 @@
     </message>
     <message>
         <source>OS:</source>
-        <translation type="unfinished"></translation>
+        <translation>OS:</translation>
     </message>
     <message>
         <source>OS Version:</source>
@@ -149,7 +149,7 @@
     </message>
     <message>
         <source>unknown</source>
-        <translation type="unfinished">inconnu</translation>
+        <translation>inconnu</translation>
     </message>
 </context>
 <context>
@@ -217,7 +217,7 @@
     </message>
     <message>
         <source>Point:</source>
-        <translation type="unfinished">Point :</translation>
+        <translation>Point :</translation>
     </message>
     <message>
         <source>Piece:</source>
@@ -389,19 +389,19 @@
     </message>
     <message>
         <source>MC</source>
-        <translation type="unfinished"></translation>
+        <translation>MC</translation>
     </message>
     <message>
         <source>MR</source>
-        <translation type="unfinished"></translation>
+        <translation>MR</translation>
     </message>
     <message>
         <source>MS</source>
-        <translation type="unfinished"></translation>
+        <translation>MS</translation>
     </message>
     <message>
         <source>M+</source>
-        <translation type="unfinished"></translation>
+        <translation>M+</translation>
     </message>
     <message>
         <source>÷</source>
@@ -506,19 +506,19 @@ p, li { white-space: pre-wrap; }
     <name>DialogAboutSeamlyMe</name>
     <message>
         <source>About SeamlyMe</source>
-        <translation type="unfinished">A propos de SeamlyMe</translation>
+        <translation>A propos de SeamlyMe</translation>
     </message>
     <message>
         <source>SeamlyMe version</source>
-        <translation type="unfinished">Version de SeamlyMe</translation>
+        <translation>Version de SeamlyMe</translation>
     </message>
     <message>
         <source>Build revision: %1</source>
-        <translation type="unfinished">Version compilée: %1</translation>
+        <translation>Version compilée: %1</translation>
     </message>
     <message>
         <source>This program is part of Seamly2D project.</source>
-        <translation type="unfinished">Ce programme fait partie du projet Seamly2D.</translation>
+        <translation>Ce programme fait partie du projet Seamly2D.</translation>
     </message>
     <message>
         <source>Downloading installer %p% complete</source>
@@ -526,23 +526,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Check For Updates</source>
-        <translation type="unfinished">Vérifier les Mises à Jour</translation>
+        <translation>Vérifier les Mises à Jour</translation>
     </message>
     <message>
         <source>Cannot open your default browser</source>
-        <translation type="unfinished">Impossible d&apos;ouvrir votre navigateur par défaut</translation>
+        <translation>Impossible d&apos;ouvrir votre navigateur par défaut</translation>
     </message>
     <message>
         <source>Built on %1 at %2</source>
-        <translation type="unfinished">Compilé le %1 à %2</translation>
+        <translation>Compilé le %1 à %2</translation>
     </message>
     <message>
         <source>Web site : %1</source>
-        <translation type="unfinished">Site web : %1</translation>
+        <translation>Site web : %1</translation>
     </message>
     <message>
         <source>unknown</source>
-        <translation type="unfinished">inconnu</translation>
+        <translation>inconnu</translation>
     </message>
 </context>
 <context>
@@ -1018,7 +1018,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Path:</source>
-        <translation type="unfinished">Chemin:</translation>
+        <translation>Chemin:</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1175,6 +1175,14 @@ p, li { white-space: pre-wrap; }
         <source>Backward (from end point)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogCutSpline</name>
@@ -1242,6 +1250,14 @@ p, li { white-space: pre-wrap; }
         <source>Backward (from end point)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogCutSplinePath</name>
@@ -1307,6 +1323,14 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Backward (from end point)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1642,7 +1666,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Path</source>
-        <translation type="unfinished">Chemin</translation>
+        <translation>Chemin</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -1650,15 +1674,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unnamed path</source>
-        <translation type="unfinished">Chemin sans nom</translation>
+        <translation>Chemin sans nom</translation>
     </message>
     <message>
         <source>Create name for your path</source>
-        <translation type="unfinished">Créer un nom pour votre chemin</translation>
+        <translation>Créer un nom pour votre chemin</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished">Type:</translation>
+        <translation>Type:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -1698,27 +1722,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Ready!</source>
-        <translation type="unfinished">Prêt!</translation>
+        <translation>Prêt!</translation>
     </message>
     <message>
         <source>Seam allowance</source>
-        <translation type="unfinished">Marge de couture</translation>
+        <translation>Marge de couture</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Largeur :</translation>
+        <translation>Largeur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation type="unfinished">Assistant Formule</translation>
+        <translation>Assistant Formule</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">Valeur</translation>
+        <translation>Valeur</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation type="unfinished">Calcul</translation>
+        <translation>Calcul</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -1726,19 +1750,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Nodes</source>
-        <translation type="unfinished">Nœuds</translation>
+        <translation>Nœuds</translation>
     </message>
     <message>
         <source>Node:</source>
-        <translation type="unfinished">Nœud:</translation>
+        <translation>Nœud:</translation>
     </message>
     <message>
         <source>Before:</source>
-        <translation type="unfinished">Avant:</translation>
+        <translation>Avant:</translation>
     </message>
     <message>
         <source>Return to default width</source>
-        <translation type="unfinished">Retourner à la largeur par défaut</translation>
+        <translation>Retourner à la largeur par défaut</translation>
     </message>
     <message>
         <source>Default</source>
@@ -1746,23 +1770,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>After:</source>
-        <translation type="unfinished">Après:</translation>
+        <translation>Après:</translation>
     </message>
     <message>
         <source>Angle:</source>
-        <translation type="unfinished">Angle:</translation>
+        <translation>Angle:</translation>
     </message>
     <message>
         <source>Notches</source>
-        <translation type="unfinished">Repères de montage</translation>
+        <translation>Repères de montage</translation>
     </message>
     <message>
         <source>Notch:</source>
-        <translation type="unfinished">Repère de montage :</translation>
+        <translation>Repère de montage :</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished">Type</translation>
+        <translation>Type</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -1846,7 +1870,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation type="unfinished">Longueur:</translation>
+        <translation>Longueur:</translation>
     </message>
     <message>
         <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
@@ -1854,47 +1878,47 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Reverse</source>
-        <translation type="unfinished">Inverser</translation>
+        <translation>Inverser</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Supprimer</translation>
+        <translation>Supprimer</translation>
     </message>
     <message>
         <source>Current seam allowance</source>
-        <translation type="unfinished">Marge de couture actuelle</translation>
+        <translation>Marge de couture actuelle</translation>
     </message>
     <message>
         <source>Edit seam allowance width</source>
-        <translation type="unfinished">Editer la largeur de la marge de couture</translation>
+        <translation>Editer la largeur de la marge de couture</translation>
     </message>
     <message>
         <source>Edit seam allowance width before</source>
-        <translation type="unfinished">Editer la largeur de la marge de couture avant</translation>
+        <translation>Editer la largeur de la marge de couture avant</translation>
     </message>
     <message>
         <source>Edit seam allowance width after</source>
-        <translation type="unfinished">Editer la largeur de la marge de couture après</translation>
+        <translation>Editer la largeur de la marge de couture après</translation>
     </message>
     <message>
         <source>Internal path</source>
-        <translation type="unfinished">Chemin interne</translation>
+        <translation>Chemin interne</translation>
     </message>
     <message>
         <source>Custom seam allowance</source>
-        <translation type="unfinished">Personnaliser la marge de couture</translation>
+        <translation>Personnaliser la marge de couture</translation>
     </message>
     <message>
         <source>You need more points!</source>
-        <translation type="unfinished">Vous avez besoin de plus de points!</translation>
+        <translation>Vous avez besoin de plus de points!</translation>
     </message>
     <message>
         <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
-        <translation type="unfinished">Le premier point de la &lt;b&gt;marge de couture personnalisée&lt;/b&gt; ne peut être identique au dernier!</translation>
+        <translation>Le premier point de la &lt;b&gt;marge de couture personnalisée&lt;/b&gt; ne peut être identique au dernier!</translation>
     </message>
     <message>
         <source>You have double points!</source>
-        <translation type="unfinished">Vous avez des points en double!</translation>
+        <translation>Vous avez des points en double!</translation>
     </message>
     <message>
         <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
@@ -1976,7 +2000,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Line_</source>
-        <translation type="unfinished">Ligne_</translation>
+        <translation>Ligne_</translation>
     </message>
 </context>
 <context>
@@ -2142,11 +2166,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Find:</source>
-        <translation type="unfinished">Rechercher:</translation>
+        <translation>Rechercher:</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Rechercher</translation>
+        <translation>Rechercher</translation>
     </message>
 </context>
 <context>
@@ -2157,7 +2181,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Axis point:</source>
-        <translation type="unfinished">Point d&apos;axe :</translation>
+        <translation>Point d&apos;axe :</translation>
     </message>
     <message>
         <source>Suffix:</source>
@@ -2165,7 +2189,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Axis type:</source>
-        <translation type="unfinished">Type d&apos;axe :</translation>
+        <translation>Type d&apos;axe :</translation>
     </message>
     <message>
         <source>Select axis rotation point</source>
@@ -2177,11 +2201,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vertical axis</source>
-        <translation type="unfinished">Axes verticaux</translation>
+        <translation>Axes verticaux</translation>
     </message>
     <message>
         <source>Horizontal axis</source>
-        <translation type="unfinished">Axes horizontaux</translation>
+        <translation>Axes horizontaux</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2200,7 +2224,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First line point:</source>
-        <translation type="unfinished">Point de la première ligne:</translation>
+        <translation>Point de la première ligne:</translation>
     </message>
     <message>
         <source>Second line point:</source>
@@ -2271,7 +2295,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Origin Point:</source>
-        <translation type="unfinished">Point d&apos;origine:</translation>
+        <translation>Point d&apos;origine:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2279,7 +2303,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Rotation:</source>
-        <translation type="unfinished">Rotation:</translation>
+        <translation>Rotation:</translation>
     </message>
     <message>
         <source>Center point</source>
@@ -2327,7 +2351,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Millimeters</source>
-        <translation type="unfinished">Millimètres</translation>
+        <translation>Millimètres</translation>
     </message>
     <message>
         <source>Draft block name:</source>
@@ -2402,7 +2426,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Rotation:</source>
-        <translation type="unfinished">Rotation:</translation>
+        <translation>Rotation:</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -4166,7 +4190,7 @@ for writing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -5167,7 +5191,7 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Surface décroissante</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -10298,13 +10322,13 @@ Press enter to temporarily add it to the list.</source>
         <translation>Séparateur décimal :</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10364,7 +10388,7 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Langue de l&apos;interface:</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10397,8 +10421,8 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Veuillez choisir les unités, le séparateur décimal, la langue et le son de sélection que vous préférez. (Vous pourrez les modifier ultérieurement.)</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>

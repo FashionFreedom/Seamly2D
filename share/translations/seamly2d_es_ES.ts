@@ -1210,6 +1210,14 @@ p, li { white-space: pre-wrap; }
         <source>Backward (from end point)</source>
         <translation>Hacia atrás (desde el punto final)</translation>
     </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Propiedades</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
+    </message>
 </context>
 <context>
     <name>DialogCutSpline</name>
@@ -1277,6 +1285,14 @@ p, li { white-space: pre-wrap; }
         <source>Backward (from end point)</source>
         <translation>Hacia atrás (desde el punto final)</translation>
     </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Propiedades</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
+    </message>
 </context>
 <context>
     <name>DialogCutSplinePath</name>
@@ -1343,6 +1359,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Backward (from end point)</source>
         <translation>Hacia atrás (desde el punto final)</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Propiedades</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
     </message>
 </context>
 <context>
@@ -4227,7 +4251,7 @@ Do you want to download it?</source>
 ¿Quiere descargarla?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -5348,7 +5372,7 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
         <translation>Ninguno</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -9961,15 +9985,15 @@ actualización:</translation>
     </message>
     <message>
         <source>Images</source>
-        <translation type="unfinished">Imágenes</translation>
+        <translation>Imágenes</translation>
     </message>
     <message>
         <source>Open Image File</source>
-        <translation type="unfinished">Abrir archivo de imagen</translation>
+        <translation>Abrir archivo de imagen</translation>
     </message>
     <message>
         <source>Pattern</source>
-        <translation type="unfinished">Patrón</translation>
+        <translation>Patrón</translation>
     </message>
 </context>
 <context>
@@ -10399,13 +10423,13 @@ actualización:</translation>
         <translation>Pulgadas</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10473,13 +10497,13 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Establece el sonido del clic de selección del nodo.</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -15196,182 +15220,182 @@ Example: atan(1) = 0.78538</comment>
         <comment>Hyperbolic sine function
 Usage: sinh(θ)
 Example: sinh(1) = 1.1752</comment>
-        <translation type="unfinished">sinh</translation>
+        <translation>sinh</translation>
     </message>
     <message>
         <source>cosh</source>
         <comment>Hyperbolic cosine
 Usage: cosh(θ) → returns a number greater than or equal to 1
 Example: cosh(0) = 1</comment>
-        <translation type="unfinished">cosh</translation>
+        <translation>cosh</translation>
     </message>
     <message>
         <source>tanh</source>
         <comment>Hyperbolic tangent function
 Usage: tanh(θ) → returns a number between -1 and 1 (excluded)
 Example: tanh(1) = 0.761594</comment>
-        <translation type="unfinished">tanh</translation>
+        <translation>tanh</translation>
     </message>
     <message>
         <source>asinh</source>
         <comment>Inverse Hyperbolic sine function
 Usage: asinh(x)
 Example: asinh(90) = 5.19299</comment>
-        <translation type="unfinished">asinh</translation>
+        <translation>asinh</translation>
     </message>
     <message>
         <source>acosh</source>
         <comment>Inverse Hyperbolic cosine function
 Usage: acosh(x greater than or equal to 1)
 Example: acosh(2) = 1.31696</comment>
-        <translation type="unfinished">acosh</translation>
+        <translation>acosh</translation>
     </message>
     <message>
         <source>atanh</source>
         <comment>Inverse Hyperbolic tangent function
 Usage: atanh(x between -1 and 1 (excluded))
 Example: atanh(0,99) = 2.64665</comment>
-        <translation type="unfinished">atanh</translation>
+        <translation>atanh</translation>
     </message>
     <message>
         <source>sinD</source>
         <comment>Sine function working with degrees
 Usage: sinD(angle θ in degrees) → returns a number between -1 and 1
 Example: sinD(90) = 1</comment>
-        <translation type="unfinished">sinD</translation>
+        <translation>sinD</translation>
     </message>
     <message>
         <source>cosD</source>
         <comment>Cosine function working with degrees
 Usage: cosD(angle θ in degrees) → returns a number between -1 and 1
 Example: cosD(180) = -1</comment>
-        <translation type="unfinished">cosD</translation>
+        <translation>cosD</translation>
     </message>
     <message>
         <source>tanD</source>
         <comment>Tangent function working with degrees
 Usage: tanD(angle θ in degrees)
 Example: tanD(45) = 1</comment>
-        <translation type="unfinished">tanD</translation>
+        <translation>tanD</translation>
     </message>
     <message>
         <source>asinD</source>
         <comment>Inverse sine function working with degrees
 Usage: asinD(x between -1 and 1) → returns an angle in degrees
 Example: asinD(1) = 90</comment>
-        <translation type="unfinished">asinD</translation>
+        <translation>asinD</translation>
     </message>
     <message>
         <source>acosD</source>
         <comment>Inverse cosine function working with degrees
 Usage: acosD(x between -1 and 1) → returns an angle in degrees
 Example: acosD(-1) = 180</comment>
-        <translation type="unfinished">acosD</translation>
+        <translation>acosD</translation>
     </message>
     <message>
         <source>atanD</source>
         <comment>Inverse tangent function working with degrees
 Usage: atanD(x) → returns an angle in degrees
 Example: atanD(1) = 45</comment>
-        <translation type="unfinished">atanD</translation>
+        <translation>atanD</translation>
     </message>
     <message>
         <source>log2</source>
         <comment>Logarithm to the base 2
 Usage: log2(x greater than 0)
 Example: log2(10) = 3.32193</comment>
-        <translation type="unfinished">log2</translation>
+        <translation>log2</translation>
     </message>
     <message>
         <source>log10</source>
         <comment>Logarithm to the base 10 (same as log(x))
 Usage: log10(x greater than 0)
 Example: log10(10) = 1</comment>
-        <translation type="unfinished">log10</translation>
+        <translation>log10</translation>
     </message>
     <message>
         <source>log</source>
         <comment>Logarithm to the base 10
 Usage: log(x greater than 0)
 Example: log(10) = 1</comment>
-        <translation type="unfinished">log</translation>
+        <translation>log</translation>
     </message>
     <message>
         <source>ln</source>
         <comment>Logarithm to base e (2.71828...)
 Usage: ln(x greater than 0)
 Example: ln(10) = 2.30259</comment>
-        <translation type="unfinished">in</translation>
+        <translation>ln</translation>
     </message>
     <message>
         <source>exp</source>
         <comment>e raised to the power of x where e = 2.718
 Usage: exp(x) → returns a positive number
 Example: exp(2) = 7.38906</comment>
-        <translation type="unfinished">exp</translation>
+        <translation>exp</translation>
     </message>
     <message>
         <source>sqrt</source>
         <comment>Square root of a value
 Usage: sqrt(x greater than or equal to 0) → returns a positive number
 Example: sqrt(4) = 2</comment>
-        <translation type="unfinished">sqrt</translation>
+        <translation>sqrt</translation>
     </message>
     <message>
         <source>sign</source>
         <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
 Usage: sign(x) → returns -1, 0 or 1
 Example: sign(-3) = -1</comment>
-        <translation type="unfinished">sign</translation>
+        <translation>sign</translation>
     </message>
     <message>
         <source>rint</source>
         <comment>Round to nearest integer
 Usage: rint(x) → returns an integer number
 Example: rint(2.3) = 2</comment>
-        <translation type="unfinished">rint</translation>
+        <translation>rint</translation>
     </message>
     <message>
         <source>abs</source>
         <comment>Absolute value
 Usage: abs(x) → returns a positive number
 Example: abs(-5) = 5</comment>
-        <translation type="unfinished">abs</translation>
+        <translation>abs</translation>
     </message>
     <message>
         <source>min</source>
         <comment>Min of all arguments
 Usage: min(arg 1; arg 2; ... arg n)
 Example: min(2;3;4) = 2</comment>
-        <translation type="unfinished">min</translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>max</source>
         <comment>Max of all arguments
 Usage: max(arg 1; arg 2; ... arg n)
 Example: max(2;3;4) = 4</comment>
-        <translation type="unfinished">max</translation>
+        <translation>max</translation>
     </message>
     <message>
         <source>sum</source>
         <comment>Sum of all arguments
 Usage: sum(arg 1; arg 2; ... arg n)
 Example: sum(2;3;4) = 9</comment>
-        <translation type="unfinished">sum</translation>
+        <translation>sum</translation>
     </message>
     <message>
         <source>avg</source>
         <comment>Mean value of all arguments
 Usage: avg(arg 1; arg 2; ... arg n)
 Example: avg(2;3;4) = 3</comment>
-        <translation type="unfinished">avg</translation>
+        <translation>avg</translation>
     </message>
     <message>
         <source>fmod</source>
         <comment>Returns the floating-point remainder of x/y (rounded towards zero)
 Usage: fmod(x; y)
 Example: fmod(3.3;2) = 1.3</comment>
-        <translation type="unfinished">fmod</translation>
+        <translation>fmod</translation>
     </message>
 </context>
 <context>
