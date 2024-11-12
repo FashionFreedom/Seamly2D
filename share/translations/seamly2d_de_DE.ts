@@ -4186,7 +4186,7 @@ for writing</source>
         <translation>Date %1 kann nicht zum schreiben geöffnet werden</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -5307,7 +5307,7 @@ Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLIC
         <translation>Millimeter</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -9761,6 +9761,14 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Hide Seam Line</source>
         <translation>Nahtlinie ausblenden</translation>
     </message>
+    <message>
+        <source>Arrow length:</source>
+        <translation>Länge der Pfeile</translation>
+    </message>
+    <message>
+        <source> px</source>
+        <translation"> px</translation>
+    </message>
 </context>
 <context>
     <name>QCoreApplication</name>
@@ -10341,13 +10349,13 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Zoll</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10415,13 +10423,13 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Legt den Klickton für die Knotenauswahl fest.</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>

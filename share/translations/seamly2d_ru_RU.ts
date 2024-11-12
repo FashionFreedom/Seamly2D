@@ -9778,6 +9778,14 @@ Press enter to temporarily add it to the list.</source>
         <source>Hide Seam Line</source>
         <translation>Скрыть линию шва</translation>
     </message>
+    <message>
+        <source>Arrow length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> px</source>
+        <translation type="unfinished"> пиксели</translation>
+    </message>
 </context>
 <context>
     <name>QCoreApplication</name>

@@ -4227,7 +4227,7 @@ Do you want to download it?</source>
 ¿Quiere descargarla?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -5348,7 +5348,7 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
         <translation>Ninguno</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -9818,6 +9818,14 @@ actualización:</translation>
         <source>Hide Seam Line</source>
         <translation>Ocultar línea de costura</translation>
     </message>
+    <message>
+        <source>Arrow length:</source>
+        <translation>Longitud de flecha</translation>
+    </message>
+    <message>
+        <source> px</source>
+        <translation type="unfinished"> px</translation>
+    </message>
 </context>
 <context>
     <name>QCoreApplication</name>
@@ -10399,13 +10407,13 @@ actualización:</translation>
         <translation>Pulgadas</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10473,13 +10481,13 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Establece el sonido del clic de selección del nodo.</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
