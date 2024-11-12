@@ -9763,11 +9763,11 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>Arrow length:</source>
-        <translation>Länge der Pfeile</translation>
+        <translation>Länge der Pfeile:</translation>
     </message>
     <message>
         <source> px</source>
-        <translation"> px</translation>
+        <translation> px</translation>
     </message>
 </context>
 <context>
