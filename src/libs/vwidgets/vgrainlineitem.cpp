@@ -66,7 +66,6 @@
 #include "vgrainlineitem.h"
 
 #define ARROW_ANGLE                     M_PI/9
-#define ARROW_LENGTH                    70.0
 #define RECT_WIDTH                      30
 #define RESIZE_RECT_SIZE                10
 #define ROTATE_CIRC_R                   7
@@ -78,21 +77,21 @@
 /// @param parent pointer to the parent item
 //---------------------------------------------------------------------------------------------------------------------
 VGrainlineItem::VGrainlineItem(QGraphicsItem* parent)
-    : VPieceItem(parent),
-      m_rotation(0),
-      m_rotationStart(0),
-      m_length(0),
-      m_boundingPoly(),
-      m_startPos(),
-      m_movePos(),
-      m_resizePolygon(),
-      m_startLength(0),
-      m_startPoint(),
-      m_finishPoint(),
-      m_centerPoint(),
-      m_angle(0),
-      m_arrowType(ArrowType::Both),
-      m_penWidth(LINE_PEN_WIDTH)
+    : VPieceItem(parent)
+    , m_rotation(0)
+    , m_rotationStart(0)
+    , m_length(0)
+    , m_boundingPoly()
+    , m_startPos()
+    , m_movePos()
+    , m_resizePolygon()
+    , m_startLength(0)
+    , m_startPoint()
+    , m_finishPoint()
+    , m_centerPoint()
+    , m_angle(0)
+    , m_arrowType(ArrowType::Both)
+    , m_penWidth(LINE_PEN_WIDTH)
 {
     setAcceptHoverEvents(true);
     m_inactiveZ = 5;
@@ -631,26 +630,28 @@ QLineF VGrainlineItem::mainLine() const
 //---------------------------------------------------------------------------------------------------------------------
 QPolygonF VGrainlineItem::firstArrow() const
 {
+    qreal arrowLength = qApp->Settings()->getDefaultArrowLength();
     QPointF point2 = mainLine().p2();
     QPolygonF polygon;
     polygon << point2;
-    polygon << QPointF(point2.x() + ARROW_LENGTH * cos(M_PI + m_rotation + ARROW_ANGLE),
-                       point2.y() - ARROW_LENGTH * sin(M_PI + m_rotation + ARROW_ANGLE));
-    polygon << QPointF(point2.x() + ARROW_LENGTH * cos(M_PI + m_rotation - ARROW_ANGLE),
-                       point2.y() - ARROW_LENGTH * sin(M_PI + m_rotation - ARROW_ANGLE));
+    polygon << QPointF(point2.x() + arrowLength * cos(M_PI + m_rotation + ARROW_ANGLE),
+                       point2.y() - arrowLength * sin(M_PI + m_rotation + ARROW_ANGLE));
+    polygon << QPointF(point2.x() + arrowLength * cos(M_PI + m_rotation - ARROW_ANGLE),
+                       point2.y() - arrowLength * sin(M_PI + m_rotation - ARROW_ANGLE));
     return polygon;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QPolygonF VGrainlineItem::secondArrow() const
 {
+    qreal arrowLength = qApp->Settings()->getDefaultArrowLength();
     QPointF point1 = mainLine().p1();
     QPolygonF polygon;
     polygon << point1;
-    polygon << QPointF(point1.x() + ARROW_LENGTH * cos(m_rotation + ARROW_ANGLE),
-                       point1.y() - ARROW_LENGTH * sin(m_rotation + ARROW_ANGLE));
-    polygon << QPointF(point1.x() + ARROW_LENGTH * cos(m_rotation - ARROW_ANGLE),
-                       point1.y() - ARROW_LENGTH * sin(m_rotation - ARROW_ANGLE));
+    polygon << QPointF(point1.x() + arrowLength * cos(m_rotation + ARROW_ANGLE),
+                       point1.y() - arrowLength * sin(m_rotation + ARROW_ANGLE));
+    polygon << QPointF(point1.x() + arrowLength * cos(m_rotation - ARROW_ANGLE),
+                       point1.y() - arrowLength * sin(m_rotation - ARROW_ANGLE));
     return polygon;
 }
 

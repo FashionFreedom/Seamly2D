@@ -145,7 +145,7 @@ void PreferencesPatternPage::Apply()
     settings->setDefaultGrainlineLength(ui->defaultGrainlineLength_DoubleSpinBox->value());
     settings->setDefaultGrainlineColor(ui->defaultGrainlineColor_ComboBox->currentData().toString());
     settings->setDefaultGrainlineLineweight(ui->defaultGrainlineLineweight_ComboBox->currentData().toReal());
-
+    settings->setDefaultArrowLength(ui->defaultArrowLength_DoubleSpinBox->value());
 
     settings->setShowPatternLabels(ui->showPatternLabels_CheckBox->isChecked());
     settings->setShowPieceLabels(ui->showPieceLabels_CheckBox->isChecked());
@@ -384,7 +384,10 @@ void PreferencesPatternPage::initGrainlines()
     {
         ui->defaultGrainlineLineweight_ComboBox->setCurrentIndex(index);
     }
+
+    ui->defaultArrowLength_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultArrowLength());
 }
+
 //---------------------------------------------------------------------------------------------------------------------
 void PreferencesPatternPage::initComboBoxFormats(QComboBox *box, const QStringList &items, const QString &currentFormat)
 {

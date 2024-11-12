@@ -449,6 +449,9 @@ public:
     qreal                getDefaultGrainlineLineweight() const;
     void                 setDefaultGrainlineLineweight(const qreal &value);
 
+    qreal                getDefaultArrowLength() const;
+    void                 setDefaultArrowLength(const qreal &value);
+
     bool                 showLabels() const;
     void                 setShowLabels(const bool &value);
 

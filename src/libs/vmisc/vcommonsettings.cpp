@@ -201,6 +201,7 @@ const QString settingDefaultGrainlineVisibilty           = QStringLiteral("patte
 const QString settingDefaultGrainlineLength              = QStringLiteral("pattern/defaultGrainlineLength");
 const QString settingDefaultGrainlineColor               = QStringLiteral("pattern/defaultGrainlineColor");
 const QString settingDefaultGrainlineLineweight          = QStringLiteral("pattern/defaultGrainlineLineweight");
+const QString settingDefaultArrowLength                  = QStringLiteral("pattern/defaultArrowLength");
 
 const QString settingShowLabels                          = QStringLiteral("pattern/showLabels");
 const QString settingShowPatternLabels                   = QStringLiteral("pattern/showPatternLabels");
@@ -2051,6 +2052,18 @@ qreal VCommonSettings::getDefaultGrainlineLineweight() const
 void VCommonSettings::setDefaultGrainlineLineweight(const qreal &value)
 {
     setValue(settingDefaultGrainlineLineweight, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultArrowLength() const
+{
+   return value(settingDefaultArrowLength, 0.70).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultArrowLength(const qreal &value)
+{
+    setValue(settingDefaultArrowLength, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
