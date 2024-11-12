@@ -1,30 +1,52 @@
-/************************************************************************
- **
- **  @file   vgrainlineitem.cpp
- **  @author Bojan Kverh
- **  @date   September 10, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vgrainlineitem.cpp
+//  @author Douglas S Caskey
+//  @date   11 Nov, 2024
+//
+//  @copyright
+//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vgrainlineitem.cpp
+//  @author Bojan Kverh
+//  @date   September 10, 2016
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2015 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include <math.h>
 
@@ -44,7 +66,7 @@
 #include "vgrainlineitem.h"
 
 #define ARROW_ANGLE                     M_PI/9
-#define ARROW_LENGTH                    15
+#define ARROW_LENGTH                    70.0
 #define RECT_WIDTH                      30
 #define RESIZE_RECT_SIZE                10
 #define ROTATE_CIRC_R                   7
@@ -52,56 +74,53 @@
 #define LINE_PEN_WIDTH                  3
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VGrainlineItem::VGrainlineItem constructor
- * @param painterarent pointer to the parent item
- */
-VGrainlineItem::VGrainlineItem(QGraphicsItem* painterarent)
-    : VPieceItem(painterarent),
-      m_dRotation(0),
-      m_dStartRotation(0),
-      m_dLength(0),
-      m_polyBound(),
-      m_ptStartPos(),
-      m_ptStartMove(),
-      m_dScale(1),
-      m_polyResize(),
-      m_dStartLength(0),
-      m_ptStart(),
-      m_ptFinish(),
-      m_ptCenter(),
-      m_dAngle(0),
-      m_eArrowType(ArrowType::atBoth),
+/// @brief VGrainlineItem::VGrainlineItem constructor
+/// @param parent pointer to the parent item
+//---------------------------------------------------------------------------------------------------------------------
+VGrainlineItem::VGrainlineItem(QGraphicsItem* parent)
+    : VPieceItem(parent),
+      m_rotation(0),
+      m_rotationStart(0),
+      m_length(0),
+      m_boundingPoly(),
+      m_startPos(),
+      m_movePos(),
+      m_resizePolygon(),
+      m_startLength(0),
+      m_startPoint(),
+      m_finishPoint(),
+      m_centerPoint(),
+      m_angle(0),
+      m_arrowType(ArrowType::Both),
       m_penWidth(LINE_PEN_WIDTH)
 {
     setAcceptHoverEvents(true);
     m_inactiveZ = 5;
-    Reset();
-    UpdateRectangle();
+    reset();
+    updateRectangle();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QPainterPath VGrainlineItem::shape() const
 {
-    if (m_eMode == mNormal)
+    if (m_mode == Mode::Normal)
     {
-        return MainShape();
+        return mainShape();
     }
     else
     {
         QPainterPath path;
-        path.addPolygon(m_polyBound);
+        path.addPolygon(m_boundingPoly);
         return path;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VGrainlineItem::paint paints the item content
- * @param painter pointer to the painter object
- * @param option not used
- * @param widget not used
- */
+/// @brief VGrainlineItem::paint paints the item content
+/// @param painter pointer to the painter object
+/// @param option not used
+/// @param widget not used
+//---------------------------------------------------------------------------------------------------------------------
 void VGrainlineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(option)
@@ -114,59 +133,57 @@ void VGrainlineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
 
     painter->setRenderHints(QPainter::Antialiasing);
     // line
-    const QLineF mainLine = MainLine();
-    painter->drawLine(mainLine.p1(), mainLine.p2());
+    const QLineF line = mainLine();
+    painter->drawLine(line.p1(), line.p2());
 
     painter->setBrush(color);
 
-    m_dScale = GetScale();
-    qreal dArrLen = ARROW_LENGTH*m_dScale;
-    if (m_eArrowType != ArrowType::atRear)
+    if (m_arrowType != ArrowType::Bottom)
     {
         // first arrow
-        painter->drawPolygon(FirstArrow(dArrLen));
+        painter->drawPolygon(firstArrow());
     }
-    if (m_eArrowType != ArrowType::atFront)
+    if (m_arrowType != ArrowType::Top)
     {
         // second arrow
-        painter->drawPolygon(SecondArrow(dArrLen));
+        painter->drawPolygon(secondArrow());
     }
 
-    if (m_eMode != mNormal)
+    if (m_mode != Mode::Normal)
     {
         painter->setPen(QPen(Qt::black, 2, Qt::DashLine));
         painter->setBrush(Qt::NoBrush);
         // bounding polygon
-        painter->drawPolygon(m_polyBound);
+        painter->drawPolygon(m_boundingPoly);
 
-        if (m_eMode != mRotate)
+        if (m_mode != Mode::Rotate)
         {
             painter->setPen(QPen(Qt::black, 3));
             painter->setBrush(Qt::black);
-            UpdatePolyResize();
-            painter->drawPolygon(m_polyResize);
+            updatePolyResize();
+            painter->drawPolygon(m_resizePolygon);
         }
 
         painter->setBrush(Qt::NoBrush);
-        if (m_eMode == mResize)
+        if (m_mode == Mode::Resize)
         {
             painter->setPen(Qt::black);
-            painter->drawLine(m_polyBound.at(0), m_polyBound.at(2));
-            painter->drawLine(m_polyBound.at(1), m_polyBound.at(3));
+            painter->drawLine(m_boundingPoly.at(0), m_boundingPoly.at(2));
+            painter->drawLine(m_boundingPoly.at(1), m_boundingPoly.at(3));
         }
 
-        if (m_eMode == mRotate)
+        if (m_mode == Mode::Rotate)
         {
-            QPointF ptC = (m_polyBound.at(0) + m_polyBound.at(2))/2;
-            qreal dRad = m_dScale * ROTATE_CIRC_R;
+            QPointF ptC = (m_boundingPoly.at(0) + m_boundingPoly.at(2))/2;
+            qreal dRad =  ROTATE_CIRC_R;
             painter->setBrush(Qt::black);
             painter->drawEllipse(ptC, dRad, dRad);
 
             painter->setBrush(Qt::NoBrush);
             painter->save();
             painter->translate(ptC);
-            painter->rotate(qRadiansToDegrees(-m_dRotation));
-            int iX = int(qRound(m_dLength/2 - 0.5*dRad));
+            painter->rotate(qRadiansToDegrees(-m_rotation));
+            int iX = int(qRound(m_length/2 - 0.5*dRad));
             int iY = int(qRound(RECT_WIDTH - 0.5*dRad));
             int iR = int(qRound(dRad*3));
             painter->drawArc(iX - iR, iY - iR, iR, iR, 0*16, -90*16);
@@ -180,51 +197,50 @@ void VGrainlineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VGrainlineItem::UpdateGeometry updates the item with grainline parameters
- * @param ptPos position of one grainline's end
- * @param dRotation rotation of the grainline in [degrees]
- * @param dLength length of the grainline in user's units
- */
-void VGrainlineItem::UpdateGeometry(const QPointF& ptPos, qreal dRotation, qreal dLength, ArrowType eAT)
+/// @brief VGrainlineItem::updateGeometry updates the item with grainline parameters.
+/// @param position position of one grainline's end.
+/// @param rotation rotation of the grainline in [degrees].
+/// @param length length of the grainline in user's units.
+/// @param type type of arrowhead.
+//---------------------------------------------------------------------------------------------------------------------
+void VGrainlineItem::updateGeometry(const QPointF& position, qreal rotation, qreal length, ArrowType type)
 {
-    m_dRotation = qDegreesToRadians(dRotation);
-    m_dLength = dLength;
+    m_rotation = qDegreesToRadians(rotation);
+    m_length = length;
 
     qreal dX;
     qreal dY;
-    QPointF pt = ptPos;
-    if (isContained(pt, m_dRotation, dX, dY) == false)
+    QPointF point = position;
+    if (isContained(point, m_rotation, dX, dY) == false)
     {
-        pt.setX(pt.x() + dX);
-        pt.setY(pt.y() + dY);
+        point.setX(point.x() + dX);
+        point.setY(point.y() + dY);
     }
-    setPos(pt);
-    m_eArrowType = eAT;
+    setPos(point);
+    m_arrowType = type;
 
-    UpdateRectangle();
-    Update();
+    updateRectangle();
+    updateItem();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VGrainlineItem::isContained checks, if both ends of the grainline, starting at pt, are contained in
- * parent widget.
- * @param pt starting point of the grainline.
- * @param dRot rotation of the grainline in [rad]
- * @param dX horizontal translation needed to put the arrow inside parent item
- * @param dY vertical translation needed to put the arrow inside parent item
- * @return true, if both ends of the grainline, starting at pt, are contained in the parent widget and
- * false otherwise.
- */
-bool VGrainlineItem::isContained(const QPointF& pt, qreal dRot, qreal &dX, qreal &dY) const
+/// @brief VGrainlineItem::isContained checks, if both ends of the grainline, starting at point, are contained in
+/// parent widget.
+/// @param point starting point of the grainline.
+/// @param dRot rotation of the grainline in [rad]
+/// @param dX horizontal translation needed to put the arrow inside parent item
+/// @param dY vertical translation needed to put the arrow inside parent item
+/// @return true, if both ends of the grainline, starting at point, are contained in the parent widget and
+/// false otherwise.
+//---------------------------------------------------------------------------------------------------------------------
+bool VGrainlineItem::isContained(const QPointF& point, qreal dRot, qreal &dX, qreal &dY) const
 {
     dX = 0;
     dY = 0;
-    QPointF apt[2];
-    apt[0] = pt;
-    apt[1].setX(pt.x() + m_dLength * cos(dRot));
-    apt[1].setY(pt.y() - m_dLength * sin(dRot));
+    QPointF apoint[2];
+    apoint[0] = point;
+    apoint[1].setX(point.x() + m_length * cos(dRot));
+    apoint[1].setY(point.y() - m_length * sin(dRot));
     // single point differences
     qreal dPtX;
     qreal dPtY;
@@ -235,23 +251,23 @@ bool VGrainlineItem::isContained(const QPointF& pt, qreal dRot, qreal &dX, qreal
     {
         dPtX = 0;
         dPtY = 0;
-        if (rectParent.contains(apt[i]) == false)
+        if (rectParent.contains(apoint[i]) == false)
         {
-            if (apt[i].x() < rectParent.left())
+            if (apoint[i].x() < rectParent.left())
             {
-                dPtX = rectParent.left() - apt[i].x();
+                dPtX = rectParent.left() - apoint[i].x();
             }
-            else if (apt[i].x() > rectParent.right())
+            else if (apoint[i].x() > rectParent.right())
             {
-                dPtX = rectParent.right() - apt[i].x();
+                dPtX = rectParent.right() - apoint[i].x();
             }
-            if (apt[i].y() < rectParent.top())
+            if (apoint[i].y() < rectParent.top())
             {
-                dPtY = rectParent.top() - apt[i].y();
+                dPtY = rectParent.top() - apoint[i].y();
             }
-            else if (apt[i].y() > rectParent.bottom())
+            else if (apoint[i].y() > rectParent.bottom())
             {
-                dPtY = rectParent.bottom() - apt[i].y();
+                dPtY = rectParent.bottom() - apoint[i].y();
             }
 
             if (fabs(dPtX) > fabs(dX))
@@ -270,39 +286,38 @@ bool VGrainlineItem::isContained(const QPointF& pt, qreal dRot, qreal &dX, qreal
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VGrainlineItem::mousePressEvent handles left button mouse press events
- * @param pME pointer to QGraphicsSceneMouseEvent object
- */
-void VGrainlineItem::mousePressEvent(QGraphicsSceneMouseEvent* pME)
+/// @brief VGrainlineItem::mousePressEvent handles left button mouse press events
+/// @param event pointer to QGraphicsSceneMouseEvent object
+//---------------------------------------------------------------------------------------------------------------------
+void VGrainlineItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
-    if (pME->button() == Qt::LeftButton && pME->type() != QEvent::GraphicsSceneMouseDoubleClick
+    if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick
         && (flags() & QGraphicsItem::ItemIsMovable))
     {
         if (m_moveType == NotMovable)
         {
-            pME->ignore();
+            event->ignore();
             return;
         }
 
-        m_ptStartPos = pos();
-        m_ptStartMove = pME->scenePos();
-        m_dStartLength = m_dLength;
-        m_dStartRotation = m_dRotation;
-        m_dAngle = GetAngle(mapToParent(pME->pos()));
-        m_ptRotCenter = m_ptCenter;
+        m_startPos = pos();
+        m_movePos = event->scenePos();
+        m_startLength = m_length;
+        m_rotationStart = m_rotation;
+        m_angle = GetAngle(mapToParent(event->pos()));
+        m_rotationCenter = m_centerPoint;
 
         if ((m_moveType & AllModifications ) == AllModifications)
         {
-            allUserModifications(pME->pos());
+            allUserModifications(event->pos());
             setZValue(ACTIVE_Z);
-            Update();
+            updateItem();
         }
         else if (m_moveType & IsRotatable)
         {
             if (m_moveType & IsResizable)
             {
-                allUserModifications(pME->pos());
+                allUserModifications(event->pos());
             }
             else if (m_moveType & IsMovable)
             {
@@ -310,24 +325,24 @@ void VGrainlineItem::mousePressEvent(QGraphicsSceneMouseEvent* pME)
             }
             else
             {
-                m_eMode = mRotate;
+                m_mode = Mode::Rotate;
                 SetItemOverrideCursor(this, cursorArrowCloseHand, 1, 1);
             }
             setZValue(ACTIVE_Z);
-            Update();
+            updateItem();
         }
         else if (m_moveType & IsResizable)
         {
             if (m_moveType & IsRotatable)
             {
-                allUserModifications(pME->pos());
+                allUserModifications(event->pos());
             }
             else if (m_moveType & IsMovable)
             {
-                userMoveAndResize(pME->pos());
+                userMoveAndResize(event->pos());
             }
             setZValue(ACTIVE_Z);
-            Update();
+            updateItem();
         }
         else if (m_moveType & IsMovable)
         {
@@ -337,58 +352,57 @@ void VGrainlineItem::mousePressEvent(QGraphicsSceneMouseEvent* pME)
             }
             else if (m_moveType & IsResizable)
             {
-                userMoveAndResize(pME->pos());
+                userMoveAndResize(event->pos());
             }
             else
             {
-                m_eMode = mMove;
+                m_mode = Mode::Move;
                 SetItemOverrideCursor(this, cursorArrowCloseHand, 1, 1);
             }
 
             setZValue(ACTIVE_Z);
-            Update();
+            updateItem();
         }
         else
         {
-            pME->ignore();
+            event->ignore();
             return;
         }
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VGrainlineItem::mouseMoveEvent handles mouse move events, making sure that the item is moved properly
- * @param pME pointer to QGraphicsSceneMouseEvent object
- */
-void VGrainlineItem::mouseMoveEvent(QGraphicsSceneMouseEvent* pME)
+/// @brief VGrainlineItem::mouseMoveEvent handles mouse move events, making sure that the item is moved properly
+/// @param event pointer to QGraphicsSceneMouseEvent object
+//---------------------------------------------------------------------------------------------------------------------
+void VGrainlineItem::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 {
-    QPointF ptDiff = pME->scenePos() - m_ptStartMove;
+    QPointF delta = event->scenePos() - m_movePos;
     qreal dX;
     qreal dY;
-    if (m_eMode == mMove && m_moveType & IsMovable)
+    if (m_mode == Mode::Move && m_moveType & IsMovable)
     {
-        QPointF pt = m_ptStartPos + ptDiff;
-        if (isContained(pt, m_dRotation, dX, dY) == false)
+        QPointF point = m_startPos + delta;
+        if (isContained(point, m_rotation, dX, dY) == false)
         {
-            pt.setX(pt.x() + dX);
-            pt.setY(pt.y() + dY);
+            point.setX(point.x() + dX);
+            point.setY(point.y() + dY);
         }
-        setPos(pt);
-        Update();
+        setPos(point);
+        updateItem();
     }
-    else if (m_eMode == mResize && m_moveType & IsResizable)
+    else if (m_mode == Mode::Resize && m_moveType & IsResizable)
     {
-        qreal dLen = qSqrt(ptDiff.x()*ptDiff.x() + ptDiff.y()*ptDiff.y());
-        qreal dAng = qAtan2(-ptDiff.y(), ptDiff.x());
-        dLen = -dLen*qCos(dAng - m_dRotation);
-        qreal dPrevLen = m_dLength;
+        qreal dLen = qSqrt(delta.x()*delta.x() + delta.y()*delta.y());
+        qreal dAng = qAtan2(-delta.y(), delta.x());
+        dLen = -dLen*qCos(dAng - m_rotation);
+        qreal dPrevLen = m_length;
         // try with new length
-        if (not (m_moveType & IsMovable))
+        if (!(m_moveType & IsMovable))
         {
             dLen *= 2;
         }
-        m_dLength = m_dStartLength + dLen;
+        m_length = m_startLength + dLen;
 
         QPointF pos;
 
@@ -396,193 +410,189 @@ void VGrainlineItem::mouseMoveEvent(QGraphicsSceneMouseEvent* pME)
         {
             QLineF grainline(this->pos().x(), this->pos().y(),
                              this->pos().x() + dPrevLen, this->pos().y());
-            grainline.setAngle(qRadiansToDegrees(m_dRotation));
+            grainline.setAngle(qRadiansToDegrees(m_rotation));
             grainline = QLineF(grainline.p2(), grainline.p1());
-            grainline.setLength(m_dLength);
+            grainline.setLength(m_length);
             pos = grainline.p2();
         }
         else
         {
-            QLineF grainline(m_ptCenter.x(), m_ptCenter.y(),
-                             m_ptCenter.x() + m_dLength / 2.0, m_ptCenter.y());
+            QLineF grainline(m_centerPoint.x(), m_centerPoint.y(),
+                             m_centerPoint.x() + m_length / 2.0, m_centerPoint.y());
 
-            grainline.setAngle(qRadiansToDegrees(m_dRotation));
+            grainline.setAngle(qRadiansToDegrees(m_rotation));
             grainline = QLineF(grainline.p2(), grainline.p1());
-            grainline.setLength(m_dLength);
+            grainline.setLength(m_length);
 
             pos = grainline.p2();
         }
 
         qreal dX;
         qreal dY;
-        if (isContained(pos, m_dRotation, dX, dY) == false)
+        if (isContained(pos, m_rotation, dX, dY) == false)
         {
-            m_dLength = dPrevLen;
+            m_length = dPrevLen;
         }
         else
         {
             setPos(pos);
         }
 
-        UpdateRectangle();
-        Update();
+        updateRectangle();
+        updateItem();
     }
-    else if (m_eMode == mRotate && m_moveType & IsRotatable)
+    else if (m_mode == Mode::Rotate && m_moveType & IsRotatable)
     {
         // prevent strange angle changes due to singularities
-        qreal dLen = qSqrt(ptDiff.x()*ptDiff.x() + ptDiff.y()*ptDiff.y());
+        qreal dLen = qSqrt(delta.x()*delta.x() + delta.y()*delta.y());
         if (dLen < 2)
         {
             return;
         }
 
-        if (fabs(m_dAngle) < 0.01)
+        if (fabs(m_angle) < 0.01)
         {
-            m_dAngle = GetAngle(mapToParent(pME->pos()));
+            m_angle = GetAngle(mapToParent(event->pos()));
             return;
         }
 
-        qreal dAng = GetAngle(mapToParent(pME->pos())) - m_dAngle;
-        QPointF ptNewPos = Rotate(m_ptStartPos, m_ptRotCenter, dAng);
-        if (isContained(ptNewPos, m_dStartRotation + dAng, dX, dY) == true)
+        qreal dAng = GetAngle(mapToParent(event->pos())) - m_angle;
+        QPointF ptNewPos = rotate(m_startPos, m_rotationCenter, dAng);
+        if (isContained(ptNewPos, m_rotationStart + dAng, dX, dY) == true)
         {
             setPos(ptNewPos);
-            m_dRotation = m_dStartRotation + dAng;
-            UpdateRectangle();
-            Update();
+            m_rotation = m_rotationStart + dAng;
+            updateRectangle();
+            updateItem();
         }
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VGrainlineItem::mouseReleaseEvent handles mouse release events and emits the proper signal if the item was
- * moved
- * @param pME pointer to QGraphicsSceneMouseEvent object
- */
-void VGrainlineItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* pME)
+/// @brief VGrainlineItem::mouseReleaseEvent handles mouse release events and emits the proper signal if the item was
+/// moved
+/// @param event pointer to QGraphicsSceneMouseEvent object
+//---------------------------------------------------------------------------------------------------------------------
+void VGrainlineItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
-    if (pME->button() == Qt::LeftButton)
+    if (event->button() == Qt::LeftButton)
     {
-        if ((m_eMode == mMove || m_eMode == mRotate || m_eMode == mResize) && (flags() & QGraphicsItem::ItemIsMovable))
+        if ((m_mode == Mode::Move || m_mode == Mode::Rotate || m_mode == Mode::Resize) && (flags() & QGraphicsItem::ItemIsMovable))
         {
             SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
         }
 
-        QPointF ptDiff = pME->scenePos() - m_ptStartMove;
-        qreal dLen = qSqrt(ptDiff.x()*ptDiff.x() + ptDiff.y()*ptDiff.y());
+        QPointF delta = event->scenePos() - m_movePos;
+        qreal dLen = qSqrt(delta.x()*delta.x() + delta.y()*delta.y());
         bool bShort = (dLen < 2);
 
-        if (m_eMode == mMove || m_eMode == mResize)
+        if (m_mode == Mode::Move || m_mode == Mode::Resize)
         {
             if (bShort == true)
             {
-                if (m_bReleased == true && m_moveType & IsRotatable)
+                if (m_isReleased == true && m_moveType & IsRotatable)
                 {
-                    m_eMode = mRotate;
-                    Update();
+                    m_mode = Mode::Rotate;
+                    updateItem();
                 }
             }
             else
             {
-                if (m_eMode == mMove && m_moveType & IsMovable)
+                if (m_mode == Mode::Move && m_moveType & IsMovable)
                 {
                     emit itemMoved(pos());
                 }
                 else if (m_moveType & IsResizable)
                 {
-                    emit itemResized(m_dLength);
+                    emit itemResized(m_length);
                 }
-                Update();
+                updateItem();
             }
         }
         else
         {
             if (bShort == true)
             {
-                m_eMode = mMove;
+                m_mode = Mode::Move;
             }
             else if (m_moveType & IsRotatable)
             {
-                emit itemRotated(m_dRotation, m_ptStart);
+                emit itemRotated(m_rotation, m_startPoint);
             }
-            Update();
+            updateItem();
         }
-        m_bReleased = true;
+        m_isReleased = true;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VGrainlineItem::hoverEnterEvent(QGraphicsSceneHoverEvent *pME)
+void VGrainlineItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     m_penWidth = m_penWidth + 1;
-    VPieceItem::hoverEnterEvent(pME);
+    VPieceItem::hoverEnterEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VGrainlineItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *pME)
+void VGrainlineItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
     m_penWidth = m_penWidth - 1;
-    VPieceItem::hoverLeaveEvent(pME);
+    VPieceItem::hoverLeaveEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VGrainlineItem::Update updates the item
- */
-void VGrainlineItem::Update()
+/// @brief VGrainlineItem::updateItem updates the item
+//---------------------------------------------------------------------------------------------------------------------
+void VGrainlineItem::updateItem()
 {
-    update(m_rectBoundingBox);
+    update(m_boundingRect);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VGrainlineItem::UpdateRectangle updates the polygon for the box around active item
- * and the bounding rectangle
- */
-void VGrainlineItem::UpdateRectangle()
+/// @brief VGrainlineItem::updateRectangle updates the polygon for the box around active item
+/// and the bounding rectangle
+//---------------------------------------------------------------------------------------------------------------------
+void VGrainlineItem::updateRectangle()
 {
-    QPointF pt1(0, 0);
-    QPointF pt2(pt1.x() + m_dLength * cos(m_dRotation), pt1.y() - m_dLength * sin(m_dRotation));
+    QPointF point1(0, 0);
+    QPointF point2(point1.x() + m_length * cos(m_rotation), point1.y() - m_length * sin(m_rotation));
 
-    m_ptStart = mapToParent(pt1);
-    m_ptFinish = mapToParent(pt2);
-    m_ptCenter = (m_ptStart + m_ptFinish)/2;
+    m_startPoint  = mapToParent(point1);
+    m_finishPoint = mapToParent(point2);
+    m_centerPoint = (m_startPoint + m_finishPoint)/2;
 
-    m_polyBound.clear();
-    m_polyBound << QPointF(pt1.x() + RECT_WIDTH*cos(m_dRotation + M_PI/2),
-                           pt1.y() - RECT_WIDTH*sin(m_dRotation + M_PI/2));
-    m_polyBound << QPointF(pt1.x() + RECT_WIDTH*cos(m_dRotation - M_PI/2),
-                           pt1.y() - RECT_WIDTH*sin(m_dRotation - M_PI/2));
-    m_polyBound << QPointF(pt2.x() + RECT_WIDTH*cos(m_dRotation - M_PI/2),
-                           pt2.y() - RECT_WIDTH*sin(m_dRotation - M_PI/2));
-    m_polyBound << QPointF(pt2.x() + RECT_WIDTH*cos(m_dRotation + M_PI/2),
-                           pt2.y() - RECT_WIDTH*sin(m_dRotation + M_PI/2));
-    m_rectBoundingBox = m_polyBound.boundingRect().adjusted(-2, -2, 2, 2);
-    setTransformOriginPoint(m_rectBoundingBox.center());
+    m_boundingPoly.clear();
+    m_boundingPoly << QPointF(point1.x() + RECT_WIDTH*cos(m_rotation + M_PI/2),
+                              point1.y() - RECT_WIDTH*sin(m_rotation + M_PI/2));
+    m_boundingPoly << QPointF(point1.x() + RECT_WIDTH*cos(m_rotation - M_PI/2),
+                              point1.y() - RECT_WIDTH*sin(m_rotation - M_PI/2));
+    m_boundingPoly << QPointF(point2.x() + RECT_WIDTH*cos(m_rotation - M_PI/2),
+                              point2.y() - RECT_WIDTH*sin(m_rotation - M_PI/2));
+    m_boundingPoly << QPointF(point2.x() + RECT_WIDTH*cos(m_rotation + M_PI/2),
+                              point2.y() - RECT_WIDTH*sin(m_rotation + M_PI/2));
+    m_boundingRect = m_boundingPoly.boundingRect().adjusted(-2, -2, 2, 2);
+    setTransformOriginPoint(m_boundingRect.center());
 
-    UpdatePolyResize();
+    updatePolyResize();
     prepareGeometryChange();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-double VGrainlineItem::GetAngle(const QPointF &pt) const
+double VGrainlineItem::GetAngle(const QPointF &point) const
 {
-    return -VPieceItem::GetAngle(pt);
+    return -VPieceItem::GetAngle(point);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VGrainlineItem::Rotate rotates point pt around ptCenter by angle dAng [rad]
- * and returns the resulting point
- * @param pt point to rotate
- * @param ptCenter center of rotation
- * @param dAng angle of rotation
- * @return point, which is a result of rotating pt around ptCenter by angle dAng
- */
-QPointF VGrainlineItem::Rotate(const QPointF& pt, const QPointF& ptCenter, qreal dAng) const
+/// @brief VGrainlineItem::rotate rotates point point around ptCenter by angle dAng [rad]
+/// and returns the resulting point
+/// @param point point to rotate
+/// @param ptCenter center of rotation
+/// @param dAng angle of rotation
+/// @return point, which is a result of rotating point around ptCenter by angle dAng
+//---------------------------------------------------------------------------------------------------------------------
+QPointF VGrainlineItem::rotate(const QPointF& point, const QPointF& ptCenter, qreal dAng) const
 {
-    QPointF ptRel = pt - ptCenter;
+    QPointF ptRel = point - ptCenter;
     QPointF ptFinal;
     ptFinal.setX(ptRel.x()*qCos(dAng) + ptRel.y()*qSin(dAng));
     ptFinal.setY(-ptRel.x()*qSin(dAng) + ptRel.y()*qCos(dAng));
@@ -591,89 +601,68 @@ QPointF VGrainlineItem::Rotate(const QPointF& pt, const QPointF& ptCenter, qreal
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VGrainlineItem::GetInsideCorner calculates a point inside the bounding polygon,
- * dDist away of i-th point in each direction
- * @param i index of corner
- * @param dDist distance
- * @return resulting point
- */
-QPointF VGrainlineItem::GetInsideCorner(int i, qreal dDist) const
+/// @brief VGrainlineItem::getInsideCorner calculates a point inside the bounding polygon,
+/// distance away of i-th point in each direction
+/// @param i index of corner
+/// @param distance distance
+/// @return resulting point
+//---------------------------------------------------------------------------------------------------------------------
+QPointF VGrainlineItem::getInsideCorner(int i, qreal distance) const
 {
-    QPointF pt1 = m_polyBound.at((i + 1) % m_polyBound.count()) - m_polyBound.at(i);
-    QPointF pt2 = m_polyBound.at((i + m_polyBound.count() - 1) % m_polyBound.count()) - m_polyBound.at(i);
+    QPointF point1 = m_boundingPoly.at((i + 1) % m_boundingPoly.count()) - m_boundingPoly.at(i);
 
-    pt1 = dDist*pt1/qSqrt(pt1.x()*pt1.x() + pt1.y()*pt1.y());
-    pt2 = dDist*pt2/qSqrt(pt2.x()*pt2.x() + pt2.y()*pt2.y());
+    QPointF point2 = m_boundingPoly.at((i + m_boundingPoly.count() - 1) %
+                     m_boundingPoly.count()) - m_boundingPoly.at(i);
 
-    return m_polyBound.at(i) + pt1 + pt2;
+    point1 = distance * point1/qSqrt(point1.x()*point1.x() + point1.y()*point1.y());
+    point2 = distance * point2/qSqrt(point2.x()*point2.x() + point2.y()*point2.y());
+
+    return m_boundingPoly.at(i) + point1 + point2;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetScale gets the scale for keeping the arrows of constant size
- */
-qreal VGrainlineItem::GetScale() const
+QLineF VGrainlineItem::mainLine() const
 {
-    if (scene()->views().count() > 0)
-    {
-        const QPoint pt0 = scene()->views().at(0)->mapFromScene(0, 0);
-        const QPoint pt = scene()->views().at(0)->mapFromScene(0, 100);
-        const QPoint p = pt - pt0;
-        qreal dScale = qSqrt(QPoint::dotProduct(p, p));
-        dScale = 100.0/dScale;
-        if (dScale < 1.0)
-        {
-            dScale = 1.0;
-        }
-        return dScale;
-    }
-
-    return 1.0;
+    QPointF point1;
+    QPointF point2(point1.x() + m_length * cos(m_rotation), point1.y() - m_length * sin(m_rotation));
+    return QLineF(point1, point2);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QLineF VGrainlineItem::MainLine() const
+QPolygonF VGrainlineItem::firstArrow() const
 {
-    QPointF pt1;
-    QPointF pt2(pt1.x() + m_dLength * cos(m_dRotation), pt1.y() - m_dLength * sin(m_dRotation));
-    return QLineF(pt1, pt2);
+    QPointF point2 = mainLine().p2();
+    QPolygonF polygon;
+    polygon << point2;
+    polygon << QPointF(point2.x() + ARROW_LENGTH * cos(M_PI + m_rotation + ARROW_ANGLE),
+                       point2.y() - ARROW_LENGTH * sin(M_PI + m_rotation + ARROW_ANGLE));
+    polygon << QPointF(point2.x() + ARROW_LENGTH * cos(M_PI + m_rotation - ARROW_ANGLE),
+                       point2.y() - ARROW_LENGTH * sin(M_PI + m_rotation - ARROW_ANGLE));
+    return polygon;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPolygonF VGrainlineItem::FirstArrow(qreal dArrLen) const
+QPolygonF VGrainlineItem::secondArrow() const
 {
-    QPointF pt2 = MainLine().p2();
-    QPolygonF poly;
-    poly << pt2;
-    poly << QPointF(pt2.x() + dArrLen*cos(M_PI + m_dRotation + ARROW_ANGLE),
-                    pt2.y() - dArrLen*sin(M_PI + m_dRotation + ARROW_ANGLE));
-    poly << QPointF(pt2.x() + dArrLen*cos(M_PI + m_dRotation - ARROW_ANGLE),
-                    pt2.y() - dArrLen*sin(M_PI + m_dRotation - ARROW_ANGLE));
-    return poly;
+    QPointF point1 = mainLine().p1();
+    QPolygonF polygon;
+    polygon << point1;
+    polygon << QPointF(point1.x() + ARROW_LENGTH * cos(m_rotation + ARROW_ANGLE),
+                       point1.y() - ARROW_LENGTH * sin(m_rotation + ARROW_ANGLE));
+    polygon << QPointF(point1.x() + ARROW_LENGTH * cos(m_rotation - ARROW_ANGLE),
+                       point1.y() - ARROW_LENGTH * sin(m_rotation - ARROW_ANGLE));
+    return polygon;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPolygonF VGrainlineItem::SecondArrow(qreal dArrLen) const
-{
-    QPointF pt1 = MainLine().p1();
-    QPolygonF poly;
-    poly << pt1;
-    poly << QPointF(pt1.x() + dArrLen*cos(m_dRotation + ARROW_ANGLE),
-                    pt1.y() - dArrLen*sin(m_dRotation + ARROW_ANGLE));
-    poly << QPointF(pt1.x() + dArrLen*cos(m_dRotation - ARROW_ANGLE),
-                    pt1.y() - dArrLen*sin(m_dRotation - ARROW_ANGLE));
-    return poly;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-QPainterPath VGrainlineItem::MainShape() const
+QPainterPath VGrainlineItem::mainShape() const
 {
     QPainterPath path;
-    const QLineF mainLine = MainLine();
+    const QLineF line = mainLine();
+
     QPainterPath linePath;
-    linePath.moveTo(mainLine.p1());
-    linePath.lineTo(mainLine.p2());
+    linePath.moveTo(line.p1());
+    linePath.lineTo(line.p2());
     linePath.closeSubpath();
 
     QPainterPathStroker stroker;
@@ -681,21 +670,20 @@ QPainterPath VGrainlineItem::MainShape() const
     path.addPath((stroker.createStroke(linePath) + linePath).simplified());
     path.closeSubpath();
 
-    const qreal dArrLen = ARROW_LENGTH*GetScale();
-    if (m_eArrowType != ArrowType::atRear)
+    if (m_arrowType != ArrowType::Bottom)
     {
         // first arrow
         QPainterPath polyPath;
-        polyPath.addPolygon(FirstArrow(dArrLen));
+        polyPath.addPolygon(firstArrow());
         path.addPath((stroker.createStroke(polyPath) + polyPath).simplified());
         path.closeSubpath();
     }
 
-    if (m_eArrowType != ArrowType::atFront)
+    if (m_arrowType != ArrowType::Top)
     {
         // second arrow
         QPainterPath polyPath;
-        polyPath.addPolygon(SecondArrow(dArrLen));
+        polyPath.addPolygon(secondArrow());
         path.addPath((stroker.createStroke(polyPath) + polyPath).simplified());
         path.closeSubpath();
     }
@@ -705,7 +693,7 @@ QPainterPath VGrainlineItem::MainShape() const
 //---------------------------------------------------------------------------------------------------------------------
 void VGrainlineItem::allUserModifications(const QPointF &pos)
 {
-    if (m_eMode != mRotate)
+    if (m_mode != Mode::Rotate)
     {
         userMoveAndResize(pos);
     }
@@ -718,9 +706,9 @@ void VGrainlineItem::allUserModifications(const QPointF &pos)
 //---------------------------------------------------------------------------------------------------------------------
 void VGrainlineItem::userRotateAndMove()
 {
-    if (m_eMode != mRotate)
+    if (m_mode != Mode::Rotate)
     {
-        m_eMode = mMove;
+        m_mode = Mode::Move;
     }
     SetItemOverrideCursor(this, cursorArrowCloseHand, 1, 1);
 }
@@ -728,35 +716,34 @@ void VGrainlineItem::userRotateAndMove()
 //---------------------------------------------------------------------------------------------------------------------
 void VGrainlineItem::userMoveAndResize(const QPointF &pos)
 {
-    if (m_polyResize.containsPoint(pos, Qt::OddEvenFill) == true)
+    if (m_resizePolygon.containsPoint(pos, Qt::OddEvenFill) == true)
     {
-        m_eMode = mResize;
+        m_mode = Mode::Resize;
         setCursor(Qt::SizeFDiagCursor);
     }
     else
     {
-        m_eMode = mMove; // block later if need
+        m_mode = Mode::Move; // block later if need
         SetItemOverrideCursor(this, cursorArrowCloseHand, 1, 1);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VGrainlineItem::UpdatePolyResize()
+void VGrainlineItem::updatePolyResize()
 {
-    m_polyResize.clear();
-    QPointF ptA = m_polyBound.at(1);
-    m_polyResize << ptA;
-    const double dSize = m_dScale * RESIZE_RECT_SIZE;
+    m_resizePolygon.clear();
+    QPointF point = m_boundingPoly.at(1);
+    m_resizePolygon << point;
 
-    ptA.setX(ptA.x() - dSize*cos(m_dRotation - M_PI/2));
-    ptA.setY(ptA.y() + dSize*sin(m_dRotation - M_PI/2));
-    m_polyResize << ptA;
+    point.setX(point.x() - RESIZE_RECT_SIZE * cos(m_rotation - M_PI/2));
+    point.setY(point.y() + RESIZE_RECT_SIZE * sin(m_rotation - M_PI/2));
+    m_resizePolygon << point;
 
-    ptA.setX(ptA.x() + dSize*cos(m_dRotation));
-    ptA.setY(ptA.y() - dSize*sin(m_dRotation));
-    m_polyResize << ptA;
+    point.setX(point.x() + RESIZE_RECT_SIZE * cos(m_rotation));
+    point.setY(point.y() - RESIZE_RECT_SIZE * sin(m_rotation));
+    m_resizePolygon << point;
 
-    ptA.setX(ptA.x() - dSize*cos(m_dRotation + M_PI/2));
-    ptA.setY(ptA.y() + dSize*sin(m_dRotation + M_PI/2));
-    m_polyResize << ptA;
+    point.setX(point.x() - RESIZE_RECT_SIZE * cos(m_rotation + M_PI/2));
+    point.setY(point.y() + RESIZE_RECT_SIZE * sin(m_rotation + M_PI/2));
+    m_resizePolygon << point;
 }

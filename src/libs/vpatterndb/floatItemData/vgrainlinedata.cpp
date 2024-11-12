@@ -1,30 +1,52 @@
-/************************************************************************
- **
- **  @file   vgrainlinedata.cpp
- **  @author Bojan Kverh
- **  @date   September 06, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vgrainlinedata.cpp
+//  @author Douglas S Caskey
+//  @date   11 Nov, 2024
+//
+//  @copyright
+//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vgrainlinedata.cpp
+//  @author Bojan Kverh
+//  @date   September 06, 2016
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2015 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include <QPointF>
 
@@ -40,14 +62,14 @@ void VGrainlineData::Swap(VGrainlineData &data) Q_DECL_NOTHROW
 
 //---------------------------------------------------------------------------------------------------------------------
 VGrainlineData::VGrainlineData()
-    : VAbstractFloatItemData(),
-      d(new VGrainlineDataPrivate())
+    : VAbstractFloatItemData()
+    , d(new VGrainlineDataPrivate())
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
 VGrainlineData::VGrainlineData(const VGrainlineData &data)
-    : VAbstractFloatItemData(data),
-      d (data.d)
+    : VAbstractFloatItemData(data)
+    , d (data.d)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -67,39 +89,39 @@ VGrainlineData::~VGrainlineData()
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VGrainlineData::GetLength() const
+QString VGrainlineData::getLength() const
 {
-    return d->m_qsLength;
+    return d->m_length;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VGrainlineData::SetLength(const QString& qsLen)
+void VGrainlineData::setLength(const QString& length)
 {
-    d->m_qsLength = qsLen;
+    d->m_length = length;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VGrainlineData::GetRotation() const
+QString VGrainlineData::getRotation() const
 {
-    return d->m_dRotation;
+    return d->m_rotation;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VGrainlineData::SetRotation(const QString& qsRot)
+void VGrainlineData::setRotation(const QString& rotation)
 {
-    d->m_dRotation = qsRot;
+    d->m_rotation = rotation;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-ArrowType VGrainlineData::GetArrowType() const
+ArrowType VGrainlineData::getArrowType() const
 {
-    return d->m_eArrowType;
+    return d->m_arrowType;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VGrainlineData::SetArrowType(ArrowType eAT)
+void VGrainlineData::setArrowType(ArrowType type)
 {
-    d->m_eArrowType = eAT;
+    d->m_arrowType = type;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

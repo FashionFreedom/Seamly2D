@@ -1355,8 +1355,8 @@ void createUnion(quint32 id, const UnionToolInitData &initData, qreal dx, qreal 
     newPiece.GetPatternPieceData().SetPos(QPointF(xPos, yPos));
 
     newPiece.GetGrainlineGeometry().SetVisible(qApp->Settings()->getDefaultGrainlineVisibilty());
-    newPiece.GetGrainlineGeometry().SetLength(QString::number(qApp->Settings()->getDefaultGrainlineLength()));
-    qreal length =  newPiece.GetGrainlineGeometry().GetLength().toDouble();
+    newPiece.GetGrainlineGeometry().setLength(QString::number(qApp->Settings()->getDefaultGrainlineLength()));
+    qreal length =  newPiece.GetGrainlineGeometry().getLength().toDouble();
     xPos = rect.center().x();
     yPos = rect.center().y();
     newPiece.GetGrainlineGeometry().SetPos(QPointF(xPos, yPos + length/2.0));

@@ -316,7 +316,7 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
     ui->fold_CheckBox->setChecked(m_oldData.IsOnFold());
     m_pieceLabelLines = m_oldData.GetLabelTemplate();
 
-    ui->arrow_ComboBox->setCurrentIndex(int(piece.GetGrainlineGeometry().GetArrowType()));
+    ui->arrow_ComboBox->setCurrentIndex(int(piece.GetGrainlineGeometry().getArrowType()));
 
     ui->pieceLabel_GroupBox->setChecked(m_oldData.IsVisible());
     ChangeCurrentData(ui->pieceLabelCenterAnchor_ComboBox, m_oldData.centerAnchorPoint());
@@ -340,8 +340,8 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
     ChangeCurrentData(ui->grainlineCenterAnchor_ComboBox, m_oldGrainline.centerAnchorPoint());
     ChangeCurrentData(ui->grainlineTopAnchor_ComboBox, m_oldGrainline.topAnchorPoint());
     ChangeCurrentData(ui->grainlineBottomAnchor_ComboBox, m_oldGrainline.bottomAnchorPoint());
-    setGrainlineAngle(m_oldGrainline.GetRotation());
-    setGrainlineLength(m_oldGrainline.GetLength());
+    setGrainlineAngle(m_oldGrainline.getRotation());
+    setGrainlineLength(m_oldGrainline.getLength());
 
     validateObjects(isMainPathValid());
     enabledGrainline();
@@ -2457,9 +2457,9 @@ VPiece PatternPieceDialog::CreatePiece() const
 
     piece.GetGrainlineGeometry() = m_oldGrainline;
     piece.GetGrainlineGeometry().SetVisible(ui->grainline_GroupBox->isChecked());
-    piece.GetGrainlineGeometry().SetRotation(getFormulaFromUser(ui->rotationFormula_LineEdit));
-    piece.GetGrainlineGeometry().SetLength(getFormulaFromUser(ui->lengthFormula_LineEdit));
-    piece.GetGrainlineGeometry().SetArrowType(static_cast<ArrowType>(ui->arrow_ComboBox->currentIndex()));
+    piece.GetGrainlineGeometry().setRotation(getFormulaFromUser(ui->rotationFormula_LineEdit));
+    piece.GetGrainlineGeometry().setLength(getFormulaFromUser(ui->lengthFormula_LineEdit));
+    piece.GetGrainlineGeometry().setArrowType(static_cast<ArrowType>(ui->arrow_ComboBox->currentIndex()));
     piece.GetGrainlineGeometry().setCenterAnchorPoint(getCurrentObjectId(ui->grainlineCenterAnchor_ComboBox));
     piece.GetGrainlineGeometry().setTopAnchorPoint(getCurrentObjectId(ui->grainlineTopAnchor_ComboBox));
     piece.GetGrainlineGeometry().setBottomAnchorPoint(getCurrentObjectId(ui->grainlineBottomAnchor_ComboBox));

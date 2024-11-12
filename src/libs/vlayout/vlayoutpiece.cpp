@@ -228,11 +228,11 @@ bool FindGrainlineGeometry(const VGrainlineData& data, const VContainer *pattern
     try
     {
         Calculator cal1;
-        rotationAngle = cal1.EvalFormula(pattern->DataVariables(), data.GetRotation());
+        rotationAngle = cal1.EvalFormula(pattern->DataVariables(), data.getRotation());
         rotationAngle = qDegreesToRadians(rotationAngle);
 
         Calculator cal2;
-        length = cal2.EvalFormula(pattern->DataVariables(), data.GetLength());
+        length = cal2.EvalFormula(pattern->DataVariables(), data.getLength());
         length = ToPixel(length, *pattern->GetPatternUnit());
     }
     catch(qmu::QmuParserError &error)
@@ -655,7 +655,7 @@ void VLayoutPiece::setGrainline(const VGrainlineData& data, const VContainer* pa
 
     QVector<QPointF> v;
     v << pt2;
-    if (data.GetArrowType() != ArrowType::atFront)
+    if (data.getArrowType() != ArrowType::Top)
     {
         v << QPointF(pt1.x() + arrowLength * qCos(rotationAngle + arrowAngle),
                      pt1.y() - arrowLength * qSin(rotationAngle + arrowAngle));
@@ -666,7 +666,7 @@ void VLayoutPiece::setGrainline(const VGrainlineData& data, const VContainer* pa
     }
 
     v << pt4;
-    if (data.GetArrowType() != ArrowType::atRear)
+    if (data.getArrowType() != ArrowType::Bottom)
     {
         rotationAngle += M_PI;
         v << QPointF(pt3.x() + arrowLength * qCos(rotationAngle + arrowAngle),

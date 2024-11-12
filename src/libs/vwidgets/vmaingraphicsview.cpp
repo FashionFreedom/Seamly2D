@@ -480,7 +480,7 @@ VMainGraphicsView::VMainGraphicsView(QWidget *parent)
     , rubberBandRect(nullptr)
     , startPoint(QPoint())
     , endPoint(QPoint())
-    , m_ptStartPos(QPoint())
+    , m_startPos(QPoint())
     , cursorPos(QPoint())
 {
     initScrollBars();
@@ -655,7 +655,7 @@ void VMainGraphicsView::mousePressEvent(QMouseEvent *event)
                 const QList<QGraphicsItem *> list = items(event->pos());
                 if (list.size() == 0)
                 {// Only when the user clicks on the scene background
-                    m_ptStartPos = event->pos();
+                    m_startPos = event->pos();
                     QGraphicsView::setDragMode(QGraphicsView::ScrollHandDrag);
                     event->accept();
                     viewport()->setCursor(Qt::ClosedHandCursor);
@@ -697,7 +697,7 @@ void VMainGraphicsView::mousePressEvent(QMouseEvent *event)
         }
         case Qt::MiddleButton:
         {
-            m_ptStartPos = event->pos();
+            m_startPos = event->pos();
             QGraphicsView::setDragMode(QGraphicsView::ScrollHandDrag);
             event->accept();
             viewport()->setCursor(Qt::ClosedHandCursor);
@@ -716,10 +716,10 @@ void VMainGraphicsView::mouseMoveEvent(QMouseEvent *event)
     {
         QScrollBar *hBar = horizontalScrollBar();
         QScrollBar *vBar = verticalScrollBar();
-        const QPoint delta = event->pos() - m_ptStartPos;
+        const QPoint delta = event->pos() - m_startPos;
         hBar->setValue(hBar->value() + (isRightToLeft() ? delta.x() : -delta.x()));
         vBar->setValue(vBar->value() - delta.y());
-        m_ptStartPos = event->pos();
+        m_startPos = event->pos();
     }
     else if ( isRubberBandActive )
     {

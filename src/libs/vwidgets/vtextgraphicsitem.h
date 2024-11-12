@@ -56,7 +56,7 @@ public:
     virtual ~VTextGraphicsItem() Q_DECL_EQ_DEFAULT;
 
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) Q_DECL_OVERRIDE;
-    virtual void Update() Q_DECL_OVERRIDE;
+    virtual void updateItem() Q_DECL_OVERRIDE;
 
     virtual int  type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Vis::TextGraphicsItem)};
