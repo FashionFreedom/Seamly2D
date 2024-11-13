@@ -1044,9 +1044,6 @@ QVariant PatternPieceTool::itemChange(QGraphicsItem::GraphicsItemChange change, 
                 if (VMainGraphicsView *view = qobject_cast<VMainGraphicsView *>(viewList.at(0)))
                 {
                     const qreal scale = sceneScale(scene());
-                    const int xmargin = 50;
-                    const int ymargin = 50;
-
                     const QRectF viewRect = VMainGraphicsView::SceneVisibleArea(view);
                     const QRectF itemRect = mapToScene(boundingRect()|childrenBoundingRect()).boundingRect();
 
