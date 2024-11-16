@@ -112,7 +112,6 @@ void SvgGenerator::addSvgFromScene(QGraphicsScene *scene)
     svgGenerator.setSize(m_paper->rect().size().toSize());
     svgGenerator.setViewBox(m_paper->rect());
     svgGenerator.setTitle(QObject::tr("Pattern"));
-    svgGenerator.setDescription(m_description);
     svgGenerator.setResolution(m_resolution);
 
     QPainter painter;
