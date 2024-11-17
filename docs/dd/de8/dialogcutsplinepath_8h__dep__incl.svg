@@ -5,69 +5,69 @@
  -->
 <!-- Title: src/libs/vtools/dialogs/tools/dialogcutsplinepath.h Pages: 1 -->
 <svg width="461pt" height="128pt"
- viewBox="0.00 0.00 460.50 128.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ viewBox="0.00 0.00 461.00 128.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 124)">
 <title>src/libs/vtools/dialogs/tools/dialogcutsplinepath.h</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-124 456.5,-124 456.5,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-124 457,-124 457,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="146,-89.5 146,-119.5 298,-119.5 298,-89.5 146,-89.5"/>
-<text text-anchor="start" x="154" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="222" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogcutsplinepath.h</text>
+<polygon fill="#bfbfbf" stroke="black" points="166.5,-89.5 166.5,-119.5 318.5,-119.5 318.5,-89.5 166.5,-89.5"/>
+<text text-anchor="start" x="174.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="242.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogcutsplinepath.h</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="../../df/ded/tooldialogs_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="0,-11.5 0,-41.5 122,-41.5 122,-11.5 0,-11.5"/>
+<g id="a_node2"><a xlink:href="../../df/d30/dialogcutsplinepath_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="0,-11.5 0,-41.5 163,-41.5 163,-11.5 0,-11.5"/>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="61" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tooldialogs.h</text>
+<text text-anchor="middle" x="81.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogcutsplinepath.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M182.86,-85.02C154.48,-71.63 116.68,-53.78 90.75,-41.54"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="181.56,-88.28 192.09,-89.38 184.55,-81.95 181.56,-88.28"/>
+<path fill="none" stroke="midnightblue" d="M203.36,-85.02C174.98,-71.63 137.18,-53.78 111.25,-41.54"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="202.06,-88.28 212.59,-89.38 205.05,-81.95 202.06,-88.28"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="../../df/d30/dialogcutsplinepath_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="140.5,-11.5 140.5,-41.5 303.5,-41.5 303.5,-11.5 140.5,-11.5"/>
-<text text-anchor="start" x="148.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="222" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogcutsplinepath.cpp</text>
+<g id="a_node3"><a xlink:href="../../df/ded/tooldialogs_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="181.5,-11.5 181.5,-41.5 303.5,-41.5 303.5,-11.5 181.5,-11.5"/>
+<text text-anchor="start" x="189.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="242.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tooldialogs.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M222,-79.09C222,-66.76 222,-52.22 222,-41.73"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="218.5,-79.2 222,-89.2 225.5,-79.21 218.5,-79.2"/>
+<path fill="none" stroke="midnightblue" d="M242.5,-79.09C242.5,-66.76 242.5,-52.22 242.5,-41.73"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="239,-79.2 242.5,-89.2 246,-79.21 239,-79.2"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
 <g id="a_node4"><a xlink:href="../../d1/ddf/vtoolcutsplinepath_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="321.5,-0.5 321.5,-52.5 452.5,-52.5 452.5,-0.5 321.5,-0.5"/>
-<text text-anchor="start" x="329.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
-<text text-anchor="start" x="329.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/drawTools/toolpoint</text>
-<text text-anchor="start" x="329.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/toolsinglepoint/toolcut</text>
-<text text-anchor="middle" x="387" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vtoolcutsplinepath.cpp</text>
+<polygon fill="white" stroke="black" points="322,-0.5 322,-52.5 453,-52.5 453,-0.5 322,-0.5"/>
+<text text-anchor="start" x="330" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
+<text text-anchor="start" x="330" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/drawTools/toolpoint</text>
+<text text-anchor="start" x="330" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/toolsinglepoint/toolcut</text>
+<text text-anchor="middle" x="387.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vtoolcutsplinepath.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M261.98,-85.08C283.15,-75.33 309.46,-63.22 332.47,-52.62"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="260.27,-82.02 252.65,-89.38 263.2,-88.38 260.27,-82.02"/>
+<path fill="none" stroke="midnightblue" d="M278.39,-84.69C296.86,-75.01 319.63,-63.07 339.58,-52.62"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="276.67,-81.64 269.43,-89.38 279.92,-87.84 276.67,-81.64"/>
 </g>
 </g>
 </svg>
