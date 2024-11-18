@@ -1,57 +1,57 @@
-/***************************************************************************
- **  @file   vtoolbasepoint.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vtoolbasepoint.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @copyright
+//  Copyright (C) 2017 - 2023 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ //---------------------------------------------------------------------------------------------------------------------
 
-/************************************************************************
- **  @file   vtoolbasepoint.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vtoolbasepoint.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   November 15, 2013
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "vtoolbasepoint.h"
 
 #include <QApplication>
+#include <QDomElement>
 #include <QEvent>
 #include <QFlags>
 #include <QGraphicsLineItem>
@@ -94,29 +94,26 @@
 const QString VToolBasePoint::ToolType = QStringLiteral("single");
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VToolBasePoint constructor.
- * @param doc dom document container.
- * @param data container with variables.
- * @param id object id in container.
- * @param typeCreation way we create this tool.
- * @param parent parent object.
- */
+/// @brief VToolBasePoint constructor.
+/// @param doc dom document container.
+/// @param data container with variables.
+/// @param id object id in container.
+/// @param typeCreation way we create this tool.
+/// @param parent parent object.
+//---------------------------------------------------------------------------------------------------------------------
 VToolBasePoint::VToolBasePoint (VAbstractPattern *doc, VContainer *data, quint32 id, const Source &typeCreation,
-                                const QString &draftBlockName, QGraphicsItem * parent )
+                                const QString &draftBlockName, QGraphicsItem *parent )
     : VToolSinglePoint(doc, data, id, QColor(Qt::red), parent)
     , draftBlockName(draftBlockName)
 {
     this->setFlag(QGraphicsItem::ItemIsMovable, true);
     this->setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
-    //m_pointName->setBrush(Qt::black);
     ToolCreation(typeCreation);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setDialog set dialog when user want change tool option.
- */
+/// @brief setDialog set dialog when user want change tool option.
+//---------------------------------------------------------------------------------------------------------------------
 void VToolBasePoint::setDialog()
 {
     SCASSERT(not m_dialog.isNull())
@@ -166,43 +163,43 @@ void VToolBasePoint::ShowVisualization(bool show)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief AddToFile add tag with Information about tool into file.
- */
+/// @brief AddToFile add tag with Information about tool into file.
+//---------------------------------------------------------------------------------------------------------------------
 void VToolBasePoint::AddToFile()
 {
     Q_ASSERT_X(not draftBlockName.isEmpty(), Q_FUNC_INFO, "name pattern piece is empty");
 
     QDomElement sPoint = doc->createElement(getTagName());
 
-    // Create SPoint tag
+    // Create Simple Point tag
     QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
     SaveOptions(sPoint, obj);
 
-    //Create pattern piece structure
-    QDomElement patternPiece = doc->createElement(VAbstractPattern::TagDraftBlock);
-    doc->SetAttribute(patternPiece, AttrName, draftBlockName);
+    //Create draft block structure
+    QDomElement draftblock = doc->createElement(VAbstractPattern::TagDraftBlock);
+    doc->SetAttribute(draftblock, AttrName, draftBlockName);
 
     QDomElement calcElement = doc->createElement(VAbstractPattern::TagCalculation);
     calcElement.appendChild(sPoint);
 
-    patternPiece.appendChild(calcElement);
-    patternPiece.appendChild(doc->createElement(VAbstractPattern::TagModeling));
-    patternPiece.appendChild(doc->createElement(VAbstractPattern::TagPieces));
+    draftblock.appendChild(calcElement);
+    draftblock.appendChild(doc->createElement(VAbstractPattern::TagModeling));
+    draftblock.appendChild(doc->createElement(VAbstractPattern::TagPieces));
+    draftblock.appendChild(doc->createElement(VAbstractPattern::TagGroups));
+    draftblock.appendChild(doc->createElement(VAbstractPattern::TagDraftImages));
 
-    AddDraftBlock *addPP = new AddDraftBlock(patternPiece, doc, draftBlockName);
+    AddDraftBlock *addPP = new AddDraftBlock(draftblock, doc, draftBlockName);
     connect(addPP, &AddDraftBlock::ClearScene, doc, &VAbstractPattern::ClearScene);
     connect(addPP, &AddDraftBlock::NeedFullParsing, doc, &VAbstractPattern::NeedFullParsing);
     qApp->getUndoStack()->push(addPP);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief itemChange handle tool change.
- * @param change change.
- * @param value value.
- * @return value.
- */
+/// @brief itemChange handle tool change.
+/// @param change change.
+/// @param value value.
+/// @return value.
+//---------------------------------------------------------------------------------------------------------------------
 QVariant VToolBasePoint::itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant &value)
 {
     if (change == ItemPositionChange && scene())
@@ -253,9 +250,8 @@ QVariant VToolBasePoint::itemChange(QGraphicsItem::GraphicsItemChange change, co
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief decrementReferens decrement referens parents objects.
- */
+/// @brief decrementReferens decrement referens parents objects.
+//---------------------------------------------------------------------------------------------------------------------
 void VToolBasePoint::decrementReferens()
 {
     if (_referens > 1)
@@ -310,9 +306,8 @@ void VToolBasePoint::deleteTool(bool ask)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SaveDialog save options into file after change in dialog.
- */
+/// @brief SaveDialog save options into file after change in dialog.
+//---------------------------------------------------------------------------------------------------------------------
 void VToolBasePoint::SaveDialog(QDomElement &domElement)
 {
     SCASSERT(not m_dialog.isNull())
@@ -407,10 +402,9 @@ QString VToolBasePoint::makeToolTip() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief showContextMenu handle context menu events.
- * @param event context menu event.
- */
+/// @brief showContextMenu handle context menu events.
+/// @param event context menu event.
+//---------------------------------------------------------------------------------------------------------------------
 void VToolBasePoint::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     qCDebug(vTool, "Context menu base point");
@@ -442,9 +436,8 @@ void VToolBasePoint::showContextMenu(QGraphicsSceneContextMenuEvent *event, quin
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief FullUpdateFromFile update tool data form file.
- */
+/// @brief FullUpdateFromFile update tool data form file.
+//---------------------------------------------------------------------------------------------------------------------
 void  VToolBasePoint::FullUpdateFromFile()
 {
     refreshPointGeometry(*VAbstractTool::data.GeometricObject<VPointF>(m_id));
