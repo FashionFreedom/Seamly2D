@@ -95,12 +95,6 @@ UnionDialog::~UnionDialog()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool UnionDialog::retainPieces() const
-{
-    return ui->checkBox->isChecked();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief ChosenObject gets id and type of selected object. Save correct data and ignore wrong.
  * @param id id of point or piece
@@ -136,18 +130,13 @@ bool UnionDialog::CheckObject(const quint32 &id, const quint32 &pieceId) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool UnionDialog::checkPiece(const quint32 &pieceId) const
+bool UnionDialog::isPieceValid(const quint32 &pieceId) const
 {
     if (pieceId == NULL_ID)
     {
         return false;
     }
     const VPiece piece = data->GetPiece(pieceId);
-    if (piece.isLocked())
-    {
-        ui->checkBox->setChecked(true);
-        ui->checkBox->setEnabled(false);
-    }
     if (piece.GetPath().CountNodes() >= 3 && piece.GetPath().ListNodePoint().size() >= 2)
     {
         return true;
@@ -174,7 +163,7 @@ void UnionDialog::chosenPiece(const quint32 &id, const SceneObject &type, quint3
         if (type == SceneObject::Piece)
         {
             m_beep->play();
-            if (checkPiece(id))
+            if (isPieceValid(id))
             {
                 pieceId = id;
                 emit ToolTip(tr("Select the first point"));

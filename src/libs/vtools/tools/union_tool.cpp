@@ -146,13 +146,13 @@ VPiecePath GetPiecePath(int piece, VAbstractPattern *doc, quint32 id)
     for (qint32 i = 0; i < nodesList.size(); ++i)
     {
         const QDomElement element = nodesList.at(i).toElement();
-        if (not element.isNull() && element.tagName() == UnionTool::TagUnionPiece && i+1 == piece)
+        if (!element.isNull() && element.tagName() == UnionTool::TagUnionPiece && i+1 == piece)
         {
             const QDomNodeList pieceList = element.childNodes();
             for (qint32 j = 0; j < pieceList.size(); ++j)
             {
                 const QDomElement element = pieceList.at(j).toElement();
-                if (not element.isNull() && element.tagName() == VAbstractPattern::TagNodes)
+                if (!element.isNull() && element.tagName() == VAbstractPattern::TagNodes)
                 {
                     return VAbstractPattern::ParsePieceNodes(element);
                 }
@@ -189,13 +189,13 @@ QVector<CustomSARecord> GetPiece2CSAPaths(VAbstractPattern *doc, quint32 id)
     for (qint32 i = 0; i < nodesList.size(); ++i)
     {
         const QDomElement element = nodesList.at(i).toElement();
-        if (not element.isNull() && element.tagName() == UnionTool::TagUnionPiece && i+1 == 2)
+        if (!element.isNull() && element.tagName() == UnionTool::TagUnionPiece && i+1 == 2)
         {
             const QDomNodeList pieceList = element.childNodes();
             for (qint32 j = 0; j < pieceList.size(); ++j)
             {
                 const QDomElement element = pieceList.at(j).toElement();
-                if (not element.isNull() && element.tagName() == PatternPieceTool::TagCSA)
+                if (!element.isNull() && element.tagName() == PatternPieceTool::TagCSA)
                 {
                     return VAbstractPattern::ParsePieceCSARecords(element);
                 }
@@ -220,13 +220,13 @@ QVector<quint32> GetPiece2InternalPaths(VAbstractPattern *doc, quint32 id)
     for (qint32 i = 0; i < nodesList.size(); ++i)
     {
         const QDomElement element = nodesList.at(i).toElement();
-        if (not element.isNull() && element.tagName() == UnionTool::TagUnionPiece && i+1 == 2)
+        if (!element.isNull() && element.tagName() == UnionTool::TagUnionPiece && i+1 == 2)
         {
             const QDomNodeList pieceList = element.childNodes();
             for (qint32 j = 0; j < pieceList.size(); ++j)
             {
                 const QDomElement element = pieceList.at(j).toElement();
-                if (not element.isNull() && element.tagName() == PatternPieceTool::TagIPaths)
+                if (!element.isNull() && element.tagName() == PatternPieceTool::TagIPaths)
                 {
                     return VAbstractPattern::ParsePieceInternalPaths(element);
                 }
@@ -251,13 +251,13 @@ QVector<quint32> GetPiece2Anchors(VAbstractPattern *doc, quint32 id)
     for (qint32 i = 0; i < nodesList.size(); ++i)
     {
         const QDomElement element = nodesList.at(i).toElement();
-        if (not element.isNull() && element.tagName() == UnionTool::TagUnionPiece && i+1 == 2)
+        if (!element.isNull() && element.tagName() == UnionTool::TagUnionPiece && i+1 == 2)
         {
             const QDomNodeList pieceList = element.childNodes();
             for (qint32 j = 0; j < pieceList.size(); ++j)
             {
                 const QDomElement element = pieceList.at(j).toElement();
-                if (not element.isNull() && element.tagName() == PatternPieceTool::TagAnchors)
+                if (!element.isNull() && element.tagName() == PatternPieceTool::TagAnchors)
                 {
                     return VAbstractPattern::ParsePieceAnchors(element);
                 }
@@ -404,7 +404,7 @@ quint32 AddNodePoint(const VPieceNode &node, const UnionToolInitData &initData, 
     QScopedPointer<VPointF> point(new VPointF(*initData.data->GeometricObject<VPointF>(node.GetId())));
     point->setMode(Draw::Modeling);
 
-    if (not qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
+    if (!qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
     {
         BiasRotatePoint(point.data(), dx, dy, static_cast<QPointF>(*initData.data->GeometricObject<VPointF>(pRotate)),
                         angle);
@@ -428,7 +428,7 @@ quint32 AddAnchorPoint(quint32 id, const UnionToolInitData &initData, quint32 id
     QScopedPointer<VPointF> point(new VPointF(*initData.data->GeometricObject<VPointF>(id)));
     point->setMode(Draw::Modeling);
 
-    if (not qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
+    if (!qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
     {
         BiasRotatePoint(point.data(), dx, dy, static_cast<QPointF>(*initData.data->GeometricObject<VPointF>(pRotate)),
                         angle);
@@ -455,7 +455,7 @@ quint32 AddNodeArc(const VPieceNode &node, const UnionToolInitData &initData, qu
     VPointF p2 = VPointF(arc->GetP2(), "A", 0, 0);
     QScopedPointer<VPointF> center(new VPointF(arc->GetCenter()));
 
-    if (not qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
+    if (!qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
     {
         const QPointF p = static_cast<QPointF>(*initData.data->GeometricObject<VPointF>(pRotate));
 
@@ -497,7 +497,7 @@ quint32 AddNodeElArc(const VPieceNode &node, const UnionToolInitData &initData, 
     VPointF p2 = VPointF(arc->GetP2(), "A", 0, 0);
     QScopedPointer<VPointF> center(new VPointF(arc->GetCenter()));
 
-    if (not qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
+    if (!qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
     {
         const QPointF p = static_cast<QPointF>(*initData.data->GeometricObject<VPointF>(pRotate));
 
@@ -544,7 +544,7 @@ quint32 AddNodeSpline(const VPieceNode &node, const UnionToolInitData &initData,
     VPointF p3 = VPointF(spline->GetP3());
     QScopedPointer<VPointF> p4(new VPointF(spline->GetP4()));
 
-    if (not qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
+    if (!qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
     {
         const QPointF p = static_cast<QPointF>(*initData.data->GeometricObject<VPointF>(pRotate));
 
@@ -583,7 +583,7 @@ quint32 AddNodeSplinePath(const VPieceNode &node, const UnionToolInitData &initD
         VPointF p2 = VPointF(spline.GetP2());
         VPointF p3 = VPointF(spline.GetP3());
         QScopedPointer<VPointF> p4(new VPointF(spline.GetP4()));
-        if (not qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
+        if (!qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
         {
             const QPointF p = static_cast<QPointF>(*initData.data->GeometricObject<VPointF>(pRotate));
 
@@ -778,7 +778,7 @@ QVector<quint32> GetChildren(VAbstractPattern *doc, quint32 id, const QString &t
     for (int i=0; i < listChildren.size(); ++i)
     {
         const QDomElement domElement = listChildren.at(i).toElement();
-        if (not domElement.isNull())
+        if (!domElement.isNull())
         {
             childrenId.append(domElement.text().toUInt());
         }
@@ -814,7 +814,7 @@ QVector<quint32> getAnchorChildren(VAbstractPattern *doc, quint32 id)
 quint32 TakeNextId(QVector<quint32> &children)
 {
     quint32 idChild = NULL_ID;
-    if (not children.isEmpty())
+    if (!children.isEmpty())
     {
         idChild = children.takeFirst();
     }
@@ -831,7 +831,7 @@ void UpdateNodePoint(VContainer *data, const VPieceNode &node, QVector<quint32> 
 {
     QScopedPointer<VPointF> point(new VPointF(*data->GeometricObject<VPointF>(node.GetId())));
     point->setMode(Draw::Modeling);
-    if (not qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
+    if (!qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
     {
         BiasRotatePoint(point.data(), dx, dy, static_cast<QPointF>(*data->GeometricObject<VPointF>(pRotate)), angle);
     }
@@ -847,7 +847,7 @@ void UpdateNodeArc(VContainer *data, const VPieceNode &node, QVector<quint32> &c
     VPointF p2 = VPointF(arc->GetP2());
     QScopedPointer<VPointF> center(new VPointF(arc->GetCenter()));
 
-    if (not qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
+    if (!qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
     {
         const QPointF p = static_cast<QPointF>(*data->GeometricObject<VPointF>(pRotate));
 
@@ -874,7 +874,7 @@ void UpdateNodeElArc(VContainer *data, const VPieceNode &node, QVector<quint32> 
     VPointF p2 = VPointF(arc->GetP2());
     QScopedPointer<VPointF> center(new VPointF(arc->GetCenter()));
 
-    if (not qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
+    if (!qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
     {
         const QPointF p = static_cast<QPointF>(*data->GeometricObject<VPointF>(pRotate));
 
@@ -906,7 +906,7 @@ void UpdateNodeSpline(VContainer *data, const VPieceNode &node, QVector<quint32>
     VPointF p3 = VPointF(spline->GetP3());
     QScopedPointer<VPointF> p4(new VPointF(spline->GetP4()));
 
-    if (not qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
+    if (!qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
     {
         const QPointF p = static_cast<QPointF>(*data->GeometricObject<VPointF>(pRotate));
 
@@ -939,7 +939,7 @@ void UpdateNodeSplinePath(VContainer *data, const VPieceNode &node, QVector<quin
         VPointF p3 = VPointF(spline.GetP3());
         QScopedPointer<VPointF> p4(new VPointF(spline.GetP4()));
 
-        if (not qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
+        if (!qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
         {
             const QPointF p = static_cast<QPointF>(*data->GeometricObject<VPointF>(pRotate));
 
@@ -1054,7 +1054,7 @@ void CreateUnitedNodes(VPiece &newPiece, const VPiece &piece1, const VPiece &pie
 
     newPiece.SetPath(newPath);
 
-    SCASSERT(not children.isEmpty())
+    SCASSERT(!children.isEmpty())
     SaveNodesChildren(initData.doc, id, children);
 }
 
@@ -1182,7 +1182,7 @@ void UpdateUnitedNodes(quint32 id, const UnionToolInitData &initData, qreal dx, 
     const qint32 piece2NodeCount = piece2REPath.CountNodes();
 
     QVector<quint32> children = GetNodesChildren(initData.doc, id);
-    if (not children.isEmpty())
+    if (!children.isEmpty())
     {
         // This check need for backward compatibility
         // Remove check and "else" part if min version is 0.3.2
@@ -1297,7 +1297,7 @@ void updateUnionAnchors(quint32 id, const UnionToolInitData &initData, qreal dx,
     {
         QScopedPointer<VPointF> point(new VPointF(*initData.data->GeometricObject<VPointF>(records.at(i))));
         point->setMode(Draw::Modeling);
-        if (not qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
+        if (!qFuzzyIsNull(dx) || not qFuzzyIsNull(dy) || pRotate != NULL_ID)
         {
             BiasRotatePoint(point.data(), dx, dy,
                             static_cast<QPointF>(*initData.data->GeometricObject<VPointF>(pRotate)), angle);
@@ -1311,7 +1311,7 @@ void createUnion(quint32 id, const UnionToolInitData &initData, qreal dx, qreal 
                         qreal angle)
 {
     const QString blockName = getBlockName(initData.doc, initData.piece1_Id, initData.piece2_Id);
-    SCASSERT(not blockName.isEmpty())
+    SCASSERT(!blockName.isEmpty())
 
     const VPiece piece1 = initData.data->GetPiece(initData.piece1_Id);
     const VPiece piece2 = initData.data->GetPiece(initData.piece2_Id);
@@ -1369,22 +1369,6 @@ void createUnion(quint32 id, const UnionToolInitData &initData, qreal dx, qreal 
     PatternPieceTool::Create(0, newPiece, formulaSAWidth, initData.scene, initData.doc, initData.data,
                                initData.parse, Source::FromTool, blockName);
 
-    auto removeUnionPiece = [initData](quint32 id)
-    {
-        PatternPieceTool *pieceTool = qobject_cast<PatternPieceTool*>(VAbstractPattern::getTool(id));
-        SCASSERT(pieceTool != nullptr);
-        bool ask = false;
-        pieceTool->Remove(ask);
-        // We do not call full parse, so will need more to do more cleaning than usually
-        initData.doc->RemoveTool(id);
-        initData.data->RemovePiece(id);
-    };
-
-    if (!initData.retainPieces && !piece1.isLocked() && !piece2.isLocked())
-    {
-        removeUnionPiece(initData.piece1_Id);
-        removeUnionPiece(initData.piece2_Id);
-    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1429,8 +1413,7 @@ void unitePieces(quint32 id, const UnionToolInitData &initData)
  * @param initData global init data.
  * @param parent parent object.
  */
-UnionTool::UnionTool(quint32 id, const UnionToolInitData &initData,
-                                     QObject *parent)
+UnionTool::UnionTool(quint32 id, const UnionToolInitData &initData, QObject *parent)
     : VAbstractTool(initData.doc, initData.data, id, parent)
     , piece1_Id(initData.piece1_Id)
     , piece2_Id(initData.piece2_Id)
@@ -1510,9 +1493,9 @@ void UnionTool::GroupVisibility(quint32 object, bool visible)
 UnionTool* UnionTool::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
                                              VAbstractPattern *doc, VContainer *data)
 {
-    SCASSERT(not dialog.isNull())
+    SCASSERT(!dialog.isNull())
     QSharedPointer<UnionDialog> dialogTool = dialog.objectCast<UnionDialog>();
-    SCASSERT(not dialogTool.isNull())
+    SCASSERT(!dialogTool.isNull())
 
     UnionToolInitData initData;
     initData.piece1_Id = dialogTool->getPiece1Id();
@@ -1524,7 +1507,6 @@ UnionTool* UnionTool::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsSce
     initData.data = data;
     initData.parse = Document::FullParse;
     initData.typeCreation = Source::FromGui;
-    initData.retainPieces = dialogTool->retainPieces();
 
     qApp->getUndoStack()->beginMacro(tr("union pieces"));
     UnionTool* tool = Create(0, initData);
@@ -1538,7 +1520,7 @@ UnionTool* UnionTool::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsSce
  * @param _id tool id, 0 if tool doesn't exist yet.
  * @param initData contains all init data.
  */
-UnionTool* UnionTool::Create(const quint32 _id, const UnionToolInitData &initData)
+UnionTool *UnionTool::Create(const quint32 _id, const UnionToolInitData &initData)
 {
     UnionTool *tool = nullptr;
     quint32 id = _id;
@@ -1615,10 +1597,10 @@ void UnionTool::addPiece(QDomElement &domElement, const VPiece &piece) const
 void UnionTool::AddToModeling(const QDomElement &domElement)
 {
     const QString blockName = getBlockName(doc, piece1_Id, piece2_Id);
-    SCASSERT(not blockName.isEmpty())
+    SCASSERT(!blockName.isEmpty())
 
     QDomElement modeling = doc->getDraftBlockElement(blockName).firstChildElement(VAbstractPattern::TagModeling);
-    if (not modeling.isNull())
+    if (!modeling.isNull())
     {
         modeling.appendChild(domElement);
     }
@@ -1648,13 +1630,13 @@ QVector<quint32> UnionTool::GetReferenceObjects() const
     for (qint32 i = 0; i < nodesList.size(); ++i)
     {
         const QDomElement element = nodesList.at(i).toElement();
-        if (not element.isNull() && element.tagName() == UnionTool::TagUnionPiece)
+        if (!element.isNull() && element.tagName() == UnionTool::TagUnionPiece)
         {
             const QDomNodeList pieceList = element.childNodes();
             for (qint32 j = 0; j < pieceList.size(); ++j)
             {
                 const QDomElement element = pieceList.at(j).toElement();
-                if (not element.isNull())
+                if (!element.isNull())
                 {
                     switch (parts.indexOf(element.tagName()))
                     {
@@ -1672,7 +1654,7 @@ QVector<quint32> UnionTool::GetReferenceObjects() const
                             for (qint32 i = 0; i < children.size(); ++i)
                             {
                                 const QDomElement record = children.at(i).toElement();
-                                if (not record.isNull() && record.tagName() == PatternPieceTool::TagRecord)
+                                if (!record.isNull() && record.tagName() == PatternPieceTool::TagRecord)
                                 {
                                     list.append(record.text().toUInt());
                                 }
@@ -1699,7 +1681,7 @@ QVector<quint32> UnionTool::ReferenceObjects(const QDomElement &root, const QStr
     for (qint32 i = 0; i < list.size(); ++i)
     {
         const QDomElement element = list.at(i).toElement();
-        if (not element.isNull() && element.tagName() == tag)
+        if (!element.isNull() && element.tagName() == tag)
         {
             const quint32 id = doc->GetParametrUInt(element, attribute, NULL_ID_STR);
             if (id > NULL_ID)

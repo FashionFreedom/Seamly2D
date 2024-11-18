@@ -84,8 +84,6 @@ public:
     int          getPiece1Index() const;
     int          getPiece2Index() const;
 
-    bool         retainPieces() const;
-
 public slots:
     virtual void ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
 
@@ -105,7 +103,7 @@ private:
     QSound  *m_beep;
 
     bool     CheckObject(const quint32 &id, const quint32 &pieceId) const;
-    bool     checkPiece(const quint32 &pieceId) const;
+    bool     isPieceValid(const quint32 &pieceId) const;
 
     void     chosenPiece(const quint32 &id, const SceneObject &type, quint32 &pieceId,
                          int &index);
