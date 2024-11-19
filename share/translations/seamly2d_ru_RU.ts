@@ -11905,10 +11905,6 @@ load in SeamlyME as usual.
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Вы действительно хотите объединить детали?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Retain original pieces</source>
-        <translation>Сохранить оригинальную выкройку</translation>
-    </message>
-    <message>
         <source>Select the first point</source>
         <translation>Выберите первую точку</translation>
     </message>

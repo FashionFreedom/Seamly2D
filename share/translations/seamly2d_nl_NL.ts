@@ -11877,10 +11877,6 @@ load in SeamlyME as usual.
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wil je echt details verenigen?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Retain original pieces</source>
-        <translation>Behoud originele stukken</translation>
-    </message>
-    <message>
         <source>Select the first point</source>
         <translation>Kies het eerste punt</translation>
     </message>

@@ -11866,10 +11866,6 @@ load in SeamlyME as usual.
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Чи ви справді хочете об&apos;єднати деталі?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Retain original pieces</source>
-        <translation type="unfinished">Зберегти оригінальні деталі</translation>
-    </message>
-    <message>
         <source>Select the first point</source>
         <translation type="unfinished"></translation>
     </message>

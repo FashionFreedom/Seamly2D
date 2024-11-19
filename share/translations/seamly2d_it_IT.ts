@@ -11867,10 +11867,6 @@ load in SeamlyME as usual.
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vuoi veramente unire i dettagli?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Retain original pieces</source>
-        <translation type="unfinished">Conserva pezzi originali</translation>
-    </message>
-    <message>
         <source>Select the first point</source>
         <translation type="unfinished"></translation>
     </message>

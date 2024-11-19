@@ -11887,10 +11887,6 @@ wie gewohnt in SeamlyME laden können.
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sollen die Details wirklich vereinigt werden?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Retain original pieces</source>
-        <translation>Die Original Schnittteile zurückbehalten</translation>
-    </message>
-    <message>
         <source>Select the first point</source>
         <translation>Den ersten Punkt auswählen</translation>
     </message>
