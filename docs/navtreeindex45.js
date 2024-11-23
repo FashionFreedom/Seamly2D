@@ -1,6 +1,5 @@
 var NAVTREEINDEX45 =
 {
-"db/d4d/classDialogArc.html#a119ed5adbd0aac3f528bf39df63e1732":[1,0,40,31],
 "db/d4d/classDialogArc.html#a14122b84dd4935fc2e0e94a1d49d37e0":[1,0,40,23],
 "db/d4d/classDialogArc.html#a16caf1ad4e4af703c8982d3d822165cf":[1,0,40,18],
 "db/d4d/classDialogArc.html#a1f6c2d8f506f583025867865cf1f79af":[1,0,40,42],
@@ -249,5 +248,6 @@ var NAVTREEINDEX45 =
 "db/d76/classVisPath.html":[1,0,303],
 "db/d76/classVisPath.html#a01f558535a450225d6aae2333584c8ce":[1,0,303,0],
 "db/d76/classVisPath.html#a2db2203ace9494354a920d51c13a35f2":[1,0,303,2],
-"db/d76/classVisPath.html#aa00ad73e91c41aeb8ed9b432b94ad2f6":[1,0,303,5]
+"db/d76/classVisPath.html#aa00ad73e91c41aeb8ed9b432b94ad2f6":[1,0,303,5],
+"db/d76/classVisPath.html#aab05748eaa5f1b8045c0fe6eb8f8c2a0":[1,0,303,1]
 };

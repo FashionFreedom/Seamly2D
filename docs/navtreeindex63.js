@@ -1,5 +1,6 @@
 var NAVTREEINDEX63 =
 {
+"df/d44/libs_2qmuparser_2stable_8cpp_source.html":[2,0,0,1,2,25],
 "df/d46/vistoolmove_8cpp.html":[2,0,0,1,13,3,0,0,6],
 "df/d46/vistoolmove_8cpp_source.html":[2,0,0,1,13,3,0,0,6],
 "df/d47/qmuparserfixes_8h.html":[2,0,0,1,2,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX63 =
 "df/d89/classVPE_1_1VFileEditWidget.html#acd4aeb83d26b191a16098ce12945d654":[1,0,2,11,22],
 "df/d89/classVPE_1_1VFileEditWidget.html#ad5fddfa9fd6c06a2e0eb44e90e32ba8d":[1,0,2,11,3],
 "df/d89/classVPE_1_1VFileEditWidget.html#ad8034c392ac9b792fadf460b10b625f0":[1,0,2,11,2],
-"df/d89/classVPE_1_1VFileEditWidget.html#adeb9b293c352331e3d760cb0b0bd630f":[1,0,2,11,16],
-"df/d89/classVPE_1_1VFileEditWidget.html#af3a9fff0daef7c873ae825088c370509":[1,0,2,11,21]
+"df/d89/classVPE_1_1VFileEditWidget.html#adeb9b293c352331e3d760cb0b0bd630f":[1,0,2,11,16]
 };

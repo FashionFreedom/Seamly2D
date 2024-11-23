@@ -1,5 +1,6 @@
 var NAVTREEINDEX65 =
 {
+"df/de1/classVPiecePath.html#a6cae1535d9644811ce0638b81b487232":[1,0,375,41],
 "df/de1/classVPiecePath.html#a734ca8f5125f579a0650ec693ffa7a07":[1,0,375,3],
 "df/de1/classVPiecePath.html#a7473074b22fb8c7d8221ac5c16c9c93f":[1,0,375,16],
 "df/de1/classVPiecePath.html#a79057988f7123dc94c7d949465ee2217":[1,0,375,34],
@@ -248,6 +249,5 @@ var NAVTREEINDEX65 =
 "functions_func_s.html":[1,3,1,17],
 "functions_func_t.html":[1,3,1,18],
 "functions_func_u.html":[1,3,1,19],
-"functions_func_v.html":[1,3,1,20],
-"functions_func_w.html":[1,3,1,21]
+"functions_func_v.html":[1,3,1,20]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX50 =
 {
-"dc/d74/classVFormulaPropertyEditor.html#a5dd1a0b84a4659516c71db866199b72d":[1,0,288,4],
 "dc/d74/classVFormulaPropertyEditor.html#a6c0f8bea355bff5f2fce8efc909bf7fe":[1,0,288,0],
 "dc/d74/classVFormulaPropertyEditor.html#aaf46cd8de8eebab5b8277c3a10c0867b":[1,0,288,9],
 "dc/d74/classVFormulaPropertyEditor.html#ac6c4092d01c2e1f7671cdf68542b6c87":[1,0,288,1],
@@ -18,9 +17,9 @@ var NAVTREEINDEX50 =
 "dc/d74/structCustomSARecord.html#a811a76eba0967f093de7f3d901ae088e":[1,0,26,2],
 "dc/d76/floatitemdef_8h.html":[2,0,0,1,10,0,0],
 "dc/d76/floatitemdef_8h.html#ad65d3ab4b803afe5820275a9c5fb1566":[2,0,0,1,10,0,0,0],
-"dc/d76/floatitemdef_8h.html#ad65d3ab4b803afe5820275a9c5fb1566a6aa519516113adec1b8eb4da918c9a1b":[2,0,0,1,10,0,0,0,0],
-"dc/d76/floatitemdef_8h.html#ad65d3ab4b803afe5820275a9c5fb1566a6de074b83537939d2c2dc39001f2b640":[2,0,0,1,10,0,0,0,1],
-"dc/d76/floatitemdef_8h.html#ad65d3ab4b803afe5820275a9c5fb1566afb7b7a4a17ddb945bf15c77f1855b5c0":[2,0,0,1,10,0,0,0,2],
+"dc/d76/floatitemdef_8h.html#ad65d3ab4b803afe5820275a9c5fb1566a130c5b3473c57faa76e2a1c54e26f88e":[2,0,0,1,10,0,0,0,0],
+"dc/d76/floatitemdef_8h.html#ad65d3ab4b803afe5820275a9c5fb1566a2ad9d63b69c4a10a5cc9cad923133bc4":[2,0,0,1,10,0,0,0,2],
+"dc/d76/floatitemdef_8h.html#ad65d3ab4b803afe5820275a9c5fb1566aa4ffdcf0dc1f31b9acaf295d75b51d00":[2,0,0,1,10,0,0,0,1],
 "dc/d76/floatitemdef_8h_source.html":[2,0,0,1,10,0,0],
 "dc/d79/structpoint2d__s.html":[1,0,149],
 "dc/d79/structpoint2d__s.html#a1b7dac869c74baf89d4c651a51e8df52":[1,0,149,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX50 =
 "dc/d9a/decimalchart__dialog_8h_source.html":[2,0,0,0,0,1,8],
 "dc/d9b/classShowOperationPointName.html":[1,0,184],
 "dc/d9b/classShowOperationPointName.html#a1c85d19fd2992ade543db7abe782be8b":[1,0,184,1],
-"dc/d9b/classShowOperationPointName.html#a4dfdff467c11afc6d3148436e8f07340":[1,0,184,7]
+"dc/d9b/classShowOperationPointName.html#a4dfdff467c11afc6d3148436e8f07340":[1,0,184,7],
+"dc/d9b/classShowOperationPointName.html#a6dafdbf847ea3ffc2a72cc911d0e2589":[1,0,184,0]
 };

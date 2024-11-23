@@ -1,5 +1,6 @@
 var NAVTREEINDEX31 =
 {
+"d7/d7c/dialogaboutseamlyme_8cpp_source.html":[2,0,0,0,1,0,1],
 "d7/d7d/vtoolcut_8h.html":[2,0,0,1,13,1,0,2,1,0,1],
 "d7/d7d/vtoolcut_8h_source.html":[2,0,0,1,13,1,0,2,1,0,1],
 "d7/d85/classVSpline.html":[1,0,389],
@@ -248,6 +249,5 @@ var NAVTREEINDEX31 =
 "d7/db1/classVTextManager.html":[1,0,398],
 "d7/db1/classVTextManager.html#a029ffed61db48b11ad7b4142e23bf6f3":[1,0,398,9],
 "d7/db1/classVTextManager.html#a26f52aff711a1edac5192f79c3b7ba89":[1,0,398,7],
-"d7/db1/classVTextManager.html#a2fae4b4a83bf5b35101ceb6d4b579e5f":[1,0,398,8],
-"d7/db1/classVTextManager.html#a394ef2e8e4c7769f634da976db928e3e":[1,0,398,0]
+"d7/db1/classVTextManager.html#a2fae4b4a83bf5b35101ceb6d4b579e5f":[1,0,398,8]
 };

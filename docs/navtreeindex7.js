@@ -1,6 +1,5 @@
 var NAVTREEINDEX7 =
 {
-"d1/de1/classVisToolInternalPath.html#a3a7b6696d690a44c2bf7220b4a4e9bde":[1,0,317,0],
 "d1/de1/classVisToolInternalPath.html#a4855fb851d082862a4a68e2164116384":[1,0,317,1],
 "d1/de1/classVisToolInternalPath.html#a556efd7f9cbe99bb062f2605e7b2ed74":[1,0,317,10],
 "d1/de1/classVisToolInternalPath.html#a65200e815b425825580e795878e366a7":[1,0,317,4],
@@ -215,13 +214,13 @@ var NAVTREEINDEX7 =
 "d2/d41/classVTextGraphicsItem.html#a0855953aa2ea44c5fa8e485e35425e59":[1,0,397,27],
 "d2/d41/classVTextGraphicsItem.html#a113fb112ad66e56bab2e6849532d6bb4":[1,0,397,10],
 "d2/d41/classVTextGraphicsItem.html#a1fbe8aa9010f116b12bc07a71930fc04":[1,0,397,26],
-"d2/d41/classVTextGraphicsItem.html#a1fc483eb1cbd629767cc6ad4b2b46395":[1,0,397,20],
+"d2/d41/classVTextGraphicsItem.html#a1fc483eb1cbd629767cc6ad4b2b46395":[1,0,397,19],
 "d2/d41/classVTextGraphicsItem.html#a2ce7b604f29578423ce9a2914a11fedf":[1,0,397,6],
 "d2/d41/classVTextGraphicsItem.html#a315cafafbc976d9935f3d509c66a12bb":[1,0,397,13],
 "d2/d41/classVTextGraphicsItem.html#a384e0a62eee61eeeeebb00ca85478569":[1,0,397,1],
 "d2/d41/classVTextGraphicsItem.html#a3d415e59c50d12ff0dc96afc51b550ad":[1,0,397,24],
 "d2/d41/classVTextGraphicsItem.html#a55770ba5cd6a5b2cb6813dc207f0836d":[1,0,397,9],
-"d2/d41/classVTextGraphicsItem.html#a59b8a2c094d0c51abc7d0c896d60c580":[1,0,397,22],
+"d2/d41/classVTextGraphicsItem.html#a59b8a2c094d0c51abc7d0c896d60c580":[1,0,397,21],
 "d2/d41/classVTextGraphicsItem.html#a5b8dd919f3d3b34cb1cf4a83c08e7638":[1,0,397,12],
 "d2/d41/classVTextGraphicsItem.html#a6cd110d3f7002867e482052da5aee4bd":[1,0,397,2],
 "d2/d41/classVTextGraphicsItem.html#a6ce47035ad39935899676f69fffbd9bd":[1,0,397,4],
@@ -229,8 +228,9 @@ var NAVTREEINDEX7 =
 "d2/d41/classVTextGraphicsItem.html#a7ba9b6631b1d4d16a576c345623ffb88":[1,0,397,23],
 "d2/d41/classVTextGraphicsItem.html#a8cb66274dcfdd12f40f38715f2d9550b":[1,0,397,14],
 "d2/d41/classVTextGraphicsItem.html#a99702e3954fc97ea41458df82690053e":[1,0,397,25],
+"d2/d41/classVTextGraphicsItem.html#a9a7cdd0963c26fb92389ef4bf4f8e941":[1,0,397,22],
 "d2/d41/classVTextGraphicsItem.html#a9f1bfff343a92b727ffd8829c2c01203":[1,0,397,29],
-"d2/d41/classVTextGraphicsItem.html#a9fbdee85cef912de39a34b4bfda18aac":[1,0,397,21],
+"d2/d41/classVTextGraphicsItem.html#a9fbdee85cef912de39a34b4bfda18aac":[1,0,397,20],
 "d2/d41/classVTextGraphicsItem.html#aa011c4b2c38fac72fc0306e67fa79cfb":[1,0,397,7],
 "d2/d41/classVTextGraphicsItem.html#ac430f72b9e1f6f5389e79bd78c94aa36":[1,0,397,28],
 "d2/d41/classVTextGraphicsItem.html#ac4e90a6313d473d08141ab2012b0a59c":[1,0,397,0],
@@ -241,7 +241,6 @@ var NAVTREEINDEX7 =
 "d2/d41/classVTextGraphicsItem.html#ae610d638423eb915f2ab80a197d8a426":[1,0,397,30],
 "d2/d41/classVTextGraphicsItem.html#ae8fed158752457934435c223ef9d1da1":[1,0,397,31],
 "d2/d41/classVTextGraphicsItem.html#af91a160a36a30fdf0e3edcd96115ec86":[1,0,397,16],
-"d2/d41/classVTextGraphicsItem.html#afa667b0430c7f0de6563a669b39cfdb2":[1,0,397,19],
 "d2/d41/classVTextGraphicsItem.html#aff3c31874477559c43cd058ceb91e610":[1,0,397,8],
 "d2/d43/classDialogLineIntersectAxis.html":[1,0,58],
 "d2/d43/classDialogLineIntersectAxis.html#a043afd05e31a75a036286ccdac83f020":[1,0,58,15],
@@ -249,5 +248,6 @@ var NAVTREEINDEX7 =
 "d2/d43/classDialogLineIntersectAxis.html#a085307ebe807fd13309929b1b9176774":[1,0,58,10],
 "d2/d43/classDialogLineIntersectAxis.html#a0bc3d0766d2574a6a0624621bbc135b0":[1,0,58,13],
 "d2/d43/classDialogLineIntersectAxis.html#a29c1f373fdf5d90d05f541b3e6d47391":[1,0,58,9],
-"d2/d43/classDialogLineIntersectAxis.html#a36651ef205e1188eb87164da129fad39":[1,0,58,25]
+"d2/d43/classDialogLineIntersectAxis.html#a36651ef205e1188eb87164da129fad39":[1,0,58,25],
+"d2/d43/classDialogLineIntersectAxis.html#a3c7532b54712b31a5c3d20f6de577094":[1,0,58,2]
 };

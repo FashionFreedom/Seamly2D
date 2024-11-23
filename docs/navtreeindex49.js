@@ -1,6 +1,5 @@
 var NAVTREEINDEX49 =
 {
-"dc/d2b/classVToolLine.html#a7b999625ad4f5b3dcce0b32934392e0a":[1,0,416,21],
 "dc/d2b/classVToolLine.html#a7dc21a846b2cd752d909bd87864b5e64":[1,0,416,32],
 "dc/d2b/classVToolLine.html#a831ce5178ee693a5d46ecf3c3aeb0a9e":[1,0,416,33],
 "dc/d2b/classVToolLine.html#a83ca761a2a08a483b337a4ba6b632b25":[1,0,416,26],
@@ -249,5 +248,6 @@ var NAVTREEINDEX49 =
 "dc/d74/classVFormulaPropertyEditor.html#a1c1417889591feca1db7205cff223197":[1,0,288,7],
 "dc/d74/classVFormulaPropertyEditor.html#a319dfe52781bcf5fdd50813a5b85aeb2":[1,0,288,11],
 "dc/d74/classVFormulaPropertyEditor.html#a51fc0dd85c1ef82ed420d99bf5fbe7a0":[1,0,288,3],
-"dc/d74/classVFormulaPropertyEditor.html#a5664fe51ceed9eeffa748eb9eb07c005":[1,0,288,6]
+"dc/d74/classVFormulaPropertyEditor.html#a5664fe51ceed9eeffa748eb9eb07c005":[1,0,288,6],
+"dc/d74/classVFormulaPropertyEditor.html#a5dd1a0b84a4659516c71db866199b72d":[1,0,288,4]
 };
