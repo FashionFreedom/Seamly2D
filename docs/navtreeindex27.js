@@ -1,5 +1,11 @@
 var NAVTREEINDEX27 =
 {
+"d6/d1a/classMainWindow.html#af46210a798e1407377d3d101a9aab55b":[1,0,116,91],
+"d6/d1a/classMainWindow.html#af4cec082183778efccb04b0d8740899c":[1,0,116,48],
+"d6/d1a/classMainWindow.html#af5267cc8e0bb2b95a8b399417b3996b7":[1,0,116,222],
+"d6/d1a/classMainWindow.html#af5538b9f7cd0d52646d6e2072084c552":[1,0,116,66],
+"d6/d1a/classMainWindow.html#af64067a6f36c032b6d3b09a6ecc4ce5f":[1,0,116,250],
+"d6/d1a/classMainWindow.html#af86d9769f4f54bb0a0979bc98e93eaf7":[1,0,116,29],
 "d6/d1a/classMainWindow.html#af997d1de1fe226eddd1e18d7b9bb79ad":[1,0,116,86],
 "d6/d1a/classMainWindow.html#af9a15a5df11095dbb0f2e8d76d68a20f":[1,0,116,39],
 "d6/d1a/classMainWindow.html#af9b0ef35ece8ac1289860566de721648":[1,0,116,163],
@@ -243,11 +249,5 @@ var NAVTREEINDEX27 =
 "d6/d6b/classVToolBisector.html#a03774901ba31118f217b74af44f0718c":[1,0,403,6],
 "d6/d6b/classVToolBisector.html#a0c09eeda900b693867ca283b6fae2042":[1,0,403,22],
 "d6/d6b/classVToolBisector.html#a18f8bac393baa4062fce2f1eb22a7061":[1,0,403,13],
-"d6/d6b/classVToolBisector.html#a19f6f30fc581f0573f2dc7c2ca4bb466":[1,0,403,3],
-"d6/d6b/classVToolBisector.html#a1c6b3f6d7c7de121a98b849981828905":[1,0,403,5],
-"d6/d6b/classVToolBisector.html#a277cfa4f6d3938cf0b58e4a6920db0e8":[1,0,403,11],
-"d6/d6b/classVToolBisector.html#a2f65c2dd7084a175c822d72a27c04043":[1,0,403,16],
-"d6/d6b/classVToolBisector.html#a31c2f4dbd71c548eeaf8eedd7fd4581d":[1,0,403,0],
-"d6/d6b/classVToolBisector.html#a428d27b40f09f18feff28add16292c59":[1,0,403,9],
-"d6/d6b/classVToolBisector.html#a645b33445485d8fc54c908b7f3880816":[1,0,403,17]
+"d6/d6b/classVToolBisector.html#a19f6f30fc581f0573f2dc7c2ca4bb466":[1,0,403,3]
 };

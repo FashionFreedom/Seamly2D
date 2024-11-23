@@ -1,5 +1,10 @@
 var NAVTREEINDEX14 =
 {
+"d4/d10/classDeleteDraftBlock.html#ac3a1e8c709175c217d72d8850e3c49f3":[1,0,33,3],
+"d4/d10/classDeleteDraftBlock.html#af7f5c0203b2d544f328f3574d375fa13":[1,0,33,2],
+"d4/d11/vcommonsettings_8cpp.html":[2,0,0,1,8,17],
+"d4/d11/vcommonsettings_8cpp.html#a046b05ae883a9622db898c0ce2e75f6e":[2,0,0,1,8,17,113],
+"d4/d11/vcommonsettings_8cpp.html#a057fa48d101cde9aa147dd59534486e8":[2,0,0,1,8,17,123],
 "d4/d11/vcommonsettings_8cpp.html#a0696d67afde5d1eb5346a7a90c11beae":[2,0,0,1,8,17,69],
 "d4/d11/vcommonsettings_8cpp.html#a0855d3c503ad972075652fddbb9f8b1c":[2,0,0,1,8,17,112],
 "d4/d11/vcommonsettings_8cpp.html#a0adffa85c39db51ea9b9820280264ccc":[2,0,0,1,8,17,42],
@@ -244,10 +249,5 @@ var NAVTREEINDEX14 =
 "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#a395d2221691add0fd3fcd637872d7735":[0,0,14,3],
 "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#a9ef1658829697806d3ebe798a7acb481":[0,0,14,0],
 "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#ae903c3c49140e20a1573ba65adeadd13":[0,0,14,2],
-"d4/d25/classVLayoutPaper.html":[1,0,340],
-"d4/d25/classVLayoutPaper.html#a013011412cb7b92055da511b6a89fd85":[1,0,340,17],
-"d4/d25/classVLayoutPaper.html#a1514f11bcb378ab8ba27c0b3ed9195df":[1,0,340,5],
-"d4/d25/classVLayoutPaper.html#a21f686a78317c7c032affc4a35fc96e1":[1,0,340,23],
-"d4/d25/classVLayoutPaper.html#a2850fd90cd70318f386b980bdb4866d3":[1,0,340,14],
-"d4/d25/classVLayoutPaper.html#a31d663c00d8494201f0f92933ce735cb":[1,0,340,19]
+"d4/d25/classVLayoutPaper.html":[1,0,340]
 };

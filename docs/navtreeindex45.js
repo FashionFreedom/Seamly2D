@@ -1,5 +1,15 @@
 var NAVTREEINDEX45 =
 {
+"db/d4d/classDialogArc.html#a0f8ac0f8a1442ceb09ebaf3ce5cd38b1":[1,0,40,9],
+"db/d4d/classDialogArc.html#a119ed5adbd0aac3f528bf39df63e1732":[1,0,40,31],
+"db/d4d/classDialogArc.html#a14122b84dd4935fc2e0e94a1d49d37e0":[1,0,40,23],
+"db/d4d/classDialogArc.html#a16caf1ad4e4af703c8982d3d822165cf":[1,0,40,18],
+"db/d4d/classDialogArc.html#a1f6c2d8f506f583025867865cf1f79af":[1,0,40,42],
+"db/d4d/classDialogArc.html#a202bbe5b697a4ccc734f3c01b841a52c":[1,0,40,53],
+"db/d4d/classDialogArc.html#a24cc446e6977382f5425e5c28d1db1e8":[1,0,40,29],
+"db/d4d/classDialogArc.html#a2bdafbc2c710ff80eb2dab94e07dc0c0":[1,0,40,14],
+"db/d4d/classDialogArc.html#a3581e7358f4b8940c61d8bad4324974d":[1,0,40,20],
+"db/d4d/classDialogArc.html#a3fbf81f9e834324df1d20a3f4ab36fb9":[1,0,40,10],
 "db/d4d/classDialogArc.html#a516d2f4ecb003e56e03592bff8b46140":[1,0,40,1],
 "db/d4d/classDialogArc.html#a544fe885455257f1b9c774cad68ef1f9":[1,0,40,47],
 "db/d4d/classDialogArc.html#a57fff0b01edb010f18acc60aa02ddc58":[1,0,40,22],
@@ -239,15 +249,5 @@ var NAVTREEINDEX45 =
 "db/d75/set__piece__color_8h_source.html":[2,0,0,1,13,2,44],
 "db/d76/classVisPath.html":[1,0,303],
 "db/d76/classVisPath.html#a01f558535a450225d6aae2333584c8ce":[1,0,303,0],
-"db/d76/classVisPath.html#a2db2203ace9494354a920d51c13a35f2":[1,0,303,2],
-"db/d76/classVisPath.html#aa00ad73e91c41aeb8ed9b432b94ad2f6":[1,0,303,5],
-"db/d76/classVisPath.html#aab05748eaa5f1b8045c0fe6eb8f8c2a0":[1,0,303,1],
-"db/d76/classVisPath.html#ac9ab0de4fcfaf1982fc1f750120fec47":[1,0,303,4],
-"db/d76/classVisPath.html#acd2e830a9ce2dd7f86aee0cfe2d566fb":[1,0,303,3],
-"db/d7b/classVToolInternalPath.html":[1,0,415],
-"db/d7b/classVToolInternalPath.html#a04c7d03e47a941db93d5c3ef7e311ed6":[1,0,415,8],
-"db/d7b/classVToolInternalPath.html#a100e95cb70d9e47723e167c52ec0426d":[1,0,415,5],
-"db/d7b/classVToolInternalPath.html#a238d376281a6a1f8a6785f26d1b50cda":[1,0,415,6],
-"db/d7b/classVToolInternalPath.html#a354e49d2fc0d699d3b120d34be1329b5":[1,0,415,10],
-"db/d7b/classVToolInternalPath.html#a3ab3e377974888acb617ef8514363ea9":[1,0,415,15]
+"db/d76/classVisPath.html#a2db2203ace9494354a920d51c13a35f2":[1,0,303,2]
 };

@@ -1,5 +1,11 @@
 var NAVTREEINDEX31 =
 {
+"d7/d7c/dialogaboutseamlyme_8cpp_source.html":[2,0,0,0,1,0,1],
+"d7/d7d/vtoolcut_8h.html":[2,0,0,1,13,1,0,2,1,0,1],
+"d7/d7d/vtoolcut_8h_source.html":[2,0,0,1,13,1,0,2,1,0,1],
+"d7/d85/classVSpline.html":[1,0,389],
+"d7/d85/classVSpline.html#a0042c581021a9c930b08c05a97fc4e4a":[1,0,389,9],
+"d7/d85/classVSpline.html#a08a756ba3d3a6ca99fd17b534d47d383":[1,0,389,22],
 "d7/d85/classVSpline.html#a1a8b8b00466efd22a7c3e4262c05a615":[1,0,389,33],
 "d7/d85/classVSpline.html#a1b9a902e315c9956e4fbb7330acc0d26":[1,0,389,16],
 "d7/d85/classVSpline.html#a24d769662e7f9060114c0948fd19d7aa":[1,0,389,7],
@@ -243,11 +249,5 @@ var NAVTREEINDEX31 =
 "d7/db1/classVTextManager.html":[1,0,398],
 "d7/db1/classVTextManager.html#a029ffed61db48b11ad7b4142e23bf6f3":[1,0,398,9],
 "d7/db1/classVTextManager.html#a26f52aff711a1edac5192f79c3b7ba89":[1,0,398,7],
-"d7/db1/classVTextManager.html#a2fae4b4a83bf5b35101ceb6d4b579e5f":[1,0,398,8],
-"d7/db1/classVTextManager.html#a394ef2e8e4c7769f634da976db928e3e":[1,0,398,0],
-"d7/db1/classVTextManager.html#a7f64e46d190ec246b4f30b14593b1a24":[1,0,398,5],
-"d7/db1/classVTextManager.html#a88620b46e6e2d46e84918ba6d28430bd":[1,0,398,6],
-"d7/db1/classVTextManager.html#a8e6fcdc09b1acbd9d3b922b8b80cabe5":[1,0,398,4],
-"d7/db1/classVTextManager.html#a8edd1778c1d3d18aaba40ab82a35ae4e":[1,0,398,12],
-"d7/db1/classVTextManager.html#aa6cc15de88dfb86f3a56d004fc47bbf9":[1,0,398,1]
+"d7/db1/classVTextManager.html#a2fae4b4a83bf5b35101ceb6d4b579e5f":[1,0,398,8]
 };

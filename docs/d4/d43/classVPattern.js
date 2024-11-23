@@ -91,6 +91,7 @@ var classVPattern =
     [ "parseVariablesElement", "d4/d43/classVPattern.html#ab0b98e4d1f41c7260c9e9897c7b2eba5", null ],
     [ "PointsCommonAttributes", "d4/d43/classVPattern.html#a950bbc6caa46a0f0f1269d16b23f47fc", null ],
     [ "PointsCommonAttributes", "d4/d43/classVPattern.html#a2eeff3ba1f8832cf56cb1d1de2ed7f60", null ],
+    [ "PointsCommonAttributes", "d4/d43/classVPattern.html#a5205afa25bc5eb79a26bf7787939487f", null ],
     [ "PointsCommonAttributes", "d4/d43/classVPattern.html#a7b8692b65f7b164d8633ce3a59a0d469", null ],
     [ "PrepareForParse", "d4/d43/classVPattern.html#a31685407b356825767175343ad322e8a", null ],
     [ "Q_STATIC_ASSERT_X", "d4/d43/classVPattern.html#a31769d83b29194cca8676aefffb455f0", null ],

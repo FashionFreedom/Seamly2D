@@ -1,5 +1,15 @@
 var NAVTREEINDEX64 =
 {
+"df/d89/classVPE_1_1VFileEditWidget.html#af3a9fff0daef7c873ae825088c370509":[1,0,2,11,21],
+"df/d89/classVPE_1_1VFileEditWidget.html#af70de8d1ec28d384a26c22ce41f163a5":[1,0,2,11,12],
+"df/d89/classVPE_1_1VFileEditWidget.html#aff064e71f91f4886f4f98e2db257bb55":[1,0,2,11,19],
+"df/d93/classVNodeArc.html":[1,0,355],
+"df/d93/classVNodeArc.html#a06bd11bf0ccf022cbcc5a5e8af40a95c":[1,0,355,3],
+"df/d93/classVNodeArc.html#a2f236e00719bf5f1617bc3a8fb775b92":[1,0,355,0],
+"df/d93/classVNodeArc.html#a49625cb190a82a2092588acc809e3825":[1,0,355,4],
+"df/d93/classVNodeArc.html#a51cf936db36d0c070f318c864985fe7c":[1,0,355,2],
+"df/d93/classVNodeArc.html#a56d6037298d5c1f741bfc5b9409aca11":[1,0,355,8],
+"df/d93/classVNodeArc.html#a87071ee820aa351dad261cc25aa1f283":[1,0,355,9],
 "df/d93/classVNodeArc.html#a96ed352adf9c5c3eee08e160783b8757":[1,0,355,6],
 "df/d93/classVNodeArc.html#aa784b5d6f529354dcf86b262ceb4b5b1":[1,0,355,7],
 "df/d93/classVNodeArc.html#acf5d3e30bb3f9dfb50780c2c1252c113":[1,0,355,5],
@@ -239,15 +249,5 @@ var NAVTREEINDEX64 =
 "df/de1/classVPiecePath.html#a64514076b2ee3b23f2926ce07c42401f":[1,0,375,14],
 "df/de1/classVPiecePath.html#a6497733c635eb09fe44a8e4d710bf481":[1,0,375,10],
 "df/de1/classVPiecePath.html#a6616532129e32dc068ce4560588fe417":[1,0,375,29],
-"df/de1/classVPiecePath.html#a6c420b73d839af901a9ce69409227e63":[1,0,375,31],
-"df/de1/classVPiecePath.html#a6cae1535d9644811ce0638b81b487232":[1,0,375,41],
-"df/de1/classVPiecePath.html#a734ca8f5125f579a0650ec693ffa7a07":[1,0,375,3],
-"df/de1/classVPiecePath.html#a7473074b22fb8c7d8221ac5c16c9c93f":[1,0,375,16],
-"df/de1/classVPiecePath.html#a79057988f7123dc94c7d949465ee2217":[1,0,375,34],
-"df/de1/classVPiecePath.html#a7c376b30fa8e8f4bce22239f4b304cad":[1,0,375,23],
-"df/de1/classVPiecePath.html#a85d983785b92ff08bdf59b1ec55ce949":[1,0,375,38],
-"df/de1/classVPiecePath.html#a913fb715d0e1c9acfb470a3cabcd3d0d":[1,0,375,11],
-"df/de1/classVPiecePath.html#a9296c27fe396030b03d1d2ca47d302d1":[1,0,375,39],
-"df/de1/classVPiecePath.html#a985d9f676d9ff99c50ab992364215381":[1,0,375,37],
-"df/de1/classVPiecePath.html#a9ebebfe2f4a0a1783099f77a376562f4":[1,0,375,26]
+"df/de1/classVPiecePath.html#a6c420b73d839af901a9ce69409227e63":[1,0,375,31]
 };

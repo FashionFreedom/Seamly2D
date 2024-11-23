@@ -1,5 +1,15 @@
 var NAVTREEINDEX44 =
 {
+"db/d02/classVCubicBezierData.html#ab56147fe87a127ec004d33d310e51107":[1,0,261,4],
+"db/d02/classVCubicBezierData.html#ad0f9f9afb6a6d37c2dbc4d6d5b898758":[1,0,261,3],
+"db/d02/classVCubicBezierData.html#ad350ee08cbf8b8ae56082d1f5bd18c95":[1,0,261,5],
+"db/d02/classVCubicBezierData.html#af92c5c28e7e9b2a99b2e2f7ea3c56cc6":[1,0,261,2],
+"db/d0a/classVSplinePointData.html":[1,0,394],
+"db/d0a/classVSplinePointData.html#a1d2a03a54d13e679ef5c7bd177af2867":[1,0,394,9],
+"db/d0a/classVSplinePointData.html#a298a0f4d90efc5e203b9b7b2b9fdf173":[1,0,394,11],
+"db/d0a/classVSplinePointData.html#a2d539168851e6edf333b3c04248ec333":[1,0,394,12],
+"db/d0a/classVSplinePointData.html#a422a92e5bde0c111a91895fdeb2904d4":[1,0,394,6],
+"db/d0a/classVSplinePointData.html#a56a8fa309e852981724ab3f53ac45702":[1,0,394,7],
 "db/d0a/classVSplinePointData.html#aae6394385c7c70e9f72abaf1db62b840":[1,0,394,5],
 "db/d0a/classVSplinePointData.html#ab372091e85cd27382ffe26c06ddc114f":[1,0,394,0],
 "db/d0a/classVSplinePointData.html#abbc0ca22a24ee149ac21238abb72586d":[1,0,394,4],
@@ -239,15 +249,5 @@ var NAVTREEINDEX44 =
 "db/d4d/classDialogArc.html#a0280a8098f5a5923893f6a5eec60e94b":[1,0,40,38],
 "db/d4d/classDialogArc.html#a04444c1f660fc8d62fd7014a097bdcb7":[1,0,40,16],
 "db/d4d/classDialogArc.html#a09fdc98963f6b86d4decfd9c02af25c6":[1,0,40,41],
-"db/d4d/classDialogArc.html#a0a7eb1fa6df4d1d4016a50cdbae5bb92":[1,0,40,24],
-"db/d4d/classDialogArc.html#a0f8ac0f8a1442ceb09ebaf3ce5cd38b1":[1,0,40,9],
-"db/d4d/classDialogArc.html#a119ed5adbd0aac3f528bf39df63e1732":[1,0,40,31],
-"db/d4d/classDialogArc.html#a14122b84dd4935fc2e0e94a1d49d37e0":[1,0,40,23],
-"db/d4d/classDialogArc.html#a16caf1ad4e4af703c8982d3d822165cf":[1,0,40,18],
-"db/d4d/classDialogArc.html#a1f6c2d8f506f583025867865cf1f79af":[1,0,40,42],
-"db/d4d/classDialogArc.html#a202bbe5b697a4ccc734f3c01b841a52c":[1,0,40,53],
-"db/d4d/classDialogArc.html#a24cc446e6977382f5425e5c28d1db1e8":[1,0,40,29],
-"db/d4d/classDialogArc.html#a2bdafbc2c710ff80eb2dab94e07dc0c0":[1,0,40,14],
-"db/d4d/classDialogArc.html#a3581e7358f4b8940c61d8bad4324974d":[1,0,40,20],
-"db/d4d/classDialogArc.html#a3fbf81f9e834324df1d20a3f4ab36fb9":[1,0,40,10]
+"db/d4d/classDialogArc.html#a0a7eb1fa6df4d1d4016a50cdbae5bb92":[1,0,40,24]
 };

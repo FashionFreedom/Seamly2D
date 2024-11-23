@@ -1,5 +1,15 @@
 var NAVTREEINDEX50 =
 {
+"dc/d74/classVFormulaPropertyEditor.html#a5664fe51ceed9eeffa748eb9eb07c005":[1,0,288,6],
+"dc/d74/classVFormulaPropertyEditor.html#a5dd1a0b84a4659516c71db866199b72d":[1,0,288,4],
+"dc/d74/classVFormulaPropertyEditor.html#a6c0f8bea355bff5f2fce8efc909bf7fe":[1,0,288,0],
+"dc/d74/classVFormulaPropertyEditor.html#aaf46cd8de8eebab5b8277c3a10c0867b":[1,0,288,9],
+"dc/d74/classVFormulaPropertyEditor.html#ac6c4092d01c2e1f7671cdf68542b6c87":[1,0,288,1],
+"dc/d74/classVFormulaPropertyEditor.html#ac7815ca75efffed36b2b35f2722d4c6f":[1,0,288,5],
+"dc/d74/classVFormulaPropertyEditor.html#ae171599db97ef1c9c1d25b1ff37022ed":[1,0,288,8],
+"dc/d74/classVFormulaPropertyEditor.html#aea64a89fc3c83ab26d7706ce33b1623d":[1,0,288,10],
+"dc/d74/me__welcome__dialog_8cpp.html":[2,0,0,0,1,0,9],
+"dc/d74/me__welcome__dialog_8cpp_source.html":[2,0,0,0,1,0,9],
 "dc/d74/structCustomSARecord.html":[1,0,26],
 "dc/d74/structCustomSARecord.html#a20519e841f973146f7b8e7e0d764cf05":[1,0,26,1],
 "dc/d74/structCustomSARecord.html#a264f32dd100da7a779dc973ce46b7123":[1,0,26,3],
@@ -239,15 +249,5 @@ var NAVTREEINDEX50 =
 "dc/d9a/decimalchart__dialog_8h.html":[2,0,0,0,0,1,8],
 "dc/d9a/decimalchart__dialog_8h_source.html":[2,0,0,0,0,1,8],
 "dc/d9b/classShowOperationPointName.html":[1,0,184],
-"dc/d9b/classShowOperationPointName.html#a1c85d19fd2992ade543db7abe782be8b":[1,0,184,1],
-"dc/d9b/classShowOperationPointName.html#a4dfdff467c11afc6d3148436e8f07340":[1,0,184,7],
-"dc/d9b/classShowOperationPointName.html#a6dafdbf847ea3ffc2a72cc911d0e2589":[1,0,184,0],
-"dc/d9b/classShowOperationPointName.html#a8775a007622cbf7569bd0cde3bdc50b8":[1,0,184,2],
-"dc/d9b/classShowOperationPointName.html#a91fcfdd2f460c6db4ea67fef95335aa8":[1,0,184,5],
-"dc/d9b/classShowOperationPointName.html#ac1d7e0cc3467412ff75e31ae26f23e49":[1,0,184,3],
-"dc/d9b/classShowOperationPointName.html#ad08cc35276ddebe2b797cbccf77c5846":[1,0,184,8],
-"dc/d9b/classShowOperationPointName.html#ae1e81bf8ed3448555199a9794f1a0121":[1,0,184,4],
-"dc/d9b/classShowOperationPointName.html#af65a23426f4b3121d3f98af205012f84":[1,0,184,6],
-"dc/d9d/classAddPiece.html":[1,0,12],
-"dc/d9d/classAddPiece.html#a49f0dfe28ec6a4486ae43c8feddf79f7":[1,0,12,4]
+"dc/d9b/classShowOperationPointName.html#a1c85d19fd2992ade543db7abe782be8b":[1,0,184,1]
 };

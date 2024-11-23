@@ -1,5 +1,15 @@
 var NAVTREEINDEX60 =
 {
+"de/d31/ifcdef_8cpp.html#adabdb32ceafcefecf3f63d9bdb5ba82c":[2,0,0,1,1,2,97],
+"de/d31/ifcdef_8cpp.html#adb3ff75924803916e515588e5a7428a3":[2,0,0,1,1,2,68],
+"de/d31/ifcdef_8cpp.html#adc55e2e472f2a1112e434a74281526a2":[2,0,0,1,1,2,15],
+"de/d31/ifcdef_8cpp.html#adc5efed853ac5697e693f63edf1615bc":[2,0,0,1,1,2,77],
+"de/d31/ifcdef_8cpp.html#ade9b666332fdbaa424309442114920cd":[2,0,0,1,1,2,19],
+"de/d31/ifcdef_8cpp.html#ae25e598b1eda89435a31abbe1c367905":[2,0,0,1,1,2,34],
+"de/d31/ifcdef_8cpp.html#ae31da243d621ad6032b031dc1068bbdf":[2,0,0,1,1,2,142],
+"de/d31/ifcdef_8cpp.html#ae65acb2bbc099e7b13c4d98883116c22":[2,0,0,1,1,2,153],
+"de/d31/ifcdef_8cpp.html#ae821a5220412cd3f50dab1f4a6219e41":[2,0,0,1,1,2,7],
+"de/d31/ifcdef_8cpp.html#aea4485cec4f0330d6f515027f431de9e":[2,0,0,1,1,2,148],
 "de/d31/ifcdef_8cpp.html#aebb333a8d51106ae4af6d969efebf614":[2,0,0,1,1,2,163],
 "de/d31/ifcdef_8cpp.html#aed7354461477f562d0c10d0fbbd4eab6":[2,0,0,1,1,2,4],
 "de/d31/ifcdef_8cpp.html#aeef25e16ff1a6e4e92d58664052e4deb":[2,0,0,1,1,2,23],
@@ -239,15 +249,5 @@ var NAVTREEINDEX60 =
 "de/d87/dialognewpattern_8cpp_source.html":[2,0,0,0,0,1,13],
 "de/d8e/classShortcutsDialog.html":[1,0,181],
 "de/d8e/classShortcutsDialog.html#a055f525af67de5393f6c744db6b460cf":[1,0,181,2],
-"de/d8e/classShortcutsDialog.html#a39991c735951f34a35c68df15ce85e76":[1,0,181,1],
-"de/d8e/classShortcutsDialog.html#a64dff46391c4f77453a12abe1781df22":[1,0,181,7],
-"de/d8e/classShortcutsDialog.html#a743f026f744220b414345fcce910b06d":[1,0,181,5],
-"de/d8e/classShortcutsDialog.html#a794e7a9416220912261aeff4ecf45563":[1,0,181,6],
-"de/d8e/classShortcutsDialog.html#a93f6ced54110b296aa0572472ca7cc6a":[1,0,181,4],
-"de/d8e/classShortcutsDialog.html#aa68dbcb3b7ae70e72d800d12a29dfe5a":[1,0,181,0],
-"de/d8e/classShortcutsDialog.html#ac9a114dea0e2cdb1a1bd1c22d37cae11":[1,0,181,3],
-"de/d98/classVPE_1_1VPointFProperty.html":[1,0,2,18],
-"de/d98/classVPE_1_1VPointFProperty.html#a08ed5e4df0096585d9a60bc6677b7c34":[1,0,2,18,3],
-"de/d98/classVPE_1_1VPointFProperty.html#a129b4880e230ebdae7443da40f4e9e20":[1,0,2,18,4],
-"de/d98/classVPE_1_1VPointFProperty.html#a3043ce82da92d6ad20d3bf227df0220b":[1,0,2,18,0]
+"de/d8e/classShortcutsDialog.html#a39991c735951f34a35c68df15ce85e76":[1,0,181,1]
 };

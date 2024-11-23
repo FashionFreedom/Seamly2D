@@ -1,5 +1,15 @@
 var NAVTREEINDEX43 =
 {
+"da/dbf/intersect__circles__visual_8cpp_source.html":[2,0,0,1,13,3,0,3],
+"da/dbf/vistoolarc_8h.html":[2,0,0,1,13,3,1,7],
+"da/dbf/vistoolarc_8h_source.html":[2,0,0,1,13,3,1,7],
+"da/dc6/vistoolpointofintersectionarcs_8h.html":[2,0,0,1,13,3,0,34],
+"da/dc6/vistoolpointofintersectionarcs_8h_source.html":[2,0,0,1,13,3,0,34],
+"da/dcb/plaintext__property_8h.html":[2,0,0,1,11,0,8],
+"da/dcb/plaintext__property_8h_source.html":[2,0,0,1,11,0,8],
+"da/dcd/visline_8cpp.html":[2,0,0,1,13,3,0,9],
+"da/dcd/visline_8cpp_source.html":[2,0,0,1,13,3,0,9],
+"da/dd0/classDialogVariables.html":[1,0,80],
 "da/dd0/classDialogVariables.html#a10f612ecd76f22313237b9d0232708d3":[1,0,80,31],
 "da/dd0/classDialogVariables.html#a1324058eed98ab9bd872606465516dfb":[1,0,80,46],
 "da/dd0/classDialogVariables.html#a133bfd8d874c1037f0ba12dfe5b0733e":[1,0,80,23],
@@ -239,15 +249,5 @@ var NAVTREEINDEX43 =
 "db/d02/classVCubicBezierData.html#a28dc4b6ec02f7cd7df45693baed365e8":[1,0,261,8],
 "db/d02/classVCubicBezierData.html#a470c7dc2eb479f913b1621b5ebd3e851":[1,0,261,6],
 "db/d02/classVCubicBezierData.html#a6b99446f7b080edbc7a0ab7b74cb1894":[1,0,261,7],
-"db/d02/classVCubicBezierData.html#ab18b481d366b3362f0c215ceb58e54b8":[1,0,261,0],
-"db/d02/classVCubicBezierData.html#ab56147fe87a127ec004d33d310e51107":[1,0,261,4],
-"db/d02/classVCubicBezierData.html#ad0f9f9afb6a6d37c2dbc4d6d5b898758":[1,0,261,3],
-"db/d02/classVCubicBezierData.html#ad350ee08cbf8b8ae56082d1f5bd18c95":[1,0,261,5],
-"db/d02/classVCubicBezierData.html#af92c5c28e7e9b2a99b2e2f7ea3c56cc6":[1,0,261,2],
-"db/d0a/classVSplinePointData.html":[1,0,394],
-"db/d0a/classVSplinePointData.html#a1d2a03a54d13e679ef5c7bd177af2867":[1,0,394,9],
-"db/d0a/classVSplinePointData.html#a298a0f4d90efc5e203b9b7b2b9fdf173":[1,0,394,11],
-"db/d0a/classVSplinePointData.html#a2d539168851e6edf333b3c04248ec333":[1,0,394,12],
-"db/d0a/classVSplinePointData.html#a422a92e5bde0c111a91895fdeb2904d4":[1,0,394,6],
-"db/d0a/classVSplinePointData.html#a56a8fa309e852981724ab3f53ac45702":[1,0,394,7]
+"db/d02/classVCubicBezierData.html#ab18b481d366b3362f0c215ceb58e54b8":[1,0,261,0]
 };
