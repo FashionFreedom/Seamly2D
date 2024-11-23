@@ -401,6 +401,12 @@ void VGrainlineItem::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
         {
             dLen *= 2;
         }
+        // limit length of grainline to twice the length of the arrowheads.
+        qreal minLength = qApp->Settings()->getDefaultArrowLength() * 2.0;
+        if (m_startLength + dLen < minLength)
+        {
+            return;
+        }
         m_length = m_startLength + dLen;
 
         QPointF pos;
