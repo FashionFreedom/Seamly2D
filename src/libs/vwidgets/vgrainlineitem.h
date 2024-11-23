@@ -98,7 +98,7 @@ private:
     QPolygonF            m_boundingPoly;
     QPointF              m_startPos;
     QPointF              m_movePos;
-    QPolygonF            m_resizePolygon;
+    QPolygonF            m_resizeHandle;
     qreal                m_startLength;
     QPointF              m_startPoint;
     QPointF              m_finishPoint;
@@ -117,7 +117,7 @@ private:
     void                 userRotateAndMove();
     void                 userMoveAndResize(const QPointF &pos);
 
-    void                 updatePolyResize();
+    void                 updateResizeHandle();
 };
 
 #endif // VGRAINLINEITEM_H
