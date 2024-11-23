@@ -1,57 +1,54 @@
-/******************************************************************************
-*   @file   edit_formula_dialog.cpp
-**  @author DSCaskey <dscaskey@gmail.com>
-**  @date  10 Jun, 2023
-**
-**  @brief
-**  @copyright
-**  This source code is part of the Seamly2D project, a pattern making
-**  program to create and model patterns of clothing.
-**  Copyright (C) 2017-2023 Seamly2D project
-**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
-**
-**  Seamly2D is free software: you can redistribute it and/or modify
-**  it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation, either version 3 of the License, or
-**  (at your option) any later version.
-**
-**  Seamly2D is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
-**
-*************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   edit_formula_dialog.cpp
+//  @author DSCaskey <dscaskey@gmail.com>
+//  @date  10 Jun, 2023
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
+//  Copyright (C) 2017-2023 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   dialogeditwrongformula.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   29 5, 2014
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Valentina project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   dialogeditwrongformula.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   29 5, 2014
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2015 Valentina project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "edit_formula_dialog.h"
 #include "ui_edit_formula_dialog.h"
@@ -196,10 +193,9 @@ void EditFormulaDialog::EvalFormula()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief valueChanged show description when current variable changed
- * @param row number of row
- */
+/// @brief valueChanged show description when current variable changed
+/// @param row number of row
+//---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::valueChanged(int row)
 {
     if (ui->tableWidget->rowCount() == 0)
@@ -273,10 +269,9 @@ void EditFormulaDialog::valueChanged(int row)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief menu tabChanged
- * @param row number of row
- */
+/// @brief menu tabChanged
+/// @param row number of row
+//---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::tabChanged(int row)
 {
     switch (row)
@@ -331,19 +326,17 @@ void EditFormulaDialog::tabChanged(int row)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief insertVariable insert variable into line edit
- */
+/// @brief insertVariable insert variable into line edit
+//---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::insertVariable()
 {
     insertValue(ui->tableWidget->currentItem());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief insertValue insert variable into line edit
- * @param item chosen item of table widget
- */
+/// @brief insertValue insert variable into line edit
+/// @param item chosen item of table widget
+//---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::insertValue(QTableWidgetItem *item)
 {
     if (item != nullptr)
@@ -375,9 +368,8 @@ void EditFormulaDialog::insertValue(QTableWidgetItem *item)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief measurements show measurements in list
- */
+/// @brief measurements show measurements in list
+//---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::measurements()
 {
     ui->checkBoxHideEmpty->setEnabled(true);
@@ -385,9 +377,8 @@ void EditFormulaDialog::measurements()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief lineLengths show lengths of line variables in list
- */
+/// @brief lineLengths show lengths of line variables in list
+//---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::lineLengths()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
@@ -395,9 +386,8 @@ void EditFormulaDialog::lineLengths()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief arcRadii show radii of arc variables in list
- */
+/// @brief arcRadii show radii of arc variables in list
+//---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::arcRadii()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
@@ -405,9 +395,8 @@ void EditFormulaDialog::arcRadii()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief curveAngles show angles of curve variables in list
- */
+/// @brief curveAngles show angles of curve variables in list
+//---------------------------------------------------------------------------------------------------------------------
  void EditFormulaDialog::curveAngles()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
@@ -415,9 +404,8 @@ void EditFormulaDialog::arcRadii()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief curveLengths show lengths of curve variables in list
- */
+/// @brief curveLengths show lengths of curve variables in list
+//---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::curveLengths()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
@@ -425,9 +413,8 @@ void EditFormulaDialog::curveLengths()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief controlPointLengths show lengths of control point variables in list
- */
+/// @brief controlPointLengths show lengths of control point variables in list
+//---------------------------------------------------------------------------------------------------------------------
  void EditFormulaDialog::controlPointLengths()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
@@ -435,9 +422,8 @@ void EditFormulaDialog::curveLengths()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief lineAngles show angles of line variables in list
- */
+/// @brief lineAngles show angles of line variables in list
+//---------------------------------------------------------------------------------------------------------------------
  void EditFormulaDialog::lineAngles()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
@@ -445,9 +431,8 @@ void EditFormulaDialog::curveLengths()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief customVariables show custom variables in list
- */
+/// @brief customVariables show custom variables in list
+//---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::customVariables()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
@@ -455,9 +440,8 @@ void EditFormulaDialog::customVariables()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief functions show functions in list
- */
+/// @brief functions show functions in list
+//---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::functions()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
@@ -499,10 +483,8 @@ void EditFormulaDialog::showEvent(QShowEvent *event)
         resize(size);
     }
 
-    QScreen *screen = QGuiApplication::primaryScreen();
-    QRect position = frameGeometry();
-    position.moveCenter(screen->availableGeometry().center());
-    move(position.topLeft());
+    // Set the position that the dialog opens based on user preference.
+    setDialogPosition();
 
     isInitialized = true;//first show windows are held
 }
@@ -586,10 +568,9 @@ void EditFormulaDialog::setDescription(const QString &name, qreal value, const Q
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief showVariable show variables in list
- * @param var container with variables
- */
+/// @brief showVariable show variables in list
+/// @param var container with variables
+//---------------------------------------------------------------------------------------------------------------------
 template <class key, class val>
 void EditFormulaDialog::showVariable(const QMap<key, val> &var)
 {
@@ -620,10 +601,9 @@ void EditFormulaDialog::showVariable(const QMap<key, val> &var)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief showMeasurements show measurements in table
- * @param var container with measurements
- */
+/// @brief showMeasurements show measurements in table
+/// @param var container with measurements
+//---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<MeasurementVariable> > &var)
 {
     ui->tableWidget->blockSignals(true);
@@ -667,9 +647,8 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<Meas
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief showFunctions show functions in list
- */
+/// @brief showFunctions show functions in list
+//---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::showFunctions()
 {
     ui->tableWidget->blockSignals(true);

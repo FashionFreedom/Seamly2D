@@ -54,7 +54,7 @@ private:
     bool                       m_langChanged;
     VSeamlyMeSettings         *settings;
 
-    void                       initUnits(const MeasurementsType &type);
+    void                       initUnits();
 };
 
 #endif // ME_WELCOME_DIALOG_H

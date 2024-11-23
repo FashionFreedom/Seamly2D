@@ -4835,6 +4835,18 @@ Do you want to download it?</source>
         <source>Do you really want to delete?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The image &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Loading image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No image was selected...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InsertNodesDialog</name>
@@ -7192,10 +7204,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open Image File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Zoom to Point</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7349,10 +7357,6 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Can&apos;t create a path</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9876,6 +9880,18 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Backward (from end point)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Image File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
