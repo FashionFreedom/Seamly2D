@@ -1,6 +1,5 @@
 var NAVTREEINDEX19 =
 {
-"d4/da4/def_8h.html#a76d9a90fa899857cf4616065998e6178a47c14840d8e15331fa420b9b2f757cd9":[2,0,0,1,8,6,37,1],
 "d4/da4/def_8h.html#a76d9a90fa899857cf4616065998e6178a60201241f8a110ff2fb5ee72a507f3c4":[2,0,0,1,8,6,37,4],
 "d4/da4/def_8h.html#a76d9a90fa899857cf4616065998e6178a6f8706a42ffde90d8d12ab11f7e4bd1e":[2,0,0,1,8,6,37,7],
 "d4/da4/def_8h.html#a76d9a90fa899857cf4616065998e6178a759c1b50a557f26c1af2cddc11c366bb":[2,0,0,1,8,6,37,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX19 =
 "d4/dc0/classVAbstractFloatItemData.html#ac22522a705278b671bbe7435ddc24d77":[1,0,234,2],
 "d4/dc0/classVAbstractFloatItemData.html#ac85bd522798d768e30d57dd377275711":[1,0,234,3],
 "d4/dc0/classVAbstractFloatItemData.html#acc161ead747a96126edf06d15b77bf1b":[1,0,234,9],
-"d4/dc0/classVAbstractFloatItemData.html#af3490e5d93c69417347be4d6b233d4dc":[1,0,234,6]
+"d4/dc0/classVAbstractFloatItemData.html#af3490e5d93c69417347be4d6b233d4dc":[1,0,234,6],
+"d4/dc5/classVisToolHeight.html":[1,0,316]
 };

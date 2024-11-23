@@ -1,6 +1,5 @@
 var NAVTREEINDEX44 =
 {
-"db/d02/classVCubicBezierData.html#ab56147fe87a127ec004d33d310e51107":[1,0,261,4],
 "db/d02/classVCubicBezierData.html#ad0f9f9afb6a6d37c2dbc4d6d5b898758":[1,0,261,3],
 "db/d02/classVCubicBezierData.html#ad350ee08cbf8b8ae56082d1f5bd18c95":[1,0,261,5],
 "db/d02/classVCubicBezierData.html#af92c5c28e7e9b2a99b2e2f7ea3c56cc6":[1,0,261,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX44 =
 "db/d4d/classDialogArc.html#a0280a8098f5a5923893f6a5eec60e94b":[1,0,40,38],
 "db/d4d/classDialogArc.html#a04444c1f660fc8d62fd7014a097bdcb7":[1,0,40,16],
 "db/d4d/classDialogArc.html#a09fdc98963f6b86d4decfd9c02af25c6":[1,0,40,41],
-"db/d4d/classDialogArc.html#a0a7eb1fa6df4d1d4016a50cdbae5bb92":[1,0,40,24]
+"db/d4d/classDialogArc.html#a0a7eb1fa6df4d1d4016a50cdbae5bb92":[1,0,40,24],
+"db/d4d/classDialogArc.html#a0f8ac0f8a1442ceb09ebaf3ce5cd38b1":[1,0,40,9]
 };

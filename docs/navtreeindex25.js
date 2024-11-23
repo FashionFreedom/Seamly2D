@@ -1,6 +1,5 @@
 var NAVTREEINDEX25 =
 {
-"d5/ddf/classVContourData.html":[1,0,258],
 "d5/ddf/classVContourData.html#a15ffb40c46fd781275e1bac6a714691f":[1,0,258,3],
 "d5/ddf/classVContourData.html#a240f5c1f30e9ea9276a4d4c168bef507":[1,0,258,0],
 "d5/ddf/classVContourData.html#a4257c770120cd1a46df7790837927437":[1,0,258,8],
@@ -249,5 +248,6 @@ var NAVTREEINDEX25 =
 "d6/d1a/classMainWindow.html#a09f1fbd5619f27fb1c0f3dbb57eaeeeb":[1,0,116,57],
 "d6/d1a/classMainWindow.html#a0a0452233f91fdcd0cd379bfff74d5c1":[1,0,116,89],
 "d6/d1a/classMainWindow.html#a0a150d6266fd0621755f227dc02d76fb":[1,0,116,231],
-"d6/d1a/classMainWindow.html#a0a35b4d3e3ffb84473a02209e21166d5":[1,0,116,229]
+"d6/d1a/classMainWindow.html#a0a35b4d3e3ffb84473a02209e21166d5":[1,0,116,229],
+"d6/d1a/classMainWindow.html#a0afd7b6dd01b69d8ae03410e2d464019":[1,0,116,165]
 };

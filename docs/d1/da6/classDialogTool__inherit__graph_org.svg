@@ -1966,38 +1966,37 @@
 <g id="node46" class="node">
 <title>Node46</title>
 <g id="a_node46"><a xlink:href="../../d0/dc3/classUnionDialog.html" target="_top" xlink:title="The UnionDialog class dialog for Union Tool.">
-<polygon fill="white" stroke="black" points="7326,-182 7326,-448 7436,-448 7436,-182 7326,-182"/>
-<text text-anchor="middle" x="7381" y="-436" font-family="Helvetica,sans-Serif" font-size="10.00">UnionDialog</text>
-<polyline fill="none" stroke="black" points="7326,-429 7436,-429 "/>
-<text text-anchor="start" x="7334" y="-417" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="7334" y="-406" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; piece1_Index</text>
-<text text-anchor="start" x="7334" y="-395" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; piece2_Index</text>
-<text text-anchor="start" x="7334" y="-384" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d1</text>
-<text text-anchor="start" x="7334" y="-373" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d2</text>
-<text text-anchor="start" x="7334" y="-362" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; numberD</text>
-<text text-anchor="start" x="7334" y="-351" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; numberP</text>
-<text text-anchor="start" x="7334" y="-340" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p1</text>
-<text text-anchor="start" x="7334" y="-329" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p2</text>
-<text text-anchor="start" x="7334" y="-318" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_beep</text>
-<polyline fill="none" stroke="black" points="7326,-311 7436,-311 "/>
-<text text-anchor="start" x="7334" y="-299" font-family="Helvetica,sans-Serif" font-size="10.00">+ UnionDialog()</text>
-<text text-anchor="start" x="7334" y="-288" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~UnionDialog()</text>
-<text text-anchor="start" x="7334" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPiece1Id()</text>
-<text text-anchor="start" x="7334" y="-266" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPiece2Id()</text>
-<text text-anchor="start" x="7334" y="-255" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPiece1Index()</text>
-<text text-anchor="start" x="7334" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPiece2Index()</text>
-<text text-anchor="start" x="7334" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">+ retainPieces()</text>
-<text text-anchor="start" x="7334" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
-<text text-anchor="start" x="7334" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CheckObject()</text>
-<text text-anchor="start" x="7334" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; checkPiece()</text>
-<text text-anchor="start" x="7334" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; chosenPiece()</text>
+<polygon fill="white" stroke="black" points="7326,-187.5 7326,-442.5 7436,-442.5 7436,-187.5 7326,-187.5"/>
+<text text-anchor="middle" x="7381" y="-430.5" font-family="Helvetica,sans-Serif" font-size="10.00">UnionDialog</text>
+<polyline fill="none" stroke="black" points="7326,-423.5 7436,-423.5 "/>
+<text text-anchor="start" x="7334" y="-411.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="7334" y="-400.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; piece1_Index</text>
+<text text-anchor="start" x="7334" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; piece2_Index</text>
+<text text-anchor="start" x="7334" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d1</text>
+<text text-anchor="start" x="7334" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d2</text>
+<text text-anchor="start" x="7334" y="-356.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; numberD</text>
+<text text-anchor="start" x="7334" y="-345.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; numberP</text>
+<text text-anchor="start" x="7334" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p1</text>
+<text text-anchor="start" x="7334" y="-323.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p2</text>
+<text text-anchor="start" x="7334" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_beep</text>
+<polyline fill="none" stroke="black" points="7326,-305.5 7436,-305.5 "/>
+<text text-anchor="start" x="7334" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ UnionDialog()</text>
+<text text-anchor="start" x="7334" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~UnionDialog()</text>
+<text text-anchor="start" x="7334" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPiece1Id()</text>
+<text text-anchor="start" x="7334" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPiece2Id()</text>
+<text text-anchor="start" x="7334" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPiece1Index()</text>
+<text text-anchor="start" x="7334" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPiece2Index()</text>
+<text text-anchor="start" x="7334" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
+<text text-anchor="start" x="7334" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CheckObject()</text>
+<text text-anchor="start" x="7334" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isPieceValid()</text>
+<text text-anchor="start" x="7334" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; chosenPiece()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node46 -->
 <g id="edge46" class="edge">
 <title>Node1&#45;&gt;Node46</title>
-<path fill="none" stroke="midnightblue" d="M3828.38,-1004.09C4370.67,-983.81 7050.72,-871.84 7317,-630 7366.83,-584.74 7383.86,-512.12 7387.95,-448.11"/>
+<path fill="none" stroke="midnightblue" d="M3828.38,-1004.09C4370.67,-983.81 7050.72,-871.84 7317,-630 7368.27,-583.43 7384.81,-507.89 7388.28,-442.58"/>
 <polygon fill="none" stroke="midnightblue" points="3828.11,-1000.59 3818.25,-1004.46 3828.37,-1007.59 3828.11,-1000.59"/>
 </g>
 <!-- Node2 -->

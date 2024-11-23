@@ -1,6 +1,5 @@
 var NAVTREEINDEX8 =
 {
-"d2/d43/classDialogLineIntersectAxis.html#a36651ef205e1188eb87164da129fad39":[1,0,58,25],
 "d2/d43/classDialogLineIntersectAxis.html#a3c7532b54712b31a5c3d20f6de577094":[1,0,58,2],
 "d2/d43/classDialogLineIntersectAxis.html#a3d11d13182dbb2d9e4b43829e0fa59b2":[1,0,58,6],
 "d2/d43/classDialogLineIntersectAxis.html#a3f4aa668629340b08aa4f2e7bdd73982":[1,0,58,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX8 =
 "d2/d7b/classDialogTool.html#af22322ef9635afe7edd04ecb5a99d606":[1,0,76,0],
 "d2/d7b/classDialogTool.html#af503e383e8d38ee0c3a257097ce07050":[1,0,76,48],
 "d2/d7b/classDialogTool.html#af5329ca717794e40fe429d8535bda252":[1,0,76,12],
-"d2/d7b/classDialogTool.html#af877cbf87f21cb27e263b2cacfab245c":[1,0,76,17]
+"d2/d7b/classDialogTool.html#af877cbf87f21cb27e263b2cacfab245c":[1,0,76,17],
+"d2/d7b/classDialogTool.html#af9467b65f15e412b823d5097141437f6":[1,0,76,53]
 };

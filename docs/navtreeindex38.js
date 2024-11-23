@@ -1,6 +1,5 @@
 var NAVTREEINDEX38 =
 {
-"d9/d54/classVAbstractArc.html#a21d8b73bd84ba308515d948a6d5c46d4":[1,0,226,1],
 "d9/d54/classVAbstractArc.html#a2d914f3405e491e19700f71c0496e39e":[1,0,226,26],
 "d9/d54/classVAbstractArc.html#a2f5f0b45bb578eff97a9f01030d01416":[1,0,226,0],
 "d9/d54/classVAbstractArc.html#a44db3860e3e434e7a9d11cacfcbf0cec":[1,0,226,25],
@@ -249,5 +248,6 @@ var NAVTREEINDEX38 =
 "d9/d86/classVToolCutSpline.html#a0ccdc63f907e8ce61567533bc8501800":[1,0,409,10],
 "d9/d86/classVToolCutSpline.html#a41c455c950471ee4cba0ee52bd237b87":[1,0,409,5],
 "d9/d86/classVToolCutSpline.html#a5c8eb7e605e25f12d87e2f6de8a6c4a3":[1,0,409,4],
-"d9/d86/classVToolCutSpline.html#a6a77ccc2229301b9608dfc02d74c0ce8":[1,0,409,12]
+"d9/d86/classVToolCutSpline.html#a6a77ccc2229301b9608dfc02d74c0ce8":[1,0,409,12],
+"d9/d86/classVToolCutSpline.html#a754ccf9917a467d3358654cfc4eed4c6":[1,0,409,6]
 };

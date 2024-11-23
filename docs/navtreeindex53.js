@@ -1,6 +1,5 @@
 var NAVTREEINDEX53 =
 {
-"dd/d20/classRenameDraftBlock.html#adedd3bc1a0bebc4827cbe957b42b5e7e":[1,0,169,9],
 "dd/d20/classRenameDraftBlock.html#aec7bfbeb4ca2f40e40879a00c5f48cc2":[1,0,169,7],
 "dd/d20/classRenameDraftBlock.html#af84949bd3fcdc9345ae1bff9059c0e56":[1,0,169,4],
 "dd/d20/qmutokenparser_8cpp.html":[2,0,0,1,2,21],
@@ -249,5 +248,6 @@ var NAVTREEINDEX53 =
 "dd/d63/classDialogAlongLine.html#a935985d2f866c7bb4a38fc83a420d4ff":[1,0,39,26],
 "dd/d63/classDialogAlongLine.html#a965dba37edc7603458dbe0798764ffbf":[1,0,39,10],
 "dd/d63/classDialogAlongLine.html#a9db2d5d2555cac469c0485c5256db008":[1,0,39,0],
-"dd/d63/classDialogAlongLine.html#a9fc012205c8d2f993a118e2085c71d30":[1,0,39,12]
+"dd/d63/classDialogAlongLine.html#a9fc012205c8d2f993a118e2085c71d30":[1,0,39,12],
+"dd/d63/classDialogAlongLine.html#aa8c098bbf1c267de9413b9762c84ce2a":[1,0,39,17]
 };

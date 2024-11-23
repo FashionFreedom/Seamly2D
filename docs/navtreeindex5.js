@@ -1,6 +1,5 @@
 var NAVTREEINDEX5 =
 {
-"d1/d64/classPointIntersectXYDialog.html#a9942081089a4f994332c2f7691b702a9":[1,0,150,11],
 "d1/d64/classPointIntersectXYDialog.html#aa3c6490e794da4f8f31006d6de6b7040":[1,0,150,14],
 "d1/d64/classPointIntersectXYDialog.html#ab4905fd09133a7f323c41d22f24ed2c3":[1,0,150,17],
 "d1/d64/classVGraphicsFillItem.html":[1,0,296],
@@ -249,5 +248,6 @@ var NAVTREEINDEX5 =
 "d1/d98/classVToolCutArc.html#aaa83bf014b3658128d6ba3f2f61de68c":[1,0,408,10],
 "d1/d98/classVToolCutArc.html#abe67adf3469f256adaceab31572a3165":[1,0,408,0],
 "d1/d98/classVToolCutArc.html#ac983c8441a23b45d1bc6381d8df58716":[1,0,408,9],
-"d1/d98/classVToolCutArc.html#aedc03bedde360aec2cd2b11135937361":[1,0,408,8]
+"d1/d98/classVToolCutArc.html#aedc03bedde360aec2cd2b11135937361":[1,0,408,8],
+"d1/d98/classVToolCutArc.html#afbabe27359103946bb1eae79f950a706":[1,0,408,5]
 };

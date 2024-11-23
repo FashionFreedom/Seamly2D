@@ -1,6 +1,5 @@
 var NAVTREEINDEX30 =
 {
-"d7/d1a/libs_2vformat_2stable_8h.html":[2,0,0,1,5,3],
 "d7/d1a/libs_2vformat_2stable_8h_source.html":[2,0,0,1,5,3],
 "d7/d1b/pen__toolbar_8cpp.html":[2,0,0,1,14,23],
 "d7/d1b/pen__toolbar_8cpp_source.html":[2,0,0,1,14,23],
@@ -249,5 +248,6 @@ var NAVTREEINDEX30 =
 "d7/d7b/classVPE_1_1VStringProperty.html#afeed218d959f092513412154d931d307":[1,0,2,21,16],
 "d7/d7b/test_2Seamly2DTest_2stable_8cpp.html":[2,0,0,2,2,1],
 "d7/d7b/test_2Seamly2DTest_2stable_8cpp_source.html":[2,0,0,2,2,1],
-"d7/d7c/dialogaboutseamlyme_8cpp.html":[2,0,0,0,1,0,1]
+"d7/d7c/dialogaboutseamlyme_8cpp.html":[2,0,0,0,1,0,1],
+"d7/d7c/dialogaboutseamlyme_8cpp_source.html":[2,0,0,0,1,0,1]
 };

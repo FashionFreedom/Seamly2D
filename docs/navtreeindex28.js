@@ -1,6 +1,5 @@
 var NAVTREEINDEX28 =
 {
-"d6/d6b/classVToolBisector.html#a1c6b3f6d7c7de121a98b849981828905":[1,0,403,5],
 "d6/d6b/classVToolBisector.html#a277cfa4f6d3938cf0b58e4a6920db0e8":[1,0,403,11],
 "d6/d6b/classVToolBisector.html#a2f65c2dd7084a175c822d72a27c04043":[1,0,403,16],
 "d6/d6b/classVToolBisector.html#a31c2f4dbd71c548eeaf8eedd7fd4581d":[1,0,403,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX28 =
 "d6/db3/classAddToCalc.html#a5cd523dadf31f0c8acd2a9d299a18edc":[1,0,13,6],
 "d6/db3/classAddToCalc.html#a8589f15dacf20bd86c13f4cfb7c3f2ce":[1,0,13,0],
 "d6/db3/classAddToCalc.html#aa1efe50a51c1a9c2fe92cabd1c1fa3a5":[1,0,13,2],
-"d6/db3/classAddToCalc.html#abdf08c1d91051bdf20cb526eeb23be53":[1,0,13,3]
+"d6/db3/classAddToCalc.html#abdf08c1d91051bdf20cb526eeb23be53":[1,0,13,3],
+"d6/db3/classAddToCalc.html#acc2d1c8550a0ba5552b356c3327d5f84":[1,0,13,5]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"d0/df1/classDialogMove.html#a283781484252b98c273bafac6cc2eed8":[1,0,61,5],
 "d0/df1/classDialogMove.html#a353b957dedb519261085e15e4967a57c":[1,0,61,31],
 "d0/df1/classDialogMove.html#a36920ff4d2bdf5e9e74b908781fb1507":[1,0,61,6],
 "d0/df1/classDialogMove.html#a375deca1d4cc724b89541d46f509f4ac":[1,0,61,12],
@@ -249,5 +248,6 @@ var NAVTREEINDEX4 =
 "d1/d64/classPointIntersectXYDialog.html#a838837dba859f97602d62f64b99bfe89":[1,0,150,10],
 "d1/d64/classPointIntersectXYDialog.html#a86af99f1e14355fd0e01330ac6510638":[1,0,150,3],
 "d1/d64/classPointIntersectXYDialog.html#a94c58dc1d7db3ead35a30ec759ca7307":[1,0,150,6],
-"d1/d64/classPointIntersectXYDialog.html#a9525aefacfef4e12ffa69b4f74465306":[1,0,150,0]
+"d1/d64/classPointIntersectXYDialog.html#a9525aefacfef4e12ffa69b4f74465306":[1,0,150,0],
+"d1/d64/classPointIntersectXYDialog.html#a9942081089a4f994332c2f7691b702a9":[1,0,150,11]
 };

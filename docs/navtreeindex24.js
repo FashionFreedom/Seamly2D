@@ -1,6 +1,5 @@
 var NAVTREEINDEX24 =
 {
-"d5/db0/classVAbstractCurveData.html#abd951c8829b340a7d1a5c24135516145":[1,0,233,6],
 "d5/db0/classVAbstractCurveData.html#ae2acdd1d5b6b293c884b01b87bf9d119":[1,0,233,1],
 "d5/db0/classVAbstractCurveData.html#af3d3c194be6fdcb4841edeec90d95931":[1,0,233,7],
 "d5/db9/dialogsplinepath_8h.html":[2,0,0,1,13,0,1,64],
@@ -249,5 +248,6 @@ var NAVTREEINDEX24 =
 "d5/dd9/classPenToolBar.html#af36bbd20283b5e0cd8a38b9b6f3c0824":[1,0,144,4],
 "d5/dd9/classPenToolBar.html#af4f6c6b90f4aeb2c1e64a1d1240b8c16":[1,0,144,5],
 "d5/dd9/vcolorproperty_8h.html":[2,0,0,1,11,0,12],
-"d5/dd9/vcolorproperty_8h_source.html":[2,0,0,1,11,0,12]
+"d5/dd9/vcolorproperty_8h_source.html":[2,0,0,1,11,0,12],
+"d5/ddf/classVContourData.html":[1,0,258]
 };

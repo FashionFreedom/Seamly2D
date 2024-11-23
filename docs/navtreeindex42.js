@@ -1,6 +1,5 @@
 var NAVTREEINDEX42 =
 {
-"da/d92/namespaceqmu.html#a530c023abef015ddf300e34470b7b4b7a6a721284431db71fe6b6b57e5348758a":[0,0,19,50,22],
 "da/d92/namespaceqmu.html#a530c023abef015ddf300e34470b7b4b7a6efe475581a0b58312bd2983d5c0f1e1":[0,0,19,50,2],
 "da/d92/namespaceqmu.html#a530c023abef015ddf300e34470b7b4b7a7445c66050c72d42713e6f3e1f26bda1":[0,0,19,50,23],
 "da/d92/namespaceqmu.html#a530c023abef015ddf300e34470b7b4b7a7829c9b0000187865c69bdc9b3abc652":[0,0,19,50,9],
@@ -249,5 +248,6 @@ var NAVTREEINDEX42 =
 "da/dbc/classVToolSinglePoint.html#af5144077dc4228e070ceff9833685a59":[1,0,432,18],
 "da/dbc/dialogdatetimeformats_8cpp.html":[2,0,0,0,0,1,9],
 "da/dbc/dialogdatetimeformats_8cpp_source.html":[2,0,0,0,0,1,9],
-"da/dbf/intersect__circles__visual_8cpp.html":[2,0,0,1,13,3,0,3]
+"da/dbf/intersect__circles__visual_8cpp.html":[2,0,0,1,13,3,0,3],
+"da/dbf/intersect__circles__visual_8cpp_source.html":[2,0,0,1,13,3,0,3]
 };

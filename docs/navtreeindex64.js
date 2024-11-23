@@ -1,6 +1,5 @@
 var NAVTREEINDEX64 =
 {
-"df/d89/classVPE_1_1VFileEditWidget.html#af3a9fff0daef7c873ae825088c370509":[1,0,2,11,21],
 "df/d89/classVPE_1_1VFileEditWidget.html#af70de8d1ec28d384a26c22ce41f163a5":[1,0,2,11,12],
 "df/d89/classVPE_1_1VFileEditWidget.html#aff064e71f91f4886f4f98e2db257bb55":[1,0,2,11,19],
 "df/d93/classVNodeArc.html":[1,0,355],
@@ -249,5 +248,6 @@ var NAVTREEINDEX64 =
 "df/de1/classVPiecePath.html#a64514076b2ee3b23f2926ce07c42401f":[1,0,375,14],
 "df/de1/classVPiecePath.html#a6497733c635eb09fe44a8e4d710bf481":[1,0,375,10],
 "df/de1/classVPiecePath.html#a6616532129e32dc068ce4560588fe417":[1,0,375,29],
-"df/de1/classVPiecePath.html#a6c420b73d839af901a9ce69409227e63":[1,0,375,31]
+"df/de1/classVPiecePath.html#a6c420b73d839af901a9ce69409227e63":[1,0,375,31],
+"df/de1/classVPiecePath.html#a6cae1535d9644811ce0638b81b487232":[1,0,375,41]
 };

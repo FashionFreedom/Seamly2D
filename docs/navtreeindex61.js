@@ -1,6 +1,5 @@
 var NAVTREEINDEX61 =
 {
-"de/d8e/classShortcutsDialog.html#a64dff46391c4f77453a12abe1781df22":[1,0,181,7],
 "de/d8e/classShortcutsDialog.html#a743f026f744220b414345fcce910b06d":[1,0,181,5],
 "de/d8e/classShortcutsDialog.html#a794e7a9416220912261aeff4ecf45563":[1,0,181,6],
 "de/d8e/classShortcutsDialog.html#a93f6ced54110b296aa0572472ca7cc6a":[1,0,181,4],
@@ -249,5 +248,6 @@ var NAVTREEINDEX61 =
 "de/dbd/classExportLayoutDialog.html#a07800061e1ca0bcfa01a245e65cdccc5":[1,0,92,21],
 "de/dbd/classExportLayoutDialog.html#a0ca1915821513f3252add92a83ed5ea3":[1,0,92,24],
 "de/dbd/classExportLayoutDialog.html#a1a5efe09de3ef0d949bbabb83bcd017b":[1,0,92,13],
-"de/dbd/classExportLayoutDialog.html#a1b22ea63dad7a9bee4f73a851ccb12f7":[1,0,92,6]
+"de/dbd/classExportLayoutDialog.html#a1b22ea63dad7a9bee4f73a851ccb12f7":[1,0,92,6],
+"de/dbd/classExportLayoutDialog.html#a212ce58f1c02935143d44fad1f0a59a3":[1,0,92,10]
 };

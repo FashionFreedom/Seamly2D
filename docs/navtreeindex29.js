@@ -1,6 +1,5 @@
 var NAVTREEINDEX29 =
 {
-"d6/db3/classAddToCalc.html#acc2d1c8550a0ba5552b356c3327d5f84":[1,0,13,5],
 "d6/db3/classAddToCalc.html#af132010eddab62a027ea9398c9dd2d63":[1,0,13,1],
 "d6/db7/vtooldoublepoint_8h.html":[2,0,0,1,13,1,0,2,0,1],
 "d6/db7/vtooldoublepoint_8h_source.html":[2,0,0,1,13,1,0,2,0,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX29 =
 "d7/d18/classRemoveGroupItem.html#a98800c12ad6b679a15bd39fff6f85664":[1,0,168,5],
 "d7/d18/classRemoveGroupItem.html#acd1e2baf0c90ca03d6dd8366fdbf0e90":[1,0,168,4],
 "d7/d18/pieces__widget_8h.html":[2,0,0,0,0,1,31],
-"d7/d18/pieces__widget_8h_source.html":[2,0,0,0,0,1,31]
+"d7/d18/pieces__widget_8h_source.html":[2,0,0,0,0,1,31],
+"d7/d1a/libs_2vformat_2stable_8h.html":[2,0,0,1,5,3]
 };

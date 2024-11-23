@@ -1,6 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"d1/d98/classVToolCutArc.html#afbabe27359103946bb1eae79f950a706":[1,0,408,5],
 "d1/d98/classVToolCutArc.html#afbe13f6de9bce835f71bfa6aca585089":[1,0,408,3],
 "d1/d99/classVExceptionConversionError.html":[1,0,279],
 "d1/d99/classVExceptionConversionError.html#a101a90aa485fcb96640f4ad8b14086c7":[1,0,279,6],
@@ -249,5 +248,6 @@ var NAVTREEINDEX6 =
 "d1/ddf/vtoolcutsplinepath_8cpp_source.html":[2,0,0,1,13,1,0,2,1,0,6],
 "d1/de1/classVisToolInternalPath.html":[1,0,317],
 "d1/de1/classVisToolInternalPath.html#a04d2d8f2b299bb434a21409cfa000187":[1,0,317,2],
-"d1/de1/classVisToolInternalPath.html#a1dca9c4a01ac5397f2ceadc02a82996a":[1,0,317,6]
+"d1/de1/classVisToolInternalPath.html#a1dca9c4a01ac5397f2ceadc02a82996a":[1,0,317,6],
+"d1/de1/classVisToolInternalPath.html#a3063b419ef0646f773e91fad323048ec":[1,0,317,5]
 };
