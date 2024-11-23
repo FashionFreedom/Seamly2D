@@ -55,7 +55,7 @@ private:
     bool                       m_selectionSoundChanged;
     VSettings                 *settings;
 
-    void                       initUnits(const MeasurementsType &type);
+    void                       initUnits();
 };
 
 #endif // WELCOME_DIALOG_H

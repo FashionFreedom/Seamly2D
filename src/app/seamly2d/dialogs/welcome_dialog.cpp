@@ -44,7 +44,7 @@ SeamlyWelcomeDialog::SeamlyWelcomeDialog(QWidget *parent)
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
     //-------------------- Units setup
-    initUnits(MeasurementsType::Individual);
+    initUnits();
 
     //-------------------- Decimal separator setup
     ui->separator_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
@@ -112,7 +112,7 @@ void SeamlyWelcomeDialog::apply()
 
 //---------------------------------------------------------------------------------------------------------------------
 // @brief changeEvent handle event changes
-// @param type event type
+//---------------------------------------------------------------------------------------------------------------------
 void SeamlyWelcomeDialog::changeEvent(QEvent *event)
 {
     if (event->type() == QEvent::LanguageChange)
@@ -135,11 +135,10 @@ void SeamlyWelcomeDialog::seperatorChanged()
     ui->separator_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(seperator));
 }
 
-
 //---------------------------------------------------------------------------------------------------------------------
 // @brief initUnits initinailize the units combobox
-// @param type measurment type
-void SeamlyWelcomeDialog::initUnits(const MeasurementsType &type)
+//---------------------------------------------------------------------------------------------------------------------
+void SeamlyWelcomeDialog::initUnits()
 {
     ui->units_ComboBox->addItem(tr("Centimeters"), unitCM);
     ui->units_ComboBox->addItem(tr("Millimeters"), unitMM);
