@@ -45,6 +45,10 @@ public:
 private:
     QDomDocument mergeSvgDoms();
 
+    void removeEmptyGroups(QDomElement &mainGroup);
+    void removeEmptyOriginPath(QDomElement &mainGroup);
+    void cleanSvg(QDomElement &mainGroup);
+
     QGraphicsRectItem *m_paper;
     QString m_filepath;
     QString m_description;
