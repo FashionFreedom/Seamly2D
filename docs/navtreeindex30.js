@@ -1,5 +1,8 @@
 var NAVTREEINDEX30 =
 {
+"d7/d18/classRemoveGroupItem.html#acd1e2baf0c90ca03d6dd8366fdbf0e90":[1,0,168,4],
+"d7/d18/pieces__widget_8h.html":[2,0,0,0,0,1,31],
+"d7/d18/pieces__widget_8h_source.html":[2,0,0,0,0,1,31],
 "d7/d1a/libs_2vformat_2stable_8h.html":[2,0,0,1,5,3],
 "d7/d1a/libs_2vformat_2stable_8h_source.html":[2,0,0,1,5,3],
 "d7/d1b/pen__toolbar_8cpp.html":[2,0,0,1,14,23],
@@ -246,8 +249,5 @@ var NAVTREEINDEX30 =
 "d7/d7b/classVPE_1_1VStringProperty.html#ac6d40e5dda7a6772f11b618862bbd10b":[1,0,2,21,4],
 "d7/d7b/classVPE_1_1VStringProperty.html#adc1df99bacf5e38db030277fe9a66d20":[1,0,2,21,19],
 "d7/d7b/classVPE_1_1VStringProperty.html#af3edcc5e1b5fd42d53d6aa6e6bbad865":[1,0,2,21,0],
-"d7/d7b/classVPE_1_1VStringProperty.html#afeed218d959f092513412154d931d307":[1,0,2,21,16],
-"d7/d7b/test_2Seamly2DTest_2stable_8cpp.html":[2,0,0,2,2,1],
-"d7/d7b/test_2Seamly2DTest_2stable_8cpp_source.html":[2,0,0,2,2,1],
-"d7/d7c/dialogaboutseamlyme_8cpp.html":[2,0,0,0,1,0,1]
+"d7/d7b/classVPE_1_1VStringProperty.html#afeed218d959f092513412154d931d307":[1,0,2,21,16]
 };

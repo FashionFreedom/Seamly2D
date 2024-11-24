@@ -1,5 +1,8 @@
 var NAVTREEINDEX50 =
 {
+"dc/d74/classVFormulaPropertyEditor.html#a51fc0dd85c1ef82ed420d99bf5fbe7a0":[1,0,288,3],
+"dc/d74/classVFormulaPropertyEditor.html#a5664fe51ceed9eeffa748eb9eb07c005":[1,0,288,6],
+"dc/d74/classVFormulaPropertyEditor.html#a5dd1a0b84a4659516c71db866199b72d":[1,0,288,4],
 "dc/d74/classVFormulaPropertyEditor.html#a6c0f8bea355bff5f2fce8efc909bf7fe":[1,0,288,0],
 "dc/d74/classVFormulaPropertyEditor.html#aaf46cd8de8eebab5b8277c3a10c0867b":[1,0,288,9],
 "dc/d74/classVFormulaPropertyEditor.html#ac6c4092d01c2e1f7671cdf68542b6c87":[1,0,288,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX50 =
 "dc/d94/namespaceanonymous__namespace_02vabstracttool_8cpp_03.html#afe8ee413200e830c15092676c305cf93":[0,0,6,1],
 "dc/d9a/decimalchart__dialog_8h.html":[2,0,0,0,0,1,8],
 "dc/d9a/decimalchart__dialog_8h_source.html":[2,0,0,0,0,1,8],
-"dc/d9b/classShowOperationPointName.html":[1,0,184],
-"dc/d9b/classShowOperationPointName.html#a1c85d19fd2992ade543db7abe782be8b":[1,0,184,1],
-"dc/d9b/classShowOperationPointName.html#a4dfdff467c11afc6d3148436e8f07340":[1,0,184,7],
-"dc/d9b/classShowOperationPointName.html#a6dafdbf847ea3ffc2a72cc911d0e2589":[1,0,184,0]
+"dc/d9b/classShowOperationPointName.html":[1,0,184]
 };

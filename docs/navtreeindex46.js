@@ -1,5 +1,8 @@
 var NAVTREEINDEX46 =
 {
+"db/d76/classVisPath.html#a2db2203ace9494354a920d51c13a35f2":[1,0,303,2],
+"db/d76/classVisPath.html#aa00ad73e91c41aeb8ed9b432b94ad2f6":[1,0,303,5],
+"db/d76/classVisPath.html#aab05748eaa5f1b8045c0fe6eb8f8c2a0":[1,0,303,1],
 "db/d76/classVisPath.html#ac9ab0de4fcfaf1982fc1f750120fec47":[1,0,303,4],
 "db/d76/classVisPath.html#acd2e830a9ce2dd7f86aee0cfe2d566fb":[1,0,303,3],
 "db/d7b/classVToolInternalPath.html":[1,0,415],
@@ -246,8 +249,5 @@ var NAVTREEINDEX46 =
 "db/dd6/classVDxfEngine.html#a1ae5bfa36e82dcbeaac331e3b6ccb136":[1,0,273,30],
 "db/dd6/classVDxfEngine.html#a1dc57e9692cd7ab5466df69edd51fff0":[1,0,273,29],
 "db/dd6/classVDxfEngine.html#a1ee81740b6ed9eb9156a1f6c3556272c":[1,0,273,28],
-"db/dd6/classVDxfEngine.html#a1f41aacfbeb5a9675f3a2e114889b484":[1,0,273,27],
-"db/dd6/classVDxfEngine.html#a31bfd9604273698d370d70690bd1ee87":[1,0,273,45],
-"db/dd6/classVDxfEngine.html#a36e4222638817a8da62408372362f7be":[1,0,273,14],
-"db/dd6/classVDxfEngine.html#a3829f1344ef540379b614ef79d2352fd":[1,0,273,23]
+"db/dd6/classVDxfEngine.html#a1f41aacfbeb5a9675f3a2e114889b484":[1,0,273,27]
 };

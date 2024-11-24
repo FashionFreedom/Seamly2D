@@ -54,34 +54,34 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="../../db/d3f/vwidgetproperty_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="211.5,-67.5 211.5,-97.5 357.5,-97.5 357.5,-67.5 211.5,-67.5"/>
-<text text-anchor="start" x="219.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpropertyexplorer</text>
-<text text-anchor="middle" x="284.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/plugins/vwidgetproperty.h</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
-<title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M284.5,-124.11C284.5,-115.15 284.5,-105.32 284.5,-97.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="281,-124.4 284.5,-134.4 288,-124.4 281,-124.4"/>
-</g>
-<!-- Node5 -->
-<g id="node5" class="node">
-<title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d7/d24/vproperties_8h.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="../../d7/d24/vproperties_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="374.5,-0.5 374.5,-30.5 516.5,-30.5 516.5,-0.5 374.5,-0.5"/>
 <text text-anchor="start" x="382.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpropertyexplorer</text>
 <text text-anchor="middle" x="445.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vproperties.h</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node5 -->
-<g id="edge7" class="edge">
-<title>Node1&#45;&gt;Node5</title>
+<!-- Node1&#45;&gt;Node4 -->
+<g id="edge3" class="edge">
+<title>Node1&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M320.04,-129.23C334.96,-120.48 352.14,-109.53 366.5,-98 392.78,-76.9 419.2,-47.63 433.85,-30.51"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="318.02,-126.35 311.09,-134.37 321.5,-132.42 318.02,-126.35"/>
+</g>
+<!-- Node5 -->
+<g id="node5" class="node">
+<title>Node5</title>
+<g id="a_node5"><a xlink:href="../../db/d3f/vwidgetproperty_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="211.5,-67.5 211.5,-97.5 357.5,-97.5 357.5,-67.5 211.5,-67.5"/>
+<text text-anchor="start" x="219.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpropertyexplorer</text>
+<text text-anchor="middle" x="284.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/plugins/vwidgetproperty.h</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node5 -->
+<g id="edge4" class="edge">
+<title>Node1&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M284.5,-124.11C284.5,-115.15 284.5,-105.32 284.5,-97.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="281,-124.4 284.5,-134.4 288,-124.4 281,-124.4"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
@@ -99,15 +99,15 @@
 <path fill="none" stroke="midnightblue" d="M339.87,-131.44C374.07,-120.91 417.43,-107.55 449.69,-97.61"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="338.55,-128.19 330.02,-134.48 340.61,-134.88 338.55,-128.19"/>
 </g>
-<!-- Node4&#45;&gt;Node3 -->
-<g id="edge4" class="edge">
-<title>Node4&#45;&gt;Node3</title>
+<!-- Node5&#45;&gt;Node3 -->
+<g id="edge5" class="edge">
+<title>Node5&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M238.45,-63.68C211.5,-53.26 177.96,-40.28 152.88,-30.58"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="237.46,-67.05 248.05,-67.4 239.98,-60.52 237.46,-67.05"/>
 </g>
-<!-- Node4&#45;&gt;Node5 -->
-<g id="edge5" class="edge">
-<title>Node4&#45;&gt;Node5</title>
+<!-- Node5&#45;&gt;Node4 -->
+<g id="edge6" class="edge">
+<title>Node5&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M328.98,-63.54C354.74,-53.14 386.7,-40.24 410.63,-30.58"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="327.4,-60.41 319.43,-67.4 330.02,-66.9 327.4,-60.41"/>
 </g>
@@ -121,9 +121,9 @@
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node6 -->
-<g id="edge6" class="edge">
-<title>Node4&#45;&gt;Node6</title>
+<!-- Node5&#45;&gt;Node6 -->
+<g id="edge7" class="edge">
+<title>Node5&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M284.5,-57.11C284.5,-48.15 284.5,-38.32 284.5,-30.58"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="281,-57.4 284.5,-67.4 288,-57.4 281,-57.4"/>
 </g>

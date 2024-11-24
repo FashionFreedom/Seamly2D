@@ -1,5 +1,8 @@
 var NAVTREEINDEX28 =
 {
+"d6/d6b/classVToolBisector.html#a0c09eeda900b693867ca283b6fae2042":[1,0,403,22],
+"d6/d6b/classVToolBisector.html#a18f8bac393baa4062fce2f1eb22a7061":[1,0,403,13],
+"d6/d6b/classVToolBisector.html#a19f6f30fc581f0573f2dc7c2ca4bb466":[1,0,403,3],
 "d6/d6b/classVToolBisector.html#a1c6b3f6d7c7de121a98b849981828905":[1,0,403,5],
 "d6/d6b/classVToolBisector.html#a277cfa4f6d3938cf0b58e4a6920db0e8":[1,0,403,11],
 "d6/d6b/classVToolBisector.html#a2f65c2dd7084a175c822d72a27c04043":[1,0,403,16],
@@ -246,8 +249,5 @@ var NAVTREEINDEX28 =
 "d6/daf/dialoglineintersect_8h_source.html":[2,0,0,1,13,0,1,36],
 "d6/db3/classAddToCalc.html":[1,0,13],
 "d6/db3/classAddToCalc.html#a59db993ab9efd3840f89f862fb2e8894":[1,0,13,4],
-"d6/db3/classAddToCalc.html#a5cd523dadf31f0c8acd2a9d299a18edc":[1,0,13,6],
-"d6/db3/classAddToCalc.html#a8589f15dacf20bd86c13f4cfb7c3f2ce":[1,0,13,0],
-"d6/db3/classAddToCalc.html#aa1efe50a51c1a9c2fe92cabd1c1fa3a5":[1,0,13,2],
-"d6/db3/classAddToCalc.html#abdf08c1d91051bdf20cb526eeb23be53":[1,0,13,3]
+"d6/db3/classAddToCalc.html#a5cd523dadf31f0c8acd2a9d299a18edc":[1,0,13,6]
 };

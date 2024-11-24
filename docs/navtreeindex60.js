@@ -1,5 +1,8 @@
 var NAVTREEINDEX60 =
 {
+"de/d31/ifcdef_8cpp.html#ad9ba18833a8ef4dd009e4fa0c7e8f35a":[2,0,0,1,1,2,37],
+"de/d31/ifcdef_8cpp.html#ada5c8833f656de3578fad8f5fd0e27d1":[2,0,0,1,1,2,52],
+"de/d31/ifcdef_8cpp.html#ada977615c2cc1578981daeffa7b2f5dc":[2,0,0,1,1,2,67],
 "de/d31/ifcdef_8cpp.html#adabdb32ceafcefecf3f63d9bdb5ba82c":[2,0,0,1,1,2,97],
 "de/d31/ifcdef_8cpp.html#adb3ff75924803916e515588e5a7428a3":[2,0,0,1,1,2,68],
 "de/d31/ifcdef_8cpp.html#adc55e2e472f2a1112e434a74281526a2":[2,0,0,1,1,2,15],
@@ -246,8 +249,5 @@ var NAVTREEINDEX60 =
 "de/d85/vtooltriangle_8cpp.html":[2,0,0,1,13,1,0,2,1,22],
 "de/d85/vtooltriangle_8cpp_source.html":[2,0,0,1,13,1,0,2,1,22],
 "de/d87/dialognewpattern_8cpp.html":[2,0,0,0,0,1,13],
-"de/d87/dialognewpattern_8cpp_source.html":[2,0,0,0,0,1,13],
-"de/d8e/classShortcutsDialog.html":[1,0,181],
-"de/d8e/classShortcutsDialog.html#a055f525af67de5393f6c744db6b460cf":[1,0,181,2],
-"de/d8e/classShortcutsDialog.html#a39991c735951f34a35c68df15ce85e76":[1,0,181,1]
+"de/d87/dialognewpattern_8cpp_source.html":[2,0,0,0,0,1,13]
 };

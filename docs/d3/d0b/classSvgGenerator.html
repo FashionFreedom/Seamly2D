@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('d3/d0b/classSvgGenerator.html','../../
 <div class="dynheader">
 Collaboration diagram for SvgGenerator:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d05/classSvgGenerator__coll__graph.svg" width="204" height="316"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d05/classSvgGenerator__coll__graph.svg" width="211" height="360"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -127,6 +127,15 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a6a4e2d0faf08a836d209658d9a5bc954"><td class="memItemLeft" align="right" valign="top">QDomDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d0b/classSvgGenerator.html#a6a4e2d0faf08a836d209658d9a5bc954">mergeSvgDoms</a> ()</td></tr>
 <tr class="memdesc:a6a4e2d0faf08a836d209658d9a5bc954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge all the SVGs in the m_domList list into a single SVG.  <a href="../../d3/d0b/classSvgGenerator.html#a6a4e2d0faf08a836d209658d9a5bc954">More...</a><br /></td></tr>
 <tr class="separator:a6a4e2d0faf08a836d209658d9a5bc954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3db4f306a94fcb8015a824f02fb829cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d0b/classSvgGenerator.html#a3db4f306a94fcb8015a824f02fb829cc">removeEmptyGroups</a> (QDomElement &amp;mainGroup)</td></tr>
+<tr class="memdesc:a3db4f306a94fcb8015a824f02fb829cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove empty groups from the SVG.  <a href="../../d3/d0b/classSvgGenerator.html#a3db4f306a94fcb8015a824f02fb829cc">More...</a><br /></td></tr>
+<tr class="separator:a3db4f306a94fcb8015a824f02fb829cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e5d4cc5d4b9618c8f78361809fa3191"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d0b/classSvgGenerator.html#a0e5d4cc5d4b9618c8f78361809fa3191">removeEmptyOriginPath</a> (QDomElement &amp;mainGroup)</td></tr>
+<tr class="memdesc:a0e5d4cc5d4b9618c8f78361809fa3191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the M0,0 origin path from the SVG.  <a href="../../d3/d0b/classSvgGenerator.html#a0e5d4cc5d4b9618c8f78361809fa3191">More...</a><br /></td></tr>
+<tr class="separator:a0e5d4cc5d4b9618c8f78361809fa3191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25c878abd3851e47d48ce770e8ae20bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d0b/classSvgGenerator.html#a25c878abd3851e47d48ce770e8ae20bb">cleanSvg</a> (QDomElement &amp;mainGroup)</td></tr>
+<tr class="memdesc:a25c878abd3851e47d48ce770e8ae20bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clean the SVG.  <a href="../../d3/d0b/classSvgGenerator.html#a25c878abd3851e47d48ce770e8ae20bb">More...</a><br /></td></tr>
+<tr class="separator:a25c878abd3851e47d48ce770e8ae20bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -214,11 +223,47 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
 <p>This function creates a SVG from the given scene and converts it into a DOM that is added to the m_domList list of SVGs to be merged. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00102">102</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00164">164</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00053">m_domList</a>, <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00048">m_paper</a>, and <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00051">m_resolution</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00057">m_domList</a>, <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00052">m_paper</a>, and <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00055">m_resolution</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00890">MainWindowsNoGUI::exportSVG()</a>.</p>
+
+</div>
+</div>
+<a id="a25c878abd3851e47d48ce770e8ae20bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25c878abd3851e47d48ce770e8ae20bb">&#9670;&nbsp;</a></span>cleanSvg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SvgGenerator::cleanSvg </td>
+          <td>(</td>
+          <td class="paramtype">QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>mainGroup</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clean the SVG. </p>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
+<p>This function cleans the SVG by removing empty groups and the origin M0,0 path </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00150">150</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00108">removeEmptyGroups()</a>, and <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00129">removeEmptyOriginPath()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00059">mergeSvgDoms()</a>.</p>
 
 </div>
 </div>
@@ -241,9 +286,9 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
 <p>This function merges the SVGs of the m_domList list and writes the result in a file at the path given in the constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00143">143</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00203">203</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00049">m_filepath</a>, and <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00059">mergeSvgDoms()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00053">m_filepath</a>, and <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00059">mergeSvgDoms()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00890">MainWindowsNoGUI::exportSVG()</a>.</p>
 
@@ -278,9 +323,77 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00059">59</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00053">m_domList</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00150">cleanSvg()</a>, and <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00057">m_domList</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00143">generate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00203">generate()</a>.</p>
+
+</div>
+</div>
+<a id="a3db4f306a94fcb8015a824f02fb829cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3db4f306a94fcb8015a824f02fb829cc">&#9670;&nbsp;</a></span>removeEmptyGroups()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SvgGenerator::removeEmptyGroups </td>
+          <td>(</td>
+          <td class="paramtype">QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>mainGroup</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove empty groups from the SVG. </p>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
+<p>This function removes empty unuseful groups from the exported SVG. Those empty groups were generated by Qt svg generator. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00108">108</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00150">cleanSvg()</a>.</p>
+
+</div>
+</div>
+<a id="a0e5d4cc5d4b9618c8f78361809fa3191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e5d4cc5d4b9618c8f78361809fa3191">&#9670;&nbsp;</a></span>removeEmptyOriginPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SvgGenerator::removeEmptyOriginPath </td>
+          <td>(</td>
+          <td class="paramtype">QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>mainGroup</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove the M0,0 origin path from the SVG. </p>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
+<p>This function removes tht M0,0 origin path from the SVG. If this path is not removed, the bounding box of the exported pattern piece when opened in a svg editing software can be wrong. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00129">129</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00150">cleanSvg()</a>.</p>
 
 </div>
 </div>
@@ -305,7 +418,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00050">50</a> of file <a class="el" href="../../d0/d67/svg__generator_8h_source.html">svg_generator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00054">54</a> of file <a class="el" href="../../d0/d67/svg__generator_8h_source.html">svg_generator.h</a>.</p>
 
 </div>
 </div>
@@ -329,9 +442,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00053">53</a> of file <a class="el" href="../../d0/d67/svg__generator_8h_source.html">svg_generator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00057">57</a> of file <a class="el" href="../../d0/d67/svg__generator_8h_source.html">svg_generator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00102">addSvgFromScene()</a>, and <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00059">mergeSvgDoms()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00164">addSvgFromScene()</a>, and <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00059">mergeSvgDoms()</a>.</p>
 
 </div>
 </div>
@@ -355,9 +468,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00049">49</a> of file <a class="el" href="../../d0/d67/svg__generator_8h_source.html">svg_generator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00053">53</a> of file <a class="el" href="../../d0/d67/svg__generator_8h_source.html">svg_generator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00143">generate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00203">generate()</a>.</p>
 
 </div>
 </div>
@@ -381,9 +494,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00048">48</a> of file <a class="el" href="../../d0/d67/svg__generator_8h_source.html">svg_generator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00052">52</a> of file <a class="el" href="../../d0/d67/svg__generator_8h_source.html">svg_generator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00102">addSvgFromScene()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00164">addSvgFromScene()</a>.</p>
 
 </div>
 </div>
@@ -407,9 +520,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00051">51</a> of file <a class="el" href="../../d0/d67/svg__generator_8h_source.html">svg_generator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00055">55</a> of file <a class="el" href="../../d0/d67/svg__generator_8h_source.html">svg_generator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00102">addSvgFromScene()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00164">addSvgFromScene()</a>.</p>
 
 </div>
 </div>

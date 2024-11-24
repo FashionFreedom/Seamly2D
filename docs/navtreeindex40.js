@@ -1,5 +1,8 @@
 var NAVTREEINDEX40 =
 {
+"d9/deb/classVisToolLineIntersectAxis.html#afd7cd81c17475aa37b8ec02f946e8a21":[1,0,320,13],
+"d9/df4/dialogpointofcontact_8cpp.html":[2,0,0,1,13,0,1,49],
+"d9/df4/dialogpointofcontact_8cpp_source.html":[2,0,0,1,13,0,1,49],
 "d9/dfd/vexceptionconversionerror_8cpp.html":[2,0,0,1,1,0,4],
 "d9/dfd/vexceptionconversionerror_8cpp_source.html":[2,0,0,1,1,0,4],
 "da/d03/vpiecepath_8h.html":[2,0,0,1,10,25],
@@ -246,8 +249,5 @@ var NAVTREEINDEX40 =
 "da/d4e/classVGrainlineItem.html#acfa1cd8da42299984ee2690d2ffdc4e2":[1,0,295,21],
 "da/d4e/classVGrainlineItem.html#ad824ea33d30bf9f6631f68b89009da49":[1,0,295,26],
 "da/d4e/classVGrainlineItem.html#ae23a570bd36b5547a5ae6870d368e4d1":[1,0,295,30],
-"da/d4e/classVGrainlineItem.html#ae38c0c280a36969121677043943ad758":[1,0,295,22],
-"da/d4e/classVGrainlineItem.html#ae81472ca0566605adf5ca77b3aaa642d":[1,0,295,37],
-"da/d4e/classVGrainlineItem.html#aebf05d72b979b33282befdfcfb0876bf":[1,0,295,36],
-"da/d4e/classVGrainlineItem.html#aef7c979719813705c3e772af448a560c":[1,0,295,17]
+"da/d4e/classVGrainlineItem.html#ae38c0c280a36969121677043943ad758":[1,0,295,22]
 };
