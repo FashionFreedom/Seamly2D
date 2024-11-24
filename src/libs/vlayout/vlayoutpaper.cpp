@@ -238,8 +238,6 @@ bool VLayoutPaper::arrangePiece(const VLayoutPiece &piece, std::atomic_bool &sto
         d->localRotationIncrease = d->globalRotationIncrease;
     }
 
-    d->frame = 0;
-
     return AddToSheet(piece, stop);
 }
 
@@ -275,14 +273,6 @@ bool VLayoutPaper::AddToSheet(const VLayoutPiece &piece, std::atomic_bool &stop)
             VPosition *thread = new VPosition(d->globalContour, j, piece, i, &stop, d->localRotate,
                                               d->localRotationIncrease,
                                               d->saveLength);
-            //Info for debug
-            #ifdef LAYOUT_DEBUG
-                thread->setPaperIndex(d->paperIndex);
-                thread->setFrame(d->frame);
-                thread->setPieceCount(d->pieces.count());
-                thread->setPieces(d->pieces);
-            #endif
-
             thread->setAutoDelete(false);
             threads.append(thread);
             thread_pool->start(thread);
@@ -334,12 +324,6 @@ bool VLayoutPaper::SaveResult(const VBestSquare &bestResult, const VLayoutPiece 
         }
         d->pieces.append(workDetail);
         d->globalContour.SetContour(newGContour);
-
-#ifdef LAYOUT_DEBUG
-#   ifdef SHOW_BEST
-        VPosition::DrawDebug(d->globalContour, workDetail, UINT_MAX, d->paperIndex, d->pieces.count(), d->pieces);
-#   endif
-#endif
     }
 
     return bestResult.ValidResult(); // Do we have the best result?

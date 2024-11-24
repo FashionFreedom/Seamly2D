@@ -126,13 +126,6 @@ void VLayoutGenerator::Generate()
     papers.clear();
     state = LayoutErrors::NoError;
 
-#ifdef LAYOUT_DEBUG
-    const QString path = QDir::homePath()+QStringLiteral("/LayoutDebug");
-    QDir debugDir(path);
-    debugDir.removeRecursively();
-    debugDir.mkpath(path);
-#endif
-
     emit Start();
 
     if (bank->Prepare())
