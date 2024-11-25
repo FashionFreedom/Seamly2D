@@ -120,6 +120,19 @@ EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &tool
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
+    // Resize the dialog based on last saved size.
+    const QSize size = qApp->Settings()->GetFormulaWizardDialogSize();
+    if (!size.isEmpty())
+    {
+        // Block signals to prevent a resize event that will only save the size again. 
+        blockSignals(true);
+        resize(size);
+        blockSignals(false);
+    }
+
+    // Set the position that the dialog opens based on user preference.
+    setDialogPosition();
+
     initializeVariables();
     initializeFormulaUi(ui);
     ui->plainTextEditFormula->installEventFilter(this);
@@ -462,7 +475,6 @@ void EditFormulaDialog::closeEvent(QCloseEvent *event)
     DialogTool::closeEvent(event);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::showEvent(QShowEvent *event)
 {
     QDialog::showEvent(event);
@@ -470,23 +482,6 @@ void EditFormulaDialog::showEvent(QShowEvent *event)
     {
         return;
     }
-
-    if (isInitialized)
-    {
-        return;
-    }
-    // do your init stuff here
-
-    const QSize size = qApp->Settings()->GetFormulaWizardDialogSize();
-    if (!size.isEmpty())
-    {
-        resize(size);
-    }
-
-    // Set the position that the dialog opens based on user preference.
-    setDialogPosition();
-
-    isInitialized = true;//first show windows are held
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -494,10 +489,8 @@ void EditFormulaDialog::resizeEvent(QResizeEvent *event)
 {
     // remember the size for the next time this dialog is opened, but only
     // if widget was already initialized.
-    if (isInitialized)
-    {
-        qApp->Settings()->SetFormulaWizardDialogSize(size());
-    }
+    qApp->Settings()->SetFormulaWizardDialogSize(size());
+
     DialogTool::resizeEvent(event);
 }
 
