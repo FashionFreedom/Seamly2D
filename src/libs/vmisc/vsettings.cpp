@@ -88,7 +88,7 @@ const QString settingCommunityUsername     = QStringLiteral("community/username"
 const QString settingCommunitySavePassword = QStringLiteral("community/savePassword");
 const QString settingCommunityUserPassword = QStringLiteral("community/userpassword");
 
-const QString settingLayoutWidth            = QStringLiteral("layout/width");
+const QString settingLayoutGap            = QStringLiteral("layout/width");
 const QString settingLayoutSorting          = QStringLiteral("layout/sorting");
 const QString settingLayoutPaperHeight      = QStringLiteral("layout/paperHeight");
 const QString settingLayoutPaperWidth       = QStringLiteral("layout/paperWidth");
@@ -377,11 +377,11 @@ void VSettings::SetLayoutShift(qreal value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VSettings::GetLayoutWidth() const
+qreal VSettings::getLayoutGap() const
 {
-    const qreal def = GetDefLayoutWidth();
+    const qreal def = getDefLayoutGap();
     bool ok = false;
-    const qreal lWidth = value(settingLayoutWidth, def).toDouble(&ok);
+    const qreal lWidth = value(settingLayoutGap, def).toDouble(&ok);
     if (ok)
     {
         return lWidth;
@@ -393,15 +393,15 @@ qreal VSettings::GetLayoutWidth() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VSettings::GetDefLayoutWidth()
+qreal VSettings::getDefLayoutGap()
 {
     return UnitConvertor(2.5, Unit::Mm, Unit::Px);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSettings::SetLayoutWidth(qreal value)
+void VSettings::setLayoutGap(qreal value)
 {
-    setValue(settingLayoutWidth, value);
+    setValue(settingLayoutGap, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -582,19 +582,19 @@ void VSettings::SetIgnoreAllFields(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VSettings::GetStripOptimization() const
+bool VSettings::useStripOptimization() const
 {
-    return value(settingStripOptimization, GetDefStripOptimization()).toBool();
+    return value(settingStripOptimization, useDefStripOptimization()).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VSettings::GetDefStripOptimization()
+bool VSettings::useDefStripOptimization()
 {
     return false;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSettings::SetStripOptimization(bool value)
+void VSettings::setStripOptimization(bool value)
 {
     setValue(settingStripOptimization, value);
 }

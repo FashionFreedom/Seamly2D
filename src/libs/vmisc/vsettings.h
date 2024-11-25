@@ -127,9 +127,9 @@ public:
     static qreal GetDefLayoutShift();
     void SetLayoutShift(qreal value);
 
-    qreal GetLayoutWidth() const;
-    static qreal GetDefLayoutWidth();
-    void SetLayoutWidth(qreal value);
+    qreal getLayoutGap() const;
+    static qreal getDefLayoutGap();
+    void setLayoutGap(qreal value);
 
     QMarginsF GetFields(const QMarginsF &def = QMarginsF()) const;
     void SetFields(const QMarginsF &value);
@@ -162,9 +162,9 @@ public:
     static bool GetDefIgnoreAllFields();
     void SetIgnoreAllFields(bool value);
 
-    bool GetStripOptimization() const;
-    static bool GetDefStripOptimization();
-    void SetStripOptimization(bool value);
+    bool useStripOptimization() const;
+    static bool useDefStripOptimization();
+    void setStripOptimization(bool value);
 
     quint8 GetMultiplier() const;
     static quint8 GetDefMultiplier();

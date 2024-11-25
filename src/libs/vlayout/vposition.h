@@ -66,72 +66,44 @@
 class VPosition : public QRunnable
 {
 public:
-                 VPosition(const VContour &gContour, int j, const VLayoutPiece &piece, int i,
-                           std::atomic_bool *stop, bool rotate, int rotationIncrease, bool saveLength);
+                 VPosition(const VContour &sheet, int sheetEdgeNum, const VLayoutPiece &piece, int pieceEdgeNum,
+                           std::atomic_bool *stop, bool rotate, int rotationIncrement, bool saveLength);
     virtual     ~VPosition() Q_DECL_OVERRIDE{}
     virtual void run() Q_DECL_OVERRIDE;
-
-    quint32      getPaperIndex() const;
-    void         setPaperIndex(const quint32 &value);
-
-    quint32      getFrame() const;
-    void         setFrame(const quint32 &value);
-
-    quint32      getPieceCount() const;
-    void         setPieceCount(const quint32 &value);
-
-    void         setPieces(const QVector<VLayoutPiece> &pieces);
 
     VBestSquare  getBestResult() const;
 
 private:
     Q_DISABLE_COPY(VPosition)
-    VBestSquare           bestResult;
-    const VContour        gContour;
-    const VLayoutPiece    piece;
-    int                   i;
-    int                   j;
-    quint32               paperIndex;
-    quint32               frame;
-    quint32               piecesCount;
-    QVector<VLayoutPiece> pieces;
-    std::atomic_bool     *stop;
-    bool                  rotate;
-    int                   rotationIncrease;
+    VBestSquare           m_bestResult;
+    const VContour        m_sheet;
+    int                   m_sheetEdgeNum;
+    const VLayoutPiece    m_piece;
+    int                   m_pieceEdgeNum;
+    std::atomic_bool     *m_stop;
+    bool                  m_rotate;
+    int                   m_rotationIncrement;
+    qreal                 m_angleBetween; /// keep angle between global edge and piece edge. Need for optimizing rotation.
 
-    /// @brief angle_between keep angle between global edge and piece edge. Need for optimization rotation.
-    qreal                 angle_between;
-
-    enum class CrossingType : char
+    enum class IntersectionType : char
     {
         NoIntersection = 0,
-        Intersection = 1,
-        EdgeError = 2
+        Intersection   = 1,
     };
 
-    enum class InsideType : char
-    {
-        Outside = 0,
-        Inside = 1,
-        EdgeError = 2
-    };
+    void                saveCandidate(VBestSquare &bestResult, const VLayoutPiece &piece,
+                                      int pieceEdgeNum, int sheetEdgeNum,  BestFrom type);
 
-    void                SaveCandidate(VBestSquare &bestResult, const VLayoutPiece &piece, int globalI, int detJ, BestFrom type);
+    bool                edgesIntersect(VLayoutPiece &piece, int &pieceEdgeNum, int sheetEdgeNum);
+    bool                rotatedEdgeIntersects(VLayoutPiece &piece, int pieceEdgeNum, int sheetEdgeNum, int angle) const;
 
-    bool                CheckCombineEdges(VLayoutPiece &piece, int j, int &dEdge);
-    bool                CheckRotationEdges(VLayoutPiece &piece, int j, int dEdge, int angle) const;
+    IntersectionType    intersectionType(const VLayoutPiece &piece) const;
+    bool                sheetContains(const QRectF &rect) const;
 
-    CrossingType        Crossing(const VLayoutPiece &piece) const;
-    bool                SheetContains(const QRectF &rect) const;
+    void                combineEdges(VLayoutPiece &piece, const int &pieceEdgeNum, const QLineF &sheetEdge);
+    void                rotateEdges(VLayoutPiece &piece, int pieceEdgeNum, const QLineF &sheetEdge, int angle) const;
 
-    void                CombineEdges(VLayoutPiece &piece, const QLineF &globalEdge, const int &dEdge);
-    void                RotateEdges(VLayoutPiece &piece, const QLineF &globalEdge, int dEdge, int angle) const;
-
-    static QPainterPath ShowDirection(const QLineF &edge);
-    static QPainterPath DrawContour(const QVector<QPointF> &points);
-    static QPainterPath drawPieces(const QVector<VLayoutPiece> &pieces);
-
-    void                Rotate(int increase);
+    void                rotate(int increment);
 };
 
 #endif // VPOSITION_H
