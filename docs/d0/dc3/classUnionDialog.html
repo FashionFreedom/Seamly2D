@@ -124,7 +124,7 @@ Collaboration diagram for UnionDialog:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr class="memitem:a2b39d641065e8dcf203a8d93d34e3193"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc3/classUnionDialog.html#a2b39d641065e8dcf203a8d93d34e3193">ChosenObject</a> (quint32 id, const <a class="el" href="../../d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2af">SceneObject</a> &amp;type) Q_DECL_OVERRIDE</td></tr>
-<tr class="memdesc:a2b39d641065e8dcf203a8d93d34e3193"><td class="mdescLeft">&#160;</td><td class="mdescRight">ChosenObject gets id and type of selected object. Save correct data and ignore wrong.  <a href="../../d0/dc3/classUnionDialog.html#a2b39d641065e8dcf203a8d93d34e3193">More...</a><br /></td></tr>
+<tr class="memdesc:a2b39d641065e8dcf203a8d93d34e3193"><td class="mdescLeft">&#160;</td><td class="mdescRight">ChoosedObject gets id and type of selected object. Save correct data and ignore wrong.  <a href="../../d0/dc3/classUnionDialog.html#a2b39d641065e8dcf203a8d93d34e3193">More...</a><br /></td></tr>
 <tr class="separator:a2b39d641065e8dcf203a8d93d34e3193"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_slots_classDialogTool"><td colspan="2" onclick="javascript:toggleInherit('pub_slots_classDialogTool')"><img src="../../closed.png" alt="-"/>&#160;Public Slots inherited from <a class="el" href="../../d2/d7b/classDialogTool.html">DialogTool</a></td></tr>
 <tr class="memitem:a230903cc2885e3126cc71f175cba6b52 inherit pub_slots_classDialogTool"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#a230903cc2885e3126cc71f175cba6b52">ChosenObject</a> (quint32 id, const <a class="el" href="../../d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2af">SceneObject</a> &amp;type)</td></tr>
@@ -199,6 +199,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac2023f4dab56bf902eac3efefe410ecd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc3/classUnionDialog.html#ac2023f4dab56bf902eac3efefe410ecd">getPiece2Index</a> () const</td></tr>
 <tr class="memdesc:ac2023f4dab56bf902eac3efefe410ecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">getPiece2Index return index edge second piece  <a href="../../d0/dc3/classUnionDialog.html#ac2023f4dab56bf902eac3efefe410ecd">More...</a><br /></td></tr>
 <tr class="separator:ac2023f4dab56bf902eac3efefe410ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bfd430920918bbfa7b97797fe44a17e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc3/classUnionDialog.html#a7bfd430920918bbfa7b97797fe44a17e">retainPieces</a> () const</td></tr>
+<tr class="separator:a7bfd430920918bbfa7b97797fe44a17e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classDialogTool"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classDialogTool')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d2/d7b/classDialogTool.html">DialogTool</a></td></tr>
 <tr class="memitem:af22322ef9635afe7edd04ecb5a99d606 inherit pub_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#af22322ef9635afe7edd04ecb5a99d606">DialogTool</a> (const <a class="el" href="../../d2/d83/classVContainer.html">VContainer</a> *<a class="el" href="../../d2/d7b/classDialogTool.html#a9967c0ad705d6aaed0ad5ce9bca17fa3">data</a>, const quint32 &amp;<a class="el" href="../../d2/d7b/classDialogTool.html#a842caadb309f07a7c5b12497389297c3">toolId</a>, QWidget *parent=nullptr)</td></tr>
 <tr class="memdesc:af22322ef9635afe7edd04ecb5a99d606 inherit pub_methods_classDialogTool"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d2/d7b/classDialogTool.html" title="The DialogTool class parent for all dialog of tools.">DialogTool</a> create dialog.  <a href="../../d2/d7b/classDialogTool.html#af22322ef9635afe7edd04ecb5a99d606">More...</a><br /></td></tr>
@@ -213,7 +215,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6da67387057958c9a8de664a86c14efb inherit pub_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3d6e3c597c29a71a517e2432a5a979e inherit pub_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#ab3d6e3c597c29a71a517e2432a5a979e">Build</a> (const <a class="el" href="../../d4/da4/def_8h.html#ab8460ab56e3e92e57d3ed3b717492395">Tool</a> &amp;type)</td></tr>
 <tr class="separator:ab3d6e3c597c29a71a517e2432a5a979e inherit pub_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8a522bc8cd5063cf17cb29d2c14e453 inherit pub_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#ae8a522bc8cd5063cf17cb29d2c14e453">SetPiecesList</a> (const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; quint32 &gt; &amp;list)</td></tr>
+<tr class="memitem:ae8a522bc8cd5063cf17cb29d2c14e453 inherit pub_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#ae8a522bc8cd5063cf17cb29d2c14e453">SetPiecesList</a> (const QVector&lt; quint32 &gt; &amp;list)</td></tr>
 <tr class="separator:ae8a522bc8cd5063cf17cb29d2c14e453 inherit pub_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9467b65f15e412b823d5097141437f6 inherit pub_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">quint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#af9467b65f15e412b823d5097141437f6">GetToolId</a> () const</td></tr>
 <tr class="separator:af9467b65f15e412b823d5097141437f6 inherit pub_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -227,8 +229,8 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a870ac054ab6e2e6ef2973af3e617e192"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc3/classUnionDialog.html#a870ac054ab6e2e6ef2973af3e617e192">CheckObject</a> (const quint32 &amp;id, const quint32 &amp;pieceId) const</td></tr>
 <tr class="memdesc:a870ac054ab6e2e6ef2973af3e617e192"><td class="mdescLeft">&#160;</td><td class="mdescRight">CheckObject check if piece contains this id.  <a href="../../d0/dc3/classUnionDialog.html#a870ac054ab6e2e6ef2973af3e617e192">More...</a><br /></td></tr>
 <tr class="separator:a870ac054ab6e2e6ef2973af3e617e192"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a052dac690f7bc03018ca0c5527339c4c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc3/classUnionDialog.html#a052dac690f7bc03018ca0c5527339c4c">isPieceValid</a> (const quint32 &amp;pieceId) const</td></tr>
-<tr class="separator:a052dac690f7bc03018ca0c5527339c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e4c5cf573cb2ca714d14f97eb4adf8c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc3/classUnionDialog.html#a8e4c5cf573cb2ca714d14f97eb4adf8c">checkPiece</a> (const quint32 &amp;pieceId) const</td></tr>
+<tr class="separator:a8e4c5cf573cb2ca714d14f97eb4adf8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2df0dc9548662d32c4a592430a123668"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc3/classUnionDialog.html#a2df0dc9548662d32c4a592430a123668">chosenPiece</a> (const quint32 &amp;id, const <a class="el" href="../../d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2af">SceneObject</a> &amp;type, quint32 &amp;pieceId, int &amp;index)</td></tr>
 <tr class="memdesc:a2df0dc9548662d32c4a592430a123668"><td class="mdescLeft">&#160;</td><td class="mdescRight">chosenPiece help save information about piece and points on piece  <a href="../../d0/dc3/classUnionDialog.html#a2df0dc9548662d32c4a592430a123668">More...</a><br /></td></tr>
 <tr class="separator:a2df0dc9548662d32c4a592430a123668"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -261,9 +263,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a6761074621354f738648db0c5c80b206"><td class="memItemLeft" align="right" valign="top">quint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc3/classUnionDialog.html#a6761074621354f738648db0c5c80b206">p2</a></td></tr>
 <tr class="memdesc:a6761074621354f738648db0c5c80b206"><td class="mdescLeft">&#160;</td><td class="mdescRight">p1 id first point of piece  <a href="../../d0/dc3/classUnionDialog.html#a6761074621354f738648db0c5c80b206">More...</a><br /></td></tr>
 <tr class="separator:a6761074621354f738648db0c5c80b206"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c67af9c94ab65ea0bb0af2aa45a5e4d"><td class="memItemLeft" align="right" valign="top">QSound *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc3/classUnionDialog.html#a5c67af9c94ab65ea0bb0af2aa45a5e4d">m_beep</a></td></tr>
-<tr class="memdesc:a5c67af9c94ab65ea0bb0af2aa45a5e4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">p2 id second point of piece  <a href="../../d0/dc3/classUnionDialog.html#a5c67af9c94ab65ea0bb0af2aa45a5e4d">More...</a><br /></td></tr>
-<tr class="separator:a5c67af9c94ab65ea0bb0af2aa45a5e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9b10638df0080c0407edbf120471c16"><td class="memItemLeft" align="right" valign="top">QSoundEffect *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc3/classUnionDialog.html#af9b10638df0080c0407edbf120471c16">m_beep</a></td></tr>
+<tr class="memdesc:af9b10638df0080c0407edbf120471c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">p2 id second point of piece  <a href="../../d0/dc3/classUnionDialog.html#af9b10638df0080c0407edbf120471c16">More...</a><br /></td></tr>
+<tr class="separator:af9b10638df0080c0407edbf120471c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -295,11 +297,11 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a60bf040b63da264b842ebe9b7ef76564 inherit pro_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#a60bf040b63da264b842ebe9b7ef76564">showEvent</a> (QShowEvent *event) Q_DECL_OVERRIDE</td></tr>
 <tr class="memdesc:a60bf040b63da264b842ebe9b7ef76564 inherit pro_methods_classDialogTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">showEvent handle when window show  <a href="../../d2/d7b/classDialogTool.html#a60bf040b63da264b842ebe9b7ef76564">More...</a><br /></td></tr>
 <tr class="separator:a60bf040b63da264b842ebe9b7ef76564 inherit pro_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee0fad677c762a4570cc2bc75c781723 inherit pro_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#aee0fad677c762a4570cc2bc75c781723">FillComboBoxPiecesList</a> (QComboBox *box, const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; quint32 &gt; &amp;list)</td></tr>
+<tr class="memitem:aee0fad677c762a4570cc2bc75c781723 inherit pro_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#aee0fad677c762a4570cc2bc75c781723">FillComboBoxPiecesList</a> (QComboBox *box, const QVector&lt; quint32 &gt; &amp;list)</td></tr>
 <tr class="separator:aee0fad677c762a4570cc2bc75c781723 inherit pro_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ea58ddfe39c2e5ef631a2537f8651b8 inherit pro_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#a3ea58ddfe39c2e5ef631a2537f8651b8">fillComboBoxPoints</a> (QComboBox *box, <a class="el" href="../../d1/d30/dialogtool_8h.html#a68b566b665945afc1b16dd60d38f5844">FillComboBox</a> rule=<a class="el" href="../../d1/d30/dialogtool_8h.html#a68b566b665945afc1b16dd60d38f5844ac8d2fc8ed10b21e647d7f58d4436b050">FillComboBox::Whole</a>, const quint32 &amp;ch1=<a class="el" href="../../d3/da5/ifcdef_8h.html#a59d6223ecf7b4cea9bdae1e3db83c5ff">NULL_ID</a>, const quint32 &amp;ch2=<a class="el" href="../../d3/da5/ifcdef_8h.html#a59d6223ecf7b4cea9bdae1e3db83c5ff">NULL_ID</a>) const</td></tr>
-<tr class="memdesc:a3ea58ddfe39c2e5ef631a2537f8651b8 inherit pro_methods_classDialogTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">fillComboBoxPoints fill comboBox list of points  <a href="../../d2/d7b/classDialogTool.html#a3ea58ddfe39c2e5ef631a2537f8651b8">More...</a><br /></td></tr>
-<tr class="separator:a3ea58ddfe39c2e5ef631a2537f8651b8 inherit pro_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dde56c8348fe3d0f6de9b3c8883e4e5 inherit pro_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#a1dde56c8348fe3d0f6de9b3c8883e4e5">FillComboBoxPoints</a> (QComboBox *box, <a class="el" href="../../d1/d30/dialogtool_8h.html#a68b566b665945afc1b16dd60d38f5844">FillComboBox</a> rule=<a class="el" href="../../d1/d30/dialogtool_8h.html#a68b566b665945afc1b16dd60d38f5844ac8d2fc8ed10b21e647d7f58d4436b050">FillComboBox::Whole</a>, const quint32 &amp;ch1=<a class="el" href="../../d3/da5/ifcdef_8h.html#a59d6223ecf7b4cea9bdae1e3db83c5ff">NULL_ID</a>, const quint32 &amp;ch2=<a class="el" href="../../d3/da5/ifcdef_8h.html#a59d6223ecf7b4cea9bdae1e3db83c5ff">NULL_ID</a>) const</td></tr>
+<tr class="memdesc:a1dde56c8348fe3d0f6de9b3c8883e4e5 inherit pro_methods_classDialogTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">FillComboBoxPoints fill comboBox list of points.  <a href="../../d2/d7b/classDialogTool.html#a1dde56c8348fe3d0f6de9b3c8883e4e5">More...</a><br /></td></tr>
+<tr class="separator:a1dde56c8348fe3d0f6de9b3c8883e4e5 inherit pro_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8829145090f7ae6629274efe045808c8 inherit pro_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#a8829145090f7ae6629274efe045808c8">FillComboBoxArcs</a> (QComboBox *box, <a class="el" href="../../d1/d30/dialogtool_8h.html#a68b566b665945afc1b16dd60d38f5844">FillComboBox</a> rule=<a class="el" href="../../d1/d30/dialogtool_8h.html#a68b566b665945afc1b16dd60d38f5844ac8d2fc8ed10b21e647d7f58d4436b050">FillComboBox::Whole</a>, const quint32 &amp;ch1=<a class="el" href="../../d3/da5/ifcdef_8h.html#a59d6223ecf7b4cea9bdae1e3db83c5ff">NULL_ID</a>, const quint32 &amp;ch2=<a class="el" href="../../d3/da5/ifcdef_8h.html#a59d6223ecf7b4cea9bdae1e3db83c5ff">NULL_ID</a>) const</td></tr>
 <tr class="separator:a8829145090f7ae6629274efe045808c8 inherit pro_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8171b02d23b8f1b68fcf8046cd5f3b73 inherit pro_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#a8171b02d23b8f1b68fcf8046cd5f3b73">FillComboBoxSplines</a> (QComboBox *box) const</td></tr>
@@ -376,7 +378,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a7b73bc6fd8437d4367508610fc8e339c inherit pro_methods_classDialogTool"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#a7b73bc6fd8437d4367508610fc8e339c">AddVisualization</a> ()</td></tr>
 <tr class="separator:a7b73bc6fd8437d4367508610fc8e339c inherit pro_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae701ca9f14235946065b508fe2389d45 inherit pro_methods_classDialogTool"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ae701ca9f14235946065b508fe2389d45 inherit pro_methods_classDialogTool"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#ae701ca9f14235946065b508fe2389d45">GetListInternals</a> (const QListWidget *list) const</td></tr>
+<tr class="memitem:ae701ca9f14235946065b508fe2389d45 inherit pro_methods_classDialogTool"><td class="memTemplItemLeft" align="right" valign="top">QVector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#ae701ca9f14235946065b508fe2389d45">GetListInternals</a> (const QListWidget *list) const</td></tr>
 <tr class="separator:ae701ca9f14235946065b508fe2389d45 inherit pro_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5329ca717794e40fe429d8535bda252 inherit pro_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#af5329ca717794e40fe429d8535bda252">ChangeColor</a> (QWidget *widget, const QColor &amp;color)</td></tr>
 <tr class="separator:af5329ca717794e40fe429d8535bda252 inherit pro_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -397,8 +399,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a720450bced2cbb0fbff11d2f638d2078 inherit pro_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9178fdeab3fb37fc6ca434aefea6b3e inherit pro_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#ac9178fdeab3fb37fc6ca434aefea6b3e">initializeNodeAngles</a> (QComboBox *box)</td></tr>
 <tr class="separator:ac9178fdeab3fb37fc6ca434aefea6b3e inherit pro_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a045105575bede8abf706d7ce220a5a33 inherit pro_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#a045105575bede8abf706d7ce220a5a33">setDialogPosition</a> ()</td></tr>
-<tr class="separator:a045105575bede8abf706d7ce220a5a33 inherit pro_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_methods_classDialogTool"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_classDialogTool')"><img src="../../closed.png" alt="-"/>&#160;Static Protected Member Functions inherited from <a class="el" href="../../d2/d7b/classDialogTool.html">DialogTool</a></td></tr>
 <tr class="memitem:a8f60df422aa5ea1ecc624cf43022ba2d inherit pro_static_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#a8f60df422aa5ea1ecc624cf43022ba2d">FindNotExcludedNodeDown</a> (QListWidget *listWidget, int candidate)</td></tr>
 <tr class="separator:a8f60df422aa5ea1ecc624cf43022ba2d inherit pro_static_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -474,8 +474,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a6f583a6003585697d9b06234fd1ace14 inherit pro_attribs_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef05247e05fbecb1b99ebcf486972ee6 inherit pro_attribs_classDialogTool"><td class="memItemLeft" align="right" valign="top">QPointer&lt; <a class="el" href="../../d7/d24/classVisualization.html">Visualization</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#aef05247e05fbecb1b99ebcf486972ee6">vis</a></td></tr>
 <tr class="separator:aef05247e05fbecb1b99ebcf486972ee6 inherit pro_attribs_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada9710ff9233e2f3996f383ada7e759e inherit pro_attribs_classDialogTool"><td class="memItemLeft" align="right" valign="top">QScreen *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#ada9710ff9233e2f3996f383ada7e759e">m_screen</a></td></tr>
-<tr class="separator:ada9710ff9233e2f3996f383ada7e759e inherit pro_attribs_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="../../d0/dc3/classUnionDialog.html" title="The UnionDialog class dialog for Union Tool.">UnionDialog</a> class dialog for Union Tool. </p>
@@ -523,9 +521,9 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00068">68</a> of file <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html">union_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00071">71</a> of file <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html">union_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00379">DialogTool::initializeOkCancel()</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01458">DialogTool::setDialogPosition()</a>, and <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00094">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00379">DialogTool::initializeOkCancel()</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00105">m_beep</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00068">qApp</a>, and <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00096">ui</a>.</p>
 
 </div>
 </div>
@@ -552,9 +550,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00092">92</a> of file <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html">union_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00091">91</a> of file <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html">union_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00094">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00096">ui</a>.</p>
 
 </div>
 </div>
@@ -603,11 +601,43 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if contain </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00122">122</a> of file <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html">union_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00127">127</a> of file <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html">union_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00539">VPiecePath::Contains()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00176">DialogTool::data</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00156">VPiece::GetPath()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00276">VContainer::GetPiece()</a>, and <a class="el" href="../../d3/da5/ifcdef_8h_source.html#l00076">NULL_ID</a>.</p>
+<p class="reference">References <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00539">VPiecePath::Contains()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00177">DialogTool::data</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00156">VPiece::GetPath()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00276">VContainer::GetPiece()</a>, and <a class="el" href="../../d3/da5/ifcdef_8h_source.html#l00076">NULL_ID</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00158">chosenPiece()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00168">chosenPiece()</a>.</p>
+
+</div>
+</div>
+<a id="a8e4c5cf573cb2ca714d14f97eb4adf8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e4c5cf573cb2ca714d14f97eb4adf8c">&#9670;&nbsp;</a></span>checkPiece()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UnionDialog::checkPiece </td>
+          <td>(</td>
+          <td class="paramtype">const quint32 &amp;&#160;</td>
+          <td class="paramname"><em>pieceId</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00138">138</a> of file <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html">union_dialog.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00209">VPiecePath::CountNodes()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00177">DialogTool::data</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00156">VPiece::GetPath()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00276">VContainer::GetPiece()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00388">VPiece::isLocked()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00633">VPiecePath::ListNodePoint()</a>, <a class="el" href="../../d3/da5/ifcdef_8h_source.html#l00076">NULL_ID</a>, and <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00096">ui</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00168">chosenPiece()</a>.</p>
 
 </div>
 </div>
@@ -645,7 +675,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>ChosenObject gets id and type of selected object. Save correct data and ignore wrong. </p>
+<p>ChoosedObject gets id and type of selected object. Save correct data and ignore wrong. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>id of point or piece </td></tr>
@@ -654,9 +684,9 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00103">103</a> of file <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html">union_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00108">108</a> of file <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html">union_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00158">chosenPiece()</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00097">d1</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00098">d2</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00099">numberD</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00095">piece1_Index</a>, and <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00096">piece2_Index</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00168">chosenPiece()</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00099">d1</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00100">d2</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00101">numberD</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00097">piece1_Index</a>, and <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00098">piece2_Index</a>.</p>
 
 </div>
 </div>
@@ -717,11 +747,11 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00158">158</a> of file <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html">union_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00168">168</a> of file <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html">union_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00122">CheckObject()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00176">DialogTool::data</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00604">VPiecePath::Edge()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00156">VPiece::GetPath()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00276">VContainer::GetPiece()</a>, <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00133">isPieceValid()</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00103">m_beep</a>, <a class="el" href="../../d3/da5/ifcdef_8h_source.html#l00076">NULL_ID</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00099">numberD</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00100">numberP</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00559">VPiecePath::OnEdge()</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00101">p1</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00102">p2</a>, <a class="el" href="../../d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2afaa5d512bf83495b68d0ffa20f79804dfc">Piece</a>, <a class="el" href="../../d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2afa2a3cd5946cfd317eb99c3d32e35e2d4c">Point</a>, and <a class="el" href="../../d2/d7b/classDialogTool.html#a1320c278e99ba783af0a5c289375bf9a">DialogTool::ToolTip()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00127">CheckObject()</a>, <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00138">checkPiece()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00177">DialogTool::data</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00604">VPiecePath::Edge()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00156">VPiece::GetPath()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00276">VContainer::GetPiece()</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00105">m_beep</a>, <a class="el" href="../../d3/da5/ifcdef_8h_source.html#l00076">NULL_ID</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00101">numberD</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00102">numberP</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00559">VPiecePath::OnEdge()</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00103">p1</a>, <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00104">p2</a>, <a class="el" href="../../d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2afaa5d512bf83495b68d0ffa20f79804dfc">Piece</a>, <a class="el" href="../../d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2afa2a3cd5946cfd317eb99c3d32e35e2d4c">Point</a>, and <a class="el" href="../../d2/d7b/classDialogTool.html#a1320c278e99ba783af0a5c289375bf9a">DialogTool::ToolTip()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00103">ChosenObject()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00108">ChosenObject()</a>.</p>
 
 </div>
 </div>
@@ -751,9 +781,9 @@ Additional Inherited Members</h2></td></tr>
 <p>getPiece1Id return id first piece </p>
 <dl class="section return"><dt>Returns</dt><dd>id </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00117">117</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00119">119</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
 
-<p class="reference">References <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00097">d1</a>.</p>
+<p class="reference">References <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00099">d1</a>.</p>
 
 </div>
 </div>
@@ -783,9 +813,9 @@ Additional Inherited Members</h2></td></tr>
 <p>getPiece1Index return index edge first piece </p>
 <dl class="section return"><dt>Returns</dt><dd>index </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00137">137</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00139">139</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
 
-<p class="reference">References <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00095">piece1_Index</a>.</p>
+<p class="reference">References <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00097">piece1_Index</a>.</p>
 
 </div>
 </div>
@@ -815,9 +845,9 @@ Additional Inherited Members</h2></td></tr>
 <p>getPiece2Id return id second piece </p>
 <dl class="section return"><dt>Returns</dt><dd>id </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00127">127</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00129">129</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
 
-<p class="reference">References <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00098">d2</a>.</p>
+<p class="reference">References <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00100">d2</a>.</p>
 
 </div>
 </div>
@@ -847,41 +877,30 @@ Additional Inherited Members</h2></td></tr>
 <p>getPiece2Index return index edge second piece </p>
 <dl class="section return"><dt>Returns</dt><dd>index </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00147">147</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00149">149</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
 
-<p class="reference">References <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00096">piece2_Index</a>.</p>
+<p class="reference">References <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00098">piece2_Index</a>.</p>
 
 </div>
 </div>
-<a id="a052dac690f7bc03018ca0c5527339c4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a052dac690f7bc03018ca0c5527339c4c">&#9670;&nbsp;</a></span>isPieceValid()</h2>
+<a id="a7bfd430920918bbfa7b97797fe44a17e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bfd430920918bbfa7b97797fe44a17e">&#9670;&nbsp;</a></span>retainPieces()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool UnionDialog::isPieceValid </td>
+          <td class="memname">bool UnionDialog::retainPieces </td>
           <td>(</td>
-          <td class="paramtype">const quint32 &amp;&#160;</td>
-          <td class="paramname"><em>pieceId</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00133">133</a> of file <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html">union_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00097">97</a> of file <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html">union_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00209">VPiecePath::CountNodes()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00176">DialogTool::data</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00156">VPiece::GetPath()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00276">VContainer::GetPiece()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00633">VPiecePath::ListNodePoint()</a>, and <a class="el" href="../../d3/da5/ifcdef_8h_source.html#l00076">NULL_ID</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00158">chosenPiece()</a>.</p>
+<p class="reference">References <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00096">ui</a>.</p>
 
 </div>
 </div>
@@ -908,9 +927,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>piece2_Index index edge second piece </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00097">97</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00099">99</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00103">ChosenObject()</a>, and <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00117">getPiece1Id()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00108">ChosenObject()</a>, and <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00119">getPiece1Id()</a>.</p>
 
 </div>
 </div>
@@ -936,14 +955,14 @@ Additional Inherited Members</h2></td></tr>
 
 <p>d1 id first piece </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00098">98</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00100">100</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00103">ChosenObject()</a>, and <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00127">getPiece2Id()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00108">ChosenObject()</a>, and <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00129">getPiece2Id()</a>.</p>
 
 </div>
 </div>
-<a id="a5c67af9c94ab65ea0bb0af2aa45a5e4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c67af9c94ab65ea0bb0af2aa45a5e4d">&#9670;&nbsp;</a></span>m_beep</h2>
+<a id="af9b10638df0080c0407edbf120471c16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9b10638df0080c0407edbf120471c16">&#9670;&nbsp;</a></span>m_beep</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -952,7 +971,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QSound* UnionDialog::m_beep</td>
+          <td class="memname">QSoundEffect* UnionDialog::m_beep</td>
         </tr>
       </table>
   </td>
@@ -964,9 +983,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>p2 id second point of piece </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00103">103</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00105">105</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00158">chosenPiece()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00168">chosenPiece()</a>, and <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00071">UnionDialog()</a>.</p>
 
 </div>
 </div>
@@ -992,9 +1011,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>d2 id second piece </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00099">99</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00101">101</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00103">ChosenObject()</a>, and <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00158">chosenPiece()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00108">ChosenObject()</a>, and <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00168">chosenPiece()</a>.</p>
 
 </div>
 </div>
@@ -1020,9 +1039,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>numberD number of piece, what we already have </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00100">100</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00102">102</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00158">chosenPiece()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00168">chosenPiece()</a>.</p>
 
 </div>
 </div>
@@ -1048,9 +1067,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>numberP number of points, what we already have </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00101">101</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00103">103</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00158">chosenPiece()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00168">chosenPiece()</a>.</p>
 
 </div>
 </div>
@@ -1076,9 +1095,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>p1 id first point of piece </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00102">102</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00104">104</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00158">chosenPiece()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00168">chosenPiece()</a>.</p>
 
 </div>
 </div>
@@ -1104,9 +1123,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>ui keeps information about user interface </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00095">95</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00097">97</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00103">ChosenObject()</a>, and <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00137">getPiece1Index()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00108">ChosenObject()</a>, and <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00139">getPiece1Index()</a>.</p>
 
 </div>
 </div>
@@ -1132,9 +1151,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>piece1_Index index edge first piece </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00096">96</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00098">98</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00103">ChosenObject()</a>, and <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00147">getPiece2Index()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00108">ChosenObject()</a>, and <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00149">getPiece2Index()</a>.</p>
 
 </div>
 </div>
@@ -1158,9 +1177,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00094">94</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dfb/union__dialog_8h_source.html#l00096">96</a> of file <a class="el" href="../../da/dfb/union__dialog_8h_source.html">union_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00068">UnionDialog()</a>, and <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00092">~UnionDialog()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00138">checkPiece()</a>, <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00097">retainPieces()</a>, <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00071">UnionDialog()</a>, and <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00091">~UnionDialog()</a>.</p>
 
 </div>
 </div>

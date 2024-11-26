@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('de/db6/vfilepropertyeditor_8cpp_source
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;QLineEdit&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;QList&gt;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;QMimeData&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;QRegExp&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;QtCore5Compat/QRegExp&gt;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;QSizePolicy&gt;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;QToolButton&gt;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;QUrl&gt;</span></div>
@@ -160,7 +160,7 @@ $(document).ready(function(){initNavTree('de/db6/vfilepropertyeditor_8cpp_source
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// The layout (a horizontal layout)</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    QHBoxLayout* layout = <span class="keyword">new</span> QHBoxLayout(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    layout-&gt;setSpacing(0);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    layout-&gt;setMargin(0);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// layout-&gt;setMargin(0); Obsolete?</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    layout-&gt;addWidget(<a class="code" href="../../df/d89/classVPE_1_1VFileEditWidget.html#a0ef062346f55f1386ef83bf0cbdd1598">FileLineEdit</a>);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    layout-&gt;addWidget(<a class="code" href="../../df/d89/classVPE_1_1VFileEditWidget.html#acd4aeb83d26b191a16098ce12945d654">ToolButton</a>);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>

@@ -2,9 +2,9 @@ var classVSimpleCurve =
 [
     [ "VSimpleCurve", "d4/d36/classVSimpleCurve.html#a60377d8fbeb2a92bb880d732b4abcb56", null ],
     [ "~VSimpleCurve", "d4/d36/classVSimpleCurve.html#ab932dfe2bd4ff485e46f25f3164374e2", null ],
-    [ "Chosen", "d4/d36/classVSimpleCurve.html#a2a49d08b4aeb14e79426a5eedece1f85", null ],
+    [ "Choosed", "d4/d36/classVSimpleCurve.html#aae5e796aa605dfeee69fcbc3384a1117", null ],
     [ "contextMenuEvent", "d4/d36/classVSimpleCurve.html#a4aba733876a9c6cd09075ee5a22a7753", null ],
-    [ "CurveChosen", "d4/d36/classVSimpleCurve.html#a0d48cf2090c8d391d626de00d4c7c3d0", null ],
+    [ "CurveChoosed", "d4/d36/classVSimpleCurve.html#aa2be382e6968be1998fb3d107d524d67", null ],
     [ "CurveSelected", "d4/d36/classVSimpleCurve.html#a09b0d76b35fc7f8adc25a95bd37b1c3e", null ],
     [ "hoverEnterEvent", "d4/d36/classVSimpleCurve.html#a34dc0cbb9f491e8524bf7cf144ac4743", null ],
     [ "hoverLeaveEvent", "d4/d36/classVSimpleCurve.html#a3976f653198fade6f79f3070cf5c2a40", null ],

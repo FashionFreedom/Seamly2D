@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 596;
+var viewWidth = 464;
 var viewHeight = 530;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,29 +54,29 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>VPE::VObjectProperty</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-526 591.5,-526 591.5,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-526 459.5,-526 459.5,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="296.5,-0.5 296.5,-189.5 436.5,-189.5 436.5,-0.5 296.5,-0.5"/>
-<text text-anchor="middle" x="366.5" y="-177.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VObjectProperty</text>
-<polyline fill="none" stroke="black" points="296.5,-170.5 436.5,-170.5 "/>
-<text text-anchor="middle" x="366.5" y="-158.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="296.5,-151.5 436.5,-151.5 "/>
-<text text-anchor="start" x="304.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VObjectProperty()</text>
-<text text-anchor="start" x="304.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VObjectProperty()</text>
-<text text-anchor="start" x="304.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
-<text text-anchor="start" x="304.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
-<text text-anchor="start" x="304.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
-<text text-anchor="start" x="304.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setObjectsList()</text>
-<text text-anchor="start" x="304.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getObjects()</text>
-<text text-anchor="start" x="304.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
-<text text-anchor="start" x="304.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="304.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
-<text text-anchor="start" x="304.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ indexOfObject()</text>
-<text text-anchor="start" x="304.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ currentIndexChanged()</text>
-<text text-anchor="start" x="304.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00"># fillListItems()</text>
+<polygon fill="#bfbfbf" stroke="black" points="286.5,-0.5 286.5,-189.5 426.5,-189.5 426.5,-0.5 286.5,-0.5"/>
+<text text-anchor="middle" x="356.5" y="-177.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VObjectProperty</text>
+<polyline fill="none" stroke="black" points="286.5,-170.5 426.5,-170.5 "/>
+<text text-anchor="start" x="294.5" y="-158.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_indexList</text>
+<polyline fill="none" stroke="black" points="286.5,-151.5 426.5,-151.5 "/>
+<text text-anchor="start" x="294.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VObjectProperty()</text>
+<text text-anchor="start" x="294.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VObjectProperty()</text>
+<text text-anchor="start" x="294.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ data()</text>
+<text text-anchor="start" x="294.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createEditor()</text>
+<text text-anchor="start" x="294.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getEditorData()</text>
+<text text-anchor="start" x="294.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setObjectsList()</text>
+<text text-anchor="start" x="294.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getObjects()</text>
+<text text-anchor="start" x="294.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
+<text text-anchor="start" x="294.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="294.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clone()</text>
+<text text-anchor="start" x="294.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ indexOfObject()</text>
+<text text-anchor="start" x="294.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ currentIndexChanged()</text>
+<text text-anchor="start" x="294.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00"># fillListItems()</text>
 </a>
 </g>
 </g>
@@ -108,8 +108,8 @@ var sectionId = 'dynsection-1';
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M288.11,-228.54C295.76,-215.6 303.56,-202.41 311.13,-189.62"/>
-<polygon fill="none" stroke="midnightblue" points="284.91,-227.06 282.84,-237.45 290.94,-230.62 284.91,-227.06"/>
+<path fill="none" stroke="midnightblue" d="M283.75,-228.54C290.85,-215.6 298.09,-202.41 305.11,-189.62"/>
+<polygon fill="none" stroke="midnightblue" points="280.6,-227 278.85,-237.45 286.74,-230.36 280.6,-227"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
@@ -190,42 +190,22 @@ var sectionId = 'dynsection-1';
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="../../d5/dc2/classQVector.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="310,-303.5 310,-360.5 423,-360.5 423,-303.5 310,-303.5"/>
-<text text-anchor="middle" x="366.5" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">QVector&lt; QString &gt;</text>
-<polyline fill="none" stroke="black" points="310,-341.5 423,-341.5 "/>
-<text text-anchor="middle" x="366.5" y="-329.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="310,-322.5 423,-322.5 "/>
-<text text-anchor="middle" x="366.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<g id="a_node6"><a xlink:href="../../d0/d4c/classQMap.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="309.5,-303.5 309.5,-360.5 455.5,-360.5 455.5,-303.5 309.5,-303.5"/>
+<text text-anchor="middle" x="382.5" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">QMap&lt; QString, quint32 &gt;</text>
+<polyline fill="none" stroke="black" points="309.5,-341.5 455.5,-341.5 "/>
+<text text-anchor="middle" x="382.5" y="-329.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="309.5,-322.5 455.5,-322.5 "/>
+<text text-anchor="middle" x="382.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node1 -->
 <g id="edge6" class="edge">
 <title>Node6&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M366.5,-303.12C366.5,-277.83 366.5,-238.91 366.5,-201.6"/>
-<polygon fill="none" stroke="#404040" points="366.5,-201.57 362.5,-195.57 366.5,-189.57 370.5,-195.57 366.5,-201.57"/>
-<text text-anchor="middle" x="402" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00"> #m_indexList</text>
-</g>
-<!-- Node7 -->
-<g id="node7" class="node">
-<title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d0/d4c/classQMap.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="441.5,-303.5 441.5,-360.5 587.5,-360.5 587.5,-303.5 441.5,-303.5"/>
-<text text-anchor="middle" x="514.5" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">QMap&lt; QString, quint32 &gt;</text>
-<polyline fill="none" stroke="black" points="441.5,-341.5 587.5,-341.5 "/>
-<text text-anchor="middle" x="514.5" y="-329.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="441.5,-322.5 587.5,-322.5 "/>
-<text text-anchor="middle" x="514.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-</a>
-</g>
-</g>
-<!-- Node7&#45;&gt;Node1 -->
-<g id="edge7" class="edge">
-<title>Node7&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M498.69,-303.38C484.18,-278.28 461.91,-240.34 441.5,-208 439.77,-205.26 438.02,-202.5 436.23,-199.71"/>
-<polygon fill="none" stroke="#404040" points="436.19,-199.65 429.58,-196.77 429.69,-189.56 436.31,-192.44 436.19,-199.65"/>
-<text text-anchor="middle" x="478.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00"> #m_objects</text>
+<path fill="none" stroke="#404040" d="M379.42,-303.12C376.62,-277.83 372.31,-238.91 368.18,-201.6"/>
+<polygon fill="none" stroke="#404040" points="368.17,-201.5 363.54,-195.97 366.85,-189.57 371.49,-195.09 368.17,-201.5"/>
+<text text-anchor="middle" x="400.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00"> #m_objects</text>
 </g>
 </g>
 </svg>

@@ -188,13 +188,13 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:af6d6b6b0715df5ecec22728aaa0594bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d92/namespaceqmu.html#af10feebbbc72442f8f3ef8102497b6f2">ETypeCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/classqmu_1_1QmuParserToken.html#af6d6b6b0715df5ecec22728aaa0594bd">m_iType</a></td></tr>
 <tr class="separator:af6d6b6b0715df5ecec22728aaa0594bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b10604eedae84d80f2070bceb8935e8"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/classqmu_1_1QmuParserToken.html#a0b10604eedae84d80f2070bceb8935e8">m_pTok</a></td></tr>
-<tr class="memdesc:a0b10604eedae84d80f2070bceb8935e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores Token pointer; not applicable for all tokens.  <a href="../../d0/d82/classqmu_1_1QmuParserToken.html#a0b10604eedae84d80f2070bceb8935e8">More...</a><br /></td></tr>
+<tr class="memdesc:a0b10604eedae84d80f2070bceb8935e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores <a class="el" href="../../d2/d6e/classToken.html">Token</a> pointer; not applicable for all tokens.  <a href="../../d0/d82/classqmu_1_1QmuParserToken.html#a0b10604eedae84d80f2070bceb8935e8">More...</a><br /></td></tr>
 <tr class="separator:a0b10604eedae84d80f2070bceb8935e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a5ed7ff51c886899777ea42e856c904"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/classqmu_1_1QmuParserToken.html#a8a5ed7ff51c886899777ea42e856c904">m_iIdx</a></td></tr>
 <tr class="memdesc:a8a5ed7ff51c886899777ea42e856c904"><td class="mdescLeft">&#160;</td><td class="mdescRight">An otional index to an external buffer storing the token data.  <a href="../../d0/d82/classqmu_1_1QmuParserToken.html#a8a5ed7ff51c886899777ea42e856c904">More...</a><br /></td></tr>
 <tr class="separator:a8a5ed7ff51c886899777ea42e856c904"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a939dd81cf4ce0fa69881e0c11902d911"><td class="memItemLeft" align="right" valign="top">TString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/classqmu_1_1QmuParserToken.html#a939dd81cf4ce0fa69881e0c11902d911">m_strTok</a></td></tr>
-<tr class="memdesc:a939dd81cf4ce0fa69881e0c11902d911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Token string.  <a href="../../d0/d82/classqmu_1_1QmuParserToken.html#a939dd81cf4ce0fa69881e0c11902d911">More...</a><br /></td></tr>
+<tr class="memdesc:a939dd81cf4ce0fa69881e0c11902d911"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d2/d6e/classToken.html">Token</a> string.  <a href="../../d0/d82/classqmu_1_1QmuParserToken.html#a939dd81cf4ce0fa69881e0c11902d911">More...</a><br /></td></tr>
 <tr class="separator:a939dd81cf4ce0fa69881e0c11902d911"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa074bb7a341c32a12f5b58357f8d7e3"><td class="memItemLeft" align="right" valign="top">TString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/classqmu_1_1QmuParserToken.html#aaa074bb7a341c32a12f5b58357f8d7e3">m_strVal</a></td></tr>
 <tr class="memdesc:aaa074bb7a341c32a12f5b58357f8d7e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value for string variables.  <a href="../../d0/d82/classqmu_1_1QmuParserToken.html#aaa074bb7a341c32a12f5b58357f8d7e3">More...</a><br /></td></tr>
@@ -210,7 +210,7 @@ Private Attributes</h2></td></tr>
 class qmu::QmuParserToken&lt; TBase, TString &gt;</h3>
 
 <p>Encapsulation of the data for a single formula token. </p>
-<p>Formula token implementation. Part of the Math Parser Package. Formula tokens can be either one of the following: </p><ul>
+<p>Formula token implementation. Part of the Math <a class="el" href="../../d0/d40/classParser.html">Parser</a> Package. Formula tokens can be either one of the following: </p><ul>
 <li>
 value </li>
 <li>
@@ -872,7 +872,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 </div><div class="memdoc">
 
 <p>Assign a token type. </p>
-<p>Token may not be of type value, variable or function. Those have seperate set functions.</p>
+<p><a class="el" href="../../d2/d6e/classToken.html">Token</a> may not be of type value, variable or function. Those have seperate set functions.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>[assert] a_iType!=cmVAR </dd>
 <dd>
 [assert] a_iType!=cmVAL </dd>
@@ -1295,7 +1295,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Stores Token pointer; not applicable for all tokens. </p>
+<p>Stores <a class="el" href="../../d2/d6e/classToken.html">Token</a> pointer; not applicable for all tokens. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00473">473</a> of file <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html">qmuparsertoken.h</a>.</p>
 
@@ -1325,7 +1325,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Token string. </p>
+<p><a class="el" href="../../d2/d6e/classToken.html">Token</a> string. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00475">475</a> of file <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html">qmuparsertoken.h</a>.</p>
 

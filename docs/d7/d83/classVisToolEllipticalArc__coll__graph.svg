@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 670;
+var viewWidth = 522;
 var viewHeight = 1328;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,29 +54,29 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>VisToolEllipticalArc</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-1324 666,-1324 666,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-1324 518,-1324 518,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="389,-0.5 389,-189.5 525,-189.5 525,-0.5 389,-0.5"/>
-<text text-anchor="middle" x="457" y="-177.5" font-family="Helvetica,sans-Serif" font-size="10.00">VisToolEllipticalArc</text>
-<polyline fill="none" stroke="black" points="389,-170.5 525,-170.5 "/>
-<text text-anchor="start" x="397" y="-158.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; radius1</text>
-<text text-anchor="start" x="397" y="-147.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; radius2</text>
-<text text-anchor="start" x="397" y="-136.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; f1</text>
-<text text-anchor="start" x="397" y="-125.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; f2</text>
-<text text-anchor="start" x="397" y="-114.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; rotationAngle</text>
-<polyline fill="none" stroke="black" points="389,-107.5 525,-107.5 "/>
-<text text-anchor="start" x="397" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VisToolEllipticalArc()</text>
-<text text-anchor="start" x="397" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VisToolEllipticalArc()</text>
-<text text-anchor="start" x="397" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RefreshGeometry()</text>
-<text text-anchor="start" x="397" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setRadius1()</text>
-<text text-anchor="start" x="397" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setRadius2()</text>
-<text text-anchor="start" x="397" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setF1()</text>
-<text text-anchor="start" x="397" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setF2()</text>
-<text text-anchor="start" x="397" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setRotationAngle()</text>
-<text text-anchor="start" x="397" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<polygon fill="#bfbfbf" stroke="black" points="312,-0.5 312,-189.5 448,-189.5 448,-0.5 312,-0.5"/>
+<text text-anchor="middle" x="380" y="-177.5" font-family="Helvetica,sans-Serif" font-size="10.00">VisToolEllipticalArc</text>
+<polyline fill="none" stroke="black" points="312,-170.5 448,-170.5 "/>
+<text text-anchor="start" x="320" y="-158.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; radius1</text>
+<text text-anchor="start" x="320" y="-147.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; radius2</text>
+<text text-anchor="start" x="320" y="-136.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; f1</text>
+<text text-anchor="start" x="320" y="-125.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; f2</text>
+<text text-anchor="start" x="320" y="-114.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; rotationAngle</text>
+<polyline fill="none" stroke="black" points="312,-107.5 448,-107.5 "/>
+<text text-anchor="start" x="320" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VisToolEllipticalArc()</text>
+<text text-anchor="start" x="320" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VisToolEllipticalArc()</text>
+<text text-anchor="start" x="320" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RefreshGeometry()</text>
+<text text-anchor="start" x="320" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setRadius1()</text>
+<text text-anchor="start" x="320" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setRadius2()</text>
+<text text-anchor="start" x="320" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setF1()</text>
+<text text-anchor="start" x="320" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setF2()</text>
+<text text-anchor="start" x="320" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setRotationAngle()</text>
+<text text-anchor="start" x="320" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
 </a>
 </g>
 </g>
@@ -84,25 +84,25 @@ var sectionId = 'dynsection-1';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="../../db/d76/classVisPath.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="337.5,-237.5 337.5,-349.5 434.5,-349.5 434.5,-237.5 337.5,-237.5"/>
-<text text-anchor="middle" x="386" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">VisPath</text>
-<polyline fill="none" stroke="black" points="337.5,-330.5 434.5,-330.5 "/>
-<text text-anchor="middle" x="386" y="-318.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="337.5,-311.5 434.5,-311.5 "/>
-<text text-anchor="start" x="345.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VisPath()</text>
-<text text-anchor="start" x="345.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VisPath()</text>
-<text text-anchor="start" x="345.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="345.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initPen()</text>
-<text text-anchor="start" x="345.5" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddOnScene()</text>
-<text text-anchor="start" x="345.5" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00"># GetPoint()</text>
+<polygon fill="white" stroke="black" points="260.5,-237.5 260.5,-349.5 357.5,-349.5 357.5,-237.5 260.5,-237.5"/>
+<text text-anchor="middle" x="309" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">VisPath</text>
+<polyline fill="none" stroke="black" points="260.5,-330.5 357.5,-330.5 "/>
+<text text-anchor="middle" x="309" y="-318.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="260.5,-311.5 357.5,-311.5 "/>
+<text text-anchor="start" x="268.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VisPath()</text>
+<text text-anchor="start" x="268.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VisPath()</text>
+<text text-anchor="start" x="268.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="268.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initPen()</text>
+<text text-anchor="start" x="268.5" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddOnScene()</text>
+<text text-anchor="start" x="268.5" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00"># GetPoint()</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M409.44,-227.63C413.85,-215.41 418.55,-202.42 423.21,-189.53"/>
-<polygon fill="none" stroke="midnightblue" points="406.07,-226.65 405.97,-237.24 412.66,-229.03 406.07,-226.65"/>
+<path fill="none" stroke="midnightblue" d="M332.44,-227.63C336.85,-215.41 341.55,-202.42 346.21,-189.53"/>
+<polygon fill="none" stroke="midnightblue" points="329.07,-226.65 328.97,-237.24 335.66,-229.03 329.07,-226.65"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -156,8 +156,8 @@ var sectionId = 'dynsection-1';
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M224.76,-511.49C251.26,-472.14 282.43,-427.01 312,-387 321.04,-374.76 331.04,-361.87 340.69,-349.72"/>
-<polygon fill="none" stroke="midnightblue" points="221.85,-509.54 219.18,-519.79 227.66,-513.45 221.85,-509.54"/>
+<path fill="none" stroke="midnightblue" d="M223.33,-409.81C227.06,-402.01 230.95,-394.38 235,-387 242.12,-374.02 251.09,-361.02 260.3,-349.04"/>
+<polygon fill="none" stroke="midnightblue" points="220.09,-408.49 219.03,-419.03 226.43,-411.45 220.09,-408.49"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
@@ -236,27 +236,28 @@ var sectionId = 'dynsection-1';
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:href="../../d3/d85/classVCurvePathItem.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="321.5,-547 321.5,-681 450.5,-681 450.5,-547 321.5,-547"/>
-<text text-anchor="middle" x="386" y="-669" font-family="Helvetica,sans-Serif" font-size="10.00">VCurvePathItem</text>
-<polyline fill="none" stroke="black" points="321.5,-662 450.5,-662 "/>
-<text text-anchor="middle" x="386" y="-650" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="321.5,-643 450.5,-643 "/>
-<text text-anchor="start" x="329.5" y="-631" font-family="Helvetica,sans-Serif" font-size="10.00">+ VCurvePathItem()</text>
-<text text-anchor="start" x="329.5" y="-620" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VCurvePathItem()</text>
-<text text-anchor="start" x="329.5" y="-609" font-family="Helvetica,sans-Serif" font-size="10.00">+ shape()</text>
-<text text-anchor="start" x="329.5" y="-598" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
-<text text-anchor="start" x="329.5" y="-587" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="329.5" y="-576" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetDirectionArrows()</text>
-<text text-anchor="start" x="329.5" y="-565" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPoints()</text>
-<text text-anchor="start" x="329.5" y="-554" font-family="Helvetica,sans-Serif" font-size="10.00"># ScalePenWidth()</text>
+<polygon fill="white" stroke="black" points="244.5,-541.5 244.5,-686.5 373.5,-686.5 373.5,-541.5 244.5,-541.5"/>
+<text text-anchor="middle" x="309" y="-674.5" font-family="Helvetica,sans-Serif" font-size="10.00">VCurvePathItem</text>
+<polyline fill="none" stroke="black" points="244.5,-667.5 373.5,-667.5 "/>
+<text text-anchor="start" x="252.5" y="-655.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_directionArrows</text>
+<text text-anchor="start" x="252.5" y="-644.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_points</text>
+<polyline fill="none" stroke="black" points="244.5,-637.5 373.5,-637.5 "/>
+<text text-anchor="start" x="252.5" y="-625.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VCurvePathItem()</text>
+<text text-anchor="start" x="252.5" y="-614.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VCurvePathItem()</text>
+<text text-anchor="start" x="252.5" y="-603.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ shape()</text>
+<text text-anchor="start" x="252.5" y="-592.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
+<text text-anchor="start" x="252.5" y="-581.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="252.5" y="-570.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetDirectionArrows()</text>
+<text text-anchor="start" x="252.5" y="-559.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPoints()</text>
+<text text-anchor="start" x="252.5" y="-548.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ScalePenWidth()</text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node2 -->
 <g id="edge5" class="edge">
 <title>Node6&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M386,-536.47C386,-478.87 386,-401.28 386,-349.66"/>
-<polygon fill="none" stroke="midnightblue" points="382.5,-536.62 386,-546.62 389.5,-536.62 382.5,-536.62"/>
+<path fill="none" stroke="midnightblue" d="M309,-531.05C309,-474.02 309,-399.53 309,-349.51"/>
+<polygon fill="none" stroke="midnightblue" points="305.5,-531.13 309,-541.13 312.5,-531.13 305.5,-531.13"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
@@ -274,91 +275,50 @@ var sectionId = 'dynsection-1';
 <!-- Node7&#45;&gt;Node6 -->
 <g id="edge6" class="edge">
 <title>Node7&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M320.47,-1065.43C332.46,-982.97 361.24,-785.19 376.35,-681.3"/>
-<polygon fill="none" stroke="midnightblue" points="317,-1064.97 319.02,-1075.36 323.92,-1065.97 317,-1064.97"/>
+<path fill="none" stroke="midnightblue" d="M314.53,-1065.11C313.53,-983.83 311.17,-791.64 309.88,-686.6"/>
+<polygon fill="none" stroke="midnightblue" points="311.04,-1065.41 314.66,-1075.36 318.04,-1065.32 311.04,-1065.41"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="../../d5/dc2/classQVector.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="388,-1070 388,-1138 528,-1138 528,-1070 388,-1070"/>
-<text text-anchor="start" x="396" y="-1126" font-family="Helvetica,sans-Serif" font-size="10.00">QVector&lt; QPair&lt; QLineF,</text>
-<text text-anchor="middle" x="458" y="-1115" font-family="Helvetica,sans-Serif" font-size="10.00"> QLineF &gt; &gt;</text>
-<polyline fill="none" stroke="black" points="388,-1108 528,-1108 "/>
-<text text-anchor="middle" x="458" y="-1096" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="388,-1089 528,-1089 "/>
-<text text-anchor="middle" x="458" y="-1077" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<g id="a_node8"><a xlink:href="../../d8/dbf/classVScaledEllipse.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="385.5,-248.5 385.5,-338.5 500.5,-338.5 500.5,-248.5 385.5,-248.5"/>
+<text text-anchor="middle" x="443" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">VScaledEllipse</text>
+<polyline fill="none" stroke="black" points="385.5,-319.5 500.5,-319.5 "/>
+<text text-anchor="middle" x="443" y="-307.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="385.5,-300.5 500.5,-300.5 "/>
+<text text-anchor="start" x="393.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledEllipse()</text>
+<text text-anchor="start" x="393.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VScaledEllipse()</text>
+<text text-anchor="start" x="393.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="393.5" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node6 -->
+<!-- Node8&#45;&gt;Node1 -->
 <g id="edge7" class="edge">
-<title>Node8&#45;&gt;Node6</title>
-<path fill="none" stroke="#404040" d="M453.11,-1069.84C441.8,-993.21 413.6,-802.09 397.59,-693.55"/>
-<polygon fill="none" stroke="#404040" points="397.55,-693.25 392.71,-687.9 395.79,-681.38 400.63,-686.73 397.55,-693.25"/>
-<text text-anchor="middle" x="471.5" y="-862" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_directionArrows</text>
+<title>Node8&#45;&gt;Node1</title>
+<path fill="none" stroke="#404040" d="M428.86,-248.4C424.32,-234.24 419.08,-217.9 413.76,-201.29"/>
+<polygon fill="none" stroke="#404040" points="413.73,-201.2 408.09,-196.71 410.06,-189.77 415.71,-194.27 413.73,-201.2"/>
+<text text-anchor="middle" x="446.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;arcCenter</text>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="../../d5/dc2/classQVector.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="546,-1075.5 546,-1132.5 662,-1132.5 662,-1075.5 546,-1075.5"/>
-<text text-anchor="middle" x="604" y="-1120.5" font-family="Helvetica,sans-Serif" font-size="10.00">QVector&lt; QPointF &gt;</text>
-<polyline fill="none" stroke="black" points="546,-1113.5 662,-1113.5 "/>
-<text text-anchor="middle" x="604" y="-1101.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="546,-1094.5 662,-1094.5 "/>
-<text text-anchor="middle" x="604" y="-1082.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<g id="a_node9"><a xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="392,-585.5 392,-642.5 514,-642.5 514,-585.5 392,-585.5"/>
+<text text-anchor="middle" x="453" y="-630.5" font-family="Helvetica,sans-Serif" font-size="10.00">QGraphicsEllipseItem</text>
+<polyline fill="none" stroke="#bfbfbf" points="392,-623.5 514,-623.5 "/>
+<text text-anchor="middle" x="453" y="-611.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#bfbfbf" points="392,-604.5 514,-604.5 "/>
+<text text-anchor="middle" x="453" y="-592.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
-<!-- Node9&#45;&gt;Node6 -->
+<!-- Node9&#45;&gt;Node8 -->
 <g id="edge8" class="edge">
-<title>Node9&#45;&gt;Node6</title>
-<path fill="none" stroke="#404040" d="M596.22,-1075.24C584.47,-1034.03 561.01,-954.36 537,-888 532.25,-874.88 535.45,-868.24 525,-859 502.55,-839.14 481.68,-861.7 460,-841 419.74,-802.56 401.36,-741.93 392.98,-693.13"/>
-<polygon fill="none" stroke="#404040" points="392.94,-692.86 388.05,-687.56 391.06,-681.01 395.95,-686.31 392.94,-692.86"/>
-<text text-anchor="middle" x="558" y="-862" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_points</text>
-</g>
-<!-- Node10 -->
-<g id="node10" class="node">
-<title>Node10</title>
-<g id="a_node10"><a xlink:href="../../d8/dbf/classVScaledEllipse.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="462.5,-248.5 462.5,-338.5 577.5,-338.5 577.5,-248.5 462.5,-248.5"/>
-<text text-anchor="middle" x="520" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">VScaledEllipse</text>
-<polyline fill="none" stroke="black" points="462.5,-319.5 577.5,-319.5 "/>
-<text text-anchor="middle" x="520" y="-307.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="462.5,-300.5 577.5,-300.5 "/>
-<text text-anchor="start" x="470.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledEllipse()</text>
-<text text-anchor="start" x="470.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VScaledEllipse()</text>
-<text text-anchor="start" x="470.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="470.5" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
-</a>
-</g>
-</g>
-<!-- Node10&#45;&gt;Node1 -->
-<g id="edge9" class="edge">
-<title>Node10&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M505.86,-248.4C501.32,-234.24 496.08,-217.9 490.76,-201.29"/>
-<polygon fill="none" stroke="#404040" points="490.73,-201.2 485.09,-196.71 487.06,-189.77 492.71,-194.27 490.73,-201.2"/>
-<text text-anchor="middle" x="523.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;arcCenter</text>
-</g>
-<!-- Node11 -->
-<g id="node11" class="node">
-<title>Node11</title>
-<g id="a_node11"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="469,-585.5 469,-642.5 591,-642.5 591,-585.5 469,-585.5"/>
-<text text-anchor="middle" x="530" y="-630.5" font-family="Helvetica,sans-Serif" font-size="10.00">QGraphicsEllipseItem</text>
-<polyline fill="none" stroke="#bfbfbf" points="469,-623.5 591,-623.5 "/>
-<text text-anchor="middle" x="530" y="-611.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#bfbfbf" points="469,-604.5 591,-604.5 "/>
-<text text-anchor="middle" x="530" y="-592.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-</a>
-</g>
-</g>
-<!-- Node11&#45;&gt;Node10 -->
-<g id="edge10" class="edge">
-<title>Node11&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M528.81,-575.25C526.96,-516.05 523.36,-401.67 521.39,-338.71"/>
-<polygon fill="none" stroke="midnightblue" points="525.32,-575.41 529.13,-585.29 532.31,-575.19 525.32,-575.41"/>
+<title>Node9&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M451.81,-575.25C449.96,-516.05 446.36,-401.67 444.39,-338.71"/>
+<polygon fill="none" stroke="midnightblue" points="448.32,-575.41 452.13,-585.29 455.31,-575.19 448.32,-575.41"/>
 </g>
 </g>
 </svg>
