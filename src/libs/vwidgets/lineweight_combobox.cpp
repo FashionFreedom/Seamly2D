@@ -101,7 +101,8 @@ void LineWeightComboBox::init()
     addItem(createIcon(7.00), "1.58mm",       1.58);
     addItem(createIcon(8.00), "2.00mm (ISO)", 2.00);
     addItem(createIcon(8.00), "2.11mm",       2.11);
-    setMaxVisibleItems(24);
+    addItem(createIcon(9.00), "3.00mm",       3.00);
+    setMaxVisibleItems(25);
 
     this->blockSignals(false);
 		connect(this, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &LineWeightComboBox::updateLineWeight);

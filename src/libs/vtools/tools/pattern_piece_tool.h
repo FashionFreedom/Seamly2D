@@ -174,17 +174,17 @@ protected:
 private:
     Q_DISABLE_COPY(PatternPieceTool)
 
-    QPainterPath           m_mainPath;    // Must be first to prevent crash
-    QRectF                 m_pieceRect;
-    QPainterPath           m_cutPath;
-    VMainGraphicsScene    *m_pieceScene;  /** @brief pieceScene pointer to the scene. */
-    QString                m_blockName;
+    QPainterPath            m_mainPath;    // Must be first to prevent crash
+    QRectF                  m_pieceRect;
+    QPainterPath            m_cutPath;
+    VMainGraphicsScene     *m_pieceScene;  /// @brief pieceScene pointer to the scene. */
+    QString                 m_blockName;
     NonScalingFillPathItem *m_cutLine;
-    NonScalingFillPathItem *m_seamLine;
-    VTextGraphicsItem     *m_dataLabel;
-    VTextGraphicsItem     *m_patternInfo;
-    VGrainlineItem        *m_grainLine;
-    QGraphicsPathItem     *m_notches;
+    NonScalingFillPathItem *m_allowanceFill;
+    VTextGraphicsItem      *m_dataLabel;
+    VTextGraphicsItem      *m_patternInfo;
+    VGrainlineItem         *m_grainLine;
+    QGraphicsPathItem      *m_notches;
 
                            PatternPieceTool(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                               const Source &typeCreation, VMainGraphicsScene *scene,

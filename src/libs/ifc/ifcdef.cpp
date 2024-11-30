@@ -281,7 +281,8 @@ QMap<QString, QString> lineWeightList()
     const QStringList lineWeights = QStringList() << "0"    << "0.05" << "0.09" << "0.13" << "0.15" << "0.18"
                                                   << "0.2"  << "0.25" << "0.3"  << "0.35" << "0.4"  << "0.5"
                                                   << "0.53" << "0.6"  << "0.7"  << "0.8"  << "0.9"  << "1"
-                                                  << "1.06" << "1.2"  << "1.4"  << "1.58" << "2"    << "2.11";
+                                                  << "1.06" << "1.2"  << "1.4"  << "1.58" << "2"    << "2.11"
+                                                  << "3";
 
     for (int i = 0; i < lineWeights.size(); ++i)
     {
@@ -356,6 +357,9 @@ QMap<QString, QString> lineWeightList()
                 break;
             case 23:
                 name = "2.11mm";
+                break;
+            case 24:
+                name = "3.00mm";
                 break;
             case 0:
             default:

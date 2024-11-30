@@ -1281,11 +1281,12 @@ void VLayoutPiece::createAllowanceItem(QGraphicsItem *parent) const
 //---------------------------------------------------------------------------------------------------------------------
 void VLayoutPiece::createNotchesItem(QGraphicsItem *parent) const
 {
-    QColor color = QColor(qApp->Settings()->getDefaultNotchColor());
+    QColor color      = QColor(qApp->Settings()->getDefaultNotchColor());
+    qreal  lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
 
     QGraphicsPathItem *item = new QGraphicsPathItem(parent);
     item->setPath(createNotchesPath());
-    item->setPen(QPen(color, 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    item->setPen(QPen(color, lineWeight, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
