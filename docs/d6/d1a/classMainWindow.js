@@ -71,7 +71,6 @@ var classMainWindow =
     [ "exportToCSVData", "d6/d1a/classMainWindow.html#a8c6c524074a02ae71d91c3a7c776697c", null ],
     [ "FileClosedCorrect", "d6/d1a/classMainWindow.html#a117b9afa1b61c0489bf17c4bab73c089", null ],
     [ "fullParseFile", "d6/d1a/classMainWindow.html#a3476c6743218f0cb4bd127e16e58fc01", null ],
-    [ "getImageFilename", "d6/d1a/classMainWindow.html#a66ff3edb7644bb6b70433dd9b51f7021", null ],
     [ "GetMeasurementFileName", "d6/d1a/classMainWindow.html#adc2403907930a09c2b2710d8ac3e95ea", null ],
     [ "GetPatternFileName", "d6/d1a/classMainWindow.html#ab35b2596cf2a9f22293be29054838c08", null ],
     [ "GetUnlokedRestoreFileList", "d6/d1a/classMainWindow.html#aac0fbf9c0116d6458281bd76e60ffcd6", null ],

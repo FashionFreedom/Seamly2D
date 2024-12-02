@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['occurence_17609',['Occurence',['../d6/dd2/classDFAContentModel_1_1Occurence.html',1,'DFAContentModel']]],
-  ['op_17610',['Op',['../d8/d65/classOp.html',1,'']]],
-  ['opfactory_17611',['OpFactory',['../db/d3e/classOpFactory.html',1,'']]],
-  ['outofmemoryexception_17612',['OutOfMemoryException',['../d3/dbf/classOutOfMemoryException.html',1,'']]]
+  ['removegroupitem_9971',['RemoveGroupItem',['../d7/d18/classRemoveGroupItem.html',1,'']]],
+  ['renamedraftblock_9972',['RenameDraftBlock',['../dd/d20/classRenameDraftBlock.html',1,'']]],
+  ['resizehandlesitem_9973',['ResizeHandlesItem',['../d0/de9/classResizeHandlesItem.html',1,'']]],
+  ['rowdata_9974',['RowData',['../da/d35/structRowData.html',1,'']]]
 ];

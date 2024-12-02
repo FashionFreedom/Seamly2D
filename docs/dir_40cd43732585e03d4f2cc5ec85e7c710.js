@@ -17,6 +17,10 @@ var dir_40cd43732585e03d4f2cc5ec85e7c710 =
     [ "addgroup.h", "d2/d32/addgroup_8h.html", [
       [ "AddGroup", "d2/d67/classAddGroup.html", "d2/d67/classAddGroup" ]
     ] ],
+    [ "addimage.cpp", "df/dc0/addimage_8cpp.html", null ],
+    [ "addimage.h", "d5/dd6/addimage_8h.html", [
+      [ "AddImage", "df/d11/classAddImage.html", "df/d11/classAddImage" ]
+    ] ],
     [ "addpiece.cpp", "dd/d33/addpiece_8cpp.html", null ],
     [ "addpiece.h", "d2/de0/addpiece_8h.html", [
       [ "AddPiece", "dc/d9d/classAddPiece.html", "dc/d9d/classAddPiece" ]

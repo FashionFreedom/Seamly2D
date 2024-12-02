@@ -262,7 +262,7 @@ $(document).ready(function(){initNavTree('d6/db8/tst__readval_8cpp_source.html',
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    qreal resVal = 0;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    QLocale::setDefault(locale);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> resCount = <a class="code" href="../../df/d51/qmudef_8cpp.html#a664390df11653050bb081955cd3fc653">ReadVal</a>(formula, resVal, locale, locale.decimalPoint()[0], locale.groupSeparator()[0]);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> resCount = <a class="code" href="../../df/d51/qmudef_8cpp.html#a664390df11653050bb081955cd3fc653">ReadVal</a>(formula, resVal, locale, locale.decimalPoint(), locale.groupSeparator());</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    QString errorMsg = QString(<span class="stringliteral">&quot;Conversion failed. Locale: &#39;%1&#39;.&quot;</span>).arg(locale.name());</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    QVERIFY2(resCount == expCount, qUtf8Printable(errorMsg));</div>

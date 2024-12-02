@@ -1,6 +1,0 @@
-var searchData=
-[
-  ['xmltokens_33086',['XMLTokens',['../de/d5f/classXMLScanner.html#afc32d8827fc76069cb4246d0e0e0fd5b',1,'XMLScanner::XMLTokens()'],['../de/d5f/classXMLScanner.html#afc32d8827fc76069cb4246d0e0e0fd5b',1,'XMLScanner::XMLTokens()'],['../de/d5f/classXMLScanner.html#afc32d8827fc76069cb4246d0e0e0fd5b',1,'XMLScanner::XMLTokens()']]],
-  ['xmlversion_33087',['XMLVersion',['../de/dcf/classXSValue.html#ab87a42fb5fd80dad2319add76e70b25e',1,'XSValue::XMLVersion()'],['../d0/dac/classXMLReader.html#a28703f964ed3ee9e47c94c01657fea6a',1,'XMLReader::XMLVersion()'],['../de/dcf/classXSValue.html#ab87a42fb5fd80dad2319add76e70b25e',1,'XSValue::XMLVersion()'],['../d0/dac/classXMLReader.html#a28703f964ed3ee9e47c94c01657fea6a',1,'XMLReader::XMLVersion()'],['../de/dcf/classXSValue.html#ab87a42fb5fd80dad2319add76e70b25e',1,'XSValue::XMLVersion()'],['../d0/dac/classXMLReader.html#a28703f964ed3ee9e47c94c01657fea6a',1,'XMLReader::XMLVersion()']]],
-  ['xpathnodetype_33088',['XPathNodeType',['../d5/d45/classDOMXPathNamespace.html#a923baf32536b7d04464909a6789d577a',1,'DOMXPathNamespace::XPathNodeType()'],['../d5/d45/classDOMXPathNamespace.html#a923baf32536b7d04464909a6789d577a',1,'DOMXPathNamespace::XPathNodeType()'],['../d5/d45/classDOMXPathNamespace.html#a923baf32536b7d04464909a6789d577a',1,'DOMXPathNamespace::XPathNodeType()']]]
-];

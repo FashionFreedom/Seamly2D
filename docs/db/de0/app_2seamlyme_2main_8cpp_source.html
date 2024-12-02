@@ -172,39 +172,46 @@ $(document).ready(function(){initNavTree('db/de0/app_2seamlyme_2main_8cpp_source
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    QT_REQUIRE_VERSION(argc, argv, <span class="stringliteral">&quot;5.15.2&quot;</span>);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#ifndef Q_OS_MAC </span><span class="comment">// supports natively</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="../../d6/d0b/def_8cpp.html#a1bf2551180232a51cb3941a5394ed35e">initHighDpiScaling</a>(argc, argv);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//Q_OS_MAC</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="../../d0/d17/classApplicationME.html">ApplicationME</a> app(argc, argv);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    app.<a class="code" href="../../d0/d17/classApplicationME.html#a86e44c8e1e53c2cd328f98ed389185c9">initOptions</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">//------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// On macOS, correct WebView / QtQuick compositing and stacking requires running</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// Qt in layer-backed mode, which again requires rendering on the Gui thread.</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    qWarning(<span class="stringliteral">&quot;SeamlyME: Setting QT_MAC_WANTS_LAYER=1 and QSG_RENDER_LOOP=basic&quot;</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    qputenv(<span class="stringliteral">&quot;QT_MAC_WANTS_LAYER&quot;</span>, <span class="stringliteral">&quot;1&quot;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">//------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">auto</span> settings = <a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;seamlyMeSettings();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    app.<a class="code" href="../../db/dda/classVAbstractApplication.html#a92886d256c5e9be89659da9dcc191107">loadTranslations</a>(settings-&gt;getLocale());</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// its named showWelcome, but true means &quot;do not show welcome again&quot; and thus we invert it here</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span> showWelcome = !settings-&gt;getShowWelcome();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (showWelcome)</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="../../d5/d64/classSeamlyMeWelcomeDialog.html">SeamlyMeWelcomeDialog</a> *dialog = <span class="keyword">new</span> <a class="code" href="../../d5/d64/classSeamlyMeWelcomeDialog.html">SeamlyMeWelcomeDialog</a>();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        dialog-&gt;setAttribute(Qt::WA_DeleteOnClose, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        dialog-&gt;exec();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#ifndef Q_OS_MAC </span><span class="comment">// supports natively</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="../../d6/d0b/def_8cpp.html#a1bf2551180232a51cb3941a5394ed35e">initHighDpiScaling</a>(argc, argv);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//Q_OS_MAC</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="../../d0/d17/classApplicationME.html">ApplicationME</a> app(argc, argv);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    app.<a class="code" href="../../d0/d17/classApplicationME.html#a86e44c8e1e53c2cd328f98ed389185c9">initOptions</a>();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">auto</span> settings = <a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;seamlyMeSettings();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    app.<a class="code" href="../../db/dda/classVAbstractApplication.html#a92886d256c5e9be89659da9dcc191107">loadTranslations</a>(settings-&gt;getLocale());</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// its named showWelcome, but true means &quot;do not show welcome again&quot; and thus we invert it here</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">bool</span> showWelcome = !settings-&gt;getShowWelcome();</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    QTimer::singleShot(0, &amp;app, &amp;<a class="code" href="../../d0/d17/classApplicationME.html#a7c2c8e8d2b3115764579186b38e4cdff">ApplicationME::processCommandLine</a>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> app.exec();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (showWelcome)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="../../d5/d64/classSeamlyMeWelcomeDialog.html">SeamlyMeWelcomeDialog</a> *dialog = <span class="keyword">new</span> <a class="code" href="../../d5/d64/classSeamlyMeWelcomeDialog.html">SeamlyMeWelcomeDialog</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        dialog-&gt;setAttribute(Qt::WA_DeleteOnClose, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        dialog-&gt;exec();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    QTimer::singleShot(0, &amp;app, &amp;<a class="code" href="../../d0/d17/classApplicationME.html#a7c2c8e8d2b3115764579186b38e4cdff">ApplicationME::processCommandLine</a>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> app.exec();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
 <div class="ttc" id="aapp_2seamly2d_2main_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="../../dc/d14/app_2seamly2d_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d14/app_2seamly2d_2main_8cpp_source.html#l00069">main.cpp:69</a></div></div>
 <div class="ttc" id="aapplication__2d_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d61/application__2d_8h_source.html#l00068">application_2d.h:68</a></div></div>
 <div class="ttc" id="aapplication__me_8h_html"><div class="ttname"><a href="../../d1/da2/application__me_8h.html">application_me.h</a></div></div>
 <div class="ttc" id="aclassApplicationME_html"><div class="ttname"><a href="../../d0/d17/classApplicationME.html">ApplicationME</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/da2/application__me_8h_source.html#l00073">application_me.h:74</a></div></div>
-<div class="ttc" id="aclassApplicationME_html_a7c2c8e8d2b3115764579186b38e4cdff"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a7c2c8e8d2b3115764579186b38e4cdff">ApplicationME::processCommandLine</a></div><div class="ttdeci">void processCommandLine()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00743">application_me.cpp:743</a></div></div>
-<div class="ttc" id="aclassApplicationME_html_a86e44c8e1e53c2cd328f98ed389185c9"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a86e44c8e1e53c2cd328f98ed389185c9">ApplicationME::initOptions</a></div><div class="ttdeci">void initOptions()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00397">application_me.cpp:397</a></div></div>
+<div class="ttc" id="aclassApplicationME_html_a7c2c8e8d2b3115764579186b38e4cdff"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a7c2c8e8d2b3115764579186b38e4cdff">ApplicationME::processCommandLine</a></div><div class="ttdeci">void processCommandLine()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00748">application_me.cpp:748</a></div></div>
+<div class="ttc" id="aclassApplicationME_html_a86e44c8e1e53c2cd328f98ed389185c9"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a86e44c8e1e53c2cd328f98ed389185c9">ApplicationME::initOptions</a></div><div class="ttdeci">void initOptions()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00402">application_me.cpp:402</a></div></div>
 <div class="ttc" id="aclassSeamlyMeWelcomeDialog_html"><div class="ttname"><a href="../../d5/d64/classSeamlyMeWelcomeDialog.html">SeamlyMeWelcomeDialog</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d5b/me__welcome__dialog_8h_source.html#l00038">me_welcome_dialog.h:39</a></div></div>
-<div class="ttc" id="aclassVAbstractApplication_html_a92886d256c5e9be89659da9dcc191107"><div class="ttname"><a href="../../db/dda/classVAbstractApplication.html#a92886d256c5e9be89659da9dcc191107">VAbstractApplication::loadTranslations</a></div><div class="ttdeci">void loadTranslations(const QString &amp;locale)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/df6/vabstractapplication_8cpp_source.html#l00266">vabstractapplication.cpp:266</a></div></div>
-<div class="ttc" id="adef_8cpp_html_a1bf2551180232a51cb3941a5394ed35e"><div class="ttname"><a href="../../d6/d0b/def_8cpp.html#a1bf2551180232a51cb3941a5394ed35e">initHighDpiScaling</a></div><div class="ttdeci">void initHighDpiScaling(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d0b/def_8cpp_source.html#l00577">def.cpp:577</a></div></div>
+<div class="ttc" id="aclassVAbstractApplication_html_a92886d256c5e9be89659da9dcc191107"><div class="ttname"><a href="../../db/dda/classVAbstractApplication.html#a92886d256c5e9be89659da9dcc191107">VAbstractApplication::loadTranslations</a></div><div class="ttdeci">void loadTranslations(const QString &amp;locale)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/df6/vabstractapplication_8cpp_source.html#l00268">vabstractapplication.cpp:268</a></div></div>
+<div class="ttc" id="adef_8cpp_html_a1bf2551180232a51cb3941a5394ed35e"><div class="ttname"><a href="../../d6/d0b/def_8cpp.html#a1bf2551180232a51cb3941a5394ed35e">initHighDpiScaling</a></div><div class="ttdeci">void initHighDpiScaling(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d0b/def_8cpp_source.html#l00579">def.cpp:579</a></div></div>
 <div class="ttc" id="ame__welcome__dialog_8h_html"><div class="ttname"><a href="../../d3/d5b/me__welcome__dialog_8h.html">me_welcome_dialog.h</a></div></div>
 <div class="ttc" id="atmainwindow_8h_html"><div class="ttname"><a href="../../dc/dc0/tmainwindow_8h.html">tmainwindow.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

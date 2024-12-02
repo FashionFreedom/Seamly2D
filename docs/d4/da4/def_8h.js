@@ -16,6 +16,11 @@ var def_8h =
     [ "SceneSize", "d4/da4/def_8h.html#a8084f95d171e33ef73bf44aed20a4378", null ],
     [ "V_FALLTHROUGH", "d4/da4/def_8h.html#a380cf399715eea06631207dd0f18de71", null ],
     [ "ToolVisHolderType", "d4/da4/def_8h.html#acb16ac88f43c4dcfdc9e43baf22da452", null ],
+    [ "DialogSource", "d4/da4/def_8h.html#a2ace20f64b3456b610d7b2d85ea3418e", [
+      [ "ToolDialog", "d4/da4/def_8h.html#a2ace20f64b3456b610d7b2d85ea3418eada9dd8d76cc8af1d78de34d822cf26ab", null ],
+      [ "VariableDialog", "d4/da4/def_8h.html#a2ace20f64b3456b610d7b2d85ea3418ea0d8f2a9b908c5c0f0e712bba782f2b03", null ],
+      [ "MeasurementDialog", "d4/da4/def_8h.html#a2ace20f64b3456b610d7b2d85ea3418eae2e9e73a1611e997de4419e9ecabc818", null ]
+    ] ],
     [ "Direction", "d4/da4/def_8h.html#a1b2993a5d049d3ac565a9a8d0209084a", [
       [ "Forward", "d4/da4/def_8h.html#a1b2993a5d049d3ac565a9a8d0209084aa67d2f6740a8eaebf4d5c6f79be8da481", null ],
       [ "Backward", "d4/da4/def_8h.html#a1b2993a5d049d3ac565a9a8d0209084aab3263eb38f8903efc271cc7a760da510", null ]

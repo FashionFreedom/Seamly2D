@@ -160,19 +160,19 @@ var sectionId = 'dynsection-1';
 <path fill="none" stroke="midnightblue" d="M621.28,-198.75C666.66,-186.04 727.17,-169.09 763.06,-159.03"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="620.24,-195.41 611.55,-201.48 622.13,-202.15 620.24,-195.41"/>
 </g>
-<!-- Node16 -->
-<g id="node16" class="node">
-<title>Node16</title>
-<g id="a_node16"><a xlink:href="../../d3/d49/vpattern_8cpp.html" target="_top" xlink:title=" ">
+<!-- Node15 -->
+<g id="node15" class="node">
+<title>Node15</title>
+<g id="a_node15"><a xlink:href="../../d3/d49/vpattern_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="916,-134.5 916,-164.5 1041,-164.5 1041,-134.5 916,-134.5"/>
 <text text-anchor="start" x="924" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/xml</text>
 <text text-anchor="middle" x="978.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vpattern.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node16 -->
-<g id="edge18" class="edge">
-<title>Node1&#45;&gt;Node16</title>
+<!-- Node1&#45;&gt;Node15 -->
+<g id="edge17" class="edge">
+<title>Node1&#45;&gt;Node15</title>
 <path fill="none" stroke="midnightblue" d="M634.24,-206.1C704.38,-196.75 813.46,-181.45 907.5,-165 910.23,-164.52 913.01,-164.02 915.82,-163.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="633.63,-202.65 624.18,-207.44 634.55,-209.59 633.63,-202.65"/>
 </g>
@@ -212,16 +212,16 @@ var sectionId = 'dynsection-1';
 <g id="node5" class="node">
 <title>Node5</title>
 <g id="a_node5"><a xlink:href="../../d8/dd9/mainwindow_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="343.5,-6 343.5,-25 531.5,-25 531.5,-6 343.5,-6"/>
-<text text-anchor="middle" x="437.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/mainwindow.cpp</text>
+<polygon fill="white" stroke="black" points="415.5,-6 415.5,-25 603.5,-25 603.5,-6 415.5,-6"/>
+<text text-anchor="middle" x="509.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/mainwindow.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
 <title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M432.48,-57.25C433.87,-46.02 435.42,-33.38 436.43,-25.19"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="428.98,-57.04 431.24,-67.4 435.93,-57.9 428.98,-57.04"/>
+<path fill="none" stroke="midnightblue" d="M454.72,-61.01C469.57,-48.94 487.59,-34.3 498.8,-25.19"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="452.41,-58.37 446.86,-67.4 456.83,-63.81 452.41,-58.37"/>
 </g>
 <!-- Node8&#45;&gt;Node4 -->
 <g id="edge8" class="edge">
@@ -250,73 +250,57 @@ var sectionId = 'dynsection-1';
 <path fill="none" stroke="midnightblue" d="M785.66,-130.29C780.28,-117.81 773.39,-101.81 769.22,-92.13"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="782.55,-131.93 789.72,-139.73 788.98,-129.16 782.55,-131.93"/>
 </g>
-<!-- Node15 -->
-<g id="node15" class="node">
-<title>Node15</title>
-<g id="a_node15"><a xlink:href="../../d8/de8/mainwindowsnogui_8cpp.html" target="_top" xlink:title=" ">
+<!-- Node14 -->
+<g id="node14" class="node">
+<title>Node14</title>
+<g id="a_node14"><a xlink:href="../../d8/de8/mainwindowsnogui_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="871,-73 871,-92 1092,-92 1092,-73 871,-73"/>
 <text text-anchor="middle" x="981.5" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/mainwindowsnogui.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node15 -->
-<g id="edge17" class="edge">
-<title>Node10&#45;&gt;Node15</title>
+<!-- Node10&#45;&gt;Node14 -->
+<g id="edge16" class="edge">
+<title>Node10&#45;&gt;Node14</title>
 <path fill="none" stroke="midnightblue" d="M828.39,-136.44C865.69,-123.54 923.87,-103.42 956.73,-92.06"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="826.77,-133.29 818.46,-139.87 829.06,-139.91 826.77,-133.29"/>
 </g>
 <!-- Node11&#45;&gt;Node5 -->
-<g id="edge16" class="edge">
+<g id="edge15" class="edge">
 <title>Node11&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M712.3,-70.96C647.75,-58.16 540.16,-36.84 480.55,-25.03"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="711.79,-74.42 722.28,-72.94 713.15,-67.56 711.79,-74.42"/>
+<path fill="none" stroke="midnightblue" d="M721.8,-70.4C671.27,-57.58 589.2,-36.74 543.31,-25.08"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="721.22,-73.87 731.77,-72.94 722.94,-67.08 721.22,-73.87"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="../../d3/dd8/vapplication_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="557,-0.5 557,-30.5 684,-30.5 684,-0.5 557,-0.5"/>
-<text text-anchor="start" x="565" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/core</text>
-<text text-anchor="middle" x="620.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vapplication.cpp</text>
+<g id="a_node12"><a xlink:href="../../df/d3e/application__2d_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="623,-0.5 623,-30.5 750,-30.5 750,-0.5 623,-0.5"/>
+<text text-anchor="start" x="631" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/core</text>
+<text text-anchor="middle" x="686.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/application_2d.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node12 -->
 <g id="edge13" class="edge">
 <title>Node11&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M737.1,-68.77C712.55,-57.77 677.14,-41.89 651.79,-30.53"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="735.69,-71.97 746.25,-72.87 738.55,-65.58 735.69,-71.97"/>
+<path fill="none" stroke="midnightblue" d="M746.95,-66.24C733.84,-55.45 716.4,-41.1 703.62,-30.59"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="744.9,-69.08 754.85,-72.73 749.35,-63.68 744.9,-69.08"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
-<g id="a_node13"><a xlink:href="../../df/d3e/application__2d_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="702,-0.5 702,-30.5 829,-30.5 829,-0.5 702,-0.5"/>
-<text text-anchor="start" x="710" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/core</text>
-<text text-anchor="middle" x="765.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/application_2d.cpp</text>
+<g id="a_node13"><a xlink:href="../../dc/d14/app_2seamly2d_2main_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="768,-6 768,-25 919,-25 919,-6 768,-6"/>
+<text text-anchor="middle" x="843.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/main.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node13 -->
 <g id="edge14" class="edge">
 <title>Node11&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M765.5,-62.41C765.5,-52.22 765.5,-39.9 765.5,-30.59"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="762,-62.73 765.5,-72.73 769,-62.73 762,-62.73"/>
-</g>
-<!-- Node14 -->
-<g id="node14" class="node">
-<title>Node14</title>
-<g id="a_node14"><a xlink:href="../../dc/d14/app_2seamly2d_2main_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="847,-6 847,-25 998,-25 998,-6 847,-6"/>
-<text text-anchor="middle" x="922.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/main.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node11&#45;&gt;Node14 -->
-<g id="edge15" class="edge">
-<title>Node11&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M795.82,-68.95C826.9,-56.08 874.43,-36.4 901.57,-25.17"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="794.25,-65.81 786.35,-72.87 796.93,-72.28 794.25,-65.81"/>
+<path fill="none" stroke="midnightblue" d="M783.84,-66.21C799.21,-53.41 820.59,-35.59 833.15,-25.13"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="781.46,-63.64 776.02,-72.73 785.94,-69.02 781.46,-63.64"/>
 </g>
 </g>
 </svg>
