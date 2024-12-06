@@ -245,7 +245,7 @@ QString VAbstractCubicBezierPath::NameForHistory(const QString &toolName) const
     QString name = toolName;
     if (CountPoints() > 0)
     {
-        name += QString(" %1").arg(FirstPoint().name());
+        name += QString("%1").arg(FirstPoint().name());
         if (CountSubSpl() >= 1)
         {
             name += QString("_%1").arg(LastPoint().name());
