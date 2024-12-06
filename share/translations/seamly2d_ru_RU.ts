@@ -4218,12 +4218,6 @@ for writing</source>
 для записи</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
-%1
-Possibly the file is already being downloaded.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>File download failed: %1.</source>
         <translation>Не удалось загрузить файл: %1.</translation>
     </message>
@@ -4240,6 +4234,12 @@ Possibly the file is already being downloaded.</source>
 Do you want to download it?</source>
         <translation>Появилось новое обновление %1.
 Хотите скачать его?</translation>
+    </message>
+    <message>
+        <source>Unable to get exclusive access to file 
+%1
+Possibly the file is already being downloaded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5220,12 +5220,6 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>По убыванию площади</translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
-
-Apply settings anyway?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Centimeters</source>
         <translation>Сантиметры</translation>
     </message>
@@ -5352,6 +5346,12 @@ Apply settings anyway?</source>
     <message>
         <source>Millimeters</source>
         <translation>Миллиметры</translation>
+    </message>
+    <message>
+        <source>Margins go beyond printing. 
+
+Apply settings anyway?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10362,17 +10362,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Десятичный Разделитель:</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>When checked the Welcome window will not be displayed.
-You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Язык интерфейса:</translation>
     </message>
@@ -10400,6 +10389,17 @@ You can change this setting in the SeamlyMe preferences.</source>
         <source>Inches</source>
         <translation>Дюймы</translation>
     </message>
+    <message>
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed. 
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10424,19 +10424,8 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Десятичный Разделитель:</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Язык интерфейса:</translation>
-    </message>
-    <message>
-        <source>When checked the Welcome window will not be displayed.
-You can change this setting in the Seamly2D preferences.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Do not show again</source>
@@ -10473,6 +10462,17 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Sets the node selection click  sound.</source>
         <translation>Устанавливает звук щелчка при выборе узла.</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed. 
+You can change this setting in the Seamly2D preferences.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12727,6 +12727,42 @@ load in SeamlyME as usual.
     <message>
         <source>Remove Group Object</source>
         <translation>Удалить Группу Объектов</translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <translation type="unfinished">Линия_</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <translation type="unfinished">Дуга_</translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <translation type="unfinished">Дуга_</translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <translation type="unfinished">Спл_</translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <translation type="unfinished">СплКонтур_</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation type="unfinished">Длина</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation type="unfinished">Угол</translation>
+    </message>
+    <message>
+        <source>AngleLine_</source>
+        <translation type="unfinished">УголЛинии_</translation>
     </message>
 </context>
 <context>

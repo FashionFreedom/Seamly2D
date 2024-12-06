@@ -4190,12 +4190,6 @@ for writing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
-%1
-Possibly the file is already being downloaded.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>File download failed: %1.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4210,6 +4204,12 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>A new release %1 is available.
 Do you want to download it?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to get exclusive access to file 
+%1
+Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5191,12 +5191,6 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Surface décroissante</translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
-
-Apply settings anyway?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Centimeters</source>
         <translation>Centimètres</translation>
     </message>
@@ -5322,6 +5316,12 @@ Apply settings anyway?</source>
     <message>
         <source>Millimeters</source>
         <translation type="unfinished">Millimètres</translation>
+    </message>
+    <message>
+        <source>Margins go beyond printing. 
+
+Apply settings anyway?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10330,17 +10330,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Séparateur décimal :</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>When checked the Welcome window will not be displayed.
-You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Langue de l&apos;interface:</translation>
     </message>
@@ -10368,6 +10357,17 @@ You can change this setting in the SeamlyMe preferences.</source>
         <source>Inches</source>
         <translation>Pouces</translation>
     </message>
+    <message>
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed. 
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10394,11 +10394,6 @@ You can change this setting in the SeamlyMe preferences.</source>
     <message>
         <source>GUI language:</source>
         <translation>Langue de l&apos;interface:</translation>
-    </message>
-    <message>
-        <source>When checked the Welcome window will not be displayed.
-You can change this setting in the Seamly2D preferences.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Do not show again</source>
@@ -10429,18 +10424,23 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Veuillez choisir les unités, le séparateur décimal, la langue et le son de sélection que vous préférez. (Vous pourrez les modifier ultérieurement.)</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Sound:</source>
         <translation>Le son:</translation>
     </message>
     <message>
         <source>Sets the node selection click  sound.</source>
         <translation>Définit le son du clic de sélection du nœud.</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed. 
+You can change this setting in the Seamly2D preferences.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12688,6 +12688,42 @@ load in SeamlyME as usual.
     <message>
         <source>Remove Group Object</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <translation type="unfinished">Ligne_</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <translation type="unfinished">Arc_</translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <translation type="unfinished">Spl_</translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation type="unfinished">Longueur</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation type="unfinished">Angle</translation>
+    </message>
+    <message>
+        <source>AngleLine_</source>
+        <translation type="unfinished">AngleLine_</translation>
     </message>
 </context>
 <context>
