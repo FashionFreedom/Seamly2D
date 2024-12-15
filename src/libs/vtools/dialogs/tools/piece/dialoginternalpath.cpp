@@ -1,53 +1,52 @@
-/***************************************************************************
- **  @file   dialoginternalpath.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   dialoginternalpath.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @copyright
+//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
-/************************************************************************
- **  @file   dialoginternalpath.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   22 11, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   dialoginternalpath.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   22 11, 2016
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2016 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "dialoginternalpath.h"
 #include "ui_dialoginternalpath.h"
@@ -82,12 +81,12 @@ DialogInternalPath::DialogInternalPath(const VContainer *data, quint32 toolId, Q
 
     initializeOkCancel(ui);
 
-    InitPathTab();
-    InitSeamAllowanceTab();
-    InitNotchesTab();
+    initializePathTab();
+    initializeSeamAllowanceTab();
+    initializeNotchesTab();
 
     flagName = true;//We have default name of piece.
-    flagError = PathIsValid();
+    flagError = isValidPath();
     CheckState();
 
     vis = new VisToolInternalPath(data);
@@ -97,7 +96,7 @@ DialogInternalPath::DialogInternalPath(const VContainer *data, quint32 toolId, Q
 
     connect(ui->piece_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
     {
-        ValidObjects(PathIsValid());
+        validateObjects(isValidPath());
     });
 }
 
@@ -118,31 +117,31 @@ void DialogInternalPath::EnbleShowMode(bool disable)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::ChosenObject(quint32 id, const SceneObject &type)
 {
-    if (not prepare)
+    if (!prepare)
     {
         bool reverse = false;
         if (QGuiApplication::keyboardModifiers() == Qt::ShiftModifier)
         {
             reverse = true;
         }
-        if (id != GetLastId())
+        if (id != getLastNodeId())
         {
             switch (type)
             {
                 case SceneObject::Arc:
-                    NewItem(VPieceNode(id, Tool::NodeArc, reverse));
+                    createNewItem(VPieceNode(id, Tool::NodeArc, reverse));
                     break;
                 case SceneObject::ElArc:
-                    NewItem(VPieceNode(id, Tool::NodeElArc, reverse));
+                    createNewItem(VPieceNode(id, Tool::NodeElArc, reverse));
                     break;
                 case SceneObject::Point:
-                    NewItem(VPieceNode(id, Tool::NodePoint));
+                    createNewItem(VPieceNode(id, Tool::NodePoint));
                     break;
                 case SceneObject::Spline:
-                    NewItem(VPieceNode(id, Tool::NodeSpline, reverse));
+                    createNewItem(VPieceNode(id, Tool::NodeSpline, reverse));
                     break;
                 case SceneObject::SplinePath:
-                    NewItem(VPieceNode(id, Tool::NodeSplinePath, reverse));
+                    createNewItem(VPieceNode(id, Tool::NodeSplinePath, reverse));
                     break;
                 case (SceneObject::Line):
                 case (SceneObject::Piece):
@@ -160,13 +159,13 @@ void DialogInternalPath::ChosenObject(quint32 id, const SceneObject &type)
             }
         }
 
-        ValidObjects(PathIsValid());
+        validateObjects(isValidPath());
 
-        if (not m_showMode)
+        if (!m_showMode)
         {
             auto visPath = qobject_cast<VisToolInternalPath *>(vis);
             SCASSERT(visPath != nullptr);
-            const VPiecePath p = CreatePath();
+            const VPiecePath p = createPath();
             visPath->SetPath(p);
 
             if (p.CountNodes() == 1)
@@ -174,7 +173,7 @@ void DialogInternalPath::ChosenObject(quint32 id, const SceneObject &type)
                 emit ToolTip(tr("Select main path objects, Use <b>SHIFT</b> to reverse curve direction, "
                                 "Press <b>ENTER</b> to finish path creation "));
 
-                if (not qApp->getCurrentScene()->items().contains(visPath))
+                if (!qApp->getCurrentScene()->items().contains(visPath))
                 {
                     visPath->VisualMode(NULL_ID);
                 }
@@ -196,12 +195,12 @@ void DialogInternalPath::ShowDialog(bool click)
 {
     if (click == false)
     {
-        if (CreatePath().CountNodes() > 0)
+        if (createPath().CountNodes() > 0)
         {
             emit ToolTip("");
             prepare = true;
 
-            if (not m_showMode)
+            if (!m_showMode)
             {
                 auto visPath = qobject_cast<VisToolInternalPath *>(vis);
                 SCASSERT(visPath != nullptr);
@@ -246,7 +245,7 @@ void DialogInternalPath::closeEvent(QCloseEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::ShowContextMenu(const QPoint &pos)
+void DialogInternalPath::showContextMenu(const QPoint &pos)
 {
     const int row = ui->listWidget->currentRow();
     if (ui->listWidget->count() == 0 || row == -1 || row >= ui->listWidget->count())
@@ -254,7 +253,6 @@ void DialogInternalPath::ShowContextMenu(const QPoint &pos)
         return;
     }
 
-    // workaround for https://bugreports.qt.io/browse/QTBUG-97559: assign parent to QMenu
     QScopedPointer<QMenu> menu(new QMenu(ui->listWidget));
 
     NodeInfo info;
@@ -287,7 +285,7 @@ void DialogInternalPath::ShowContextMenu(const QPoint &pos)
     }
     else if (rowNode.GetTypeTool() != Tool::NodePoint && selectedAction == actionReverse)
     {
-        rowNode.SetReverse(not rowNode.GetReverse());
+        rowNode.SetReverse(!rowNode.GetReverse());
         info = getNodeInfo(rowNode, true);
         rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
         rowItem->setIcon(QIcon(info.icon));
@@ -295,25 +293,25 @@ void DialogInternalPath::ShowContextMenu(const QPoint &pos)
     }
     //else if (selectedAction == actionNotch)
     //{
-    //    rowNode.setNotch(not rowNode.isNotch());
+    //    rowNode.setNotch(!rowNode.isNotch());
     //    info = getNodeInfo(rowNode, true);
     //    rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
     //    rowItem->setIcon(QIcon(info.icon));
     //    rowItem->setText(info.name);
     //}
 
-    ValidObjects(PathIsValid());
-    ListChanged();
+    validateObjects(isValidPath());
+    listChanged();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::ListChanged()
+void DialogInternalPath::listChanged()
 {
-    if (not m_showMode)
+    if (!m_showMode)
     {
         auto visPath = qobject_cast<VisToolInternalPath *>(vis);
         SCASSERT(visPath != nullptr);
-        visPath->SetPath(CreatePath());
+        visPath->SetPath(createPath());
         visPath->RefreshGeometry();
     }
 
@@ -322,7 +320,7 @@ void DialogInternalPath::ListChanged()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::NameChanged()
+void DialogInternalPath::nameChanged()
 {
     if (ui->pathName_LineEdit->text().isEmpty())
     {
@@ -354,7 +352,7 @@ void DialogInternalPath::nodeChanged(int index)
 
     if (index != -1)
     {
-        const VPiecePath path = CreatePath();
+        const VPiecePath path = createPath();
         const int nodeIndex = path.indexOfNode(ui->nodes_ComboBox->currentData().toUInt());
         if (nodeIndex != -1)
         {
@@ -436,7 +434,7 @@ void DialogInternalPath::notchChanged(int index)
 
     if (index != -1)
     {
-        const VPiecePath path = CreatePath();
+        const VPiecePath path = createPath();
         const int nodeIndex = path.indexOfNode(ui->notches_ComboBox->currentData().toUInt());
         if (nodeIndex != -1)
         {
@@ -570,7 +568,7 @@ void DialogInternalPath::notchTypeChanged(int id)
             rowItem->setIcon(QIcon(info.icon));
             rowItem->setText(info.name);
 
-            ListChanged();
+            listChanged();
         }
     }
 }
@@ -604,7 +602,7 @@ void DialogInternalPath::notchSubTypeChanged(int id)
             rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
             //rowItem->setText(getNodeInfo(rowNode, true));
 
-            ListChanged();
+            listChanged();
         }
     }
 }
@@ -690,7 +688,7 @@ void DialogInternalPath::editBeforeSeamAllowanceWidth()
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
     if (dialog->exec() == QDialog::Accepted)
     {
-        SetCurrentSABefore(dialog->GetFormula());
+        setCurrentSABefore(dialog->GetFormula());
     }
     delete dialog;
 }
@@ -758,7 +756,7 @@ void DialogInternalPath::expandWidthAfterFormulaTextEdit()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::InitPathTab()
+void DialogInternalPath::initializePathTab()
 {
     ui->pathName_LineEdit->setClearButtonEnabled(true);
 
@@ -768,19 +766,19 @@ void DialogInternalPath::InitPathTab()
         ui->penType_ComboBox->removeItem(index);
     }
 
-    connect(ui->pathName_LineEdit, &QLineEdit::textChanged, this, &DialogInternalPath::NameChanged);
+    connect(ui->pathName_LineEdit, &QLineEdit::textChanged, this, &DialogInternalPath::nameChanged);
 
-    InitPathTypes();
+    initializePathTypes();
     connect(ui->type_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             [this]()
     {
-        ui->penType_ComboBox->setEnabled(GetType() == PiecePathType::InternalPath);
-        ui->cutOnFabric_CheckBox->setEnabled(GetType() == PiecePathType::InternalPath);
-        ValidObjects(PathIsValid());
+        ui->penType_ComboBox->setEnabled(getType() == PiecePathType::InternalPath);
+        ui->cutOnFabric_CheckBox->setEnabled(getType() == PiecePathType::InternalPath);
+        validateObjects(isValidPath());
     });
 
     ui->listWidget->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(ui->listWidget, &QListWidget::customContextMenuRequested, this, &DialogInternalPath::ShowContextMenu);
+    connect(ui->listWidget, &QListWidget::customContextMenuRequested, this, &DialogInternalPath::showContextMenu);
 
     connect(ui->listWidget, &QListWidget::itemSelectionChanged, this, &DialogInternalPath::setMoveExclusions);
     connect(ui->moveTop_ToolButton,    &QToolButton::clicked, this, [this](){moveListRowTop(ui->listWidget);});
@@ -790,7 +788,7 @@ void DialogInternalPath::InitPathTab()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::InitSeamAllowanceTab()
+void DialogInternalPath::initializeSeamAllowanceTab()
 {
     plainTextEditFormula = ui->widthFormula_PlainTextEdit;
     this->m_widthFormula = ui->widthFormula_PlainTextEdit->height();
@@ -843,7 +841,7 @@ void DialogInternalPath::InitSeamAllowanceTab()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::InitNotchesTab()
+void DialogInternalPath::initializeNotchesTab()
 {
     initializeNotchesList();
     connect(ui->notches_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
@@ -854,13 +852,13 @@ void DialogInternalPath::InitNotchesTab()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::InitPathTypes()
+void DialogInternalPath::initializePathTypes()
 {
     ui->type_ComboBox->addItem(tr("Internal path"), static_cast<int>(PiecePathType::InternalPath));
     ui->type_ComboBox->addItem(tr("Custom seam allowance"), static_cast<int>(PiecePathType::CustomSeamAllowance));
 
-    ui->penType_ComboBox->setEnabled(GetType() == PiecePathType::InternalPath);
-    ui->cutOnFabric_CheckBox->setEnabled(GetType() == PiecePathType::InternalPath);
+    ui->penType_ComboBox->setEnabled(getType() == PiecePathType::InternalPath);
+    ui->cutOnFabric_CheckBox->setEnabled(getType() == PiecePathType::InternalPath);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -871,7 +869,7 @@ void DialogInternalPath::initializeNodesList()
     ui->nodes_ComboBox->blockSignals(true);
     ui->nodes_ComboBox->clear();
 
-    const VPiecePath path = CreatePath();
+    const VPiecePath path = createPath();
 
     for (int i = 0; i < path.CountNodes(); ++i)
     {
@@ -944,7 +942,7 @@ void DialogInternalPath::nodeAngleChanged(int index)
             rowNode.SetAngleType(angle);
             rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
 
-            ListChanged();
+            listChanged();
         }
     }
 }
@@ -952,7 +950,7 @@ void DialogInternalPath::nodeAngleChanged(int index)
 //---------------------------------------------------------------------------------------------------------------------
 VPiecePath DialogInternalPath::GetPiecePath() const
 {
-    return CreatePath();
+    return createPath();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -961,31 +959,31 @@ void DialogInternalPath::SetPiecePath(const VPiecePath &path)
     ui->listWidget->clear();
     for (int i = 0; i < path.CountNodes(); ++i)
     {
-        NewItem(path.at(i));
+        createNewItem(path.at(i));
     }
 
-    SetType(path.GetType());
+    setType(path.GetType());
     ui->pathName_LineEdit->setText(path.GetName());
 
     VisToolInternalPath *visPath = qobject_cast<VisToolInternalPath *>(vis);
     SCASSERT(visPath != nullptr);
     visPath->SetPath(path);
-    SetPenType(path.GetPenType());
-    SetCutPath(path.IsCutPath());
+    setPenType(path.GetPenType());
+    setCutPath(path.IsCutPath());
 
-    ValidObjects(PathIsValid());
+    validateObjects(isValidPath());
 
-    ListChanged();
+    listChanged();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-PiecePathType DialogInternalPath::GetType() const
+PiecePathType DialogInternalPath::getType() const
 {
     return static_cast<PiecePathType>(ui->type_ComboBox->currentData().toInt());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::SetType(PiecePathType type)
+void DialogInternalPath::setType(PiecePathType type)
 {
     const qint32 index = ui->type_ComboBox->findData(static_cast<int>(type));
     if (index != -1)
@@ -998,26 +996,26 @@ void DialogInternalPath::SetType(PiecePathType type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-Qt::PenStyle DialogInternalPath::GetPenType() const
+Qt::PenStyle DialogInternalPath::getPenType() const
 {
     return lineTypeToPenStyle(GetComboBoxCurrentData(ui->penType_ComboBox, LineTypeSolidLine));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::SetPenType(const Qt::PenStyle &type)
+void DialogInternalPath::setPenType(const Qt::PenStyle &type)
 {
     ChangeCurrentData(ui->penType_ComboBox, PenStyleToLineType(type));
     vis->setLineStyle(type);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool DialogInternalPath::IsCutPath() const
+bool DialogInternalPath::isCutPath() const
 {
     return ui->cutOnFabric_CheckBox->isChecked();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::SetCutPath(bool value)
+void DialogInternalPath::setCutPath(bool value)
 {
     ui->cutOnFabric_CheckBox->setChecked(value);
 }
@@ -1039,7 +1037,7 @@ QListWidgetItem *DialogInternalPath::getItemById(quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 DialogInternalPath::GetLastId() const
+quint32 DialogInternalPath::getLastNodeId() const
 {
     const int count = ui->listWidget->count();
     if (count > 0)
@@ -1055,17 +1053,17 @@ quint32 DialogInternalPath::GetLastId() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::SetCurrentSABefore(const QString &formula)
+void DialogInternalPath::setCurrentSABefore(const QString &formula)
 {
     updateNodeBeforeSeamAllowance(formula);
-    ListChanged();
+    listChanged();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::setCurrentAfterSeamAllowance(const QString &formula)
 {
     updateNodeAfterSeamAllowance(formula);
-    ListChanged();
+    listChanged();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1118,7 +1116,7 @@ void DialogInternalPath::setSeamAllowanceWidthFormula(const QString &formula)
 
     VisToolInternalPath *path = qobject_cast<VisToolInternalPath *>(vis);
     SCASSERT(path != nullptr)
-    path->SetPath(CreatePath());
+    path->SetPath(createPath());
 
     if (ui->tabWidget->indexOf(ui->seamAllowance_Tab) == -1)
     {
@@ -1175,7 +1173,7 @@ void DialogInternalPath::SetPiecesList(const QVector<quint32> &list)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VPiecePath DialogInternalPath::CreatePath() const
+VPiecePath DialogInternalPath::createPath() const
 {
     VPiecePath path;
     for (qint32 i = 0; i < ui->listWidget->count(); ++i)
@@ -1184,20 +1182,20 @@ VPiecePath DialogInternalPath::CreatePath() const
         path.Append(qvariant_cast<VPieceNode>(item->data(Qt::UserRole)));
     }
 
-    path.SetType(GetType());
+    path.SetType(getType());
     path.SetName(ui->pathName_LineEdit->text());
-    path.SetPenType(GetType() == PiecePathType::InternalPath ? GetPenType() : Qt::SolidLine);
-    path.SetCutPath(GetType() == PiecePathType::InternalPath ? IsCutPath() : false);
+    path.SetPenType(getType() == PiecePathType::InternalPath ? getPenType() : Qt::SolidLine);
+    path.SetCutPath(getType() == PiecePathType::InternalPath ? isCutPath() : false);
 
     return path;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool DialogInternalPath::PathIsValid() const
+bool DialogInternalPath::isValidPath() const
 {
     QString url = DialogWarningIcon();
 
-    if(CreatePath().PathPoints(data).count() < 2)
+    if(createPath().PathPoints(data).count() < 2)
     {
         url += tr("You need more points!");
         ui->status_Label->setText(url);
@@ -1205,7 +1203,7 @@ bool DialogInternalPath::PathIsValid() const
     }
     else
     {
-        if (GetType() == PiecePathType::CustomSeamAllowance && isFirstPointSameAsLast(ui->listWidget))
+        if (getType() == PiecePathType::CustomSeamAllowance && isFirstPointSameAsLast(ui->listWidget))
         {
             url += tr("First point of <b>custom seam allowance</b> cannot be equal to the last point!");
             ui->status_Label->setText(url);
@@ -1217,7 +1215,7 @@ bool DialogInternalPath::PathIsValid() const
             ui->status_Label->setText(url);
             return false;
         }
-        else if (GetType() == PiecePathType::CustomSeamAllowance && not isEachPointNameUnique(ui->listWidget))
+        else if (getType() == PiecePathType::CustomSeamAllowance && not isEachPointNameUnique(ui->listWidget))
         {
             url += tr("Each point in the <b>custom seam allowance</b> path must be unique!");
             ui->status_Label->setText(url);
@@ -1225,15 +1223,15 @@ bool DialogInternalPath::PathIsValid() const
         }
     }
 
-    if (not m_showMode && ui->piece_ComboBox->count() <= 0)
+    if (!m_showMode && ui->piece_ComboBox->count() <= 0)
     {
-        url += tr("List of details is empty!");
+        url += tr("List of pieces is empty!");
         ui->status_Label->setText(url);
         return false;
     }
-    else if (not m_showMode && ui->piece_ComboBox->currentIndex() == -1)
+    else if (!m_showMode && ui->piece_ComboBox->currentIndex() == -1)
     {
-        url += tr("Please, select a detail to insert into!");
+        url += tr("Please, select a piece to insert into!");
         ui->status_Label->setText(url);
         return false;
     }
@@ -1243,14 +1241,14 @@ bool DialogInternalPath::PathIsValid() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::ValidObjects(bool value)
+void DialogInternalPath::validateObjects(bool value)
 {
     flagError = value;
     CheckState();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::NewItem(const VPieceNode &node)
+void DialogInternalPath::createNewItem(const VPieceNode &node)
 {
     newNodeItem(ui->listWidget, node);
 }

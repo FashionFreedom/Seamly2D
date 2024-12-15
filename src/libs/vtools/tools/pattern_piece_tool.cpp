@@ -137,6 +137,7 @@ PatternPieceTool *PatternPieceTool::Create(QSharedPointer<DialogTool> dialog, VM
     if (patternPiece != nullptr)
     {
         patternPiece->m_dialog = dialogTool;
+        patternPiece->RefreshGeometry();
     }
     return patternPiece;
 }
@@ -243,8 +244,6 @@ void PatternPieceTool::insertNodes(const QVector<VPieceNode> &nodes, quint32 pie
 
         SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, pieceId);
         qApp->getUndoStack()->push(saveCommand);// First push then make a connect
-        data->UpdatePiece(pieceId, newPiece);// Update piece because first save will not call lite update
-        connect(saveCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     }
 }
 
@@ -502,7 +501,7 @@ void PatternPieceTool::GroupVisibility(quint32 object, bool visible)
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceTool::FullUpdateFromFile()
 {
-    UpdateExcludeState();
+    updateExcludeState();
     RefreshGeometry();
 }
 
@@ -623,6 +622,7 @@ void PatternPieceTool::updatePieceDetails()
     UpdatePieceLabel();
     UpdatePatternLabel();
     UpdateGrainline();
+    updateInternalPaths();
 }
 //******************************************************************************
 /// @brief UpdateLabel updates the text label, making it just big enough for the text to fit it
@@ -722,7 +722,6 @@ void PatternPieceTool::saveMovePiece(const QPointF &ptPos)
 
     SavePieceOptions *moveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     moveCommand->setText(tr("move pattern piece label"));
-    connect(moveCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(moveCommand);
 }
 
@@ -742,7 +741,6 @@ void PatternPieceTool::saveResizePiece(qreal dLabelW, int iFontSize)
 
     SavePieceOptions *resizeCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     resizeCommand->setText(tr("resize pattern piece label"));
-    connect(resizeCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(resizeCommand);
 }
 
@@ -763,7 +761,6 @@ void PatternPieceTool::savePieceRotation(qreal dRot)
 
     SavePieceOptions *rotateCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     rotateCommand->setText(tr("rotate pattern piece label"));
-    connect(rotateCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(rotateCommand);
 }
 
@@ -779,7 +776,6 @@ void PatternPieceTool::SaveMovePattern(const QPointF &ptPos)
 
     SavePieceOptions *moveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     moveCommand->setText(tr("move pattern info label"));
-    connect(moveCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(moveCommand);
 }
 
@@ -799,7 +795,6 @@ void PatternPieceTool::SaveResizePattern(qreal dLabelW, int iFontSize)
 
     SavePieceOptions *resizeCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     resizeCommand->setText(tr("resize pattern info label"));
-    connect(resizeCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(resizeCommand);
 }
 
@@ -819,7 +814,6 @@ void PatternPieceTool::SaveRotationPattern(qreal dRot)
 
     SavePieceOptions *rotateCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     rotateCommand->setText(tr("rotate pattern info label"));
-    connect(rotateCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(rotateCommand);
 }
 
@@ -834,7 +828,6 @@ void PatternPieceTool::SaveMoveGrainline(const QPointF &ptPos)
 
     SavePieceOptions *moveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     moveCommand->setText(tr("move grainline"));
-    connect(moveCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(moveCommand);
 }
 
@@ -849,7 +842,6 @@ void PatternPieceTool::SaveResizeGrainline(qreal dLength)
     newPiece.GetGrainlineGeometry().setLength(QString().setNum(dLength));
     SavePieceOptions *resizeCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     resizeCommand->setText(tr("resize grainline"));
-    connect(resizeCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(resizeCommand);
 }
 
@@ -863,7 +855,6 @@ void PatternPieceTool::SaveRotateGrainline(qreal dRot, const QPointF &ptPos)
     newPiece.GetGrainlineGeometry().SetPos(ptPos);
     SavePieceOptions *rotateCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     rotateCommand->setText(tr("rotate grainline"));
-    connect(rotateCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(rotateCommand);
 }
 
@@ -1220,7 +1211,7 @@ void PatternPieceTool::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     rename->setEnabled(lock);
 
     QAction *deletePiece = menu.addAction(QIcon::fromTheme("edit-delete"), tr("Delete") + "\tDel");
-    _referens > 1 ? deletePiece->setEnabled(false) : deletePiece->setEnabled(true);
+    _referens > 0 ? deletePiece->setEnabled(false) : deletePiece->setEnabled(true);
     deletePiece->setEnabled(lock);
 
     QAction *selectedAction = menu.exec(event->screenPos());
@@ -1470,7 +1461,7 @@ PatternPieceTool::PatternPieceTool(VAbstractPattern *doc, VContainer *data, cons
     connect(m_grainLine, &VGrainlineItem::itemRotated, this, &PatternPieceTool::SaveRotateGrainline);
 
     connect(doc, &VAbstractPattern::UpdatePatternLabel, this, &PatternPieceTool::UpdatePatternLabel);
-    connect(doc, &VAbstractPattern::patternParsed,        this, &PatternPieceTool::updatePieceDetails);
+    connect(doc, &VAbstractPattern::patternParsed,      this, &PatternPieceTool::updatePieceDetails);
 
     connect(m_pieceScene, &VMainGraphicsScene::DimensionsChanged, this, &PatternPieceTool::updatePieceDetails);
     connect(m_pieceScene, &VMainGraphicsScene::LanguageChanged,   this, &PatternPieceTool::retranslateUi);
@@ -1479,7 +1470,7 @@ PatternPieceTool::PatternPieceTool(VAbstractPattern *doc, VContainer *data, cons
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PatternPieceTool::UpdateExcludeState()
+void PatternPieceTool::updateExcludeState()
 {
     const VPiece piece = VAbstractTool::data.GetPiece(m_id);
     for (int i = 0; i< piece.GetPath().CountNodes(); ++i)
@@ -1494,6 +1485,37 @@ void PatternPieceTool::UpdateExcludeState()
             tool->setVisible(!node.isExcluded());//Hide excluded point
         }
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PatternPieceTool::updateInternalPaths()
+{
+    VPiece piece = VAbstractTool::data.GetPiece(m_id);
+    const QVector<quint32> paths = piece.GetInternalPaths();
+    for (auto path : paths)
+    {
+        try
+        {
+            if (VToolInternalPath *tool = qobject_cast<VToolInternalPath *>(VAbstractPattern::getTool(path)))
+            {
+                tool->refreshGeometry();
+            }
+        }
+        catch (const VExceptionBadId &)
+        {
+            // do nothing
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PatternPieceTool::updatePiece(const VPiece &piece)
+{
+    setFlag(QGraphicsItem::ItemSendsGeometryChanges, false);
+    VAbstractTool::data.UpdatePiece(m_id, piece);
+    RefreshGeometry();
+    VMainGraphicsView::NewSceneRect(m_pieceScene, qApp->getSceneView(), this);
+    setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1551,6 +1573,9 @@ void PatternPieceTool::RefreshGeometry()
     m_notches->setPath(piece.getNotchesPath(this->getData(), seamAllowancePoints));
 
     m_pieceRect = path.boundingRect();
+
+    updatePieceDetails();
+
     this->setPos(piece.GetMx(), piece.GetMy());
     this->setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
 }
@@ -1565,7 +1590,6 @@ void PatternPieceTool::SaveDialogChange()
     const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
 
     SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
-    connect(saveCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(saveCommand);
     UpdatePieceLabel();
 }
@@ -2216,7 +2240,6 @@ void PatternPieceTool::toggleFlipping(bool checked)
 
     SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     undoCommand->setText(tr("Forbid Flipping"));
-    connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(undoCommand);
 
     showStatus(tr("Forbid Flipping changed: ") + (checked ? tr("Enabled") : tr("Disabled")));
@@ -2234,7 +2257,6 @@ void PatternPieceTool::toggleSeamLine(bool checked)
 
     SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     undoCommand->setText(tr("Hide Seam Line"));
-    connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(undoCommand);
 
     showStatus(tr("Seam line visibility changed: ") + (checked ? tr("Hide") : tr("Show")));
@@ -2252,7 +2274,6 @@ void PatternPieceTool::toggleSeamAllowance(bool checked)
 
     SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     undoCommand->setText(tr("Show seam allowance"));
-    connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(undoCommand);
 
     showStatus(tr("Seam allowance visibility changed: ") + (checked ? tr("Show") : tr("Hide")));
@@ -2270,7 +2291,6 @@ void PatternPieceTool::toggleGrainline(bool checked)
 
     SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     undoCommand->setText(tr("Show grainline"));
-    connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(undoCommand);
 
     showStatus(tr("Grainline visibility changed: ") + (checked ? tr("Show") : tr("Hide")));
@@ -2288,7 +2308,6 @@ void PatternPieceTool::togglePatternLabel(bool checked)
 
     SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     undoCommand->setText(tr("Show pattern label"));
-    connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(undoCommand);
 
     showStatus(tr("Pattern label visibility changed: ") + (checked ? tr("Show") : tr("Hide")));
@@ -2306,7 +2325,6 @@ void PatternPieceTool::togglePieceLabel(bool checked)
 
     SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     undoCommand->setText(tr("Show piece label"));
-    connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(undoCommand);
 
     showStatus(tr("Piece label visibility changed: ") + (checked ? tr("Show") : tr("Hide")));
@@ -2340,7 +2358,6 @@ void PatternPieceTool::renamePiece(VPiece piece)
 
         SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
         undoCommand->setText(tr("Rename pattern piece"));
-        connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
         qApp->getUndoStack()->push(undoCommand);
 
         showStatus(tr("Piece renamed to: ") + pieceName);

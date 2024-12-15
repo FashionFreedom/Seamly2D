@@ -1460,7 +1460,8 @@ void PatternPieceDialog::pathDialogClosed(int result)
             const VPiecePath newPath = dialog->GetPiecePath();
             const VPiecePath oldPath = data->GetPiecePath(dialog->GetToolId());
 
-            SavePiecePathOptions *saveCommand = new SavePiecePathOptions(oldPath, newPath, qApp->getCurrentDocument(),
+            SavePiecePathOptions *saveCommand = new SavePiecePathOptions(toolId, oldPath, newPath,
+                                                                         qApp->getCurrentDocument(),
                                                                          const_cast<VContainer *>(data),
                                                                          dialog->GetToolId());
             qApp->getUndoStack()->push(saveCommand);

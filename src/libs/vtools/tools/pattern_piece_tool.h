@@ -113,6 +113,7 @@ public:
     static void AddPatternInfo(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece);
     static void AddGrainline(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece);
 
+    void                 updatePiece(const VPiece &piece);
     void                 RefreshGeometry();
 
     virtual int          type() const Q_DECL_OVERRIDE {return Type;}
@@ -195,7 +196,9 @@ private:
                                               const Source &typeCreation, VMainGraphicsScene *scene,
                                               const QString &blockName, QGraphicsItem * parent = nullptr);
 
-    void                  UpdateExcludeState();
+    void                  updateExcludeState();
+    void                  updateInternalPaths();
+
     VPieceItem::MoveTypes FindLabelGeometry(const VPatternLabelData &labelData, qreal &rotationAngle, qreal &labelWidth,
                                             qreal &labelHeight, QPointF &pos);
 

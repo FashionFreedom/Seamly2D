@@ -1,53 +1,52 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   dialoginternalpath.h
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @copyright
+//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
- ************************************************************************
- **
- **  @file   dialoginternalpath.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   22 11, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   dialoginternalpath.h
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   22 11, 2016
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2016 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #ifndef DIALOGINTERNALPATH_H
 #define DIALOGINTERNALPATH_H
@@ -89,9 +88,9 @@ protected:
     virtual void            closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
 
 private slots:
-    void                    ShowContextMenu(const QPoint &pos);
-    void                    ListChanged();
-    void                    NameChanged();
+    void                    showContextMenu(const QPoint &pos);
+    void                    listChanged();
+    void                    nameChanged();
     void                    nodeChanged(int index);
     void                    notchChanged(int index);
     void                    enableDefaultBeforeButton();
@@ -129,34 +128,34 @@ private:
     int                     m_beforeWidthFormula;
     int                     m_afterWidthFormula;
 
-    void                    InitPathTab();
-    void                    InitSeamAllowanceTab();
-    void                    InitNotchesTab();
-    void                    InitPathTypes();
+    void                    initializePathTab();
+    void                    initializeSeamAllowanceTab();
+    void                    initializeNotchesTab();
+    void                    initializePathTypes();
     void                    initializeNodesList();
     void                    initializeNotchesList();
     void                    nodeAngleChanged(int index);
 
-    VPiecePath              CreatePath() const;
+    VPiecePath              createPath() const;
 
-    bool                    PathIsValid() const;
-    void                    ValidObjects(bool value);
-    void                    NewItem(const VPieceNode &node);
+    bool                    isValidPath() const;
+    void                    validateObjects(bool value);
+    void                    createNewItem(const VPieceNode &node);
 
-    PiecePathType           GetType() const;
-    void                    SetType(PiecePathType type);
+    PiecePathType           getType() const;
+    void                    setType(PiecePathType type);
 
-    Qt::PenStyle            GetPenType() const;
-    void                    SetPenType(const Qt::PenStyle &type);
+    Qt::PenStyle            getPenType() const;
+    void                    setPenType(const Qt::PenStyle &type);
 
-    bool                    IsCutPath() const;
-    void                    SetCutPath(bool value);
+    bool                    isCutPath() const;
+    void                    setCutPath(bool value);
 
     QListWidgetItem        *getItemById(quint32 id);
 
-    quint32                 GetLastId() const;
+    quint32                 getLastNodeId() const;
 
-    void                    SetCurrentSABefore(const QString &formula);
+    void                    setCurrentSABefore(const QString &formula);
     void                    setCurrentAfterSeamAllowance(const QString &formula);
 
     void                    updateNodeBeforeSeamAllowance(const QString &formula);

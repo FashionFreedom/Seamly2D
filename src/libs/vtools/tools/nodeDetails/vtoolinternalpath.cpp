@@ -1,59 +1,59 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vtoolinternalpath.cpp
+//  @author Douglas S Caskey
+//  @date   7 Dec, 2024
+//
+//  @copyright
+//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
- ************************************************************************
- **
- **  @file
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   24 11, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vtoolinternalpath.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   24 11, 2016
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2016 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "vtoolinternalpath.h"
 #include "../../dialogs/tools/piece/dialoginternalpath.h"
 #include "../vpatterndb/vpiecepath.h"
 #include "../vpatterndb/vpiecenode.h"
 #include "../../undocommands/savepieceoptions.h"
+#include "../../undocommands/savepiecepathoptions.h"
 #include "../vmisc/vcommonsettings.h"
 #include "../pattern_piece_tool.h"
 
@@ -66,17 +66,17 @@ VToolInternalPath *VToolInternalPath::Create(QSharedPointer<DialogTool> dialog, 
     SCASSERT(not dialogTool.isNull())
     VPiecePath path = dialogTool->GetPiecePath();
     const quint32 pieceId = dialogTool->GetPieceId();
-    qApp->getUndoStack()->beginMacro("add path");
+    qApp->getUndoStack()->beginMacro("add internal path");
     path.SetNodes(PrepareNodes(path, scene, doc, data));
 
-    VToolInternalPath *pathTool = Create(0, path, pieceId, scene, doc, data, Document::FullParse, Source::FromGui);
+    VToolInternalPath *pathTool = Create(NULL_ID, path, pieceId, scene, doc, data, Document::FullParse, Source::FromGui);
     return pathTool;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolInternalPath *VToolInternalPath::Create(quint32 _id, const VPiecePath &path, quint32 pieceId, VMainGraphicsScene *scene,
                                        VAbstractPattern *doc, VContainer *data, const Document &parse,
-                                       const Source &typeCreation, const QString &blockName, const quint32 &idTool)
+                                       const Source &typeCreation, const QString &blockName, const quint32 &toolId)
 {
     quint32 id = _id;
     if (typeCreation == Source::FromGui)
@@ -97,13 +97,13 @@ VToolInternalPath *VToolInternalPath::Create(quint32 _id, const VPiecePath &path
         VAbstractTool::AddRecord(id, Tool::InternalPath, doc);
         //TODO Need create garbage collector and remove all nodes, that we don't use.
         //Better check garbage before each saving file. Check only modeling tags.
-        VToolInternalPath *pathTool = new VToolInternalPath(doc, data, id, pieceId, typeCreation, blockName, idTool, doc);
+        VToolInternalPath *pathTool = new VToolInternalPath(doc, data, id, pieceId, typeCreation, blockName, toolId, doc);
 
         VAbstractPattern::AddTool(id, pathTool);
-        if (idTool != NULL_ID)
+        if (toolId != NULL_ID)
         {
             //Some nodes we don't show on scene. Tool that create this nodes must free memory.
-            VDataTool *tool = VAbstractPattern::getTool(idTool);
+            VDataTool *tool = VAbstractPattern::getTool(toolId);
             SCASSERT(tool != nullptr);
             pathTool->setParent(tool);// Adopted by a tool
         }
@@ -158,10 +158,9 @@ void VToolInternalPath::incrementReferens()
         {
             doc->IncrementReferens(idTool);
         }
-        else
-        {
-            IncrementNodes(VAbstractTool::data.GetPiecePath(m_id));
-        }
+
+        incrementNodes(VAbstractTool::data.GetPiecePath(m_id));
+
         ShowNode();
         QDomElement domElement = doc->elementById(m_id, getTagName());
         if (domElement.isElement())
@@ -181,10 +180,9 @@ void VToolInternalPath::decrementReferens()
         {
             doc->DecrementReferens(idTool);
         }
-        else
-        {
-            DecrementNodes(VAbstractTool::data.GetPiecePath(m_id));
-        }
+
+        decrementNodes(VAbstractTool::data.GetPiecePath(m_id));
+
         HideNode();
         QDomElement domElement = doc->elementById(m_id, getTagName());
         if (domElement.isElement())
@@ -211,7 +209,7 @@ void VToolInternalPath::AddAttributes(VAbstractPattern *doc, QDomElement &domEle
 //---------------------------------------------------------------------------------------------------------------------
 void VToolInternalPath::FullUpdateFromFile()
 {
-    RefreshGeometry();
+    refreshGeometry();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -233,6 +231,7 @@ void VToolInternalPath::AddToFile()
 {
     QDomElement domElement = doc->createElement(getTagName());
     const VPiecePath path = VAbstractTool::data.GetPiecePath(m_id);
+    const VPiecePath newPath = path;
 
     AddAttributes(doc, domElement, m_id, path);
 
@@ -253,6 +252,7 @@ void VToolInternalPath::AddToFile()
         if (path.GetType() == PiecePathType::InternalPath)
         {
             newPiece.GetInternalPaths().append(m_id);
+            incrementReferens();
         }
         else if (path.GetType() == PiecePathType::CustomSeamAllowance)
         {
@@ -260,12 +260,11 @@ void VToolInternalPath::AddToFile()
             record.path = m_id;
 
             newPiece.GetCustomSARecords().append(record);
+            incrementReferens();
         }
 
         SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_pieceId);
-        qApp->getUndoStack()->push(saveCommand);// First push then make a connect
-        VAbstractTool::data.UpdatePiece(m_pieceId, newPiece);// Update piece because first save will not call lite update
-        connect(saveCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
+        qApp->getUndoStack()->push(saveCommand);              // First push then make a connect
     }
 }
 
@@ -303,27 +302,30 @@ void VToolInternalPath::ToolCreation(const Source &typeCreation)
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolInternalPath::VToolInternalPath(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 pieceId,
-                               const Source &typeCreation, const QString &blockName, const quint32 &idTool,
-                               QObject *qoParent, QGraphicsItem *parent)
-    :VAbstractNode(doc, data, id, 0, blockName, idTool, qoParent),
-      QGraphicsPathItem(parent),
-      m_pieceId(pieceId)
+                               const Source &typeCreation, const QString &blockName, const quint32 &toolId,
+                               QObject *objParent, QGraphicsItem *parent)
+    : VAbstractNode(doc, data, id, NULL_ID, blockName, toolId, objParent)
+    , QGraphicsPathItem(parent)
+    , m_pieceId(pieceId)
 {
-    IncrementNodes(VAbstractTool::data.GetPiecePath(id));
-    RefreshGeometry();
+    //refreshGeometry();
     ToolCreation(typeCreation);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolInternalPath::RefreshGeometry()
+void VToolInternalPath::refreshGeometry()
 {
     const VPiecePath path = VAbstractTool::data.GetPiecePath(m_id);
     if (path.GetType() == PiecePathType::InternalPath)
     {
-        QPainterPath p = path.PainterPath(this->getData());
-        p.setFillRule(Qt::OddEvenFill);
+        QPainterPath painterPath = QPainterPath();
+        if (_referens > 0 && GetParentType() == ParentType::Item)
+        {
+            painterPath = path.PainterPath(this->getData());
+            painterPath.setFillRule(Qt::OddEvenFill);
+        }
 
-        this->setPath(p);
+        this->setPath(painterPath);
         QPen pen = this->pen();
         pen.setStyle(path.GetPenType());
         this->setPen(pen);
@@ -331,19 +333,25 @@ void VToolInternalPath::RefreshGeometry()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolInternalPath::IncrementNodes(const VPiecePath &path) const
+void VToolInternalPath::incrementNodes(const VPiecePath &path) const
 {
     for (int i = 0; i < path.CountNodes(); ++i)
     {
-        doc->IncrementReferens(VAbstractTool::data.GetGObject(path.at(i).GetId())->getIdTool());
+        quint32 nodeId = path.at(i).GetId();
+        const QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(nodeId);
+        quint32 objId = obj->getIdTool();
+        doc->IncrementReferens(objId);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolInternalPath::DecrementNodes(const VPiecePath &path) const
+void VToolInternalPath::decrementNodes(const VPiecePath &path) const
 {
     for (int i = 0; i < path.CountNodes(); ++i)
     {
-        doc->DecrementReferens(VAbstractTool::data.GetGObject(path.at(i).GetId())->getIdTool());
+        quint32 nodeId = path.at(i).GetId();
+        const QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(nodeId);
+        quint32 objId = obj->getIdTool();
+        doc->DecrementReferens(objId);
     }
 }
