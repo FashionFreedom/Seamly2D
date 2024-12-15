@@ -1,54 +1,52 @@
-/***************************************************************************
- **  @file   savepieceoptions.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2022 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   savepieceoptions.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @copyright
+//  Copyright (C) 2017 - 2023 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   9 11, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   savepieceoptions.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   9 11, 2016
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2016 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "savepieceoptions.h"
 
@@ -75,7 +73,7 @@ SavePieceOptions::SavePieceOptions(const VPiece &oldPiece, const VPiece &newPiec
     , m_oldPiece(oldPiece)
     , m_newPiece(newPiece)
 {
-    setText(tr("save detail option"));
+    setText(tr("save piece options"));
     nodeId = id;
 }
 
@@ -105,12 +103,20 @@ void SavePieceOptions::undo()
         IncrementReferences(m_oldPiece.MissingCSAPath(m_newPiece));
         IncrementReferences(m_oldPiece.MissingInternalPaths(m_newPiece));
         IncrementReferences(m_oldPiece.missingAnchors(m_newPiece));
-        emit NeedLiteParsing(Document::LiteParse);
+
+        //DecrementReferences(m_newPiece.MissingNodes(m_oldPiece));
+        //DecrementReferences(m_newPiece.MissingCSAPath(m_oldPiece));
+        //DecrementReferences(m_newPiece.MissingInternalPaths(m_oldPiece));
+        //DecrementReferences(m_newPiece.missingAnchors(m_oldPiece));
+
+        if (auto *tool = qobject_cast<PatternPieceTool *>(VAbstractPattern::getTool(nodeId)))
+        {
+            tool->updatePiece(m_oldPiece);
+        }
     }
     else
     {
         qCWarning(vUndo, "Can't find piece with id = %u.", nodeId);
-        return;
     }
 }
 
@@ -132,17 +138,24 @@ void SavePieceOptions::redo()
         PatternPieceTool::AddInternalPaths(doc, domElement, m_newPiece.GetInternalPaths());
         PatternPieceTool::addAnchors(doc, domElement, m_newPiece.getAnchors());
 
+        //IncrementReferences(m_newPiece.MissingNodes(m_oldPiece));
+        //IncrementReferences(m_newPiece.MissingCSAPath(m_oldPiece));
+        //IncrementReferences(m_newPiece.MissingInternalPaths(m_oldPiece));
+        //IncrementReferences(m_newPiece.missingAnchors(m_oldPiece));
+
         DecrementReferences(m_oldPiece.MissingNodes(m_newPiece));
         DecrementReferences(m_oldPiece.MissingCSAPath(m_newPiece));
         DecrementReferences(m_oldPiece.MissingInternalPaths(m_newPiece));
         DecrementReferences(m_oldPiece.missingAnchors(m_newPiece));
 
-        emit NeedLiteParsing(Document::LiteParse);
+        if (auto *tool = qobject_cast<PatternPieceTool *>(VAbstractPattern::getTool(nodeId)))
+        {
+            tool->updatePiece(m_newPiece);
+        }
     }
     else
     {
         qCWarning(vUndo, "Can't find piece with id = %u.", nodeId);
-        return;
     }
 }
 

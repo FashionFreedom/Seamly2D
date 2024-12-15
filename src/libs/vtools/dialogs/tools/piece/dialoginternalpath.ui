@@ -270,6 +270,12 @@
          </item>
          <item>
           <widget class="QLabel" name="status_Label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="text">
             <string>Ready!</string>
            </property>
@@ -1669,8 +1675,8 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../../../vmisc/share/resources/theme.qrc"/>
   <include location="../../../../vmisc/share/resources/icon.qrc"/>
+  <include location="../../../../vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -1707,7 +1713,7 @@
   </connection>
  </connections>
  <buttongroups>
-  <buttongroup name="notchType_ButtonGroup"/>
   <buttongroup name="notchSubType_ButtonGroup"/>
+  <buttongroup name="notchType_ButtonGroup"/>
  </buttongroups>
 </ui>
