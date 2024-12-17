@@ -80,8 +80,8 @@ public:
     qreal             GetShift() const;
     void              SetShift(qreal value);
 
-    qreal             GetLayoutWidth() const;
-    void              SetLayoutWidth(qreal value);
+    qreal             getLayoutGap() const;
+    void              setLayoutGap(qreal value);
 
     QMarginsF         GetFields() const;
     void              SetFields(const QMarginsF &value);
@@ -104,8 +104,8 @@ public:
     bool              IsUnitePages() const;
     void              SetUnitePages(bool save);
 
-    bool              IsStripOptimization() const;
-    void              SetStripOptimization(bool save);
+    bool              useStripOptimization() const;
+    void              setStripOptimization(bool save);
 
     quint8            GetMultiplier() const;
     void              SetMultiplier(const quint8 &value);

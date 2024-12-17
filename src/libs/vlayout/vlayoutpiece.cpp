@@ -700,13 +700,13 @@ void VLayoutPiece::setTransform(const QTransform &transform)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VLayoutPiece::GetLayoutWidth() const
+qreal VLayoutPiece::getLayoutGap() const
 {
     return d->layoutWidth;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutPiece::SetLayoutWidth(const qreal &value)
+void VLayoutPiece::setLayoutGap(const qreal &value)
 {
     d->layoutWidth = value;
 }
