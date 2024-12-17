@@ -83,17 +83,18 @@ VBank::VBank()
     , small(QHash<int, qint64>())
     , layoutWidth(0)
     , caseType(Cases::CaseDesc)
-    , prepare(false), diagonal(0)
+    , prepare(false)
+    , diagonal(0)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VBank::GetLayoutWidth() const
+qreal VBank::getLayoutGap() const
 {
     return layoutWidth;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VBank::SetLayoutWidth(const qreal &value)
+void VBank::setLayoutGap(const qreal &value)
 {
     layoutWidth = value;
     Reset();
@@ -217,7 +218,7 @@ bool VBank::Prepare()
     diagonal = 0;
     for (int i=0; i < pieces.size(); ++i)
     {
-        pieces[i].SetLayoutWidth(layoutWidth);
+        pieces[i].setLayoutGap(layoutWidth);
         pieces[i].SetLayoutAllowancePoints();
 
         const qreal d = pieces.at(i).Diagonal();
@@ -254,7 +255,7 @@ void VBank::Reset()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VBank::SetCaseType(Cases caseType)
+void VBank::setCaseType(Cases caseType)
 {
     this->caseType = caseType;
 }

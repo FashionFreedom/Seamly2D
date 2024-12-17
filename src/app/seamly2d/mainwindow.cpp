@@ -7243,7 +7243,7 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
     else
     {
         auto settings = expParams->DefaultGenerator();
-        settings->SetTestAsPaths(expParams->isTextAsPaths());
+        settings->setTextAsPaths(expParams->isTextAsPaths());
 
         if (LayoutSettings(*settings.get()))
         {

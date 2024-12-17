@@ -69,27 +69,4 @@ enum class BestFrom : char
     Rotation = 0,
     Combine = 1
 };
-
-/* Warning! Debugging doesn't work stable in debug mode. If you need big allocation use release mode. Or disable
- * Address Sanitizer.
- */
-//#define LAYOUT_DEBUG // Enable debug mode
-
-// This block help rule debug mode. Don't turn all options at the same time!
-#ifdef LAYOUT_DEBUG
-// Nice looking
-#   define SHOW_VERTICES           // Show contour vertices
-#   define SHOW_DIRECTION          // Show contour direction
-#   define ARRANGED_PIECES         // Show already arranged pieces
-//#   define SHOW_SHEET            // Show sheet rect
-
-// Debugging
-#   define SHOW_CANDIDATE          // Show each position
-//#   define SHOW_ROTATION         // For each position show rotation part
-//#   define SHOW_COMBINE          // For each position show edge combine part
-//#   define SHOW_MIRROR           // For each position show mirror part
-//#   define SHOW_CANDIDATE_BEST   // For only correct positions that pass checks
-#   define SHOW_BEST               // Show only best position for workpiece
-#endif//LAYOUT_DEBUG
-
 #endif // VLAYOUTDEF_H
