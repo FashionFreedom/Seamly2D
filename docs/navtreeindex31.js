@@ -1,6 +1,5 @@
 var NAVTREEINDEX31 =
 {
-"d7/d7b/test_2Seamly2DTest_2stable_8cpp.html":[2,0,0,2,2,1],
 "d7/d7b/test_2Seamly2DTest_2stable_8cpp_source.html":[2,0,0,2,2,1],
 "d7/d7c/dialogaboutseamlyme_8cpp.html":[2,0,0,0,1,0,1],
 "d7/d7c/dialogaboutseamlyme_8cpp_source.html":[2,0,0,0,1,0,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX31 =
 "d7/dac/classVPieceNode.html#afb75689f51ea30a5e85b39e0986ffa21":[1,0,373,34],
 "d7/db0/libs_2vlayout_2stable_8cpp.html":[2,0,0,1,7,0],
 "d7/db0/libs_2vlayout_2stable_8cpp_source.html":[2,0,0,1,7,0],
-"d7/db1/classVTextManager.html":[1,0,398]
+"d7/db1/classVTextManager.html":[1,0,398],
+"d7/db1/classVTextManager.html#a029ffed61db48b11ad7b4142e23bf6f3":[1,0,398,9]
 };

@@ -141,7 +141,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="173" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultPatternPath()</text>
 <text text-anchor="start" x="173" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultLayoutPath()</text>
 <text text-anchor="start" x="173" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDefLayoutShift()</text>
-<text text-anchor="start" x="173" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDefLayoutWidth()</text>
+<text text-anchor="start" x="173" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefLayoutGap()</text>
 <text text-anchor="start" x="173" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDefLayoutGroup()</text>
 <text text-anchor="start" x="173" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDefLayoutRotate()</text>
 <text text-anchor="start" x="173" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDefLayoutRotationIncrease()</text>
@@ -149,7 +149,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="173" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDefLayoutSaveLength()</text>
 <text text-anchor="start" x="173" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDefLayoutUnitePages()</text>
 <text text-anchor="start" x="173" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDefIgnoreAllFields()</text>
-<text text-anchor="start" x="173" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDefStripOptimization()</text>
+<text text-anchor="start" x="173" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ useDefStripOptimization()</text>
 <text text-anchor="start" x="173" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDefMultiplier()</text>
 <text text-anchor="start" x="173" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDefTextAsPaths()</text>
 </a>

@@ -1,6 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"d3/d03/dialoglayoutprogress_8h_source.html":[2,0,0,0,0,1,12],
 "d3/d06/vobjpaintdevice_8h.html":[2,0,0,1,9,8],
 "d3/d06/vobjpaintdevice_8h_source.html":[2,0,0,1,9,8],
 "d3/d07/structface__s.html":[1,0,93],
@@ -249,5 +248,6 @@ var NAVTREEINDEX10 =
 "d3/d63/classMeasurementDatabaseDialog.html#a259e435237bf19b42f288a5129d2becb":[1,0,118,10],
 "d3/d63/classMeasurementDatabaseDialog.html#a2c36a112956f0c564ef34b5cbe783ad9":[1,0,118,32],
 "d3/d63/classMeasurementDatabaseDialog.html#a305e9c1b8f10fc890f56463b9f2b8953":[1,0,118,55],
-"d3/d63/classMeasurementDatabaseDialog.html#a326f16fed6149461f5bc5f23910556e7":[1,0,118,57]
+"d3/d63/classMeasurementDatabaseDialog.html#a326f16fed6149461f5bc5f23910556e7":[1,0,118,57],
+"d3/d63/classMeasurementDatabaseDialog.html#a32e4e95a5ac36200c1ab965a9cad5aa7":[1,0,118,35]
 };

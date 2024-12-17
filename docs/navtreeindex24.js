@@ -1,6 +1,5 @@
 var NAVTREEINDEX24 =
 {
-"d5/db0/classVAbstractCurveData.html#a7b77f05a357138f6b02beb727cbe297a":[1,0,233,3],
 "d5/db0/classVAbstractCurveData.html#a9150b310d7013415c53f10b91eaf1143":[1,0,233,5],
 "d5/db0/classVAbstractCurveData.html#abd951c8829b340a7d1a5c24135516145":[1,0,233,6],
 "d5/db0/classVAbstractCurveData.html#ae2acdd1d5b6b293c884b01b87bf9d119":[1,0,233,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX24 =
 "d5/dd9/classPenToolBar.html#a8decdd24e0db07fc1ee4bf755bcd8b11":[1,0,144,1],
 "d5/dd9/classPenToolBar.html#ad7005c5a2e4af76a5046ce57d7f1abdd":[1,0,144,13],
 "d5/dd9/classPenToolBar.html#ae819e6691728049e6ae568e1243acda0":[1,0,144,2],
-"d5/dd9/classPenToolBar.html#af36bbd20283b5e0cd8a38b9b6f3c0824":[1,0,144,4]
+"d5/dd9/classPenToolBar.html#af36bbd20283b5e0cd8a38b9b6f3c0824":[1,0,144,4],
+"d5/dd9/classPenToolBar.html#af4f6c6b90f4aeb2c1e64a1d1240b8c16":[1,0,144,5]
 };

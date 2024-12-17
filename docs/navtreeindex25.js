@@ -1,6 +1,5 @@
 var NAVTREEINDEX25 =
 {
-"d5/dd9/classPenToolBar.html#af4f6c6b90f4aeb2c1e64a1d1240b8c16":[1,0,144,5],
 "d5/dd9/vcolorproperty_8h.html":[2,0,0,1,11,0,12],
 "d5/dd9/vcolorproperty_8h_source.html":[2,0,0,1,11,0,12],
 "d5/ddf/classVContourData.html":[1,0,258],
@@ -249,5 +248,6 @@ var NAVTREEINDEX25 =
 "d6/d1a/classMainWindow.html#a06b0c6ebc7331c724755f002f4ebbe43":[1,0,116,121],
 "d6/d1a/classMainWindow.html#a07dc0f5262207acb36887472b7e487b8":[1,0,116,211],
 "d6/d1a/classMainWindow.html#a0874432a674f3dad6f7e48ea53e1ffb8":[1,0,116,277],
-"d6/d1a/classMainWindow.html#a09f1fbd5619f27fb1c0f3dbb57eaeeeb":[1,0,116,57]
+"d6/d1a/classMainWindow.html#a09f1fbd5619f27fb1c0f3dbb57eaeeeb":[1,0,116,57],
+"d6/d1a/classMainWindow.html#a0a0452233f91fdcd0cd379bfff74d5c1":[1,0,116,89]
 };

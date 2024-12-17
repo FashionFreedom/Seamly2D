@@ -1,6 +1,5 @@
 var NAVTREEINDEX27 =
 {
-"d6/d1a/classMainWindow.html#af1c5b2019fa93aa6518bc48d88acc2ea":[1,0,116,242],
 "d6/d1a/classMainWindow.html#af2fcfd9661358a7a6c472eccab4b2292":[1,0,116,164],
 "d6/d1a/classMainWindow.html#af4186b176bb2eb258a1945c623ad6174":[1,0,116,11],
 "d6/d1a/classMainWindow.html#af46210a798e1407377d3d101a9aab55b":[1,0,116,91],
@@ -249,5 +248,6 @@ var NAVTREEINDEX27 =
 "d6/d68/vtoolpointofintersectioncurves_8h.html":[2,0,0,1,13,1,0,2,1,19],
 "d6/d68/vtoolpointofintersectioncurves_8h_source.html":[2,0,0,1,13,1,0,2,1,19],
 "d6/d6b/classVToolBisector.html":[1,0,403],
-"d6/d6b/classVToolBisector.html#a03774901ba31118f217b74af44f0718c":[1,0,403,6]
+"d6/d6b/classVToolBisector.html#a03774901ba31118f217b74af44f0718c":[1,0,403,6],
+"d6/d6b/classVToolBisector.html#a0c09eeda900b693867ca283b6fae2042":[1,0,403,22]
 };
