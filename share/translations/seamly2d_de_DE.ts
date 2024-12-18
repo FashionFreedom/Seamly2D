@@ -4340,6 +4340,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
         <translation>Spl_</translation>
     </message>
     <message>
@@ -4364,7 +4365,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation>SplVerzeichnis_</translation>
+        <translation>SplPfad_</translation>
     </message>
     <message>
         <source>%1 - Spline Fixed</source>
@@ -4567,6 +4568,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
         <translation>Spl_</translation>
     </message>
     <message>
@@ -4579,6 +4581,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
         <translation>Bogen_</translation>
     </message>
     <message>
@@ -4591,7 +4594,8 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation>SplVerzeichnis_</translation>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>SplPfad_</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
@@ -4663,6 +4667,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
         <translation>ElBogen_</translation>
     </message>
     <message>
@@ -11905,6 +11910,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Line_</source>
+        <comment>Leave the _ symbol in translation</comment>
         <translation>Linie_</translation>
     </message>
 </context>
@@ -12711,6 +12717,48 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Remove Group Object</source>
         <translation>Gruppen Objekt entfernen</translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Linie_</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Bogen_</translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>ElBogen_</translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Spl_</translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>SplPfad_</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopie</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Länge</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Winkel</translation>
+    </message>
+    <message>
+        <source>AngleLine_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>WinkelLinie_</translation>
     </message>
 </context>
 <context>
@@ -13724,18 +13772,22 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
         <translation>Bogen_</translation>
     </message>
     <message>
         <source>Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
         <translation>Spl_</translation>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation>SplVerzeichnis</translation>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>SplPfad_</translation>
     </message>
     <message>
         <source>Line_</source>
+        <comment>Leave the _ symbol in translation</comment>
         <translation>Linie_</translation>
     </message>
     <message>
@@ -14655,18 +14707,15 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>SplPath</source>
-        <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>SplVerzeichnis</translation>
+        <translation>SplPfad</translation>
     </message>
     <message>
         <source>Angle1SplPath</source>
-        <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>Winkel1SplVerzeichnis</translation>
+        <translation>Winkel1SplPfad</translation>
     </message>
     <message>
         <source>Angle2SplPath</source>
-        <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>Winkel2SplVerzeichnis</translation>
+        <translation>Winkel2SplPfad</translation>
     </message>
     <message>
         <source>CurrentLength</source>
@@ -14685,13 +14734,11 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>C1LengthSplPath</source>
-        <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>C1LängeSplVerzeichnis</translation>
+        <translation>C1LängeSplPfad</translation>
     </message>
     <message>
         <source>C2LengthSplPath</source>
-        <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>C2LängeSplVerzeichnis</translation>
+        <translation>C2LängeSplPfad</translation>
     </message>
     <message>
         <source>CurrentSeamAllowance</source>
@@ -14836,7 +14883,7 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>AngleLine_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Winkellinie_</translation>
+        <translation>WinkelLinie_</translation>
     </message>
     <message>
         <source>Arc_</source>

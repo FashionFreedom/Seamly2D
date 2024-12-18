@@ -12688,6 +12688,42 @@ load in SeamlyME as usual.
         <source>Remove Group Object</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Line_</source>
+        <translation type="unfinished">Linea_</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <translation type="unfinished">Arco_</translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation type="unfinished">Lunghezza</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation type="unfinished">Angolo</translation>
+    </message>
+    <message>
+        <source>AngleLine_</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>VException</name>

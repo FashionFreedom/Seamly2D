@@ -193,7 +193,7 @@ void VAbstractArc::setId(const quint32 &id)
 //---------------------------------------------------------------------------------------------------------------------
 QString VAbstractArc::NameForHistory(const QString &toolName) const
 {
-    QString name = toolName + QString(" %1").arg(GetCenter().name());
+    QString name = toolName + QString("%1").arg(GetCenter().name());
 
     if (VAbstractCurve::id() != NULL_ID)
     {
