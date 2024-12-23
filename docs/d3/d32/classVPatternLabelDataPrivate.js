@@ -3,7 +3,7 @@ var classVPatternLabelDataPrivate =
     [ "VPatternLabelDataPrivate", "d3/d32/classVPatternLabelDataPrivate.html#a32b6998a14cfa19e6faf0dee3e5182d5", null ],
     [ "VPatternLabelDataPrivate", "d3/d32/classVPatternLabelDataPrivate.html#a51d2f43c183e84e8ce82b355d0708ec5", null ],
     [ "~VPatternLabelDataPrivate", "d3/d32/classVPatternLabelDataPrivate.html#a9ea4303dca6bb36c020481155f05ec1a", null ],
-    [ "operator=", "d3/d32/classVPatternLabelDataPrivate.html#a8b8dc03e484e8f9dc3a30f8621dfd4fd", null ],
+    [ "operator=", "d3/d32/classVPatternLabelDataPrivate.html#acfee2c705d3362d0c8dc100e21b89726", null ],
     [ "m_bottomRightAnchorPoint", "d3/d32/classVPatternLabelDataPrivate.html#a495f6aab3ff0fe0e86f7a64f1fc984eb", null ],
     [ "m_centerAnchorPoint", "d3/d32/classVPatternLabelDataPrivate.html#a118a9b4a972c4fed97325f2e33bd6446", null ],
     [ "m_iFontSize", "d3/d32/classVPatternLabelDataPrivate.html#a42d20ad310ead9e3ff2e940bc5a401a3", null ],

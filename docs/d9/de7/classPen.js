@@ -11,7 +11,7 @@ var classPen =
     [ "setColor", "d9/de7/classPen.html#a602dfef32d494f112f1b1644e17190e3", null ],
     [ "setLineType", "d9/de7/classPen.html#a62099dd76a95a672603ccfd46717a701", null ],
     [ "setLineWeight", "d9/de7/classPen.html#aee490957207303df16a3183984e2af21", null ],
-    [ "operator<<", "d9/de7/classPen.html#ab049c3231b09759ad421903a1c730d16", null ],
+    [ "operator<<", "d9/de7/classPen.html#a77f1d83538608438267bbb3e4ae81a2b", null ],
     [ "color", "d9/de7/classPen.html#a1b81ceddf168867acbefd28d40fa2ab9", null ],
     [ "lineType", "d9/de7/classPen.html#aa0a6c0530ec9fe6b855cc35b1645fe9e", null ],
     [ "lineWeight", "d9/de7/classPen.html#a8b8e10b8a87731d9dd7afbfdf750a92c", null ],

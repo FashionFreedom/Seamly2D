@@ -7,7 +7,7 @@ var classVAbstractArcData =
     [ "VAbstractArcData", "db/dd7/classVAbstractArcData.html#a8b4871f71aeccef42cabd337adf8158d", null ],
     [ "VAbstractArcData", "db/dd7/classVAbstractArcData.html#a9c2243df7fdaaa22cd2dc223f37685c0", null ],
     [ "~VAbstractArcData", "db/dd7/classVAbstractArcData.html#a94dbc39c44a123ed2d754c34249e6a31", null ],
-    [ "operator=", "db/dd7/classVAbstractArcData.html#adc5c6c31fe50ebe084ba6bd989062544", null ],
+    [ "operator=", "db/dd7/classVAbstractArcData.html#a774e4671038cc2e1d4f029cdb44bf514", null ],
     [ "center", "db/dd7/classVAbstractArcData.html#abe8a99584a65f78ba3e603427b2007c1", null ],
     [ "f1", "db/dd7/classVAbstractArcData.html#aae10ac1c0b1b1728768387c1c3798bec", null ],
     [ "f2", "db/dd7/classVAbstractArcData.html#ac5b55ec309dfe4b80a2a4da7b6f11ec1", null ],

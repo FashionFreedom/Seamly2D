@@ -14,7 +14,7 @@ var classVAbstractCubicBezierPath =
     [ "GetPath", "d8/d7a/classVAbstractCubicBezierPath.html#abc25b8fbbd53fd4beddd6a73b3a1c290", null ],
     [ "getPoints", "d8/d7a/classVAbstractCubicBezierPath.html#a53de8fccc6a190681d21580d6659637f", null ],
     [ "GetSpline", "d8/d7a/classVAbstractCubicBezierPath.html#aeab05b7f3a2996fee336f3960d97bc6c", null ],
-    [ "GetSplinePath", "d8/d7a/classVAbstractCubicBezierPath.html#a3925b6895579739d48edf99e017b78b6", null ],
+    [ "GetSplinePath", "d8/d7a/classVAbstractCubicBezierPath.html#ad63128ff5a7b95cc510b4998583d9172", null ],
     [ "LastPoint", "d8/d7a/classVAbstractCubicBezierPath.html#aededc612169f13c1bcaed8349ec6fce6", null ],
     [ "NameForHistory", "d8/d7a/classVAbstractCubicBezierPath.html#a5c54e33ca38405342ce063cde15c4854", null ],
     [ "operator=", "d8/d7a/classVAbstractCubicBezierPath.html#a5c1a8d66108e0e96bc5bf9976ed56cbf", null ],

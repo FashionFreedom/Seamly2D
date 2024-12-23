@@ -3,7 +3,7 @@ var classVAbstractPieceData =
     [ "VAbstractPieceData", "df/d35/classVAbstractPieceData.html#a182abb54556618e4665e884c83b85ae3", null ],
     [ "VAbstractPieceData", "df/d35/classVAbstractPieceData.html#a060cb823ecd1a9a4084b06ef351b4d9a", null ],
     [ "~VAbstractPieceData", "df/d35/classVAbstractPieceData.html#ac59016988f696424f55a1dfa1895b905", null ],
-    [ "operator=", "df/d35/classVAbstractPieceData.html#a730007e1ef75ddfae984ea9801b10a7c", null ],
+    [ "operator=", "df/d35/classVAbstractPieceData.html#acdd5b1dabb495a2cc0f8e29168c7838a", null ],
     [ "m_color", "df/d35/classVAbstractPieceData.html#acf48a0dcf16a48e7ae198196bcaa00d4", null ],
     [ "m_fill", "df/d35/classVAbstractPieceData.html#acb2e91cfd3b9822622514f82cc58d067", null ],
     [ "m_forbidFlipping", "df/d35/classVAbstractPieceData.html#a3a8a5308faa5a6a7eb6d8fda2fb24fff", null ],

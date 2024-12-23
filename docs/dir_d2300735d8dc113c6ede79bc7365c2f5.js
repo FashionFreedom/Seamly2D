@@ -7,12 +7,8 @@ var dir_d2300735d8dc113c6ede79bc7365c2f5 =
     [ "stable.cpp", "db/dc2/app_2seamlyme_2stable_8cpp.html", null ],
     [ "stable.h", "db/de6/app_2seamlyme_2stable_8h.html", null ],
     [ "tmainwindow.cpp", "dc/de1/tmainwindow_8cpp.html", "dc/de1/tmainwindow_8cpp" ],
-    [ "tmainwindow.h", "dc/dc0/tmainwindow_8h.html", [
-      [ "TMainWindow", "d8/d61/classTMainWindow.html", "d8/d61/classTMainWindow" ]
-    ] ],
+    [ "tmainwindow.h", "dc/dc0/tmainwindow_8h.html", "dc/dc0/tmainwindow_8h" ],
     [ "version.h", "d0/d0c/seamlyme_2version_8h.html", "d0/d0c/seamlyme_2version_8h" ],
     [ "vlitepattern.cpp", "d3/dd8/vlitepattern_8cpp.html", null ],
-    [ "vlitepattern.h", "d6/da4/vlitepattern_8h.html", [
-      [ "VLitePattern", "da/d79/classVLitePattern.html", "da/d79/classVLitePattern" ]
-    ] ]
+    [ "vlitepattern.h", "d6/da4/vlitepattern_8h.html", "d6/da4/vlitepattern_8h" ]
 ];

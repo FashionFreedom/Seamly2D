@@ -1,8 +1,8 @@
 var vsysexits_8h =
 [
     [ "V_UNUSED", "dd/d3c/vsysexits_8h.html#abdba63e3bffa4a1066d6f3e761ee4a0d", null ],
-    [ "vStdErr", "dd/d3c/vsysexits_8h.html#ace5592c1834b3dc5e3e3ba1dda6f7577", null ],
-    [ "vStdOut", "dd/d3c/vsysexits_8h.html#a412d5c28f5a917492828786e6ec8c2fe", null ],
+    [ "vStdErr", "dd/d3c/vsysexits_8h.html#a433979e682adb771b00a5842c2886354", null ],
+    [ "vStdOut", "dd/d3c/vsysexits_8h.html#a903ef22c3600f0bcb22e75f868018f77", null ],
     [ "V_EX_CANTCREAT", "dd/d3c/vsysexits_8h.html#a8cae13ac8ae3a25bd51734e6dc9d2ba3", null ],
     [ "V_EX_CONFIG", "dd/d3c/vsysexits_8h.html#a7ae67731fa4eef5626022b883f587e41", null ],
     [ "V_EX_DATAERR", "dd/d3c/vsysexits_8h.html#a1ca643b80e7762d335219a92cf1d6a68", null ],

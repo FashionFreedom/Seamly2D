@@ -1,99 +1,113 @@
-/*---------------- Search Box */
+/*---------------- Search Box positioning */
 
-#FSearchBox {
-    float: left;
+#MSearchBox {
+	margin: 5px;
+}
+
+dark-mode-toggle {
+        padding-top: 8px;
+}
+/*---------------- Search box styling */
+
+.SRPage * {
+    font-weight: normal;
+    line-height: normal;
+}
+
+dark-mode-toggle {
+    margin-left: 5px;
+    display: flex;
+    float: right;
 }
 
 #MSearchBox {
+    display: inline-block;
     white-space : nowrap;
-    float: none;
-    margin-top: 0px;
-    right: 0px;
-    width: 170px;
-    height: 24px;
+    background: black;
+    border-radius: 0.65em;
+    box-shadow: inset 0.5px 0.5px 3px 0px #2F436C;
     z-index: 102;
-    display: inline;
-    position: absolute;
 }
 
-#MSearchBox .left
-{
-    display:block;
-    position:absolute;
-    left:10px;
-    width:20px;
-    height:19px;
-    background:url('search_l.png') no-repeat;
-    background-position:right;
+#MSearchBox .left {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1.4em;
 }
 
 #MSearchSelect {
-    display:block;
-    position:absolute;
-    width:20px;
-    height:19px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 19px;
+    background-image: url('mag_seld.svg');
+    margin: 0 0 0 0.3em;
+    padding: 0;
 }
 
-.left #MSearchSelect {
-    left:4px;
+#MSearchSelectExt {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 19px;
+    background-image: url('mag_d.svg');
+    margin: 0 0 0 0.5em;
+    padding: 0;
 }
 
-.right #MSearchSelect {
-    right:5px;
-}
 
 #MSearchField {
-    display:block;
-    position:absolute;
-    height:19px;
-    background:url('search_m.png') repeat-x;
+    display: inline-block;
+    vertical-align: middle;
+    width: 7.5em;
+    height: 19px;
+    margin: 0 0.15em;
+    padding: 0;
+    line-height: 1em;
     border:none;
-    width:111px;
-    margin-left:20px;
-    padding-left:4px;
-    color: #909090;
+    color: #C5C5C5;
     outline: none;
-    font: 9pt Arial, Verdana, sans-serif;
+    font-family: Arial,Verdana,sans-serif;
     -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background: none;
 }
 
-#FSearchBox #MSearchField {
-    margin-left:15px;
+@media(hover: none) {
+    /* to avoid zooming on iOS */
+    #MSearchField {
+        font-size: 16px;
+    }
 }
 
 #MSearchBox .right {
-    display:block;
-    position:absolute;
-    right:10px;
-    top:0px;
-    width:20px;
-    height:19px;
-    background:url('search_r.png') no-repeat;
-    background-position:left;
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.4em;
+    height: 1.4em;
 }
 
 #MSearchClose {
     display: none;
-    position: absolute;
-    top: 4px;
+    font-size: inherit;
     background : none;
     border: none;
-    margin: 0px 4px 0px 0px;
-    padding: 0px 0px;
+    margin: 0;
+    padding: 0;
     outline: none;
+
 }
 
-.left #MSearchClose {
-    left: 6px;
-}
-
-.right #MSearchClose {
-    right: 2px;
+#MSearchCloseImg {
+    padding: 0.3em;
+    margin: 0;
 }
 
 .MSearchBoxActive #MSearchField {
-    color: #000000;
+    color: #C5C5C5;
 }
+
+
 
 /*---------------- Search filter selection */
 
@@ -101,8 +115,8 @@
     display: none;
     position: absolute;
     left: 0; top: 0;
-    border: 1px solid #90A5CE;
-    background-color: #F9FAFC;
+    border: 1px solid #7C95C6;
+    background-color: #101826;
     z-index: 10001;
     padding-top: 4px;
     padding-bottom: 4px;
@@ -115,7 +129,7 @@
 }
 
 .SelectItem {
-    font: 8pt Arial, Verdana, sans-serif;
+    font: 8pt Arial,Verdana,sans-serif;
     padding-left:  2px;
     padding-right: 12px;
     border: 0px;
@@ -123,7 +137,7 @@
 
 span.SelectionMark {
     margin-right: 4px;
-    font-family: monospace;
+    font-family: 'JetBrains Mono',Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace,fixed;
     outline-style: none;
     text-decoration: none;
 }
@@ -131,7 +145,7 @@ span.SelectionMark {
 a.SelectItem {
     display: block;
     outline-style: none;
-    color: #000000; 
+    color: #90A5CE;
     text-decoration: none;
     padding-left:   6px;
     padding-right: 12px;
@@ -139,14 +153,14 @@ a.SelectItem {
 
 a.SelectItem:focus,
 a.SelectItem:active {
-    color: #000000; 
+    color: #90A5CE;
     outline-style: none;
     text-decoration: none;
 }
 
 a.SelectItem:hover {
-    color: #FFFFFF;
-    background-color: #3D578C;
+    color: #BCC9E2;
+    background-color: #283A5D;
     outline-style: none;
     text-decoration: none;
     cursor: pointer;
@@ -156,7 +170,7 @@ a.SelectItem:hover {
 /*---------------- Search results window */
 
 iframe#MSearchResults {
-    width: 60ex;
+    /*width: 60ex;*/
     height: 15em;
 }
 
@@ -164,9 +178,12 @@ iframe#MSearchResults {
     display: none;
     position: absolute;
     left: 0; top: 0;
-    border: 1px solid #000;
-    background-color: #EEF1F7;
+    border: 1px solid #7C95C6;
+    background-color: #101826;
     z-index:10000;
+    width: 300px;
+    height: 400px;
+    overflow: auto;
 }
 
 /* ----------------------------------- */
@@ -174,7 +191,6 @@ iframe#MSearchResults {
 
 #SRIndex {
     clear:both; 
-    padding-bottom: 15px;
 }
 
 .SREntry {
@@ -187,8 +203,9 @@ iframe#MSearchResults {
     padding: 1px 5px;
 }
 
-body.SRPage {
+div.SRPage {
     margin: 5px 2px;
+    background-color: #101826;
 }
 
 .SRChildren {
@@ -200,17 +217,18 @@ body.SRPage {
 }
 
 .SRSymbol {
-    font-weight: bold; 
-    color: #425E97;
-    font-family: Arial, Verdana, sans-serif;
+    font-weight: bold;
+    color: #90A5CE;
+    font-family: Arial,Verdana,sans-serif;
     text-decoration: none;
     outline: none;
 }
 
 a.SRScope {
     display: block;
-    color: #425E97; 
-    font-family: Arial, Verdana, sans-serif;
+    color: #90A5CE;
+    font-family: Arial,Verdana,sans-serif;
+    font-size: 8pt;
     text-decoration: none;
     outline: none;
 }
@@ -222,33 +240,31 @@ a.SRScope:focus, a.SRScope:active {
 
 span.SRScope {
     padding-left: 4px;
+    font-family: Arial,Verdana,sans-serif;
 }
 
 .SRPage .SRStatus {
     padding: 2px 5px;
     font-size: 8pt;
     font-style: italic;
+    font-family: Arial,Verdana,sans-serif;
 }
 
 .SRResult {
     display: none;
 }
 
-DIV.searchresults {
+div.searchresults {
     margin-left: 10px;
     margin-right: 10px;
 }
 
 /*---------------- External search page results */
 
-.searchresult {
-    background-color: #F0F3F8;
-}
-
 .pages b {
    color: white;
    padding: 5px 5px 3px 5px;
-   background-image: url("../tab_a.png");
+   background-image: url("../tab_ad.png");
    background-repeat: repeat-x;
    text-shadow: 0 1px 1px #000000;
 }

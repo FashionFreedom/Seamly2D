@@ -3,9 +3,7 @@ var dir_223cdb8d508b79a19c2b95144d044f4d =
     [ "floatItemData", "dir_fc60e5b36873c7f373d7dac5754b2278.html", "dir_fc60e5b36873c7f373d7dac5754b2278" ],
     [ "variables", "dir_3ca4be1edb5cabe1332bbec92b525c91.html", "dir_3ca4be1edb5cabe1332bbec92b525c91" ],
     [ "calculator.cpp", "db/d8e/vpatterndb_2calculator_8cpp.html", null ],
-    [ "calculator.h", "db/db8/vpatterndb_2calculator_8h.html", [
-      [ "Calculator", "d8/dbe/classCalculator.html", "d8/dbe/classCalculator" ]
-    ] ],
+    [ "calculator.h", "db/db8/vpatterndb_2calculator_8h.html", "db/db8/vpatterndb_2calculator_8h" ],
     [ "measurements_def.cpp", "dd/de9/measurements__def_8cpp.html", "dd/de9/measurements__def_8cpp" ],
     [ "measurements_def.h", "d0/d91/measurements__def_8h.html", "d0/d91/measurements__def_8h" ],
     [ "pmsystems.cpp", "d4/d4f/pmsystems_8cpp.html", "d4/d4f/pmsystems_8cpp" ],
@@ -19,28 +17,18 @@ var dir_223cdb8d508b79a19c2b95144d044f4d =
     [ "vformula.h", "d9/d47/vformula_8h.html", "d9/d47/vformula_8h" ],
     [ "vnodedetail.cpp", "d6/d91/vnodedetail_8cpp.html", "d6/d91/vnodedetail_8cpp" ],
     [ "vnodedetail.h", "d8/d6a/vnodedetail_8h.html", "d8/d6a/vnodedetail_8h" ],
-    [ "vnodedetail_p.h", "df/d17/vnodedetail__p_8h.html", [
-      [ "VNodeDetailData", "de/da5/classVNodeDetailData.html", "de/da5/classVNodeDetailData" ]
-    ] ],
+    [ "vnodedetail_p.h", "df/d17/vnodedetail__p_8h.html", "df/d17/vnodedetail__p_8h" ],
     [ "vpiece.cpp", "df/d7a/vpiece_8cpp.html", "df/d7a/vpiece_8cpp" ],
     [ "vpiece.h", "d0/d59/vpiece_8h.html", "d0/d59/vpiece_8h" ],
-    [ "vpiece_p.h", "d8/da5/vpiece__p_8h.html", [
-      [ "VPieceData", "d7/d87/classVPieceData.html", "d7/d87/classVPieceData" ]
-    ] ],
+    [ "vpiece_p.h", "d8/da5/vpiece__p_8h.html", "d8/da5/vpiece__p_8h" ],
     [ "vpiecenode.cpp", "d8/dba/vpiecenode_8cpp.html", "d8/dba/vpiecenode_8cpp" ],
     [ "vpiecenode.h", "d1/da0/vpiecenode_8h.html", "d1/da0/vpiecenode_8h" ],
     [ "vpiecenode_p.h", "df/dba/vpiecenode__p_8h.html", "df/dba/vpiecenode__p_8h" ],
     [ "vpiecepath.cpp", "da/de1/vpiecepath_8cpp.html", "da/de1/vpiecepath_8cpp" ],
     [ "vpiecepath.h", "da/d03/vpiecepath_8h.html", "da/d03/vpiecepath_8h" ],
-    [ "vpiecepath_p.h", "de/db4/vpiecepath__p_8h.html", [
-      [ "VPiecePathData", "d9/d6f/classVPiecePathData.html", "d9/d6f/classVPiecePathData" ]
-    ] ],
+    [ "vpiecepath_p.h", "de/db4/vpiecepath__p_8h.html", "de/db4/vpiecepath__p_8h" ],
     [ "vtranslatemeasurements.cpp", "d0/d50/vtranslatemeasurements_8cpp.html", "d0/d50/vtranslatemeasurements_8cpp" ],
-    [ "vtranslatemeasurements.h", "d0/de0/vtranslatemeasurements_8h.html", [
-      [ "VTranslateMeasurements", "d3/d44/classVTranslateMeasurements.html", "d3/d44/classVTranslateMeasurements" ]
-    ] ],
+    [ "vtranslatemeasurements.h", "d0/de0/vtranslatemeasurements_8h.html", "d0/de0/vtranslatemeasurements_8h" ],
     [ "vtranslatevars.cpp", "de/d3e/vtranslatevars_8cpp.html", "de/d3e/vtranslatevars_8cpp" ],
-    [ "vtranslatevars.h", "da/d69/vtranslatevars_8h.html", [
-      [ "VTranslateVars", "dc/dbc/classVTranslateVars.html", "dc/dbc/classVTranslateVars" ]
-    ] ]
+    [ "vtranslatevars.h", "da/d69/vtranslatevars_8h.html", "da/d69/vtranslatevars_8h" ]
 ];

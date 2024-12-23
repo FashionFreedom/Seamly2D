@@ -8,7 +8,5 @@ var dir_65e5b68c37020549e7f9b29b9f0a6170 =
     [ "vobjengine.cpp", "d0/da4/vobjengine_8cpp.html", "d0/da4/vobjengine_8cpp" ],
     [ "vobjengine.h", "de/db3/vobjengine_8h.html", "de/db3/vobjengine_8h" ],
     [ "vobjpaintdevice.cpp", "d8/d30/vobjpaintdevice_8cpp.html", null ],
-    [ "vobjpaintdevice.h", "d3/d06/vobjpaintdevice_8h.html", [
-      [ "VObjPaintDevice", "dd/d3b/classVObjPaintDevice.html", "dd/d3b/classVObjPaintDevice" ]
-    ] ]
+    [ "vobjpaintdevice.h", "d3/d06/vobjpaintdevice_8h.html", "d3/d06/vobjpaintdevice_8h" ]
 ];

@@ -1,22 +1,43 @@
 <map id="DialogArcWithLength" name="DialogArcWithLength">
-<area shape="rect" id="node1" title=" " alt="" coords="1631,3653,1825,4288"/>
-<area shape="rect" id="node2" href="$d2/d7b/classDialogTool.html" title="The DialogTool class parent for all dialog of tools." alt="" coords="1515,2677,1741,3591"/>
-<area shape="rect" id="node3" title=" " alt="" coords="1656,2251,1731,2329"/>
-<area shape="rect" id="node4" href="$d4/d36/classVAbstractTool.html" title="The VAbstractTool abstract class for all tools." alt="" coords="1360,1965,1563,2615"/>
-<area shape="rect" id="node5" href="$d5/d68/classVDataTool.html" title="The VDataTool class need for getting access to data container of tool." alt="" coords="1374,1275,1549,1455"/>
-<area shape="rect" id="node6" title=" " alt="" coords="1408,417,1483,494"/>
-<area shape="rect" id="node8" href="$d8/dba/classVAbstractPattern.html" title=" " alt="" coords="753,828,969,1903"/>
-<area shape="rect" id="node7" href="$d2/d83/classVContainer.html" title="Manages a collection of geometric objects, pieces, paths, and variables." alt="" coords="1507,167,1731,743"/>
-<area shape="rect" id="node9" href="$d6/deb/classVDomDocument.html" title="The VDomDocument class represents a Seamly2D document (.val file)." alt="" coords="921,145,1130,765"/>
-<area shape="rect" id="node10" title=" " alt="" coords="853,5,984,83"/>
-<area shape="rect" id="node11" href="$da/da1/classQHash.html" title=" " alt="" coords="1009,5,1255,83"/>
-<area shape="rect" id="node12" href="$da/da1/classQHash.html" title=" " alt="" coords="1155,417,1384,494"/>
-<area shape="rect" id="node13" href="$d0/d4c/classQMap.html" title=" " alt="" coords="5,417,227,494"/>
-<area shape="rect" id="node14" href="$d5/dc2/classQVector.html" title=" " alt="" coords="251,417,485,494"/>
-<area shape="rect" id="node15" href="$d5/dc2/classQVector.html" title=" " alt="" coords="510,417,690,494"/>
-<area shape="rect" id="node16" href="$d5/dc2/classQVector.html" title=" " alt="" coords="714,417,897,494"/>
-<area shape="rect" id="node17" href="$d2/d6d/classVArc.html" title="VArc class for anticlockwise arc." alt="" coords="1771,3000,1901,3268"/>
-<area shape="rect" id="node18" href="$d9/d54/classVAbstractArc.html" title=" " alt="" coords="1759,2156,1924,2424"/>
-<area shape="rect" id="node19" href="$dc/d55/classVAbstractCurve.html" title=" " alt="" coords="1743,1187,1956,1543"/>
-<area shape="rect" id="node20" href="$d1/de7/classVGObject.html" title="The VGObject class keep information graphical objects." alt="" coords="1755,197,1949,714"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="184,4665,371,5491"/>
+<area shape="rect" id="Node000002" href="$d2/d7b/classDialogTool.html" title="The DialogTool class parent for all dialog of tools." alt="" coords="72,3397,291,4603"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,4617,243,4665,238,4665,234,4617"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="47,2879,113,2945"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,2958,128,3397,123,3397,82,2959"/>
+<area shape="rect" id="Node000004" href="$d2/d83/classVContainer.html" title="Manages a collection of geometric objects, pieces, paths, and variables." alt="" coords="5,163,221,909"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="123,909,172,3381,167,3381,118,909"/>
+<area shape="rect" id="Node000006" href="$d5/d68/classVDataTool.html" title="The VDataTool class need for getting access to data container of tool." alt="" coords="195,1611,362,1817"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="168,908,265,1594,259,1595,163,909"/>
+<area shape="rect" id="Node000005" href="$d4/d36/classVAbstractTool.html" title="The VAbstractTool abstract class for all tools." alt="" coords="189,2489,382,3335"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="248,3335,243,3381,238,3381,242,3335"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="282,1830,286,2489,280,2489,277,1830"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="245,503,312,569"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="281,582,281,1611,276,1611,276,582"/>
+<area shape="rect" id="Node000008" href="$d8/dba/classVAbstractPattern.html" title=" " alt="" coords="643,1001,851,2427"/>
+<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="279,583,278,653,283,744,298,842,310,891,326,938,337,957,348,969,361,982,376,1000,451,1122,522,1249,645,1488,640,1490,518,1252,446,1125,371,1003,357,985,345,973,333,960,322,940,305,892,292,843,278,744,273,654,273,583"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="645,1986,391,2646,386,2644,640,1984"/>
+<area shape="rect" id="Node000009" href="$d6/deb/classVDomDocument.html" title="The VDomDocument class represents a Seamly2D document (.val file)." alt="" coords="337,133,538,939"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="544,933,645,1316,640,1318,539,934"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="273,5,396,71"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="347,84,357,132,351,134,341,85"/>
+<area shape="rect" id="Node000011" href="$da/da1/classQHash.html" title=" " alt="" coords="421,5,659,71"/>
+<area shape="poly" id="edge12_Node000009_Node000011" title=" " alt="" coords="536,71,526,118,521,117,531,70"/>
+<area shape="rect" id="Node000012" href="$d5/dc2/classQVector.html" title=" " alt="" coords="562,503,734,569"/>
+<area shape="poly" id="edge13_Node000008_Node000012" title=" " alt="" coords="653,569,688,985,683,985,648,569"/>
+<area shape="rect" id="Node000013" href="$d5/dc2/classQVector.html" title=" " alt="" coords="758,503,933,569"/>
+<area shape="poly" id="edge14_Node000008_Node000013" title=" " alt="" coords="846,569,813,978,813,985,807,984,808,977,840,569"/>
+<area shape="rect" id="Node000014" href="$d0/d4c/classQMap.html" title=" " alt="" coords="957,503,1171,569"/>
+<area shape="poly" id="edge15_Node000008_Node000014" title=" " alt="" coords="1058,569,858,1312,852,1311,1053,568"/>
+<area shape="rect" id="Node000015" href="$da/da1/classQHash.html" title=" " alt="" coords="1195,503,1416,569"/>
+<area shape="poly" id="edge16_Node000008_Node000015" title=" " alt="" coords="1301,570,1258,730,1225,835,1185,940,1109,1103,1025,1263,939,1412,861,1540,857,1537,935,1409,1020,1260,1104,1100,1180,938,1220,834,1253,729,1296,568"/>
+<area shape="rect" id="Node000016" href="$d5/dc2/classQVector.html" title=" " alt="" coords="1440,503,1667,569"/>
+<area shape="poly" id="edge17_Node000008_Node000016" title=" " alt="" coords="1554,570,1545,642,1525,739,1509,792,1488,844,1462,895,1430,940,1403,964,1375,975,1347,985,1316,1003,1248,1064,1182,1130,1059,1270,951,1409,862,1536,858,1533,947,1406,1055,1266,1179,1127,1245,1061,1313,999,1345,980,1373,970,1400,960,1426,937,1457,892,1483,842,1504,790,1520,738,1540,641,1549,569"/>
+<area shape="rect" id="Node000017" href="$d2/d6d/classVArc.html" title="VArc class for anticlockwise arc." alt="" coords="331,3837,453,4163"/>
+<area shape="poly" id="edge18_Node000001_Node000017" title=" " alt="" coords="377,4163,326,4649,320,4649,372,4163"/>
+<area shape="rect" id="Node000018" href="$d9/d54/classVAbstractArc.html" title=" " alt="" coords="513,2749,671,3075"/>
+<area shape="poly" id="edge19_Node000017_Node000018" title=" " alt="" coords="562,3089,424,3838,419,3837,557,3088"/>
+<area shape="rect" id="Node000019" href="$dc/d55/classVAbstractCurve.html" title=" " alt="" coords="1327,1491,1532,1937"/>
+<area shape="poly" id="edge20_Node000018_Node000019" title=" " alt="" coords="1321,1875,673,2800,669,2797,1317,1872"/>
+<area shape="rect" id="Node000020" href="$d1/de7/classVGObject.html" title="The VGObject class keep information graphical objects." alt="" coords="1691,203,1877,869"/>
+<area shape="poly" id="edge21_Node000019_Node000020" title=" " alt="" coords="1718,883,1693,978,1653,1112,1608,1247,1519,1492,1514,1490,1603,1245,1648,1110,1688,977,1713,882"/>
 </map>

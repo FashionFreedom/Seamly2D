@@ -4,7 +4,7 @@ var classVSplinePointData =
     [ "VSplinePointData", "db/d0a/classVSplinePointData.html#afa27d674c0514ddc94adf0bd538645ee", null ],
     [ "VSplinePointData", "db/d0a/classVSplinePointData.html#acd1b33362ff841c850381872531812bf", null ],
     [ "~VSplinePointData", "db/d0a/classVSplinePointData.html#ae8f955aeda2512adc2e078a22e66a0bc", null ],
-    [ "operator=", "db/d0a/classVSplinePointData.html#abbc0ca22a24ee149ac21238abb72586d", null ],
+    [ "operator=", "db/d0a/classVSplinePointData.html#adc381a240304cd1af6a9425c588800c2", null ],
     [ "angle1", "db/d0a/classVSplinePointData.html#aae6394385c7c70e9f72abaf1db62b840", null ],
     [ "angle1F", "db/d0a/classVSplinePointData.html#a422a92e5bde0c111a91895fdeb2904d4", null ],
     [ "angle2", "db/d0a/classVSplinePointData.html#a56a8fa309e852981724ab3f53ac45702", null ],

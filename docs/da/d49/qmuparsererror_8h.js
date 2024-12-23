@@ -1,7 +1,7 @@
 var qmuparsererror_8h =
 [
-    [ "QmuParserErrorMsg", "d9/d87/classqmu_1_1QmuParserErrorMsg.html", "d9/d87/classqmu_1_1QmuParserErrorMsg" ],
-    [ "QmuParserError", "df/ddc/classqmu_1_1QmuParserError.html", "df/ddc/classqmu_1_1QmuParserError" ],
+    [ "qmu::QmuParserErrorMsg", "d9/d87/classqmu_1_1QmuParserErrorMsg.html", "d9/d87/classqmu_1_1QmuParserErrorMsg" ],
+    [ "qmu::QmuParserError", "df/ddc/classqmu_1_1QmuParserError.html", "df/ddc/classqmu_1_1QmuParserError" ],
     [ "EErrorCodes", "da/d49/qmuparsererror_8h.html#a530c023abef015ddf300e34470b7b4b7", [
       [ "ecUNEXPECTED_OPERATOR", "da/d49/qmuparsererror_8h.html#a530c023abef015ddf300e34470b7b4b7a39beffdda99afb51309b127fc92cacee", null ],
       [ "ecUNASSIGNABLE_TOKEN", "da/d49/qmuparsererror_8h.html#a530c023abef015ddf300e34470b7b4b7a8c7f33035d93a51081e32641e09d9794", null ],

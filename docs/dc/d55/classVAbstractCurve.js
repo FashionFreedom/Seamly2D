@@ -17,7 +17,7 @@ var classVAbstractCurve =
     [ "getLineWeight", "dc/d55/classVAbstractCurve.html#a19b9bd53186d2cbd96aedb621b25cd56", null ],
     [ "GetPath", "dc/d55/classVAbstractCurve.html#ac36e029e368e2c4dabb6f7ae61a4d725", null ],
     [ "GetPenStyle", "dc/d55/classVAbstractCurve.html#aa5bb27460f8cebf1d322ea7ca6184512", null ],
-    [ "getPoints", "dc/d55/classVAbstractCurve.html#a397dbae5819080e7ef453b7a97453341", null ],
+    [ "getPoints", "dc/d55/classVAbstractCurve.html#a5c3d65541c4e36c16885d6f48df0e672", null ],
     [ "GetSegmentPoints", "dc/d55/classVAbstractCurve.html#ae7ff9de9e8dfe79fd6844f1ad89c8fe4", null ],
     [ "GetSegmentPoints", "dc/d55/classVAbstractCurve.html#af9fe3eb5d8107c14439457e011f362f4", null ],
     [ "GetStartAngle", "dc/d55/classVAbstractCurve.html#a6595c8b68d9439dc244d978b23d08ef0", null ],

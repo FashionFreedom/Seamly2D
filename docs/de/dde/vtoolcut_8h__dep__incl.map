@@ -1,14 +1,30 @@
 <map id="src/libs/vtools/tools/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcut.h" name="src/libs/vtools/tools/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcut.h">
-<area shape="rect" id="node1" title=" " alt="" coords="681,5,853,76"/>
-<area shape="rect" id="node2" href="$d2/dc5/vtoolcut_8cpp.html" title=" " alt="" coords="237,124,409,195"/>
-<area shape="rect" id="node3" href="$d5/dbe/vtoolcutarc_8h.html" title=" " alt="" coords="877,124,1049,195"/>
-<area shape="rect" id="node6" href="$dc/db5/vtoolcutarc_8cpp.html" title=" " alt="" coords="1073,243,1245,313"/>
-<area shape="rect" id="node7" href="$d7/dea/vtoolcutspline_8h.html" title=" " alt="" coords="681,124,853,195"/>
-<area shape="rect" id="node8" href="$da/dae/vtoolcutspline_8cpp.html" title=" " alt="" coords="877,243,1049,313"/>
-<area shape="rect" id="node9" href="$d6/d9d/vtoolcutsplinepath_8h.html" title=" " alt="" coords="433,124,605,195"/>
-<area shape="rect" id="node10" href="$d1/ddf/vtoolcutsplinepath_8cpp.html" title=" " alt="" coords="482,243,657,313"/>
-<area shape="rect" id="node4" href="$d4/d56/drawtools_8h.html" title=" " alt="" coords="681,257,852,299"/>
-<area shape="rect" id="node5" href="$d5/da5/tools_8h.html" title=" " alt="" coords="693,361,841,403"/>
-<area shape="rect" id="node11" href="$da/d99/vtoolcurveintersectaxis_8cpp.html" title=" " alt="" coords="249,243,458,313"/>
-<area shape="rect" id="node12" href="$d7/d3d/vistoolcutsplinepath_8cpp.html" title=" " alt="" coords="5,257,224,299"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="449,5,621,75"/>
+<area shape="rect" id="Node000002" href="$d2/dc5/vtoolcut_8cpp.html" title=" " alt="" coords="5,123,177,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="437,66,197,125,178,131,177,126,196,120,435,61"/>
+<area shape="rect" id="Node000003" href="$dc/db5/vtoolcutarc_8cpp.html" title=" " alt="" coords="129,240,301,309"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="436,60,321,87,273,104,243,125,226,151,217,181,214,212,214,240,209,240,208,211,212,180,221,148,239,121,270,100,319,82,435,54"/>
+<area shape="rect" id="Node000004" href="$d5/dbe/vtoolcutarc_8h.html" title=" " alt="" coords="253,123,425,192"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="468,84,398,125,395,120,465,79"/>
+<area shape="rect" id="Node000007" href="$da/dae/vtoolcutspline_8cpp.html" title=" " alt="" coords="521,240,693,309"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="604,82,622,100,635,122,643,152,642,184,636,214,626,240,621,239,631,212,637,183,638,153,630,124,617,103,600,86"/>
+<area shape="rect" id="Node000008" href="$d7/dea/vtoolcutspline_8h.html" title=" " alt="" coords="449,123,621,192"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="538,89,538,122,533,122,533,89"/>
+<area shape="rect" id="Node000009" href="$d1/ddf/vtoolcutsplinepath_8cpp.html" title=" " alt="" coords="717,240,892,309"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="603,80,658,121,724,181,777,238,773,241,720,185,655,125,600,84"/>
+<area shape="rect" id="Node000010" href="$d6/d9d/vtoolcutsplinepath_8h.html" title=" " alt="" coords="748,123,920,192"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="635,77,749,120,747,125,634,82"/>
+<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="294,204,253,242,250,238,291,200"/>
+<area shape="rect" id="Node000005" href="$d4/d56/drawtools_8h.html" title=" " alt="" coords="326,255,497,295"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="370,203,401,253,397,255,366,206"/>
+<area shape="rect" id="Node000006" href="$d5/da5/tools_8h.html" title=" " alt="" coords="337,357,485,397"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="414,309,414,357,409,357,409,309"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="491,204,434,256,430,252,487,200"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="566,203,589,238,584,241,562,205"/>
+<area shape="poly" id="edge13_Node000010_Node000005" title=" " alt="" coords="735,184,509,243,464,257,463,252,508,237,734,179"/>
+<area shape="poly" id="edge14_Node000010_Node000009" title=" " alt="" coords="825,206,816,240,811,239,819,205"/>
+<area shape="rect" id="Node000011" href="$da/d99/vtoolcurveintersectaxis_8cpp.html" title=" " alt="" coords="916,240,1125,309"/>
+<area shape="poly" id="edge15_Node000010_Node000011" title=" " alt="" coords="902,197,967,237,964,242,899,202"/>
+<area shape="rect" id="Node000012" href="$d7/d3d/vistoolcutsplinepath_8cpp.html" title=" " alt="" coords="1150,255,1369,295"/>
+<area shape="poly" id="edge16_Node000010_Node000012" title=" " alt="" coords="934,183,1139,237,1192,252,1191,257,1137,243,933,188"/>
 </map>

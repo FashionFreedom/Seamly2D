@@ -7,7 +7,7 @@ var classVSplineData =
     [ "VSplineData", "df/dfb/classVSplineData.html#abcb7dfc33c108e7493623d2dc82a6217", null ],
     [ "~VSplineData", "df/dfb/classVSplineData.html#a67bf83a8112e5494b8b697cd0c5916e2", null ],
     [ "GetL", "df/dfb/classVSplineData.html#a0d8c2dd8d90c2080b0f1e97a01a003c1", null ],
-    [ "operator=", "df/dfb/classVSplineData.html#ae134b77db614040313c07a9f55efb041", null ],
+    [ "operator=", "df/dfb/classVSplineData.html#ad152ab789e3b61d63e98f71617fdd8d6", null ],
     [ "angle1", "df/dfb/classVSplineData.html#ade3cdb61e12f671267ec44d3c17318b9", null ],
     [ "angle1F", "df/dfb/classVSplineData.html#a28114bd61de08b69a78ca478c9d79e98", null ],
     [ "angle2", "df/dfb/classVSplineData.html#a481ae3f743cd57ea689a858c17732eef", null ],

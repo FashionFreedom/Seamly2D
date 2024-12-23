@@ -31,7 +31,7 @@ var classVAbstractApplication =
     [ "setSceneView", "db/dda/classVAbstractApplication.html#ae268ff4b92ec50ceeb624ede966ad2a6", null ],
     [ "Settings", "db/dda/classVAbstractApplication.html#aaf7f1160ef591e625cb67d208c6eb6c8", null ],
     [ "toPixel", "db/dda/classVAbstractApplication.html#a82a68e4e4625193cb2cb439325ab8699", null ],
-    [ "translateVariables", "db/dda/classVAbstractApplication.html#aa523d00ae2255695600de4ab3ca0712d", null ],
+    [ "translateVariables", "db/dda/classVAbstractApplication.html#a24a3274cdd93cb33ad66d2770d4925bf", null ],
     [ "translationsPath", "db/dda/classVAbstractApplication.html#a7f8f1033b717fb83f76d40aea526db87", null ],
     [ "_patternType", "db/dda/classVAbstractApplication.html#a2e09cc95b39f6b8d057dc9c15b57f64a", null ],
     [ "_patternUnit", "db/dda/classVAbstractApplication.html#a0c3f2f86e53faf19f81c5748127fc6be", null ],

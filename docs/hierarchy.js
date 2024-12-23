@@ -723,6 +723,8 @@ var hierarchy =
     [ "VLayoutPaper", "d4/d25/classVLayoutPaper.html", null ],
     [ "VLayoutPiecePath", "d3/d93/classVLayoutPiecePath.html", null ],
     [ "VLockGuard< Guarded >", "d3/d17/classVLockGuard.html", null ],
+    [ "VLockGuard< char >", "d3/d17/classVLockGuard.html", null ],
+    [ "VLockGuard< QFile >", "d3/d17/classVLockGuard.html", null ],
     [ "VNodeDetail", "de/db4/classVNodeDetail.html", null ],
     [ "VPieceNode", "d7/dac/classVPieceNode.html", null ],
     [ "VPiecePath", "df/de1/classVPiecePath.html", null ],

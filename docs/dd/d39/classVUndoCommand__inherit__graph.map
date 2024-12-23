@@ -1,36 +1,69 @@
 <map id="VUndoCommand" name="VUndoCommand">
-<area shape="rect" id="node1" title=" " alt="" coords="2484,131,2683,399"/>
-<area shape="rect" id="node4" href="$db/d26/classAddDetNode.html" title=" " alt="" coords="5,513,177,649"/>
-<area shape="rect" id="node5" href="$d2/d4d/classAddDraftBlock.html" title=" " alt="" coords="201,520,352,641"/>
-<area shape="rect" id="node6" href="$d2/d67/classAddGroup.html" title=" " alt="" coords="377,520,523,641"/>
-<area shape="rect" id="node7" href="$da/d3a/classAddGroupItem.html" title=" " alt="" coords="547,520,745,641"/>
-<area shape="rect" id="node8" href="$df/d11/classAddImage.html" title=" " alt="" coords="769,520,893,641"/>
-<area shape="rect" id="node9" href="$dc/d9d/classAddPiece.html" title=" " alt="" coords="917,505,1076,656"/>
-<area shape="rect" id="node10" href="$d6/db3/classAddToCalc.html" title=" " alt="" coords="1100,505,1251,656"/>
-<area shape="rect" id="node11" href="$d5/dbd/classDelGroup.html" title=" " alt="" coords="1275,520,1422,641"/>
-<area shape="rect" id="node12" href="$d9/d22/classDelTool.html" title=" " alt="" coords="1446,505,1593,656"/>
-<area shape="rect" id="node13" href="$d4/d10/classDeleteDraftBlock.html" title=" " alt="" coords="1617,505,1811,656"/>
-<area shape="rect" id="node14" href="$d0/d3f/classDeletePiece.html" title=" " alt="" coords="1835,505,1971,656"/>
-<area shape="rect" id="node15" href="$d6/d7c/classMoveAbstractLabel.html" title=" " alt="" coords="1996,491,2179,671"/>
-<area shape="rect" id="node19" href="$df/dca/classMoveGroupItem.html" title=" " alt="" coords="2203,491,2401,671"/>
-<area shape="rect" id="node20" href="$d9/da7/classMovePiece.html" title=" " alt="" coords="2425,447,2576,715"/>
-<area shape="rect" id="node21" href="$da/df9/classMoveSPoint.html" title=" " alt="" coords="2600,447,2735,715"/>
-<area shape="rect" id="node22" href="$de/db1/classMoveSpline.html" title=" " alt="" coords="2759,469,2896,693"/>
-<area shape="rect" id="node23" href="$d9/de8/classMoveSplinePath.html" title=" " alt="" coords="2921,469,3086,693"/>
-<area shape="rect" id="node24" href="$d7/d18/classRemoveGroupItem.html" title=" " alt="" coords="3110,520,3291,641"/>
-<area shape="rect" id="node25" href="$dd/d20/classRenameDraftBlock.html" title=" " alt="" coords="3316,469,3496,693"/>
-<area shape="rect" id="node26" href="$d9/d20/classSavePieceOptions.html" title=" " alt="" coords="3520,483,3695,678"/>
-<area shape="rect" id="node27" href="$df/d94/classSavePiecePathOptions.html" title=" " alt="" coords="3719,476,3922,685"/>
-<area shape="rect" id="node28" href="$d6/d4d/classSaveToolOptions.html" title=" " alt="" coords="3947,483,4113,678"/>
-<area shape="rect" id="node29" href="$dd/d52/classSetPieceColor.html" title=" " alt="" coords="4137,469,4285,693"/>
-<area shape="rect" id="node30" href="$d2/dbe/classShowDoublePointName.html" title=" " alt="" coords="4310,483,4521,678"/>
-<area shape="rect" id="node31" href="$dc/d9b/classShowOperationPointName.html" title=" " alt="" coords="4545,491,4774,671"/>
-<area shape="rect" id="node32" href="$d8/d2c/classShowPointName.html" title=" " alt="" coords="4798,498,4963,663"/>
-<area shape="rect" id="node33" href="$dd/d47/classTogglePieceInLayout.html" title=" " alt="" coords="4988,469,5179,693"/>
-<area shape="rect" id="node34" href="$d9/d39/classTogglePieceLock.html" title=" " alt="" coords="5203,469,5369,693"/>
-<area shape="rect" id="node2" title=" " alt="" coords="2482,5,2557,83"/>
-<area shape="rect" id="node3" title=" " alt="" coords="2581,5,2714,83"/>
-<area shape="rect" id="node16" href="$d1/d74/classMoveDoubleLabel.html" title=" " alt="" coords="1824,763,1999,957"/>
-<area shape="rect" id="node17" href="$d7/ddb/classMoveLabel.html" title=" " alt="" coords="2023,792,2152,928"/>
-<area shape="rect" id="node18" href="$d7/d7b/classMoveOperationLabel.html" title=" " alt="" coords="2176,777,2369,943"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="2425,119,2616,444"/>
+<area shape="rect" id="Node000004" href="$db/d26/classAddDetNode.html" title=" " alt="" coords="5,582,175,727"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="2412,289,1907,312,1566,330,1207,353,859,381,553,414,425,433,319,452,238,473,187,494,165,512,146,534,117,583,113,581,142,531,161,508,185,490,237,468,318,447,424,427,552,409,859,376,1206,348,1566,325,1907,306,2411,284"/>
+<area shape="rect" id="Node000005" href="$d2/d4d/classAddDraftBlock.html" title=" " alt="" coords="199,592,341,717"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="2411,290,1939,313,1623,332,1291,355,971,384,690,416,572,434,475,453,402,473,355,494,333,514,314,539,289,593,284,591,310,536,329,511,353,490,400,468,474,448,572,429,689,411,970,378,1291,350,1623,327,1938,308,2411,284"/>
+<area shape="rect" id="Node000006" href="$d2/d67/classAddGroup.html" title=" " alt="" coords="366,592,510,717"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="2412,291,1972,316,1378,360,1085,389,828,421,721,438,633,456,566,475,523,494,501,514,482,539,457,593,452,591,478,536,497,511,521,490,564,470,631,451,720,433,828,415,1085,383,1378,355,1972,311,2411,285"/>
+<area shape="rect" id="Node000007" href="$da/d3a/classAddGroupItem.html" title=" " alt="" coords="534,592,729,717"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="2411,286,2045,297,1807,309,1554,328,1304,355,1073,390,971,412,881,436,803,464,742,494,716,514,694,539,659,593,655,591,689,536,712,510,739,490,801,459,879,431,970,407,1073,385,1303,349,1553,323,1807,304,2045,292,2411,281"/>
+<area shape="rect" id="Node000008" href="$df/d11/classAddImage.html" title=" " alt="" coords="753,592,869,717"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="2412,286,2069,294,1848,305,1615,323,1386,349,1278,366,1177,385,1085,408,1004,433,935,462,882,494,862,514,845,539,825,593,820,591,841,537,857,511,879,490,933,457,1002,428,1083,402,1176,380,1277,360,1385,344,1614,317,1847,299,2069,288,2412,280"/>
+<area shape="rect" id="Node000009" href="$dc/d9d/classAddPiece.html" title=" " alt="" coords="893,572,1049,737"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="2412,289,2105,304,1911,319,1707,339,1507,366,1324,400,1243,421,1172,443,1111,467,1064,494,1044,510,1028,530,1002,573,997,571,1023,526,1040,507,1060,490,1109,463,1170,438,1242,415,1323,395,1506,361,1707,334,1911,314,2105,299,2411,283"/>
+<area shape="rect" id="Node000010" href="$d6/db3/classAddToCalc.html" title=" " alt="" coords="1074,572,1218,737"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="2412,291,2137,310,1967,326,1789,347,1615,374,1456,407,1386,426,1325,447,1273,470,1232,494,1213,510,1197,530,1173,573,1169,571,1193,527,1209,507,1228,490,1270,465,1323,442,1385,421,1455,402,1614,369,1788,342,1966,321,2137,304,2411,285"/>
+<area shape="rect" id="Node000011" href="$d5/dbd/classDelGroup.html" title=" " alt="" coords="1242,592,1386,717"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="2412,294,2171,317,2024,335,1872,357,1724,384,1590,416,1478,453,1434,473,1400,494,1377,515,1359,539,1334,593,1329,591,1355,537,1374,511,1396,490,1432,468,1476,448,1588,411,1723,379,1871,352,2023,330,2170,312,2411,288"/>
+<area shape="rect" id="Node000012" href="$d9/d22/classDelTool.html" title=" " alt="" coords="1410,572,1554,737"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="2412,298,2205,325,1956,368,1834,395,1724,425,1632,458,1596,476,1568,494,1550,511,1534,530,1510,573,1506,570,1530,527,1546,507,1564,490,1594,471,1630,453,1722,420,1833,390,1955,363,2204,320,2411,292"/>
+<area shape="rect" id="Node000013" href="$d4/d10/classDeleteDraftBlock.html" title=" " alt="" coords="1578,572,1770,737"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="2412,293,2276,311,2196,326,2112,347,2026,373,1941,406,1859,446,1784,494,1746,530,1715,573,1711,570,1742,527,1780,490,1857,441,1939,401,2024,368,2111,342,2195,321,2275,306,2411,287"/>
+<area shape="rect" id="Node000014" href="$d0/d3f/classDeletePiece.html" title=" " alt="" coords="1794,572,1922,737"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="2412,299,2302,321,2176,358,2112,384,2049,415,1990,451,1936,494,1906,531,1884,573,1879,571,1901,528,1932,490,1987,447,2047,410,2110,379,2175,353,2301,316,2411,293"/>
+<area shape="rect" id="Node000015" href="$d6/d7c/classMoveAbstractLabel.html" title=" " alt="" coords="1947,552,2121,757"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="2413,326,2346,356,2274,394,2201,441,2136,494,2110,522,2088,553,2084,550,2106,519,2132,490,2198,436,2271,390,2344,351,2411,321"/>
+<area shape="rect" id="Node000019" href="$df/dca/classMoveGroupItem.html" title=" " alt="" coords="2146,552,2341,757"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="2419,411,2355,494,2313,553,2308,550,2351,490,2415,407"/>
+<area shape="rect" id="Node000020" href="$d9/da7/classMovePiece.html" title=" " alt="" coords="2365,492,2514,817"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="2485,458,2477,492,2472,491,2480,457"/>
+<area shape="rect" id="Node000021" href="$da/df9/classMoveSPoint.html" title=" " alt="" coords="2539,492,2665,817"/>
+<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="2562,457,2569,491,2564,492,2556,458"/>
+<area shape="rect" id="Node000022" href="$de/db1/classMoveSpline.html" title=" " alt="" coords="2689,522,2819,787"/>
+<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="2626,412,2679,491,2696,521,2691,523,2674,493,2622,415"/>
+<area shape="rect" id="Node000023" href="$d9/de8/classMoveSplinePath.html" title=" " alt="" coords="2843,522,3001,787"/>
+<area shape="poly" id="edge22_Node000001_Node000023" title=" " alt="" coords="2629,336,2733,404,2785,445,2832,490,2856,520,2852,524,2828,494,2781,449,2730,408,2626,341"/>
+<area shape="rect" id="Node000024" href="$d7/d18/classRemoveGroupItem.html" title=" " alt="" coords="3025,592,3198,717"/>
+<area shape="poly" id="edge23_Node000001_Node000024" title=" " alt="" coords="2630,306,2720,333,2820,372,2922,424,2970,455,3014,490,3037,513,3057,538,3087,590,3083,593,3052,541,3033,516,3011,494,2967,460,2919,429,2818,377,2718,338,2629,311"/>
+<area shape="rect" id="Node000025" href="$dd/d20/classRenameDraftBlock.html" title=" " alt="" coords="3223,522,3395,787"/>
+<area shape="poly" id="edge24_Node000001_Node000025" title=" " alt="" coords="2630,289,2758,309,2832,325,2910,345,2989,371,3067,404,3142,443,3212,490,3242,520,3238,524,3208,494,3140,448,3065,409,2987,376,2908,350,2831,330,2757,314,2629,294"/>
+<area shape="rect" id="Node000026" href="$d9/d20/classSavePieceOptions.html" title=" " alt="" coords="3419,542,3585,767"/>
+<area shape="poly" id="edge25_Node000001_Node000026" title=" " alt="" coords="2630,279,2794,290,2892,302,2997,321,3104,348,3211,384,3313,431,3362,459,3408,490,3433,513,3454,540,3450,543,3429,517,3404,494,3359,463,3311,436,3209,389,3103,353,2996,326,2891,307,2793,295,2630,285"/>
+<area shape="rect" id="Node000027" href="$df/d94/classSavePiecePathOptions.html" title=" " alt="" coords="3610,532,3805,777"/>
+<area shape="poly" id="edge26_Node000001_Node000027" title=" " alt="" coords="2630,291,2860,318,3144,360,3285,387,3413,418,3520,452,3563,470,3598,490,3621,508,3642,530,3638,534,3618,512,3595,494,3561,475,3518,457,3411,423,3283,392,3143,366,2859,323,2629,296"/>
+<area shape="rect" id="Node000028" href="$d6/d4d/classSaveToolOptions.html" title=" " alt="" coords="3829,542,3986,767"/>
+<area shape="poly" id="edge27_Node000001_Node000028" title=" " alt="" coords="2630,286,2905,305,3077,322,3255,343,3430,370,3590,403,3660,422,3723,443,3776,465,3818,490,3844,513,3865,540,3860,544,3840,516,3815,494,3774,470,3721,448,3659,427,3589,408,3429,375,3255,349,3076,327,2905,311,2630,291"/>
+<area shape="rect" id="Node000029" href="$dd/d52/classSetPieceColor.html" title=" " alt="" coords="4011,522,4151,787"/>
+<area shape="poly" id="edge28_Node000001_Node000029" title=" " alt="" coords="2630,283,2941,297,3138,311,3345,331,3549,357,3734,392,3817,413,3889,436,3951,462,4000,490,4030,520,4026,524,3996,494,3948,466,3887,441,3815,418,3733,397,3548,363,3345,336,3138,316,2940,302,2630,288"/>
+<area shape="rect" id="Node000030" href="$d2/dbe/classShowDoublePointName.html" title=" " alt="" coords="4175,542,4378,767"/>
+<area shape="poly" id="edge29_Node000001_Node000030" title=" " alt="" coords="2630,283,2969,297,3189,311,3420,331,3649,358,3859,393,3952,413,4036,436,4107,462,4163,490,4193,512,4218,540,4214,544,4189,516,4161,494,4104,467,4034,441,3951,418,3858,398,3648,363,3420,336,3188,316,2969,302,2630,288"/>
+<area shape="rect" id="Node000031" href="$dc/d9b/classShowOperationPointName.html" title=" " alt="" coords="4402,552,4623,757"/>
+<area shape="poly" id="edge30_Node000001_Node000031" title=" " alt="" coords="2630,281,3011,292,3262,304,3528,323,3793,349,4037,385,4145,407,4242,431,4325,459,4391,490,4427,517,4457,550,4453,553,4424,520,4389,494,4323,464,4241,436,4144,412,4036,390,3792,354,3528,328,3261,309,3011,297,2630,286"/>
+<area shape="rect" id="Node000032" href="$d8/d2c/classShowPointName.html" title=" " alt="" coords="4647,562,4805,747"/>
+<area shape="poly" id="edge31_Node000001_Node000032" title=" " alt="" coords="2630,285,3092,309,3723,353,4035,381,4308,414,4423,431,4518,450,4590,469,4637,490,4671,522,4696,561,4692,563,4667,525,4634,494,4589,474,4517,455,4422,436,4308,419,4034,387,3722,358,3092,315,2630,290"/>
+<area shape="rect" id="Node000033" href="$dd/d47/classTogglePieceInLayout.html" title=" " alt="" coords="4829,522,5012,787"/>
+<area shape="poly" id="edge32_Node000001_Node000033" title=" " alt="" coords="2630,284,3127,308,3461,327,3814,351,4156,379,4456,412,4582,430,4687,448,4767,469,4818,490,4854,520,4850,524,4815,494,4765,474,4686,454,4581,435,4456,417,4155,384,3814,356,3461,332,3126,313,2630,290"/>
+<area shape="rect" id="Node000034" href="$d9/d39/classTogglePieceLock.html" title=" " alt="" coords="5037,522,5194,787"/>
+<area shape="poly" id="edge33_Node000001_Node000034" title=" " alt="" coords="2630,283,3167,303,3534,320,3921,342,4297,370,4629,404,4767,423,4882,443,4970,466,5026,490,5059,520,5056,524,5023,494,4968,471,4881,449,4767,428,4628,409,4297,376,3921,348,3533,325,3167,308,2629,288"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="2427,5,2494,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2474,83,2483,118,2478,119,2469,84"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="2518,5,2643,71"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="2572,84,2564,119,2558,118,2567,83"/>
+<area shape="rect" id="Node000016" href="$d1/d74/classMoveDoubleLabel.html" title=" " alt="" coords="1783,865,1949,1091"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="1977,771,1927,867,1922,864,1972,768"/>
+<area shape="rect" id="Node000017" href="$d7/ddb/classMoveLabel.html" title=" " alt="" coords="1973,905,2095,1051"/>
+<area shape="poly" id="edge16_Node000015_Node000017" title=" " alt="" coords="2037,771,2037,905,2031,905,2031,771"/>
+<area shape="rect" id="Node000018" href="$d7/d7b/classMoveOperationLabel.html" title=" " alt="" coords="2119,885,2304,1071"/>
+<area shape="poly" id="edge17_Node000015_Node000018" title=" " alt="" coords="2099,768,2163,884,2158,886,2094,771"/>
 </map>

@@ -3,7 +3,7 @@ var classVLayoutPieceData =
     [ "VLayoutPieceData", "d7/dcf/classVLayoutPieceData.html#a8f944998eecf4826f4fd47b05394b1df", null ],
     [ "VLayoutPieceData", "d7/dcf/classVLayoutPieceData.html#a55b250b9828f188fa72adb8bde3c7e87", null ],
     [ "~VLayoutPieceData", "d7/dcf/classVLayoutPieceData.html#ac29190d92271d73ab4eb318c892a6ea0", null ],
-    [ "operator=", "d7/dcf/classVLayoutPieceData.html#a3f16c68c9b0e1ba39416fbc1db9d198a", null ],
+    [ "operator=", "d7/dcf/classVLayoutPieceData.html#a5968ca99d958bb141d9b394d6f700526", null ],
     [ "contour", "d7/dcf/classVLayoutPieceData.html#ae0f394fc4b63cd95e9cd816e0c00d2a1", null ],
     [ "grainlinePoints", "d7/dcf/classVLayoutPieceData.html#a38252972145945b9f9169e7b29584b2a", null ],
     [ "layoutAllowance", "d7/dcf/classVLayoutPieceData.html#af36ae32e2c15368c3d268eca26d5f565", null ],

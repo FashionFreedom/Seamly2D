@@ -3,7 +3,7 @@ var classVPieceLabelDataPrivate =
     [ "VPieceLabelDataPrivate", "dc/dd8/classVPieceLabelDataPrivate.html#ab2c5ace2048284dcb8ef0a51d3732b09", null ],
     [ "VPieceLabelDataPrivate", "dc/dd8/classVPieceLabelDataPrivate.html#aeedf72e821b78ecb569daf3a8135eac9", null ],
     [ "~VPieceLabelDataPrivate", "dc/dd8/classVPieceLabelDataPrivate.html#a3395286fb4a6c2877221dbb88102af36", null ],
-    [ "operator=", "dc/dd8/classVPieceLabelDataPrivate.html#a2e4ec6d47b42445050c68a31834a479d", null ],
+    [ "operator=", "dc/dd8/classVPieceLabelDataPrivate.html#acf0b8b7d918adea7d3451bb77fcb538e", null ],
     [ "m_annotation", "dc/dd8/classVPieceLabelDataPrivate.html#a64df0f0432b6e3c0bfa9e15f82950c59", null ],
     [ "m_foldPosition", "dc/dd8/classVPieceLabelDataPrivate.html#aec9d52c8c37feedb414f06d0011f7f8e", null ],
     [ "m_lines", "dc/dd8/classVPieceLabelDataPrivate.html#ae3d1b3e0d6548d745163ecf803fcfd12", null ],

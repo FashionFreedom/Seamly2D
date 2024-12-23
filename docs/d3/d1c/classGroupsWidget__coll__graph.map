@@ -1,15 +1,27 @@
 <map id="GroupsWidget" name="GroupsWidget">
-<area shape="rect" id="node1" title=" " alt="" coords="361,1965,556,2571"/>
-<area shape="rect" id="node2" title=" " alt="" coords="243,1327,322,1404"/>
-<area shape="rect" id="node3" href="$d2/d83/classVContainer.html" title="Manages a collection of geometric objects, pieces, paths, and variables." alt="" coords="347,1077,571,1653"/>
-<area shape="rect" id="node4" href="$d8/dba/classVAbstractPattern.html" title=" " alt="" coords="595,828,811,1903"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,417,80,494"/>
-<area shape="rect" id="node6" href="$d6/deb/classVDomDocument.html" title="The VDomDocument class represents a Seamly2D document (.val file)." alt="" coords="105,145,314,765"/>
-<area shape="rect" id="node7" title=" " alt="" coords="37,5,168,83"/>
-<area shape="rect" id="node8" href="$da/da1/classQHash.html" title=" " alt="" coords="193,5,439,83"/>
-<area shape="rect" id="node9" href="$da/da1/classQHash.html" title=" " alt="" coords="339,417,568,494"/>
-<area shape="rect" id="node10" href="$d0/d4c/classQMap.html" title=" " alt="" coords="592,417,813,494"/>
-<area shape="rect" id="node11" href="$d5/dc2/classQVector.html" title=" " alt="" coords="837,417,1072,494"/>
-<area shape="rect" id="node12" href="$d5/dc2/classQVector.html" title=" " alt="" coords="1097,417,1277,494"/>
-<area shape="rect" id="node13" href="$d5/dc2/classQVector.html" title=" " alt="" coords="1301,417,1483,494"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="509,2489,702,3275"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="406,1681,477,1747"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="444,1760,447,1877,454,2042,468,2233,492,2426,511,2528,506,2529,487,2427,463,2233,448,2042,441,1877,439,1760"/>
+<area shape="rect" id="Node000003" href="$d8/dba/classVAbstractPattern.html" title=" " alt="" coords="501,1001,709,2427"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="608,2427,608,2473,603,2473,603,2427"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,503,72,569"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="31,583,20,660,17,706,18,755,24,805,36,853,57,898,85,936,150,948,286,967,423,987,489,999,503,1013,499,1017,487,1004,422,992,286,973,149,953,83,941,52,900,31,855,19,806,12,756,11,706,14,659,25,582"/>
+<area shape="rect" id="Node000005" href="$d6/deb/classVDomDocument.html" title="The VDomDocument class represents a Seamly2D document (.val file)." alt="" coords="97,133,298,939"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="309,935,311,937,333,954,355,963,400,966,423,967,446,970,469,980,490,1000,503,1016,499,1019,486,1003,466,985,445,976,423,972,400,972,353,968,330,959,308,941,305,938"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="33,5,156,71"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="107,84,117,132,111,134,101,85"/>
+<area shape="rect" id="Node000007" href="$da/da1/classQHash.html" title=" " alt="" coords="181,5,419,71"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="296,71,286,118,281,117,291,70"/>
+<area shape="rect" id="Node000008" href="$d5/dc2/classQVector.html" title=" " alt="" coords="322,503,494,569"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="414,569,438,744,457,860,483,977,491,1001,500,1041,495,1042,485,1002,477,978,452,861,432,744,409,570"/>
+<area shape="rect" id="Node000009" href="$d5/dc2/classQVector.html" title=" " alt="" coords="518,503,693,569"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="608,569,608,985,603,985,603,569"/>
+<area shape="rect" id="Node000010" href="$d0/d4c/classQMap.html" title=" " alt="" coords="717,503,931,569"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="819,569,777,752,724,1002,715,1049,710,1048,719,1001,771,751,814,568"/>
+<area shape="rect" id="Node000011" href="$da/da1/classQHash.html" title=" " alt="" coords="955,503,1176,569"/>
+<area shape="poly" id="edge10_Node000003_Node000011" title=" " alt="" coords="1067,569,1061,644,1043,742,1027,795,1006,847,979,897,945,941,920,960,896,969,839,980,804,985,775,983,749,986,736,992,723,1003,723,1004,719,1000,720,999,733,988,747,981,775,978,804,979,838,975,895,964,918,956,941,937,975,894,1001,845,1022,793,1038,741,1056,643,1062,569"/>
+<area shape="rect" id="Node000012" href="$d5/dc2/classQVector.html" title=" " alt="" coords="1200,503,1427,569"/>
+<area shape="poly" id="edge11_Node000003_Node000012" title=" " alt="" coords="1316,569,1312,645,1306,694,1295,746,1279,800,1257,852,1228,899,1190,941,1162,961,1135,974,1109,980,1083,981,1028,978,960,980,906,982,836,981,768,986,742,993,723,1003,723,1004,719,1000,720,999,740,988,767,981,835,976,906,976,960,975,1028,972,1083,976,1108,974,1133,969,1159,957,1186,937,1223,896,1252,849,1274,798,1290,745,1301,693,1307,645,1311,569"/>
+<area shape="rect" id="Node000013" href="$d2/d83/classVContainer.html" title="Manages a collection of geometric objects, pieces, paths, and variables." alt="" coords="733,1341,949,2087"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="787,2087,757,2257,724,2427,708,2498,703,2496,719,2426,752,2256,782,2087"/>
 </map>
