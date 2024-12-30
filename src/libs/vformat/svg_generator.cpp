@@ -107,12 +107,24 @@ QDomDocument SvgGenerator::mergeSvgDoms()
  */
 void SvgGenerator::removeEmptyGroups(QDomElement &mainGroup)
 {
-    QDomNodeList groups = mainGroup.elementsByTagName("g");
-    for (int i = 0; i < groups.size(); ++i) {
-        QDomElement group = groups.at(i).toElement();
-        if (group.childNodes().isEmpty()) {
-            if (mainGroup.removeChild(group).isNull()) {
-                qDebug() << "Error : could not remove empty group";
+    bool svgCleaned = false;
+
+    //We must remove the empty groups one by one until no more empty group is found.
+    //Since removing a group modifies the QDomNodeList indexation, we start over
+    //the search from the beginning each time a group is removed.
+    while(!svgCleaned)
+    {
+        svgCleaned = true;
+        QDomNodeList groups = mainGroup.elementsByTagName("g");
+
+        for (int i = 0; i < groups.size(); ++i) {
+            QDomElement group = groups.at(i).toElement();
+            if (group.childNodes().isEmpty()) {
+                if (mainGroup.removeChild(group).isNull()) {
+                    qDebug() << "Error : could not remove empty group";
+                }
+                svgCleaned = false;
+                break;
             }
         }
     }
