@@ -1,5 +1,6 @@
 var NAVTREEINDEX60 =
 {
+"dd/df1/classVToolTriangle.html#a377f632b36c96d0a912aa8ebe81ecca1":[1,0,435,29],
 "dd/df1/classVToolTriangle.html#a43aba13cc5f1c86fc12e84f76456bc9a":[1,0,435,15],
 "dd/df1/classVToolTriangle.html#a5102909bdbc42040046da8b781c0d9ec":[1,0,435,2],
 "dd/df1/classVToolTriangle.html#a56597a8d058472f1df83e6b6ea85d7bf":[1,0,435,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX60 =
 "de/d0f/classVCommonSettings.html#a252aeeebf95efd3013688e0b4773d797":[1,0,254,230],
 "de/d0f/classVCommonSettings.html#a256b75d4b4424b45d59e8049a8e782d7":[1,0,254,147],
 "de/d0f/classVCommonSettings.html#a260ca86744cb71ab98ae33d8a4e2c584":[1,0,254,262],
-"de/d0f/classVCommonSettings.html#a2741fcb370e3cef509ea7debf1b8c2ca":[1,0,254,198],
-"de/d0f/classVCommonSettings.html#a2852e43ec6a612baf015130a1d6bc80c":[1,0,254,35]
+"de/d0f/classVCommonSettings.html#a2741fcb370e3cef509ea7debf1b8c2ca":[1,0,254,198]
 };

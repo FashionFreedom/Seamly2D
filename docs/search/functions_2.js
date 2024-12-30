@@ -5,7 +5,7 @@ var searchData=
   ['badid_2',['BadId',['../de/da9/classVExceptionBadId.html#ad42ffd5a46f220623bccc642d04639e3',1,'VExceptionBadId']]],
   ['badkey_3',['BadKey',['../de/da9/classVExceptionBadId.html#a194f8b1fc56724a986bbd446d8fbd4d7',1,'VExceptionBadId']]],
   ['basefontsize_4',['BaseFontSize',['../de/dbc/classVGraphicsSimpleTextItem.html#a842cfe03c7f18641f4a000e805114d7d',1,'VGraphicsSimpleTextItem']]],
-  ['baseheight_5',['baseheight',['../d9/d6d/classMeasurementDoc.html#aa57599ed83a0e8dfa22a90299370f014',1,'MeasurementDoc::BaseHeight()'],['../dc/da3/classNewMeasurementsDialog.html#a4f594405ad56a701dd26a30d8dddfdd8',1,'NewMeasurementsDialog::baseHeight()']]],
+  ['baseheight_5',['baseheight',['../dc/da3/classNewMeasurementsDialog.html#a4f594405ad56a701dd26a30d8dddfdd8',1,'NewMeasurementsDialog::baseHeight()'],['../d9/d6d/classMeasurementDoc.html#aa57599ed83a0e8dfa22a90299370f014',1,'MeasurementDoc::BaseHeight()']]],
   ['baselinep1name_6',['BaseLineP1Name',['../de/d04/classVToolTrueDarts.html#abd90c9a2e71c401e6e92438c6227d6ae',1,'VToolTrueDarts']]],
   ['baselinep2name_7',['BaseLineP2Name',['../de/d04/classVToolTrueDarts.html#aa94bc7b018e5992a20c22674ccbb44f8',1,'VToolTrueDarts']]],
   ['basepointchanged_8',['basePointChanged',['../d6/d1a/classMainWindow.html#a4edf4e65290386cfa58a34ac199fbe75',1,'MainWindow']]],
@@ -35,5 +35,5 @@ var searchData=
   ['buildeditor_32',['buildEditor',['../d1/d51/classVPE_1_1VPropertyFormWidget.html#a8c85969729790ffd139e8ab06227c99d',1,'VPE::VPropertyFormWidget']]],
   ['buildline_33',['BuildLine',['../d1/de7/classVGObject.html#aab2d01aac093c13430d5119abbd52764',1,'VGObject']]],
   ['buildray_34',['BuildRay',['../d1/de7/classVGObject.html#a7e896d2c79a25c2e50df967c6a8b597b',1,'VGObject']]],
-  ['button_35',['button',['../dd/dc4/classUtils_1_1CheckableMessageBox.html#a167b133bb3f397e74774ad71030e56fd',1,'Utils::CheckableMessageBox::button()'],['../d1/d19/classButton.html#ae118fa30e3ddc3cdaf436d9c5a976847',1,'Button::Button()']]]
+  ['button_35',['button',['../d1/d19/classButton.html#ae118fa30e3ddc3cdaf436d9c5a976847',1,'Button::Button()'],['../dd/dc4/classUtils_1_1CheckableMessageBox.html#a167b133bb3f397e74774ad71030e56fd',1,'Utils::CheckableMessageBox::button()']]]
 ];

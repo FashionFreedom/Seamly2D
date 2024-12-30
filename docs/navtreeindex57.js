@@ -1,5 +1,6 @@
 var NAVTREEINDEX57 =
 {
+"dd/d3b/classVisToolBisector.html#accdc05ee1ce01adbdb21f1476fa49203":[1,0,307,11],
 "dd/d3b/classVisToolBisector.html#acefe408ee4fca11db994bb83b27bef49":[1,0,307,5],
 "dd/d3b/classVisToolBisector.html#add3f2f130fc9625ba6c6c10d03db5a1c":[1,0,307,6],
 "dd/d3b/classVisToolBisector.html#ae01cefebe1e0746de9218b0ed18465e2":[1,0,307,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX57 =
 "dd/da9/vlineangle__p_8h_source.html":[2,0,0,1,10,1,23],
 "dd/daa/classQSharedPointer.html":[1,0,161],
 "dd/dab/vtoolshoulderpoint_8cpp.html":[2,0,0,1,13,1,0,2,1,1,18],
-"dd/dab/vtoolshoulderpoint_8cpp_source.html":[2,0,0,1,13,1,0,2,1,1,18],
-"dd/db0/namespaceQT__WARNING__POP.html":[0,0,20]
+"dd/dab/vtoolshoulderpoint_8cpp_source.html":[2,0,0,1,13,1,0,2,1,1,18]
 };

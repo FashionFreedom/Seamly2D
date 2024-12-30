@@ -209,81 +209,82 @@ $(document).ready(function(){initNavTree('da/d40/lineweight__combobox_8cpp_sourc
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    addItem(<a class="code hl_function" href="../../d6/d43/classLineWeightComboBox.html#a4a9d8f8c28a93ebfdffb10322ab164e8">createIcon</a>(7.00), <span class="stringliteral">&quot;1.58mm&quot;</span>,       1.58);</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    addItem(<a class="code hl_function" href="../../d6/d43/classLineWeightComboBox.html#a4a9d8f8c28a93ebfdffb10322ab164e8">createIcon</a>(8.00), <span class="stringliteral">&quot;2.00mm (ISO)&quot;</span>, 2.00);</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    addItem(<a class="code hl_function" href="../../d6/d43/classLineWeightComboBox.html#a4a9d8f8c28a93ebfdffb10322ab164e8">createIcon</a>(8.00), <span class="stringliteral">&quot;2.11mm&quot;</span>,       2.11);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    setMaxVisibleItems(24);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    this-&gt;blockSignals(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        connect(<span class="keyword">this</span>, QOverload&lt;int&gt;::of(&amp;QComboBox::currentIndexChanged), <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="../../d6/d43/classLineWeightComboBox.html#a01795caa0b53608670f8b4b75a3d0f5b">LineWeightComboBox::updateLineWeight</a>);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    setCurrentIndex(0);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_slot" href="../../d6/d43/classLineWeightComboBox.html#a01795caa0b53608670f8b4b75a3d0f5b">updateLineWeight</a>(currentIndex());</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    addItem(<a class="code hl_function" href="../../d6/d43/classLineWeightComboBox.html#a4a9d8f8c28a93ebfdffb10322ab164e8">createIcon</a>(9.00), <span class="stringliteral">&quot;3.00mm&quot;</span>,       3.00);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    setMaxVisibleItems(25);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    this-&gt;blockSignals(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        connect(<span class="keyword">this</span>, QOverload&lt;int&gt;::of(&amp;QComboBox::currentIndexChanged), <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="../../d6/d43/classLineWeightComboBox.html#a01795caa0b53608670f8b4b75a3d0f5b">LineWeightComboBox::updateLineWeight</a>);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    setCurrentIndex(0);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <a class="code hl_slot" href="../../d6/d43/classLineWeightComboBox.html#a01795caa0b53608670f8b4b75a3d0f5b">updateLineWeight</a>(currentIndex());</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
 </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="../../d6/d43/classLineWeightComboBox.html#a957a8b8f40e0533e354170660bdcf722">  113</a></span>qreal <a class="code hl_function" href="../../d6/d43/classLineWeightComboBox.html#a957a8b8f40e0533e354170660bdcf722">LineWeightComboBox::getLineWeight</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#a4c309705109e72def15f9848f47fa89b">m_currentWeight</a>;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="../../d6/d43/classLineWeightComboBox.html#a957a8b8f40e0533e354170660bdcf722">  114</a></span>qreal <a class="code hl_function" href="../../d6/d43/classLineWeightComboBox.html#a957a8b8f40e0533e354170660bdcf722">LineWeightComboBox::getLineWeight</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#a4c309705109e72def15f9848f47fa89b">m_currentWeight</a>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}</div>
 </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment"></span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">/**</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment"> * Sets the currently selected weight item to the given weight.</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment"> */</span></div>
-<div class="foldopen" id="foldopen00121" data-start="{" data-end="}">
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="../../d6/d43/classLineWeightComboBox.html#a965e1cca884a1c38a54aaf17fedb1a53">  121</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d43/classLineWeightComboBox.html#a965e1cca884a1c38a54aaf17fedb1a53">LineWeightComboBox::setLineWeight</a>(<span class="keyword">const</span> qreal &amp;weight)</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>{</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#a4c309705109e72def15f9848f47fa89b">m_currentWeight</a> = weight;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    setCurrentIndex(findData(weight));</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">if</span> (currentIndex()!= count() -1 )</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    {</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <a class="code hl_slot" href="../../d6/d43/classLineWeightComboBox.html#a01795caa0b53608670f8b4b75a3d0f5b">updateLineWeight</a>(currentIndex());</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment"></span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment"> * Sets the currently selected weight item to the given weight.</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="../../d6/d43/classLineWeightComboBox.html#a965e1cca884a1c38a54aaf17fedb1a53">  122</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d43/classLineWeightComboBox.html#a965e1cca884a1c38a54aaf17fedb1a53">LineWeightComboBox::setLineWeight</a>(<span class="keyword">const</span> qreal &amp;weight)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>{</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#a4c309705109e72def15f9848f47fa89b">m_currentWeight</a> = weight;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    setCurrentIndex(findData(weight));</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">if</span> (currentIndex()!= count() -1 )</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <a class="code hl_slot" href="../../d6/d43/classLineWeightComboBox.html#a01795caa0b53608670f8b4b75a3d0f5b">updateLineWeight</a>(currentIndex());</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>}</div>
 </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment"></span> </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment">/**</span></div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment"> * Called when the width has changed. This method sets the current width to the value chosen or even</span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment"> * offers a dialog to the user that allows him/ her to choose an individual width.</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment"> */</span></div>
-<div class="foldopen" id="foldopen00137" data-start="{" data-end="}">
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="../../d6/d43/classLineWeightComboBox.html#a01795caa0b53608670f8b4b75a3d0f5b">  137</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="../../d6/d43/classLineWeightComboBox.html#a01795caa0b53608670f8b4b75a3d0f5b">LineWeightComboBox::updateLineWeight</a>(<span class="keywordtype">int</span> index)</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>{</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    QVariant weight = itemData(index);</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordflow">if</span>(weight != QVariant::Invalid )</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    {</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>       <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#a4c309705109e72def15f9848f47fa89b">m_currentWeight</a> = QVariant(weight).toReal();</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    }</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    emit <a class="code hl_signal" href="../../d6/d43/classLineWeightComboBox.html#af80520a1454698dfc7e08992346d6ce8">lineWeightChanged</a>(<a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#a4c309705109e72def15f9848f47fa89b">m_currentWeight</a>);</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>}</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment"></span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment"> * Called when the width has changed. This method sets the current width to the value chosen or even</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment"> * offers a dialog to the user that allows him/ her to choose an individual width.</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00138" data-start="{" data-end="}">
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="../../d6/d43/classLineWeightComboBox.html#a01795caa0b53608670f8b4b75a3d0f5b">  138</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="../../d6/d43/classLineWeightComboBox.html#a01795caa0b53608670f8b4b75a3d0f5b">LineWeightComboBox::updateLineWeight</a>(<span class="keywordtype">int</span> index)</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>{</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    QVariant weight = itemData(index);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">if</span>(weight != QVariant::Invalid )</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>       <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#a4c309705109e72def15f9848f47fa89b">m_currentWeight</a> = QVariant(weight).toReal();</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    emit <a class="code hl_signal" href="../../d6/d43/classLineWeightComboBox.html#af80520a1454698dfc7e08992346d6ce8">lineWeightChanged</a>(<a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#a4c309705109e72def15f9848f47fa89b">m_currentWeight</a>);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>}</div>
 </div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="foldopen" id="foldopen00148" data-start="{" data-end="}">
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="../../d6/d43/classLineWeightComboBox.html#a4a9d8f8c28a93ebfdffb10322ab164e8">  148</a></span>QIcon <a class="code hl_function" href="../../d6/d43/classLineWeightComboBox.html#a4a9d8f8c28a93ebfdffb10322ab164e8">LineWeightComboBox::createIcon</a>(<span class="keyword">const</span> qreal &amp;width)</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>{</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    QPixmap pixmap(<a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#aef98b03ac098cefdaed6c37e0ccefe24">m_iconWidth</a>, <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#a967f1ca9926dc4be3f2d7094d641849d">m_iconHeight</a>);</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    pixmap.fill(Qt::black);</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    QPen pen(Qt::black, width, Qt::SolidLine, Qt::FlatCap, Qt::MiterJoin);</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    QPainter painter(&amp;pixmap);</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    painter.fillRect(QRect(1, 1, <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#aef98b03ac098cefdaed6c37e0ccefe24">m_iconWidth</a>-2, <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#a967f1ca9926dc4be3f2d7094d641849d">m_iconHeight</a>-2), QColor(Qt::white));</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    painter.setPen(pen);</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    painter.drawLine(0, <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#a967f1ca9926dc4be3f2d7094d641849d">m_iconHeight</a>/2, <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#aef98b03ac098cefdaed6c37e0ccefe24">m_iconWidth</a>, <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#a967f1ca9926dc4be3f2d7094d641849d">m_iconHeight</a>/2);</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">return</span> QIcon(pixmap);</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>}</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="foldopen" id="foldopen00149" data-start="{" data-end="}">
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="../../d6/d43/classLineWeightComboBox.html#a4a9d8f8c28a93ebfdffb10322ab164e8">  149</a></span>QIcon <a class="code hl_function" href="../../d6/d43/classLineWeightComboBox.html#a4a9d8f8c28a93ebfdffb10322ab164e8">LineWeightComboBox::createIcon</a>(<span class="keyword">const</span> qreal &amp;width)</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>{</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    QPixmap pixmap(<a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#aef98b03ac098cefdaed6c37e0ccefe24">m_iconWidth</a>, <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#a967f1ca9926dc4be3f2d7094d641849d">m_iconHeight</a>);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    pixmap.fill(Qt::black);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    QPen pen(Qt::black, width, Qt::SolidLine, Qt::FlatCap, Qt::MiterJoin);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    QPainter painter(&amp;pixmap);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    painter.fillRect(QRect(1, 1, <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#aef98b03ac098cefdaed6c37e0ccefe24">m_iconWidth</a>-2, <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#a967f1ca9926dc4be3f2d7094d641849d">m_iconHeight</a>-2), QColor(Qt::white));</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    painter.setPen(pen);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    painter.drawLine(0, <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#a967f1ca9926dc4be3f2d7094d641849d">m_iconHeight</a>/2, <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#aef98b03ac098cefdaed6c37e0ccefe24">m_iconWidth</a>, <a class="code hl_variable" href="../../d6/d43/classLineWeightComboBox.html#a967f1ca9926dc4be3f2d7094d641849d">m_iconHeight</a>/2);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordflow">return</span> QIcon(pixmap);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>}</div>
 </div>
-<div class="ttc" id="aclassLineWeightComboBox_html_a01795caa0b53608670f8b4b75a3d0f5b"><div class="ttname"><a href="../../d6/d43/classLineWeightComboBox.html#a01795caa0b53608670f8b4b75a3d0f5b">LineWeightComboBox::updateLineWeight</a></div><div class="ttdeci">void updateLineWeight(int index)</div><div class="ttdef"><b>Definition</b> <a href="../../da/d40/lineweight__combobox_8cpp_source.html#l00137">lineweight_combobox.cpp:137</a></div></div>
+<div class="ttc" id="aclassLineWeightComboBox_html_a01795caa0b53608670f8b4b75a3d0f5b"><div class="ttname"><a href="../../d6/d43/classLineWeightComboBox.html#a01795caa0b53608670f8b4b75a3d0f5b">LineWeightComboBox::updateLineWeight</a></div><div class="ttdeci">void updateLineWeight(int index)</div><div class="ttdef"><b>Definition</b> <a href="../../da/d40/lineweight__combobox_8cpp_source.html#l00138">lineweight_combobox.cpp:138</a></div></div>
 <div class="ttc" id="aclassLineWeightComboBox_html_a09116c564b8e390ddf0d9653481d9a09"><div class="ttname"><a href="../../d6/d43/classLineWeightComboBox.html#a09116c564b8e390ddf0d9653481d9a09">LineWeightComboBox::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition</b> <a href="../../da/d40/lineweight__combobox_8cpp_source.html#l00068">lineweight_combobox.cpp:68</a></div></div>
-<div class="ttc" id="aclassLineWeightComboBox_html_a4a9d8f8c28a93ebfdffb10322ab164e8"><div class="ttname"><a href="../../d6/d43/classLineWeightComboBox.html#a4a9d8f8c28a93ebfdffb10322ab164e8">LineWeightComboBox::createIcon</a></div><div class="ttdeci">QIcon createIcon(const qreal &amp;width)</div><div class="ttdef"><b>Definition</b> <a href="../../da/d40/lineweight__combobox_8cpp_source.html#l00148">lineweight_combobox.cpp:148</a></div></div>
+<div class="ttc" id="aclassLineWeightComboBox_html_a4a9d8f8c28a93ebfdffb10322ab164e8"><div class="ttname"><a href="../../d6/d43/classLineWeightComboBox.html#a4a9d8f8c28a93ebfdffb10322ab164e8">LineWeightComboBox::createIcon</a></div><div class="ttdeci">QIcon createIcon(const qreal &amp;width)</div><div class="ttdef"><b>Definition</b> <a href="../../da/d40/lineweight__combobox_8cpp_source.html#l00149">lineweight_combobox.cpp:149</a></div></div>
 <div class="ttc" id="aclassLineWeightComboBox_html_a4c309705109e72def15f9848f47fa89b"><div class="ttname"><a href="../../d6/d43/classLineWeightComboBox.html#a4c309705109e72def15f9848f47fa89b">LineWeightComboBox::m_currentWeight</a></div><div class="ttdeci">qreal m_currentWeight</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d53/lineweight__combobox_8h_source.html#l00056">lineweight_combobox.h:56</a></div></div>
 <div class="ttc" id="aclassLineWeightComboBox_html_a57d4914bce781901e500f389d800f2af"><div class="ttname"><a href="../../d6/d43/classLineWeightComboBox.html#a57d4914bce781901e500f389d800f2af">LineWeightComboBox::~LineWeightComboBox</a></div><div class="ttdeci">virtual ~LineWeightComboBox()</div><div class="ttdef"><b>Definition</b> <a href="../../da/d40/lineweight__combobox_8cpp_source.html#l00063">lineweight_combobox.cpp:63</a></div></div>
 <div class="ttc" id="aclassLineWeightComboBox_html_a58f78002bab6d93c62bb87d8f1e2eceb"><div class="ttname"><a href="../../d6/d43/classLineWeightComboBox.html#a58f78002bab6d93c62bb87d8f1e2eceb">LineWeightComboBox::LineWeightComboBox</a></div><div class="ttdeci">LineWeightComboBox(QWidget *parent=nullptr, const char *name=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="../../da/d40/lineweight__combobox_8cpp_source.html#l00035">lineweight_combobox.cpp:35</a></div></div>
-<div class="ttc" id="aclassLineWeightComboBox_html_a957a8b8f40e0533e354170660bdcf722"><div class="ttname"><a href="../../d6/d43/classLineWeightComboBox.html#a957a8b8f40e0533e354170660bdcf722">LineWeightComboBox::getLineWeight</a></div><div class="ttdeci">qreal getLineWeight() const</div><div class="ttdef"><b>Definition</b> <a href="../../da/d40/lineweight__combobox_8cpp_source.html#l00113">lineweight_combobox.cpp:113</a></div></div>
-<div class="ttc" id="aclassLineWeightComboBox_html_a965e1cca884a1c38a54aaf17fedb1a53"><div class="ttname"><a href="../../d6/d43/classLineWeightComboBox.html#a965e1cca884a1c38a54aaf17fedb1a53">LineWeightComboBox::setLineWeight</a></div><div class="ttdeci">void setLineWeight(const qreal &amp;weight)</div><div class="ttdef"><b>Definition</b> <a href="../../da/d40/lineweight__combobox_8cpp_source.html#l00121">lineweight_combobox.cpp:121</a></div></div>
+<div class="ttc" id="aclassLineWeightComboBox_html_a957a8b8f40e0533e354170660bdcf722"><div class="ttname"><a href="../../d6/d43/classLineWeightComboBox.html#a957a8b8f40e0533e354170660bdcf722">LineWeightComboBox::getLineWeight</a></div><div class="ttdeci">qreal getLineWeight() const</div><div class="ttdef"><b>Definition</b> <a href="../../da/d40/lineweight__combobox_8cpp_source.html#l00114">lineweight_combobox.cpp:114</a></div></div>
+<div class="ttc" id="aclassLineWeightComboBox_html_a965e1cca884a1c38a54aaf17fedb1a53"><div class="ttname"><a href="../../d6/d43/classLineWeightComboBox.html#a965e1cca884a1c38a54aaf17fedb1a53">LineWeightComboBox::setLineWeight</a></div><div class="ttdeci">void setLineWeight(const qreal &amp;weight)</div><div class="ttdef"><b>Definition</b> <a href="../../da/d40/lineweight__combobox_8cpp_source.html#l00122">lineweight_combobox.cpp:122</a></div></div>
 <div class="ttc" id="aclassLineWeightComboBox_html_a967f1ca9926dc4be3f2d7094d641849d"><div class="ttname"><a href="../../d6/d43/classLineWeightComboBox.html#a967f1ca9926dc4be3f2d7094d641849d">LineWeightComboBox::m_iconHeight</a></div><div class="ttdeci">int m_iconHeight</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d53/lineweight__combobox_8h_source.html#l00058">lineweight_combobox.h:58</a></div></div>
 <div class="ttc" id="aclassLineWeightComboBox_html_aef98b03ac098cefdaed6c37e0ccefe24"><div class="ttname"><a href="../../d6/d43/classLineWeightComboBox.html#aef98b03ac098cefdaed6c37e0ccefe24">LineWeightComboBox::m_iconWidth</a></div><div class="ttdeci">int m_iconWidth</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d53/lineweight__combobox_8h_source.html#l00057">lineweight_combobox.h:57</a></div></div>
 <div class="ttc" id="aclassLineWeightComboBox_html_af80520a1454698dfc7e08992346d6ce8"><div class="ttname"><a href="../../d6/d43/classLineWeightComboBox.html#af80520a1454698dfc7e08992346d6ce8">LineWeightComboBox::lineWeightChanged</a></div><div class="ttdeci">void lineWeightChanged(const qreal &amp;weight)</div></div>
