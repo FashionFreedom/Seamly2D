@@ -226,7 +226,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
 <p>This function creates a SVG from the given scene and converts it into a DOM that is added to the m_domList list of SVGs to be merged. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00164">164</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00176">176</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00057">m_domList</a>, <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00052">m_paper</a>, and <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00055">m_resolution</a>.</p>
 
@@ -262,9 +262,9 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
 <p>This function cleans the SVG by removing empty groups and the origin M0,0 path </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00150">150</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00162">162</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00108">removeEmptyGroups()</a>, and <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00129">removeEmptyOriginPath()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00108">removeEmptyGroups()</a>, and <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00141">removeEmptyOriginPath()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00059">mergeSvgDoms()</a>.</p>
 
@@ -289,7 +289,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
 <p>This function merges the SVGs of the m_domList list and writes the result in a file at the path given in the constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00203">203</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00215">215</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00053">m_filepath</a>, and <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00059">mergeSvgDoms()</a>.</p>
 
@@ -326,9 +326,9 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00059">59</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00150">cleanSvg()</a>, and <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00057">m_domList</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00162">cleanSvg()</a>, and <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00057">m_domList</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00203">generate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00215">generate()</a>.</p>
 
 </div>
 </div>
@@ -362,7 +362,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00108">108</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00150">cleanSvg()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00162">cleanSvg()</a>.</p>
 
 </div>
 </div>
@@ -394,9 +394,9 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
 <p>This function removes tht M0,0 origin path from the SVG. If this path is not removed, the bounding box of the exported pattern piece when opened in a svg editing software can be wrong. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00129">129</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00141">141</a> of file <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html">svg_generator.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00150">cleanSvg()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00162">cleanSvg()</a>.</p>
 
 </div>
 </div>
@@ -447,7 +447,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00057">57</a> of file <a class="el" href="../../d0/d67/svg__generator_8h_source.html">svg_generator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00164">addSvgFromScene()</a>, and <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00059">mergeSvgDoms()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00176">addSvgFromScene()</a>, and <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00059">mergeSvgDoms()</a>.</p>
 
 </div>
 </div>
@@ -473,7 +473,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00053">53</a> of file <a class="el" href="../../d0/d67/svg__generator_8h_source.html">svg_generator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00203">generate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00215">generate()</a>.</p>
 
 </div>
 </div>
@@ -499,7 +499,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00052">52</a> of file <a class="el" href="../../d0/d67/svg__generator_8h_source.html">svg_generator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00164">addSvgFromScene()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00176">addSvgFromScene()</a>.</p>
 
 </div>
 </div>
@@ -525,7 +525,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d67/svg__generator_8h_source.html#l00055">55</a> of file <a class="el" href="../../d0/d67/svg__generator_8h_source.html">svg_generator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00164">addSvgFromScene()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d61/svg__generator_8cpp_source.html#l00176">addSvgFromScene()</a>.</p>
 
 </div>
 </div>
