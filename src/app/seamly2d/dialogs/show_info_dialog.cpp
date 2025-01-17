@@ -46,7 +46,7 @@
 #include <QTextDocument>
 #include <QtWidgets>
 
-#include "../core/application_2d.h"
+#include "../core/vapplication.h"
 #include "../xml/vpattern.h"
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -70,7 +70,7 @@
     //Limit dialog height to 80% of screen size
     setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
-    qApp->Seamly2DSettings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     QByteArray byteArray;
     byteArray.append(doc->GetImage().toUtf8());
@@ -134,6 +134,9 @@ void ShowInfoDialog::showEvent(QShowEvent *event)
     {
         return;
     }
+
+    setMaximumSize(size());
+    setMinimumSize(size());
 
     m_isInitialized = true;//first show windows are held
 }

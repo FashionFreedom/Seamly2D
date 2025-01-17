@@ -433,41 +433,41 @@ void VTranslateVars::InitVariables()
 //---------------------------------------------------------------------------------------------------------------------
 void VTranslateVars::InitFunctions()
 {
-    functions.insert(degTorad_F, translate("VTranslateVars", "degTorad", "Converts degrees to radians\nUsage: degTorad(angle θ in degrees) → returns an angle in radians\nExample: degTorad(180) = 3.14159"));
-    functions.insert(radTodeg_F, translate("VTranslateVars", "radTodeg", "Converts radians to degrees\nUsage: radTodeg(angle θ in radians)  → returns an angle in degrees\nExample: radTodeg(3.14159) = 180"));
-    functions.insert(sin_F, translate("VTranslateVars", "sin", "Sine function working with radians\nUsage: sin(angle θ in radians) → returns a number between -1 and 1\nExample: sin(90) = 0.893997"));
-    functions.insert(cos_F, translate("VTranslateVars", "cos", "Cosine function working with radians\nUsage: cos(angle θ in radians) → returns a number between -1 and 1\nExample: cos(1) = 0.540302"));
-    functions.insert(tan_F, translate("VTranslateVars", "tan", "Tangent function working with radians\nUsage: tan(angle θ in radians)\nExample: tan(1) = 1.55741"));
-    functions.insert(asin_F, translate("VTranslateVars", "asin", "Inverse sine function working with radians\nUsage: asin(x between -1 and 1) → returns an angle in radians\nExample: asin(-1) = -1.5708"));
-    functions.insert(acos_F, translate("VTranslateVars", "acos", "Inverse cosine function working with radians\nUsage: acos(x between -1 and 1) → returns an angle in radians\nExample: acos(0.1) = 1.47063"));
-    functions.insert(atan_F, translate("VTranslateVars", "atan", "Inverse tangent function working with radians\nUsage: atan(x) → returns an angle in radians\nExample: atan(1) = 0.78538"));
-    functions.insert(sinh_F, translate("VTranslateVars", "sinh", "Hyperbolic sine function\nUsage: sinh(θ)\nExample: sinh(1) = 1.1752"));
-    functions.insert(cosh_F, translate("VTranslateVars", "cosh", "Hyperbolic cosine\nUsage: cosh(θ) → returns a number greater than or equal to 1\nExample: cosh(0) = 1"));
-    functions.insert(tanh_F, translate("VTranslateVars", "tanh", "Hyperbolic tangent function\nUsage: tanh(θ) → returns a number between -1 and 1 (excluded)\nExample: tanh(1) = 0.761594"));
-    functions.insert(asinh_F, translate("VTranslateVars", "asinh", "Inverse Hyperbolic sine function\nUsage: asinh(x)\nExample: asinh(90) = 5.19299"));
-    functions.insert(acosh_F, translate("VTranslateVars", "acosh", "Inverse Hyperbolic cosine function\nUsage: acosh(x greater than or equal to 1)\nExample: acosh(2) = 1.31696"));
-    functions.insert(atanh_F, translate("VTranslateVars", "atanh", "Inverse Hyperbolic tangent function\nUsage: atanh(x between -1 and 1 (excluded))\nExample: atanh(0,99) = 2.64665"));
-    functions.insert(sinD_F, translate("VTranslateVars", "sinD", "Sine function working with degrees\nUsage: sinD(angle θ in degrees) → returns a number between -1 and 1\nExample: sinD(90) = 1"));
-    functions.insert(cosD_F, translate("VTranslateVars", "cosD", "Cosine function working with degrees\nUsage: cosD(angle θ in degrees) → returns a number between -1 and 1\nExample: cosD(180) = -1"));
-    functions.insert(tanD_F, translate("VTranslateVars", "tanD", "Tangent function working with degrees\nUsage: tanD(angle θ in degrees)\nExample: tanD(45) = 1"));
-    functions.insert(asinD_F, translate("VTranslateVars", "asinD", "Inverse sine function working with degrees\nUsage: asinD(x between -1 and 1) → returns an angle in degrees\nExample: asinD(1) = 90"));
-    functions.insert(acosD_F, translate("VTranslateVars", "acosD", "Inverse cosine function working with degrees\nUsage: acosD(x between -1 and 1) → returns an angle in degrees\nExample: acosD(-1) = 180"));
-    functions.insert(atanD_F, translate("VTranslateVars", "atanD", "Inverse tangent function working with degrees\nUsage: atanD(x) → returns an angle in degrees\nExample: atanD(1) = 45"));
-    functions.insert(log2_F, translate("VTranslateVars", "log2", "Logarithm to the base 2\nUsage: log2(x greater than 0)\nExample: log2(10) = 3.32193"));
-    functions.insert(log10_F, translate("VTranslateVars", "log10", "Logarithm to the base 10 (same as log(x))\nUsage: log10(x greater than 0)\nExample: log10(10) = 1"));
-    functions.insert(log_F, translate("VTranslateVars", "log", "Logarithm to the base 10\nUsage: log(x greater than 0)\nExample: log(10) = 1"));
-    functions.insert(ln_F, translate("VTranslateVars", "ln", "Logarithm to base e (2.71828...)\nUsage: ln(x greater than 0)\nExample: ln(10) = 2.30259"));
-    functions.insert(exp_F, translate("VTranslateVars", "exp", "e raised to the power of x where e = 2.718\nUsage: exp(x) → returns a positive number\nExample: exp(2) = 7.38906"));
-    functions.insert(sqrt_F, translate("VTranslateVars", "sqrt", "Square root of a value\nUsage: sqrt(x greater than or equal to 0) → returns a positive number\nExample: sqrt(4) = 2"));
-    functions.insert(sign_F, translate("VTranslateVars", "sign", "Sign function -1 if x<0; 1 if x>0\nUsage: sign(x) → returns -1, 0 or 1\nExample: sign(-3) = -1"));
-    functions.insert(rint_F, translate("VTranslateVars", "rint", "Round to nearest integer\nUsage: rint(x) → returns an integer number\nExample: rint(2.3) = 2"));
-    functions.insert(abs_F, translate("VTranslateVars", "abs", "Absolute value\nUsage: abs(x) → returns a positive number\nExample: abs(-5) = 5"));
-    functions.insert(min_F, translate("VTranslateVars", "min", "Min of all arguments\nUsage: min(arg 1; arg 2; ... arg n)\nExample: min(2;3;4) = 2"));
-    functions.insert(max_F, translate("VTranslateVars", "max", "Max of all arguments\nUsage: max(arg 1; arg 2; ... arg n)\nExample: max(2;3;4) = 4"));
-    functions.insert(sum_F, translate("VTranslateVars", "sum", "Sum of all arguments\nUsage: sum(arg 1; arg 2; ... arg n)\nExample: sum(2;3;4) = 9"));
-    functions.insert(avg_F, translate("VTranslateVars", "avg", "Mean value of all arguments\nUsage: avg(arg 1; arg 2; ... arg n)\nExample: avg(2;3;4) = 3"));
+    functions.insert(degTorad_F, translate("VTranslateVars", "degTorad", "Converts degrees to radians\nUsage: degTorad(angle θ in degrees)"));
+    functions.insert(radTodeg_F, translate("VTranslateVars", "radTodeg", "Converts radians to degrees\nUsage: radTodeg(angle θ in radians)"));
+    functions.insert(sin_F, translate("VTranslateVars", "sin", "Sine function working with radians\nUsage: sin(angle θ in radians)"));
+    functions.insert(cos_F, translate("VTranslateVars", "cos", "Cosine function working with radians\nUsage: cos(angle θ in radians)"));
+    functions.insert(tan_F, translate("VTranslateVars", "tan", "Tangent function working with radians\nUsage: tan(angle θ in radians)"));
+    functions.insert(asin_F, translate("VTranslateVars", "asin", "Inverse sine function working with radians\nUsage: asin(x)"));
+    functions.insert(acos_F, translate("VTranslateVars", "acos", "Inverse cosine function working with radians\nUsage: acos(x)"));
+    functions.insert(atan_F, translate("VTranslateVars", "atan", "Inverse tangent function working with radians\nUsage: atan(x)"));
+    functions.insert(sinh_F, translate("VTranslateVars", "sinh", "Hyperbolic sine function\nUsage: sinh(angle θ in radians)"));
+    functions.insert(cosh_F, translate("VTranslateVars", "cosh", "Hyperbolic cosine\nUsage: cosh(angle θ in radians)"));
+    functions.insert(tanh_F, translate("VTranslateVars", "tanh", "Hyperbolic tangent function\nUsage: tanh(angle θ in radians)"));
+    functions.insert(asinh_F, translate("VTranslateVars", "asinh", "Inverse Hyperbolic sine function\nUsage: asinh(x)"));
+    functions.insert(acosh_F, translate("VTranslateVars", "acosh", "Inverse Hyperbolic cosine function\nUsage: acosh(x)"));
+    functions.insert(atanh_F, translate("VTranslateVars", "atanh", "Inverse Hyperbolic tangent function\nUsage: atanh(x)"));
+    functions.insert(sinD_F, translate("VTranslateVars", "sinD", "Sine function working with degrees\nUsage: sinD(angle θ in degrees)"));
+    functions.insert(cosD_F, translate("VTranslateVars", "cosD", "Cosine function working with degrees\nUsage: cosD(angle θ in degrees)"));
+    functions.insert(tanD_F, translate("VTranslateVars", "tanD", "Tangent function working with degrees\nUsage: tanD(angle θ in degrees)"));
+    functions.insert(asinD_F, translate("VTranslateVars", "asinD", "Inverse sine function working with degrees\nUsage: asinD(x)"));
+    functions.insert(acosD_F, translate("VTranslateVars", "acosD", "Inverse cosine function working with degrees\nUsage: acosD(x)"));
+    functions.insert(atanD_F, translate("VTranslateVars", "atanD", "Inverse tangent function working with degrees\nUsage: atanD(x)"));
+    functions.insert(log2_F, translate("VTranslateVars", "log2", "Logarithm to the base 2\nUsage: log2(x)"));
+    functions.insert(log10_F, translate("VTranslateVars", "log10", "Logarithm to the base 10\nUsage: log10(x)"));
+    functions.insert(log_F, translate("VTranslateVars", "log", "Logarithm to the base 10\nUsage: log(x)"));
+    functions.insert(ln_F, translate("VTranslateVars", "ln", "Logarithm to base e (2.71828...)\nUsage: ln(x)"));
+    functions.insert(exp_F, translate("VTranslateVars", "exp", "E raised to the power of x\nUsage: exp(x) where e = 2.718"));
+    functions.insert(sqrt_F, translate("VTranslateVars", "sqrt", "Square root of a value\nUsage: sqrt(x)"));
+    functions.insert(sign_F, translate("VTranslateVars", "sign", "Sign function -1 if x<0; 1 if x>0\nUsage: sign(x)"));
+    functions.insert(rint_F, translate("VTranslateVars", "rint", "Round to nearest integer\nUsage: rint(float x)"));
+    functions.insert(abs_F, translate("VTranslateVars", "abs", "Absolute value\nUsage: abs(x)"));
+    functions.insert(min_F, translate("VTranslateVars", "min", "Min of all arguments\nUsage: min(arg 1; arg 2; ... arg n)"));
+    functions.insert(max_F, translate("VTranslateVars", "max", "Max of all arguments\nUsage: max(arg 1; arg 2; ... arg n)"));
+    functions.insert(sum_F, translate("VTranslateVars", "sum", "Sum of all arguments\nUsage: sum(arg 1; arg 2; ... arg n)"));
+    functions.insert(avg_F, translate("VTranslateVars", "avg", "Mean value of all arguments\nUsage: avg(arg 1; arg 2; ... arg n)"));
     functions.insert(fmod_F, translate("VTranslateVars", "fmod",
-                    "Returns the floating-point remainder of x/y (rounded towards zero)\nUsage: fmod(x; y)\nExample: fmod(3.3;2) = 1.3"));
+                    "Returns the floating-point remainder of x/y (rounded towards zero)\nUsage: fmod(x; y)"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -945,7 +945,7 @@ QString VTranslateVars::TryFormulaFromUser(const QString &formula, bool osSepara
 {
     try
     {
-        return qApp->translateVariables()->FormulaFromUser(formula, osSeparator);
+        return qApp->TrVars()->FormulaFromUser(formula, osSeparator);
     }
     catch (qmu::QmuParserError &error)// In case something bad will happen
     {

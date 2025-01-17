@@ -1,52 +1,55 @@
-//---------------------------------------------------------------------------------------------------------------------
-//  @file   editlabeltemplate_dialog.cpp
-//  @author Douglas S Caskey
-//  @date   17 Sep, 2023
-//
-//  @copyright
-//  Copyright (C) 2017 - 2022 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
-//
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
-//---------------------------------------------------------------------------------------------------------------------
+/***************************************************************************
+ **  @file   editlabeltemplate_dialog.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
-//---------------------------------------------------------------------------------------------------------------------
-//  @file   dialogeditlabel.cpp
-//  @author Roman Telezhynskyi <dismine(at)gmail.com>
-//  @date   11 8, 2017
-//
-//  @brief
-//  @copyright
-//  This source code is part of the Valentina project, a pattern making
-//  program, whose allow create and modeling patterns of clothing.
-//  Copyright (C) 2017 Valentina project
-//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
-//
-//  Valentina is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Valentina is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//---------------------------------------------------------------------------------------------------------------------
+
+/************************************************************************
+ **
+ **  @file   dialogeditlabel.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   11 8, 2017
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2017 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
 
 #include "editlabeltemplate_dialog.h"
 #include "ui_editlabeltemplate_dialog.h"
@@ -478,7 +481,7 @@ void EditLabelTemplateDialog::InitPlaceholdersMenu()
     {
         auto value = i.value();
         QAction *action = m_placeholdersMenu->addAction(value.first);
-        action->setData(per + qApp->translateVariables()->PlaceholderToUser(i.key()) + per);
+        action->setData(per + qApp->TrVars()->PlaceholderToUser(i.key()) + per);
         connect(action, &QAction::triggered, this, &EditLabelTemplateDialog::InsertPlaceholder);
         ++i;
     }
@@ -488,7 +491,7 @@ void EditLabelTemplateDialog::InitPlaceholdersMenu()
 void EditLabelTemplateDialog::InitPlaceholders()
 {
     // Pattern tags
-    QLocale locale(qApp->Settings()->getLocale());
+    QLocale locale(qApp->Settings()->GetLocale());
 
     const QString date = locale.toString(QDate::currentDate(), m_doc->GetLabelDateFormat());
     m_placeholders.insert(pl_date, qMakePair(tr("Date"), date));
@@ -569,7 +572,7 @@ QVector<VLabelTemplateLine> EditLabelTemplateDialog::GetTemplate() const
         if (lineItem)
         {
             VLabelTemplateLine line;
-            line.line = qApp->translateVariables()->PlaceholderFromUserText(lineItem->text());
+            line.line = qApp->TrVars()->PlaceholderFromUserText(lineItem->text());
             line.alignment = lineItem->textAlignment();
             line.fontSizeIncrement = lineItem->data(Qt::UserRole).toInt();
 
@@ -594,7 +597,7 @@ void EditLabelTemplateDialog::SetTemplate(const QVector<VLabelTemplateLine> &lin
 
     for (int i=0; i<lines.size(); ++i)
     {
-        QListWidgetItem *item = new QListWidgetItem(qApp->translateVariables()->PlaceholderToUserText(lines.at(i).line));
+        QListWidgetItem *item = new QListWidgetItem(qApp->TrVars()->PlaceholderToUserText(lines.at(i).line));
         item->setTextAlignment(lines.at(i).alignment);
         item->setData(Qt::UserRole, lines.at(i).fontSizeIncrement);
 

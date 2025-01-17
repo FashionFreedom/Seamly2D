@@ -1,51 +1,53 @@
-//-----------------------------------------------------------------------------
-//  @file   dialogcutspline.cpp
-//  @author Douglas S Caskey
-//  @date   14 Aug, 2024
-//
-//  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
-//
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+/***************************************************************************
+ *                                                                         *
+ *   Copyright (C) 2017  Seamly, LLC                                       *
+ *                                                                         *
+ *   https://github.com/fashionfreedom/seamly2d                             *
+ *                                                                         *
+ ***************************************************************************
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ **************************************************************************
 
-//-----------------------------------------------------------------------------
-//  @file   dialogcutspline.cpp
-//  @author Roman Telezhynskyi <dismine(at)gmail.com>
-//  @date   15 Dec 2013
-//
-//  @copyright
-//  Copyright (C) 2013 Valentina project.
-//  This source code is part of the Valentina project, a pattern making
-//  program, whose allow create and modeling patterns of clothing.
-//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
-//
-//  Valentina is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published
-//  by the Free Software Foundation, either version 3 of the License,
-//  or (at your option) any later version.
-//
-//  Valentina is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+ ************************************************************************
+ **
+ **  @file   dialogcutspline.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   15 12, 2013
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentine project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2013-2015 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
 
 #include "dialogcutspline.h"
 
@@ -67,10 +69,11 @@
 #include "ui_dialogcutspline.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief DialogCutSpline create dialog.
-/// @param data container with data
-/// @param parent parent widget
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief DialogCutSpline create dialog.
+ * @param data container with data
+ * @param parent parent widget
+ */
 DialogCutSpline::DialogCutSpline(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : DialogTool(data, toolId, parent)
     , ui(new Ui::DialogCutSpline)
@@ -80,9 +83,6 @@ DialogCutSpline::DialogCutSpline(const VContainer *data, const quint32 &toolId, 
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/spline_cut_point.png"));
-
-    // Set the position that the dialog opens based on user preference.
-    setDialogPosition();
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
@@ -97,15 +97,6 @@ DialogCutSpline::DialogCutSpline(const VContainer *data, const quint32 &toolId, 
     DialogTool::CheckState();
 
     FillComboBoxSplines(ui->comboBoxSpline);
-
-    int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
-    if (index != -1)
-    {
-        ui->lineColor_ComboBox->setCurrentIndex(index);
-    }
-
-    ui->direction_ComboBox->addItem(tr("Forward (from start point)"), "forward");
-    ui->direction_ComboBox->addItem(tr("Backward (from end point)"), "backward");
 
     connect(ui->toolButtonExprLength, &QPushButton::clicked, this, &DialogCutSpline::FXLength);
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogCutSpline::NamePointChanged);
@@ -122,44 +113,24 @@ DialogCutSpline::~DialogCutSpline()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief setPointName set name of point
-/// @param value name
-//---------------------------------------------------------------------------------------------------------------------
-void DialogCutSpline::setPointName(const QString &value)
+/**
+ * @brief SetPointName set name of point
+ * @param value name
+ */
+void DialogCutSpline::SetPointName(const QString &value)
 {
     pointName = value;
     ui->lineEditNamePoint->setText(pointName);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief setDirection set the direction
-/// @param value name
-//---------------------------------------------------------------------------------------------------------------------
-void DialogCutSpline::setDirection(const QString &value)
+/**
+ * @brief SetFormula set string of formula
+ * @param value formula
+ */
+void DialogCutSpline::SetFormula(const QString &value)
 {
-    ChangeCurrentData(ui->direction_ComboBox, value);
-    VisToolCutSpline *path = qobject_cast<VisToolCutSpline *>(vis);
-    SCASSERT(path != nullptr)
-    path->setDirection(value);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/// @brief getDirection get the direction of the spline
-/// @return QString direction
-//---------------------------------------------------------------------------------------------------------------------
-
-QString DialogCutSpline::getDirection() const
-{
-    return GetComboBoxCurrentData(ui->direction_ComboBox, "forward");
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/// @brief setFormula set string of formula
-/// @param value formula
-//---------------------------------------------------------------------------------------------------------------------
-void DialogCutSpline::setFormula(const QString &value)
-{
-    formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
     // increase height if needed. TODO : see if I can get the max number of caracters in one line
     // of this PlainTextEdit to change 80 to this value
     if (formula.length() > 80)
@@ -176,9 +147,10 @@ void DialogCutSpline::setFormula(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief setSplineId set id spline
-/// @param value id
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief setSplineId set id spline
+ * @param value id
+ */
 void DialogCutSpline::setSplineId(const quint32 &value)
 {
     setCurrentSplineId(ui->comboBoxSpline, value);
@@ -189,28 +161,11 @@ void DialogCutSpline::setSplineId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief getLineColor get the color of line
-/// @return QString name of color
-//---------------------------------------------------------------------------------------------------------------------
-QString DialogCutSpline::getLineColor() const
-{
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/// @brief setLineColor set color of the line
-/// @param value type
-//---------------------------------------------------------------------------------------------------------------------
-void DialogCutSpline::setLineColor(const QString &value)
-{
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/// @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
-/// @param id id of point or detail
-/// @param type type of object
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief ChoosedObject gets id and type of selected object. Save right data and ignore wrong.
+ * @param id id of point or detail
+ * @param type type of object
+ */
 void DialogCutSpline::ChosenObject(quint32 id, const SceneObject &type)
 {
     if (prepare == false)// After first choose we ignore all objects
@@ -239,7 +194,6 @@ void DialogCutSpline::SaveData()
     SCASSERT(path != nullptr)
 
     path->setObject1Id(getSplineId());
-    path->setDirection(getDirection());
     path->setLength(formula);
     path->RefreshGeometry();
 }
@@ -260,13 +214,13 @@ void DialogCutSpline::DeployFormulaTextEdit()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogCutSpline::FXLength()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit length"));
-    dialog->SetFormula(getFormula());
+    dialog->SetFormula(GetFormula());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
     if (dialog->exec() == QDialog::Accepted)
     {
-        setFormula(dialog->GetFormula());
+        SetFormula(dialog->GetFormula());
     }
     delete dialog;
 }
@@ -278,18 +232,20 @@ void DialogCutSpline::ShowVisualization()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief getFormula return string of formula
-/// @return formula
-//---------------------------------------------------------------------------------------------------------------------
-QString DialogCutSpline::getFormula() const
+/**
+ * @brief GetFormula return string of formula
+ * @return formula
+ */
+QString DialogCutSpline::GetFormula() const
 {
-    return qApp->translateVariables()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief getSplineId return id base point of line
-/// @return id
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief getSplineId return id base point of line
+ * @return id
+ */
 quint32 DialogCutSpline::getSplineId() const
 {
     return getCurrentObjectId(ui->comboBoxSpline);

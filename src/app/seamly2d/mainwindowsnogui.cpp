@@ -51,7 +51,7 @@
  *************************************************************************/
 
 #include "mainwindowsnogui.h"
-#include "core/application_2d.h"
+#include "core/vapplication.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vobj/vobjpaintdevice.h"
 #include "../vdxf/vdxfpaintdevice.h"
@@ -67,7 +67,6 @@
 #include "../vpatterndb/measurements_def.h"
 #include "../vtools/tools/vabstracttool.h"
 #include "../vtools/tools/pattern_piece_tool.h"
-#include "../../libs/vformat/svg_generator.h"
 
 #include <QFileDialog>
 #include <QFileInfo>
@@ -117,7 +116,7 @@ MainWindowsNoGUI::MainWindowsNoGUI(QWidget *parent)
       pieceList(),
       currentScene(nullptr),
       tempSceneLayout(nullptr),
-      pattern(new VContainer(qApp->translateVariables(), qApp->patternUnitP())),
+      pattern(new VContainer(qApp->TrVars(), qApp->patternUnitP())),
       doc(nullptr),
       papers(),
       shadows(),
@@ -182,7 +181,7 @@ bool MainWindowsNoGUI::LayoutSettings(VLayoutGenerator& lGenerator)
 {
     lGenerator.setPieces(pieceList);
     DialogLayoutProgress progress(pieceList.count(), this);
-    if (Application2D::isGUIMode())
+    if (VApplication::IsGUIMode())
     {
         connect(&lGenerator, &VLayoutGenerator::Start,     &progress,   &DialogLayoutProgress::Start);
         connect(&lGenerator, &VLayoutGenerator::Arranged,  &progress,   &DialogLayoutProgress::Arranged);
@@ -212,7 +211,7 @@ bool MainWindowsNoGUI::LayoutSettings(VLayoutGenerator& lGenerator)
             isAutoCrop = lGenerator.GetAutoCrop();
             isUnitePages = lGenerator.IsUnitePages();
             isLayoutStale = false;
-            if (Application2D::isGUIMode())
+            if (VApplication::IsGUIMode())
             {
                 QApplication::alert(this);
             }
@@ -220,7 +219,7 @@ bool MainWindowsNoGUI::LayoutSettings(VLayoutGenerator& lGenerator)
         case LayoutErrors::ProcessStoped:
         case LayoutErrors::PrepareLayoutError:
         case LayoutErrors::EmptyPaperError:
-            if (Application2D::isGUIMode())
+            if (VApplication::IsGUIMode())
             {
                 QApplication::alert(this);
             }
@@ -889,23 +888,21 @@ QList<QGraphicsScene *> MainWindowsNoGUI::CreateScenes(const QList<QGraphicsItem
  */
 void MainWindowsNoGUI::exportSVG(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene) const
 {
-    SvgGenerator svgGenerator(paper, name, doc->GetDescription(), static_cast<int>(PrintDPI));
-    svgGenerator.addSvgFromScene(scene);
-    svgGenerator.generate();
-}
-
-void MainWindowsNoGUI::exportSVG(const QString &name, QGraphicsRectItem *paper, const QList<QGraphicsItem *> &pieces) const
-{
-    SvgGenerator svgGenerator(paper, name, doc->GetDescription(), static_cast<int>(PrintDPI));
-
-    for (int pieceNb=0; pieceNb<pieces.size(); pieceNb++)
-    {
-        QGraphicsScene *scene = new VMainGraphicsScene();
-        scene->addItem(pieces.at(pieceNb));
-        svgGenerator.addSvgFromScene(scene);
-    }
-
-    svgGenerator.generate();
+    QSvgGenerator generator;
+    generator.setFileName(name);
+    generator.setSize(paper->rect().size().toSize());
+    generator.setViewBox(paper->rect());
+    generator.setTitle(tr("Pattern"));
+    generator.setDescription(doc->GetDescription());
+    generator.setResolution(static_cast<int>(PrintDPI));
+    QPainter painter;
+    painter.begin(&generator);
+    painter.setFont( QFont( "Arial", 8, QFont::Normal ) );
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    //painter.setPen(QPen(Qt::black, widthHairLine, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    painter.setBrush ( QBrush ( Qt::NoBrush ) );
+    scene->render(&painter, paper->rect(), paper->rect(), Qt::IgnoreAspectRatio);
+    painter.end();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1636,7 +1633,7 @@ void MainWindowsNoGUI::ExportScene(const ExportLayoutDialog &dialog, const QList
             {
                 case LayoutExportFormat::SVG:
                     paper->setVisible(false);
-                    exportSVG(name, paper, pieces.at(i));
+                    exportSVG(name, paper, scene);
                     paper->setVisible(true);
                     break;
                 case LayoutExportFormat::PDF:

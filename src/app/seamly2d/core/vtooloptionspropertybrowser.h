@@ -175,9 +175,6 @@ private:
     void addPropertyLineColor(Tool *tool, const QString &propertyName,  const QString &id);
 
     template<class Tool>
-    void addPropertyDirection(Tool *tool, const QString &propertyName);
-
-    template<class Tool>
     void addObjectProperty(Tool *tool, const QString &pointName, const QString &propertyName,
                            const QString &id, GOType objType);
 

@@ -1,50 +1,53 @@
-//  @file   vtoolcutsplinepath.h
-//  @author Douglas S Caskey
-//  @date   17 Sep, 2023
-//
-//  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
-//
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+/***************************************************************************
+ *                                                                         *
+ *   Copyright (C) 2017  Seamly, LLC                                       *
+ *                                                                         *
+ *   https://github.com/fashionfreedom/seamly2d                            *
+ *                                                                         *
+ ***************************************************************************
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ **************************************************************************
 
-//-----------------------------------------------------------------------------
-//  @file   vtoolcutsplinepath.h
-//  @author Roman Telezhynskyi <dismine(at)gmail.com>
-//  @date   15 12, 2013
-//
-//  @copyright
-//  Copyright (C) 2013 Valentina project.
-//  This source code is part of the Valentina project, a pattern making
-//  program, whose allow create and modeling patterns of clothing.
-//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
-//
-//  Valentina is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published
-//  by the Free Software Foundation, either version 3 of the License,
-//  or (at your option) any later version.
-//
-//  Valentina is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+ ************************************************************************
+ **
+ **  @file   vtoolcutsplinepath.h
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   15 12, 2013
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentine project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2013-2015 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
 
 #ifndef VTOOLCUTSPLINEPATH_H
 #define VTOOLCUTSPLINEPATH_H
@@ -76,11 +79,10 @@ public:
 
     static VToolCutSplinePath *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene,
                                       VAbstractPattern *doc, VContainer *data);
-    static VToolCutSplinePath *Create(const quint32 _id, const QString &pointName, QString &direction,
-                                      QString &formula, const QString &lineColor, quint32 splinePathId,
-                                      qreal mx, qreal my, bool showPointName, VMainGraphicsScene *scene,
-                                      VAbstractPattern *doc, VContainer *data, const Document &parse,
-                                      const Source &typeCreation);
+    static VToolCutSplinePath *Create(const quint32 _id, const QString &pointName, QString &formula,
+                                      quint32 splinePathId, qreal mx, qreal my, bool showPointName,
+                                      VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
+                                      const Document &parse, const Source &typeCreation);
     static const QString ToolType;
     static const QString AttrSplinePath;
     virtual int          type() const Q_DECL_OVERRIDE {return Type;}
@@ -105,9 +107,8 @@ protected:
 private:
     Q_DISABLE_COPY(VToolCutSplinePath)
 
-    VToolCutSplinePath(VAbstractPattern *doc, VContainer *data, const quint32 &id, QString &direction,
-                       const QString &formula, const QString &lineColor, const quint32 &splinePathId,
-                       const Source &typeCreation, QGraphicsItem * parent = nullptr);
+    VToolCutSplinePath(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &formula,
+                       const quint32 &splinePathId, const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };
 
 #endif // VTOOLCUTSPLINEPATH_H

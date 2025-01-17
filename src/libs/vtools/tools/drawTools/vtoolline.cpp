@@ -104,6 +104,7 @@ VToolLine::VToolLine(VAbstractPattern *doc, VContainer *data, quint32 id, quint3
     this->m_lineWeight = lineWeight;
     //Line
     RefreshGeometry();
+    this->setFlag(QGraphicsItem::ItemStacksBehindParent, true);
     this->setFlag(QGraphicsItem::ItemIsFocusable, true);// For keyboard input focus
     this->setAcceptHoverEvents(true);
 
@@ -473,7 +474,7 @@ QString VToolLine::makeToolTip() const
 
     const QLineF line(static_cast<QPointF>(*first), static_cast<QPointF>(*second));
 
-    const QString toolTip = QString("<table style=font-size:11pt; font-weight:600>"
+    const QString toolTip = QString("<table>"
                                     "<tr> <td><b>%1:</b> %2 %3</td> </tr>"
                                     "<tr> <td><b>%4:</b> %5°</td> </tr>"
                                     "</table>")

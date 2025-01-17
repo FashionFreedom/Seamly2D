@@ -200,9 +200,9 @@ VSpline::~VSpline()
  * @brief GetLength return length of spline.
  * @return length.
  */
-qreal VSpline::GetLength() const
+qreal VSpline::GetLength () const
 {
-    return LengthBezier(static_cast<QPointF>(GetP1()), static_cast<QPointF>(GetP2()), static_cast<QPointF>(GetP3()),
+    return LengthBezier ( static_cast<QPointF>(GetP1()), static_cast<QPointF>(GetP2()), static_cast<QPointF>(GetP3()),
                           static_cast<QPointF>(GetP4()));
 }
 

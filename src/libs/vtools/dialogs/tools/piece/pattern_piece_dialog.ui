@@ -135,9 +135,6 @@ QListWidget::item:selected {
          <iconset resource="../../../../vmisc/share/resources/icon.qrc">
           <normaloff>:/icon/160x64/properties.png</normaloff>:/icon/160x64/properties.png</iconset>
         </property>
-        <property name="flags">
-         <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-        </property>
        </item>
        <item>
         <property name="text">
@@ -164,9 +161,6 @@ QListWidget::item:selected {
          <iconset resource="../../../../vmisc/share/resources/icon.qrc">
           <normaloff>:/icon/160x64/paths.png</normaloff>:/icon/160x64/paths.png</iconset>
         </property>
-        <property name="flags">
-         <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-        </property>
        </item>
        <item>
         <property name="text">
@@ -187,9 +181,6 @@ QListWidget::item:selected {
         <property name="icon">
          <iconset resource="../../../../vmisc/share/resources/icon.qrc">
           <normaloff>:/icon/160x64/seam_allowance.png</normaloff>:/icon/160x64/seam_allowance.png</iconset>
-        </property>
-        <property name="flags">
-         <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
        <item>
@@ -217,9 +208,6 @@ QListWidget::item:selected {
          <iconset resource="../../../../vmisc/share/resources/icon.qrc">
           <normaloff>:/icon/160x64/labels.png</normaloff>:/icon/160x64/labels.png</iconset>
         </property>
-        <property name="flags">
-         <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-        </property>
        </item>
        <item>
         <property name="text">
@@ -245,9 +233,6 @@ QListWidget::item:selected {
         <property name="icon">
          <iconset resource="../../../../vmisc/share/resources/icon.qrc">
           <normaloff>:/icon/160x64/anchor_point.png</normaloff>:/icon/160x64/anchor_point.png</iconset>
-        </property>
-        <property name="flags">
-         <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
        <item>
@@ -275,9 +260,6 @@ QListWidget::item:selected {
          <iconset resource="../../../../vmisc/share/resources/icon.qrc">
           <normaloff>:/icon/160x64/grainlines.png</normaloff>:/icon/160x64/grainlines.png</iconset>
         </property>
-        <property name="flags">
-         <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-        </property>
        </item>
        <item>
         <property name="text">
@@ -303,9 +285,6 @@ QListWidget::item:selected {
         <property name="icon">
          <iconset resource="../../../../vmisc/share/resources/icon.qrc">
           <normaloff>:/icon/160x64/notches.png</normaloff>:/icon/160x64/notches.png</iconset>
-        </property>
-        <property name="flags">
-         <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
       </widget>
@@ -4797,8 +4776,8 @@ QListWidget::item:selected {
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>264</width>
-              <height>486</height>
+              <width>362</width>
+              <height>558</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -5367,9 +5346,6 @@ QListWidget::item:selected {
                     </property>
                     <property name="keyboardTracking">
                      <bool>false</bool>
-                    </property>
-                    <property name="suffix">
-                     <string>  °</string>
                     </property>
                     <property name="decimals">
                      <number>3</number>

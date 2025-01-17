@@ -78,49 +78,49 @@
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/projectversion.h"
 
-class TestApplication2D : public VAbstractApplication
+class TestVApplication : public VAbstractApplication
 {
 public:
 
-                                  TestApplication2D(int &argc, char ** argv);
-    virtual                      ~TestApplication2D() Q_DECL_EQ_DEFAULT;
+                                  TestVApplication(int &argc, char ** argv);
+    virtual                      ~TestVApplication() Q_DECL_EQ_DEFAULT;
 
-    virtual const VTranslateVars *translateVariables();
-    virtual void                  openSettings();
-    virtual bool                  isAppInGUIMode() const;
-    virtual void                  initTranslateVariables();
+    virtual const VTranslateVars *TrVars();
+    virtual void                  OpenSettings();
+    virtual bool                  IsAppInGUIMode() const;
+    virtual void                  InitTrVars();
 };
 
 //---------------------------------------------------------------------------------------------------------------------
-TestApplication2D::TestApplication2D(int &argc, char **argv)
+TestVApplication::TestVApplication(int &argc, char **argv)
     : VAbstractApplication(argc, argv)
 {
     setApplicationName(VER_INTERNALNAME_2D_STR);
     setOrganizationName(VER_COMPANYNAME_STR);
-    openSettings();
+    OpenSettings();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const VTranslateVars *TestApplication2D::translateVariables()
+const VTranslateVars *TestVApplication::TrVars()
 {
     return nullptr;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TestApplication2D::openSettings()
+void TestVApplication::OpenSettings()
 {
     settings = new VSettings(QSettings::IniFormat, QSettings::UserScope, QCoreApplication::organizationName(),
                              QCoreApplication::applicationName(), this);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool TestApplication2D::isAppInGUIMode() const
+bool TestVApplication::IsAppInGUIMode() const
 {
     return false;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TestApplication2D::initTranslateVariables()
+void TestVApplication::InitTrVars()
 {
 }
 
@@ -129,7 +129,7 @@ int main(int argc, char** argv)
 {
     Q_INIT_RESOURCE(schema);
 
-    TestApplication2D app( argc, argv );// For QPrinter
+    TestVApplication app( argc, argv );// For QPrinter
 
     int status = 0;
     auto ASSERT_TEST = [&status, argc, argv](QObject* obj)

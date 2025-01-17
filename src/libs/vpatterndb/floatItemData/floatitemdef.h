@@ -58,9 +58,10 @@
 // denotes the type of arrow for the grainline
 enum class ArrowType : char
 {
-    Both,
-    Top,
-    Bottom
+    atBoth,
+    atFront,
+    atRear
 };
 
 #endif // FLOATITEMDEF_H
+

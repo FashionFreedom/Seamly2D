@@ -51,7 +51,7 @@ VCommandLine::VCommandLine() : parser(), optionsUsed(), optionsIndex(), isGuiEna
     parser.addVersionOption();
     parser.addPositionalArgument("filename", translate("VCommandLine", "Pattern file."));
 
-    initOptions(optionsUsed, optionsIndex);
+    InitOptions(optionsUsed, optionsIndex);
 
     VCommandLineOptions::const_iterator i = optionsUsed.constBegin();
     while (i != optionsUsed.constEnd())
@@ -74,7 +74,7 @@ qreal VCommandLine::Pg2Px(const QString& src, const LayoutSettingsDialog& conver
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommandLine::initOptions(VCommandLineOptions &options, QMap<QString, int> &optionsIndex)
+void VCommandLine::InitOptions(VCommandLineOptions &options, QMap<QString, int> &optionsIndex)
 {
     int index = 0;
     //keep in mind order here - that is how user will see it, so group-up for usability
@@ -431,7 +431,7 @@ VLayoutGeneratorPtr VCommandLine::DefaultGenerator() const
 
     if (parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_GAPWIDTH))))
     {
-        diag.setLayoutGap(Lo2Px(parser.value(*optionsUsed.value(optionsIndex.value(LONG_OPTION_GAPWIDTH))), diag));
+        diag.SetLayoutWidth(Lo2Px(parser.value(*optionsUsed.value(optionsIndex.value(LONG_OPTION_GAPWIDTH))), diag));
     }
 
     diag.SetAutoCrop(parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_CROP))));

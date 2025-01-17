@@ -15,7 +15,6 @@ DEPENDPATH +=  \
             ../../src/libs/vgeometry \
             ../../src/libs/vpatterndb \
             ../../src/libs/vmisc \
-            ../../src/libs/tools \
             ../../src/libs/vtools \
             ../../src/libs/vformat \
             ../../src/libs/vwidgets \
@@ -31,7 +30,6 @@ include(../../src/libs/vlayout/vlayout.pri)
 include(../../src/libs/vgeometry/vgeometry.pri)
 include(../../src/libs/vpatterndb/vpatterndb.pri)
 include(../../src/libs/vmisc/vmisc.pri)
-include(../../src/libs/tools/tools.pri)
 include(../../src/libs/vtools/vtools.pri)
 include(../../src/libs/vformat/vformat.pri)
 include(../../src/libs/vwidgets/vwidgets.pri)

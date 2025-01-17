@@ -1,26 +1,27 @@
-//  @file   vtoolsplinepath.h
-//  @author Douglas S Caskey
-//  @date   17 Sep, 2023
-//
-//  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
-//
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+/***************************************************************************
+ *                                                                         *
+ *   Copyright (C) 2017  Seamly, LLC                                       *
+ *                                                                         *
+ *   https://github.com/fashionfreedom/seamly2d                            *
+ *                                                                         *
+ ***************************************************************************
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ **************************************************************************
 
-/************************************************************************
+ ************************************************************************
  **
  **  @file   vtoolsplinepath.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -68,7 +69,9 @@
 class VSplinePath;
 template <class T> class QSharedPointer;
 
-// @brief The VToolSplinePath class tool for creation spline path.
+/**
+ * @brief The VToolSplinePath class tool for creation spline path.
+ */
 class VToolSplinePath:public VAbstractSpline
 {
     Q_OBJECT
@@ -97,16 +100,18 @@ public:
     virtual void  ShowVisualization(bool show) Q_DECL_OVERRIDE;
 
 signals:
-    // @brief refreshLine refresh control line.
-    // @param splineIndex position spline in spline list.
-    // @param pos position point in spline.
-    // @param controlPoint new position control point.
-    // @param splinePoint new position spline point.
-    void          refreshLine(const qint32 &splineIndex, SplinePointPosition pos, const QPointF &controlPoint,
+    /**
+     * @brief RefreshLine refresh control line.
+     * @param indexSpline position spline in spline list.
+     * @param pos position point in spline.
+     * @param controlPoint new position control point.
+     * @param splinePoint new position spline point.
+     */
+    void          RefreshLine(const qint32 &indexSpline, SplinePointPosition pos, const QPointF &controlPoint,
                               const QPointF &splinePoint);
 public slots:
 
-    void          controlPointPositionChanged(const qint32 &splineIndex, const SplinePointPosition &position,
+    void          ControlPointChangePosition(const qint32 &indexSpline, const SplinePointPosition &position,
                                              const QPointF &pos);
     virtual void  EnableToolMove(bool move) Q_DECL_OVERRIDE;
 
@@ -135,7 +140,7 @@ private:
 
     bool          IsMovable(int index) const;
     static void   AddPathPoint(VAbstractPattern *doc, QDomElement &domElement, const VSplinePoint &splPoint);
-    void          updateControlPoints(const VSpline &spl, VSplinePath &splPath, const qint32 &splineIndex) const;
+    void          UpdateControlPoints(const VSpline &spl, VSplinePath &splPath, const qint32 &indexSpline) const;
     void          SetSplinePathAttributes(QDomElement &domElement, const VSplinePath &path);
 };
 

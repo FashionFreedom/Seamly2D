@@ -2,157 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="id">
 <context>
-    <name>About2DAppDialog</name>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>Mengenai Seamly2D</translation>
-    </message>
-    <message>
-        <source>Web site : %1</source>
-        <translation>Situs web : %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation>Tidak dapat membuka peramban bawaan Anda</translation>
-    </message>
-    <message>
-        <source>Left to right</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Right to left</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Automatic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Built on %1 at %2</source>
-        <translation type="unfinished">Dibuat pada %3 at %2 {1 ?}</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy build data to clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Seamly 2D</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Build date:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Qt Version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>CPU:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Compiler:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Revision:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Architecture</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OS:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OS Version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Locale</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Country:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Decimal point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Script name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System codec:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Language:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Text direction:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Positive sign:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Negative sign:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Application</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arguments:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contributors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Check For Updates</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Downloading installer %p% complete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>unknown</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>AddDraftBlock</name>
     <message>
         <source>add draft block %1</source>
@@ -170,13 +19,6 @@
     <name>AddGroupItem</name>
     <message>
         <source>Add item to group</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>AddImage</name>
-    <message>
-        <source>add image</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -221,140 +63,6 @@
     </message>
     <message>
         <source>Piece:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Application2D</name>
-    <message>
-        <source>Error parsing file. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error bad id. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error empty parameter. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error wrong id. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Something&apos;s wrong!!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Parser error: %1. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ApplicationME</name>
-    <message>
-        <source>Error parsing file. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error bad id. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error empty parameter. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error wrong id. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Something&apos;s wrong!!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Parser error: %1. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Seamly2D&apos;s measurements editor.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The measurement file.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The base height</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The base size</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set pattern file unit: cm, mm, inch.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The pattern unit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Invalid base size argument. Must be cm, mm or inch.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Can&apos;t begin to listen for incoming connections on name &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Test mode doesn&apos;t support Opening several files.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please, provide one input file.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open with the base size. Valid values: %1cm.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Invalid base height argument. Must be %1cm.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Invalid base size argument. Must be %1cm.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open with the base height. Valid values: %1cm.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use for unit testing. Run the program and open a file without showing the main window.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -499,6 +207,49 @@ p, li { white-space: pre-wrap; }
     <name>DeletePiece</name>
     <message>
         <source>delete tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DialogAboutApp</name>
+    <message>
+        <source>About Seamly2D</source>
+        <translation>Mengenai Seamly2D</translation>
+    </message>
+    <message>
+        <source>Seamly2D version</source>
+        <translation>Versi Seamly2D</translation>
+    </message>
+    <message>
+        <source>Contributors</source>
+        <translation>para kontributor</translation>
+    </message>
+    <message>
+        <source>Web site : %1</source>
+        <translation>Situs web : %1</translation>
+    </message>
+    <message>
+        <source>Cannot open your default browser</source>
+        <translation>Tidak dapat membuka peramban bawaan Anda</translation>
+    </message>
+    <message>
+        <source>Build revision: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Built on %1 at %2</source>
+        <translation type="unfinished">Dibuat pada %3 at %2 {1 ?}</translation>
+    </message>
+    <message>
+        <source>Check For Updates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloading installer %p% complete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>unknown</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1163,26 +914,6 @@ p, li { white-space: pre-wrap; }
         <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Direction :</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Forward (from start point)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Backward (from end point)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Attributes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>DialogCutSpline</name>
@@ -1238,26 +969,6 @@ p, li { white-space: pre-wrap; }
         <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Direction :</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Forward (from start point)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Backward (from end point)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Attributes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>DialogCutSplinePath</name>
@@ -1311,26 +1022,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Direction :</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Forward (from start point)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Backward (from end point)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Attributes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Color:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4190,12 +3881,6 @@ for writing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
-%1
-Possibly the file is already being downloaded.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>File download failed: %1.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4210,6 +3895,12 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>A new release %1 is available.
 Do you want to download it?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to get exclusive access to file 
+%1
+Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4688,191 +4379,6 @@ Do you want to download it?</source>
     </message>
 </context>
 <context>
-    <name>ImageDialog</name>
-    <message>
-        <source>Image Properties</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Id:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Id</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lock Image:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Switch between px and pattern units</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>PX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unit:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>X Position:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Y Position:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lock aspect ratio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lock Aspect:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Height:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>X Scale:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Y Scale:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rotation:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>°</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Attributes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Opacity:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ImageItem</name>
-    <message>
-        <source>Properties</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lock</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Order</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bring to top</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move up</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move down</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Send to bottom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="unfinished">hapus</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Image (%7)&lt;/b&gt;: Size(%2%1, %3%1); Pos(%4%1, %5%1); Rot(%6°)%8</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> - &lt;b&gt;Aspect ratio locked&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move Origin</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ImageTool</name>
-    <message>
-        <source>Import Image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not load the image.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not read the image.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>File may be corrupted...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Confirm deletion</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Do you really want to delete?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The image &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Loading image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>No image was selected...</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>InsertNodesDialog</name>
     <message>
         <source>Selection</source>
@@ -4959,20 +4465,6 @@ Do you want to download it?</source>
     <name>InternalStrings</name>
     <message>
         <source>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Seamly2D is an application for computer-aided design of garment patterns.
-
-Seamly2D is a free (open source) software.
-
-All brand or product names are trademarks or registered trademarks of their respective holders.
-
-© 2017-2024 Seamly2D Project.
-
-Portions of this software © 2008-2024 The Qt Company Ltd.
-
-The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5191,12 +4683,6 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
-
-Apply settings anyway?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Centimeters</source>
         <translation>Centimeter</translation>
     </message>
@@ -5320,6 +4806,12 @@ Apply settings anyway?</source>
         <source>Millimeters</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Margins go beyond printing. 
+
+Apply settings anyway?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LineTypeComboBox</name>
@@ -5345,6 +4837,105 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Dash Dot Dot</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MApplication</name>
+    <message>
+        <source>Error parsing file. Program will be terminated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error bad id. Program will be terminated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error can&apos;t convert value. Program will be terminated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error empty parameter. Program will be terminated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error wrong id. Program will be terminated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Something&apos;s wrong!!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parser error: %1. Program will be terminated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exception thrown: %1. Program will be terminated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seamly2D&apos;s measurements editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The measurement file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The base height</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The base size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set pattern file unit: cm, mm, inch.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The pattern unit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid base size argument. Must be cm, mm or inch.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can&apos;t begin to listen for incoming connections on name &apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Test mode doesn&apos;t support Opening several files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please, provide one input file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open with the base size. Valid values: %1cm.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid base height argument. Must be %1cm.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid base size argument. Must be %1cm.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open with the base height. Valid values: %1cm.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use for unit testing. Run the program and open a file without showing the main window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5785,6 +5376,10 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Contains information about increments and internal variables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Load Individual</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6153,14 +5748,6 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tools for inserting or modifying images.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point on Curve (O, C)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>About Seamly2D</source>
         <translation type="unfinished">Mengenai Seamly2D</translation>
     </message>
@@ -6206,6 +5793,10 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
     </message>
     <message>
         <source>Fit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom to Fit All(Ctrl+=)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6265,7 +5856,15 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Ctrl+Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Area</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6273,7 +5872,23 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Z, P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom 1:1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1:1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6378,6 +5993,10 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
     </message>
     <message>
         <source>Point Name Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle Point Name Text (P)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6549,10 +6168,6 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Could not load the image.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Draft Block:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6578,10 +6193,6 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
     </message>
     <message>
         <source>Export Pattern Pieces</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Import Image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6809,10 +6420,6 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Import Image (Alt + I)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Export Pieces (E, P)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6822,10 +6429,6 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
     </message>
     <message>
         <source>Export Layout (E, L)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contains information about custom and internal variables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6926,6 +6529,10 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
     </message>
     <message>
         <source>Point on Curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point on Curve (A, C)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7073,31 +6680,11 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Toggle Point Name Text (V, P)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Images tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="unfinished">hapus</translation>
-    </message>
-    <message>
-        <source>Align</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lock</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Zoom to point (Ctrl + Alt + P)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Alt+I</source>
+        <source>Ctrl+Alt+P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7225,10 +6812,6 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Images</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Zoom to Point</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7304,27 +6887,6 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <source>pattern</source>
         <translation>pola</translation>
     </message>
-    <message>
-        <source>Base name used for new points.
-Press enter to temporarily add it to the list.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Zoom to Fit All(Ctrl+9)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Zoom 100%</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>100%</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -7383,6 +6945,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Can&apos;t create a path</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern</source>
+        <translation>Pola</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
@@ -8216,10 +7782,6 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>  °</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Reset notch length to default.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8874,6 +8436,10 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Label language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8935,14 +8501,6 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>File Handling</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Backups</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Create backup file when converting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9087,22 +8645,6 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>User locale</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Welcome</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Do not show welcome screen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point name text:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9453,58 +8995,6 @@ Press enter to temporarily add it to the list.</source>
         <source>Quality:</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Pen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Always use current pen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Dialogs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open on second monitor if available</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Position</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Top left</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Top right</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Center</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom left</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom right</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Offset</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>X Offset:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Y Offset:</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -9538,14 +9028,6 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>My Multisize Measurements</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>My Images</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>My Backups</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9767,14 +9249,6 @@ Press enter to temporarily add it to the list.</source>
         <source>Hide Seam Line</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Arrow length:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> px</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>QCoreApplication</name>
@@ -9906,26 +9380,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>%1</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Forward (from start point)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Backward (from end point)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Images</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open Image File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern</source>
-        <translation type="unfinished">Pola</translation>
     </message>
 </context>
 <context>
@@ -10139,17 +9593,6 @@ Press enter to temporarily add it to the list.</source>
     </message>
 </context>
 <context>
-    <name>ResizeHandlesItem</name>
-    <message>
-        <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center - &lt;b&gt; Aspect ratio locked &lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center, &lt;b&gt;SHIFT&lt;/b&gt; to scale uniformly.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>SavePieceOptions</name>
     <message>
         <source>save detail option</source>
@@ -10333,11 +9776,6 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
-You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10346,55 +9784,8 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Do not show again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation type="unfinished">Centimeter</translation>
-    </message>
-    <message>
-        <source>Millimeters</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation type="unfinished">Inchi</translation>
-    </message>
-</context>
-<context>
-    <name>SeamlyWelcomeDialog</name>
-    <message>
-        <source>Welcome</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Welcome to Seamly2D</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Units:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sets the default units for a new measurement file.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Decimal separator:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>GUI language:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>When checked the Welcome window will not be displayed. 
-You can change this setting in the Seamly2D preferences.</source>
+You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10416,28 +9807,6 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Inches</source>
         <translation type="unfinished">Inchi</translation>
-    </message>
-    <message>
-        <source>Sets the language used for Seamly2D.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sound:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sets the node selection click  sound.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10606,6 +9975,10 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Zoom 1:1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Ctrl+0</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10619,6 +9992,10 @@ When unchecked the period is used.</source>
     </message>
     <message>
         <source>Fit All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+=</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10650,7 +10027,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Z, P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Show Name Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V, P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10678,7 +10063,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>V, W</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Curve Control Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V, C</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10686,7 +10079,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>V, A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Seam Allowance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V, S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10694,7 +10095,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>V, G</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10742,6 +10151,10 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>F2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Point</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10750,7 +10163,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>L, A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>On Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10758,7 +10179,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>O, P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>On Bisector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O, B</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10766,7 +10195,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>P, S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Intersect Arc and Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10774,7 +10211,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>X, T</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Intersect XY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X, Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10782,7 +10227,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>L, P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Intersect Line and Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>L, X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10803,6 +10256,10 @@ When unchecked the period is used.</source>
     </message>
     <message>
         <source>Point - Intersect Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10846,7 +10303,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>O, C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Point - On Spline	</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O, S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10854,7 +10319,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>I, C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Point - Intersect Curve and Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C, X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10882,11 +10355,23 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>O, A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Point - Intersect Arc and Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>A, X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Point - Intersect Arcs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I, A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10902,7 +10387,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>C, T</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Point - Intersect Arc and Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A, T</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10922,7 +10415,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>G</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Rotation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>R</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10930,7 +10431,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>M, L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Mirror by Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M, A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10946,19 +10455,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>T, D</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Export Draft Blocks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Images</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Import Image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Alt + I</source>
+        <source>E, D</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10970,7 +10475,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>N, P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Anchor Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A, P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10978,7 +10491,19 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>I, P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I, N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Edit Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10994,7 +10519,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Forbid Flipping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11034,7 +10567,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>U</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Export Pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E, P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11046,7 +10587,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>N, L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Export Layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11094,7 +10643,15 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>K</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Shift+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>T</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11103,14 +10660,6 @@ When unchecked the period is used.</source>
     </message>
     <message>
         <source>Insert Nodes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Zoom 100%</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ctrl+9</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11895,6 +11444,10 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Retain original pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Select the first point</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12290,6 +11843,41 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
+    <name>VApplication</name>
+    <message>
+        <source>Error parsing file. Program will be terminated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error bad id. Program will be terminated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error can&apos;t convert value. Program will be terminated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error empty parameter. Program will be terminated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error wrong id. Program will be terminated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Something&apos;s wrong!!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parser error: %1. Program will be terminated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exception thrown: %1. Program will be terminated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>VCommandLine</name>
     <message>
         <source>Path to custom measure file (export mode).</source>
@@ -12551,15 +12139,7 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>images</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>label templates</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>backups</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -12682,42 +12262,6 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Remove Group Object</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>ElArc_</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="unfinished">panjang</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation type="unfinished">sudut</translation>
-    </message>
-    <message>
-        <source>AngleLine_</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13022,10 +12566,6 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Error creating or updating union pieces</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Image_name</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13749,10 +13289,6 @@ load in SeamlyME as usual.
     <message>
         <source>Center point</source>
         <translation>Titik tengah</translation>
-    </message>
-    <message>
-        <source>Direction:</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -14832,6 +14368,210 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>degTorad</source>
+        <comment>Converts degrees to radians
+Usage: degTorad(angle θ in degrees)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>radTodeg</source>
+        <comment>Converts radians to degrees
+Usage: radTodeg(angle θ in radians)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sin</source>
+        <comment>Sine function working with radians
+Usage: sin(angle θ in radians)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cos</source>
+        <comment>Cosine function working with radians
+Usage: cos(angle θ in radians)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tan</source>
+        <comment>Tangent function working with radians
+Usage: tan(angle θ in radians)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>asin</source>
+        <comment>Inverse sine function working with radians
+Usage: asin(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>acos</source>
+        <comment>Inverse cosine function working with radians
+Usage: acos(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>atan</source>
+        <comment>Inverse tangent function working with radians
+Usage: atan(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sinh</source>
+        <comment>Hyperbolic sine function
+Usage: sinh(angle θ in radians)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cosh</source>
+        <comment>Hyperbolic cosine
+Usage: cosh(angle θ in radians)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tanh</source>
+        <comment>Hyperbolic tangent function
+Usage: tanh(angle θ in radians)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>asinh</source>
+        <comment>Inverse Hyperbolic sine function
+Usage: asinh(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>acosh</source>
+        <comment>Inverse Hyperbolic cosine function
+Usage: acosh(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>atanh</source>
+        <comment>Inverse Hyperbolic tangent function
+Usage: atanh(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sinD</source>
+        <comment>Sine function working with degrees
+Usage: sinD(angle θ in degrees)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cosD</source>
+        <comment>Cosine function working with degrees
+Usage: cosD(angle θ in degrees)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tanD</source>
+        <comment>Tangent function working with degrees
+Usage: tanD(angle θ in degrees)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>asinD</source>
+        <comment>Inverse sine function working with degrees
+Usage: asinD(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>acosD</source>
+        <comment>Inverse cosine function working with degrees
+Usage: acosD(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>atanD</source>
+        <comment>Inverse tangent function working with degrees
+Usage: atanD(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>log2</source>
+        <comment>Logarithm to the base 2
+Usage: log2(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>log10</source>
+        <comment>Logarithm to the base 10
+Usage: log10(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>log</source>
+        <comment>Logarithm to the base 10
+Usage: log(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ln</source>
+        <comment>Logarithm to base e (2.71828...)
+Usage: ln(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>exp</source>
+        <comment>E raised to the power of x
+Usage: exp(x) where e = 2.718</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sqrt</source>
+        <comment>Square root of a value
+Usage: sqrt(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sign</source>
+        <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
+Usage: sign(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>rint</source>
+        <comment>Round to nearest integer
+Usage: rint(float x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>abs</source>
+        <comment>Absolute value
+Usage: abs(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <comment>Min of all arguments
+Usage: min(arg 1; arg 2; ... arg n)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>max</source>
+        <comment>Max of all arguments
+Usage: max(arg 1; arg 2; ... arg n)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sum</source>
+        <comment>Sum of all arguments
+Usage: sum(arg 1; arg 2; ... arg n)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>avg</source>
+        <comment>Mean value of all arguments
+Usage: avg(arg 1; arg 2; ... arg n)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>fmod</source>
+        <comment>Returns the floating-point remainder of x/y (rounded towards zero)
+Usage: fmod(x; y)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>M_</source>
         <comment>Leave the _ symbol in translation</comment>
         <translation type="unfinished"></translation>
@@ -14919,244 +14659,6 @@ load in SeamlyME as usual.
     <message>
         <source>C2LengthSpl_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>degTorad</source>
-        <comment>Converts degrees to radians
-Usage: degTorad(angle θ in degrees) → returns an angle in radians
-Example: degTorad(180) = 3.14159</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>radTodeg</source>
-        <comment>Converts radians to degrees
-Usage: radTodeg(angle θ in radians)  → returns an angle in degrees
-Example: radTodeg(3.14159) = 180</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sin</source>
-        <comment>Sine function working with radians
-Usage: sin(angle θ in radians) → returns a number between -1 and 1
-Example: sin(90) = 0.893997</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>cos</source>
-        <comment>Cosine function working with radians
-Usage: cos(angle θ in radians) → returns a number between -1 and 1
-Example: cos(1) = 0.540302</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>tan</source>
-        <comment>Tangent function working with radians
-Usage: tan(angle θ in radians)
-Example: tan(1) = 1.55741</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>asin</source>
-        <comment>Inverse sine function working with radians
-Usage: asin(x between -1 and 1) → returns an angle in radians
-Example: asin(-1) = -1.5708</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>acos</source>
-        <comment>Inverse cosine function working with radians
-Usage: acos(x between -1 and 1) → returns an angle in radians
-Example: acos(0.1) = 1.47063</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>atan</source>
-        <comment>Inverse tangent function working with radians
-Usage: atan(x) → returns an angle in radians
-Example: atan(1) = 0.78538</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sinh</source>
-        <comment>Hyperbolic sine function
-Usage: sinh(θ)
-Example: sinh(1) = 1.1752</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>cosh</source>
-        <comment>Hyperbolic cosine
-Usage: cosh(θ) → returns a number greater than or equal to 1
-Example: cosh(0) = 1</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>tanh</source>
-        <comment>Hyperbolic tangent function
-Usage: tanh(θ) → returns a number between -1 and 1 (excluded)
-Example: tanh(1) = 0.761594</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>asinh</source>
-        <comment>Inverse Hyperbolic sine function
-Usage: asinh(x)
-Example: asinh(90) = 5.19299</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>acosh</source>
-        <comment>Inverse Hyperbolic cosine function
-Usage: acosh(x greater than or equal to 1)
-Example: acosh(2) = 1.31696</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>atanh</source>
-        <comment>Inverse Hyperbolic tangent function
-Usage: atanh(x between -1 and 1 (excluded))
-Example: atanh(0,99) = 2.64665</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sinD</source>
-        <comment>Sine function working with degrees
-Usage: sinD(angle θ in degrees) → returns a number between -1 and 1
-Example: sinD(90) = 1</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>cosD</source>
-        <comment>Cosine function working with degrees
-Usage: cosD(angle θ in degrees) → returns a number between -1 and 1
-Example: cosD(180) = -1</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>tanD</source>
-        <comment>Tangent function working with degrees
-Usage: tanD(angle θ in degrees)
-Example: tanD(45) = 1</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>asinD</source>
-        <comment>Inverse sine function working with degrees
-Usage: asinD(x between -1 and 1) → returns an angle in degrees
-Example: asinD(1) = 90</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>acosD</source>
-        <comment>Inverse cosine function working with degrees
-Usage: acosD(x between -1 and 1) → returns an angle in degrees
-Example: acosD(-1) = 180</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>atanD</source>
-        <comment>Inverse tangent function working with degrees
-Usage: atanD(x) → returns an angle in degrees
-Example: atanD(1) = 45</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>log2</source>
-        <comment>Logarithm to the base 2
-Usage: log2(x greater than 0)
-Example: log2(10) = 3.32193</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>log10</source>
-        <comment>Logarithm to the base 10 (same as log(x))
-Usage: log10(x greater than 0)
-Example: log10(10) = 1</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>log</source>
-        <comment>Logarithm to the base 10
-Usage: log(x greater than 0)
-Example: log(10) = 1</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>ln</source>
-        <comment>Logarithm to base e (2.71828...)
-Usage: ln(x greater than 0)
-Example: ln(10) = 2.30259</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>exp</source>
-        <comment>e raised to the power of x where e = 2.718
-Usage: exp(x) → returns a positive number
-Example: exp(2) = 7.38906</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sqrt</source>
-        <comment>Square root of a value
-Usage: sqrt(x greater than or equal to 0) → returns a positive number
-Example: sqrt(4) = 2</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sign</source>
-        <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
-Usage: sign(x) → returns -1, 0 or 1
-Example: sign(-3) = -1</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>rint</source>
-        <comment>Round to nearest integer
-Usage: rint(x) → returns an integer number
-Example: rint(2.3) = 2</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>abs</source>
-        <comment>Absolute value
-Usage: abs(x) → returns a positive number
-Example: abs(-5) = 5</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>min</source>
-        <comment>Min of all arguments
-Usage: min(arg 1; arg 2; ... arg n)
-Example: min(2;3;4) = 2</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>max</source>
-        <comment>Max of all arguments
-Usage: max(arg 1; arg 2; ... arg n)
-Example: max(2;3;4) = 4</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sum</source>
-        <comment>Sum of all arguments
-Usage: sum(arg 1; arg 2; ... arg n)
-Example: sum(2;3;4) = 9</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>avg</source>
-        <comment>Mean value of all arguments
-Usage: avg(arg 1; arg 2; ... arg n)
-Example: avg(2;3;4) = 3</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>fmod</source>
-        <comment>Returns the floating-point remainder of x/y (rounded towards zero)
-Usage: fmod(x; y)
-Example: fmod(3.3;2) = 1.3</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>

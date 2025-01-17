@@ -97,7 +97,7 @@ protected:
     virtual void         SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
     virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
     virtual void         SetVisualization() Q_DECL_OVERRIDE;
-    virtual void         refreshGeometry() Q_DECL_OVERRIDE;
+    virtual void         RefreshGeometry() Q_DECL_OVERRIDE;
 
 private:
     Q_DISABLE_COPY(VToolCubicBezierPath)

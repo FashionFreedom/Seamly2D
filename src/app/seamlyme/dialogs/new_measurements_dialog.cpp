@@ -55,7 +55,7 @@
 
 #include "../vpatterndb/variables/measurement_variable.h"
 #include "../vmisc/vseamlymesettings.h"
-#include "../application_me.h"
+#include "../mapplication.h"
 
 #include <QShowEvent>
 
@@ -68,7 +68,7 @@ NewMeasurementsDialog::NewMeasurementsDialog(QWidget *parent)
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
-    const VSeamlyMeSettings *settings = qApp->seamlyMeSettings();
+    const VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
 
     initializeMeasurementTypes();
     initializeUnits(MeasurementsType::Individual);
@@ -241,7 +241,7 @@ void NewMeasurementsDialog::initializeUnits(const MeasurementsType &type)
     if (type == MeasurementsType::Individual)
     {
         ui->comboBoxUnit->addItem(tr("Inches"), static_cast<int>(Unit::Inch));
-        index = ui->comboBoxUnit->findData(static_cast<int>(StrToUnits(qApp->seamlyMeSettings()->getUnit())));
+        index = ui->comboBoxUnit->findData(static_cast<int>(StrToUnits(qApp->SeamlyMeSettings()->GetUnit())));
     }
     else
     {

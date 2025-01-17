@@ -1,26 +1,29 @@
-//  @file   abstract_converter.h
-//  @author Douglas S Caskey
-//  @date   24 Jun, 2024
-//
-//  @brief
-//  @copyright
-//  This source code is part of the Seamly2D project, a pattern making
-//  program to create and model patterns of clothing.
-//  Copyright (C) 2017-2024 Seamly2D project
-//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
-//
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+/******************************************************************************
+ *   @file   abstract_converter.h
+ **  @author Douglas S Caskey
+ **  @date   14 Jul, 2023
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
 
  /************************************************************************
  **
@@ -79,8 +82,8 @@ public:
 
     QString         Convert();
 
-    int             getCurrentFormatVersion() const;
-    QString         getVersionStr() const;
+    int             GetCurrentFormatVarsion() const;
+    QString         GetVersionStr() const;
 
     static int      GetVersion(const QString &version);
 
@@ -116,7 +119,17 @@ private:
     QTemporaryFile  m_tmpFile;
 
     static void     ValidateVersion(const QString &version);
-    void            saveBackupFile() const;
+
+    void            ReserveFile() const;
+
+    /**
+     *  \brief Removes version number from \arg fileName
+     *
+     *  It removes both, "old style" ie. "(v0.6.0)" and new style "v060" patterns.
+     */
+    static QString  removeVersionNumber(const QString& fileName);
+
+    /** \brief Removes single or repeated '.bak' extension (as long as it is at the end of \arg fileName) */
     static QString  removeBakExtension(const QString& fileName);
 };
 

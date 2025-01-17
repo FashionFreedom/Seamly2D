@@ -1,51 +1,54 @@
-//-----------------------------------------------------------------------------
-//  @file   dialogtool.h
-//  @author Douglas S Caskey
-//  @date   Dec 11, 2022
-//
-//  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
-//
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+/***************************************************************************
+ **  @file   dialogtool.cpp
+ **  @author Douglas S Caskey
+ **  @date   Dec 11, 2022
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
-//-----------------------------------------------------------------------------
-//  @file   dialogtool.h
-//  @author Roman Telezhynskyi <dismine(at)gmail.com>
-//  @date   15 Nov, 2013
-//
-//  @copyright
-//  Copyright (C) 2013 Valentina project.
-//  This source code is part of the Valentina project, a pattern making
-//  program, whose allow create and modeling patterns of clothing.
-//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
-//
-//  Valentina is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published
-//  by the Free Software Foundation, either version 3 of the License,
-//  or (at your option) any later version.
-//
-//  Valentina is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+/************************************************************************
+ **
+ **  @file   dialogtool.h
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   November 15, 2013
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2013 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
 
 #ifndef DIALOGTOOL_H
 #define DIALOGTOOL_H
@@ -66,7 +69,6 @@
 #include <QPointer>
 #include <QPushButton>
 #include <QRadioButton>
-#include <QScreen>
 #include <QString>
 #include <QVariant>
 #include <QtGlobal>
@@ -96,8 +98,7 @@ class QLabel;
 class QPlainTextEdit;
 class VAbstractTool;
 
-enum class FillComboBox : char {Whole, NoChildren};
-enum class DialogPosition : signed char {Offset = -7, BottomRight, BottomLeft, Center, TopRight, TopLeft};
+enum class FillComboBox : char { Whole, NoChildren};
 
 /**
  * @brief The DialogTool class parent for all dialog of tools.
@@ -233,14 +234,12 @@ protected:
     qint32           number;
 
     QPointer<Visualization> vis;
-
-    QScreen         *m_screen;
     virtual void     keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
     virtual void     closeEvent ( QCloseEvent * event ) Q_DECL_OVERRIDE;
     virtual void     showEvent( QShowEvent *event ) Q_DECL_OVERRIDE;
 
     void             FillComboBoxPiecesList(QComboBox *box, const QVector<quint32> &list);
-    void             fillComboBoxPoints(QComboBox *box, FillComboBox rule = FillComboBox::Whole,
+    void             FillComboBoxPoints(QComboBox *box, FillComboBox rule = FillComboBox::Whole,
                                         const quint32 &ch1 = NULL_ID, const quint32 &ch2 = NULL_ID)const;
     void             FillComboBoxArcs(QComboBox *box, FillComboBox rule = FillComboBox::Whole,
                                       const quint32 &ch1 = NULL_ID, const quint32 &ch2 = NULL_ID)const;
@@ -320,7 +319,6 @@ protected:
                                  bool nodeExcluded = true, bool isDuplicate = false);
 
     void             initializeNodeAngles(QComboBox *box);
-    void             setDialogPosition();
 
 private:
     void             FillList(QComboBox *box, const QMap<QString, quint32> &list)const;
@@ -334,6 +332,8 @@ private:
     template <typename GObject>
     void             FillCombo(QComboBox *box, GOType gType, FillComboBox rule = FillComboBox::Whole,
                                const quint32 &ch1 = NULL_ID, const quint32 &ch2 = NULL_ID) const;
+
+
 };
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -386,7 +386,7 @@ inline void DialogTool::initializeOkCancel(T *ui)
     SCASSERT(bCancel != nullptr)
     connect(bCancel, &QPushButton::clicked, this, &DialogTool::DialogRejected);
 
-    qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

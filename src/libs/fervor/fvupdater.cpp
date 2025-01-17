@@ -23,10 +23,7 @@
  **************************************************************************/
 
 /***************************************************************************************************
- **  @file   fvupdater.cpp
  **
- **  @brief
- **  @copyright
  **  Copyright (c) 2012 Linas Valiukas and others.
  **
  **  Permission is hereby granted, free of charge, to any person obtaining a copy of this
@@ -89,7 +86,7 @@ QPointer<FvUpdater> FvUpdater::m_Instance;
 FvUpdater *FvUpdater::sharedUpdater() {
 	static QMutex mutex;
 	if (m_Instance.isNull()) {
-        mutex.lock();
+		mutex.lock();
 		m_Instance = new FvUpdater;
 		mutex.unlock();
 	}
@@ -100,7 +97,7 @@ FvUpdater *FvUpdater::sharedUpdater() {
 //---------------------------------------------------------------------------------------------------------------------
 void FvUpdater::drop() {
 	static QMutex mutex;
-    mutex.lock();
+	mutex.lock();
 	delete m_Instance;
 	mutex.unlock();
 }

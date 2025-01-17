@@ -129,9 +129,6 @@
          <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
           <normaloff>:/icon/graphics_view_config.png</normaloff>:/icon/graphics_view_config.png</iconset>
         </property>
-        <property name="flags">
-         <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-        </property>
        </item>
       </widget>
      </item>
@@ -182,8 +179,8 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
   <include location="../../../libs/vmisc/share/resources/theme.qrc"/>
+  <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections>
   <connection>

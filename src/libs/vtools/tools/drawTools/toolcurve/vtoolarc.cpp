@@ -93,7 +93,7 @@ VToolArc::VToolArc(VAbstractPattern *doc, VContainer *data, quint32 id, const So
                    QGraphicsItem *parent)
     : VAbstractSpline(doc, data, id, parent)
 {
-    m_sceneType = SceneObject::Arc;
+    sceneType = SceneObject::Arc;
 
     this->setFlag(QGraphicsItem::ItemIsFocusable, true);// For keyboard input focus
 
@@ -202,7 +202,7 @@ VToolArc* VToolArc::Create(const quint32 _id, const quint32 &center, QString &ra
         VDrawTool::AddRecord(id, Tool::Arc, doc);
         VToolArc *toolArc = new VToolArc(doc, data, id, typeCreation);
         scene->addItem(toolArc);
-        initArcToolConnections(scene, toolArc);
+        InitArcToolConnections(scene, toolArc);
         VAbstractPattern::AddTool(id, toolArc);
         doc->IncrementReferens(c.getIdTool());
         return toolArc;
@@ -426,11 +426,11 @@ void VToolArc::SetVisualization()
         VisToolArc *visual = qobject_cast<VisToolArc *>(vis);
         SCASSERT(visual != nullptr)
 
-        const VTranslateVars *trVars = qApp->translateVariables();
+        const VTranslateVars *trVars = qApp->TrVars();
         visual->setObject1Id(arc->GetCenter().id());
-        visual->setRadius(trVars->FormulaToUser(arc->GetFormulaRadius(), qApp->Settings()->getOsSeparator()));
-        visual->setF1(trVars->FormulaToUser(arc->GetFormulaF1(), qApp->Settings()->getOsSeparator()));
-        visual->setF2(trVars->FormulaToUser(arc->GetFormulaF2(), qApp->Settings()->getOsSeparator()));
+        visual->setRadius(trVars->FormulaToUser(arc->GetFormulaRadius(), qApp->Settings()->GetOsSeparator()));
+        visual->setF1(trVars->FormulaToUser(arc->GetFormulaF1(), qApp->Settings()->GetOsSeparator()));
+        visual->setF2(trVars->FormulaToUser(arc->GetFormulaF2(), qApp->Settings()->GetOsSeparator()));
         visual->setLineStyle(lineTypeToPenStyle(arc->GetPenStyle()));
         visual->setLineWeight(arc->getLineWeight());
         visual->RefreshGeometry();
@@ -442,7 +442,7 @@ QString VToolArc::makeToolTip() const
 {
     const QSharedPointer<VArc> arc = VAbstractTool::data.GeometricObject<VArc>(m_id);
 
-    const QString toolTip = QString("<table style=font-size:11pt; font-weight:600>"
+    const QString toolTip = QString("<table>"
                                     "<tr> <td><b>%10:</b> %11</td> </tr>"
                                     "<tr> <td><b>%1:</b> %2 %3</td> </tr>"
                                     "<tr> <td><b>%4:</b> %5 %3</td> </tr>"

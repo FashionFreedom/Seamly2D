@@ -87,10 +87,10 @@ void IntersectCirclesVisual::RefreshGeometry()
 
             if (c1Radius > 0 && c2Radius > 0)
             {
-                c1Path->setRect(pointRect(c1Radius));
+                c1Path->setRect(PointRect(c1Radius));
                 DrawPoint(c1Path, static_cast<QPointF>(*first), m_secondrySupportColor, Qt::DashLine);
 
-                c2Path->setRect(pointRect(c2Radius));
+                c2Path->setRect(PointRect(c2Radius));
                 DrawPoint(c2Path, static_cast<QPointF>(*second), m_tertiarySupportColor, Qt::DashLine);
 
                 const QPointF fPoint = IntersectCirclesTool::FindPoint(static_cast<QPointF>(*first),

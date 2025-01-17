@@ -1,51 +1,33 @@
-//-----------------------------------------------------------------------------
-//  @file   point_intersectxy_dialog.cpp
-//  @author Douglas S Caskey
-//  @date   20 Jul, 2022
-//
-//  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
-//
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
-
-//-----------------------------------------------------------------------------
-//  @file   dialogintersectxy.cpp
-//  @author Roman Telezhynskyi <dismine(at)gmail.com>
-//  @date   15 Nov, 2013
-//
-//  @copyright
-//  Copyright (C) 2013 Valentina project.
-//  This source code is part of the Valentina project, a pattern making
-//  program, whose allow create and modeling patterns of clothing.
-//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
-//
-//  Valentina is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published
-//  by the Free Software Foundation, either version 3 of the License,
-//  or (at your option) any later version.
-//
-//  Valentina is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+/**************************************************************************
+ **
+ **  @file   point_intersectxy_dialog.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   November 15, 2013
+ **
+ **  @author Douglas S Caskey
+ **  @date   7.20.2022
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentine project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2013-2022 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
 
 #include "point_intersectxy_dialog.h"
 #include "ui_point_intersectxy_dialog.h"
@@ -78,9 +60,6 @@ PointIntersectXYDialog::PointIntersectXYDialog(const VContainer *data, const qui
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/point_intersectxy_icon.png"));
 
-    // Set the position that the dialog opens based on user preference.
-    setDialogPosition();
-
     ui->pointName_LineEdit->setClearButtonEnabled(true);
 
     ui->pointName_LineEdit->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
@@ -89,8 +68,8 @@ PointIntersectXYDialog::PointIntersectXYDialog(const VContainer *data, const qui
     initializeOkCancelApply(ui);
     CheckState();
 
-    fillComboBoxPoints(ui->firstPoint_ComboBox);
-    fillComboBoxPoints(ui->secondPoint_ComboBox);
+    FillComboBoxPoints(ui->firstPoint_ComboBox);
+    FillComboBoxPoints(ui->secondPoint_ComboBox);
 
     int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
     if (index != -1)
@@ -117,13 +96,9 @@ PointIntersectXYDialog::PointIntersectXYDialog(const VContainer *data, const qui
     vis = new PointIntersectXYVisual(data);
     vis->VisualMode(NULL_ID);//Show vertical axis
 
-    // Call after visual initialized.
-    // If true current pen overides the default tool pen
-    if(!qApp->Settings()->useCurrentPen())
-    {
-        setLineType(LineTypeDashLine);
-        setLineWeight("0.35");
-    }
+    // Call after initialization vis!!!!
+    setLineType(LineTypeDashLine);
+    setLineWeight("0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -257,7 +232,7 @@ void PointIntersectXYDialog::setLineColor(const QString &value)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
+ * @brief ChoosedObject gets id and type of selected object. Save right data and ignore wrong.
  * @param id id of point or detail
  * @param type type of object
  */

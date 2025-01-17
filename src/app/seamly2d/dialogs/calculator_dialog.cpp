@@ -33,7 +33,7 @@
 #include <QWidget>
 #include <QDialog>
 #include "../options.h"
-#include "../core/application_2d.h"
+#include "../core/vapplication.h"
 #include "../fervor/fvupdater.h"
 #include "../vwidgets/calculator/calculator.h"
 #include "calculator_dialog.h"

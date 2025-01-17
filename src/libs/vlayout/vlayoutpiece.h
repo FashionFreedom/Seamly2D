@@ -131,8 +131,8 @@ public:
     QTransform                getTransform() const;
     void                      setTransform(const QTransform &transform);
 
-    qreal                     getLayoutGap() const;
-    void                      setLayoutGap(const qreal &value);
+    qreal                     GetLayoutWidth() const;
+    void                      SetLayoutWidth(const qreal &value);
 
     bool                      isMirror() const;
     void                      SetMirror(bool value);

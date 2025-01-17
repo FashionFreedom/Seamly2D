@@ -52,7 +52,7 @@
 
 #include "groups_widget.h"
 #include "ui_groups_widget.h"
-#include "../core/application_2d.h"
+#include "../core/vapplication.h"
 #include "../vtools/tools/vabstracttool.h"
 #include "../vtools/dialogs/tools/dialogtool.h"
 #include "../vtools/dialogs/tools/editgroup_dialog.h"
@@ -334,7 +334,7 @@ void GroupsWidget::unlockAllGroups()
 
 void GroupsWidget::addGroupToList()
 {
-    QScopedPointer<EditGroupDialog> dialog(new EditGroupDialog(new VContainer(qApp->translateVariables(),
+    QScopedPointer<EditGroupDialog> dialog(new EditGroupDialog(new VContainer(qApp->TrVars(),
                                                                   qApp->patternUnitP()), NULL_ID, this));
     SCASSERT(dialog != nullptr)
 
@@ -425,7 +425,7 @@ void GroupsWidget::editGroup()
     {
         qCDebug(WidgetGroups, "Row = %d", row);
 
-        QScopedPointer<EditGroupDialog> dialog(new EditGroupDialog(new VContainer(qApp->translateVariables(),
+        QScopedPointer<EditGroupDialog> dialog(new EditGroupDialog(new VContainer(qApp->TrVars(),
                                                                    qApp->patternUnitP()), NULL_ID, this));
         dialog->setName(oldGroupName);
         dialog->setColor(m_doc->getGroupColor(groupId));
@@ -740,7 +740,7 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
 void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, const Tool &tooltype)
 {
     // This check helps to find missing tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used in history.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were used in history.");
 
     QString iconFileName = "";
     QString objName = tr("Unknown Object");
@@ -762,7 +762,6 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, con
                 case Tool::Cut:
                 case Tool::Midpoint:            // Same as Tool::AlongLine, but tool will never have such type
                 case Tool::ArcIntersectAxis:    // Same as Tool::CurveIntersectAxis, but tool will never have such type
-                case Tool::BackgroundImage:
                 case Tool::LAST_ONE_DO_NOT_USE:
                     Q_UNREACHABLE(); //-V501
                     break;
@@ -864,7 +863,7 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, con
                 }
 
                 case Tool::PointOfContact:
-                    iconFileName = ":/toolicon/32x32/point_intersect_arc_line.png";
+                    iconFileName = ":/toolicon/32x32/point_of_contact.png";
                     objName = tr("%1 - Point Intersect Arc & Line").arg(getPointName(toolId));
                     break;
 

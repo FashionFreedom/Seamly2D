@@ -57,7 +57,6 @@
 #include "../vtools/tools/union_tool.h"
 #include "../vtools/tools/drawTools/drawtools.h"
 #include "../vtools/tools/nodeDetails/nodedetails.h"
-#include "../tools/images/image_tool.h"
 #include "../ifc/exception/vexceptionobjecterror.h"
 #include "../ifc/exception/vexceptionwrongid.h"
 #include "../ifc/exception/vexceptionconversionerror.h"
@@ -76,7 +75,7 @@
 #include "../vgeometry/vsplinepath.h"
 #include "../vgeometry/vcubicbezier.h"
 #include "../vgeometry/vcubicbezierpath.h"
-#include "../core/application_2d.h"
+#include "../core/vapplication.h"
 #include "../vpatterndb/vpiecenode.h"
 #include "../vpatterndb/calculator.h"
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
@@ -140,7 +139,7 @@ void VPattern::CreateEmptyFile()
     patternElement.appendChild(createElement(TagNotes));
 
     patternElement.appendChild(createElement(TagMeasurements));
-    patternElement.appendChild(createElement(TagVariables));
+    patternElement.appendChild(createElement(TagIncrements));
 
     this->appendChild(patternElement);
     insertBefore(createProcessingInstruction("xml", "version=\"1.0\" encoding=\"UTF-8\""), this->firstChild());
@@ -178,7 +177,7 @@ void VPattern::Parse(const Document &parse)
 
     SCASSERT(draftScene != nullptr)
     SCASSERT(pieceScene != nullptr)
-    QStringList tags = QStringList() << TagDraftBlock << TagVariables << TagDescription << TagNotes
+    QStringList tags = QStringList() << TagDraftBlock << TagIncrements << TagDescription << TagNotes
                                      << TagMeasurements << TagVersion << TagGradation << TagImage << TagUnit
                                      << TagPatternName << TagPatternNum << TagCompanyName << TagCustomerName
                                      << TagPatternLabel;
@@ -213,9 +212,9 @@ void VPattern::Parse(const Document &parse)
                         }
                         parseDraftBlockElement(domElement, parse);
                         break;
-                    case 1: // TagVariables
-                        qCDebug(vXML, "Tag variables.");
-                        parseVariablesElement(domElement);
+                    case 1: // TagIncrements
+                        qCDebug(vXML, "Tag increments.");
+                        ParseIncrementsElement(domElement);
                         break;
                     case 2: // TagDescription
                         qCDebug(vXML, "Tag description.");
@@ -261,7 +260,7 @@ void VPattern::Parse(const Document &parse)
         }
         domNode = domNode.nextSibling();
     }
-    emit patternParsed();
+    emit CheckLayout();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -439,22 +438,22 @@ bool VPattern::SaveDocument(const QString &fileName, QString &error)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::LiteParseVariables()
+void VPattern::LiteParseIncrements()
 {
     try
     {
         emit setGuiEnabled(true);
 
-        VContainer::clearUniqueVariableNames();
-        data->ClearVariables(VarType::Variable);
+        VContainer::ClearUniqueIncrementNames();
+        data->ClearVariables(VarType::Increment);
 
-        const QDomNodeList tags = elementsByTagName(TagVariables);
+        const QDomNodeList tags = elementsByTagName(TagIncrements);
         if (not tags.isEmpty())
         {
             const QDomNode domElement = tags.at(0);
             if (not domElement.isNull())
             {
-                parseVariablesElement(domElement);
+                ParseIncrementsElement(domElement);
             }
         }
     }
@@ -549,7 +548,7 @@ void VPattern::LiteParseTree(const Document &parse)
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")), //-V807
                    qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         emit setGuiEnabled(false);
-        if (not Application2D::isGUIMode())
+        if (not VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -560,7 +559,7 @@ void VPattern::LiteParseTree(const Document &parse)
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error can't convert value.")),
                    qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         emit setGuiEnabled(false);
-        if (not Application2D::isGUIMode())
+        if (not VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -571,7 +570,7 @@ void VPattern::LiteParseTree(const Document &parse)
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error empty parameter.")),
                    qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         emit setGuiEnabled(false);
-        if (not Application2D::isGUIMode())
+        if (not VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -582,7 +581,7 @@ void VPattern::LiteParseTree(const Document &parse)
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error wrong id.")),
                    qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         emit setGuiEnabled(false);
-        if (not Application2D::isGUIMode())
+        if (not VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -593,7 +592,7 @@ void VPattern::LiteParseTree(const Document &parse)
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")),
                    qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         emit setGuiEnabled(false);
-        if (not Application2D::isGUIMode())
+        if (not VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -603,7 +602,7 @@ void VPattern::LiteParseTree(const Document &parse)
     {
         qCCritical(vXML, "%s", qUtf8Printable(tr("Error parsing file (std::bad_alloc).")));
         emit setGuiEnabled(false);
-        if (not Application2D::isGUIMode())
+        if (not VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -684,7 +683,7 @@ VNodeDetail VPattern::parsePieceNode(const QDomElement &domElement) const
  */
 void VPattern::parseDraftBlockElement(const QDomNode &node, const Document &parse)
 {
-    QStringList tags = QStringList() << TagCalculation << TagModeling << TagPieces << TagGroups << TagDraftImages;
+    QStringList tags = QStringList() << TagCalculation << TagModeling << TagPieces << TagGroups;
     QDomNode domNode = node.firstChild();
     while (domNode.isNull() == false)
     {
@@ -711,10 +710,6 @@ void VPattern::parseDraftBlockElement(const QDomNode &node, const Document &pars
                     case 3: // TagGroups
                         qCDebug(vXML, "Tag groups.");
                         parseGroups(domElement);
-                        break;
-                    case 4: // TagDraftImages
-                        qCDebug(vXML, "Tag draft images.");
-                        parseDraftImages(domElement, parse);
                         break;
                     default:
                         VException e(tr("Wrong tag name '%1'.").arg(domElement.tagName()));
@@ -802,37 +797,6 @@ void VPattern::ParseDrawMode(const QDomNode &node, const Document &parse, const 
         }
     }
 }
-
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief ParseDraftImages parses draft images.
- * @param node node.
- */
-void VPattern::parseDraftImages(const QDomNode &node, const Document &parse)
-{
-    SCASSERT(draftScene != nullptr)
-    SCASSERT(pieceScene != nullptr)
-
-    const QDomNodeList nodeList = node.childNodes();
-    const qint32 num = nodeList.size();
-    for (qint32 i = 0; i < num; ++i)
-    {
-        QDomElement domElement = nodeList.at(i).toElement();
-        if (domElement.isNull() == false)
-        {
-            if (domElement.tagName()==TagDraftImage)
-            {
-                qCDebug(vXML, "Tag image.");
-                parseImageElement(domElement, parse);
-            }else{
-                VException e(tr("Wrong tag name '%1'.").arg(domElement.tagName()));
-                throw e;
-            }
-        }
-    }
-}
-
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -939,58 +903,6 @@ void VPattern::parsePieceElement(QDomElement &domElement, const Document &parse)
     }
 }
 
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief parseImageElement parse image tag.
- * @param domElement tag in xml tree.
- */
-void VPattern::parseImageElement(QDomElement &domElement, const Document &parse)
-{
-    Q_ASSERT_X(not domElement.isNull(), Q_FUNC_INFO, "domElement is null");
-
-    DraftImage image;
-
-    image.id = getParameterId(domElement);
-    image.name = GetParametrString(domElement, AttrName, tr("Image_name"));
-    image.filename = GetParametrString(domElement, AttrSource);
-    image.width = GetParametrDouble(domElement, AttrWidth, "0.0");
-    image.height = GetParametrDouble(domElement, AttrHeight, "0.0");
-    image.xPos = GetParametrDouble(domElement, AttrXPos, "0.0");
-    image.yPos = GetParametrDouble(domElement, AttrYPos, "0.0");
-    image.rotation = GetParametrDouble(domElement, AttrRotation, "0.0");
-    image.aspectLocked = getParameterBool(domElement, AttrAspectRatio, falseStr);
-    image.locked = getParameterBool(domElement, AttrLocked, falseStr);
-    image.units = StrToUnits(GetParametrString(domElement, AttrUnits, "px"));
-    image.opacity = GetParametrDouble(domElement, AttrOpacity, "1.0");
-    image.order = qint32(GetParametrDouble(domElement, AttrOrder, "0"));
-    image.xOrigin = GetParametrDouble(domElement, AttrXOffset, "0.0");
-    image.yOrigin = GetParametrDouble(domElement, AttrYOffset, "0.0");
-    image.basepoint = GetParametrUInt(domElement, AttrBasepoint, 0);
-    image.visible = getParameterBool(domElement, AttrVisible, trueStr);
-
-    VContainer::UpdateId(image.id);
-
-    if(parse == Document::FullParse)
-    {
-        ImageTool *image_tool = new ImageTool(this, this, draftScene, image);
-        if(image_tool->creationWasSuccessful)
-        {
-            connect(image_tool, &ImageTool::setStatusMessage, this, [this](QString message) {emit setStatusMessage(message);});
-        }
-        else
-        {
-            image_tool->deleteLater();
-            ParentNodeById(image.id).removeChild(domElement); //this way the broken image is not light-parsed in the future
-        }
-    }
-    else
-    {
-        getBackgroundImage(image.id)->updateImageAndHandles(image);
-    }
-}
-
-
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::parsePieceNodes(const QDomElement &domElement, VPiece &piece, qreal width, bool closed) const
 {
@@ -1054,9 +966,9 @@ void VPattern::ParsePieceGrainline(const QDomElement &domElement, VPiece &piece)
     VGrainlineData &gGeometry = piece.GetGrainlineGeometry();
     gGeometry.SetVisible(getParameterBool(domElement, AttrVisible, falseStr));
     gGeometry.SetPos(QPointF(GetParametrDouble(domElement, AttrMx, "0"), GetParametrDouble(domElement, AttrMy, "0")));
-    gGeometry.setLength(GetParametrString(domElement, AttrLength, "1"));
-    gGeometry.setRotation(GetParametrString(domElement, AttrRotation, "90"));
-    gGeometry.setArrowType(static_cast<ArrowType>(GetParametrUInt(domElement, AttrArrows, "0")));
+    gGeometry.SetLength(GetParametrString(domElement, AttrLength, "1"));
+    gGeometry.SetRotation(GetParametrString(domElement, AttrRotation, "90"));
+    gGeometry.SetArrowType(static_cast<ArrowType>(GetParametrUInt(domElement, AttrArrows, "0")));
     gGeometry.setCenterAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrCenterAnchor, NULL_ID_STR));
     gGeometry.setTopAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrTopAnchorPoint, NULL_ID_STR));
     gGeometry.setBottomAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrBottomAnchorPoint, NULL_ID_STR));
@@ -1096,14 +1008,6 @@ void VPattern::PointsCommonAttributes(const QDomElement &domElement, quint32 &id
     PointsCommonAttributes(domElement, id, name, mx, my, isVisible);
     lineType   = GetParametrString(domElement, AttrLineType,   LineTypeSolidLine);
     lineWeight = GetParametrString(domElement, AttrLineWeight, "0.35");
-    lineColor  = GetParametrString(domElement, AttrLineColor,  qApp->Settings()->getPointNameColor());
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VPattern::PointsCommonAttributes(const QDomElement &domElement, quint32 &id, QString &name, qreal &mx, qreal &my,
-                                      bool &isVisible, QString &lineColor)
-{
-    PointsCommonAttributes(domElement, id, name, mx, my, isVisible);
     lineColor  = GetParametrString(domElement, AttrLineColor,  qApp->Settings()->getPointNameColor());
 }
 
@@ -1292,72 +1196,62 @@ void VPattern::parseCurrentDraftBlock()
     {
         parseDraftBlockElement(domElement, Document::LiteParse);
     }
-    emit patternParsed();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetCurrentAlphabet returns the alphabet corresponding to the selected label language.
- */
-QStringList VPattern::GetCurrentAlphabet() const
-{
-    const QStringList list = Application2D::pointNameLanguages();
-    const QString def = QStringLiteral("A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z");
-    QStringList alphabet;
-    switch (list.indexOf(qApp->Seamly2DSettings()->getPointNameLanguage()))
-    {
-    case 0: // de
-    {
-        const QString al = QStringLiteral("A,Ä,B,C,D,E,F,G,H,I,J,K,L,M,N,O,Ö,P,Q,R,S,ß,T,U,Ü,V,W,X,Y,Z");
-        alphabet = al.split(",");
-        break;
-    }
-    case 2: // fr
-    {
-        const QString al = QStringLiteral("A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z");
-        alphabet = al.split(",");
-        break;
-    }
-    case 3: // ru
-    {
-        const QString al = QStringLiteral("А,Б,В,Г,Д,Е,Ж,З,И,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Э,Ю,Я");
-        alphabet = al.split(",");
-        break;
-    }
-    case 4: // uk
-    {
-        const QString al = QStringLiteral("А,Б,В,Г,Д,Е,Ж,З,І,Ї,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Є,Ю,Я");
-        alphabet = al.split(",");
-        break;
-    }
-    case 5: // hr
-    case 7: // bs
-    {
-        const QString al = QStringLiteral("A,B,C,Č,Ć,D,Dž,Ð,E,F,G,H,I,J,K,L,Lj,M,N,Nj,O,P,R,S,Š,T,U,V,Z,Ž");
-        alphabet = al.split(",");
-        break;
-    }
-    case 6: // sr
-    {
-        const QString al = QStringLiteral("А,Б,В,Г,Д,Ђ,Е,Ж,З,И,Ј,К,Л,Љ,М,Н,Њ,О,П,Р,С,Т,Ћ,У,Ф,Х,Ц,Ч,Џ,Ш");
-        alphabet = al.split(",");
-        break;
-    }
-    case 1: // en
-    default: // en
-    {
-        alphabet = def.split(",");
-        break;
-    }
-    }
-
-    return alphabet;
+    emit CheckLayout();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString VPattern::GetLabelBase(quint32 index) const
 {
-    QStringList alphabet = GetCurrentAlphabet();
+    const QStringList list = VApplication::LabelLanguages();
+    const QString def = QStringLiteral("A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z");
+    QStringList alphabet;
+    switch (list.indexOf(qApp->Seamly2DSettings()->GetLabelLanguage()))
+    {
+        case 0: // de
+        {
+            const QString al = QStringLiteral("A,Ä,B,C,D,E,F,G,H,I,J,K,L,M,N,O,Ö,P,Q,R,S,ß,T,U,Ü,V,W,X,Y,Z");
+            alphabet = al.split(",");
+            break;
+        }
+        case 2: // fr
+        {
+            const QString al = QStringLiteral("A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z");
+            alphabet = al.split(",");
+            break;
+        }
+        case 3: // ru
+        {
+            const QString al = QStringLiteral("А,Б,В,Г,Д,Е,Ж,З,И,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Э,Ю,Я");
+            alphabet = al.split(",");
+            break;
+        }
+        case 4: // uk
+        {
+            const QString al = QStringLiteral("А,Б,В,Г,Д,Е,Ж,З,І,Ї,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Є,Ю,Я");
+            alphabet = al.split(",");
+            break;
+        }
+        case 5: // hr
+        case 7: // bs
+        {
+            const QString al = QStringLiteral("A,B,C,Č,Ć,D,Dž,Ð,E,F,G,H,I,J,K,L,Lj,M,N,Nj,O,P,R,S,Š,T,U,V,Z,Ž");
+            alphabet = al.split(",");
+            break;
+        }
+        case 6: // sr
+        {
+            const QString al = QStringLiteral("А,Б,В,Г,Д,Ђ,Е,Ж,З,И,Ј,К,Л,Љ,М,Н,Њ,О,П,Р,С,Т,Ћ,У,Ф,Х,Ц,Ч,Џ,Ш");
+            alphabet = al.split(",");
+            break;
+        }
+        case 1: // en
+        default: // en
+        {
+            alphabet = def.split(",");
+            break;
+        }
+    }
+
     QString base;
     const int count = qFloor(index/static_cast<quint32>(alphabet.size()));
     const int number = static_cast<int>(index) - alphabet.size() * count;
@@ -1892,18 +1786,14 @@ void VPattern::ParseToolCutSpline(VMainGraphicsScene *scene, QDomElement &domEle
         QString name;
         qreal mx = 0;
         qreal my = 0;
-        QString lineColor;
         bool showPointName = true;
 
-        PointsCommonAttributes(domElement, id, name, mx, my, showPointName, lineColor);
-        QString direction       = GetParametrString(domElement, AttrDirection, "forward");
-        const QString formula   = GetParametrString(domElement, AttrLength, "0");
-        QString f               = formula;//need for saving fixed formula;
-        const quint32 splineId  = GetParametrUInt(domElement, VToolCutSpline::AttrSpline, NULL_ID_STR);
+        PointsCommonAttributes(domElement, id, name, mx, my, showPointName);
+        const QString formula = GetParametrString(domElement, AttrLength, "0");
+        QString f = formula;//need for saving fixed formula;
+        const quint32 splineId = GetParametrUInt(domElement, VToolCutSpline::AttrSpline, NULL_ID_STR);
 
-        VToolCutSpline::Create(id, name, direction, f, lineColor, splineId, mx, my, showPointName, scene,
-                               this, data, parse, Source::FromFile);
-
+        VToolCutSpline::Create(id, name, f, splineId, mx, my, showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
         {
@@ -1938,18 +1828,15 @@ void VPattern::ParseToolCutSplinePath(VMainGraphicsScene *scene, QDomElement &do
         QString name;
         qreal mx = 0;
         qreal my = 0;
-        QString lineColor;
         bool showPointName = true;
 
-        PointsCommonAttributes(domElement, id, name, mx, my, showPointName, lineColor);
-        QString direction          = GetParametrString(domElement, AttrDirection, "forward");
-        const QString formula      = GetParametrString(domElement, AttrLength, "0");
-        QString f = formula; //need for saving fixed formula;
+        PointsCommonAttributes(domElement, id, name, mx, my, showPointName);
+        const QString formula = GetParametrString(domElement, AttrLength, "0");
+        QString f = formula;//need for saving fixed formula;
         const quint32 splinePathId = GetParametrUInt(domElement, VToolCutSplinePath::AttrSplinePath,
                                                      NULL_ID_STR);
 
-        VToolCutSplinePath::Create(id, name, direction, f, lineColor, splinePathId, mx, my, showPointName, scene,
-                                   this, data, parse, Source::FromFile);
+        VToolCutSplinePath::Create(id, name, f, splinePathId, mx, my, showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
         {
@@ -1984,17 +1871,14 @@ void VPattern::ParseToolCutArc(VMainGraphicsScene *scene, QDomElement &domElemen
         QString name;
         qreal mx = 0;
         qreal my = 0;
-        QString lineColor;
         bool showPointName = true;
 
-        PointsCommonAttributes(domElement, id, name, mx, my, showPointName, lineColor);
-        QString direction     = GetParametrString(domElement, AttrDirection, "forward");
+        PointsCommonAttributes(domElement, id, name, mx, my, showPointName);
         const QString formula = GetParametrString(domElement, AttrLength, "0");
         QString f = formula;//need for saving fixed formula;
-        const quint32 arcId   = GetParametrUInt(domElement, AttrArc, NULL_ID_STR);
+        const quint32 arcId = GetParametrUInt(domElement, AttrArc, NULL_ID_STR);
 
-        VToolCutArc::Create(id, name, direction, f, lineColor, arcId, mx, my, showPointName, scene,
-                            this, data, parse, Source::FromFile);
+        VToolCutArc::Create(id, name, f, arcId, mx, my, showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
         {
@@ -3215,26 +3099,26 @@ qreal VPattern::EvalFormula(VContainer *data, const QString &formula, bool *ok) 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement VPattern::createEmptyVariable(const QString &name)
+QDomElement VPattern::MakeEmptyIncrement(const QString &name)
 {
-    QDomElement element = createElement(TagVariable);
-    SetAttribute(element, VariableName, name);
-    SetAttribute(element, VariableFormula, QString("0"));
-    SetAttribute(element, VariableDescription, QString(""));
+    QDomElement element = createElement(TagIncrement);
+    SetAttribute(element, IncrementName, name);
+    SetAttribute(element, IncrementFormula, QString("0"));
+    SetAttribute(element, IncrementDescription, QString(""));
     return element;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement VPattern::findVariable(const QString &name) const
+QDomElement VPattern::FindIncrement(const QString &name) const
 {
-    QDomNodeList list = elementsByTagName(TagVariable);
+    QDomNodeList list = elementsByTagName(TagIncrement);
 
     for (int i=0; i < list.size(); ++i)
     {
         const QDomElement domElement = list.at(i).toElement();
         if (domElement.isNull() == false)
         {
-            const QString parameter = domElement.attribute(VariableName);
+            const QString parameter = domElement.attribute(IncrementName);
             if (parameter == name)
             {
                 return domElement;
@@ -3535,10 +3419,10 @@ void VPattern::ParsePathElement(VMainGraphicsScene *scene, QDomElement &domEleme
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief parseVariablesElement parse variables tag.
+ * @brief ParseIncrementsElement parse increments tag.
  * @param node tag in xml tree.
  */
-void VPattern::parseVariablesElement(const QDomNode &node)
+void VPattern::ParseIncrementsElement(const QDomNode &node)
 {
     int index = 0;
     QDomNode domNode = node.firstChild();
@@ -3549,25 +3433,25 @@ void VPattern::parseVariablesElement(const QDomNode &node)
             const QDomElement domElement = domNode.toElement();
             if (domElement.isNull() == false)
             {
-                if (domElement.tagName() == TagVariable)
+                if (domElement.tagName() == TagIncrement)
                 {
-                    const QString name = GetParametrString(domElement, VariableName, "");
+                    const QString name = GetParametrString(domElement, IncrementName, "");
 
                     QString desc;
                     try
                     {
-                        desc = GetParametrString(domElement, VariableDescription);
+                        desc = GetParametrString(domElement, IncrementDescription);
                     }
                     catch (VExceptionEmptyParameter &error)
                     {
                         Q_UNUSED(error)
                     }
 
-                    const QString formula = GetParametrString(domElement, VariableFormula, "0");
+                    const QString formula = GetParametrString(domElement, IncrementFormula, "0");
                     bool ok = false;
                     const qreal value = EvalFormula(data, formula, &ok);
 
-                    data->AddVariable(name, new CustomVariable(data, name, static_cast<quint32>(index), value, formula, ok,
+                    data->AddVariable(name, new VIncrement(data, name, static_cast<quint32>(index), value, formula, ok,
                                                            desc));
                     ++index;
                 }
@@ -3580,9 +3464,9 @@ void VPattern::parseVariablesElement(const QDomNode &node)
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::addEmptyCustomVariable(const QString &name)
 {
-    const QDomElement element = createEmptyVariable(name);
+    const QDomElement element = MakeEmptyIncrement(name);
 
-    const QDomNodeList list = elementsByTagName(TagVariables);
+    const QDomNodeList list = elementsByTagName(TagIncrements);
     list.at(0).appendChild(element);
     emit patternChanged(false);
 }
@@ -3590,10 +3474,10 @@ void VPattern::addEmptyCustomVariable(const QString &name)
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::addEmptyCustomVariableAfter(const QString &after, const QString &name)
 {
-    const QDomElement element = createEmptyVariable(name);
-    const QDomElement sibling = findVariable(after);
+    const QDomElement element = MakeEmptyIncrement(name);
+    const QDomElement sibling = FindIncrement(after);
 
-    const QDomNodeList list = elementsByTagName(TagVariables);
+    const QDomNodeList list = elementsByTagName(TagIncrements);
 
     if (sibling.isNull())
     {
@@ -3609,21 +3493,21 @@ void VPattern::addEmptyCustomVariableAfter(const QString &after, const QString &
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::removeCustomVariable(const QString &name)
 {
-    const QDomNodeList list = elementsByTagName(TagVariables);
-    list.at(0).removeChild(findVariable(name));
+    const QDomNodeList list = elementsByTagName(TagIncrements);
+    list.at(0).removeChild(FindIncrement(name));
     emit patternChanged(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::moveVariableUp(const QString &name)
+void VPattern::MoveUpIncrement(const QString &name)
 {
-    const QDomElement node = findVariable(name);
+    const QDomElement node = FindIncrement(name);
     if (not node.isNull())
     {
-        const QDomElement prSibling = node.previousSiblingElement(TagVariable);
+        const QDomElement prSibling = node.previousSiblingElement(TagIncrement);
         if (not prSibling.isNull())
         {
-            const QDomNodeList list = elementsByTagName(TagVariables);
+            const QDomNodeList list = elementsByTagName(TagIncrements);
             list.at(0).insertBefore(node, prSibling);
         }
     }
@@ -3631,15 +3515,15 @@ void VPattern::moveVariableUp(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::moveVariableDown(const QString &name)
+void VPattern::MoveDownIncrement(const QString &name)
 {
-    const QDomElement node = findVariable(name);
+    const QDomElement node = FindIncrement(name);
     if (not node.isNull())
     {
-        const QDomElement nextSibling = node.nextSiblingElement(TagVariable);
+        const QDomElement nextSibling = node.nextSiblingElement(TagIncrement);
         if (not nextSibling.isNull())
         {
-            const QDomNodeList list = elementsByTagName(TagVariables);
+            const QDomNodeList list = elementsByTagName(TagIncrements);
             list.at(0).insertAfter(node, nextSibling);
         }
     }
@@ -3647,34 +3531,34 @@ void VPattern::moveVariableDown(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::setVariableName(const QString &name, const QString &text)
+void VPattern::setIncrementName(const QString &name, const QString &text)
 {
-    QDomElement node = findVariable(name);
+    QDomElement node = FindIncrement(name);
     if (not node.isNull())
     {
-        SetAttribute(node, VariableName, text);
+        SetAttribute(node, IncrementName, text);
         emit patternChanged(false);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::setVariableFormula(const QString &name, const QString &text)
+void VPattern::SetIncrementFormula(const QString &name, const QString &text)
 {
-    QDomElement node = findVariable(name);
+    QDomElement node = FindIncrement(name);
     if (not node.isNull())
     {
-        SetAttribute(node, VariableFormula, text);
+        SetAttribute(node, IncrementFormula, text);
         emit patternChanged(false);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::setVariableDescription(const QString &name, const QString &text)
+void VPattern::setIncrementDescription(const QString &name, const QString &text)
 {
-    QDomElement node = findVariable(name);
+    QDomElement node = FindIncrement(name);
     if (not node.isNull())
     {
-        SetAttribute(node, VariableDescription, text);
+        SetAttribute(node, IncrementDescription, text);
         emit patternChanged(false);
     }
 }
@@ -3738,7 +3622,7 @@ void VPattern::replaceNameInFormula(QVector<VFormulaField> &expressions, const Q
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GenerateLabel create name for draft block basepoints.
+ * @brief GenerateLabel create name for draft block basepoint.
  * @param type type of the label.
  * @param reservedName reversed point name. Use when need reserve name, but point is not in data base yet.
  * @return unique name for current draft block.
@@ -3768,11 +3652,7 @@ QString VPattern::GenerateLabel(const LabelType &type, const QString &reservedNa
     }
     else if (type == LabelType::NewLabel)
     {
-        QString labelBase = defaultBasePoint;
-        if (defaultBasePoint.isEmpty())
-        {
-            labelBase = GetLabelBase(static_cast<quint32>(getActiveDraftBlockIndex()));
-        }
+        const QString labelBase = GetLabelBase(static_cast<quint32>(getActiveDraftBlockIndex()));
 
         qint32 num = 1;
         QString name;
@@ -4039,13 +3919,12 @@ void VPattern::PrepareForParse(const Document &parse)
     {
         TestUniqueId();
         draftScene->clear();
-        draftScene->initializeOrigins();
+        draftScene->InitOrigins();
         pieceScene->clear();
-        pieceScene->initializeOrigins();
+        pieceScene->InitOrigins();
         data->ClearForFullParse();
         activeDraftBlock.clear();
         patternPieces.clear();
-        clearBackgroundImageMap();
 
         qDeleteAll(toolsOnRemove);//Remove all invisible on a scene objects.
         toolsOnRemove.clear();
@@ -4057,7 +3936,7 @@ void VPattern::PrepareForParse(const Document &parse)
     else if (parse == Document::LiteParse)
     {
         VContainer::ClearUniqueNames();
-        data->ClearVariables(VarType::Variable);
+        data->ClearVariables(VarType::Increment);
         data->ClearVariables(VarType::LineAngle);
         data->ClearVariables(VarType::LineLength);
         data->ClearVariables(VarType::CurveLength);
@@ -4080,7 +3959,7 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
 QRectF VPattern::ActiveDrawBoundingRect() const
 {
     // This check helps to find missed tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were used.");
 
     QRectF rect;
 
@@ -4099,7 +3978,6 @@ QRectF VPattern::ActiveDrawBoundingRect() const
                 case Tool::Cut:
                 case Tool::Midpoint:// Same as Tool::AlongLine, but tool will never has such type
                 case Tool::ArcIntersectAxis:// Same as Tool::CurveIntersectAxis, but tool will never has such type
-                case Tool::BackgroundImage:
                 case Tool::LAST_ONE_DO_NOT_USE:
                     Q_UNREACHABLE();
                     break;

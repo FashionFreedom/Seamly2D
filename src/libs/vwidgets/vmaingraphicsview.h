@@ -221,7 +221,7 @@ private:
     QRect                *rubberBandRect;
     QPoint                startPoint;
     QPoint                endPoint;
-    QPoint                m_startPos;
+    QPoint                m_ptStartPos;
     QPoint                cursorPos;
 };
 

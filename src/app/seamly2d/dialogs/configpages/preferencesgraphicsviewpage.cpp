@@ -1,47 +1,46 @@
-//-----------------------------------------------------------------------------
-//  @file   PreferencesGraphicsViewPage.cpp
-//  @author Douglas S Caskey
-//  @date   26 Oct, 2023
-//
-//  @copyright
-//  Copyright (C) 2017 - 2022 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
-//
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+ /***************************************************************************
+  **  @file   PreferencesGraphicsViewPage.cpp
+  **  @author Douglas S Caskey
+  **  @date   26 Oct, 2023
+  **
+  **  @copyright
+  **  Copyright (C) 2017 - 2023 Seamly, LLC
+  **  https://github.com/fashionfreedom/seamly2d
+  **
+  **  @brief
+  **  Seamly2D is free software: you can redistribute it and/or modify
+  **  it under the terms of the GNU General Public License as published by
+  **  the Free Software Foundation, either version 3 of the License, or
+  **  (at your option) any later version.
+  **
+  **  Seamly2D is distributed in the hope that it will be useful,
+  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  **  GNU General Public License for more details.
+  **
+  **  You should have received a copy of the GNU General Public License
+  **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
+  **************************************************************************/
 
 #include "preferencesgraphicsviewpage.h"
 #include "ui_preferencesgraphicsviewpage.h"
-#include "../../core/application_2d.h"
+#include "../../core/vapplication.h"
 #include "../vpatterndb/pmsystems.h"
 #include "../vmisc/logging.h"
 #include "../vtools/tools/vabstracttool.h"
 #include "../vwidgets/vmaingraphicsview.h"
 
 #include <Qt>
-#include <QAbstractButton>
-#include <QButtonGroup>
-#include <QCheckBox>
 #include <QDir>
 #include <QDirIterator>
-#include <QDoubleSpinBox>
-#include <QFontComboBox>
 #include <QMessageBox>
-#include <QPixmap>
 #include <QTimer>
 #include <QtDebug>
+#include <QDoubleSpinBox>
+#include <QCheckBox>
+#include <QFontComboBox>
+#include <QPixmap>
+
 
 Q_LOGGING_CATEGORY(vGraphicsViewConfig, "vgraphicsviewconfig")
 //---------------------------------------------------------------------------------------------------------------------
@@ -58,7 +57,7 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     , m_tertiarySupportColorChanged(false)
 {
     ui->setupUi(this);
-    // Appearance preferences
+// Appearance preferences
     // Toolbar
     ui->toolBarStyle_CheckBox->setChecked(qApp->Seamly2DSettings()->getToolBarStyle());
     ui->toolsToolbar_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowToolsToolBar());
@@ -71,26 +70,6 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     ui->detailsToolbar_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowDetailsToolBar());
     ui->layoutToolbar_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowLayoutToolBar());
 
-    ui->useSecondMonitor_CheckBox->setChecked(qApp->Seamly2DSettings()->useSecondMonitor());
-
-    int id = qApp->Seamly2DSettings()->getDialogPosition();
-    foreach (QAbstractButton *button, ui->position_ButtonGroup->buttons())
-    {
-        if (ui->position_ButtonGroup->id(button) == id)
-        {
-            button->setChecked(true);
-            break;
-        }
-    }
-    ui->xOffset_SpinBox->setValue(qApp->Seamly2DSettings()->getXOffset());
-    ui->yOffset_SpinBox->setValue(qApp->Seamly2DSettings()->getYOffset());
-    enableOffsets();
-
-    connect(ui->position_ButtonGroup, &QButtonGroup::idClicked, this, [this]()
-    {
-        enableOffsets();
-    });
-
     // Antialiasing
     ui->graphicsOutput_CheckBox->setChecked(qApp->Seamly2DSettings()->GetGraphicalOutput());
 
@@ -98,7 +77,19 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     ui->secondarySupportColor_ComboBox->setItems(VAbstractTool::supportColorsList());
     ui->tertiarySupportColor_ComboBox->setItems(VAbstractTool::supportColorsList());
 
-    // Color preferences
+    /*
+    QPixmap pixmap = VAbstractTool::createColorIcon(ui->primarySupportColor_ComboBox->getIconWidth(),
+                                                    ui->primarySupportColor_ComboBox->getIconHeight(),
+                                                    "magenta");
+    ui->primarySupportColor_ComboBox->addItem(QIcon(pixmap),   tr("Magenta"), "magenta");
+    ui->primarySupportColor_ComboBox->model()->sort(0, Qt::AscendingOrder);
+    ui->secondarySupportColor_ComboBox->addItem(QIcon(pixmap), tr("Magenta"), "magenta");
+    ui->secondarySupportColor_ComboBox->model()->sort(0, Qt::AscendingOrder);
+    ui->tertiarySupportColor_ComboBox->addItem(QIcon(pixmap),  tr("Magenta"), "magenta");
+    ui->tertiarySupportColor_ComboBox->model()->sort(0, Qt::AscendingOrder);
+    */
+
+// Color preferences
     // Zoom Rubberband colors
     int index = ui->zrbPositiveColor_ComboBox->findText(qApp->Seamly2DSettings()->getZoomRBPositiveColor());
     if (index != -1)
@@ -182,7 +173,7 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
         m_tertiarySupportColorChanged = true;
     });
 
-    // Navigation preferences
+// Navigation preferences
     // Show Scroll Bars
     ui->showScrollBars_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowScrollBars());
 
@@ -202,7 +193,7 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     // Export Quality
     ui->quality_Slider->setValue(qApp->Seamly2DSettings()->getExportQuality());
 
-    // Behavior preferences
+// Behavior preferences
     // Constrain Angle Value & Modifier Key
     ui->constrainValue_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getConstrainValue());
     ui->constrainModKey_CheckBox->setChecked(qApp->Seamly2DSettings()->getConstrainModKey());
@@ -213,13 +204,23 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     // Pan Zoom while Space Key pressed
     ui->panActiveSpacePressed_CheckBox->setChecked(qApp->Seamly2DSettings()->isPanActiveSpaceKey());
 
-    // Always use current pen
-    ui->useCurrentPen_checkBox->setChecked(qApp->Seamly2DSettings()->useCurrentPen());
-
-    // Font preferences
+// Font preferences
     // Pattern piece labels font
+    //QFont labelFont = qApp->Seamly2DSettings()->getLabelFont();
+    //ui->labelFont_ComboBox->setCurrentFont(labelFont);
     ui->labelFont_ComboBox->setCurrentFont(qApp->Seamly2DSettings()->getLabelFont());
 
+/*    labelFont.setPointSize(12);
+    ui->label_Label->setFont(labelFont);
+
+    connect(ui->labelFont_ComboBox,
+            static_cast<void(QFontComboBox::*)(const QFont &)>(&QFontComboBox::currentFontChanged),
+            this, [this](QFont labelFont)
+    {
+        labelFont.setPointSize(12);
+        ui->label_Label->setFont(labelFont);
+    });
+*/
     // Point name font
     QFont nameFont = qApp->Seamly2DSettings()->getPointNameFont();
     ui->pointNameFont_ComboBox->setCurrentFont(nameFont);
@@ -267,27 +268,6 @@ PreferencesGraphicsViewPage::~PreferencesGraphicsViewPage ()
     delete ui;
 }
 
-// @brief enableOffsets() enable offset spinboxes.
-//
-// This method enables / disables the offset spinboxes based on the radio button checked.
-//
-// @Details
-//  - Enables spinboxes when the Offset radio button is checked.
-//  - Disables spinboxes when any other radio button is checked.
-void PreferencesGraphicsViewPage::enableOffsets()
-{
-    if (ui->offset_RadioButton->isChecked())
-    {
-        ui->xOffset_SpinBox->setEnabled(true);
-        ui->yOffset_SpinBox->setEnabled(true);
-    }
-    else
-    {
-        ui->xOffset_SpinBox->setEnabled(false);
-        ui->yOffset_SpinBox->setEnabled(false);
-    }
-}
-
 //---------------------------------------------------------------------------------------------------------------------
 void PreferencesGraphicsViewPage::changeEvent(QEvent *event)
 {
@@ -313,11 +293,6 @@ void PreferencesGraphicsViewPage::Apply()
     settings->setShowPieceToolBar(ui->pieceToolbar_CheckBox->isChecked());
     settings->setShowDetailsToolBar(ui->detailsToolbar_CheckBox->isChecked());
     settings->setShowLayoutToolBar(ui->layoutToolbar_CheckBox->isChecked());
-
-    settings->setUseSecondMonitor(ui->useSecondMonitor_CheckBox->isChecked());
-    settings->setDialogPosition(ui->position_ButtonGroup->checkedId());
-    settings->setXOffset(ui->xOffset_SpinBox->value());
-    settings->setYOffset(ui->yOffset_SpinBox->value());
 
     // Appearance preferences
     // Toolbar
@@ -402,9 +377,6 @@ void PreferencesGraphicsViewPage::Apply()
 
     // Pan Zoom while Space key pressed
     settings->setPanActiveSpaceKey(ui->panActiveSpacePressed_CheckBox->isChecked());
-
-    // Always use current pen
-    settings->setUseCurrentPen(ui->useCurrentPen_checkBox->isChecked());
 
     //Fonts
     settings->setLabelFont(ui->labelFont_ComboBox->currentFont());

@@ -335,7 +335,7 @@ void VToolNormal::SetVisualization()
 
         visual->setObject1Id(basePointId);
         visual->setObject2Id(secondPointId);
-        visual->setLength(qApp->translateVariables()->FormulaToUser(formulaLength, qApp->Settings()->getOsSeparator()));
+        visual->setLength(qApp->TrVars()->FormulaToUser(formulaLength, qApp->Settings()->GetOsSeparator()));
         visual->SetAngle(angle);
         visual->setLineStyle(lineTypeToPenStyle(m_lineType));
         visual->setLineWeight(m_lineWeight);

@@ -56,7 +56,7 @@
 #include "dialogvariables.h"
 #include "dialogpatternproperties.h"
 #include "dialognewpattern.h"
-#include "about2d_dialog.h"
+#include "dialogaboutapp.h"
 #include "dialogpreferences.h"
 #include "dialogs/groups_widget.h"
 #include "dialogs/pieces_widget.h"

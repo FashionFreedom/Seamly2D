@@ -108,7 +108,7 @@ VAbstractApplication::VAbstractApplication(int &argc, char **argv)
     {
         // If try to use the method QApplication::exit program can't sync settings and show warning about QApplication
         // instance. Solution is to call sync() before quit.
-        // Connect this slot with Application2D::aboutToQuit.
+        // Connect this slot with VApplication::aboutToQuit.
         Settings()->sync();
     });
 }
@@ -301,7 +301,7 @@ void VAbstractApplication::loadTranslations(const QString &locale)
     installTranslator(appTranslator);
     installTranslator(pmsTranslator);
 
-    initTranslateVariables();//Very important do it after load QM files.
+    InitTrVars();//Very important do it after load QM files.
 }
 
 //---------------------------------------------------------------------------------------------------------------------

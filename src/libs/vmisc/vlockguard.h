@@ -170,7 +170,7 @@ bool VLockGuard<Guarded>::TryLock(const QString &lockName, int stale, int timeou
 {
     bool res = true;
 
-    lockFile = lockName + QLatin1String(".locked");
+    lockFile = lockName + QLatin1String(".lock");
 #if defined(Q_OS_UNIX)
     QFileInfo info(lockFile);
     lockFile = info.absolutePath() + QLatin1String("/.") + info.fileName();

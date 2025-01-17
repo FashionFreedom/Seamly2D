@@ -62,23 +62,20 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 DialogInternalPath::DialogInternalPath(const VContainer *data, quint32 toolId, QWidget *parent)
-    : DialogTool(data, toolId, parent)
-    , ui(new Ui::DialogInternalPath)
-    , m_showMode(false)
-    , m_saWidth(0)
-    , m_timerWidth(nullptr)
-    , m_timerWidthBefore(nullptr)
-    , m_timerWidthAfter(nullptr)
-    , m_widthFormula(0)
-    , m_beforeWidthFormula(0)
-    , m_afterWidthFormula(0)
+    : DialogTool(data, toolId, parent),
+      ui(new Ui::DialogInternalPath),
+      m_showMode(false),
+      m_saWidth(0),
+      m_timerWidth(nullptr),
+      m_timerWidthBefore(nullptr),
+      m_timerWidthAfter(nullptr),
+      m_widthFormula(0),
+      m_beforeWidthFormula(0),
+      m_afterWidthFormula(0)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/path.png"));
-
-    // Set the position that the dialog opens based on user preference.
-    setDialogPosition();
 
     initializeOkCancel(ui);
 
@@ -373,7 +370,7 @@ void DialogInternalPath::nodeChanged(int index)
             {
                 this->expandWidthBeforeFormulaTextEdit();
             }
-            w1Formula = qApp->translateVariables()->FormulaToUser(w1Formula, qApp->Settings()->getOsSeparator());
+            w1Formula = qApp->TrVars()->FormulaToUser(w1Formula, qApp->Settings()->GetOsSeparator());
             ui->beforeWidthFormula_PlainTextEdit->setPlainText(w1Formula);
             MoveCursorToEnd(ui->beforeWidthFormula_PlainTextEdit);
 
@@ -390,7 +387,7 @@ void DialogInternalPath::nodeChanged(int index)
             {
                 this->expandWidthAfterFormulaTextEdit();
             }
-            w2Formula = qApp->translateVariables()->FormulaToUser(w2Formula, qApp->Settings()->getOsSeparator());
+            w2Formula = qApp->TrVars()->FormulaToUser(w2Formula, qApp->Settings()->GetOsSeparator());
             ui->afterWidthFormula_PlainTextEdit->setPlainText(w2Formula);
             MoveCursorToEnd(ui->afterWidthFormula_PlainTextEdit);
 
@@ -620,7 +617,7 @@ void DialogInternalPath::evaluateDefaultWidth()
     if (m_saWidth >= 0)
     {
         VContainer *locData = const_cast<VContainer *> (data);
-        locData->AddVariable(currentSeamAllowance, new CustomVariable(locData, currentSeamAllowance, 0, m_saWidth,
+        locData->AddVariable(currentSeamAllowance, new VIncrement(locData, currentSeamAllowance, 0, m_saWidth,
                                                                   QString().setNum(m_saWidth), true,
                                                                   tr("Current seam allowance")));
 
@@ -668,7 +665,7 @@ void DialogInternalPath::evaluateAfterWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::editDefaultSeamAllowanceWidth()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width"));
     dialog->SetFormula(getSeamAllowanceWidthFormula());
     dialog->setCheckLessThanZero(true);
@@ -683,7 +680,7 @@ void DialogInternalPath::editDefaultSeamAllowanceWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::editBeforeSeamAllowanceWidth()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width before"));
     dialog->SetFormula(getSeamAllowanceWidthFormulaBefore());
     dialog->setCheckLessThanZero(true);
@@ -698,7 +695,7 @@ void DialogInternalPath::editBeforeSeamAllowanceWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::editAfterSeamAllowanceWidth()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width after"));
     dialog->SetFormula(getSeamAllowanceWidthFormulaAfter());
     dialog->setCheckLessThanZero(true);
@@ -1108,7 +1105,7 @@ void DialogInternalPath::setSeamAllowanceWidthFormula(const QString &formula)
         return;
     }
 
-    const QString width = qApp->translateVariables()->FormulaToUser(formula, qApp->Settings()->getOsSeparator());
+    const QString width = qApp->TrVars()->FormulaToUser(formula, qApp->Settings()->GetOsSeparator());
     // increase height if needed.
     if (width.length() > 80)
     {
@@ -1165,7 +1162,7 @@ QString DialogInternalPath::getSeamAllowanceWidthFormula() const
 {
     QString width = ui->widthFormula_PlainTextEdit->toPlainText();
     width.replace("\n", " ");
-    return qApp->translateVariables()->TryFormulaFromUser(width, qApp->Settings()->getOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(width, qApp->Settings()->GetOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1260,7 +1257,7 @@ QString DialogInternalPath::getSeamAllowanceWidthFormulaBefore() const
 {
     QString width = ui->beforeWidthFormula_PlainTextEdit->toPlainText();
     width.replace("\n", " ");
-    return qApp->translateVariables()->TryFormulaFromUser(width, qApp->Settings()->getOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(width, qApp->Settings()->GetOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1268,7 +1265,7 @@ QString DialogInternalPath::getSeamAllowanceWidthFormulaAfter() const
 {
     QString width = ui->afterWidthFormula_PlainTextEdit->toPlainText();
     width.replace("\n", " ");
-    return qApp->translateVariables()->TryFormulaFromUser(width, qApp->Settings()->getOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(width, qApp->Settings()->GetOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

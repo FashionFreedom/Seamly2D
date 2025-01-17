@@ -85,7 +85,7 @@ public:
     QPointF       getScenePos() const;
 
     QRectF        visibleItemsBoundingRect() const;
-    void          initializeOrigins();
+    void          InitOrigins();
     void          setOriginsVisible(bool visible);
 
 public slots:
@@ -135,7 +135,7 @@ signals:
     void          ItemClicked(QGraphicsItem* pItem);
 
     /**
-     * @brief ChosenObject send option Chosen object.
+     * @brief ChosenObject send option choosed object.
      * @param id object id.
      * @param type object scene type.
      */

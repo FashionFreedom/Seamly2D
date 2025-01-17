@@ -55,7 +55,7 @@
 
 #include "seamlymepreferencesconfigurationpage.h"
 #include "ui_seamlymepreferencesconfigurationpage.h"
-#include "../../application_me.h"
+#include "../../mapplication.h"
 #include "../vmisc/vseamlymesettings.h"
 #include "../vpatterndb/variables/measurement_variable.h"
 #include "../vpatterndb/pmsystems.h"
@@ -71,7 +71,7 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
     ui->setupUi(this);
 
     //-------------------- Startup
-    ui->showWelcome_CheckBox->setChecked(qApp->seamlyMeSettings()->getShowWelcome());
+    ui->showWelcome_CheckBox->setChecked(qApp->SeamlyMeSettings()->getShowWelcome());
 
     InitLanguages(ui->langCombo);
     connect(ui->langCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
@@ -81,7 +81,7 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
 
     //-------------------- Decimal separator setup
     ui->osOption_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
-    ui->osOption_CheckBox->setChecked(qApp->seamlyMeSettings()->getOsSeparator());
+    ui->osOption_CheckBox->setChecked(qApp->SeamlyMeSettings()->GetOsSeparator());
 
     //---------------------- Pattern making system
     InitPMSystems(ui->systemCombo);
@@ -89,16 +89,16 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
     connect(ui->systemCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
     {
         m_systemChanged = true;
-        QString text = qApp->translateVariables()->PMSystemAuthor(ui->systemCombo->currentData().toString());
+        QString text = qApp->TrVars()->PMSystemAuthor(ui->systemCombo->currentData().toString());
         ui->systemAuthorValueLabel->setText(text);
         ui->systemAuthorValueLabel->setToolTip(text);
 
-        text = qApp->translateVariables()->PMSystemBook(ui->systemCombo->currentData().toString());
+        text = qApp->TrVars()->PMSystemBook(ui->systemCombo->currentData().toString());
         ui->systemBookValueLabel->setPlainText(text);
     });
 
     // set default pattern making system
-    int index = ui->systemCombo->findData(qApp->seamlyMeSettings()->GetPMSystemCode());
+    int index = ui->systemCombo->findData(qApp->SeamlyMeSettings()->GetPMSystemCode());
     if (index != -1)
     {
         ui->systemCombo->setCurrentIndex(index);
@@ -107,17 +107,17 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
     //----------------------------- Measurements Editing
     connect(ui->resetWarningsButton, &QPushButton::released, []()
     {
-        VSeamlyMeSettings *settings = qApp->seamlyMeSettings();
+        VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
 
         settings->setConfirmFormatRewriting(true);
     });
 
     //----------------------- Toolbar
-    ui->toolBarStyle_CheckBox->setChecked(qApp->seamlyMeSettings()->getToolBarStyle());
+    ui->toolBarStyle_CheckBox->setChecked(qApp->SeamlyMeSettings()->getToolBarStyle());
 
     //---------------------------Default height and size
     ui->defHeightCombo->addItems(MeasurementVariable::WholeListHeights(Unit::Cm));
-    index = ui->defHeightCombo->findText(QString().setNum(qApp->seamlyMeSettings()->GetDefHeight()));
+    index = ui->defHeightCombo->findText(QString().setNum(qApp->SeamlyMeSettings()->GetDefHeight()));
     if (index != -1)
     {
         ui->defHeightCombo->setCurrentIndex(index);
@@ -132,7 +132,7 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
             DefGradationChanged);
 
     ui->defSizeCombo->addItems(MeasurementVariable::WholeListSizes(Unit::Cm));
-    index = ui->defSizeCombo->findText(QString().setNum(qApp->seamlyMeSettings()->GetDefSize()));
+    index = ui->defSizeCombo->findText(QString().setNum(qApp->SeamlyMeSettings()->GetDefSize()));
     if (index != -1)
     {
         ui->defSizeCombo->setCurrentIndex(index);
@@ -161,16 +161,17 @@ void SeamlyMePreferencesConfigurationPage::changeEvent(QEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 void SeamlyMePreferencesConfigurationPage::Apply()
 {
-    VSeamlyMeSettings *settings = qApp->seamlyMeSettings();
+    VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
 
     settings->setShowWelcome(ui->showWelcome_CheckBox->isChecked());
-    settings->setOsSeparator(ui->osOption_CheckBox->isChecked());
+    settings->SetOsSeparator(ui->osOption_CheckBox->isChecked());
+
     settings->setToolBarStyle(ui->toolBarStyle_CheckBox->isChecked());
 
     if (m_langChanged || m_systemChanged)
     {
         const QString locale = qvariant_cast<QString>(ui->langCombo->currentData());
-        settings->setLocale(locale);
+        settings->SetLocale(locale);
         m_langChanged = false;
 
         const QString code = qvariant_cast<QString>(ui->systemCombo->currentData());
@@ -181,7 +182,7 @@ void SeamlyMePreferencesConfigurationPage::Apply()
         qApp->processEvents();// force to call changeEvent
 
         // Part about measurments will not be updated automatically
-        qApp->retranslateTables();
+        qApp->RetranslateTables();
         qApp->retranslateGroups();
     }
 

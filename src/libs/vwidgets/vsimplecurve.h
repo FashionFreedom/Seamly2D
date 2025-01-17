@@ -82,14 +82,14 @@ public:
     void RefreshGeometry(const QSharedPointer<VAbstractCurve> &curve);
 signals:
     /**
-     * @brief Chosen send id when clicked.
+     * @brief Choosed send id when clicked.
      * @param id point id.
      */
-    void Chosen(quint32 id);
+    void Choosed(quint32 id);
     void Selected(bool selected, quint32 id);
 
 public slots:
-    void CurveChosen();
+    void CurveChoosed();
     void CurveSelected(bool selected);
 
 protected:

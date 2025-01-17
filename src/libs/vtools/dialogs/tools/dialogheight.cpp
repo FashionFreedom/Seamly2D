@@ -1,51 +1,53 @@
-//-----------------------------------------------------------------------------
-//  @file   dialogheight.cpp
-//  @author Douglas S Caskey
-//  @date   14 Aug, 2024
-//
-//  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
-//
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+/***************************************************************************
+ *                                                                         *
+ *   Copyright (C) 2017  Seamly, LLC                                       *
+ *                                                                         *
+ *   https://github.com/fashionfreedom/seamly2d                            *
+ *                                                                         *
+ ***************************************************************************
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ **************************************************************************
 
-//-----------------------------------------------------------------------------
-//  @file   dialogheight.cpp
-//  @author Roman Telezhynskyi <dismine(at)gmail.com>
-//  @date   15 Nov, 2013
-//
-//  @copyright
-//  Copyright (C) 2013 Valentina project.
-//  This source code is part of the Valentina project, a pattern making
-//  program, whose allow create and modeling patterns of clothing.
-//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
-//
-//  Valentina is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published
-//  by the Free Software Foundation, either version 3 of the License,
-//  or (at your option) any later version.
-//
-//  Valentina is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+ ************************************************************************
+ **
+ **  @file   dialogheight.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   November 15, 2013
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentine project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2013-2015 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
 
 #include "dialogheight.h"
 
@@ -85,9 +87,6 @@ DialogHeight::DialogHeight(const VContainer *data, const quint32 &toolId, QWidge
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/height.png"));
 
-    // Set the position that the dialog opens based on user preference.
-    setDialogPosition();
-
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
@@ -95,9 +94,9 @@ DialogHeight::DialogHeight(const VContainer *data, const quint32 &toolId, QWidge
     initializeOkCancelApply(ui);
     DialogTool::CheckState();
 
-    fillComboBoxPoints(ui->comboBoxBasePoint);
-    fillComboBoxPoints(ui->comboBoxP1Line);
-    fillComboBoxPoints(ui->comboBoxP2Line);
+    FillComboBoxPoints(ui->comboBoxBasePoint);
+    FillComboBoxPoints(ui->comboBoxP1Line);
+    FillComboBoxPoints(ui->comboBoxP2Line);
 
     int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
     if (index != -1)
@@ -123,13 +122,9 @@ DialogHeight::DialogHeight(const VContainer *data, const quint32 &toolId, QWidge
     connect(ui->comboBoxP2Line,    &QComboBox::currentTextChanged, this, &DialogHeight::PointNameChanged);
 
     vis = new VisToolHeight(data);
-    // Call after visual initialized.
-    // If true current pen overides the default tool pen
-    if(!qApp->Settings()->useCurrentPen())
-    {
-        setLineType(LineTypeDashLine);
-        setLineWeight("0.35");
-    }
+    // Call after initialization vis!!!!
+    setLineType(LineTypeDashLine);
+    setLineWeight("0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -247,7 +242,7 @@ void DialogHeight::SetP2LineId(const quint32 &value)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
+ * @brief ChoosedObject gets id and type of selected object. Save right data and ignore wrong.
  * @param id id of point or detail
  * @param type type of object
  */

@@ -524,7 +524,6 @@ bool QmuParserTokenReader::IsArgSep ( token_type &a_Tok )
     {
         // copy the separator into null terminated string
         QString szSep;
-        szSep.resize(2);
         szSep[0] = m_cArgSep;
         szSep[1] = 0;
 

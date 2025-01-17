@@ -66,7 +66,7 @@ DialogUndo::DialogUndo(QWidget *parent)
 {
     ui->setupUi(this);
 
-    qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     bool opening = qApp->getOpeningPattern();
     if (opening)

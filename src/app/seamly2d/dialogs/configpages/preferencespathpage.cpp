@@ -1,26 +1,29 @@
-//  @file   preferencespathpage.cpp
-//  @author Douglas S Caskey
-//  @date   24 Jun, 2024
-//
-//  @brief
-//  @copyright
-//  This source code is part of the Seamly2D project, a pattern making
-//  program to create and model patterns of clothing.
-//  Copyright (C) 2017-2024 Seamly2D project
-//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
-//
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+/******************************************************************************
+*   @file   preferencespathpage.h
+**  @author Douglas S Caskey
+**  @date   26 Oct, 2023
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2023 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
 
 /************************************************************************
  **
@@ -54,7 +57,7 @@
 #include "ui_preferencespathpage.h"
 #include "../vmisc/vsettings.h"
 #include "../../options.h"
-#include "../../core/application_2d.h"
+#include "../../core/vapplication.h"
 
 #include <QDir>
 #include <QFileDialog>
@@ -99,8 +102,6 @@ void PreferencesPathPage::Apply()
     settings->setMultisizePath(ui->pathTable->item(3, 1)->text());
     settings->SetPathLayout(ui->pathTable->item(4, 1)->text());
     settings->SetPathLabelTemplate(ui->pathTable->item(5, 1)->text());
-    settings->setImageFilePath(ui->pathTable->item(6, 1)->text());
-    settings->setBackupFilePath(ui->pathTable->item(7, 1)->text());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -131,12 +132,6 @@ void PreferencesPathPage::defaultPath()
             break;
         case 5: // label templates
             path = VSettings::getDefaultLabelTemplatePath();
-            break;
-        case 6: // images
-            path = VSettings::getDefaultImageFilePath();
-            break;
-        case 7: // backups
-            path = VSettings::getDefaultBackupFilePath();
             break;
         default:
             break;
@@ -175,12 +170,6 @@ void PreferencesPathPage::editPath()
         case 5: // label templates
             path = qApp->Seamly2DSettings()->getLabelTemplatePath();
             break;
-        case 6: // images
-                path = qApp->Seamly2DSettings()->getImageFilePath();
-                break;
-        case 7: // backups
-                path = qApp->Seamly2DSettings()->getBackupFilePath();
-                break;
         default:
             break;
     }
@@ -218,7 +207,7 @@ void PreferencesPathPage::editPath()
 //---------------------------------------------------------------------------------------------------------------------
 void PreferencesPathPage::initializeTable()
 {
-    ui->pathTable->setRowCount(8);
+    ui->pathTable->setRowCount(6);
     ui->pathTable->setColumnCount(2);
 
     const VSettings *settings = qApp->Seamly2DSettings();
@@ -275,24 +264,6 @@ void PreferencesPathPage::initializeTable()
         item = new QTableWidgetItem(settings->getLabelTemplatePath());
         item->setToolTip(settings->getLabelTemplatePath());
         ui->pathTable->setItem(5, 1, item);
-    }
-
-    {
-        QTableWidgetItem *item = new QTableWidgetItem(tr("My Images"));
-        item->setIcon(QIcon("://icon/32x32/add_image.png"));
-        ui->pathTable->setItem(6, 0, item);
-        item = new QTableWidgetItem(settings->getImageFilePath());
-        item->setToolTip(settings->getImageFilePath());
-        ui->pathTable->setItem(6, 1, item);
-    }
-
-    {
-        QTableWidgetItem *item = new QTableWidgetItem(tr("My Backups"));
-        item->setIcon(QIcon("://icon/32x32/backup_files.png"));
-        ui->pathTable->setItem(7, 0, item);
-        item = new QTableWidgetItem(settings->getBackupFilePath());
-        item->setToolTip(settings->getBackupFilePath());
-        ui->pathTable->setItem(7, 1, item);
     }
 
     ui->pathTable->verticalHeader()->setDefaultSectionSize(20);

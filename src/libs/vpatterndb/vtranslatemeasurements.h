@@ -61,59 +61,6 @@
 
 #include "../qmuparser/qmutranslation.h"
 
-/**
- * @class VTranslateMeasurements
- * @brief Manages the translation of measurement-related strings.
- * 
- * The VTranslateMeasurements class provides methods for translating and manipulating measurement-related strings.
- * It includes functionality for converting measurements from user input, retrieving measurement names, numbers, formulas,
- * GUI text, and descriptions, as well as re-translating measurements.
- * 
- * @details
- * - The class stores various translations and mappings related to measurements.
- * - It includes methods for initializing measurement groups and individual measurements.
- * 
- * @public
- * - VTranslateMeasurements();
- * - virtual ~VTranslateMeasurements();
- * - bool MeasurementsFromUser(QString &newFormula, int position, const QString &token, int &bias) const;
- * - QString MToUser(const QString &measurement) const;
- * - QString MNumber(const QString &measurement) const;
- * - QString MFormula(const QString &measurement) const;
- * - QString guiText(const QString &measurement) const;
- * - QString Description(const QString &measurement) const;
- * - virtual void Retranslate();
- * 
- * @protected
- * - QMap<QString, qmu::QmuTranslation> m_measurements;
- * 
- * @private
- * - Q_DISABLE_COPY(VTranslateMeasurements)
- * - QMap<QString, qmu::QmuTranslation> m_guiTexts;
- * - QMap<QString, qmu::QmuTranslation> m_descriptions;
- * - QMap<QString, QString> m_numbers;
- * - QMap<QString, QString> m_formulas;
- * - void InitGroupA(); // Direct Height
- * - void InitGroupB(); // Direct Width
- * - void InitGroupC(); // Indentation
- * - void InitGroupD(); // Circumference and Arc
- * - void InitGroupE(); // Vertical
- * - void InitGroupF(); // Horizontal
- * - void InitGroupG(); // Bust
- * - void InitGroupH(); // Balance
- * - void InitGroupI(); // Arm
- * - void InitGroupJ(); // Leg
- * - void InitGroupK(); // Crotch and Rise
- * - void InitGroupL(); // Hand
- * - void InitGroupM(); // Foot
- * - void InitGroupN(); // Head
- * - void InitGroupO(); // Men & Tailoring
- * - void InitGroupP(); // Historical & Specialty
- * - void InitGroupQ(); // Patternmaking measurements
- * - void InitMeasurements();
- * - void InitMeasurement(const QString &name, const qmu::QmuTranslation &m, const qmu::QmuTranslation &g,
- *                        const qmu::QmuTranslation &d, const QString &number, const QString &formula = QString());
- */
 class VTranslateMeasurements
 {
 public:

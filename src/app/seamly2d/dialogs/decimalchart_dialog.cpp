@@ -31,7 +31,7 @@
 
 #include <QFont>
 #include <QShowEvent>
-#include "../core/application_2d.h"
+#include "../core/vapplication.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 DecimalChartDialog::DecimalChartDialog(QWidget *parent)

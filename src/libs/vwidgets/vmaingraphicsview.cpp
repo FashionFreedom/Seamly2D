@@ -480,7 +480,7 @@ VMainGraphicsView::VMainGraphicsView(QWidget *parent)
     , rubberBandRect(nullptr)
     , startPoint(QPoint())
     , endPoint(QPoint())
-    , m_startPos(QPoint())
+    , m_ptStartPos(QPoint())
     , cursorPos(QPoint())
 {
     initScrollBars();
@@ -655,7 +655,7 @@ void VMainGraphicsView::mousePressEvent(QMouseEvent *event)
                 const QList<QGraphicsItem *> list = items(event->pos());
                 if (list.size() == 0)
                 {// Only when the user clicks on the scene background
-                    m_startPos = event->pos();
+                    m_ptStartPos = event->pos();
                     QGraphicsView::setDragMode(QGraphicsView::ScrollHandDrag);
                     event->accept();
                     viewport()->setCursor(Qt::ClosedHandCursor);
@@ -697,10 +697,14 @@ void VMainGraphicsView::mousePressEvent(QMouseEvent *event)
         }
         case Qt::MiddleButton:
         {
-            m_startPos = event->pos();
-            QGraphicsView::setDragMode(QGraphicsView::ScrollHandDrag);
-            event->accept();
-            viewport()->setCursor(Qt::ClosedHandCursor);
+            const QList<QGraphicsItem *> list = items(event->pos());
+            if (list.size() == 0)
+            {// Only when the user clicks on the scene background
+                m_ptStartPos = event->pos();
+                QGraphicsView::setDragMode(QGraphicsView::ScrollHandDrag);
+                event->accept();
+                viewport()->setCursor(Qt::ClosedHandCursor);
+            }
             break;
         }
         default:
@@ -716,17 +720,17 @@ void VMainGraphicsView::mouseMoveEvent(QMouseEvent *event)
     {
         QScrollBar *hBar = horizontalScrollBar();
         QScrollBar *vBar = verticalScrollBar();
-        const QPoint delta = event->pos() - m_startPos;
+        const QPoint delta = event->pos() - m_ptStartPos;
         hBar->setValue(hBar->value() + (isRightToLeft() ? delta.x() : -delta.x()));
         vBar->setValue(vBar->value() - delta.y());
-        m_startPos = event->pos();
+        m_ptStartPos = event->pos();
     }
     else if ( isRubberBandActive )
     {
           endPoint = event->pos();
           if (!isRubberBandColorSet)
           {
-              if ( (endPoint.x() < startPoint.x()) || (endPoint.y() < startPoint.y()) )
+              if ( (endPoint.x() < startPoint.x()) | (endPoint.y() < startPoint.y()) )
               {
                 setRubberBandColor(rubberBand, qApp->Settings()->getZoomRBNegativeColor());
               }

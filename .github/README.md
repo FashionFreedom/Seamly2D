@@ -23,14 +23,14 @@ Learn more about Seamly2D by joining our friendly, active user [forum](https://f
 
 ## Supported platforms:  
    * Windows 10 & 11 (32-bit and 64-bit)
-   * Most current Linux distros via [Flathub](https://flathub.org/apps/io.seamly.seamly2d)
+   * Most current Linux distros via [Flathub](https://flathub.org/apps/details/net.seamly.seamly2d)
    * macOS High Sierra 10.13 (64-bit) or later
 
 ## Download Seamly2D:
 
 | Windows 64-bit | Windows 32-bit | MacOS | Linux AppImage | Linux Flatpak |
 | :---:          | :---:          | :---: | :---:          | :---:         |
-| [![Seamly2d-windows.zip](img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [![Seamly2d-win32.zip](img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-win32.zip) | [<picture><source media="(prefers-color-scheme: dark)" srcset="img/white-apple-logo-transparent-49x60px.png"><source media="(prefers-color-scheme: light)" srcset="img/Apple_logo_black.png" ><img src="img/Apple_logo_black.png" height="60"></picture>](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [![Seamly2D-x86_64.AppImage](img/Tux_Mono_60x60.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-x86_64.AppImage) | [<img src="https://dl.flathub.org/assets/badges/flathub-badge-en.svg" alt="Download On Flathub" height="60">](https://flathub.org/apps/io.seamly.seamly2d) |
+| [![Seamly2d-windows.zip](img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [![Seamly2d-win32.zip](img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-win32.zip) | [<picture><source media="(prefers-color-scheme: dark)" srcset="img/white-apple-logo-transparent-49x60px.png"><source media="(prefers-color-scheme: light)" srcset="img/Apple_logo_black.png" ><img src="img/Apple_logo_black.png" height="60"></picture>](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [![Seamly2D-x86_64.AppImage](img/Tux_Mono_60x60.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-x86_64.AppImage) | [<img src="https://dl.flathub.org/assets/badges/flathub-badge-en.svg" alt="Download On Flathub" height="60">](https://flathub.org/apps/details/net.seamly.seamly2d) |
 
 ___________________________________________________
 ## Seamly2D Community Resources:
@@ -42,7 +42,6 @@ ___________________________________________________
 ## Seamly2D Developer Resources:
    * [Developer README](README-DEVELOPER.md) - _current_
    * [Developer Wiki](https://github.com/FashionFreedom/Seamly2D/wiki) - _needs updating_
-   * [Doxygen docs](https://fashionfreedom.github.io/Seamly2D/)
 ___________________________________________________
 ## LICENSING
 
@@ -58,7 +57,7 @@ GNU General Public License for more details.
 
 ![GPLv3](img/GPLv3_Logo-121x60px.png)
 
-See our [LICENSE.md](../LICENSE.md) file or go to [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html) for further information.
+See our [LICENSE.md](LICENSE.md) file or go to [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html) for further information.
 
 Other components released under:  
 * QMuParser - [Simplified BSD license](https://opensource.org/licenses/BSD-2-Clause)

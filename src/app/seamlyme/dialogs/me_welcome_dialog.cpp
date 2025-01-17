@@ -27,7 +27,7 @@
 
 #include "../vpatterndb/variables/measurement_variable.h"
 //#include "../vmisc/vseamlymesettings.h"
-#include "../application_me.h"
+#include "../mapplication.h"
 
 #include <QPushButton>
 #include <QShowEvent>
@@ -38,17 +38,17 @@ SeamlyMeWelcomeDialog::SeamlyMeWelcomeDialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::SeamlyMeWelcomeDialog)
     , m_langChanged(false)
-    , settings(qApp->seamlyMeSettings())
+    , settings(qApp->SeamlyMeSettings())
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
     //-------------------- Units setup
-    initUnits();
+    initUnits(MeasurementsType::Individual);
 
     //-------------------- Decimal separator setup
     ui->separator_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
-    ui->separator_CheckBox->setChecked(settings->getOsSeparator());
+    ui->separator_CheckBox->setChecked(settings->GetOsSeparator());
     connect(ui->separator_CheckBox, &QCheckBox::stateChanged, this, &SeamlyMeWelcomeDialog::seperatorChanged);
 
     //-------------------- Languages setup
@@ -77,14 +77,14 @@ SeamlyMeWelcomeDialog::~SeamlyMeWelcomeDialog()
 void SeamlyMeWelcomeDialog::apply()
 {
     settings->SetUnit(qvariant_cast<QString>(ui->units_ComboBox->currentData()));
-    settings->setOsSeparator(ui->separator_CheckBox->isChecked());
-    settings->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    settings->SetOsSeparator(ui->separator_CheckBox->isChecked());
+    settings->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
     settings->setShowWelcome(ui->doNotShow_CheckBox->isChecked());
 
     if (m_langChanged)
     {
         const QString locale = qvariant_cast<QString>(ui->language_ComboBox->currentData());
-        settings->setLocale(locale);
+        settings->SetLocale(locale);
         m_langChanged = false;
     }
 
@@ -119,15 +119,15 @@ void SeamlyMeWelcomeDialog::seperatorChanged()
 
 //---------------------------------------------------------------------------------------------------------------------
 // @brief initUnits initinailize the units combobox
-//---------------------------------------------------------------------------------------------------------------------
-void SeamlyMeWelcomeDialog::initUnits()
+// @param type measurment type
+void SeamlyMeWelcomeDialog::initUnits(const MeasurementsType &type)
 {
     ui->units_ComboBox->addItem(tr("Centimeters"), unitCM);
     ui->units_ComboBox->addItem(tr("Millimeters"), unitMM);
     ui->units_ComboBox->addItem(tr("Inches")     , unitINCH);
 
     // set default unit
-    const qint32 index = ui->units_ComboBox->findData(settings->getUnit());
+    const qint32 index = ui->units_ComboBox->findData(settings->GetUnit());
     if (index != -1)
     {
         ui->units_ComboBox->setCurrentIndex(index);

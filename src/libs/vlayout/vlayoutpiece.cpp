@@ -228,11 +228,11 @@ bool FindGrainlineGeometry(const VGrainlineData& data, const VContainer *pattern
     try
     {
         Calculator cal1;
-        rotationAngle = cal1.EvalFormula(pattern->DataVariables(), data.getRotation());
+        rotationAngle = cal1.EvalFormula(pattern->DataVariables(), data.GetRotation());
         rotationAngle = qDegreesToRadians(rotationAngle);
 
         Calculator cal2;
-        length = cal2.EvalFormula(pattern->DataVariables(), data.getLength());
+        length = cal2.EvalFormula(pattern->DataVariables(), data.GetLength());
         length = ToPixel(length, *pattern->GetPatternUnit());
     }
     catch(qmu::QmuParserError &error)
@@ -655,7 +655,7 @@ void VLayoutPiece::setGrainline(const VGrainlineData& data, const VContainer* pa
 
     QVector<QPointF> v;
     v << pt2;
-    if (data.getArrowType() != ArrowType::Top)
+    if (data.GetArrowType() != ArrowType::atFront)
     {
         v << QPointF(pt1.x() + arrowLength * qCos(rotationAngle + arrowAngle),
                      pt1.y() - arrowLength * qSin(rotationAngle + arrowAngle));
@@ -666,7 +666,7 @@ void VLayoutPiece::setGrainline(const VGrainlineData& data, const VContainer* pa
     }
 
     v << pt4;
-    if (data.getArrowType() != ArrowType::Bottom)
+    if (data.GetArrowType() != ArrowType::atRear)
     {
         rotationAngle += M_PI;
         v << QPointF(pt3.x() + arrowLength * qCos(rotationAngle + arrowAngle),
@@ -700,13 +700,13 @@ void VLayoutPiece::setTransform(const QTransform &transform)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VLayoutPiece::getLayoutGap() const
+qreal VLayoutPiece::GetLayoutWidth() const
 {
     return d->layoutWidth;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutPiece::setLayoutGap(const qreal &value)
+void VLayoutPiece::SetLayoutWidth(const qreal &value)
 {
     d->layoutWidth = value;
 }
@@ -1281,12 +1281,11 @@ void VLayoutPiece::createAllowanceItem(QGraphicsItem *parent) const
 //---------------------------------------------------------------------------------------------------------------------
 void VLayoutPiece::createNotchesItem(QGraphicsItem *parent) const
 {
-    QColor color      = QColor(qApp->Settings()->getDefaultNotchColor());
-    qreal  lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
+    QColor color = QColor(qApp->Settings()->getDefaultNotchColor());
 
     QGraphicsPathItem *item = new QGraphicsPathItem(parent);
     item->setPath(createNotchesPath());
-    item->setPen(QPen(color, lineWeight, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    item->setPen(QPen(color, 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

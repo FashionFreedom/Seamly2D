@@ -108,7 +108,7 @@ VToolLinePoint::VToolLinePoint(VAbstractPattern *doc, VContainer *data, const qu
     QPointF point1 = static_cast<QPointF>(*data->GeometricObject<VPointF>(basePointId));
     QPointF point2 = static_cast<QPointF>(*data->GeometricObject<VPointF>(id));
     mainLine = new VScaledLine(QLineF(point1 - point2, QPointF()), this);
-    mainLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
+    mainLine->setBasicWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
     mainLine->setFlag(QGraphicsItem::ItemStacksBehindParent, true);
 }
 
@@ -142,7 +142,7 @@ void VToolLinePoint::RefreshGeometry()
     QPointF point = static_cast<QPointF>(*VDrawTool::data.GeometricObject<VPointF>(m_id));
     QPointF basePoint = static_cast<QPointF>(*VDrawTool::data.GeometricObject<VPointF>(basePointId));
 
-    mainLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
+    mainLine->setBasicWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
     mainLine->setLine(QLineF(basePoint - point, QPointF()));
 }
 
@@ -169,14 +169,14 @@ void VToolLinePoint::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj
 //---------------------------------------------------------------------------------------------------------------------
 void VToolLinePoint::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
-    mainLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble() + 1, Unit::Mm));
+    mainLine->setBasicWidth(ToPixel(m_lineWeight.toDouble() + 1, Unit::Mm));
     VToolSinglePoint::hoverEnterEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolLinePoint::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
-    mainLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
+    mainLine->setBasicWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
     VToolSinglePoint::hoverLeaveEvent(event);
 }
 
@@ -188,7 +188,7 @@ QString VToolLinePoint::makeToolTip() const
 
     const QLineF line(static_cast<QPointF>(*first), static_cast<QPointF>(*second));
 
-    const QString toolTip = QString("<table style=font-size:11pt; font-weight:600>"
+    const QString toolTip = QString("<table>"
                                     "<tr> <td><b>  %6:</b> %7</td> </tr>"
                                     "<tr> <td><b>%1:</b> %2 %3</td> </tr>"
                                     "<tr> <td><b> %4:</b> %5°</td> </tr>"

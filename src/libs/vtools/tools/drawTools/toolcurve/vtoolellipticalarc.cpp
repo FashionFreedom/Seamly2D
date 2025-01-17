@@ -88,7 +88,7 @@ VToolEllipticalArc::VToolEllipticalArc(VAbstractPattern *doc, VContainer *data, 
                                        QGraphicsItem *parent)
     :VAbstractSpline(doc, data, id, parent)
 {
-    m_sceneType = SceneObject::ElArc;
+    sceneType = SceneObject::ElArc;
 
     this->setFlag(QGraphicsItem::ItemIsFocusable, true);// For keyboard input focus
 
@@ -209,7 +209,7 @@ VToolEllipticalArc* VToolEllipticalArc::Create(const quint32 _id, const quint32 
         VDrawTool::AddRecord(id, Tool::EllipticalArc, doc);
         VToolEllipticalArc *toolEllipticalArc = new VToolEllipticalArc(doc, data, id, typeCreation);
         scene->addItem(toolEllipticalArc);
-        initElArcToolConnections(scene, toolEllipticalArc);
+        InitElArcToolConnections(scene, toolEllipticalArc);
         VAbstractPattern::AddTool(id, toolEllipticalArc);
         doc->IncrementReferens(c.getIdTool());
         return toolEllipticalArc;
@@ -472,14 +472,14 @@ void VToolEllipticalArc::SetVisualization()
         VisToolEllipticalArc *visual = qobject_cast<VisToolEllipticalArc *>(vis);
         SCASSERT(visual != nullptr)
 
-        const VTranslateVars *trVars = qApp->translateVariables();
+        const VTranslateVars *trVars = qApp->TrVars();
         visual->setObject1Id(elArc->GetCenter().id());
-        visual->setRadius1(trVars->FormulaToUser(elArc->GetFormulaRadius1(), qApp->Settings()->getOsSeparator()));
-        visual->setRadius2(trVars->FormulaToUser(elArc->GetFormulaRadius2(), qApp->Settings()->getOsSeparator()));
-        visual->setF1(trVars->FormulaToUser(elArc->GetFormulaF1(), qApp->Settings()->getOsSeparator()));
-        visual->setF2(trVars->FormulaToUser(elArc->GetFormulaF2(), qApp->Settings()->getOsSeparator()));
+        visual->setRadius1(trVars->FormulaToUser(elArc->GetFormulaRadius1(), qApp->Settings()->GetOsSeparator()));
+        visual->setRadius2(trVars->FormulaToUser(elArc->GetFormulaRadius2(), qApp->Settings()->GetOsSeparator()));
+        visual->setF1(trVars->FormulaToUser(elArc->GetFormulaF1(), qApp->Settings()->GetOsSeparator()));
+        visual->setF2(trVars->FormulaToUser(elArc->GetFormulaF2(), qApp->Settings()->GetOsSeparator()));
         visual->setRotationAngle(trVars->FormulaToUser(elArc->GetFormulaRotationAngle(),
-                                                       qApp->Settings()->getOsSeparator()));
+                                                       qApp->Settings()->GetOsSeparator()));
         visual->setLineStyle(lineTypeToPenStyle(elArc->GetPenStyle()));
         visual->setLineWeight(elArc->getLineWeight());
         visual->RefreshGeometry();
@@ -491,7 +491,7 @@ QString VToolEllipticalArc::makeToolTip() const
 {
     const QSharedPointer<VEllipticalArc> elArc = VAbstractTool::data.GeometricObject<VEllipticalArc>(m_id);
 
-    const QString toolTip = QString("<table style=font-size:11pt; font-weight:600>"
+    const QString toolTip = QString("<table>"
                                     "<tr> <td><b>%12:</b> %13</td> </tr>"
                                     "<tr> <td><b>%1:</b> %2 %3</td> </tr>"
                                     "<tr> <td><b>%4:</b> %5 %3</td> </tr>"

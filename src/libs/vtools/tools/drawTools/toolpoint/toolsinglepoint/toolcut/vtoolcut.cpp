@@ -1,49 +1,53 @@
-//  @file   vtoolcut.cpp
-//  @author Douglas S Caskey
-//  @date   8 Jun, 2024
-//
-//  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
-//
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+/***************************************************************************
+ *                                                                         *
+ *   Copyright (C) 2017  Seamly, LLC                                       *
+ *                                                                         *
+ *   https://github.com/fashionfreedom/seamly2d                            *
+ *                                                                         *
+ ***************************************************************************
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ **************************************************************************
 
-//-----------------------------------------------------------------------------
-//  @file   vtoolcut.cpp
-//  @author Roman Telezhynskyi <dismine(at)gmail.com>
-//  @date   25 6, 2014
-//
-//  @copyright
-//  Copyright (C) 2013 Valentina project.
-//  This source code is part of the Valentina project, a pattern making
-//  program, whose allow create and modeling patterns of clothing.
-//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
-//
-//  Valentina is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published
-//  by the Free Software Foundation, either version 3 of the License,
-//  or (at your option) any later version.
-//
-//  Valentina is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+ ************************************************************************
+ **
+ **  @file   vtoolcut.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   25 6, 2014
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentine project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2013-2015 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
 
 #include "vtoolcut.h"
 
@@ -63,17 +67,13 @@
 #include "../vtoolsinglepoint.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolCut::VToolCut(VAbstractPattern *doc, VContainer *data, const quint32 &id, QString &direction,
-                   const QString &formula, const QString &lineColor, const quint32 &curveCutId, QGraphicsItem *parent)
-    : VToolSinglePoint(doc, data, id, QColor(lineColor), parent)
-    , m_direction(direction)
+VToolCut::VToolCut(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &formula,
+                   const quint32 &curveCutId, QGraphicsItem *parent)
+    : VToolSinglePoint(doc, data, id, QColor(qApp->Settings()->getPointNameColor()), parent)
     , formula(formula)
-    , lineColor(lineColor)
     , curveCutId(curveCutId)
     , m_piecesMode(false)
 {
-    setPointColor(lineColor);
-
     Q_ASSERT_X(curveCutId != 0, Q_FUNC_INFO, "curveCutId == 0"); //-V654 //-V712
 }
 
@@ -119,19 +119,6 @@ void VToolCut::setCurveCutId(const quint32 &value)
     }
 }
 
-QString VToolCut::getDirection() const
-{
-    return m_direction;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolCut::setDirection(const QString &value)
-{
-        m_direction = value;
-        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
-        SaveOption(obj);
-}
-
 //---------------------------------------------------------------------------------------------------------------------
 VFormula VToolCut::GetFormula() const
 {
@@ -155,21 +142,6 @@ void VToolCut::SetFormula(const VFormula &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VToolCut::getLineColor() const
-{
-    return lineColor;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolCut::setLineColor(const QString &value)
-{
-    lineColor = value;
-
-    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
-    SaveOption(obj);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 QString VToolCut::CurveName() const
 {
     return VAbstractTool::data.GetGObject(curveCutId)->name();
@@ -181,7 +153,6 @@ QString VToolCut::CurveName() const
  */
 void VToolCut::RefreshGeometry()
 {
-    setPointColor(lineColor);
     VToolSinglePoint::refreshPointGeometry(*VDrawTool::data.GeometricObject<VPointF>(m_id));
 }
 

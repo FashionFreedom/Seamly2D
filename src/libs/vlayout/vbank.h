@@ -75,49 +75,52 @@ class VBank
 public:
     VBank();
 
-    qreal        getLayoutGap() const;
-    void         setLayoutGap(const qreal &value);
+    qreal GetLayoutWidth() const;
+    void SetLayoutWidth(const qreal &value);
 
-    void         setPieces(const QVector<VLayoutPiece> &pieces);
-    int          GetTiket();
+    void setPieces(const QVector<VLayoutPiece> &pieces);
+    int  GetTiket();
     VLayoutPiece getPiece(int i) const;
 
-    void         Arranged(int i);
-    void         NotArranged(int i);
+    void Arranged(int i);
+    void NotArranged(int i);
 
-    bool         Prepare();
-    void         Reset();
-    void         setCaseType(Cases caseType);
+    bool Prepare();
+    void Reset();
+    void SetCaseType(Cases caseType);
 
-    int          allPieceCount() const;
-    int          LeftArrange() const;
-    int          ArrangedCount() const;
+    int allPieceCount() const;
+    int LeftArrange() const;
+    int ArrangedCount() const;
 
-    qreal        GetBiggestDiagonal() const;
+    qreal GetBiggestDiagonal() const;
 
 private:
     Q_DISABLE_COPY(VBank)
     QVector<VLayoutPiece> pieces;
-    QHash<int, qint64>    unsorted;
-    QHash<int, qint64>    big;
-    QHash<int, qint64>    middle;
-    QHash<int, qint64>    small;
-    qreal                 layoutWidth;
-    Cases                 caseType;
-    bool                  prepare;
-    qreal                 diagonal;
+    QHash<int, qint64> unsorted;
 
-    void         PrepareGroup();
+    QHash<int, qint64> big;
+    QHash<int, qint64> middle;
+    QHash<int, qint64> small;
 
-    void         PrepareThreeGroups();
-    void         PrepareTwoGroups();
-    void         PrepareDescGroup();
+    qreal layoutWidth;
 
-    int          GetNextThreeGroups() const;
-    int          GetNextTwoGroups() const;
-    int          GetNextDescGroup() const;
+    Cases caseType;
+    bool prepare;
+    qreal diagonal;
 
-    void         SqMaxMin(qint64 &sMax, qint64 &sMin) const;
+    void PrepareGroup();
+
+    void PrepareThreeGroups();
+    void PrepareTwoGroups();
+    void PrepareDescGroup();
+
+    int GetNextThreeGroups() const;
+    int GetNextTwoGroups() const;
+    int GetNextDescGroup() const;
+
+    void SqMaxMin(qint64 &sMax, qint64 &sMin) const;
 };
 
 #if defined (Q_OS_WIN) && defined (Q_CC_MSVC)

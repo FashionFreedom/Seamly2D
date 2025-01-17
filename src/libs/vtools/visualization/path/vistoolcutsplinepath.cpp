@@ -70,12 +70,7 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 VisToolCutSplinePath::VisToolCutSplinePath(const VContainer *data, QGraphicsItem *parent)
-    :VisPath(data, parent)
-    , point(nullptr)
-    , splPath1(nullptr)
-    , splPath2(nullptr)
-    , m_length(0)
-    , m_direction("forward")
+    :VisPath(data, parent), point(nullptr), splPath1(nullptr), splPath2(nullptr), length(0)
 {
     splPath1 = InitItem<VCurvePathItem>(Qt::darkGreen, this);
     splPath1->setFlag(QGraphicsItem::ItemStacksBehindParent, false);
@@ -96,16 +91,11 @@ void VisToolCutSplinePath::RefreshGeometry()
         DrawPath(this, splPath->GetPath(), splPath->DirectionArrows(), supportColor, lineStyle,
                  lineWeight, Qt::RoundCap);
 
-        if (m_direction == "backward")
-        {
-            m_length = splPath->GetLength() - m_length;
-        }
-
-        if (!qFuzzyIsNull(m_length))
+        if (not qFuzzyIsNull(length))
         {
             VSplinePath *spPath1 = nullptr;
             VSplinePath *spPath2 = nullptr;
-            VPointF *p = VToolCutSplinePath::CutSplinePath(m_length, splPath, "X", &spPath1, &spPath2);
+            VPointF *p = VToolCutSplinePath::CutSplinePath(length, splPath, "X", &spPath1, &spPath2);
             SCASSERT(p != nullptr)
             SCASSERT(spPath1 != nullptr)
             SCASSERT(spPath2 != nullptr)
@@ -124,13 +114,8 @@ void VisToolCutSplinePath::RefreshGeometry()
     }
 }
 
-void VisToolCutSplinePath::setDirection(const QString &direction)
-{
-    m_direction = direction;
-}
-
 //---------------------------------------------------------------------------------------------------------------------
 void VisToolCutSplinePath::setLength(const QString &expression)
 {
-    m_length = FindLength(expression, Visualization::data->DataVariables());
+    length = FindLength(expression, Visualization::data->DataVariables());
 }

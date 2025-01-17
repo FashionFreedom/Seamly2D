@@ -1,51 +1,53 @@
-//-----------------------------------------------------------------------------
-//  @file   dialogcubicbezier.cpp
-//  @author Douglas S Caskey
-//  @date   14 Aug, 2024
-//
-//  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
-//
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+/***************************************************************************
+ *                                                                         *
+ *   Copyright (C) 2017  Seamly, LLC                                       *
+ *                                                                         *
+ *   https://github.com/fashionfreedom/seamly2d                             *
+ *                                                                         *
+ ***************************************************************************
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ **************************************************************************
 
-//-----------------------------------------------------------------------------
-//  @file   dialogcubicbezier.cpp
-//  @author Roman Telezhynskyi <dismine(at)gmail.com>
-//  @date   November 15, 2013
-//
-//  @copyright
-//  Copyright (C) 2013 Valentina project.
-//  This source code is part of the Valentina project, a pattern making
-//  program, whose allow create and modeling patterns of clothing.
-//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
-//
-//  Valentina is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published
-//  by the Free Software Foundation, either version 3 of the License,
-//  or (at your option) any later version.
-//
-//  Valentina is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+ ************************************************************************
+ **
+ **  @file   dialogcubicbezier.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   10 3, 2016
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentine project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2016 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
 
 #include "dialogcubicbezier.h"
 
@@ -75,15 +77,12 @@ DialogCubicBezier::DialogCubicBezier(const VContainer *data, const quint32 &tool
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/cubic_bezier.png"));
 
-    // Set the position that the dialog opens based on user preference.
-    setDialogPosition();
-
     initializeOkCancelApply(ui);
 
-    fillComboBoxPoints(ui->comboBoxP1);
-    fillComboBoxPoints(ui->comboBoxP2);
-    fillComboBoxPoints(ui->comboBoxP3);
-    fillComboBoxPoints(ui->comboBoxP4);
+    FillComboBoxPoints(ui->comboBoxP1);
+    FillComboBoxPoints(ui->comboBoxP2);
+    FillComboBoxPoints(ui->comboBoxP3);
+    FillComboBoxPoints(ui->comboBoxP4);
 
     int index = ui->lineType_ComboBox->findData(LineTypeNone);
     if (index != -1)
@@ -141,7 +140,7 @@ void DialogCubicBezier::SetSpline(const VCubicBezier &spline)
     setCurrentPointId(ui->comboBoxP3, spl.GetP3().id());
     setCurrentPointId(ui->comboBoxP4, spl.GetP4().id());
 
-    ui->lineEditSplineName->setText(qApp->translateVariables()->VarToUser(spl.name()));
+    ui->lineEditSplineName->setText(qApp->TrVars()->VarToUser(spl.name()));
 
     auto path = qobject_cast<VisToolCubicBezier *>(vis);
     SCASSERT(path != nullptr)
@@ -274,7 +273,7 @@ void DialogCubicBezier::PointNameChanged()
             getCurrentObjectId(ui->comboBoxP4) == spl.GetP4().id())
         {
             newDuplicate = -1;
-            ui->lineEditSplineName->setText(qApp->translateVariables()->VarToUser(spl.name()));
+            ui->lineEditSplineName->setText(qApp->TrVars()->VarToUser(spl.name()));
         }
         else
         {
@@ -285,7 +284,7 @@ void DialogCubicBezier::PointNameChanged()
                 newDuplicate = static_cast<qint32>(DNumber(spline.name()));
                 spline.SetDuplicate(static_cast<quint32>(newDuplicate));
             }
-            ui->lineEditSplineName->setText(qApp->translateVariables()->VarToUser(spline.name()));
+            ui->lineEditSplineName->setText(qApp->TrVars()->VarToUser(spline.name()));
         }
     }
     ChangeColor(ui->labelName, color);

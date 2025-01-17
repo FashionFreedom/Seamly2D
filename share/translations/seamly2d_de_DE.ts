@@ -2,157 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
-    <name>About2DAppDialog</name>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>Über Seamly2D</translation>
-    </message>
-    <message>
-        <source>Web site : %1</source>
-        <translation>Webseite: %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation>Standardbrowser kann nicht geöffnet werden</translation>
-    </message>
-    <message>
-        <source>Left to right</source>
-        <translation>Von links nach rechts</translation>
-    </message>
-    <message>
-        <source>Right to left</source>
-        <translation>Von rechts nach links</translation>
-    </message>
-    <message>
-        <source>Automatic</source>
-        <translation>Automatisch</translation>
-    </message>
-    <message>
-        <source>Built on %1 at %2</source>
-        <translation>Erstellt am %1 um %2</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation>Über</translation>
-    </message>
-    <message>
-        <source>Copy build data to clipboard</source>
-        <translation>Baudaten in die Zwischenablage kopieren</translation>
-    </message>
-    <message>
-        <source>Seamly 2D</source>
-        <translation>Seamly 2D</translation>
-    </message>
-    <message>
-        <source>Version</source>
-        <translation>Version</translation>
-    </message>
-    <message>
-        <source>Build date:</source>
-        <translation>Erstellungsdatum:</translation>
-    </message>
-    <message>
-        <source>Qt Version:</source>
-        <translation>Qt-Version:</translation>
-    </message>
-    <message>
-        <source>CPU:</source>
-        <translation>CPU:</translation>
-    </message>
-    <message>
-        <source>Compiler:</source>
-        <translation>Compiler:</translation>
-    </message>
-    <message>
-        <source>System</source>
-        <translation>System</translation>
-    </message>
-    <message>
-        <source>Revision:</source>
-        <translation>Revision:</translation>
-    </message>
-    <message>
-        <source>Version:</source>
-        <translation>Version:</translation>
-    </message>
-    <message>
-        <source>Architecture</source>
-        <translation>Architektur</translation>
-    </message>
-    <message>
-        <source>OS:</source>
-        <translation>OS:</translation>
-    </message>
-    <message>
-        <source>OS Version:</source>
-        <translation>OS-Version:</translation>
-    </message>
-    <message>
-        <source>Locale</source>
-        <translation>Standort</translation>
-    </message>
-    <message>
-        <source>Country:</source>
-        <translation>Land:</translation>
-    </message>
-    <message>
-        <source>Decimal point:</source>
-        <translation>Dezimalpunkt:</translation>
-    </message>
-    <message>
-        <source>Script name:</source>
-        <translation>Skriptname:</translation>
-    </message>
-    <message>
-        <source>System codec:</source>
-        <translation>System-Codec:</translation>
-    </message>
-    <message>
-        <source>Language:</source>
-        <translation>Sprache:</translation>
-    </message>
-    <message>
-        <source>Text direction:</source>
-        <translation>Textrichtung:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Bezeichnung:</translation>
-    </message>
-    <message>
-        <source>Positive sign:</source>
-        <translation>Positives Vorzeichen:</translation>
-    </message>
-    <message>
-        <source>Negative sign:</source>
-        <translation>Negatives Vorzeichen:</translation>
-    </message>
-    <message>
-        <source>Application</source>
-        <translation>Anmeldung</translation>
-    </message>
-    <message>
-        <source>Arguments:</source>
-        <translation>Argumente:</translation>
-    </message>
-    <message>
-        <source>Contributors</source>
-        <translation>Mitwirkende</translation>
-    </message>
-    <message>
-        <source>Check For Updates</source>
-        <translation>Nach Updates suchen</translation>
-    </message>
-    <message>
-        <source>Downloading installer %p% complete</source>
-        <translation>Installationsprogramm runterladen</translation>
-    </message>
-    <message>
-        <source>unknown</source>
-        <translation>unbekannt</translation>
-    </message>
-</context>
-<context>
     <name>AddDraftBlock</name>
     <message>
         <source>add draft block %1</source>
@@ -171,13 +20,6 @@
     <message>
         <source>Add item to group</source>
         <translation>Objekt zur Gruppe hinzufügen</translation>
-    </message>
-</context>
-<context>
-    <name>AddImage</name>
-    <message>
-        <source>add image</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -222,140 +64,6 @@
     <message>
         <source>Piece:</source>
         <translation>Schnittteil:</translation>
-    </message>
-</context>
-<context>
-    <name>Application2D</name>
-    <message>
-        <source>Error parsing file. Program will be terminated.</source>
-        <translation>Fehler beim Verarbeiten der Datei. Das Programm wird geschlossen.</translation>
-    </message>
-    <message>
-        <source>Error bad id. Program will be terminated.</source>
-        <translation>Fehler - unbekannte ID. Das Programm wird geschlossen.</translation>
-    </message>
-    <message>
-        <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation>Fehler - Wert kann nicht konvertiert werden. Das Programm wird geschlossen.</translation>
-    </message>
-    <message>
-        <source>Error empty parameter. Program will be terminated.</source>
-        <translation>Fehler - leerer Parameter. Das Programm wird geschlossen.</translation>
-    </message>
-    <message>
-        <source>Error wrong id. Program will be terminated.</source>
-        <translation>Fehler - falsche ID. Das Programm wird geschlossen.</translation>
-    </message>
-    <message>
-        <source>Something&apos;s wrong!!</source>
-        <translation>Etwas ist schiefgegangen!</translation>
-    </message>
-    <message>
-        <source>Parser error: %1. Program will be terminated.</source>
-        <translation>Auswertungsfehler: %1. Programm wird beendet.</translation>
-    </message>
-    <message>
-        <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation>Ausnahme ausgelöst: %1. Programm wird beendet.</translation>
-    </message>
-</context>
-<context>
-    <name>ApplicationME</name>
-    <message>
-        <source>Error parsing file. Program will be terminated.</source>
-        <translation>Fehler beim Parsen der Datei. Das Programm wird beendet.</translation>
-    </message>
-    <message>
-        <source>Error bad id. Program will be terminated.</source>
-        <translation>Fehler - ungültige ID. Das Programm wird beendet.</translation>
-    </message>
-    <message>
-        <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation>Fehler - Wert kann nicht konvertiert werden. Das Programm wird beendet.</translation>
-    </message>
-    <message>
-        <source>Error empty parameter. Program will be terminated.</source>
-        <translation>Fehler - leerer Parameter. Das Programm wird beendet.</translation>
-    </message>
-    <message>
-        <source>Error wrong id. Program will be terminated.</source>
-        <translation>Fehler - falsche ID. Das Programm wird beendet.</translation>
-    </message>
-    <message>
-        <source>Something&apos;s wrong!!</source>
-        <translation>Etwas ist schiefgegangen!</translation>
-    </message>
-    <message>
-        <source>Parser error: %1. Program will be terminated.</source>
-        <translation>Parser Fehler: %1. Programm wird beendet.</translation>
-    </message>
-    <message>
-        <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation>Ausnahme ausgelöst: %1. Programm wird beendet.</translation>
-    </message>
-    <message>
-        <source>Seamly2D&apos;s measurements editor.</source>
-        <translation>Seamly2Ds Maßsatzeditor.</translation>
-    </message>
-    <message>
-        <source>The measurement file.</source>
-        <translation>Die Maßsatzdatei.</translation>
-    </message>
-    <message>
-        <source>The base height</source>
-        <translation>Die Basiskörperhöhe</translation>
-    </message>
-    <message>
-        <source>The base size</source>
-        <translation>Die Basisgröße</translation>
-    </message>
-    <message>
-        <source>Set pattern file unit: cm, mm, inch.</source>
-        <translation>Schnittmusterdatei Einheit festlegen: cm, mm, Zoll.</translation>
-    </message>
-    <message>
-        <source>The pattern unit</source>
-        <translation>Die Schnittmuster Einheit</translation>
-    </message>
-    <message>
-        <source>Invalid base size argument. Must be cm, mm or inch.</source>
-        <translation>Ungültige Basisgröße. Muss cm, mm oder Zoll sein .</translation>
-    </message>
-    <message>
-        <source>Can&apos;t begin to listen for incoming connections on name &apos;%1&apos;</source>
-        <translation>Es&apos; kann nicht begonnen werden, auf eingehende Verbindungen über den Namen zu hören&apos;%1&apos;</translation>
-    </message>
-    <message>
-        <source>Test mode doesn&apos;t support Opening several files.</source>
-        <translation>Der Test Modus unterstützt nicht das Öffnen mehrerer Dateien.</translation>
-    </message>
-    <message>
-        <source>Please, provide one input file.</source>
-        <translation>Bitte stellen Sie eine Eingabedatei bereit.</translation>
-    </message>
-    <message>
-        <source>Open with the base size. Valid values: %1cm.</source>
-        <translation>Mit der Basisgröße öffnen. Gültige Werte: %1cm.</translation>
-    </message>
-    <message>
-        <source>Invalid base height argument. Must be %1cm.</source>
-        <translation>Ungültiges Parameter für die Basiskörperhöhe. Muss %1cm sein.</translation>
-    </message>
-    <message>
-        <source>Invalid base size argument. Must be %1cm.</source>
-        <translation>Ungültiges Parameter für die Basisgröße. Muss in %1cm sein .</translation>
-    </message>
-    <message>
-        <source>Open with the base height. Valid values: %1cm.</source>
-        <translation>Mit der Basiskörperhöhe öffnen. Gültige Werte: %1cm.</translation>
-    </message>
-    <message>
-        <source>Use for unit testing. Run the program and open a file without showing the main window.</source>
-        <translation>Verwenden zum Einheiten testen. Führen Sie das Programm aus und öffnen Sie eine Datei, ohne das Hauptfenster anzuzeigen.</translation>
-    </message>
-    <message>
-        <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
-        <translation>Deaktivieren Sie die Skalierung mit hoher Auflösung. Rufen Sie diese Option auf, wenn es Probleme mit der Skalierung gibt (standardmäßig ist die Skalierung aktiviert). Alternativ können die %1 Umgebungsvariablen genutzt werden.</translation>
     </message>
 </context>
 <context>
@@ -503,6 +211,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>DialogAboutApp</name>
+    <message>
+        <source>About Seamly2D</source>
+        <translation>Über Seamly2D</translation>
+    </message>
+    <message>
+        <source>Seamly2D version</source>
+        <translation>Seamly2D-Version</translation>
+    </message>
+    <message>
+        <source>Contributors</source>
+        <translation>Mitwirkende</translation>
+    </message>
+    <message>
+        <source>Web site : %1</source>
+        <translation>Webseite: %1</translation>
+    </message>
+    <message>
+        <source>Cannot open your default browser</source>
+        <translation>Standardbrowser kann nicht geöffnet werden</translation>
+    </message>
+    <message>
+        <source>Build revision: %1</source>
+        <translation>Build Revision: %1</translation>
+    </message>
+    <message>
+        <source>Built on %1 at %2</source>
+        <translation>Erstellt von %1 auf %2</translation>
+    </message>
+    <message>
+        <source>Check For Updates</source>
+        <translation>Nach Updates suchen</translation>
+    </message>
+    <message>
+        <source>Downloading installer %p% complete</source>
+        <translation>Installationsprogramm runterladen</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>unbekannt</translation>
+    </message>
+</context>
+<context>
     <name>DialogAboutSeamlyMe</name>
     <message>
         <source>About SeamlyMe</source>
@@ -534,7 +285,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Built on %1 at %2</source>
-        <translation>Erstellt am %1 um %2</translation>
+        <translation>Erstellt von %1 auf %2</translation>
     </message>
     <message>
         <source>Web site : %1</source>
@@ -1164,26 +915,6 @@ p, li { white-space: pre-wrap; }
         <source>Name:</source>
         <translation>Bezeichnung:</translation>
     </message>
-    <message>
-        <source>Direction :</source>
-        <translation>Richtung :</translation>
-    </message>
-    <message>
-        <source>Forward (from start point)</source>
-        <translation>Vorwärts (vom Startpunkt)</translation>
-    </message>
-    <message>
-        <source>Backward (from end point)</source>
-        <translation>Rückwärts (vom Endpunkt)</translation>
-    </message>
-    <message>
-        <source>Attributes</source>
-        <translation>Eigenschaften</translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation>Farbe:</translation>
-    </message>
 </context>
 <context>
     <name>DialogCutSpline</name>
@@ -1239,26 +970,6 @@ p, li { white-space: pre-wrap; }
         <source>Name:</source>
         <translation>Bezeichnung:</translation>
     </message>
-    <message>
-        <source>Direction :</source>
-        <translation>Richtung :</translation>
-    </message>
-    <message>
-        <source>Forward (from start point)</source>
-        <translation>Vorwärts (vom Startpunkt)</translation>
-    </message>
-    <message>
-        <source>Backward (from end point)</source>
-        <translation>Rückwärts (vom Endpunkt)</translation>
-    </message>
-    <message>
-        <source>Attributes</source>
-        <translation>Eigenschaften</translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation>Farbe:</translation>
-    </message>
 </context>
 <context>
     <name>DialogCutSplinePath</name>
@@ -1313,26 +1024,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Name:</source>
         <translation>Bezeichnung:</translation>
-    </message>
-    <message>
-        <source>Direction :</source>
-        <translation>Richtung :</translation>
-    </message>
-    <message>
-        <source>Forward (from start point)</source>
-        <translation>Vorwärts (vom Startpunkt)</translation>
-    </message>
-    <message>
-        <source>Backward (from end point)</source>
-        <translation>Rückwärts (vom Endpunkt)</translation>
-    </message>
-    <message>
-        <source>Attributes</source>
-        <translation>Eigenschaften</translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation>Farbe:</translation>
     </message>
 </context>
 <context>
@@ -1632,11 +1323,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Eindeutiger Bezeichnung</translation>
+        <translation>Eindeutiger Name</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen Bezeichnung.</translation>
+        <translation>Wählen Sie einen eindeutigen namen.</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -1867,7 +1558,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source> Width:</source>
-        <translation> Breite:</translation>
+        <translation>Breite:</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -2123,7 +1814,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen Bezeichnung.</translation>
+        <translation>Wählen Sie einen eindeutigen namen.</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -2618,7 +2309,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogPointFromArcAndTangent</name>
     <message>
         <source>Select an arc</source>
-        <translation>Wähle einen Bogen</translation>
+        <translation>Wähle veinen Bogen</translation>
     </message>
     <message>
         <source>Tangent point:</source>
@@ -3367,11 +3058,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>1st axis point:</source>
-        <translation>Erster Achsenpunkt:</translation>
+        <translation>Erster achsenpunkt:</translation>
     </message>
     <message>
         <source>2nd axis point:</source>
-        <translation>Zweiter Achsenpunkt:</translation>
+        <translation>Zweiter achsenpunkt:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -3674,7 +3365,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source> Control Point Lengths</source>
-        <translation> Kontrollpunktlängen</translation>
+        <translation>Kontrollpunktlängen</translation>
     </message>
     <message>
         <source>Arc Radii</source>
@@ -4207,7 +3898,9 @@ Möchtest Du diesen downloaden?</translation>
         <source>Unable to open file
 %1
 for writing</source>
-        <translation>Date %1 kann nicht zum schreiben geöffnet werden</translation>
+        <translation>Datei kann nicht geöffnet werden
+%1
+zum schreiben</translation>
     </message>
     <message>
         <source>Unable to get exclusive access to file
@@ -4240,7 +3933,8 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Add a new group to the list</source>
-        <translation>Eine neue Gruppe der Liste zufügen</translation>
+        <translation>
+eine neue Gruppe der Liste zufügen</translation>
     </message>
     <message>
         <source>Delete active group from the list</source>
@@ -4340,7 +4034,6 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
         <translation>Spl_</translation>
     </message>
     <message>
@@ -4365,7 +4058,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation>SplPfad_</translation>
+        <translation>SplVerzeichnis_</translation>
     </message>
     <message>
         <source>%1 - Spline Fixed</source>
@@ -4568,7 +4261,6 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
         <translation>Spl_</translation>
     </message>
     <message>
@@ -4581,7 +4273,6 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Arc_</source>
-        <comment>Leave the _ symbol in translation</comment>
         <translation>Bogen_</translation>
     </message>
     <message>
@@ -4594,8 +4285,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>SplPath_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>SplPfad_</translation>
+        <translation>SplVerzeichnis_</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
@@ -4667,7 +4357,6 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>ElArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
         <translation>ElBogen_</translation>
     </message>
     <message>
@@ -4693,191 +4382,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Point Length and Angle from point %1</source>
         <translation>Punkt Länge und Winkel von Punkt %1</translation>
-    </message>
-</context>
-<context>
-    <name>ImageDialog</name>
-    <message>
-        <source>Image Properties</source>
-        <translation>Bild-Eigenschaften</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Auswahl</translation>
-    </message>
-    <message>
-        <source>Id:</source>
-        <translation>Id:</translation>
-    </message>
-    <message>
-        <source>Id</source>
-        <translation>Id</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Bezeichnung:</translation>
-    </message>
-    <message>
-        <source>Lock Image:</source>
-        <translation>Bild sperren:</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Geometrie</translation>
-    </message>
-    <message>
-        <source>Switch between px and pattern units</source>
-        <translation>Umschalten zwischen px- und Muster-Einheiten</translation>
-    </message>
-    <message>
-        <source>PX</source>
-        <translation>PX</translation>
-    </message>
-    <message>
-        <source>Unit:</source>
-        <translation>Einheit:</translation>
-    </message>
-    <message>
-        <source>X Position:</source>
-        <translation>X Position:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
-    </message>
-    <message>
-        <source>Y Position:</source>
-        <translation>Y Position:</translation>
-    </message>
-    <message>
-        <source>Lock aspect ratio</source>
-        <translation>Seitenverhältnis sperren</translation>
-    </message>
-    <message>
-        <source>Lock Aspect:</source>
-        <translation>Aspekt sperren:</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation>Breite:</translation>
-    </message>
-    <message>
-        <source>Height:</source>
-        <translation>Höhe:</translation>
-    </message>
-    <message>
-        <source>X Scale:</source>
-        <translation>X Skala:</translation>
-    </message>
-    <message>
-        <source>%</source>
-        <translation>%</translation>
-    </message>
-    <message>
-        <source>Y Scale:</source>
-        <translation>Y Skala:</translation>
-    </message>
-    <message>
-        <source>Rotation:</source>
-        <translation>Drehung:</translation>
-    </message>
-    <message>
-        <source>°</source>
-        <translation>°</translation>
-    </message>
-    <message>
-        <source>Attributes</source>
-        <translation>Eigenschaften</translation>
-    </message>
-    <message>
-        <source>Opacity:</source>
-        <translation>Opazität:</translation>
-    </message>
-</context>
-<context>
-    <name>ImageItem</name>
-    <message>
-        <source>Properties</source>
-        <translation>Eigenschaften</translation>
-    </message>
-    <message>
-        <source>Lock</source>
-        <translation>Sperre</translation>
-    </message>
-    <message>
-        <source>Order</source>
-        <translation>Bestellung</translation>
-    </message>
-    <message>
-        <source>Bring to top</source>
-        <translation>Nach oben bringen</translation>
-    </message>
-    <message>
-        <source>Move up</source>
-        <translation>Nachrücken</translation>
-    </message>
-    <message>
-        <source>Move down</source>
-        <translation>Nach unten gehen</translation>
-    </message>
-    <message>
-        <source>Send to bottom</source>
-        <translation>Nach unten senden</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Löschen</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Image (%7)&lt;/b&gt;: Size(%2%1, %3%1); Pos(%4%1, %5%1); Rot(%6°)%8</source>
-        <translation>&lt;b&gt;Bild (%7)&lt;/b&gt;: Size(%2%1, %3%1); Pos(%4%1, %5%1); Rot(%6°)%8</translation>
-    </message>
-    <message>
-        <source> - &lt;b&gt;Aspect ratio locked&lt;/b&gt;</source>
-        <translation> - &lt;b&gt;Seitenverhältnis gesperrt&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Move Origin</source>
-        <translation>Ursprung verschieben</translation>
-    </message>
-</context>
-<context>
-    <name>ImageTool</name>
-    <message>
-        <source>Import Image</source>
-        <translation>Bild importieren</translation>
-    </message>
-    <message>
-        <source>Could not load the image.</source>
-        <translation>Das Bild konnte nicht geladen werden.</translation>
-    </message>
-    <message>
-        <source>Could not read the image.</source>
-        <translation>Das Bild konnte nicht gelesen werden.</translation>
-    </message>
-    <message>
-        <source>File may be corrupted...</source>
-        <translation>Die Datei könnte beschädigt sein...</translation>
-    </message>
-    <message>
-        <source>Confirm deletion</source>
-        <translation>Löschvorgang bestätigen</translation>
-    </message>
-    <message>
-        <source>Do you really want to delete?</source>
-        <translation>Möchtest Du wirklich löschen?</translation>
-    </message>
-    <message>
-        <source>The image &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Loading image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>No image was selected...</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4968,30 +4472,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLICH DER GARANTIE FÜR DESIGN, GEBRAUCHSFÄHIGKEIT UND EIGNUNG FÜR EINEN BESTIMMTEN ZWECK zur Verfügung gestellt.</translation>
-    </message>
-    <message>
-        <source>Seamly2D is an application for computer-aided design of garment patterns.
-
-Seamly2D is a free (open source) software.
-
-All brand or product names are trademarks or registered trademarks of their respective holders.
-
-© 2017-2024 Seamly2D Project.
-
-Portions of this software © 2008-2024 The Qt Company Ltd.
-
-The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
-        <translation>Seamly2D ist eine Anwendung für den computergestützten Entwurf von Bekleidungsmustern.
-
-Seamly2D ist eine kostenlose (Open Source) Software.
-
-Alle Marken- oder Produktnamen sind Marken oder eingetragene Marken der jeweiligen Inhaber.
-
-© 2017-2024 Seamly2D Project.
-
-Teile dieser Software © 2008-2024 The Qt Company Ltd.
-
-Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLICH DER GARANTIE FÜR DESIGN, GEBRAUCHSFÄHIGKEIT UND EIGNUNG FÜR EINEN BESTIMMTEN ZWECK zur Verfügung gestellt.</translation>
     </message>
 </context>
 <context>
@@ -5266,9 +4746,9 @@ Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLIC
 	Two groups: big, small = 1;
 	Descending area = 2</source>
         <translation>
-	Drei Gruppen: groß, mittel, klein = 0
-	Zwei Gruppen: groß, klein = 1
-	Absteigende Fläche = 2</translation>
+⇥Drei Gruppen: groß, mittel, klein = 0
+⇥Zwei Gruppen: groß, klein = 1
+⇥Absteigende Fläche = 2</translation>
     </message>
     <message>
         <source>Layout options</source>
@@ -5367,6 +4847,105 @@ Apply settings anyway?</source>
     <message>
         <source>Dash Dot Dot</source>
         <translation>Strich Punkt Punkt</translation>
+    </message>
+</context>
+<context>
+    <name>MApplication</name>
+    <message>
+        <source>Error parsing file. Program will be terminated.</source>
+        <translation>Fehler beim Parsen der Datei. Das Programm wird beendet.</translation>
+    </message>
+    <message>
+        <source>Error bad id. Program will be terminated.</source>
+        <translation>Fehler - ungültige ID. Das Programm wird beendet.</translation>
+    </message>
+    <message>
+        <source>Error can&apos;t convert value. Program will be terminated.</source>
+        <translation>Fehler - Wert kann nicht konvertiert werden. Das Programm wird beendet.</translation>
+    </message>
+    <message>
+        <source>Error empty parameter. Program will be terminated.</source>
+        <translation>Fehler - leerer Parameter. Das Programm wird beendet.</translation>
+    </message>
+    <message>
+        <source>Error wrong id. Program will be terminated.</source>
+        <translation>Fehler - falsche ID. Das Programm wird beendet.</translation>
+    </message>
+    <message>
+        <source>Something&apos;s wrong!!</source>
+        <translation>Etwas ist schiefgegangen!</translation>
+    </message>
+    <message>
+        <source>Parser error: %1. Program will be terminated.</source>
+        <translation>Parser Fehler: %1. Programm wird beendet.</translation>
+    </message>
+    <message>
+        <source>Exception thrown: %1. Program will be terminated.</source>
+        <translation>Ausnahme ausgelöst: %1. Programm wird beendet.</translation>
+    </message>
+    <message>
+        <source>Seamly2D&apos;s measurements editor.</source>
+        <translation>Seamly2Ds Maßsatzeditor.</translation>
+    </message>
+    <message>
+        <source>The measurement file.</source>
+        <translation>Die Maßsatzdatei.</translation>
+    </message>
+    <message>
+        <source>The base height</source>
+        <translation>Die Basiskörperhöhe</translation>
+    </message>
+    <message>
+        <source>The base size</source>
+        <translation>Die Basisgröße</translation>
+    </message>
+    <message>
+        <source>Set pattern file unit: cm, mm, inch.</source>
+        <translation>Schnittmusterdatei Einheit festlegen: cm, mm, Zoll.</translation>
+    </message>
+    <message>
+        <source>The pattern unit</source>
+        <translation>Die Schnittmuster Einheit</translation>
+    </message>
+    <message>
+        <source>Invalid base size argument. Must be cm, mm or inch.</source>
+        <translation>Ungültige Basisgröße. Muss cm, mm oder Zoll sein .</translation>
+    </message>
+    <message>
+        <source>Can&apos;t begin to listen for incoming connections on name &apos;%1&apos;</source>
+        <translation>Es&apos; kann nicht begonnen werden, auf eingehende Verbindungen über den Namen zu hören&apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>Test mode doesn&apos;t support Opening several files.</source>
+        <translation>Der Test Modus unterstützt nicht das Öffnen mehrerer Dateien.</translation>
+    </message>
+    <message>
+        <source>Please, provide one input file.</source>
+        <translation>Bitte stellen Sie eine Eingabedatei bereit.</translation>
+    </message>
+    <message>
+        <source>Open with the base size. Valid values: %1cm.</source>
+        <translation>Mit der Basisgröße öffnen. Gültige Werte: %1cm.</translation>
+    </message>
+    <message>
+        <source>Invalid base height argument. Must be %1cm.</source>
+        <translation>Ungültiges Argument für die Basiskörperhöhe. Muss %1cm sein.</translation>
+    </message>
+    <message>
+        <source>Invalid base size argument. Must be %1cm.</source>
+        <translation>Ungültiges Argument für die Basisgröße. Muss in %1cm sein .</translation>
+    </message>
+    <message>
+        <source>Open with the base height. Valid values: %1cm.</source>
+        <translation>Mit der Basiskörperhöhe öffnen. Gültige Werte: %1cm.</translation>
+    </message>
+    <message>
+        <source>Use for unit testing. Run the program and open a file without showing the main window.</source>
+        <translation>Verwenden zum Einheiten testen. Führen Sie das Programm aus und öffnen Sie eine Datei, ohne das Hauptfenster anzuzeigen.</translation>
+    </message>
+    <message>
+        <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
+        <translation>Deaktivieren Sie die Skalierung mit hoher Auflösung. Rufen Sie diese Option auf, wenn es Probleme mit der Skalierung gibt (standardmäßig ist die Skalierung aktiviert). Alternativ können die %1 Umgebungsvariablen genutzt werden.</translation>
     </message>
 </context>
 <context>
@@ -5719,7 +5298,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Don&apos;t Save</source>
-        <translation>Nicht Speichern</translation>
+        <translation>Nicht speichern</translation>
     </message>
     <message>
         <source>Locking file</source>
@@ -5804,6 +5383,10 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>read only</source>
         <translation>Nur lesen</translation>
+    </message>
+    <message>
+        <source>Contains information about increments and internal variables</source>
+        <translation>Enthält Informationen über Schritte und interne Variablen</translation>
     </message>
     <message>
         <source>Load Individual</source>
@@ -5919,7 +5502,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&amp;Operations</source>
-        <translation>&amp;Abläufe</translation>
+        <translation>Abläufe</translation>
     </message>
     <message>
         <source>Piece</source>
@@ -6174,14 +5757,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>A, L</translation>
     </message>
     <message>
-        <source>Tools for inserting or modifying images.</source>
-        <translation>Werkzeuge zum Einfügen oder Ändern von Bildern.</translation>
-    </message>
-    <message>
-        <source>Point on Curve (O, C)</source>
-        <translation>Punkt auf Kurve (O, C)</translation>
-    </message>
-    <message>
         <source>About Seamly2D</source>
         <translation>Über Seamly2D</translation>
     </message>
@@ -6230,6 +5805,10 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Passen</translation>
     </message>
     <message>
+        <source>Zoom to Fit All(Ctrl+=)</source>
+        <translation>Zoom um alle zu sehen (Strg+=)</translation>
+    </message>
+    <message>
         <source>Report bug...</source>
         <translation>Programmfehler melden...</translation>
     </message>
@@ -6255,7 +5834,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Toggle Control Points and Curve Direction (V, C)</source>
-        <translation>Kontrollpunkte und Kurvenrichtung umschalten (V, C)</translation>
+        <translation>Kontrollpunkte und Kruvenrichtung umschalten (V, C)</translation>
     </message>
     <message>
         <source>Load multisize</source>
@@ -6286,16 +5865,40 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Zoom zum Vorherigen (Strg+Links)</translation>
     </message>
     <message>
+        <source>Ctrl+Left</source>
+        <translation>Strg+Links</translation>
+    </message>
+    <message>
         <source>Area</source>
         <translation>Gebiet</translation>
+    </message>
+    <message>
+        <source>Ctrl+A</source>
+        <translation>Strg+A</translation>
     </message>
     <message>
         <source>Pan</source>
         <translation>Pan</translation>
     </message>
     <message>
+        <source>Z, P</source>
+        <translation>Z, P</translation>
+    </message>
+    <message>
+        <source>Zoom 1:1</source>
+        <translation>Zoom 1:1</translation>
+    </message>
+    <message>
+        <source>1:1</source>
+        <translation>1:1</translation>
+    </message>
+    <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
         <translation>Zoom auf 100 Prozent (Strg+0)</translation>
+    </message>
+    <message>
+        <source>Ctrl+0</source>
+        <translation>Strg+0</translation>
     </message>
     <message>
         <source>Point Tools</source>
@@ -6400,6 +6003,10 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Point Name Text</source>
         <translation>Punktbezeichnung Text</translation>
+    </message>
+    <message>
+        <source>Toggle Point Name Text (P)</source>
+        <translation>Umschalten Punkt Bezeichnung Text (P)</translation>
     </message>
     <message>
         <source>V, P</source>
@@ -6566,10 +6173,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>&lt;b&gt;Werkzeug::Operationenen Abnäher korrigieren:&lt;/b&gt; wähle den ersten Basispunkt</translation>
     </message>
     <message>
-        <source>Could not load the image.</source>
-        <translation>Das Bild konnte nicht geladen werden.</translation>
-    </message>
-    <message>
         <source>Draft Block:</source>
         <translation>Entwurfsblock:</translation>
     </message>
@@ -6596,10 +6199,6 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Export Pattern Pieces</source>
         <translation>Schnittteile exportieren</translation>
-    </message>
-    <message>
-        <source>Import Image</source>
-        <translation>Bild importieren</translation>
     </message>
     <message>
         <source>Piece mode</source>
@@ -6826,10 +6425,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Unterverzeichnis hinzufügen  (I, P)</translation>
     </message>
     <message>
-        <source>Import Image (Alt + I)</source>
-        <translation>Bild importieren</translation>
-    </message>
-    <message>
         <source>Export Pieces (E, P)</source>
         <translation>Schnittteile exportieren (E, P)</translation>
     </message>
@@ -6840,10 +6435,6 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Export Layout (E, L)</source>
         <translation>Layout exportieren (E, L)</translation>
-    </message>
-    <message>
-        <source>Contains information about custom and internal variables</source>
-        <translation>Enthält Informationen über benutzerdefinierte und interne Variablen</translation>
     </message>
     <message>
         <source>Alt+M</source>
@@ -6940,6 +6531,10 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Point on Curve</source>
         <translation>Punkt auf Kurve</translation>
+    </message>
+    <message>
+        <source>Point on Curve (A, C)</source>
+        <translation>Punkt auf Kurve  (O, C)</translation>
     </message>
     <message>
         <source>O, C</source>
@@ -7086,32 +6681,12 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Erstelle ein neues Drucklayout (N, L)</translation>
     </message>
     <message>
-        <source>Toggle Point Name Text (V, P)</source>
-        <translation>Punktnamen-Text umschalten (V, P)</translation>
-    </message>
-    <message>
-        <source>Images tools</source>
-        <translation>Bilder-Tools</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Löschen</translation>
-    </message>
-    <message>
-        <source>Align</source>
-        <translation>Ausrichten</translation>
-    </message>
-    <message>
-        <source>Lock</source>
-        <translation>Sperre</translation>
-    </message>
-    <message>
         <source>Zoom to point (Ctrl + Alt + P)</source>
         <translation>Zoom zum Punkt (Strg + Alt + P)</translation>
     </message>
     <message>
-        <source>Alt+I</source>
-        <translation>Alt+I</translation>
+        <source>Ctrl+Alt+P</source>
+        <translation>Strg+Alt+P</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -7119,7 +6694,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Midpoint on Line&lt;/b&gt;: Select first point</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Mittelpunkt auf der Linie :&lt;/b&gt; Wähle den ersten Punkt</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt -Mittelpunkt auf der Linie :&lt;/b&gt; Wähle den ersten Punkt</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length and Angle&lt;/b&gt;: Select point</source>
@@ -7238,10 +6813,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>&lt;b&gt;Werkzeug:l::Bogen - Elliptisch:&lt;/b&gt; Wähle den Mittelpunkt des Ellipsenbogens</translation>
     </message>
     <message>
-        <source>Images</source>
-        <translation>Bilder</translation>
-    </message>
-    <message>
         <source>Zoom to Point</source>
         <translation>Zoom zum Punkt</translation>
     </message>
@@ -7325,28 +6896,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Werkzeug::Operationen - Drehung:&lt;/b&gt; Wähle ein oder mehrere Opbjekte aus - Halten &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl, mit &lt;b&gt;ENTER&lt;/b&gt; die Auswahl bestätigen</translation>
     </message>
-    <message>
-        <source>Base name used for new points.
-Press enter to temporarily add it to the list.</source>
-        <translation>Basisname, der für neue Punkte verwendet wird.
-Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation>Standard</translation>
-    </message>
-    <message>
-        <source>Zoom to Fit All(Ctrl+9)</source>
-        <translation>Zoom um alle zu sehen (Strg+9)</translation>
-    </message>
-    <message>
-        <source>Zoom 100%</source>
-        <translation>Zoom 100%</translation>
-    </message>
-    <message>
-        <source>100%</source>
-        <translation>100%</translation>
-    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -7405,6 +6954,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Can&apos;t create a path</source>
         <translation>Ein Verzeichnis kann nicht erstellt werden</translation>
+    </message>
+    <message>
+        <source>Pattern</source>
+        <translation>Schnittmuster</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
@@ -7621,7 +7174,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Men &amp; Tailoring</source>
         <comment>Measurement section</comment>
-        <translation>Herren &amp; Schneiderei</translation>
+        <translation>Herren &amp; Maßanfertigung</translation>
     </message>
     <message>
         <source>Historical &amp; Specialty</source>
@@ -8235,11 +7788,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source> Width:</source>
-        <translation> Breite:</translation>
-    </message>
-    <message>
-        <source>  °</source>
-        <translation>  °</translation>
+        <translation>Breite:</translation>
     </message>
     <message>
         <source>Reset notch length to default.</source>
@@ -8889,11 +8438,15 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>Sprache der Benutzeroberfläche:</translation>
+        <translation>GUI-Sprache:</translation>
     </message>
     <message>
         <source>Default unit:</source>
         <translation>Standard Maßeinheit:</translation>
+    </message>
+    <message>
+        <source>Label language:</source>
+        <translation>Etiketten Sprache:</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
@@ -8956,16 +8509,8 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Dateiverwaltung</translation>
     </message>
     <message>
-        <source>Backups</source>
-        <translation>Datensicherungen</translation>
-    </message>
-    <message>
-        <source>Create backup file when converting</source>
-        <translation>Beim Konvertieren eine Sicherungsdatei erstellen</translation>
-    </message>
-    <message>
         <source>Enable Autosave</source>
-        <translation>Automatisches Speichern ausschalten</translation>
+        <translation>Automatisches Speichern aktivieren</translation>
     </message>
     <message>
         <source> min</source>
@@ -9110,23 +8655,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Email format is not valid.</source>
         <translation>Das E-Mail-Format ist nicht gültig.</translation>
-    </message>
-    <message>
-        <source>Startup</source>
-        <translatorcomment>Startup</translatorcomment>
-        <translation>Startup</translation>
-    </message>
-    <message>
-        <source>Welcome</source>
-        <translation>Willkommen</translation>
-    </message>
-    <message>
-        <source>Do not show welcome screen</source>
-        <translation>Willkommensbildschirm nicht anzeigen</translation>
-    </message>
-    <message>
-        <source>Point name text:</source>
-        <translation>Punktbezeichnung Text:</translation>
     </message>
 </context>
 <context>
@@ -9401,7 +8929,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source> px</source>
-        <translation> px</translation>
+        <translation>Pixel</translation>
     </message>
     <message>
         <source>Duration:</source>
@@ -9476,58 +9004,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Quality:</source>
         <translation>Qualität:</translation>
     </message>
-    <message>
-        <source>Pen</source>
-        <translation>Stift</translation>
-    </message>
-    <message>
-        <source>Always use current pen</source>
-        <translation>Verwenden Sie immer den aktuellen Stift</translation>
-    </message>
-    <message>
-        <source>Dialogs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open on second monitor if available</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Position</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Top left</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Top right</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Center</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom left</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom right</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Offset</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>X Offset:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Y Offset:</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -9562,14 +9038,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>My Multisize Measurements</source>
         <translation>Meine Mehrgrößen Maße</translation>
-    </message>
-    <message>
-        <source>My Images</source>
-        <translation>Meine Bilder</translation>
-    </message>
-    <message>
-        <source>My Backups</source>
-        <translation>Meine Datensicherungen</translation>
     </message>
     <message>
         <source>My Patterns</source>
@@ -9624,7 +9092,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>Pattern Piece</source>
-        <translation>Schnittteil</translation>
+        <translation>&amp;Schnittteil</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -9790,14 +9258,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Hide Seam Line</source>
         <translation>Nahtlinie ausblenden</translation>
     </message>
-    <message>
-        <source>Arrow length:</source>
-        <translation>Länge der Pfeile:</translation>
-    </message>
-    <message>
-        <source> px</source>
-        <translation> px</translation>
-    </message>
 </context>
 <context>
     <name>QCoreApplication</name>
@@ -9930,38 +9390,18 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>%1</source>
         <translation>%1</translation>
     </message>
-    <message>
-        <source>Forward (from start point)</source>
-        <translation>Vorwärts (vom Startpunkt)</translation>
-    </message>
-    <message>
-        <source>Backward (from end point)</source>
-        <translation>Rückwärts (vom Endpunkt)</translation>
-    </message>
-    <message>
-        <source>Images</source>
-        <translation type="unfinished">Bilder</translation>
-    </message>
-    <message>
-        <source>Open Image File</source>
-        <translation type="unfinished">Bilddatei öffnen</translation>
-    </message>
-    <message>
-        <source>Pattern</source>
-        <translation>Schnittmuster</translation>
-    </message>
 </context>
 <context>
     <name>QmuParser</name>
     <message>
         <source>too few arguments for function sum.</source>
         <comment>parser error message</comment>
-        <translation>Zu wenige Parameter für Summenfunktion.</translation>
+        <translation>Zu wenige Argumente für Summenfunktion.</translation>
     </message>
     <message>
         <source>too few arguments for function min.</source>
         <comment>parser error message</comment>
-        <translation>Zu wenige Parameter für Funktion min.</translation>
+        <translation>Zu wenige Argumente für Funktion min.</translation>
     </message>
 </context>
 <context>
@@ -10162,21 +9602,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
 </context>
 <context>
-    <name>ResizeHandlesItem</name>
-    <message>
-        <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center - &lt;b&gt; Aspect ratio locked &lt;/b&gt;</source>
-        <translation>Drücken Sie &lt;b&gt;CTRL&lt;/b&gt; zum Skalieren um die Mitte herum - &lt;b&gt; Seitenverhältnis gesperrt &lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center, &lt;b&gt;SHIFT&lt;/b&gt; to scale uniformly.</source>
-        <translation>Drücken Sie &lt;b&gt;CTRL&lt;/b&gt;, um um die Mitte herum zu skalieren, &lt;b&gt;SHIFT&lt;/b&gt;, um gleichmäßig zu skalieren.</translation>
-    </message>
-</context>
-<context>
     <name>SavePieceOptions</name>
     <message>
         <source>save detail option</source>
-        <translation>Detailoption Speichern</translation>
+        <translation>Detailoption speichern</translation>
     </message>
 </context>
 <context>
@@ -10201,7 +9630,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>Sprache der Benutzeroberfläche:</translation>
+        <translation>GUI-Sprache:</translation>
     </message>
     <message>
         <source>Pattern making system</source>
@@ -10351,7 +9780,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>Sprache der Benutzeroberfläche:</translation>
+        <translation>GUI-Sprache:</translation>
     </message>
     <message>
         <source>Sets the language used for SeamlyMe.</source>
@@ -10386,80 +9815,6 @@ When unchecked the period is used.</source>
     <message>
         <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SeamlyWelcomeDialog</name>
-    <message>
-        <source>Welcome</source>
-        <translation>Willkommen</translation>
-    </message>
-    <message>
-        <source>Welcome to Seamly2D</source>
-        <translation>Willkommen bei Seamly2D</translation>
-    </message>
-    <message>
-        <source>Units:</source>
-        <translation>Einheiten:</translation>
-    </message>
-    <message>
-        <source>Sets the default units for a new measurement file.</source>
-        <translation>Legt die Standardeinheiten für eine neue Messdatei fest.</translation>
-    </message>
-    <message>
-        <source>Decimal separator:</source>
-        <translation>Dezimaltrennzeichen:</translation>
-    </message>
-    <message>
-        <source>GUI language:</source>
-        <translation>Sprache der Benutzeroberfläche:</translation>
-    </message>
-    <message>
-        <source>Do not show again</source>
-        <translation>Nicht mehr anzeigen</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Gebietsschema des Benutzers</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation>Zentimeter</translation>
-    </message>
-    <message>
-        <source>Millimeters</source>
-        <translation>Millimeter</translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation>Zoll</translation>
-    </message>
-    <message>
-        <source>Sets the language used for Seamly2D.</source>
-        <translation>Legt die für Seamly2D verwendete Sprache fest.</translation>
-    </message>
-    <message>
-        <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
-        <translation>Bitte wählen Sie Ihre bevorzugten Einheiten, das Dezimaltrennzeichen, die Sprache und den Auswahlton. (Sie können diese Angaben später ändern.)</translation>
-    </message>
-    <message>
-        <source>Sound:</source>
-        <translation>Ton:</translation>
-    </message>
-    <message>
-        <source>Sets the node selection click  sound.</source>
-        <translation>Legt den Klickton für die Knotenauswahl fest.</translation>
-    </message>
-    <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>When checked the Welcome window will not be displayed.
-You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10625,6 +9980,10 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Strg+-</translation>
     </message>
     <message>
+        <source>Zoom 1:1</source>
+        <translation>Zoom 1:1</translation>
+    </message>
+    <message>
         <source>Ctrl+0</source>
         <translation>Strg+0</translation>
     </message>
@@ -10639,6 +9998,10 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Fit All</source>
         <translation>Alles passend</translation>
+    </message>
+    <message>
+        <source>Ctrl+=</source>
+        <translation>Strg+=</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -10669,8 +10032,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Pan</translation>
     </message>
     <message>
+        <source>Z, P</source>
+        <translation>Z, P</translation>
+    </message>
+    <message>
         <source>Show Name Text</source>
         <translation>Namenstext Anzeigen</translation>
+    </message>
+    <message>
+        <source>V, P</source>
+        <translation>V, P</translation>
     </message>
     <message>
         <source>Increase Text Size</source>
@@ -10690,31 +10061,55 @@ You can change this setting in the Seamly2D preferences.</source>
     </message>
     <message>
         <source>Use Tool Color</source>
-        <translation>Benutzen Sie das Farbwerkzeug</translation>
+        <translation>Benutzen Sie das Farb Werkzeug</translation>
     </message>
     <message>
         <source>Wireframe</source>
         <translation>Wireframe</translation>
     </message>
     <message>
+        <source>V, W</source>
+        <translation>V, W</translation>
+    </message>
+    <message>
         <source>Curve Control Points</source>
         <translation>Kurven Kontrollpunkte</translation>
+    </message>
+    <message>
+        <source>V, C</source>
+        <translation>V, C</translation>
     </message>
     <message>
         <source>Axis Origin</source>
         <translation>Ausgangsachse</translation>
     </message>
     <message>
+        <source>V, A</source>
+        <translation>V, A</translation>
+    </message>
+    <message>
         <source>Seam Allowance</source>
         <translation>Nahtzugabe</translation>
+    </message>
+    <message>
+        <source>V, S</source>
+        <translation>V, S</translation>
     </message>
     <message>
         <source>Grainlines</source>
         <translation>Fadenlauf</translation>
     </message>
     <message>
+        <source>V, G</source>
+        <translation>V, G</translation>
+    </message>
+    <message>
         <source>Labels</source>
         <translation>Etiketten</translation>
+    </message>
+    <message>
+        <source>V, L</source>
+        <translation>V, L</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -10761,6 +10156,10 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Entwurfsblock umbenennen</translation>
     </message>
     <message>
+        <source>F2</source>
+        <translation>F2</translation>
+    </message>
+    <message>
         <source>Point</source>
         <translation>Punkt</translation>
     </message>
@@ -10769,40 +10168,80 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Länge und Winkel</translation>
     </message>
     <message>
+        <source>L, A</source>
+        <translation>L, A</translation>
+    </message>
+    <message>
         <source>On Line</source>
         <translation>Auf Linie</translation>
+    </message>
+    <message>
+        <source>O, L</source>
+        <translation>O, L</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
         <translation>Auf Senkrechter</translation>
     </message>
     <message>
+        <source>O, P</source>
+        <translation>O, P</translation>
+    </message>
+    <message>
         <source>On Bisector</source>
         <translation>Auf Winkelhalbierender</translation>
+    </message>
+    <message>
+        <source>O, B</source>
+        <translation>O, B</translation>
     </message>
     <message>
         <source>Length to Line</source>
         <translation>Länge auf einer Linie</translation>
     </message>
     <message>
+        <source>P, S</source>
+        <translation>P, S</translation>
+    </message>
+    <message>
         <source>Intersect Arc and Line</source>
         <translation>Schneidet Bogen und Linie</translation>
+    </message>
+    <message>
+        <source>A, L</source>
+        <translation>A, L</translation>
     </message>
     <message>
         <source>Intersect Axis and Triangle</source>
         <translation>Schneidet Achse und Dreieck</translation>
     </message>
     <message>
+        <source>X, T</source>
+        <translation>X, T</translation>
+    </message>
+    <message>
         <source>Intersect XY</source>
         <translation>Schneidet XY</translation>
+    </message>
+    <message>
+        <source>X, Y</source>
+        <translation>X, Y</translation>
     </message>
     <message>
         <source>Intersect Line and Perpendicular</source>
         <translation>Schneidet Linie und Senkrechte</translation>
     </message>
     <message>
+        <source>L, P</source>
+        <translation>L, P</translation>
+    </message>
+    <message>
         <source>Intersect Line and Axis</source>
         <translation>Schneidet Linie und Achse</translation>
+    </message>
+    <message>
+        <source>L, X</source>
+        <translation>L, X</translation>
     </message>
     <message>
         <source>Midpoint On Line</source>
@@ -10823,6 +10262,10 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Point - Intersect Lines</source>
         <translation>Punkt - Schneidet Linien</translation>
+    </message>
+    <message>
+        <source>I, L</source>
+        <translation>I, L</translation>
     </message>
     <message>
         <source>Curves</source>
@@ -10865,16 +10308,32 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Punkt - Auf Kurve</translation>
     </message>
     <message>
+        <source>O, C</source>
+        <translation>O, C</translation>
+    </message>
+    <message>
         <source>Point - On Spline	</source>
         <translation>Punkt - Auf Spline	</translation>
+    </message>
+    <message>
+        <source>O, S</source>
+        <translation>O, S</translation>
     </message>
     <message>
         <source>Point - Intersect Curves</source>
         <translation>Punkt - Schneidet Kurven</translation>
     </message>
     <message>
+        <source>I, C</source>
+        <translation>I, C</translation>
+    </message>
+    <message>
         <source>Point - Intersect Curve and Axis</source>
         <translation>Punkt - Schneidet Kurve und Achse</translation>
+    </message>
+    <message>
+        <source>C, X</source>
+        <translation>C, X</translation>
     </message>
     <message>
         <source>Arcs</source>
@@ -10901,12 +10360,24 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Punkt - Auf einem Bogen</translation>
     </message>
     <message>
+        <source>O, A</source>
+        <translation>O, A</translation>
+    </message>
+    <message>
         <source>Point - Intersect Arc and Axis</source>
         <translation>Punkt - Schneidet Bogen und Achse</translation>
     </message>
     <message>
+        <source>A, X</source>
+        <translation>A, X</translation>
+    </message>
+    <message>
         <source>Point - Intersect Arcs</source>
         <translation>Punkt - Schneidet Bögen</translation>
+    </message>
+    <message>
+        <source>I, A</source>
+        <translation>I, A</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
@@ -10921,8 +10392,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Punkt - Schneidet Kreis und Tangente</translation>
     </message>
     <message>
+        <source>C, T</source>
+        <translation>C, T</translation>
+    </message>
+    <message>
         <source>Point - Intersect Arc and Tangent</source>
         <translation>Punkt - Schneidet Bogen und Tangente</translation>
+    </message>
+    <message>
+        <source>A, T</source>
+        <translation>A, T</translation>
     </message>
     <message>
         <source>Elliptical Arc</source>
@@ -10941,16 +10420,32 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Objekte zur Gruppe hinzufügen</translation>
     </message>
     <message>
+        <source>G</source>
+        <translation>G</translation>
+    </message>
+    <message>
         <source>Rotation</source>
         <translation>Drehung</translation>
+    </message>
+    <message>
+        <source>R</source>
+        <translation>R</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
         <translation>Spiegeln an einer Linie</translation>
     </message>
     <message>
+        <source>M, L</source>
+        <translation>M, L</translation>
+    </message>
+    <message>
         <source>Mirror by Axis</source>
         <translation>Spiegeln an einer Achse</translation>
+    </message>
+    <message>
+        <source>M, A</source>
+        <translation>M, A</translation>
     </message>
     <message>
         <source>Move</source>
@@ -10965,20 +10460,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Abnäherlänge ausgleichen</translation>
     </message>
     <message>
+        <source>T, D</source>
+        <translation>T, D,</translation>
+    </message>
+    <message>
         <source>Export Draft Blocks</source>
         <translation>Exportiere Entwurfsblöcke</translation>
     </message>
     <message>
-        <source>Images</source>
-        <translation>Bilder</translation>
-    </message>
-    <message>
-        <source>Import Image</source>
-        <translation>Bild importieren</translation>
-    </message>
-    <message>
-        <source>Alt + I</source>
-        <translation>Alt + I</translation>
+        <source>E, D</source>
+        <translation>E, D</translation>
     </message>
     <message>
         <source>Pattern Piece</source>
@@ -10989,16 +10480,36 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Neues Schnittteil</translation>
     </message>
     <message>
+        <source>N, P</source>
+        <translation>N, P</translation>
+    </message>
+    <message>
         <source>Anchor Point</source>
         <translation>Anker Punkt</translation>
+    </message>
+    <message>
+        <source>A, P</source>
+        <translation>A, P</translation>
     </message>
     <message>
         <source>Internal Path</source>
         <translation>Unterverzeichnis</translation>
     </message>
     <message>
+        <source>I, P</source>
+        <translation>I, P</translation>
+    </message>
+    <message>
+        <source>I, N</source>
+        <translation>I, N</translation>
+    </message>
+    <message>
         <source>Edit Properties</source>
         <translation>Eigenschaften bearbeiten</translation>
+    </message>
+    <message>
+        <source>P</source>
+        <translation>P</translation>
     </message>
     <message>
         <source>Toggle Lock</source>
@@ -11013,8 +10524,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>In das Layout aufnehmen</translation>
     </message>
     <message>
+        <source>I</source>
+        <translation>I</translation>
+    </message>
+    <message>
         <source>Forbid Flipping</source>
         <translation>Drehen Ausschließen</translation>
+    </message>
+    <message>
+        <source>F</source>
+        <translation>F</translation>
     </message>
     <message>
         <source>Raise To Top</source>
@@ -11053,8 +10572,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Teile zusammenfügen</translation>
     </message>
     <message>
+        <source>U</source>
+        <translation>U</translation>
+    </message>
+    <message>
         <source>Export Pieces</source>
         <translation>Schnitteile Exportieren</translation>
+    </message>
+    <message>
+        <source>E, P</source>
+        <translation>E, P</translation>
     </message>
     <message>
         <source>Layout</source>
@@ -11065,8 +10592,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Neue Layout</translation>
     </message>
     <message>
+        <source>N, L</source>
+        <translation>N, L</translation>
+    </message>
+    <message>
         <source>Export Layout</source>
         <translation>Layout Exportieren</translation>
+    </message>
+    <message>
+        <source>E, L</source>
+        <translation>E, L</translation>
     </message>
     <message>
         <source>Last Tool</source>
@@ -11113,8 +10648,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Tastaturkurzbefehle</translation>
     </message>
     <message>
+        <source>K</source>
+        <translation>K</translation>
+    </message>
+    <message>
         <source>Shift+P</source>
         <translation>Umschalt+P</translation>
+    </message>
+    <message>
+        <source>T</source>
+        <translation>T</translation>
     </message>
     <message>
         <source>Export PDF</source>
@@ -11127,14 +10670,6 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Seamly2D Shortcuts</source>
         <translation>Seamly2D Verknüpfungen</translation>
-    </message>
-    <message>
-        <source>Zoom 100%</source>
-        <translation>Zoom 100%</translation>
-    </message>
-    <message>
-        <source>Ctrl+9</source>
-        <translation>Strg+9</translation>
     </message>
 </context>
 <context>
@@ -11353,7 +10888,7 @@ You can change this setting in the Seamly2D preferences.</source>
     </message>
     <message>
         <source>Open individual ...</source>
-        <translation>Individuelle öffnen...</translation>
+        <translation>Individuelle ...</translation>
     </message>
     <message>
         <source>Save</source>
@@ -11606,7 +11141,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Don&apos;t Save</source>
-        <translation>Nicht Speichern</translation>
+        <translation>Nicht speichern</translation>
     </message>
     <message>
         <source>Locking file</source>
@@ -11910,7 +11445,6 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Line_</source>
-        <comment>Leave the _ symbol in translation</comment>
         <translation>Linie_</translation>
     </message>
 </context>
@@ -11923,6 +11457,10 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do you really want to unite details?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sollen die Details wirklich vereinigt werden?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Retain original pieces</source>
+        <translation>Die Original Schnittteile zurückbehalten</translation>
     </message>
     <message>
         <source>Select the first point</source>
@@ -12100,7 +11638,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Do you really want to delete?</source>
-        <translation>Möchtest Du wirklich löschen?</translation>
+        <translation>Möchten sie wirklich löschen?</translation>
     </message>
     <message>
         <source>Edit wrong formula</source>
@@ -12132,7 +11670,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Light Salmon</source>
-        <translation>Helles Lachsrosa</translation>
+        <translation>Hell Lachsrosa</translation>
     </message>
     <message>
         <source>Goldenrod</source>
@@ -12314,12 +11852,47 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Dark Khaki</source>
-        <translation>Dunkles Khaki</translation>
+        <translation>Dunkelkhaki</translation>
     </message>
     <message>
         <source>Tan</source>
         <translatorcomment>oder auch Gelbbraun</translatorcomment>
         <translation>Hellbraun</translation>
+    </message>
+</context>
+<context>
+    <name>VApplication</name>
+    <message>
+        <source>Error parsing file. Program will be terminated.</source>
+        <translation>Fehler beim Verarbeiten der Datei. Das Programm wird geschlossen.</translation>
+    </message>
+    <message>
+        <source>Error bad id. Program will be terminated.</source>
+        <translation>Fehler - unbekannte ID. Das Programm wird geschlossen.</translation>
+    </message>
+    <message>
+        <source>Error can&apos;t convert value. Program will be terminated.</source>
+        <translation>Fehler - Wert kann nicht konvertiert werden. Das Programm wird geschlossen.</translation>
+    </message>
+    <message>
+        <source>Error empty parameter. Program will be terminated.</source>
+        <translation>Fehler - leerer Parameter. Das Programm wird geschlossen.</translation>
+    </message>
+    <message>
+        <source>Error wrong id. Program will be terminated.</source>
+        <translation>Fehler - falsche ID. Das Programm wird geschlossen.</translation>
+    </message>
+    <message>
+        <source>Something&apos;s wrong!!</source>
+        <translation>Etwas ist schiefgegangen!</translation>
+    </message>
+    <message>
+        <source>Parser error: %1. Program will be terminated.</source>
+        <translation>Auswertungsfehler: %1. Programm wird beendet.</translation>
+    </message>
+    <message>
+        <source>Exception thrown: %1. Program will be terminated.</source>
+        <translation>Ausnahme ausgelöst: %1. Programm wird beendet.</translation>
     </message>
 </context>
 <context>
@@ -12394,7 +11967,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Unsupported layout units.</source>
-        <translation>Nicht unterstützte Layouteinheiten.</translation>
+        <translation>Nicht unterstützte Layout-Größe.</translation>
     </message>
     <message>
         <source>Export options can be used with single input file only.</source>
@@ -12569,31 +12142,23 @@ wie gewohnt in SeamlyME laden können.
     <name>VCommonSettings</name>
     <message>
         <source>measurements</source>
-        <translation>Maße</translation>
+        <translation>maße</translation>
     </message>
     <message>
         <source>individual</source>
-        <translation>Individuell</translation>
+        <translation>individuell</translation>
     </message>
     <message>
         <source>multisize</source>
-        <translation>Mehrgröße</translation>
+        <translation>mehrgröße</translation>
     </message>
     <message>
         <source>templates</source>
-        <translation>Vorlagen</translation>
-    </message>
-    <message>
-        <source>images</source>
-        <translation>Bilder</translation>
+        <translation>vorlagen</translation>
     </message>
     <message>
         <source>label templates</source>
         <translation>etikett_vorlagen</translation>
-    </message>
-    <message>
-        <source>backups</source>
-        <translation>datensicherungen</translation>
     </message>
     <message>
         <source>bodyscans</source>
@@ -12659,12 +12224,12 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Can&apos;t open file %1:
 %2.</source>
-        <translation>Konnte Datei nicht öffnen %1: %2.</translation>
+        <translation>Konnte Datei %1 nicht öffnen: %2.</translation>
     </message>
     <message>
         <source>Can&apos;t open schema file %1:
 %2.</source>
-        <translation>Konnte Schemadatei nicht öffnen %1:
+        <translation>Konnte Schemadatei %1 nicht öffnen:
 %2.</translation>
     </message>
     <message>
@@ -12677,7 +12242,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Couldn&apos;t get node</source>
-        <translation>Konnte&apos;t Knoten nicht erhalten</translation>
+        <translation>Konnte Knoten nicht erhalten</translation>
     </message>
     <message>
         <source>This id is not unique.</source>
@@ -12717,48 +12282,6 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Remove Group Object</source>
         <translation>Gruppen Objekt entfernen</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Linie_</translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Bogen_</translation>
-    </message>
-    <message>
-        <source>ElArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>ElBogen_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Spl_</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>SplPfad_</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Kopie</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Länge</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Winkel</translation>
-    </message>
-    <message>
-        <source>AngleLine_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>WinkelLinie_</translation>
     </message>
 </context>
 <context>
@@ -12966,7 +12489,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Unknown tools type &apos;%1&apos;.</source>
-        <translation>Unbekannter Werkzeug Typen &apos;%1&apos;.</translation>
+        <translation>Unbekannter Werkzeug Typ &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Error not unique id.</source>
@@ -12998,7 +12521,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Unknown operation type &apos;%1&apos;.</source>
-        <translation>Unbekannte Betriebsart &apos;%1&apos;.</translation>
+        <translation>Unbekantte Betriebsart &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Error creating or updating operation of moving</source>
@@ -13064,10 +12587,6 @@ wie gewohnt in SeamlyME laden können.
         <source>Error creating or updating union pieces</source>
         <translation>Fehler beim Anlegen oder Aktualisieren der Verbindungsschnittteile</translation>
     </message>
-    <message>
-        <source>Image_name</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>VPoster</name>
@@ -13129,19 +12648,19 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>     Length</source>
-        <translation>     Länge</translation>
+        <translation>Länge</translation>
     </message>
     <message>
         <source>     Radius</source>
-        <translation>     Radius</translation>
+        <translation>Radius</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>  Abschlusswinkel</translation>
+        <translation>Abschlusswinkel</translation>
     </message>
     <message>
         <source>      Label</source>
-        <translation>      Etikett</translation>
+        <translation>Etikett</translation>
     </message>
 </context>
 <context>
@@ -13152,23 +12671,23 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>     Length</source>
-        <translation>     Länge</translation>
+        <translation>Länge</translation>
     </message>
     <message>
         <source>     Radius</source>
-        <translation>     Radius</translation>
+        <translation>Radius</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>  Abschlusswinkel</translation>
+        <translation>Abschlusswinkel</translation>
     </message>
     <message>
         <source>      Name</source>
-        <translation>      Bezeichnung</translation>
+        <translation>Bezeichnung</translation>
     </message>
     <message>
         <source>      Tool</source>
-        <translation>      Werkzeug</translation>
+        <translation>Werkzeug</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
@@ -13190,7 +12709,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Intersection Point of Curve &amp; Axis</source>
-        <translation>Schnittpunkt von Kurve &amp; Achse</translation>
+        <translation>Schnittpunkt von Kurve und Achse</translation>
     </message>
 </context>
 <context>
@@ -13265,19 +12784,19 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>     Length</source>
-        <translation>     Länge</translation>
+        <translation>Länge</translation>
     </message>
     <message>
         <source>    Radius</source>
-        <translation>    Radius</translation>
+        <translation>Radius</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>  Endwinkel</translation>
+        <translation>Endwinkel</translation>
     </message>
     <message>
         <source>      Label</source>
-        <translation>      Etikett</translation>
+        <translation>Etikett</translation>
     </message>
 </context>
 <context>
@@ -13772,31 +13291,23 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Arc_</source>
-        <comment>Leave the _ symbol in translation</comment>
         <translation>Bogen_</translation>
     </message>
     <message>
         <source>Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
         <translation>Spl_</translation>
     </message>
     <message>
         <source>SplPath_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>SplPfad_</translation>
+        <translation>SplVerzeichnis</translation>
     </message>
     <message>
         <source>Line_</source>
-        <comment>Leave the _ symbol in translation</comment>
         <translation>Linie_</translation>
     </message>
     <message>
         <source>Center point</source>
         <translation>Mittelpunkt</translation>
-    </message>
-    <message>
-        <source>Direction:</source>
-        <translation>Richtung:</translation>
     </message>
 </context>
 <context>
@@ -13851,7 +13362,7 @@ wie gewohnt in SeamlyME laden können.
     <name>VToolRotation</name>
     <message>
         <source>  Origin point</source>
-        <translation>  Ausgangspunkt</translation>
+        <translation>Ausgangspunkt</translation>
     </message>
     <message>
         <source>Rotation angle</source>
@@ -14338,7 +13849,7 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>European Cut</source>
         <comment>Book name</comment>
-        <translation>European Cut</translation>
+        <translation>Europäischer Schnitt</translation>
     </message>
     <message>
         <source>McCunn</source>
@@ -14707,15 +14218,18 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>SplPath</source>
-        <translation>SplPfad</translation>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation>SplVerzeichnis</translation>
     </message>
     <message>
         <source>Angle1SplPath</source>
-        <translation>Winkel1SplPfad</translation>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation>Winkel1SplVerzeichnis</translation>
     </message>
     <message>
         <source>Angle2SplPath</source>
-        <translation>Winkel2SplPfad</translation>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation>Winkel2SplVerzeichnis</translation>
     </message>
     <message>
         <source>CurrentLength</source>
@@ -14734,11 +14248,13 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>C1LengthSplPath</source>
-        <translation>C1LängeSplPfad</translation>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation>C1LängeSplVerzeichnis</translation>
     </message>
     <message>
         <source>C2LengthSplPath</source>
-        <translation>C2LängeSplPfad</translation>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation>C2LängeSplVerzeichnis</translation>
     </message>
     <message>
         <source>CurrentSeamAllowance</source>
@@ -14866,6 +14382,210 @@ wie gewohnt in SeamlyME laden können.
         <translation>wOnFold</translation>
     </message>
     <message>
+        <source>degTorad</source>
+        <comment>Converts degrees to radians
+Usage: degTorad(angle θ in degrees)</comment>
+        <translation>degTorad</translation>
+    </message>
+    <message>
+        <source>radTodeg</source>
+        <comment>Converts radians to degrees
+Usage: radTodeg(angle θ in radians)</comment>
+        <translation>radTodeg</translation>
+    </message>
+    <message>
+        <source>sin</source>
+        <comment>Sine function working with radians
+Usage: sin(angle θ in radians)</comment>
+        <translation>sin</translation>
+    </message>
+    <message>
+        <source>cos</source>
+        <comment>Cosine function working with radians
+Usage: cos(angle θ in radians)</comment>
+        <translation>cos</translation>
+    </message>
+    <message>
+        <source>tan</source>
+        <comment>Tangent function working with radians
+Usage: tan(angle θ in radians)</comment>
+        <translation>tan</translation>
+    </message>
+    <message>
+        <source>asin</source>
+        <comment>Inverse sine function working with radians
+Usage: asin(x)</comment>
+        <translation>asin</translation>
+    </message>
+    <message>
+        <source>acos</source>
+        <comment>Inverse cosine function working with radians
+Usage: acos(x)</comment>
+        <translation>acos</translation>
+    </message>
+    <message>
+        <source>atan</source>
+        <comment>Inverse tangent function working with radians
+Usage: atan(x)</comment>
+        <translation>atan</translation>
+    </message>
+    <message>
+        <source>sinh</source>
+        <comment>Hyperbolic sine function
+Usage: sinh(angle θ in radians)</comment>
+        <translation>sinh</translation>
+    </message>
+    <message>
+        <source>cosh</source>
+        <comment>Hyperbolic cosine
+Usage: cosh(angle θ in radians)</comment>
+        <translation>cosh</translation>
+    </message>
+    <message>
+        <source>tanh</source>
+        <comment>Hyperbolic tangent function
+Usage: tanh(angle θ in radians)</comment>
+        <translation>tanh</translation>
+    </message>
+    <message>
+        <source>asinh</source>
+        <comment>Inverse Hyperbolic sine function
+Usage: asinh(x)</comment>
+        <translation>asinh</translation>
+    </message>
+    <message>
+        <source>acosh</source>
+        <comment>Inverse Hyperbolic cosine function
+Usage: acosh(x)</comment>
+        <translation>acosh</translation>
+    </message>
+    <message>
+        <source>atanh</source>
+        <comment>Inverse Hyperbolic tangent function
+Usage: atanh(x)</comment>
+        <translation>atanh</translation>
+    </message>
+    <message>
+        <source>sinD</source>
+        <comment>Sine function working with degrees
+Usage: sinD(angle θ in degrees)</comment>
+        <translation>sinD</translation>
+    </message>
+    <message>
+        <source>cosD</source>
+        <comment>Cosine function working with degrees
+Usage: cosD(angle θ in degrees)</comment>
+        <translation>cosD</translation>
+    </message>
+    <message>
+        <source>tanD</source>
+        <comment>Tangent function working with degrees
+Usage: tanD(angle θ in degrees)</comment>
+        <translation>tanD</translation>
+    </message>
+    <message>
+        <source>asinD</source>
+        <comment>Inverse sine function working with degrees
+Usage: asinD(x)</comment>
+        <translation>asinD</translation>
+    </message>
+    <message>
+        <source>acosD</source>
+        <comment>Inverse cosine function working with degrees
+Usage: acosD(x)</comment>
+        <translation>acosD</translation>
+    </message>
+    <message>
+        <source>atanD</source>
+        <comment>Inverse tangent function working with degrees
+Usage: atanD(x)</comment>
+        <translation>atanD</translation>
+    </message>
+    <message>
+        <source>log2</source>
+        <comment>Logarithm to the base 2
+Usage: log2(x)</comment>
+        <translation>log2</translation>
+    </message>
+    <message>
+        <source>log10</source>
+        <comment>Logarithm to the base 10
+Usage: log10(x)</comment>
+        <translation>log10</translation>
+    </message>
+    <message>
+        <source>log</source>
+        <comment>Logarithm to the base 10
+Usage: log(x)</comment>
+        <translation>log</translation>
+    </message>
+    <message>
+        <source>ln</source>
+        <comment>Logarithm to base e (2.71828...)
+Usage: ln(x)</comment>
+        <translation>ln</translation>
+    </message>
+    <message>
+        <source>exp</source>
+        <comment>E raised to the power of x
+Usage: exp(x) where e = 2.718</comment>
+        <translation>exp</translation>
+    </message>
+    <message>
+        <source>sqrt</source>
+        <comment>Square root of a value
+Usage: sqrt(x)</comment>
+        <translation>sqrt</translation>
+    </message>
+    <message>
+        <source>sign</source>
+        <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
+Usage: sign(x)</comment>
+        <translation>sign</translation>
+    </message>
+    <message>
+        <source>rint</source>
+        <comment>Round to nearest integer
+Usage: rint(float x)</comment>
+        <translation>rint</translation>
+    </message>
+    <message>
+        <source>abs</source>
+        <comment>Absolute value
+Usage: abs(x)</comment>
+        <translation>abs</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <comment>Min of all arguments
+Usage: min(arg 1; arg 2; ... arg n)</comment>
+        <translation>min</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <comment>Max of all arguments
+Usage: max(arg 1; arg 2; ... arg n)</comment>
+        <translation>max</translation>
+    </message>
+    <message>
+        <source>sum</source>
+        <comment>Sum of all arguments
+Usage: sum(arg 1; arg 2; ... arg n)</comment>
+        <translation>sum</translation>
+    </message>
+    <message>
+        <source>avg</source>
+        <comment>Mean value of all arguments
+Usage: avg(arg 1; arg 2; ... arg n)</comment>
+        <translation>avg</translation>
+    </message>
+    <message>
+        <source>fmod</source>
+        <comment>Returns the floating-point remainder of x/y (rounded towards zero)
+Usage: fmod(x; y)</comment>
+        <translation>fmod</translation>
+    </message>
+    <message>
         <source>M_</source>
         <comment>Leave the _ symbol in translation</comment>
         <translation>M_</translation>
@@ -14883,7 +14603,7 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>AngleLine_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>WinkelLinie_</translation>
+        <translation>Winkellinie_</translation>
     </message>
     <message>
         <source>Arc_</source>
@@ -14959,244 +14679,6 @@ wie gewohnt in SeamlyME laden können.
         <source>C2LengthSpl_</source>
         <comment>Leave the _ symbol in translation</comment>
         <translation>C2LängeSpl_</translation>
-    </message>
-    <message>
-        <source>degTorad</source>
-        <comment>Converts degrees to radians
-Usage: degTorad(angle θ in degrees) → returns an angle in radians
-Example: degTorad(180) = 3.14159</comment>
-        <translation>degTorad</translation>
-    </message>
-    <message>
-        <source>radTodeg</source>
-        <comment>Converts radians to degrees
-Usage: radTodeg(angle θ in radians)  → returns an angle in degrees
-Example: radTodeg(3.14159) = 180</comment>
-        <translation>radTodeg</translation>
-    </message>
-    <message>
-        <source>sin</source>
-        <comment>Sine function working with radians
-Usage: sin(angle θ in radians) → returns a number between -1 and 1
-Example: sin(90) = 0.893997</comment>
-        <translation>sin</translation>
-    </message>
-    <message>
-        <source>cos</source>
-        <comment>Cosine function working with radians
-Usage: cos(angle θ in radians) → returns a number between -1 and 1
-Example: cos(1) = 0.540302</comment>
-        <translation>cos</translation>
-    </message>
-    <message>
-        <source>tan</source>
-        <comment>Tangent function working with radians
-Usage: tan(angle θ in radians)
-Example: tan(1) = 1.55741</comment>
-        <translation>tan</translation>
-    </message>
-    <message>
-        <source>asin</source>
-        <comment>Inverse sine function working with radians
-Usage: asin(x between -1 and 1) → returns an angle in radians
-Example: asin(-1) = -1.5708</comment>
-        <translation>asin</translation>
-    </message>
-    <message>
-        <source>acos</source>
-        <comment>Inverse cosine function working with radians
-Usage: acos(x between -1 and 1) → returns an angle in radians
-Example: acos(0.1) = 1.47063</comment>
-        <translation>acos</translation>
-    </message>
-    <message>
-        <source>atan</source>
-        <comment>Inverse tangent function working with radians
-Usage: atan(x) → returns an angle in radians
-Example: atan(1) = 0.78538</comment>
-        <translation>atan</translation>
-    </message>
-    <message>
-        <source>sinh</source>
-        <comment>Hyperbolic sine function
-Usage: sinh(θ)
-Example: sinh(1) = 1.1752</comment>
-        <translation>sinh</translation>
-    </message>
-    <message>
-        <source>cosh</source>
-        <comment>Hyperbolic cosine
-Usage: cosh(θ) → returns a number greater than or equal to 1
-Example: cosh(0) = 1</comment>
-        <translation>cosh</translation>
-    </message>
-    <message>
-        <source>tanh</source>
-        <comment>Hyperbolic tangent function
-Usage: tanh(θ) → returns a number between -1 and 1 (excluded)
-Example: tanh(1) = 0.761594</comment>
-        <translation>tanh</translation>
-    </message>
-    <message>
-        <source>asinh</source>
-        <comment>Inverse Hyperbolic sine function
-Usage: asinh(x)
-Example: asinh(90) = 5.19299</comment>
-        <translation>asinh</translation>
-    </message>
-    <message>
-        <source>acosh</source>
-        <comment>Inverse Hyperbolic cosine function
-Usage: acosh(x greater than or equal to 1)
-Example: acosh(2) = 1.31696</comment>
-        <translation>acosh</translation>
-    </message>
-    <message>
-        <source>atanh</source>
-        <comment>Inverse Hyperbolic tangent function
-Usage: atanh(x between -1 and 1 (excluded))
-Example: atanh(0,99) = 2.64665</comment>
-        <translation>atanh</translation>
-    </message>
-    <message>
-        <source>sinD</source>
-        <comment>Sine function working with degrees
-Usage: sinD(angle θ in degrees) → returns a number between -1 and 1
-Example: sinD(90) = 1</comment>
-        <translation>sinD</translation>
-    </message>
-    <message>
-        <source>cosD</source>
-        <comment>Cosine function working with degrees
-Usage: cosD(angle θ in degrees) → returns a number between -1 and 1
-Example: cosD(180) = -1</comment>
-        <translation>cosD</translation>
-    </message>
-    <message>
-        <source>tanD</source>
-        <comment>Tangent function working with degrees
-Usage: tanD(angle θ in degrees)
-Example: tanD(45) = 1</comment>
-        <translation>tanD</translation>
-    </message>
-    <message>
-        <source>asinD</source>
-        <comment>Inverse sine function working with degrees
-Usage: asinD(x between -1 and 1) → returns an angle in degrees
-Example: asinD(1) = 90</comment>
-        <translation>asinD</translation>
-    </message>
-    <message>
-        <source>acosD</source>
-        <comment>Inverse cosine function working with degrees
-Usage: acosD(x between -1 and 1) → returns an angle in degrees
-Example: acosD(-1) = 180</comment>
-        <translation>acosD</translation>
-    </message>
-    <message>
-        <source>atanD</source>
-        <comment>Inverse tangent function working with degrees
-Usage: atanD(x) → returns an angle in degrees
-Example: atanD(1) = 45</comment>
-        <translation>atanD</translation>
-    </message>
-    <message>
-        <source>log2</source>
-        <comment>Logarithm to the base 2
-Usage: log2(x greater than 0)
-Example: log2(10) = 3.32193</comment>
-        <translation>log2</translation>
-    </message>
-    <message>
-        <source>log10</source>
-        <comment>Logarithm to the base 10 (same as log(x))
-Usage: log10(x greater than 0)
-Example: log10(10) = 1</comment>
-        <translation>log10</translation>
-    </message>
-    <message>
-        <source>log</source>
-        <comment>Logarithm to the base 10
-Usage: log(x greater than 0)
-Example: log(10) = 1</comment>
-        <translation>log</translation>
-    </message>
-    <message>
-        <source>ln</source>
-        <comment>Logarithm to base e (2.71828...)
-Usage: ln(x greater than 0)
-Example: ln(10) = 2.30259</comment>
-        <translation>ln</translation>
-    </message>
-    <message>
-        <source>exp</source>
-        <comment>e raised to the power of x where e = 2.718
-Usage: exp(x) → returns a positive number
-Example: exp(2) = 7.38906</comment>
-        <translation>exp</translation>
-    </message>
-    <message>
-        <source>sqrt</source>
-        <comment>Square root of a value
-Usage: sqrt(x greater than or equal to 0) → returns a positive number
-Example: sqrt(4) = 2</comment>
-        <translation>sqrt</translation>
-    </message>
-    <message>
-        <source>sign</source>
-        <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
-Usage: sign(x) → returns -1, 0 or 1
-Example: sign(-3) = -1</comment>
-        <translation>sign</translation>
-    </message>
-    <message>
-        <source>rint</source>
-        <comment>Round to nearest integer
-Usage: rint(x) → returns an integer number
-Example: rint(2.3) = 2</comment>
-        <translation>rint</translation>
-    </message>
-    <message>
-        <source>abs</source>
-        <comment>Absolute value
-Usage: abs(x) → returns a positive number
-Example: abs(-5) = 5</comment>
-        <translation>abs</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <comment>Min of all arguments
-Usage: min(arg 1; arg 2; ... arg n)
-Example: min(2;3;4) = 2</comment>
-        <translation>min</translation>
-    </message>
-    <message>
-        <source>max</source>
-        <comment>Max of all arguments
-Usage: max(arg 1; arg 2; ... arg n)
-Example: max(2;3;4) = 4</comment>
-        <translation>max</translation>
-    </message>
-    <message>
-        <source>sum</source>
-        <comment>Sum of all arguments
-Usage: sum(arg 1; arg 2; ... arg n)
-Example: sum(2;3;4) = 9</comment>
-        <translation>sum</translation>
-    </message>
-    <message>
-        <source>avg</source>
-        <comment>Mean value of all arguments
-Usage: avg(arg 1; arg 2; ... arg n)
-Example: avg(2;3;4) = 3</comment>
-        <translation>avg</translation>
-    </message>
-    <message>
-        <source>fmod</source>
-        <comment>Returns the floating-point remainder of x/y (rounded towards zero)
-Usage: fmod(x; y)
-Example: fmod(3.3;2) = 1.3</comment>
-        <translation>fmod</translation>
     </message>
 </context>
 <context>

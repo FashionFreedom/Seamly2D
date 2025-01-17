@@ -75,12 +75,6 @@ void VLitePattern::DecrementReferens(quint32 id) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList VLitePattern::GetCurrentAlphabet() const
-{
-    return QStringList();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 QString VLitePattern::GenerateLabel(const LabelType &type, const QString &reservedName) const
 {
     Q_UNUSED(type)

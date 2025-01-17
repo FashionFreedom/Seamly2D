@@ -82,7 +82,7 @@ void IntersectCircleTangentVisual::RefreshGeometry()
 
             if (cRadius > 0)
             {
-                cPath->setRect(pointRect(cRadius));
+                cPath->setRect(PointRect(cRadius));
                 DrawPoint(cPath, static_cast<QPointF>(*center), m_secondarySupportColor, Qt::DashLine);
 
                 FindRays(static_cast<QPointF>(*tan), static_cast<QPointF>(*center), cRadius);

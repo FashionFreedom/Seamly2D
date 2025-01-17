@@ -88,11 +88,11 @@ DoubleLinePointTool::DoubleLinePointTool(VAbstractPattern *doc, VContainer *data
     QPointF point3 = static_cast<QPointF>(*data->GeometricObject<VPointF>(id));
 
     firstLine = new VScaledLine(QLineF(point1 - point3, QPointF()), this);
-    firstLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
+    firstLine->setBasicWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
     firstLine->setFlag(QGraphicsItem::ItemStacksBehindParent, true);
 
     secondLine = new VScaledLine(QLineF(point2 - point3, QPointF()), this);
-    secondLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
+    secondLine->setBasicWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
     secondLine->setFlag(QGraphicsItem::ItemStacksBehindParent, true);
 }
 
@@ -130,10 +130,10 @@ void DoubleLinePointTool::RefreshGeometry()
     QPointF point2 = static_cast<QPointF>(*VDrawTool::data.GeometricObject<VPointF>(secondPointId));
     QPointF point3 = static_cast<QPointF>(*VDrawTool::data.GeometricObject<VPointF>(m_id));
 
-    firstLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
+    firstLine->setBasicWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
     firstLine->setLine(QLineF(point1 - point3, QPointF()));
 
-    secondLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
+    secondLine->setBasicWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
     secondLine->setLine(QLineF(point2 - point3, QPointF()));
 }
 
@@ -162,16 +162,16 @@ void DoubleLinePointTool::SaveOptions(QDomElement &tag, QSharedPointer<VGObject>
 //---------------------------------------------------------------------------------------------------------------------
 void DoubleLinePointTool::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
-    firstLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble()+1, Unit::Mm));
-    secondLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble()+1, Unit::Mm));
+    firstLine->setBasicWidth(ToPixel(m_lineWeight.toDouble()+1, Unit::Mm));
+    secondLine->setBasicWidth(ToPixel(m_lineWeight.toDouble()+1, Unit::Mm));
     VToolSinglePoint::hoverEnterEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DoubleLinePointTool::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
-    firstLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
-    secondLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
+    firstLine->setBasicWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
+    secondLine->setBasicWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
     VToolSinglePoint::hoverLeaveEvent(event);
 }
 
@@ -185,7 +185,7 @@ QString DoubleLinePointTool::makeToolTip() const
     const QLineF line1(static_cast<QPointF>(*point1), static_cast<QPointF>(*point3));
     const QLineF line2(static_cast<QPointF>(*point2), static_cast<QPointF>(*point3));
 
-    const QString toolTip = QString("<table style=font-size:11pt; font-weight:600>"
+    const QString toolTip = QString("<table>"
                                         "<tr>"
                                             "<td align ='right'><b>%9: </b></td>" // Tool name
                                             "<td align ='left'>Intersect XY</td>"

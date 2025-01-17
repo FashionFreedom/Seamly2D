@@ -380,7 +380,7 @@ void VToolPointOfContact::SetVisualization()
         visual->setObject1Id(firstPointId);
         visual->setLineP2Id(secondPointId);
         visual->setRadiusId(center);
-        visual->setRadius(qApp->translateVariables()->FormulaToUser(arcRadius, qApp->Settings()->getOsSeparator()));
+        visual->setRadius(qApp->TrVars()->FormulaToUser(arcRadius, qApp->Settings()->GetOsSeparator()));
         visual->RefreshGeometry();
     }
 }
@@ -397,7 +397,7 @@ QString VToolPointOfContact::makeToolTip() const
     const QLineF p2ToCur(static_cast<QPointF>(*p2), static_cast<QPointF>(*current));
     const QLineF centerToCur(static_cast<QPointF>(*centerP), static_cast<QPointF>(*current));
 
-    const QString toolTip = QString("<table style=font-size:11pt; font-weight:600>"
+    const QString toolTip = QString("<table>"
                                     "<tr> <td><b>%10:</b> %11</td> </tr>"
                                     "<tr> <td><b>%1:</b> %2 %3</td> </tr>"
                                     "<tr> <td><b>%4:</b> %5 %3</td> </tr>"

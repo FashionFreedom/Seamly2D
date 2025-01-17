@@ -1,58 +1,64 @@
-//---------------------------------------------------------------------------------------------------------------------
-//  @file   vposition.cpp
-//  @author Douglas S Caskey
-//  @date   Dec 11, 2022
-//
-//  @copyright
-//  Copyright (C) 2017 - 2022 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
-//
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
-//---------------------------------------------------------------------------------------------------------------------
+/***************************************************************************
+ **  @file   vposition.cpp
+ **  @author Douglas S Caskey
+ **  @date   Dec 11, 2022
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
-//---------------------------------------------------------------------------------------------------------------------
-//
-//  @file   vposition.cpp
-//  @author Roman Telezhynskyi <dismine(at)gmail.com>
-//  @date   20 1, 2015
-//
-//  @brief
-//  @copyright
-//  This source code is part of the Valentina project, a pattern making
-//  program, whose allow create and modeling patterns of clothing.
-//  Copyright (C) 2013-2015 Valentina project
-//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
-//
-//  Valentina is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Valentina is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//---------------------------------------------------------------------------------------------------------------------
+/************************************************************************
+ **
+ **  @file   vposition.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   20 1, 2015
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
 
 #include "vposition.h"
 
+#include <QDir>
+#include <QImage>
 #include <QLineF>
+#include <QPainter>
 #include <QPainterPath>
+#include <QPen>
+#include <QPicture>
 #include <QPointF>
 #include <QPolygonF>
 #include <QRect>
@@ -68,371 +74,526 @@
 #include "../vmisc/vmath.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief VPosition constructor
-///
-/// This consrtucts an instance of VPosition.
-/// @param sheet
-/// @param sheetEdgeNum
-/// @param piece
-/// @param pieceEdgeNum
-/// @param stop
-/// @param rotate
-/// @param rotationIncrement
-/// @param saveLength
-//---------------------------------------------------------------------------------------------------------------------
-VPosition::VPosition(const VContour &sheet, int sheetEdgeNum, const VLayoutPiece &piece, int pieceEdgeNum,
-                     std::atomic_bool *stop, bool rotate, int rotationIncrement, bool saveLength)
-    : QRunnable()
-    , m_bestResult(VBestSquare(sheet.GetSize(), saveLength))
-    , m_sheet(sheet)
-    , m_sheetEdgeNum(sheetEdgeNum)
-    , m_piece(piece)
-    , m_pieceEdgeNum(pieceEdgeNum)
-    , m_stop(stop)
-    , m_rotate(rotate)
-    , m_rotationIncrement(rotationIncrement)
-    , m_angleBetween(0)
+VPosition::VPosition(const VContour &gContour, int j, const VLayoutPiece &piece, int i, std::atomic_bool *stop,
+                     bool rotate, int rotationIncrease, bool saveLength)
+    : QRunnable(),
+      bestResult(VBestSquare(gContour.GetSize(), saveLength)),
+      gContour(gContour),
+      piece(piece),
+      i(i),
+      j(j),
+      paperIndex(0),
+      frame(0),
+      piecesCount(0),
+      pieces(),
+      stop(stop),
+      rotate(rotate),
+      rotationIncrease(rotationIncrease),
+      angle_between(0)
 {
-    if ((m_rotationIncrement >= 1 && m_rotationIncrement <= 180 && 360 % m_rotationIncrement == 0) == false)
+    if ((rotationIncrease >= 1 && rotationIncrease <= 180 && 360 % rotationIncrease == 0) == false)
     {
-        this->m_rotationIncrement = 180;
+        this->rotationIncrease = 180;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief run run the thread to position piece.
-///
-/// This method runs the thread that positions the piece near to the sheet edge.
-//---------------------------------------------------------------------------------------------------------------------
 void VPosition::run()
 {
-    if (m_stop->load())
+    if (stop->load())
     {
         return;
     }
 
     // We should use copy of the piece.
-    VLayoutPiece workpiece = m_piece;
+    VLayoutPiece workpiece = piece;
 
-    int pieceEdgeNum = m_pieceEdgeNum; // For flipped piece edge will be different
-    if (edgesIntersect(workpiece, pieceEdgeNum, m_sheetEdgeNum))
+    int dEdge = i;// For mirror piece edge will be different
+    if (CheckCombineEdges(workpiece, j, dEdge))
     {
-        saveCandidate(m_bestResult, workpiece, pieceEdgeNum, m_sheetEdgeNum, BestFrom::Combine);
+        #ifdef LAYOUT_DEBUG
+        #   ifdef SHOW_CANDIDATE_BEST
+                DrawDebug(gContour, workpiece, frame+2, paperIndex, piecesCount, pieces);
+        #   endif
+        #endif
+
+        SaveCandidate(bestResult, workpiece, j, dEdge, BestFrom::Combine);
     }
+    frame = frame + 3;
 
-    if (m_rotate)
+    if (rotate)
     {
-        rotate(m_rotationIncrement);
+        Rotate(rotationIncrease);
     }
     else
     {
-        if (m_sheet.GetContour().isEmpty())
+        if (gContour.GetContour().isEmpty())
         {
-            rotate(m_rotationIncrement);
+            Rotate(rotationIncrease);
         }
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief getBestResult getter for m_bestResult.
-///
-/// This method gets and returns m_bestResult.
-///
-/// @returns VBestSquare m_bestResult.
+// cppcheck-suppress unusedFunction
+quint32 VPosition::getPaperIndex() const
+{
+    return paperIndex;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPosition::setPaperIndex(const quint32 &value)
+{
+    paperIndex = value;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// cppcheck-suppress unusedFunction
+quint32 VPosition::getFrame() const
+{
+    return frame;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPosition::setFrame(const quint32 &value)
+{
+    frame = value;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// cppcheck-suppress unusedFunction
+quint32 VPosition::getPieceCount() const
+{
+    return piecesCount;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPosition::setPieceCount(const quint32 &value)
+{
+    piecesCount = value;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPosition::setPieces(const QVector<VLayoutPiece> &pieces)
+{
+    this->pieces = pieces;
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 VBestSquare VPosition::getBestResult() const
 {
-    return m_bestResult;
+    return bestResult;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief saveCandidate saves the best square.
-///
-/// This method saves the resulting new size after adding the piece to the sheet.
-///
-/// @param bestResult new sheet size saved here.
-/// @param piece pattern piece being added to sheet.
-/// @param pieceEdgeNum edge number of piece to be combined with the sheet edge.
-/// @param sheetEdgeNum edge of sheet piece is being comibed with.
-/// @param type type of best sqaure being saved.
-/// @returns void.
+void VPosition::DrawDebug(const VContour &contour, const VLayoutPiece &piece, int frame, quint32 paperIndex,
+                          int piecesCount, const QVector<VLayoutPiece> &pieces)
+{
+    const int biasWidth = Bias(contour.GetWidth(), QIMAGE_MAX);
+    const int biasHeight = Bias(contour.GetHeight(), QIMAGE_MAX);
+
+    QPicture picture;
+    QPainter paint;
+    paint.begin(&picture);
+
+    paint.setPen(QPen(Qt::black, 6, Qt::SolidLine, Qt::FlatCap, Qt::MiterJoin));
+    QPainterPath path;
+    if (contour.GetContour().isEmpty())
+    {
+        path = DrawContour(contour.CutEmptySheetEdge());
+        path.translate(biasWidth/2, biasHeight/2);
+        paint.drawPath(path);
+    }
+    else
+    {
+        path = DrawContour(contour.GetContour());
+        path.translate(biasWidth/2, biasHeight/2);
+        paint.drawPath(path);
+    }
+
+#ifdef SHOW_CANDIDATE
+    paint.setPen(QPen(Qt::darkGreen, 6, Qt::SolidLine, Qt::FlatCap, Qt::MiterJoin));
+    path = DrawContour(piece.getLayoutAllowancePoints());
+    path.translate(biasWidth/2, biasHeight/2);
+    paint.drawPath(path);
+#else
+    Q_UNUSED(piece)
+    Q_UNUSED(pieces)
+#endif
+
+#ifdef ARRANGED_PIECES
+    paint.setPen(QPen(Qt::blue, 2, Qt::SolidLine, Qt::FlatCap, Qt::MiterJoin));
+    path = drawPieces(pieces);
+    path.translate(biasWidth/2, biasHeight/2);
+    paint.drawPath(path);
+#else
+    Q_UNUSED(pieces)
+#endif
+
+    // Calculate bounding rect before draw sheet rect
+    const QRect pictureRect = picture.boundingRect();
+
+    // Sheet
+#ifdef SHOW_SHEET
+    paint.setPen(QPen(Qt::darkRed, 15, Qt::SolidLine, Qt::FlatCap, Qt::MiterJoin));
+    paint.drawRect(QRectF(biasWidth/2, biasHeight/2, contour.GetWidth(), contour.GetHeight()));
+#endif
+
+    paint.end();
+
+    // Dump frame to image
+    // Note. If program was build with Address Sanitizer possible crashes. Address Sanitizer doesn't support big
+    // allocations.
+    QImage frameImage(pictureRect.width()+biasWidth, pictureRect.height()+biasHeight, QImage::Format_RGB32);
+
+    if (frameImage.isNull())
+    {
+        return;
+    }
+
+    frameImage.fill(Qt::white);
+
+    QPainter paintFrameImage;
+    paintFrameImage.begin(&frameImage);
+    paintFrameImage.drawPicture(0, 0, picture);
+    paintFrameImage.end();
+
+    const QString fileName = QDir::homePath()+QStringLiteral("/LayoutDebug/")+QString("%1_%2_%3.png").arg(paperIndex)
+            .arg(piecesCount).arg(frame);
+    frameImage.save (fileName);
+}
+
 //---------------------------------------------------------------------------------------------------------------------
-void VPosition::saveCandidate(VBestSquare &bestResult, const VLayoutPiece &piece, int pieceEdgeNum, int sheetEdgeNum,
+int VPosition::Bias(int length, int maxLength)
+{
+    if (length < maxLength && length*2 < maxLength)
+    {
+        return length;
+    }
+    else
+    {
+        return maxLength-length;
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPosition::SaveCandidate(VBestSquare &bestResult, const VLayoutPiece &piece, int globalI, int detJ,
                               BestFrom type)
 {
-    QVector<QPointF> newContour = m_sheet.UniteWithContour(piece, sheetEdgeNum, pieceEdgeNum, type);
-    newContour.append(newContour.first());
-    const QSizeF size = QPolygonF(newContour).boundingRect().size();
-    bestResult.NewResult(size, sheetEdgeNum, pieceEdgeNum, piece.getTransform(), piece.isMirror(), type);
+    QVector<QPointF> newGContour = gContour.UniteWithContour(piece, globalI, detJ, type);
+    newGContour.append(newGContour.first());
+    const QSizeF size = QPolygonF(newGContour).boundingRect().size();
+    bestResult.NewResult(size, globalI, detJ, piece.getTransform(), piece.isMirror(), type);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief edgesIntersect check for intersection between piece and sheet
-///
-/// This method checks if the pattern piece edge intersects with the sheet edge.
-///
-/// @param piece pattern piece being added to sheet.
-/// @param pieceEdgeNum edge number of piece to be combined with the sheet edge.
-/// @param sheetEdgeNum edge of sheet piece is being comibed with.
-/// @returns bool.
-///     - true if there no intersection.
-///     - false if it has an intersection.
-//---------------------------------------------------------------------------------------------------------------------
-bool VPosition::edgesIntersect(VLayoutPiece &piece, int &pieceEdgeNum, int sheetEdgeNum)
+bool VPosition::CheckCombineEdges(VLayoutPiece &piece, int j, int &dEdge)
 {
-    const QLineF sheetEdge = m_sheet.GlobalEdge(sheetEdgeNum);
-    bool isFlipped = false;
-    bool hasNoIntersectiom = false;
+    const QLineF globalEdge = gContour.GlobalEdge(j);
+    bool flagMirror = false;
+    bool flagSquare = false;
 
-    combineEdges(piece, pieceEdgeNum, sheetEdge);
+    CombineEdges(piece, globalEdge, dEdge);
 
-    IntersectionType type = IntersectionType::Intersection;
-    if (sheetContains(piece.pieceBoundingRect()))
+#ifdef LAYOUT_DEBUG
+#   ifdef SHOW_COMBINE
+        DrawDebug(gContour, piece, frame, paperIndex, piecesCount, pieces);
+#   endif
+#endif
+
+    CrossingType type = CrossingType::Intersection;
+    if (SheetContains(piece.pieceBoundingRect()))
     {
-        if (!m_sheet.GetContour().isEmpty())
+        if (not gContour.GetContour().isEmpty())
         {
-            type = intersectionType(piece);
+            type = Crossing(piece);
         }
         else
         {
-            type = IntersectionType::NoIntersection;
+            type = CrossingType::NoIntersection;
         }
     }
 
     switch (type)
     {
-        case IntersectionType::Intersection:
-            piece.Mirror(sheetEdge);
-            isFlipped = true;
+        case CrossingType::EdgeError:
+            return false;
+        case CrossingType::Intersection:
+            piece.Mirror(globalEdge);
+            flagMirror = true;
             break;
-        case IntersectionType::NoIntersection:
-            hasNoIntersectiom = true;
+        case CrossingType::NoIntersection:
+            flagSquare = true;
             break;
         default:
             break;
     }
 
-    if (isFlipped && !piece.IsForbidFlipping())
+    if (flagMirror && not piece.IsForbidFlipping())
     {
-        if (m_sheet.GetContour().isEmpty())
+        #ifdef LAYOUT_DEBUG
+            #ifdef SHOW_MIRROR
+                DrawDebug(gContour, piece, frame+1, paperIndex, piecesCount, pieces);
+            #endif
+        #endif
+
+        if (gContour.GetContour().isEmpty())
         {
-            pieceEdgeNum = piece.pieceEdgeByPoint(sheetEdge.p2());
+            dEdge = piece.pieceEdgeByPoint(globalEdge.p2());
         }
         else
         {
-            pieceEdgeNum = piece.LayoutEdgeByPoint(sheetEdge.p2());
+            dEdge = piece.LayoutEdgeByPoint(globalEdge.p2());
         }
 
-        if (pieceEdgeNum <= 0)
+        if (dEdge <= 0)
         {
             return false;
         }
 
-        IntersectionType type = IntersectionType::Intersection;
-        if (sheetContains(piece.pieceBoundingRect()))
+        CrossingType type = CrossingType::Intersection;
+        if (SheetContains(piece.pieceBoundingRect()))
         {
-            type = intersectionType(piece);
+            type = Crossing(piece);
         }
 
         switch (type)
         {
-            case IntersectionType::Intersection:
-                hasNoIntersectiom = false;
+            case CrossingType::EdgeError:
+                return false;
+            case CrossingType::Intersection:
+                flagSquare = false;
                 break;
-            case IntersectionType::NoIntersection:
-                hasNoIntersectiom = true;
+            case CrossingType::NoIntersection:
+                flagSquare = true;
                 break;
             default:
                 break;
         }
     }
-    return hasNoIntersectiom;
+    return flagSquare;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief rotatedEdgeIntersects check for intersection between rotated piece and sheet
-///
-/// This method checks if rotated pattern piece edge intersects with the sheet edge.
-///
-/// @param piece pattern piece being added to sheet.
-/// @param pieceEdgeNum edge number of piece to be combined with the sheet edge.
-/// @param sheetEdgeNum edge of sheet piece is being comibed with.
-/// @returns bool.
-///     - true if there no intersection.
-///     - false if it has an intersection.
-//---------------------------------------------------------------------------------------------------------------------
-bool VPosition::rotatedEdgeIntersects(VLayoutPiece &piece, int pieceEdgeNum, int sheetEdgeNum, int angle) const
+bool VPosition::CheckRotationEdges(VLayoutPiece &piece, int j, int dEdge, int angle) const
 {
-    const QLineF sheetEdge = m_sheet.GlobalEdge(sheetEdgeNum);
-    bool hasNoIntersectiom = false;
+    const QLineF globalEdge = gContour.GlobalEdge(j);
+    bool flagSquare = false;
 
-    rotateEdges(piece, pieceEdgeNum, sheetEdge, angle);
+    RotateEdges(piece, globalEdge, dEdge, angle);
 
-    IntersectionType type = IntersectionType::Intersection;
-    if (sheetContains(piece.pieceBoundingRect()))
+#ifdef LAYOUT_DEBUG
+    #ifdef SHOW_ROTATION
+        DrawDebug(gContour, piece, frame, paperIndex, piecesCount, pieces);
+    #endif
+#endif
+
+    CrossingType type = CrossingType::Intersection;
+    if (SheetContains(piece.pieceBoundingRect()))
     {
-        type = intersectionType(piece);
+        type = Crossing(piece);
     }
 
     switch (type)
     {
-        case IntersectionType::Intersection:
-            hasNoIntersectiom = false;
+        case CrossingType::EdgeError:
+            return false;
+        case CrossingType::Intersection:
+            flagSquare = false;
             break;
-        case IntersectionType::NoIntersection:
-            hasNoIntersectiom = true;
+        case CrossingType::NoIntersection:
+            flagSquare = true;
             break;
         default:
             break;
     }
-    return hasNoIntersectiom;
+    return flagSquare;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief intersectionType get the intersection type between sheet and piece.
-///
-/// This method checks if the bounding box of a piece intersects with sheet bounding box.
-///
-/// @param piece layput piece.
-/// @returns IntersectionType intersection type
-///     - NoIntersection = 0,
-///     - Intersection   = 1,
-//---------------------------------------------------------------------------------------------------------------------
-VPosition::IntersectionType VPosition::intersectionType(const VLayoutPiece &piece) const
+VPosition::CrossingType VPosition::Crossing(const VLayoutPiece &piece) const
 {
-    const QRectF globalRect = m_sheet.BoundingRect();
-    if (!globalRect.intersects(piece.LayoutBoundingRect()) && !globalRect.contains(piece.pieceBoundingRect()))
+    const QRectF gRect = gContour.BoundingRect();
+    if (not gRect.intersects(piece.LayoutBoundingRect()) && not gRect.contains(piece.pieceBoundingRect()))
     {
         // This we can determine efficiently.
-        return IntersectionType::NoIntersection;
+        return CrossingType::NoIntersection;
     }
 
-    const QPainterPath globalPath = m_sheet.ContourPath();
-    if (!globalPath.intersects(piece.LayoutAllowancePath()) && !globalPath.contains(piece.createMainPath()))
+    const QPainterPath gPath = gContour.ContourPath();
+    if (not gPath.intersects(piece.LayoutAllowancePath()) && not gPath.contains(piece.createMainPath()))
     {
-        return IntersectionType::NoIntersection;
+        return CrossingType::NoIntersection;
     }
     else
     {
-        return IntersectionType::Intersection;
+        return CrossingType::Intersection;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief sheetContains check if sheet contains piece.
-///
-/// This method checks if the bounding box of a piece is contained in the sheet bounding box.
-///
-/// @param rect bounding rectangle of the piece.
-/// @returns bool
-///     - true if sheet contains piece.
-///     - false if sheet does not contain piece.
-//---------------------------------------------------------------------------------------------------------------------
-bool VPosition::sheetContains(const QRectF &rect) const
+bool VPosition::SheetContains(const QRectF &rect) const
 {
-    const QRectF sheetRect(0, 0, m_sheet.GetWidth(), m_sheet.GetHeight());
-    return sheetRect.contains(rect);
+    const QRectF bRect(0, 0, gContour.GetWidth(), gContour.GetHeight());
+    return bRect.contains(rect);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief combineEdges rotate and move piece to contour edge.
-///
-/// This method rotates and moves piece near to the sheet edge.
-///
-/// @param piece layout piece.
-/// @param pieceEdgeNum piece edge number.
-/// @param sheetEdge line that represents the sheet edge.
-/// @returns void.
-//---------------------------------------------------------------------------------------------------------------------
-void VPosition::combineEdges(VLayoutPiece &piece, const int &pieceEdgeNum, const QLineF &sheetEdge)
+void VPosition::CombineEdges(VLayoutPiece &piece, const QLineF &globalEdge, const int &dEdge)
 {
     QLineF pieceEdge;
-    if (m_sheet.GetContour().isEmpty())
+    if (gContour.GetContour().isEmpty())
     {
-        pieceEdge = piece.pieceEdge(pieceEdgeNum);
+        pieceEdge = piece.pieceEdge(dEdge);
     }
     else
     {
-        pieceEdge = piece.LayoutEdge(pieceEdgeNum);
+        pieceEdge = piece.LayoutEdge(dEdge);
     }
 
-    // Find distance between sheet and piece edges.
-    const qreal dx = sheetEdge.x2() - pieceEdge.x2();
-    const qreal dy = sheetEdge.y2() - pieceEdge.y2();
+    // Find distance between two edges for two begin vertex.
+    const qreal dx = globalEdge.x2() - pieceEdge.x2();
+    const qreal dy = globalEdge.y2() - pieceEdge.y2();
 
     pieceEdge.translate(dx, dy); // Use values for translate piece edge.
 
-    m_angleBetween = sheetEdge.angleTo(pieceEdge); // Seek angle between two edges.
+    angle_between = globalEdge.angleTo(pieceEdge); // Seek angle between two edges.
 
-    // Move piece to position near to sheet edge.
+    // Now we move piece to position near to global contour edge.
     piece.Translate(dx, dy);
-    if (!qFuzzyIsNull(m_angleBetween) || !qFuzzyCompare(m_angleBetween, 360))
+    if (not qFuzzyIsNull(angle_between) || not qFuzzyCompare(angle_between, 360))
     {
-        piece.Rotate(pieceEdge.p2(), -m_angleBetween);
+        piece.Rotate(pieceEdge.p2(), -angle_between);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief rotateEdges rotate and move piece to sheet edge.
-///
-/// This method rotates and moves piece near to the sheet edge.
-///
-/// @param piece layout piece.
-/// @param sheetEdge line that represents the sheet edge.
-/// @param pieceEdgeNum piece edge number.
-/// @param angle piece rotation angle.
-/// @return void.
-//---------------------------------------------------------------------------------------------------------------------
-void VPosition::rotateEdges(VLayoutPiece &piece, int pieceEdgeNum, const QLineF &sheetEdge, int angle) const
+void VPosition::RotateEdges(VLayoutPiece &piece, const QLineF &globalEdge, int dEdge, int angle) const
 {
     QLineF pieceEdge;
-    if (m_sheet.GetContour().isEmpty())
+    if (gContour.GetContour().isEmpty())
     {
-        pieceEdge = piece.pieceEdge(pieceEdgeNum);
+        pieceEdge = piece.pieceEdge(dEdge);
     }
     else
     {
-        pieceEdge = piece.LayoutEdge(pieceEdgeNum);
+        pieceEdge = piece.LayoutEdge(dEdge);
     }
 
-    // Find distance between sheet and piece edges.
-    const qreal dx = sheetEdge.x2() - pieceEdge.x2();
-    const qreal dy = sheetEdge.y2() - pieceEdge.y2();
+    // Find distance between two edges for two begin vertex.
+    const qreal dx = globalEdge.x2() - pieceEdge.x2();
+    const qreal dy = globalEdge.y2() - pieceEdge.y2();
 
-    // Move and rotate piece to position near to sheet edge.
+    pieceEdge.translate(dx, dy); // Use values for translate piece edge.
+
+    // Now we move piece to position near to global contour edge.
     piece.Translate(dx, dy);
-    piece.Rotate(sheetEdge.p2(), angle);
+    piece.Rotate(globalEdge.p2(), angle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief rotate rotate the pattern piece.
-///
-/// This method rotates the pattern piece by the number of degrees in incrmentuntil it
-/// intersects with the sheet. The best square result is saved.
-///
-/// @param increment pattern piece rotation angle.
-/// @return void.
-//---------------------------------------------------------------------------------------------------------------------
-void VPosition::rotate(int increment)
+void VPosition::Rotate(int increase)
 {
     int startAngle = 0;
-    if (VFuzzyComparePossibleNulls(m_angleBetween, 360))
+    if (VFuzzyComparePossibleNulls(angle_between, 360))
     {
-        startAngle = increment;
+        startAngle = increase;
     }
-    for (int angle = startAngle; angle < 360; angle = angle + increment)
+    for (int angle = startAngle; angle < 360; angle = angle+increase)
     {
-        if (m_stop->load())
+        if (stop->load())
         {
             return;
         }
 
         // We should use copy of the piece.
-        VLayoutPiece workpiece = m_piece;
+        VLayoutPiece workpiece = piece;
 
-        if (rotatedEdgeIntersects(workpiece, m_pieceEdgeNum, m_sheetEdgeNum, angle))
+        if (CheckRotationEdges(workpiece, j, i, angle))
         {
-            saveCandidate(m_bestResult, workpiece, m_pieceEdgeNum, m_sheetEdgeNum, BestFrom::Rotation);
+            #ifdef LAYOUT_DEBUG
+            #   ifdef SHOW_CANDIDATE_BEST
+                    ++frame;
+                    DrawDebug(gContour, workpiece, frame, paperIndex, piecesCount, pieces);
+            #   endif
+            #endif
+
+            SaveCandidate(bestResult, workpiece, j, i, BestFrom::Rotation);
+        }
+        ++frame;
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QPainterPath VPosition::ShowDirection(const QLineF &edge)
+{
+    const int arrowLength = 14;
+    QPainterPath path;
+    if (edge.length()/arrowLength < 5)
+    {
+        return  path;
+    }
+
+    QLineF arrow = edge;
+    arrow.setLength(edge.length()/2.0);
+
+    //Reverse line because we want start arrow from this point
+    arrow = QLineF(arrow.p2(), arrow.p1());
+    const qreal angle = arrow.angle();//we each time change line angle, better save original angle value
+    arrow.setLength(arrowLength);//arrow length in pixels
+
+    arrow.setAngle(angle-35);
+    path.moveTo(arrow.p1());
+    path.lineTo(arrow.p2());
+
+    arrow.setAngle(angle+35);
+    path.moveTo(arrow.p1());
+    path.lineTo(arrow.p2());
+    return path;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QPainterPath VPosition::DrawContour(const QVector<QPointF> &points)
+{
+    QPainterPath path;
+    path.setFillRule(Qt::WindingFill);
+    if (points.count() >= 2)
+    {
+        for (qint32 i = 0; i < points.count()-1; ++i)
+        {
+            path.moveTo(points.at(i));
+            path.lineTo(points.at(i+1));
+        }
+        path.lineTo(points.at(0));
+
+#ifdef SHOW_DIRECTION
+        for (qint32 i = 0; i < points.count()-1; ++i)
+        {
+            path.addPath(ShowDirection(QLineF(points.at(i), points.at(i+1))));
+        }
+#endif
+
+#ifdef SHOW_VERTICES
+        for (qint32 i = 0; i < points.count(); ++i)
+        {
+            path.addRect(points.at(i).x()-3, points.at(i).y()-3, 6, 6);
+        }
+#endif
+    }
+    return path;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QPainterPath VPosition::drawPieces(const QVector<VLayoutPiece> &pieces)
+{
+    QPainterPath path;
+    path.setFillRule(Qt::WindingFill);
+    if (pieces.count() > 0)
+    {
+        for (int i = 0; i < pieces.size(); ++i)
+        {
+            path.addPath(pieces.at(i).createMainPath());
         }
     }
+    return path;
 }

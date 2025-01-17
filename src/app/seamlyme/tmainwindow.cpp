@@ -76,7 +76,7 @@
 #include "../vtools/dialogs/support/edit_formula_dialog.h"
 #include "version.h"
 #include "../vformat/measurements.h"
-#include "application_me.h" // Should be last because of definning qApp
+#include "mapplication.h" // Should be last because of definning qApp
 
 #include <QClipboard>
 #include <QComboBox>
@@ -140,7 +140,7 @@ TMainWindow::TMainWindow(QWidget *parent)
 {
 	ui->setupUi(this);
 
-	qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+	qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
 	ui->lineEditFind->setClearButtonEnabled(true);
 	ui->lineEditName->setClearButtonEnabled(true);
@@ -254,7 +254,7 @@ bool TMainWindow::LoadFile(const QString &path)
 		if (!QFileInfo(filename).exists())
 		{
 			qCCritical(tMainWindow, "%s", qUtf8Printable(tr("File '%1' doesn't exist!").arg(filename)));
-			if (qApp->isTestMode())
+			if (qApp->IsTestMode())
 			{
 				qApp->exit(V_EX_NOINPUT);
 			}
@@ -262,7 +262,7 @@ bool TMainWindow::LoadFile(const QString &path)
 		}
 
 		// Check if file already opened
-		QList<TMainWindow*>list = qApp->mainWindows();
+		QList<TMainWindow*>list = qApp->MainWindows();
 		for (int i = 0; i < list.size(); ++i)
 		{
 			if (list.at(i)->CurrentFile() == filename)
@@ -285,7 +285,7 @@ bool TMainWindow::LoadFile(const QString &path)
 
 		try
 		{
-			data = new VContainer(qApp->translateVariables(), &mUnit);
+			data = new VContainer(qApp->TrVars(), &mUnit);
 
 			individualMeasurements = new MeasurementDoc(data);
 			individualMeasurements->setSize(&currentSize);
@@ -303,16 +303,16 @@ bool TMainWindow::LoadFile(const QString &path)
 			if (mType == MeasurementsType::Multisize)
 			{
 				MultiSizeConverter converter(filename);
-				m_curFileFormatVersion = converter.getCurrentFormatVersion();
-				m_curFileFormatVersionStr = converter.getVersionStr();
+				m_curFileFormatVersion = converter.GetCurrentFormatVarsion();
+				m_curFileFormatVersionStr = converter.GetVersionStr();
 				individualMeasurements->setXMLContent(converter.Convert());// Read again after conversion
                 filename.replace(QLatin1String(".vst"), QLatin1String(".smms"));
 			}
 			else
 			{
 				IndividualSizeConverter converter(filename);
-				m_curFileFormatVersion = converter.getCurrentFormatVersion();
-				m_curFileFormatVersionStr = converter.getVersionStr();
+				m_curFileFormatVersion = converter.GetCurrentFormatVarsion();
+				m_curFileFormatVersionStr = converter.GetVersionStr();
 				individualMeasurements->setXMLContent(converter.Convert());// Read again after conversion
                 filename.replace(QLatin1String(".vit"), QLatin1String(".smis"));
 			}
@@ -362,7 +362,7 @@ bool TMainWindow::LoadFile(const QString &path)
 			data = nullptr;
 			lock.reset();
 
-			if (qApp->isTestMode())
+			if (qApp->IsTestMode())
 			{
 				qApp->exit(V_EX_NOINPUT);
 			}
@@ -371,8 +371,8 @@ bool TMainWindow::LoadFile(const QString &path)
 	}
 	else
 	{
-		qApp->newMainWindow();
-		return qApp->mainWindow()->LoadFile(filename);
+		qApp->NewMainWindow();
+		return qApp->MainWindow()->LoadFile(filename);
 	}
 
 	return true;
@@ -406,7 +406,7 @@ void TMainWindow::FileNew()
 		pUnit = mUnit;
 		mType = measurements.type();
 
-		data = new VContainer(qApp->translateVariables(), &mUnit);
+		data = new VContainer(qApp->TrVars(), &mUnit);
 		currentHeight = measurements.baseHeight();
 		currentSize = measurements.baseSize();
 
@@ -437,8 +437,8 @@ void TMainWindow::FileNew()
 	}
 	else
 	{
-		qApp->newMainWindow();
-		qApp->mainWindow()->FileNew();
+		qApp->NewMainWindow();
+		qApp->MainWindow()->FileNew();
 	}
 }
 
@@ -450,7 +450,7 @@ void TMainWindow::OpenIndividual()
                            tr("All files") + QLatin1String(" (*.*)");
 
 	//Use standard path to individual measurements
-	const QString dir = qApp->seamlyMeSettings()->getIndividualSizePath();
+	const QString dir = qApp->SeamlyMeSettings()->getIndividualSizePath();
 
 	bool usedNotExistedDir = false;
 	QDir directory(dir);
@@ -476,7 +476,7 @@ void TMainWindow::OpenMultisize()
                            tr("All files") + QLatin1String(" (*.*)");
 
 	//Use standard path to multisize measurements
-	QString dir = qApp->seamlyMeSettings()->getMultisizePath();
+	QString dir = qApp->SeamlyMeSettings()->getMultisizePath();
 	dir = VCommonSettings::prepareMultisizeTables(dir);
 
 	Open(dir, filter);
@@ -491,7 +491,7 @@ void TMainWindow::OpenTemplate()
                            tr("All files")    + QLatin1String(" (*.*)");
 
 	//Use standard path to template files
-	QString dir = qApp->seamlyMeSettings()->getTemplatePath();
+	QString dir = qApp->SeamlyMeSettings()->getTemplatePath();
 	dir = VCommonSettings::PrepareStandardTemplates(dir);
 	Open(dir, filter);
 
@@ -509,7 +509,7 @@ void TMainWindow::CreateFromExisting()
                                                            QLatin1String(" *.") + vitExt + QLatin1String(")");
 
 	//Use standard path to individual measurements
-	const QString dir = qApp->seamlyMeSettings()->getIndividualSizePath();
+	const QString dir = qApp->SeamlyMeSettings()->getIndividualSizePath();
 
 	bool usedNotExistedDir = false;
 	QDir directory(dir);
@@ -529,7 +529,7 @@ void TMainWindow::CreateFromExisting()
 		}
 		else
 		{
-			qApp->newMainWindow()->CreateFromExisting();
+			qApp->NewMainWindow()->CreateFromExisting();
 		}
 	}
 
@@ -547,7 +547,7 @@ void TMainWindow::handleBodyScanner1()
     const QString filter = QString("3D Measure Up") + QLatin1String(" (*.txt)");
 
     //Use standard path to template files
-    QString dir = qApp->seamlyMeSettings()->getBodyScansPath();
+    QString dir = qApp->SeamlyMeSettings()->getBodyScansPath();
 
     bool usedNotExistedDir = false;
     QDir directory(dir);
@@ -644,7 +644,7 @@ void TMainWindow::changeEvent(QEvent *event)
 {
 	if (event->type() == QEvent::LanguageChange)
 	{
-		qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+		qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
 		// retranslate designer form (single inheritance approach)
 		ui->retranslateUi(this);
@@ -736,7 +736,7 @@ bool TMainWindow::eventFilter(QObject *object, QEvent *event)
 			}
 			else if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
 			{
-				if (qApp->Settings()->getOsSeparator())
+				if (qApp->Settings()->GetOsSeparator())
 				{
 					plainTextEdit->insertPlainText(QLocale().decimalPoint());
 				}
@@ -755,7 +755,7 @@ bool TMainWindow::eventFilter(QObject *object, QEvent *event)
 			QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
 			if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
 			{
-				if (qApp->Settings()->getOsSeparator())
+				if (qApp->Settings()->GetOsSeparator())
 				{
 					textEdit->insert(QLocale().decimalPoint());
 				}
@@ -1078,14 +1078,14 @@ bool TMainWindow::FileSaveAs()
     {
         if (mType == MeasurementsType::Individual)
         {
-            dir = qApp->seamlyMeSettings()->getDefaultIndividualSizePath();
+            dir = qApp->SeamlyMeSettings()->getDefaultIndividualSizePath();
             filters = tr("Individual measurements") + QLatin1String(" (*.") + smisExt +
                                                       QLatin1String(" *.") + vitExt + QLatin1String(")");
             suffix = smisExt;
         }
         else
         {
-            dir = qApp->seamlyMeSettings()->getDefaultMultisizePath();
+            dir = qApp->SeamlyMeSettings()->getDefaultMultisizePath();
             filters = tr("Multisize measurements") + QLatin1String(" (*.") + smmsExt +
                                                      QLatin1String(" *.") + vstExt + QLatin1String(")");
             suffix = smmsExt;
@@ -1111,11 +1111,11 @@ bool TMainWindow::FileSaveAs()
 	{
 		if (mType == MeasurementsType::Individual)
 		{
-			dir = qApp->seamlyMeSettings()->getIndividualSizePath();
+			dir = qApp->SeamlyMeSettings()->getIndividualSizePath();
 		}
 		else
 		{
-			dir = qApp->seamlyMeSettings()->getMultisizePath();
+			dir = qApp->SeamlyMeSettings()->getMultisizePath();
 			dir = VCommonSettings::prepareMultisizeTables(dir);
 		}
 	}
@@ -1229,7 +1229,7 @@ void TMainWindow::ShowWindow() const
 		if (v.canConvert<int>())
 		{
 			const int offset = qvariant_cast<int>(v);
-			const QList<TMainWindow*> windows = qApp->mainWindows();
+			const QList<TMainWindow*> windows = qApp->MainWindows();
 			windows.at(offset)->raise();
 			windows.at(offset)->activateWindow();
 		}
@@ -1507,7 +1507,7 @@ void TMainWindow::Fx()
 	try
 	{
 	   // Translate to internal look.
-	   meash = data->getVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
+	   meash = data->GetVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
 	}
 
 	catch(const VExceptionBadId &exception)
@@ -1518,9 +1518,9 @@ void TMainWindow::Fx()
 		return;
 	}
 
-	EditFormulaDialog *dialog = new EditFormulaDialog(meash->GetData(), NULL_ID, MeasurementDialog, this);
+	EditFormulaDialog *dialog = new EditFormulaDialog(meash->GetData(), NULL_ID, this);
 	dialog->setWindowTitle(tr("Edit measurement"));
-	dialog->SetFormula(qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditFormula->toPlainText().replace("\n", " "),
+	dialog->SetFormula(qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditFormula->toPlainText().replace("\n", " "),
 														  true));
 	const QString postfix = UnitsToStr(mUnit, true);//Show unit in dialog label (cm, mm or inch)
 	dialog->setPostfix(postfix);
@@ -1587,7 +1587,7 @@ void TMainWindow::AddKnown()
 			{
 				if (mType == MeasurementsType::Individual)
 				{
-					individualMeasurements->addEmpty(list.at(i), qApp->translateVariables()->MFormula(list.at(i)));
+					individualMeasurements->addEmpty(list.at(i), qApp->TrVars()->MFormula(list.at(i)));
 				}
 				else
 				{
@@ -1606,7 +1606,7 @@ void TMainWindow::AddKnown()
 			{
 				if (mType == MeasurementsType::Individual)
 				{
-					individualMeasurements->AddEmptyAfter(after, list.at(i), qApp->translateVariables()->MFormula(list.at(i)));
+					individualMeasurements->AddEmptyAfter(after, list.at(i), qApp->TrVars()->MFormula(list.at(i)));
 				}
 				else
 				{
@@ -1639,7 +1639,7 @@ void TMainWindow::ImportFromPattern()
     const QString filter = tr("Pattern files") + QLatin1String(" (*.") + valExt +
                            QLatin1String(" *.") + sm2dExt + QLatin1String(")");
 	//Use standard path to individual measurements
-	QString dir = qApp->seamlyMeSettings()->getTemplatePath();
+	QString dir = qApp->SeamlyMeSettings()->getTemplatePath();
 	dir = VCommonSettings::PrepareStandardTemplates(dir);
 
     const QString filename = fileDialog(this, tr("Import from a pattern"), dir, filter, nullptr,
@@ -1746,7 +1746,7 @@ void TMainWindow::ShowNewMData(bool fresh)
 		try
 		{
 			// Translate to internal look.
-			meash = data->getVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
+			meash = data->GetVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
 		}
 
 		catch(const VExceptionBadId &exception)
@@ -1770,8 +1770,8 @@ void TMainWindow::ShowNewMData(bool fresh)
 		else
 		{
 			//Show known
-			ui->plainTextEditDescription->setPlainText(qApp->translateVariables()->Description(meash->GetName()));
-			ui->lineEditFullName->setText(qApp->translateVariables()->guiText(meash->GetName()));
+			ui->plainTextEditDescription->setPlainText(qApp->TrVars()->Description(meash->GetName()));
+			ui->lineEditFullName->setText(qApp->TrVars()->guiText(meash->GetName()));
 			ui->lineEditName->setText(nameField->text());
 		}
 		connect(ui->lineEditName, &QLineEdit::textEdited, this, &TMainWindow::SaveMName);
@@ -1810,7 +1810,7 @@ void TMainWindow::ShowNewMData(bool fresh)
 			QString formula;
 			try
 			{
-				formula = qApp->translateVariables()->FormulaToUser(meash->GetFormula(), qApp->Settings()->getOsSeparator());
+				formula = qApp->TrVars()->FormulaToUser(meash->GetFormula(), qApp->Settings()->GetOsSeparator());
 			}
 			catch (qmu::QmuParserError &error)
 			{
@@ -1833,13 +1833,13 @@ void TMainWindow::ShowNewMData(bool fresh)
 //---------------------------------------------------------------------------------------------------------------------
 QString TMainWindow::getMeasurementNumber(const QString &name)
 {
-	return  qApp->translateVariables()->MNumber(name);
+	return  qApp->TrVars()->MNumber(name);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::ShowMDiagram(const QString &name)
 {
-	const VTranslateVars *trv = qApp->translateVariables();
+	const VTranslateVars *trv = qApp->TrVars();
 	const QString number = trv->MNumber(name);
 
 	if (number.isEmpty())
@@ -1877,7 +1877,7 @@ void TMainWindow::SaveMName(const QString &text)
 	try
 	{
 		// Translate to internal look.
-		meash = data->getVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
+		meash = data->GetVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
 	}
 
 	catch(const VExceptionBadId &exception)
@@ -1957,7 +1957,7 @@ void TMainWindow::SaveMValue()
 	try
 	{
 		// Translate to internal look.
-		meash = data->getVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
+		meash = data->GetVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
 	}
 
 	catch(const VExceptionBadId &exception)
@@ -1975,7 +1975,7 @@ void TMainWindow::SaveMValue()
 
 	try
 	{
-		const QString formula = qApp->translateVariables()->FormulaFromUser(text, qApp->Settings()->getOsSeparator());
+		const QString formula = qApp->TrVars()->FormulaFromUser(text, qApp->Settings()->GetOsSeparator());
 		individualMeasurements->SetMValue(nameField->data(Qt::UserRole).toString(), formula);
 	}
 	catch (qmu::QmuParserError &error) // Just in case something bad will happen
@@ -2117,7 +2117,7 @@ void TMainWindow::SaveMFullName()
 	try
 	{
 		// Translate to internal look.
-		meash = data->getVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
+		meash = data->GetVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
 	}
 
 	catch(const VExceptionBadId &exception)
@@ -2221,7 +2221,7 @@ void TMainWindow::SetupMenu()
 	// Measurements
 	connect(ui->actionAddCustom, &QAction::triggered, this, &TMainWindow::AddCustom);
 	connect(ui->actionAddKnown, &QAction::triggered, this, &TMainWindow::AddKnown);
-	connect(ui->actionDatabase, &QAction::triggered, qApp, &ApplicationME::showDataBase);
+	connect(ui->actionDatabase, &QAction::triggered, qApp, &MApplication::ShowDataBase);
 	connect(ui->actionImportFromPattern, &QAction::triggered, this, &TMainWindow::ImportFromPattern);
 	actionDockDiagram = ui->dockWidgetDiagram->toggleViewAction();
 	actionDockDiagram->setMenuRole(QAction::NoRole);
@@ -2357,7 +2357,7 @@ void TMainWindow::InitWindow()
 		ui->comboBoxGender->setCurrentIndex(index);
 
 		{
-			const QLocale dateLocale = QLocale(qApp->Settings()->getLocale());
+			const QLocale dateLocale = QLocale(qApp->Settings()->GetLocale());
 			ui->dateEditBirthDate->setLocale(dateLocale);
 			ui->dateEditBirthDate->setDisplayFormat(dateLocale.dateFormat());
 			ui->dateEditBirthDate->setDate(individualMeasurements->BirthDate());
@@ -2427,7 +2427,7 @@ void TMainWindow::InitWindow()
 		ShowInGraphicalShell(curFile);
 	});
 
-	initUnits();
+	InitUnits();
 
 	initializeTable();
 }
@@ -2506,7 +2506,7 @@ void TMainWindow::SetCurrentFile(const QString &fileName)
 		ui->lineEditPathToFile->setToolTip(QDir::toNativeSeparators(curFile));
 		ui->lineEditPathToFile->setCursorPosition(0);
 		ui->pushButtonShowInExplorer->setEnabled(true);
-		auto settings = qApp->seamlyMeSettings();
+		auto settings = qApp->SeamlyMeSettings();
 		QStringList files = settings->GetRecentFileList();
 		files.removeAll(fileName);
 		files.prepend(fileName);
@@ -2684,7 +2684,7 @@ void TMainWindow::RefreshTable(bool freshCall)
 
 		if (mType == MeasurementsType::Individual)
 		{
-			QTableWidgetItem *item = AddCell(qApp->translateVariables()->MToUser(meash->GetName()), currentRow, ColumnName,
+			QTableWidgetItem *item = AddCell(qApp->TrVars()->MToUser(meash->GetName()), currentRow, ColumnName,
 											 Qt::AlignVCenter); // name
 			item->setData(Qt::UserRole, meash->GetName());
 
@@ -2697,7 +2697,7 @@ void TMainWindow::RefreshTable(bool freshCall)
 			{
 
 				AddCell(getMeasurementNumber(meash->GetName()), currentRow, ColumnNumber, Qt::AlignVCenter);
-                AddCell(qApp->translateVariables()->guiText(meash->GetName()), currentRow, ColumnFullName, Qt::AlignVCenter);
+                AddCell(qApp->TrVars()->guiText(meash->GetName()), currentRow, ColumnFullName, Qt::AlignVCenter);
 			}
 
 			const qreal value = UnitConvertor(*meash->GetValue(), mUnit, pUnit);
@@ -2707,7 +2707,7 @@ void TMainWindow::RefreshTable(bool freshCall)
 			QString formula;
 			try
 			{
-				formula = qApp->translateVariables()->FormulaToUser(meash->GetFormula(), qApp->Settings()->getOsSeparator());
+				formula = qApp->TrVars()->FormulaToUser(meash->GetFormula(), qApp->Settings()->GetOsSeparator());
 			}
 			catch (qmu::QmuParserError &error)
 			{
@@ -2719,7 +2719,7 @@ void TMainWindow::RefreshTable(bool freshCall)
 		}
 		else
 		{
-			QTableWidgetItem *item = AddCell(qApp->translateVariables()->MToUser(meash->GetName()), currentRow, 0,
+			QTableWidgetItem *item = AddCell(qApp->TrVars()->MToUser(meash->GetName()), currentRow, 0,
 											 Qt::AlignVCenter); // name
 			item->setData(Qt::UserRole, meash->GetName());
 
@@ -2731,7 +2731,7 @@ void TMainWindow::RefreshTable(bool freshCall)
 			else
 			{
 				AddCell(getMeasurementNumber(meash->GetName()), currentRow, ColumnNumber, Qt::AlignVCenter);
-                AddCell(qApp->translateVariables()->guiText(meash->GetName()), currentRow, ColumnFullName, Qt::AlignVCenter);
+                AddCell(qApp->TrVars()->guiText(meash->GetName()), currentRow, ColumnFullName, Qt::AlignVCenter);
 			}
 
 			const qreal value = UnitConvertor(*data->DataVariables()->value(meash->GetName())->GetValue(), mUnit,
@@ -2771,7 +2771,7 @@ QString TMainWindow::GetCustomName() const
 	QString name;
 	do
 	{
-		name = CustomMSign + qApp->translateVariables()->InternalVarToUser(measurement_) + QString().number(num);
+		name = CustomMSign + qApp->TrVars()->InternalVarToUser(measurement_) + QString().number(num);
 		num++;
 	} while (data->IsUnique(name) == false);
 
@@ -2873,7 +2873,7 @@ void TMainWindow::UpdateWindowTitle()
 	}
 	else
 	{
-		fileName = tr("untitled %1").arg(qApp->mainWindows().size() + 1);
+		fileName = tr("untitled %1").arg(qApp->MainWindows().size() + 1);
 		mType == MeasurementsType::Multisize ? fileName += QLatin1String(".") + smmsExt :
                                                fileName += QLatin1String(".") + smisExt;
 	}
@@ -2943,7 +2943,7 @@ bool TMainWindow::EvalFormula(const QString &formula, bool fromUser, VContainer 
 			QString f;
 			if (fromUser)
 			{
-				f = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+				f = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
 			}
 			else
 			{
@@ -2989,7 +2989,7 @@ void TMainWindow::Open(const QString &dir, const QString &filter)
 		}
 		else
 		{
-			qApp->newMainWindow()->LoadFile(filename);
+			qApp->NewMainWindow()->LoadFile(filename);
 		}
 	}
 }
@@ -3032,7 +3032,7 @@ void TMainWindow::MeasurementGUI()
 //---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::ReadSettings()
 {
-	const VSeamlyMeSettings *settings = qApp->seamlyMeSettings();
+	const VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
 	restoreGeometry(settings->GetGeometry());
 	restoreState(settings->GetWindowState());
 	restoreState(settings->GetToolbarsState(), APP_VERSION);
@@ -3047,7 +3047,7 @@ void TMainWindow::ReadSettings()
 //---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::WriteSettings()
 {
-	VSeamlyMeSettings *settings = qApp->seamlyMeSettings();
+	VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
 	settings->SetGeometry(saveGeometry());
 	settings->SetWindowState(saveState());
 	settings->SetToolbarsState(saveState(APP_VERSION));
@@ -3084,7 +3084,7 @@ bool TMainWindow::LoadFromExistingFile(const QString &path)
 		if (!QFileInfo(path).exists())
 		{
 			qCCritical(tMainWindow, "%s", qUtf8Printable(tr("File '%1' doesn't exist!").arg(path)));
-			if (qApp->isTestMode())
+			if (qApp->IsTestMode())
 			{
 				qApp->exit(V_EX_NOINPUT);
 			}
@@ -3092,7 +3092,7 @@ bool TMainWindow::LoadFromExistingFile(const QString &path)
 		}
 
 		// Check if file already opened
-		QList<TMainWindow*>list = qApp->mainWindows();
+		QList<TMainWindow*>list = qApp->MainWindows();
 		for (int i = 0; i < list.size(); ++i)
 		{
 			if (list.at(i)->CurrentFile() == path)
@@ -3115,7 +3115,7 @@ bool TMainWindow::LoadFromExistingFile(const QString &path)
 
 		try
 		{
-			data = new VContainer(qApp->translateVariables(), &mUnit);
+			data = new VContainer(qApp->TrVars(), &mUnit);
 
 			individualMeasurements = new MeasurementDoc(data);
 			individualMeasurements->setSize(&currentSize);
@@ -3138,8 +3138,8 @@ bool TMainWindow::LoadFromExistingFile(const QString &path)
 			else
 			{
 				IndividualSizeConverter converter(path);
-				m_curFileFormatVersion = converter.getCurrentFormatVersion();
-				m_curFileFormatVersionStr = converter.getVersionStr();
+				m_curFileFormatVersion = converter.GetCurrentFormatVarsion();
+				m_curFileFormatVersionStr = converter.GetVersionStr();
 				individualMeasurements->setXMLContent(converter.Convert());// Read again after conversion
 			}
 
@@ -3189,7 +3189,7 @@ bool TMainWindow::LoadFromExistingFile(const QString &path)
 			data = nullptr;
 			lock.reset();
 
-			if (qApp->isTestMode())
+			if (qApp->IsTestMode())
 			{
 				qApp->exit(V_EX_NOINPUT);
 			}
@@ -3198,8 +3198,8 @@ bool TMainWindow::LoadFromExistingFile(const QString &path)
 	}
 	else
 	{
-		qApp->newMainWindow();
-		return qApp->mainWindow()->LoadFile(path);
+		qApp->NewMainWindow();
+		return qApp->MainWindow()->LoadFile(path);
 	}
 
 	return true;
@@ -3208,7 +3208,7 @@ bool TMainWindow::LoadFromExistingFile(const QString &path)
 void TMainWindow::UpdateRecentFileActions()
 {
 	qCDebug(tMainWindow, "Updating recent file actions.");
-	const QStringList files = qApp->seamlyMeSettings()->GetRecentFileList();
+	const QStringList files = qApp->SeamlyMeSettings()->GetRecentFileList();
 	const int numRecentFiles = qMin(files.size(), static_cast<int>(MaxRecentFiles));
 	qCDebug(tMainWindow, "Updating recent file actions = %i ",numRecentFiles);
 
@@ -3237,13 +3237,13 @@ void TMainWindow::CreateWindowMenu(QMenu *menu)
 	QAction *action = menu->addAction(tr("&New Window"));
 	connect(action, &QAction::triggered, this, []()
 	{
-		qApp->newMainWindow();
-		qApp->mainWindow()->activateWindow();
+		qApp->NewMainWindow();
+		qApp->MainWindow()->activateWindow();
 	});
 	action->setMenuRole(QAction::NoRole);
 	menu->addSeparator();
 
-	const QList<TMainWindow*> windows = qApp->mainWindows();
+	const QList<TMainWindow*> windows = qApp->MainWindows();
 	for (int i = 0; i < windows.count(); ++i)
 	{
 		TMainWindow *window = windows.at(i);
@@ -3270,7 +3270,7 @@ void TMainWindow::CreateWindowMenu(QMenu *menu)
 bool TMainWindow::IgnoreLocking(int error, const QString &path)
 {
 	QMessageBox::StandardButton answer = QMessageBox::Abort;
-	if (!qApp->isTestMode())
+	if (!qApp->IsTestMode())
 	{
 		switch(error)
 		{
@@ -3304,7 +3304,7 @@ bool TMainWindow::IgnoreLocking(int error, const QString &path)
 	{
 		qCWarning(tMainWindow, "Failed to lock %s", qUtf8Printable(path));
 		qCWarning(tMainWindow, "Error type: %d", error);
-		if (qApp->isTestMode())
+		if (qApp->IsTestMode())
 		{
 			switch(error)
 			{
@@ -3373,7 +3373,7 @@ void TMainWindow::SetDecimals()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::initUnits()
+void TMainWindow::InitUnits()
 {
 	labelPatternUnit = new QLabel(tr("Pattern unit:"));
 	ui->toolBarGradation->addWidget(labelPatternUnit);

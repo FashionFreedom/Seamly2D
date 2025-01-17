@@ -469,6 +469,6 @@ std::string dx_iface::LocaleToISO()
     locMap["kk"] = "KOI8-R";
     locMap["kk_KZ"] = "KOI8-R";
 
-    QLocale locale(qApp->Settings()->getLocale());
+    QLocale locale(qApp->Settings()->GetLocale());
     return locMap.value(locale.name().toStdString(), "ISO8859-1");
 }

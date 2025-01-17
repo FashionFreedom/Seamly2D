@@ -211,16 +211,6 @@ win32 {
 # When the GNU linker sees a library, it discards all symbols that it doesn't need.
 # Dependent library go first.
 
-#Tools static library (depend on VWidgets, VMisc, VPatternDB)
-unix|win32: LIBS += -L$$OUT_PWD/../../libs/tools/$${DESTDIR}/ -ltools
-
-INCLUDEPATH += $$PWD/../../libs/tools
-INCLUDEPATH += $$OUT_PWD/../../libs/tools/$${UI_DIR} # For UI files
-DEPENDPATH += $$PWD/../../libs/tools
-
-win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/tools/$${DESTDIR}/tools.lib
-else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/tools/$${DESTDIR}/libtools.a
-
 #VTools static library (depend on VWidgets, VMisc, VPatternDB)
 unix|win32: LIBS += -L$$OUT_PWD/../../libs/vtools/$${DESTDIR}/ -lvtools
 

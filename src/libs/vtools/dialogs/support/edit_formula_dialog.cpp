@@ -1,54 +1,57 @@
-//---------------------------------------------------------------------------------------------------------------------
-//  @file   edit_formula_dialog.cpp
-//  @author DSCaskey <dscaskey@gmail.com>
-//  @date  10 Jun, 2023
-//
-//  @brief
-//  @copyright
-//  This source code is part of the Seamly2D project, a pattern making
-//  program to create and model patterns of clothing.
-//  Copyright (C) 2017-2023 Seamly2D project
-//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
-//
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
-//---------------------------------------------------------------------------------------------------------------------
+/******************************************************************************
+*   @file   edit_formula_dialog.cpp
+**  @author DSCaskey <dscaskey@gmail.com>
+**  @date  10 Jun, 2023
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2023 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
 
-//---------------------------------------------------------------------------------------------------------------------
-//  @file   dialogeditwrongformula.cpp
-//  @author Roman Telezhynskyi <dismine(at)gmail.com>
-//  @date   29 5, 2014
-//
-//  @brief
-//  @copyright
-//  This source code is part of the Valentina project, a pattern making
-//  program, whose allow create and modeling patterns of clothing.
-//  Copyright (C) 2013-2015 Valentina project
-//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
-//
-//  Valentina is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Valentina is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//---------------------------------------------------------------------------------------------------------------------
+/************************************************************************
+ **
+ **  @file   dialogeditwrongformula.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   29 5, 2014
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
 
 #include "edit_formula_dialog.h"
 #include "ui_edit_formula_dialog.h"
@@ -89,7 +92,7 @@
 #include "../vpatterndb/variables/varcradius.h"
 #include "../vpatterndb/variables/vcurveangle.h"
 #include "../vpatterndb/variables/vcurvelength.h"
-#include "../vpatterndb/variables/custom_variable.h"
+#include "../vpatterndb/variables/vincrement.h"
 #include "../vpatterndb/variables/vlineangle.h"
 #include "../vpatterndb/variables/vlinelength.h"
 #include "../vpatterndb/variables/measurement_variable.h"
@@ -105,8 +108,7 @@ template <class T> class QSharedPointer;
 enum {ColumnName = 0, ColumnFullName};
 
 //---------------------------------------------------------------------------------------------------------------------
-EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &toolId, const quint16 &source,
-                                     QWidget *parent)
+EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : DialogTool(data, toolId, parent)
     , ui(new Ui::EditFormulaDialog)
     , m_formula(QString())
@@ -115,23 +117,9 @@ EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &tool
     , m_checkLessThanZero(false)
     , m_postfix(QString())
     , m_restoreCursor(false)
-    , m_source(source)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
-
-    // Resize the dialog based on last saved size.
-    const QSize size = qApp->Settings()->GetFormulaWizardDialogSize();
-    if (!size.isEmpty())
-    {
-        // Block signals to prevent a resize event that will only save the size again. 
-        blockSignals(true);
-        resize(size);
-        blockSignals(false);
-    }
-
-    // Set the position that the dialog opens based on user preference.
-    setDialogPosition();
 
     initializeVariables();
     initializeFormulaUi(ui);
@@ -206,9 +194,10 @@ void EditFormulaDialog::EvalFormula()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief valueChanged show description when current variable changed
-/// @param row number of row
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief valueChanged show description when current variable changed
+ * @param row number of row
+ */
 void EditFormulaDialog::valueChanged(int row)
 {
     if (ui->tableWidget->rowCount() == 0)
@@ -222,8 +211,8 @@ void EditFormulaDialog::valueChanged(int row)
     {
         case VariableTab::Measurements:
         {
-            const QString name = qApp->translateVariables()->VarFromUser(item->text());
-            const QSharedPointer<MeasurementVariable> measurements = data->getVariable<MeasurementVariable>(name);
+            const QString name = qApp->TrVars()->VarFromUser(item->text());
+            const QSharedPointer<MeasurementVariable> measurements = data->GetVariable<MeasurementVariable>(name);
             const QString desc = (measurements->getGuiText() == "") ? "" : QString("\nDescription: %1").arg(measurements->getGuiText());
             setDescription(item->text(), *data->DataVariables()->value(name)->GetValue(),
                            UnitsToStr(qApp->patternUnit(), true), tr("Measurement"), desc);
@@ -231,7 +220,7 @@ void EditFormulaDialog::valueChanged(int row)
         }
         case VariableTab::Custom:
         {
-            const QSharedPointer<CustomVariable> variables = data->getVariable<CustomVariable>(item->text());
+            const QSharedPointer<VIncrement> variables = data->GetVariable<VIncrement>(item->text());
             const QString desc =(variables->GetDescription() == "") ? "" : QString("\nDescription: %1").arg(variables->GetDescription());
             setDescription(item->text(), *data->DataVariables()->value(item->text())->GetValue(),
                            UnitsToStr(qApp->patternUnit(), true), tr("Custom Variable"), desc);
@@ -240,35 +229,35 @@ void EditFormulaDialog::valueChanged(int row)
         case VariableTab::LineLengths:
             {
                 setDescription(item->text(),
-                        *data->getVariable<VLengthLine>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
+                        *data->GetVariable<VLengthLine>(qApp->TrVars()->VarFromUser(item->text()))->GetValue(),
                         UnitsToStr(qApp->patternUnit(), true), tr("Line length"), "");
                 break;
             }
         case VariableTab::CurveLengths:
         {
             setDescription(item->text(),
-                           *data->getVariable<VCurveLength>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
+                           *data->GetVariable<VCurveLength>(qApp->TrVars()->VarFromUser(item->text()))->GetValue(),
                            UnitsToStr(qApp->patternUnit(), true), tr("Curve length"), "");
             break;
         }
         case VariableTab::LineAngles:
         {
             setDescription(item->text(),
-                           *data->getVariable<VLineAngle>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
+                           *data->GetVariable<VLineAngle>(qApp->TrVars()->VarFromUser(item->text()))->GetValue(),
                            degreeSymbol, tr("Line Angle"), "");
             break;
         }
         case VariableTab::ArcRadii:
         {
             setDescription(item->text(),
-                           *data->getVariable<VArcRadius>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
+                           *data->GetVariable<VArcRadius>(qApp->TrVars()->VarFromUser(item->text()))->GetValue(),
                            UnitsToStr(qApp->patternUnit(), true), tr("Arc radius"), "");
             break;
         }
         case VariableTab::CurveAngles:
         {
             setDescription(item->text(),
-                           *data->getVariable<VCurveAngle>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
+                           *data->GetVariable<VCurveAngle>(qApp->TrVars()->VarFromUser(item->text()))->GetValue(),
                            degreeSymbol, tr("Curve angle"), "");
         break;
         }
@@ -282,9 +271,10 @@ void EditFormulaDialog::valueChanged(int row)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief menu tabChanged
-/// @param row number of row
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief menu tabChanged
+ * @param row number of row
+ */
 void EditFormulaDialog::tabChanged(int row)
 {
     switch (row)
@@ -339,17 +329,19 @@ void EditFormulaDialog::tabChanged(int row)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief insertVariable insert variable into line edit
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief insertVariable insert variable into line edit
+ */
 void EditFormulaDialog::insertVariable()
 {
     insertValue(ui->tableWidget->currentItem());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief insertValue insert variable into line edit
-/// @param item chosen item of table widget
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief insertValue insert variable into line edit
+ * @param item chosen item of table widget
+ */
 void EditFormulaDialog::insertValue(QTableWidgetItem *item)
 {
     if (item != nullptr)
@@ -381,8 +373,9 @@ void EditFormulaDialog::insertValue(QTableWidgetItem *item)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief measurements show measurements in list
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief measurements show measurements in list
+ */
 void EditFormulaDialog::measurements()
 {
     ui->checkBoxHideEmpty->setEnabled(true);
@@ -390,8 +383,9 @@ void EditFormulaDialog::measurements()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief lineLengths show lengths of line variables in list
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief lineLengths show lengths of line variables in list
+ */
 void EditFormulaDialog::lineLengths()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
@@ -399,8 +393,9 @@ void EditFormulaDialog::lineLengths()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief arcRadii show radii of arc variables in list
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief arcRadii show radii of arc variables in list
+ */
 void EditFormulaDialog::arcRadii()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
@@ -408,8 +403,9 @@ void EditFormulaDialog::arcRadii()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief curveAngles show angles of curve variables in list
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief curveAngles show angles of curve variables in list
+ */
  void EditFormulaDialog::curveAngles()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
@@ -417,8 +413,9 @@ void EditFormulaDialog::arcRadii()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief curveLengths show lengths of curve variables in list
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief curveLengths show lengths of curve variables in list
+ */
 void EditFormulaDialog::curveLengths()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
@@ -426,8 +423,9 @@ void EditFormulaDialog::curveLengths()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief controlPointLengths show lengths of control point variables in list
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief controlPointLengths show lengths of control point variables in list
+ */
  void EditFormulaDialog::controlPointLengths()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
@@ -435,8 +433,9 @@ void EditFormulaDialog::curveLengths()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief lineAngles show angles of line variables in list
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief lineAngles show angles of line variables in list
+ */
  void EditFormulaDialog::lineAngles()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
@@ -444,8 +443,9 @@ void EditFormulaDialog::curveLengths()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief customVariables show custom variables in list
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief customVariables show custom variables in list
+ */
 void EditFormulaDialog::customVariables()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
@@ -453,8 +453,9 @@ void EditFormulaDialog::customVariables()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief functions show functions in list
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief functions show functions in list
+ */
 void EditFormulaDialog::functions()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
@@ -475,6 +476,7 @@ void EditFormulaDialog::closeEvent(QCloseEvent *event)
     DialogTool::closeEvent(event);
 }
 
+//---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::showEvent(QShowEvent *event)
 {
     QDialog::showEvent(event);
@@ -482,6 +484,25 @@ void EditFormulaDialog::showEvent(QShowEvent *event)
     {
         return;
     }
+
+    if (isInitialized)
+    {
+        return;
+    }
+    // do your init stuff here
+
+    const QSize size = qApp->Settings()->GetFormulaWizardDialogSize();
+    if (!size.isEmpty())
+    {
+        resize(size);
+    }
+
+    QScreen *screen = QGuiApplication::primaryScreen();
+    QRect position = frameGeometry();
+    position.moveCenter(screen->availableGeometry().center());
+    move(position.topLeft());
+
+    isInitialized = true;//first show windows are held
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -489,15 +510,17 @@ void EditFormulaDialog::resizeEvent(QResizeEvent *event)
 {
     // remember the size for the next time this dialog is opened, but only
     // if widget was already initialized.
-    qApp->Settings()->SetFormulaWizardDialogSize(size());
-
+    if (isInitialized)
+    {
+        qApp->Settings()->SetFormulaWizardDialogSize(size());
+    }
     DialogTool::resizeEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::SetFormula(const QString &value)
 {
-    m_formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    m_formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
     m_undoFormula = m_formula;
     ui->plainTextEditFormula->setPlainText(m_formula);
     MoveCursorToEnd(ui->plainTextEditFormula);
@@ -524,7 +547,7 @@ void EditFormulaDialog::setPostfix(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString EditFormulaDialog::GetFormula() const
 {
-    return qApp->translateVariables()->TryFormulaFromUser(m_formula, qApp->Settings()->getOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(m_formula, qApp->Settings()->GetOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -541,14 +564,10 @@ void EditFormulaDialog::initializeVariables()
     connect(ui->menuTab_ListWidget,  &QListWidget::currentRowChanged, this, ClearFilterFormulaInputs);
     connect(ui->checkBoxHideEmpty,   &QCheckBox::stateChanged,        this, &EditFormulaDialog::measurements);
 
-
+    // Set the selection highlight rect larger than just the item text
     for (int i = 0; i < ui->menuTab_ListWidget->count(); ++i)
     {
-        // Set the selection highlight rect larger than just the item text
         ui->menuTab_ListWidget->item(i)->setSizeHint(QSize(ui->menuTab_ListWidget->width(), 50));
-
-        // Set the visibility of tab item depending on source i.e., the parent dialog.
-        ui->menuTab_ListWidget->item(i)->setHidden(!(m_source & (1 << i)));
     }
 }
 
@@ -561,9 +580,10 @@ void EditFormulaDialog::setDescription(const QString &name, qreal value, const Q
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief showVariable show variables in list
-/// @param var container with variables
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief showVariable show variables in list
+ * @param var container with variables
+ */
 template <class key, class val>
 void EditFormulaDialog::showVariable(const QMap<key, val> &var)
 {
@@ -594,9 +614,10 @@ void EditFormulaDialog::showVariable(const QMap<key, val> &var)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief showMeasurements show measurements in table
-/// @param var container with measurements
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief showMeasurements show measurements in table
+ * @param var container with measurements
+ */
 void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<MeasurementVariable> > &var)
 {
     ui->tableWidget->blockSignals(true);
@@ -626,7 +647,7 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<Meas
             }
             else
             {
-                itemFullName->setText(qApp->translateVariables()->guiText(iMap.value()->GetName()));
+                itemFullName->setText(qApp->TrVars()->guiText(iMap.value()->GetName()));
             }
 
             itemFullName->setToolTip(itemFullName->text());
@@ -640,8 +661,9 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<Meas
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief showFunctions show functions in list
-//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief showFunctions show functions in list
+ */
 void EditFormulaDialog::showFunctions()
 {
     ui->tableWidget->blockSignals(true);
@@ -650,8 +672,8 @@ void EditFormulaDialog::showFunctions()
     ui->tableWidget->setColumnHidden(ColumnFullName, true);
     ui->description_Label->setText("");
 
-    QMap<QString, qmu::QmuTranslation>::const_iterator i = qApp->translateVariables()->getFunctions().constBegin();
-    while (i != qApp->translateVariables()->getFunctions().constEnd())
+    QMap<QString, qmu::QmuTranslation>::const_iterator i = qApp->TrVars()->getFunctions().constBegin();
+    while (i != qApp->TrVars()->getFunctions().constEnd())
     {
         ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
         QTableWidgetItem *item = new QTableWidgetItem(i.value().translate());

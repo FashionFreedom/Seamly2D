@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>520</height>
+    <height>510</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -22,7 +22,7 @@
   <property name="minimumSize">
    <size>
     <width>440</width>
-    <height>520</height>
+    <height>510</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -37,9 +37,6 @@
   <property name="windowIcon">
    <iconset resource="../../../vmisc/share/resources/icon.qrc">
     <normaloff>:/icon/32x32/edit.png</normaloff>:/icon/32x32/edit.png</iconset>
-  </property>
-  <property name="sizeGripEnabled">
-   <bool>true</bool>
   </property>
   <property name="modal">
    <bool>true</bool>
@@ -770,7 +767,7 @@ QListWidget::item:selected {
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>50</height>
+           <height>40</height>
           </size>
          </property>
          <property name="frameShape">

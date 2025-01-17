@@ -109,7 +109,7 @@ protected:
     //@brief: called in destructor of application, so instance destroyed and new maybe created (never happen scenario though)
     static void Reset();
 
-    //@brief called to create single object, by Application2D only
+    //@brief called to create single object, by VApplication only
     static VCommandLinePtr Get(const QCoreApplication& app);
 
 private:
@@ -119,12 +119,12 @@ private:
     VCommandLineOptions optionsUsed;
     QMap<QString, int> optionsIndex;
     bool isGuiEnabled;
-    friend class Application2D;
+    friend class VApplication;
 
     static qreal Lo2Px(const QString& src, const LayoutSettingsDialog& converter);
     static qreal Pg2Px(const QString& src, const LayoutSettingsDialog& converter);
 
-    static void initOptions(VCommandLineOptions &options, QMap<QString, int> &optionsIndex);
+    static void InitOptions(VCommandLineOptions &options, QMap<QString, int> &optionsIndex);
 };
 
 #endif // VCMDEXPORT_H

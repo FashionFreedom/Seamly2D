@@ -70,7 +70,7 @@ Q_DECLARE_METATYPE(QMarginsF)
 
 namespace
 {
-const QString settingConfigurationPointLanguage = QStringLiteral("configuration/label_language");
+const QString settingConfigurationLabelLanguage = QStringLiteral("configuration/label_language");
 
 const QString settingPathsPattern = QStringLiteral("paths/pattern");
 const QString settingPathsLayout  = QStringLiteral("paths/layout");
@@ -88,7 +88,7 @@ const QString settingCommunityUsername     = QStringLiteral("community/username"
 const QString settingCommunitySavePassword = QStringLiteral("community/savePassword");
 const QString settingCommunityUserPassword = QStringLiteral("community/userpassword");
 
-const QString settingLayoutGap            = QStringLiteral("layout/width");
+const QString settingLayoutWidth            = QStringLiteral("layout/width");
 const QString settingLayoutSorting          = QStringLiteral("layout/sorting");
 const QString settingLayoutPaperHeight      = QStringLiteral("layout/paperHeight");
 const QString settingLayoutPaperWidth       = QStringLiteral("layout/paperWidth");
@@ -119,15 +119,15 @@ VSettings::VSettings(Format format, Scope scope, const QString &organization, co
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VSettings::getPointNameLanguage() const
+QString VSettings::GetLabelLanguage() const
 {
-    return value(settingConfigurationPointLanguage, QLocale().bcp47Name()).toString();
+    return value(settingConfigurationLabelLanguage, QLocale().bcp47Name()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSettings::setPointNameLanguage(const QString &value)
+void VSettings::SetLabelLanguage(const QString &value)
 {
-    setValue(settingConfigurationPointLanguage, value);
+    setValue(settingConfigurationLabelLanguage, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -377,11 +377,11 @@ void VSettings::SetLayoutShift(qreal value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VSettings::getLayoutGap() const
+qreal VSettings::GetLayoutWidth() const
 {
-    const qreal def = getDefLayoutGap();
+    const qreal def = GetDefLayoutWidth();
     bool ok = false;
-    const qreal lWidth = value(settingLayoutGap, def).toDouble(&ok);
+    const qreal lWidth = value(settingLayoutWidth, def).toDouble(&ok);
     if (ok)
     {
         return lWidth;
@@ -393,15 +393,15 @@ qreal VSettings::getLayoutGap() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VSettings::getDefLayoutGap()
+qreal VSettings::GetDefLayoutWidth()
 {
     return UnitConvertor(2.5, Unit::Mm, Unit::Px);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSettings::setLayoutGap(qreal value)
+void VSettings::SetLayoutWidth(qreal value)
 {
-    setValue(settingLayoutGap, value);
+    setValue(settingLayoutWidth, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -582,19 +582,19 @@ void VSettings::SetIgnoreAllFields(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VSettings::useStripOptimization() const
+bool VSettings::GetStripOptimization() const
 {
-    return value(settingStripOptimization, useDefStripOptimization()).toBool();
+    return value(settingStripOptimization, GetDefStripOptimization()).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VSettings::useDefStripOptimization()
+bool VSettings::GetDefStripOptimization()
 {
     return false;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSettings::setStripOptimization(bool value)
+void VSettings::SetStripOptimization(bool value)
 {
     setValue(settingStripOptimization, value);
 }

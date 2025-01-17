@@ -1,26 +1,27 @@
-//  @file  vscenepoint.cpp
-//  @author Douglas S Caskey
-//  @date   17 Jun, 2024
-//
-//  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
-//
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+/***************************************************************************
+ *                                                                         *
+ *   Copyright (C) 2017  Seamly, LLC                                       *
+ *                                                                         *
+ *   https://github.com/fashionfreedom/seamly2d                            *
+ *                                                                         *
+ ***************************************************************************
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ **************************************************************************
 
-/************************************************************************
+ ************************************************************************
  **
  **  @file
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -72,7 +73,7 @@ VScenePoint::VScenePoint(const QColor &lineColor, QGraphicsItem *parent)
     , m_isHovered(false)
     , m_showPointName(true)
 {
-    m_pointLeader->setDefaultWidth(widthHairLine);
+    m_pointLeader->setBasicWidth(widthHairLine);
     m_pointLeader->setLine(QLineF(0, 0, 1, 0));
     m_pointLeader->setVisible(false);
 
@@ -89,7 +90,7 @@ void VScenePoint::paint(QPainter *painter, const QStyleOptionGraphicsItem *optio
     setPointPen(scale);
     scaleCircleSize(this, scale * .75);
 
-    if (!qApp->Settings()->getHidePointNames())
+    if (qApp->Settings()->getPointNameSize()*scale < 6 || !qApp->Settings()->getHidePointNames())
     {
         m_pointName->setVisible(false);
         m_pointLeader->setVisible(false);
@@ -101,15 +102,18 @@ void VScenePoint::paint(QPainter *painter, const QStyleOptionGraphicsItem *optio
             m_pointName->setVisible(m_showPointName);
 
             QPen leaderPen = m_pointLeader->pen();
-            QColor leaderColor = correctColor(m_pointLeader, QColor(qApp->Settings()->getPointNameColor()));
-            leaderColor.setAlpha(128);
-
             if (qApp->Settings()->getUseToolColor())
             {
-                leaderColor = correctColor(m_pointLeader, m_pointColor);
+                QColor leaderColor = correctColor(m_pointLeader, m_pointColor);
+                leaderColor.setAlpha(128);
+                leaderPen.setColor(leaderColor);
             }
-
-            leaderPen.setColor(leaderColor);
+            else
+            {
+                QColor leaderColor = correctColor(m_pointLeader, QColor(qApp->Settings()->getPointNameColor()));
+                leaderColor.setAlpha(128);
+                leaderPen.setColor(leaderColor);
+            }
             m_pointLeader->setPen(leaderPen);
 
             refreshLeader();
@@ -178,7 +182,7 @@ void VScenePoint::refreshLeader()
 {
     QRectF nRect = m_pointName->sceneBoundingRect();
     nRect.translate(- scenePos());
-    if (!rect().intersects(nRect))
+    if (not rect().intersects(nRect))
     {
         const QRectF nameRect = m_pointName->sceneBoundingRect();
         QPointF p1;

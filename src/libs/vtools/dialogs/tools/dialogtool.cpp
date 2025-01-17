@@ -1,52 +1,53 @@
-//-----------------------------------------------------------------------------
-//  @file   dialogtool.cpp
-//  @author Douglas S Caskey
-//  @date   17 Sep, 2023
-//
-//  @copyright
-//  Copyright (C) 2017 - 2022 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
-//
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+/***************************************************************************
+ **  @file   dialogtool.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
-//-----------------------------------------------------------------------------
-//
-//  @file   dialogtool.cpp
-//  @author Roman Telezhynskyi <dismine(at)gmail.com>
-//  @date   November 15, 2013
-//
-//  @copyright
-//  Copyright (C) 2013 Valentina project.
-//  This source code is part of the Valentina project, a pattern making
-//  program, whose allow create and modeling patterns of clothing.
-//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
-//
-//  Valentina is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published
-//  by the Free Software Foundation, either version 3 of the License,
-//  or (at your option) any later version.
-//
-//  Valentina is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+/**************************************************************************
+ **
+ **  @file   dialogtool.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   November 15, 2013
+ **
+ **  @copyright
+ **  Copyright (C) 2013 Valentina project.
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published
+ **  by the Free Software Foundation, either version 3 of the License,
+ **  or (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
 
 #include "dialogtool.h"
 
@@ -57,7 +58,6 @@
 #include <QComboBox>
 #include <QDoubleSpinBox>
 #include <QEvent>
-#include <QGuiApplication>
 #include <QHash>
 #include <QIcon>
 #include <QKeyEvent>
@@ -69,11 +69,9 @@
 #include <QPixmap>
 #include <QPlainTextEdit>
 #include <QPushButton>
-#include <QRect>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #include <QScopedPointer>
-#include <QScreen>
 #include <QSharedPointer>
 #include <QShowEvent>
 #include <QSize>
@@ -86,20 +84,19 @@
 #include <QBuffer>
 #include <QFont>
 
-#include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../qmuparser/qmudef.h"
 #include "../qmuparser/qmuparsererror.h"
 #include "../vgeometry/vpointf.h"
-#include "../vgeometry/vabstractcurve.h"
-#include "../vgeometry/vgobject.h"
-#include "../vmisc/vabstractapplication.h"
-#include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/calculator.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vtranslatevars.h"
 #include "../vpatterndb/vpiecenode.h"
 #include "../../tools/vabstracttool.h"
+#include "../ifc/xml/vabstractpattern.h"
+#include "../vgeometry/vabstractcurve.h"
+#include "../vgeometry/vgobject.h"
+#include "../vmisc/vcommonsettings.h"
 
 template <class T> class QSharedPointer;
 
@@ -110,7 +107,6 @@ Q_LOGGING_CATEGORY(vDialog, "v.dialog")
 
 namespace
 {
-
 //---------------------------------------------------------------------------------------------------------------------
 quint32 RowId(QListWidget *listWidget, int i)
 {
@@ -135,41 +131,32 @@ quint32 RowId(QListWidget *listWidget, int i)
  * @param parent parent widget
  */
 DialogTool:: DialogTool(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    : QDialog(parent)
-    , data(data)
-    , isInitialized(false)
-    , flagName(true)
-    , flagFormula(true)
-    , flagError(true)
-    , timerFormula(nullptr)
-    , ok_Button(nullptr)
-    , apply_Button(nullptr)
-    , spinBoxAngle(nullptr)
-    , plainTextEditFormula(nullptr)
-    , labelResultCalculation(nullptr)
-    , labelEditNamePoint(nullptr)
-    , labelEditFormula(nullptr)
-    , okColor(this->palette().color(QPalette::Active, QPalette::WindowText))
-    , errorColor(Qt::red)
-    , associatedTool(nullptr)
-    , toolId(toolId)
-    , prepare(false)
-    , pointName()
-    , number(0)
-    , vis(nullptr)
-    , m_screen(QGuiApplication::primaryScreen())
+    : QDialog(parent),
+      data(data),
+      isInitialized(false),
+      flagName(true),
+      flagFormula(true),
+      flagError(true),
+      timerFormula(nullptr),
+      ok_Button(nullptr),
+      apply_Button(nullptr),
+      spinBoxAngle(nullptr),
+      plainTextEditFormula(nullptr),
+      labelResultCalculation(nullptr),
+      labelEditNamePoint(nullptr),
+      labelEditFormula(nullptr),
+      okColor(this->palette().color(QPalette::Active, QPalette::WindowText)),
+      errorColor(Qt::red),
+      associatedTool(nullptr),
+      toolId(toolId),
+      prepare(false),
+      pointName(),
+      number(0),
+      vis(nullptr)
 {
     SCASSERT(data != nullptr)
     timerFormula = new QTimer(this);
     connect(timerFormula, &QTimer::timeout, this, &DialogTool::EvalFormula);
-
-    QList<QScreen *> screenList = QGuiApplication::screens();
-
-    // If second monitor exists and user pref is to use second monitor, open dialogs on second monitor.
-    if (qApp->Settings()->useSecondMonitor() && (screenList.count() > 1))
-    {
-        m_screen = screenList.at(1);
-    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -177,7 +164,7 @@ DialogTool::~DialogTool()
 {
     emit ToolTip("");
 
-    if (!vis.isNull())
+    if (not vis.isNull())
     {
         delete vis;
     }
@@ -249,10 +236,10 @@ void DialogTool::FillComboBoxPiecesList(QComboBox *box, const QVector<quint32> &
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief fillComboBoxPoints fill comboBox list of points
+ * @brief FillComboBoxPoints fill comboBox list of points
  * @param box comboBox
  */
-void DialogTool::fillComboBoxPoints(QComboBox *box, FillComboBox rule, const quint32 &ch1, const quint32 &ch2) const
+void DialogTool::FillComboBoxPoints(QComboBox *box, FillComboBox rule, const quint32 &ch1, const quint32 &ch2) const
 {
     FillCombo<VPointF>(box, GOType::Point, rule, ch1, ch2);
 }
@@ -465,7 +452,7 @@ bool DialogTool::eventFilter(QObject *object, QEvent *event)
             }
             else if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
             {
-                if (qApp->Settings()->getOsSeparator())
+                if (qApp->Settings()->GetOsSeparator())
                 {
                     plainTextEdit->insertPlainText(QLocale().decimalPoint());
                 }
@@ -494,7 +481,7 @@ quint32 DialogTool::DNumber(const QString &baseName) const
     {
         ++num;
         name = baseName + QString("_%1").arg(num);
-    } while (!data->IsUnique(name));
+    } while (not data->IsUnique(name));
 
     return num;
 }
@@ -518,7 +505,7 @@ int DialogTool::FindNotExcludedNodeDown(QListWidget *listWidget, int candidate)
         SCASSERT(rowItem != nullptr);
         rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
 
-        if (!rowNode.isExcluded())
+        if (not rowNode.isExcluded())
         {
             index = i;
         }
@@ -549,7 +536,7 @@ int DialogTool::FindNotExcludedNodeUp(QListWidget *listWidget, int candidate)
         SCASSERT(rowItem != nullptr);
         rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
 
-        if (!rowNode.isExcluded())
+        if (not rowNode.isExcluded())
         {
             index = i;
         }
@@ -648,7 +635,7 @@ NodeInfo DialogTool::getNodeInfo(const VPieceNode &node, bool showNotch) const
     if (node.GetTypeTool() != Tool::NodePoint)
     {
         int bias = 0;
-        qApp->translateVariables()->VariablesToUser(info.name, 0, obj->name(), bias);
+        qApp->TrVars()->VariablesToUser(info.name, 0, obj->name(), bias);
 
         if (node.GetReverse())
         {
@@ -838,7 +825,7 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
             QString formula = text;
             formula.replace("\n", " ");
             // Translate to internal look.
-            formula = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+            formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
             QScopedPointer<Calculator> cal(new Calculator());
             result = cal->EvalFormula(data->DataVariables(), formula);
 
@@ -913,7 +900,7 @@ void DialogTool::setCurrentPointId(QComboBox *box, const quint32 &value, FillCom
 
     box->blockSignals(true);
 
-    fillComboBoxPoints(box, rule, ch1, ch2);
+    FillComboBoxPoints(box, rule, ch1, ch2);
     ChangeCurrentData(box, value);
 
     box->blockSignals(false);
@@ -1064,7 +1051,7 @@ void DialogTool::PrepareList(QMap<QString, quint32> &list, quint32 id) const
 
     QString newName = obj->name();
     int bias = 0;
-    if (qApp->translateVariables()->VariablesToUser(newName, 0, obj->name(), bias))
+    if (qApp->TrVars()->VariablesToUser(newName, 0, obj->name(), bias))
     {
         list[newName] = id;
     }
@@ -1089,7 +1076,7 @@ void DialogTool::CheckState()
 {
     SCASSERT(ok_Button != nullptr)
     ok_Button->setEnabled(flagFormula && flagName && flagError);
-    // In case dialog does not have an apply button
+    // In case dialog hasn't apply button
     if (apply_Button != nullptr)
     {
         apply_Button->setEnabled(ok_Button->isEnabled());
@@ -1393,7 +1380,7 @@ void DialogTool::SetAssociatedTool(VAbstractTool *tool)
         associatedTool = tool;
         SetToolId(tool->getId());
         data = tool->getData();
-        if (!vis.isNull())
+        if (not vis.isNull())
         {
             vis->setData(data);
         }
@@ -1444,66 +1431,4 @@ void DialogTool::FillCombo(QComboBox *box, GOType gType, FillComboBox rule, cons
     FillList(box, list);
 
     box->blockSignals(false);
-}
-
-// @brief setDialogPosition set position to open dialogs
-//
-// This method sets the screen position of dialogs based on the user preference setting
-//
-// @details
-//  - Get dialog prefered possition from settings.
-//  - Determine geometry of screen and dialog.
-//  - Move dialog to prefered screen position with margin applied.
-//  - Positions include Top left, Top right, Center, Bottom Left, and Botton right corner of screen.
-void  DialogTool::setDialogPosition()
-{
-    int position = qApp->Settings()->getDialogPosition();
-    QRect screenRect = m_screen->availableGeometry();
-    QRect dialogRect = frameGeometry();
-
-    switch(static_cast<DialogPosition>(position))
-    {
-        case DialogPosition::TopLeft:
-        {
-            move(screenRect.topLeft() + QPoint(10, 10));
-            break;
-        }
-        case DialogPosition::TopRight:
-        {
-            move(screenRect.topRight() - dialogRect.topRight() + QPoint(-10 , 10));
-            break;
-        }
-        case DialogPosition::BottomLeft:
-        {
-            move(screenRect.bottomLeft() - dialogRect.bottomLeft() + QPoint(10, -40));
-            break;
-        }
-        case DialogPosition::BottomRight:
-        {
-            move(screenRect.bottomRight() - dialogRect.bottomRight() + QPoint(-10, -40));
-            break;
-        }
-        case DialogPosition::Offset:
-        {
-            int xOffset = qApp->Settings()->getXOffset();
-            if (xOffset > screenRect.width() - dialogRect.width())
-            {
-                xOffset = screenRect.width() - dialogRect.width();
-            }
-
-            int yOffset = qApp->Settings()->getYOffset();
-            if (yOffset > screenRect.height() - dialogRect.height())
-            {
-                yOffset = screenRect.height() - dialogRect.height();
-            }
-            move(screenRect.topLeft() + QPoint(xOffset, yOffset - 40));
-            break;
-        }
-        case DialogPosition::Center:
-        default:
-        {
-            move(screenRect.center() - dialogRect.center());
-            break;
-        }
-    }
 }

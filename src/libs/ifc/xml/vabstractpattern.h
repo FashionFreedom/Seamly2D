@@ -69,7 +69,6 @@
 #include "vtoolrecord.h"
 #include "../vmisc/def.h"
 #include "../vwidgets/pen_toolbar.h"
-#include "../../tools/images/image_item.h"
 
 class QDomElement;
 class VPiecePath;
@@ -119,7 +118,7 @@ public:
 
     QStringList                    ListMeasurements() const;
     QVector<VFormulaField>         ListExpressions() const;
-    QVector<VFormulaField>         listVariableExpressions() const;
+    QVector<VFormulaField>         ListIncrementExpressions() const;
 
     virtual void                   CreateEmptyFile()=0;
 
@@ -142,12 +141,9 @@ public:
     qreal                          getDefaultLineWeight() const;
     QString                        getDefaultLineType() const;
 
-    void                           setDefaultBasePoint(QString basePoint);
-
     virtual void                   IncrementReferens(quint32 id) const=0;
     virtual void                   DecrementReferens(quint32 id) const=0;
 
-    virtual QStringList            GetCurrentAlphabet() const=0;
     virtual QString                GenerateLabel(const LabelType &type, const QString &reservedName = QString())const=0;
     virtual QString                GenerateSuffix(const QString &type) const=0;
 
@@ -174,12 +170,6 @@ public:
     quint32                        SiblingNodeId(const quint32 &nodeId) const;
 
     QStringList                    getPatternPieces() const;
-
-    QMap<qint32, ImageItem *>      getBackgroundImageMap();
-    ImageItem *                    getBackgroundImage(qint32 id);
-    void                           addBackgroundImage(qint32 id, ImageItem *item);
-    void                           removeBackgroundImage(qint32 id);
-    void                           clearBackgroundImageMap();
 
     QMap<GHeights, bool>           GetGradationHeights() const;
     void                           SetGradationHeights(const QMap<GHeights, bool> &options);
@@ -278,8 +268,6 @@ public:
     QString                        useGroupLineType(quint32 toolId, QString type);
     QString                        useGroupLineWeight(quint32 toolId, QString weight);
 
-    QDomElement                    createDraftImages();
-
     QPair<bool, QMap<quint32, quint32> > parseItemElement(const QDomElement &domElement);
 
     static const QString TagPattern;
@@ -291,8 +279,8 @@ public:
     static const QString TagImage;
     static const QString TagNotes;
     static const QString TagMeasurements;
-    static const QString TagVariables;
-    static const QString TagVariable;
+    static const QString TagIncrements;
+    static const QString TagIncrement;
     static const QString TagDraftBlock;
     static const QString TagGroups;
     static const QString TagGroup;
@@ -318,27 +306,6 @@ public:
     static const QString TagNodes;
     static const QString TagNode;
     static const QString TagLine;
-
-    static const QString TagDraftImages;
-    static const QString TagDraftImage;
-    static const QString AttrId;
-    static const QString AttrFilename;
-    static const QString AttrLocked;
-    static const QString AttrAnchor;
-    static const QString AttrXPos;
-    static const QString AttrYPos;
-    static const QString AttrHeight;
-    static const QString AttrXScale;
-    static const QString AttrYScale ;
-    static const QString AttrUnits;
-    static const QString AttrOpacity;
-    static const QString AttrOrder;
-    static const QString AttrAspectRatio;
-    static const QString AttrSource;
-    static const QString AttrXOffset;
-    static const QString AttrYOffset;
-    static const QString AttrBasepoint;
-
 
     static const QString AttrName;
     static const QString AttrVisible;
@@ -439,9 +406,9 @@ public:
     static const QString AttrDefSize;
     static const QString AttrExtension;
 
-    static const QString VariableName;
-    static const QString VariableFormula;
-    static const QString VariableDescription;
+    static const QString IncrementName;
+    static const QString IncrementFormula;
+    static const QString IncrementDescription;
 
     static const QString NodeArc;
     static const QString NodeElArc;
@@ -486,10 +453,10 @@ signals:
     void           ClearMainWindow();
     void           UndoCommand();
     void           setGuiEnabled(bool enabled);
-    void           patternParsed();
+    void           CheckLayout();
     void           UpdateInLayoutList(quint32 id);
     void           showPiece(quint32 id);
-    void           setCurrentDraftBlock(const QString &draftblock);
+    void           setCurrentDraftBlock(const QString &patterPiece);
     void           patternHasGroups(bool value);
     void           updateGroups();
 
@@ -509,8 +476,6 @@ protected:
     qreal          m_DefaultLineWeight;
     QString        m_DefaultLineType;
 
-    QString        defaultBasePoint;
-
     QString        lastSavedExportFormat;
 
     /** @brief cursor cursor keep id tool after which we will add new tool in file. */
@@ -523,9 +488,6 @@ protected:
 
     /** @brief patternPieces list of patern pieces names for combobox*/
     QStringList    patternPieces;
-
-    /** @brief m_imageMap stores the image items and their id*/
-    QMap<qint32, ImageItem *>         m_imageMap{};
 
     /** @brief modified keep state of the document for cases that do not cover QUndoStack*/
     mutable bool   modified;
@@ -555,7 +517,7 @@ protected:
 private:
     Q_DISABLE_COPY(VAbstractPattern)
 
-    QStringList            listVariables() const;
+    QStringList            ListIncrements() const;
     QVector<VFormulaField> ListPointExpressions() const;
     QVector<VFormulaField> ListArcExpressions() const;
     QVector<VFormulaField> ListElArcExpressions() const;

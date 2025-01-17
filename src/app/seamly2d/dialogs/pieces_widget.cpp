@@ -346,6 +346,8 @@ void PiecesWidget::cellDoubleClicked(int row, int column)
 void PiecesWidget::fillTable(const QHash<quint32, VPiece> *pieces)
 {
     ui->tableWidget->blockSignals(true);
+
+    const int selectedRow = ui->tableWidget->currentRow();
     ui->tableWidget->clearContents();
     ui->tableWidget->setColumnCount(5);
     ui->tableWidget->setRowCount(pieces->size());
@@ -423,7 +425,9 @@ void PiecesWidget::fillTable(const QHash<quint32, VPiece> *pieces)
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     ui->tableWidget->resizeColumnsToContents();
     ui->tableWidget->resizeRowsToContents();
+    //ui->tableWidget->setCurrentCell(selectedRow, 0);
     ui->tableWidget->setSortingEnabled(true);
+    //ui->tableWidget->clearSelection();
     ui->tableWidget->blockSignals(false);
 }
 

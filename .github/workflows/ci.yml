@@ -43,7 +43,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - name: install appimage dependencies
         run: |
@@ -76,7 +76,7 @@ jobs:
           cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
           linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v3
         with:
           name: Seamly2D-x86_64.AppImage
           path: Seamly2D-x86_64.AppImage
@@ -88,7 +88,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - uses: jurplel/install-qt-action@v3
         with:
@@ -112,13 +112,13 @@ jobs:
 
   macos:
     name: 'macOS: Build'
-    runs-on: macos-13
+    runs-on: macos-latest
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - name: xcode version
         # Qt 5.15.2 currently fails with qglobal.h:45:12: fatal error: 'type_traits' file not found
@@ -156,8 +156,6 @@ jobs:
         env:
           APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
         run: |
-          # see https://github.com/actions/runner-images/issues/7522
-          echo killing XProtect...; sudo pkill -9 XProtect >/dev/null || true;
           # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
           if [ -n "$APPLE_SIGN_IDENTITY" ] ; then
             qmake Seamly2D.pro -config release CONFIG+=noTests CONFIG+=macSign
@@ -166,7 +164,7 @@ jobs:
           fi
           make -j$(sysctl -n hw.logicalcpu)
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v3
         with:
           name: Seamly2D-macos.zip
           path: out/Seamly2D-macos.zip
@@ -180,7 +178,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - uses: ilammy/msvc-dev-cmd@v1
 
@@ -223,7 +221,7 @@ jobs:
       - name: sign installer
         env:
           PFX_BASE64: ${{ secrets.pfx_base64 }}
-        if: false # temporarily disable signing until #1104 is solved, then revert to ${{ env.PFX_BASE64 }}
+        if: ${{ env.PFX_BASE64 }}
         run: |
           cd ..\windows-build\
           SignTool sign /fd SHA256 /f ${{ steps.setup_signing.outputs.filePath }} /p ${{ secrets.pfx_password }} /t http://timestamp.sectigo.com Seamly2D-installer.exe
@@ -234,7 +232,7 @@ jobs:
           C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
           copy Seamly2D-windows.zip ..\Seamly2D\
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v3
         with:
           name: Seamly2D-windows.zip
           path: Seamly2D-windows.zip
@@ -248,7 +246,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - uses: ilammy/msvc-dev-cmd@v1
         with:
@@ -294,7 +292,7 @@ jobs:
       - name: sign installer
         env:
           PFX_BASE64: ${{ secrets.pfx_base64 }}
-        if: false # temporarily disable signing until #1104 is solved, then revert to ${{ env.PFX_BASE64 }}
+        if: ${{ env.PFX_BASE64 }}
         run: |
           cd ..\windows-build\
           SignTool sign /fd SHA256 /f ${{ steps.setup_signing.outputs.filePath }} /p ${{ secrets.pfx_password }} /t http://timestamp.sectigo.com Seamly2D-installer.exe
@@ -305,7 +303,7 @@ jobs:
           C:\"Program Files"\7-Zip\7z.exe a Seamly2D-win32.zip Seamly2D-installer.exe
           copy Seamly2D-win32.zip ..\Seamly2D\
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v3
         with:
           name: Seamly2D-win32.zip
           path: Seamly2D-win32.zip
@@ -319,19 +317,19 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v3
         with:
           name: Seamly2D-x86_64.AppImage
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v3
         with:
           name: Seamly2D-macos.zip
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v3
         with:
           name: Seamly2D-windows.zip
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v3
         with:
           name: Seamly2D-win32.zip
-      - uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ env.VERSION_NUMBER }}
           name: ${{ env.VERSION_NUMBER }}
@@ -353,7 +351,7 @@ jobs:
 
     steps:
       - name: Doxygen GitHub Pages Deploy Action
-        uses: DenverCoder1/doxygen-github-pages-action@60e8d33d954eafb4d54710db8130fb0ad8f7d157
+        uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages

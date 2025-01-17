@@ -506,9 +506,9 @@ void VToolMove::SetVisualization()
         SCASSERT(visual != nullptr)
 
         visual->setObjects(sourceToObjects(source));
-        visual->SetAngle(qApp->translateVariables()->FormulaToUser(formulaAngle, qApp->Settings()->getOsSeparator()));
-        visual->SetLength(qApp->translateVariables()->FormulaToUser(formulaLength, qApp->Settings()->getOsSeparator()));
-        visual->setRotation(qApp->translateVariables()->FormulaToUser(formulaRotation, qApp->Settings()->getOsSeparator()));
+        visual->SetAngle(qApp->TrVars()->FormulaToUser(formulaAngle, qApp->Settings()->GetOsSeparator()));
+        visual->SetLength(qApp->TrVars()->FormulaToUser(formulaLength, qApp->Settings()->GetOsSeparator()));
+        visual->setRotation(qApp->TrVars()->FormulaToUser(formulaRotation, qApp->Settings()->GetOsSeparator()));
         visual->setOriginPointId(m_originPointId);
         visual->RefreshGeometry();
     }

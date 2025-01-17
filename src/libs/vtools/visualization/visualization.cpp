@@ -1,26 +1,28 @@
- //  @file   visualization.cpp
- //  @author Douglas S Caskey
- //  @date   17 Sep, 2023
- //
- //  @copyright
- //  Copyright (C) 2017 - 2024 Seamly, LLC
- //  https://github.com/fashionfreedom/seamly2d
- //
- //  @brief
- //  Seamly2D is free software: you can redistribute it and/or modify
- //  it under the terms of the GNU General Public License as published by
- //  the Free Software Foundation, either version 3 of the License, or
- //  (at your option) any later version.
- //
- //  Seamly2D is distributed in the hope that it will be useful,
- //  but WITHOUT ANY WARRANTY; without even the implied warranty of
- //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- //  GNU General Public License for more details.
- //
- //  You should have received a copy of the GNU General Public License
- //  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+/***************************************************************************
+ **  @file   visualization.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- /************************************************************************
+/************************************************************************
  **  @file   visualization.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   15 8, 2014
@@ -194,7 +196,7 @@ qreal Visualization::FindVal(const QString &expression,
             // Replace line return with spaces for calc if exist
             QString formula = expression;
             formula.replace("\n", " ");
-            formula = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+            formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
             QScopedPointer<Calculator> cal(new Calculator());
             val = cal->EvalFormula(vars, formula);
 
@@ -365,7 +367,7 @@ VScaledEllipse *Visualization::initPointItem(const QColor &color, QGraphicsItem 
     visPen.setColor(color);
 
     point->setPen(visPen);
-    point->setRect(pointRect(defPointRadiusPixel));
+    point->setRect(PointRect(defPointRadiusPixel));
     point->setPos(QPointF());
     point->setFlags(QGraphicsItem::ItemStacksBehindParent);
     point->setZValue(z);

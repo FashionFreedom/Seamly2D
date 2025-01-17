@@ -97,7 +97,7 @@ HistoryDialog::HistoryDialog(VContainer *data, VPattern *doc, QWidget *parent)
 
     ui->find_LineEdit->installEventFilter(this);
 
-    qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     fillTable();
     initializeTable();
@@ -270,7 +270,7 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
 RowData HistoryDialog::record(const VToolRecord &tool)
 {
     // This check helps to find missed tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used in history.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were used in history.");
 
     RowData rowData;
     const quint32 &toolId = tool.getId();
@@ -293,7 +293,6 @@ RowData HistoryDialog::record(const VToolRecord &tool)
             case Tool::Cut:
             case Tool::Midpoint:// Same as Tool::AlongLine, but tool will never has such type
             case Tool::ArcIntersectAxis:// Same as Tool::CurveIntersectAxis, but tool will never has such type
-            case Tool::BackgroundImage:
             case Tool::LAST_ONE_DO_NOT_USE:
                 Q_UNREACHABLE(); //-V501
                 break;
@@ -423,7 +422,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
             }
 
             case Tool::PointOfContact:
-                rowData.icon = ":/toolicon/32x32/point_intersect_arc_line.png";
+                rowData.icon = ":/toolicon/32x32/point_of_contact.png";
                 rowData.name = tr("%1").arg(getPointName(toolId));
                 rowData.tool = tr("Point Intersect Arc with center %1 & Line %2_%3")
                                   .arg(getPointName(attrUInt(domElement, AttrCenter)))
@@ -705,7 +704,7 @@ bool HistoryDialog::eventFilter(QObject *object, QEvent *event)
             QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
             if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
             {
-                if (qApp->Settings()->getOsSeparator())
+                if (qApp->Settings()->GetOsSeparator())
                 {
                     textEdit->insert(QLocale().decimalPoint());
                 }

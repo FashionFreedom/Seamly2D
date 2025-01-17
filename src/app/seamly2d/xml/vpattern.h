@@ -93,16 +93,14 @@ public:
     void addEmptyCustomVariable(const QString &name);
     void addEmptyCustomVariableAfter(const QString &after, const QString &name);
     void removeCustomVariable(const QString &name);
-    void moveVariableUp(const QString &name);
-    void moveVariableDown(const QString &name);
+    void MoveUpIncrement(const QString &name);
+    void MoveDownIncrement(const QString &name);
 
-    void setVariableName(const QString &name, const QString &text);
-    void setVariableFormula(const QString &name, const QString &text);
-    void setVariableDescription(const QString &name, const QString &text);
+    void setIncrementName(const QString &name, const QString &text);
+    void SetIncrementFormula(const QString &name, const QString &text);
+    void setIncrementDescription(const QString &name, const QString &text);
 
     void replaceNameInFormula(QVector<VFormulaField> &expressions, const QString &name, const QString &newName);
-
-    QStringList    GetCurrentAlphabet() const;
 
     virtual QString GenerateLabel(const LabelType &type, const QString &reservedName = QString())const Q_DECL_OVERRIDE;
     virtual QString GenerateSuffix(const QString &type) const Q_DECL_OVERRIDE;
@@ -119,12 +117,9 @@ public:
     bool isReadOnly() const;
     void SetReadOnly(bool rOnly);
 
-    void LiteParseVariables();
+    void LiteParseIncrements();
 
     static const QString AttrReadOnly;
-
-signals:
-    void             setStatusMessage(QString message);
 
 public slots:
     virtual void LiteParseTree(const Document &parse) Q_DECL_OVERRIDE;
@@ -144,8 +139,6 @@ private:
 
     void           parseDraftBlockElement(const QDomNode &node, const Document &parse);
     void           ParseDrawMode(const QDomNode &node, const Document &parse, const Draw &mode);
-    void           parseDraftImages(const QDomNode &node, const Document &parse);
-    void           parseImageElement(QDomElement &domElement, const Document &parse);
     void           parsePieceElement(QDomElement &domElement, const Document &parse);
     void           parsePieceNodes(const QDomElement &domElement, VPiece &piece, qreal width, bool closed) const;
     void           ParsePieceDataTag(const QDomElement &domElement, VPiece &piece) const;
@@ -170,16 +163,12 @@ private:
 
     void           ParsePathElement(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse);
 
-    void           parseVariablesElement(const QDomNode &node);
+    void           ParseIncrementsElement(const QDomNode &node);
     void           PrepareForParse(const Document &parse);
     void           ToolsCommonAttributes(const QDomElement &domElement, quint32 &id);
     void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, QString &name, qreal &mx,
                                           qreal &my, bool &labelVisible, QString &lineType,
                                           QString &lineWeight, QString &lineColor);
-
-    void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, QString &name, qreal &mx,
-                                          qreal &my, bool &labelVisible, QString &lineColor);
-
     void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, QString &name, qreal &mx,
                                           qreal &my, bool &labelVisible);
     void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, qreal &mx, qreal &my);
@@ -188,7 +177,6 @@ private:
     template <typename T>
     QRectF         ToolBoundingRect(const QRectF &rec, const quint32 &id) const;
     void           parseCurrentDraftBlock();
-
     QString        GetLabelBase(quint32 index)const;
 
     void ParseToolBasePoint(VMainGraphicsScene *scene, const QDomElement &domElement, const Document &parse);
@@ -251,8 +239,8 @@ private:
 
     qreal EvalFormula(VContainer *data, const QString &formula, bool *ok) const;
 
-    QDomElement createEmptyVariable(const QString &name);
-    QDomElement findVariable(const QString &name) const;
+    QDomElement MakeEmptyIncrement(const QString &name);
+    QDomElement FindIncrement(const QString &name) const;
 
     void GarbageCollector();
 };

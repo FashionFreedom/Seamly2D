@@ -84,7 +84,6 @@ public slots:
     void refreshGrainLines();
     void refreshSeamAllowances();
     void exportSVG(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene)const;
-    void exportSVG(const QString &name, QGraphicsRectItem *paper, const QList<QGraphicsItem *> &pieces)const;
     void exportPNG(const QString &name, QGraphicsScene *scene)const;
     void exportTIF(const QString &name, QGraphicsScene *scene)const;
     void exportJPG(const QString &name, QGraphicsScene *scene)const;

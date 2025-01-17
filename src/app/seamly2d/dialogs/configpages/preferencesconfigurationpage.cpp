@@ -1,26 +1,29 @@
-//  @file   preferencesconfigurationpage.cpp
-//  @author Douglas S Caskey
-//  @date   26 Oct, 2023
-//
-//  @brief
-//  @copyright
-//  This source code is part of the Seamly2D project, a pattern making
-//  program to create and model patterns of clothing.
-//  Copyright (C) 2017-2024 Seamly2D project
-//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
-//
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+/******************************************************************************
+*   @file   preferencesconfigurationpage.h
+**  @author Douglas S Caskey
+**  @date   26 Oct, 2023
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2023 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
 
 /************************************************************************
  **
@@ -52,7 +55,7 @@
 
 #include "preferencesconfigurationpage.h"
 #include "ui_preferencesconfigurationpage.h"
-#include "../../core/application_2d.h"
+#include "../../core/vapplication.h"
 #include "../vpatterndb/pmsystems.h"
 #include "../vwidgets/export_format_combobox.h"
 
@@ -85,7 +88,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
                           QRegularExpression::CaseInsensitiveOption);
     ui->email_LineEdit->setValidator(new QRegularExpressionValidator(rx, this));
 
-    // Designer Info
+    //Designer Info
     ui->companyName_LineEdit->setText(qApp->Seamly2DSettings()->getCompanyName());
     ui->contact_LineEdit->setText(qApp->Seamly2DSettings()->getContact());
     ui->address_LineEdit->setText(qApp->Seamly2DSettings()->getAddress());
@@ -100,11 +103,11 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
 
     connect(ui->email_LineEdit, &QLineEdit::textChanged, this, &PreferencesConfigurationPage::adjustTextColor);
 
-    // Editing
+    //Editing
     // Undo
     ui->undoCount_SpinBox->setValue(qApp->Seamly2DSettings()->GetUndoCount());
 
-    // Selection sound
+    //Selection sound
     int index = ui->selectionSound_ComboBox->findText(qApp->Seamly2DSettings()->getSound());
     if (index != -1)
     {
@@ -119,6 +122,13 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     // Warnings
     ui->confirmItemDelete_CheckBox->setChecked(qApp->Seamly2DSettings()->getConfirmItemDelete());
     ui->confirmFormatRewriting_CheckBox->setChecked(qApp->Seamly2DSettings()->getConfirmFormatRewriting());
+    // Send crash reports
+    //ui->sendReportCheck->setChecked(qApp->Seamly2DSettings()->GetSendReportState());
+    //ui->description = new QLabel(tr("After each crash Seamly2D collects information that may help us fix the "
+    //                                "problem. We do not collect any personal information. Find more about what %1"
+    //                                "kind of information%2 we collect.")
+    //                             .arg("<a href=\"https://wiki.seamly.net/wiki/UserManual:Crash_reports\">")
+    //                             .arg("</a>"));
 
     // Default operations suffixes
     ui->moveSuffix_ComboBox->addItem(tr("None"), "");
@@ -173,8 +183,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
 
     // File handling
-    // Backups
-    ui->convertBackupEnabled_CheckBox->setChecked(qApp->Seamly2DSettings()->getConvertBackupEnabled());
+    // Autosave
     ui->autoSave_CheckBox->setChecked(qApp->Seamly2DSettings()->GetAutosaveState());
     ui->autoInterval_Spinbox->setValue(qApp->Seamly2DSettings()->getAutosaveInterval());
 
@@ -191,9 +200,6 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
         m_defaultExportFormatChanged = true;
     });
 
-    // Startup
-    ui->showWelcome_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowWelcome());
-
     // Language
     InitLanguages(ui->langCombo);
     connect(ui->langCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
@@ -203,17 +209,17 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
 
     // Decimal separator setup
     ui->osOptionCheck->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
-    ui->osOptionCheck->setChecked(qApp->Seamly2DSettings()->getOsSeparator());
+    ui->osOptionCheck->setChecked(qApp->Seamly2DSettings()->GetOsSeparator());
 
     // Unit setup
-    initUnits();
+    InitUnits();
     connect(ui->unitCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
     {
         m_unitChanged = true;
     });
-    setPointNameComboBox(Application2D::pointNameLanguages());
+    SetLabelComboBox(VApplication::LabelLanguages());
 
-    index = ui->labelCombo->findData(qApp->Seamly2DSettings()->getPointNameLanguage());
+    index = ui->labelCombo->findData(qApp->Seamly2DSettings()->GetLabelLanguage());
     if (index == -1)
     {
         index = ui->labelCombo->findData("en");
@@ -236,7 +242,7 @@ PreferencesConfigurationPage::~PreferencesConfigurationPage()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesConfigurationPage::apply()
+void PreferencesConfigurationPage::Apply()
 {
     if(!ui->email_LineEdit->text().isEmpty() && !ui->email_LineEdit->hasAcceptableInput())
     {
@@ -248,7 +254,7 @@ void PreferencesConfigurationPage::apply()
 
     VSettings *settings = qApp->Seamly2DSettings();
 
-    // Designer Info
+    //Designer Info
     settings->setCompanyName(ui->companyName_LineEdit->text());
     settings->setContact(ui->contact_LineEdit->text());
     settings->setAddress(ui->address_LineEdit->text());
@@ -264,7 +270,7 @@ void PreferencesConfigurationPage::apply()
     /* Maximum number of commands in undo stack may only be set when the undo stack is empty, since setting it on a
      * non-empty stack might delete the command at the current index. Calling setUndoLimit() on a non-empty stack
      * prints a warning and does nothing.*/
-    settings->setUndoCount(ui->undoCount_SpinBox->value());
+    settings->SetUndoCount(ui->undoCount_SpinBox->value());
     if (m_selectionSoundChanged)
     {
         const QString locale = qvariant_cast<QString>(ui->selectionSound_ComboBox->currentText());
@@ -274,9 +280,7 @@ void PreferencesConfigurationPage::apply()
     settings->setConfirmItemDelete(ui->confirmItemDelete_CheckBox->isChecked());
     settings->setConfirmFormatRewriting(ui->confirmFormatRewriting_CheckBox->isChecked());
 
-    settings->setConvertBackupEnabled(ui->convertBackupEnabled_CheckBox->isChecked());
-
-    settings->setAutosaveState(ui->autoSave_CheckBox->isChecked());
+    settings->SetAutosaveState(ui->autoSave_CheckBox->isChecked());
     settings->setAutosaveInterval(ui->autoInterval_Spinbox->value());
 
     QTimer *autoSaveTimer = qApp->getAutoSaveTimer();
@@ -293,13 +297,13 @@ void PreferencesConfigurationPage::apply()
         m_defaultExportFormatChanged = false;
     }
 
-    settings->setShowWelcome(ui->showWelcome_CheckBox->isChecked());
-    settings->setOsSeparator(ui->osOptionCheck->isChecked());
+    settings->SetOsSeparator(ui->osOptionCheck->isChecked());
+    //settings->SetSendReportState(ui->sendReportCheck->isChecked());
 
     if (m_langChanged)
     {
         const QString locale = qvariant_cast<QString>(ui->langCombo->currentData());
-        settings->setLocale(locale);
+        settings->SetLocale(locale);
         m_langChanged = false;
 
         qApp->loadTranslations(locale);
@@ -316,7 +320,7 @@ void PreferencesConfigurationPage::apply()
     if (m_labelLangChanged)
     {
         const QString locale = qvariant_cast<QString>(ui->labelCombo->currentData());
-        settings->setPointNameLanguage(locale);
+        settings->SetLabelLanguage(locale);
         m_labelLangChanged = false;
     }
     if (m_moveSuffixChanged)
@@ -357,7 +361,7 @@ void PreferencesConfigurationPage::changeEvent(QEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesConfigurationPage::setPointNameComboBox(const QStringList &list)
+void PreferencesConfigurationPage::SetLabelComboBox(const QStringList &list)
 {
     for (int i = 0; i < list.size(); ++i)
     {
@@ -369,14 +373,14 @@ void PreferencesConfigurationPage::setPointNameComboBox(const QStringList &list)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesConfigurationPage::initUnits()
+void PreferencesConfigurationPage::InitUnits()
 {
     ui->unitCombo->addItem(tr("Centimeters"), unitCM);
     ui->unitCombo->addItem(tr("Millimeters"), unitMM);
     ui->unitCombo->addItem(tr("Inches"), unitINCH);
 
     // set default unit
-    const qint32 indexUnit = ui->unitCombo->findData(qApp->Seamly2DSettings()->getUnit());
+    const qint32 indexUnit = ui->unitCombo->findData(qApp->Seamly2DSettings()->GetUnit());
     if (indexUnit != -1)
     {
         ui->unitCombo->setCurrentIndex(indexUnit);

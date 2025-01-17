@@ -140,7 +140,7 @@ void VMainGraphicsScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMainGraphicsScene::initializeOrigins()
+void VMainGraphicsScene::InitOrigins()
 {
     origins.clear();
 

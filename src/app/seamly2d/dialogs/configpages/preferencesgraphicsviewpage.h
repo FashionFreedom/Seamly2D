@@ -43,7 +43,6 @@ public:
     void                              Apply();
 
 protected:
-    void                              enableOffsets();
     virtual void                      changeEvent(QEvent* event) Q_DECL_OVERRIDE;
 
 private:

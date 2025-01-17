@@ -92,8 +92,8 @@ Q_LOGGING_CATEGORY(PatternConverter, "patternConverter")
  */
 
 const QString VPatternConverter::PatternMinVerStr = QStringLiteral("0.1.0");
-const QString VPatternConverter::PatternMaxVerStr = QStringLiteral("0.7.2");
-const QString VPatternConverter::CurrentSchema    = QStringLiteral("://schema/pattern/v0.7.2.xsd");
+const QString VPatternConverter::PatternMaxVerStr = QStringLiteral("0.6.8");
+const QString VPatternConverter::CurrentSchema    = QStringLiteral("://schema/pattern/v0.6.8.xsd");
 
 //VPatternConverter::PatternMinVer; // <== DON'T FORGET TO UPDATE TOO!!!!
 //VPatternConverter::PatternMaxVer; // <== DON'T FORGET TO UPDATE TOO!!!!
@@ -132,8 +132,6 @@ static const QString strColor                     = QStringLiteral("color");
 static const QString strMeasurements              = QStringLiteral("measurements");
 static const QString strIncrement                 = QStringLiteral("increment");
 static const QString strIncrements                = QStringLiteral("increments");
-static const QString strVariable                  = QStringLiteral("variable");
-static const QString strVariables                 = QStringLiteral("variables");
 static const QString strModeling                  = QStringLiteral("modeling");
 static const QString strTools                     = QStringLiteral("tools");
 static const QString strIdTool                    = QStringLiteral("idTool");
@@ -344,15 +342,7 @@ QString VPatternConverter::getSchema(int ver) const
         case (0x000607):
             return QStringLiteral("://schema/pattern/v0.6.7.xsd");;
         case (0x000608):
-            return QStringLiteral("://schema/pattern/v0.6.8.xsd");;
-        case (0x000609):
-            return QStringLiteral("://schema/pattern/v0.6.9.xsd");;
-        case (0x000700):
-            return QStringLiteral("://schema/pattern/v0.7.0.xsd");;
-        case (0x000701):
-            return QStringLiteral("://schema/pattern/v0.7.1.xsd");;
-        case (0x000702):
-            qCDebug(PatternConverter, "Current schema - ://schema/pattern/v0.7.2.xsd");
+            qCDebug(PatternConverter, "Current schema - ://schema/pattern/v0.6.8.xsd");
             return CurrentSchema;
         default:
             InvalidVersion(ver);
@@ -535,22 +525,6 @@ void VPatternConverter::applyPatches()
             ValidateXML(getSchema(0x000608), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000608):
-            toVersion0_6_9();
-            ValidateXML(getSchema(0x000609), m_convertedFileName);
-            V_FALLTHROUGH
-        case (0x000609):
-            toVersion0_7_0();
-            ValidateXML(getSchema(0x000700), m_convertedFileName);
-            V_FALLTHROUGH
-        case (0x000700):
-            toVersion0_7_1();
-            ValidateXML(getSchema(0x000701), m_convertedFileName);
-            V_FALLTHROUGH
-        case (0x000701):
-            toVersion0_7_2();
-            ValidateXML(getSchema(0x000702), m_convertedFileName);
-            V_FALLTHROUGH
-        case (0x000702):
             break;
         default:
             InvalidVersion(m_ver);
@@ -569,7 +543,7 @@ void VPatternConverter::downgradeToCurrentMaxVersion()
 bool VPatternConverter::isReadOnly() const
 {
     // Check if attribute readOnly was not changed in file format
-    Q_STATIC_ASSERT_X(VPatternConverter::PatternMaxVer == CONVERTER_VERSION_CHECK(0, 7, 2),
+    Q_STATIC_ASSERT_X(VPatternConverter::PatternMaxVer == CONVERTER_VERSION_CHECK(0, 6, 8),
                       "Check attribute readOnly.");
 
     // Possibly in future attribute readOnly will change position etc.
@@ -1358,70 +1332,6 @@ void VPatternConverter::toVersion0_6_8()
     Q_STATIC_ASSERT_X(VPatternConverter::PatternMinVer < CONVERTER_VERSION_CHECK(0, 6, 8),
                       "Time to refactor the code.");
     setVersion(QStringLiteral("0.6.8"));
-    Save();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VPatternConverter::toVersion0_6_9()
-{
-    // TODO. Delete if minimal supported version is 0.6.9
-    Q_STATIC_ASSERT_X(VPatternConverter::PatternMinVer < CONVERTER_VERSION_CHECK(0, 6, 9),
-                      "Time to refactor the code.");
-
-    setVersion(QStringLiteral("0.6.9"));
-
-    // Convert increments to variables
-    const QDomNodeList variablesList = elementsByTagName(strIncrements);
-    for (int i=0; i < variablesList.size(); ++i)
-    {
-        QDomElement element = variablesList.at(i).toElement();
-        if (!element.isNull())
-        {
-            element.setTagName(strVariables);
-        }
-    }
-
-    // Convert increment to variable
-    const QDomNodeList variableList = elementsByTagName(strIncrement);
-    for (int i=0; i < variableList.size(); ++i)
-    {
-        QDomElement element = variableList.at(i).toElement();
-        if (!element.isNull())
-        {
-            element.setTagName(strVariable);
-        }
-    }
-
-    Save();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VPatternConverter::toVersion0_7_0()
-{
-    // TODO. Delete if minimal supported version is 0.7.0
-    Q_STATIC_ASSERT_X(VPatternConverter::PatternMinVer < CONVERTER_VERSION_CHECK(0, 7, 0),
-                      "Time to refactor the code.");
-    setVersion(QStringLiteral("0.7.0"));
-    Save();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VPatternConverter::toVersion0_7_1()
-{
-    // TODO. Delete if minimal supported version is 0.7.1
-    Q_STATIC_ASSERT_X(VPatternConverter::PatternMinVer < CONVERTER_VERSION_CHECK(0, 7, 1),
-                      "Time to refactor the code.");
-    setVersion(QStringLiteral("0.7.1"));
-    Save();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VPatternConverter::toVersion0_7_2()
-{
-    // TODO. Delete if minimal supported version is 0.7.2
-    Q_STATIC_ASSERT_X(VPatternConverter::PatternMinVer < CONVERTER_VERSION_CHECK(0, 7, 2),
-                      "Time to refactor the code.");
-    setVersion(QStringLiteral("0.7.2"));
     Save();
 }
 

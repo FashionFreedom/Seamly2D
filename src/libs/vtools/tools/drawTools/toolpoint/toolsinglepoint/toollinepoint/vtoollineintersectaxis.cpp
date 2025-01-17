@@ -380,7 +380,7 @@ void VToolLineIntersectAxis::SetVisualization()
         visual->setObject1Id(firstPointId);
         visual->setPoint2Id(secondPointId);
         visual->setAxisPointId(basePointId);
-        visual->SetAngle(qApp->translateVariables()->FormulaToUser(formulaAngle, qApp->Settings()->getOsSeparator()));
+        visual->SetAngle(qApp->TrVars()->FormulaToUser(formulaAngle, qApp->Settings()->GetOsSeparator()));
         visual->setLineStyle(lineTypeToPenStyle(m_lineType));
         visual->setLineWeight(m_lineWeight);
         visual->RefreshGeometry();
@@ -399,7 +399,7 @@ QString VToolLineIntersectAxis::makeToolTip() const
     const QLineF firstToCur(static_cast<QPointF>(*firstPoint), static_cast<QPointF>(*current));
     const QLineF curToSecond(static_cast<QPointF>(*current), static_cast<QPointF>(*secondPoint));
 
-    const QString toolTip = QString("<table style=font-size:11pt; font-weight:600>"
+    const QString toolTip = QString("<table>"
                                     "<tr> <td><b>  %10:</b> %11</td> </tr>"
                                     "<tr> <td><b>%1:</b> %2 %3</td> </tr>"
                                     "<tr> <td><b> %4:</b> %5°</td> </tr>"

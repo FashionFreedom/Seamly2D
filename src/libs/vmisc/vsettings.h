@@ -72,8 +72,8 @@ public:
     VSettings(Format format, Scope scope, const QString &organization, const QString &application = QString(),
               QObject *parent = nullptr);
 
-    QString  getPointNameLanguage() const;
-    void     setPointNameLanguage(const QString &value);
+    QString  GetLabelLanguage() const;
+    void     SetLabelLanguage(const QString &value);
 
     static QString getDefaultPatternPath();
     QString getPatternPath() const;
@@ -127,9 +127,9 @@ public:
     static qreal GetDefLayoutShift();
     void SetLayoutShift(qreal value);
 
-    qreal getLayoutGap() const;
-    static qreal getDefLayoutGap();
-    void setLayoutGap(qreal value);
+    qreal GetLayoutWidth() const;
+    static qreal GetDefLayoutWidth();
+    void SetLayoutWidth(qreal value);
 
     QMarginsF GetFields(const QMarginsF &def = QMarginsF()) const;
     void SetFields(const QMarginsF &value);
@@ -162,9 +162,9 @@ public:
     static bool GetDefIgnoreAllFields();
     void SetIgnoreAllFields(bool value);
 
-    bool useStripOptimization() const;
-    static bool useDefStripOptimization();
-    void setStripOptimization(bool value);
+    bool GetStripOptimization() const;
+    static bool GetDefStripOptimization();
+    void SetStripOptimization(bool value);
 
     quint8 GetMultiplier() const;
     static quint8 GetDefMultiplier();

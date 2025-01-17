@@ -80,20 +80,20 @@ public:
     static const QString PatternMaxVerStr;
     static const QString CurrentSchema;
     static Q_DECL_CONSTEXPR const int PatternMinVer = CONVERTER_VERSION_CHECK(0, 1, 0);
-    static Q_DECL_CONSTEXPR const int PatternMaxVer = CONVERTER_VERSION_CHECK(0, 7, 2);
+    static Q_DECL_CONSTEXPR const int PatternMaxVer = CONVERTER_VERSION_CHECK(0, 6, 8);
 
 protected:
-    virtual int     minVer() const override;
-    virtual int     maxVer() const override;
+    virtual int     minVer() const Q_DECL_OVERRIDE;
+    virtual int     maxVer() const Q_DECL_OVERRIDE;
 
-    virtual QString minVerStr() const override;
-    virtual QString maxVerStr() const override;
+    virtual QString minVerStr() const Q_DECL_OVERRIDE;
+    virtual QString maxVerStr() const Q_DECL_OVERRIDE;
 
-    virtual QString getSchema(int ver) const override;
-    virtual void    applyPatches() override;
-    virtual void    downgradeToCurrentMaxVersion() override;
+    virtual QString getSchema(int ver) const Q_DECL_OVERRIDE;
+    virtual void    applyPatches() Q_DECL_OVERRIDE;
+    virtual void    downgradeToCurrentMaxVersion() Q_DECL_OVERRIDE;
 
-    virtual bool    isReadOnly() const override;
+    virtual bool    isReadOnly() const Q_DECL_OVERRIDE;
 
 private:
     Q_DISABLE_COPY(VPatternConverter)
@@ -141,11 +141,6 @@ private:
     void          toVersion0_6_6();
     void          toVersion0_6_7();
     void          toVersion0_6_8();
-    void          toVersion0_6_9();
-    void          toVersion0_7_0();
-    void          toVersion0_7_1();
-    void          toVersion0_7_2();
-
 
     void          TagUnitToV0_2_0();
     void          TagIncrementToV0_2_0();

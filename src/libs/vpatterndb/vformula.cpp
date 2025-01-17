@@ -75,7 +75,7 @@ VFormula::VFormula()
 
 //---------------------------------------------------------------------------------------------------------------------
 VFormula::VFormula(const QString &formula, const VContainer *container)
-    : formula(qApp->translateVariables()->FormulaToUser(formula, qApp->Settings()->getOsSeparator())),
+    : formula(qApp->TrVars()->FormulaToUser(formula, qApp->Settings()->GetOsSeparator())),
       value(tr("Error")),
       checkZero(true),
       data(container),
@@ -141,7 +141,7 @@ QString VFormula::GetFormula(FormulaType type) const
     }
     else
     {
-        return qApp->translateVariables()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+        return qApp->TrVars()->TryFormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
     }
 }
 
@@ -152,7 +152,7 @@ void VFormula::SetFormula(const QString &value, FormulaType type)
     {
         if (type == FormulaType::ToUser)
         {
-            formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+            formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
         }
         else
         {
@@ -265,7 +265,7 @@ void VFormula::Eval()
         try
         {
             QScopedPointer<Calculator> cal(new Calculator());
-            QString expression = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+            QString expression = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
             const qreal result = cal->EvalFormula(data->DataVariables(), expression);
 
             if (qIsInf(result) || qIsNaN(result))

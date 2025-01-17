@@ -196,7 +196,7 @@ private:
     void                InitWindow();
     void                initializeTable();
     void                SetDecimals();
-    void                initUnits();
+    void                InitUnits();
     void                InitComboBoxUnits();
     void                InitGender(QComboBox *gender);
 

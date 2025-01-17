@@ -290,7 +290,7 @@ void MeasurementDoc::readMeasurements() const
     // That's why we need two containers: one for converted values, second for real data.
 
     // Container for values in measurement file's unit
-    QScopedPointer<VContainer> tempData(new VContainer(data->getTranslateVariables(), data->GetPatternUnit()));
+    QScopedPointer<VContainer> tempData(new VContainer(data->GetTrVars(), data->GetPatternUnit()));
 
     const QDomNodeList list = elementsByTagName(TagMeasurement);
     for (int i=0; i < list.size(); ++i)

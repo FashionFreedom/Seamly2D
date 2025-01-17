@@ -56,12 +56,6 @@
 #include "../vinteractivetool.h"
 #include "../ifc/exception/vexceptionbadid.h"
 #include "../vdatatool.h"
-#include "../vgeometry/vabstractarc.h"
-#include "../vgeometry/varc.h"
-#include "../vgeometry/vellipticalarc.h"
-#include "../vgeometry/vcubicbezier.h"
-#include "../vgeometry/vsplinepath.h"
-#include "../vgeometry/vcubicbezierpath.h"
 #include "../vgeometry/vpointf.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/def.h"
@@ -76,7 +70,6 @@
 #include <qcompilerdetection.h>
 #include <QAction>
 #include <QByteArray>
-#include <QClipboard>
 #include <QColor>
 #include <QDomElement>
 #include <QGraphicsSceneContextMenuEvent>
@@ -198,17 +191,8 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
         }
     }
 
-    quint32 toolId = this->getId();
-    QMap<quint32, Tool> history = doc->getGroupObjHistory();
-    Tool tooltype = history.value(toolId);
-
     qCDebug(vTool, "Creating tool context menu.");
     QMenu menu;
-
-    // Actions for copying tool length and angle
-    QAction *actionCopyToolLength = nullptr;
-    QAction *actionCopyLineAngle = nullptr;
-
     QAction *actionOption = menu.addAction(QIcon::fromTheme("preferences-other"), tr("Properties"));
 
     // Show object name menu item
@@ -222,24 +206,6 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
     else
     {
        actionShowPointName->setVisible(false);
-    }
-
-    // Add Copy menu
-    QMenu *copyMenu = menu.addMenu(QIcon("://icon/32x32/clipboard_icon.png"), tr("Copy"));
-    actionCopyToolLength  = copyMenu->addAction(tr("Length"));
-    actionCopyLineAngle = copyMenu->addAction(tr("Angle"));
-
-    // Only add the Angle submneu for the point tools that add a line.
-    if (tooltype != Tool::Line &&
-        tooltype != Tool::EndLine &&
-        tooltype != Tool::Bisector &&
-        tooltype != Tool::Height &&
-        tooltype != Tool::Normal &&
-        tooltype != Tool::LineIntersectAxis &&
-        tooltype != Tool::AlongLine &&
-        tooltype != Tool::CurveIntersectAxis)
-    {
-        actionCopyLineAngle->setVisible(false);
     }
 
     QAction *actionDelete = menu.addAction(QIcon::fromTheme("edit-delete"), tr("Delete"));
@@ -274,7 +240,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
     QMap<quint32,QString> groupsNotContainingItem =  doc->getGroupsContainingItem(this->getId(), itemId, false);
     QActionGroup* actionAddGroupMenu= new QActionGroup(this);
 
-    if (!groupsNotContainingItem.empty())
+    if(not groupsNotContainingItem.empty())
     {
         QMenu *menuAddGroupItem = menu.addMenu(QIcon("://icon/32x32/add.png"), tr("Add Group Object"));
         QStringList list = QStringList(groupsNotContainingItem.values());
@@ -294,7 +260,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
     QMap<quint32,QString> groupsContainingItem =  doc->getGroupsContainingItem(this->getId(), itemId, true);
     QActionGroup* actionDeleteGroupMenu = new QActionGroup(this);
 
-    if (!groupsContainingItem.empty())
+    if(not groupsContainingItem.empty())
     {
         QMenu *menuRemoveGroupItem = menu.addMenu(QIcon("://icon/32x32/remove.png"), tr("Remove Group Object"));
 
@@ -340,115 +306,6 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
     {
         updatePointNameVisibility(itemId, selectedAction->isChecked());
     }
-
-    else if (selectedAction == actionCopyToolLength)
-    {
-        QString text = QString("");
-
-        switch (tooltype)
-        {
-            case Tool::Line:
-            {
-                const QDomElement domElement = doc->elementById(toolId);
-                if (domElement.isElement())
-                {
-                    text = tr("Line_") +
-                            data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrFirstPoint, "0"))->name() +
-                            "_"+
-                            data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrSecondPoint, "0"))->name();
-                    break;
-                }
-            }
-            case Tool::Arc:
-            case Tool::ArcWithLength:
-            {
-                const QSharedPointer<VArc> arc = data.GeometricObject<VArc>(toolId);
-                SCASSERT(!arc.isNull())
-                text = arc->NameForHistory(tr("Arc_"));
-                break;
-            }
-            case Tool::ShoulderPoint:
-            case Tool::Normal:
-            case Tool::Bisector:
-            case Tool::LineIntersect:
-            case Tool::BasePoint:
-            case Tool::EndLine:
-            case Tool::PointOfContact:
-            case Tool::Height:
-            case Tool::Triangle:
-            case Tool::PointOfIntersection:
-            case Tool::CutArc:
-            case Tool::CutSpline:
-            case Tool::CutSplinePath:
-            case Tool::LineIntersectAxis:
-            case Tool::CurveIntersectAxis:
-            case Tool::PointOfIntersectionArcs:
-            case Tool::PointOfIntersectionCircles:
-            case Tool::PointOfIntersectionCurves:
-            case Tool::PointFromCircleAndTangent:
-            case Tool::PointFromArcAndTangent:
-            {
-                const QSharedPointer<VGObject> obj = data.GetGObject(toolId);
-                SCASSERT(!obj.isNull())
-                text = obj->name();
-                break;
-            }
-
-            case Tool::EllipticalArc:
-            {
-                const QSharedPointer<VEllipticalArc> elArc = data.GeometricObject<VEllipticalArc>(toolId);
-                SCASSERT(!elArc.isNull())
-                text = elArc->NameForHistory(tr("ElArc_"));
-                break;
-            }
-
-            case Tool::Spline:
-            {
-                const QSharedPointer<VSpline> spl = data.GeometricObject<VSpline>(toolId);
-                SCASSERT(!spl.isNull())
-                text = spl->NameForHistory(tr("Spl_"));
-                break;
-            }
-
-            case Tool::SplinePath:
-            {
-                const QSharedPointer<VSplinePath> splPath = data.GeometricObject<VSplinePath>(toolId);
-                SCASSERT(!splPath.isNull())
-                text = splPath->NameForHistory(tr("SplPath_"));
-                break;
-            }
-
-            case Tool::CubicBezier:
-            {
-                const QSharedPointer<VCubicBezier> spl = data.GeometricObject<VCubicBezier>(toolId);
-                SCASSERT(!spl.isNull())
-                text = spl->NameForHistory(tr("Spl_"));
-                break;
-            }
-
-            case Tool::CubicBezierPath:
-            {
-                const QSharedPointer<VCubicBezierPath> splPath = data.GeometricObject<VCubicBezierPath>(toolId);
-                SCASSERT(!splPath.isNull())
-                text = splPath->NameForHistory(tr("SplPath_"));
-                break;
-            }
-
-            case Tool::Rotation:
-            case Tool::Move:
-            case Tool::MirrorByLine:
-            case Tool::MirrorByAxis:
-            {
-                const QSharedPointer<VGObject> obj = data.GetGObject(itemId);
-                SCASSERT(!obj.isNull())
-                text = obj->name();
-                break;
-            }
-        }
-
-        QClipboard *clipboard = QApplication::clipboard();
-        clipboard->setText(text);
-    }
     else if (selectedAction->actionGroup() == actionAddGroupMenu)
     {
         quint32 groupId = selectedAction->data().toUInt();
@@ -466,66 +323,6 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
             qApp->getUndoStack()->push(command);
         }
     }
-    else if (selectedAction == actionCopyLineAngle)
-    {
-        QString angleName = QString("");
-
-        switch (tooltype)
-        {
-            case Tool::Line:
-            {
-                const QDomElement domElement = doc->elementById(toolId);
-                if (domElement.isElement())
-                {
-                    angleName = tr("AngleLine_") +
-                            data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrFirstPoint, "0"))->name() +
-                            "_"+
-                            data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrSecondPoint, "0"))->name();
-                    break;
-                }
-            }
-            case Tool::AlongLine:
-            case Tool::Normal:
-            {
-                const QDomElement domElement = doc->elementById(toolId);
-                if (domElement.isElement())
-                {
-                    angleName = tr("AngleLine_") +
-                    data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrFirstPoint, "0"))->name() +
-                    "_" +  data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, "id", "0"))->name();
-                    break;
-                }
-            }
-            case Tool::Bisector:
-            {
-                const QDomElement domElement = doc->elementById(toolId);
-                if (domElement.isElement())
-                {
-                    angleName = tr("AngleLine_") +
-                    data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrSecondPoint, "0"))->name() +
-                    "_" +  data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, "id", "0"))->name();
-                    break;
-                }
-            }
-            case Tool::EndLine:
-            case Tool::Height:
-            case Tool::LineIntersectAxis:
-            case Tool::CurveIntersectAxis:
-            {
-                const QDomElement domElement = doc->elementById(toolId);
-                if (domElement.isElement())
-                {
-                    angleName = tr("AngleLine_") +
-                    data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrBasePoint, "0"))->name() +
-                    "_" +  data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, "id", "0"))->name();
-                    break;
-                }
-            }
-        }
-        QClipboard *clipboard = QApplication::clipboard();
-        clipboard->setText(angleName);
-    }
-
     else if (selectedAction->actionGroup() == actionDeleteGroupMenu)
     {
         quint32 groupId = selectedAction->data().toUInt();

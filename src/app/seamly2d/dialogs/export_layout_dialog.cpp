@@ -32,7 +32,7 @@
 #include "export_layout_dialog.h"
 #include "ui_export_layout_dialog.h"
 #include "../options.h"
-#include "../core/application_2d.h"
+#include "../core/vapplication.h"
 #include "../vmisc/def.h"
 #include "../vmisc/vsettings.h"
 #include "../ifc/exception/vexception.h"
@@ -65,7 +65,7 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
     ui->path_LineEdit->setClearButtonEnabled(true);
     ui->filename_LineEdit->setClearButtonEnabled(true);
 
-    qApp->Seamly2DSettings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     m_SaveButton = ui->buttonBox->button(QDialogButtonBox::Save);
     SCASSERT(m_SaveButton != nullptr)
@@ -74,7 +74,7 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
     ui->filename_LineEdit->setValidator( new QRegularExpressionValidator(QRegularExpression(fileNameRegExp), this));
 
     const QString mask = fileName + modeString();
-    if (Application2D::isGUIMode())
+    if (VApplication::IsGUIMode())
     {
         ui->filename_LineEdit->setText(mask);
     }

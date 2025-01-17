@@ -56,7 +56,7 @@
  */
 
 #include "tmainwindow.h"
-#include "application_me.h"
+#include "mapplication.h"
 #include "dialogs/me_welcome_dialog.h"
 #include "../vmisc/vseamlymesettings.h"
 
@@ -84,11 +84,11 @@ int main(int argc, char *argv[])
     initHighDpiScaling(argc, argv);
 #endif //Q_OS_MAC
 
-    ApplicationME app(argc, argv);
-    app.initOptions();
+    MApplication app(argc, argv);
+    app.InitOptions();
 
-    auto settings = qApp->seamlyMeSettings();
-    app.loadTranslations(settings->getLocale());
+    auto settings = qApp->SeamlyMeSettings();
+    app.loadTranslations(settings->GetLocale());
 
     // its named showWelcome, but true means "do not show welcome again" and thus we invert it here
     bool showWelcome = !settings->getShowWelcome();
@@ -100,7 +100,7 @@ int main(int argc, char *argv[])
         dialog->exec();
     }
 
-    QTimer::singleShot(0, &app, &ApplicationME::processCommandLine);
+    QTimer::singleShot(0, &app, &MApplication::processCommandLine);
 
     return app.exec();
 }

@@ -82,9 +82,9 @@ const QString VToolCubicBezier::ToolType = QStringLiteral("cubicBezier");
 //---------------------------------------------------------------------------------------------------------------------
 VToolCubicBezier::VToolCubicBezier(VAbstractPattern *doc, VContainer *data, quint32 id,
                                    const Source &typeCreation, QGraphicsItem *parent)
-    : VAbstractSpline(doc, data, id, parent)
+    :VAbstractSpline(doc, data, id, parent)
 {
-    m_sceneType = SceneObject::Spline;
+    sceneType = SceneObject::Spline;
 
     this->setFlag(QGraphicsItem::ItemIsFocusable, true);// For keyboard input focus
 
@@ -152,7 +152,7 @@ VToolCubicBezier *VToolCubicBezier::Create(const quint32 _id, VCubicBezier *spli
         VDrawTool::AddRecord(id, Tool::CubicBezier, doc);
         auto _spl = new VToolCubicBezier(doc, data, id, typeCreation);
         scene->addItem(_spl);
-        initSplineToolConnections(scene, _spl);
+        InitSplineToolConnections(scene, _spl);
         VAbstractPattern::AddTool(id, _spl);
         doc->IncrementReferens(spline->GetP1().getIdTool());
         doc->IncrementReferens(spline->GetP1().getIdTool());
@@ -285,7 +285,7 @@ void VToolCubicBezier::SetVisualization()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolCubicBezier::refreshGeometry()
+void VToolCubicBezier::RefreshGeometry()
 {
     const QSharedPointer<VCubicBezier> spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
     this->setPath(spl->GetPath());

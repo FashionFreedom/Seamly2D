@@ -67,7 +67,7 @@ VFormulaProperty::VFormulaProperty(const QString &name)
     VPE::PlainTextProperty *tmpFormula = new VPE::PlainTextProperty(tr("Formula:"));
     addChild(tmpFormula);
     tmpFormula->setUpdateBehaviour(true, false);
-    tmpFormula->setOsSeparator(qApp->Settings()->getOsSeparator());
+    tmpFormula->setOsSeparator(qApp->Settings()->GetOsSeparator());
     setValue(0);
 }
 

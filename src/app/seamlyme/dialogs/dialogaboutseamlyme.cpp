@@ -80,7 +80,7 @@ DialogAboutSeamlyMe::DialogAboutSeamlyMe(QWidget *parent)
     //Limit dialog height to 80% of screen size
     setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
-    //mApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    //mApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     RetranslateUi();
     connect(ui->pushButton_Web_Site, &QPushButton::clicked, this, [this]()

@@ -1,51 +1,33 @@
-//-----------------------------------------------------------------------------
-//  @file   intersect_circletangent_dialog.cpp
-//  @author Douglas S Caskey
-//  @date   16 Jul, 2022
-//
-//  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
-//
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
-
-//-----------------------------------------------------------------------------
-//  @file   dialogendline.cpp
-//  @author Roman Telezhynskyi <dismine(at)gmail.com>
-//  @date   3 Jun, 2015
-//
-//  @copyright
-//  Copyright (C) 2013 Valentina project.
-//  This source code is part of the Valentina project, a pattern making
-//  program, whose allow create and modeling patterns of clothing.
-//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
-//
-//  Valentina is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published
-//  by the Free Software Foundation, either version 3 of the License,
-//  or (at your option) any later version.
-//
-//  Valentina is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+/**************************************************************************
+ **
+ **  @file   intersect_circletangent_dialog.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   3 6, 2015
+ **
+ **  @author Douglas S. Caskey
+ **  @date   7.16.2022
+ **
+ **  @copyright
+ **  Copyright (C) 2013-2022 Seamly2D project.
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published
+ **  by the Free Software Foundation, either version 3 of the License,
+ **  or (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
 
 #include "intersect_circletangent_dialog.h"
 #include "ui_intersect_circletangent_dialog.h"
@@ -85,9 +67,6 @@ IntersectCircleTangentDialog::IntersectCircleTangentDialog(const VContainer *dat
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/point_from_circle_and_tangent.png"));
 
-    // Set the position that the dialog opens based on user preference.
-    setDialogPosition();
-
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
@@ -104,8 +83,8 @@ IntersectCircleTangentDialog::IntersectCircleTangentDialog(const VContainer *dat
     initializeOkCancelApply(ui);
     CheckState();
 
-    fillComboBoxPoints(ui->comboBoxCircleCenter);
-    fillComboBoxPoints(ui->comboBoxTangentPoint);
+    FillComboBoxPoints(ui->comboBoxCircleCenter);
+    FillComboBoxPoints(ui->comboBoxTangentPoint);
     FillComboBoxCrossCirclesPoints(ui->comboBoxResult);
 
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged,
@@ -158,14 +137,14 @@ void IntersectCircleTangentDialog::SetCircleCenterId(const quint32 &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString IntersectCircleTangentDialog::GetCircleRadius() const
 {
-    return qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditRadius->toPlainText(),
-                                              qApp->Settings()->getOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditRadius->toPlainText(),
+                                              qApp->Settings()->GetOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void IntersectCircleTangentDialog::SetCircleRadius(const QString &value)
 {
-    const QString formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    const QString formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
     // increase height if needed.
     if (formula.length() > 80)
     {
@@ -293,7 +272,7 @@ void IntersectCircleTangentDialog::CircleRadiusChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void IntersectCircleTangentDialog::FXCircleRadius()
 {
-    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit radius"));
     dialog->SetFormula(GetCircleRadius());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -359,7 +338,7 @@ void IntersectCircleTangentDialog::CheckState()
 {
     SCASSERT(ok_Button != nullptr)
     ok_Button->setEnabled(flagFormula && flagName && flagError && flagCircleRadius);
-    // In case dialog does not have an apply button
+    // In case dialog hasn't apply button
     if (apply_Button != nullptr)
     {
         apply_Button->setEnabled(ok_Button->isEnabled());

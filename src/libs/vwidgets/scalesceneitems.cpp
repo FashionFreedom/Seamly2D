@@ -1,26 +1,27 @@
-//  @file   scalesceneitems.cpp
-//  @author Douglas S Caskey
-//  @date   22 Jun, 2024
-//
-//  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
-//
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+/***************************************************************************
+ *                                                                         *
+ *   Copyright (C) 2017  Seamly, LLC                                       *
+ *                                                                         *
+ *   https://github.com/fashionfreedom/seamly2d                             *
+ *                                                                         *
+ ***************************************************************************
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ **************************************************************************
 
-/************************************************************************
+ ************************************************************************
  **
  **  @file
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -57,36 +58,36 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 VScaledLine::VScaledLine(QGraphicsItem *parent)
-    : QGraphicsLineItem(parent)
-    , m_defaultWidth(widthMainLine)
+    : QGraphicsLineItem(parent),
+      basicWidth(widthMainLine)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
 VScaledLine::VScaledLine(const QLineF &line, QGraphicsItem *parent)
-    : QGraphicsLineItem(line, parent)
-    , m_defaultWidth(widthMainLine)
+    : QGraphicsLineItem(line, parent),
+      basicWidth(widthMainLine)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
 void VScaledLine::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    QPen linePen = pen();
-    linePen.setWidthF(scaleWidth(m_defaultWidth, sceneScale(scene())));
-    setPen(linePen);
+    QPen lPen = pen();
+    lPen.setWidthF(scaleWidth(basicWidth, sceneScale(scene())));
+    setPen(lPen);
 
     QGraphicsLineItem::paint(painter, option, widget);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VScaledLine::getDefaultWidth() const
+qreal VScaledLine::GetBasicWidth() const
 {
-    return m_defaultWidth;
+    return basicWidth;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VScaledLine::setDefaultWidth(const qreal &value)
+void VScaledLine::setBasicWidth(const qreal &value)
 {
-    m_defaultWidth = value;
+    basicWidth = value;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -104,10 +105,10 @@ ArrowedLineItem::ArrowedLineItem(const QLineF &line, QGraphicsItem *parent)
 //---------------------------------------------------------------------------------------------------------------------
 void ArrowedLineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    QPen linePen = pen();
-    linePen.setWidthF(scaleWidth(widthMainLine, sceneScale(scene())));
-    setPen(linePen);
-    m_arrows->setPen(linePen);
+    QPen lPen = pen();
+    lPen.setWidthF(scaleWidth(widthMainLine, sceneScale(scene())));
+    setPen(lPen);
+    m_arrows->setPen(lPen);
 
     QPainterPath path;
     path.moveTo(line().p1());

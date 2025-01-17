@@ -67,7 +67,7 @@ namespace Ui
 }
 
 /**
- * @brief The DialogVariables class show Variables dialog. Tables of all variables in program will be here.
+ * @brief The DialogVariables class show dialog increments. Tables of all variables in program will be here.
  */
 class DialogVariables : public DialogTool
 {

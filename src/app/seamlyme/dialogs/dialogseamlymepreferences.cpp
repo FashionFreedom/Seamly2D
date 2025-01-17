@@ -55,7 +55,7 @@
 
 #include "dialogseamlymepreferences.h"
 #include "ui_dialogseamlymepreferences.h"
-#include "../application_me.h"
+#include "../mapplication.h"
 #include "configpages/seamlymepreferencesconfigurationpage.h"
 #include "configpages/seamlymepreferencespathpage.h"
 
@@ -78,7 +78,7 @@ DialogSeamlyMePreferences::DialogSeamlyMePreferences(QWidget *parent)
     //Limit dialog height to 80% of screen size
     setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
-    qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     QPushButton *ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
     SCASSERT(ok_Button != nullptr)
@@ -156,7 +156,7 @@ void DialogSeamlyMePreferences::Apply()
     m_configurationPage->Apply();
     m_pathPage->Apply();
 
-    qApp->seamlyMeSettings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->SeamlyMeSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
     emit updateProperties();
     setResult(QDialog::Accepted);
 }

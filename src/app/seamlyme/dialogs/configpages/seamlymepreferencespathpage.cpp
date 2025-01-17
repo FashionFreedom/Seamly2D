@@ -55,7 +55,7 @@
 
 #include "seamlymepreferencespathpage.h"
 #include "ui_seamlymepreferencespathpage.h"
-#include "../../application_me.h"
+#include "../../mapplication.h"
 #include "../vmisc/vseamlymesettings.h"
 
 #include <QDir>
@@ -93,7 +93,7 @@ void SeamlyMePreferencesPathPage::changeEvent(QEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 void SeamlyMePreferencesPathPage::Apply()
 {
-    VSeamlyMeSettings *settings = qApp->seamlyMeSettings();
+    VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
     settings->setIndividualSizePath(ui->pathTable->item(0, 1)->text());
     settings->setMultisizePath(ui->pathTable->item(1, 1)->text());
     settings->setTemplatePath(ui->pathTable->item(2, 1)->text());
@@ -141,17 +141,17 @@ void SeamlyMePreferencesPathPage::editPath()
     switch (row)
     {
         case 0: // individual measurements
-            path = qApp->seamlyMeSettings()->getIndividualSizePath();
+            path = qApp->SeamlyMeSettings()->getIndividualSizePath();
             break;
         case 1: // multisize measurements
-            path = qApp->seamlyMeSettings()->getMultisizePath();
+            path = qApp->SeamlyMeSettings()->getMultisizePath();
             path = VCommonSettings::prepareMultisizeTables(path);
             break;
         case 2: // templates
-            path = qApp->seamlyMeSettings()->getTemplatePath();
+            path = qApp->SeamlyMeSettings()->getTemplatePath();
             break;
         case 3: // body scans
-            path = qApp->seamlyMeSettings()->getBodyScansPath();
+            path = qApp->SeamlyMeSettings()->getBodyScansPath();
             break;
         default:
             break;
@@ -193,7 +193,7 @@ void SeamlyMePreferencesPathPage::initializeTable()
     ui->pathTable->setRowCount(4);
     ui->pathTable->setColumnCount(2);
 
-    const VSeamlyMeSettings *settings = qApp->seamlyMeSettings();
+    const VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
 
     {
         QTableWidgetItem *item = new QTableWidgetItem(tr("My Individual Measurements"));

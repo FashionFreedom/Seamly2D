@@ -2,157 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
-    <name>About2DAppDialog</name>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>Over Seamly2D</translation>
-    </message>
-    <message>
-        <source>Web site : %1</source>
-        <translation>Website: %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation>Kan uw standaard browser niet openen</translation>
-    </message>
-    <message>
-        <source>Left to right</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Right to left</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Automatic</source>
-        <translation>Automatisch</translation>
-    </message>
-    <message>
-        <source>Built on %1 at %2</source>
-        <translation>Gebouwd op %1 op %2</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy build data to clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Seamly 2D</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Build date:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Qt Version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>CPU:</source>
-        <translation>CPU:</translation>
-    </message>
-    <message>
-        <source>Compiler:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Revision:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Architecture</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OS:</source>
-        <translation>OS:</translation>
-    </message>
-    <message>
-        <source>OS Version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Locale</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Country:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Decimal point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Script name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System codec:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Language:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Text direction:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Naam:</translation>
-    </message>
-    <message>
-        <source>Positive sign:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Negative sign:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Application</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arguments:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contributors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Check For Updates</source>
-        <translation>Kijk voor Opwaarderingen</translation>
-    </message>
-    <message>
-        <source>Downloading installer %p% complete</source>
-        <translation>Downloaden installeerprogramma %p% volledig</translation>
-    </message>
-    <message>
-        <source>unknown</source>
-        <translation>onbekend</translation>
-    </message>
-</context>
-<context>
     <name>AddDraftBlock</name>
     <message>
         <source>add draft block %1</source>
@@ -170,13 +19,6 @@
     <name>AddGroupItem</name>
     <message>
         <source>Add item to group</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>AddImage</name>
-    <message>
-        <source>add image</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -222,140 +64,6 @@
     <message>
         <source>Piece:</source>
         <translation>Patroondeel:</translation>
-    </message>
-</context>
-<context>
-    <name>Application2D</name>
-    <message>
-        <source>Error parsing file. Program will be terminated.</source>
-        <translation>Fout bij uitpakken bestand. Programma wordt beëindigd.</translation>
-    </message>
-    <message>
-        <source>Error bad id. Program will be terminated.</source>
-        <translation>Fout slechte ID. Programma wordt beëindigd.</translation>
-    </message>
-    <message>
-        <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation>Fout kan waarde niet omzetten. Programma wordt beëindigd.</translation>
-    </message>
-    <message>
-        <source>Error empty parameter. Program will be terminated.</source>
-        <translation>Fout lege parameter. Programma wordt beëindigd.</translation>
-    </message>
-    <message>
-        <source>Error wrong id. Program will be terminated.</source>
-        <translation>Fout verkeerde ID. Programma wordt beëindigd.</translation>
-    </message>
-    <message>
-        <source>Something&apos;s wrong!!</source>
-        <translation>Er gaat iets verkeerd!!</translation>
-    </message>
-    <message>
-        <source>Parser error: %1. Program will be terminated.</source>
-        <translation>Fout bij uitpakken bestand: %1. Programma wordt beëindigd.</translation>
-    </message>
-    <message>
-        <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation>Uitgeworpen uitzondering: %1. Programma wordt beëindigd.</translation>
-    </message>
-</context>
-<context>
-    <name>ApplicationME</name>
-    <message>
-        <source>Error parsing file. Program will be terminated.</source>
-        <translation>Fout bij uitpakken bestand. Programma wordt beëindigd.</translation>
-    </message>
-    <message>
-        <source>Error bad id. Program will be terminated.</source>
-        <translation>Fout slechte ID. Programma wordt beëindigd.</translation>
-    </message>
-    <message>
-        <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation>Fout kan waarde niet omzetten. Programma wordt beëindigd.</translation>
-    </message>
-    <message>
-        <source>Error empty parameter. Program will be terminated.</source>
-        <translation>Fout lege parameter. Programma wordt beëindigd.</translation>
-    </message>
-    <message>
-        <source>Error wrong id. Program will be terminated.</source>
-        <translation>Fout verkeerde ID. Programma wordt beëindigd.</translation>
-    </message>
-    <message>
-        <source>Something&apos;s wrong!!</source>
-        <translation>Er gaat iets verkeerd!!</translation>
-    </message>
-    <message>
-        <source>Parser error: %1. Program will be terminated.</source>
-        <translation>Fout bij uitpakken bestand: %1. Programma wordt beëindigd.</translation>
-    </message>
-    <message>
-        <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation>Uitgeworpen uitzondering: %1. Programma wordt beëindigd.</translation>
-    </message>
-    <message>
-        <source>Seamly2D&apos;s measurements editor.</source>
-        <translation>Seamly2D&apos;s maten editor.</translation>
-    </message>
-    <message>
-        <source>The measurement file.</source>
-        <translation>Het maten bestand.</translation>
-    </message>
-    <message>
-        <source>The base height</source>
-        <translation>De basis hoogte</translation>
-    </message>
-    <message>
-        <source>The base size</source>
-        <translation>De basis maat</translation>
-    </message>
-    <message>
-        <source>Set pattern file unit: cm, mm, inch.</source>
-        <translation>Stel patroon bestand eenheid in: cm, mm, inches.</translation>
-    </message>
-    <message>
-        <source>The pattern unit</source>
-        <translation>De patrooneenheid</translation>
-    </message>
-    <message>
-        <source>Invalid base size argument. Must be cm, mm or inch.</source>
-        <translation>Ongeldig basis maat argument. Moet bestaan uit: cm, mm, inches.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t begin to listen for incoming connections on name &apos;%1&apos;</source>
-        <translation>Kan niet beginnen met verwerken van inkomende connecties op naam &apos;%1&apos;</translation>
-    </message>
-    <message>
-        <source>Test mode doesn&apos;t support Opening several files.</source>
-        <translation>Test modus ondersteunt niet het openen van verschillende bestanden.</translation>
-    </message>
-    <message>
-        <source>Please, provide one input file.</source>
-        <translation>Alsublieft, verstrek éen invoer bestand.</translation>
-    </message>
-    <message>
-        <source>Open with the base size. Valid values: %1cm.</source>
-        <translation>Open met de basis maat. Geldige waardes: %1cm.</translation>
-    </message>
-    <message>
-        <source>Invalid base height argument. Must be %1cm.</source>
-        <translation>Ongeldige basis hoogte argument. Moet bestaan uit %1cm.</translation>
-    </message>
-    <message>
-        <source>Invalid base size argument. Must be %1cm.</source>
-        <translation>Ongeldige basis maat argument. Moet bestaan uit %1cm.</translation>
-    </message>
-    <message>
-        <source>Open with the base height. Valid values: %1cm.</source>
-        <translation>Open met de basis hoogte. Geldige waardes: %1cm.</translation>
-    </message>
-    <message>
-        <source>Use for unit testing. Run the program and open a file without showing the main window.</source>
-        <translation>Gebruik voor eenheid testing. Laat het programma lopen en open een bestand zonder het te vertonen in een raamwerk.</translation>
-    </message>
-    <message>
-        <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
-        <translation>Schakel hoog-dpi-schaling uit. Gebruik deze optie als je problemen hebt met schaalverandering (als default is ingeschakeld). Als alternatief kun je %1 omgevingsvariabele gebruiken.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +208,49 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>delete tool</source>
         <translation>Verwijder gereedschap</translation>
+    </message>
+</context>
+<context>
+    <name>DialogAboutApp</name>
+    <message>
+        <source>About Seamly2D</source>
+        <translation>Over Seamly2D</translation>
+    </message>
+    <message>
+        <source>Seamly2D version</source>
+        <translation>Seamly2D versie</translation>
+    </message>
+    <message>
+        <source>Contributors</source>
+        <translation>Bijdragers</translation>
+    </message>
+    <message>
+        <source>Web site : %1</source>
+        <translation>Website: %1</translation>
+    </message>
+    <message>
+        <source>Cannot open your default browser</source>
+        <translation>Kan uw standaard browser niet openen</translation>
+    </message>
+    <message>
+        <source>Build revision: %1</source>
+        <translation>Herziene uitgave gebouwd: %1</translation>
+    </message>
+    <message>
+        <source>Built on %1 at %2</source>
+        <translation>Gebouwd op %1 op %2</translation>
+    </message>
+    <message>
+        <source>Check For Updates</source>
+        <translation>Kijk voor Opwaarderingen</translation>
+    </message>
+    <message>
+        <source>Downloading installer %p% complete</source>
+        <translation>Downloaden installeerprogramma %p% volledig</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>onbekend</translation>
     </message>
 </context>
 <context>
@@ -1166,26 +917,6 @@ p, li { white-space: pre-wrap; }
         <source>Name:</source>
         <translation>Naam:</translation>
     </message>
-    <message>
-        <source>Direction :</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Forward (from start point)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Backward (from end point)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Attributes</source>
-        <translation>Kenmerken</translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation>Kleur:</translation>
-    </message>
 </context>
 <context>
     <name>DialogCutSpline</name>
@@ -1241,26 +972,6 @@ p, li { white-space: pre-wrap; }
         <source>Name:</source>
         <translation>Naam:</translation>
     </message>
-    <message>
-        <source>Direction :</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Forward (from start point)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Backward (from end point)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Attributes</source>
-        <translation>Kenmerken</translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation>Kleur:</translation>
-    </message>
 </context>
 <context>
     <name>DialogCutSplinePath</name>
@@ -1315,26 +1026,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Name:</source>
         <translation>Naam:</translation>
-    </message>
-    <message>
-        <source>Direction :</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Forward (from start point)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Backward (from end point)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Attributes</source>
-        <translation>Kenmerken</translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation>Kleur:</translation>
     </message>
 </context>
 <context>
@@ -4212,7 +3903,7 @@ Do you want to download it?</source>
         <translation>Een nieuwe versie %1 is beschikbaar. Wil je het downloaden?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4342,7 +4033,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Spl_</source>
-        <translation>Spl_</translation>
+        <translation type="unfinished">Spl_</translation>
     </message>
     <message>
         <source>%1 - Curve Fixed</source>
@@ -4693,191 +4384,6 @@ Possibly the file is already being downloaded.</source>
     </message>
 </context>
 <context>
-    <name>ImageDialog</name>
-    <message>
-        <source>Image Properties</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Selectie</translation>
-    </message>
-    <message>
-        <source>Id:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Id</source>
-        <translation>Id</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Naam:</translation>
-    </message>
-    <message>
-        <source>Lock Image:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Geometrie</translation>
-    </message>
-    <message>
-        <source>Switch between px and pattern units</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>PX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unit:</source>
-        <translation>Eenheid:</translation>
-    </message>
-    <message>
-        <source>X Position:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation type="unfinished">px</translation>
-    </message>
-    <message>
-        <source>Y Position:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lock aspect ratio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lock Aspect:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation>Breedte:</translation>
-    </message>
-    <message>
-        <source>Height:</source>
-        <translation>Hoogte:</translation>
-    </message>
-    <message>
-        <source>X Scale:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Y Scale:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rotation:</source>
-        <translation>Draaiing:</translation>
-    </message>
-    <message>
-        <source>°</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Attributes</source>
-        <translation>Kenmerken</translation>
-    </message>
-    <message>
-        <source>Opacity:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ImageItem</name>
-    <message>
-        <source>Properties</source>
-        <translation>Eigenschappen</translation>
-    </message>
-    <message>
-        <source>Lock</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Order</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bring to top</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move up</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move down</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Send to bottom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Image (%7)&lt;/b&gt;: Size(%2%1, %3%1); Pos(%4%1, %5%1); Rot(%6°)%8</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> - &lt;b&gt;Aspect ratio locked&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move Origin</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ImageTool</name>
-    <message>
-        <source>Import Image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not load the image.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not read the image.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>File may be corrupted...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Confirm deletion</source>
-        <translation>Bevestig verwijdering</translation>
-    </message>
-    <message>
-        <source>Do you really want to delete?</source>
-        <translation>Wil je dit echt verwijderen?</translation>
-    </message>
-    <message>
-        <source>The image &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Loading image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>No image was selected...</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>InsertNodesDialog</name>
     <message>
         <source>Selection</source>
@@ -4965,20 +4471,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Het programma wordt geleverd zoals het is, zonder enige vorm van garantie, inclusief de garantie op ontwerp, verkoopbaarheid en geschiktheid voor een bepaald doel.</translation>
-    </message>
-    <message>
-        <source>Seamly2D is an application for computer-aided design of garment patterns.
-
-Seamly2D is a free (open source) software.
-
-All brand or product names are trademarks or registered trademarks of their respective holders.
-
-© 2017-2024 Seamly2D Project.
-
-Portions of this software © 2008-2024 The Qt Company Ltd.
-
-The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5323,7 +4815,7 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Millimeters</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -5354,6 +4846,105 @@ Apply settings anyway?</source>
     <message>
         <source>Dash Dot Dot</source>
         <translation>Streep Punt Punt</translation>
+    </message>
+</context>
+<context>
+    <name>MApplication</name>
+    <message>
+        <source>Error parsing file. Program will be terminated.</source>
+        <translation>Fout bij uitpakken bestand. Programma wordt beëindigd.</translation>
+    </message>
+    <message>
+        <source>Error bad id. Program will be terminated.</source>
+        <translation>Fout slechte ID. Programma wordt beëindigd.</translation>
+    </message>
+    <message>
+        <source>Error can&apos;t convert value. Program will be terminated.</source>
+        <translation>Fout kan waarde niet omzetten. Programma wordt beëindigd.</translation>
+    </message>
+    <message>
+        <source>Error empty parameter. Program will be terminated.</source>
+        <translation>Fout lege parameter. Programma wordt beëindigd.</translation>
+    </message>
+    <message>
+        <source>Error wrong id. Program will be terminated.</source>
+        <translation>Fout verkeerde ID. Programma wordt beëindigd.</translation>
+    </message>
+    <message>
+        <source>Something&apos;s wrong!!</source>
+        <translation>Er gaat iets verkeerd!!</translation>
+    </message>
+    <message>
+        <source>Parser error: %1. Program will be terminated.</source>
+        <translation>Fout bij uitpakken bestand: %1. Programma wordt beëindigd.</translation>
+    </message>
+    <message>
+        <source>Exception thrown: %1. Program will be terminated.</source>
+        <translation>Uitgeworpen uitzondering: %1. Programma wordt beëindigd.</translation>
+    </message>
+    <message>
+        <source>Seamly2D&apos;s measurements editor.</source>
+        <translation>Seamly2D&apos;s maten editor.</translation>
+    </message>
+    <message>
+        <source>The measurement file.</source>
+        <translation>Het maten bestand.</translation>
+    </message>
+    <message>
+        <source>The base height</source>
+        <translation>De basis hoogte</translation>
+    </message>
+    <message>
+        <source>The base size</source>
+        <translation>De basis maat</translation>
+    </message>
+    <message>
+        <source>Set pattern file unit: cm, mm, inch.</source>
+        <translation>Stel patroon bestand eenheid in: cm, mm, inches.</translation>
+    </message>
+    <message>
+        <source>The pattern unit</source>
+        <translation>De patrooneenheid</translation>
+    </message>
+    <message>
+        <source>Invalid base size argument. Must be cm, mm or inch.</source>
+        <translation>Ongeldig basis maat argument. Moet bestaan uit: cm, mm, inches.</translation>
+    </message>
+    <message>
+        <source>Can&apos;t begin to listen for incoming connections on name &apos;%1&apos;</source>
+        <translation>Kan niet beginnen met verwerken van inkomende connecties op naam &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>Test mode doesn&apos;t support Opening several files.</source>
+        <translation>Test modus ondersteunt niet het openen van verschillende bestanden.</translation>
+    </message>
+    <message>
+        <source>Please, provide one input file.</source>
+        <translation>Alsublieft, verstrek éen invoer bestand.</translation>
+    </message>
+    <message>
+        <source>Open with the base size. Valid values: %1cm.</source>
+        <translation>Open met de basis maat. Geldige waardes: %1cm.</translation>
+    </message>
+    <message>
+        <source>Invalid base height argument. Must be %1cm.</source>
+        <translation>Ongeldige basis hoogte argument. Moet bestaan uit %1cm.</translation>
+    </message>
+    <message>
+        <source>Invalid base size argument. Must be %1cm.</source>
+        <translation>Ongeldige basis maat argument. Moet bestaan uit %1cm.</translation>
+    </message>
+    <message>
+        <source>Open with the base height. Valid values: %1cm.</source>
+        <translation>Open met de basis hoogte. Geldige waardes: %1cm.</translation>
+    </message>
+    <message>
+        <source>Use for unit testing. Run the program and open a file without showing the main window.</source>
+        <translation>Gebruik voor eenheid testing. Laat het programma lopen en open een bestand zonder het te vertonen in een raamwerk.</translation>
+    </message>
+    <message>
+        <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
+        <translation>Schakel hoog-dpi-schaling uit. Gebruik deze optie als je problemen hebt met schaalverandering (als default is ingeschakeld). Als alternatief kun je %1 omgevingsvariabele gebruiken.</translation>
     </message>
 </context>
 <context>
@@ -5793,6 +5384,10 @@ Wil je de veranderingen opslaan?</translation>
         <translation>alleen lezen</translation>
     </message>
     <message>
+        <source>Contains information about increments and internal variables</source>
+        <translation>Bevat informatie over vergroten/verkleinen en interne variabelen</translation>
+    </message>
+    <message>
         <source>Load Individual</source>
         <translation>Laad individueel</translation>
     </message>
@@ -6161,14 +5756,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>A, L</translation>
     </message>
     <message>
-        <source>Tools for inserting or modifying images.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point on Curve (O, C)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>About Seamly2D</source>
         <translation>Over Seamly2D</translation>
     </message>
@@ -6215,6 +5802,10 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Fit</source>
         <translation>Pas Aan</translation>
+    </message>
+    <message>
+        <source>Zoom to Fit All(Ctrl+=)</source>
+        <translation>Zoom om alles te tonen (Ctrl+=)</translation>
     </message>
     <message>
         <source>Report bug...</source>
@@ -6273,16 +5864,40 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Zoom op vorige (Ctrl+Links)</translation>
     </message>
     <message>
+        <source>Ctrl+Left</source>
+        <translation>Ctrl+Links</translation>
+    </message>
+    <message>
         <source>Area</source>
         <translation>Gebied</translation>
+    </message>
+    <message>
+        <source>Ctrl+A</source>
+        <translation>Ctrl+A</translation>
     </message>
     <message>
         <source>Pan</source>
         <translation>Toon Panorama</translation>
     </message>
     <message>
+        <source>Z, P</source>
+        <translation>Z, P</translation>
+    </message>
+    <message>
+        <source>Zoom 1:1</source>
+        <translation>Zoom 1:1</translation>
+    </message>
+    <message>
+        <source>1:1</source>
+        <translation>1:1</translation>
+    </message>
+    <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
         <translation>Zoom naar 100 percent (Ctrl+0)</translation>
+    </message>
+    <message>
+        <source>Ctrl+0</source>
+        <translation>Ctrl+0</translation>
     </message>
     <message>
         <source>Point Tools</source>
@@ -6387,6 +6002,10 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Point Name Text</source>
         <translation>Puntnaam tekst</translation>
+    </message>
+    <message>
+        <source>Toggle Point Name Text (P)</source>
+        <translation>Schakel Puntnaam Tekst Om</translation>
     </message>
     <message>
         <source>V, P</source>
@@ -6557,10 +6176,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>&lt;b&gt;Gereedschap::Bewerkingen - Echte Figuurnaden:&lt;/b&gt; Kies het eerste punt van de basislijn</translation>
     </message>
     <message>
-        <source>Could not load the image.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Draft Block:</source>
         <translation>Tekenblok:</translation>
     </message>
@@ -6587,10 +6202,6 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Export Pattern Pieces</source>
         <translation>Exporteer patroondelen</translation>
-    </message>
-    <message>
-        <source>Import Image</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Piece mode</source>
@@ -6817,10 +6428,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Voeg binnenpad toe (I, P)</translation>
     </message>
     <message>
-        <source>Import Image (Alt + I)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Export Pieces (E, P)</source>
         <translation>Exporteer Patroondelen (E, P)</translation>
     </message>
@@ -6831,10 +6438,6 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Export Layout (E, L)</source>
         <translation>Exporteer Opmaak (E, L)</translation>
-    </message>
-    <message>
-        <source>Contains information about custom and internal variables</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Alt+M</source>
@@ -6935,6 +6538,10 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Point on Curve</source>
         <translation>Punt Op Kromme</translation>
+    </message>
+    <message>
+        <source>Point on Curve (A, C)</source>
+        <translation>Punt - Op Kromme (A, C)</translation>
     </message>
     <message>
         <source>O, C</source>
@@ -7081,32 +6688,12 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Maak Nieuwe afdrukopmaak (N, L)</translation>
     </message>
     <message>
-        <source>Toggle Point Name Text (V, P)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Images tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Align</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lock</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Zoom to point (Ctrl + Alt + P)</source>
         <translation>Zoom in op punt (Ctrl+Alt+P)</translation>
     </message>
     <message>
-        <source>Alt+I</source>
-        <translation type="unfinished"></translation>
+        <source>Ctrl+Alt+P</source>
+        <translation>Ctrl+Alt+P</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -7233,10 +6820,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>&lt;b&gt;Gereedschap::Boog - Ellipsvormig:&lt;/b&gt; Kies middelpunt van ellispvormige boog</translation>
     </message>
     <message>
-        <source>Images</source>
-        <translation>Afbeeldingen</translation>
-    </message>
-    <message>
         <source>Zoom to Point</source>
         <translation>Zoom in op Punt</translation>
     </message>
@@ -7282,7 +6865,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
-        <translation>Ctrl+E</translation>
+        <translation type="unfinished">Ctrl+E</translation>
     </message>
     <message>
         <source>untitled</source>
@@ -7311,27 +6894,6 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>pattern</source>
         <translation>patroon</translation>
-    </message>
-    <message>
-        <source>Base name used for new points.
-Press enter to temporarily add it to the list.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Zoom to Fit All(Ctrl+9)</source>
-        <translation>Zoom om alles te tonen (Ctrl+9)</translation>
-    </message>
-    <message>
-        <source>Zoom 100%</source>
-        <translation>Zoom 100%</translation>
-    </message>
-    <message>
-        <source>100%</source>
-        <translation>100%</translation>
     </message>
 </context>
 <context>
@@ -7391,6 +6953,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Can&apos;t create a path</source>
         <translation>Kan geen pad maken</translation>
+    </message>
+    <message>
+        <source>Pattern</source>
+        <translation>Patroon</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
@@ -7493,7 +7059,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="unfinished">K</translation>
     </message>
     <message>
         <source>SeamlyMe Shortcuts</source>
@@ -8224,10 +7790,6 @@ Press enter to temporarily add it to the list.</source>
         <translation> Breedte:</translation>
     </message>
     <message>
-        <source>  °</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Reset notch length to default.</source>
         <translation>Zet lengte pasmarkering terug naar standaard.</translation>
     </message>
@@ -8635,23 +8197,23 @@ Press enter to temporarily add it to the list.</source>
     <name>PenToolBar</name>
     <message>
         <source>Current line color</source>
-        <translation>Huidige lijnkleur</translation>
+        <translation type="unfinished">Huidige lijnkleur</translation>
     </message>
     <message>
         <source>Current line type</source>
-        <translation>Huidig lijnsoort</translation>
+        <translation type="unfinished">Huidig lijnsoort</translation>
     </message>
     <message>
         <source>Current line weight</source>
-        <translation>Huidig Lijnbreedte</translation>
+        <translation type="unfinished">Huidig Lijnbreedte</translation>
     </message>
     <message>
         <source>Reset current pen to defaults</source>
-        <translation>Huidige pen terugzetten op standaardwaarden</translation>
+        <translation type="unfinished">Huidige pen terugzetten op standaardwaarden</translation>
     </message>
     <message>
         <source>Save current pen preset</source>
-        <translation>Huidige preset opslaan</translation>
+        <translation type="unfinished">Huidige preset opslaan</translation>
     </message>
 </context>
 <context>
@@ -8662,59 +8224,59 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Solid</source>
-        <translation>Stevig</translation>
+        <translation type="unfinished">Stevig</translation>
     </message>
     <message>
         <source>Density 1</source>
-        <translation>Dichtheid 1</translation>
+        <translation type="unfinished">Dichtheid 1</translation>
     </message>
     <message>
         <source>Density 2</source>
-        <translation>Dichtheid 2</translation>
+        <translation type="unfinished">Dichtheid 2</translation>
     </message>
     <message>
         <source>Density 3</source>
-        <translation>Dichtheid 3</translation>
+        <translation type="unfinished">Dichtheid 3</translation>
     </message>
     <message>
         <source>Density 4</source>
-        <translation>Dichtheid 4</translation>
+        <translation type="unfinished">Dichtheid 4</translation>
     </message>
     <message>
         <source>Density 5</source>
-        <translation>Dichtheid 5</translation>
+        <translation type="unfinished">Dichtheid 5</translation>
     </message>
     <message>
         <source>Density 6</source>
-        <translation>Dichtheid 6</translation>
+        <translation type="unfinished">Dichtheid 6</translation>
     </message>
     <message>
         <source>Density 7</source>
-        <translation>Dichtheid 7</translation>
+        <translation type="unfinished">Dichtheid 7</translation>
     </message>
     <message>
         <source>Horizontal Line</source>
-        <translation>Horizontale lijn</translation>
+        <translation type="unfinished">Horizontale lijn</translation>
     </message>
     <message>
         <source>Vertical Line</source>
-        <translation>Verticaal Lijn</translation>
+        <translation type="unfinished">Verticaal Lijn</translation>
     </message>
     <message>
         <source>Cross</source>
-        <translation>Kruis</translation>
+        <translation type="unfinished">Kruis</translation>
     </message>
     <message>
         <source>Backward Diagonal</source>
-        <translation>Diagonaal Achteruit</translation>
+        <translation type="unfinished">Diagonaal Achteruit</translation>
     </message>
     <message>
         <source>Forward Diagonal</source>
-        <translation>Diagonaal Voorwaarts</translation>
+        <translation type="unfinished">Diagonaal Voorwaarts</translation>
     </message>
     <message>
         <source>Diagonal Cross</source>
-        <translation>Diagonaal Kruis</translation>
+        <translation type="unfinished">Diagonaal Kruis</translation>
     </message>
 </context>
 <context>
@@ -8773,7 +8335,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Locked</source>
-        <translation>Vergrendeld</translation>
+        <translation type="unfinished">Vergrendeld</translation>
     </message>
     <message>
         <source>Pattern piece is locked</source>
@@ -8781,7 +8343,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="unfinished">Kleur</translation>
     </message>
     <message>
         <source>Pattern piece color</source>
@@ -8789,7 +8351,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Piece</source>
-        <translation>Patroondeel</translation>
+        <translation type="unfinished">Patroondeel</translation>
     </message>
     <message>
         <source>Pattern piece letter</source>
@@ -8882,6 +8444,10 @@ Press enter to temporarily add it to the list.</source>
         <translation>Standaardwaarde eenheid:</translation>
     </message>
     <message>
+        <source>Label language:</source>
+        <translation>Taal label:</translation>
+    </message>
+    <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
         <translation>De standaardwaarde van de eenheid is opgewaardeerd en zal worden gebruikt  als de standaardbasis voor uw volgende patrooncreatie.</translation>
     </message>
@@ -8944,14 +8510,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>File Handling</source>
         <translation>Bestandsbeheer</translation>
-    </message>
-    <message>
-        <source>Backups</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Create backup file when converting</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Enable Autosave</source>
@@ -9035,7 +8593,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Designer Info</source>
-        <translation>Info ontwerper</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Company / Designer Info</source>
@@ -9079,7 +8637,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Email:</source>
-        <translation>Emailadres:</translation>
+        <translation type="unfinished">Emailadres:</translation>
     </message>
     <message>
         <source>Website:</source>
@@ -9095,23 +8653,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>User locale</source>
-        <translation>Lokalisatie gebruiker</translation>
-    </message>
-    <message>
-        <source>Startup</source>
-        <translation>Startup</translation>
-    </message>
-    <message>
-        <source>Welcome</source>
-        <translation>Welkom</translation>
-    </message>
-    <message>
-        <source>Do not show welcome screen</source>
-        <translation>Welkomstscherm niet weergeven</translation>
-    </message>
-    <message>
-        <source>Point name text:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lokalisatie gebruiker</translation>
     </message>
 </context>
 <context>
@@ -9461,58 +9003,6 @@ Press enter to temporarily add it to the list.</source>
         <source>Quality:</source>
         <translation>Kwaliteit:</translation>
     </message>
-    <message>
-        <source>Pen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Always use current pen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Dialogs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open on second monitor if available</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Position</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Top left</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Top right</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Center</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom left</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom right</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Offset</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>X Offset:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Y Offset:</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -9547,14 +9037,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>My Multisize Measurements</source>
         <translation>Mijn Multimaten Maten</translation>
-    </message>
-    <message>
-        <source>My Images</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>My Backups</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>My Patterns</source>
@@ -9775,14 +9257,6 @@ Press enter to temporarily add it to the list.</source>
         <source>Hide Seam Line</source>
         <translation>Verberg Stiklijn</translation>
     </message>
-    <message>
-        <source>Arrow length:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> px</source>
-        <translation type="unfinished"> px</translation>
-    </message>
 </context>
 <context>
     <name>QCoreApplication</name>
@@ -9914,26 +9388,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>%1</source>
         <translation>%1</translation>
-    </message>
-    <message>
-        <source>Forward (from start point)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Backward (from end point)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Images</source>
-        <translation>Afbeeldingen</translation>
-    </message>
-    <message>
-        <source>Open Image File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern</source>
-        <translation>Patroon</translation>
     </message>
 </context>
 <context>
@@ -10147,17 +9601,6 @@ Press enter to temporarily add it to the list.</source>
     </message>
 </context>
 <context>
-    <name>ResizeHandlesItem</name>
-    <message>
-        <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center - &lt;b&gt; Aspect ratio locked &lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center, &lt;b&gt;SHIFT&lt;/b&gt; to scale uniformly.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>SavePieceOptions</name>
     <message>
         <source>save detail option</source>
@@ -10234,19 +9677,19 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Startup</source>
-        <translation>Startup</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Do not show welcome screen</source>
-        <translation>Welkomstscherm niet weergeven</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Decimal separator:</source>
-        <translation>Decimaal scheidingsteken:</translation>
+        <translation type="unfinished">Decimaal scheidingsteken:</translation>
     </message>
     <message>
         <source>User locale</source>
-        <translation>Lokalisatie gebruiker</translation>
+        <translation type="unfinished">Lokalisatie gebruiker</translation>
     </message>
 </context>
 <context>
@@ -10363,88 +9806,14 @@ Press enter to temporarily add it to the list.</source>
         <translation>Inches</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SeamlyWelcomeDialog</name>
-    <message>
-        <source>Welcome</source>
-        <translation>Welkom</translation>
-    </message>
-    <message>
-        <source>Welcome to Seamly2D</source>
-        <translation>Welkom bij Seamly2D</translation>
-    </message>
-    <message>
-        <source>Units:</source>
-        <translation>Eenheden:</translation>
-    </message>
-    <message>
-        <source>Sets the default units for a new measurement file.</source>
-        <translation>Stelt de standaardeenheden in voor een nieuw meetbestand.</translation>
-    </message>
-    <message>
-        <source>Decimal separator:</source>
-        <translation>Decimaal scheidingsteken:</translation>
-    </message>
-    <message>
-        <source>GUI language:</source>
-        <translation>GUI taal:</translation>
-    </message>
-    <message>
-        <source>Do not show again</source>
-        <translation>Niet meer weergeven</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Lokalisatie gebruiker</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation>Centimeters</translation>
-    </message>
-    <message>
-        <source>Millimeters</source>
-        <translation>Millimeters</translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation>Inches</translation>
-    </message>
-    <message>
-        <source>Sets the language used for Seamly2D.</source>
-        <translation>Stelt de taal in die wordt gebruikt voor Seamly2D.</translation>
-    </message>
-    <message>
-        <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
-        <translation>Kies de eenheden, het decimaalscheidingsteken, de taal en het selectiegeluid van je voorkeur. (Je kunt deze later wijzigen.)</translation>
-    </message>
-    <message>
-        <source>Sound:</source>
-        <translation>Geluid:</translation>
-    </message>
-    <message>
-        <source>Sets the node selection click  sound.</source>
-        <translation>Stelt het klikgeluid van de knooppuntselectie in.</translation>
-    </message>
-    <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>When checked the Welcome window will not be displayed. 
-You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10614,6 +9983,10 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Ctrl+-</translation>
     </message>
     <message>
+        <source>Zoom 1:1</source>
+        <translation>Zoom 1:1</translation>
+    </message>
+    <message>
         <source>Ctrl+0</source>
         <translation>Ctrl+0</translation>
     </message>
@@ -10628,6 +10001,10 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Fit All</source>
         <translation>Toon Ales</translation>
+    </message>
+    <message>
+        <source>Ctrl+=</source>
+        <translation>Ctrl+=</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -10658,8 +10035,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Toon Panorama</translation>
     </message>
     <message>
+        <source>Z, P</source>
+        <translation>Z, P</translation>
+    </message>
+    <message>
         <source>Show Name Text</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V, P</source>
+        <translation>V, P</translation>
     </message>
     <message>
         <source>Increase Text Size</source>
@@ -10686,24 +10071,48 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>V, W</source>
+        <translation>V, W</translation>
+    </message>
+    <message>
         <source>Curve Control Points</source>
         <translation>Controlepunten Kromme</translation>
+    </message>
+    <message>
+        <source>V, C</source>
+        <translation>V, C</translation>
     </message>
     <message>
         <source>Axis Origin</source>
         <translation>Oorsprong van de as</translation>
     </message>
     <message>
+        <source>V, A</source>
+        <translation>V, A</translation>
+    </message>
+    <message>
         <source>Seam Allowance</source>
         <translation>Naadtoeslag</translation>
+    </message>
+    <message>
+        <source>V, S</source>
+        <translation>V, S</translation>
     </message>
     <message>
         <source>Grainlines</source>
         <translation>Recht-van-draad</translation>
     </message>
     <message>
+        <source>V, G</source>
+        <translation>V, G</translation>
+    </message>
+    <message>
         <source>Labels</source>
         <translation>Labels</translation>
+    </message>
+    <message>
+        <source>V, L</source>
+        <translation>V, L</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -10750,6 +10159,10 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Hernoem Tekenblok</translation>
     </message>
     <message>
+        <source>F2</source>
+        <translation>F2</translation>
+    </message>
+    <message>
         <source>Point</source>
         <translation>Punt</translation>
     </message>
@@ -10758,40 +10171,80 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Lengte en Hoek</translation>
     </message>
     <message>
+        <source>L, A</source>
+        <translation>L, A</translation>
+    </message>
+    <message>
         <source>On Line</source>
         <translation>Op Lijn</translation>
+    </message>
+    <message>
+        <source>O, L</source>
+        <translation>O, L</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
         <translation>Op Loodrechte</translation>
     </message>
     <message>
+        <source>O, P</source>
+        <translation>O, P</translation>
+    </message>
+    <message>
         <source>On Bisector</source>
         <translation>Op Bisectrice</translation>
+    </message>
+    <message>
+        <source>O, B</source>
+        <translation>O, B</translation>
     </message>
     <message>
         <source>Length to Line</source>
         <translation>Lengte tot Lijn</translation>
     </message>
     <message>
+        <source>P, S</source>
+        <translation>P, S</translation>
+    </message>
+    <message>
         <source>Intersect Arc and Line</source>
         <translation>Snijpunt Boog en Lijn</translation>
+    </message>
+    <message>
+        <source>A, L</source>
+        <translation>A, L</translation>
     </message>
     <message>
         <source>Intersect Axis and Triangle</source>
         <translation>Snijpunt As en Driehoek</translation>
     </message>
     <message>
+        <source>X, T</source>
+        <translation>X, T</translation>
+    </message>
+    <message>
         <source>Intersect XY</source>
         <translation>Snijpunt XY</translation>
+    </message>
+    <message>
+        <source>X, Y</source>
+        <translation>X, Y</translation>
     </message>
     <message>
         <source>Intersect Line and Perpendicular</source>
         <translation>Snijpunt Lijn en Loodrechte</translation>
     </message>
     <message>
+        <source>L, P</source>
+        <translation>L, P</translation>
+    </message>
+    <message>
         <source>Intersect Line and Axis</source>
         <translation>Snijpunt - Lijn en As</translation>
+    </message>
+    <message>
+        <source>L, X</source>
+        <translation>L, X</translation>
     </message>
     <message>
         <source>Midpoint On Line</source>
@@ -10812,6 +10265,10 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Point - Intersect Lines</source>
         <translation>Punt - Snijpunt Lijnen</translation>
+    </message>
+    <message>
+        <source>I, L</source>
+        <translation>I, L</translation>
     </message>
     <message>
         <source>Curves</source>
@@ -10854,16 +10311,32 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Punt - Op Kromme</translation>
     </message>
     <message>
+        <source>O, C</source>
+        <translation>O, C</translation>
+    </message>
+    <message>
         <source>Point - On Spline	</source>
         <translation>Punt - Op Spline	</translation>
+    </message>
+    <message>
+        <source>O, S</source>
+        <translation>O, S</translation>
     </message>
     <message>
         <source>Point - Intersect Curves</source>
         <translation>Punt - Snijpunt Krommes</translation>
     </message>
     <message>
+        <source>I, C</source>
+        <translation>I, C</translation>
+    </message>
+    <message>
         <source>Point - Intersect Curve and Axis</source>
         <translation>Punt - Snijpunt Kromme en As</translation>
+    </message>
+    <message>
+        <source>C, X</source>
+        <translation>C, X</translation>
     </message>
     <message>
         <source>Arcs</source>
@@ -10890,12 +10363,24 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Punt - Op Boog</translation>
     </message>
     <message>
+        <source>O, A</source>
+        <translation>O, A</translation>
+    </message>
+    <message>
         <source>Point - Intersect Arc and Axis</source>
         <translation>Punt - Snijpunt Boog en As</translation>
     </message>
     <message>
+        <source>A, X</source>
+        <translation>A, X</translation>
+    </message>
+    <message>
         <source>Point - Intersect Arcs</source>
         <translation>Punt - Snijpunt Bogen</translation>
+    </message>
+    <message>
+        <source>I, A</source>
+        <translation>I, A</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
@@ -10910,8 +10395,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Punt - Snijpunt Cirkel en Raaklijn</translation>
     </message>
     <message>
+        <source>C, T</source>
+        <translation>C, T</translation>
+    </message>
+    <message>
         <source>Point - Intersect Arc and Tangent</source>
         <translation>Punt - Snijpunt Boog en Raaklijn</translation>
+    </message>
+    <message>
+        <source>A, T</source>
+        <translation>A, T</translation>
     </message>
     <message>
         <source>Elliptical Arc</source>
@@ -10930,16 +10423,32 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>G</source>
+        <translation>G</translation>
+    </message>
+    <message>
         <source>Rotation</source>
         <translation>Draaiing</translation>
+    </message>
+    <message>
+        <source>R</source>
+        <translation>R</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
         <translation>Spiegel over Lijn</translation>
     </message>
     <message>
+        <source>M, L</source>
+        <translation>M,L</translation>
+    </message>
+    <message>
         <source>Mirror by Axis</source>
         <translation>Spiegel over As</translation>
+    </message>
+    <message>
+        <source>M, A</source>
+        <translation>M, A</translation>
     </message>
     <message>
         <source>Move</source>
@@ -10954,20 +10463,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Echte Figuurnaden</translation>
     </message>
     <message>
+        <source>T, D</source>
+        <translation>T, D</translation>
+    </message>
+    <message>
         <source>Export Draft Blocks</source>
         <translation>Exporteer Tekenblok</translation>
     </message>
     <message>
-        <source>Images</source>
-        <translation>Afbeeldingen</translation>
-    </message>
-    <message>
-        <source>Import Image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Alt + I</source>
-        <translation type="unfinished"></translation>
+        <source>E, D</source>
+        <translation>E, D</translation>
     </message>
     <message>
         <source>Pattern Piece</source>
@@ -10978,16 +10483,36 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Nieuw Patroondeel</translation>
     </message>
     <message>
+        <source>N, P</source>
+        <translation>N, P</translation>
+    </message>
+    <message>
         <source>Anchor Point</source>
         <translation>Ankerpunt</translation>
+    </message>
+    <message>
+        <source>A, P</source>
+        <translation>A, P</translation>
     </message>
     <message>
         <source>Internal Path</source>
         <translation>Binnenpad</translation>
     </message>
     <message>
+        <source>I, P</source>
+        <translation>I, P</translation>
+    </message>
+    <message>
+        <source>I, N</source>
+        <translation>I, N</translation>
+    </message>
+    <message>
         <source>Edit Properties</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>P</source>
+        <translation>P</translation>
     </message>
     <message>
         <source>Toggle Lock</source>
@@ -11002,8 +10527,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>In Opmaak opnemen</translation>
     </message>
     <message>
+        <source>I</source>
+        <translation>I</translation>
+    </message>
+    <message>
         <source>Forbid Flipping</source>
         <translation>Flipping verbieden</translation>
+    </message>
+    <message>
+        <source>F</source>
+        <translation>F</translation>
     </message>
     <message>
         <source>Raise To Top</source>
@@ -11042,8 +10575,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Verenig 2 Patroondelen (U)</translation>
     </message>
     <message>
+        <source>U</source>
+        <translation>U</translation>
+    </message>
+    <message>
         <source>Export Pieces</source>
         <translation>Exporteer Patroondelen</translation>
+    </message>
+    <message>
+        <source>E, P</source>
+        <translation>E, P</translation>
     </message>
     <message>
         <source>Layout</source>
@@ -11054,8 +10595,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Nieuwe Opmaak</translation>
     </message>
     <message>
+        <source>N, L</source>
+        <translation>N, L</translation>
+    </message>
+    <message>
         <source>Export Layout</source>
         <translation>Exporteer Opmaak</translation>
+    </message>
+    <message>
+        <source>E, L</source>
+        <translation>E, L</translation>
     </message>
     <message>
         <source>Last Tool</source>
@@ -11102,8 +10651,16 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>K</source>
+        <translation>K</translation>
+    </message>
+    <message>
         <source>Shift+P</source>
         <translation>Shift+P</translation>
+    </message>
+    <message>
+        <source>T</source>
+        <translation>T</translation>
     </message>
     <message>
         <source>Export PDF</source>
@@ -11112,14 +10669,6 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Insert Nodes</source>
         <translation>Voeg kernpunten in</translation>
-    </message>
-    <message>
-        <source>Zoom 100%</source>
-        <translation>Zoom 100%</translation>
-    </message>
-    <message>
-        <source>Ctrl+9</source>
-        <translation>Ctrl+9</translation>
     </message>
 </context>
 <context>
@@ -11909,6 +11458,10 @@ load in SeamlyME as usual.
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wil je echt details verenigen?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+        <source>Retain original pieces</source>
+        <translation>Behoud originele stukken</translation>
+    </message>
+    <message>
         <source>Select the first point</source>
         <translation>Kies het eerste punt</translation>
     </message>
@@ -12304,6 +11857,41 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
+    <name>VApplication</name>
+    <message>
+        <source>Error parsing file. Program will be terminated.</source>
+        <translation>Fout bij uitpakken bestand. Programma wordt beëindigd.</translation>
+    </message>
+    <message>
+        <source>Error bad id. Program will be terminated.</source>
+        <translation>Fout slechte ID. Programma wordt beëindigd.</translation>
+    </message>
+    <message>
+        <source>Error can&apos;t convert value. Program will be terminated.</source>
+        <translation>Fout kan waarde niet omzetten. Programma wordt beëindigd.</translation>
+    </message>
+    <message>
+        <source>Error empty parameter. Program will be terminated.</source>
+        <translation>Fout lege parameter. Programma wordt beëindigd.</translation>
+    </message>
+    <message>
+        <source>Error wrong id. Program will be terminated.</source>
+        <translation>Fout verkeerde ID. Programma wordt beëindigd.</translation>
+    </message>
+    <message>
+        <source>Something&apos;s wrong!!</source>
+        <translation>Er gaat iets verkeerd!!</translation>
+    </message>
+    <message>
+        <source>Parser error: %1. Program will be terminated.</source>
+        <translation>Fout bij uitpakken bestand: %1. Programma wordt beëindigd.</translation>
+    </message>
+    <message>
+        <source>Exception thrown: %1. Program will be terminated.</source>
+        <translation>Uitgeworpen uitzondering: %1. Programma wordt beëindigd.</translation>
+    </message>
+</context>
+<context>
     <name>VCommandLine</name>
     <message>
         <source>Path to custom measure file (export mode).</source>
@@ -12565,16 +12153,8 @@ load in SeamlyME as usual.
         <translation>sjablonen</translation>
     </message>
     <message>
-        <source>images</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>label templates</source>
         <translation>labelsjablonen</translation>
-    </message>
-    <message>
-        <source>backups</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>bodyscans</source>
@@ -12699,42 +12279,6 @@ load in SeamlyME as usual.
     <message>
         <source>Remove Group Object</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <translation type="unfinished">Lijn_</translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <translation type="unfinished">Boog_</translation>
-    </message>
-    <message>
-        <source>ElArc_</source>
-        <translation type="unfinished">EllBoog_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <translation type="unfinished">Spl_</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <translation type="unfinished">Splinepad_</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="unfinished">Lengte</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation type="unfinished">Hoek</translation>
-    </message>
-    <message>
-        <source>AngleLine_</source>
-        <translation type="unfinished">HoekLijn_</translation>
     </message>
 </context>
 <context>
@@ -13039,10 +12583,6 @@ load in SeamlyME as usual.
     <message>
         <source>Error creating or updating union pieces</source>
         <translation>Fout bij het maken of bijwerken van verenigde patroondelen</translation>
-    </message>
-    <message>
-        <source>Image_name</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13765,10 +13305,6 @@ load in SeamlyME as usual.
     <message>
         <source>Center point</source>
         <translation>Middelste punt</translation>
-    </message>
-    <message>
-        <source>Direction:</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -14848,332 +14384,298 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>M_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>M_</translation>
-    </message>
-    <message>
-        <source>Variable_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Variable_</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Lijn_</translation>
-    </message>
-    <message>
-        <source>AngleLine_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>HoekLijn_</translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Boog_</translation>
-    </message>
-    <message>
-        <source>ElArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>EllBoog_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Spl_</translation>
-    </message>
-    <message>
-        <source>RadiusArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Straalboog_</translation>
-    </message>
-    <message>
-        <source>Radius1ElArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Radius1ElArc_</translation>
-    </message>
-    <message>
-        <source>Radius2ElArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Radius2ElArc_</translation>
-    </message>
-    <message>
-        <source>Angle1Arc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Hoek1boog_</translation>
-    </message>
-    <message>
-        <source>Angle2Arc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Hoek2boog_</translation>
-    </message>
-    <message>
-        <source>Angle1ElArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Angle1ElArc_</translation>
-    </message>
-    <message>
-        <source>Angle2ElArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Angle2ElArc_</translation>
-    </message>
-    <message>
-        <source>Angle1Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Hoek1Vvk_</translation>
-    </message>
-    <message>
-        <source>Angle2Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Hoek2Vvk_</translation>
-    </message>
-    <message>
-        <source>C1LengthSpl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>C1LengteVvk_</translation>
-    </message>
-    <message>
-        <source>C2LengthSpl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>C2LengteVvk_</translation>
-    </message>
-    <message>
         <source>degTorad</source>
         <comment>Converts degrees to radians
-Usage: degTorad(angle θ in degrees) → returns an angle in radians
-Example: degTorad(180) = 3.14159</comment>
+Usage: degTorad(angle θ in degrees)</comment>
         <translation>degTorad</translation>
     </message>
     <message>
         <source>radTodeg</source>
         <comment>Converts radians to degrees
-Usage: radTodeg(angle θ in radians)  → returns an angle in degrees
-Example: radTodeg(3.14159) = 180</comment>
+Usage: radTodeg(angle θ in radians)</comment>
         <translation>radTodeg</translation>
     </message>
     <message>
         <source>sin</source>
         <comment>Sine function working with radians
-Usage: sin(angle θ in radians) → returns a number between -1 and 1
-Example: sin(90) = 0.893997</comment>
+Usage: sin(angle θ in radians)</comment>
         <translation>sin</translation>
     </message>
     <message>
         <source>cos</source>
         <comment>Cosine function working with radians
-Usage: cos(angle θ in radians) → returns a number between -1 and 1
-Example: cos(1) = 0.540302</comment>
+Usage: cos(angle θ in radians)</comment>
         <translation>cos</translation>
     </message>
     <message>
         <source>tan</source>
         <comment>Tangent function working with radians
-Usage: tan(angle θ in radians)
-Example: tan(1) = 1.55741</comment>
+Usage: tan(angle θ in radians)</comment>
         <translation>tan</translation>
     </message>
     <message>
         <source>asin</source>
         <comment>Inverse sine function working with radians
-Usage: asin(x between -1 and 1) → returns an angle in radians
-Example: asin(-1) = -1.5708</comment>
+Usage: asin(x)</comment>
         <translation>asin</translation>
     </message>
     <message>
         <source>acos</source>
         <comment>Inverse cosine function working with radians
-Usage: acos(x between -1 and 1) → returns an angle in radians
-Example: acos(0.1) = 1.47063</comment>
+Usage: acos(x)</comment>
         <translation>acos</translation>
     </message>
     <message>
         <source>atan</source>
         <comment>Inverse tangent function working with radians
-Usage: atan(x) → returns an angle in radians
-Example: atan(1) = 0.78538</comment>
+Usage: atan(x)</comment>
         <translation>atan</translation>
     </message>
     <message>
         <source>sinh</source>
         <comment>Hyperbolic sine function
-Usage: sinh(θ)
-Example: sinh(1) = 1.1752</comment>
+Usage: sinh(angle θ in radians)</comment>
         <translation>sinh</translation>
     </message>
     <message>
         <source>cosh</source>
         <comment>Hyperbolic cosine
-Usage: cosh(θ) → returns a number greater than or equal to 1
-Example: cosh(0) = 1</comment>
+Usage: cosh(angle θ in radians)</comment>
         <translation>cosh</translation>
     </message>
     <message>
         <source>tanh</source>
         <comment>Hyperbolic tangent function
-Usage: tanh(θ) → returns a number between -1 and 1 (excluded)
-Example: tanh(1) = 0.761594</comment>
+Usage: tanh(angle θ in radians)</comment>
         <translation>tanh</translation>
     </message>
     <message>
         <source>asinh</source>
         <comment>Inverse Hyperbolic sine function
-Usage: asinh(x)
-Example: asinh(90) = 5.19299</comment>
+Usage: asinh(x)</comment>
         <translation>asinh</translation>
     </message>
     <message>
         <source>acosh</source>
         <comment>Inverse Hyperbolic cosine function
-Usage: acosh(x greater than or equal to 1)
-Example: acosh(2) = 1.31696</comment>
+Usage: acosh(x)</comment>
         <translation>acosh</translation>
     </message>
     <message>
         <source>atanh</source>
         <comment>Inverse Hyperbolic tangent function
-Usage: atanh(x between -1 and 1 (excluded))
-Example: atanh(0,99) = 2.64665</comment>
+Usage: atanh(x)</comment>
         <translation>atanh</translation>
     </message>
     <message>
         <source>sinD</source>
         <comment>Sine function working with degrees
-Usage: sinD(angle θ in degrees) → returns a number between -1 and 1
-Example: sinD(90) = 1</comment>
+Usage: sinD(angle θ in degrees)</comment>
         <translation>sinD</translation>
     </message>
     <message>
         <source>cosD</source>
         <comment>Cosine function working with degrees
-Usage: cosD(angle θ in degrees) → returns a number between -1 and 1
-Example: cosD(180) = -1</comment>
+Usage: cosD(angle θ in degrees)</comment>
         <translation>cosD</translation>
     </message>
     <message>
         <source>tanD</source>
         <comment>Tangent function working with degrees
-Usage: tanD(angle θ in degrees)
-Example: tanD(45) = 1</comment>
+Usage: tanD(angle θ in degrees)</comment>
         <translation>tanD</translation>
     </message>
     <message>
         <source>asinD</source>
         <comment>Inverse sine function working with degrees
-Usage: asinD(x between -1 and 1) → returns an angle in degrees
-Example: asinD(1) = 90</comment>
+Usage: asinD(x)</comment>
         <translation>asinD</translation>
     </message>
     <message>
         <source>acosD</source>
         <comment>Inverse cosine function working with degrees
-Usage: acosD(x between -1 and 1) → returns an angle in degrees
-Example: acosD(-1) = 180</comment>
+Usage: acosD(x)</comment>
         <translation>acosD</translation>
     </message>
     <message>
         <source>atanD</source>
         <comment>Inverse tangent function working with degrees
-Usage: atanD(x) → returns an angle in degrees
-Example: atanD(1) = 45</comment>
+Usage: atanD(x)</comment>
         <translation>atanD</translation>
     </message>
     <message>
         <source>log2</source>
         <comment>Logarithm to the base 2
-Usage: log2(x greater than 0)
-Example: log2(10) = 3.32193</comment>
+Usage: log2(x)</comment>
         <translation>log2</translation>
     </message>
     <message>
         <source>log10</source>
-        <comment>Logarithm to the base 10 (same as log(x))
-Usage: log10(x greater than 0)
-Example: log10(10) = 1</comment>
+        <comment>Logarithm to the base 10
+Usage: log10(x)</comment>
         <translation>log10</translation>
     </message>
     <message>
         <source>log</source>
         <comment>Logarithm to the base 10
-Usage: log(x greater than 0)
-Example: log(10) = 1</comment>
+Usage: log(x)</comment>
         <translation>log</translation>
     </message>
     <message>
         <source>ln</source>
         <comment>Logarithm to base e (2.71828...)
-Usage: ln(x greater than 0)
-Example: ln(10) = 2.30259</comment>
+Usage: ln(x)</comment>
         <translation>ln</translation>
     </message>
     <message>
         <source>exp</source>
-        <comment>e raised to the power of x where e = 2.718
-Usage: exp(x) → returns a positive number
-Example: exp(2) = 7.38906</comment>
+        <comment>E raised to the power of x
+Usage: exp(x) where e = 2.718</comment>
         <translation>exp</translation>
     </message>
     <message>
         <source>sqrt</source>
         <comment>Square root of a value
-Usage: sqrt(x greater than or equal to 0) → returns a positive number
-Example: sqrt(4) = 2</comment>
+Usage: sqrt(x)</comment>
         <translation>sqrt</translation>
     </message>
     <message>
         <source>sign</source>
         <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
-Usage: sign(x) → returns -1, 0 or 1
-Example: sign(-3) = -1</comment>
+Usage: sign(x)</comment>
         <translation>sign</translation>
     </message>
     <message>
         <source>rint</source>
         <comment>Round to nearest integer
-Usage: rint(x) → returns an integer number
-Example: rint(2.3) = 2</comment>
+Usage: rint(float x)</comment>
         <translation>rint</translation>
     </message>
     <message>
         <source>abs</source>
         <comment>Absolute value
-Usage: abs(x) → returns a positive number
-Example: abs(-5) = 5</comment>
+Usage: abs(x)</comment>
         <translation>abs</translation>
     </message>
     <message>
         <source>min</source>
         <comment>Min of all arguments
-Usage: min(arg 1; arg 2; ... arg n)
-Example: min(2;3;4) = 2</comment>
+Usage: min(arg 1; arg 2; ... arg n)</comment>
         <translation>min</translation>
     </message>
     <message>
         <source>max</source>
         <comment>Max of all arguments
-Usage: max(arg 1; arg 2; ... arg n)
-Example: max(2;3;4) = 4</comment>
+Usage: max(arg 1; arg 2; ... arg n)</comment>
         <translation>max</translation>
     </message>
     <message>
         <source>sum</source>
         <comment>Sum of all arguments
-Usage: sum(arg 1; arg 2; ... arg n)
-Example: sum(2;3;4) = 9</comment>
+Usage: sum(arg 1; arg 2; ... arg n)</comment>
         <translation>sum</translation>
     </message>
     <message>
         <source>avg</source>
         <comment>Mean value of all arguments
-Usage: avg(arg 1; arg 2; ... arg n)
-Example: avg(2;3;4) = 3</comment>
+Usage: avg(arg 1; arg 2; ... arg n)</comment>
         <translation>avg</translation>
     </message>
     <message>
         <source>fmod</source>
         <comment>Returns the floating-point remainder of x/y (rounded towards zero)
-Usage: fmod(x; y)
-Example: fmod(3.3;2) = 1.3</comment>
+Usage: fmod(x; y)</comment>
         <translation>fmod</translation>
+    </message>
+    <message>
+        <source>M_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">M_</translation>
+    </message>
+    <message>
+        <source>Variable_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Variable_</translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Lijn_</translation>
+    </message>
+    <message>
+        <source>AngleLine_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">HoekLijn_</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Boog_</translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">EllBoog_</translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Spl_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Straalboog_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Radius1ElArc_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Radius2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Hoek1boog_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Hoek2boog_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Angle1ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Angle2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Hoek1Vvk_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Hoek2Vvk_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">C1LengteVvk_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">C2LengteVvk_</translation>
     </message>
 </context>
 <context>
