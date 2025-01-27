@@ -89,7 +89,7 @@ var searchData=
   ['adddetnode_2ecpp_86',['adddetnode.cpp',['../d6/df2/adddetnode_8cpp.html',1,'']]],
   ['adddetnode_2eh_87',['adddetnode.h',['../d9/d00/adddetnode_8h.html',1,'']]],
   ['adddocks_88',['AddDocks',['../d6/d1a/classMainWindow.html#a1f80f98c12910994f497219d41f7bd6a',1,'MainWindow']]],
-  ['adddraftblock_89',['adddraftblock',['../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6ab1b2d508a8b34dac324dae207e657d48',1,'AddDraftBlock:&#160;vundocommand.h'],['../d2/d4d/classAddDraftBlock.html#a13ba8d9bc05fec3fd1f21373c3165443',1,'AddDraftBlock::AddDraftBlock()'],['../d6/d1a/classMainWindow.html#a3fa146e5219257978c4981a382c2d770',1,'MainWindow::addDraftBlock()'],['../d2/d4d/classAddDraftBlock.html',1,'AddDraftBlock']]],
+  ['adddraftblock_89',['adddraftblock',['../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6ab1b2d508a8b34dac324dae207e657d48',1,'AddDraftBlock:&#160;vundocommand.h'],['../d6/d1a/classMainWindow.html#a3fa146e5219257978c4981a382c2d770',1,'MainWindow::addDraftBlock()'],['../d2/d4d/classAddDraftBlock.html#a13ba8d9bc05fec3fd1f21373c3165443',1,'AddDraftBlock::AddDraftBlock()'],['../d2/d4d/classAddDraftBlock.html',1,'AddDraftBlock']]],
   ['addempty_90',['addEmpty',['../d9/d6d/classMeasurementDoc.html#acf546558715bd72cc68811a6a78832ec',1,'MeasurementDoc']]],
   ['addemptyafter_91',['AddEmptyAfter',['../d9/d6d/classMeasurementDoc.html#a30d234e68220656931453f4ba262ffd6',1,'MeasurementDoc']]],
   ['addemptycustomvariable_92',['addEmptyCustomVariable',['../d4/d43/classVPattern.html#a688ddc4a60c07bd37cea5186863f4bbf',1,'VPattern']]],
