@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
+    <width>750</width>
     <height>520</height>
    </rect>
   </property>
@@ -21,7 +21,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>440</width>
+    <width>750</width>
     <height>520</height>
    </size>
   </property>
@@ -685,12 +685,29 @@ QListWidget::item:selected {
               <property name="cornerButtonEnabled">
                <bool>false</bool>
               </property>
+              <property name="columnCount">
+               <number>3</number>
+              </property>
+              <attribute name="horizontalHeaderDefaultSectionSize">
+               <number>70</number>
+              </attribute>
+              <attribute name="horizontalHeaderStretchLastSection">
+               <bool>true</bool>
+              </attribute>
               <attribute name="verticalHeaderVisible">
                <bool>false</bool>
               </attribute>
               <attribute name="verticalHeaderHighlightSections">
                <bool>false</bool>
               </attribute>
+              <attribute name="verticalHeaderStretchLastSection">
+               <bool>false</bool>
+              </attribute>
+              <column>
+               <property name="text">
+                <string>Number</string>
+               </property>
+              </column>
               <column>
                <property name="text">
                 <string>Name</string>
@@ -809,8 +826,8 @@ QListWidget::item:selected {
   <tabstop>buttonBox</tabstop>
  </tabstops>
  <resources>
-  <include location="../../../vmisc/share/resources/icon.qrc"/>
   <include location="../../../vmisc/share/resources/theme.qrc"/>
+  <include location="../../../vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections>
   <connection>

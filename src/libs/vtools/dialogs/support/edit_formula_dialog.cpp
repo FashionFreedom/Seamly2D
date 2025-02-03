@@ -102,7 +102,7 @@
 
 template <class T> class QSharedPointer;
 
-enum {ColumnName = 0, ColumnFullName};
+enum {ColumnNumber = 0, ColumnName, ColumnFullName};
 
 //---------------------------------------------------------------------------------------------------------------------
 EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &toolId, const quint16 &source,
@@ -124,7 +124,7 @@ EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &tool
     const QSize size = qApp->Settings()->GetFormulaWizardDialogSize();
     if (!size.isEmpty())
     {
-        // Block signals to prevent a resize event that will only save the size again. 
+        // Block signals to prevent a resize event that will only save the size again.
         blockSignals(true);
         resize(size);
         blockSignals(false);
@@ -162,7 +162,7 @@ EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &tool
     }
 #endif
 
-    ui->tableWidget->setColumnCount(2);
+    ui->tableWidget->setColumnCount(3);
     ui->tableWidget->setEditTriggers(QTableWidget::NoEditTriggers);
     ui->tableWidget->verticalHeader()->hide();
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -570,6 +570,7 @@ void EditFormulaDialog::showVariable(const QMap<key, val> &var)
     ui->tableWidget->blockSignals(true);
     ui->tableWidget->clearContents();
     ui->tableWidget->setRowCount(0);
+    ui->tableWidget->setColumnHidden(ColumnNumber, true);
     ui->tableWidget->setColumnHidden(ColumnFullName, true);
     ui->description_Label->setText("");
 
@@ -602,6 +603,7 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<Meas
     ui->tableWidget->blockSignals(true);
     ui->tableWidget->clearContents();
     ui->tableWidget->setRowCount(0);
+    ui->tableWidget->setColumnHidden(ColumnNumber, false);
     ui->tableWidget->setColumnHidden(ColumnFullName, false);
     ui->description_Label->setText("");
 
@@ -619,24 +621,32 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<Meas
             QTableWidgetItem *itemName = new QTableWidgetItem(iMap.key());
             itemName->setToolTip(itemName->text());
 
+            QTableWidgetItem *itemNumber = new QTableWidgetItem();
+            itemNumber->setSizeHint(QSize(70, 20));
+            itemNumber->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
             QTableWidgetItem *itemFullName = new QTableWidgetItem();
             if (iMap.value()->isCustom())
             {
+                itemNumber->setText(QStringLiteral("na"));
                 itemFullName->setText(iMap.value()->getGuiText());
             }
             else
             {
+                itemNumber->setText(qApp->translateVariables()->MNumber(itemName->text()));
                 itemFullName->setText(qApp->translateVariables()->guiText(iMap.value()->GetName()));
             }
 
+            itemNumber->setToolTip(itemNumber->text());
             itemFullName->setToolTip(itemFullName->text());
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnNumber, itemNumber);
             ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnName, itemName);
             ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnFullName, itemFullName);
         }
     }
     ui->tableWidget->blockSignals(false);
+    ui->tableWidget->resizeColumnsToContents();
     ui->tableWidget->selectRow(0);
-    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tableWidget->horizontalHeader()->setStretchLastSection(true);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -647,6 +657,7 @@ void EditFormulaDialog::showFunctions()
     ui->tableWidget->blockSignals(true);
     ui->tableWidget->clearContents();
     ui->tableWidget->setRowCount(0);
+    ui->tableWidget->setColumnHidden(ColumnNumber, true);
     ui->tableWidget->setColumnHidden(ColumnFullName, true);
     ui->description_Label->setText("");
 
