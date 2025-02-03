@@ -45,7 +45,7 @@ var searchData=
   ['adddestinationcurve_42',['AddDestinationCurve',['../dd/d50/classVisToolMove.html#a85985f3b663a92b3be2e7c09c25f75f5',1,'VisToolMove']]],
   ['adddetnode_43',['AddDetNode',['../db/d26/classAddDetNode.html#a17df58b295553169a414757e126dda93',1,'AddDetNode']]],
   ['adddocks_44',['AddDocks',['../d6/d1a/classMainWindow.html#a1f80f98c12910994f497219d41f7bd6a',1,'MainWindow']]],
-  ['adddraftblock_45',['adddraftblock',['../d2/d4d/classAddDraftBlock.html#a13ba8d9bc05fec3fd1f21373c3165443',1,'AddDraftBlock::AddDraftBlock()'],['../d6/d1a/classMainWindow.html#a3fa146e5219257978c4981a382c2d770',1,'MainWindow::addDraftBlock()']]],
+  ['adddraftblock_45',['adddraftblock',['../d6/d1a/classMainWindow.html#a3fa146e5219257978c4981a382c2d770',1,'MainWindow::addDraftBlock()'],['../d2/d4d/classAddDraftBlock.html#a13ba8d9bc05fec3fd1f21373c3165443',1,'AddDraftBlock::AddDraftBlock()']]],
   ['addempty_46',['addEmpty',['../d9/d6d/classMeasurementDoc.html#acf546558715bd72cc68811a6a78832ec',1,'MeasurementDoc']]],
   ['addemptyafter_47',['AddEmptyAfter',['../d9/d6d/classMeasurementDoc.html#a30d234e68220656931453f4ba262ffd6',1,'MeasurementDoc']]],
   ['addemptycustomvariable_48',['addEmptyCustomVariable',['../d4/d43/classVPattern.html#a688ddc4a60c07bd37cea5186863f4bbf',1,'VPattern']]],
