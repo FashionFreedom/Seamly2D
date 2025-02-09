@@ -66,7 +66,7 @@ git push -u origin issue-#155
     - style
     - test
 * Click the **Create Pull Request** button.
-* When prompted, sign the **Code Licensing Agreement (CLA)**. You sign this only once.
+* When prompted, sign the **Code Licensing Agreement (CLA)**, posted here: https://cla-assistant.io/FashionFreedom/Seamly2D. You sign this only once.
 * Select **Linked Issues** in the right hand column and select the issue. Example: select issue #155.  
 * The maintainer will check that all CI/CD tests passed, review the code, then merge your issue branch into **develop**.
 * Releases are weekly on Monday morning 01:30am UTC.
