@@ -409,7 +409,7 @@ Delete layouts which are not needed.</description>
             <line firstPoint="99" id="107" lineColor="black" lineType="solidLine" secondPoint="96"/>
             <line firstPoint="98" id="108" lineColor="black" lineType="solidLine" secondPoint="94"/>
             <line firstPoint="100" id="109" lineColor="black" lineType="solidLine" secondPoint="93"/>
-            <spline angle1="12.2644" angle2="208.953" color="black" id="110" length1="4.83467" length2="0.750071" point1="104" point4="89" type="simpleInteractive"/>
+            <spline angle1="12.2644" angle2="180" color="black" id="110" length1="4.83467" length2="0.750071" point1="104" point4="89" type="simpleInteractive"/>
             <spline angle1="164.47" angle2="0" color="black" id="111" length1="2.91869" length2="0" point1="106" point4="100" type="simpleInteractive"/>
             <line firstPoint="96" id="112" lineColor="black" lineType="solidLine" secondPoint="95"/>
             <line firstPoint="94" id="113" lineColor="black" lineType="solidLine" secondPoint="92"/>
@@ -492,7 +492,7 @@ Delete layouts which are not needed.</description>
             </piece>
             <piece closed="1" id="300" mx="-16.0896" my="15.2013" name="FullSleeve" seamAllowance="1" version="2" width="1">
                 <nodes>
-                    <node angle="4" idObject="283" type="NodePoint"/>
+                    <node idObject="283" type="NodePoint"/>
                     <node idObject="284" reverse="1" type="NodeSpline"/>
                     <node idObject="285" type="NodePoint"/>
                     <node idObject="286" type="NodePoint"/>
