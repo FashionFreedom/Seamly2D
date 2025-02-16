@@ -279,6 +279,9 @@ RowData HistoryDialog::record(const VToolRecord &tool)
     if (domElement.isElement() == false)
     {
         qDebug() << "Can't find element by id" << Q_FUNC_INFO;
+        rowData.icon = ":/icons/win.icon.theme/16x16/status/dialog-warning.png";
+        rowData.name = QString();
+        rowData.tool = tr("Can't create record.");
         return rowData;
     }
     try
@@ -638,7 +641,7 @@ void HistoryDialog::initializeTable()
 void HistoryDialog::showTool()
 {
     const QVector<VToolRecord> *history = m_doc->getHistory();
-    if (!history->empty())
+    if (history->size()>0)
     {
         QTableWidgetItem *item = ui->tableWidget->item(0, 1);
         item->setSelected(true);

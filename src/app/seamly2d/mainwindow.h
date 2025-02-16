@@ -319,7 +319,6 @@ private:
     QComboBox                        *basePointComboBox;
     QComboBox                        *draftBlockComboBox;  /** @brief draftBlockComboBox stores names of draft blocks.*/
     QLabel                           *draftBlockLabel;
-    Draw                              mode;                /** @brief mode stores current draw mode. */
     qint32                            currentBlockIndex;   /** @brief currentBlockIndex  current selected draft block.*/
     qint32                            currentToolBoxIndex; /** @brief currentToolBoxIndex  current set of tools. */
     bool                              isToolOptionsDockVisible;

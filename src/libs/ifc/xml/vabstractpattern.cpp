@@ -284,7 +284,7 @@ void ReadExpressionAttribute(QVector<VFormulaField> &expressions, const QDomElem
 VAbstractPattern::VAbstractPattern(QObject *parent)
     : QObject(parent)
     , VDomDocument()
-    , activeDraftBlock(QString())
+    , m_activeDraftBlock(QString())
     , m_DefaultLineColor(qApp->Settings()->getDefaultLineColor())
     , m_DefaultLineWeight(qApp->Settings()->getDefaultLineWeight())
     , m_DefaultLineType(qApp->Settings()->getDefaultLineType())
@@ -357,10 +357,10 @@ QStringList VAbstractPattern::ListMeasurements() const
  */
 void VAbstractPattern::changeActiveDraftBlock(const QString &name, const Document &parse)
 {
-    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name draft block is empty");
-    if (draftBlockNameExists(name))
+    Q_ASSERT_X(!name.isEmpty(), Q_FUNC_INFO, "name draft block is empty");
+    if (draftBlockNameExists(name) && m_activeDraftBlock != name)
     {
-        this->activeDraftBlock = name;
+        m_activeDraftBlock = name;
         if (parse == Document::FullParse)
         {
             emit activeDraftBlockChanged(name);
@@ -375,7 +375,7 @@ void VAbstractPattern::changeActiveDraftBlock(const QString &name, const Documen
  */
 QString VAbstractPattern::getActiveDraftBlockName() const
 {
-    return activeDraftBlock;
+    return m_activeDraftBlock;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -386,7 +386,7 @@ QString VAbstractPattern::getActiveDraftBlockName() const
  */
 bool VAbstractPattern::getActiveDraftElement(QDomElement &element) const
 {
-    if (activeDraftBlock.isEmpty() == false)
+    if (m_activeDraftBlock.isEmpty() == false)
     {
         const QDomNodeList elements = this->documentElement().elementsByTagName(TagDraftBlock);
         if (elements.size() == 0)
@@ -399,7 +399,7 @@ bool VAbstractPattern::getActiveDraftElement(QDomElement &element) const
             if (element.isNull() == false)
             {
                 const QString fieldName = element.attribute( AttrName );
-                if ( fieldName == activeDraftBlock )
+                if ( fieldName == m_activeDraftBlock )
                 {
                     return true;
                 }
@@ -418,7 +418,7 @@ bool VAbstractPattern::getActiveDraftElement(QDomElement &element) const
  */
 bool VAbstractPattern::draftBlockNameExists(const QString &name) const
 {
-    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "draft block name is empty");
+    Q_ASSERT_X(!name.isEmpty(), Q_FUNC_INFO, "draft block name is empty");
     const QDomNodeList elements = this->documentElement().elementsByTagName(TagDraftBlock);
     if (elements.size() == 0)
     {
@@ -447,7 +447,7 @@ bool VAbstractPattern::draftBlockNameExists(const QString &name) const
  */
 bool VAbstractPattern::getActiveNodeElement(const QString &name, QDomElement &element) const
 {
-    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "draft block name is empty");
+    Q_ASSERT_X(!name.isEmpty(), Q_FUNC_INFO, "draft block name is empty");
     QDomElement draftBlockElement;
     if (getActiveDraftElement(draftBlockElement))
     {
@@ -472,7 +472,7 @@ bool VAbstractPattern::getActiveNodeElement(const QString &name, QDomElement &el
 //---------------------------------------------------------------------------------------------------------------------
 void VAbstractPattern::parseGroups(const QDomElement &domElement)
 {
-    Q_ASSERT_X(not domElement.isNull(), Q_FUNC_INFO, "domElement is null");
+    Q_ASSERT_X(!domElement.isNull(), Q_FUNC_INFO, "domElement is null");
 
     QMap<quint32, quint32> itemTool;
     QMap<quint32, bool> itemVisibility;
@@ -494,7 +494,7 @@ void VAbstractPattern::parseGroups(const QDomElement &domElement)
                     auto i = group.constBegin();
                     while (i != group.constEnd())
                     {
-                        if (not itemTool.contains(i.key()))
+                        if (!itemTool.contains(i.key()))
                         {
                             itemTool.insert(i.key(), i.value());
                         }
@@ -585,9 +585,9 @@ bool VAbstractPattern::renameDraftBlock(const QString &oldName, const QString &n
     QDomElement ppElement = getDraftBlockElement(oldName);
     if (ppElement.isElement())
     {
-        if (activeDraftBlock == oldName)
+        if (m_activeDraftBlock == oldName)
         {
-            activeDraftBlock = newName;
+            m_activeDraftBlock = newName;
         }
         ppElement.setAttribute(AttrName, newName);
         emit patternChanged(false);//For situation when we change name directly, without undocommands.
@@ -612,7 +612,7 @@ bool VAbstractPattern::renameDraftBlock(const QString &oldName, const QString &n
  */
 bool VAbstractPattern::appendDraftBlock(const QString &name)
 {
-    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name draft block is empty");
+    Q_ASSERT_X(!name.isEmpty(), Q_FUNC_INFO, "name draft block is empty");
     if (name.isEmpty())
     {
         return false;
@@ -713,7 +713,7 @@ VPiecePath VAbstractPattern::ParsePieceNodes(const QDomElement &domElement)
     for (qint32 i = 0; i < nodeList.size(); ++i)
     {
         const QDomElement element = nodeList.at(i).toElement();
-        if (not element.isNull())
+        if (!element.isNull())
         {
             path.Append(ParseSANode(element));
         }
@@ -729,7 +729,7 @@ QVector<CustomSARecord> VAbstractPattern::ParsePieceCSARecords(const QDomElement
     for (qint32 i = 0; i < nodeList.size(); ++i)
     {
         const QDomElement element = nodeList.at(i).toElement();
-        if (not element.isNull())
+        if (!element.isNull())
         {
             CustomSARecord record;
             record.startPoint = GetParametrUInt(element, VAbstractPattern::AttrStart, NULL_ID_STR);
@@ -753,7 +753,7 @@ QVector<quint32> VAbstractPattern::ParsePieceInternalPaths(const QDomElement &do
     for (qint32 i = 0; i < nodeList.size(); ++i)
     {
         const QDomElement element = nodeList.at(i).toElement();
-        if (not element.isNull())
+        if (!element.isNull())
         {
             const quint32 path = GetParametrUInt(element, VAbstractPattern::AttrPath, NULL_ID_STR);
             if (path > NULL_ID)
@@ -773,7 +773,7 @@ QVector<quint32> VAbstractPattern::ParsePieceAnchors(const QDomElement &domEleme
     for (qint32 i = 0; i < nodeList.size(); ++i)
     {
         const QDomElement element = nodeList.at(i).toElement();
-        if (not element.isNull())
+        if (!element.isNull())
         {
             const quint32 path = element.text().toUInt();
             if (path > NULL_ID)
@@ -1716,7 +1716,7 @@ VPiecePath VAbstractPattern::ParsePathNodes(const QDomElement &domElement)
     for (qint32 i = 0; i < nodeList.size(); ++i)
     {
         const QDomElement element = nodeList.at(i).toElement();
-        if (not element.isNull() && element.tagName() == VAbstractPattern::TagNode)
+        if (!element.isNull() && element.tagName() == VAbstractPattern::TagNode)
         {
             path.Append(ParseSANode(element));
         }
@@ -1731,8 +1731,8 @@ VPiecePath VAbstractPattern::ParsePathNodes(const QDomElement &domElement)
  */
 void VAbstractPattern::setActiveDraftBlock(const QString &name)
 {
-    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name draft block is empty");
-    this->activeDraftBlock = name;
+    Q_ASSERT_X(!name.isEmpty(), Q_FUNC_INFO, "name draft block is empty");
+    m_activeDraftBlock = name;
     emit activeDraftBlockChanged(name);
 }
 
@@ -1805,7 +1805,7 @@ void VAbstractPattern::InsertTag(const QStringList &tags, const QDomElement &ele
     for (int i = tags.indexOf(element.tagName())-1; i >= 0; --i)
     {
         const QDomNodeList list = elementsByTagName(tags.at(i));
-        if (not list.isEmpty())
+        if (!list.isEmpty())
         {
             pattern.insertAfter(element, list.at(0));
             break;
@@ -1820,12 +1820,12 @@ int VAbstractPattern::getActiveDraftBlockIndex() const
     const QDomNodeList blockList = elementsByTagName(TagDraftBlock);
 
     int index = 0;
-    if (not blockList.isEmpty())
+    if (!blockList.isEmpty())
     {
         for (int i = 0; i < blockList.size(); ++i)
         {
             QDomElement node = blockList.at(i).toElement();
-            if (node.attribute(AttrName) == activeDraftBlock)
+            if (node.attribute(AttrName) == m_activeDraftBlock)
             {
                 index = i;
                 break;
@@ -2035,7 +2035,7 @@ QVector<VFormulaField> VAbstractPattern::ListNodesExpressions(const QDomElement 
     for (qint32 i = 0; i < nodeList.size(); ++i)
     {
         const QDomElement element = nodeList.at(i).toElement();
-        if (not element.isNull() && element.tagName() == VAbstractPattern::TagNode)
+        if (!element.isNull() && element.tagName() == VAbstractPattern::TagNode)
         {
             ReadExpressionAttribute(expressions, element, VAbstractPattern::AttrSABefore);
             ReadExpressionAttribute(expressions, element, VAbstractPattern::AttrSAAfter);
@@ -2072,7 +2072,7 @@ QVector<VFormulaField> VAbstractPattern::ListPathExpressions() const
 QVector<VFormulaField> VAbstractPattern::ListGrainlineExpressions(const QDomElement &element) const
 {
     QVector<VFormulaField> expressions;
-    if (not element.isNull())
+    if (!element.isNull())
     {
         // Each tag can contains several attributes.
         ReadExpressionAttribute(expressions, element, AttrRotation);
@@ -2162,7 +2162,7 @@ bool VAbstractPattern::IsFunction(const QString &token) const
 //---------------------------------------------------------------------------------------------------------------------
 QPair<bool, QMap<quint32, quint32> > VAbstractPattern::parseItemElement(const QDomElement &domElement)
 {
-    Q_ASSERT_X(not domElement.isNull(), Q_FUNC_INFO, "domElement is null");
+    Q_ASSERT_X(!domElement.isNull(), Q_FUNC_INFO, "domElement is null");
 
     try
     {
@@ -2175,7 +2175,7 @@ QPair<bool, QMap<quint32, quint32> > VAbstractPattern::parseItemElement(const QD
         for (qint32 i = 0; i < num; ++i)
         {
             const QDomElement element = nodeList.at(i).toElement();
-            if (not element.isNull() && element.tagName() == TagGroupItem)
+            if (!element.isNull() && element.tagName() == TagGroupItem)
             {
                 const quint32 object = GetParametrUInt(element, AttrObject, NULL_ID_STR);
                 const quint32 tool = GetParametrUInt(element, AttrTool, NULL_ID_STR);
@@ -2328,7 +2328,7 @@ QString VAbstractPattern::getGroupName(quint32 id)
 {
     QString name = tr("New group");
     QDomElement groups = createGroups();
-    if (not groups.isNull())
+    if (!groups.isNull())
     {
         QDomElement group = elementById(id, TagGroup);
         if (group.isElement())
@@ -2359,7 +2359,7 @@ QString VAbstractPattern::getGroupName(quint32 id)
 void VAbstractPattern::setGroupName(quint32 id, const QString &name)
 {
     QDomElement groups = createGroups();
-    if (not groups.isNull())
+    if (!groups.isNull())
     {
         QDomElement group = elementById(id, TagGroup);
         if (group.isElement())
@@ -2394,7 +2394,7 @@ QMap<quint32, GroupAttributes> VAbstractPattern::getGroups()
     try
     {
         QDomElement groups = createGroups();
-        if (not groups.isNull())
+        if (!groups.isNull())
         {
             QDomNode domNode = groups.firstChild();
             while (domNode.isNull() == false)
@@ -2456,7 +2456,7 @@ QStringList VAbstractPattern::groupListByName()
     try
     {
         QDomElement groups = createGroups();
-        if (not groups.isNull())
+        if (!groups.isNull())
         {
             QDomNode domNode = groups.firstChild();
             if (domNode.isNull() == false)
@@ -2504,7 +2504,7 @@ QDomElement VAbstractPattern::getGroupByName(const QString &name)
 {
 
     QDomElement groups = createGroups();
-    if (not groups.isNull())
+    if (!groups.isNull())
     {
         QDomNode domNode = groups.firstChild();
         if (domNode.isNull() == false)
@@ -2548,7 +2548,7 @@ quint32 VAbstractPattern::getGroupIdByName(const QString &name)
 {
 
     QDomElement groups = createGroups();
-    if (not groups.isNull())
+    if (!groups.isNull())
     {
         QDomNode domNode = groups.firstChild();
         if (domNode.isNull() == false)
@@ -2600,7 +2600,7 @@ QMap<quint32, QString> VAbstractPattern::getGroupsContainingItem(quint32 toolId,
     }
 
     QDomElement groups = createGroups();
-    if (not groups.isNull())
+    if (!groups.isNull())
     {
         QDomNode domNode = groups.firstChild();
         while (domNode.isNull() == false) // iterate through the groups
@@ -2613,7 +2613,7 @@ QMap<quint32, QString> VAbstractPattern::getGroupsContainingItem(quint32 toolId,
                     if (group.tagName() == TagGroup)
                     {
                         bool groupHasItem = hasGroupItem(group, toolId, objectId);
-                        if((containsItem && groupHasItem) || (not containsItem && not groupHasItem))
+                        if((containsItem && groupHasItem) || (!containsItem && not groupHasItem))
                         {
                             const quint32 groupId = GetParametrUInt(group, AttrId, "0");
                             const QString name = GetParametrString(group, AttrName, tr("New group"));
@@ -2723,7 +2723,7 @@ void VAbstractPattern::addToolToGroup(quint32 toolId, quint32 objectId, const QS
             emit patternChanged(false);
             emit updateGroups();
             QDomElement groups = createGroups();
-            if (not groups.isNull())
+            if (!groups.isNull())
             {
                 parseGroups(groups);
             }
@@ -2769,7 +2769,7 @@ QDomElement VAbstractPattern::addGroupItem(quint32 toolId, quint32 objectId, qui
         emit updateGroups();
 
         QDomElement groups = createGroups();
-        if (not groups.isNull())
+        if (!groups.isNull())
         {
             parseGroups(groups);
         }
@@ -2832,7 +2832,7 @@ QDomElement VAbstractPattern::removeGroupItem(quint32 toolId, quint32 objectId, 
 
                         // parse the groups to update the drawing, in case the item was removed from an invisible group
                         QDomElement groups = createGroups();
-                        if (not groups.isNull())
+                        if (!groups.isNull())
                         {
                             parseGroups(groups);
                         }
@@ -2899,7 +2899,7 @@ void VAbstractPattern::setGroupVisibility(quint32 id, bool visible)
         emit patternChanged(false);
 
         QDomElement groups = createGroups();
-        if (not groups.isNull())
+        if (!groups.isNull())
         {
             parseGroups(groups);
         }
@@ -2944,7 +2944,7 @@ void VAbstractPattern::setGroupLock(quint32 id, bool locked)
         //qDebug("VAbstractPattern::setGroupLock - Group %u is locked.", id);
 
         QDomElement groups = createGroups();
-        if (not groups.isNull())
+        if (!groups.isNull())
         {
             parseGroups(groups);
         }

@@ -31,7 +31,7 @@
  **  @brief
  **  @copyright
  **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
+ **  program, whose allow create and stageling patterns of clothing.
  **  Copyright (C) 2013-2015 Valentina project
  **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
@@ -68,7 +68,7 @@ class VPattern : public VAbstractPattern
 {
     Q_OBJECT
 public:
-    VPattern(VContainer *data, Draw *mode, VMainGraphicsScene *draftScene, VMainGraphicsScene *pieceScene,
+    VPattern(VContainer *data, VMainGraphicsScene *draftScene, VMainGraphicsScene *pieceScene,
              QObject *parent = nullptr);
 
     virtual void   CreateEmptyFile() Q_DECL_OVERRIDE;
@@ -82,6 +82,9 @@ public:
     virtual void   DecrementReferens(quint32 id) const Q_DECL_OVERRIDE;
 
     quint32        getActiveBasePoint();
+
+    const Draw     &getDraftStage() const;
+    void           setDraftStage(const Draw &stage);
 
     QVector<quint32> getActivePatternPieces() const;
 
@@ -135,15 +138,15 @@ protected:
 private:
     Q_DISABLE_COPY(VPattern)
 
-    VContainer         *data;        /** @brief data container with data. */
-    Draw               *mode;        /** @brief mode current draw mode. */
+    VContainer         *data;        /** @brief container with data. */
+    Draw                m_stage;     /** @brief current draft stage. */
     VMainGraphicsScene *draftScene;
     VMainGraphicsScene *pieceScene;
 
     VNodeDetail    parsePieceNode(const QDomElement &domElement) const;
 
     void           parseDraftBlockElement(const QDomNode &node, const Document &parse);
-    void           ParseDrawMode(const QDomNode &node, const Document &parse, const Draw &mode);
+    void           ParseDraftStage(const QDomNode &node, const Document &parse, const Draw &stage);
     void           parseDraftImages(const QDomNode &node, const Document &parse);
     void           parseImageElement(QDomElement &domElement, const Document &parse);
     void           parsePieceElement(QDomElement &domElement, const Document &parse);

@@ -103,13 +103,12 @@ QString FileComment()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VPattern::VPattern(VContainer *data, Draw *mode, VMainGraphicsScene *draftScene,
-                   VMainGraphicsScene *pieceScene, QObject *parent)
-    : VAbstractPattern(parent),
-      data(data),
-      mode(mode),
-      draftScene(draftScene),
-      pieceScene(pieceScene)
+VPattern::VPattern(VContainer *data, VMainGraphicsScene *draftScene, VMainGraphicsScene *pieceScene, QObject *parent)
+    : VAbstractPattern(parent)
+    , data(data)
+    , m_stage(Draw::Calculation)
+    , draftScene(draftScene)
+    , pieceScene(pieceScene)
 {
     SCASSERT(draftScene != nullptr)
     SCASSERT(pieceScene != nullptr)
@@ -156,7 +155,7 @@ void VPattern::setXMLContent(const QString &fileName)
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief Parse parse file.
- * @param parse parser file mode.
+ * @param parse parsing mode.
  */
 void VPattern::Parse(const Document &parse)
 {
@@ -197,7 +196,7 @@ void VPattern::Parse(const Document &parse)
                         qCDebug(vXML, "Tag draw.");
                         if (parse == Document::FullParse)
                         {
-                            if (activeDraftBlock.isEmpty())
+                            if (m_activeDraftBlock.isEmpty())
                             {
                                 setActiveDraftBlock(GetParametrString(domElement, AttrName));
                             }
@@ -264,22 +263,21 @@ void VPattern::Parse(const Document &parse)
     emit patternParsed();
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setCurrentData set current data set.
- *
- * Each time after parsing need set correct data set for current draft block. After parsing it is always last.
- * Current data set for draft block it is data set for last object in draft block (point, arc, spline, spline path so
- * on).
- */
+//-----------------------------------------------------------------------------
+/// @brief setCurrentData set current data set.
+///
+/// Each time after parsing need set correct data set for current draft block. After parsing it is always last.
+/// Current data set for draft block it is data set for last object in draft block
+/// (point, arc, spline, spline path so on).
+//-----------------------------------------------------------------------------
 void VPattern::setCurrentData()
 {
-    if (*mode == Draw::Calculation)
+    if (m_stage == Draw::Calculation)
     {
         if (draftBlockCount() > 1)//don't need to update data if we have only one draft block
         {
             qCDebug(vXML, "Setting current data");
-            qCDebug(vXML, "Current Draft block name %s", qUtf8Printable(activeDraftBlock));
+            qCDebug(vXML, "Current Draft block name %s", qUtf8Printable(m_activeDraftBlock));
             qCDebug(vXML, "Draftf block count %d", draftBlockCount());
 
             quint32 id = 0;
@@ -291,7 +289,7 @@ void VPattern::setCurrentData()
             for (qint32 i = 0; i < history.size(); ++i)
             {
                 const VToolRecord tool = history.at(i);
-                if (tool.getDraftBlockName() == activeDraftBlock)
+                if (tool.getDraftBlockName() == m_activeDraftBlock)
                 {
                     id = tool.getId();
                 }
@@ -300,7 +298,7 @@ void VPattern::setCurrentData()
             if (id == NULL_ID)
             {
                 qCDebug(vXML, "Could not find record for this current draft block %s",
-                        qUtf8Printable(activeDraftBlock));
+                        qUtf8Printable(m_activeDraftBlock));
 
                 const VToolRecord tool = history.at(history.size()-1);
                 id = tool.getId();
@@ -380,6 +378,26 @@ quint32 VPattern::getActiveBasePoint()
         }
     }
     return 0;
+}
+
+//-----------------------------------------------------------------------------
+//  @brief getDraftStage Get draft stage.
+//
+//  This method gets the current draft stage.
+//-----------------------------------------------------------------------------
+const Draw &VPattern::getDraftStage() const
+{
+    return m_stage;
+}
+
+//-----------------------------------------------------------------------------
+//  @brief setDraftStage Set draft stage.
+//
+//  This method sets the current draft stage.
+//-----------------------------------------------------------------------------
+void VPattern::setDraftStage(const Draw &stage)
+{
+    m_stage = stage;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -516,7 +534,7 @@ void VPattern::LiteParseVariables()
 void VPattern::LiteParseTree(const Document &parse)
 {
     // Save current draft block name
-    QString draftBlockName = activeDraftBlock;
+    QString draftBlockName = m_activeDraftBlock;
 
     try
     {
@@ -611,8 +629,8 @@ void VPattern::LiteParseTree(const Document &parse)
     }
 
     // Restore name current draft block
-    activeDraftBlock = draftBlockName;
-    qCDebug(vXML, "Current draft block %s", qUtf8Printable(activeDraftBlock));
+    m_activeDraftBlock = draftBlockName;
+    qCDebug(vXML, "Current draft block %s", qUtf8Printable(m_activeDraftBlock));
     setCurrentData();
     emit FullUpdateFromFile();
     // Recalculate scene rect
@@ -680,7 +698,7 @@ VNodeDetail VPattern::parsePieceNode(const QDomElement &domElement) const
 /**
  * @brief parseDraftBlockElement parse draw tag.
  * @param node node.
- * @param parse parser file mode.
+ * @param parse parsing mode.
  */
 void VPattern::parseDraftBlockElement(const QDomNode &node, const Document &parse)
 {
@@ -698,11 +716,11 @@ void VPattern::parseDraftBlockElement(const QDomNode &node, const Document &pars
                     case 0: // TagCalculation
                         qCDebug(vXML, "Tag calculation.");
                         data->ClearCalculationGObjects();
-                        ParseDrawMode(domElement, parse, Draw::Calculation);
+                        ParseDraftStage(domElement, parse, Draw::Calculation);
                         break;
                     case 1: // TagModeling
                         qCDebug(vXML, "Tag modeling.");
-                        ParseDrawMode(domElement, parse, Draw::Modeling);
+                        ParseDraftStage(domElement, parse, Draw::Modeling);
                         break;
                     case 2: // TagPieces
                         qCDebug(vXML, "Tag pieces.");
@@ -726,19 +744,21 @@ void VPattern::parseDraftBlockElement(const QDomNode &node, const Document &pars
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief ParseDrawMode parse draw tag with draw mode.
- * @param node node.
- * @param parse parser file mode.
- * @param mode draw mode.
- */
-void VPattern::ParseDrawMode(const QDomNode &node, const Document &parse, const Draw &mode)
+//-----------------------------------------------------------------------------
+/// @brief ParseDraftStage parse draw tag with drft stage.
+///
+/// This parses the calculation stage of each the draft blocks.
+///
+/// @param node node.
+/// @param parse parsing mode.
+/// @param stage drft stage.
+//-----------------------------------------------------------------------------
+void VPattern::ParseDraftStage(const QDomNode &node, const Document &parse, const Draw &stage)
 {
     SCASSERT(draftScene != nullptr)
     SCASSERT(pieceScene != nullptr)
     VMainGraphicsScene *scene = nullptr;
-    if (mode == Draw::Calculation)
+    if (stage == Draw::Calculation)
     {
         scene = draftScene;
     }
@@ -838,7 +858,7 @@ void VPattern::parseDraftImages(const QDomNode &node, const Document &parse)
 /**
  * @brief parsePieceElement parse piece tag.
  * @param domElement tag in xml tree.
- * @param parse parser file mode.
+ * @param parse parsing mode.
  */
 void VPattern::parsePieceElement(QDomElement &domElement, const Document &parse)
 {
@@ -1066,7 +1086,7 @@ void VPattern::ParsePieceGrainline(const QDomElement &domElement, VPiece &piece)
 /**
  * @brief parsePatternPieces parse pieces tag.
  * @param domElement tag in xml tree.
- * @param parse parser file mode.
+ * @param parse parsing mode.
  */
 void VPattern::parsePatternPieces(const QDomElement &domElement, const Document &parse)
 {
@@ -1130,7 +1150,7 @@ void VPattern::PointsCommonAttributes(const QDomElement &domElement, quint32 &id
  * @brief ParsePointElement parse point tag.
  * @param scene scene.
  * @param domElement tag in xml tree.
- * @param parse parser file mode.
+ * @param parse parsing mode.
  * @param type type of point.
  */
 void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElement,
@@ -1249,7 +1269,7 @@ void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElem
  * @brief ParseLineElement parse line tag.
  * @param scene scene.
  * @param domElement tag in xml tree.
- * @param parse parser file mode.
+ * @param parse parsing mode.
  */
 void VPattern::ParseLineElement(VMainGraphicsScene *scene, const QDomElement &domElement,
                                 const Document &parse)
@@ -1391,7 +1411,7 @@ void VPattern::ParseToolBasePoint(VMainGraphicsScene *scene, const QDomElement &
 
         VPointF *point = new VPointF(x, y, name, mx, my);
         point->setShowPointName(showPointName);
-        spoint = VToolBasePoint::Create(id, activeDraftBlock, point, scene, this, data, parse, Source::FromFile);
+        spoint = VToolBasePoint::Create(id, m_activeDraftBlock, point, scene, this, data, parse, Source::FromFile);
     }
     catch (const VExceptionBadId &error)
     {
@@ -3288,7 +3308,7 @@ void VPattern::GarbageCollector()
  * @brief ParseSplineElement parse spline tag.
  * @param scene scene.
  * @param domElement tag in xml tree.
- * @param parse parser file mode.
+ * @param parse parsing mode.
  * @param type type of spline.
  */
 void VPattern::ParseSplineElement(VMainGraphicsScene *scene, QDomElement &domElement,
@@ -3351,7 +3371,7 @@ void VPattern::ParseSplineElement(VMainGraphicsScene *scene, QDomElement &domEle
  * @brief ParseArcElement parse arc tag.
  * @param scene scene.
  * @param domElement tag in xml tree.
- * @param parse parser file mode.
+ * @param parse parsing mode.
  * @param type type of spline.
  */
 void VPattern::ParseArcElement(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse,
@@ -3387,7 +3407,7 @@ void VPattern::ParseArcElement(VMainGraphicsScene *scene, QDomElement &domElemen
  * @brief ParseEllipticalArcElement parse elliptical arc tag.
  * @param scene scene.
  * @param domElement tag in xml tree.
- * @param parse parser file mode.
+ * @param parse parsing mode.
  * @param type type of spline.
  */
 void VPattern::ParseEllipticalArcElement(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse,
@@ -3419,7 +3439,7 @@ void VPattern::ParseEllipticalArcElement(VMainGraphicsScene *scene, QDomElement 
  * @brief ParseToolsElement parse tools tag.
  * @param scene scene.
  * @param domElement tag in xml tree.
- * @param parse parser file mode.
+ * @param parse parsing mode.
  * @param type type of spline.
  */
 void VPattern::ParseToolsElement(VMainGraphicsScene *scene, const QDomElement &domElement,
@@ -3551,7 +3571,7 @@ void VPattern::parseVariablesElement(const QDomNode &node)
             {
                 if (domElement.tagName() == TagVariable)
                 {
-                    const QString name = GetParametrString(domElement, VariableName, "");
+                    const QString name = GetParametrString(domElement, VariableName, QString()).simplified();
 
                     QString desc;
                     try
@@ -4043,7 +4063,7 @@ void VPattern::PrepareForParse(const Document &parse)
         pieceScene->clear();
         pieceScene->initializeOrigins();
         data->ClearForFullParse();
-        activeDraftBlock.clear();
+        m_activeDraftBlock.clear();
         patternPieces.clear();
         clearBackgroundImageMap();
 
@@ -4087,7 +4107,7 @@ QRectF VPattern::ActiveDrawBoundingRect() const
     for (qint32 i = 0; i< history.size(); ++i)
     {
         const VToolRecord tool = history.at(i);
-        if (tool.getDraftBlockName() == activeDraftBlock)
+        if (tool.getDraftBlockName() == m_activeDraftBlock)
         {
             switch ( tool.getTypeTool() )
             {
@@ -4149,7 +4169,7 @@ QRectF VPattern::ActiveDrawBoundingRect() const
                 case Tool::Move:
                     rect = ToolBoundingRect<VAbstractOperation>(rect, tool.getId());
                     break;
-                //These tools are not accesseble in Draw mode, but still 'history' contains them.
+                //These tools are not accesseble in Draft mode, but 'history' still contains them.
                 case Tool::Piece:
                 case Tool::Union:
                 case Tool::NodeArc:
