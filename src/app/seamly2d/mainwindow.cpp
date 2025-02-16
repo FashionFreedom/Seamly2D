@@ -169,7 +169,6 @@ MainWindow::MainWindow(QWidget *parent)
     , fontSizeComboBox(nullptr)
     , draftBlockComboBox(nullptr)
     , draftBlockLabel(nullptr)
-    , mode(Draw::Calculation)
     , currentBlockIndex(0)
     , currentToolBoxIndex(0)
     , isToolOptionsDockVisible(true)
@@ -210,10 +209,9 @@ MainWindow::MainWindow(QWidget *parent)
         // Create instance of VPattern (a dom document) that represents the XML documnet.
         // Arguments:
         //  - pattern - is the data VContainer that is initialized in MainWindowsNoGUI.
-        //  - mode - initial mode is Draw::Calculation.
         //  - draftScene - draft mode scene.
         //  - pieceScene - piece mode scene.
-        doc = new VPattern(pattern, &mode, draftScene, pieceScene);
+        doc = new VPattern(pattern, draftScene, pieceScene);
 
         // Connect signals to slots for handling application events in the doc VPattern object.
         connect(doc, &VPattern::ClearMainWindow, this, &MainWindow::Clear);
@@ -1903,7 +1901,7 @@ void MainWindow::changeEvent(QEvent *event)
         helpLabel->setText(QObject::tr("Changes applied."));
         draftBlockLabel->setText(tr("Draft Block:"));
 
-        if (mode == Draw::Calculation)
+        if (doc->getDraftStage() == Draw::Calculation)
         {
             ui->groups_DockWidget->setWindowTitle(tr("Group Manager"));
         }
@@ -2504,7 +2502,7 @@ void MainWindow::initializeDraftToolBar()
     draftBlockComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     draftBlockComboBox->setEnabled(false);
 
-    connect(draftBlockComboBox,  static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+    connect(draftBlockComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, [this](int index){changeDraftBlock(index);});
 
     connect(ui->renameDraft_Action, &QAction::triggered, this, [this]()
@@ -3715,7 +3713,7 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event)
  */
 void MainWindow::SaveCurrentScene()
 {
-    if (mode == Draw::Calculation || mode == Draw::Modeling)
+    if (doc->getDraftStage() == Draw::Calculation || doc->getDraftStage() == Draw::Modeling)
     {
         VMainGraphicsScene *scene = qobject_cast<VMainGraphicsScene *>(currentScene);
         SCASSERT(scene != nullptr)
@@ -3775,7 +3773,7 @@ void MainWindow::showDraftMode(bool checked)
         ui->view->setScene(currentScene);
         RestoreCurrentScene();
 
-        mode = Draw::Calculation;
+        doc->setDraftStage(Draw::Calculation);
         draftBlockComboBox->setCurrentIndex(currentBlockIndex); //restore current draft block
         drawMode = true;
 
@@ -3858,11 +3856,11 @@ void MainWindow::showPieceMode(bool checked)
         ui->view->setScene(currentScene);
         RestoreCurrentScene();
 
-        if (mode == Draw::Calculation)
+        if (doc->getDraftStage() == Draw::Calculation)
         {
             currentToolBoxIndex = ui->piece_ToolBox->currentIndex();
         }
-        mode = Draw::Modeling;
+        doc->setDraftStage(Draw::Modeling);
         setToolsEnabled(true);
         setWidgetsEnabled(true);
 
@@ -3945,7 +3943,7 @@ void MainWindow::showLayoutMode(bool checked)
                     QMessageBox::information(this, tr("Layout mode"),  tr("You can't use Layout mode yet. Please, "
                                                                           "include at least one pattern piece in layout."),
                                              QMessageBox::Ok, QMessageBox::Ok);
-                    mode == Draw::Calculation ? showDraftMode(true) : showPieceMode(true);
+                    doc->getDraftStage() == Draw::Calculation ? showDraftMode(true) : showPieceMode(true);
                     return;
                 }
             }
@@ -3968,7 +3966,7 @@ void MainWindow::showLayoutMode(bool checked)
             QMessageBox::warning(this, tr("Layout mode"),
                                  tr("You can't use Layout mode yet.") + QLatin1String(" \n") + exception.ErrorMessage(),
                                  QMessageBox::Ok, QMessageBox::Ok);
-            mode == Draw::Calculation ? showDraftMode(true) : showPieceMode(true);
+            doc->getDraftStage() == Draw::Calculation ? showDraftMode(true) : showPieceMode(true);
             return;
         }
 
@@ -3976,11 +3974,11 @@ void MainWindow::showLayoutMode(bool checked)
         emit ui->view->itemClicked(nullptr);  // Clear Property Editor with non valid tool selection
         ui->view->setScene(currentScene);
 
-        if (mode == Draw::Calculation)
+        if (doc->getDraftStage() == Draw::Calculation)
         {
             currentToolBoxIndex = ui->layout_ToolBox->currentIndex();
         }
-        mode = Draw::Layout;
+        doc->setDraftStage(Draw::Layout);
         setToolsEnabled(true);
         setWidgetsEnabled(true);
         ui->layout_ToolBox->setCurrentIndex(ui->layout_ToolBox->indexOf(ui->layout_Page));
@@ -4465,15 +4463,15 @@ void MainWindow::fullParseFile()
     }
 
     QString draftBlock;
-    if (draftBlockComboBox->currentIndex() != -1)
+    qint32 index = draftBlockComboBox->currentIndex();
+    if (index != -1)
     {
-        draftBlock = draftBlockComboBox->itemText(draftBlockComboBox->currentIndex());
+        draftBlock = draftBlockComboBox->itemText(index);
     }
     draftBlockComboBox->blockSignals(true);
     draftBlockComboBox->clear();
 
     QStringList draftBlockNames = doc->getPatternPieces();
-    draftBlockNames.sort();
     draftBlockComboBox->addItems(draftBlockNames);
 
     if (!drawMode)
@@ -4482,7 +4480,7 @@ void MainWindow::fullParseFile()
     }
     else
     {
-        const qint32 index = draftBlockComboBox->findText(draftBlock);
+        index = draftBlockComboBox->findText(draftBlock);
         if (index != -1)
         {
             draftBlockComboBox->setCurrentIndex(index);
@@ -4575,10 +4573,10 @@ void MainWindow::setGuiEnabled(bool enabled)
  */
 void MainWindow::setWidgetsEnabled(bool enable)
 {
-    const bool draftStage = (mode == Draw::Calculation);
-    const bool pieceStage = (mode == Draw::Modeling);
+    const bool draftStage = (doc->getDraftStage() == Draw::Calculation);
+    const bool pieceStage = (doc->getDraftStage() == Draw::Modeling);
     const bool designStage = (draftStage || pieceStage);
-    const bool layoutStage = (mode == Draw::Layout);
+    const bool layoutStage = (doc->getDraftStage() == Draw::Layout);
 
     draftBlockComboBox->setEnabled(enable && draftStage);
     ui->arrow_Action->setEnabled(enable && designStage);
@@ -4879,7 +4877,7 @@ void MainWindow::setToolsEnabled(bool enable)
     bool pieceTools = false;
     bool layoutTools = false;
 
-    switch (mode)
+    switch (doc->getDraftStage())
     {
         case Draw::Calculation:
             draftTools = enable;
@@ -7144,7 +7142,8 @@ void MainWindow::changeDraftBlock(int index, bool zoomBestFit)
 {
     if (index != -1)
     {
-        doc->changeActiveDraftBlock(draftBlockComboBox->itemText(index));
+        QString name = draftBlockComboBox->itemText(index);
+        doc->changeActiveDraftBlock(name);
         doc->setCurrentData();
         emit RefreshHistory();
         if (drawMode)
