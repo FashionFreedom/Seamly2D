@@ -70,6 +70,7 @@ int main(int argc, char *argv[])
     Q_INIT_RESOURCE(icon);
     Q_INIT_RESOURCE(schema);
     Q_INIT_RESOURCE(flags);
+    Q_INIT_RESOURCE(diagrams);
 
     QT_REQUIRE_VERSION(argc, argv, "5.15.2");
 

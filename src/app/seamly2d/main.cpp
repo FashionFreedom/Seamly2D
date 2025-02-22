@@ -77,6 +77,7 @@ int main(int argc, char *argv[])
     Q_INIT_RESOURCE(icons);
     Q_INIT_RESOURCE(toolicon);
     Q_INIT_RESOURCE(sounds);
+    Q_INIT_RESOURCE(diagrams);
 
     // Check if the Qt version is at least 5.15.2
     QT_REQUIRE_VERSION(argc, argv, "5.15.2");

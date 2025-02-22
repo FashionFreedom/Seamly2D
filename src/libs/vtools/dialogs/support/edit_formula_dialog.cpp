@@ -84,6 +84,7 @@
 #include "../vmisc/def.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
+#include "../vpatterndb/measurements_def.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vtranslatevars.h"
 #include "../vpatterndb/variables/varcradius.h"
@@ -625,6 +626,8 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<Meas
             itemNumber->setSizeHint(QSize(70, 20));
             itemNumber->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
             QTableWidgetItem *itemFullName = new QTableWidgetItem();
+            QString number =tr("Custom");
+            QString imgUrl = QString(":/diagrams/custom.svg");
             if (iMap.value()->isCustom())
             {
                 itemNumber->setText(QStringLiteral("na"));
@@ -632,12 +635,17 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<Meas
             }
             else
             {
-                itemNumber->setText(qApp->translateVariables()->MNumber(itemName->text()));
+                number = qApp->translateVariables()->MNumber(itemName->text());
+                imgUrl = QString(":/diagrams/%1.svg").arg(MapDiagrams(qApp->translateVariables(), number));
+                itemNumber->setText(number);
                 itemFullName->setText(qApp->translateVariables()->guiText(iMap.value()->GetName()));
             }
 
-            itemNumber->setToolTip(itemNumber->text());
-            itemFullName->setToolTip(itemFullName->text());
+            itemNumber->setToolTip(QString("<html><head/><body>"
+                                           "<p align=\"center\"><img src=%1/></p>"
+                                           "<p align=\"center\"><b>%2</b></p>"
+                                           "</body></html>").arg(imgUrl, number));
+
             ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnNumber, itemNumber);
             ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnName, itemName);
             ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnFullName, itemFullName);
