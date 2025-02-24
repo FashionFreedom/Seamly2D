@@ -239,6 +239,8 @@ private slots:
 
     void handleNewLayout(bool checked);
 
+    void incrementDraftBlock(const int &increment);
+
     void showDraftMode(bool checked);
     void showPieceMode(bool checked);
     void showLayoutMode(bool checked);
