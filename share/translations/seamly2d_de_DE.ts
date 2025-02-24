@@ -4339,11 +4339,6 @@ Possibly the file is already being downloaded.</source>
         <translation>%1 - Kurve interaktiv</translation>
     </message>
     <message>
-        <source>Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Spl_</translation>
-    </message>
-    <message>
         <source>%1 - Curve Fixed</source>
         <translation>%1 - Kurve fixiert</translation>
     </message>
@@ -4503,6 +4498,10 @@ Possibly the file is already being downloaded.</source>
         <source>Color</source>
         <translation>Farbe</translation>
     </message>
+    <message>
+        <source>Spl_</source>
+        <translation>Spl_</translation>
+    </message>
 </context>
 <context>
     <name>HistoryDialog</name>
@@ -4567,11 +4566,6 @@ Possibly the file is already being downloaded.</source>
         <translation>Punkt schneidet Linien %1_%2und %3_%4</translation>
     </message>
     <message>
-        <source>Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Spl_</translation>
-    </message>
-    <message>
         <source>Curve Interactive</source>
         <translation>Kurve interaktiv</translation>
     </message>
@@ -4580,22 +4574,12 @@ Possibly the file is already being downloaded.</source>
         <translation>Kurve fixiert</translation>
     </message>
     <message>
-        <source>Arc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Bogen_</translation>
-    </message>
-    <message>
         <source>Arc Radius &amp; Angles</source>
         <translation>Bogen Radius &amp; Winkel</translation>
     </message>
     <message>
         <source>Arc Radius &amp; Length %1</source>
         <translation>Bogen Radius &amp; Länge %1</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>SplPfad_</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
@@ -4666,11 +4650,6 @@ Possibly the file is already being downloaded.</source>
         <translation>Endgültige Abnäherlänge  %1_%2_%3</translation>
     </message>
     <message>
-        <source>ElArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>ElBogen_</translation>
-    </message>
-    <message>
         <source>Arc Elliptical with length %1</source>
         <translation>Bogen elliptisch mit Länge %1</translation>
     </message>
@@ -4693,6 +4672,26 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Point Length and Angle from point %1</source>
         <translation>Punkt Länge und Winkel von Punkt %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t create record.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <translation>Spl_</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <translation>Bogen_</translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <translation>SplPfad_</translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <translation>ElBogen_</translation>
     </message>
 </context>
 <context>
@@ -7347,6 +7346,14 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>100%</source>
         <translation>100%</translation>
     </message>
+    <message>
+        <source>Previous Draft Block</source>
+        <translation>Vorheriger Entwurfsblock</translation>
+    </message>
+    <message>
+        <source>Next Draft Block</source>
+        <translation>Nächster Entwurfsblock</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -9940,11 +9947,11 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>Images</source>
-        <translation type="unfinished">Bilder</translation>
+        <translation>Bilder</translation>
     </message>
     <message>
         <source>Open Image File</source>
-        <translation type="unfinished">Bilddatei öffnen</translation>
+        <translation>Bilddatei öffnen</translation>
     </message>
     <message>
         <source>Pattern</source>
@@ -11136,6 +11143,22 @@ You can change this setting in the Seamly2D preferences.</source>
         <source>Ctrl+9</source>
         <translation>Strg+9</translation>
     </message>
+    <message>
+        <source>Previous Draft Block</source>
+        <translation>Vorheriger Entwurfsblock</translation>
+    </message>
+    <message>
+        <source>Ctrl+PgUp</source>
+        <translation>Strg+Bild aufwärts</translation>
+    </message>
+    <message>
+        <source>Next Draft Block</source>
+        <translation>Nächster Entwurfsblock</translation>
+    </message>
+    <message>
+        <source>Ctrl+PgDown</source>
+        <translation>Strg+Bild abwärts</translation>
+    </message>
 </context>
 <context>
     <name>ShowDoublePointName</name>
@@ -11910,7 +11933,6 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Line_</source>
-        <comment>Leave the _ symbol in translation</comment>
         <translation>Linie_</translation>
     </message>
 </context>
@@ -12719,31 +12741,6 @@ wie gewohnt in SeamlyME laden können.
         <translation>Gruppen Objekt entfernen</translation>
     </message>
     <message>
-        <source>Line_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Linie_</translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Bogen_</translation>
-    </message>
-    <message>
-        <source>ElArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>ElBogen_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Spl_</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>SplPfad_</translation>
-    </message>
-    <message>
         <source>Copy</source>
         <translation>Kopie</translation>
     </message>
@@ -12756,8 +12753,27 @@ wie gewohnt in SeamlyME laden können.
         <translation>Winkel</translation>
     </message>
     <message>
+        <source>Line_</source>
+        <translation>Linie_</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <translation>Bogen_</translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <translation>ElBogen_</translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <translation>Spl_</translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <translation>SplPfad_</translation>
+    </message>
+    <message>
         <source>AngleLine_</source>
-        <comment>Leave the _ symbol in translation</comment>
         <translation>WinkelLinie_</translation>
     </message>
 </context>
@@ -13771,32 +13787,28 @@ wie gewohnt in SeamlyME laden können.
         <translation>Bogen - elliptisch</translation>
     </message>
     <message>
-        <source>Arc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Bogen_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Spl_</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>SplPfad_</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Linie_</translation>
-    </message>
-    <message>
         <source>Center point</source>
         <translation>Mittelpunkt</translation>
     </message>
     <message>
         <source>Direction:</source>
         <translation>Richtung:</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <translation>Bogen_</translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <translation>Spl_</translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <translation>SplPfad_</translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <translation>Linie_</translation>
     </message>
 </context>
 <context>
@@ -14706,18 +14718,6 @@ wie gewohnt in SeamlyME laden können.
         <translation>zoll</translation>
     </message>
     <message>
-        <source>SplPath</source>
-        <translation>SplPfad</translation>
-    </message>
-    <message>
-        <source>Angle1SplPath</source>
-        <translation>Winkel1SplPfad</translation>
-    </message>
-    <message>
-        <source>Angle2SplPath</source>
-        <translation>Winkel2SplPfad</translation>
-    </message>
-    <message>
         <source>CurrentLength</source>
         <comment>Do not add space between words</comment>
         <translation>AktuelleLänge</translation>
@@ -14731,14 +14731,6 @@ wie gewohnt in SeamlyME laden können.
         <source>height</source>
         <comment>placeholder</comment>
         <translation>Körperhöhe</translation>
-    </message>
-    <message>
-        <source>C1LengthSplPath</source>
-        <translation>C1LängeSplPfad</translation>
-    </message>
-    <message>
-        <source>C2LengthSplPath</source>
-        <translation>C2LängeSplPfad</translation>
     </message>
     <message>
         <source>CurrentSeamAllowance</source>
@@ -15197,6 +15189,31 @@ Example: avg(2;3;4) = 3</comment>
 Usage: fmod(x; y)
 Example: fmod(3.3;2) = 1.3</comment>
         <translation>fmod</translation>
+    </message>
+    <message>
+        <source>SplPath</source>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation>SplPfad</translation>
+    </message>
+    <message>
+        <source>Angle1SplPath</source>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation>Winkel1SplPfad</translation>
+    </message>
+    <message>
+        <source>Angle2SplPath</source>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation>Winkel2SplPfad</translation>
+    </message>
+    <message>
+        <source>C1LengthSplPath</source>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation>C1LängeSplPfad</translation>
+    </message>
+    <message>
+        <source>C2LengthSplPath</source>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation>C2LängeSplPfad</translation>
     </message>
 </context>
 <context>
