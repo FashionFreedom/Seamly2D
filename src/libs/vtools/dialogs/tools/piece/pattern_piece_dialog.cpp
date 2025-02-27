@@ -147,7 +147,7 @@ PatternPieceDialog::PatternPieceDialog(const VContainer *data, const quint32 &to
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/new_piece.png"));
 
-    // Set the position that the dialog opens based on user preference. 
+    // Set the position that the dialog opens based on user preference.
     setDialogPosition();
 
     //Limit dialog height to 80% of screen size
@@ -636,61 +636,63 @@ bool PatternPieceDialog::eventFilter(QObject *object, QEvent *event)
                 VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
                 NotchType notchType = rowNode.getNotchType();
                 NotchSubType notchSubType = rowNode.getNotchSubType();
+                int notchCount = rowNode.getNotchCount();
+
                 switch (keyEvent->key())
                 {
                     case Qt::Key_N:
                     {
-                        setNotch(rowItem, false, NotchType::Slit, notchSubType);
+                        setNotch(rowItem, false, NotchType::Slit, notchSubType, notchCount);
                         return true;
                     }
                     case Qt::Key_S:
                     {
-                        setNotch(rowItem, true, NotchType::Slit, notchSubType);
+                        setNotch(rowItem, true, NotchType::Slit, notchSubType, notchCount);
                         return true;
                     }
                     case Qt::Key_T:
                     {
-                        setNotch(rowItem, true, NotchType::TNotch, notchSubType);
+                        setNotch(rowItem, true, NotchType::TNotch, notchSubType, notchCount);
                         return true;
                     }
                     case Qt::Key_U:
                     {
-                        setNotch(rowItem, true, NotchType::UNotch, notchSubType);
+                        setNotch(rowItem, true, NotchType::UNotch, notchSubType, notchCount);
                         return true;
                     }
                     case Qt::Key_I:
                     {
-                        setNotch(rowItem, true, NotchType::VInternal, notchSubType);
+                        setNotch(rowItem, true, NotchType::VInternal, notchSubType, notchCount);
                         return true;
                     }
                     case Qt::Key_E:
                     {
-                        setNotch(rowItem, true, NotchType::VExternal, notchSubType);
+                        setNotch(rowItem, true, NotchType::VExternal, notchSubType, notchCount);
                         return true;
                     }
                     case Qt::Key_C:
                     {
-                        setNotch(rowItem, true, NotchType::Castle, notchSubType);
+                        setNotch(rowItem, true, NotchType::Castle, notchSubType, notchCount);
                         return true;
                     }
                     case Qt::Key_D:
                     {
-                        setNotch(rowItem, true, NotchType::Diamond, notchSubType);
+                        setNotch(rowItem, true, NotchType::Diamond, notchSubType, notchCount);
                         return true;
                     }
                     case Qt::Key_F:
                     {
-                        setNotch(rowItem, true, notchType, NotchSubType::Straightforward);
+                        setNotch(rowItem, true, notchType, NotchSubType::Straightforward, notchCount);
                         return true;
                     }
                     case Qt::Key_B:
                     {
-                        setNotch(rowItem, true, notchType, NotchSubType::Bisector);
+                        setNotch(rowItem, true, notchType, NotchSubType::Bisector, notchCount);
                         return true;
                     }
                     case Qt::Key_X:
                     {
-                        setNotch(rowItem, true, notchType, NotchSubType::Intersection);
+                        setNotch(rowItem, true, notchType, NotchSubType::Intersection, notchCount);
                         return true;
                     }
                 }
@@ -789,15 +791,17 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
         return;
     }
 
-    // workaround for https://bugreports.qt.io/browse/QTBUG-97559: assign parent to QMenu
-    QScopedPointer<QMenu> menu(new QMenu(ui->mainPath_ListWidget));
-    NodeInfo info;
-    NotchType notchType = NotchType::Slit;
-    NotchSubType notchSubType = NotchSubType::Straightforward;
-    bool isNotch = false;
     QListWidgetItem *rowItem = ui->mainPath_ListWidget->item(row);
     SCASSERT(rowItem != nullptr);
     VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
+
+    // workaround for https://bugreports.qt.io/browse/QTBUG-97559: assign parent to QMenu
+    QScopedPointer<QMenu> menu(new QMenu(ui->mainPath_ListWidget));
+    NodeInfo info;
+    NotchType notchType = rowNode.getNotchType();
+    NotchSubType notchSubType = rowNode.getNotchSubType();
+    int notchCount = rowNode.getNotchCount();
+    bool isNotch = false;
 
     QAction *actionNotch     = nullptr;
     QAction *actionNone      = nullptr;
@@ -812,6 +816,10 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
     QAction *actionStraightforward = nullptr;
     QAction *actionBisector        = nullptr;
     QAction *actionIntersection    = nullptr;
+
+    QAction *action1Notch = nullptr;
+    QAction *action2Notch = nullptr;
+    QAction *action3Notch = nullptr;
 
     QAction *actionReverse   = nullptr;
     QAction *actionDuplicate = nullptr;
@@ -845,7 +853,12 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
         actionStraightforward = notchSubtypeMenu->addAction(QIcon(), tr("Straightforward") + QStringLiteral("\tShift + F"));
         actionBisector        = notchSubtypeMenu->addAction(QIcon(), tr("Bisector") + QStringLiteral("\tShift + B"));
         actionIntersection    = notchSubtypeMenu->addAction(QIcon(), tr("Intersection") + QStringLiteral("\tShift + X"));
-    }
+
+        QMenu *notchCountMenu = notchMenu->addMenu(tr("Count"));
+        action1Notch = notchCountMenu->addAction(QIcon(), QStringLiteral("1"));
+        action2Notch = notchCountMenu->addAction(QIcon(), QStringLiteral("2"));
+        action3Notch = notchCountMenu->addAction(QIcon(), QStringLiteral("3"));
+}
 
     QAction *actionExcluded = menu->addAction(tr("Excluded") + QStringLiteral("\tCtrl + E"));
     actionExcluded->setCheckable(true);
@@ -927,8 +940,23 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
             isNotch = true;
             notchSubType = NotchSubType::Intersection;
         }
+        else if (selectedAction == action1Notch)
+        {
+            isNotch = true;
+            notchCount = 1;
+        }
+        else if (selectedAction == action2Notch)
+        {
+            isNotch = true;
+            notchCount = 2;
+        }
+        else if (selectedAction == action3Notch)
+        {
+            isNotch = true;
+            notchCount = 3;
+        }
 
-        setNotch(rowItem, isNotch, notchType, notchSubType);
+        setNotch(rowItem, isNotch, notchType, notchSubType, notchCount);
     }
 
     validateObjects(isMainPathValid());
@@ -3563,7 +3591,7 @@ QString PatternPieceDialog::createPieceName() const
  * @param notchType of the selected submenu item.
  */
 void PatternPieceDialog::setNotch(QListWidgetItem *rowItem, bool isNotch, NotchType notchType,
-                                  NotchSubType notchSubType)
+                                  NotchSubType notchSubType, int count)
 {
     VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
     if (rowNode.GetTypeTool() == Tool::NodePoint)
@@ -3571,6 +3599,7 @@ void PatternPieceDialog::setNotch(QListWidgetItem *rowItem, bool isNotch, NotchT
         rowNode.setNotch(isNotch);
         rowNode.setNotchType(notchType);
         rowNode.setNotchSubType(notchSubType);
+        rowNode.setNotchCount(count);
         NodeInfo info;
         info = getNodeInfo(rowNode, true);
         rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
