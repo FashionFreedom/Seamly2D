@@ -4210,7 +4210,7 @@ for writing</source>
         <translation>Date %1 kann nicht zum schreiben geöffnet werden</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
+        <source>Unable to get exclusive access to file 
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4337,11 +4337,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>%1 - Curve Interactive</source>
         <translation>%1 - Kurve interaktiv</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Spl_</translation>
     </message>
     <message>
         <source>%1 - Curve Fixed</source>
@@ -4503,6 +4498,10 @@ Possibly the file is already being downloaded.</source>
         <source>Color</source>
         <translation>Farbe</translation>
     </message>
+    <message>
+        <source>Spl_</source>
+        <translation type="unfinished">Spl_</translation>
+    </message>
 </context>
 <context>
     <name>HistoryDialog</name>
@@ -4567,11 +4566,6 @@ Possibly the file is already being downloaded.</source>
         <translation>Punkt schneidet Linien %1_%2und %3_%4</translation>
     </message>
     <message>
-        <source>Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Spl_</translation>
-    </message>
-    <message>
         <source>Curve Interactive</source>
         <translation>Kurve interaktiv</translation>
     </message>
@@ -4580,22 +4574,12 @@ Possibly the file is already being downloaded.</source>
         <translation>Kurve fixiert</translation>
     </message>
     <message>
-        <source>Arc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Bogen_</translation>
-    </message>
-    <message>
         <source>Arc Radius &amp; Angles</source>
         <translation>Bogen Radius &amp; Winkel</translation>
     </message>
     <message>
         <source>Arc Radius &amp; Length %1</source>
         <translation>Bogen Radius &amp; Länge %1</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>SplPfad_</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
@@ -4666,11 +4650,6 @@ Possibly the file is already being downloaded.</source>
         <translation>Endgültige Abnäherlänge  %1_%2_%3</translation>
     </message>
     <message>
-        <source>ElArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>ElBogen_</translation>
-    </message>
-    <message>
         <source>Arc Elliptical with length %1</source>
         <translation>Bogen elliptisch mit Länge %1</translation>
     </message>
@@ -4693,6 +4672,22 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Point Length and Angle from point %1</source>
         <translation>Punkt Länge und Winkel von Punkt %1</translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <translation type="unfinished">Spl_</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <translation type="unfinished">Bogen_</translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <translation type="unfinished">SplPfad_</translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <translation type="unfinished">ElBogen_</translation>
     </message>
 </context>
 <context>
@@ -5336,7 +5331,7 @@ Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLIC
         <translation>Millimeter</translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
+        <source>Margins go beyond printing. 
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -9946,10 +9941,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Open Image File</source>
         <translation type="unfinished">Bilddatei öffnen</translation>
     </message>
-    <message>
-        <source>Pattern</source>
-        <translation>Schnittmuster</translation>
-    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -10378,13 +10369,13 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Zoll</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed.
+        <source>When checked the Welcome window will not be displayed. 
 You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10452,13 +10443,13 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Legt den Klickton für die Knotenauswahl fest.</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed.
+        <source>When checked the Welcome window will not be displayed. 
 You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11910,8 +11901,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Line_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Linie_</translation>
+        <translation type="unfinished">Linie_</translation>
     </message>
 </context>
 <context>
@@ -12719,31 +12709,6 @@ wie gewohnt in SeamlyME laden können.
         <translation>Gruppen Objekt entfernen</translation>
     </message>
     <message>
-        <source>Line_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Linie_</translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Bogen_</translation>
-    </message>
-    <message>
-        <source>ElArc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>ElBogen_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Spl_</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>SplPfad_</translation>
-    </message>
-    <message>
         <source>Copy</source>
         <translation>Kopie</translation>
     </message>
@@ -12756,9 +12721,28 @@ wie gewohnt in SeamlyME laden können.
         <translation>Winkel</translation>
     </message>
     <message>
+        <source>Line_</source>
+        <translation type="unfinished">Linie_</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <translation type="unfinished">Bogen_</translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <translation type="unfinished">ElBogen_</translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <translation type="unfinished">Spl_</translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <translation type="unfinished">SplPfad_</translation>
+    </message>
+    <message>
         <source>AngleLine_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>WinkelLinie_</translation>
+        <translation type="unfinished">WinkelLinie_</translation>
     </message>
 </context>
 <context>
@@ -13771,32 +13755,28 @@ wie gewohnt in SeamlyME laden können.
         <translation>Bogen - elliptisch</translation>
     </message>
     <message>
-        <source>Arc_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Bogen_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Spl_</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>SplPfad_</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <comment>Leave the _ symbol in translation</comment>
-        <translation>Linie_</translation>
-    </message>
-    <message>
         <source>Center point</source>
         <translation>Mittelpunkt</translation>
     </message>
     <message>
         <source>Direction:</source>
         <translation>Richtung:</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <translation type="unfinished">Bogen_</translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <translation type="unfinished">Spl_</translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <translation type="unfinished">SplPfad_</translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <translation type="unfinished">Linie_</translation>
     </message>
 </context>
 <context>
@@ -14706,18 +14686,6 @@ wie gewohnt in SeamlyME laden können.
         <translation>zoll</translation>
     </message>
     <message>
-        <source>SplPath</source>
-        <translation>SplPfad</translation>
-    </message>
-    <message>
-        <source>Angle1SplPath</source>
-        <translation>Winkel1SplPfad</translation>
-    </message>
-    <message>
-        <source>Angle2SplPath</source>
-        <translation>Winkel2SplPfad</translation>
-    </message>
-    <message>
         <source>CurrentLength</source>
         <comment>Do not add space between words</comment>
         <translation>AktuelleLänge</translation>
@@ -14731,14 +14699,6 @@ wie gewohnt in SeamlyME laden können.
         <source>height</source>
         <comment>placeholder</comment>
         <translation>Körperhöhe</translation>
-    </message>
-    <message>
-        <source>C1LengthSplPath</source>
-        <translation>C1LängeSplPfad</translation>
-    </message>
-    <message>
-        <source>C2LengthSplPath</source>
-        <translation>C2LängeSplPfad</translation>
     </message>
     <message>
         <source>CurrentSeamAllowance</source>
@@ -15197,6 +15157,31 @@ Example: avg(2;3;4) = 3</comment>
 Usage: fmod(x; y)
 Example: fmod(3.3;2) = 1.3</comment>
         <translation>fmod</translation>
+    </message>
+    <message>
+        <source>SplPath</source>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation type="unfinished">SplPfad</translation>
+    </message>
+    <message>
+        <source>Angle1SplPath</source>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation type="unfinished">Winkel1SplPfad</translation>
+    </message>
+    <message>
+        <source>Angle2SplPath</source>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation type="unfinished">Winkel2SplPfad</translation>
+    </message>
+    <message>
+        <source>C1LengthSplPath</source>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation type="unfinished">C1LängeSplPfad</translation>
+    </message>
+    <message>
+        <source>C2LengthSplPath</source>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation type="unfinished">C2LängeSplPfad</translation>
     </message>
 </context>
 <context>
