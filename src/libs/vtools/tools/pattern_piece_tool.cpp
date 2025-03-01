@@ -1573,6 +1573,98 @@ void PatternPieceTool::SaveDialogChange()
     UpdatePieceLabel();
 }
 
+void PatternPieceTool::nodeAngleChanged(quint32 id, PieceNodeAngle type)
+{
+    const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
+
+    for (int i = 0; i< oldPiece.GetPath().CountNodes(); ++i)
+    {
+        VPieceNode node = oldPiece.GetPath().at(i);
+        if (node.GetId() == id && node.GetTypeTool() == Tool::NodePoint)
+        {
+            node.SetAngleType(type);
+            newPiece.GetPath()[i] = node;
+
+            SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+            undoCommand->setText(tr("Update Node Angle"));
+            connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
+            qApp->getUndoStack()->push(undoCommand);
+            return;
+        }
+    }
+}
+
+void PatternPieceTool::notchChanged(quint32 id, NotchData notchData)
+{
+    const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
+
+    for (int i = 0; i< oldPiece.GetPath().CountNodes(); ++i)
+    {
+        VPieceNode node = oldPiece.GetPath().at(i);
+        if (node.GetId() == id && node.GetTypeTool() == Tool::NodePoint)
+        {
+            node.setNotch(notchData.isNotch);
+            node.setNotchType(notchData.type);
+            node.setNotchSubType(notchData.subType);
+            node.setNotchCount(notchData.count);
+            newPiece.GetPath()[i] = node;
+
+            SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+            undoCommand->setText(tr("Update Notch"));
+            connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
+            qApp->getUndoStack()->push(undoCommand);
+            return;
+        }
+    }
+}
+
+void PatternPieceTool::nodeExcluded(quint32 id)
+{
+    const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
+
+    for (int i = 0; i< oldPiece.GetPath().CountNodes(); ++i)
+    {
+        VPieceNode node = oldPiece.GetPath().at(i);
+        if (node.GetId() == id && node.GetTypeTool() == Tool::NodePoint)
+        {
+            node.SetExcluded(true);
+            newPiece.GetPath()[i] = node;
+
+            SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+            undoCommand->setText(tr("Exclude Node"));
+            connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
+            qApp->getUndoStack()->push(undoCommand);
+            return;
+        }
+    }
+}
+
+void PatternPieceTool::nodeDeleted(quint32 id)
+{
+    const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
+    VPiecePath path = newPiece.GetPath();
+    int index = path.indexOfNode(id);
+    QVector<VPieceNode> nodes = path.GetNodes();
+    VPieceNode node = nodes.at(index);
+
+    if (node.GetTypeTool() == Tool::NodePoint)
+    {
+        QVector<VPieceNode> newNodes = path.removeNode(id);
+        path.SetNodes(newNodes);
+        newPiece.SetPath(path);
+
+        SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+        undoCommand->setText(tr("Delete Node"));
+        connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
+        qApp->getUndoStack()->push(undoCommand);
+        return;
+    }
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 VPieceItem::MoveTypes PatternPieceTool::FindLabelGeometry(const VPatternLabelData &labelData, qreal &rotationAngle,
                                                             qreal &labelWidth, qreal &labelHeight, QPointF &pos)
@@ -1790,12 +1882,20 @@ void PatternPieceTool::initializeNode(const VPieceNode &node, VMainGraphicsScene
             VNodePoint *tool = qobject_cast<VNodePoint*>(VAbstractPattern::getTool(node.GetId()));
             SCASSERT(tool != nullptr);
 
-            connect(tool, &VNodePoint::chosenTool, scene, &VMainGraphicsScene::chosenItem, Qt::UniqueConnection);
-            tool->setParentItem(parent);
-            tool->SetParentType(ParentType::Item);
-            tool->SetExluded(node.isExcluded());
-            tool->setVisible(!node.isExcluded());//Hide excluded point
-            doc->IncrementReferens(node.GetId());
+            if (tool->parent() != parent)
+            {
+                connect(tool, &VNodePoint::chosenTool, scene, &VMainGraphicsScene::chosenItem, Qt::UniqueConnection);
+                connect(tool, &VNodePoint::notchChanged, parent, &PatternPieceTool::notchChanged, Qt::UniqueConnection);
+                connect(tool, &VNodePoint::nodeAngleChanged, parent,
+                        &PatternPieceTool::nodeAngleChanged, Qt::UniqueConnection);
+                connect(tool, &VNodePoint::nodeExcluded, parent, &PatternPieceTool::nodeExcluded, Qt::UniqueConnection);
+                connect(tool, &VNodePoint::nodeDeleted, parent, &PatternPieceTool::nodeDeleted, Qt::UniqueConnection);
+                tool->setParentItem(parent);
+                tool->SetParentType(ParentType::Item);
+                tool->SetExluded(node.isExcluded());
+                doc->IncrementReferens(node.GetId());
+            }
+            tool->setVisible(!node.isExcluded()); //Hide excluded point
             break;
         }
         case (Tool::NodeArc):
