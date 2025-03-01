@@ -853,7 +853,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="623"/>
         <source>highbust_circ</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>lonkan_ympärysmitta</translation>
+        <translation>korkea_rintakehän_ympärysmitta</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="625"/>
