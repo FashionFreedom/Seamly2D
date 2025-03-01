@@ -1580,21 +1580,24 @@ void PatternPieceTool::SaveDialogChange()
 void PatternPieceTool::nodeAngleChanged(quint32 id, PieceNodeAngle type)
 {
     const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
-    VPiece newPiece = oldPiece;
-
-    for (int i = 0; i< oldPiece.GetPath().CountNodes(); ++i)
+    if (!oldPiece.isLocked())
     {
-        VPieceNode node = oldPiece.GetPath().at(i);
-        if (node.GetId() == id && node.GetTypeTool() == Tool::NodePoint)
-        {
-            node.SetAngleType(type);
-            newPiece.GetPath()[i] = node;
+        VPiece newPiece = oldPiece;
 
-            SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
-            undoCommand->setText(tr("Update Node Angle"));
-            connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
-            qApp->getUndoStack()->push(undoCommand);
-            return;
+        for (int i = 0; i< oldPiece.GetPath().CountNodes(); ++i)
+        {
+            VPieceNode node = oldPiece.GetPath().at(i);
+            if (node.GetId() == id && node.GetTypeTool() == Tool::NodePoint)
+            {
+                node.SetAngleType(type);
+                newPiece.GetPath()[i] = node;
+
+                SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+                undoCommand->setText(tr("Update Node Angle"));
+                connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
+                qApp->getUndoStack()->push(undoCommand);
+                return;
+            }
         }
     }
 }
@@ -1615,24 +1618,27 @@ void PatternPieceTool::nodeAngleChanged(quint32 id, PieceNodeAngle type)
 void PatternPieceTool::notchChanged(quint32 id, NotchData notchData)
 {
     const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
-    VPiece newPiece = oldPiece;
-
-    for (int i = 0; i< oldPiece.GetPath().CountNodes(); ++i)
+    if (!oldPiece.isLocked())
     {
-        VPieceNode node = oldPiece.GetPath().at(i);
-        if (node.GetId() == id && node.GetTypeTool() == Tool::NodePoint)
-        {
-            node.setNotch(notchData.isNotch);
-            node.setNotchType(notchData.type);
-            node.setNotchSubType(notchData.subType);
-            node.setNotchCount(notchData.count);
-            newPiece.GetPath()[i] = node;
+        VPiece newPiece = oldPiece;
 
-            SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
-            undoCommand->setText(tr("Update Notch"));
-            connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
-            qApp->getUndoStack()->push(undoCommand);
-            return;
+        for (int i = 0; i< oldPiece.GetPath().CountNodes(); ++i)
+        {
+            VPieceNode node = oldPiece.GetPath().at(i);
+            if (node.GetId() == id && node.GetTypeTool() == Tool::NodePoint)
+            {
+                node.setNotch(notchData.isNotch);
+                node.setNotchType(notchData.type);
+                node.setNotchSubType(notchData.subType);
+                node.setNotchCount(notchData.count);
+                newPiece.GetPath()[i] = node;
+
+                SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+                undoCommand->setText(tr("Update Notch"));
+                connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
+                qApp->getUndoStack()->push(undoCommand);
+                return;
+            }
         }
     }
 }
@@ -1652,21 +1658,24 @@ void PatternPieceTool::notchChanged(quint32 id, NotchData notchData)
 void PatternPieceTool::nodeExcluded(quint32 id)
 {
     const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
-    VPiece newPiece = oldPiece;
-
-    for (int i = 0; i< oldPiece.GetPath().CountNodes(); ++i)
+    if (!oldPiece.isLocked())
     {
-        VPieceNode node = oldPiece.GetPath().at(i);
-        if (node.GetId() == id && node.GetTypeTool() == Tool::NodePoint)
-        {
-            node.SetExcluded(true);
-            newPiece.GetPath()[i] = node;
+        VPiece newPiece = oldPiece;
 
-            SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
-            undoCommand->setText(tr("Exclude Node"));
-            connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
-            qApp->getUndoStack()->push(undoCommand);
-            return;
+        for (int i = 0; i< oldPiece.GetPath().CountNodes(); ++i)
+        {
+            VPieceNode node = oldPiece.GetPath().at(i);
+            if (node.GetId() == id && node.GetTypeTool() == Tool::NodePoint)
+            {
+                node.SetExcluded(true);
+                newPiece.GetPath()[i] = node;
+
+                SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+                undoCommand->setText(tr("Exclude Node"));
+                connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
+                qApp->getUndoStack()->push(undoCommand);
+                return;
+            }
         }
     }
 }
@@ -1684,23 +1693,26 @@ void PatternPieceTool::nodeExcluded(quint32 id)
 void PatternPieceTool::nodeDeleted(quint32 id)
 {
     const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
-    VPiece newPiece = oldPiece;
-    VPiecePath path = newPiece.GetPath();
-    int index = path.indexOfNode(id);
-    QVector<VPieceNode> nodes = path.GetNodes();
-    VPieceNode node = nodes.at(index);
-
-    if (node.GetTypeTool() == Tool::NodePoint)
+    if (!oldPiece.isLocked())
     {
-        QVector<VPieceNode> newNodes = path.removeNode(id);
-        path.SetNodes(newNodes);
-        newPiece.SetPath(path);
+        VPiece newPiece = oldPiece;
+        VPiecePath path = newPiece.GetPath();
+        int index = path.indexOfNode(id);
+        QVector<VPieceNode> nodes = path.GetNodes();
+        VPieceNode node = nodes.at(index);
 
-        SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
-        undoCommand->setText(tr("Delete Node"));
-        connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
-        qApp->getUndoStack()->push(undoCommand);
-        return;
+        if (node.GetTypeTool() == Tool::NodePoint)
+        {
+            QVector<VPieceNode> newNodes = path.removeNode(id);
+            path.SetNodes(newNodes);
+            newPiece.SetPath(path);
+
+            SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+            undoCommand->setText(tr("Delete Node"));
+            connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
+            qApp->getUndoStack()->push(undoCommand);
+            return;
+        }
     }
 }
 
