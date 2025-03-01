@@ -1,54 +1,53 @@
-/***************************************************************************
- **  @file   vpiece.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//******************************************************************************
+//  @file   vpiece.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @copyright
+//  Copyright (C) 2017 - 2023 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
+//******************************************************************************
 
-/************************************************************************
- **
- **  @file   vpiece.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   3 11, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//******************************************************************************
+//  @file   vpiece.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   3 11, 2016
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentine project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2016 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//
+//******************************************************************************
 
 #include "vpiece.h"
 #include "vpiece_p.h"
@@ -476,13 +475,12 @@ void VPiece::setAnchors(const QVector<quint32> &anchors)
     d->m_anchors = anchors;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief MissingNodes find missing nodes in piece. When we deleted object in piece and return this piece need
- * understand, what nodes need make invisible.
- * @param piece changed piece.
- * @return  list with missing nodes.
- */
+//******************************************************************************
+/// @brief MissingNodes find missing nodes in piece. When we deleted object in piece and return this piece need
+///  understand, what nodes need make invisible.
+/// @param piece changed piece.
+/// @return  list with missing nodes.
+//******************************************************************************
 QVector<quint32> VPiece::MissingNodes(const VPiece &piece) const
 {
     return d->m_path.MissingNodes(piece.GetPath());
@@ -524,21 +522,19 @@ void VPiece::SetPatternPieceData(const VPieceLabelData &data)
     d->m_ppData = data;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Returns full access to the pattern piece data object
- * @return pattern piece data object
- */
+//******************************************************************************
+/// @brief Returns full access to the pattern piece data object
+/// @return pattern piece data object
+//******************************************************************************
 VPieceLabelData &VPiece::GetPatternPieceData()
 {
     return d->m_ppData;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Returns the read only reference to the pattern piece data object
- * @return pattern piece data object
- */
+//******************************************************************************
+/// @brief Returns the read only reference to the pattern piece data object
+/// @return pattern piece data object
+//******************************************************************************
 const VPieceLabelData &VPiece::GetPatternPieceData() const
 {
     return d->m_ppData;
@@ -550,41 +546,37 @@ void VPiece::SetPatternInfo(const VPatternLabelData &info)
     d->m_piPatternInfo = info;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Returns full access to the pattern info geometry object
- * @return pattern info geometry object
- */
+//******************************************************************************
+/// @brief Returns full access to the pattern info geometry object
+/// @return pattern info geometry object
+//******************************************************************************
 VPatternLabelData &VPiece::GetPatternInfo()
 {
     return d->m_piPatternInfo;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Returns the read only reference to the pattern info geometry object
- * @return pattern info geometry object
- */
+//******************************************************************************
+/// @brief Returns the read only reference to the pattern info geometry object
+/// @return pattern info geometry object
+//******************************************************************************
 const VPatternLabelData &VPiece::GetPatternInfo() const
 {
     return d->m_piPatternInfo;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VDetail::GetGrainlineGeometry full access to the grainline geometry object
- * @return reference to grainline geometry object
- */
+//******************************************************************************
+/// @brief VDetail::GetGrainlineGeometry full access to the grainline geometry object
+/// @return reference to grainline geometry object
+//******************************************************************************
 VGrainlineData &VPiece::GetGrainlineGeometry()
 {
     return d->m_glGrainline;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VDetail::GetGrainlineGeometry returns the read-only reference to the grainline geometry object
- * @return reference to grainline geometry object
- */
+//******************************************************************************
+/// @brief VDetail::GetGrainlineGeometry returns the read-only reference to the grainline geometry object
+/// @return reference to grainline geometry object
+//******************************************************************************
 const VGrainlineData &VPiece::GetGrainlineGeometry() const
 {
     return d->m_glGrainline;
