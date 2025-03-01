@@ -454,7 +454,14 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         //Setup Delete Node menu
         QAction *actionDeleteNode = menu.addAction(QIcon(QIcon::fromTheme("edit-delete")), tr("Delete"));
 
-        //Execute menu at current mouse position and handle selected item. 
+        if (piece.isLocked())
+        {
+            actionNotch->setEnabled(false);
+            angleTypeMenu->setEnabled(false);
+            actionExcludeNode->setEnabled(false);
+            actionDeleteNode->setEnabled(false);
+        }
+        //Execute menu at current mouse position and handle selected item.
         QAction *selectedAction = menu.exec(event->screenPos());
         if (selectedAction == actionShowPointName)
         {
