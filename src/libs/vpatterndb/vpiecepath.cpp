@@ -235,6 +235,19 @@ void VPiecePath::SetNodes(const QVector<VPieceNode> &nodes)
     d->m_nodes = nodes;
 }
 
+QVector<VPieceNode> VPiecePath::removeNode(const quint32 &id)
+{
+    QVector<VPieceNode> nodes = GetNodes();
+    for (int i = 0; i < nodes.size(); ++i)
+    {
+        if (nodes.at(i).GetId() == id)
+        {
+            nodes.removeAt(i);
+        }
+    }
+    return nodes;
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 PiecePathType VPiecePath::GetType() const
 {

@@ -60,6 +60,7 @@
 
 #include "vinteractivetool.h"
 
+#include "../vpatterndb/vpiece.h"
 #include "../vwidgets/vtextgraphicsitem.h"
 #include "../vwidgets/vgrainlineitem.h"
 
@@ -154,6 +155,12 @@ protected slots:
     void                 SaveMoveGrainline(const QPointF& ptPos);
     void                 SaveResizeGrainline(qreal dLength);
     void                 SaveRotateGrainline(qreal dRot, const QPointF& ptPos);
+
+private slots:
+    void                 nodeAngleChanged(quint32 id, PieceNodeAngle notchData);
+    void                 notchChanged(quint32 id, NotchData notchData);
+    void                 nodeExcluded(quint32 id);
+    void                 nodeDeleted(quint32 id);
 
 protected:
     virtual void         AddToFile () Q_DECL_OVERRIDE;

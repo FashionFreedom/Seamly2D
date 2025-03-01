@@ -70,6 +70,7 @@ struct NotchData
     qreal        angle {};
     qreal        offset {};
     int          count {};
+    bool         isNotch {};
 };
 
 class VPieceData;

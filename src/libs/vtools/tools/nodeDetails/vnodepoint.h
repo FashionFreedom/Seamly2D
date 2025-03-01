@@ -62,6 +62,7 @@
 #include <QtGlobal>
 
 #include "../ifc/xml/vabstractpattern.h"
+#include "../vpatterndb/vpiece.h"
 #include "../vmisc/def.h"
 #include "vabstractnode.h"
 #include "../vwidgets/vscenepoint.h"
@@ -86,13 +87,10 @@ public:
     virtual void    setPointNameVisiblity(quint32 id, bool visible) Q_DECL_OVERRIDE;
 
 signals:
-    /**
-     * @brief showContextMenu emit when need show tool context menu.
-     * @param event context menu event.
-     */
-     //void ShowOptions();
-     //void ToggleInLayout(bool checked);
-     //void Delete();
+    void            nodeAngleChanged(quint32 id, PieceNodeAngle type);
+    void            notchChanged(quint32 id, NotchData notchData);
+    void            nodeExcluded(quint32 id);
+    void            nodeDeleted(quint32 id);
 
 public slots:
     virtual void    FullUpdateFromFile() Q_DECL_OVERRIDE;

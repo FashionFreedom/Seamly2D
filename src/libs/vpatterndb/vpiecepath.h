@@ -91,6 +91,7 @@ public:
 
     QVector<VPieceNode> GetNodes() const;
     void                SetNodes(const QVector<VPieceNode> &nodes);
+    QVector<VPieceNode> removeNode(const quint32 &id);
 
     PiecePathType       GetType() const;
     void                SetType(PiecePathType type);

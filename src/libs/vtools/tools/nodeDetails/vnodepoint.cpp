@@ -73,13 +73,16 @@
 
 #include "../../../vgeometry/vpointf.h"
 #include "../../../vwidgets/vgraphicssimpletextitem.h"
+#include "../../undocommands/savepieceoptions.h"
 #include "../../undocommands/label/showpointname.h"
 #include "../../undocommands/label/movelabel.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../ifc/ifcdef.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vpatterndb/vcontainer.h"
+#include "../vpatterndb/vpiece.h"
 #include "../vpatterndb/vpiecenode.h"
+#include "../vpatterndb/vpiecepath.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../vwidgets/vmaingraphicsview.h"
 #include "../vabstracttool.h"
@@ -326,21 +329,253 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     {
         return;
     }
-    if (qgraphicsitem_cast<PatternPieceTool *>(parentItem()))
+
+    PatternPieceTool *tool = qgraphicsitem_cast<PatternPieceTool *>(parentItem());
+    if (tool)
     {
         QMenu menu;
+
+        const VPiece piece = VAbstractTool::data.GetPiece(tool->getId());
+        const int index = piece.GetPath().indexOfNode(m_id);
+        VPieceNode node = piece.GetPath().at(index);
 
         QAction *actionShowPointName = menu.addAction(QIcon("://icon/16x16/open_eye.png"), tr("Show Point Name"));
         actionShowPointName->setCheckable(true);
         actionShowPointName->setChecked(VAbstractTool::data.GeometricObject<VPointF>(m_id)->isShowPointName());
+
+        QAction *actionByLength        = nullptr;
+        QAction *actionByIntersection  = nullptr;
+        QAction *actionFirstEdgeSym    = nullptr;
+        QAction *actionSecondEdgeSym   = nullptr;
+        QAction *actionFirstEdgeRight  = nullptr;
+        QAction *actionSecondEdgeRight = nullptr;
+        QMenu *angleTypeMenu  = menu.addMenu(tr("Seam Allowance Angle"));
+        actionByLength        = angleTypeMenu->addAction(QIcon(), tr("By length"));
+        actionByIntersection  = angleTypeMenu->addAction(QIcon(), tr("Intersection"));
+        actionFirstEdgeSym    = angleTypeMenu->addAction(QIcon(), tr("First edge symmetry"));
+        actionSecondEdgeSym   = angleTypeMenu->addAction(QIcon(), tr("Second edge symmetry"));
+        actionFirstEdgeRight  = angleTypeMenu->addAction(QIcon(), tr("First edge right angle"));
+        actionSecondEdgeRight = angleTypeMenu->addAction(QIcon(), tr("Second edge right angle"));
+
+        switch (static_cast<int>(node.GetAngleType()))
+        {
+            case (PieceNodeAngle::ByLength):
+            {
+                actionByLength->setCheckable(true);
+                actionByLength->setChecked(true);
+                break;
+            }
+            case (PieceNodeAngle::ByPointsIntersection):
+            {
+                actionByIntersection->setCheckable(true);
+                actionByIntersection->setChecked(true);
+                break;
+            }
+            case (PieceNodeAngle::ByFirstEdgeSymmetry):
+            {
+                actionFirstEdgeSym->setCheckable(true);
+                actionFirstEdgeSym->setChecked(true);
+                break;
+            }
+            case (PieceNodeAngle::BySecondEdgeSymmetry):
+            {
+                actionSecondEdgeSym->setCheckable(true);
+                actionSecondEdgeSym->setChecked(true);
+                break;
+            }
+            case (PieceNodeAngle::ByFirstEdgeRightAngle):
+            {
+                actionFirstEdgeRight->setCheckable(true);
+                actionFirstEdgeRight->setChecked(true);
+                break;
+            }
+            case (PieceNodeAngle::BySecondEdgeRightAngle):
+            {
+                actionSecondEdgeRight->setCheckable(true);
+                actionSecondEdgeRight->setChecked(true);
+                break;
+            }
+            default:
+                break;
+        }
+
+
+        NotchType notchType = node.getNotchType();
+        NotchSubType notchSubType = node.getNotchSubType();
+        int notchCount = node.getNotchCount();
+        bool isNotch = false;
+
+        QAction *actionNotch     = nullptr;
+        QMenu *notchMenu = menu.addMenu(tr("Notch"));
+        actionNotch = notchMenu->menuAction();
+        actionNotch->setCheckable(true);
+        actionNotch->setChecked(node.isNotch());
+
+        QAction *actionNone      = nullptr;
+        QAction *actionSlit      = nullptr;
+        QAction *actionTNotch    = nullptr;
+        QAction *actionUNotch    = nullptr;
+        QAction *actionVInternal = nullptr;
+        QAction *actionVExternal = nullptr;
+        QAction *actionCastle    = nullptr;
+        QAction *actionDiamond   = nullptr;
+        QMenu *notchTypeMenu = notchMenu->addMenu(tr("Type"));
+        actionNone      = notchTypeMenu->addAction( tr("None") + QStringLiteral("\tShift + N"));
+        actionSlit      = notchTypeMenu->addAction(QIcon("://icon/24x24/slit_notch.png"),       tr("Slit") + QStringLiteral("\tShift + S"));
+        actionTNotch    = notchTypeMenu->addAction(QIcon("://icon/24x24/t_notch.png"),          tr("TNotch") + QStringLiteral("\tShift + T"));
+        actionUNotch    = notchTypeMenu->addAction(QIcon("://icon/24x24/u_notch.png"),          tr("UNotch") + QStringLiteral("\tShift + U"));
+        actionVInternal = notchTypeMenu->addAction(QIcon("://icon/24x24/internal_v_notch.png"), tr("VInternal") + QStringLiteral("\tShift + I"));
+        actionVExternal = notchTypeMenu->addAction(QIcon("://icon/24x24/external_v_notch.png"), tr("VExternal") + QStringLiteral("\tShift + E"));
+        actionCastle    = notchTypeMenu->addAction(QIcon("://icon/24x24/castle_notch.png"),     tr("Castle") + QStringLiteral("\tShift + C"));
+        actionDiamond   = notchTypeMenu->addAction(QIcon("://icon/24x24/diamond_notch.png"),    tr("Diamond") + QStringLiteral("\tShift + D"));
+
+        QAction *actionStraightforward = nullptr;
+        QAction *actionBisector        = nullptr;
+        QAction *actionIntersection    = nullptr;
+        QMenu *notchSubtypeMenu = notchMenu->addMenu(tr("Subtype"));
+        actionStraightforward = notchSubtypeMenu->addAction(QIcon(), tr("Straightforward") + QStringLiteral("\tShift + F"));
+        actionBisector        = notchSubtypeMenu->addAction(QIcon(), tr("Bisector") + QStringLiteral("\tShift + B"));
+        actionIntersection    = notchSubtypeMenu->addAction(QIcon(), tr("Intersection") + QStringLiteral("\tShift + X"));
+
+        QAction *action1Notch = nullptr;
+        QAction *action2Notch = nullptr;
+        QAction *action3Notch = nullptr;
+        QMenu *notchCountMenu = notchMenu->addMenu(tr("Count"));
+        action1Notch = notchCountMenu->addAction(QIcon(), QStringLiteral("1"));
+        action2Notch = notchCountMenu->addAction(QIcon(), QStringLiteral("2"));
+        action3Notch = notchCountMenu->addAction(QIcon(), QStringLiteral("3"));
+
+        QAction *actionExcludeNode = menu.addAction(QIcon(), tr("Excluded"));
+
+        QAction *actionDeleteNode = menu.addAction(QIcon(QIcon::fromTheme("edit-delete")), tr("Delete"));
 
         QAction *selectedAction = menu.exec(event->screenPos());
         if (selectedAction == actionShowPointName)
         {
             qApp->getUndoStack()->push(new ShowPointName(doc, m_id, selectedAction->isChecked()));
         }
+        else if (selectedAction == actionExcludeNode)
+        {
+            emit nodeExcluded(m_id);
+        }
+        else if (selectedAction == actionDeleteNode)
+        {
+            emit nodeDeleted(m_id);
+        }
+        else if (selectedAction == actionByLength)
+        {
+            emit nodeAngleChanged(m_id, PieceNodeAngle::ByLength);
+        }
+        else if (selectedAction == actionByIntersection)
+        {
+            emit nodeAngleChanged(m_id, PieceNodeAngle::ByPointsIntersection);
+        }
+        else if (selectedAction == actionFirstEdgeSym)
+        {
+            emit nodeAngleChanged(m_id, PieceNodeAngle::ByFirstEdgeSymmetry);
+        }
+        else if (selectedAction == actionSecondEdgeSym)
+        {
+            emit nodeAngleChanged(m_id, PieceNodeAngle::BySecondEdgeSymmetry);
+        }
+        else if (selectedAction == actionFirstEdgeRight)
+        {
+            emit nodeAngleChanged(m_id, PieceNodeAngle::ByFirstEdgeRightAngle);
+        }
+        else if (selectedAction == actionSecondEdgeRight)
+        {
+            emit nodeAngleChanged(m_id, PieceNodeAngle::BySecondEdgeRightAngle);
+        }
+        else
+        {
+            if (selectedAction == actionNone)
+            {
+                isNotch = false;
+                notchType = NotchType::Slit;
+            }
+            else if (selectedAction == actionSlit)
+            {
+                isNotch = true;
+                notchType = NotchType::Slit;
+            }
+            else if (selectedAction == actionTNotch)
+            {
+                isNotch = true;
+                notchType = NotchType::TNotch;
+            }
+            else if (selectedAction == actionUNotch)
+            {
+                isNotch = true;
+                notchType = NotchType::UNotch;
+            }
+            else if (selectedAction == actionVInternal)
+            {
+                isNotch = true;
+                notchType = NotchType::VInternal;
+            }
+            else if (selectedAction == actionVExternal)
+            {
+                isNotch = true;
+                notchType = NotchType::VExternal;
+            }
+            else if (selectedAction == actionCastle)
+            {
+                isNotch = true;
+                notchType = NotchType::Castle;
+            }
+            else if (selectedAction == actionDiamond)
+            {
+                isNotch = true;
+                notchType = NotchType::Diamond;
+            }
+            else if (selectedAction == actionStraightforward)
+            {
+                isNotch = true;
+                notchSubType = NotchSubType::Straightforward;
+            }
+            else if (selectedAction == actionBisector)
+            {
+                isNotch = true;
+                notchSubType = NotchSubType::Bisector;
+            }
+            else if (selectedAction == actionIntersection)
+            {
+                isNotch = true;
+                notchSubType = NotchSubType::Intersection;
+            }
+            else if (selectedAction == action1Notch)
+            {
+                isNotch = true;
+                notchCount = 1;
+            }
+            else if (selectedAction == action2Notch)
+            {
+                isNotch = true;
+                notchCount = 2;
+            }
+            else if (selectedAction == action3Notch)
+            {
+                isNotch = true;
+                notchCount = 3;
+            }
+
+            if (node.GetId() == m_id && node.GetTypeTool() == Tool::NodePoint)
+            {
+                NotchData notchData;
+                notchData.isNotch = isNotch;
+                notchData.type    = notchType;
+                notchData.subType = notchSubType;
+                notchData.length  = ToPixel(node.getNotchLength(), *VDataTool::data.GetPatternUnit());
+                notchData.width   = ToPixel(node.getNotchWidth(),  *VDataTool::data.GetPatternUnit());
+                notchData.angle   = node.getNotchAngle();
+                notchData.count   = notchCount;
+
+                emit notchChanged(m_id, notchData);
+            }
+        }
     }
 }
+
 
 //---------------------------------------------------------------------------------------------------------------------
 void VNodePoint::EnableToolMove(bool move)
