@@ -1,53 +1,54 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//******************************************************************************
+//  @file   vnodepoint.cpp
+//  @author Douglas S Caskey
+//  @date  1 Mar, 2025
+//
+//  @copyright
+//  Copyright (C) 2017 - 2025 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
+//******************************************************************************
 
- ************************************************************************
- **
- **  @file   vnodepoint.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//******************************************************************************
+//
+//   @file   vnodepoint.cpp
+//   @author Roman Telezhynskyi <dismine(at)gmail.com>
+//   @date   November 15, 2013
+//
+//   @brief
+//   @copyright
+//   This source code is part of the Valentine project, a pattern making
+//   program, whose allow create and modeling patterns of clothing.
+//   Copyright (C) 2013-2015 Seamly2D project
+//   <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//   Seamly2D is free software: you can redistribute it and/or modify
+//   it under the terms of the GNU General Public License as published by
+//   the Free Software Foundation, either version 3 of the License, or
+//   (at your option) any later version.
+//
+//   Seamly2D is distributed in the hope that it will be useful,
+//   but WITHOUT ANY WARRANTY; without even the implied warranty of
+//   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//   GNU General Public License for more details.
+//
+//   You should have received a copy of the GNU General Public License
+//   along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//
+//******************************************************************************
 
 #include "vnodepoint.h"
 
@@ -92,18 +93,17 @@
 
 const QString VNodePoint::ToolType = QStringLiteral("modeling");
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VNodePoint constructor.
- * @param doc dom document container.
- * @param data container with variables.
- * @param id object id in container.
- * @param idPoint object id in containerPoint.
- * @param typeCreation way we create this tool.
- * @param idTool tool id.
- * @param qoParent QObject parent
- * @param parent parent object.
- */
+//******************************************************************************
+/// @brief VNodePoint constructor.
+/// @param doc dom document container.
+/// @param data container with variables.
+/// @param id object id in container.
+/// @param idPoint object id in containerPoint.
+/// @param typeCreation way we create this tool.
+/// @param idTool tool id.
+/// @param qoParent QObject parent
+/// @param parent parent object.
+//******************************************************************************
 VNodePoint::VNodePoint(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 idPoint, const Source &typeCreation,
                        const QString &blockName, const quint32 &idTool, QObject *qoParent, QGraphicsItem *parent)
     : VAbstractNode(doc, data, id, idPoint, blockName, idTool, qoParent)
@@ -123,17 +123,16 @@ VNodePoint::VNodePoint(VAbstractPattern *doc, VContainer *data, quint32 id, quin
     setCursor(Qt::ArrowCursor);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Create help create tool.
- * @param doc dom document container.
- * @param data container with variables.
- * @param id object id in container.
- * @param idPoint object id in containerPoint.
- * @param parse parser file mode.
- * @param typeCreation way we create this tool.
- * @param idTool tool id.
- */
+//******************************************************************************
+/// @brief Create help create tool.
+/// @param doc dom document container.
+/// @param data container with variables.
+/// @param id object id in container.
+/// @param idPoint object id in containerPoint.
+/// @param parse parser file mode.
+/// @param typeCreation way we create this tool.
+/// @param idTool tool id.
+//******************************************************************************
 void VNodePoint::Create(VAbstractPattern *doc, VContainer *data, VMainGraphicsScene *scene,
                         quint32 id, quint32 idPoint, const Document &parse,
                         const Source &typeCreation, const QString &blockName, const quint32 &idTool)
@@ -184,10 +183,9 @@ void VNodePoint::pointChosen()
     emit chosenTool(m_id, SceneObject::Point);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief FullUpdateFromFile update tool data form file.
- */
+//******************************************************************************
+/// @brief FullUpdateFromFile update tool data form file.
+//******************************************************************************
 void VNodePoint::FullUpdateFromFile()
 {
     try
@@ -200,10 +198,9 @@ void VNodePoint::FullUpdateFromFile()
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief AddToFile add tag with Information about tool into file.
- */
+//******************************************************************************
+/// @brief AddToFile add tag with Information about tool into file.
+//******************************************************************************
 void VNodePoint::AddToFile()
 {
     const QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(m_id);
@@ -248,11 +245,10 @@ void VNodePoint::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
     VScenePoint::hoverEnterEvent(event);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief mouseReleaseEvent handle mouse release events.
- * @param event mouse release event.
- */
+//******************************************************************************
+/// @brief mouseReleaseEvent handle mouse release events.
+/// @param event mouse release event.
+//******************************************************************************
 void VNodePoint::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton)
@@ -262,11 +258,10 @@ void VNodePoint::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     VScenePoint::mouseReleaseEvent(event);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setPointNamePosition change name text position.
- * @param pos new position.
- */
+//******************************************************************************
+/// @brief setPointNamePosition change name text position.
+/// @param pos new position.
+//******************************************************************************
 void VNodePoint::setPointNamePosition(quint32 id, const QPointF &pos)
 {
     if (id == m_id)
@@ -297,11 +292,10 @@ void VNodePoint::setPointNameVisiblity(quint32 id, bool visible)
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief nameChangedPosition point name change position.
- * @param pos new position.
- */
+//******************************************************************************
+/// @brief nameChangedPosition point name change position.
+/// @param pos new position.
+//******************************************************************************
 void VNodePoint::nameChangedPosition(const QPointF &pos)
 {
     qApp->getUndoStack()->push(new MoveLabel(doc, pos - this->pos(), m_id));
@@ -322,7 +316,10 @@ void VNodePoint::HideNode()
     hide();
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//******************************************************************************
+/// @brief contextMenuEvent show context menu for point nodes.
+/// @param event  contextmenu event.
+//******************************************************************************
 void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
     if (m_suppressContextMenu)
@@ -343,6 +340,7 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         actionShowPointName->setCheckable(true);
         actionShowPointName->setChecked(VAbstractTool::data.GeometricObject<VPointF>(m_id)->isShowPointName());
 
+        //Setup actions for Seam Allowance corner type sub menu
         QAction *actionByLength        = nullptr;
         QAction *actionByIntersection  = nullptr;
         QAction *actionFirstEdgeSym    = nullptr;
@@ -357,6 +355,7 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         actionFirstEdgeRight  = angleTypeMenu->addAction(QIcon(), tr("First edge right angle"));
         actionSecondEdgeRight = angleTypeMenu->addAction(QIcon(), tr("Second edge right angle"));
 
+        // Set checkmark for current Seam Allowance corner type
         switch (static_cast<int>(node.GetAngleType()))
         {
             case (PieceNodeAngle::ByLength):
@@ -399,18 +398,20 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
                 break;
         }
 
-
+        // Set default Notch values
         NotchType notchType = node.getNotchType();
         NotchSubType notchSubType = node.getNotchSubType();
         int notchCount = node.getNotchCount();
         bool isNotch = false;
 
+        //Setup Notch menu
         QAction *actionNotch     = nullptr;
         QMenu *notchMenu = menu.addMenu(tr("Notch"));
         actionNotch = notchMenu->menuAction();
         actionNotch->setCheckable(true);
         actionNotch->setChecked(node.isNotch());
 
+        //Setup Notch type submenu
         QAction *actionNone      = nullptr;
         QAction *actionSlit      = nullptr;
         QAction *actionTNotch    = nullptr;
@@ -429,6 +430,7 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         actionCastle    = notchTypeMenu->addAction(QIcon("://icon/24x24/castle_notch.png"),     tr("Castle") + QStringLiteral("\tShift + C"));
         actionDiamond   = notchTypeMenu->addAction(QIcon("://icon/24x24/diamond_notch.png"),    tr("Diamond") + QStringLiteral("\tShift + D"));
 
+        //Setup Notch subtype submenu
         QAction *actionStraightforward = nullptr;
         QAction *actionBisector        = nullptr;
         QAction *actionIntersection    = nullptr;
@@ -437,6 +439,7 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         actionBisector        = notchSubtypeMenu->addAction(QIcon(), tr("Bisector") + QStringLiteral("\tShift + B"));
         actionIntersection    = notchSubtypeMenu->addAction(QIcon(), tr("Intersection") + QStringLiteral("\tShift + X"));
 
+        //setup Notch count submenu
         QAction *action1Notch = nullptr;
         QAction *action2Notch = nullptr;
         QAction *action3Notch = nullptr;
@@ -445,10 +448,13 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         action2Notch = notchCountMenu->addAction(QIcon(), QStringLiteral("2"));
         action3Notch = notchCountMenu->addAction(QIcon(), QStringLiteral("3"));
 
+        //Setup Exclude node menu
         QAction *actionExcludeNode = menu.addAction(QIcon(), tr("Excluded"));
 
+        //Setup Delete Node menu
         QAction *actionDeleteNode = menu.addAction(QIcon(QIcon::fromTheme("edit-delete")), tr("Delete"));
 
+        //Execute menu at current mouse position and handle selected item. 
         QAction *selectedAction = menu.exec(event->screenPos());
         if (selectedAction == actionShowPointName)
         {

@@ -1,54 +1,54 @@
-/***************************************************************************
- **  @file   pattern_piece_tool.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2022 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//******************************************************************************
+//  @file   pattern_piece_tool.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @copyright
+//  Copyright (C) 2017 - 2022 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//******************************************************************************
 
-/************************************************************************
- **
- **  @file   PatternPieceTool.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   6 11, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//******************************************************************************
+//
+//  @file   PatternPieceTool.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   6 11, 2016
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2016 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//
+//******************************************************************************
 
 #include "pattern_piece_tool.h"
 
@@ -623,10 +623,9 @@ void PatternPieceTool::updatePieceDetails()
     UpdatePatternLabel();
     UpdateGrainline();
 }
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief UpdateLabel updates the text label, making it just big enough for the text to fit it
- */
+//******************************************************************************
+/// @brief UpdateLabel updates the text label, making it just big enough for the text to fit it
+//******************************************************************************
 void PatternPieceTool::UpdatePieceLabel()
 {
 
@@ -651,10 +650,9 @@ void PatternPieceTool::UpdatePieceLabel()
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief UpdatePatternLabel updates the pattern info label
- */
+//******************************************************************************
+/// @brief UpdatePatternLabel updates the pattern info label
+//******************************************************************************
 void PatternPieceTool::UpdatePatternLabel()
 {
     const VPiece piece = VAbstractTool::data.GetPiece(m_id);
@@ -678,10 +676,9 @@ void PatternPieceTool::UpdatePatternLabel()
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VToolDetail::UpdateGrainline updates the grain line item
- */
+//******************************************************************************
+/// @brief VToolDetail::UpdateGrainline updates the grain line item
+//******************************************************************************
 void PatternPieceTool::UpdateGrainline()
 {
     const VPiece piece = VAbstractTool::data.GetPiece(m_id);
@@ -713,10 +710,9 @@ void PatternPieceTool::UpdateGrainline()
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief saveMovePiece saves the move piece operation to the undo stack
- */
+//******************************************************************************
+/// @brief saveMovePiece saves the move piece operation to the undo stack
+//******************************************************************************
 void PatternPieceTool::saveMovePiece(const QPointF &ptPos)
 {
     VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
@@ -729,10 +725,9 @@ void PatternPieceTool::saveMovePiece(const QPointF &ptPos)
     qApp->getUndoStack()->push(moveCommand);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief saveResizePiece saves the resize piece label operation to the undo stack
- */
+//******************************************************************************
+/// @brief saveResizePiece saves the resize piece label operation to the undo stack
+//******************************************************************************
 void PatternPieceTool::saveResizePiece(qreal dLabelW, int iFontSize)
 {
     VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
@@ -750,10 +745,9 @@ void PatternPieceTool::saveResizePiece(qreal dLabelW, int iFontSize)
     qApp->getUndoStack()->push(resizeCommand);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief savePieceRotation saves the rotation piece label operation to the undo stack
- */
+//******************************************************************************
+/// @brief savePieceRotation saves the rotation piece label operation to the undo stack
+//******************************************************************************
 void PatternPieceTool::savePieceRotation(qreal dRot)
 {
     VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
@@ -773,10 +767,9 @@ void PatternPieceTool::savePieceRotation(qreal dRot)
 }
 
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SaveMovePattern saves the pattern label position
- */
+//******************************************************************************
+/// @brief SaveMovePattern saves the pattern label position
+//******************************************************************************
 void PatternPieceTool::SaveMovePattern(const QPointF &ptPos)
 {
     VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
@@ -789,10 +782,9 @@ void PatternPieceTool::SaveMovePattern(const QPointF &ptPos)
     qApp->getUndoStack()->push(moveCommand);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief: SaveResizePattern saves the pattern label width and font size
- */
+//******************************************************************************
+/// @brief: SaveResizePattern saves the pattern label width and font size
+//******************************************************************************
 void PatternPieceTool::SaveResizePattern(qreal dLabelW, int iFontSize)
 {
     VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
@@ -874,10 +866,9 @@ void PatternPieceTool::SaveRotateGrainline(qreal dRot, const QPointF &ptPos)
     qApp->getUndoStack()->push(rotateCommand);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VToolDetail::paint draws a bounding box around piece, if one of its text or grainline items is not idle.
- */
+//******************************************************************************
+/// @brief VToolDetail::paint draws a bounding box around piece, if one of its text or grainline items is not idle.
+//******************************************************************************
 void PatternPieceTool::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     QColor  color;
@@ -1573,6 +1564,19 @@ void PatternPieceTool::SaveDialogChange()
     UpdatePieceLabel();
 }
 
+//******************************************************************************
+/// @brief nodeAngleChanged handle seam allowance corner type changes.
+///
+/// This method handles the signal sent that the Seam Allowance corner type has changed.
+///
+/// @param id  node id.
+/// @param type  Type of Seam Allowance corner type.
+///
+/// @details
+/// -Method loops through the piece nodes looking for the chosen nodem and when found
+///  sets the corner type in a new copy of the piece. Calls the SavePieceOptions undo
+///  command.
+//******************************************************************************
 void PatternPieceTool::nodeAngleChanged(quint32 id, PieceNodeAngle type)
 {
     const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
@@ -1595,6 +1599,19 @@ void PatternPieceTool::nodeAngleChanged(quint32 id, PieceNodeAngle type)
     }
 }
 
+//******************************************************************************
+/// @brief notchChanged handle notch changes.
+///
+/// This method handles the signal sent that the Notch properties have changed.
+///
+/// @param id  node id.
+/// @param notchData  struct of the notch data.
+///
+/// @details
+/// -Method loops through the piece nodes looking for the chosen nodem and when found
+///  sets the change of the notch properties  in a new copy of the piece. Calls the
+///  SavePieceOptions undo command.
+//******************************************************************************
 void PatternPieceTool::notchChanged(quint32 id, NotchData notchData)
 {
     const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
@@ -1620,6 +1637,18 @@ void PatternPieceTool::notchChanged(quint32 id, NotchData notchData)
     }
 }
 
+//******************************************************************************
+/// @brief nodeExcluded handle excluding node.
+///
+/// This method handles the signal sent that the node should be exculded.
+///
+/// @param id  node id.
+///
+/// @details
+/// -Method loops through the piece nodes looking for the chosen nodem and when found
+///  sets the node to be excluded from the main path in a new copy of the piece. Calls the
+///  SavePieceOptions undo command.
+//******************************************************************************
 void PatternPieceTool::nodeExcluded(quint32 id)
 {
     const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
@@ -1642,6 +1671,16 @@ void PatternPieceTool::nodeExcluded(quint32 id)
     }
 }
 
+//******************************************************************************
+/// @brief nodeDeleted handle delete node.
+///
+/// This method handles the signal sent that the node should be deleted.
+///
+/// @param id  node id.
+///
+/// @details
+/// -Method removes node form the main path of the piece.
+//******************************************************************************
 void PatternPieceTool::nodeDeleted(quint32 id)
 {
     const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
@@ -2072,9 +2111,9 @@ void PatternPieceTool::UpdateLabelItem(VTextGraphicsItem *labelItem, QPointF pos
     labelItem->getTextLines() > 0 ? labelItem->show() : labelItem->hide();
 }
 
-/**
- * @brief editPieceProperties - routine to edit pattern piece properties .
- */
+//******************************************************************************
+/// @brief editPieceProperties - routine to edit pattern piece properties .
+//******************************************************************************
 void PatternPieceTool::editPieceProperties()
 {
     QSharedPointer<PatternPieceDialog> dialog = QSharedPointer<PatternPieceDialog>(new PatternPieceDialog(getData(),
@@ -2088,10 +2127,10 @@ void PatternPieceTool::editPieceProperties()
     m_dialog->show();
 }
 
-/**
- * @brief toggleInLayout - routine to toggle if pattern piece is included and visible in layout.
- * @param checked - true if piece is included.
- */
+//******************************************************************************
+/// @brief toggleInLayout - routine to toggle if pattern piece is included and visible in layout.
+/// @param checked - true if piece is included.
+//******************************************************************************
 void PatternPieceTool::toggleInLayout(bool checked)
 {
     TogglePieceInLayout *cmd = new TogglePieceInLayout(m_id, checked, &(VAbstractTool::data), doc);
@@ -2099,10 +2138,10 @@ void PatternPieceTool::toggleInLayout(bool checked)
     qApp->getUndoStack()->push(cmd);
 }
 
-/**
- * @brief togglePieceLock - routine to toggle if pattern piece is locked and editiable.
- * @param checked - true if piece is locked.
- */
+//******************************************************************************
+/// @brief togglePieceLock - routine to toggle if pattern piece is locked and editiable.
+/// @param checked - true if piece is locked.
+//******************************************************************************
 void PatternPieceTool::togglePieceLock(bool checked)
 {
     TogglePieceLock *cmd = new TogglePieceLock(m_id, checked, &(VAbstractTool::data), doc);
@@ -2112,10 +2151,10 @@ void PatternPieceTool::togglePieceLock(bool checked)
     EnableToolMove(!checked);
 }
 
-/**
- * @brief toggleFlipping - routine to toggle forbidding flipping.
- * @param checked - true if flipping is forbidden.
- */
+//******************************************************************************
+/// @brief toggleFlipping - routine to toggle forbidding flipping.
+/// @param checked - true if flipping is forbidden.
+//******************************************************************************
 void PatternPieceTool::toggleFlipping(bool checked)
 {
     VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
@@ -2130,10 +2169,10 @@ void PatternPieceTool::toggleFlipping(bool checked)
     showStatus(tr("Forbid Flipping changed: ") + (checked ? tr("Enabled") : tr("Disabled")));
 }
 
-/**
- * @brief toggleSeamLine - routine to toggle the visibility of the seam line.
- * @param checked - true if seam line is visible.
- */
+//******************************************************************************
+/// @brief toggleSeamLine - routine to toggle the visibility of the seam line.
+/// @param checked - true if seam line is visible.
+//******************************************************************************
 void PatternPieceTool::toggleSeamLine(bool checked)
 {
     VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
@@ -2148,10 +2187,10 @@ void PatternPieceTool::toggleSeamLine(bool checked)
     showStatus(tr("Seam line visibility changed: ") + (checked ? tr("Hide") : tr("Show")));
 }
 
-/**
- * @brief toggleSeamAllowance - routine to toggle the visibility of the seam allowance.
- * @param checked - true if seam allowance is visible.
- */
+//******************************************************************************
+/// @brief toggleSeamAllowance - routine to toggle the visibility of the seam allowance.
+/// @param checked - true if seam allowance is visible.
+//******************************************************************************
 void PatternPieceTool::toggleSeamAllowance(bool checked)
 {
     VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
@@ -2166,10 +2205,10 @@ void PatternPieceTool::toggleSeamAllowance(bool checked)
     showStatus(tr("Seam allowance visibility changed: ") + (checked ? tr("Show") : tr("Hide")));
 }
 
-/**
- * @brief toggleGrainline - routine to toggle the visibility of the  piece grainline.
- * @param checked - true if grainline is visible.
- */
+//******************************************************************************
+/// @brief toggleGrainline - routine to toggle the visibility of the  piece grainline.
+/// @param checked - true if grainline is visible.
+//******************************************************************************
 void PatternPieceTool::toggleGrainline(bool checked)
 {
     VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
@@ -2184,10 +2223,10 @@ void PatternPieceTool::toggleGrainline(bool checked)
     showStatus(tr("Grainline visibility changed: ") + (checked ? tr("Show") : tr("Hide")));
 }
 
-/**
- * @brief togglePatternLabel - routine to toggle the visibility of the  pattern label.
- * @param checked - true if pattern label is visible.
- */
+//******************************************************************************
+/// @brief togglePatternLabel - routine to toggle the visibility of the  pattern label.
+/// @param checked - true if pattern label is visible.
+//******************************************************************************
 void PatternPieceTool::togglePatternLabel(bool checked)
 {
     VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
@@ -2202,10 +2241,10 @@ void PatternPieceTool::togglePatternLabel(bool checked)
     showStatus(tr("Pattern label visibility changed: ") + (checked ? tr("Show") : tr("Hide")));
 }
 
-/**
- * @brief togglePieceLabel - routine to toggle the visibility of the piece label.
- * @param checked - true if piece label is visible.
- */
+//******************************************************************************
+/// @brief togglePieceLabel - routine to toggle the visibility of the piece label.
+/// @param checked - true if piece label is visible.
+//******************************************************************************
 void PatternPieceTool::togglePieceLabel(bool checked)
 {
     VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
@@ -2220,10 +2259,9 @@ void PatternPieceTool::togglePieceLabel(bool checked)
     showStatus(tr("Piece label visibility changed: ") + (checked ? tr("Show") : tr("Hide")));
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief renamePiece - routine to rename pattern piece.
- */
+//******************************************************************************
+/// @brief renamePiece - routine to rename pattern piece.
+//******************************************************************************
 void PatternPieceTool::renamePiece(VPiece piece)
 {
     QInputDialog *dialog = new QInputDialog(nullptr);

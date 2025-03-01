@@ -1,54 +1,54 @@
-/***************************************************************************
- **  @file   vpiecepath.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//******************************************************************************
+//  @file   vpiecepath.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @copyright
+//  Copyright (C) 2017 - 2023 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//******************************************************************************
 
- /************************************************************************
- **
- **  @file
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   22 11, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//******************************************************************************
+//
+//  @file
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   22 11, 2016
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2016 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//
+//******************************************************************************
 
 #include "vpiecepath.h"
 #include "vpiecepath_p.h"
@@ -132,13 +132,12 @@ VSAPoint CurveEndPoint(VSAPoint candidate, const VContainer *data, const VPieceN
     return candidate;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief indexOfNode return index in list node using id object.
- * @param list list nodes detail.
- * @param id object (arc, point, spline, splinePath) id.
- * @return index in list or -1 id can't find.
- */
+//******************************************************************************
+/// @brief indexOfNode return index in list node using id object.
+/// @param list list nodes detail.
+/// @param id object (arc, point, spline, splinePath) id.
+/// @return index in list or -1 id can't find.
+//******************************************************************************
 int IndexOfNode(const QVector<VPieceNode> &list, quint32 id)
 {
     for (int i = 0; i < list.size(); ++i)
@@ -522,13 +521,12 @@ int VPiecePath::indexOfNode(quint32 id) const
     return indexOfNode(d->m_nodes, id);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief NodeOnEdge return nodes located on edge with index.
- * @param index index of edge.
- * @param p1 first node.
- * @param p2 second node.
- */
+//******************************************************************************
+/// @brief NodeOnEdge return nodes located on edge with index.
+/// @param index index of edge.
+/// @param p1 first node.
+/// @param p2 second node.
+//******************************************************************************
 void VPiecePath::NodeOnEdge(quint32 index, VPieceNode &p1, VPieceNode &p2) const
 {
     const QVector<VPieceNode> list = ListNodePoint();
@@ -561,14 +559,13 @@ bool VPiecePath::Contains(quint32 id) const
     return false;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief OnEdge checks if two poins located on the edge. Edge is line between two points. If between two points
- * located arcs or splines ignore this.
- * @param p1 id first point.
- * @param p2 id second point.
- * @return true - on edge, false - no.
- */
+//******************************************************************************
+/// @brief OnEdge checks if two poins located on the edge. Edge is line between two points. If between two points
+///  located arcs or splines ignore this.
+/// @param p1 id first point.
+/// @param p2 id second point.
+/// @return true - on edge, false - no.
+//******************************************************************************
 bool VPiecePath::OnEdge(quint32 p1, quint32 p2) const
 {
     const QVector<VPieceNode> list = ListNodePoint();
@@ -606,14 +603,13 @@ bool VPiecePath::OnEdge(quint32 p1, quint32 p2) const
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Edge return edge index in detail. Edge is line between two points. If between two points
- * located arcs or splines ignore this.
- * @param p1 id first point.
- * @param p2 id second point.
- * @return edge index or -1 if points are not located on edge
- */
+//******************************************************************************
+/// @brief Edge return edge index in detail. Edge is line between two points. If between two points
+///  located arcs or splines ignore this.
+/// @param p1 id first point.
+/// @param p2 id second point.
+/// @return edge index or -1 if points are not located on edge
+//******************************************************************************
 int VPiecePath::Edge(quint32 p1, quint32 p2) const
 {
     if (OnEdge(p1, p2) == false)
@@ -638,11 +634,10 @@ int VPiecePath::Edge(quint32 p1, quint32 p2) const
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief listNodePoint return list nodes only with points.
- * @return list points node.
- */
+//******************************************************************************
+/// @brief listNodePoint return list nodes only with points.
+/// @return list points node.
+//******************************************************************************
 QVector<VPieceNode> VPiecePath::ListNodePoint() const
 {
     QVector<VPieceNode> list;
@@ -656,12 +651,11 @@ QVector<VPieceNode> VPiecePath::ListNodePoint() const
     return list;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief RemoveEdge return path without edge with index.
- * @param index idex of edge.
- * @return path without edge with index.
- */
+//******************************************************************************
+/// @brief RemoveEdge return path without edge with index.
+/// @param index idex of edge.
+/// @return path without edge with index.
+//******************************************************************************
 VPiecePath VPiecePath::RemoveEdge(quint32 index) const
 {
     VPiecePath path(*this);
