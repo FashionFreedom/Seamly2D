@@ -3755,11 +3755,11 @@ void MainWindow::RestoreCurrentScene()
 /// @param increment determines whether to increment up or down.
 ///
 /// @details
-///  - an increent value of -1 increments down.
-///  - an increent value of +1 increments up.
+///  - an increment value of DraftBlock::MovePrev changes to the previous block;
+///  - an increment value of DraftBlock::MovePrev changes to the next block.
 ///  - incrementimg wraps at the first or last item.
 //-----------------------------------------------------------------------------
-void MainWindow::incrementDraftBlock(const int &increment)
+void MainWindow::changeDraftBlock(DraftBlock increment)
 {
     int index = draftBlockComboBox->currentIndex();
     const int count = draftBlockComboBox->count();
@@ -3769,17 +3769,17 @@ void MainWindow::incrementDraftBlock(const int &increment)
         return;
     }
 
-    if ((index == 0) && (increment == -1))
+    if ((index == 0) && (increment == DraftBlock::MovePrev))
     {
         index = count - 1;
     }
-    else if ((index == count - 1) && (increment == 1))
+    else if ((index == count - 1) && (increment == DraftBlock::MoveNext))
     {
         index = 0;
     }
     else
     {
-        index = index + increment;
+        index = index + static_cast<int>(increment);
     }
 
     draftBlockComboBox->setCurrentIndex(index);
@@ -5762,12 +5762,12 @@ void MainWindow::createActions()
     //Edit Menu
     connect(ui->previousDraftBlock_Action, &QAction::triggered, this, [this]()
     {
-        incrementDraftBlock(-1); // previous draft block
+        changeDraftBlock(DraftBlock::MovePrev);
     });
 
     connect(ui->nextDraftBlock_Action, &QAction::triggered, this, [this]()
     {
-        incrementDraftBlock(1); // next draft block
+        changeDraftBlock(DraftBlock::MoveNext);  
     });
 
     connect(ui->labelTemplateEditor_Action, &QAction::triggered, this, [this]()
