@@ -3779,7 +3779,7 @@ void MainWindow::changeDraftBlock(Selection selection)
     }
     else
     {
-        switch (static_cast<int>(selection))
+        switch (static_cast<signed char>(selection))
         {
             case Selection::Prev:
             {
