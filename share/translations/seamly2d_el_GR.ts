@@ -4686,6 +4686,10 @@ Do you want to download it?</source>
         <source>Point Length and Angle from point %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Can&apos;t create record.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ImageDialog</name>
@@ -7325,6 +7329,14 @@ Press enter to temporarily add it to the list.</source>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Previous Draft Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next Draft Block</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -9923,10 +9935,6 @@ Press enter to temporarily add it to the list.</source>
         <source>Open Image File</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Pattern</source>
-        <translation type="unfinished">Πατρόν</translation>
-    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -11111,6 +11119,22 @@ When unchecked the period is used.</source>
     </message>
     <message>
         <source>Ctrl+9</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous Draft Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+PgUp</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next Draft Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+PgDown</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

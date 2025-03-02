@@ -4251,7 +4251,7 @@ Do you want to download it?</source>
 ¿Quiere descargarla?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4729,6 +4729,10 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Point Length and Angle from point %1</source>
         <translation>Punto Largo y Ángulo desde el punto %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t create record.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5372,7 +5376,7 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
         <translation>Ninguno</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -7381,6 +7385,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>100%</source>
         <translation>100%</translation>
+    </message>
+    <message>
+        <source>Previous Draft Block</source>
+        <translation>Anterior Bloque de borrador</translation>
+    </message>
+    <message>
+        <source>Next Draft Block</source>
+        <translation>Próximo Bloque de borrador</translation>
     </message>
 </context>
 <context>
@@ -9999,10 +10011,6 @@ actualización:</translation>
         <source>Open Image File</source>
         <translation>Abrir archivo de imagen</translation>
     </message>
-    <message>
-        <source>Pattern</source>
-        <translation>Patrón</translation>
-    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -10431,13 +10439,13 @@ actualización:</translation>
         <translation>Pulgadas</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10505,13 +10513,13 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Establece el sonido del clic de selección del nodo.</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11188,6 +11196,22 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Ctrl+9</source>
         <translation>Control+9</translation>
+    </message>
+    <message>
+        <source>Previous Draft Block</source>
+        <translation>Anterior Bloque de borrador</translation>
+    </message>
+    <message>
+        <source>Ctrl+PgUp</source>
+        <translation>Control+Re Pág</translation>
+    </message>
+    <message>
+        <source>Next Draft Block</source>
+        <translation>Próximo Bloque de borrador</translation>
+    </message>
+    <message>
+        <source>Ctrl+PgDown</source>
+        <translation>Control+Av Pág</translation>
     </message>
 </context>
 <context>
@@ -12772,15 +12796,15 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Line_</source>
-        <translation type="unfinished">Línea_</translation>
+        <translation>Línea_</translation>
     </message>
     <message>
         <source>Arc_</source>
-        <translation type="unfinished">Arco_</translation>
+        <translation>Arco_</translation>
     </message>
     <message>
         <source>ElArc_</source>
-        <translation type="unfinished">ElArco_</translation>
+        <translation>ElArco_</translation>
     </message>
     <message>
         <source>Spl_</source>
@@ -12796,15 +12820,15 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished">Longitud</translation>
+        <translation>Longitud</translation>
     </message>
     <message>
         <source>Angle</source>
-        <translation type="unfinished">Ángulo</translation>
+        <translation>Ángulo</translation>
     </message>
     <message>
         <source>AngleLine_</source>
-        <translation type="unfinished">AngleLine_</translation>
+        <translation>AngleLine_</translation>
     </message>
 </context>
 <context>

@@ -409,7 +409,7 @@ Delete layouts which are not needed.</description>
             <line firstPoint="99" id="107" lineColor="black" lineType="solidLine" secondPoint="96"/>
             <line firstPoint="98" id="108" lineColor="black" lineType="solidLine" secondPoint="94"/>
             <line firstPoint="100" id="109" lineColor="black" lineType="solidLine" secondPoint="93"/>
-            <spline angle1="12.2644" angle2="208.953" color="black" id="110" length1="4.83467" length2="0.750071" point1="104" point4="89" type="simpleInteractive"/>
+            <spline angle1="12.2644" angle2="180" color="black" id="110" length1="4.83467" length2="0.750071" point1="104" point4="89" type="simpleInteractive"/>
             <spline angle1="164.47" angle2="0" color="black" id="111" length1="2.91869" length2="0" point1="106" point4="100" type="simpleInteractive"/>
             <line firstPoint="96" id="112" lineColor="black" lineType="solidLine" secondPoint="95"/>
             <line firstPoint="94" id="113" lineColor="black" lineType="solidLine" secondPoint="92"/>
@@ -463,7 +463,7 @@ Delete layouts which are not needed.</description>
             <point id="299" idObject="97" inUse="true" mx="-0.222289" my="0.696084" type="modeling"/>
         </modeling>
         <pieces>
-            <piece closed="1" id="204" mx="27.4551" my="0.587081" name="Collar" seamAllowance="1" version="2" width="1">
+            <piece closed="1" id="204" mx="27.4551" my="0.587081" name="Cuff" seamAllowance="1" version="2" width="1">
                 <nodes>
                     <node idObject="200" type="NodePoint"/>
                     <node idObject="201" type="NodePoint"/>
