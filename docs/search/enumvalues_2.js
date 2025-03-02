@@ -61,7 +61,7 @@ var searchData=
   ['complex_58',['Complex',['../de/d21/namespaceVPE.html#a46160b96cc9be71599e98b85a4093acaa10b4eb76294b70d7fd6df997ff06edb1',1,'VPE']]],
   ['contour_59',['Contour',['../d4/da4/def_8h.html#a136551301e3a6163c0233081fe424653a0b3303e86f36d6d2b1266da88cf76e66',1,'def.h']]],
   ['controlpointspline_60',['ControlPointSpline',['../d4/da4/def_8h.html#a474a10f771dff4181411f5ff47029582a4dbdb1be12f6b21e8f3a00208ca579fc',1,'def.h']]],
-  ['count_61',['count',['../d4/da0/pattern__piece__dialog_8h.html#a99e233a1cb0213a420b931b50195e09ea928f33270be19855038d0245a0fa06a1',1,'Count:&#160;pattern_piece_dialog.h'],['../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8a4905ac9d6a22bdfc1ae096094ce6248d',1,'COUNT:&#160;def.h']]],
+  ['count_61',['count',['../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8a4905ac9d6a22bdfc1ae096094ce6248d',1,'COUNT:&#160;def.h'],['../d4/da0/pattern__piece__dialog_8h.html#a99e233a1cb0213a420b931b50195e09ea928f33270be19855038d0245a0fa06a1',1,'Count:&#160;pattern_piece_dialog.h']]],
   ['cplengths_62',['CPLengths',['../d7/d4c/edit__formula__dialog_8h.html#a81e56be3c50376239982abe0269ec928a8dd1824ee7f27091802e776437458112',1,'edit_formula_dialog.h']]],
   ['creation_63',['Creation',['../d2/d02/visualization_8h.html#afcbd6bdd41f75046052efd922bdc95dca67d5168b4f2b5424a3d118ea9ef99372',1,'visualization.h']]],
   ['cubicbezier_64',['cubicbezier',['../d5/d9d/vgeometrydef_8h.html#a6bf870a878c696639c3936fa7e9729b9aced824f3a4e9dd5feb68da4cb78a3430',1,'CubicBezier:&#160;vgeometrydef.h'],['../d4/da4/def_8h.html#ab8460ab56e3e92e57d3ed3b717492395aced824f3a4e9dd5feb68da4cb78a3430',1,'CubicBezier:&#160;def.h']]],

@@ -17,7 +17,7 @@
 <text text-anchor="start" x="760" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="773" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">AttrReadOnly</text>
 <text text-anchor="start" x="762.5" y="-366.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="773" y="-366.5" font-family="Helvetica,sans-Serif" font-size="10.00">mode</text>
+<text text-anchor="start" x="773" y="-366.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_stage</text>
 <text text-anchor="start" x="760" y="-351.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="773" y="-351.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPattern()</text>
 <text text-anchor="start" x="760" y="-336.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
@@ -35,10 +35,10 @@
 <text text-anchor="start" x="760" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="773" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">getActiveBasePoint()</text>
 <text text-anchor="start" x="760" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="773" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">getActivePatternPieces()</text>
+<text text-anchor="start" x="773" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">getDraftStage()</text>
 <text text-anchor="start" x="760" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="773" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">setXMLContent()</text>
-<text text-anchor="start" x="773" y="-201.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 24 more...</text>
+<text text-anchor="start" x="773" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">setDraftStage()</text>
+<text text-anchor="start" x="773" y="-201.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 26 more...</text>
 <text text-anchor="start" x="760" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="773" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">LiteParseTree()</text>
 <text text-anchor="start" x="760" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
@@ -48,7 +48,7 @@
 <text text-anchor="start" x="762.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="773" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">parseDraftBlockElement()</text>
 <text text-anchor="start" x="762.5" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="773" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00">ParseDrawMode()</text>
+<text text-anchor="start" x="773" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00">ParseDraftStage()</text>
 <text text-anchor="start" x="762.5" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="773" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">parseDraftImages()</text>
 <text text-anchor="start" x="762.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
@@ -99,7 +99,7 @@
 <text text-anchor="start" x="471" y="-1373.5" font-family="Helvetica,sans-Serif" font-size="10.00">TagVariables</text>
 <text text-anchor="start" x="471" y="-1358.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 147 more...</text>
 <text text-anchor="start" x="458" y="-1343.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="471" y="-1343.5" font-family="Helvetica,sans-Serif" font-size="10.00">activeDraftBlock</text>
+<text text-anchor="start" x="471" y="-1343.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_activeDraftBlock</text>
 <text text-anchor="start" x="458" y="-1328.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
 <text text-anchor="start" x="471" y="-1328.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_DefaultLineColor</text>
 <text text-anchor="start" x="458" y="-1313.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>

@@ -1,6 +1,6 @@
 var classVPattern =
 [
-    [ "VPattern", "d4/d43/classVPattern.html#a1eab5b998aec3c0e542d81fa8f8ca28b", null ],
+    [ "VPattern", "d4/d43/classVPattern.html#a6485a8faa7381685abeea9c7c7252577", null ],
     [ "ActiveDrawBoundingRect", "d4/d43/classVPattern.html#a20bd85d98a57ad9e702793573f94d92a", null ],
     [ "addEmptyCustomVariable", "d4/d43/classVPattern.html#a688ddc4a60c07bd37cea5186863f4bbf", null ],
     [ "addEmptyCustomVariableAfter", "d4/d43/classVPattern.html#aea374a0772b036f75afc1d5268b19b6b", null ],
@@ -18,6 +18,7 @@ var classVPattern =
     [ "GetCurrentAlphabet", "d4/d43/classVPattern.html#a44338b819f687039815556d0006a3a08", null ],
     [ "GetDefCustomHeight", "d4/d43/classVPattern.html#a2ea567f21f963b131e58568762ae9b94", null ],
     [ "GetDefCustomSize", "d4/d43/classVPattern.html#a069fecbafa30c34523e6e3a0609b5033", null ],
+    [ "getDraftStage", "d4/d43/classVPattern.html#a499a45f08734ccc54fe35112e6464dc7", null ],
     [ "GetLabelBase", "d4/d43/classVPattern.html#a127db4af838b0a76a37c14d22f325451", null ],
     [ "IncrementReferens", "d4/d43/classVPattern.html#acf2548e54b6c3073fa3181cded586ae9", null ],
     [ "IsDefCustom", "d4/d43/classVPattern.html#ab137433052e30764de02adfd625457b3", null ],
@@ -32,7 +33,7 @@ var classVPattern =
     [ "parseCurrentDraftBlock", "d4/d43/classVPattern.html#a4049c1ad07487c6e65fe5fdcea087a08", null ],
     [ "parseDraftBlockElement", "d4/d43/classVPattern.html#ad3408fd765ead3bee06f5741dd3943b2", null ],
     [ "parseDraftImages", "d4/d43/classVPattern.html#a9ea4a26b3f151c56ad72cb4f4676989c", null ],
-    [ "ParseDrawMode", "d4/d43/classVPattern.html#afbe69479d7aac457590223314d9b9c07", null ],
+    [ "ParseDraftStage", "d4/d43/classVPattern.html#a32507f854f6e5990363789aa9e07a799", null ],
     [ "ParseEllipticalArcElement", "d4/d43/classVPattern.html#acfe8e8fdef3053d434ea9a18e738e694", null ],
     [ "parseImageElement", "d4/d43/classVPattern.html#ad63c4cc286080152c756034861e4bc6d", null ],
     [ "parseIntersectXYTool", "d4/d43/classVPattern.html#aca783bf49194acfc73ef581d2ca831d5", null ],
@@ -103,6 +104,7 @@ var classVPattern =
     [ "SetDefCustom", "d4/d43/classVPattern.html#ae72618baa411af70b212d23967fc7160", null ],
     [ "SetDefCustomHeight", "d4/d43/classVPattern.html#ae8a2f6138b1623468e079a5b9430997d", null ],
     [ "SetDefCustomSize", "d4/d43/classVPattern.html#a008814a9d8d82c04a96fe5832d1d469b", null ],
+    [ "setDraftStage", "d4/d43/classVPattern.html#a65c1083fa0c358c33308645cec1329f1", null ],
     [ "SetReadOnly", "d4/d43/classVPattern.html#aaa819ebe90fa73ddf6e49c78161b0056", null ],
     [ "setStatusMessage", "d4/d43/classVPattern.html#ae0ad223c1bfab4b59befad42205a7a84", null ],
     [ "setVariableDescription", "d4/d43/classVPattern.html#a952c7b3be6a63a9c337bd2cafc55bbb5", null ],
@@ -117,6 +119,6 @@ var classVPattern =
     [ "AttrReadOnly", "d4/d43/classVPattern.html#a1bc942189e2a4247bb420c557e65dac1", null ],
     [ "data", "d4/d43/classVPattern.html#a39fa904849994626f4fbbbe2071d5381", null ],
     [ "draftScene", "d4/d43/classVPattern.html#a048ef2635e666e8fde5b35955fecc012", null ],
-    [ "mode", "d4/d43/classVPattern.html#a1e24bfa57d1cf090908f88f16d20ca56", null ],
+    [ "m_stage", "d4/d43/classVPattern.html#aed8ba89f005638d9180ec0c2ad6969ca", null ],
     [ "pieceScene", "d4/d43/classVPattern.html#a148e6acd29726fecb2203dde2d719a2b", null ]
 ];

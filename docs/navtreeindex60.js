@@ -1,5 +1,10 @@
 var NAVTREEINDEX60 =
 {
+"dd/df1/classVToolTriangle.html#a18abceb4169e5203ba9289dadf414fe6":[1,0,435,16],
+"dd/df1/classVToolTriangle.html#a1fb885adb6fbdd01ceb873da4592a7ef":[1,0,435,28],
+"dd/df1/classVToolTriangle.html#a2f80cbc340774fd5f7ec2d58a5193d73":[1,0,435,22],
+"dd/df1/classVToolTriangle.html#a305ea03ee587efbee018df963d6ee29e":[1,0,435,13],
+"dd/df1/classVToolTriangle.html#a3442db0c43c41ea3ff069ec381814076":[1,0,435,21],
 "dd/df1/classVToolTriangle.html#a377f632b36c96d0a912aa8ebe81ecca1":[1,0,435,29],
 "dd/df1/classVToolTriangle.html#a43aba13cc5f1c86fc12e84f76456bc9a":[1,0,435,15],
 "dd/df1/classVToolTriangle.html#a5102909bdbc42040046da8b781c0d9ec":[1,0,435,2],
@@ -244,10 +249,5 @@ var NAVTREEINDEX60 =
 "de/d0f/classVCommonSettings.html#a22e6e489a66f75b96466608dba86f850":[1,0,254,55],
 "de/d0f/classVCommonSettings.html#a236f7c15f770ac674b8addf971793019":[1,0,254,16],
 "de/d0f/classVCommonSettings.html#a23d9a6403ef4d3a84c63484ae97e114d":[1,0,254,2],
-"de/d0f/classVCommonSettings.html#a2499e560fcccfbb996b57ecc84081849":[1,0,254,28],
-"de/d0f/classVCommonSettings.html#a24c64fe1da2bf137f8e6df30c7358ddd":[1,0,254,91],
-"de/d0f/classVCommonSettings.html#a252aeeebf95efd3013688e0b4773d797":[1,0,254,230],
-"de/d0f/classVCommonSettings.html#a256b75d4b4424b45d59e8049a8e782d7":[1,0,254,147],
-"de/d0f/classVCommonSettings.html#a260ca86744cb71ab98ae33d8a4e2c584":[1,0,254,262],
-"de/d0f/classVCommonSettings.html#a2741fcb370e3cef509ea7debf1b8c2ca":[1,0,254,198]
+"de/d0f/classVCommonSettings.html#a2499e560fcccfbb996b57ecc84081849":[1,0,254,28]
 };

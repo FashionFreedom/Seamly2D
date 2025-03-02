@@ -213,6 +213,10 @@ var def_8h =
       [ "Piece", "d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2afaa5d512bf83495b68d0ffa20f79804dfc", null ],
       [ "Unknown", "d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2afa88183b946cc5f0e8c96b2e66e1c74a7e", null ]
     ] ],
+    [ "Selection", "d4/da4/def_8h.html#ac65c2114e9f558d594c56c157b7ec954", [
+      [ "Prev", "d4/da4/def_8h.html#ac65c2114e9f558d594c56c157b7ec954a14230d11143a03f4330c6433d5032a9d", null ],
+      [ "Next", "d4/da4/def_8h.html#ac65c2114e9f558d594c56c157b7ec954a10ac3d04253ef7e1ddc73e6091c0cd55", null ]
+    ] ],
     [ "SelectionType", "d4/da4/def_8h.html#ab8c951c98d26f226ee3fd55d9e80a241", [
       [ "ByMousePress", "d4/da4/def_8h.html#ab8c951c98d26f226ee3fd55d9e80a241a8c769025d3274255a72fa16ac0716495", null ],
       [ "ByMouseRelease", "d4/da4/def_8h.html#ab8c951c98d26f226ee3fd55d9e80a241a36229f8b8a947054c77f27000d893a74", null ]

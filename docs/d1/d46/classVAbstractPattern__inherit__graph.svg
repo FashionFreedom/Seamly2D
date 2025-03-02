@@ -82,7 +82,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="80.5" y="-1472" font-family="Helvetica,sans-Serif" font-size="10.00">TagVariables</text>
 <text text-anchor="start" x="80.5" y="-1457" font-family="Helvetica,sans-Serif" font-size="10.00">and 147 more...</text>
 <text text-anchor="start" x="67.5" y="-1442" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="80.5" y="-1442" font-family="Helvetica,sans-Serif" font-size="10.00">activeDraftBlock</text>
+<text text-anchor="start" x="80.5" y="-1442" font-family="Helvetica,sans-Serif" font-size="10.00">m_activeDraftBlock</text>
 <text text-anchor="start" x="67.5" y="-1427" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
 <text text-anchor="start" x="80.5" y="-1427" font-family="Helvetica,sans-Serif" font-size="10.00">m_DefaultLineColor</text>
 <text text-anchor="start" x="67.5" y="-1412" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
@@ -266,7 +266,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="152" y="-412" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="162.5" y="-412" font-family="Helvetica,sans-Serif" font-size="10.00">data</text>
 <text text-anchor="start" x="152" y="-397" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="162.5" y="-397" font-family="Helvetica,sans-Serif" font-size="10.00">mode</text>
+<text text-anchor="start" x="162.5" y="-397" font-family="Helvetica,sans-Serif" font-size="10.00">m_stage</text>
 <text text-anchor="start" x="152" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="162.5" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">draftScene</text>
 <text text-anchor="start" x="152" y="-367" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
@@ -288,10 +288,10 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="149.5" y="-247" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="162.5" y="-247" font-family="Helvetica,sans-Serif" font-size="10.00">getActiveBasePoint()</text>
 <text text-anchor="start" x="149.5" y="-232" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="162.5" y="-232" font-family="Helvetica,sans-Serif" font-size="10.00">getActivePatternPieces()</text>
+<text text-anchor="start" x="162.5" y="-232" font-family="Helvetica,sans-Serif" font-size="10.00">getDraftStage()</text>
 <text text-anchor="start" x="149.5" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="162.5" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">setXMLContent()</text>
-<text text-anchor="start" x="162.5" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">and 24 more...</text>
+<text text-anchor="start" x="162.5" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">setDraftStage()</text>
+<text text-anchor="start" x="162.5" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">and 26 more...</text>
 <text text-anchor="start" x="149.5" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="162.5" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">LiteParseTree()</text>
 <text text-anchor="start" x="149.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
@@ -301,7 +301,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="152" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="162.5" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">parseDraftBlockElement()</text>
 <text text-anchor="start" x="152" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="162.5" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">ParseDrawMode()</text>
+<text text-anchor="start" x="162.5" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">ParseDraftStage()</text>
 <text text-anchor="start" x="152" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="162.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">parseDraftImages()</text>
 <text text-anchor="start" x="152" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>

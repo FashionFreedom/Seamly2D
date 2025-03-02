@@ -1,5 +1,10 @@
 var NAVTREEINDEX22 =
 {
+"d5/d2c/vpatternconverter_8cpp.html#a87ae90e98ae6d0a26bd1ab0114c66add":[2,0,0,1,1,1,14,27],
+"d5/d2c/vpatternconverter_8cpp.html#a8ab04945ef57fc6974b4e63004853cdd":[2,0,0,1,1,1,14,91],
+"d5/d2c/vpatternconverter_8cpp.html#a8b2a914ec2d1bb6911bc1d94a85f78be":[2,0,0,1,1,1,14,31],
+"d5/d2c/vpatternconverter_8cpp.html#a8ef8dab2559393c0d3216affc8547b87":[2,0,0,1,1,1,14,142],
+"d5/d2c/vpatternconverter_8cpp.html#a900e6f1add7f138e895808569edb8e9e":[2,0,0,1,1,1,14,51],
 "d5/d2c/vpatternconverter_8cpp.html#a944121af05ae01fbc18c062c00aa8b3a":[2,0,0,1,1,1,14,49],
 "d5/d2c/vpatternconverter_8cpp.html#a944cbc5221526649dcf6acac03b80448":[2,0,0,1,1,1,14,17],
 "d5/d2c/vpatternconverter_8cpp.html#a98c15afaa36c3a9c6dacc4efcbd740b6":[2,0,0,1,1,1,14,111],
@@ -244,10 +249,5 @@ var NAVTREEINDEX22 =
 "d5/d41/classPatternPieceDialog.html#aa663544d60f67bbd6b0fc0cbe4ce6f5b":[1,0,140,123],
 "d5/d41/classPatternPieceDialog.html#aa7eae1d085a23f39a57cd424936d4a5e":[1,0,140,156],
 "d5/d41/classPatternPieceDialog.html#aa98e145e2c6e19c5c790d45307076f01":[1,0,140,51],
-"d5/d41/classPatternPieceDialog.html#aaa166326487eb22f5cf9cc53ff1df44f":[1,0,140,0],
-"d5/d41/classPatternPieceDialog.html#aaaf29bc5ac330e7460736813bfcd8418":[1,0,140,80],
-"d5/d41/classPatternPieceDialog.html#aab9391d424cf313b35d666a6afb9d90b":[1,0,140,148],
-"d5/d41/classPatternPieceDialog.html#aac39aea636670069402c68335584a8f4":[1,0,140,56],
-"d5/d41/classPatternPieceDialog.html#aae74da4e4fbcc51ae73b844a54bc9ee4":[1,0,140,17],
-"d5/d41/classPatternPieceDialog.html#aae8045f9f250e428d660a7a912a8fe95":[1,0,140,65]
+"d5/d41/classPatternPieceDialog.html#aaa166326487eb22f5cf9cc53ff1df44f":[1,0,140,0]
 };

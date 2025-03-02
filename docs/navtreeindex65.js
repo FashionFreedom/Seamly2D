@@ -1,5 +1,10 @@
 var NAVTREEINDEX65 =
 {
+"de/d98/classVPE_1_1VPointFProperty.html#af2e8400418626dd82f73dc5029523d98":[1,0,2,21,9],
+"de/d98/classVPE_1_1VPointFProperty.html#af53aa245559efa4656ca2860b8b330ae":[0,0,23,21,2],
+"de/d98/classVPE_1_1VPointFProperty.html#af53aa245559efa4656ca2860b8b330ae":[1,0,2,21,2],
+"de/d9c/vistoolrotation_8h.html":[2,0,0,1,13,3,0,0,9],
+"de/d9c/vistoolrotation_8h_source.html":[2,0,0,1,13,3,0,0,9],
 "de/da1/about2d__dialog_8h.html":[2,0,0,0,0,1,2],
 "de/da1/about2d__dialog_8h_source.html":[2,0,0,0,0,1,2],
 "de/da4/vistoolmirrorbyaxis_8cpp.html":[2,0,0,1,13,3,0,0,2],
@@ -244,10 +249,5 @@ var NAVTREEINDEX65 =
 "de/dbd/classExportLayoutDialog.html#aa3d24041e9e4a364bed2e5a9e2ce53de":[1,0,92,14],
 "de/dbd/classExportLayoutDialog.html#aaa85fad90dfbc512e245204cda87357b":[1,0,92,17],
 "de/dbd/classExportLayoutDialog.html#aac5130ef046671ad9da4c8ec77c6bd18":[1,0,92,23],
-"de/dbd/classExportLayoutDialog.html#ac9c8759ec741bde4ea85640fc4a68047":[1,0,92,27],
-"de/dbd/classExportLayoutDialog.html#acddbbe1458589ca2c1fdb96ce369b225":[1,0,92,22],
-"de/dbd/classExportLayoutDialog.html#acf55ba320421e4004141423618fe8c36":[1,0,92,16],
-"de/dbd/classExportLayoutDialog.html#ad750b12f032ee99f3f0b1db737938669":[1,0,92,1],
-"de/dbd/classExportLayoutDialog.html#ae8ddcf722aa88bd4f6a7ba71c2a8f846":[1,0,92,11],
-"de/dbd/classExportLayoutDialog.html#af6faf332613a178772707ddf9d76ca8d":[1,0,92,7]
+"de/dbd/classExportLayoutDialog.html#ac9c8759ec741bde4ea85640fc4a68047":[1,0,92,27]
 };
