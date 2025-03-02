@@ -3748,18 +3748,18 @@ void MainWindow::RestoreCurrentScene()
 }
 
 //-----------------------------------------------------------------------------
-/// @brief incrementDraftBlock Switch draft block incrementally.
+/// @brief incrementDraftBlock Change draft block incrementally.
 ///
-/// This method switches the current draft block by incrementing the combobox box current item up or down.
+/// This method changes the current draft block by selecting the previous or next combobox box item.
 ///
-/// @param increment determines whether to increment up or down.
+/// @param selection determines whether to select previous or next draft block.
 ///
 /// @details
-///  - an increment value of DraftBlock::MovePrev changes to the previous block;
-///  - an increment value of DraftBlock::MovePrev changes to the next block.
-///  - incrementimg wraps at the first or last item.
+///  - an selection value of Selection::Prev selects the previous block;
+///  - an selection value of Selection::Next selects the next block.
+///  - selection wraps at the first or last item.
 //-----------------------------------------------------------------------------
-void MainWindow::changeDraftBlock(DraftBlock increment)
+void MainWindow::changeDraftBlock(Selection selection)
 {
     int index = draftBlockComboBox->currentIndex();
     const int count = draftBlockComboBox->count();
@@ -3769,17 +3769,31 @@ void MainWindow::changeDraftBlock(DraftBlock increment)
         return;
     }
 
-    if ((index == 0) && (increment == DraftBlock::MovePrev))
+    if ((index == 0) && (selection == Selection::Prev))
     {
         index = count - 1;
     }
-    else if ((index == count - 1) && (increment == DraftBlock::MoveNext))
+    else if ((index == count - 1) && (selection == Selection::Next))
     {
         index = 0;
     }
     else
     {
-        index = index + static_cast<int>(increment);
+        switch (static_cast<int>(selection))
+        {
+            case Selection::Prev:
+            {
+                index = index - 1;
+                break;
+            }
+            case Selection::Next:
+            {
+                index = index + 1;
+                break;
+            }
+            default:
+                break;
+        }
     }
 
     draftBlockComboBox->setCurrentIndex(index);
@@ -5762,12 +5776,12 @@ void MainWindow::createActions()
     //Edit Menu
     connect(ui->previousDraftBlock_Action, &QAction::triggered, this, [this]()
     {
-        changeDraftBlock(DraftBlock::MovePrev);
+        changeDraftBlock(Selection::Prev);
     });
 
     connect(ui->nextDraftBlock_Action, &QAction::triggered, this, [this]()
     {
-        changeDraftBlock(DraftBlock::MoveNext);  
+        changeDraftBlock(Selection::Next);
     });
 
     connect(ui->labelTemplateEditor_Action, &QAction::triggered, this, [this]()
