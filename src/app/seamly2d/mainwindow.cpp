@@ -3779,20 +3779,13 @@ void MainWindow::changeDraftBlock(Selection selection)
     }
     else
     {
-        switch (static_cast<signed char>(selection))
+        if (selection == Selection::Prev)
         {
-            case Selection::Prev:
-            {
-                index = index - 1;
-                break;
-            }
-            case Selection::Next:
-            {
-                index = index + 1;
-                break;
-            }
-            default:
-                break;
+            --index;
+        }
+        else if (selection == Selection::Next)
+        {
+            ++index;
         }
     }
 
