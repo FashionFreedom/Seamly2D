@@ -239,7 +239,7 @@ private slots:
 
     void handleNewLayout(bool checked);
 
-    void changeDraftBlock(DraftBlock increment);
+    void changeDraftBlock(Selection selection);
 
     void showDraftMode(bool checked);
     void showPieceMode(bool checked);

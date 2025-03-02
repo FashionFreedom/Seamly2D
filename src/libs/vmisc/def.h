@@ -62,7 +62,7 @@ class QGraphicsItem;
 
 #define HANDLE_SIZE 12
 
-enum DraftBlock : signed char {MovePrev = -1, MoveNext = 1};
+enum class Selection : signed char {Prev = -1, Next = 1};
 
 // Bit flags to identify parent dialog type for the Edit Formula dialog and which tabs to hide
 enum DialogSource : quint16
