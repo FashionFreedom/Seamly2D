@@ -4691,6 +4691,10 @@ Possibly the file is already being downloaded.</source>
         <source>Point Length and Angle from point %1</source>
         <translation>Punt Lengte en Hoek van punt %1</translation>
     </message>
+    <message>
+        <source>Can&apos;t create record.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ImageDialog</name>
@@ -7332,6 +7336,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>100%</source>
         <translation>100%</translation>
+    </message>
+    <message>
+        <source>Previous Draft Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next Draft Block</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11116,6 +11128,22 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Ctrl+9</source>
         <translation>Ctrl+9</translation>
+    </message>
+    <message>
+        <source>Previous Draft Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+PgUp</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next Draft Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+PgDown</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -503,7 +503,7 @@ public slots:
 
 protected:
     /** @brief activeBlockName name current pattern peace. */
-    QString        activeDraftBlock;
+    QString        m_activeDraftBlock;
 
     QString        m_DefaultLineColor;
     qreal          m_DefaultLineWeight;

@@ -183,6 +183,9 @@
     <property name="title">
      <string>Edit</string>
     </property>
+    <addaction name="separator"/>
+    <addaction name="previousDraftBlock_Action"/>
+    <addaction name="nextDraftBlock_Action"/>
    </widget>
    <widget class="QMenu" name="tools_Menu">
     <property name="title">
@@ -4755,6 +4758,28 @@
    </property>
    <property name="shortcut">
     <string>Alt+I</string>
+   </property>
+  </action>
+  <action name="previousDraftBlock_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Previous Draft Block</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Ctrl+PgUp</string>
+   </property>
+  </action>
+  <action name="nextDraftBlock_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Next Draft Block</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Ctrl+PgDown</string>
    </property>
   </action>
  </widget>

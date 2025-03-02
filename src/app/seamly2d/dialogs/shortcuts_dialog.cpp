@@ -83,11 +83,15 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
     const QString edit = QString("<table style=font-size:11pt; font-weight:600>"
                                     "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
                                     "<tr><td width = 50%>%2       </td><td></td>%3</tr>"
-                                    "<tr><td width = 50%>%4       </td><td>%5<br></td></tr>"
+                                    "<tr><td width = 50%>%4       </td><td></td>%5</tr>"
+                                    "<tr><td width = 50%>%6       </td><td></td>%7</tr>"
+                                    "<tr><td width = 50%>%8       </td><td>%9<br></td></tr>"
                                  "</table>")
                                  .arg(tr("Edit"))                                            //1
                                  .arg(tr("Undo")).arg(tr("Ctrl+Z"))                          //2 & 3
-                                 .arg(tr("Redo")).arg(tr("Ctrl+Y"));                         //4 & 5
+                                 .arg(tr("Redo")).arg(tr("Ctrl+Y"))                          //4 & 5
+                                 .arg(tr("Previous Draft Block")).arg(tr("Ctrl+PgUp"))       //6 & 7
+                                 .arg(tr("Next Draft Block")).arg(tr("Ctrl+PgDown"));        //8 & 9
 
     const QString view = QString("<table style=font-size:11pt; font-weight:600>"
                                     "<tr><td width = 50%><b>%1</b></td><td></td></tr>"

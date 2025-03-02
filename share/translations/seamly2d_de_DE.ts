@@ -4500,7 +4500,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Spl_</source>
-        <translation type="unfinished">Spl_</translation>
+        <translation>Spl_</translation>
     </message>
 </context>
 <context>
@@ -4674,20 +4674,24 @@ Possibly the file is already being downloaded.</source>
         <translation>Punkt Länge und Winkel von Punkt %1</translation>
     </message>
     <message>
+        <source>Can&apos;t create record.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Spl_</source>
-        <translation type="unfinished">Spl_</translation>
+        <translation>Spl_</translation>
     </message>
     <message>
         <source>Arc_</source>
-        <translation type="unfinished">Bogen_</translation>
+        <translation>Bogen_</translation>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation type="unfinished">SplPfad_</translation>
+        <translation>SplPfad_</translation>
     </message>
     <message>
         <source>ElArc_</source>
-        <translation type="unfinished">ElBogen_</translation>
+        <translation>ElBogen_</translation>
     </message>
 </context>
 <context>
@@ -7342,6 +7346,14 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>100%</source>
         <translation>100%</translation>
     </message>
+    <message>
+        <source>Previous Draft Block</source>
+        <translation>Vorheriger Entwurfsblock</translation>
+    </message>
+    <message>
+        <source>Next Draft Block</source>
+        <translation>Nächster Entwurfsblock</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -9935,11 +9947,11 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>Images</source>
-        <translation type="unfinished">Bilder</translation>
+        <translation>Bilder</translation>
     </message>
     <message>
         <source>Open Image File</source>
-        <translation type="unfinished">Bilddatei öffnen</translation>
+        <translation>Bilddatei öffnen</translation>
     </message>
 </context>
 <context>
@@ -11127,6 +11139,22 @@ You can change this setting in the Seamly2D preferences.</source>
         <source>Ctrl+9</source>
         <translation>Strg+9</translation>
     </message>
+    <message>
+        <source>Previous Draft Block</source>
+        <translation>Vorheriger Entwurfsblock</translation>
+    </message>
+    <message>
+        <source>Ctrl+PgUp</source>
+        <translation>Strg+Bild aufwärts</translation>
+    </message>
+    <message>
+        <source>Next Draft Block</source>
+        <translation>Nächster Entwurfsblock</translation>
+    </message>
+    <message>
+        <source>Ctrl+PgDown</source>
+        <translation>Strg+Bild abwärts</translation>
+    </message>
 </context>
 <context>
     <name>ShowDoublePointName</name>
@@ -11901,7 +11929,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Line_</source>
-        <translation type="unfinished">Linie_</translation>
+        <translation>Linie_</translation>
     </message>
 </context>
 <context>
@@ -12722,27 +12750,27 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Line_</source>
-        <translation type="unfinished">Linie_</translation>
+        <translation>Linie_</translation>
     </message>
     <message>
         <source>Arc_</source>
-        <translation type="unfinished">Bogen_</translation>
+        <translation>Bogen_</translation>
     </message>
     <message>
         <source>ElArc_</source>
-        <translation type="unfinished">ElBogen_</translation>
+        <translation>ElBogen_</translation>
     </message>
     <message>
         <source>Spl_</source>
-        <translation type="unfinished">Spl_</translation>
+        <translation>Spl_</translation>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation type="unfinished">SplPfad_</translation>
+        <translation>SplPfad_</translation>
     </message>
     <message>
         <source>AngleLine_</source>
-        <translation type="unfinished">WinkelLinie_</translation>
+        <translation>WinkelLinie_</translation>
     </message>
 </context>
 <context>
@@ -13764,19 +13792,19 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Arc_</source>
-        <translation type="unfinished">Bogen_</translation>
+        <translation>Bogen_</translation>
     </message>
     <message>
         <source>Spl_</source>
-        <translation type="unfinished">Spl_</translation>
+        <translation>Spl_</translation>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation type="unfinished">SplPfad_</translation>
+        <translation>SplPfad_</translation>
     </message>
     <message>
         <source>Line_</source>
-        <translation type="unfinished">Linie_</translation>
+        <translation>Linie_</translation>
     </message>
 </context>
 <context>
@@ -15161,27 +15189,27 @@ Example: fmod(3.3;2) = 1.3</comment>
     <message>
         <source>SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation type="unfinished">SplPfad</translation>
+        <translation>SplPfad</translation>
     </message>
     <message>
         <source>Angle1SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation type="unfinished">Winkel1SplPfad</translation>
+        <translation>Winkel1SplPfad</translation>
     </message>
     <message>
         <source>Angle2SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation type="unfinished">Winkel2SplPfad</translation>
+        <translation>Winkel2SplPfad</translation>
     </message>
     <message>
         <source>C1LengthSplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation type="unfinished">C1LängeSplPfad</translation>
+        <translation>C1LängeSplPfad</translation>
     </message>
     <message>
         <source>C2LengthSplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation type="unfinished">C2LängeSplPfad</translation>
+        <translation>C2LängeSplPfad</translation>
     </message>
 </context>
 <context>
