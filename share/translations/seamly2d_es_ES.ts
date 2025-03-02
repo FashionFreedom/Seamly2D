@@ -10011,10 +10011,6 @@ actualización:</translation>
         <source>Open Image File</source>
         <translation>Abrir archivo de imagen</translation>
     </message>
-    <message>
-        <source>Pattern</source>
-        <translation>Patrón</translation>
-    </message>
 </context>
 <context>
     <name>QmuParser</name>

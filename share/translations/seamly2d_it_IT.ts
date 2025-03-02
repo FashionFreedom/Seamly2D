@@ -9938,10 +9938,6 @@ Press enter to temporarily add it to the list.</source>
         <source>Open Image File</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Pattern</source>
-        <translation type="unfinished">Modello</translation>
-    </message>
 </context>
 <context>
     <name>QmuParser</name>
