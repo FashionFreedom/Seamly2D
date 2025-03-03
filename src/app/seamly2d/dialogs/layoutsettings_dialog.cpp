@@ -612,7 +612,7 @@ void LayoutSettingsDialog::DialogAccepted()
             {
                 QMessageBox::StandardButton answer;
                 answer = QMessageBox::question(this, tr("Wrong fields."),
-                                               tr("Margins go beyond printing. \n\nApply settings anyway?"),
+                                               tr("Margins go beyond printing. Apply settings anyway?"),
                                                QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
                 if (answer == QMessageBox::No)
                 {

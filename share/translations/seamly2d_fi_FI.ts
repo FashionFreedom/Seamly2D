@@ -3758,6 +3758,14 @@ p, li { white-space: pre-wrap; }
         <source>Curve angle</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>
@@ -4172,25 +4180,13 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>FvUpdater</name>
     <message>
-        <source>Feed download failed: %1.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="unfinished">Virhe</translation>
-    </message>
-    <message>
-        <source>Information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unable to open file
 %1
 for writing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4204,12 +4200,24 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Feed download failed: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>No new releases available.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>A new release %1 is available.
 Do you want to download it?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Virhe</translation>
+    </message>
+    <message>
+        <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5195,12 +5203,6 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Laskeva alue</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
-
-Apply settings anyway?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Centimeters</source>
         <translation>Senttimetriä</translation>
     </message>
@@ -5322,6 +5324,10 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Millimeters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Margins go beyond printing. Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

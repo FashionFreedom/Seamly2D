@@ -117,7 +117,7 @@
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Название:</translation>
     </message>
     <message>
         <source>Positive sign:</source>
@@ -202,7 +202,7 @@
     </message>
     <message>
         <source>Name:</source>
-        <translation>Наименование:</translation>
+        <translation>Название:</translation>
     </message>
 </context>
 <context>
@@ -1124,7 +1124,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name:</source>
-        <translation></translation>
+        <translation>Название:</translation>
     </message>
 </context>
 <context>
@@ -3782,6 +3782,14 @@ p, li { white-space: pre-wrap; }
         <source>Curve angle</source>
         <translation>Угол кривой</translation>
     </message>
+    <message>
+        <source>Number</source>
+        <translation>Число</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Пользовательские</translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>
@@ -4198,18 +4206,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>FvUpdater</name>
     <message>
-        <source>Feed download failed: %1.</source>
-        <translation>Ошибка скачивания: %1.</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Ошибка</translation>
-    </message>
-    <message>
-        <source>Information</source>
-        <translation>Информация</translation>
-    </message>
-    <message>
         <source>Unable to open file
 %1
 for writing</source>
@@ -4218,28 +4214,39 @@ for writing</source>
 для записи</translation>
     </message>
     <message>
+        <source>Unable to get exclusive access to file
+%1
+Possibly the file is already being downloaded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>File download failed: %1.</source>
-        <translation>Не удалось загрузить файл: %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Download has started, the installer will open once it&apos;s finished downloading</source>
-        <translation>Загрузка началась, установщик откроется после завершения загрузки</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Feed download failed: %1.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>No new releases available.</source>
-        <translation>Новых обновлений нет.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>A new release %1 is available.
 Do you want to download it?</source>
-        <translation>Появилось новое обновление %1.
-Хотите скачать его?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
-%1
-Possibly the file is already being downloaded.</source>
-        <translation type="unfinished"></translation>
+        <source>Error</source>
+        <translation>Ошибка</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Информация</translation>
     </message>
 </context>
 <context>
@@ -4740,7 +4747,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Название:</translation>
     </message>
     <message>
         <source>Lock Image:</source>
@@ -5352,9 +5359,7 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Миллиметры</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
-
-Apply settings anyway?</source>
+        <source>Margins go beyond printing. Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10398,13 +10403,13 @@ Press enter to temporarily add it to the list.</source>
         <translation>Дюймы</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10472,13 +10477,13 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Устанавливает звук щелчка при выборе узла.</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
