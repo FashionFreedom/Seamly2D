@@ -635,7 +635,7 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<Meas
             }
             else
             {
-                number = qApp->translateVariables()->MNumber(itemName->text());
+                number = qApp->translateVariables()->MNumber(iMap.value()->GetName());
                 imgUrl = QString(":/diagrams/%1.svg").arg(MapDiagrams(qApp->translateVariables(), number));
                 itemNumber->setText(number);
                 itemFullName->setText(qApp->translateVariables()->guiText(iMap.value()->GetName()));
