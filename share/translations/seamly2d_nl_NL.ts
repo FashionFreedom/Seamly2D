@@ -3763,6 +3763,14 @@ p, li { white-space: pre-wrap; }
         <source>Curve angle</source>
         <translation>Hoek van de kromme</translation>
     </message>
+    <message>
+        <source>Number</source>
+        <translation type="unfinished">Nummer</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Op maat</translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>
@@ -4177,45 +4185,45 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>FvUpdater</name>
     <message>
-        <source>Feed download failed: %1.</source>
-        <translation>Doorstroming van download is mislukt: %1.</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Fout</translation>
-    </message>
-    <message>
-        <source>Information</source>
-        <translation>Informatie</translation>
-    </message>
-    <message>
         <source>Unable to open file
 %1
 for writing</source>
         <translation>Kan bestand %1 niet openen voor schrijven</translation>
     </message>
     <message>
+        <source>Unable to get exclusive access to file
+%1
+Possibly the file is already being downloaded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>File download failed: %1.</source>
-        <translation>Download bestand mislukt: %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Download has started, the installer will open once it&apos;s finished downloading</source>
-        <translation>Download gestart, het installatieprogramma zal openen als de download volledig klaar is</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Feed download failed: %1.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>No new releases available.</source>
-        <translation>Er zijn geen nieuwe versies beschikbaar.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>A new release %1 is available.
 Do you want to download it?</source>
-        <translation>Een nieuwe versie %1 is beschikbaar. Wil je het downloaden?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
-%1
-Possibly the file is already being downloaded.</source>
-        <translation type="unfinished"></translation>
+        <source>Error</source>
+        <translation type="unfinished">Fout</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Informatie</translation>
     </message>
 </context>
 <context>
@@ -5327,9 +5335,7 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Millimeters</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
-
-Apply settings anyway?</source>
+        <source>Margins go beyond printing. Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

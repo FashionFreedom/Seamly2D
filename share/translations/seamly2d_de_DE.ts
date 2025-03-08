@@ -177,7 +177,7 @@
     <name>AddImage</name>
     <message>
         <source>add image</source>
-        <translation type="unfinished"></translation>
+        <translation>Bild hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -3760,6 +3760,14 @@ p, li { white-space: pre-wrap; }
         <source>Curve angle</source>
         <translation>Kurvenwinkel</translation>
     </message>
+    <message>
+        <source>Number</source>
+        <translation>Nummer</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Benutzerdefiniert</translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>
@@ -4174,8 +4182,40 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>FvUpdater</name>
     <message>
+        <source>Unable to open file
+%1
+for writing</source>
+        <translation>Date %1 kann nicht zum schreiben geöffnet werden</translation>
+    </message>
+    <message>
+        <source>Unable to get exclusive access to file
+%1
+Possibly the file is already being downloaded.</source>
+        <translation>Exklusiver Zugriff auf die Datei kann nicht gewährt werden
+%1
+Möglicherweise wird die Datei bereits heruntergeladen.</translation>
+    </message>
+    <message>
+        <source>File download failed: %1.</source>
+        <translation>Datei-Download fehlgeschlagen: %1.</translation>
+    </message>
+    <message>
+        <source>Download has started, the installer will open once it&apos;s finished downloading</source>
+        <translation>Der Download hat begonnen, das Installationsprogramm wird geöffnet, sobald der Download abgeschlossen ist</translation>
+    </message>
+    <message>
         <source>Feed download failed: %1.</source>
-        <translation>Feed download ist fehlgeschlagen: %1.</translation>
+        <translation>Feed-Download fehlgeschlagen: %1.</translation>
+    </message>
+    <message>
+        <source>No new releases available.</source>
+        <translation>Keine neuen Veröffentlichungen verfügbar.</translation>
+    </message>
+    <message>
+        <source>A new release %1 is available.
+Do you want to download it?</source>
+        <translation>Eine neue Version %1 ist verfügbar.
+Möchten Sie sie herunterladen?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -4184,36 +4224,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Information</source>
         <translation>Information</translation>
-    </message>
-    <message>
-        <source>File download failed: %1.</source>
-        <translation>Dateidownload ist fehlgeschlagen: %1.</translation>
-    </message>
-    <message>
-        <source>Download has started, the installer will open once it&apos;s finished downloading</source>
-        <translation>Download hat begonnen, der Installer öffnet sich, sobald der Download abgeschlossen ist</translation>
-    </message>
-    <message>
-        <source>No new releases available.</source>
-        <translation>Es sind keine neuen Releases verfügbar.</translation>
-    </message>
-    <message>
-        <source>A new release %1 is available.
-Do you want to download it?</source>
-        <translation>Ein neuer Release %1 ist verfügbar.
-Möchtest Du diesen downloaden?</translation>
-    </message>
-    <message>
-        <source>Unable to open file
-%1
-for writing</source>
-        <translation>Date %1 kann nicht zum schreiben geöffnet werden</translation>
-    </message>
-    <message>
-        <source>Unable to get exclusive access to file 
-%1
-Possibly the file is already being downloaded.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4675,7 +4685,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Can&apos;t create record.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kann keinen Datensatz erstellen.</translation>
     </message>
     <message>
         <source>Spl_</source>
@@ -4868,15 +4878,15 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>The image &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Bild &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; konnte nicht gefunden werden. Möchten Sie den Speicherort der Datei aktualisieren?</translation>
     </message>
     <message>
         <source>Loading image</source>
-        <translation type="unfinished"></translation>
+        <translation>Bild laden</translation>
     </message>
     <message>
         <source>No image was selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wurde kein Bild ausgewählt...</translation>
     </message>
 </context>
 <context>
@@ -5335,10 +5345,8 @@ Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLIC
         <translation>Millimeter</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
-
-Apply settings anyway?</source>
-        <translation type="unfinished"></translation>
+        <source>Margins go beyond printing. Apply settings anyway?</source>
+        <translation>Ränder gehen über den Druck hinaus. Einstellungen trotzdem anwenden?</translation>
     </message>
 </context>
 <context>
@@ -8114,7 +8122,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>Custom</source>
-        <translation>Kunde</translation>
+        <translation>Benutzerdefiniert</translation>
     </message>
     <message>
         <source>Start point:</source>
@@ -9493,47 +9501,47 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>Dialogs</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialoge</translation>
     </message>
     <message>
         <source>Open on second monitor if available</source>
-        <translation type="unfinished"></translation>
+        <translation>Auf zweitem Monitor öffnen, falls vorhanden</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Position</translation>
     </message>
     <message>
         <source>Top left</source>
-        <translation type="unfinished"></translation>
+        <translation>Oben links</translation>
     </message>
     <message>
         <source>Top right</source>
-        <translation type="unfinished"></translation>
+        <translation>Oben rechts</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Zentrum</translation>
     </message>
     <message>
         <source>Bottom left</source>
-        <translation type="unfinished"></translation>
+        <translation>Unten links</translation>
     </message>
     <message>
         <source>Bottom right</source>
-        <translation type="unfinished"></translation>
+        <translation>Unten rechts</translation>
     </message>
     <message>
         <source>Offset</source>
-        <translation type="unfinished"></translation>
+        <translation>Versetzt</translation>
     </message>
     <message>
         <source>X Offset:</source>
-        <translation type="unfinished"></translation>
+        <translation>X Versatz:</translation>
     </message>
     <message>
         <source>Y Offset:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Versatz:</translation>
     </message>
 </context>
 <context>
@@ -13078,7 +13086,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Image_name</source>
-        <translation type="unfinished"></translation>
+        <translation>Bild_name</translation>
     </message>
 </context>
 <context>

@@ -35,8 +35,7 @@ UI_DIR = uic
 include(seamlyme.pri)
 
 RESOURCES += \
-    share/resources/seamlymeicon.qrc \
-    share/resources/diagrams.qrc
+    share/resources/seamlymeicon.qrc
 
 # INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES and INSTALL_LABEL_TEMPLATES inside samples.pri
 include(../samples.pri)

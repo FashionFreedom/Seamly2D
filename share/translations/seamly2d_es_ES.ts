@@ -177,7 +177,7 @@
     <name>AddImage</name>
     <message>
         <source>add image</source>
-        <translation type="unfinished"></translation>
+        <translation>añadir imagen</translation>
     </message>
 </context>
 <context>
@@ -3797,6 +3797,14 @@ p, li { white-space: pre-wrap; }
         <source>Curve angle</source>
         <translation>Ángulo de curva</translation>
     </message>
+    <message>
+        <source>Number</source>
+        <translation>Número</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Personalizado</translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>
@@ -4213,18 +4221,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>FvUpdater</name>
     <message>
-        <source>Feed download failed: %1.</source>
-        <translation>Falló la descarga de entrega: %1.</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Error</translation>
-    </message>
-    <message>
-        <source>Information</source>
-        <translation>Información</translation>
-    </message>
-    <message>
         <source>Unable to open file
 %1
 for writing</source>
@@ -4233,28 +4229,42 @@ for writing</source>
 para la escritura</translation>
     </message>
     <message>
+        <source>Unable to get exclusive access to file
+%1
+Possibly the file is already being downloaded.</source>
+        <translation>No se puede obtener acceso exclusivo al archivo
+%1
+Posiblemente el archivo ya está siendo descargado.</translation>
+    </message>
+    <message>
         <source>File download failed: %1.</source>
-        <translation>Error al descargar el archivo: %1.</translation>
+        <translation>Fallo en la descarga del archivo: %1.</translation>
     </message>
     <message>
         <source>Download has started, the installer will open once it&apos;s finished downloading</source>
-        <translation>La descarga ha comenzado, el instalador se abrirá una vez que haya terminado de descargarse</translation>
+        <translation>La descarga ha comenzado, el instalador se abrirá cuando termine de descargarse</translation>
+    </message>
+    <message>
+        <source>Feed download failed: %1.</source>
+        <translation>Fallo en la descarga del feed: %1.</translation>
     </message>
     <message>
         <source>No new releases available.</source>
-        <translation>No hay nuevos actualizaciones disponibles.</translation>
+        <translation>No hay nuevas versiones disponibles.</translation>
     </message>
     <message>
         <source>A new release %1 is available.
 Do you want to download it?</source>
         <translation>Una nueva versión %1 está disponible.
-¿Quiere descargarla?</translation>
+¿Desea descargarla?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
-%1
-Possibly the file is already being downloaded.</source>
-        <translation type="unfinished"></translation>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Información</translation>
     </message>
 </context>
 <context>
@@ -4732,7 +4742,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Can&apos;t create record.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede crear el registro.</translation>
     </message>
 </context>
 <context>
@@ -4909,15 +4919,15 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>The image &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
-        <translation type="unfinished"></translation>
+        <translation>La imagen &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;no se ha podido encontrar. ¿Desea actualizar la ubicación del archivo?</translation>
     </message>
     <message>
         <source>Loading image</source>
-        <translation type="unfinished"></translation>
+        <translation>Cargando imagen</translation>
     </message>
     <message>
         <source>No image was selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha seleccionado ninguna imagen...</translation>
     </message>
 </context>
 <context>
@@ -5376,10 +5386,8 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
         <translation>Ninguno</translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
-
-Apply settings anyway?</source>
-        <translation type="unfinished"></translation>
+        <source>Margins go beyond printing. Apply settings anyway?</source>
+        <translation>Los márgenes van más allá de la impresión. ¿Aplicar ajustes de todos modos?</translation>
     </message>
 </context>
 <context>
@@ -9550,47 +9558,47 @@ actualización:</translation>
     </message>
     <message>
         <source>Dialogs</source>
-        <translation type="unfinished"></translation>
+        <translation>Diálogos</translation>
     </message>
     <message>
         <source>Open on second monitor if available</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir en un segundo monitor si está disponible</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición</translation>
     </message>
     <message>
         <source>Top left</source>
-        <translation type="unfinished"></translation>
+        <translation>Arriba a la izquierda</translation>
     </message>
     <message>
         <source>Top right</source>
-        <translation type="unfinished"></translation>
+        <translation>Arriba a la derecha</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Centro</translation>
     </message>
     <message>
         <source>Bottom left</source>
-        <translation type="unfinished"></translation>
+        <translation>Abajo a la izquierda</translation>
     </message>
     <message>
         <source>Bottom right</source>
-        <translation type="unfinished"></translation>
+        <translation>Abajo a la derecha</translation>
     </message>
     <message>
         <source>Offset</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplazamiento</translation>
     </message>
     <message>
         <source>X Offset:</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplazamiento X:</translation>
     </message>
     <message>
         <source>Y Offset:</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplazamiento Y:</translation>
     </message>
 </context>
 <context>
@@ -10439,13 +10447,13 @@ actualización:</translation>
         <translation>Pulgadas</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed.
+        <source>When checked the Welcome window will not be displayed. 
 You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10513,13 +10521,13 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Establece el sonido del clic de selección del nodo.</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed.
+        <source>When checked the Welcome window will not be displayed. 
 You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12808,15 +12816,15 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Spl_</source>
-        <translation type="unfinished"></translation>
+        <translation>Spl_</translation>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation type="unfinished"></translation>
+        <translation>SplPath_</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia</translation>
     </message>
     <message>
         <source>Length</source>
@@ -13136,7 +13144,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Image_name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre_imagen</translation>
     </message>
 </context>
 <context>

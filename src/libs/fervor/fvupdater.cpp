@@ -227,7 +227,7 @@ void FvUpdater::startDownloadFile(QUrl url, QString name) {
 	downloadDir.cd(m_releaseName);
 	auto downloadedFile = new QFile(downloadDir.filePath(name), this);
 	if(downloadedFile->exists() && !downloadedFile->remove()){
-		showErrorDialog(tr("Unable to get exclusive access to file \n%1\nPossibly the file is already being downloaded.").arg(downloadDir.filePath(name)), false);
+		showErrorDialog(tr("Unable to get exclusive access to file\n%1\nPossibly the file is already being downloaded.").arg(downloadDir.filePath(name)), false);
 		return;
 	}
 	bool isOpen = downloadedFile->open(QIODevice::WriteOnly | QIODevice::Truncate);
