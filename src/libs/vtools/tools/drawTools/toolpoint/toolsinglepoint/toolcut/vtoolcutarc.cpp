@@ -1,53 +1,50 @@
-/***************************************************************************
- **  @file   vtoolcutarc.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//  @file   vtoolcutarc.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @copyright
+//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
-/************************************************************************
- **  @file   vtoolcutarc.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   7 1, 2014
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2014 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   vtoolcutarc.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   7 1, 2014
+//
+//  @copyright
+//  Copyright (C) 2013 Valentina project.
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published
+//  by the Free Software Foundation, either version 3 of the License,
+//  or (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 #include "vtoolcutarc.h"
 
@@ -79,29 +76,27 @@ template <class T> class QSharedPointer;
 
 const QString VToolCutArc::ToolType = QStringLiteral("cutArc");
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VToolCutArc constructor.
- * @param doc dom document container.
- * @param data container with variables.
- * @param id object id in container.
- * @param formula string with formula length first arc.
- * @param arcId id arc in data container.
- * @param typeCreation way we create this tool.
- * @param parent parent object.
- */
+//-----------------------------------------------------------------------------
+/// @brief VToolCutArc constructor.
+/// @param doc dom document container.
+/// @param data container with variables.
+/// @param id object id in container.
+/// @param formula string with formula length first arc.
+/// @param arcId id arc in data container.
+/// @param typeCreation way we create this tool.
+/// @param parent parent object.
+//-----------------------------------------------------------------------------
 VToolCutArc::VToolCutArc(VAbstractPattern *doc, VContainer *data, const quint32 &id, QString &direction,
                          const QString &formula, const QString &lineColor, const quint32 &arcId, const Source &typeCreation,
-                         QGraphicsItem * parent)
+                         QGraphicsItem *parent)
     : VToolCut(doc, data, id, direction, formula, lineColor, arcId, parent)
 {
     ToolCreation(typeCreation);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setDialog set dialog when user want change tool option.
- */
+//-----------------------------------------------------------------------------
+/// @brief setDialog set dialog when user want change tool option.
+//-----------------------------------------------------------------------------
 void VToolCutArc::setDialog()
 {
     SCASSERT(!m_dialog.isNull())
@@ -115,14 +110,13 @@ void VToolCutArc::setDialog()
     dialogTool->SetPointName(point->name());
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Create help create tool form GUI.
- * @param dialog dialog.
- * @param scene pointer to scene.
- * @param doc dom document container.
- * @param data container with variables.
- */
+//-----------------------------------------------------------------------------
+/// @brief Create help create tool form GUI.
+/// @param dialog dialog.
+/// @param scene pointer to scene.
+/// @param doc dom document container.
+/// @param data container with variables.
+//-----------------------------------------------------------------------------
 VToolCutArc* VToolCutArc::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene, VAbstractPattern *doc,
                                  VContainer *data)
 {
@@ -143,22 +137,21 @@ VToolCutArc* VToolCutArc::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
     return point;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Create help create tool.
- * @param _id tool id, 0 if tool doesn't exist yet.
- * @param pointName point name.
- * @param formula string with formula length first arc.
- * @param lineColor color for tool
- * @param arcId id arc in data container.
- * @param mx label bias x axis.
- * @param my label bias y axis.
- * @param scene pointer to scene.
- * @param doc dom document container.
- * @param data container with variables.
- * @param parse parser file mode.
- * @param typeCreation way we create this tool.
- */
+//-----------------------------------------------------------------------------
+/// @brief Create help create tool.
+/// @param _id tool id, 0 if tool doesn't exist yet.
+/// @param pointName point name.
+/// @param formula string with formula length first arc.
+/// @param lineColor color for tool
+/// @param arcId id arc in data container.
+/// @param mx label bias x axis.
+/// @param my label bias y axis.
+/// @param scene pointer to scene.
+/// @param doc dom document container.
+/// @param data container with variables.
+/// @param parse parser file mode.
+/// @param typeCreation way we create this tool.
+//-----------------------------------------------------------------------------
 VToolCutArc* VToolCutArc::Create(const quint32 _id, const QString &pointName, QString &direction, QString &formula,
                                  const QString &lineColor, quint32 arcId, qreal mx, qreal my, bool showPointName,
                                  VMainGraphicsScene *scene, VAbstractPattern *doc,
@@ -168,12 +161,17 @@ VToolCutArc* VToolCutArc::Create(const quint32 _id, const QString &pointName, QS
     SCASSERT(arc != nullptr)
 
     qreal arcLength = qApp->fromPixel(arc->GetLength());
-    QString adjFormula = formula;
-    if (direction == "backward")
+    qreal fxLength  = QString::number(CheckFormula(_id, formula, data), 'f', 4).toDouble();
+    qreal length    = 0.0;
+
+    if (direction == "forward")
     {
-        adjFormula = QString("%1 - %2").arg(arcLength).arg(formula);
+        length = fxLength;
     }
-    const qreal length = CheckFormula(_id, adjFormula, data);
+    else
+    {
+        length = arcLength - fxLength;
+    }
 
     VArc arc1;
     VArc arc2;
@@ -181,6 +179,7 @@ VToolCutArc* VToolCutArc::Create(const quint32 _id, const QString &pointName, QS
 
     quint32 id = _id;
     VPointF *p = new VPointF(point, pointName, mx, my);
+    SCASSERT(p != nullptr)
     p->setShowPointName(showPointName);
 
     auto a1 = QSharedPointer<VArc>(new VArc(arc1));
@@ -226,11 +225,10 @@ void VToolCutArc::ShowVisualization(bool show)
     ShowToolVisualization<VisToolCutArc>(show);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief contextMenuEvent handle context menu events.
- * @param event context menu event.
- */
+//-----------------------------------------------------------------------------
+/// @brief contextMenuEvent handle context menu events.
+/// @param event context menu event.
+//-----------------------------------------------------------------------------
 void VToolCutArc::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     try
@@ -244,10 +242,9 @@ void VToolCutArc::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SaveDialog save options into file after change in dialog.
- */
+//-----------------------------------------------------------------------------
+/// @brief SaveDialog save options into file after change in dialog.
+//-----------------------------------------------------------------------------
 void VToolCutArc::SaveDialog(QDomElement &domElement)
 {
     SCASSERT(!m_dialog.isNull())

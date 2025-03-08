@@ -169,25 +169,28 @@ VToolCutSplinePath* VToolCutSplinePath::Create(const quint32 _id, const QString 
     SCASSERT(splPath != nullptr)
 
     qreal splLength = qApp->fromPixel(splPath->GetLength());
-    QString adjFormula = formula;
-    if (direction == "backward")
-    {
-        adjFormula = QString("%1 - %2").arg(splLength).arg(formula);
-    }
+    qreal fxLength  = QString::number(CheckFormula(_id, formula, data), 'f', 4).toDouble();
+    qreal length    = 0.0;
 
-    const qreal length = CheckFormula(_id, adjFormula, data);
+    if (direction == "forward")
+    {
+        length = fxLength;
+    }
+    else
+    {
+        length = splLength - fxLength;
+    }
 
     quint32 id = _id;
     VSplinePath *splPath1 = nullptr;
     VSplinePath *splPath2 = nullptr;
 
     VPointF *p = VToolCutSplinePath::CutSplinePath(qApp->toPixel(length), splPath, pointName, &splPath1, &splPath2);
-    p->setShowPointName(showPointName);
-
+    SCASSERT(p != nullptr)
     SCASSERT(splPath1 != nullptr)
     SCASSERT(splPath2 != nullptr)
-    SCASSERT(p != nullptr)
 
+    p->setShowPointName(showPointName);
     p->setMx(mx);
     p->setMy(my);
 

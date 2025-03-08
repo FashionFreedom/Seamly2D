@@ -164,19 +164,26 @@ VToolCutSpline* VToolCutSpline::Create(const quint32 _id, const QString &pointNa
     const auto spl = data->GeometricObject<VAbstractCubicBezier>(splineId);
     SCASSERT(splPath != nullptr)
 
+
     qreal splLength = qApp->fromPixel(spl->GetLength());
-    QString adjFormula = formula;
-    if (direction == "backward")
+    qreal fxLength  = QString::number(CheckFormula(_id, formula, data), 'f', 4).toDouble();
+    qreal length    = 0.0;
+
+    if (direction == "forward")
     {
-        adjFormula = QString("%1 - %2").arg(splLength).arg(formula);
+        length = fxLength;
     }
-    const qreal length = CheckFormula(_id, adjFormula, data);
+    else
+    {
+        length = splLength - fxLength;
+    }
 
     QPointF spl1p2, spl1p3, spl2p2, spl2p3;
     QPointF point = spl->CutSpline(qApp->toPixel(length), spl1p2, spl1p3, spl2p2, spl2p3);
 
     quint32 id = _id;
     VPointF *p = new VPointF(point, pointName, mx, my);
+    SCASSERT(p != nullptr)
     p->setShowPointName(showPointName);
 
     auto spline1 = QSharedPointer<VAbstractBezier>(new VSpline(spl->GetP1(), spl1p2, spl1p3, *p));
