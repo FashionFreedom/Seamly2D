@@ -56,7 +56,7 @@ var searchData=
   ['columninheights_53',['ColumnInHeights',['../dc/de1/tmainwindow_8cpp.html#a99fb83031ce9923c84392b4e92f956b5a9634b67758cb1ee3e3958cc6bf6be7f6',1,'tmainwindow.cpp']]],
   ['columninsizes_54',['ColumnInSizes',['../dc/de1/tmainwindow_8cpp.html#a99fb83031ce9923c84392b4e92f956b5a85d3ea9d75df325108b227399c9f3aa0',1,'tmainwindow.cpp']]],
   ['columnname_55',['columnname',['../dc/de1/tmainwindow_8cpp.html#a99fb83031ce9923c84392b4e92f956b5a7fa1cb1e2f4c3531b83365ade6dcb151',1,'ColumnName:&#160;tmainwindow.cpp'],['../d7/d8d/edit__formula__dialog_8cpp.html#ab04a0655cd1e3bcac5e8f48c18df1a57a7fa1cb1e2f4c3531b83365ade6dcb151',1,'ColumnName:&#160;edit_formula_dialog.cpp']]],
-  ['columnnumber_56',['ColumnNumber',['../dc/de1/tmainwindow_8cpp.html#a99fb83031ce9923c84392b4e92f956b5a2ed267f7062a6a6e79b7831c1b52f075',1,'tmainwindow.cpp']]],
+  ['columnnumber_56',['columnnumber',['../dc/de1/tmainwindow_8cpp.html#a99fb83031ce9923c84392b4e92f956b5a2ed267f7062a6a6e79b7831c1b52f075',1,'ColumnNumber:&#160;tmainwindow.cpp'],['../d7/d8d/edit__formula__dialog_8cpp.html#ab04a0655cd1e3bcac5e8f48c18df1a57a2ed267f7062a6a6e79b7831c1b52f075',1,'ColumnNumber:&#160;edit_formula_dialog.cpp']]],
   ['combine_57',['Combine',['../dd/d4a/vlayoutdef_8h.html#af1e732f0ac9c7478f79af187b99e503aae7b3c0acb7168c7969b03e8aebc67ce7',1,'vlayoutdef.h']]],
   ['complex_58',['Complex',['../de/d21/namespaceVPE.html#a46160b96cc9be71599e98b85a4093acaa10b4eb76294b70d7fd6df997ff06edb1',1,'VPE']]],
   ['contour_59',['Contour',['../d4/da4/def_8h.html#a136551301e3a6163c0233081fe424653a0b3303e86f36d6d2b1266da88cf76e66',1,'def.h']]],
