@@ -356,7 +356,7 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         actionSecondEdgeRight = angleTypeMenu->addAction(QIcon(), tr("Second edge right angle"));
 
         // Set checkmark for current Seam Allowance corner type
-        switch (static_cast<int>(node.GetAngleType()))
+        switch (static_cast<PieceNodeAngle>(node.GetAngleType()))
         {
             case (PieceNodeAngle::ByLength):
             {
