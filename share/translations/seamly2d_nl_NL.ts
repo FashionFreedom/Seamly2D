@@ -8481,6 +8481,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Bottom:</source>
         <translation>Onder:</translation>
     </message>
+    <message>
+        <source>Count</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PatternPieceTool</name>
@@ -8647,6 +8651,22 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Piece renamed to: </source>
         <translation>Patroondeel hernoemd tot: </translation>
+    </message>
+    <message>
+        <source>Update Node Angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exclude Node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete Node</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12800,6 +12820,98 @@ load in SeamlyME as usual.
     <message>
         <source>Show Point Name</source>
         <translation>Toon Puntnaam</translation>
+    </message>
+    <message>
+        <source>Seam Allowance Angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersection</source>
+        <translation type="unfinished">Kruispunt van lijnen</translation>
+    </message>
+    <message>
+        <source>First edge symmetry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Second edge symmetry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First edge right angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Second edge right angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notch</source>
+        <translation type="unfinished">Pasmarkering</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished">Soort</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished">Geen</translation>
+    </message>
+    <message>
+        <source>Slit</source>
+        <translation type="unfinished">Knipje</translation>
+    </message>
+    <message>
+        <source>TNotch</source>
+        <translation type="unfinished">T Pasmarkering</translation>
+    </message>
+    <message>
+        <source>UNotch</source>
+        <translation type="unfinished">U Pasmarkering</translation>
+    </message>
+    <message>
+        <source>VInternal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>VExternal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Castle</source>
+        <translation type="unfinished">Kasteel</translation>
+    </message>
+    <message>
+        <source>Diamond</source>
+        <translation type="unfinished">Diamant</translation>
+    </message>
+    <message>
+        <source>Subtype</source>
+        <translation type="unfinished">Subtype</translation>
+    </message>
+    <message>
+        <source>Straightforward</source>
+        <translation type="unfinished">Rechttoe rechtaan</translation>
+    </message>
+    <message>
+        <source>Bisector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Excluded</source>
+        <translation type="unfinished">Uitgezonderd</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

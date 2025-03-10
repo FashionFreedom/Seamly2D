@@ -8506,6 +8506,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Bottom:</source>
         <translation>Нижнее:</translation>
     </message>
+    <message>
+        <source>Count</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PatternPieceTool</name>
@@ -8672,6 +8676,22 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Piece renamed to: </source>
         <translation>Деталь переименована в: </translation>
+    </message>
+    <message>
+        <source>Update Node Angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exclude Node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete Node</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10403,13 +10423,13 @@ Press enter to temporarily add it to the list.</source>
         <translation>Дюймы</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed.
+        <source>When checked the Welcome window will not be displayed. 
 You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10477,13 +10497,13 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Устанавливает звук щелчка при выборе узла.</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed.
+        <source>When checked the Welcome window will not be displayed. 
 You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12827,6 +12847,98 @@ load in SeamlyME as usual.
     <message>
         <source>Show Point Name</source>
         <translation>Показать Название Точки</translation>
+    </message>
+    <message>
+        <source>Seam Allowance Angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersection</source>
+        <translation type="unfinished">Пересечение</translation>
+    </message>
+    <message>
+        <source>First edge symmetry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Second edge symmetry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First edge right angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Second edge right angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notch</source>
+        <translation type="unfinished">Надсечка</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished">Тип</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Slit</source>
+        <translation type="unfinished">Щель</translation>
+    </message>
+    <message>
+        <source>TNotch</source>
+        <translation type="unfinished">Т-Надсечка</translation>
+    </message>
+    <message>
+        <source>UNotch</source>
+        <translation type="unfinished">U-Надсечка</translation>
+    </message>
+    <message>
+        <source>VInternal</source>
+        <translation type="unfinished">V Внутренний</translation>
+    </message>
+    <message>
+        <source>VExternal</source>
+        <translation type="unfinished">V Внешний</translation>
+    </message>
+    <message>
+        <source>Castle</source>
+        <translation type="unfinished">Замок</translation>
+    </message>
+    <message>
+        <source>Diamond</source>
+        <translation type="unfinished">Алмаз</translation>
+    </message>
+    <message>
+        <source>Subtype</source>
+        <translation type="unfinished">Тип</translation>
+    </message>
+    <message>
+        <source>Straightforward</source>
+        <translation type="unfinished">Прямой</translation>
+    </message>
+    <message>
+        <source>Bisector</source>
+        <translation type="unfinished">Биссектриса</translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Excluded</source>
+        <translation type="unfinished">Исключён</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Удалить</translation>
     </message>
 </context>
 <context>
