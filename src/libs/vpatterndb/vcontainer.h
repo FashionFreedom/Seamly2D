@@ -1,53 +1,52 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vcontainer.h
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @copyright
+//  Copyright (C) 2017 - 2025 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
- ************************************************************************
- **
- **  @file   vcontainer.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vcontainer.h
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   November 15, 2013
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2016 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #ifndef VCONTAINER_H
 #define VCONTAINER_H
@@ -90,25 +89,25 @@ QT_WARNING_DISABLE_GCC("-Wnon-virtual-dtor")
 /**
  * @class VContainerData
  * @brief A data container class that uses Qt's implicit sharing mechanism.
- * 
+ *
  * The VContainerData class is designed to efficiently manage shared data
  * using Qt's implicit sharing (copy-on-write) mechanism. It contains
  * several hash maps and shared pointers to handle various elements.
- * 
+ *
  * @details
  * The class inherits from QSharedData to leverage Qt's implicit sharing.
- * It has two constructors: one for initializing its member variables and 
- * another for copying the contents from another instance. The class manages 
+ * It has two constructors: one for initializing its member variables and
+ * another for copying the contents from another instance. The class manages
  * the following members:
- * 
+ *
  * - `gObjects`: A hash map mapping a quint32 to a shared pointer of VGObject.
  * - `variables`: A hash map mapping a QString to a shared pointer of VInternalVariable.
  * - `pieces`: A shared pointer to a hash map mapping a quint32 to VPiece.
  * - `piecePaths`: A shared pointer to a hash map mapping a quint32 to VPiecePath.
  * - `trVars`: A pointer to a VTranslateVars object.
  * - `patternUnit`: A pointer to a Unit object.
- * 
- * The class provides a constructor for initializing these members and a 
+ *
+ * The class provides a constructor for initializing these members and a
  * copy constructor to create copies of the data container.
  */
 
@@ -197,7 +196,7 @@ QT_WARNING_POP
  * - const QSharedPointer<VGObject> GetGObject(quint32 id) const;
  * - static const QSharedPointer<VGObject> GetFakeGObject(quint32 id);
  * - VPiece GetPiece(quint32 id) const;
- * - VPiecePath GetPiecePath(quint32 id) const;
+ * - VPiecePath getPiecePath(quint32 id) const;
  * - template <typename T> QSharedPointer<T> getVariable(QString name) const;
  * - static quint32 getId();
  * - static quint32 getNextId();
@@ -280,7 +279,8 @@ public:
     const QSharedPointer<VGObject> GetGObject(quint32 id) const;
     static const QSharedPointer<VGObject> GetFakeGObject(quint32 id);
     VPiece             GetPiece(quint32 id) const;
-    VPiecePath         GetPiecePath(quint32 id) const;
+    VPiecePath         getPiecePath(quint32 id) const;
+    quint32            pieceIdOfPath(quint32 id) const;
     template <typename T>
     QSharedPointer<T>  getVariable(QString name) const;
     static quint32     getId();
@@ -380,16 +380,16 @@ Q_DECLARE_TYPEINFO(VContainer, Q_MOVABLE_TYPE);
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief Retrieves a shared pointer to a geometric object of type T with the specified ID.
- * 
+ *
  * This template method attempts to find and return a geometric object of type T stored in the container
  * with the given ID. It performs a dynamic cast to ensure the object is of the expected type.
- * 
+ *
  * @tparam T The expected type of the geometric object to retrieve.
  * @param id The ID of the geometric object to retrieve.
  * @return const QSharedPointer<T> A shared pointer to the geometric object of type T.
- * 
+ *
  * @throws VExceptionBadId if the object ID is NULL_ID, if the object cannot be found, or if the object cannot be cast to the expected type.
- * 
+ *
  * @details
  * - The method first checks if the provided ID is `NULL_ID` and throws a `VExceptionBadId` exception if it is.
  * - It then attempts to find the geometric object with the specified ID in the container.
@@ -430,18 +430,18 @@ const QSharedPointer<T> VContainer::GeometricObject(const quint32 &id) const
 
 /**
  * @brief Retrieves a shared pointer to a variable of type T with the specified name.
- * 
+ *
  * This template method attempts to find and return a variable of type T stored in the container
  * with the given name. It performs a dynamic cast to ensure the variable is of the expected type.
- * 
+ *
  * @tparam T The expected type of the variable to retrieve.
  * @param name The name of the variable to retrieve.
  * @return QSharedPointer<T> A shared pointer to the variable of type T.
- * 
+ *
  * @throws VExceptionBadId if the variable cannot be found or cannot be cast to the expected type.
- * 
+ *
  * @note The method includes assertions to check that the name is not empty and that the cast is successful.
- * 
+ *
  * @details
  * - The method first asserts that the provided name is not empty.
  * - It checks if the variable with the specified name exists in the container.
@@ -475,14 +475,14 @@ QSharedPointer<T> VContainer::getVariable(QString name) const
 
 /**
  * @brief Adds a variable with the specified name and pointer to the container.
- * 
+ *
  * This template method adds a variable of type T to the container, using a raw pointer.
  * It wraps the raw pointer in a QSharedPointer and then delegates to another AddVariable method.
- * 
+ *
  * @tparam T The type of the variable to add.
  * @param name The name of the variable to add.
  * @param var A raw pointer to the variable to add.
- * 
+ *
  * @details
  * - The method creates a QSharedPointer from the raw pointer.
  * - It calls another AddVariable method to add the shared pointer to the container.
@@ -495,17 +495,17 @@ void VContainer::AddVariable(const QString& name, T *var)
 
 /**
  * @brief Adds or updates a variable with the specified name and shared pointer to the container.
- * 
+ *
  * This template method adds a variable of type T to the container using a shared pointer.
  * If a variable with the same name already exists and is of the same type, it updates the existing variable.
  * If the types do not match, it throws an exception.
- * 
+ *
  * @tparam T The type of the variable to add.
  * @param name The name of the variable to add.
  * @param var A shared pointer to the variable to add.
- * 
+ *
  * @throws VExceptionBadId if the variable cannot be cast to the expected type or if there is a type mismatch.
- * 
+ *
  * @details
  * - The method first checks if a variable with the specified name already exists in the container.
  * - If it exists and is of the same type, it updates the existing variable with the new value.
@@ -543,14 +543,14 @@ void VContainer::AddVariable(const QString& name, const QSharedPointer<T> &var)
 
 /**
  * @brief Calculates the hash value for a shared pointer to type T.
- * 
+ *
  * This template method calculates the hash value for a shared pointer to type T.
  * It delegates to the qHash function for the raw pointer stored in the shared pointer.
- * 
+ *
  * @tparam T The type of the shared pointer.
  * @param p The shared pointer for which to calculate the hash value.
  * @return uint The hash value calculated for the shared pointer.
- * 
+ *
  * @details
  * - The method extracts the raw pointer from the shared pointer using the data() method.
  * - It then delegates to the qHash function for the raw pointer to calculate the hash value.
@@ -564,14 +564,14 @@ uint VContainer::qHash( const QSharedPointer<T> &p )
 
 /**
  * @brief Updates a geometric object with the specified ID using a raw pointer.
- * 
+ *
  * This template method updates a geometric object of type T in the container using a raw pointer.
  * It wraps the raw pointer in a QSharedPointer and then delegates to another UpdateGObject method.
- * 
+ *
  * @tparam T The type of the geometric object to update.
  * @param id The ID of the geometric object to update.
  * @param obj A raw pointer to the geometric object to update.
- * 
+ *
  * @details
  * - The method asserts that the raw pointer is not null.
  * - It creates a QSharedPointer from the raw pointer.
@@ -593,14 +593,14 @@ void VContainer::UpdateGObject(quint32 id, const QSharedPointer<T> &obj)
 }
 /**
  * @brief Updates a geometric object with the specified ID using a shared pointer.
- * 
+ *
  * This template method updates a geometric object of type T in the container using a shared pointer.
  * It ensures the shared pointer is not null and delegates to another method to perform the update.
- * 
+ *
  * @tparam T The type of the geometric object to update.
  * @param id The ID of the geometric object to update.
  * @param obj A shared pointer to the geometric object to update.
- * 
+ *
  * @details
  * - The method asserts that the shared pointer is not null.
  * - It calls the UpdateObject method to update the geometric object in the container with the specified ID.

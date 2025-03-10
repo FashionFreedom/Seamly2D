@@ -112,6 +112,8 @@ extern const QString AttrLineType;
 extern const QString AttrLineWeight;
 extern const QString AttrObjName;
 extern const QString AttrCut;
+extern const QString AttrExtendStartPoint;
+extern const QString AttrExtendEndPoint;
 extern const QString AttrLength;
 extern const QString AttrBasePoint;
 extern const QString AttrFirstPoint;

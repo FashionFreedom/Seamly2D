@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------------------------------------------------
-//  @file   vabstractnode.h
+//  @file   internal_path_visual.h
 //  @author Douglas S Caskey
-//  @date   2 Apr, 2025
+//  @date   17 Sep, 2023
 //
 //  @copyright
 //  Copyright (C) 2017 - 2025 Seamly, LLC
@@ -19,18 +19,19 @@
 //  GNU General Public License for more details.
 //
 //  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
 //---------------------------------------------------------------------------------------------------------------------
-//---------------------------------------------------------------------------------------------------------------------//
-//  @file   vabstractnode.h
+
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vistoolinternalpath.h
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
-//  @date   15 11, 2013
+//  @date   22 11, 2016
 //
 //  @brief
 //  @copyright
 //  This source code is part of the Valentina project, a pattern making
 //  program, whose allow create and modeling patterns of clothing.
-//  Copyright (C) 2017 Valentina project
+//  Copyright (C) 2016 Valentina project
 //  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
 //
 //  Valentina is free software: you can redistribute it and/or modify
@@ -47,60 +48,42 @@
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
 //---------------------------------------------------------------------------------------------------------------------
 
-#ifndef VABSTRACTNODE_H
-#define VABSTRACTNODE_H
+#ifndef INTERNAL_PATH_VISUAL_H
+#define INTERNAL_PATH_VISUAL_H
 
-#include <qcompilerdetection.h>
-#include <QColor>
-#include <QDomElement>
-#include <QMetaObject>
-#include <QObject>
-#include <QString>
+#include <QtCore/QObject>
 #include <QtGlobal>
 
-#include "../vabstracttool.h"
+#include "vispath.h"
+#include "../vpatterndb/vpiecepath.h"
 
-enum class ParentType : bool {Scene, Item};
+class VSimplePoint;
 
-/**
- * @brief The VAbstractNode class parent class for all detail node.
- */
-class VAbstractNode : public VAbstractTool
+class InternalPathVisual : public VisPath
 {
     Q_OBJECT
 public:
-    VAbstractNode(VAbstractPattern *doc, VContainer *data, const quint32 &id, const quint32 &idNode,
-                  const QString &blockName = QString(), const quint32 &idTool = 0, QObject *parent = nullptr);
-    virtual      ~VAbstractNode() Q_DECL_EQ_DEFAULT;
-    static const QString AttrIdTool;
-    virtual void ShowVisualization(bool show) override;
-    virtual void incrementReferens() override;
-    virtual void decrementReferens() override;
+                            InternalPathVisual(const VContainer *data, QGraphicsItem *parent = nullptr);
+    virtual                ~InternalPathVisual() Q_DECL_EQ_DEFAULT;
 
-    ParentType   GetParentType() const;
-    void         SetParentType(const ParentType &value);
-
-    virtual void GroupVisibility(quint32 object, bool visible) override;
-
-    bool         IsExluded() const;
-    void         SetExluded(bool exluded);
+    virtual void            RefreshGeometry() override;
+    void                    setPath(const VPiecePath &path);
+    void                    setCutPath(const QVector<QPointF> &path);
+    virtual int             type() const override {return Type;}
+    enum                    {Type = UserType + static_cast<int>(Vis::ToolInternalPath)};
 
 protected:
-    ParentType   parentType;
-    quint32      idNode; /// @brief idNodenode id.
-    quint32      idTool; /// @brief idTool id tool.
-    QString      m_blockName;
-    bool         m_exluded;
-
-    void         AddToModeling(const QDomElement &domElement);
-    virtual void ToolCreation(const Source &typeCreation) override;
-    virtual void SetVisualization() override {}
-
-    virtual void ShowNode()=0;
-    virtual void HideNode()=0;
+    virtual void            mousePressEvent(QGraphicsSceneMouseEvent * event) override;
 
 private:
-    Q_DISABLE_COPY(VAbstractNode)
+    Q_DISABLE_COPY(InternalPathVisual)
+    QVector<VSimplePoint *> m_points;
+    VScaledLine            *m_line;
+    VPiecePath              m_path;
+    QVector<QPointF>        m_cutLinePath;
+
+    VSimplePoint           *getPoint(quint32 i, const QColor &color);
+    void                    hideAllItems();
 };
 
-#endif // VABSTRACTNODE_H
+#endif // INTERNAL_PATH_VISUAL_H

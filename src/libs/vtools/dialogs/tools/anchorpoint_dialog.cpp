@@ -58,7 +58,7 @@
 AnchorPointDialog::AnchorPointDialog(const VContainer *data, quint32 toolId, QWidget *parent)
     : DialogTool(data, toolId, parent)
     , ui(new Ui::AnchorPointDialog)
-    , m_showMode(false)
+    , m_editMode(false)
     , m_flagPoint(false)
 {
     ui->setupUi(this);
@@ -87,20 +87,20 @@ AnchorPointDialog::~AnchorPointDialog()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void AnchorPointDialog::EnbleShowMode(bool disable)
+void AnchorPointDialog::enableEditMode(bool disable)
 {
-    m_showMode = disable;
-    ui->comboBoxPiece->setDisabled(m_showMode);
+    m_editMode = disable;
+    ui->comboBoxPiece->setDisabled(m_editMode);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 AnchorPointDialog::GetPieceId() const
+quint32 AnchorPointDialog::getPieceId() const
 {
     return getCurrentObjectId(ui->comboBoxPiece);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void AnchorPointDialog::SetPieceId(quint32 id)
+void AnchorPointDialog::setPieceId(quint32 id)
 {
     if (ui->comboBoxPiece->count() <= 0)
     {
@@ -147,7 +147,7 @@ void AnchorPointDialog::SetPiecesList(const QVector<quint32> &list)
 //---------------------------------------------------------------------------------------------------------------------
 void AnchorPointDialog::ChosenObject(quint32 id, const SceneObject &type)
 {
-    if (not prepare)
+    if (!prepare)
     {
         if (type == SceneObject::Point)
         {
@@ -175,9 +175,9 @@ void AnchorPointDialog::ShowVisualization()
 {
     AddVisualization<AnchorPointVisual>();
 
-    if (m_showMode)
+    if (m_editMode)
     {
-        PatternPieceTool *tool = qobject_cast<PatternPieceTool*>(VAbstractPattern::getTool(GetPieceId()));
+        PatternPieceTool *tool = qobject_cast<PatternPieceTool*>(VAbstractPattern::getTool(getPieceId()));
         SCASSERT(tool != nullptr);
         auto visPoint = qobject_cast<AnchorPointVisual *>(vis);
         SCASSERT(visPoint != nullptr);
@@ -188,7 +188,7 @@ void AnchorPointDialog::ShowVisualization()
 //---------------------------------------------------------------------------------------------------------------------
 void AnchorPointDialog::CheckPieces()
 {
-    if (not m_showMode)
+    if (!m_editMode)
     {
         QColor color = okColor;
         if (ui->comboBoxPiece->count() <= 0 || ui->comboBoxPiece->currentIndex() == -1)

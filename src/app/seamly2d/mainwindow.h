@@ -253,7 +253,7 @@ private slots:
 
     void closeUnionDialog(int result);
     void ClosedEditGroupDialog(int result);
-    void ClosedDialogInternalPath(int result);
+    void ClosedInternalPathDialog(int result);
     void ClosedDialogAnchorPoint(int result);
     void ClosedInsertNodesDialog(int result);
 

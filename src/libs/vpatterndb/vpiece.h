@@ -1,7 +1,7 @@
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   vpiece.h
 //  @author Douglas S Caskey
-//  @date   Jan 3, 2023
+//  @date   17 Sep, 2023
 //
 //  @copyright
 //  Copyright (C) 2017 - 2025 Seamly, LLC
@@ -19,11 +19,10 @@
 //  GNU General Public License for more details.
 //
 //  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
-//******************************************************************************
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
-//******************************************************************************
-//
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   vpiece.h
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
 //  @date   3 11, 2016
@@ -47,8 +46,7 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 
 #ifndef VPIECE_H
 #define VPIECE_H
@@ -108,6 +106,7 @@ public:
     QVector<QPointF>         MainPathPoints(const VContainer *data) const;
     QVector<VPointF>         MainPathNodePoints(const VContainer *data, bool showExcluded = false) const;
     QVector<QPointF>         SeamAllowancePoints(const VContainer *data) const;
+    QVector<QPointF>         cutPathPoints(const VContainer *data) const;
     QVector<QLineF>          createNotchLines(const VContainer *data,
                                               const QVector<QPointF> &seamAllowance = QVector<QPointF>()) const;
 
@@ -129,12 +128,12 @@ public:
     QString                  getSeamAllowanceWidthFormula() const;
     void                     setSeamAllowanceWidthFormula(const QString &formula, qreal value);
 
-    QVector<quint32>         GetInternalPaths() const;
-    QVector<quint32>        &GetInternalPaths();
+    QVector<quint32>         getInternalPaths() const;
+    QVector<quint32>        &getInternalPaths();
     void                     SetInternalPaths(const QVector<quint32> &iPaths);
 
-    QVector<CustomSARecord>  GetCustomSARecords() const;
-    QVector<CustomSARecord>  &GetCustomSARecords();
+    QVector<CustomSARecord>  getCustomSARecords() const;
+    QVector<CustomSARecord>  &getCustomSARecords();
     void                     SetCustomSARecords(const QVector<CustomSARecord> &records);
 
     QVector<quint32>         getAnchors() const;

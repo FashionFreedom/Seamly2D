@@ -238,7 +238,7 @@ qreal VAbstractCurve::GetLengthByPoint(const QPointF &point) const
 
     bool ok = false;
     const QVector<QPointF> segment = ToEnd(points, point, &ok);
-    if (not ok)
+    if (!ok)
     {
         return -1;
     }
@@ -260,7 +260,7 @@ QVector<QPointF> VAbstractCurve::IntersectLine(const QLineF &line) const
 bool VAbstractCurve::IsIntersectLine(const QLineF &line) const
 {
     const QVector<QPointF> points = IntersectLine(line);
-    return not points.isEmpty();
+    return !points.isEmpty();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -368,6 +368,62 @@ QVector<QPointF> VAbstractCurve::CurveIntersectLine(const QVector<QPointF> &poin
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+bool VAbstractCurve::curveIntersectAxis(const QPointF &point, qreal angle, const QVector<QPointF> &curvePoints,
+                                        QPointF *intersectionPoint)
+{
+    SCASSERT(intersectionPoint != nullptr)
+
+    QRectF rect = QRectF(0, 0, INT_MAX, INT_MAX);
+    rect.translate(-INT_MAX/2.0, -INT_MAX/2.0);
+
+    const QLineF axis = VGObject::BuildAxis(point, angle, rect);
+    const QVector<QPointF> points = VAbstractCurve::CurveIntersectLine(curvePoints, axis);
+
+    if (points.size() > 0)
+    {
+        if (points.size() == 1)
+        {
+            *intersectionPoint = points.at(0);
+            return true;
+        }
+
+        QMap<qreal, int> forward;
+        QMap<qreal, int> backward;
+
+        for ( qint32 i = 0; i < points.size(); ++i )
+        {
+            if (points.at(i) == point)
+            {
+                continue;
+            }
+
+            const QLineF length(point, points.at(i));
+            if (qAbs(length.angle()-angle) < 0.1)
+            {
+                forward.insert(length.length(), i);
+            }
+            else
+            {
+                backward.insert(length.length(), i);
+            }
+        }
+
+        if (!forward.isEmpty())
+        {
+            *intersectionPoint = points.at(forward.first());
+            return true;
+        }
+        else if (!backward.isEmpty())
+        {
+            *intersectionPoint = points.at(backward.first());
+            return true;
+        }
+    }
+
+    return false;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QVector<DirectionArrow> VAbstractCurve::DirectionArrows() const
 {
     QVector<DirectionArrow> arrows;
@@ -419,7 +475,7 @@ QPainterPath VAbstractCurve::ShowDirection(const QVector<DirectionArrow> &arrows
     for (int i = 0; i < arrows.size(); ++i)
     {
         const DirectionArrow arrow = arrows.at(i);
-        if (not arrow.first.isNull() && not arrow.second.isNull())
+        if (!arrow.first.isNull() && !arrow.second.isNull())
         {
             QPainterPath arrowPath;
 

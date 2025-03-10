@@ -72,7 +72,7 @@ void PatternPieceVisual::RefreshGeometry()
 {
     HideAllItems();
 
-    if (m_piece.GetPath().CountNodes() > 0)
+    if (m_piece.GetPath().nodeCount() > 0)
     {
         DrawPath(this, m_piece.MainPathPath(Visualization::data), mainColor, Qt::SolidLine, Qt::RoundCap);
 

@@ -596,12 +596,12 @@ void VAbstractTool::AddRecord(const quint32 id, const Tool &toolType, VAbstractP
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractTool::AddNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiecePath &path)
+void VAbstractTool::addNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiecePath &path)
 {
-    if (path.CountNodes() > 0)
+    if (path.nodeCount() > 0)
     {
         QDomElement nodesElement = doc->createElement(VAbstractPattern::TagNodes);
-        for (int i = 0; i < path.CountNodes(); ++i)
+        for (int i = 0; i < path.nodeCount(); ++i)
         {
             AddNode(doc, nodesElement, path.at(i));
         }
@@ -610,9 +610,9 @@ void VAbstractTool::AddNodes(VAbstractPattern *doc, QDomElement &domElement, con
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractTool::AddNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece)
+void VAbstractTool::addNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece)
 {
-    AddNodes(doc, domElement, piece.GetPath());
+    addNodes(doc, domElement, piece.GetPath());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -727,7 +727,7 @@ QVector<VPieceNode> VAbstractTool::PrepareNodes(const VPiecePath &path, VMainGra
                                                 VAbstractPattern *doc, VContainer *data)
 {
     QVector<VPieceNode> nodes;
-    for (int i = 0; i< path.CountNodes(); ++i)
+    for (int i = 0; i< path.nodeCount(); ++i)
     {
         VPieceNode node = path.at(i);
         const quint32 id = PrepareNode(node, scene, doc, data);

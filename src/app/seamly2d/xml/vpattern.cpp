@@ -1025,7 +1025,7 @@ void VPattern::parsePieceNodes(const QDomElement &domElement, VPiece &piece, qre
         }
     }
 
-    piece.GetPath().SetNodes(VNodeDetail::Convert(data, oldNodes, width, closed));
+    piece.GetPath().setNodes(VNodeDetail::Convert(data, oldNodes, width, closed));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1114,7 +1114,7 @@ void VPattern::PointsCommonAttributes(const QDomElement &domElement, quint32 &id
 {
     PointsCommonAttributes(domElement, id, name, mx, my, isVisible);
     lineType   = GetParametrString(domElement, AttrLineType,   LineTypeSolidLine);
-    lineWeight = GetParametrString(domElement, AttrLineWeight, "0.35");
+    lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
     lineColor  = GetParametrString(domElement, AttrLineColor,  qApp->Settings()->getPointNameColor());
 }
 
@@ -1282,7 +1282,7 @@ void VPattern::ParseLineElement(VMainGraphicsScene *scene, const QDomElement &do
         const quint32 firstPoint  = GetParametrUInt(domElement,   AttrFirstPoint,  NULL_ID_STR);
         const quint32 secondPoint = GetParametrUInt(domElement,   AttrSecondPoint, NULL_ID_STR);
         const QString lineType    = GetParametrString(domElement, AttrLineType,    LineTypeSolidLine);
-        const QString lineWeight  = GetParametrString(domElement, AttrLineWeight,  "0.35");
+        const QString lineWeight  = GetParametrString(domElement, AttrLineWeight,  "1.00");
         const QString lineColor   = GetParametrString(domElement, AttrLineColor,   ColorBlack);
 
         VToolLine::Create(id, firstPoint, secondPoint, lineType, lineWeight, lineColor, scene, this, data, parse, Source::FromFile);
@@ -2450,7 +2450,7 @@ void VPattern::ParseToolSpline(VMainGraphicsScene *scene, QDomElement &domElemen
 
         const QString color      = GetParametrString(domElement, AttrColor,      ColorBlack);
         const QString penStyle   = GetParametrString(domElement, AttrPenStyle,   LineTypeSolidLine);
-        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "0.35");
+        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
         const quint32 duplicate  = GetParametrUInt(domElement,   AttrDuplicate,  "0");
 
         VToolSpline *spl = VToolSpline::Create(id, point1, point4, a1, a2, l1, l2, duplicate, color, penStyle,
@@ -2506,7 +2506,7 @@ void VPattern::ParseToolCubicBezier(VMainGraphicsScene *scene, const QDomElement
 
         const QString color      = GetParametrString(domElement, AttrColor,      ColorBlack);
         const QString penStyle   = GetParametrString(domElement, AttrPenStyle,   LineTypeSolidLine);
-        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "0.35");
+        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
         const quint32 duplicate  = GetParametrUInt(domElement, AttrDuplicate,    "0");
 
         auto p1 = data->GeometricObject<VPointF>(point1);
@@ -2608,7 +2608,7 @@ void VPattern::ParseToolSplinePath(VMainGraphicsScene *scene, const QDomElement 
         ToolsCommonAttributes(domElement, id);
         const QString color      = GetParametrString(domElement, AttrColor,      ColorBlack);
         const QString penStyle   = GetParametrString(domElement, AttrPenStyle,   LineTypeSolidLine);
-        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "0.35");
+        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
         const quint32 duplicate  = GetParametrUInt(domElement,   AttrDuplicate,  "0");
 
         QVector<quint32> points;
@@ -2702,7 +2702,7 @@ void VPattern::ParseToolCubicBezierPath(VMainGraphicsScene *scene, const QDomEle
         ToolsCommonAttributes(domElement, id);
         const QString color      = GetParametrString(domElement, AttrColor,      ColorBlack);
         const QString penStyle   = GetParametrString(domElement, AttrPenStyle,   LineTypeSolidLine);
-        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "0.35");
+        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
         const quint32 duplicate  = GetParametrUInt(domElement,   AttrDuplicate,  "0");
 
         QVector<VPointF> points;
@@ -2857,7 +2857,7 @@ void VPattern::ParseToolArc(VMainGraphicsScene *scene, QDomElement &domElement, 
               QString f2Fix      = f2;//need for saving fixed formula;
         const QString color      = GetParametrString(domElement, AttrColor,      ColorBlack);
         const QString penStyle   = GetParametrString(domElement, AttrPenStyle,   LineTypeSolidLine);
-        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "0.35");
+        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
 
         VToolArc::Create(id, center, r, f1Fix, f2Fix, color, penStyle, lineWeight, scene, this, data,
                          parse, Source::FromFile);
@@ -2909,7 +2909,7 @@ void VPattern::ParseToolEllipticalArc(VMainGraphicsScene *scene, QDomElement &do
         QString frotationFix     = frotation;//need for saving fixed formula;
         const QString color      = GetParametrString(domElement, AttrColor, ColorBlack);
         const QString penStyle   = GetParametrString(domElement, AttrPenStyle, LineTypeSolidLine);
-        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "0.35");
+        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
 
         VToolEllipticalArc::Create(id, center, r1, r2, f1Fix, f2Fix, frotationFix, color, penStyle, lineWeight,
                                    scene, this, data,
@@ -3030,7 +3030,7 @@ void VPattern::ParseToolArcWithLength(VMainGraphicsScene *scene, QDomElement &do
         QString lengthFix        = length;//need for saving fixed length;
         const QString color      = GetParametrString(domElement, AttrColor, ColorBlack);
         const QString penStyle   = GetParametrString(domElement, AttrPenStyle, LineTypeSolidLine);
-        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "0.35");
+        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
 
         VToolArcWithLength::Create(id, center, r, f1Fix, lengthFix, color, penStyle, lineWeight, scene, this,
                                    data, parse,
@@ -3537,9 +3537,13 @@ void VPattern::ParsePathElement(VMainGraphicsScene *scene, QDomElement &domEleme
         const QString name       = GetParametrString(domElement, AttrName, tr("Unnamed path"));
         const QString defType    = QString().setNum(static_cast<int>(PiecePathType::CustomSeamAllowance));
         const PiecePathType type = static_cast<PiecePathType>(GetParametrUInt(domElement, AttrType, defType));
-        const quint32 idTool     = GetParametrUInt(domElement, VAbstractNode::AttrIdTool, NULL_ID_STR);
-        const QString penType    = GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
-        const bool cut           = getParameterBool(domElement, AttrCut, falseStr);
+        const quint32 idTool     = GetParametrUInt(domElement,   VAbstractNode::AttrIdTool, NULL_ID_STR);
+        const QString color      = GetParametrString(domElement, AttrLineColor, ColorBlack);
+        const QString lineType   = GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
+        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
+        const bool cut           = getParameterBool(domElement,  AttrCut, falseStr);
+        const bool extendStartPt = getParameterBool(domElement,  AttrExtendStartPoint, falseStr);
+        const bool extendEndPt   = getParameterBool(domElement,  AttrExtendEndPoint, falseStr);
 
         VPiecePath path;
         const QDomElement element = domElement.firstChildElement(VAbstractPattern::TagNodes);
@@ -3550,7 +3554,7 @@ void VPattern::ParsePathElement(VMainGraphicsScene *scene, QDomElement &domEleme
             // Check if nodes are still in use, if not an excpetion will be thrown that we can just ignore.
             try
             {
-                for (int i = 0; i < path.CountNodes(); ++i)
+                for (int i = 0; i < path.nodeCount(); ++i)
                 {
                     data->GetGObject(path.at(i).GetId());
                 }
@@ -3567,12 +3571,16 @@ void VPattern::ParsePathElement(VMainGraphicsScene *scene, QDomElement &domEleme
             throw excep;
         }
 
-        path.SetType(type);
-        path.SetName(name);
-        path.SetPenType(lineTypeToPenStyle(penType));
-        path.SetCutPath(cut);
+        path.setType(type);
+        path.setName(name);
+        path.setLineColor(color);
+        path.setLineType(lineTypeToPenStyle(lineType));
+        path.setLineWeight(lineWeight);
+        path.setCutPath(cut);
+        path.setExtendStartPoint(extendStartPt);
+        path.setExtendEndPoint(extendEndPt);
 
-        VToolInternalPath::Create(id, path, NULL_ID, scene, this, data, parse, Source::FromFile, "", idTool);
+        InternalPathTool::Create(id, path, NULL_ID, scene, this, data, parse, Source::FromFile, "", idTool);
     }
     catch (const VExceptionBadId &error)
     {
@@ -4251,7 +4259,16 @@ QRectF VPattern::ToolBoundingRect(const QRectF &rect, const quint32 &id) const
 void VPattern::IncrementReferens(quint32 id) const
 {
     Q_ASSERT_X(id != 0, Q_FUNC_INFO, "id == 0");
-    ToolExists(id);
+    try
+    {
+        ToolExists(id);
+    }
+    catch (VExceptionBadId &error)
+    {
+        Q_UNUSED(error)
+        qCDebug(vXML,"Can't find tool in table. id= %u", id);
+        return;
+    }
     VDataTool *tool = tools.value(id);
     SCASSERT(tool != nullptr)
     tool->incrementReferens();
@@ -4265,7 +4282,16 @@ void VPattern::IncrementReferens(quint32 id) const
 void VPattern::DecrementReferens(quint32 id) const
 {
     Q_ASSERT_X(id != 0, Q_FUNC_INFO, "id == 0");
-    ToolExists(id);
+    try
+    {
+        ToolExists(id);
+    }
+    catch (VExceptionBadId &error)
+    {
+        Q_UNUSED(error)
+        qCDebug(vXML, "Can't find tool in table. id= %u", id);
+        return;
+    }
     VDataTool *tool = tools.value(id);
     SCASSERT(tool != nullptr)
     tool->decrementReferens();

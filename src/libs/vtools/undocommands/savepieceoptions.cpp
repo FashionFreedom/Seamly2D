@@ -89,14 +89,14 @@ void SavePieceOptions::undo()
     QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagPiece);
     if (domElement.isElement())
     {
-        PatternPieceTool::AddAttributes(doc, domElement, nodeId, m_oldPiece);
+        PatternPieceTool::addAttributes(doc, domElement, nodeId, m_oldPiece);
         doc->RemoveAllChildren(domElement);//Very important to clear before rewrite
-        PatternPieceTool::AddPatternPieceData(doc, domElement, m_oldPiece);
-        PatternPieceTool::AddPatternInfo(doc, domElement, m_oldPiece);
-        PatternPieceTool::AddGrainline(doc, domElement, m_oldPiece);
-        PatternPieceTool::AddNodes(doc, domElement, m_oldPiece);
-        PatternPieceTool::AddCSARecords(doc, domElement, m_oldPiece.GetCustomSARecords());
-        PatternPieceTool::AddInternalPaths(doc, domElement, m_oldPiece.GetInternalPaths());
+        PatternPieceTool::addPieceLabel(doc, domElement, m_oldPiece);
+        PatternPieceTool::addPatternLabel(doc, domElement, m_oldPiece);
+        PatternPieceTool::addGrainline(doc, domElement, m_oldPiece);
+        PatternPieceTool::addNodes(doc, domElement, m_oldPiece);
+        PatternPieceTool::addCSARecords(doc, domElement, m_oldPiece.getCustomSARecords());
+        PatternPieceTool::addInternalPaths(doc, domElement, m_oldPiece.getInternalPaths());
         PatternPieceTool::addAnchors(doc, domElement, m_oldPiece.getAnchors());
 
         IncrementReferences(m_oldPiece.MissingNodes(m_newPiece));
@@ -104,10 +104,12 @@ void SavePieceOptions::undo()
         IncrementReferences(m_oldPiece.MissingInternalPaths(m_newPiece));
         IncrementReferences(m_oldPiece.missingAnchors(m_newPiece));
 
-        //DecrementReferences(m_newPiece.MissingNodes(m_oldPiece));
-        //DecrementReferences(m_newPiece.MissingCSAPath(m_oldPiece));
-        //DecrementReferences(m_newPiece.MissingInternalPaths(m_oldPiece));
-        //DecrementReferences(m_newPiece.missingAnchors(m_oldPiece));
+        DecrementReferences(m_newPiece.MissingNodes(m_oldPiece));
+        DecrementReferences(m_newPiece.MissingCSAPath(m_oldPiece));
+        DecrementReferences(m_newPiece.MissingInternalPaths(m_oldPiece));
+        DecrementReferences(m_newPiece.missingAnchors(m_oldPiece));
+
+        emit NeedLiteParsing(Document::LiteParse);
 
         if (auto *tool = qobject_cast<PatternPieceTool *>(VAbstractPattern::getTool(nodeId)))
         {
@@ -117,6 +119,7 @@ void SavePieceOptions::undo()
     else
     {
         qCWarning(vUndo, "Can't find piece with id = %u.", nodeId);
+        return;
     }
 }
 
@@ -128,25 +131,27 @@ void SavePieceOptions::redo()
     QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagPiece);
     if (domElement.isElement())
     {
-        PatternPieceTool::AddAttributes(doc, domElement, nodeId, m_newPiece);
+        PatternPieceTool::addAttributes(doc, domElement, nodeId, m_newPiece);
         doc->RemoveAllChildren(domElement);//Very important to clear before rewrite
-        PatternPieceTool::AddPatternPieceData(doc, domElement, m_newPiece);
-        PatternPieceTool::AddPatternInfo(doc, domElement, m_newPiece);
-        PatternPieceTool::AddGrainline(doc, domElement, m_newPiece);
-        PatternPieceTool::AddNodes(doc, domElement, m_newPiece);
-        PatternPieceTool::AddCSARecords(doc, domElement, m_newPiece.GetCustomSARecords());
-        PatternPieceTool::AddInternalPaths(doc, domElement, m_newPiece.GetInternalPaths());
+        PatternPieceTool::addPieceLabel(doc, domElement, m_newPiece);
+        PatternPieceTool::addPatternLabel(doc, domElement, m_newPiece);
+        PatternPieceTool::addGrainline(doc, domElement, m_newPiece);
+        PatternPieceTool::addNodes(doc, domElement, m_newPiece);
+        PatternPieceTool::addCSARecords(doc, domElement, m_newPiece.getCustomSARecords());
+        PatternPieceTool::addInternalPaths(doc, domElement, m_newPiece.getInternalPaths());
         PatternPieceTool::addAnchors(doc, domElement, m_newPiece.getAnchors());
 
-        //IncrementReferences(m_newPiece.MissingNodes(m_oldPiece));
-        //IncrementReferences(m_newPiece.MissingCSAPath(m_oldPiece));
-        //IncrementReferences(m_newPiece.MissingInternalPaths(m_oldPiece));
-        //IncrementReferences(m_newPiece.missingAnchors(m_oldPiece));
+        IncrementReferences(m_newPiece.MissingNodes(m_oldPiece));
+        IncrementReferences(m_newPiece.MissingCSAPath(m_oldPiece));
+        IncrementReferences(m_newPiece.MissingInternalPaths(m_oldPiece));
+        IncrementReferences(m_newPiece.missingAnchors(m_oldPiece));
 
         DecrementReferences(m_oldPiece.MissingNodes(m_newPiece));
         DecrementReferences(m_oldPiece.MissingCSAPath(m_newPiece));
         DecrementReferences(m_oldPiece.MissingInternalPaths(m_newPiece));
         DecrementReferences(m_oldPiece.missingAnchors(m_newPiece));
+
+        emit NeedLiteParsing(Document::LiteParse);
 
         if (auto *tool = qobject_cast<PatternPieceTool *>(VAbstractPattern::getTool(nodeId)))
         {
@@ -156,6 +161,7 @@ void SavePieceOptions::redo()
     else
     {
         qCWarning(vUndo, "Can't find piece with id = %u.", nodeId);
+        return;
     }
 }
 

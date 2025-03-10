@@ -403,8 +403,12 @@
                           <xs:attribute name="idTool" type="xs:unsignedInt"/>
                           <xs:attribute name="inUse" type="xs:boolean"/>
                           <xs:attribute name="name" type="xs:string"/>
+                          <xs:attribute name="lineColor" type="colors"/>
                           <xs:attribute name="lineType" type="curvePenStyle"/>
+                          <xs:attribute name="lineWeight" type="lineWeights"/>
                           <xs:attribute name="cut" type="xs:boolean"/>
+                          <xs:attribute name="extendStartPoint" type="xs:boolean"/>
+                          <xs:attribute name="extendEndPoint" type="xs:boolean"/>
                         </xs:complexType>
                       </xs:element>
                       <xs:element name="tools" minOccurs="0" maxOccurs="unbounded">

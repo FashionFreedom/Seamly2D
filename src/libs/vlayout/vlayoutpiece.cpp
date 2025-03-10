@@ -1,54 +1,52 @@
-/***************************************************************************
- **  @file   vlayoutpiece.cpp
- **  @author Douglas S Caskey
- **  @date  17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vlayoutpiece.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @copyright
+//  Copyright (C) 2017 - 2025 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   vlayoutdetail.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   2 1, 2015
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vlayoutdetail.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   2 1, 2015
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2016 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "vlayoutpiece.h"
 
@@ -89,19 +87,23 @@ QVector<VLayoutPiecePath> ConvertInternalPaths(const VPiece &piece, const VConta
     SCASSERT(pattern != nullptr)
 
     QVector<VLayoutPiecePath> paths;
-    const QVector<quint32> pathIds = piece.GetInternalPaths();
+    const QVector<quint32> pathIds = piece.getInternalPaths();
+    const QVector<QPointF> cutPath = piece.cutPathPoints(pattern);
+
     for (int i = 0; i < pathIds.size(); ++i)
     {
-        const VPiecePath path = pattern->GetPiecePath(pathIds.at(i));
-        if (path.GetType() == PiecePathType::InternalPath)
+        const VPiecePath path = pattern->getPiecePath(pathIds.at(i));
+        if (path.getType() == PiecePathType::InternalPath)
         {
-            if (isCut && path.IsCutPath())
+            if (isCut && path.isCutPath())
             {
-                paths.append(VLayoutPiecePath(path.PathPoints(pattern), path.IsCutPath(), path.GetPenType()));
+                paths.append(VLayoutPiecePath(path.PathPoints(pattern, cutPath),
+                path.getLineColor(), path.getLineType(), path.getLineWeight(), path.isCutPath()));
             }
-            else if (!isCut && !path.IsCutPath())
+            else if (!isCut && !path.isCutPath())
             {
-                paths.append(VLayoutPiecePath(path.PathPoints(pattern), path.IsCutPath(), path.GetPenType()));
+                paths.append(VLayoutPiecePath(path.PathPoints(pattern, cutPath),
+                path.getLineColor(), path.getLineType(), path.getLineWeight(), path.isCutPath()));
             }
         }
     }
@@ -109,7 +111,7 @@ QVector<VLayoutPiecePath> ConvertInternalPaths(const VPiece &piece, const VConta
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool FindLabelGeometry(const VPatternLabelData &labelData, const VContainer *pattern, qreal &rotationAngle,
+bool findLabelGeometry(const VPatternLabelData &labelData, const VContainer *pattern, qreal &rotationAngle,
                        qreal &labelWidth, qreal &labelHeight, QPointF &pos)
 {
     SCASSERT(pattern != nullptr)
@@ -190,7 +192,7 @@ bool FindLabelGeometry(const VPatternLabelData &labelData, const VContainer *pat
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool FindGrainlineGeometry(const VGrainlineData& data, const VContainer *pattern, qreal &length, qreal &rotationAngle,
+bool findGrainlineGeometry(const VGrainlineData& data, const VContainer *pattern, qreal &length, qreal &rotationAngle,
                            QPointF &pos)
 {
     SCASSERT(pattern != nullptr)
@@ -209,7 +211,7 @@ bool FindGrainlineGeometry(const VGrainlineData& data, const VContainer *pattern
             length = grainline.length();
             rotationAngle = grainline.angle();
 
-            if (not VFuzzyComparePossibleNulls(rotationAngle, 0))
+            if (!VFuzzyComparePossibleNulls(rotationAngle, 0))
             {
                 grainline.setAngle(0);
             }
@@ -281,7 +283,7 @@ bool IsItemContained(const QRectF &parentBoundingRect, const QVector<QPointF> &s
     {
         qreal dPtX = 0;
         qreal dPtY = 0;
-        if (not parentBoundingRect.contains(shape.at(i)))
+        if (!parentBoundingRect.contains(shape.at(i)))
         {
             if (shape.at(i).x() < parentBoundingRect.left())
             {
@@ -322,7 +324,7 @@ QVector<QPointF> CorrectPosition(const QRectF &parentBoundingRect, QVector<QPoin
 {
     qreal dX = 0;
     qreal dY = 0;
-    if (not IsItemContained(parentBoundingRect, points, dX, dY))
+    if (!IsItemContained(parentBoundingRect, points, dX, dY))
     {
         for (int i =0; i < points.size(); ++i)
         {
@@ -344,13 +346,12 @@ QVector<VSAPoint> PrepareAllowance(const QVector<QPointF> &points)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VLayoutPiece::RotatePoint rotates a point around the center for given angle
- * @param ptCenter center around which the point is rotated
- * @param pt point, which is rotated around the center
- * @param rotationAngle angle of rotation
- * @return position of point pt after rotating it around the center for rotation radians
- */
+/// @brief VLayoutPiece::RotatePoint rotates a point around the center for given angle
+/// @param ptCenter center around which the point is rotated
+/// @param pt point, which is rotated around the center
+/// @param rotationAngle angle of rotation
+/// @return position of point pt after rotating it around the center for rotation radians
+//---------------------------------------------------------------------------------------------------------------------
 QPointF RotatePoint(const QPointF &ptCenter, const QPointF& pt, qreal rotationAngle)
 {
     QPointF ptDest;
@@ -387,14 +388,14 @@ void VLayoutPiece::Swap(VLayoutPiece &piece) Q_DECL_NOTHROW
 
 //---------------------------------------------------------------------------------------------------------------------
 VLayoutPiece::VLayoutPiece()
-    : VAbstractPiece(),
-      d(new VLayoutPieceData)
+    : VAbstractPiece()
+    , d(new VLayoutPieceData)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
 VLayoutPiece::VLayoutPiece(const VLayoutPiece &piece)
-    : VAbstractPiece(piece),
-      d(piece.d)
+    : VAbstractPiece(piece)
+    , d(piece.d)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -490,11 +491,11 @@ void VLayoutPiece::setSeamAllowancePoints(const QVector<QPointF> &points, bool s
         SetSeamAllowance(seamAllowance);
         SetSeamAllowanceBuiltIn(seamAllowanceBuiltIn);
         d->seamAllowance = points;
-        if (not d->seamAllowance.isEmpty())
+        if (!d->seamAllowance.isEmpty())
         {
             d->seamAllowance = RemoveDublicates(d->seamAllowance, false);
         }
-        else if (not IsSeamAllowanceBuiltIn())
+        else if (!IsSeamAllowanceBuiltIn())
         {
             qWarning() << "Seam allowance is empty.";
             SetSeamAllowance(false);
@@ -535,7 +536,7 @@ void VLayoutPiece::SetPieceText(const QString& qsName, const VPieceLabelData& da
     qreal labelWidth = 0;
     qreal labelHeight = 0;
     qreal labelAngle = 0;
-    if (not FindLabelGeometry(data, pattern, labelAngle, labelWidth, labelHeight, ptPos))
+    if (!findLabelGeometry(data, pattern, labelAngle, labelWidth, labelHeight, ptPos))
     {
         return;
     }
@@ -596,7 +597,7 @@ void VLayoutPiece::SetPatternInfo(VAbstractPattern* pDoc, const VPatternLabelDat
     qreal labelWidth = 0;
     qreal labelHeight = 0;
     qreal labelAngle = 0;
-    if (not FindLabelGeometry(data, pattern, labelAngle, labelWidth, labelHeight, ptPos))
+    if (!findLabelGeometry(data, pattern, labelAngle, labelWidth, labelHeight, ptPos))
     {
         return;
     }
@@ -638,7 +639,7 @@ void VLayoutPiece::setGrainline(const VGrainlineData& data, const VContainer* pa
     QPointF pt1;
     qreal rotationAngle = 0;
     qreal length = 0;
-    if ( not FindGrainlineGeometry(data, pattern, length, rotationAngle, pt1))
+    if (!findGrainlineGeometry(data, pattern, length, rotationAngle, pt1))
     {
         return;
     }
@@ -914,7 +915,7 @@ QVector<QVector<QPointF> > VLayoutPiece::InternalPathsForCut(bool cut) const
 
     for (int i=0;i < d->m_internalPaths.count(); ++i)
     {
-        if (d->m_internalPaths.at(i).IsCutPath() == cut)
+        if (d->m_internalPaths.at(i).isCutPath() == cut)
         {
             paths.append(Map(d->m_internalPaths.at(i).Points()));
         }
@@ -977,7 +978,7 @@ QPainterPath VLayoutPiece::createMainPath() const
     // contour
     QVector<QPointF> points = getContourPoints();
 
-    if (not isHideSeamLine() || not IsSeamAllowance() || IsSeamAllowanceBuiltIn())
+    if (!isHideSeamLine() || not IsSeamAllowance() || IsSeamAllowanceBuiltIn())
     {
         path.moveTo(points.at(0));
         for (qint32 i = 1; i < points.count(); ++i)
@@ -997,7 +998,7 @@ QPainterPath VLayoutPiece::createAllowancePath() const
     // seam allowance
     if (IsSeamAllowance())
     {
-        if (not IsSeamAllowanceBuiltIn())
+        if (!IsSeamAllowanceBuiltIn())
         {
             // Draw seam allowance
             QVector<QPointF>points = GetSeamAllowancePoints();
@@ -1045,26 +1046,26 @@ QPainterPath VLayoutPiece::createNotchesPath() const
 void VLayoutPiece::createInternalPathItem(int i, QGraphicsItem *parent) const
 {
     SCASSERT(parent != nullptr)
-    QColor  color      = QColor(qApp->Settings()->getDefaultInternalColor());
-    QString lineType   = qApp->Settings()->getDefaultInternalLinetype();
-    qreal   lineWeight = ToPixel(qApp->Settings()->getDefaultInternalLineweight(), Unit::Mm);
+    QColor       color      = d->m_internalPaths.at(i).getLineColor();
+    Qt::PenStyle lineType   = d->m_internalPaths.at(i).getLineType();
+    qreal        lineWeight = ToPixel(d->m_internalPaths.at(i).getLineWeight().toDouble(), Unit::Mm);
 
     QGraphicsPathItem* item = new QGraphicsPathItem(parent);
     item->setPath(d->transform.map(d->m_internalPaths.at(i).GetPainterPath()));
-    item->setPen(QPen(color, lineWeight, d->m_internalPaths.at(i).PenStyle(), Qt::RoundCap, Qt::RoundJoin));
+    item->setPen(QPen(color, lineWeight, lineType, Qt::RoundCap, Qt::RoundJoin));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VLayoutPiece::createCutoutPathItem(int i, QGraphicsItem *parent) const
 {
     SCASSERT(parent != nullptr)
-    QColor  color      = QColor(qApp->Settings()->getDefaultCutoutColor());
-    QString lineType   = qApp->Settings()->getDefaultCutoutLinetype();
-    qreal   lineWeight = ToPixel(qApp->Settings()->getDefaultCutoutLineweight(), Unit::Mm);
+    QColor       color      = d->m_cutoutPaths.at(i).getLineColor();
+    Qt::PenStyle lineType   = d->m_cutoutPaths.at(i).getLineType();
+    qreal        lineWeight = ToPixel(d->m_cutoutPaths.at(i).getLineWeight().toDouble(), Unit::Mm);
 
     QGraphicsPathItem* item = new QGraphicsPathItem(parent);
     item->setPath(d->transform.map(d->m_cutoutPaths.at(i).GetPainterPath()));
-    item->setPen(QPen(color, lineWeight, d->m_cutoutPaths.at(i).PenStyle(), Qt::RoundCap, Qt::RoundJoin));
+    item->setPen(QPen(color, lineWeight, lineType, Qt::RoundCap, Qt::RoundJoin));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

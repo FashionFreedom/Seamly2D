@@ -476,7 +476,7 @@ signals:
      * @brief patternChanged emit if we have unsaved change.
      */
     void           patternChanged(bool saved);
-    void           UpdatePatternLabel();
+    void           updatePatternLabel();
     /**
      * @brief ShowTool highlight tool.
      * @param id tool id.

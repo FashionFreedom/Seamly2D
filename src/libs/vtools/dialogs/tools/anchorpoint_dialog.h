@@ -66,10 +66,10 @@ public:
     explicit AnchorPointDialog(const VContainer *data, quint32 toolId, QWidget *parent = nullptr);
     virtual ~AnchorPointDialog();
 
-    void EnbleShowMode(bool disable);
+    void enableEditMode(bool disable);
 
-    quint32 GetPieceId() const;
-    void    SetPieceId(quint32 id);
+    quint32 getPieceId() const;
+    void    setPieceId(quint32 id);
 
     quint32 GetPointId() const;
     void    SetPointId(quint32 id);
@@ -86,7 +86,7 @@ protected:
 private:
     Q_DISABLE_COPY(AnchorPointDialog)
     Ui::AnchorPointDialog *ui;
-    bool  m_showMode;
+    bool  m_editMode;
     bool  m_flagPoint;
 
     void CheckPieces();

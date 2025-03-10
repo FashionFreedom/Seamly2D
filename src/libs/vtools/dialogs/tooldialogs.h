@@ -91,7 +91,7 @@
 #include "tools/dialogmirrorbyaxis.h"
 #include "tools/dialogmove.h"
 #include "tools/dialogellipticalarc.h"
-#include "tools/piece/dialoginternalpath.h"
+#include "tools/piece/internal_path_dialog.h"
 #include "tools/anchorpoint_dialog.h"
 #include "tools/insert_nodes_dialog.h"
 
