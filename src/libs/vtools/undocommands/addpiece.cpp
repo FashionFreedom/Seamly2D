@@ -86,9 +86,9 @@ void AddPiece::undo()
                 return;
             }
 
-            DecrementReferences(m_piece.GetPath().GetNodes());
-            DecrementReferences(m_piece.GetCustomSARecords());
-            DecrementReferences(m_piece.GetInternalPaths());
+            DecrementReferences(m_piece.GetPath().getNodes());
+            DecrementReferences(m_piece.getCustomSARecords());
+            DecrementReferences(m_piece.getInternalPaths());
             DecrementReferences(m_piece.getAnchors());
         }
         else

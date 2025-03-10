@@ -137,7 +137,7 @@ bool UnionDialog::isPieceValid(const quint32 &pieceId) const
         return false;
     }
     const VPiece piece = data->GetPiece(pieceId);
-    if (piece.GetPath().CountNodes() >= 3 && piece.GetPath().ListNodePoint().size() >= 2)
+    if (piece.GetPath().nodeCount() >= 3 && piece.GetPath().ListNodePoint().size() >= 2)
     {
         return true;
     }

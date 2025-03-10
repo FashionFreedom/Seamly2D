@@ -1,10 +1,10 @@
 //---------------------------------------------------------------------------------------------------------------------
-//  @file   dialoginternalpath.h
+//  @file   internal_path_dialog.h
 //  @author Douglas S Caskey
 //  @date   17 Sep, 2023
 //
 //  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  Copyright (C) 2017 - 2025 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -48,49 +48,50 @@
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
 //---------------------------------------------------------------------------------------------------------------------
 
-#ifndef DIALOGINTERNALPATH_H
-#define DIALOGINTERNALPATH_H
+#ifndef INTERNAL_PATH_DIALOG_H
+#define INTERNAL_PATH_DIALOG_H
 
 #include "../dialogtool.h"
 
 namespace Ui
 {
-    class DialogInternalPath;
+    class InternalPathDialog;
 }
 
-class DialogInternalPath : public DialogTool
+class InternalPathDialog : public DialogTool
 {
     Q_OBJECT
 public:
-    explicit                DialogInternalPath(const VContainer *data, quint32 toolId, QWidget *parent = nullptr);
-    virtual                ~DialogInternalPath();
+    explicit                InternalPathDialog(const VContainer *data, quint32 toolId, QWidget *parent = nullptr);
+    virtual                ~InternalPathDialog();
 
-    void                    EnbleShowMode(bool disable);
+    void                    enableEditMode(bool disable);
 
-    VPiecePath              GetPiecePath() const;
-    void                    SetPiecePath(const VPiecePath &path);
+    VPiecePath              getPiecePath() const;
+    void                    setPiecePath(const VPiecePath &path);
 
-    quint32                 GetPieceId() const;
-    void                    SetPieceId(quint32 id);
+    quint32                 getPieceId() const;
+    void                    setPieceId(quint32 id);
 
     QString                 getSeamAllowanceWidthFormula() const;
     void                    setSeamAllowanceWidthFormula(const QString &formula);
 
-    virtual void            SetPiecesList(const QVector<quint32> &list) Q_DECL_OVERRIDE;
+    virtual void            SetPiecesList(const QVector<quint32> &list) override;
 
 public slots:
-    virtual void            ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
-    virtual void            ShowDialog(bool click) Q_DECL_OVERRIDE;
+    virtual void            ChosenObject(quint32 id, const SceneObject &type) override;
+    virtual void            ShowDialog(bool click) override;
 
 protected:
-    virtual void            CheckState() Q_DECL_FINAL;
-    virtual void            ShowVisualization() Q_DECL_OVERRIDE;
-    virtual void            closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
+    virtual void            CheckState() final;
+    virtual void            ShowVisualization() override;
+    virtual void            closeEvent(QCloseEvent *event) override;
 
 private slots:
     void                    showContextMenu(const QPoint &pos);
     void                    listChanged();
     void                    nameChanged();
+    void                    setPenAttributes();
     void                    nodeChanged(int index);
     void                    notchChanged(int index);
     void                    enableDefaultBeforeButton();
@@ -115,9 +116,9 @@ private slots:
     void                    expandWidthAfterFormulaTextEdit();
 
 private:
-    Q_DISABLE_COPY(DialogInternalPath)
-    Ui::DialogInternalPath *ui;
-    bool                    m_showMode;
+    Q_DISABLE_COPY(InternalPathDialog)
+    Ui::InternalPathDialog *ui;
+    bool                    m_editMode;
     qreal                   m_saWidth;
 
     QTimer                 *m_timerWidth;
@@ -145,8 +146,14 @@ private:
     PiecePathType           getType() const;
     void                    setType(PiecePathType type);
 
-    Qt::PenStyle            getPenType() const;
-    void                    setPenType(const Qt::PenStyle &type);
+    QString                 getLineColor() const;
+    void                    setLineColor(const QString &value);
+
+    Qt::PenStyle            getLineType() const;
+    void                    setLineType(const Qt::PenStyle &type);
+
+    QString                 getLineWeight() const;
+    void                    setLineWeight(const QString &value);
 
     bool                    isCutPath() const;
     void                    setCutPath(bool value);
@@ -165,6 +172,7 @@ private:
     QString                 getSeamAllowanceWidthFormulaAfter() const;
 
     void                    setMoveExclusions();
+    void                    validateName() const;
 };
 
-#endif // DIALOGINTERNALPATH_H
+#endif // INTERNAL_PATH_DIALOG_H

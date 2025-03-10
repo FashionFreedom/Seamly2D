@@ -250,7 +250,7 @@ void DialogPatternProperties::Apply()
         case 3:
             SaveLabelData();
             SaveTemplateData();
-            emit doc->UpdatePatternLabel();
+            emit doc->updatePatternLabel();
             break;
         default:
             break;
@@ -267,7 +267,7 @@ void DialogPatternProperties::Ok()
     SaveLabelData();
     SaveTemplateData();
 
-    emit doc->UpdatePatternLabel();
+    emit doc->updatePatternLabel();
 
     close();
 }
@@ -631,7 +631,7 @@ void DialogPatternProperties::SaveLabelData()
         labelDataChanged = false;
         askSaveLabelData = false;
         emit doc->patternChanged(false);
-        emit doc->UpdatePatternLabel();
+        emit doc->updatePatternLabel();
     }
 }
 
@@ -643,7 +643,7 @@ void DialogPatternProperties::SaveTemplateData()
         doc->setPatternLabelTemplate(templateLines);
         templateDataChanged = false;
         emit doc->patternChanged(false);
-        emit doc->UpdatePatternLabel();
+        emit doc->updatePatternLabel();
     }
 }
 

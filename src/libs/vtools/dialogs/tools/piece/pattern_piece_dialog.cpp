@@ -1,14 +1,13 @@
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   pattern_piece_dialog.cpp
 //  @author Douglas S Caskey
 //  @date   17 Sep, 2023
 //
-//  @brief
 //  @copyright
-//  This source code is part of the Seamly2D project, a pattern making
-//  program to create and model patterns of clothing.
-//  Copyright (C) 2017-2024 Seamly2D project
-//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//  Copyright (C) 2017 - 2025 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
 //
+//  @brief
 //  Seamly2D is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
 //  the Free Software Foundation, either version 3 of the License, or
@@ -20,40 +19,39 @@
 //  GNU General Public License for more details.
 //
 //  You should have received a copy of the GNU General Public License
-//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   seamallowance.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   3 11, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  if not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   seamallowance.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   3 11, 2016
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2016 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  if not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "pattern_piece_dialog.h"
 #include "ui_pattern_piece_dialog.h"
 
-#include "dialoginternalpath.h"
+#include "internal_path_dialog.h"
 #include "vpointf.h"
 #include "visualization/path/pieceanchorpoint_visual.h"
 #include "visualization/path/pattern_piece_visual.h"
@@ -142,6 +140,7 @@ PatternPieceDialog::PatternPieceDialog(const VContainer *data, const quint32 &to
     , m_patternLabelLines()
     , m_pieceLabelLines()
     , m_beep(new QSound(qApp->Settings()->getSelectionSound()))
+    , m_undoStack()
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -187,6 +186,14 @@ PatternPieceDialog::~PatternPieceDialog()
 {
     delete m_anchorPoints;
     delete ui;
+
+    for (auto &command : m_undoStack)
+    {
+        if (!command.isNull())
+        {
+            delete command;
+        }
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -250,7 +257,7 @@ VPiece PatternPieceDialog::GetPiece() const
 void PatternPieceDialog::SetPiece(const VPiece &piece)
 {
     ui->mainPath_ListWidget->clear();
-    for (int i = 0; i < piece.GetPath().CountNodes(); ++i)
+    for (int i = 0; i < piece.GetPath().nodeCount(); ++i)
     {
         newMainPathItem(piece.GetPath().at(i));
     }
@@ -258,16 +265,16 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
     ui->hideSeamLine_CheckBox->setChecked(piece.isHideSeamLine());
     ui->customSeamAllowance_ListWidget->blockSignals(true);
     ui->customSeamAllowance_ListWidget->clear();
-    for (int i = 0; i < piece.GetCustomSARecords().size(); ++i)
+    for (int i = 0; i < piece.getCustomSARecords().size(); ++i)
     {
-        newCustomSeamAllowance(piece.GetCustomSARecords().at(i));
+        newCustomSeamAllowance(piece.getCustomSARecords().at(i));
     }
     ui->customSeamAllowance_ListWidget->blockSignals(false);
 
     ui->internalPaths_ListWidget->clear();
-    for (int i = 0; i < piece.GetInternalPaths().size(); ++i)
+    for (int i = 0; i < piece.getInternalPaths().size(); ++i)
     {
-        newInternalPath(piece.GetInternalPaths().at(i));
+        newInternalPath(piece.getInternalPaths().at(i));
     }
 
     ui->anchorPoints_ListWidget->clear();
@@ -352,11 +359,10 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
-* @brief ChosenObject adds selected object of id and type to list of path items.
-* @param id id of object (points, arcs, splines, spline paths)
-* @param type type of scene object
- */
+/// @brief ChosenObject adds selected object of id and type to list of path items.
+/// @param id id of object (points, arcs, splines, spline paths)
+/// @param type type of scene object
+//---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::ChosenObject(quint32 id, const SceneObject &type)
 {
     if (!prepare)
@@ -475,7 +481,7 @@ void PatternPieceDialog::ChosenObject(quint32 id, const SceneObject &type)
             const VPiece p = CreatePiece();
             visPath->SetPiece(p);
 
-            if (p.GetPath().CountNodes() == 1)
+            if (p.GetPath().nodeCount() == 1)
             {
                 emit ToolTip(tr("Select main path objects clockwise, Use <b>SHIFT</b> to reverse curve direction, "
                                 " or <b>CTRL</b> to keep curve direction. "
@@ -580,15 +586,14 @@ void PatternPieceDialog::clearErrorText(TabOrder tab, QString text)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/*
- * @brief Filters keyboard event to check if the a key was pressed.
- * @param object QObject that sent the event.
- * @param event QEvent.
- * @return if the node list was the sending object:
- *         True if the key(s) pressed makes up a shortcut sequence of a context menu item.
- *         False if any other key.
- *         if event sent by an object other than the main path list widget pass the event on to the parent.
- */
+/// @brief Filters keyboard event to check if the a key was pressed.
+/// @param object QObject that sent the event.
+/// @param event QEvent.
+/// @return if the node list was the sending object:
+///         True if the key(s) pressed makes up a shortcut sequence of a context menu item.
+///         False if any other key.
+///         if event sent by an object other than the main path list widget pass the event on to the parent.
+//---------------------------------------------------------------------------------------------------------------------
 bool PatternPieceDialog::eventFilter(QObject *object, QEvent *event)
 {
     if (QListWidget *list = qobject_cast<QListWidget *>(object))
@@ -999,14 +1004,14 @@ void PatternPieceDialog::showCustomSAContextMenu(const QPoint &pos)
     }
     else if (selectedAction == actionOption)
     {
-        auto *dialog = new DialogInternalPath(data, record.path, this);
-        dialog->SetPiecePath(data->GetPiecePath(record.path));
-        dialog->SetPieceId(toolId);
+        auto *dialog = new InternalPathDialog(data, record.path, this);
+        dialog->enableEditMode(true); //must be first to prevent unwanted signals when setting pieceId
+        dialog->setPiecePath(data->getPiecePath(record.path));
+        dialog->setPieceId(toolId);
         if (record.includeType == PiecePathIncludeType::AsMainPath)
         {
             dialog->setSeamAllowanceWidthFormula(getSeamAllowanceWidthFormula());
         }
-        dialog->EnbleShowMode(true);
         m_dialog = dialog;
         m_dialog->setModal(true);
         connect(m_dialog.data(), &DialogTool::DialogClosed, this, &PatternPieceDialog::pathDialogClosed);
@@ -1040,10 +1045,10 @@ void PatternPieceDialog::showInternalPathsContextMenu(const QPoint &pos)
         SCASSERT(rowItem != nullptr);
         const quint32 pathId = qvariant_cast<quint32>(rowItem->data(Qt::UserRole));
 
-        auto *dialog = new DialogInternalPath(data, pathId, this);
-        dialog->SetPiecePath(data->GetPiecePath(pathId));
-        dialog->SetPieceId(toolId);
-        dialog->EnbleShowMode(true);
+        auto *dialog = new InternalPathDialog(data, pathId, this);
+        dialog->enableEditMode(true); //must be first to prevent unwanted signals when setting pieceId
+        dialog->setPiecePath(data->getPiecePath(pathId));
+        dialog->setPieceId(toolId);
         m_dialog = dialog;
         m_dialog->setModal(true);
         connect(m_dialog.data(), &DialogTool::DialogClosed, this, &PatternPieceDialog::pathDialogClosed);
@@ -1453,18 +1458,20 @@ void PatternPieceDialog::pathDialogClosed(int result)
     if (result == QDialog::Accepted)
     {
         SCASSERT(!m_dialog.isNull());
-        DialogInternalPath *dialog = qobject_cast<DialogInternalPath*>(m_dialog.data());
+        InternalPathDialog *dialog = qobject_cast<InternalPathDialog*>(m_dialog.data());
         SCASSERT(dialog != nullptr);
         try
         {
-            const VPiecePath newPath = dialog->GetPiecePath();
-            const VPiecePath oldPath = data->GetPiecePath(dialog->GetToolId());
+            const VPiecePath newPath = dialog->getPiecePath();
+            const VPiecePath oldPath = data->getPiecePath(dialog->GetToolId());
 
             SavePiecePathOptions *saveCommand = new SavePiecePathOptions(toolId, oldPath, newPath,
                                                                          qApp->getCurrentDocument(),
                                                                          const_cast<VContainer *>(data),
                                                                          dialog->GetToolId());
+            //m_undoStack.append(saveCommand);
             qApp->getUndoStack()->push(saveCommand);
+
             updateCurrentCustomSARecord();
             updateCurrentInternalPathRecord();
         }
@@ -2418,7 +2425,7 @@ void PatternPieceDialog::editPatternLabel()
     {
         patternLabelLines = editor.GetTemplate();
         qApp->getCurrentDocument()->setPatternLabelTemplate(patternLabelLines);
-        emit qApp->getCurrentDocument()->UpdatePatternLabel();
+        emit qApp->getCurrentDocument()->updatePatternLabel();
     }
 }
 
@@ -2439,7 +2446,7 @@ void PatternPieceDialog::editPieceLabel()
 VPiece PatternPieceDialog::CreatePiece() const
 {
     VPiece piece;
-    piece.GetPath().SetNodes(GetListInternals<VPieceNode>(ui->mainPath_ListWidget));
+    piece.GetPath().setNodes(GetListInternals<VPieceNode>(ui->mainPath_ListWidget));
     piece.SetCustomSARecords(GetListInternals<CustomSARecord>(ui->customSeamAllowance_ListWidget));
     piece.SetInternalPaths(GetListInternals<quint32>(ui->internalPaths_ListWidget));
     piece.setAnchors(GetListInternals<quint32>(ui->anchorPoints_ListWidget));
@@ -2571,7 +2578,7 @@ QString PatternPieceDialog::getPathName(quint32 path, bool reverse) const
 
     if (path > NULL_ID)
     {
-        name = data->GetPiecePath(path).GetName();
+        name = data->getPiecePath(path).getName();
 
         if (reverse)
         {
@@ -3317,6 +3324,12 @@ void PatternPieceDialog::setSeamAllowanceWidthFormula(const QString &formula)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QVector<QPointer<VUndoCommand>> PatternPieceDialog::UndoStack()
+{
+    return m_undoStack;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::updateCurrentCustomSARecord()
 {
     const int row = ui->customSeamAllowance_ListWidget->currentRow();
@@ -3535,10 +3548,9 @@ QString PatternPieceDialog::createPieceName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/*
- * @brief Reverses the selected node points if the node is a curve.
- * @param rowItem list widget item of the selected row.
- */
+/// @brief Reverses the selected node points if the node is a curve.
+/// @param rowItem list widget item of the selected row.
+//---------------------------------------------------------------------------------------------------------------------
  void PatternPieceDialog::reverseNode(QListWidgetItem *rowItem)
 {
     VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
@@ -3554,10 +3566,9 @@ QString PatternPieceDialog::createPieceName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/*
- * @brief Duplcates the selected node and adds it excluded at the end of the list widget.
- * @param rowItem list widget item of the selected row.
- */
+/// @brief Duplcates the selected node and adds it excluded at the end of the list widget.
+/// @param rowItem list widget item of the selected row.
+//---------------------------------------------------------------------------------------------------------------------
  void PatternPieceDialog::duplicateNode(QListWidgetItem *rowItem)
 {
     VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
@@ -3569,10 +3580,9 @@ QString PatternPieceDialog::createPieceName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/*
- * @brief Toggles the exclude state of the selected node.
- * @param rowItem list widget item of the selected row.
- */
+/// @brief Toggles the exclude state of the selected node.
+/// @param rowItem list widget item of the selected row.
+//---------------------------------------------------------------------------------------------------------------------
  void PatternPieceDialog::excludeNode(QListWidgetItem *rowItem)
 {
     NodeInfo info;
@@ -3586,11 +3596,10 @@ QString PatternPieceDialog::createPieceName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/*
- * @brief Sets the notch type of the node of the selected widget item.
- * @param rowItem list widget item of the selected row.
- * @param notchType of the selected submenu item.
- */
+/// @brief Sets the notch type of the node of the selected widget item.
+/// @param rowItem list widget item of the selected row.
+/// @param notchType of the selected submenu item.
+//---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::setNotch(QListWidgetItem *rowItem, bool isNotch, NotchType notchType,
                                   NotchSubType notchSubType, int count)
 {

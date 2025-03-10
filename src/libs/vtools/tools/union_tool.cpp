@@ -82,7 +82,7 @@
 #include "nodeDetails/vnodepoint.h"
 #include "nodeDetails/vnodespline.h"
 #include "nodeDetails/vnodesplinepath.h"
-#include "nodeDetails/vtoolinternalpath.h"
+#include "nodeDetails/internal_path_tool.h"
 #include "../dialogs/tools/dialogtool.h"
 #include "../dialogs/tools/union_dialog.h"
 #include "../ifc/xml/abstract_converter.h"
@@ -133,7 +133,7 @@ QT_WARNING_POP
 namespace
 {
 //---------------------------------------------------------------------------------------------------------------------
-VPiecePath GetPiecePath(int piece, VAbstractPattern *doc, quint32 id)
+VPiecePath getPiecePath(int piece, VAbstractPattern *doc, quint32 id)
 {
     const QDomElement tool = doc->elementById(id, VAbstractPattern::TagTools);
     if (tool.isNull())
@@ -166,13 +166,13 @@ VPiecePath GetPiecePath(int piece, VAbstractPattern *doc, quint32 id)
 //---------------------------------------------------------------------------------------------------------------------
 VPiecePath GetPiece1MainPath(VAbstractPattern *doc, quint32 id)
 {
-    return GetPiecePath(1, doc, id);
+    return getPiecePath(1, doc, id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 VPiecePath GetPiece2MainPath(VAbstractPattern *doc, quint32 id)
 {
-    return GetPiecePath(2, doc, id);
+    return getPiecePath(2, doc, id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -680,7 +680,7 @@ void FindIndexJ(qint32 piece2Points, const VPiecePath &piece2Path, quint32 piece
         const VPiecePath removedPiece = piece2Path.RemoveEdge(piece2_Index);
         const int k = removedPiece.indexOfNode(node2.GetId());
         SCASSERT(k != -1)
-        if (k == removedPiece.CountNodes()-1)
+        if (k == removedPiece.nodeCount()-1)
         {//We have last node in piece, we wil begin from 0
             j = 0;
         }
@@ -799,7 +799,7 @@ QVector<quint32> GetCSAChildren(VAbstractPattern *doc, quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<quint32> GetInternalPathsChildren(VAbstractPattern *doc, quint32 id)
+QVector<quint32> getInternalPathsChildren(VAbstractPattern *doc, quint32 id)
 {
     return GetChildren(doc, id, PatternPieceTool::TagIPaths);
 }
@@ -1023,8 +1023,8 @@ void CreateUnitedNodes(VPiece &newPiece, const VPiece &piece1, const VPiece &pie
     const VPiecePath piece1Path = piece1.GetPath().RemoveEdge(initData.piece1_Index);
     const VPiecePath piece2Path = piece2.GetPath().RemoveEdge(initData.piece2_Index);
 
-    const qint32 piece1NodeCount = piece1Path.CountNodes();
-    const qint32 piece2NodeCount = piece2Path.CountNodes();
+    const qint32 piece1NodeCount = piece1Path.nodeCount();
+    const qint32 piece2NodeCount = piece2Path.nodeCount();
 
     qint32 piece2Points = 0; //Keeps number points the second piece, what we have already added.
     qint32 i = 0;
@@ -1064,21 +1064,21 @@ void createCSAUnion(VPiece &newPiece, const VPiece &d, QVector<quint32> &childre
                            quint32 pRotate, qreal angle)
 {
     QVector<quint32> nodeChildren;
-    for(int i=0; i < d.GetCustomSARecords().size(); ++i)
+    for(int i=0; i < d.getCustomSARecords().size(); ++i)
     {
-        CustomSARecord record = d.GetCustomSARecords().at(i);
-        const VPiecePath path = initData.data->GetPiecePath(record.path);
+        CustomSARecord record = d.getCustomSARecords().at(i);
+        const VPiecePath path = initData.data->getPiecePath(record.path);
         VPiecePath newPath = path;
         newPath.Clear();//Clear nodes
-        for (int i=0; i < path.CountNodes(); ++i)
+        for (int i=0; i < path.nodeCount(); ++i)
         {
             AddNodeToNewPath(initData, newPath, path.at(i), id, nodeChildren, blockName, dx, dy, pRotate, angle);
         }
         const quint32 idPath = initData.data->AddPiecePath(newPath);
-        VToolInternalPath::Create(idPath, newPath, NULL_ID, initData.scene, initData.doc, initData.data, initData.parse,
+        InternalPathTool::Create(idPath, newPath, NULL_ID, initData.scene, initData.doc, initData.data, initData.parse,
                                Source::FromTool, blockName, id);
         record.path = idPath;
-        newPiece.GetCustomSARecords().append(record);
+        newPiece.getCustomSARecords().append(record);
         nodeChildren.prepend(idPath);
     }
     children += nodeChildren;
@@ -1088,9 +1088,9 @@ void createCSAUnion(VPiece &newPiece, const VPiece &d, QVector<quint32> &childre
 void CreateUnitedCSA(VPiece &newPiece, const VPiece &piece1, const VPiece &piece2, quint32 id, const QString &blockName,
                      const UnionToolInitData &initData, qreal dx, qreal dy, quint32 pRotate, qreal angle)
 {
-    for (int i = 0; i < piece1.GetCustomSARecords().size(); ++i)
+    for (int i = 0; i < piece1.getCustomSARecords().size(); ++i)
     {
-        newPiece.GetCustomSARecords().append(piece1.GetCustomSARecords().at(i));
+        newPiece.getCustomSARecords().append(piece1.getCustomSARecords().at(i));
     }
 
     QVector<quint32> children;
@@ -1104,20 +1104,20 @@ void createUnionInternalPaths(VPiece &newPiece, const VPiece &d, QVector<quint32
                                      qreal dy, quint32 pRotate, qreal angle)
 {
     QVector<quint32> nodeChildren;
-    for(int i=0; i < d.GetInternalPaths().size(); ++i)
+    for(int i=0; i < d.getInternalPaths().size(); ++i)
     {
-        const VPiecePath path = initData.data->GetPiecePath(d.GetInternalPaths().at(i));
+        const VPiecePath path = initData.data->getPiecePath(d.getInternalPaths().at(i));
         VPiecePath newPath = path;
         newPath.Clear();//Clear nodes
 
-        for (int i=0; i < path.CountNodes(); ++i)
+        for (int i=0; i < path.nodeCount(); ++i)
         {
             AddNodeToNewPath(initData, newPath, path.at(i), id, nodeChildren, blockName, dx, dy, pRotate, angle);
         }
         const quint32 idPath = initData.data->AddPiecePath(newPath);
-        VToolInternalPath::Create(idPath, newPath, NULL_ID, initData.scene, initData.doc, initData.data, initData.parse,
+        InternalPathTool::Create(idPath, newPath, NULL_ID, initData.scene, initData.doc, initData.data, initData.parse,
                                Source::FromTool, blockName, id);
-        newPiece.GetInternalPaths().append(idPath);
+        newPiece.getInternalPaths().append(idPath);
         nodeChildren.prepend(idPath);
     }
     children += nodeChildren;
@@ -1128,9 +1128,9 @@ void CreateUnitedInternalPaths(VPiece &newPiece, const VPiece &piece1, const VPi
                                const QString &blockName, const UnionToolInitData &initData, qreal dx, qreal dy,
                                quint32 pRotate, qreal angle)
 {
-    for (int i = 0; i < piece1.GetInternalPaths().size(); ++i)
+    for (int i = 0; i < piece1.getInternalPaths().size(); ++i)
     {
-        newPiece.GetInternalPaths().append(piece1.GetInternalPaths().at(i));
+        newPiece.getInternalPaths().append(piece1.getInternalPaths().at(i));
     }
 
     QVector<quint32> children;
@@ -1178,8 +1178,8 @@ void UpdateUnitedNodes(quint32 id, const UnionToolInitData &initData, qreal dx, 
     const VPiecePath piece2Path = GetPiece2MainPath(initData.doc, id);
     const VPiecePath piece2REPath = piece2Path.RemoveEdge(initData.piece2_Index);
 
-    const qint32 piece1NodeCount = piece1REPath.CountNodes();
-    const qint32 piece2NodeCount = piece2REPath.CountNodes();
+    const qint32 piece1NodeCount = piece1REPath.nodeCount();
+    const qint32 piece2NodeCount = piece2REPath.nodeCount();
 
     QVector<quint32> children = GetNodesChildren(initData.doc, id);
     if (!children.isEmpty())
@@ -1250,13 +1250,13 @@ void createUnionPaths(const UnionToolInitData &initData, qreal dx, qreal dy, qui
 {
     for (int i=0; i < records.size(); ++i)
     {
-        const VPiecePath path = initData.data->GetPiecePath(records.at(i));
+        const VPiecePath path = initData.data->getPiecePath(records.at(i));
         const quint32 updatedId = TakeNextId(children);
 
         VPiecePath updatedPath(path);
         updatedPath.Clear();
 
-        for (int j=0; j < path.CountNodes(); ++j)
+        for (int j=0; j < path.nodeCount(); ++j)
         {
             const VPieceNode &node = path.at(j);
             const quint32 id = TakeNextId(children);
@@ -1284,7 +1284,7 @@ void updateUnionCSA(quint32 id, const UnionToolInitData &initData, qreal dx, qre
 void updateUnionInternalPaths(quint32 id, const UnionToolInitData &initData, qreal dx, qreal dy,
                                      quint32 pRotate, qreal angle, const QVector<quint32> &records)
 {
-    createUnionPaths(initData, dx, dy, pRotate, angle, records, GetInternalPathsChildren(initData.doc, id));
+    createUnionPaths(initData, dx, dy, pRotate, angle, records, getInternalPathsChildren(initData.doc, id));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1580,10 +1580,10 @@ void UnionTool::addPiece(QDomElement &domElement, const VPiece &piece) const
     QDomElement element = doc->createElement(TagUnionPiece);
 
     // nodes
-    PatternPieceTool::AddNodes(doc, element, piece);
+    PatternPieceTool::addNodes(doc, element, piece);
     //custom seam allowance
-    PatternPieceTool::AddCSARecords(doc, element, piece.GetCustomSARecords());
-    PatternPieceTool::AddInternalPaths(doc, element, piece.GetInternalPaths());
+    PatternPieceTool::addCSARecords(doc, element, piece.getCustomSARecords());
+    PatternPieceTool::addInternalPaths(doc, element, piece.getInternalPaths());
     PatternPieceTool::addAnchors(doc, element, piece.getAnchors());
 
     domElement.appendChild(element);

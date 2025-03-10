@@ -728,8 +728,8 @@ void MainWindowsNoGUI::refreshLabels()
     {
         if (PatternPieceTool *tool = qobject_cast<PatternPieceTool*>(VAbstractPattern::getTool(i.key())))
         {
-            tool->UpdatePatternLabel();
-            tool->UpdatePieceLabel();
+            tool->updatePatternLabel();
+            tool->updatePieceLabel();
         }
         ++i;
     }
@@ -747,7 +747,7 @@ void MainWindowsNoGUI::refreshGrainLines()
     {
         if (PatternPieceTool *tool = qobject_cast<PatternPieceTool*>(VAbstractPattern::getTool(i.key())))
         {
-            tool->UpdateGrainline();
+            tool->updateGrainline();
         }
         ++i;
     }
@@ -1759,7 +1759,7 @@ void MainWindowsNoGUI::setSizeHeightForIndividualM() const
     }
 
     doc->SetPatternWasChanged(true);
-    emit doc->UpdatePatternLabel();
+    emit doc->updatePatternLabel();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

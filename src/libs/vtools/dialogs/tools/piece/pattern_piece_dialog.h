@@ -1,54 +1,52 @@
-/***************************************************************************
- **  @file   pattern_piece_dialog.h
- **  @author Douglas S Caskey
- **  @date   Dec 27, 2022
- **
- **  @copyright
- **  Copyright (C) 2017 - 2022 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   pattern_piece_dialog.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @copyright
+//  Copyright (C) 2017 - 2025 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
- /************************************************************************
- **
- **  @file   dialogseamallowance.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   3 11, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   seamallowance.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   3 11, 2016
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2016 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  if not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #ifndef PATTERN_PIECE_DIALOG
 #define PATTERN_PIECE_DIALOG
@@ -74,6 +72,7 @@ namespace Ui
 }
 
 class PieceAnchorPointVisual;
+class VUndoCommand;
 
 class PatternPieceDialog : public DialogTool
 {
@@ -82,8 +81,7 @@ class PatternPieceDialog : public DialogTool
 public:
                                 PatternPieceDialog(const VContainer *data, const quint32 &toolId,
                                                     QWidget *parent = nullptr);
-                                //PatternPieceDialog(const VContainer *data, const quint32 &toolId,
-                                //                    QWidget *parent = nullptr);
+
     virtual                    ~PatternPieceDialog();
 
     void                        pageChanged(QListWidgetItem *current, QListWidgetItem *previous);
@@ -94,18 +92,20 @@ public:
 
     QString                     getSeamAllowanceWidthFormula() const;
 
+    QVector<QPointer<VUndoCommand>> UndoStack();
+
 public slots:
-    virtual void                ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
-    virtual void                ShowDialog(bool click) Q_DECL_OVERRIDE;
+    virtual void                ChosenObject(quint32 id, const SceneObject &type) override;
+    virtual void                ShowDialog(bool click) override;
 
 protected:
-    virtual void                SaveData() Q_DECL_OVERRIDE; //! @brief SaveData Put dialog data in local variables
-    virtual void                CheckState() Q_DECL_FINAL;
-    virtual bool                eventFilter(QObject *object, QEvent *event) Q_DECL_OVERRIDE;
+    virtual void                SaveData() override; /// @brief SaveData Put dialog data in local variables
+    virtual void                CheckState() final;
+    virtual bool                eventFilter(QObject *object, QEvent *event) override;
 
-    virtual void                closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
-    virtual void                showEvent( QShowEvent *event ) Q_DECL_OVERRIDE;
-    virtual void                resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
+    virtual void                closeEvent(QCloseEvent *event) override;
+    virtual void                showEvent( QShowEvent *event) override;
+    virtual void                resizeEvent(QResizeEvent *event) override;
 
 private slots:
     void                        setErrorText(TabOrder tab, QString text);
@@ -212,6 +212,7 @@ private:
     QVector<VLabelTemplateLine> m_patternLabelLines;
     QVector<VLabelTemplateLine> m_pieceLabelLines;
     QSound                     *m_beep;
+    QVector<QPointer<VUndoCommand>> m_undoStack;
 
     VPiece                      CreatePiece() const;
 

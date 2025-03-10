@@ -62,7 +62,7 @@ AnchorPointTool *AnchorPointTool::Create(QSharedPointer<DialogTool> dialog, VAbs
     QSharedPointer<AnchorPointDialog> dialogTool = dialog.objectCast<AnchorPointDialog>();
     SCASSERT(not dialogTool.isNull())
     const quint32 pointId = dialogTool->GetPointId();
-    const quint32 pieceId = dialogTool->GetPieceId();
+    const quint32 pieceId = dialogTool->getPieceId();
 
     return Create(0, pointId, pieceId, doc, data, Document::FullParse, Source::FromGui);
 }
@@ -169,6 +169,7 @@ void AnchorPointTool::AddToFile()
         incrementReferens();
 
         SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_pieceId);
+        saveCommand->setText(tr("add anchor point"));
         qApp->getUndoStack()->push(saveCommand);// First push then make a connect
     }
 }

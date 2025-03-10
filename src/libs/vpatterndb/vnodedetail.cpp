@@ -291,11 +291,11 @@ QVector<VPieceNode> VNodeDetail::Convert(const VContainer *data, const QVector<V
         }
     }
 
-    if (not closed && path.CountNodes() > 1)
+    if (not closed && path.nodeCount() > 1)
     {
         path[0].setBeforeSAFormula("0");
-        path[path.CountNodes()-1].setAfterSAFormula("0");
+        path[path.nodeCount()-1].setAfterSAFormula("0");
     }
 
-    return path.GetNodes();
+    return path.getNodes();
 }

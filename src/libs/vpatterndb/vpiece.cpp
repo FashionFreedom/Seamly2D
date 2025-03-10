@@ -1,10 +1,10 @@
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   vpiece.cpp
 //  @author Douglas S Caskey
 //  @date   17 Sep, 2023
 //
 //  @copyright
-//  Copyright (C) 2017 - 2023 Seamly, LLC
+//  Copyright (C) 2017 - 2025 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -19,17 +19,17 @@
 //  GNU General Public License for more details.
 //
 //  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
-//******************************************************************************
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   vpiece.cpp
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
 //  @date   3 11, 2016
 //
 //  @brief
 //  @copyright
-//  This source code is part of the Valentine project, a pattern making
+//  This source code is part of the Valentina project, a pattern making
 //  program, whose allow create and modeling patterns of clothing.
 //  Copyright (C) 2016 Valentina project
 //  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
@@ -46,8 +46,7 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "vpiece.h"
 #include "vpiece_p.h"
@@ -63,33 +62,33 @@
 
 namespace
 {
-QVector<quint32> PieceMissingNodes(const QVector<quint32> &d1Nodes, const QVector<quint32> &d2Nodes)
+QVector<quint32> PieceMissingNodes(const QVector<quint32> &piece1Nodes, const QVector<quint32> &piece2Nodes)
 {
-    if (d1Nodes.size() == d2Nodes.size()) //-V807
+    if (piece1Nodes.size() == piece2Nodes.size()) //-V807
     {
         return QVector<quint32>();
     }
 
     QSet<quint32> set1;
-    for (qint32 i = 0; i < d1Nodes.size(); ++i)
+    for (qint32 i = 0; i < piece1Nodes.size(); ++i)
     {
-        set1.insert(d1Nodes.at(i));
+        set1.insert(piece1Nodes.at(i));
     }
 
     QSet<quint32> set2;
-    for (qint32 j = 0; j < d2Nodes.size(); ++j)
+    for (qint32 j = 0; j < piece2Nodes.size(); ++j)
     {
-        set2.insert(d2Nodes.at(j));
+        set2.insert(piece2Nodes.at(j));
     }
 
 	const QList<quint32> set3 = set1.subtract(set2).values();
-    QVector<quint32> r;
+    QVector<quint32> setDiff;
     for (qint32 i = 0; i < set3.size(); ++i)
     {
-        r.append(set3.at(i));
+        setDiff.append(set3.at(i));
     }
 
-    return r;
+    return setDiff;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -189,7 +188,7 @@ QVector<QPointF> VPiece::SeamAllowancePoints(const VContainer *data) const
     SCASSERT(data != nullptr);
 
 
-    if (not IsSeamAllowance() || IsSeamAllowanceBuiltIn())
+    if (!IsSeamAllowance() || IsSeamAllowanceBuiltIn())
     {
         return QVector<QPointF>();
     }
@@ -213,7 +212,7 @@ QVector<QPointF> VPiece::SeamAllowancePoints(const VContainer *data) const
         {
             case (Tool::NodePoint):
             {
-                if (not insertingCSA)
+                if (!insertingCSA)
                 {
                     pointsEkv.append(VPiecePath::PreparePointEkv(node, data));
 
@@ -222,7 +221,7 @@ QVector<QPointF> VPiece::SeamAllowancePoints(const VContainer *data) const
                     {
                         insertingCSA = true;
 
-                        const VPiecePath path = data->GetPiecePath(records.at(recordIndex).path);
+                        const VPiecePath path = data->getPiecePath(records.at(recordIndex).path);
                         QVector<VSAPoint> r = path.SeamAllowancePoints(data, width, records.at(recordIndex).reverse);
 
                         for (int j = 0; j < r.size(); ++j)
@@ -252,7 +251,7 @@ QVector<QPointF> VPiece::SeamAllowancePoints(const VContainer *data) const
             case (Tool::NodeSpline):
             case (Tool::NodeSplinePath):
             {
-                if (not insertingCSA)
+                if (!insertingCSA)
                 {
                     const QSharedPointer<VAbstractCurve> curve = data->GeometricObject<VAbstractCurve>(node.GetId());
 
@@ -270,11 +269,23 @@ QVector<QPointF> VPiece::SeamAllowancePoints(const VContainer *data) const
     return Equidistant(pointsEkv, width);
 }
 
+QVector<QPointF> VPiece::cutPathPoints(const VContainer *data) const
+{
+    if (IsSeamAllowance() && !IsSeamAllowanceBuiltIn())
+    {
+        return SeamAllowancePoints(data);
+    }
+    else
+    {
+        return MainPathPoints(data);
+    }
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 QVector<QLineF> VPiece::createNotchLines(const VContainer *data, const QVector<QPointF> &seamAllowance) const
 {
     const QVector<VPieceNode> unitedPath = GetUnitedPath(data);
-    if (not notchesPossible(unitedPath))
+    if (!notchesPossible(unitedPath))
     {
         return QVector<QLineF>();
     }
@@ -284,7 +295,7 @@ QVector<QLineF> VPiece::createNotchLines(const VContainer *data, const QVector<Q
     for (int i = 0; i< unitedPath.size(); ++i)
     {
         const VPieceNode &node = unitedPath.at(i);
-        if (node.isExcluded() || not node.isNotch())
+        if (node.isExcluded() || !node.isNotch())
         {
             continue;// skip node
         }
@@ -304,7 +315,7 @@ QPainterPath VPiece::MainPathPath(const VContainer *data) const
     const QVector<QPointF> points = MainPathPoints(data);
     QPainterPath path;
 
-    if (not points.isEmpty())
+    if (!points.isEmpty())
     {
         path.moveTo(points[0]);
         for (qint32 i = 1; i < points.count(); ++i)
@@ -330,9 +341,9 @@ QPainterPath VPiece::SeamAllowancePath(const QVector<QPointF> &points) const
     QPainterPath ekv;
 
     // seam allowence
-    if (IsSeamAllowance() && not IsSeamAllowanceBuiltIn())
+    if (IsSeamAllowance() && !IsSeamAllowanceBuiltIn())
     {
-        if (not points.isEmpty())
+        if (!points.isEmpty())
         {
             ekv.moveTo(points.at(0));
             for (qint32 i = 1; i < points.count(); ++i)
@@ -356,7 +367,7 @@ QPainterPath VPiece::getNotchesPath(const VContainer *data, const QVector<QPoint
     // seam allowence
     if (IsSeamAllowance())
     {
-        if (not notches.isEmpty())
+        if (!notches.isEmpty())
         {
             for (qint32 i = 0; i < notches.count(); ++i)
             {
@@ -422,13 +433,13 @@ void VPiece::setSeamAllowanceWidthFormula(const QString &formula, qreal value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<quint32> VPiece::GetInternalPaths() const
+QVector<quint32> VPiece::getInternalPaths() const
 {
     return d->m_internalPaths;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<quint32> &VPiece::GetInternalPaths()
+QVector<quint32> &VPiece::getInternalPaths()
 {
     return d->m_internalPaths;
 }
@@ -440,13 +451,13 @@ void VPiece::SetInternalPaths(const QVector<quint32> &iPaths)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<CustomSARecord> VPiece::GetCustomSARecords() const
+QVector<CustomSARecord> VPiece::getCustomSARecords() const
 {
     return d->m_customSARecords;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<CustomSARecord> &VPiece::GetCustomSARecords()
+QVector<CustomSARecord> &VPiece::getCustomSARecords()
 {
     return d->m_customSARecords;
 }
@@ -496,9 +507,9 @@ QVector<quint32> VPiece::MissingCSAPath(const VPiece &piece) const
     }
 
     QVector<quint32> newCSARecords;
-    for (qint32 i = 0; i < piece.GetCustomSARecords().size(); ++i)
+    for (qint32 i = 0; i < piece.getCustomSARecords().size(); ++i)
     {
-        newCSARecords.append(piece.GetCustomSARecords().at(i).path);
+        newCSARecords.append(piece.getCustomSARecords().at(i).path);
     }
 
     return PieceMissingNodes(oldCSARecords, newCSARecords);
@@ -507,7 +518,7 @@ QVector<quint32> VPiece::MissingCSAPath(const VPiece &piece) const
 //---------------------------------------------------------------------------------------------------------------------
 QVector<quint32> VPiece::MissingInternalPaths(const VPiece &piece) const
 {
-    return PieceMissingNodes(d->m_internalPaths, piece.GetInternalPaths());
+    return PieceMissingNodes(d->m_internalPaths, piece.getInternalPaths());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -587,7 +598,7 @@ QVector<VPieceNode> VPiece::GetUnitedPath(const VContainer *data) const
 {
     SCASSERT(data != nullptr)
 
-    QVector<VPieceNode> united = d->m_path.GetNodes();
+    QVector<VPieceNode> united = d->m_path.getNodes();
 
     if (IsSeamAllowance() && IsSeamAllowanceBuiltIn())
     {
@@ -611,7 +622,7 @@ QVector<VPieceNode> VPiece::GetUnitedPath(const VContainer *data) const
             const QVector<VPieceNode> midBefore = united.mid(0, indexStartPoint+1);
             const QVector<VPieceNode> midAfter = united.mid(indexEndPoint);
 
-            QVector<VPieceNode> customNodes = data->GetPiecePath(records.at(i).path).GetNodes();
+            QVector<VPieceNode> customNodes = data->getPiecePath(records.at(i).path).getNodes();
             if (records.at(i).reverse)
             {
                 customNodes = VGObject::GetReversePoints(customNodes);
@@ -623,7 +634,7 @@ QVector<VPieceNode> VPiece::GetUnitedPath(const VContainer *data) const
                 if (records.at(i).reverse)
                 {
                     // don't make a check because node point will ignore the change
-                    customNodes[j].SetReverse(not customNodes.at(j).GetReverse());
+                    customNodes[j].SetReverse(!customNodes.at(j).GetReverse());
                 }
 
                 // If seam allowance is built in main path user will not see a notch provided by piece path
@@ -657,9 +668,9 @@ QVector<CustomSARecord> VPiece::GetValidRecords() const
                 && record.path > NULL_ID
                 && record.endPoint > NULL_ID
                 && indexStartPoint != -1
-                && not d->m_path.at(indexStartPoint).isExcluded()
+                && !d->m_path.at(indexStartPoint).isExcluded()
                 && indexEndPoint != -1
-                && not d->m_path.at(indexEndPoint).isExcluded()
+                && !d->m_path.at(indexEndPoint).isExcluded()
                 && indexStartPoint < indexEndPoint)
         {
             records.append(record);
@@ -679,7 +690,7 @@ QVector<CustomSARecord> VPiece::FilterRecords(QVector<CustomSARecord> records) c
     // cppcheck-suppress variableScope
     bool foundFilter = false;// Need in case "filter" will stay empty.
     CustomSARecord filter;
-    int startIndex = d->m_path.CountNodes()-1;
+    int startIndex = d->m_path.nodeCount()-1;
 
     for (int i = 0; i < records.size(); ++i)
     {
@@ -693,7 +704,7 @@ QVector<CustomSARecord> VPiece::FilterRecords(QVector<CustomSARecord> records) c
         }
     }
 
-    if (not foundFilter)
+    if (!foundFilter)
     {
         return records; // return as is
     }
@@ -787,9 +798,9 @@ bool VPiece::getNotchPreviousSAPoints(const QVector<VPieceNode> &path, int index
             found = true;
         }
         --nodeIndex;
-    } while (nodeIndex >= 0 && not found);
+    } while (nodeIndex >= 0 && !found);
 
-    if (not found)
+    if (!found)
     {
         return false; // Something wrong
     }
@@ -821,9 +832,9 @@ int VPiece::getNextNotchSAPoints(const QVector<VPieceNode> &path, int index, con
         }
         ++nodeIndex;
 
-    } while (nodeIndex < points.size() && not found);
+    } while (nodeIndex < points.size() && !found);
 
-    if (not found)
+    if (!found)
     {
         return false; // Something wrong
     }
@@ -886,7 +897,7 @@ bool VPiece::isNotchVisible(const QVector<VPieceNode> &path, int notchIndex) con
     }
 
     const VPieceNode &node = path.at(notchIndex);
-    if (node.GetTypeTool() != Tool::NodePoint || not node.isNotch() || node.isExcluded())
+    if (node.GetTypeTool() != Tool::NodePoint || !node.isNotch() || node.isExcluded())
     {
         return false;
     }
@@ -924,31 +935,31 @@ QVector<QLineF> VPiece::createNotch(const QVector<VPieceNode> &path, int previou
 {
     SCASSERT(data != nullptr);
 
-    if (not isNotchVisible(path, notchIndex))
+    if (!isNotchVisible(path, notchIndex))
     {
         return QVector<QLineF>();
     }
 
     VSAPoint notchSAPoint;
-    if (not getNotchSAPoint(path, notchIndex, data, notchSAPoint))
+    if (!getNotchSAPoint(path, notchIndex, data, notchSAPoint))
     {
         return QVector<QLineF>(); // Something wrong
     }
 
     VSAPoint previousSAPoint;
-    if (not getNotchPreviousSAPoints(path, previousIndex, notchSAPoint, data, previousSAPoint))
+    if (!getNotchPreviousSAPoints(path, previousIndex, notchSAPoint, data, previousSAPoint))
     {
         return QVector<QLineF>(); // Something wrong
     }
 
     VSAPoint nextSAPoint;
-    if (not getNextNotchSAPoints(path, nextIndex, notchSAPoint, data, nextSAPoint))
+    if (!getNextNotchSAPoints(path, nextIndex, notchSAPoint, data, nextSAPoint))
     {
         return QVector<QLineF>(); // Something wrong
     }
 
     const QVector<QPointF> mainPathPoints = MainPathPoints(data);
-    if (not IsSeamAllowanceBuiltIn())
+    if (!IsSeamAllowanceBuiltIn())
     {
         QVector<QLineF> lines;
         if (path.at(notchIndex).showNotch())
@@ -956,7 +967,7 @@ QVector<QLineF> VPiece::createNotch(const QVector<VPieceNode> &path, int previou
             lines += createSeamAllowanceNotch(path, previousSAPoint, notchSAPoint,  nextSAPoint,
                                               data, notchIndex, pathPoints);
         }
-        if (not isHideSeamLine()
+        if (!isHideSeamLine()
                 && path.at(notchIndex).IsMainPathNode()
                 && path.at(notchIndex).getNotchSubType() != NotchSubType::Intersection
                 && path.at(notchIndex).showSeamlineNotch())
@@ -979,7 +990,7 @@ QVector<QLineF> VPiece::createSeamAllowanceNotch(const QVector<VPieceNode> &path
                                                  const QVector<QPointF> &pathPoints) const
 {
     QPointF seamNotchSAPoint;
-    if (not getSeamNotchSAPoint(previousSAPoint, notchSAPoint, nextSAPoint, data, seamNotchSAPoint))
+    if (!getSeamNotchSAPoint(previousSAPoint, notchSAPoint, nextSAPoint, data, seamNotchSAPoint))
     {
         return QVector<QLineF>(); // Something wrong
     }
@@ -1496,7 +1507,7 @@ QLineF VPiece::findIntersection(const QVector<QPointF> &pathPoints, const QLineF
     QLineF tempLine = line;
     tempLine.setLength(tempLine.length()*1.5);
     QVector<QPointF> intersections = VAbstractCurve::CurveIntersectLine(pathPoints, tempLine);
-    if (not intersections.isEmpty())
+    if (!intersections.isEmpty())
     {
         return QLineF(line.p1(), intersections.last());
     }

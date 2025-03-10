@@ -126,9 +126,9 @@ void DeletePiece::redo()
         SCASSERT(tool != nullptr);
         tool->hide();
 
-        DecrementReferences(m_piece.GetPath().GetNodes());
-        DecrementReferences(m_piece.GetCustomSARecords());
-        DecrementReferences(m_piece.GetInternalPaths());
+        DecrementReferences(m_piece.GetPath().getNodes());
+        DecrementReferences(m_piece.getCustomSARecords());
+        DecrementReferences(m_piece.getInternalPaths());
         DecrementReferences(m_piece.getAnchors());
         emit NeedFullParsing(); // Doesn't work when UnionDetail delete piece.
     }

@@ -44,7 +44,7 @@ HEADERS += \
     $$PWD/tools/insert_nodes_dialog.h \
     $$PWD/tools/intersect_circles_dialog.h \
     $$PWD/tools/intersect_circletangent_dialog.h \
-    $$PWD/tools/piece/dialoginternalpath.h \
+    $$PWD/tools/piece/internal_path_dialog.h \
     $$PWD/tools/piece/pattern_piece_dialog.h \
     $$PWD/tools/point_intersectxy_dialog.h \
     $$PWD/tools/union_dialog.h
@@ -91,7 +91,7 @@ SOURCES += \
     $$PWD/tools/insert_nodes_dialog.cpp \
     $$PWD/tools/intersect_circles_dialog.cpp \
     $$PWD/tools/intersect_circletangent_dialog.cpp \
-    $$PWD/tools/piece/dialoginternalpath.cpp \
+    $$PWD/tools/piece/internal_path_dialog.cpp \
     $$PWD/tools/piece/pattern_piece_dialog.cpp \
     $$PWD/tools/point_intersectxy_dialog.cpp \
     $$PWD/tools/union_dialog.cpp
@@ -137,7 +137,7 @@ FORMS += \
     $$PWD/tools/insert_nodes_dialog.ui \
     $$PWD/tools/intersect_circles_dialog.ui \
     $$PWD/tools/intersect_circletangent_dialog.ui \
-    $$PWD/tools/piece/dialoginternalpath.ui \
+    $$PWD/tools/piece/internal_path_dialog.ui \
     $$PWD/tools/piece/pattern_piece_dialog.ui \
     $$PWD/tools/point_intersectxy_dialog.ui \
     $$PWD/tools/union_dialog.ui

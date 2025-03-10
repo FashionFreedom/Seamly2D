@@ -56,7 +56,7 @@
 
 #include "../ifc/xml/vabstractpattern.h"
 #include "../vmisc/logging.h"
-#include "../tools/nodeDetails/vtoolinternalpath.h"
+#include "../tools/nodeDetails/internal_path_tool.h"
 #include "../tools/pattern_piece_tool.h"
 #include "../vpatterndb/vpiecenode.h"
 
@@ -86,9 +86,9 @@ void SavePiecePathOptions::undo()
     QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagPath);
     if (domElement.isElement())
     {
-        VToolInternalPath::AddAttributes(doc, domElement, nodeId, m_oldPath);
+        InternalPathTool::addAttributes(doc, domElement, nodeId, m_oldPath);
         doc->RemoveAllChildren(domElement);//Very important to clear before rewrite
-        VToolInternalPath::AddNodes(doc, domElement, m_oldPath);
+        InternalPathTool::addNodes(doc, domElement, m_oldPath);
 
         IncrementReferences(m_oldPath.MissingNodes(m_newPath));
 
@@ -117,9 +117,9 @@ void SavePiecePathOptions::redo()
     QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagPath);
     if (domElement.isElement())
     {
-        VToolInternalPath::AddAttributes(doc, domElement, nodeId, m_newPath);
+        InternalPathTool::addAttributes(doc, domElement, nodeId, m_newPath);
         doc->RemoveAllChildren(domElement);//Very important to clear before rewrite
-        VToolInternalPath::AddNodes(doc, domElement, m_newPath);
+        InternalPathTool::addNodes(doc, domElement, m_newPath);
 
         DecrementReferences(m_oldPath.MissingNodes(m_newPath));
 

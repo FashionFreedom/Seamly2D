@@ -1,10 +1,10 @@
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   vpiecepath.h
 //  @author Douglas S Caskey
 //  @date   Dec 11, 2022
 //
 //  @copyright
-//  Copyright (C) 2017 - 2022 Seamly, LLC
+//  Copyright (C) 2017 - 2025 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -20,11 +20,10 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 
-//******************************************************************************
-//
-//  @file
+//---------------------------------------------------------------------------------------------------------------------
+//  @file    vpiecepath.h
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
 //  @date   22 11, 2016
 //
@@ -47,8 +46,8 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
+
 
 #ifndef VPIECEPATH_H
 #define VPIECEPATH_H
@@ -84,32 +83,44 @@ public:
 	void               Swap(VPiecePath &path) Q_DECL_NOTHROW;
     void               Append(const VPieceNode &node);
     void               Clear();
-    qint32             CountNodes() const;
+    qint32             nodeCount() const;
 
     VPieceNode         &operator[](int indx);
     const VPieceNode   &at (int indx) const;
 
-    QVector<VPieceNode> GetNodes() const;
-    void                SetNodes(const QVector<VPieceNode> &nodes);
+    QVector<VPieceNode> getNodes() const;
+    void                setNodes(const QVector<VPieceNode> &nodes);
     QVector<VPieceNode> removeNode(const quint32 &id);
 
-    PiecePathType       GetType() const;
-    void                SetType(PiecePathType type);
+    PiecePathType       getType() const;
+    void                setType(PiecePathType type);
 
-    QString             GetName() const;
-    void                SetName(const QString &name);
+    QString             getName() const;
+    void                setName(const QString &name);
 
-    Qt::PenStyle        GetPenType() const;
-    void                SetPenType(const Qt::PenStyle &type);
+    QString             getLineColor() const;
+    void                setLineColor(const QString &color);
 
-    bool                IsCutPath() const;
-    void                SetCutPath(bool cut);
+    Qt::PenStyle        getLineType() const;
+    void                setLineType(const Qt::PenStyle &type);
 
-    QVector<QPointF>    PathPoints(const VContainer *data) const;
+    QString             getLineWeight() const;
+    void                setLineWeight(const QString &weight);
+
+    bool                isCutPath() const;
+    void                setCutPath(bool cut);
+
+    bool                extendStartPoint() const;
+    void                setExtendStartPoint(bool value);
+
+    bool                extendEndPoint() const;
+    void                setExtendEndPoint(bool value);
+
+    QVector<QPointF>    PathPoints(const VContainer *data, const QVector<QPointF> &path = QVector<QPointF>()) const;
     QVector<VPointF>    PathNodePoints(const VContainer *data, bool showExcluded = true) const;
     QVector<VSAPoint>   SeamAllowancePoints(const VContainer *data, qreal width, bool reverse) const;
 
-    QPainterPath        PainterPath(const VContainer *data) const;
+    QPainterPath        PainterPath(const VContainer *data, const QVector<QPointF> &cutPath) const;
 
     QVector<quint32>    MissingNodes(const VPiecePath &path) const;
 

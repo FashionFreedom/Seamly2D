@@ -1663,7 +1663,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogInternalPath</name>
+    <name>InternalPathDialog</name>
     <message>
         <source>Internal Path Tool</source>
         <translation>binnenpad gereedschap</translation>

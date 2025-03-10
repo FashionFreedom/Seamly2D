@@ -10,6 +10,7 @@ HEADERS += \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circles_tool.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circletangent_tool.h \
     $$PWD/nodeDetails/anchorpoint_tool.h \
+    $$PWD/nodeDetails/internal_path_tool.h \
     $$PWD/pattern_piece_tool.h \
     $$PWD/vdatatool.h \
     $$PWD/vabstracttool.h \
@@ -60,7 +61,6 @@ HEADERS += \
     $$PWD/drawTools/operation/vtoolmove.h \
     $$PWD/drawTools/toolcurve/vtoolellipticalarc.h \
     $$PWD/nodeDetails/vnodeellipticalarc.h \
-    $$PWD/nodeDetails/vtoolinternalpath.h \
     $$PWD/vinteractivetool.h
 
 SOURCES += \
@@ -72,6 +72,7 @@ SOURCES += \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circles_tool.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circletangent_tool.cpp \
     $$PWD/nodeDetails/anchorpoint_tool.cpp \
+    $$PWD/nodeDetails/internal_path_tool.cpp \
     $$PWD/pattern_piece_tool.cpp \
     $$PWD/union_tool.cpp \
     $$PWD/vdatatool.cpp \
@@ -119,5 +120,4 @@ SOURCES += \
     $$PWD/drawTools/operation/vtoolmove.cpp \
     $$PWD/drawTools/toolcurve/vtoolellipticalarc.cpp \
     $$PWD/nodeDetails/vnodeellipticalarc.cpp \
-    $$PWD/vinteractivetool.cpp \
-    $$PWD/nodeDetails/vtoolinternalpath.cpp
+    $$PWD/vinteractivetool.cpp

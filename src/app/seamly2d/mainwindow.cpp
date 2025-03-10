@@ -87,7 +87,7 @@
 #include "../vtools/tools/union_tool.h"
 #include "../vtools/tools/drawTools/drawtools.h"
 #include "../vtools/tools/nodeDetails/anchorpoint_tool.h"
-#include "../vtools/tools/nodeDetails/vtoolinternalpath.h"
+#include "../vtools/tools/nodeDetails/internal_path_tool.h"
 #include "../vtools/undocommands/addgroup.h"
 #include "../vtools/undocommands/rename_draftblock.h"
 #include "../vtools/undocommands/label/showpointname.h"
@@ -651,7 +651,7 @@ bool MainWindow::loadMeasurements(const QString &fileName)
                                             *measurements->GetData()->GetPatternUnit()));
 
         doc->SetPatternWasChanged(true);
-        emit doc->UpdatePatternLabel();
+        emit doc->updatePatternLabel();
     }
     else if (measurements->Type() == MeasurementsType::Individual)
     {
@@ -708,7 +708,7 @@ bool MainWindow::updateMeasurements(const QString &fileName, int size, int heigh
         VContainer::setHeight(height);
 
         doc->SetPatternWasChanged(true);
-        emit doc->UpdatePatternLabel();
+        emit doc->updatePatternLabel();
     }
     else if (measurements->Type() == MeasurementsType::Individual)
     {
@@ -1668,23 +1668,23 @@ void MainWindow::ClosedDialogAnchorPoint(int result)
 void MainWindow::handleInternalPathTool(bool checked)
 {
     selectAllDraftObjectsTool();
-    SetToolButton<DialogInternalPath>
+    SetToolButton<InternalPathDialog>
     (
         checked,
         Tool::InternalPath,
         ":/cursor/path_cursor.png",
         tr("<b>Tool::Piece - Internal Path:</b> Select path objects, use <b>SHIFT</b> to reverse curve direction"),
-        &MainWindow::ClosedDialogInternalPath
+        &MainWindow::ClosedInternalPathDialog
     );
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ClosedDialogInternalPath(int result)
+void MainWindow::ClosedInternalPathDialog(int result)
 {
     SCASSERT(dialogTool != nullptr);
     if (result == QDialog::Accepted)
     {
-        VToolInternalPath::Create(dialogTool, pieceScene, doc, pattern);
+        InternalPathTool::Create(dialogTool, pieceScene, doc, pattern);
     }
     handleArrowTool(true);
     doc->LiteParseTree(Document::LiteParse);
@@ -2178,7 +2178,7 @@ void MainWindow::UnloadMeasurements()
         }
         qApp->setPatternType(MeasurementsType::Unknown);
         doc->SetMPath(QString());
-        emit doc->UpdatePatternLabel();
+        emit doc->updatePatternLabel();
         patternChangesWereSaved(false);
         ui->editCurrent_Action->setEnabled(false);
         ui->unloadMeasurements_Action->setDisabled(true);
@@ -5149,7 +5149,7 @@ bool MainWindow::SavePattern(const QString &fileName, QString &error)
     else
     {
         doc->SetMPath(filename);
-        emit doc->UpdatePatternLabel();
+        emit doc->updatePatternLabel();
         qCWarning(vMainWindow, "Could not save file %s. %s.", qUtf8Printable(fileName), qUtf8Printable(error));
     }
     return result;
@@ -5186,7 +5186,7 @@ void MainWindow::setCurrentFile(const QString &fileName)
     qCDebug(vMainWindow, "Set current name to \"%s\"", qUtf8Printable(fileName));
     qApp->setFilePath(fileName);
     doc->SetPatternWasChanged(true);
-    emit doc->UpdatePatternLabel();
+    emit doc->updatePatternLabel();
     qApp->getUndoStack()->setClean();
 
     if (!qApp->getFilePath().isEmpty() && Application2D::isGUIMode())

@@ -62,7 +62,8 @@ class VLayoutPiecePath
 {
 public:
     VLayoutPiecePath();
-    VLayoutPiecePath(const QVector<QPointF> &points, bool cut, Qt::PenStyle penStyle = Qt::SolidLine);
+    VLayoutPiecePath(const QVector<QPointF> &points, QString color, Qt::PenStyle lineType,
+                                   QString lineWeight, bool cut);
     VLayoutPiecePath(const VLayoutPiecePath &path);
 
     virtual ~VLayoutPiecePath();
@@ -74,16 +75,22 @@ public:
 
 	void Swap(VLayoutPiecePath &path) Q_DECL_NOTHROW;
 
-    QPainterPath GetPainterPath() const;
+    QPainterPath     GetPainterPath() const;
 
     QVector<QPointF> Points() const;
     void             SetPoints(const QVector<QPointF> &points);
 
-    Qt::PenStyle PenStyle() const;
-    void         SetPenStyle(const Qt::PenStyle &penStyle);
+    QString          getLineColor() const;
+    void             setLineColor(const QString &color);
 
-    bool IsCutPath() const;
-    void SetCutPath(bool cut);
+    Qt::PenStyle     getLineType() const;
+    void             setLineType(const Qt::PenStyle &type);
+
+    QString          getLineWeight() const;
+    void             setLineWeight(const QString &weight);
+
+    bool             isCutPath() const;
+    void             setCutPath(bool cut);
 
 private:
     QSharedDataPointer<VLayoutPiecePathData> d;

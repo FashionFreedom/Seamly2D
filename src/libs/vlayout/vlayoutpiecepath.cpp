@@ -69,8 +69,9 @@ VLayoutPiecePath::VLayoutPiecePath()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VLayoutPiecePath::VLayoutPiecePath(const QVector<QPointF> &points, bool cut, Qt::PenStyle penStyle)
-    : d(new VLayoutPiecePathData(points, cut, penStyle))
+VLayoutPiecePath::VLayoutPiecePath(const QVector<QPointF> &points, QString color, Qt::PenStyle lineType,
+                                   QString lineWeight, bool cut)
+    : d(new VLayoutPiecePathData(points, color, lineType, lineWeight, cut))
 {
 }
 
@@ -121,25 +122,49 @@ void VLayoutPiecePath::SetPoints(const QVector<QPointF> &points)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-Qt::PenStyle VLayoutPiecePath::PenStyle() const
+QString VLayoutPiecePath::getLineColor() const
 {
-    return d->m_penStyle;
+    return d->m_lineColor;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutPiecePath::SetPenStyle(const Qt::PenStyle &penStyle)
+void VLayoutPiecePath::setLineColor(const QString &color)
 {
-    d->m_penStyle = penStyle;
+    d->m_lineColor = color;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VLayoutPiecePath::IsCutPath() const
+Qt::PenStyle VLayoutPiecePath::getLineType() const
+{
+    return d->m_lineType;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VLayoutPiecePath::setLineType(const Qt::PenStyle &lineType)
+{
+    d->m_lineType = lineType;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VLayoutPiecePath::getLineWeight() const
+{
+    return d->m_lineWeight;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VLayoutPiecePath::setLineWeight(const QString &weight)
+{
+    d->m_lineWeight = weight;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VLayoutPiecePath::isCutPath() const
 {
     return d->m_cut;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutPiecePath::SetCutPath(bool cut)
+void VLayoutPiecePath::setCutPath(bool cut)
 {
     d->m_cut = cut;
 }

@@ -57,6 +57,8 @@
 #include <QVector>
 
 #include "../vmisc/diagnostic.h"
+#include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vcommonsettings.h"
 
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_GCC("-Weffc++")
@@ -66,32 +68,37 @@ class VLayoutPiecePathData : public QSharedData
 {
 public:
     VLayoutPiecePathData()
-        : m_points(),
-          m_penStyle(Qt::SolidLine),
-          m_cut(false)
+        : m_points()
+        , m_lineColor(qApp->Settings()->getDefaultInternalColor())
+        , m_lineType(lineTypeToPenStyle(qApp->Settings()->getDefaultInternalLinetype()))
+        , m_lineWeight(QString::number(qApp->Settings()->getDefaultInternalLineweight()))
+        , m_cut(false)
     {}
 
-    VLayoutPiecePathData(const QVector<QPointF> points, bool cut, Qt::PenStyle penStyle)
-        : m_points(points),
-          m_penStyle(penStyle),
-          m_cut(cut)
+    VLayoutPiecePathData(const QVector<QPointF> points, QString color,
+                         Qt::PenStyle lineType, QString lineWeight, bool cut)
+        : m_points(points)
+        , m_lineColor(color)
+        , m_lineType(lineType)
+        , m_lineWeight(lineWeight)
+        , m_cut(cut)
     {}
 
     VLayoutPiecePathData(const VLayoutPiecePathData &path)
-        : QSharedData(path),
-          m_points(path.m_points),
-          m_penStyle(path.m_penStyle),
-          m_cut(path.m_cut)
+        : QSharedData(path)
+        , m_points(path.m_points)
+        , m_lineColor(path.m_lineColor)
+        , m_lineType(path.m_lineType)
+        , m_lineWeight(path.m_lineWeight)
+        , m_cut(path.m_cut)
     {}
 
     ~VLayoutPiecePathData() Q_DECL_EQ_DEFAULT;
 
-    /** @brief m_points list of path points. */
-    QVector<QPointF> m_points;
-
-    /** @brief m_penStyle path pen style. */
-    Qt::PenStyle     m_penStyle;
-
+    QVector<QPointF> m_points; /// @brief m_points list of path points.
+    QString          m_lineColor;
+    Qt::PenStyle     m_lineType; /// @brief m_penStyle path pen style.
+    QString          m_lineWeight;
     bool             m_cut;
 
 private:
@@ -101,4 +108,3 @@ private:
 QT_WARNING_POP
 
 #endif // VLAYOUTPIECEPATH_P_H
-

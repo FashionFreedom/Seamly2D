@@ -98,8 +98,8 @@ public:
     static const QStringList      fills();
 
     static void                   AddRecord(const quint32 id, const Tool &toolType, VAbstractPattern *doc);
-    static void                   AddNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiecePath &path);
-    static void                   AddNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece);
+    static void                   addNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiecePath &path);
+    static void                   addNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece);
 
     const VContainer             *getData() const;
 
