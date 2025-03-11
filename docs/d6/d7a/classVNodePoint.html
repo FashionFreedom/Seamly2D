@@ -101,6 +101,7 @@ $(document).ready(function(){initNavTree('d6/d7a/classVNodePoint.html','../../')
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-slots">Public Slots</a> &#124;
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
@@ -110,9 +111,6 @@ $(document).ready(function(){initNavTree('d6/d7a/classVNodePoint.html','../../')
   <div class="headertitle"><div class="title">VNodePoint Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>The <a class="el" href="../../d6/d7a/classVNodePoint.html" title="The VNodePoint class point detail node.">VNodePoint</a> class point detail node.  
- <a href="../../d6/d7a/classVNodePoint.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d5/df0/vnodepoint_8h_source.html">vnodepoint.h</a>&gt;</code></p>
 <div class="dynheader">
@@ -132,14 +130,14 @@ Public Types</h2></td></tr>
  }</td></tr>
 <tr class="separator:acce5d8d3af9c1d22a7594a213e1923b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classVScenePoint"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classVScenePoint')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../dc/d3b/classVScenePoint.html">VScenePoint</a></td></tr>
-<tr class="memitem:a6355b45d700a13e6957b4f745840b258 inherit pub_types_classVScenePoint" id="r_a6355b45d700a13e6957b4f745840b258"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="../../dc/d3b/classVScenePoint.html#a6355b45d700a13e6957b4f745840b258a331db2e06f284dbff366179370aaad34">Type</a> = UserType + static_cast&lt;int&gt;(Vis::ScenePoint)
+<tr class="memitem:ae8d0bcafe75fa1c9fffa061774d33d9c inherit pub_types_classVScenePoint" id="r_ae8d0bcafe75fa1c9fffa061774d33d9c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="../../dc/d3b/classVScenePoint.html#ae8d0bcafe75fa1c9fffa061774d33d9ca331db2e06f284dbff366179370aaad34">Type</a> = UserType + static_cast&lt;int&gt;(Vis::ScenePoint)
  }</td></tr>
-<tr class="separator:a6355b45d700a13e6957b4f745840b258 inherit pub_types_classVScenePoint"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ae8d0bcafe75fa1c9fffa061774d33d9c inherit pub_types_classVScenePoint"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr class="memitem:adb7c2c7745630303dc02e61415f49bc9" id="r_adb7c2c7745630303dc02e61415f49bc9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d7a/classVNodePoint.html#adb7c2c7745630303dc02e61415f49bc9">FullUpdateFromFile</a> () Q_DECL_OVERRIDE</td></tr>
-<tr class="memdesc:adb7c2c7745630303dc02e61415f49bc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">showContextMenu emit when need show tool context menu.  <br /></td></tr>
+<tr class="memdesc:adb7c2c7745630303dc02e61415f49bc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">FullUpdateFromFile update tool data form file.  <br /></td></tr>
 <tr class="separator:adb7c2c7745630303dc02e61415f49bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad31b77e34ba05e15263909fce9e09994" id="r_ad31b77e34ba05e15263909fce9e09994"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d7a/classVNodePoint.html#ad31b77e34ba05e15263909fce9e09994">nameChangedPosition</a> (const QPointF &amp;pos)</td></tr>
 <tr class="memdesc:ad31b77e34ba05e15263909fce9e09994"><td class="mdescLeft">&#160;</td><td class="mdescRight">nameChangedPosition point name change position.  <br /></td></tr>
@@ -166,6 +164,29 @@ Public Slots</h2></td></tr>
 <tr class="separator:a3122ee94213c72455fa293f4e37e42d2 inherit pub_slots_classVAbstractTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6776c165682947d2158bcad167fba89 inherit pub_slots_classVAbstractTool" id="r_ae6776c165682947d2158bcad167fba89"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d36/classVAbstractTool.html#ae6776c165682947d2158bcad167fba89">ToolSelectionType</a> (const <a class="el" href="../../d4/da4/def_8h.html#ab8c951c98d26f226ee3fd55d9e80a241">SelectionType</a> &amp;type)</td></tr>
 <tr class="separator:ae6776c165682947d2158bcad167fba89 inherit pub_slots_classVAbstractTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:ad0e2dbce6a5834568d942e7ca91c2c38" id="r_ad0e2dbce6a5834568d942e7ca91c2c38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d7a/classVNodePoint.html#ad0e2dbce6a5834568d942e7ca91c2c38">nodeAngleChanged</a> (quint32 id, <a class="el" href="../../d4/da4/def_8h.html#a2fedf9fccccc9531756a26b2128252e2">PieceNodeAngle</a> <a class="el" href="../../d6/d7a/classVNodePoint.html#a654158cad5b8d660178b1861d1c54e9e">type</a>)</td></tr>
+<tr class="separator:ad0e2dbce6a5834568d942e7ca91c2c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23918fa96d8fe20237060c8387ec5093" id="r_a23918fa96d8fe20237060c8387ec5093"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d7a/classVNodePoint.html#a23918fa96d8fe20237060c8387ec5093">notchChanged</a> (quint32 id, <a class="el" href="../../d2/daa/structNotchData.html">NotchData</a> notchData)</td></tr>
+<tr class="separator:a23918fa96d8fe20237060c8387ec5093"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a15409008e0d2e2b9ee713a2117be75" id="r_a6a15409008e0d2e2b9ee713a2117be75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d7a/classVNodePoint.html#a6a15409008e0d2e2b9ee713a2117be75">nodeExcluded</a> (quint32 id)</td></tr>
+<tr class="separator:a6a15409008e0d2e2b9ee713a2117be75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67bc46b9f2e8c316831b641705469269" id="r_a67bc46b9f2e8c316831b641705469269"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d7a/classVNodePoint.html#a67bc46b9f2e8c316831b641705469269">nodeDeleted</a> (quint32 id)</td></tr>
+<tr class="separator:a67bc46b9f2e8c316831b641705469269"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header signals_classVAbstractTool"><td colspan="2" onclick="javascript:toggleInherit('signals_classVAbstractTool')"><img src="../../closed.png" alt="-"/>&#160;Signals inherited from <a class="el" href="../../d4/d36/classVAbstractTool.html">VAbstractTool</a></td></tr>
+<tr class="memitem:a63a8130db67b2ecfca1dcac01e5a3b09 inherit signals_classVAbstractTool" id="r_a63a8130db67b2ecfca1dcac01e5a3b09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d36/classVAbstractTool.html#a63a8130db67b2ecfca1dcac01e5a3b09">toolHasChanges</a> ()</td></tr>
+<tr class="memdesc:a63a8130db67b2ecfca1dcac01e5a3b09 inherit signals_classVAbstractTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">toolHasChanges emit if tool create change that need save.  <br /></td></tr>
+<tr class="separator:a63a8130db67b2ecfca1dcac01e5a3b09 inherit signals_classVAbstractTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92725224cd297bc5c878c3eea25f376b inherit signals_classVAbstractTool" id="r_a92725224cd297bc5c878c3eea25f376b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d36/classVAbstractTool.html#a92725224cd297bc5c878c3eea25f376b">chosenTool</a> (quint32 id, <a class="el" href="../../d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2af">SceneObject</a> type)</td></tr>
+<tr class="memdesc:a92725224cd297bc5c878c3eea25f376b inherit signals_classVAbstractTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">chosenTool emit if object was clicked.  <br /></td></tr>
+<tr class="separator:a92725224cd297bc5c878c3eea25f376b inherit signals_classVAbstractTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd11c60a16d75bad927b93ae25f7bae9 inherit signals_classVAbstractTool" id="r_acd11c60a16d75bad927b93ae25f7bae9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d36/classVAbstractTool.html#acd11c60a16d75bad927b93ae25f7bae9">LiteUpdateTree</a> (const <a class="el" href="../../d0/d89/vabstractpattern_8h.html#a3a0d470ad581388370a4d6fd71b8d202">Document</a> &amp;parse)</td></tr>
+<tr class="memdesc:acd11c60a16d75bad927b93ae25f7bae9 inherit signals_classVAbstractTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">FullUpdateTree emit if need reparse pattern file.  <br /></td></tr>
+<tr class="separator:acd11c60a16d75bad927b93ae25f7bae9 inherit signals_classVAbstractTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7727b48eed40340db6bd1688cafb4592 inherit signals_classVAbstractTool" id="r_a7727b48eed40340db6bd1688cafb4592"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d36/classVAbstractTool.html#a7727b48eed40340db6bd1688cafb4592">ToolTip</a> (const QString &amp;toolTip)</td></tr>
+<tr class="separator:a7727b48eed40340db6bd1688cafb4592 inherit signals_classVAbstractTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -306,6 +327,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a93ca2a757057e243e9a3e7160636d917" id="r_a93ca2a757057e243e9a3e7160636d917"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d7a/classVNodePoint.html#a93ca2a757057e243e9a3e7160636d917">HideNode</a> () Q_DECL_OVERRIDE</td></tr>
 <tr class="separator:a93ca2a757057e243e9a3e7160636d917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11e976dd2063d038b62865d8367a6b54" id="r_a11e976dd2063d038b62865d8367a6b54"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d7a/classVNodePoint.html#a11e976dd2063d038b62865d8367a6b54">contextMenuEvent</a> (QGraphicsSceneContextMenuEvent *event) Q_DECL_OVERRIDE</td></tr>
+<tr class="memdesc:a11e976dd2063d038b62865d8367a6b54"><td class="mdescLeft">&#160;</td><td class="mdescRight">contextMenuEvent show context menu for point nodes.  <br /></td></tr>
 <tr class="separator:a11e976dd2063d038b62865d8367a6b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classVAbstractNode"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classVAbstractNode')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d3/d16/classVAbstractNode.html">VAbstractNode</a></td></tr>
 <tr class="memitem:ab85af0aa996ac58f85ba89e05f87bd07 inherit pro_methods_classVAbstractNode" id="r_ab85af0aa996ac58f85ba89e05f87bd07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d16/classVAbstractNode.html#ab85af0aa996ac58f85ba89e05f87bd07">AddToModeling</a> (const QDomElement &amp;domElement)</td></tr>
@@ -341,23 +363,11 @@ Protected Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a3b7a19cc97966a7b067b40807c0d30b7" id="r_a3b7a19cc97966a7b067b40807c0d30b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d7a/classVNodePoint.html#a3b7a19cc97966a7b067b40807c0d30b7">VNodePoint</a> (<a class="el" href="../../d8/dba/classVAbstractPattern.html">VAbstractPattern</a> *<a class="el" href="../../d4/d36/classVAbstractTool.html#a1450602260f8910092f2b3eeba8caaf1">doc</a>, <a class="el" href="../../d2/d83/classVContainer.html">VContainer</a> *<a class="el" href="../../d5/d68/classVDataTool.html#ae5821c7d864b5495e5e6d9868f516137">data</a>, quint32 id, quint32 idPoint, const <a class="el" href="../../d4/da4/def_8h.html#abb74e322e1c4daef3e3ff32f5f7be820">Source</a> &amp;typeCreation, const QString &amp;blockName=QString(), const quint32 &amp;<a class="el" href="../../d3/d16/classVAbstractNode.html#a2cecc6036115efe25d8054a1c71252c7">idTool</a>=0, QObject *qoParent=nullptr, QGraphicsItem *parent=nullptr)</td></tr>
-<tr class="memdesc:a3b7a19cc97966a7b067b40807c0d30b7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d6/d7a/classVNodePoint.html" title="The VNodePoint class point detail node.">VNodePoint</a> constructor.  <br /></td></tr>
+<tr class="memdesc:a3b7a19cc97966a7b067b40807c0d30b7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d6/d7a/classVNodePoint.html">VNodePoint</a> constructor.  <br /></td></tr>
 <tr class="separator:a3b7a19cc97966a7b067b40807c0d30b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header signals_classVAbstractTool"><td colspan="2" onclick="javascript:toggleInherit('signals_classVAbstractTool')"><img src="../../closed.png" alt="-"/>&#160;Signals inherited from <a class="el" href="../../d4/d36/classVAbstractTool.html">VAbstractTool</a></td></tr>
-<tr class="memitem:a63a8130db67b2ecfca1dcac01e5a3b09 inherit signals_classVAbstractTool" id="r_a63a8130db67b2ecfca1dcac01e5a3b09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d36/classVAbstractTool.html#a63a8130db67b2ecfca1dcac01e5a3b09">toolHasChanges</a> ()</td></tr>
-<tr class="memdesc:a63a8130db67b2ecfca1dcac01e5a3b09 inherit signals_classVAbstractTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">toolHasChanges emit if tool create change that need save.  <br /></td></tr>
-<tr class="separator:a63a8130db67b2ecfca1dcac01e5a3b09 inherit signals_classVAbstractTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92725224cd297bc5c878c3eea25f376b inherit signals_classVAbstractTool" id="r_a92725224cd297bc5c878c3eea25f376b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d36/classVAbstractTool.html#a92725224cd297bc5c878c3eea25f376b">chosenTool</a> (quint32 id, <a class="el" href="../../d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2af">SceneObject</a> type)</td></tr>
-<tr class="memdesc:a92725224cd297bc5c878c3eea25f376b inherit signals_classVAbstractTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">chosenTool emit if object was clicked.  <br /></td></tr>
-<tr class="separator:a92725224cd297bc5c878c3eea25f376b inherit signals_classVAbstractTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd11c60a16d75bad927b93ae25f7bae9 inherit signals_classVAbstractTool" id="r_acd11c60a16d75bad927b93ae25f7bae9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d36/classVAbstractTool.html#acd11c60a16d75bad927b93ae25f7bae9">LiteUpdateTree</a> (const <a class="el" href="../../d0/d89/vabstractpattern_8h.html#a3a0d470ad581388370a4d6fd71b8d202">Document</a> &amp;parse)</td></tr>
-<tr class="memdesc:acd11c60a16d75bad927b93ae25f7bae9 inherit signals_classVAbstractTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">FullUpdateTree emit if need reparse pattern file.  <br /></td></tr>
-<tr class="separator:acd11c60a16d75bad927b93ae25f7bae9 inherit signals_classVAbstractTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7727b48eed40340db6bd1688cafb4592 inherit signals_classVAbstractTool" id="r_a7727b48eed40340db6bd1688cafb4592"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d36/classVAbstractTool.html#a7727b48eed40340db6bd1688cafb4592">ToolTip</a> (const QString &amp;toolTip)</td></tr>
-<tr class="separator:a7727b48eed40340db6bd1688cafb4592 inherit signals_classVAbstractTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_methods_classVAbstractTool"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_classVAbstractTool')"><img src="../../closed.png" alt="-"/>&#160;Static Protected Member Functions inherited from <a class="el" href="../../d4/d36/classVAbstractTool.html">VAbstractTool</a></td></tr>
 <tr class="memitem:aa852f252dc5e5cd7aeefb08e57fb15ef inherit pro_static_methods_classVAbstractTool" id="r_aa852f252dc5e5cd7aeefb08e57fb15ef"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d36/classVAbstractTool.html#aa852f252dc5e5cd7aeefb08e57fb15ef">ConfirmDeletion</a> ()</td></tr>
 <tr class="separator:aa852f252dc5e5cd7aeefb08e57fb15ef inherit pro_static_methods_classVAbstractTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -418,8 +428,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:ab175a623986615d02b06fa403260ab2e inherit pro_attribs_classVScenePoint"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="../../d6/d7a/classVNodePoint.html" title="The VNodePoint class point detail node.">VNodePoint</a> class point detail node. </p>
-
+<div class="textblock">
 <p class="definition">Definition at line <a class="el" href="../../d5/df0/vnodepoint_8h_source.html#l00072">72</a> of file <a class="el" href="../../d5/df0/vnodepoint_8h_source.html">vnodepoint.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="acce5d8d3af9c1d22a7594a213e1923b3" name="acce5d8d3af9c1d22a7594a213e1923b3"></a>
@@ -518,7 +527,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="../../d6/d7a/classVNodePoint.html" title="The VNodePoint class point detail node.">VNodePoint</a> constructor. </p>
+<p><a class="el" href="../../d6/d7a/classVNodePoint.html">VNodePoint</a> constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">doc</td><td>dom document container. </td></tr>
@@ -533,9 +542,9 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00104">104</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00107">107</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00323">contextMenuEvent()</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../da/df3/vscenepoint_8h_source.html#l00080">VScenePoint::m_pointName</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00302">nameChangedPosition()</a>, <a class="el" href="../../de/dbc/classVGraphicsSimpleTextItem.html#ab12a7c465cf23abbf545581d39151092">VGraphicsSimpleTextItem::nameChangedPosition()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00179">pointChosen()</a>, <a class="el" href="../../de/dbc/classVGraphicsSimpleTextItem.html#a0fa4fda06d820e8ce3d00ce761baf366">VGraphicsSimpleTextItem::pointChosen()</a>, <a class="el" href="../../d0/d5d/vscenepoint_8cpp_source.html#l00123">VScenePoint::refreshPointGeometry()</a>, <a class="el" href="../../de/dec/vgraphicssimpletextitem_8cpp_source.html#l00166">VGraphicsSimpleTextItem::setShowParentTooltip()</a>, <a class="el" href="../../de/dbc/classVGraphicsSimpleTextItem.html#a818d41734ecedd94699eb59ba6065d47">VGraphicsSimpleTextItem::showContextMenu()</a>, and <a class="el" href="../../d5/dcd/vabstractnode_8cpp_source.html#l00183">VAbstractNode::ToolCreation()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00323">contextMenuEvent()</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../da/df3/vscenepoint_8h_source.html#l00080">VScenePoint::m_pointName</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00299">nameChangedPosition()</a>, <a class="el" href="../../de/dbc/classVGraphicsSimpleTextItem.html#ab12a7c465cf23abbf545581d39151092">VGraphicsSimpleTextItem::nameChangedPosition()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00181">pointChosen()</a>, <a class="el" href="../../de/dbc/classVGraphicsSimpleTextItem.html#a0fa4fda06d820e8ce3d00ce761baf366">VGraphicsSimpleTextItem::pointChosen()</a>, <a class="el" href="../../d0/d5d/vscenepoint_8cpp_source.html#l00123">VScenePoint::refreshPointGeometry()</a>, <a class="el" href="../../de/dec/vgraphicssimpletextitem_8cpp_source.html#l00166">VGraphicsSimpleTextItem::setShowParentTooltip()</a>, <a class="el" href="../../de/dbc/classVGraphicsSimpleTextItem.html#a818d41734ecedd94699eb59ba6065d47">VGraphicsSimpleTextItem::showContextMenu()</a>, and <a class="el" href="../../d5/dcd/vabstractnode_8cpp_source.html#l00183">VAbstractNode::ToolCreation()</a>.</p>
 
 </div>
 </div>
@@ -569,7 +578,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00204">204</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d5/dcd/vabstractnode_8cpp_source.html#l00200">VAbstractNode::AddToModeling()</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00108">VDomDocument::AttrId</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00148">AttrIdObject</a>, <a class="el" href="../../d1/df9/vabstractnode_8h_source.html#l00077">VAbstractNode::AttrIdTool</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00074">AttrMx</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00075">AttrMy</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00153">AttrShowPointName</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00073">AttrType</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00173">getTagName()</a>, <a class="el" href="../../d1/df9/vabstractnode_8h_source.html#l00094">VAbstractNode::idNode</a>, <a class="el" href="../../d1/df9/vabstractnode_8h_source.html#l00097">VAbstractNode::idTool</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../d3/da5/ifcdef_8h_source.html#l00076">NULL_ID</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00068">qApp</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>, and <a class="el" href="../../d5/df0/vnodepoint_8h_source.html#l00080">ToolType</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/dcd/vabstractnode_8cpp_source.html#l00200">VAbstractNode::AddToModeling()</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00108">VDomDocument::AttrId</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00148">AttrIdObject</a>, <a class="el" href="../../d1/df9/vabstractnode_8h_source.html#l00077">VAbstractNode::AttrIdTool</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00074">AttrMx</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00075">AttrMy</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00153">AttrShowPointName</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00073">AttrType</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00175">getTagName()</a>, <a class="el" href="../../d1/df9/vabstractnode_8h_source.html#l00094">VAbstractNode::idNode</a>, <a class="el" href="../../d1/df9/vabstractnode_8h_source.html#l00097">VAbstractNode::idTool</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../d3/da5/ifcdef_8h_source.html#l00076">NULL_ID</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00068">qApp</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>, and <a class="el" href="../../d5/df0/vnodepoint_8h_source.html#l00080">ToolType</a>.</p>
 
 </div>
 </div>
@@ -597,9 +606,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00352">352</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00600">600</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00134">Create()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00136">Create()</a>.</p>
 
 </div>
 </div>
@@ -627,9 +636,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00358">358</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00606">606</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00134">Create()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00136">Create()</a>.</p>
 
 </div>
 </div>
@@ -657,11 +666,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00364">364</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00612">612</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../da/df3/vscenepoint_8h_source.html#l00080">VScenePoint::m_pointName</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00134">Create()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00136">Create()</a>.</p>
 
 </div>
 </div>
@@ -689,11 +698,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00370">370</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00618">618</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../da/df3/vscenepoint_8h_source.html#l00080">VScenePoint::m_pointName</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00134">Create()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00136">Create()</a>.</p>
 
 </div>
 </div>
@@ -721,11 +730,19 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>contextMenuEvent show context menu for point nodes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>contextmenu event. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00323">323</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00087">VAbstractTool::m_suppressContextMenu</a>, and <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00068">qApp</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00070">NotchData::angle</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00220">VPiecePath::at()</a>, <a class="el" href="../../d4/da4/def_8h.html#a5b666b3acf56b84f9f3fadeef9d571b4a4e3c3e18ebb64f7aaaa75ea75475ecf8">Bisector</a>, <a class="el" href="../../d4/da4/def_8h.html#a2fedf9fccccc9531756a26b2128252e2a14a082df2cdd2b16b3b2e4cfc3098a13">ByFirstEdgeRightAngle</a>, <a class="el" href="../../d4/da4/def_8h.html#a2fedf9fccccc9531756a26b2128252e2a9c3a7e96ef77ec2e07866e5252f852aa">ByFirstEdgeSymmetry</a>, <a class="el" href="../../d4/da4/def_8h.html#a2fedf9fccccc9531756a26b2128252e2afbadcb331283eb70a8a3b6ad274f745d">ByLength</a>, <a class="el" href="../../d4/da4/def_8h.html#a2fedf9fccccc9531756a26b2128252e2a8f2a6e10487912a3529d97426fb2d25e">ByPointsIntersection</a>, <a class="el" href="../../d4/da4/def_8h.html#a2fedf9fccccc9531756a26b2128252e2a588b049dfcaba2e26bb2315b1db7654b">BySecondEdgeRightAngle</a>, <a class="el" href="../../d4/da4/def_8h.html#a2fedf9fccccc9531756a26b2128252e2a74eff2b5500a999e5f43d6a698baa88d">BySecondEdgeSymmetry</a>, <a class="el" href="../../d4/da4/def_8h.html#a0caf9d3130a2202ad0e8c90233960a0ca11081b0ce75b0e635708443850bef902">Castle</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00072">NotchData::count</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d4/da4/def_8h.html#a0caf9d3130a2202ad0e8c90233960a0ca8f7671185d590914ac21c7511767b699">Diamond</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00273">VPieceNode::GetAngleType()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00150">VPieceNode::GetId()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00189">VAbstractTool::getId()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00394">VPieceNode::getNotchAngle()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00406">VPieceNode::getNotchCount()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00370">VPieceNode::getNotchLength()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00327">VPieceNode::getNotchSubType()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00315">VPieceNode::getNotchType()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00382">VPieceNode::getNotchWidth()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00155">VPiece::GetPath()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01053">VContainer::GetPatternUnit()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00276">VContainer::GetPiece()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00162">VPieceNode::GetTypeTool()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00519">VPiecePath::indexOfNode()</a>, <a class="el" href="../../d4/da4/def_8h.html#a5b666b3acf56b84f9f3fadeef9d571b4aa06d31c2ee920b4d53e8c9c06d90ba24">Intersection</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00387">VPiece::isLocked()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00073">NotchData::isNotch</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00288">VPieceNode::isNotch()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::length</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00087">VAbstractTool::m_suppressContextMenu</a>, <a class="el" href="../../d6/d7a/classVNodePoint.html#ad0e2dbce6a5834568d942e7ca91c2c38">nodeAngleChanged()</a>, <a class="el" href="../../d6/d7a/classVNodePoint.html#a67bc46b9f2e8c316831b641705469269">nodeDeleted()</a>, <a class="el" href="../../d6/d7a/classVNodePoint.html#a6a15409008e0d2e2b9ee713a2117be75">nodeExcluded()</a>, <a class="el" href="../../d4/da4/def_8h.html#ab8460ab56e3e92e57d3ed3b717492395acd7236e1d584dcfc791f42196931e665">NodePoint</a>, <a class="el" href="../../d6/d7a/classVNodePoint.html#a23918fa96d8fe20237060c8387ec5093">notchChanged()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00068">qApp</a>, <a class="el" href="../../d4/da4/def_8h.html#a0caf9d3130a2202ad0e8c90233960a0ca86cce5d39437eef876e5f6ae19fff606">Slit</a>, <a class="el" href="../../d4/da4/def_8h.html#a5b666b3acf56b84f9f3fadeef9d571b4a0ecb7adb3485f25769712398fb73e770">Straightforward</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::subType</a>, <a class="el" href="../../d4/da4/def_8h.html#a0caf9d3130a2202ad0e8c90233960a0cab212b1690f8ff3f0ea69e5265334c659">TNotch</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00220">ToPixel()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00066">NotchData::type</a>, <a class="el" href="../../d4/da4/def_8h.html#a0caf9d3130a2202ad0e8c90233960a0cadb33f96c3a91f62cc92e3c9fbfdcbfa7">UNotch</a>, <a class="el" href="../../d4/da4/def_8h.html#a0caf9d3130a2202ad0e8c90233960a0caf41674a3bb1f1ffa7b87d2ae523ab603">VExternal</a>, <a class="el" href="../../d4/da4/def_8h.html#a0caf9d3130a2202ad0e8c90233960a0ca98b3e76892aab28594ed239d28b625df">VInternal</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00069">NotchData::width</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00104">VNodePoint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00107">VNodePoint()</a>.</p>
 
 </div>
 </div>
@@ -819,9 +836,9 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00134">134</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00136">136</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/d4e/vabstracttool_8cpp_source.html#l00568">VAbstractTool::AddRecord()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00695">VAbstractPattern::AddTool()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00352">AllowHover()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00358">AllowSelecting()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00364">allowTextHover()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00370">allowTextSelectable()</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, <a class="el" href="../../d7/df5/classVMainGraphicsScene.html#a52fc497e2db6da1bc3155577c591b696">VMainGraphicsScene::EnablePointItemHover()</a>, <a class="el" href="../../d7/df5/classVMainGraphicsScene.html#a1affc6f2e15094225104869a08a32e88">VMainGraphicsScene::EnablePointItemSelection()</a>, <a class="el" href="../../d7/df5/classVMainGraphicsScene.html#a6fd8d9398794d8c8d3bc08f555d1fa72">VMainGraphicsScene::enableTextItemHover()</a>, <a class="el" href="../../d7/df5/classVMainGraphicsScene.html#a2a0a7de6ef4ec857e620a28f68122326">VMainGraphicsScene::enableTextItemSelection()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00346">EnableToolMove()</a>, <a class="el" href="../../d7/df5/classVMainGraphicsScene.html#a71e9f77d3721c01c4c72827a76075ffb">VMainGraphicsScene::EnableToolMove()</a>, <a class="el" href="../../d0/d89/vabstractpattern_8h.html#a3a0d470ad581388370a4d6fd71b8d202aed73e6ca0421aba7b2a904510d597785">FullParse</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00683">VAbstractPattern::getTool()</a>, <a class="el" href="../../d1/df9/vabstractnode_8h_source.html#l00097">VAbstractNode::idTool</a>, <a class="el" href="../../d4/da4/def_8h.html#ab8460ab56e3e92e57d3ed3b717492395acd7236e1d584dcfc791f42196931e665">NodePoint</a>, <a class="el" href="../../d3/da5/ifcdef_8h_source.html#l00076">NULL_ID</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00423">SCASSERT</a>, <a class="el" href="../../d1/df9/vabstractnode_8h.html#a9dee9d00fa02343fa254019d71bceb25a9ead0d38e06ec253ca0ecbf6ea56e59b">Scene</a>, <a class="el" href="../../d5/dcd/vabstractnode_8cpp_source.html#l00158">VAbstractNode::SetParentType()</a>, and <a class="el" href="../../d8/dba/classVAbstractPattern.html#a3f3b6ce0527e751e3ce4d89f3f2ec444">VAbstractPattern::UpdateToolData()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/d4e/vabstracttool_8cpp_source.html#l00568">VAbstractTool::AddRecord()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00695">VAbstractPattern::AddTool()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00600">AllowHover()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00606">AllowSelecting()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00612">allowTextHover()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00618">allowTextSelectable()</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, <a class="el" href="../../d7/df5/classVMainGraphicsScene.html#a52fc497e2db6da1bc3155577c591b696">VMainGraphicsScene::EnablePointItemHover()</a>, <a class="el" href="../../d7/df5/classVMainGraphicsScene.html#a1affc6f2e15094225104869a08a32e88">VMainGraphicsScene::EnablePointItemSelection()</a>, <a class="el" href="../../d7/df5/classVMainGraphicsScene.html#a6fd8d9398794d8c8d3bc08f555d1fa72">VMainGraphicsScene::enableTextItemHover()</a>, <a class="el" href="../../d7/df5/classVMainGraphicsScene.html#a2a0a7de6ef4ec857e620a28f68122326">VMainGraphicsScene::enableTextItemSelection()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00594">EnableToolMove()</a>, <a class="el" href="../../d7/df5/classVMainGraphicsScene.html#a71e9f77d3721c01c4c72827a76075ffb">VMainGraphicsScene::EnableToolMove()</a>, <a class="el" href="../../d0/d89/vabstractpattern_8h.html#a3a0d470ad581388370a4d6fd71b8d202aed73e6ca0421aba7b2a904510d597785">FullParse</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00683">VAbstractPattern::getTool()</a>, <a class="el" href="../../d1/df9/vabstractnode_8h_source.html#l00097">VAbstractNode::idTool</a>, <a class="el" href="../../d4/da4/def_8h.html#ab8460ab56e3e92e57d3ed3b717492395acd7236e1d584dcfc791f42196931e665">NodePoint</a>, <a class="el" href="../../d3/da5/ifcdef_8h_source.html#l00076">NULL_ID</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00423">SCASSERT</a>, <a class="el" href="../../d1/df9/vabstractnode_8h.html#a9dee9d00fa02343fa254019d71bceb25a9ead0d38e06ec253ca0ecbf6ea56e59b">Scene</a>, <a class="el" href="../../d5/dcd/vabstractnode_8cpp_source.html#l00158">VAbstractNode::SetParentType()</a>, and <a class="el" href="../../d8/dba/classVAbstractPattern.html#a3f3b6ce0527e751e3ce4d89f3f2ec444">VAbstractPattern::UpdateToolData()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l00400">QT_WARNING_POP::AddNodePoint()</a>, <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l01746">VPattern::ParseNodePoint()</a>, and <a class="el" href="../../d9/d4e/vabstracttool_8cpp_source.html#l00744">VAbstractTool::PrepareNode()</a>.</p>
 
@@ -851,11 +868,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00346">346</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00594">594</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../da/df3/vscenepoint_8h_source.html#l00080">VScenePoint::m_pointName</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00134">Create()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00509">PatternPieceTool::EnableToolMove()</a>, and <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00531">PatternPieceTool::pieceLockedChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00136">Create()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00509">PatternPieceTool::EnableToolMove()</a>, and <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00531">PatternPieceTool::pieceLockedChanged()</a>.</p>
 
 </div>
 </div>
@@ -882,16 +899,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>showContextMenu emit when need show tool context menu. </p>
-<p>FullUpdateFromFile update tool data form file.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>context menu event. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>FullUpdateFromFile update tool data form file. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00188">188</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00189">189</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, and <a class="el" href="../../d0/d5d/vscenepoint_8cpp_source.html#l00123">VScenePoint::refreshPointGeometry()</a>.</p>
 
@@ -922,7 +932,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d4/d36/classVAbstractTool.html#a93c63a02a83296dc12774c236caea755">VAbstractTool</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00173">173</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00175">175</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d0/d89/vabstractpattern_8h_source.html#l00300">VAbstractPattern::TagPoint</a>.</p>
 
@@ -955,7 +965,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d3/d16/classVAbstractNode.html#a0efb37bc43a2bc4a1728dea922d774e8">VAbstractNode</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00317">317</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00314">314</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
 </div>
 </div>
@@ -1051,7 +1061,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00253">253</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00252">252</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d4/d36/classVAbstractTool.html#a92725224cd297bc5c878c3eea25f376b">VAbstractTool::chosenTool()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, and <a class="el" href="../../d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2afa2a3cd5946cfd317eb99c3d32e35e2d4c">Point</a>.</p>
 
@@ -1089,11 +1099,143 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00302">302</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00299">299</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, and <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00068">qApp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00104">VNodePoint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00107">VNodePoint()</a>.</p>
+
+</div>
+</div>
+<a id="ad0e2dbce6a5834568d942e7ca91c2c38" name="ad0e2dbce6a5834568d942e7ca91c2c38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0e2dbce6a5834568d942e7ca91c2c38">&#9670;&#160;</a></span>nodeAngleChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VNodePoint::nodeAngleChanged </td>
+          <td>(</td>
+          <td class="paramtype">quint32&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/da4/def_8h.html#a2fedf9fccccc9531756a26b2128252e2">PieceNodeAngle</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00323">contextMenuEvent()</a>, and <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01921">PatternPieceTool::initializeNode()</a>.</p>
+
+</div>
+</div>
+<a id="a67bc46b9f2e8c316831b641705469269" name="a67bc46b9f2e8c316831b641705469269"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67bc46b9f2e8c316831b641705469269">&#9670;&#160;</a></span>nodeDeleted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VNodePoint::nodeDeleted </td>
+          <td>(</td>
+          <td class="paramtype">quint32&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00323">contextMenuEvent()</a>, and <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01921">PatternPieceTool::initializeNode()</a>.</p>
+
+</div>
+</div>
+<a id="a6a15409008e0d2e2b9ee713a2117be75" name="a6a15409008e0d2e2b9ee713a2117be75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a15409008e0d2e2b9ee713a2117be75">&#9670;&#160;</a></span>nodeExcluded</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VNodePoint::nodeExcluded </td>
+          <td>(</td>
+          <td class="paramtype">quint32&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00323">contextMenuEvent()</a>, and <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01921">PatternPieceTool::initializeNode()</a>.</p>
+
+</div>
+</div>
+<a id="a23918fa96d8fe20237060c8387ec5093" name="a23918fa96d8fe20237060c8387ec5093"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23918fa96d8fe20237060c8387ec5093">&#9670;&#160;</a></span>notchChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VNodePoint::notchChanged </td>
+          <td>(</td>
+          <td class="paramtype">quint32&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d2/daa/structNotchData.html">NotchData</a>&#160;</td>
+          <td class="paramname"><em>notchData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00323">contextMenuEvent()</a>, and <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01921">PatternPieceTool::initializeNode()</a>.</p>
 
 </div>
 </div>
@@ -1120,11 +1262,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00179">179</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00181">181</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d4/d36/classVAbstractTool.html#a92725224cd297bc5c878c3eea25f376b">VAbstractTool::chosenTool()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, and <a class="el" href="../../d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2afa2a3cd5946cfd317eb99c3d32e35e2d4c">Point</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00104">VNodePoint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00107">VNodePoint()</a>.</p>
 
 </div>
 </div>
@@ -1172,7 +1314,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d4/d36/classVAbstractTool.html#a2993df3110cfbac96c8bf5a6799cc585">VAbstractTool</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00267">267</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00265">265</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../da/df3/vscenepoint_8h_source.html#l00080">VScenePoint::m_pointName</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00834">VMainGraphicsView::NewSceneRect()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00068">qApp</a>, <a class="el" href="../../d0/d5d/vscenepoint_8cpp_source.html#l00177">VScenePoint::refreshLeader()</a>, and <a class="el" href="../../de/dec/vgraphicssimpletextitem_8cpp_source.html#l00385">VGraphicsSimpleTextItem::setPosition()</a>.</p>
 
@@ -1214,7 +1356,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d4/d36/classVAbstractTool.html#af5b3153cb7a4e3023328961be332bcca">VAbstractTool</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00287">287</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00285">285</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, and <a class="el" href="../../d0/d5d/vscenepoint_8cpp_source.html#l00123">VScenePoint::refreshPointGeometry()</a>.</p>
 
@@ -1245,7 +1387,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d3/d16/classVAbstractNode.html#a7acfaacf2d09da85ac282ca33393005d">VAbstractNode</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00308">308</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00305">305</a> of file <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html">vnodepoint.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d1/df9/vabstractnode_8h_source.html#l00101">VAbstractNode::m_exluded</a>, <a class="el" href="../../d1/df9/vabstractnode_8h_source.html#l00091">VAbstractNode::parentType</a>, and <a class="el" href="../../d1/df9/vabstractnode_8h.html#a9dee9d00fa02343fa254019d71bceb25a9ead0d38e06ec253ca0ecbf6ea56e59b">Scene</a>.</p>
 

@@ -1,5 +1,6 @@
 var NAVTREEINDEX25 =
 {
+"d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a046b05ae883a9622db898c0ce2e75f6e":[0,0,7,113],
 "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a057fa48d101cde9aa147dd59534486e8":[0,0,7,123],
 "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a0696d67afde5d1eb5346a7a90c11beae":[0,0,7,69],
 "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a0855d3c503ad972075652fddbb9f8b1c":[0,0,7,112],
@@ -248,6 +249,5 @@ var NAVTREEINDEX25 =
 "d5/de2/addtogroup__dialog_8cpp_source.html":[2,0,0,1,13,0,1,1],
 "d5/de2/visoperation_8cpp.html":[2,0,0,1,13,3,0,0,0],
 "d5/de2/visoperation_8cpp_source.html":[2,0,0,1,13,3,0,0,0],
-"d5/de4/classVToolPointFromArcAndTangent.html":[1,0,425],
-"d5/de4/classVToolPointFromArcAndTangent.html#a093d7f941957c21de8c6ad3c8c2625ed":[1,0,425,20]
+"d5/de4/classVToolPointFromArcAndTangent.html":[1,0,425]
 };

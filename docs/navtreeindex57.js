@@ -1,5 +1,14 @@
 var NAVTREEINDEX57 =
 {
+"dd/d3b/classVObjPaintDevice.html#af8b1181e2c6dfd114f2b763229aba762":[1,0,363,9],
+"dd/d3b/classVObjPaintDevice.html#aff41de10b996f35a2d1b9be902e5a403":[1,0,363,4],
+"dd/d3b/classVisToolBisector.html":[1,0,307],
+"dd/d3b/classVisToolBisector.html#a04b5ffd6921bd1f091b27f034af23e01":[1,0,307,3],
+"dd/d3b/classVisToolBisector.html#a0fd7f37e87b3f42e79f9901fd08da86e":[1,0,307,9],
+"dd/d3b/classVisToolBisector.html#a30a3ecdaa243348ec05855d776799072":[1,0,307,13],
+"dd/d3b/classVisToolBisector.html#a42a27888a96f234c81979aa8a6b9a02e":[1,0,307,10],
+"dd/d3b/classVisToolBisector.html#a55a549a6ba289c3f21d62853cc04ebe3":[1,0,307,15],
+"dd/d3b/classVisToolBisector.html#a63f45bd08657bc454245fac4cbe52dec":[1,0,307,1],
 "dd/d3b/classVisToolBisector.html#a74c7245d156058c06d0469decd10692e":[1,0,307,0],
 "dd/d3b/classVisToolBisector.html#a8b5eeb1d67291e92950f00e30e7dc57d":[1,0,307,12],
 "dd/d3b/classVisToolBisector.html#a8f57657fc78e5741d895199e001462f8":[1,0,307,7],
@@ -240,14 +249,5 @@ var NAVTREEINDEX57 =
 "dd/da2/classVScaledLine.html#a6f392d862b91d96e4c8e74baea81efad":[1,0,383,5],
 "dd/da2/classVScaledLine.html#a8419b148df27070f3a08d9c27244b4dc":[1,0,383,0],
 "dd/da2/classVScaledLine.html#a9528173f1a2a2dd5500efd69b3290ae0":[1,0,383,7],
-"dd/da2/classVScaledLine.html#ad684919de398d894c54c4a4a3aa9af94":[1,0,383,3],
-"dd/da2/classVScaledLine.html#ad9b093631b2bc2283330fe0185514891":[1,0,383,4],
-"dd/da4/dialogexporttocsv_8h.html":[2,0,0,1,8,0,1],
-"dd/da4/dialogexporttocsv_8h_source.html":[2,0,0,1,8,0,1],
-"dd/da4/vfileproperty_8h.html":[2,0,0,1,11,0,20],
-"dd/da4/vfileproperty_8h_source.html":[2,0,0,1,11,0,20],
-"dd/da6/qmuparserbytecode_8h.html":[2,0,0,1,2,9],
-"dd/da6/qmuparserbytecode_8h_source.html":[2,0,0,1,2,9],
-"dd/da8/vpointf_8cpp.html":[2,0,0,1,6,30],
-"dd/da8/vpointf_8cpp_source.html":[2,0,0,1,6,30]
+"dd/da2/classVScaledLine.html#ad684919de398d894c54c4a4a3aa9af94":[1,0,383,3]
 };

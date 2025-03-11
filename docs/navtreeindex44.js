@@ -1,5 +1,10 @@
 var NAVTREEINDEX44 =
 {
+"da/d79/classVLitePattern.html#a98c23291f534f745d3dbdef6dc7e101c":[1,0,351,3],
+"da/d79/classVLitePattern.html#aa58c66702e1520c50ef4cfab2328b014":[1,0,351,4],
+"da/d79/classVLitePattern.html#ad09d49c25c0370b5109a76b0e30bd7f7":[1,0,351,0],
+"da/d79/classVLitePattern.html#ad8072e6ee1703b986645840fb0a21bcf":[1,0,351,8],
+"da/d79/classVLitePattern.html#ae166076bcedb6f885f4708a078c81b84":[1,0,351,2],
 "da/d79/classVLitePattern.html#ae45b9d2b452ebb993d29ba0bc29ff99a":[1,0,351,5],
 "da/d7d/classVPieceItem.html":[1,0,370],
 "da/d7d/classVPieceItem.html#a08dda1e591a1da8436bb6b5f2dd4751e":[1,0,370,16],
@@ -244,10 +249,5 @@ var NAVTREEINDEX44 =
 "da/daf/scalesceneitems_8h.html":[2,0,0,1,14,30],
 "da/daf/scalesceneitems_8h_source.html":[2,0,0,1,14,30],
 "da/db1/classApplication2D.html":[1,0,18],
-"da/db1/classApplication2D.html#a0117219fc73aea59fc84814d15046ef3":[1,0,18,3],
-"da/db1/classApplication2D.html#a02afad82d2e5520780912cd93c7be725":[1,0,18,11],
-"da/db1/classApplication2D.html#a078cc331bbc6e686cd94037d036d45d9":[1,0,18,14],
-"da/db1/classApplication2D.html#a32b56028ade0e6da3d73f46eaef04413":[1,0,18,21],
-"da/db1/classApplication2D.html#a3996ad72050325fb1fc44ece93993517":[1,0,18,2],
-"da/db1/classApplication2D.html#a39f01aceaa96d3459b8928f63dd91ad4":[1,0,18,1]
+"da/db1/classApplication2D.html#a0117219fc73aea59fc84814d15046ef3":[1,0,18,3]
 };

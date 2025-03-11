@@ -6,7 +6,7 @@ var searchData=
   ['mainpathpath_3',['MainPathPath',['../d0/dab/classVPiece.html#a76713a14a629f0b82f26ede22cdddfb3',1,'VPiece']]],
   ['mainpathpoints_4',['MainPathPoints',['../d0/dab/classVPiece.html#abe6acc56fd08a258b4f1f826735ff415',1,'VPiece']]],
   ['mainshape_5',['mainShape',['../da/d4e/classVGrainlineItem.html#afd4bb22f74283a10facf97a864e9c91c',1,'VGrainlineItem']]],
-  ['mainwindow_6',['mainwindow',['../d6/d1a/classMainWindow.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow::MainWindow()'],['../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7',1,'ApplicationME::mainWindow()']]],
+  ['mainwindow_6',['mainwindow',['../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7',1,'ApplicationME::mainWindow()'],['../d6/d1a/classMainWindow.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow::MainWindow()']]],
   ['mainwindows_7',['mainWindows',['../d0/d17/classApplicationME.html#ae988d03f4ef0614eae25ba6fa3d53ea6',1,'ApplicationME']]],
   ['mainwindowsnogui_8',['MainWindowsNoGUI',['../de/d1a/classMainWindowsNoGUI.html#a313c4b8909f9c82ba01ad318f9369f66',1,'MainWindowsNoGUI']]],
   ['major_9',['Major',['../d6/deb/classVDomDocument.html#a278a792a3d216ccd935a4fd163d0d0a8',1,'VDomDocument']]],

@@ -35,6 +35,7 @@ var classVPiecePath =
     [ "PathPoints", "df/de1/classVPiecePath.html#a0f0c429ad1410eb8ae3e0a2fe280bf2e", null ],
     [ "PreparePointEkv", "df/de1/classVPiecePath.html#ac15092cd74e77bdf9d488f9baa253ba3", null ],
     [ "RemoveEdge", "df/de1/classVPiecePath.html#a79057988f7123dc94c7d949465ee2217", null ],
+    [ "removeNode", "df/de1/classVPiecePath.html#adf54fa5e5185cad299855c2f34440411", null ],
     [ "SeamAllowancePoints", "df/de1/classVPiecePath.html#a26e7457c663da9d1d5b8c5e61c2a9cab", null ],
     [ "SetCutPath", "df/de1/classVPiecePath.html#a4a0e0e0de7ac8b65a198890e5ffb3d67", null ],
     [ "SetName", "df/de1/classVPiecePath.html#a985d9f676d9ff99c50ab992364215381", null ],
