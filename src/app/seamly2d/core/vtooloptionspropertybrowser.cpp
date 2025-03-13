@@ -722,10 +722,11 @@ void VToolOptionsPropertyBrowser::addPropertyLineWeight(Tool *tool, const QStrin
 {
     VPE::LineWeightProperty *lineWeightProperty = new VPE::LineWeightProperty(propertyName);
     lineWeightProperty->setLineWeights(lineWeightList());
-    const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+    qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
     if (index == -1)
     {
-        qWarning() << "Can't find line weight" << tool->getLineWeight() <<  "in list";
+        index = 6;
+        //qWarning() << "Can't find line weight" << tool->getLineWeight() <<  "in list";
     }
     lineWeightProperty->setValue(index);
     addProperty(lineWeightProperty, AttrLineWeight);

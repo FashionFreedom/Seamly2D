@@ -172,10 +172,11 @@ private slots:
     void fullParseFile();
     void setGuiEnabled(bool enabled);
     void changeDraftBlockGlobally(const QString &patternPiece);
-    void ToolBarStyles();
+    void initToolBarStyles();
     void resetOrigins();
     void showLayoutPages(int index);
     void Preferences();
+    void updatePreferences();
 #if defined(Q_OS_MAC)
     void CreateMeasurements();
 #endif

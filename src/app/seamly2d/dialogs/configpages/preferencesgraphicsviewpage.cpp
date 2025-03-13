@@ -3,11 +3,13 @@
 //  @author Douglas S Caskey
 //  @date   26 Oct, 2023
 //
-//  @copyright
-//  Copyright (C) 2017 - 2022 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
-//
 //  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
+//  Copyright (C) 2017-2025 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
 //  Seamly2D is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
 //  the Free Software Foundation, either version 3 of the License, or
@@ -19,7 +21,7 @@
 //  GNU General Public License for more details.
 //
 //  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 //-----------------------------------------------------------------------------
 
 #include "preferencesgraphicsviewpage.h"
@@ -215,6 +217,7 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
 
     // Always use current pen
     ui->useCurrentPen_checkBox->setChecked(qApp->Seamly2DSettings()->useCurrentPen());
+    ui->showOnlyIso_CheckBox->setChecked(qApp->Seamly2DSettings()->showOnlyIso());
 
     // Font preferences
     // Pattern piece labels font
@@ -267,13 +270,13 @@ PreferencesGraphicsViewPage::~PreferencesGraphicsViewPage ()
     delete ui;
 }
 
-// @brief enableOffsets() enable offset spinboxes.
-//
-// This method enables / disables the offset spinboxes based on the radio button checked.
-//
-// @Details
-//  - Enables spinboxes when the Offset radio button is checked.
-//  - Disables spinboxes when any other radio button is checked.
+/// @brief enableOffsets() enable offset spinboxes.
+///
+/// This method enables / disables the offset spinboxes based on the radio button checked.
+///
+/// @Details
+///  - Enables spinboxes when the Offset radio button is checked.
+///  - Disables spinboxes when any other radio button is checked.
 void PreferencesGraphicsViewPage::enableOffsets()
 {
     if (ui->offset_RadioButton->isChecked())
@@ -403,8 +406,9 @@ void PreferencesGraphicsViewPage::Apply()
     // Pan Zoom while Space key pressed
     settings->setPanActiveSpaceKey(ui->panActiveSpacePressed_CheckBox->isChecked());
 
-    // Always use current pen
+    // Pen
     settings->setUseCurrentPen(ui->useCurrentPen_checkBox->isChecked());
+    settings->setShowIsoOnly(ui->showOnlyIso_CheckBox->isChecked());
 
     //Fonts
     settings->setLabelFont(ui->labelFont_ComboBox->currentFont());
