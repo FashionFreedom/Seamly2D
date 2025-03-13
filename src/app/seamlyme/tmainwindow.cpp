@@ -610,18 +610,18 @@ void TMainWindow::Preferences()
 		QScopedPointer<DialogSeamlyMePreferences> dlg(preferences);
 		guard = preferences;
 		// Must be first
-		connect(dlg.data(), &DialogSeamlyMePreferences::updateProperties, this, &TMainWindow::WindowsLocale);
-		connect(dlg.data(), &DialogSeamlyMePreferences::updateProperties, this, &TMainWindow::ToolBarStyles);
+		connect(dlg.data(), &DialogSeamlyMePreferences::updateProperties, this, &TMainWindow::setWindowsLocale);
+		connect(dlg.data(), &DialogSeamlyMePreferences::updateProperties, this, &TMainWindow::initToolBarStyles);
 		QGuiApplication::restoreOverrideCursor();
 		dlg->exec();
 	}
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::ToolBarStyles()
+void TMainWindow::initToolBarStyles()
 {
-	ToolBarStyle(ui->toolBarGradation);
-	ToolBarStyle(ui->mainToolBar);
+	initToolBarStyle(ui->toolBarGradation);
+	initToolBarStyle(ui->mainToolBar);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3038,7 +3038,7 @@ void TMainWindow::ReadSettings()
 	restoreState(settings->GetToolbarsState(), APP_VERSION);
 
 	// Text under tool button icon
-	ToolBarStyles();
+	initToolBarStyles();
 
 	// Stack limit
 	//qApp->getUndoStack()->setUndoLimit(settings->GetUndoCount());

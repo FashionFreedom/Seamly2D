@@ -114,7 +114,7 @@ private slots:
     //void                handleBodyScanner1();
     void                handleBodyScanner2();
     void                Preferences();
-    void                ToolBarStyles();
+    void                initToolBarStyles();
 
     void                print();
     void                printPages(QPrinter *printer);

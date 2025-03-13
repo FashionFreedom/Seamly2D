@@ -3229,6 +3229,13 @@ border-radius: 4px;
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="QCheckBox" name="showOnlyIso_CheckBox">
+            <property name="text">
+             <string>Show only ISO line weights in drop down boxes</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>

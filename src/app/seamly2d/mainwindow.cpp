@@ -274,7 +274,7 @@ MainWindow::MainWindow(QWidget *parent)
         initializeToolBarVisibility();
 
         setCurrentFile(""); // Set a new unsaved pattern filename to an empty string.
-        WindowsLocale();    // Set the mainwindow locale based on the OS seperator set in the prefs.
+        setWindowsLocale(); // Set the mainwindow locale based on the OS seperator set in the prefs.
 
         // Show the layout page that is selected in the Layout Pages dock.
         connect(ui->listWidget, &QListWidget::currentRowChanged, this, &MainWindow::showLayoutPages);
@@ -5235,7 +5235,7 @@ void MainWindow::ReadSettings()
     qApp->getUndoStack()->setUndoLimit(settings->GetUndoCount());
 
     // Text under tool button icon
-    ToolBarStyles();
+    initToolBarStyles();
 
     isToolOptionsDockVisible = ui->toolProperties_DockWidget->isVisible();
     isGroupsDockVisible      = ui->groups_DockWidget->isVisible();
@@ -6621,13 +6621,13 @@ QStringList MainWindow::GetUnlokedRestoreFileList() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ToolBarStyles()
+void MainWindow::initToolBarStyles()
 {
-    ToolBarStyle(ui->draft_ToolBar);
-    ToolBarStyle(ui->mode_ToolBar);
-    ToolBarStyle(ui->edit_Toolbar);
-    ToolBarStyle(ui->zoom_ToolBar);
-    ToolBarStyle(ui->file_ToolBar);
+    initToolBarStyle(ui->draft_ToolBar);
+    initToolBarStyle(ui->mode_ToolBar);
+    initToolBarStyle(ui->edit_Toolbar);
+    initToolBarStyle(ui->zoom_ToolBar);
+    initToolBarStyle(ui->file_ToolBar);
 
     fontComboBox->setCurrentFont(qApp->Seamly2DSettings()->getPointNameFont());
     int index = fontSizeComboBox->findData(qApp->Seamly2DSettings()->getPointNameSize());
@@ -6669,19 +6669,8 @@ void MainWindow::Preferences()
         // QScopedPointer needs to be sure any exception will never block guard
         QScopedPointer<DialogPreferences> dialog(preferences);
         guard = preferences;
-        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::WindowsLocale); // Must be first
-        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::ToolBarStyles);
-        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::updateToolBarVisibility);
-        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::refreshLabels);
-        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::resetOrigins);
-        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::upDateScenes);
-        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::updateViewToolbar);
-        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::resetPanShortcuts);
-        connect(dialog.data(), &DialogPreferences::updateProperties, this, [this](){emit doc->FullUpdateFromFile();});
-        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::initPropertyEditor);
-        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::initBasePointComboBox);
-        connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollBars);
-        connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollAnimations);
+
+        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::updatePreferences);
 
         QGuiApplication::restoreOverrideCursor();
 
@@ -6690,6 +6679,29 @@ void MainWindow::Preferences()
             initializeAutoSave();
         }
     }
+}
+
+//-----------------------------------------------------------------------------
+/// @brief updatePreferences updates the Preferences
+///
+/// This method updates the gui whenever changes are made to the Preferences.
+//-----------------------------------------------------------------------------
+void MainWindow::updatePreferences()
+{
+    setWindowsLocale(); // Must be first
+    initToolBarStyles();
+    updateToolBarVisibility();
+    refreshLabels();
+    resetOrigins();
+    upDateScenes();
+    updateViewToolbar();
+    resetPanShortcuts();
+    initPropertyEditor();
+    initBasePointComboBox();
+    initPenToolBar();
+    ui->view->resetScrollBars();
+    ui->view->resetScrollAnimations();
+    emit doc->FullUpdateFromFile();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

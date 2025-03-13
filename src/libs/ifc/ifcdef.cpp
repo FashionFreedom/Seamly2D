@@ -66,6 +66,8 @@
 #include <QStringDataPtr>
 
 #include "../vmisc/diagnostic.h"
+#include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vcommonsettings.h"
 
 const QString CustomMSign    = QStringLiteral("@");
 const QString CustomIncrSign = QStringLiteral("#");
@@ -278,96 +280,142 @@ QMap<QString, QString> lineWeightList()
 {
     QMap<QString, QString> map;
 
-    const QStringList lineWeights = QStringList() << "0"    << "0.05" << "0.09" << "0.13" << "0.15" << "0.18"
-                                                  << "0.2"  << "0.25" << "0.3"  << "0.35" << "0.4"  << "0.5"
-                                                  << "0.53" << "0.6"  << "0.7"  << "0.8"  << "0.9"  << "1"
-                                                  << "1.06" << "1.2"  << "1.4"  << "1.58" << "2"    << "2.11"
-                                                  << "3";
-
-    for (int i = 0; i < lineWeights.size(); ++i)
+    QStringList lineWeights;
+    QString name;
+    if (qApp->Settings()->showOnlyIso())
     {
-        QString name;
-        switch (i)
-        {
-            case 1:
-                name = "0.05mm";
-                break;
-            case 2:
-                name = "0.09";
-                break;
-            case 3:
-                name = "0.13mm (ISO)";
-                break;
-            case 4:
-                name = "0.15mm";
-                break;
-            case 5:
-                name = "0.18mm (ISO)";
-                break;
-            case 6:
-                name ="0.20mm";
-                break;
-            case 7:
-                name = "0.25mm (ISO)";
-                break;
-            case 8:
-                name = "0.30mm";
-                break;
-            case 9:
-                name = "0.35mm (ISO)";
-                break;
-            case 10:
-                name = "0.40mm";
-                break;
-            case 11:
-                name = "0.50mm (ISO)";
-                break;
-            case 12:
-                name ="0.53mm";
-                break;
-            case 13:
-                name = "0.60mm";
-                break;
-            case 14:
-                name = "0.70mm (ISO)";
-                break;
-            case 15:
-                name = "0.80mm";
-                break;
-            case 16:
-                name ="0.90mm";
-                break;
-            case 17:
-                name = "1.00mm (ISO)";
-                break;
-            case 18:
-                name = "1.06mm";
-                break;
-            case 19:
-                name = "1.20mm";
-                break;
-            case 20:
-                name = "1.40mm (ISO)";
-                break;
-            case 21:
-                name = "1.58mm";
-                break;
-            case 22:
-                name = "2.00mm (ISO)";
-                break;
-            case 23:
-                name = "2.11mm";
-                break;
-            case 24:
-                name = "3.00mm";
-                break;
-            case 0:
-            default:
-                name = "0.00mm";
-                break;
-        }
+        lineWeights = QStringList() << "0.13" << "0.18" << "0.25" << "0.35" << "0.5"
+                                    << "0.7"  << "1" << "1.4"   << "2";
 
-        map.insert(lineWeights.at(i), name);
+        for (int i = 0; i < lineWeights.size(); ++i)
+        {
+            switch (i)
+            {
+                case 1:
+                    name = "0.18mm (ISO)";
+                    break;
+                case 2:
+                    name = "0.25mm (ISO)";
+                    break;
+                case 3:
+                    name = "0.35mm (ISO)";
+                    break;
+                case 4:
+                    name = "0.50mm (ISO)";
+                    break;
+                case 5:
+                    name = "0.70mm (ISO)";
+                    break;
+                case 6:
+                    name = "1.00mm (ISO)";
+                    break;
+                case 7:
+                    name = "1.40mm (ISO)";
+                    break;
+                case 8:
+                    name = "2.00mm (ISO)";
+                    break;
+                default:
+                case 0:
+                    name = "0.13mm (ISO)";
+                    break;
+            }
+
+            map.insert(lineWeights.at(i), name);
+        }
+    }
+    else
+    {
+        lineWeights = QStringList() << "0"    << "0.05" << "0.09" << "0.13" << "0.15" << "0.18"
+                                    << "0.2"  << "0.25" << "0.3"  << "0.35" << "0.4"  << "0.5"
+                                    << "0.53" << "0.6"  << "0.7"  << "0.8"  << "0.9"  << "1"
+                                    << "1.06" << "1.2"  << "1.4"  << "1.58" << "2"    << "2.11" << "3";
+
+
+        for (int i = 0; i < lineWeights.size(); ++i)
+        {
+            switch (i)
+            {
+                case 1:
+                    name = "0.05mm";
+                    break;
+                case 2:
+                    name = "0.09";
+                    break;
+                case 3:
+                    name = "0.13mm (ISO)";
+                    break;
+                case 4:
+                    name = "0.15mm";
+                    break;
+                case 5:
+                    name = "0.18mm (ISO)";
+                    break;
+                case 6:
+                    name ="0.20mm";
+                    break;
+                case 7:
+                    name = "0.25mm (ISO)";
+                    break;
+                case 8:
+                    name = "0.30mm";
+                    break;
+                case 9:
+                    name = "0.35mm (ISO)";
+                    break;
+                case 10:
+                    name = "0.40mm";
+                    break;
+                case 11:
+                    name = "0.50mm (ISO)";
+                    break;
+                case 12:
+                    name ="0.53mm";
+                    break;
+                case 13:
+                    name = "0.60mm";
+                    break;
+                case 14:
+                    name = "0.70mm (ISO)";
+                    break;
+                case 15:
+                    name = "0.80mm";
+                    break;
+                case 16:
+                    name ="0.90mm";
+                    break;
+                case 17:
+                    name = "1.00mm (ISO)";
+                    break;
+                case 18:
+                    name = "1.06mm";
+                    break;
+                case 19:
+                    name = "1.20mm";
+                    break;
+                case 20:
+                    name = "1.40mm (ISO)";
+                    break;
+                case 21:
+                    name = "1.58mm";
+                    break;
+                case 22:
+                    name = "2.00mm (ISO)";
+                    break;
+                case 23:
+                    name = "2.11mm";
+                    break;
+                case 24:
+                    name = "3.00mm";
+                    break;
+                case 0:
+                default:
+                    name = "0.00mm";
+                    break;
+            }
+
+            map.insert(lineWeights.at(i), name);
+        }
     }
     return map;
 }
