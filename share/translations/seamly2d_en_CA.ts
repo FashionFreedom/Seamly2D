@@ -9546,6 +9546,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Y Offset:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Show only ISO line weights in drop down boxes</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
