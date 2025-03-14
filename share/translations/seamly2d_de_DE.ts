@@ -8494,7 +8494,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>Count</source>
-        <translation type="unfinished"></translation>
+        <translation>Zählen</translation>
     </message>
 </context>
 <context>
@@ -8665,19 +8665,19 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>Update Node Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualisieren des Knotenwinkels</translation>
     </message>
     <message>
         <source>Update Notch</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualisieren Kerbe</translation>
     </message>
     <message>
         <source>Exclude Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Knoten ausschließen</translation>
     </message>
     <message>
         <source>Delete Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Knoten löschen</translation>
     </message>
 </context>
 <context>
@@ -9563,6 +9563,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Y Offset:</source>
         <translation>Y Versatz:</translation>
     </message>
+    <message>
+        <source>Show only ISO line weights in drop down boxes</source>
+        <translation>Nur ISO-Liniengewichte in Dropdown-Boxen anzeigen</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10409,13 +10413,13 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Zoll</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10483,13 +10487,13 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Legt den Klickton für die Knotenauswahl fest.</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12837,95 +12841,95 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Seam Allowance Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahtzugabe-Winkel</translation>
     </message>
     <message>
         <source>By length</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Länge</translation>
     </message>
     <message>
         <source>Intersection</source>
-        <translation type="unfinished">Schnittpunkt</translation>
+        <translation>Schnittpunkt</translation>
     </message>
     <message>
         <source>First edge symmetry</source>
-        <translation type="unfinished"></translation>
+        <translation>Erste Kantensymmetrie</translation>
     </message>
     <message>
         <source>Second edge symmetry</source>
-        <translation type="unfinished"></translation>
+        <translation>Zweite Kantensymmetrie</translation>
     </message>
     <message>
         <source>First edge right angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Erste Kante rechter Winkel</translation>
     </message>
     <message>
         <source>Second edge right angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Zweite Kante rechter Winkel</translation>
     </message>
     <message>
         <source>Notch</source>
-        <translation type="unfinished">Markierung</translation>
+        <translation>Markierung</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished">Typ</translation>
+        <translation>Typ</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine</translation>
     </message>
     <message>
         <source>Slit</source>
-        <translation type="unfinished">Schlitz</translation>
+        <translation>Schlitz</translation>
     </message>
     <message>
         <source>TNotch</source>
-        <translation type="unfinished"></translation>
+        <translation>TMarkierung</translation>
     </message>
     <message>
         <source>UNotch</source>
-        <translation type="unfinished"></translation>
+        <translation>UMarkierung</translation>
     </message>
     <message>
         <source>VInternal</source>
-        <translation type="unfinished"></translation>
+        <translation>VInnen</translation>
     </message>
     <message>
         <source>VExternal</source>
-        <translation type="unfinished"></translation>
+        <translation>VAussen</translation>
     </message>
     <message>
         <source>Castle</source>
-        <translation type="unfinished">Burg</translation>
+        <translation>Burg</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation type="unfinished">Diamant</translation>
+        <translation>Diamant</translation>
     </message>
     <message>
         <source>Subtype</source>
-        <translation type="unfinished">Unterart</translation>
+        <translation>Unterart</translation>
     </message>
     <message>
         <source>Straightforward</source>
-        <translation type="unfinished">Geradeaus</translation>
+        <translation>Geradeaus</translation>
     </message>
     <message>
         <source>Bisector</source>
-        <translation type="unfinished"></translation>
+        <translation>Halbierende</translation>
     </message>
     <message>
         <source>Count</source>
-        <translation type="unfinished"></translation>
+        <translation>Zählen</translation>
     </message>
     <message>
         <source>Excluded</source>
-        <translation type="unfinished">Ausgeschlossen</translation>
+        <translation>Ausgeschlossen</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
 </context>
 <context>

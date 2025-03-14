@@ -8551,7 +8551,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Count</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuenta</translation>
     </message>
 </context>
 <context>
@@ -8722,19 +8722,20 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Update Node Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar ángulo de nodo</translation>
     </message>
     <message>
         <source>Update Notch</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar Piquete</translation>
     </message>
     <message>
         <source>Exclude Node</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Eliminar nodo</translatorcomment>
+        <translation>Nodo de exclusión</translation>
     </message>
     <message>
         <source>Delete Node</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -9619,6 +9620,10 @@ actualización:</translation>
     <message>
         <source>Y Offset:</source>
         <translation>Desplazamiento Y:</translation>
+    </message>
+    <message>
+        <source>Show only ISO line weights in drop down boxes</source>
+        <translation>Mostrar sólo los pesos de línea ISO en los cuadros desplegables</translation>
     </message>
 </context>
 <context>
@@ -12895,95 +12900,95 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Seam Allowance Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Ángulo de costura</translation>
     </message>
     <message>
         <source>By length</source>
-        <translation type="unfinished"></translation>
+        <translation>Por longitud</translation>
     </message>
     <message>
         <source>Intersection</source>
-        <translation type="unfinished">Intersección</translation>
+        <translation>Intersección</translation>
     </message>
     <message>
         <source>First edge symmetry</source>
-        <translation type="unfinished"></translation>
+        <translation>Primera simetría de aristas</translation>
     </message>
     <message>
         <source>Second edge symmetry</source>
-        <translation type="unfinished"></translation>
+        <translation>Segunda simetría de aristas</translation>
     </message>
     <message>
         <source>First edge right angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Primera arista ángulo recto</translation>
     </message>
     <message>
         <source>Second edge right angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Segundo arista ángulo recto</translation>
     </message>
     <message>
         <source>Notch</source>
-        <translation type="unfinished">Piquete</translation>
+        <translation>Piquete</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished">Tipo</translation>
+        <translation>Tipo</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished">Ninguno</translation>
+        <translation>Ninguno</translation>
     </message>
     <message>
         <source>Slit</source>
-        <translation type="unfinished">Abertura</translation>
+        <translation>Abertura</translation>
     </message>
     <message>
         <source>TNotch</source>
-        <translation type="unfinished"></translation>
+        <translation>TPiquete</translation>
     </message>
     <message>
         <source>UNotch</source>
-        <translation type="unfinished"></translation>
+        <translation>UPiquete</translation>
     </message>
     <message>
         <source>VInternal</source>
-        <translation type="unfinished">VInterno</translation>
+        <translation>VInterno</translation>
     </message>
     <message>
         <source>VExternal</source>
-        <translation type="unfinished">VExterno</translation>
+        <translation>VExterno</translation>
     </message>
     <message>
         <source>Castle</source>
-        <translation type="unfinished"></translation>
+        <translation>Castillo</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation type="unfinished">Diamante</translation>
+        <translation>Diamante</translation>
     </message>
     <message>
         <source>Subtype</source>
-        <translation type="unfinished">Subtipo</translation>
+        <translation>Subtipo</translation>
     </message>
     <message>
         <source>Straightforward</source>
-        <translation type="unfinished">Directo</translation>
+        <translation>Directo</translation>
     </message>
     <message>
         <source>Bisector</source>
-        <translation type="unfinished">Bisectriz</translation>
+        <translation>Bisectriz</translation>
     </message>
     <message>
         <source>Count</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuenta</translation>
     </message>
     <message>
         <source>Excluded</source>
-        <translation type="unfinished">Excluido</translation>
+        <translation>Excluido</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
 </context>
 <context>
