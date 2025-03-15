@@ -103,7 +103,7 @@
 
 template <class T> class QSharedPointer;
 
-enum {ColumnNumber = 0, ColumnName, ColumnFullName};
+enum {ColumnNumber = 0, ColumnName, ColumnValue, ColumnFullName};
 
 //---------------------------------------------------------------------------------------------------------------------
 EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &toolId, const quint16 &source,
@@ -145,11 +145,34 @@ EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &tool
     flagFormula = false;
     CheckState();
 
-    connect(ui->insert_PushButton,    &QPushButton::clicked,            this, &EditFormulaDialog::insertVariable);
-    connect(ui->clear_PushButton,     &QPushButton::clicked,            this, &EditFormulaDialog::clearFormula);
-    connect(ui->undo_PushButton,      &QPushButton::clicked,            this, &EditFormulaDialog::undoFormula);
-    connect(ui->tableWidget,          &QTableWidget::itemDoubleClicked, this, &EditFormulaDialog::insertValue);
-    connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged,     this, &EditFormulaDialog::FormulaChanged);
+    connect(ui->insert_PushButton, &QPushButton::clicked,
+            this, [this, rotation = QString("")]() {insertVariable(rotation);});
+
+    connect(ui->fx_minus_45_PushButton, &QPushButton::clicked,
+            this, [this, rotation = QString(" - 45")]() {insertVariable(rotation);});
+
+    connect(ui->fx_plus_45_PushButton, &QPushButton::clicked,
+            this, [this, rotation = QString(" + 45")]() {insertVariable(rotation);});
+
+    connect(ui->fx_minus_90_PushButton, &QPushButton::clicked,
+            this, [this, rotation = QString(" - 90")]() {insertVariable(rotation);});
+
+    connect(ui->fx_plus_90_PushButton, &QPushButton::clicked,
+            this, [this, rotation = QString(" + 90")]() {insertVariable(rotation);});
+
+    connect(ui->fx_minus_180_PushButton, &QPushButton::clicked,
+            this, [this, rotation = QString(" - 180")]() {insertVariable(rotation);});
+
+    connect(ui->fx_plus_180_PushButton, &QPushButton::clicked,
+            this, [this, rotation = QString(" + 180")]() {insertVariable(rotation);});
+
+    connect(ui->tableWidget,&QTableWidget::itemDoubleClicked,
+            this, [this, rotation = QString("")]() {insertVariable(rotation);});
+
+    connect(ui->clear_PushButton,         &QPushButton::clicked,            this, &EditFormulaDialog::clearFormula);
+    connect(ui->undo_PushButton,          &QPushButton::clicked,            this, &EditFormulaDialog::undoFormula);
+
+    connect(ui->plainTextEditFormula,     &QPlainTextEdit::textChanged,     this, &EditFormulaDialog::FormulaChanged);
 
     //Disable Qt::WaitCursor
 #ifndef QT_NO_CURSOR
@@ -163,7 +186,7 @@ EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &tool
     }
 #endif
 
-    ui->tableWidget->setColumnCount(3);
+    ui->tableWidget->setColumnCount(4);
     ui->tableWidget->setEditTriggers(QTableWidget::NoEditTriggers);
     ui->tableWidget->verticalHeader()->hide();
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -301,10 +324,10 @@ void EditFormulaDialog::tabChanged(int row)
             break;
         }
         case VariableTab::LineLengths:
-            {
-                lineLengths();
-                break;
-            }
+        {
+            lineLengths();
+            break;
+        }
         case VariableTab::LineAngles:
         {
             lineAngles();
@@ -340,19 +363,15 @@ void EditFormulaDialog::tabChanged(int row)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief insertVariable insert variable into line edit
+/// @brief insertVariable insert variable from table into formula
+///
+/// This method inserts the current table item variable string into the formula string.
+///
+/// @param rotation additional string used to insert +- 90 or 180 degs from an angle variable string.
 //---------------------------------------------------------------------------------------------------------------------
-void EditFormulaDialog::insertVariable()
+void EditFormulaDialog::insertVariable(const QString &rotation)
 {
-    insertValue(ui->tableWidget->currentItem());
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/// @brief insertValue insert variable into line edit
-/// @param item chosen item of table widget
-//---------------------------------------------------------------------------------------------------------------------
-void EditFormulaDialog::insertValue(QTableWidgetItem *item)
-{
+    QTableWidgetItem *item = ui->tableWidget->currentItem();
     if (item != nullptr)
     {
         QTextCursor cursor = ui->plainTextEditFormula->textCursor();
@@ -374,7 +393,15 @@ void EditFormulaDialog::insertValue(QTableWidgetItem *item)
         }
         else
         {
-            cursor.insertText(ui->tableWidget->item(item->row(), ColumnName)->text());
+            if (rotation.isEmpty())
+            {
+                cursor.insertText(ui->tableWidget->item(item->row(), ColumnName)->text());
+            }
+            else
+            {
+                cursor.insertText(QStringLiteral("(") + ui->tableWidget->item(item->row(), ColumnName)->text() +
+                                  rotation + QStringLiteral(")"));
+            }
         }
         ui->plainTextEditFormula->setTextCursor(cursor);
         ui->plainTextEditFormula->setFocus();
@@ -386,7 +413,9 @@ void EditFormulaDialog::insertValue(QTableWidgetItem *item)
 //---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::measurements()
 {
-    ui->checkBoxHideEmpty->setEnabled(true);
+    ui->checkBoxHideEmpty->setVisible(true);
+    showHeaderUnits(ui->tableWidget, UnitsToStr(qApp->patternUnit()));
+    showInsertionButtons(false);
     showMeasurements(data->DataMeasurements());
 }
 
@@ -395,7 +424,9 @@ void EditFormulaDialog::measurements()
 //---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::lineLengths()
 {
-    ui->checkBoxHideEmpty->setEnabled(false);
+    ui->checkBoxHideEmpty->setVisible(false);
+    showHeaderUnits(ui->tableWidget, UnitsToStr(qApp->patternUnit()));
+    showInsertionButtons(false);
     showVariable(data->lineLengthsData());
 }
 
@@ -404,7 +435,9 @@ void EditFormulaDialog::lineLengths()
 //---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::arcRadii()
 {
-    ui->checkBoxHideEmpty->setEnabled(false);
+    ui->checkBoxHideEmpty->setVisible(false);
+    showHeaderUnits(ui->tableWidget, UnitsToStr(qApp->patternUnit()));
+    showInsertionButtons(false);
     showVariable(data->arcRadiusesData());
 }
 
@@ -413,7 +446,9 @@ void EditFormulaDialog::arcRadii()
 //---------------------------------------------------------------------------------------------------------------------
  void EditFormulaDialog::curveAngles()
 {
-    ui->checkBoxHideEmpty->setEnabled(false);
+    ui->checkBoxHideEmpty->setVisible(false);
+    showHeaderUnits(ui->tableWidget, degreeSymbol);
+    showInsertionButtons(true);
     showVariable(data->curveAnglesData());
 }
 
@@ -422,7 +457,9 @@ void EditFormulaDialog::arcRadii()
 //---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::curveLengths()
 {
-    ui->checkBoxHideEmpty->setEnabled(false);
+    ui->checkBoxHideEmpty->setVisible(false);
+    showHeaderUnits(ui->tableWidget, UnitsToStr(qApp->patternUnit()));
+    showInsertionButtons(false);
     showVariable(data->curveLengthsData());
 }
 
@@ -431,7 +468,9 @@ void EditFormulaDialog::curveLengths()
 //---------------------------------------------------------------------------------------------------------------------
  void EditFormulaDialog::controlPointLengths()
 {
-    ui->checkBoxHideEmpty->setEnabled(false);
+    ui->checkBoxHideEmpty->setVisible(false);
+    showHeaderUnits(ui->tableWidget, UnitsToStr(qApp->patternUnit()));
+    showInsertionButtons(false);
     showVariable(data->controlPointLengthsData());
 }
 
@@ -440,7 +479,9 @@ void EditFormulaDialog::curveLengths()
 //---------------------------------------------------------------------------------------------------------------------
  void EditFormulaDialog::lineAngles()
 {
-    ui->checkBoxHideEmpty->setEnabled(false);
+    ui->checkBoxHideEmpty->setVisible(false);
+    showHeaderUnits(ui->tableWidget, degreeSymbol);
+    showInsertionButtons(true);
     showVariable(data->lineAnglesData());
 }
 
@@ -449,7 +490,9 @@ void EditFormulaDialog::curveLengths()
 //---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::customVariables()
 {
-    ui->checkBoxHideEmpty->setEnabled(false);
+    ui->checkBoxHideEmpty->setVisible(false);
+    showHeaderUnits(ui->tableWidget, UnitsToStr(qApp->patternUnit()));
+    showInsertionButtons(false);
     showVariable(data->variablesData());
 }
 
@@ -458,7 +501,8 @@ void EditFormulaDialog::customVariables()
 //---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::functions()
 {
-    ui->checkBoxHideEmpty->setEnabled(false);
+    ui->checkBoxHideEmpty->setVisible(false);
+    showInsertionButtons(false);
     showFunctions();
 }
 
@@ -571,6 +615,8 @@ void EditFormulaDialog::showVariable(const QMap<key, val> &var)
     ui->tableWidget->blockSignals(true);
     ui->tableWidget->clearContents();
     ui->tableWidget->setRowCount(0);
+    ui->tableWidget->setColumnHidden(ColumnName, false);
+    ui->tableWidget->setColumnHidden(ColumnValue, false);
     ui->tableWidget->setColumnHidden(ColumnNumber, true);
     ui->tableWidget->setColumnHidden(ColumnFullName, true);
     ui->description_Label->setText("");
@@ -588,11 +634,18 @@ void EditFormulaDialog::showVariable(const QMap<key, val> &var)
             ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
             QTableWidgetItem *item = new QTableWidgetItem(iMap.key());
             ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnName, item);
+
+            qreal length = *iMap.value()->GetValue();
+            QTableWidgetItem *itemValue = new QTableWidgetItem(qApp->LocaleToString(length));
+            itemValue->setSizeHint(QSize(70, 20));
+            itemValue->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnValue, itemValue);
         }
     }
     ui->tableWidget->blockSignals(false);
     ui->tableWidget->selectRow(0);
-    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tableWidget->resizeColumnsToContents();
+    ui->tableWidget->horizontalHeader()->setStretchLastSection(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -605,6 +658,8 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<Meas
     ui->tableWidget->clearContents();
     ui->tableWidget->setRowCount(0);
     ui->tableWidget->setColumnHidden(ColumnNumber, false);
+    ui->tableWidget->setColumnHidden(ColumnName, false);
+    ui->tableWidget->setColumnHidden(ColumnValue, false);
     ui->tableWidget->setColumnHidden(ColumnFullName, false);
     ui->description_Label->setText("");
 
@@ -620,12 +675,21 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<Meas
         {// If we create this variable don't show
             ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
             QTableWidgetItem *itemName = new QTableWidgetItem(iMap.key());
+            itemName->setSizeHint(QSize(70, 20));
             itemName->setToolTip(itemName->text());
+
+            qreal length = *iMap.value()->GetValue();
+            QTableWidgetItem *itemValue = new QTableWidgetItem(qApp->LocaleToString(length));
+            itemValue->setSizeHint(QSize(70, 20));
+            itemValue->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
 
             QTableWidgetItem *itemNumber = new QTableWidgetItem();
             itemNumber->setSizeHint(QSize(70, 20));
             itemNumber->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+
             QTableWidgetItem *itemFullName = new QTableWidgetItem();
+
+
             QString number =tr("Custom");
             QString imgUrl = QString(":/diagrams/custom.svg");
             if (iMap.value()->isCustom())
@@ -648,6 +712,7 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<Meas
 
             ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnNumber, itemNumber);
             ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnName, itemName);
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnValue, itemValue);
             ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnFullName, itemFullName);
         }
     }
@@ -666,6 +731,8 @@ void EditFormulaDialog::showFunctions()
     ui->tableWidget->clearContents();
     ui->tableWidget->setRowCount(0);
     ui->tableWidget->setColumnHidden(ColumnNumber, true);
+    ui->tableWidget->setColumnHidden(ColumnName, false);
+    ui->tableWidget->setColumnHidden(ColumnValue, true);
     ui->tableWidget->setColumnHidden(ColumnFullName, true);
     ui->description_Label->setText("");
 
@@ -680,8 +747,37 @@ void EditFormulaDialog::showFunctions()
     }
 
     ui->tableWidget->blockSignals(false);
+    ui->tableWidget->resizeColumnsToContents();
     ui->tableWidget->selectRow(0);
-    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tableWidget->horizontalHeader()->setStretchLastSection(false);
+}
+
+/// @brief showInsertionButtons Show or hide the fx insertion pushbuttons
+///
+/// This method sets the visibility of the enhanced fx insertion pushbuttons.
+///
+/// @param visible bool state whether the button is visible or not.
+void EditFormulaDialog::showInsertionButtons(const bool &visible)
+{
+    ui->fx_minus_45_PushButton->setVisible(visible);
+    ui->fx_plus_45_PushButton->setVisible(visible);
+    ui->fx_minus_90_PushButton->setVisible(visible);
+    ui->fx_plus_90_PushButton->setVisible(visible);
+    ui->fx_minus_180_PushButton->setVisible(visible);
+    ui->fx_plus_180_PushButton->setVisible(visible);
+}
+
+/// @brief showHeaderUnits Show the variable units in the header
+///
+/// This method sets and shows the variables'unit type for the Value header column.
+///
+/// @param table Table widget of variable data.
+/// @param unit Unit type to set in the Value header.
+void EditFormulaDialog::showHeaderUnits(QTableWidget *table, const QString &unit)
+{
+    SCASSERT(table != nullptr)
+
+    table->horizontalHeaderItem(ColumnValue)->setText(QString("Value (%1)").arg(unit));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -102,8 +102,7 @@ public slots:
     virtual void EvalFormula() Q_DECL_OVERRIDE;
     void         valueChanged(int row);
     void         tabChanged(int row);
-    void         insertVariable();
-    void         insertValue(QTableWidgetItem *item);
+    void         insertVariable(const QString &rotation);
     void         measurements();
     void         lineLengths();
     void         arcRadii();
@@ -141,6 +140,8 @@ private:
     void         showVariable(const QMap<key, val> &var);
     void         showMeasurements(const QMap<QString, QSharedPointer<MeasurementVariable> > &var);
     void         showFunctions();
+    void         showInsertionButtons(const bool &visible);
+    void         showHeaderUnits(QTableWidget *table, const QString &unit);
 
     void         setDescription(const QString &name, qreal value, const QString &unit,
                                 const QString &type, const QString &description);
