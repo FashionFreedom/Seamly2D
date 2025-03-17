@@ -101,6 +101,7 @@ var vcommonsettings_8cpp =
     [ "settingGraphicsViewShowControlPoints", "d4/d11/vcommonsettings_8cpp.html#a41e1517fa41c5ca67525c235e47b6096", null ],
     [ "settingGraphicsViewShowCurveToolBar", "d4/d11/vcommonsettings_8cpp.html#a996be7dfeadbe6d995b609439f1d3bdd", null ],
     [ "settingGraphicsViewShowDetailsToolBar", "d4/d11/vcommonsettings_8cpp.html#aac512f999c5eb33fdf2acbd3006d01cb", null ],
+    [ "settingGraphicsViewShowIsoOnly", "d4/d11/vcommonsettings_8cpp.html#ab98fe1827c68c22c0301ad9028e9374e", null ],
     [ "settingGraphicsViewShowLayoutToolBar", "d4/d11/vcommonsettings_8cpp.html#ac968aa01a75b47acdecc3ead728257a5", null ],
     [ "settingGraphicsViewShowLineToolBar", "d4/d11/vcommonsettings_8cpp.html#a56eb3da564e20732adc8ffda862775fd", null ],
     [ "settingGraphicsViewShowOpsToolBar", "d4/d11/vcommonsettings_8cpp.html#ab5175c23b7faa49b4d95eff20c9a534a", null ],

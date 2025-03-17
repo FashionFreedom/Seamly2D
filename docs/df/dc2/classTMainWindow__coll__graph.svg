@@ -151,7 +151,7 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="370" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="380.5" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">Preferences()</text>
 <text text-anchor="start" x="370" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="380.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">ToolBarStyles()</text>
+<text text-anchor="start" x="380.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">initToolBarStyles()</text>
 <text text-anchor="start" x="370" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="380.5" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">print()</text>
 <text text-anchor="start" x="370" y="-21.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
@@ -187,11 +187,11 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="4.5" y="-1055" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
 <text text-anchor="start" x="17.5" y="-1055" font-family="Helvetica,sans-Serif" font-size="10.00">ContinueFormatRewrite()</text>
 <text text-anchor="start" x="4.5" y="-1040" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="17.5" y="-1040" font-family="Helvetica,sans-Serif" font-size="10.00">ToolBarStyle()</text>
+<text text-anchor="start" x="17.5" y="-1040" font-family="Helvetica,sans-Serif" font-size="10.00">initToolBarStyle()</text>
 <text text-anchor="start" x="4.5" y="-1025" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
 <text text-anchor="start" x="17.5" y="-1025" font-family="Helvetica,sans-Serif" font-size="10.00">exportToCSVData()</text>
 <text text-anchor="start" x="4.5" y="-1010" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="17.5" y="-1010" font-family="Helvetica,sans-Serif" font-size="10.00">WindowsLocale()</text>
+<text text-anchor="start" x="17.5" y="-1010" font-family="Helvetica,sans-Serif" font-size="10.00">setWindowsLocale()</text>
 <text text-anchor="start" x="4.5" y="-995" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
 <text text-anchor="start" x="17.5" y="-995" font-family="Helvetica,sans-Serif" font-size="10.00">exportToCSV()</text>
 <polygon fill="#666666" stroke="#666666" points="0.5,-1170 0.5,-1170 153.5,-1170 153.5,-1170 0.5,-1170"/>

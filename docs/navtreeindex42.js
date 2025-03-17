@@ -1,5 +1,8 @@
 var NAVTREEINDEX42 =
 {
+"d9/deb/classVisToolLineIntersectAxis.html#a1a41fa4dec4f65038473fc7ab9456587":[1,0,320,2],
+"d9/deb/classVisToolLineIntersectAxis.html#a240d8dfab39054c97fa44cb6a492257f":[1,0,320,5],
+"d9/deb/classVisToolLineIntersectAxis.html#a33dfcc43bdcc3702019c0a177e751ad4":[1,0,320,16],
 "d9/deb/classVisToolLineIntersectAxis.html#a406518cb20d4c14be6aac137a203c7c6":[1,0,320,3],
 "d9/deb/classVisToolLineIntersectAxis.html#a4b38fa027fd7564e254b0deccabddb27":[1,0,320,14],
 "d9/deb/classVisToolLineIntersectAxis.html#a4c69e1da40ad32ef8857c0b34d09ab03":[1,0,320,11],
@@ -246,8 +249,5 @@ var NAVTREEINDEX42 =
 "da/d4e/classVGrainlineItem.html#a6ae625fa4e74523bbd31a9d95951cf27":[1,0,295,10],
 "da/d4e/classVGrainlineItem.html#a6fd922246319d0ad436e9954a829cf00":[1,0,295,0],
 "da/d4e/classVGrainlineItem.html#a73a307f530b4e2823c455958fe9d7f14":[1,0,295,25],
-"da/d4e/classVGrainlineItem.html#a759d59073c5cc8ef11f1dbd85d91d953":[1,0,295,3],
-"da/d4e/classVGrainlineItem.html#a7b34a2313005366945c6177bb6ee890b":[1,0,295,29],
-"da/d4e/classVGrainlineItem.html#a800bb2bd8ee3967e5d799939b1103c8b":[1,0,295,28],
-"da/d4e/classVGrainlineItem.html#a881b8b776bdc60df26b460c200831f6b":[1,0,295,1]
+"da/d4e/classVGrainlineItem.html#a759d59073c5cc8ef11f1dbd85d91d953":[1,0,295,3]
 };

@@ -125,6 +125,7 @@ var namespaces_dup =
       [ "settingGraphicsViewShowControlPoints", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a41e1517fa41c5ca67525c235e47b6096", null ],
       [ "settingGraphicsViewShowCurveToolBar", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a996be7dfeadbe6d995b609439f1d3bdd", null ],
       [ "settingGraphicsViewShowDetailsToolBar", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aac512f999c5eb33fdf2acbd3006d01cb", null ],
+      [ "settingGraphicsViewShowIsoOnly", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ab98fe1827c68c22c0301ad9028e9374e", null ],
       [ "settingGraphicsViewShowLayoutToolBar", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ac968aa01a75b47acdecc3ead728257a5", null ],
       [ "settingGraphicsViewShowLineToolBar", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a56eb3da564e20732adc8ffda862775fd", null ],
       [ "settingGraphicsViewShowOpsToolBar", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ab5175c23b7faa49b4d95eff20c9a534a", null ],

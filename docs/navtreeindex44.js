@@ -1,5 +1,8 @@
 var NAVTREEINDEX44 =
 {
+"da/d79/classVLitePattern.html#a06cd38e99bae06c007e5a18e3898be70":[1,0,351,7],
+"da/d79/classVLitePattern.html#a71946c83d2f562e6d8af7ab6ca2f178c":[1,0,351,1],
+"da/d79/classVLitePattern.html#a7b448411191f6e750c0c1711f7c84e00":[1,0,351,6],
 "da/d79/classVLitePattern.html#a98c23291f534f745d3dbdef6dc7e101c":[1,0,351,3],
 "da/d79/classVLitePattern.html#aa58c66702e1520c50ef4cfab2328b014":[1,0,351,4],
 "da/d79/classVLitePattern.html#ad09d49c25c0370b5109a76b0e30bd7f7":[1,0,351,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX44 =
 "da/dac/classVSAPoint.html#af7356da69f9e18b980b7f3a94f1b274f":[1,0,381,9],
 "da/dae/vtoolcutspline_8cpp.html":[2,0,0,1,13,1,0,2,1,0,4],
 "da/dae/vtoolcutspline_8cpp_source.html":[2,0,0,1,13,1,0,2,1,0,4],
-"da/daf/scalesceneitems_8h.html":[2,0,0,1,14,30],
-"da/daf/scalesceneitems_8h_source.html":[2,0,0,1,14,30],
-"da/db1/classApplication2D.html":[1,0,18],
-"da/db1/classApplication2D.html#a0117219fc73aea59fc84814d15046ef3":[1,0,18,3]
+"da/daf/scalesceneitems_8h.html":[2,0,0,1,14,30]
 };

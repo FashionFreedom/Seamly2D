@@ -10,7 +10,7 @@ var searchData=
   ['baselinep2name_7',['BaseLineP2Name',['../de/d04/classVToolTrueDarts.html#aa94bc7b018e5992a20c22674ccbb44f8',1,'VToolTrueDarts']]],
   ['basepointchanged_8',['basePointChanged',['../d6/d1a/classMainWindow.html#a4edf4e65290386cfa58a34ac199fbe75',1,'MainWindow']]],
   ['basepointname_9',['BasePointName',['../dc/d1d/classVToolLinePoint.html#a96c2437948425290fc3fb31274822575',1,'VToolLinePoint']]],
-  ['basesize_10',['basesize',['../d9/d6d/classMeasurementDoc.html#aa3b4b73995e1bf9ef09bb65ed47d3901',1,'MeasurementDoc::BaseSize()'],['../dc/da3/classNewMeasurementsDialog.html#a0a76f9e6a742dbcbc33409df6c0d0286',1,'NewMeasurementsDialog::baseSize()']]],
+  ['basesize_10',['basesize',['../dc/da3/classNewMeasurementsDialog.html#a0a76f9e6a742dbcbc33409df6c0d0286',1,'NewMeasurementsDialog::baseSize()'],['../d9/d6d/classMeasurementDoc.html#aa3b4b73995e1bf9ef09bb65ed47d3901',1,'MeasurementDoc::BaseSize()']]],
   ['beforewidthchanged_11',['beforewidthchanged',['../d4/d7f/classDialogInternalPath.html#a6396b400b8c374419318df708fa017f9',1,'DialogInternalPath::beforeWidthChanged()'],['../d5/d41/classPatternPieceDialog.html#a8110e6295efe4825df7cc93723eca182',1,'PatternPieceDialog::beforeWidthChanged()']]],
   ['begin_12',['begin',['../db/dd6/classVDxfEngine.html#a0aab4b00e6bc819b3ba818e16bd545f8',1,'VDxfEngine::begin()'],['../d3/d1d/classVObjEngine.html#aa253ee97e255d81db9c8b64ba70f4760',1,'VObjEngine::begin()']]],
   ['beginlogging_13',['beginLogging',['../da/db1/classApplication2D.html#a3996ad72050325fb1fc44ece93993517',1,'Application2D']]],
