@@ -206,6 +206,8 @@ private:
     static void           initializeNode(const VPieceNode &node, VMainGraphicsScene *scene, VContainer *data,
                                    VAbstractPattern *doc, PatternPieceTool *parent);
 
+    static QVector<VPieceNode>   removeDuplicateNodePoints(const VPiece &piece, const QVector<VPieceNode> &nodes, VContainer *data);
+
     void                  InitCSAPaths(const VPiece &piece);
     void                  InitInternalPaths(const VPiece &piece);
     void                  initializeAnchorPoints(const VPiece &piece);

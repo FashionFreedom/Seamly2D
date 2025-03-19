@@ -220,13 +220,14 @@ void PatternPieceTool::insertNodes(const QVector<VPieceNode> &nodes, quint32 pie
             return;
         }
 
-        VPiece newPiece = oldPiece;
+        QVector<VPieceNode> newNodes = removeDuplicateNodePoints(oldPiece, nodes, data);
 
-        for (auto node : nodes)
+        VPiece newPiece = oldPiece;
+        for (auto node : newNodes)
         {
             const quint32 id = PrepareNode(node, scene, doc, data);
-            if (id == NULL_ID)
-            {
+                if (id == NULL_ID)
+                {
                 return;
             }
 
@@ -1959,6 +1960,41 @@ void PatternPieceTool::initializeNode(const VPieceNode &node, VMainGraphicsScene
             qDebug() << "Get wrong tool type. Ignore.";
             break;
     }
+}
+
+/// @brief removeDuplicateNodePoints remove duplcate node points
+///
+///  This method creates a list of nodes that removes duplicate point nodes from a list of selected modes.
+///  Curve nodes are not removed.
+///
+/// @param piece Pattern piece that selected nodes are to be inserted into.
+/// @param nodes List of selected nodes.
+/// @param data Pointer to data container.
+/// @return uniqueNodes Vector of nodes with unique point nodes.
+QVector<VPieceNode> PatternPieceTool::removeDuplicateNodePoints(const VPiece &piece, const QVector<VPieceNode> &nodes,
+                                                                VContainer *data)
+{
+    QVector<quint32> pieceNodeObjIds;
+    const QVector<VPieceNode> pieceNodes = piece.GetPath().GetNodes();
+    for (auto node : pieceNodes)
+    {
+        quint32 id = node.GetId();
+        QSharedPointer<VGObject> object = data->GetGObject(id);
+        const quint32 objectId = object->getIdObject();
+        pieceNodeObjIds.append(objectId);
+    }
+
+    QVector<VPieceNode> uniqueNodes;
+    for (auto node : nodes)
+    {
+        quint32 id = node.GetId();
+        if (node.GetTypeTool() != Tool::NodePoint ||
+           (!pieceNodeObjIds.contains(id) && node.GetTypeTool() == Tool::NodePoint))
+        {
+            uniqueNodes.append(node);
+        }
+    }
+    return uniqueNodes;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
