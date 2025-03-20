@@ -948,9 +948,14 @@ QRectF PatternPieceTool::boundingRect() const
 //---------------------------------------------------------------------------------------------------------------------
 QPainterPath PatternPieceTool::shape() const
 {
+    const VPiece piece = VAbstractTool::data.GetPiece(m_id);
     if (m_mainPath == QPainterPath() && m_cutPath == QPainterPath())
     {
         return QGraphicsPathItem::shape();
+    }
+    else if (piece.isHideSeamLine())
+    {
+        return itemShapeFromPath(m_cutPath, pen());
     }
     else
     {
