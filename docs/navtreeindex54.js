@@ -1,5 +1,6 @@
 var NAVTREEINDEX54 =
 {
+"dc/d8f/classVToolOptionsPropertyBrowser.html#a06d98de5840cb67c97b2659268eb1911":[1,0,424,81],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a0991983c703f95cd2c8cfefafa05af5b":[1,0,424,68],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a0b5e0b32b3cbe63e641bd7402bb3b95a":[1,0,424,139],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a0c04f7ef24847584ac5f292487ac01a9":[1,0,424,54],
@@ -248,6 +249,5 @@ var NAVTREEINDEX54 =
 "dc/dbc/classVTranslateVars.html#a27b555cdd78bcbc76e7737b9f743a8c9":[1,0,438,23],
 "dc/dbc/classVTranslateVars.html#a2c710d6522b3546b1817135688f92e53":[1,0,438,14],
 "dc/dbc/classVTranslateVars.html#a31b54b45832dd20467738f2d9540019f":[1,0,438,7],
-"dc/dbc/classVTranslateVars.html#a3a2970ecb7d4469385d968746f43f503":[1,0,438,31],
-"dc/dbc/classVTranslateVars.html#a3a8f83a1890413ee5d5b3125963d07e3":[1,0,438,13]
+"dc/dbc/classVTranslateVars.html#a3a2970ecb7d4469385d968746f43f503":[1,0,438,31]
 };

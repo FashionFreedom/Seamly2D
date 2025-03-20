@@ -50,6 +50,7 @@ var classPatternPieceTool =
     [ "RefreshDataInFile", "da/dfb/classPatternPieceTool.html#af9bb42a6c53207e5fbf3d8268ce16fd5", null ],
     [ "RefreshGeometry", "da/dfb/classPatternPieceTool.html#a94bc484e0cb7992a457667c4ab42a799", null ],
     [ "Remove", "da/dfb/classPatternPieceTool.html#ae252a7a6e704bde2ed15961fb0e01658", null ],
+    [ "removeDuplicateNodePoints", "da/dfb/classPatternPieceTool.html#abbed1fc779644e18034e5aaac000c236", null ],
     [ "renamePiece", "da/dfb/classPatternPieceTool.html#ad46d5de13eefa973a96131c57ff01682", null ],
     [ "ResetChildren", "da/dfb/classPatternPieceTool.html#ae7cb293c3b3c9bcf12fc6965709a5677", null ],
     [ "retranslateUi", "da/dfb/classPatternPieceTool.html#a38afd8e698fa5da2a15aaf9240d073fc", null ],
