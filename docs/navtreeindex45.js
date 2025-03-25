@@ -1,5 +1,6 @@
 var NAVTREEINDEX45 =
 {
+"da/daf/scalesceneitems_8h.html":[2,0,0,1,14,30],
 "da/daf/scalesceneitems_8h_source.html":[2,0,0,1,14,30],
 "da/db1/classApplication2D.html":[1,0,18],
 "da/db1/classApplication2D.html#a0117219fc73aea59fc84814d15046ef3":[1,0,18,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX45 =
 "da/dfb/classPatternPieceTool.html#a3d07f8b192f48cd921270f2885206067":[1,0,141,5],
 "da/dfb/classPatternPieceTool.html#a3faa15e26488b9ef37417bd173bc8c36":[1,0,141,43],
 "da/dfb/classPatternPieceTool.html#a43690572b585733a731812df9d04983c":[1,0,141,42],
-"da/dfb/classPatternPieceTool.html#a443a15d41832cd83a65c39c06a000f00":[1,0,141,56],
-"da/dfb/classPatternPieceTool.html#a4489e798ced003213fb95b598a2c5e66":[1,0,141,74]
+"da/dfb/classPatternPieceTool.html#a443a15d41832cd83a65c39c06a000f00":[1,0,141,56]
 };

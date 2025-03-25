@@ -274,7 +274,7 @@ var searchData=
   ['smisext_271',['smisext',['../d6/d0b/def_8cpp.html#a9bfcb9e60796e9cc99f22d5f89565911',1,'smisExt:&#160;def.cpp'],['../d4/da4/def_8h.html#a9bfcb9e60796e9cc99f22d5f89565911',1,'smisExt:&#160;def.cpp']]],
   ['smmsext_272',['smmsext',['../d4/da4/def_8h.html#a9587970837f22f368e5962c72dc1eae3',1,'smmsExt:&#160;def.cpp'],['../d6/d0b/def_8cpp.html#a9587970837f22f368e5962c72dc1eae3',1,'smmsExt:&#160;def.cpp']]],
   ['source_273',['source',['../d7/d15/classVAbstractOperation.html#a32ebf1e51b611edcfea02644f4e00b38',1,'VAbstractOperation']]],
-  ['spacer_274',['spacer',['../dc/d74/classVFormulaPropertyEditor.html#aaf46cd8de8eebab5b8277c3a10c0867b',1,'VFormulaPropertyEditor::spacer'],['../d5/d9d/classVPE_1_1VColorPropertyEditor.html#a5d436e72edb907a6746cf75736111c55',1,'VPE::VColorPropertyEditor::Spacer']]],
+  ['spacer_274',['spacer',['../d5/d9d/classVPE_1_1VColorPropertyEditor.html#a5d436e72edb907a6746cf75736111c55',1,'VPE::VColorPropertyEditor::Spacer'],['../dc/d74/classVFormulaPropertyEditor.html#aaf46cd8de8eebab5b8277c3a10c0867b',1,'VFormulaPropertyEditor::spacer']]],
   ['spinboxangle_275',['spinBoxAngle',['../d2/d7b/classDialogTool.html#a0a118fe7df26258a50f0bb05c5d1c2cf',1,'DialogTool']]],
   ['spl_276',['spl',['../de/d10/classDialogSpline.html#af1fa5c415004b68f755d10b2ccc88ffb',1,'DialogSpline::spl'],['../d4/d1a/classDialogCubicBezier.html#a846d233d835dc4d0196b6f5fc4bf76e8',1,'DialogCubicBezier::spl']]],
   ['spl1_277',['spl1',['../d1/dcd/classVisToolCutSpline.html#a1fafc8b13cd06b668996d0f91b16e6f5',1,'VisToolCutSpline']]],

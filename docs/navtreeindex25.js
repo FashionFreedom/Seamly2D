@@ -1,5 +1,6 @@
 var NAVTREEINDEX25 =
 {
+"d5/dc2/classQVector.html":[1,0,163],
 "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html":[0,0,7],
 "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a046b05ae883a9622db898c0ce2e75f6e":[0,0,7,114],
 "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a057fa48d101cde9aa147dd59534486e8":[0,0,7,124],
@@ -248,6 +249,5 @@ var NAVTREEINDEX25 =
 "d5/ddf/classVContourData.html#ac58c622b2d454511070e9ae4070f4198":[1,0,258,4],
 "d5/ddf/classVContourData.html#ae482975accd7a8581815d3ec6ac0255e":[1,0,258,6],
 "d5/de2/addtogroup__dialog_8cpp.html":[2,0,0,1,13,0,1,1],
-"d5/de2/addtogroup__dialog_8cpp_source.html":[2,0,0,1,13,0,1,1],
-"d5/de2/visoperation_8cpp.html":[2,0,0,1,13,3,0,0,0]
+"d5/de2/addtogroup__dialog_8cpp_source.html":[2,0,0,1,13,0,1,1]
 };

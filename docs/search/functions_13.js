@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['tabchanged_0',['tabchanged',['../d1/d7d/classEditFormulaDialog.html#aa743c053e5cc2859bfec46ba36590a69',1,'EditFormulaDialog::tabChanged()'],['../d7/df1/classEditLabelTemplateDialog.html#a467532552dbe9b8a35d430f340f6e0ed',1,'EditLabelTemplateDialog::TabChanged()']]],
+  ['tabchanged_0',['tabchanged',['../d7/df1/classEditLabelTemplateDialog.html#a467532552dbe9b8a35d430f340f6e0ed',1,'EditLabelTemplateDialog::TabChanged()'],['../d1/d7d/classEditFormulaDialog.html#aa743c053e5cc2859bfec46ba36590a69',1,'EditFormulaDialog::tabChanged()']]],
   ['tagdetailtov0_5f4_5f0_1',['TagDetailToV0_4_0',['../dc/dd3/classVPatternConverter.html#a9c0607e6002e5822eaf4c2647a60a0fe',1,'VPatternConverter']]],
   ['tagincrementsv0_5f1_5f4_2',['TagIncrementsV0_1_4',['../dc/dd3/classVPatternConverter.html#affc3700db421befca14513ff95f17851',1,'VPatternConverter']]],
   ['tagincrementtov0_5f2_5f0_3',['TagIncrementToV0_2_0',['../dc/dd3/classVPatternConverter.html#af9a8936cefca59fe790f362290602cf0',1,'VPatternConverter']]],
@@ -151,7 +151,7 @@ var searchData=
   ['togglepiecehover_148',['togglePieceHover',['../d7/df5/classVMainGraphicsScene.html#aadda5b98d74f0f0305a658a54360eec2',1,'VMainGraphicsScene']]],
   ['togglepieceinlayout_149',['TogglePieceInLayout',['../dd/d47/classTogglePieceInLayout.html#a0bfad8c8d0daa8a966c0561fcc20cdf8',1,'TogglePieceInLayout']]],
   ['togglepiecelabel_150',['togglePieceLabel',['../da/dfb/classPatternPieceTool.html#a812fb3db49b1d43fdb077ba94531486f',1,'PatternPieceTool']]],
-  ['togglepiecelock_151',['togglepiecelock',['../da/dfb/classPatternPieceTool.html#a4489e798ced003213fb95b598a2c5e66',1,'PatternPieceTool::togglePieceLock()'],['../d9/d39/classTogglePieceLock.html#a1734952269214bf11adc93d6782c009a',1,'TogglePieceLock::TogglePieceLock()']]],
+  ['togglepiecelock_151',['togglepiecelock',['../d9/d39/classTogglePieceLock.html#a1734952269214bf11adc93d6782c009a',1,'TogglePieceLock::TogglePieceLock()'],['../da/dfb/classPatternPieceTool.html#a4489e798ced003213fb95b598a2c5e66',1,'PatternPieceTool::togglePieceLock()']]],
   ['togglepieceselection_152',['togglePieceSelection',['../d7/df5/classVMainGraphicsScene.html#a7b33a7927ad04c4ffa3de536749b6841',1,'VMainGraphicsScene']]],
   ['togglepointhover_153',['TogglePointHover',['../d7/df5/classVMainGraphicsScene.html#a58c07859570ec6ae34ee7c64e4ce8927',1,'VMainGraphicsScene']]],
   ['togglepointselection_154',['TogglePointSelection',['../d7/df5/classVMainGraphicsScene.html#aee237575bca45db5be0cf65b990d33a1',1,'VMainGraphicsScene']]],
@@ -231,8 +231,8 @@ var searchData=
   ['toversion0_5f7_5f0_228',['toVersion0_7_0',['../dc/dd3/classVPatternConverter.html#af36a908e931c358a0b5f0cdda6ffe389',1,'VPatternConverter']]],
   ['toversion0_5f7_5f1_229',['toVersion0_7_1',['../dc/dd3/classVPatternConverter.html#a95acbe9e46bb2b1f8abf3cb647e1270c',1,'VPatternConverter']]],
   ['toversion0_5f7_5f2_230',['toVersion0_7_2',['../dc/dd3/classVPatternConverter.html#a7ba7d266da7efebe2a750adae3163ee8',1,'VPatternConverter']]],
-  ['transform_231',['transform',['../d7/df5/classVMainGraphicsScene.html#a0ae5273ffac95ee265876215648d030a',1,'VMainGraphicsScene::transform()'],['../d3/dd7/classVBestSquare.html#a291c7accec4e737c652e6ac2613cbf2c',1,'VBestSquare::Transform()']]],
-  ['translate_232',['translate',['../df/de5/classVLayoutPiece.html#a3f04aa0c85bfdb8cf1e7bbab6d15e32f',1,'VLayoutPiece::Translate()'],['../dc/d3e/classqmu_1_1QmuTranslation.html#ac26ac026f0e1da2db6e81ebbaff2ebfc',1,'qmu::QmuTranslation::translate() const'],['../dc/d3e/classqmu_1_1QmuTranslation.html#a44ec3ccf684c50c896046888bd0ca2cd',1,'qmu::QmuTranslation::translate(const QString &amp;context, const QString &amp;sourceText, const QString &amp;disambiguation=nullptr, int n=-1)']]],
+  ['transform_231',['transform',['../d3/dd7/classVBestSquare.html#a291c7accec4e737c652e6ac2613cbf2c',1,'VBestSquare::Transform()'],['../d7/df5/classVMainGraphicsScene.html#a0ae5273ffac95ee265876215648d030a',1,'VMainGraphicsScene::transform()']]],
+  ['translate_232',['translate',['../dc/d3e/classqmu_1_1QmuTranslation.html#ac26ac026f0e1da2db6e81ebbaff2ebfc',1,'qmu::QmuTranslation::translate() const'],['../dc/d3e/classqmu_1_1QmuTranslation.html#a44ec3ccf684c50c896046888bd0ca2cd',1,'qmu::QmuTranslation::translate(const QString &amp;context, const QString &amp;sourceText, const QString &amp;disambiguation=nullptr, int n=-1)'],['../df/de5/classVLayoutPiece.html#a3f04aa0c85bfdb8cf1e7bbab6d15e32f',1,'VLayoutPiece::Translate()']]],
   ['translatevariables_233',['translatevariables',['../d0/d17/classApplicationME.html#a4627c6c1b48305e31b25c51afe214064',1,'ApplicationME::translateVariables()'],['../da/db1/classApplication2D.html#ae965f21e78780fd1c9f7414bffc18e56',1,'Application2D::translateVariables()'],['../db/dda/classVAbstractApplication.html#a24a3274cdd93cb33ad66d2770d4925bf',1,'VAbstractApplication::translateVariables()'],['../d8/dd6/classTestApplication2D.html#a6301189c3a550cb3c22adab6e21b8c68',1,'TestApplication2D::translateVariables()']]],
   ['translationspath_234',['translationspath',['../d0/d9b/classAbstractTest.html#a0a85eee89562fee8237f3bf4b562f22b',1,'AbstractTest::TranslationsPath()'],['../db/dda/classVAbstractApplication.html#a7f8f1033b717fb83f76d40aea526db87',1,'VAbstractApplication::translationsPath()']]],
   ['treecontextmenu_235',['treeContextMenu',['../d3/d63/classMeasurementDatabaseDialog.html#a8c4fa762ff6942ca557208b0fa36a9be',1,'MeasurementDatabaseDialog']]],
