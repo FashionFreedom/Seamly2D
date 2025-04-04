@@ -225,6 +225,13 @@
     </message>
 </context>
 <context>
+    <name>AnchorPointTool</name>
+    <message>
+        <source>add anchor point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Application2D</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
@@ -1677,281 +1684,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Name:</source>
         <translation>Название:</translation>
-    </message>
-</context>
-<context>
-    <name>InternalPathDialog</name>
-    <message>
-        <source>Internal Path Tool</source>
-        <translation>Инструмент Внутренний Контур</translation>
-    </message>
-    <message>
-        <source>Path</source>
-        <translation>Контур</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Название:</translation>
-    </message>
-    <message>
-        <source>Unnamed path</source>
-        <translation>Безымянный контур</translation>
-    </message>
-    <message>
-        <source>Create name for your path</source>
-        <translation>Задайте имя для вашего контура</translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation>Тип:</translation>
-    </message>
-    <message>
-        <source>Linetype:</source>
-        <translation>Тип линии:</translation>
-    </message>
-    <message>
-        <source>Piece:</source>
-        <translation>Деталь:</translation>
-    </message>
-    <message>
-        <source>Move row to top of list</source>
-        <translation>Переместить строку в начало списка</translation>
-    </message>
-    <message>
-        <source>Move row up one row</source>
-        <translation>Переместить строку на одну строку вверх</translation>
-    </message>
-    <message>
-        <source>Move row down one row</source>
-        <translation>Переместить строку на одну строку вниз</translation>
-    </message>
-    <message>
-        <source>Move row to bottom of list</source>
-        <translation>Переместить строку в конец списка</translation>
-    </message>
-    <message>
-        <source>The path is a cut contour</source>
-        <translation>Контур представляет собой обрезанный контур</translation>
-    </message>
-    <message>
-        <source>Cut on fabric</source>
-        <translation>Вырезать на ткани</translation>
-    </message>
-    <message>
-        <source>Staus:</source>
-        <translation>Стаус:</translation>
-    </message>
-    <message>
-        <source>Ready!</source>
-        <translation>Готово!</translation>
-    </message>
-    <message>
-        <source>Seam allowance</source>
-        <translation>Прибавка на швы</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation>Ширина:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Мастер формул</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Значение</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Расчёт</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показать полный расчет в отдельном окне&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Nodes</source>
-        <translation>Узлы</translation>
-    </message>
-    <message>
-        <source>Node:</source>
-        <translation>Узел:</translation>
-    </message>
-    <message>
-        <source>Before:</source>
-        <translation>До:</translation>
-    </message>
-    <message>
-        <source>Return to default width</source>
-        <translation>Вернуться к значению ширины по умолчанию</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation>По умолчанию</translation>
-    </message>
-    <message>
-        <source>After:</source>
-        <translation>После:</translation>
-    </message>
-    <message>
-        <source>Angle:</source>
-        <translation>Угол:</translation>
-    </message>
-    <message>
-        <source>Notches</source>
-        <translation>Надсечки</translation>
-    </message>
-    <message>
-        <source>Notch:</source>
-        <translation>Надсечка:</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Тип</translation>
-    </message>
-    <message>
-        <source>Slit</source>
-        <translation>Щель</translation>
-    </message>
-    <message>
-        <source>T Notch</source>
-        <translation>Т надсечка</translation>
-    </message>
-    <message>
-        <source>U Notch</source>
-        <translation>U надсечка</translation>
-    </message>
-    <message>
-        <source>V Internal</source>
-        <translation>V Внутренний</translation>
-    </message>
-    <message>
-        <source>V External</source>
-        <translation>V Внешний</translation>
-    </message>
-    <message>
-        <source>Castle</source>
-        <translation>Замок</translation>
-    </message>
-    <message>
-        <source>Diamond</source>
-        <translation>Алмаз</translation>
-    </message>
-    <message>
-        <source>Sub Type</source>
-        <translation>Тип</translation>
-    </message>
-    <message>
-        <source>Straightforward</source>
-        <translation>Прямой</translation>
-    </message>
-    <message>
-        <source>Bisector</source>
-        <translation>Биссектриса</translation>
-    </message>
-    <message>
-        <source>Select to designate the corner point as a notch</source>
-        <translation>Выберите, чтобы обозначить угловую точку как надсечку</translation>
-    </message>
-    <message>
-        <source>Intersection</source>
-        <translation>Пересечение</translation>
-    </message>
-    <message>
-        <source>Geomtery</source>
-        <translation>Геометрия</translation>
-    </message>
-    <message>
-        <source>Reset notch angle to default.</source>
-        <translation>Восстановить угол надсечки по умолчанию.</translation>
-    </message>
-    <message>
-        <source>Count:</source>
-        <translation>Число:</translation>
-    </message>
-    <message>
-        <source>Reset notch with to default.</source>
-        <translation>Восстановить ширину надсечки по умолчанию.</translation>
-    </message>
-    <message>
-        <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
-        <translation>Этот вариант действует только в том случае, если в глобальных настройках включен вторая надсечка на линии шва. Этот вариант помогает отключить вторую метку только для этой метки.</translation>
-    </message>
-    <message>
-        <source>Show second notch on seam line</source>
-        <translation>Показать вторую надсечку на линии шва</translation>
-    </message>
-    <message>
-        <source>Reset notch length to default.</source>
-        <translation>Восстановить длину надсечки по умолчанию.</translation>
-    </message>
-    <message>
-        <source> Width:</source>
-        <translation> Ширина:</translation>
-    </message>
-    <message>
-        <source>Length:</source>
-        <translation>Длина:</translation>
-    </message>
-    <message>
-        <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
-        <translation>Выберите объекты основного контура. Используйте клавишу&lt;b&gt;SHIFT&lt;/b&gt;, чтобы изменить направление кривой. Нажмите клавишу&lt;b&gt;ENTER&lt;/b&gt;, чтобы завершить создание контура </translation>
-    </message>
-    <message>
-        <source>Reverse</source>
-        <translation>Изменить направление</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Удалить</translation>
-    </message>
-    <message>
-        <source>Current seam allowance</source>
-        <translation>Текущая прибавка на швы</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width</source>
-        <translation>Редактировать ширину прибавки на швы</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width before</source>
-        <translation>Редактировать ширину прибавки на швы до точки</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width after</source>
-        <translation>Редактировать ширину прибавки на швы после точки</translation>
-    </message>
-    <message>
-        <source>Internal path</source>
-        <translation>Внутренний контур</translation>
-    </message>
-    <message>
-        <source>Custom seam allowance</source>
-        <translation>Пользовательская прибавка на швы</translation>
-    </message>
-    <message>
-        <source>You need more points!</source>
-        <translation>Вам нужно выбрать больше точек!</translation>
-    </message>
-    <message>
-        <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
-        <translation>Первая точка &lt;b&gt;пользовательской прибавки на швы&lt;/b&gt; не может быть той же что и последняя точка!</translation>
-    </message>
-    <message>
-        <source>You have double points!</source>
-        <translation>Повторяются две точки подряд!</translation>
-    </message>
-    <message>
-        <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
-        <translation>Каждая точка в &lt;b&gt;пользовательской прибавке на швы&lt;/b&gt; должна быть уникальной!</translation>
-    </message>
-    <message>
-        <source>List of details is empty!</source>
-        <translation>Список деталей пустой!</translation>
-    </message>
-    <message>
-        <source>Please, select a detail to insert into!</source>
-        <translation>Пожалуйста, выберите деталь для вставки!</translation>
     </message>
 </context>
 <context>
@@ -4993,6 +4725,305 @@ Do you want to download it?</source>
     <message>
         <source>Insert Nodes</source>
         <translation>Вставить узлы</translation>
+    </message>
+</context>
+<context>
+    <name>InternalPathDialog</name>
+    <message>
+        <source>Internal Path Tool</source>
+        <translation>Инструмент Внутренний Контур</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>Контур</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Название:</translation>
+    </message>
+    <message>
+        <source>Unnamed path</source>
+        <translation>Безымянный контур</translation>
+    </message>
+    <message>
+        <source>Create name for your path</source>
+        <translation>Задайте имя для вашего контура</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>Тип:</translation>
+    </message>
+    <message>
+        <source>Linetype:</source>
+        <translation>Тип линии:</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Деталь:</translation>
+    </message>
+    <message>
+        <source>Move row to top of list</source>
+        <translation>Переместить строку в начало списка</translation>
+    </message>
+    <message>
+        <source>Move row up one row</source>
+        <translation>Переместить строку на одну строку вверх</translation>
+    </message>
+    <message>
+        <source>Move row down one row</source>
+        <translation>Переместить строку на одну строку вниз</translation>
+    </message>
+    <message>
+        <source>Move row to bottom of list</source>
+        <translation>Переместить строку в конец списка</translation>
+    </message>
+    <message>
+        <source>The path is a cut contour</source>
+        <translation>Контур представляет собой обрезанный контур</translation>
+    </message>
+    <message>
+        <source>Cut on fabric</source>
+        <translation>Вырезать на ткани</translation>
+    </message>
+    <message>
+        <source>Staus:</source>
+        <translation>Стаус:</translation>
+    </message>
+    <message>
+        <source>Ready!</source>
+        <translation>Готово!</translation>
+    </message>
+    <message>
+        <source>Seam allowance</source>
+        <translation>Прибавка на швы</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Ширина:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Мастер формул</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Значение</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Расчёт</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показать полный расчет в отдельном окне&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Nodes</source>
+        <translation>Узлы</translation>
+    </message>
+    <message>
+        <source>Node:</source>
+        <translation>Узел:</translation>
+    </message>
+    <message>
+        <source>Before:</source>
+        <translation>До:</translation>
+    </message>
+    <message>
+        <source>Return to default width</source>
+        <translation>Вернуться к значению ширины по умолчанию</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>По умолчанию</translation>
+    </message>
+    <message>
+        <source>After:</source>
+        <translation>После:</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Угол:</translation>
+    </message>
+    <message>
+        <source>Notches</source>
+        <translation>Надсечки</translation>
+    </message>
+    <message>
+        <source>Notch:</source>
+        <translation>Надсечка:</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <source>Slit</source>
+        <translation>Щель</translation>
+    </message>
+    <message>
+        <source>T Notch</source>
+        <translation>Т надсечка</translation>
+    </message>
+    <message>
+        <source>U Notch</source>
+        <translation>U надсечка</translation>
+    </message>
+    <message>
+        <source>V Internal</source>
+        <translation>V Внутренний</translation>
+    </message>
+    <message>
+        <source>V External</source>
+        <translation>V Внешний</translation>
+    </message>
+    <message>
+        <source>Castle</source>
+        <translation>Замок</translation>
+    </message>
+    <message>
+        <source>Diamond</source>
+        <translation>Алмаз</translation>
+    </message>
+    <message>
+        <source>Sub Type</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <source>Straightforward</source>
+        <translation>Прямой</translation>
+    </message>
+    <message>
+        <source>Bisector</source>
+        <translation>Биссектриса</translation>
+    </message>
+    <message>
+        <source>Select to designate the corner point as a notch</source>
+        <translation>Выберите, чтобы обозначить угловую точку как надсечку</translation>
+    </message>
+    <message>
+        <source>Intersection</source>
+        <translation>Пересечение</translation>
+    </message>
+    <message>
+        <source>Geomtery</source>
+        <translation>Геометрия</translation>
+    </message>
+    <message>
+        <source>Reset notch angle to default.</source>
+        <translation>Восстановить угол надсечки по умолчанию.</translation>
+    </message>
+    <message>
+        <source>Count:</source>
+        <translation>Число:</translation>
+    </message>
+    <message>
+        <source>Reset notch with to default.</source>
+        <translation>Восстановить ширину надсечки по умолчанию.</translation>
+    </message>
+    <message>
+        <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
+        <translation>Этот вариант действует только в том случае, если в глобальных настройках включен вторая надсечка на линии шва. Этот вариант помогает отключить вторую метку только для этой метки.</translation>
+    </message>
+    <message>
+        <source>Show second notch on seam line</source>
+        <translation>Показать вторую надсечку на линии шва</translation>
+    </message>
+    <message>
+        <source>Reset notch length to default.</source>
+        <translation>Восстановить длину надсечки по умолчанию.</translation>
+    </message>
+    <message>
+        <source> Width:</source>
+        <translation> Ширина:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Длина:</translation>
+    </message>
+    <message>
+        <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
+        <translation>Выберите объекты основного контура. Используйте клавишу&lt;b&gt;SHIFT&lt;/b&gt;, чтобы изменить направление кривой. Нажмите клавишу&lt;b&gt;ENTER&lt;/b&gt;, чтобы завершить создание контура </translation>
+    </message>
+    <message>
+        <source>Reverse</source>
+        <translation>Изменить направление</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Удалить</translation>
+    </message>
+    <message>
+        <source>Current seam allowance</source>
+        <translation>Текущая прибавка на швы</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width</source>
+        <translation>Редактировать ширину прибавки на швы</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width before</source>
+        <translation>Редактировать ширину прибавки на швы до точки</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width after</source>
+        <translation>Редактировать ширину прибавки на швы после точки</translation>
+    </message>
+    <message>
+        <source>Internal path</source>
+        <translation>Внутренний контур</translation>
+    </message>
+    <message>
+        <source>Custom seam allowance</source>
+        <translation>Пользовательская прибавка на швы</translation>
+    </message>
+    <message>
+        <source>You need more points!</source>
+        <translation>Вам нужно выбрать больше точек!</translation>
+    </message>
+    <message>
+        <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
+        <translation>Первая точка &lt;b&gt;пользовательской прибавки на швы&lt;/b&gt; не может быть той же что и последняя точка!</translation>
+    </message>
+    <message>
+        <source>You have double points!</source>
+        <translation>Повторяются две точки подряд!</translation>
+    </message>
+    <message>
+        <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
+        <translation>Каждая точка в &lt;b&gt;пользовательской прибавке на швы&lt;/b&gt; должна быть уникальной!</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished">Выбрать</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished">Свойства</translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation type="unfinished">Толщина Линии:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Цвет:</translation>
+    </message>
+    <message>
+        <source>Extend end point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extend start point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List of pieces is empty!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please, select a piece to insert into!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9999,6 +10030,14 @@ Press enter to temporarily add it to the list.</source>
         <source>Open Image File</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Can not extend internal path &apos;%1&apos; start point to cut line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can not extend internal path &apos;%1&apos; end point to cut line.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -10224,8 +10263,8 @@ Press enter to temporarily add it to the list.</source>
 <context>
     <name>SavePieceOptions</name>
     <message>
-        <source>save detail option</source>
-        <translation>опция сохранения подробностей</translation>
+        <source>save piece options</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13215,6 +13254,10 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Image_name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece path doesn&apos;t contain nodes</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
