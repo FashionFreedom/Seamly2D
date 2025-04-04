@@ -225,6 +225,14 @@
     </message>
 </context>
 <context>
+    <name>AnchorPointTool</name>
+    <message>
+        <source>add anchor point</source>
+        <translatorcomment>añadir punto de anclaje</translatorcomment>
+        <translation></translation>
+    </message>
+</context>
+<context>
     <name>Application2D</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
@@ -1692,281 +1700,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Name:</source>
         <translation>Nombre:</translation>
-    </message>
-</context>
-<context>
-    <name>InternalPathDialog</name>
-    <message>
-        <source>Internal Path Tool</source>
-        <translation>Herramienta de ruta interna</translation>
-    </message>
-    <message>
-        <source>Path</source>
-        <translation>Ruta</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Nombre:</translation>
-    </message>
-    <message>
-        <source>Unnamed path</source>
-        <translation>Ruta sin nombre</translation>
-    </message>
-    <message>
-        <source>Create name for your path</source>
-        <translation>Crea un nombre para su ruta</translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation>Tipo:</translation>
-    </message>
-    <message>
-        <source>Linetype:</source>
-        <translation>Tipo de línea:</translation>
-    </message>
-    <message>
-        <source>Piece:</source>
-        <translation>Pieza:</translation>
-    </message>
-    <message>
-        <source>Move row to top of list</source>
-        <translation>Mover fila al principio de la lista</translation>
-    </message>
-    <message>
-        <source>Move row up one row</source>
-        <translation>Mover fila por encima de una fila</translation>
-    </message>
-    <message>
-        <source>Move row down one row</source>
-        <translation>Mover fila por debajo de una fila</translation>
-    </message>
-    <message>
-        <source>Move row to bottom of list</source>
-        <translation>Mover fila al final de la lista</translation>
-    </message>
-    <message>
-        <source>The path is a cut contour</source>
-        <translation>La ruta es un contorno cortado</translation>
-    </message>
-    <message>
-        <source>Cut on fabric</source>
-        <translation>Cortar en tela</translation>
-    </message>
-    <message>
-        <source>Staus:</source>
-        <translation>Estado:</translation>
-    </message>
-    <message>
-        <source>Ready!</source>
-        <translation>¡Listo!</translation>
-    </message>
-    <message>
-        <source>Seam allowance</source>
-        <translation>Márgenes de costura</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation>Ancho:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Asistente de fórmula</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Valor</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Cálculo</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar el cálculo completo en el cuadro de mensaje&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Nodes</source>
-        <translation>Nodos</translation>
-    </message>
-    <message>
-        <source>Node:</source>
-        <translation>Nodo:</translation>
-    </message>
-    <message>
-        <source>Before:</source>
-        <translation>Antes:</translation>
-    </message>
-    <message>
-        <source>Return to default width</source>
-        <translation>Volver al ancho predeterminado</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation>Predeterminado</translation>
-    </message>
-    <message>
-        <source>After:</source>
-        <translation>Después:</translation>
-    </message>
-    <message>
-        <source>Angle:</source>
-        <translation>Ángulo:</translation>
-    </message>
-    <message>
-        <source>Notches</source>
-        <translation>Piquetes</translation>
-    </message>
-    <message>
-        <source>Notch:</source>
-        <translation>Piquete:</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Tipo</translation>
-    </message>
-    <message>
-        <source>Slit</source>
-        <translation>Abertura</translation>
-    </message>
-    <message>
-        <source>T Notch</source>
-        <translation>T Piquete</translation>
-    </message>
-    <message>
-        <source>U Notch</source>
-        <translation>U Piquete</translation>
-    </message>
-    <message>
-        <source>V Internal</source>
-        <translation>V Interno</translation>
-    </message>
-    <message>
-        <source>V External</source>
-        <translation>V Externo</translation>
-    </message>
-    <message>
-        <source>Castle</source>
-        <translation>Castillo</translation>
-    </message>
-    <message>
-        <source>Diamond</source>
-        <translation>Diamante</translation>
-    </message>
-    <message>
-        <source>Sub Type</source>
-        <translation>Subtipo</translation>
-    </message>
-    <message>
-        <source>Straightforward</source>
-        <translation>Directo</translation>
-    </message>
-    <message>
-        <source>Bisector</source>
-        <translation>Bisectriz</translation>
-    </message>
-    <message>
-        <source>Select to designate the corner point as a notch</source>
-        <translation>Seleccione para designar el punto de la esquina como un piquete</translation>
-    </message>
-    <message>
-        <source>Intersection</source>
-        <translation>Intersección</translation>
-    </message>
-    <message>
-        <source>Geomtery</source>
-        <translation>Geometría</translation>
-    </message>
-    <message>
-        <source>Reset notch angle to default.</source>
-        <translation>Restablecer el ángulo de piquete a su valor predeterminado.</translation>
-    </message>
-    <message>
-        <source>Count:</source>
-        <translation>Contar:</translation>
-    </message>
-    <message>
-        <source>Reset notch with to default.</source>
-        <translation>Restablecer el piquete a sus valores predeterminados.</translation>
-    </message>
-    <message>
-        <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
-        <translation>Esta opción tiene efecto sólo si el segundo piquete en la línea de costura está habilitado en las preferencias globales. La opción ayuda a desactivar el segundo piquete sólo para este piquete.</translation>
-    </message>
-    <message>
-        <source>Show second notch on seam line</source>
-        <translation>Mostrar el segundo piquete en la línea de costura</translation>
-    </message>
-    <message>
-        <source>Reset notch length to default.</source>
-        <translation>Restablecer la longitud del piquete a su valor predeterminado.</translation>
-    </message>
-    <message>
-        <source> Width:</source>
-        <translation> Ancho:</translation>
-    </message>
-    <message>
-        <source>Length:</source>
-        <translation>Longitud:</translation>
-    </message>
-    <message>
-        <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
-        <translation>Seleccione objetos de ruta principal, use&lt;b&gt;SHIFT&lt;/b&gt; para invertir la dirección de la curva, presione&lt;b&gt;ENTER&lt;/b&gt;para finalizar la creación de la ruta </translation>
-    </message>
-    <message>
-        <source>Reverse</source>
-        <translation>Reverso</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Eliminar</translation>
-    </message>
-    <message>
-        <source>Current seam allowance</source>
-        <translation>Acual margen de costura</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width</source>
-        <translation>Editar margen de costura</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width before</source>
-        <translation>Editar el ancho de margen de costura anterior</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width after</source>
-        <translation>Editar el ancho de margen de costura posterior</translation>
-    </message>
-    <message>
-        <source>Internal path</source>
-        <translation>Ruta interna</translation>
-    </message>
-    <message>
-        <source>Custom seam allowance</source>
-        <translation>Personalizar el margen de costura</translation>
-    </message>
-    <message>
-        <source>You need more points!</source>
-        <translation>¡Necesita más puntos!</translation>
-    </message>
-    <message>
-        <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
-        <translation>¡Primer punto del &lt;b&gt; margen de costura personalizado&lt;/b&gt; no puede ser el mismo que el último puinto!</translation>
-    </message>
-    <message>
-        <source>You have double points!</source>
-        <translation>¡Tiene puntos duplicados!</translation>
-    </message>
-    <message>
-        <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
-        <translation>¡Cada punto en la ruta de &lt;b&gt;margen de costura personalizado&lt;/b&gt; debe ser único!</translation>
-    </message>
-    <message>
-        <source>List of details is empty!</source>
-        <translation>¡La lista de detalles está vacía!</translation>
-    </message>
-    <message>
-        <source>Please, select a detail to insert into!</source>
-        <translation>¡Por favor, seleccione un detalle para insertar!</translation>
     </message>
 </context>
 <context>
@@ -5011,6 +4744,305 @@ Do you want to download it?</source>
     <message>
         <source>Insert Nodes</source>
         <translation>Insertar Nodos</translation>
+    </message>
+</context>
+<context>
+    <name>InternalPathDialog</name>
+    <message>
+        <source>Internal Path Tool</source>
+        <translation>Herramienta de ruta interna</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>Ruta</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nombre:</translation>
+    </message>
+    <message>
+        <source>Unnamed path</source>
+        <translation>Ruta sin nombre</translation>
+    </message>
+    <message>
+        <source>Create name for your path</source>
+        <translation>Crea un nombre para su ruta</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>Tipo:</translation>
+    </message>
+    <message>
+        <source>Linetype:</source>
+        <translation>Tipo de línea:</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Pieza:</translation>
+    </message>
+    <message>
+        <source>Move row to top of list</source>
+        <translation>Mover fila al principio de la lista</translation>
+    </message>
+    <message>
+        <source>Move row up one row</source>
+        <translation>Mover fila por encima de una fila</translation>
+    </message>
+    <message>
+        <source>Move row down one row</source>
+        <translation>Mover fila por debajo de una fila</translation>
+    </message>
+    <message>
+        <source>Move row to bottom of list</source>
+        <translation>Mover fila al final de la lista</translation>
+    </message>
+    <message>
+        <source>The path is a cut contour</source>
+        <translation>La ruta es un contorno cortado</translation>
+    </message>
+    <message>
+        <source>Cut on fabric</source>
+        <translation>Cortar en tela</translation>
+    </message>
+    <message>
+        <source>Staus:</source>
+        <translation>Estado:</translation>
+    </message>
+    <message>
+        <source>Ready!</source>
+        <translation>¡Listo!</translation>
+    </message>
+    <message>
+        <source>Seam allowance</source>
+        <translation>Márgenes de costura</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Ancho:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Asistente de fórmula</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Cálculo</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar el cálculo completo en el cuadro de mensaje&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Nodes</source>
+        <translation>Nodos</translation>
+    </message>
+    <message>
+        <source>Node:</source>
+        <translation>Nodo:</translation>
+    </message>
+    <message>
+        <source>Before:</source>
+        <translation>Antes:</translation>
+    </message>
+    <message>
+        <source>Return to default width</source>
+        <translation>Volver al ancho predeterminado</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Predeterminado</translation>
+    </message>
+    <message>
+        <source>After:</source>
+        <translation>Después:</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Ángulo:</translation>
+    </message>
+    <message>
+        <source>Notches</source>
+        <translation>Piquetes</translation>
+    </message>
+    <message>
+        <source>Notch:</source>
+        <translation>Piquete:</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipo</translation>
+    </message>
+    <message>
+        <source>Slit</source>
+        <translation>Abertura</translation>
+    </message>
+    <message>
+        <source>T Notch</source>
+        <translation>T Piquete</translation>
+    </message>
+    <message>
+        <source>U Notch</source>
+        <translation>U Piquete</translation>
+    </message>
+    <message>
+        <source>V Internal</source>
+        <translation>V Interno</translation>
+    </message>
+    <message>
+        <source>V External</source>
+        <translation>V Externo</translation>
+    </message>
+    <message>
+        <source>Castle</source>
+        <translation>Castillo</translation>
+    </message>
+    <message>
+        <source>Diamond</source>
+        <translation>Diamante</translation>
+    </message>
+    <message>
+        <source>Sub Type</source>
+        <translation>Subtipo</translation>
+    </message>
+    <message>
+        <source>Straightforward</source>
+        <translation>Directo</translation>
+    </message>
+    <message>
+        <source>Bisector</source>
+        <translation>Bisectriz</translation>
+    </message>
+    <message>
+        <source>Select to designate the corner point as a notch</source>
+        <translation>Seleccione para designar el punto de la esquina como un piquete</translation>
+    </message>
+    <message>
+        <source>Intersection</source>
+        <translation>Intersección</translation>
+    </message>
+    <message>
+        <source>Geomtery</source>
+        <translation>Geometría</translation>
+    </message>
+    <message>
+        <source>Reset notch angle to default.</source>
+        <translation>Restablecer el ángulo de piquete a su valor predeterminado.</translation>
+    </message>
+    <message>
+        <source>Count:</source>
+        <translation>Contar:</translation>
+    </message>
+    <message>
+        <source>Reset notch with to default.</source>
+        <translation>Restablecer el piquete a sus valores predeterminados.</translation>
+    </message>
+    <message>
+        <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
+        <translation>Esta opción tiene efecto sólo si el segundo piquete en la línea de costura está habilitado en las preferencias globales. La opción ayuda a desactivar el segundo piquete sólo para este piquete.</translation>
+    </message>
+    <message>
+        <source>Show second notch on seam line</source>
+        <translation>Mostrar el segundo piquete en la línea de costura</translation>
+    </message>
+    <message>
+        <source>Reset notch length to default.</source>
+        <translation>Restablecer la longitud del piquete a su valor predeterminado.</translation>
+    </message>
+    <message>
+        <source> Width:</source>
+        <translation> Ancho:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Longitud:</translation>
+    </message>
+    <message>
+        <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
+        <translation>Seleccione objetos de ruta principal, use&lt;b&gt;SHIFT&lt;/b&gt; para invertir la dirección de la curva, presione&lt;b&gt;ENTER&lt;/b&gt;para finalizar la creación de la ruta </translation>
+    </message>
+    <message>
+        <source>Reverse</source>
+        <translation>Reverso</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Eliminar</translation>
+    </message>
+    <message>
+        <source>Current seam allowance</source>
+        <translation>Acual margen de costura</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width</source>
+        <translation>Editar margen de costura</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width before</source>
+        <translation>Editar el ancho de margen de costura anterior</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width after</source>
+        <translation>Editar el ancho de margen de costura posterior</translation>
+    </message>
+    <message>
+        <source>Internal path</source>
+        <translation>Ruta interna</translation>
+    </message>
+    <message>
+        <source>Custom seam allowance</source>
+        <translation>Personalizar el margen de costura</translation>
+    </message>
+    <message>
+        <source>You need more points!</source>
+        <translation>¡Necesita más puntos!</translation>
+    </message>
+    <message>
+        <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
+        <translation>¡Primer punto del &lt;b&gt; margen de costura personalizado&lt;/b&gt; no puede ser el mismo que el último puinto!</translation>
+    </message>
+    <message>
+        <source>You have double points!</source>
+        <translation>¡Tiene puntos duplicados!</translation>
+    </message>
+    <message>
+        <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
+        <translation>¡Cada punto en la ruta de &lt;b&gt;margen de costura personalizado&lt;/b&gt; debe ser único!</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Selección</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributos</translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation>Grosor de línea:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
+    </message>
+    <message>
+        <source>Extend end point</source>
+        <translation>Extender punto final</translation>
+    </message>
+    <message>
+        <source>Extend start point</source>
+        <translation>Extender punto inicial</translation>
+    </message>
+    <message>
+        <source>List of pieces is empty!</source>
+        <translation>La lista de piezas está vacía.</translation>
+    </message>
+    <message>
+        <source>Please, select a piece to insert into!</source>
+        <translation>Por favor, ¡seleccione una pieza para insertar en ella!</translation>
     </message>
 </context>
 <context>
@@ -10044,6 +10076,14 @@ actualización:</translation>
         <source>Open Image File</source>
         <translation>Abrir archivo de imagen</translation>
     </message>
+    <message>
+        <source>Can not extend internal path &apos;%1&apos; start point to cut line.</source>
+        <translation>No se puede extender el punto de inicio de la ruta interna &apos;%1&apos; a la línea de corte.</translation>
+    </message>
+    <message>
+        <source>Can not extend internal path &apos;%1&apos; end point to cut line.</source>
+        <translation>No se puede extender el punto final de la ruta interna &apos;%1&apos; a la línea de corte.</translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -10269,8 +10309,8 @@ actualización:</translation>
 <context>
     <name>SavePieceOptions</name>
     <message>
-        <source>save detail option</source>
-        <translation>guardar opción de detalle</translation>
+        <source>save piece options</source>
+        <translation>guardar opciones de pieza</translation>
     </message>
 </context>
 <context>
@@ -13262,6 +13302,10 @@ load in SeamlyME as usual.
     <message>
         <source>Image_name</source>
         <translation>Nombre_imagen</translation>
+    </message>
+    <message>
+        <source>Piece path doesn&apos;t contain nodes</source>
+        <translation>La ruta de la pieza no contiene nodos</translation>
     </message>
 </context>
 <context>

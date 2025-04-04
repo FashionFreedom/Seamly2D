@@ -225,6 +225,13 @@
     </message>
 </context>
 <context>
+    <name>AnchorPointTool</name>
+    <message>
+        <source>add anchor point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Application2D</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
@@ -1660,281 +1667,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Name:</source>
         <translation>Naam:</translation>
-    </message>
-</context>
-<context>
-    <name>InternalPathDialog</name>
-    <message>
-        <source>Internal Path Tool</source>
-        <translation>binnenpad gereedschap</translation>
-    </message>
-    <message>
-        <source>Path</source>
-        <translation>Pad</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Naam:</translation>
-    </message>
-    <message>
-        <source>Unnamed path</source>
-        <translation>Onbenoemd pad</translation>
-    </message>
-    <message>
-        <source>Create name for your path</source>
-        <translation>Maak een naam voor jouw pad</translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation>Soort:</translation>
-    </message>
-    <message>
-        <source>Linetype:</source>
-        <translation>Lijnsoort:</translation>
-    </message>
-    <message>
-        <source>Piece:</source>
-        <translation>Patroondeel:</translation>
-    </message>
-    <message>
-        <source>Move row to top of list</source>
-        <translation>Bewij de rij naar bovenaan de lijst</translation>
-    </message>
-    <message>
-        <source>Move row up one row</source>
-        <translation>Beweeg de rij één rij naar boven</translation>
-    </message>
-    <message>
-        <source>Move row down one row</source>
-        <translation>Beweeg de rij één rij naar beneden</translation>
-    </message>
-    <message>
-        <source>Move row to bottom of list</source>
-        <translation>Beweeg de rij naar onderaan de lijst</translation>
-    </message>
-    <message>
-        <source>The path is a cut contour</source>
-        <translation>Het pad is een kniplijn</translation>
-    </message>
-    <message>
-        <source>Cut on fabric</source>
-        <translation>Knip in stof</translation>
-    </message>
-    <message>
-        <source>Staus:</source>
-        <translation>Status:</translation>
-    </message>
-    <message>
-        <source>Ready!</source>
-        <translation>Klaar!</translation>
-    </message>
-    <message>
-        <source>Seam allowance</source>
-        <translation>Naadtoeslag</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation>Breedte:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Formule wizard</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Waarde</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Berekening</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Nodes</source>
-        <translation>Kernpunten</translation>
-    </message>
-    <message>
-        <source>Node:</source>
-        <translation>Kernpunt:</translation>
-    </message>
-    <message>
-        <source>Before:</source>
-        <translation>Vooraf:</translation>
-    </message>
-    <message>
-        <source>Return to default width</source>
-        <translation>Terug naar standaard breedte</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation>Standaard</translation>
-    </message>
-    <message>
-        <source>After:</source>
-        <translation>Nadat:</translation>
-    </message>
-    <message>
-        <source>Angle:</source>
-        <translation>Hoek:</translation>
-    </message>
-    <message>
-        <source>Notches</source>
-        <translation>Pasmarkeringen</translation>
-    </message>
-    <message>
-        <source>Notch:</source>
-        <translation>Pasmarkering:</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Soort</translation>
-    </message>
-    <message>
-        <source>Slit</source>
-        <translation>Knipje</translation>
-    </message>
-    <message>
-        <source>T Notch</source>
-        <translation>T Pasmarkering</translation>
-    </message>
-    <message>
-        <source>U Notch</source>
-        <translation>U Pasmarkering</translation>
-    </message>
-    <message>
-        <source>V Internal</source>
-        <translation>Interne V Pasmarkering</translation>
-    </message>
-    <message>
-        <source>V External</source>
-        <translation>Externe V Pasmarkering</translation>
-    </message>
-    <message>
-        <source>Castle</source>
-        <translation>Kasteel</translation>
-    </message>
-    <message>
-        <source>Diamond</source>
-        <translation>Diamant</translation>
-    </message>
-    <message>
-        <source>Sub Type</source>
-        <translation>Subtype</translation>
-    </message>
-    <message>
-        <source>Straightforward</source>
-        <translation>Rechttoe rechtaan</translation>
-    </message>
-    <message>
-        <source>Bisector</source>
-        <translation>Bisector</translation>
-    </message>
-    <message>
-        <source>Select to designate the corner point as a notch</source>
-        <translation>Selecteer om het hoekpunt als pasmarkering aan te duiden</translation>
-    </message>
-    <message>
-        <source>Intersection</source>
-        <translation>Kruispunt van lijnen</translation>
-    </message>
-    <message>
-        <source>Geomtery</source>
-        <translation>Geometrie</translation>
-    </message>
-    <message>
-        <source>Reset notch angle to default.</source>
-        <translation>Zet hoek pasmarkering terug naar standaard.</translation>
-    </message>
-    <message>
-        <source>Count:</source>
-        <translation>Aantal:</translation>
-    </message>
-    <message>
-        <source>Reset notch with to default.</source>
-        <translation>Zet breedte pasmarkering terug naar standaard.</translation>
-    </message>
-    <message>
-        <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
-        <translation>Deze optie heeft alleen effect als de optie om een tweede pasmarkering te laten zien op de zoomlijn aangevinkt is in de algemene opties. Deze optie staat het vervolgens toe om het tweede knipje voor dit specifieke knipje, uit te zetten.</translation>
-    </message>
-    <message>
-        <source>Show second notch on seam line</source>
-        <translation>Toon tweede pasmarkering op de naadlijn</translation>
-    </message>
-    <message>
-        <source>Reset notch length to default.</source>
-        <translation>Zet lengte pasmarkering terug naar standaard.</translation>
-    </message>
-    <message>
-        <source> Width:</source>
-        <translation> Breedte:</translation>
-    </message>
-    <message>
-        <source>Length:</source>
-        <translation>Lengte:</translation>
-    </message>
-    <message>
-        <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
-        <translation>Selecteer hoofdpad-objecten met de klok mee,&lt;b&gt;Shift&lt;/b&gt; - draai richting kromme om, &lt;b&gt;Enter&lt;/b&gt; - einde creatie </translation>
-    </message>
-    <message>
-        <source>Reverse</source>
-        <translation>Keer om</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Verwijder</translation>
-    </message>
-    <message>
-        <source>Current seam allowance</source>
-        <translation>Huidige naadtoeslag</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width</source>
-        <translation>Bewerk zoombreedte</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width before</source>
-        <translation>Bewerk zoombreedte vooraf</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width after</source>
-        <translation>Bewerk zoombreedte voorbij</translation>
-    </message>
-    <message>
-        <source>Internal path</source>
-        <translation>Binnenpad</translation>
-    </message>
-    <message>
-        <source>Custom seam allowance</source>
-        <translation>Aangepaste naadtoeslag</translation>
-    </message>
-    <message>
-        <source>You need more points!</source>
-        <translation>Je hebt meer punten nodig!</translation>
-    </message>
-    <message>
-        <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
-        <translation>Het eerste punt van  &lt;b&gt;aangepaste naadtoeslag&lt;/b&gt; kan niet gelijk zijn aan het laatste punt!</translation>
-    </message>
-    <message>
-        <source>You have double points!</source>
-        <translation>Je hebt punten dubbel!</translation>
-    </message>
-    <message>
-        <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
-        <translation>Elk punt in het pad van de &lt;b&gt; aangepaste naadtoeslag&lt;/b&gt; moet uniek zijn!</translation>
-    </message>
-    <message>
-        <source>List of details is empty!</source>
-        <translation>Lijst van objecten is leeg!</translation>
-    </message>
-    <message>
-        <source>Please, select a detail to insert into!</source>
-        <translation>Selecteer een detail om in te voegen, aub!</translation>
     </message>
 </context>
 <context>
@@ -4970,6 +4702,305 @@ Do you want to download it?</source>
     <message>
         <source>Insert Nodes</source>
         <translation>Voeg kernpunten in</translation>
+    </message>
+</context>
+<context>
+    <name>InternalPathDialog</name>
+    <message>
+        <source>Internal Path Tool</source>
+        <translation>binnenpad gereedschap</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>Pad</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Naam:</translation>
+    </message>
+    <message>
+        <source>Unnamed path</source>
+        <translation>Onbenoemd pad</translation>
+    </message>
+    <message>
+        <source>Create name for your path</source>
+        <translation>Maak een naam voor jouw pad</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>Soort:</translation>
+    </message>
+    <message>
+        <source>Linetype:</source>
+        <translation>Lijnsoort:</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Patroondeel:</translation>
+    </message>
+    <message>
+        <source>Move row to top of list</source>
+        <translation>Bewij de rij naar bovenaan de lijst</translation>
+    </message>
+    <message>
+        <source>Move row up one row</source>
+        <translation>Beweeg de rij één rij naar boven</translation>
+    </message>
+    <message>
+        <source>Move row down one row</source>
+        <translation>Beweeg de rij één rij naar beneden</translation>
+    </message>
+    <message>
+        <source>Move row to bottom of list</source>
+        <translation>Beweeg de rij naar onderaan de lijst</translation>
+    </message>
+    <message>
+        <source>The path is a cut contour</source>
+        <translation>Het pad is een kniplijn</translation>
+    </message>
+    <message>
+        <source>Cut on fabric</source>
+        <translation>Knip in stof</translation>
+    </message>
+    <message>
+        <source>Staus:</source>
+        <translation>Status:</translation>
+    </message>
+    <message>
+        <source>Ready!</source>
+        <translation>Klaar!</translation>
+    </message>
+    <message>
+        <source>Seam allowance</source>
+        <translation>Naadtoeslag</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Breedte:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Formule wizard</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Waarde</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Berekening</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Nodes</source>
+        <translation>Kernpunten</translation>
+    </message>
+    <message>
+        <source>Node:</source>
+        <translation>Kernpunt:</translation>
+    </message>
+    <message>
+        <source>Before:</source>
+        <translation>Vooraf:</translation>
+    </message>
+    <message>
+        <source>Return to default width</source>
+        <translation>Terug naar standaard breedte</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standaard</translation>
+    </message>
+    <message>
+        <source>After:</source>
+        <translation>Nadat:</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Hoek:</translation>
+    </message>
+    <message>
+        <source>Notches</source>
+        <translation>Pasmarkeringen</translation>
+    </message>
+    <message>
+        <source>Notch:</source>
+        <translation>Pasmarkering:</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Soort</translation>
+    </message>
+    <message>
+        <source>Slit</source>
+        <translation>Knipje</translation>
+    </message>
+    <message>
+        <source>T Notch</source>
+        <translation>T Pasmarkering</translation>
+    </message>
+    <message>
+        <source>U Notch</source>
+        <translation>U Pasmarkering</translation>
+    </message>
+    <message>
+        <source>V Internal</source>
+        <translation>Interne V Pasmarkering</translation>
+    </message>
+    <message>
+        <source>V External</source>
+        <translation>Externe V Pasmarkering</translation>
+    </message>
+    <message>
+        <source>Castle</source>
+        <translation>Kasteel</translation>
+    </message>
+    <message>
+        <source>Diamond</source>
+        <translation>Diamant</translation>
+    </message>
+    <message>
+        <source>Sub Type</source>
+        <translation>Subtype</translation>
+    </message>
+    <message>
+        <source>Straightforward</source>
+        <translation>Rechttoe rechtaan</translation>
+    </message>
+    <message>
+        <source>Bisector</source>
+        <translation>Bisector</translation>
+    </message>
+    <message>
+        <source>Select to designate the corner point as a notch</source>
+        <translation>Selecteer om het hoekpunt als pasmarkering aan te duiden</translation>
+    </message>
+    <message>
+        <source>Intersection</source>
+        <translation>Kruispunt van lijnen</translation>
+    </message>
+    <message>
+        <source>Geomtery</source>
+        <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Reset notch angle to default.</source>
+        <translation>Zet hoek pasmarkering terug naar standaard.</translation>
+    </message>
+    <message>
+        <source>Count:</source>
+        <translation>Aantal:</translation>
+    </message>
+    <message>
+        <source>Reset notch with to default.</source>
+        <translation>Zet breedte pasmarkering terug naar standaard.</translation>
+    </message>
+    <message>
+        <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
+        <translation>Deze optie heeft alleen effect als de optie om een tweede pasmarkering te laten zien op de zoomlijn aangevinkt is in de algemene opties. Deze optie staat het vervolgens toe om het tweede knipje voor dit specifieke knipje, uit te zetten.</translation>
+    </message>
+    <message>
+        <source>Show second notch on seam line</source>
+        <translation>Toon tweede pasmarkering op de naadlijn</translation>
+    </message>
+    <message>
+        <source>Reset notch length to default.</source>
+        <translation>Zet lengte pasmarkering terug naar standaard.</translation>
+    </message>
+    <message>
+        <source> Width:</source>
+        <translation> Breedte:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Lengte:</translation>
+    </message>
+    <message>
+        <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
+        <translation>Selecteer hoofdpad-objecten met de klok mee,&lt;b&gt;Shift&lt;/b&gt; - draai richting kromme om, &lt;b&gt;Enter&lt;/b&gt; - einde creatie </translation>
+    </message>
+    <message>
+        <source>Reverse</source>
+        <translation>Keer om</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Verwijder</translation>
+    </message>
+    <message>
+        <source>Current seam allowance</source>
+        <translation>Huidige naadtoeslag</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width</source>
+        <translation>Bewerk zoombreedte</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width before</source>
+        <translation>Bewerk zoombreedte vooraf</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width after</source>
+        <translation>Bewerk zoombreedte voorbij</translation>
+    </message>
+    <message>
+        <source>Internal path</source>
+        <translation>Binnenpad</translation>
+    </message>
+    <message>
+        <source>Custom seam allowance</source>
+        <translation>Aangepaste naadtoeslag</translation>
+    </message>
+    <message>
+        <source>You need more points!</source>
+        <translation>Je hebt meer punten nodig!</translation>
+    </message>
+    <message>
+        <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
+        <translation>Het eerste punt van  &lt;b&gt;aangepaste naadtoeslag&lt;/b&gt; kan niet gelijk zijn aan het laatste punt!</translation>
+    </message>
+    <message>
+        <source>You have double points!</source>
+        <translation>Je hebt punten dubbel!</translation>
+    </message>
+    <message>
+        <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
+        <translation>Elk punt in het pad van de &lt;b&gt; aangepaste naadtoeslag&lt;/b&gt; moet uniek zijn!</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished">Selectie</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished">Kenmerken</translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation type="unfinished">Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kleur:</translation>
+    </message>
+    <message>
+        <source>Extend end point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extend start point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List of pieces is empty!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please, select a piece to insert into!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9973,6 +10004,14 @@ Press enter to temporarily add it to the list.</source>
         <source>Open Image File</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Can not extend internal path &apos;%1&apos; start point to cut line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can not extend internal path &apos;%1&apos; end point to cut line.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -10198,8 +10237,8 @@ Press enter to temporarily add it to the list.</source>
 <context>
     <name>SavePieceOptions</name>
     <message>
-        <source>save detail option</source>
-        <translation>bewaar opties van detail</translation>
+        <source>save piece options</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13188,6 +13227,10 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Image_name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece path doesn&apos;t contain nodes</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

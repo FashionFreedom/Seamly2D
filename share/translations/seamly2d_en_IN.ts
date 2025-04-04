@@ -225,6 +225,13 @@
     </message>
 </context>
 <context>
+    <name>AnchorPointTool</name>
+    <message>
+        <source>add anchor point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Application2D</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
@@ -1656,281 +1663,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Name:</source>
         <translation type="unfinished">Name:</translation>
-    </message>
-</context>
-<context>
-    <name>InternalPathDialog</name>
-    <message>
-        <source>Internal Path Tool</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Path</source>
-        <translation type="unfinished">Path</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="unfinished">Name:</translation>
-    </message>
-    <message>
-        <source>Unnamed path</source>
-        <translation type="unfinished">Unnamed path</translation>
-    </message>
-    <message>
-        <source>Create name for your path</source>
-        <translation type="unfinished">Create name for your path</translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation type="unfinished">Type:</translation>
-    </message>
-    <message>
-        <source>Linetype:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Piece:</source>
-        <translation type="unfinished">Piece:</translation>
-    </message>
-    <message>
-        <source>Move row to top of list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move row up one row</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move row down one row</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move row to bottom of list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The path is a cut contour</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cut on fabric</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Staus:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ready!</source>
-        <translation type="unfinished">Ready!</translation>
-    </message>
-    <message>
-        <source>Seam allowance</source>
-        <translation type="unfinished">Seam allowance</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation type="unfinished">Width:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation type="unfinished">Formula wizard</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="unfinished">Value</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="unfinished">Calculation</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Nodes</source>
-        <translation type="unfinished">Nodes</translation>
-    </message>
-    <message>
-        <source>Node:</source>
-        <translation type="unfinished">Node:</translation>
-    </message>
-    <message>
-        <source>Before:</source>
-        <translation type="unfinished">Before:</translation>
-    </message>
-    <message>
-        <source>Return to default width</source>
-        <translation type="unfinished">Return to default width</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation type="unfinished">Default</translation>
-    </message>
-    <message>
-        <source>After:</source>
-        <translation type="unfinished">After:</translation>
-    </message>
-    <message>
-        <source>Angle:</source>
-        <translation type="unfinished">Angle:</translation>
-    </message>
-    <message>
-        <source>Notches</source>
-        <translation type="unfinished">Notches</translation>
-    </message>
-    <message>
-        <source>Notch:</source>
-        <translation type="unfinished">Notch:</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation type="unfinished">Type</translation>
-    </message>
-    <message>
-        <source>Slit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>T Notch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>U Notch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>V Internal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>V External</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Castle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Diamond</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sub Type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Straightforward</source>
-        <translation type="unfinished">Straightforward</translation>
-    </message>
-    <message>
-        <source>Bisector</source>
-        <translation type="unfinished">Bisector</translation>
-    </message>
-    <message>
-        <source>Select to designate the corner point as a notch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection</source>
-        <translation type="unfinished">Intersection</translation>
-    </message>
-    <message>
-        <source>Geomtery</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reset notch angle to default.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Count:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reset notch with to default.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show second notch on seam line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reset notch length to default.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> Width:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Length:</source>
-        <translation type="unfinished">Length:</translation>
-    </message>
-    <message>
-        <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reverse</source>
-        <translation type="unfinished">Reverse</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="unfinished">Delete</translation>
-    </message>
-    <message>
-        <source>Current seam allowance</source>
-        <translation type="unfinished">Current seam allowance</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width</source>
-        <translation type="unfinished">Edit seam allowance width</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width before</source>
-        <translation type="unfinished">Edit seam allowance width before</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width after</source>
-        <translation type="unfinished">Edit seam allowance width after</translation>
-    </message>
-    <message>
-        <source>Internal path</source>
-        <translation type="unfinished">Internal path</translation>
-    </message>
-    <message>
-        <source>Custom seam allowance</source>
-        <translation type="unfinished">Custom seam allowance</translation>
-    </message>
-    <message>
-        <source>You need more points!</source>
-        <translation type="unfinished">You need more points!</translation>
-    </message>
-    <message>
-        <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
-        <translation type="unfinished">First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</translation>
-    </message>
-    <message>
-        <source>You have double points!</source>
-        <translation type="unfinished">You have double points!</translation>
-    </message>
-    <message>
-        <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
-        <translation type="unfinished">Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</translation>
-    </message>
-    <message>
-        <source>List of details is empty!</source>
-        <translation type="unfinished">List of details is empty!</translation>
-    </message>
-    <message>
-        <source>Please, select a detail to insert into!</source>
-        <translation type="unfinished">Please, select a detail to insert into!</translation>
     </message>
 </context>
 <context>
@@ -4964,6 +4696,305 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Insert Nodes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>InternalPathDialog</name>
+    <message>
+        <source>Internal Path Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation type="unfinished">Path</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Name:</translation>
+    </message>
+    <message>
+        <source>Unnamed path</source>
+        <translation type="unfinished">Unnamed path</translation>
+    </message>
+    <message>
+        <source>Create name for your path</source>
+        <translation type="unfinished">Create name for your path</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Type:</translation>
+    </message>
+    <message>
+        <source>Linetype:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation type="unfinished">Piece:</translation>
+    </message>
+    <message>
+        <source>Move row to top of list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move row up one row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move row down one row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move row to bottom of list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The path is a cut contour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut on fabric</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Staus:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ready!</source>
+        <translation type="unfinished">Ready!</translation>
+    </message>
+    <message>
+        <source>Seam allowance</source>
+        <translation type="unfinished">Seam allowance</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Width:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation type="unfinished">Formula wizard</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished">Value</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation type="unfinished">Calculation</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Nodes</source>
+        <translation type="unfinished">Nodes</translation>
+    </message>
+    <message>
+        <source>Node:</source>
+        <translation type="unfinished">Node:</translation>
+    </message>
+    <message>
+        <source>Before:</source>
+        <translation type="unfinished">Before:</translation>
+    </message>
+    <message>
+        <source>Return to default width</source>
+        <translation type="unfinished">Return to default width</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">Default</translation>
+    </message>
+    <message>
+        <source>After:</source>
+        <translation type="unfinished">After:</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation type="unfinished">Angle:</translation>
+    </message>
+    <message>
+        <source>Notches</source>
+        <translation type="unfinished">Notches</translation>
+    </message>
+    <message>
+        <source>Notch:</source>
+        <translation type="unfinished">Notch:</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished">Type</translation>
+    </message>
+    <message>
+        <source>Slit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>T Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>U Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V Internal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V External</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Castle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Diamond</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sub Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Straightforward</source>
+        <translation type="unfinished">Straightforward</translation>
+    </message>
+    <message>
+        <source>Bisector</source>
+        <translation type="unfinished">Bisector</translation>
+    </message>
+    <message>
+        <source>Select to designate the corner point as a notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersection</source>
+        <translation type="unfinished">Intersection</translation>
+    </message>
+    <message>
+        <source>Geomtery</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset notch angle to default.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Count:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset notch with to default.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show second notch on seam line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset notch length to default.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation type="unfinished">Length:</translation>
+    </message>
+    <message>
+        <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reverse</source>
+        <translation type="unfinished">Reverse</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Delete</translation>
+    </message>
+    <message>
+        <source>Current seam allowance</source>
+        <translation type="unfinished">Current seam allowance</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width</source>
+        <translation type="unfinished">Edit seam allowance width</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width before</source>
+        <translation type="unfinished">Edit seam allowance width before</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width after</source>
+        <translation type="unfinished">Edit seam allowance width after</translation>
+    </message>
+    <message>
+        <source>Internal path</source>
+        <translation type="unfinished">Internal path</translation>
+    </message>
+    <message>
+        <source>Custom seam allowance</source>
+        <translation type="unfinished">Custom seam allowance</translation>
+    </message>
+    <message>
+        <source>You need more points!</source>
+        <translation type="unfinished">You need more points!</translation>
+    </message>
+    <message>
+        <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
+        <translation type="unfinished">First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</translation>
+    </message>
+    <message>
+        <source>You have double points!</source>
+        <translation type="unfinished">You have double points!</translation>
+    </message>
+    <message>
+        <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
+        <translation type="unfinished">Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Color:</translation>
+    </message>
+    <message>
+        <source>Extend end point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extend start point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List of pieces is empty!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please, select a piece to insert into!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9968,6 +9999,14 @@ Press enter to temporarily add it to the list.</source>
         <source>Open Image File</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Can not extend internal path &apos;%1&apos; start point to cut line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can not extend internal path &apos;%1&apos; end point to cut line.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -10193,8 +10232,8 @@ Press enter to temporarily add it to the list.</source>
 <context>
     <name>SavePieceOptions</name>
     <message>
-        <source>save detail option</source>
-        <translation>save detail option</translation>
+        <source>save piece options</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13178,6 +13217,10 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Image_name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece path doesn&apos;t contain nodes</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

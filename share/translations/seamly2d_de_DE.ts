@@ -225,6 +225,13 @@
     </message>
 </context>
 <context>
+    <name>AnchorPointTool</name>
+    <message>
+        <source>add anchor point</source>
+        <translation>Ankerpunkt hinzufügen</translation>
+    </message>
+</context>
+<context>
     <name>Application2D</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
@@ -1657,281 +1664,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Name:</source>
         <translation>Bezeichnung:</translation>
-    </message>
-</context>
-<context>
-    <name>InternalPathDialog</name>
-    <message>
-        <source>Internal Path Tool</source>
-        <translation>Werkzeug für internes Verzeichnis</translation>
-    </message>
-    <message>
-        <source>Path</source>
-        <translation>Verzeichnis</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Bezeichnung:</translation>
-    </message>
-    <message>
-        <source>Unnamed path</source>
-        <translation>Unbenannter Pfad</translation>
-    </message>
-    <message>
-        <source>Create name for your path</source>
-        <translation>Bezeichnung für Dein Verzeichnis erstellen</translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation>Typ:</translation>
-    </message>
-    <message>
-        <source>Linetype:</source>
-        <translation>Linientyp:</translation>
-    </message>
-    <message>
-        <source>Piece:</source>
-        <translation>Teil:</translation>
-    </message>
-    <message>
-        <source>Move row to top of list</source>
-        <translation>Reihe an den Anfang der Liste verschieben</translation>
-    </message>
-    <message>
-        <source>Move row up one row</source>
-        <translation>Reihe eine Reihe nach oben verschieben</translation>
-    </message>
-    <message>
-        <source>Move row down one row</source>
-        <translation>Reihe eine Reihe nach unten verschieben</translation>
-    </message>
-    <message>
-        <source>Move row to bottom of list</source>
-        <translation>Reihe an das Ende der Liste verschieben</translation>
-    </message>
-    <message>
-        <source>The path is a cut contour</source>
-        <translation>Der Pfad ist eine Schnittlinie</translation>
-    </message>
-    <message>
-        <source>Cut on fabric</source>
-        <translation>Auf dem Zuschnitt anzeigen</translation>
-    </message>
-    <message>
-        <source>Staus:</source>
-        <translation>Status:</translation>
-    </message>
-    <message>
-        <source>Ready!</source>
-        <translation>Fertig!</translation>
-    </message>
-    <message>
-        <source>Seam allowance</source>
-        <translation>Nahtzugabe</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation>Breite:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Formelassistent</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Wert</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Berechnung</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Nodes</source>
-        <translation>Knoten</translation>
-    </message>
-    <message>
-        <source>Node:</source>
-        <translation>Knoten:</translation>
-    </message>
-    <message>
-        <source>Before:</source>
-        <translation>Vorher:</translation>
-    </message>
-    <message>
-        <source>Return to default width</source>
-        <translation>Zur Standardweite zurück</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation>Standard</translation>
-    </message>
-    <message>
-        <source>After:</source>
-        <translation>Nachher:</translation>
-    </message>
-    <message>
-        <source>Angle:</source>
-        <translation>Winkel:</translation>
-    </message>
-    <message>
-        <source>Notches</source>
-        <translation>Markierungen</translation>
-    </message>
-    <message>
-        <source>Notch:</source>
-        <translation>Markierung:</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Typ</translation>
-    </message>
-    <message>
-        <source>Slit</source>
-        <translation>Schlitz</translation>
-    </message>
-    <message>
-        <source>T Notch</source>
-        <translation>T Markierung</translation>
-    </message>
-    <message>
-        <source>U Notch</source>
-        <translation>U Markierung</translation>
-    </message>
-    <message>
-        <source>V Internal</source>
-        <translation>V innen</translation>
-    </message>
-    <message>
-        <source>V External</source>
-        <translation>V aussen</translation>
-    </message>
-    <message>
-        <source>Castle</source>
-        <translation>Burg</translation>
-    </message>
-    <message>
-        <source>Diamond</source>
-        <translation>Diamant</translation>
-    </message>
-    <message>
-        <source>Sub Type</source>
-        <translation>Unterart</translation>
-    </message>
-    <message>
-        <source>Straightforward</source>
-        <translation>Geradeaus</translation>
-    </message>
-    <message>
-        <source>Bisector</source>
-        <translation>Halbierende</translation>
-    </message>
-    <message>
-        <source>Select to designate the corner point as a notch</source>
-        <translation>Auswählen, um den Eckpunkt als Markierung festzulegen</translation>
-    </message>
-    <message>
-        <source>Intersection</source>
-        <translation>Schnittpunkt</translation>
-    </message>
-    <message>
-        <source>Geomtery</source>
-        <translation>Geometrie</translation>
-    </message>
-    <message>
-        <source>Reset notch angle to default.</source>
-        <translation>Markierungswinkel auf Standard zurücksetzen.</translation>
-    </message>
-    <message>
-        <source>Count:</source>
-        <translation>Zählen:</translation>
-    </message>
-    <message>
-        <source>Reset notch with to default.</source>
-        <translation>Markierung auf Standard zurücksetzen.</translation>
-    </message>
-    <message>
-        <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
-        <translation>Diese Option hat nur dann eine Auswirkung wenn die zweite Markierung auf der Nahtlinie in der allgemeinen Einstellung aktiviert ist. Die Option hilft die zweite Markierung nur für diese Markierung zu deaktivieren.</translation>
-    </message>
-    <message>
-        <source>Show second notch on seam line</source>
-        <translation>Zweite Markierung auf der Nahtlinie anzeigen</translation>
-    </message>
-    <message>
-        <source>Reset notch length to default.</source>
-        <translation>Länge der Markierung auf Standard zurücksetzen.</translation>
-    </message>
-    <message>
-        <source> Width:</source>
-        <translation> Breite:</translation>
-    </message>
-    <message>
-        <source>Length:</source>
-        <translation>Länge:</translation>
-    </message>
-    <message>
-        <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
-        <translation>Hauptpfad Objekte auswählen, Mit &lt;b&gt;SHIFT&lt;/b&gt; die Kurvenrichtung umkehren, mit &lt;b&gt;ENTER&lt;/b&gt; Pfaderstellung abschliessen </translation>
-    </message>
-    <message>
-        <source>Reverse</source>
-        <translation>Umkehren</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Löschen</translation>
-    </message>
-    <message>
-        <source>Current seam allowance</source>
-        <translation>Aktuelle Nahtzugabe</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width</source>
-        <translation>Nahtzugabenbreite bearbeiten</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width before</source>
-        <translation>Nahtzugabenbreite vorher bearbeiten</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width after</source>
-        <translation>Nahtzugabenbreite nachher bearbeiten</translation>
-    </message>
-    <message>
-        <source>Internal path</source>
-        <translation>Internes Verzeichnis</translation>
-    </message>
-    <message>
-        <source>Custom seam allowance</source>
-        <translation>Individuelle Nahtzugabe</translation>
-    </message>
-    <message>
-        <source>You need more points!</source>
-        <translation>Du brauchst mehr Punkte!</translation>
-    </message>
-    <message>
-        <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
-        <translation>Startpunkt der&lt;b&gt;individuellen Nahtzugabe/b&gt; kann nicht gleichzeitig der Endpunkt sein!</translation>
-    </message>
-    <message>
-        <source>You have double points!</source>
-        <translation>Du hast doppelte Punkte!</translation>
-    </message>
-    <message>
-        <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
-        <translation>Jeder Punkt des &lt;b&gt;individuelle Nahtzugaben&lt;/b&gt; Verzeichnis muss eindeutig sein!</translation>
-    </message>
-    <message>
-        <source>List of details is empty!</source>
-        <translation>Die Detailliste ist leer!</translation>
-    </message>
-    <message>
-        <source>Please, select a detail to insert into!</source>
-        <translation>Bitte ein Detail zum Einfügen in die Liste auswählen!</translation>
     </message>
 </context>
 <context>
@@ -4970,6 +4702,305 @@ Möchten Sie sie herunterladen?</translation>
     <message>
         <source>Insert Nodes</source>
         <translation>Knoten einfügen</translation>
+    </message>
+</context>
+<context>
+    <name>InternalPathDialog</name>
+    <message>
+        <source>Internal Path Tool</source>
+        <translation>Werkzeug für internes Verzeichnis</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>Verzeichnis</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Bezeichnung:</translation>
+    </message>
+    <message>
+        <source>Unnamed path</source>
+        <translation>Unbenannter Pfad</translation>
+    </message>
+    <message>
+        <source>Create name for your path</source>
+        <translation>Bezeichnung für Dein Verzeichnis erstellen</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>Typ:</translation>
+    </message>
+    <message>
+        <source>Linetype:</source>
+        <translation>Linientyp:</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Teil:</translation>
+    </message>
+    <message>
+        <source>Move row to top of list</source>
+        <translation>Reihe an den Anfang der Liste verschieben</translation>
+    </message>
+    <message>
+        <source>Move row up one row</source>
+        <translation>Reihe eine Reihe nach oben verschieben</translation>
+    </message>
+    <message>
+        <source>Move row down one row</source>
+        <translation>Reihe eine Reihe nach unten verschieben</translation>
+    </message>
+    <message>
+        <source>Move row to bottom of list</source>
+        <translation>Reihe an das Ende der Liste verschieben</translation>
+    </message>
+    <message>
+        <source>The path is a cut contour</source>
+        <translation>Der Pfad ist eine Schnittlinie</translation>
+    </message>
+    <message>
+        <source>Cut on fabric</source>
+        <translation>Auf dem Zuschnitt anzeigen</translation>
+    </message>
+    <message>
+        <source>Staus:</source>
+        <translation>Status:</translation>
+    </message>
+    <message>
+        <source>Ready!</source>
+        <translation>Fertig!</translation>
+    </message>
+    <message>
+        <source>Seam allowance</source>
+        <translation>Nahtzugabe</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Breite:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Formelassistent</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wert</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Berechnung</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Nodes</source>
+        <translation>Knoten</translation>
+    </message>
+    <message>
+        <source>Node:</source>
+        <translation>Knoten:</translation>
+    </message>
+    <message>
+        <source>Before:</source>
+        <translation>Vorher:</translation>
+    </message>
+    <message>
+        <source>Return to default width</source>
+        <translation>Zur Standardweite zurück</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>After:</source>
+        <translation>Nachher:</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Winkel:</translation>
+    </message>
+    <message>
+        <source>Notches</source>
+        <translation>Markierungen</translation>
+    </message>
+    <message>
+        <source>Notch:</source>
+        <translation>Markierung:</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Slit</source>
+        <translation>Schlitz</translation>
+    </message>
+    <message>
+        <source>T Notch</source>
+        <translation>T Markierung</translation>
+    </message>
+    <message>
+        <source>U Notch</source>
+        <translation>U Markierung</translation>
+    </message>
+    <message>
+        <source>V Internal</source>
+        <translation>V innen</translation>
+    </message>
+    <message>
+        <source>V External</source>
+        <translation>V aussen</translation>
+    </message>
+    <message>
+        <source>Castle</source>
+        <translation>Burg</translation>
+    </message>
+    <message>
+        <source>Diamond</source>
+        <translation>Diamant</translation>
+    </message>
+    <message>
+        <source>Sub Type</source>
+        <translation>Unterart</translation>
+    </message>
+    <message>
+        <source>Straightforward</source>
+        <translation>Geradeaus</translation>
+    </message>
+    <message>
+        <source>Bisector</source>
+        <translation>Halbierende</translation>
+    </message>
+    <message>
+        <source>Select to designate the corner point as a notch</source>
+        <translation>Auswählen, um den Eckpunkt als Markierung festzulegen</translation>
+    </message>
+    <message>
+        <source>Intersection</source>
+        <translation>Schnittpunkt</translation>
+    </message>
+    <message>
+        <source>Geomtery</source>
+        <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Reset notch angle to default.</source>
+        <translation>Markierungswinkel auf Standard zurücksetzen.</translation>
+    </message>
+    <message>
+        <source>Count:</source>
+        <translation>Zählen:</translation>
+    </message>
+    <message>
+        <source>Reset notch with to default.</source>
+        <translation>Markierung auf Standard zurücksetzen.</translation>
+    </message>
+    <message>
+        <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
+        <translation>Diese Option hat nur dann eine Auswirkung wenn die zweite Markierung auf der Nahtlinie in der allgemeinen Einstellung aktiviert ist. Die Option hilft die zweite Markierung nur für diese Markierung zu deaktivieren.</translation>
+    </message>
+    <message>
+        <source>Show second notch on seam line</source>
+        <translation>Zweite Markierung auf der Nahtlinie anzeigen</translation>
+    </message>
+    <message>
+        <source>Reset notch length to default.</source>
+        <translation>Länge der Markierung auf Standard zurücksetzen.</translation>
+    </message>
+    <message>
+        <source> Width:</source>
+        <translation> Breite:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Länge:</translation>
+    </message>
+    <message>
+        <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
+        <translation>Hauptpfad Objekte auswählen, Mit &lt;b&gt;SHIFT&lt;/b&gt; die Kurvenrichtung umkehren, mit &lt;b&gt;ENTER&lt;/b&gt; Pfaderstellung abschliessen </translation>
+    </message>
+    <message>
+        <source>Reverse</source>
+        <translation>Umkehren</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Löschen</translation>
+    </message>
+    <message>
+        <source>Current seam allowance</source>
+        <translation>Aktuelle Nahtzugabe</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width</source>
+        <translation>Nahtzugabenbreite bearbeiten</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width before</source>
+        <translation>Nahtzugabenbreite vorher bearbeiten</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width after</source>
+        <translation>Nahtzugabenbreite nachher bearbeiten</translation>
+    </message>
+    <message>
+        <source>Internal path</source>
+        <translation>Internes Verzeichnis</translation>
+    </message>
+    <message>
+        <source>Custom seam allowance</source>
+        <translation>Individuelle Nahtzugabe</translation>
+    </message>
+    <message>
+        <source>You need more points!</source>
+        <translation>Du brauchst mehr Punkte!</translation>
+    </message>
+    <message>
+        <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
+        <translation>Startpunkt der&lt;b&gt;individuellen Nahtzugabe/b&gt; kann nicht gleichzeitig der Endpunkt sein!</translation>
+    </message>
+    <message>
+        <source>You have double points!</source>
+        <translation>Du hast doppelte Punkte!</translation>
+    </message>
+    <message>
+        <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
+        <translation>Jeder Punkt des &lt;b&gt;individuelle Nahtzugaben&lt;/b&gt; Verzeichnis muss eindeutig sein!</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Auswahl</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Eigenschaften</translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation>Linienstärke:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Farbe:</translation>
+    </message>
+    <message>
+        <source>Extend end point</source>
+        <translation>Endpunkt verlängern</translation>
+    </message>
+    <message>
+        <source>Extend start point</source>
+        <translation>Startpunkt verlängern</translation>
+    </message>
+    <message>
+        <source>List of pieces is empty!</source>
+        <translation>Die Stückliste ist leer!</translation>
+    </message>
+    <message>
+        <source>Please, select a piece to insert into!</source>
+        <translation>Bitte wählen Sie ein Stück zum Einsetzen!</translation>
     </message>
 </context>
 <context>
@@ -9985,6 +10016,14 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Open Image File</source>
         <translation>Bilddatei öffnen</translation>
     </message>
+    <message>
+        <source>Can not extend internal path &apos;%1&apos; start point to cut line.</source>
+        <translation>Kann den internen Pfad &apos;%1&apos; Startpunkt nicht bis zur Schnittlinie verlängern.</translation>
+    </message>
+    <message>
+        <source>Can not extend internal path &apos;%1&apos; end point to cut line.</source>
+        <translation>Interner Pfad &apos;%1&apos; Endpunkt kann nicht bis zur Schnittlinie verlängert werden.</translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -10210,8 +10249,8 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
 <context>
     <name>SavePieceOptions</name>
     <message>
-        <source>save detail option</source>
-        <translation>Detailoption Speichern</translation>
+        <source>save piece options</source>
+        <translation>Stückoptionen speichern</translation>
     </message>
 </context>
 <context>
@@ -13203,6 +13242,10 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Image_name</source>
         <translation>Bild_name</translation>
+    </message>
+    <message>
+        <source>Piece path doesn&apos;t contain nodes</source>
+        <translation>Der Stückpfad enthält keine Knoten</translation>
     </message>
 </context>
 <context>

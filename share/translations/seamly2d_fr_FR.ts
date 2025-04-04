@@ -225,6 +225,13 @@
     </message>
 </context>
 <context>
+    <name>AnchorPointTool</name>
+    <message>
+        <source>add anchor point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Application2D</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
@@ -1655,281 +1662,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>InternalPathDialog</name>
-    <message>
-        <source>Internal Path Tool</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Path</source>
-        <translation>Chemin</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unnamed path</source>
-        <translation>Chemin sans nom</translation>
-    </message>
-    <message>
-        <source>Create name for your path</source>
-        <translation>Créer un nom pour votre chemin</translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation>Type:</translation>
-    </message>
-    <message>
-        <source>Linetype:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Piece:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move row to top of list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move row up one row</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move row down one row</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move row to bottom of list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The path is a cut contour</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cut on fabric</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Staus:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ready!</source>
-        <translation>Prêt!</translation>
-    </message>
-    <message>
-        <source>Seam allowance</source>
-        <translation>Marge de couture</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation>Largeur :</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Assistant Formule</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Valeur</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Calcul</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nodes</source>
-        <translation>Nœuds</translation>
-    </message>
-    <message>
-        <source>Node:</source>
-        <translation>Nœud:</translation>
-    </message>
-    <message>
-        <source>Before:</source>
-        <translation>Avant:</translation>
-    </message>
-    <message>
-        <source>Return to default width</source>
-        <translation>Retourner à la largeur par défaut</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>After:</source>
-        <translation>Après:</translation>
-    </message>
-    <message>
-        <source>Angle:</source>
-        <translation>Angle:</translation>
-    </message>
-    <message>
-        <source>Notches</source>
-        <translation>Repères de montage</translation>
-    </message>
-    <message>
-        <source>Notch:</source>
-        <translation>Repère de montage :</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Type</translation>
-    </message>
-    <message>
-        <source>Slit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>T Notch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>U Notch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>V Internal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>V External</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Castle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Diamond</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sub Type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Straightforward</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bisector</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select to designate the corner point as a notch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Geomtery</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reset notch angle to default.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Count:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reset notch with to default.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show second notch on seam line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reset notch length to default.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> Width:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Length:</source>
-        <translation>Longueur:</translation>
-    </message>
-    <message>
-        <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reverse</source>
-        <translation>Inverser</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Supprimer</translation>
-    </message>
-    <message>
-        <source>Current seam allowance</source>
-        <translation>Marge de couture actuelle</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width</source>
-        <translation>Editer la largeur de la marge de couture</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width before</source>
-        <translation>Editer la largeur de la marge de couture avant</translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width after</source>
-        <translation>Editer la largeur de la marge de couture après</translation>
-    </message>
-    <message>
-        <source>Internal path</source>
-        <translation>Chemin interne</translation>
-    </message>
-    <message>
-        <source>Custom seam allowance</source>
-        <translation>Personnaliser la marge de couture</translation>
-    </message>
-    <message>
-        <source>You need more points!</source>
-        <translation>Vous avez besoin de plus de points!</translation>
-    </message>
-    <message>
-        <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
-        <translation>Le premier point de la &lt;b&gt;marge de couture personnalisée&lt;/b&gt; ne peut être identique au dernier!</translation>
-    </message>
-    <message>
-        <source>You have double points!</source>
-        <translation>Vous avez des points en double!</translation>
-    </message>
-    <message>
-        <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>List of details is empty!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please, select a detail to insert into!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4964,6 +4696,305 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Insert Nodes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>InternalPathDialog</name>
+    <message>
+        <source>Internal Path Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>Chemin</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unnamed path</source>
+        <translation>Chemin sans nom</translation>
+    </message>
+    <message>
+        <source>Create name for your path</source>
+        <translation>Créer un nom pour votre chemin</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>Type:</translation>
+    </message>
+    <message>
+        <source>Linetype:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move row to top of list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move row up one row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move row down one row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move row to bottom of list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The path is a cut contour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut on fabric</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Staus:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ready!</source>
+        <translation>Prêt!</translation>
+    </message>
+    <message>
+        <source>Seam allowance</source>
+        <translation>Marge de couture</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Largeur :</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Assistant Formule</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valeur</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Calcul</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nodes</source>
+        <translation>Nœuds</translation>
+    </message>
+    <message>
+        <source>Node:</source>
+        <translation>Nœud:</translation>
+    </message>
+    <message>
+        <source>Before:</source>
+        <translation>Avant:</translation>
+    </message>
+    <message>
+        <source>Return to default width</source>
+        <translation>Retourner à la largeur par défaut</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>After:</source>
+        <translation>Après:</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Angle:</translation>
+    </message>
+    <message>
+        <source>Notches</source>
+        <translation>Repères de montage</translation>
+    </message>
+    <message>
+        <source>Notch:</source>
+        <translation>Repère de montage :</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>Slit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>T Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>U Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V Internal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V External</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Castle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Diamond</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sub Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Straightforward</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bisector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select to designate the corner point as a notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geomtery</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset notch angle to default.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Count:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset notch with to default.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show second notch on seam line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset notch length to default.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Longueur:</translation>
+    </message>
+    <message>
+        <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reverse</source>
+        <translation>Inverser</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Supprimer</translation>
+    </message>
+    <message>
+        <source>Current seam allowance</source>
+        <translation>Marge de couture actuelle</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width</source>
+        <translation>Editer la largeur de la marge de couture</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width before</source>
+        <translation>Editer la largeur de la marge de couture avant</translation>
+    </message>
+    <message>
+        <source>Edit seam allowance width after</source>
+        <translation>Editer la largeur de la marge de couture après</translation>
+    </message>
+    <message>
+        <source>Internal path</source>
+        <translation>Chemin interne</translation>
+    </message>
+    <message>
+        <source>Custom seam allowance</source>
+        <translation>Personnaliser la marge de couture</translation>
+    </message>
+    <message>
+        <source>You need more points!</source>
+        <translation>Vous avez besoin de plus de points!</translation>
+    </message>
+    <message>
+        <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
+        <translation>Le premier point de la &lt;b&gt;marge de couture personnalisée&lt;/b&gt; ne peut être identique au dernier!</translation>
+    </message>
+    <message>
+        <source>You have double points!</source>
+        <translation>Vous avez des points en double!</translation>
+    </message>
+    <message>
+        <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extend end point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extend start point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List of pieces is empty!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please, select a piece to insert into!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9968,6 +9999,14 @@ Press enter to temporarily add it to the list.</source>
         <source>Open Image File</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Can not extend internal path &apos;%1&apos; start point to cut line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can not extend internal path &apos;%1&apos; end point to cut line.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -10193,8 +10232,8 @@ Press enter to temporarily add it to the list.</source>
 <context>
     <name>SavePieceOptions</name>
     <message>
-        <source>save detail option</source>
-        <translation type="unfinished">sauvegarder les options de la pièce de patron</translation>
+        <source>save piece options</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13177,6 +13216,10 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Image_name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece path doesn&apos;t contain nodes</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
