@@ -89,7 +89,7 @@ QT_WARNING_POP
 
 Q_DECL_CONSTEXPR auto DAYS_TO_KEEP_LOGS = 3;
 
-//# --------------------
+//  --------------------
 inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
     // Why on earth didn't Qt want to make failed signal/slot connections qWarning?
@@ -260,11 +260,11 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     }
 }
 
-//# --------------------
+//  --------------------
 
 #define DefWidth 1.2//mm
 
-//# --------------------
+//  --------------------
 // @brief Application2D constructor.
 // @param argc number arguments.
 // @param argv command line.
@@ -291,7 +291,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     undoStack = new QUndoStack(this);
 }
 
-//# --------------------
+//  --------------------
 Application2D::~Application2D()
 {
     qCDebug(vApp, "Application closing.");
@@ -300,7 +300,7 @@ Application2D::~Application2D()
     VCommandLine::Reset();
 }
 
-//# --------------------
+//  --------------------
 // @brief startNewSeamly2D start Seamly2D in new process, send path to pattern file in argument.
 // @param fileName path to pattern file.
 void Application2D::startNewSeamly2D(const QString &fileName)
@@ -336,7 +336,7 @@ void Application2D::startNewSeamly2D(const QString &fileName)
     }
 }
 
-//# --------------------
+//  --------------------
 // @brief notify Reimplemented from QApplication::notify().
 // @param receiver receiver.
 // @param event event.
@@ -407,7 +407,7 @@ bool Application2D::notify(QObject *receiver, QEvent *event)
     return false;
 }
 
-//# --------------------
+//  --------------------
 QString Application2D::seamlyMeFilePath() const
 {
     const QString seamlyme = QStringLiteral("seamlyme");
@@ -460,7 +460,7 @@ QString Application2D::seamlyMeFilePath() const
 #endif
 }
 
-//# --------------------
+//  --------------------
 QString Application2D::logDirPath() const
 {
 #if defined(Q_OS_WIN) || defined(Q_OS_OSX)
@@ -474,13 +474,13 @@ QString Application2D::logDirPath() const
     return logDirPath;
 }
 
-//# --------------------
+//  --------------------
 QString Application2D::logPath() const
 {
     return QString("%1/seamly2d-pid%2.log").arg(logDirPath()).arg(applicationPid());
 }
 
-//# --------------------
+//  --------------------
 bool Application2D::createLogDir() const
 {
     QDir logDir(logDirPath());
@@ -491,7 +491,7 @@ bool Application2D::createLogDir() const
     return true;
 }
 
-//# --------------------
+//  --------------------
 void Application2D::beginLogging()
 {
     VlpCreateLock(m_lockLog, logPath(), [this](){return new QFile(logPath());});
@@ -516,7 +516,7 @@ void Application2D::beginLogging()
     }
 }
 
-//# --------------------
+//  --------------------
 void Application2D::clearOldLogs() const
 {
     QDir logsDir(logDirPath());
@@ -558,7 +558,7 @@ void Application2D::clearOldLogs() const
     }
 }
 
-//# --------------------
+//  --------------------
 void Application2D::initOptions()
 {
     // Run creation log after sending crash report
@@ -597,7 +597,7 @@ void Application2D::initOptions()
     QDir().mkpath(settings->getDefaultBackupFilePath());
 }
 
-//# --------------------
+//  --------------------
 QStringList Application2D::pointNameLanguages()
 {
     QStringList list = QStringList()  <<  "de" // German
@@ -611,7 +611,7 @@ QStringList Application2D::pointNameLanguages()
     return list;
 }
 
-//# --------------------
+//  --------------------
 void Application2D::startLogging()
 {
     if (createLogDir())
@@ -621,19 +621,19 @@ void Application2D::startLogging()
     }
 }
 
-//# --------------------
+//  --------------------
 QTextStream *Application2D::logFile()
 {
     return m_out.get();
 }
 
-//# --------------------
+//  --------------------
 const VTranslateVars *Application2D::translateVariables()
 {
     return m_trVars;
 }
 
-//# --------------------
+//  --------------------
 void Application2D::initTranslateVariables()
 {
     if (m_trVars == nullptr)
@@ -642,7 +642,7 @@ void Application2D::initTranslateVariables()
     }
 }
 
-//# --------------------
+//  --------------------
 bool Application2D::event(QEvent *event)
 {
     switch(event->type())
@@ -680,7 +680,7 @@ bool Application2D::event(QEvent *event)
     return VAbstractApplication::event(event);
 }
 
-//# --------------------
+//  --------------------
 // @brief openSettings get access to application settings.
 // Because we can create object in constructor we open file separately.
 void Application2D::openSettings()
@@ -689,14 +689,14 @@ void Application2D::openSettings()
                              QCoreApplication::applicationName(), this);
 }
 
-//# --------------------
+//  --------------------
 VSettings *Application2D::Seamly2DSettings()
 {
     SCASSERT(settings != nullptr)
     return qobject_cast<VSettings *>(settings);
 }
 
-//# --------------------
+//  --------------------
 bool Application2D::isGUIMode()
 {
     return (VCommandLine::instance != nullptr) && VCommandLine::instance->IsGuiEnabled();
@@ -708,9 +708,9 @@ bool Application2D::isAppInGUIMode() const
     return isGUIMode();
 }
 
-//# --------------------
+//  --------------------
 const VCommandLinePtr Application2D::commandLine() const
 {
     return VCommandLine::instance;
 }
-//# --------------------
+//  --------------------

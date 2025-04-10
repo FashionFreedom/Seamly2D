@@ -1,4 +1,4 @@
-/************************************************************************
+/**********************************************************************
  **
  **  @file   vcmdexport.cpp
  **  @author Alex Zaharov <alexzkhr@gmail.com>
@@ -43,8 +43,8 @@ VCommandLinePtr VCommandLine::instance = nullptr;
 
 #define translate(context, source) QCoreApplication::translate((context), (source))
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Constructor for the VCommandLine class.
  *
  * Initializes the command-line parser with application description, standard help/version
@@ -77,8 +77,8 @@ VCommandLine::VCommandLine() : parser(), optionsUsed(), optionsIndex(), isGuiEna
     }
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Converts a layout unit value from string to pixels.
  *
  * This function takes a layout value provided as a string (e.g., "25.4") and
@@ -94,8 +94,8 @@ qreal VCommandLine::Lo2Px(const QString &src, const LayoutSettingsDialog &conver
     return converter.LayoutToPixels(src.toDouble());
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Converts a page unit value from string to pixels.
  *
  * This function accepts a page size value as string (e.g., "210" for mm)
@@ -111,8 +111,8 @@ qreal VCommandLine::Pg2Px(const QString& src, const LayoutSettingsDialog& conver
     return converter.PageToPixels(src.toDouble());
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Initializes the list of command-line options and their index.
  *
  * This method defines all supported CLI options for Seamly2D's export and automation features.
@@ -213,8 +213,8 @@ void VCommandLine::initOptions(VCommandLineOptions &options, QMap<QString, int> 
 }
 
 
-//------------------------------------------------------------------------------------------------------
-/**
+//  --------------------
+/*
  * @brief Constructs a default layout generator based on command-line options.
  *
  * This function reads CLI options and populates a VLayoutGenerator via a LayoutSettingsDialog,
@@ -413,8 +413,8 @@ VLayoutGeneratorPtr VCommandLine::DefaultGenerator() const
 }
 
 
-//------------------------------------------------------------------------------------------------------
-/**
+//  --------------------
+/*
  * @brief Retrieves the singleton instance of VCommandLine and processes CLI arguments.
  *
  * If no instance exists, a new one is created. It then processes the arguments provided
@@ -437,8 +437,8 @@ VCommandLinePtr VCommandLine::Get(const QCoreApplication& app)
     return instance;
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Destructor for VCommandLine.
  *
  * Cleans up dynamically allocated QCommandLineOption instances stored in optionsUsed,
@@ -450,8 +450,8 @@ VCommandLine::~VCommandLine()
     optionsUsed.clear(); ///< Clear the list to reset state
 }
 
-//------------------------------------------------------------------------------------------------------
-/**
+//  --------------------
+/*
  * @brief Resets the singleton instance of VCommandLine.
  *
  * This clears the current static instance, allowing a fresh one to be created next time Get() is called.
@@ -462,8 +462,8 @@ void VCommandLine::Reset()
     instance.reset(); // Delete and reset the static singleton instance
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Checks whether the application is running in test mode.
  *
  * Determines if the `--test` command-line option is set. If it is, the function
@@ -486,8 +486,8 @@ bool VCommandLine::IsTestModeEnabled() const
     return r;
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Checks whether high DPI scaling is disabled.
  *
  * Determines if the --no-hdpi-scaling option is set via the command-line.
@@ -499,8 +499,8 @@ bool VCommandLine::IsNoScalingEnabled() const
     return parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_NO_HDPI_SCALING)));
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Checks whether the export mode is enabled.
  *
  * This function determines if the --basename option is set, indicating export mode.
@@ -519,8 +519,8 @@ bool VCommandLine::IsExportEnabled() const
     return r;
 }
 
-//------------------------------------------------------------------------------------------------------
-/**
+//  --------------------
+/*
  * @brief Retrieves the selected paper size template.
  *
  * If the --pagetemplate option is provided, its integer value is parsed and cast
@@ -538,8 +538,8 @@ PaperSizeFormat VCommandLine::OptPaperSize() const
     return static_cast<PaperSizeFormat>(ppsize);
 }
 
-//------------------------------------------------------------------------------------------------------
-/**
+//  --------------------
+/*
  * @brief Retrieves the layout rotation value from command-line options.
  *
  * Checks if the --rotate option is set. If so, parses the value and verifies it's a valid integer.
@@ -564,8 +564,8 @@ int VCommandLine::OptRotation() const
     return rotate;
 }
 
-//------------------------------------------------------------------------------------------------------
-/**
+//  --------------------
+/*
  * @brief Retrieves the selected layout grouping type.
  *
  * Parses the --groupping option value as an integer and maps it to a Cases enum value.
@@ -583,8 +583,8 @@ Cases VCommandLine::OptGroup() const
     return static_cast<Cases>(r);
 }
 
-//------------------------------------------------------------------------------------------------------
-/**
+//  --------------------
+/*
  * @brief Retrieves the path to the measurement file if applicable.
  *
  * Only returns the measurement file path if the --measurefile option is set
@@ -605,8 +605,8 @@ QString VCommandLine::OptMeasurePath() const
     return measure;
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Retrieves the base name for exported files.
  *
  * Only returns the value if the application is in export mode.
@@ -624,8 +624,8 @@ QString VCommandLine::OptBaseName() const
     return path;
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Retrieves the destination path for export output.
  *
  * Only returns the path if export mode is enabled.
@@ -642,8 +642,8 @@ QString VCommandLine::OptBaseName() const
      return path;
  }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Retrieves the selected export format type.
  *
  * Parses the --exp2format option if set, returning its integer value.
@@ -660,8 +660,8 @@ int VCommandLine::OptExportType() const
     return r;
 }
 
-//# --------------------
- /**
+//  --------------------
+ /*
   * @brief Checks whether DXF export should be in binary format.
   *
   * @return Non-zero if binary DXF mode is enabled, otherwise 0.
@@ -671,8 +671,8 @@ int VCommandLine::IsBinaryDXF() const
     return parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_BINARYDXF)));
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Checks whether text should be exported as paths.
  *
  * @return Non-zero if text-as-paths mode is enabled, otherwise 0.
@@ -682,8 +682,8 @@ int VCommandLine::isTextAsPaths() const
     return parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_TEXT2PATHS)));
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Checks whether only pieces/details should be exported.
  *
  * @return Non-zero if only details export is enabled, otherwise 0.
@@ -693,8 +693,8 @@ int VCommandLine::exportOnlyPieces() const
     return parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_EXPORTONLYDETAILS)));
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Retrieves the list of input filenames passed as positional arguments.
  *
  * @return QStringList of input file names.
@@ -704,8 +704,8 @@ QStringList VCommandLine::OptInputFileNames() const
     return parser.positionalArguments();
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Checks whether the GUI should be enabled based on current CLI mode.
  *
  * @return true if GUI mode is enabled; otherwise false.
@@ -715,8 +715,8 @@ bool VCommandLine::IsGuiEnabled() const
     return isGuiEnabled;
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Checks if a specific gradation size is set via the CLI.
  *
  * @return true if --gradationsize option is set; otherwise false.
@@ -726,8 +726,8 @@ bool VCommandLine::IsSetGradationSize() const
     return parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_GRADATIONSIZE)));
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Checks if a specific gradation height is set via the CLI.
  *
  * @return true if --gradationheight option is set; otherwise false.
@@ -737,8 +737,8 @@ bool VCommandLine::IsSetGradationHeight() const
     return parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_GRADATIONHEIGHT)));
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Retrieves the gradation size value from the command-line.
  *
  * This function fetches the value of the --gradationsize option and validates it
@@ -761,8 +761,8 @@ QString VCommandLine::OptGradationSize() const
     }
 }
 
-//# --------------------
-/**
+//  --------------------
+/*
  * @brief Retrieves the gradation height value from the command-line.
  *
  * This function fetches the value of the --gradationheight option and validates it
