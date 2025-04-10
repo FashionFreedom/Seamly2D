@@ -24,7 +24,7 @@ Don't know how? Join our multi-lingual Discourse [forum](https://forum.seamly.io
 
 | Windows 64-bit | Windows 32-bit | MacOS | Linux AppImage | Linux Flatpak |
 | :---:          | :---:          | :---: | :---:          | :---:         |
-| [![Seamly2D-windows.zip](../.github/img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [![Seamly2D-win32.zip](./img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-win32.zip) | [![Seamly2D-macos.zip](./img/macos-60px-73px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [![Seamly2D AppImage](./img/linux-svgrepo-com-60x71.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-x86_64.AppImage) | [![Seamly2D Flatpak](./img/flathub-badge-en.png)](https://flathub.org/apps/io.seamly.seamly2d) |
+| [![Seamly2D-windows.zip](./img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [![Seamly2D-win32.zip](./img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-win32.zip) | [![Seamly2D-macos.zip](./img/macos-60px-73px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [![Seamly2D AppImage](./img/linux-svgrepo-com-60x71.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-x86_64.AppImage) | [![Seamly2D Flatpak](./img/flathub-badge-en.png)](https://flathub.org/apps/io.seamly.seamly2d) |
 
 ___________________________________________________
 ## Seamly2D Community Resources:
