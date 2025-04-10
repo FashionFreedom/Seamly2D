@@ -43,7 +43,7 @@ VCommandLinePtr VCommandLine::instance = nullptr;
 
 #define translate(context, source) QCoreApplication::translate((context), (source))
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Constructor for the VCommandLine class.
  *
@@ -77,7 +77,7 @@ VCommandLine::VCommandLine() : parser(), optionsUsed(), optionsIndex(), isGuiEna
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Converts a layout unit value from string to pixels.
  *
@@ -94,7 +94,7 @@ qreal VCommandLine::Lo2Px(const QString &src, const LayoutSettingsDialog &conver
     return converter.LayoutToPixels(src.toDouble());
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Converts a page unit value from string to pixels.
  *
@@ -111,7 +111,7 @@ qreal VCommandLine::Pg2Px(const QString& src, const LayoutSettingsDialog& conver
     return converter.PageToPixels(src.toDouble());
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Initializes the list of command-line options and their index.
  *
@@ -437,7 +437,7 @@ VCommandLinePtr VCommandLine::Get(const QCoreApplication& app)
     return instance;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Destructor for VCommandLine.
  *
@@ -462,7 +462,7 @@ void VCommandLine::Reset()
     instance.reset(); // Delete and reset the static singleton instance
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Checks whether the application is running in test mode.
  *
@@ -486,7 +486,7 @@ bool VCommandLine::IsTestModeEnabled() const
     return r;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Checks whether high DPI scaling is disabled.
  *
@@ -499,7 +499,7 @@ bool VCommandLine::IsNoScalingEnabled() const
     return parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_NO_HDPI_SCALING)));
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Checks whether the export mode is enabled.
  *
@@ -605,7 +605,7 @@ QString VCommandLine::OptMeasurePath() const
     return measure;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Retrieves the base name for exported files.
  *
@@ -624,7 +624,7 @@ QString VCommandLine::OptBaseName() const
     return path;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Retrieves the destination path for export output.
  *
@@ -642,7 +642,7 @@ QString VCommandLine::OptBaseName() const
      return path;
  }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Retrieves the selected export format type.
  *
@@ -660,7 +660,7 @@ int VCommandLine::OptExportType() const
     return r;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
  /**
   * @brief Checks whether DXF export should be in binary format.
   *
@@ -671,7 +671,7 @@ int VCommandLine::IsBinaryDXF() const
     return parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_BINARYDXF)));
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Checks whether text should be exported as paths.
  *
@@ -682,7 +682,7 @@ int VCommandLine::isTextAsPaths() const
     return parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_TEXT2PATHS)));
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Checks whether only pieces/details should be exported.
  *
@@ -693,7 +693,7 @@ int VCommandLine::exportOnlyPieces() const
     return parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_EXPORTONLYDETAILS)));
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Retrieves the list of input filenames passed as positional arguments.
  *
@@ -704,7 +704,7 @@ QStringList VCommandLine::OptInputFileNames() const
     return parser.positionalArguments();
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Checks whether the GUI should be enabled based on current CLI mode.
  *
@@ -715,7 +715,7 @@ bool VCommandLine::IsGuiEnabled() const
     return isGuiEnabled;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Checks if a specific gradation size is set via the CLI.
  *
@@ -726,7 +726,7 @@ bool VCommandLine::IsSetGradationSize() const
     return parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_GRADATIONSIZE)));
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Checks if a specific gradation height is set via the CLI.
  *
@@ -737,7 +737,7 @@ bool VCommandLine::IsSetGradationHeight() const
     return parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_GRADATIONHEIGHT)));
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Retrieves the gradation size value from the command-line.
  *
@@ -761,7 +761,7 @@ QString VCommandLine::OptGradationSize() const
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//# --------------------
 /**
  * @brief Retrieves the gradation height value from the command-line.
  *
