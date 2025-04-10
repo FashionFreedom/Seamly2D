@@ -99,7 +99,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     }
 
 #if defined(V_NO_ASSERT)
-    // I have decided to hide this annoing message for release builds.
+    // I have decided to hide this annoying message for release builds.
     if ((type == QtWarningMsg) && msg.contains(QStringLiteral("QSslSocket: cannot resolve")))
     {
         type = QtDebugMsg;
@@ -264,6 +264,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
 
 #define DefWidth 1.2//mm
 
+//---------------------------------------------------------------------------------------------------------------------
 // @brief Application2D constructor.
 // @param argc number arguments.
 // @param argv command line.
@@ -299,6 +300,7 @@ Application2D::~Application2D()
     VCommandLine::Reset();
 }
 
+//---------------------------------------------------------------------------------------------------------------------
 // @brief startNewSeamly2D start Seamly2D in new process, send path to pattern file in argument.
 // @param fileName path to pattern file.
 void Application2D::startNewSeamly2D(const QString &fileName)
@@ -334,6 +336,7 @@ void Application2D::startNewSeamly2D(const QString &fileName)
     }
 }
 
+//---------------------------------------------------------------------------------------------------------------------
 // @brief notify Reimplemented from QApplication::notify().
 // @param receiver receiver.
 // @param event event.
@@ -677,8 +680,8 @@ bool Application2D::event(QEvent *event)
     return VAbstractApplication::event(event);
 }
 
-
-// @brief openSettings get acsses to application settings.
+//---------------------------------------------------------------------------------------------------------------------
+// @brief openSettings get access to application settings.
 // Because we can create object in constructor we open file separately.
 void Application2D::openSettings()
 {
