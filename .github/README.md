@@ -1,13 +1,17 @@
 ![Seamly2D banner](../share/img/Seamly2D_banner_1202x271.png)
 
 -----
-<img align="right" src="../.github/img/Screenshot-myskinnylowwaistjeans-400x414.png">
+
+
+
 
 [![GitHub release (latest)](https://img.shields.io/github/v/release/fashionfreedom/seamly2d?logo=github?color=blue&style=flat-square)](https://github.com/FashionFreedom/Seamly2D/releases/latest)[![GitHub weekly build](https://img.shields.io/github/actions/workflow/status/fashionfreedom/seamly2d/ci.yml?logo=github&style=flat-square)](https://github.com/FashionFreedom/Seamly2D/actions/workflows/ci.yml)[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/fashionfreedom/seamly2d?logo=github&color=brightgreen&style=flat-square)](https://github.com/FashionFreedom/Seamly2D/graphs/commit-activity)
 [![GitHub contributors](https://img.shields.io/github/contributors/fashionfreedom/seamly2d?style=flat-square&logo=github)](https://github.com/FashionFreedom/Seamly2D/graphs/contributors)[![GitHub](https://img.shields.io/github/license/fashionfreedom/seamly2d?color=blue&style=flat-square&logo=creativecommons)](../LICENSE)![GitHub language count](https://img.shields.io/github/languages/count/fashionfreedom/seamly2d?style=flat-square&logo=github)
 [![Website](https://img.shields.io/website?down_message=Down&style=flat-square&up_color=brightgreen&up_message=Up&url=https%3A%2F%2Fseamly.io&logo=wordpress)](https://seamly.io/)[![Forum posts](https://img.shields.io/discourse/posts?server=https%3A%2F%2Fforum.seamly.io&style=flat-square&logo=discourse)](https://forum.seamly.io/)
-![GitHub Repo stars](https://img.shields.io/github/stars/fashionfreedom/seamly2d?style=social)
-[![Qt](https://sourceforge.net/p/seamly2d/wiki/_discuss/thread/65e38fbf32/a54b/attachment/Built_with_Qt_RGB_logo_vertical_transparent_60x65px.png)](https://qt.io)
+[![Qt](https://sourceforge.net/p/seamly2d/wiki/_discuss/thread/65e38fbf32/a54b/attachment/Built_with_Qt_RGB_logo_vertical_transparent_60x65px.png)](https://qt.io)  
+
+Click here -->[![GitHub Stars](https://img.shields.io/github/stars/fashionfreedom/seamly2d?style=social)](https://github.com/fashionfreedom/seamly2d)<-- to star Seamly2D.
+
 
 
 <big>Seamly2D</big> is open source patternmaking software to democratize fashion, released under the GPLv3+ license, and available for Windows, MacOS, and Linux.
