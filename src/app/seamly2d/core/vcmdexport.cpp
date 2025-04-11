@@ -39,7 +39,7 @@
 
 #include <QDebug>
 
-VCommandLinePtr VCommandLine::instance = nullptr;
+VCommandLinePtr VCommandLine::commandLine = nullptr;
 
 #define translate(context, source) QCoreApplication::translate((context), (source))
 
@@ -118,8 +118,9 @@ qreal VCommandLine::Pg2Px(const QString& src, const LayoutSettingsDialog& conver
  * This method defines all supported CLI options for Seamly2D's export and automation features.
  * Options are added in a grouped, user-friendly order for consistency in help output.
  *
- * @param options A reference to the container where all QCommandLineOption instances will be stored.
- * @param optionsIndex A map that associates each long-form option string with its index in the options list.
+ * @param options A reference to the list where all VCommandLineOptions will be stored.
+ * @param optionsIndex A map that associates each long-form option string with its index
+ *in the options list.
  */
 void VCommandLine::initOptions(VCommandLineOptions &options, QMap<QString, int> &optionsIndex)
 {
@@ -130,86 +131,217 @@ void VCommandLine::initOptions(VCommandLineOptions &options, QMap<QString, int> 
 
     // --basename: Base filename for exported layout files (enables CLI export mode)
     optionsIndex.insert(LONG_OPTION_BASENAME, index++);
-    options.append(new QCommandLineOption(
-        {SINGLE_OPTION_BASENAME, LONG_OPTION_BASENAME},
-        translate("VCommandLine", "The base filename of exported layout files. Use it to enable console export mode."),
-        translate("VCommandLine", "The base filename of layout files")
-    ));
+    options.append(new QCommandLineOption({SINGLE_OPTION_BASENAME, LONG_OPTION_BASENAME},
+        translate("VCommandLine", "The base filename of exported layout files. Use it to "
+                                  "enable console export mode."),
+        translate("VCommandLine", "The base filename of layout files")));
 
     // --destination: Output directory for exported files
     optionsIndex.insert(LONG_OPTION_DESTINATION, index++);
-    options.append(new QCommandLineOption(
-        {SINGLE_OPTION_DESTINATION, LONG_OPTION_DESTINATION},
-        translate("VCommandLine", "The path to output destination folder. By default the directory at which the application was started."),
-        translate("VCommandLine", "The destination folder")
-    ));
+    options.append(new QCommandLineOption({SINGLE_OPTION_DESTINATION, LONG_OPTION_DESTINATION},
+        translate("VCommandLine", "The path to output destination folder. By default the directory "
+                                  "at which the application was started."),
+        translate("VCommandLine", "The destination folder")));
 
     // --measurefile: Path to custom measurement file
     optionsIndex.insert(LONG_OPTION_MEASUREFILE, index++);
-    options.append(new QCommandLineOption(
-        {SINGLE_OPTION_MEASUREFILE, LONG_OPTION_MEASUREFILE},
+    options.append(new QCommandLineOption({SINGLE_OPTION_MEASUREFILE, LONG_OPTION_MEASUREFILE},
         translate("VCommandLine", "Path to custom measure file (export mode)."),
-        translate("VCommandLine", "The measure file")
-    ));
+        translate("VCommandLine", "The measure file")));
 
     // --format: Output file format (e.g., SVG, PDF, DXF)
     optionsIndex.insert(LONG_OPTION_EXP2FORMAT, index++);
-    options.append(new QCommandLineOption(
-        {SINGLE_OPTION_EXP2FORMAT, LONG_OPTION_EXP2FORMAT},
-        translate("VCommandLine", "Number corresponding to output format (default = 0, export mode):") +
-            ExportFormatCombobox::makeHelpFormatList(),
-        translate("VCommandLine", "Format number"),
-        "0"
-    ));
+    options.append(new QCommandLineOption({SINGLE_OPTION_EXP2FORMAT, LONG_OPTION_EXP2FORMAT},
+        translate("VCommandLine", "Number corresponding to output format "
+                                  "(default = 0, export mode):") +
+                                  ExportFormatCombobox::makeHelpFormatList(),
+        translate("VCommandLine", "Format number"), "0"));
 
     // --binarydxf: Export DXF files in binary form
     optionsIndex.insert(LONG_OPTION_BINARYDXF, index++);
-    options.append(new QCommandLineOption(
-        {LONG_OPTION_BINARYDXF},
-        translate("VCommandLine", "Export dxf in binary form.")
-    ));
+    options.append(new QCommandLineOption({LONG_OPTION_BINARYDXF},
+        translate("VCommandLine", "Export dxf in binary form.")));
 
     // --textaspath: Export text elements as vector paths
     optionsIndex.insert(LONG_OPTION_TEXT2PATHS, index++);
-    options.append(new QCommandLineOption(
-        {LONG_OPTION_TEXT2PATHS},
-        translate("VCommandLine", "Export text as paths.")
-    ));
+    options.append(new QCommandLineOption({LONG_OPTION_TEXT2PATHS},
+        translate("VCommandLine", "Export text as paths.")));
 
     // --exportonlydetails: Only export detailed parts, ignoring layout
     optionsIndex.insert(LONG_OPTION_EXPORTONLYDETAILS, index++);
-    options.append(new QCommandLineOption(
-        {LONG_OPTION_EXPORTONLYDETAILS},
-        translate("VCommandLine", "Export only details. Export details as they positioned in the details mode. Any layout related options will be ignored.")
-    ));
+    options.append(new QCommandLineOption({LONG_OPTION_EXPORTONLYDETAILS},
+        translate("VCommandLine", "Export only details. Export details as they positioned in "
+                                  "the details mode. Any layout related options will be ignored.")));
 
     // --gradationsize: Size value for multi-size patterns
     optionsIndex.insert(LONG_OPTION_GRADATIONSIZE, index++);
-    options.append(new QCommandLineOption(
-        {SINGLE_OPTION_GRADATIONSIZE, LONG_OPTION_GRADATIONSIZE},
-        translate("VCommandLine", "Set size value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.")
-            .arg(MeasurementVariable::WholeListSizes(Unit::Cm).join(", ")),
-        translate("VCommandLine", "The size value")
-    ));
+    options.append(new QCommandLineOption({SINGLE_OPTION_GRADATIONSIZE, LONG_OPTION_GRADATIONSIZE},
+        translate("VCommandLine", "Set size value a pattern file, that was opened with multisize "
+                                  "measurements (export mode). Valid values: %1cm.")
+                                 .arg(MeasurementVariable::WholeListSizes(Unit::Cm).join(", ")),
+        translate("VCommandLine", "The size value")));
 
     // --gradationheight: Height value for multi-size patterns
     optionsIndex.insert(LONG_OPTION_GRADATIONHEIGHT, index++);
-    options.append(new QCommandLineOption(
-        {SINGLE_OPTION_GRADATIONHEIGHT, LONG_OPTION_GRADATIONHEIGHT},
-        translate("VCommandLine", "Set height value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.")
-            .arg(MeasurementVariable::WholeListHeights(Unit::Cm).join(", ")),
-        translate("VCommandLine", "The height value")
-    ));
+    options.append(new QCommandLineOption({SINGLE_OPTION_GRADATIONHEIGHT, LONG_OPTION_GRADATIONHEIGHT},
+        translate("VCommandLine", "Set height value a pattern file, that was opened with multisize "
+                                  "measurements (export mode). Valid values: %1cm.")
+                                  .arg(MeasurementVariable::WholeListHeights(Unit::Cm).join(", ")),
+        translate("VCommandLine", "The height value")));
 
     // ... [Omitting unchanged lines for brevity—continues as previously documented]
 
+    // --pagetemplate: Number of page template
+    optionsIndex.insert(LONG_OPTION_PAGETEMPLATE, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_PAGETEMPLATE, LONG_OPTION_PAGETEMPLATE},
+        translate("VCommandLine", "Number corresponding to page template "
+                                  "(default = 0, export mode):") +
+                                   PageFormatCombobox::MakeHelpTemplateList(),
+        translate("VCommandLine", "Template number"), "0"));
+
+    // --pagewidth: Page width in current units
+    optionsIndex.insert(LONG_OPTION_PAGEW, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_PAGEW, LONG_OPTION_PAGEW},
+        translate("VCommandLine", "Page width in current units like 12.0 (cannot be "
+                                  "used with \"%1\", export mode).")
+                                  .arg(LONG_OPTION_PAGETEMPLATE),
+        translate("VCommandLine", "The page width")));
+
+    // --pageheight: Page height in current units
+    optionsIndex.insert(LONG_OPTION_PAGEH, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_PAGEH, LONG_OPTION_PAGEH},
+        translate("VCommandLine", "Page height in current units like 12.0 (cannot "
+                                  "be used with \"%1\", export mode).")
+                                  .arg(LONG_OPTION_PAGETEMPLATE),
+        translate("VCommandLine", "The page height")));
+
+    // --pageunits: Page measurement units
+    optionsIndex.insert(LONG_OPTION_PAGEUNITS, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_PAGEUNITS, LONG_OPTION_PAGEUNITS},
+        translate("VCommandLine", "Page height/width measure units (cannot be used "
+                                  "with \"%1\", export mode). Valid values: %2.")
+                                  .arg(LONG_OPTION_PAGETEMPLATE)
+                                  .arg(VDomDocument::UnitsHelpString()),
+        translate("VCommandLine", "The measure unit")));
+
+    // --ignoremargins: Set all margins to zero.
+    optionsIndex.insert(LONG_OPTION_IGNORE_MARGINS, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_IGNORE_MARGINS, LONG_OPTION_IGNORE_MARGINS},
+        translate("VCommandLine", "Ignore margins printing (export mode). Disable value keys: "
+                                  "\"%1\", \"%2\", \"%3\", \"%4\". Set all margins to 0.")
+                                  .arg(LONG_OPTION_LEFT_MARGIN).arg(LONG_OPTION_RIGHT_MARGIN)
+                                  .arg(LONG_OPTION_TOP_MARGIN).arg(LONG_OPTION_BOTTOM_MARGIN)));
+
+    // --leftmargin: Set left margin value in current page units
+    optionsIndex.insert(LONG_OPTION_LEFT_MARGIN, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_LEFT_MARGIN, LONG_OPTION_LEFT_MARGIN},
+        translate("VCommandLine", "Page left margin in current units like 3.0 (export mode). If "
+                                  "not set will be used value from default printer. Or 0 if none "
+                                  "printers was found. Value will be ignored if key \"%1\" is used.")
+                                  .arg(LONG_OPTION_IGNORE_MARGINS),
+        translate("VCommandLine", "The left margin")));
+
+    // --rightmargin: Set right margin value in current page units
+    optionsIndex.insert(LONG_OPTION_RIGHT_MARGIN, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_RIGHT_MARGIN, LONG_OPTION_RIGHT_MARGIN},
+        translate("VCommandLine", "Page right margin in current units like 3.0 (export mode). If "
+                                  "not set will be used value from default printer. Or 0 if none "
+                                  "printers was found. Value will be ignored if key \"%1\" is used.")
+                                  .arg(LONG_OPTION_IGNORE_MARGINS),
+        translate("VCommandLine", "The right margin")));
+
+    // --topmargin: Set top margin value in current page units
+    optionsIndex.insert(LONG_OPTION_TOP_MARGIN, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_TOP_MARGIN, LONG_OPTION_TOP_MARGIN},
+        translate("VCommandLine", "Page top margin in current units like 3.0 (export mode). If "
+                                  "not set will be used value from default printer. Or 0 if none "
+                                  "printers was found. Value will be ignored if key \"%1\" is used.")
+                                  .arg(LONG_OPTION_IGNORE_MARGINS),
+        translate("VCommandLine", "The top margin")));
+
+    // --bottommargin: Set bottom margin value in current page units
+    optionsIndex.insert(LONG_OPTION_BOTTOM_MARGIN, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_BOTTOM_MARGIN, LONG_OPTION_BOTTOM_MARGIN},
+        translate("VCommandLine", "Page bottom margin in current units like 3.0 (export mode). If "
+                                  "not set will be used value from default printer. Or 0 if none "
+                                  "printers was found. Value will be ignored if key \"%1\" is used.")
+                                  .arg(LONG_OPTION_IGNORE_MARGINS),
+        translate("VCommandLine", "The bottom margin")));
+
+    // --rotate: Rotation of pieces in degrees
+    optionsIndex.insert(LONG_OPTION_ROTATE, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_ROTATE, LONG_OPTION_ROTATE},
+        translate("VCommandLine", "Rotation in degrees (one of predefined, export mode). "
+                                  "Default value is 180. 0 is no-rotate. Valid values: "
+                                  "%1. Each value show how many times details will be rotated. For "
+                                  "example 180 mean two times (360/180=2) by 180 degree.")
+                                  .arg("0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24, 30, 36, 40, 45, "
+                                       "60, 72, 90, 180"),
+        translate("VCommandLine", "Angle")));
+
+    // --crop: Autocrop unused length of page
+    optionsIndex.insert(LONG_OPTION_CROP, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_CROP, LONG_OPTION_CROP},
+                                          translate("VCommandLine", "Auto crop unused length (export mode).")));
+
+    // --unite: Unite pages if possible
+    optionsIndex.insert(LONG_OPTION_UNITE, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_UNITE, LONG_OPTION_UNITE},
+        translate("VCommandLine", "Unite pages if possible (export mode). Maximum "
+                                  "value limited by QImage that supports only a maximum of "
+                                  "32768x32768 px images.")));
+
+    // --savelength: Save length of sheet when set
+    optionsIndex.insert(LONG_OPTION_SAVELENGTH, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_SAVELENGTH, LONG_OPTION_SAVELENGTH},
+        translate("VCommandLine", "Save length of the sheet if set (export mode). The option tells "
+                                  "the program to use as much as possible width of sheet. Quality "
+                                  "of a layout can be worse when this option was used.")));
+
+    // --shiftunits: Set the shift / offset units for layout
+    optionsIndex.insert(LONG_OPTION_SHIFTUNITS, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_SHIFTUNITS, LONG_OPTION_SHIFTUNITS},
+        translate("VCommandLine", "Layout units (as paper's one except px, export mode)."),
+        translate("VCommandLine", "The unit")));
+
+    // --shiftlength: Shift length measured in layout units
+    optionsIndex.insert(LONG_OPTION_SHIFTLENGTH, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_SHIFTLENGTH, LONG_OPTION_SHIFTLENGTH},
+        translate("VCommandLine", "Shift/Offset layout length measured in layout "
+                                  "units (export mode). The option show how many points along edge "
+                                  "will be used in creating a layout."),
+        translate("VCommandLine", "Shift/Offset length")));
+
+    // --gapwidth: gap width between pattern pieces in layout units
+    optionsIndex.insert(LONG_OPTION_GAPWIDTH, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_GAPWIDTH, LONG_OPTION_GAPWIDTH},
+        translate("VCommandLine", "The layout gap width x2, measured in layout units (export mode). "
+                                  "Set distance between details and a detail and a sheet."),
+        translate("VCommandLine", "The gap width")));
+
+    // --grouping: Sets the grouping type of pieces
+    optionsIndex.insert(LONG_OPTION_GROUPPING, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_GROUPPING, LONG_OPTION_GROUPPING},
+        translate("VCommandLine", "Sets layout groupping cases (export mode): %1.")
+                                 .arg(LayoutSettingsDialog::MakeGroupsHelp()),
+        translate("VCommandLine", "Grouping type"), "2"));
+
+    // --test: Run program in test mode with single pattern file without showing mainwindow
+    optionsIndex.insert(LONG_OPTION_TEST, index++);
+    options.append(new QCommandLineOption({SINGLE_OPTION_TEST, LONG_OPTION_TEST},
+        translate("VCommandLine", "Run the program in a test mode. The program in "
+                                  "this mode loads a single pattern file and silently quit without "
+                                  "showing the main window. The key have priority before key '%1'.")
+                                  .arg(LONG_OPTION_BASENAME)));
+
+
     // --no-hdpi-scaling: Disable high DPI auto-scaling (useful on some systems)
     optionsIndex.insert(LONG_OPTION_NO_HDPI_SCALING, index++);
-    options.append(new QCommandLineOption(
-        {LONG_OPTION_NO_HDPI_SCALING},
-        translate("VCommandLine", "Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.")
-            .arg("QT_AUTO_SCREEN_SCALE_FACTOR=0")
-    ));
+    options.append(new QCommandLineOption({LONG_OPTION_NO_HDPI_SCALING},
+        translate("VCommandLine", "Disable high dpi scaling. Call this option if has problem "
+                                  "with scaling (by default scaling enabled). Alternatively you "
+                                  "can use the %1 environment variable.")
+                                  .arg("QT_AUTO_SCREEN_SCALE_FACTOR=0")));
 }
 
 
@@ -417,49 +549,49 @@ VLayoutGeneratorPtr VCommandLine::DefaultGenerator() const
 /*
  * @brief Retrieves the singleton instance of VCommandLine and processes CLI arguments.
  *
- * If no instance exists, a new one is created. It then processes the arguments provided
+ * If no VCommandLine exists, a new one is created. It then processes the arguments provided
  * to the application and determines whether the GUI should be enabled based on the CLI mode.
  *
  * @param app The current application instance containing CLI arguments.
  * @return VCommandLinePtr A shared pointer to the global VCommandLine instance.
  */
-VCommandLinePtr VCommandLine::Get(const QCoreApplication& app)
+VCommandLinePtr VCommandLine::Get(const QCoreApplication &app)
 {
-    if (instance == nullptr)
+    if (commandLine == nullptr)
     {
-        instance.reset(new VCommandLine()); ///< Lazy initialization of singleton instance
+        commandLine.reset(new VCommandLine()); // Replace pointer with new VCommandLine
     }
-    instance->parser.process(app); ///< Process CLI arguments with the parser
+    commandLine->parser.process(app);          // Process CLI arguments with the parser
 
     // FIXME: Add more conditions here if new CLI modes are introduced that should disable the GUI
-    instance->isGuiEnabled = not (instance->IsExportEnabled() || instance->IsTestModeEnabled());
+    commandLine->isGuiEnabled = !(commandLine->IsExportEnabled() || commandLine->IsTestModeEnabled());
 
-    return instance;
+    return commandLine;
 }
 
 //  --------------------
 /*
  * @brief Destructor for VCommandLine.
  *
- * Cleans up dynamically allocated QCommandLineOption instances stored in optionsUsed,
+ * Cleans up dynamically allocated list of VCommandLineOptions stored in optionsUsed,
  * ensuring no memory leaks. Clears the list after deleting.
  */
 VCommandLine::~VCommandLine()
 {
-    qDeleteAll(optionsUsed.begin(), optionsUsed.end()); ///< Delete all dynamically allocated options
-    optionsUsed.clear(); ///< Clear the list to reset state
+    qDeleteAll(optionsUsed.begin(), optionsUsed.end()); // Delete all dynamically allocated options
+    optionsUsed.clear();                                // Clear the list to reset state
 }
 
 //  --------------------
 /*
  * @brief Resets the singleton instance of VCommandLine.
  *
- * This clears the current static instance, allowing a fresh one to be created next time Get() is called.
+ * This destroys the current VCommandLine, allowing a fresh one to be created next time Get() is called.
  * Useful for tests or reinitializing command-line parsing.
  */
 void VCommandLine::Reset()
 {
-    instance.reset(); // Delete and reset the static singleton instance
+    commandLine.reset(); // Calls the VCommandLine destructor.
 }
 
 //  --------------------

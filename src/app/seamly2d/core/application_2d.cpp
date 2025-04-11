@@ -699,7 +699,7 @@ VSettings *Application2D::Seamly2DSettings()
 //  --------------------
 bool Application2D::isGUIMode()
 {
-    return (VCommandLine::instance != nullptr) && VCommandLine::instance->IsGuiEnabled();
+    return (VCommandLine::commandLine != nullptr) && VCommandLine::commandLine->IsGuiEnabled();
 }
 
 // @brief isAppInGUIMode little hack that allows to have access to application state from VAbstractApplication class.
@@ -711,6 +711,6 @@ bool Application2D::isAppInGUIMode() const
 //  --------------------
 const VCommandLinePtr Application2D::commandLine() const
 {
-    return VCommandLine::instance;
+    return VCommandLine::commandLine;
 }
 //  --------------------
