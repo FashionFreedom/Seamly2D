@@ -44,87 +44,55 @@ typedef std::shared_ptr<VCommandLine> VCommandLinePtr;
 typedef QList<QCommandLineOption *> VCommandLineOptions;
 typedef std::shared_ptr<VLayoutGenerator> VLayoutGeneratorPtr;
 
-//@brief: class used to install export command line options and parse their values
-//QCommandLineParser* object must exists until this object alive
 class VCommandLine
 {
 public:
-    virtual ~VCommandLine();
+    virtual               ~VCommandLine();
 
-    //@brief creates object and applies export related options to parser
-
-    //@brief tests if user enabled test mode from cmd, throws exception if not exactly 1 input VAL file supplied in
-    //case test mode enabled
-    bool IsTestModeEnabled() const;
-
-    bool IsNoScalingEnabled() const;
-
-    //@brief tests if user enabled export from cmd, throws exception if not exactly 1 input VAL file supplied in case
-    //export enabled
-    bool IsExportEnabled() const;
-
-    //@brief returns path to custom measure file or empty string
-    QString OptMeasurePath() const;
-
-    //@brief returns the base name of layout files or empty string if not set
-    QString OptBaseName() const;
-
-    //@brief returns the absolute path to output destination directory or path to application's current directory if
-    //not set
-    QString OptDestinationPath() const;
-
-    //@brief returns export type set, defaults 0 - svg
-    int OptExportType() const;
-
-    int IsBinaryDXF() const;
-    int isTextAsPaths() const;
-    int exportOnlyPieces() const;
-
-    //generator creation is moved here ... because most options are for it only, so no need to create extra getters...
-    //@brief creates VLayoutGenerator
-    VLayoutGeneratorPtr DefaultGenerator() const;
-
-    //@brief gets filenames which should be loaded
-    QStringList OptInputFileNames() const;
-
-    bool IsGuiEnabled()const;
-
-    bool IsSetGradationSize() const;
-    bool IsSetGradationHeight() const;
-
-    QString OptGradationSize() const;
-    QString OptGradationHeight() const;
+    bool                   IsTestModeEnabled() const;
+    bool                   IsNoScalingEnabled() const;
+    bool                   IsExportEnabled() const;
+    QString                OptMeasurePath() const;
+    QString                OptBaseName() const;
+    QString                OptDestinationPath() const;
+    int                    OptExportType() const;
+    int                    IsBinaryDXF() const;
+    int                    isTextAsPaths() const;
+    int                    exportOnlyPieces() const;
+    VLayoutGeneratorPtr    DefaultGenerator() const;
+    QStringList            OptInputFileNames() const;
+    bool                   IsGuiEnabled()const;
+    bool                   IsSetGradationSize() const;
+    bool                   IsSetGradationHeight() const;
+    QString                OptGradationSize() const;
+    QString                OptGradationHeight() const;
 
 protected:
-
     VCommandLine();
 
-    //@brief returns LayoutSettingsDialog::PaperSizeFormat
-    PaperSizeFormat  OptPaperSize() const;
-    //@brief returns rotation in degrees or 0 if not set
-    int OptRotation() const;
-
-    Cases OptGroup() const;
-
-    //@brief: called in destructor of application, so instance destroyed and new maybe created (never happen scenario though)
-    static void Reset();
-
-    //@brief called to create single object, by Application2D only
+    PaperSizeFormat        OptPaperSize() const;
+    int                    OptRotation() const;
+    Cases                  OptGroup() const;
+    static void            Reset();
     static VCommandLinePtr Get(const QCoreApplication& app);
 
 private:
-    Q_DISABLE_COPY(VCommandLine)
-    static VCommandLinePtr instance;
-    QCommandLineParser parser;
-    VCommandLineOptions optionsUsed;
-    QMap<QString, int> optionsIndex;
-    bool isGuiEnabled;
-    friend class Application2D;
+                           Q_DISABLE_COPY(VCommandLine)
+    static VCommandLinePtr commandLine;
+    QCommandLineParser     parser;
+    VCommandLineOptions    optionsUsed;
+    QMap<QString, int>     optionsIndex;
+    bool                   isGuiEnabled;
+    friend class           Application2D;
 
-    static qreal Lo2Px(const QString& src, const LayoutSettingsDialog& converter);
-    static qreal Pg2Px(const QString& src, const LayoutSettingsDialog& converter);
+    static qreal           Lo2Px(const QString& src,
+                                 const LayoutSettingsDialog& converter);
 
-    static void initOptions(VCommandLineOptions &options, QMap<QString, int> &optionsIndex);
+    static qreal           Pg2Px(const QString& src,
+                                 const LayoutSettingsDialog& converter);
+
+    static void            initOptions(VCommandLineOptions &options,
+                                       QMap<QString, int> &optionsIndex);
 };
 
 #endif // VCMDEXPORT_H
