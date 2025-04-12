@@ -388,8 +388,10 @@ private:
     void               setToolsEnabled(bool enable);
     void               SetLayoutModeActions();
 
+    void               setSceneBackgroundColor();
     void               SaveCurrentScene();
     void               RestoreCurrentScene();
+
     void               MinimumScrollBar();
 
     template <typename Dialog, typename Func>

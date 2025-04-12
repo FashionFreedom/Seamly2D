@@ -50,6 +50,7 @@ Q_LOGGING_CATEGORY(vGraphicsViewConfig, "vgraphicsviewconfig")
 PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::PreferencesGraphicsViewPage)
+    , m_bgColorChanged(false)
     , m_zrbPositiveColorChanged(false)
     , m_zrbNegativeColorChanged(false)
     , m_pointNameColorChanged(false)
@@ -96,13 +97,21 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     // Antialiasing
     ui->graphicsOutput_CheckBox->setChecked(qApp->Seamly2DSettings()->GetGraphicalOutput());
 
-    ui->primarySupportColor_ComboBox->setItems(VAbstractTool::supportColorsList());
-    ui->secondarySupportColor_ComboBox->setItems(VAbstractTool::supportColorsList());
-    ui->tertiarySupportColor_ComboBox->setItems(VAbstractTool::supportColorsList());
-
     // Color preferences
+    //-----------------------  Background Color
+    ui->bgColor_ComboBox->setItems(VAbstractTool::backgroundColorsList());
+    int index = ui->bgColor_ComboBox->findText(qApp->Seamly2DSettings()->getBackgroundColor());
+    if (index != -1)
+    {
+        ui->bgColor_ComboBox->setCurrentIndex(index);
+    }
+    connect(ui->bgColor_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_bgColorChanged = true;
+    });
+
     // Zoom Rubberband colors
-    int index = ui->zrbPositiveColor_ComboBox->findText(qApp->Seamly2DSettings()->getZoomRBPositiveColor());
+    index = ui->zrbPositiveColor_ComboBox->findText(qApp->Seamly2DSettings()->getZoomRBPositiveColor());
     if (index != -1)
     {
         ui->zrbPositiveColor_ComboBox->setCurrentIndex(index);
@@ -154,6 +163,9 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     });
 
     //----------------------- Selection Support Colors
+    ui->primarySupportColor_ComboBox->setItems(VAbstractTool::supportColorsList());
+    ui->secondarySupportColor_ComboBox->setItems(VAbstractTool::supportColorsList());
+    ui->tertiarySupportColor_ComboBox->setItems(VAbstractTool::supportColorsList());
     index = ui->primarySupportColor_ComboBox->findText(qApp->Seamly2DSettings()->getPrimarySupportColor());
     if (index != -1)
     {
@@ -357,6 +369,12 @@ void PreferencesGraphicsViewPage::Apply()
     qApp->getSceneView()->setRenderHint(QPainter::SmoothPixmapTransform, ui->graphicsOutput_CheckBox->isChecked());
 
     // Color preferences
+    if (m_bgColorChanged)
+    {
+      settings->setBackgroundColor(ui->bgColor_ComboBox->currentText());
+      m_bgColorChanged = false;
+    }
+
     // Zoom Rubberband colors
     if (m_zrbPositiveColorChanged)
     {

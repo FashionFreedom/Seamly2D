@@ -529,6 +529,8 @@ void MainWindow::initializeScenes()
     connect(ui->view, &VMainGraphicsView::signalZoomScaleChanged, this, &MainWindow::zoomScaleChanged);
 
     qApp->setSceneView(ui->view);
+
+    setSceneBackgroundColor();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3708,6 +3710,20 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event)
     QMainWindow::keyReleaseEvent(event);
 }
 
+//-----------------------------------------------------------------------------
+/// @brief setSceneBackgroundColor Sets the scene background color.
+///
+/// This method Sets the background color of the draft and piece scenes.
+///
+/// @details Uses the background color preference saved in the settigs.
+//-----------------------------------------------------------------------------
+void MainWindow::setSceneBackgroundColor()
+{
+    QColor color = QColor(qApp->Seamly2DSettings()->getBackgroundColor());
+    draftScene->setBackgroundBrush(color);
+    pieceScene->setBackgroundBrush(color);
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief SaveCurrentScene save scene options before set another.
@@ -6695,6 +6711,7 @@ void MainWindow::updatePreferences()
     refreshLabels();
     resetOrigins();
     upDateScenes();
+    setSceneBackgroundColor();
     updateViewToolbar();
     resetPanShortcuts();
     initPropertyEditor();

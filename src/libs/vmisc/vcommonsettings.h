@@ -244,6 +244,9 @@ public:
     int                  getExportQuality() const;
     void                 setExportQuality(const int &value);
 
+    QString              getBackgroundColor() const;
+    void                 setBackgroundColor(const QString &color);
+
     QString              getZoomRBPositiveColor() const;
     void                 setZoomRBPositiveColor(const QString &value);
 
