@@ -51,6 +51,7 @@ protected:
 private:
     Q_DISABLE_COPY(PreferencesGraphicsViewPage )
     Ui::PreferencesGraphicsViewPage  *ui;
+    bool                              m_bgColorChanged;
     bool                              m_zrbPositiveColorChanged;
     bool                              m_zrbNegativeColorChanged;
     bool                              m_pointNameColorChanged;

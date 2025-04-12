@@ -145,6 +145,7 @@ const QString settingGraphicsViewUseDefaultPen           = QStringLiteral("graph
 const QString settingGraphicsViewShowIsoOnly             = QStringLiteral("graphicsview/showOnlyIso");
 const QString settingGraphicsViewZoomSpeedFactor         = QStringLiteral("graphicsview/zoomSpeedFactor");
 const QString settingGraphicsViewExportQuality           = QStringLiteral("graphicsview/exportQuality");
+const QString settingGraphicsViewBackgroundColor         = QStringLiteral("graphicsview/backgroundColor");
 const QString settingGraphicsViewZoomRBPositiveColor     = QStringLiteral("graphicsview/zoomRBPositiveColor");
 const QString settingGraphicsViewZoomRBNegativeColor     = QStringLiteral("graphicsview/zoomRBNegativeColor");
 const QString settingGraphicsViewPointNameColor          = QStringLiteral("graphicsview/pointNameColor");
@@ -1116,6 +1117,30 @@ int  VCommonSettings::getExportQuality() const
 void VCommonSettings::setExportQuality(const int  &value)
 {
     setValue(settingGraphicsViewExportQuality, value);
+}
+
+//-----------------------------------------------------------------------------
+/// @brief getBackgroundColor Gets the background color.
+///
+/// This method gets the name of the background color from the settings.
+///
+/// @return String name of the background color.
+//-----------------------------------------------------------------------------
+QString VCommonSettings::getBackgroundColor() const
+{
+    return value(settingGraphicsViewBackgroundColor, "White").toString();
+}
+
+//-----------------------------------------------------------------------------
+/// @brief setBackgroundColor Sets the background color.
+///
+/// This method saves the background color name to the settings.
+///
+/// @param color String name of background color to save.
+//-----------------------------------------------------------------------------
+void VCommonSettings::setBackgroundColor(const QString &color)
+{
+    setValue(settingGraphicsViewBackgroundColor, color);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
