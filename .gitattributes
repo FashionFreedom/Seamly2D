@@ -6,9 +6,9 @@
 #--------- c++ file encoding
 # force Github to re-encode & store non-UTF-8 text files as UTF-8. Upon checkout, these files might revert to their original encoding.
 *.cpp text diff=cpp working-tree-encoding=UTF-8 eol=lf
-*.c text diff=cpp working-tree-encoding=UTF-8
+*.c text diff=cpp working-tree-encoding=UTF-8 eol=lf
 *.h text diff=cpp working-tree-encoding=UTF-8 eol=lf
-*.hpp text diff=cpp working-tree-encoding=UTF-8
+*.hpp text diff=cpp working-tree-encoding=UTF-8 eol=lf
 
 # Compiled Object files
 *.slo   binary
