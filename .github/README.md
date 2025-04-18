@@ -15,34 +15,37 @@
 Design what **you** want to wear. Each Seamly2D pattern can read multi-size measurement files for standardized sizes *and* read individual measurement files for custom-fit.
 Don't know how? Join our multi-lingual Discourse [forum](https://forum.seamly.io).
 
-## Supported platforms:
-   * Windows 10 & 11 (32-bit and 64-bit)
-   * Most current Linux distros via [Flathub](https://flathub.org/apps/io.seamly.seamly2d)
-   * macOS High Sierra 10.13 (64-bit) or later
-
-## Download:
+### Supported platforms:
+   * Windows 10 & 11 (32-bit and 64-bit) 
+   * macOS 64-bit Ventura (13) and Sonoma (14)
+   * Most current Linux distros as Flatpak via [Flathub](https://flathub.org/apps/io.seamly.seamly2d)
+   * Most current Linux distros as AppImage
+___________________________________________________
+### Download:
 
 | Windows 64-bit | Windows 32-bit | MacOS | Linux AppImage | Linux Flatpak |
 | :---:          | :---:          | :---: | :---:          | :---:         |
-| [![Seamly2D-windows.zip](./img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [![Seamly2D-win32.zip](./img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-win32.zip) | [![Seamly2D-macos.zip](./img/macos-60px-73px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [![Seamly2D AppImage](./img/linux-svgrepo-com-60x71.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-x86_64.AppImage) | [![Seamly2D Flatpak](./img/flathub-badge-en.png)](https://flathub.org/apps/io.seamly.seamly2d) |
+| [![Seamly2D-windows.zip](./img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [![Seamly2D-win32.zip](./img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-win32.zip) | [![Seamly2D-macos.zip](./img/MacOS_logo_60x60.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [![Seamly2D AppImage](./img/linux-svgrepo-com-60x71.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-x86_64.AppImage) | [![Seamly2D Flatpak](./img/flathub-badge-en.png)](https://flathub.org/apps/io.seamly.seamly2d) |
+| Intel or AMD 64bit | Intel or AMD 32bit | | GCC 10 or later | GCC 10 or later |
+| Windows 10<br>Windows 11 | Windows 10 | macOS 13 Ventura<br>macOS 14 Sonoma | Debian 10 Buster<br>Debian 11 Bullseye<br>Debian 12 Bookworm<br>Ubuntu 22.04 Jammy<br>Ubuntu 23.04 Lunar<br>Up-to-date Arch Linux -<br>Manjaro<br>ArcoLinux<br>EndeavourOS<br>Anarchy<br>ArchLabs|Debian 10 Buster<br>Debian 11 Bullseye<br>Debian 12 Bookworm<br>Ubuntu 22.04 Jammy<br>Ubuntu 23.04 Lunar<br>Up-to-date Arch Linux -<br>Manjaro<br>ArcoLinux<br>EndeavourOS<br>Anarchy,<br>ArchLabs|
 
 ___________________________________________________
-## Seamly2D Community Resources:
+### Community :
    * [Website and downloads](https://seamly.io) - _active, current_
    * [User Forum](https://forum.seamly.io/) - _active, current_
    * [User Wiki Manual](https://wiki.seamly.io) - _needs updating_
 ___________________________________________________
 
-## Seamly2D Developer Resources:
+### Developer :
    * [Developer README](README-DEVELOPER.md) - _current_
    * [Developer Wiki](https://github.com/FashionFreedom/Seamly2D/wiki) - _needs updating_
    * [Doxygen docs](https://fashionfreedom.github.io/Seamly2D/) - _current_
 ___________________________________________________
-## LICENSING
+### LICENSING
 
 ![GPLv3](./img/GPLv3_Logo-121x60px.png)
 
-See [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html) for further information.
+See [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html) for more information.
 
 Other components and licensing:
 * QMuParser - [Simplified BSD license](https://opensource.org/licenses/BSD-2-Clause)
