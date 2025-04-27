@@ -35,6 +35,7 @@
 #include <QPainter>
 #include <QBuffer>
 
+static const int ObjectName = 0;
 
 //---------------------------------------------------------------------------------------------------------------------
 SvgGenerator::SvgGenerator(QGraphicsRectItem *paper, QString name, QString description, int resolution):
@@ -44,7 +45,6 @@ SvgGenerator::SvgGenerator(QGraphicsRectItem *paper, QString name, QString descr
     m_resolution(resolution)
 {
 }
-
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -152,28 +152,45 @@ void SvgGenerator::removeEmptyOriginPath(QDomElement &mainGroup)
     }
 }
 
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Clean the SVG
- * @return void
- * @details This function cleans the SVG by removing empty groups and the origin M0,0 path
- */
+//-----------------------------------------------------------------------------
+/// @brief Clean the SVG
+/// @return void
+/// @details This function cleans the SVG by removing empty groups and the origin M0,0 path
+//-----------------------------------------------------------------------------
 void SvgGenerator::cleanSvg(QDomElement &mainGroup)
 {
     removeEmptyGroups(mainGroup);
     removeEmptyOriginPath(mainGroup);
 }
 
+//-----------------------------------------------------------------------------
+/// @brief setAttribute set an attribute in the svg
+///
+/// This method sets an attibute for the 1st elemnent by tag in the svg document.
+///
+/// @param element : the dom document element.
+/// @param attr : attribute name.
+/// @param value : value of the attibute.
+/// @return void
+//-----------------------------------------------------------------------------
+void SvgGenerator::setAttribute(QDomElement element, const QString &attr, const QString &value)
+{
+    if (!element.isNull() && !value.isEmpty())
+    {
+        element.setAttribute(attr, value);
+    }
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief Add a new SVG to the list of SVGs to be merged into a single SVG
- * @param scene : the scene that must be converted to SVG
+ * @brief Add a new SVG to the list of SVGs to be merged into a single SVG.
+ * @param scene : the scene that must be converted to SVG.
+ * @param item : graphic item that SVg is being cretaed from. Needed for IS name.
  * @return void
  * @details This function creates a SVG from the given scene and converts it into
             a DOM that is added to the m_domList list of SVGs to be merged.
 */
-void SvgGenerator::addSvgFromScene(QGraphicsScene *scene)
+void SvgGenerator::addSvgFromScene(QGraphicsScene *scene, QGraphicsItem *item)
 {
     QByteArray byteArray;
     QBuffer buffer(&byteArray);
@@ -196,9 +213,20 @@ void SvgGenerator::addSvgFromScene(QGraphicsScene *scene)
     painter.end();
 
     QDomDocument domDoc;
-    if (domDoc.setContent(byteArray)) {
+    if (domDoc.setContent(byteArray))
+    {
+        // set pattern piece name as parent group id name
+        if (item != nullptr)
+        {
+            QDomNodeList list = domDoc.elementsByTagName("g");
+            if (!list.isEmpty())
+            {
+                setAttribute(list.at(0).toElement(), "id", item->data(ObjectName).toString());
+            }
+        }
         m_domList.append(domDoc);
-    } else {
+    } else
+    {
         qDebug() << "Error : Impossible to load the SVG content in the QDomDocument.";
     }
 
@@ -215,8 +243,6 @@ void SvgGenerator::addSvgFromScene(QGraphicsScene *scene)
 */
 void SvgGenerator::generate()
 {
-
-
     QDomDocument mergedSvg = mergeSvgDoms();
 
     QFile outputFile(m_filepath);

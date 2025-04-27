@@ -79,6 +79,8 @@
 #include "vtextmanager.h"
 #include "vgraphicsfillitem.h"
 
+static const int ObjectName = 0;
+
 namespace
 {
 //---------------------------------------------------------------------------------------------------------------------
@@ -1089,6 +1091,8 @@ QPainterPath VLayoutPiece::LayoutAllowancePath() const
 QGraphicsItem *VLayoutPiece::GetItem(bool textAsPaths) const
 {
     QGraphicsPathItem *item = createMainItem();
+    item->setData(ObjectName, GetName());
+
     createAllowanceItem(item);
     createNotchesItem(item);
 
@@ -1186,6 +1190,7 @@ void VLayoutPiece::createLabelItem(QGraphicsItem *parent, const QVector<QPointF>
                 path.addText(0, - static_cast<qreal>(fm.ascent())/6., fnt, qsText);
 
                 QGraphicsPathItem* item = new QGraphicsPathItem(parent);
+                item->setData(ObjectName, QString("label"));
                 item->setPath(path);
                 item->setPen(QPen(color, widthHairLine));
                 item->setBrush(QBrush(Qt::NoBrush));
@@ -1196,6 +1201,7 @@ void VLayoutPiece::createLabelItem(QGraphicsItem *parent, const QVector<QPointF>
             else
             {
                 QGraphicsSimpleTextItem* item = new QGraphicsSimpleTextItem(parent);
+                item->setData(ObjectName, QString("label"));
                 item->setFont(fnt);
                 item->setText(qsText);
                 item->setTransform(labelTransform);
@@ -1219,6 +1225,8 @@ void VLayoutPiece::createGrainlineItem(QGraphicsItem *parent, bool textAsPaths) 
         return;
     }
     VGraphicsFillItem* item = new VGraphicsFillItem(color, textAsPaths, parent);
+    item->setData(ObjectName, QString("grainline"));
+
     QPainterPath path;
 
     QVector<QPointF> gPoints = getGrainline();
@@ -1262,6 +1270,7 @@ QGraphicsPathItem *VLayoutPiece::createMainItem() const
         lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
     }
     QGraphicsPathItem *item = new QGraphicsPathItem();
+    item->setData(ObjectName, QString("seamline"));
     item->setPath(createMainPath());
     item->setPen(QPen(color, lineWeight, lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
     return item;
@@ -1275,6 +1284,7 @@ void VLayoutPiece::createAllowanceItem(QGraphicsItem *parent) const
     qreal   lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
 
     QGraphicsPathItem *item = new QGraphicsPathItem(parent);
+    item->setData(ObjectName, QString("cutline"));
     item->setPath(createAllowancePath());
     item->setPen(QPen(color, lineWeight, lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
 }
@@ -1286,6 +1296,7 @@ void VLayoutPiece::createNotchesItem(QGraphicsItem *parent) const
     qreal  lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
 
     QGraphicsPathItem *item = new QGraphicsPathItem(parent);
+    item->setData(ObjectName, QString("notches"));
     item->setPath(createNotchesPath());
     item->setPen(QPen(color, lineWeight, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
 }

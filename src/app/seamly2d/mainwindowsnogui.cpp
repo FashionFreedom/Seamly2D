@@ -898,11 +898,11 @@ void MainWindowsNoGUI::exportSVG(const QString &name, QGraphicsRectItem *paper, 
 {
     SvgGenerator svgGenerator(paper, name, doc->GetDescription(), static_cast<int>(PrintDPI));
 
-    for (int pieceNb=0; pieceNb<pieces.size(); pieceNb++)
+    for (int piece = 0; piece < pieces.size(); piece++)
     {
         QGraphicsScene *scene = new VMainGraphicsScene();
-        scene->addItem(pieces.at(pieceNb));
-        svgGenerator.addSvgFromScene(scene);
+        scene->addItem(pieces.at(piece));
+        svgGenerator.addSvgFromScene(scene, pieces.at(piece));
     }
 
     svgGenerator.generate();
