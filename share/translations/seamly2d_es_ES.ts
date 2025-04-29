@@ -5038,7 +5038,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>List of pieces is empty!</source>
-        <translation>La lista de piezas está vacía.</translation>
+        <translation>La lista de piezas está vacía!</translation>
     </message>
     <message>
         <source>Please, select a piece to insert into!</source>
