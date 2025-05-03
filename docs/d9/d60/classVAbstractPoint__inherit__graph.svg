@@ -442,9 +442,9 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="477.5" y="-2796.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="490.5" y="-2796.5" font-family="Helvetica,sans-Serif" font-size="10.00">AddRecord()</text>
 <text text-anchor="start" x="477.5" y="-2781.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="490.5" y="-2781.5" font-family="Helvetica,sans-Serif" font-size="10.00">AddNodes()</text>
+<text text-anchor="start" x="490.5" y="-2781.5" font-family="Helvetica,sans-Serif" font-size="10.00">addNodes()</text>
 <text text-anchor="start" x="477.5" y="-2766.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="490.5" y="-2766.5" font-family="Helvetica,sans-Serif" font-size="10.00">AddNodes()</text>
+<text text-anchor="start" x="490.5" y="-2766.5" font-family="Helvetica,sans-Serif" font-size="10.00">addNodes()</text>
 <text text-anchor="start" x="477.5" y="-2751.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="490.5" y="-2751.5" font-family="Helvetica,sans-Serif" font-size="10.00">CreateNode()</text>
 <text text-anchor="start" x="477.5" y="-2736.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
@@ -873,64 +873,62 @@ var sectionId = 'dynsection-0';
 <g id="Node000014" class="node">
 <title>Node14</title>
 <g id="a_Node000014"><a xlink:href="../../de/ddd/classVToolBasePoint.html" target="_top" xlink:title="The VToolBasePoint class tool for creation pattern base point. Only base point can move....">
-<polygon fill="white" stroke="transparent" points="795,-891.5 666,-891.5 666,-482.5 795,-482.5 795,-891.5"/>
-<text text-anchor="start" x="693" y="-879" font-family="Helvetica,sans-Serif" font-size="10.00">VToolBasePoint</text>
-<text text-anchor="start" x="670.5" y="-864" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="683.5" y="-864" font-family="Helvetica,sans-Serif" font-size="10.00">ToolType</text>
-<text text-anchor="start" x="673" y="-849" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="683.5" y="-849" font-family="Helvetica,sans-Serif" font-size="10.00">draftBlockName</text>
-<text text-anchor="start" x="670.5" y="-834" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="683.5" y="-834" font-family="Helvetica,sans-Serif" font-size="10.00">~VToolBasePoint()</text>
-<text text-anchor="start" x="670.5" y="-819" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="683.5" y="-819" font-family="Helvetica,sans-Serif" font-size="10.00">setDialog()</text>
-<text text-anchor="start" x="670.5" y="-804" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="683.5" y="-804" font-family="Helvetica,sans-Serif" font-size="10.00">type()</text>
-<text text-anchor="start" x="670.5" y="-789" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="683.5" y="-789" font-family="Helvetica,sans-Serif" font-size="10.00">ShowVisualization()</text>
-<text text-anchor="start" x="670.5" y="-774" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="683.5" y="-774" font-family="Helvetica,sans-Serif" font-size="10.00">decrementReferens()</text>
-<text text-anchor="start" x="670.5" y="-759" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="683.5" y="-759" font-family="Helvetica,sans-Serif" font-size="10.00">GetBasePointPos()</text>
-<text text-anchor="start" x="670.5" y="-744" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="683.5" y="-744" font-family="Helvetica,sans-Serif" font-size="10.00">SetBasePointPos()</text>
-<text text-anchor="start" x="670.5" y="-729" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="683.5" y="-729" font-family="Helvetica,sans-Serif" font-size="10.00">Create()</text>
-<text text-anchor="start" x="670.5" y="-714" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="683.5" y="-714" font-family="Helvetica,sans-Serif" font-size="10.00">FullUpdateFromFile()</text>
-<text text-anchor="start" x="670.5" y="-699" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="683.5" y="-699" font-family="Helvetica,sans-Serif" font-size="10.00">EnableToolMove()</text>
-<text text-anchor="start" x="670.5" y="-684" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="683.5" y="-684" font-family="Helvetica,sans-Serif" font-size="10.00">AddToFile()</text>
-<text text-anchor="start" x="670.5" y="-669" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="683.5" y="-669" font-family="Helvetica,sans-Serif" font-size="10.00">itemChange()</text>
-<text text-anchor="start" x="670.5" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="683.5" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00">deleteTool()</text>
-<text text-anchor="start" x="670.5" y="-639" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="683.5" y="-639" font-family="Helvetica,sans-Serif" font-size="10.00">SaveDialog()</text>
-<text text-anchor="start" x="670.5" y="-624" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="683.5" y="-624" font-family="Helvetica,sans-Serif" font-size="10.00">hoverEnterEvent()</text>
-<text text-anchor="start" x="670.5" y="-609" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="683.5" y="-609" font-family="Helvetica,sans-Serif" font-size="10.00">hoverLeaveEvent()</text>
-<text text-anchor="start" x="670.5" y="-594" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="683.5" y="-594" font-family="Helvetica,sans-Serif" font-size="10.00">mousePressEvent()</text>
-<text text-anchor="start" x="670.5" y="-579" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="683.5" y="-579" font-family="Helvetica,sans-Serif" font-size="10.00">mouseReleaseEvent()</text>
-<text text-anchor="start" x="670.5" y="-564" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="683.5" y="-564" font-family="Helvetica,sans-Serif" font-size="10.00">SaveOptions()</text>
-<text text-anchor="start" x="670.5" y="-549" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="683.5" y="-549" font-family="Helvetica,sans-Serif" font-size="10.00">ReadToolAttributes()</text>
-<text text-anchor="start" x="670.5" y="-534" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="683.5" y="-534" font-family="Helvetica,sans-Serif" font-size="10.00">SetVisualization()</text>
-<text text-anchor="start" x="670.5" y="-519" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="683.5" y="-519" font-family="Helvetica,sans-Serif" font-size="10.00">makeToolTip()</text>
-<text text-anchor="start" x="670.5" y="-504" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="683.5" y="-504" font-family="Helvetica,sans-Serif" font-size="10.00">showContextMenu()</text>
-<text text-anchor="start" x="673" y="-489" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="683.5" y="-489" font-family="Helvetica,sans-Serif" font-size="10.00">VToolBasePoint()</text>
-<polygon fill="#666666" stroke="#666666" points="666.5,-874 666.5,-874 795.5,-874 795.5,-874 666.5,-874"/>
-<polygon fill="#666666" stroke="#666666" points="666.5,-844 666.5,-844 681.5,-844 681.5,-844 666.5,-844"/>
-<polygon fill="#666666" stroke="#666666" points="681.5,-844 681.5,-844 795.5,-844 795.5,-844 681.5,-844"/>
-<polygon fill="none" stroke="#666666" points="666,-482.5 666,-891.5 795,-891.5 795,-482.5 666,-482.5"/>
+<polygon fill="white" stroke="transparent" points="795,-884 666,-884 666,-490 795,-490 795,-884"/>
+<text text-anchor="start" x="693" y="-872" font-family="Helvetica,sans-Serif" font-size="10.00">VToolBasePoint</text>
+<text text-anchor="start" x="670.5" y="-857" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="683.5" y="-857" font-family="Helvetica,sans-Serif" font-size="10.00">ToolType</text>
+<text text-anchor="start" x="673" y="-842" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="683.5" y="-842" font-family="Helvetica,sans-Serif" font-size="10.00">draftBlockName</text>
+<text text-anchor="start" x="670.5" y="-827" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="683.5" y="-827" font-family="Helvetica,sans-Serif" font-size="10.00">~VToolBasePoint()</text>
+<text text-anchor="start" x="670.5" y="-812" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="683.5" y="-812" font-family="Helvetica,sans-Serif" font-size="10.00">setDialog()</text>
+<text text-anchor="start" x="670.5" y="-797" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="683.5" y="-797" font-family="Helvetica,sans-Serif" font-size="10.00">type()</text>
+<text text-anchor="start" x="670.5" y="-782" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="683.5" y="-782" font-family="Helvetica,sans-Serif" font-size="10.00">ShowVisualization()</text>
+<text text-anchor="start" x="670.5" y="-767" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="683.5" y="-767" font-family="Helvetica,sans-Serif" font-size="10.00">GetBasePointPos()</text>
+<text text-anchor="start" x="670.5" y="-752" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="683.5" y="-752" font-family="Helvetica,sans-Serif" font-size="10.00">SetBasePointPos()</text>
+<text text-anchor="start" x="670.5" y="-737" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="683.5" y="-737" font-family="Helvetica,sans-Serif" font-size="10.00">Create()</text>
+<text text-anchor="start" x="670.5" y="-722" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="683.5" y="-722" font-family="Helvetica,sans-Serif" font-size="10.00">FullUpdateFromFile()</text>
+<text text-anchor="start" x="670.5" y="-707" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="683.5" y="-707" font-family="Helvetica,sans-Serif" font-size="10.00">EnableToolMove()</text>
+<text text-anchor="start" x="670.5" y="-692" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="683.5" y="-692" font-family="Helvetica,sans-Serif" font-size="10.00">AddToFile()</text>
+<text text-anchor="start" x="670.5" y="-677" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="683.5" y="-677" font-family="Helvetica,sans-Serif" font-size="10.00">itemChange()</text>
+<text text-anchor="start" x="670.5" y="-662" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="683.5" y="-662" font-family="Helvetica,sans-Serif" font-size="10.00">deleteTool()</text>
+<text text-anchor="start" x="670.5" y="-647" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="683.5" y="-647" font-family="Helvetica,sans-Serif" font-size="10.00">SaveDialog()</text>
+<text text-anchor="start" x="670.5" y="-632" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="683.5" y="-632" font-family="Helvetica,sans-Serif" font-size="10.00">hoverEnterEvent()</text>
+<text text-anchor="start" x="670.5" y="-617" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="683.5" y="-617" font-family="Helvetica,sans-Serif" font-size="10.00">hoverLeaveEvent()</text>
+<text text-anchor="start" x="670.5" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="683.5" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">mousePressEvent()</text>
+<text text-anchor="start" x="670.5" y="-587" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="683.5" y="-587" font-family="Helvetica,sans-Serif" font-size="10.00">mouseReleaseEvent()</text>
+<text text-anchor="start" x="670.5" y="-572" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="683.5" y="-572" font-family="Helvetica,sans-Serif" font-size="10.00">SaveOptions()</text>
+<text text-anchor="start" x="670.5" y="-557" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="683.5" y="-557" font-family="Helvetica,sans-Serif" font-size="10.00">ReadToolAttributes()</text>
+<text text-anchor="start" x="670.5" y="-542" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="683.5" y="-542" font-family="Helvetica,sans-Serif" font-size="10.00">SetVisualization()</text>
+<text text-anchor="start" x="670.5" y="-527" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="683.5" y="-527" font-family="Helvetica,sans-Serif" font-size="10.00">makeToolTip()</text>
+<text text-anchor="start" x="670.5" y="-512" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="683.5" y="-512" font-family="Helvetica,sans-Serif" font-size="10.00">showContextMenu()</text>
+<text text-anchor="start" x="673" y="-497" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="683.5" y="-497" font-family="Helvetica,sans-Serif" font-size="10.00">VToolBasePoint()</text>
+<polygon fill="#666666" stroke="#666666" points="666.5,-867 666.5,-867 795.5,-867 795.5,-867 666.5,-867"/>
+<polygon fill="#666666" stroke="#666666" points="666.5,-837 666.5,-837 681.5,-837 681.5,-837 666.5,-837"/>
+<polygon fill="#666666" stroke="#666666" points="681.5,-837 681.5,-837 795.5,-837 795.5,-837 681.5,-837"/>
+<polygon fill="none" stroke="#666666" points="666,-490 666,-884 795,-884 795,-490 666,-490"/>
 </a>
 </g>
 </g>
@@ -938,7 +936,7 @@ var sectionId = 'dynsection-0';
 <g id="edge13_Node000009_Node000014" class="edge">
 <title>Node9&#45;&gt;Node14</title>
 <g id="a_edge13_Node000009_Node000014"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M942.61,-1144.08C896.47,-1083.82 841.91,-1005.48 804.5,-929 798.63,-917.01 793.12,-904.45 787.94,-891.64"/>
+<path fill="none" stroke="#63b8ff" d="M942.61,-1144.08C896.47,-1083.82 841.91,-1005.48 804.5,-929 797.48,-914.65 790.96,-899.49 784.93,-884.05"/>
 <polygon fill="none" stroke="#63b8ff" points="939.9,-1146.3 948.77,-1152.09 945.45,-1142.03 939.9,-1146.3"/>
 </a>
 </g>

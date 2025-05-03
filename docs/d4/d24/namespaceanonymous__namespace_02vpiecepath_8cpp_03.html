@@ -115,6 +115,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a395d2221691add0fd3fcd637872d7735" id="r_a395d2221691add0fd3fcd637872d7735"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#a395d2221691add0fd3fcd637872d7735">IndexOfNode</a> (const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; <a class="el" href="../../d7/dac/classVPieceNode.html">VPieceNode</a> &gt; &amp;list, quint32 id)</td></tr>
 <tr class="memdesc:a395d2221691add0fd3fcd637872d7735"><td class="mdescLeft">&#160;</td><td class="mdescRight">indexOfNode return index in list node using id object.  <br /></td></tr>
 <tr class="separator:a395d2221691add0fd3fcd637872d7735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a949590315364389638d10aa1c1e74804" id="r_a949590315364389638d10aa1c1e74804"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#a949590315364389638d10aa1c1e74804">findAngle</a> (const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; QPointF &gt; &amp;points)</td></tr>
+<tr class="separator:a949590315364389638d10aa1c1e74804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7f025addb773313273dc4382280a626" id="r_ae7f025addb773313273dc4382280a626"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#ae7f025addb773313273dc4382280a626">intersectsWithCutLine</a> (const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; QPointF &gt; &amp;cutPath, const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; QPointF &gt; &amp;points, QPointF *intersectPoint)</td></tr>
+<tr class="separator:ae7f025addb773313273dc4382280a626"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a9ef1658829697806d3ebe798a7acb481" name="a9ef1658829697806d3ebe798a7acb481"></a>
@@ -201,7 +205,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00064">64</a> of file <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html">vpiecepath.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00273">VPieceNode::GetAngleType()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00150">VPieceNode::GetId()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01053">VContainer::GetPatternUnit()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00231">VPieceNode::GetSAAfter()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00189">VPieceNode::GetSABefore()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00162">VPieceNode::GetTypeTool()</a>, <a class="el" href="../../d3/d4f/vabstractcurve_8cpp_source.html#l00267">VAbstractCurve::isPointOnCurve()</a>, <a class="el" href="../../d4/da4/def_8h.html#ab8460ab56e3e92e57d3ed3b717492395acd7236e1d584dcfc791f42196931e665">NodePoint</a>, <a class="el" href="../../dd/d37/vabstractpiece_8h_source.html#l00157">VSAPoint::SetAngleType()</a>, <a class="el" href="../../dd/d37/vabstractpiece_8h_source.html#l00145">VSAPoint::SetSAAfter()</a>, and <a class="el" href="../../dd/d37/vabstractpiece_8h_source.html#l00133">VSAPoint::SetSABefore()</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00273">VPieceNode::GetAngleType()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00150">VPieceNode::GetId()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01066">VContainer::GetPatternUnit()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00231">VPieceNode::GetSAAfter()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00189">VPieceNode::GetSABefore()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00162">VPieceNode::GetTypeTool()</a>, <a class="el" href="../../d3/d4f/vabstractcurve_8cpp_source.html#l00267">VAbstractCurve::isPointOnCurve()</a>, <a class="el" href="../../d4/da4/def_8h.html#ab8460ab56e3e92e57d3ed3b717492395acd7236e1d584dcfc791f42196931e665">NodePoint</a>, <a class="el" href="../../dd/d37/vabstractpiece_8h_source.html#l00157">VSAPoint::SetAngleType()</a>, <a class="el" href="../../dd/d37/vabstractpiece_8h_source.html#l00145">VSAPoint::SetSAAfter()</a>, and <a class="el" href="../../dd/d37/vabstractpiece_8h_source.html#l00133">VSAPoint::SetSABefore()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00109">CurveEndPoint()</a>, and <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00082">CurveStartPoint()</a>.</p>
 
@@ -251,6 +255,28 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a949590315364389638d10aa1c1e74804" name="a949590315364389638d10aa1c1e74804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a949590315364389638d10aa1c1e74804">&#9670;&#160;</a></span>findAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal anonymous_namespace{vpiecepath.cpp}::findAngle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; QPointF &gt; &amp;&#160;</td>
+          <td class="paramname"><em>points</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00152">152</a> of file <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html">vpiecepath.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00175">intersectsWithCutLine()</a>.</p>
+
+</div>
+</div>
 <a id="a395d2221691add0fd3fcd637872d7735" name="a395d2221691add0fd3fcd637872d7735"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a395d2221691add0fd3fcd637872d7735">&#9670;&#160;</a></span>IndexOfNode()</h2>
 
@@ -287,7 +313,45 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>index in list or -1 id can't find. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00141">141</a> of file <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html">vpiecepath.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00139">139</a> of file <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html">vpiecepath.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae7f025addb773313273dc4382280a626" name="ae7f025addb773313273dc4382280a626"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7f025addb773313273dc4382280a626">&#9670;&#160;</a></span>intersectsWithCutLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool anonymous_namespace{vpiecepath.cpp}::intersectsWithCutLine </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; QPointF &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cutPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; QPointF &gt; &amp;&#160;</td>
+          <td class="paramname"><em>points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QPointF *&#160;</td>
+          <td class="paramname"><em>intersectPoint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00175">175</a> of file <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html">vpiecepath.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d3/d4f/vabstractcurve_8cpp_source.html#l00371">VAbstractCurve::curveIntersectAxis()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00152">findAngle()</a>, and <a class="el" href="../../d3/d4f/vabstractcurve_8cpp_source.html#l00267">VAbstractCurve::isPointOnCurve()</a>.</p>
 
 </div>
 </div>

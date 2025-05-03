@@ -3,6 +3,9 @@ var namespaces_dup =
     [ "anonymous_namespace{dialogtool.cpp}", "d3/d7d/namespaceanonymous__namespace_02dialogtool_8cpp_03.html", [
       [ "RowId", "d3/d7d/namespaceanonymous__namespace_02dialogtool_8cpp_03.html#ac2e003f541cb5afc14468f3b6945ef46", null ]
     ] ],
+    [ "anonymous_namespace{internal_path_dialog.cpp}", "df/de6/namespaceanonymous__namespace_02internal__path__dialog_8cpp_03.html", [
+      [ "cutLinePath", "df/de6/namespaceanonymous__namespace_02internal__path__dialog_8cpp_03.html#a394f1f735699f1b1d0e822cf8d3af1d3", null ]
+    ] ],
     [ "anonymous_namespace{mainwindowsnogui.cpp}", "df/da0/namespaceanonymous__namespace_02mainwindowsnogui_8cpp_03.html", [
       [ "CreateLayoutPath", "df/da0/namespaceanonymous__namespace_02mainwindowsnogui_8cpp_03.html#adc02e3f28db0229af91f2077610c4b9d", null ],
       [ "RemoveLayoutPath", "df/da0/namespaceanonymous__namespace_02mainwindowsnogui_8cpp_03.html#aba458b4f78f014b23015631f3a439456", null ]
@@ -181,8 +184,8 @@ var namespaces_dup =
     [ "anonymous_namespace{vlayoutpiece.cpp}", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html", [
       [ "ConvertInternalPaths", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#aee188e904012b2c56f9a99b8a90b554b", null ],
       [ "CorrectPosition", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a26982c628e932aec0813e1c375387df4", null ],
-      [ "FindGrainlineGeometry", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#af8aeb7c96e510de59b36203f2e1b8529", null ],
-      [ "FindLabelGeometry", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a44005395b0d831bad9c8a5f1e6c7225f", null ],
+      [ "findGrainlineGeometry", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a51f890cf890f9a7d83130b9bb733b5ba", null ],
+      [ "findLabelGeometry", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a04f05a7019f2d0feb9fc0abc773ad54e", null ],
       [ "IsItemContained", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a4867ae9889201fd1784404a9a1fe75ea", null ],
       [ "PieceLabelText", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a9d5be9c5672d55404b37efffeccaa53f", null ],
       [ "PrepareAllowance", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a52a0730adfd50a44e6904c7028709d88", null ],
@@ -200,7 +203,7 @@ var namespaces_dup =
     ] ],
     [ "anonymous_namespace{vpiece.cpp}", "d1/db2/namespaceanonymous__namespace_02vpiece_8cpp_03.html", [
       [ "notchesPossible", "d1/db2/namespaceanonymous__namespace_02vpiece_8cpp_03.html#ae8655eab9eb2b655a9d590a4f9773c79", null ],
-      [ "PieceMissingNodes", "d1/db2/namespaceanonymous__namespace_02vpiece_8cpp_03.html#a6777e67de8d1dc55c9f990651e08fc59", null ]
+      [ "PieceMissingNodes", "d1/db2/namespaceanonymous__namespace_02vpiece_8cpp_03.html#a0b92f230191728dbaf33b543114ee48b", null ]
     ] ],
     [ "anonymous_namespace{vpiecenode.cpp}", "d2/d4b/namespaceanonymous__namespace_02vpiecenode_8cpp_03.html", [
       [ "EvalFormula", "d2/d4b/namespaceanonymous__namespace_02vpiecenode_8cpp_03.html#affc4d572e7531f04d94c466f495a3f7f", null ]
@@ -209,7 +212,9 @@ var namespaces_dup =
       [ "CurveEndPoint", "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#a9ef1658829697806d3ebe798a7acb481", null ],
       [ "CurvePoint", "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#a081273b064ca31428fa188fb2388c99b", null ],
       [ "CurveStartPoint", "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#ae903c3c49140e20a1573ba65adeadd13", null ],
-      [ "IndexOfNode", "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#a395d2221691add0fd3fcd637872d7735", null ]
+      [ "findAngle", "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#a949590315364389638d10aa1c1e74804", null ],
+      [ "IndexOfNode", "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#a395d2221691add0fd3fcd637872d7735", null ],
+      [ "intersectsWithCutLine", "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#ae7f025addb773313273dc4382280a626", null ]
     ] ],
     [ "anonymous_namespace{vsettings.cpp}", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html", [
       [ "settingCommunityProxyAddress", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#afe08e293ff54709b6b3afa9992665100", null ],
@@ -282,14 +287,14 @@ var namespaces_dup =
       [ "getBlockName", "dd/db0/namespaceQT__WARNING__POP.html#a45cec81b7cea447cfcc3a6591776429c", null ],
       [ "GetChildren", "dd/db0/namespaceQT__WARNING__POP.html#ac808f7375266e379a7cdb18eb497b91a", null ],
       [ "GetCSAChildren", "dd/db0/namespaceQT__WARNING__POP.html#abd517d99ae5dab2af5d6de83611d73b2", null ],
-      [ "GetInternalPathsChildren", "dd/db0/namespaceQT__WARNING__POP.html#ac5e08508a77c514470486d3e263960ad", null ],
+      [ "getInternalPathsChildren", "dd/db0/namespaceQT__WARNING__POP.html#a6e54544299e618e8f63c8272eefcf2c3", null ],
       [ "GetNodesChildren", "dd/db0/namespaceQT__WARNING__POP.html#a1373d60451b8fc974c23ae35e6550d73", null ],
       [ "GetPiece1MainPath", "dd/db0/namespaceQT__WARNING__POP.html#a4cd01162be10b9883de62bd8b8563c19", null ],
       [ "GetPiece2Anchors", "dd/db0/namespaceQT__WARNING__POP.html#aca8de59cc37fd99af723128c5439f402", null ],
       [ "GetPiece2CSAPaths", "dd/db0/namespaceQT__WARNING__POP.html#a13ccdfd11688fa5da79b007dbdcce64e", null ],
       [ "GetPiece2InternalPaths", "dd/db0/namespaceQT__WARNING__POP.html#aa89d81e8f5f74108d57898ce3af32acc", null ],
       [ "GetPiece2MainPath", "dd/db0/namespaceQT__WARNING__POP.html#a17d67d1cf67d5a2e78a87a315fffef85", null ],
-      [ "GetPiecePath", "dd/db0/namespaceQT__WARNING__POP.html#a3e7f4f3f85b62aa2fb29c336cdef1dc2", null ],
+      [ "getPiecePath", "dd/db0/namespaceQT__WARNING__POP.html#abc0d96a5899bcdf6645e767e599632ab", null ],
       [ "GetTagChildren", "dd/db0/namespaceQT__WARNING__POP.html#aa883943a9bc374c576acee6f64627ce4", null ],
       [ "PointsOnEdge", "dd/db0/namespaceQT__WARNING__POP.html#a80b2e5367bdfa51e9ee82c7b62a64422", null ],
       [ "SaveAnchorsChildren", "dd/db0/namespaceQT__WARNING__POP.html#af36760762460542ed6876ec4c4d3e17d", null ],

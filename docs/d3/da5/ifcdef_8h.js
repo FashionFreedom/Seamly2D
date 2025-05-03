@@ -56,6 +56,8 @@ var ifcdef_8h =
     [ "AttrDartP3", "d3/da5/ifcdef_8h.html#ac61fa56def489e867aba336694057b21", null ],
     [ "AttrDirection", "d3/da5/ifcdef_8h.html#a94fc4767f7c46b397467d815d59acddb", null ],
     [ "AttrDuplicate", "d3/da5/ifcdef_8h.html#a1105faa3848cb2f2fbc8b47dcd336797", null ],
+    [ "AttrExtendEndPoint", "d3/da5/ifcdef_8h.html#a2279033ea10915cc9e66bf6034176d17", null ],
+    [ "AttrExtendStartPoint", "d3/da5/ifcdef_8h.html#a8e6d601c0452e5b020d3802f4c0a7eed", null ],
     [ "AttrFirstArc", "d3/da5/ifcdef_8h.html#a497d952a1b6a67067433cf4d1ecb69d7", null ],
     [ "AttrFirstPoint", "d3/da5/ifcdef_8h.html#a3572c5564adcfc0b4fab1f00e35eb9dd", null ],
     [ "AttrHCrossPoint", "d3/da5/ifcdef_8h.html#aa07db222cea404ec8e5a08d9d2f0ad97", null ],

@@ -155,7 +155,7 @@ var classVAbstractPattern =
     [ "UndoCommand", "d8/dba/classVAbstractPattern.html#a30f2c462e40e6e409c8fe8e58ddfe057", null ],
     [ "updateGroups", "d8/dba/classVAbstractPattern.html#a3a47a9fb94c5a12511140dd4c40f0cd6", null ],
     [ "UpdateInLayoutList", "d8/dba/classVAbstractPattern.html#a2b8ab63bf5a82f9a57c8b4dab31cac43", null ],
-    [ "UpdatePatternLabel", "d8/dba/classVAbstractPattern.html#a97b08b1037219231986fd9ce2ea78a07", null ],
+    [ "updatePatternLabel", "d8/dba/classVAbstractPattern.html#a366f4c38fb4b0297ca11dab5281d3730", null ],
     [ "updatePieceList", "d8/dba/classVAbstractPattern.html#a02a687367402141e43ca91820dfda2a0", null ],
     [ "UpdateToolData", "d8/dba/classVAbstractPattern.html#a3f3b6ce0527e751e3ce4d89f3f2ec444", null ],
     [ "useGroupColor", "d8/dba/classVAbstractPattern.html#a491972f831d63e2d39f26f0d0d5e18d6", null ],

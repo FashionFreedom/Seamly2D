@@ -63,7 +63,7 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="30.5" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="41" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">ui</text>
 <text text-anchor="start" x="30.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="41" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_showMode</text>
+<text text-anchor="start" x="41" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_editMode</text>
 <text text-anchor="start" x="30.5" y="-201.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="41" y="-201.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_flagPoint</text>
 <text text-anchor="start" x="28" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
@@ -71,11 +71,11 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="28" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="41" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">~AnchorPointDialog()</text>
 <text text-anchor="start" x="28" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="41" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">EnbleShowMode()</text>
+<text text-anchor="start" x="41" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">enableEditMode()</text>
 <text text-anchor="start" x="28" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="41" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetPieceId()</text>
+<text text-anchor="start" x="41" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">getPieceId()</text>
 <text text-anchor="start" x="28" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="41" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00">SetPieceId()</text>
+<text text-anchor="start" x="41" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00">setPieceId()</text>
 <text text-anchor="start" x="28" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="41" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetPointId()</text>
 <text text-anchor="start" x="28" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
@@ -292,10 +292,10 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="4" y="-3418" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="17" y="-3418" font-family="Helvetica,sans-Serif" font-size="10.00">GetPiece()</text>
 <text text-anchor="start" x="4" y="-3403" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="17" y="-3403" font-family="Helvetica,sans-Serif" font-size="10.00">GetPiecePath()</text>
+<text text-anchor="start" x="17" y="-3403" font-family="Helvetica,sans-Serif" font-size="10.00">getPiecePath()</text>
 <text text-anchor="start" x="4" y="-3388" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="17" y="-3388" font-family="Helvetica,sans-Serif" font-size="10.00">getVariable()</text>
-<text text-anchor="start" x="17" y="-3373" font-family="Helvetica,sans-Serif" font-size="10.00">and 34 more...</text>
+<text text-anchor="start" x="17" y="-3388" font-family="Helvetica,sans-Serif" font-size="10.00">pieceIdOfPath()</text>
+<text text-anchor="start" x="17" y="-3373" font-family="Helvetica,sans-Serif" font-size="10.00">and 35 more...</text>
 <text text-anchor="start" x="4" y="-3358" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="17" y="-3358" font-family="Helvetica,sans-Serif" font-size="10.00">GetFakeGObject()</text>
 <text text-anchor="start" x="4" y="-3343" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
@@ -445,9 +445,9 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="131" y="-1539" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="144" y="-1539" font-family="Helvetica,sans-Serif" font-size="10.00">AddRecord()</text>
 <text text-anchor="start" x="131" y="-1524" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="144" y="-1524" font-family="Helvetica,sans-Serif" font-size="10.00">AddNodes()</text>
+<text text-anchor="start" x="144" y="-1524" font-family="Helvetica,sans-Serif" font-size="10.00">addNodes()</text>
 <text text-anchor="start" x="131" y="-1509" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="144" y="-1509" font-family="Helvetica,sans-Serif" font-size="10.00">AddNodes()</text>
+<text text-anchor="start" x="144" y="-1509" font-family="Helvetica,sans-Serif" font-size="10.00">addNodes()</text>
 <text text-anchor="start" x="131" y="-1494" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="144" y="-1494" font-family="Helvetica,sans-Serif" font-size="10.00">CreateNode()</text>
 <text text-anchor="start" x="131" y="-1479" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>

@@ -84,7 +84,6 @@ var hierarchy =
         [ "DialogEllipticalArc", "db/dcf/classDialogEllipticalArc.html", null ],
         [ "DialogEndLine", "d1/d7a/classDialogEndLine.html", null ],
         [ "DialogHeight", "d3/dbe/classDialogHeight.html", null ],
-        [ "DialogInternalPath", "d4/d7f/classDialogInternalPath.html", null ],
         [ "DialogLine", "d5/dd7/classDialogLine.html", null ],
         [ "DialogLineIntersect", "d1/d35/classDialogLineIntersect.html", null ],
         [ "DialogLineIntersectAxis", "d2/d43/classDialogLineIntersectAxis.html", null ],
@@ -109,6 +108,7 @@ var hierarchy =
         [ "EditGroupDialog", "d3/da7/classEditGroupDialog.html", null ],
         [ "HistoryDialog", "d1/d42/classHistoryDialog.html", null ],
         [ "InsertNodesDialog", "d6/d55/classInsertNodesDialog.html", null ],
+        [ "InternalPathDialog", "d9/d71/classInternalPathDialog.html", null ],
         [ "IntersectCircleTangentDialog", "dc/dfe/classIntersectCircleTangentDialog.html", null ],
         [ "IntersectCirclesDialog", "d0/d09/classIntersectCirclesDialog.html", null ],
         [ "PatternPieceDialog", "d5/d41/classPatternPieceDialog.html", null ],
@@ -253,6 +253,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "QGraphicsPathItem", null, [
+      [ "InternalPathTool", "d9/d3f/classInternalPathTool.html", null ],
       [ "NonScalingFillPathItem", "df/d63/classNonScalingFillPathItem.html", null ],
       [ "PatternPieceTool", "da/dfb/classPatternPieceTool.html", null ],
       [ "VAbstractSpline", "d3/d64/classVAbstractSpline.html", [
@@ -267,6 +268,7 @@ var hierarchy =
       [ "VCurvePathItem", "d3/d85/classVCurvePathItem.html", [
         [ "VSimpleCurve", "d4/d36/classVSimpleCurve.html", null ],
         [ "VisPath", "db/d76/classVisPath.html", [
+          [ "InternalPathVisual", "dc/dee/classInternalPathVisual.html", null ],
           [ "PatternPieceVisual", "de/d44/classPatternPieceVisual.html", null ],
           [ "PieceAnchorPointVisual", "dd/d5b/classPieceAnchorPointVisual.html", null ],
           [ "VisToolArc", "d2/deb/classVisToolArc.html", null ],
@@ -277,7 +279,6 @@ var hierarchy =
           [ "VisToolCutSpline", "d1/dcd/classVisToolCutSpline.html", null ],
           [ "VisToolCutSplinePath", "d4/dd9/classVisToolCutSplinePath.html", null ],
           [ "VisToolEllipticalArc", "d5/d62/classVisToolEllipticalArc.html", null ],
-          [ "VisToolInternalPath", "d1/de1/classVisToolInternalPath.html", null ],
           [ "VisToolPointOfIntersectionCurves", "dd/dfd/classVisToolPointOfIntersectionCurves.html", null ],
           [ "VisToolSpline", "d0/d12/classVisToolSpline.html", null ],
           [ "VisToolSplinePath", "df/d7b/classVisToolSplinePath.html", null ]
@@ -286,8 +287,7 @@ var hierarchy =
       [ "VGraphicsFillItem", "d1/d64/classVGraphicsFillItem.html", null ],
       [ "VToolDoublePoint", "d0/dcf/classVToolDoublePoint.html", [
         [ "VToolTrueDarts", "de/d04/classVToolTrueDarts.html", null ]
-      ] ],
-      [ "VToolInternalPath", "db/d7b/classVToolInternalPath.html", null ]
+      ] ]
     ] ],
     [ "QGraphicsRectItem", null, [
       [ "ResizeHandlesItem::HandleItem", "d0/dc5/classResizeHandlesItem_1_1HandleItem.html", null ],
@@ -422,12 +422,12 @@ var hierarchy =
           [ "UnionTool", "d4/dd5/classUnionTool.html", null ],
           [ "VAbstractNode", "d3/d16/classVAbstractNode.html", [
             [ "AnchorPointTool", "d5/da9/classAnchorPointTool.html", null ],
+            [ "InternalPathTool", "d9/d3f/classInternalPathTool.html", null ],
             [ "VNodeArc", "df/d93/classVNodeArc.html", null ],
             [ "VNodeEllipticalArc", "de/db2/classVNodeEllipticalArc.html", null ],
             [ "VNodePoint", "d6/d7a/classVNodePoint.html", null ],
             [ "VNodeSpline", "d4/df7/classVNodeSpline.html", null ],
-            [ "VNodeSplinePath", "d4/d69/classVNodeSplinePath.html", null ],
-            [ "VToolInternalPath", "db/d7b/classVToolInternalPath.html", null ]
+            [ "VNodeSplinePath", "d4/d69/classVNodeSplinePath.html", null ]
           ] ],
           [ "VInteractiveTool", "d4/d36/classVInteractiveTool.html", [
             [ "PatternPieceTool", "da/dfb/classPatternPieceTool.html", null ],
@@ -613,6 +613,7 @@ var hierarchy =
     [ "QVector< QObject * >", "d5/dc2/classQVector.html", null ],
     [ "QVector< QPair< QLineF, QLineF > >", "d5/dc2/classQVector.html", null ],
     [ "QVector< QPair< QString, QString > >", "d5/dc2/classQVector.html", null ],
+    [ "QVector< QPointer< VUndoCommand > >", "d5/dc2/classQVector.html", null ],
     [ "QVector< QPointF >", "d5/dc2/classQVector.html", null ],
     [ "QVector< qreal >", "d5/dc2/classQVector.html", null ],
     [ "QVector< QString >", "d5/dc2/classQVector.html", null ],

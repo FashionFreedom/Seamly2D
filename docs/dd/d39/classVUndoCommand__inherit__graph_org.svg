@@ -823,34 +823,36 @@
 <g id="Node000027" class="node">
 <title>Node27</title>
 <g id="a_Node000027"><a xlink:href="../../df/d94/classSavePiecePathOptions.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="transparent" points="2849.5,-419 2703.5,-419 2703.5,-235 2849.5,-235 2849.5,-419"/>
-<text text-anchor="start" x="2722" y="-407" font-family="Helvetica,sans-Serif" font-size="10.00">SavePiecePathOptions</text>
-<text text-anchor="start" x="2710" y="-392" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="2720.5" y="-392" font-family="Helvetica,sans-Serif" font-size="10.00">m_oldPath</text>
-<text text-anchor="start" x="2710" y="-377" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="2720.5" y="-377" font-family="Helvetica,sans-Serif" font-size="10.00">m_newPath</text>
-<text text-anchor="start" x="2710" y="-362" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="2720.5" y="-362" font-family="Helvetica,sans-Serif" font-size="10.00">m_data</text>
-<text text-anchor="start" x="2707.5" y="-347" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="2720.5" y="-347" font-family="Helvetica,sans-Serif" font-size="10.00">SavePiecePathOptions()</text>
-<text text-anchor="start" x="2707.5" y="-332" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="2720.5" y="-332" font-family="Helvetica,sans-Serif" font-size="10.00">~SavePiecePathOptions()</text>
-<text text-anchor="start" x="2707.5" y="-317" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="2720.5" y="-317" font-family="Helvetica,sans-Serif" font-size="10.00">undo()</text>
-<text text-anchor="start" x="2707.5" y="-302" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="2720.5" y="-302" font-family="Helvetica,sans-Serif" font-size="10.00">redo()</text>
-<text text-anchor="start" x="2707.5" y="-287" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="2720.5" y="-287" font-family="Helvetica,sans-Serif" font-size="10.00">mergeWith()</text>
-<text text-anchor="start" x="2707.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="2720.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">id()</text>
-<text text-anchor="start" x="2707.5" y="-257" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="2720.5" y="-257" font-family="Helvetica,sans-Serif" font-size="10.00">PathId()</text>
-<text text-anchor="start" x="2707.5" y="-242" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="2720.5" y="-242" font-family="Helvetica,sans-Serif" font-size="10.00">NewPath()</text>
-<polygon fill="#666666" stroke="#666666" points="2703.5,-402 2703.5,-402 2849.5,-402 2849.5,-402 2703.5,-402"/>
-<polygon fill="#666666" stroke="#666666" points="2703.5,-357 2703.5,-357 2718.5,-357 2718.5,-357 2703.5,-357"/>
-<polygon fill="#666666" stroke="#666666" points="2718.5,-357 2718.5,-357 2849.5,-357 2849.5,-357 2718.5,-357"/>
-<polygon fill="none" stroke="#666666" points="2703.5,-235 2703.5,-419 2849.5,-419 2849.5,-235 2703.5,-235"/>
+<polygon fill="white" stroke="transparent" points="2849.5,-426.5 2703.5,-426.5 2703.5,-227.5 2849.5,-227.5 2849.5,-426.5"/>
+<text text-anchor="start" x="2722" y="-414" font-family="Helvetica,sans-Serif" font-size="10.00">SavePiecePathOptions</text>
+<text text-anchor="start" x="2710" y="-399" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="2720.5" y="-399" font-family="Helvetica,sans-Serif" font-size="10.00">m_oldPath</text>
+<text text-anchor="start" x="2710" y="-384" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="2720.5" y="-384" font-family="Helvetica,sans-Serif" font-size="10.00">m_newPath</text>
+<text text-anchor="start" x="2710" y="-369" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="2720.5" y="-369" font-family="Helvetica,sans-Serif" font-size="10.00">m_data</text>
+<text text-anchor="start" x="2710" y="-354" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="2720.5" y="-354" font-family="Helvetica,sans-Serif" font-size="10.00">m_pieceId</text>
+<text text-anchor="start" x="2707.5" y="-339" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2720.5" y="-339" font-family="Helvetica,sans-Serif" font-size="10.00">SavePiecePathOptions()</text>
+<text text-anchor="start" x="2707.5" y="-324" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2720.5" y="-324" font-family="Helvetica,sans-Serif" font-size="10.00">~SavePiecePathOptions()</text>
+<text text-anchor="start" x="2707.5" y="-309" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2720.5" y="-309" font-family="Helvetica,sans-Serif" font-size="10.00">undo()</text>
+<text text-anchor="start" x="2707.5" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2720.5" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">redo()</text>
+<text text-anchor="start" x="2707.5" y="-279" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2720.5" y="-279" font-family="Helvetica,sans-Serif" font-size="10.00">mergeWith()</text>
+<text text-anchor="start" x="2707.5" y="-264" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2720.5" y="-264" font-family="Helvetica,sans-Serif" font-size="10.00">id()</text>
+<text text-anchor="start" x="2707.5" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2720.5" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00">pathId()</text>
+<text text-anchor="start" x="2707.5" y="-234" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2720.5" y="-234" font-family="Helvetica,sans-Serif" font-size="10.00">newPath()</text>
+<polygon fill="#666666" stroke="#666666" points="2703.5,-409 2703.5,-409 2849.5,-409 2849.5,-409 2703.5,-409"/>
+<polygon fill="#666666" stroke="#666666" points="2703.5,-349 2703.5,-349 2718.5,-349 2718.5,-349 2703.5,-349"/>
+<polygon fill="#666666" stroke="#666666" points="2718.5,-349 2718.5,-349 2849.5,-349 2849.5,-349 2718.5,-349"/>
+<polygon fill="none" stroke="#666666" points="2703.5,-227.5 2703.5,-426.5 2849.5,-426.5 2849.5,-227.5 2703.5,-227.5"/>
 </a>
 </g>
 </g>
@@ -858,7 +860,7 @@
 <g id="edge26_Node000001_Node000027" class="edge">
 <title>Node1&#45;&gt;Node27</title>
 <g id="a_edge26_Node000001_Node000027"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1968.08,-598.02C2148.35,-579.14 2574.12,-527.36 2693.5,-449 2705.64,-441.03 2716.49,-430.61 2726.02,-419.23"/>
+<path fill="none" stroke="#63b8ff" d="M1968.08,-598.02C2148.35,-579.14 2574.12,-527.36 2693.5,-449 2702.98,-442.78 2711.67,-435.07 2719.56,-426.57"/>
 <polygon fill="none" stroke="#63b8ff" points="1967.7,-594.54 1958.12,-599.05 1968.43,-601.5 1967.7,-594.54"/>
 </a>
 </g>

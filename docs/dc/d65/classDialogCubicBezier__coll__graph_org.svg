@@ -254,10 +254,10 @@
 <text text-anchor="start" x="4" y="-3488" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="17" y="-3488" font-family="Helvetica,sans-Serif" font-size="10.00">GetPiece()</text>
 <text text-anchor="start" x="4" y="-3473" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="17" y="-3473" font-family="Helvetica,sans-Serif" font-size="10.00">GetPiecePath()</text>
+<text text-anchor="start" x="17" y="-3473" font-family="Helvetica,sans-Serif" font-size="10.00">getPiecePath()</text>
 <text text-anchor="start" x="4" y="-3458" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="17" y="-3458" font-family="Helvetica,sans-Serif" font-size="10.00">getVariable()</text>
-<text text-anchor="start" x="17" y="-3443" font-family="Helvetica,sans-Serif" font-size="10.00">and 34 more...</text>
+<text text-anchor="start" x="17" y="-3458" font-family="Helvetica,sans-Serif" font-size="10.00">pieceIdOfPath()</text>
+<text text-anchor="start" x="17" y="-3443" font-family="Helvetica,sans-Serif" font-size="10.00">and 35 more...</text>
 <text text-anchor="start" x="4" y="-3428" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="17" y="-3428" font-family="Helvetica,sans-Serif" font-size="10.00">GetFakeGObject()</text>
 <text text-anchor="start" x="4" y="-3413" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
@@ -407,9 +407,9 @@
 <text text-anchor="start" x="142" y="-1609" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="155" y="-1609" font-family="Helvetica,sans-Serif" font-size="10.00">AddRecord()</text>
 <text text-anchor="start" x="142" y="-1594" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="155" y="-1594" font-family="Helvetica,sans-Serif" font-size="10.00">AddNodes()</text>
+<text text-anchor="start" x="155" y="-1594" font-family="Helvetica,sans-Serif" font-size="10.00">addNodes()</text>
 <text text-anchor="start" x="142" y="-1579" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="155" y="-1579" font-family="Helvetica,sans-Serif" font-size="10.00">AddNodes()</text>
+<text text-anchor="start" x="155" y="-1579" font-family="Helvetica,sans-Serif" font-size="10.00">addNodes()</text>
 <text text-anchor="start" x="142" y="-1564" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="155" y="-1564" font-family="Helvetica,sans-Serif" font-size="10.00">CreateNode()</text>
 <text text-anchor="start" x="142" y="-1549" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
@@ -1077,53 +1077,55 @@
 <g id="Node000020" class="node">
 <title>Node20</title>
 <g id="a_Node000020"><a xlink:href="../../dc/d55/classVAbstractCurve.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="transparent" points="1418,-3583 1264,-3583 1264,-3249 1418,-3249 1418,-3583"/>
-<text text-anchor="start" x="1303" y="-3571" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractCurve</text>
-<text text-anchor="start" x="1268" y="-3556" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1281" y="-3556" font-family="Helvetica,sans-Serif" font-size="10.00">lengthCurveDirectionArrow</text>
-<text text-anchor="start" x="1270.5" y="-3541" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1281" y="-3541" font-family="Helvetica,sans-Serif" font-size="10.00">d</text>
-<text text-anchor="start" x="1268" y="-3526" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1281" y="-3526" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractCurve()</text>
-<text text-anchor="start" x="1268" y="-3511" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1281" y="-3511" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractCurve()</text>
-<text text-anchor="start" x="1268" y="-3496" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1281" y="-3496" font-family="Helvetica,sans-Serif" font-size="10.00">~VAbstractCurve()</text>
-<text text-anchor="start" x="1268" y="-3481" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1281" y="-3481" font-family="Helvetica,sans-Serif" font-size="10.00">operator=()</text>
-<text text-anchor="start" x="1268" y="-3466" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1281" y="-3466" font-family="Helvetica,sans-Serif" font-size="10.00">Swap()</text>
-<text text-anchor="start" x="1268" y="-3451" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1281" y="-3451" font-family="Helvetica,sans-Serif" font-size="10.00">getPoints()</text>
-<text text-anchor="start" x="1268" y="-3436" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1281" y="-3436" font-family="Helvetica,sans-Serif" font-size="10.00">GetSegmentPoints()</text>
-<text text-anchor="start" x="1268" y="-3421" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1281" y="-3421" font-family="Helvetica,sans-Serif" font-size="10.00">GetPath()</text>
-<text text-anchor="start" x="1268" y="-3406" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1281" y="-3406" font-family="Helvetica,sans-Serif" font-size="10.00">GetLength()</text>
-<text text-anchor="start" x="1268" y="-3391" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1281" y="-3391" font-family="Helvetica,sans-Serif" font-size="10.00">GetLengthByPoint()</text>
-<text text-anchor="start" x="1281" y="-3376" font-family="Helvetica,sans-Serif" font-size="10.00">and 17 more...</text>
-<text text-anchor="start" x="1268" y="-3361" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1281" y="-3361" font-family="Helvetica,sans-Serif" font-size="10.00">GetSegmentPoints()</text>
-<text text-anchor="start" x="1268" y="-3346" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1281" y="-3346" font-family="Helvetica,sans-Serif" font-size="10.00">isPointOnCurve()</text>
-<text text-anchor="start" x="1268" y="-3331" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1281" y="-3331" font-family="Helvetica,sans-Serif" font-size="10.00">PathLength()</text>
-<text text-anchor="start" x="1268" y="-3316" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1281" y="-3316" font-family="Helvetica,sans-Serif" font-size="10.00">CurveIntersectLine()</text>
-<text text-anchor="start" x="1268" y="-3301" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1281" y="-3301" font-family="Helvetica,sans-Serif" font-size="10.00">ShowDirection()</text>
-<text text-anchor="start" x="1268" y="-3286" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="1281" y="-3286" font-family="Helvetica,sans-Serif" font-size="10.00">CreateName()</text>
-<text text-anchor="start" x="1270.5" y="-3271" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1281" y="-3271" font-family="Helvetica,sans-Serif" font-size="10.00">FromBegin()</text>
-<text text-anchor="start" x="1270.5" y="-3256" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1281" y="-3256" font-family="Helvetica,sans-Serif" font-size="10.00">ToEnd()</text>
-<polygon fill="#666666" stroke="#666666" points="1264,-3566 1264,-3566 1418,-3566 1418,-3566 1264,-3566"/>
-<polygon fill="#666666" stroke="#666666" points="1264,-3536 1264,-3536 1279,-3536 1279,-3536 1264,-3536"/>
-<polygon fill="#666666" stroke="#666666" points="1279,-3536 1279,-3536 1418,-3536 1418,-3536 1279,-3536"/>
-<polygon fill="none" stroke="#666666" points="1264,-3249 1264,-3583 1418,-3583 1418,-3249 1264,-3249"/>
+<polygon fill="white" stroke="transparent" points="1418,-3590.5 1264,-3590.5 1264,-3241.5 1418,-3241.5 1418,-3590.5"/>
+<text text-anchor="start" x="1303" y="-3578" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractCurve</text>
+<text text-anchor="start" x="1268" y="-3563" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3563" font-family="Helvetica,sans-Serif" font-size="10.00">lengthCurveDirectionArrow</text>
+<text text-anchor="start" x="1270.5" y="-3548" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1281" y="-3548" font-family="Helvetica,sans-Serif" font-size="10.00">d</text>
+<text text-anchor="start" x="1268" y="-3533" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3533" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractCurve()</text>
+<text text-anchor="start" x="1268" y="-3518" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3518" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractCurve()</text>
+<text text-anchor="start" x="1268" y="-3503" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3503" font-family="Helvetica,sans-Serif" font-size="10.00">~VAbstractCurve()</text>
+<text text-anchor="start" x="1268" y="-3488" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3488" font-family="Helvetica,sans-Serif" font-size="10.00">operator=()</text>
+<text text-anchor="start" x="1268" y="-3473" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3473" font-family="Helvetica,sans-Serif" font-size="10.00">Swap()</text>
+<text text-anchor="start" x="1268" y="-3458" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3458" font-family="Helvetica,sans-Serif" font-size="10.00">getPoints()</text>
+<text text-anchor="start" x="1268" y="-3443" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3443" font-family="Helvetica,sans-Serif" font-size="10.00">GetSegmentPoints()</text>
+<text text-anchor="start" x="1268" y="-3428" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3428" font-family="Helvetica,sans-Serif" font-size="10.00">GetPath()</text>
+<text text-anchor="start" x="1268" y="-3413" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3413" font-family="Helvetica,sans-Serif" font-size="10.00">GetLength()</text>
+<text text-anchor="start" x="1268" y="-3398" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3398" font-family="Helvetica,sans-Serif" font-size="10.00">GetLengthByPoint()</text>
+<text text-anchor="start" x="1281" y="-3383" font-family="Helvetica,sans-Serif" font-size="10.00">and 17 more...</text>
+<text text-anchor="start" x="1268" y="-3368" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3368" font-family="Helvetica,sans-Serif" font-size="10.00">GetSegmentPoints()</text>
+<text text-anchor="start" x="1268" y="-3353" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3353" font-family="Helvetica,sans-Serif" font-size="10.00">isPointOnCurve()</text>
+<text text-anchor="start" x="1268" y="-3338" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3338" font-family="Helvetica,sans-Serif" font-size="10.00">PathLength()</text>
+<text text-anchor="start" x="1268" y="-3323" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3323" font-family="Helvetica,sans-Serif" font-size="10.00">CurveIntersectLine()</text>
+<text text-anchor="start" x="1268" y="-3308" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3308" font-family="Helvetica,sans-Serif" font-size="10.00">curveIntersectAxis()</text>
+<text text-anchor="start" x="1268" y="-3293" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1281" y="-3293" font-family="Helvetica,sans-Serif" font-size="10.00">ShowDirection()</text>
+<text text-anchor="start" x="1268" y="-3278" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="1281" y="-3278" font-family="Helvetica,sans-Serif" font-size="10.00">CreateName()</text>
+<text text-anchor="start" x="1270.5" y="-3263" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1281" y="-3263" font-family="Helvetica,sans-Serif" font-size="10.00">FromBegin()</text>
+<text text-anchor="start" x="1270.5" y="-3248" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1281" y="-3248" font-family="Helvetica,sans-Serif" font-size="10.00">ToEnd()</text>
+<polygon fill="#666666" stroke="#666666" points="1264,-3573 1264,-3573 1418,-3573 1418,-3573 1264,-3573"/>
+<polygon fill="#666666" stroke="#666666" points="1264,-3543 1264,-3543 1279,-3543 1279,-3543 1264,-3543"/>
+<polygon fill="#666666" stroke="#666666" points="1279,-3543 1279,-3543 1418,-3543 1418,-3543 1279,-3543"/>
+<polygon fill="none" stroke="#666666" points="1264,-3241.5 1264,-3590.5 1418,-3590.5 1418,-3241.5 1264,-3241.5"/>
 </a>
 </g>
 </g>
@@ -1131,8 +1133,8 @@
 <g id="edge21_Node000019_Node000020" class="edge">
 <title>Node20&#45;&gt;Node19</title>
 <g id="a_edge21_Node000019_Node000020"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1305.88,-3238.96C1294.26,-3188.73 1280.11,-3134.28 1264,-3085 1204.08,-2901.75 1107.82,-2694.92 1059.2,-2594.6"/>
-<polygon fill="none" stroke="#63b8ff" points="1302.52,-3239.99 1308.17,-3248.95 1309.34,-3238.42 1302.52,-3239.99"/>
+<path fill="none" stroke="#63b8ff" d="M1304.12,-3231.42C1292.84,-3183.32 1279.31,-3131.82 1264,-3085 1204.08,-2901.75 1107.82,-2694.92 1059.2,-2594.6"/>
+<polygon fill="none" stroke="#63b8ff" points="1300.75,-3232.36 1306.42,-3241.31 1307.57,-3230.78 1300.75,-3232.36"/>
 </a>
 </g>
 </g>
@@ -1216,7 +1218,7 @@
 <g id="edge22_Node000020_Node000021" class="edge">
 <title>Node21&#45;&gt;Node20</title>
 <g id="a_edge22_Node000020_Node000021"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1341,-3754.78C1341,-3696.65 1341,-3636.47 1341,-3583.3"/>
+<path fill="none" stroke="#63b8ff" d="M1341,-3754.54C1341,-3699.21 1341,-3642.04 1341,-3590.84"/>
 <polygon fill="none" stroke="#63b8ff" points="1337.5,-3754.85 1341,-3764.85 1344.5,-3754.85 1337.5,-3754.85"/>
 </a>
 </g>

@@ -4,7 +4,6 @@ var classVToolBasePoint =
     [ "VToolBasePoint", "de/ddd/classVToolBasePoint.html#a1aaf45203881caeebd474a3998af263c", null ],
     [ "AddToFile", "de/ddd/classVToolBasePoint.html#aba80c37cd3f072c892de6b91d9242590", null ],
     [ "Create", "de/ddd/classVToolBasePoint.html#a58067ad2c8a2db19e02064e3ec4f11ac", null ],
-    [ "decrementReferens", "de/ddd/classVToolBasePoint.html#adafbf7602d5aa539857cf80af730c3ba", null ],
     [ "deleteTool", "de/ddd/classVToolBasePoint.html#a0613d8e853fad77bf96eb5c5586d24ed", null ],
     [ "EnableToolMove", "de/ddd/classVToolBasePoint.html#ab3209df221a77004d14a10e97820ce64", null ],
     [ "FullUpdateFromFile", "de/ddd/classVToolBasePoint.html#af0d115fff82a78735b6491f037deff3f", null ],

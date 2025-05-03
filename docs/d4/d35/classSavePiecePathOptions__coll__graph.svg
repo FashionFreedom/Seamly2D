@@ -60,7 +60,8 @@ var sectionId = 'dynsection-1';
 <g id="a_Node000001"><a xlink:title=" ">
 <polygon fill="#999999" stroke="transparent" points="557,-154 411,-154 411,0 557,0 557,-154"/>
 <text text-anchor="start" x="429.5" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">SavePiecePathOptions</text>
-<text text-anchor="start" x="482" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<text text-anchor="start" x="417.5" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="428" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">m_pieceId</text>
 <text text-anchor="start" x="415" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="428" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">SavePiecePathOptions()</text>
 <text text-anchor="start" x="415" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
@@ -74,11 +75,12 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="415" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="428" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">id()</text>
 <text text-anchor="start" x="415" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="428" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">PathId()</text>
+<text text-anchor="start" x="428" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">pathId()</text>
 <text text-anchor="start" x="415" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="428" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">NewPath()</text>
+<text text-anchor="start" x="428" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">newPath()</text>
 <polygon fill="#666666" stroke="#666666" points="411,-137 411,-137 557,-137 557,-137 411,-137"/>
-<polygon fill="#666666" stroke="#666666" points="411,-122 411,-122 557,-122 557,-122 411,-122"/>
+<polygon fill="#666666" stroke="#666666" points="411,-122 411,-122 426,-122 426,-122 411,-122"/>
+<polygon fill="#666666" stroke="#666666" points="426,-122 426,-122 557,-122 557,-122 426,-122"/>
 <polygon fill="none" stroke="#666666" points="411,0 411,-154 557,-154 557,0 411,0"/>
 </a>
 </g>
@@ -640,10 +642,10 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="399" y="-496.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="412" y="-496.5" font-family="Helvetica,sans-Serif" font-size="10.00">Clear()</text>
 <text text-anchor="start" x="399" y="-481.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="412" y="-481.5" font-family="Helvetica,sans-Serif" font-size="10.00">CountNodes()</text>
+<text text-anchor="start" x="412" y="-481.5" font-family="Helvetica,sans-Serif" font-size="10.00">nodeCount()</text>
 <text text-anchor="start" x="399" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="412" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">operator[]()</text>
-<text text-anchor="start" x="412" y="-451.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 28 more...</text>
+<text text-anchor="start" x="412" y="-451.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 36 more...</text>
 <text text-anchor="start" x="399" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="412" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00">indexOfNode()</text>
 <text text-anchor="start" x="399" y="-421.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
@@ -709,10 +711,10 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="596" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="609" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetPiece()</text>
 <text text-anchor="start" x="596" y="-548.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="609" y="-548.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetPiecePath()</text>
+<text text-anchor="start" x="609" y="-548.5" font-family="Helvetica,sans-Serif" font-size="10.00">getPiecePath()</text>
 <text text-anchor="start" x="596" y="-533.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="609" y="-533.5" font-family="Helvetica,sans-Serif" font-size="10.00">getVariable()</text>
-<text text-anchor="start" x="609" y="-518.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 34 more...</text>
+<text text-anchor="start" x="609" y="-533.5" font-family="Helvetica,sans-Serif" font-size="10.00">pieceIdOfPath()</text>
+<text text-anchor="start" x="609" y="-518.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 35 more...</text>
 <text text-anchor="start" x="596" y="-503.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="609" y="-503.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetFakeGObject()</text>
 <text text-anchor="start" x="596" y="-488.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
