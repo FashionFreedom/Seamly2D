@@ -401,7 +401,7 @@ void TST_TSTranslation::TestPunctuation()
         {
             testFail = true;
 
-            if (locale == QLatin1String("el_GR") && cSource == QLatin1Char('?') && cTranslation == QLatin1Char(';'))
+            if (locale == QLatin1String("tr_TR") && cSource == QLatin1Char('?') && cTranslation == QLatin1Char(';'))
             {
                 testFail = false;
             }
