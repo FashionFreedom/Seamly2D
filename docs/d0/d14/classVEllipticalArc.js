@@ -25,7 +25,7 @@ var classVEllipticalArc =
     [ "GetRadius1", "d0/d14/classVEllipticalArc.html#a68be0cef003b6c91065d1ce4005505a8", null ],
     [ "GetRadius2", "d0/d14/classVEllipticalArc.html#a0368c9802429a36698c7960a96d50c92", null ],
     [ "getRealEndAngle", "d0/d14/classVEllipticalArc.html#aeb5f6ed625f3ccb895117e4b9d2b519f", null ],
-    [ "getRotationAngle", "d0/d14/classVEllipticalArc.html#a2574a82612e898e0fae7956a1a062fed", null ],
+    [ "GetRotationAngle", "d0/d14/classVEllipticalArc.html#ade1e2ab88cde2f7848d8ebd01e5f6f3d", null ],
     [ "GetStartAngle", "d0/d14/classVEllipticalArc.html#a21e6d94b9772597df1d58768b2b48bb4", null ],
     [ "getTransform", "d0/d14/classVEllipticalArc.html#ae3f243a5e93ea8adc3e997fff6aafa2d", null ],
     [ "MaxLength", "d0/d14/classVEllipticalArc.html#acf802e123e3a0f9f70d62d71da240459", null ],

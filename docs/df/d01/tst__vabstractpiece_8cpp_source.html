@@ -229,11 +229,11 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a764ba18746c0fe2d2a5f2c317fb921f5">  122</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="../../d6/d89/classTST__VAbstractPiece.html#a764ba18746c0fe2d2a5f2c317fb921f5">TST_VAbstractPiece::EquidistantRemoveLoop</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    QFETCH(<a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a>, points);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    QFETCH(QVector&lt;VSAPoint&gt;, points);</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    QFETCH(qreal, width);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    QFETCH(<a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a>, ekvOrig);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    QFETCH(QVector&lt;QPointF&gt;, ekvOrig);</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keyword">const</span> <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> ekv = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#a292f7d4da418ba3514ae7678cb4d0a79">VAbstractPiece::Equidistant</a>(points, width);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keyword">const</span> QVector&lt;QPointF&gt; ekv = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#a292f7d4da418ba3514ae7678cb4d0a79">VAbstractPiece::Equidistant</a>(points, width);</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="comment">// Begin comparison</span></div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <a class="code hl_function" href="../../d0/d9b/classAbstractTest.html#add1a646393948a60b1bae3786e69e4b4">Comparison</a>(ekv, ekvOrig);</div>
@@ -242,10 +242,10 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen00135" data-start="{" data-end="}">
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a5e2398ff68020be204b4b0d4a0a6fc69">  135</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a5e2398ff68020be204b4b0d4a0a6fc69">TST_VAbstractPiece::InputPointsCase1</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a5e2398ff68020be204b4b0d4a0a6fc69">  135</a></span>QVector&lt;VSAPoint&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a5e2398ff68020be204b4b0d4a0a6fc69">TST_VAbstractPiece::InputPointsCase1</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> points;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    QVector&lt;VSAPoint&gt; points;</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a> p = <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a>(30.0, 894.8030236220472);</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    p.<a class="code hl_function" href="../../da/dac/classVSAPoint.html#af7356da69f9e18b980b7f3a94f1b274f">SetSAAfter</a>(0);</div>
@@ -678,9 +678,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span> </div>
 <div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen00569" data-start="{" data-end="}">
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a325b7b701b83aaa0144acaae3b8c5bec">  569</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a325b7b701b83aaa0144acaae3b8c5bec">TST_VAbstractPiece::OutputPointsCase1</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a325b7b701b83aaa0144acaae3b8c5bec">  569</a></span>QVector&lt;QPointF&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a325b7b701b83aaa0144acaae3b8c5bec">TST_VAbstractPiece::OutputPointsCase1</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points;</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    QVector&lt;QPointF&gt; points;</div>
 <div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span> </div>
 <div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>    points += QPointF(30.0, 970.3935748031496);</div>
 <div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>    points += QPointF(30.0, 2.204434307474013);</div>
@@ -770,10 +770,10 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span> </div>
 <div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen00659" data-start="{" data-end="}">
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#adb9a98a85aac65ce6ff5ccbcc908e4b4">  659</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#adb9a98a85aac65ce6ff5ccbcc908e4b4">TST_VAbstractPiece::InputPointsCase2</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#adb9a98a85aac65ce6ff5ccbcc908e4b4">  659</a></span>QVector&lt;VSAPoint&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#adb9a98a85aac65ce6ff5ccbcc908e4b4">TST_VAbstractPiece::InputPointsCase2</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span> </div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> points;</div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>    QVector&lt;VSAPoint&gt; points;</div>
 <div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span> </div>
 <div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>    <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a> p = <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a>(30.0, 39.999874015748034);<span class="comment"></span></div>
 <div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span><span class="comment">    ////p.SetSAAfter(-1);</span></div>
@@ -1141,9 +1141,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l01026" name="l01026"></a><span class="lineno"> 1026</span> </div>
 <div class="line"><a id="l01027" name="l01027"></a><span class="lineno"> 1027</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen01028" data-start="{" data-end="}">
-<div class="line"><a id="l01028" name="l01028"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#ac957589af5806dba5d238df3ab013b50"> 1028</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#ac957589af5806dba5d238df3ab013b50">TST_VAbstractPiece::OutputPointsCase2</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l01028" name="l01028"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#ac957589af5806dba5d238df3ab013b50"> 1028</a></span>QVector&lt;QPointF&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#ac957589af5806dba5d238df3ab013b50">TST_VAbstractPiece::OutputPointsCase2</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l01029" name="l01029"></a><span class="lineno"> 1029</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l01030" name="l01030"></a><span class="lineno"> 1030</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points;</div>
+<div class="line"><a id="l01030" name="l01030"></a><span class="lineno"> 1030</span>    QVector&lt;QPointF&gt; points;</div>
 <div class="line"><a id="l01031" name="l01031"></a><span class="lineno"> 1031</span> </div>
 <div class="line"><a id="l01032" name="l01032"></a><span class="lineno"> 1032</span>    points += QPointF(6.735602739585184, 2.204598425196849);</div>
 <div class="line"><a id="l01033" name="l01033"></a><span class="lineno"> 1033</span>    points += QPointF(445.748031496063, 2.204598425196849);</div>
@@ -1207,9 +1207,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span> </div>
 <div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen01092" data-start="{" data-end="}">
-<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a9127589f0687ad70cc34f362413ddb95"> 1092</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a9127589f0687ad70cc34f362413ddb95">TST_VAbstractPiece::InputPointsCase3</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a9127589f0687ad70cc34f362413ddb95"> 1092</a></span>QVector&lt;VSAPoint&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a9127589f0687ad70cc34f362413ddb95">TST_VAbstractPiece::InputPointsCase3</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l01093" name="l01093"></a><span class="lineno"> 1093</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l01094" name="l01094"></a><span class="lineno"> 1094</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> points;</div>
+<div class="line"><a id="l01094" name="l01094"></a><span class="lineno"> 1094</span>    QVector&lt;VSAPoint&gt; points;</div>
 <div class="line"><a id="l01095" name="l01095"></a><span class="lineno"> 1095</span> </div>
 <div class="line"><a id="l01096" name="l01096"></a><span class="lineno"> 1096</span>    <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a> p = <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a>(30.0, 39.999874015748034);</div>
 <div class="line"><a id="l01097" name="l01097"></a><span class="lineno"> 1097</span>    <span class="comment">//p.SetSAAfter(-1);</span></div>
@@ -1882,9 +1882,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l01763" name="l01763"></a><span class="lineno"> 1763</span> </div>
 <div class="line"><a id="l01764" name="l01764"></a><span class="lineno"> 1764</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen01765" data-start="{" data-end="}">
-<div class="line"><a id="l01765" name="l01765"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a9285d24d9e50fa352cc053a0814f3abe"> 1765</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a9285d24d9e50fa352cc053a0814f3abe">TST_VAbstractPiece::OutputPointsCase3</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l01765" name="l01765"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a9285d24d9e50fa352cc053a0814f3abe"> 1765</a></span>QVector&lt;QPointF&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a9285d24d9e50fa352cc053a0814f3abe">TST_VAbstractPiece::OutputPointsCase3</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l01766" name="l01766"></a><span class="lineno"> 1766</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l01767" name="l01767"></a><span class="lineno"> 1767</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points;</div>
+<div class="line"><a id="l01767" name="l01767"></a><span class="lineno"> 1767</span>    QVector&lt;QPointF&gt; points;</div>
 <div class="line"><a id="l01768" name="l01768"></a><span class="lineno"> 1768</span> </div>
 <div class="line"><a id="l01769" name="l01769"></a><span class="lineno"> 1769</span>    points += QPointF(11.491153250328935, 2.204598425196849);</div>
 <div class="line"><a id="l01770" name="l01770"></a><span class="lineno"> 1770</span>    points += QPointF(445.748031496063, 2.204598425196849);</div>
@@ -2007,7 +2007,7 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l01883" name="l01883"></a><span class="lineno"> 1883</span>    QTest::addColumn&lt;QVector&lt;QPointF&gt;&gt;(<span class="stringliteral">&quot;path&quot;</span>);</div>
 <div class="line"><a id="l01884" name="l01884"></a><span class="lineno"> 1884</span>    QTest::addColumn&lt;QVector&lt;QPointF&gt;&gt;(<span class="stringliteral">&quot;expect&quot;</span>);</div>
 <div class="line"><a id="l01885" name="l01885"></a><span class="lineno"> 1885</span> </div>
-<div class="line"><a id="l01886" name="l01886"></a><span class="lineno"> 1886</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> path;</div>
+<div class="line"><a id="l01886" name="l01886"></a><span class="lineno"> 1886</span>    QVector&lt;QPointF&gt; path;</div>
 <div class="line"><a id="l01887" name="l01887"></a><span class="lineno"> 1887</span>    path &lt;&lt; QPointF(10, 10);</div>
 <div class="line"><a id="l01888" name="l01888"></a><span class="lineno"> 1888</span>    path &lt;&lt; QPointF(20, 10);</div>
 <div class="line"><a id="l01889" name="l01889"></a><span class="lineno"> 1889</span>    path &lt;&lt; QPointF(20, 20);</div>
@@ -2040,7 +2040,7 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l01916" name="l01916"></a><span class="lineno"> 1916</span>    path &lt;&lt; QPointF(10, 20);</div>
 <div class="line"><a id="l01917" name="l01917"></a><span class="lineno"> 1917</span>    path &lt;&lt; QPointF(20, 10);</div>
 <div class="line"><a id="l01918" name="l01918"></a><span class="lineno"> 1918</span> </div>
-<div class="line"><a id="l01919" name="l01919"></a><span class="lineno"> 1919</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> res;</div>
+<div class="line"><a id="l01919" name="l01919"></a><span class="lineno"> 1919</span>    QVector&lt;QPointF&gt; res;</div>
 <div class="line"><a id="l01920" name="l01920"></a><span class="lineno"> 1920</span>    res &lt;&lt; QPointF(20, 10);</div>
 <div class="line"><a id="l01921" name="l01921"></a><span class="lineno"> 1921</span>    res &lt;&lt; QPointF(20, 20);</div>
 <div class="line"><a id="l01922" name="l01922"></a><span class="lineno"> 1922</span>    res &lt;&lt; QPointF(15, 15);</div>
@@ -2314,10 +2314,10 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="foldopen" id="foldopen02189" data-start="{" data-end="}">
 <div class="line"><a id="l02189" name="l02189"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#acf2d455f6e748eeddc6724d96171a474"> 2189</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="../../d6/d89/classTST__VAbstractPiece.html#acf2d455f6e748eeddc6724d96171a474">TST_VAbstractPiece::PathRemoveLoop</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l02190" name="l02190"></a><span class="lineno"> 2190</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l02191" name="l02191"></a><span class="lineno"> 2191</span>    QFETCH(<a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a>, path);</div>
-<div class="line"><a id="l02192" name="l02192"></a><span class="lineno"> 2192</span>    QFETCH(<a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a>, expect);</div>
+<div class="line"><a id="l02191" name="l02191"></a><span class="lineno"> 2191</span>    QFETCH(QVector&lt;QPointF&gt;, path);</div>
+<div class="line"><a id="l02192" name="l02192"></a><span class="lineno"> 2192</span>    QFETCH(QVector&lt;QPointF&gt;, expect);</div>
 <div class="line"><a id="l02193" name="l02193"></a><span class="lineno"> 2193</span> </div>
-<div class="line"><a id="l02194" name="l02194"></a><span class="lineno"> 2194</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> res = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#abf5674417e34e924bf3addae32c2e90a">VAbstractPiece::CheckLoops</a>(path);</div>
+<div class="line"><a id="l02194" name="l02194"></a><span class="lineno"> 2194</span>    QVector&lt;QPointF&gt; res = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#abf5674417e34e924bf3addae32c2e90a">VAbstractPiece::CheckLoops</a>(path);</div>
 <div class="line"><a id="l02195" name="l02195"></a><span class="lineno"> 2195</span>    <a class="code hl_function" href="../../d0/d9b/classAbstractTest.html#add1a646393948a60b1bae3786e69e4b4">Comparison</a>(res, expect);</div>
 <div class="line"><a id="l02196" name="l02196"></a><span class="lineno"> 2196</span>}</div>
 </div>
@@ -2329,7 +2329,7 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l02201" name="l02201"></a><span class="lineno"> 2201</span>    QTest::addColumn&lt;QVector&lt;QPointF&gt;&gt;(<span class="stringliteral">&quot;path&quot;</span>);</div>
 <div class="line"><a id="l02202" name="l02202"></a><span class="lineno"> 2202</span>    QTest::addColumn&lt;QVector&lt;QPointF&gt;&gt;(<span class="stringliteral">&quot;expect&quot;</span>);</div>
 <div class="line"><a id="l02203" name="l02203"></a><span class="lineno"> 2203</span> </div>
-<div class="line"><a id="l02204" name="l02204"></a><span class="lineno"> 2204</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> path;</div>
+<div class="line"><a id="l02204" name="l02204"></a><span class="lineno"> 2204</span>    QVector&lt;QPointF&gt; path;</div>
 <div class="line"><a id="l02205" name="l02205"></a><span class="lineno"> 2205</span>    path &lt;&lt; QPointF(61.86670866141733, 446.92270866141735);</div>
 <div class="line"><a id="l02206" name="l02206"></a><span class="lineno"> 2206</span>    path &lt;&lt; QPointF(650.6504606788366, 473.2192016666484);</div>
 <div class="line"><a id="l02207" name="l02207"></a><span class="lineno"> 2207</span>    path &lt;&lt; QPointF(649.4426552757304, 480.5376973511262);</div>
@@ -2374,7 +2374,7 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l02246" name="l02246"></a><span class="lineno"> 2246</span>    path &lt;&lt; QPointF(802.0871811023624, 1653.9337322834645);</div>
 <div class="line"><a id="l02247" name="l02247"></a><span class="lineno"> 2247</span>    path &lt;&lt; QPointF(61.86670866141733, 1653.9337322834645);</div>
 <div class="line"><a id="l02248" name="l02248"></a><span class="lineno"> 2248</span> </div>
-<div class="line"><a id="l02249" name="l02249"></a><span class="lineno"> 2249</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> res;</div>
+<div class="line"><a id="l02249" name="l02249"></a><span class="lineno"> 2249</span>    QVector&lt;QPointF&gt; res;</div>
 <div class="line"><a id="l02250" name="l02250"></a><span class="lineno"> 2250</span>    res &lt;&lt; QPointF(61.86670866141733, 446.92270866141735);</div>
 <div class="line"><a id="l02251" name="l02251"></a><span class="lineno"> 2251</span>    res &lt;&lt; QPointF(650.6504606788366, 473.2192016666484);</div>
 <div class="line"><a id="l02252" name="l02252"></a><span class="lineno"> 2252</span>    res &lt;&lt; QPointF(649.4426552757304, 480.5376973511262);</div>
@@ -2530,10 +2530,10 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="foldopen" id="foldopen02401" data-start="{" data-end="}">
 <div class="line"><a id="l02401" name="l02401"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#acb4f2a74c07b7d0305ed3a1ccdd57a25"> 2401</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="../../d6/d89/classTST__VAbstractPiece.html#acb4f2a74c07b7d0305ed3a1ccdd57a25">TST_VAbstractPiece::PathLoopsCase</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l02402" name="l02402"></a><span class="lineno"> 2402</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l02403" name="l02403"></a><span class="lineno"> 2403</span>    QFETCH(<a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a>, path);</div>
-<div class="line"><a id="l02404" name="l02404"></a><span class="lineno"> 2404</span>    QFETCH(<a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a>, expect);</div>
+<div class="line"><a id="l02403" name="l02403"></a><span class="lineno"> 2403</span>    QFETCH(QVector&lt;QPointF&gt;, path);</div>
+<div class="line"><a id="l02404" name="l02404"></a><span class="lineno"> 2404</span>    QFETCH(QVector&lt;QPointF&gt;, expect);</div>
 <div class="line"><a id="l02405" name="l02405"></a><span class="lineno"> 2405</span> </div>
-<div class="line"><a id="l02406" name="l02406"></a><span class="lineno"> 2406</span>    <span class="keyword">const</span> <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> res = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#abf5674417e34e924bf3addae32c2e90a">VAbstractPiece::CheckLoops</a>(path);</div>
+<div class="line"><a id="l02406" name="l02406"></a><span class="lineno"> 2406</span>    <span class="keyword">const</span> QVector&lt;QPointF&gt; res = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#abf5674417e34e924bf3addae32c2e90a">VAbstractPiece::CheckLoops</a>(path);</div>
 <div class="line"><a id="l02407" name="l02407"></a><span class="lineno"> 2407</span>    <a class="code hl_function" href="../../d0/d9b/classAbstractTest.html#add1a646393948a60b1bae3786e69e4b4">Comparison</a>(res, expect);</div>
 <div class="line"><a id="l02408" name="l02408"></a><span class="lineno"> 2408</span>}</div>
 </div>
@@ -2549,7 +2549,7 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l02417" name="l02417"></a><span class="lineno"> 2417</span>    <span class="comment">// For more details see the file &quot;collection/bugs/GAVAUDAN Laure - corsage - figure 4.sm2d&quot;.</span></div>
 <div class="line"><a id="l02418" name="l02418"></a><span class="lineno"> 2418</span>    <span class="comment">// We will test only one detail. The second require too accurate data that we cannot get from debuger.</span></div>
 <div class="line"><a id="l02419" name="l02419"></a><span class="lineno"> 2419</span>    <span class="comment">// The test check an open equdistant of correct detail.</span></div>
-<div class="line"><a id="l02420" name="l02420"></a><span class="lineno"> 2420</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> points;<span class="comment">// Input points.</span></div>
+<div class="line"><a id="l02420" name="l02420"></a><span class="lineno"> 2420</span>    QVector&lt;VSAPoint&gt; points;<span class="comment">// Input points.</span></div>
 <div class="line"><a id="l02421" name="l02421"></a><span class="lineno"> 2421</span> </div>
 <div class="line"><a id="l02422" name="l02422"></a><span class="lineno"> 2422</span>    <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a> point = <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a>(787.5835464566929, 1701.3138897637796);</div>
 <div class="line"><a id="l02423" name="l02423"></a><span class="lineno"> 2423</span>    point.<a class="code hl_function" href="../../da/dac/classVSAPoint.html#af7356da69f9e18b980b7f3a94f1b274f">SetSAAfter</a>(-1);</div>
@@ -2602,7 +2602,7 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l02470" name="l02470"></a><span class="lineno"> 2470</span>    point.<a class="code hl_function" href="../../da/dac/classVSAPoint.html#aa98183dd5316509a9177c33f6a7f7968">SetSABefore</a>(-1);</div>
 <div class="line"><a id="l02471" name="l02471"></a><span class="lineno"> 2471</span>    points.append(point);</div>
 <div class="line"><a id="l02472" name="l02472"></a><span class="lineno"> 2472</span> </div>
-<div class="line"><a id="l02473" name="l02473"></a><span class="lineno"> 2473</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> ekvOrig;</div>
+<div class="line"><a id="l02473" name="l02473"></a><span class="lineno"> 2473</span>    QVector&lt;QPointF&gt; ekvOrig;</div>
 <div class="line"><a id="l02474" name="l02474"></a><span class="lineno"> 2474</span>    ekvOrig.append(QPointF(787.1898456692913, 1663.5186141732283));</div>
 <div class="line"><a id="l02475" name="l02475"></a><span class="lineno"> 2475</span>    ekvOrig.append(QPointF(863.1740976377953, 1663.5186141732283));</div>
 <div class="line"><a id="l02476" name="l02476"></a><span class="lineno"> 2476</span>    ekvOrig.append(QPointF(990.8407796109454, 1663.5186141732283));</div>
@@ -2827,11 +2827,11 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="foldopen" id="foldopen02694" data-start="{" data-end="}">
 <div class="line"><a id="l02694" name="l02694"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a9b1d9d7505c75349474bdeb78f5d7dd8"> 2694</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="../../d6/d89/classTST__VAbstractPiece.html#a9b1d9d7505c75349474bdeb78f5d7dd8">TST_VAbstractPiece::BrokenDetailEquidistant</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l02695" name="l02695"></a><span class="lineno"> 2695</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l02696" name="l02696"></a><span class="lineno"> 2696</span>    QFETCH(<a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a>, points);</div>
+<div class="line"><a id="l02696" name="l02696"></a><span class="lineno"> 2696</span>    QFETCH(QVector&lt;VSAPoint&gt;, points);</div>
 <div class="line"><a id="l02697" name="l02697"></a><span class="lineno"> 2697</span>    QFETCH(qreal, width);</div>
-<div class="line"><a id="l02698" name="l02698"></a><span class="lineno"> 2698</span>    QFETCH(<a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a>, ekvOrig);</div>
+<div class="line"><a id="l02698" name="l02698"></a><span class="lineno"> 2698</span>    QFETCH(QVector&lt;QPointF&gt;, ekvOrig);</div>
 <div class="line"><a id="l02699" name="l02699"></a><span class="lineno"> 2699</span> </div>
-<div class="line"><a id="l02700" name="l02700"></a><span class="lineno"> 2700</span>    <span class="keyword">const</span> <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> ekv = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#a292f7d4da418ba3514ae7678cb4d0a79">VAbstractPiece::Equidistant</a>(points, width);<span class="comment">// Take result</span></div>
+<div class="line"><a id="l02700" name="l02700"></a><span class="lineno"> 2700</span>    <span class="keyword">const</span> QVector&lt;QPointF&gt; ekv = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#a292f7d4da418ba3514ae7678cb4d0a79">VAbstractPiece::Equidistant</a>(points, width);<span class="comment">// Take result</span></div>
 <div class="line"><a id="l02701" name="l02701"></a><span class="lineno"> 2701</span> </div>
 <div class="line"><a id="l02702" name="l02702"></a><span class="lineno"> 2702</span>    <span class="comment">// Begin comparison</span></div>
 <div class="line"><a id="l02703" name="l02703"></a><span class="lineno"> 2703</span>    <a class="code hl_function" href="../../d0/d9b/classAbstractTest.html#add1a646393948a60b1bae3786e69e4b4">Comparison</a>(ekv, ekvOrig);</div>
@@ -2847,14 +2847,14 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l02711" name="l02711"></a><span class="lineno"> 2711</span>    QTest::addColumn&lt;QVector&lt;QPointF&gt;&gt;(<span class="stringliteral">&quot;expect&quot;</span>);</div>
 <div class="line"><a id="l02712" name="l02712"></a><span class="lineno"> 2712</span>    QTest::addColumn&lt;bool&gt;(<span class="stringliteral">&quot;removeFirstAndLast&quot;</span>);</div>
 <div class="line"><a id="l02713" name="l02713"></a><span class="lineno"> 2713</span> </div>
-<div class="line"><a id="l02714" name="l02714"></a><span class="lineno"> 2714</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points;</div>
+<div class="line"><a id="l02714" name="l02714"></a><span class="lineno"> 2714</span>    QVector&lt;QPointF&gt; points;</div>
 <div class="line"><a id="l02715" name="l02715"></a><span class="lineno"> 2715</span>    points.append(QPointF(-741.7894588053705, 1065.7336503858917));</div>
 <div class="line"><a id="l02716" name="l02716"></a><span class="lineno"> 2716</span>    points.append(QPointF(-759.696551643576, -115.81420543069257));</div>
 <div class="line"><a id="l02717" name="l02717"></a><span class="lineno"> 2717</span>    points.append(QPointF(-278.17249953019325, -217.1037453126913));</div>
 <div class="line"><a id="l02718" name="l02718"></a><span class="lineno"> 2718</span>    points.append(QPointF(-244.64654130659474, 1077.9548221866635));</div>
 <div class="line"><a id="l02719" name="l02719"></a><span class="lineno"> 2719</span>    points.append(QPointF(-741.7894588053705, 1065.7336503858917));</div>
 <div class="line"><a id="l02720" name="l02720"></a><span class="lineno"> 2720</span> </div>
-<div class="line"><a id="l02721" name="l02721"></a><span class="lineno"> 2721</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> expect;</div>
+<div class="line"><a id="l02721" name="l02721"></a><span class="lineno"> 2721</span>    QVector&lt;QPointF&gt; expect;</div>
 <div class="line"><a id="l02722" name="l02722"></a><span class="lineno"> 2722</span>    expect.append(QPointF(-741.7894588053705, 1065.7336503858917));</div>
 <div class="line"><a id="l02723" name="l02723"></a><span class="lineno"> 2723</span>    expect.append(QPointF(-759.696551643576, -115.81420543069257));</div>
 <div class="line"><a id="l02724" name="l02724"></a><span class="lineno"> 2724</span>    expect.append(QPointF(-278.17249953019325, -217.1037453126913));</div>
@@ -2921,11 +2921,11 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="foldopen" id="foldopen02784" data-start="{" data-end="}">
 <div class="line"><a id="l02784" name="l02784"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#af28379d6bdf27e9648103b4e4bd0e630"> 2784</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="../../d6/d89/classTST__VAbstractPiece.html#af28379d6bdf27e9648103b4e4bd0e630">TST_VAbstractPiece::CorrectEquidistantPoints</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l02785" name="l02785"></a><span class="lineno"> 2785</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l02786" name="l02786"></a><span class="lineno"> 2786</span>    QFETCH(<a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a>, points);</div>
-<div class="line"><a id="l02787" name="l02787"></a><span class="lineno"> 2787</span>    QFETCH(<a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a>, expect);</div>
+<div class="line"><a id="l02786" name="l02786"></a><span class="lineno"> 2786</span>    QFETCH(QVector&lt;QPointF&gt;, points);</div>
+<div class="line"><a id="l02787" name="l02787"></a><span class="lineno"> 2787</span>    QFETCH(QVector&lt;QPointF&gt;, expect);</div>
 <div class="line"><a id="l02788" name="l02788"></a><span class="lineno"> 2788</span>    QFETCH(<span class="keywordtype">bool</span>, removeFirstAndLast);</div>
 <div class="line"><a id="l02789" name="l02789"></a><span class="lineno"> 2789</span> </div>
-<div class="line"><a id="l02790" name="l02790"></a><span class="lineno"> 2790</span>    <span class="keyword">const</span> <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> res = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#ad76cabb9b832def6129d3c049614debd">VAbstractPiece::CorrectEquidistantPoints</a>(points, removeFirstAndLast);</div>
+<div class="line"><a id="l02790" name="l02790"></a><span class="lineno"> 2790</span>    <span class="keyword">const</span> QVector&lt;QPointF&gt; res = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#ad76cabb9b832def6129d3c049614debd">VAbstractPiece::CorrectEquidistantPoints</a>(points, removeFirstAndLast);</div>
 <div class="line"><a id="l02791" name="l02791"></a><span class="lineno"> 2791</span> </div>
 <div class="line"><a id="l02792" name="l02792"></a><span class="lineno"> 2792</span>    <span class="comment">// Begin comparison</span></div>
 <div class="line"><a id="l02793" name="l02793"></a><span class="lineno"> 2793</span>    <a class="code hl_function" href="../../d0/d9b/classAbstractTest.html#add1a646393948a60b1bae3786e69e4b4">Comparison</a>(res, expect);</div>
@@ -2939,7 +2939,7 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l02799" name="l02799"></a><span class="lineno"> 2799</span>    QTest::addColumn&lt;QVector&lt;QPointF&gt;&gt;(<span class="stringliteral">&quot;before&quot;</span>);</div>
 <div class="line"><a id="l02800" name="l02800"></a><span class="lineno"> 2800</span>    QTest::addColumn&lt;QVector&lt;QPointF&gt;&gt;(<span class="stringliteral">&quot;expect&quot;</span>);</div>
 <div class="line"><a id="l02801" name="l02801"></a><span class="lineno"> 2801</span> </div>
-<div class="line"><a id="l02802" name="l02802"></a><span class="lineno"> 2802</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> before;</div>
+<div class="line"><a id="l02802" name="l02802"></a><span class="lineno"> 2802</span>    QVector&lt;QPointF&gt; before;</div>
 <div class="line"><a id="l02803" name="l02803"></a><span class="lineno"> 2803</span>    before &lt;&lt; QPointF(30.0, 39.999874015748034);</div>
 <div class="line"><a id="l02804" name="l02804"></a><span class="lineno"> 2804</span>    before &lt;&lt; QPointF(785.9055118110236, 39.999874015748034);</div>
 <div class="line"><a id="l02805" name="l02805"></a><span class="lineno"> 2805</span>    before &lt;&lt; QPointF(785.9055118110236, 3819.527433070866);</div>
@@ -2950,7 +2950,7 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l02810" name="l02810"></a><span class="lineno"> 2810</span>    before &lt;&lt; QPointF(407.9527559055118, 3819.527433070866);</div>
 <div class="line"><a id="l02811" name="l02811"></a><span class="lineno"> 2811</span>    before &lt;&lt; QPointF(30.0, 3819.527433070866);</div>
 <div class="line"><a id="l02812" name="l02812"></a><span class="lineno"> 2812</span> </div>
-<div class="line"><a id="l02813" name="l02813"></a><span class="lineno"> 2813</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> expect;</div>
+<div class="line"><a id="l02813" name="l02813"></a><span class="lineno"> 2813</span>    QVector&lt;QPointF&gt; expect;</div>
 <div class="line"><a id="l02814" name="l02814"></a><span class="lineno"> 2814</span>    expect &lt;&lt; QPointF(30.0, 39.999874015748034);</div>
 <div class="line"><a id="l02815" name="l02815"></a><span class="lineno"> 2815</span>    expect &lt;&lt; QPointF(785.9055118110236, 39.999874015748034);</div>
 <div class="line"><a id="l02816" name="l02816"></a><span class="lineno"> 2816</span>    expect &lt;&lt; QPointF(785.9055118110236, 3819.527433070866);</div>
@@ -3104,10 +3104,10 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="foldopen" id="foldopen02963" data-start="{" data-end="}">
 <div class="line"><a id="l02963" name="l02963"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#ab2b698994a0a821eb5fb390dfdd9477f"> 2963</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="../../d6/d89/classTST__VAbstractPiece.html#ab2b698994a0a821eb5fb390dfdd9477f">TST_VAbstractPiece::TestCorrectEquidistantPoints</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l02964" name="l02964"></a><span class="lineno"> 2964</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l02965" name="l02965"></a><span class="lineno"> 2965</span>    QFETCH(<a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a>, before);</div>
-<div class="line"><a id="l02966" name="l02966"></a><span class="lineno"> 2966</span>    QFETCH(<a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a>, expect);</div>
+<div class="line"><a id="l02965" name="l02965"></a><span class="lineno"> 2965</span>    QFETCH(QVector&lt;QPointF&gt;, before);</div>
+<div class="line"><a id="l02966" name="l02966"></a><span class="lineno"> 2966</span>    QFETCH(QVector&lt;QPointF&gt;, expect);</div>
 <div class="line"><a id="l02967" name="l02967"></a><span class="lineno"> 2967</span> </div>
-<div class="line"><a id="l02968" name="l02968"></a><span class="lineno"> 2968</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> after = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#ad76cabb9b832def6129d3c049614debd">VAbstractPiece::CorrectEquidistantPoints</a>(before);</div>
+<div class="line"><a id="l02968" name="l02968"></a><span class="lineno"> 2968</span>    QVector&lt;QPointF&gt; after = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#ad76cabb9b832def6129d3c049614debd">VAbstractPiece::CorrectEquidistantPoints</a>(before);</div>
 <div class="line"><a id="l02969" name="l02969"></a><span class="lineno"> 2969</span>    <a class="code hl_function" href="../../d0/d9b/classAbstractTest.html#add1a646393948a60b1bae3786e69e4b4">Comparison</a>(after, expect);</div>
 <div class="line"><a id="l02970" name="l02970"></a><span class="lineno"> 2970</span>}</div>
 </div>
@@ -3120,7 +3120,7 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l02976" name="l02976"></a><span class="lineno"> 2976</span>    QTest::addColumn&lt;QVector&lt;QPointF&gt;&gt;(<span class="stringliteral">&quot;path&quot;</span>);</div>
 <div class="line"><a id="l02977" name="l02977"></a><span class="lineno"> 2977</span>    QTest::addColumn&lt;QVector&lt;QPointF&gt;&gt;(<span class="stringliteral">&quot;expect&quot;</span>);</div>
 <div class="line"><a id="l02978" name="l02978"></a><span class="lineno"> 2978</span> </div>
-<div class="line"><a id="l02979" name="l02979"></a><span class="lineno"> 2979</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> path;</div>
+<div class="line"><a id="l02979" name="l02979"></a><span class="lineno"> 2979</span>    QVector&lt;QPointF&gt; path;</div>
 <div class="line"><a id="l02980" name="l02980"></a><span class="lineno"> 2980</span>    path &lt;&lt; QPointF(-670.6449010946802, 4046.36220472441);</div>
 <div class="line"><a id="l02981" name="l02981"></a><span class="lineno"> 2981</span>    path &lt;&lt; QPointF(-1025.9051277126944, 4046.36220472441);</div>
 <div class="line"><a id="l02982" name="l02982"></a><span class="lineno"> 2982</span>    path &lt;&lt; QPointF(-1026.4460203880594, 4010.5247429150854);</div>
@@ -3235,7 +3235,7 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l03091" name="l03091"></a><span class="lineno"> 3091</span>    path &lt;&lt; QPointF(-718.5342807758785, 1570.7716535433071);</div>
 <div class="line"><a id="l03092" name="l03092"></a><span class="lineno"> 3092</span>    path &lt;&lt; QPointF(-670.6449010946802, 2024.3149606299214);</div>
 <div class="line"><a id="l03093" name="l03093"></a><span class="lineno"> 3093</span> </div>
-<div class="line"><a id="l03094" name="l03094"></a><span class="lineno"> 3094</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> expect;</div>
+<div class="line"><a id="l03094" name="l03094"></a><span class="lineno"> 3094</span>    QVector&lt;QPointF&gt; expect;</div>
 <div class="line"><a id="l03095" name="l03095"></a><span class="lineno"> 3095</span>    expect &lt;&lt; QPointF(-670.6449010946802, 4046.36220472441);</div>
 <div class="line"><a id="l03096" name="l03096"></a><span class="lineno"> 3096</span>    expect &lt;&lt; QPointF(-670.6449010946802, 4046.36220472441);</div>
 <div class="line"><a id="l03097" name="l03097"></a><span class="lineno"> 3097</span>    expect &lt;&lt; QPointF(-670.6449010946802, 2024.3149606299214);</div>
@@ -3251,10 +3251,10 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="foldopen" id="foldopen03106" data-start="{" data-end="}">
 <div class="line"><a id="l03106" name="l03106"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a9d34b36ab9d7a794766ce79139bc3b31"> 3106</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="../../d6/d89/classTST__VAbstractPiece.html#a9d34b36ab9d7a794766ce79139bc3b31">TST_VAbstractPiece::PossibleInfiniteClearLoops</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03107" name="l03107"></a><span class="lineno"> 3107</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03108" name="l03108"></a><span class="lineno"> 3108</span>    QFETCH(<a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a>, path);</div>
-<div class="line"><a id="l03109" name="l03109"></a><span class="lineno"> 3109</span>    QFETCH(<a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a>, expect);</div>
+<div class="line"><a id="l03108" name="l03108"></a><span class="lineno"> 3108</span>    QFETCH(QVector&lt;QPointF&gt;, path);</div>
+<div class="line"><a id="l03109" name="l03109"></a><span class="lineno"> 3109</span>    QFETCH(QVector&lt;QPointF&gt;, expect);</div>
 <div class="line"><a id="l03110" name="l03110"></a><span class="lineno"> 3110</span> </div>
-<div class="line"><a id="l03111" name="l03111"></a><span class="lineno"> 3111</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> res = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#abf5674417e34e924bf3addae32c2e90a">VAbstractPiece::CheckLoops</a>(path);</div>
+<div class="line"><a id="l03111" name="l03111"></a><span class="lineno"> 3111</span>    QVector&lt;QPointF&gt; res = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#abf5674417e34e924bf3addae32c2e90a">VAbstractPiece::CheckLoops</a>(path);</div>
 <div class="line"><a id="l03112" name="l03112"></a><span class="lineno"> 3112</span>    <a class="code hl_function" href="../../d0/d9b/classAbstractTest.html#add1a646393948a60b1bae3786e69e4b4">Comparison</a>(res, expect);</div>
 <div class="line"><a id="l03113" name="l03113"></a><span class="lineno"> 3113</span>}</div>
 </div>
@@ -3264,7 +3264,7 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="foldopen" id="foldopen03117" data-start="{" data-end="}">
 <div class="line"><a id="l03117" name="l03117"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a2d244ff0d94953bb165ab29b62c92372"> 3117</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a2d244ff0d94953bb165ab29b62c92372">TST_VAbstractPiece::Case3</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03118" name="l03118"></a><span class="lineno"> 3118</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03119" name="l03119"></a><span class="lineno"> 3119</span>    <span class="keyword">const</span> <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points = <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#abcb94c71ca740d5c1de3f785a7a0b8c4">InputPointsCase3a</a>(); <span class="comment">// Input points.</span></div>
+<div class="line"><a id="l03119" name="l03119"></a><span class="lineno"> 3119</span>    <span class="keyword">const</span> QVector&lt;QPointF&gt; points = <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#abcb94c71ca740d5c1de3f785a7a0b8c4">InputPointsCase3a</a>(); <span class="comment">// Input points.</span></div>
 <div class="line"><a id="l03120" name="l03120"></a><span class="lineno"> 3120</span> </div>
 <div class="line"><a id="l03121" name="l03121"></a><span class="lineno"> 3121</span>    <span class="keyword">const</span> qreal result = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#a5777b88093be5350bcabe027b5d06843">VAbstractPiece::sumTrapezoids</a>(points);</div>
 <div class="line"><a id="l03122" name="l03122"></a><span class="lineno"> 3122</span>    QVERIFY(result &lt; 0);</div>
@@ -3275,7 +3275,7 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="foldopen" id="foldopen03126" data-start="{" data-end="}">
 <div class="line"><a id="l03126" name="l03126"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a288fd090b313f383318af7d117432cda"> 3126</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a288fd090b313f383318af7d117432cda">TST_VAbstractPiece::Case4</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03127" name="l03127"></a><span class="lineno"> 3127</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03128" name="l03128"></a><span class="lineno"> 3128</span>    <span class="keyword">const</span> <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points = <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#af74132f253ffc137d1dad633235d7d27">InputPointsCase4a</a>(); <span class="comment">// Input points.</span></div>
+<div class="line"><a id="l03128" name="l03128"></a><span class="lineno"> 3128</span>    <span class="keyword">const</span> QVector&lt;QPointF&gt; points = <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#af74132f253ffc137d1dad633235d7d27">InputPointsCase4a</a>(); <span class="comment">// Input points.</span></div>
 <div class="line"><a id="l03129" name="l03129"></a><span class="lineno"> 3129</span> </div>
 <div class="line"><a id="l03130" name="l03130"></a><span class="lineno"> 3130</span>    <span class="keyword">const</span> qreal result = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#a5777b88093be5350bcabe027b5d06843">VAbstractPiece::sumTrapezoids</a>(points);</div>
 <div class="line"><a id="l03131" name="l03131"></a><span class="lineno"> 3131</span>    QVERIFY(result &gt; 0);</div>
@@ -3286,7 +3286,7 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="foldopen" id="foldopen03135" data-start="{" data-end="}">
 <div class="line"><a id="l03135" name="l03135"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#acaa7ada5ac0533a8e8b620459ef13079"> 3135</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#acaa7ada5ac0533a8e8b620459ef13079">TST_VAbstractPiece::Case5</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03136" name="l03136"></a><span class="lineno"> 3136</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03137" name="l03137"></a><span class="lineno"> 3137</span>    <span class="keyword">const</span> <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points = <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a0dd8b2d902240f5dd9ab114f8655d1c4">InputPointsCase5a</a>(); <span class="comment">// Input points.</span></div>
+<div class="line"><a id="l03137" name="l03137"></a><span class="lineno"> 3137</span>    <span class="keyword">const</span> QVector&lt;QPointF&gt; points = <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a0dd8b2d902240f5dd9ab114f8655d1c4">InputPointsCase5a</a>(); <span class="comment">// Input points.</span></div>
 <div class="line"><a id="l03138" name="l03138"></a><span class="lineno"> 3138</span> </div>
 <div class="line"><a id="l03139" name="l03139"></a><span class="lineno"> 3139</span>    <span class="keyword">const</span> qreal result = <a class="code hl_function" href="../../dd/dfe/classVAbstractPiece.html#a5777b88093be5350bcabe027b5d06843">VAbstractPiece::sumTrapezoids</a>(points);</div>
 <div class="line"><a id="l03140" name="l03140"></a><span class="lineno"> 3140</span>    QVERIFY(qFuzzyIsNull(result));</div>
@@ -3295,9 +3295,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l03142" name="l03142"></a><span class="lineno"> 3142</span> </div>
 <div class="line"><a id="l03143" name="l03143"></a><span class="lineno"> 3143</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen03144" data-start="{" data-end="}">
-<div class="line"><a id="l03144" name="l03144"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#ae3df336db3b763dad44f21f885f32413"> 3144</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#ae3df336db3b763dad44f21f885f32413">TST_VAbstractPiece::InputPointsIssue298Case1</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l03144" name="l03144"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#ae3df336db3b763dad44f21f885f32413"> 3144</a></span>QVector&lt;VSAPoint&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#ae3df336db3b763dad44f21f885f32413">TST_VAbstractPiece::InputPointsIssue298Case1</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03145" name="l03145"></a><span class="lineno"> 3145</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03146" name="l03146"></a><span class="lineno"> 3146</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> points;</div>
+<div class="line"><a id="l03146" name="l03146"></a><span class="lineno"> 3146</span>    QVector&lt;VSAPoint&gt; points;</div>
 <div class="line"><a id="l03147" name="l03147"></a><span class="lineno"> 3147</span> </div>
 <div class="line"><a id="l03148" name="l03148"></a><span class="lineno"> 3148</span>    points += <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a>(35, 39.9999);</div>
 <div class="line"><a id="l03149" name="l03149"></a><span class="lineno"> 3149</span>    points += <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a>(412.953, 39.9999);</div>
@@ -3371,9 +3371,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l03216" name="l03216"></a><span class="lineno"> 3216</span> </div>
 <div class="line"><a id="l03217" name="l03217"></a><span class="lineno"> 3217</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen03218" data-start="{" data-end="}">
-<div class="line"><a id="l03218" name="l03218"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a8f9346c29537b7bb1cf97135ae1ab4d1"> 3218</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a8f9346c29537b7bb1cf97135ae1ab4d1">TST_VAbstractPiece::OutputPointsIssue298Case1</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l03218" name="l03218"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a8f9346c29537b7bb1cf97135ae1ab4d1"> 3218</a></span>QVector&lt;QPointF&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a8f9346c29537b7bb1cf97135ae1ab4d1">TST_VAbstractPiece::OutputPointsIssue298Case1</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03219" name="l03219"></a><span class="lineno"> 3219</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03220" name="l03220"></a><span class="lineno"> 3220</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points;</div>
+<div class="line"><a id="l03220" name="l03220"></a><span class="lineno"> 3220</span>    QVector&lt;QPointF&gt; points;</div>
 <div class="line"><a id="l03221" name="l03221"></a><span class="lineno"> 3221</span>    points += QPointF(-52.3724798442221, -35.5907);</div>
 <div class="line"><a id="l03222" name="l03222"></a><span class="lineno"> 3222</span>    points += QPointF(487.7117748779425, -35.5907);</div>
 <div class="line"><a id="l03223" name="l03223"></a><span class="lineno"> 3223</span>    points += QPointF(493.3432017362585, 473.32371517914754);</div>
@@ -3416,9 +3416,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l03259" name="l03259"></a><span class="lineno"> 3259</span> </div>
 <div class="line"><a id="l03260" name="l03260"></a><span class="lineno"> 3260</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen03261" data-start="{" data-end="}">
-<div class="line"><a id="l03261" name="l03261"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a06e95da2c33a228fce1b0b8a2c8e3309"> 3261</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a06e95da2c33a228fce1b0b8a2c8e3309">TST_VAbstractPiece::InputPointsIssue298Case2</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l03261" name="l03261"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a06e95da2c33a228fce1b0b8a2c8e3309"> 3261</a></span>QVector&lt;VSAPoint&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a06e95da2c33a228fce1b0b8a2c8e3309">TST_VAbstractPiece::InputPointsIssue298Case2</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03262" name="l03262"></a><span class="lineno"> 3262</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03263" name="l03263"></a><span class="lineno"> 3263</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> points;</div>
+<div class="line"><a id="l03263" name="l03263"></a><span class="lineno"> 3263</span>    QVector&lt;VSAPoint&gt; points;</div>
 <div class="line"><a id="l03264" name="l03264"></a><span class="lineno"> 3264</span> </div>
 <div class="line"><a id="l03265" name="l03265"></a><span class="lineno"> 3265</span>    points += <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a>(35, 39.9999);</div>
 <div class="line"><a id="l03266" name="l03266"></a><span class="lineno"> 3266</span>    points += <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a>(35, 39.9999);</div>
@@ -3492,9 +3492,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l03333" name="l03333"></a><span class="lineno"> 3333</span> </div>
 <div class="line"><a id="l03334" name="l03334"></a><span class="lineno"> 3334</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen03335" data-start="{" data-end="}">
-<div class="line"><a id="l03335" name="l03335"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#ad79bdc8d66e8086176edb64d01c560d7"> 3335</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#ad79bdc8d66e8086176edb64d01c560d7">TST_VAbstractPiece::OutputPointsIssue298Case2</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l03335" name="l03335"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#ad79bdc8d66e8086176edb64d01c560d7"> 3335</a></span>QVector&lt;QPointF&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#ad79bdc8d66e8086176edb64d01c560d7">TST_VAbstractPiece::OutputPointsIssue298Case2</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03336" name="l03336"></a><span class="lineno"> 3336</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03337" name="l03337"></a><span class="lineno"> 3337</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points;</div>
+<div class="line"><a id="l03337" name="l03337"></a><span class="lineno"> 3337</span>    QVector&lt;QPointF&gt; points;</div>
 <div class="line"><a id="l03338" name="l03338"></a><span class="lineno"> 3338</span> </div>
 <div class="line"><a id="l03339" name="l03339"></a><span class="lineno"> 3339</span>    points += QPointF(-2.7952999999999975, 4.838469950598078);</div>
 <div class="line"><a id="l03340" name="l03340"></a><span class="lineno"> 3340</span>    points += QPointF(67.34448942068963, -0.2324858268916558);</div>
@@ -3549,9 +3549,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l03388" name="l03388"></a><span class="lineno"> 3388</span> </div>
 <div class="line"><a id="l03389" name="l03389"></a><span class="lineno"> 3389</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen03390" data-start="{" data-end="}">
-<div class="line"><a id="l03390" name="l03390"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#aec048de117b68bb7f3838b02b11124ff"> 3390</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#aec048de117b68bb7f3838b02b11124ff">TST_VAbstractPiece::InputPointsIssue548Case1</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l03390" name="l03390"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#aec048de117b68bb7f3838b02b11124ff"> 3390</a></span>QVector&lt;VSAPoint&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#aec048de117b68bb7f3838b02b11124ff">TST_VAbstractPiece::InputPointsIssue548Case1</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03391" name="l03391"></a><span class="lineno"> 3391</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03392" name="l03392"></a><span class="lineno"> 3392</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> points;</div>
+<div class="line"><a id="l03392" name="l03392"></a><span class="lineno"> 3392</span>    QVector&lt;VSAPoint&gt; points;</div>
 <div class="line"><a id="l03393" name="l03393"></a><span class="lineno"> 3393</span> </div>
 <div class="line"><a id="l03394" name="l03394"></a><span class="lineno"> 3394</span>    points += <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a>(236.97989607468364, 65.89325192030674);</div>
 <div class="line"><a id="l03395" name="l03395"></a><span class="lineno"> 3395</span>    points += <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a>(198.93409106041895, 172.04876297154925);</div>
@@ -3566,9 +3566,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l03403" name="l03403"></a><span class="lineno"> 3403</span> </div>
 <div class="line"><a id="l03404" name="l03404"></a><span class="lineno"> 3404</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen03405" data-start="{" data-end="}">
-<div class="line"><a id="l03405" name="l03405"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#ab1eadaa2b4dc0a0b95d55827c1f8326b"> 3405</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#ab1eadaa2b4dc0a0b95d55827c1f8326b">TST_VAbstractPiece::OutputPointsIssue548Case1</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l03405" name="l03405"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#ab1eadaa2b4dc0a0b95d55827c1f8326b"> 3405</a></span>QVector&lt;QPointF&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#ab1eadaa2b4dc0a0b95d55827c1f8326b">TST_VAbstractPiece::OutputPointsIssue548Case1</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03406" name="l03406"></a><span class="lineno"> 3406</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03407" name="l03407"></a><span class="lineno"> 3407</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points;</div>
+<div class="line"><a id="l03407" name="l03407"></a><span class="lineno"> 3407</span>    QVector&lt;QPointF&gt; points;</div>
 <div class="line"><a id="l03408" name="l03408"></a><span class="lineno"> 3408</span> </div>
 <div class="line"><a id="l03409" name="l03409"></a><span class="lineno"> 3409</span>    points += QPointF(251.32210577118798, 59.48301432799721);</div>
 <div class="line"><a id="l03410" name="l03410"></a><span class="lineno"> 3410</span>    points += QPointF(243.9841262159756, 79.95746530820585);</div>
@@ -3585,9 +3585,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l03420" name="l03420"></a><span class="lineno"> 3420</span> </div>
 <div class="line"><a id="l03421" name="l03421"></a><span class="lineno"> 3421</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen03422" data-start="{" data-end="}">
-<div class="line"><a id="l03422" name="l03422"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#accfd332d4eb908b1be4d34d6deab51ee"> 3422</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#accfd332d4eb908b1be4d34d6deab51ee">TST_VAbstractPiece::InputPointsIssue548Case2</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l03422" name="l03422"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#accfd332d4eb908b1be4d34d6deab51ee"> 3422</a></span>QVector&lt;VSAPoint&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#accfd332d4eb908b1be4d34d6deab51ee">TST_VAbstractPiece::InputPointsIssue548Case2</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03423" name="l03423"></a><span class="lineno"> 3423</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03424" name="l03424"></a><span class="lineno"> 3424</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> points;</div>
+<div class="line"><a id="l03424" name="l03424"></a><span class="lineno"> 3424</span>    QVector&lt;VSAPoint&gt; points;</div>
 <div class="line"><a id="l03425" name="l03425"></a><span class="lineno"> 3425</span>    points &lt;&lt; <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a>(99.86433649395013, 10.166060970128015);</div>
 <div class="line"><a id="l03426" name="l03426"></a><span class="lineno"> 3426</span>    points &lt;&lt; <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a>(176.0178302829931, 57.36978169486653);</div>
 <div class="line"><a id="l03427" name="l03427"></a><span class="lineno"> 3427</span>    points &lt;&lt; <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a>(115.46606095399079, 156.67924434657942);</div>
@@ -3601,9 +3601,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l03434" name="l03434"></a><span class="lineno"> 3434</span> </div>
 <div class="line"><a id="l03435" name="l03435"></a><span class="lineno"> 3435</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen03436" data-start="{" data-end="}">
-<div class="line"><a id="l03436" name="l03436"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#ae487725588a9f4b744a4bc0a437f5cab"> 3436</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#ae487725588a9f4b744a4bc0a437f5cab">TST_VAbstractPiece::OutputPointsIssue548Case2</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l03436" name="l03436"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#ae487725588a9f4b744a4bc0a437f5cab"> 3436</a></span>QVector&lt;QPointF&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#ae487725588a9f4b744a4bc0a437f5cab">TST_VAbstractPiece::OutputPointsIssue548Case2</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03437" name="l03437"></a><span class="lineno"> 3437</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03438" name="l03438"></a><span class="lineno"> 3438</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points;</div>
+<div class="line"><a id="l03438" name="l03438"></a><span class="lineno"> 3438</span>    QVector&lt;QPointF&gt; points;</div>
 <div class="line"><a id="l03439" name="l03439"></a><span class="lineno"> 3439</span>    points &lt;&lt; QPointF(75.35612582031402, -49.49247429729551);</div>
 <div class="line"><a id="l03440" name="l03440"></a><span class="lineno"> 3440</span>    points &lt;&lt; QPointF(207.99390662262346, 32.7230151178754);</div>
 <div class="line"><a id="l03441" name="l03441"></a><span class="lineno"> 3441</span>    points &lt;&lt; QPointF(309.47290565612207, 95.62474281894228);</div>
@@ -3617,9 +3617,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l03448" name="l03448"></a><span class="lineno"> 3448</span> </div>
 <div class="line"><a id="l03449" name="l03449"></a><span class="lineno"> 3449</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen03450" data-start="{" data-end="}">
-<div class="line"><a id="l03450" name="l03450"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#aaf71fc5d3e6b945974e37692474119d1"> 3450</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#aaf71fc5d3e6b945974e37692474119d1">TST_VAbstractPiece::InputPointsIssue548Case3</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l03450" name="l03450"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#aaf71fc5d3e6b945974e37692474119d1"> 3450</a></span>QVector&lt;VSAPoint&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#aaf71fc5d3e6b945974e37692474119d1">TST_VAbstractPiece::InputPointsIssue548Case3</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03451" name="l03451"></a><span class="lineno"> 3451</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03452" name="l03452"></a><span class="lineno"> 3452</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> points;</div>
+<div class="line"><a id="l03452" name="l03452"></a><span class="lineno"> 3452</span>    QVector&lt;VSAPoint&gt; points;</div>
 <div class="line"><a id="l03453" name="l03453"></a><span class="lineno"> 3453</span> </div>
 <div class="line"><a id="l03454" name="l03454"></a><span class="lineno"> 3454</span>    points += <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a>(99.86433649395013, 10.166060970128015);</div>
 <div class="line"><a id="l03455" name="l03455"></a><span class="lineno"> 3455</span>    points += <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a>(176.0178302829931, 57.36978169486653);</div>
@@ -3634,9 +3634,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l03463" name="l03463"></a><span class="lineno"> 3463</span> </div>
 <div class="line"><a id="l03464" name="l03464"></a><span class="lineno"> 3464</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen03465" data-start="{" data-end="}">
-<div class="line"><a id="l03465" name="l03465"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a32abbd256d11f10b7459007697440cc7"> 3465</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a32abbd256d11f10b7459007697440cc7">TST_VAbstractPiece::OutputPointsIssue548Case3</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l03465" name="l03465"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a32abbd256d11f10b7459007697440cc7"> 3465</a></span>QVector&lt;QPointF&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a32abbd256d11f10b7459007697440cc7">TST_VAbstractPiece::OutputPointsIssue548Case3</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03466" name="l03466"></a><span class="lineno"> 3466</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03467" name="l03467"></a><span class="lineno"> 3467</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points;</div>
+<div class="line"><a id="l03467" name="l03467"></a><span class="lineno"> 3467</span>    QVector&lt;QPointF&gt; points;</div>
 <div class="line"><a id="l03468" name="l03468"></a><span class="lineno"> 3468</span> </div>
 <div class="line"><a id="l03469" name="l03469"></a><span class="lineno"> 3469</span>    points += QPointF(50.84791514667799, -109.15100956471929);</div>
 <div class="line"><a id="l03470" name="l03470"></a><span class="lineno"> 3470</span>    points += QPointF(220.96071459087483, -3.7066408675763003);</div>
@@ -3651,9 +3651,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l03478" name="l03478"></a><span class="lineno"> 3478</span> </div>
 <div class="line"><a id="l03479" name="l03479"></a><span class="lineno"> 3479</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen03480" data-start="{" data-end="}">
-<div class="line"><a id="l03480" name="l03480"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#abcb94c71ca740d5c1de3f785a7a0b8c4"> 3480</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#abcb94c71ca740d5c1de3f785a7a0b8c4">TST_VAbstractPiece::InputPointsCase3a</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l03480" name="l03480"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#abcb94c71ca740d5c1de3f785a7a0b8c4"> 3480</a></span>QVector&lt;QPointF&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#abcb94c71ca740d5c1de3f785a7a0b8c4">TST_VAbstractPiece::InputPointsCase3a</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03481" name="l03481"></a><span class="lineno"> 3481</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03482" name="l03482"></a><span class="lineno"> 3482</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points;</div>
+<div class="line"><a id="l03482" name="l03482"></a><span class="lineno"> 3482</span>    QVector&lt;QPointF&gt; points;</div>
 <div class="line"><a id="l03483" name="l03483"></a><span class="lineno"> 3483</span> </div>
 <div class="line"><a id="l03484" name="l03484"></a><span class="lineno"> 3484</span>    points += QPointF(35, 35);</div>
 <div class="line"><a id="l03485" name="l03485"></a><span class="lineno"> 3485</span>    points += QPointF(50, 50);</div>
@@ -3665,9 +3665,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l03490" name="l03490"></a><span class="lineno"> 3490</span> </div>
 <div class="line"><a id="l03491" name="l03491"></a><span class="lineno"> 3491</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen03492" data-start="{" data-end="}">
-<div class="line"><a id="l03492" name="l03492"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#af74132f253ffc137d1dad633235d7d27"> 3492</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#af74132f253ffc137d1dad633235d7d27">TST_VAbstractPiece::InputPointsCase4a</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l03492" name="l03492"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#af74132f253ffc137d1dad633235d7d27"> 3492</a></span>QVector&lt;QPointF&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#af74132f253ffc137d1dad633235d7d27">TST_VAbstractPiece::InputPointsCase4a</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03493" name="l03493"></a><span class="lineno"> 3493</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03494" name="l03494"></a><span class="lineno"> 3494</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points;</div>
+<div class="line"><a id="l03494" name="l03494"></a><span class="lineno"> 3494</span>    QVector&lt;QPointF&gt; points;</div>
 <div class="line"><a id="l03495" name="l03495"></a><span class="lineno"> 3495</span> </div>
 <div class="line"><a id="l03496" name="l03496"></a><span class="lineno"> 3496</span>    points += QPointF(15, 15);</div>
 <div class="line"><a id="l03497" name="l03497"></a><span class="lineno"> 3497</span>    points += QPointF(15, 50);</div>
@@ -3679,9 +3679,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l03502" name="l03502"></a><span class="lineno"> 3502</span> </div>
 <div class="line"><a id="l03503" name="l03503"></a><span class="lineno"> 3503</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen03504" data-start="{" data-end="}">
-<div class="line"><a id="l03504" name="l03504"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a0dd8b2d902240f5dd9ab114f8655d1c4"> 3504</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a0dd8b2d902240f5dd9ab114f8655d1c4">TST_VAbstractPiece::InputPointsCase5a</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l03504" name="l03504"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a0dd8b2d902240f5dd9ab114f8655d1c4"> 3504</a></span>QVector&lt;QPointF&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a0dd8b2d902240f5dd9ab114f8655d1c4">TST_VAbstractPiece::InputPointsCase5a</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03505" name="l03505"></a><span class="lineno"> 3505</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03506" name="l03506"></a><span class="lineno"> 3506</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points;</div>
+<div class="line"><a id="l03506" name="l03506"></a><span class="lineno"> 3506</span>    QVector&lt;QPointF&gt; points;</div>
 <div class="line"><a id="l03507" name="l03507"></a><span class="lineno"> 3507</span> </div>
 <div class="line"><a id="l03508" name="l03508"></a><span class="lineno"> 3508</span>    points += QPointF(35, 35);</div>
 <div class="line"><a id="l03509" name="l03509"></a><span class="lineno"> 3509</span> </div>
@@ -3691,9 +3691,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l03512" name="l03512"></a><span class="lineno"> 3512</span> </div>
 <div class="line"><a id="l03513" name="l03513"></a><span class="lineno"> 3513</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen03514" data-start="{" data-end="}">
-<div class="line"><a id="l03514" name="l03514"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#ad90907fda2cdadd0f6508d208b915453"> 3514</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#ad90907fda2cdadd0f6508d208b915453">TST_VAbstractPiece::InputPointsIssue646</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l03514" name="l03514"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#ad90907fda2cdadd0f6508d208b915453"> 3514</a></span>QVector&lt;VSAPoint&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#ad90907fda2cdadd0f6508d208b915453">TST_VAbstractPiece::InputPointsIssue646</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03515" name="l03515"></a><span class="lineno"> 3515</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03516" name="l03516"></a><span class="lineno"> 3516</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;VSAPoint&gt;</a> points;</div>
+<div class="line"><a id="l03516" name="l03516"></a><span class="lineno"> 3516</span>    QVector&lt;VSAPoint&gt; points;</div>
 <div class="line"><a id="l03517" name="l03517"></a><span class="lineno"> 3517</span> </div>
 <div class="line"><a id="l03518" name="l03518"></a><span class="lineno"> 3518</span>    points += <a class="code hl_class" href="../../da/dac/classVSAPoint.html">VSAPoint</a>(1352.8346456692914, 1173.8581417322835);</div>
 <div class="line"><a id="l03519" name="l03519"></a><span class="lineno"> 3519</span> </div>
@@ -4162,9 +4162,9 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l03981" name="l03981"></a><span class="lineno"> 3981</span> </div>
 <div class="line"><a id="l03982" name="l03982"></a><span class="lineno"> 3982</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen03983" data-start="{" data-end="}">
-<div class="line"><a id="l03983" name="l03983"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a57117554bda16927283958af8ab95cb9"> 3983</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a57117554bda16927283958af8ab95cb9">TST_VAbstractPiece::OutputPointsIssue646</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l03983" name="l03983"></a><span class="lineno"><a class="line" href="../../d6/d89/classTST__VAbstractPiece.html#a57117554bda16927283958af8ab95cb9"> 3983</a></span>QVector&lt;QPointF&gt; <a class="code hl_function" href="../../d6/d89/classTST__VAbstractPiece.html#a57117554bda16927283958af8ab95cb9">TST_VAbstractPiece::OutputPointsIssue646</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l03984" name="l03984"></a><span class="lineno"> 3984</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03985" name="l03985"></a><span class="lineno"> 3985</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points;</div>
+<div class="line"><a id="l03985" name="l03985"></a><span class="lineno"> 3985</span>    QVector&lt;QPointF&gt; points;</div>
 <div class="line"><a id="l03986" name="l03986"></a><span class="lineno"> 3986</span> </div>
 <div class="line"><a id="l03987" name="l03987"></a><span class="lineno"> 3987</span>    points += QPointF(1391.2089508950362, 1170.962993556315);</div>
 <div class="line"><a id="l03988" name="l03988"></a><span class="lineno"> 3988</span>    points += QPointF(1352.8346456692914, 1362.8345196850394);</div>
@@ -4323,8 +4323,7 @@ $(document).ready(function(){initNavTree('df/d01/tst__vabstractpiece_8cpp_source
 <div class="line"><a id="l04141" name="l04141"></a><span class="lineno"> 4141</span>}</div>
 </div>
 <div class="ttc" id="aclassAbstractTest_html"><div class="ttname"><a href="../../d0/d9b/classAbstractTest.html">AbstractTest</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d78/abstracttest_8h_source.html#l00081">abstracttest.h:82</a></div></div>
-<div class="ttc" id="aclassAbstractTest_html_add1a646393948a60b1bae3786e69e4b4"><div class="ttname"><a href="../../d0/d9b/classAbstractTest.html#add1a646393948a60b1bae3786e69e4b4">AbstractTest::Comparison</a></div><div class="ttdeci">void Comparison(const QVector&lt; QPointF &gt; &amp;ekv, const QVector&lt; QPointF &gt; &amp;ekvOrig) const</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d3a/abstracttest_8cpp_source.html#l00092">abstracttest.cpp:92</a></div></div>
-<div class="ttc" id="aclassQVector_html"><div class="ttname"><a href="../../d5/dc2/classQVector.html">QVector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/da5/vdomdocument_8h_source.html#l00075">vdomdocument.h:75</a></div></div>
+<div class="ttc" id="aclassAbstractTest_html_add1a646393948a60b1bae3786e69e4b4"><div class="ttname"><a href="../../d0/d9b/classAbstractTest.html#add1a646393948a60b1bae3786e69e4b4">AbstractTest::Comparison</a></div><div class="ttdeci">void Comparison(const QVector&lt; QPointF &gt; &amp;ekv, const QVector&lt; QPointF &gt; &amp;ekvOrig) const</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d3a/abstracttest_8cpp_source.html#l00090">abstracttest.cpp:90</a></div></div>
 <div class="ttc" id="aclassTST__VAbstractPiece_html_a06e95da2c33a228fce1b0b8a2c8e3309"><div class="ttname"><a href="../../d6/d89/classTST__VAbstractPiece.html#a06e95da2c33a228fce1b0b8a2c8e3309">TST_VAbstractPiece::InputPointsIssue298Case2</a></div><div class="ttdeci">QVector&lt; VSAPoint &gt; InputPointsIssue298Case2() const</div><div class="ttdef"><b>Definition</b> <a href="../../df/d01/tst__vabstractpiece_8cpp_source.html#l03261">tst_vabstractpiece.cpp:3261</a></div></div>
 <div class="ttc" id="aclassTST__VAbstractPiece_html_a0dd8b2d902240f5dd9ab114f8655d1c4"><div class="ttname"><a href="../../d6/d89/classTST__VAbstractPiece.html#a0dd8b2d902240f5dd9ab114f8655d1c4">TST_VAbstractPiece::InputPointsCase5a</a></div><div class="ttdeci">QVector&lt; QPointF &gt; InputPointsCase5a() const</div><div class="ttdef"><b>Definition</b> <a href="../../df/d01/tst__vabstractpiece_8cpp_source.html#l03504">tst_vabstractpiece.cpp:3504</a></div></div>
 <div class="ttc" id="aclassTST__VAbstractPiece_html_a1078fd701343a8b64edaa26e92b8fac1"><div class="ttname"><a href="../../d6/d89/classTST__VAbstractPiece.html#a1078fd701343a8b64edaa26e92b8fac1">TST_VAbstractPiece::TST_VAbstractPiece</a></div><div class="ttdeci">TST_VAbstractPiece(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d01/tst__vabstractpiece_8cpp_source.html#l00061">tst_vabstractpiece.cpp:61</a></div></div>

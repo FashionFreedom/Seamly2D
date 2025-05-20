@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['operator_3c_3c_0',['operator&lt;&lt;',['../d7/dac/classVPieceNode.html#a1842c8aabf45fb9b5301ccc9d104f714',1,'VPieceNode::operator&lt;&lt;'],['../d9/d93/classVPieceNodeData.html#ab5384607743e6abcd74377e30b3fa149',1,'VPieceNodeData::operator&lt;&lt;'],['../d9/de7/classPen.html#a77f1d83538608438267bbb3e4ae81a2b',1,'Pen::operator&lt;&lt;']]],
-  ['operator_3e_3e_1',['operator&gt;&gt;',['../d7/dac/classVPieceNode.html#a135ad321b085f8f50eec849b1a452984',1,'VPieceNode::operator&gt;&gt;'],['../d9/d93/classVPieceNodeData.html#aa16b5469492769486b19ccdb6c561fd3',1,'VPieceNodeData::operator&gt;&gt;']]]
+  ['datatypevalidatorfactory_0',['DatatypeValidatorFactory',['../d9/db9/classDatatypeValidator.html#a1611d5786eb959db7f3e2c9f2556e26b',1,'DatatypeValidator']]],
+  ['domdocumentimpl_1',['domdocumentimpl',['../d6/d7d/classDOMDocumentFragmentImpl.html#a1b776eb5a118e0ff98b418469437eb30',1,'DOMDocumentFragmentImpl::DOMDocumentImpl'],['../d6/d6b/classDOMDocumentTypeImpl.html#a1b776eb5a118e0ff98b418469437eb30',1,'DOMDocumentTypeImpl::DOMDocumentImpl']]],
+  ['dtdelementdecl_2',['DTDElementDecl',['../de/d19/classDTDAttDefList.html#ae781d0c0f126ce55adb51e265588f605',1,'DTDAttDefList']]]
 ];

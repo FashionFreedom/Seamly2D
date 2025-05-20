@@ -4,7 +4,6 @@ var classVAbstractCurve =
     [ "VAbstractCurve", "dc/d55/classVAbstractCurve.html#aca9c2638a83f769da4da2718d05b8939", null ],
     [ "~VAbstractCurve", "dc/d55/classVAbstractCurve.html#a2b29c50a680b4ee96a7a69d6f297bc45", null ],
     [ "CreateName", "dc/d55/classVAbstractCurve.html#a7a1530d69c09d90f28a5b76f3b0374b9", null ],
-    [ "curveIntersectAxis", "dc/d55/classVAbstractCurve.html#aae6159f0fdf64b408bf11bddb8e23a67", null ],
     [ "CurveIntersectLine", "dc/d55/classVAbstractCurve.html#add4dbdfb3f8927551ef426172dbfc9b5", null ],
     [ "DirectionArrows", "dc/d55/classVAbstractCurve.html#a26ccfec5b5a94a07205945a3e56e9d80", null ],
     [ "FromBegin", "dc/d55/classVAbstractCurve.html#ab09e3bbe0677749f82ecdbd0a83994dd", null ],

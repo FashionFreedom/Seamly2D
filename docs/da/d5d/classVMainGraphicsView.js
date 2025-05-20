@@ -36,7 +36,7 @@ var classVMainGraphicsView =
     [ "isRubberBandColorSet", "da/d5d/classVMainGraphicsView.html#ad97e65b4fa73ea9664ec9309917dbc6a", null ],
     [ "isZoomPanActive", "da/d5d/classVMainGraphicsView.html#a13c84ebf01b000fd25530c75028a1e1c", null ],
     [ "isZoomToAreaActive", "da/d5d/classVMainGraphicsView.html#ad480fb0fdf4d94a5b91a94a6774fdd95", null ],
-    [ "m_startPos", "da/d5d/classVMainGraphicsView.html#aa01ef89467f6a652817e74e7411c547c", null ],
+    [ "m_ptStartPos", "da/d5d/classVMainGraphicsView.html#a34ef2e7cfed8655063c0fd8e3a01c92d", null ],
     [ "rubberBand", "da/d5d/classVMainGraphicsView.html#a3e851399dc8a40bb92445c13e0f11707", null ],
     [ "rubberBandRect", "da/d5d/classVMainGraphicsView.html#a28662f62231266b6999b8827335d9859", null ],
     [ "showScrollBars", "da/d5d/classVMainGraphicsView.html#aea844b326733ca05fde939c65d26df00", null ],

@@ -8,7 +8,7 @@ var classVPatternLabelData =
     [ "getFontSize", "df/da3/classVPatternLabelData.html#a7bb9405354b53b986a5fe39283d4a4a2", null ],
     [ "GetLabelHeight", "df/da3/classVPatternLabelData.html#afe1ebc460ab76800f7c2899c1f183bc2", null ],
     [ "GetLabelWidth", "df/da3/classVPatternLabelData.html#ac539f7183a0dcbb05ca7c27e0bc63a99", null ],
-    [ "getRotation", "df/da3/classVPatternLabelData.html#a36e3cb05fd70c25e13e51aee46d8b490", null ],
+    [ "GetRotation", "df/da3/classVPatternLabelData.html#ad8545fc83ba86b2a4ee0ba6b4c6c795d", null ],
     [ "operator=", "df/da3/classVPatternLabelData.html#a291f56c6b50d1f5b65a1f6209f603be6", null ],
     [ "setBottomRightAnchorPoint", "df/da3/classVPatternLabelData.html#a00ed7f0c7e58df93b856b6ab1539fcc0", null ],
     [ "setCenterAnchorPoint", "df/da3/classVPatternLabelData.html#a0f6be5fb903dbf023ffa752d01c9ba5f", null ],

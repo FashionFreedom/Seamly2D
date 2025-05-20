@@ -81,7 +81,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="4" y="-292" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="17" y="-292" font-family="Helvetica,sans-Serif" font-size="10.00">paint()</text>
 <text text-anchor="start" x="4" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="17" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">updateItem()</text>
+<text text-anchor="start" x="17" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">Update()</text>
 <text text-anchor="start" x="4" y="-262" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="17" y="-262" font-family="Helvetica,sans-Serif" font-size="10.00">type()</text>
 <text text-anchor="start" x="4" y="-247" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
@@ -129,44 +129,44 @@ var sectionId = 'dynsection-0';
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:href="../../da/d7d/classVPieceItem.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="transparent" points="118.5,-749 11.5,-749 11.5,-490 118.5,-490 118.5,-749"/>
-<text text-anchor="start" x="37.5" y="-736.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPieceItem</text>
-<text text-anchor="start" x="16" y="-721.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="29" y="-721.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_boundingRect</text>
-<text text-anchor="start" x="16" y="-706.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="29" y="-706.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_mode</text>
-<text text-anchor="start" x="16" y="-691.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="29" y="-691.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_isReleased</text>
-<text text-anchor="start" x="16" y="-676.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="29" y="-676.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_rotationCenter</text>
-<text text-anchor="start" x="16" y="-661.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="29" y="-661.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_moveType</text>
-<text text-anchor="start" x="16" y="-646.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="29" y="-646.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_inactiveZ</text>
-<text text-anchor="start" x="16" y="-631.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="29" y="-631.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPieceItem()</text>
-<text text-anchor="start" x="16" y="-616.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="29" y="-616.5" font-family="Helvetica,sans-Serif" font-size="10.00">~VPieceItem()</text>
-<text text-anchor="start" x="16" y="-601.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="29" y="-601.5" font-family="Helvetica,sans-Serif" font-size="10.00">boundingRect()</text>
-<text text-anchor="start" x="16" y="-586.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="29" y="-586.5" font-family="Helvetica,sans-Serif" font-size="10.00">updateItem()</text>
-<text text-anchor="start" x="16" y="-571.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="29" y="-571.5" font-family="Helvetica,sans-Serif" font-size="10.00">reset()</text>
-<text text-anchor="start" x="16" y="-556.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="29" y="-556.5" font-family="Helvetica,sans-Serif" font-size="10.00">isIdle()</text>
-<text text-anchor="start" x="16" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="29" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">getMoveType()</text>
-<text text-anchor="start" x="16" y="-526.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="29" y="-526.5" font-family="Helvetica,sans-Serif" font-size="10.00">setMoveType()</text>
-<text text-anchor="start" x="16" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="29" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">type()</text>
-<text text-anchor="start" x="16" y="-496.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="29" y="-496.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetAngle()</text>
-<polygon fill="#666666" stroke="#666666" points="12,-731.5 12,-731.5 119,-731.5 119,-731.5 12,-731.5"/>
-<polygon fill="#666666" stroke="#666666" points="12,-641.5 12,-641.5 27,-641.5 27,-641.5 12,-641.5"/>
-<polygon fill="#666666" stroke="#666666" points="27,-641.5 27,-641.5 119,-641.5 119,-641.5 27,-641.5"/>
-<polygon fill="none" stroke="#666666" points="11.5,-490 11.5,-749 118.5,-749 118.5,-490 11.5,-490"/>
+<polygon fill="white" stroke="transparent" points="125,-749 5,-749 5,-490 125,-490 125,-749"/>
+<text text-anchor="start" x="37" y="-736.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPieceItem</text>
+<text text-anchor="start" x="9" y="-721.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="22" y="-721.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_rectBoundingBox</text>
+<text text-anchor="start" x="9" y="-706.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="22" y="-706.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_eMode</text>
+<text text-anchor="start" x="9" y="-691.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="22" y="-691.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_bReleased</text>
+<text text-anchor="start" x="9" y="-676.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="22" y="-676.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_ptRotCenter</text>
+<text text-anchor="start" x="9" y="-661.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="22" y="-661.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_moveType</text>
+<text text-anchor="start" x="9" y="-646.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="22" y="-646.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_inactiveZ</text>
+<text text-anchor="start" x="9" y="-631.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="22" y="-631.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPieceItem()</text>
+<text text-anchor="start" x="9" y="-616.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="22" y="-616.5" font-family="Helvetica,sans-Serif" font-size="10.00">~VPieceItem()</text>
+<text text-anchor="start" x="9" y="-601.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="22" y="-601.5" font-family="Helvetica,sans-Serif" font-size="10.00">boundingRect()</text>
+<text text-anchor="start" x="9" y="-586.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="22" y="-586.5" font-family="Helvetica,sans-Serif" font-size="10.00">Update()</text>
+<text text-anchor="start" x="9" y="-571.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="22" y="-571.5" font-family="Helvetica,sans-Serif" font-size="10.00">Reset()</text>
+<text text-anchor="start" x="9" y="-556.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="22" y="-556.5" font-family="Helvetica,sans-Serif" font-size="10.00">IsIdle()</text>
+<text text-anchor="start" x="9" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="22" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetMoveType()</text>
+<text text-anchor="start" x="9" y="-526.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="22" y="-526.5" font-family="Helvetica,sans-Serif" font-size="10.00">SetMoveType()</text>
+<text text-anchor="start" x="9" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="22" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">type()</text>
+<text text-anchor="start" x="9" y="-496.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="22" y="-496.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetAngle()</text>
+<polygon fill="#666666" stroke="#666666" points="5,-731.5 5,-731.5 125,-731.5 125,-731.5 5,-731.5"/>
+<polygon fill="#666666" stroke="#666666" points="5,-641.5 5,-641.5 20,-641.5 20,-641.5 5,-641.5"/>
+<polygon fill="#666666" stroke="#666666" points="20,-641.5 20,-641.5 125,-641.5 125,-641.5 20,-641.5"/>
+<polygon fill="none" stroke="#666666" points="5,-490 5,-749 125,-749 125,-490 5,-490"/>
 </a>
 </g>
 </g>

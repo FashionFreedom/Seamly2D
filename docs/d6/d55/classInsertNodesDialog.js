@@ -15,7 +15,7 @@ var classInsertNodesDialog =
     [ "ShowDialog", "d6/d55/classInsertNodesDialog.html#a7f26a9ea6b8130eef05917bdad78dee8", null ],
     [ "validateNodes", "d6/d55/classInsertNodesDialog.html#a043a925866d530baac3cf421c919c363", null ],
     [ "validatePieces", "d6/d55/classInsertNodesDialog.html#aa619eb01de42f338dc05737f2bbcc0fe", null ],
-    [ "m_beep", "d6/d55/classInsertNodesDialog.html#acac62f2af5f5e15f9e0d7be594e980d0", null ],
+    [ "m_beep", "d6/d55/classInsertNodesDialog.html#ad847ec532551cd0f120cd403aa1f8c8c", null ],
     [ "m_nodeFlag", "d6/d55/classInsertNodesDialog.html#a7ec0029575802b4b79a29f8fc394a933", null ],
     [ "m_nodes", "d6/d55/classInsertNodesDialog.html#a053b2f338c335dac4b8edabde3a9fec3", null ],
     [ "m_piecesFlag", "d6/d55/classInsertNodesDialog.html#a9f94c760be6124e078826cfcd4a48209", null ],

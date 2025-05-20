@@ -2,8 +2,6 @@ var dir_0ca6ab6f29ec27907e8ee4f6aad54e41 =
 [
     [ "anchorpoint_tool.cpp", "d9/d3a/anchorpoint__tool_8cpp.html", null ],
     [ "anchorpoint_tool.h", "de/d51/anchorpoint__tool_8h.html", "de/d51/anchorpoint__tool_8h" ],
-    [ "internal_path_tool.cpp", "d4/dea/internal__path__tool_8cpp.html", null ],
-    [ "internal_path_tool.h", "d8/d3e/internal__path__tool_8h.html", "d8/d3e/internal__path__tool_8h" ],
     [ "nodedetails.h", "d5/dcf/nodedetails_8h.html", null ],
     [ "vabstractnode.cpp", "d5/dcd/vabstractnode_8cpp.html", null ],
     [ "vabstractnode.h", "d1/df9/vabstractnode_8h.html", "d1/df9/vabstractnode_8h" ],
@@ -16,5 +14,7 @@ var dir_0ca6ab6f29ec27907e8ee4f6aad54e41 =
     [ "vnodespline.cpp", "df/d94/vnodespline_8cpp.html", null ],
     [ "vnodespline.h", "d0/dd2/vnodespline_8h.html", "d0/dd2/vnodespline_8h" ],
     [ "vnodesplinepath.cpp", "d2/dad/vnodesplinepath_8cpp.html", null ],
-    [ "vnodesplinepath.h", "df/d88/vnodesplinepath_8h.html", "df/d88/vnodesplinepath_8h" ]
+    [ "vnodesplinepath.h", "df/d88/vnodesplinepath_8h.html", "df/d88/vnodesplinepath_8h" ],
+    [ "vtoolinternalpath.cpp", "d3/dd9/vtoolinternalpath_8cpp.html", null ],
+    [ "vtoolinternalpath.h", "d5/d9d/vtoolinternalpath_8h.html", "d5/d9d/vtoolinternalpath_8h" ]
 ];

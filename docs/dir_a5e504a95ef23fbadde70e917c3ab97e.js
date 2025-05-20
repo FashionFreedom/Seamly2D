@@ -1,7 +1,5 @@
 var dir_a5e504a95ef23fbadde70e917c3ab97e =
 [
-    [ "internal_path_visual.cpp", "d0/d0f/internal__path__visual_8cpp.html", null ],
-    [ "internal_path_visual.h", "d5/d68/internal__path__visual_8h.html", "d5/d68/internal__path__visual_8h" ],
     [ "pattern_piece_visual.cpp", "d1/d62/pattern__piece__visual_8cpp.html", null ],
     [ "pattern_piece_visual.h", "d9/d31/pattern__piece__visual_8h.html", "d9/d31/pattern__piece__visual_8h" ],
     [ "pieceanchorpoint_visual.cpp", "da/d5b/pieceanchorpoint__visual_8cpp.html", null ],
@@ -24,6 +22,8 @@ var dir_a5e504a95ef23fbadde70e917c3ab97e =
     [ "vistoolcutsplinepath.h", "d1/d2c/vistoolcutsplinepath_8h.html", "d1/d2c/vistoolcutsplinepath_8h" ],
     [ "vistoolellipticalarc.cpp", "d1/d0b/vistoolellipticalarc_8cpp.html", null ],
     [ "vistoolellipticalarc.h", "d7/dec/vistoolellipticalarc_8h.html", "d7/dec/vistoolellipticalarc_8h" ],
+    [ "vistoolinternalpath.cpp", "d6/d8a/vistoolinternalpath_8cpp.html", null ],
+    [ "vistoolinternalpath.h", "d5/daf/vistoolinternalpath_8h.html", "d5/daf/vistoolinternalpath_8h" ],
     [ "vistoolpointofintersectioncurves.cpp", "d5/d4c/vistoolpointofintersectioncurves_8cpp.html", null ],
     [ "vistoolpointofintersectioncurves.h", "d1/ddd/vistoolpointofintersectioncurves_8h.html", "d1/ddd/vistoolpointofintersectioncurves_8h" ],
     [ "vistoolspline.cpp", "df/de7/vistoolspline_8cpp.html", "df/de7/vistoolspline_8cpp" ],

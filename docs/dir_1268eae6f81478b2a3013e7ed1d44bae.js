@@ -1,0 +1,25 @@
+var dir_1268eae6f81478b2a3013e7ed1d44bae =
+[
+    [ "identity", "dir_e70aeb93e75adcf53db2dde20cb5bd26.html", "dir_e70aeb93e75adcf53db2dde20cb5bd26" ],
+    [ "ComplexTypeInfo.hpp", "db/dee/macx_2include_2xercesc_2validators_2schema_2ComplexTypeInfo_8hpp.html", "db/dee/macx_2include_2xercesc_2validators_2schema_2ComplexTypeInfo_8hpp" ],
+    [ "GeneralAttributeCheck.hpp", "df/d08/macx_2include_2xercesc_2validators_2schema_2GeneralAttributeCheck_8hpp.html", "df/d08/macx_2include_2xercesc_2validators_2schema_2GeneralAttributeCheck_8hpp" ],
+    [ "NamespaceScope.hpp", "d3/d3a/macx_2include_2xercesc_2validators_2schema_2NamespaceScope_8hpp.html", "d3/d3a/macx_2include_2xercesc_2validators_2schema_2NamespaceScope_8hpp" ],
+    [ "PSVIDefs.hpp", "dd/d49/macx_2include_2xercesc_2validators_2schema_2PSVIDefs_8hpp.html", "dd/d49/macx_2include_2xercesc_2validators_2schema_2PSVIDefs_8hpp" ],
+    [ "SchemaAttDef.hpp", "de/d39/macx_2include_2xercesc_2validators_2schema_2SchemaAttDef_8hpp.html", "de/d39/macx_2include_2xercesc_2validators_2schema_2SchemaAttDef_8hpp" ],
+    [ "SchemaAttDefList.hpp", "de/d66/macx_2include_2xercesc_2validators_2schema_2SchemaAttDefList_8hpp.html", "de/d66/macx_2include_2xercesc_2validators_2schema_2SchemaAttDefList_8hpp" ],
+    [ "SchemaElementDecl.hpp", "d7/dc8/macx_2include_2xercesc_2validators_2schema_2SchemaElementDecl_8hpp.html", "d7/dc8/macx_2include_2xercesc_2validators_2schema_2SchemaElementDecl_8hpp" ],
+    [ "SchemaGrammar.hpp", "dc/d7d/macx_2include_2xercesc_2validators_2schema_2SchemaGrammar_8hpp.html", "dc/d7d/macx_2include_2xercesc_2validators_2schema_2SchemaGrammar_8hpp" ],
+    [ "SchemaInfo.hpp", "d1/dba/macx_2include_2xercesc_2validators_2schema_2SchemaInfo_8hpp.html", "d1/dba/macx_2include_2xercesc_2validators_2schema_2SchemaInfo_8hpp" ],
+    [ "SchemaSymbols.hpp", "dd/d6b/macx_2include_2xercesc_2validators_2schema_2SchemaSymbols_8hpp.html", "dd/d6b/macx_2include_2xercesc_2validators_2schema_2SchemaSymbols_8hpp" ],
+    [ "SchemaValidator.hpp", "d3/d5a/macx_2include_2xercesc_2validators_2schema_2SchemaValidator_8hpp.html", "d3/d5a/macx_2include_2xercesc_2validators_2schema_2SchemaValidator_8hpp" ],
+    [ "SubstitutionGroupComparator.hpp", "d5/d16/macx_2include_2xercesc_2validators_2schema_2SubstitutionGroupComparator_8hpp.html", "d5/d16/macx_2include_2xercesc_2validators_2schema_2SubstitutionGroupComparator_8hpp" ],
+    [ "TraverseSchema.hpp", "d0/d3a/macx_2include_2xercesc_2validators_2schema_2TraverseSchema_8hpp.html", "d0/d3a/macx_2include_2xercesc_2validators_2schema_2TraverseSchema_8hpp" ],
+    [ "XercesAttGroupInfo.hpp", "d6/d43/macx_2include_2xercesc_2validators_2schema_2XercesAttGroupInfo_8hpp.html", "d6/d43/macx_2include_2xercesc_2validators_2schema_2XercesAttGroupInfo_8hpp" ],
+    [ "XercesElementWildcard.hpp", "d2/d84/macx_2include_2xercesc_2validators_2schema_2XercesElementWildcard_8hpp.html", "d2/d84/macx_2include_2xercesc_2validators_2schema_2XercesElementWildcard_8hpp" ],
+    [ "XercesGroupInfo.hpp", "dd/ddd/macx_2include_2xercesc_2validators_2schema_2XercesGroupInfo_8hpp.html", "dd/ddd/macx_2include_2xercesc_2validators_2schema_2XercesGroupInfo_8hpp" ],
+    [ "XMLSchemaDescriptionImpl.hpp", "d0/d64/macx_2include_2xercesc_2validators_2schema_2XMLSchemaDescriptionImpl_8hpp.html", "d0/d64/macx_2include_2xercesc_2validators_2schema_2XMLSchemaDescriptionImpl_8hpp" ],
+    [ "XSDDOMParser.hpp", "d3/d84/macx_2include_2xercesc_2validators_2schema_2XSDDOMParser_8hpp.html", "d3/d84/macx_2include_2xercesc_2validators_2schema_2XSDDOMParser_8hpp" ],
+    [ "XSDErrorReporter.hpp", "d1/d25/macx_2include_2xercesc_2validators_2schema_2XSDErrorReporter_8hpp.html", "d1/d25/macx_2include_2xercesc_2validators_2schema_2XSDErrorReporter_8hpp" ],
+    [ "XSDLocator.hpp", "d9/db0/macx_2include_2xercesc_2validators_2schema_2XSDLocator_8hpp.html", "d9/db0/macx_2include_2xercesc_2validators_2schema_2XSDLocator_8hpp" ],
+    [ "XUtil.hpp", "db/d25/macx_2include_2xercesc_2validators_2schema_2XUtil_8hpp.html", "db/d25/macx_2include_2xercesc_2validators_2schema_2XUtil_8hpp" ]
+];

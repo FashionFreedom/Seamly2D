@@ -1,7 +1,7 @@
 var classVToolCutSplinePath =
 [
-    [ "VToolCutSplinePath", "d8/d67/classVToolCutSplinePath.html#a9e434965e056bdd9d1f02246f417aadd", null ],
-    [ "Create", "d8/d67/classVToolCutSplinePath.html#ab356eca7b26e3fb30648a4124c4b887e", null ],
+    [ "VToolCutSplinePath", "d8/d67/classVToolCutSplinePath.html#a4d4ec96c01dcb043e1a2ad893f342dab", null ],
+    [ "Create", "d8/d67/classVToolCutSplinePath.html#a24386e8c35dbd9278bfb469b1b44cfd5", null ],
     [ "Create", "d8/d67/classVToolCutSplinePath.html#a006de53f7acf3aa21b369616a1408681", null ],
     [ "CutSplinePath", "d8/d67/classVToolCutSplinePath.html#aff623456acd7f3f8410b174d729a5d55", null ],
     [ "makeToolTip", "d8/d67/classVToolCutSplinePath.html#a5f9eeac3737cb9b9b4bd82ea28fbf838", null ],

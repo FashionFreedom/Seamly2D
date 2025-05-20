@@ -1,6 +1,6 @@
 var classEditFormulaDialog =
 [
-    [ "EditFormulaDialog", "d1/d7d/classEditFormulaDialog.html#afce436d81a2e1e06b8960e991be90d7d", null ],
+    [ "EditFormulaDialog", "d1/d7d/classEditFormulaDialog.html#a73b34ee070f104b337e0b5a45e52b28c", null ],
     [ "~EditFormulaDialog", "d1/d7d/classEditFormulaDialog.html#a80531d6b3c0f570c34808659dfc870fb", null ],
     [ "arcRadii", "d1/d7d/classEditFormulaDialog.html#aa72dd32486c3832cbb28cb282d26b2f4", null ],
     [ "CheckState", "d1/d7d/classEditFormulaDialog.html#aab8863b0b9841c83d922e68897b641ed", null ],
@@ -17,7 +17,8 @@ var classEditFormulaDialog =
     [ "functions", "d1/d7d/classEditFormulaDialog.html#ab16908ba748f2804e23cd328d5091eaa", null ],
     [ "GetFormula", "d1/d7d/classEditFormulaDialog.html#a128746769678276b4cd36d9e1bf42c90", null ],
     [ "initializeVariables", "d1/d7d/classEditFormulaDialog.html#af706214586802d7e1a8e2da377195312", null ],
-    [ "insertVariable", "d1/d7d/classEditFormulaDialog.html#acd8b442ec55bc35dbbb3576b4ec1c15b", null ],
+    [ "insertValue", "d1/d7d/classEditFormulaDialog.html#a5c1061e2f62ee5ced1cc74a4e974b317", null ],
+    [ "insertVariable", "d1/d7d/classEditFormulaDialog.html#a2e2ef88f76830061285ffd0205a193e9", null ],
     [ "lineAngles", "d1/d7d/classEditFormulaDialog.html#a8f97b1a36035a64567d933526217e47d", null ],
     [ "lineLengths", "d1/d7d/classEditFormulaDialog.html#aa523de908a96bb2c6c9c97023518f7a5", null ],
     [ "measurements", "d1/d7d/classEditFormulaDialog.html#a60ca5b2c465c4551d332f945a983cfee", null ],
@@ -29,8 +30,6 @@ var classEditFormulaDialog =
     [ "setPostfix", "d1/d7d/classEditFormulaDialog.html#ad1aea8c58778ba445c27fecba1f1fd20", null ],
     [ "showEvent", "d1/d7d/classEditFormulaDialog.html#aedb06a6ddda0154ad24ad75c98be65ad", null ],
     [ "showFunctions", "d1/d7d/classEditFormulaDialog.html#aa4bc382d202b07ba90fb20e0f0d6478c", null ],
-    [ "showHeaderUnits", "d1/d7d/classEditFormulaDialog.html#afac87050318b0b715a7924344750ae2b", null ],
-    [ "showInsertionButtons", "d1/d7d/classEditFormulaDialog.html#aa3a92284a838ded5d5a4aca01e879aec", null ],
     [ "showMeasurements", "d1/d7d/classEditFormulaDialog.html#abf3572a7978331b5431a010717b9be46", null ],
     [ "showVariable", "d1/d7d/classEditFormulaDialog.html#abe38a6ecf3165bb67ca6531929e9b9d7", null ],
     [ "tabChanged", "d1/d7d/classEditFormulaDialog.html#aa743c053e5cc2859bfec46ba36590a69", null ],
@@ -41,7 +40,6 @@ var classEditFormulaDialog =
     [ "m_formula", "d1/d7d/classEditFormulaDialog.html#a77c8769dff87afd45a289438ef977625", null ],
     [ "m_postfix", "d1/d7d/classEditFormulaDialog.html#a00a0ff8ed19ea884156de118f7522c8f", null ],
     [ "m_restoreCursor", "d1/d7d/classEditFormulaDialog.html#ac1a00125a492fc3a56dfe389ac518470", null ],
-    [ "m_source", "d1/d7d/classEditFormulaDialog.html#a50e67818db401e7fc6d12e6c8420977b", null ],
     [ "m_undoFormula", "d1/d7d/classEditFormulaDialog.html#a9cd0a0e7dec6f51ce9f873d9e107eb5f", null ],
     [ "ui", "d1/d7d/classEditFormulaDialog.html#acdbbf0fe6f67e253b2bb9f5d82356507", null ]
 ];

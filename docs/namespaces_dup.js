@@ -3,9 +3,6 @@ var namespaces_dup =
     [ "anonymous_namespace{dialogtool.cpp}", "d3/d7d/namespaceanonymous__namespace_02dialogtool_8cpp_03.html", [
       [ "RowId", "d3/d7d/namespaceanonymous__namespace_02dialogtool_8cpp_03.html#ac2e003f541cb5afc14468f3b6945ef46", null ]
     ] ],
-    [ "anonymous_namespace{internal_path_dialog.cpp}", "df/de6/namespaceanonymous__namespace_02internal__path__dialog_8cpp_03.html", [
-      [ "cutLinePath", "df/de6/namespaceanonymous__namespace_02internal__path__dialog_8cpp_03.html#a394f1f735699f1b1d0e822cf8d3af1d3", null ]
-    ] ],
     [ "anonymous_namespace{mainwindowsnogui.cpp}", "df/da0/namespaceanonymous__namespace_02mainwindowsnogui_8cpp_03.html", [
       [ "CreateLayoutPath", "df/da0/namespaceanonymous__namespace_02mainwindowsnogui_8cpp_03.html#adc02e3f28db0229af91f2077610c4b9d", null ],
       [ "RemoveLayoutPath", "df/da0/namespaceanonymous__namespace_02mainwindowsnogui_8cpp_03.html#aba458b4f78f014b23015631f3a439456", null ]
@@ -65,7 +62,6 @@ var namespaces_dup =
       [ "settingCSVSeparator", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a0c4b1d5c81a1286cd8cc5a71c9a83ff0", null ],
       [ "settingCSVWithHeader", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a464c6501262ea18e1b0902086c26b006", null ],
       [ "settingDateOfLastRemind", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#acbab5d78ffd257ff1dd05a4e352f9f36", null ],
-      [ "settingDefaultArrowLength", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a804c903e1a21053f718a6b60705117a2", null ],
       [ "settingDefaultCutColor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aeb34b253e09c4cb769ac3bc1759d085c", null ],
       [ "settingDefaultCutLinetype", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a6a160fa6b8de159e5f10d3b7a71250e1", null ],
       [ "settingDefaultCutLineweight", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a146bacac343403a6535e570c89da518d", null ],
@@ -98,7 +94,6 @@ var namespaces_dup =
       [ "settingGeneralRestoreFileList", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a6b89610e94e02cf040d009c330b734ef", null ],
       [ "settingGeneralToolbarsState", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#af3454acdd594dd98d4348de6cc8643a7", null ],
       [ "settingGeneralWindowState", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a0696d67afde5d1eb5346a7a90c11beae", null ],
-      [ "settingGraphicsUseSecondMonitor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a2474fcf7a475730787f7dcc8c7789a6f", null ],
       [ "settingGraphicsUseToolColor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a634ebb3df267982daf0e69606dbcda37", null ],
       [ "settingGraphicsViewAngleDelta", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a4737f155235118b924d74d65812b04b6", null ],
       [ "settingGraphicsViewAxisOrginColor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ac11840837551d850eb9ebae587ce5d95", null ],
@@ -107,7 +102,6 @@ var namespaces_dup =
       [ "settingGraphicsViewDefaultLineColor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aca9554d8c9c2dcd70bca8de5b32aa7b6", null ],
       [ "settingGraphicsViewDefaultLineType", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#afe17da3bd7e3382419fcb24b1529943f", null ],
       [ "settingGraphicsViewDefaultLineWeight", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#af83af5c6ba4c30223b2585c526d8c79c", null ],
-      [ "settingGraphicsViewDialogPosition", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ade67359cfbd3136d0e7ca77ab3b0b176", null ],
       [ "settingGraphicsViewExportQuality", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aa283b7b4dceb5520aff3d244d1bd2e23", null ],
       [ "settingGraphicsViewGuiFontSize", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a8cb7cddf6ba7c8fb0de41d498b324a01", null ],
       [ "settingGraphicsViewHidePointNames", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ad2184613b13de652123831a9102c6471", null ],
@@ -128,7 +122,6 @@ var namespaces_dup =
       [ "settingGraphicsViewShowControlPoints", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a41e1517fa41c5ca67525c235e47b6096", null ],
       [ "settingGraphicsViewShowCurveToolBar", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a996be7dfeadbe6d995b609439f1d3bdd", null ],
       [ "settingGraphicsViewShowDetailsToolBar", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aac512f999c5eb33fdf2acbd3006d01cb", null ],
-      [ "settingGraphicsViewShowIsoOnly", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ab98fe1827c68c22c0301ad9028e9374e", null ],
       [ "settingGraphicsViewShowLayoutToolBar", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ac968aa01a75b47acdecc3ead728257a5", null ],
       [ "settingGraphicsViewShowLineToolBar", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a56eb3da564e20732adc8ffda862775fd", null ],
       [ "settingGraphicsViewShowOpsToolBar", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ab5175c23b7faa49b4d95eff20c9a534a", null ],
@@ -140,8 +133,6 @@ var namespaces_dup =
       [ "settingGraphicsViewToolBarStyle", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ad330f54fe0ce445593b4355b3899ebd3", null ],
       [ "settingGraphicsViewUseDefaultPen", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aaa648520c0933dd4a840db329f919b27", null ],
       [ "settingGraphicsViewWireframe", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a591f10e03500689dff19e38006a64c5a", null ],
-      [ "settingGraphicsViewXOffset", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a4dcff3e35d210b5f7739db9f0cb43718", null ],
-      [ "settingGraphicsViewYOffset", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a0855d3c503ad972075652fddbb9f8b1c", null ],
       [ "settingGraphicsViewZoomDoubleClick", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a046b05ae883a9622db898c0ce2e75f6e", null ],
       [ "settingGraphicsViewZoomModKey", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a575ea546167572da1fc244fcac637a5e", null ],
       [ "settingGraphicsViewZoomRBNegativeColor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aedefb6549602aaba61af1b775475ff7b", null ],
@@ -184,8 +175,8 @@ var namespaces_dup =
     [ "anonymous_namespace{vlayoutpiece.cpp}", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html", [
       [ "ConvertInternalPaths", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#aee188e904012b2c56f9a99b8a90b554b", null ],
       [ "CorrectPosition", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a26982c628e932aec0813e1c375387df4", null ],
-      [ "findGrainlineGeometry", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a51f890cf890f9a7d83130b9bb733b5ba", null ],
-      [ "findLabelGeometry", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a04f05a7019f2d0feb9fc0abc773ad54e", null ],
+      [ "FindGrainlineGeometry", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#af8aeb7c96e510de59b36203f2e1b8529", null ],
+      [ "FindLabelGeometry", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a44005395b0d831bad9c8a5f1e6c7225f", null ],
       [ "IsItemContained", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a4867ae9889201fd1784404a9a1fe75ea", null ],
       [ "PieceLabelText", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a9d5be9c5672d55404b37efffeccaa53f", null ],
       [ "PrepareAllowance", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a52a0730adfd50a44e6904c7028709d88", null ],
@@ -203,7 +194,7 @@ var namespaces_dup =
     ] ],
     [ "anonymous_namespace{vpiece.cpp}", "d1/db2/namespaceanonymous__namespace_02vpiece_8cpp_03.html", [
       [ "notchesPossible", "d1/db2/namespaceanonymous__namespace_02vpiece_8cpp_03.html#ae8655eab9eb2b655a9d590a4f9773c79", null ],
-      [ "PieceMissingNodes", "d1/db2/namespaceanonymous__namespace_02vpiece_8cpp_03.html#a0b92f230191728dbaf33b543114ee48b", null ]
+      [ "PieceMissingNodes", "d1/db2/namespaceanonymous__namespace_02vpiece_8cpp_03.html#a6777e67de8d1dc55c9f990651e08fc59", null ]
     ] ],
     [ "anonymous_namespace{vpiecenode.cpp}", "d2/d4b/namespaceanonymous__namespace_02vpiecenode_8cpp_03.html", [
       [ "EvalFormula", "d2/d4b/namespaceanonymous__namespace_02vpiecenode_8cpp_03.html#affc4d572e7531f04d94c466f495a3f7f", null ]
@@ -212,9 +203,7 @@ var namespaces_dup =
       [ "CurveEndPoint", "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#a9ef1658829697806d3ebe798a7acb481", null ],
       [ "CurvePoint", "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#a081273b064ca31428fa188fb2388c99b", null ],
       [ "CurveStartPoint", "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#ae903c3c49140e20a1573ba65adeadd13", null ],
-      [ "findAngle", "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#a949590315364389638d10aa1c1e74804", null ],
-      [ "IndexOfNode", "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#a395d2221691add0fd3fcd637872d7735", null ],
-      [ "intersectsWithCutLine", "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#ae7f025addb773313273dc4382280a626", null ]
+      [ "IndexOfNode", "d4/d24/namespaceanonymous__namespace_02vpiecepath_8cpp_03.html#a395d2221691add0fd3fcd637872d7735", null ]
     ] ],
     [ "anonymous_namespace{vsettings.cpp}", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html", [
       [ "settingCommunityProxyAddress", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#afe08e293ff54709b6b3afa9992665100", null ],
@@ -231,7 +220,6 @@ var namespaces_dup =
       [ "settingFields", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a782ecb55f386a2d3f6de561a1802731d", null ],
       [ "settingIgnoreFields", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a60f6ad3fe10e8dba6695e143c957034e", null ],
       [ "settingLayoutAutoCrop", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a29b6fb0b013cf25159991ac9fe897136", null ],
-      [ "settingLayoutGap", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#af8a7e27ff83e4b60f58888d3bf8072e2", null ],
       [ "settingLayoutPaperHeight", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a410eeaad5be31fe4c0cfe4beb1dc9fe5", null ],
       [ "settingLayoutPaperWidth", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a4c601f9cf9e67948204f6e97c935e25b", null ],
       [ "settingLayoutRotate", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a20d2305825c95f2c13037248b7edfad3", null ],
@@ -240,6 +228,7 @@ var namespaces_dup =
       [ "settingLayoutShift", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#ada3a8e81e098b36fb7f9951b1869c657", null ],
       [ "settingLayoutSorting", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a6a9a3cf9c105721872d8acfcfdd68fba", null ],
       [ "settingLayoutUnitePages", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a972ad7ea6bb956289aecb6703662a78f", null ],
+      [ "settingLayoutWidth", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#ab2f115d591e7b348d502d70ade493aa6", null ],
       [ "settingMultiplier", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a438399a0cf9605103f6b11d324b91f2b", null ],
       [ "settingPathsLayout", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#aeeae12a9e716a36285066894137cee19", null ],
       [ "settingPathsPattern", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#abd078475c23bc1ef0d914344990ee54e", null ],
@@ -287,14 +276,14 @@ var namespaces_dup =
       [ "getBlockName", "dd/db0/namespaceQT__WARNING__POP.html#a45cec81b7cea447cfcc3a6591776429c", null ],
       [ "GetChildren", "dd/db0/namespaceQT__WARNING__POP.html#ac808f7375266e379a7cdb18eb497b91a", null ],
       [ "GetCSAChildren", "dd/db0/namespaceQT__WARNING__POP.html#abd517d99ae5dab2af5d6de83611d73b2", null ],
-      [ "getInternalPathsChildren", "dd/db0/namespaceQT__WARNING__POP.html#a6e54544299e618e8f63c8272eefcf2c3", null ],
+      [ "GetInternalPathsChildren", "dd/db0/namespaceQT__WARNING__POP.html#ac5e08508a77c514470486d3e263960ad", null ],
       [ "GetNodesChildren", "dd/db0/namespaceQT__WARNING__POP.html#a1373d60451b8fc974c23ae35e6550d73", null ],
       [ "GetPiece1MainPath", "dd/db0/namespaceQT__WARNING__POP.html#a4cd01162be10b9883de62bd8b8563c19", null ],
       [ "GetPiece2Anchors", "dd/db0/namespaceQT__WARNING__POP.html#aca8de59cc37fd99af723128c5439f402", null ],
       [ "GetPiece2CSAPaths", "dd/db0/namespaceQT__WARNING__POP.html#a13ccdfd11688fa5da79b007dbdcce64e", null ],
       [ "GetPiece2InternalPaths", "dd/db0/namespaceQT__WARNING__POP.html#aa89d81e8f5f74108d57898ce3af32acc", null ],
       [ "GetPiece2MainPath", "dd/db0/namespaceQT__WARNING__POP.html#a17d67d1cf67d5a2e78a87a315fffef85", null ],
-      [ "getPiecePath", "dd/db0/namespaceQT__WARNING__POP.html#abc0d96a5899bcdf6645e767e599632ab", null ],
+      [ "GetPiecePath", "dd/db0/namespaceQT__WARNING__POP.html#a3e7f4f3f85b62aa2fb29c336cdef1dc2", null ],
       [ "GetTagChildren", "dd/db0/namespaceQT__WARNING__POP.html#aa883943a9bc374c576acee6f64627ce4", null ],
       [ "PointsOnEdge", "dd/db0/namespaceQT__WARNING__POP.html#a80b2e5367bdfa51e9ee82c7b62a64422", null ],
       [ "SaveAnchorsChildren", "dd/db0/namespaceQT__WARNING__POP.html#af36760762460542ed6876ec4c4d3e17d", null ],

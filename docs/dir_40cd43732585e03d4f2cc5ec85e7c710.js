@@ -9,8 +9,6 @@ var dir_40cd43732585e03d4f2cc5ec85e7c710 =
     [ "adddetnode.h", "d9/d00/adddetnode_8h.html", "d9/d00/adddetnode_8h" ],
     [ "addgroup.cpp", "d9/dc8/addgroup_8cpp.html", null ],
     [ "addgroup.h", "d2/d32/addgroup_8h.html", "d2/d32/addgroup_8h" ],
-    [ "addimage.cpp", "df/dc0/addimage_8cpp.html", null ],
-    [ "addimage.h", "d5/dd6/addimage_8h.html", "d5/dd6/addimage_8h" ],
     [ "addpiece.cpp", "dd/d33/addpiece_8cpp.html", null ],
     [ "addpiece.h", "d2/de0/addpiece_8h.html", "d2/de0/addpiece_8h" ],
     [ "addtocalc.cpp", "d4/d97/addtocalc_8cpp.html", null ],

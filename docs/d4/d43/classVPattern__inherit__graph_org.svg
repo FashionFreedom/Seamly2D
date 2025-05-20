@@ -19,7 +19,7 @@
 <text text-anchor="start" x="16.5" y="-412" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="27" y="-412" font-family="Helvetica,sans-Serif" font-size="10.00">data</text>
 <text text-anchor="start" x="16.5" y="-397" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="27" y="-397" font-family="Helvetica,sans-Serif" font-size="10.00">m_stage</text>
+<text text-anchor="start" x="27" y="-397" font-family="Helvetica,sans-Serif" font-size="10.00">mode</text>
 <text text-anchor="start" x="16.5" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="27" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">draftScene</text>
 <text text-anchor="start" x="16.5" y="-367" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
@@ -41,10 +41,10 @@
 <text text-anchor="start" x="14" y="-247" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="27" y="-247" font-family="Helvetica,sans-Serif" font-size="10.00">getActiveBasePoint()</text>
 <text text-anchor="start" x="14" y="-232" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="27" y="-232" font-family="Helvetica,sans-Serif" font-size="10.00">getDraftStage()</text>
+<text text-anchor="start" x="27" y="-232" font-family="Helvetica,sans-Serif" font-size="10.00">getActivePatternPieces()</text>
 <text text-anchor="start" x="14" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="27" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">setDraftStage()</text>
-<text text-anchor="start" x="27" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">and 26 more...</text>
+<text text-anchor="start" x="27" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">setXMLContent()</text>
+<text text-anchor="start" x="27" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">and 24 more...</text>
 <text text-anchor="start" x="14" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="27" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">LiteParseTree()</text>
 <text text-anchor="start" x="14" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
@@ -54,22 +54,22 @@
 <text text-anchor="start" x="16.5" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="27" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">parseDraftBlockElement()</text>
 <text text-anchor="start" x="16.5" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="27" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">ParseDraftStage()</text>
+<text text-anchor="start" x="27" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">ParseDrawMode()</text>
 <text text-anchor="start" x="16.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="27" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">parseDraftImages()</text>
+<text text-anchor="start" x="27" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">parsePieceElement()</text>
 <text text-anchor="start" x="16.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="27" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">parseImageElement()</text>
+<text text-anchor="start" x="27" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">parsePieceNodes()</text>
 <text text-anchor="start" x="16.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="27" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">parsePieceElement()</text>
+<text text-anchor="start" x="27" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">ParsePieceDataTag()</text>
 <text text-anchor="start" x="16.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="27" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">parsePieceNodes()</text>
+<text text-anchor="start" x="27" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">ParsePiecePatternInfo()</text>
 <text text-anchor="start" x="16.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="27" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">ParsePieceDataTag()</text>
+<text text-anchor="start" x="27" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">ParsePieceGrainline()</text>
 <text text-anchor="start" x="16.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="27" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">ParsePiecePatternInfo()</text>
+<text text-anchor="start" x="27" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">parsePatternPieces()</text>
 <text text-anchor="start" x="16.5" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="27" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">ParsePieceGrainline()</text>
-<text text-anchor="start" x="27" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">and 67 more...</text>
+<text text-anchor="start" x="27" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">ParsePointElement()</text>
+<text text-anchor="start" x="27" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">and 64 more...</text>
 <polygon fill="#666666" stroke="#666666" points="10,-437 10,-437 158,-437 158,-437 10,-437"/>
 <polygon fill="#666666" stroke="#666666" points="10,-362 10,-362 25,-362 25,-362 10,-362"/>
 <polygon fill="#666666" stroke="#666666" points="25,-362 25,-362 158,-362 158,-362 25,-362"/>
@@ -103,9 +103,9 @@
 <text text-anchor="start" x="23" y="-1487" font-family="Helvetica,sans-Serif" font-size="10.00">TagMeasurements</text>
 <text text-anchor="start" x="10" y="-1472" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="23" y="-1472" font-family="Helvetica,sans-Serif" font-size="10.00">TagVariables</text>
-<text text-anchor="start" x="23" y="-1457" font-family="Helvetica,sans-Serif" font-size="10.00">and 147 more...</text>
+<text text-anchor="start" x="23" y="-1457" font-family="Helvetica,sans-Serif" font-size="10.00">and 142 more...</text>
 <text text-anchor="start" x="10" y="-1442" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="23" y="-1442" font-family="Helvetica,sans-Serif" font-size="10.00">m_activeDraftBlock</text>
+<text text-anchor="start" x="23" y="-1442" font-family="Helvetica,sans-Serif" font-size="10.00">activeDraftBlock</text>
 <text text-anchor="start" x="10" y="-1427" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
 <text text-anchor="start" x="23" y="-1427" font-family="Helvetica,sans-Serif" font-size="10.00">m_DefaultLineColor</text>
 <text text-anchor="start" x="10" y="-1412" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
@@ -154,7 +154,7 @@
 <text text-anchor="start" x="23" y="-1097" font-family="Helvetica,sans-Serif" font-size="10.00">draftBlockNameExists()</text>
 <text text-anchor="start" x="10" y="-1082" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="23" y="-1082" font-family="Helvetica,sans-Serif" font-size="10.00">draftBlockCount()</text>
-<text text-anchor="start" x="23" y="-1067" font-family="Helvetica,sans-Serif" font-size="10.00">and 97 more...</text>
+<text text-anchor="start" x="23" y="-1067" font-family="Helvetica,sans-Serif" font-size="10.00">and 96 more...</text>
 <text text-anchor="start" x="10" y="-1052" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="23" y="-1052" font-family="Helvetica,sans-Serif" font-size="10.00">getTool()</text>
 <text text-anchor="start" x="10" y="-1037" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>

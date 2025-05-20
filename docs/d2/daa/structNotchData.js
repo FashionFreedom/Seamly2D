@@ -2,7 +2,6 @@ var structNotchData =
 [
     [ "angle", "d2/daa/structNotchData.html#a5f0a51a14875e42e3026965bac6e4808", null ],
     [ "count", "d2/daa/structNotchData.html#a81492a3d9a1e935cc0a03d3a91c75556", null ],
-    [ "isNotch", "d2/daa/structNotchData.html#a701743dda5f6014d5606912b3705072c", null ],
     [ "length", "d2/daa/structNotchData.html#a276863493d9a7cb4b8f9bc56ccfe4fb5", null ],
     [ "line", "d2/daa/structNotchData.html#aa64b51d933720d547eee6cb97e9e9819", null ],
     [ "offset", "d2/daa/structNotchData.html#ab1ab76f7386b511449b1b052f3759f14", null ],
