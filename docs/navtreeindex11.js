@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"d3/d38/structhalfedge__s.html#a05bb26108758aa57f8d97128b643f309":[1,0,98,0],
 "d3/d38/structhalfedge__s.html#a0cdb20dd588cf4b02242dbdc3d309213":[1,0,98,3],
 "d3/d38/structhalfedge__s.html#a18ff1d6579105a3152729e1403b21ab9":[1,0,98,1],
 "d3/d38/structhalfedge__s.html#a4623aa7ceaf05866029b1134d43a1390":[1,0,98,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "d3/d84/classDialogArcWithLength.html#a8f83f10bb009f8bc979dd24aaf4308b7":[1,0,41,30],
 "d3/d84/classDialogArcWithLength.html#a8fe6afe98810a3e423ace9dfffae2d6d":[1,0,41,32],
 "d3/d84/classDialogArcWithLength.html#a9139da780b214e82ceb017423d113a06":[1,0,41,24],
-"d3/d84/classDialogArcWithLength.html#a94d7326f4454e0f5047763d965735eb6":[1,0,41,52],
-"d3/d84/classDialogArcWithLength.html#a9ad153aa7b1308770a3edad0f7e386ff":[1,0,41,50]
+"d3/d84/classDialogArcWithLength.html#a94d7326f4454e0f5047763d965735eb6":[1,0,41,52]
 };

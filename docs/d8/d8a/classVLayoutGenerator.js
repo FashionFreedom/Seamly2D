@@ -17,7 +17,7 @@ var classVLayoutGenerator =
     [ "GetPaperWidth", "d8/d8a/classVLayoutGenerator.html#aa359c484afbd0a48deb0bd51c64612a4", null ],
     [ "GetPrinterFields", "d8/d8a/classVLayoutGenerator.html#aa65b356f2d95ad4397975524e49e036e", null ],
     [ "GetRotate", "d8/d8a/classVLayoutGenerator.html#abbc4297a7ca6255e9eb273d303fe3352", null ],
-    [ "GetRotationIncrease", "d8/d8a/classVLayoutGenerator.html#a4ae0264be8843330433b9e3ecd25ca7d", null ],
+    [ "getRotationIncrease", "d8/d8a/classVLayoutGenerator.html#a8070953d2f02e7d1eddf233392663ae4", null ],
     [ "GetShift", "d8/d8a/classVLayoutGenerator.html#aee72eac028859c12f5a9febf79614d52", null ],
     [ "IsSaveLength", "d8/d8a/classVLayoutGenerator.html#aa0d7f041ec7a167ac5b62c4143542860", null ],
     [ "isTextAsPaths", "d8/d8a/classVLayoutGenerator.html#a78bc84be0f42fb73ce784b9108220551", null ],

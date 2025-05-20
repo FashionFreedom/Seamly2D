@@ -1,5 +1,6 @@
 var NAVTREEINDEX17 =
 {
+"d4/d67/classVisToolCurveIntersectAxis.html#a514a11cbc97eeace27efd921975e47e6":[1,0,312,6],
 "d4/d67/classVisToolCurveIntersectAxis.html#a68850240ccf3243d17500d5a8ef4c6d3":[1,0,312,4],
 "d4/d67/classVisToolCurveIntersectAxis.html#a72bc219cab9ccc5cfd04f659375057c2":[1,0,312,8],
 "d4/d67/classVisToolCurveIntersectAxis.html#a79f0b69922b4ca51be889d43665495d6":[1,0,312,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX17 =
 "d4/d9f/union__tool_8cpp.html#a6e54544299e618e8f63c8272eefcf2c3":[2,0,0,1,13,1,5,22],
 "d4/d9f/union__tool_8cpp.html#a80b2e5367bdfa51e9ee82c7b62a64422":[2,0,0,1,13,1,5,31],
 "d4/d9f/union__tool_8cpp.html#a87a98d38cedbf08597b6e3efb022e94d":[2,0,0,1,13,1,5,48],
-"d4/d9f/union__tool_8cpp.html#a8c39c6724b36474107a36ace6d0c78fb":[2,0,0,1,13,1,5,18],
-"d4/d9f/union__tool_8cpp.html#a8ca9f21c16c63ed731d315af5c94d663":[2,0,0,1,13,1,5,10]
+"d4/d9f/union__tool_8cpp.html#a8c39c6724b36474107a36ace6d0c78fb":[2,0,0,1,13,1,5,18]
 };

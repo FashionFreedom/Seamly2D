@@ -1,5 +1,6 @@
 var NAVTREEINDEX46 =
 {
+"da/df9/classMoveSPoint.html#afdbb4002f62802eb67c40034a013f014":[1,0,135,8],
 "da/dfa/dialogbisector_8cpp.html":[2,0,0,1,13,0,1,11],
 "da/dfa/dialogbisector_8cpp_source.html":[2,0,0,1,13,0,1,11],
 "da/dfb/classPatternPieceTool.html":[1,0,143],
@@ -248,6 +249,5 @@ var NAVTREEINDEX46 =
 "db/d32/classLayoutSettingsDialog.html#a1ff3421fe8885e97875f2c38f569512f":[1,0,114,20],
 "db/d32/classLayoutSettingsDialog.html#a21f6833a3698ed30720995732ab3a768":[1,0,114,6],
 "db/d32/classLayoutSettingsDialog.html#a2917380077510d19e7a1f70108102e03":[1,0,114,12],
-"db/d32/classLayoutSettingsDialog.html#a292091f9ca3f144c51c8bd1363a85eda":[1,0,114,5],
-"db/d32/classLayoutSettingsDialog.html#a299a3467fa98bea20984d2f4b54c80e0":[1,0,114,3]
+"db/d32/classLayoutSettingsDialog.html#a292091f9ca3f144c51c8bd1363a85eda":[1,0,114,5]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX14 =
 {
+"d3/dc2/vtoolsinglepoint_8h_source.html":[2,0,0,1,13,1,0,2,1,21],
 "d3/dd1/tst__vmeasurements_8cpp.html":[2,0,0,2,2,31],
 "d3/dd1/tst__vmeasurements_8cpp_source.html":[2,0,0,2,2,31],
 "d3/dd7/classVBestSquare.html":[1,0,254],
@@ -248,6 +249,5 @@ var NAVTREEINDEX14 =
 "d4/d11/vcommonsettings_8cpp.html#acfd4254aeddc1d40c0425558b4f0b42f":[2,0,0,1,8,17,128],
 "d4/d11/vcommonsettings_8cpp.html#ad2184613b13de652123831a9102c6471":[2,0,0,1,8,17,83],
 "d4/d11/vcommonsettings_8cpp.html#ad330f54fe0ce445593b4355b3899ebd3":[2,0,0,1,8,17,110],
-"d4/d11/vcommonsettings_8cpp.html#ad33f2f0b5106c172dee047d0af12ebc6":[2,0,0,1,8,17,0],
-"d4/d11/vcommonsettings_8cpp.html#ad5165727659916350befceb487d7d367":[2,0,0,1,8,17,27]
+"d4/d11/vcommonsettings_8cpp.html#ad33f2f0b5106c172dee047d0af12ebc6":[2,0,0,1,8,17,0]
 };

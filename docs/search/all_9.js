@@ -326,7 +326,7 @@ var searchData=
   ['islayoutsdockvisible_323',['isLayoutsDockVisible',['../d6/d1a/classMainWindow.html#a62e645c52390e9e1224c0e4d73cd8c3e',1,'MainWindow']]],
   ['islayoutstale_324',['isLayoutStale',['../de/d1a/classMainWindowsNoGUI.html#a7418bf20e1725db3ba9aadac80864426',1,'MainWindowsNoGUI']]],
   ['isleftmousepressed_325',['isleftmousepressed',['../d0/d12/classVisToolSpline.html#a66adcfac48ac9aca954fa8a11280ad65',1,'VisToolSpline::isLeftMousePressed'],['../df/d7b/classVisToolSplinePath.html#a66978dceee4be1382e578ecae85f362d',1,'VisToolSplinePath::isLeftMousePressed']]],
-  ['islocked_326',['islocked',['../d3/db4/classImageDialog.html#a4ad243f9c72f2d2993460ce534573a78',1,'ImageDialog::isLocked()'],['../d0/dab/classVPiece.html#afe2d7f07bfa15a28e396bb5b80efbcc3',1,'VPiece::isLocked()'],['../d3/d17/classVLockGuard.html#a08ecb69c5ed55d6516c8a6476150e5fe',1,'VLockGuard::IsLocked()']]],
+  ['islocked_326',['islocked',['../d3/d17/classVLockGuard.html#a08ecb69c5ed55d6516c8a6476150e5fe',1,'VLockGuard::IsLocked()'],['../d3/db4/classImageDialog.html#a4ad243f9c72f2d2993460ce534573a78',1,'ImageDialog::isLocked()'],['../d0/dab/classVPiece.html#afe2d7f07bfa15a28e396bb5b80efbcc3',1,'VPiece::isLocked()']]],
   ['ismainpathclockwise_327',['isMainPathClockwise',['../d5/d41/classPatternPieceDialog.html#a394dd2077af6f6de3a73d1d62c6ca234',1,'PatternPieceDialog']]],
   ['ismainpathnode_328',['IsMainPathNode',['../d7/dac/classVPieceNode.html#a8eb57f6c16fbae4da2c9c6b31b8053c1',1,'VPieceNode']]],
   ['ismainpathvalid_329',['isMainPathValid',['../d5/d41/classPatternPieceDialog.html#af499e8bcca209e42f6af5a7baf3c669d',1,'PatternPieceDialog']]],

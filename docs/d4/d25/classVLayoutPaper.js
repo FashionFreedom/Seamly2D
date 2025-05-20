@@ -13,7 +13,7 @@ var classVLayoutPaper =
     [ "getPieceItems", "d4/d25/classVLayoutPaper.html#aca0c203962c57b6239835da55b4daa3a", null ],
     [ "getPieces", "d4/d25/classVLayoutPaper.html#a81c0035e65c214a4742f164d6ea9df91", null ],
     [ "GetRotate", "d4/d25/classVLayoutPaper.html#ac94b52f202cf8923b0cb234f35a70017", null ],
-    [ "GetRotationIncrease", "d4/d25/classVLayoutPaper.html#aac6a2fb40e80c23d7101d442a2b09314", null ],
+    [ "getRotationIncrease", "d4/d25/classVLayoutPaper.html#a9acd14fe7684741b3ffceb7e94a50e4a", null ],
     [ "GetShift", "d4/d25/classVLayoutPaper.html#a2850fd90cd70318f386b980bdb4866d3", null ],
     [ "GetWidth", "d4/d25/classVLayoutPaper.html#aaa42c0b4daea7b39d5d64172a7113106", null ],
     [ "IsSaveLength", "d4/d25/classVLayoutPaper.html#ad0214506429dffde426f8e4f43c3a1f7", null ],

@@ -247,7 +247,7 @@ var searchData=
   ['isintersectline_244',['IsIntersectLine',['../dc/d55/classVAbstractCurve.html#a9e2dad7ce0d3fa6f810df77220beea4c',1,'VAbstractCurve']]],
   ['isitemcontained_245',['IsItemContained',['../d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a4867ae9889201fd1784404a9a1fe75ea',1,'anonymous_namespace{vlayoutpiece.cpp}']]],
   ['islayoutgrayscale_246',['IsLayoutGrayscale',['../de/d1a/classMainWindowsNoGUI.html#a8052f32c34a15bc198c65e3dc9e79d83',1,'MainWindowsNoGUI']]],
-  ['islocked_247',['islocked',['../d3/db4/classImageDialog.html#a4ad243f9c72f2d2993460ce534573a78',1,'ImageDialog::isLocked()'],['../d0/dab/classVPiece.html#afe2d7f07bfa15a28e396bb5b80efbcc3',1,'VPiece::isLocked()'],['../d3/d17/classVLockGuard.html#a08ecb69c5ed55d6516c8a6476150e5fe',1,'VLockGuard::IsLocked()']]],
+  ['islocked_247',['islocked',['../d3/d17/classVLockGuard.html#a08ecb69c5ed55d6516c8a6476150e5fe',1,'VLockGuard::IsLocked()'],['../d3/db4/classImageDialog.html#a4ad243f9c72f2d2993460ce534573a78',1,'ImageDialog::isLocked()'],['../d0/dab/classVPiece.html#afe2d7f07bfa15a28e396bb5b80efbcc3',1,'VPiece::isLocked()']]],
   ['ismainpathclockwise_248',['isMainPathClockwise',['../d5/d41/classPatternPieceDialog.html#a394dd2077af6f6de3a73d1d62c6ca234',1,'PatternPieceDialog']]],
   ['ismainpathnode_249',['IsMainPathNode',['../d7/dac/classVPieceNode.html#a8eb57f6c16fbae4da2c9c6b31b8053c1',1,'VPieceNode']]],
   ['ismainpathvalid_250',['isMainPathValid',['../d5/d41/classPatternPieceDialog.html#af499e8bcca209e42f6af5a7baf3c669d',1,'PatternPieceDialog']]],

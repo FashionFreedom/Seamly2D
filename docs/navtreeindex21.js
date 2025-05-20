@@ -1,5 +1,6 @@
 var NAVTREEINDEX21 =
 {
+"d4/de7/classVFormula.html#a2bd9827b67eee1f34460561ccf0a2ba2":[1,0,287,3],
 "d4/de7/classVFormula.html#a3d4462229de76570b7e49bfac2247c42":[1,0,287,8],
 "d4/de7/classVFormula.html#a3fcb124fd85b1e6985793f2922748233":[1,0,287,28],
 "d4/de7/classVFormula.html#a63bdefdf0da925f463be007f10425fea":[1,0,287,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX21 =
 "d5/d2c/vpatternconverter_8cpp.html#af2f61058a0d701169870cc011f58f479":[2,0,0,1,1,1,14,88],
 "d5/d2c/vpatternconverter_8cpp.html#af3da513a1ae750c3e7c1d7b0b21706c5":[2,0,0,1,1,1,14,13],
 "d5/d2c/vpatternconverter_8cpp.html#af5a8caa600391da0bd244afcd3f1c76c":[2,0,0,1,1,1,14,135],
-"d5/d2c/vpatternconverter_8cpp.html#af5ebed3dd6a880a4a02977e3378f63a2":[2,0,0,1,1,1,14,124],
-"d5/d2c/vpatternconverter_8cpp.html#af6da00bd2c0c909a6fb6c0478ea522fb":[2,0,0,1,1,1,14,120]
+"d5/d2c/vpatternconverter_8cpp.html#af5ebed3dd6a880a4a02977e3378f63a2":[2,0,0,1,1,1,14,124]
 };
