@@ -9078,6 +9078,14 @@ Press enter to temporarily add it to the list.</source>
         <source>Show only ISO line weights in drop down boxes</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Workspace</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -11836,10 +11844,6 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Biege</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Thistle</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11869,6 +11873,10 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Tan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Beige</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

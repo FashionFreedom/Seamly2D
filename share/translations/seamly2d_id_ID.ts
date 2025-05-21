@@ -9113,6 +9113,14 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <source>Show only ISO line weights in drop down boxes</source>
         <translation>Tampilkan hanya bobot garis ISO di kotak drop down</translation>
     </message>
+    <message>
+        <source>Workspace</source>
+        <translation>Ruang kerja</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Latar belakang:</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -11878,10 +11886,6 @@ unggah ke SeamlyME seperti biasa.
         <translation>Baja Biru Muda</translation>
     </message>
     <message>
-        <source>Biege</source>
-        <translation>Biege</translation>
-    </message>
-    <message>
         <source>Thistle</source>
         <translation>Bunga thistle</translation>
     </message>
@@ -11912,6 +11916,10 @@ unggah ke SeamlyME seperti biasa.
     <message>
         <source>Tan</source>
         <translation>Coklat</translation>
+    </message>
+    <message>
+        <source>Beige</source>
+        <translation>Krem</translation>
     </message>
 </context>
 <context>

@@ -9097,6 +9097,14 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Show only ISO line weights in drop down boxes</source>
         <translation>Nur ISO-Liniengewichte in Dropdown-Boxen anzeigen</translation>
     </message>
+    <message>
+        <source>Workspace</source>
+        <translation>Arbeitsplatz</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Hintergrund:</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -11862,11 +11870,6 @@ wie gewohnt in SeamlyME laden können.
         <translation>Helles Stahlblau</translation>
     </message>
     <message>
-        <source>Biege</source>
-        <translatorcomment>ist schon deutsch</translatorcomment>
-        <translation>Beige</translation>
-    </message>
-    <message>
         <source>Thistle</source>
         <translation>Distelfarben</translation>
     </message>
@@ -11898,6 +11901,10 @@ wie gewohnt in SeamlyME laden können.
         <source>Tan</source>
         <translatorcomment>oder auch Gelbbraun</translatorcomment>
         <translation>Hellbraun</translation>
+    </message>
+    <message>
+        <source>Beige</source>
+        <translation>Beige</translation>
     </message>
 </context>
 <context>

@@ -9120,6 +9120,14 @@ Press enter to temporarily add it to the list.</source>
         <source>Show only ISO line weights in drop down boxes</source>
         <translation>Показывать только веса линий ISO в раскрывающихся списках</translation>
     </message>
+    <message>
+        <source>Workspace</source>
+        <translation>Рабочее пространство</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Фон:</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -11885,10 +11893,6 @@ load in SeamlyME as usual.
         <translation>Светло-стальной синий</translation>
     </message>
     <message>
-        <source>Biege</source>
-        <translation>Бежевый</translation>
-    </message>
-    <message>
         <source>Thistle</source>
         <translation>Чертополох</translation>
     </message>
@@ -11919,6 +11923,10 @@ load in SeamlyME as usual.
     <message>
         <source>Tan</source>
         <translation>Светло-Бежевый</translation>
+    </message>
+    <message>
+        <source>Beige</source>
+        <translation>Бежевый</translation>
     </message>
 </context>
 <context>

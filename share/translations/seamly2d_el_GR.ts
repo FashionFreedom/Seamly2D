@@ -9115,6 +9115,14 @@ Press enter to temporarily add it to the list.</source>
         <source>Show only ISO line weights in drop down boxes</source>
         <translation>Εμφάνιση μόνο των βαρών γραμμών ISO στα αναπτυσσόμενα πλαίσια</translation>
     </message>
+    <message>
+        <source>Workspace</source>
+        <translation>Χώρος εργασίας</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Φόντο:</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -11880,10 +11888,6 @@ load in SeamlyME as usual.
         <translation>Ανοιχτό μπλε ατσάλι</translation>
     </message>
     <message>
-        <source>Biege</source>
-        <translation>Μπεζ</translation>
-    </message>
-    <message>
         <source>Thistle</source>
         <translation>Γαϊδουράγκαθο</translation>
     </message>
@@ -11914,6 +11918,10 @@ load in SeamlyME as usual.
     <message>
         <source>Tan</source>
         <translation>Μαύρο</translation>
+    </message>
+    <message>
+        <source>Beige</source>
+        <translation>Μπεζ</translation>
     </message>
 </context>
 <context>

@@ -9096,6 +9096,14 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <source>Show only ISO line weights in drop down boxes</source>
         <translation>Toon alleen ISO-lijndiktes in vervolgkeuzelijsten</translation>
     </message>
+    <message>
+        <source>Workspace</source>
+        <translation>Werkruimte</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Achtergrond:</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -11862,10 +11870,6 @@ load in SeamlyME as usual.
         <translation>Licht staalblauw</translation>
     </message>
     <message>
-        <source>Biege</source>
-        <translation>Beige</translation>
-    </message>
-    <message>
         <source>Thistle</source>
         <translation>Distel</translation>
     </message>
@@ -11896,6 +11900,10 @@ load in SeamlyME as usual.
     <message>
         <source>Tan</source>
         <translation>Zonnebruin</translation>
+    </message>
+    <message>
+        <source>Beige</source>
+        <translation>Beige</translation>
     </message>
 </context>
 <context>

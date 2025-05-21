@@ -9111,6 +9111,14 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <source>Show only ISO line weights in drop down boxes</source>
         <translation>V rozbalovacích nabídkách zobrazovat pouze tloušťky čar ISO</translation>
     </message>
+    <message>
+        <source>Workspace</source>
+        <translation>Pracovní prostor</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Pozadí:</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -11876,10 +11884,6 @@ SeamlyME jako obvykle.
         <translation>Světle ocelově modrá</translation>
     </message>
     <message>
-        <source>Biege</source>
-        <translation>Béžová</translation>
-    </message>
-    <message>
         <source>Thistle</source>
         <translation>Bodlák</translation>
     </message>
@@ -11910,6 +11914,10 @@ SeamlyME jako obvykle.
     <message>
         <source>Tan</source>
         <translation>Opálení</translation>
+    </message>
+    <message>
+        <source>Beige</source>
+        <translation>Béžový</translation>
     </message>
 </context>
 <context>
