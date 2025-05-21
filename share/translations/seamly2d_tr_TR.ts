@@ -9113,6 +9113,14 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <source>Show only ISO line weights in drop down boxes</source>
         <translation>Açılır kutularda yalnızca ISO çizgi kalınlıklarını göster</translation>
     </message>
+    <message>
+        <source>Workspace</source>
+        <translation>Çalışma alanı</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Arka plan:</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -11877,10 +11885,6 @@ load in SeamlyME as usual.
         <translation>Açık Çelik Mavisi</translation>
     </message>
     <message>
-        <source>Biege</source>
-        <translation>Bej</translation>
-    </message>
-    <message>
         <source>Thistle</source>
         <translation>Deve Dikeni</translation>
     </message>
@@ -11911,6 +11915,10 @@ load in SeamlyME as usual.
     <message>
         <source>Tan</source>
         <translation>Bronz</translation>
+    </message>
+    <message>
+        <source>Beige</source>
+        <translation>Bej</translation>
     </message>
 </context>
 <context>

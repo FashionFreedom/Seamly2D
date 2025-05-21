@@ -9151,6 +9151,14 @@ actualización:</translation>
         <source>Show only ISO line weights in drop down boxes</source>
         <translation>Mostrar sólo los pesos de línea ISO en los cuadros desplegables</translation>
     </message>
+    <message>
+        <source>Workspace</source>
+        <translation>Espacio de trabajo</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fondo:</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -11918,10 +11926,6 @@ load in SeamlyME as usual.
         <translation>Azul grisáceo muy claro</translation>
     </message>
     <message>
-        <source>Biege</source>
-        <translation>Biege</translation>
-    </message>
-    <message>
         <source>Thistle</source>
         <translation>Lila muy claro</translation>
     </message>
@@ -11952,6 +11956,10 @@ load in SeamlyME as usual.
     <message>
         <source>Tan</source>
         <translation>beige oscuro</translation>
+    </message>
+    <message>
+        <source>Beige</source>
+        <translation>Beige</translation>
     </message>
 </context>
 <context>

@@ -9113,6 +9113,14 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <source>Show only ISO line weights in drop down boxes</source>
         <translation>Näytä alasvetovalikoissa vain ISO-viivan paksuudet</translation>
     </message>
+    <message>
+        <source>Workspace</source>
+        <translation>Työtila</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Tausta:</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -11878,10 +11886,6 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Vaalean teräksensininen</translation>
     </message>
     <message>
-        <source>Biege</source>
-        <translation>Biège</translation>
-    </message>
-    <message>
         <source>Thistle</source>
         <translation>Ohdake</translation>
     </message>
@@ -11912,6 +11916,10 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Tan</source>
         <translation>Rusketus</translation>
+    </message>
+    <message>
+        <source>Beige</source>
+        <translation>Beige</translation>
     </message>
 </context>
 <context>

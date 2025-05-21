@@ -9099,6 +9099,14 @@ Prima enter para o adicionar temporariamente à lista.</translation>
         <source>Show only ISO line weights in drop down boxes</source>
         <translation>Mostrar apenas espessuras de linha ISO em caixas suspensas</translation>
     </message>
+    <message>
+        <source>Workspace</source>
+        <translation>Espaço de trabalho</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fundo:</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -11864,10 +11872,6 @@ carregar no SeamlyME como de costume.
         <translation>Azul Aâo Claro</translation>
     </message>
     <message>
-        <source>Biege</source>
-        <translation>Preto</translation>
-    </message>
-    <message>
         <source>Thistle</source>
         <translation>Cardo</translation>
     </message>
@@ -11898,6 +11902,10 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Tan</source>
         <translation>bronzeado</translation>
+    </message>
+    <message>
+        <source>Beige</source>
+        <translation>Bege</translation>
     </message>
 </context>
 <context>

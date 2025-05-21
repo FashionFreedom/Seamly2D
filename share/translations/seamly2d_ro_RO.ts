@@ -9115,6 +9115,14 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <source>Show only ISO line weights in drop down boxes</source>
         <translation>Afișează doar grosimile de linie ISO în casetele derulante</translation>
     </message>
+    <message>
+        <source>Workspace</source>
+        <translation>Spațiu de lucru</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fundal:</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -11879,10 +11887,6 @@ load in SeamlyME as usual.
         <translation>Albastru deschis de oțel</translation>
     </message>
     <message>
-        <source>Biege</source>
-        <translation>Bianc</translation>
-    </message>
-    <message>
         <source>Thistle</source>
         <translation>Ciulin</translation>
     </message>
@@ -11913,6 +11917,10 @@ load in SeamlyME as usual.
     <message>
         <source>Tan</source>
         <translation>Bronz</translation>
+    </message>
+    <message>
+        <source>Beige</source>
+        <translation>Bej</translation>
     </message>
 </context>
 <context>
