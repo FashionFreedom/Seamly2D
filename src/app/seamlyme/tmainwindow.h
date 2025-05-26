@@ -88,7 +88,7 @@ public:
 
     void                SetBaseMHeight(int height);
     void                SetBaseMSize(int size);
-    void                SetPUnit(Unit unit);
+    void                setPUnit(Unit unit);
 
     bool                LoadFile(const QString &path);
 
@@ -161,7 +161,7 @@ private slots:
     void                SaveMDescription();
     void                SaveMFullName();
 
-    void                PatternUnitChanged(int index);
+    void                patternUnitsChanged(int index);
 
 private:
     Q_DISABLE_COPY(TMainWindow)
@@ -197,6 +197,7 @@ private:
     void                initializeTable();
     void                SetDecimals();
     void                initUnits();
+    void                setCurrentPatternUnits();
     void                InitComboBoxUnits();
     void                InitGender(QComboBox *gender);
 
@@ -240,7 +241,7 @@ private:
 
     QStringList         FilterMeasurements(const QStringList &mNew, const QStringList &mFilter);
 
-    void                UpdatePatternUnit();
+    void                updatePatternUnit();
 
     bool                LoadFromExistingFile(const QString &path);
 

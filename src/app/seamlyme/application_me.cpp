@@ -709,7 +709,7 @@ void ApplicationME::parseCommandLine(const SocketConnection &connection, const Q
 
             if (flagUnit)
             {
-                mainWindow()->SetPUnit(unit);
+                mainWindow()->setPUnit(unit);
             }
         }
     }
