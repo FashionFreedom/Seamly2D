@@ -5,7 +5,7 @@ var classDialogTrueDarts =
     [ "CheckName", "d7/d8c/classDialogTrueDarts.html#a6e08e146615171c89e7c27db86cd6917", null ],
     [ "CheckState", "d7/d8c/classDialogTrueDarts.html#af94a5536051d33ccbdd74be5dbbc42aa", null ],
     [ "ChosenObject", "d7/d8c/classDialogTrueDarts.html#ad382ca87388ec296919f552307982325", null ],
-    [ "FillComboBoxs", "d7/d8c/classDialogTrueDarts.html#a2c544f9ab2399a859d7693325e8dff2f", null ],
+    [ "fillComboBoxes", "d7/d8c/classDialogTrueDarts.html#a6db5a266a61c8683a90a31d97a133135", null ],
     [ "GetFirstBasePointId", "d7/d8c/classDialogTrueDarts.html#aa398386f5c692d8d9fa03f5c62096004", null ],
     [ "GetFirstDartPointId", "d7/d8c/classDialogTrueDarts.html#ad3a2927242e1bd42b3dd669dfde7146c", null ],
     [ "GetFirstNewDartPointName", "d7/d8c/classDialogTrueDarts.html#a62fcba8a45d977b9cef32aa78b2d7c9a", null ],

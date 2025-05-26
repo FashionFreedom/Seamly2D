@@ -10,7 +10,7 @@ var classVPieceLabelData =
     [ "GetLetter", "de/d3b/classVPieceLabelData.html#af6a4fd19d1adf87e4d67860f9387b6b5", null ],
     [ "GetOrientation", "de/d3b/classVPieceLabelData.html#a229fdba7798fcbe16e1208b32a31b85d", null ],
     [ "GetQuantity", "de/d3b/classVPieceLabelData.html#a591e37c7aa3fff6c0be39de51b724fe3", null ],
-    [ "GetRotationWay", "de/d3b/classVPieceLabelData.html#a8ad449f982182bab1f91d2dcd78f33f7", null ],
+    [ "getRotationWay", "de/d3b/classVPieceLabelData.html#ab686243ae2b3e3cecde7e909a89de130", null ],
     [ "GetTilt", "de/d3b/classVPieceLabelData.html#af4554860110d64941c1304ffee636a7f", null ],
     [ "IsOnFold", "de/d3b/classVPieceLabelData.html#a53bb168e6bc12f7215b16590a89347bc", null ],
     [ "operator=", "de/d3b/classVPieceLabelData.html#a143bed234ab0f0b74e264d856d3fcfad", null ],

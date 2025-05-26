@@ -77,11 +77,11 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="99.5" y="-1871.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
 <text text-anchor="start" x="112.5" y="-1871.5" font-family="Helvetica,sans-Serif" font-size="10.00">ContinueFormatRewrite()</text>
 <text text-anchor="start" x="99.5" y="-1856.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="112.5" y="-1856.5" font-family="Helvetica,sans-Serif" font-size="10.00">ToolBarStyle()</text>
+<text text-anchor="start" x="112.5" y="-1856.5" font-family="Helvetica,sans-Serif" font-size="10.00">initToolBarStyle()</text>
 <text text-anchor="start" x="99.5" y="-1841.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
 <text text-anchor="start" x="112.5" y="-1841.5" font-family="Helvetica,sans-Serif" font-size="10.00">exportToCSVData()</text>
 <text text-anchor="start" x="99.5" y="-1826.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="112.5" y="-1826.5" font-family="Helvetica,sans-Serif" font-size="10.00">WindowsLocale()</text>
+<text text-anchor="start" x="112.5" y="-1826.5" font-family="Helvetica,sans-Serif" font-size="10.00">setWindowsLocale()</text>
 <text text-anchor="start" x="99.5" y="-1811.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
 <text text-anchor="start" x="112.5" y="-1811.5" font-family="Helvetica,sans-Serif" font-size="10.00">exportToCSV()</text>
 <polygon fill="#666666" stroke="#666666" points="95.5,-1986.5 95.5,-1986.5 248.5,-1986.5 248.5,-1986.5 95.5,-1986.5"/>
@@ -149,8 +149,8 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="4.5" y="-1367" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="17.5" y="-1367" font-family="Helvetica,sans-Serif" font-size="10.00">exportSVG()</text>
 <text text-anchor="start" x="4.5" y="-1352" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="17.5" y="-1352" font-family="Helvetica,sans-Serif" font-size="10.00">exportPNG()</text>
-<text text-anchor="start" x="17.5" y="-1337" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
+<text text-anchor="start" x="17.5" y="-1352" font-family="Helvetica,sans-Serif" font-size="10.00">exportSVG()</text>
+<text text-anchor="start" x="17.5" y="-1337" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
 <text text-anchor="start" x="4.5" y="-1322" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
 <text text-anchor="start" x="17.5" y="-1322" font-family="Helvetica,sans-Serif" font-size="10.00">ExportData()</text>
 <text text-anchor="start" x="4.5" y="-1307" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
@@ -313,7 +313,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="194" y="-1044" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="204.5" y="-1044" font-family="Helvetica,sans-Serif" font-size="10.00">Preferences()</text>
 <text text-anchor="start" x="194" y="-1029" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="204.5" y="-1029" font-family="Helvetica,sans-Serif" font-size="10.00">ToolBarStyles()</text>
+<text text-anchor="start" x="204.5" y="-1029" font-family="Helvetica,sans-Serif" font-size="10.00">initToolBarStyles()</text>
 <text text-anchor="start" x="194" y="-1014" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="204.5" y="-1014" font-family="Helvetica,sans-Serif" font-size="10.00">print()</text>
 <text text-anchor="start" x="194" y="-999" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
@@ -384,7 +384,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="21.5" y="-771.5" font-family="Helvetica,sans-Serif" font-size="10.00">helpLabel</text>
 <text text-anchor="start" x="11" y="-756.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="21.5" y="-756.5" font-family="Helvetica,sans-Serif" font-size="10.00">isInitialized</text>
-<text text-anchor="start" x="21.5" y="-741.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 37 more...</text>
+<text text-anchor="start" x="21.5" y="-741.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 36 more...</text>
 <text text-anchor="start" x="8.5" y="-726.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="21.5" y="-726.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow()</text>
 <text text-anchor="start" x="8.5" y="-711.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
@@ -459,7 +459,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="21.5" y="-201.5" font-family="Helvetica,sans-Serif" font-size="10.00">initPenToolBar()</text>
 <text text-anchor="start" x="11" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="21.5" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">initPropertyEditor()</text>
-<text text-anchor="start" x="21.5" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 88 more...</text>
+<text text-anchor="start" x="21.5" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 87 more...</text>
 <text text-anchor="start" x="11" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="21.5" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">zoomScaleChanged()</text>
 <text text-anchor="start" x="11" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
@@ -477,10 +477,10 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="11" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="21.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">changeDraftBlockGlobally()</text>
 <text text-anchor="start" x="11" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="21.5" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">ToolBarStyles()</text>
+<text text-anchor="start" x="21.5" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">initToolBarStyles()</text>
 <text text-anchor="start" x="11" y="-21.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="21.5" y="-21.5" font-family="Helvetica,sans-Serif" font-size="10.00">resetOrigins()</text>
-<text text-anchor="start" x="21.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 75 more...</text>
+<text text-anchor="start" x="21.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 77 more...</text>
 <polygon fill="#666666" stroke="#666666" points="4.5,-901.5 4.5,-901.5 165.5,-901.5 165.5,-901.5 4.5,-901.5"/>
 <polygon fill="#666666" stroke="#666666" points="4.5,-736.5 4.5,-736.5 19.5,-736.5 19.5,-736.5 4.5,-736.5"/>
 <polygon fill="#666666" stroke="#666666" points="19.5,-736.5 19.5,-736.5 165.5,-736.5 165.5,-736.5 19.5,-736.5"/>

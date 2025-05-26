@@ -16,6 +16,11 @@ var def_8h =
     [ "SceneSize", "d4/da4/def_8h.html#a8084f95d171e33ef73bf44aed20a4378", null ],
     [ "V_FALLTHROUGH", "d4/da4/def_8h.html#a380cf399715eea06631207dd0f18de71", null ],
     [ "ToolVisHolderType", "d4/da4/def_8h.html#acb16ac88f43c4dcfdc9e43baf22da452", null ],
+    [ "DialogSource", "d4/da4/def_8h.html#a2ace20f64b3456b610d7b2d85ea3418e", [
+      [ "ToolDialog", "d4/da4/def_8h.html#a2ace20f64b3456b610d7b2d85ea3418eada9dd8d76cc8af1d78de34d822cf26ab", null ],
+      [ "VariableDialog", "d4/da4/def_8h.html#a2ace20f64b3456b610d7b2d85ea3418ea0d8f2a9b908c5c0f0e712bba782f2b03", null ],
+      [ "MeasurementDialog", "d4/da4/def_8h.html#a2ace20f64b3456b610d7b2d85ea3418eae2e9e73a1611e997de4419e9ecabc818", null ]
+    ] ],
     [ "Direction", "d4/da4/def_8h.html#a1b2993a5d049d3ac565a9a8d0209084a", [
       [ "Forward", "d4/da4/def_8h.html#a1b2993a5d049d3ac565a9a8d0209084aa67d2f6740a8eaebf4d5c6f79be8da481", null ],
       [ "Backward", "d4/da4/def_8h.html#a1b2993a5d049d3ac565a9a8d0209084aab3263eb38f8903efc271cc7a760da510", null ]
@@ -207,6 +212,10 @@ var def_8h =
       [ "SplinePath", "d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2afa67413f4b19957f72684b994ad47bfc0b", null ],
       [ "Piece", "d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2afaa5d512bf83495b68d0ffa20f79804dfc", null ],
       [ "Unknown", "d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2afa88183b946cc5f0e8c96b2e66e1c74a7e", null ]
+    ] ],
+    [ "Selection", "d4/da4/def_8h.html#ac65c2114e9f558d594c56c157b7ec954", [
+      [ "Prev", "d4/da4/def_8h.html#ac65c2114e9f558d594c56c157b7ec954a14230d11143a03f4330c6433d5032a9d", null ],
+      [ "Next", "d4/da4/def_8h.html#ac65c2114e9f558d594c56c157b7ec954a10ac3d04253ef7e1ddc73e6091c0cd55", null ]
     ] ],
     [ "SelectionType", "d4/da4/def_8h.html#ab8c951c98d26f226ee3fd55d9e80a241", [
       [ "ByMousePress", "d4/da4/def_8h.html#ab8c951c98d26f226ee3fd55d9e80a241a8c769025d3274255a72fa16ac0716495", null ],

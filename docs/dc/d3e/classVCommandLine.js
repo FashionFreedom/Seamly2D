@@ -28,7 +28,7 @@ var classVCommandLine =
     [ "Pg2Px", "dc/d3e/classVCommandLine.html#a09bd7574fc048bbeae85bb1ab040d086", null ],
     [ "Reset", "dc/d3e/classVCommandLine.html#a3a2b8e0d6286a6d9f806f3b0756d23a4", null ],
     [ "Application2D", "dc/d3e/classVCommandLine.html#acf399129df57be33455533399a0107a6", null ],
-    [ "instance", "dc/d3e/classVCommandLine.html#a4a357d0d1371aa548d5c716196b05066", null ],
+    [ "commandLine", "dc/d3e/classVCommandLine.html#ab2763add51a29e09ebe17e964ec6ff0c", null ],
     [ "isGuiEnabled", "dc/d3e/classVCommandLine.html#a384ad7063d35874f4ef39f898c429064", null ],
     [ "optionsIndex", "dc/d3e/classVCommandLine.html#af81799ac36c307795352e9591799e1a2", null ],
     [ "optionsUsed", "dc/d3e/classVCommandLine.html#a029b6fb4ed6697d7b7e414e55ffe63c4", null ],

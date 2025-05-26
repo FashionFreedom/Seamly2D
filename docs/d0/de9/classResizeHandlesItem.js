@@ -4,6 +4,7 @@ var classResizeHandlesItem =
     [ "ResizeHandlesItem", "d0/de9/classResizeHandlesItem.html#a21bb1379d304092e5d550667573f5211", null ],
     [ "~ResizeHandlesItem", "d0/de9/classResizeHandlesItem.html#ae741a1c8ee4c14afb7882eab52e1bd47", null ],
     [ "boundingRect", "d0/de9/classResizeHandlesItem.html#a4e0630ce2b519b285ccd4bd970c8d582", null ],
+    [ "imageNeedsSave", "d0/de9/classResizeHandlesItem.html#a7d6fbb1241a24c5ee5e6ce1cdc0f2a9f", null ],
     [ "paint", "d0/de9/classResizeHandlesItem.html#a469632ba3aa14b38dd10670e6049245a", null ],
     [ "parentIsLocked", "d0/de9/classResizeHandlesItem.html#ad175cc8532593abf9e760660af93d571", null ],
     [ "setBottom", "d0/de9/classResizeHandlesItem.html#a1563126749056e468af2c40064f5640a", null ],
@@ -19,7 +20,7 @@ var classResizeHandlesItem =
     [ "setTop", "d0/de9/classResizeHandlesItem.html#a6fda197c8a675667f94bcbfda1a14374", null ],
     [ "setTopLeft", "d0/de9/classResizeHandlesItem.html#a2f250ac55aeb42dbfbc4d942152846dc", null ],
     [ "setTopRight", "d0/de9/classResizeHandlesItem.html#ac7e071af4be29e0a4d2c49168b66c28b", null ],
-    [ "sizeChanged", "d0/de9/classResizeHandlesItem.html#a105409fc3e6dcd2660005bef7d6ff63a", null ],
+    [ "sizeChangedFromHandles", "d0/de9/classResizeHandlesItem.html#a9bc8d1381fa0ac98c6eb0077b4f9fcb4", null ],
     [ "type", "d0/de9/classResizeHandlesItem.html#ace26500fd0d570be74758d67d6df2825", null ],
     [ "updateHandlePositions", "d0/de9/classResizeHandlesItem.html#a65b9187d3ad4597f448c3ba920684dfb", null ],
     [ "m_handleItems", "d0/de9/classResizeHandlesItem.html#ab700e159c2003b4cddb883333bdd7294", null ],
@@ -28,5 +29,6 @@ var classResizeHandlesItem =
     [ "m_minDimension", "d0/de9/classResizeHandlesItem.html#a0d9316123a68627adb3287a49a6a585f", null ],
     [ "m_parentIsLocked", "d0/de9/classResizeHandlesItem.html#a459e897cee85e2d40b683c02dde3fcb1", null ],
     [ "m_parentRect", "d0/de9/classResizeHandlesItem.html#af055a7a392809f8ed42619cf2fe58286", null ],
-    [ "m_parentRotation", "d0/de9/classResizeHandlesItem.html#a0b595bd3f0278806441668610c8e45fc", null ]
+    [ "m_parentRotation", "d0/de9/classResizeHandlesItem.html#a0b595bd3f0278806441668610c8e45fc", null ],
+    [ "m_sizeChangedExternally", "d0/de9/classResizeHandlesItem.html#a047baee51c5c33a708e18106155cb0c8", null ]
 ];

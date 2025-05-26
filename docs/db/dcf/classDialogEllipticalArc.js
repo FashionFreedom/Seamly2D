@@ -30,7 +30,7 @@ var classDialogEllipticalArc =
     [ "getPenStyle", "db/dcf/classDialogEllipticalArc.html#aa75a153e003dd8dc1fdec7c525565d4e", null ],
     [ "GetRadius1", "db/dcf/classDialogEllipticalArc.html#a61b06244883ba20d5558eb7267d606cb", null ],
     [ "GetRadius2", "db/dcf/classDialogEllipticalArc.html#ae535da65354b3cbfa5bd3a26c5498900", null ],
-    [ "GetRotationAngle", "db/dcf/classDialogEllipticalArc.html#aca3c149b56437cffbb5836192cff6ed7", null ],
+    [ "getRotationAngle", "db/dcf/classDialogEllipticalArc.html#a9a06360a31cad752c9afa3bb9e4da666", null ],
     [ "pointNameChanged", "db/dcf/classDialogEllipticalArc.html#a8d6fec1633d696ce023b8f8e6fdb1b09", null ],
     [ "Radius1Changed", "db/dcf/classDialogEllipticalArc.html#a25dcdffc28168ec1003c88e996a73db8", null ],
     [ "Radius2Changed", "db/dcf/classDialogEllipticalArc.html#aa5954cd1c82bcf50791362f9ce39b32f", null ],

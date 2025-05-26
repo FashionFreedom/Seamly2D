@@ -12,8 +12,8 @@ var classImageItem =
     [ "hoverEnterEvent", "d6/da8/classImageItem.html#abfc8ca4c8a3201547c22ea34ad752ee5", null ],
     [ "hoverLeaveEvent", "d6/da8/classImageItem.html#a4f46dc4b22594e5e7a60fae6423c0689", null ],
     [ "hoverMoveEvent", "d6/da8/classImageItem.html#ab98385e6da5ba86c626e9b51854d8a7f", null ],
+    [ "imageNeedsSave", "d6/da8/classImageItem.html#a58c866f514b5358df799b1443a90ab40", null ],
     [ "imageSelected", "d6/da8/classImageItem.html#abd55173a883cd4c40fb16d08e9e15740", null ],
-    [ "imageUpdated", "d6/da8/classImageItem.html#a3b539253b5bde2050a58a0b82610eadc", null ],
     [ "initializeItem", "d6/da8/classImageItem.html#a97926be65062baa28bef2b9c152048be", null ],
     [ "keyReleaseEvent", "d6/da8/classImageItem.html#a2cd5bffef29f98576969ef78f20fa7d6", null ],
     [ "mouseMoveEvent", "d6/da8/classImageItem.html#a144818d49f85b893ab981a14b56a7f6d", null ],
@@ -42,12 +42,14 @@ var classImageItem =
     [ "m_doc", "d6/da8/classImageItem.html#a9ee709e94b2840af2938a29c596b22a2", null ],
     [ "m_handleRect", "d6/da8/classImageItem.html#ab86c2312bf5128066cf0d14dee7d7186", null ],
     [ "m_image", "d6/da8/classImageItem.html#afcdcaa29a2f2c513ce5838d4a4c91bf3", null ],
+    [ "m_imageWasMoved", "d6/da8/classImageItem.html#a620df1162eb124d741d7e36e00350bc6", null ],
     [ "m_isHovered", "d6/da8/classImageItem.html#a43c3dcac746e77536d10349d0615cc39", null ],
     [ "m_maxDimension", "d6/da8/classImageItem.html#a263e42eed5f447b7c428c6582226d842", null ],
     [ "m_minDimension", "d6/da8/classImageItem.html#ad463d8367622401e2468f07740a3f4a6", null ],
     [ "m_mousePressed", "d6/da8/classImageItem.html#ad14c913e532860fe58f9cc5f8b4bd479", null ],
     [ "m_offset", "d6/da8/classImageItem.html#a162cad55dbbd102d827b5f0cfef69602", null ],
     [ "m_origin", "d6/da8/classImageItem.html#a04ff809910444fc9962b8c67e364b338", null ],
+    [ "m_pixmap", "d6/da8/classImageItem.html#a21f6add6521d1fefe1ee14be746302ab", null ],
     [ "m_pixmapHeight", "d6/da8/classImageItem.html#af1e0719aeeb561be022b7e0b6df41a20", null ],
     [ "m_pixmapWidth", "d6/da8/classImageItem.html#ae971f33ac8e266f52edb7cf51c92724b", null ],
     [ "m_resizeHandles", "d6/da8/classImageItem.html#aa2fd4ff53ba9695baf92b2ddc6d5c737", null ],
@@ -57,5 +59,5 @@ var classImageItem =
     [ "m_selectionType", "d6/da8/classImageItem.html#ae18d95885a5803f15c0599cb8abc5be9", null ],
     [ "m_selectNewOrigin", "d6/da8/classImageItem.html#aec9eca546de3f877f99033644ff5f68d", null ],
     [ "m_transformationMode", "d6/da8/classImageItem.html#afa75da956704d5f8c7d09ae003783e40", null ],
-    [ "maxImageZvalue", "d6/da8/classImageItem.html#a1feda5457a74143e8d548acba78342b7", null ]
+    [ "maxImageZvalue", "d6/da8/classImageItem.html#a5fee5db0360c8344174176efd2738d2b", null ]
 ];
