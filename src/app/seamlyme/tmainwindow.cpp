@@ -239,10 +239,11 @@ void TMainWindow::SetBaseMSize(int size)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::SetPUnit(Unit unit)
+void TMainWindow::setPUnit(Unit unit)
 {
 	pUnit = unit;
-	UpdatePatternUnit();
+    setCurrentPatternUnits();
+	updatePatternUnit();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2147,11 +2148,11 @@ void TMainWindow::SaveMFullName()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::PatternUnitChanged(int index)
+void TMainWindow::patternUnitsChanged(int index)
 {
 	pUnit = static_cast<Unit>(comboBoxUnits->itemData(index).toInt());
 
-	UpdatePatternUnit();
+	updatePatternUnit();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3060,7 +3061,7 @@ QStringList TMainWindow::FilterMeasurements(const QStringList &mNew, const QStri
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::UpdatePatternUnit()
+void TMainWindow::updatePatternUnit()
 {
 	const int row = ui->tableWidget->currentRow();
 
@@ -3380,6 +3381,7 @@ void TMainWindow::initUnits()
 
 	comboBoxUnits = new QComboBox(this);
 	InitComboBoxUnits();
+    setCurrentPatternUnits();
 
 	// set default unit
 	const qint32 indexUnit = comboBoxUnits->findData(static_cast<int>(pUnit));
@@ -3389,9 +3391,23 @@ void TMainWindow::initUnits()
 	}
 
 	connect(comboBoxUnits, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
-			&TMainWindow::PatternUnitChanged);
+			&TMainWindow::patternUnitsChanged);
 
 	ui->toolBarGradation->addWidget(comboBoxUnits);
+}
+
+void TMainWindow::setCurrentPatternUnits()
+{
+    if (comboBoxUnits)
+    {
+        comboBoxUnits->blockSignals(true);
+        const qint32 indexUnit = comboBoxUnits->findData(static_cast<int>(pUnit));
+        if (indexUnit != -1)
+        {
+            comboBoxUnits->setCurrentIndex(indexUnit);
+        }
+        comboBoxUnits->blockSignals(false);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
