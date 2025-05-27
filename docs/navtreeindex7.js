@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"d1/dd3/classVTableSearch.html#a0b7c8a2a594a3f0a64e34537d489f5ed":[1,0,396,8],
 "d1/dd3/classVTableSearch.html#a0f17df910e8cf2443f436e6b46f94b8a":[1,0,396,0],
 "d1/dd3/classVTableSearch.html#a1d8a0c25681b04047d5c7a76726afebc":[1,0,396,3],
 "d1/dd3/classVTableSearch.html#a4efedb6dc47c39aa6b81d6d4df7ef582":[1,0,396,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "d2/d28/page__format__combobox_8cpp.html":[2,0,0,1,14,19],
 "d2/d28/page__format__combobox_8cpp_source.html":[2,0,0,1,14,19],
 "d2/d29/dialogarcwithlength_8cpp.html":[2,0,0,1,13,0,1,9],
-"d2/d29/dialogarcwithlength_8cpp_source.html":[2,0,0,1,13,0,1,9],
-"d2/d2d/preferencesconfigurationpage_8cpp.html":[2,0,0,0,0,1,0,0]
+"d2/d29/dialogarcwithlength_8cpp_source.html":[2,0,0,1,13,0,1,9]
 };

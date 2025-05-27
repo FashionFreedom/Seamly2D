@@ -1,5 +1,8 @@
 var NAVTREEINDEX70 =
 {
+"df/deb/vtoolbasepoint_8cpp_source.html":[2,0,0,1,13,1,0,2,1,8],
+"df/dec/fill__combobox_8h.html":[2,0,0,1,14,6],
+"df/dec/fill__combobox_8h_source.html":[2,0,0,1,14,6],
 "df/ded/tooldialogs_8h.html":[2,0,0,1,13,0,2],
 "df/ded/tooldialogs_8h_source.html":[2,0,0,1,13,0,2],
 "df/df0/movepiece_8cpp.html":[2,0,0,1,13,2,25],
@@ -111,8 +114,8 @@ var NAVTREEINDEX70 =
 "dir_fa16871e366acf28eec42e1eb99c66a0.html":[2,0,0,1,14],
 "dir_fc60e5b36873c7f373d7dac5754b2278.html":[2,0,0,1,10,0],
 "files.html":[2,0],
-"functions.html":[1,3,0,0],
 "functions.html":[1,3,0],
+"functions.html":[1,3,0,0],
 "functions_a.html":[1,3,0,1],
 "functions_b.html":[1,3,0,2],
 "functions_c.html":[1,3,0,3],
@@ -166,8 +169,8 @@ var NAVTREEINDEX70 =
 "functions_type.html":[1,3,3],
 "functions_u.html":[1,3,0,20],
 "functions_v.html":[1,3,0,21],
-"functions_vars.html":[1,3,2],
 "functions_vars.html":[1,3,2,0],
+"functions_vars.html":[1,3,2],
 "functions_vars_a.html":[1,3,2,1],
 "functions_vars_b.html":[1,3,2,2],
 "functions_vars_c.html":[1,3,2,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX70 =
 "globals_t.html":[2,1,0,19],
 "globals_type.html":[2,1,3],
 "globals_u.html":[2,1,0,20],
-"globals_v.html":[2,1,0,21],
-"globals_vars.html":[2,1,2],
-"globals_vars.html":[2,1,2,0],
-"globals_vars_b.html":[2,1,2,1]
+"globals_v.html":[2,1,0,21]
 };

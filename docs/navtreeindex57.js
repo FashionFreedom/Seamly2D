@@ -1,9 +1,11 @@
 var NAVTREEINDEX57 =
 {
-"dd/d30/classVPE_1_1VFilePropertyPrivate.html#a80881767043e8a318d71a60760c286a2":[0,0,24,17,3],
+"dd/d30/classVPE_1_1VFilePropertyPrivate.html#a4b6f41b6ca486a892411f10429815f51":[1,0,2,17,2],
+"dd/d30/classVPE_1_1VFilePropertyPrivate.html#a4b6f41b6ca486a892411f10429815f51":[0,0,24,17,2],
 "dd/d30/classVPE_1_1VFilePropertyPrivate.html#a80881767043e8a318d71a60760c286a2":[1,0,2,17,3],
-"dd/d30/classVPE_1_1VFilePropertyPrivate.html#ad8cec8259ad5fb3522f1092bc30db531":[0,0,24,17,4],
+"dd/d30/classVPE_1_1VFilePropertyPrivate.html#a80881767043e8a318d71a60760c286a2":[0,0,24,17,3],
 "dd/d30/classVPE_1_1VFilePropertyPrivate.html#ad8cec8259ad5fb3522f1092bc30db531":[1,0,2,17,4],
+"dd/d30/classVPE_1_1VFilePropertyPrivate.html#ad8cec8259ad5fb3522f1092bc30db531":[0,0,24,17,4],
 "dd/d30/classVPE_1_1VFilePropertyPrivate.html#af2af3a0840d2e1e7b180147a7ace34da":[1,0,2,17,1],
 "dd/d30/classVPE_1_1VFilePropertyPrivate.html#af2af3a0840d2e1e7b180147a7ace34da":[0,0,24,17,1],
 "dd/d33/addpiece_8cpp.html":[2,0,0,1,13,2,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX57 =
 "dd/d66/vdxfengine_8cpp.html#a729f20bd8f0a91bfd800f67f67c42bcc":[2,0,0,1,4,6,0],
 "dd/d66/vdxfengine_8cpp_source.html":[2,0,0,1,4,6],
 "dd/d67/classMeShortcutsDialog.html":[1,0,124],
-"dd/d67/classMeShortcutsDialog.html#a45586bfb59992ab1cf9c47210e3951cd":[1,0,124,2],
-"dd/d67/classMeShortcutsDialog.html#a9243af4cd0ad59492900755641bc3453":[1,0,124,5],
-"dd/d67/classMeShortcutsDialog.html#aa4623a9333d179710d7cfa1e10dcc45a":[1,0,124,0]
+"dd/d67/classMeShortcutsDialog.html#a45586bfb59992ab1cf9c47210e3951cd":[1,0,124,2]
 };

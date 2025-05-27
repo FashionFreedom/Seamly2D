@@ -1,5 +1,7 @@
 var NAVTREEINDEX11 =
 {
+"d3/d38/classPointIntersectXYVisual.html#af7c5a2f2e2774b48f56adedda8f01d0b":[1,0,154,6],
+"d3/d38/structhalfedge__s.html":[1,0,98],
 "d3/d38/structhalfedge__s.html#a05bb26108758aa57f8d97128b643f309":[1,0,98,0],
 "d3/d38/structhalfedge__s.html#a0cdb20dd588cf4b02242dbdc3d309213":[1,0,98,3],
 "d3/d38/structhalfedge__s.html#a18ff1d6579105a3152729e1403b21ab9":[1,0,98,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX11 =
 "d3/d84/classDialogArcWithLength.html#a882ba12af15b1c1c0e21383bd04ea815":[1,0,41,21],
 "d3/d84/classDialogArcWithLength.html#a8a792df6a979235fcde8f52373443b22":[1,0,41,39],
 "d3/d84/classDialogArcWithLength.html#a8f83f10bb009f8bc979dd24aaf4308b7":[1,0,41,30],
-"d3/d84/classDialogArcWithLength.html#a8fe6afe98810a3e423ace9dfffae2d6d":[1,0,41,32],
-"d3/d84/classDialogArcWithLength.html#a9139da780b214e82ceb017423d113a06":[1,0,41,24],
-"d3/d84/classDialogArcWithLength.html#a94d7326f4454e0f5047763d965735eb6":[1,0,41,52]
+"d3/d84/classDialogArcWithLength.html#a8fe6afe98810a3e423ace9dfffae2d6d":[1,0,41,32]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"d0/dab/classVCubicBezier.html#af92e8711e654648c2be0a0e536e705e4":[1,0,262,14],
 "d0/dab/classVPiece.html":[1,0,369],
 "d0/dab/classVPiece.html#a00345893532d429e86751b5fdf348833":[1,0,369,16],
 "d0/dab/classVPiece.html#a05e2eb1a5a6470981141bd3d8fdae515":[1,0,369,61],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "d0/de8/classVPoster.html#aed5f863c7ddc448edf7980f2193858d4":[1,0,381,4],
 "d0/de8/classVPoster.html#afa4aa3534da006cb92874abb390b454e":[1,0,381,6],
 "d0/de8/vdxfpaintdevice_8h.html":[2,0,0,1,4,9],
-"d0/de8/vdxfpaintdevice_8h_source.html":[2,0,0,1,4,9],
-"d0/de9/classResizeHandlesItem.html":[1,0,172]
+"d0/de8/vdxfpaintdevice_8h_source.html":[2,0,0,1,4,9]
 };

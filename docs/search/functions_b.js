@@ -26,7 +26,7 @@ var searchData=
   ['length2changed_23',['length2changed',['../de/d10/classDialogSpline.html#acfd67f68c973384a89e456f1b8fbfd22',1,'DialogSpline::Length2Changed()'],['../df/d5e/classDialogSplinePath.html#ad8731a83a3696e177bf2be5786bf8734',1,'DialogSplinePath::Length2Changed()']]],
   ['length2formula_24',['Length2Formula',['../df/d03/classVSplinePoint.html#a84addf0f389db0aa0107063a3096d275',1,'VSplinePoint']]],
   ['lengthbezier_25',['LengthBezier',['../dd/d51/classVAbstractCubicBezier.html#a68a6dd911bd8ba0fc0b78efc450c5d4f',1,'VAbstractCubicBezier']]],
-  ['lengthchanged_26',['lengthchanged',['../d0/df1/classDialogMove.html#a92daae74ac02036d6a771e96bf804f7f',1,'DialogMove::lengthChanged()'],['../d3/d84/classDialogArcWithLength.html#a31bd1d99e10aad82f88b91c88baafb22',1,'DialogArcWithLength::LengthChanged()']]],
+  ['lengthchanged_26',['lengthchanged',['../d3/d84/classDialogArcWithLength.html#a31bd1d99e10aad82f88b91c88baafb22',1,'DialogArcWithLength::LengthChanged()'],['../d0/df1/classDialogMove.html#a92daae74ac02036d6a771e96bf804f7f',1,'DialogMove::lengthChanged()']]],
   ['lengtht_27',['LengthT',['../dd/d51/classVAbstractCubicBezier.html#a44b9e4905deaa22da9437a5f2112e944',1,'VAbstractCubicBezier']]],
   ['lengthvalue_28',['LengthValue',['../dd/d50/classVisToolMove.html#ae4c7c5551feb7d62d2bc0a864d8bf1c2',1,'VisToolMove']]],
   ['limitposition_29',['limitPosition',['../d0/dc5/classResizeHandlesItem_1_1HandleItem.html#ac188a5ffa48a9e8a982ef761ca13a35b',1,'ResizeHandlesItem::HandleItem']]],

@@ -1,5 +1,8 @@
 var NAVTREEINDEX59 =
 {
+"dd/dd5/vgraphicssimpletextitem_8h_source.html":[2,0,0,1,14,46],
+"dd/dd7/tst__vmeasurements_8h.html":[2,0,0,2,2,32],
+"dd/dd7/tst__vmeasurements_8h_source.html":[2,0,0,2,2,32],
 "dd/dd9/vlineangle_8h.html":[2,0,0,1,10,1,22],
 "dd/dd9/vlineangle_8h.html#a9e93ca20706629c573f1a29b52803656":[2,0,0,1,10,1,22,1],
 "dd/dd9/vlineangle_8h_source.html":[2,0,0,1,10,1,22],
@@ -246,8 +249,5 @@ var NAVTREEINDEX59 =
 "dd/de9/measurements__def_8cpp.html#ad9556a0715b53860098d065a55076d78":[2,0,0,1,10,4,260],
 "dd/de9/measurements__def_8cpp.html#ad955ca18855aad4f0561a4d321851102":[2,0,0,1,10,4,31],
 "dd/de9/measurements__def_8cpp.html#ada53d57fca81fbfe65c5bb1393868963":[2,0,0,1,10,4,48],
-"dd/de9/measurements__def_8cpp.html#adb4ace08289bcfd0eb1879fa2cfe4787":[2,0,0,1,10,4,122],
-"dd/de9/measurements__def_8cpp.html#adc1a7b75a078fd78f3f618ecbb654b96":[2,0,0,1,10,4,140],
-"dd/de9/measurements__def_8cpp.html#adc5dc4940906f127206105adf1933168":[2,0,0,1,10,4,94],
-"dd/de9/measurements__def_8cpp.html#add40b3459afe8cb5ea312a2afccb2372":[2,0,0,1,10,4,121]
+"dd/de9/measurements__def_8cpp.html#adb4ace08289bcfd0eb1879fa2cfe4787":[2,0,0,1,10,4,122]
 };

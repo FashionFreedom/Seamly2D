@@ -7,5 +7,6 @@ var vlayoutpiece_8cpp =
     [ "IsItemContained", "dd/d70/vlayoutpiece_8cpp.html#a4867ae9889201fd1784404a9a1fe75ea", null ],
     [ "PieceLabelText", "dd/d70/vlayoutpiece_8cpp.html#a9d5be9c5672d55404b37efffeccaa53f", null ],
     [ "PrepareAllowance", "dd/d70/vlayoutpiece_8cpp.html#a52a0730adfd50a44e6904c7028709d88", null ],
-    [ "RotatePoint", "dd/d70/vlayoutpiece_8cpp.html#ac9b8474c898648af470a9dde3441a5e8", null ]
+    [ "RotatePoint", "dd/d70/vlayoutpiece_8cpp.html#ac9b8474c898648af470a9dde3441a5e8", null ],
+    [ "ObjectName", "dd/d70/vlayoutpiece_8cpp.html#a55c40a09ca0ae036a377c5e639e9bee6", null ]
 ];

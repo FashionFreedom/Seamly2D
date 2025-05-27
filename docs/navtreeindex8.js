@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"d2/d2d/preferencesconfigurationpage_8cpp.html":[2,0,0,0,0,1,0,0],
 "d2/d2d/preferencesconfigurationpage_8cpp_source.html":[2,0,0,0,0,1,0,0],
 "d2/d2d/vlayoutpaper__p_8h.html":[2,0,0,1,7,19],
 "d2/d2d/vlayoutpaper__p_8h_source.html":[2,0,0,1,7,19],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "d2/d7b/classDialogTool.html#a2393a727a5d951da5daf2a5950b726af":[1,0,75,21],
 "d2/d7b/classDialogTool.html#a27c61eab1bc3d32f6917983612ab8594":[1,0,75,91],
 "d2/d7b/classDialogTool.html#a2982410c0fd57467d34bca670eb5a1b9":[1,0,75,43],
-"d2/d7b/classDialogTool.html#a298b9ca0770a58aaa31acc24ef7ad82f":[1,0,75,8],
-"d2/d7b/classDialogTool.html#a2a6070cab102675260601eb6fdaf61a2":[1,0,75,71]
+"d2/d7b/classDialogTool.html#a298b9ca0770a58aaa31acc24ef7ad82f":[1,0,75,8]
 };

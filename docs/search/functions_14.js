@@ -116,7 +116,7 @@ var searchData=
   ['updatepatternlabel_113',['updatepatternlabel',['../d8/dba/classVAbstractPattern.html#a366f4c38fb4b0297ca11dab5281d3730',1,'VAbstractPattern::updatePatternLabel()'],['../da/dfb/classPatternPieceTool.html#aab3082c99b3bd10974eba3d9d41fa205',1,'PatternPieceTool::updatePatternLabel()']]],
   ['updatepatternlabelvalues_114',['updatePatternLabelValues',['../d5/d41/classPatternPieceDialog.html#ad63351c1082cf0b05a6938663d66fc9e',1,'PatternPieceDialog']]],
   ['updatepatternunit_115',['UpdatePatternUnit',['../d8/d61/classTMainWindow.html#abdf2af17c55c6d4b1dd9c49e3e5cdc6c',1,'TMainWindow']]],
-  ['updatepiece_116',['updatepiece',['../da/dfb/classPatternPieceTool.html#a682b61850931286f28d4e0f134ca0122',1,'PatternPieceTool::updatePiece()'],['../d2/d83/classVContainer.html#a348116d426dd469c51f1db7367a6c16f',1,'VContainer::UpdatePiece()']]],
+  ['updatepiece_116',['updatepiece',['../d2/d83/classVContainer.html#a348116d426dd469c51f1db7367a6c16f',1,'VContainer::UpdatePiece()'],['../da/dfb/classPatternPieceTool.html#a682b61850931286f28d4e0f134ca0122',1,'PatternPieceTool::updatePiece(const VPiece &amp;piece)']]],
   ['updatepiecedetails_117',['updatePieceDetails',['../da/dfb/classPatternPieceTool.html#a391fd4e2bc2e89849ca3dec37d45ea72',1,'PatternPieceTool']]],
   ['updatepiecelabel_118',['updatePieceLabel',['../da/dfb/classPatternPieceTool.html#a0abd81d81d05609176db21063a8f4ce4',1,'PatternPieceTool']]],
   ['updatepiecelabelvalues_119',['updatePieceLabelValues',['../d5/d41/classPatternPieceDialog.html#a90af6c135e6a89878598850320287cca',1,'PatternPieceDialog']]],
