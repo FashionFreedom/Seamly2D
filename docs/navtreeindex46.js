@@ -1,5 +1,6 @@
 var NAVTREEINDEX46 =
 {
+"da/df9/classMoveSPoint.html#ab32e0005ecd899a00e23a88d13f877bd":[1,0,135,4],
 "da/df9/classMoveSPoint.html#ad2312061685773da9957238d3316e60a":[1,0,135,11],
 "da/df9/classMoveSPoint.html#adc2a5fbfd7cf8d9653ff917a361d373f":[1,0,135,10],
 "da/df9/classMoveSPoint.html#afdbb4002f62802eb67c40034a013f014":[1,0,135,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX46 =
 "db/d32/classLayoutSettingsDialog.html#a18d79e94e4aa92d679522e50d65140ed":[1,0,114,73],
 "db/d32/classLayoutSettingsDialog.html#a1a7352230259cc27a0032d260fef021c":[1,0,114,15],
 "db/d32/classLayoutSettingsDialog.html#a1ea73d1c0ae04b238b5b902f484c00cb":[1,0,114,16],
-"db/d32/classLayoutSettingsDialog.html#a1ff3421fe8885e97875f2c38f569512f":[1,0,114,20],
-"db/d32/classLayoutSettingsDialog.html#a21f6833a3698ed30720995732ab3a768":[1,0,114,6]
+"db/d32/classLayoutSettingsDialog.html#a1ff3421fe8885e97875f2c38f569512f":[1,0,114,20]
 };

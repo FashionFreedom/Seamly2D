@@ -1,5 +1,6 @@
 var NAVTREEINDEX45 =
 {
+"da/da4/classVAbstractPoint.html#ad96e7ac2f2daa93b374442e86c699803":[1,0,245,0],
 "da/da4/classVAbstractPoint.html#aea25c42d1eab06cafb873a02bbab2d4b":[1,0,245,6],
 "da/da4/classVAbstractPoint.html#aefd4e1d106d6144af0ddc5736219fc27":[1,0,245,7],
 "da/da7/vlabelproperty_8h.html":[2,0,0,1,11,0,24],
@@ -248,6 +249,5 @@ var NAVTREEINDEX45 =
 "da/df9/classMoveSPoint.html#a9220d8f2379da13417c945fd1ae1ed51":[1,0,135,0],
 "da/df9/classMoveSPoint.html#a955aa785e049fc8ef265e6339e682aa5":[1,0,135,1],
 "da/df9/classMoveSPoint.html#aa56d0126fe164286e4261097340828f9":[1,0,135,5],
-"da/df9/classMoveSPoint.html#aa653ceef0bc9d8b75d3357e3da9aba0f":[1,0,135,2],
-"da/df9/classMoveSPoint.html#ab32e0005ecd899a00e23a88d13f877bd":[1,0,135,4]
+"da/df9/classMoveSPoint.html#aa653ceef0bc9d8b75d3357e3da9aba0f":[1,0,135,2]
 };

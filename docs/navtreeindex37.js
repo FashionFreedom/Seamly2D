@@ -1,5 +1,6 @@
 var NAVTREEINDEX37 =
 {
+"d8/dba/classVAbstractPattern.html#a51edbae2fd300644da649aa09d976cac":[1,0,242,101],
 "d8/dba/classVAbstractPattern.html#a5394d23b51a23f2d1bb4db95faf79b83":[1,0,242,182],
 "d8/dba/classVAbstractPattern.html#a5544c7be39c1c44fd60b9b55bcedbea4":[1,0,242,3],
 "d8/dba/classVAbstractPattern.html#a5586a0937ba6ca9281a3f2520ba48c9a":[1,0,242,278],
@@ -248,6 +249,5 @@ var NAVTREEINDEX37 =
 "d8/dbe/classCalculator.html#aa159100b1087d2e01e473d32de808c22":[1,0,22,3],
 "d8/dbe/classCalculator.html#adf568b2e0dacc9adf5b7d740622beb92":[1,0,22,0],
 "d8/dbf/classVScaledEllipse.html":[1,0,383],
-"d8/dbf/classVScaledEllipse.html#a5d3e3e069499fc63bb943b2122ee8393":[1,0,383,1],
-"d8/dbf/classVScaledEllipse.html#a7f9c38fa85d8e89802668793735f9763":[1,0,383,2]
+"d8/dbf/classVScaledEllipse.html#a5d3e3e069499fc63bb943b2122ee8393":[1,0,383,1]
 };

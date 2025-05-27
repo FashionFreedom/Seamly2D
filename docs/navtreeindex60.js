@@ -1,5 +1,6 @@
 var NAVTREEINDEX60 =
 {
+"dd/de9/measurements__def_8cpp.html#adb4ace08289bcfd0eb1879fa2cfe4787":[2,0,0,1,10,4,122],
 "dd/de9/measurements__def_8cpp.html#adc1a7b75a078fd78f3f618ecbb654b96":[2,0,0,1,10,4,140],
 "dd/de9/measurements__def_8cpp.html#adc5dc4940906f127206105adf1933168":[2,0,0,1,10,4,94],
 "dd/de9/measurements__def_8cpp.html#add40b3459afe8cb5ea312a2afccb2372":[2,0,0,1,10,4,121],
@@ -248,6 +249,5 @@ var NAVTREEINDEX60 =
 "de/d0e/classVisLine.html#afcf89cfb13f788641f0385b29e0867c4":[1,0,303,9],
 "de/d0f/classVCommonSettings.html":[1,0,256],
 "de/d0f/classVCommonSettings.html#a0016fe3eee0ac955accf5dd465b6caad":[1,0,256,229],
-"de/d0f/classVCommonSettings.html#a006bfe486bbd58390d8f0a6acdf96543":[1,0,256,193],
-"de/d0f/classVCommonSettings.html#a00ddff27fce6e5ffb147c75a411a5081":[1,0,256,297]
+"de/d0f/classVCommonSettings.html#a006bfe486bbd58390d8f0a6acdf96543":[1,0,256,193]
 };

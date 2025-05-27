@@ -5,7 +5,7 @@ var searchData=
   ['badid_2',['BadId',['../de/da9/classVExceptionBadId.html#ad42ffd5a46f220623bccc642d04639e3',1,'VExceptionBadId']]],
   ['badkey_3',['BadKey',['../de/da9/classVExceptionBadId.html#a194f8b1fc56724a986bbd446d8fbd4d7',1,'VExceptionBadId']]],
   ['basefontsize_4',['BaseFontSize',['../de/dbc/classVGraphicsSimpleTextItem.html#a842cfe03c7f18641f4a000e805114d7d',1,'VGraphicsSimpleTextItem']]],
-  ['baseheight_5',['baseheight',['../d9/d6d/classMeasurementDoc.html#aa57599ed83a0e8dfa22a90299370f014',1,'MeasurementDoc::BaseHeight()'],['../dc/da3/classNewMeasurementsDialog.html#a4f594405ad56a701dd26a30d8dddfdd8',1,'NewMeasurementsDialog::baseHeight()']]],
+  ['baseheight_5',['baseheight',['../dc/da3/classNewMeasurementsDialog.html#a4f594405ad56a701dd26a30d8dddfdd8',1,'NewMeasurementsDialog::baseHeight()'],['../d9/d6d/classMeasurementDoc.html#aa57599ed83a0e8dfa22a90299370f014',1,'MeasurementDoc::BaseHeight()']]],
   ['baselinep1name_6',['BaseLineP1Name',['../de/d04/classVToolTrueDarts.html#abd90c9a2e71c401e6e92438c6227d6ae',1,'VToolTrueDarts']]],
   ['baselinep2name_7',['BaseLineP2Name',['../de/d04/classVToolTrueDarts.html#aa94bc7b018e5992a20c22674ccbb44f8',1,'VToolTrueDarts']]],
   ['basepointchanged_8',['basePointChanged',['../d6/d1a/classMainWindow.html#a4edf4e65290386cfa58a34ac199fbe75',1,'MainWindow']]],
@@ -25,7 +25,7 @@ var searchData=
   ['borders_22',['Borders',['../d0/de8/classVPoster.html#aaf30d722cf10f4b0a8085e03898cc648',1,'VPoster']]],
   ['bottomanchorpoint_23',['bottomAnchorPoint',['../da/d7f/classVGrainlineData.html#a98e93c6702cad2fe3364e1d23037c5f6',1,'VGrainlineData']]],
   ['bottomrightanchorpoint_24',['bottomRightAnchorPoint',['../df/da3/classVPatternLabelData.html#af4eff3cdc1bb778a5c6465707954723f',1,'VPatternLabelData']]],
-  ['boundingrect_25',['boundingrect',['../de/dad/classVContour.html#a6559045a99313dd7768b18f4993847d8',1,'VContour::BoundingRect()'],['../d6/da8/classImageItem.html#af9c8632937947e3771c64ab7441ec7b6',1,'ImageItem::boundingRect()'],['../da/dfb/classPatternPieceTool.html#a14c9e260cb8aca4470d193b1125c8258',1,'PatternPieceTool::boundingRect()'],['../d0/de9/classResizeHandlesItem.html#a4e0630ce2b519b285ccd4bd970c8d582',1,'ResizeHandlesItem::boundingRect()'],['../da/d7d/classVPieceItem.html#a6d319bf0f884216ba2f2928a2ae63aa1',1,'VPieceItem::boundingRect()']]],
+  ['boundingrect_25',['boundingrect',['../d6/da8/classImageItem.html#af9c8632937947e3771c64ab7441ec7b6',1,'ImageItem::boundingRect()'],['../da/dfb/classPatternPieceTool.html#a14c9e260cb8aca4470d193b1125c8258',1,'PatternPieceTool::boundingRect()'],['../d0/de9/classResizeHandlesItem.html#a4e0630ce2b519b285ccd4bd970c8d582',1,'ResizeHandlesItem::boundingRect()'],['../da/d7d/classVPieceItem.html#a6d319bf0f884216ba2f2928a2ae63aa1',1,'VPieceItem::boundingRect()'],['../de/dad/classVContour.html#a6559045a99313dd7768b18f4993847d8',1,'VContour::BoundingRect()']]],
   ['brokendetailequidistant_26',['BrokenDetailEquidistant',['../d6/d89/classTST__VAbstractPiece.html#a9b1d9d7505c75349474bdeb78f5d7dd8',1,'TST_VAbstractPiece']]],
   ['brokendetailequidistant_5fdata_27',['BrokenDetailEquidistant_data',['../d6/d89/classTST__VAbstractPiece.html#a910b3e7bd8182811fc0fbf160e9a9a31',1,'TST_VAbstractPiece']]],
   ['build_28',['build',['../d1/d51/classVPE_1_1VPropertyFormWidget.html#a45cffa681e72e4aeafbbf07a27d4aba4',1,'VPE::VPropertyFormWidget::build()'],['../d1/db8/classVPE_1_1VPropertyFormView.html#a82f2b48c99157b42ac60ac1f3023b4e9',1,'VPE::VPropertyFormView::build()'],['../d2/d7b/classDialogTool.html#ab3d6e3c597c29a71a517e2432a5a979e',1,'DialogTool::Build()'],['../dd/d63/classDialogAlongLine.html#a6495ab201fdb41a2d2c639de06b6d4ac',1,'DialogAlongLine::Build()']]],
@@ -35,5 +35,5 @@ var searchData=
   ['buildeditor_32',['buildEditor',['../d1/d51/classVPE_1_1VPropertyFormWidget.html#a8c85969729790ffd139e8ab06227c99d',1,'VPE::VPropertyFormWidget']]],
   ['buildline_33',['BuildLine',['../d1/de7/classVGObject.html#aab2d01aac093c13430d5119abbd52764',1,'VGObject']]],
   ['buildray_34',['BuildRay',['../d1/de7/classVGObject.html#a7e896d2c79a25c2e50df967c6a8b597b',1,'VGObject']]],
-  ['button_35',['button',['../d1/d19/classButton.html#ae118fa30e3ddc3cdaf436d9c5a976847',1,'Button::Button()'],['../dd/dc4/classUtils_1_1CheckableMessageBox.html#a167b133bb3f397e74774ad71030e56fd',1,'Utils::CheckableMessageBox::button()']]]
+  ['button_35',['button',['../dd/dc4/classUtils_1_1CheckableMessageBox.html#a167b133bb3f397e74774ad71030e56fd',1,'Utils::CheckableMessageBox::button()'],['../d1/d19/classButton.html#ae118fa30e3ddc3cdaf436d9c5a976847',1,'Button::Button()']]]
 ];
