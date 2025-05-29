@@ -61,6 +61,7 @@
 #include "dialogs/dialogs.h"
 #include "dialogs/calculator_dialog.h"
 #include "dialogs/decimalchart_dialog.h"
+#include "../fervor/fvupdater.h"
 #include "../ifc/exception/vexceptionobjecterror.h"
 #include "../ifc/exception/vexceptionconversionerror.h"
 #include "../ifc/exception/vexceptionemptyparameter.h"
@@ -4689,6 +4690,7 @@ void MainWindow::setWidgetsEnabled(bool enable)
 
     //enable help menu
     ui->shortcuts_Action->setEnabled(enable);
+    ui->checkForUpdates_Action->setEnabled(enable);
 
     //enable dock widget actions
     ui->groups_DockWidget->setEnabled(enable && designStage);
@@ -6277,6 +6279,12 @@ void MainWindow::createActions()
         ShortcutsDialog *shortcutsDialog = new ShortcutsDialog(this);
         shortcutsDialog->setAttribute(Qt::WA_DeleteOnClose, true);
         shortcutsDialog->show();
+    });
+    connect(ui->checkForUpdates_Action, &QAction::triggered, this, [this]()
+    {
+        FvUpdater::sharedUpdater()->setFeedURL(defaultFeedURL);
+        FvUpdater::sharedUpdater()->setParent(this);
+        FvUpdater::sharedUpdater()->checkForUpdatesSilent();
     });
     connect(ui->wiki_Action, &QAction::triggered, this, []()
     {

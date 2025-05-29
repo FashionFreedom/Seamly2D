@@ -3,12 +3,12 @@
 
 SOURCES  += \
     $$PWD/application_me.cpp \
+    $$PWD/dialogs/me_about_dialog.cpp \
     $$PWD/dialogs/me_shortcuts_dialog.cpp \
     $$PWD/dialogs/me_welcome_dialog.cpp \
     $$PWD/dialogs/new_measurements_dialog.cpp \
     $$PWD/main.cpp \
     $$PWD/tmainwindow.cpp \
-    $$PWD/dialogs/dialogaboutseamlyme.cpp \
     $$PWD/dialogs/dialogmdatabase.cpp \
     $$PWD/vlitepattern.cpp \
     $$PWD/dialogs/dialogseamlymepreferences.cpp \
@@ -19,12 +19,12 @@ SOURCES  += \
 
 HEADERS  += \
     $$PWD/application_me.h \
+    $$PWD/dialogs/me_about_dialog.h \
     $$PWD/dialogs/me_shortcuts_dialog.h \
     $$PWD/dialogs/me_welcome_dialog.h \
     $$PWD/dialogs/new_measurements_dialog.h \
     $$PWD/tmainwindow.h \
     $$PWD/stable.h \
-    $$PWD/dialogs/dialogaboutseamlyme.h \
     $$PWD/dialogs/dialogmdatabase.h \
     $$PWD/version.h \
     $$PWD/vlitepattern.h \
@@ -33,11 +33,11 @@ HEADERS  += \
     $$PWD/dialogs/configpages/seamlymepreferencespathpage.h
 
 FORMS    += \
+    $$PWD/dialogs/me_about_dialog.ui \
     $$PWD/dialogs/me_shortcuts_dialog.ui \
     $$PWD/dialogs/me_welcome_dialog.ui \
     $$PWD/dialogs/new_measurements_dialog.ui \
     $$PWD/tmainwindow.ui \
-    $$PWD/dialogs/dialogaboutseamlyme.ui \
     $$PWD/dialogs/dialogmdatabase.ui \
     $$PWD/dialogs/dialogseamlymepreferences.ui \
     $$PWD/dialogs/configpages/seamlymepreferencesconfigurationpage.ui \

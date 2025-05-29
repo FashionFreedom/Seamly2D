@@ -70,14 +70,23 @@
          <height>0</height>
         </size>
        </property>
+       <property name="maximumSize">
+        <size>
+         <width>114</width>
+         <height>560</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string notr="true"/>
+       </property>
        <property name="text">
-        <string/>
+        <string notr="true"/>
        </property>
        <property name="pixmap">
-        <pixmap resource="../../../libs/vmisc/share/resources/icon.qrc">:/icon/logos/seamly2d_vertical.png</pixmap>
+        <pixmap resource="../../../libs/vmisc/share/resources/icon.qrc">:/icon/logos/seamly2d_banner_vertical.svg</pixmap>
        </property>
        <property name="scaledContents">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -559,7 +568,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>463</width>
+                <width>446</width>
                 <height>599</height>
                </rect>
               </property>
@@ -1568,7 +1577,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>480</width>
+                <width>436</width>
                 <height>516</height>
                </rect>
               </property>
@@ -1692,32 +1701,6 @@ Contributors (alphabetical order):
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QPushButton" name="pushButtonCheckUpdate">
-       <property name="text">
-        <string>Check For Updates</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QProgressBar" name="downloadProgress">
-       <property name="value">
-        <number>25</number>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-       <property name="textVisible">
-        <bool>true</bool>
-       </property>
-       <property name="invertedAppearance">
-        <bool>false</bool>
-       </property>
-       <property name="format">
-        <string>Downloading installer %p% complete</string>
-       </property>
-      </widget>
-     </item>
      <item>
       <widget class="QDialogButtonBox" name="buttonBox">
        <property name="autoFillBackground">

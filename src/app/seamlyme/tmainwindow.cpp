@@ -55,7 +55,7 @@
 
 #include "tmainwindow.h"
 #include "ui_tmainwindow.h"
-#include "dialogs/dialogaboutseamlyme.h"
+#include "dialogs/me_about_dialog.h"
 #include "dialogs/new_measurements_dialog.h"
 #include "dialogs/dialogmdatabase.h"
 #include "dialogs/dialogseamlymepreferences.h"
@@ -2247,7 +2247,7 @@ void TMainWindow::SetupMenu()
 	});
 	connect(ui->actionAboutSeamlyMe, &QAction::triggered, this, [this]()
 	{
-		DialogAboutSeamlyMe *aboutDialog = new DialogAboutSeamlyMe(this);
+		MeAboutDialog *aboutDialog = new MeAboutDialog(this);
 		aboutDialog->setAttribute(Qt::WA_DeleteOnClose, true);
 		aboutDialog->show();
 	});

@@ -224,7 +224,7 @@ const QString settingGeneralWindowState                  = QStringLiteral("windo
 const QString settingGeneralToolbarsState                = QStringLiteral("toolbarsState");
 const QString settingPreferenceDialogSize                = QStringLiteral("preferenceDialogSize");
 const QString settingToolSeamAllowanceDialogSize         = QStringLiteral("toolSeamAllowanceDialogSize");
-const QString settingVariablesDialogSize                = QStringLiteral("toolVariablesDialogSize");
+const QString settingVariablesDialogSize                 = QStringLiteral("toolVariablesDialogSize");
 const QString settingFormulaWizardDialogSize             = QStringLiteral("formulaWizardDialogSize");
 const QString settingLatestSkippedVersion                = QStringLiteral("lastestSkippedVersion");
 const QString settingDateOfLastRemind                    = QStringLiteral("dateOfLastRemind");
@@ -1543,14 +1543,14 @@ void VCommonSettings::setVariablesDialogSize(const QSize &sz)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VCommonSettings::GetLatestSkippedVersion() const
+QString VCommonSettings::getLatestSkippedVersion() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    return settings.value(settingLatestSkippedVersion, 0x0).toInt();
+    return settings.value(settingLatestSkippedVersion, "").toInt();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetLatestSkippedVersion(int value)
+void VCommonSettings::setLatestSkippedVersion(QString value)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
     settings.setValue(settingLatestSkippedVersion, value);
@@ -1558,14 +1558,14 @@ void VCommonSettings::SetLatestSkippedVersion(int value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDate VCommonSettings::GetDateOfLastRemind() const
+QDate VCommonSettings::getDateOfLastRemind() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
     return settings.value(settingDateOfLastRemind, QDate(1900, 1, 1)).toDate();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetDateOfLastRemind(const QDate &date)
+void VCommonSettings::setDateOfLastRemind(const QDate &date)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
     settings.setValue(settingDateOfLastRemind, date);

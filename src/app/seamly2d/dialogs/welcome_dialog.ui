@@ -46,11 +46,17 @@
          <height>400</height>
         </size>
        </property>
+       <property name="maximumSize">
+        <size>
+         <width>70</width>
+         <height>400</height>
+        </size>
+       </property>
        <property name="text">
-        <string/>
+        <string notr="true"/>
        </property>
        <property name="pixmap">
-        <pixmap resource="../../../libs/vmisc/share/resources/icon.qrc">:/icon/logos/seamly2d_vertical.png</pixmap>
+        <pixmap resource="../../../libs/vmisc/share/resources/icon.qrc">:/icon/logos/seamly2d_banner_vertical.svg</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>

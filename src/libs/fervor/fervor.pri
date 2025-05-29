@@ -2,12 +2,21 @@
 # This need for corect working file translations.pro
 
 SOURCES += \
-    $$PWD/fvupdater.cpp
+    $$PWD/fvavailableupdate.cpp \
+    $$PWD/fvignoredversions.cpp \
+    $$PWD/fvupdater.cpp \
+    $$PWD/fvversioncomparator.cpp \
+    $$PWD/updater_dilaog.cpp
 
 *msvc*:SOURCES += $$PWD/stable.cpp
 
 HEADERS += \
+    $$PWD/fvavailableupdate.h \
+    $$PWD/fvignoredversions.h \
     $$PWD/fvupdater.h \
-    $$PWD/stable.h
+    $$PWD/fvversioncomparator.h \
+    $$PWD/stable.h \
+    $$PWD/updater_dialog.h
 
-FORMS +=
+FORMS += \
+    $$PWD/updater_dialog.ui

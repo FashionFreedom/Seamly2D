@@ -350,11 +350,11 @@ public:
     QSize                getVariablesDialogSize() const;
     void                 setVariablesDialogSize(const QSize& sz);
 
-    int                  GetLatestSkippedVersion() const;
-    void                 SetLatestSkippedVersion(int value);
+    QString              getLatestSkippedVersion() const;
+    void                 setLatestSkippedVersion(QString value);
 
-    QDate                GetDateOfLastRemind() const;
-    void                 SetDateOfLastRemind(const QDate &date);
+    QDate                getDateOfLastRemind() const;
+    void                 setDateOfLastRemind(const QDate &date);
 
     bool                 getForbidPieceFlipping() const;
     void                 setForbidPieceFlipping(bool value);

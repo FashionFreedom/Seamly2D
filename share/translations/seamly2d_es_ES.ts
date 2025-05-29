@@ -543,7 +543,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogAboutSeamlyMe</name>
+    <name>MeAboutDialog</name>
     <message>
         <source>About SeamlyMe</source>
         <translation>Sobre SeamlyMe</translation>

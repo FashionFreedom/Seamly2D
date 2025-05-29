@@ -58,6 +58,7 @@
 #include "mainwindow.h"
 #include "core/application_2d.h"
 #include "dialogs/welcome_dialog.h"
+#include "../fervor/fvupdater.h"
 #include "../vpatterndb/vpiecenode.h"
 
 #include <QApplication>
@@ -119,6 +120,8 @@ int main(int argc, char *argv[])
         app.loadTranslations(settings->getLocale());
     }
 
+
+
     // Create the main window
     MainWindow window;
 #if !defined(Q_OS_MAC)
@@ -127,6 +130,17 @@ int main(int argc, char *argv[])
 #endif // !defined(Q_OS_MAC)
     // Set the main window for the application
     app.setMainWindow(&window);
+
+    if (Application2D::isGUIMode())
+    {
+        // Set feed URL before doing anything else
+        FvUpdater::sharedUpdater()->setFeedURL(defaultFeedURL);
+
+        FvUpdater::sharedUpdater()->setParent(&window);
+
+        // Check for updates automatically
+        FvUpdater::sharedUpdater()->checkForUpdatesSilent();
+    }
 
     int msec = 0;
     // Show the main window before loading the pattern if in GUI mode

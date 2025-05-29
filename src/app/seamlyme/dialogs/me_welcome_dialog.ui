@@ -35,7 +35,7 @@
      <item>
       <widget class="QLabel" name="seamlyme_banner_Label">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -46,11 +46,17 @@
          <height>400</height>
         </size>
        </property>
+       <property name="maximumSize">
+        <size>
+         <width>70</width>
+         <height>400</height>
+        </size>
+       </property>
        <property name="text">
-        <string/>
+        <string notr="true"/>
        </property>
        <property name="pixmap">
-        <pixmap resource="../share/resources/seamlymeicon.qrc">:/seamlymeicon/seamlyme_vertical.png</pixmap>
+        <pixmap resource="../../../libs/vmisc/share/resources/icon.qrc">:/icon/logos/seamlyme_banner_with_tape_vertical.svg</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -391,7 +397,6 @@ You can change this setting in the SeamlyMe preferences.</string>
   </layout>
  </widget>
  <resources>
-  <include location="../share/resources/seamlymeicon.qrc"/>
   <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>

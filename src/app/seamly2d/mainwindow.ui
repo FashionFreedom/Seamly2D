@@ -118,6 +118,7 @@
      <string>&amp;Help</string>
     </property>
     <addaction name="shortcuts_Action"/>
+    <addaction name="checkForUpdates_Action"/>
     <addaction name="wiki_Action"/>
     <addaction name="forum_Action"/>
     <addaction name="reportBug_Action"/>
@@ -4782,6 +4783,11 @@
     <string notr="true">Ctrl+PgDown</string>
    </property>
   </action>
+  <action name="checkForUpdates_Action">
+   <property name="text">
+    <string>Check for updates...</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -4793,8 +4799,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
   <include location="../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections/>
 </ui>
