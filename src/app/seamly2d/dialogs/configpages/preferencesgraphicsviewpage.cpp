@@ -36,6 +36,7 @@
 #include <QAbstractButton>
 #include <QButtonGroup>
 #include <QCheckBox>
+#include <QComboBox>
 #include <QDir>
 #include <QDirIterator>
 #include <QDoubleSpinBox>
@@ -50,15 +51,6 @@ Q_LOGGING_CATEGORY(vGraphicsViewConfig, "vgraphicsviewconfig")
 PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::PreferencesGraphicsViewPage)
-    , m_bgColorChanged(false)
-    , m_zrbPositiveColorChanged(false)
-    , m_zrbNegativeColorChanged(false)
-    , m_pointNameColorChanged(false)
-    , m_pointNameHoverColorChanged(false)
-    , m_orginAxisColorChanged(false)
-    , m_primarySupportColorChanged(false)
-    , m_secondarySupportColorChanged(false)
-    , m_tertiarySupportColorChanged(false)
 {
     ui->setupUi(this);
     // Appearance preferences
@@ -98,103 +90,28 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     ui->graphicsOutput_CheckBox->setChecked(qApp->Seamly2DSettings()->GetGraphicalOutput());
 
     // Color preferences
-    //-----------------------  Background Color
+    // Background Color
     ui->bgColor_ComboBox->setItems(VAbstractTool::backgroundColorsList());
-    int index = ui->bgColor_ComboBox->findText(qApp->Seamly2DSettings()->getBackgroundColor());
-    if (index != -1)
-    {
-        ui->bgColor_ComboBox->setCurrentIndex(index);
-    }
-    connect(ui->bgColor_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
-    {
-        m_bgColorChanged = true;
-    });
+    setIndex(ui->bgColor_ComboBox, qApp->Seamly2DSettings()->getBackgroundColor());
 
     // Zoom Rubberband colors
-    index = ui->zrbPositiveColor_ComboBox->findText(qApp->Seamly2DSettings()->getZoomRBPositiveColor());
-    if (index != -1)
-    {
-        ui->zrbPositiveColor_ComboBox->setCurrentIndex(index);
-    }
-    connect(ui->zrbPositiveColor_ComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
-    {
-        m_zrbPositiveColorChanged = true;
-    });
+    setIndex(ui->zrbPositiveColor_ComboBox, qApp->Seamly2DSettings()->getZoomRBPositiveColor());
+    setIndex(ui->zrbNegativeColor_ComboBox, qApp->Seamly2DSettings()->getZoomRBNegativeColor());
 
-    index = ui->zrbNegativeColor_ComboBox->findText(qApp->Seamly2DSettings()->getZoomRBNegativeColor());
-    if (index != -1)
-    {
-        ui->zrbNegativeColor_ComboBox->setCurrentIndex(index);
-    }
-    connect(ui->zrbNegativeColor_ComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
-    {
-        m_zrbNegativeColorChanged = true;
-    });
+    // Point name colors
+    setIndex(ui->pointNameColor_ComboBox, qApp->Seamly2DSettings()->getPointNameColor());
+    setIndex(ui->pointNameHoverColor_ComboBox, qApp->Seamly2DSettings()->getPointNameHoverColor());
 
-    index = ui->pointNameColor_ComboBox->findText(qApp->Seamly2DSettings()->getPointNameColor());
-    if (index != -1)
-    {
-        ui->pointNameColor_ComboBox->setCurrentIndex(index);
-    }
-    connect(ui->pointNameColor_ComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
-    {
-        m_pointNameColorChanged = true;
-    });
+    // Axis Orgin Color
+    setIndex(ui->axisOrginColor_ComboBox, qApp->Seamly2DSettings()->getAxisOrginColor());
 
-    index = ui->pointNameHoverColor_ComboBox->findText(qApp->Seamly2DSettings()->getPointNameHoverColor());
-    if (index != -1)
-    {
-        ui->pointNameHoverColor_ComboBox->setCurrentIndex(index);
-    }
-    connect(ui->pointNameHoverColor_ComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
-    {
-        m_pointNameHoverColorChanged = true;
-    });
-
-    //----------------------- Axis Orgin Color
-    index = ui->axisOrginColor_ComboBox->findText(qApp->Seamly2DSettings()->getAxisOrginColor());
-    if (index != -1)
-    {
-        ui->axisOrginColor_ComboBox->setCurrentIndex(index);
-    }
-    connect(ui->axisOrginColor_ComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
-    {
-        m_orginAxisColorChanged = true;
-    });
-
-    //----------------------- Selection Support Colors
+    // Selection Support Colors
     ui->primarySupportColor_ComboBox->setItems(VAbstractTool::supportColorsList());
     ui->secondarySupportColor_ComboBox->setItems(VAbstractTool::supportColorsList());
     ui->tertiarySupportColor_ComboBox->setItems(VAbstractTool::supportColorsList());
-    index = ui->primarySupportColor_ComboBox->findText(qApp->Seamly2DSettings()->getPrimarySupportColor());
-    if (index != -1)
-    {
-        ui->primarySupportColor_ComboBox->setCurrentIndex(index);
-    }
-    connect(ui->primarySupportColor_ComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
-    {
-        m_primarySupportColorChanged = true;
-    });
-
-    index = ui->secondarySupportColor_ComboBox->findText(qApp->Seamly2DSettings()->getSecondarySupportColor());
-    if (index != -1)
-    {
-        ui->secondarySupportColor_ComboBox->setCurrentIndex(index);
-    }
-    connect(ui->secondarySupportColor_ComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
-    {
-        m_secondarySupportColorChanged = true;
-    });
-
-    index = ui->tertiarySupportColor_ComboBox->findText(qApp->Seamly2DSettings()->getTertiarySupportColor());
-    if (index != -1)
-    {
-        ui->tertiarySupportColor_ComboBox->setCurrentIndex(index);
-    }
-    connect(ui->tertiarySupportColor_ComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
-    {
-        m_tertiarySupportColorChanged = true;
-    });
+    setIndex(ui->primarySupportColor_ComboBox, qApp->Seamly2DSettings()->getPrimarySupportColor());
+    setIndex(ui->secondarySupportColor_ComboBox, qApp->Seamly2DSettings()->getSecondarySupportColor());
+    setIndex(ui->tertiarySupportColor_ComboBox, qApp->Seamly2DSettings()->getTertiarySupportColor());
 
     // Navigation preferences
     // Show Scroll Bars
@@ -250,7 +167,7 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     QFont nameFont = qApp->Seamly2DSettings()->getPointNameFont();
     ui->pointNameFont_ComboBox->setCurrentFont(nameFont);
 
-    index = ui->pointNameFontSize_ComboBox->findText(QString().setNum(qApp->Seamly2DSettings()->getPointNameSize()));
+    int index = ui->pointNameFontSize_ComboBox->findText(QString().setNum(qApp->Seamly2DSettings()->getPointNameSize()));
     if (index != -1)
     {
         ui->pointNameFontSize_ComboBox->setCurrentIndex(index);
@@ -369,61 +286,25 @@ void PreferencesGraphicsViewPage::Apply()
     qApp->getSceneView()->setRenderHint(QPainter::SmoothPixmapTransform, ui->graphicsOutput_CheckBox->isChecked());
 
     // Color preferences
-    if (m_bgColorChanged)
-    {
-      settings->setBackgroundColor(ui->bgColor_ComboBox->currentText());
-      m_bgColorChanged = false;
-    }
+    // Background color
+    settings->setBackgroundColor(ui->bgColor_ComboBox->currentData().toString());
+
 
     // Zoom Rubberband colors
-    if (m_zrbPositiveColorChanged)
-    {
-      settings->setZoomRBPositiveColor(ui->zrbPositiveColor_ComboBox->currentText());
-      m_zrbPositiveColorChanged = false;
-    }
-
-    if (m_zrbNegativeColorChanged)
-    {
-      settings->setZoomRBNegativeColor(ui->zrbNegativeColor_ComboBox->currentText());
-      m_zrbNegativeColorChanged = false;
-    }
+    settings->setZoomRBPositiveColor(ui->zrbPositiveColor_ComboBox->currentData().toString());
+    settings->setZoomRBNegativeColor(ui->zrbNegativeColor_ComboBox->currentData().toString());
 
     // Point Name colors
-    if (m_pointNameColorChanged)
-    {
-      settings->setPointNameColor(ui->pointNameColor_ComboBox->currentText());
-      m_pointNameColorChanged = false;
-    }
+    settings->setPointNameColor(ui->pointNameColor_ComboBox->currentData().toString());
+    settings->setPointNameHoverColor(ui->pointNameHoverColor_ComboBox->currentData().toString());
 
-    if (m_pointNameHoverColorChanged)
-    {
-      settings->setPointNameHoverColor(ui->pointNameHoverColor_ComboBox->currentText());
-      m_pointNameHoverColorChanged = false;
-    }
+    // Avxi Origin color
+    settings->setAxisOrginColor(ui->axisOrginColor_ComboBox->currentData().toString());
 
-    if (m_orginAxisColorChanged)
-    {
-      settings->setAxisOrginColor(ui->axisOrginColor_ComboBox->currentText());
-      m_orginAxisColorChanged = false;
-    }
-
-    if (m_primarySupportColorChanged)
-    {
-      settings->setPrimarySupportColor(ui->primarySupportColor_ComboBox->currentText());
-      m_primarySupportColorChanged = false;
-    }
-
-    if (m_secondarySupportColorChanged)
-    {
-      settings->setSecondarySupportColor(ui->secondarySupportColor_ComboBox->currentText());
-      m_secondarySupportColorChanged = false;
-    }
-
-    if (m_tertiarySupportColorChanged)
-    {
-      settings->setTertiarySupportColor(ui->tertiarySupportColor_ComboBox->currentText());
-      m_tertiarySupportColorChanged = false;
-    }
+    // Support colors
+    settings->setPrimarySupportColor(ui->primarySupportColor_ComboBox->currentData().toString());
+    settings->setSecondarySupportColor(ui->secondarySupportColor_ComboBox->currentData().toString());
+    settings->setTertiarySupportColor(ui->tertiarySupportColor_ComboBox->currentData().toString());
 
     // Navigation preferences
     // Scroll Bars
@@ -463,4 +344,18 @@ void PreferencesGraphicsViewPage::Apply()
 
     settings->setPointNameFont(ui->pointNameFont_ComboBox->currentFont());
     settings->setPointNameSize(ui->pointNameFontSize_ComboBox->currentText().toInt());
+}
+
+void PreferencesGraphicsViewPage::setIndex(QComboBox *box, const QString &text)
+{
+    int index;
+    index = box->findData(text);
+    if (index != -1)
+    {
+        box->setCurrentIndex(index);
+    }
+    else
+    {
+        box->setCurrentIndex(box->findText(text));
+    }
 }
