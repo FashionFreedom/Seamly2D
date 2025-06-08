@@ -61,6 +61,7 @@
 #include <QDate>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QDoubleSpinBox>
 #include <QTime>
 
 namespace
@@ -284,6 +285,8 @@ void PreferencesPatternPage::initializeLabelsTab()
     ui->showPatternLabels_CheckBox->setChecked(qApp->Seamly2DSettings()->showPatternLabels());
     ui->showPieceLabels_CheckBox->setChecked(qApp->Seamly2DSettings()->showPieceLabels());
 
+    setMaxByUnits(ui->defaultLabelWidth_DoubleSpinBox, 20.000);
+    setMaxByUnits(ui->defaultLabelHeight_DoubleSpinBox, 20.000);
     ui->defaultLabelWidth_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultLabelWidth());
     ui->defaultLabelWidth_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->getUnit()), true));
     ui->defaultLabelHeight_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultLabelHeight());
@@ -315,28 +318,8 @@ void PreferencesPatternPage::initializeLabelsTab()
 void PreferencesPatternPage::initNotches()
 {
     const Unit units = StrToUnits(qApp->Seamly2DSettings()->getUnit());
-    switch (units)
-    {
-        case Unit::Cm:
-            {
-                ui->defaultNotchLength_DoubleSpinBox->setMaximum(4);
-                ui->defaultNotchWidth_DoubleSpinBox->setMaximum(1.25);
-                break;
-            }
-        case Unit::Mm:
-            {
-                ui->defaultNotchLength_DoubleSpinBox->setMaximum(40);
-                ui->defaultNotchWidth_DoubleSpinBox->setMaximum(12.50);
-                break;
-            }
-        case Unit::Inch:
-        default:
-            {
-                ui->defaultNotchLength_DoubleSpinBox->setMaximum(1.50);
-                ui->defaultNotchWidth_DoubleSpinBox->setMaximum(.50);
-                break;
-            }
-    }
+    setMaxByUnits(ui->defaultNotchLength_DoubleSpinBox, 1.50);
+    setMaxByUnits(ui->defaultNotchWidth_DoubleSpinBox, 0.50);
 
     ui->defaultNotchType_ComboBox->addItem(QIcon(), tr("Slit"),       "slit");
     ui->defaultNotchType_ComboBox->addItem(QIcon(), tr("T Notch"),    "tNotch");
@@ -369,6 +352,8 @@ void PreferencesPatternPage::initNotches()
 //---------------------------------------------------------------------------------------------------------------------
 void PreferencesPatternPage::initGrainlines()
 {
+    setMaxByUnits(ui->defaultGrainlineLength_DoubleSpinBox, 20.000);
+
     ui->showGrainlines_CheckBox->setChecked(qApp->Seamly2DSettings()->getDefaultGrainlineVisibilty());
 
     ui->defaultGrainlineLength_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultGrainlineLength());
@@ -430,4 +415,29 @@ void PreferencesPatternPage::callDateTimeFormatEditor(const T &type, const QStri
             box->setCurrentIndex(0);
         }
     }
+}
+
+void PreferencesPatternPage::setMaxByUnits(QDoubleSpinBox *box, const qreal &value)
+{
+    const Unit units = StrToUnits(qApp->Seamly2DSettings()->getUnit());
+    switch (units)
+    {
+        case Unit::Cm:
+            {
+                box->setMaximum(value * 2.54);
+                break;
+            }
+        case Unit::Mm:
+            {
+                box->setMaximum(value * 25.40);
+                break;
+            }
+        case Unit::Inch:
+        default:
+            {
+                box->setMaximum(value);
+                break;
+            }
+    }
+
 }

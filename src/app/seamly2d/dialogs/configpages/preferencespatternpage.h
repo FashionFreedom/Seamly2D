@@ -64,6 +64,7 @@ namespace Ui
 }
 
 class QComboBox;
+class QDoubleSpinBox;
 
 class PreferencesPatternPage : public QWidget
 {
@@ -95,6 +96,8 @@ private:
     template <typename T>
     void          callDateTimeFormatEditor(const T &type, const QStringList &predefinedFormats,
                                            const QStringList &userDefinedFormats, QComboBox *box);
+
+    void          setMaxByUnits(QDoubleSpinBox *box, const qreal &value);
 };
 
 #endif // PREFERENCESPATTERNPAGE_H
