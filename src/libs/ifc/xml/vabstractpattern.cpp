@@ -71,6 +71,7 @@
 #include "../vmisc/vabstractapplication.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vpiecenode.h"
+#include "../vtools/tools/vabstracttool.h"
 #include "../vtools/tools/vdatatool.h"
 
 #include <QDomNode>
@@ -2835,6 +2836,9 @@ QDomElement VAbstractPattern::removeGroupItem(quint32 toolId, quint32 objectId, 
                         if (!groups.isNull())
                         {
                             parseGroups(groups);
+
+                            VAbstractTool *tool = qobject_cast<VAbstractTool *>(VAbstractPattern::getTool(toolId));
+                            tool->GroupVisibility(objectId, true);
                         }
 
                         return item;
