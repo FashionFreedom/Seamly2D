@@ -1280,9 +1280,9 @@ VPiecePath InternalPathDialog::createPath() const
     const bool isInternalPath = (getType() == PiecePathType::InternalPath);
     path.setType(getType());
     path.setName(ui->pathName_LineEdit->text());
-    path.setLineColor(isInternalPath ? getLineColor() : "Black");
+    path.setLineColor(isInternalPath ? getLineColor() : "black");
     path.setLineType(isInternalPath ? getLineType() : Qt::SolidLine);
-    path.setLineWeight(isInternalPath ? getLineWeight() :"1.00");
+    path.setLineWeight(isInternalPath ? getLineWeight() :"1");
     path.setCutPath(isInternalPath ? isCutPath() : false);
     path.setExtendStartPoint(isInternalPath ? ui->extendStartPoint_CheckBox->isChecked() : false);
     path.setExtendEndPoint(isInternalPath ? ui->extendEndPoint_CheckBox->isChecked() : false);
