@@ -31,8 +31,11 @@
   <property name="windowTitle">
    <string notr="true">Pattern</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(240, 240, 240);</string>
+   <string notr="true"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_25">
    <item>
@@ -342,6 +345,9 @@
                   <pointsize>9</pointsize>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
                 <property name="currentIndex">
                  <number>-1</number>
                 </property>
@@ -395,6 +401,9 @@
                 </property>
                 <property name="font">
                  <font/>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
                 </property>
                </widget>
               </item>
@@ -474,7 +483,7 @@
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                 <string notr="true"/>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -572,7 +581,7 @@
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                 <string notr="true"/>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -639,7 +648,7 @@
          <x>10</x>
          <y>10</y>
          <width>420</width>
-         <height>174</height>
+         <height>180</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -651,7 +660,7 @@
        <property name="minimumSize">
         <size>
          <width>420</width>
-         <height>160</height>
+         <height>180</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -756,7 +765,7 @@
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <string notr="true"/>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -841,6 +850,9 @@
               <pointsize>9</pointsize>
              </font>
             </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
            </widget>
           </item>
           <item>
@@ -912,6 +924,9 @@
               <pointsize>9</pointsize>
              </font>
             </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
            </widget>
           </item>
           <item>
@@ -946,6 +961,17 @@
               <height>0</height>
              </size>
             </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Arrow length:</string>
             </property>
@@ -959,8 +985,11 @@
             <property name="minimumSize">
              <size>
               <width>200</width>
-              <height>0</height>
+              <height>20</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1096,7 +1125,7 @@
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <string notr="true"/>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1245,6 +1274,9 @@
                   <pointsize>9</pointsize>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
                </widget>
               </item>
               <item>
@@ -1309,6 +1341,9 @@
                  <font>
                   <pointsize>9</pointsize>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
                 </property>
                </widget>
               </item>
@@ -1380,6 +1415,9 @@
                  <font>
                   <pointsize>9</pointsize>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
                 </property>
                </widget>
               </item>
@@ -2179,7 +2217,7 @@
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2277,7 +2315,7 @@
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2349,6 +2387,9 @@
                <font>
                 <pointsize>9</pointsize>
                </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
               </property>
              </widget>
             </item>
@@ -2449,6 +2490,9 @@
                   <pointsize>9</pointsize>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
                </widget>
               </item>
               <item>
@@ -2531,6 +2575,9 @@
                  <font>
                   <pointsize>9</pointsize>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
                 </property>
                </widget>
               </item>
@@ -2619,7 +2666,11 @@
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QLineEdit" name="patternTemplate_LineEdit"/>
+             <widget class="QLineEdit" name="patternTemplate_LineEdit">
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+             </widget>
             </item>
             <item row="0" column="2">
              <widget class="QToolButton" name="patternTemplate_ToolButton">
@@ -2654,7 +2705,11 @@
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QLineEdit" name="pieceTemplate_LineEdit"/>
+             <widget class="QLineEdit" name="pieceTemplate_LineEdit">
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+             </widget>
             </item>
             <item row="1" column="2">
              <widget class="QToolButton" name="pieceTemplate_ToolButton">

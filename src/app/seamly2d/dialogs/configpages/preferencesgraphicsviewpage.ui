@@ -37,7 +37,7 @@
    <string notr="true">Configuration</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(240, 240, 240);</string>
+   <string notr="true"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -93,7 +93,7 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>0</height>
+           <height>170</height>
           </size>
          </property>
          <property name="maximumSize">
@@ -115,7 +115,7 @@
           <item>
            <widget class="QCheckBox" name="toolBarStyle_CheckBox">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -160,7 +160,7 @@
              <item row="0" column="0">
               <widget class="QCheckBox" name="toolsToolbar_CheckBox">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -184,7 +184,7 @@
              <item row="0" column="1">
               <widget class="QCheckBox" name="curveToolbar_CheckBox">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -208,7 +208,7 @@
              <item row="0" column="2">
               <widget class="QCheckBox" name="pieceToolbar_CheckBox">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -232,7 +232,7 @@
              <item row="1" column="0">
               <widget class="QCheckBox" name="pointToolbar_CheckBox">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -256,7 +256,7 @@
              <item row="1" column="1">
               <widget class="QCheckBox" name="arcToolbar_CheckBox">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -280,7 +280,7 @@
              <item row="1" column="2">
               <widget class="QCheckBox" name="detailsToolbar_CheckBox">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -304,7 +304,7 @@
              <item row="2" column="0">
               <widget class="QCheckBox" name="lineToolbar_CheckBox">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -328,7 +328,7 @@
              <item row="2" column="1">
               <widget class="QCheckBox" name="operationToolbar_CheckBox">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -352,7 +352,7 @@
              <item row="2" column="2">
               <widget class="QCheckBox" name="layoutToolbar_CheckBox">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -406,6 +406,12 @@
            <layout class="QVBoxLayout" name="verticalLayout_24">
             <item>
              <widget class="QCheckBox" name="useSecondMonitor_CheckBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="text">
                <string>Open on second monitor if available</string>
               </property>
@@ -444,7 +450,7 @@
                    <item>
                     <widget class="QRadioButton" name="ul_RadioButton">
                      <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                        <horstretch>0</horstretch>
                        <verstretch>0</verstretch>
                       </sizepolicy>
@@ -460,7 +466,7 @@
                    <item>
                     <widget class="QRadioButton" name="ur_RadioButton">
                      <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                        <horstretch>0</horstretch>
                        <verstretch>0</verstretch>
                       </sizepolicy>
@@ -476,7 +482,7 @@
                    <item>
                     <widget class="QRadioButton" name="center_RadioButton">
                      <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                        <horstretch>0</horstretch>
                        <verstretch>0</verstretch>
                       </sizepolicy>
@@ -495,7 +501,7 @@
                    <item>
                     <widget class="QRadioButton" name="ll_RadioButton">
                      <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                        <horstretch>0</horstretch>
                        <verstretch>0</verstretch>
                       </sizepolicy>
@@ -511,7 +517,7 @@
                    <item>
                     <widget class="QRadioButton" name="lr_RadioButton">
                      <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                        <horstretch>0</horstretch>
                        <verstretch>0</verstretch>
                       </sizepolicy>
@@ -526,6 +532,12 @@
                    </item>
                    <item>
                     <widget class="QRadioButton" name="offset_RadioButton">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="text">
                       <string>Offset</string>
                      </property>
@@ -562,11 +574,20 @@
                    </item>
                    <item row="0" column="1">
                     <widget class="QSpinBox" name="xOffset_SpinBox">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>50</width>
                        <height>0</height>
                       </size>
+                     </property>
+                     <property name="autoFillBackground">
+                      <bool>false</bool>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -594,11 +615,20 @@
                    </item>
                    <item row="1" column="1">
                     <widget class="QSpinBox" name="yOffset_SpinBox">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>50</width>
                        <height>0</height>
                       </size>
+                     </property>
+                     <property name="autoFillBackground">
+                      <bool>false</bool>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -623,7 +653,7 @@
        <item>
         <widget class="QGroupBox" name="outputGroupBox">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -631,7 +661,7 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>0</height>
+           <height>60</height>
           </size>
          </property>
          <property name="maximumSize">
@@ -656,7 +686,7 @@
           <item>
            <widget class="QCheckBox" name="graphicsOutput_CheckBox">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -712,7 +742,7 @@
        <item>
         <widget class="QGroupBox" name="labelFont_GroupBox">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -720,7 +750,7 @@
          <property name="minimumSize">
           <size>
            <width>420</width>
-           <height>0</height>
+           <height>120</height>
           </size>
          </property>
          <property name="font">
@@ -739,7 +769,7 @@
               <property name="minimumSize">
                <size>
                 <width>85</width>
-                <height>0</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -763,203 +793,21 @@
             </item>
             <item row="0" column="1">
              <widget class="QFontComboBox" name="labelFont_ComboBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>0</height>
+                <height>20</height>
                </size>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>8</pointsize>
-               </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="fontSize_Label">
-              <property name="minimumSize">
-               <size>
-                <width>85</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Size:</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QComboBox" name="labelFontSize_ComboBox">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="currentText">
-               <string notr="true">6</string>
-              </property>
-              <item>
-               <property name="text">
-                <string notr="true">6</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">7</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">8</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">9</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">10</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">10.5</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">11</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">12</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">13</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">14</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">15</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">16</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">18</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">20</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">22</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">24</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">26</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">28</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">32</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">36</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">40</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">44</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">48</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">54</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">60</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">66</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">72</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">80</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">96</string>
-               </property>
-              </item>
              </widget>
             </item>
            </layout>
@@ -972,6 +820,11 @@
               <height>0</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>The quick brown fox jumps over the lazy dog</string>
             </property>
@@ -983,7 +836,7 @@
        <item>
         <widget class="QGroupBox" name="pointNameFont_GroupBox">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -991,7 +844,7 @@
          <property name="minimumSize">
           <size>
            <width>420</width>
-           <height>0</height>
+           <height>120</height>
           </size>
          </property>
          <property name="font">
@@ -1010,7 +863,7 @@
               <property name="minimumSize">
                <size>
                 <width>85</width>
-                <height>0</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -1034,17 +887,23 @@
             </item>
             <item row="0" column="1">
              <widget class="QFontComboBox" name="pointNameFont_ComboBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>200</width>
-                <height>0</height>
+                <height>20</height>
                </size>
               </property>
               <property name="font">
                <font/>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
              </widget>
             </item>
@@ -1053,7 +912,7 @@
               <property name="minimumSize">
                <size>
                 <width>85</width>
-                <height>0</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -1061,6 +920,11 @@
                 <width>16777215</width>
                 <height>16777215</height>
                </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
               </property>
               <property name="text">
                <string>Size:</string>
@@ -1072,11 +936,28 @@
             </item>
             <item row="1" column="1">
              <widget class="QComboBox" name="pointNameFontSize_ComboBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>20</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
                 <height>16777215</height>
                </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
               </property>
               <property name="currentText">
                <string notr="true">96</string>
@@ -1241,6 +1122,11 @@
               <height>0</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>The quick brown fox jumps over the lazy dog</string>
             </property>
@@ -1252,7 +1138,7 @@
        <item>
         <widget class="QGroupBox" name="pointNameFont_GroupBox_2">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -1260,7 +1146,7 @@
          <property name="minimumSize">
           <size>
            <width>420</width>
-           <height>0</height>
+           <height>120</height>
           </size>
          </property>
          <property name="font">
@@ -1279,7 +1165,7 @@
               <property name="minimumSize">
                <size>
                 <width>85</width>
-                <height>0</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -1303,17 +1189,23 @@
             </item>
             <item row="0" column="1">
              <widget class="QFontComboBox" name="guiFont_ComboBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>200</width>
-                <height>0</height>
+                <height>20</height>
                </size>
               </property>
               <property name="font">
                <font/>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
              </widget>
             </item>
@@ -1322,7 +1214,7 @@
               <property name="minimumSize">
                <size>
                 <width>85</width>
-                <height>0</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -1330,6 +1222,11 @@
                 <width>16777215</width>
                 <height>16777215</height>
                </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
               </property>
               <property name="text">
                <string>Size:</string>
@@ -1341,11 +1238,28 @@
             </item>
             <item row="1" column="1">
              <widget class="QComboBox" name="guiFontSize_ComboBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>20</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
                 <height>16777215</height>
                </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
               </property>
               <property name="currentText">
                <string notr="true">32</string>
@@ -1510,6 +1424,11 @@
               <height>0</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>The quick brown fox jumps over the lazy dog</string>
             </property>
@@ -1612,7 +1531,7 @@
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
               <property name="maxVisibleItems">
                <number>15</number>
@@ -1673,7 +1592,7 @@
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
               <property name="maxVisibleItems">
                <number>15</number>
@@ -1765,7 +1684,7 @@
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
               <property name="maxVisibleItems">
                <number>15</number>
@@ -1826,7 +1745,7 @@
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
               <property name="maxVisibleItems">
                <number>15</number>
@@ -1918,7 +1837,7 @@
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
               <property name="maxVisibleItems">
                <number>15</number>
@@ -2003,7 +1922,7 @@
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
               <property name="maxVisibleItems">
                <number>15</number>
@@ -2064,7 +1983,7 @@
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
               <property name="maxVisibleItems">
                <number>15</number>
@@ -2125,7 +2044,7 @@
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
               <property name="maxVisibleItems">
                <number>15</number>
@@ -2266,7 +2185,7 @@
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2323,7 +2242,7 @@
                <string>Scrolling animation duration</string>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2380,7 +2299,7 @@
                <string>Time in milliseconds between each animation update</string>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2912,7 +2831,7 @@ border-radius: 4px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
+               <string notr="true"/>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

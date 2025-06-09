@@ -221,21 +221,22 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
 
     // Font preferences
     // Pattern piece labels font
-    ui->labelFont_ComboBox->setCurrentFont(qApp->Seamly2DSettings()->getLabelFont());
+    QFont labelFont = qApp->Seamly2DSettings()->getLabelFont();
+    labelFont.setPointSize(12);
+    ui->labelFont_ComboBox->setCurrentFont(labelFont);
+    ui->label_Label->setFont(labelFont);
+
+    connect(ui->labelFont_ComboBox,
+            static_cast<void(QFontComboBox::*)(const QFont &)>(&QFontComboBox::currentFontChanged),
+            this, [this](QFont labelFont)
+    {
+        labelFont.setPointSize(12);
+        ui->label_Label->setFont(labelFont);
+    });
 
     // Point name font
     QFont nameFont = qApp->Seamly2DSettings()->getPointNameFont();
     ui->pointNameFont_ComboBox->setCurrentFont(nameFont);
-    nameFont.setPointSize(12);
-    ui->pointName_Label->setFont(nameFont);
-
-    connect(ui->pointNameFont_ComboBox,
-            static_cast<void(QFontComboBox::*)(const QFont &)>(&QFontComboBox::currentFontChanged),
-            this, [this](QFont nameFont)
-    {
-        nameFont.setPointSize(12);
-        ui->pointName_Label->setFont(nameFont);
-    });
 
     index = ui->pointNameFontSize_ComboBox->findText(QString().setNum(qApp->Seamly2DSettings()->getPointNameSize()));
     if (index != -1)
@@ -243,25 +244,51 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
         ui->pointNameFontSize_ComboBox->setCurrentIndex(index);
     }
 
+    nameFont.setPointSize(ui->pointNameFontSize_ComboBox->currentText().toInt());
+    ui->pointName_Label->setFont(nameFont);
+
+    connect(ui->pointNameFont_ComboBox,
+            static_cast<void(QFontComboBox::*)(const QFont &)>(&QFontComboBox::currentFontChanged),
+            this, [this](QFont nameFont)
+    {
+        nameFont.setPointSize(ui->pointNameFontSize_ComboBox->currentText().toInt());
+        ui->pointName_Label->setFont(nameFont);
+    });
+
+    connect(ui->pointNameFontSize_ComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        QFont labelFont = ui->pointName_Label->font();
+        labelFont.setPointSize(ui->pointNameFontSize_ComboBox->currentText().toInt());
+        ui->pointName_Label->setFont(labelFont);
+    });
+
     // GUI font
     QFont guiFont = qApp->Seamly2DSettings()->getGuiFont();
     ui->guiFont_ComboBox->setCurrentFont(guiFont);
-    guiFont.setPointSize(12);
-    ui->gui_Label->setFont(guiFont);
-
-    connect(ui->guiFont_ComboBox,
-            static_cast<void(QFontComboBox::*)(const QFont &)>(&QFontComboBox::currentFontChanged),
-            this, [this](QFont guiFont)
-    {
-        guiFont.setPointSize(12);
-        ui->gui_Label->setFont(guiFont);
-    });
 
     index = ui->guiFontSize_ComboBox->findText(QString().setNum(qApp->Seamly2DSettings()->getGuiFontSize()));
     if (index != -1)
     {
         ui->guiFontSize_ComboBox->setCurrentIndex(index);
     }
+
+    guiFont.setPointSize(ui->guiFontSize_ComboBox->currentText().toInt());
+    ui->gui_Label->setFont(guiFont);
+
+    connect(ui->guiFont_ComboBox,
+            static_cast<void(QFontComboBox::*)(const QFont &)>(&QFontComboBox::currentFontChanged),
+            this, [this](QFont guiFont)
+    {
+        guiFont.setPointSize(ui->guiFontSize_ComboBox->currentText().toInt());
+        ui->gui_Label->setFont(guiFont);
+    });
+
+    connect(ui->guiFontSize_ComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        QFont guiFont = ui->gui_Label->font();
+        guiFont.setPointSize(ui->guiFontSize_ComboBox->currentText().toInt());
+        ui->gui_Label->setFont(guiFont);
+    });
 }
 
 //---------------------------------------------------------------------------------------------------------------------
