@@ -58,6 +58,7 @@
 #include "../ifc/exception/vexception.h"
 #include "vpointf.h"
 #include "vspline.h"
+#include "vsplinepoint.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractCubicBezierPath::VAbstractCubicBezierPath(const GOType &type, const quint32 &idObject, const Draw &mode)
@@ -226,7 +227,36 @@ QPointF VAbstractCubicBezierPath::CutSplinePath(qreal length, qint32 &p1, qint32
         {
             p1 = i-1;
             p2 = i;
-            return spl.CutSpline(length - (fullLength - splLength), spl1p2, spl1p3, spl2p2, spl2p3);
+            const QPointF point = spl.CutSpline(length - (fullLength - splLength), spl1p2, spl1p3, spl2p2, spl2p3);
+            const QVector<VSplinePoint> points = GetSplinePath();
+
+            if (p1 > 0)
+            {
+                const VSplinePoint &splP1 = points.at(p1);
+                QLineF const line(splP1.P().toQPointF(), spl1p2);
+                if (qFuzzyIsNull(line.length()))
+                {
+                    spl1p2.rx() += ToPixel(0.1, Unit::Mm);
+                    QLineF line(splP1.P().toQPointF(), spl1p2);
+                    line.setLength(ToPixel(0.1, Unit::Mm));
+                    line.setAngle(splP1.Angle1() + 180);
+                    spl1p2 = line.p2();
+                }
+            }
+
+            if (p2 < points.size() - 1)
+            {
+                const VSplinePoint &splP2 = points.at(p2);
+                QLineF const line(splP2.P().toQPointF(), spl2p3);
+                if (qFuzzyIsNull(line.length()))
+                {
+                    spl2p3.rx() += ToPixel(0.1, Unit::Mm);
+                    QLineF line(splP2.P().toQPointF(), spl2p3);
+                    line.setAngle(splP2.Angle2() + 180);
+                    spl2p3 = line.p2();
+                }
+            }
+            return point;
         }
     }
     p1 = p2 = -1;
