@@ -248,6 +248,6 @@ var NAVTREEINDEX40 =
 "d9/d72/classVisToolPointFromArcAndTangent.html#aff66d740110a2dbd854dcbba3ff77048":[1,0,326,5],
 "d9/d72/vexceptionconversionerror_8h.html":[2,0,0,1,1,0,5],
 "d9/d72/vexceptionconversionerror_8h_source.html":[2,0,0,1,1,0,5],
-"d9/d73/classVPE_1_1VShortcutProperty.html":[0,0,24,39],
-"d9/d73/classVPE_1_1VShortcutProperty.html":[1,0,2,39]
+"d9/d73/classVPE_1_1VShortcutProperty.html":[1,0,2,39],
+"d9/d73/classVPE_1_1VShortcutProperty.html":[0,0,24,39]
 };

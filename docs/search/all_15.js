@@ -12,7 +12,7 @@ var searchData=
   ['undoevent_9',['undoevent',['../d0/d5b/classUndoEvent.html',1,'UndoEvent'],['../d0/d5b/classUndoEvent.html#abd5e73208d71c6b3972e3f4f79295a9d',1,'UndoEvent::UndoEvent()']]],
   ['undoeventtype_10',['UndoEventType',['../de/d02/customevents_8h.html#ab5e39226fcfaeab4760404fdefa1d340a960de657e06fbbc9b6fb85db3b20b2e2',1,'customevents.h']]],
   ['undoformula_11',['undoFormula',['../d1/d7d/classEditFormulaDialog.html#a97b37c30e2015ea7492320b8ba6a1270',1,'EditFormulaDialog']]],
-  ['undostack_12',['undostack',['../d5/d41/classPatternPieceDialog.html#ac713d0297ecb5ff52960680940834ce0',1,'PatternPieceDialog::UndoStack()'],['../db/dda/classVAbstractApplication.html#aa76510ae070b475c90495d3606ecf1c6',1,'VAbstractApplication::undoStack']]],
+  ['undostack_12',['undostack',['../db/dda/classVAbstractApplication.html#aa76510ae070b475c90495d3606ecf1c6',1,'VAbstractApplication::undoStack'],['../d5/d41/classPatternPieceDialog.html#ac713d0297ecb5ff52960680940834ce0',1,'PatternPieceDialog::UndoStack()']]],
   ['uniformrand_13',['UNIFORMRAND',['../d6/d2f/predicates_8cpp.html#a151c130268f15ea9975886f0750f3079',1,'predicates.cpp']]],
   ['union_14',['Union',['../d4/da4/def_8h.html#ab8460ab56e3e92e57d3ed3b717492395aaef12e903e606a4895a16b393bfdec8c',1,'def.h']]],
   ['union_5fcast_15',['union_cast',['../d0/d82/classqmu_1_1QmuParserToken.html#a71d9646bc92e9edbee737c9e5258fa6a',1,'qmu::QmuParserToken']]],

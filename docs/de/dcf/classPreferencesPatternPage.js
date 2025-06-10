@@ -12,5 +12,6 @@ var classPreferencesPatternPage =
     [ "initializeLabelsTab", "de/dcf/classPreferencesPatternPage.html#a1a26e0d22081fe3437a24e1ae21d73ea", null ],
     [ "initNotches", "de/dcf/classPreferencesPatternPage.html#a069067f75cf85e6ef62f0b39868f7ad7", null ],
     [ "setDefaultTemplate", "de/dcf/classPreferencesPatternPage.html#aec50c68f953bd4fc13807042421ee93e", null ],
+    [ "setMaxByUnits", "de/dcf/classPreferencesPatternPage.html#a54ce5db674fe81e9d2a5b755fc7c77c2", null ],
     [ "ui", "de/dcf/classPreferencesPatternPage.html#aa988bdfd07ac2dc80c0ec9fb74e37bc4", null ]
 ];
