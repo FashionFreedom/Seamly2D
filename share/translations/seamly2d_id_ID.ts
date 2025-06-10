@@ -3082,8 +3082,8 @@ p, li { spasi: pra-bungkus; }
         <translation>&amp;Perbaiki rumus</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Batalkan</translation>
+        <source>Cancel</source>
+        <translation>Batalkan</translation>
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
@@ -5354,16 +5354,16 @@ Program ini disediakan SEBAGAIMANA ADANYA TANPA JAMINAN DALAM BENTUK APA PUN, TE
         <translation>Simpan</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Simpan</translation>
+        <source>Save</source>
+        <translation>Simpan</translation>
     </message>
     <message>
         <source>Save pattern</source>
         <translation>Simpan pola</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>Simpan &amp;Sebagai...</translation>
+        <source>Save As...</source>
+        <translation>Simpan Sebagai...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5386,12 +5386,12 @@ Program ini disediakan SEBAGAIMANA ADANYA TANPA JAMINAN DALAM BENTUK APA PUN, TE
         <translation>Tentang &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>&amp;Tentang Seamly2D</translation>
+        <source>About Seamly2D</source>
+        <translation>Tentang Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>&amp;Keluar</translation>
+        <translation>Keluar</translation>
     </message>
     <message>
         <source>Preferences</source>
@@ -5821,7 +5821,7 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
     </message>
     <message>
         <source>&amp;Tools</source>
-        <translation>&amp;Alat</translation>
+        <translation>Alat</translation>
     </message>
     <message>
         <source>&amp;Operations</source>

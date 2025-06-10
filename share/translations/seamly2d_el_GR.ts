@@ -3082,8 +3082,8 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Επιδιόρθωση φόρμουλας</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Ακύρωση</translation>
+        <source>Cancel</source>
+        <translation>Ακύρωση</translation>
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
@@ -5356,16 +5356,16 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Αποθήκευση</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Αποθήκευση</translation>
+        <source>Save</source>
+        <translation>Αποθήκευση</translation>
     </message>
     <message>
         <source>Save pattern</source>
         <translation>Αποθήκευση πατρόν</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>Αποθήκευση &amp;ως...</translation>
+        <source>Save As...</source>
+        <translation>Αποθήκευση ως...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5388,8 +5388,8 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Σχετικά &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>&amp;Σχετικά με το Seamly2D</translation>
+        <source>About Seamly2D</source>
+        <translation>Σχετικά με το Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>

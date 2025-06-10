@@ -3084,15 +3084,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Undo</source>
-        <translation>&amp;Annuler</translation>
+        <translation>Annuler</translation>
     </message>
     <message>
         <source>&amp;Fix formula</source>
         <translation>&amp;Corriger la formule</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Annuler</translation>
+        <source>Cancel</source>
+        <translation>Annuler</translation>
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
@@ -5334,7 +5334,7 @@ Le programme est fourni &quot;TEL QUEL&quot;sans aucune garantie, y compris la g
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Aide</translation>
+        <translation>Aide</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -5369,16 +5369,12 @@ Le programme est fourni &quot;TEL QUEL&quot;sans aucune garantie, y compris la g
         <translation>Enregistrer</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Enregistrer</translation>
-    </message>
-    <message>
         <source>Save pattern</source>
         <translation>Enregistrer le patron</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>Enregistrer &amp;Sous...</translation>
+        <source>Save As...</source>
+        <translation>Enregistrer Sous...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5401,8 +5397,8 @@ Le programme est fourni &quot;TEL QUEL&quot;sans aucune garantie, y compris la g
         <translation>À propos de &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>À propos de &amp;Seamly2D</translation>
+        <source>About Seamly2D</source>
+        <translation>À propos de Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -5476,7 +5472,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>&amp;Undo</source>
-        <translation>&amp;Annuler</translation>
+        <translation>Annuler</translation>
     </message>
     <message>
         <source>&amp;Redo</source>

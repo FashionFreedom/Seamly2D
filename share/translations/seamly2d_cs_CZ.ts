@@ -3082,8 +3082,8 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Opravit vzorec</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>Z&amp;rušit</translation>
+        <source>Cancel</source>
+        <translation>Zrušit</translation>
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
@@ -5313,7 +5313,7 @@ Program je poskytován TAK, JAK JE, BEZ JAKÉKOLI ZÁRUKY, VČETNĚ ZÁRUKY DESI
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;Soubor</translation>
+        <translation>Soubor</translation>
     </message>
     <message>
         <source>&amp;Help</source>
@@ -5352,16 +5352,16 @@ Program je poskytován TAK, JAK JE, BEZ JAKÉKOLI ZÁRUKY, VČETNĚ ZÁRUKY DESI
         <translation>Uložit</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Uložit</translation>
+        <source>Save</source>
+        <translation>Uložit</translation>
     </message>
     <message>
         <source>Save pattern</source>
         <translation>Uložit střih</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>Uložit j&amp;ako...</translation>
+        <source>Save As...</source>
+        <translation>Uložit jako...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5384,12 +5384,12 @@ Program je poskytován TAK, JAK JE, BEZ JAKÉKOLI ZÁRUKY, VČETNĚ ZÁRUKY DESI
         <translation>O &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>&amp;O programu Seamly2D</translation>
+        <source>About Seamly2D</source>
+        <translation>O programu Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>&amp;Ukončit</translation>
+        <translation>Ukončit</translation>
     </message>
     <message>
         <source>Preferences</source>

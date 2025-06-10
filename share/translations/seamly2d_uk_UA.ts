@@ -3082,8 +3082,8 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Виправити формулу</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Відмінити</translation>
+        <source>Cancel</source>
+        <translation>Відмінити</translation>
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
@@ -5356,16 +5356,12 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Зберегти</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Зберегти</translation>
-    </message>
-    <message>
         <source>Save pattern</source>
         <translation>Зберегти лекало</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>Зберегти &amp;як...</translation>
+        <source>Save As...</source>
+        <translation>Зберегти як...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5388,12 +5384,12 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Про &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>&amp;Про Seamly2D</translation>
+        <source>About Seamly2D</source>
+        <translation>Про Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>&amp;Вихід</translation>
+        <translation>Вихід</translation>
     </message>
     <message>
         <source>Preferences</source>

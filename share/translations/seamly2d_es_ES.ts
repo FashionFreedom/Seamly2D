@@ -3100,8 +3100,8 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Reparar fórmula</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Cancelar</translation>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
@@ -5335,11 +5335,11 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;Archivo</translation>
+        <translation>Archivo</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Ayuda</translation>
+        <translation>Ayuda</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -5363,7 +5363,7 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>&amp;Abrir</translation>
+        <translation>Abrir</translation>
     </message>
     <message>
         <source>Open file with pattern</source>
@@ -5374,16 +5374,12 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
         <translation>Guardar</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Guardar</translation>
-    </message>
-    <message>
         <source>Save pattern</source>
         <translation>Guardar patrón</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>Guardar &amp;Como...</translation>
+        <source>Save As...</source>
+        <translation>Guardar Como...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5406,12 +5402,12 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
         <translation>Sobre &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>&amp;Sobre Seamly2D</translation>
+        <source>About Seamly2D</source>
+        <translation>Sobre Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>&amp;Salida</translation>
+        <translation>S&amp;alida</translation>
     </message>
     <message>
         <source>Preferences</source>
@@ -6050,10 +6046,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Point on Curve (O, C)</source>
         <translation>Punto en Curva (O, C)</translation>
-    </message>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>Sobre Seamly2D</translation>
     </message>
     <message>
         <source>Exit the Application</source>

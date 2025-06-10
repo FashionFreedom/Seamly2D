@@ -3067,8 +3067,8 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Correggi formula</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Cancel</translation>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
@@ -5331,7 +5331,7 @@ Il programma viene fornito così com&apos;è, senza alcuna garanzia di alcun tip
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>&amp;Apri</translation>
+        <translation>Apri</translation>
     </message>
     <message>
         <source>Open file with pattern</source>
@@ -5342,16 +5342,16 @@ Il programma viene fornito così com&apos;è, senza alcuna garanzia di alcun tip
         <translation>Salva</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Salva</translation>
+        <source>Save</source>
+        <translation>Salva</translation>
     </message>
     <message>
         <source>Save pattern</source>
         <translation>Salva modello</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>Salva &amp;Come...</translation>
+        <source>Save As...</source>
+        <translation>Salva Come...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5374,8 +5374,8 @@ Il programma viene fornito così com&apos;è, senza alcuna garanzia di alcun tip
         <translation>About &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>&amp;About Seamly2D</translation>
+        <source>About Seamly2D</source>
+        <translation>About Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
