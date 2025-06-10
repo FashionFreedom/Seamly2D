@@ -3067,8 +3067,8 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Fix formula</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Cancel</translation>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
@@ -5324,16 +5324,16 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Save</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Save</translation>
+        <source>Save</source>
+        <translation>Save</translation>
     </message>
     <message>
         <source>Save pattern</source>
         <translation>Save pattern</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>Save &amp;As...</translation>
+        <source>Save As...</source>
+        <translation>Save As...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5356,8 +5356,8 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>About &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>&amp;About Seamly2D</translation>
+        <source>About Seamly2D</source>
+        <translation>About Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>

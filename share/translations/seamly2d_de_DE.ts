@@ -3067,8 +3067,8 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Formel festlegen</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Abbrechen</translation>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
@@ -5337,16 +5337,16 @@ Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLIC
         <translation>Speichern</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Speichern</translation>
+        <source>Save</source>
+        <translation>Speichern</translation>
     </message>
     <message>
         <source>Save pattern</source>
         <translation>Schnittmuster speichern</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>Speichern &amp;als...</translation>
+        <source>Save As...</source>
+        <translation>Speichern als...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5369,8 +5369,8 @@ Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLIC
         <translation>Über &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>&amp;Über Seamly2D</translation>
+        <source>About Seamly2D</source>
+        <translation>Über Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -5808,7 +5808,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&amp;Operations</source>
-        <translation>&amp;Abläufe</translation>
+        <translation>Abläufe</translation>
     </message>
     <message>
         <source>Piece</source>

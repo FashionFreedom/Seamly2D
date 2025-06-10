@@ -3082,8 +3082,8 @@ p, li { boşluk: ön sarma; }
         <translation>&amp;Formülü düzelt</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;İptal</translation>
+        <source>Cancel</source>
+        <translation>İptal</translation>
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
@@ -5343,7 +5343,7 @@ Program, TASARIM, SATILABİLİRLİK VE BELİRLİ BİR AMACA UYGUNLUK GARANTİSİ
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>&amp;Aç</translation>
+        <translation>Aç</translation>
     </message>
     <message>
         <source>Open file with pattern</source>
@@ -5354,16 +5354,12 @@ Program, TASARIM, SATILABİLİRLİK VE BELİRLİ BİR AMACA UYGUNLUK GARANTİSİ
         <translation>Kaydet</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Kaydet</translation>
-    </message>
-    <message>
         <source>Save pattern</source>
         <translation>Deseni kaydet</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>&amp;Farklı Kaydet...</translation>
+        <source>Save As...</source>
+        <translation>Farklı Kaydet...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5383,11 +5379,11 @@ Program, TASARIM, SATILABİLİRLİK VE BELİRLİ BİR AMACA UYGUNLUK GARANTİSİ
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>&amp;Qt Hakkında</translation>
+        <translation>Qt Hakkında</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>&amp;Seamly2D Hakkında</translation>
+        <source>About Seamly2D</source>
+        <translation>Seamly2D Hakkında</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -5821,7 +5817,7 @@ Do you want to save your changes?</translation>
     </message>
     <message>
         <source>&amp;Tools</source>
-        <translation>&amp;Araçlar</translation>
+        <translation>Araçlar</translation>
     </message>
     <message>
         <source>&amp;Operations</source>
@@ -10936,7 +10932,7 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>&amp;Qt Hakkında</translation>
+        <translation>Qt Hakkında</translation>
     </message>
     <message>
         <source>About SeamlyMe</source>

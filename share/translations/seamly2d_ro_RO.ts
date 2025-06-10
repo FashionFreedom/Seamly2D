@@ -3075,15 +3075,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Undo</source>
-        <translation>&amp;Anulare</translation>
+        <translation>Anulare</translation>
     </message>
     <message>
         <source>&amp;Fix formula</source>
         <translation>&amp;Repară formula</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Anulare</translation>
+        <source>Cancel</source>
+        <translation>Anulare</translation>
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
@@ -5321,7 +5321,7 @@ Programul este furnizat CA ATARE, FĂRĂ NICIUN FEL DE GARANȚIE, INCLUSIV GARAN
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Ajutor</translation>
+        <translation>Ajutor</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -5356,16 +5356,16 @@ Programul este furnizat CA ATARE, FĂRĂ NICIUN FEL DE GARANȚIE, INCLUSIV GARAN
         <translation>Salvează</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Salvează</translation>
+        <source>Save</source>
+        <translation>Salvează</translation>
     </message>
     <message>
         <source>Save pattern</source>
         <translation>Salvează tipar</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>Salvează &amp;Ca și.....</translation>
+        <source>Save As...</source>
+        <translation>Salvează Ca și.....</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5388,8 +5388,8 @@ Programul este furnizat CA ATARE, FĂRĂ NICIUN FEL DE GARANȚIE, INCLUSIV GARAN
         <translation>Despre&amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>&amp;Despre Seamly2D</translation>
+        <source>About Seamly2D</source>
+        <translation>Despre Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -5463,7 +5463,7 @@ Doriți să salvați modificările?</translation>
     </message>
     <message>
         <source>&amp;Undo</source>
-        <translation>&amp;Anulare</translation>
+        <translation>Anulare</translation>
     </message>
     <message>
         <source>&amp;Redo</source>
@@ -5823,7 +5823,7 @@ Doriți să salvați modificările?</translation>
     </message>
     <message>
         <source>&amp;Tools</source>
-        <translation>&amp;Instrumente</translation>
+        <translation>Instrumente</translation>
     </message>
     <message>
         <source>&amp;Operations</source>

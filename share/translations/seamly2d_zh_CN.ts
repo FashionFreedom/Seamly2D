@@ -3067,8 +3067,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;取消</translation>
+        <source>Cancel</source>
+        <translation>取消</translation>
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
@@ -5321,7 +5321,7 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>保存</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
+        <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5329,7 +5329,7 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
+        <source>Save As...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5353,7 +5353,7 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
+        <source>About Seamly2D</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

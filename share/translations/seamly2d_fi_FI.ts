@@ -3083,7 +3083,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation>&amp;Peru</translation>
+        <translation>Peru</translation>
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
@@ -5319,7 +5319,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Apua</translation>
+        <translation>Apua</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -5343,7 +5343,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>&amp;Avaa</translation>
+        <translation>Avaa</translation>
     </message>
     <message>
         <source>Open file with pattern</source>
@@ -5351,19 +5351,15 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>Save</source>
-        <translation>Talenna</translation>
-    </message>
-    <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Tallenna</translation>
+        <translation>Tallenna</translation>
     </message>
     <message>
         <source>Save pattern</source>
         <translation>Tallenna kaava</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>Tallenna &amp;nimellä...</translation>
+        <source>Save As...</source>
+        <translation>Tallenna nimellä...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5386,8 +5382,8 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
         <translation>Tietoja &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>&amp;Tietoja Seamly2Dsta</translation>
+        <source>About Seamly2D</source>
+        <translation>Tietoja Seamly2Dsta</translation>
     </message>
     <message>
         <source>E&amp;xit</source>

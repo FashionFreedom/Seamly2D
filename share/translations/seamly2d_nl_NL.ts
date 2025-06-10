@@ -3067,8 +3067,8 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Verbeter formule</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Stop</translation>
+        <source>Cancel</source>
+        <translation>Stop</translation>
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
@@ -5337,16 +5337,12 @@ Het programma wordt geleverd in de staat waarin het zich bevindt, zonder enige g
         <translation>Opslaan</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Opslaan</translation>
-    </message>
-    <message>
         <source>Save pattern</source>
         <translation>Opslaan patroon</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>Opslaan &amp;als...</translation>
+        <source>Save As...</source>
+        <translation>Opslaan als...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5369,8 +5365,8 @@ Het programma wordt geleverd in de staat waarin het zich bevindt, zonder enige g
         <translation>Over &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>&amp;Over Seamly2D</translation>
+        <source>About Seamly2D</source>
+        <translation>Over Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>

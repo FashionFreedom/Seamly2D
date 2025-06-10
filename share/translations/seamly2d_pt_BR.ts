@@ -3067,8 +3067,8 @@ p, li { white-space: pre-wrap; }
         <translation>Fârmula &amp;Fix</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Cancelar</translation>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
@@ -5301,11 +5301,11 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;Arquivo</translation>
+        <translation>Arquivo</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Ajuda</translation>
+        <translation>Ajuda</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -5329,7 +5329,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>&amp;Abrir</translation>
+        <translation>Abrir</translation>
     </message>
     <message>
         <source>Open file with pattern</source>
@@ -5340,16 +5340,16 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
         <translation>Salvar</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Salvar</translation>
+        <source>Save</source>
+        <translation>Salvar</translation>
     </message>
     <message>
         <source>Save pattern</source>
         <translation>Salvar padrâo</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>Salvar &amp;Como...</translation>
+        <source>Save As...</source>
+        <translation>Salvar Como...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5372,12 +5372,12 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
         <translation>Sobre &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>&amp;Sobre Seamly2D</translation>
+        <source>About Seamly2D</source>
+        <translation>Sobre Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>&amp;Saâda</translation>
+        <translation>Saâda</translation>
     </message>
     <message>
         <source>Preferences</source>

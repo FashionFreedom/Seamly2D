@@ -3082,8 +3082,8 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Исправить формулу</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Отмена</translation>
+        <source>Cancel</source>
+        <translation>Отмена</translation>
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
@@ -5359,16 +5359,12 @@ Seamly2D — это бесплатное программное обеспече
         <translation>Сохранить</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Сохранить</translation>
-    </message>
-    <message>
         <source>Save pattern</source>
         <translation>Сохранить выкройку</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>Сохранить &amp;как...</translation>
+        <source>Save As...</source>
+        <translation>Сохранить как...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5391,8 +5387,8 @@ Seamly2D — это бесплатное программное обеспече
         <translation>Про &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>&amp;Про Seamly2D</translation>
+        <source>About Seamly2D</source>
+        <translation>Про Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
