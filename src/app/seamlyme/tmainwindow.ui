@@ -82,7 +82,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEditFind">
+           <widget class="QLineEdit" name="find_LineEdit">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -131,6 +131,66 @@
             </property>
             <property name="autoExclusive">
              <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="regex_ToolButton">
+            <property name="text">
+             <string notr="true"/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+              <normaloff>:/icon/svg/regex.svg</normaloff>:/icon/svg/regex.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>24</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="case_ToolButton">
+            <property name="text">
+             <string notr="true"/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+              <normaloff>:/icon/svg/case.svg</normaloff>:/icon/svg/case.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>24</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="word_ToolButton">
+            <property name="text">
+             <string notr="true"/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+              <normaloff>:/icon/svg/word.svg</normaloff>:/icon/svg/word.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>24</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -1623,8 +1683,8 @@
  <layoutdefault spacing="6" margin="11"/>
  <resources>
   <include location="share/resources/seamlymeicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
   <include location="../../libs/vmisc/share/resources/theme.qrc"/>
+  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>
 </ui>
