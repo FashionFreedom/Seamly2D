@@ -1,54 +1,54 @@
-/***************************************************************************
- **  @file   historyDialog.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2015 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   historyDialog.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @copyright
+//  Copyright (C) 2015 - 2023 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
- /************************************************************************
- **
- **  @file   dialoghistory.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//
+//  @file   dialoghistory.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   November 15, 2013
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2015 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//
+//-----------------------------------------------------------------------------
 
 #include "history_dialog.h"
 #include "ui_history_dialog.h"
@@ -61,6 +61,7 @@
 #include "../vgeometry/vpointf.h"
 #include "../vmisc/diagnostic.h"
 #include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vtablesearch.h"
 #include "../vtools/tools/vabstracttool.h"
 #include "../vtools/tools/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutspline.h"
 #include "../vtools/tools/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutsplinepath.h"
@@ -75,12 +76,11 @@
 #include <QScreen>
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief HistoryDialog create dialog
- * @param data container with data
- * @param doc dom document container
- * @param parent parent widget
- */
+/// @brief HistoryDialog create dialog
+/// @param data container with data
+/// @param doc dom document container
+/// @param parent parent widget
+//---------------------------------------------------------------------------------------------------------------------
 HistoryDialog::HistoryDialog(VContainer *data, VPattern *doc, QWidget *parent)
     : DialogTool(data, 0, parent)
     , ui(new Ui::HistoryDialog)
@@ -92,7 +92,7 @@ HistoryDialog::HistoryDialog(VContainer *data, VPattern *doc, QWidget *parent)
     setWindowFlags(Qt::Window);
     setWindowFlags((windowFlags() | Qt::WindowStaysOnTopHint | Qt::WindowMaximizeButtonHint) & ~Qt::WindowContextHelpButtonHint);
 
-    //Limit dialog height to 80% of screen size
+    // Limit dialog height to 80% of screen size
     setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
     ui->find_LineEdit->installEventFilter(this);
@@ -103,13 +103,31 @@ HistoryDialog::HistoryDialog(VContainer *data, VPattern *doc, QWidget *parent)
     initializeTable();
 
     ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
-    connect(ok_Button,                &QPushButton::clicked,           this,  &HistoryDialog::DialogAccepted);
-    connect(ui->clipboard_ToolButton, &QToolButton::clicked,           this,  &HistoryDialog::copyToClipboard);
-    connect(ui->tableWidget,          &QTableWidget::cellClicked,      this,  &HistoryDialog::cellClicked);
-    connect(m_doc,                    &VPattern::ChangedCursor,        this,  &HistoryDialog::changedCursor);
-    connect(m_doc,                    &VPattern::patternChanged,       this,  &HistoryDialog::updateHistory);
-    connect(ui->find_LineEdit,        &QLineEdit::textEdited,          this,  &HistoryDialog::findText);
-    connect(this,                     &HistoryDialog::showHistoryTool, m_doc, [doc](quint32 id, bool enable)
+    connect(ok_Button,                &QPushButton::clicked, this,  &HistoryDialog::DialogAccepted);
+    connect(ui->clipboard_ToolButton, &QToolButton::clicked, this,  &HistoryDialog::copyToClipboard);
+
+
+    // Set up search
+    m_search = QSharedPointer<VTableSearch>(new VTableSearch(ui->tableWidget));
+    connect(ui->find_LineEdit,    &QLineEdit::textEdited,this,  &HistoryDialog::findText);
+    connect(ui->prev_PushButton,  &QToolButton::clicked, this,  &HistoryDialog::searchPrev);
+    connect(ui->next_PushButton,  &QToolButton::clicked, this,  &HistoryDialog::searchNext);
+    connect(ui->regex_ToolButton, &QToolButton::toggled, this,  &HistoryDialog::regexToggled);
+    connect(ui->case_ToolButton,  &QToolButton::toggled, this,  &HistoryDialog::caseToggled);
+    connect(ui->word_ToolButton,  &QToolButton::toggled, this,  &HistoryDialog::wordToggled);
+    connect(m_search.data(), &VTableSearch::hasResult, this, [this] (bool state)
+    {
+        ui->prev_PushButton->setEnabled(state);
+    });
+    connect(m_search.data(), &VTableSearch::hasResult, this, [this] (bool state)
+    {
+        ui->next_PushButton->setEnabled(state);
+    });
+
+    connect(ui->tableWidget, &QTableWidget::cellClicked,      this,  &HistoryDialog::cellClicked);
+    connect(m_doc,           &VPattern::ChangedCursor,        this,  &HistoryDialog::changedCursor);
+    connect(m_doc,           &VPattern::patternChanged,       this,  &HistoryDialog::updateHistory);
+    connect(this,            &HistoryDialog::showHistoryTool, m_doc, [doc](quint32 id, bool enable)
     {
         emit doc->ShowTool(id, enable);
     });
@@ -124,9 +142,8 @@ HistoryDialog::~HistoryDialog()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief DialogAccepted save data and emit signal about closed dialog.
- */
+/// @brief DialogAccepted save data and emit signal about closed dialog.
+//---------------------------------------------------------------------------------------------------------------------
 void HistoryDialog::DialogAccepted()
 {
     QTableWidgetItem *item = ui->tableWidget->item(m_cursorToolRecordRow, 0);
@@ -136,11 +153,10 @@ void HistoryDialog::DialogAccepted()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief cellClicked changed history record
- * @param row number row in table
- * @param column number column in table
- */
+/// @brief cellClicked changed history record
+/// @param row number row in table
+/// @param column number column in table
+//---------------------------------------------------------------------------------------------------------------------
 void HistoryDialog::cellClicked(int row, int column)
 {
     if (column == 0)
@@ -170,10 +186,9 @@ void HistoryDialog::cellClicked(int row, int column)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief changedCursor changed cursor of input. Cursor show after which record we will insert new object
- * @param id id of object
- */
+/// @brief changedCursor changed cursor of input. Cursor show after which record we will insert new object
+/// @param id id of object
+//---------------------------------------------------------------------------------------------------------------------
 void HistoryDialog::changedCursor(quint32 id)
 {
     for (qint32 i = 0; i< ui->tableWidget->rowCount(); ++i)
@@ -191,9 +206,8 @@ void HistoryDialog::changedCursor(quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief updateHistory update history table
- */
+/// @brief updateHistory update history table
+//---------------------------------------------------------------------------------------------------------------------
 void HistoryDialog::updateHistory()
 {
     fillTable();
@@ -201,9 +215,8 @@ void HistoryDialog::updateHistory()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief fillTable fill table
- */
+/// @brief fillTable fill table
+//---------------------------------------------------------------------------------------------------------------------
 void HistoryDialog::fillTable()
 {
     ui->tableWidget->clear();
@@ -212,7 +225,8 @@ void HistoryDialog::fillTable()
     qint32 count = 0;
     ui->tableWidget->setRowCount(history.size());//Set Row count to number of Tool history records
 
-    for (qint32 i = 0; i< history.size(); ++i)
+    qint32 size = history.size();
+    for (qint32 i = 0; i < size; ++i)
     {
         const VToolRecord tool = history.at(i);
         const RowData rowData = record(tool);
@@ -259,14 +273,14 @@ void HistoryDialog::fillTable()
     ui->tableWidget->verticalHeader()->setDefaultSectionSize(24);//Set all row heights to 20px
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_GCC("-Wswitch-default")
-/**
- * @brief Record return description for record
- * @param tool record data
- * @return RowData
- */
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief Record return description for record
+/// @param tool record data
+/// @return RowData
+//---------------------------------------------------------------------------------------------------------------------
 RowData HistoryDialog::record(const VToolRecord &tool)
 {
     // This check helps to find missed tools in the switch
@@ -621,9 +635,8 @@ RowData HistoryDialog::record(const VToolRecord &tool)
 QT_WARNING_POP
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief initializeTable set initial option of table
- */
+/// @brief initializeTable set initial option of table
+//---------------------------------------------------------------------------------------------------------------------
 void HistoryDialog::initializeTable()
 {
     ui->tableWidget->setSortingEnabled(false);
@@ -635,9 +648,8 @@ void HistoryDialog::initializeTable()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief showTool show selected point
- */
+/// @brief showTool show selected point
+//---------------------------------------------------------------------------------------------------------------------
 void HistoryDialog::showTool()
 {
     const QVector<VToolRecord> *history = m_doc->getHistory();
@@ -653,13 +665,12 @@ void HistoryDialog::showTool()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief HistoryDialog::PointName return point name by id.
- *
- * Refacoring what hide ugly string getting point name by id.
- * @param pointId point if in data.
- * @return point name.
- */
+/// @brief HistoryDialog::PointName return point name by id.
+///
+/// Refacoring what hide ugly string getting point name by id.
+/// @param pointId point if in data.
+/// @return point name.
+//---------------------------------------------------------------------------------------------------------------------
 QString HistoryDialog::getPointName(quint32 pointId)
 {
     return data->GeometricObject<VPointF>(pointId)->name();
@@ -672,10 +683,9 @@ quint32 HistoryDialog::attrUInt(const QDomElement &domElement, const QString &na
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief closeEvent handle when windows is closing
- * @param event event
- */
+/// @brief closeEvent handle when windows is closing
+/// @param event event
+//---------------------------------------------------------------------------------------------------------------------
 void HistoryDialog::closeEvent(QCloseEvent *event)
 {
     QTableWidgetItem *item = ui->tableWidget->item(m_cursorToolRecordRow,1);
@@ -766,23 +776,12 @@ int HistoryDialog::cursorRow() const
 void HistoryDialog::findText(const QString &text)
 {
     updateHistory();
-    if (text.isEmpty())
-    {
-        return;
-    }
-
-    QList<QTableWidgetItem *> items = ui->tableWidget->findItems(text, Qt::MatchContains);
-
-    for (int i = 0; i < items.count(); ++i)
-    {
-        items.at(i)->setBackground(QColor("#b2cbe5"));
-    }
+    m_search->find(text);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief copyToClipboard copy dialog selection to clipboard as comma separated values.
- */
+/// @brief copyToClipboard copy dialog selection to clipboard as comma separated values.
+//---------------------------------------------------------------------------------------------------------------------
 void HistoryDialog::copyToClipboard()
 {
     QItemSelectionModel *model = ui->tableWidget->selectionModel();
@@ -816,4 +815,66 @@ void HistoryDialog::copyToClipboard()
 
     QClipboard *clipboard = QApplication::clipboard();
     clipboard->setText(clipboardString);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void HistoryDialog::searchPrev()
+{
+    m_search->findPrevious();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void HistoryDialog::searchNext()
+{
+    m_search->findNext();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void HistoryDialog::regexToggled(bool checked)
+{
+    if (checked)
+    {
+        ui->case_ToolButton->blockSignals(true);
+        ui->case_ToolButton->setChecked(false);
+        ui->case_ToolButton->blockSignals(false);
+        m_search->setMatchCase(false);
+
+        ui->word_ToolButton->blockSignals(true);
+        ui->word_ToolButton->setChecked(false);
+        ui->word_ToolButton->blockSignals(false);
+        m_search->setMatchWord(false);
+    }
+
+    m_search->setMatchRegEx(checked);
+    m_search->find(ui->find_LineEdit->text());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void HistoryDialog::caseToggled(bool checked)
+{
+    if (checked)
+    {
+        ui->regex_ToolButton->blockSignals(true);
+        ui->regex_ToolButton->setChecked(false);
+        ui->regex_ToolButton->blockSignals(false);
+        m_search->setMatchRegEx(false);
+    }
+
+    m_search->setMatchCase(checked);
+    m_search->find(ui->find_LineEdit->text());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void HistoryDialog::wordToggled(bool checked)
+{
+    if (checked)
+    {
+        ui->regex_ToolButton->blockSignals(true);
+        ui->regex_ToolButton->setChecked(false);
+        ui->regex_ToolButton->blockSignals(false);
+        m_search->setMatchRegEx(false);
+    }
+
+    m_search->setMatchWord(checked);
+    m_search->find(ui->find_LineEdit->text());
 }

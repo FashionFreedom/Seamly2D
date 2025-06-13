@@ -179,7 +179,7 @@ private:
     QComboBox          *comboBoxUnits;
 
     std::shared_ptr<VLockGuard<char>> lock;
-    QSharedPointer<VTableSearch>      search;
+    QSharedPointer<VTableSearch>      m_search;
     QLabel             *labelGradationHeights;
     QLabel             *labelGradationSizes;
     QLabel             *labelPatternUnit;
