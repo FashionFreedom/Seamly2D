@@ -4678,7 +4678,7 @@ void MainWindow::setWidgetsEnabled(bool enable)
     ui->loadIndividual_Action->setEnabled(enable && designStage);
     ui->loadMultisize_Action->setEnabled(enable && designStage);
     ui->unloadMeasurements_Action->setEnabled(enable && designStage);
-    ui->table_Action->setEnabled(enable && draftStage);
+    ui->table_Action->setEnabled(enable && designStage);
 
     //enable history menu actions
     ui->history_Action->setEnabled(enable && draftStage);
