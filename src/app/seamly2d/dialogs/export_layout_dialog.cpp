@@ -131,6 +131,8 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
     if (m_mode != Draw::Layout)
     {
         removeFormatFromList(LayoutExportFormat::PDFTiled);
+        ui->tiledPDF_Widget->hide();
+        adjustSize();
     }
     else
     {
@@ -182,6 +184,8 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
 
     readSettings();
     showExportFiles();//Show example for current format.
+
+    setFixedHeight(this->height());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -518,7 +522,7 @@ void ExportLayoutDialog::showExportFiles()
     if (m_mode != Draw::Layout)
     {
 
-        ui->export_GroupBox->hide();
+        ui->export_Frame->hide();
         adjustSize();
         return;
     }
@@ -526,9 +530,8 @@ void ExportLayoutDialog::showExportFiles()
     const LayoutExportFormat currentFormat = format();
     ui->textAsPaths_Checkbox->setEnabled(true);
     ui->quality_Slider->setEnabled(false);
-    ui->paperFormat_GroupBox->setEnabled(false);
-    ui->margins_GroupBox->setEnabled(false);
-    ui->export_GroupBox->show();
+    ui->tiledPDF_Widget->setEnabled(false);
+    ui->export_Frame->show();
     adjustSize();
 
     if (currentFormat == LayoutExportFormat::PDFTiled)
@@ -588,8 +591,7 @@ void ExportLayoutDialog::showExportFiles()
             ui->binaryDXF_CheckBox->setEnabled(true);
             break;
         case LayoutExportFormat::PDFTiled:
-            ui->paperFormat_GroupBox->setEnabled(true);
-            ui->margins_GroupBox->setEnabled(true);
+            ui->tiledPDF_Widget->setEnabled(true);
             break;
         case LayoutExportFormat::PNG:
             ui->quality_Slider->setEnabled(true);
@@ -643,8 +645,6 @@ void ExportLayoutDialog::showEvent(QShowEvent *event)
     {
         return;
     }
-
-    setFixedHeight(size().height());
 
     m_isInitialized = true;//first show windows are held
 }
