@@ -4305,6 +4305,26 @@ Deseja descarregá-la?</translation>
         <source>Can&apos;t create record.</source>
         <translation>Nâo â possâvel criar registro.</translation>
     </message>
+    <message>
+        <source>Find previous</source>
+        <translation>Encontrar anterior</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation>Encontre o prâximo</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Maiúsculas e minúsculas</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Pesquise por palavra completa</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Pesquisar por expressão regular</translation>
+    </message>
 </context>
 <context>
     <name>ImageDialog</name>
@@ -5340,10 +5360,6 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
         <translation>Salvar</translation>
     </message>
     <message>
-        <source>Save</source>
-        <translation>Salvar</translation>
-    </message>
-    <message>
         <source>Save pattern</source>
         <translation>Salvar padrâo</translation>
     </message>
@@ -6016,10 +6032,6 @@ Pretende guardar as suas alterações?</translation>
     <message>
         <source>Point on Curve (O, C)</source>
         <translation>Ponto na curva (O, C)</translation>
-    </message>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>Sobre Seamly2D</translation>
     </message>
     <message>
         <source>Exit the Application</source>
@@ -11392,6 +11404,18 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Convert 3DLook file:</source>
         <translation>Converter arquivo 3DLook:</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Maiúsculas e minúsculas</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Pesquise por palavra completa</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Pesquisar por expressão regular</translation>
     </message>
 </context>
 <context>

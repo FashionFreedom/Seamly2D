@@ -3286,7 +3286,7 @@ di controllo</translation>
     </message>
     <message>
         <source> Control Point Lengths</source>
-        <translation type="unfinished"> Lunghezze dei
+        <translation> Lunghezze dei
 punti di controllo</translation>
     </message>
     <message>
@@ -4305,6 +4305,26 @@ Volete scaricarla?</translation>
     <message>
         <source>Can&apos;t create record.</source>
         <translation>Impossibile creare il record.</translation>
+    </message>
+    <message>
+        <source>Find previous</source>
+        <translation>Trova precedente</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation>Trova il prossimo</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Maiuscole e minuscole</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Cerca per parola intera</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Ricerca tramite espressione regolare</translation>
     </message>
 </context>
 <context>
@@ -5342,10 +5362,6 @@ Il programma viene fornito così com&apos;è, senza alcuna garanzia di alcun tip
         <translation>Salva</translation>
     </message>
     <message>
-        <source>Save</source>
-        <translation>Salva</translation>
-    </message>
-    <message>
         <source>Save pattern</source>
         <translation>Salva modello</translation>
     </message>
@@ -6018,10 +6034,6 @@ Vuoi salvare i cambiamenti?</translation>
     <message>
         <source>Point on Curve (O, C)</source>
         <translation>Punto sulla curva (O, C)</translation>
-    </message>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>Informazioni su Seamly2D</translation>
     </message>
     <message>
         <source>Exit the Application</source>
@@ -11394,6 +11406,18 @@ caricare in SeamlyME come di consueto.
     <message>
         <source>Convert 3DLook file:</source>
         <translation>Convertire file 3DLook:</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Maiuscole e minuscole</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Cerca per parola intera</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Ricerca tramite espressione regolare</translation>
     </message>
 </context>
 <context>

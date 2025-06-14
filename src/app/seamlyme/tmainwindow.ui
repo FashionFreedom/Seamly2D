@@ -136,6 +136,9 @@
           </item>
           <item>
            <widget class="QToolButton" name="regex_ToolButton">
+            <property name="toolTip">
+             <string>Seach by regular expression</string>
+            </property>
             <property name="text">
              <string notr="true"/>
             </property>
@@ -156,6 +159,9 @@
           </item>
           <item>
            <widget class="QToolButton" name="case_ToolButton">
+            <property name="toolTip">
+             <string>Case sensitive</string>
+            </property>
             <property name="text">
              <string notr="true"/>
             </property>
@@ -176,6 +182,9 @@
           </item>
           <item>
            <widget class="QToolButton" name="word_ToolButton">
+            <property name="toolTip">
+             <string>Search by full word</string>
+            </property>
             <property name="text">
              <string notr="true"/>
             </property>

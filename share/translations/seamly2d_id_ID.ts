@@ -4319,6 +4319,26 @@ Apakah Anda ingin mengunduhnya?</translation>
         <source>Can&apos;t create record.</source>
         <translation>Tidak dapat membuat rekaman.</translation>
     </message>
+    <message>
+        <source>Find previous</source>
+        <translation>Temukan sebelumnya</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation>Temukan berikutnya</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Peka huruf besar-kecil</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Cari berdasarkan kata lengkap</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Pencarian dengan ekspresi reguler</translation>
+    </message>
 </context>
 <context>
     <name>ImageDialog</name>
@@ -5354,10 +5374,6 @@ Program ini disediakan SEBAGAIMANA ADANYA TANPA JAMINAN DALAM BENTUK APA PUN, TE
         <translation>Simpan</translation>
     </message>
     <message>
-        <source>Save</source>
-        <translation>Simpan</translation>
-    </message>
-    <message>
         <source>Save pattern</source>
         <translation>Simpan pola</translation>
     </message>
@@ -6030,10 +6046,6 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
     <message>
         <source>Point on Curve (O, C)</source>
         <translation>Titik pada Kurva (O, C)</translation>
-    </message>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>Mengenai Seamly2D</translation>
     </message>
     <message>
         <source>Exit the Application</source>
@@ -11406,6 +11418,18 @@ unggah ke SeamlyME seperti biasa.
     <message>
         <source>Convert 3DLook file:</source>
         <translation>Konversi file 3DLook:</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Peka huruf besar-kecil</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Cari berdasarkan kata lengkap</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Pencarian dengan ekspresi reguler</translation>
     </message>
 </context>
 <context>
