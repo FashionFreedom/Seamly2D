@@ -4299,6 +4299,26 @@ Do you want to download it?</source>
         <source>Can&apos;t create record.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Find previous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ImageDialog</name>
@@ -5321,10 +5341,6 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>שמור</translation>
     </message>
     <message>
-        <source>Save</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Save pattern</source>
         <translation>שמירת תבנית</translation>
     </message>
@@ -5995,10 +6011,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point on Curve (O, C)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About Seamly2D</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11363,6 +11375,18 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Convert 3DLook file:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

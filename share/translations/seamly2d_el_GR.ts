@@ -4321,6 +4321,26 @@ Do you want to download it?</source>
         <source>Can&apos;t create record.</source>
         <translation>Δεν είναι δυνατή η δημιουργία εγγραφής.</translation>
     </message>
+    <message>
+        <source>Find previous</source>
+        <translation>Εύρεση προηγούμενου</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation>Εύρεση επόμενου</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Διάκριση πεζών-κεφαλαίων</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Αναζήτηση με πλήρη λέξη</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Αναζήτηση με κανονική έκφραση</translation>
+    </message>
 </context>
 <context>
     <name>ImageDialog</name>
@@ -5356,10 +5376,6 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Αποθήκευση</translation>
     </message>
     <message>
-        <source>Save</source>
-        <translation>Αποθήκευση</translation>
-    </message>
-    <message>
         <source>Save pattern</source>
         <translation>Αποθήκευση πατρόν</translation>
     </message>
@@ -6032,10 +6048,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Point on Curve (O, C)</source>
         <translation>Σημείο στην καμπύλη (O, C)</translation>
-    </message>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>Σχετικά με το Seamly2D</translation>
     </message>
     <message>
         <source>Exit the Application</source>
@@ -11408,6 +11420,18 @@ load in SeamlyME as usual.
     <message>
         <source>Convert 3DLook file:</source>
         <translation>Μετατροπή αρχείου 3DLook:</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Διάκριση πεζών-κεφαλαίων</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Αναζήτηση με πλήρη λέξη</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Αναζήτηση με κανονική έκφραση</translation>
     </message>
 </context>
 <context>

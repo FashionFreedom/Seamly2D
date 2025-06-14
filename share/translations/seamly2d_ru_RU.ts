@@ -4323,6 +4323,26 @@ Do you want to download it?</source>
         <source>Can&apos;t create record.</source>
         <translation>Невозможно создать запись.</translation>
     </message>
+    <message>
+        <source>Find previous</source>
+        <translation>Найти предыдущий</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation>Найти следующий</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>С учетом регистра</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Поиск по полному слову</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Поиск по регулярному выражению</translation>
+    </message>
 </context>
 <context>
     <name>ImageDialog</name>
@@ -6026,10 +6046,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Point on Curve (O, C)</source>
         <translation>Точка на кривой (O, C)</translation>
-    </message>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>О проекте Seamly2D</translation>
     </message>
     <message>
         <source>Exit the Application</source>
@@ -11409,6 +11425,18 @@ load in SeamlyME as usual.
     <message>
         <source>Convert 3DLook file:</source>
         <translation>Конвертируйте файл 3DLook:</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>С учетом регистра</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Поиск по полному слову</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Поиск по регулярному выражению</translation>
     </message>
 </context>
 <context>

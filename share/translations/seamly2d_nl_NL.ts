@@ -4302,6 +4302,26 @@ Wilt u deze downloaden?</translation>
         <source>Can&apos;t create record.</source>
         <translation>Kan geen record aanmaken.</translation>
     </message>
+    <message>
+        <source>Find previous</source>
+        <translation>Vind vorige</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation>Vind volgende</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Hoofdlettergevoelig</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Zoek op volledig woord</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Zoeken op reguliere expressie</translation>
+    </message>
 </context>
 <context>
     <name>ImageDialog</name>
@@ -6009,10 +6029,6 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Point on Curve (O, C)</source>
         <translation>Punt op de curve (O, C)</translation>
-    </message>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>Over Seamly2D</translation>
     </message>
     <message>
         <source>Exit the Application</source>
@@ -11386,6 +11402,18 @@ load in SeamlyME as usual.
     <message>
         <source>Convert 3DLook file:</source>
         <translation>3DLook-bestand converteren:</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Hoofdlettergevoelig</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Zoek op volledig woord</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Zoeken op reguliere expressie</translation>
     </message>
 </context>
 <context>

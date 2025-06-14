@@ -3082,12 +3082,12 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Korjaa matemaattinen kaava</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>Peru</translation>
-    </message>
-    <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
         <translation>Kaavaa laskettaessa tapahtui virhe. Voit yrittää kumota viimeisimmän operaation tai korjata rikkinäisen kaavan.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Peruuttaa</translation>
     </message>
 </context>
 <context>
@@ -4318,6 +4318,26 @@ Haluatko ladata sen?</translation>
     <message>
         <source>Can&apos;t create record.</source>
         <translation>Tietuetta ei voida luoda.</translation>
+    </message>
+    <message>
+        <source>Find previous</source>
+        <translation>Etsi edellinen</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation>Etsi seuraava</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Kirjainkoolla on merkitystä</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Hae koko sanalla</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Hae säännöllisen lausekkeen avulla</translation>
     </message>
 </context>
 <context>
@@ -6026,10 +6046,6 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Point on Curve (O, C)</source>
         <translation>Piste käyrällä (O, C)</translation>
-    </message>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>Tietoja Seamly2Dsta</translation>
     </message>
     <message>
         <source>Exit the Application</source>
@@ -11402,6 +11418,18 @@ Haluatko tallentaa muutokset?</translation>
         <source>female</source>
         <comment>gender</comment>
         <translation>nainen</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Kirjainkoolla on merkitystä</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Hae koko sanalla</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Hae säännöllisen lausekkeen avulla</translation>
     </message>
 </context>
 <context>

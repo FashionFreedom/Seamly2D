@@ -4339,6 +4339,26 @@ Do you want to download it?</source>
         <source>Can&apos;t create record.</source>
         <translation>No se puede crear el registro.</translation>
     </message>
+    <message>
+        <source>Find previous</source>
+        <translation>Buscar anterior</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation>Buscar siguiente</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Distingue mayúsculas y minúsculas</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Buscar por palabra completa</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Búsqueda por expresión regular</translation>
+    </message>
 </context>
 <context>
     <name>ImageDialog</name>
@@ -11438,6 +11458,18 @@ load in SeamlyME as usual.
     <message>
         <source>Convert 3DLook file:</source>
         <translation>Convertir archivo 3DLook:</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Distingue mayúsculas y minúsculas</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Buscar por palabra completa</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Búsqueda por expresión regular</translation>
     </message>
 </context>
 <context>

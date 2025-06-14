@@ -4317,6 +4317,26 @@ Chcete si ji stáhnout?</translation>
         <source>Can&apos;t create record.</source>
         <translation>Záznam nelze vytvořit.</translation>
     </message>
+    <message>
+        <source>Find previous</source>
+        <translation>Najít předchozí</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation>Najít další</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Rozlišují se malá a velká písmena</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Hledejte podle celého slova</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>vyhledávání podle regulárního výrazu</translation>
+    </message>
 </context>
 <context>
     <name>ImageDialog</name>
@@ -5352,10 +5372,6 @@ Program je poskytován TAK, JAK JE, BEZ JAKÉKOLI ZÁRUKY, VČETNĚ ZÁRUKY DESI
         <translation>Uložit</translation>
     </message>
     <message>
-        <source>Save</source>
-        <translation>Uložit</translation>
-    </message>
-    <message>
         <source>Save pattern</source>
         <translation>Uložit střih</translation>
     </message>
@@ -6028,10 +6044,6 @@ Chcete uložit své změny?</translation>
     <message>
         <source>Point on Curve (O, C)</source>
         <translation>Bod na křivce (O, C)</translation>
-    </message>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>O programu Seamly2D</translation>
     </message>
     <message>
         <source>Exit the Application</source>
@@ -11404,6 +11416,18 @@ SeamlyME jako obvykle.
     <message>
         <source>Convert 3DLook file:</source>
         <translation>Převést soubor 3DLook:</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Rozlišují se malá a velká písmena</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Hledejte podle celého slova</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>vyhledávání podle regulárního výrazu</translation>
     </message>
 </context>
 <context>

@@ -4321,6 +4321,26 @@ Do you want to download it?</source>
         <source>Can&apos;t create record.</source>
         <translation>Δεν είναι δυνατή η δημιουργία εγγραφής.</translation>
     </message>
+    <message>
+        <source>Find previous</source>
+        <translation>Εύρεση προηγούμενου</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation>Εύρεση επόμενου</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Враховуючи регістр</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Пошук за повним словом</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Пошук за регулярним виразом</translation>
+    </message>
 </context>
 <context>
     <name>ImageDialog</name>
@@ -6027,10 +6047,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Point on Curve (O, C)</source>
         <translation>Σημείο στην καμπύλη (O, C)</translation>
-    </message>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>Pro Seamly2D</translation>
     </message>
     <message>
         <source>Exit the Application</source>
@@ -11403,6 +11419,18 @@ load in SeamlyME as usual.
     <message>
         <source>Convert 3DLook file:</source>
         <translation>Μετατροπή αρχείου 3DLook:</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Враховуючи регістр</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Пошук за повним словом</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Пошук за регулярним виразом</translation>
     </message>
 </context>
 <context>

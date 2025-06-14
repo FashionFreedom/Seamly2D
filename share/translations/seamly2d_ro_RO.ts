@@ -4321,6 +4321,26 @@ Doriți să o descărcați?</translation>
         <source>Can&apos;t create record.</source>
         <translation>Nu se poate crea înregistrarea.</translation>
     </message>
+    <message>
+        <source>Find previous</source>
+        <translation>Găsește anterioară</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation>Găsește următorul</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Caz sensibil</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Căutați după cuvânt complet</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Căutare prin expresie regulată</translation>
+    </message>
 </context>
 <context>
     <name>ImageDialog</name>
@@ -5356,10 +5376,6 @@ Programul este furnizat CA ATARE, FĂRĂ NICIUN FEL DE GARANȚIE, INCLUSIV GARAN
         <translation>Salvează</translation>
     </message>
     <message>
-        <source>Save</source>
-        <translation>Salvează</translation>
-    </message>
-    <message>
         <source>Save pattern</source>
         <translation>Salvează tipar</translation>
     </message>
@@ -6032,10 +6048,6 @@ Doriți să salvați modificările?</translation>
     <message>
         <source>Point on Curve (O, C)</source>
         <translation>Punct pe curbă (O, C)</translation>
-    </message>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>Despre Seamly2D</translation>
     </message>
     <message>
         <source>Exit the Application</source>
@@ -11407,6 +11419,18 @@ load in SeamlyME as usual.
     <message>
         <source>Convert 3DLook file:</source>
         <translation>Convertiți fișierul 3DLook:</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Caz sensibil</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Căutați după cuvânt complet</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Căutare prin expresie regulată</translation>
     </message>
 </context>
 <context>

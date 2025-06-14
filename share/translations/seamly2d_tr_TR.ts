@@ -4319,6 +4319,26 @@ Do you want to download it?</source>
         <source>Can&apos;t create record.</source>
         <translation>Kayıt oluşturulamıyor.</translation>
     </message>
+    <message>
+        <source>Find previous</source>
+        <translation>Öncekini bul</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation>Sonrakini bul</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Büyük/küçük harfe duyarlı</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Tam kelimeye göre ara</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Düzenli ifadeye göre ara</translation>
+    </message>
 </context>
 <context>
     <name>ImageDialog</name>
@@ -6026,10 +6046,6 @@ Do you want to save your changes?</translation>
     <message>
         <source>Point on Curve (O, C)</source>
         <translation>Eğri Üzerindeki Nokta (O, C)</translation>
-    </message>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>Seamly2D Hakkında</translation>
     </message>
     <message>
         <source>Exit the Application</source>
@@ -11401,6 +11417,18 @@ load in SeamlyME as usual.
     <message>
         <source>Convert 3DLook file:</source>
         <translation>3DLook dosyasını dönüştür:</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Büyük/küçük harfe duyarlı</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Tam kelimeye göre ara</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Düzenli ifadeye göre ara</translation>
     </message>
 </context>
 <context>

@@ -4302,6 +4302,26 @@ Möchten Sie sie herunterladen?</translation>
         <source>ElArc_</source>
         <translation>ElBogen_</translation>
     </message>
+    <message>
+        <source>Find previous</source>
+        <translation>Vorheriges finden</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation>Nächstes finden</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Groß- und Kleinschreibung beachten</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Suche nach vollständigem Wort</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Suche nach regulären Ausdrücken</translation>
+    </message>
 </context>
 <context>
     <name>ImageDialog</name>
@@ -5337,10 +5357,6 @@ Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLIC
         <translation>Speichern</translation>
     </message>
     <message>
-        <source>Save</source>
-        <translation>Speichern</translation>
-    </message>
-    <message>
         <source>Save pattern</source>
         <translation>Schnittmuster speichern</translation>
     </message>
@@ -6013,10 +6029,6 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Point on Curve (O, C)</source>
         <translation>Punkt auf Kurve (O, C)</translation>
-    </message>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>Über Seamly2D</translation>
     </message>
     <message>
         <source>Exit the Application</source>
@@ -11389,6 +11401,18 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Convert 3DLook file:</source>
         <translation>3DLook-Datei konvertieren:</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Groß- und Kleinschreibung beachten</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Suche nach vollständigem Wort</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Suche nach regulären Ausdrücken</translation>
     </message>
 </context>
 <context>
