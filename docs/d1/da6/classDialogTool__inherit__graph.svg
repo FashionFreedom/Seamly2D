@@ -2830,61 +2830,73 @@ var sectionId = 'dynsection-0';
 <!-- Node39 -->
 <g id="Node000039" class="node">
 <title>Node39</title>
-<g id="a_Node000039"><a xlink:href="../../d1/d42/classHistoryDialog.html" target="_top" xlink:title="The HistoryDialog class show dialog history.">
-<polygon fill="white" stroke="transparent" points="5962,-604 5821,-604 5821,-225 5962,-225 5962,-604"/>
-<text text-anchor="start" x="5858.5" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00">HistoryDialog</text>
+<g id="a_Node000039"><a xlink:href="../../d1/d42/classHistoryDialog.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="transparent" points="5962,-649 5821,-649 5821,-180 5962,-180 5962,-649"/>
+<text text-anchor="start" x="5858.5" y="-636.5" font-family="Helvetica,sans-Serif" font-size="10.00">HistoryDialog</text>
+<text text-anchor="start" x="5828" y="-621.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="5838.5" y="-621.5" font-family="Helvetica,sans-Serif" font-size="10.00">ui</text>
+<text text-anchor="start" x="5828" y="-606.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="5838.5" y="-606.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_doc</text>
+<text text-anchor="start" x="5828" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="5838.5" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_cursorRow</text>
 <text text-anchor="start" x="5828" y="-576.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="5838.5" y="-576.5" font-family="Helvetica,sans-Serif" font-size="10.00">ui</text>
+<text text-anchor="start" x="5838.5" y="-576.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_cursorToolRecordRow</text>
 <text text-anchor="start" x="5828" y="-561.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="5838.5" y="-561.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_doc</text>
-<text text-anchor="start" x="5828" y="-546.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="5838.5" y="-546.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_cursorRow</text>
-<text text-anchor="start" x="5828" y="-531.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="5838.5" y="-531.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_cursorToolRecordRow</text>
+<text text-anchor="start" x="5838.5" y="-561.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_search</text>
+<text text-anchor="start" x="5825.5" y="-546.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="5838.5" y="-546.5" font-family="Helvetica,sans-Serif" font-size="10.00">HistoryDialog()</text>
+<text text-anchor="start" x="5825.5" y="-531.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="5838.5" y="-531.5" font-family="Helvetica,sans-Serif" font-size="10.00">~HistoryDialog()</text>
 <text text-anchor="start" x="5825.5" y="-516.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="5838.5" y="-516.5" font-family="Helvetica,sans-Serif" font-size="10.00">HistoryDialog()</text>
+<text text-anchor="start" x="5838.5" y="-516.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogAccepted()</text>
 <text text-anchor="start" x="5825.5" y="-501.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="5838.5" y="-501.5" font-family="Helvetica,sans-Serif" font-size="10.00">~HistoryDialog()</text>
+<text text-anchor="start" x="5838.5" y="-501.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogApply()</text>
 <text text-anchor="start" x="5825.5" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="5838.5" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogAccepted()</text>
+<text text-anchor="start" x="5838.5" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00">cellClicked()</text>
 <text text-anchor="start" x="5825.5" y="-471.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="5838.5" y="-471.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogApply()</text>
+<text text-anchor="start" x="5838.5" y="-471.5" font-family="Helvetica,sans-Serif" font-size="10.00">changedCursor()</text>
 <text text-anchor="start" x="5825.5" y="-456.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="5838.5" y="-456.5" font-family="Helvetica,sans-Serif" font-size="10.00">cellClicked()</text>
-<text text-anchor="start" x="5825.5" y="-441.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="5838.5" y="-441.5" font-family="Helvetica,sans-Serif" font-size="10.00">changedCursor()</text>
-<text text-anchor="start" x="5825.5" y="-426.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="5838.5" y="-426.5" font-family="Helvetica,sans-Serif" font-size="10.00">updateHistory()</text>
+<text text-anchor="start" x="5838.5" y="-456.5" font-family="Helvetica,sans-Serif" font-size="10.00">updateHistory()</text>
+<text text-anchor="start" x="5825.5" y="-441.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="5838.5" y="-441.5" font-family="Helvetica,sans-Serif" font-size="10.00">closeEvent()</text>
+<text text-anchor="start" x="5825.5" y="-426.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="5838.5" y="-426.5" font-family="Helvetica,sans-Serif" font-size="10.00">changeEvent()</text>
 <text text-anchor="start" x="5825.5" y="-411.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="5838.5" y="-411.5" font-family="Helvetica,sans-Serif" font-size="10.00">closeEvent()</text>
-<text text-anchor="start" x="5825.5" y="-396.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="5838.5" y="-396.5" font-family="Helvetica,sans-Serif" font-size="10.00">changeEvent()</text>
-<text text-anchor="start" x="5825.5" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="5838.5" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">eventFilter()</text>
+<text text-anchor="start" x="5838.5" y="-411.5" font-family="Helvetica,sans-Serif" font-size="10.00">eventFilter()</text>
+<text text-anchor="start" x="5828" y="-396.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="5838.5" y="-396.5" font-family="Helvetica,sans-Serif" font-size="10.00">fillTable()</text>
+<text text-anchor="start" x="5828" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="5838.5" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">record()</text>
 <text text-anchor="start" x="5828" y="-366.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="5838.5" y="-366.5" font-family="Helvetica,sans-Serif" font-size="10.00">fillTable()</text>
+<text text-anchor="start" x="5838.5" y="-366.5" font-family="Helvetica,sans-Serif" font-size="10.00">initializeTable()</text>
 <text text-anchor="start" x="5828" y="-351.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="5838.5" y="-351.5" font-family="Helvetica,sans-Serif" font-size="10.00">record()</text>
+<text text-anchor="start" x="5838.5" y="-351.5" font-family="Helvetica,sans-Serif" font-size="10.00">showTool()</text>
 <text text-anchor="start" x="5828" y="-336.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="5838.5" y="-336.5" font-family="Helvetica,sans-Serif" font-size="10.00">initializeTable()</text>
+<text text-anchor="start" x="5838.5" y="-336.5" font-family="Helvetica,sans-Serif" font-size="10.00">getPointName()</text>
 <text text-anchor="start" x="5828" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="5838.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">showTool()</text>
+<text text-anchor="start" x="5838.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">attrUInt()</text>
 <text text-anchor="start" x="5828" y="-306.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="5838.5" y="-306.5" font-family="Helvetica,sans-Serif" font-size="10.00">getPointName()</text>
+<text text-anchor="start" x="5838.5" y="-306.5" font-family="Helvetica,sans-Serif" font-size="10.00">retranslateUi()</text>
 <text text-anchor="start" x="5828" y="-291.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="5838.5" y="-291.5" font-family="Helvetica,sans-Serif" font-size="10.00">attrUInt()</text>
+<text text-anchor="start" x="5838.5" y="-291.5" font-family="Helvetica,sans-Serif" font-size="10.00">cursorRow()</text>
 <text text-anchor="start" x="5828" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="5838.5" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">retranslateUi()</text>
+<text text-anchor="start" x="5838.5" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">findText()</text>
 <text text-anchor="start" x="5828" y="-261.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="5838.5" y="-261.5" font-family="Helvetica,sans-Serif" font-size="10.00">cursorRow()</text>
+<text text-anchor="start" x="5838.5" y="-261.5" font-family="Helvetica,sans-Serif" font-size="10.00">copyToClipboard()</text>
 <text text-anchor="start" x="5828" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="5838.5" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">findText()</text>
+<text text-anchor="start" x="5838.5" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">searchPrev()</text>
 <text text-anchor="start" x="5828" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="5838.5" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">copyToClipboard()</text>
-<polygon fill="#666666" stroke="#666666" points="5821.5,-586.5 5821.5,-586.5 5962.5,-586.5 5962.5,-586.5 5821.5,-586.5"/>
-<polygon fill="#666666" stroke="#666666" points="5821.5,-526.5 5821.5,-526.5 5836.5,-526.5 5836.5,-526.5 5821.5,-526.5"/>
-<polygon fill="#666666" stroke="#666666" points="5836.5,-526.5 5836.5,-526.5 5962.5,-526.5 5962.5,-526.5 5836.5,-526.5"/>
-<polygon fill="none" stroke="#666666" points="5821,-225 5821,-604 5962,-604 5962,-225 5821,-225"/>
+<text text-anchor="start" x="5838.5" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">searchNext()</text>
+<text text-anchor="start" x="5828" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="5838.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">regexToggled()</text>
+<text text-anchor="start" x="5828" y="-201.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="5838.5" y="-201.5" font-family="Helvetica,sans-Serif" font-size="10.00">caseToggled()</text>
+<text text-anchor="start" x="5828" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="5838.5" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">wordToggled()</text>
+<polygon fill="#666666" stroke="#666666" points="5821.5,-631.5 5821.5,-631.5 5962.5,-631.5 5962.5,-631.5 5821.5,-631.5"/>
+<polygon fill="#666666" stroke="#666666" points="5821.5,-556.5 5821.5,-556.5 5836.5,-556.5 5836.5,-556.5 5821.5,-556.5"/>
+<polygon fill="#666666" stroke="#666666" points="5836.5,-556.5 5836.5,-556.5 5962.5,-556.5 5962.5,-556.5 5836.5,-556.5"/>
+<polygon fill="none" stroke="#666666" points="5821,-180 5821,-649 5962,-649 5962,-180 5821,-180"/>
 </a>
 </g>
 </g>
@@ -2892,7 +2904,7 @@ var sectionId = 'dynsection-0';
 <g id="edge39_Node000001_Node000039" class="edge">
 <title>Node1&#45;&gt;Node39</title>
 <g id="a_edge39_Node000001_Node000039"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M3666.9,-1309.18C4049.59,-1279 5504.61,-1144.84 5812.5,-829 5869.89,-770.12 5892.1,-683.14 5898.96,-604.12"/>
+<path fill="none" stroke="#63b8ff" d="M3666.9,-1309.18C4049.59,-1279 5504.61,-1144.84 5812.5,-829 5859.12,-781.18 5882.52,-714.82 5893.34,-649.24"/>
 <polygon fill="none" stroke="#63b8ff" points="3666.4,-1305.7 3656.7,-1309.97 3666.95,-1312.68 3666.4,-1305.7"/>
 </a>
 </g>

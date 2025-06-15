@@ -82,7 +82,7 @@ var searchData=
   ['_7eexportlayoutdialog_79',['~ExportLayoutDialog',['../de/dbd/classExportLayoutDialog.html#ad750b12f032ee99f3f0b1db737938669',1,'ExportLayoutDialog']]],
   ['_7efvupdater_80',['~FvUpdater',['../d5/d23/classFvUpdater.html#a27784ddb62744fce830c6cd6b0a3de56',1,'FvUpdater']]],
   ['_7egroupswidget_81',['~GroupsWidget',['../dc/d83/classGroupsWidget.html#a23decc7b1408343e0f0df71607db67a9',1,'GroupsWidget']]],
-  ['_7ehistorydialog_82',['~HistoryDialog',['../d1/d42/classHistoryDialog.html#a75b48e33e0a7116df806f91b82a4f812',1,'HistoryDialog']]],
+  ['_7ehistorydialog_82',['~HistoryDialog',['../d1/d42/classHistoryDialog.html#ab015d9855405f173042d6f41b06640bf',1,'HistoryDialog']]],
   ['_7eimagedialog_83',['~ImageDialog',['../d3/db4/classImageDialog.html#a851b2388c9108c67018c100f1697ba43',1,'ImageDialog']]],
   ['_7eimageitem_84',['~ImageItem',['../d6/da8/classImageItem.html#afeae59e7d35a22b089f850bcef1b585a',1,'ImageItem']]],
   ['_7eindividualsizeconverter_85',['~IndividualSizeConverter',['../d8/dfc/classIndividualSizeConverter.html#a6206ec3189b64dab97f046f5cee1762a',1,'IndividualSizeConverter']]],

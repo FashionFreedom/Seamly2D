@@ -66,7 +66,7 @@ var searchData=
   ['hasbuiltinoprt_63',['HasBuiltInOprt',['../db/d62/classqmu_1_1QmuParserBase.html#a9c72c259bce4f303eb98f1be3c74e49a',1,'qmu::QmuParserBase']]],
   ['hasgroupitem_64',['hasGroupItem',['../d8/dba/classVAbstractPattern.html#adee9dcdd9c9eeb57e91962e980bae052',1,'VAbstractPattern']]],
   ['hasproperty_65',['hasproperty',['../d9/d51/classVPE_1_1VPropertySet.html#a7c1c583787ed9f5246b5b178b0871560',1,'VPE::VPropertySet::hasProperty(VProperty *property) const'],['../d9/d51/classVPE_1_1VPropertySet.html#a29592b0f1df4a05f8f59d1414bf4764a',1,'VPE::VPropertySet::hasProperty(VProperty *property, VProperty *parent) const']]],
-  ['hasresult_66',['HasResult',['../d1/dd3/classVTableSearch.html#ab4f87bb7e2fd6ea340f54fb46bf65855',1,'VTableSearch']]],
+  ['hasresult_66',['hasResult',['../d1/dd3/classVTableSearch.html#acaa2fbc16272a58af3e5e128eb0ac1ad',1,'VTableSearch']]],
   ['hassuppressedquestions_67',['hasSuppressedQuestions',['../dd/dc4/classUtils_1_1CheckableMessageBox.html#a7a3c1115b571076c57b6d4d046c745e8',1,'Utils::CheckableMessageBox']]],
   ['havelitechange_68',['haveLiteChange',['../d8/dba/classVAbstractPattern.html#a6c49f7fb40b9d88a3618ce9347aacfdd',1,'VAbstractPattern']]],
   ['headerclicked_69',['headerclicked',['../dc/d83/classGroupsWidget.html#a510fa9c431833f849e0abeb0cc436d2c',1,'GroupsWidget::headerClicked()'],['../d4/dc9/classPiecesWidget.html#a7fada8de6074741dc98bd905a6dd8628',1,'PiecesWidget::headerClicked()']]],
