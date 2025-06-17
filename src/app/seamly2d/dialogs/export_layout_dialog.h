@@ -65,6 +65,7 @@ public:
 
     void                  setBinaryDXFFormat(bool binary);
     bool                  isBinaryDXFFormat() const;
+    void                  enableBinaryDXFFormatCheckbox();
 
     void                  setDestinationPath(const QString& cmdDestinationPath);
 
