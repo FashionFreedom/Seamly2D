@@ -3710,10 +3710,6 @@ p, li { white-space: pre-wrap; }
         <translation>Kwaliteit (0-100):</translation>
     </message>
     <message>
-        <source>Margins</source>
-        <translation>Marges</translation>
-    </message>
-    <message>
         <source>Right:</source>
         <translation>Rechts:</translation>
     </message>
@@ -3728,10 +3724,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Bottom:</source>
         <translation>Onder:</translation>
-    </message>
-    <message>
-        <source>Paper format</source>
-        <translation>Papierformaat</translation>
     </message>
     <message>
         <source>Templates: </source>
@@ -3780,6 +3772,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Export files:</source>
         <translation>Bestanden exporteren:</translation>
+    </message>
+    <message>
+        <source>Margins (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paper format (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

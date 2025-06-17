@@ -3725,10 +3725,6 @@ p, li { boşluk: ön sarma; }
         <translation>Kalite (0-100):</translation>
     </message>
     <message>
-        <source>Margins</source>
-        <translation>Kenar Boşlukları</translation>
-    </message>
-    <message>
         <source>Right:</source>
         <translation>Sağ:</translation>
     </message>
@@ -3743,10 +3739,6 @@ p, li { boşluk: ön sarma; }
     <message>
         <source>Bottom:</source>
         <translation>Alt:</translation>
-    </message>
-    <message>
-        <source>Paper format</source>
-        <translation>Kağıt formatı</translation>
     </message>
     <message>
         <source>Templates: </source>
@@ -3795,6 +3787,14 @@ p, li { boşluk: ön sarma; }
     <message>
         <source>Export files:</source>
         <translation>Dosyaları dışa aktar:</translation>
+    </message>
+    <message>
+        <source>Margins (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paper format (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

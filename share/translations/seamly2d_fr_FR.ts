@@ -3738,10 +3738,6 @@ points de contrôle</translation>
         <translation>Qualité (0-100):</translation>
     </message>
     <message>
-        <source>Margins</source>
-        <translation>Marges</translation>
-    </message>
-    <message>
         <source>Right:</source>
         <translation>Droite:</translation>
     </message>
@@ -3756,10 +3752,6 @@ points de contrôle</translation>
     <message>
         <source>Bottom:</source>
         <translation>Bas:</translation>
-    </message>
-    <message>
-        <source>Paper format</source>
-        <translation>Format du papier</translation>
     </message>
     <message>
         <source>Templates: </source>
@@ -3809,6 +3801,14 @@ points de contrôle</translation>
     <message>
         <source>Export files:</source>
         <translation>Fichiers exportés:</translation>
+    </message>
+    <message>
+        <source>Margins (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paper format (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

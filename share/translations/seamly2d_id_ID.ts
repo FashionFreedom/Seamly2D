@@ -3725,10 +3725,6 @@ p, li { spasi: pra-bungkus; }
         <translation>Kualitas (0-100):</translation>
     </message>
     <message>
-        <source>Margins</source>
-        <translation>Margin</translation>
-    </message>
-    <message>
         <source>Right:</source>
         <translation>Benar:</translation>
     </message>
@@ -3743,10 +3739,6 @@ p, li { spasi: pra-bungkus; }
     <message>
         <source>Bottom:</source>
         <translation>Bawah:</translation>
-    </message>
-    <message>
-        <source>Paper format</source>
-        <translation>Format kertas</translation>
     </message>
     <message>
         <source>Templates: </source>
@@ -3795,6 +3787,14 @@ p, li { spasi: pra-bungkus; }
     <message>
         <source>Export files:</source>
         <translation>Ekspor file:</translation>
+    </message>
+    <message>
+        <source>Margins (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paper format (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -3726,10 +3726,6 @@ pituudet</translation>
         <translation>Laatu (0-100):</translation>
     </message>
     <message>
-        <source>Margins</source>
-        <translation>Marginaalit</translation>
-    </message>
-    <message>
         <source>Right:</source>
         <translation>Oikein:</translation>
     </message>
@@ -3744,10 +3740,6 @@ pituudet</translation>
     <message>
         <source>Bottom:</source>
         <translation>Alareuna:</translation>
-    </message>
-    <message>
-        <source>Paper format</source>
-        <translation>Paperimuoto</translation>
     </message>
     <message>
         <source>Templates: </source>
@@ -3796,6 +3788,14 @@ pituudet</translation>
     <message>
         <source>Export files:</source>
         <translation>Vie tiedostot:</translation>
+    </message>
+    <message>
+        <source>Margins (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paper format (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

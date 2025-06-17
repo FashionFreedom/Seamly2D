@@ -3710,10 +3710,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Margins</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Right:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3727,10 +3723,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Bottom:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Paper format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3779,6 +3771,14 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Export files:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Margins (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paper format (tiled PDF only)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
