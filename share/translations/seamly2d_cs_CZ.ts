@@ -3725,10 +3725,6 @@ p, li { white-space: pre-wrap; }
         <translation>Kvalita (0–100):</translation>
     </message>
     <message>
-        <source>Margins</source>
-        <translation>Okraje</translation>
-    </message>
-    <message>
         <source>Right:</source>
         <translation>Vpravo:</translation>
     </message>
@@ -3743,10 +3739,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Bottom:</source>
         <translation>Dole:</translation>
-    </message>
-    <message>
-        <source>Paper format</source>
-        <translation>Formát papíru</translation>
     </message>
     <message>
         <source>Templates: </source>
@@ -3795,6 +3787,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Export files:</source>
         <translation>Exportovat soubory:</translation>
+    </message>
+    <message>
+        <source>Margins (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paper format (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

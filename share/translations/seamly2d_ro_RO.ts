@@ -3727,10 +3727,6 @@ p, li { white-space: pre-wrap; }
         <translation>Calitate (0-100):</translation>
     </message>
     <message>
-        <source>Margins</source>
-        <translation>Margini</translation>
-    </message>
-    <message>
         <source>Right:</source>
         <translation>Corect:</translation>
     </message>
@@ -3745,10 +3741,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Bottom:</source>
         <translation>Jos:</translation>
-    </message>
-    <message>
-        <source>Paper format</source>
-        <translation>Format hârtie</translation>
     </message>
     <message>
         <source>Templates: </source>
@@ -3797,6 +3789,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Export files:</source>
         <translation>Export fișiere:</translation>
+    </message>
+    <message>
+        <source>Margins (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paper format (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -3745,10 +3745,6 @@ p, li { white-space: pre-wrap; }
         <translation>Calidad (0-100):</translation>
     </message>
     <message>
-        <source>Margins</source>
-        <translation>Márgenes</translation>
-    </message>
-    <message>
         <source>Right:</source>
         <translation>Derecha:</translation>
     </message>
@@ -3763,10 +3759,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Bottom:</source>
         <translation>Abajo:</translation>
-    </message>
-    <message>
-        <source>Paper format</source>
-        <translation>Formato de papel</translation>
     </message>
     <message>
         <source>Templates: </source>
@@ -3815,6 +3807,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Export files:</source>
         <translation>Exportar archivos:</translation>
+    </message>
+    <message>
+        <source>Margins (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paper format (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

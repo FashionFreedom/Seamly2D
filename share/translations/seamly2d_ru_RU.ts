@@ -3729,10 +3729,6 @@ p, li { white-space: pre-wrap; }
         <translation>Качество (0-100):</translation>
     </message>
     <message>
-        <source>Margins</source>
-        <translation>Поля</translation>
-    </message>
-    <message>
         <source>Right:</source>
         <translation>Правое:</translation>
     </message>
@@ -3747,10 +3743,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Bottom:</source>
         <translation>Нижнее:</translation>
-    </message>
-    <message>
-        <source>Paper format</source>
-        <translation>Формат листа</translation>
     </message>
     <message>
         <source>Templates: </source>
@@ -3799,6 +3791,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Export files:</source>
         <translation>Экспортировать файлы:</translation>
+    </message>
+    <message>
+        <source>Margins (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paper format (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
