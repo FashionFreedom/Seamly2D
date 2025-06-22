@@ -3791,11 +3791,11 @@ pituudet</translation>
     </message>
     <message>
         <source>Margins (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Reunukset (vain laatoitettu PDF)</translation>
     </message>
     <message>
         <source>Paper format (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Paperimuoto (vain laatoitettu PDF)</translation>
     </message>
 </context>
 <context>

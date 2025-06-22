@@ -3790,11 +3790,11 @@ p, li { spasi: pra-bungkus; }
     </message>
     <message>
         <source>Margins (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Margin (hanya PDF yang diubin)</translation>
     </message>
     <message>
         <source>Paper format (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Format kertas (hanya PDF yang diubin)</translation>
     </message>
 </context>
 <context>

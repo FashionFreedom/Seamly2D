@@ -3777,11 +3777,11 @@ punti di controllo</translation>
     </message>
     <message>
         <source>Margins (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Margini (solo PDF affiancato)</translation>
     </message>
     <message>
         <source>Paper format (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato cartaceo (solo PDF affiancato)</translation>
     </message>
 </context>
 <context>

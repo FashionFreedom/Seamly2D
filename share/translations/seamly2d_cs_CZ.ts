@@ -3790,11 +3790,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Margins (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Okraje (pouze dlaždicově sladěné PDF)</translation>
     </message>
     <message>
         <source>Paper format (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Papírový formát (pouze dlaždicově sladěné PDF)</translation>
     </message>
 </context>
 <context>

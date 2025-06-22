@@ -3792,11 +3792,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Margins (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Περιθώρια (μόνο σε μορφή PDF με πλακίδια)</translation>
     </message>
     <message>
         <source>Paper format (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή χαρτιού (μόνο PDF με πλακίδια)</translation>
     </message>
 </context>
 <context>
