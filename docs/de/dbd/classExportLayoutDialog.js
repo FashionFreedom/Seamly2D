@@ -2,6 +2,7 @@ var classExportLayoutDialog =
 [
     [ "ExportLayoutDialog", "de/dbd/classExportLayoutDialog.html#a78f4fd4af94b19f96ee7dafee837b06c", null ],
     [ "~ExportLayoutDialog", "de/dbd/classExportLayoutDialog.html#ad750b12f032ee99f3f0b1db737938669", null ],
+    [ "enableBinaryDXFFormatCheckbox", "de/dbd/classExportLayoutDialog.html#af0c6264f6d4efb098b6088ddd8071dee", null ],
     [ "exportFormatSuffix", "de/dbd/classExportLayoutDialog.html#a5a5e9452f8bdccac188521cc68bf901e", null ],
     [ "fileName", "de/dbd/classExportLayoutDialog.html#a4d29e095660e51edee81f86a6d427f86", null ],
     [ "format", "de/dbd/classExportLayoutDialog.html#a06f64cfe19ccdde0b4607f83a842b75b", null ],
