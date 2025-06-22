@@ -2404,6 +2404,7 @@ void MainWindow::initializeModesToolBar()
 void MainWindow::initializePointNameToolBar()
 {
     fontComboBox = new QFontComboBox ;
+    fontComboBox->setFontFilters(QFontComboBox::ScalableFonts);
     fontComboBox->setCurrentFont(qApp->Seamly2DSettings()->getPointNameFont());
     ui->pointName_ToolBar->insertWidget(ui->showPointNames_Action,fontComboBox);
     fontComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
