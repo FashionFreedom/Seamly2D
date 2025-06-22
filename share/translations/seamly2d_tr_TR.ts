@@ -3790,11 +3790,11 @@ p, li { boşluk: ön sarma; }
     </message>
     <message>
         <source>Margins (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kenar boşlukları (sadece döşenmiş PDF)</translation>
     </message>
     <message>
         <source>Paper format (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kağıt formatı (sadece döşenmiş PDF)</translation>
     </message>
 </context>
 <context>

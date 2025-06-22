@@ -3792,11 +3792,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Margins (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Margini (doar PDF cu dale)</translation>
     </message>
     <message>
         <source>Paper format (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Format hârtie (doar PDF cu tile)</translation>
     </message>
 </context>
 <context>

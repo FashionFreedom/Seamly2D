@@ -3775,11 +3775,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Margins (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ränder (nur gekacheltes PDF)</translation>
     </message>
     <message>
         <source>Paper format (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Papierformat (nur gekacheltes PDF)</translation>
     </message>
 </context>
 <context>

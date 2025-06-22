@@ -3810,11 +3810,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Margins (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Márgenes (solo PDF en mosaico)</translation>
     </message>
     <message>
         <source>Paper format (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato de papel (solo PDF en mosaico)</translation>
     </message>
 </context>
 <context>

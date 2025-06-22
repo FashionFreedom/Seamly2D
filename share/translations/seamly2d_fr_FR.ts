@@ -3804,11 +3804,11 @@ points de contrôle</translation>
     </message>
     <message>
         <source>Margins (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Marges (PDF en mosaïque uniquement)</translation>
     </message>
     <message>
         <source>Paper format (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Format papier (PDF en mosaïque uniquement)</translation>
     </message>
 </context>
 <context>

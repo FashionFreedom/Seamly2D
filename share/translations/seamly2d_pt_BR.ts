@@ -3776,11 +3776,11 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Margins (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Margens (somente PDF em mosaico)</translation>
     </message>
     <message>
         <source>Paper format (tiled PDF only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato de papel (somente PDF em mosaico)</translation>
     </message>
 </context>
 <context>
