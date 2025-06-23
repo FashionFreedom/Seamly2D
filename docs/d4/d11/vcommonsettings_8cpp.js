@@ -75,6 +75,7 @@ var vcommonsettings_8cpp =
     [ "settingGraphicsUseToolColor", "d4/d11/vcommonsettings_8cpp.html#a634ebb3df267982daf0e69606dbcda37", null ],
     [ "settingGraphicsViewAngleDelta", "d4/d11/vcommonsettings_8cpp.html#a4737f155235118b924d74d65812b04b6", null ],
     [ "settingGraphicsViewAxisOrginColor", "d4/d11/vcommonsettings_8cpp.html#ac11840837551d850eb9ebae587ce5d95", null ],
+    [ "settingGraphicsViewBackgroundColor", "d4/d11/vcommonsettings_8cpp.html#a0604d94a9381c21e923e9c43d2d18fca", null ],
     [ "settingGraphicsViewConstrainModKey", "d4/d11/vcommonsettings_8cpp.html#a1552a1154c4ed66855dbd6a315303c1c", null ],
     [ "settingGraphicsViewConstrainValue", "d4/d11/vcommonsettings_8cpp.html#a4048016dc63639c6b0af9811199d387a", null ],
     [ "settingGraphicsViewDefaultLineColor", "d4/d11/vcommonsettings_8cpp.html#aca9554d8c9c2dcd70bca8de5b32aa7b6", null ],

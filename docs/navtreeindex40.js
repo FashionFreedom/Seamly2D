@@ -1,9 +1,5 @@
 var NAVTREEINDEX40 =
 {
-"d9/d63/classIntersectCircleTangentTool.html#a1213ca7c848b1a93f31626aaf15c81f9":[1,0,112,12],
-"d9/d63/classIntersectCircleTangentTool.html#a13c0547936ad85e24bfd1db4dbe85727":[1,0,112,6],
-"d9/d63/classIntersectCircleTangentTool.html#a15c858cd7f5d8b2a783557ab447e9aef":[1,0,112,9],
-"d9/d63/classIntersectCircleTangentTool.html#a2b3cc99067a0e0aa5ee1a6e361e84702":[1,0,112,22],
 "d9/d63/classIntersectCircleTangentTool.html#a33f5a17efa9dd793c99b8f1f0e4a18c3":[1,0,112,14],
 "d9/d63/classIntersectCircleTangentTool.html#a35d66e27f87a3cfd1808b8c258ff6e02":[1,0,112,11],
 "d9/d63/classIntersectCircleTangentTool.html#a4b0bd290ba513632b520bb1b966bec5a":[1,0,112,5],
@@ -249,5 +245,9 @@ var NAVTREEINDEX40 =
 "d9/d72/classVisToolPointFromArcAndTangent.html#a0dddf4f56e878d412c1e78f22b10d610":[1,0,326,1],
 "d9/d72/classVisToolPointFromArcAndTangent.html#a355e2fe21440be17456dbac87b35f45f":[1,0,326,2],
 "d9/d72/classVisToolPointFromArcAndTangent.html#a46eb4f473ee4e6b1b69392fc1a078522":[1,0,326,6],
-"d9/d72/classVisToolPointFromArcAndTangent.html#a48ed30c0a89c11880d44a84d5b67730e":[1,0,326,0]
+"d9/d72/classVisToolPointFromArcAndTangent.html#a48ed30c0a89c11880d44a84d5b67730e":[1,0,326,0],
+"d9/d72/classVisToolPointFromArcAndTangent.html#a7fac27e66a66c3ac2523e89dd3ccc44c":[1,0,326,7],
+"d9/d72/classVisToolPointFromArcAndTangent.html#a888bd27253ced314179db167e732a9e8":[1,0,326,9],
+"d9/d72/classVisToolPointFromArcAndTangent.html#a8a8d96eed9e172510c26e6380b5e1f9f":[1,0,326,4],
+"d9/d72/classVisToolPointFromArcAndTangent.html#ab995b27d4023b6f20b89c09e31fb4cac":[1,0,326,12]
 };

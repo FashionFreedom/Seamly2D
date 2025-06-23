@@ -1,5 +1,8 @@
 var NAVTREEINDEX29 =
 {
+"d6/d6b/classVToolBisector.html#ad676e3d401b0b047edc984bb1d25cbfe":[1,0,404,10],
+"d6/d6b/classVToolBisector.html#aed774b7d21664cdeca3c099ed734f1ab":[1,0,404,15],
+"d6/d6f/vtoolrecord_8cpp.html":[2,0,0,1,1,1,16],
 "d6/d6f/vtoolrecord_8cpp_source.html":[2,0,0,1,1,1,16],
 "d6/d74/vpropertyfactorymanager__p_8h.html":[2,0,0,1,11,15],
 "d6/d74/vpropertyfactorymanager__p_8h_source.html":[2,0,0,1,11,15],
@@ -246,8 +249,5 @@ var NAVTREEINDEX29 =
 "d6/dbc/remove__groupitem_8cpp_source.html":[2,0,0,1,13,2,33],
 "d6/dbe/vundocommand_8h.html":[2,0,0,1,13,2,50],
 "d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6":[2,0,0,1,13,2,50,1],
-"d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6a0065b32ebc01feeebdc4113120ef8d93":[2,0,0,1,13,2,50,1,13],
-"d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6a102c66ce362e36345ff6ee05da5073a9":[2,0,0,1,13,2,50,1,12],
-"d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6a1415ace152d3e2c8a0bb8864690337fe":[2,0,0,1,13,2,50,1,17],
-"d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6a184d86ac7612dd413631ea214d438b75":[2,0,0,1,13,2,50,1,6]
+"d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6a0065b32ebc01feeebdc4113120ef8d93":[2,0,0,1,13,2,50,1,13]
 };

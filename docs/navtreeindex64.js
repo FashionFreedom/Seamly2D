@@ -1,7 +1,5 @@
 var NAVTREEINDEX64 =
 {
-"de/d31/ifcdef_8cpp.html#aa2767350e4b6f38fb8c36ca9279d0fed":[2,0,0,1,1,2,60],
-"de/d31/ifcdef_8cpp.html#aa31422413e25304b0f0837229bfbaa62":[2,0,0,1,1,2,55],
 "de/d31/ifcdef_8cpp.html#aa71c1f7a45d923a9546ed85b5bc542fb":[2,0,0,1,1,2,109],
 "de/d31/ifcdef_8cpp.html#aae1b086a7a80736297528e849eac280a":[2,0,0,1,1,2,171],
 "de/d31/ifcdef_8cpp.html#aae47f0fb5becf32c2558c61a6532b252":[2,0,0,1,1,2,6],
@@ -249,5 +247,7 @@ var NAVTREEINDEX64 =
 "de/d6d/classVisToolCubicBezier.html#a47d1c4f7f47daabe7df8254771d46994":[1,0,310,3],
 "de/d6d/classVisToolCubicBezier.html#a485b709f038ce56738582525a37f061f":[1,0,310,8],
 "de/d6d/classVisToolCubicBezier.html#a4fa7c4d1460141afdad18082254c1d63":[1,0,310,1],
-"de/d6d/classVisToolCubicBezier.html#a5561116dd54b324d5b59d21b17314b8b":[1,0,310,5]
+"de/d6d/classVisToolCubicBezier.html#a5561116dd54b324d5b59d21b17314b8b":[1,0,310,5],
+"de/d6d/classVisToolCubicBezier.html#a7e29fcfeb663c80d814d83615fab5231":[1,0,310,14],
+"de/d6d/classVisToolCubicBezier.html#aa153dcdf6981b1ed88dc693a845b5012":[1,0,310,15]
 };

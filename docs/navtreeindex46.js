@@ -1,9 +1,5 @@
 var NAVTREEINDEX46 =
 {
-"da/df4/dialognormal_8cpp_source.html":[2,0,0,1,13,0,1,45],
-"da/df9/classMoveSPoint.html":[1,0,135],
-"da/df9/classMoveSPoint.html#a0366f67dfabc86d550e66305ebff7ac1":[1,0,135,7],
-"da/df9/classMoveSPoint.html#a16378c392090fda9efd14e80a6ad1bf2":[1,0,135,13],
 "da/df9/classMoveSPoint.html#a2e398b7e9410308e2de80a63af292971":[1,0,135,12],
 "da/df9/classMoveSPoint.html#a4d4de9a2f7572fc1c890f888a97bb64f":[1,0,135,3],
 "da/df9/classMoveSPoint.html#a6bc20f86e8501442e41eb3af570df5ca":[1,0,135,14],
@@ -249,5 +245,9 @@ var NAVTREEINDEX46 =
 "db/d29/vpropertydelegate_8cpp.html":[2,0,0,1,11,11],
 "db/d29/vpropertydelegate_8cpp_source.html":[2,0,0,1,11,11],
 "db/d30/vlinecolorproperty_8h.html":[2,0,0,1,11,0,26],
-"db/d30/vlinecolorproperty_8h_source.html":[2,0,0,1,11,0,26]
+"db/d30/vlinecolorproperty_8h_source.html":[2,0,0,1,11,0,26],
+"db/d32/classLayoutSettingsDialog.html":[1,0,114],
+"db/d32/classLayoutSettingsDialog.html#a0091e6a31c014df6bd4bcf00423ac7a9":[1,0,114,19],
+"db/d32/classLayoutSettingsDialog.html#a021bfee729c109afd00c2261ffa8fca6":[1,0,114,30],
+"db/d32/classLayoutSettingsDialog.html#a0257342d3e5e771f46cff736e8cf4d8d":[1,0,114,49]
 };

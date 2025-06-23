@@ -1,9 +1,5 @@
 var NAVTREEINDEX60 =
 {
-"dd/de9/measurements__def_8cpp.html#ace63bbdabe090d0c0d718a3c02e94ed7":[2,0,0,1,10,4,149],
-"dd/de9/measurements__def_8cpp.html#acebf1f6a842e6b21ee6a27630c5b3749":[2,0,0,1,10,4,105],
-"dd/de9/measurements__def_8cpp.html#acf9e42d06ba04759807ef8e63f85687c":[2,0,0,1,10,4,264],
-"dd/de9/measurements__def_8cpp.html#ad169ef85fd5d86f5e82ac083208630a2":[2,0,0,1,10,4,51],
 "dd/de9/measurements__def_8cpp.html#ad1a2603a150c1496fb9f432c120e7dd8":[2,0,0,1,10,4,56],
 "dd/de9/measurements__def_8cpp.html#ad577238c1a17ec0c2dce33ec98cacd3d":[2,0,0,1,10,4,197],
 "dd/de9/measurements__def_8cpp.html#ad5beb532a31a0725a977e9739f40ca06":[2,0,0,1,10,4,202],
@@ -249,5 +245,9 @@ var NAVTREEINDEX60 =
 "de/d09/classVException.html#aca8103cef3ea50128d4c65cc75568bd2":[1,0,279,5],
 "de/d09/classVException.html#aec24ab0270a07d0e52ccb5382355ca45":[1,0,279,10],
 "de/d0e/classVisLine.html":[1,0,303],
-"de/d0e/classVisLine.html#a3594b9caf48ca88a60a12aaafb9faadf":[1,0,303,0]
+"de/d0e/classVisLine.html#a3594b9caf48ca88a60a12aaafb9faadf":[1,0,303,0],
+"de/d0e/classVisLine.html#a3d128e18290ca9d6888e8a112c538efc":[1,0,303,7],
+"de/d0e/classVisLine.html#a4f8e6ea00d2ff1d1457a58e42d4f2932":[1,0,303,5],
+"de/d0e/classVisLine.html#a552c99a21ca06c9b5f72eb3f913b8892":[1,0,303,6],
+"de/d0e/classVisLine.html#a63a57079a48545d24c40c42088120c52":[1,0,303,1]
 };

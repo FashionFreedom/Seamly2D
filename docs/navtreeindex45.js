@@ -1,9 +1,5 @@
 var NAVTREEINDEX45 =
 {
-"da/d93/vstandardpropertyfactory_8cpp_source.html":[2,0,0,1,11,33],
-"da/d99/vtoolcurveintersectaxis_8cpp.html":[2,0,0,1,13,1,0,2,1,1,6],
-"da/d99/vtoolcurveintersectaxis_8cpp_source.html":[2,0,0,1,13,1,0,2,1,1,6],
-"da/da1/classQHash.html":[1,0,160],
 "da/da3/qmutranslation_8h.html":[2,0,0,1,2,24],
 "da/da3/qmutranslation_8h_source.html":[2,0,0,1,2,24],
 "da/da4/classVAbstractPoint.html":[1,0,245],
@@ -249,5 +245,9 @@ var NAVTREEINDEX45 =
 "da/de3/classVisToolPointOfIntersectionArcs.html#ae26262103e629c79c5b84d9853020b86":[1,0,328,2],
 "da/df3/vscenepoint_8h.html":[2,0,0,1,14,56],
 "da/df3/vscenepoint_8h_source.html":[2,0,0,1,14,56],
-"da/df4/dialognormal_8cpp.html":[2,0,0,1,13,0,1,45]
+"da/df4/dialognormal_8cpp.html":[2,0,0,1,13,0,1,45],
+"da/df4/dialognormal_8cpp_source.html":[2,0,0,1,13,0,1,45],
+"da/df9/classMoveSPoint.html":[1,0,135],
+"da/df9/classMoveSPoint.html#a0366f67dfabc86d550e66305ebff7ac1":[1,0,135,7],
+"da/df9/classMoveSPoint.html#a16378c392090fda9efd14e80a6ad1bf2":[1,0,135,13]
 };

@@ -187,6 +187,7 @@ var classMainWindow =
     [ "setGuiEnabled", "d6/d1a/classMainWindow.html#ad8265e74d179ade0922f7894e243b747", null ],
     [ "setHeight", "d6/d1a/classMainWindow.html#a96bacfc64398cf448336616ca4e63c3a", null ],
     [ "SetLayoutModeActions", "d6/d1a/classMainWindow.html#a70980af6af41301297255aab009040e6", null ],
+    [ "setSceneBackgroundColor", "d6/d1a/classMainWindow.html#a79d80395eac3d7bfd01112fc74e2b524", null ],
     [ "setSize", "d6/d1a/classMainWindow.html#a57b11791597bd5231f689c0b3f62b0c4", null ],
     [ "setStatusMessage", "d6/d1a/classMainWindow.html#afcbd7ad712a9ae0c86f8f86c125b146d", null ],
     [ "setToolBarVisibility", "d6/d1a/classMainWindow.html#a22ed580aa23385953fee987c97350535", null ],

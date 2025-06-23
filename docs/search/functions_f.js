@@ -1,7 +1,7 @@
 var searchData=
 [
   ['p_0',['p',['../df/d03/classVSplinePoint.html#ac883c66bba0d1eb5309d12ca32714769',1,'VSplinePoint::P()'],['../df/d11/classVFSplinePoint.html#a0d0c00895308895a1b6eeb12c0d93549',1,'VFSplinePoint::P()']]],
-  ['pagechanged_1',['pagechanged',['../d5/d41/classPatternPieceDialog.html#ad9254a93aae694d33bf0408e9a10bc2d',1,'PatternPieceDialog::pageChanged()'],['../d1/d61/classDialogPreferences.html#a036aee3cd8384de5e5a15006b01b10b7',1,'DialogPreferences::pageChanged()'],['../d5/d8a/classDialogSeamlyMePreferences.html#a73258823562dd7b4952e8fbd60e35fd3',1,'DialogSeamlyMePreferences::PageChanged()']]],
+  ['pagechanged_1',['pagechanged',['../d1/d61/classDialogPreferences.html#a036aee3cd8384de5e5a15006b01b10b7',1,'DialogPreferences::pageChanged()'],['../d5/d8a/classDialogSeamlyMePreferences.html#a73258823562dd7b4952e8fbd60e35fd3',1,'DialogSeamlyMePreferences::PageChanged()'],['../d5/d41/classPatternPieceDialog.html#ad9254a93aae694d33bf0408e9a10bc2d',1,'PatternPieceDialog::pageChanged()']]],
   ['pageformatchanged_2',['pageFormatChanged',['../db/d44/classPageFormatCombobox.html#a4c7b70207a302c135376fe036e7dcf72',1,'PageFormatCombobox']]],
   ['pageformatcombobox_3',['PageFormatCombobox',['../db/d44/classPageFormatCombobox.html#a46d48538d76e660f1c691d88edf65230',1,'PageFormatCombobox']]],
   ['pageheight_4',['pageHeight',['../d8/d8a/classVLayoutGenerator.html#af591c8f7bf75efc631bc5e369a7604ac',1,'VLayoutGenerator']]],
@@ -33,7 +33,7 @@ var searchData=
   ['parsegroups_30',['parseGroups',['../d8/dba/classVAbstractPattern.html#a966d7c9577c0729f302748a71276ae6d',1,'VAbstractPattern']]],
   ['parseimageelement_31',['parseImageElement',['../d4/d43/classVPattern.html#ad63c4cc286080152c756034861e4bc6d',1,'VPattern']]],
   ['parseintersectxytool_32',['parseIntersectXYTool',['../d4/d43/classVPattern.html#aca783bf49194acfc73ef581d2ca831d5',1,'VPattern']]],
-  ['parseitemelement_33',['parseitemelement',['../d8/dba/classVAbstractPattern.html#a383b680af9cf68fe91ed34e3269b2344',1,'VAbstractPattern::parseItemElement(const QDomElement &amp;domElement)'],['../d8/dba/classVAbstractPattern.html#acf0ac26f5e06a83299293d9b411ab0cd',1,'VAbstractPattern::ParseItemElement(const QDomElement &amp;domElement)']]],
+  ['parseitemelement_33',['parseitemelement',['../d8/dba/classVAbstractPattern.html#acf0ac26f5e06a83299293d9b411ab0cd',1,'VAbstractPattern::ParseItemElement(const QDomElement &amp;domElement)'],['../d8/dba/classVAbstractPattern.html#a383b680af9cf68fe91ed34e3269b2344',1,'VAbstractPattern::parseItemElement(const QDomElement &amp;domElement)']]],
   ['parselineelement_34',['ParseLineElement',['../d4/d43/classVPattern.html#ad79e70002e3bd0c78bfbf4c91ccdb395',1,'VPattern']]],
   ['parsemodelingtov0_5f2_5f4_35',['ParseModelingToV0_2_4',['../dc/dd3/classVPatternConverter.html#adda00469710e22ba5c00773856bd0ede',1,'VPatternConverter']]],
   ['parsenodearc_36',['ParseNodeArc',['../d4/d43/classVPattern.html#a07ab8240324cdad063170d4cce962f5d',1,'VPattern']]],

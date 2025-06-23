@@ -1,9 +1,5 @@
 var NAVTREEINDEX59 =
 {
-"dd/dcb/classVControlPointSpline.html#ab1222c99c266cbe33cb737da330c0e4c":[1,0,261,10],
-"dd/dcb/classVControlPointSpline.html#ab2a0907d0d99855085cac8ae1600052b":[1,0,261,5],
-"dd/dcb/classVControlPointSpline.html#ab2eeb98e9c71cc5191aa9c5e138a3885":[1,0,261,2],
-"dd/dcb/classVControlPointSpline.html#ab741c668e694ae1cc8fb93477852a0fc":[1,0,261,14],
 "dd/dcb/classVControlPointSpline.html#ab8cc9041fdbe0ffdf5b6f4eebb127e46":[1,0,261,17],
 "dd/dcb/classVControlPointSpline.html#ac0d0e2d7437a1f00aee4dce6d41d77fa":[1,0,261,15],
 "dd/dcb/classVControlPointSpline.html#ac376aa16ff0f3ee22df98af9cb6ebe2e":[1,0,261,11],
@@ -249,5 +245,9 @@ var NAVTREEINDEX59 =
 "dd/de9/measurements__def_8cpp.html#acb54cb934518ecdb7b9dd2c39d0d1c00":[2,0,0,1,10,4,130],
 "dd/de9/measurements__def_8cpp.html#acc2b15c4e6a21ff9a01cea51e721b3d0":[2,0,0,1,10,4,254],
 "dd/de9/measurements__def_8cpp.html#acd327079f3b0276ed83701bc438ce2f2":[2,0,0,1,10,4,21],
-"dd/de9/measurements__def_8cpp.html#ace622829540ac1d4b06d4547ec58a650":[2,0,0,1,10,4,33]
+"dd/de9/measurements__def_8cpp.html#ace622829540ac1d4b06d4547ec58a650":[2,0,0,1,10,4,33],
+"dd/de9/measurements__def_8cpp.html#ace63bbdabe090d0c0d718a3c02e94ed7":[2,0,0,1,10,4,149],
+"dd/de9/measurements__def_8cpp.html#acebf1f6a842e6b21ee6a27630c5b3749":[2,0,0,1,10,4,105],
+"dd/de9/measurements__def_8cpp.html#acf9e42d06ba04759807ef8e63f85687c":[2,0,0,1,10,4,264],
+"dd/de9/measurements__def_8cpp.html#ad169ef85fd5d86f5e82ac083208630a2":[2,0,0,1,10,4,51]
 };
