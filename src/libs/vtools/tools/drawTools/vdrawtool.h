@@ -72,6 +72,7 @@
 #include "../vtools/undocommands/addgroup.h"
 #include "../vtools/undocommands/add_groupitem.h"
 #include "../vtools/undocommands/remove_groupitem.h"
+#include "../vtools/undocommands/move_groupitem.h"
 
 #include <qcompilerdetection.h>
 #include <QAction>
@@ -84,8 +85,10 @@
 #include <QMenu>
 #include <QMetaObject>
 #include <QObject>
+#include <QPair>
 #include <QString>
 #include <QtGlobal>
+#include <QVariant>
 
 template <class T> class QSharedPointer;
 
@@ -270,10 +273,39 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
         actionDelete->setEnabled(false);
     }
 
-    // Add Group Item menu item
-    QMap<quint32,QString> groupsNotContainingItem =  doc->getGroupsContainingItem(this->getId(), itemId, false);
-    QActionGroup* actionAddGroupMenu= new QActionGroup(this);
+    QMap<quint32,QString> groupsContainingItem    =  doc->getGroupsContainingItem(toolId, itemId, true);
+    QMap<quint32,QString> groupsNotContainingItem =  doc->getGroupsContainingItem(toolId, itemId, false);
 
+    // Add Move Group Item menu
+    QActionGroup *actionMoveGroupMenu= new QActionGroup(this);
+
+    if (!groupsNotContainingItem.empty())
+    {
+        QMenu *menuMoveGroupItem = menu.addMenu(QIcon("://icon/32x32/list-move_32.png"), tr("Move Group Object"));
+        QStringList sourceList = QStringList(groupsContainingItem.values());
+        QStringList destList   = QStringList(groupsNotContainingItem.values());
+        sourceList.sort(Qt::CaseInsensitive);
+        destList.sort(Qt::CaseInsensitive);
+
+        for(int i=0; i < sourceList.count(); ++i)
+        {
+            const quint32 sourecId = groupsContainingItem.key(sourceList[i]);
+
+            for(int j=0; j < destList.count(); ++j)
+            {
+                QAction *actionMoveGroupItem = menuMoveGroupItem->addAction(tr("From ") + sourceList[i] + tr(" to ") + destList[j]);
+                actionMoveGroupMenu->addAction(actionMoveGroupItem);
+                const quint32 destId = groupsNotContainingItem.key(destList[j]);
+
+                QPair<quint32, quint32> data(sourecId, destId);
+                QVariant variantData = QVariant::fromValue(data);
+                actionMoveGroupItem->setData(variantData);
+            }
+        }
+    }
+
+    // Add Group Item menu item
+    QActionGroup *actionAddGroupMenu= new QActionGroup(this);
     if (!groupsNotContainingItem.empty())
     {
         QMenu *menuAddGroupItem = menu.addMenu(QIcon("://icon/32x32/add.png"), tr("Add Group Object"));
@@ -290,9 +322,10 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
         }
     }
 
+
+
     // Remove Group Item menu item
-    QMap<quint32,QString> groupsContainingItem =  doc->getGroupsContainingItem(this->getId(), itemId, true);
-    QActionGroup* actionDeleteGroupMenu = new QActionGroup(this);
+    QActionGroup *actionDeleteGroupMenu = new QActionGroup(this);
 
     if (!groupsContainingItem.empty())
     {
@@ -466,6 +499,35 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
             qApp->getUndoStack()->push(command);
         }
     }
+    else if (selectedAction->actionGroup() == actionMoveGroupMenu)
+    {
+        QVariant retrievedVariant = selectedAction->data();
+        QPair<quint32, quint32> retrievedPair = retrievedVariant.value<QPair<quint32, quint32>>();
+        const quint32 sourceGroupId       = retrievedPair.first;
+        const quint32 destinationGroupId  = retrievedPair.second;
+        const bool sourceLock      = doc->getGroupLock(sourceGroupId);
+        const bool destinationLock = doc->getGroupLock(destinationGroupId);
+
+        //only move if both groups are unlocked
+        if ((sourceLock == false) && (destinationLock == false))
+        {
+            QDomElement sourceItem = doc->removeGroupItem(this->getId(), itemId, sourceGroupId);
+            QDomElement destItem   = doc->addGroupItem(this->getId(), itemId, destinationGroupId);
+
+            VMainGraphicsScene *scene = qobject_cast<VMainGraphicsScene *>(qApp->getCurrentScene());
+            SCASSERT(scene != nullptr)
+            scene->clearSelection();
+
+            VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
+            SCASSERT(window != nullptr)
+            {
+                MoveGroupItem *command = new MoveGroupItem(sourceItem, destItem, doc, sourceGroupId, destinationGroupId);
+                connect(command, &MoveGroupItem::updateGroups, window, &VAbstractMainWindow::updateGroups);
+                qApp->getUndoStack()->push(command);
+            }
+        }
+    }
+
     else if (selectedAction == actionCopyLineAngle)
     {
         QString angleName = QString("");
