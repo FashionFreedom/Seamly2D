@@ -279,9 +279,9 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
     // Add Move Group Item menu
     QActionGroup *actionMoveGroupMenu= new QActionGroup(this);
 
-    if (!groupsNotContainingItem.empty())
+    if (!groupsContainingItem.empty() && !groupsNotContainingItem.empty())
     {
-        QMenu *menuMoveGroupItem = menu.addMenu(QIcon("://icon/32x32/list-move_32.png"), tr("Move Group Object"));
+        QMenu *menuMoveGroupItem = menu.addMenu(QIcon("://icon/svg/list-move.svg"), tr("Move Group Object"));
         QStringList sourceList = QStringList(groupsContainingItem.values());
         QStringList destList   = QStringList(groupsNotContainingItem.values());
         sourceList.sort(Qt::CaseInsensitive);
