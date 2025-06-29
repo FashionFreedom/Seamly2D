@@ -12360,6 +12360,18 @@ wie gewohnt in SeamlyME laden können.
         <source>AngleLine_</source>
         <translation>WinkelLinie_</translation>
     </message>
+    <message>
+        <source>Move Group Object</source>
+        <translation>Gruppenobjekt bewegen</translation>
+    </message>
+    <message>
+        <source>From </source>
+        <translation>Aus </translation>
+    </message>
+    <message>
+        <source> to </source>
+        <translation> zu </translation>
+    </message>
 </context>
 <context>
     <name>VException</name>

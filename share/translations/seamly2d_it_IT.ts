@@ -12363,6 +12363,18 @@ caricare in SeamlyME come di consueto.
         <source>AngleLine_</source>
         <translation>AngoloLinea_</translation>
     </message>
+    <message>
+        <source>Move Group Object</source>
+        <translation>Sposta oggetto gruppo</translation>
+    </message>
+    <message>
+        <source>From </source>
+        <translation>Da </translation>
+    </message>
+    <message>
+        <source> to </source>
+        <translation> A </translation>
+    </message>
 </context>
 <context>
     <name>VException</name>
