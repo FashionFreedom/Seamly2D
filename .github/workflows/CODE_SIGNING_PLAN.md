@@ -24,54 +24,8 @@
 - Create new `SeamlySigners` team with "maintain" access
 - Use CODEOWNERS file to require SeamlySigners team approval for signing workflow changes
 - Allow SeamlyBuildTeam to modify other workflows but not signing workflows
-- Only slspencer and sconklin can approve signing operations
+- Only SeamlySigners team members can approve signing operations
 - Only maintainers may create tags
-
-## Current Access Analysis & Security Concerns
-
-### **🚨 CRITICAL SECURITY ISSUE: Direct Admin Access**
-Currently **5 users have direct admin access** to the repository, which bypasses all team-based security controls:
-
-**Direct Admin Users (5)**:
-- `sconklin` (admin) - **Should be in SeamlySigners team**
-- `slspencer` (admin) - **Should be in SeamlySigners team**
-- `csett86` (admin) - **Should be in SeamlyBuildTeam**
-- `DSCaskey` (admin) - **Should be in SeamlyBuildTeam**
-- `Onetchou` (admin) - **Should be in SeamlyBuildTeam**
-
-### **⚠️ Direct Maintain Access**
-**Direct Maintain Users (3)**:
-- `pmjherman` (maintain) - **Should be in SeamlyBuildTeam**
-- `jim555-lab` (maintain) - **Should be in SeamlyBuildTeam**
-- `Esterjudith` (maintain) - **Should be in SeamlyBuildTeam**
-
-### **✅ Direct Write Access**
-**Direct Write Users (2)**:
-- `Letterus` (write) - **Should be in SeamlyCodeTeam**
-- `GraceDM` (write) - **Should be in SeamlyCodeTeam**
-
-## Recommended Permission Reorganization
-
-### **1. Create SeamlySigners Team**
-- **Members**: `sconklin`, `slspencer`, `csett86`, `DSCaskey`, `Onetchou` (all current admin users)
-- **Permission**: "maintain" (not admin - they only need workflow access)
-- **Purpose**: Signing workflow approval and modification only
-- **Rationale**: All these users are already trusted with admin access and will be audited for all signing activities
-
-### **2. Update SeamlyBuildTeam**
-- **Current Members**: `sconklin`, `slspencer`, `csett86`, `DSCaskey`, `Onetchou`
-- **Add Members**: `pmjherman`, `jim555-lab`, `Esterjudith`
-- **Permission**: "maintain" (for CI/CD workflows)
-- **Purpose**: General workflow maintenance (excluding signing workflows)
-
-### **3. Update SeamlyCodeTeam**
-- **Current Members**: `sconklin`, `slspencer`, `csett86`, `DSCaskey`, `pmjherman`, `Onetchou`
-- **Add Members**: `Letterus`, `GraceDM`
-- **Permission**: "write" (for code development)
-- **Purpose**: Code development and review
-
-### **4. Remove All Direct Access**
-After moving users to appropriate teams and notifying all members, remove all direct repository access to enforce team-based permissions.
 
 ## Implementation Plan
 
@@ -96,14 +50,14 @@ After moving users to appropriate teams and notifying all members, remove all di
 **File**: `.github/workflows/code-signing.yml`
 
 **Required GitHub Secrets**:
-- `SEAMLY_SIGNING_PROJECT_ID` (Google Cloud project ID)
+- `SEAMLY_SIGNING_PROJECT_ID` (Google Cloud project number, e.g., "244418363949")
 - `SEAMLY_SIGNING_LOCATION` (KMS location, e.g., "us-central1")
 - `SEAMLY_SIGNING_KEYRING_NAME` (KMS keyring name)
 - `SEAMLY_SIGNING_KEY_NAME` (KMS key name)
 - `GOOGLE_CLOUD_SERVICE_ACCOUNT_KEY` (Service account JSON key)
 
 **Environment Variables** (set in workflow):
-- `SEAMLY_SIGNING_PROJECT_ID`
+- `SEAMLY_SIGNING_PROJECT_ID` (use project number, not project ID)
 - `SEAMLY_SIGNING_LOCATION` 
 - `SEAMLY_SIGNING_KEYRING_NAME`
 - `SEAMLY_SIGNING_KEY_NAME`
