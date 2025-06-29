@@ -12376,6 +12376,18 @@ load in SeamlyME as usual.
         <source>AngleLine_</source>
         <translation>UnghiLinie_</translation>
     </message>
+    <message>
+        <source>Move Group Object</source>
+        <translation>Mutare obiect grup</translation>
+    </message>
+    <message>
+        <source>From </source>
+        <translation>Din </translation>
+    </message>
+    <message>
+        <source> to </source>
+        <translation> la </translation>
+    </message>
 </context>
 <context>
     <name>VException</name>

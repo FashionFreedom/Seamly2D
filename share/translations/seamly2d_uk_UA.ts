@@ -12375,6 +12375,18 @@ load in SeamlyME as usual.
         <source>AngleLine_</source>
         <translation>КутЛінії_</translation>
     </message>
+    <message>
+        <source>Move Group Object</source>
+        <translation>Μετακίνηση αντικειμένου ομάδας</translation>
+    </message>
+    <message>
+        <source>From </source>
+        <translation>Від </translation>
+    </message>
+    <message>
+        <source> to </source>
+        <translation> до </translation>
+    </message>
 </context>
 <context>
     <name>VException</name>

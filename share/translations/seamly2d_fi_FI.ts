@@ -12375,6 +12375,18 @@ Haluatko tallentaa muutokset?</translation>
         <source>AngleLine_</source>
         <translation>Kulmaviiva_</translation>
     </message>
+    <message>
+        <source>Move Group Object</source>
+        <translation>Siirrä ryhmäobjektia</translation>
+    </message>
+    <message>
+        <source>From </source>
+        <translation>Luota </translation>
+    </message>
+    <message>
+        <source> to </source>
+        <translation> että </translation>
+    </message>
 </context>
 <context>
     <name>VException</name>

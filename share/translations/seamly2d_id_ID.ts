@@ -12375,6 +12375,18 @@ unggah ke SeamlyME seperti biasa.
         <source>AngleLine_</source>
         <translation>GarisSudut_</translation>
     </message>
+    <message>
+        <source>Move Group Object</source>
+        <translation>Pindahkan Objek Grup</translation>
+    </message>
+    <message>
+        <source>From </source>
+        <translation>Dari </translation>
+    </message>
+    <message>
+        <source> to </source>
+        <translation> ke </translation>
+    </message>
 </context>
 <context>
     <name>VException</name>

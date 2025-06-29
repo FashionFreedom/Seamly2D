@@ -12382,6 +12382,18 @@ load in SeamlyME as usual.
         <source>AngleLine_</source>
         <translation>УголЛинии_</translation>
     </message>
+    <message>
+        <source>Move Group Object</source>
+        <translation>Переместить Группу Объектов</translation>
+    </message>
+    <message>
+        <source>From </source>
+        <translation>От </translation>
+    </message>
+    <message>
+        <source> to </source>
+        <translation> к </translation>
+    </message>
 </context>
 <context>
     <name>VException</name>
