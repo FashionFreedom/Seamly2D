@@ -94,7 +94,7 @@ DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *paren
     ui->setupUi(this);
 
     setWindowFlags(Qt::Window);
-    setWindowFlags((windowFlags() | Qt::WindowStaysOnTopHint) & ~Qt::WindowContextHelpButtonHint);
+    setWindowFlags(windowFlags() & ~Qt::WindowStaysOnTopHint & ~Qt::WindowContextHelpButtonHint);
 
     //Limit dialog height to 80% of screen size
     setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
