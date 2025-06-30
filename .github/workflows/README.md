@@ -9,6 +9,9 @@
 - MANUAL WORKFLOWS:
   - Releases:
     -[CI](ci.yml) - The release build can also be triggered manually to create a release independent of the weekly schedule (eg. if an important bug is fixed and should be available as a release during the week).
+  - Code Signing:
+    - [Windows Build with Code Signing](windows-build-code-signing.yml) - Integrated Windows build and code signing workflow with approval requirements
+    - **Emergency Skip Signing**: Set repository variable `SKIP_SIGNING_AND_RELEASE_UNSIGNED=true` to bypass signing when infrastructure fails
 
 ---
 ## External Github Actions

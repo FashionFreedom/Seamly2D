@@ -204,6 +204,57 @@ gh workflow run code-signing.yml -f commit_sha=abc123 -f version_number=2024.1.1
 - Workflow exits with specific error code on failure
 - If signing fails during scheduled release, entire release fails
 
+### 10.5. **Emergency Skip Signing Override**
+
+**Purpose**: 
+- Emergency mechanism to release unsigned executables when signing infrastructure fails
+- Bypass signing approval when certificates expire or KMS is unavailable
+- Enable testing builds without waiting for signing approval
+
+**Implementation**:
+- Environment variable: `SKIP_SIGNING_AND_RELEASE_UNSIGNED`
+- When set to `true`, the signing job is completely skipped
+- A separate notification job runs to clearly indicate signing was skipped
+- Unsigned executables are made available for download
+
+**Usage**:
+
+**To Skip Signing (Emergency Override)**:
+1. Go to repository **Settings** → **Secrets and variables** → **Actions**
+2. Add a new **Variable** (not secret):
+   - **Name**: `SKIP_SIGNING_AND_RELEASE_UNSIGNED`
+   - **Value**: `true`
+3. Push to trigger workflow
+4. Workflow will:
+   - ✅ Build Windows executables
+   - ⏭️ Skip signing approval step entirely
+   - 📝 Show clear notice that signing was skipped
+   - 📦 Make unsigned executables available
+
+**To Re-enable Signing**:
+1. Set variable to `false` or delete it entirely
+2. Push again to re-enable normal signing workflow
+
+**Security Considerations**:
+- ⚠️ **WARNING**: Unsigned executables may trigger security warnings
+- Should only be used for testing or emergency releases
+- Clear audit trail shows when signing was skipped
+- Requires repository variable access (typically maintainer level)
+- Not recommended for production releases unless absolutely necessary
+
+**When to Use**:
+- Certificate expiration during critical release
+- Google Cloud KMS service disruption
+- Signing infrastructure maintenance
+- Testing builds without signing overhead
+- Emergency security patches that cannot wait for signing
+
+**Audit Trail**:
+- Workflow logs clearly indicate signing was skipped
+- Reason for skipping is documented in logs
+- User who set the variable is tracked
+- Timestamp of skip operation is recorded
+
 ### 11. **Audit Logging Requirements**
 
 **Log all operations with human-readable format**:

@@ -1,3 +1,4 @@
+---
 name: Test Code Signing Workflow
 
 on:
@@ -15,14 +16,15 @@ on:
 jobs:
   test-signing:
     runs-on: ubuntu-latest
-    # Note: For topic branch testing, you may need to temporarily remove the environment requirement
-    # or create a separate test environment that allows topic branches
+    # Note: For topic branch testing, you may need to temporarily remove the
+    # environment requirement or create a separate test environment that allows
+    # topic branches
     # environment: code-signing-approval
     permissions:
       contents: write
       actions: read
       id-token: write
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -49,27 +51,27 @@ jobs:
       - name: Test signing script
         run: |
           cd .github/workflows/signing
-          
+
           # Set environment variables for signing
           export SEAMLY_SIGNING_PROJECT_ID="${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}"
           export SEAMLY_SIGNING_LOCATION="${{ secrets.SEAMLY_SIGNING_LOCATION }}"
           export SEAMLY_SIGNING_KEYRING_NAME="${{ secrets.SEAMLY_SIGNING_KEYRING_NAME }}"
           export SEAMLY_SIGNING_KEY_NAME="${{ secrets.SEAMLY_SIGNING_KEY_NAME }}"
-          
+
           # Make script executable
           chmod +x sign-windows-executable.sh
-          
+
           # Test with the existing test installer
           echo "Testing with existing test installer..."
           if [ -f "../../../test-signing/Seamly2D-installer.exe" ]; then
             echo "Found test installer, signing it..."
             ./sign-windows-executable.sh "../../../test-signing/Seamly2D-installer.exe"
-            echo "✅ Test signing completed successfully!"
+            echo "Test signing completed successfully!"
           else
-            echo "❌ Test installer not found, creating a dummy test..."
+            echo "Test installer not found, creating a dummy test..."
             # Create a dummy test file for testing
             echo "This is a test file for signing workflow" > ../../../test-signing/test-file.txt
-            echo "✅ Created test file for workflow testing"
+            echo "Created test file for workflow testing"
           fi
 
       - name: Verify signing tools
@@ -85,7 +87,7 @@ jobs:
           echo "Location: ${{ secrets.SEAMLY_SIGNING_LOCATION }}"
           echo "Keyring: ${{ secrets.SEAMLY_SIGNING_KEYRING_NAME }}"
           echo "Key: ${{ secrets.SEAMLY_SIGNING_KEY_NAME }}"
-          echo "✅ Environment variables are accessible"
+          echo "Environment variables are accessible"
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
@@ -103,4 +105,4 @@ jobs:
           echo "Commit SHA: ${{ github.event.inputs.commit_sha || github.sha }}"
           echo "Branch: ${{ github.ref_name }}"
           echo "Workflow Run ID: ${{ github.run_id }}"
-          echo "✅ All tests passed successfully!" 
+          echo "All tests passed successfully!"

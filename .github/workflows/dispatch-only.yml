@@ -1,0 +1,11 @@
+name: Dispatch Only Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: echo "Dispatch only test successful" 

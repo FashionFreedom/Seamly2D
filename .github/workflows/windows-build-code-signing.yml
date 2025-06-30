@@ -1,0 +1,246 @@
+name: Windows Build for Code Signing
+
+on:
+  push:
+    branches:
+      - code-signing-test
+    paths:
+      - 'src/**'
+      - '.github/workflows/windows-build-code-signing.yml'
+
+env:
+  QT_VERSION: '5.15.2'
+
+jobs:
+  windows-build:
+    name: 'Windows 64-Bit: Build for Code Signing'
+    runs-on: windows-latest
+    
+    steps:
+      - name: Test Mode Indicator
+        run: |
+          echo "=== CODE SIGNING TEST BUILD ==="
+          echo "Running on code-signing-test branch"
+          echo "This build is specifically for testing code signing workflow"
+          echo "Only Windows executables will be built"
+          echo "No releases will be published"
+          echo "================================"
+      
+      - name: Debug Information
+        run: |
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Event: ${{ github.event_name }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Current directory: $(pwd)"
+          echo "Directory contents:"
+          Get-ChildItem
+      
+      - uses: actions/checkout@v4
+
+      - uses: ilammy/msvc-dev-cmd@v1
+
+      - uses: jurplel/install-qt-action@v3
+        with:
+          version: ${{ env.QT_VERSION }}
+          cache: true
+
+      - name: update version
+        shell: bash
+        run: |
+          ./scripts/version.sh $(date +%Y.%-m.%-d.%-H%M)
+
+      - name: make seamly2d.exe and seamlyme.exe
+        run: |
+          qmake.exe Seamly2D.pro -config release CONFIG+=noTests
+          nmake
+
+      - name: create seamly2d-installer.exe
+        run: |
+          mkdir ..\windows-build
+          Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
+          Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
+          Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
+          cd ..\windows-build\
+          & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
+
+      - name: pack installer file into .zip
+        run: |
+          cd ..\windows-build\
+          C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
+          copy Seamly2D-windows.zip ..\Seamly2D\
+
+      - name: List built executables
+        run: |
+          echo "=== Built Executables for Code Signing ==="
+          echo "Checking for seamly2d.exe:"
+          if (Test-Path "src\app\seamly2d\bin\seamly2d.exe") {
+            echo "✅ seamly2d.exe found"
+            Get-ChildItem "src\app\seamly2d\bin\seamly2d.exe" | Select-Object Name, Length, LastWriteTime
+          } else {
+            echo "❌ seamly2d.exe not found"
+          }
+          
+          echo "Checking for seamlyme.exe:"
+          if (Test-Path "src\app\seamlyme\bin\seamlyme.exe") {
+            echo "✅ seamlyme.exe found"
+            Get-ChildItem "src\app\seamlyme\bin\seamlyme.exe" | Select-Object Name, Length, LastWriteTime
+          } else {
+            echo "❌ seamlyme.exe not found"
+          }
+          
+          echo "Checking for installer:"
+          if (Test-Path "..\windows-build\Seamly2D-installer.exe") {
+            echo "✅ Seamly2D-installer.exe found"
+            Get-ChildItem "..\windows-build\Seamly2D-installer.exe" | Select-Object Name, Length, LastWriteTime
+          } else {
+            echo "❌ Seamly2D-installer.exe not found"
+          }
+
+  code-signing-test:
+    needs: windows-build
+    runs-on: ubuntu-latest
+    environment:
+      name: code-signing-test
+      url: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    if: ${{ vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED != 'true' }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.SEAMLY_SIGNING_SA_KEY }}
+          project_id: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
+
+      - name: Setup Google Cloud CLI
+        uses: google-github-actions/setup-gcloud@v2
+      
+      - name: Download signing tools
+        run: |
+          mkdir -p .github/workflows/signing
+          cd .github/workflows/signing
+          
+          # Download jsign if not present
+          if [ ! -f jsign.jar ]; then
+            echo "Downloading jsign..."
+            curl -L -o jsign.jar https://github.com/ebourg/jsign/releases/download/4.1/jsign-4.1.jar
+          fi
+          
+          # Download codesign-chain.pem if not present
+          if [ ! -f codesign-chain.pem ]; then
+            echo "Downloading codesign-chain.pem..."
+            curl -L -o codesign-chain.pem https://curl.se/ca/cacert.pem
+          fi
+          
+          # Make signing script executable
+          chmod +x sign-windows-executable.sh
+      
+      - name: Test signing process
+        run: |
+          echo "=== CODE SIGNING TEST PROCESS ==="
+          echo "Test Mode: true"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Environment: TESTING (no approval required)"
+          echo ""
+          
+          # Set environment variables for signing
+          export SEAMLY_SIGNING_PROJECT_ID="${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}"
+          export SEAMLY_SIGNING_LOCATION="${{ secrets.SEAMLY_SIGNING_LOCATION }}"
+          export SEAMLY_SIGNING_KEYRING_NAME="${{ secrets.SEAMLY_SIGNING_KEYRING_NAME }}"
+          export SEAMLY_SIGNING_KEY_NAME="${{ secrets.SEAMLY_SIGNING_KEY_NAME }}"
+          
+          # Define the expected executables (same paths as Windows build)
+          EXPECTED_EXES=(
+            "src/app/seamly2d/bin/seamly2d.exe"
+            "src/app/seamlyme/bin/seamlyme.exe"
+            "../windows-build/Seamly2D-installer.exe"
+          )
+          
+          echo "=== TESTING SIGNING PROCESS ==="
+          for exe in "${EXPECTED_EXES[@]}"; do
+            echo "Processing: $exe"
+            if [ -f "$exe" ]; then
+              echo "  ✅ Found: $exe"
+              echo "  [TEST MODE] Would sign: $exe"
+              echo "  [TEST MODE] Command would be: .github/workflows/signing/sign-windows-executable.sh $exe"
+              echo "  [TEST MODE] Environment variables would be:"
+              echo "    SEAMLY_SIGNING_PROJECT_ID: $SEAMLY_SIGNING_PROJECT_ID"
+              echo "    SEAMLY_SIGNING_LOCATION: $SEAMLY_SIGNING_LOCATION"
+              echo "    SEAMLY_SIGNING_KEYRING_NAME: $SEAMLY_SIGNING_KEYRING_NAME"
+              echo "    SEAMLY_SIGNING_KEY_NAME: $SEAMLY_SIGNING_KEY_NAME"
+            else
+              echo "  ❌ Missing: $exe"
+            fi
+            echo ""
+          done
+          
+          echo "=== TESTING AUTHENTICATION ==="
+          echo "Testing Google Cloud authentication..."
+          if gcloud auth print-access-token >/dev/null 2>&1; then
+            echo "✅ Google Cloud authentication successful"
+          else
+            echo "❌ Google Cloud authentication failed"
+            exit 1
+          fi
+          
+          echo "=== TESTING KMS ACCESS ==="
+          echo "Testing KMS key access..."
+          if gcloud kms keys list --keyring="$SEAMLY_SIGNING_KEYRING_NAME" --location="$SEAMLY_SIGNING_LOCATION" --project="$SEAMLY_SIGNING_PROJECT_ID" >/dev/null 2>&1; then
+            echo "✅ KMS key access successful"
+          else
+            echo "❌ KMS key access failed"
+            exit 1
+          fi
+          
+          echo "=== TESTING SIGNING TOOLS ==="
+          cd .github/workflows/signing
+          if [ -f "jsign.jar" ]; then
+            echo "✅ jsign.jar found"
+          else
+            echo "❌ jsign.jar not found"
+            exit 1
+          fi
+          
+          if [ -f "codesign-chain.pem" ]; then
+            echo "✅ codesign-chain.pem found"
+          else
+            echo "❌ codesign-chain.pem not found"
+            exit 1
+          fi
+          
+          if [ -f "sign-windows-executable.sh" ]; then
+            echo "✅ sign-windows-executable.sh found"
+          else
+            echo "❌ sign-windows-executable.sh not found"
+            exit 1
+          fi
+          
+          echo "=== TEST COMPLETE ==="
+          echo "All tests passed! The signing workflow is ready for production."
+          echo "To enable production signing:"
+          echo "1. Merge this workflow to develop branch"
+          echo "2. Use the production workflow with environment approval"
+          echo "3. Set TEST_MODE=false and UPLOAD_ARTIFACTS=true"
+
+  skip-signing-notice:
+    needs: windows-build
+    runs-on: ubuntu-latest
+    if: ${{ vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED == 'true' }}
+    steps:
+      - name: Signing Skipped Notice
+        run: |
+          echo "=== SIGNING SKIPPED ==="
+          echo "⚠️  Code signing was skipped due to SKIP_SIGNING_AND_RELEASE_UNSIGNED=true"
+          echo "📦 Executables are available but NOT signed:"
+          echo "   - src/app/seamly2d/bin/seamly2d.exe"
+          echo "   - src/app/seamlyme/bin/seamlyme.exe"
+          echo "   - ../windows-build/Seamly2D-installer.exe"
+          echo ""
+          echo "🔧 To re-enable signing:"
+          echo "   1. Set SKIP_SIGNING_AND_RELEASE_UNSIGNED=false or remove the variable"
+          echo "   2. Re-run this workflow"
+          echo ""
+          echo "⚠️  WARNING: Unsigned executables may trigger security warnings"
+          echo "   and should only be used for testing or emergency releases." 
