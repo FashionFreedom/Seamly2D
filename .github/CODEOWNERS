@@ -1,0 +1,13 @@
+# Code Signing Workflow Protection
+# These files require approval from the SeamlySigners team
+
+# Signing workflow files
+.github/workflows/code-signing.yml @FashionFreedom/seamlysigners
+.github/workflows/signing/ @FashionFreedom/seamlysigners
+
+# Signing documentation and configuration
+.github/workflows/CODE_SIGNING_PLAN.md @FashionFreedom/seamlysigners
+.github/environments/code-signing-approval.yml @FashionFreedom/seamlysigners
+
+# General workflow protection (optional - can be removed if too restrictive)
+# .github/workflows/ @FashionFreedom/seamlybuildteam 
