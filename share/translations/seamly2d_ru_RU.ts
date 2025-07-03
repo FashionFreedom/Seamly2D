@@ -4070,7 +4070,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>ElArc_</source>
-        <translation>Дуга_</translation>
+        <translation>ЕлДуга_</translation>
     </message>
     <message>
         <source>%1 - Rotation</source>
@@ -4289,7 +4289,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>ElArc_</source>
-        <translation>Дуга_</translation>
+        <translation>ЕлДуга_</translation>
     </message>
     <message>
         <source>Arc Elliptical with length %1</source>
@@ -12356,7 +12356,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>ElArc_</source>
-        <translation>Дуга_</translation>
+        <translation>ЕлДуга_</translation>
     </message>
     <message>
         <source>Spl_</source>
@@ -14634,7 +14634,7 @@ load in SeamlyME as usual.
     <message>
         <source>ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Дуга_</translation>
+        <translation>ЕлДуга_</translation>
     </message>
     <message>
         <source>Spl_</source>
