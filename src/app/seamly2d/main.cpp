@@ -22,6 +22,7 @@
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 
+// Add a comment to test the code signing workflow - TODO remove this comment
 /************************************************************************
  **
  **  @file   main.cpp
