@@ -9,11 +9,10 @@ The `.github/CODEOWNERS` file enforces that only the **SeamlySigners** team can 
 The following files require approval from the SeamlySigners team:
 
 ### Workflow Files
-- `.github/workflows/code-signing.yml` - Main code signing workflow
 - `.github/workflows/signing/` - All files in the signing directory
 
 ### Documentation and Configuration
-- `.github/workflows/CODE_SIGNING_PLAN.md` - Implementation plan
+- `.github/workflows/CODE_SIGNING.md` - Implementation documentation
 - `.github/environments/code-signing-approval.yml` - Environment configuration
 
 ## How It Works

@@ -1,49 +1,41 @@
-# GitHub Environments Setup
+# GitHub Environments
 
-## Code Signing Approval Environment
+This directory contains configuration for GitHub environments used in Seamly2D's CI/CD workflows.
 
-This directory contains configuration for the `code-signing-approval` environment that enforces manual approval for all code signing operations.
+## Current Environments
 
-### Manual Setup Instructions
+### code-signing-approval
 
-Since GitHub doesn't automatically read environment files from repositories, you need to manually create the environment:
+**Purpose**: Production code signing environment for the main CI workflow
 
-1. **Go to Repository Settings**
-   - Navigate to your repository on GitHub
-   - Click on "Settings" tab
+**Configuration**:
+- **Required Reviewers**: SeamlySigners team
+- **Wait Timer**: 0 minutes (immediate approval)
+- **Deployment Branches**: `main`, `develop`
+- **Protection**: Manual approval required for all signing operations
 
-2. **Access Environments**
-   - In the left sidebar, click on "Environments"
-   - Click "New environment"
+**Usage**: 
+- Referenced by the `ci.yml` workflow for production Windows code signing
+- Ensures all signing operations require manual approval from the SeamlySigners team
+- Provides audit logging of all approvals and deployments
 
-3. **Create Environment**
-   - **Environment name**: `code-signing-approval`
-   - Click "Configure environment"
+**Security Features**:
+- Manual approval required for all signing operations
+- Team-based control (only SeamlySigners team can approve)
+- Complete audit trail with timestamps and approver information
+- Branch protection (only allows signing from approved branches)
 
-4. **Configure Protection Rules**
-   - **Required reviewers**: Add the `SeamlySigners` team
-   - **Wait timer**: 0 minutes (immediate approval)
-   - **Deployment branches**: Select "Selected branches" and choose:
-     - `main` (or your default branch)
-     - `develop` (if you have a develop branch)
+### code-signing-test
 
-5. **Save Environment**
-   - Click "Save protection rules"
+**Purpose**: Testing environment for code signing workflows
 
-### Environment Configuration
+**Configuration**:
+- **Required Reviewers**: SeamlySigners team
+- **Wait Timer**: 0 minutes (immediate approval)
+- **Deployment Branches**: `code-signing-test`, `code-signing-pr-branch`
+- **Protection**: Manual approval required for test signing operations
 
-The environment will:
-- Require approval from the SeamlySigners team for all signing operations
-- Only allow deployments from protected branches
-- Provide audit logging of all approvals and deployments
-
-### Integration with Workflow
-
-The `code-signing.yml` workflow references this environment to ensure all signing operations require manual approval before proceeding.
-
-### Security Benefits
-
-- **Manual Approval**: No automatic signing without human review
-- **Team-Based Control**: Only SeamlySigners team can approve
-- **Audit Trail**: All approvals are logged with timestamps and approver information
-- **Branch Protection**: Only allows signing from approved branches 
+**Usage**:
+- Referenced by the `windows-build-sign-test.yml` workflow
+- Allows safe testing of code signing infrastructure without affecting production
+- Provides the same security controls as production but in an isolated environment 
