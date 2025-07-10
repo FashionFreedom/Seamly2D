@@ -12377,6 +12377,18 @@ load in SeamlyME as usual.
         <source>AngleLine_</source>
         <translation>ΓωνίαΓραμμής_</translation>
     </message>
+    <message>
+        <source>Move Group Object</source>
+        <translation>Μετακίνηση αντικειμένου ομάδας</translation>
+    </message>
+    <message>
+        <source>From </source>
+        <translation>Από </translation>
+    </message>
+    <message>
+        <source> to </source>
+        <translation> να </translation>
+    </message>
 </context>
 <context>
     <name>VException</name>

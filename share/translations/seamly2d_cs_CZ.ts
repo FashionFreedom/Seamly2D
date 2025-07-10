@@ -12373,6 +12373,18 @@ SeamlyME jako obvykle.
         <source>AngleLine_</source>
         <translation>Úhelníky_</translation>
     </message>
+    <message>
+        <source>Move Group Object</source>
+        <translation>Přesunout objekt skupiny</translation>
+    </message>
+    <message>
+        <source>From </source>
+        <translation>Z </translation>
+    </message>
+    <message>
+        <source> to </source>
+        <translation> na </translation>
+    </message>
 </context>
 <context>
     <name>VException</name>

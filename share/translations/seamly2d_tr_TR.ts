@@ -12374,6 +12374,18 @@ load in SeamlyME as usual.
         <source>AngleLine_</source>
         <translation>AçıÇizgisi_</translation>
     </message>
+    <message>
+        <source>Move Group Object</source>
+        <translation>Grup Nesnesini Taşı</translation>
+    </message>
+    <message>
+        <source>From </source>
+        <translation>İtibaren </translation>
+    </message>
+    <message>
+        <source> to </source>
+        <translation> ile </translation>
+    </message>
 </context>
 <context>
     <name>VException</name>
