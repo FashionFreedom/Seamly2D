@@ -333,7 +333,7 @@ void DialogLineIntersectAxis::ChosenObject(quint32 id, const SceneObject &type)
                         line->VisualMode(id);
                         VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
                         SCASSERT(window != nullptr)
-                        connect(line, &VisToolLineIntersectAxis::ToolTip, window, &VAbstractMainWindow::ShowToolTip);
+                        connect(line, &VisToolLineIntersectAxis::ToolTip, window, &VAbstractMainWindow::setStatusMessage);
                     }
                     break;
                 case (1):

@@ -70,7 +70,7 @@ public:
     virtual      ~VAbstractMainWindow() Q_DECL_EQ_DEFAULT;
 
 public slots:
-    virtual void  ShowToolTip(const QString &toolTip)=0;
+    virtual void  setStatusMessage(const QString &message) = 0;
     virtual void  updateGroups()=0;
     virtual void  zoomToSelected()=0;
 

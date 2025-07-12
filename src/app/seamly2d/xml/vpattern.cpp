@@ -2460,7 +2460,7 @@ void VPattern::ParseToolSpline(VMainGraphicsScene *scene, QDomElement &domElemen
         {
             VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
             SCASSERT(window != nullptr)
-            connect(spl, &VToolSpline::ToolTip, window, &VAbstractMainWindow::ShowToolTip);
+            connect(spl, &VToolSpline::ToolTip, window, &VAbstractMainWindow::setStatusMessage);
         }
 
         //Rewrite attribute formula. Need for situation when we have wrong formula.
@@ -2651,7 +2651,7 @@ void VPattern::ParseToolSplinePath(VMainGraphicsScene *scene, const QDomElement 
         {
             VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
             SCASSERT(window != nullptr)
-            connect(spl, &VToolSplinePath::ToolTip, window, &VAbstractMainWindow::ShowToolTip);
+            connect(spl, &VToolSplinePath::ToolTip, window, &VAbstractMainWindow::setStatusMessage);
         }
 
         //Rewrite attribute formula. Need for situation when we have wrong formula.

@@ -107,7 +107,7 @@ void TogglePieceLock::doCmd(bool lock)
 
         VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
         SCASSERT(window != nullptr)
-        window->ShowToolTip(tr("Piece lock changed: ") + (lock ? tr("Locked") : tr("Unlocked")));
+        window->setStatusMessage(tr("Piece lock changed: ") + (lock ? tr("Locked") : tr("Unlocked")));
     }
     else
     {

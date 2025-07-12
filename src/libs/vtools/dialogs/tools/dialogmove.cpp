@@ -267,7 +267,7 @@ void DialogMove::ShowDialog(bool click)
 
         VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
         SCASSERT(window != nullptr)
-        connect(operation, &VisToolMove::ToolTip, window, &VAbstractMainWindow::ShowToolTip);
+        connect(operation, &VisToolMove::ToolTip, window, &VAbstractMainWindow::setStatusMessage);
 
         scene->ToggleArcSelection(false);
         scene->ToggleElArcSelection(false);

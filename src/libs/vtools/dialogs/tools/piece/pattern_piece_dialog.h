@@ -212,6 +212,7 @@ private:
     QVector<VLabelTemplateLine> m_patternLabelLines;
     QVector<VLabelTemplateLine> m_pieceLabelLines;
     QSoundEffect               *m_beep;
+    QVector<QPointer<VUndoCommand>> m_undoStack;
 
     VPiece                      CreatePiece() const;
 

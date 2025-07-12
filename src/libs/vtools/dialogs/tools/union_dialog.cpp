@@ -94,6 +94,7 @@ UnionDialog::UnionDialog(const VContainer *data, const quint32 &toolId, QWidget 
 UnionDialog::~UnionDialog()
 {
     delete ui;
+    delete m_beep;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -164,7 +165,7 @@ void UnionDialog::chosenPiece(const quint32 &id, const SceneObject &type, quint3
     {
         if (type == SceneObject::Piece)
         {
-            //m_beep->play();
+            m_beep->play();
             if (isPieceValid(id))
             {
                 pieceId = id;
@@ -184,7 +185,7 @@ void UnionDialog::chosenPiece(const quint32 &id, const SceneObject &type, quint3
     }
     if (type == SceneObject::Point)
     {
-        // m_beep->play();
+        m_beep->play();
         if (numberP == 0)
         {
             p1 = id;

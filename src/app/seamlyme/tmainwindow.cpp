@@ -380,7 +380,7 @@ bool TMainWindow::LoadFile(const QString &path)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::ShowToolTip(const QString &toolTip)
+void TMainWindow::setStatusMessage(const QString &toolTip)
 {
 	Q_UNUSED(toolTip)
 	// do nothing

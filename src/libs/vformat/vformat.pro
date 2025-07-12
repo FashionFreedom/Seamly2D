@@ -9,7 +9,7 @@ message("Entering vformat.pro")
 include(../../../common.pri)
 
 # Library work with xml.
-QT       += xml printsupport
+QT       += xml printsupport svg
 
 # We don't need gui library.
 QT       -= gui

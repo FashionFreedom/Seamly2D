@@ -232,7 +232,7 @@ void DialogCubicBezierPath::ChosenObject(quint32 id, const SceneObject &type)
             visPath->VisualMode(NULL_ID);
             VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
             SCASSERT(window != nullptr)
-            connect(visPath, &VisToolCubicBezierPath::ToolTip, window, &VAbstractMainWindow::ShowToolTip);
+            connect(visPath, &VisToolCubicBezierPath::ToolTip, window, &VAbstractMainWindow::setStatusMessage);
         }
         else
         {
