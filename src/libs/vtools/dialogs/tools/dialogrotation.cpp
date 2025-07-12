@@ -302,7 +302,7 @@ void DialogRotation::ChosenObject(quint32 id, const SceneObject &type)
 
                 VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
                 SCASSERT(window != nullptr)
-                connect(operation, &Visualization::ToolTip, window, &VAbstractMainWindow::ShowToolTip);
+                connect(operation, &Visualization::ToolTip, window, &VAbstractMainWindow::setStatusMessage);
 
                 operation->SetOriginPointId(id);
                 operation->RefreshGeometry();

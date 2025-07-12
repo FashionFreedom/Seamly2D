@@ -62,6 +62,7 @@ AddToGroupDialog::AddToGroupDialog(VContainer *data, const quint32 &toolId, QWid
  AddToGroupDialog::~AddToGroupDialog()
 {
     delete ui;
+    delete m_beep;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

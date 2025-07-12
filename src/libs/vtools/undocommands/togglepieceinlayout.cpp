@@ -139,7 +139,7 @@ void TogglePieceInLayout::doCmd(bool state)
 
         VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
         SCASSERT(window != nullptr)
-        window->ShowToolTip(tr("Include piece in layout changed: ") + (state ? tr("Include") : tr("Exclude")));
+        window->setStatusMessage(tr("Include piece in layout changed: ") + (state ? tr("Include") : tr("Exclude")));
     }
     else
     {

@@ -107,7 +107,7 @@ void SetPieceColor::doCmd(QString color)
 
         VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
         SCASSERT(window != nullptr)
-        window->ShowToolTip(tr("Piece color changed: ") + color);
+        window->setStatusMessage(tr("Piece color changed: ") + color);
     }
     else
     {

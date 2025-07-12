@@ -93,7 +93,7 @@ public:
     bool                LoadFile(const QString &path);
 
 public slots:
-    virtual void        ShowToolTip(const QString &toolTip) Q_DECL_OVERRIDE;
+    virtual void        setStatusMessage(const QString &toolTip) Q_DECL_OVERRIDE;
     virtual void        zoomToSelected() Q_DECL_OVERRIDE;
     virtual void        updateGroups() Q_DECL_OVERRIDE;
 

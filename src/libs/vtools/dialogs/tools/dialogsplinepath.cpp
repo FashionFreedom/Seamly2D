@@ -292,7 +292,7 @@ void DialogSplinePath::ChosenObject(quint32 id, const SceneObject &type)
             visPath->VisualMode(NULL_ID);
             VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
             SCASSERT(window != nullptr)
-            connect(visPath, &VisToolSplinePath::ToolTip, window, &VAbstractMainWindow::ShowToolTip);
+            connect(visPath, &VisToolSplinePath::ToolTip, window, &VAbstractMainWindow::setStatusMessage);
 
             connect(visPath, &VisToolSplinePath::PathChanged, this, &DialogSplinePath::PathUpdated);
         }

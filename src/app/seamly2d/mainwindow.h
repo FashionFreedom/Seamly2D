@@ -112,7 +112,7 @@ public slots:
     void penChanged(Pen pen);
     void basePointChanged();
 
-    virtual void ShowToolTip(const QString &toolTip) Q_DECL_OVERRIDE;
+    virtual void setStatusMessage(const QString &message) Q_DECL_OVERRIDE;
     virtual void updateGroups() Q_DECL_OVERRIDE;
     virtual void zoomToSelected() Q_DECL_OVERRIDE;
     void         showAllGroups();
@@ -237,8 +237,6 @@ private slots:
 
     void handleImageTool();
 
-    void setStatusMessage(QString message);
-
     void handlePatternPieceTool(bool checked);
     void handleUnionTool(bool checked);
 
@@ -306,7 +304,7 @@ private:
     QPointer<QToolButton>             infoToolButton;
 
     /** @brief helpLabel help show tooltip. */
-    QLabel                           *helpLabel;
+    QLabel                           *m_statusMessage;
 
     /** @brief isInitialized true after first show window. */
     bool                              isInitialized;

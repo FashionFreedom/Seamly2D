@@ -2356,12 +2356,12 @@ void PatternPieceTool::renamePiece(VPiece piece)
     }
 }
 
-void PatternPieceTool::showStatus(QString toolTip)
+void PatternPieceTool::showStatus(QString message)
 {
     VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
     SCASSERT(window != nullptr)
 
-    window->ShowToolTip(toolTip);
+    window->setStatusMessage(message);
 }
 
 

@@ -120,13 +120,13 @@
 #include <QFontComboBox>
 #include <QImageReader>
 #include <QInputDialog>
+#include <QLabel>
 #include <QMessageBox>
 #include <QProcess>
 #include <QScrollBar>
 #include <QSettings>
 #include <QSharedPointer>
 #include <QShowEvent>
-#include <QSourceLocation>
 #include <QTextCodec>
 #include <QTimer>
 #include <QToolBar>
@@ -170,7 +170,7 @@ MainWindow::MainWindow(QWidget *parent)
     , pieceScene(nullptr)
     , mouseCoordinates(nullptr)
     , infoToolButton(nullptr)
-    , helpLabel(nullptr)
+    , m_statusMessage(new QLabel())
     , isInitialized(false)
     , mChanges(false)
     , mChangesAsked(true)
@@ -270,9 +270,9 @@ MainWindow::MainWindow(QWidget *parent)
 
         initPenToolBar();
 
-        // Create a help label and add it to the status bar.
-        helpLabel = new QLabel(QObject::tr("Create new pattern piece to start working."));
-        ui->statusBar->addWidget(helpLabel);
+        // Add status message label to the status bar.
+        ui->statusBar->addWidget(m_statusMessage);
+        setStatusMessage(QObject::tr("Create new pattern piece to start working."));
 
         initializeToolsToolBar();
 
@@ -418,7 +418,7 @@ void MainWindow::addDraftBlock(const QString &blockName)
 
     // Enable the new draft action and clear the help label.
     ui->newDraft_Action->setEnabled(true);
-    helpLabel->setText("");
+    setStatusMessage("");
 
     // Update the groups dock.
     groupsWidget->updateGroups();
@@ -784,7 +784,7 @@ void MainWindow::SetToolButton(bool checked, Tool t, const QString &cursor, cons
         QPixmap pixmap(cursorResource);
         QCursor cur(pixmap, 2, 2);
         ui->view->viewport()->setCursor(cur);
-        helpLabel->setText(toolTip);
+        setStatusMessage(toolTip);
         ui->view->setShowToolOptions(false);
         dialogTool = QSharedPointer<Dialog>(new Dialog(pattern, 0, this));
 
@@ -811,7 +811,7 @@ void MainWindow::SetToolButton(bool checked, Tool t, const QString &cursor, cons
         connect(scene, &VMainGraphicsScene::ChosenObject, dialogTool.data(), &DialogTool::ChosenObject);
         connect(scene, &VMainGraphicsScene::SelectedObject, dialogTool.data(), &DialogTool::SelectedObject);
         connect(dialogTool.data(), &DialogTool::DialogClosed, this, closeDialogSlot);
-        connect(dialogTool.data(), &DialogTool::ToolTip, this, &MainWindow::ShowToolTip);
+        connect(dialogTool.data(), &DialogTool::ToolTip, this, &MainWindow::setStatusMessage);
         emit ui->view->itemClicked(nullptr);  // Clear Property Editor with non valid tool selection
     }
     else
@@ -890,7 +890,7 @@ void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
     {
         SCASSERT(vtool != nullptr)
         vtool->DialogLinkDestroy();
-        connect(vtool, &DrawTool::ToolTip, this, &MainWindow::ShowToolTip);
+        connect(vtool, &DrawTool::ToolTip, this, &MainWindow::setStatusMessage);
     }
     handleArrowTool(true);
     ui->view->itemClicked(vtool);// Don't check for nullptr here
@@ -1740,9 +1740,12 @@ void MainWindow::ClosedInsertNodesDialog(int result)
 
 
 //--------------------------------------------------------------------------------------------------------------------
-void MainWindow::setStatusMessage(QString message)
+/// @brief setStatusMessage  displays status message in the status bar.
+/// @param message message text.
+//--------------------------------------------------------------------------------------------------------------------
+void MainWindow::setStatusMessage(const QString &message)
 {
-    helpLabel->setText(message);
+    m_statusMessage->setText(message);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1822,15 +1825,6 @@ void MainWindow::handleNewLayout(bool checked)
       toolLayoutSettings(ui->layoutSettings_ToolButton, checked);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief ShowTool  highlight tool.Tip show tools tooltip.
- * @param toolTip tooltip text.
- */
-void MainWindow::ShowToolTip(const QString &toolTip)
-{
-    helpLabel->setText(toolTip);
-}
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -1913,7 +1907,7 @@ void MainWindow::changeEvent(QEvent *event)
         ui->retranslateUi(this);
         undoAction->setText(tr("&Undo"));
         redoAction->setText(tr("&Redo"));
-        helpLabel->setText(QObject::tr("Changes applied."));
+        setStatusMessage(QObject::tr("Changes applied."));
         draftBlockLabel->setText(tr("Draft Block:"));
 
         if (doc->getDraftStage() == Draw::Calculation)
@@ -2098,7 +2092,7 @@ void MainWindow::LoadIndividual()
             patternChangesWereSaved(false);
 
             ui->editCurrent_Action->setEnabled(true);
-            helpLabel->setText(tr("Measurements loaded"));
+            setStatusMessage(tr("Measurements loaded"));
             doc->LiteParseTree(Document::LiteParse);
 
             UpdateWindowTitle();
@@ -2154,7 +2148,7 @@ void MainWindow::LoadMultisize()
             patternChangesWereSaved(false);
 
             ui->editCurrent_Action->setEnabled(true);
-            helpLabel->setText(tr("Measurements loaded"));
+            setStatusMessage(tr("Measurements loaded"));
             doc->LiteParseTree(Document::LiteParse);
 
             UpdateWindowTitle();
@@ -2197,7 +2191,7 @@ void MainWindow::UnloadMeasurements()
         patternChangesWereSaved(false);
         ui->editCurrent_Action->setEnabled(false);
         ui->unloadMeasurements_Action->setDisabled(true);
-        helpLabel->setText(tr("Measurements unloaded"));
+        setStatusMessage(tr("Measurements unloaded"));
 
         UpdateWindowTitle();
     }
@@ -2294,7 +2288,7 @@ void MainWindow::SyncMeasurements()
             }
             const QString msg = tr("Measurements have been synced");
             qCDebug(vMainWindow, "%s", qUtf8Printable(msg));
-            helpLabel->setText(msg);
+            setStatusMessage(msg);
             VWidgetPopup::PopupMessage(this, msg);
             doc->LiteParseTree(Document::LiteParse);
             mChanges = false;
@@ -3462,7 +3456,7 @@ void MainWindow::CancelTool()
         case Tool::Arrow:
             ui->arrowPointer_ToolButton->setChecked(false);
             ui->arrow_Action->setChecked(false);
-            helpLabel->setText(QString(""));
+            setStatusMessage(QString(""));
 
             // Crash: using CRTL+Z while using line tool.
             undoAction->setEnabled(false);
@@ -3663,7 +3657,7 @@ void  MainWindow::handleArrowTool(bool checked)
         ui->view->allowRubberBand(true);
 
         ui->view->viewport()->unsetCursor();
-        helpLabel->setText("");
+        setStatusMessage("");
         ui->view->setShowToolOptions(true);
         qCDebug(vMainWindow, "Enabled arrow tool.");
     }
@@ -3955,7 +3949,7 @@ void MainWindow::showPieceMode(bool checked)
         ui->groups_DockWidget->setWidget(patternPiecesWidget);
         ui->groups_DockWidget->setWindowTitle(tr("Pattern Pieces"));
 
-        helpLabel->setText("");
+        setStatusMessage("");
     }
     else
     {
@@ -4075,7 +4069,7 @@ void MainWindow::showLayoutMode(bool checked)
             ui->layoutSettings_ToolButton->click();
         }
 
-        helpLabel->setText("");
+        setStatusMessage("");
     }
     else
     {
@@ -5171,7 +5165,7 @@ bool MainWindow::SavePattern(const QString &fileName, QString &error)
         if (tempInfo.suffix() != QLatin1String("autosave"))
         {
             setCurrentFile(fileName);
-            helpLabel->setText(tr("File saved"));
+            setStatusMessage(tr("File saved"));
             qCDebug(vMainWindow, "File %s saved.", qUtf8Printable(fileName));
             patternChangesWereSaved(result);
         }
@@ -6430,6 +6424,7 @@ MainWindow::~MainWindow()
     CancelTool();
     CleanLayout();
 
+    delete m_statusMessage;
     delete doc;
     delete ui;
 }
@@ -6593,8 +6588,8 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
         patternReadOnly = doc->isReadOnly();
         setWidgetsEnabled(true);
         setCurrentFile(fileName);
-        helpLabel->setText(tr("File loaded"));
-        qCDebug(vMainWindow, "%s", qUtf8Printable(helpLabel->text()));
+        setStatusMessage(tr("File loaded"));
+        qCDebug(vMainWindow, "%s", qUtf8Printable(m_statusMessage->text()));
 
         //Fit scene size to best size for first show
         zoomFirstShow();
@@ -6793,7 +6788,7 @@ void MainWindow::exportLayoutAs()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::exportPiecesAs()
 {
-    helpLabel->setText(QString(""));
+    setStatusMessage(QString(""));
 
     ui->arrowPointer_ToolButton->setChecked(false);
     ui->arrow_Action->setChecked(false);
@@ -6863,7 +6858,7 @@ void MainWindow::exportPiecesAs()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::exportDraftBlocksAs()
 {
-    helpLabel->setText(QString(""));
+    setStatusMessage(QString(""));
 
     //select export tool button
     ui->arrowPointer_ToolButton->setChecked(false);

@@ -315,7 +315,7 @@ void DialogCurveIntersectAxis::ChosenObject(quint32 id, const SceneObject &type)
                         line->VisualMode(id);
                         VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
                         SCASSERT(window != nullptr)
-                        connect(line, &VisToolCurveIntersectAxis::ToolTip, window, &VAbstractMainWindow::ShowToolTip);
+                        connect(line, &VisToolCurveIntersectAxis::ToolTip, window, &VAbstractMainWindow::setStatusMessage);
 
                     }
                 }

@@ -94,6 +94,7 @@ InsertNodesDialog::InsertNodesDialog(const VContainer *data, quint32 toolId, QWi
 InsertNodesDialog::~InsertNodesDialog()
 {
     delete ui;
+    delete m_beep;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
