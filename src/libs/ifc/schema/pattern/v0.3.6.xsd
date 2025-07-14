@@ -187,7 +187,7 @@
 																												<xs:attribute name="idObject" type="xs:unsignedInt" use="required"></xs:attribute>
 																											 </xs:complexType>
 																									   </xs:element>
-																								   </xs:sequence>	   
+																								   </xs:sequence>
                                                                                              </xs:complexType>
                                                                                        </xs:element>
                                                                                        <xs:element name="destination" minOccurs="1" maxOccurs="1">
@@ -442,7 +442,7 @@
          </xs:element>
     <xs:simpleType name="shortName">
         <xs:restriction base="xs:string">
-            <xs:pattern value="([^0-9*/^+\-=\s()?%:;!.,`'&quot;]){1,1}([^*/^+\-=\s()?%:;!.,`'&quot;]){0,}"/>
+            <xs:pattern value="([^0-9*/^+\-=\s()?%:;!.,`'\\&quot;]){1,1}([^*/^+\-=\s()?%:;!.,`'\\&quot;]){0,}"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="units">
