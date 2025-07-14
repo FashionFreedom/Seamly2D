@@ -684,16 +684,34 @@ bool Application2D::event(QEvent *event)
 /// Because we can create object in constructor we open file separately.
 void Application2D::openSettings()
 {
-    settings = new VSettings(QSettings::IniFormat, QSettings::UserScope,
-                             QCoreApplication::organizationName(),
-                             QCoreApplication::applicationName(), this);
+    QSettings settings(QSettings::IniFormat, QSettings::UserScope,
+                       QCoreApplication::organizationName(),
+                       QCoreApplication::applicationName());
+
+    const QString qt5Settings = settings.fileName();
+    const QString dir = QFileInfo(qt5Settings).absolutePath();
+    const QString qt5Common   = dir + "/common.ini";
+    const QString qt6Settings = dir + "/qt6_seamly2d.ini";
+    const QString qt6Common   = dir + "/qt6_common.ini";
+
+    if (!QFileInfo::exists(qt6Common) && QFileInfo::exists(qt5Common))
+    {
+        QFile::copy(qt5Common, qt6Common);
+    }
+
+    if (!QFileInfo::exists(qt6Settings) && QFileInfo::exists(qt5Settings))
+    {
+        QFile::copy(qt5Settings, qt6Settings);
+    }
+
+    m_settings = new VSettings(qt6Settings, QSettings::IniFormat, this);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 VSettings *Application2D::Seamly2DSettings()
 {
-    SCASSERT(settings != nullptr)
-    return qobject_cast<VSettings *>(settings);
+    SCASSERT(m_settings != nullptr)
+    return qobject_cast<VSettings *>(m_settings);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

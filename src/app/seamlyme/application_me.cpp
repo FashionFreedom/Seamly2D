@@ -6,7 +6,7 @@
 //  @copyright
 //  This source code is part of the Seamly2D project, a pattern making
 //  program to create and model patterns of clothing.
-//  Copyright (C) 2017-2024 Seamly2D project
+//  Copyright (C) 2017-2025 Seamly2D project
 //  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
 //
 //  Seamly2D is free software: you can redistribute it and/or modify
@@ -22,33 +22,31 @@
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 
-/************************************************************************
- **
- **  @file   mapplication.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   8 7, 2015
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   vapplication.h
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   8 7, 2015
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2015 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 #include "application_me.h"
 #include "version.h"
@@ -492,15 +490,27 @@ bool ApplicationME::event(QEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 void ApplicationME::openSettings()
 {
-    settings = new VSeamlyMeSettings(QSettings::IniFormat, QSettings::UserScope, QCoreApplication::organizationName(),
-                                 QCoreApplication::applicationName(), this);
+    QSettings settings(QSettings::IniFormat, QSettings::UserScope,
+                       QCoreApplication::organizationName(),
+                       QCoreApplication::applicationName());
+
+    const QString qt5Settings = settings.fileName();
+    const QString dir = QFileInfo(qt5Settings).absolutePath();
+    const QString qt6Settings = dir + "/qt6_seamlyme.ini";
+
+    if (!QFileInfo::exists(qt6Settings) && QFileInfo::exists(qt5Settings))
+    {
+        QFile::copy(qt5Settings, qt6Settings);
+    }
+
+    m_settings = new VSeamlyMeSettings(qt6Settings, QSettings::IniFormat, this);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 VSeamlyMeSettings *ApplicationME::seamlyMeSettings()
 {
-    SCASSERT(settings != nullptr)
-    return qobject_cast<VSeamlyMeSettings *>(settings);
+    SCASSERT(m_settings != nullptr)
+    return qobject_cast<VSeamlyMeSettings *>(m_settings);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
