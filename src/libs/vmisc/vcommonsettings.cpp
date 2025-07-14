@@ -249,7 +249,7 @@ QStringList ClearFormats(const QStringList &predefinedFormats, QStringList forma
 }
 }
 
-static const QString commonIniFilename = QStringLiteral("common");
+static const QString commonIniFilename = QStringLiteral("qt6_common");
 
 #if !defined(Q_OS_WIN)
 const QString VCommonSettings::unixStandardSharePath = QStringLiteral("/usr/share/seamly2d");
@@ -345,6 +345,11 @@ QString PrepareStandardFiles(const QString &currentPath, const QString &standard
 VCommonSettings::VCommonSettings(Format format, Scope scope, const QString &organization,
                             const QString &application, QObject *parent)
     :QSettings(format, scope, organization, application, parent)
+{}
+
+//---------------------------------------------------------------------------------------------------------------------
+VCommonSettings::VCommonSettings(const QString &fileName, QSettings::Format format, QObject *parent)
+     : QSettings(fileName, format, parent)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
