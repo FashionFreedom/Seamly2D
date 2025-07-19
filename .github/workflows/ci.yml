@@ -276,6 +276,16 @@ jobs:
             echo "❌ Seamly2D-installer.exe not found"
           }
 
+      - name: Upload Windows executables for signing
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-executables
+          path: |
+            src/app/seamly2d/bin/seamly2d.exe
+            src/app/seamlyme/bin/seamlyme.exe
+            ../windows-build/Seamly2D-installer.exe
+          if-no-files-found: error
+
       - uses: actions/upload-artifact@v4
         with:
           name: Seamly2D-windows.zip
@@ -365,18 +375,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       
-      - name: Download Windows artifacts
+      - name: Download Windows executables for signing
         uses: actions/download-artifact@v4
         with:
-          name: Seamly2D-windows.zip
+          name: windows-executables
           path: .
-      
-      - name: Extract Windows artifacts
-        run: |
-          mkdir -p windows-extracted
-          cd windows-extracted
-          unzip ../Seamly2D-windows.zip
-          cd ..
       
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
@@ -422,14 +425,19 @@ jobs:
           export SEAMLY_SIGNING_KEYRING_NAME="${{ secrets.SEAMLY_SIGNING_KEYRING_NAME }}"
           export SEAMLY_SIGNING_KEY_NAME="${{ secrets.SEAMLY_SIGNING_KEY_NAME }}"
           
-          # Define the executables to sign (from extracted artifacts)
+          # Define the executables to sign (from Windows build artifacts)
           EXECUTABLES=(
-            "windows-extracted/seamly2d.exe"
-            "windows-extracted/seamlyme.exe"
-            "windows-extracted/Seamly2D-installer.exe"
+            "src/app/seamly2d/bin/seamly2d.exe"
+            "src/app/seamlyme/bin/seamlyme.exe"
+            "Seamly2D-installer.exe"
           )
           
           echo "=== SIGNING EXECUTABLES ==="
+          echo "Current directory: $(pwd)"
+          echo "Available files:"
+          find . -name "*.exe" -type f 2>/dev/null || echo "No .exe files found"
+          echo ""
+          
           for exe in "${EXECUTABLES[@]}"; do
             echo "Processing: $exe"
             if [ -f "$exe" ]; then
@@ -475,7 +483,14 @@ jobs:
 
       - name: Create signed zip
         run: |
-          cd windows-extracted
+          # Create a directory structure for the signed release
+          mkdir -p signed-release
+          cp src/app/seamly2d/bin/seamly2d.exe signed-release/
+          cp src/app/seamlyme/bin/seamlyme.exe signed-release/
+          cp Seamly2D-installer.exe signed-release/
+          
+          # Create the signed zip
+          cd signed-release
           zip -r ../Seamly2D-windows-signed.zip .
           cd ..
 
