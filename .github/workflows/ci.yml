@@ -417,22 +417,21 @@ jobs:
       - name: Download signing tools
         run: |
           mkdir -p .github/workflows/signing
-          cd .github/workflows/signing
           
           # Download jsign if not present
-          if [ ! -f jsign.jar ]; then
+          if [ ! -f .github/workflows/signing/jsign.jar ]; then
             echo "Downloading jsign..."
-            curl -L -o jsign.jar https://github.com/ebourg/jsign/releases/download/4.1/jsign-4.1.jar
+            curl -L -o .github/workflows/signing/jsign.jar https://github.com/ebourg/jsign/releases/download/4.1/jsign-4.1.jar
           fi
           
           # Download codesign-chain.pem if not present
-          if [ ! -f codesign-chain.pem ]; then
+          if [ ! -f .github/workflows/signing/codesign-chain.pem ]; then
             echo "Downloading codesign-chain.pem..."
-            curl -L -o codesign-chain.pem https://curl.se/ca/cacert.pem
+            curl -L -o .github/workflows/signing/codesign-chain.pem https://curl.se/ca/cacert.pem
           fi
           
           # Make signing script executable
-          chmod +x sign-windows-executable.sh
+          chmod +x .github/workflows/signing/sign-windows-executable.sh
       
       - name: Sign executables
         run: |
@@ -462,26 +461,25 @@ jobs:
           find . -name "*.exe" -type f 2>/dev/null || echo "No .exe files found"
           echo ""
           
-          # Change to signing directory where tools are located
-          cd .github/workflows/signing
-          echo "Changed to signing directory: $(pwd)"
+          # Copy executables to root for easier access
+          cp executables-for-signing/*.exe .
           
           for exe in "${EXECUTABLES[@]}"; do
             echo "Processing: $exe"
-            if [ -f "../$exe" ]; then
-              echo "  ✅ Found: ../$exe"
-              echo "  📝 Signing: ../$exe"
+            if [ -f "$exe" ]; then
+              echo "  ✅ Found: $exe"
+              echo "  📝 Signing: $exe"
               
               # Get original checksum
-              ORIGINAL_CHECKSUM=$(sha256sum "../$exe" | cut -d' ' -f1)
+              ORIGINAL_CHECKSUM=$(sha256sum "$exe" | cut -d' ' -f1)
               echo "  📊 Original checksum: $ORIGINAL_CHECKSUM"
               
               # Sign the executable
-              if ./sign-windows-executable.sh "../$exe"; then
-                echo "  ✅ Successfully signed: ../$exe"
+              if .github/workflows/signing/sign-windows-executable.sh "$exe"; then
+                echo "  ✅ Successfully signed: $exe"
                 
                 # Get new checksum
-                NEW_CHECKSUM=$(sha256sum "../$exe" | cut -d' ' -f1)
+                NEW_CHECKSUM=$(sha256sum "$exe" | cut -d' ' -f1)
                 echo "  📊 New checksum: $NEW_CHECKSUM"
                 
                 if [ "$ORIGINAL_CHECKSUM" != "$NEW_CHECKSUM" ]; then
@@ -490,18 +488,15 @@ jobs:
                   echo "  ⚠️  Warning: Checksum unchanged - signing may have failed"
                 fi
               else
-                echo "  ❌ Failed to sign: ../$exe"
+                echo "  ❌ Failed to sign: $exe"
                 exit 1
               fi
             else
-              echo "  ❌ Missing: ../$exe"
+              echo "  ❌ Missing: $exe"
               exit 1
             fi
             echo ""
           done
-          
-          # Return to root directory
-          cd ../..
           
           echo "=== SIGNING COMPLETE ==="
           echo "All executables have been successfully signed"
@@ -562,22 +557,21 @@ jobs:
       - name: Download signing tools
         run: |
           mkdir -p .github/workflows/signing
-          cd .github/workflows/signing
           
           # Download jsign if not present
-          if [ ! -f jsign.jar ]; then
+          if [ ! -f .github/workflows/signing/jsign.jar ]; then
             echo "Downloading jsign..."
-            curl -L -o jsign.jar https://github.com/ebourg/jsign/releases/download/4.1/jsign-4.1.jar
+            curl -L -o .github/workflows/signing/jsign.jar https://github.com/ebourg/jsign/releases/download/4.1/jsign-4.1.jar
           fi
           
           # Download codesign-chain.pem if not present
-          if [ ! -f codesign-chain.pem ]; then
+          if [ ! -f .github/workflows/signing/codesign-chain.pem ]; then
             echo "Downloading codesign-chain.pem..."
-            curl -L -o codesign-chain.pem https://curl.se/ca/cacert.pem
+            curl -L -o .github/workflows/signing/codesign-chain.pem https://curl.se/ca/cacert.pem
           fi
           
           # Make signing script executable
-          chmod +x sign-windows-executable.sh
+          chmod +x .github/workflows/signing/sign-windows-executable.sh
       
       - name: Sign win32 executables
         run: |
@@ -607,26 +601,25 @@ jobs:
           find . -name "*.exe" -type f 2>/dev/null || echo "No .exe files found"
           echo ""
           
-          # Change to signing directory where tools are located
-          cd .github/workflows/signing
-          echo "Changed to signing directory: $(pwd)"
+          # Copy executables to root for easier access
+          cp win32-executables-for-signing/*.exe .
           
           for exe in "${EXECUTABLES[@]}"; do
             echo "Processing: $exe"
-            if [ -f "../$exe" ]; then
-              echo "  ✅ Found: ../$exe"
-              echo "  📝 Signing: ../$exe"
+            if [ -f "$exe" ]; then
+              echo "  ✅ Found: $exe"
+              echo "  📝 Signing: $exe"
               
               # Get original checksum
-              ORIGINAL_CHECKSUM=$(sha256sum "../$exe" | cut -d' ' -f1)
+              ORIGINAL_CHECKSUM=$(sha256sum "$exe" | cut -d' ' -f1)
               echo "  📊 Original checksum: $ORIGINAL_CHECKSUM"
               
               # Sign the executable
-              if ./sign-windows-executable.sh "../$exe"; then
-                echo "  ✅ Successfully signed: ../$exe"
+              if .github/workflows/signing/sign-windows-executable.sh "$exe"; then
+                echo "  ✅ Successfully signed: $exe"
                 
                 # Get new checksum
-                NEW_CHECKSUM=$(sha256sum "../$exe" | cut -d' ' -f1)
+                NEW_CHECKSUM=$(sha256sum "$exe" | cut -d' ' -f1)
                 echo "  📊 New checksum: $NEW_CHECKSUM"
                 
                 if [ "$ORIGINAL_CHECKSUM" != "$NEW_CHECKSUM" ]; then
@@ -635,18 +628,15 @@ jobs:
                   echo "  ⚠️  Warning: Checksum unchanged - signing may have failed"
                 fi
               else
-                echo "  ❌ Failed to sign: ../$exe"
+                echo "  ❌ Failed to sign: $exe"
                 exit 1
               fi
             else
-              echo "  ❌ Missing: ../$exe"
+              echo "  ❌ Missing: $exe"
               exit 1
             fi
             echo ""
           done
-          
-          # Return to root directory
-          cd ../..
           
           echo "=== WIN32 SIGNING COMPLETE ==="
           echo "All win32 executables have been successfully signed"
