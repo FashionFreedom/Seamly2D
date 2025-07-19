@@ -1,0 +1,24 @@
+name: code-signing-test
+on:
+  workflow_run:
+    workflows: ["Test Code Signing Workflow"]
+    types: [requested]
+
+protection_rules:
+  required_reviewers:
+    - FashionFreedom/seamlysigners
+  wait_timer: 0
+  deployment_branch_policy:
+    protected_branches: false
+    custom_branch_policies: true
+    custom_branch_policies:
+      - pattern: "main"
+      - pattern: "develop"
+      - pattern: "feature/*"
+      - pattern: "test/*"
+      - pattern: "topic/*"
+      - pattern: "testing/*"
+
+environment_variables:
+  ENVIRONMENT_NAME: code-signing-test
+  TEST_MODE: true 
