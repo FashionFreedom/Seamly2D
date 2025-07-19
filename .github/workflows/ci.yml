@@ -276,14 +276,18 @@ jobs:
             echo "❌ Seamly2D-installer.exe not found"
           }
 
+      - name: Prepare executables for upload
+        run: |
+          mkdir -p executables-for-signing
+          Copy-Item -Path 'src\app\seamly2d\bin\seamly2d.exe' -Destination 'executables-for-signing\'
+          Copy-Item -Path 'src\app\seamlyme\bin\seamlyme.exe' -Destination 'executables-for-signing\'
+          Copy-Item -Path '..\windows-build\Seamly2D-installer.exe' -Destination 'executables-for-signing\'
+
       - name: Upload Windows executables for signing
         uses: actions/upload-artifact@v4
         with:
           name: windows-executables
-          path: |
-            src/app/seamly2d/bin/seamly2d.exe
-            src/app/seamlyme/bin/seamlyme.exe
-            ../windows-build/Seamly2D-installer.exe
+          path: executables-for-signing
           if-no-files-found: error
 
       - uses: actions/upload-artifact@v4
@@ -427,9 +431,9 @@ jobs:
           
           # Define the executables to sign (from Windows build artifacts)
           EXECUTABLES=(
-            "src/app/seamly2d/bin/seamly2d.exe"
-            "src/app/seamlyme/bin/seamlyme.exe"
-            "Seamly2D-installer.exe"
+            "executables-for-signing/seamly2d.exe"
+            "executables-for-signing/seamlyme.exe"
+            "executables-for-signing/Seamly2D-installer.exe"
           )
           
           echo "=== SIGNING EXECUTABLES ==="
@@ -485,9 +489,9 @@ jobs:
         run: |
           # Create a directory structure for the signed release
           mkdir -p signed-release
-          cp src/app/seamly2d/bin/seamly2d.exe signed-release/
-          cp src/app/seamlyme/bin/seamlyme.exe signed-release/
-          cp Seamly2D-installer.exe signed-release/
+          cp executables-for-signing/seamly2d.exe signed-release/
+          cp executables-for-signing/seamlyme.exe signed-release/
+          cp executables-for-signing/Seamly2D-installer.exe signed-release/
           
           # Create the signed zip
           cd signed-release
