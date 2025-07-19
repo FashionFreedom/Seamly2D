@@ -451,9 +451,9 @@ jobs:
           
           # Define the executables to sign (from Windows build artifacts)
           EXECUTABLES=(
-            "executables-for-signing/seamly2d.exe"
-            "executables-for-signing/seamlyme.exe"
-            "executables-for-signing/Seamly2D-installer.exe"
+            "seamly2d.exe"
+            "seamlyme.exe"
+            "Seamly2D-installer.exe"
           )
           
           echo "=== SIGNING EXECUTABLES ==="
@@ -462,22 +462,26 @@ jobs:
           find . -name "*.exe" -type f 2>/dev/null || echo "No .exe files found"
           echo ""
           
+          # Change to signing directory where tools are located
+          cd .github/workflows/signing
+          echo "Changed to signing directory: $(pwd)"
+          
           for exe in "${EXECUTABLES[@]}"; do
             echo "Processing: $exe"
-            if [ -f "$exe" ]; then
-              echo "  ✅ Found: $exe"
-              echo "  📝 Signing: $exe"
+            if [ -f "../$exe" ]; then
+              echo "  ✅ Found: ../$exe"
+              echo "  📝 Signing: ../$exe"
               
               # Get original checksum
-              ORIGINAL_CHECKSUM=$(sha256sum "$exe" | cut -d' ' -f1)
+              ORIGINAL_CHECKSUM=$(sha256sum "../$exe" | cut -d' ' -f1)
               echo "  📊 Original checksum: $ORIGINAL_CHECKSUM"
               
               # Sign the executable
-              if .github/workflows/signing/sign-windows-executable.sh "$exe"; then
-                echo "  ✅ Successfully signed: $exe"
+              if ./sign-windows-executable.sh "../$exe"; then
+                echo "  ✅ Successfully signed: ../$exe"
                 
                 # Get new checksum
-                NEW_CHECKSUM=$(sha256sum "$exe" | cut -d' ' -f1)
+                NEW_CHECKSUM=$(sha256sum "../$exe" | cut -d' ' -f1)
                 echo "  📊 New checksum: $NEW_CHECKSUM"
                 
                 if [ "$ORIGINAL_CHECKSUM" != "$NEW_CHECKSUM" ]; then
@@ -486,15 +490,18 @@ jobs:
                   echo "  ⚠️  Warning: Checksum unchanged - signing may have failed"
                 fi
               else
-                echo "  ❌ Failed to sign: $exe"
+                echo "  ❌ Failed to sign: ../$exe"
                 exit 1
               fi
             else
-              echo "  ❌ Missing: $exe"
+              echo "  ❌ Missing: ../$exe"
               exit 1
             fi
             echo ""
           done
+          
+          # Return to root directory
+          cd ../..
           
           echo "=== SIGNING COMPLETE ==="
           echo "All executables have been successfully signed"
@@ -509,9 +516,9 @@ jobs:
         run: |
           # Create a directory structure for the signed release
           mkdir -p signed-release
-          cp executables-for-signing/seamly2d.exe signed-release/
-          cp executables-for-signing/seamlyme.exe signed-release/
-          cp executables-for-signing/Seamly2D-installer.exe signed-release/
+          cp seamly2d.exe signed-release/
+          cp seamlyme.exe signed-release/
+          cp Seamly2D-installer.exe signed-release/
           
           # Create the signed zip
           cd signed-release
@@ -589,9 +596,9 @@ jobs:
           
           # Define the executables to sign (from win32 build artifacts)
           EXECUTABLES=(
-            "win32-executables-for-signing/seamly2d.exe"
-            "win32-executables-for-signing/seamlyme.exe"
-            "win32-executables-for-signing/Seamly2D-installer.exe"
+            "seamly2d.exe"
+            "seamlyme.exe"
+            "Seamly2D-installer.exe"
           )
           
           echo "=== SIGNING WIN32 EXECUTABLES ==="
@@ -600,22 +607,26 @@ jobs:
           find . -name "*.exe" -type f 2>/dev/null || echo "No .exe files found"
           echo ""
           
+          # Change to signing directory where tools are located
+          cd .github/workflows/signing
+          echo "Changed to signing directory: $(pwd)"
+          
           for exe in "${EXECUTABLES[@]}"; do
             echo "Processing: $exe"
-            if [ -f "$exe" ]; then
-              echo "  ✅ Found: $exe"
-              echo "  📝 Signing: $exe"
+            if [ -f "../$exe" ]; then
+              echo "  ✅ Found: ../$exe"
+              echo "  📝 Signing: ../$exe"
               
               # Get original checksum
-              ORIGINAL_CHECKSUM=$(sha256sum "$exe" | cut -d' ' -f1)
+              ORIGINAL_CHECKSUM=$(sha256sum "../$exe" | cut -d' ' -f1)
               echo "  📊 Original checksum: $ORIGINAL_CHECKSUM"
               
               # Sign the executable
-              if .github/workflows/signing/sign-windows-executable.sh "$exe"; then
-                echo "  ✅ Successfully signed: $exe"
+              if ./sign-windows-executable.sh "../$exe"; then
+                echo "  ✅ Successfully signed: ../$exe"
                 
                 # Get new checksum
-                NEW_CHECKSUM=$(sha256sum "$exe" | cut -d' ' -f1)
+                NEW_CHECKSUM=$(sha256sum "../$exe" | cut -d' ' -f1)
                 echo "  📊 New checksum: $NEW_CHECKSUM"
                 
                 if [ "$ORIGINAL_CHECKSUM" != "$NEW_CHECKSUM" ]; then
@@ -624,15 +635,18 @@ jobs:
                   echo "  ⚠️  Warning: Checksum unchanged - signing may have failed"
                 fi
               else
-                echo "  ❌ Failed to sign: $exe"
+                echo "  ❌ Failed to sign: ../$exe"
                 exit 1
               fi
             else
-              echo "  ❌ Missing: $exe"
+              echo "  ❌ Missing: ../$exe"
               exit 1
             fi
             echo ""
           done
+          
+          # Return to root directory
+          cd ../..
           
           echo "=== WIN32 SIGNING COMPLETE ==="
           echo "All win32 executables have been successfully signed"
@@ -647,9 +661,9 @@ jobs:
         run: |
           # Create a directory structure for the signed release
           mkdir -p signed-win32-release
-          cp win32-executables-for-signing/seamly2d.exe signed-win32-release/
-          cp win32-executables-for-signing/seamlyme.exe signed-win32-release/
-          cp win32-executables-for-signing/Seamly2D-installer.exe signed-win32-release/
+          cp seamly2d.exe signed-win32-release/
+          cp seamlyme.exe signed-win32-release/
+          cp Seamly2D-installer.exe signed-win32-release/
           
           # Create the signed zip
           cd signed-win32-release
@@ -724,38 +738,64 @@ jobs:
         run: |
           echo "=== PREPARING WINDOWS ARTIFACTS FOR RELEASE ==="
           
-          # Check if we have signed Windows 64-bit artifacts (preferred)
-          if [ -f "Seamly2D-windows-signed.zip" ]; then
-            echo "✅ Using signed Windows 64-bit artifacts"
-            cp Seamly2D-windows-signed.zip Seamly2D-windows.zip
-            echo "📦 Signed Windows 64-bit artifacts prepared for release"
-            echo "🔐 All 64-bit executables are digitally signed"
-          elif [ -f "Seamly2D-windows.zip" ]; then
-            echo "⚠️  Using unsigned Windows 64-bit artifacts (signing was skipped or failed)"
-            echo "📦 Unsigned Windows 64-bit artifacts prepared for release"
-            echo "⚠️  WARNING: 64-bit executables are NOT digitally signed"
+          # Check if signing was supposed to happen (develop branch, signing not skipped)
+          if [ "${{ github.ref_name }}" = "develop" ] && [ "${{ vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED }}" != "true" ]; then
+            echo "🔍 Signing was expected on develop branch"
+            
+            # Check if we have signed Windows 64-bit artifacts
+            if [ -f "Seamly2D-windows-signed.zip" ]; then
+              echo "✅ Using signed Windows 64-bit artifacts"
+              cp Seamly2D-windows-signed.zip Seamly2D-windows.zip
+              echo "📦 Signed Windows 64-bit artifacts prepared for release"
+              echo "🔐 All 64-bit executables are digitally signed"
+            else
+              echo "❌ SIGNING FAILURE: Expected signed Windows 64-bit artifacts but none found"
+              echo "❌ This indicates the signing job failed and the workflow should not proceed"
+              echo "❌ Available files:"
+              ls -la *.zip 2>/dev/null || echo "No zip files found"
+              exit 1
+            fi
+            
+            # Check if we have signed win32 artifacts
+            if [ -f "Seamly2D-win32-signed.zip" ]; then
+              echo "✅ Using signed Windows 32-bit artifacts"
+              cp Seamly2D-win32-signed.zip Seamly2D-win32.zip
+              echo "📦 Signed Windows 32-bit artifacts prepared for release"
+              echo "🔐 All 32-bit executables are digitally signed"
+            else
+              echo "❌ SIGNING FAILURE: Expected signed Windows 32-bit artifacts but none found"
+              echo "❌ This indicates the signing job failed and the workflow should not proceed"
+              echo "❌ Available files:"
+              ls -la *.zip 2>/dev/null || echo "No zip files found"
+              exit 1
+            fi
+            
           else
-            echo "❌ No Windows 64-bit artifacts found"
-            echo "Available files:"
-            ls -la *.zip 2>/dev/null || echo "No zip files found"
-            exit 1
-          fi
-          
-          # Check if we have signed win32 artifacts (preferred)
-          if [ -f "Seamly2D-win32-signed.zip" ]; then
-            echo "✅ Using signed Windows 32-bit artifacts"
-            cp Seamly2D-win32-signed.zip Seamly2D-win32.zip
-            echo "📦 Signed Windows 32-bit artifacts prepared for release"
-            echo "🔐 All 32-bit executables are digitally signed"
-          elif [ -f "Seamly2D-win32.zip" ]; then
-            echo "⚠️  Using unsigned Windows 32-bit artifacts (signing was skipped or failed)"
-            echo "📦 Unsigned Windows 32-bit artifacts prepared for release"
-            echo "⚠️  WARNING: 32-bit executables are NOT digitally signed"
-          else
-            echo "❌ No Windows 32-bit artifacts found"
-            echo "Available files:"
-            ls -la *.zip 2>/dev/null || echo "No zip files found"
-            exit 1
+            echo "🔍 Signing not expected (not develop branch or signing skipped)"
+            
+            # Check if we have unsigned Windows 64-bit artifacts
+            if [ -f "Seamly2D-windows.zip" ]; then
+              echo "✅ Using unsigned Windows 64-bit artifacts"
+              echo "📦 Unsigned Windows 64-bit artifacts prepared for release"
+              echo "⚠️  WARNING: 64-bit executables are NOT digitally signed"
+            else
+              echo "❌ No Windows 64-bit artifacts found"
+              echo "Available files:"
+              ls -la *.zip 2>/dev/null || echo "No zip files found"
+              exit 1
+            fi
+            
+            # Check if we have unsigned win32 artifacts
+            if [ -f "Seamly2D-win32.zip" ]; then
+              echo "✅ Using unsigned Windows 32-bit artifacts"
+              echo "📦 Unsigned Windows 32-bit artifacts prepared for release"
+              echo "⚠️  WARNING: 32-bit executables are NOT digitally signed"
+            else
+              echo "❌ No Windows 32-bit artifacts found"
+              echo "Available files:"
+              ls -la *.zip 2>/dev/null || echo "No zip files found"
+              exit 1
+            fi
           fi
           
           echo "📊 Final Windows artifacts:"

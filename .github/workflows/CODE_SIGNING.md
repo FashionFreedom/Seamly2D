@@ -1,5 +1,13 @@
 # Code Signing Implementation
 
+## Overview
+
+The code signing workflow is integrated into the main CI workflow (`ci.yml`) and provides secure digital signing for Windows executables using Google Cloud KMS with CloudHSM.
+
+### Supported Platforms
+- **Windows 64-bit**: `seamly2d.exe`, `seamlyme.exe`, `Seamly2D-installer.exe`
+- **Windows 32-bit**: `seamly2d.exe`, `seamlyme.exe`, `Seamly2D-installer.exe`
+
 ## Implementation
 
 ### 1. **Secrets and inputs**
@@ -18,16 +26,17 @@
 2. Add a new **Variable** (not secret):
    - **Name**: `SKIP_SIGNING_AND_RELEASE_UNSIGNED`
    - **Value**: `true`
-3. Push to trigger workflow
+3. Push to `develop` branch to trigger workflow
 4. Workflow will:
-   - ✅ Build Windows executables
+   - ✅ Build Windows 64-bit and 32-bit executables
    - ⏭️ Skip signing approval step entirely
    - 📝 Show clear notice that signing was skipped
-   - 📦 Make unsigned executables available
+   - 📦 Release unsigned executables with warnings
 
 **To Re-enable Signing**:
 1. Set variable to `false` or delete it entirely
-2. Push again to re-enable normal signing workflow
+2. Push to `develop` branch
+3. Normal signing workflow will resume with approval required
 
 **Security Considerations**:
 - ⚠️ **WARNING**: Unsigned executables may trigger security warnings
