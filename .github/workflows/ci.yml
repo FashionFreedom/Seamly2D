@@ -218,12 +218,20 @@ jobs:
 
       - name: Authenticate to Google Cloud (for signing)
         uses: google-github-actions/auth@v2
+        env:
+          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
+        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
+        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
         with:
           credentials_json: ${{ secrets.SEAMLY_SIGNING_SA_KEY }}
           project_id: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
 
       - name: Setup Google Cloud CLI (for signing)
         uses: google-github-actions/setup-gcloud@v2
+        env:
+          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
+        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
+        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
 
       - name: Set up Java (for signing)
         uses: actions/setup-java@v4
@@ -232,6 +240,10 @@ jobs:
           distribution: 'temurin'
 
       - name: Sign executables
+        env:
+          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
+        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
+        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
         shell: bash
         run: |
           java -jar .github/workflows/signing/jsign.jar \
@@ -303,21 +315,37 @@ jobs:
 
       - name: Authenticate to Google Cloud (for signing)
         uses: google-github-actions/auth@v2
+        env:
+          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
+        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
+        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
         with:
           credentials_json: ${{ secrets.SEAMLY_SIGNING_SA_KEY }}
           project_id: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
 
       - name: Setup Google Cloud CLI (for signing)
         uses: google-github-actions/setup-gcloud@v2
+        env:
+          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
+        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
+        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
 
       - name: Set up Java (for signing)
         uses: actions/setup-java@v4
+        env:
+          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
+        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
+        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
         with:
           java-version: 17
           distribution: 'temurin'
 
       - name: Sign executables
         shell: bash
+        env:
+          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
+        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
+        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
         run: |
           java -jar .github/workflows/signing/jsign.jar \
           --storetype GOOGLECLOUD \
