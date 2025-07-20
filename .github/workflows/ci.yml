@@ -325,14 +325,20 @@ jobs:
           distribution: 'temurin'
 
       - name: Sign executables
+        shell: bash
         run: >
-          java -jar .github\workflows\signing\jsign.jar --storetype GOOGLECLOUD
+          java -jar .github/workflows/signing/jsign.jar --storetype GOOGLECLOUD
             --storepass "$(gcloud auth print-access-token)"
             --keystore "projects/${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}/locations/${{ secrets.SEAMLY_SIGNING_LOCATION }}/keyRings/${{ secrets.SEAMLY_SIGNING_KEYRING_NAME }}"
             --alias "${{ secrets.SEAMLY_SIGNING_KEY_NAME }}"
-            --certfile .github\workflows\signing\codesign-chain.pem
+            --certfile .github/workflows/signing/codesign-chain.pem
             --tsaurl http://timestamp.sectigo.com
-            ..\windows-build\Seamly2D-installer.exe
+            ../windows-build/Seamly2D-installer.exe
+
+      - name: Print installer signature
+        run: |
+          cd ..\windows-build\
+          Get-AuthenticodeSignature Seamly2D-installer.exe
 
       - name: pack installer file into .zip
         run: |
