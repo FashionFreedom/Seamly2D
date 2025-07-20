@@ -667,6 +667,18 @@ jobs:
           path: Seamly2D-win32-signed.zip
           retention-days: 30
 
+  signing-complete:
+    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop' && vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED != 'true'
+    runs-on: ubuntu-latest
+    needs: [windows-code-signing, win32-code-signing]
+    steps:
+      - name: Signing Complete Notice
+        run: |
+          echo "=== SIGNING COMPLETE ==="
+          echo "All signing jobs have completed successfully"
+          echo "Signed artifacts are ready for release"
+          echo "Publish job can now proceed with signed artifacts"
+
   windows-skip-signing-notice:
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop' && vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED == 'true'
     runs-on: ubuntu-latest
@@ -690,8 +702,88 @@ jobs:
           echo ""
           echo "SUCCESS: Workflow will continue with unsigned artifacts for release"
 
-  publish:
-    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name != 'code-signing-test'
+  publish-with-signing:
+    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop' && github.ref_name != 'code-signing-test' && vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED != 'true'
+    runs-on: ubuntu-latest
+    needs: [version, windows, win32, linux, macos, signing-complete]
+    env:
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: Seamly2D-x86_64.AppImage
+      - uses: actions/download-artifact@v4
+        with:
+          name: Seamly2D-macos.zip
+      - name: Download signed Windows artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: Seamly2D-windows-signed
+        continue-on-error: true
+      - name: Download unsigned Windows artifacts (fallback)
+        uses: actions/download-artifact@v4
+        with:
+          name: Seamly2D-windows.zip
+        continue-on-error: true
+      - name: Download signed win32 artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: Seamly2D-win32-signed
+        continue-on-error: true
+      - name: Download unsigned win32 artifacts (fallback)
+        uses: actions/download-artifact@v4
+        with:
+          name: Seamly2D-win32.zip
+        continue-on-error: true
+      - name: Prepare Windows artifacts for release (signed)
+        run: |
+          echo "=== PREPARING SIGNED WINDOWS ARTIFACTS FOR RELEASE ==="
+          
+          # Since this job depends on signing-complete, we expect signed artifacts
+          if [ -f "Seamly2D-windows-signed.zip" ]; then
+            echo "SUCCESS: Using signed Windows 64-bit artifacts"
+            cp Seamly2D-windows-signed.zip Seamly2D-windows.zip
+            echo "ARTIFACT: Signed Windows 64-bit artifacts prepared for release"
+            echo "SIGNED: All 64-bit executables are digitally signed"
+          else
+            echo "ERROR: Expected signed Windows 64-bit artifacts but none found"
+            echo "Available files:"
+            ls -la *.zip 2>/dev/null || echo "No zip files found"
+            exit 1
+          fi
+          
+          if [ -f "Seamly2D-win32-signed.zip" ]; then
+            echo "SUCCESS: Using signed Windows 32-bit artifacts"
+            cp Seamly2D-win32-signed.zip Seamly2D-win32.zip
+            echo "ARTIFACT: Signed Windows 32-bit artifacts prepared for release"
+            echo "SIGNED: All 32-bit executables are digitally signed"
+          else
+            echo "ERROR: Expected signed Windows 32-bit artifacts but none found"
+            echo "Available files:"
+            ls -la *.zip 2>/dev/null || echo "No zip files found"
+            exit 1
+          fi
+          
+          echo "CHECKSUM: Final Windows artifacts:"
+          echo "  64-bit: Seamly2D-windows.zip"
+          echo "  32-bit: Seamly2D-win32.zip"
+          ls -la Seamly2D-windows.zip Seamly2D-win32.zip
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.VERSION_NUMBER }}
+          name: ${{ env.VERSION_NUMBER }}
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+          prerelease: ${{ github.event_name == 'push' }}
+          files: |
+            Seamly2D-x86_64.AppImage
+            Seamly2D-macos.zip
+            Seamly2D-windows.zip
+            Seamly2D-win32.zip
+
+  publish-without-signing:
+    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name != 'develop' && github.ref_name != 'code-signing-test'
     runs-on: ubuntu-latest
     needs: [version, windows, win32, linux, macos]
     env:
@@ -724,68 +816,32 @@ jobs:
         with:
           name: Seamly2D-win32.zip
         continue-on-error: true
-      - name: Prepare Windows artifacts for release
+
+      - name: Prepare Windows artifacts for release (unsigned)
         run: |
-          echo "=== PREPARING WINDOWS ARTIFACTS FOR RELEASE ==="
+          echo "=== PREPARING UNSIGNED WINDOWS ARTIFACTS FOR RELEASE ==="
           
-          # Check if signing was supposed to happen (develop branch, signing not skipped)
-          if [ "${{ github.ref_name }}" = "develop" ] && [ "${{ vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED }}" != "true" ]; then
-            echo "CHECK: Signing was expected on develop branch"
-            
-            # Check if we have signed Windows 64-bit artifacts
-            if [ -f "Seamly2D-windows-signed.zip" ]; then
-              echo "SUCCESS: Using signed Windows 64-bit artifacts"
-              cp Seamly2D-windows-signed.zip Seamly2D-windows.zip
-              echo "ARTIFACT: Signed Windows 64-bit artifacts prepared for release"
-              echo "SIGNED: All 64-bit executables are digitally signed"
-            else
-              echo "ERROR: SIGNING FAILURE: Expected signed Windows 64-bit artifacts but none found"
-              echo "ERROR: This indicates the signing job failed and the workflow should not proceed"
-              echo "ERROR: Available files:"
-              ls -la *.zip 2>/dev/null || echo "No zip files found"
-              exit 1
-            fi
-            
-            # Check if we have signed win32 artifacts
-            if [ -f "Seamly2D-win32-signed.zip" ]; then
-              echo "SUCCESS: Using signed Windows 32-bit artifacts"
-              cp Seamly2D-win32-signed.zip Seamly2D-win32.zip
-              echo "ARTIFACT: Signed Windows 32-bit artifacts prepared for release"
-              echo "SIGNED: All 32-bit executables are digitally signed"
-            else
-              echo "ERROR: SIGNING FAILURE: Expected signed Windows 32-bit artifacts but none found"
-              echo "ERROR: This indicates the signing job failed and the workflow should not proceed"
-              echo "ERROR: Available files:"
-              ls -la *.zip 2>/dev/null || echo "No zip files found"
-              exit 1
-            fi
-            
+          # This job is for non-develop branches, so we expect unsigned artifacts
+          if [ -f "Seamly2D-windows.zip" ]; then
+            echo "SUCCESS: Using unsigned Windows 64-bit artifacts"
+            echo "ARTIFACT: Unsigned Windows 64-bit artifacts prepared for release"
+            echo "WARNING: 64-bit executables are NOT digitally signed"
           else
-            echo "CHECK: Signing not expected (not develop branch or signing skipped)"
-            
-            # Check if we have unsigned Windows 64-bit artifacts
-            if [ -f "Seamly2D-windows.zip" ]; then
-              echo "SUCCESS: Using unsigned Windows 64-bit artifacts"
-              echo "ARTIFACT: Unsigned Windows 64-bit artifacts prepared for release"
-              echo "WARNING:  WARNING: 64-bit executables are NOT digitally signed"
-            else
-              echo "ERROR: No Windows 64-bit artifacts found"
-              echo "Available files:"
-              ls -la *.zip 2>/dev/null || echo "No zip files found"
-              exit 1
-            fi
-            
-            # Check if we have unsigned win32 artifacts
-            if [ -f "Seamly2D-win32.zip" ]; then
-              echo "SUCCESS: Using unsigned Windows 32-bit artifacts"
-              echo "ARTIFACT: Unsigned Windows 32-bit artifacts prepared for release"
-              echo "WARNING:  WARNING: 32-bit executables are NOT digitally signed"
-            else
-              echo "ERROR: No Windows 32-bit artifacts found"
-              echo "Available files:"
-              ls -la *.zip 2>/dev/null || echo "No zip files found"
-              exit 1
-            fi
+            echo "ERROR: No Windows 64-bit artifacts found"
+            echo "Available files:"
+            ls -la *.zip 2>/dev/null || echo "No zip files found"
+            exit 1
+          fi
+          
+          if [ -f "Seamly2D-win32.zip" ]; then
+            echo "SUCCESS: Using unsigned Windows 32-bit artifacts"
+            echo "ARTIFACT: Unsigned Windows 32-bit artifacts prepared for release"
+            echo "WARNING: 32-bit executables are NOT digitally signed"
+          else
+            echo "ERROR: No Windows 32-bit artifacts found"
+            echo "Available files:"
+            ls -la *.zip 2>/dev/null || echo "No zip files found"
+            exit 1
           fi
           
           echo "CHECKSUM: Final Windows artifacts:"
