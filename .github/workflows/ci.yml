@@ -249,38 +249,9 @@ jobs:
           C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
           copy Seamly2D-windows.zip ..\Seamly2D\
 
-      - name: List built executables for signing
-        run: |
-          echo "=== Built Executables for Code Signing ==="
-          echo "Checking for seamly2d.exe:"
-          if (Test-Path "src\app\seamly2d\bin\seamly2d.exe") {
-            echo "SUCCESS: seamly2d.exe found"
-            Get-ChildItem "src\app\seamly2d\bin\seamly2d.exe" | Select-Object Name, Length, LastWriteTime
-          } else {
-            echo "ERROR: seamly2d.exe not found"
-          }
-          
-          echo "Checking for seamlyme.exe:"
-          if (Test-Path "src\app\seamlyme\bin\seamlyme.exe") {
-            echo "SUCCESS: seamlyme.exe found"
-            Get-ChildItem "src\app\seamlyme\bin\seamlyme.exe" | Select-Object Name, Length, LastWriteTime
-          } else {
-            echo "ERROR: seamlyme.exe not found"
-          }
-          
-          echo "Checking for installer:"
-          if (Test-Path "..\windows-build\Seamly2D-installer.exe") {
-            echo "SUCCESS: Seamly2D-installer.exe found"
-            Get-ChildItem "..\windows-build\Seamly2D-installer.exe" | Select-Object Name, Length, LastWriteTime
-          } else {
-            echo "ERROR: Seamly2D-installer.exe not found"
-          }
-
       - name: Prepare executables for upload
         run: |
           mkdir -p executables-for-signing
-          Copy-Item -Path 'src\app\seamly2d\bin\seamly2d.exe' -Destination 'executables-for-signing\'
-          Copy-Item -Path 'src\app\seamlyme\bin\seamlyme.exe' -Destination 'executables-for-signing\'
           Copy-Item -Path '..\windows-build\Seamly2D-installer.exe' -Destination 'executables-for-signing\'
 
       - name: Upload Windows executables for signing
@@ -288,8 +259,6 @@ jobs:
         with:
           name: windows-executables
           path: |
-            executables-for-signing/seamly2d.exe
-            executables-for-signing/seamlyme.exe
             executables-for-signing/Seamly2D-installer.exe
           if-no-files-found: error
 
@@ -340,23 +309,30 @@ jobs:
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
-      - name: setup signing
-        id: setup_signing
-        uses: timheuer/base64-to-file@v1.2
-        env:
-          PFX_BASE64: ${{ secrets.pfx_base64 }}
-        if: ${{ env.PFX_BASE64 }}
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
         with:
-          encodedString: ${{ secrets.pfx_base64 }}
-          fileName: seamly2d.pfx
+          credentials_json: ${{ secrets.SEAMLY_SIGNING_SA_KEY }}
+          project_id: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
 
-      - name: sign installer
-        env:
-          PFX_BASE64: ${{ secrets.pfx_base64 }}
-        if: false # temporarily disable signing until #1104 is solved, then revert to ${{ env.PFX_BASE64 }}
-        run: |
-          cd ..\windows-build\
-          SignTool sign /fd SHA256 /f ${{ steps.setup_signing.outputs.filePath }} /p ${{ secrets.pfx_password }} /t http://timestamp.sectigo.com Seamly2D-installer.exe
+      - name: Setup Google Cloud CLI
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: 'temurin'
+
+      - name: Sign executables
+        run: >
+          java -jar .github\workflows\signing\jsign.jar --storetype GOOGLECLOUD
+            --storepass "$(gcloud auth print-access-token)"
+            --keystore "projects/${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}/locations/${{ secrets.SEAMLY_SIGNING_LOCATION }}/keyRings/${{ secrets.SEAMLY_SIGNING_KEYRING_NAME }}"
+            --alias "${{ secrets.SEAMLY_SIGNING_KEY_NAME }}"
+            --certfile .github\workflows\signing\codesign-chain.pem
+            --tsaurl http://timestamp.sectigo.com
+            ..\windows-build\Seamly2D-installer.exe
 
       - name: pack installer file into .zip
         run: |
@@ -367,18 +343,13 @@ jobs:
       - name: Prepare win32 executables for upload
         run: |
           mkdir -p win32-executables-for-signing
-          Copy-Item -Path 'src\app\seamly2d\bin\seamly2d.exe' -Destination 'win32-executables-for-signing\'
-          Copy-Item -Path 'src\app\seamlyme\bin\seamlyme.exe' -Destination 'win32-executables-for-signing\'
           Copy-Item -Path '..\windows-build\Seamly2D-installer.exe' -Destination 'win32-executables-for-signing\'
 
       - name: Upload win32 executables for signing
         uses: actions/upload-artifact@v4
         with:
           name: win32-executables
-          path: |
-            win32-executables-for-signing/seamly2d.exe
-            win32-executables-for-signing/seamlyme.exe
-            win32-executables-for-signing/Seamly2D-installer.exe
+          path: win32-executables-for-signing/Seamly2D-installer.exe
           if-no-files-found: error
 
       - uses: actions/upload-artifact@v4
@@ -414,118 +385,35 @@ jobs:
       - name: Setup Google Cloud CLI
         uses: google-github-actions/setup-gcloud@v2
       
-      - name: Download signing tools
-        run: |
-          mkdir -p .github/workflows/signing
-          
-          # Download jsign if not present
-          if [ ! -f .github/workflows/signing/jsign.jar ]; then
-            echo "Downloading jsign..."
-            curl -L -o .github/workflows/signing/jsign.jar https://github.com/ebourg/jsign/releases/download/4.1/jsign-4.1.jar
-          fi
-          
-          # Download codesign-chain.pem if not present
-          if [ ! -f .github/workflows/signing/codesign-chain.pem ]; then
-            echo "Downloading codesign-chain.pem..."
-            curl -L -o .github/workflows/signing/codesign-chain.pem https://curl.se/ca/cacert.pem
-          fi
-          
-          # Make signing script executable
-          chmod +x .github/workflows/signing/sign-windows-executable.sh
-      
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: 'temurin'
+
       - name: Sign executables
-        run: |
-          echo "=== PRODUCTION CODE SIGNING PROCESS ==="
-          echo "Branch: ${{ github.ref_name }}"
-          echo "Commit: ${{ github.sha }}"
-          echo "Environment: PRODUCTION (approval required)"
-          echo "Approver: ${{ github.actor }}"
-          echo ""
-          
-          # Set environment variables for signing
-          export SEAMLY_SIGNING_PROJECT_ID="${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}"
-          export SEAMLY_SIGNING_LOCATION="${{ secrets.SEAMLY_SIGNING_LOCATION }}"
-          export SEAMLY_SIGNING_KEYRING_NAME="${{ secrets.SEAMLY_SIGNING_KEYRING_NAME }}"
-          export SEAMLY_SIGNING_KEY_NAME="${{ secrets.SEAMLY_SIGNING_KEY_NAME }}"
-          
-          # Define the executables to sign (from Windows build artifacts)
-          EXECUTABLES=(
-            "seamly2d.exe"
-            "seamlyme.exe"
-            "Seamly2D-installer.exe"
-          )
-          
-          echo "=== SIGNING EXECUTABLES ==="
-          echo "Current directory: $(pwd)"
-          echo "Available files:"
-          find . -name "*.exe" -type f 2>/dev/null || echo "No .exe files found"
-          echo ""
-          
-          # Executables are already in root directory after artifact download
-          echo "INFO: Executables are already in root directory, proceeding with signing"
-          
-          for exe in "${EXECUTABLES[@]}"; do
-            echo "Processing: $exe"
-            if [ -f "$exe" ]; then
-              echo "  SUCCESS: Found: $exe"
-              echo "  SIGNING: Signing: $exe"
-              
-              # Get original checksum
-              ORIGINAL_CHECKSUM=$(sha256sum "$exe" | cut -d' ' -f1)
-              echo "  CHECKSUM: Original checksum: $ORIGINAL_CHECKSUM"
-              
-              # Sign the executable
-              if .github/workflows/signing/sign-windows-executable.sh "$exe"; then
-                echo "  SUCCESS: Successfully signed: $exe"
-                
-                # Get new checksum
-                NEW_CHECKSUM=$(sha256sum "$exe" | cut -d' ' -f1)
-                echo "  CHECKSUM: New checksum: $NEW_CHECKSUM"
-                
-                if [ "$ORIGINAL_CHECKSUM" != "$NEW_CHECKSUM" ]; then
-                  echo "  SUCCESS: Checksum changed - signing confirmed"
-                else
-                  echo "  WARNING:  Warning: Checksum unchanged - signing may have failed"
-                fi
-              else
-                echo "  ERROR: Failed to sign: $exe"
-                exit 1
-              fi
-            else
-              echo "  ERROR: Missing: $exe"
-              exit 1
-            fi
-            echo ""
-          done
-          
-          echo "=== SIGNING COMPLETE ==="
-          echo "All executables have been successfully signed"
-          echo "Signed files:"
-          for exe in "${EXECUTABLES[@]}"; do
-            if [ -f "$exe" ]; then
-              echo "  SUCCESS: $exe"
-            fi
-          done
+        run: >
+          java -jar .github/workflows/signing/jsign.jar --storetype GOOGLECLOUD
+            --storepass "$(gcloud auth print-access-token)"
+            --keystore "projects/${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}/locations/${{ secrets.SEAMLY_SIGNING_LOCATION }}/keyRings/${{ secrets.SEAMLY_SIGNING_KEYRING_NAME }}"
+            --alias "${{ secrets.SEAMLY_SIGNING_KEY_NAME }}"
+            --certfile ".github/workflows/signing/codesign-chain.pem"
+            --tsaurl http://timestamp.sectigo.com
+            ${{ github.workspace }}/Seamly2D-installer.exe
 
       - name: Create signed zip
         run: |
-          # Create a directory structure for the signed release
           mkdir -p signed-release
-          cp seamly2d.exe signed-release/
-          cp seamlyme.exe signed-release/
           cp Seamly2D-installer.exe signed-release/
           
-          # Create the signed zip
           cd signed-release
           zip -r ../Seamly2D-windows-signed.zip .
-          cd ..
 
       - name: Upload signed artifacts
         uses: actions/upload-artifact@v4
         with:
           name: Seamly2D-windows-signed
           path: Seamly2D-windows-signed.zip
-          retention-days: 30
 
   win32-code-signing:
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop' && vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED != 'true'
@@ -554,105 +442,19 @@ jobs:
       - name: Setup Google Cloud CLI
         uses: google-github-actions/setup-gcloud@v2
       
-      - name: Download signing tools
-        run: |
-          mkdir -p .github/workflows/signing
-          
-          # Download jsign if not present
-          if [ ! -f .github/workflows/signing/jsign.jar ]; then
-            echo "Downloading jsign..."
-            curl -L -o .github/workflows/signing/jsign.jar https://github.com/ebourg/jsign/releases/download/4.1/jsign-4.1.jar
-          fi
-          
-          # Download codesign-chain.pem if not present
-          if [ ! -f .github/workflows/signing/codesign-chain.pem ]; then
-            echo "Downloading codesign-chain.pem..."
-            curl -L -o .github/workflows/signing/codesign-chain.pem https://curl.se/ca/cacert.pem
-          fi
-          
-          # Make signing script executable
-          chmod +x .github/workflows/signing/sign-windows-executable.sh
-      
       - name: Sign win32 executables
         run: |
-          echo "=== PRODUCTION WIN32 CODE SIGNING PROCESS ==="
-          echo "Branch: ${{ github.ref_name }}"
-          echo "Commit: ${{ github.sha }}"
-          echo "Environment: PRODUCTION (approval required)"
-          echo "Approver: ${{ github.actor }}"
-          echo ""
-          
-          # Set environment variables for signing
           export SEAMLY_SIGNING_PROJECT_ID="${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}"
           export SEAMLY_SIGNING_LOCATION="${{ secrets.SEAMLY_SIGNING_LOCATION }}"
           export SEAMLY_SIGNING_KEYRING_NAME="${{ secrets.SEAMLY_SIGNING_KEYRING_NAME }}"
           export SEAMLY_SIGNING_KEY_NAME="${{ secrets.SEAMLY_SIGNING_KEY_NAME }}"
-          
-          # Define the executables to sign (from win32 build artifacts)
-          EXECUTABLES=(
-            "seamly2d.exe"
-            "seamlyme.exe"
-            "Seamly2D-installer.exe"
-          )
-          
-          echo "=== SIGNING WIN32 EXECUTABLES ==="
-          echo "Current directory: $(pwd)"
-          echo "Available files:"
-          find . -name "*.exe" -type f 2>/dev/null || echo "No .exe files found"
-          echo ""
-          
-          # Executables are already in root directory after artifact download
-          echo "INFO: Executables are already in root directory, proceeding with signing"
-          
-          for exe in "${EXECUTABLES[@]}"; do
-            echo "Processing: $exe"
-            if [ -f "$exe" ]; then
-              echo "  SUCCESS: Found: $exe"
-              echo "  SIGNING: Signing: $exe"
-              
-              # Get original checksum
-              ORIGINAL_CHECKSUM=$(sha256sum "$exe" | cut -d' ' -f1)
-              echo "  CHECKSUM: Original checksum: $ORIGINAL_CHECKSUM"
-              
-              # Sign the executable
-              if .github/workflows/signing/sign-windows-executable.sh "$exe"; then
-                echo "  SUCCESS: Successfully signed: $exe"
-                
-                # Get new checksum
-                NEW_CHECKSUM=$(sha256sum "$exe" | cut -d' ' -f1)
-                echo "  CHECKSUM: New checksum: $NEW_CHECKSUM"
-                
-                if [ "$ORIGINAL_CHECKSUM" != "$NEW_CHECKSUM" ]; then
-                  echo "  SUCCESS: Checksum changed - signing confirmed"
-                else
-                  echo "  WARNING:  Warning: Checksum unchanged - signing may have failed"
-                fi
-              else
-                echo "  ERROR: Failed to sign: $exe"
-                exit 1
-              fi
-            else
-              echo "  ERROR: Missing: $exe"
-              exit 1
-            fi
-            echo ""
-          done
-          
-          echo "=== WIN32 SIGNING COMPLETE ==="
-          echo "All win32 executables have been successfully signed"
-          echo "Signed files:"
-          for exe in "${EXECUTABLES[@]}"; do
-            if [ -f "$exe" ]; then
-              echo "  SUCCESS: $exe"
-            fi
-          done
+
+          .github/workflows/signing/sign-windows-executable.sh "Seamly2D-installer.exe"
 
       - name: Create signed win32 zip
         run: |
           # Create a directory structure for the signed release
           mkdir -p signed-win32-release
-          cp seamly2d.exe signed-win32-release/
-          cp seamlyme.exe signed-win32-release/
           cp Seamly2D-installer.exe signed-win32-release/
           
           # Create the signed zip
@@ -665,7 +467,6 @@ jobs:
         with:
           name: Seamly2D-win32-signed
           path: Seamly2D-win32-signed.zip
-          retention-days: 30
 
   signing-complete:
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop' && vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED != 'true'
@@ -689,8 +490,6 @@ jobs:
           echo "=== SIGNING SKIPPED ==="
           echo "WARNING:  Code signing was skipped due to SKIP_SIGNING_AND_RELEASE_UNSIGNED=true"
           echo "ARTIFACT: Windows executables are available but NOT signed:"
-          echo "   - seamly2d.exe"
-          echo "   - seamlyme.exe"
           echo "   - Seamly2D-installer.exe"
           echo ""
           echo "TO RE-ENABLE SIGNING:"
@@ -720,123 +519,14 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: Seamly2D-windows-signed
-        continue-on-error: true
-      - name: Download unsigned Windows artifacts (fallback)
-        uses: actions/download-artifact@v4
-        with:
-          name: Seamly2D-windows.zip
-        continue-on-error: true
       - name: Download signed win32 artifacts
         uses: actions/download-artifact@v4
         with:
           name: Seamly2D-win32-signed
-        continue-on-error: true
-      - name: Download unsigned win32 artifacts (fallback)
-        uses: actions/download-artifact@v4
-        with:
-          name: Seamly2D-win32.zip
-        continue-on-error: true
       - name: Prepare Windows artifacts for release (signed)
         run: |
-          echo "=== PREPARING SIGNED WINDOWS ARTIFACTS FOR RELEASE ==="
-          
-          # Since this job depends on signing-complete, we expect signed artifacts
-          if [ -f "Seamly2D-windows-signed.zip" ]; then
-            echo "SUCCESS: Using signed Windows 64-bit artifacts"
-            cp Seamly2D-windows-signed.zip Seamly2D-windows.zip
-            echo "ARTIFACT: Signed Windows 64-bit artifacts prepared for release"
-            echo "SIGNED: All 64-bit executables are digitally signed"
-          else
-            echo "ERROR: Expected signed Windows 64-bit artifacts but none found"
-            echo "Available files:"
-            ls -la *.zip 2>/dev/null || echo "No zip files found"
-            exit 1
-          fi
-          
-          if [ -f "Seamly2D-win32-signed.zip" ]; then
-            echo "SUCCESS: Using signed Windows 32-bit artifacts"
-            cp Seamly2D-win32-signed.zip Seamly2D-win32.zip
-            echo "ARTIFACT: Signed Windows 32-bit artifacts prepared for release"
-            echo "SIGNED: All 32-bit executables are digitally signed"
-          else
-            echo "ERROR: Expected signed Windows 32-bit artifacts but none found"
-            echo "Available files:"
-            ls -la *.zip 2>/dev/null || echo "No zip files found"
-            exit 1
-          fi
-          
-          echo "CHECKSUM: Final Windows artifacts:"
-          echo "  64-bit: Seamly2D-windows.zip"
-          echo "  32-bit: Seamly2D-win32.zip"
-          ls -la Seamly2D-windows.zip Seamly2D-win32.zip
-      - uses: softprops/action-gh-release@v2
-        with:
-          tag_name: v${{ env.VERSION_NUMBER }}
-          name: ${{ env.VERSION_NUMBER }}
-          generate_release_notes: true
-          fail_on_unmatched_files: true
-          prerelease: ${{ github.event_name == 'push' }}
-          files: |
-            Seamly2D-x86_64.AppImage
-            Seamly2D-macos.zip
-            Seamly2D-windows.zip
-            Seamly2D-win32.zip
-
-  publish-develop-without-signing:
-    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop' && vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED == 'true' && github.ref_name != 'code-signing-test'
-    runs-on: ubuntu-latest
-    needs: [version, windows, win32, linux, macos, windows-skip-signing-notice]
-    env:
-      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
-
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: Seamly2D-x86_64.AppImage
-      - uses: actions/download-artifact@v4
-        with:
-          name: Seamly2D-macos.zip
-      - name: Download unsigned Windows artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: Seamly2D-windows.zip
-        continue-on-error: true
-      - name: Download unsigned win32 artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: Seamly2D-win32.zip
-        continue-on-error: true
-      - name: Prepare Windows artifacts for release (develop, unsigned)
-        run: |
-          echo "=== PREPARING UNSIGNED WINDOWS ARTIFACTS FOR RELEASE (DEVELOP BRANCH) ==="
-          echo "CHECK: Develop branch with signing skipped - using unsigned artifacts"
-          
-          if [ -f "Seamly2D-windows.zip" ]; then
-            echo "SUCCESS: Using unsigned Windows 64-bit artifacts"
-            echo "ARTIFACT: Unsigned Windows 64-bit artifacts prepared for release"
-            echo "WARNING: 64-bit executables are NOT digitally signed"
-          else
-            echo "ERROR: No Windows 64-bit artifacts found"
-            echo "Available files:"
-            ls -la *.zip 2>/dev/null || echo "No zip files found"
-            exit 1
-          fi
-          
-          if [ -f "Seamly2D-win32.zip" ]; then
-            echo "SUCCESS: Using unsigned Windows 32-bit artifacts"
-            echo "ARTIFACT: Unsigned Windows 32-bit artifacts prepared for release"
-            echo "WARNING: 32-bit executables are NOT digitally signed"
-          else
-            echo "ERROR: No Windows 32-bit artifacts found"
-            echo "Available files:"
-            ls -la *.zip 2>/dev/null || echo "No zip files found"
-            exit 1
-          fi
-          
-          echo "CHECKSUM: Final Windows artifacts:"
-          echo "  64-bit: Seamly2D-windows.zip"
-          echo "  32-bit: Seamly2D-win32.zip"
-          ls -la Seamly2D-windows.zip Seamly2D-win32.zip
+          cp Seamly2D-windows-signed.zip Seamly2D-windows.zip
+          cp Seamly2D-win32-signed.zip Seamly2D-win32.zip
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ env.VERSION_NUMBER }}
@@ -851,9 +541,9 @@ jobs:
             Seamly2D-win32.zip
 
   publish-without-signing:
-    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name != 'develop' && github.ref_name != 'code-signing-test'
+    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop' && vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED == 'true' && github.ref_name != 'code-signing-test'
     runs-on: ubuntu-latest
-    needs: [version, windows, win32, linux, macos]
+    needs: [version, linux, macos, windows-skip-signing-notice]
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
@@ -864,68 +554,20 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: Seamly2D-macos.zip
-      - name: Download signed Windows artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: Seamly2D-windows-signed
-        continue-on-error: true
-      - name: Download unsigned Windows artifacts (fallback)
+      - name: Download unsigned Windows artifacts
         uses: actions/download-artifact@v4
         with:
           name: Seamly2D-windows.zip
-        continue-on-error: true
-      - name: Download signed win32 artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: Seamly2D-win32-signed
-        continue-on-error: true
-      - name: Download unsigned win32 artifacts (fallback)
+      - name: Download unsigned win32 artifacts
         uses: actions/download-artifact@v4
         with:
           name: Seamly2D-win32.zip
-        continue-on-error: true
-
-      - name: Prepare Windows artifacts for release (unsigned)
-        run: |
-          echo "=== PREPARING UNSIGNED WINDOWS ARTIFACTS FOR RELEASE ==="
-          
-          # This job is for non-develop branches only
-          echo "CHECK: Non-develop branch - using unsigned artifacts"
-          
-          if [ -f "Seamly2D-windows.zip" ]; then
-            echo "SUCCESS: Using unsigned Windows 64-bit artifacts"
-            echo "ARTIFACT: Unsigned Windows 64-bit artifacts prepared for release"
-            echo "WARNING: 64-bit executables are NOT digitally signed"
-          else
-            echo "ERROR: No Windows 64-bit artifacts found"
-            echo "Available files:"
-            ls -la *.zip 2>/dev/null || echo "No zip files found"
-            exit 1
-          fi
-          
-          if [ -f "Seamly2D-win32.zip" ]; then
-            echo "SUCCESS: Using unsigned Windows 32-bit artifacts"
-            echo "ARTIFACT: Unsigned Windows 32-bit artifacts prepared for release"
-            echo "WARNING: 32-bit executables are NOT digitally signed"
-          else
-            echo "ERROR: No Windows 32-bit artifacts found"
-            echo "Available files:"
-            ls -la *.zip 2>/dev/null || echo "No zip files found"
-            exit 1
-          fi
-          
-          echo "CHECKSUM: Final Windows artifacts:"
-          echo "  64-bit: Seamly2D-windows.zip"
-          echo "  32-bit: Seamly2D-win32.zip"
-          ls -la Seamly2D-windows.zip Seamly2D-win32.zip
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ env.VERSION_NUMBER }}
           name: ${{ env.VERSION_NUMBER }}
           generate_release_notes: true
           fail_on_unmatched_files: true
-          # push event is triggered after pull request is merged, and in these cases mark as prerelease
-          # all other (schedule and manual) are not marked as prerelease
           prerelease: ${{ github.event_name == 'push' }}
           files: |
             Seamly2D-x86_64.AppImage
