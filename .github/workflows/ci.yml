@@ -705,7 +705,7 @@ jobs:
   publish-with-signing:
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop' && github.ref_name != 'code-signing-test' && vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED != 'true'
     runs-on: ubuntu-latest
-    needs: [version, windows, win32, linux, macos, signing-complete]
+    needs: [version, linux, macos, signing-complete]
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
