@@ -74,27 +74,32 @@ validate_files() {
     fi
     log_info "✓ Executable file exists: $1"
     
-    # Check if jsign.jar exists
-    if [[ ! -f "jsign.jar" ]]; then
-        log_error "jsign.jar not found in current directory"
-        exit 1
-    fi
-    log_info "✓ jsign.jar exists"
+    # Check if jsign.jar exists in the signing directory
+    local script_dir="$(dirname "$(readlink -f "$0")")"
+    local jsign_path="$script_dir/jsign.jar"
+    local pem_path="$script_dir/codesign-chain.pem"
     
-    # Check if codesign-chain.pem exists
-    if [[ ! -f "codesign-chain.pem" ]]; then
-        log_error "codesign-chain.pem not found in current directory"
+    if [[ ! -f "$jsign_path" ]]; then
+        log_error "jsign.jar not found at: $jsign_path"
         exit 1
     fi
-    log_info "✓ codesign-chain.pem exists"
+    log_info "✓ jsign.jar exists at: $jsign_path"
+    
+    if [[ ! -f "$pem_path" ]]; then
+        log_error "codesign-chain.pem not found at: $pem_path"
+        exit 1
+    fi
+    log_info "✓ codesign-chain.pem exists at: $pem_path"
 }
 
 # Function to validate jar file hash
 validate_jar_hash() {
     log_info "Validating jsign.jar hash..."
     
+    local script_dir="$(dirname "$(readlink -f "$0")")"
+    local jsign_path="$script_dir/jsign.jar"
     local expected_hash="290377fc4f593256200b3ea4061b7409e8276255f449d4c6de7833faf0850cc1"
-    local actual_hash=$(sha256sum jsign.jar | cut -d' ' -f1)
+    local actual_hash=$(sha256sum "$jsign_path" | cut -d' ' -f1)
     
     if [[ "$expected_hash" != "$actual_hash" ]]; then
         log_error "jsign.jar hash validation failed!"
@@ -109,15 +114,18 @@ validate_jar_hash() {
 validate_pem_file() {
     log_info "Validating codesign-chain.pem file..."
     
+    local script_dir="$(dirname "$(readlink -f "$0")")"
+    local pem_path="$script_dir/codesign-chain.pem"
+    
     # Check if it's a valid PEM file
-    if ! openssl x509 -in codesign-chain.pem -text -noout >/dev/null 2>&1; then
+    if ! openssl x509 -in "$pem_path" -text -noout >/dev/null 2>&1; then
         log_error "codesign-chain.pem is not a valid PEM certificate file"
         exit 1
     fi
     log_success "✓ codesign-chain.pem is a valid PEM certificate"
     
     # Log PEM file checksum
-    local pem_hash=$(sha256sum codesign-chain.pem | cut -d' ' -f1)
+    local pem_hash=$(sha256sum "$pem_path" | cut -d' ' -f1)
     log_info "PEM file checksum: $pem_hash"
 }
 
@@ -147,12 +155,16 @@ sign_executable() {
     # Sign the executable
     log_info "Executing signing command..."
     
-    if java -jar jsign.jar \
+    local script_dir="$(dirname "$(readlink -f "$0")")"
+    local jsign_path="$script_dir/jsign.jar"
+    local pem_path="$script_dir/codesign-chain.pem"
+    
+    if java -jar "$jsign_path" \
         --storetype GOOGLECLOUD \
         --storepass "$(gcloud auth print-access-token)" \
         --keystore "projects/$SEAMLY_SIGNING_PROJECT_ID/locations/$SEAMLY_SIGNING_LOCATION/keyRings/$SEAMLY_SIGNING_KEYRING_NAME" \
         --alias "$SEAMLY_SIGNING_KEY_NAME" \
-        --certfile "codesign-chain.pem" \
+        --certfile "$pem_path" \
         --tsmode RFC3161 \
         --tsaurl http://timestamp.globalsign.com/tsa/r6advanced1 \
         "$executable_path"; then
@@ -206,13 +218,17 @@ main() {
     check_gcloud_auth
     
     # Log configuration
+    local script_dir="$(dirname "$(readlink -f "$0")")"
+    local jsign_path="$script_dir/jsign.jar"
+    local pem_path="$script_dir/codesign-chain.pem"
+    
     log_info "Signing configuration:"
     log_info "  Project ID: $SEAMLY_SIGNING_PROJECT_ID"
     log_info "  Location: $SEAMLY_SIGNING_LOCATION"
     log_info "  Keyring: $SEAMLY_SIGNING_KEYRING_NAME"
     log_info "  Key: $SEAMLY_SIGNING_KEY_NAME"
-    log_info "  JAR file: jsign.jar"
-    log_info "  PEM file: codesign-chain.pem"
+    log_info "  JAR file: $jsign_path"
+    log_info "  PEM file: $pem_path"
     
     # Sign the executable
     sign_executable "$executable_path"
