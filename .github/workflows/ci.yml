@@ -254,19 +254,6 @@ jobs:
           C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
           copy Seamly2D-windows.zip ..\Seamly2D\
 
-      - name: Prepare executables for upload
-        run: |
-          mkdir -p executables-for-signing
-          Copy-Item -Path '..\windows-build\Seamly2D-installer.exe' -Destination 'executables-for-signing\'
-
-      - name: Upload Windows executables for signing
-        uses: actions/upload-artifact@v4
-        with:
-          name: windows-executables
-          path: |
-            executables-for-signing/Seamly2D-installer.exe
-          if-no-files-found: error
-
       - uses: actions/upload-artifact@v4
         with:
           name: Seamly2D-windows.zip
