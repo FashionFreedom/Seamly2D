@@ -185,16 +185,7 @@ jobs:
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
-    steps:
-      - name: Test Mode Indicator
-        if: github.ref_name == 'code-signing-test'
-        run: |
-          echo "=== TEST MODE ==="
-          echo "Running on code-signing-test branch"
-          echo "This build is for testing code signing workflow"
-          echo "No releases will be published"
-          echo "=================="
-      
+    steps:     
       - uses: actions/checkout@v4
 
       - uses: ilammy/msvc-dev-cmd@v1
@@ -225,23 +216,37 @@ jobs:
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
-      - name: setup signing
-        id: setup_signing
-        uses: timheuer/base64-to-file@v1.2
-        env:
-          PFX_BASE64: ${{ secrets.pfx_base64 }}
-        if: ${{ env.PFX_BASE64 }}
+      - name: Authenticate to Google Cloud (for signing)
+        uses: google-github-actions/auth@v2
         with:
-          encodedString: ${{ secrets.pfx_base64 }}
-          fileName: seamly2d.pfx
+          credentials_json: ${{ secrets.SEAMLY_SIGNING_SA_KEY }}
+          project_id: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
 
-      - name: sign installer
-        env:
-          PFX_BASE64: ${{ secrets.pfx_base64 }}
-        if: false # temporarily disable signing until #1104 is solved, then revert to ${{ env.PFX_BASE64 }}
+      - name: Setup Google Cloud CLI (for signing)
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Set up Java (for signing)
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: 'temurin'
+
+      - name: Sign executables
+        shell: bash
+        run: |
+          java -jar .github/workflows/signing/jsign.jar \
+          --storetype GOOGLECLOUD \
+          --storepass "$(gcloud auth print-access-token)" \
+          --keystore "projects/${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}/locations/${{ secrets.SEAMLY_SIGNING_LOCATION }}/keyRings/${{ secrets.SEAMLY_SIGNING_KEYRING_NAME }}" \
+          --alias "${{ secrets.SEAMLY_SIGNING_KEY_NAME }}" \
+          --certfile .github/workflows/signing/codesign-chain.pem \
+          --tsaurl http://timestamp.sectigo.com \
+          ../windows-build/Seamly2D-installer.exe
+
+      - name: Print installer signature
         run: |
           cd ..\windows-build\
-          SignTool sign /fd SHA256 /f ${{ steps.setup_signing.outputs.filePath }} /p ${{ secrets.pfx_password }} /t http://timestamp.sectigo.com Seamly2D-installer.exe
+          Get-AuthenticodeSignature Seamly2D-installer.exe
 
       - name: pack installer file into .zip
         run: |
@@ -309,16 +314,16 @@ jobs:
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
-      - name: Authenticate to Google Cloud
+      - name: Authenticate to Google Cloud (for signing)
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.SEAMLY_SIGNING_SA_KEY }}
           project_id: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
 
-      - name: Setup Google Cloud CLI
+      - name: Setup Google Cloud CLI (for signing)
         uses: google-github-actions/setup-gcloud@v2
 
-      - name: Set up Java
+      - name: Set up Java (for signing)
         uses: actions/setup-java@v4
         with:
           java-version: 17
@@ -347,210 +352,16 @@ jobs:
           C:\"Program Files"\7-Zip\7z.exe a Seamly2D-win32.zip Seamly2D-installer.exe
           copy Seamly2D-win32.zip ..\Seamly2D\
 
-      - name: Prepare win32 executables for upload
-        run: |
-          mkdir -p win32-executables-for-signing
-          Copy-Item -Path '..\windows-build\Seamly2D-installer.exe' -Destination 'win32-executables-for-signing\'
-
-      - name: Upload win32 executables for signing
-        uses: actions/upload-artifact@v4
-        with:
-          name: win32-executables
-          path: win32-executables-for-signing/Seamly2D-installer.exe
-          if-no-files-found: error
-
       - uses: actions/upload-artifact@v4
         with:
           name: Seamly2D-win32.zip
           path: Seamly2D-win32.zip
           if-no-files-found: error
 
-  windows-code-signing:
-    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop' && vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED != 'true'
+  publish:
+    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop'
     runs-on: ubuntu-latest
-    needs: windows
-    environment:
-      name: code-signing-approval
-      url: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: Download Windows executables for signing
-        uses: actions/download-artifact@v4
-        with:
-          name: windows-executables
-          path: .
-      
-      - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v2
-        with:
-          credentials_json: ${{ secrets.SEAMLY_SIGNING_SA_KEY }}
-          project_id: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
-
-      - name: Setup Google Cloud CLI
-        uses: google-github-actions/setup-gcloud@v2
-      
-      - name: Set up Java
-        uses: actions/setup-java@v4
-        with:
-          java-version: 17
-          distribution: 'temurin'
-
-      - name: Sign executables
-        run: >
-          java -jar .github/workflows/signing/jsign.jar --storetype GOOGLECLOUD
-            --storepass "$(gcloud auth print-access-token)"
-            --keystore "projects/${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}/locations/${{ secrets.SEAMLY_SIGNING_LOCATION }}/keyRings/${{ secrets.SEAMLY_SIGNING_KEYRING_NAME }}"
-            --alias "${{ secrets.SEAMLY_SIGNING_KEY_NAME }}"
-            --certfile ".github/workflows/signing/codesign-chain.pem"
-            --tsaurl http://timestamp.sectigo.com
-            ${{ github.workspace }}/Seamly2D-installer.exe
-
-      - name: Create signed zip
-        run: |
-          mkdir -p signed-release
-          cp Seamly2D-installer.exe signed-release/
-          
-          cd signed-release
-          zip -r ../Seamly2D-windows-signed.zip .
-
-      - name: Upload signed artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: Seamly2D-windows-signed
-          path: Seamly2D-windows-signed.zip
-
-  win32-code-signing:
-    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop' && vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED != 'true'
-    runs-on: ubuntu-latest
-    needs: win32
-    environment:
-      name: code-signing-approval
-      url: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: Download win32 executables for signing
-        uses: actions/download-artifact@v4
-        with:
-          name: win32-executables
-          path: .
-      
-      - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v2
-        with:
-          credentials_json: ${{ secrets.SEAMLY_SIGNING_SA_KEY }}
-          project_id: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
-
-      - name: Setup Google Cloud CLI
-        uses: google-github-actions/setup-gcloud@v2
-      
-      - name: Sign win32 executables
-        run: |
-          export SEAMLY_SIGNING_PROJECT_ID="${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}"
-          export SEAMLY_SIGNING_LOCATION="${{ secrets.SEAMLY_SIGNING_LOCATION }}"
-          export SEAMLY_SIGNING_KEYRING_NAME="${{ secrets.SEAMLY_SIGNING_KEYRING_NAME }}"
-          export SEAMLY_SIGNING_KEY_NAME="${{ secrets.SEAMLY_SIGNING_KEY_NAME }}"
-
-          .github/workflows/signing/sign-windows-executable.sh "Seamly2D-installer.exe"
-
-      - name: Create signed win32 zip
-        run: |
-          # Create a directory structure for the signed release
-          mkdir -p signed-win32-release
-          cp Seamly2D-installer.exe signed-win32-release/
-          
-          # Create the signed zip
-          cd signed-win32-release
-          zip -r ../Seamly2D-win32-signed.zip .
-          cd ..
-
-      - name: Upload signed win32 artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: Seamly2D-win32-signed
-          path: Seamly2D-win32-signed.zip
-
-  signing-complete:
-    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop' && vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED != 'true'
-    runs-on: ubuntu-latest
-    needs: [windows-code-signing, win32-code-signing]
-    steps:
-      - name: Signing Complete Notice
-        run: |
-          echo "=== SIGNING COMPLETE ==="
-          echo "All signing jobs have completed successfully"
-          echo "Signed artifacts are ready for release"
-          echo "Publish job can now proceed with signed artifacts"
-
-  windows-skip-signing-notice:
-    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop' && vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED == 'true'
-    runs-on: ubuntu-latest
-    needs: [windows, win32]
-    steps:
-      - name: Signing Skipped Notice
-        run: |
-          echo "=== SIGNING SKIPPED ==="
-          echo "WARNING:  Code signing was skipped due to SKIP_SIGNING_AND_RELEASE_UNSIGNED=true"
-          echo "ARTIFACT: Windows executables are available but NOT signed:"
-          echo "   - Seamly2D-installer.exe"
-          echo ""
-          echo "TO RE-ENABLE SIGNING:"
-          echo "   1. Set SKIP_SIGNING_AND_RELEASE_UNSIGNED=false or remove the variable"
-          echo "   2. Re-run this workflow"
-          echo ""
-          echo "WARNING:  WARNING: Unsigned executables may trigger security warnings"
-          echo "   and should only be used for testing or emergency releases."
-          echo ""
-          echo "SUCCESS: Workflow will continue with unsigned artifacts for release"
-
-  publish-with-signing:
-    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop' && github.ref_name != 'code-signing-test' && vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED != 'true'
-    runs-on: ubuntu-latest
-    needs: [version, linux, macos, signing-complete]
-    env:
-      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
-
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: Seamly2D-x86_64.AppImage
-      - uses: actions/download-artifact@v4
-        with:
-          name: Seamly2D-macos.zip
-      - name: Download signed Windows artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: Seamly2D-windows-signed
-      - name: Download signed win32 artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: Seamly2D-win32-signed
-      - name: Prepare Windows artifacts for release (signed)
-        run: |
-          cp Seamly2D-windows-signed.zip Seamly2D-windows.zip
-          cp Seamly2D-win32-signed.zip Seamly2D-win32.zip
-      - uses: softprops/action-gh-release@v2
-        with:
-          tag_name: v${{ env.VERSION_NUMBER }}
-          name: ${{ env.VERSION_NUMBER }}
-          generate_release_notes: true
-          fail_on_unmatched_files: true
-          prerelease: ${{ github.event_name == 'push' }}
-          files: |
-            Seamly2D-x86_64.AppImage
-            Seamly2D-macos.zip
-            Seamly2D-windows.zip
-            Seamly2D-win32.zip
-
-  publish-without-signing:
-    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop' && vars.SKIP_SIGNING_AND_RELEASE_UNSIGNED == 'true' && github.ref_name != 'code-signing-test'
-    runs-on: ubuntu-latest
-    needs: [version, linux, macos, windows-skip-signing-notice]
+    needs: [version, linux, macos, win32, windows]
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
@@ -584,7 +395,7 @@ jobs:
 
   document:
     # Deploy Doxygen documentation for scheduled releases (schedule) and manual releases (workflow_dispatch) and pre-releases (push)
-    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name != 'code-signing-test'
+    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push')
     runs-on: ubuntu-latest
 
     steps:
