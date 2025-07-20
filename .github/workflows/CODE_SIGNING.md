@@ -4,10 +4,6 @@
 
 The code signing workflow is integrated into the main CI workflow (`ci.yml`) and provides secure digital signing for Windows executables using Google Cloud KMS with CloudHSM.
 
-### Supported Platforms
-- **Windows 64-bit**: `seamly2d.exe`, `seamlyme.exe`, `Seamly2D-installer.exe`
-- **Windows 32-bit**: `seamly2d.exe`, `seamlyme.exe`, `Seamly2D-installer.exe`
-
 ## Implementation
 
 ### 1. **Secrets and inputs**
@@ -23,18 +19,16 @@ The code signing workflow is integrated into the main CI workflow (`ci.yml`) and
 
 **To Skip Signing (Emergency Override)**:
 1. Go to repository **Settings** → **Secrets and variables** → **Actions**
-2. Add a new **Variable** (not secret):
-   - **Name**: `SKIP_SIGNING_AND_RELEASE_UNSIGNED`
-   - **Value**: `true`
+2. Remove the **Secret** `SEAMLY_SIGNING_PROJECT_ID`
+
 3. Push to `develop` branch to trigger workflow
 4. Workflow will:
    - ✅ Build Windows 64-bit and 32-bit executables
    - ⏭️ Skip signing approval step entirely
-   - 📝 Show clear notice that signing was skipped
    - 📦 Release unsigned executables with warnings
 
 **To Re-enable Signing**:
-1. Set variable to `false` or delete it entirely
+1. Add the **Secret** `SEAMLY_SIGNING_PROJECT_ID` back in
 2. Push to `develop` branch
 3. Normal signing workflow will resume with approval required
 
@@ -51,9 +45,3 @@ The code signing workflow is integrated into the main CI workflow (`ci.yml`) and
 - Signing infrastructure maintenance
 - Testing builds without signing overhead
 - Emergency security patches that cannot wait for signing
-
-**Audit Trail**:
-- Workflow logs clearly indicate signing was skipped
-- Reason for skipping is documented in logs
-- User who set the variable is tracked
-- Timestamp of skip operation is recorded

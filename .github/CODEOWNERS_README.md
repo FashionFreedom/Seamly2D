@@ -13,7 +13,6 @@ The following files require approval from the SeamlySigners team:
 
 ### Documentation and Configuration
 - `.github/workflows/CODE_SIGNING.md` - Implementation documentation
-- `.github/environments/code-signing-approval.yml` - Environment configuration
 
 ## How It Works
 
