@@ -26,6 +26,7 @@
 #include "ui_welcome_dialog.h"
 
 #include "../core/application_2d.h"
+#include "../qmuparser/qmudef.h"
 
 #include <QPushButton>
 #include <QShowEvent>
@@ -47,9 +48,9 @@ SeamlyWelcomeDialog::SeamlyWelcomeDialog(QWidget *parent)
     initUnits();
 
     //-------------------- Decimal separator setup
-    ui->separator_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
+    ui->separator_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(localeDecimalPoint(QLocale())));
     ui->separator_CheckBox->setChecked(settings->getOsSeparator());
-    connect(ui->separator_CheckBox, &QCheckBox::stateChanged, this, &SeamlyWelcomeDialog::seperatorChanged);
+    connect(ui->separator_CheckBox, &QCheckBox::stateChanged, this, &SeamlyWelcomeDialog::separatorChanged);
 
     //-------------------- Languages setup
     InitLanguages(ui->language_ComboBox);
@@ -121,20 +122,21 @@ void SeamlyWelcomeDialog::changeEvent(QEvent *event)
     {
         // retranslate designer form (single inheritance approach)
         ui->retranslateUi(this);
-        ui->separator_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
+        ui->separator_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(localeDecimalPoint(QLocale())));
     }
 
     // remember to call base class implementation
     QDialog::changeEvent(event);
 }
 
-// @brief seperatorChanged handle change in decimal seperator
-void SeamlyWelcomeDialog::seperatorChanged()
+// @brief separatorChanged handle change in decimal separator
+void SeamlyWelcomeDialog::separatorChanged()
 {
-    QString seperator = ui->separator_CheckBox->isChecked() ? QString(QLocale().decimalPoint())
-                                                            : QString(QLocale::c().decimalPoint());
+    QString separator = ui->separator_CheckBox->isChecked()
+                      ? QString(localeDecimalPoint(QLocale()))
+                      : QString(localeDecimalPoint(QLocale::c()));
 
-    ui->separator_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(seperator));
+    ui->separator_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(separator));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

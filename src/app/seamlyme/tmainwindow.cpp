@@ -739,11 +739,11 @@ bool TMainWindow::eventFilter(QObject *object, QEvent *event)
 			{
 				if (qApp->Settings()->getOsSeparator())
 				{
-					plainTextEdit->insertPlainText(QLocale().decimalPoint());
+					plainTextEdit->insertPlainText(localeDecimalPoint(QLocale()));
 				}
 				else
 				{
-					plainTextEdit->insertPlainText(QLocale::c().decimalPoint());
+					plainTextEdit->insertPlainText(localeDecimalPoint(QLocale::c()));
 				}
 				return true;
 			}
@@ -758,11 +758,11 @@ bool TMainWindow::eventFilter(QObject *object, QEvent *event)
 			{
 				if (qApp->Settings()->getOsSeparator())
 				{
-					textEdit->insert(QLocale().decimalPoint());
+					textEdit->insert(localeDecimalPoint(QLocale()));
 				}
 				else
 				{
-					textEdit->insert(QLocale::c().decimalPoint());
+					textEdit->insert(localeDecimalPoint(QLocale::c()));
 				}
 				return true;
 			}
@@ -2408,7 +2408,7 @@ void TMainWindow::InitWindow()
         m_search->setMatchRegEx(checked);
         m_search->find(ui->find_LineEdit->text());
     });
-    
+
     connect(ui->case_ToolButton,  &QToolButton::toggled, [this] (const bool &checked)
     {
         if (checked)

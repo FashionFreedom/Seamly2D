@@ -46,7 +46,7 @@ public:
 
 protected:
     virtual void               changeEvent(QEvent* event) Q_DECL_OVERRIDE;
-    void                       seperatorChanged();
+    void                       separatorChanged();
 
 private:
     Q_DISABLE_COPY(SeamlyWelcomeDialog)

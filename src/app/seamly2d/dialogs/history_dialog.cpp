@@ -718,14 +718,11 @@ bool HistoryDialog::eventFilter(QObject *object, QEvent *event)
             QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
             if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
             {
-                if (qApp->Settings()->getOsSeparator())
-                {
-                    textEdit->insert(QLocale().decimalPoint());
-                }
-                else
-                {
-                    textEdit->insert(QLocale::c().decimalPoint());
-                }
+                QString separator = qApp->Settings()->getOsSeparator()
+                                  ? QString(localeDecimalPoint(QLocale()))
+                                  : QString(localeDecimalPoint(QLocale::c()));
+
+                textEdit->insert(separator);
                 return true;
             }
         }

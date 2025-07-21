@@ -204,7 +204,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
 
     // Decimal separator setup
-    ui->osOptionCheck->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
+    ui->osOptionCheck->setText(tr("User locale") + QString(" (%1)").arg(localeDecimalPoint(QLocale())));
     ui->osOptionCheck->setChecked(qApp->Seamly2DSettings()->getOsSeparator());
 
     // Unit setup
@@ -353,7 +353,7 @@ void PreferencesConfigurationPage::changeEvent(QEvent *event)
     if (event->type() == QEvent::LanguageChange)
     {
         ui->retranslateUi(this);
-        ui->osOptionCheck->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
+        ui->osOptionCheck->setText(tr("User locale") + QString(" (%1)").arg(localeDecimalPoint(QLocale())));
     }
     QWidget::changeEvent(event);
 }

@@ -56,6 +56,7 @@
 #include "seamlymepreferencesconfigurationpage.h"
 #include "ui_seamlymepreferencesconfigurationpage.h"
 #include "../../application_me.h"
+#include "../qmuparser/qmudef.h"
 #include "../vmisc/vseamlymesettings.h"
 #include "../vpatterndb/variables/measurement_variable.h"
 #include "../vpatterndb/pmsystems.h"
@@ -80,7 +81,7 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
     });
 
     //-------------------- Decimal separator setup
-    ui->osOption_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
+    ui->osOption_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(localeDecimalPoint(QLocale())));
     ui->osOption_CheckBox->setChecked(qApp->seamlyMeSettings()->getOsSeparator());
 
     //---------------------- Pattern making system
@@ -153,7 +154,7 @@ void SeamlyMePreferencesConfigurationPage::changeEvent(QEvent *event)
     if (event->type() == QEvent::LanguageChange)
     {
         ui->retranslateUi(this);
-        ui->osOption_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
+        ui->osOption_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(localeDecimalPoint(QLocale())));
     }
     QWidget::changeEvent(event);
 }
