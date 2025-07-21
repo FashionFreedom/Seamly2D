@@ -31,6 +31,8 @@ MOC_DIR = moc
 # objecs files
 OBJECTS_DIR = obj
 
+INCLUDEPATH += $$PWD/../qmuparser
+
 include(vpropertyexplorer.pri)
 
 include(warnings.pri)

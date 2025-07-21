@@ -287,7 +287,7 @@ MainWindow::MainWindow(QWidget *parent)
         initializeToolBarVisibility();
 
         setCurrentFile(""); // Set a new unsaved pattern filename to an empty string.
-        setWindowsLocale(); // Set the mainwindow locale based on the OS seperator set in the prefs.
+        setWindowsLocale(); // Set the mainwindow locale based on the OS separator set in the prefs.
 
         // Show the layout page that is selected in the Layout Pages dock.
         connect(ui->listWidget, &QListWidget::currentRowChanged, this, &MainWindow::showLayoutPages);

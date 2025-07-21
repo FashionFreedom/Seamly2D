@@ -465,11 +465,11 @@ bool DialogTool::eventFilter(QObject *object, QEvent *event)
             {
                 if (qApp->Settings()->getOsSeparator())
                 {
-                    plainTextEdit->insertPlainText(QLocale().decimalPoint());
+                    plainTextEdit->insertPlainText(localeDecimalPoint(QLocale()));
                 }
                 else
                 {
-                    plainTextEdit->insertPlainText(QLocale::c().decimalPoint());
+                    plainTextEdit->insertPlainText(localeDecimalPoint(QLocale::c()));
                 }
                 return true;
             }
@@ -835,8 +835,10 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
             // Replace line return character with spaces for calc if exist
             QString formula = text;
             formula.replace("\n", " ");
+
             // Translate to internal look.
             formula = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+
             QScopedPointer<Calculator> cal(new Calculator());
             result = cal->EvalFormula(data->DataVariables(), formula);
 

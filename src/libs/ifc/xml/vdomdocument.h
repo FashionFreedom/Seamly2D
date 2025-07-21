@@ -63,6 +63,7 @@
 #include <QLocale>
 
 #include "../ifc/ifcdef.h"
+#include "../qmuparser/qmudef.h"
 #include "../vmisc/def.h"
 #include "../vmisc/diagnostic.h"
 #include "../vmisc/logging.h"
@@ -183,7 +184,7 @@ inline void VDomDocument::SetAttribute(QDomElement &domElement, const QString &n
 {
     // See specification for xs:decimal
     const QLocale locale = QLocale::c();
-    domElement.setAttribute(name, locale.toString(value).remove(locale.groupSeparator()));
+    domElement.setAttribute(name, locale.toString(value).remove(localeGroupSeparator(locale)));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
