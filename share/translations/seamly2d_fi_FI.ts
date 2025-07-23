@@ -8702,10 +8702,6 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <translation>Oletus:</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Desimaalierotin:</translation>
-    </message>
-    <message>
         <source>None</source>
         <translation>Ei mitään</translation>
     </message>
@@ -8814,10 +8810,6 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <translation>Sähköpostiosoitteen muoto ei kelpaa.</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Käyttäjän kieliasetus</translation>
-    </message>
-    <message>
         <source>Startup</source>
         <translation>Käynnistys</translation>
     </message>
@@ -8832,6 +8824,42 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Point name text:</source>
         <translation>Pisteen nimiteksti:</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Erottimen kieliasetus:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Oletus</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Käyttäjän järjestelmä</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Kieliasetus</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Maa</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Ryhmäerotin</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Desimaalipilkku</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Negatiivinen etumerkki</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Positiivinen merkki</translation>
     </message>
 </context>
 <context>
@@ -9841,12 +9869,40 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <translation>Älä näytä tervetulonäyttöä</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Desimaalierotin:</translation>
+        <source>Separator Locale:</source>
+        <translation>Erottimen kieliasetus:</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Käyttäjän kieliasetus</translation>
+        <source>Default</source>
+        <translation>Oletus</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Käyttäjän järjestelmä</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Kieliasetus</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Maa</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Ryhmäerotin</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Desimaalipilkku</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Negatiivinen etumerkki</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Positiivinen merkki</translation>
     </message>
 </context>
 <context>
@@ -9931,10 +9987,6 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <translation>Asettaa uuden mittaustiedoston oletusyksiköt.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Desimaalierotin:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Käyttöliittymän kieli:</translation>
     </message>
@@ -9945,10 +9997,6 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Do not show again</source>
         <translation>Älä näytä uudelleen</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Käyttäjän kieliasetus</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -9963,12 +10011,48 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <translation>Tuumaa</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Valitsee käytettävän desimaalierottimen. Kun tämä on valittuna, käytetään käyttäjän kieliasetuksen mukaista erotinta. Kun tätä ei ole valittuna, käytetään pistettä.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kun tämä on valittuna, tervetuloikkunaa ei näytetä. Voit muuttaa tätä asetusta SeamlyMe-asetuksissa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Erottimen kieliasetus:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Oletus</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Käyttäjän järjestelmä</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Kieliasetus</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Maa</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Kieli</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Ryhmäerotin</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Desimaalipilkku</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Negatiivinen etumerkki</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Positiivinen merkki</translation>
     </message>
 </context>
 <context>
@@ -9990,20 +10074,12 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <translation>Asettaa uuden mittaustiedoston oletusyksiköt.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Desimaalierotin:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Käyttöliittymän kieli:</translation>
     </message>
     <message>
         <source>Do not show again</source>
         <translation>Älä näytä uudelleen</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Käyttäjän kieliasetus</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -10034,12 +10110,48 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <translation>Asettaa solmun valinnan napsautusäänen.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Valitsee käytettävän desimaalierottimen. Kun tämä on valittuna, käytetään käyttäjän kieliasetuksen mukaista erotinta. Kun tätä ei ole valittuna, käytetään pistettä.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kun tämä on valittuna, tervetuloikkunaa ei näytetä. Voit muuttaa tätä asetusta Seamly2D-asetuksissa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Erottimen kieliasetus:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Oletus</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Käyttäjän järjestelmä</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Kieliasetus</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Maa</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Kieli</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Ryhmäerotin</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Desimaalipilkku</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Negatiivinen etumerkki</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Positiivinen merkki</translation>
     </message>
 </context>
 <context>
@@ -12297,14 +12409,6 @@ Haluatko tallentaa muutokset?</translation>
 %2 ei voida avata.</translation>
     </message>
     <message>
-        <source>Could not load schema file &apos;%1&apos;.</source>
-        <translation>Skeematiedostoa &apos;%1&apos; ei voitu ladata.</translation>
-    </message>
-    <message>
-        <source>Validation error file %3 in line %1 column %2</source>
-        <translation>Validointivirhe tiedostossa %3 rivillä %1 sarakkeessa %2</translation>
-    </message>
-    <message>
         <source>Parsing error file %3 in line %1 column %2</source>
         <translation>Jäsennysvirhe tiedostossa %3 rivillä %1 sarakkeessa %2</translation>
     </message>
@@ -12315,6 +12419,14 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>&lt;empty&gt;</source>
         <translation>&lt;tyhjä&gt;</translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t load schema</source>
+        <translation>Kaavaa ei voitu ladata</translation>
+    </message>
+    <message>
+        <source>Validation error file %1</source>
+        <translation>Vahvistusvirhe tiedostossa %1</translation>
     </message>
 </context>
 <context>

@@ -8702,10 +8702,6 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>Varsayılan:</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Ondalık ayırıcı:</translation>
-    </message>
-    <message>
         <source>None</source>
         <translation>Hiçbiri</translation>
     </message>
@@ -8814,10 +8810,6 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>E-posta biçimi geçerli değil.</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Kullanıcı yerel ayarı</translation>
-    </message>
-    <message>
         <source>Startup</source>
         <translation>Başlangıç</translation>
     </message>
@@ -8832,6 +8824,42 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Point name text:</source>
         <translation>Nokta adı metni:</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Ayırıcı Yerel Ayarı:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Varsayılan</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Kullanıcı Sistemi</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Yerel</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Ülke</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Grup Ayırıcı</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Ondalık Nokta</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Olumsuz Işaret</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Olumlu Işaret</translation>
     </message>
 </context>
 <context>
@@ -9841,12 +9869,40 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>Hoş geldiniz ekranını göstermeyin</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Ondalık ayırıcı:</translation>
+        <source>Separator Locale:</source>
+        <translation>Ayırıcı Yerel Ayarı:</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Kullanıcı yerel ayarı</translation>
+        <source>Default</source>
+        <translation>Varsayılan</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Kullanıcı Sistemi</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Yerel</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Ülke</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Grup Ayırıcı</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Ondalık Nokta</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Olumsuz Işaret</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Olumlu Işaret</translation>
     </message>
 </context>
 <context>
@@ -9931,10 +9987,6 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>Yeni bir ölçüm dosyası için varsayılan birimleri ayarlar.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Ondalık ayırıcı:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>GUI dili:</translation>
     </message>
@@ -9945,10 +9997,6 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Do not show again</source>
         <translation>Bir daha gösterme</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Kullanıcı yerel ayarı</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -9963,12 +10011,48 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>İnç</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hangi ondalık ayırıcı karakterinin kullanılacağını seçer. İşaretlendiğinde, kullanıcının yerel ayarı için ayırıcı kullanılır. İşaretlenmediğinde nokta kullanılır.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;İşaretlendiğinde Hoş Geldiniz penceresi görüntülenmeyecektir. Bu ayarı SeamlyMe tercihlerinde değiştirebilirsiniz.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Ayırıcı Yerel Ayarı:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Varsayılan</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Kullanıcı Sistemi</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Yerel</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Ülke</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Dil</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Grup Ayırıcı</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Ondalık Nokta</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Olumsuz Işaret</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Olumlu Işaret</translation>
     </message>
 </context>
 <context>
@@ -9990,20 +10074,12 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>Yeni bir ölçüm dosyası için varsayılan birimleri ayarlar.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Ondalık ayırıcı:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>GUI dili:</translation>
     </message>
     <message>
         <source>Do not show again</source>
         <translation>Bir daha gösterme</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Kullanıcı yerel ayarı</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -10034,12 +10110,48 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>Düğüm seçimi tıklama sesini ayarlar.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hangi ondalık ayırıcı karakterinin kullanılacağını seçer. İşaretlendiğinde, kullanıcının yerel ayarı için ayırıcı kullanılır. İşaretlenmediğinde nokta kullanılır.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;İşaretlendiğinde Hoş Geldiniz penceresi görüntülenmeyecektir. Bu ayarı Seamly2D tercihlerinde değiştirebilirsiniz.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Ayırıcı Yerel Ayarı:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Varsayılan</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Kullanıcı Sistemi</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Yerel</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Ülke</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Dil</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Ondalık Nokta</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Olumsuz Işaret</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Olumlu Işaret</translation>
     </message>
 </context>
 <context>
@@ -12288,10 +12400,6 @@ load in SeamlyME as usual.
 %2.</translation>
     </message>
     <message>
-        <source>Validation error file %3 in line %1 column %2</source>
-        <translation>Doğrulama hatası dosyası %3 satır %1 sütun %2</translation>
-    </message>
-    <message>
         <source>Parsing error file %3 in line %1 column %2</source>
         <translation>%1 satırında %2 sütununda %3 dosyası ayrıştırılıyor</translation>
     </message>
@@ -12304,16 +12412,20 @@ load in SeamlyME as usual.
         <translation>Bu kimlik benzersiz değil.</translation>
     </message>
     <message>
-        <source>Could not load schema file &apos;%1&apos;.</source>
-        <translation>%1 şeması dosyası yüklenemedi.</translation>
-    </message>
-    <message>
         <source>Fail to write Canonical XML.</source>
         <translation>Kanonik XML yazılamadı.</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
         <translation>&lt;boş&gt;</translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t load schema</source>
+        <translation>Şema yüklenemedi</translation>
+    </message>
+    <message>
+        <source>Validation error file %1</source>
+        <translation>Doğrulama hatası dosyası %1</translation>
     </message>
 </context>
 <context>

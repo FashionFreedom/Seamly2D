@@ -8708,10 +8708,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>По умолчанию:</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Десятичный Разделитель:</translation>
-    </message>
-    <message>
         <source>None</source>
         <translation>Никакой</translation>
     </message>
@@ -8816,10 +8812,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Адрес:</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Пользовательская локаль</translation>
-    </message>
-    <message>
         <source>Email format is not valid.</source>
         <translation>Формат электронной почты не соответствует действительности.</translation>
     </message>
@@ -8838,6 +8830,42 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Point name text:</source>
         <translation>Текст имени точки:</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Разделитель Язык:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>По умолчанию</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Система пользователя</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Локальный</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Страна</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Разделитель Групп</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Десятичная Точка</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Знак Минус</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Положительный Знак</translation>
     </message>
 </context>
 <context>
@@ -9848,12 +9876,40 @@ Press enter to temporarily add it to the list.</source>
         <translation>Не показывать экран приветствия</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Десятичный Разделитель:</translation>
+        <source>Separator Locale:</source>
+        <translation>Разделитель Язык:</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Пользовательская локаль</translation>
+        <source>Default</source>
+        <translation>По умолчанию</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Система пользователя</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Локальный</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Страна</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Разделитель Групп</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Десятичная Точка</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Знак Минус</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Положительный Знак</translation>
     </message>
 </context>
 <context>
@@ -9938,10 +9994,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Устанавливает единицы измерения по умолчанию для нового файла измерений.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Десятичный Разделитель:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Язык интерфейса:</translation>
     </message>
@@ -9952,10 +10004,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Do not show again</source>
         <translation>Больше не показывать</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Пользовательская локаль</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -9970,12 +10018,48 @@ Press enter to temporarily add it to the list.</source>
         <translation>Дюймы</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Выбирает, какой символ десятичного разделителя использовать. Если этот флажок установлен, используется разделитель для локали пользователя. Если флажок не установлен, используется точка.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Если этот флажок установлен, окно приветствия отображаться не будет. Вы можете изменить эту настройку в настройках SeamlyMe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Разделитель Язык:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>По умолчанию</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Система пользователя</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Локальный</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Страна</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Язык</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Разделитель Групп</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Десятичная Точка</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Знак Минус</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Положительный Знак</translation>
     </message>
 </context>
 <context>
@@ -9997,20 +10081,12 @@ Press enter to temporarily add it to the list.</source>
         <translation>Устанавливает единицы измерения по умолчанию для нового файла измерений.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Десятичный Разделитель:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Язык интерфейса:</translation>
     </message>
     <message>
         <source>Do not show again</source>
         <translation>Больше не показывать</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Пользовательская локаль</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -10041,12 +10117,48 @@ Press enter to temporarily add it to the list.</source>
         <translation>Устанавливает звук щелчка при выборе узла.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Выбирает, какой символ десятичного разделителя использовать. Если этот флажок установлен, используется разделитель для локали пользователя. Если флажок не установлен, используется точка.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Если этот флажок установлен, окно приветствия отображаться не будет. Вы можете изменить эту настройку в настройках Seamly2D.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Разделитель Язык:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>По умолчанию</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Система пользователя</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Локальный</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Страна</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Язык</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Разделитель Групп</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Десятичная Точка</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Знак Минус</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Положительный Знак</translation>
     </message>
 </context>
 <context>
@@ -12296,10 +12408,6 @@ load in SeamlyME as usual.
 %2.</translation>
     </message>
     <message>
-        <source>Validation error file %3 in line %1 column %2</source>
-        <translation>Ошибка валидации файла %3 в строке %1 столбца %2</translation>
-    </message>
-    <message>
         <source>Parsing error file %3 in line %1 column %2</source>
         <translation>Ошибка разбора файла %3 в строке %1 столбца %2</translation>
     </message>
@@ -12312,16 +12420,20 @@ load in SeamlyME as usual.
         <translation>Этот id не уникальный.</translation>
     </message>
     <message>
-        <source>Could not load schema file &apos;%1&apos;.</source>
-        <translation>Не удалось открыть файл схемы &apos;%1&apos;.</translation>
-    </message>
-    <message>
         <source>Fail to write Canonical XML.</source>
         <translation>Не удалось записать канонический XML.</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
         <translation>&lt;пусто&gt;</translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t load schema</source>
+        <translation>Не удалось загрузить схему</translation>
+    </message>
+    <message>
+        <source>Validation error file %1</source>
+        <translation>Файл ошибки проверки %1</translation>
     </message>
 </context>
 <context>

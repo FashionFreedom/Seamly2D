@@ -8700,10 +8700,6 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Výchozí:</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Oddělovač desetinných míst:</translation>
-    </message>
-    <message>
         <source>None</source>
         <translation>Žádný</translation>
     </message>
@@ -8812,10 +8808,6 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Formát e-mailu není platný.</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Uživatelské národní prostředí</translation>
-    </message>
-    <message>
         <source>Startup</source>
         <translation>Spuštění</translation>
     </message>
@@ -8830,6 +8822,42 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Point name text:</source>
         <translation>Text názvu bodu:</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Oddělovač Lokalita:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Východí</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Uživatelský systém</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Místo</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Země</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Oddělovač skupin</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Desetinná čárka</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Záporné znaménko</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Pozitivní signál</translation>
     </message>
 </context>
 <context>
@@ -9839,12 +9867,40 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Nezobrazovat uvítací obrazovku</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Oddělovač desetinných míst:</translation>
+        <source>Separator Locale:</source>
+        <translation>Oddělovač Lokalita:</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Uživatelské národní prostředí</translation>
+        <source>Default</source>
+        <translation>Východí</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Uživatelský systém</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Místo</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Země</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Oddělovač skupin</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Desetinná čárka</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Záporné znaménko</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Pozitivní signál</translation>
     </message>
 </context>
 <context>
@@ -9929,10 +9985,6 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Nastaví výchozí jednotky pro nový soubor měření.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Oddělovač desetinných míst:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Jazyk grafického rozhraní:</translation>
     </message>
@@ -9943,10 +9995,6 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Do not show again</source>
         <translation>Nezobrazovat znovu</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Uživatelské národní prostředí</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -9961,12 +10009,48 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Místo</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vybírá desetinný oddělovač, který se má použít. Pokud je zaškrtnuto, použije se oddělovač pro dané národní prostředí. Pokud není zaškrtnuto, použije se tečka.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Po zaškrtnutí se uvítací okno nezobrazí. Toto nastavení můžete změnit v předvolbách SeamlyMe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Oddělovač Lokalita:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Východí</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Uživatelský systém</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Místo</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Země</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Jazyk</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Oddělovač skupin</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Desetinná čárka</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Záporné znaménko</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Pozitivní signál</translation>
     </message>
 </context>
 <context>
@@ -9988,20 +10072,12 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Nastaví výchozí jednotky pro nový soubor měření.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Oddělovač desetinných míst:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Jazyk grafického rozhraní:</translation>
     </message>
     <message>
         <source>Do not show again</source>
         <translation>Nezobrazovat znovu</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Uživatelské národní prostředí</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -10032,12 +10108,48 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Nastavuje zvuk kliknutí při výběru uzlu.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vybírá desetinný oddělovač, který se má použít. Pokud je zaškrtnuto, použije se oddělovač pro dané národní prostředí. Pokud není zaškrtnuto, použije se tečka.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Po zaškrtnutí se uvítací okno nezobrazí. Toto nastavení můžete změnit v předvolbách Seamly2D.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Oddělovač Lokalita:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Východí</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Uživatelský systém</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Místo</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Země</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Jazyk</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Oddělovač skupin</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Desetinná čárka</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Záporné znaménko</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Pozitivní signál</translation>
     </message>
 </context>
 <context>
@@ -12287,10 +12399,6 @@ SeamlyME jako obvykle.
 %2.</translation>
     </message>
     <message>
-        <source>Validation error file %3 in line %1 column %2</source>
-        <translation>Chyba při ověřování souboru %3 na řádku %1, ve sloupci %2</translation>
-    </message>
-    <message>
         <source>Parsing error file %3 in line %1 column %2</source>
         <translation>Chyba při zpracování souboru %3 na řádku %1, ve sloupci %2</translation>
     </message>
@@ -12303,16 +12411,20 @@ SeamlyME jako obvykle.
         <translation>Tento identifikátor není jedinečný.</translation>
     </message>
     <message>
-        <source>Could not load schema file &apos;%1&apos;.</source>
-        <translation>Nelze načíst soubor schématu &apos;%1&apos;.</translation>
-    </message>
-    <message>
         <source>Fail to write Canonical XML.</source>
         <translation>Nepodařilo se zapsat kanonický XML.</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
         <translation>&lt;prázdné&gt;</translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t load schema</source>
+        <translation>Nepodařilo se načíst schéma</translation>
+    </message>
+    <message>
+        <source>Validation error file %1</source>
+        <translation>Soubor chyb ověření %1</translation>
     </message>
 </context>
 <context>

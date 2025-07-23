@@ -8704,10 +8704,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Προεπιλογή:</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Διαχωριστικό δεκαδικών:</translation>
-    </message>
-    <message>
         <source>None</source>
         <translation>Κανένα</translation>
     </message>
@@ -8816,10 +8812,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Η μορφή email δεν είναι έγκυρη.</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Τοπικές ρυθμίσεις χρήστη</translation>
-    </message>
-    <message>
         <source>Startup</source>
         <translation>Εκκίνηση</translation>
     </message>
@@ -8834,6 +8826,42 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Point name text:</source>
         <translation>Κείμενο ονόματος σημείου:</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Τοπικές ρυθμίσεις διαχωριστή:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Προεπιλογή</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Σύστημα χρήστη</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Τοπικές ρυθμίσεις</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Χώρα</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Διαχωριστής ομάδας</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Υποδιαστολή</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Αρνητικό Πρόσημο</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Θετικό Πρόσημο</translation>
     </message>
 </context>
 <context>
@@ -9843,12 +9871,40 @@ Press enter to temporarily add it to the list.</source>
         <translation>Μην εμφανίζεται η οθόνη υποδοχής</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Διαχωριστικό δεκαδικών:</translation>
+        <source>Separator Locale:</source>
+        <translation>Τοπικές ρυθμίσεις διαχωριστή:</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Τοπικές ρυθμίσεις χρήστη</translation>
+        <source>Default</source>
+        <translation>Προεπιλογή</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Σύστημα χρήστη</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Τοπικές ρυθμίσεις</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Χώρα</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Διαχωριστής ομάδας</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Υποδιαστολή</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Αρνητικό Πρόσημο</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Θετικό Πρόσημο</translation>
     </message>
 </context>
 <context>
@@ -9933,10 +9989,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Ορίζει τις προεπιλεγμένες μονάδες για ένα νέο αρχείο μέτρησης.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Διαχωριστικό δεκαδικών:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Γλώσσα γραφικού περιβάλλοντος χρήστη:</translation>
     </message>
@@ -9947,10 +9999,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Do not show again</source>
         <translation>Να μην εμφανιστεί ξανά</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Τοπικές ρυθμίσεις χρήστη</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -9965,12 +10013,48 @@ Press enter to temporarily add it to the list.</source>
         <translation>Ίντσες</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Επιλέγει ποιος χαρακτήρας δεκαδικού διαχωρισμού θα χρησιμοποιηθεί. Όταν είναι επιλεγμένο, χρησιμοποιείται το διαχωριστικό για τις τοπικές ρυθμίσεις του χρήστη. Όταν δεν είναι επιλεγμένο, χρησιμοποιείται η τελεία.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Όταν είναι επιλεγμένο το παράθυρο υποδοχής δεν θα εμφανίζεται. Μπορείτε να αλλάξετε αυτήν τη ρύθμιση στις προτιμήσεις SeamlyMe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Τοπικές ρυθμίσεις διαχωριστή:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Προεπιλογή</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Σύστημα χρήστη</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Τοπικές ρυθμίσεις</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Χώρα</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Γλώσσα</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Διαχωριστής ομάδας</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Υποδιαστολή</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Αρνητικό Πρόσημο</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Θετικό Πρόσημο</translation>
     </message>
 </context>
 <context>
@@ -9992,20 +10076,12 @@ Press enter to temporarily add it to the list.</source>
         <translation>Ορίζει τις προεπιλεγμένες μονάδες για ένα νέο αρχείο μέτρησης.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Διαχωριστικό δεκαδικών:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Γλώσσα γραφικού περιβάλλοντος χρήστη:</translation>
     </message>
     <message>
         <source>Do not show again</source>
         <translation>Να μην εμφανιστεί ξανά</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Τοπικές ρυθμίσεις χρήστη</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -10036,12 +10112,48 @@ Press enter to temporarily add it to the list.</source>
         <translation>Ορίζει τον ήχο κλικ επιλογής κόμβου.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Επιλέγει τον δεκαδικό διαχωριστικό χαρακτήρα που θα χρησιμοποιηθεί.  Όταν ελέγχεται, χρησιμοποιείται το διαχωριστικό για τις τοπικές ρυθμίσεις του χρήστη.  Όταν δεν είναι επιλεγμένο, χρησιμοποιείται η περίοδος.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Όταν είναι επιλεγμένο το παράθυρο υποδοχής δεν θα εμφανίζεται. Μπορείτε να αλλάξετε αυτήν τη ρύθμιση στις προτιμήσεις Seamly2D.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Τοπικές ρυθμίσεις διαχωριστή:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Προεπιλογή</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Σύστημα χρήστη</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Τοπικές ρυθμίσεις</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Χώρα</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Γλώσσα</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Διαχωριστής ομάδας</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Υποδιαστολή</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Αρνητικό Πρόσημο</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Θετικό Πρόσημο</translation>
     </message>
 </context>
 <context>
@@ -12291,10 +12403,6 @@ load in SeamlyME as usual.
 %2.</translation>
     </message>
     <message>
-        <source>Validation error file %3 in line %1 column %2</source>
-        <translation>Σφάλμα επικύρωσης αρχείου %3 στη γραμμή %1 στήλη %2</translation>
-    </message>
-    <message>
         <source>Parsing error file %3 in line %1 column %2</source>
         <translation>Σφάλμα ανάλυσης αρχείου %3 στη γραμμή %1 στήλη %2</translation>
     </message>
@@ -12307,16 +12415,20 @@ load in SeamlyME as usual.
         <translation>Αυτό το αναγνωριστικό δεν είναι μοναδικό.</translation>
     </message>
     <message>
-        <source>Could not load schema file &apos;%1&apos;.</source>
-        <translation>Δεν ήταν δυνατή η φόρτωση του αρχείου σχήματος &apos;%1&apos;.</translation>
-    </message>
-    <message>
         <source>Fail to write Canonical XML.</source>
         <translation>Αποτυχία εγγραφής Canonical XML.</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
         <translation>&lt;κενό&gt;</translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t load schema</source>
+        <translation>Δεν ήταν δυνατή η φόρτωση του σχήματος</translation>
+    </message>
+    <message>
+        <source>Validation error file %1</source>
+        <translation>Αρχείο σφάλματος επικύρωσης %1</translation>
     </message>
 </context>
 <context>

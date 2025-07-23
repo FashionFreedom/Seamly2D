@@ -8685,10 +8685,6 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Standaard:</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Decimaal scheidingsteken:</translation>
-    </message>
-    <message>
         <source>None</source>
         <translation>Geen</translation>
     </message>
@@ -8797,10 +8793,6 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>E-mailformaat is niet geldig.</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Lokalisatie gebruiker</translation>
-    </message>
-    <message>
         <source>Startup</source>
         <translation>Startup</translation>
     </message>
@@ -8815,6 +8807,42 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Point name text:</source>
         <translation>Tekst van puntnaam:</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Scheidingsteken Landinstellingen:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standaard</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Systeem van de gebruiker</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Locatie</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Groepsscheider</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Decimaal Punt</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Negatief Teken</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Positief Teken</translation>
     </message>
 </context>
 <context>
@@ -9824,12 +9852,40 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Welkomstscherm niet weergeven</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Decimaal scheidingsteken:</translation>
+        <source>Separator Locale:</source>
+        <translation>Scheidingsteken Landinstellingen:</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Lokalisatie gebruiker</translation>
+        <source>Default</source>
+        <translation>Standaard</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Systeem van de gebruiker</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Locatie</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Groepsscheider</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Decimaal Punt</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Negatief Teken</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Positief Teken</translation>
     </message>
 </context>
 <context>
@@ -9914,10 +9970,6 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Stelt de standaardeenheden in voor een nieuw meetbestand.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Decimaal scheidingsteken:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>GUI taal:</translation>
     </message>
@@ -9928,10 +9980,6 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Do not show again</source>
         <translation>Niet meer weergeven</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Lokalisatie gebruiker</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -9946,13 +9994,48 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Inches</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selecteert welk decimaal scheidingsteken gebruikt moet worden. Indien aangevinkt, wordt het scheidingsteken voor de landinstelling van de gebruiker gebruikt. Indien uitgevinkt, wordt de punt gebruikt.
-&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indien aangevinkt, wordt het welkomstvenster niet weergegeven. U kunt deze instelling wijzigen in de SeamlyMe-voorkeuren.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Scheidingsteken Landinstellingen:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standaard</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Systeem van de gebruiker</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Locatie</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Taal</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Groepsscheider</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Decimaal Punt</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Negatief Teken</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Positief Teken</translation>
     </message>
 </context>
 <context>
@@ -9974,20 +10057,12 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Stelt de standaardeenheden in voor een nieuw meetbestand.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Decimaal scheidingsteken:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>GUI taal:</translation>
     </message>
     <message>
         <source>Do not show again</source>
         <translation>Niet meer weergeven</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Lokalisatie gebruiker</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -10018,13 +10093,48 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Stelt het klikgeluid van de knooppuntselectie in.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selecteert welk decimaal scheidingsteken gebruikt moet worden. Indien aangevinkt, wordt het scheidingsteken voor de landinstelling van de gebruiker gebruikt. Indien uitgevinkt, wordt de punt gebruikt.
-&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indien aangevinkt, wordt het welkomstvenster niet weergegeven. U kunt deze instelling wijzigen in de Seamly2D-voorkeuren.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Scheidingsteken Landinstellingen:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Systeem van de gebruiker</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Locatie</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Taal</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Groepsscheider</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Decimaal Punt</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Negatief Teken</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Positief Teken</translation>
     </message>
 </context>
 <context>
@@ -12273,10 +12383,6 @@ load in SeamlyME as usual.
 %2.</translation>
     </message>
     <message>
-        <source>Validation error file %3 in line %1 column %2</source>
-        <translation>Validatie fout bestand %3 op lijn %1 kolom %2</translation>
-    </message>
-    <message>
         <source>Parsing error file %3 in line %1 column %2</source>
         <translation>Fout bij uitpakken bestand %3 op lijn %1 kolom %2</translation>
     </message>
@@ -12289,16 +12395,20 @@ load in SeamlyME as usual.
         <translation>Deze ID is niet uniek.</translation>
     </message>
     <message>
-        <source>Could not load schema file &apos;%1&apos;.</source>
-        <translation>Kan schema bestand niet laden &apos;%1&quot;.</translation>
-    </message>
-    <message>
         <source>Fail to write Canonical XML.</source>
         <translation>Het is mislukt om Conanical XML te schrijven.</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
         <translation>&lt;empty&gt;</translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t load schema</source>
+        <translation>Kon schema niet laden</translation>
+    </message>
+    <message>
+        <source>Validation error file %1</source>
+        <translation>Validatiefoutbestand %1</translation>
     </message>
 </context>
 <context>

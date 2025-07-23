@@ -8702,10 +8702,6 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Bawaan:</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Pemisah desimal:</translation>
-    </message>
-    <message>
         <source>None</source>
         <translation>Tidak ada</translation>
     </message>
@@ -8814,10 +8810,6 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Format email tidak valid.</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Lokal pengguna</translation>
-    </message>
-    <message>
         <source>Startup</source>
         <translation>Memulai</translation>
     </message>
@@ -8832,6 +8824,42 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Point name text:</source>
         <translation>Teks nama titik:</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Pemisah Lokal:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Bawaan</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Sistem Pengguna</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Lokasi</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Negara</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Pemisah Grup</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Titik desimal</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Tanda negatif</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Tanda positif</translation>
     </message>
 </context>
 <context>
@@ -9841,12 +9869,40 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Jangan tampilkan layar selamat datang</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Pemisah desimal:</translation>
+        <source>Separator Locale:</source>
+        <translation>Pemisah Lokal:</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Lokal pengguna</translation>
+        <source>Default</source>
+        <translation>Bawaan</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Sistem Pengguna</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Lokasi</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Negara</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Pemisah Grup</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Titik desimal</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Tanda negatif</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Tanda positif</translation>
     </message>
 </context>
 <context>
@@ -9931,10 +9987,6 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Menetapkan unit default untuk file pengukuran baru.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Pemisah desimal:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Bahasa GUI:</translation>
     </message>
@@ -9945,10 +9997,6 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Do not show again</source>
         <translation>Jangan tampilkan lagi</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Lokal pengguna</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -9963,12 +10011,48 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Inci</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pilih karakter pemisah desimal yang akan digunakan. Jika dicentang, pemisah untuk lokal pengguna akan digunakan. Jika tidak dicentang, titik akan digunakan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Jika dicentang, jendela Selamat Datang tidak akan ditampilkan. Anda dapat mengubah pengaturan ini di preferensi SeamlyMe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Pemisah Lokal:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Bawaan</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Sistem Pengguna</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Lokasi</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Negara</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Bahasa</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Pemisah Grup</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Titik desimal</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Tanda negatif</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Tanda positif</translation>
     </message>
 </context>
 <context>
@@ -9990,20 +10074,12 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Menetapkan unit default untuk file pengukuran baru.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Pemisah desimal:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Bahasa GUI:</translation>
     </message>
     <message>
         <source>Do not show again</source>
         <translation>Jangan tampilkan lagi</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Lokal pengguna</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -10034,12 +10110,48 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Mengatur suara klik pemilihan node.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pilih karakter pemisah desimal yang akan digunakan. Jika dicentang, pemisah untuk lokal pengguna akan digunakan. Jika tidak dicentang, titik akan digunakan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Jika dicentang, jendela Selamat Datang tidak akan ditampilkan. Anda dapat mengubah pengaturan ini di preferensi Seamly2D.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Pemisah Lokal:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Bawaan</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Sistem Pengguna</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Lokasi</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Negara</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Bahasa</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Pemisah Grup</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Titik desimal</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Tanda negatif</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Tanda positif</translation>
     </message>
 </context>
 <context>
@@ -12289,10 +12401,6 @@ unggah ke SeamlyME seperti biasa.
 %2.</translation>
     </message>
     <message>
-        <source>Validation error file %3 in line %1 column %2</source>
-        <translation>File kesalahan validasi %3 di baris %1 kolom %2</translation>
-    </message>
-    <message>
         <source>Parsing error file %3 in line %1 column %2</source>
         <translation>Kesalahan penguraian file %3 di baris %1 kolom %2</translation>
     </message>
@@ -12305,16 +12413,20 @@ unggah ke SeamlyME seperti biasa.
         <translation>ID ini tidak unik.</translation>
     </message>
     <message>
-        <source>Could not load schema file &apos;%1&apos;.</source>
-        <translation>Tidak dapat memuat berkas skema &apos;%1&apos;.</translation>
-    </message>
-    <message>
         <source>Fail to write Canonical XML.</source>
         <translation>Gagal menulis XML Kanonik.</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
         <translation>&lt;kosong&gt;</translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t load schema</source>
+        <translation>Tidak dapat memuat skema</translation>
+    </message>
+    <message>
+        <source>Validation error file %1</source>
+        <translation>File kesalahan validasi %1</translation>
     </message>
 </context>
 <context>

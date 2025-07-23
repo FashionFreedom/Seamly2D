@@ -8739,10 +8739,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Por defecto:</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Separador decimal:</translation>
-    </message>
-    <message>
         <source>None</source>
         <translation>Ninguno</translation>
     </message>
@@ -8847,10 +8843,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>:</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Localización del usuario</translation>
-    </message>
-    <message>
         <source>Email format is not valid.</source>
         <translation>El formato del correo electrónico no es válido.</translation>
     </message>
@@ -8869,6 +8861,42 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Point name text:</source>
         <translation>Texto del nombre del punto:</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Regional del separador:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Predeterminado</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Sistema del usuario</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Localidad</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>País</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Separador de grupos</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Coma decimal</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Signo Negativo</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Signo Positivo</translation>
     </message>
 </context>
 <context>
@@ -9880,12 +9908,40 @@ actualización:</translation>
         <translation>No mostrar la pantalla de bienvenida</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Separador decimal:</translation>
+        <source>Separator Locale:</source>
+        <translation>Regional del separador:</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Localización del usuario</translation>
+        <source>Default</source>
+        <translation>Predeterminado</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Sistema del usuario</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Localidad</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>País</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Separador de grupos</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Coma decimal</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Signo Negativo</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Signo Positivo</translation>
     </message>
 </context>
 <context>
@@ -9970,10 +10026,6 @@ actualización:</translation>
         <translation>Establece las unidades por defecto para un nuevo archivo de medición.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Separador decimal:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>GUI Idioma:</translation>
     </message>
@@ -9984,10 +10036,6 @@ actualización:</translation>
     <message>
         <source>Do not show again</source>
         <translation>No volver a mostrar</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Localización del usuario</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -10002,12 +10050,48 @@ actualización:</translation>
         <translation>Pulgadas</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selecciona el carácter separador decimal que se usará. Si está marcada, se usa el separador de la configuración regional del usuario. Si no está marcada, se usa el punto.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si está marcada, la ventana de bienvenida no se mostrará. Puede cambiar esta configuración en las preferencias de SeamlyMe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Regional del separador:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Predeterminado</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Sistema del usuario</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Localidad</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>País</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Idioma</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Separador de grupos</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Coma decimal</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Signo Negativo</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Signo Positivo</translation>
     </message>
 </context>
 <context>
@@ -10029,20 +10113,12 @@ actualización:</translation>
         <translation>Establece las unidades por defecto para un nuevo archivo de medición.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Separador decimal:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>GUI Idioma:</translation>
     </message>
     <message>
         <source>Do not show again</source>
         <translation>No volver a mostrar</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Localización del usuario</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -10073,12 +10149,48 @@ actualización:</translation>
         <translation>Establece el sonido del clic de selección del nodo.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selecciona el carácter separador decimal que se usará. Si está marcada, se usa el separador de la configuración regional del usuario. Si no está marcada, se usa el punto.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si está marcada, la ventana de bienvenida no se mostrará. Puede cambiar esta configuración en las preferencias de Seamly2D.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Regional del separador:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Predeterminado</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Sistema del usuario</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Localidad</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>País</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Idioma</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Separador de grupos</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Coma decimal</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Signo Negativo</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Signo Positivo</translation>
     </message>
 </context>
 <context>
@@ -12329,10 +12441,6 @@ load in SeamlyME as usual.
 %2.</translation>
     </message>
     <message>
-        <source>Validation error file %3 in line %1 column %2</source>
-        <translation>Error de validación en el archivo %3 en la línea %1 columna %2</translation>
-    </message>
-    <message>
         <source>Parsing error file %3 in line %1 column %2</source>
         <translation>Error analizando el archivo %3 en la línea %1 columna %2</translation>
     </message>
@@ -12345,16 +12453,20 @@ load in SeamlyME as usual.
         <translation>Este identificador no es único.</translation>
     </message>
     <message>
-        <source>Could not load schema file &apos;%1&apos;.</source>
-        <translation>No se puede cargar el archivo de esquema &apos;%1&apos;.</translation>
-    </message>
-    <message>
         <source>Fail to write Canonical XML.</source>
         <translation>Escritura fallida de Canonical XML.</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
         <translation>&lt;vacío&gt;</translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t load schema</source>
+        <translation>No se pudo cargar el esquema</translation>
+    </message>
+    <message>
+        <source>Validation error file %1</source>
+        <translation>Archivo de error de validación %1</translation>
     </message>
 </context>
 <context>
