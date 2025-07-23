@@ -46,11 +46,17 @@
          <height>400</height>
         </size>
        </property>
+       <property name="maximumSize">
+        <size>
+         <width>86</width>
+         <height>400</height>
+        </size>
+       </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="../../../libs/vmisc/share/resources/icon.qrc">:/icon/logos/seamly2d_vertical.png</pixmap>
+        <pixmap resource="../../../libs/vmisc/share/resources/icon.qrc">:/icon/logos/seamly2d_banner_vert.svg</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -71,7 +77,7 @@
        <property name="title">
         <string>Welcome to Seamly2D</string>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
          <spacer name="verticalSpacer">
           <property name="orientation">
@@ -86,28 +92,28 @@
          </spacer>
         </item>
         <item>
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</string>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
          <layout class="QFormLayout" name="formLayout">
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_2">
-            <property name="font">
-             <font>
-              <pointsize>10</pointsize>
-              <bold>false</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
+          <item row="0" column="0">
            <widget class="QLabel" name="units_Label">
             <property name="minimumSize">
              <size>
-              <width>150</width>
+              <width>160</width>
               <height>0</height>
              </size>
             </property>
@@ -125,7 +131,7 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
+          <item row="0" column="1">
            <widget class="QComboBox" name="units_ComboBox">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -135,7 +141,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>150</width>
+              <width>220</width>
               <height>0</height>
              </size>
             </property>
@@ -150,11 +156,11 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="seperastor_Label">
+          <item row="1" column="0">
+           <widget class="QLabel" name="locale_Label">
             <property name="minimumSize">
              <size>
-              <width>150</width>
+              <width>160</width>
               <height>0</height>
              </size>
             </property>
@@ -165,43 +171,63 @@
              </font>
             </property>
             <property name="text">
-             <string>Decimal separator:</string>
+             <string>Separator Locale:</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
            </widget>
           </item>
-          <item row="2" column="1">
-           <widget class="QCheckBox" name="separator_CheckBox">
-            <property name="minimumSize">
-             <size>
-              <width>300</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>10</pointsize>
-              <bold>false</bold>
-             </font>
-            </property>
-            <property name="toolTip">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user's locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-            <property name="text">
-             <string notr="true">&lt; User locale &gt;</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
+          <item row="1" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QRadioButton" name="cLocale_RadioButton">
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Default</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="userLocale_RadioButton">
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>User's System</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
-          <item row="3" column="0">
+          <item row="2" column="0">
            <widget class="QLabel" name="language_Label">
             <property name="minimumSize">
              <size>
-              <width>150</width>
+              <width>160</width>
               <height>0</height>
              </size>
             </property>
@@ -219,11 +245,11 @@
             </property>
            </widget>
           </item>
-          <item row="3" column="1">
+          <item row="2" column="1">
            <widget class="QComboBox" name="language_ComboBox">
             <property name="minimumSize">
              <size>
-              <width>300</width>
+              <width>220</width>
               <height>0</height>
              </size>
             </property>
@@ -238,11 +264,11 @@
             </property>
            </widget>
           </item>
-          <item row="4" column="0">
+          <item row="3" column="0">
            <widget class="QLabel" name="selectionSound_Label">
             <property name="minimumSize">
              <size>
-              <width>150</width>
+              <width>160</width>
               <height>0</height>
              </size>
             </property>
@@ -260,7 +286,7 @@
             </property>
            </widget>
           </item>
-          <item row="4" column="1">
+          <item row="3" column="1">
            <widget class="QComboBox" name="selectionSound_ComboBox">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -270,7 +296,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>220</width>
               <height>0</height>
              </size>
             </property>

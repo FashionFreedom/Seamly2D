@@ -104,8 +104,8 @@ About2DAppDialog::About2DAppDialog(QWidget *parent)
 									  "Seamly2D is an application for computer-aided design of garment patterns.\n\n"
                                       "Seamly2D is a free (open source) software.\n\n"
                                       "All brand or product names are trademarks or registered trademarks of their respective holders.\n\n"
-                                      "© 2017-2024 Seamly2D Project.\n\n"
-                                      "Portions of this software © 2008-2024 The Qt Company Ltd.\n\n"
+                                      "© 2017-2025 Seamly2D Project.\n\n"
+                                      "Portions of this software © 2008-2025 The Qt Company Ltd.\n\n"
                                       "The program is provided AS IS with NO WARRANTY OF ANY "
 									  "KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY "
 									  "AND FITNESS FOR A PARTICULAR PURPOSE."));
