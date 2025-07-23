@@ -8671,10 +8671,6 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>None</source>
         <translation type="unfinished">None</translation>
     </message>
@@ -8783,10 +8779,6 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Startup</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8800,6 +8792,42 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Point name text:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">Default</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9810,11 +9838,39 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
+        <source>Separator Locale:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>User locale</source>
+        <source>Default</source>
+        <translation type="unfinished">Default</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9900,10 +9956,6 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation type="unfinished">GUI language:</translation>
     </message>
@@ -9913,10 +9965,6 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Do not show again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>User locale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9932,11 +9980,47 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>Separator Locale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">Default</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Language</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9959,19 +10043,11 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation type="unfinished">GUI language:</translation>
     </message>
     <message>
         <source>Do not show again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>User locale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10003,11 +10079,47 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>Separator Locale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">Default</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Language</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12252,10 +12364,6 @@ load in SeamlyME as usual.
 %2.</translation>
     </message>
     <message>
-        <source>Validation error file %3 in line %1 column %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Parsing error file %3 in line %1 column %2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12268,15 +12376,19 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Could not load schema file &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Fail to write Canonical XML.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t load schema</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Validation error file %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -8704,10 +8704,6 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Implicit:</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Separator zecimal:</translation>
-    </message>
-    <message>
         <source>None</source>
         <translation>Niciunul</translation>
     </message>
@@ -8816,10 +8812,6 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Formatul e-mailului nu este valid.</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Setări regionale utilizator</translation>
-    </message>
-    <message>
         <source>Startup</source>
         <translation>Pornire</translation>
     </message>
@@ -8834,6 +8826,42 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Point name text:</source>
         <translation>Text nume punct:</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Separator Local:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Implicit</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Sistemul utilizatorului</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Setări regionale</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Țară</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Separator de grup</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Virgulă Zecimală</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Semn Negativ</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Semn Pozitiv</translation>
     </message>
 </context>
 <context>
@@ -9843,12 +9871,40 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Nu se afișează ecranul de bun venit</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Separator zecimal:</translation>
+        <source>Separator Locale:</source>
+        <translation>Separator Local:</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Setări regionale utilizator</translation>
+        <source>Default</source>
+        <translation>Implicit</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Sistemul utilizatorului</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Setări regionale</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Țară</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Separator de grup</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Virgulă Zecimală</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Semn Negativ</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Semn Pozitiv</translation>
     </message>
 </context>
 <context>
@@ -9933,10 +9989,6 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Setează unitățile implicite pentru un fișier de măsurare nou.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Separator zecimal:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Interfață grafică Limbaj:</translation>
     </message>
@@ -9947,10 +9999,6 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Do not show again</source>
         <translation>Nu mai afișa</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Setări regionale utilizator</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -9965,12 +10013,48 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Inci</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selectează ce caracter separator zecimal să folosești.  Când este bifat, se folosește separatorul pentru localitatea utilizatorului.  Când nu este bifată, se utilizează perioada.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Când este bifată, fereastra Bun venit nu va fi afișată.  Puteți modifica această setare în preferințele SeamlyMe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Separator Local:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Implicit</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Sistemul utilizatorului</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Setări regionale</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Țară</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Limba</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Separator de grup</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Virgulă Zecimală</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Semn Negativ</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Semn Pozitiv</translation>
     </message>
 </context>
 <context>
@@ -9992,20 +10076,12 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Setează unitățile implicite pentru un fișier de măsurare nou.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Separator zecimal:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Interfață grafică Limbaj:</translation>
     </message>
     <message>
         <source>Do not show again</source>
         <translation>Nu mai afișa</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Setări regionale utilizator</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -10036,12 +10112,48 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Setează sunetul la clicul de selectare a nodului.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects what decimal separator char to use.  When checked the separator for the user&apos;s locale is used.  When unchecked the period is used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selectează ce caracter separator zecimal să folosești.  Când este bifat, se folosește separatorul pentru localitatea utilizatorului.  Când nu este bifată, se utilizează perioada.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Când este bifată, fereastra Bun venit nu va fi afișată.  Puteți modifica această setare în preferințele Seamly2D.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Separator Local:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Implicit</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Sistemul utilizatorului</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Setări regionale</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Țară</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Limba</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Separator de grup</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Virgulă Zecimală</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Semn Negativ</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Semn Pozitiv</translation>
     </message>
 </context>
 <context>
@@ -12290,10 +12402,6 @@ load in SeamlyME as usual.
 %2.</translation>
     </message>
     <message>
-        <source>Validation error file %3 in line %1 column %2</source>
-        <translation>Eroare de validare fișier %3 în linia %1 coloana %2</translation>
-    </message>
-    <message>
         <source>Parsing error file %3 in line %1 column %2</source>
         <translation>Eroare de analiză fișier %3 în linia %1 coloana %2</translation>
     </message>
@@ -12306,16 +12414,20 @@ load in SeamlyME as usual.
         <translation>Acest ID nu este unic.</translation>
     </message>
     <message>
-        <source>Could not load schema file &apos;%1&apos;.</source>
-        <translation>Nu s-a putut încărca fișierul schemă &apos;%1&apos;.</translation>
-    </message>
-    <message>
         <source>Fail to write Canonical XML.</source>
         <translation>Eșuat la scrierea XML-ului canonic.</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
         <translation>&lt;gol&gt;</translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t load schema</source>
+        <translation>Nu s-a putut încărca schema</translation>
+    </message>
+    <message>
+        <source>Validation error file %1</source>
+        <translation>Fișier de eroare de validare %1</translation>
     </message>
 </context>
 <context>
