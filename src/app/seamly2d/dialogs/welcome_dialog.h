@@ -25,6 +25,8 @@
 #ifndef WELCOME_DIALOG_H
 #define WELCOME_DIALOG_H
 
+#include <QLocale>
+#include <QRadioButton>
 #include <QDialog>
 
 #include "../vmisc/def.h"
@@ -46,7 +48,6 @@ public:
 
 protected:
     virtual void               changeEvent(QEvent* event) Q_DECL_OVERRIDE;
-    void                       separatorChanged();
 
 private:
     Q_DISABLE_COPY(SeamlyWelcomeDialog)
@@ -56,6 +57,7 @@ private:
     VSettings                 *settings;
 
     void                       initUnits();
+    void                       setLocaleTooltip(QLocale locale, QRadioButton *button);
 };
 
 #endif // WELCOME_DIALOG_H

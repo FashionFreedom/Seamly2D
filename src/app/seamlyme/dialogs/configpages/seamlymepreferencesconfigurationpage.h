@@ -56,6 +56,8 @@
 #ifndef SEAMLYMEPREFERENCESCONFIGURATIONPAGE_H
 #define SEAMLYMEPREFERENCESCONFIGURATIONPAGE_H
 
+#include <QLocale>
+#include <QRadioButton>
 #include <QWidget>
 
 namespace Ui
@@ -82,6 +84,7 @@ private:
     bool          m_langChanged;
     bool          m_systemChanged;
     bool          m_defGradationChanged;
+    void          setLocaleTooltip(QLocale locale, QRadioButton *button);
 };
 
 #endif // SEAMLYMEPREFERENCESCONFIGURATIONPAGE_H

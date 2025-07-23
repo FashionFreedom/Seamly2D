@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>472</width>
+    <width>485</width>
     <height>572</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>100</width>
-    <height>100</height>
+    <width>485</width>
+    <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -69,7 +69,7 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_14">
        <item>
-        <widget class="QGroupBox" name="groupBox">
+        <widget class="QGroupBox" name="info_GroupBox">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -78,6 +78,7 @@
          </property>
          <property name="font">
           <font>
+           <pointsize>9</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -86,7 +87,7 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_12">
           <item>
-           <layout class="QFormLayout" name="formLayout">
+           <layout class="QFormLayout" name="info_FormLayout">
             <item row="0" column="0">
              <widget class="QLabel" name="company_Label">
               <property name="minimumSize">
@@ -402,7 +403,7 @@
            <number>6</number>
           </property>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <layout class="QHBoxLayout" name="undo_HorizontalLayout">
             <item>
              <widget class="QLabel" name="undoCount_Label">
               <property name="minimumSize">
@@ -420,6 +421,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -441,6 +443,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="styleSheet">
@@ -452,10 +455,11 @@
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_10">
+             <widget class="QLabel" name="limit_Label">
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -506,7 +510,7 @@
            <number>6</number>
           </property>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <layout class="QHBoxLayout" name="sound_HorizontalLayout">
             <item>
              <widget class="QLabel" name="selectionSound__Label">
               <property name="minimumSize">
@@ -518,6 +522,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -545,6 +550,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="locale">
@@ -690,6 +696,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -705,6 +712,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -751,9 +759,9 @@
            <number>6</number>
           </property>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <layout class="QHBoxLayout" name="mirrorByAxisSuffix_HorizontalLayout">
             <item>
-             <widget class="QLabel" name="label_11">
+             <widget class="QLabel" name="mirrorByAxisSuffix_Label">
               <property name="minimumSize">
                <size>
                 <width>140</width>
@@ -763,6 +771,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -790,6 +799,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
              </widget>
@@ -797,9 +807,9 @@
            </layout>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <layout class="QHBoxLayout" name="mirrorByLineSuffix_HorizontalLayout">
             <item>
-             <widget class="QLabel" name="label_12">
+             <widget class="QLabel" name="mirrorByLineSuffix_Label">
               <property name="minimumSize">
                <size>
                 <width>140</width>
@@ -809,6 +819,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -836,6 +847,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
              </widget>
@@ -843,9 +855,9 @@
            </layout>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout">
+           <layout class="QHBoxLayout" name="moveSuffix_HorizontalLayout">
             <item>
-             <widget class="QLabel" name="label_13">
+             <widget class="QLabel" name="moveSuffix_Label">
               <property name="minimumSize">
                <size>
                 <width>140</width>
@@ -855,6 +867,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -882,6 +895,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
              </widget>
@@ -889,9 +903,9 @@
            </layout>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <layout class="QHBoxLayout" name="rotateSuffix_HorizontalLayout">
             <item>
-             <widget class="QLabel" name="label_14">
+             <widget class="QLabel" name="rotateSuffix_Label">
               <property name="minimumSize">
                <size>
                 <width>140</width>
@@ -901,6 +915,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -928,6 +943,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
              </widget>
@@ -1005,7 +1021,7 @@
            </widget>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <layout class="QHBoxLayout" name="interval_HorizontalLayout">
             <item>
              <widget class="QLabel" name="interval_Label">
               <property name="minimumSize">
@@ -1102,6 +1118,7 @@
          </property>
          <property name="font">
           <font>
+           <pointsize>9</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -1124,7 +1141,7 @@
            </widget>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <layout class="QHBoxLayout" name="defaultExportFormat_HlLayout">
             <item>
              <widget class="QLabel" name="defaultExportFormat_Label">
               <property name="minimumSize">
@@ -1250,18 +1267,19 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_11">
-            <item>
-             <widget class="QLabel" name="label_6">
+           <layout class="QFormLayout" name="language_FormLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="guiLang_Label">
               <property name="minimumSize">
                <size>
-                <width>140</width>
+                <width>160</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -1272,7 +1290,7 @@
               </property>
              </widget>
             </item>
-            <item>
+            <item row="0" column="1">
              <widget class="QComboBox" name="langCombo">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -1282,91 +1300,116 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>240</width>
+                <width>220</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
              </widget>
             </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_12">
-            <item>
-             <widget class="QLabel" name="label_7">
+            <item row="1" column="0">
+             <widget class="QLabel" name="locale_Label">
               <property name="minimumSize">
                <size>
-                <width>140</width>
+                <width>160</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
-               <string>Decimal separator:</string>
+               <string>Separator Locale:</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
              </widget>
             </item>
-            <item>
-             <widget class="QCheckBox" name="osOptionCheck">
+            <item row="1" column="1">
+             <layout class="QHBoxLayout" name="locales_HorizontalLayout">
+              <item>
+               <widget class="QRadioButton" name="cLocale_RadioButton">
+                <property name="maximumSize">
+                 <size>
+                  <width>100</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Default</string>
+                </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">locale_ButtonGroup</string>
+                </attribute>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="userLocale_RadioButton">
+                <property name="maximumSize">
+                 <size>
+                  <width>100</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>User's System</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">locale_ButtonGroup</string>
+                </attribute>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_13">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="units_Label">
               <property name="minimumSize">
                <size>
-                <width>200</width>
+                <width>160</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string notr="true">&lt; User locale &gt;</string>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_13">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_13">
-            <item>
-             <widget class="QLabel" name="label_8">
-              <property name="minimumSize">
-               <size>
-                <width>140</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -1377,7 +1420,7 @@
               </property>
              </widget>
             </item>
-            <item>
+            <item row="2" column="1">
              <widget class="QComboBox" name="unitCombo">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -1387,32 +1430,30 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>240</width>
+                <width>220</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
              </widget>
             </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_14">
-            <item>
-             <widget class="QLabel" name="label_9">
+            <item row="3" column="0">
+             <widget class="QLabel" name="pointName_Label">
               <property name="minimumSize">
                <size>
-                <width>140</width>
+                <width>160</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -1423,7 +1464,7 @@
               </property>
              </widget>
             </item>
-            <item>
+            <item row="3" column="1">
              <widget class="QComboBox" name="labelCombo">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -1433,13 +1474,14 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>240</width>
+                <width>220</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
              </widget>
@@ -1477,4 +1519,7 @@
  </customwidgets>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="locale_ButtonGroup"/>
+ </buttongroups>
 </ui>

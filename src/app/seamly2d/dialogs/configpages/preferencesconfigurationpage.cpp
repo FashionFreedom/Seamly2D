@@ -62,6 +62,7 @@
 #include <QRegularExpression>
 #include <QRegularExpressionValidator>
 #include <QSoundEffect>
+#include <QString>
 #include <QTimer>
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -204,8 +205,16 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
 
     // Decimal separator setup
-    ui->osOptionCheck->setText(tr("User locale") + QString(" (%1)").arg(localeDecimalPoint(QLocale())));
-    ui->osOptionCheck->setChecked(qApp->Seamly2DSettings()->getOsSeparator());
+    if (qApp->Seamly2DSettings()->getOsSeparator())
+    {
+        ui->userLocale_RadioButton->setChecked(true);
+    }
+    else
+    {
+        ui->cLocale_RadioButton->setChecked(true);
+    }
+    setLocaleTooltip(QLocale::c(), ui->cLocale_RadioButton);
+    setLocaleTooltip(QLocale(), ui->userLocale_RadioButton);
 
     // Unit setup
     initUnits();
@@ -296,7 +305,15 @@ void PreferencesConfigurationPage::apply()
     }
 
     settings->setShowWelcome(ui->showWelcome_CheckBox->isChecked());
-    settings->setOsSeparator(ui->osOptionCheck->isChecked());
+
+    if (ui->cLocale_RadioButton->isChecked())
+    {
+        settings->setOsSeparator(false);
+    }
+    else
+    {
+        settings->setOsSeparator(true);
+    }
 
     if (m_langChanged)
     {
@@ -353,7 +370,6 @@ void PreferencesConfigurationPage::changeEvent(QEvent *event)
     if (event->type() == QEvent::LanguageChange)
     {
         ui->retranslateUi(this);
-        ui->osOptionCheck->setText(tr("User locale") + QString(" (%1)").arg(localeDecimalPoint(QLocale())));
     }
     QWidget::changeEvent(event);
 }
@@ -391,4 +407,33 @@ void PreferencesConfigurationPage::adjustTextColor()
         ui->email_LineEdit->setStyleSheet("QLineEdit {color: red;}");
     else
         ui->email_LineEdit->setStyleSheet("QLineEdit {color: black;}");
+}
+
+void PreferencesConfigurationPage::setLocaleTooltip(QLocale locale, QRadioButton *button)
+{
+    const QString toolTipStr = QString("<table style=font-size:12pt; font-weight:600>"
+                                       "<tr> <td><b>%1: </b></b></td><td> %2</td> </tr>"
+                                       "<tr> <td><b>%3: </b></b></td><td> %4</td> </tr>"
+                                       "<tr> <td><b>%5: </b></b></td><td> %6</td> </tr>"
+                                       "<tr> <td><b>%7: </b></b></td><td> %8</td> </tr>"
+                                       "<tr> <td><b>%9: </b></b></td><td> %10</td> </tr>"
+                                       "<tr> <td><b>%11: </b></b></td><td> %12</td> </tr>"
+                                       "<tr> <td><b>%13: </b></b></td><td> %14</td> </tr>"
+                                       "</table>")
+                                       .arg(tr("Locale"))                                 //1
+                                       .arg(locale.name())                                //2
+                                       .arg(tr("Country"))                                //3
+                                       .arg(QLocale::countryToString(locale.country()))   //4
+                                       .arg(tr("Language"))                               //5
+                                       .arg(QLocale::languageToString(locale.language())) //6
+                                       .arg(tr("Group Separator"))                        //7
+                                       .arg(locale.groupSeparator())                      //8
+                                       .arg(tr("Decimal Point"))                          //9
+                                       .arg(locale.decimalPoint())                        //10
+                                       .arg(tr("Negative Sign"))                          //11
+                                       .arg(locale.negativeSign())                        //12
+                                       .arg(tr("Positive Sign"))                          //13
+                                       .arg(locale.positiveSign());                       //14
+
+    button->setToolTip(toolTipStr);
 }

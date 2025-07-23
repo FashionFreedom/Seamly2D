@@ -53,6 +53,8 @@
 #ifndef PREFERENCESCONFIGURATIONPAGE_H
 #define PREFERENCESCONFIGURATIONPAGE_H
 
+#include <QLocale>
+#include <QRadioButton>
 #include <QWidget>
 
 namespace Ui
@@ -89,6 +91,8 @@ private:
     void setPointNameComboBox(const QStringList &list);
     void initUnits();
     void adjustTextColor();
+    void setLocaleTooltip(QLocale locale, QRadioButton *button);
+
 };
 
 #endif // PREFERENCESCONFIGURATIONPAGE_H

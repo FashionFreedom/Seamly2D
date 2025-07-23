@@ -47,9 +47,16 @@ SeamlyMeWelcomeDialog::SeamlyMeWelcomeDialog(QWidget *parent)
     initUnits();
 
     //-------------------- Decimal separator setup
-    ui->separator_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(localeDecimalPoint(QLocale())));
-    ui->separator_CheckBox->setChecked(settings->getOsSeparator());
-    connect(ui->separator_CheckBox, &QCheckBox::stateChanged, this, &SeamlyMeWelcomeDialog::separatorChanged);
+    if (settings->getOsSeparator())
+    {
+        ui->userLocale_RadioButton->setChecked(true);
+    }
+    else
+    {
+        ui->cLocale_RadioButton->setChecked(true);
+    }
+    setLocaleTooltip(QLocale::c(), ui->cLocale_RadioButton);
+    setLocaleTooltip(QLocale(), ui->userLocale_RadioButton);
 
     //-------------------- Languages setup
     InitLanguages(ui->language_ComboBox);
@@ -77,7 +84,14 @@ SeamlyMeWelcomeDialog::~SeamlyMeWelcomeDialog()
 void SeamlyMeWelcomeDialog::apply()
 {
     settings->SetUnit(qvariant_cast<QString>(ui->units_ComboBox->currentData()));
-    settings->setOsSeparator(ui->separator_CheckBox->isChecked());
+    if (ui->cLocale_RadioButton->isChecked())
+    {
+        settings->setOsSeparator(false);
+    }
+    else
+    {
+        settings->setOsSeparator(true);
+    }
     settings->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
     settings->setShowWelcome(ui->doNotShow_CheckBox->isChecked());
 
@@ -100,23 +114,11 @@ void SeamlyMeWelcomeDialog::changeEvent(QEvent *event)
     {
         // retranslate designer form (single inheritance approach)
         ui->retranslateUi(this);
-        ui->separator_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(localeDecimalPoint(QLocale())));
     }
 
     // remember to call base class implementation
     QDialog::changeEvent(event);
 }
-
-// @brief separatorChanged handle change in decimal separator
-void SeamlyMeWelcomeDialog::separatorChanged()
-{
-    QString separator = ui->separator_CheckBox->isChecked()
-                      ? QString(localeDecimalPoint(QLocale()))
-                      : QString(localeDecimalPoint(QLocale::c()));
-
-    ui->separator_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(separator));
-}
-
 
 //---------------------------------------------------------------------------------------------------------------------
 // @brief initUnits initinailize the units combobox
@@ -133,4 +135,33 @@ void SeamlyMeWelcomeDialog::initUnits()
     {
         ui->units_ComboBox->setCurrentIndex(index);
     }
+}
+
+void SeamlyMeWelcomeDialog::setLocaleTooltip(QLocale locale, QRadioButton *button)
+{
+    const QString toolTipStr = QString("<table style=font-size:12pt; font-weight:600>"
+                                       "<tr> <td><b>%1: </b></b></td><td> %2</td> </tr>"
+                                       "<tr> <td><b>%3: </b></b></td><td> %4</td> </tr>"
+                                       "<tr> <td><b>%5: </b></b></td><td> %6</td> </tr>"
+                                       "<tr> <td><b>%7: </b></b></td><td> %8</td> </tr>"
+                                       "<tr> <td><b>%9: </b></b></td><td> %10</td> </tr>"
+                                       "<tr> <td><b>%11: </b></b></td><td> %12</td> </tr>"
+                                       "<tr> <td><b>%13: </b></b></td><td> %14</td> </tr>"
+                                       "</table>")
+                                       .arg(tr("Locale"))                                 //1
+                                       .arg(locale.name())                                //2
+                                       .arg(tr("Country"))                                //3
+                                       .arg(QLocale::countryToString(locale.country()))   //4
+                                       .arg(tr("Language"))                               //5
+                                       .arg(QLocale::languageToString(locale.language())) //6
+                                       .arg(tr("Group Separator"))                        //7
+                                       .arg(locale.groupSeparator())                      //8
+                                       .arg(tr("Decimal Point"))                          //9
+                                       .arg(locale.decimalPoint())                        //10
+                                       .arg(tr("Negative Sign"))                          //11
+                                       .arg(locale.negativeSign())                        //12
+                                       .arg(tr("Positive Sign"))                          //13
+                                       .arg(locale.positiveSign());                       //14
+
+    button->setToolTip(toolTipStr);
 }
