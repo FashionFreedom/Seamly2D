@@ -21,7 +21,7 @@ Don't know how? Join our multi-lingual Discourse [forum](https://forum.seamly.io
 
 ### Supported platforms:
    * Windows 10 & 11 (32-bit and 64-bit) 
-   * macOS 64-bit Ventura (13) and Sonoma (14)
+   * macOS 64-bit Ventura (13), Sonoma (14), and Sequoia (15)
    * Most current Linux distros as Flatpak via [Flathub](https://flathub.org/apps/io.seamly.seamly2d)
    * Most current Linux distros as AppImage
 ___________________________________________________
