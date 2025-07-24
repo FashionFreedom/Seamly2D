@@ -37,7 +37,6 @@
 SeamlyMeWelcomeDialog::SeamlyMeWelcomeDialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::SeamlyMeWelcomeDialog)
-    , m_langChanged(false)
     , settings(qApp->seamlyMeSettings())
 {
     ui->setupUi(this);
@@ -61,10 +60,7 @@ SeamlyMeWelcomeDialog::SeamlyMeWelcomeDialog(QWidget *parent)
     //-------------------- Languages setup
     InitLanguages(ui->language_ComboBox);
     connect(ui->language_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, [this]()
-    {
-        m_langChanged = true;
-    });
+            this, &SeamlyMeWelcomeDialog::languageChanged);
 
     ui->doNotShow_CheckBox->setChecked(settings->getShowWelcome());
 
@@ -95,29 +91,7 @@ void SeamlyMeWelcomeDialog::apply()
     settings->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
     settings->setShowWelcome(ui->doNotShow_CheckBox->isChecked());
 
-    if (m_langChanged)
-    {
-        const QString locale = qvariant_cast<QString>(ui->language_ComboBox->currentData());
-        settings->setLocale(locale);
-        m_langChanged = false;
-    }
-
     done(QDialog::Accepted);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-// @brief changeEvent handle event changes
-// @param type event type
-void SeamlyMeWelcomeDialog::changeEvent(QEvent *event)
-{
-    if (event->type() == QEvent::LanguageChange)
-    {
-        // retranslate designer form (single inheritance approach)
-        ui->retranslateUi(this);
-    }
-
-    // remember to call base class implementation
-    QDialog::changeEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -135,6 +109,17 @@ void SeamlyMeWelcomeDialog::initUnits()
     {
         ui->units_ComboBox->setCurrentIndex(index);
     }
+}
+
+void SeamlyMeWelcomeDialog::languageChanged(int index)
+{
+    const QString locale = qvariant_cast<QString>(ui->language_ComboBox->itemData(index));
+    settings->setLocale(locale);
+    qApp->loadTranslations(locale);
+    ui->retranslateUi(this);
+    ui->units_ComboBox->setItemText(0, tr("Centimeters"));
+    ui->units_ComboBox->setItemText(1, tr("Millimeters"));
+    ui->units_ComboBox->setItemText(2, tr("Inches"));
 }
 
 void SeamlyMeWelcomeDialog::setLocaleTooltip(QLocale locale, QRadioButton *button)

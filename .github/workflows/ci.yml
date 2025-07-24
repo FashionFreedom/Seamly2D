@@ -3,18 +3,21 @@ name: CI-qt6
 # for a description, see README.md in this folder
 
 on:
+  schedule:
+    - cron: '30 1 * * MON'
+  workflow_dispatch:
   push:
     branches:
-    - qt6
+    - develop
+    - test
   pull_request:
     branches:
-    - qt6
 
 permissions:
   contents: write
 
 env:
-  QT_VERSION: '6.5.3' # quotes required or YAML parser will interpret as float
+  QT_VERSION: '6.2.4' # quotes required or YAML parser will interpret as float
 
 jobs:
 
@@ -130,7 +133,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: install appimage dependencies
         run: |
           brew install xerces-c
@@ -193,7 +196,7 @@ jobs:
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
-    steps:     
+    steps:
       - uses: actions/checkout@v4
 
       - name: install msvc
@@ -285,112 +288,6 @@ jobs:
           path: Seamly2D-windows.zip
           if-no-files-found: error
 
-  # win32 not supported for qt6
-  # win32:
-  #   name: 'Windows 32-Bit: Build'
-  #   runs-on: windows-latest
-  #   needs: version
-  #   env:
-  #     VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
-
-  #   steps:
-  #     - uses: actions/checkout@v3
-
-  #     - name: install msvc
-  #       uses: ilammy/msvc-dev-cmd@v1
-  #       with:
-  #         # use Visual C++ 2022 latest, 14.34.xxxx
-  #         toolset: '14.34'
-  #         arch: amd64_x86
-
-  #     - uses: jurplel/install-qt-action@v3
-  #       with:
-  #         version: ${{ env.QT_VERSION }}
-  #         arch: win32_msvc2019
-  #         cache: true
-  #         modules: qt5compat qtmultimedia
-
-  #     - name: update version
-  #       shell: bash
-  #       run: |
-  #         ./scripts/version.sh ${VERSION_NUMBER}
-
-  #     - name: make seamly2d.exe and seamlyme.exe
-  #       run: |
-  #         qmake.exe Seamly2D.pro -config release CONFIG+=noTests
-  #         nmake
-
-  #     - name: create seamly2d-installer.exe
-  #       # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
-  #       # uses parameters in seamly2d-installer.nsi to create the installer exe
-  #       run: |
-  #         mkdir ..\windows-build
-  #         Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
-  #         Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
-  #         Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
-  #         cd ..\windows-build\
-  #         & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
-
-      - name: Authenticate to Google Cloud (for signing)
-        uses: google-github-actions/auth@v2
-        env:
-          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
-        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
-        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
-        with:
-          credentials_json: ${{ secrets.SEAMLY_SIGNING_SA_KEY }}
-          project_id: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
-
-      - name: Setup Google Cloud CLI (for signing)
-        uses: google-github-actions/setup-gcloud@v2
-        env:
-          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
-        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
-        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
-
-      - name: Set up Java (for signing)
-        uses: actions/setup-java@v4
-        env:
-          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
-        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
-        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
-        with:
-          java-version: 17
-          distribution: 'temurin'
-
-      - name: Sign executables
-        shell: bash
-        env:
-          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
-        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
-        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
-        run: |
-          java -jar .github/workflows/signing/jsign.jar \
-          --storetype GOOGLECLOUD \
-          --storepass "$(gcloud auth print-access-token)" \
-          --keystore "projects/${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}/locations/${{ secrets.SEAMLY_SIGNING_LOCATION }}/keyRings/${{ secrets.SEAMLY_SIGNING_KEYRING_NAME }}" \
-          --alias "${{ secrets.SEAMLY_SIGNING_KEY_NAME }}" \
-          --certfile .github/workflows/signing/codesign-chain.pem \
-          --tsaurl http://timestamp.sectigo.com \
-          ../windows-build/Seamly2D-installer.exe
-
-      - name: Print installer signature
-        run: |
-          cd ..\windows-build\
-          Get-AuthenticodeSignature Seamly2D-installer.exe
-
-      - name: pack installer file into .zip
-        run: |
-          cd ..\windows-build\
-          C:\"Program Files"\7-Zip\7z.exe a Seamly2D-win32.zip Seamly2D-installer.exe
-          copy Seamly2D-win32.zip ..\Seamly2D\
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: Seamly2D-win32.zip
-          path: Seamly2D-win32.zip
-          if-no-files-found: error
-
   publish:
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop'
     runs-on: ubuntu-latest
@@ -409,10 +306,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: Seamly2D-windows.zip
-      - name: Download unsigned win32 artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: Seamly2D-win32.zip
+      # - name: Download unsigned win32 artifacts
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     name: Seamly2D-win32.zip
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ env.VERSION_NUMBER }}
@@ -441,4 +338,3 @@ jobs:
           config_file: Doxyfile
           # target_folder must match pages config in https://github.com/FashionFreedom/Seamly2D/settings/pages
           target_folder: docs/
-
