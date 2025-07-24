@@ -46,16 +46,13 @@ public:
                               ~SeamlyMeWelcomeDialog();
     void                       apply();
 
-protected:
-    virtual void               changeEvent(QEvent* event) Q_DECL_OVERRIDE;
-
 private:
     Q_DISABLE_COPY(SeamlyMeWelcomeDialog)
     Ui::SeamlyMeWelcomeDialog *ui;
-    bool                       m_langChanged;
     VSeamlyMeSettings         *settings;
 
     void                       initUnits();
+    void                       languageChanged(int index);
     void                       setLocaleTooltip(QLocale locale, QRadioButton *button);
 };
 

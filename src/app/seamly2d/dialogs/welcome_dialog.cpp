@@ -37,7 +37,6 @@
 SeamlyWelcomeDialog::SeamlyWelcomeDialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::SeamlyWelcomeDialog)
-    , m_langChanged(false)
     , m_selectionSoundChanged(false)
     , settings(qApp->Seamly2DSettings())
 {
@@ -48,7 +47,7 @@ SeamlyWelcomeDialog::SeamlyWelcomeDialog(QWidget *parent)
     initUnits();
 
     //-------------------- Decimal separator setup
-    if (qApp->Seamly2DSettings()->getOsSeparator())
+    if (settings->getOsSeparator())
     {
         ui->userLocale_RadioButton->setChecked(true);
     }
@@ -62,10 +61,7 @@ SeamlyWelcomeDialog::SeamlyWelcomeDialog(QWidget *parent)
     //-------------------- Languages setup
     InitLanguages(ui->language_ComboBox);
     connect(ui->language_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, [this]()
-    {
-        m_langChanged = true;
-    });
+            this, &SeamlyWelcomeDialog::languageChanged);
 
     //-------------------- Selection sound
     int index = ui->selectionSound_ComboBox->findText(settings->getSound());
@@ -110,13 +106,6 @@ void SeamlyWelcomeDialog::apply()
     settings->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
     settings->setShowWelcome(ui->doNotShow_CheckBox->isChecked());
 
-    if (m_langChanged)
-    {
-        const QString locale = qvariant_cast<QString>(ui->language_ComboBox->currentData());
-        settings->setLocale(locale);
-        m_langChanged = false;
-    }
-
     if (m_selectionSoundChanged)
     {
         const QString sound = qvariant_cast<QString>(ui->selectionSound_ComboBox->currentText());
@@ -125,21 +114,6 @@ void SeamlyWelcomeDialog::apply()
     }
 
     done(QDialog::Accepted);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-// @brief changeEvent handle event changes
-//---------------------------------------------------------------------------------------------------------------------
-void SeamlyWelcomeDialog::changeEvent(QEvent *event)
-{
-    if (event->type() == QEvent::LanguageChange)
-    {
-        // retranslate designer form (single inheritance approach)
-        ui->retranslateUi(this);
-    }
-
-    // remember to call base class implementation
-    QDialog::changeEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -157,6 +131,17 @@ void SeamlyWelcomeDialog::initUnits()
     {
         ui->units_ComboBox->setCurrentIndex(index);
     }
+}
+
+void SeamlyWelcomeDialog::languageChanged(int index)
+{
+    const QString locale = qvariant_cast<QString>(ui->language_ComboBox->itemData(index));
+    settings->setLocale(locale);
+    qApp->loadTranslations(locale);
+    ui->retranslateUi(this);
+    ui->units_ComboBox->setItemText(0, tr("Centimeters"));
+    ui->units_ComboBox->setItemText(1, tr("Millimeters"));
+    ui->units_ComboBox->setItemText(2, tr("Inches"));
 }
 
 void SeamlyWelcomeDialog::setLocaleTooltip(QLocale locale, QRadioButton *button)

@@ -585,7 +585,7 @@ void VCommonSettings::setDefaultPieceTemplate(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 bool VCommonSettings::getShowWelcome() const
 {
-    return value(settingConfigurationShowWelcome, 1).toBool();
+    return value(settingConfigurationShowWelcome, false).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
