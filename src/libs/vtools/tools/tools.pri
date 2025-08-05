@@ -12,6 +12,7 @@ HEADERS += \
     $$PWD/nodeDetails/anchorpoint_tool.h \
     $$PWD/nodeDetails/internal_path_tool.h \
     $$PWD/pattern_piece_tool.h \
+    $$PWD/piecetools/foldlineitem.h \
     $$PWD/vdatatool.h \
     $$PWD/vabstracttool.h \
     $$PWD/tools.h \
@@ -74,6 +75,7 @@ SOURCES += \
     $$PWD/nodeDetails/anchorpoint_tool.cpp \
     $$PWD/nodeDetails/internal_path_tool.cpp \
     $$PWD/pattern_piece_tool.cpp \
+    $$PWD/piecetools/foldlineitem.cpp \
     $$PWD/union_tool.cpp \
     $$PWD/vdatatool.cpp \
     $$PWD/vabstracttool.cpp \

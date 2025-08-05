@@ -56,6 +56,7 @@
 #include <QGraphicsPathItem>
 
 #include "vinteractivetool.h"
+#include "piecetools/foldlineitem.h"
 
 #include "../vpatterndb/vpiece.h"
 #include "../vwidgets/vtextgraphicsitem.h"
@@ -140,6 +141,7 @@ public slots:
     void                 updatePieceLabel();
     void                 updatePatternLabel();
     void                 updateGrainline();
+    void                 updateFoldline();
     void                 editPieceProperties();
 
 protected slots:
@@ -188,6 +190,7 @@ private:
     VTextGraphicsItem      *m_dataLabel;
     VTextGraphicsItem      *m_patternInfo;
     VGrainlineItem         *m_grainLine;
+    VFoldlineItem          *m_foldLine;
     QGraphicsPathItem      *m_notches;
 
                            PatternPieceTool(VAbstractPattern *doc, VContainer *data, const quint32 &id,

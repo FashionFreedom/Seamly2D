@@ -512,6 +512,7 @@ void PatternPieceTool::EnableToolMove(bool move)
 {
     setFlag(QGraphicsItem::ItemIsMovable, move);
     m_grainLine->setFlag(QGraphicsItem::ItemIsMovable, move);
+    m_foldLine->setFlag(QGraphicsItem::ItemIsMovable, move);
     m_dataLabel->setFlag(QGraphicsItem::ItemIsMovable, move);
     m_patternInfo->setFlag(QGraphicsItem::ItemIsMovable, move);
 
@@ -536,6 +537,7 @@ void PatternPieceTool::pieceLockedChanged(quint32 id, bool lock)
     {
         setFlag(QGraphicsItem::ItemIsMovable, lock);
         m_grainLine->setFlag(QGraphicsItem::ItemIsMovable, lock);
+        m_foldLine->setFlag(QGraphicsItem::ItemIsMovable, lock);
         m_dataLabel->setFlag(QGraphicsItem::ItemIsMovable, lock);
         m_patternInfo->setFlag(QGraphicsItem::ItemIsMovable, lock);
 
@@ -617,6 +619,7 @@ void PatternPieceTool::updatePieceDetails()
     updatePieceLabel();
     updatePatternLabel();
     updateGrainline();
+    updateFoldline();
     updateInternalPaths();
 }
 
@@ -705,6 +708,26 @@ void PatternPieceTool::updateGrainline()
     {
         m_grainLine->hide();
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief updateFoldline updates the foldline item
+//---------------------------------------------------------------------------------------------------------------------
+void PatternPieceTool::updateFoldline()
+{
+    const VPiece piece = VAbstractTool::data.GetPiece(m_id);
+    const VGrainlineData &data = piece.GetGrainlineGeometry();
+
+    QPointF pos;
+    qreal dRotation = 0;
+    qreal dLength = 0;
+
+    const VGrainlineItem::MoveTypes type = findGrainlineGeometry(data, dLength, dRotation, pos);
+
+    m_foldLine->setMoveType(type);
+    m_foldLine->updateGeometry(pos, dRotation, ToPixel(dLength, *VDataTool::data.GetPatternUnit()),
+                                data.getArrowType());
+    m_foldLine->show();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1424,6 +1447,7 @@ PatternPieceTool::PatternPieceTool(VAbstractPattern *doc, VContainer *data, cons
     , m_dataLabel(new VTextGraphicsItem(this))
     , m_patternInfo(new VTextGraphicsItem(this))
     , m_grainLine(new VGrainlineItem(this))
+    , m_foldLine(new VFoldlineItem(this))
     , m_notches(new QGraphicsPathItem(this))
 {
     VPiece piece = data->GetPiece(id);
