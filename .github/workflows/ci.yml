@@ -32,18 +32,15 @@ jobs:
       - name: create version number
         id: create-version
         run: |
-          if [ $GITHUB_EVENT_NAME = 'schedule' ] || [ $GITHUB_EVENT_NAME = 'workflow_dispatch' ] || [ $GITHUB_EVENT_NAME = 'push' ] ; then
-            echo "version_number=$(date +%Y.%-m.%-d.%-H%M)" >> $GITHUB_OUTPUT
-          else
-            echo "version_number=0.6.0.1" >> $GITHUB_OUTPUT
-          fi
+          echo "version_number=$(date +%Y.%-m.%-d.%-H%M)" >> $GITHUB_OUTPUT
+          echo "VERSION_NUMBER=$(date +%Y.%-m.%-d.%-H%M)" >> $GITHUB_ENV
 
   linux:
     name: 'Linux: Build AppImage'
     runs-on: ubuntu-20.04  # build on the oldest supported LTS so that resulting binaries are compatible with older and newer Linux releases
     needs: version
     env:
-      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+      VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
 
     steps:
       - uses: actions/checkout@v4
@@ -129,7 +126,7 @@ jobs:
     runs-on: macos-latest
     needs: version
     env:
-      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+      VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
 
     steps:
       - uses: actions/checkout@v4
@@ -194,7 +191,7 @@ jobs:
     runs-on: windows-latest
     needs: version
     env:
-      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+      VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
 
     steps:
       - uses: actions/checkout@v4
@@ -205,32 +202,33 @@ jobs:
           # use Visual C++ 2022 latest, 14.36.xxxx
           toolset: '14.36'
 
-       - uses: jurplel/install-qt-action@v3
-         with:
-           version: ${{ env.QT_VERSION }}
-           cache: true
-           modules: qt5compat
+      - name: install ms qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: ${{ env.QT_VERSION }}
+          cache: true
+          modules: qt5compat qtmultimedia
 
-       - name: update version
-         shell: bash
-         run: |
-           ./scripts/version.sh ${VERSION_NUMBER}
+      - name: update version
+        shell: bash
+        run: |
+          ./scripts/version.sh ${VERSION_NUMBER}
 
-       - name: make seamly2d.exe and seamlyme.exe
-         run: |
-           qmake.exe Seamly2D.pro -config release CONFIG+=noTests
-           nmake
+      - name: make seamly2d.exe and seamlyme.exe
+        run: |
+          qmake.exe Seamly2D.pro -config release CONFIG+=noTests
+          nmake
 
-       - name: create seamly2d-installer.exe
-         # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
-         # uses parameters in seamly2d-installer.nsi to create the installer exe
-         run: |
-           mkdir ..\windows-build
-           Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
-           Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
-           Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
-           cd ..\windows-build\
-           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
+      - name: create seamly2d-installer.exe
+        # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
+        # uses parameters in seamly2d-installer.nsi to create the installer exe
+        run: |
+          mkdir ..\windows-build
+          Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
+          Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
+          Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
+          cd ..\windows-build\
+          & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
       - name: Authenticate to Google Cloud (for signing)
         uses: google-github-actions/auth@v2
@@ -291,9 +289,8 @@ jobs:
   publish:
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop'
     runs-on: ubuntu-latest
-    needs: [version, windows-msvc, linux, macos]
     env:
-      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+      VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
 
     steps:
       - uses: actions/download-artifact@v4
