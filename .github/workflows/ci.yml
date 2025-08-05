@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-20.04  # build on the oldest supported LTS so that resulting binaries are compatible with older and newer Linux releases
     needs: version
     env:
-      VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
       - uses: actions/checkout@v4
@@ -126,7 +126,7 @@ jobs:
     runs-on: macos-latest
     needs: version
     env:
-      VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
       - uses: actions/checkout@v4
@@ -191,7 +191,7 @@ jobs:
     runs-on: windows-latest
     needs: version
     env:
-      VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
       - uses: actions/checkout@v4
@@ -199,8 +199,9 @@ jobs:
       - name: install msvc
         uses: ilammy/msvc-dev-cmd@v1
         with:
+          arch: x64
           # use Visual C++ 2022 latest, 14.36.xxxx
-          toolset: '14.36'
+          # toolset: '14.36'
 
       - name: install ms qt
         uses: jurplel/install-qt-action@v3
@@ -290,7 +291,7 @@ jobs:
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop'
     runs-on: ubuntu-latest
     env:
-      VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
       - uses: actions/download-artifact@v4
@@ -309,8 +310,8 @@ jobs:
       #     name: Seamly2D-win32.zip
       - uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ env.VERSION_NUMBER }}
-          name: ${{ env.VERSION_NUMBER }}
+          tag_name: v${VERSION_NUMBER}
+          name: ${VERSION_NUMBER}
           generate_release_notes: true
           fail_on_unmatched_files: true
           prerelease: ${{ github.event_name == 'push' }}
