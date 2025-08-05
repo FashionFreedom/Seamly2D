@@ -205,32 +205,32 @@ jobs:
           # use Visual C++ 2022 latest, 14.36.xxxx
           toolset: '14.36'
 
-       - uses: jurplel/install-qt-action@v3
-         with:
-           version: ${{ env.QT_VERSION }}
-           cache: true
-           modules: qt5compat
+      - uses: jurplel/install-qt-action@v3
+        with:
+          version: ${{ env.QT_VERSION }}
+          cache: true
+          modules: qt5compat
 
-       - name: update version
-         shell: bash
-         run: |
-           ./scripts/version.sh ${VERSION_NUMBER}
+      - name: update version
+        shell: bash
+        run: |
+          ./scripts/version.sh ${VERSION_NUMBER}
 
-       - name: make seamly2d.exe and seamlyme.exe
-         run: |
-           qmake.exe Seamly2D.pro -config release CONFIG+=noTests
-           nmake
+      - name: make seamly2d.exe and seamlyme.exe
+        run: |
+          qmake.exe Seamly2D.pro -config release CONFIG+=noTests
+          nmake
 
-       - name: create seamly2d-installer.exe
-         # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
-         # uses parameters in seamly2d-installer.nsi to create the installer exe
-         run: |
-           mkdir ..\windows-build
-           Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
-           Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
-           Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
-           cd ..\windows-build\
-           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
+      - name: create seamly2d-installer.exe
+        # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
+        # uses parameters in seamly2d-installer.nsi to create the installer exe
+        run: |
+          mkdir ..\windows-build
+          Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
+          Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
+          Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
+          cd ..\windows-build\
+          & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
       - name: Authenticate to Google Cloud (for signing)
         uses: google-github-actions/auth@v2
