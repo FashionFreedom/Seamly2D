@@ -65,7 +65,9 @@
 #include "../vmisc/def.h"
 #include "../vmisc/vmath.h"
 
+#ifndef QPRINTENGINE_H
 Q_DECLARE_METATYPE(QMarginsF)
+#endif
 
 namespace
 {
@@ -114,14 +116,14 @@ VSettings::VSettings(Format format, Scope scope, const QString &organization,
                      const QString &application, QObject *parent)
     : VCommonSettings(format, scope, organization, application, parent)
 {
-    // FIXME qRegisterMetaTypeStreamOperators<QMarginsF>("QMarginsF"); ???
+    qRegisterMetaType<QMarginsF>();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 VSettings::VSettings(const QString &fileName, QSettings::Format format, QObject *parent)
   : VCommonSettings(fileName, format, parent)
 {
-    // FIXME qRegisterMetaTypeStreamOperators<QMarginsF>("QMarginsF"); ???
+    qRegisterMetaType<QMarginsF>();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -181,13 +183,16 @@ void VSettings::SetPathLayout(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 bool VSettings::GetGraphicalOutput() const
 {
-    return value(settingPatternGraphicalOutput, 1).toBool();
+    QSettings settings(this->format(), this->scope(), this->organizationName(), this->applicationName());
+    return settings.value(settingPatternGraphicalOutput, 1).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VSettings::SetGraphicalOutput(const bool &value)
 {
-    setValue(settingPatternGraphicalOutput, value);
+    QSettings settings(this->format(), this->scope(), this->organizationName(), this->applicationName());
+    settings.setValue(settingPatternGraphicalOutput, value);
+    settings.sync();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
