@@ -681,8 +681,6 @@ void ApplicationME::parseCommandLine(const SocketConnection &connection, const Q
                 }
             }
         }
-
-        //loadTranslations(seamlyMeSettings()->getLocale());
     }
 
     const QStringList args = parser.positionalArguments();

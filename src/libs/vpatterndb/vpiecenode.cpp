@@ -56,6 +56,7 @@
 #include "calculator.h"
 
 #include <QDataStream>
+#include <QMetaType>
 #include <QtNumeric>
 
 namespace

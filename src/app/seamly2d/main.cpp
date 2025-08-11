@@ -81,29 +81,33 @@ int main(int argc, char *argv[])
     // Check if the Qt version is at least 6.2.4
     QT_REQUIRE_VERSION(argc, argv, "6.2.4");
 
-#ifndef Q_OS_MAC // supports natively
-    initHighDpiScaling(argc, argv);
-#endif //Q_OS_MAC
-
+    qRegisterMetaType<VPieceNode>();
+    qRegisterMetaType<CustomSARecord>();
+    
     // Create the application instance
     Application2D app(argc, argv);
     // Initialize application options
     app.initOptions();
 
-    // Retrieve the application settings
-    auto settings = qApp->Seamly2DSettings();
-    // The 'showWelcome' setting indicates whether to show the welcome dialog
-    // 'true' means "do not show welcome again", so we invert it here
-    bool showWelcome = !settings->getShowWelcome();
-
-    if (showWelcome)
+    // Only show welcome dialog if in GUI mode
+    if (Application2D::isGUIMode())
     {
-        // Show the welcome dialog if needed
-        SeamlyWelcomeDialog *dialog = new SeamlyWelcomeDialog();
-        dialog->setAttribute(Qt::WA_DeleteOnClose, true);
-        dialog->exec();
-        // Load translations based on the locale setting
-        app.loadTranslations(settings->getLocale());
+        // Retrieve the Seamly2D application settings
+        auto settings = qApp->Seamly2DSettings();
+
+        // The 'showWelcome' setting indicates whether to show the welcome dialog
+        // 'true' means "do not show welcome again", so we invert it here
+        bool showWelcome = !settings->getShowWelcome();
+
+        if (showWelcome)
+        {
+            // Show the welcome dialog if needed
+            SeamlyWelcomeDialog *dialog = new SeamlyWelcomeDialog();
+            dialog->setAttribute(Qt::WA_DeleteOnClose, true);
+            dialog->exec();
+            // Load translations based on the locale setting
+            app.loadTranslations(settings->getLocale());
+        }
     }
 
     // Create the main window
