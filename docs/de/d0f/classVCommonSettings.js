@@ -1,6 +1,7 @@
 var classVCommonSettings =
 [
     [ "VCommonSettings", "de/d0f/classVCommonSettings.html#a8564ee835738e07d5cea508280d4003e", null ],
+    [ "VCommonSettings", "de/d0f/classVCommonSettings.html#a3b296a30890f8b886eae7491f817b86d", null ],
     [ "getAddress", "de/d0f/classVCommonSettings.html#a4b7440828add12663878c42723443bb3", null ],
     [ "getAutosaveInterval", "de/d0f/classVCommonSettings.html#a23d9a6403ef4d3a84c63484ae97e114d", null ],
     [ "GetAutosaveState", "de/d0f/classVCommonSettings.html#afcfd6789305cc57d5c36abd32132f250", null ],

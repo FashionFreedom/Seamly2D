@@ -1,60 +1,54 @@
 <map id="VToolTrueDarts" name="VToolTrueDarts">
-<area shape="rect" id="Node000001" title=" " alt="" coords="1601,5975,1763,6540"/>
-<area shape="rect" id="Node000002" href="$d0/dcf/classVToolDoublePoint.html" title=" " alt="" coords="1573,5200,1791,5925"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1685,5939,1685,5975,1679,5975,1679,5939"/>
-<area shape="rect" id="Node000003" href="$da/da4/classVAbstractPoint.html" title=" " alt="" coords="1381,4925,1589,5151"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1534,5162,1576,5273,1571,5275,1529,5164"/>
-<area shape="rect" id="Node000004" href="$d2/df2/classVDrawTool.html" title="The VDrawTool abstract class for all draw tool." alt="" coords="1378,4163,1591,4848"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1487,4862,1487,4925,1482,4925,1482,4862"/>
-<area shape="rect" id="Node000005" href="$d4/d36/classVInteractiveTool.html" title=" " alt="" coords="1384,3748,1585,3933"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1487,3947,1487,4163,1482,4163,1482,3947"/>
-<area shape="rect" id="Node000006" href="$d4/d36/classVAbstractTool.html" title="The VAbstractTool abstract class for all tools." alt="" coords="1223,2660,1416,3505"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1417,3519,1467,3747,1462,3748,1412,3520"/>
-<area shape="rect" id="Node000007" href="$d5/d68/classVDataTool.html" title="The VDataTool class need for getting access to data container of tool." alt="" coords="1385,1611,1552,1817"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1459,1831,1368,2660,1363,2660,1453,1830"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="1601,503,1667,569"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1632,583,1591,939,1537,1310,1488,1611,1483,1610,1532,1309,1586,938,1627,582"/>
-<area shape="rect" id="Node000010" href="$d8/dba/classVAbstractPattern.html" title=" " alt="" coords="769,1001,977,2427"/>
-<area shape="poly" id="edge10_Node000010_Node000008" title=" " alt="" coords="1644,582,1651,655,1649,749,1643,798,1632,848,1615,896,1591,940,1569,965,1544,979,1519,984,1492,984,1435,983,1405,989,1374,1004,1309,1050,1249,1102,1193,1161,1141,1223,1094,1287,1051,1352,979,1478,975,1476,1046,1349,1089,1284,1137,1220,1189,1157,1245,1099,1306,1045,1371,999,1403,984,1434,978,1492,979,1518,978,1543,974,1565,961,1586,937,1610,894,1627,847,1638,798,1644,748,1645,656,1639,582"/>
-<area shape="rect" id="Node000022" href="$dc/de5/classVAbstractSimple.html" title=" " alt="" coords="1574,2451,1731,2636"/>
-<area shape="poly" id="edge23_Node000022_Node000008" title=" " alt="" coords="1637,582,1654,2450,1649,2450,1632,583"/>
-<area shape="rect" id="Node000025" href="$de/dbc/classVGraphicsSimpleTextItem.html" title="The VGraphicsSimpleTextItem class pointer label." alt="" coords="1672,1401,1889,2027"/>
-<area shape="poly" id="edge27_Node000025_Node000008" title=" " alt="" coords="1642,582,1683,938,1742,1401,1737,1401,1678,939,1636,583"/>
-<area shape="rect" id="Node000009" href="$d2/d83/classVContainer.html" title="Manages a collection of geometric objects, pieces, paths, and variables." alt="" coords="1361,163,1577,909"/>
-<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="1471,909,1471,1594,1466,1594,1466,909"/>
-<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="979,2033,1220,2769,1215,2771,974,2034"/>
-<area shape="rect" id="Node000011" href="$d6/deb/classVDomDocument.html" title="The VDomDocument class represents a Seamly2D document (.val file)." alt="" coords="1135,133,1336,939"/>
-<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="1133,910,1125,939,979,1399,974,1398,1119,938,1128,909"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="1071,5,1194,71"/>
-<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="1145,84,1155,132,1149,134,1139,85"/>
-<area shape="rect" id="Node000013" href="$da/da1/classQHash.html" title=" " alt="" coords="1219,5,1457,71"/>
-<area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="1334,71,1324,118,1319,117,1329,70"/>
-<area shape="rect" id="Node000014" href="$d5/dc2/classQVector.html" title=" " alt="" coords="5,503,177,569"/>
-<area shape="poly" id="edge14_Node000010_Node000014" title=" " alt="" coords="96,569,105,638,121,732,149,836,168,888,191,937,251,1041,319,1141,394,1238,471,1329,549,1413,625,1489,758,1613,754,1616,621,1493,546,1416,467,1332,390,1241,315,1145,246,1044,186,940,163,890,144,838,116,733,99,639,91,569"/>
-<area shape="rect" id="Node000015" href="$d5/dc2/classQVector.html" title=" " alt="" coords="201,503,376,569"/>
-<area shape="poly" id="edge15_Node000010_Node000015" title=" " alt="" coords="296,569,307,637,326,730,354,835,391,938,431,1025,475,1111,572,1280,671,1433,761,1561,756,1564,666,1436,567,1282,470,1114,426,1027,386,940,349,836,321,731,302,638,290,570"/>
-<area shape="rect" id="Node000016" href="$d0/d4c/classQMap.html" title=" " alt="" coords="401,503,614,569"/>
-<area shape="poly" id="edge16_Node000010_Node000016" title=" " alt="" coords="519,568,629,938,766,1375,761,1376,623,939,514,570"/>
-<area shape="rect" id="Node000017" href="$da/da1/classQHash.html" title=" " alt="" coords="638,503,859,569"/>
-<area shape="poly" id="edge17_Node000010_Node000017" title=" " alt="" coords="755,568,799,985,793,985,749,569"/>
-<area shape="rect" id="Node000018" href="$d5/dc2/classQVector.html" title=" " alt="" coords="883,503,1110,569"/>
-<area shape="poly" id="edge18_Node000010_Node000018" title=" " alt="" coords="996,569,952,985,947,985,991,568"/>
-<area shape="rect" id="Node000019" href="$dd/daa/classQSharedPointer.html" title=" " alt="" coords="1441,3050,1654,3115"/>
-<area shape="poly" id="edge19_Node000005_Node000019" title=" " alt="" coords="1547,3116,1496,3731,1491,3731,1542,3115"/>
-<area shape="rect" id="Node000020" title=" " alt="" coords="1613,5005,1751,5071"/>
-<area shape="poly" id="edge20_Node000002_Node000020" title=" " alt="" coords="1685,5084,1685,5200,1679,5200,1679,5084"/>
-<area shape="rect" id="Node000021" href="$d1/d6b/classVSimplePoint.html" title=" " alt="" coords="1680,3568,1897,4113"/>
-<area shape="poly" id="edge21_Node000002_Node000021" title=" " alt="" coords="1800,4114,1802,4337,1799,4598,1788,4875,1766,5151,1762,5184,1757,5183,1761,5150,1783,4875,1794,4598,1797,4337,1795,4114"/>
-<area shape="poly" id="edge22_Node000021_Node000022" title=" " alt="" coords="1668,2650,1669,2660,1764,3567,1759,3568,1663,2660,1662,2650"/>
-<area shape="rect" id="Node000023" href="$dc/d3b/classVScenePoint.html" title=" " alt="" coords="1857,2910,2040,3255"/>
-<area shape="poly" id="edge24_Node000021_Node000023" title=" " alt="" coords="1912,3269,1849,3568,1844,3567,1907,3268"/>
-<area shape="rect" id="Node000024" title=" " alt="" coords="1914,1681,2069,1747"/>
-<area shape="poly" id="edge25_Node000023_Node000024" title=" " alt="" coords="1993,1761,1957,2910,1951,2910,1987,1760"/>
-<area shape="poly" id="edge26_Node000023_Node000025" title=" " alt="" coords="1796,2027,1817,2323,1833,2481,1853,2636,1876,2767,1903,2893,1898,2894,1871,2768,1847,2636,1827,2481,1811,2323,1790,2027"/>
-<area shape="rect" id="Node000026" title=" " alt="" coords="1692,503,1875,569"/>
-<area shape="poly" id="edge28_Node000025_Node000026" title=" " alt="" coords="1786,582,1784,1401,1779,1401,1781,582"/>
-<area shape="rect" id="Node000027" href="$dd/da2/classVScaledLine.html" title=" " alt="" coords="2093,1621,2239,1807"/>
-<area shape="poly" id="edge29_Node000023_Node000027" title=" " alt="" coords="2160,1807,2130,2085,2083,2427,2039,2671,1993,2895,1988,2893,2034,2670,2078,2426,2125,2085,2155,1807"/>
-<area shape="rect" id="Node000028" title=" " alt="" coords="2097,503,2235,569"/>
-<area shape="poly" id="edge30_Node000027_Node000028" title=" " alt="" coords="2169,582,2169,1621,2163,1621,2163,582"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="949,6035,1110,6600"/>
+<area shape="rect" id="Node000002" href="$d0/dcf/classVToolDoublePoint.html" title=" " alt="" coords="921,5260,1138,5985"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1032,5999,1032,6035,1027,6035,1027,5999"/>
+<area shape="rect" id="Node000003" href="$da/da4/classVAbstractPoint.html" title=" " alt="" coords="728,4985,936,5211"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="881,5222,923,5333,918,5335,876,5224"/>
+<area shape="rect" id="Node000004" href="$d2/df2/classVDrawTool.html" title="The VDrawTool abstract class for all draw tool." alt="" coords="725,4223,939,4908"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="835,4922,835,4985,829,4985,829,4922"/>
+<area shape="rect" id="Node000005" href="$d4/d36/classVInteractiveTool.html" title=" " alt="" coords="731,3808,933,3993"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="835,4007,835,4223,829,4223,829,4007"/>
+<area shape="rect" id="Node000006" href="$d4/d36/classVAbstractTool.html" title="The VAbstractTool abstract class for all tools." alt="" coords="589,2720,782,3565"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="772,3579,817,3807,812,3808,767,3580"/>
+<area shape="rect" id="Node000007" href="$d5/d68/classVDataTool.html" title="The VDataTool class need for getting access to data container of tool." alt="" coords="739,1641,906,1847"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="814,1861,729,2720,724,2720,809,1860"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="955,503,1021,569"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="986,583,945,939,890,1328,842,1642,836,1641,885,1327,940,938,981,582"/>
+<area shape="rect" id="Node000010" href="$d8/dba/classVAbstractPattern.html" title=" " alt="" coords="485,1001,693,2487"/>
+<area shape="poly" id="edge10_Node000010_Node000008" title=" " alt="" coords="998,582,1005,655,1003,749,997,798,986,848,969,896,945,940,930,957,914,967,874,980,851,985,831,986,794,983,761,984,745,990,728,1003,695,1040,691,1037,725,999,743,986,760,979,794,977,831,981,851,980,873,975,912,962,927,953,940,937,964,894,981,847,992,798,998,748,999,656,993,582"/>
+<area shape="rect" id="Node000019" href="$dc/de5/classVAbstractSimple.html" title=" " alt="" coords="957,2511,1115,2696"/>
+<area shape="poly" id="edge20_Node000019_Node000008" title=" " alt="" coords="988,583,978,864,971,1331,973,1607,980,1899,994,2196,1017,2486,1020,2510,1015,2511,1012,2487,989,2196,975,1900,967,1608,966,1331,973,864,983,583"/>
+<area shape="rect" id="Node000022" href="$de/dbc/classVGraphicsSimpleTextItem.html" title="The VGraphicsSimpleTextItem class pointer label." alt="" coords="1026,1431,1243,2057"/>
+<area shape="poly" id="edge24_Node000022_Node000008" title=" " alt="" coords="996,582,1037,938,1098,1431,1093,1431,1032,939,990,583"/>
+<area shape="rect" id="Node000009" href="$d2/d83/classVContainer.html" title="Manages a collection of geometric objects, pieces, paths, and variables." alt="" coords="715,163,931,909"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="825,909,825,1625,820,1625,820,909"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="643,2487,658,2704,653,2704,638,2487"/>
+<area shape="rect" id="Node000011" href="$d6/deb/classVDomDocument.html" title="The VDomDocument class represents a Seamly2D document (.val file)." alt="" coords="489,133,690,939"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="592,952,592,1001,587,1001,587,952"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="425,5,548,71"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="499,84,509,132,503,134,493,85"/>
+<area shape="rect" id="Node000013" href="$da/da1/classQHash.html" title=" " alt="" coords="573,5,811,71"/>
+<area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="688,71,678,118,673,117,683,70"/>
+<area shape="rect" id="Node000014" href="$d0/d4c/classQMap.html" title=" " alt="" coords="5,503,219,569"/>
+<area shape="poly" id="edge14_Node000010_Node000014" title=" " alt="" coords="122,568,166,728,197,833,233,938,292,1089,356,1241,481,1514,476,1516,351,1243,287,1091,228,940,192,834,160,730,117,570"/>
+<area shape="rect" id="Node000015" href="$da/da1/classQHash.html" title=" " alt="" coords="243,503,464,569"/>
+<area shape="poly" id="edge15_Node000010_Node000015" title=" " alt="" coords="362,568,485,1195,480,1196,357,569"/>
+<area shape="rect" id="Node000016" href="$dd/daa/classQSharedPointer.html" title=" " alt="" coords="807,3110,1020,3175"/>
+<area shape="poly" id="edge16_Node000005_Node000016" title=" " alt="" coords="913,3176,846,3792,841,3791,907,3175"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="960,5065,1099,5131"/>
+<area shape="poly" id="edge17_Node000002_Node000017" title=" " alt="" coords="1032,5144,1032,5260,1027,5260,1027,5144"/>
+<area shape="rect" id="Node000018" href="$d1/d6b/classVSimplePoint.html" title=" " alt="" coords="1027,3628,1245,4173"/>
+<area shape="poly" id="edge18_Node000002_Node000018" title=" " alt="" coords="1147,4174,1150,4397,1147,4658,1136,4935,1113,5211,1109,5244,1104,5243,1108,5210,1130,4935,1141,4658,1144,4397,1142,4174"/>
+<area shape="poly" id="edge19_Node000018_Node000019" title=" " alt="" coords="1047,2710,1118,3627,1112,3628,1041,2710"/>
+<area shape="rect" id="Node000020" href="$dc/d3b/classVScenePoint.html" title=" " alt="" coords="1185,2970,1367,3315"/>
+<area shape="poly" id="edge21_Node000018_Node000020" title=" " alt="" coords="1244,3329,1189,3628,1184,3627,1239,3328"/>
+<area shape="rect" id="Node000021" title=" " alt="" coords="1268,1711,1423,1777"/>
+<area shape="poly" id="edge22_Node000020_Node000021" title=" " alt="" coords="1346,1791,1287,2970,1282,2970,1340,1791"/>
+<area shape="poly" id="edge23_Node000020_Node000022" title=" " alt="" coords="1142,2057,1156,2366,1169,2532,1187,2696,1208,2827,1233,2953,1228,2954,1202,2828,1181,2696,1164,2533,1151,2367,1136,2057"/>
+<area shape="rect" id="Node000023" title=" " alt="" coords="1046,503,1229,569"/>
+<area shape="poly" id="edge25_Node000022_Node000023" title=" " alt="" coords="1140,582,1138,1431,1133,1431,1135,582"/>
+<area shape="rect" id="Node000024" href="$dd/da2/classVScaledLine.html" title=" " alt="" coords="1447,1651,1593,1837"/>
+<area shape="poly" id="edge26_Node000020_Node000024" title=" " alt="" coords="1516,1837,1488,2128,1465,2307,1437,2487,1386,2732,1330,2955,1325,2954,1381,2731,1432,2486,1460,2307,1482,2127,1510,1837"/>
+<area shape="rect" id="Node000025" title=" " alt="" coords="1451,503,1589,569"/>
+<area shape="poly" id="edge27_Node000024_Node000025" title=" " alt="" coords="1523,583,1523,1651,1517,1651,1517,583"/>
 </map>

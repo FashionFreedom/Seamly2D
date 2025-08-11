@@ -108,14 +108,14 @@ $(document).ready(function(){initNavTree('d8/df2/classqmu_1_1QmuParserByteCode.h
 </div><!--header-->
 <div class="contents">
 
-<p>Bytecode implementation of the Math Parser.  
+<p>Bytecode implementation of the Math <a class="el" href="../../d0/d40/classParser.html">Parser</a>.  
  <a href="../../d8/df2/classqmu_1_1QmuParserByteCode.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html">qmuparserbytecode.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for qmu::QmuParserByteCode:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d05/classqmu_1_1QmuParserByteCode__coll__graph.svg" width="196" height="464"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d05/classqmu_1_1QmuParserByteCode__coll__graph.svg" width="196" height="356"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -177,10 +177,10 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
 Private Types</h2></td></tr>
 <tr class="memitem:afaf8f3c52d68f4a25dc0f49d6bf7d97a" id="r_afaf8f3c52d68f4a25dc0f49d6bf7d97a"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../d0/d82/classqmu_1_1QmuParserToken.html">QmuParserToken</a>&lt; qreal, <a class="el" href="../../da/d92/namespaceqmu.html#ad5e24bbfcff27493b743fbb63870b1a2">string_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df2/classqmu_1_1QmuParserByteCode.html#afaf8f3c52d68f4a25dc0f49d6bf7d97a">token_type</a></td></tr>
-<tr class="memdesc:afaf8f3c52d68f4a25dc0f49d6bf7d97a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Token type for internal use only.  <br /></td></tr>
+<tr class="memdesc:afaf8f3c52d68f4a25dc0f49d6bf7d97a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d2/d6e/classToken.html">Token</a> type for internal use only.  <br /></td></tr>
 <tr class="separator:afaf8f3c52d68f4a25dc0f49d6bf7d97a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5669a573df2c5802f48154147a2f421" id="r_ae5669a573df2c5802f48154147a2f421"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt; <a class="el" href="../../dc/d14/structqmu_1_1SToken.html">SToken</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df2/classqmu_1_1QmuParserByteCode.html#ae5669a573df2c5802f48154147a2f421">rpn_type</a></td></tr>
-<tr class="memdesc:ae5669a573df2c5802f48154147a2f421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Token vector for storing the RPN.  <br /></td></tr>
+<tr class="memitem:ae5669a573df2c5802f48154147a2f421" id="r_ae5669a573df2c5802f48154147a2f421"><td class="memItemLeft" align="right" valign="top">typedef QVector&lt; <a class="el" href="../../dc/d14/structqmu_1_1SToken.html">SToken</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df2/classqmu_1_1QmuParserByteCode.html#ae5669a573df2c5802f48154147a2f421">rpn_type</a></td></tr>
+<tr class="memdesc:ae5669a573df2c5802f48154147a2f421"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d2/d6e/classToken.html">Token</a> vector for storing the RPN.  <br /></td></tr>
 <tr class="separator:ae5669a573df2c5802f48154147a2f421"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
@@ -203,7 +203,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ab759e5ab64701720c9b2ace1f00a5a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Bytecode implementation of the Math Parser. </p>
+<div class="textblock"><p>Bytecode implementation of the Math <a class="el" href="../../d0/d40/classParser.html">Parser</a>. </p>
 <p>The bytecode contains the formula converted to revers polish notation stored in a continious memory area. Associated with this data are operator codes, variable pointers, constant values and function pointers. Those are necessary in order to calculate the result. All those data items will be casted to the underlying datatype of the bytecode.</p>
 <dl class="section author"><dt>Author</dt><dd>(C) 2004-2013 Ingo Berg </dd></dl>
 
@@ -219,7 +219,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="../../d5/dc2/classQVector.html">QVector</a>&lt;<a class="el" href="../../dc/d14/structqmu_1_1SToken.html">SToken</a>&gt; <a class="el" href="../../d8/df2/classqmu_1_1QmuParserByteCode.html#ae5669a573df2c5802f48154147a2f421">qmu::QmuParserByteCode::rpn_type</a></td>
+          <td class="memname">typedef QVector&lt;<a class="el" href="../../dc/d14/structqmu_1_1SToken.html">SToken</a>&gt; <a class="el" href="../../d8/df2/classqmu_1_1QmuParserByteCode.html#ae5669a573df2c5802f48154147a2f421">qmu::QmuParserByteCode::rpn_type</a></td>
         </tr>
       </table>
   </td>
@@ -229,7 +229,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Token vector for storing the RPN. </p>
+<p><a class="el" href="../../d2/d6e/classToken.html">Token</a> vector for storing the RPN. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00113">113</a> of file <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html">qmuparserbytecode.h</a>.</p>
 
@@ -255,7 +255,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Token type for internal use only. </p>
+<p><a class="el" href="../../d2/d6e/classToken.html">Token</a> type for internal use only. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00110">110</a> of file <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html">qmuparserbytecode.h</a>.</p>
 
@@ -340,7 +340,7 @@ the pointer of the destination variable </li>
 
 <p class="reference">References <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00116">qmu::cmASSIGN</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00043">qmu::SToken::Cmd</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00116">m_iStackPos</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00122">m_vRPN</a>, <a class="el" href="../../dc/d14/structqmu_1_1SToken.html#aaf1cdb8690beda6719e32f61fe92fe5a">qmu::SToken::Oprt</a>, and <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00050">qmu::SToken::ptr</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00938">qmu::QmuParserBase::ApplyBinOprt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00940">qmu::QmuParserBase::ApplyBinOprt()</a>.</p>
 
 </div>
 </div>
@@ -383,7 +383,7 @@ the pointer of the destination variable </li>
 
 <p class="reference">References <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00062">qmu::SToken::argc</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00043">qmu::SToken::Cmd</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00136">qmu::cmFUNC_BULK</a>, <a class="el" href="../../dc/d14/structqmu_1_1SToken.html#a5174e656831bf35e980b185f63157bfe">qmu::SToken::Fun</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00119">m_iMaxStackSize</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00116">m_iStackPos</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00122">m_vRPN</a>, and <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00050">qmu::SToken::ptr</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00808">qmu::QmuParserBase::ApplyFunc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00810">qmu::QmuParserBase::ApplyFunc()</a>.</p>
 
 </div>
 </div>
@@ -426,7 +426,7 @@ the pointer of the destination variable </li>
 
 <p class="reference">References <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00062">qmu::SToken::argc</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00043">qmu::SToken::Cmd</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00134">qmu::cmFUNC</a>, <a class="el" href="../../dc/d14/structqmu_1_1SToken.html#a5174e656831bf35e980b185f63157bfe">qmu::SToken::Fun</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00119">m_iMaxStackSize</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00116">m_iStackPos</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00122">m_vRPN</a>, and <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00050">qmu::SToken::ptr</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00808">qmu::QmuParserBase::ApplyFunc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00810">qmu::QmuParserBase::ApplyFunc()</a>.</p>
 
 </div>
 </div>
@@ -450,7 +450,7 @@ the pointer of the destination variable </li>
 
 <p class="reference">References <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00043">qmu::SToken::Cmd</a>, and <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00122">m_vRPN</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00905">qmu::QmuParserBase::ApplyIfElse()</a>, and <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01368">qmu::QmuParserBase::CreateRPN()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00907">qmu::QmuParserBase::ApplyIfElse()</a>, and <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01370">qmu::QmuParserBase::CreateRPN()</a>.</p>
 
 </div>
 </div>
@@ -483,7 +483,7 @@ the operator code according to ParserToken::ECmdCode </li>
 
 <p class="reference">References <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00109">qmu::cmADD</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00043">qmu::SToken::Cmd</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00112">qmu::cmDIV</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00111">qmu::cmMUL</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00113">qmu::cmPOW</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00110">qmu::cmSUB</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00124">qmu::cmVAL</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00123">qmu::cmVAR</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00130">qmu::cmVARMUL</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00127">qmu::cmVARPOW2</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00128">qmu::cmVARPOW3</a>, and <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00129">qmu::cmVARPOW4</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00938">qmu::QmuParserBase::ApplyBinOprt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00940">qmu::QmuParserBase::ApplyBinOprt()</a>.</p>
 
 </div>
 </div>
@@ -532,7 +532,7 @@ the operator code according to ParserToken::ECmdCode </li>
 
 <p class="reference">References <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00062">qmu::SToken::argc</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00043">qmu::SToken::Cmd</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00135">qmu::cmFUNC_STR</a>, <a class="el" href="../../dc/d14/structqmu_1_1SToken.html#a5174e656831bf35e980b185f63157bfe">qmu::SToken::Fun</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00063">qmu::SToken::idx</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00119">m_iMaxStackSize</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00116">m_iStackPos</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00122">m_vRPN</a>, and <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00050">qmu::SToken::ptr</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00751">qmu::QmuParserBase::ApplyStrFunc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00753">qmu::QmuParserBase::ApplyStrFunc()</a>.</p>
 
 </div>
 </div>
@@ -578,7 +578,7 @@ the value stored in #mc_iSizeVal number of bytecode entries. </li>
 
 <p class="reference">References <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00043">qmu::SToken::Cmd</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00124">qmu::cmVAL</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00051">qmu::SToken::data</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00052">qmu::SToken::data2</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00119">m_iMaxStackSize</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00116">m_iStackPos</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00122">m_vRPN</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00050">qmu::SToken::ptr</a>, and <a class="el" href="../../dc/d14/structqmu_1_1SToken.html#aab28c5d37527be4c06eaecea8d2d011e">qmu::SToken::Val</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01368">qmu::QmuParserBase::CreateRPN()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01370">qmu::QmuParserBase::CreateRPN()</a>.</p>
 
 </div>
 </div>
@@ -616,7 +616,7 @@ the value stored in #mc_iSizeVal number of bytecode entries. </li>
 
 <p class="reference">References <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00043">qmu::SToken::Cmd</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00123">qmu::cmVAR</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00051">qmu::SToken::data</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00052">qmu::SToken::data2</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00119">m_iMaxStackSize</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00116">m_iStackPos</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00122">m_vRPN</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00050">qmu::SToken::ptr</a>, and <a class="el" href="../../dc/d14/structqmu_1_1SToken.html#aab28c5d37527be4c06eaecea8d2d011e">qmu::SToken::Val</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01368">qmu::QmuParserBase::CreateRPN()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01370">qmu::QmuParserBase::CreateRPN()</a>.</p>
 
 </div>
 </div>
@@ -641,7 +641,7 @@ the value stored in #mc_iSizeVal number of bytecode entries. </li>
 
 <p class="reference">References <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00109">qmu::cmADD</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00122">qmu::cmARG_SEP</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00116">qmu::cmASSIGN</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00118">qmu::cmBC</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00117">qmu::cmBO</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00112">qmu::cmDIV</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00120">qmu::cmELSE</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00141">qmu::cmEND</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00121">qmu::cmENDIF</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00106">qmu::cmEQ</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00134">qmu::cmFUNC</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00136">qmu::cmFUNC_BULK</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00135">qmu::cmFUNC_STR</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00104">qmu::cmGE</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00108">qmu::cmGT</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00119">qmu::cmIF</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00114">qmu::cmLAND</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00103">qmu::cmLE</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00115">qmu::cmLOR</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00107">qmu::cmLT</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00111">qmu::cmMUL</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00105">qmu::cmNEQ</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00138">qmu::cmOPRT_BIN</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00140">qmu::cmOPRT_INFIX</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00139">qmu::cmOPRT_POSTFIX</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00113">qmu::cmPOW</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00131">qmu::cmPOW2</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00137">qmu::cmSTRING</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00110">qmu::cmSUB</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00142">qmu::cmUNKNOWN</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00124">qmu::cmVAL</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00123">qmu::cmVAR</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00130">qmu::cmVARMUL</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00127">qmu::cmVARPOW2</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00128">qmu::cmVARPOW3</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00129">qmu::cmVARPOW4</a>, and <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00122">m_vRPN</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01368">qmu::QmuParserBase::CreateRPN()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01370">qmu::QmuParserBase::CreateRPN()</a>.</p>
 
 </div>
 </div>
@@ -705,7 +705,7 @@ the value stored in #mc_iSizeVal number of bytecode entries. </li>
 
 <p class="reference">References <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00119">m_iMaxStackSize</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00116">m_iStackPos</a>, and <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00122">m_vRPN</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00241">qmu::QmuParserBase::ReInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00243">qmu::QmuParserBase::ReInit()</a>.</p>
 
 </div>
 </div>
@@ -735,7 +735,7 @@ the value stored in #mc_iSizeVal number of bytecode entries. </li>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d4b/qmuparserbytecode_8cpp_source.html#l00166">166</a> of file <a class="el" href="../../d1/d4b/qmuparserbytecode_8cpp_source.html">qmuparserbytecode.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00109">qmu::cmADD</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00112">qmu::cmDIV</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00106">qmu::cmEQ</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00104">qmu::cmGE</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00108">qmu::cmGT</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00114">qmu::cmLAND</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00103">qmu::cmLE</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00115">qmu::cmLOR</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00107">qmu::cmLT</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00111">qmu::cmMUL</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00105">qmu::cmNEQ</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00113">qmu::cmPOW</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00110">qmu::cmSUB</a>, <a class="el" href="../../da/d49/qmuparsererror_8h_source.html#l00081">qmu::ecDIV_BY_ZERO</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00122">m_vRPN</a>, and <a class="el" href="../../d9/de4/qmudef_8h_source.html#l00061">QmuFuzzyComparePossibleNulls()</a>.</p>
+<p class="reference">References <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00109">qmu::cmADD</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00112">qmu::cmDIV</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00106">qmu::cmEQ</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00104">qmu::cmGE</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00108">qmu::cmGT</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00114">qmu::cmLAND</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00103">qmu::cmLE</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00115">qmu::cmLOR</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00107">qmu::cmLT</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00111">qmu::cmMUL</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00105">qmu::cmNEQ</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00113">qmu::cmPOW</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00110">qmu::cmSUB</a>, <a class="el" href="../../da/d49/qmuparsererror_8h_source.html#l00081">qmu::ecDIV_BY_ZERO</a>, <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00122">m_vRPN</a>, and <a class="el" href="../../d9/de4/qmudef_8h_source.html#l00093">QmuFuzzyComparePossibleNulls()</a>.</p>
 
 </div>
 </div>
@@ -765,7 +765,7 @@ the value stored in #mc_iSizeVal number of bytecode entries. </li>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00130">130</a> of file <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html">qmuparserbytecode.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01776">qmu::QmuParserBase::EnableOptimizer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01778">qmu::QmuParserBase::EnableOptimizer()</a>.</p>
 
 </div>
 </div>
@@ -796,7 +796,7 @@ the value stored in #mc_iSizeVal number of bytecode entries. </li>
 
 <p class="reference">References <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00043">qmu::SToken::Cmd</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00120">qmu::cmELSE</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00141">qmu::cmEND</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00121">qmu::cmENDIF</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00119">qmu::cmIF</a>, and <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00122">m_vRPN</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01368">qmu::QmuParserBase::CreateRPN()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01370">qmu::QmuParserBase::CreateRPN()</a>.</p>
 
 </div>
 </div>
@@ -819,7 +819,7 @@ the value stored in #mc_iSizeVal number of bytecode entries. </li>
 
 <p class="reference">References <a class="el" href="../../da/d49/qmuparsererror_8h_source.html#l00090">qmu::ecINTERNAL_ERROR</a>, and <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00122">m_vRPN</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01032">qmu::QmuParserBase::ParseCmdCodeBulk()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01034">qmu::QmuParserBase::ParseCmdCodeBulk()</a>.</p>
 
 </div>
 </div>
@@ -848,7 +848,7 @@ the value stored in #mc_iSizeVal number of bytecode entries. </li>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html#l00136">136</a> of file <a class="el" href="../../dd/da6/qmuparserbytecode_8h_source.html">qmuparserbytecode.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01368">qmu::QmuParserBase::CreateRPN()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01370">qmu::QmuParserBase::CreateRPN()</a>.</p>
 
 </div>
 </div>

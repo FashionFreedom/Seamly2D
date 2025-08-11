@@ -101,56 +101,56 @@ $(document).ready(function(){initNavTree('d4/d28/vposter_8cpp_source.html','../.
   <div class="headertitle"><div class="title">vposter.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d4/d28/vposter_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/***************************************************************************</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> *                                                                         *</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *   Copyright (C) 2017  Seamly, LLC                                       *</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *                                                                         *</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *   https://github.com/fashionfreedom/seamly2d                             *</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *                                                                         *</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> ***************************************************************************</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> **</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> **  (at your option) any later version.</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> **</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> **  GNU General Public License for more details.</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> **</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> **  You should have received a copy of the GNU General Public License</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> **  along with Seamly2D.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> **</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> **************************************************************************</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"></span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> ************************************************************************</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> **</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> **  @file   vposter.cpp</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> **  @author Roman Telezhynskyi &lt;dismine(at)gmail.com&gt;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> **  @date   11 4, 2015</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> **</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> **  @brief</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> **  @copyright</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> **  This source code is part of the Valentine project, a pattern making</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> **  program, whose allow create and modeling patterns of clothing.</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> **  Copyright (C) 2015 Seamly2D project</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> **  &lt;https://github.com/fashionfreedom/seamly2d&gt; All Rights Reserved.</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> **</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> **  (at your option) any later version.</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> **</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"> **  GNU General Public License for more details.</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"> **</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> **  You should have received a copy of the GNU General Public License</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"> **  along with Seamly2D.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"> **</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"> *************************************************************************/</span></div>
+<a href="../../d4/d28/vposter_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//  @file   vposter.cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//  @author Douglas S Caskey</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//  @date   14 Jul, 2025</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//  @brief</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//  @copyright</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//  This source code is part of the Seamly2D project, a pattern making</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//  program, whose allow create and modeling patterns of clothing.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//  Copyright (C) 2013-2025 Seamly2D project</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//  &lt;https://github.com/fashionfreedom/seamly2d&gt; All Rights Reserved.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//  Seamly2D is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//  it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//  the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">//  (at your option) any later version.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">//</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">//  Seamly2D is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">//  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">//  GNU General Public License for more details.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">//</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">//  You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">//  along with Seamly2D.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">//  @file   vposter.cpp</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">//  @author Roman Telezhynskyi &lt;dismine(at)gmail.com&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">//  @date   11 4, 2015</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">//  @brief</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">//  @copyright</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">//  This source code is part of the Valentina project, a pattern making</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">//  program, whose allow create and modeling patterns of clothing.</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">//  Copyright (C) 2013 Valentina project</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">//  &lt;https://bitbucket.org/dismine/valentina&gt; All Rights Reserved.</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">//</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">//  Valentina is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">//  it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">//  the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">//  (at your option) any later version.</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">//</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">//  Valentina is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">//  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">//  GNU General Public License for more details.</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">//</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">//  You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">//  along with Valentina.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#include &quot;<a class="code" href="../../d1/db7/vposter_8h.html">vposter.h</a>&quot;</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
@@ -172,16 +172,16 @@ $(document).ready(function(){initNavTree('d4/d28/vposter_8cpp_source.html','../.
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../d0/de8/classVPoster.html#a5ea1c6941a8997ef2f016d6717ee0b94">   70</a></span><a class="code hl_function" href="../../d0/de8/classVPoster.html#a5ea1c6941a8997ef2f016d6717ee0b94">VPoster::VPoster</a>(<span class="keyword">const</span> QPrinter *printer)</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    :printer(printer), allowance(static_cast&lt;quint32&gt;(qRound(10./25.4*<a class="code hl_variable" href="../../d6/d0b/def_8cpp.html#a31472dd563848abd25354504b9cdc505">PrintDPI</a>)))<span class="comment">//1 cm</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    : printer(printer), allowance(static_cast&lt;quint32&gt;(qRound(10./25.4*<a class="code hl_variable" href="../../d6/d0b/def_8cpp.html#a31472dd563848abd25354504b9cdc505">PrintDPI</a>))) <span class="comment">//1 cm</span></div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
 </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="../../d0/de8/classVPoster.html#a07c0152acd5e0e5d2227fd135ea073bf">   76</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;PosterData&gt;</a> <a class="code hl_function" href="../../d0/de8/classVPoster.html#a07c0152acd5e0e5d2227fd135ea073bf">VPoster::Calc</a>(<span class="keyword">const</span> QRect &amp;imageRect, <span class="keywordtype">int</span> page, <a class="code hl_enumeration" href="../../d4/da4/def_8h.html#a54267460986230f3ed5d2f2921983763">PageOrientation</a> orientation)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="../../d0/de8/classVPoster.html#a07c0152acd5e0e5d2227fd135ea073bf">   76</a></span>QVector&lt;PosterData&gt; <a class="code hl_function" href="../../d0/de8/classVPoster.html#a07c0152acd5e0e5d2227fd135ea073bf">VPoster::Calc</a>(<span class="keyword">const</span> QRect &amp;imageRect, <span class="keywordtype">int</span> page, <a class="code hl_enumeration" href="../../d4/da4/def_8h.html#a54267460986230f3ed5d2f2921983763">PageOrientation</a> orientation)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;PosterData&gt;</a> poster;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    QVector&lt;PosterData&gt; poster;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d0/de8/classVPoster.html#a8b240f1c74ee9cbc4c2a477c4e4403a6">printer</a> == <span class="keyword">nullptr</span>)</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    {</div>
@@ -209,9 +209,9 @@ $(document).ready(function(){initNavTree('d4/d28/vposter_8cpp_source.html','../.
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="../../d0/de8/classVPoster.html#aaf30d722cf10f4b0a8085e03898cc648">  104</a></span><a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QGraphicsItem *&gt;</a> <a class="code hl_function" href="../../d0/de8/classVPoster.html#aaf30d722cf10f4b0a8085e03898cc648">VPoster::Borders</a>(QGraphicsItem *parent, <span class="keyword">const</span> <a class="code hl_struct" href="../../d1/dd2/structPosterData.html">PosterData</a> &amp;img, <span class="keywordtype">int</span> sheets)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="../../d0/de8/classVPoster.html#aaf30d722cf10f4b0a8085e03898cc648">  104</a></span>QVector&lt;QGraphicsItem *&gt; <a class="code hl_function" href="../../d0/de8/classVPoster.html#aaf30d722cf10f4b0a8085e03898cc648">VPoster::Borders</a>(QGraphicsItem *parent, <span class="keyword">const</span> <a class="code hl_struct" href="../../d1/dd2/structPosterData.html">PosterData</a> &amp;img, <span class="keywordtype">int</span> sheets)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <a class="code hl_class" href="../../d5/dc2/classQVector.html">QVector&lt;QGraphicsItem *&gt;</a> data;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    QVector&lt;QGraphicsItem *&gt; data;</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    QPen pen(Qt::NoBrush, 1, Qt::DashLine);</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    pen.setColor(Qt::black);</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
@@ -350,16 +350,16 @@ $(document).ready(function(){initNavTree('d4/d28/vposter_8cpp_source.html','../.
 <div class="foldopen" id="foldopen00239" data-start="{" data-end="}">
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno"><a class="line" href="../../d0/de8/classVPoster.html#a2d1cc5429c5a0f8aaa693505e55b6ff1">  239</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d0/de8/classVPoster.html#a2d1cc5429c5a0f8aaa693505e55b6ff1">VPoster::CountColumns</a>(<span class="keywordtype">int</span> width, <a class="code hl_enumeration" href="../../d4/da4/def_8h.html#a54267460986230f3ed5d2f2921983763">PageOrientation</a> orientation)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keyword">const</span> qreal imgLength = width;</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    qreal pageLength = 0;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keyword">const</span> qreal imgWidth = width;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    qreal pageWidth = 0;</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keywordflow">if</span>(orientation == <a class="code hl_enumvalue" href="../../d4/da4/def_8h.html#a54267460986230f3ed5d2f2921983763a815dff01257e5ef182b25d4c1ef0a7a0">PageOrientation::Landscape</a>)</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    {</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        pageLength = <a class="code hl_function" href="../../d0/de8/classVPoster.html#afa4aa3534da006cb92874abb390b454e">PageRect</a>().height();</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        pageWidth = <a class="code hl_function" href="../../d0/de8/classVPoster.html#afa4aa3534da006cb92874abb390b454e">PageRect</a>().height();</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    }</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    {</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        pageLength = <a class="code hl_function" href="../../d0/de8/classVPoster.html#afa4aa3534da006cb92874abb390b454e">PageRect</a>().width();</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        pageWidth = <a class="code hl_function" href="../../d0/de8/classVPoster.html#afa4aa3534da006cb92874abb390b454e">PageRect</a>().width();</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    }</div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <span class="comment">// Example</span></div>
@@ -371,7 +371,7 @@ $(document).ready(function(){initNavTree('d4/d28/vposter_8cpp_source.html','../.
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="comment">//                 |----|</span></div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="comment">//                  ^</span></div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keywordflow">return</span> qCeil(imgLength/(pageLength-<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="../../d0/de8/classVPoster.html#a529ce70757aaf43e59c465e96fe8f94c">allowance</a>)));</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keywordflow">return</span> qCeil(imgWidth/(pageWidth-<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="../../d0/de8/classVPoster.html#a529ce70757aaf43e59c465e96fe8f94c">allowance</a>)));</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>}</div>
 </div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
@@ -440,7 +440,6 @@ $(document).ready(function(){initNavTree('d4/d28/vposter_8cpp_source.html','../.
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="keywordflow">return</span> val / 25.4 * <a class="code hl_variable" href="../../d6/d0b/def_8cpp.html#a31472dd563848abd25354504b9cdc505">PrintDPI</a>; <span class="comment">// Mm to pixels with current dpi.</span></div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>}</div>
 </div>
-<div class="ttc" id="aclassQVector_html"><div class="ttname"><a href="../../d5/dc2/classQVector.html">QVector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/da5/vdomdocument_8h_source.html#l00075">vdomdocument.h:75</a></div></div>
 <div class="ttc" id="aclassVPoster_html_a07c0152acd5e0e5d2227fd135ea073bf"><div class="ttname"><a href="../../d0/de8/classVPoster.html#a07c0152acd5e0e5d2227fd135ea073bf">VPoster::Calc</a></div><div class="ttdeci">QVector&lt; PosterData &gt; Calc(const QRect &amp;imageRect, int page, PageOrientation orientation) const</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d28/vposter_8cpp_source.html#l00076">vposter.cpp:76</a></div></div>
 <div class="ttc" id="aclassVPoster_html_a2d1cc5429c5a0f8aaa693505e55b6ff1"><div class="ttname"><a href="../../d0/de8/classVPoster.html#a2d1cc5429c5a0f8aaa693505e55b6ff1">VPoster::CountColumns</a></div><div class="ttdeci">int CountColumns(int width, PageOrientation orientation) const</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d28/vposter_8cpp_source.html#l00239">vposter.cpp:239</a></div></div>
 <div class="ttc" id="aclassVPoster_html_a529ce70757aaf43e59c465e96fe8f94c"><div class="ttname"><a href="../../d0/de8/classVPoster.html#a529ce70757aaf43e59c465e96fe8f94c">VPoster::allowance</a></div><div class="ttdeci">quint32 allowance</div><div class="ttdoc">allowance is the width of the strip that holds the tiled grid information and that is used for the gl...</div><div class="ttdef"><b>Definition</b> <a href="../../d1/db7/vposter_8h_source.html#l00099">vposter.h:99</a></div></div>
@@ -451,7 +450,7 @@ $(document).ready(function(){initNavTree('d4/d28/vposter_8cpp_source.html','../.
 <div class="ttc" id="aclassVPoster_html_ab5c60c2db770b13e93363de9645daecf"><div class="ttname"><a href="../../d0/de8/classVPoster.html#ab5c60c2db770b13e93363de9645daecf">VPoster::ToPixel</a></div><div class="ttdeci">static qreal ToPixel(qreal val)</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d28/vposter_8cpp_source.html#l00320">vposter.cpp:320</a></div></div>
 <div class="ttc" id="aclassVPoster_html_aed5f863c7ddc448edf7980f2193858d4"><div class="ttname"><a href="../../d0/de8/classVPoster.html#aed5f863c7ddc448edf7980f2193858d4">VPoster::CountRows</a></div><div class="ttdeci">int CountRows(int height, PageOrientation orientation) const</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d28/vposter_8cpp_source.html#l00192">vposter.cpp:192</a></div></div>
 <div class="ttc" id="aclassVPoster_html_afa4aa3534da006cb92874abb390b454e"><div class="ttname"><a href="../../d0/de8/classVPoster.html#afa4aa3534da006cb92874abb390b454e">VPoster::PageRect</a></div><div class="ttdeci">QRect PageRect() const</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d28/vposter_8cpp_source.html#l00298">vposter.cpp:298</a></div></div>
-<div class="ttc" id="adef_8cpp_html_a31472dd563848abd25354504b9cdc505"><div class="ttname"><a href="../../d6/d0b/def_8cpp.html#a31472dd563848abd25354504b9cdc505">PrintDPI</a></div><div class="ttdeci">const qreal PrintDPI</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0b/def_8cpp_source.html#l00217">def.cpp:217</a></div></div>
+<div class="ttc" id="adef_8cpp_html_a31472dd563848abd25354504b9cdc505"><div class="ttname"><a href="../../d6/d0b/def_8cpp.html#a31472dd563848abd25354504b9cdc505">PrintDPI</a></div><div class="ttdeci">const qreal PrintDPI</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0b/def_8cpp_source.html#l00215">def.cpp:215</a></div></div>
 <div class="ttc" id="adef_8h_html_a0f58c1b57bda3c300da3e175201e543c"><div class="ttname"><a href="../../d4/da4/def_8h.html#a0f58c1b57bda3c300da3e175201e543c">SCASSERT</a></div><div class="ttdeci">#define SCASSERT(cond)</div><div class="ttdef"><b>Definition</b> <a href="../../d4/da4/def_8h_source.html#l00423">def.h:423</a></div></div>
 <div class="ttc" id="adef_8h_html_a54267460986230f3ed5d2f2921983763"><div class="ttname"><a href="../../d4/da4/def_8h.html#a54267460986230f3ed5d2f2921983763">PageOrientation</a></div><div class="ttdeci">PageOrientation</div><div class="ttdef"><b>Definition</b> <a href="../../d4/da4/def_8h_source.html#l00158">def.h:158</a></div></div>
 <div class="ttc" id="adef_8h_html_a54267460986230f3ed5d2f2921983763a815dff01257e5ef182b25d4c1ef0a7a0"><div class="ttname"><a href="../../d4/da4/def_8h.html#a54267460986230f3ed5d2f2921983763a815dff01257e5ef182b25d4c1ef0a7a0">PageOrientation::Landscape</a></div><div class="ttdeci">@ Landscape</div></div>

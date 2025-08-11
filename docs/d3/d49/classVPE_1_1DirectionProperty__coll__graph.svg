@@ -46,7 +46,7 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 571;
+var viewWidth = 446;
 var viewHeight = 584;
 var sectionId = 'dynsection-1';
 </script>
@@ -58,36 +58,38 @@ var sectionId = 'dynsection-1';
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title=" ">
-<polygon fill="#999999" stroke="transparent" points="434,-214 301,-214 301,0 434,0 434,-214"/>
-<text text-anchor="start" x="312.5" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::DirectionProperty</text>
-<text text-anchor="start" x="366" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<text text-anchor="start" x="305.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="318.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">DirectionProperty()</text>
-<text text-anchor="start" x="305.5" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="318.5" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">~DirectionProperty()</text>
-<text text-anchor="start" x="305.5" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="318.5" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">data()</text>
-<text text-anchor="start" x="305.5" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="318.5" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">createEditor()</text>
-<text text-anchor="start" x="305.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="318.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">getEditorData()</text>
-<text text-anchor="start" x="305.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="318.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">setDirections()</text>
-<text text-anchor="start" x="305.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="318.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">getDirections()</text>
-<text text-anchor="start" x="305.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="318.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">setValue()</text>
-<text text-anchor="start" x="305.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="318.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">type()</text>
-<text text-anchor="start" x="305.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="318.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">clone()</text>
-<text text-anchor="start" x="305.5" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="318.5" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">indexOfDirection()</text>
-<text text-anchor="start" x="305.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="318.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">currentIndexChanged()</text>
-<polygon fill="#666666" stroke="#666666" points="301.5,-197 301.5,-197 434.5,-197 434.5,-197 301.5,-197"/>
-<polygon fill="#666666" stroke="#666666" points="301.5,-182 301.5,-182 434.5,-182 434.5,-182 301.5,-182"/>
-<polygon fill="none" stroke="#666666" points="301,0 301,-214 434,-214 434,0 301,0"/>
+<polygon fill="#999999" stroke="transparent" points="408,-214 275,-214 275,0 408,0 408,-214"/>
+<text text-anchor="start" x="286.5" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::DirectionProperty</text>
+<text text-anchor="start" x="279.5" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="292.5" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">m_indexList</text>
+<text text-anchor="start" x="279.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="292.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">DirectionProperty()</text>
+<text text-anchor="start" x="279.5" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="292.5" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">~DirectionProperty()</text>
+<text text-anchor="start" x="279.5" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="292.5" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">data()</text>
+<text text-anchor="start" x="279.5" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="292.5" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">createEditor()</text>
+<text text-anchor="start" x="279.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="292.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">getEditorData()</text>
+<text text-anchor="start" x="279.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="292.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">setDirections()</text>
+<text text-anchor="start" x="279.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="292.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">getDirections()</text>
+<text text-anchor="start" x="279.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="292.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">setValue()</text>
+<text text-anchor="start" x="279.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="292.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">type()</text>
+<text text-anchor="start" x="279.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="292.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">clone()</text>
+<text text-anchor="start" x="279.5" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="292.5" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">indexOfDirection()</text>
+<text text-anchor="start" x="279.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="292.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">currentIndexChanged()</text>
+<polygon fill="#666666" stroke="#666666" points="275.5,-197 275.5,-197 408.5,-197 408.5,-197 275.5,-197"/>
+<polygon fill="#666666" stroke="#666666" points="275.5,-182 275.5,-182 290.5,-182 290.5,-182 275.5,-182"/>
+<polygon fill="#666666" stroke="#666666" points="290.5,-182 290.5,-182 408.5,-182 408.5,-182 290.5,-182"/>
+<polygon fill="none" stroke="#666666" points="275,0 275,-214 408,-214 408,0 275,0"/>
 </a>
 </g>
 </g>
@@ -133,8 +135,8 @@ var sectionId = 'dynsection-1';
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node2&#45;&gt;Node1</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M284.63,-256.22C292.41,-242.3 300.32,-228.16 308,-214.41"/>
-<polygon fill="none" stroke="#63b8ff" points="281.36,-254.9 279.53,-265.34 287.47,-258.31 281.36,-254.9"/>
+<path fill="none" stroke="#63b8ff" d="M275.37,-251.27C281.09,-238.9 286.85,-226.41 292.47,-214.23"/>
+<polygon fill="none" stroke="#63b8ff" points="272.03,-250.16 271.02,-260.71 278.39,-253.09 272.03,-250.16"/>
 </a>
 </g>
 </g>
@@ -260,35 +262,11 @@ var sectionId = 'dynsection-1';
 <g id="edge6_Node000001_Node000006" class="edge">
 <title>Node6&#45;&gt;Node1</title>
 <g id="a_edge6_Node000001_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M367.5,-350.85C367.5,-322.61 367.5,-273.29 367.5,-226.44"/>
-<polygon fill="none" stroke="#63b8ff" points="367.5,-226.28 363.5,-220.28 367.5,-214.28 371.5,-220.28 367.5,-226.28"/>
+<path fill="none" stroke="#63b8ff" d="M365.19,-350.85C362.44,-322.61 357.63,-273.29 353.06,-226.44"/>
+<polygon fill="none" stroke="#63b8ff" points="353.03,-226.23 348.47,-220.64 351.87,-214.28 356.43,-219.87 353.03,-226.23"/>
 </a>
 </g>
-<text text-anchor="middle" x="405" y="-235" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey"> #m_directions</text>
-</g>
-<!-- Node7 -->
-<g id="Node000007" class="node">
-<title>Node7</title>
-<g id="a_Node000007"><a xlink:href="../../d5/dc2/classQVector.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="transparent" points="563,-400 456,-400 456,-351 563,-351 563,-400"/>
-<text text-anchor="start" x="461.5" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">QVector&lt; QString &gt;</text>
-<text text-anchor="start" x="508" y="-372.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<text text-anchor="start" x="508" y="-357.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#666666" stroke="#666666" points="456.5,-382.5 456.5,-382.5 563.5,-382.5 563.5,-382.5 456.5,-382.5"/>
-<polygon fill="#666666" stroke="#666666" points="456.5,-367.5 456.5,-367.5 563.5,-367.5 563.5,-367.5 456.5,-367.5"/>
-<polygon fill="none" stroke="#666666" points="456,-351 456,-400 563,-400 563,-351 456,-351"/>
-</a>
-</g>
-</g>
-<!-- Node7&#45;&gt;Node1 -->
-<g id="edge7_Node000001_Node000007" class="edge">
-<title>Node7&#45;&gt;Node1</title>
-<g id="a_edge7_Node000001_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M500.3,-350.78C488.87,-322.07 468.21,-272.54 446.5,-232 444.42,-228.12 442.26,-224.19 440.04,-220.25"/>
-<polygon fill="none" stroke="#63b8ff" points="440.01,-220.2 433.56,-216.98 434.05,-209.79 440.5,-213.01 440.01,-220.2"/>
-</a>
-</g>
-<text text-anchor="middle" x="485" y="-235" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey"> #m_indexList</text>
+<text text-anchor="middle" x="392" y="-235" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey"> #m_directions</text>
 </g>
 </g>
 </svg>

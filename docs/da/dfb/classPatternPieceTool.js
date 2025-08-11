@@ -67,7 +67,7 @@ var classPatternPieceTool =
     [ "SetDialog", "da/dfb/classPatternPieceTool.html#a25a5c0d22f50c8a38c9373e9906ec013", null ],
     [ "SetVisualization", "da/dfb/classPatternPieceTool.html#a79b4e6dff598e9d233a5622d8ff820df", null ],
     [ "shape", "da/dfb/classPatternPieceTool.html#a26da6e84e271df538bbbb02a5b67debf", null ],
-    [ "showStatus", "da/dfb/classPatternPieceTool.html#af461cfff4e4b93f8d11da29414434230", null ],
+    [ "showStatus", "da/dfb/classPatternPieceTool.html#ad06093fb79624982a3c3a8bcf524850b", null ],
     [ "ShowVisualization", "da/dfb/classPatternPieceTool.html#a00707851d66175f936b2f6970f6458f7", null ],
     [ "toggleFlipping", "da/dfb/classPatternPieceTool.html#af38ab90534f9e54b1f133b9a97e3a82f", null ],
     [ "toggleGrainline", "da/dfb/classPatternPieceTool.html#a7f8eb35e50d9ecf4d0a3883f61617c5a", null ],

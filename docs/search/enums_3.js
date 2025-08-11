@@ -1,10 +1,21 @@
 var searchData=
 [
-  ['dialogposition_0',['DialogPosition',['../d1/d30/dialogtool_8h.html#abc68dcea697b89a6ed3d87e93bf65e77',1,'dialogtool.h']]],
-  ['dialogsource_1',['DialogSource',['../d4/da4/def_8h.html#a2ace20f64b3456b610d7b2d85ea3418e',1,'def.h']]],
-  ['direction_2',['Direction',['../d4/da4/def_8h.html#a1b2993a5d049d3ac565a9a8d0209084a',1,'def.h']]],
-  ['document_3',['Document',['../d0/d89/vabstractpattern_8h.html#a3a0d470ad581388370a4d6fd71b8d202',1,'vabstractpattern.h']]],
-  ['donotaskagaintype_4',['DoNotAskAgainType',['../dd/dc4/classUtils_1_1CheckableMessageBox.html#a3704f2110d227cfa444af687b6f086b4',1,'Utils::CheckableMessageBox']]],
-  ['dpc_5fdisplaycolumn_5',['DPC_DisplayColumn',['../db/df9/classVPE_1_1VProperty.html#a585b1bfba36ba0a9c101ff830e85f118',1,'VPE::VProperty']]],
-  ['draw_6',['Draw',['../d5/d9d/vgeometrydef_8h.html#a85a66cf8eff1eceb62457cf1931ddf1a',1,'vgeometrydef.h']]]
+  ['datagroup_0',['datagroup',['../de/dcf/classXSValue.html#a880f133a9c88fd26ef61556e01cfa62e',1,'XSValue::DataGroup'],['../de/dcf/classXSValue.html#a880f133a9c88fd26ef61556e01cfa62e',1,'XSValue::DataGroup'],['../de/dcf/classXSValue.html#a880f133a9c88fd26ef61556e01cfa62e',1,'XSValue::DataGroup']]],
+  ['datatype_1',['datatype',['../de/dcf/classXSValue.html#ad1788e787526663aeb4b99ff52567141',1,'XSValue::DataType'],['../de/dcf/classXSValue.html#ad1788e787526663aeb4b99ff52567141',1,'XSValue::DataType'],['../de/dcf/classXSValue.html#ad1788e787526663aeb4b99ff52567141',1,'XSValue::DataType']]],
+  ['decltypes_2',['decltypes',['../de/d5f/classXMLScanner.html#a14be2ff52c97e487bb2cc4253beddb93',1,'XMLScanner::DeclTypes'],['../de/d5f/classXMLScanner.html#a14be2ff52c97e487bb2cc4253beddb93',1,'XMLScanner::DeclTypes'],['../de/d5f/classXMLScanner.html#a14be2ff52c97e487bb2cc4253beddb93',1,'XMLScanner::DeclTypes']]],
+  ['defatttypes_3',['defatttypes',['../df/d1f/classXMLAttDef.html#adbac7febf3455722cc9736f1dc03c02f',1,'XMLAttDef::DefAttTypes'],['../df/d1f/classXMLAttDef.html#adbac7febf3455722cc9736f1dc03c02f',1,'XMLAttDef::DefAttTypes'],['../df/d1f/classXMLAttDef.html#adbac7febf3455722cc9736f1dc03c02f',1,'XMLAttDef::DefAttTypes']]],
+  ['derivation_5ftype_4',['derivation_type',['../dc/d80/classXSConstants.html#a56e7794b4f62e31c437b910c52634344',1,'XSConstants::DERIVATION_TYPE'],['../dc/d80/classXSConstants.html#a56e7794b4f62e31c437b910c52634344',1,'XSConstants::DERIVATION_TYPE'],['../dc/d80/classXSConstants.html#a56e7794b4f62e31c437b910c52634344',1,'XSConstants::DERIVATION_TYPE']]],
+  ['derivationmethods_5',['derivationmethods',['../d4/df1/classDOMTypeInfo.html#abfb1e33745b4b3145cc67963c819b42e',1,'DOMTypeInfo::DerivationMethods'],['../d4/df1/classDOMTypeInfo.html#abfb1e33745b4b3145cc67963c819b42e',1,'DOMTypeInfo::DerivationMethods'],['../d4/df1/classDOMTypeInfo.html#abfb1e33745b4b3145cc67963c819b42e',1,'DOMTypeInfo::DerivationMethods']]],
+  ['dialogposition_6',['DialogPosition',['../d1/d30/dialogtool_8h.html#abc68dcea697b89a6ed3d87e93bf65e77',1,'dialogtool.h']]],
+  ['dialogsource_7',['DialogSource',['../d4/da4/def_8h.html#a2ace20f64b3456b610d7b2d85ea3418e',1,'def.h']]],
+  ['direction_8',['Direction',['../d4/da4/def_8h.html#a1b2993a5d049d3ac565a9a8d0209084a',1,'def.h']]],
+  ['document_9',['Document',['../d0/d89/vabstractpattern_8h.html#a3a0d470ad581388370a4d6fd71b8d202',1,'vabstractpattern.h']]],
+  ['documentposition_10',['documentposition',['../d4/d94/classDOMNode.html#a8b9b0c9655699ecde9ae39615cb30b12',1,'DOMNode::DocumentPosition'],['../d4/d94/classDOMNode.html#a8b9b0c9655699ecde9ae39615cb30b12',1,'DOMNode::DocumentPosition'],['../d4/d94/classDOMNode.html#a8b9b0c9655699ecde9ae39615cb30b12',1,'DOMNode::DocumentPosition']]],
+  ['domconfigurationfeature_11',['domconfigurationfeature',['../d6/dac/classDOMConfigurationImpl.html#a96a58efba909f29b99ac791b77242ed2',1,'DOMConfigurationImpl::DOMConfigurationFeature'],['../d6/dac/classDOMConfigurationImpl.html#a96a58efba909f29b99ac791b77242ed2',1,'DOMConfigurationImpl::DOMConfigurationFeature'],['../d6/dac/classDOMConfigurationImpl.html#a96a58efba909f29b99ac791b77242ed2',1,'DOMConfigurationImpl::DOMConfigurationFeature']]],
+  ['domimplementationlsmode_12',['domimplementationlsmode',['../de/da7/classDOMImplementationLS.html#a5b85d7ce116a4899436783bc4364495f',1,'DOMImplementationLS::DOMImplementationLSMode'],['../de/da7/classDOMImplementationLS.html#a5b85d7ce116a4899436783bc4364495f',1,'DOMImplementationLS::DOMImplementationLSMode'],['../de/da7/classDOMImplementationLS.html#a5b85d7ce116a4899436783bc4364495f',1,'DOMImplementationLS::DOMImplementationLSMode']]],
+  ['domoperationtype_13',['domoperationtype',['../dd/ddf/classDOMUserDataHandler.html#a3fc45270dfc120a0d28090570e543869',1,'DOMUserDataHandler::DOMOperationType'],['../dd/ddf/classDOMUserDataHandler.html#a3fc45270dfc120a0d28090570e543869',1,'DOMUserDataHandler::DOMOperationType'],['../dd/ddf/classDOMUserDataHandler.html#a3fc45270dfc120a0d28090570e543869',1,'DOMUserDataHandler::DOMOperationType']]],
+  ['donotaskagaintype_14',['DoNotAskAgainType',['../dd/dc4/classUtils_1_1CheckableMessageBox.html#a3704f2110d227cfa444af687b6f086b4',1,'Utils::CheckableMessageBox']]],
+  ['doublefloattype_15',['doublefloattype',['../de/dcf/classXSValue.html#a9a73b123f28b53f85972cb03191e15e7',1,'XSValue::DoubleFloatType'],['../de/dcf/classXSValue.html#a9a73b123f28b53f85972cb03191e15e7',1,'XSValue::DoubleFloatType'],['../de/dcf/classXSValue.html#a9a73b123f28b53f85972cb03191e15e7',1,'XSValue::DoubleFloatType']]],
+  ['dpc_5fdisplaycolumn_16',['DPC_DisplayColumn',['../db/df9/classVPE_1_1VProperty.html#a585b1bfba36ba0a9c101ff830e85f118',1,'VPE::VProperty']]],
+  ['draw_17',['Draw',['../d5/d9d/vgeometrydef_8h.html#a85a66cf8eff1eceb62457cf1931ddf1a',1,'vgeometrydef.h']]]
 ];

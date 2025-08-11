@@ -15,5 +15,9 @@ var searchData=
   ['updatechildren_12',['UpdateChildren',['../db/d53/classVPE_1_1VPropertyPrivate.html#a060e1205f685d16382ab2c6491bffbff',1,'VPE::VPropertyPrivate']]],
   ['updateeditors_13',['UpdateEditors',['../d9/d51/classVPE_1_1VPropertyFormWidgetPrivate.html#aa55c9f770e8adadff95a7de555e7b742',1,'VPE::VPropertyFormWidgetPrivate']]],
   ['updateparent_14',['updateParent',['../db/d53/classVPE_1_1VPropertyPrivate.html#a72d9c96c1233a05b4e12a8da70102e21',1,'VPE::VPropertyPrivate']]],
-  ['useoriginpoint_15',['useOriginPoint',['../d0/df1/classDialogMove.html#a9656fb68c5b147b919bf513926ce99e3',1,'DialogMove']]]
+  ['uri_15',['URI',['../d0/db2/structXIncludeHistoryNode.html#a3705f51cfbc63878ee1f03f52c10db45',1,'XIncludeHistoryNode']]],
+  ['useoriginpoint_16',['useOriginPoint',['../d0/df1/classDialogMove.html#a9656fb68c5b147b919bf513926ce99e3',1,'DialogMove']]],
+  ['userdata_17',['USERDATA',['../de/d86/classDOMNodeImpl.html#af7101bc02cc58daf62aaf1f864535412',1,'DOMNodeImpl']]],
+  ['userinfo_5fcharacters_18',['USERINFO_CHARACTERS',['../d8/d73/classXMLUri.html#ae2c3f07d68796efad887438b034091f4',1,'XMLUri']]],
+  ['utf16_5fmax_19',['UTF16_MAX',['../d2/d6e/classToken.html#a9adfe9ccac038af21221360eeb7d9c49',1,'Token']]]
 ];

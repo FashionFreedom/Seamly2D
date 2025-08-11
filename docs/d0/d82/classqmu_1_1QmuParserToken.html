@@ -191,13 +191,13 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:af6d6b6b0715df5ecec22728aaa0594bd" id="r_af6d6b6b0715df5ecec22728aaa0594bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d92/namespaceqmu.html#af10feebbbc72442f8f3ef8102497b6f2">ETypeCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/classqmu_1_1QmuParserToken.html#af6d6b6b0715df5ecec22728aaa0594bd">m_iType</a></td></tr>
 <tr class="separator:af6d6b6b0715df5ecec22728aaa0594bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b10604eedae84d80f2070bceb8935e8" id="r_a0b10604eedae84d80f2070bceb8935e8"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/classqmu_1_1QmuParserToken.html#a0b10604eedae84d80f2070bceb8935e8">m_pTok</a></td></tr>
-<tr class="memdesc:a0b10604eedae84d80f2070bceb8935e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores Token pointer; not applicable for all tokens.  <br /></td></tr>
+<tr class="memdesc:a0b10604eedae84d80f2070bceb8935e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores <a class="el" href="../../d2/d6e/classToken.html">Token</a> pointer; not applicable for all tokens.  <br /></td></tr>
 <tr class="separator:a0b10604eedae84d80f2070bceb8935e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a5ed7ff51c886899777ea42e856c904" id="r_a8a5ed7ff51c886899777ea42e856c904"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/classqmu_1_1QmuParserToken.html#a8a5ed7ff51c886899777ea42e856c904">m_iIdx</a></td></tr>
 <tr class="memdesc:a8a5ed7ff51c886899777ea42e856c904"><td class="mdescLeft">&#160;</td><td class="mdescRight">An otional index to an external buffer storing the token data.  <br /></td></tr>
 <tr class="separator:a8a5ed7ff51c886899777ea42e856c904"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a939dd81cf4ce0fa69881e0c11902d911" id="r_a939dd81cf4ce0fa69881e0c11902d911"><td class="memItemLeft" align="right" valign="top">TString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/classqmu_1_1QmuParserToken.html#a939dd81cf4ce0fa69881e0c11902d911">m_strTok</a></td></tr>
-<tr class="memdesc:a939dd81cf4ce0fa69881e0c11902d911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Token string.  <br /></td></tr>
+<tr class="memdesc:a939dd81cf4ce0fa69881e0c11902d911"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d2/d6e/classToken.html">Token</a> string.  <br /></td></tr>
 <tr class="separator:a939dd81cf4ce0fa69881e0c11902d911"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa074bb7a341c32a12f5b58357f8d7e3" id="r_aaa074bb7a341c32a12f5b58357f8d7e3"><td class="memItemLeft" align="right" valign="top">TString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/classqmu_1_1QmuParserToken.html#aaa074bb7a341c32a12f5b58357f8d7e3">m_strVal</a></td></tr>
 <tr class="memdesc:aaa074bb7a341c32a12f5b58357f8d7e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value for string variables.  <br /></td></tr>
@@ -211,7 +211,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename TBase, typename TString&gt;<br />
 class qmu::QmuParserToken&lt; TBase, TString &gt;</div><p>Encapsulation of the data for a single formula token. </p>
-<p>Formula token implementation. Part of the Math Parser Package. Formula tokens can be either one of the following: </p><ul>
+<p>Formula token implementation. Part of the Math <a class="el" href="../../d0/d40/classParser.html">Parser</a> Package. Formula tokens can be either one of the following: </p><ul>
 <li>
 value </li>
 <li>
@@ -386,7 +386,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 
 <p class="reference">References <a class="el" href="../../da/d49/qmuparsererror_8h_source.html#l00090">qmu::ecINTERNAL_ERROR</a>, and <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00478">qmu::QmuParserToken&lt; TBase, TString &gt;::m_pCallback</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00808">qmu::QmuParserBase::ApplyFunc()</a>, and <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00751">qmu::QmuParserBase::ApplyStrFunc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00810">qmu::QmuParserBase::ApplyFunc()</a>, and <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00753">qmu::QmuParserBase::ApplyStrFunc()</a>.</p>
 
 </div>
 </div>
@@ -419,7 +419,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 
 <p class="reference">References <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00138">qmu::cmOPRT_BIN</a>, <a class="el" href="../../da/d49/qmuparsererror_8h_source.html#l00090">qmu::ecINTERNAL_ERROR</a>, and <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00478">qmu::QmuParserToken&lt; TBase, TString &gt;::m_pCallback</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00692">qmu::QmuParserBase::GetOprtAssociativity()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00694">qmu::QmuParserBase::GetOprtAssociativity()</a>.</p>
 
 </div>
 </div>
@@ -462,7 +462,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 
 <p class="reference">References <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00475">qmu::QmuParserToken&lt; TBase, TString &gt;::m_strTok</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00808">qmu::QmuParserBase::ApplyFunc()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00751">qmu::QmuParserBase::ApplyStrFunc()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01368">qmu::QmuParserBase::CreateRPN()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00628">qmu::QmuParserTokenReader::IsFunTok()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00589">qmu::QmuParserTokenReader::IsInfixOpTok()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00939">qmu::QmuParserTokenReader::IsUndefVarTok()</a>, and <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01838">qmu::QmuParserBase::StackDump()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00810">qmu::QmuParserBase::ApplyFunc()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00753">qmu::QmuParserBase::ApplyStrFunc()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01370">qmu::QmuParserBase::CreateRPN()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00624">qmu::QmuParserTokenReader::IsFunTok()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00585">qmu::QmuParserTokenReader::IsInfixOpTok()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00935">qmu::QmuParserTokenReader::IsUndefVarTok()</a>, and <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01840">qmu::QmuParserBase::StackDump()</a>.</p>
 
 </div>
 </div>
@@ -504,7 +504,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 
 <p class="reference">References <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00471">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iCode</a>, and <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00478">qmu::QmuParserToken&lt; TBase, TString &gt;::m_pCallback</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00808">qmu::QmuParserBase::ApplyFunc()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00905">qmu::QmuParserBase::ApplyIfElse()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01368">qmu::QmuParserBase::CreateRPN()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00692">qmu::QmuParserBase::GetOprtAssociativity()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00644">qmu::QmuParserBase::GetOprtPrecedence()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00414">qmu::QmuParserTokenReader::IsBuiltIn()</a>, and <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01838">qmu::QmuParserBase::StackDump()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00810">qmu::QmuParserBase::ApplyFunc()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00907">qmu::QmuParserBase::ApplyIfElse()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01370">qmu::QmuParserBase::CreateRPN()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00694">qmu::QmuParserBase::GetOprtAssociativity()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00646">qmu::QmuParserBase::GetOprtPrecedence()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00414">qmu::QmuParserTokenReader::IsBuiltIn()</a>, and <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01840">qmu::QmuParserBase::StackDump()</a>.</p>
 
 </div>
 </div>
@@ -559,7 +559,7 @@ cmOPRT_BIN </li>
 
 <p class="reference">References <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00478">qmu::QmuParserToken&lt; TBase, TString &gt;::m_pCallback</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00808">qmu::QmuParserBase::ApplyFunc()</a>, and <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00751">qmu::QmuParserBase::ApplyStrFunc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00810">qmu::QmuParserBase::ApplyFunc()</a>, and <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00753">qmu::QmuParserBase::ApplyStrFunc()</a>.</p>
 
 </div>
 </div>
@@ -633,7 +633,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 
 <p class="reference">References <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00138">qmu::cmOPRT_BIN</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00140">qmu::cmOPRT_INFIX</a>, <a class="el" href="../../da/d49/qmuparsererror_8h_source.html#l00090">qmu::ecINTERNAL_ERROR</a>, and <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00478">qmu::QmuParserToken&lt; TBase, TString &gt;::m_pCallback</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00644">qmu::QmuParserBase::GetOprtPrecedence()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00646">qmu::QmuParserBase::GetOprtPrecedence()</a>.</p>
 
 </div>
 </div>
@@ -666,7 +666,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 
 <p class="reference">References <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00472">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iType</a>, and <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00478">qmu::QmuParserToken&lt; TBase, TString &gt;::m_pCallback</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00938">qmu::QmuParserBase::ApplyBinOprt()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00808">qmu::QmuParserBase::ApplyFunc()</a>, and <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01838">qmu::QmuParserBase::StackDump()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00940">qmu::QmuParserBase::ApplyBinOprt()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00810">qmu::QmuParserBase::ApplyFunc()</a>, and <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01840">qmu::QmuParserBase::StackDump()</a>.</p>
 
 </div>
 </div>
@@ -707,7 +707,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 
 <p class="reference">References <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00109">qmu::cmADD</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00122">qmu::cmARG_SEP</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00116">qmu::cmASSIGN</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00118">qmu::cmBC</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00117">qmu::cmBO</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00112">qmu::cmDIV</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00120">qmu::cmELSE</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00141">qmu::cmEND</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00121">qmu::cmENDIF</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00106">qmu::cmEQ</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00134">qmu::cmFUNC</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00136">qmu::cmFUNC_BULK</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00135">qmu::cmFUNC_STR</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00104">qmu::cmGE</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00108">qmu::cmGT</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00119">qmu::cmIF</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00114">qmu::cmLAND</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00103">qmu::cmLE</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00115">qmu::cmLOR</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00107">qmu::cmLT</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00111">qmu::cmMUL</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00105">qmu::cmNEQ</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00138">qmu::cmOPRT_BIN</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00140">qmu::cmOPRT_INFIX</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00139">qmu::cmOPRT_POSTFIX</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00113">qmu::cmPOW</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00131">qmu::cmPOW2</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00137">qmu::cmSTRING</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00110">qmu::cmSUB</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00142">qmu::cmUNKNOWN</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00124">qmu::cmVAL</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00123">qmu::cmVAR</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00130">qmu::cmVARMUL</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00127">qmu::cmVARPOW2</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00128">qmu::cmVARPOW3</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00129">qmu::cmVARPOW4</a>, <a class="el" href="../../da/d49/qmuparsererror_8h_source.html#l00058">qmu::ecVAL_EXPECTED</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00477">qmu::QmuParserToken&lt; TBase, TString &gt;::m_fVal</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00471">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iCode</a>, and <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00473">qmu::QmuParserToken&lt; TBase, TString &gt;::m_pTok</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00905">qmu::QmuParserBase::ApplyIfElse()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01368">qmu::QmuParserBase::CreateRPN()</a>, and <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01838">qmu::QmuParserBase::StackDump()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00907">qmu::QmuParserBase::ApplyIfElse()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01370">qmu::QmuParserBase::CreateRPN()</a>, and <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01840">qmu::QmuParserBase::StackDump()</a>.</p>
 
 </div>
 </div>
@@ -748,7 +748,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 
 <p class="reference">References <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00123">qmu::cmVAR</a>, <a class="el" href="../../da/d49/qmuparsererror_8h_source.html#l00090">qmu::ecINTERNAL_ERROR</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00471">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iCode</a>, and <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00473">qmu::QmuParserToken&lt; TBase, TString &gt;::m_pTok</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01368">qmu::QmuParserBase::CreateRPN()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01370">qmu::QmuParserBase::CreateRPN()</a>.</p>
 
 </div>
 </div>
@@ -873,7 +873,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 </div><div class="memdoc">
 
 <p>Assign a token type. </p>
-<p>Token may not be of type value, variable or function. Those have seperate set functions.</p>
+<p><a class="el" href="../../d2/d6e/classToken.html">Token</a> may not be of type value, variable or function. Those have seperate set functions.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>[assert] a_iType!=cmVAR </dd>
 <dd>
 [assert] a_iType!=cmVAL </dd>
@@ -887,7 +887,7 @@ m_pTok = 0 </dd></dl>
 
 <p class="reference">References <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00134">qmu::cmFUNC</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00124">qmu::cmVAL</a>, <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00123">qmu::cmVAR</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00471">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iCode</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00474">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iIdx</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00472">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iType</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00473">qmu::QmuParserToken&lt; TBase, TString &gt;::m_pTok</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00475">qmu::QmuParserToken&lt; TBase, TString &gt;::m_strTok</a>, and <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00152">qmu::tpVOID</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00521">qmu::QmuParserTokenReader::IsArgSep()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00414">qmu::QmuParserTokenReader::IsBuiltIn()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00553">qmu::QmuParserTokenReader::IsEOF()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00628">qmu::QmuParserTokenReader::IsFunTok()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00589">qmu::QmuParserTokenReader::IsInfixOpTok()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00667">qmu::QmuParserTokenReader::IsOprt()</a>, and <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00736">qmu::QmuParserTokenReader::IsPostOpTok()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00521">qmu::QmuParserTokenReader::IsArgSep()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00414">qmu::QmuParserTokenReader::IsBuiltIn()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00549">qmu::QmuParserTokenReader::IsEOF()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00624">qmu::QmuParserTokenReader::IsFunTok()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00585">qmu::QmuParserTokenReader::IsInfixOpTok()</a>, <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00663">qmu::QmuParserTokenReader::IsOprt()</a>, and <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00732">qmu::QmuParserTokenReader::IsPostOpTok()</a>.</p>
 
 </div>
 </div>
@@ -935,7 +935,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 
 <p class="reference">References <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00137">qmu::cmSTRING</a>, <a class="el" href="../../da/d49/qmuparsererror_8h_source.html#l00090">qmu::ecINTERNAL_ERROR</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00471">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iCode</a>, and <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00474">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iIdx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01368">qmu::QmuParserBase::CreateRPN()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l01370">qmu::QmuParserBase::CreateRPN()</a>.</p>
 
 </div>
 </div>
@@ -987,7 +987,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 
 <p class="reference">References <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00137">qmu::cmSTRING</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00471">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iCode</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00474">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iIdx</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00472">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iType</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00478">qmu::QmuParserToken&lt; TBase, TString &gt;::m_pCallback</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00473">qmu::QmuParserToken&lt; TBase, TString &gt;::m_pTok</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00475">qmu::QmuParserToken&lt; TBase, TString &gt;::m_strTok</a>, and <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00150">qmu::tpSTR</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00993">qmu::QmuParserTokenReader::IsString()</a>, and <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00893">qmu::QmuParserTokenReader::IsStrVarTok()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00989">qmu::QmuParserTokenReader::IsString()</a>, and <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00889">qmu::QmuParserTokenReader::IsStrVarTok()</a>.</p>
 
 </div>
 </div>
@@ -1039,7 +1039,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 
 <p class="reference">References <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00124">qmu::cmVAL</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00477">qmu::QmuParserToken&lt; TBase, TString &gt;::m_fVal</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00471">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iCode</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00474">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iIdx</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00472">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iType</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00478">qmu::QmuParserToken&lt; TBase, TString &gt;::m_pCallback</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00473">qmu::QmuParserToken&lt; TBase, TString &gt;::m_pTok</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00475">qmu::QmuParserToken&lt; TBase, TString &gt;::m_strTok</a>, and <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00151">qmu::tpDBL</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00808">qmu::QmuParserBase::ApplyFunc()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00751">qmu::QmuParserBase::ApplyStrFunc()</a>, and <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00793">qmu::QmuParserTokenReader::IsValTok()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00810">qmu::QmuParserBase::ApplyFunc()</a>, <a class="el" href="../../d0/d70/qmuparserbase_8cpp_source.html#l00753">qmu::QmuParserBase::ApplyStrFunc()</a>, and <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00789">qmu::QmuParserTokenReader::IsValTok()</a>.</p>
 
 </div>
 </div>
@@ -1091,7 +1091,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 
 <p class="reference">References <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00123">qmu::cmVAR</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00471">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iCode</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00474">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iIdx</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00472">qmu::QmuParserToken&lt; TBase, TString &gt;::m_iType</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00478">qmu::QmuParserToken&lt; TBase, TString &gt;::m_pCallback</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00473">qmu::QmuParserToken&lt; TBase, TString &gt;::m_pTok</a>, <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00475">qmu::QmuParserToken&lt; TBase, TString &gt;::m_strTok</a>, and <a class="el" href="../../de/d28/qmuparserdef_8h_source.html#l00151">qmu::tpDBL</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00939">qmu::QmuParserTokenReader::IsUndefVarTok()</a>, and <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00854">qmu::QmuParserTokenReader::IsVarTok()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00935">qmu::QmuParserTokenReader::IsUndefVarTok()</a>, and <a class="el" href="../../df/d10/qmuparsertokenreader_8cpp_source.html#l00850">qmu::QmuParserTokenReader::IsVarTok()</a>.</p>
 
 </div>
 </div>
@@ -1296,7 +1296,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Stores Token pointer; not applicable for all tokens. </p>
+<p>Stores <a class="el" href="../../d2/d6e/classToken.html">Token</a> pointer; not applicable for all tokens. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00473">473</a> of file <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html">qmuparsertoken.h</a>.</p>
 
@@ -1326,7 +1326,7 @@ template&lt;typename TBase , typename TString &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Token string. </p>
+<p><a class="el" href="../../d2/d6e/classToken.html">Token</a> string. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html#l00475">475</a> of file <a class="el" href="../../d7/ddf/qmuparsertoken_8h_source.html">qmuparsertoken.h</a>.</p>
 

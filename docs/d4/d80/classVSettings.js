@@ -1,6 +1,7 @@
 var classVSettings =
 [
     [ "VSettings", "d4/d80/classVSettings.html#a509ec6bce6ddd31b164fd3c935dc272e", null ],
+    [ "VSettings", "d4/d80/classVSettings.html#a63fe2d1855949d76db3b9f35ed40427c", null ],
     [ "getDefaultLayoutPath", "d4/d80/classVSettings.html#a5100c2ec3b49d17a0e4acc3594339e58", null ],
     [ "getDefaultPatternPath", "d4/d80/classVSettings.html#aaef66f2af986f10d7284dbb1618701e2", null ],
     [ "GetDefIgnoreAllFields", "d4/d80/classVSettings.html#ad0a99c6039e95ba7150750a27408c407", null ],

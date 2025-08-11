@@ -1,22 +1,6 @@
 var searchData=
 [
-  ['mainwindow_0',['MainWindow',['../d6/d1a/classMainWindow.html',1,'']]],
-  ['mainwindowsnogui_1',['MainWindowsNoGUI',['../de/d1a/classMainWindowsNoGUI.html',1,'']]],
-  ['measurementdatabasedialog_2',['MeasurementDatabaseDialog',['../d3/d63/classMeasurementDatabaseDialog.html',1,'']]],
-  ['measurementdoc_3',['MeasurementDoc',['../d9/d6d/classMeasurementDoc.html',1,'']]],
-  ['measurementvariable_4',['MeasurementVariable',['../d5/d38/classMeasurementVariable.html',1,'']]],
-  ['measurementvariabledata_5',['MeasurementVariableData',['../d3/d99/classMeasurementVariableData.html',1,'']]],
-  ['meshortcutsdialog_6',['MeShortcutsDialog',['../dd/d67/classMeShortcutsDialog.html',1,'']]],
-  ['messagehandler_7',['MessageHandler',['../df/df2/classMessageHandler.html',1,'']]],
-  ['mousecoordinates_8',['MouseCoordinates',['../d2/d08/classMouseCoordinates.html',1,'']]],
-  ['moveabstractlabel_9',['MoveAbstractLabel',['../d6/d7c/classMoveAbstractLabel.html',1,'']]],
-  ['movedoublelabel_10',['MoveDoubleLabel',['../d1/d74/classMoveDoubleLabel.html',1,'']]],
-  ['movegroupitem_11',['MoveGroupItem',['../df/dca/classMoveGroupItem.html',1,'']]],
-  ['movelabel_12',['MoveLabel',['../d7/ddb/classMoveLabel.html',1,'']]],
-  ['moveoperationlabel_13',['MoveOperationLabel',['../d7/d7b/classMoveOperationLabel.html',1,'']]],
-  ['movepiece_14',['MovePiece',['../d9/da7/classMovePiece.html',1,'']]],
-  ['movespline_15',['MoveSpline',['../de/db1/classMoveSpline.html',1,'']]],
-  ['movesplinepath_16',['MoveSplinePath',['../d9/de8/classMoveSplinePath.html',1,'']]],
-  ['movespoint_17',['MoveSPoint',['../da/df9/classMoveSPoint.html',1,'']]],
-  ['multisizeconverter_18',['MultiSizeConverter',['../d6/d91/classMultiSizeConverter.html',1,'']]]
+  ['keyrefpair_0',['KeyRefPair',['../dd/da1/classKeyRefPair.html',1,'']]],
+  ['keyvaluepair_1',['KeyValuePair',['../d1/d62/classKeyValuePair.html',1,'']]],
+  ['kvstringpair_2',['KVStringPair',['../df/d6f/classKVStringPair.html',1,'']]]
 ];

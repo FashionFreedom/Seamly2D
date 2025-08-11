@@ -31,5 +31,6 @@ var searchData=
   ['originpointitem_28',['originPointItem',['../dd/d50/classVisToolMove.html#a5c4b9911bc13eae4563c46945ebd38b6',1,'VisToolMove']]],
   ['origins_29',['origins',['../d7/df5/classVMainGraphicsScene.html#a659293dd786e55a8b236cbb8cf18c025',1,'VMainGraphicsScene']]],
   ['outputdevice_30',['outputDevice',['../d3/d1d/classVObjEngine.html#aaf061c06cda3145d37aa440b33cb338e',1,'VObjEngine']]],
-  ['owns_5fiodevice_31',['owns_iodevice',['../dd/d3b/classVObjPaintDevice.html#a8d8cc3c7801db38d06894637e223a9e2',1,'VObjPaintDevice']]]
+  ['owned_31',['OWNED',['../de/d86/classDOMNodeImpl.html#a881c6a25529c2cceb1c7fd7757980b8c',1,'DOMNodeImpl']]],
+  ['owns_5fiodevice_32',['owns_iodevice',['../dd/d3b/classVObjPaintDevice.html#a8d8cc3c7801db38d06894637e223a9e2',1,'VObjPaintDevice']]]
 ];

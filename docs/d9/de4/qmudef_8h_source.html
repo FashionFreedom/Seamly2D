@@ -101,94 +101,133 @@ $(document).ready(function(){initNavTree('d9/de4/qmudef_8h_source.html','../../'
   <div class="headertitle"><div class="title">qmudef.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d9/de4/qmudef_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/***************************************************************************************************</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> **</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> **  Copyright (C) 2015 Roman Telezhynskyi &lt;dismine(at)gmail.com&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> **</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> **  Permission is hereby granted, free of charge, to any person obtaining a copy of this</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> **  software and associated documentation files (the &quot;Software&quot;), to deal in the Software</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> **  without restriction, including without limitation the rights to use, copy, modify,</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> **  merge, publish, distribute, sublicense, and/or sell copies of the Software, and to</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> **  permit persons to whom the Software is furnished to do so, subject to the following conditions:</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> **</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> **  The above copyright notice and this permission notice shall be included in all copies or</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> **  substantial portions of the Software.</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> **</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> **  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> **  NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> **  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> **  DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> **  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> **</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> ******************************************************************************************************/</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#ifndef QMUDEF_H</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define QMUDEF_H</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;qcompilerdetection.h&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;QtGlobal&gt;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;QChar&gt;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;QLocale&gt;</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>QT_WARNING_PUSH</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>QT_WARNING_DISABLE_GCC(<span class="stringliteral">&quot;-Wattributes&quot;</span>)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#ifdef Q_CC_MSVC</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">    #include &lt;ciso646&gt;</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif </span><span class="comment">/* Q_CC_MSVC */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="foldopen" id="foldopen00038" data-start="" data-end="">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../d9/de4/qmudef_8h.html#acf47c8ad7cf93e1e0d8dfabd52e9e45d">   38</a></span><span class="preprocessor">#define INIT_LOCALE_VARIABLES(locale)                          \</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">const QChar positiveSign   = (locale).positiveSign();          \</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">const QChar negativeSign   = (locale).negativeSign();          \</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">const QChar sign0          = (locale).toString(0).at(0);       \</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">const QChar sign1          = (locale).toString(1).at(0);       \</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">const QChar sign2          = (locale).toString(2).at(0);       \</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">const QChar sign3          = (locale).toString(3).at(0);       \</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">const QChar sign4          = (locale).toString(4).at(0);       \</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">const QChar sign5          = (locale).toString(5).at(0);       \</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">const QChar sign6          = (locale).toString(6).at(0);       \</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">const QChar sign7          = (locale).toString(7).at(0);       \</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">const QChar sign8          = (locale).toString(8).at(0);       \</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">const QChar sign9          = (locale).toString(9).at(0);       \</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">const QChar expUpper       = (locale).exponential().toUpper(); \</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">const QChar expLower       = (locale).exponential().toLower(); \</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">const QChar decimalPoint   = (locale).decimalPoint();          \</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">const QChar groupSeparator = (locale).groupSeparator()         \</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor"></span> </div>
-</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>QString <a class="code hl_function" href="../../d9/de4/qmudef_8h.html#a0e9b14da123c7eb60aaa7cfff6086a2e">NameRegExp</a>();</div>
+<a href="../../d9/de4/qmudef_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//  @file   qmudef.h</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//  @author Douglas S Caskey</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//  @date   14 Jul, 2025</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//  @brief</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//  @copyright</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//  This source code is part of the Seamly2D project, a pattern making</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//  program, whose allow create and modeling patterns of clothing.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//  Copyright (C) 2013-2025 Seamly2D project</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//  &lt;https://github.com/fashionfreedom/seamly2d&gt; All Rights Reserved.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//  Seamly2D is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//  it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//  the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">//  (at your option) any later version.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">//</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">//  Seamly2D is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">//  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">//  GNU General Public License for more details.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">//</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">//  You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">//  along with Seamly2D.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">//  Copyright (C) 2015 Roman Telezhynskyi &lt;dismine(at)gmail.com&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">//</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">//  Permission is hereby granted, free of charge, to any person obtaining a copy of this</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">//  software and associated documentation files (the &quot;Software&quot;), to deal in the Software</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">//  without restriction, including without limitation the rights to use, copy, modify,</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">//  merge, publish, distribute, sublicense, and/or sell copies of the Software, and to</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">//  permit persons to whom the Software is furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">//</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">//  The above copyright notice and this permission notice shall be included in all copies or</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">//  substantial portions of the Software.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">//</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">//  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">//  NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">//  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">//  DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#ifndef QMUDEF_H</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#define QMUDEF_H</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#include &lt;qcompilerdetection.h&gt;</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#include &lt;QtGlobal&gt;</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#include &lt;QChar&gt;</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#include &lt;QLocale&gt;</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>QT_WARNING_PUSH</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>QT_WARNING_DISABLE_GCC(<span class="stringliteral">&quot;-Wattributes&quot;</span>)</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><a class="code hl_namespace" href="../../dd/db0/namespaceQT__WARNING__POP.html">QT_WARNING_POP</a></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>Q_REQUIRED_RESULT <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/de4/qmudef_8h.html#a6249678646f618960f3d7578fab1a50e">QmuFuzzyComparePossibleNulls</a>(<span class="keywordtype">double</span> p1, <span class="keywordtype">double</span> p2);</div>
-<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="../../d9/de4/qmudef_8h.html#a6249678646f618960f3d7578fab1a50e">   61</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/de4/qmudef_8h.html#a6249678646f618960f3d7578fab1a50e">QmuFuzzyComparePossibleNulls</a>(<span class="keywordtype">double</span> p1, <span class="keywordtype">double</span> p2)</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span>(qFuzzyIsNull(p1))</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">return</span> qFuzzyIsNull(p2);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(qFuzzyIsNull(p2))</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">return</span> qFuzzyCompare(p1, p2);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#ifdef Q_CC_MSVC</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">    #include &lt;ciso646&gt;</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#endif </span><span class="comment">/* Q_CC_MSVC */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="foldopen" id="foldopen00062" data-start="" data-end="">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../d9/de4/qmudef_8h.html#acf47c8ad7cf93e1e0d8dfabd52e9e45d">   62</a></span><span class="preprocessor">#define INIT_LOCALE_VARIABLES(locale)                           \</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">const QChar positiveSign   = localePositiveSign((locale));      \</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">const QChar negativeSign   = localeNegativeSign((locale));      \</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">const QChar char0          = localeCharacter((locale), 0);      \</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">const QChar char1          = localeCharacter((locale), 1);      \</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">const QChar char2          = localeCharacter((locale), 2);      \</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">const QChar char3          = localeCharacter((locale), 3);      \</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">const QChar char4          = localeCharacter((locale), 4);      \</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">const QChar char5          = localeCharacter((locale), 5);      \</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">const QChar char6          = localeCharacter((locale), 6);      \</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">const QChar char7          = localeCharacter((locale), 7);      \</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">const QChar char8          = localeCharacter((locale), 8);      \</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">const QChar char9          = localeCharacter((locale), 9);      \</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">const QChar expUpper       = localeExpUpper((locale));          \</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">const QChar expLower       = localeExpLower((locale));          \</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">const QChar decimalPoint   = localeDecimalPoint((locale));      \</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">const QChar groupSeparator = localeGroupSeparator((locale));    \</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor"></span> </div>
 </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d9/de4/qmudef_8h.html#a664390df11653050bb081955cd3fc653">ReadVal</a>(<span class="keyword">const</span> QString &amp;formula, qreal &amp;val, <span class="keyword">const</span> QLocale &amp;locale, <span class="keyword">const</span> QChar &amp;decimal,</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                                   <span class="keyword">const</span> QChar &amp;thousand);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#endif </span><span class="comment">// QMUDEF_H</span></div>
-<div class="ttc" id="anamespaceQT__WARNING__POP_html"><div class="ttname"><a href="../../dd/db0/namespaceQT__WARNING__POP.html">QT_WARNING_POP</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d9f/union__tool_8cpp_source.html#l00133">union_tool.cpp:134</a></div></div>
-<div class="ttc" id="aqmudef_8h_html_a0e9b14da123c7eb60aaa7cfff6086a2e"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#a0e9b14da123c7eb60aaa7cfff6086a2e">NameRegExp</a></div><div class="ttdeci">QString NameRegExp()</div><div class="ttdef"><b>Definition</b> <a href="../../df/d51/qmudef_8cpp_source.html#l00281">qmudef.cpp:281</a></div></div>
-<div class="ttc" id="aqmudef_8h_html_a6249678646f618960f3d7578fab1a50e"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#a6249678646f618960f3d7578fab1a50e">QmuFuzzyComparePossibleNulls</a></div><div class="ttdeci">QT_WARNING_POP static Q_REQUIRED_RESULT bool QmuFuzzyComparePossibleNulls(double p1, double p2)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/de4/qmudef_8h_source.html#l00061">qmudef.h:61</a></div></div>
-<div class="ttc" id="aqmudef_8h_html_a664390df11653050bb081955cd3fc653"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#a664390df11653050bb081955cd3fc653">ReadVal</a></div><div class="ttdeci">int ReadVal(const QString &amp;formula, qreal &amp;val, const QLocale &amp;locale, const QChar &amp;decimal, const QChar &amp;thousand)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d51/qmudef_8cpp_source.html#l00170">qmudef.cpp:170</a></div></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>QString <a class="code hl_function" href="../../d9/de4/qmudef_8h.html#a0e9b14da123c7eb60aaa7cfff6086a2e">NameRegExp</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keywordtype">bool</span>    <a class="code hl_function" href="../../d9/de4/qmudef_8h.html#a7aea67f596d5c12ad980514b5b0672c6">isLocaleSupported</a>(<span class="keyword">const</span> QLocale &amp;locale);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>QChar   <a class="code hl_function" href="../../d9/de4/qmudef_8h.html#ab2065705d530bbcac0346575127a7d45">localePositiveSign</a>(<span class="keyword">const</span> QLocale &amp;locale);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>QChar   <a class="code hl_function" href="../../d9/de4/qmudef_8h.html#a1601b5e487fca6831a160f3008ef180d">localeNegativeSign</a>(<span class="keyword">const</span> QLocale &amp;locale);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>QChar   <a class="code hl_function" href="../../d9/de4/qmudef_8h.html#ac1efb278a8beb585e5778d44bd0f838c">localeCharacter</a>(<span class="keyword">const</span> QLocale &amp;locale, <span class="keywordtype">int</span> number);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>QChar   <a class="code hl_function" href="../../d9/de4/qmudef_8h.html#acdf9b0a4bacec7308cd10e2a3d284861">localeExpUpper</a>(<span class="keyword">const</span> QLocale &amp;locale);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>QChar   <a class="code hl_function" href="../../d9/de4/qmudef_8h.html#ad46f38bb870d44c06bd2309540b8dea8">localeExpLower</a>(<span class="keyword">const</span> QLocale &amp;locale);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>QChar   <a class="code hl_function" href="../../d9/de4/qmudef_8h.html#a059d9ded86d5decac7047f702575e722">localeDecimalPoint</a>(<span class="keyword">const</span> QLocale &amp;locale);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>QChar   <a class="code hl_function" href="../../d9/de4/qmudef_8h.html#ae530752424a459110d103b1b3a4efa35">localeGroupSeparator</a>(<span class="keyword">const</span> QLocale &amp;locale);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><a class="code hl_namespace" href="../../dd/db0/namespaceQT__WARNING__POP.html">QT_WARNING_POP</a></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>Q_REQUIRED_RESULT <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/de4/qmudef_8h.html#a6249678646f618960f3d7578fab1a50e">QmuFuzzyComparePossibleNulls</a>(<span class="keywordtype">double</span> p1, <span class="keywordtype">double</span> p2);</div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="../../d9/de4/qmudef_8h.html#a6249678646f618960f3d7578fab1a50e">   93</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/de4/qmudef_8h.html#a6249678646f618960f3d7578fab1a50e">QmuFuzzyComparePossibleNulls</a>(<span class="keywordtype">double</span> p1, <span class="keywordtype">double</span> p2)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>{</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span>(qFuzzyIsNull(p1))</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">return</span> qFuzzyIsNull(p2);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(qFuzzyIsNull(p2))</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">return</span> qFuzzyCompare(p1, p2);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d9/de4/qmudef_8h.html#a664390df11653050bb081955cd3fc653">ReadVal</a>(<span class="keyword">const</span> QString &amp;formula, qreal &amp;val, <span class="keyword">const</span> QLocale &amp;locale, <span class="keyword">const</span> QChar &amp;decimal, <span class="keyword">const</span> QChar &amp;thousand);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#endif </span><span class="comment">// QMUDEF_H</span></div>
+<div class="ttc" id="anamespaceQT__WARNING__POP_html"><div class="ttname"><a href="../../dd/db0/namespaceQT__WARNING__POP.html">QT_WARNING_POP</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d9f/union__tool_8cpp_source.html#l00131">union_tool.cpp:132</a></div></div>
+<div class="ttc" id="aqmudef_8h_html_a059d9ded86d5decac7047f702575e722"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#a059d9ded86d5decac7047f702575e722">localeDecimalPoint</a></div><div class="ttdeci">QChar localeDecimalPoint(const QLocale &amp;locale)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d51/qmudef_8cpp_source.html#l00420">qmudef.cpp:420</a></div></div>
+<div class="ttc" id="aqmudef_8h_html_a0e9b14da123c7eb60aaa7cfff6086a2e"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#a0e9b14da123c7eb60aaa7cfff6086a2e">NameRegExp</a></div><div class="ttdeci">QString NameRegExp()</div><div class="ttdef"><b>Definition</b> <a href="../../df/d51/qmudef_8cpp_source.html#l00306">qmudef.cpp:306</a></div></div>
+<div class="ttc" id="aqmudef_8h_html_a1601b5e487fca6831a160f3008ef180d"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#a1601b5e487fca6831a160f3008ef180d">localeNegativeSign</a></div><div class="ttdeci">QChar localeNegativeSign(const QLocale &amp;locale)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d51/qmudef_8cpp_source.html#l00387">qmudef.cpp:387</a></div></div>
+<div class="ttc" id="aqmudef_8h_html_a6249678646f618960f3d7578fab1a50e"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#a6249678646f618960f3d7578fab1a50e">QmuFuzzyComparePossibleNulls</a></div><div class="ttdeci">QT_WARNING_POP static Q_REQUIRED_RESULT bool QmuFuzzyComparePossibleNulls(double p1, double p2)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/de4/qmudef_8h_source.html#l00093">qmudef.h:93</a></div></div>
+<div class="ttc" id="aqmudef_8h_html_a664390df11653050bb081955cd3fc653"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#a664390df11653050bb081955cd3fc653">ReadVal</a></div><div class="ttdeci">int ReadVal(const QString &amp;formula, qreal &amp;val, const QLocale &amp;locale, const QChar &amp;decimal, const QChar &amp;thousand)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d51/qmudef_8cpp_source.html#l00194">qmudef.cpp:194</a></div></div>
+<div class="ttc" id="aqmudef_8h_html_a7aea67f596d5c12ad980514b5b0672c6"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#a7aea67f596d5c12ad980514b5b0672c6">isLocaleSupported</a></div><div class="ttdeci">bool isLocaleSupported(const QLocale &amp;locale)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d51/qmudef_8cpp_source.html#l00358">qmudef.cpp:358</a></div></div>
+<div class="ttc" id="aqmudef_8h_html_ab2065705d530bbcac0346575127a7d45"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#ab2065705d530bbcac0346575127a7d45">localePositiveSign</a></div><div class="ttdeci">QChar localePositiveSign(const QLocale &amp;locale)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d51/qmudef_8cpp_source.html#l00379">qmudef.cpp:379</a></div></div>
+<div class="ttc" id="aqmudef_8h_html_ac1efb278a8beb585e5778d44bd0f838c"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#ac1efb278a8beb585e5778d44bd0f838c">localeCharacter</a></div><div class="ttdeci">QChar localeCharacter(const QLocale &amp;locale, int number)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d51/qmudef_8cpp_source.html#l00395">qmudef.cpp:395</a></div></div>
+<div class="ttc" id="aqmudef_8h_html_acdf9b0a4bacec7308cd10e2a3d284861"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#acdf9b0a4bacec7308cd10e2a3d284861">localeExpUpper</a></div><div class="ttdeci">QChar localeExpUpper(const QLocale &amp;locale)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d51/qmudef_8cpp_source.html#l00404">qmudef.cpp:404</a></div></div>
+<div class="ttc" id="aqmudef_8h_html_ad46f38bb870d44c06bd2309540b8dea8"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#ad46f38bb870d44c06bd2309540b8dea8">localeExpLower</a></div><div class="ttdeci">QChar localeExpLower(const QLocale &amp;locale)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d51/qmudef_8cpp_source.html#l00412">qmudef.cpp:412</a></div></div>
+<div class="ttc" id="aqmudef_8h_html_ae530752424a459110d103b1b3a4efa35"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#ae530752424a459110d103b1b3a4efa35">localeGroupSeparator</a></div><div class="ttdeci">QChar localeGroupSeparator(const QLocale &amp;locale)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d51/qmudef_8cpp_source.html#l00428">qmudef.cpp:428</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

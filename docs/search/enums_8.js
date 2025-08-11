@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['inputtoken_0',['InputToken',['../df/d51/qmudef_8cpp.html#a4c03a92b86f91e7e4ab59a095ad64226',1,'qmudef.cpp']]],
-  ['intersectiontype_1',['IntersectionType',['../d9/d3d/classVPosition.html#a260c9e88536085034a0619920e00c651',1,'VPosition']]]
+  ['ic_5fcategory_0',['ic_category',['../d2/d1c/classXSIDCDefinition.html#aa72f1ea305fcda4182d29192711b072d',1,'XSIDCDefinition::IC_CATEGORY'],['../d2/d1c/classXSIDCDefinition.html#aa72f1ea305fcda4182d29192711b072d',1,'XSIDCDefinition::IC_CATEGORY'],['../d2/d1c/classXSIDCDefinition.html#aa72f1ea305fcda4182d29192711b072d',1,'XSIDCDefinition::IC_CATEGORY']]],
+  ['ictype_1',['ictype',['../d5/d94/classIdentityConstraint.html#a31bc99ef23ab81c4423c482d4b017de6',1,'IdentityConstraint::ICType'],['../d5/d94/classIdentityConstraint.html#a31bc99ef23ab81c4423c482d4b017de6',1,'IdentityConstraint::ICType'],['../d5/d94/classIdentityConstraint.html#a31bc99ef23ab81c4423c482d4b017de6',1,'IdentityConstraint::ICType']]],
+  ['idtypes_2',['idtypes',['../db/d85/classDTDScanner.html#a565c62d06721333c05847a5faf798f10',1,'DTDScanner::IDTypes'],['../db/d85/classDTDScanner.html#a565c62d06721333c05847a5faf798f10',1,'DTDScanner::IDTypes'],['../db/d85/classDTDScanner.html#a565c62d06721333c05847a5faf798f10',1,'DTDScanner::IDTypes']]],
+  ['inputtoken_3',['InputToken',['../df/d51/qmudef_8cpp.html#a4c03a92b86f91e7e4ab59a095ad64226',1,'qmudef.cpp']]],
+  ['intersectiontype_4',['IntersectionType',['../d9/d3d/classVPosition.html#a260c9e88536085034a0619920e00c651',1,'VPosition']]]
 ];
