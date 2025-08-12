@@ -1,4 +1,4 @@
-name: CI-qt6
+name: CI
 
 # for a description, see README.md in this folder
 
@@ -11,7 +11,6 @@ on:
     - develop
     - test
   pull_request:
-    branches:
 
 permissions:
   contents: write
@@ -33,12 +32,11 @@ jobs:
         id: create-version
         run: |
           echo "version_number=$(date +%Y.%-m.%-d.%-H%M)" >> $GITHUB_OUTPUT
-          echo "VERSION_NUMBER=$(date +%Y.%-m.%-d.%-H%M)" >> $GITHUB_ENV
 
   linux-test:
     if: github.event_name == 'pull_request'
     name: 'Linux: Run unit tests'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
       - uses: actions/checkout@v4
@@ -70,8 +68,7 @@ jobs:
 
   linux:
     name: 'Linux: Build AppImage'
-    # build on the oldest supported LTS so that resulting binaries are compatible with older and newer Linux releases
-    runs-on: ubuntu-20.04  
+    runs-on: ubuntu-22.04  # build on the oldest supported LTS so that resulting binaries are compatible with older and newer Linux releases
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
@@ -81,13 +78,11 @@ jobs:
 
       - name: install appimage dependencies
         run: |
-          echo "Installing AppImage dependencies"
           sudo apt update && sudo apt install -y libfuse2
           sudo wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -O /usr/local/bin/linuxdeploy-x86_64.AppImage
           sudo chmod +x /usr/local/bin/linuxdeploy-x86_64.AppImage
           sudo wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage -O /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
           sudo chmod +x /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
-          echo "Completed installing AppImage dependencies"
 
       - name: install build dependencies
         run: |
@@ -107,21 +102,17 @@ jobs:
         run: |
           ./scripts/version.sh ${VERSION_NUMBER}
 
-      - name: build seamly2d appimage
-        # env:
-          # linuxdeploy-x86_64.AppImage uses this env var as name for AppImage
-          # OUTPUT: Seamly2D-x86_64.AppImage  
+      - name: build Seamly2D appimage
+        env:
+          OUTPUT: Seamly2D-x86_64.AppImage  # linuxdeploy-x86_64.AppImage uses this env var as name for AppImage
         run: |
           qmake -config release CONFIG+=noTests
           make -j$(nproc)
           make INSTALL_ROOT=`pwd`/AppDir install
           
-          # copy additional binaries, libraries, etc. into the AppDir directory structure
           cp /usr/bin/pdftops AppDir/usr/bin
           mkdir -p AppDir/usr/share/X11/xkb
           cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
-
-          # bundle everything from AppDir into an AppImage
           linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
 
       - uses: actions/upload-artifact@v4
@@ -196,8 +187,8 @@ jobs:
           path: out/Seamly2D-macos.zip
           if-no-files-found: error
 
-  windows-msvc:
-    name: 'Windows: Build with msvc'
+  windows:
+    name: 'Windows 64-Bit: Build'
     runs-on: windows-latest
     needs: version
     env:
@@ -206,15 +197,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: install msvc
-        uses: ilammy/msvc-dev-cmd@v1
+      - uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: x64
-          # use Visual C++ 2022 latest, 14.36.xxxx
-          # toolset: '14.36'
 
-      - name: install ms qt
-        uses: jurplel/install-qt-action@v3
+      - uses: jurplel/install-qt-action@v3
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
@@ -300,6 +287,7 @@ jobs:
   publish:
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop'
     runs-on: ubuntu-latest
+    needs: [version, linux, macos, windows]
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
@@ -314,14 +302,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: Seamly2D-windows.zip
-      # - name: Download unsigned win32 artifacts
-      #   uses: actions/download-artifact@v4
-      #   with:
-      #     name: Seamly2D-win32.zip
       - uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${VERSION_NUMBER}
-          name: ${VERSION_NUMBER}
+          tag_name: v${{ env.VERSION_NUMBER }}
+          name: ${{ env.VERSION_NUMBER }}
           generate_release_notes: true
           fail_on_unmatched_files: true
           prerelease: ${{ github.event_name == 'push' }}
