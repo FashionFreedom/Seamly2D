@@ -81,13 +81,13 @@ jobs:
 
       - name: install appimage dependencies
         run: |
-          echo "installing appimage dependencies"
+          echo "Installing AppImage dependencies"
           sudo apt update && sudo apt install -y libfuse2
           sudo wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -O /usr/local/bin/linuxdeploy-x86_64.AppImage
           sudo chmod +x /usr/local/bin/linuxdeploy-x86_64.AppImage
           sudo wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage -O /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
           sudo chmod +x /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
-          echo "completed installing appimage dependencies"
+          echo "Completed installing AppImage dependencies"
 
       - name: install build dependencies
         run: |
