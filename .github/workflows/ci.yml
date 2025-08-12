@@ -36,9 +36,12 @@ jobs:
           echo "VERSION_NUMBER=$(date +%Y.%-m.%-d.%-H%M)" >> $GITHUB_ENV
 
   linux-test:
-    if: github.event_name == 'pull_request'
+    # if: github.event_name == 'pull_request'
     name: 'Linux: Run unit tests'
     runs-on: ubuntu-20.04
+    needs: version
+    env:
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
       - uses: actions/checkout@v4
@@ -79,17 +82,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: install appimage dependencies
-        run: |
-          echo "Installing AppImage dependencies"
-          sudo apt update && sudo apt install -y libfuse2
-          sudo wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -O /usr/local/bin/linuxdeploy-x86_64.AppImage
-          sudo chmod +x /usr/local/bin/linuxdeploy-x86_64.AppImage
-          sudo wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage -O /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
-          sudo chmod +x /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
-          echo "Completed installing AppImage dependencies"
-
-      - name: install build dependencies
+      - name: install application dependencies
         run: |
           sudo apt update
           # install poppler-utils for pdftops, gstreamer1.0-plugins-base for QtMultimedia
@@ -102,26 +95,37 @@ jobs:
           version: ${{ env.QT_VERSION }}
           cache: true
           modules: qt5compat qtmultimedia
-          
+
       - name: update version
         run: |
           ./scripts/version.sh ${VERSION_NUMBER}
+
+      - name: install appimage executables
+        run: |
+          echo "Installing AppImage executables"
+          sudo apt update && sudo apt install -y libfuse2
+          sudo wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -O /usr/local/bin/linuxdeploy-x86_64.AppImage
+          sudo chmod +x /usr/local/bin/linuxdeploy-x86_64.AppImage
+          sudo wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage -O /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
+          sudo chmod +x /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
+          echo "Completed installing AppImage dependencies"
 
       - name: build seamly2d appimage
         # env:
           # linuxdeploy-x86_64.AppImage uses this env var as name for AppImage
           # OUTPUT: Seamly2D-x86_64.AppImage  
         run: |
+          echo "Building seamly2d and seamlyme executables to the AppDir directory"
           qmake -config release CONFIG+=noTests
           make -j$(nproc)
           make INSTALL_ROOT=`pwd`/AppDir install
           
-          # copy additional binaries, libraries, etc. into the AppDir directory structure
+          echo "Copying additional binaries, libraries, etc. to AppDir"
           cp /usr/bin/pdftops AppDir/usr/bin
           mkdir -p AppDir/usr/share/X11/xkb
           cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
 
-          # bundle everything from AppDir into an AppImage
+          echo "Bundle everything from AppDir into an AppImage"
           linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
 
       - uses: actions/upload-artifact@v4
