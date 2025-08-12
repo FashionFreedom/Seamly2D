@@ -819,125 +819,123 @@ $(document).ready(function(){initNavTree('d8/dd0/application__me_8cpp_source.htm
 <div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>                }</div>
 <div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>            }</div>
 <div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>        }</div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span> </div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>        <span class="comment">//loadTranslations(seamlyMeSettings()-&gt;getLocale());</span></div>
-<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>    }</div>
-<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span> </div>
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>    <span class="keyword">const</span> QStringList args = parser.positionalArguments();</div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>    <span class="keywordflow">if</span> (args.count() &gt; 0)</div>
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>    {</div>
-<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d0/d17/classApplicationME.html#acdddbcebd71f412014515e2c7dfe0884">m_testMode</a> &amp;&amp; args.count() &gt; 1)</div>
-<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>        {</div>
-<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>            qCCritical(mApp, <span class="stringliteral">&quot;%s\n&quot;</span>, qPrintable(tr(<span class="stringliteral">&quot;Test mode doesn&#39;t support Opening several files.&quot;</span>)));</div>
-<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>            parser.showHelp(<a class="code hl_variable" href="../../dd/d3c/vsysexits_8h.html#a13607be54c810a5f56b89d13802a304c">V_EX_USAGE</a>);</div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>        }</div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span> </div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; args.size(); ++i)</div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>        {</div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>            <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a89d2c1660d841524880b60474a3a943e">newMainWindow</a>();</div>
-<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7">mainWindow</a>()-&gt;LoadFile(args.at(i)))</div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>            {</div>
-<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d0/d17/classApplicationME.html#acdddbcebd71f412014515e2c7dfe0884">m_testMode</a>)</div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>                {</div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>                    <span class="keywordflow">return</span>; <span class="comment">// process only one input file</span></div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>                }</div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>                <span class="keyword">delete</span> <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7">mainWindow</a>();</div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>            }</div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span> </div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>            <span class="keywordflow">if</span> (flagSize)</div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>            {</div>
-<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>                <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7">mainWindow</a>()-&gt;<a class="code hl_function" href="../../d8/d61/classTMainWindow.html#a0043bdd7863d4d2c25810e68554d4a59">SetBaseMSize</a>(size);</div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>            }</div>
-<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span> </div>
-<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>            <span class="keywordflow">if</span> (flagHeight)</div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>            {</div>
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>                <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7">mainWindow</a>()-&gt;<a class="code hl_function" href="../../d8/d61/classTMainWindow.html#a91b1f81aaf4b4e363570bfbcfdd98ee8">SetBaseMHeight</a>(height);</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>            }</div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span> </div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>            <span class="keywordflow">if</span> (flagUnit)</div>
-<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>            {</div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>                <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7">mainWindow</a>()-&gt;<a class="code hl_function" href="../../d8/d61/classTMainWindow.html#ab9445c5c862b557633d79689d114df8e">setPUnit</a>(unit);</div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>            }</div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>        }</div>
-<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>    }</div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>    {</div>
-<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d0/d17/classApplicationME.html#acdddbcebd71f412014515e2c7dfe0884">m_testMode</a>)</div>
-<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>        {</div>
-<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>            <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a89d2c1660d841524880b60474a3a943e">newMainWindow</a>();</div>
-<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>        }</div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>        {</div>
-<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>            qCCritical(mApp, <span class="stringliteral">&quot;%s\n&quot;</span>, qPrintable(tr(<span class="stringliteral">&quot;Please, provide one input file.&quot;</span>)));</div>
-<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>            parser.showHelp(<a class="code hl_variable" href="../../dd/d3c/vsysexits_8h.html#a13607be54c810a5f56b89d13802a304c">V_EX_USAGE</a>);</div>
-<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>        }</div>
-<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>    }</div>
-<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span> </div>
-<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d0/d17/classApplicationME.html#acdddbcebd71f412014515e2c7dfe0884">m_testMode</a>)</div>
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>    {</div>
-<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>        <a class="code hl_define" href="../../d1/da2/application__me_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;exit(<a class="code hl_variable" href="../../dd/d3c/vsysexits_8h.html#a4dcd09b083c5b129d2ca67232211c94d">V_EX_OK</a>); <span class="comment">// close program after processing in console mode</span></div>
-<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>    }</div>
-<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>}</div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>    }</div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span> </div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>    <span class="keyword">const</span> QStringList args = parser.positionalArguments();</div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>    <span class="keywordflow">if</span> (args.count() &gt; 0)</div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>    {</div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d0/d17/classApplicationME.html#acdddbcebd71f412014515e2c7dfe0884">m_testMode</a> &amp;&amp; args.count() &gt; 1)</div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>        {</div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>            qCCritical(mApp, <span class="stringliteral">&quot;%s\n&quot;</span>, qPrintable(tr(<span class="stringliteral">&quot;Test mode doesn&#39;t support Opening several files.&quot;</span>)));</div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>            parser.showHelp(<a class="code hl_variable" href="../../dd/d3c/vsysexits_8h.html#a13607be54c810a5f56b89d13802a304c">V_EX_USAGE</a>);</div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>        }</div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span> </div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; args.size(); ++i)</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>        {</div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>            <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a89d2c1660d841524880b60474a3a943e">newMainWindow</a>();</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7">mainWindow</a>()-&gt;LoadFile(args.at(i)))</div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>            {</div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d0/d17/classApplicationME.html#acdddbcebd71f412014515e2c7dfe0884">m_testMode</a>)</div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>                {</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>                    <span class="keywordflow">return</span>; <span class="comment">// process only one input file</span></div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>                }</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>                <span class="keyword">delete</span> <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7">mainWindow</a>();</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>            }</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span> </div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>            <span class="keywordflow">if</span> (flagSize)</div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>            {</div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>                <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7">mainWindow</a>()-&gt;<a class="code hl_function" href="../../d8/d61/classTMainWindow.html#a0043bdd7863d4d2c25810e68554d4a59">SetBaseMSize</a>(size);</div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>            }</div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span> </div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>            <span class="keywordflow">if</span> (flagHeight)</div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>            {</div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>                <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7">mainWindow</a>()-&gt;<a class="code hl_function" href="../../d8/d61/classTMainWindow.html#a91b1f81aaf4b4e363570bfbcfdd98ee8">SetBaseMHeight</a>(height);</div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>            }</div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span> </div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>            <span class="keywordflow">if</span> (flagUnit)</div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>            {</div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>                <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7">mainWindow</a>()-&gt;<a class="code hl_function" href="../../d8/d61/classTMainWindow.html#ab9445c5c862b557633d79689d114df8e">setPUnit</a>(unit);</div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>            }</div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>        }</div>
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>    }</div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>    {</div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d0/d17/classApplicationME.html#acdddbcebd71f412014515e2c7dfe0884">m_testMode</a>)</div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>        {</div>
+<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>            <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a89d2c1660d841524880b60474a3a943e">newMainWindow</a>();</div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>        }</div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>        {</div>
+<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>            qCCritical(mApp, <span class="stringliteral">&quot;%s\n&quot;</span>, qPrintable(tr(<span class="stringliteral">&quot;Please, provide one input file.&quot;</span>)));</div>
+<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>            parser.showHelp(<a class="code hl_variable" href="../../dd/d3c/vsysexits_8h.html#a13607be54c810a5f56b89d13802a304c">V_EX_USAGE</a>);</div>
+<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>        }</div>
+<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>    }</div>
+<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span> </div>
+<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d0/d17/classApplicationME.html#acdddbcebd71f412014515e2c7dfe0884">m_testMode</a>)</div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>    {</div>
+<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>        <a class="code hl_define" href="../../d1/da2/application__me_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;exit(<a class="code hl_variable" href="../../dd/d3c/vsysexits_8h.html#a4dcd09b083c5b129d2ca67232211c94d">V_EX_OK</a>); <span class="comment">// close program after processing in console mode</span></div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>    }</div>
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>}</div>
 </div>
-<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span> </div>
-<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="foldopen" id="foldopen00746" data-start="{" data-end="}">
-<div class="line"><a id="l00746" name="l00746"></a><span class="lineno"><a class="line" href="../../d0/d17/classApplicationME.html#a89d2c1660d841524880b60474a3a943e">  746</a></span><a class="code hl_class" href="../../d8/d61/classTMainWindow.html">TMainWindow</a> *<a class="code hl_function" href="../../d0/d17/classApplicationME.html#a89d2c1660d841524880b60474a3a943e">ApplicationME::newMainWindow</a>()</div>
-<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>{</div>
-<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>    <a class="code hl_class" href="../../d8/d61/classTMainWindow.html">TMainWindow</a> *seamlyme = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d61/classTMainWindow.html">TMainWindow</a>();</div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>    <a class="code hl_variable" href="../../d0/d17/classApplicationME.html#a1c7b711afa46c9e292d520075e8c757b">m_mainWindows</a>.prepend(seamlyme);</div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>    <span class="keywordflow">if</span> (!<a class="code hl_define" href="../../d1/da2/application__me_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;isTestMode())</div>
-<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>    {</div>
-<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>        seamlyme-&gt;show();</div>
-<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>    }</div>
-<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>    <span class="keywordflow">return</span> seamlyme;</div>
-<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>}</div>
+<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span> </div>
+<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="foldopen" id="foldopen00744" data-start="{" data-end="}">
+<div class="line"><a id="l00744" name="l00744"></a><span class="lineno"><a class="line" href="../../d0/d17/classApplicationME.html#a89d2c1660d841524880b60474a3a943e">  744</a></span><a class="code hl_class" href="../../d8/d61/classTMainWindow.html">TMainWindow</a> *<a class="code hl_function" href="../../d0/d17/classApplicationME.html#a89d2c1660d841524880b60474a3a943e">ApplicationME::newMainWindow</a>()</div>
+<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>{</div>
+<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>    <a class="code hl_class" href="../../d8/d61/classTMainWindow.html">TMainWindow</a> *seamlyme = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d61/classTMainWindow.html">TMainWindow</a>();</div>
+<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>    <a class="code hl_variable" href="../../d0/d17/classApplicationME.html#a1c7b711afa46c9e292d520075e8c757b">m_mainWindows</a>.prepend(seamlyme);</div>
+<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>    <span class="keywordflow">if</span> (!<a class="code hl_define" href="../../d1/da2/application__me_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;isTestMode())</div>
+<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>    {</div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>        seamlyme-&gt;show();</div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>    }</div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>    <span class="keywordflow">return</span> seamlyme;</div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>}</div>
 </div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span> </div>
-<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="foldopen" id="foldopen00758" data-start="{" data-end="}">
-<div class="line"><a id="l00758" name="l00758"></a><span class="lineno"><a class="line" href="../../d0/d17/classApplicationME.html#a7c2c8e8d2b3115764579186b38e4cdff">  758</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="../../d0/d17/classApplicationME.html#a7c2c8e8d2b3115764579186b38e4cdff">ApplicationME::processCommandLine</a>()</div>
-<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>{</div>
-<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>    <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a532997c840c5d6f6fe67da2be4b3b1b1">parseCommandLine</a>(<a class="code hl_enumvalue" href="../../d1/da2/application__me_8h.html#a38acd93203253241a2ac37bd3ff04fdfa577d7068826de925ea2aec01dbadf5e4">SocketConnection::Client</a>, arguments());</div>
-<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>}</div>
+<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span> </div>
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="foldopen" id="foldopen00756" data-start="{" data-end="}">
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno"><a class="line" href="../../d0/d17/classApplicationME.html#a7c2c8e8d2b3115764579186b38e4cdff">  756</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="../../d0/d17/classApplicationME.html#a7c2c8e8d2b3115764579186b38e4cdff">ApplicationME::processCommandLine</a>()</div>
+<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>{</div>
+<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>    <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a532997c840c5d6f6fe67da2be4b3b1b1">parseCommandLine</a>(<a class="code hl_enumvalue" href="../../d1/da2/application__me_8h.html#a38acd93203253241a2ac37bd3ff04fdfa577d7068826de925ea2aec01dbadf5e4">SocketConnection::Client</a>, arguments());</div>
+<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>}</div>
 </div>
-<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span> </div>
-<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="foldopen" id="foldopen00764" data-start="{" data-end="}">
-<div class="line"><a id="l00764" name="l00764"></a><span class="lineno"><a class="line" href="../../d0/d17/classApplicationME.html#a5cc817ad0f5c5d96003dabcfde374113">  764</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="../../d0/d17/classApplicationME.html#a5cc817ad0f5c5d96003dabcfde374113">ApplicationME::newLocalSocketConnection</a>()</div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>{</div>
-<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>    QLocalSocket *socket = <a class="code hl_variable" href="../../d0/d17/classApplicationME.html#ae68d0db8a1fd101ee6dc74e1e955a496">m_localServer</a>-&gt;nextPendingConnection();</div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>    <span class="keywordflow">if</span> (!socket)</div>
-<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>    {</div>
-<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>    }</div>
-<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>    socket-&gt;waitForReadyRead(1000);</div>
-<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>    QTextStream stream(socket);</div>
-<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>    <span class="keyword">const</span> QString arg = stream.readAll();</div>
-<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>    <span class="keywordflow">if</span> (!arg.isEmpty())</div>
-<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>    {</div>
-<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>        <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a532997c840c5d6f6fe67da2be4b3b1b1">parseCommandLine</a>(<a class="code hl_enumvalue" href="../../d1/da2/application__me_8h.html#a38acd93203253241a2ac37bd3ff04fdfa9aa1b03934893d7134a660af4204f2a9">SocketConnection::Server</a>, arg.split(<span class="stringliteral">&quot;;;&quot;</span>));</div>
-<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>    }</div>
-<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>    <span class="keyword">delete</span> socket;</div>
-<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>    <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7">mainWindow</a>()-&gt;raise();</div>
-<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>    <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7">mainWindow</a>()-&gt;activateWindow();</div>
-<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>}</div>
+<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span> </div>
+<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="foldopen" id="foldopen00762" data-start="{" data-end="}">
+<div class="line"><a id="l00762" name="l00762"></a><span class="lineno"><a class="line" href="../../d0/d17/classApplicationME.html#a5cc817ad0f5c5d96003dabcfde374113">  762</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="../../d0/d17/classApplicationME.html#a5cc817ad0f5c5d96003dabcfde374113">ApplicationME::newLocalSocketConnection</a>()</div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>{</div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>    QLocalSocket *socket = <a class="code hl_variable" href="../../d0/d17/classApplicationME.html#ae68d0db8a1fd101ee6dc74e1e955a496">m_localServer</a>-&gt;nextPendingConnection();</div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>    <span class="keywordflow">if</span> (!socket)</div>
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>    {</div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>    }</div>
+<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>    socket-&gt;waitForReadyRead(1000);</div>
+<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>    QTextStream stream(socket);</div>
+<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>    <span class="keyword">const</span> QString arg = stream.readAll();</div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>    <span class="keywordflow">if</span> (!arg.isEmpty())</div>
+<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>    {</div>
+<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>        <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a532997c840c5d6f6fe67da2be4b3b1b1">parseCommandLine</a>(<a class="code hl_enumvalue" href="../../d1/da2/application__me_8h.html#a38acd93203253241a2ac37bd3ff04fdfa9aa1b03934893d7134a660af4204f2a9">SocketConnection::Server</a>, arg.split(<span class="stringliteral">&quot;;;&quot;</span>));</div>
+<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>    }</div>
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>    <span class="keyword">delete</span> socket;</div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>    <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7">mainWindow</a>()-&gt;raise();</div>
+<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>    <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7">mainWindow</a>()-&gt;activateWindow();</div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>}</div>
 </div>
-<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span> </div>
-<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="foldopen" id="foldopen00784" data-start="{" data-end="}">
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno"><a class="line" href="../../d0/d17/classApplicationME.html#a63cd5bc7b6021df1e27cff2b3e537838">  784</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a63cd5bc7b6021df1e27cff2b3e537838">ApplicationME::clean</a>()</div>
-<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>{</div>
-<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>    <span class="comment">// cleanup any deleted main windows first</span></div>
-<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <a class="code hl_variable" href="../../d0/d17/classApplicationME.html#a1c7b711afa46c9e292d520075e8c757b">m_mainWindows</a>.count() - 1; i &gt;= 0; --i)</div>
-<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>    {</div>
-<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d0/d17/classApplicationME.html#a1c7b711afa46c9e292d520075e8c757b">m_mainWindows</a>.at(i).isNull())</div>
-<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>        {</div>
-<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>            <a class="code hl_variable" href="../../d0/d17/classApplicationME.html#a1c7b711afa46c9e292d520075e8c757b">m_mainWindows</a>.removeAt(i);</div>
-<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>        }</div>
-<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>    }</div>
-<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>}</div>
+<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span> </div>
+<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="foldopen" id="foldopen00782" data-start="{" data-end="}">
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno"><a class="line" href="../../d0/d17/classApplicationME.html#a63cd5bc7b6021df1e27cff2b3e537838">  782</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/d17/classApplicationME.html#a63cd5bc7b6021df1e27cff2b3e537838">ApplicationME::clean</a>()</div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>{</div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>    <span class="comment">// cleanup any deleted main windows first</span></div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <a class="code hl_variable" href="../../d0/d17/classApplicationME.html#a1c7b711afa46c9e292d520075e8c757b">m_mainWindows</a>.count() - 1; i &gt;= 0; --i)</div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>    {</div>
+<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d0/d17/classApplicationME.html#a1c7b711afa46c9e292d520075e8c757b">m_mainWindows</a>.at(i).isNull())</div>
+<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>        {</div>
+<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>            <a class="code hl_variable" href="../../d0/d17/classApplicationME.html#a1c7b711afa46c9e292d520075e8c757b">m_mainWindows</a>.removeAt(i);</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>        }</div>
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>    }</div>
+<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>}</div>
 </div>
 <div class="ttc" id="aapplication__2d_8cpp_html_ac1c6657d17ee680cf99fb509cd9b2cbd"><div class="ttname"><a href="../../df/d3e/application__2d_8cpp.html#ac1c6657d17ee680cf99fb509cd9b2cbd">noisyFailureMsgHandler</a></div><div class="ttdeci">void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &amp;context, const QString &amp;msg)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d3e/application__2d_8cpp_source.html#l00092">application_2d.cpp:92</a></div></div>
 <div class="ttc" id="aapplication__2d_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d61/application__2d_8h_source.html#l00066">application_2d.h:66</a></div></div>
@@ -958,12 +956,12 @@ $(document).ready(function(){initNavTree('d8/dd0/application__me_8cpp_source.htm
 <div class="ttc" id="aclassApplicationME_html_a49c74a9b0bd5eaaa464ff05e0c9478f8"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a49c74a9b0bd5eaaa464ff05e0c9478f8">ApplicationME::m_trVars</a></div><div class="ttdeci">VTranslateVars * m_trVars</div><div class="ttdef"><b>Definition</b> <a href="../../d1/da2/application__me_8h_source.html#l00116">application_me.h:116</a></div></div>
 <div class="ttc" id="aclassApplicationME_html_a4ca43738f3ae272adc5a804d2071a3da"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a4ca43738f3ae272adc5a804d2071a3da">ApplicationME::isAppInGUIMode</a></div><div class="ttdeci">virtual bool isAppInGUIMode() const Q_DECL_OVERRIDE</div><div class="ttdoc">isAppInGUIMode little hack that allow to have access to application state from VAbstractApplication c...</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00371">application_me.cpp:371</a></div></div>
 <div class="ttc" id="aclassApplicationME_html_a532997c840c5d6f6fe67da2be4b3b1b1"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a532997c840c5d6f6fe67da2be4b3b1b1">ApplicationME::parseCommandLine</a></div><div class="ttdeci">void parseCommandLine(const SocketConnection &amp;connection, const QStringList &amp;arguments)</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00552">application_me.cpp:552</a></div></div>
-<div class="ttc" id="aclassApplicationME_html_a5cc817ad0f5c5d96003dabcfde374113"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a5cc817ad0f5c5d96003dabcfde374113">ApplicationME::newLocalSocketConnection</a></div><div class="ttdeci">void newLocalSocketConnection()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00764">application_me.cpp:764</a></div></div>
-<div class="ttc" id="aclassApplicationME_html_a63cd5bc7b6021df1e27cff2b3e537838"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a63cd5bc7b6021df1e27cff2b3e537838">ApplicationME::clean</a></div><div class="ttdeci">void clean()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00784">application_me.cpp:784</a></div></div>
+<div class="ttc" id="aclassApplicationME_html_a5cc817ad0f5c5d96003dabcfde374113"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a5cc817ad0f5c5d96003dabcfde374113">ApplicationME::newLocalSocketConnection</a></div><div class="ttdeci">void newLocalSocketConnection()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00762">application_me.cpp:762</a></div></div>
+<div class="ttc" id="aclassApplicationME_html_a63cd5bc7b6021df1e27cff2b3e537838"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a63cd5bc7b6021df1e27cff2b3e537838">ApplicationME::clean</a></div><div class="ttdeci">void clean()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00782">application_me.cpp:782</a></div></div>
 <div class="ttc" id="aclassApplicationME_html_a7667d0abd29b03c1f01e934e796ee648"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a7667d0abd29b03c1f01e934e796ee648">ApplicationME::retranslateTables</a></div><div class="ttdeci">void retranslateTables()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00542">application_me.cpp:542</a></div></div>
-<div class="ttc" id="aclassApplicationME_html_a7c2c8e8d2b3115764579186b38e4cdff"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a7c2c8e8d2b3115764579186b38e4cdff">ApplicationME::processCommandLine</a></div><div class="ttdeci">void processCommandLine()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00758">application_me.cpp:758</a></div></div>
+<div class="ttc" id="aclassApplicationME_html_a7c2c8e8d2b3115764579186b38e4cdff"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a7c2c8e8d2b3115764579186b38e4cdff">ApplicationME::processCommandLine</a></div><div class="ttdeci">void processCommandLine()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00756">application_me.cpp:756</a></div></div>
 <div class="ttc" id="aclassApplicationME_html_a86e44c8e1e53c2cd328f98ed389185c9"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a86e44c8e1e53c2cd328f98ed389185c9">ApplicationME::initOptions</a></div><div class="ttdeci">void initOptions()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00400">application_me.cpp:400</a></div></div>
-<div class="ttc" id="aclassApplicationME_html_a89d2c1660d841524880b60474a3a943e"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a89d2c1660d841524880b60474a3a943e">ApplicationME::newMainWindow</a></div><div class="ttdeci">TMainWindow * newMainWindow()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00746">application_me.cpp:746</a></div></div>
+<div class="ttc" id="aclassApplicationME_html_a89d2c1660d841524880b60474a3a943e"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a89d2c1660d841524880b60474a3a943e">ApplicationME::newMainWindow</a></div><div class="ttdeci">TMainWindow * newMainWindow()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00744">application_me.cpp:744</a></div></div>
 <div class="ttc" id="aclassApplicationME_html_a92bc910bf85274c708e6d44dc5e685c7"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a92bc910bf85274c708e6d44dc5e685c7">ApplicationME::mainWindow</a></div><div class="ttdeci">TMainWindow * mainWindow()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00377">application_me.cpp:377</a></div></div>
 <div class="ttc" id="aclassApplicationME_html_a9948301625587dd64e344f8a43be2e91"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#a9948301625587dd64e344f8a43be2e91">ApplicationME::m_dataBase</a></div><div class="ttdeci">QPointer&lt; MeasurementDatabaseDialog &gt; m_dataBase</div><div class="ttdef"><b>Definition</b> <a href="../../d1/da2/application__me_8h_source.html#l00117">application_me.h:117</a></div></div>
 <div class="ttc" id="aclassApplicationME_html_aa72065447b0510d61ee84c57e3b35d3c"><div class="ttname"><a href="../../d0/d17/classApplicationME.html#aa72065447b0510d61ee84c57e3b35d3c">ApplicationME::initTranslateVariables</a></div><div class="ttdeci">virtual void initTranslateVariables() Q_DECL_OVERRIDE</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dd0/application__me_8cpp_source.html#l00438">application_me.cpp:438</a></div></div>
