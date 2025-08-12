@@ -36,7 +36,6 @@ jobs:
           echo "VERSION_NUMBER=$(date +%Y.%-m.%-d.%-H%M)" >> $GITHUB_ENV
 
   linux-test:
-    # if: github.event_name == 'pull_request'
     name: 'Linux: Run unit tests'
     runs-on: ubuntu-20.04
     needs: version
@@ -73,14 +72,14 @@ jobs:
 
   linux:
     name: 'Linux: Build AppImage'
-    # build on the oldest supported LTS so that resulting binaries are compatible with older and newer Linux releases
-    runs-on: ubuntu-20.04  
+    runs-on: ubuntu-20.04
     needs: version
     env:
-      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}  
 
     steps:
-      - uses: actions/checkout@v4
+      - name: checkout code
+        uses: actions/checkout@v4
 
       - name: install application dependencies
         run: |
@@ -111,23 +110,58 @@ jobs:
           sudo chmod +x /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
           echo "Completed installing AppImage dependencies"          
 
-      - name: build seamly2d appimage
-        # env:
-          # linuxdeploy-x86_64.AppImage uses this env var as name for AppImage
-          # OUTPUT: Seamly2D-x86_64.AppImage  
+      - name: debug environment
         run: |
-          echo "build the seamly2d and seamlyme executables, save to AppDir directory"
+          echo "=== Environment Debug ==="
+          pwd
+          ls -la
+          which linuxdeploy-x86_64.AppImage
+          linuxdeploy-x86_64.AppImage --version
+          echo "=== Qt Debug ==="
+          qmake -v
+          echo "=== System Info ==="
+          df -h
+          free -h
+          nproc
+
+      - name: verify AppImage tools
+        run: |
+          echo "=== AppImage Tool Verification ==="
+          ls -la /usr/local/bin/linuxdeploy*
+          file /usr/local/bin/linuxdeploy-x86_64.AppImage
+          /usr/local/bin/linuxdeploy-x86_64.AppImage --version
+          /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage --version
+
+      - name: build seamly2d appimage - step 1
+        timeout-minutes: 15
+        run: |
+          set -x  # Enable verbose logging
+          echo "Step 1: Building executables"
           qmake -config release CONFIG+=noTests
-          make -j$(nproc)
+          make -j$(nproc) VERBOSE=1
+
+      - name: build seamly2d appimage - step 2  
+        timeout-minutes: 5
+        run: |
+          set -x  # Enable verbose logging
+          echo "Step 2: Creating AppDir"
           make INSTALL_ROOT=`pwd`/AppDir install
-          
-          echo "copy additional binaries, libraries, etc. into the AppDir directory structure"
+
+      - name: build seamly2d appimage - step 3
+        timeout-minutes: 5
+        run: |
+          set -x  # Enable verbose logging
+          echo "Step 3: Copying additional files"
           cp /usr/bin/pdftops AppDir/usr/bin
           mkdir -p AppDir/usr/share/X11/xkb
           cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
 
-          echo "bundle everything from AppDir into an AppImage"
-          linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
+      - name: build seamly2d appimage - step 4
+        timeout-minutes: 10
+        run: |
+          set -x  # Enable verbose logging
+          echo "Step 4: Creating AppImage"
+          linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage --verbose
 
       - name: upload appimage files
         uses: actions/upload-artifact@v4
@@ -135,7 +169,6 @@ jobs:
           name: Seamly2D-x86_64.AppImage
           path: Seamly2D-x86_64.AppImage
           if-no-files-found: error
- 
 
   macos:
     name: 'macOS: Build'
