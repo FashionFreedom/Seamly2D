@@ -102,60 +102,18 @@ jobs:
         run: |
           ./scripts/version.sh ${VERSION_NUMBER}
 
-      - name: debug environment
-        run: |
-          echo "=== Environment Debug ==="
-          pwd
-          ls -la
-          which linuxdeploy-x86_64.AppImage
-          linuxdeploy-x86_64.AppImage --version
-          echo "=== Qt Debug ==="
-          qmake -v
-          echo "=== System Info ==="
-          df -h
-          free -h
-          nproc
-
-      - name: verify AppImage tools
-        run: |
-          echo "=== AppImage Tool Verification ==="
-          ls -la /usr/local/bin/linuxdeploy*
-          file /usr/local/bin/linuxdeploy-x86_64.AppImage
-          /usr/local/bin/linuxdeploy-x86_64.AppImage --version
-          /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage --version
-
-      - name: build seamly2d appimage - step 1
-        timeout-minutes: 15
-        run: |
-          set -x  # Enable verbose logging
-          echo "Step 1: Building executables"
-          qmake -config release CONFIG+=noTests
-          make -j$(nproc) VERBOSE=1
-
-      - name: build seamly2d appimage - step 2  
-        timeout-minutes: 5
-        run: |
-          set -x  # Enable verbose logging
-          echo "Step 2: Creating AppDir"
-          make INSTALL_ROOT=`pwd`/AppDir install
-
-      - name: build seamly2d appimage - step 3
-        timeout-minutes: 5
-        run: |
-          set -x  # Enable verbose logging
-          echo "Step 3: Copying additional files"
-          cp /usr/bin/pdftops AppDir/usr/bin
-          mkdir -p AppDir/usr/share/X11/xkb
-          cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
-
-      - name: build seamly2d appimage - step 4
-        timeout-minutes: 10
+      - name: build Seamly2D appimage
         env:
           OUTPUT: Seamly2D-x86_64.AppImage  # linuxdeploy-x86_64.AppImage uses this env var as name for AppImage
         run: |
-          set -x  # Enable verbose logging
-          echo "Step 4: Creating AppImage"
-          linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage --verbose
+          qmake -config release CONFIG+=noTests
+          make -j$(nproc)
+          make INSTALL_ROOT=`pwd`/AppDir install
+          
+          cp /usr/bin/pdftops AppDir/usr/bin
+          mkdir -p AppDir/usr/share/X11/xkb
+          cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
+          linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
 
       - uses: actions/upload-artifact@v4
         with:
