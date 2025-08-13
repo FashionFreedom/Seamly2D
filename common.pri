@@ -23,6 +23,10 @@ unix{
     }
 }
 
+macx{
+    QMAKE_APPLE_DEVICE_ARCHS = x86_64 arm64
+}
+
 # See question on StackOwerflow "QSslSocket error when SSL is NOT used" (http://stackoverflow.com/a/31277055/3045403)
 # Copy of answer:
 # We occasionally had customers getting very similar warning messages but the software was also crashing.
