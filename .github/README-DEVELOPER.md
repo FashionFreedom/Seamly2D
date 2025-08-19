@@ -105,3 +105,10 @@ ___________________________________________________
           nmake      # (or jom. Assign multiple CPUs to speed up compilation time but don't use all - leave at least one CPU for your OS.)
           ```
       * Copy the `C:\Program Files\Xpdf\bin64\pdftops.exe` (or bin32) file to the Seamly build directory to enable creation of post script (.ps and .eps) pattern piece layouts.
+
+_______________________________________________________________
+## Fonts, Icons, Images
+1. Seamly uses the user's system font by default.
+2. Application preferences allows the user to select fonts for labels, etc.
+3. Use .pngs instead of .svgs when type is involved, if icons or images then use svg.
+4. Images imported into a pattern file are .png format and stored in the c:\program files (x86)\seamly2d\img folder, and similar folders for linux and macos.
