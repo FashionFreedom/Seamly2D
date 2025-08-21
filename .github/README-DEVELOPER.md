@@ -109,6 +109,6 @@ ___________________________________________________
 _______________________________________________________________
 ## Fonts, Icons, Images
 1. Seamly uses the user's system font by default.
-2. Application preferences allows the user to select fonts for labels, etc.
-3. Use .pngs instead of .svgs when type is involved, if icons or images then use svg.
-4. Images imported into a pattern file are .png format and stored in the c:\program files (x86)\seamly2d\img folder, and similar folders for linux and macos.
+2. Application preferences allow the user to select from installed fonts for use in pattern labels.
+3. For icons and pixmaps use an svg, unless the svg contains text, in which case use a png to avoid missing font issues for the user. 
+4. Images imported into a pattern can be in either png, jpg, or bmp format, and are stored in the pattern file as a bytearray. 
