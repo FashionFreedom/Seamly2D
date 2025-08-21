@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['dash_5fpunctuation_0',['DASH_PUNCTUATION',['../dd/d02/classXMLUniCharacter.html#a1ab8b1de68bfcb71e9029d1ff4c1bfc4a1fab8763055c9da4d3ff968970360299',1,'XMLUniCharacter']]],
+  ['dash_5fpunctuation_0',['DASH_PUNCTUATION',['../dd/d02/classXMLUniCharacter.html#a6f38eb37f0042c27a67f7179e132893ba1fab8763055c9da4d3ff968970360299',1,'XMLUniCharacter']]],
   ['datatypeerror_1',['DatatypeError',['../d5/dc5/classXMLValid.html#ac30e7f5d9612c52f5f1208c83f090c86a97b50e4f92e375e3997497378c41d2a9',1,'XMLValid']]],
   ['datatypevalidationfailure_2',['DatatypeValidationFailure',['../d5/dc5/classXMLValid.html#ac30e7f5d9612c52f5f1208c83f090c86abf67349043b83e4b4de34db9815ae23c',1,'XMLValid']]],
   ['datatypevalidatorcreationerror_3',['DatatypeValidatorCreationError',['../d7/d8e/classXMLErrs.html#aefe9817ef5442905d86fd17cb0c35e47a6e98dbd3a0cf70e2c4ed08b3d476366c',1,'XMLErrs']]],
@@ -45,7 +45,7 @@ var searchData=
   ['decimal_5fderived_5fnpi_42',['Decimal_Derived_npi',['../d7/d4e/classXMLCanRepGroup.html#a979a7425830f6c9544d1f1a965040fd0a8b53558e0c06c29c6f34f8dcdcd90b9c',1,'XMLCanRepGroup']]],
   ['decimal_5fderived_5fsigned_43',['Decimal_Derived_signed',['../d7/d4e/classXMLCanRepGroup.html#a979a7425830f6c9544d1f1a965040fd0a41c58ec3ef247861f3c829b3085b1cd5',1,'XMLCanRepGroup']]],
   ['decimal_5fderived_5funsigned_44',['Decimal_Derived_unsigned',['../d7/d4e/classXMLCanRepGroup.html#a979a7425830f6c9544d1f1a965040fd0a2a4d0f127cb24172a6069a5641cdfd82',1,'XMLCanRepGroup']]],
-  ['decimal_5fdigit_5fnumber_45',['DECIMAL_DIGIT_NUMBER',['../dd/d02/classXMLUniCharacter.html#a1ab8b1de68bfcb71e9029d1ff4c1bfc4a62ba6279e67597b79a136cacb18e4b98',1,'XMLUniCharacter']]],
+  ['decimal_5fdigit_5fnumber_45',['DECIMAL_DIGIT_NUMBER',['../dd/d02/classXMLUniCharacter.html#a6f38eb37f0042c27a67f7179e132893ba62ba6279e67597b79a136cacb18e4b98',1,'XMLUniCharacter']]],
   ['decl_5ftext_46',['Decl_Text',['../de/d5f/classXMLScanner.html#a14be2ff52c97e487bb2cc4253beddb93ab98eaf4a02273f608a5f26db2a4142f4',1,'XMLScanner']]],
   ['decl_5fxml_47',['Decl_XML',['../de/d5f/classXMLScanner.html#a14be2ff52c97e487bb2cc4253beddb93aa0bc83ac427ac87dd098d4f56b4f9930',1,'XMLScanner']]],
   ['declarationnoschemalocation_48',['DeclarationNoSchemaLocation',['../d7/d8e/classXMLErrs.html#aefe9817ef5442905d86fd17cb0c35e47a4424b432840158deab8c4c66e77a90a7',1,'XMLErrs']]],
