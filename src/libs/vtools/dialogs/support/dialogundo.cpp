@@ -86,7 +86,6 @@ DialogUndo::DialogUndo(QWidget *parent)
         result = UndoButton::Fix;
         accept();
     });
-    connect(ui->pushButtonCancel, &QPushButton::clicked, this, &DialogUndo::Cancel);
 
     setCursor(Qt::ArrowCursor);
 }
