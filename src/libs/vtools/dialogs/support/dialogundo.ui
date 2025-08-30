@@ -3,7 +3,7 @@
  <class>DialogUndo</class>
  <widget class="QDialog" name="DialogUndo">
   <property name="windowModality">
-   <enum>Qt::WindowModal</enum>
+   <enum>Qt::WindowModality::WindowModal</enum>
   </property>
   <property name="geometry">
    <rect>
@@ -29,7 +29,8 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Error while calculation formula. You can try to undo last operation or fix broken formula.</string>
+        <string>Seamly2D encountered an error while computing a formula. 
+Please try to undo the latest operation or fix the broken formula.</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>
@@ -49,13 +50,6 @@
         <widget class="QPushButton" name="pushButtonFix">
          <property name="text">
           <string>&amp;Fix formula</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButtonCancel">
-         <property name="text">
-          <string>Cancel</string>
          </property>
         </widget>
        </item>
