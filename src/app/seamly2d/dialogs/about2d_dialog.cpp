@@ -123,13 +123,13 @@ About2DAppDialog::About2DAppDialog(QWidget *parent)
 	connect(ui->pushButtonCheckUpdate, &QPushButton::clicked, []()
 	{
 		// Set feed URL before doing anything else
-		FvUpdater::sharedUpdater()->SetFeedURL(defaultFeedURL);
-		FvUpdater::sharedUpdater()->CheckForUpdatesNotSilent();
+		FvUpdater::sharedUpdater()->setFeedURL(defaultFeedURL);
+		FvUpdater::sharedUpdater()->checkForUpdatesNotSilent();
 	});
 
 	ui->downloadProgress->hide();
 	ui->downloadProgress->setValue(0);
-	connect(FvUpdater::sharedUpdater(), SIGNAL(setProgress(int)), this, SLOT(setProgressValue(int)));
+	connect(FvUpdater::sharedUpdater(), &FvUpdater::setProgress, this, &About2DAppDialog::setProgressValue);
 
     //System Tab
     ui->sysVersion_value->setText(QString("Seamly2D %1").arg(APP_VERSION_STR));
@@ -203,13 +203,16 @@ void About2DAppDialog::showEvent(QShowEvent *event)
 	m_isInitialized = true;//first show windows are held
 }
 
-void About2DAppDialog::setProgressValue(int val) {
-	if (!ui->downloadProgress->isVisible()){
+void About2DAppDialog::setProgressValue(int val)
+{
+	if (!ui->downloadProgress->isVisible())
+    {
 		ui->downloadProgress->show();
 		ui->pushButtonCheckUpdate->setDisabled(true);
 	}
 	ui->downloadProgress->setValue(val);
-	if (val == 100){
+	if (val == 100)
+    {
 		ui->downloadProgress->hide();
 		ui->downloadProgress->setValue(0);
 		ui->pushButtonCheckUpdate->setDisabled(false);
