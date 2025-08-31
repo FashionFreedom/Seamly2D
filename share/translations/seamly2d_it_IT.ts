@@ -3067,12 +3067,9 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Correggi formula</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>Cancel</translation>
-    </message>
-    <message>
-        <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
-        <translation>Errore durante la formula di calcolo. Prova ad annullare l&apos;ultima operazione o a correggere la formula errata.</translation>
+        <source>Seamly2D encountered an error while computing a formula. 
+Please try to undo the latest operation or fix the broken formula.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4892,9 +4889,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2024 Seamly2D Project.
+© 2017-2025 Seamly2D Project.
 
-Portions of this software © 2008-2024 The Qt Company Ltd.
+Portions of this software © 2008-2025 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D è un&apos;applicazione per la progettazione assistita da computer di modelli di abbigliamento.
@@ -4903,9 +4900,9 @@ Seamly2D è un software libero (open source).
 
 Tutti i nomi di marchi o prodotti sono marchi o marchi registrati dei rispettivi proprietari.
 
-© 2017-2024 Progetto Seamly2D.
+© 2017-2025 Progetto Seamly2D.
 
-Parti di questo software © 2008-2024 The Qt Company Ltd.
+Parti di questo software © 2008-2025 The Qt Company Ltd.
 
 Il programma viene fornito così com&apos;è, senza alcuna garanzia di alcun tipo, comprese le garanzie di progettazione, commerciabilità e idoneità a uno scopo particolare.</translation>
     </message>
@@ -8823,7 +8820,7 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     </message>
     <message>
         <source>User&apos;s System</source>
-        <translation>Sistema dell'utente</translation>
+        <translation>Sistema dell&apos;utente</translation>
     </message>
     <message>
         <source>Locale</source>
@@ -9866,7 +9863,7 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     </message>
     <message>
         <source>User&apos;s System</source>
-        <translation>Sistema dell'utente</translation>
+        <translation>Sistema dell&apos;utente</translation>
     </message>
     <message>
         <source>Locale</source>
@@ -10012,7 +10009,7 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     </message>
     <message>
         <source>User&apos;s System</source>
-        <translation>Sistema dell'utente</translation>
+        <translation>Sistema dell&apos;utente</translation>
     </message>
     <message>
         <source>Locale</source>
@@ -10111,7 +10108,7 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     </message>
     <message>
         <source>User&apos;s System</source>
-        <translation>Sistema dell'utente</translation>
+        <translation>Sistema dell&apos;utente</translation>
     </message>
     <message>
         <source>Locale</source>

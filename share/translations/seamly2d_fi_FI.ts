@@ -3082,12 +3082,9 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Korjaa matemaattinen kaava</translation>
     </message>
     <message>
-        <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
-        <translation>Kaavaa laskettaessa tapahtui virhe. Voit yrittää kumota viimeisimmän operaation tai korjata rikkinäisen kaavan.</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>Peruuttaa</translation>
+        <source>Seamly2D encountered an error while computing a formula. 
+Please try to undo the latest operation or fix the broken formula.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4904,9 +4901,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2024 Seamly2D Project.
+© 2017-2025 Seamly2D Project.
 
-Portions of this software © 2008-2024 The Qt Company Ltd.
+Portions of this software © 2008-2025 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D on sovellus tietokoneella avustettuun vaatekaavojen suunnitteluun.
@@ -4915,9 +4912,9 @@ Seamly2D on ilmainen (avoimen lähdekoodin) ohjelmisto.
 
 Kaikki tuotemerkit tai tuotenimet ovat omistajiensa tavaramerkkejä tai rekisteröityjä tavaramerkkejä.
 
-© 2017-2024 Seamly2D Project.
+© 2017-2025 Seamly2D Project.
 
-Osat tästä ohjelmistosta © 2008-2024 The Qt Company Ltd.
+Osat tästä ohjelmistosta © 2008-2025 The Qt Company Ltd.
 
 Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SUUNNITTELUN, MYYNTIKELPOISUUDEN JA TIETTYYN TARKOITUKSEEN SOPIVUUDEN TAKUU.</translation>
     </message>

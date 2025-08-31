@@ -3100,12 +3100,9 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Reparar fórmula</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>Cancelar</translation>
-    </message>
-    <message>
-        <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
-        <translation>Error al calcular la fórmula. Puede intentar deshacer las últimas operaciones o corregir la fórmula.</translation>
+        <source>Seamly2D encountered an error while computing a formula. 
+Please try to undo the latest operation or fix the broken formula.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4924,9 +4921,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2024 Seamly2D Project.
+© 2017-2025 Seamly2D Project.
 
-Portions of this software © 2008-2024 The Qt Company Ltd.
+Portions of this software © 2008-2025 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D es una aplicación para el diseño asistido por ordenador de patrones de prendas de vestir.
@@ -4935,9 +4932,9 @@ Seamly2D es un software gratuito (de código abierto).
 
 Todos los nombres de marcas o productos son marcas comerciales o marcas registradas de sus respectivos propietarios.
 
-2017-2024 Proyecto Seamly2D.
+2017-2025 Proyecto Seamly2D.
 
-Partes de este software © 2008-2024 The Qt Company Ltd.
+Partes de este software © 2008-2025 The Qt Company Ltd.
 
 El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LAS GARANTÍAS DE DISEÑO, COMERCIABILIDAD E IDONEIDAD PARA UN PROPÓSITO PARTICULAR.</translation>
     </message>
