@@ -3082,12 +3082,9 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Repară formula</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>Anulare</translation>
-    </message>
-    <message>
-        <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
-        <translation>Eroare la calcularea formulei. Puteți încerca să anulați ultima operațiune sau să remediați formula defectă.</translation>
+        <source>Seamly2D encountered an error while computing a formula. 
+Please try to undo the latest operation or fix the broken formula.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4906,9 +4903,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2024 Seamly2D Project.
+© 2017-2025 Seamly2D Project.
 
-Portions of this software © 2008-2024 The Qt Company Ltd.
+Portions of this software © 2008-2025 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D este o aplicație pentru proiectarea asistată de calculator a tiparelor de îmbrăcăminte.
@@ -4917,9 +4914,9 @@ Seamly2D este un software gratuit (open source).
 
 Toate numele de mărci sau produse sunt mărci comerciale sau mărci comerciale înregistrate ale deținătorilor respectivi.
 
-© 2017-2024 Seamly2D Project.
+© 2017-2025 Seamly2D Project.
 
-Porțiuni ale acestui software © 2008-2024 The Qt Company Ltd.
+Porțiuni ale acestui software © 2008-2025 The Qt Company Ltd.
 
 Programul este furnizat CA ATARE, FĂRĂ NICIUN FEL DE GARANȚIE, INCLUSIV GARANȚIA DE DESIGN, VANDABILITATE ȘI POTRIVIRE PENTRU UN ANUMIT SCOP.</translation>
     </message>

@@ -213,10 +213,10 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
     QAction *actionCopyToolLength = nullptr;
     QAction *actionCopyLineAngle = nullptr;
 
-    QAction *actionOption = menu.addAction(QIcon::fromTheme("preferences-other"), tr("Properties"));
+    QAction *actionOption = menu.addAction(QIcon::fromTheme("preferences-other"), VDrawTool::tr("Properties"));
 
     // Show object name menu item
-    QAction *actionShowPointName = menu.addAction(QIcon("://icon/16x16/open_eye.png"), tr("Show Point Name"));
+    QAction *actionShowPointName = menu.addAction(QIcon("://icon/16x16/open_eye.png"), VDrawTool::tr("Show Point Name"));
     actionShowPointName->setCheckable(true);
 
     if (itemType == GOType::Point)
@@ -229,9 +229,9 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
     }
 
     // Add Copy menu
-    QMenu *copyMenu = menu.addMenu(QIcon("://icon/32x32/clipboard_icon.png"), tr("Copy"));
-    actionCopyToolLength  = copyMenu->addAction(tr("Length"));
-    actionCopyLineAngle = copyMenu->addAction(tr("Angle"));
+    QMenu *copyMenu = menu.addMenu(QIcon("://icon/32x32/clipboard_icon.png"), VDrawTool::tr("Copy"));
+    actionCopyToolLength  = copyMenu->addAction(QCoreApplication::translate("VDrawTool", "Length"));
+    actionCopyLineAngle = copyMenu->addAction(QCoreApplication::translate("VDrawTool", "Angle"));
 
     // Only add the Angle submneu for the point tools that add a line.
     if (tooltype != Tool::Line &&
@@ -246,7 +246,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
         actionCopyLineAngle->setVisible(false);
     }
 
-    QAction *actionDelete = menu.addAction(QIcon::fromTheme("edit-delete"), tr("Delete"));
+    QAction *actionDelete = menu.addAction(QIcon::fromTheme("edit-delete"), VDrawTool::tr("Delete"));
     if (showRemove == RemoveOption::Enable)
     {
         if (ref == Referens::Follow)
@@ -282,7 +282,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
 
     if (!groupsContainingItem.empty() && !groupsNotContainingItem.empty())
     {
-        QMenu *menuMoveGroupItem = menu.addMenu(QIcon("://icon/svg/list-move.svg"), tr("Move Group Object"));
+        QMenu *menuMoveGroupItem = menu.addMenu(QIcon("://icon/svg/list-move.svg"), VDrawTool::tr("Move Group Object"));
         QStringList sourceList = QStringList(groupsContainingItem.values());
         QStringList destList   = QStringList(groupsNotContainingItem.values());
         sourceList.sort(Qt::CaseInsensitive);
@@ -294,7 +294,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
 
             for(int j=0; j < destList.count(); ++j)
             {
-                QAction *actionMoveGroupItem = menuMoveGroupItem->addAction(tr("From ") + sourceList[i] + tr(" to ") + destList[j]);
+                QAction *actionMoveGroupItem = menuMoveGroupItem->addAction(VDrawTool::tr("From ") + sourceList[i] + VDrawTool::tr(" to ") + destList[j]);
                 actionMoveGroupMenu->addAction(actionMoveGroupItem);
                 const quint32 destId = groupsNotContainingItem.key(destList[j]);
 
@@ -309,7 +309,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
     QActionGroup *actionAddGroupMenu= new QActionGroup(this);
     if (!groupsNotContainingItem.empty())
     {
-        QMenu *menuAddGroupItem = menu.addMenu(QIcon("://icon/32x32/add.png"), tr("Add Group Object"));
+        QMenu *menuAddGroupItem = menu.addMenu(QIcon("://icon/32x32/add.png"), VDrawTool::tr("Add Group Object"));
         QStringList list = QStringList(groupsNotContainingItem.values());
         list.sort(Qt::CaseInsensitive);
 
@@ -330,7 +330,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
 
     if (!groupsContainingItem.empty())
     {
-        QMenu *menuRemoveGroupItem = menu.addMenu(QIcon("://icon/32x32/remove.png"), tr("Remove Group Object"));
+        QMenu *menuRemoveGroupItem = menu.addMenu(QIcon("://icon/32x32/remove.png"), VDrawTool::tr("Remove Group Object"));
 
         QStringList list = QStringList(groupsContainingItem.values());
         list.sort(Qt::CaseInsensitive);
@@ -386,7 +386,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
                 const QDomElement domElement = doc->elementById(toolId);
                 if (domElement.isElement())
                 {
-                    text = tr("Line_") +
+                    text = VDrawTool::tr("Line_") +
                             data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrFirstPoint, "0"))->name() +
                             "_"+
                             data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrSecondPoint, "0"))->name();
@@ -398,7 +398,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
             {
                 const QSharedPointer<VArc> arc = data.GeometricObject<VArc>(toolId);
                 SCASSERT(!arc.isNull())
-                text = arc->NameForHistory(tr("Arc_"));
+                text = arc->NameForHistory(VDrawTool::tr("Arc_"));
                 break;
             }
             case Tool::ShoulderPoint:
@@ -432,7 +432,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
             {
                 const QSharedPointer<VEllipticalArc> elArc = data.GeometricObject<VEllipticalArc>(toolId);
                 SCASSERT(!elArc.isNull())
-                text = elArc->NameForHistory(tr("ElArc_"));
+                text = elArc->NameForHistory(VDrawTool::tr("ElArc_"));
                 break;
             }
 
@@ -440,7 +440,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
             {
                 const QSharedPointer<VSpline> spl = data.GeometricObject<VSpline>(toolId);
                 SCASSERT(!spl.isNull())
-                text = spl->NameForHistory(tr("Spl_"));
+                text = spl->NameForHistory(VDrawTool::tr("Spl_"));
                 break;
             }
 
@@ -448,7 +448,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
             {
                 const QSharedPointer<VSplinePath> splPath = data.GeometricObject<VSplinePath>(toolId);
                 SCASSERT(!splPath.isNull())
-                text = splPath->NameForHistory(tr("SplPath_"));
+                text = splPath->NameForHistory(VDrawTool::tr("SplPath_"));
                 break;
             }
 
@@ -456,7 +456,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
             {
                 const QSharedPointer<VCubicBezier> spl = data.GeometricObject<VCubicBezier>(toolId);
                 SCASSERT(!spl.isNull())
-                text = spl->NameForHistory(tr("Spl_"));
+                text = spl->NameForHistory(VDrawTool::tr("Spl_"));
                 break;
             }
 
@@ -464,7 +464,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
             {
                 const QSharedPointer<VCubicBezierPath> splPath = data.GeometricObject<VCubicBezierPath>(toolId);
                 SCASSERT(!splPath.isNull())
-                text = splPath->NameForHistory(tr("SplPath_"));
+                text = splPath->NameForHistory(VDrawTool::tr("SplPath_"));
                 break;
             }
 
@@ -540,7 +540,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
                 const QDomElement domElement = doc->elementById(toolId);
                 if (domElement.isElement())
                 {
-                    angleName = tr("AngleLine_") +
+                    angleName = VDrawTool::tr("AngleLine_") +
                             data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrFirstPoint, "0"))->name() +
                             "_"+
                             data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrSecondPoint, "0"))->name();
@@ -553,7 +553,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
                 const QDomElement domElement = doc->elementById(toolId);
                 if (domElement.isElement())
                 {
-                    angleName = tr("AngleLine_") +
+                    angleName = VDrawTool::tr("AngleLine_") +
                     data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrFirstPoint, "0"))->name() +
                     "_" +  data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, "id", "0"))->name();
                     break;
@@ -564,7 +564,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
                 const QDomElement domElement = doc->elementById(toolId);
                 if (domElement.isElement())
                 {
-                    angleName = tr("AngleLine_") +
+                    angleName = VDrawTool::tr("AngleLine_") +
                     data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrSecondPoint, "0"))->name() +
                     "_" +  data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, "id", "0"))->name();
                     break;
@@ -578,7 +578,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
                 const QDomElement domElement = doc->elementById(toolId);
                 if (domElement.isElement())
                 {
-                    angleName = tr("AngleLine_") +
+                    angleName = VDrawTool::tr("AngleLine_") +
                     data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrBasePoint, "0"))->name() +
                     "_" +  data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, "id", "0"))->name();
                     break;

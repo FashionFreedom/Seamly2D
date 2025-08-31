@@ -3082,12 +3082,9 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Исправить формулу</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>Отмена</translation>
-    </message>
-    <message>
-        <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
-        <translation>Ошибка при расчете формулы. Вы можете попробовать отменить последнюю операцию или исправить неисправную формулу.</translation>
+        <source>Seamly2D encountered an error while computing a formula. 
+Please try to undo the latest operation or fix the broken formula.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4908,9 +4905,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2024 Seamly2D Project.
+© 2017-2025 Seamly2D Project.
 
-Portions of this software © 2008-2024 The Qt Company Ltd.
+Portions of this software © 2008-2025 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D — это приложение для автоматизированного проектирования выкроек одежды.
@@ -4919,9 +4916,9 @@ Seamly2D — это бесплатное программное обеспече
 
 Все названия брендов или продуктов являются товарными знаками или зарегистрированными товарными знаками их соответствующих владельцев.
 
-© 2017-2024 Seamly2D Project.
+© 2017-2025 Seamly2D Project.
 
-Части этого программного обеспечения © 2008-2024 The Qt Company Ltd.
+Части этого программного обеспечения © 2008-2025 The Qt Company Ltd.
 
 Программа предоставляется «КАК ЕСТЬ» БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ, ВКЛЮЧАЯ ГАРАНТИЮ ДИЗАЙНА, ТОВАРНОЙ ПРИГОДНОСТИ И ПРИГОДНОСТИ ДЛЯ КОНКРЕТНОЙ ЦЕЛИ.</translation>
     </message>

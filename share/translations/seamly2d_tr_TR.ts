@@ -3082,12 +3082,9 @@ p, li { boşluk: ön sarma; }
         <translation>&amp;Formülü düzelt</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>İptal</translation>
-    </message>
-    <message>
-        <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
-        <translation>Hesaplama formülü sırasında hata oluştu. Son işlemi geri almayı veya bozuk formülü düzeltmeyi deneyebilirsiniz.</translation>
+        <source>Seamly2D encountered an error while computing a formula. 
+Please try to undo the latest operation or fix the broken formula.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4904,9 +4901,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2024 Seamly2D Project.
+© 2017-2025 Seamly2D Project.
 
-Portions of this software © 2008-2024 The Qt Company Ltd.
+Portions of this software © 2008-2025 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D, giysi kalıplarının bilgisayar destekli tasarımı için bir uygulamadır.
@@ -4915,9 +4912,9 @@ Seamly2D ücretsiz (açık kaynaklı) bir yazılımdır.
 
 Tüm marka veya ürün adları, ilgili sahiplerinin ticari markaları veya tescilli ticari markalarıdır.
 
-© 2017-2024 Seamly2D Projesi.
+© 2017-2025 Seamly2D Projesi.
 
-Bu yazılımın bölümleri © 2008-2024 The Qt Company Ltd.
+Bu yazılımın bölümleri © 2008-2025 The Qt Company Ltd.
 
 Program, TASARIM, SATILABİLİRLİK VE BELİRLİ BİR AMACA UYGUNLUK GARANTİSİ DAHİL OLMAK ÜZERE HİÇBİR TÜRLÜ GARANTİ OLMADAN OLDUĞU GİBİ sunulmaktadır.</translation>
     </message>

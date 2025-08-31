@@ -3082,12 +3082,9 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Opravit vzorec</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>Zrušit</translation>
-    </message>
-    <message>
-        <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
-        <translation>Chyba při výpočtu vzorce. Můžete zkusit vrátit zpět poslední operaci nebo opravit poškozený vzorec.</translation>
+        <source>Seamly2D encountered an error while computing a formula. 
+Please try to undo the latest operation or fix the broken formula.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4902,9 +4899,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2024 Seamly2D Project.
+© 2017-2025 Seamly2D Project.
 
-Portions of this software © 2008-2024 The Qt Company Ltd.
+Portions of this software © 2008-2025 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D je aplikace pro počítačem podporovaný návrh oděvních střihů.
@@ -4913,9 +4910,9 @@ Seamly2D je bezplatný (open source) software.
 
 Všechny názvy značek nebo produktů jsou ochrannými známkami nebo registrovanými ochrannými známkami příslušných vlastníků.
 
-© 2017–2024 Seamly2D Project.
+© 2017–2025 Seamly2D Project.
 
-Části tohoto softwaru © 2008–2024 The Qt Company Ltd.
+Části tohoto softwaru © 2008–2025 The Qt Company Ltd.
 
 Program je poskytován TAK, JAK JE, BEZ JAKÉKOLI ZÁRUKY, VČETNĚ ZÁRUKY DESIGNU, OBCHODOVATELNOSTI A VHODNOSTI PRO URČITÝ ÚČEL.</translation>
     </message>
