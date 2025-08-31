@@ -1130,7 +1130,7 @@ void VCommonSettings::setExportQuality(const int  &value)
 //-----------------------------------------------------------------------------
 QString VCommonSettings::getBackgroundColor() const
 {
-    return value(settingGraphicsViewBackgroundColor, "White").toString();
+    return getStr(settingGraphicsViewBackgroundColor, "white");
 }
 
 //-----------------------------------------------------------------------------
@@ -1148,7 +1148,7 @@ void VCommonSettings::setBackgroundColor(const QString &color)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getZoomRBPositiveColor() const
 {
-    return value(settingGraphicsViewZoomRBPositiveColor, "Blue").toString();
+    return getStr(settingGraphicsViewZoomRBPositiveColor, "blue");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1160,7 +1160,7 @@ void VCommonSettings::setZoomRBPositiveColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getZoomRBNegativeColor() const
 {
-    return value(settingGraphicsViewZoomRBNegativeColor, "Green").toString();
+    return getStr(settingGraphicsViewZoomRBNegativeColor, "green");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1172,7 +1172,7 @@ void VCommonSettings::setZoomRBNegativeColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getPointNameColor() const
 {
-    return value(settingGraphicsViewPointNameColor, "Black").toString();
+    return getStr(settingGraphicsViewPointNameColor, "black");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1184,7 +1184,7 @@ void VCommonSettings::setPointNameColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getPointNameHoverColor() const
 {
-    return value(settingGraphicsViewPointNameHoverColor, "Magenta").toString();
+    return getStr(settingGraphicsViewPointNameHoverColor, "deeppink");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1196,7 +1196,7 @@ void VCommonSettings::setPointNameHoverColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getAxisOrginColor() const
 {
-    return value(settingGraphicsViewAxisOrginColor, "Magenta").toString();
+    return getStr(settingGraphicsViewAxisOrginColor, "deeppink");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1208,7 +1208,7 @@ void VCommonSettings::setAxisOrginColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultLineColor() const
 {
-    return value(settingGraphicsViewDefaultLineColor, "black").toString();
+    return getStr(settingGraphicsViewDefaultLineColor, "black");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1244,7 +1244,7 @@ void VCommonSettings::setDefaultLineType(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getPrimarySupportColor() const
 {
-    return value(settingGraphicsViewPrimaryColor, "Magenta").toString();
+    return getStr(settingGraphicsViewPrimaryColor, "magenta");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1256,7 +1256,7 @@ void VCommonSettings::setPrimarySupportColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getSecondarySupportColor() const
 {
-    return value(settingGraphicsViewSecondaryColor, "Forest Green").toString();
+    return getStr(settingGraphicsViewSecondaryColor, "forestgreen");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1268,7 +1268,7 @@ void VCommonSettings::setSecondarySupportColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getTertiarySupportColor() const
 {
-    return value(settingGraphicsViewTertiaryColor, "Navy").toString();
+    return getStr(settingGraphicsViewTertiaryColor, "navy");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1720,7 +1720,7 @@ void VCommonSettings::setDefaultNotchType(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultNotchColor() const
 {
-   return value(settingDefaultNotchColor, "black").toString();
+   return getStr(settingDefaultNotchColor, "black");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1869,7 +1869,7 @@ double VCommonSettings::GetDefaultSeamAllowance()
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultSeamColor() const
 {
-   return value(settingDefaultSeamColor, "black").toString();
+   return getStr(settingDefaultSeamColor, "black");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1905,7 +1905,7 @@ void VCommonSettings::setDefaultSeamLineweight(const qreal &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultCutColor() const
 {
-   return value(settingDefaultCutColor, "black").toString();
+   return getStr(settingDefaultCutColor, "black");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1941,7 +1941,7 @@ void VCommonSettings::setDefaultCutLineweight(const qreal &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultInternalColor() const
 {
-   return value(settingDefaultInternalColor, "black").toString();
+   return getStr(settingDefaultInternalColor, "black");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1977,7 +1977,7 @@ void VCommonSettings::setDefaultInternalLineweight(const qreal &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultCutoutColor() const
 {
-   return value(settingDefaultCutoutColor, "black").toString();
+   return getStr(settingDefaultCutoutColor, "black");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2073,7 +2073,7 @@ void VCommonSettings::setDefaultGrainlineLength(const qreal &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultGrainlineColor() const
 {
-   return value(settingDefaultGrainlineColor, "black").toString();
+   return getStr(settingDefaultGrainlineColor, "black");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2169,7 +2169,7 @@ void VCommonSettings::setDefaultLabelHeight(const qreal &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultLabelColor() const
 {
-   return value(settingDefaultLabelColor, "black").toString();
+   return getStr(settingDefaultLabelColor, "black");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2421,4 +2421,14 @@ QStringList VCommonSettings::GetUserDefinedTimeFormats() const
 void VCommonSettings::SetUserDefinedTimeFormats(const QStringList &formats)
 {
     setValue(settingLabelUserTimeFormats, ClearFormats(VCommonSettings::PredefinedTimeFormats(), formats));
+}
+
+QString VCommonSettings::getStr(QString key, const QString &defaultString) const
+{
+    QString string = value(key, defaultString).toString();
+    if(!string.isEmpty())
+    {
+        return string;
+    }
+    return defaultString;
 }

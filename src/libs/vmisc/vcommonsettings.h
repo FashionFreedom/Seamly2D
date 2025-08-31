@@ -529,6 +529,8 @@ public:
     QStringList          GetUserDefinedTimeFormats() const;
     void                 SetUserDefinedTimeFormats(const QStringList &formats);
 
+    QString              getStr(QString key, const QString &defaultString) const;
+
 private:
     Q_DISABLE_COPY(VCommonSettings)
 };
