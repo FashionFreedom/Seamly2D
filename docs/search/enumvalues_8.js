@@ -24,7 +24,7 @@ var searchData=
   ['id_21',['id',['../d9/db9/classDatatypeValidator.html#a3fbf8d58a1883dd3b6b2e83660eedf8daba7ec56e9fef6fa3d473d5caeb92b630',1,'DatatypeValidator::ID'],['../df/d1f/classXMLAttDef.html#ad029f037065bfaeb991ab7855de79255afe01b4f93a0179fb35bb2c372170487d',1,'XMLAttDef::ID']]],
   ['identity_5fconstraint_22',['IDENTITY_CONSTRAINT',['../dc/d80/classXSConstants.html#a60daf162650cd8e58f53b85d8b93b99aa5db0d4744806a004eb0f3a681ea40ae8',1,'XSConstants']]],
   ['idnotdeclared_23',['IDNotDeclared',['../d5/dc5/classXMLValid.html#ac30e7f5d9612c52f5f1208c83f090c86aa2c58714c82af72d72aceb7f080de214',1,'XMLValid']]],
-  ['idref_24',['idref',['../df/d1f/classXMLAttDef.html#ad029f037065bfaeb991ab7855de79255a60f559b6f8dc0f7a2634fdd5ca690785',1,'XMLAttDef::IDRef'],['../d9/db9/classDatatypeValidator.html#a3fbf8d58a1883dd3b6b2e83660eedf8da5ed2b455cb8372c1db1b5d9a2aba462f',1,'DatatypeValidator::IDREF']]],
+  ['idref_24',['idref',['../d9/db9/classDatatypeValidator.html#a3fbf8d58a1883dd3b6b2e83660eedf8da5ed2b455cb8372c1db1b5d9a2aba462f',1,'DatatypeValidator::IDREF'],['../df/d1f/classXMLAttDef.html#ad029f037065bfaeb991ab7855de79255a60f559b6f8dc0f7a2634fdd5ca690785',1,'XMLAttDef::IDRef']]],
   ['idrefs_25',['IDRefs',['../df/d1f/classXMLAttDef.html#ad029f037065bfaeb991ab7855de79255aa063ccbf0d165af79a2173f29fd9e981',1,'XMLAttDef']]],
   ['idtype_5feither_26',['IDType_Either',['../db/d85/classDTDScanner.html#a565c62d06721333c05847a5faf798f10a01cc3fa5f3aaa84c97fa83b71c7fba14',1,'DTDScanner']]],
   ['idtype_5fexternal_27',['IDType_External',['../db/d85/classDTDScanner.html#a565c62d06721333c05847a5faf798f10a967bcd961ac444116d0140a47518aa7f',1,'DTDScanner']]],
