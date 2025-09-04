@@ -3084,7 +3084,8 @@ p, li { boşluk: ön sarma; }
     <message>
         <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seamly2D bir formülü hesaplarken bir hatayla karşılaştı.
+Lütfen son işlemi geri almayı veya bozuk formülü düzeltmeyi deneyin.</translation>
     </message>
 </context>
 <context>
@@ -5529,8 +5530,8 @@ Do you want to save your changes?</translation>
         <translation>Orijinal düzenin baskı önizlemesi</translation>
     </message>
     <message>
-        <source>Export As...</source>
-        <translation>Farklı Dışa Aktar...</translation>
+        <source>Export Layout As...</source>
+        <translation>Düzeni farklı dışa aktar...</translation>
     </message>
     <message>
         <source>Layout mode</source>

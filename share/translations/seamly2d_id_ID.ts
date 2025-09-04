@@ -3084,7 +3084,8 @@ p, li { spasi: pra-bungkus; }
     <message>
         <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seamly2D mengalami kesalahan saat menghitung rumus.
+Silakan coba batalkan operasi terakhir atau perbaiki rumus yang rusak.</translation>
     </message>
 </context>
 <context>
@@ -5529,8 +5530,8 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>Cetak pratinjau tata letak asli</translation>
     </message>
     <message>
-        <source>Export As...</source>
-        <translation>Ekspor Sebagai...</translation>
+        <source>Export Layout As...</source>
+        <translation>Ekspor Tata Letak Sebagai...</translation>
     </message>
     <message>
         <source>Layout mode</source>

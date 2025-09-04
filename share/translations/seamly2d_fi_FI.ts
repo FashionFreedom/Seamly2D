@@ -3084,7 +3084,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seamly2D kohtasi virheen kaavaa laskiessaan.
+Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
 </context>
 <context>
@@ -5529,8 +5530,8 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Alkuperäisen asettelun esikatselu</translation>
     </message>
     <message>
-        <source>Export As...</source>
-        <translation>Vie nimellä...</translation>
+        <source>Export Layout As...</source>
+        <translation>Vie asettelu nimellä...</translation>
     </message>
     <message>
         <source>Layout mode</source>
