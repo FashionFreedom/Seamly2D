@@ -1091,7 +1091,7 @@ void InternalPathDialog::setLineType(const Qt::PenStyle &type)
 /// @return lineweight
 QString InternalPathDialog::getLineWeight() const
 {
-        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "1.00");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, ".35");
 }
 
 /// @brief setLineWeight set weight of the lines

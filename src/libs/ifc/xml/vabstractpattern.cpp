@@ -2412,7 +2412,7 @@ QMap<quint32, GroupAttributes> VAbstractPattern::getGroups()
                             const bool locked = getParameterBool(group, AttrGroupLocked, trueStr);
                             const QString color = GetParametrString(group, AttrGroupColor, ColorBlack);
                             const QString linetype = GetParametrString(group, AttrLineType, LineTypeSolidLine);
-                            const QString lineweight = GetParametrString(group, AttrLineWeight, "0.35");
+                            const QString lineweight = GetParametrString(group, AttrLineWeight, DefaultLineWeight);
 
                             groupData.name = name;
                             groupData.visible = visible;
@@ -3052,7 +3052,7 @@ QString VAbstractPattern::getGroupLineWeight(quint32 id)
     if (group.isElement())
     {
 
-        weight = GetParametrString(group, AttrLineWeight, "0.35");
+        weight = GetParametrString(group, AttrLineWeight, DefaultLineWeight);
         return weight;
     }
     else

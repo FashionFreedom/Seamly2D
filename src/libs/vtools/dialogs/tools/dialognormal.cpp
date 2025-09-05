@@ -139,7 +139,7 @@ DialogNormal::DialogNormal(const VContainer *data, const quint32 &toolId, QWidge
     if(!qApp->Settings()->useCurrentPen())
     {
         setLineType(LineTypeDashLine);
-        setLineWeight("0.35");
+        setLineWeight(DefaultLineWeight);
     }
 }
 
@@ -364,7 +364,7 @@ void DialogNormal::setLineType(const QString &value)
  */
 QString DialogNormal::getLineWeight() const
 {
-        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

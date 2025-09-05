@@ -145,7 +145,7 @@ DialogAlongLine::DialogAlongLine(const VContainer *data, const quint32 &toolId, 
     if(!qApp->Settings()->useCurrentPen())
     {
         setLineType(LineTypeNone);  //By default don't show line
-        setLineWeight("0.35");
+        setLineWeight(DefaultLineWeight);
     }
 }
 
@@ -399,7 +399,7 @@ void DialogAlongLine::setLineColor(const QString &value)
  */
 QString DialogAlongLine::getLineWeight() const
 {
-        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

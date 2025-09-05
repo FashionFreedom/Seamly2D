@@ -70,7 +70,7 @@ struct SourceItem
     quint32 id{NULL_ID};
     QString alias{QString()};
     QString lineType{"solidLine"};
-    QString lineWidth{"1.00"};
+    QString lineWidth{"1"};
     QString color{"black"};
 };
 

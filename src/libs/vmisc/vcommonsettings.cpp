@@ -1221,7 +1221,7 @@ void VCommonSettings::setDefaultLineColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultLineWeight() const
 {
-    return value(settingGraphicsViewDefaultLineWeight, 1.00).toReal();
+    return value(settingGraphicsViewDefaultLineWeight, DefaultLineWeight).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1281,7 +1281,7 @@ void VCommonSettings::setTertiarySupportColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getConstrainValue() const
 {
-    return value(settingGraphicsViewConstrainValue, 10.00).toReal();
+    return value(settingGraphicsViewConstrainValue, 10).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1894,7 +1894,7 @@ void VCommonSettings::setDefaultSeamLinetype(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultSeamLineweight() const
 {
-   return value(settingDefaultSeamLineweight, 1.00).toReal();
+   return value(settingDefaultSeamLineweight, DefaultLineWeight).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1930,7 +1930,7 @@ void VCommonSettings::setDefaultCutLinetype(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultCutLineweight() const
 {
-   return value(settingDefaultCutLineweight, 1.00).toReal();
+   return value(settingDefaultCutLineweight, DefaultLineWeight).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1966,7 +1966,7 @@ void VCommonSettings::setDefaultInternalLinetype(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultInternalLineweight() const
 {
-   return value(settingDefaultInternalLineweight, 1.00).toReal();
+   return value(settingDefaultInternalLineweight, DefaultLineWeight).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2002,7 +2002,7 @@ void VCommonSettings::setDefaultCutoutLinetype(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultCutoutLineweight() const
 {
-   return value(settingDefaultCutoutLineweight, 1.00).toReal();
+   return value(settingDefaultCutoutLineweight, DefaultLineWeight).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2086,7 +2086,7 @@ void VCommonSettings::setDefaultGrainlineColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultGrainlineLineweight() const
 {
-   return value(settingDefaultGrainlineLineweight, 0.25).toReal();
+   return value(settingDefaultGrainlineLineweight, DefaultLineWeight).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2098,7 +2098,7 @@ void VCommonSettings::setDefaultGrainlineLineweight(const qreal &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultArrowLength() const
 {
-   return value(settingDefaultArrowLength, 0.70).toReal();
+   return value(settingDefaultArrowLength, 40).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
