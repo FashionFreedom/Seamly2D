@@ -183,7 +183,7 @@ void  EditGroupDialog::setLineType(const QString &type)
 //---------------------------------------------------------------------------------------------------------------------
 QString  EditGroupDialog::getLineWeight() const
 {
-    return getComboBoxCurrentData(ui->groupLineWeight_ComboBox, "0.35");
+    return getComboBoxCurrentData(ui->groupLineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

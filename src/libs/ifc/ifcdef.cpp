@@ -167,6 +167,8 @@ const QString LineTypeDotLine        = QStringLiteral("dotLine");
 const QString LineTypeDashDotLine    = QStringLiteral("dashDotLine");
 const QString LineTypeDashDotDotLine = QStringLiteral("dashDotDotLine");
 
+const QString DefaultLineWeight      = QStringLiteral("0.35");
+
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief LineTypeList return list of all line types.

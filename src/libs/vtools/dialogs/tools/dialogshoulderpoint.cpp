@@ -139,7 +139,7 @@ DialogShoulderPoint::DialogShoulderPoint(const VContainer *data, const quint32 &
     if(!qApp->Settings()->useCurrentPen())
     {
         setLineType(LineTypeDashLine);
-        setLineWeight("0.35");
+        setLineWeight(DefaultLineWeight);
     }
 }
 
@@ -397,7 +397,7 @@ void DialogShoulderPoint::setLineType(const QString &value)
  */
 QString DialogShoulderPoint::getLineWeight() const
 {
-        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

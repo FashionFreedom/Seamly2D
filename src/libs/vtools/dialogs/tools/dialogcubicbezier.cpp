@@ -171,7 +171,7 @@ void DialogCubicBezier::setPenStyle(const QString &value)
  */
 QString DialogCubicBezier::getLineWeight() const
 {
-        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

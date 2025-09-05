@@ -364,7 +364,7 @@ void VToolCurveIntersectAxis::SaveOptions(QDomElement &tag, QSharedPointer<VGObj
 void VToolCurveIntersectAxis::ReadToolAttributes(const QDomElement &domElement)
 {
     m_lineType   = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
-    m_lineWeight = doc->GetParametrString(domElement, AttrLineWeight,  "0.35");
+    m_lineWeight = doc->GetParametrString(domElement, AttrLineWeight,  DefaultLineWeight); 
     lineColor    = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
     basePointId  = doc->GetParametrUInt(domElement,   AttrBasePoint, NULL_ID_STR);
     curveId      = doc->GetParametrUInt(domElement,   AttrCurve, NULL_ID_STR);

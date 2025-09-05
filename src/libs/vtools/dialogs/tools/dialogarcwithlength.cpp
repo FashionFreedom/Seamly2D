@@ -288,7 +288,7 @@ void DialogArcWithLength::setPenStyle(const QString &value)
  */
 QString DialogArcWithLength::getLineWeight() const
 {
-        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

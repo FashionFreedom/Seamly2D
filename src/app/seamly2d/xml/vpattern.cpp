@@ -1114,7 +1114,7 @@ void VPattern::PointsCommonAttributes(const QDomElement &domElement, quint32 &id
 {
     PointsCommonAttributes(domElement, id, name, mx, my, isVisible);
     lineType   = GetParametrString(domElement, AttrLineType,   LineTypeSolidLine);
-    lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
+    lineWeight = GetParametrString(domElement, AttrLineWeight, DefaultLineWeight);
     lineColor  = GetParametrString(domElement, AttrLineColor,  qApp->Settings()->getPointNameColor());
 }
 
@@ -1282,7 +1282,7 @@ void VPattern::ParseLineElement(VMainGraphicsScene *scene, const QDomElement &do
         const quint32 firstPoint  = GetParametrUInt(domElement,   AttrFirstPoint,  NULL_ID_STR);
         const quint32 secondPoint = GetParametrUInt(domElement,   AttrSecondPoint, NULL_ID_STR);
         const QString lineType    = GetParametrString(domElement, AttrLineType,    LineTypeSolidLine);
-        const QString lineWeight  = GetParametrString(domElement, AttrLineWeight,  "1.00");
+        const QString lineWeight  = GetParametrString(domElement, AttrLineWeight,  DefaultLineWeight);
         const QString lineColor   = GetParametrString(domElement, AttrLineColor,   ColorBlack);
 
         VToolLine::Create(id, firstPoint, secondPoint, lineType, lineWeight, lineColor, scene, this, data, parse, Source::FromFile);
@@ -2281,8 +2281,8 @@ void VPattern::ParseToolPointFromCircleAndTangent(VMainGraphicsScene *scene, QDo
         const QString cRadius = GetParametrString(domElement, AttrCRadius);
         QString cR = cRadius;
         const CrossCirclesPoint crossPoint = static_cast<CrossCirclesPoint>(GetParametrUInt(domElement,
-                                                                                  AttrCrossPoint,
-                                                                                  "1"));
+                                                                                            AttrCrossPoint,
+                                                                                            "1"));
 
         IntersectCircleTangentTool::Create(id, name, cCenterId, cR, tangentId, crossPoint, mx, my,
                                                showPointName, scene, this, data, parse, Source::FromFile);
@@ -2321,8 +2321,8 @@ void VPattern::ParseToolPointFromArcAndTangent(VMainGraphicsScene *scene, const 
         const quint32 arcId = GetParametrUInt(domElement, AttrArc, NULL_ID_STR);
         const quint32 tangentId = GetParametrUInt(domElement, AttrTangent, NULL_ID_STR);
         const CrossCirclesPoint crossPoint = static_cast<CrossCirclesPoint>(GetParametrUInt(domElement,
-                                                                                  AttrCrossPoint,
-                                                                                  "1"));
+                                                                                            AttrCrossPoint,
+                                                                                            "1"));
 
         VToolPointFromArcAndTangent::Create(id, name, arcId, tangentId, crossPoint, mx, my,
                                             showPointName, scene, this, data, parse, Source::FromFile);
@@ -2450,7 +2450,7 @@ void VPattern::ParseToolSpline(VMainGraphicsScene *scene, QDomElement &domElemen
 
         const QString color      = GetParametrString(domElement, AttrColor,      ColorBlack);
         const QString penStyle   = GetParametrString(domElement, AttrPenStyle,   LineTypeSolidLine);
-        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
+        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, DefaultLineWeight);
         const quint32 duplicate  = GetParametrUInt(domElement,   AttrDuplicate,  "0");
 
         VToolSpline *spl = VToolSpline::Create(id, point1, point4, a1, a2, l1, l2, duplicate, color, penStyle,
@@ -2506,7 +2506,7 @@ void VPattern::ParseToolCubicBezier(VMainGraphicsScene *scene, const QDomElement
 
         const QString color      = GetParametrString(domElement, AttrColor,      ColorBlack);
         const QString penStyle   = GetParametrString(domElement, AttrPenStyle,   LineTypeSolidLine);
-        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
+        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, DefaultLineWeight);
         const quint32 duplicate  = GetParametrUInt(domElement, AttrDuplicate,    "0");
 
         auto p1 = data->GeometricObject<VPointF>(point1);
@@ -2608,7 +2608,7 @@ void VPattern::ParseToolSplinePath(VMainGraphicsScene *scene, const QDomElement 
         ToolsCommonAttributes(domElement, id);
         const QString color      = GetParametrString(domElement, AttrColor,      ColorBlack);
         const QString penStyle   = GetParametrString(domElement, AttrPenStyle,   LineTypeSolidLine);
-        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
+        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, DefaultLineWeight);
         const quint32 duplicate  = GetParametrUInt(domElement,   AttrDuplicate,  "0");
 
         QVector<quint32> points;
@@ -2702,7 +2702,7 @@ void VPattern::ParseToolCubicBezierPath(VMainGraphicsScene *scene, const QDomEle
         ToolsCommonAttributes(domElement, id);
         const QString color      = GetParametrString(domElement, AttrColor,      ColorBlack);
         const QString penStyle   = GetParametrString(domElement, AttrPenStyle,   LineTypeSolidLine);
-        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
+        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, DefaultLineWeight);
         const quint32 duplicate  = GetParametrUInt(domElement,   AttrDuplicate,  "0");
 
         QVector<VPointF> points;
@@ -2857,7 +2857,7 @@ void VPattern::ParseToolArc(VMainGraphicsScene *scene, QDomElement &domElement, 
               QString f2Fix      = f2;//need for saving fixed formula;
         const QString color      = GetParametrString(domElement, AttrColor,      ColorBlack);
         const QString penStyle   = GetParametrString(domElement, AttrPenStyle,   LineTypeSolidLine);
-        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
+        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, DefaultLineWeight);
 
         VToolArc::Create(id, center, r, f1Fix, f2Fix, color, penStyle, lineWeight, scene, this, data,
                          parse, Source::FromFile);
@@ -2909,7 +2909,7 @@ void VPattern::ParseToolEllipticalArc(VMainGraphicsScene *scene, QDomElement &do
         QString frotationFix     = frotation;//need for saving fixed formula;
         const QString color      = GetParametrString(domElement, AttrColor, ColorBlack);
         const QString penStyle   = GetParametrString(domElement, AttrPenStyle, LineTypeSolidLine);
-        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
+        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, DefaultLineWeight);
 
         VToolEllipticalArc::Create(id, center, r1, r2, f1Fix, f2Fix, frotationFix, color, penStyle, lineWeight,
                                    scene, this, data,
@@ -3030,7 +3030,7 @@ void VPattern::ParseToolArcWithLength(VMainGraphicsScene *scene, QDomElement &do
         QString lengthFix        = length;//need for saving fixed length;
         const QString color      = GetParametrString(domElement, AttrColor, ColorBlack);
         const QString penStyle   = GetParametrString(domElement, AttrPenStyle, LineTypeSolidLine);
-        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
+        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, DefaultLineWeight);
 
         VToolArcWithLength::Create(id, center, r, f1Fix, lengthFix, color, penStyle, lineWeight, scene, this,
                                    data, parse,
@@ -3540,7 +3540,7 @@ void VPattern::ParsePathElement(VMainGraphicsScene *scene, QDomElement &domEleme
         const quint32 idTool     = GetParametrUInt(domElement,   VAbstractNode::AttrIdTool, NULL_ID_STR);
         const QString color      = GetParametrString(domElement, AttrLineColor, ColorBlack);
         const QString lineType   = GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
-        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
+        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, DefaultLineWeight);
         const bool cut           = getParameterBool(domElement,  AttrCut, falseStr);
         const bool extendStartPt = getParameterBool(domElement,  AttrExtendStartPoint, falseStr);
         const bool extendEndPt   = getParameterBool(domElement,  AttrExtendEndPoint, falseStr);

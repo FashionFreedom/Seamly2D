@@ -418,7 +418,7 @@ void DialogEllipticalArc::setPenStyle(const QString &value)
  */
 QString DialogEllipticalArc::getLineWeight() const
 {
-        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

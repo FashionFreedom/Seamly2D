@@ -186,6 +186,8 @@ extern const QString LineTypeDotLine;
 extern const QString LineTypeDashDotLine;
 extern const QString LineTypeDashDotDotLine;
 
+extern const QString DefaultLineWeight;
+
 QStringList            LineTypes();
 Qt::PenStyle           lineTypeToPenStyle(const QString &lineType);
 QString                PenStyleToLineType(Qt::PenStyle penStyle);

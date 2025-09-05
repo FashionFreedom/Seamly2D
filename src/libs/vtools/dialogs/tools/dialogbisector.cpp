@@ -139,7 +139,7 @@ DialogBisector::DialogBisector(const VContainer *data, const quint32 &toolId, QW
     if(!qApp->Settings()->useCurrentPen())
     {
         setLineType(LineTypeDashLine);
-        setLineWeight("0.35");
+        setLineWeight(DefaultLineWeight);
     }
 }
 
@@ -307,7 +307,7 @@ void DialogBisector::setLineType(const QString &value)
  */
 QString DialogBisector::getLineWeight() const
 {
-        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -122,7 +122,7 @@ PointIntersectXYDialog::PointIntersectXYDialog(const VContainer *data, const qui
     if(!qApp->Settings()->useCurrentPen())
     {
         setLineType(LineTypeDashLine);
-        setLineWeight("0.35");
+        setLineWeight(DefaultLineWeight);
     }
 }
 
@@ -219,7 +219,7 @@ void PointIntersectXYDialog::setLineType(const QString &value)
  */
 QString PointIntersectXYDialog::getLineWeight() const
 {
-        return getComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

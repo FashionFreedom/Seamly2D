@@ -48,7 +48,7 @@
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
- 
+
 #include "vdrawtool.h"
 
 #include "../vabstracttool.h"
@@ -83,7 +83,7 @@ VDrawTool::VDrawTool(VAbstractPattern *doc, VContainer *data, quint32 id, QObjec
     : VInteractiveTool(doc, data, id, parent)
     , activeBlockName(doc->getActiveDraftBlockName())
     , m_lineType(LineTypeSolidLine)
-    , m_lineWeight("0.35")
+    , m_lineWeight(DefaultLineWeight)
 {
     connect(this->doc, &VAbstractPattern::activeDraftBlockChanged, this, &VDrawTool::activeBlockChanged);
     connect(this->doc, &VAbstractPattern::draftBlockNameChanged, this, &VDrawTool::blockNameChanged);

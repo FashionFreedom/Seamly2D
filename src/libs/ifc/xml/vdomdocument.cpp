@@ -1,54 +1,54 @@
-/***************************************************************************
- **  @file   vdomdocument.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+///--------------------------------------------------------------------------------------------------------------------
+/// @file   vdomdocument.cpp
+/// @author Douglas S Caskey
+/// @date   17 Sep, 2023
+///
+/// @brief
+/// @copyright
+/// This source code is part of the Seamly2D project, a pattern making
+/// program to create and model patterns of clothing.
+/// Copyright (C) 2017-2025 Seamly2D project
+/// <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+///
+/// Seamly2D is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU General Public License as published by
+/// the Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// Seamly2D is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License
+/// along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+///--------------------------------------------------------------------------------------------------------------------
 
- /************************************************************************
-  **
-  **  @file   vtoolline.cpp
-  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
-  **  @date   November 15, 2013
-  **
-  **  @brief
-  **  @copyright
-  **  This source code is part of the Valentina project, a pattern making
-  **  program, whose allow create and modeling patterns of clothing.
-  **  Copyright (C) 2013-2015 Valentina project
-  **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
-  **
-  **  Valentina is free software: you can redistribute it and/or modify
-  **  it under the terms of the GNU General Public License as published by
-  **  the Free Software Foundation, either version 3 of the License, or
-  **  (at your option) any later version.
-  **
-  **  Valentina is distributed in the hope that it will be useful,
-  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  **  GNU General Public License for more details.
-  **
-  **  You should have received a copy of the GNU General Public License
-  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
-  **
-  *************************************************************************/
+///--------------------------------------------------------------------------------------------------------------------
+/// @file   vdomdocument.cpp
+/// @author Roman Telezhynskyi <dismine(at)gmail.com>
+/// @date   November 15, 2013
+///
+/// @brief
+/// @copyright
+/// This source code is part of the Valentina project, a pattern making
+/// program, whose allow create and modeling patterns of clothing.
+/// Copyright (C) 2013-2015 Valentina project
+/// <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+///
+/// Valentina is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU General Public License as published by
+/// the Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// Valentina is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License
+/// along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+///--------------------------------------------------------------------------------------------------------------------
 
 #include "vdomdocument.h"
 
@@ -87,7 +87,7 @@
 
 namespace
 {
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 void SaveNodeCanonically(QXmlStreamWriter &stream, const QDomNode &domNode)
 {
     if (stream.hasError())
@@ -157,13 +157,13 @@ const QString VDomDocument::TagVersion = QStringLiteral("version");
 const QString VDomDocument::TagUnit    = QStringLiteral("unit");
 const QString VDomDocument::TagLine    = QStringLiteral("line");
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 VDomDocument::VDomDocument()
     : QDomDocument(),
       map()
 {}
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 QDomElement VDomDocument::elementById(quint32 id, const QString &tagName)
 {
     if (id == 0)
@@ -217,13 +217,12 @@ QDomElement VDomDocument::elementById(quint32 id, const QString &tagName)
     return QDomElement();
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Find element by id.
- * @param node node
- * @param id id value
- * @return true if found
- */
+///--------------------------------------------------------------------------------------------------------------------
+/// @brief Find element by id.
+/// @param node node
+/// @param id id value
+/// @return true if found
+///--------------------------------------------------------------------------------------------------------------------
 bool VDomDocument::find(const QDomElement &node, quint32 id)
 {
     if (node.hasAttribute(AttrId))
@@ -258,7 +257,7 @@ bool VDomDocument::find(const QDomElement &node, quint32 id)
     return false;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 bool VDomDocument::SaveCanonicalXML(QIODevice *file, int indent, QString &error) const
 {
     SCASSERT(file != nullptr)
@@ -289,13 +288,12 @@ bool VDomDocument::SaveCanonicalXML(QIODevice *file, int indent, QString &error)
     return true;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Returns the long long value of the given attribute. RENAME: GetParameterLongLong?
- * @param domElement tag in xml tree
- * @param name attribute name
- * @return long long value
- */
+///--------------------------------------------------------------------------------------------------------------------
+/// @brief Returns the long long value of the given attribute. RENAME: GetParameterLongLong?
+/// @param domElement tag in xml tree
+/// @param name attribute name
+/// @return long long value
+///--------------------------------------------------------------------------------------------------------------------
 quint32 VDomDocument::GetParametrUInt(const QDomElement &domElement, const QString &name, const QString &defValue)
 {
     Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name of parametr is empty");
@@ -324,7 +322,7 @@ quint32 VDomDocument::GetParametrUInt(const QDomElement &domElement, const QStri
     return id;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 bool VDomDocument::getParameterBool(const QDomElement &domElement, const QString &name, const QString &defValue)
 {
     Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name of parametr is empty");
@@ -366,7 +364,7 @@ bool VDomDocument::getParameterBool(const QDomElement &domElement, const QString
     return val;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 NodeUsage VDomDocument::GetParametrUsage(const QDomElement &domElement, const QString &name)
 {
     const bool value = getParameterBool(domElement, name, trueStr);
@@ -380,7 +378,7 @@ NodeUsage VDomDocument::GetParametrUsage(const QDomElement &domElement, const QS
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 void VDomDocument::SetParametrUsage(QDomElement &domElement, const QString &name, const NodeUsage &value)
 {
     if (value == NodeUsage::InUse)
@@ -393,14 +391,13 @@ void VDomDocument::SetParametrUsage(QDomElement &domElement, const QString &name
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Returns the string value of the given attribute. RENAME: see above
- *
- * if attribute empty return default value. If default value empty too throw exception.
- * @return attribute value
- * @throw VExceptionEmptyParameter when attribute is empty
- */
+///--------------------------------------------------------------------------------------------------------------------
+/// @brief Returns the string value of the given attribute. RENAME: see above
+///
+/// if attribute empty return default value. If default value empty too throw exception.
+/// @return attribute value
+/// @throw VExceptionEmptyParameter when attribute is empty
+///--------------------------------------------------------------------------------------------------------------------
 QString VDomDocument::GetParametrString(const QDomElement &domElement, const QString &name,
                                         const QString &defValue)
 {
@@ -421,7 +418,7 @@ QString VDomDocument::GetParametrString(const QDomElement &domElement, const QSt
     return parameter;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 QString VDomDocument::GetParametrEmptyString(const QDomElement &domElement, const QString &name)
 {
     QString result;
@@ -436,13 +433,12 @@ QString VDomDocument::GetParametrEmptyString(const QDomElement &domElement, cons
     return result;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Returns the double value of the given attribute.
- * @param domElement tag in xml tree
- * @param name attribute name
- * @return double value
- */
+///--------------------------------------------------------------------------------------------------------------------
+/// @brief Returns the double value of the given attribute.
+/// @param domElement tag in xml tree
+/// @param name attribute name
+/// @return double value
+///--------------------------------------------------------------------------------------------------------------------
 qreal VDomDocument::GetParametrDouble(const QDomElement &domElement, const QString &name, const QString &defValue)
 {
     Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name of parametr is empty");
@@ -470,12 +466,11 @@ qreal VDomDocument::GetParametrDouble(const QDomElement &domElement, const QStri
     return param;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getParameterId return value id attribute.
- * @param domElement tag in xml tree.
- * @return id value.
- */
+///--------------------------------------------------------------------------------------------------------------------
+/// @brief getParameterId return value id attribute.
+/// @param domElement tag in xml tree.
+/// @return id value.
+///--------------------------------------------------------------------------------------------------------------------
 quint32 VDomDocument::getParameterId(const QDomElement &domElement)
 {
     Q_ASSERT_X(not domElement.isNull(), Q_FUNC_INFO, "domElement is null");
@@ -500,7 +495,7 @@ quint32 VDomDocument::getParameterId(const QDomElement &domElement)
     return id;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 Unit VDomDocument::measurementUnits() const
 {
     Unit unit = StrToUnits(UniqueTagText(TagUnit, unitCM));
@@ -513,7 +508,7 @@ Unit VDomDocument::measurementUnits() const
     return unit;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 QString VDomDocument::UniqueTagText(const QString &tagName, const QString &defVal) const
 {
     const QDomNodeList nodeList = this->elementsByTagName(tagName);
@@ -544,17 +539,16 @@ QString VDomDocument::UniqueTagText(const QString &tagName, const QString &defVa
     return defVal;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief TestUniqueId test exist unique id in pattern file. Each id must be unique.
- */
+///--------------------------------------------------------------------------------------------------------------------
+/// @brief TestUniqueId test exist unique id in pattern file. Each id must be unique.
+///--------------------------------------------------------------------------------------------------------------------
 void VDomDocument::TestUniqueId() const
 {
     QVector<quint32> vector;
     CollectId(documentElement(), vector);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 void VDomDocument::CollectId(const QDomElement &node, QVector<quint32> &vector) const
 {
     if (node.hasAttribute(VDomDocument::AttrId))
@@ -577,7 +571,7 @@ void VDomDocument::CollectId(const QDomElement &node, QVector<quint32> &vector) 
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 class CErrorHandler : public xercesc::ErrorHandler
 {
 public:
@@ -610,12 +604,11 @@ void CErrorHandler::resetErrors()
 {
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief ValidateXML validate xml file by xsd schema.
- * @param schema path to schema file.
- * @param fileName name of xml file.
- */
+///--------------------------------------------------------------------------------------------------------------------
+/// @brief ValidateXML validate xml file by xsd schema.
+/// @param schema path to schema file.
+/// @param fileName name of xml file.
+///--------------------------------------------------------------------------------------------------------------------
 void VDomDocument::ValidateXML(const QString &schema, const QString &fileName)
 {
     qCDebug(vXML, "Validation xml file %s.", qUtf8Printable(fileName));
@@ -665,22 +658,49 @@ void VDomDocument::ValidateXML(const QString &schema, const QString &fileName)
     QFile patternFile(fileName);
     if (patternFile.open(QIODevice::ReadOnly) == false)
     {
-        const QString errorMsg(tr("Can't open schema file %1:\n%2.").arg(schema).arg(fileSchema.errorString()));
+        const QString errorMsg(tr("Can't open pattern file %1:\n%2.").arg(fileName).arg(patternFile.errorString()));
         throw VException(errorMsg);
     }
 
     QTextStream patternIn(&patternFile);
     std::string xmlString = patternIn.readAll().toStdString();
+
+    // Fix files with invalid lineweight. 
+    size_t startPos = 0;
+    std::string fromString = "lineWeight=\"1.00\"";
+    std::string toString = "lineWeight=\"1\"";
+    while((startPos = xmlString.find(fromString, startPos)) != std::string::npos)
+    {
+        xmlString.replace(startPos, fromString.length(), toString);
+        // Advance startPos past the newly inserted 'toString' to avoid infinite loops
+        // if 'fromString' is a substring of 'toString' (e.g., replacing "a" with "aa").
+        startPos += toString.length();
+    }
+    // If any replacements were made write the changes back to the pattern file.
+    if (startPos > 0)
+    {
+        patternFile.close();
+        if (patternFile.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate) == false)
+        {
+            const QString errorMsg(tr("Can't open pattern file %1:\n%2.").arg(fileName).arg(patternFile.errorString()));
+            throw VException(errorMsg);
+        }
+
+        QTextStream patternOut(&patternFile);
+        patternOut << QString::fromStdString(xmlString);
+    }
+
     xercesc::MemBufInputSource inputBuffer((XMLByte*)xmlString.c_str(), xmlString.size(), "/input.xml");
 
     domParser->parse(inputBuffer);
-    if (domParser->getErrorCount() != 0) {
+    if (domParser->getErrorCount() != 0)
+    {
         const QString errorMsg(tr("Validation error file %1").arg(fileName));
         throw VException(errorMsg);
     }
 }
 
-// //---------------------------------------------------------------------------------------------------------------------
+// ///--------------------------------------------------------------------------------------------------------------------
 void VDomDocument::setXMLContent(const QString &fileName)
 {
     QFile file(fileName);
@@ -704,7 +724,7 @@ void VDomDocument::setXMLContent(const QString &fileName)
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 QString VDomDocument::UnitsHelpString()
 {
     QString r;
@@ -719,7 +739,7 @@ QString VDomDocument::UnitsHelpString()
     return r;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 bool VDomDocument::SaveDocument(const QString &fileName, QString &error)
 {
     if (fileName.isEmpty())
@@ -754,7 +774,7 @@ bool VDomDocument::SaveDocument(const QString &fileName, QString &error)
     return success;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 // cppcheck-suppress unusedFunction
 QString VDomDocument::Major() const
 {
@@ -763,7 +783,7 @@ QString VDomDocument::Major() const
     return v.at(0);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 // cppcheck-suppress unusedFunction
 QString VDomDocument::Minor() const
 {
@@ -772,7 +792,7 @@ QString VDomDocument::Minor() const
     return v.at(1);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 // cppcheck-suppress unusedFunction
 QString VDomDocument::Patch() const
 {
@@ -781,7 +801,7 @@ QString VDomDocument::Patch() const
     return v.at(2);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 bool VDomDocument::setTagText(const QString &tag, const QString &text)
 {
     const QDomNodeList nodeList = this->elementsByTagName(tag);
@@ -801,7 +821,7 @@ bool VDomDocument::setTagText(const QString &tag, const QString &text)
     return false;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 bool VDomDocument::setTagText(const QDomElement &domElement, const QString &text)
 {
     if (domElement.isNull() == false)
@@ -818,11 +838,10 @@ bool VDomDocument::setTagText(const QDomElement &domElement, const QString &text
     return false;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief RemoveAllChildren remove all children from file.
- * @param domElement tag in xml tree.
- */
+///--------------------------------------------------------------------------------------------------------------------
+/// @brief RemoveAllChildren remove all children from file.
+/// @param domElement tag in xml tree.
+///--------------------------------------------------------------------------------------------------------------------
 void VDomDocument::RemoveAllChildren(QDomElement &domElement)
 {
     if ( domElement.hasChildNodes() )
@@ -834,21 +853,21 @@ void VDomDocument::RemoveAllChildren(QDomElement &domElement)
     }
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 QDomNode VDomDocument::ParentNodeById(const quint32 &nodeId)
 {
     QDomElement domElement = NodeById(nodeId);
     return domElement.parentNode();
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 QDomElement VDomDocument::CloneNodeById(const quint32 &nodeId)
 {
     QDomElement domElement = NodeById(nodeId);
     return domElement.cloneNode().toElement();
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 QDomElement VDomDocument::NodeById(const quint32 &nodeId)
 {
     QDomElement domElement = elementById(nodeId);
@@ -859,7 +878,7 @@ QDomElement VDomDocument::NodeById(const quint32 &nodeId)
     return domElement;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 bool VDomDocument::SafeCopy(const QString &source, const QString &destination, QString &error)
 {
     bool result = false;
@@ -927,7 +946,7 @@ bool VDomDocument::SafeCopy(const QString &source, const QString &destination, Q
     return result;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 QVector<VLabelTemplateLine> VDomDocument::GetLabelTemplate(const QDomElement &element) const
 {
     // We use implicit conversion. That's why check if values are still the same as excpected.
@@ -959,7 +978,7 @@ QVector<VLabelTemplateLine> VDomDocument::GetLabelTemplate(const QDomElement &el
     return lines;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------------------------------------------
 void VDomDocument::SetLabelTemplate(QDomElement &element, const QVector<VLabelTemplateLine> &lines)
 {
     if (not element.isNull())

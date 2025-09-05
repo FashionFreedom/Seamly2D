@@ -341,7 +341,7 @@ void VToolBisector::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 void VToolBisector::ReadToolAttributes(const QDomElement &domElement)
 {
     m_lineType    = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
-    m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight,  "0.35");
+    m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight,  DefaultLineWeight); 
     lineColor     = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
     formulaLength = doc->GetParametrString(domElement, AttrLength, "");
     firstPointId  = doc->GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
