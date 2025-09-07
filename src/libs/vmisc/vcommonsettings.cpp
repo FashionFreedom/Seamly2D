@@ -56,6 +56,7 @@
 #include <QDate>
 #include <QDir>
 #include <QFont>
+#include <QtGlobal>
 #include <QLocale>
 #include <QMessageLogger>
 #include <QString>
@@ -1657,14 +1658,14 @@ qreal VCommonSettings::getDefaultNotchLength() const
     switch (units)
     {
         case Unit::Mm:
-            maxValue = 40;
+            maxValue = 12.5;
             break;
         case Unit::Inch:
-            maxValue = 1.5;
+            maxValue = .5;
             break;
         default:
         case Unit::Cm:
-            maxValue = 4;
+            maxValue = 1.25;
             break;
    }
    return value(settingDefaultNotchLength, maxValue).toReal();
@@ -1686,14 +1687,14 @@ qreal VCommonSettings::getDefaultNotchWidth() const
    switch (units)
    {
        case Unit::Mm:
-           maxValue = 12.50;
+           maxValue = 5.0;
            break;
        case Unit::Inch:
-           maxValue = 0.50;
+           maxValue = 0.25;
            break;
        default:
        case Unit::Cm:
-           maxValue = 1.25;
+           maxValue = .5;
            break;
    }
    return value(settingDefaultNotchWidth, maxValue).toReal();
