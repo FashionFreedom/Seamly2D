@@ -121,6 +121,7 @@ var classVCommonSettings =
     [ "getShowWelcome", "de/d0f/classVCommonSettings.html#a1b00926c7f2fddc91f6211da7d85c011", null ],
     [ "getSound", "de/d0f/classVCommonSettings.html#ac330d705f987cdbb2990a113c96284dd", null ],
     [ "getState", "de/d0f/classVCommonSettings.html#a9b56b749c6c9e30df7300cca2b02e260", null ],
+    [ "getStr", "de/d0f/classVCommonSettings.html#a4e24793f87dbf7e862d5cee2c84dd58e", null ],
     [ "getTelephone", "de/d0f/classVCommonSettings.html#aa052d5872dc6d7ec461011ddebbc5a33", null ],
     [ "getTemplatePath", "de/d0f/classVCommonSettings.html#aa281738e821cc8e92b1752d095b13b8f", null ],
     [ "getTertiarySupportColor", "de/d0f/classVCommonSettings.html#a31727910f65da2e77fbfb7561d000a65", null ],

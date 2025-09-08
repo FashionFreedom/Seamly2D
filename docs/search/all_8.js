@@ -237,7 +237,7 @@ var searchData=
   ['history_234',['history',['../d8/dba/classVAbstractPattern.html#a89fcbafbb01d44d271a7366f8595e0b2',1,'VAbstractPattern']]],
   ['history_5fdialog_2ecpp_235',['history_dialog.cpp',['../d5/d6c/history__dialog_8cpp.html',1,'']]],
   ['history_5fdialog_2eh_236',['history_dialog.h',['../d7/d44/history__dialog_8h.html',1,'']]],
-  ['historydialog_237',['historydialog',['../d1/d42/classHistoryDialog.html#ac3e217b51508cb35e942d9133b8f2a1d',1,'HistoryDialog::HistoryDialog()'],['../d6/d1a/classMainWindow.html#a136c33492f8465a7d71113ccfd6c0cf9',1,'MainWindow::historyDialog'],['../d1/d42/classHistoryDialog.html',1,'HistoryDialog']]],
+  ['historydialog_237',['historydialog',['../d6/d1a/classMainWindow.html#a136c33492f8465a7d71113ccfd6c0cf9',1,'MainWindow::historyDialog'],['../d1/d42/classHistoryDialog.html#ac3e217b51508cb35e942d9133b8f2a1d',1,'HistoryDialog::HistoryDialog()'],['../d1/d42/classHistoryDialog.html',1,'HistoryDialog']]],
   ['holder_238',['holder',['../d3/d17/classVLockGuard.html#ab6451dc9f911e5b59584490419572231',1,'VLockGuard']]],
   ['horizontalaxis_239',['HorizontalAxis',['../d0/d89/vabstractpattern_8h.html#ac0eaf9908bdb2df95232be5bf4c7263ea43cd3e11a6a791780a930161f4c9ee20',1,'vabstractpattern.h']]],
   ['horizontaloffset_240',['horizontalOffset',['../da/d19/classGraphicsViewZoom.html#ab44d25f42d7907724e88135becb33301',1,'GraphicsViewZoom']]],
