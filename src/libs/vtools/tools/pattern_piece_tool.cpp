@@ -1808,14 +1808,13 @@ VPieceItem::MoveTypes PatternPieceTool::findLabelGeometry(const VPatternLabelDat
 
         Calculator cal1;
         labelWidth = cal1.EvalFormula(VAbstractTool::data.DataVariables(), labelData.GetLabelWidth());
-        qDebug() << " Label width: " << labelWidth;
-        qDebug() << " Label width is single: " << widthIsSingle;
+        //labelWidth = ToPixel(labelWidth, *VDataTool::data.GetPatternUnit());
         const bool heightIsSingle = qmu::QmuTokenParser::IsSingle(labelData.GetLabelHeight());
 
         Calculator cal2;
         labelHeight = cal2.EvalFormula(VAbstractTool::data.DataVariables(), labelData.GetLabelHeight());
-        qDebug() << " Label height: " << labelHeight;
-        qDebug() << " Label height is single: " << heightIsSingle;
+        //labelHeight = ToPixel(labelHeight, *VDataTool::data.GetPatternUnit());
+
         if (!widthIsSingle || not heightIsSingle)
         {
             restrictions &= ~ VPieceItem::IsResizable;
@@ -1833,13 +1832,13 @@ VPieceItem::MoveTypes PatternPieceTool::findLabelGeometry(const VPatternLabelDat
         try
         {
             const auto centerAnchorPoint = VAbstractTool::data.GeometricObject<VPointF>(centerAnchor);
-            qDebug() << " Anchor center point: " << centerAnchorPoint;
+
             const qreal lWidth = ToPixel(labelWidth, *VDataTool::data.GetPatternUnit());
             const qreal lHeight = ToPixel(labelHeight, *VDataTool::data.GetPatternUnit());
-            qDebug() << " Label pixel width: " << lWidth;
-            qDebug() << " Label pixel height: " << lHeight;
+
             pos = static_cast<QPointF>(*centerAnchorPoint) - QRectF(0, 0, lWidth, lHeight).center();
-            qDebug() << " Anchor point position: " << pos;
+            //labelWidth = ToPixel(labelWidth, *VDataTool::data.GetPatternUnit());
+            //labelHeight = ToPixel(labelHeight, *VDataTool::data.GetPatternUnit());
             restrictions &= ~ VPieceItem::IsMovable;
         }
         catch(const VExceptionBadId &)
