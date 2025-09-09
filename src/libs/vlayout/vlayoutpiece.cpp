@@ -158,9 +158,11 @@ bool findLabelGeometry(const VPatternLabelData &labelData, const VContainer *pat
     {
         Calculator cal1;
         labelWidth = cal1.EvalFormula(pattern->DataVariables(), labelData.GetLabelWidth());
+        labelWidth = ToPixel(labelWidth, *pattern->GetPatternUnit());
 
         Calculator cal2;
         labelHeight = cal2.EvalFormula(pattern->DataVariables(), labelData.GetLabelHeight());
+        labelHeight = ToPixel(labelHeight, *pattern->GetPatternUnit());
     }
     catch(qmu::QmuParserError &error)
     {
@@ -174,11 +176,7 @@ bool findLabelGeometry(const VPatternLabelData &labelData, const VContainer *pat
         try
         {
             const auto centerAnchorPoint = pattern->GeometricObject<VPointF>(centerAnchor);
-
-            const qreal lWidth = ToPixel(labelWidth, *pattern->GetPatternUnit());
-            const qreal lHeight = ToPixel(labelHeight, *pattern->GetPatternUnit());
-
-            pos = static_cast<QPointF>(*centerAnchorPoint) - QRectF(0, 0, lWidth, lHeight).center();
+            pos = static_cast<QPointF>(*centerAnchorPoint) - QRectF(0, 0, labelWidth, labelHeight).center();
         }
         catch(const VExceptionBadId &)
         {
@@ -543,9 +541,6 @@ void VLayoutPiece::SetPieceText(const QString& qsName, const VPieceLabelData& da
         return;
     }
 
-    labelWidth = ToPixel(labelWidth, *pattern->GetPatternUnit());
-    labelHeight = ToPixel(labelHeight, *pattern->GetPatternUnit());
-
     QVector<QPointF> v;
     v << ptPos
       << QPointF(ptPos.x() + labelWidth, ptPos.y())
@@ -567,6 +562,7 @@ void VLayoutPiece::SetPieceText(const QString& qsName, const VPieceLabelData& da
     d->m_tmPiece.setFont(font);
     d->m_tmPiece.SetFontSize(data.getFontSize());
     d->m_tmPiece.Update(qsName, data);
+
     // this will generate the lines of text
     d->m_tmPiece.SetFontSize(data.getFontSize());
     d->m_tmPiece.FitFontSize(labelWidth, labelHeight);
@@ -604,9 +600,6 @@ void VLayoutPiece::SetPatternInfo(VAbstractPattern* pDoc, const VPatternLabelDat
         return;
     }
 
-    labelWidth = ToPixel(labelWidth, *pattern->GetPatternUnit());
-    labelHeight = ToPixel(labelHeight, *pattern->GetPatternUnit());
-
     QVector<QPointF> v;
     v << ptPos
       << QPointF(ptPos.x() + labelWidth, ptPos.y())
@@ -625,7 +618,6 @@ void VLayoutPiece::SetPatternInfo(VAbstractPattern* pDoc, const VPatternLabelDat
     // Generate text
     d->m_tmPattern.setFont(font);
     d->m_tmPattern.SetFontSize(data.getFontSize());
-
     d->m_tmPattern.Update(pDoc);
 
     // generate lines of text
