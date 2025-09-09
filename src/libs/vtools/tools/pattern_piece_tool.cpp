@@ -1808,12 +1808,12 @@ VPieceItem::MoveTypes PatternPieceTool::findLabelGeometry(const VPatternLabelDat
 
         Calculator cal1;
         labelWidth = cal1.EvalFormula(VAbstractTool::data.DataVariables(), labelData.GetLabelWidth());
-        //labelWidth = ToPixel(labelWidth, *VDataTool::data.GetPatternUnit());
+
         const bool heightIsSingle = qmu::QmuTokenParser::IsSingle(labelData.GetLabelHeight());
 
         Calculator cal2;
         labelHeight = cal2.EvalFormula(VAbstractTool::data.DataVariables(), labelData.GetLabelHeight());
-        //labelHeight = ToPixel(labelHeight, *VDataTool::data.GetPatternUnit());
+
 
         if (!widthIsSingle || not heightIsSingle)
         {
@@ -1835,10 +1835,8 @@ VPieceItem::MoveTypes PatternPieceTool::findLabelGeometry(const VPatternLabelDat
 
             const qreal lWidth = ToPixel(labelWidth, *VDataTool::data.GetPatternUnit());
             const qreal lHeight = ToPixel(labelHeight, *VDataTool::data.GetPatternUnit());
-
             pos = static_cast<QPointF>(*centerAnchorPoint) - QRectF(0, 0, lWidth, lHeight).center();
-            //labelWidth = ToPixel(labelWidth, *VDataTool::data.GetPatternUnit());
-            //labelHeight = ToPixel(labelHeight, *VDataTool::data.GetPatternUnit());
+
             restrictions &= ~ VPieceItem::IsMovable;
         }
         catch(const VExceptionBadId &)
