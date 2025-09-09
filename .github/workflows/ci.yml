@@ -217,6 +217,9 @@ jobs:
           qmake.exe Seamly2D.pro -config release CONFIG+=noTests
           nmake
 
+      - name: install NSIS
+        run: choco install nsis -y
+
       - name: create seamly2d-installer.exe
         # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
         # uses parameters in seamly2d-installer.nsi to create the installer exe
