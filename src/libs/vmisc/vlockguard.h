@@ -84,6 +84,8 @@ public:
     template <typename Alloc, typename Delete>
     VLockGuard(const QString& lockName, Alloc a, Delete d, int stale = 0, int timeout=0);
 
+    ~VLockGuard();
+
     const std::shared_ptr<Guarded> &GetProtected() const;
     int             GetLockError() const;
     bool            IsLocked() const;
@@ -133,6 +135,16 @@ VLockGuard<Guarded>::VLockGuard(const QString& lockName, Alloc a, Delete d, int 
     if (TryLock(lockName, stale, timeout))
     {
         holder.reset(a(), d);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+template <typename Guarded>
+VLockGuard<Guarded>::~VLockGuard()
+{
+    if (lock && lock->isLocked())
+    {
+        lock->unlock();
     }
 }
 
