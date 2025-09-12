@@ -3,6 +3,7 @@ var classVLockGuard =
     [ "VLockGuard", "d3/d17/classVLockGuard.html#a1c2354814d0075eb204c146b16e11353", null ],
     [ "VLockGuard", "d3/d17/classVLockGuard.html#ac17d1d11c058bc2d0a3af777fdee6660", null ],
     [ "VLockGuard", "d3/d17/classVLockGuard.html#ab4da208d615517802d16be93a76b86eb", null ],
+    [ "~VLockGuard", "d3/d17/classVLockGuard.html#acedca2072befe315e5a9d41d2a307ed8", null ],
     [ "GetLockError", "d3/d17/classVLockGuard.html#ab6ab0fee23d09c619cf6b61d7e62e1e7", null ],
     [ "GetLockFile", "d3/d17/classVLockGuard.html#a832502051bcbad9f65ce82e15a301e50", null ],
     [ "GetProtected", "d3/d17/classVLockGuard.html#a58b98f2793ff7adfc8a81004b0fb3428", null ],

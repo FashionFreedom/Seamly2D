@@ -1955,32 +1955,34 @@
 <g id="Node000039" class="node">
 <title>Node39</title>
 <g id="a_Node000039"><a xlink:href="../../d3/d17/classVLockGuard.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="transparent" points="1797,-2288 1684,-2288 1684,-2119 1797,-2119 1797,-2288"/>
-<text text-anchor="start" x="1689.5" y="-2275.5" font-family="Helvetica,sans-Serif" font-size="10.00">VLockGuard&lt; char &gt;</text>
-<text text-anchor="start" x="1696" y="-2260.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1711.5" y="-2260.5" font-family="Helvetica,sans-Serif" font-size="10.00">lockError</text>
-<text text-anchor="start" x="1696" y="-2245.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1711.5" y="-2245.5" font-family="Helvetica,sans-Serif" font-size="10.00">lockFile</text>
-<text text-anchor="start" x="1693.5" y="-2230.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1711.5" y="-2230.5" font-family="Helvetica,sans-Serif" font-size="10.00">VLockGuard()</text>
-<text text-anchor="start" x="1693.5" y="-2215.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1711.5" y="-2215.5" font-family="Helvetica,sans-Serif" font-size="10.00">VLockGuard()</text>
-<text text-anchor="start" x="1693.5" y="-2200.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1711.5" y="-2200.5" font-family="Helvetica,sans-Serif" font-size="10.00">VLockGuard()</text>
-<text text-anchor="start" x="1693.5" y="-2185.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1711.5" y="-2185.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetProtected()</text>
-<text text-anchor="start" x="1693.5" y="-2170.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1711.5" y="-2170.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetLockError()</text>
-<text text-anchor="start" x="1693.5" y="-2155.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1711.5" y="-2155.5" font-family="Helvetica,sans-Serif" font-size="10.00">IsLocked()</text>
-<text text-anchor="start" x="1693.5" y="-2140.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1711.5" y="-2140.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetLockFile()</text>
-<text text-anchor="start" x="1696" y="-2125.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1711.5" y="-2125.5" font-family="Helvetica,sans-Serif" font-size="10.00">TryLock()</text>
-<polygon fill="#666666" stroke="#666666" points="1684.5,-2270.5 1684.5,-2270.5 1797.5,-2270.5 1797.5,-2270.5 1684.5,-2270.5"/>
-<polygon fill="#666666" stroke="#666666" points="1684.5,-2240.5 1684.5,-2240.5 1709.5,-2240.5 1709.5,-2240.5 1684.5,-2240.5"/>
-<polygon fill="#666666" stroke="#666666" points="1709.5,-2240.5 1709.5,-2240.5 1797.5,-2240.5 1797.5,-2240.5 1709.5,-2240.5"/>
-<polygon fill="none" stroke="#666666" points="1684,-2119 1684,-2288 1797,-2288 1797,-2119 1684,-2119"/>
+<polygon fill="white" stroke="transparent" points="1797,-2295.5 1684,-2295.5 1684,-2111.5 1797,-2111.5 1797,-2295.5"/>
+<text text-anchor="start" x="1689.5" y="-2283.5" font-family="Helvetica,sans-Serif" font-size="10.00">VLockGuard&lt; char &gt;</text>
+<text text-anchor="start" x="1695" y="-2268.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1709.5" y="-2268.5" font-family="Helvetica,sans-Serif" font-size="10.00">lockError</text>
+<text text-anchor="start" x="1695" y="-2253.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1709.5" y="-2253.5" font-family="Helvetica,sans-Serif" font-size="10.00">lockFile</text>
+<text text-anchor="start" x="1692.5" y="-2238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1709.5" y="-2238.5" font-family="Helvetica,sans-Serif" font-size="10.00">VLockGuard()</text>
+<text text-anchor="start" x="1692.5" y="-2223.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1709.5" y="-2223.5" font-family="Helvetica,sans-Serif" font-size="10.00">VLockGuard()</text>
+<text text-anchor="start" x="1692.5" y="-2208.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1709.5" y="-2208.5" font-family="Helvetica,sans-Serif" font-size="10.00">VLockGuard()</text>
+<text text-anchor="start" x="1692.5" y="-2193.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1709.5" y="-2193.5" font-family="Helvetica,sans-Serif" font-size="10.00">~VLockGuard()</text>
+<text text-anchor="start" x="1692.5" y="-2178.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1709.5" y="-2178.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetProtected()</text>
+<text text-anchor="start" x="1692.5" y="-2163.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1709.5" y="-2163.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetLockError()</text>
+<text text-anchor="start" x="1692.5" y="-2148.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1709.5" y="-2148.5" font-family="Helvetica,sans-Serif" font-size="10.00">IsLocked()</text>
+<text text-anchor="start" x="1692.5" y="-2133.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1709.5" y="-2133.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetLockFile()</text>
+<text text-anchor="start" x="1695" y="-2118.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1709.5" y="-2118.5" font-family="Helvetica,sans-Serif" font-size="10.00">TryLock()</text>
+<polygon fill="#666666" stroke="#666666" points="1684.5,-2278.5 1684.5,-2278.5 1797.5,-2278.5 1797.5,-2278.5 1684.5,-2278.5"/>
+<polygon fill="#666666" stroke="#666666" points="1684.5,-2248.5 1684.5,-2248.5 1707.5,-2248.5 1707.5,-2248.5 1684.5,-2248.5"/>
+<polygon fill="#666666" stroke="#666666" points="1707.5,-2248.5 1707.5,-2248.5 1797.5,-2248.5 1797.5,-2248.5 1707.5,-2248.5"/>
+<polygon fill="none" stroke="#666666" points="1684,-2111.5 1684,-2295.5 1797,-2295.5 1797,-2111.5 1684,-2111.5"/>
 </a>
 </g>
 </g>
@@ -1988,8 +1990,8 @@
 <g id="edge49_Node000038_Node000039" class="edge">
 <title>Node39&#45;&gt;Node38</title>
 <g id="a_edge49_Node000038_Node000039"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1730.42,-2118.97C1710.22,-1951.52 1665.43,-1580.2 1650.47,-1456.21"/>
-<polygon fill="none" stroke="#63b8ff" points="1650.44,-1455.91 1645.75,-1450.44 1649,-1444 1653.69,-1449.48 1650.44,-1455.91"/>
+<path fill="none" stroke="#63b8ff" d="M1729.51,-2111.39C1708.9,-1940.51 1665.18,-1578.13 1650.46,-1456.1"/>
+<polygon fill="none" stroke="#63b8ff" points="1650.44,-1455.98 1645.75,-1450.5 1649.01,-1444.06 1653.7,-1449.54 1650.44,-1455.98"/>
 </a>
 </g>
 <text text-anchor="middle" x="1715" y="-1877.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey"> +ptr</text>
@@ -2015,8 +2017,8 @@
 <g id="edge50_Node000039_Node000040" class="edge">
 <title>Node40&#45;&gt;Node39</title>
 <g id="a_edge50_Node000039_Node000040"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1974.1,-3088.48C1985.27,-3007.1 2012.12,-2732.89 1898.5,-2556 1872.17,-2515.01 1833.63,-2537.77 1805.5,-2498 1764.75,-2440.38 1748.91,-2361.73 1743.04,-2300.35"/>
-<polygon fill="none" stroke="#63b8ff" points="1743.03,-2300.27 1738.53,-2294.64 1741.99,-2288.32 1746.5,-2293.95 1743.03,-2300.27"/>
+<path fill="none" stroke="#63b8ff" d="M1974.1,-3088.48C1985.27,-3007.1 2012.12,-2732.89 1898.5,-2556 1872.17,-2515.01 1833.63,-2537.77 1805.5,-2498 1766.38,-2442.69 1750.22,-2368.01 1743.8,-2307.82"/>
+<polygon fill="none" stroke="#63b8ff" points="1743.77,-2307.54 1739.2,-2301.96 1742.6,-2295.6 1747.17,-2301.18 1743.77,-2307.54"/>
 </a>
 </g>
 <text text-anchor="middle" x="1898.5" y="-2524.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey"> &#45;holder</text>
@@ -2042,8 +2044,8 @@
 <g id="edge51_Node000039_Node000041" class="edge">
 <title>Node41&#45;&gt;Node39</title>
 <g id="a_edge51_Node000039_Node000041"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1810.61,-3088.19C1801.79,-2976.99 1764.38,-2505.53 1748.11,-2300.44"/>
-<polygon fill="none" stroke="#63b8ff" points="1748.09,-2300.18 1743.63,-2294.51 1747.14,-2288.21 1751.6,-2293.88 1748.09,-2300.18"/>
+<path fill="none" stroke="#63b8ff" d="M1810.61,-3088.19C1801.89,-2978.31 1765.26,-2516.63 1748.7,-2307.83"/>
+<polygon fill="none" stroke="#63b8ff" points="1748.68,-2307.62 1744.22,-2301.96 1747.73,-2295.66 1752.19,-2301.33 1748.68,-2307.62"/>
 </a>
 </g>
 <text text-anchor="middle" x="1780.5" y="-2524.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey"> &#45;lock</text>
