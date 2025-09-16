@@ -1221,7 +1221,7 @@ void VCommonSettings::setDefaultLineColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultLineWeight() const
 {
-    return value(settingGraphicsViewDefaultLineWeight, DefaultLineWeight).toReal();
+    return value(settingGraphicsViewDefaultLineWeight, 0.35).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1894,7 +1894,7 @@ void VCommonSettings::setDefaultSeamLinetype(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultSeamLineweight() const
 {
-   return value(settingDefaultSeamLineweight, DefaultLineWeight).toReal();
+   return value(settingDefaultSeamLineweight, 0.35).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1930,7 +1930,7 @@ void VCommonSettings::setDefaultCutLinetype(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultCutLineweight() const
 {
-   return value(settingDefaultCutLineweight, DefaultLineWeight).toReal();
+   return value(settingDefaultCutLineweight, 0.35).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1966,7 +1966,7 @@ void VCommonSettings::setDefaultInternalLinetype(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultInternalLineweight() const
 {
-   return value(settingDefaultInternalLineweight, DefaultLineWeight).toReal();
+   return value(settingDefaultInternalLineweight, 0.35).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2002,7 +2002,7 @@ void VCommonSettings::setDefaultCutoutLinetype(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultCutoutLineweight() const
 {
-   return value(settingDefaultCutoutLineweight, DefaultLineWeight).toReal();
+   return value(settingDefaultCutoutLineweight, 0.35).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2086,7 +2086,7 @@ void VCommonSettings::setDefaultGrainlineColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultGrainlineLineweight() const
 {
-   return value(settingDefaultGrainlineLineweight, DefaultLineWeight).toReal();
+   return value(settingDefaultGrainlineLineweight, 0.35).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
