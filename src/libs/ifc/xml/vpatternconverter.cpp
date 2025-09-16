@@ -53,6 +53,7 @@
 #include "abstract_converter.h"
 #include "../exception/vexception.h"
 #include "../exception/vexceptionemptyparameter.h"
+#include "../ifc/ifcdef.h"
 #include "../qmuparser/qmutokenparser.h"
 #include "../vmisc/def.h"
 #include "../vmisc/logging.h"
@@ -1138,9 +1139,9 @@ void VPatternConverter::toVersion0_6_4()
             {
                 element.removeAttribute(QStringLiteral("pointOfIntersection"));
                 element.setAttribute(strType, QStringLiteral("intersectXY"));
-                element.setAttribute(strLineType, QStringLiteral("dashLine"));
-                element.setAttribute(strLineWeight, QStringLiteral("0.35"));
-                element.setAttribute(strLineColor, QStringLiteral("black"));
+                element.setAttribute(strLineType, LineTypeDashLine);
+                element.setAttribute(strLineWeight, DefaultLineWeight);
+                element.setAttribute(strLineColor, ColorBlack);
             }
         }
     }
