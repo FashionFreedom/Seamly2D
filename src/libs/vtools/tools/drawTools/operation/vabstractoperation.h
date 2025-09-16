@@ -62,6 +62,7 @@
 #include <QGraphicsLineItem>
 
 #include "../vdrawtool.h"
+#include "../ifc/ifcdef.h"
 #include "../vwidgets/vsimplecurve.h"
 #include "../vwidgets/vsimplepoint.h"
 
@@ -69,9 +70,9 @@ struct SourceItem
 {
     quint32 id{NULL_ID};
     QString alias{QString()};
-    QString lineType{"solidLine"};
-    QString lineWidth{"1"};
-    QString color{"black"};
+    QString lineType{LineTypeSolidLine};
+    QString lineWidth{DefaultLineWeight};
+    QString color{ColorBlack};
 };
 
 Q_DECLARE_METATYPE(SourceItem)
