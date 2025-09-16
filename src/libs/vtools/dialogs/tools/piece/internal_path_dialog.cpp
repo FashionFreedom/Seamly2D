@@ -50,6 +50,7 @@
 
 #include "internal_path_dialog.h"
 #include "ui_internal_path_dialog.h"
+#include "../ifc/ifcdef.h"
 #include "../vpatterndb/vpiecenode.h"
 #include "visualization/path/internal_path_visual.h"
 #include "../../../tools/vabstracttool.h"
@@ -1091,7 +1092,7 @@ void InternalPathDialog::setLineType(const Qt::PenStyle &type)
 /// @return lineweight
 QString InternalPathDialog::getLineWeight() const
 {
-        return getComboBoxCurrentData(ui->lineWeight_ComboBox, ".35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 /// @brief setLineWeight set weight of the lines
