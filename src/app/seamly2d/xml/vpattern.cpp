@@ -1076,6 +1076,7 @@ void VPattern::ParsePieceGrainline(const QDomElement &domElement, VPiece &piece)
     gGeometry.setLength(GetParametrString(domElement, AttrLength, "1"));
     gGeometry.setRotation(GetParametrString(domElement, AttrRotation, "90"));
     gGeometry.setArrowType(static_cast<ArrowType>(GetParametrUInt(domElement, AttrArrows, "0")));
+    gGeometry.setArrowLength(GetParametrString(domElement, AttrArrowLength, ".5"));
     gGeometry.setCenterAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrCenterAnchor, NULL_ID_STR));
     gGeometry.setTopAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrTopAnchorPoint, NULL_ID_STR));
     gGeometry.setBottomAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrBottomAnchorPoint, NULL_ID_STR));

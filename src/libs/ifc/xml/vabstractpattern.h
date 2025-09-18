@@ -358,6 +358,7 @@ public:
     static const QString AttrDateFormat;
     static const QString AttrTimeFormat;
     static const QString AttrArrows;
+    static const QString AttrArrowLength;
     static const QString AttrNodeReverse;
     static const QString AttrNodeExcluded;
     static const QString AttrNodeIsNotch;

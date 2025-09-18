@@ -271,6 +271,7 @@ private:
 
     void                        setGrainlineAngle(QString angleFormula);
     void                        setGrainlineLength(QString lengthFormula);
+    void                        setGrainlineArrowLength(QString lengthFormula);
 
     void                        setPieceLabelWidth(QString widthFormula);
     void                        setPieceLabelHeight(QString heightFormula);

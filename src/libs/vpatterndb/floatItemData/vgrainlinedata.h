@@ -88,6 +88,9 @@ public:
     ArrowType       getArrowType() const;
     void            setArrowType(ArrowType type);
 
+    QString         getArrowLength() const;
+    void            setArrowLength(const QString& length);
+
     quint32         centerAnchorPoint() const;
     void            setCenterAnchorPoint(quint32 centerAnchor);
 

@@ -347,11 +347,14 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
 
     m_oldGrainline = piece.GetGrainlineGeometry();
     ui->grainline_GroupBox->setChecked(m_oldGrainline.IsVisible());
+    ui->anchorPoints_GroupBox->setEnabled(m_oldGrainline.IsVisible());
+    ui->arrows_GroupBox->setEnabled(m_oldGrainline.IsVisible());
     changeCurrentData(ui->grainlineCenterAnchor_ComboBox, m_oldGrainline.centerAnchorPoint());
     changeCurrentData(ui->grainlineTopAnchor_ComboBox, m_oldGrainline.topAnchorPoint());
     changeCurrentData(ui->grainlineBottomAnchor_ComboBox, m_oldGrainline.bottomAnchorPoint());
     setGrainlineAngle(m_oldGrainline.getRotation());
     setGrainlineLength(m_oldGrainline.getLength());
+    setGrainlineArrowLength(m_oldGrainline.getArrowLength());
 
     validateObjects(isMainPathValid());
     enabledGrainline();
@@ -722,6 +725,7 @@ void PatternPieceDialog::closeEvent(QCloseEvent *event)
     ui->afterWidthFormula_PlainTextEdit->blockSignals(true);
     ui->rotationFormula_LineEdit->blockSignals(true);
     ui->lengthFormula_LineEdit->blockSignals(true);
+    ui->arrowlLengthFormula_LineEdit->blockSignals(true);
     DialogTool::closeEvent(event);
 }
 
@@ -1706,24 +1710,30 @@ void PatternPieceDialog::notchCountChanged(int value)
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::updateGrainlineValues()
 {
-    QPlainTextEdit *lineEdit[2] = {ui->rotationFormula_LineEdit, ui->lengthFormula_LineEdit};
-    bool formulasOK[2] = {true, true};
+    QPlainTextEdit *lineEdit[3] = {ui->rotationFormula_LineEdit, ui->lengthFormula_LineEdit, ui->arrowlLengthFormula_LineEdit};
+    bool formulasOK[3] = {true, true, true};
 
-    for (int i = 0; i < 2; ++i)
+    for (int i = 0; i < 3; ++i)
     {
         QLabel *labelValue;
         QLabel *labelText;
         QString labelUnits;
         if (i == 0)
         {
-            labelValue = ui->labelRot;
-            labelText  = ui->labelEditRot;
+            labelValue = ui->rotationCalc_Label;
+            labelText  = ui->rotation_Label;
             labelUnits = degreeSymbol;
+        }
+        else if (i == 1)
+        {
+            labelValue = ui->lengthCalc_Label;
+            labelText  = ui->length_Label;
+            labelUnits = QLatin1String(" ") + UnitsToStr(qApp->patternUnit());
         }
         else
         {
-            labelValue = ui->labelLen;
-            labelText  = ui->labelEditLen;
+            labelValue = ui->arowLengthCalc_Label;
+            labelText  = ui->arrowLength_Label;
             labelUnits = QLatin1String(" ") + UnitsToStr(qApp->patternUnit());
         }
 
@@ -1737,11 +1747,22 @@ void PatternPieceDialog::updateGrainlineValues()
             formula = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
             Calculator calculation;
             qreal calculatedValue = calculation.EvalFormula(data->DataVariables(), formula);
+
+            QString arrowFormula = lineEdit[2]->toPlainText().simplified();
+            arrowFormula.replace("\n", " ");
+            arrowFormula = qApp->translateVariables()->FormulaFromUser(arrowFormula, qApp->Settings()->getOsSeparator());
+            Calculator arrowCalculation;
+            qreal arrowCalculatedValue = arrowCalculation.EvalFormula(data->DataVariables(), arrowFormula);
+
             if (qIsInf(calculatedValue) == true || qIsNaN(calculatedValue) == true)
             {
                 throw qmu::QmuParserError(tr("Infinite/undefined result"));
             }
-            else if (i == 1 && calculatedValue <= 0.0)
+            else if (i == 1 && calculatedValue < arrowCalculatedValue * 2.0)
+            {
+                throw qmu::QmuParserError(tr("Length can't be less than length of 2 arrows"));
+            }
+            else if (i ==2 && calculatedValue <= 0.0)
             {
                 throw qmu::QmuParserError(tr("Length should be positive"));
             }
@@ -1766,7 +1787,7 @@ void PatternPieceDialog::updateGrainlineValues()
         labelValue->setText(formulaValueStr);
     }
 
-    flagGrainlineFormula = formulasOK[0] && formulasOK[1];
+    flagGrainlineFormula = formulasOK[0] && formulasOK[1] && formulasOK[2];
     if (!flagGrainlineFormula && !flagGrainlineAnchor)
     {
         setErrorText(TabOrder::Grainline, tr("Grainline"));
@@ -1951,6 +1972,9 @@ void PatternPieceDialog::updatePatternLabelValues()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::enabledGrainline()
 {
+    ui->anchorPoints_GroupBox->setEnabled(ui->grainline_GroupBox->isChecked());
+    ui->arrows_GroupBox->setEnabled(ui->grainline_GroupBox->isChecked());
+
     if (ui->grainline_GroupBox->isChecked() == true)
     {
         updateGrainlineValues();
@@ -2017,6 +2041,12 @@ void PatternPieceDialog::editGrainlineFormula()
         checkForZero = false;
         title = tr("Edit angle");
     }
+    else if (sender() == ui->arrowLength_PushButton)
+    {
+        labelFormula = ui->arrowlLengthFormula_LineEdit;
+        checkForZero = false;
+        title = tr("Edit length");
+    }
     else
     {
         // should not get here!
@@ -2039,6 +2069,10 @@ void PatternPieceDialog::editGrainlineFormula()
         else if (sender() == ui->rotation_PushButton)
         {
             setGrainlineAngle(formula);
+        }
+        else if (sender() == ui->arrowLength_PushButton)
+        {
+            setGrainlineArrowLength(formula);
         }
         else
         {
@@ -2498,6 +2532,7 @@ VPiece PatternPieceDialog::CreatePiece() const
     piece.GetGrainlineGeometry().SetVisible(ui->grainline_GroupBox->isChecked());
     piece.GetGrainlineGeometry().setRotation(getFormulaFromUser(ui->rotationFormula_LineEdit));
     piece.GetGrainlineGeometry().setLength(getFormulaFromUser(ui->lengthFormula_LineEdit));
+    piece.GetGrainlineGeometry().setArrowLength(getFormulaFromUser(ui->arrowlLengthFormula_LineEdit));
     piece.GetGrainlineGeometry().setArrowType(static_cast<ArrowType>(ui->arrow_ComboBox->currentIndex()));
     piece.GetGrainlineGeometry().setCenterAnchorPoint(getCurrentObjectId(ui->grainlineCenterAnchor_ComboBox));
     piece.GetGrainlineGeometry().setTopAnchorPoint(getCurrentObjectId(ui->grainlineTopAnchor_ComboBox));
@@ -2520,7 +2555,6 @@ VPiece PatternPieceDialog::CreatePiece() const
 
         xPos = rect.center().x();
         yPos = rect.center().y() + getFormulaValue(ui->lengthFormula_LineEdit)/2.0;
-
         piece.GetGrainlineGeometry().SetPos(QPointF(xPos, yPos));
     }
     return piece;
@@ -3179,17 +3213,24 @@ void PatternPieceDialog::initializeLabelsTab()
 void PatternPieceDialog::initializeGrainlineTab()
 {
     ui->grainline_GroupBox->setChecked(qApp->Settings()->getDefaultGrainlineVisibilty());
+    ui->anchorPoints_GroupBox->setEnabled(qApp->Settings()->getDefaultGrainlineVisibilty());
+    ui->arrows_GroupBox->setEnabled(qApp->Settings()->getDefaultGrainlineVisibilty());
 
     ui->lengthFormula_LineEdit->setPlainText(QString::number(qApp->Settings()->getDefaultGrainlineLength()));
 
-    connect(ui->grainline_GroupBox,  &QGroupBox::toggled,   this, &PatternPieceDialog::enabledGrainline);
-    connect(ui->rotation_PushButton, &QPushButton::clicked, this, &PatternPieceDialog::editGrainlineFormula);
-    connect(ui->length_PushButton,   &QPushButton::clicked, this, &PatternPieceDialog::editGrainlineFormula);
-    connect(ui->lengthFormula_LineEdit, &QPlainTextEdit::textChanged, this,
-            &PatternPieceDialog::updateGrainlineValues);
+    qreal arrowLength = FromPixel(qApp->Settings()->getDefaultArrowLength(), *data->GetPatternUnit());
+    ui->arrowlLengthFormula_LineEdit->setPlainText(QString::number(arrowLength));
 
-    connect(ui->rotationFormula_LineEdit, &QPlainTextEdit::textChanged, this,
-            &PatternPieceDialog::updateGrainlineValues);
+    connect(ui->grainline_GroupBox,     &QGroupBox::toggled,   this, &PatternPieceDialog::enabledGrainline);
+    connect(ui->rotation_PushButton,    &QPushButton::clicked, this, &PatternPieceDialog::editGrainlineFormula);
+    connect(ui->length_PushButton,      &QPushButton::clicked, this, &PatternPieceDialog::editGrainlineFormula);
+    connect(ui->arrowLength_PushButton, &QPushButton::clicked, this, &PatternPieceDialog::editGrainlineFormula);
+    connect(ui->lengthFormula_LineEdit, &QPlainTextEdit::textChanged,
+            this, &PatternPieceDialog::updateGrainlineValues);
+    connect(ui->rotationFormula_LineEdit, &QPlainTextEdit::textChanged,
+            this, &PatternPieceDialog::updateGrainlineValues);
+    connect(ui->arrowlLengthFormula_LineEdit, &QPlainTextEdit::textChanged,
+            this, &PatternPieceDialog::updateGrainlineValues);
 
     enabledGrainline();
 
@@ -3388,6 +3429,20 @@ void PatternPieceDialog::setGrainlineLength(QString lengthFormula)
     ui->lengthFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->lengthFormula_LineEdit);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PatternPieceDialog::setGrainlineArrowLength(QString lengthFormula)
+{
+    if (lengthFormula.isEmpty())
+    {
+        lengthFormula = QString().setNum(UnitConvertor(1, Unit::Cm, *data->GetPatternUnit()));
+    }
+
+    const QString formula = qApp->translateVariables()->FormulaToUser(lengthFormula, qApp->Settings()->getOsSeparator());
+    ui->arrowlLengthFormula_LineEdit->setPlainText(formula);
+
+    MoveCursorToEnd(ui->arrowlLengthFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

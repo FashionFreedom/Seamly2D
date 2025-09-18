@@ -71,6 +71,7 @@
 #include "../vpatterndb/floatItemData/vpatternlabeldata.h"
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
 #include "../vpatterndb/floatItemData/vgrainlinedata.h"
+#include "../vtools/tools/vdatatool.h"
 #include "../qmuparser/qmutokenparser.h"
 #include "../undocommands/addpiece.h"
 #include "../undocommands/deletepiece.h"
@@ -443,12 +444,13 @@ void PatternPieceTool::addGrainline(VAbstractPattern *doc, QDomElement &domEleme
     // grainline
     QDomElement domData = doc->createElement(VAbstractPattern::TagGrainline);
     const VGrainlineData &data = piece.GetGrainlineGeometry();
-    doc->SetAttribute(domData, VAbstractPattern::AttrVisible,  data.IsVisible());
-    doc->SetAttribute(domData, AttrMx,                         data.GetPos().x());
-    doc->SetAttribute(domData, AttrMy,                         data.GetPos().y());
-    doc->SetAttribute(domData, AttrLength,                     data.getLength());
-    doc->SetAttribute(domData, VAbstractPattern::AttrRotation, data.getRotation());
-    doc->SetAttribute(domData, VAbstractPattern::AttrArrows,   int(data.getArrowType()));
+    doc->SetAttribute(domData, VAbstractPattern::AttrVisible,     data.IsVisible());
+    doc->SetAttribute(domData, AttrMx,                            data.GetPos().x());
+    doc->SetAttribute(domData, AttrMy,                            data.GetPos().y());
+    doc->SetAttribute(domData, AttrLength,                        data.getLength());
+    doc->SetAttribute(domData, VAbstractPattern::AttrRotation,    data.getRotation());
+    doc->SetAttribute(domData, VAbstractPattern::AttrArrows,      int(data.getArrowType()));
+    doc->SetAttribute(domData, VAbstractPattern::AttrArrowLength, data.getArrowLength());
 
     if (data.centerAnchorPoint() > NULL_ID)
     {
@@ -685,10 +687,11 @@ void PatternPieceTool::updateGrainline()
     if (data.IsVisible() & qApp->Settings()->showGrainlines())
     {
         QPointF pos;
-        qreal dRotation = 0;
-        qreal dLength = 0;
+        qreal rotation = 0;
+        qreal length = 0;
+        qreal arrowLength = 0;
 
-        const VGrainlineItem::MoveTypes type = findGrainlineGeometry(data, dLength, dRotation, pos);
+        const VGrainlineItem::MoveTypes type = findGrainlineGeometry(data, length, rotation, arrowLength, pos);
         if (type & VGrainlineItem::Error)
         {
             m_grainLine->hide();
@@ -696,8 +699,8 @@ void PatternPieceTool::updateGrainline()
         }
 
         m_grainLine->setMoveType(type);
-        m_grainLine->updateGeometry(pos, dRotation, ToPixel(dLength, *VDataTool::data.GetPatternUnit()),
-                                    data.getArrowType());
+        m_grainLine->updateGeometry(pos, rotation, ToPixel(length, *VDataTool::data.GetPatternUnit()),
+                                    data.getArrowType(), ToPixel(arrowLength, *VDataTool::data.GetPatternUnit()));
         m_grainLine->show();
     }
     else
@@ -1854,7 +1857,7 @@ VPieceItem::MoveTypes PatternPieceTool::findLabelGeometry(const VPatternLabelDat
 
 //---------------------------------------------------------------------------------------------------------------------
 VPieceItem::MoveTypes PatternPieceTool::findGrainlineGeometry(const VGrainlineData &data, qreal &length,
-                                                               qreal &rotationAngle, QPointF &pos)
+                                                              qreal &rotationAngle, qreal &arrowLength, QPointF &pos)
 {
     const quint32 topAnchorPoint = data.topAnchorPoint();
     const quint32 bottomAnchorPoint = data.bottomAnchorPoint();
@@ -1869,6 +1872,9 @@ VPieceItem::MoveTypes PatternPieceTool::findGrainlineGeometry(const VGrainlineDa
             QLineF grainline(static_cast<QPointF>(*bottomAnchor_Point), static_cast<QPointF>(*topAnchor_Point));
             length = FromPixel(grainline.length(), *VDataTool::data.GetPatternUnit());
             rotationAngle = grainline.angle();
+
+            Calculator cal3;
+            arrowLength = cal3.EvalFormula(VAbstractTool::data.DataVariables(), data.getArrowLength());
 
             if (!VFuzzyComparePossibleNulls(rotationAngle, 0))
             {
@@ -1903,6 +1909,9 @@ VPieceItem::MoveTypes PatternPieceTool::findGrainlineGeometry(const VGrainlineDa
 
         Calculator cal2;
         length = cal2.EvalFormula(VAbstractTool::data.DataVariables(), data.getLength());
+
+        Calculator cal3;
+        arrowLength = cal3.EvalFormula(VAbstractTool::data.DataVariables(), data.getArrowLength());
     }
     catch(qmu::QmuParserError &error)
     {
