@@ -125,6 +125,18 @@ void VGrainlineData::setArrowType(ArrowType type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QString VGrainlineData::getArrowLength() const
+{
+    return d->m_arrowLength;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VGrainlineData::setArrowLength(const QString& length)
+{
+    d->m_arrowLength = length;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 quint32 VGrainlineData::centerAnchorPoint() const
 {
     return d->m_centerAnchorPoint;

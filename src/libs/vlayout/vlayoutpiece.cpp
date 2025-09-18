@@ -193,7 +193,7 @@ bool findLabelGeometry(const VPatternLabelData &labelData, const VContainer *pat
 
 //---------------------------------------------------------------------------------------------------------------------
 bool findGrainlineGeometry(const VGrainlineData& data, const VContainer *pattern, qreal &length, qreal &rotationAngle,
-                           QPointF &pos)
+                           qreal &arrowLength, QPointF &pos)
 {
     SCASSERT(pattern != nullptr)
 
@@ -210,6 +210,10 @@ bool findGrainlineGeometry(const VGrainlineData& data, const VContainer *pattern
             QLineF grainline(static_cast<QPointF>(*bottomAnchor_Point), static_cast<QPointF>(*topAnchor_Point));
             length = grainline.length();
             rotationAngle = grainline.angle();
+
+            Calculator cal3;
+            arrowLength = cal3.EvalFormula(pattern->DataVariables(), data.getArrowLength());
+            arrowLength = ToPixel(arrowLength, *pattern->GetPatternUnit());
 
             if (!VFuzzyComparePossibleNulls(rotationAngle, 0))
             {
@@ -236,6 +240,10 @@ bool findGrainlineGeometry(const VGrainlineData& data, const VContainer *pattern
         Calculator cal2;
         length = cal2.EvalFormula(pattern->DataVariables(), data.getLength());
         length = ToPixel(length, *pattern->GetPatternUnit());
+
+        Calculator cal3;
+        arrowLength = cal3.EvalFormula(pattern->DataVariables(), data.getArrowLength());
+        arrowLength = ToPixel(arrowLength, *pattern->GetPatternUnit());
     }
     catch(qmu::QmuParserError &error)
     {
@@ -438,20 +446,20 @@ VLayoutPiece VLayoutPiece::Create(const VPiece &piece, const VContainer *pattern
     }
 
     const VPieceLabelData& pieceLabelData = piece.GetPatternPieceData();
-    if (pieceLabelData.IsVisible() == true)
+    if (pieceLabelData.IsVisible() & qApp->Settings()->showLabels())
     {
         layoutPiece.SetPieceText(piece.GetName(), pieceLabelData, qApp->Settings()->getLabelFont(), pattern);
     }
 
     const VPatternLabelData& patternLabelData = piece.GetPatternInfo();
-    if (patternLabelData.IsVisible() == true)
+    if (patternLabelData.IsVisible() & qApp->Settings()->showLabels())
     {
         VAbstractPattern* pDoc = qApp->getCurrentDocument();
         layoutPiece.SetPatternInfo(pDoc, patternLabelData, qApp->Settings()->getLabelFont(), pattern);
     }
 
     const VGrainlineData& grainlineGeom = piece.GetGrainlineGeometry();
-    if (grainlineGeom.IsVisible() == true)
+    if (grainlineGeom.IsVisible() & qApp->Settings()->showGrainlines())
     {
         layoutPiece.setGrainline(grainlineGeom, pattern);
     }
@@ -633,47 +641,39 @@ void VLayoutPiece::setGrainline(const VGrainlineData& data, const VContainer* pa
     QPointF pt1;
     qreal rotationAngle = 0;
     qreal length = 0;
-    if (!findGrainlineGeometry(data, pattern, length, rotationAngle, pt1))
+    qreal arrowLength = 0;
+    if (!findGrainlineGeometry(data, pattern, length, rotationAngle, arrowLength, pt1))
     {
         return;
     }
 
-    const qreal arrowLength = 45;
-    const qreal arrowAngle = M_PI/9;
-
-    QPointF pt2(pt1.x() + arrowLength * qCos(rotationAngle),
-                pt1.y() - arrowLength * qSin(rotationAngle));
-    QPointF pt3(pt1.x() + length * qCos(rotationAngle),
+    QPointF pt2(pt1.x() + length * qCos(rotationAngle),
                 pt1.y() - length * qSin(rotationAngle));
-    QPointF pt4(pt1.x() + (length - arrowLength) * qCos(rotationAngle),
-                pt1.y() - (length - arrowLength) * qSin(rotationAngle));
 
-    QVector<QPointF> v;
-    v << pt2;
+    QVector<QPointF> path;
+    path << pt1;
     if (data.getArrowType() != ArrowType::Top)
     {
-        v << QPointF(pt1.x() + arrowLength * qCos(rotationAngle + arrowAngle),
-                     pt1.y() - arrowLength * qSin(rotationAngle + arrowAngle));
-        v << pt1;
-        v << QPointF(pt1.x() + arrowLength * qCos(rotationAngle - arrowAngle),
-                     pt1.y() - arrowLength * qSin(rotationAngle - arrowAngle));
-        v << pt2;
-    }
+        path << QPointF(pt1.x() + arrowLength * cos(rotationAngle + M_PI / 9),
+                        pt1.y() - arrowLength * sin(rotationAngle + M_PI / 9));
 
-    v << pt4;
+        path << QPointF(pt1.x() + arrowLength * cos(rotationAngle - M_PI / 9),
+                        pt1.y() - arrowLength * sin(rotationAngle - M_PI / 9));
+    }
+    path << pt1 << pt2;
+
     if (data.getArrowType() != ArrowType::Bottom)
     {
-        rotationAngle += M_PI;
-        v << QPointF(pt3.x() + arrowLength * qCos(rotationAngle + arrowAngle),
-                     pt3.y() - arrowLength * qSin(rotationAngle + arrowAngle));
-        v << pt3;
-        v << QPointF(pt3.x() + arrowLength * qCos(rotationAngle - arrowAngle),
-                     pt3.y() - arrowLength * qSin(rotationAngle - arrowAngle));
-        v << pt4;
+        path << QPointF(pt2.x() + arrowLength * cos(M_PI + rotationAngle + M_PI / 9),
+                        pt2.y() - arrowLength * sin(M_PI + rotationAngle + M_PI / 9));
+
+        path << QPointF(pt2.x() + arrowLength * cos(M_PI + rotationAngle - M_PI / 9),
+                        pt2.y() - arrowLength * sin(M_PI + rotationAngle - M_PI / 9));
     }
+    path << pt2;
 
     QScopedPointer<QGraphicsItem> item(getMainPathItem());
-    d->grainlinePoints = CorrectPosition(item->boundingRect(), v);
+    d->grainlinePoints = CorrectPosition(item->boundingRect(), path);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

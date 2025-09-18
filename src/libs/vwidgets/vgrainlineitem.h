@@ -4,7 +4,7 @@
 //  @date   11 Nov, 2024
 //
 //  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  Copyright (C) 2017 - 2025 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -65,7 +65,7 @@ public:
     virtual QPainterPath shape() const Q_DECL_OVERRIDE;
 
     virtual void         paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) Q_DECL_OVERRIDE;
-    void                 updateGeometry(const QPointF& pos, qreal rotation, qreal length, ArrowType type);
+    void                 updateGeometry(const QPointF& pos, qreal rotation, qreal length, ArrowType type, qreal arrowLength);
 
     virtual int          type() const Q_DECL_OVERRIDE {return Type;}
     enum                 {Type = UserType + static_cast<int>(Vis::GrainlineItem)};
@@ -105,12 +105,12 @@ private:
     QPointF              m_centerPoint;
     qreal                m_angle;
     ArrowType            m_arrowType;
+    qreal                m_arrowLength;
     qreal                m_penWidth;
 
     QLineF               mainLine() const;
-    QPolygonF            firstArrow() const;
-    QPolygonF            secondArrow() const;
-
+    void                 drawArrow(QPainter *painter, const QPointF &point, const qreal &addValue) const;
+    QPolygonF            arrow(const QPointF &point, const qreal &addValue) const;
     QPainterPath         mainShape() const;
 
     void                 allUserModifications(const QPointF &pos);

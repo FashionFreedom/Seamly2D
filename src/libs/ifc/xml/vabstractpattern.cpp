@@ -162,6 +162,7 @@ const QString VAbstractPattern::AttrOnFold              = QStringLiteral("onFold
 const QString VAbstractPattern::AttrDateFormat          = QStringLiteral("dateFormat");
 const QString VAbstractPattern::AttrTimeFormat          = QStringLiteral("timeFormat");
 const QString VAbstractPattern::AttrArrows              = QStringLiteral("arrows");
+const QString VAbstractPattern::AttrArrowLength         = QStringLiteral("arrowLength");
 const QString VAbstractPattern::AttrNodeReverse         = QStringLiteral("reverse");
 const QString VAbstractPattern::AttrNodeExcluded        = QStringLiteral("excluded");
 const QString VAbstractPattern::AttrNodeIsNotch         = QStringLiteral("notch");
