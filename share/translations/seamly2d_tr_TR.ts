@@ -3082,7 +3082,7 @@ p, li { boşluk: ön sarma; }
         <translation>&amp;Formülü düzelt</translation>
     </message>
     <message>
-        <source>Seamly2D encountered an error while computing a formula. 
+        <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8163,6 +8163,10 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Count</source>
         <translation>Sayım</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be less than length of 2 arrows</source>
+        <translation>Uzunluk 2 okun uzunluğundan az olamaz</translation>
     </message>
 </context>
 <context>

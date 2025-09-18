@@ -3067,7 +3067,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Verbeter formule</translation>
     </message>
     <message>
-        <source>Seamly2D encountered an error while computing a formula. 
+        <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8146,6 +8146,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Count</source>
         <translation>Graaf</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be less than length of 2 arrows</source>
+        <translation>Lengte mag niet kleiner zijn dan de lengte van 2 pijlen</translation>
     </message>
 </context>
 <context>

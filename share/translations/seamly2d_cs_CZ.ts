@@ -3082,7 +3082,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Opravit vzorec</translation>
     </message>
     <message>
-        <source>Seamly2D encountered an error while computing a formula. 
+        <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8161,6 +8161,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Count</source>
         <translation>Počet</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be less than length of 2 arrows</source>
+        <translation>Délka nesmí být menší než délka 2 šípů</translation>
     </message>
 </context>
 <context>

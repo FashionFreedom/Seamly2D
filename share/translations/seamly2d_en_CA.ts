@@ -8133,6 +8133,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Count</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Length can&apos;t be less than length of 2 arrows</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PatternPieceTool</name>

@@ -3082,7 +3082,7 @@ p, li { spasi: pra-bungkus; }
         <translation>&amp;Perbaiki rumus</translation>
     </message>
     <message>
-        <source>Seamly2D encountered an error while computing a formula. 
+        <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8163,6 +8163,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Count</source>
         <translation>Hitung</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be less than length of 2 arrows</source>
+        <translation>Panjangnya tidak boleh kurang dari panjang 2 anak panah</translation>
     </message>
 </context>
 <context>
