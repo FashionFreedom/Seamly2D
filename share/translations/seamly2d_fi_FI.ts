@@ -3082,7 +3082,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Korjaa matemaattinen kaava</translation>
     </message>
     <message>
-        <source>Seamly2D encountered an error while computing a formula. 
+        <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8163,6 +8163,10 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Count</source>
         <translation>Kreivi</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be less than length of 2 arrows</source>
+        <translation>Pituus ei voi olla pienempi kuin kahden nuolen pituus</translation>
     </message>
 </context>
 <context>

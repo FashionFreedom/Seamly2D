@@ -3082,7 +3082,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Repară formula</translation>
     </message>
     <message>
-        <source>Seamly2D encountered an error while computing a formula. 
+        <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8165,6 +8165,10 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Count</source>
         <translation>Numără</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be less than length of 2 arrows</source>
+        <translation>Lungimea nu poate fi mai mică decât lungimea a 2 săgeți</translation>
     </message>
 </context>
 <context>

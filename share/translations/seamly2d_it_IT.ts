@@ -3067,7 +3067,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Correggi formula</translation>
     </message>
     <message>
-        <source>Seamly2D encountered an error while computing a formula. 
+        <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8151,6 +8151,10 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     <message>
         <source>Count</source>
         <translation>Contare</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be less than length of 2 arrows</source>
+        <translation>La lunghezza non può essere inferiore alla lunghezza di 2 frecce</translation>
     </message>
 </context>
 <context>

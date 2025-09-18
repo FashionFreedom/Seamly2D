@@ -3082,7 +3082,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Виправити формулу</translation>
     </message>
     <message>
-        <source>Seamly2D encountered an error while computing a formula. 
+        <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8164,6 +8164,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Count</source>
         <translation>Αριθμός</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be less than length of 2 arrows</source>
+        <translation>Довжина не може бути меншою за довжину двох стріл</translation>
     </message>
 </context>
 <context>
