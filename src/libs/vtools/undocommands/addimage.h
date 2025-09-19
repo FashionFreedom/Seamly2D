@@ -43,8 +43,8 @@ class AddImage : public VUndoCommand
 public:
     AddImage(const QDomElement &xml, VAbstractPattern *doc, QUndoCommand *parent = nullptr);
     virtual  ~AddImage();
-    virtual   void  undo() Q_DECL_OVERRIDE; // cppcheck-suppress unusedFunction
-    virtual   void  redo() Q_DECL_OVERRIDE; // cppcheck-suppress unusedFunction
+    virtual   void  undo() override; // cppcheck-suppress unusedFunction
+    virtual   void  redo() override; // cppcheck-suppress unusedFunction
 
 private:
     Q_DISABLE_COPY(AddImage)

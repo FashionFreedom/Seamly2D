@@ -57,11 +57,11 @@
 #include "vcurvevariable_p.h"
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VCurveVariable &VCurveVariable::operator=(VCurveVariable &&var) Q_DECL_NOTHROW
+VCurveVariable &VCurveVariable::operator=(VCurveVariable &&var) noexcept
 { Swap(var); return *this; }
 #endif
 
-void VCurveVariable::Swap(VCurveVariable &var) Q_DECL_NOTHROW
+void VCurveVariable::Swap(VCurveVariable &var) noexcept
 { VInternalVariable::Swap(var); std::swap(d, var.d); }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -140,8 +140,8 @@ protected:
 
     /** @brief SaveDialog save options into file after change in dialog. */
     virtual void     SaveDialog(QDomElement &domElement)=0;
-    virtual void     SaveDialogChange() Q_DECL_FINAL;
-    virtual void     AddToFile() Q_DECL_OVERRIDE;
+    virtual void     SaveDialogChange() final;
+    virtual void     AddToFile() override;
     void             SaveOption(QSharedPointer<VGObject> &obj);
     virtual void     SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj);
     virtual QString  makeToolTip() const;

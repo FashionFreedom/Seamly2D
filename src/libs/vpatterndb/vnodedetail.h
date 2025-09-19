@@ -97,10 +97,10 @@ public:
      */
     VNodeDetail &operator=(const VNodeDetail &node);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VNodeDetail &operator=(VNodeDetail &&node) Q_DECL_NOTHROW;
+	VNodeDetail &operator=(VNodeDetail &&node) noexcept;
 #endif
 
-	void Swap(VNodeDetail &node) Q_DECL_NOTHROW;
+	void Swap(VNodeDetail &node) noexcept;
 
     /**
      * @brief getId return object id.

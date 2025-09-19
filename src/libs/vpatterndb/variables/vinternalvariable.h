@@ -71,10 +71,10 @@ public:
 
     VInternalVariable &operator=(const VInternalVariable &var);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VInternalVariable &operator=(VInternalVariable &&var) Q_DECL_NOTHROW;
+	VInternalVariable &operator=(VInternalVariable &&var) noexcept;
 #endif
 
-	void Swap(VInternalVariable &var) Q_DECL_NOTHROW;
+	void Swap(VInternalVariable &var) noexcept;
 
     virtual qreal  GetValue() const;
     virtual qreal* GetValue();

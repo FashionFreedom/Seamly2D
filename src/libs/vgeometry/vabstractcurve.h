@@ -71,14 +71,14 @@ public:
     explicit VAbstractCurve(const GOType &type, const quint32 &idObject = NULL_ID,
                             const Draw &mode = Draw::Calculation);
     explicit VAbstractCurve(const VAbstractCurve &curve);
-    virtual ~VAbstractCurve() Q_DECL_OVERRIDE;
+    virtual ~VAbstractCurve() override;
 
     VAbstractCurve &operator = (const VAbstractCurve &curve);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VAbstractCurve &operator = (VAbstractCurve &&curve) Q_DECL_NOTHROW;
+	VAbstractCurve &operator = (VAbstractCurve &&curve) noexcept;
 #endif
 
-	void                     Swap(VAbstractCurve &curve) Q_DECL_NOTHROW;
+	void                     Swap(VAbstractCurve &curve) noexcept;
 
     virtual QVector<QPointF> getPoints() const =0;
     static QVector<QPointF>  GetSegmentPoints(const QVector<QPointF> &points, const QPointF &begin, const QPointF &end,

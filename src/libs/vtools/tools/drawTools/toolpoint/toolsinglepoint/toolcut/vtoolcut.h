@@ -72,7 +72,7 @@ public:
                            const QString &formula, const QString &lineColor, const quint32 &curveCutId,
                            QGraphicsItem * parent = nullptr);
 
-    virtual int   type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int   type() const override {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::Cut)};
 
     VFormula      GetFormula() const;
@@ -90,9 +90,9 @@ public:
     void          setDirection(const QString &value);
 
 public slots:
-    virtual void  Disable(bool disable, const QString &draftBlockName) Q_DECL_OVERRIDE;
-    virtual void  piecesMode(bool mode) Q_DECL_OVERRIDE;
-    virtual void  FullUpdateFromFile() Q_DECL_OVERRIDE;
+    virtual void  Disable(bool disable, const QString &draftBlockName) override;
+    virtual void  piecesMode(bool mode) override;
+    virtual void  FullUpdateFromFile() override;
 
 protected:
     QString       m_direction;
@@ -102,7 +102,7 @@ protected:
     bool          m_piecesMode;
 
     void          RefreshGeometry();
-    virtual void  RemoveReferens() Q_DECL_OVERRIDE;
+    virtual void  RemoveReferens() override;
 
     template <typename T>
     void          ShowToolVisualization(bool show);

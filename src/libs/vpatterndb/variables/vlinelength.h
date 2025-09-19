@@ -71,16 +71,16 @@ public:
     VLengthLine(const VPointF *p1, const quint32 &p1Id, const VPointF *p2, const quint32 &p2Id, Unit patternUnit);
     VLengthLine(const VLengthLine &var);
 
-    virtual ~VLengthLine() Q_DECL_OVERRIDE;
+    virtual ~VLengthLine() override;
 
     VLengthLine &operator=(const VLengthLine &var);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VLengthLine &operator=(VLengthLine &&var) Q_DECL_NOTHROW;
+	VLengthLine &operator=(VLengthLine &&var) noexcept;
 #endif
 
-	void Swap(VLengthLine &var) Q_DECL_NOTHROW;
+	void Swap(VLengthLine &var) noexcept;
 
-    virtual bool Filter(quint32 id) Q_DECL_OVERRIDE;
+    virtual bool Filter(quint32 id) override;
     void         SetValue(const VPointF *p1, const VPointF *p2);
     quint32      GetP1Id() const;
     quint32      GetP2Id() const;

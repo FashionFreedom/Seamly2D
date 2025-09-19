@@ -58,13 +58,13 @@
 #include "vpointf.h"
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VAbstractArc &VAbstractArc::operator=(VAbstractArc &&arc) Q_DECL_NOTHROW
+VAbstractArc &VAbstractArc::operator=(VAbstractArc &&arc) noexcept
 {
     Swap(arc); return *this;
 }
 #endif
 
-void VAbstractArc::Swap(VAbstractArc &arc) Q_DECL_NOTHROW
+void VAbstractArc::Swap(VAbstractArc &arc) noexcept
 { VAbstractCurve::Swap(arc); std::swap(d, arc.d); }
 
 //---------------------------------------------------------------------------------------------------------------------

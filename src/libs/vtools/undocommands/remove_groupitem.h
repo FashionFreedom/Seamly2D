@@ -40,8 +40,8 @@ class RemoveGroupItem : public VUndoCommand
 public:
                   RemoveGroupItem(const QDomElement &xml, VAbstractPattern *doc, quint32 groupId, QUndoCommand *parent = nullptr);
     virtual      ~RemoveGroupItem();
-    virtual void  undo() Q_DECL_OVERRIDE;
-    virtual void  redo() Q_DECL_OVERRIDE;
+    virtual void  undo() override;
+    virtual void  redo() override;
 
 signals:
     void          updateGroups();

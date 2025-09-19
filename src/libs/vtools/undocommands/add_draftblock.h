@@ -68,9 +68,9 @@ class AddDraftBlock : public VUndoCommand
 public:
                   AddDraftBlock(const QDomElement &xml, VAbstractPattern *doc, const
                                 QString &draftBlockName, QUndoCommand *parent = nullptr);
-    virtual      ~AddDraftBlock() Q_DECL_OVERRIDE;
-    virtual void  undo() Q_DECL_OVERRIDE;
-    virtual void  redo() Q_DECL_OVERRIDE;
+    virtual      ~AddDraftBlock() override;
+    virtual void  undo() override;
+    virtual void  redo() override;
 
 private:
     Q_DISABLE_COPY(AddDraftBlock)

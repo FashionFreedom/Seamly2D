@@ -68,8 +68,8 @@ class VPosition : public QRunnable
 public:
                  VPosition(const VContour &sheet, int sheetEdgeNum, const VLayoutPiece &piece, int pieceEdgeNum,
                            std::atomic_bool *stop, bool rotate, int rotationIncrement, bool saveLength);
-    virtual     ~VPosition() Q_DECL_OVERRIDE{}
-    virtual void run() Q_DECL_OVERRIDE;
+    virtual     ~VPosition() override{}
+    virtual void run() override;
 
     VBestSquare  getBestResult() const;
 

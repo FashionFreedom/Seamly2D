@@ -78,10 +78,10 @@ public:
 
     VContour &operator=(const VContour &contour);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VContour &operator=(VContour &&contour) Q_DECL_NOTHROW;
+	VContour &operator=(VContour &&contour) noexcept;
 #endif
 
-	void Swap(VContour &contour) Q_DECL_NOTHROW;
+	void Swap(VContour &contour) noexcept;
 
     void             SetContour(const QVector<QPointF> &contour);
     QVector<QPointF> GetContour() const;

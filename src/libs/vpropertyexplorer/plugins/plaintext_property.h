@@ -55,26 +55,26 @@ public:
     explicit            PlainTextProperty(const QString &name);
 
     virtual QWidget    *createEditor(QWidget *parent, const QStyleOptionViewItem &options,
-                                  const QAbstractItemDelegate *delegate) Q_DECL_OVERRIDE;
+                                  const QAbstractItemDelegate *delegate) override;
 
 
-    virtual QVariant     getEditorData(const QWidget *editor) const Q_DECL_OVERRIDE;
+    virtual QVariant     getEditorData(const QWidget *editor) const override;
 
     void                 setReadOnly(bool readOnly);
     void                 setOsSeparator(bool separator);
     void                 setClearButtonEnable(bool value);
 
 
-    virtual void        setSetting(const QString &key, const QVariant &value) Q_DECL_OVERRIDE;
-    virtual QVariant    getSetting(const QString &key) const Q_DECL_OVERRIDE;
-    virtual QStringList getSettingKeys() const Q_DECL_OVERRIDE;
+    virtual void        setSetting(const QString &key, const QVariant &value) override;
+    virtual QVariant    getSetting(const QString &key) const override;
+    virtual QStringList getSettingKeys() const override;
 
-    virtual QString     type() const Q_DECL_OVERRIDE;
+    virtual QString     type() const override;
 
     Q_REQUIRED_RESULT virtual VProperty *clone(bool include_children = true,
-                                               VProperty *container = nullptr) const Q_DECL_OVERRIDE;
+                                               VProperty *container = nullptr) const override;
 
-    virtual void        updateParent(const QVariant &value) Q_DECL_OVERRIDE;
+    virtual void        updateParent(const QVariant &value) override;
 
     int                 getTypeForParent() const;
     void                setTypeForParent(int value);
@@ -84,7 +84,7 @@ protected:
     int                 m_typeForParent;
     bool                m_osSeparator;
 
-    virtual bool        eventFilter(QObject *object, QEvent *event) Q_DECL_OVERRIDE;
+    virtual bool        eventFilter(QObject *object, QEvent *event) override;
 
 private:
     Q_DISABLE_COPY(PlainTextProperty)

@@ -62,11 +62,11 @@
 #include "vlinelength_p.h"
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VLengthLine &VLengthLine::operator=(VLengthLine &&var) Q_DECL_NOTHROW
+VLengthLine &VLengthLine::operator=(VLengthLine &&var) noexcept
 { Swap(var); return *this; }
 #endif
 
-void VLengthLine::Swap(VLengthLine &var) Q_DECL_NOTHROW
+void VLengthLine::Swap(VLengthLine &var) noexcept
 { VInternalVariable::Swap(var); std::swap(d, var.d); }
 
 //---------------------------------------------------------------------------------------------------------------------

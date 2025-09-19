@@ -105,7 +105,7 @@ class DialogTool : public QDialog
     Q_OBJECT
 public:
     DialogTool(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
-    virtual          ~DialogTool() Q_DECL_OVERRIDE;
+    virtual          ~DialogTool() override;
 
     VAbstractTool*   GetAssociatedTool();
     void             SetAssociatedTool(VAbstractTool* tool);
@@ -233,9 +233,9 @@ protected:
     QPointer<Visualization> vis;
 
     QScreen         *m_screen;
-    virtual void     keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
-    virtual void     closeEvent ( QCloseEvent * event ) Q_DECL_OVERRIDE;
-    virtual void     showEvent( QShowEvent *event ) Q_DECL_OVERRIDE;
+    virtual void     keyPressEvent(QKeyEvent *event) override;
+    virtual void     closeEvent ( QCloseEvent * event ) override;
+    virtual void     showEvent( QShowEvent *event ) override;
 
     void             fillComboBoxPiecesList(QComboBox *box, const QVector<quint32> &list);
     void             fillComboBoxPoints(QComboBox *box, FillComboBox rule = FillComboBox::Whole,
@@ -302,7 +302,7 @@ protected:
      */
     virtual void     SaveData() {}
     void             MoveCursorToEnd(QPlainTextEdit *plainTextEdit) const;
-    virtual bool     eventFilter(QObject *object, QEvent *event) Q_DECL_OVERRIDE;
+    virtual bool     eventFilter(QObject *object, QEvent *event) override;
     quint32          DNumber(const QString &baseName) const;
 
     static int       FindNotExcludedNodeDown(QListWidget *listWidget, int candidate);

@@ -69,7 +69,7 @@ public:
     VExceptionConversionError(const VExceptionConversionError &error);
     VExceptionConversionError &operator=(const VExceptionConversionError &error);
     virtual         ~VExceptionConversionError() V_NOEXCEPT_EXPR (true) Q_DECL_EQ_DEFAULT;
-    virtual QString ErrorMessage() const Q_DECL_OVERRIDE;
+    virtual QString ErrorMessage() const override;
     QString         String() const;
 protected:
     /** @brief str string, where happend error */

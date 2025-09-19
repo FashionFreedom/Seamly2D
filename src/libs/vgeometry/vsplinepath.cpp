@@ -59,10 +59,10 @@
 #include "vsplinepath_p.h"
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VSplinePath &VSplinePath::operator=(VSplinePath &&path) Q_DECL_NOTHROW { Swap(path); return *this; }
+VSplinePath &VSplinePath::operator=(VSplinePath &&path) noexcept { Swap(path); return *this; }
 #endif
 
-void VSplinePath::Swap(VSplinePath &path) Q_DECL_NOTHROW
+void VSplinePath::Swap(VSplinePath &path) noexcept
 { VAbstractCubicBezierPath::Swap(path); std::swap(d, path.d); }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -127,7 +127,7 @@ public:
     static QString    MakeGroupsHelp();
 
 protected:
-    virtual void      showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    virtual void      showEvent(QShowEvent *event) override;
     QSizeF            getTemplateSize(const PaperSizeFormat &tmpl, const Unit &unit) const;
 
 public slots:
