@@ -1,5 +1,6 @@
 var NAVTREEINDEX210 =
 {
+"de/d0d/classXMLIBM1047Transcoder.html#affd3a164eb510386f4fb4ec260c93f93":[3,0,841,16],
 "de/d0e/classVisLine.html":[3,0,637],
 "de/d0e/classVisLine.html#a3594b9caf48ca88a60a12aaafb9faadf":[3,0,637,0],
 "de/d0e/classVisLine.html#a3d128e18290ca9d6888e8a112c538efc":[3,0,637,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX210 =
 "de/d0f/classVCommonSettings.html#ab3d8e61eeb3248b3a59b4adfd61bf55d":[3,0,588,294],
 "de/d0f/classVCommonSettings.html#ab4429433fee2b31d643a7df9cd751a4c":[3,0,588,83],
 "de/d0f/classVCommonSettings.html#ab50516c2a7720f04abf077a67eaedbac":[3,0,588,74],
-"de/d0f/classVCommonSettings.html#ab5161907e3ab06ef4f5ccf434bf77334":[3,0,588,55],
-"de/d0f/classVCommonSettings.html#ab554c9c13ed547ebf17451a895bd2c60":[3,0,588,235]
+"de/d0f/classVCommonSettings.html#ab5161907e3ab06ef4f5ccf434bf77334":[3,0,588,55]
 };

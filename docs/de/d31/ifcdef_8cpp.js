@@ -140,6 +140,7 @@ var ifcdef_8cpp =
     [ "currentSeamAllowance", "de/d31/ifcdef_8cpp.html#a8ee6a51dae224b6a2b5a7562b01bc2fd", null ],
     [ "CustomIncrSign", "de/d31/ifcdef_8cpp.html#a0df1f36e04cd4077a0c9e3915b070a83", null ],
     [ "CustomMSign", "de/d31/ifcdef_8cpp.html#a06d2c73abe15fdf5c894e5b6dfdd6c56", null ],
+    [ "DefaultLineWeight", "de/d31/ifcdef_8cpp.html#a9970c657c35fd0f346198544392d337c", null ],
     [ "elarc_", "de/d31/ifcdef_8cpp.html#a1aeb99428b3bf157cb2bf2544e3d9b41", null ],
     [ "FillBackwardDiagonal", "de/d31/ifcdef_8cpp.html#a2cbc954ba9f8bba8d86221e2c1398647", null ],
     [ "FillCross", "de/d31/ifcdef_8cpp.html#a86a005b6031afb7bfa67efb9ba68f790", null ],
