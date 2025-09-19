@@ -20,7 +20,7 @@ var classPatternPieceTool =
     [ "deleteTool", "da/dfb/classPatternPieceTool.html#adb9a6ba2592fadf08fcd58dbb94af2d3", null ],
     [ "editPieceProperties", "da/dfb/classPatternPieceTool.html#adc2cdaeb162091a4de8908b82e3e0191", null ],
     [ "EnableToolMove", "da/dfb/classPatternPieceTool.html#aa8a222aaf71327882b8af990473df882", null ],
-    [ "findGrainlineGeometry", "da/dfb/classPatternPieceTool.html#a9a9ef0e1823abc06231465fe7cd8a3d8", null ],
+    [ "findGrainlineGeometry", "da/dfb/classPatternPieceTool.html#a25f805165aaf1da1a9803894bb832922", null ],
     [ "findLabelGeometry", "da/dfb/classPatternPieceTool.html#a75112848d613017cb6610af49f5452d5", null ],
     [ "FullUpdateFromFile", "da/dfb/classPatternPieceTool.html#a078ac6678e3b023d265e4553fc6cee55", null ],
     [ "getTagName", "da/dfb/classPatternPieceTool.html#a4abbd77fd2a92afbcaf66fea0d1f1638", null ],

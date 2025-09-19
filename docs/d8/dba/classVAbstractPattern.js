@@ -164,6 +164,7 @@ var classVAbstractPattern =
     [ "AttrAll", "d8/dba/classVAbstractPattern.html#a5016f1d6d9bc10b4096589f1a3e26157", null ],
     [ "AttrAnchor", "d8/dba/classVAbstractPattern.html#a3bb32d513f52215966c41e35d9426dd5", null ],
     [ "AttrAnnotation", "d8/dba/classVAbstractPattern.html#a2070188dd3e7116c61e5848d0116a584", null ],
+    [ "AttrArrowLength", "d8/dba/classVAbstractPattern.html#a0c691839a50a1778f36431f50bd3303e", null ],
     [ "AttrArrows", "d8/dba/classVAbstractPattern.html#aac5f2501c0c641bc8e8b50c8d31c5312", null ],
     [ "AttrAspectRatio", "d8/dba/classVAbstractPattern.html#a751f426148f203c6dccf556e70e3e773", null ],
     [ "AttrBasepoint", "d8/dba/classVAbstractPattern.html#a2db255131b570db513110eaba12f70c8", null ],

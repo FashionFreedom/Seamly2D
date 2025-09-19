@@ -99,6 +99,7 @@ var classPatternPieceDialog =
     [ "setCurrentText", "d5/d41/classPatternPieceDialog.html#a706e514243b99402b4ecafec7e24e87d", null ],
     [ "setErrorText", "d5/d41/classPatternPieceDialog.html#a0c860c4a3c90f07270942dc9f8a98edb", null ],
     [ "setGrainlineAngle", "d5/d41/classPatternPieceDialog.html#adbf51331be6b5d8d527a9d40ae2d14e2", null ],
+    [ "setGrainlineArrowLength", "d5/d41/classPatternPieceDialog.html#a5944ecb2d916778f313ef768c86ce162", null ],
     [ "setGrainlineLength", "d5/d41/classPatternPieceDialog.html#a230f46d200ad43e411d243902e62a3be", null ],
     [ "setInLayout", "d5/d41/classPatternPieceDialog.html#a8d32918b585c061eb7bd21e243260c4c", null ],
     [ "setMoveExclusions", "d5/d41/classPatternPieceDialog.html#ae8fe211c6245dd4c49f7a2a307830996", null ],

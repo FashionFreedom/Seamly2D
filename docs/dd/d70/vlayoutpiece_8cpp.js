@@ -2,7 +2,7 @@ var vlayoutpiece_8cpp =
 [
     [ "ConvertInternalPaths", "dd/d70/vlayoutpiece_8cpp.html#aee188e904012b2c56f9a99b8a90b554b", null ],
     [ "CorrectPosition", "dd/d70/vlayoutpiece_8cpp.html#a26982c628e932aec0813e1c375387df4", null ],
-    [ "findGrainlineGeometry", "dd/d70/vlayoutpiece_8cpp.html#a51f890cf890f9a7d83130b9bb733b5ba", null ],
+    [ "findGrainlineGeometry", "dd/d70/vlayoutpiece_8cpp.html#a7127c03c02e6cd087bc720219e7d9556", null ],
     [ "findLabelGeometry", "dd/d70/vlayoutpiece_8cpp.html#a04f05a7019f2d0feb9fc0abc773ad54e", null ],
     [ "IsItemContained", "dd/d70/vlayoutpiece_8cpp.html#a4867ae9889201fd1784404a9a1fe75ea", null ],
     [ "PieceLabelText", "dd/d70/vlayoutpiece_8cpp.html#a9d5be9c5672d55404b37efffeccaa53f", null ],
