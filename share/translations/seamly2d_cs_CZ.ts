@@ -3084,7 +3084,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seamly2D došlo k chybě při výpočtu vzorce.
+Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.</translation>
     </message>
 </context>
 <context>
@@ -5527,8 +5528,8 @@ Chcete uložit své změny?</translation>
         <translation>Náhled tisku - původní rozvržení</translation>
     </message>
     <message>
-        <source>Export As...</source>
-        <translation>Exportovat jako...</translation>
+        <source>Export Layout As...</source>
+        <translation>Exportovat rozložení jako...</translation>
     </message>
     <message>
         <source>Layout mode</source>

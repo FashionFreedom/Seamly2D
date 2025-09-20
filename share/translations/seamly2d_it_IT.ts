@@ -3069,7 +3069,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seamly2D ha riscontrato un errore durante il calcolo di una formula.
+Prova ad annullare l'ultima operazione o a correggere la formula non funzionante.</translation>
     </message>
 </context>
 <context>
@@ -5517,8 +5518,8 @@ Vuoi salvare i cambiamenti?</translation>
         <translation>Anteprima di stampa del layout originale</translation>
     </message>
     <message>
-        <source>Export As...</source>
-        <translation>Esporta Come...</translation>
+        <source>Export Layout As...</source>
+        <translation>Esporta layout come...</translation>
     </message>
     <message>
         <source>Layout mode</source>

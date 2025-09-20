@@ -3084,7 +3084,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το Seamly2D αντιμετώπισε σφάλμα κατά τον υπολογισμό ενός τύπου.
+Δοκιμάστε να αναιρέσετε την τελευταία λειτουργία ή να διορθώσετε τον προβληματικό τύπο.</translation>
     </message>
 </context>
 <context>
@@ -5531,8 +5532,8 @@ Do you want to save your changes?</source>
         <translation>Προεπισκόπιση εκτύπωσης της αρχικής τοποθέτησης</translation>
     </message>
     <message>
-        <source>Export As...</source>
-        <translation>Εξαγωγή ως...</translation>
+        <source>Export Layout As...</source>
+        <translation>Εξαγωγή διάταξης ως...</translation>
     </message>
     <message>
         <source>Layout mode</source>

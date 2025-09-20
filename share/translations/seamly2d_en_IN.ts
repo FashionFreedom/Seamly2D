@@ -5499,8 +5499,8 @@ Do you want to save your changes?</translation>
         <translation>Print preview original layout</translation>
     </message>
     <message>
-        <source>Export As...</source>
-        <translation>Export As...</translation>
+        <source>Export Layout As...</source>
+        <translation>Export Layout As...</translation>
     </message>
     <message>
         <source>Layout mode</source>

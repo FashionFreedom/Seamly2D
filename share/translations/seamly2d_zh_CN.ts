@@ -5495,7 +5495,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Export As...</source>
+        <source>Export Layout As...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

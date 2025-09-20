@@ -3100,7 +3100,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seamly2D a rencontré une erreur lors du calcul d&apos;une formule.
+Veuillez essayer d&apos;annuler la dernière opération ou de corriger la formule erronée.</translation>
     </message>
 </context>
 <context>
@@ -5553,8 +5554,8 @@ Voulez-vous sauvegarder les changements ?</translation>
         <translation>Imprimer l&apos;aperçu du plan de coupe original</translation>
     </message>
     <message>
-        <source>Export As...</source>
-        <translation>Exporter en tant que...</translation>
+        <source>Export Layout As...</source>
+        <translation>Exporter la mise en page sous...</translation>
     </message>
     <message>
         <source>Layout mode</source>
