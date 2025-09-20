@@ -89,7 +89,7 @@ var searchData=
   ['snapshot_5fresult_5ftype_86',['SNAPSHOT_RESULT_TYPE',['../da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a93d9a7ee3799a47f6d8a75d7d9a63802',1,'DOMXPathResult']]],
   ['source_5fexternal_87',['Source_External',['../d0/dac/classXMLReader.html#aa4d78d1be0836774f64f0678657f8c87a3ab99e4123aaf888c81c234d3b592139',1,'XMLReader']]],
   ['source_5finternal_88',['Source_Internal',['../d0/dac/classXMLReader.html#aa4d78d1be0836774f64f0678657f8c87a41940fa36bffa73a89b45f99f7ed50ed',1,'XMLReader']]],
-  ['space_5fseparator_89',['SPACE_SEPARATOR',['../dd/d02/classXMLUniCharacter.html#a6f38eb37f0042c27a67f7179e132893bab8ffcd7c32cd20ccd66d4ceae255f75c',1,'XMLUniCharacter']]],
+  ['space_5fseparator_89',['SPACE_SEPARATOR',['../dd/d02/classXMLUniCharacter.html#a1ab8b1de68bfcb71e9029d1ff4c1bfc4ab8ffcd7c32cd20ccd66d4ceae255f75c',1,'XMLUniCharacter']]],
   ['spacesok_90',['SpacesOk',['../de/d1b/classXMLElementDecl.html#a44870fe57f7421bc6506b835046ed1b0a8adaed8f15fde8ed083cb42f7e6d90fe',1,'XMLElementDecl']]],
   ['specialtypenum_91',['SpecialTypeNum',['../d0/dd2/classXMLAbstractDoubleFloat.html#a23907b924d92dcf8dd17e6768ce1a267aac549f252afed378cb463a06f579c9db',1,'XMLAbstractDoubleFloat']]],
   ['spline_92',['spline',['../d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2afa4cff6afc4963881749f7742fbb4d1392',1,'Spline:&#160;def.h'],['../d5/d9d/vgeometrydef_8h.html#a6bf870a878c696639c3936fa7e9729b9a4cff6afc4963881749f7742fbb4d1392',1,'Spline:&#160;vgeometrydef.h'],['../d4/da4/def_8h.html#ab8460ab56e3e92e57d3ed3b717492395a4cff6afc4963881749f7742fbb4d1392',1,'Spline:&#160;def.h']]],
@@ -109,7 +109,7 @@ var searchData=
   ['stack_5femptystack_106',['Stack_EmptyStack',['../dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80a5dce2ab03301e1c66f16814aca49a34a',1,'XMLExcepts']]],
   ['standalonenotlegal_107',['StandaloneNotLegal',['../d7/d8e/classXMLErrs.html#aefe9817ef5442905d86fd17cb0c35e47a18d13a0313cdc36e1ca05c7fcabf6dbe',1,'XMLErrs']]],
   ['start_108',['START',['../d1/d87/classDOMRangeImpl.html#a5727afc71698542853254011034af223a35f9c5f69b3d4720f09a9c68b549d3c6',1,'DOMRangeImpl']]],
-  ['start_5fpunctuation_109',['START_PUNCTUATION',['../dd/d02/classXMLUniCharacter.html#a6f38eb37f0042c27a67f7179e132893ba277f605d5fea73d1c8fa6104316768c6',1,'XMLUniCharacter']]],
+  ['start_5fpunctuation_109',['START_PUNCTUATION',['../dd/d02/classXMLUniCharacter.html#a1ab8b1de68bfcb71e9029d1ff4c1bfc4a277f605d5fea73d1c8fa6104316768c6',1,'XMLUniCharacter']]],
   ['start_5fto_5fend_110',['START_TO_END',['../db/d3c/classDOMRange.html#a1459ada3b7cbdd517b4104fa8a8af0a9ad277aa502e7daefeb9e6ad01f00197eb',1,'DOMRange']]],
   ['start_5fto_5fstart_111',['START_TO_START',['../db/d3c/classDOMRange.html#a1459ada3b7cbdd517b4104fa8a8af0a9a6e92daee127795781b6115cfd00b58d9',1,'DOMRange']]],
   ['startangle_112',['StartAngle',['../d9/d7c/vcurveangle_8h.html#af68c47ff6642e872b4310543f239cdbeacdd4d1ae135feaff377724ee90678d31',1,'vcurveangle.h']]],
@@ -126,7 +126,7 @@ var searchData=
   ['subgrpcomparator_5fngr_123',['SubGrpComparator_NGR',['../dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80afcdc3014324d2b23c10c909b475d0f70',1,'XMLExcepts']]],
   ['substitutiongrouptypemismatch_124',['SubstitutionGroupTypeMismatch',['../d7/d8e/classXMLErrs.html#aefe9817ef5442905d86fd17cb0c35e47a7fd33cc64496bbf52f2b3ffd0faf5afb',1,'XMLErrs']]],
   ['supportfilesnotfound_125',['SupportFilesNotFound',['../d5/df1/classXMLTransService.html#afbf0df74495928631fc102d86a993179a5e22f1e25789a3087a4debd08aaaed40',1,'XMLTransService']]],
-  ['surrogate_126',['SURROGATE',['../dd/d02/classXMLUniCharacter.html#a6f38eb37f0042c27a67f7179e132893ba7dd81d84a0faa70472736b71d5d9f2c7',1,'XMLUniCharacter']]],
+  ['surrogate_126',['SURROGATE',['../dd/d02/classXMLUniCharacter.html#a1ab8b1de68bfcb71e9029d1ff4c1bfc4a7dd81d84a0faa70472736b71d5d9f2c7',1,'XMLUniCharacter']]],
   ['svg_127',['SVG',['../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8acd15a75c26008696647b31a3f0de43b3',1,'def.h']]],
   ['syntax_5ferr_128',['syntax_err',['../d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdea1c49563ffc996b094f544ddb9e9abfd3',1,'XMLDOMMsg::SYNTAX_ERR'],['../dd/d0a/classDOMException.html#af80f80a377221615d84e59dd2cf71af5a1d9200984864a43f8eba841eacd89be2',1,'DOMException::SYNTAX_ERR']]]
 ];
