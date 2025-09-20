@@ -52,6 +52,6 @@ var classVPiecePath =
     [ "setType", "df/de1/classVPiecePath.html#a8fef4fc7fbe4559b52cf0b5767c0f288", null ],
     [ "StartSegment", "df/de1/classVPiecePath.html#a6cae1535d9644811ce0638b81b487232", null ],
     [ "StartSegment", "df/de1/classVPiecePath.html#ade8786c18a64d99ba1356c7b115dc9b6", null ],
-    [ "Swap", "df/de1/classVPiecePath.html#a5e4052067aa6b95f51de7f788dbce3fe", null ],
+    [ "Swap", "df/de1/classVPiecePath.html#a220e0965ec50ed2afc3ef0eab766182d", null ],
     [ "d", "df/de1/classVPiecePath.html#a34baef8e83f5d6ff1b49ad62b01c5d4b", null ]
 ];

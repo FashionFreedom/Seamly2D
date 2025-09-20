@@ -1,10 +1,10 @@
 var classVPE_1_1VColorPropertyEditor =
 [
     [ "VColorPropertyEditor", "d5/d9d/classVPE_1_1VColorPropertyEditor.html#a1fc6266fb5491f0e57dd9300da409f16", null ],
-    [ "~VColorPropertyEditor", "d5/d9d/classVPE_1_1VColorPropertyEditor.html#ac25c0c60770b762254eb42829b18d6a2", null ],
+    [ "~VColorPropertyEditor", "d5/d9d/classVPE_1_1VColorPropertyEditor.html#a87e44d3029e9346fbb9b05ccad21b44e", null ],
     [ "dataChanged", "d5/d9d/classVPE_1_1VColorPropertyEditor.html#a9d5028c2a4879b0765157fd0eeebaa10", null ],
     [ "dataChangedByUser", "d5/d9d/classVPE_1_1VColorPropertyEditor.html#aa08931a7d329d6a175ea0303f4edc542", null ],
-    [ "eventFilter", "d5/d9d/classVPE_1_1VColorPropertyEditor.html#a94144d52409e1c9cd354d9eb46a156c1", null ],
+    [ "eventFilter", "d5/d9d/classVPE_1_1VColorPropertyEditor.html#adb17f1d469f01fe9a6c2e2f4f8342adf", null ],
     [ "GetColorPixmap", "d5/d9d/classVPE_1_1VColorPropertyEditor.html#a328dff1f96646f2294460948881886cd", null ],
     [ "GetColorString", "d5/d9d/classVPE_1_1VColorPropertyEditor.html#a1bbf692a510b5b454c33ee28438266d8", null ],
     [ "getLineColor", "d5/d9d/classVPE_1_1VColorPropertyEditor.html#ab3b317827e03d3f5b52c9c12803a497e", null ],

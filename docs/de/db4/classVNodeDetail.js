@@ -18,6 +18,6 @@ var classVNodeDetail =
     [ "setReverse", "de/db4/classVNodeDetail.html#ae74246276eb83a606cf7345d027b0154", null ],
     [ "setTypeNode", "de/db4/classVNodeDetail.html#a6cd66d8e02eb449ce37b02852a818b72", null ],
     [ "setTypeTool", "de/db4/classVNodeDetail.html#aaeb20a7da7eb3dc87b54b957a7a158ec", null ],
-    [ "Swap", "de/db4/classVNodeDetail.html#a74036e5d1eda9d22d370c903b8aef927", null ],
+    [ "Swap", "de/db4/classVNodeDetail.html#ac0db44d887fdadac8d038da3e0dd426e", null ],
     [ "d", "de/db4/classVNodeDetail.html#af12de19c458d25023dd04e8d7afbb973", null ]
 ];

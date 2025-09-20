@@ -17,5 +17,5 @@ var searchData=
   ['zoomtopoint_14',['zoomToPoint',['../d6/d1a/classMainWindow.html#a6ef53ce1b39891be5f2d11725ed9b297',1,'MainWindow']]],
   ['zoomtoprevious_15',['zoomToPrevious',['../d6/d1a/classMainWindow.html#a8189a2693a849a3a8dce57f1ae42ffa8',1,'MainWindow']]],
   ['zoomtorect_16',['zoomToRect',['../da/d5d/classVMainGraphicsView.html#a8aae204b4731085dd60f7ca060f7f89f',1,'VMainGraphicsView']]],
-  ['zoomtoselected_17',['zoomtoselected',['../d6/d1a/classMainWindow.html#ad3902fb6ebda29cc56774b864a3ee525',1,'MainWindow::zoomToSelected()'],['../d8/d61/classTMainWindow.html#a3b0ff4484c24d5dfb96c0c14d97eada6',1,'TMainWindow::zoomToSelected()'],['../dc/d59/classVAbstractMainWindow.html#a3d5d5e3cf10fa4fcbc9b0009c622bf3e',1,'VAbstractMainWindow::zoomToSelected()']]]
+  ['zoomtoselected_17',['zoomtoselected',['../d6/d1a/classMainWindow.html#ace47a2f2bef148b1eee71f39ddac763e',1,'MainWindow::zoomToSelected()'],['../d8/d61/classTMainWindow.html#a605ab53c785755efbaaf0ee68ab7082d',1,'TMainWindow::zoomToSelected()'],['../dc/d59/classVAbstractMainWindow.html#a3d5d5e3cf10fa4fcbc9b0009c622bf3e',1,'VAbstractMainWindow::zoomToSelected()']]]
 ];

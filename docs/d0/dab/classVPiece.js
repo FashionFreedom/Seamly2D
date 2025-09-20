@@ -67,6 +67,6 @@ var classVPiece =
     [ "SetPatternPieceData", "d0/dab/classVPiece.html#a84ef5d6f411e53506b166308b312f6f5", null ],
     [ "setSeamAllowanceWidthFormula", "d0/dab/classVPiece.html#aa0939a481a8e68fde162e017c25492b2", null ],
     [ "SetUnited", "d0/dab/classVPiece.html#ab73271a2197d96a782769b6858548321", null ],
-    [ "Swap", "d0/dab/classVPiece.html#a3edb9b2b52587180960a07cc2551156b", null ],
+    [ "Swap", "d0/dab/classVPiece.html#a53ac3df05b21f0105876f4bd203e2d73", null ],
     [ "d", "d0/dab/classVPiece.html#a32c421ed27fffaa7202d43f134ae371c", null ]
 ];

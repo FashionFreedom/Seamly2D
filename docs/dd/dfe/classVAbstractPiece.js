@@ -36,7 +36,7 @@ var classVAbstractPiece =
     [ "MaxLocalSA", "dd/dfe/classVAbstractPiece.html#a97a516118aa522873659244fba646887", null ],
     [ "operator=", "dd/dfe/classVAbstractPiece.html#afd384b7b176133bb3901c4484e32dbbf", null ],
     [ "ParallelCrossPoint", "dd/dfe/classVAbstractPiece.html#a34509a119dc956a49af7fbc145d00686", null ],
-    [ "PointPosition", "dd/dfe/classVAbstractPiece.html#a55698e2eb1e1142fe81e21bfe88d6eed", null ],
+    [ "PointPosition", "dd/dfe/classVAbstractPiece.html#ad1c23a19c1ea00f5818868d6b5a93522", null ],
     [ "RemoveDublicates", "dd/dfe/classVAbstractPiece.html#aa1c6f83486d65c6c563feaef210fbe3a", null ],
     [ "setColor", "dd/dfe/classVAbstractPiece.html#a91440f1d032a865c23b973fc076ee16b", null ],
     [ "setFill", "dd/dfe/classVAbstractPiece.html#a178f875d422518ab254b4361f0e71a46", null ],
@@ -52,6 +52,6 @@ var classVAbstractPiece =
     [ "SingleParallelPoint", "dd/dfe/classVAbstractPiece.html#a90743784b27c6ef036650a7aa438117f", null ],
     [ "SubPath", "dd/dfe/classVAbstractPiece.html#a9a5200d95094b29d2f1d2f00b6bfe3d7", null ],
     [ "sumTrapezoids", "dd/dfe/classVAbstractPiece.html#a5777b88093be5350bcabe027b5d06843", null ],
-    [ "Swap", "dd/dfe/classVAbstractPiece.html#ab36f3c10a48c7759b5a77974d22ba09a", null ],
+    [ "Swap", "dd/dfe/classVAbstractPiece.html#a320f7f7380a9f10c7d141a4528a69baf", null ],
     [ "d", "dd/dfe/classVAbstractPiece.html#a74f7bb0de70b8e99d9b39050469844cd", null ]
 ];

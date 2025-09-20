@@ -2,11 +2,11 @@ var classVisToolHeight =
 [
     [ "VisToolHeight", "d4/dc5/classVisToolHeight.html#a13ea4ffef50b097969c51fc61e3f6466", null ],
     [ "~VisToolHeight", "d4/dc5/classVisToolHeight.html#a0ea2b81f353f93586e1aacc272d2cfe5", null ],
-    [ "RefreshGeometry", "d4/dc5/classVisToolHeight.html#a90089031492eed38a207f16957a29071", null ],
+    [ "RefreshGeometry", "d4/dc5/classVisToolHeight.html#a24b6d264f9da5e138dd3f1574837f1fe", null ],
     [ "setLineP1Id", "d4/dc5/classVisToolHeight.html#ada2c71b3acf8544e49036c8332d433fc", null ],
     [ "setLineP2Id", "d4/dc5/classVisToolHeight.html#a5829a7d7c4b193126fc1458460df528a", null ],
     [ "ShowIntersection", "d4/dc5/classVisToolHeight.html#a7240cfa529b500f741f629f84324b406", null ],
-    [ "type", "d4/dc5/classVisToolHeight.html#affb7933548cdfbcfaaf7208a5ae6bb54", null ],
+    [ "type", "d4/dc5/classVisToolHeight.html#aa55f6d702f6df81851e0665181cbd51d", null ],
     [ "base_point", "d4/dc5/classVisToolHeight.html#a31dd3ba655406da3e177df5d21a7db45", null ],
     [ "line", "d4/dc5/classVisToolHeight.html#ab4f7f25cc044fe0f00ee824e1da8222b", null ],
     [ "line_intersection", "d4/dc5/classVisToolHeight.html#a2973274215c12251c6c195df5413cddc", null ],

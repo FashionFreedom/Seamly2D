@@ -6,7 +6,7 @@ var classMainWindowsNoGUI =
       [ "PrintNative", "de/d1a/classMainWindowsNoGUI.html#aa22aa8c63b30c458a5fe33e486ae1da9ad5af3186f321912e45b31c56f0c7e7d2", null ]
     ] ],
     [ "MainWindowsNoGUI", "de/d1a/classMainWindowsNoGUI.html#a313c4b8909f9c82ba01ad318f9369f66", null ],
-    [ "~MainWindowsNoGUI", "de/d1a/classMainWindowsNoGUI.html#a1091e0e85fa6ebe5d280c59b6bcbf2e0", null ],
+    [ "~MainWindowsNoGUI", "de/d1a/classMainWindowsNoGUI.html#a78289bd171b00e2dd7995f28750c848c", null ],
     [ "AAMADxfFile", "de/d1a/classMainWindowsNoGUI.html#a3147d85518fa6a2b8e7e737939e9326d", null ],
     [ "CleanLayout", "de/d1a/classMainWindowsNoGUI.html#a8b59fc83af17e2b954d41fd2d8144990", null ],
     [ "ContinueIfLayoutStale", "de/d1a/classMainWindowsNoGUI.html#a5eb88ed5f22e2720c0ffe08242a496c5", null ],

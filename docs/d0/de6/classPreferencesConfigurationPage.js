@@ -4,7 +4,7 @@ var classPreferencesConfigurationPage =
     [ "~PreferencesConfigurationPage", "d0/de6/classPreferencesConfigurationPage.html#ad8df1e72cbf9f76d915e32b268c6aa0a", null ],
     [ "adjustTextColor", "d0/de6/classPreferencesConfigurationPage.html#a8c7534c66fdc442181d65c45241df82b", null ],
     [ "apply", "d0/de6/classPreferencesConfigurationPage.html#abc0390c38c8214dc8b677ee3e9b9a5c1", null ],
-    [ "changeEvent", "d0/de6/classPreferencesConfigurationPage.html#af121824ae8e725ae57fdce32959f56b2", null ],
+    [ "changeEvent", "d0/de6/classPreferencesConfigurationPage.html#ad94e953f7ad4ff867df78fcd5dcf9aa4", null ],
     [ "initUnits", "d0/de6/classPreferencesConfigurationPage.html#ae83281d89f1706841a16370936dbbcae", null ],
     [ "setLocaleTooltip", "d0/de6/classPreferencesConfigurationPage.html#a0c1813176c79d56511c9190c07815ecc", null ],
     [ "setPointNameComboBox", "d0/de6/classPreferencesConfigurationPage.html#aa77cd676bf84397f2df454807ba45007", null ],

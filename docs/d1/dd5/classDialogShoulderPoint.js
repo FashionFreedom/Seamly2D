@@ -1,9 +1,9 @@
 var classDialogShoulderPoint =
 [
     [ "DialogShoulderPoint", "d1/dd5/classDialogShoulderPoint.html#afcaa5e511d3c54be8a4a0a5a88552b83", null ],
-    [ "~DialogShoulderPoint", "d1/dd5/classDialogShoulderPoint.html#a1c63f4038dad87c967075eda9093089c", null ],
-    [ "ChosenObject", "d1/dd5/classDialogShoulderPoint.html#a4fa5df047d48c331ca675a1575bef7fd", null ],
-    [ "closeEvent", "d1/dd5/classDialogShoulderPoint.html#aefc1c65a71833b27fbe11500784715c7", null ],
+    [ "~DialogShoulderPoint", "d1/dd5/classDialogShoulderPoint.html#aa8f1788c842093acc13a5f1202b9ffe5", null ],
+    [ "ChosenObject", "d1/dd5/classDialogShoulderPoint.html#ad35841c35b1d8839edb65554370fc0d5", null ],
+    [ "closeEvent", "d1/dd5/classDialogShoulderPoint.html#aeda12fde0edcce38ab5b15c29426833e", null ],
     [ "DeployFormulaTextEdit", "d1/dd5/classDialogShoulderPoint.html#aa7d328a90473a7cb7c99733cd51b3520", null ],
     [ "FormulaTextChanged", "d1/dd5/classDialogShoulderPoint.html#a182522c95e9312e6952cb552e3de7a28", null ],
     [ "FXLength", "d1/dd5/classDialogShoulderPoint.html#a75c6c3b33c8fb5458192db22e64ce4f9", null ],
@@ -14,8 +14,8 @@ var classDialogShoulderPoint =
     [ "GetP1Line", "d1/dd5/classDialogShoulderPoint.html#a478e7b7668d09b9182cb31fa312e0dea", null ],
     [ "GetP2Line", "d1/dd5/classDialogShoulderPoint.html#a43ee62c148ddbbfc5d429ce63fb3b251", null ],
     [ "GetP3", "d1/dd5/classDialogShoulderPoint.html#a14461746844893bc0a3d6f5202323f8f", null ],
-    [ "PointNameChanged", "d1/dd5/classDialogShoulderPoint.html#a1fffbf68bafb82db7b5abeacd6a490f4", null ],
-    [ "SaveData", "d1/dd5/classDialogShoulderPoint.html#a426d328cde03714475a06c6c0a54b166", null ],
+    [ "PointNameChanged", "d1/dd5/classDialogShoulderPoint.html#a6141b28ff3b2256e7ef3fc7ce869f3ed", null ],
+    [ "SaveData", "d1/dd5/classDialogShoulderPoint.html#a7778c2be4677d0b41ab862c04af6b14e", null ],
     [ "SetFormula", "d1/dd5/classDialogShoulderPoint.html#a3e30b7d2412cf5dc8c5b75e36c7c750b", null ],
     [ "setLineColor", "d1/dd5/classDialogShoulderPoint.html#ac7f1dd55e92c8f1f0f0a4050144ced5e", null ],
     [ "setLineType", "d1/dd5/classDialogShoulderPoint.html#a4d16743c1ad7fd99eacaca0b2a2e0a57", null ],
@@ -24,7 +24,7 @@ var classDialogShoulderPoint =
     [ "SetP2Line", "d1/dd5/classDialogShoulderPoint.html#a5a09d9aef0dac9b75170296006a8c603", null ],
     [ "SetP3", "d1/dd5/classDialogShoulderPoint.html#a6959ab8f1616888eaffe38a8bdffe619", null ],
     [ "SetPointName", "d1/dd5/classDialogShoulderPoint.html#aa2973e4f7ae43643b027ffb69e7d5c4a", null ],
-    [ "ShowVisualization", "d1/dd5/classDialogShoulderPoint.html#addf0ce83ce0f7cef990a18c37351c5d6", null ],
+    [ "ShowVisualization", "d1/dd5/classDialogShoulderPoint.html#a8a6a66d30117210385669d074fbe28e4", null ],
     [ "formula", "d1/dd5/classDialogShoulderPoint.html#ad9c4828aeae19794bb941d0eb157149b", null ],
     [ "formulaBaseHeight", "d1/dd5/classDialogShoulderPoint.html#a3f350c335a2d20e4bafa66b53f1b432e", null ],
     [ "ui", "d1/dd5/classDialogShoulderPoint.html#acefe3690e12e4c3d7d884c911d3adaf7", null ]

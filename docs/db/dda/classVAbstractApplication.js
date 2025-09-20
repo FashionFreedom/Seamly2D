@@ -1,7 +1,7 @@
 var classVAbstractApplication =
 [
     [ "VAbstractApplication", "db/dda/classVAbstractApplication.html#af7726df174e0447e9922c0cb8f3455fd", null ],
-    [ "~VAbstractApplication", "db/dda/classVAbstractApplication.html#a3323dd8b7f70a78e93587e5c441b05b5", null ],
+    [ "~VAbstractApplication", "db/dda/classVAbstractApplication.html#ac1af9dbece2a90fc6d47b9c4285be109", null ],
     [ "ClearTranslation", "db/dda/classVAbstractApplication.html#a62efee28a6929615e17eb77f79d57caa", null ],
     [ "fromPixel", "db/dda/classVAbstractApplication.html#a50d149897aa4a87d01a071420d86c6c5", null ],
     [ "getCurrentData", "db/dda/classVAbstractApplication.html#a66802fa332e70eed60f483f1a725bef1", null ],

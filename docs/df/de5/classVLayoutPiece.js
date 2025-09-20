@@ -2,7 +2,7 @@ var classVLayoutPiece =
 [
     [ "VLayoutPiece", "df/de5/classVLayoutPiece.html#af6c5adc88b1dd75c14efe69089b12f10", null ],
     [ "VLayoutPiece", "df/de5/classVLayoutPiece.html#aa2ff64880fa90e1a193c51be6a65bd9e", null ],
-    [ "~VLayoutPiece", "df/de5/classVLayoutPiece.html#a70292032cbf88b017941d07d1bb684cd", null ],
+    [ "~VLayoutPiece", "df/de5/classVLayoutPiece.html#a7256a137ebb45dd5cc65834f5c5b760d", null ],
     [ "Create", "df/de5/classVLayoutPiece.html#abe6f5851868f4e1153bd6905ba9a25c7", null ],
     [ "createAllowanceItem", "df/de5/classVLayoutPiece.html#af60a4ab71f1503847f4202a4b16ba881", null ],
     [ "createAllowancePath", "df/de5/classVLayoutPiece.html#ac99ac632f2d27f2c4fdbd7c46df39bb3", null ],
@@ -62,7 +62,7 @@ var classVLayoutPiece =
     [ "setSeamAllowancePoints", "df/de5/classVLayoutPiece.html#aaaa0520c162fc8a9181b319fd8a52f3f", null ],
     [ "setTransform", "df/de5/classVLayoutPiece.html#a947962edbcbd5af426391b830b40ce56", null ],
     [ "Square", "df/de5/classVLayoutPiece.html#a003008a1860e4422feedad37a556f40d", null ],
-    [ "Swap", "df/de5/classVLayoutPiece.html#a9b70216a127059db8c96b3c0ddd8cf2e", null ],
+    [ "Swap", "df/de5/classVLayoutPiece.html#a9a28f7a23f8fd55145e0214f8d8355ff", null ],
     [ "Translate", "df/de5/classVLayoutPiece.html#a3f04aa0c85bfdb8cf1e7bbab6d15e32f", null ],
     [ "d", "df/de5/classVLayoutPiece.html#a4aaeb0f2eb6391e04d15393cc97d91f3", null ]
 ];

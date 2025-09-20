@@ -5,7 +5,7 @@ var classVPosition =
       [ "Intersection", "d9/d3d/classVPosition.html#a260c9e88536085034a0619920e00c651aa06d31c2ee920b4d53e8c9c06d90ba24", null ]
     ] ],
     [ "VPosition", "d9/d3d/classVPosition.html#a9617fa856917f8cad9e3b65db99d9109", null ],
-    [ "~VPosition", "d9/d3d/classVPosition.html#aba1a2cef3f1a3c399d6cb343f2cc51b7", null ],
+    [ "~VPosition", "d9/d3d/classVPosition.html#ae52ff27495ac47a8d4fc428f4cd7fce3", null ],
     [ "combineEdges", "d9/d3d/classVPosition.html#acacc2d80cf4b21eba6f49ddb30fd8003", null ],
     [ "edgesIntersect", "d9/d3d/classVPosition.html#a139d444606a8c3c1dc5337dbe72e48c7", null ],
     [ "getBestResult", "d9/d3d/classVPosition.html#a339dee5152a2e1944ce662e76167efe4", null ],
@@ -13,7 +13,7 @@ var classVPosition =
     [ "rotate", "d9/d3d/classVPosition.html#af78e1abae032396cf7fd4433fad850bf", null ],
     [ "rotatedEdgeIntersects", "d9/d3d/classVPosition.html#afd979f656cb20fa63df7dced98dfa044", null ],
     [ "rotateEdges", "d9/d3d/classVPosition.html#a63496003efc9b0c9a16052e8088e601a", null ],
-    [ "run", "d9/d3d/classVPosition.html#a57b3acc10553c3d0f88a45c7d2140510", null ],
+    [ "run", "d9/d3d/classVPosition.html#acd109faf55df96cbfe284b3e8ca33a2f", null ],
     [ "saveCandidate", "d9/d3d/classVPosition.html#a89a6586c38921fddd9f644135c92d482", null ],
     [ "sheetContains", "d9/d3d/classVPosition.html#ad727203d42bc6caa5799be81fd2974c2", null ],
     [ "m_angleBetween", "d9/d3d/classVPosition.html#ad94917c32759183790c7322251706543", null ],

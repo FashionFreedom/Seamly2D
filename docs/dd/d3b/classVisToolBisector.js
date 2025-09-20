@@ -2,11 +2,11 @@ var classVisToolBisector =
 [
     [ "VisToolBisector", "dd/d3b/classVisToolBisector.html#a74c7245d156058c06d0469decd10692e", null ],
     [ "~VisToolBisector", "dd/d3b/classVisToolBisector.html#a63f45bd08657bc454245fac4cbe52dec", null ],
-    [ "RefreshGeometry", "dd/d3b/classVisToolBisector.html#ab93539fe701ff703e85106c514cdeeea", null ],
+    [ "RefreshGeometry", "dd/d3b/classVisToolBisector.html#ac730cfe9ed4986bb70f8688005251b4b", null ],
     [ "setLength", "dd/d3b/classVisToolBisector.html#a04b5ffd6921bd1f091b27f034af23e01", null ],
     [ "setObject2Id", "dd/d3b/classVisToolBisector.html#af5ca0bd3a7ddcc2f6b81586937924e2e", null ],
     [ "setObject3Id", "dd/d3b/classVisToolBisector.html#acefe408ee4fca11db994bb83b27bef49", null ],
-    [ "type", "dd/d3b/classVisToolBisector.html#add3f2f130fc9625ba6c6c10d03db5a1c", null ],
+    [ "type", "dd/d3b/classVisToolBisector.html#a829f282ca57853186930d0394e3f0d05", null ],
     [ "length", "dd/d3b/classVisToolBisector.html#a8f57657fc78e5741d895199e001462f8", null ],
     [ "line1", "dd/d3b/classVisToolBisector.html#a8fa6c0a262c0d251bc69f82824ee4c1c", null ],
     [ "line1P1", "dd/d3b/classVisToolBisector.html#a0fd7f37e87b3f42e79f9901fd08da86e", null ],

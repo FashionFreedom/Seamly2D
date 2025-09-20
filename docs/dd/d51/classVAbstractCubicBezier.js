@@ -4,7 +4,7 @@ var classVAbstractCubicBezier =
     [ "VAbstractCubicBezier", "dd/d51/classVAbstractCubicBezier.html#a6821a8cd9c8e88b40873bc3cbb07086a", null ],
     [ "~VAbstractCubicBezier", "dd/d51/classVAbstractCubicBezier.html#aec748525f5d01ae99a106aec4f507776", null ],
     [ "CalcSqDistance", "dd/d51/classVAbstractCubicBezier.html#aa3ea9835bb76c41c98d033cf350e31b1", null ],
-    [ "CreateName", "dd/d51/classVAbstractCubicBezier.html#a6a9bc53024b0a1bfac7351d5b3ad1b01", null ],
+    [ "CreateName", "dd/d51/classVAbstractCubicBezier.html#a5505813d1baba4e5b99a81a347801967", null ],
     [ "CutSpline", "dd/d51/classVAbstractCubicBezier.html#aa357988e7d0c8686a329225ec03ec794", null ],
     [ "GetControlPoint1", "dd/d51/classVAbstractCubicBezier.html#ac4f098ca3e5ac1bacdf251d689a7963f", null ],
     [ "GetControlPoint2", "dd/d51/classVAbstractCubicBezier.html#aa626096d0a567d677963f9160e9e9a1d", null ],
@@ -16,7 +16,7 @@ var classVAbstractCubicBezier =
     [ "GetParmT", "dd/d51/classVAbstractCubicBezier.html#a82ebd5a0d5100ac69418c01fa89ff84e", null ],
     [ "LengthBezier", "dd/d51/classVAbstractCubicBezier.html#a68a6dd911bd8ba0fc0b78efc450c5d4f", null ],
     [ "LengthT", "dd/d51/classVAbstractCubicBezier.html#a44b9e4905deaa22da9437a5f2112e944", null ],
-    [ "NameForHistory", "dd/d51/classVAbstractCubicBezier.html#ae09d801797845306273a65ad5b0b0dca", null ],
+    [ "NameForHistory", "dd/d51/classVAbstractCubicBezier.html#a990344140d191826acbfa1541511740f", null ],
     [ "operator=", "dd/d51/classVAbstractCubicBezier.html#a1b2d6c7b854a6ee08d874e4307bd1ece", null ],
     [ "PointBezier_r", "dd/d51/classVAbstractCubicBezier.html#ad7ecdd5b74c1e2468b0a9a20d3cbafc0", null ]
 ];

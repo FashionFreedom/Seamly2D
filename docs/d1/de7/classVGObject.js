@@ -35,7 +35,7 @@ var classVGObject =
     [ "setMode", "d1/de7/classVGObject.html#a1246f01103985c75f71698e60ddcccfa", null ],
     [ "setName", "d1/de7/classVGObject.html#ac52a0bdf810d43fb282f65a58933ea75", null ],
     [ "setType", "d1/de7/classVGObject.html#a163fca66a2e581abc8a6511156bc766e", null ],
-    [ "Swap", "d1/de7/classVGObject.html#ab487dac4a019d27636e498278363f03b", null ],
+    [ "Swap", "d1/de7/classVGObject.html#ad2b595088e408219bdb6c5b8916ab358", null ],
     [ "accuracyPointOnLine", "d1/de7/classVGObject.html#af893a07c68c71231b5eaeceda31ad368", null ],
     [ "d", "d1/de7/classVGObject.html#ab212fadab50be549bec1636722e6f84b", null ]
 ];

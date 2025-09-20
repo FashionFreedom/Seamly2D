@@ -1,7 +1,7 @@
 var classVTranslateVars =
 [
     [ "VTranslateVars", "dc/dbc/classVTranslateVars.html#ad4296c64241592bb7e205a5f47fef2c5", null ],
-    [ "~VTranslateVars", "dc/dbc/classVTranslateVars.html#a1521e2653cb4fce62a3c0d91ea75f31f", null ],
+    [ "~VTranslateVars", "dc/dbc/classVTranslateVars.html#a5aa18558904d306559edbee64951c7a3", null ],
     [ "BiasTokens", "dc/dbc/classVTranslateVars.html#ab59f0ba6429cc79ec1a62d9e286a5a31", null ],
     [ "CorrectionsPositions", "dc/dbc/classVTranslateVars.html#a507bfb437d3b5ef60643992460b272ed", null ],
     [ "FormulaFromUser", "dc/dbc/classVTranslateVars.html#aa3f6545814a0b9c25c1f26500e02e344", null ],
@@ -23,7 +23,7 @@ var classVTranslateVars =
     [ "PMSystemName", "dc/dbc/classVTranslateVars.html#a09ab80f50dba1124ed774ec65e86c1ba", null ],
     [ "PostfixOperator", "dc/dbc/classVTranslateVars.html#ab6750e5faeca79f10e9431225e6d27fc", null ],
     [ "PostfixOperatorsFromUser", "dc/dbc/classVTranslateVars.html#a66adc6bbbda550a04284f4d3c47f02e9", null ],
-    [ "Retranslate", "dc/dbc/classVTranslateVars.html#a27b555cdd78bcbc76e7737b9f743a8c9", null ],
+    [ "Retranslate", "dc/dbc/classVTranslateVars.html#a190d6da4bc9238aa85fdcd1cc99694f6", null ],
     [ "TryFormulaFromUser", "dc/dbc/classVTranslateVars.html#a64b9dc33d89be4c8cf2ae896b0536eab", null ],
     [ "VarFromUser", "dc/dbc/classVTranslateVars.html#a0e105d54415b006f3efd7159bc75f61a", null ],
     [ "VariablesFromUser", "dc/dbc/classVTranslateVars.html#a92e0919ff09d65efb85664a247bc4cd1", null ],

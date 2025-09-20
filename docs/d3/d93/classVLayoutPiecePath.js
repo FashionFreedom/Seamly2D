@@ -16,6 +16,6 @@ var classVLayoutPiecePath =
     [ "setLineType", "d3/d93/classVLayoutPiecePath.html#afe3a8498245c97f2e43135ac1265eb8b", null ],
     [ "setLineWeight", "d3/d93/classVLayoutPiecePath.html#af183f08ab3f5eecacc14f786e4e974b3", null ],
     [ "SetPoints", "d3/d93/classVLayoutPiecePath.html#a5a249f2fcdf0de8a405bce68328f8b41", null ],
-    [ "Swap", "d3/d93/classVLayoutPiecePath.html#a0e83ee106775b68c6448426b12ac44f8", null ],
+    [ "Swap", "d3/d93/classVLayoutPiecePath.html#afacda3a43a01b8ae7928fb097a3e783e", null ],
     [ "d", "d3/d93/classVLayoutPiecePath.html#ac84c9063b8e42f8ce7dabc07222c19ac", null ]
 ];

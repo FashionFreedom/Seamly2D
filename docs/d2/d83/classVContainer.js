@@ -57,7 +57,7 @@ var classVContainer =
     [ "setHeight", "d2/d83/classVContainer.html#a3d50d89e7df096aeddb48baa91305f70", null ],
     [ "setSize", "d2/d83/classVContainer.html#a6791253f884288352af166b9f6a6fdc4", null ],
     [ "size", "d2/d83/classVContainer.html#a89327043e0a0fac60ed599078d6cdd08", null ],
-    [ "Swap", "d2/d83/classVContainer.html#ade46c349b82abd5f45cc9b268a8ae5af", null ],
+    [ "Swap", "d2/d83/classVContainer.html#a61113010e8e5da44155436d53d3ed010", null ],
     [ "UpdateGObject", "d2/d83/classVContainer.html#ac13b933b056a294f05de6ee5a67cb618", null ],
     [ "UpdateGObject", "d2/d83/classVContainer.html#af307a17c9bc394063c081d95f39523cd", null ],
     [ "UpdateId", "d2/d83/classVContainer.html#a565c594b62d332110b3185457062c999", null ],

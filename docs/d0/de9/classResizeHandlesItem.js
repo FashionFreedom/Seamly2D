@@ -21,7 +21,7 @@ var classResizeHandlesItem =
     [ "setTopLeft", "d0/de9/classResizeHandlesItem.html#a2f250ac55aeb42dbfbc4d942152846dc", null ],
     [ "setTopRight", "d0/de9/classResizeHandlesItem.html#ac7e071af4be29e0a4d2c49168b66c28b", null ],
     [ "sizeChangedFromHandles", "d0/de9/classResizeHandlesItem.html#a9bc8d1381fa0ac98c6eb0077b4f9fcb4", null ],
-    [ "type", "d0/de9/classResizeHandlesItem.html#ace26500fd0d570be74758d67d6df2825", null ],
+    [ "type", "d0/de9/classResizeHandlesItem.html#a254f4c9576b62b44af9bd3cb47a3612e", null ],
     [ "updateHandlePositions", "d0/de9/classResizeHandlesItem.html#a65b9187d3ad4597f448c3ba920684dfb", null ],
     [ "m_handleItems", "d0/de9/classResizeHandlesItem.html#ab700e159c2003b4cddb883333bdd7294", null ],
     [ "m_lockAspectRatio", "d0/de9/classResizeHandlesItem.html#abf0c1ea1a69ce3d024f75d925ef3dbcc", null ],

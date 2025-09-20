@@ -5,7 +5,7 @@ var classVPE_1_1VProperty =
       [ "DPC_Data", "db/df9/classVPE_1_1VProperty.html#a585b1bfba36ba0a9c101ff830e85f118ac2ce2d3414fd6703cd53556ecc6c3491", null ]
     ] ],
     [ "VProperty", "db/df9/classVPE_1_1VProperty.html#ad0e928b4f27279a3fbf7aed0503318e4", null ],
-    [ "~VProperty", "db/df9/classVPE_1_1VProperty.html#ad471fe062a3e99b4166d28cb40da07ca", null ],
+    [ "~VProperty", "db/df9/classVPE_1_1VProperty.html#ae6f3d42f80a57ca68eb7521e1d37979c", null ],
     [ "VProperty", "db/df9/classVPE_1_1VProperty.html#a2bdb3963ea4794f4481a9afe396535de", null ],
     [ "addChild", "db/df9/classVPE_1_1VProperty.html#a8bcc889ba3a81eabeb715b52a413217b", null ],
     [ "childChanged", "db/df9/classVPE_1_1VProperty.html#a2e393404d3237bb9e624358b4cb60cb0", null ],

@@ -7,7 +7,7 @@ var classGroupsWidget =
     [ "attrUInt", "dc/d83/classGroupsWidget.html#a24def2ed9844e27d9f8a55a4244b6454", null ],
     [ "cellClicked", "dc/d83/classGroupsWidget.html#af38a495a9c20ff2d630f221aae67c8fc", null ],
     [ "cellDoubleClicked", "dc/d83/classGroupsWidget.html#aeeb6acfd6d3d84850258f814afb1bd9f", null ],
-    [ "changeEvent", "dc/d83/classGroupsWidget.html#a0b7b91bc218634d1301dfccae90b3625", null ],
+    [ "changeEvent", "dc/d83/classGroupsWidget.html#a625a3228ae46de42acc7250381418fe1", null ],
     [ "clear", "dc/d83/classGroupsWidget.html#ae9d9625861bc64810c1e4692040ea455", null ],
     [ "deleteGroupFromList", "dc/d83/classGroupsWidget.html#ac6fd298e78a3d4dcf3582cbcec2e4021", null ],
     [ "draftBlockHasGroups", "dc/d83/classGroupsWidget.html#a35ecd548edee87654305c045bf8e4271", null ],

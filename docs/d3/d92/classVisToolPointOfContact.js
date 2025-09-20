@@ -2,11 +2,11 @@ var classVisToolPointOfContact =
 [
     [ "VisToolPointOfContact", "d3/d92/classVisToolPointOfContact.html#aa7f077b7ef12268bef90bd079365b7a5", null ],
     [ "~VisToolPointOfContact", "d3/d92/classVisToolPointOfContact.html#ac2d3731e979b3f7241220dc69ed251d4", null ],
-    [ "RefreshGeometry", "d3/d92/classVisToolPointOfContact.html#a6262f21f537f4df8c044ed78a83b7605", null ],
+    [ "RefreshGeometry", "d3/d92/classVisToolPointOfContact.html#aa082ad95d93f523e377de3cacfab62a8", null ],
     [ "setLineP2Id", "d3/d92/classVisToolPointOfContact.html#a0807d117e06bbecbf59f9a180df4fa43", null ],
     [ "setRadius", "d3/d92/classVisToolPointOfContact.html#a8685b07687f472b63e13ca4392a2ff0a", null ],
     [ "setRadiusId", "d3/d92/classVisToolPointOfContact.html#a34bca51f2e506f8041ac1cb6971c611d", null ],
-    [ "type", "d3/d92/classVisToolPointOfContact.html#ac51af5f5b7f3f6ed8de89192ee7f0d42", null ],
+    [ "type", "d3/d92/classVisToolPointOfContact.html#adaa79df35d2e8995bac36f9d555027f1", null ],
     [ "arc_point", "d3/d92/classVisToolPointOfContact.html#ae1d78aa0ab00ecd8f68b23f29cba9585", null ],
     [ "circle", "d3/d92/classVisToolPointOfContact.html#ab62bc0d04703f0a59941416b451ee4ea", null ],
     [ "lineP1", "d3/d92/classVisToolPointOfContact.html#a87cb0021f0c851e905cf0517cd77fb88", null ],

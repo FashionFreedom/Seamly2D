@@ -2,8 +2,8 @@ var classMoveGroupItem =
 [
     [ "MoveGroupItem", "df/dca/classMoveGroupItem.html#a6a80a39b5dbd9211ee33afad04da6c30", null ],
     [ "~MoveGroupItem", "df/dca/classMoveGroupItem.html#aafd7d7d7a3339b6e9ac688e53c26cba5", null ],
-    [ "redo", "df/dca/classMoveGroupItem.html#a11c22d8f8547e5d3c3a58df7278d3c7d", null ],
-    [ "undo", "df/dca/classMoveGroupItem.html#a1c13b3e915a79348d6707983f0453aa7", null ],
+    [ "redo", "df/dca/classMoveGroupItem.html#a7a79b916294a9668462b03154cf8ae32", null ],
+    [ "undo", "df/dca/classMoveGroupItem.html#a8bc7f87916b23c36a3a00a9d63d70a76", null ],
     [ "updateGroups", "df/dca/classMoveGroupItem.html#ae09f46fbec7c1ac8543a3810f520eff6", null ],
     [ "m_activeDraftblockName", "df/dca/classMoveGroupItem.html#ab61d847e6d1dcbbcab15f3ebb2ec3b8f", null ],
     [ "m_dest", "df/dca/classMoveGroupItem.html#a1ff25edc89259b2bc1d4609f93ea0f9e", null ],

@@ -2,7 +2,7 @@ var classVAbstractCurve =
 [
     [ "VAbstractCurve", "dc/d55/classVAbstractCurve.html#a798b92e805199ce81fe39c004a4eec98", null ],
     [ "VAbstractCurve", "dc/d55/classVAbstractCurve.html#aca9c2638a83f769da4da2718d05b8939", null ],
-    [ "~VAbstractCurve", "dc/d55/classVAbstractCurve.html#a2b29c50a680b4ee96a7a69d6f297bc45", null ],
+    [ "~VAbstractCurve", "dc/d55/classVAbstractCurve.html#ab206fa946aa8a9794f5b3849a2914345", null ],
     [ "CreateName", "dc/d55/classVAbstractCurve.html#a7a1530d69c09d90f28a5b76f3b0374b9", null ],
     [ "curveIntersectAxis", "dc/d55/classVAbstractCurve.html#aae6159f0fdf64b408bf11bddb8e23a67", null ],
     [ "CurveIntersectLine", "dc/d55/classVAbstractCurve.html#add4dbdfb3f8927551ef426172dbfc9b5", null ],
@@ -34,7 +34,7 @@ var classVAbstractCurve =
     [ "setLineWeight", "dc/d55/classVAbstractCurve.html#aa47205333a5e90bfe50aabe40044ef62", null ],
     [ "SetPenStyle", "dc/d55/classVAbstractCurve.html#a3f206665041415e095cebf9548cfd187", null ],
     [ "ShowDirection", "dc/d55/classVAbstractCurve.html#ae315ec3607fae6594d44d988b6045040", null ],
-    [ "Swap", "dc/d55/classVAbstractCurve.html#abbf277b50160aec019beacd3e5c8ae23", null ],
+    [ "Swap", "dc/d55/classVAbstractCurve.html#ac17b9a65d3eaedcce2132c60e9fa9355", null ],
     [ "ToEnd", "dc/d55/classVAbstractCurve.html#aa5ffaa21873a8a1a3d72a61c111fdf9a", null ],
     [ "d", "dc/d55/classVAbstractCurve.html#ac26e01a6c8adaf74624f7f052bca38ee", null ],
     [ "lengthCurveDirectionArrow", "dc/d55/classVAbstractCurve.html#ac778fbee0dbd3b765987d14508daa35f", null ]

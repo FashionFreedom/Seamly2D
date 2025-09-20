@@ -1,10 +1,10 @@
 var classVPE_1_1VColorProperty =
 [
     [ "VColorProperty", "da/d5e/classVPE_1_1VColorProperty.html#ae6b508a96baf0af4275b9462ae27336d", null ],
-    [ "clone", "da/d5e/classVPE_1_1VColorProperty.html#a3efda03cc7cd4c8607781f02821fe5ea", null ],
-    [ "createEditor", "da/d5e/classVPE_1_1VColorProperty.html#a83c4df426d5ed7e2daf89e616604bd98", null ],
-    [ "data", "da/d5e/classVPE_1_1VColorProperty.html#a1eacc8dd12db60ff68ac1f5581b841e4", null ],
-    [ "getEditorData", "da/d5e/classVPE_1_1VColorProperty.html#ac3c4016a6f7446b564cb768fda3f0c43", null ],
-    [ "setEditorData", "da/d5e/classVPE_1_1VColorProperty.html#a8835fba68447596f6a7884c40ad19a27", null ],
-    [ "type", "da/d5e/classVPE_1_1VColorProperty.html#a1ef99bb19bdd884ac58c37a15bd36c91", null ]
+    [ "clone", "da/d5e/classVPE_1_1VColorProperty.html#ab1e145d2386b897046de1393166e654e", null ],
+    [ "createEditor", "da/d5e/classVPE_1_1VColorProperty.html#a16a1341602985bbbbbbc604132f54c01", null ],
+    [ "data", "da/d5e/classVPE_1_1VColorProperty.html#a89259607456e24cde948add08e641f27", null ],
+    [ "getEditorData", "da/d5e/classVPE_1_1VColorProperty.html#a23671f965f39e22a89e3b316fcdea912", null ],
+    [ "setEditorData", "da/d5e/classVPE_1_1VColorProperty.html#ad19d4cf55475bee7a3f9cad5667ed81b", null ],
+    [ "type", "da/d5e/classVPE_1_1VColorProperty.html#a76e96f2943912649b78af0ed8f6ec3c2", null ]
 ];

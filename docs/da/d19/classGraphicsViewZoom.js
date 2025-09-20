@@ -2,7 +2,7 @@ var classGraphicsViewZoom =
 [
     [ "GraphicsViewZoom", "da/d19/classGraphicsViewZoom.html#a04a708978c8f281138b4f6884dcff389", null ],
     [ "animFinished", "da/d19/classGraphicsViewZoom.html#aee1a7c77e3ce2121120c3a69cefdf405", null ],
-    [ "eventFilter", "da/d19/classGraphicsViewZoom.html#a552851f1b2e1eae67aa69fee26833ff7", null ],
+    [ "eventFilter", "da/d19/classGraphicsViewZoom.html#a4744bc66b8d90aee11c1f55a082c4c2b", null ],
     [ "fictiveSceneRect", "da/d19/classGraphicsViewZoom.html#ab9e4a53bf3517b5de8383e48185d00bd", null ],
     [ "gentleZoom", "da/d19/classGraphicsViewZoom.html#acc00956cb373ab94b52b69524ec9d217", null ],
     [ "gestureEvent", "da/d19/classGraphicsViewZoom.html#a8479bba051ef04be054efcfa22b8702c", null ],

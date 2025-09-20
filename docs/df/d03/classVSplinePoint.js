@@ -20,6 +20,6 @@ var classVSplinePoint =
     [ "SetLength1", "df/d03/classVSplinePoint.html#a7a34859c8792242b95cc79e14438bd87", null ],
     [ "SetLength2", "df/d03/classVSplinePoint.html#a9b3f2aa5496906203902dbce9b2ee839", null ],
     [ "SetP", "df/d03/classVSplinePoint.html#a7088d30ad5e7e16f96addf5f56cfd71f", null ],
-    [ "Swap", "df/d03/classVSplinePoint.html#a9bf048b882e92f4c74ad3a469c479f33", null ],
+    [ "Swap", "df/d03/classVSplinePoint.html#a2fd40a164716eb601a2b34a99acbb8fa", null ],
     [ "d", "df/d03/classVSplinePoint.html#a3dd80f1b2d282944519f8b3128963e80", null ]
 ];

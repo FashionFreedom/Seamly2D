@@ -5,7 +5,7 @@ var classUtils_1_1CheckableMessageBox =
       [ "Information", "dd/dc4/classUtils_1_1CheckableMessageBox.html#a3704f2110d227cfa444af687b6f086b4af76ff5d16bc77ee1bda33b7cb39d3882", null ]
     ] ],
     [ "CheckableMessageBox", "dd/dc4/classUtils_1_1CheckableMessageBox.html#a8aeacdf27f60a7d5df576830a2961f9d", null ],
-    [ "~CheckableMessageBox", "dd/dc4/classUtils_1_1CheckableMessageBox.html#a2ee8d0c7bf748f157e52aeb5dfa35f18", null ],
+    [ "~CheckableMessageBox", "dd/dc4/classUtils_1_1CheckableMessageBox.html#a36c01885f49b2d238cb10eef20185e88", null ],
     [ "addButton", "dd/dc4/classUtils_1_1CheckableMessageBox.html#acb6c73c7d8b52d4e4a1facfa59530e8a", null ],
     [ "askAgain", "dd/dc4/classUtils_1_1CheckableMessageBox.html#a890828ad9e67d7cb9719b09ea2ade8fb", null ],
     [ "button", "dd/dc4/classUtils_1_1CheckableMessageBox.html#a167b133bb3f397e74774ad71030e56fd", null ],

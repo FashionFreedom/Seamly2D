@@ -43,7 +43,7 @@ var classVPieceNode =
     [ "SetTypeTool", "d7/dac/classVPieceNode.html#a6558e39c84a3bd54d3a8a3ea49da25b6", null ],
     [ "showNotch", "d7/dac/classVPieceNode.html#a3013410ab1e89eee66c0da70750b41f2", null ],
     [ "showSeamlineNotch", "d7/dac/classVPieceNode.html#af6a3598d28e9db327d614035ae984475", null ],
-    [ "Swap", "d7/dac/classVPieceNode.html#a73f1ea18d6602c42300c77073d011f43", null ],
+    [ "Swap", "d7/dac/classVPieceNode.html#ae6b8793f0b9da0c061e47925a96d0ef4", null ],
     [ "operator<<", "d7/dac/classVPieceNode.html#a1842c8aabf45fb9b5301ccc9d104f714", null ],
     [ "operator>>", "d7/dac/classVPieceNode.html#a135ad321b085f8f50eec849b1a452984", null ],
     [ "d", "d7/dac/classVPieceNode.html#a843f247d38e2ad4b5b28895d84c24d61", null ]

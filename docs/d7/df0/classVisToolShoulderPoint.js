@@ -2,11 +2,11 @@ var classVisToolShoulderPoint =
 [
     [ "VisToolShoulderPoint", "d7/df0/classVisToolShoulderPoint.html#a76a2391713ae69b06587d807cf9f031e", null ],
     [ "~VisToolShoulderPoint", "d7/df0/classVisToolShoulderPoint.html#ab8362ee6b92e377d0108790ebafdf442", null ],
-    [ "RefreshGeometry", "d7/df0/classVisToolShoulderPoint.html#aa383db30ee00d5b88afc73f8e4aad7b7", null ],
+    [ "RefreshGeometry", "d7/df0/classVisToolShoulderPoint.html#a2431214083e8ea3e414b7776c19c23e6", null ],
     [ "setLength", "d7/df0/classVisToolShoulderPoint.html#a4c48404662a3b9d0339c6c29d93e1c2f", null ],
     [ "setLineP1Id", "d7/df0/classVisToolShoulderPoint.html#a4c781908095711939bd2813b83c51124", null ],
     [ "setLineP2Id", "d7/df0/classVisToolShoulderPoint.html#abee653964d670f5d750c3540978684a9", null ],
-    [ "type", "d7/df0/classVisToolShoulderPoint.html#a7aa8533019e45818dbb5d215c416c4a7", null ],
+    [ "type", "d7/df0/classVisToolShoulderPoint.html#a06aa39025d58166f4617328a8662c6db", null ],
     [ "length", "d7/df0/classVisToolShoulderPoint.html#aa762f1f237606d77e325bf4cea539bed", null ],
     [ "line1", "d7/df0/classVisToolShoulderPoint.html#a1c2dda42dd2a4a521bc7940c8d0a6eac", null ],
     [ "line1P1", "d7/df0/classVisToolShoulderPoint.html#a39fd594a9b8735461336322d0f314c36", null ],

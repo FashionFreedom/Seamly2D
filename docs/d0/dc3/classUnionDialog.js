@@ -1,9 +1,9 @@
 var classUnionDialog =
 [
     [ "UnionDialog", "d0/dc3/classUnionDialog.html#a872a8b2988e16cc2f9559c9f7ee11066", null ],
-    [ "~UnionDialog", "d0/dc3/classUnionDialog.html#a1e33de121c0121fe1258d33ab61be398", null ],
+    [ "~UnionDialog", "d0/dc3/classUnionDialog.html#a48eeac04f77697e31ae08d6ee1ee1b0b", null ],
     [ "CheckObject", "d0/dc3/classUnionDialog.html#a870ac054ab6e2e6ef2973af3e617e192", null ],
-    [ "ChosenObject", "d0/dc3/classUnionDialog.html#a2b39d641065e8dcf203a8d93d34e3193", null ],
+    [ "ChosenObject", "d0/dc3/classUnionDialog.html#a24791f26c2dd77e0554dfc4a7f3310f7", null ],
     [ "chosenPiece", "d0/dc3/classUnionDialog.html#a2df0dc9548662d32c4a592430a123668", null ],
     [ "getPiece1Id", "d0/dc3/classUnionDialog.html#a662f62fcee07ef86e7dcc650d69c331f", null ],
     [ "getPiece1Index", "d0/dc3/classUnionDialog.html#adc49828b59cfb1d05f11b46bf8cccd9a", null ],

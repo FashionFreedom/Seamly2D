@@ -1,7 +1,7 @@
 var classDialogPatternProperties =
 [
     [ "DialogPatternProperties", "d4/d15/classDialogPatternProperties.html#a3a43c509b2b80054c300c913da545eca", null ],
-    [ "~DialogPatternProperties", "d4/d15/classDialogPatternProperties.html#a024701def5981011471385c08cb8737e", null ],
+    [ "~DialogPatternProperties", "d4/d15/classDialogPatternProperties.html#aadef41315655bde2fc127d2b29877355", null ],
     [ "Apply", "d4/d15/classDialogPatternProperties.html#ad53f01ba26f2142b1bf3619ae5adfb43", null ],
     [ "ChangeImage", "d4/d15/classDialogPatternProperties.html#abf33884a25b801100ff948700472146a", null ],
     [ "CheckApplyOk", "d4/d15/classDialogPatternProperties.html#a70f7f7dd059827003ff05cbecc8002d7", null ],
