@@ -28,16 +28,8 @@ Section "Seamly2D"
 
   SetOutPath $INSTDIR
 
-  File /nonfatal "vc_redist.x64.exe"
-  File /nonfatal "vc_redist.x86.exe"
-
-  IfFileExists $INSTDIR\vc_redist.x64.exe 0 vc_redist_x86
+  File "vc_redist.x64.exe"
   ExecWait '"$INSTDIR\vc_redist.x64.exe" /quiet /norestart'
-  goto after_vc_redist ;
-  vc_redist_x86:
-  IfFileExists $INSTDIR\vc_redist.x86.exe 0 after_vc_redist
-  ExecWait '"$INSTDIR\vc_redist.x86.exe" /quiet /norestart'
-  after_vc_redist:
 
   ; relative to the location of this .nsi file, copy all the files/directories recursively
   File /r *
