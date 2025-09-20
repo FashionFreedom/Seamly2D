@@ -77,10 +77,10 @@ public:
     VPiecePath         &operator=(const VPiecePath &path);
 
 #ifdef Q_COMPILER_RVALUE_REFS
-    VPiecePath         &operator=(VPiecePath &&path) Q_DECL_NOTHROW;
+    VPiecePath         &operator=(VPiecePath &&path) noexcept;
 #endif
 
-	void               Swap(VPiecePath &path) Q_DECL_NOTHROW;
+	void               Swap(VPiecePath &path) noexcept;
     void               Append(const VPieceNode &node);
     void               Clear();
     qint32             nodeCount() const;

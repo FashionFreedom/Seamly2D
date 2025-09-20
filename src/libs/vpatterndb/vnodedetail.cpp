@@ -120,11 +120,11 @@ void ConvertAfter(VPieceNode &node, const QLineF &line, qreal mX, qreal mY)
 }//static functions
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VNodeDetail &VNodeDetail::operator=(VNodeDetail &&node) Q_DECL_NOTHROW
+VNodeDetail &VNodeDetail::operator=(VNodeDetail &&node) noexcept
 { Swap(node); return *this; }
 #endif
 
-void VNodeDetail::Swap(VNodeDetail &node) Q_DECL_NOTHROW
+void VNodeDetail::Swap(VNodeDetail &node) noexcept
 { std::swap(d, node.d); }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -88,7 +88,7 @@ class EditFormulaDialog : public DialogTool
 public:
                  EditFormulaDialog(const VContainer *data, const quint32 &toolId,
                                    const quint16 &source, QWidget *parent = nullptr);
-    virtual     ~EditFormulaDialog() Q_DECL_OVERRIDE;
+    virtual     ~EditFormulaDialog() override;
 
     QString      GetFormula() const;
     void         SetFormula(const QString &value);
@@ -97,9 +97,9 @@ public:
     void         setPostfix(const QString &value);
 
 public slots:
-    virtual void DialogAccepted() Q_DECL_OVERRIDE;
-    virtual void DialogRejected() Q_DECL_OVERRIDE;
-    virtual void EvalFormula() Q_DECL_OVERRIDE;
+    virtual void DialogAccepted() override;
+    virtual void DialogRejected() override;
+    virtual void EvalFormula() override;
     void         valueChanged(int row);
     void         tabChanged(int row);
     void         insertVariable(const QString &rotation);
@@ -114,10 +114,10 @@ public slots:
     void         functions();
 
 protected:
-    virtual void CheckState() Q_DECL_FINAL;
-    virtual void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
-    virtual void showEvent( QShowEvent *event ) Q_DECL_OVERRIDE;
-    virtual void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
+    virtual void CheckState() final;
+    virtual void closeEvent(QCloseEvent *event) override;
+    virtual void showEvent( QShowEvent *event ) override;
+    virtual void resizeEvent(QResizeEvent *event) override;
 
 private slots:
     void         filterVariables(const QString &filter);

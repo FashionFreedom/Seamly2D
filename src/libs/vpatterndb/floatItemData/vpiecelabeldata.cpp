@@ -32,11 +32,11 @@
 #include <QList>
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VPieceLabelData &VPieceLabelData::operator=(VPieceLabelData &&data) Q_DECL_NOTHROW
+VPieceLabelData &VPieceLabelData::operator=(VPieceLabelData &&data) noexcept
 { Swap(data); return *this; }
 #endif
 
-void VPieceLabelData::Swap(VPieceLabelData &data) Q_DECL_NOTHROW
+void VPieceLabelData::Swap(VPieceLabelData &data) noexcept
 { VPatternLabelData::Swap(data); std::swap(d, data.d); }
 
 //---------------------------------------------------------------------------------------------------------------------

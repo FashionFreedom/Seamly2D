@@ -64,12 +64,12 @@ public:
     explicit        VisToolMirrorByAxis(const VContainer *data, QGraphicsItem *parent = nullptr);
     virtual        ~VisToolMirrorByAxis() = default;
 
-    virtual void    RefreshGeometry() Q_DECL_OVERRIDE;
+    virtual void    RefreshGeometry() override;
 
     void            setOriginPointId(quint32 value);
     void            setAxisType(AxisType value);
 
-    virtual int     type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int     type() const override {return Type;}
     enum { Type = UserType + static_cast<int>(Vis::ToolMirrorByAxis)};
 private:
     Q_DISABLE_COPY(VisToolMirrorByAxis)

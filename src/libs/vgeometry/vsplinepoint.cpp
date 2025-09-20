@@ -57,11 +57,11 @@
 #include "vsplinepoint_p.h"
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VFSplinePoint &VFSplinePoint::operator=(VFSplinePoint &&point) Q_DECL_NOTHROW
+VFSplinePoint &VFSplinePoint::operator=(VFSplinePoint &&point) noexcept
 { Swap(point); return *this; }
 #endif
 
-void VFSplinePoint::Swap(VFSplinePoint &point) Q_DECL_NOTHROW
+void VFSplinePoint::Swap(VFSplinePoint &point) noexcept
 { std::swap(d, point.d); }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -221,11 +221,11 @@ void VFSplinePoint::SetKAsm2(const qreal &value)
 
 //---------------------------------------------------------------------------------------------------------------------
 #ifdef Q_COMPILER_RVALUE_REFS
-VSplinePoint &VSplinePoint::operator=(VSplinePoint &&point) Q_DECL_NOTHROW
+VSplinePoint &VSplinePoint::operator=(VSplinePoint &&point) noexcept
 { Swap(point); return *this; }
 #endif
 
-void VSplinePoint::Swap(VSplinePoint &point) Q_DECL_NOTHROW
+void VSplinePoint::Swap(VSplinePoint &point) noexcept
 { std::swap(d, point.d); }
 //------------------------------------------VSplinePoint---------------------------------------------------------------
 VSplinePoint::VSplinePoint()

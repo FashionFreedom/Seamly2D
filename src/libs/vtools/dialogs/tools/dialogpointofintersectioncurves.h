@@ -72,7 +72,7 @@ class DialogPointOfIntersectionCurves : public DialogTool
 
 public:
     explicit DialogPointOfIntersectionCurves(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
-    virtual ~DialogPointOfIntersectionCurves() Q_DECL_OVERRIDE;
+    virtual ~DialogPointOfIntersectionCurves() override;
 
     void    SetPointName(const QString &value);
 
@@ -89,16 +89,16 @@ public:
     void              SetHCrossPoint(const HCrossCurvesPoint &hP);
 
 public slots:
-    virtual void ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
+    virtual void ChosenObject(quint32 id, const SceneObject &type) override;
 
 protected:
-    virtual void ShowVisualization() Q_DECL_OVERRIDE;
+    virtual void ShowVisualization() override;
 
     /**
      * @brief SaveData Put dialog data in local variables
      */
-    virtual void SaveData() Q_DECL_OVERRIDE;
-    virtual void CheckState() Q_DECL_FINAL;
+    virtual void SaveData() override;
+    virtual void CheckState() final;
 
 private slots:
     void CurveChanged();

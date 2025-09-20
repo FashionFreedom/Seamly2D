@@ -87,33 +87,33 @@ public:
                                         const QString &prefix = QString()) const;
     VArc                         Flip(const QLineF &axis, const QString &prefix = QString()) const;
     VArc                         Move(qreal length, qreal angle, const QString &prefix = QString()) const;
-    virtual                     ~VArc() Q_DECL_OVERRIDE;
+    virtual                     ~VArc() override;
 
     VArc                        &operator= (const VArc &arc);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VArc                        &operator=(VArc &&arc) Q_DECL_NOTHROW;
+	VArc                        &operator=(VArc &&arc) noexcept;
 #endif
 
-	void                         Swap(VArc &arc) Q_DECL_NOTHROW;
+	void                         Swap(VArc &arc) noexcept;
 
     QString                      GetFormulaRadius () const;
     void                         SetFormulaRadius (const QString &formula, qreal value);
     qreal                        GetRadius () const;
 
-    virtual qreal                GetLength () const Q_DECL_OVERRIDE;
+    virtual qreal                GetLength () const override;
 
     QPointF                      GetP1() const;
     QPointF                      GetP2 () const;
 
-    virtual QVector<QPointF>     getPoints() const Q_DECL_OVERRIDE;
+    virtual QVector<QPointF>     getPoints() const override;
     QVector<QLineF>              getSegments() const;
 
     QPointF                      CutArc (qreal length, VArc &segment1, VArc &segment2) const;
     QPointF                      CutArc (qreal length) const;
 
 protected:
-    virtual void                 CreateName() Q_DECL_OVERRIDE;
-    virtual void                 FindF2(qreal length) Q_DECL_OVERRIDE;
+    virtual void                 CreateName() override;
+    virtual void                 FindF2(qreal length) override;
 
 private:
     QSharedDataPointer<VArcData> d;

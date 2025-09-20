@@ -72,9 +72,9 @@ class Application2D : public VAbstractApplication
     Q_OBJECT
 public:
                                        Application2D(int &argc, char **argv);
-    virtual                           ~Application2D() Q_DECL_OVERRIDE;
+    virtual                           ~Application2D() override;
     static void                        startNewSeamly2D(const QString &fileName = QString());
-    virtual bool                       notify(QObject *receiver, QEvent *event) Q_DECL_OVERRIDE;
+    virtual bool                       notify(QObject *receiver, QEvent *event) override;
 
     void                               initOptions();
 
@@ -88,17 +88,17 @@ public:
     void                               startLogging();
     QTextStream                       *logFile();
 
-    virtual const VTranslateVars      *translateVariables() Q_DECL_OVERRIDE;
+    virtual const VTranslateVars      *translateVariables() override;
 
     bool static                        isGUIMode();
-    virtual bool                       isAppInGUIMode() const Q_DECL_OVERRIDE;
+    virtual bool                       isAppInGUIMode() const override;
 
-    virtual void                       openSettings() Q_DECL_OVERRIDE;
+    virtual void                       openSettings() override;
     VSettings                         *Seamly2DSettings();
 
 protected:
-    virtual void                       initTranslateVariables() Q_DECL_OVERRIDE;
-    virtual bool	                   event(QEvent *e) Q_DECL_OVERRIDE;
+    virtual void                       initTranslateVariables() override;
+    virtual bool	                   event(QEvent *e) override;
 
 private:
     Q_DISABLE_COPY(Application2D)

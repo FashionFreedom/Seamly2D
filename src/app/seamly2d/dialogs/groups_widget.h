@@ -99,7 +99,7 @@ private slots:
     void              groupContextMenu(const QPoint &pos);
     void              draftBlockHasGroups(bool value);
  protected:
-    virtual void      changeEvent(QEvent* event) Q_DECL_OVERRIDE;
+    virtual void      changeEvent(QEvent* event) override;
 
 private:
     Q_DISABLE_COPY(GroupsWidget)

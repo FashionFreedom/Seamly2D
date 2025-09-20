@@ -82,10 +82,10 @@ public:
     
 //check if the current compiler supports C++11's rvalue references
 #ifdef Q_COMPILER_RVALUE_REFS
-	VLayoutPaper &operator=(VLayoutPaper &&paper) Q_DECL_NOTHROW;
+	VLayoutPaper &operator=(VLayoutPaper &&paper) noexcept;
 #endif
 
-	void    Swap(VLayoutPaper &paper) Q_DECL_NOTHROW;
+	void    Swap(VLayoutPaper &paper) noexcept;
 
     int     GetHeight() const;
     void    setHeight(int height);

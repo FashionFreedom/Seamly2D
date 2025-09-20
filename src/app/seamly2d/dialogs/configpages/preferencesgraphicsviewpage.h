@@ -47,7 +47,7 @@ public:
 
 protected:
     void                              enableOffsets();
-    virtual void                      changeEvent(QEvent *event) Q_DECL_OVERRIDE;
+    virtual void                      changeEvent(QEvent *event) override;
 
 private:
     Q_DISABLE_COPY(PreferencesGraphicsViewPage )

@@ -77,24 +77,24 @@ public:
     static const QString CurrentSchema;
 // GCC 4.6 doesn't allow constexpr and const together
 #if !defined(__INTEL_COMPILER) && !defined(__clang__) && defined(__GNUC__) && (__GNUC__ * 100 + __GNUC_MINOR__) <= 406
-    static Q_DECL_CONSTEXPR int MeasurementMinVer = CONVERTER_VERSION_CHECK(0, 3, 0);
-    static Q_DECL_CONSTEXPR int MeasurementMaxVer = CONVERTER_VERSION_CHECK(0, 4, 5);
+    static constexpr int MeasurementMinVer = CONVERTER_VERSION_CHECK(0, 3, 0);
+    static constexpr int MeasurementMaxVer = CONVERTER_VERSION_CHECK(0, 4, 5);
 #else
-    static Q_DECL_CONSTEXPR const int MeasurementMinVer = CONVERTER_VERSION_CHECK(0, 3, 0);
-    static Q_DECL_CONSTEXPR const int MeasurementMaxVer = CONVERTER_VERSION_CHECK(0, 4, 5);
+    static constexpr const int MeasurementMinVer = CONVERTER_VERSION_CHECK(0, 3, 0);
+    static constexpr const int MeasurementMaxVer = CONVERTER_VERSION_CHECK(0, 4, 5);
 #endif
 
 protected:
-    virtual int     minVer() const Q_DECL_OVERRIDE;
-    virtual int     maxVer() const Q_DECL_OVERRIDE;
+    virtual int     minVer() const override;
+    virtual int     maxVer() const override;
 
-    virtual QString minVerStr() const Q_DECL_OVERRIDE;
-    virtual QString maxVerStr() const Q_DECL_OVERRIDE;
+    virtual QString minVerStr() const override;
+    virtual QString maxVerStr() const override;
 
-    virtual QString getSchema(int ver) const Q_DECL_OVERRIDE;
-    virtual void    applyPatches() Q_DECL_OVERRIDE;
-    virtual void    downgradeToCurrentMaxVersion() Q_DECL_OVERRIDE;
-    virtual bool    isReadOnly() const Q_DECL_OVERRIDE;
+    virtual QString getSchema(int ver) const override;
+    virtual void    applyPatches() override;
+    virtual void    downgradeToCurrentMaxVersion() override;
+    virtual bool    isReadOnly() const override;
 
 private:
     Q_DISABLE_COPY(MultiSizeConverter)

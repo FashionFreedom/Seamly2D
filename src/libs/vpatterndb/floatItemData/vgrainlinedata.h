@@ -73,10 +73,10 @@ public:
 
     VGrainlineData &operator=(const VGrainlineData &data);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VGrainlineData &operator=(VGrainlineData &&data) Q_DECL_NOTHROW;
+	VGrainlineData &operator=(VGrainlineData &&data) noexcept;
 #endif
 
-	void            Swap(VGrainlineData &data) Q_DECL_NOTHROW;
+	void            Swap(VGrainlineData &data) noexcept;
 
     // methods, which set and return values of different parameters
     QString         getLength() const;

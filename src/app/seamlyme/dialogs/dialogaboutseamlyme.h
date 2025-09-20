@@ -68,8 +68,8 @@ public:
     virtual ~DialogAboutSeamlyMe();
 
 protected:
-    virtual void changeEvent(QEvent* event) Q_DECL_OVERRIDE;
-    virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    virtual void changeEvent(QEvent* event) override;
+    virtual void showEvent(QShowEvent *event) override;
 
 public slots:
 	void setProgressValue(int val);

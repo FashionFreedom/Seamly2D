@@ -61,7 +61,7 @@ class VTranslateVars : public VTranslateMeasurements
 {
 public:
     explicit VTranslateVars();
-    virtual ~VTranslateVars() Q_DECL_OVERRIDE;
+    virtual ~VTranslateVars() override;
 
     bool VariablesFromUser(QString &newFormula, int position, const QString &token, int &bias) const;
     bool PostfixOperatorsFromUser(QString &newFormula, int position, const QString &token, int &bias) const;
@@ -87,7 +87,7 @@ public:
     static QString TryFormulaFromUser(const QString &formula, bool osSeparator);
     QString FormulaToUser(const QString &formula, bool osSeparator) const;
 
-    virtual void Retranslate() Q_DECL_OVERRIDE;
+    virtual void Retranslate() override;
 
     QMap<QString, qmu::QmuTranslation> getFunctions() const;
 

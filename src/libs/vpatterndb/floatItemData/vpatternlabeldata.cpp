@@ -31,11 +31,11 @@
 #include "../ifc/ifcdef.h"
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VPatternLabelData &VPatternLabelData::operator=(VPatternLabelData &&data) Q_DECL_NOTHROW
+VPatternLabelData &VPatternLabelData::operator=(VPatternLabelData &&data) noexcept
 { Swap(data); return *this; }
 #endif
 
-void VPatternLabelData::Swap(VPatternLabelData &data) Q_DECL_NOTHROW
+void VPatternLabelData::Swap(VPatternLabelData &data) noexcept
 { VAbstractFloatItemData::Swap(data); std::swap(d, data.d); }
 
 //---------------------------------------------------------------------------------------------------------------------

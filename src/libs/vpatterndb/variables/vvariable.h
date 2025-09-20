@@ -71,14 +71,14 @@ public:
     VVariable(const QString &name, const QString &description = QString());
     VVariable(const VVariable &var);
 
-    virtual ~VVariable() Q_DECL_OVERRIDE;
+    virtual ~VVariable() override;
 
     VVariable &operator=(const VVariable &var);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VVariable &operator=(VVariable &&var) Q_DECL_NOTHROW;
+	VVariable &operator=(VVariable &&var) noexcept;
 #endif
 
-	void Swap(VVariable &var) Q_DECL_NOTHROW;
+	void Swap(VVariable &var) noexcept;
 
     QString GetDescription() const;
     void    SetDescription(const QString &desc);

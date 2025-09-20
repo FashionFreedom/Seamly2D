@@ -71,7 +71,7 @@ public:
     void          Apply();
 
 protected:
-    virtual void  changeEvent(QEvent* event) Q_DECL_OVERRIDE;
+    virtual void  changeEvent(QEvent* event) override;
 
 private slots:
     void          defaultPath();

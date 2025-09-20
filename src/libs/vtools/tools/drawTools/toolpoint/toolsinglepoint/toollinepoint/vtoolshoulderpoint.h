@@ -75,7 +75,7 @@ class VToolShoulderPoint : public VToolLinePoint
 {
     Q_OBJECT
 public:
-    virtual void               setDialog() Q_DECL_OVERRIDE;
+    virtual void               setDialog() override;
     static QPointF             FindPoint(const QPointF &p1Line, const QPointF &p2Line, const QPointF &pShoulder,
                                          const qreal &length);
 
@@ -90,7 +90,7 @@ public:
                                       const Source &typeCreation);
 
     static const QString       ToolType;
-    virtual int                type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int                type() const override {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::ShoulderPoint) };
 
     QString                    SecondPointName() const;
@@ -102,19 +102,19 @@ public:
     quint32                    getPShoulder() const;
     void                       setPShoulder(const quint32 &value);
 
-    virtual void               ShowVisualization(bool show) Q_DECL_OVERRIDE;
+    virtual void               ShowVisualization(bool show) override;
 
 protected slots:
-    virtual void               showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) Q_DECL_OVERRIDE;
+    virtual void               showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
 
 
 protected:
-    virtual void               RemoveReferens() Q_DECL_OVERRIDE;
-    virtual void               SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void               SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
-    virtual void               ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void               SetVisualization() Q_DECL_OVERRIDE;
-    virtual QString            makeToolTip() const Q_DECL_OVERRIDE;
+    virtual void               RemoveReferens() override;
+    virtual void               SaveDialog(QDomElement &domElement) override;
+    virtual void               SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
+    virtual void               ReadToolAttributes(const QDomElement &domElement) override;
+    virtual void               SetVisualization() override;
+    virtual QString            makeToolTip() const override;
 
 private:
     Q_DISABLE_COPY(VToolShoulderPoint)

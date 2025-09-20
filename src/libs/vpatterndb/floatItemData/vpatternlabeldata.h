@@ -48,10 +48,10 @@ public:
 
     VPatternLabelData &operator=(const VPatternLabelData &data);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VPatternLabelData &operator=(VPatternLabelData &&data) Q_DECL_NOTHROW;
+	VPatternLabelData &operator=(VPatternLabelData &&data) noexcept;
 #endif
 
-	void    Swap(VPatternLabelData &data) Q_DECL_NOTHROW;
+	void    Swap(VPatternLabelData &data) noexcept;
 
     // methods, which set up label parameters
     QString GetLabelWidth() const;

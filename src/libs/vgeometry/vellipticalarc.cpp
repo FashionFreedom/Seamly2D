@@ -41,10 +41,10 @@
 #include "vspline.h"
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VEllipticalArc &VEllipticalArc::operator=(VEllipticalArc &&arc) Q_DECL_NOTHROW { Swap(arc); return *this; }
+VEllipticalArc &VEllipticalArc::operator=(VEllipticalArc &&arc) noexcept { Swap(arc); return *this; }
 #endif
 
-void VEllipticalArc::Swap(VEllipticalArc &arc) Q_DECL_NOTHROW
+void VEllipticalArc::Swap(VEllipticalArc &arc) noexcept
 { VAbstractArc::Swap(arc); std::swap(d, arc.d); }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -72,10 +72,10 @@ public:
     VPieceNode         &operator=(const VPieceNode &node);
 
 #ifdef Q_COMPILER_RVALUE_REFS
-	VPieceNode           &operator=(VPieceNode &&node) Q_DECL_NOTHROW;
+	VPieceNode           &operator=(VPieceNode &&node) noexcept;
 #endif
 
-	void                  Swap(VPieceNode &node) Q_DECL_NOTHROW;
+	void                  Swap(VPieceNode &node) noexcept;
 
     friend QDataStream &operator<<(QDataStream &out, const VPieceNode &);
     friend QDataStream &operator>>(QDataStream &in, VPieceNode &p);

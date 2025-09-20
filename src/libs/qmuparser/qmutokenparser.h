@@ -35,7 +35,7 @@ class QmuTokenParser : public QmuFormulaBase
 {
 public:
     QmuTokenParser(const QString &formula, bool osSeparator, bool fromUser = true);
-    virtual ~QmuTokenParser() Q_DECL_OVERRIDE;
+    virtual ~QmuTokenParser() override;
 
     static bool IsSingle(const QString &formula);
 
