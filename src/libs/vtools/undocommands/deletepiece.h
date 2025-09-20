@@ -66,8 +66,8 @@ public:
     DeletePiece(VAbstractPattern *doc, quint32 id, const VPiece &piece, QUndoCommand *parent = nullptr);
     virtual ~DeletePiece();
 
-    virtual void undo() Q_DECL_OVERRIDE;
-    virtual void redo() Q_DECL_OVERRIDE;
+    virtual void undo() override;
+    virtual void redo() override;
 private:
     Q_DISABLE_COPY(DeletePiece)
 

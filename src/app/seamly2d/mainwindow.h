@@ -103,7 +103,7 @@ class MainWindow : public MainWindowsNoGUI
     Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    virtual ~MainWindow() Q_DECL_OVERRIDE;
+    virtual ~MainWindow() override;
 
     bool LoadPattern(const QString &fileName, const QString &customMeasureFile = QString());
 
@@ -112,9 +112,9 @@ public slots:
     void penChanged(Pen pen);
     void basePointChanged();
 
-    virtual void setStatusMessage(const QString &message) Q_DECL_OVERRIDE;
-    virtual void updateGroups() Q_DECL_OVERRIDE;
-    virtual void zoomToSelected() Q_DECL_OVERRIDE;
+    virtual void setStatusMessage(const QString &message) override;
+    virtual void updateGroups() override;
+    virtual void zoomToSelected() override;
     void         showAllGroups();
     void         hideAllGroups();
     void         lockAllGroups();
@@ -156,15 +156,15 @@ signals:
     void signalZoomPanActive(bool enable) const;
 
 protected:
-    virtual void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
-    virtual void keyReleaseEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
-    virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
-    virtual void changeEvent(QEvent* event) Q_DECL_OVERRIDE;
-    virtual void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
-    virtual void customEvent(QEvent * event) Q_DECL_OVERRIDE;
-    virtual void CleanLayout() Q_DECL_OVERRIDE;
-    virtual void PrepareSceneList() Q_DECL_OVERRIDE;
-    virtual void exportToCSVData(const QString &fileName, const DialogExportToCSV &dialog) Q_DECL_FINAL;
+    virtual void keyPressEvent(QKeyEvent *event) override;
+    virtual void keyReleaseEvent(QKeyEvent *event) override;
+    virtual void showEvent(QShowEvent *event) override;
+    virtual void changeEvent(QEvent* event) override;
+    virtual void closeEvent(QCloseEvent *event) override;
+    virtual void customEvent(QEvent * event) override;
+    virtual void CleanLayout() override;
+    virtual void PrepareSceneList() override;
+    virtual void exportToCSVData(const QString &fileName, const DialogExportToCSV &dialog) final;
     void         handleExportToCSV();
 
 private slots:

@@ -39,9 +39,9 @@ class TogglePieceLock : public VUndoCommand
 public:
     TogglePieceLock(quint32 id, bool lock, VContainer *data, VAbstractPattern *doc, QUndoCommand *parent = nullptr);
     virtual     ~TogglePieceLock();
-    virtual void undo() Q_DECL_OVERRIDE;
-    virtual void redo() Q_DECL_OVERRIDE;
-    virtual int  id() const Q_DECL_OVERRIDE;
+    virtual void undo() override;
+    virtual void redo() override;
+    virtual int  id() const override;
     quint32      getpieceId() const;
     bool         getNewLock() const;
 

@@ -68,9 +68,9 @@ public:
                   TogglePieceInLayout(quint32 id, bool state, VContainer *data,
                                       VAbstractPattern *doc, QUndoCommand *parent = nullptr);
     virtual      ~TogglePieceInLayout();
-    virtual void  undo() Q_DECL_OVERRIDE;
-    virtual void  redo() Q_DECL_OVERRIDE;
-    virtual int   id() const Q_DECL_OVERRIDE;
+    virtual void  undo() override;
+    virtual void  redo() override;
+    virtual int   id() const override;
     quint32       getPieceId() const;
     bool          getNewState() const;
 

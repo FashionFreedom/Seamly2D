@@ -82,15 +82,15 @@ public:
                               VLayoutPiece();
                               VLayoutPiece(const VLayoutPiece &detail);
 
-    virtual                  ~VLayoutPiece() Q_DECL_OVERRIDE;
+    virtual                  ~VLayoutPiece() override;
 
     VLayoutPiece              &operator=(const VLayoutPiece &detail);
 
 #ifdef Q_COMPILER_RVALUE_REFS
-	VLayoutPiece                &operator=(VLayoutPiece &&detail) Q_DECL_NOTHROW;
+	VLayoutPiece                &operator=(VLayoutPiece &&detail) noexcept;
 #endif
 
-	  void                      Swap(VLayoutPiece &detail) Q_DECL_NOTHROW;
+	  void                      Swap(VLayoutPiece &detail) noexcept;
 
     static VLayoutPiece       Create(const VPiece &piece, const VContainer *pattern);
 

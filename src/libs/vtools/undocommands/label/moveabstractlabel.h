@@ -70,8 +70,8 @@ public:
     virtual        ~MoveAbstractLabel()=default;
 
 
-    virtual void    undo() Q_DECL_OVERRIDE;
-    virtual void    redo() Q_DECL_OVERRIDE;
+    virtual void    undo() override;
+    virtual void    redo() override;
 
     quint32         GetPointId() const;
     QPointF         GetNewPos() const;

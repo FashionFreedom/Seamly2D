@@ -76,10 +76,10 @@ public:
 
     VFSplinePoint &operator=(const VFSplinePoint &point);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VFSplinePoint &operator=(VFSplinePoint &&point) Q_DECL_NOTHROW;
+	VFSplinePoint &operator=(VFSplinePoint &&point) noexcept;
 #endif
 
-	void Swap(VFSplinePoint &point) Q_DECL_NOTHROW;
+	void Swap(VFSplinePoint &point) noexcept;
 
     VPointF P() const;
     void    SetP(const VPointF &value);
@@ -115,10 +115,10 @@ public:
 
     VSplinePoint &operator=(const VSplinePoint &point);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VSplinePoint &operator=(VSplinePoint &&point) Q_DECL_NOTHROW;
+	VSplinePoint &operator=(VSplinePoint &&point) noexcept;
 #endif
 
-	void Swap(VSplinePoint &point) Q_DECL_NOTHROW;
+	void Swap(VSplinePoint &point) noexcept;
 
     VPointF P() const;
     void    SetP(const VPointF &value);

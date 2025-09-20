@@ -57,10 +57,10 @@
 #include <QTransform>
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VPointF &VPointF::operator=(VPointF &&point) Q_DECL_NOTHROW { Swap(point); return *this; }
+VPointF &VPointF::operator=(VPointF &&point) noexcept { Swap(point); return *this; }
 #endif
 
-void VPointF::Swap(VPointF &point) Q_DECL_NOTHROW
+void VPointF::Swap(VPointF &point) noexcept
 { VGObject::Swap(point); std::swap(d, point.d); }
 
 //---------------------------------------------------------------------------------------------------------------------

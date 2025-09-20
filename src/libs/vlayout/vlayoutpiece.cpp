@@ -388,10 +388,10 @@ QStringList PieceLabelText(const QVector<QPointF> &labelShape, const VTextManage
 //---------------------------------------------------------------------------------------------------------------------
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VLayoutPiece &VLayoutPiece::operator=(VLayoutPiece &&piece) Q_DECL_NOTHROW { Swap(piece); return *this; }
+VLayoutPiece &VLayoutPiece::operator=(VLayoutPiece &&piece) noexcept { Swap(piece); return *this; }
 #endif
 
-void VLayoutPiece::Swap(VLayoutPiece &piece) Q_DECL_NOTHROW
+void VLayoutPiece::Swap(VLayoutPiece &piece) noexcept
 { VAbstractPiece::Swap(piece); std::swap(d, piece.d); }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -55,7 +55,7 @@ class PointIntersectXYDialog : public DialogTool
 
 public:
                    PointIntersectXYDialog(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
-    virtual       ~PointIntersectXYDialog() Q_DECL_OVERRIDE;
+    virtual       ~PointIntersectXYDialog() override;
 
     void           setPointName(const QString &value);
 
@@ -75,12 +75,12 @@ public:
     void           setLineColor(const QString &value);
 
 public slots:
-    virtual void   ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
+    virtual void   ChosenObject(quint32 id, const SceneObject &type) override;
     void           pointChanged();
 
 protected:
-    virtual void   ShowVisualization() Q_DECL_OVERRIDE;
-    virtual void   SaveData() Q_DECL_OVERRIDE;
+    virtual void   ShowVisualization() override;
+    virtual void   SaveData() override;
 
 private:
                    Q_DISABLE_COPY(PointIntersectXYDialog)

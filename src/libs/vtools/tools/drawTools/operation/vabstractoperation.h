@@ -105,28 +105,28 @@ public:
     static const QString TagSource;
     static const QString TagDestination;
 
-    virtual QString      getTagName() const Q_DECL_OVERRIDE;
+    virtual QString      getTagName() const override;
 
     QString              Suffix() const;
     void                 setSuffix(const QString &suffix);
 
-    virtual void         GroupVisibility(quint32 object, bool visible) Q_DECL_OVERRIDE;
-    virtual void         paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) Q_DECL_OVERRIDE;
+    virtual void         GroupVisibility(quint32 object, bool visible) override;
+    virtual void         paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 
-    virtual bool         isPointNameVisible(quint32 id) const Q_DECL_OVERRIDE;
-    virtual void         setPointNameVisiblity(quint32 id, bool visible) Q_DECL_OVERRIDE;
+    virtual bool         isPointNameVisible(quint32 id) const override;
+    virtual void         setPointNameVisiblity(quint32 id, bool visible) override;
 
-    virtual void         setPointNamePosition(quint32 id, const QPointF &pos) Q_DECL_OVERRIDE;
+    virtual void         setPointNamePosition(quint32 id, const QPointF &pos) override;
 
     static void          ExtractData(const QDomElement &domElement, QVector<SourceItem> &source,
                                      QVector<DestinationItem> &destination);
 
 public slots:
-    virtual void         FullUpdateFromFile() Q_DECL_OVERRIDE;
+    virtual void         FullUpdateFromFile() override;
 
-    virtual void         AllowHover(bool enabled) Q_DECL_OVERRIDE;
-    virtual void         AllowSelecting(bool enabled) Q_DECL_OVERRIDE;
-    virtual void         EnableToolMove(bool move) Q_DECL_OVERRIDE;
+    virtual void         AllowHover(bool enabled) override;
+    virtual void         AllowSelecting(bool enabled) override;
+    virtual void         EnableToolMove(bool move) override;
 
     void                 AllowPointHover(bool enabled);
     void                 AllowPointSelecting(bool enabled);
@@ -146,12 +146,12 @@ public slots:
     void                 AllowElArcHover(bool enabled);
     void                 AllowElArcSelecting(bool enabled);
 
-    virtual void         ToolSelectionType(const SelectionType &type) Q_DECL_OVERRIDE;
-    virtual void         Disable(bool disable, const QString &draftBlockName) Q_DECL_OVERRIDE;
+    virtual void         ToolSelectionType(const SelectionType &type) override;
+    virtual void         Disable(bool disable, const QString &draftBlockName) override;
     void                 ObjectSelected(bool selected, quint32 objId);
     void                 deletePoint();
     void                 pointNamePositionChanged(const QPointF &pos, quint32 labelId);
-    virtual void         updatePointNameVisibility(quint32 id, bool visible) Q_DECL_OVERRIDE;
+    virtual void         updatePointNameVisibility(quint32 id, bool visible) override;
 
 
 protected:
@@ -165,12 +165,12 @@ protected:
                                             const QVector<DestinationItem> &destination,
                                             QGraphicsItem *parent = nullptr);
 
-    virtual void         AddToFile() Q_DECL_OVERRIDE;
-    virtual void         ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
+    virtual void         AddToFile() override;
+    virtual void         ReadToolAttributes(const QDomElement &domElement) override;
+    virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
 
 
-    //virtual void         updatePointNameVisibility(quint32 id, bool visible) Q_DECL_OVERRIDE;
+    //virtual void         updatePointNameVisibility(quint32 id, bool visible) override;
     void                 updatePointNamePosition(quint32 id, const QPointF &pos);
 
     void                 SaveSourceDestination(QDomElement &tag);

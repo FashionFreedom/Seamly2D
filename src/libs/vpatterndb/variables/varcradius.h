@@ -71,7 +71,7 @@ public:
                Unit patternUnit);
     VArcRadius(const VArcRadius &var);
     VArcRadius &operator=(const VArcRadius &var);
-    virtual ~VArcRadius() Q_DECL_OVERRIDE;
+    virtual ~VArcRadius() override;
 };
 
 #endif // VARCRADIUS_H

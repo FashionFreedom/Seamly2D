@@ -40,8 +40,8 @@ public:
     explicit               AnchorPointVisual(const VContainer *data, QGraphicsItem *parent = nullptr);
     virtual               ~AnchorPointVisual();
 
-    virtual void           RefreshGeometry() Q_DECL_OVERRIDE;
-    virtual int            type() const Q_DECL_OVERRIDE {return Type;}
+    virtual void           RefreshGeometry() override;
+    virtual int            type() const override {return Type;}
     enum                   {Type = UserType + static_cast<int>(Vis::ToolAnchorPoint)};
 
 private:

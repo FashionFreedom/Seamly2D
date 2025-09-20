@@ -76,13 +76,13 @@ public:
                                      const QString &lineType, const QString &lineWeight,
                                      const QString &lineColor, const QString &formula,
                                      const quint32 &basePointId, const qreal &angle, QGraphicsItem * parent = nullptr);
-    virtual          ~VToolLinePoint() Q_DECL_OVERRIDE;
+    virtual          ~VToolLinePoint() override;
 
-    virtual int       type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int       type() const override {return Type;}
     enum              {Type = UserType + static_cast<int>(Tool::LinePoint)};
 
     virtual void      paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
-                            QWidget *widget = nullptr) Q_DECL_OVERRIDE;
+                            QWidget *widget = nullptr) override;
 
     VFormula          GetFormulaLength() const;
     void              SetFormulaLength(const VFormula &value);
@@ -99,8 +99,8 @@ public:
     void              setLineColor(const QString &value);
 
 public slots:
-    virtual void      Disable(bool disable, const QString &draftBlockName) Q_DECL_OVERRIDE;
-    virtual void      FullUpdateFromFile() Q_DECL_OVERRIDE;
+    virtual void      Disable(bool disable, const QString &draftBlockName) override;
+    virtual void      FullUpdateFromFile() override;
 
 protected:
     QString           formulaLength; /** @brief formula string with length formula. */
@@ -110,11 +110,11 @@ protected:
     QString           lineColor; /** @brief lineColor color of a line. */
 
     virtual void      RefreshGeometry();
-    virtual void      RemoveReferens() Q_DECL_OVERRIDE;
-    virtual void      SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
-    virtual void      hoverEnterEvent(QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;
-    virtual void      hoverLeaveEvent(QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;
-    virtual QString   makeToolTip() const Q_DECL_OVERRIDE;
+    virtual void      RemoveReferens() override;
+    virtual void      SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
+    virtual void      hoverEnterEvent(QGraphicsSceneHoverEvent *event) override;
+    virtual void      hoverLeaveEvent(QGraphicsSceneHoverEvent *event) override;
+    virtual QString   makeToolTip() const override;
 
 private:
     Q_DISABLE_COPY(VToolLinePoint)

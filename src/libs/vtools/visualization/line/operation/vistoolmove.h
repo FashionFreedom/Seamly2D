@@ -73,7 +73,7 @@ public:
     explicit                 VisToolMove(const VContainer *data, QGraphicsItem *parent = nullptr);
     virtual                 ~VisToolMove();
 
-    virtual void             RefreshGeometry() Q_DECL_OVERRIDE;
+    virtual void             RefreshGeometry() override;
 
     QString                  Angle() const;
     void                     SetAngle(const QString &expression);
@@ -87,7 +87,7 @@ public:
 
     void                     setOriginPointId(quint32 value);
 
-    virtual int              type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int              type() const override {return Type;}
     enum { Type = UserType + static_cast<int>(Vis::ToolMove)};
 
 private:

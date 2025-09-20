@@ -77,7 +77,7 @@ class UnionDialog : public DialogTool
 public:
                  UnionDialog(const VContainer *data, const quint32 &toolId,
                              QWidget *parent = nullptr);
-    virtual     ~UnionDialog() Q_DECL_OVERRIDE;
+    virtual     ~UnionDialog() override;
 
     quint32      getPiece1Id() const;
     quint32      getPiece2Id() const;
@@ -85,7 +85,7 @@ public:
     int          getPiece2Index() const;
 
 public slots:
-    virtual void ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
+    virtual void ChosenObject(quint32 id, const SceneObject &type) override;
 
 private:
     Q_DISABLE_COPY(UnionDialog)

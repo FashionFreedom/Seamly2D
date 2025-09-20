@@ -42,10 +42,10 @@ class VShortcutEditWidget : public QWidget
 
 public:
     explicit VShortcutEditWidget(QWidget* parent);
-    virtual ~VShortcutEditWidget() Q_DECL_OVERRIDE;
+    virtual ~VShortcutEditWidget() override;
 
     //! Needed for proper event handling
-    virtual bool eventFilter(QObject* obj, QEvent* event) Q_DECL_OVERRIDE;
+    virtual bool eventFilter(QObject* obj, QEvent* event) override;
 
     //! Returns the currently set shortcut
     QString getShortcutAsString() const;

@@ -56,11 +56,11 @@
 #include "vcubicbezier_p.h"
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VCubicBezier &VCubicBezier::operator=(VCubicBezier &&curve) Q_DECL_NOTHROW
+VCubicBezier &VCubicBezier::operator=(VCubicBezier &&curve) noexcept
 { Swap(curve); return *this; }
 #endif
 
-void VCubicBezier::Swap(VCubicBezier &curve) Q_DECL_NOTHROW
+void VCubicBezier::Swap(VCubicBezier &curve) noexcept
 { VAbstractCubicBezier::Swap(curve); std::swap(d, curve.d); }
 
 //---------------------------------------------------------------------------------------------------------------------

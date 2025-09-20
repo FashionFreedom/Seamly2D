@@ -76,21 +76,21 @@ class ApplicationME : public VAbstractApplication
 
 public:
                                         ApplicationME(int &argc, char **argv);
-    virtual                            ~ApplicationME() Q_DECL_OVERRIDE;
+    virtual                            ~ApplicationME() override;
 
-    virtual bool                        notify(QObject * receiver, QEvent * event) Q_DECL_OVERRIDE;
+    virtual bool                        notify(QObject * receiver, QEvent * event) override;
 
     bool                                isTestMode() const;
-    virtual bool                        isAppInGUIMode() const Q_DECL_OVERRIDE;
+    virtual bool                        isAppInGUIMode() const override;
     TMainWindow                        *mainWindow();
     QList<TMainWindow*>                 mainWindows();
     TMainWindow                        *newMainWindow();
 
     void                                initOptions();
 
-    virtual const VTranslateVars       *translateVariables() Q_DECL_OVERRIDE;
+    virtual const VTranslateVars       *translateVariables() override;
 
-    virtual void                        openSettings() Q_DECL_OVERRIDE;
+    virtual void                        openSettings() override;
     VSeamlyMeSettings                  *seamlyMeSettings();
 
     void                                showDataBase();
@@ -103,8 +103,8 @@ public slots:
     void                                processCommandLine();
 
 protected:
-    virtual void                        initTranslateVariables() Q_DECL_OVERRIDE;
-    virtual bool                        event(QEvent *e) Q_DECL_OVERRIDE;
+    virtual void                        initTranslateVariables() override;
+    virtual bool                        event(QEvent *e) override;
 
 private slots:
     void                                newLocalSocketConnection();
