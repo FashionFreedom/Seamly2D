@@ -1,19 +1,18 @@
 var NAVTREEINDEX83 =
 {
-"d6/d0b/classVPE_1_1PlainTextProperty.html#a4da62b476a62b79f5b995978c7b94316":[2,0,24,4,10],
 "d6/d0b/classVPE_1_1PlainTextProperty.html#a4da62b476a62b79f5b995978c7b94316":[3,0,2,4,10],
 "d6/d0b/classVPE_1_1PlainTextProperty.html#a5201dac62c7d49baa7cc9f3618e50610":[2,0,24,4,8],
 "d6/d0b/classVPE_1_1PlainTextProperty.html#a5201dac62c7d49baa7cc9f3618e50610":[3,0,2,4,8],
-"d6/d0b/classVPE_1_1PlainTextProperty.html#a55c608f13118e4bd1307dadc50f90123":[2,0,24,4,12],
 "d6/d0b/classVPE_1_1PlainTextProperty.html#a55c608f13118e4bd1307dadc50f90123":[3,0,2,4,12],
+"d6/d0b/classVPE_1_1PlainTextProperty.html#a55c608f13118e4bd1307dadc50f90123":[2,0,24,4,12],
 "d6/d0b/classVPE_1_1PlainTextProperty.html#a5f65cf8cd1076b1d8e92b9c5894106ec":[2,0,24,4,18],
 "d6/d0b/classVPE_1_1PlainTextProperty.html#a5f65cf8cd1076b1d8e92b9c5894106ec":[3,0,2,4,18],
 "d6/d0b/classVPE_1_1PlainTextProperty.html#a8023fc8bcdde5d5b302e3a72a44a6e25":[2,0,24,4,0],
 "d6/d0b/classVPE_1_1PlainTextProperty.html#a8023fc8bcdde5d5b302e3a72a44a6e25":[3,0,2,4,0],
-"d6/d0b/classVPE_1_1PlainTextProperty.html#a8a209c228a8f3fb4914b7927cfa6c469":[3,0,2,4,2],
 "d6/d0b/classVPE_1_1PlainTextProperty.html#a8a209c228a8f3fb4914b7927cfa6c469":[2,0,24,4,2],
-"d6/d0b/classVPE_1_1PlainTextProperty.html#a94fd7afc338736c22ec1d0f6e6e10bd3":[3,0,2,4,4],
+"d6/d0b/classVPE_1_1PlainTextProperty.html#a8a209c228a8f3fb4914b7927cfa6c469":[3,0,2,4,2],
 "d6/d0b/classVPE_1_1PlainTextProperty.html#a94fd7afc338736c22ec1d0f6e6e10bd3":[2,0,24,4,4],
+"d6/d0b/classVPE_1_1PlainTextProperty.html#a94fd7afc338736c22ec1d0f6e6e10bd3":[3,0,2,4,4],
 "d6/d0b/classVPE_1_1PlainTextProperty.html#a96ebafa1d2cf8ca7fd3a7c7e5505c2ef":[3,0,2,4,1],
 "d6/d0b/classVPE_1_1PlainTextProperty.html#a96ebafa1d2cf8ca7fd3a7c7e5505c2ef":[2,0,24,4,1],
 "d6/d0b/classVPE_1_1PlainTextProperty.html#ab8011be03d403c83a3bde71ac0ab5d63":[3,0,2,4,13],
@@ -249,5 +248,6 @@ var NAVTREEINDEX83 =
 "d6/d1a/classMainWindow.html#a3631bdedbef1d5d7e3ea87b62a80d94e":[3,0,338,180],
 "d6/d1a/classMainWindow.html#a36c2d7e06d9daf318854e30507c69458":[3,0,338,222],
 "d6/d1a/classMainWindow.html#a37329f2185211a00368512de6ffb3e3a":[3,0,338,192],
-"d6/d1a/classMainWindow.html#a3acea18c4a60f2a8101f32ff3eb1112e":[3,0,338,211]
+"d6/d1a/classMainWindow.html#a3acea18c4a60f2a8101f32ff3eb1112e":[3,0,338,211],
+"d6/d1a/classMainWindow.html#a3bb120055d9323f072038bd927e2b604":[3,0,338,250]
 };
