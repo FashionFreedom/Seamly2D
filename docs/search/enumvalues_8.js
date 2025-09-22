@@ -48,7 +48,7 @@ var searchData=
   ['individual_45',['Individual',['../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386a2dd4472245a696bc0b4b944db2a8b519',1,'def.h']]],
   ['information_46',['Information',['../dd/dc4/classUtils_1_1CheckableMessageBox.html#a3704f2110d227cfa444af687b6f086b4af76ff5d16bc77ee1bda33b7cb39d3882',1,'Utils::CheckableMessageBox']]],
   ['init_47',['Init',['../df/d51/qmudef_8cpp.html#a5d74787dedbc4e11c1ab15bf487e61f8a1ff76aa808bb8209a13fcdbaf330587e',1,'qmudef.cpp']]],
-  ['initial_5fpunctuation_48',['INITIAL_PUNCTUATION',['../dd/d02/classXMLUniCharacter.html#a1ab8b1de68bfcb71e9029d1ff4c1bfc4a78e748dac9a8095e34c1b0d3cab93c96',1,'XMLUniCharacter']]],
+  ['initial_5fpunctuation_48',['INITIAL_PUNCTUATION',['../dd/d02/classXMLUniCharacter.html#a6f38eb37f0042c27a67f7179e132893ba78e748dac9a8095e34c1b0d3cab93c96',1,'XMLUniCharacter']]],
   ['inputdigit_49',['InputDigit',['../df/d51/qmudef_8cpp.html#a4c03a92b86f91e7e4ab59a095ad64226a3e5bdd94d86f35221254965300f96a80',1,'qmudef.cpp']]],
   ['inputdot_50',['InputDot',['../df/d51/qmudef_8cpp.html#a4c03a92b86f91e7e4ab59a095ad64226ae0975713475b374678e591a1f220157e',1,'qmudef.cpp']]],
   ['inputexp_51',['InputExp',['../df/d51/qmudef_8cpp.html#a4c03a92b86f91e7e4ab59a095ad64226a4d2312d27fa78117b16bc1ba15da28a9',1,'qmudef.cpp']]],
