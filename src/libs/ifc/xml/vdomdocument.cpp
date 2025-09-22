@@ -665,31 +665,6 @@ void VDomDocument::ValidateXML(const QString &schema, const QString &fileName)
     QTextStream patternIn(&patternFile);
     std::string xmlString = patternIn.readAll().toStdString();
 
-    // Fix files with invalid lineweight. 
-    size_t startPos = 0;
-    std::string fromString = "lineWeight=\"1.00\"";
-    std::string toString = "lineWeight=\"1\"";
-    while((startPos = xmlString.find(fromString, startPos)) != std::string::npos)
-    {
-        xmlString.replace(startPos, fromString.length(), toString);
-        // Advance startPos past the newly inserted 'toString' to avoid infinite loops
-        // if 'fromString' is a substring of 'toString' (e.g., replacing "a" with "aa").
-        startPos += toString.length();
-    }
-    // If any replacements were made write the changes back to the pattern file.
-    if (startPos > 0)
-    {
-        patternFile.close();
-        if (patternFile.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate) == false)
-        {
-            const QString errorMsg(tr("Can't open pattern file %1:\n%2.").arg(fileName).arg(patternFile.errorString()));
-            throw VException(errorMsg);
-        }
-
-        QTextStream patternOut(&patternFile);
-        patternOut << QString::fromStdString(xmlString);
-    }
-
     xercesc::MemBufInputSource inputBuffer((XMLByte*)xmlString.c_str(), xmlString.size(), "/input.xml");
 
     domParser->parse(inputBuffer);

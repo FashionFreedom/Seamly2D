@@ -383,7 +383,6 @@ private:
     void                              handleLayoutMenu();
     void                              handleImagesMenu();
 
-
     void                              CancelTool();
 
     void               setWidgetsEnabled(bool enable);
@@ -421,6 +420,7 @@ private:
     bool               SavePattern(const QString &fileName, QString &error);
     void               AutoSavePattern();
     void               setCurrentFile(const QString &fileName);
+    void               replaceInFile(const QString &filename, const QString &search, const QString &replace);
 
     void               ReadSettings();
     void               WriteSettings();

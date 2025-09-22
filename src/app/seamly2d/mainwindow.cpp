@@ -115,6 +115,7 @@
 #include <QFontComboBox>
 #include <QtCore5Compat/QTextCodec>
 #include <QDoubleSpinBox>
+#include <QFileDevice>
 #include <QFileDialog>
 #include <QFileSystemWatcher>
 #include <QFontComboBox>
@@ -152,7 +153,6 @@ const QString autosavePostfix = QStringLiteral(".autosave");
 // Strings for dynamically translating "Ctrl" in the status bar tool tips
 const QString strQShortcut = QStringLiteral("QShortcut");
 const QString strCtrl      = QStringLiteral("Ctrl");
-
 
 /// @brief Seamly2D MainWindow constructor.
 ///
@@ -5255,6 +5255,64 @@ void MainWindow::setCurrentFile(const QString &fileName)
     UpdateWindowTitle();
 }
 
+/// @brief replaceInFile Search and replace pattern file.
+///
+/// This method Replaces every occurrence of searchString with replaceString in the pattern file.
+///
+/// @param filename File path of xml pattern file.
+/// @param searchString Search string.
+/// @param replaceString Replacement String.
+void MainWindow::replaceInFile(const QString &filename, const QString &searchString, const QString &replaceString)
+{
+    QFile file(filename);
+
+    // Open the file in read-only mode. If in GUI mode post messagebox if file fails to open. 
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        if (guiEnabled)
+        {
+            QMessageBox::warning(qApp->getMainWindow(), QObject::tr("File Error"),
+                                 QObject::tr("Could not open file for reading."),
+                                 QMessageBox::Ok, QMessageBox::Ok);
+        }
+        return;
+    }
+
+    // Read the entire file contents and retrieve last modified datestamp.
+    QString fileContent = QTextStream(&file).readAll();
+    QDateTime oldDateTime = file.fileTime(QFileDevice::FileModificationTime);
+    file.close();
+
+    if (fileContent.contains(searchString))
+    {
+        // Replace all occurrences of the search string
+        fileContent.replace(searchString, replaceString);
+
+        // Open the file in write-only mode to save changes. Truncate forces file to be cleared and pointer reset.
+        if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate))
+        {
+            if (guiEnabled)
+            {
+                QMessageBox::warning(qApp->getMainWindow(), QObject::tr("File Error"),
+                                     QObject::tr("Could not open file for writing."),
+                                     QMessageBox::Ok, QMessageBox::Ok);
+            }
+            return;
+        }
+
+        // Write out updated file contents.
+        QTextStream out(&file);
+        out << fileContent;
+
+        // Restore datestamp and close file.
+        file.setFileTime(oldDateTime, QFileDevice::FileModificationTime);
+        file.close();
+
+        // Mark pattern as unsaved.
+        patternChangesWereSaved(false);
+    }
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief ReadSettings read setting for app.
@@ -6467,6 +6525,9 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
         Clear();
         return false;
     }
+
+    replaceInFile(fileName, "lineWeight=\"1.00\"", "lineWeight=\"1\"");
+
 
     try
     {
