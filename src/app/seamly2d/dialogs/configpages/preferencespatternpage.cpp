@@ -1,14 +1,15 @@
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   preferencespatternpage.cpp
 //  @author Douglas S Caskey
 //  @date   26 Oct, 2023
 //
-//  @brief
 //  @copyright
 //  This source code is part of the Seamly2D project, a pattern making
 //  program to create and model patterns of clothing.
-//  Copyright (C) 2017-2024 Seamly2D project
+//  Copyright (C) 2017 - 2025 Seamly, LLC
 //  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
 //
+//  @brief
 //  Seamly2D is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
 //  the Free Software Foundation, either version 3 of the License, or
@@ -21,34 +22,33 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   preferencespatternpage.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   12 4, 2017
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2017 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   preferencespatternpage.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   12 4, 2017
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2017 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "preferencespatternpage.h"
 #include "ui_preferencespatternpage.h"
@@ -352,12 +352,12 @@ void PreferencesPatternPage::initNotches()
 //---------------------------------------------------------------------------------------------------------------------
 void PreferencesPatternPage::initGrainlines()
 {
-    setMaxByUnits(ui->defaultGrainlineLength_DoubleSpinBox, 20.000);
-
     ui->showGrainlines_CheckBox->setChecked(qApp->Seamly2DSettings()->getDefaultGrainlineVisibilty());
 
     ui->defaultGrainlineLength_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultGrainlineLength());
     ui->defaultGrainlineLength_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->getUnit()), true));
+    setMaxByUnits(ui->defaultGrainlineLength_DoubleSpinBox, 40.000);
+    grainlineLengthChanged();
 
     int index = ui->defaultGrainlineColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultGrainlineColor());
     if (index != -1)
@@ -370,7 +370,38 @@ void PreferencesPatternPage::initGrainlines()
         ui->defaultGrainlineLineweight_ComboBox->setCurrentIndex(index);
     }
 
-    ui->defaultArrowLength_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultArrowLength());
+    ui->defaultArrowLength_DoubleSpinBox->setValue(qApp->Settings()->getDefaultArrowLength());
+    arrowLengthChanged();
+
+    connect(ui->defaultArrowLength_DoubleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
+            this, &PreferencesPatternPage::arrowLengthChanged);
+
+    connect(ui->defaultGrainlineLength_DoubleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
+            this, &PreferencesPatternPage::grainlineLengthChanged);
+}
+
+void PreferencesPatternPage::arrowLengthChanged()
+{
+    QString units = qApp->Seamly2DSettings()->getUnit();
+    qreal arrowLength = ui->defaultArrowLength_DoubleSpinBox->value();
+    qreal arrowLengthCalc = FromPixel(arrowLength, StrToUnits(units));
+    ui->arrowlengthCalc_Label->setText(QString::number(arrowLengthCalc, 'f', 3) + units);
+}
+
+void PreferencesPatternPage::grainlineLengthChanged()
+{
+    QString units = qApp->Seamly2DSettings()->getUnit();
+    qreal arrowLength = ui->defaultArrowLength_DoubleSpinBox->value();
+    qreal arrowLengthCalc = FromPixel(arrowLength, StrToUnits(units));
+
+    if (ui->defaultGrainlineLength_DoubleSpinBox->value() < arrowLengthCalc * 2)
+    {
+        changeColor(ui->grainlineLength_Label, Qt::red);
+    }
+    else
+    {
+        changeColor(ui->grainlineLength_Label, Qt::black);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -388,6 +419,14 @@ void PreferencesPatternPage::initComboBoxFormats(QComboBox *box, const QStringLi
     {
         box->setCurrentIndex(0);
     }
+}
+
+void PreferencesPatternPage::changeColor(QWidget *widget, const QColor &color)
+{
+    SCASSERT(widget != nullptr)
+    QPalette palette = widget->palette();
+    palette.setColor(QPalette::Active, widget->foregroundRole(), color);
+    widget->setPalette(palette);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -4,6 +4,8 @@
 //  @date   17 Sep, 2023
 //
 //  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
 //  Copyright (C) 2017 - 2025 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
@@ -113,6 +115,7 @@ PatternPieceDialog::PatternPieceDialog(const VContainer *data, const quint32 &to
     , ui(new Ui::PatternPieceDialog)
     , applyAllowed(false)// By default disabled
     , flagGrainlineAnchor(true)
+    , flagGrainlineArrow(true)
     , flagPieceLabelAnchor(true)
     , flagPatternLabelAnchor(true)
     , flagGrainlineFormula(true)
@@ -346,7 +349,7 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
     setPatternLabelAngle(m_oldGeom.getRotation());
 
     m_oldGrainline = piece.GetGrainlineGeometry();
-    ui->grainline_GroupBox->setChecked(m_oldGrainline.IsVisible());
+    ui->showGrainline_CheckBox->setChecked(m_oldGrainline.IsVisible());
     ui->anchorPoints_GroupBox->setEnabled(m_oldGrainline.IsVisible());
     ui->arrows_GroupBox->setEnabled(m_oldGrainline.IsVisible());
     changeCurrentData(ui->grainlineCenterAnchor_ComboBox, m_oldGrainline.centerAnchorPoint());
@@ -544,7 +547,7 @@ void PatternPieceDialog::CheckState()
     ok_Button->setEnabled(flagName
                     && flagFormula
                     && flagMainPath
-                    && (flagGrainlineFormula || flagGrainlineAnchor)
+                    && flagGrainlineArrow && (flagGrainlineFormula || flagGrainlineAnchor)
                     && flagPieceLabelAngle && (flagPieceLabelFormula || flagPieceLabelAnchor)
                     && flagPatternLabelAngle && (flagPatternLabelFormula || flagPatternLabelAnchor));
 
@@ -1112,7 +1115,7 @@ void PatternPieceDialog::enableSeamAllowance(bool enable)
     }
     else
     {
-        ui->builtIn_CheckBox->toggled(ui->builtIn_CheckBox->isChecked());
+        emit ui->builtIn_CheckBox->toggled(ui->builtIn_CheckBox->isChecked());
     }
 }
 
@@ -1787,8 +1790,9 @@ void PatternPieceDialog::updateGrainlineValues()
         labelValue->setText(formulaValueStr);
     }
 
-    flagGrainlineFormula = formulasOK[0] && formulasOK[1] && formulasOK[2];
-    if (!flagGrainlineFormula && !flagGrainlineAnchor)
+    flagGrainlineArrow = formulasOK[2];
+    flagGrainlineFormula = formulasOK[0] && formulasOK[1];
+    if (!flagGrainlineArrow || !(flagGrainlineFormula || flagGrainlineAnchor))
     {
         setErrorText(TabOrder::Grainline, tr("Grainline"));
     }
@@ -1972,10 +1976,12 @@ void PatternPieceDialog::updatePatternLabelValues()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::enabledGrainline()
 {
-    ui->anchorPoints_GroupBox->setEnabled(ui->grainline_GroupBox->isChecked());
-    ui->arrows_GroupBox->setEnabled(ui->grainline_GroupBox->isChecked());
+    bool showGrainline = ui->showGrainline_CheckBox->isChecked();
+    ui->grainlineGeometry_GroupBox->setEnabled(showGrainline);
+    ui->anchorPoints_GroupBox->setEnabled(showGrainline);
+    ui->arrows_GroupBox->setEnabled(showGrainline);
 
-    if (ui->grainline_GroupBox->isChecked() == true)
+    if (showGrainline)
     {
         updateGrainlineValues();
         grainlineAnchorChanged();
@@ -1983,6 +1989,7 @@ void PatternPieceDialog::enabledGrainline()
     else
     {
         flagGrainlineFormula = true;
+        flagGrainlineArrow = true;
         resetGrainlineWarning();
         CheckState();
     }
@@ -2206,7 +2213,7 @@ void PatternPieceDialog::editPatternLabelFormula()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::resetGrainlineWarning()
 {
-    if (flagGrainlineFormula || flagGrainlineAnchor)
+    if (flagGrainlineArrow && (flagGrainlineFormula || flagGrainlineAnchor))
     {
         clearErrorText(TabOrder::Grainline, tr("Grainline "));
     }
@@ -2361,7 +2368,11 @@ void PatternPieceDialog::grainlineAnchorChanged()
     QColor color = okColor;
     const quint32 topAnchorId = getCurrentObjectId(ui->grainlineTopAnchor_ComboBox);
     const quint32 bottomAnchorId = getCurrentObjectId(ui->grainlineBottomAnchor_ComboBox);
-    if (topAnchorId != NULL_ID && bottomAnchorId != NULL_ID && topAnchorId != bottomAnchorId)
+    bool enabled = topAnchorId != NULL_ID && bottomAnchorId != NULL_ID && topAnchorId != bottomAnchorId;
+
+    ui->grainlineGeometry_GroupBox->setEnabled(!enabled);
+
+    if (enabled)
     {
         flagGrainlineAnchor = true;
         color = okColor;
@@ -2373,7 +2384,7 @@ void PatternPieceDialog::grainlineAnchorChanged()
         flagGrainlineAnchor = false;
         topAnchorId == NULL_ID && bottomAnchorId == NULL_ID ? color = okColor : color = errorColor;
 
-        if (!flagGrainlineFormula && !flagGrainlineAnchor)
+        if (!flagGrainlineArrow || !(flagGrainlineFormula || flagGrainlineAnchor))
         {
             ui->menuTab_ListWidget->item(TabOrder::Grainline)->setText(QString(tr("Grainline")));
         }
@@ -2529,7 +2540,7 @@ VPiece PatternPieceDialog::CreatePiece() const
     piece.GetPatternInfo().setBottomRightAnchorPoint(getCurrentObjectId(ui->patternLabelBottomRightAnchor_ComboBox));
 
     piece.GetGrainlineGeometry() = m_oldGrainline;
-    piece.GetGrainlineGeometry().SetVisible(ui->grainline_GroupBox->isChecked());
+    piece.GetGrainlineGeometry().SetVisible(ui->showGrainline_CheckBox->isChecked());
     piece.GetGrainlineGeometry().setRotation(getFormulaFromUser(ui->rotationFormula_LineEdit));
     piece.GetGrainlineGeometry().setLength(getFormulaFromUser(ui->lengthFormula_LineEdit));
     piece.GetGrainlineGeometry().setArrowLength(getFormulaFromUser(ui->arrowlLengthFormula_LineEdit));
@@ -2981,8 +2992,8 @@ void PatternPieceDialog::initializeSeamAllowanceTab()
     m_timerWidthAfter = new QTimer(this);
     connect(m_timerWidthAfter, &QTimer::timeout, this, &PatternPieceDialog::evaluateAfterWidth);
 
-    connect(ui->seams_CheckBox, &QCheckBox::toggled, this, &PatternPieceDialog::enableSeamAllowance);
-    connect(ui->builtIn_CheckBox, &QCheckBox::toggled, this, &PatternPieceDialog::enableBuiltIn);
+    connect(ui->seams_CheckBox,   &QCheckBox::stateChanged, this, &PatternPieceDialog::enableSeamAllowance);
+    connect(ui->builtIn_CheckBox, &QCheckBox::stateChanged, this, &PatternPieceDialog::enableBuiltIn);
 
     // Initialize the default seam allowance, convert the value if app unit is different than pattern unit
     m_saWidth = UnitConvertor(qApp->Settings()->GetDefaultSeamAllowance(),
@@ -3148,7 +3159,7 @@ void PatternPieceDialog::initializeLabelsTab()
     {
         VLabelTemplate labelTemplate;
         QString filename = qApp->Settings()->getDefaultPieceTemplate();
-        if (QFileInfo(filename).exists())
+        if (QFileInfo::exists(filename))
         {
             labelTemplate.setXMLContent(VLabelTemplateConverter(filename).Convert());
             m_pieceLabelLines = labelTemplate.ReadLines();
@@ -3212,19 +3223,26 @@ void PatternPieceDialog::initializeLabelsTab()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::initializeGrainlineTab()
 {
-    ui->grainline_GroupBox->setChecked(qApp->Settings()->getDefaultGrainlineVisibilty());
-    ui->anchorPoints_GroupBox->setEnabled(qApp->Settings()->getDefaultGrainlineVisibilty());
-    ui->arrows_GroupBox->setEnabled(qApp->Settings()->getDefaultGrainlineVisibilty());
-
-    ui->lengthFormula_LineEdit->setPlainText(QString::number(qApp->Settings()->getDefaultGrainlineLength()));
+    bool enabled = qApp->Settings()->getDefaultGrainlineVisibilty();
+    ui->showGrainline_CheckBox->setChecked(enabled);
+    ui->grainlineGeometry_GroupBox->setEnabled(enabled);
+    ui->anchorPoints_GroupBox->setEnabled(enabled);
+    ui->arrows_GroupBox->setEnabled(enabled);
 
     qreal arrowLength = FromPixel(qApp->Settings()->getDefaultArrowLength(), *data->GetPatternUnit());
     ui->arrowlLengthFormula_LineEdit->setPlainText(QString::number(arrowLength));
 
-    connect(ui->grainline_GroupBox,     &QGroupBox::toggled,   this, &PatternPieceDialog::enabledGrainline);
-    connect(ui->rotation_PushButton,    &QPushButton::clicked, this, &PatternPieceDialog::editGrainlineFormula);
-    connect(ui->length_PushButton,      &QPushButton::clicked, this, &PatternPieceDialog::editGrainlineFormula);
-    connect(ui->arrowLength_PushButton, &QPushButton::clicked, this, &PatternPieceDialog::editGrainlineFormula);
+    qreal grainlineLength = qApp->Settings()->getDefaultGrainlineLength();
+    if (grainlineLength < arrowLength * 2)
+    {
+        grainlineLength = arrowLength * 2.1;
+    }
+    ui->lengthFormula_LineEdit->setPlainText(QString::number(grainlineLength));
+
+    connect(ui->showGrainline_CheckBox, &QCheckBox::stateChanged, this, &PatternPieceDialog::enabledGrainline);
+    connect(ui->rotation_PushButton,    &QPushButton::clicked,    this, &PatternPieceDialog::editGrainlineFormula);
+    connect(ui->length_PushButton,      &QPushButton::clicked,    this, &PatternPieceDialog::editGrainlineFormula);
+    connect(ui->arrowLength_PushButton, &QPushButton::clicked,    this, &PatternPieceDialog::editGrainlineFormula);
     connect(ui->lengthFormula_LineEdit, &QPlainTextEdit::textChanged,
             this, &PatternPieceDialog::updateGrainlineValues);
     connect(ui->rotationFormula_LineEdit, &QPlainTextEdit::textChanged,
@@ -3252,6 +3270,13 @@ void PatternPieceDialog::initializeGrainlineTab()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::initializeAnchorsTab()
 {
+    const quint32 topAnchorId = getCurrentObjectId(ui->grainlineTopAnchor_ComboBox);
+    const quint32 bottomAnchorId = getCurrentObjectId(ui->grainlineBottomAnchor_ComboBox);
+
+    if (topAnchorId != NULL_ID && bottomAnchorId != NULL_ID && topAnchorId != bottomAnchorId)
+    {
+        ui->grainlineGeometry_GroupBox->setEnabled(false);
+    }
     ui->anchorPoints_ListWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(ui->anchorPoints_ListWidget, &QListWidget::customContextMenuRequested, this,
             &PatternPieceDialog::showAnchorsContextMenu);
