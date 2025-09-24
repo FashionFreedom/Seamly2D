@@ -4107,7 +4107,17 @@ QListWidget::item:selected {
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_15">
          <item>
-          <widget class="QGroupBox" name="grainline_GroupBox">
+          <widget class="QCheckBox" name="showGrainline_CheckBox">
+           <property name="text">
+            <string>Show grainline</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="grainlineGeometry_GroupBox">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -4121,10 +4131,10 @@ QListWidget::item:selected {
             </font>
            </property>
            <property name="title">
-            <string>Show grainline</string>
+            <string>Geometry</string>
            </property>
            <property name="checkable">
-            <bool>true</bool>
+            <bool>false</bool>
            </property>
            <property name="checked">
             <bool>false</bool>
@@ -4932,8 +4942,8 @@ QListWidget::item:selected {
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>362</width>
-              <height>558</height>
+              <width>264</width>
+              <height>486</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_8">

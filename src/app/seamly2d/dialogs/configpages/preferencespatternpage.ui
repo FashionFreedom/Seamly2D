@@ -117,6 +117,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -138,6 +139,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -165,6 +167,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -241,6 +244,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -259,6 +263,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="toolTip">
@@ -288,6 +293,7 @@
          </property>
          <property name="font">
           <font>
+           <pointsize>9</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -310,6 +316,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -343,6 +350,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -381,6 +389,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -400,7 +409,10 @@
                  </size>
                 </property>
                 <property name="font">
-                 <font/>
+                 <font>
+                  <pointsize>9</pointsize>
+                  <bold>true</bold>
+                 </font>
                 </property>
                 <property name="styleSheet">
                  <string notr="true"/>
@@ -447,6 +459,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -480,6 +493,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -545,6 +559,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -578,6 +593,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -692,6 +708,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="toolTip">
@@ -699,6 +716,9 @@
             </property>
             <property name="text">
              <string>Show grainlines</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -729,6 +749,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>false</bold>
              </font>
             </property>
             <property name="text">
@@ -749,7 +770,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>200</width>
+              <width>150</width>
               <height>20</height>
              </size>
             </property>
@@ -762,6 +783,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>false</bold>
              </font>
             </property>
             <property name="styleSheet">
@@ -777,7 +799,7 @@
              <double>1.000000000000000</double>
             </property>
             <property name="maximum">
-             <double>20.000000000000000</double>
+             <double>40.000000000000000</double>
             </property>
             <property name="singleStep">
              <double>0.100000000000000</double>
@@ -821,6 +843,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>false</bold>
              </font>
             </property>
             <property name="text">
@@ -841,13 +864,14 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>200</width>
+              <width>150</width>
               <height>20</height>
              </size>
             </property>
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>false</bold>
              </font>
             </property>
             <property name="styleSheet">
@@ -889,6 +913,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>false</bold>
              </font>
             </property>
             <property name="text">
@@ -909,7 +934,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>200</width>
+              <width>150</width>
               <height>20</height>
              </size>
             </property>
@@ -922,6 +947,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>false</bold>
              </font>
             </property>
             <property name="styleSheet">
@@ -931,6 +957,12 @@
           </item>
           <item>
            <widget class="QLabel" name="label_2">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+              <bold>false</bold>
+             </font>
+            </property>
             <property name="text">
              <string>x 3</string>
             </property>
@@ -970,6 +1002,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>false</bold>
              </font>
             </property>
             <property name="text">
@@ -984,9 +1017,15 @@
            <widget class="QDoubleSpinBox" name="defaultArrowLength_DoubleSpinBox">
             <property name="minimumSize">
              <size>
-              <width>200</width>
+              <width>150</width>
               <height>20</height>
              </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+              <bold>false</bold>
+             </font>
             </property>
             <property name="styleSheet">
              <string notr="true"/>
@@ -1001,13 +1040,26 @@
              <number>0</number>
             </property>
             <property name="minimum">
-             <double>25.000000000000000</double>
+             <double>18.000000000000000</double>
             </property>
             <property name="maximum">
              <double>200.000000000000000</double>
             </property>
             <property name="value">
-             <double>70.000000000000000</double>
+             <double>48.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="arrowlengthCalc_Label">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string notr="true">calc</string>
             </property>
            </widget>
           </item>
@@ -1089,6 +1141,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -1122,6 +1175,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="styleSheet">
@@ -1184,6 +1238,7 @@
        </property>
        <property name="font">
         <font>
+         <pointsize>9</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -1214,6 +1269,7 @@
         <property name="font">
          <font>
           <pointsize>9</pointsize>
+          <bold>true</bold>
          </font>
         </property>
         <property name="currentIndex">
@@ -1245,6 +1301,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -1272,6 +1329,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -1313,6 +1371,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -1340,6 +1399,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -1381,6 +1441,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -1414,6 +1475,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -1472,6 +1534,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -1499,6 +1562,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                </widget>
@@ -1531,6 +1595,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -1558,6 +1623,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                </widget>
@@ -1596,6 +1662,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -1629,6 +1696,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                </widget>
@@ -1678,6 +1746,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -1705,6 +1774,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                </widget>
@@ -1743,6 +1813,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -1770,6 +1841,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                </widget>
@@ -1808,6 +1880,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -1841,6 +1914,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                </widget>
@@ -1890,6 +1964,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -1917,6 +1992,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                </widget>
@@ -1955,6 +2031,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -1982,6 +2059,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                </widget>
@@ -2020,6 +2098,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -2053,6 +2132,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                </widget>
@@ -2753,14 +2833,14 @@
    <header location="global">color_combobox.h</header>
   </customwidget>
   <customwidget>
-   <class>LineTypeComboBox</class>
-   <extends>QComboBox</extends>
-   <header location="global">linetype_combobox.h</header>
-  </customwidget>
-  <customwidget>
    <class>LineWeightComboBox</class>
    <extends>QComboBox</extends>
    <header location="global">lineweight_combobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>LineTypeComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">linetype_combobox.h</header>
   </customwidget>
  </customwidgets>
  <resources>

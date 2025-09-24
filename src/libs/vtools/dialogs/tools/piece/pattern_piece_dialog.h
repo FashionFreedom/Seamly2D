@@ -4,6 +4,8 @@
 //  @date   17 Sep, 2023
 //
 //  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
 //  Copyright (C) 2017 - 2025 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
@@ -186,6 +188,7 @@ private:
     bool                        flagPieceLabelAnchor;
     bool                        flagPatternLabelAnchor;
     bool                        flagGrainlineFormula;
+    bool                        flagGrainlineArrow;
     bool                        flagPieceLabelAngle;
     bool                        flagPieceLabelFormula;
     bool                        flagPatternLabelAngle;
