@@ -9565,6 +9565,18 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <source>inch</source>
         <translation>tuuma</translation>
     </message>
+    <message>
+        <source>File Error</source>
+        <translation>Tiedostovirhe</translation>
+    </message>
+    <message>
+        <source>Could not open file for reading.</source>
+        <translation>Tiedostoa ei voitu avata lukemista varten.</translation>
+    </message>
+    <message>
+        <source>Could not open file for writing.</source>
+        <translation>Tiedostoa ei voitu avata kirjoittamista varten.</translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -12429,6 +12441,12 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Validation error file %1</source>
         <translation>Vahvistusvirhe tiedostossa %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation>Kuviotiedostoa ei voi avata %1:
+%2.</translation>
     </message>
 </context>
 <context>

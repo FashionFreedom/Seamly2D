@@ -9563,6 +9563,18 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <source>inch</source>
         <translation>palec</translation>
     </message>
+    <message>
+        <source>File Error</source>
+        <translation>Chyba souboru></translation>
+    </message>
+    <message>
+        <source>Could not open file for reading.</source>
+        <translation>Soubor se nepodařilo otevřít pro čtení.</translation>
+    </message>
+    <message>
+        <source>Could not open file for writing.</source>
+        <translation>Nepodařilo se otevřít soubor pro zápis.</translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -12427,6 +12439,12 @@ SeamlyME jako obvykle.
     <message>
         <source>Validation error file %1</source>
         <translation>Soubor chyb ověření %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation>Nelze otevřít soubor se vzorem %1:
+%2.</translation>
     </message>
 </context>
 <context>

@@ -9548,6 +9548,18 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <source>inch</source>
         <translation>inch</translation>
     </message>
+    <message>
+        <source>File Error</source>
+        <translation>Bestandsfout</translation>
+    </message>
+    <message>
+        <source>Could not open file for reading.</source>
+        <translation>Het bestand kon niet worden geopend om te lezen.</translation>
+    </message>
+    <message>
+        <source>Could not open file for writing.</source>
+        <translation>Het bestand kon niet worden geopend om te schrijven.</translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -12411,6 +12423,12 @@ load in SeamlyME as usual.
     <message>
         <source>Validation error file %1</source>
         <translation>Validatiefoutbestand %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation>Kan patroonbestand niet openen %1:
+%2.</translation>
     </message>
 </context>
 <context>

@@ -3070,7 +3070,7 @@ p, li { white-space: pre-wrap; }
         <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
         <translation>Seamly2D ha riscontrato un errore durante il calcolo di una formula.
-Prova ad annullare l'ultima operazione o a correggere la formula non funzionante.</translation>
+Prova ad annullare l&apos;ultima operazione o a correggere la formula non funzionante.</translation>
     </message>
 </context>
 <context>
@@ -9553,6 +9553,18 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <source>inch</source>
         <translation>pollice</translation>
     </message>
+    <message>
+        <source>File Error</source>
+        <translation>Errore nel file</translation>
+    </message>
+    <message>
+        <source>Could not open file for reading.</source>
+        <translation>Impossibile aprire il file per la lettura.</translation>
+    </message>
+    <message>
+        <source>Could not open file for writing.</source>
+        <translation>Impossibile aprire il file per la scrittura.</translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -12417,6 +12429,12 @@ caricare in SeamlyME come di consueto.
     <message>
         <source>Validation error file %1</source>
         <translation>Errore di convalida file %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation>Impossibile aprire il file pattern %1:
+%2.</translation>
     </message>
 </context>
 <context>

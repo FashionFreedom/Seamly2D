@@ -9604,6 +9604,18 @@ actualización:</translation>
         <source>inch</source>
         <translation>pulgada</translation>
     </message>
+    <message>
+        <source>File Error</source>
+        <translation>Error en archivo</translation>
+    </message>
+    <message>
+        <source>Could not open file for reading.</source>
+        <translation>No se pudo abrir el archivo para leer.</translation>
+    </message>
+    <message>
+        <source>Could not open file for writing.</source>
+        <translation>No se pudo abrir el archivo para escribir.</translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -12469,6 +12481,12 @@ load in SeamlyME as usual.
     <message>
         <source>Validation error file %1</source>
         <translation>Archivo de error de validación %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation>No se puede abrir el archivo de patrón %1:
+%2.</translation>
     </message>
 </context>
 <context>

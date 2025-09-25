@@ -9567,6 +9567,18 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <source>inch</source>
         <translation>inch</translation>
     </message>
+    <message>
+        <source>File Error</source>
+        <translation>Eroare de fișier</translation>
+    </message>
+    <message>
+        <source>Could not open file for reading.</source>
+        <translation>Nu s-a putut deschide fișierul pentru citire.</translation>
+    </message>
+    <message>
+        <source>Could not open file for writing.</source>
+        <translation>Nu s-a putut deschide fișierul pentru scriere.</translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -12430,6 +12442,12 @@ load in SeamlyME as usual.
     <message>
         <source>Validation error file %1</source>
         <translation>Fișier de eroare de validare %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation>Nu se poate deschide fișierul cu modelul %1:
+%2.</translation>
     </message>
 </context>
 <context>

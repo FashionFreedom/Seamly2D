@@ -9566,6 +9566,18 @@ Press enter to temporarily add it to the list.</source>
         <source>inch</source>
         <translation>дюйм</translation>
     </message>
+    <message>
+        <source>File Error</source>
+        <translation>Помилка файла</translation>
+    </message>
+    <message>
+        <source>Could not open file for reading.</source>
+        <translation>Не вдалося відкрити файл для запису.</translation>
+    </message>
+    <message>
+        <source>Could not open file for writing.</source>
+        <translation>Не вдалося відкрити файл для читання.</translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -12429,6 +12441,12 @@ load in SeamlyME as usual.
     <message>
         <source>Validation error file %1</source>
         <translation>Файл помилки перевірки %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation>Не вдається відкрити файл візерунка %1:
+%2.</translation>
     </message>
 </context>
 <context>

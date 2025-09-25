@@ -9551,6 +9551,18 @@ Prima enter para o adicionar temporariamente à lista.</translation>
         <source>inch</source>
         <translation>polegada</translation>
     </message>
+    <message>
+        <source>File Error</source>
+        <translation>Erro de arquivo</translation>
+    </message>
+    <message>
+        <source>Could not open file for reading.</source>
+        <translation>Não foi possível abrir o arquivo para leitura.</translation>
+    </message>
+    <message>
+        <source>Could not open file for writing.</source>
+        <translation>Não foi possível abrir o arquivo para gravação.</translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -12415,6 +12427,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Validation error file %1</source>
         <translation>Arquivo de erro de validação %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation>Não é possível abrir o arquivo de padrão %1:
+%2.</translation>
     </message>
 </context>
 <context>

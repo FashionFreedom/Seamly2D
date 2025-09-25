@@ -9565,6 +9565,18 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <source>inch</source>
         <translation>inci</translation>
     </message>
+    <message>
+        <source>File Error</source>
+        <translation>Kesalahan berkas</translation>
+    </message>
+    <message>
+        <source>Could not open file for reading.</source>
+        <translation>Tidak dapat membuka berkas untuk dibaca.</translation>
+    </message>
+    <message>
+        <source>Could not open file for writing.</source>
+        <translation>Tidak dapat membuka berkas untuk ditulis.</translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -12429,6 +12441,12 @@ unggah ke SeamlyME seperti biasa.
     <message>
         <source>Validation error file %1</source>
         <translation>File kesalahan validasi %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation>Tidak dapat membuka file pola %1:
+%2.</translation>
     </message>
 </context>
 <context>

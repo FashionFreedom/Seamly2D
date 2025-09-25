@@ -3067,7 +3067,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Seamly2D encountered an error while computing a formula. 
+        <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9533,6 +9533,18 @@ Press enter to temporarily add it to the list.</source>
         <source>inch</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>File Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not open file for reading.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not open file for writing.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -12390,6 +12402,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Validation error file %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

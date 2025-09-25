@@ -9565,6 +9565,18 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <source>inch</source>
         <translation>inç</translation>
     </message>
+    <message>
+        <source>File Error</source>
+        <translation>Dosya hatası</translation>
+    </message>
+    <message>
+        <source>Could not open file for reading.</source>
+        <translation>Dosya okunmak üzere açılamadı.</translation>
+    </message>
+    <message>
+        <source>Could not open file for writing.</source>
+        <translation>Yazma işlemi için dosya açılamadı.</translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -12428,6 +12440,12 @@ load in SeamlyME as usual.
     <message>
         <source>Validation error file %1</source>
         <translation>Doğrulama hatası dosyası %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation>Desen dosyası açılamıyor %1:
+%2.</translation>
     </message>
 </context>
 <context>

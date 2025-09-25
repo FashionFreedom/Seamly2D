@@ -9567,6 +9567,18 @@ Press enter to temporarily add it to the list.</source>
         <source>inch</source>
         <translation>ίντσα</translation>
     </message>
+    <message>
+        <source>File Error</source>
+        <translation>Σφάλμα στο αρχείο</translation>
+    </message>
+    <message>
+        <source>Could not open file for reading.</source>
+        <translation>Δεν ήταν δυνατό το άνοιγμα του αρχείου για ανάγνωση.</translation>
+    </message>
+    <message>
+        <source>Could not open file for writing.</source>
+        <translation>Δεν ήταν δυνατό το άνοιγμα του αρχείου για εγγραφή.</translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -12431,6 +12443,12 @@ load in SeamlyME as usual.
     <message>
         <source>Validation error file %1</source>
         <translation>Αρχείο σφάλματος επικύρωσης %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation>Δεν είναι δυνατό το άνοιγμα του αρχείου μοτίβου %1:
+%2.</translation>
     </message>
 </context>
 <context>
