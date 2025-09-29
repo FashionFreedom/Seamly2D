@@ -1,12 +1,12 @@
 var searchData=
 [
   ['macosunicodeconverter_2ehpp_0',['MacOSUnicodeConverter.hpp',['../d7/d9b/MacOSUnicodeConverter_8hpp.html',1,'']]],
-  ['main_2ecpp_1',['main.cpp',['../db/de0/app_2seamlyme_2main_8cpp.html',1,'(Global Namespace)'],['../dc/d14/app_2seamly2d_2main_8cpp.html',1,'(Global Namespace)'],['../d9/d92/libs_2vwidgets_2calculator_2main_8cpp.html',1,'(Global Namespace)'],['../db/d37/test_2ParserTest_2main_8cpp.html',1,'(Global Namespace)']]],
+  ['main_2ecpp_1',['main.cpp',['../db/d37/test_2ParserTest_2main_8cpp.html',1,'(Global Namespace)'],['../d9/d92/libs_2vwidgets_2calculator_2main_8cpp.html',1,'(Global Namespace)'],['../db/de0/app_2seamlyme_2main_8cpp.html',1,'(Global Namespace)'],['../dc/d14/app_2seamly2d_2main_8cpp.html',1,'(Global Namespace)']]],
   ['mainwindow_2ecpp_2',['mainwindow.cpp',['../d8/dd9/mainwindow_8cpp.html',1,'']]],
   ['mainwindow_2eh_3',['mainwindow.h',['../d9/d53/mainwindow_8h.html',1,'']]],
   ['mainwindowsnogui_2ecpp_4',['mainwindowsnogui.cpp',['../d8/de8/mainwindowsnogui_8cpp.html',1,'']]],
   ['mainwindowsnogui_2eh_5',['mainwindowsnogui.h',['../d1/d82/mainwindowsnogui_8h.html',1,'']]],
-  ['match_2ehpp_6',['match.hpp',['../d8/d45/macx_2include_2xercesc_2util_2regx_2Match_8hpp.html',1,'(Global Namespace)'],['../d1/d21/msvc_2include_2xercesc_2util_2regx_2Match_8hpp.html',1,'(Global Namespace)'],['../d3/d31/mingw_2include_2xercesc_2util_2regx_2Match_8hpp.html',1,'(Global Namespace)']]],
+  ['match_2ehpp_6',['match.hpp',['../d1/d21/msvc_2include_2xercesc_2util_2regx_2Match_8hpp.html',1,'(Global Namespace)'],['../d3/d31/mingw_2include_2xercesc_2util_2regx_2Match_8hpp.html',1,'(Global Namespace)'],['../d8/d45/macx_2include_2xercesc_2util_2regx_2Match_8hpp.html',1,'(Global Namespace)']]],
   ['me_5fshortcuts_5fdialog_2ecpp_7',['me_shortcuts_dialog.cpp',['../d6/d8e/me__shortcuts__dialog_8cpp.html',1,'']]],
   ['me_5fshortcuts_5fdialog_2eh_8',['me_shortcuts_dialog.h',['../d3/d41/me__shortcuts__dialog_8h.html',1,'']]],
   ['me_5fwelcome_5fdialog_2ecpp_9',['me_welcome_dialog.cpp',['../dc/d74/me__welcome__dialog_8cpp.html',1,'']]],
