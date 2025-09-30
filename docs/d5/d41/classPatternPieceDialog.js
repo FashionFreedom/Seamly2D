@@ -137,6 +137,7 @@ var classPatternPieceDialog =
     [ "flagAfterFormula", "d5/d41/classPatternPieceDialog.html#a9473cdaff882097218c3d98aa5ef7630", null ],
     [ "flagBeforeFormula", "d5/d41/classPatternPieceDialog.html#ab0221f3e160886d0c53a793066a36fbe", null ],
     [ "flagGrainlineAnchor", "d5/d41/classPatternPieceDialog.html#a5642bfd3425837b01faab436fe156a14", null ],
+    [ "flagGrainlineArrow", "d5/d41/classPatternPieceDialog.html#ad7e625e537c49aa41506eceac45dbc88", null ],
     [ "flagGrainlineFormula", "d5/d41/classPatternPieceDialog.html#ac7bdfadb0233328ea9e12b7105d12b5d", null ],
     [ "flagMainPath", "d5/d41/classPatternPieceDialog.html#a2e2bdb1842ecc05380c23bf9e5017648", null ],
     [ "flagPatternLabelAnchor", "d5/d41/classPatternPieceDialog.html#a1f832859037331f5dac78e0f937449d5", null ],
