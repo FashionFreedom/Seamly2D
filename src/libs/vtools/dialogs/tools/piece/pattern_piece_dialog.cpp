@@ -3125,8 +3125,8 @@ void PatternPieceDialog::initializeLabelsTab()
     //Piece label
     ui->pieceLabel_GroupBox->setChecked(qApp->Settings()->showPieceLabels());
 
-    ui->pieceLabelWidthFormula_LineEdit->setPlainText(QString::number(qApp->Settings()->getDefaultLabelWidth()));
-    ui->pieceLabelHeightFormula_LineEdit->setPlainText(QString::number(qApp->Settings()->getDefaultLabelHeight()));
+    ui->pieceLabelWidthFormula_LineEdit->setPlainText(qApp->LocaleToString(qApp->Settings()->getDefaultLabelWidth()));
+    ui->pieceLabelHeightFormula_LineEdit->setPlainText(qApp->LocaleToString(qApp->Settings()->getDefaultLabelHeight()));
 
     connect(ui->pieceLabel_GroupBox, &QGroupBox::toggled, this, &PatternPieceDialog::enabledPieceLabel);
     initAnchorPoint(ui->pieceLabelCenterAnchor_ComboBox);
@@ -3171,8 +3171,8 @@ void PatternPieceDialog::initializeLabelsTab()
     //Pattern label
     ui->patternLabel_GroupBox->setChecked(qApp->Settings()->showPatternLabels());
 
-    ui->patternLabelWidthFormula_LineEdit->setPlainText(QString::number(qApp->Settings()->getDefaultLabelWidth()));
-    ui->patternLabelHeightFormula_LineEdit->setPlainText(QString::number(qApp->Settings()->getDefaultLabelHeight()));
+    ui->patternLabelWidthFormula_LineEdit->setPlainText(qApp->LocaleToString(qApp->Settings()->getDefaultLabelWidth()));
+    ui->patternLabelHeightFormula_LineEdit->setPlainText(qApp->LocaleToString(qApp->Settings()->getDefaultLabelHeight()));
 
     connect(ui->patternLabel_GroupBox, &QGroupBox::toggled, this, &PatternPieceDialog::enabledPatternLabel);
     initAnchorPoint(ui->patternLabelCenterAnchor_ComboBox);
@@ -3230,14 +3230,14 @@ void PatternPieceDialog::initializeGrainlineTab()
     ui->arrows_GroupBox->setEnabled(enabled);
 
     qreal arrowLength = FromPixel(qApp->Settings()->getDefaultArrowLength(), *data->GetPatternUnit());
-    ui->arrowlLengthFormula_LineEdit->setPlainText(QString::number(arrowLength));
+    ui->arrowlLengthFormula_LineEdit->setPlainText(qApp->LocaleToString(arrowLength));
 
     qreal grainlineLength = qApp->Settings()->getDefaultGrainlineLength();
     if (grainlineLength < arrowLength * 2)
     {
         grainlineLength = arrowLength * 2.1;
     }
-    ui->lengthFormula_LineEdit->setPlainText(QString::number(grainlineLength));
+    ui->lengthFormula_LineEdit->setPlainText(qApp->LocaleToString(grainlineLength));
 
     connect(ui->showGrainline_CheckBox, &QCheckBox::stateChanged, this, &PatternPieceDialog::enabledGrainline);
     connect(ui->rotation_PushButton,    &QPushButton::clicked,    this, &PatternPieceDialog::editGrainlineFormula);

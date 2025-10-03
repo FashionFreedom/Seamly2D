@@ -1876,6 +1876,11 @@ VPieceItem::MoveTypes PatternPieceTool::findGrainlineGeometry(const VGrainlineDa
             Calculator cal3;
             arrowLength = cal3.EvalFormula(VAbstractTool::data.DataVariables(), data.getArrowLength());
 
+            if (arrowLength > length / 2)
+            {
+                arrowLength = length / 2.1;
+            }
+
             if (!VFuzzyComparePossibleNulls(rotationAngle, 0))
             {
                 grainline.setAngle(0);

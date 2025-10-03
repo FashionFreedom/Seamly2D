@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
 
     qRegisterMetaType<VPieceNode>();
     qRegisterMetaType<CustomSARecord>();
-    
+
     // Create the application instance
     Application2D app(argc, argv);
     // Initialize application options
