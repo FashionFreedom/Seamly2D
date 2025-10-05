@@ -295,14 +295,14 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           name: Seamly2D-x86_64.AppImage
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           name: Seamly2D-macos.zip
       - name: Download unsigned Windows artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: Seamly2D-windows.zip
       - uses: softprops/action-gh-release@v2
