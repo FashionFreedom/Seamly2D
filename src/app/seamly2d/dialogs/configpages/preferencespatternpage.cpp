@@ -386,6 +386,14 @@ void PreferencesPatternPage::arrowLengthChanged()
     qreal arrowLength = ui->defaultArrowLength_DoubleSpinBox->value();
     qreal arrowLengthCalc = FromPixel(arrowLength, StrToUnits(units));
     ui->arrowlengthCalc_Label->setText(QString::number(arrowLengthCalc, 'f', 3) + units);
+    if (ui->defaultGrainlineLength_DoubleSpinBox->value() < arrowLengthCalc * 2)
+    {
+        changeColor(ui->grainlineLength_Label, Qt::red);
+    }
+    else
+    {
+        changeColor(ui->grainlineLength_Label, Qt::black);
+    }
 }
 
 void PreferencesPatternPage::grainlineLengthChanged()

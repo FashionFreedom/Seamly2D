@@ -2098,7 +2098,7 @@ void VCommonSettings::setDefaultGrainlineLineweight(const qreal &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultArrowLength() const
 {
-   return value(settingDefaultArrowLength, 40).toReal();
+   return value(settingDefaultArrowLength, 48).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
