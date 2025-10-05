@@ -6,22 +6,12 @@
 <!-- Title: src/app/seamly2d/dialogs/welcome_dialog.h Pages: 1 -->
 <svg width="470pt" height="93pt"
  viewBox="0.00 0.00 470.00 93.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
-<style type="text/css"><![CDATA[
-.node, .edge {opacity: 0.7;}
-.node.selected, .edge.selected {opacity: 1;}
-.edge:hover path { stroke: red; }
-.edge:hover polygon { stroke: red; fill: red; }
-]]></style>
-<script type="application/ecmascript" xlink:href="../../svg.min.js"/>
-<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 89)">
 <title>src/app/seamly2d/dialogs/welcome_dialog.h</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="274.5,-85 133.5,-85 133.5,-55 274.5,-55 274.5,-85"/>
 <text text-anchor="start" x="141.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
 <text text-anchor="middle" x="204" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">/welcome_dialog.h</text>
@@ -29,109 +19,79 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:title=" ">
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="56,-19 0,-19 0,0 56,0 56,-19"/>
 <text text-anchor="middle" x="28" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QLocale</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M161.84,-54.99C131.73,-44.98 91.69,-31.67 63.27,-22.22"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="64.33,-18.89 53.73,-19.05 62.12,-25.53 64.33,-18.89"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:title=" ">
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="158,-19 74,-19 74,0 158,0 158,-19"/>
 <text text-anchor="middle" x="116" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QRadioButton</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M182.7,-54.84C168.93,-45.68 151.07,-33.82 137.3,-24.66"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="139.19,-21.72 128.93,-19.09 135.32,-27.55 139.19,-21.72"/>
-</a>
-</g>
 </g>
 <!-- Node4 -->
-<g id="Node000004" class="node">
+<g id="node4" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:title=" ">
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="232,-19 176,-19 176,0 232,0 232,-19"/>
 <text text-anchor="middle" x="204" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QDialog</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge3_Node000001_Node000004" class="edge">
+<g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M204,-54.84C204,-47.21 204,-37.7 204,-29.45"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="207.5,-29.27 204,-19.27 200.5,-29.27 207.5,-29.27"/>
-</a>
-</g>
 </g>
 <!-- Node5 -->
-<g id="Node000005" class="node">
+<g id="node5" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:title=" ">
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="332,-19 250,-19 250,0 332,0 332,-19"/>
 <text text-anchor="middle" x="291" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">../vmisc/def.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
-<g id="edge4_Node000001_Node000005" class="edge">
+<g id="edge4" class="edge">
 <title>Node1&#45;&gt;Node5</title>
-<g id="a_edge4_Node000001_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M225.06,-54.84C238.54,-45.77 255.99,-34.04 269.55,-24.92"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="271.87,-27.58 278.22,-19.09 267.97,-21.77 271.87,-27.58"/>
-</a>
-</g>
 </g>
 <!-- Node6 -->
-<g id="Node000006" class="node">
+<g id="node6" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:title=" ">
+<g id="a_node6"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="462,-19 350,-19 350,0 462,0 462,-19"/>
 <text text-anchor="middle" x="406" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">../vmisc/vsettings.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
-<g id="edge5_Node000001_Node000006" class="edge">
+<g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<g id="a_edge5_Node000001_Node000006"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M252.38,-54.99C287.4,-44.85 334.11,-31.32 366.8,-21.85"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="367.83,-25.2 376.46,-19.05 365.89,-18.47 367.83,-25.2"/>
-</a>
 </g>
 </g>
-</g>
-</svg>
-</svg>
-
-<style type='text/css'>
-<![CDATA[
-[data-mouse-over-selected='false'] { opacity: 0.7; }
-[data-mouse-over-selected='true']  { opacity: 1.0; }
-]]>
-</style>
-<script type="application/ecmascript"><![CDATA[
-document.addEventListener('DOMContentLoaded', (event) => {
-  highlightEdges();
-  highlightAdjacentNodes();
-});
-]]></script>
 </svg>

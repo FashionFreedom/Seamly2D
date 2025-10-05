@@ -9,9 +9,9 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 111)">
 <title>src/libs/xerces&#45;c/mingw/include/xercesc/framework/psvi/XSNamedMap.hpp</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="392.5,-107 241.5,-107 241.5,-66 392.5,-66 392.5,-107"/>
 <text text-anchor="start" x="249.5" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/mingw</text>
 <text text-anchor="start" x="249.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/framework</text>
@@ -20,27 +20,24 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:title=" ">
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="142,-24.5 0,-24.5 0,-5.5 142,-5.5 142,-24.5"/>
 <text text-anchor="middle" x="71" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/util/XMemory.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M247.82,-65.96C203.66,-53.48 147.96,-37.74 111,-27.3"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="111.67,-23.85 101.1,-24.5 109.77,-30.59 111.67,-23.85"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:title=" ">
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="306,-30 160,-30 160,0 306,0 306,-30"/>
 <text text-anchor="start" x="168" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/util/RefHash2Keys</text>
 <text text-anchor="middle" x="233" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">TableOf.hpp</text>
@@ -48,36 +45,30 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M293.15,-65.77C282.07,-56.6 268.9,-45.7 257.71,-36.44"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="259.9,-33.72 249.97,-30.04 255.44,-39.11 259.9,-33.72"/>
-</a>
-</g>
 </g>
 <!-- Node4 -->
-<g id="Node000004" class="node">
+<g id="node4" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:title=" ">
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="478,-24.5 324,-24.5 324,-5.5 478,-5.5 478,-24.5"/>
 <text text-anchor="middle" x="401" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/util/RefVectorOf.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge3_Node000001_Node000004" class="edge">
+<g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M340.85,-65.77C354.09,-54.81 370.31,-41.39 382.57,-31.25"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="384.87,-33.89 390.34,-24.82 380.4,-28.5 384.87,-33.89"/>
-</a>
-</g>
 </g>
 <!-- Node5 -->
-<g id="Node000005" class="node">
+<g id="node5" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:title=" ">
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="629.5,-30 496.5,-30 496.5,0 629.5,0 629.5,-30"/>
 <text text-anchor="start" x="504.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/framework/psvi</text>
 <text text-anchor="middle" x="563" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">/XSNamedMap.c</text>
@@ -85,13 +76,10 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
-<g id="edge4_Node000001_Node000005" class="edge">
+<g id="edge4" class="edge">
 <title>Node1&#45;&gt;Node5</title>
-<g id="a_edge4_Node000001_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M386.18,-65.96C423.2,-55.5 468.32,-42.75 503.72,-32.75"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="504.76,-36.09 513.43,-30 502.86,-29.35 504.76,-36.09"/>
-</a>
-</g>
 </g>
 </g>
 </svg>

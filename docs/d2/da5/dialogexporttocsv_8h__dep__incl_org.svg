@@ -9,9 +9,9 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 100)">
 <title>src/libs/vmisc/dialogs/dialogexporttocsv.h</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="337.5,-96 215.5,-96 215.5,-66 337.5,-66 337.5,-96"/>
 <text text-anchor="start" x="223.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vmisc/dialogs</text>
 <text text-anchor="middle" x="276.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">/dialogexporttocsv.h</text>
@@ -19,27 +19,24 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="../../dc/de1/tmainwindow_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="../../dc/de1/tmainwindow_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="195,-24.5 0,-24.5 0,-5.5 195,-5.5 195,-24.5"/>
 <text text-anchor="middle" x="97.5" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamlyme/tmainwindow.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M227.77,-62.58C193.22,-50.23 148.37,-34.19 121.32,-24.52"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="226.62,-65.88 237.22,-65.95 228.98,-59.29 226.62,-65.88"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="../../db/d65/dialogexporttocsv_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="../../db/d65/dialogexporttocsv_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="340,-30 213,-30 213,0 340,0 340,-30"/>
 <text text-anchor="start" x="221" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vmisc/dialogs</text>
 <text text-anchor="middle" x="276.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">/dialogexporttocsv.cpp</text>
@@ -47,31 +44,25 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M276.5,-55.54C276.5,-46.96 276.5,-37.61 276.5,-30.16"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="273,-55.8 276.5,-65.8 280,-55.8 273,-55.8"/>
-</a>
-</g>
 </g>
 <!-- Node4 -->
-<g id="Node000004" class="node">
+<g id="node4" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="../../dd/df6/vabstractmainwindow_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="../../dd/df6/vabstractmainwindow_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="587,-24.5 358,-24.5 358,-5.5 587,-5.5 587,-24.5"/>
 <text text-anchor="middle" x="472.5" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vwidgets/vabstractmainwindow.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge3_Node000001_Node000004" class="edge">
+<g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M329.37,-62.74C367.26,-50.36 416.67,-34.23 446.42,-24.52"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="327.93,-59.52 319.51,-65.95 330.11,-66.18 327.93,-59.52"/>
-</a>
-</g>
 </g>
 </g>
 </svg>

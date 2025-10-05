@@ -6,22 +6,12 @@
 <!-- Title: src/libs/vgeometry/vpointf_p.h Pages: 1 -->
 <svg width="410pt" height="148pt"
  viewBox="0.00 0.00 410.00 148.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
-<style type="text/css"><![CDATA[
-.node, .edge {opacity: 0.7;}
-.node.selected, .edge.selected {opacity: 1;}
-.edge:hover path { stroke: red; }
-.edge:hover polygon { stroke: red; fill: red; }
-]]></style>
-<script type="application/ecmascript" xlink:href="../../svg.min.js"/>
-<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 144)">
 <title>src/libs/vgeometry/vpointf_p.h</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="262,-140 155,-140 155,-110 262,-110 262,-140"/>
 <text text-anchor="start" x="163" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vgeometry</text>
 <text text-anchor="middle" x="208.5" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">/vpointf_p.h</text>
@@ -29,109 +19,79 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:title=" ">
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="81,-74 0,-74 0,-55 81,-55 81,-74"/>
 <text text-anchor="middle" x="40.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">QSharedData</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M168.26,-109.99C139.73,-100.05 101.85,-86.86 74.77,-77.43"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="75.9,-74.12 65.31,-74.14 73.6,-80.73 75.9,-74.12"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="../../d5/d9d/vgeometrydef_8h.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="../../d5/d9d/vgeometrydef_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="193.5,-74 99.5,-74 99.5,-55 193.5,-55 193.5,-74"/>
 <text text-anchor="middle" x="146.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">vgeometrydef.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M193.49,-109.84C184.31,-101.17 172.55,-90.08 163.09,-81.15"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="165.47,-78.58 155.79,-74.27 160.66,-83.67 165.47,-78.58"/>
-</a>
-</g>
 </g>
 <!-- Node4 -->
-<g id="Node000004" class="node">
+<g id="node4" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="../../d6/dcd/diagnostic_8h.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="../../d6/dcd/diagnostic_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="329,-74 212,-74 212,-55 329,-55 329,-74"/>
 <text text-anchor="middle" x="270.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">../vmisc/diagnostic.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge3_Node000001_Node000004" class="edge">
+<g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M223.51,-109.84C232.69,-101.17 244.45,-90.08 253.91,-81.15"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="256.34,-83.67 261.21,-74.27 251.53,-78.58 256.34,-83.67"/>
-</a>
-</g>
 </g>
 <!-- Node6 -->
-<g id="Node000006" class="node">
+<g id="node6" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:title=" ">
+<g id="a_node6"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="402,-74 347,-74 347,-55 402,-55 402,-74"/>
 <text text-anchor="middle" x="374.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">QPointF</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
-<g id="edge5_Node000001_Node000006" class="edge">
+<g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<g id="a_edge5_Node000001_Node000006"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M248.26,-109.99C276.33,-100.1 313.55,-86.98 340.29,-77.56"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="341.72,-80.76 349.99,-74.14 339.39,-74.16 341.72,-80.76"/>
-</a>
-</g>
 </g>
 <!-- Node5 -->
-<g id="Node000005" class="node">
+<g id="node5" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:title=" ">
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="300,-19 241,-19 241,0 300,0 300,-19"/>
 <text text-anchor="middle" x="270.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtGlobal</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
-<g id="edge4_Node000004_Node000005" class="edge">
+<g id="edge4" class="edge">
 <title>Node4&#45;&gt;Node5</title>
-<g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M270.5,-54.75C270.5,-47.8 270.5,-37.85 270.5,-29.13"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="274,-29.09 270.5,-19.09 267,-29.09 274,-29.09"/>
-</a>
 </g>
 </g>
-</g>
-</svg>
-</svg>
-
-<style type='text/css'>
-<![CDATA[
-[data-mouse-over-selected='false'] { opacity: 0.7; }
-[data-mouse-over-selected='true']  { opacity: 1.0; }
-]]>
-</style>
-<script type="application/ecmascript"><![CDATA[
-document.addEventListener('DOMContentLoaded', (event) => {
-  highlightEdges();
-  highlightAdjacentNodes();
-});
-]]></script>
 </svg>

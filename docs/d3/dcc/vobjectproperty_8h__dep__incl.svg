@@ -6,22 +6,12 @@
 <!-- Title: src/libs/vpropertyexplorer/plugins/vobjectproperty.h Pages: 1 -->
 <svg width="322pt" height="104pt"
  viewBox="0.00 0.00 322.00 104.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
-<style type="text/css"><![CDATA[
-.node, .edge {opacity: 0.7;}
-.node.selected, .edge.selected {opacity: 1;}
-.edge:hover path { stroke: red; }
-.edge:hover polygon { stroke: red; fill: red; }
-]]></style>
-<script type="application/ecmascript" xlink:href="../../svg.min.js"/>
-<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 100)">
 <title>src/libs/vpropertyexplorer/plugins/vobjectproperty.h</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="231.5,-96 88.5,-96 88.5,-66 231.5,-66 231.5,-96"/>
 <text text-anchor="start" x="96.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpropertyexplorer</text>
 <text text-anchor="middle" x="160" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">/plugins/vobjectproperty.h</text>
@@ -29,9 +19,9 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="../../d5/d66/vobjectproperty_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="../../d5/d66/vobjectproperty_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="154,-30 0,-30 0,0 154,0 154,-30"/>
 <text text-anchor="start" x="8" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpropertyexplorer</text>
 <text text-anchor="middle" x="77" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">/plugins/vobjectproperty.cpp</text>
@@ -39,18 +29,15 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M133.39,-59.48C120.98,-49.91 106.53,-38.77 95.37,-30.16"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="131.52,-62.46 141.58,-65.8 135.8,-56.92 131.52,-62.46"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="../../d7/d24/vproperties_8h.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="../../d7/d24/vproperties_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="314,-30 172,-30 172,0 314,0 314,-30"/>
 <text text-anchor="start" x="180" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpropertyexplorer</text>
 <text text-anchor="middle" x="243" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">/vproperties.h</text>
@@ -58,28 +45,10 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M186.61,-59.48C199.02,-49.91 213.47,-38.77 224.63,-30.16"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="184.2,-56.92 178.42,-65.8 188.48,-62.46 184.2,-56.92"/>
-</a>
 </g>
 </g>
-</g>
-</svg>
-</svg>
-
-<style type='text/css'>
-<![CDATA[
-[data-mouse-over-selected='false'] { opacity: 0.7; }
-[data-mouse-over-selected='true']  { opacity: 1.0; }
-]]>
-</style>
-<script type="application/ecmascript"><![CDATA[
-document.addEventListener('DOMContentLoaded', (event) => {
-  highlightEdges();
-  highlightAdjacentNodes();
-});
-]]></script>
 </svg>

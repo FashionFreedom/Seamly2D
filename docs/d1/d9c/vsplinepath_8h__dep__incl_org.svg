@@ -9,9 +9,9 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 155)">
 <title>src/libs/vgeometry/vsplinepath.h</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="259,-151 152,-151 152,-121 259,-121 259,-151"/>
 <text text-anchor="start" x="160" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vgeometry</text>
 <text text-anchor="middle" x="205.5" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00">/vsplinepath.h</text>
@@ -19,9 +19,9 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="../../db/d6a/vsplinepath_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="../../db/d6a/vsplinepath_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="107,-85 0,-85 0,-55 107,-55 107,-85"/>
 <text text-anchor="start" x="8" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vgeometry</text>
 <text text-anchor="middle" x="53.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">/vsplinepath.cpp</text>
@@ -29,67 +29,55 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M162.88,-117.05C138.8,-106.91 109.14,-94.43 86.78,-85.01"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="161.57,-120.3 172.14,-120.95 164.28,-113.85 161.57,-120.3"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="../../d1/d3a/abstracttest_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="../../d1/d3a/abstracttest_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="286,-79.5 125,-79.5 125,-60.5 286,-60.5 286,-79.5"/>
 <text text-anchor="middle" x="205.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtest/abstracttest.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M205.5,-110.6C205.5,-99.8 205.5,-87.78 205.5,-79.84"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="202,-110.8 205.5,-120.8 209,-110.8 202,-110.8"/>
-</a>
-</g>
 </g>
 <!-- Node4 -->
-<g id="Node000004" class="node">
+<g id="node4" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="../../d8/d13/vcontrolpointspline_8h.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="../../d8/d13/vcontrolpointspline_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="508.5,-79.5 304.5,-79.5 304.5,-60.5 508.5,-60.5 508.5,-79.5"/>
 <text text-anchor="middle" x="406.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vwidgets/vcontrolpointspline.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge3_Node000001_Node000004" class="edge">
+<g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M259.23,-117.89C298.15,-105.5 349.12,-89.27 379.75,-79.52"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="258.08,-114.59 249.61,-120.95 260.2,-121.26 258.08,-114.59"/>
-</a>
-</g>
 </g>
 <!-- Node5 -->
-<g id="Node000005" class="node">
+<g id="node5" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="../../de/d45/vcontrolpointspline_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="../../de/d45/vcontrolpointspline_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="514,-19 299,-19 299,0 514,0 514,-19"/>
 <text text-anchor="middle" x="406.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vwidgets/vcontrolpointspline.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
-<g id="edge4_Node000004_Node000005" class="edge">
+<g id="edge4" class="edge">
 <title>Node4&#45;&gt;Node5</title>
-<g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M406.5,-50.16C406.5,-39.74 406.5,-27.3 406.5,-19.17"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="403,-50.37 406.5,-60.37 410,-50.37 403,-50.37"/>
-</a>
-</g>
 </g>
 </g>
 </svg>

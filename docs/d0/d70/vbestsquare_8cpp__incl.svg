@@ -6,140 +6,97 @@
 <!-- Title: src/libs/vlayout/vbestsquare.cpp Pages: 1 -->
 <svg width="333pt" height="137pt"
  viewBox="0.00 0.00 332.50 137.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
-<style type="text/css"><![CDATA[
-.node, .edge {opacity: 0.7;}
-.node.selected, .edge.selected {opacity: 1;}
-.edge:hover path { stroke: red; }
-.edge:hover polygon { stroke: red; fill: red; }
-]]></style>
-<script type="application/ecmascript" xlink:href="../../svg.min.js"/>
-<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 133)">
 <title>src/libs/vlayout/vbestsquare.cpp</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="174,-129 0,-129 0,-110 174,-110 174,-129"/>
 <text text-anchor="middle" x="87" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vlayout/vbestsquare.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="../../df/d35/vbestsquare_8h.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="../../df/d35/vbestsquare_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="170,-74 84,-74 84,-55 170,-55 170,-74"/>
 <text text-anchor="middle" x="127" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">vbestsquare.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M93.61,-109.75C99.26,-102.26 107.54,-91.28 114.45,-82.13"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="117.29,-84.18 120.52,-74.09 111.7,-79.96 117.29,-84.18"/>
-</a>
-</g>
 </g>
 <!-- Node4 -->
-<g id="Node000004" class="node">
+<g id="node4" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:title=" ">
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="83.5,-19 10.5,-19 10.5,0 83.5,0 83.5,-19"/>
 <text text-anchor="middle" x="47" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QTransform</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge6_Node000001_Node000004" class="edge">
+<g id="edge6" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<g id="a_edge6_Node000001_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M83.73,-109.66C77.19,-92.01 62.4,-52.09 53.72,-28.64"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="56.96,-27.32 50.21,-19.16 50.4,-29.75 56.96,-27.32"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:title=" ">
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="152,-19 102,-19 102,0 152,0 152,-19"/>
 <text text-anchor="middle" x="127" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QSizeF</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2_Node000002_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node2&#45;&gt;Node3</title>
-<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M127,-54.75C127,-47.8 127,-37.85 127,-29.13"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="130.5,-29.09 127,-19.09 123.5,-29.09 130.5,-29.09"/>
-</a>
-</g>
 </g>
 <!-- Node2&#45;&gt;Node4 -->
-<g id="edge3_Node000002_Node000004" class="edge">
+<g id="edge3" class="edge">
 <title>Node2&#45;&gt;Node4</title>
-<g id="a_edge3_Node000002_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M114.15,-54.98C101.86,-46.84 83.09,-34.41 68.52,-24.76"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="70.36,-21.78 60.09,-19.17 66.49,-27.61 70.36,-21.78"/>
-</a>
-</g>
 </g>
 <!-- Node5 -->
-<g id="Node000005" class="node">
+<g id="node5" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:title=" ">
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="229.5,-19 170.5,-19 170.5,0 229.5,0 229.5,-19"/>
 <text text-anchor="middle" x="200" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtGlobal</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node5 -->
-<g id="edge4_Node000002_Node000005" class="edge">
+<g id="edge4" class="edge">
 <title>Node2&#45;&gt;Node5</title>
-<g id="a_edge4_Node000002_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M138.73,-54.98C149.73,-47 166.42,-34.88 179.6,-25.31"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="182.02,-27.88 188.06,-19.17 177.91,-22.21 182.02,-27.88"/>
-</a>
-</g>
 </g>
 <!-- Node6 -->
-<g id="Node000006" class="node">
+<g id="node6" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="../../dd/d4a/vlayoutdef_8h.html" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="../../dd/d4a/vlayoutdef_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="324.5,-19 247.5,-19 247.5,0 324.5,0 324.5,-19"/>
 <text text-anchor="middle" x="286" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">vlayoutdef.h</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node6 -->
-<g id="edge5_Node000002_Node000006" class="edge">
+<g id="edge5" class="edge">
 <title>Node2&#45;&gt;Node6</title>
-<g id="a_edge5_Node000002_Node000006"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M152.55,-54.98C179.12,-46.13 220.94,-32.19 250.67,-22.28"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="251.87,-25.56 260.25,-19.08 249.66,-18.92 251.87,-25.56"/>
-</a>
 </g>
 </g>
-</g>
-</svg>
-</svg>
-
-<style type='text/css'>
-<![CDATA[
-[data-mouse-over-selected='false'] { opacity: 0.7; }
-[data-mouse-over-selected='true']  { opacity: 1.0; }
-]]>
-</style>
-<script type="application/ecmascript"><![CDATA[
-document.addEventListener('DOMContentLoaded', (event) => {
-  highlightEdges();
-  highlightAdjacentNodes();
-});
-]]></script>
 </svg>

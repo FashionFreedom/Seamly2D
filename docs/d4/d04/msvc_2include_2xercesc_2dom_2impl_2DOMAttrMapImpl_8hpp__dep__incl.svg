@@ -6,22 +6,12 @@
 <!-- Title: src/libs/xerces&#45;c/msvc/include/xercesc/dom/impl/DOMAttrMapImpl.hpp Pages: 1 -->
 <svg width="314pt" height="280pt"
  viewBox="0.00 0.00 314.00 280.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
-<style type="text/css"><![CDATA[
-.node, .edge {opacity: 0.7;}
-.node.selected, .edge.selected {opacity: 1;}
-.edge:hover path { stroke: red; }
-.edge:hover polygon { stroke: red; fill: red; }
-]]></style>
-<script type="application/ecmascript" xlink:href="../../svg.min.js"/>
-<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 276)">
 <title>src/libs/xerces&#45;c/msvc/include/xercesc/dom/impl/DOMAttrMapImpl.hpp</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="225,-272 81,-272 81,-231 225,-231 225,-272"/>
 <text text-anchor="start" x="89" y="-260" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
 <text text-anchor="start" x="89" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
@@ -30,9 +20,9 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="../../d4/dff/msvc_2include_2xercesc_2dom_2impl_2DOMElementImpl_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="../../d4/dff/msvc_2include_2xercesc_2dom_2impl_2DOMElementImpl_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="225,-195 81,-195 81,-154 225,-154 225,-195"/>
 <text text-anchor="start" x="89" y="-183" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
 <text text-anchor="start" x="89" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
@@ -41,18 +31,15 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M153,-220.69C153,-212.08 153,-202.9 153,-195.07"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="149.5,-220.79 153,-230.79 156.5,-220.79 149.5,-220.79"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="../../dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="../../dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="144,-118 0,-118 0,-77 144,-77 144,-118"/>
 <text text-anchor="start" x="8" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
 <text text-anchor="start" x="8" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
@@ -61,18 +48,15 @@
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2_Node000002_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node2&#45;&gt;Node3</title>
-<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M124.15,-146.79C113.92,-137.32 102.61,-126.84 93.14,-118.07"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="122,-149.57 131.72,-153.79 126.76,-144.43 122,-149.57"/>
-</a>
-</g>
 </g>
 <!-- Node4 -->
-<g id="Node000004" class="node">
+<g id="node4" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="../../d4/da4/msvc_2include_2xercesc_2dom_2impl_2DOMElementNSImpl_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="../../d4/da4/msvc_2include_2xercesc_2dom_2impl_2DOMElementNSImpl_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="306,-118 162,-118 162,-77 306,-77 306,-118"/>
 <text text-anchor="start" x="170" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
 <text text-anchor="start" x="170" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
@@ -81,18 +65,15 @@
 </g>
 </g>
 <!-- Node2&#45;&gt;Node4 -->
-<g id="edge3_Node000002_Node000004" class="edge">
+<g id="edge3" class="edge">
 <title>Node2&#45;&gt;Node4</title>
-<g id="a_edge3_Node000002_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M181.85,-146.79C192.08,-137.32 203.39,-126.84 212.86,-118.07"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="179.24,-144.43 174.28,-153.79 184,-149.57 179.24,-144.43"/>
-</a>
-</g>
 </g>
 <!-- Node5 -->
-<g id="Node000005" class="node">
+<g id="node5" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="../../db/d0c/msvc_2include_2xercesc_2dom_2impl_2XSDElementNSImpl_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="../../db/d0c/msvc_2include_2xercesc_2dom_2impl_2XSDElementNSImpl_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="306,-41 162,-41 162,0 306,0 306,-41"/>
 <text text-anchor="start" x="170" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
 <text text-anchor="start" x="170" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
@@ -101,28 +82,10 @@
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
-<g id="edge4_Node000004_Node000005" class="edge">
+<g id="edge4" class="edge">
 <title>Node4&#45;&gt;Node5</title>
-<g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M234,-66.69C234,-58.08 234,-48.9 234,-41.07"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="230.5,-66.79 234,-76.79 237.5,-66.79 230.5,-66.79"/>
-</a>
 </g>
 </g>
-</g>
-</svg>
-</svg>
-
-<style type='text/css'>
-<![CDATA[
-[data-mouse-over-selected='false'] { opacity: 0.7; }
-[data-mouse-over-selected='true']  { opacity: 1.0; }
-]]>
-</style>
-<script type="application/ecmascript"><![CDATA[
-document.addEventListener('DOMContentLoaded', (event) => {
-  highlightEdges();
-  highlightAdjacentNodes();
-});
-]]></script>
 </svg>

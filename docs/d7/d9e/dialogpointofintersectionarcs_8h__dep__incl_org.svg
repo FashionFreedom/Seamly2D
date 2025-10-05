@@ -9,9 +9,9 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 111)">
 <title>src/libs/vtools/dialogs/tools/dialogpointofintersectionarcs.h</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="343.5,-107 146.5,-107 146.5,-77 343.5,-77 343.5,-107"/>
 <text text-anchor="start" x="154.5" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
 <text text-anchor="middle" x="245" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogpointofintersectionarcs.h</text>
@@ -19,9 +19,9 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="../../df/ded/tooldialogs_8h.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="../../df/ded/tooldialogs_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="122,-35.5 0,-35.5 0,-5.5 122,-5.5 122,-35.5"/>
 <text text-anchor="start" x="8" y="-23.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
 <text text-anchor="middle" x="61" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tooldialogs.h</text>
@@ -29,18 +29,15 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M198.04,-73.26C167.04,-61.55 126.97,-46.42 98.18,-35.54"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="197.17,-76.68 207.76,-76.94 199.65,-70.13 197.17,-76.68"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="../../d3/d77/dialogpointofintersectionarcs_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="../../d3/d77/dialogpointofintersectionarcs_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="349.5,-35.5 140.5,-35.5 140.5,-5.5 349.5,-5.5 349.5,-35.5"/>
 <text text-anchor="start" x="148.5" y="-23.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
 <text text-anchor="middle" x="245" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogpointofintersectionarcs.cpp</text>
@@ -48,18 +45,15 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M245,-66.75C245,-56.31 245,-44.49 245,-35.54"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="241.5,-66.94 245,-76.94 248.5,-66.94 241.5,-66.94"/>
-</a>
-</g>
 </g>
 <!-- Node4 -->
-<g id="Node000004" class="node">
+<g id="node4" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="../../dc/dfe/vtoolpointofintersectionarcs_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="../../dc/dfe/vtoolpointofintersectionarcs_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="620,-41 368,-41 368,0 620,0 620,-41"/>
 <text text-anchor="start" x="376" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
 <text text-anchor="start" x="376" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">/drawTools/toolpoint</text>
@@ -68,13 +62,10 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge3_Node000001_Node000004" class="edge">
+<g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M305.2,-74.2C340.97,-64.21 386.49,-51.51 423.87,-41.07"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="304.08,-70.88 295.39,-76.94 305.96,-77.62 304.08,-70.88"/>
-</a>
-</g>
 </g>
 </g>
 </svg>

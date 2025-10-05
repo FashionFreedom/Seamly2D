@@ -9,9 +9,9 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 210)">
 <title>src/libs/xerces&#45;c/macx/include/xercesc/dom/impl/DOMEntityReferenceImpl.hpp</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="516.5,-206 352.5,-206 352.5,-165 516.5,-165 516.5,-206"/>
 <text text-anchor="start" x="360.5" y="-194" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/macx</text>
 <text text-anchor="start" x="360.5" y="-183" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
@@ -20,211 +20,169 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:title=" ">
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="379.5,-19 227.5,-19 227.5,0 379.5,0 379.5,-19"/>
 <text text-anchor="middle" x="303.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/util/XercesDefs.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M491.03,-164.93C550.01,-141.52 628.92,-99.84 590.5,-55 565.04,-25.29 464.97,-15.25 390.11,-11.95"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="389.85,-8.43 379.72,-11.52 389.57,-15.43 389.85,-8.43"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:title=" ">
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="365.5,-129 161.5,-129 161.5,-110 365.5,-110 365.5,-129"/>
 <text text-anchor="middle" x="263.5" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/dom/DOMEntityReference.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M382.27,-164.95C354.12,-154.42 320.28,-141.75 295.94,-132.64"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="297.05,-129.32 286.46,-129.09 294.6,-135.88 297.05,-129.32"/>
-</a>
-</g>
 </g>
 <!-- Node4 -->
-<g id="Node000004" class="node">
+<g id="node4" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="../../d8/d2c/macx_2include_2xercesc_2dom_2impl_2DOMNodeBase_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="../../d8/d2c/macx_2include_2xercesc_2dom_2impl_2DOMNodeBase_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="749,-74 638,-74 638,-55 749,-55 749,-74"/>
 <text text-anchor="middle" x="693.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">DOMNodeBase.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge3_Node000001_Node000004" class="edge">
+<g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M516.79,-168.89C551.18,-160.24 590.69,-147.4 623.5,-129 645.51,-116.65 666.34,-96.22 679.47,-81.87"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="682.22,-84.04 686.25,-74.24 676.99,-79.39 682.22,-84.04"/>
-</a>
-</g>
 </g>
 <!-- Node5 -->
-<g id="Node000005" class="node">
+<g id="node5" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="../../d5/d44/macx_2include_2xercesc_2dom_2impl_2DOMParentNode_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="../../d5/d44/macx_2include_2xercesc_2dom_2impl_2DOMParentNode_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="143.5,-129 25.5,-129 25.5,-110 143.5,-110 143.5,-129"/>
 <text text-anchor="middle" x="84.5" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">DOMParentNode.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
-<g id="edge5_Node000001_Node000005" class="edge">
+<g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node5</title>
-<g id="a_edge5_Node000001_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M352.44,-169.49C287.44,-157.61 198.35,-141.32 141.1,-130.85"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="141.61,-127.38 131.14,-129.03 140.35,-134.27 141.61,-127.38"/>
-</a>
-</g>
 </g>
 <!-- Node8 -->
-<g id="Node000008" class="node">
+<g id="node8" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="../../d1/d41/macx_2include_2xercesc_2dom_2impl_2DOMChildNode_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node8"><a xlink:href="../../d1/d41/macx_2include_2xercesc_2dom_2impl_2DOMChildNode_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="315.5,-74 203.5,-74 203.5,-55 315.5,-55 315.5,-74"/>
 <text text-anchor="middle" x="259.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">DOMChildNode.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node8 -->
-<g id="edge10_Node000001_Node000008" class="edge">
+<g id="edge10" class="edge">
 <title>Node1&#45;&gt;Node8</title>
-<g id="a_edge10_Node000001_Node000008"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M422.93,-164.98C412.21,-148.36 394.88,-124.89 374.5,-110 353.72,-94.82 327.1,-84.08 304.7,-76.96"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="305.66,-73.6 295.07,-74.04 303.62,-80.29 305.66,-73.6"/>
-</a>
-</g>
 </g>
 <!-- Node9 -->
-<g id="Node000009" class="node">
+<g id="node9" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="../../da/de3/macx_2include_2xercesc_2dom_2impl_2DOMNodeImpl_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node9"><a xlink:href="../../da/de3/macx_2include_2xercesc_2dom_2impl_2DOMNodeImpl_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="531,-129 422,-129 422,-110 531,-110 531,-129"/>
 <text text-anchor="middle" x="476.5" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">DOMNodeImpl.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node9 -->
-<g id="edge12_Node000001_Node000009" class="edge">
+<g id="edge12" class="edge">
 <title>Node1&#45;&gt;Node9</title>
-<g id="a_edge12_Node000001_Node000009"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M447.33,-164.95C453.01,-156.3 459.63,-146.2 465.13,-137.82"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="468.19,-139.54 470.75,-129.26 462.34,-135.7 468.19,-139.54"/>
-</a>
-</g>
 </g>
 <!-- Node4&#45;&gt;Node2 -->
-<g id="edge4_Node000004_Node000002" class="edge">
+<g id="edge4" class="edge">
 <title>Node4&#45;&gt;Node2</title>
-<g id="a_edge4_Node000004_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M637.62,-55.91C568.79,-46.55 451.69,-30.64 375.99,-20.35"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="376.43,-16.88 366.05,-19 375.49,-23.82 376.43,-16.88"/>
-</a>
-</g>
 </g>
 <!-- Node5&#45;&gt;Node2 -->
-<g id="edge6_Node000005_Node000002" class="edge">
+<g id="edge6" class="edge">
 <title>Node5&#45;&gt;Node2</title>
-<g id="a_edge6_Node000005_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M98.06,-109.86C118.51,-97.03 158.66,-72.56 194.5,-55 219.33,-42.83 248.36,-31.1 270.21,-22.74"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="271.59,-25.96 279.71,-19.14 269.11,-19.41 271.59,-25.96"/>
-</a>
-</g>
 </g>
 <!-- Node6 -->
-<g id="Node000006" class="node">
+<g id="node6" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="../../df/dc9/macx_2include_2xercesc_2dom_2impl_2DOMNodeListImpl_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="../../df/dc9/macx_2include_2xercesc_2dom_2impl_2DOMNodeListImpl_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="147.5,-74 21.5,-74 21.5,-55 147.5,-55 147.5,-74"/>
 <text text-anchor="middle" x="84.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">DOMNodeListImpl.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node6 -->
-<g id="edge7_Node000005_Node000006" class="edge">
+<g id="edge7" class="edge">
 <title>Node5&#45;&gt;Node6</title>
-<g id="a_edge7_Node000005_Node000006"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M84.5,-109.75C84.5,-102.8 84.5,-92.85 84.5,-84.13"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="88,-84.09 84.5,-74.09 81,-84.09 88,-84.09"/>
-</a>
-</g>
 </g>
 <!-- Node6&#45;&gt;Node2 -->
-<g id="edge8_Node000006_Node000002" class="edge">
+<g id="edge8" class="edge">
 <title>Node6&#45;&gt;Node2</title>
-<g id="a_edge8_Node000006_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M119.69,-54.98C157.33,-45.87 217.16,-31.4 258.27,-21.45"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="259.14,-24.84 268.04,-19.08 257.5,-18.03 259.14,-24.84"/>
-</a>
-</g>
 </g>
 <!-- Node7 -->
-<g id="Node000007" class="node">
+<g id="node7" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:title=" ">
+<g id="a_node7"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="169,-19 0,-19 0,0 169,0 169,-19"/>
 <text text-anchor="middle" x="84.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/dom/DOMNodeList.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node7 -->
-<g id="edge9_Node000006_Node000007" class="edge">
+<g id="edge9" class="edge">
 <title>Node6&#45;&gt;Node7</title>
-<g id="a_edge9_Node000006_Node000007"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M84.5,-54.75C84.5,-47.8 84.5,-37.85 84.5,-29.13"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="88,-29.09 84.5,-19.09 81,-29.09 88,-29.09"/>
-</a>
-</g>
 </g>
 <!-- Node8&#45;&gt;Node2 -->
-<g id="edge11_Node000008_Node000002" class="edge">
+<g id="edge11" class="edge">
 <title>Node8&#45;&gt;Node2</title>
-<g id="a_edge11_Node000008_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M266.77,-54.75C273.04,-47.18 282.29,-36.05 289.93,-26.84"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="292.67,-29.02 296.37,-19.09 287.29,-24.55 292.67,-29.02"/>
-</a>
-</g>
 </g>
 <!-- Node9&#45;&gt;Node2 -->
-<g id="edge13_Node000009_Node000002" class="edge">
+<g id="edge13" class="edge">
 <title>Node9&#45;&gt;Node2</title>
-<g id="a_edge13_Node000009_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M443.99,-109.86C420.36,-102.63 388.3,-90.77 363.5,-74 344.53,-61.18 327.08,-41.4 315.94,-27.33"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="318.44,-24.84 309.58,-19.03 312.89,-29.1 318.44,-24.84"/>
-</a>
-</g>
 </g>
 <!-- Node10 -->
-<g id="Node000010" class="node">
+<g id="node10" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:title=" ">
+<g id="a_node10"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="581,-74 372,-74 372,-55 581,-55 581,-74"/>
 <text text-anchor="middle" x="476.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/dom/DOMUserDataHandler.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node10 -->
-<g id="edge14_Node000009_Node000010" class="edge">
+<g id="edge14" class="edge">
 <title>Node9&#45;&gt;Node10</title>
-<g id="a_edge14_Node000009_Node000010"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M476.5,-109.75C476.5,-102.8 476.5,-92.85 476.5,-84.13"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="480,-84.09 476.5,-74.09 473,-84.09 480,-84.09"/>
-</a>
-</g>
 </g>
 </g>
 </svg>

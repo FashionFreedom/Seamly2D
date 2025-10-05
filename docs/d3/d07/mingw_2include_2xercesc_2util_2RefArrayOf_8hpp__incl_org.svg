@@ -9,9 +9,9 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 111)">
 <title>src/libs/xerces&#45;c/mingw/include/xercesc/util/RefArrayOf.hpp</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="576,-107 445,-107 445,-66 576,-66 576,-107"/>
 <text text-anchor="start" x="453" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/mingw</text>
 <text text-anchor="start" x="453" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/util</text>
@@ -20,27 +20,24 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:title=" ">
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="161,-24.5 0,-24.5 0,-5.5 161,-5.5 161,-24.5"/>
 <text text-anchor="middle" x="80.5" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/util/PlatformUtils.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M444.72,-74.87C362.83,-61.63 223.92,-39.18 143.39,-26.16"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="143.82,-22.69 133.39,-24.55 142.7,-29.6 143.82,-22.69"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:title=" ">
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="325.5,-30 179.5,-30 179.5,0 325.5,0 325.5,-30"/>
 <text text-anchor="start" x="187.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/util/ArrayIndexOut</text>
 <text text-anchor="middle" x="252.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">OfBoundsException.hpp</text>
@@ -48,18 +45,15 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M444.73,-67.78C404.68,-56.99 353.82,-43.29 314.48,-32.7"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="315.31,-29.29 304.74,-30.07 313.49,-36.05 315.31,-29.29"/>
-</a>
-</g>
 </g>
 <!-- Node4 -->
-<g id="Node000004" class="node">
+<g id="node4" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:title=" ">
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="497,-30 344,-30 344,0 497,0 497,-30"/>
 <text text-anchor="start" x="352" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/util/IllegalArgument</text>
 <text text-anchor="middle" x="420.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Exception.hpp</text>
@@ -67,36 +61,30 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge3_Node000001_Node000004" class="edge">
+<g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M484.95,-65.77C472.96,-56.51 458.68,-45.49 446.62,-36.17"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="448.73,-33.38 438.68,-30.04 444.45,-38.92 448.73,-33.38"/>
-</a>
-</g>
 </g>
 <!-- Node5 -->
-<g id="Node000005" class="node">
+<g id="node5" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:title=" ">
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="688,-24.5 515,-24.5 515,-5.5 688,-5.5 688,-24.5"/>
 <text text-anchor="middle" x="601.5" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/util/XMLEnumerator.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
-<g id="edge4_Node000001_Node000005" class="edge">
+<g id="edge4" class="edge">
 <title>Node1&#45;&gt;Node5</title>
-<g id="a_edge4_Node000001_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M536.33,-65.77C550.82,-54.71 568.59,-41.13 581.92,-30.96"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="584.13,-33.67 589.95,-24.82 579.88,-28.11 584.13,-33.67"/>
-</a>
-</g>
 </g>
 <!-- Node6 -->
-<g id="Node000006" class="node">
+<g id="node6" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:title=" ">
+<g id="a_node6"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="859,-30 706,-30 706,0 859,0 859,-30"/>
 <text text-anchor="start" x="714" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/framework/Memory</text>
 <text text-anchor="middle" x="782.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Manager.hpp</text>
@@ -104,31 +92,25 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
-<g id="edge5_Node000001_Node000006" class="edge">
+<g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<g id="a_edge5_Node000001_Node000006"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M576.34,-68.68C619.23,-57.72 674.93,-43.49 717.62,-32.58"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="718.52,-35.96 727.34,-30.09 716.79,-29.18 718.52,-35.96"/>
-</a>
-</g>
 </g>
 <!-- Node7 -->
-<g id="Node000007" class="node">
+<g id="node7" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:title=" ">
+<g id="a_node7"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="1014,-24.5 877,-24.5 877,-5.5 1014,-5.5 1014,-24.5"/>
 <text text-anchor="middle" x="945.5" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/util/RefArrayOf.c</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
-<g id="edge6_Node000001_Node000007" class="edge">
+<g id="edge6" class="edge">
 <title>Node1&#45;&gt;Node7</title>
-<g id="a_edge6_Node000001_Node000007"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M576.24,-75.83C648.11,-65.14 766.63,-47.15 868.5,-30 875.25,-28.86 882.33,-27.63 889.34,-26.39"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="890.3,-29.77 899.52,-24.56 889.06,-22.88 890.3,-29.77"/>
-</a>
-</g>
 </g>
 </g>
 </svg>

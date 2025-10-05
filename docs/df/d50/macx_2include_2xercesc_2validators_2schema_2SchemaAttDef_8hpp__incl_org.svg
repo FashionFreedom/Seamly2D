@@ -9,9 +9,9 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 111)">
 <title>src/libs/xerces&#45;c/macx/include/xercesc/validators/schema/SchemaAttDef.hpp</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="560,-107 408,-107 408,-66 560,-66 560,-107"/>
 <text text-anchor="start" x="416" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/macx</text>
 <text text-anchor="start" x="416" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/validators</text>
@@ -20,27 +20,24 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:title=" ">
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="146,-24.5 0,-24.5 0,-5.5 146,-5.5 146,-24.5"/>
 <text text-anchor="middle" x="73" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/util/XMLString.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M407.87,-72.7C341.19,-61.48 241.66,-44.71 155,-30 147.85,-28.79 140.36,-27.51 132.92,-26.25"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="133.31,-22.76 122.87,-24.53 132.13,-29.66 133.31,-22.76"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:title=" ">
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="313.5,-30 164.5,-30 164.5,0 313.5,0 313.5,-30"/>
 <text text-anchor="start" x="172.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/framework/XMLAtt</text>
 <text text-anchor="middle" x="239" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Def.hpp</text>
@@ -48,18 +45,15 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M415.1,-65.96C378.23,-55.5 333.29,-42.75 298.04,-32.75"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="298.94,-29.37 288.37,-30 297.03,-36.1 298.94,-29.37"/>
-</a>
-</g>
 </g>
 <!-- Node4 -->
-<g id="Node000004" class="node">
+<g id="node4" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:title=" ">
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="464.5,-30 331.5,-30 331.5,0 464.5,0 464.5,-30"/>
 <text text-anchor="start" x="339.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/util/ValueVector</text>
 <text text-anchor="middle" x="398" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Of.hpp</text>
@@ -67,18 +61,15 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge3_Node000001_Node000004" class="edge">
+<g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M459.59,-65.77C448.24,-56.6 434.75,-45.7 423.29,-36.44"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="425.35,-33.6 415.37,-30.04 420.95,-39.05 425.35,-33.6"/>
-</a>
-</g>
 </g>
 <!-- Node5 -->
-<g id="Node000005" class="node">
+<g id="node5" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:title=" ">
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="657.5,-30 482.5,-30 482.5,0 657.5,0 657.5,-30"/>
 <text text-anchor="start" x="490.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/validators</text>
 <text text-anchor="middle" x="570" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">/datatype/DatatypeValidator.hpp</text>
@@ -86,18 +77,15 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
-<g id="edge4_Node000001_Node000005" class="edge">
+<g id="edge4" class="edge">
 <title>Node1&#45;&gt;Node5</title>
-<g id="a_edge4_Node000001_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M508.41,-65.77C519.76,-56.6 533.25,-45.7 544.71,-36.44"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="547.05,-39.05 552.63,-30.04 542.65,-33.6 547.05,-39.05"/>
-</a>
-</g>
 </g>
 <!-- Node6 -->
-<g id="Node000006" class="node">
+<g id="node6" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:title=" ">
+<g id="a_node6"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="878.5,-30 675.5,-30 675.5,0 878.5,0 878.5,-30"/>
 <text text-anchor="start" x="683.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/validators</text>
 <text text-anchor="middle" x="777" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">/datatype/UnionDatatypeValidator.hpp</text>
@@ -105,18 +93,15 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
-<g id="edge5_Node000001_Node000006" class="edge">
+<g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<g id="a_edge5_Node000001_Node000006"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M560.22,-67.42C605.93,-56.58 663.61,-42.9 707.98,-32.37"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="708.89,-35.75 717.81,-30.04 707.27,-28.94 708.89,-35.75"/>
-</a>
-</g>
 </g>
 <!-- Node7 -->
-<g id="Node000007" class="node">
+<g id="node7" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:title=" ">
+<g id="a_node7"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="1023,-30 897,-30 897,0 1023,0 1023,-30"/>
 <text text-anchor="start" x="905" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/validators</text>
 <text text-anchor="middle" x="960" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">/schema/PSVIDefs.hpp</text>
@@ -124,13 +109,10 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
-<g id="edge6_Node000001_Node000007" class="edge">
+<g id="edge6" class="edge">
 <title>Node1&#45;&gt;Node7</title>
-<g id="a_edge6_Node000001_Node000007"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M560.14,-76.32C639.27,-66.49 766.94,-49.82 886.74,-30.16"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="887.52,-33.57 896.82,-28.49 886.38,-26.67 887.52,-33.57"/>
-</a>
-</g>
 </g>
 </g>
 </svg>

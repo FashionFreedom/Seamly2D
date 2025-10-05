@@ -9,67 +9,58 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 97)">
 <title>Graphical Class Hierarchy</title>
 <!-- Node0 -->
-<g id="Node000000" class="node">
+<g id="node1" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="52,-56 0,-56 0,-37 52,-37 52,-56"/>
 <text text-anchor="middle" x="26" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QEvent</text>
 </a>
 </g>
 </g>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node2" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:href="d5/d08/classLiteParseEvent.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="d5/d08/classLiteParseEvent.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="196.5,-93 107.5,-93 107.5,-74 196.5,-74 196.5,-93"/>
 <text text-anchor="middle" x="152" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">LiteParseEvent</text>
 </a>
 </g>
 </g>
 <!-- Node0&#45;&gt;Node1 -->
-<g id="edge969_Node000000_Node000001" class="edge">
+<g id="edge1" class="edge">
 <title>Node0&#45;&gt;Node1</title>
-<g id="a_edge969_Node000000_Node000001"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M61.87,-57.52C70.4,-60.17 79.52,-62.97 88,-65.5 97.37,-68.3 107.56,-71.25 116.95,-73.93"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="62.77,-54.13 52.19,-54.49 60.69,-60.81 62.77,-54.13"/>
-</a>
-</g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node3" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="d0/d5b/classUndoEvent.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="d0/d5b/classUndoEvent.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="187,-56 117,-56 117,-37 187,-37 187,-56"/>
 <text text-anchor="middle" x="152" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">UndoEvent</text>
 </a>
 </g>
 </g>
 <!-- Node0&#45;&gt;Node2 -->
-<g id="edge970_Node000000_Node000002" class="edge">
+<g id="edge2" class="edge">
 <title>Node0&#45;&gt;Node2</title>
-<g id="a_edge970_Node000000_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M62.21,-46.5C79.24,-46.5 99.61,-46.5 116.55,-46.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="62.09,-43 52.09,-46.5 62.09,-50 62.09,-43"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node4" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="db/da6/classVPE_1_1UserChangeEvent.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="db/da6/classVPE_1_1UserChangeEvent.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="216,-19 88,-19 88,0 216,0 216,-19"/>
 <text text-anchor="middle" x="152" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::UserChangeEvent</text>
 </a>
 </g>
 </g>
 <!-- Node0&#45;&gt;Node3 -->
-<g id="edge971_Node000000_Node000003" class="edge">
+<g id="edge3" class="edge">
 <title>Node0&#45;&gt;Node3</title>
-<g id="a_edge971_Node000000_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M61.86,-36.1C79.75,-30.76 101.39,-24.3 118.87,-19.09"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="60.67,-32.8 52.09,-39.01 62.68,-39.51 60.67,-32.8"/>
-</a>
-</g>
 </g>
 </g>
 </svg>

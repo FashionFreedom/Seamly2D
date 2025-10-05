@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['qapp_0',['qapp',['../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07',1,'qApp:&#160;application_2d.h'],['../d1/da2/application__me_8h.html#af3bf03a2bf98820de7ae03bef13c7d07',1,'qApp:&#160;application_me.h'],['../d5/d74/vabstractapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07',1,'qApp:&#160;vabstractapplication.h']]],
+  ['qapp_0',['qApp',['../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07',1,'qApp():&#160;application_2d.h'],['../d1/da2/application__me_8h.html#af3bf03a2bf98820de7ae03bef13c7d07',1,'qApp():&#160;application_me.h'],['../d5/d74/vabstractapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07',1,'qApp():&#160;vabstractapplication.h']]],
   ['qimage_5fmax_1',['QIMAGE_MAX',['../d4/da4/def_8h.html#abb52cf8f360453bdd87e44d6dcf17ce9',1,'def.h']]],
   ['qmup_5fchars_2',['QMUP_CHARS',['../de/d28/qmuparserdef_8h.html#ad548bddece3de0b012ede3fab0c34e7b',1,'qmuparserdef.h']]],
   ['qmup_5ffallthrough_3',['QMUP_FALLTHROUGH',['../de/d28/qmuparserdef_8h.html#ad903349e807843b6f400b37bbaab96e4',1,'qmuparserdef.h']]],
