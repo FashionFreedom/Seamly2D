@@ -41,7 +41,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: jurplel/install-qt-action@v3
+      - uses: jurplel/install-qt-action@v4
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
@@ -92,7 +92,7 @@ jobs:
           # install libxerces for xml manipulation
           sudo apt install -y poppler-utils gstreamer1.0-plugins-base libxkbcommon-x11-0 libxcb-cursor0 libxerces-c-dev         
 
-      - uses: jurplel/install-qt-action@v3
+      - uses: jurplel/install-qt-action@v4
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
@@ -136,7 +136,7 @@ jobs:
         run: |
           brew install xerces-c
 
-      - uses: jurplel/install-qt-action@v3
+      - uses: jurplel/install-qt-action@v4
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
@@ -201,7 +201,7 @@ jobs:
         with:
           arch: x64
 
-      - uses: jurplel/install-qt-action@v3
+      - uses: jurplel/install-qt-action@v4
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
