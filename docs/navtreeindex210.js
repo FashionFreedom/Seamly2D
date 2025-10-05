@@ -1,6 +1,6 @@
 var NAVTREEINDEX210 =
 {
-"de/d0d/classXMLIBM1047Transcoder.html#affd3a164eb510386f4fb4ec260c93f93":[3,0,841,17],
+"de/d0d/classXMLIBM1047Transcoder.html#affd3a164eb510386f4fb4ec260c93f93":[3,0,841,15],
 "de/d0e/classVisLine.html":[3,0,637],
 "de/d0e/classVisLine.html#a3594b9caf48ca88a60a12aaafb9faadf":[3,0,637,0],
 "de/d0e/classVisLine.html#a4f8e6ea00d2ff1d1457a58e42d4f2932":[3,0,637,5],

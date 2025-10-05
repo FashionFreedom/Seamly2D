@@ -1,24 +1,45 @@
 <map id="VPE::VProperty" name="VPE::VProperty">
-<area shape="rect" id="node1" title=" " alt="" coords="1696,131,1867,384"/>
-<area shape="rect" id="node3" href="$df/d53/classVFormulaProperty.html" title=" " alt="" coords="5,476,176,729"/>
-<area shape="rect" id="node4" href="$df/d74/classVPE_1_1DirectionProperty.html" title=" " alt="" coords="200,476,387,729"/>
-<area shape="rect" id="node5" href="$d5/daa/classVPE_1_1LineTypeProperty.html" title=" " alt="" coords="411,454,597,751"/>
-<area shape="rect" id="node6" href="$d8/ddf/classVPE_1_1LineWeightProperty.html" title=" " alt="" coords="621,454,808,751"/>
-<area shape="rect" id="node7" href="$d6/d0b/classVPE_1_1PlainTextProperty.html" title="Class for holding a plain text property." alt="" coords="833,439,1021,766"/>
-<area shape="rect" id="node8" href="$d8/d90/classVPE_1_1QVector3DProperty.html" title=" " alt="" coords="1045,491,1227,715"/>
-<area shape="rect" id="node9" href="$d4/de6/classVPE_1_1SpinboxProperty.html" title="Class for holding an integer property." alt="" coords="1252,469,1415,737"/>
-<area shape="rect" id="node11" href="$df/d02/classVPE_1_1VBoolProperty.html" title="The VBoolProperty can take two states: True or False." alt="" coords="1439,513,1590,693"/>
-<area shape="rect" id="node12" href="$da/d5e/classVPE_1_1VColorProperty.html" title=" " alt="" coords="1614,520,1767,685"/>
-<area shape="rect" id="node13" href="$d6/dd6/classVPE_1_1VEmptyProperty.html" title=" " alt="" coords="1791,505,1955,700"/>
-<area shape="rect" id="node15" href="$d2/dcb/classVPE_1_1VEnumProperty.html" title=" " alt="" coords="1980,469,2167,737"/>
-<area shape="rect" id="node16" href="$dc/d8e/classVPE_1_1VFileProperty.html" title=" " alt="" coords="2191,491,2337,715"/>
-<area shape="rect" id="node17" href="$db/df1/classVPE_1_1VLabelProperty.html" title="Class for holding a string property." alt="" coords="2361,483,2519,722"/>
-<area shape="rect" id="node18" href="$d6/d22/classVPE_1_1VLineColorProperty.html" title=" " alt="" coords="2544,461,2731,744"/>
-<area shape="rect" id="node19" href="$d5/d82/classVPE_1_1VObjectProperty.html" title=" " alt="" coords="2755,469,2941,737"/>
-<area shape="rect" id="node20" href="$de/d98/classVPE_1_1VPointFProperty.html" title=" " alt="" coords="2965,491,3128,715"/>
-<area shape="rect" id="node21" href="$d9/d73/classVPE_1_1VShortcutProperty.html" title="This property can be used to handle key shortcuts." alt="" coords="3152,505,3328,700"/>
-<area shape="rect" id="node22" href="$d7/d7b/classVPE_1_1VStringProperty.html" title="Class for holding a string property." alt="" coords="3353,432,3541,773"/>
-<area shape="rect" id="node2" title=" " alt="" coords="1744,5,1819,83"/>
-<area shape="rect" id="node10" href="$dc/de2/classVPE_1_1DoubleSpinboxProperty.html" title="Class for holding a double property." alt="" coords="1229,821,1437,1031"/>
-<area shape="rect" id="node14" href="$df/d07/classVPE_1_1VWidgetProperty.html" title="This property holds a QWidget and displays it, if the view supports that. If not, it will behave like..." alt="" coords="1789,851,1957,1001"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="1623,119,1785,424"/>
+<area shape="rect" id="Node000003" href="$df/d53/classVFormulaProperty.html" title=" " alt="" coords="5,532,168,837"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1609,276,1292,285,1086,295,868,313,654,338,458,372,372,393,295,417,231,444,182,474,154,501,133,533,128,530,150,497,178,470,229,439,294,412,370,388,457,367,653,333,868,307,1086,290,1292,279,1609,271"/>
+<area shape="rect" id="Node000004" href="$df/d74/classVPE_1_1DirectionProperty.html" title=" " alt="" coords="193,532,370,837"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1609,278,1331,293,1153,307,967,326,785,351,618,384,545,403,480,425,426,448,383,474,355,501,332,533,328,530,351,497,380,470,423,444,478,420,543,398,617,379,784,346,967,321,1153,301,1330,288,1609,273"/>
+<area shape="rect" id="Node000005" href="$d5/daa/classVPE_1_1LineTypeProperty.html" title=" " alt="" coords="394,502,571,867"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1609,281,1370,301,1221,317,1066,338,915,364,778,395,664,431,619,452,584,474,555,503,551,500,581,470,617,447,662,426,777,390,914,358,1066,333,1221,312,1369,296,1609,276"/>
+<area shape="rect" id="Node000006" href="$d8/ddf/classVPE_1_1LineWeightProperty.html" title=" " alt="" coords="595,502,773,867"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1609,285,1411,310,1167,351,1047,376,938,405,849,438,813,456,786,474,757,503,753,500,782,470,811,451,847,433,937,400,1046,371,1166,345,1410,305,1609,280"/>
+<area shape="rect" id="Node000007" href="$d6/d0b/classVPE_1_1PlainTextProperty.html" title="Class for holding a plain text property." alt="" coords="797,482,977,887"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1609,278,1475,291,1396,304,1312,322,1227,348,1143,381,1063,423,991,474,978,486,975,482,988,470,1061,418,1141,376,1225,343,1311,317,1395,299,1475,286,1609,272"/>
+<area shape="rect" id="Node000008" href="$d8/d90/classVPE_1_1QVector3DProperty.html" title=" " alt="" coords="1001,552,1175,817"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1610,290,1513,312,1401,348,1344,373,1289,401,1236,435,1189,474,1157,511,1133,553,1128,550,1153,508,1185,470,1233,431,1286,397,1342,368,1399,343,1512,307,1609,285"/>
+<area shape="rect" id="Node000009" href="$d4/de6/classVPE_1_1SpinboxProperty.html" title="Class for holding an integer property." alt="" coords="1199,522,1353,847"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1611,311,1551,339,1486,376,1423,421,1367,474,1333,523,1329,520,1363,470,1419,417,1483,372,1548,335,1609,306"/>
+<area shape="rect" id="Node000011" href="$df/d02/classVPE_1_1VBoolProperty.html" title="The VBoolProperty can take two states: True or False." alt="" coords="1378,582,1521,787"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1615,366,1572,418,1534,473,1506,527,1484,583,1479,581,1501,525,1530,471,1568,415,1611,363"/>
+<area shape="rect" id="Node000012" href="$da/d5e/classVPE_1_1VColorProperty.html" title=" " alt="" coords="1545,592,1690,777"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1672,438,1639,592,1634,591,1667,437"/>
+<area shape="rect" id="Node000013" href="$d6/dd6/classVPE_1_1VEmptyProperty.html" title=" " alt="" coords="1714,572,1870,797"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1742,437,1771,571,1766,573,1737,438"/>
+<area shape="rect" id="Node000015" href="$d2/dcb/classVPE_1_1VEnumProperty.html" title=" " alt="" coords="1894,522,2071,847"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="1797,362,1842,414,1884,471,1913,520,1909,523,1879,473,1838,418,1793,365"/>
+<area shape="rect" id="Node000016" href="$dc/d8e/classVPE_1_1VFileProperty.html" title=" " alt="" coords="2095,552,2233,817"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="1799,298,1869,326,1945,363,2019,411,2054,439,2085,470,2112,508,2132,550,2128,553,2107,511,2081,474,2050,443,2016,415,1942,368,1867,331,1797,303"/>
+<area shape="rect" id="Node000017" href="$db/df1/classVPE_1_1VLabelProperty.html" title="Class for holding a string property." alt="" coords="2257,542,2407,827"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="1800,282,1902,302,2020,338,2081,363,2140,393,2196,428,2246,470,2273,503,2295,541,2290,543,2269,506,2242,474,2192,433,2137,397,2079,368,2018,343,1900,308,1798,287"/>
+<area shape="rect" id="Node000018" href="$d6/d22/classVPE_1_1VLineColorProperty.html" title=" " alt="" coords="2431,512,2609,857"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="1800,272,1934,285,2013,298,2097,317,2183,343,2267,376,2347,418,2420,470,2456,510,2453,514,2417,474,2345,422,2265,381,2181,348,2096,322,2012,304,1933,291,1799,278"/>
+<area shape="rect" id="Node000019" href="$d5/d82/classVPE_1_1VObjectProperty.html" title=" " alt="" coords="2633,522,2810,847"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="1799,280,1997,305,2240,346,2359,371,2468,401,2558,433,2593,451,2622,470,2646,493,2666,520,2662,523,2642,497,2618,474,2591,456,2556,438,2466,406,2358,377,2239,351,1996,311,1798,285"/>
+<area shape="rect" id="Node000020" href="$de/d98/classVPE_1_1VPointFProperty.html" title=" " alt="" coords="2835,552,2989,817"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="1799,276,2038,295,2187,311,2341,331,2492,357,2629,388,2743,426,2788,447,2823,470,2857,507,2881,551,2877,553,2853,510,2820,474,2785,452,2741,431,2628,393,2491,362,2341,336,2186,316,2038,300,1799,281"/>
+<area shape="rect" id="Node000021" href="$d9/d73/classVPE_1_1VShortcutProperty.html" title="This property can be used to handle key shortcuts." alt="" coords="3013,572,3181,797"/>
+<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="1799,273,2073,288,2247,302,2429,321,2608,347,2771,379,2843,399,2907,420,2961,444,3003,470,3026,491,3045,516,3072,571,3068,573,3040,519,3022,495,3000,474,2958,449,2905,425,2842,404,2770,385,2607,352,2428,326,2246,307,2072,293,1799,278"/>
+<area shape="rect" id="Node000022" href="$d7/d7b/classVPE_1_1VStringProperty.html" title="Class for holding a string property." alt="" coords="3206,472,3386,897"/>
+<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="1799,271,2108,282,2309,294,2522,312,2731,337,2922,371,3007,391,3082,415,3145,441,3195,470,3207,480,3204,484,3192,474,3143,445,3080,420,3006,396,2921,376,2730,342,2521,317,2309,299,2108,287,1799,277"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="1671,5,1737,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1707,84,1707,119,1701,119,1701,84"/>
+<area shape="rect" id="Node000010" href="$dc/de2/classVPE_1_1DoubleSpinboxProperty.html" title="Class for holding a double property." alt="" coords="1176,945,1376,1191"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1279,861,1279,945,1273,945,1273,861"/>
+<area shape="rect" id="Node000014" href="$df/d07/classVPE_1_1VWidgetProperty.html" title="This property holds a QWidget and displays it, if the view supports that. If not, it will behave like..." alt="" coords="1712,985,1872,1151"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="1795,811,1795,985,1789,985,1789,811"/>
 </map>
