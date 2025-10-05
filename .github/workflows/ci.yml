@@ -249,7 +249,7 @@ jobs:
         if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
 
       - name: Set up Java (for signing)
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: 17
           distribution: 'temurin'
