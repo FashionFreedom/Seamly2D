@@ -6,22 +6,12 @@
 <!-- Title: src/libs/vtools/dialogs/tools/dialogrotation.h Pages: 1 -->
 <svg width="420pt" height="115pt"
  viewBox="0.00 0.00 420.00 115.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
-<style type="text/css"><![CDATA[
-.node, .edge {opacity: 0.7;}
-.node.selected, .edge.selected {opacity: 1;}
-.edge:hover path { stroke: red; }
-.edge:hover polygon { stroke: red; fill: red; }
-]]></style>
-<script type="application/ecmascript" xlink:href="../../svg.min.js"/>
-<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 111)">
 <title>src/libs/vtools/dialogs/tools/dialogrotation.h</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="270,-107 146,-107 146,-77 270,-77 270,-107"/>
 <text text-anchor="start" x="154" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
 <text text-anchor="middle" x="208" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogrotation.h</text>
@@ -29,9 +19,9 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="../../df/ded/tooldialogs_8h.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="../../df/ded/tooldialogs_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="122,-35.5 0,-35.5 0,-5.5 122,-5.5 122,-35.5"/>
 <text text-anchor="start" x="8" y="-23.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
 <text text-anchor="middle" x="61" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tooldialogs.h</text>
@@ -39,18 +29,15 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M169.19,-72.65C144.61,-61.03 113.31,-46.23 90.7,-35.54"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="167.72,-75.83 178.25,-76.94 170.71,-69.5 167.72,-75.83"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="../../dc/d64/dialogrotation_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="../../dc/d64/dialogrotation_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="275.5,-35.5 140.5,-35.5 140.5,-5.5 275.5,-5.5 275.5,-35.5"/>
 <text text-anchor="start" x="148.5" y="-23.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
 <text text-anchor="middle" x="208" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogrotation.cpp</text>
@@ -58,18 +45,15 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M208,-66.75C208,-56.31 208,-44.49 208,-35.54"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="204.5,-66.94 208,-76.94 211.5,-66.94 204.5,-66.94"/>
-</a>
-</g>
 </g>
 <!-- Node4 -->
-<g id="Node000004" class="node">
+<g id="node4" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="../../df/dd2/vtoolrotation_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="../../df/dd2/vtoolrotation_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="412,-41 294,-41 294,0 412,0 412,-41"/>
 <text text-anchor="start" x="302" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
 <text text-anchor="start" x="302" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">/drawTools/operation</text>
@@ -78,28 +62,10 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge3_Node000001_Node000004" class="edge">
+<g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M246.58,-72.51C266.82,-62.81 291.6,-50.93 312.16,-41.07"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="244.85,-69.46 237.34,-76.94 247.87,-75.77 244.85,-69.46"/>
-</a>
 </g>
 </g>
-</g>
-</svg>
-</svg>
-
-<style type='text/css'>
-<![CDATA[
-[data-mouse-over-selected='false'] { opacity: 0.7; }
-[data-mouse-over-selected='true']  { opacity: 1.0; }
-]]>
-</style>
-<script type="application/ecmascript"><![CDATA[
-document.addEventListener('DOMContentLoaded', (event) => {
-  highlightEdges();
-  highlightAdjacentNodes();
-});
-]]></script>
 </svg>

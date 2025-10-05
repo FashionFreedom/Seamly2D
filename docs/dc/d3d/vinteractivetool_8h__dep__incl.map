@@ -1,113 +1,52 @@
 <map id="src/libs/vtools/tools/vinteractivetool.h" name="src/libs/vtools/tools/vinteractivetool.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="3118,5,3266,45"/>
-<area shape="rect" id="Node000002" href="$d2/dba/vdrawtool_8h.html" title=" " alt="" coords="2917,93,3089,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="3139,53,3045,96,3043,91,3137,49"/>
-<area shape="rect" id="Node000119" href="$d1/d19/pattern__piece__tool_8h.html" title=" " alt="" coords="3113,93,3271,133"/>
-<area shape="poly" id="edge60_Node000001_Node000119" title=" " alt="" coords="3195,59,3195,93,3189,93,3189,59"/>
-<area shape="rect" id="Node000134" href="$d8/df6/vinteractivetool_8cpp.html" title=" " alt="" coords="3295,93,3451,133"/>
-<area shape="poly" id="edge61_Node000001_Node000134" title=" " alt="" coords="3245,49,3335,91,3332,96,3243,54"/>
-<area shape="rect" id="Node000003" href="$d5/d3b/vtoolmirrorbyaxis_8cpp.html" title=" " alt="" coords="5,189,219,243"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="2903,118,2327,125,1493,138,696,157,404,170,231,184,196,191,195,186,230,179,403,164,696,152,1493,132,2327,119,2903,113"/>
-<area shape="rect" id="Node000004" href="$d2/d3c/vtoolmirrorbyline_8cpp.html" title=" " alt="" coords="243,189,453,243"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="2903,118,2370,126,1609,139,886,159,621,171,464,184,430,191,429,186,464,179,620,165,886,153,1609,134,2370,120,2902,113"/>
-<area shape="rect" id="Node000005" href="$da/d89/vabstractoperation_8h.html" title=" " alt="" coords="477,189,638,243"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="2902,118,2405,125,1703,137,1038,157,794,169,651,184,623,191,622,186,650,179,794,164,1037,151,1702,132,2404,119,2902,113"/>
-<area shape="rect" id="Node000013" href="$d3/d2b/vtoolmove_8cpp.html" title=" " alt="" coords="663,189,820,243"/>
-<area shape="poly" id="edge5_Node000002_Node000013" title=" " alt="" coords="2903,119,2440,125,1795,138,1186,158,964,170,832,184,805,191,804,186,832,179,963,165,1186,152,1794,133,2440,120,2903,113"/>
-<area shape="rect" id="Node000016" href="$df/dd2/vtoolrotation_8cpp.html" title=" " alt="" coords="844,189,1001,243"/>
-<area shape="poly" id="edge6_Node000002_Node000016" title=" " alt="" coords="2903,117,2513,117,1968,125,1685,133,1420,145,1192,162,1020,184,991,191,990,186,1020,179,1192,156,1420,140,1685,127,1968,119,2513,112,2903,111"/>
-<area shape="rect" id="Node000027" href="$d1/d05/vabstractspline_8cpp.html" title=" " alt="" coords="370,299,526,353"/>
-<area shape="poly" id="edge7_Node000002_Node000027" title=" " alt="" coords="2902,118,2462,124,1865,135,1575,144,1325,155,1144,168,1088,176,1059,184,1044,199,1038,216,1031,236,1015,253,972,270,916,282,851,288,781,291,643,293,584,296,538,301,527,304,526,298,537,296,584,290,643,288,780,285,850,282,915,276,970,265,1012,248,1027,233,1033,215,1039,196,1056,179,1087,170,1144,163,1325,149,1574,139,1865,130,2462,118,2902,113"/>
-<area shape="rect" id="Node000028" href="$d9/dcd/vabstractspline_8h.html" title=" " alt="" coords="1229,189,1385,243"/>
-<area shape="poly" id="edge8_Node000002_Node000028" title=" " alt="" coords="2903,118,2582,121,2148,131,1718,151,1539,166,1405,184,1375,191,1374,186,1403,179,1539,160,1717,146,2148,126,2581,116,2903,112"/>
-<area shape="rect" id="Node000029" href="$d2/d9b/vtoolarc_8cpp.html" title=" " alt="" coords="550,299,706,353"/>
-<area shape="poly" id="edge17_Node000002_Node000029" title=" " alt="" coords="2903,118,2473,125,1893,137,1369,157,1193,169,1138,176,1109,184,1093,199,1085,216,1077,236,1059,253,1012,276,971,289,932,295,894,295,815,291,770,293,718,301,707,304,706,299,717,296,769,288,815,286,894,289,931,289,969,284,1010,271,1056,248,1072,233,1080,214,1088,195,1107,179,1137,171,1192,164,1368,151,1893,132,2473,119,2902,113"/>
-<area shape="rect" id="Node000031" href="$d3/d33/vtoolarcwithlength_8cpp.html" title=" " alt="" coords="730,299,905,353"/>
-<area shape="poly" id="edge18_Node000002_Node000031" title=" " alt="" coords="2903,119,2484,125,1920,138,1412,157,1241,170,1187,176,1160,184,1143,198,1135,216,1127,235,1110,253,1060,278,1017,288,972,291,917,301,906,304,904,299,915,296,971,286,1016,282,1058,273,1106,249,1122,232,1130,214,1139,195,1157,179,1186,171,1240,164,1411,152,1920,132,2484,120,2903,113"/>
-<area shape="rect" id="Node000033" href="$db/dcd/vtoolcubicbezier_8cpp.html" title=" " alt="" coords="929,299,1087,353"/>
-<area shape="poly" id="edge19_Node000002_Node000033" title=" " alt="" coords="2903,119,2496,126,1951,139,1460,159,1296,171,1244,177,1217,184,1198,198,1188,215,1178,233,1160,253,1120,280,1077,301,1075,296,1117,275,1157,249,1174,230,1183,212,1194,194,1215,179,1243,172,1295,165,1460,153,1951,134,2496,121,2903,113"/>
-<area shape="rect" id="Node000035" href="$d4/d49/vtoolcubicbezierpath_8cpp.html" title=" " alt="" coords="1112,299,1301,353"/>
-<area shape="poly" id="edge20_Node000002_Node000035" title=" " alt="" coords="2903,118,2563,121,2118,132,1899,140,1707,151,1560,166,1508,174,1474,184,1450,198,1435,215,1421,234,1397,253,1346,280,1293,301,1291,296,1344,275,1395,248,1417,230,1431,212,1447,194,1472,179,1507,169,1559,161,1707,146,1899,135,2118,126,2563,116,2902,112"/>
-<area shape="rect" id="Node000037" href="$d8/dc7/vtoolellipticalarc_8cpp.html" title=" " alt="" coords="1325,299,1488,353"/>
-<area shape="poly" id="edge21_Node000002_Node000037" title=" " alt="" coords="2903,118,2585,123,2173,135,1795,154,1659,168,1611,175,1580,184,1534,207,1493,238,1457,271,1430,300,1426,296,1454,267,1489,234,1531,203,1578,179,1610,170,1658,162,1794,149,2173,129,2585,118,2903,113"/>
-<area shape="rect" id="Node000039" href="$d0/d39/vtoolspline_8cpp.html" title=" " alt="" coords="1513,299,1669,353"/>
-<area shape="poly" id="edge22_Node000002_Node000039" title=" " alt="" coords="2903,119,2577,125,2159,137,1790,156,1669,169,1632,176,1614,183,1596,208,1588,239,1586,270,1588,298,1583,299,1581,270,1582,238,1591,206,1610,179,1630,171,1668,164,1790,151,2159,132,2577,119,2903,113"/>
-<area shape="rect" id="Node000041" href="$d8/d1f/vtoolsplinepath_8cpp.html" title=" " alt="" coords="1693,299,1849,353"/>
-<area shape="poly" id="edge23_Node000002_Node000041" title=" " alt="" coords="2903,118,2580,124,2168,135,1971,144,1805,155,1686,168,1650,176,1632,183,1622,199,1619,214,1623,231,1633,249,1659,278,1694,299,1691,304,1656,282,1628,252,1618,233,1614,215,1617,197,1629,179,1648,171,1685,163,1804,150,1971,139,2168,130,2580,119,2903,113"/>
-<area shape="rect" id="Node000054" href="$de/d21/vtooldoublepoint_8cpp.html" title=" " alt="" coords="1873,299,2143,353"/>
-<area shape="poly" id="edge24_Node000002_Node000054" title=" " alt="" coords="2903,119,2585,124,2179,136,1986,144,1822,155,1705,168,1669,176,1652,183,1641,199,1638,215,1642,232,1652,249,1676,257,1729,270,1874,298,1873,303,1727,275,1674,262,1649,253,1637,234,1633,215,1637,197,1649,179,1668,171,1704,163,1821,150,1985,139,2178,131,2585,119,2903,113"/>
-<area shape="rect" id="Node000055" href="$d5/d59/vtooltruedarts_8cpp.html" title=" " alt="" coords="1943,189,2193,243"/>
-<area shape="poly" id="edge25_Node000002_Node000055" title=" " alt="" coords="2903,121,2591,140,2398,158,2206,184,2168,191,2167,186,2205,179,2398,153,2590,134,2903,115"/>
-<area shape="rect" id="Node000056" href="$db/d41/intersect__circles__tool_8cpp.html" title=" " alt="" coords="2217,181,2401,251"/>
-<area shape="poly" id="edge26_Node000002_Node000056" title=" " alt="" coords="2903,123,2678,142,2545,160,2414,184,2402,187,2401,181,2413,179,2544,155,2677,137,2903,117"/>
-<area shape="rect" id="Node000057" href="$d0/dbe/intersect__circletangent__tool_8cpp.html" title=" " alt="" coords="2425,181,2609,251"/>
-<area shape="poly" id="edge27_Node000002_Node000057" title=" " alt="" coords="2903,131,2769,153,2622,184,2610,187,2609,182,2621,179,2768,148,2902,126"/>
-<area shape="rect" id="Node000058" href="$d3/d33/point__intersectxy__tool_8cpp.html" title=" " alt="" coords="2634,181,2795,251"/>
-<area shape="poly" id="edge28_Node000002_Node000058" title=" " alt="" coords="2935,140,2808,184,2796,188,2795,183,2806,179,2933,135"/>
-<area shape="rect" id="Node000045" href="$d2/dc5/vtoolcut_8cpp.html" title=" " alt="" coords="2819,181,2991,251"/>
-<area shape="poly" id="edge29_Node000002_Node000045" title=" " alt="" coords="2977,145,2940,183,2936,179,2973,141"/>
-<area shape="rect" id="Node000046" href="$dc/db5/vtoolcutarc_8cpp.html" title=" " alt="" coords="3015,181,3187,251"/>
-<area shape="poly" id="edge30_Node000002_Node000046" title=" " alt="" coords="3033,141,3070,179,3066,183,3029,145"/>
-<area shape="rect" id="Node000048" href="$da/dae/vtoolcutspline_8cpp.html" title=" " alt="" coords="3211,181,3383,251"/>
-<area shape="poly" id="edge31_Node000002_Node000048" title=" " alt="" coords="3072,135,3212,183,3210,188,3070,140"/>
-<area shape="rect" id="Node000050" href="$d1/ddf/vtoolcutsplinepath_8cpp.html" title=" " alt="" coords="3407,181,3582,251"/>
-<area shape="poly" id="edge32_Node000002_Node000050" title=" " alt="" coords="3103,131,3251,152,3315,161,3395,179,3408,182,3406,187,3394,184,3314,167,3250,157,3102,136"/>
-<area shape="rect" id="Node000059" href="$d8/d6c/doubleline__point__tool_8cpp.html" title=" " alt="" coords="3606,181,3815,251"/>
-<area shape="poly" id="edge33_Node000002_Node000059" title=" " alt="" coords="3103,131,3241,145,3350,151,3458,159,3594,179,3607,181,3605,187,3593,184,3457,164,3350,156,3241,151,3102,136"/>
-<area shape="rect" id="Node000060" href="$d8/d68/vtoolalongline_8cpp.html" title=" " alt="" coords="3839,181,4049,251"/>
-<area shape="poly" id="edge34_Node000002_Node000060" title=" " alt="" coords="3103,131,3213,142,3307,147,3467,149,3626,154,3719,163,3827,179,3839,181,3838,186,3826,184,3718,168,3626,159,3467,155,3307,153,3213,147,3102,136"/>
-<area shape="rect" id="Node000061" href="$d6/d07/vtoolbisector_8cpp.html" title=" " alt="" coords="4073,181,4282,251"/>
-<area shape="poly" id="edge35_Node000002_Node000061" title=" " alt="" coords="3103,131,3248,144,3372,149,3584,147,3686,146,3794,149,3917,159,4060,179,4073,181,4072,186,4060,184,3916,164,3794,154,3685,152,3584,153,3372,155,3248,150,3102,136"/>
-<area shape="rect" id="Node000052" href="$da/d99/vtoolcurveintersectaxis_8cpp.html" title=" " alt="" coords="4306,181,4515,251"/>
-<area shape="poly" id="edge36_Node000002_Node000052" title=" " alt="" coords="3103,131,3284,146,3438,152,3574,150,3701,146,3827,143,3962,144,4115,155,4294,179,4306,181,4305,186,4293,184,4114,160,3962,150,3827,148,3701,151,3574,155,3438,157,3283,152,3102,136"/>
-<area shape="rect" id="Node000062" href="$d7/d91/vtoolendline_8cpp.html" title=" " alt="" coords="4539,181,4749,251"/>
-<area shape="poly" id="edge37_Node000002_Node000062" title=" " alt="" coords="3103,131,3319,149,3504,154,3666,151,3818,144,3969,139,4130,140,4313,151,4527,179,4539,181,4538,186,4526,184,4312,157,4130,145,3969,144,3818,149,3666,156,3503,159,3319,154,3102,136"/>
-<area shape="rect" id="Node000063" href="$d1/d35/vtoolheight_8cpp.html" title=" " alt="" coords="4773,181,4982,251"/>
-<area shape="poly" id="edge38_Node000002_Node000063" title=" " alt="" coords="3103,131,3355,151,3569,156,3758,151,3934,142,4110,135,4298,135,4511,148,4630,161,4760,179,4773,181,4772,186,4760,184,4630,166,4510,153,4298,140,4110,140,3935,148,3758,156,3569,161,3355,156,3102,136"/>
-<area shape="rect" id="Node000064" href="$db/d82/vtoollineintersectaxis_8cpp.html" title=" " alt="" coords="5006,181,5215,251"/>
-<area shape="poly" id="edge39_Node000002_Node000064" title=" " alt="" coords="3103,131,3293,143,3525,148,4058,148,4329,148,4586,151,4812,160,4994,179,5006,181,5005,186,4993,184,4812,166,4586,156,4329,153,4058,153,3525,153,3292,148,3102,136"/>
-<area shape="rect" id="Node000065" href="$d7/df1/vtoollinepoint_8cpp.html" title=" " alt="" coords="5239,181,5449,251"/>
-<area shape="poly" id="edge40_Node000002_Node000065" title=" " alt="" coords="3103,131,3316,144,3576,149,4175,147,4480,146,4768,149,5023,159,5132,167,5227,179,5239,181,5238,186,5226,184,5132,172,5022,164,4768,154,4480,151,4175,152,3576,154,3315,149,3102,136"/>
-<area shape="rect" id="Node000066" href="$d4/ddb/vtoolnormal_8cpp.html" title=" " alt="" coords="5473,181,5682,251"/>
-<area shape="poly" id="edge41_Node000002_Node000066" title=" " alt="" coords="3103,131,3338,145,3627,150,4291,146,4631,144,4951,146,5233,157,5355,166,5460,179,5473,181,5472,186,5460,184,5354,171,5233,162,4951,152,4631,149,4291,151,3627,155,3338,150,3102,136"/>
-<area shape="rect" id="Node000067" href="$dd/dab/vtoolshoulderpoint_8cpp.html" title=" " alt="" coords="5706,181,5915,251"/>
-<area shape="poly" id="edge42_Node000002_Node000067" title=" " alt="" coords="3103,131,3223,140,3361,146,3678,151,4408,145,4781,142,5133,144,5444,155,5578,165,5694,179,5706,181,5705,186,5693,184,5577,170,5444,160,5133,149,4781,147,4408,150,3678,156,3361,151,3223,145,3102,136"/>
-<area shape="rect" id="Node000068" href="$df/deb/vtoolbasepoint_8cpp.html" title=" " alt="" coords="5940,189,6191,243"/>
-<area shape="poly" id="edge43_Node000002_Node000068" title=" " alt="" coords="3103,131,3234,141,3384,148,3729,154,4116,153,4524,149,4931,146,5315,147,5654,157,5800,166,5927,179,5969,186,5968,191,5926,184,5800,171,5654,162,5315,152,4931,151,4524,154,4116,158,3729,159,3384,153,3234,146,3102,136"/>
-<area shape="rect" id="Node000069" href="$db/d8d/vtoollineintersect_8cpp.html" title=" " alt="" coords="6215,189,6483,243"/>
-<area shape="poly" id="edge44_Node000002_Node000069" title=" " alt="" coords="3103,131,3246,142,3410,149,3789,156,4214,155,4662,150,5109,146,5530,146,5903,156,6064,165,6203,179,6248,186,6247,191,6202,184,6063,171,5903,161,5530,152,5109,151,4662,155,4214,160,3789,161,3410,155,3246,147,3102,136"/>
-<area shape="rect" id="Node000070" href="$d5/d77/vtoolpointfromarcandtangent_8cpp.html" title=" " alt="" coords="6507,189,6853,243"/>
-<area shape="poly" id="edge45_Node000002_Node000070" title=" " alt="" coords="3103,131,3260,143,3439,152,3853,160,4317,160,4807,156,5296,152,5758,151,6166,159,6342,167,6495,179,6551,186,6550,191,6494,184,6342,172,6166,164,5758,157,5296,157,4807,161,4317,165,3852,165,3439,157,3259,148,3102,136"/>
-<area shape="rect" id="Node000071" href="$d0/dad/vtoolpointofcontact_8cpp.html" title=" " alt="" coords="6877,189,7158,243"/>
-<area shape="poly" id="edge46_Node000002_Node000071" title=" " alt="" coords="3103,131,3276,144,3475,153,3934,160,4449,158,4993,151,5535,144,6047,143,6500,153,6695,164,6864,179,6911,186,6911,191,6864,184,6695,169,6500,158,6047,148,5535,149,4993,156,4449,163,3934,165,3475,158,3276,149,3103,136"/>
-<area shape="rect" id="Node000072" href="$dc/dfe/vtoolpointofintersectionarcs_8cpp.html" title=" " alt="" coords="7183,189,7519,243"/>
-<area shape="poly" id="edge47_Node000002_Node000072" title=" " alt="" coords="3103,131,3290,145,3505,155,4000,164,4557,162,5145,156,5731,149,6285,147,6775,155,6986,165,7170,179,7225,186,7224,191,7169,184,6986,170,6775,161,6285,152,5731,154,5145,161,4557,168,4000,169,3504,160,3290,150,3102,136"/>
-<area shape="rect" id="Node000073" href="$da/de1/vtoolpointofintersectioncurves_8cpp.html" title=" " alt="" coords="7543,189,7895,243"/>
-<area shape="poly" id="edge48_Node000002_Node000073" title=" " alt="" coords="3103,131,3306,146,3540,157,3799,163,4079,166,4685,165,5325,157,5964,149,6568,146,7101,154,7331,164,7531,179,7588,186,7588,191,7530,184,7331,169,7101,160,6568,152,5964,154,5325,162,4686,170,4079,172,3799,169,3540,162,3306,152,3102,136"/>
-<area shape="rect" id="Node000074" href="$dd/d37/vtoolsinglepoint_8cpp.html" title=" " alt="" coords="2167,299,2425,353"/>
-<area shape="poly" id="edge49_Node000002_Node000074" title=" " alt="" coords="2903,120,2642,128,2321,141,2043,160,1953,171,1925,177,1912,183,1901,199,1898,215,1902,232,1912,248,2167,298,2166,303,1909,253,1897,234,1893,216,1897,197,1909,179,1924,172,1952,166,2043,154,2320,136,2641,122,2903,114"/>
-<area shape="rect" id="Node000075" href="$de/d85/vtooltriangle_8cpp.html" title=" " alt="" coords="7919,189,8156,243"/>
-<area shape="poly" id="edge50_Node000002_Node000075" title=" " alt="" coords="3103,131,3247,139,3456,145,4027,150,5528,148,6311,147,7017,150,7574,159,7773,167,7907,179,7947,186,7946,191,7906,184,7772,173,7573,164,7017,155,6311,152,5528,154,4027,156,3456,150,3247,144,3102,136"/>
-<area shape="rect" id="Node000076" href="$d1/dcd/vabstractpoint_8cpp.html" title=" " alt="" coords="2449,299,2602,353"/>
-<area shape="poly" id="edge51_Node000002_Node000076" title=" " alt="" coords="2903,120,2646,128,2332,141,2060,160,1972,171,1945,177,1932,183,1921,200,1918,216,1921,232,1933,249,1949,263,1971,273,2027,288,2095,294,2171,295,2322,291,2387,291,2438,296,2449,298,2448,304,2437,301,2387,297,2322,297,2171,301,2095,300,2026,293,1969,278,1946,267,1929,252,1917,234,1912,216,1916,197,1929,179,1943,172,1971,166,2060,155,2331,136,2646,123,2903,115"/>
-<area shape="rect" id="Node000077" href="$d6/de8/vabstractpoint_8h.html" title=" " alt="" coords="1663,189,1817,243"/>
-<area shape="poly" id="edge52_Node000002_Node000077" title=" " alt="" coords="2903,119,2662,126,2354,139,2054,158,1930,170,1837,184,1808,191,1807,186,1835,179,1930,165,2054,152,2354,134,2662,121,2903,114"/>
-<area shape="rect" id="Node000115" href="$d7/d66/vdrawtool_8cpp.html" title=" " alt="" coords="8180,196,8367,236"/>
-<area shape="poly" id="edge56_Node000002_Node000115" title=" " alt="" coords="3103,131,3255,139,3475,145,4077,149,5660,142,6486,139,7231,142,7549,146,7817,154,8027,164,8168,179,8225,193,8224,199,8168,184,8027,170,7817,159,7548,152,7230,147,6486,145,5660,147,4077,154,3475,150,3255,145,3102,136"/>
-<area shape="rect" id="Node000116" href="$de/dd6/vtoolline_8cpp.html" title=" " alt="" coords="8375,306,8553,346"/>
-<area shape="poly" id="edge57_Node000002_Node000116" title=" " alt="" coords="3103,130,3418,133,4048,133,5817,133,6741,135,7548,143,8130,157,8303,166,8354,172,8380,179,8401,200,8423,234,8458,305,8453,307,8418,237,8397,203,8377,184,8353,178,8302,172,8129,162,7548,148,6741,141,5817,138,4048,139,3418,139,3103,136"/>
-<area shape="rect" id="Node000117" href="$d5/d78/vtoolline_8h.html" title=" " alt="" coords="8442,196,8606,236"/>
-<area shape="poly" id="edge58_Node000002_Node000117" title=" " alt="" coords="3103,131,3263,140,3493,145,4125,149,5788,140,6655,137,7438,139,7772,144,8054,152,8275,163,8423,179,8478,193,8477,199,8422,184,8274,168,8054,157,7772,149,7438,144,6655,142,5788,146,4125,154,3493,151,3263,145,3103,136"/>
-<area shape="poly" id="edge9_Node000028_Node000027" title=" " alt="" coords="1215,233,1058,253,911,266,797,271,683,279,538,301,527,304,526,298,537,296,682,274,796,266,911,260,1057,248,1214,228"/>
-<area shape="poly" id="edge10_Node000028_Node000029" title=" " alt="" coords="1215,236,1108,253,998,266,912,274,827,282,718,301,707,304,706,299,717,296,826,277,912,268,998,261,1108,248,1214,231"/>
-<area shape="poly" id="edge11_Node000028_Node000031" title=" " alt="" coords="1216,241,1159,253,1038,277,917,301,906,304,904,299,915,296,1037,271,1158,248,1214,236"/>
-<area shape="poly" id="edge12_Node000028_Node000033" title=" " alt="" coords="1222,251,1081,301,1080,296,1220,246"/>
-<area shape="poly" id="edge13_Node000028_Node000035" title=" " alt="" coords="1275,255,1233,300,1229,297,1271,252"/>
-<area shape="poly" id="edge14_Node000028_Node000037" title=" " alt="" coords="1342,252,1384,297,1380,300,1339,255"/>
-<area shape="poly" id="edge15_Node000028_Node000039" title=" " alt="" coords="1390,246,1523,296,1521,301,1388,251"/>
-<area shape="poly" id="edge16_Node000028_Node000041" title=" " alt="" coords="1399,233,1681,296,1693,299,1692,305,1679,301,1398,238"/>
-<area shape="poly" id="edge53_Node000077_Node000054" title=" " alt="" coords="1819,246,1944,296,1942,301,1817,251"/>
-<area shape="poly" id="edge54_Node000077_Node000074" title=" " alt="" coords="1824,245,1837,248,1925,267,1995,276,2065,283,2155,296,2167,298,2166,303,2154,301,2065,289,1994,281,1924,272,1835,253,1823,250"/>
-<area shape="poly" id="edge55_Node000077_Node000076" title=" " alt="" coords="1831,237,1887,248,1970,259,2041,265,2163,269,2284,275,2355,282,2438,296,2449,298,2448,304,2437,301,2354,288,2283,280,2162,274,2041,270,1970,264,1886,253,1830,242"/>
-<area shape="poly" id="edge59_Node000117_Node000116" title=" " alt="" coords="8509,249,8477,307,8472,305,8504,247"/>
+<area shape="rect" id="node1" title=" " alt="" coords="3118,5,3266,45"/>
+<area shape="rect" id="node2" href="$d2/dba/vdrawtool_8h.html" title=" " alt="" coords="2917,93,3089,133"/>
+<area shape="rect" id="node49" href="$d1/d19/pattern__piece__tool_8h.html" title=" " alt="" coords="3113,93,3271,133"/>
+<area shape="rect" id="node50" href="$d8/df6/vinteractivetool_8cpp.html" title=" " alt="" coords="3295,93,3451,133"/>
+<area shape="rect" id="node3" href="$d5/d3b/vtoolmirrorbyaxis_8cpp.html" title=" " alt="" coords="5,189,219,243"/>
+<area shape="rect" id="node4" href="$d2/d3c/vtoolmirrorbyline_8cpp.html" title=" " alt="" coords="243,189,453,243"/>
+<area shape="rect" id="node5" href="$da/d89/vabstractoperation_8h.html" title=" " alt="" coords="477,189,638,243"/>
+<area shape="rect" id="node6" href="$d3/d2b/vtoolmove_8cpp.html" title=" " alt="" coords="663,189,820,243"/>
+<area shape="rect" id="node7" href="$df/dd2/vtoolrotation_8cpp.html" title=" " alt="" coords="844,189,1001,243"/>
+<area shape="rect" id="node8" href="$d1/d05/vabstractspline_8cpp.html" title=" " alt="" coords="370,299,526,353"/>
+<area shape="rect" id="node9" href="$d9/dcd/vabstractspline_8h.html" title=" " alt="" coords="1229,189,1385,243"/>
+<area shape="rect" id="node10" href="$d2/d9b/vtoolarc_8cpp.html" title=" " alt="" coords="550,299,706,353"/>
+<area shape="rect" id="node11" href="$d3/d33/vtoolarcwithlength_8cpp.html" title=" " alt="" coords="730,299,905,353"/>
+<area shape="rect" id="node12" href="$db/dcd/vtoolcubicbezier_8cpp.html" title=" " alt="" coords="929,299,1087,353"/>
+<area shape="rect" id="node13" href="$d4/d49/vtoolcubicbezierpath_8cpp.html" title=" " alt="" coords="1112,299,1301,353"/>
+<area shape="rect" id="node14" href="$d8/dc7/vtoolellipticalarc_8cpp.html" title=" " alt="" coords="1325,299,1488,353"/>
+<area shape="rect" id="node15" href="$d0/d39/vtoolspline_8cpp.html" title=" " alt="" coords="1513,299,1669,353"/>
+<area shape="rect" id="node16" href="$d8/d1f/vtoolsplinepath_8cpp.html" title=" " alt="" coords="1693,299,1849,353"/>
+<area shape="rect" id="node17" href="$de/d21/vtooldoublepoint_8cpp.html" title=" " alt="" coords="1873,299,2143,353"/>
+<area shape="rect" id="node18" href="$d5/d59/vtooltruedarts_8cpp.html" title=" " alt="" coords="1943,189,2193,243"/>
+<area shape="rect" id="node19" href="$db/d41/intersect__circles__tool_8cpp.html" title=" " alt="" coords="2217,181,2401,251"/>
+<area shape="rect" id="node20" href="$d0/dbe/intersect__circletangent__tool_8cpp.html" title=" " alt="" coords="2425,181,2609,251"/>
+<area shape="rect" id="node21" href="$d3/d33/point__intersectxy__tool_8cpp.html" title=" " alt="" coords="2634,181,2795,251"/>
+<area shape="rect" id="node22" href="$d2/dc5/vtoolcut_8cpp.html" title=" " alt="" coords="2819,181,2991,251"/>
+<area shape="rect" id="node23" href="$dc/db5/vtoolcutarc_8cpp.html" title=" " alt="" coords="3015,181,3187,251"/>
+<area shape="rect" id="node24" href="$da/dae/vtoolcutspline_8cpp.html" title=" " alt="" coords="3211,181,3383,251"/>
+<area shape="rect" id="node25" href="$d1/ddf/vtoolcutsplinepath_8cpp.html" title=" " alt="" coords="3407,181,3582,251"/>
+<area shape="rect" id="node26" href="$d8/d6c/doubleline__point__tool_8cpp.html" title=" " alt="" coords="3606,181,3815,251"/>
+<area shape="rect" id="node27" href="$d8/d68/vtoolalongline_8cpp.html" title=" " alt="" coords="3839,181,4049,251"/>
+<area shape="rect" id="node28" href="$d6/d07/vtoolbisector_8cpp.html" title=" " alt="" coords="4073,181,4282,251"/>
+<area shape="rect" id="node29" href="$da/d99/vtoolcurveintersectaxis_8cpp.html" title=" " alt="" coords="4306,181,4515,251"/>
+<area shape="rect" id="node30" href="$d7/d91/vtoolendline_8cpp.html" title=" " alt="" coords="4539,181,4749,251"/>
+<area shape="rect" id="node31" href="$d1/d35/vtoolheight_8cpp.html" title=" " alt="" coords="4773,181,4982,251"/>
+<area shape="rect" id="node32" href="$db/d82/vtoollineintersectaxis_8cpp.html" title=" " alt="" coords="5006,181,5215,251"/>
+<area shape="rect" id="node33" href="$d7/df1/vtoollinepoint_8cpp.html" title=" " alt="" coords="5239,181,5449,251"/>
+<area shape="rect" id="node34" href="$d4/ddb/vtoolnormal_8cpp.html" title=" " alt="" coords="5473,181,5682,251"/>
+<area shape="rect" id="node35" href="$dd/dab/vtoolshoulderpoint_8cpp.html" title=" " alt="" coords="5706,181,5915,251"/>
+<area shape="rect" id="node36" href="$df/deb/vtoolbasepoint_8cpp.html" title=" " alt="" coords="5940,189,6191,243"/>
+<area shape="rect" id="node37" href="$db/d8d/vtoollineintersect_8cpp.html" title=" " alt="" coords="6215,189,6483,243"/>
+<area shape="rect" id="node38" href="$d5/d77/vtoolpointfromarcandtangent_8cpp.html" title=" " alt="" coords="6507,189,6853,243"/>
+<area shape="rect" id="node39" href="$d0/dad/vtoolpointofcontact_8cpp.html" title=" " alt="" coords="6877,189,7158,243"/>
+<area shape="rect" id="node40" href="$dc/dfe/vtoolpointofintersectionarcs_8cpp.html" title=" " alt="" coords="7183,189,7519,243"/>
+<area shape="rect" id="node41" href="$da/de1/vtoolpointofintersectioncurves_8cpp.html" title=" " alt="" coords="7543,189,7895,243"/>
+<area shape="rect" id="node42" href="$dd/d37/vtoolsinglepoint_8cpp.html" title=" " alt="" coords="2167,299,2425,353"/>
+<area shape="rect" id="node43" href="$de/d85/vtooltriangle_8cpp.html" title=" " alt="" coords="7919,189,8156,243"/>
+<area shape="rect" id="node44" href="$d1/dcd/vabstractpoint_8cpp.html" title=" " alt="" coords="2449,299,2602,353"/>
+<area shape="rect" id="node45" href="$d6/de8/vabstractpoint_8h.html" title=" " alt="" coords="1663,189,1817,243"/>
+<area shape="rect" id="node46" href="$d7/d66/vdrawtool_8cpp.html" title=" " alt="" coords="8180,196,8367,236"/>
+<area shape="rect" id="node47" href="$de/dd6/vtoolline_8cpp.html" title=" " alt="" coords="8375,306,8553,346"/>
+<area shape="rect" id="node48" href="$d5/d78/vtoolline_8h.html" title=" " alt="" coords="8442,196,8606,236"/>
 </map>

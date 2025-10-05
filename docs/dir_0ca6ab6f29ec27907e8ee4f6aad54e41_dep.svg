@@ -6,16 +6,6 @@
 <!-- Title: src/libs/vtools/tools/nodeDetails Pages: 1 -->
 <svg width="341pt" height="117pt"
  viewBox="0.00 0.00 341.00 117.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
-<style type="text/css"><![CDATA[
-.node, .edge {opacity: 0.7;}
-.node.selected, .edge.selected {opacity: 1;}
-.edge:hover path { stroke: red; }
-.edge:hover polygon { stroke: red; fill: red; }
-]]></style>
-<script type="application/ecmascript" xlink:href="svg.min.js"/>
-<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 113)">
 <title>src/libs/vtools/tools/nodeDetails</title>
 <g id="clust1" class="cluster">
@@ -47,11 +37,8 @@
 <!-- dir_0ca6ab6f29ec27907e8ee4f6aad54e41&#45;&gt;dir_40cd43732585e03d4f2cc5ec85e7c710 -->
 <g id="edge1" class="edge">
 <title>dir_0ca6ab6f29ec27907e8ee4f6aad54e41&#45;&gt;dir_40cd43732585e03d4f2cc5ec85e7c710</title>
-<g id="a_edge1"><a xlink:href="dir_000063_000108.html" target="_top">
 <path fill="none" stroke="#63b8ff" d="M165.01,-54.98C141.98,-46.27 105.96,-32.63 79.87,-22.75"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="80.99,-19.44 70.4,-19.17 78.52,-25.98 80.99,-19.44"/>
-</a>
-</g>
 <g id="a_edge1&#45;headlabel"><a xlink:href="dir_000063_000108.html" target="_top" xlink:title="7">
 <text text-anchor="middle" x="85.36" y="-15.55" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#63b8ff">7</text>
 </a>
@@ -69,11 +56,8 @@
 <!-- dir_0ca6ab6f29ec27907e8ee4f6aad54e41&#45;&gt;dir_45e7935e40ba1081fb9a668a2bba47b4 -->
 <g id="edge2" class="edge">
 <title>dir_0ca6ab6f29ec27907e8ee4f6aad54e41&#45;&gt;dir_45e7935e40ba1081fb9a668a2bba47b4</title>
-<g id="a_edge2"><a xlink:href="dir_000063_000119.html" target="_top">
 <path fill="none" stroke="#63b8ff" d="M181.06,-54.75C175.61,-47.34 167.64,-36.5 160.94,-27.41"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="163.57,-25.07 154.82,-19.09 157.93,-29.22 163.57,-25.07"/>
-</a>
-</g>
 <g id="a_edge2&#45;headlabel"><a xlink:href="dir_000063_000119.html" target="_top" xlink:title="1">
 <text text-anchor="middle" x="167.98" y="-23.78" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#63b8ff">1</text>
 </a>
@@ -91,11 +75,8 @@
 <!-- dir_0ca6ab6f29ec27907e8ee4f6aad54e41&#45;&gt;dir_8784069e3db88429259ac6c2c4d6aa45 -->
 <g id="edge3" class="edge">
 <title>dir_0ca6ab6f29ec27907e8ee4f6aad54e41&#45;&gt;dir_8784069e3db88429259ac6c2c4d6aa45</title>
-<g id="a_edge3"><a xlink:href="dir_000063_000015.html" target="_top">
 <path fill="none" stroke="#63b8ff" d="M194.11,-54.75C199.76,-47.26 208.04,-36.28 214.95,-27.13"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="217.79,-29.18 221.02,-19.09 212.2,-24.96 217.79,-29.18"/>
-</a>
-</g>
 <g id="a_edge3&#45;headlabel"><a xlink:href="dir_000063_000015.html" target="_top" xlink:title="2">
 <text text-anchor="middle" x="217.89" y="-31.26" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#63b8ff">2</text>
 </a>
@@ -113,30 +94,12 @@
 <!-- dir_0ca6ab6f29ec27907e8ee4f6aad54e41&#45;&gt;dir_fa16871e366acf28eec42e1eb99c66a0 -->
 <g id="edge4" class="edge">
 <title>dir_0ca6ab6f29ec27907e8ee4f6aad54e41&#45;&gt;dir_fa16871e366acf28eec42e1eb99c66a0</title>
-<g id="a_edge4"><a xlink:href="dir_000063_000128.html" target="_top">
 <path fill="none" stroke="#63b8ff" d="M205.98,-54.98C224.48,-46.46 253.18,-33.23 274.48,-23.41"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="276.07,-26.53 283.69,-19.17 273.14,-20.18 276.07,-26.53"/>
-</a>
-</g>
 <g id="a_edge4&#45;headlabel"><a xlink:href="dir_000063_000128.html" target="_top" xlink:title="1">
 <text text-anchor="middle" x="273.99" y="-28.12" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#63b8ff">1</text>
 </a>
 </g>
 </g>
 </g>
-</svg>
-</svg>
-
-<style type='text/css'>
-<![CDATA[
-[data-mouse-over-selected='false'] { opacity: 0.7; }
-[data-mouse-over-selected='true']  { opacity: 1.0; }
-]]>
-</style>
-<script type="application/ecmascript"><![CDATA[
-document.addEventListener('DOMContentLoaded', (event) => {
-  highlightEdges();
-  highlightAdjacentNodes();
-});
-]]></script>
 </svg>

@@ -30,7 +30,7 @@ var searchData=
   ['hexbinary_27',['HexBinary',['../d9/db9/classDatatypeValidator.html#a3fbf8d58a1883dd3b6b2e83660eedf8dac98e87f242842f16b701a16c826ef34d',1,'DatatypeValidator']]],
   ['hexradixmustbelowercase_28',['HexRadixMustBeLowerCase',['../d7/d8e/classXMLErrs.html#aefe9817ef5442905d86fd17cb0c35e47a335b987c32b6c75c27667d573f5ad7d3',1,'XMLErrs']]],
   ['hh_29',['hh',['../d1/d3f/classXMLDateTime.html#a1ca8f6589806a936c83b0bd2fcb7197fa965c91287b1f5dca3c7e417a0f7594cd',1,'XMLDateTime']]],
-  ['hierarchy_5frequest_5ferr_30',['hierarchy_request_err',['../d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdea2bdc7cbe2f207eb7daceb93d4e8e009b',1,'XMLDOMMsg::HIERARCHY_REQUEST_ERR'],['../dd/d0a/classDOMException.html#af80f80a377221615d84e59dd2cf71af5a0d92b7c1c5ec8f3b9936a0ee1b785743',1,'DOMException::HIERARCHY_REQUEST_ERR']]],
+  ['hierarchy_5frequest_5ferr_30',['HIERARCHY_REQUEST_ERR',['../d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdea2bdc7cbe2f207eb7daceb93d4e8e009b',1,'XMLDOMMsg::HIERARCHY_REQUEST_ERR()'],['../dd/d0a/classDOMException.html#af80f80a377221615d84e59dd2cf71af5a0d92b7c1c5ec8f3b9936a0ee1b785743',1,'DOMException::HIERARCHY_REQUEST_ERR()']]],
   ['highestpoint_31',['HighestPoint',['../d0/d89/vabstractpattern_8h.html#a968324ddec8a7f7498fc97a24f0498deafd44f1be21b9031b47d69681f77a2884',1,'vabstractpattern.h']]],
   ['horizontalaxis_32',['HorizontalAxis',['../d0/d89/vabstractpattern_8h.html#ac0eaf9908bdb2df95232be5bf4c7263ea43cd3e11a6a791780a930161f4c9ee20',1,'vabstractpattern.h']]],
   ['hour_33',['Hour',['../d1/d3f/classXMLDateTime.html#a9af335797ae355cd8d692830048b226daf8477fdbde6bc6e5f2ead0f835312f28',1,'XMLDateTime']]],

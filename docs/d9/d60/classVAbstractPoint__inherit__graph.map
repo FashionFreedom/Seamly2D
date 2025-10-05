@@ -1,67 +1,35 @@
 <map id="VAbstractPoint" name="VAbstractPoint">
-<area shape="rect" id="Node000001" title=" " alt="" coords="629,2272,837,2497"/>
-<area shape="rect" id="Node000007" href="$d0/dcf/classVToolDoublePoint.html" title=" " alt="" coords="504,2545,721,3311"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="708,2511,700,2546,695,2544,702,2510"/>
-<area shape="rect" id="Node000009" href="$da/dbc/classVToolSinglePoint.html" title="The VToolSinglePoint class parent for all tools what create points." alt="" coords="1271,2605,1488,3251"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="849,2480,1272,2834,1269,2838,845,2484"/>
-<area shape="rect" id="Node000002" href="$d2/df2/classVDrawTool.html" title="The VDrawTool abstract class for all draw tool." alt="" coords="626,1539,839,2224"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="735,2238,735,2272,730,2272,730,2238"/>
-<area shape="rect" id="Node000003" href="$d4/d36/classVInteractiveTool.html" title=" " alt="" coords="632,1305,833,1491"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="735,1504,735,1538,730,1538,730,1504"/>
-<area shape="rect" id="Node000004" href="$d4/d36/classVAbstractTool.html" title="The VAbstractTool abstract class for all tools." alt="" coords="636,392,829,1257"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="735,1271,735,1305,730,1305,730,1271"/>
-<area shape="rect" id="Node000005" href="$d5/d68/classVDataTool.html" title="The VDataTool class need for getting access to data container of tool." alt="" coords="649,119,816,344"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="735,358,735,392,730,392,730,358"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="699,5,766,71"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="735,84,735,119,730,119,730,84"/>
-<area shape="rect" id="Node000008" href="$de/d04/classVToolTrueDarts.html" title=" " alt="" coords="5,3399,167,3964"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="495,3021,416,3088,332,3169,251,3261,214,3310,182,3360,161,3400,156,3397,177,3357,210,3307,247,3257,328,3165,412,3084,491,3017"/>
-<area shape="rect" id="Node000010" href="$d0/db5/classDoubleLinePointTool.html" title="The DoubleLinePointTool class parent for all tools what creates a point with 2 lines." alt="" coords="191,3419,373,3944"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1261,3022,1154,3096,1025,3175,882,3251,808,3285,733,3313,681,3326,633,3328,548,3319,508,3316,469,3319,429,3332,386,3361,360,3388,338,3420,334,3417,356,3385,383,3357,427,3327,468,3313,508,3310,548,3314,633,3323,680,3321,732,3308,806,3280,880,3246,1022,3171,1151,3091,1258,3018"/>
-<area shape="rect" id="Node000012" href="$d9/d63/classIntersectCircleTangentTool.html" title=" " alt="" coords="397,3389,607,3974"/>
-<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="1260,3009,1020,3156,878,3237,734,3313,700,3326,673,3332,647,3340,621,3361,597,3390,593,3387,617,3357,645,3336,671,3326,699,3320,732,3308,875,3232,1017,3151,1258,3005"/>
-<area shape="rect" id="Node000013" href="$dc/d9f/classIntersectCirclesTool.html" title=" " alt="" coords="631,3359,869,4004"/>
-<area shape="poly" id="edge12_Node000009_Node000013" title=" " alt="" coords="1261,3010,1169,3077,1069,3160,970,3255,924,3307,883,3360,871,3377,867,3374,879,3357,920,3303,966,3252,1065,3156,1166,3073,1257,3006"/>
-<area shape="rect" id="Node000014" href="$de/ddd/classVToolBasePoint.html" title="The VToolBasePoint class tool for creation pattern base point. Only base point can move...." alt="" coords="893,3419,1065,3944"/>
-<area shape="poly" id="edge13_Node000009_Node000014" title=" " alt="" coords="1264,3073,1168,3209,1121,3283,1080,3360,1054,3420,1049,3418,1076,3358,1117,3281,1163,3206,1260,3070"/>
-<area shape="rect" id="Node000015" href="$d0/d8a/classVToolCut.html" title=" " alt="" coords="1090,3449,1274,3914"/>
-<area shape="poly" id="edge14_Node000009_Node000015" title=" " alt="" coords="1294,3265,1245,3449,1240,3448,1289,3264"/>
-<area shape="rect" id="Node000019" href="$d3/dac/classVToolLineIntersect.html" title="The VToolLineIntersect class help find point intersection lines." alt="" coords="1299,3369,1460,3994"/>
-<area shape="poly" id="edge18_Node000009_Node000019" title=" " alt="" coords="1382,3265,1382,3369,1377,3369,1377,3265"/>
-<area shape="rect" id="Node000020" href="$dc/d1d/classVToolLinePoint.html" title="The VToolLinePoint class parent for all tools what create point with line." alt="" coords="1485,3409,1650,3954"/>
-<area shape="poly" id="edge19_Node000009_Node000020" title=" " alt="" coords="1466,3263,1502,3408,1497,3409,1461,3265"/>
-<area shape="rect" id="Node000029" href="$d5/de4/classVToolPointFromArcAndTangent.html" title=" " alt="" coords="1674,3419,1911,3944"/>
-<area shape="poly" id="edge28_Node000009_Node000029" title=" " alt="" coords="1498,3088,1583,3218,1664,3357,1694,3417,1689,3420,1660,3360,1579,3221,1494,3091"/>
-<area shape="rect" id="Node000030" href="$d1/da5/classVToolPointOfContact.html" title="The VToolPointOfContact class tool for creation point intersection arc ad line." alt="" coords="1936,3369,2111,3994"/>
-<area shape="poly" id="edge29_Node000009_Node000030" title=" " alt="" coords="1502,2993,1604,3058,1718,3142,1775,3190,1830,3242,1881,3298,1926,3357,1938,3377,1934,3380,1921,3360,1876,3302,1826,3246,1772,3194,1715,3146,1601,3062,1499,2997"/>
-<area shape="rect" id="Node000031" href="$d4/d0f/classVToolPointOfIntersectionArcs.html" title=" " alt="" coords="2135,3411,2338,3951"/>
-<area shape="poly" id="edge30_Node000009_Node000031" title=" " alt="" coords="1502,2967,1644,3025,1726,3063,1811,3108,1896,3160,1979,3219,2056,3284,2124,3357,2160,3410,2156,3413,2120,3360,2052,3288,1975,3223,1893,3165,1808,3113,1724,3068,1642,3030,1500,2972"/>
-<area shape="rect" id="Node000032" href="$d5/d68/classVToolPointOfIntersectionCurves.html" title=" " alt="" coords="2362,3374,2551,3989"/>
-<area shape="poly" id="edge31_Node000009_Node000032" title=" " alt="" coords="1502,2948,1588,2967,1688,2993,1800,3028,1916,3072,2035,3126,2150,3191,2205,3228,2257,3267,2306,3311,2352,3357,2365,3372,2361,3376,2348,3360,2303,3314,2254,3272,2202,3232,2147,3195,2032,3131,1914,3077,1798,3033,1687,2998,1587,2972,1501,2953"/>
-<area shape="rect" id="Node000033" href="$dd/df1/classVToolTriangle.html" title="The VToolTriangle class for tool that find point intersection two foots right triangle (triangle with..." alt="" coords="2576,3369,2737,3994"/>
-<area shape="poly" id="edge32_Node000009_Node000033" title=" " alt="" coords="1502,2935,1604,2948,1728,2968,1867,2997,2014,3038,2164,3093,2238,3126,2310,3163,2379,3204,2446,3250,2508,3301,2565,3357,2578,3371,2574,3375,2561,3360,2504,3305,2443,3255,2377,3209,2307,3168,2235,3131,2162,3098,2012,3044,1866,3002,1727,2973,1604,2953,1501,2941"/>
-<area shape="rect" id="Node000011" href="$df/d11/classPointIntersectXYTool.html" title="The PointIntersectXYTool class tool for creation point intersection two lines." alt="" coords="196,4162,368,4487"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="285,3958,285,4162,279,4162,279,3958"/>
-<area shape="rect" id="Node000016" href="$d1/d98/classVToolCutArc.html" title="The VToolCutArc class tool for cutting arc." alt="" coords="533,4182,695,4467"/>
-<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="1138,3928,1112,3970,1078,4006,1054,4023,1030,4035,1006,4041,983,4044,937,4041,891,4031,846,4021,800,4018,777,4020,755,4027,731,4038,708,4054,682,4081,661,4112,645,4147,634,4183,629,4181,640,4145,656,4110,677,4077,704,4050,729,4033,753,4022,776,4015,800,4012,846,4016,892,4026,937,4035,983,4039,1005,4036,1028,4030,1051,4019,1075,4002,1108,3967,1134,3925"/>
-<area shape="rect" id="Node000017" href="$d9/d86/classVToolCutSpline.html" title="The VToolCutSpline class for tool CutSpline. This tool find point on spline and cut spline on two." alt="" coords="719,4172,880,4477"/>
-<area shape="poly" id="edge16_Node000015_Node000017" title=" " alt="" coords="1134,3928,1110,3969,1078,4006,1055,4023,1031,4031,984,4031,938,4031,916,4038,893,4054,870,4079,852,4108,825,4173,820,4171,847,4106,866,4076,890,4050,913,4033,937,4026,984,4025,1030,4025,1052,4018,1075,4002,1106,3966,1130,3925"/>
-<area shape="rect" id="Node000018" href="$d8/d67/classVToolCutSplinePath.html" title="The VToolCutSplinePath class for tool CutSplinePath. This tool find point on splinePath and cut splin..." alt="" coords="904,4162,1068,4487"/>
-<area shape="poly" id="edge17_Node000015_Node000018" title=" " alt="" coords="1110,3928,1038,4163,1033,4161,1105,3927"/>
-<area shape="rect" id="Node000021" href="$d2/d31/classVToolAlongLine.html" title="The VToolAlongLine class tool for creation point along line." alt="" coords="1092,4132,1253,4517"/>
-<area shape="poly" id="edge20_Node000020_Node000021" title=" " alt="" coords="1506,3967,1473,4006,1447,4024,1420,4032,1394,4034,1368,4031,1343,4029,1317,4030,1292,4037,1266,4054,1235,4090,1212,4133,1208,4131,1231,4087,1263,4050,1290,4032,1316,4024,1343,4023,1369,4026,1394,4028,1419,4027,1444,4020,1470,4002,1502,3964"/>
-<area shape="rect" id="Node000022" href="$d6/d6b/classVToolBisector.html" title="The VToolBisector class tool for creation bisector point." alt="" coords="1277,4082,1439,4567"/>
-<area shape="poly" id="edge21_Node000020_Node000022" title=" " alt="" coords="1487,3968,1474,4005,1454,4053,1441,4087,1436,4085,1449,4051,1469,4003,1482,3966"/>
-<area shape="rect" id="Node000023" href="$d6/d61/classVToolCurveIntersectAxis.html" title=" " alt="" coords="1463,4082,1671,4567"/>
-<area shape="poly" id="edge22_Node000020_Node000023" title=" " alt="" coords="1570,3968,1570,4082,1565,4082,1565,3968"/>
-<area shape="rect" id="Node000024" href="$dc/d21/classVToolEndLine.html" title="The VToolEndLine class tool for creation point on the line end." alt="" coords="1696,4152,1857,4497"/>
-<area shape="poly" id="edge23_Node000020_Node000024" title=" " alt="" coords="1652,3966,1664,4003,1686,4051,1723,4151,1718,4153,1681,4053,1660,4005,1647,3968"/>
-<area shape="rect" id="Node000025" href="$d7/d9e/classVToolHeight.html" title="The VToolHeight class tool for creation point of height. Help find point of projection onto line." alt="" coords="1881,4092,2067,4557"/>
-<area shape="poly" id="edge24_Node000020_Node000025" title=" " alt="" coords="1632,3964,1664,4002,1689,4020,1714,4027,1739,4029,1764,4026,1790,4024,1816,4025,1843,4032,1870,4050,1906,4090,1902,4094,1867,4054,1841,4037,1816,4030,1790,4029,1765,4032,1739,4034,1713,4033,1686,4024,1660,4006,1628,3967"/>
-<area shape="rect" id="Node000026" href="$dc/df4/classVToolLineIntersectAxis.html" title=" " alt="" coords="2091,4052,2289,4597"/>
-<area shape="poly" id="edge25_Node000020_Node000026" title=" " alt="" coords="1629,3964,1664,4002,1690,4021,1716,4033,1741,4041,1766,4044,1817,4040,1867,4028,1918,4016,1970,4011,1997,4014,2024,4020,2052,4032,2080,4050,2093,4061,2089,4065,2076,4054,2049,4037,2022,4025,1996,4019,1970,4017,1919,4022,1868,4033,1817,4045,1766,4049,1740,4046,1714,4038,1687,4025,1660,4006,1625,3968"/>
-<area shape="rect" id="Node000027" href="$d5/d3b/classVToolNormal.html" title="The VToolNormal class tool for creation point on normal. Normal begin from first point of line." alt="" coords="2313,4132,2475,4517"/>
-<area shape="poly" id="edge26_Node000020_Node000027" title=" " alt="" coords="1628,3964,1664,4002,1687,4016,1717,4026,1793,4034,1883,4033,1980,4026,2078,4020,2169,4018,2246,4026,2277,4036,2302,4050,2337,4086,2362,4130,2358,4133,2333,4090,2299,4054,2275,4041,2245,4031,2169,4023,2078,4025,1981,4032,1883,4038,1793,4040,1716,4031,1685,4021,1660,4006,1624,3967"/>
-<area shape="rect" id="Node000028" href="$db/d3d/classVToolShoulderPoint.html" title="The VToolShoulderPoint class tool for creation of point Length to Line. This tool for special situati..." alt="" coords="2499,4082,2667,4567"/>
-<area shape="poly" id="edge27_Node000020_Node000028" title=" " alt="" coords="1628,3964,1664,4002,1694,4020,1733,4032,1779,4039,1831,4042,1947,4038,2073,4027,2199,4016,2317,4011,2369,4014,2416,4020,2456,4032,2489,4050,2519,4080,2516,4084,2486,4054,2454,4037,2415,4026,2369,4019,2317,4017,2200,4021,2074,4032,1948,4043,1831,4047,1779,4044,1732,4037,1692,4025,1660,4006,1624,3967"/>
+<area shape="rect" id="node1" title=" " alt="" coords="652,1879,868,2073"/>
+<area shape="rect" id="node7" href="$d0/dcf/classVToolDoublePoint.html" title=" " alt="" coords="521,2121,748,2712"/>
+<area shape="rect" id="node9" href="$da/dbc/classVToolSinglePoint.html" title="The VToolSinglePoint class parent for all tools what create points." alt="" coords="1315,2165,1541,2668"/>
+<area shape="rect" id="node2" href="$d2/df2/classVDrawTool.html" title="The VDrawTool abstract class for all draw tool." alt="" coords="649,1299,871,1831"/>
+<area shape="rect" id="node3" href="$d4/d36/classVInteractiveTool.html" title=" " alt="" coords="655,1085,865,1251"/>
+<area shape="rect" id="node4" href="$d4/d36/classVAbstractTool.html" title="The VAbstractTool abstract class for all tools." alt="" coords="659,373,861,1037"/>
+<area shape="rect" id="node5" href="$d5/d68/classVDataTool.html" title="The VDataTool class need for getting access to data container of tool." alt="" coords="673,131,847,325"/>
+<area shape="rect" id="node6" title=" " alt="" coords="723,5,797,83"/>
+<area shape="rect" id="node8" href="$de/d04/classVToolTrueDarts.html" title=" " alt="" coords="5,2789,176,3233"/>
+<area shape="rect" id="node10" href="$d0/db5/classDoubleLinePointTool.html" title="The DoubleLinePointTool class parent for all tools what creates a point with 2 lines." alt="" coords="201,2804,391,3219"/>
+<area shape="rect" id="node12" href="$d9/d63/classIntersectCircleTangentTool.html" title=" " alt="" coords="415,2782,627,3241"/>
+<area shape="rect" id="node13" href="$dc/d9f/classIntersectCirclesTool.html" title=" " alt="" coords="651,2760,898,3263"/>
+<area shape="rect" id="node14" href="$de/ddd/classVToolBasePoint.html" title="The VToolBasePoint class tool for creation pattern base point. Only base point can move...." alt="" coords="922,2804,1102,3219"/>
+<area shape="rect" id="node15" href="$d0/d8a/classVToolCut.html" title=" " alt="" coords="1127,2826,1319,3197"/>
+<area shape="rect" id="node19" href="$d3/dac/classVToolLineIntersect.html" title="The VToolLineIntersect class help find point intersection lines." alt="" coords="1343,2767,1513,3255"/>
+<area shape="rect" id="node20" href="$dc/d1d/classVToolLinePoint.html" title="The VToolLinePoint class parent for all tools what create point with line." alt="" coords="1537,2797,1711,3226"/>
+<area shape="rect" id="node29" href="$d5/de4/classVToolPointFromArcAndTangent.html" title=" " alt="" coords="1735,2804,1974,3219"/>
+<area shape="rect" id="node30" href="$d1/da5/classVToolPointOfContact.html" title="The VToolPointOfContact class tool for creation point intersection arc ad line." alt="" coords="1998,2767,2181,3255"/>
+<area shape="rect" id="node31" href="$d4/d0f/classVToolPointOfIntersectionArcs.html" title=" " alt="" coords="2205,2797,2416,3226"/>
+<area shape="rect" id="node32" href="$d5/d68/classVToolPointOfIntersectionCurves.html" title=" " alt="" coords="2441,2767,2631,3255"/>
+<area shape="rect" id="node33" href="$dd/df1/classVToolTriangle.html" title="The VToolTriangle class for tool that find point intersection two foots right triangle (triangle with..." alt="" coords="2656,2767,2827,3255"/>
+<area shape="rect" id="node11" href="$df/d11/classPointIntersectXYTool.html" title="The PointIntersectXYTool class tool for creation point intersection two lines." alt="" coords="209,3391,383,3659"/>
+<area shape="rect" id="node16" href="$d1/d98/classVToolCutArc.html" title="The VToolCutArc class tool for cutting arc." alt="" coords="543,3406,713,3645"/>
+<area shape="rect" id="node17" href="$d9/d86/classVToolCutSpline.html" title="The VToolCutSpline class for tool CutSpline. This tool find point on spline and cut spline on two." alt="" coords="737,3399,908,3652"/>
+<area shape="rect" id="node18" href="$d8/d67/classVToolCutSplinePath.html" title="The VToolCutSplinePath class for tool CutSplinePath. This tool find point on splinePath and cut splin..." alt="" coords="932,3391,1103,3659"/>
+<area shape="rect" id="node21" href="$d2/d31/classVToolAlongLine.html" title="The VToolAlongLine class tool for creation point along line." alt="" coords="1127,3369,1297,3681"/>
+<area shape="rect" id="node22" href="$d6/d6b/classVToolBisector.html" title="The VToolBisector class tool for creation bisector point." alt="" coords="1321,3333,1492,3718"/>
+<area shape="rect" id="node23" href="$d6/d61/classVToolCurveIntersectAxis.html" title=" " alt="" coords="1516,3333,1732,3718"/>
+<area shape="rect" id="node24" href="$dc/d21/classVToolEndLine.html" title="The VToolEndLine class tool for creation point on the line end." alt="" coords="1756,3384,1927,3667"/>
+<area shape="rect" id="node25" href="$d7/d9e/classVToolHeight.html" title="The VToolHeight class tool for creation point of height. Help find point of projection onto line." alt="" coords="1951,3340,2145,3711"/>
+<area shape="rect" id="node26" href="$dc/df4/classVToolLineIntersectAxis.html" title=" " alt="" coords="2169,3311,2375,3740"/>
+<area shape="rect" id="node27" href="$d5/d3b/classVToolNormal.html" title="The VToolNormal class tool for creation point on normal. Normal begin from first point of line." alt="" coords="2399,3369,2569,3681"/>
+<area shape="rect" id="node28" href="$db/d3d/classVToolShoulderPoint.html" title="The VToolShoulderPoint class tool for creation of point Length to Line. This tool for special situati..." alt="" coords="2593,3333,2769,3718"/>
 </map>

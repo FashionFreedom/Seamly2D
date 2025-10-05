@@ -6,22 +6,12 @@
 <!-- Title: src/libs/xerces&#45;c/macx/include/xercesc/validators/DTD/DTDScanner.hpp Pages: 1 -->
 <svg width="294pt" height="115pt"
  viewBox="0.00 0.00 293.50 115.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
-<style type="text/css"><![CDATA[
-.node, .edge {opacity: 0.7;}
-.node.selected, .edge.selected {opacity: 1;}
-.edge:hover path { stroke: red; }
-.edge:hover polygon { stroke: red; fill: red; }
-]]></style>
-<script type="application/ecmascript" xlink:href="../../svg.min.js"/>
-<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 111)">
 <title>src/libs/xerces&#45;c/macx/include/xercesc/validators/DTD/DTDScanner.hpp</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="214.5,-107 68.5,-107 68.5,-66 214.5,-66 214.5,-107"/>
 <text text-anchor="start" x="76.5" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/macx</text>
 <text text-anchor="start" x="76.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/validators</text>
@@ -30,9 +20,9 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:title=" ">
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="131,-30 0,-30 0,0 131,0 131,-30"/>
 <text text-anchor="start" x="8" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/validators</text>
 <text text-anchor="middle" x="65.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">/DTD/DTDGrammar.hpp</text>
@@ -40,18 +30,15 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M119.92,-65.77C110.09,-56.78 98.44,-46.12 88.44,-36.98"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="90.59,-34.2 80.85,-30.04 85.87,-39.37 90.59,-34.2"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:title=" ">
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="285.5,-30 149.5,-30 149.5,0 285.5,0 285.5,-30"/>
 <text text-anchor="start" x="157.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/validators</text>
 <text text-anchor="middle" x="217.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">/DTD/DTDEntityDecl.hpp</text>
@@ -59,28 +46,10 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M163.08,-65.77C172.91,-56.78 184.56,-46.12 194.56,-36.98"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="197.13,-39.37 202.15,-30.04 192.41,-34.2 197.13,-39.37"/>
-</a>
 </g>
 </g>
-</g>
-</svg>
-</svg>
-
-<style type='text/css'>
-<![CDATA[
-[data-mouse-over-selected='false'] { opacity: 0.7; }
-[data-mouse-over-selected='true']  { opacity: 1.0; }
-]]>
-</style>
-<script type="application/ecmascript"><![CDATA[
-document.addEventListener('DOMContentLoaded', (event) => {
-  highlightEdges();
-  highlightAdjacentNodes();
-});
-]]></script>
 </svg>

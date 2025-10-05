@@ -6,22 +6,12 @@
 <!-- Title: src/test/Seamly2DTest/tst_misc.h Pages: 1 -->
 <svg width="282pt" height="104pt"
  viewBox="0.00 0.00 281.50 104.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
-<style type="text/css"><![CDATA[
-.node, .edge {opacity: 0.7;}
-.node.selected, .edge.selected {opacity: 1;}
-.edge:hover path { stroke: red; }
-.edge:hover polygon { stroke: red; fill: red; }
-]]></style>
-<script type="application/ecmascript" xlink:href="../../svg.min.js"/>
-<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 100)">
 <title>src/test/Seamly2DTest/tst_misc.h</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="200.5,-96 75.5,-96 75.5,-66 200.5,-66 200.5,-96"/>
 <text text-anchor="start" x="83.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">src/test/Seamly2DTest</text>
 <text text-anchor="middle" x="138" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">/tst_misc.h</text>
@@ -29,9 +19,9 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="../../df/dc8/Seamly2DTest_2qttestmainlambda_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="../../df/dc8/Seamly2DTest_2qttestmainlambda_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="130,-30 0,-30 0,0 130,0 130,-30"/>
 <text text-anchor="start" x="8" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">src/test/Seamly2DTest</text>
 <text text-anchor="middle" x="65" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">/qttestmainlambda.cpp</text>
@@ -39,18 +29,15 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M114.28,-59.2C103.44,-49.7 90.88,-38.69 81.16,-30.16"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="111.97,-61.84 121.8,-65.8 116.59,-56.57 111.97,-61.84"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="../../d7/d29/tst__misc_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="../../d7/d29/tst__misc_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="273.5,-30 148.5,-30 148.5,0 273.5,0 273.5,-30"/>
 <text text-anchor="start" x="156.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">src/test/Seamly2DTest</text>
 <text text-anchor="middle" x="211" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">/tst_misc.cpp</text>
@@ -58,28 +45,10 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M161.72,-59.2C172.56,-49.7 185.12,-38.69 194.84,-30.16"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="159.41,-56.57 154.2,-65.8 164.03,-61.84 159.41,-56.57"/>
-</a>
 </g>
 </g>
-</g>
-</svg>
-</svg>
-
-<style type='text/css'>
-<![CDATA[
-[data-mouse-over-selected='false'] { opacity: 0.7; }
-[data-mouse-over-selected='true']  { opacity: 1.0; }
-]]>
-</style>
-<script type="application/ecmascript"><![CDATA[
-document.addEventListener('DOMContentLoaded', (event) => {
-  highlightEdges();
-  highlightAdjacentNodes();
-});
-]]></script>
 </svg>

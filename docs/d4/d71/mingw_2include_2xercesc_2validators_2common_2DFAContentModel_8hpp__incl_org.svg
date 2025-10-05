@@ -9,9 +9,9 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 122)">
 <title>src/libs/xerces&#45;c/mingw/include/xercesc/validators/common/DFAContentModel.hpp</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="417.5,-118 244.5,-118 244.5,-77 417.5,-77 417.5,-118"/>
 <text text-anchor="start" x="252.5" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/mingw</text>
 <text text-anchor="start" x="252.5" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/validators</text>
@@ -20,27 +20,24 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:title=" ">
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="152,-30 0,-30 0,-11 152,-11 152,-30"/>
 <text text-anchor="middle" x="76" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/util/XercesDefs.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M264.67,-76.99C217.15,-63.02 154.79,-44.67 115.04,-32.98"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="115.78,-29.55 105.2,-30.09 113.81,-36.27 115.78,-29.55"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:title=" ">
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="316,-35.5 170,-35.5 170,-5.5 316,-5.5 316,-35.5"/>
 <text text-anchor="start" x="178" y="-23.5" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/util/ArrayIndexOut</text>
 <text text-anchor="middle" x="243" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">OfBoundsException.hpp</text>
@@ -48,18 +45,15 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M307.88,-76.79C295.43,-66.19 280.08,-53.1 267.44,-42.33"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="269.46,-39.45 259.57,-35.63 264.92,-44.78 269.46,-39.45"/>
-</a>
-</g>
 </g>
 <!-- Node4 -->
-<g id="Node000004" class="node">
+<g id="node4" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:title=" ">
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="506,-35.5 334,-35.5 334,-5.5 506,-5.5 506,-35.5"/>
 <text text-anchor="start" x="342" y="-23.5" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/framework/XMLContent</text>
 <text text-anchor="middle" x="420" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">Model.hpp</text>
@@ -67,18 +61,15 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge3_Node000001_Node000004" class="edge">
+<g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M354.38,-76.79C366.97,-66.19 382.5,-53.1 395.29,-42.33"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="397.85,-44.75 403.24,-35.63 393.33,-39.39 397.85,-44.75"/>
-</a>
-</g>
 </g>
 <!-- Node5 -->
-<g id="Node000005" class="node">
+<g id="node5" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:title=" ">
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="700,-41 524,-41 524,0 700,0 700,-41"/>
 <text text-anchor="start" x="532" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/validators</text>
 <text text-anchor="start" x="532" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">/common/ContentLeafNameType</text>
@@ -87,13 +78,10 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
-<g id="edge4_Node000001_Node000005" class="edge">
+<g id="edge4" class="edge">
 <title>Node1&#45;&gt;Node5</title>
-<g id="a_edge4_Node000001_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M404.1,-76.99C442.32,-66.79 489.27,-54.26 528.88,-43.68"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="530.02,-47 538.78,-41.04 528.22,-40.24 530.02,-47"/>
-</a>
-</g>
 </g>
 </g>
 </svg>

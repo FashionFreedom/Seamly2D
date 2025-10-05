@@ -6,22 +6,12 @@
 <!-- Title: src/libs/xerces&#45;c/mingw/include/xercesc/util/StringPool.hpp Pages: 1 -->
 <svg width="350pt" height="115pt"
  viewBox="0.00 0.00 350.00 115.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
-<style type="text/css"><![CDATA[
-.node, .edge {opacity: 0.7;}
-.node.selected, .edge.selected {opacity: 1;}
-.edge:hover path { stroke: red; }
-.edge:hover polygon { stroke: red; fill: red; }
-]]></style>
-<script type="application/ecmascript" xlink:href="../../svg.min.js"/>
-<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 111)">
 <title>src/libs/xerces&#45;c/mingw/include/xercesc/util/StringPool.hpp</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="226.5,-107 95.5,-107 95.5,-66 226.5,-66 226.5,-107"/>
 <text text-anchor="start" x="103.5" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/mingw</text>
 <text text-anchor="start" x="103.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/util</text>
@@ -30,9 +20,9 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:title=" ">
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="142,-30 0,-30 0,0 142,0 142,-30"/>
 <text text-anchor="start" x="8" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/util/RefHashTable</text>
 <text text-anchor="middle" x="71" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Of.hpp</text>
@@ -40,46 +30,25 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M135.45,-65.77C123.46,-56.51 109.18,-45.49 97.12,-36.17"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="99.23,-33.38 89.18,-30.04 94.95,-38.92 99.23,-33.38"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:title=" ">
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="342,-24.5 160,-24.5 160,-5.5 342,-5.5 342,-24.5"/>
 <text text-anchor="middle" x="251" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/internal/XSerializable.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M186.55,-65.77C200.87,-54.71 218.45,-41.13 231.63,-30.96"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="233.8,-33.7 239.58,-24.82 229.52,-28.16 233.8,-33.7"/>
-</a>
 </g>
 </g>
-</g>
-</svg>
-</svg>
-
-<style type='text/css'>
-<![CDATA[
-[data-mouse-over-selected='false'] { opacity: 0.7; }
-[data-mouse-over-selected='true']  { opacity: 1.0; }
-]]>
-</style>
-<script type="application/ecmascript"><![CDATA[
-document.addEventListener('DOMContentLoaded', (event) => {
-  highlightEdges();
-  highlightAdjacentNodes();
-});
-]]></script>
 </svg>

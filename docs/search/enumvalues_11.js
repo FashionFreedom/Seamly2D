@@ -71,6 +71,6 @@ var searchData=
   ['roll44in_68',['Roll44in',['../d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078aa6cc2c6cd06863094faa905743911aaa',1,'def.h']]],
   ['rootelemnotlikedoctype_69',['RootElemNotLikeDocType',['../d5/dc5/classXMLValid.html#ac30e7f5d9612c52f5f1208c83f090c86a3befd122c41e19bcd10417edc1f24d0f',1,'XMLValid']]],
   ['rotate_70',['Rotate',['../da/d7d/classVPieceItem.html#a3e439ca880d8bddb9cff29d04dbc5367a8d2de5368588552fbae54044ac5c7b3d',1,'VPieceItem']]],
-  ['rotation_71',['rotation',['../dd/d4a/vlayoutdef_8h.html#af1e732f0ac9c7478f79af187b99e503aaf1a42bd417390fc63b030a519624607a',1,'Rotation:&#160;vlayoutdef.h'],['../d4/da4/def_8h.html#ab8460ab56e3e92e57d3ed3b717492395af1a42bd417390fc63b030a519624607a',1,'Rotation:&#160;def.h']]],
+  ['rotation_71',['Rotation',['../dd/d4a/vlayoutdef_8h.html#af1e732f0ac9c7478f79af187b99e503aaf1a42bd417390fc63b030a519624607a',1,'Rotation():&#160;vlayoutdef.h'],['../d4/da4/def_8h.html#ab8460ab56e3e92e57d3ed3b717492395af1a42bd417390fc63b030a519624607a',1,'Rotation():&#160;def.h']]],
   ['rotationmovelabel_72',['RotationMoveLabel',['../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6aafec0a707b911fa3d4a057b499b7856c',1,'vundocommand.h']]]
 ];

@@ -9,49 +9,43 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>Graphical Class Hierarchy</title>
 <!-- Node0 -->
-<g id="Node000000" class="node">
+<g id="node1" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="72,-19 0,-19 0,0 72,0 72,-19"/>
 <text text-anchor="middle" x="36" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QGroupBox</text>
 </a>
 </g>
 </g>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node2" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:href="d1/d51/classVPE_1_1VPropertyFormWidget.html" target="_top" xlink:title="Class that displays the sub properties of a property using a form layout.">
+<g id="a_node2"><a xlink:href="d1/d51/classVPE_1_1VPropertyFormWidget.html" target="_top" xlink:title="Class that displays the sub properties of a property using a form layout.">
 <polygon fill="white" stroke="#666666" points="257,-19 108,-19 108,0 257,0 257,-19"/>
 <text text-anchor="middle" x="182.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VPropertyFormWidget</text>
 </a>
 </g>
 </g>
 <!-- Node0&#45;&gt;Node1 -->
-<g id="edge987_Node000000_Node000001" class="edge">
+<g id="edge1" class="edge">
 <title>Node0&#45;&gt;Node1</title>
-<g id="a_edge987_Node000000_Node000001"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M82.58,-9.5C90.61,-9.5 99.16,-9.5 107.74,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="82.35,-6 72.35,-9.5 82.35,-13 82.35,-6"/>
-</a>
-</g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node3" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="d1/db8/classVPE_1_1VPropertyFormView.html" target="_top" xlink:title="This class populates a form layout with the properties in a model.">
+<g id="a_node3"><a xlink:href="d1/db8/classVPE_1_1VPropertyFormView.html" target="_top" xlink:title="This class populates a form layout with the properties in a model.">
 <polygon fill="white" stroke="#666666" points="431,-19 293,-19 293,0 431,0 431,-19"/>
 <text text-anchor="middle" x="362" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">VPE::VPropertyFormView</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge988_Node000001_Node000002" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge988_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M267.27,-9.5C275.85,-9.5 284.5,-9.5 292.89,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="267.23,-6 257.23,-9.5 267.23,-13 267.23,-6"/>
-</a>
-</g>
 </g>
 </g>
 </svg>

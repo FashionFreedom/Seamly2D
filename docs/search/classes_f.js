@@ -26,7 +26,7 @@ var searchData=
   ['preferencesgraphicsviewpage_23',['PreferencesGraphicsViewPage',['../d9/d0d/classPreferencesGraphicsViewPage.html',1,'']]],
   ['preferencespathpage_24',['PreferencesPathPage',['../d8/db8/classPreferencesPathPage.html',1,'']]],
   ['preferencespatternpage_25',['PreferencesPatternPage',['../de/dcf/classPreferencesPatternPage.html',1,'']]],
-  ['prefmapelem_26',['prefmapelem',['../de/d10/structNamespaceScope_1_1PrefMapElem.html',1,'NamespaceScope::PrefMapElem'],['../db/dab/structPrefMapElem.html',1,'PrefMapElem']]],
+  ['prefmapelem_26',['PrefMapElem',['../de/d10/structNamespaceScope_1_1PrefMapElem.html',1,'NamespaceScope::PrefMapElem'],['../db/dab/structPrefMapElem.html',1,'PrefMapElem']]],
   ['psviattribute_27',['PSVIAttribute',['../d8/d99/classPSVIAttribute.html',1,'']]],
   ['psviattributelist_28',['PSVIAttributeList',['../da/d25/classPSVIAttributeList.html',1,'']]],
   ['psviattributestorage_29',['PSVIAttributeStorage',['../d6/d40/classPSVIAttributeStorage.html',1,'']]],

@@ -9,18 +9,18 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 89)">
 <title>src/app/seamlyme/version.h</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="334.5,-85 179.5,-85 179.5,-66 334.5,-66 334.5,-85"/>
 <text text-anchor="middle" x="257" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamlyme/version.h</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="../../d8/dd0/application__me_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="../../d8/dd0/application__me_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="164,-30 0,-30 0,0 164,0 164,-30"/>
 <text text-anchor="start" x="8" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamlyme/application</text>
 <text text-anchor="middle" x="82" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_me.cpp</text>
@@ -28,18 +28,15 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M221.72,-62.71C193.52,-53.28 153.92,-40.04 124.07,-30.06"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="220.96,-66.14 231.55,-65.99 223.18,-59.5 220.96,-66.14"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="../../d7/d7c/dialogaboutseamlyme_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="../../d7/d7c/dialogaboutseamlyme_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="331.5,-30 182.5,-30 182.5,0 331.5,0 331.5,-30"/>
 <text text-anchor="start" x="190.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamlyme/dialogs</text>
 <text text-anchor="middle" x="257" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">/dialogaboutseamlyme.cpp</text>
@@ -47,31 +44,25 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M257,-55.65C257,-47.36 257,-37.78 257,-30.11"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="253.5,-55.87 257,-65.87 260.5,-55.87 253.5,-55.87"/>
-</a>
-</g>
 </g>
 <!-- Node4 -->
-<g id="Node000004" class="node">
+<g id="node4" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="../../dc/de1/tmainwindow_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="../../dc/de1/tmainwindow_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="544.5,-24.5 349.5,-24.5 349.5,-5.5 544.5,-5.5 544.5,-24.5"/>
 <text text-anchor="middle" x="447" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamlyme/tmainwindow.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge3_Node000001_Node000004" class="edge">
+<g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M294.47,-62.96C331.22,-51.65 386.4,-34.66 419.34,-24.52"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="293.15,-59.71 284.63,-65.99 295.21,-66.4 293.15,-59.71"/>
-</a>
-</g>
 </g>
 </g>
 </svg>

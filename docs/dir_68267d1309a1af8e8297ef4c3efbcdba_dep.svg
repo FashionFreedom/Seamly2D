@@ -6,16 +6,6 @@
 <!-- Title: src Pages: 1 -->
 <svg width="178pt" height="114pt"
  viewBox="0.00 0.00 178.00 114.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
-<style type="text/css"><![CDATA[
-.node, .edge {opacity: 0.7;}
-.node.selected, .edge.selected {opacity: 1;}
-.edge:hover path { stroke: red; }
-.edge:hover polygon { stroke: red; fill: red; }
-]]></style>
-<script type="application/ecmascript" xlink:href="svg.min.js"/>
-<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 110)">
 <title>src</title>
 <g id="clust1" class="cluster">
@@ -51,11 +41,8 @@
 <!-- dir_5194e5fea318fda12687127c23f8aba1&#45;&gt;dir_87a455bccb09a92130c26a11a880c98a -->
 <g id="edge1" class="edge">
 <title>dir_5194e5fea318fda12687127c23f8aba1&#45;&gt;dir_87a455bccb09a92130c26a11a880c98a</title>
-<g id="a_edge1"><a xlink:href="dir_000000_000050.html" target="_top">
 <path fill="none" stroke="#63b8ff" d="M81.83,-70.75C80.34,-63.8 79.9,-53.85 80.52,-45.13"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="84.01,-45.47 81.87,-35.09 77.07,-44.53 84.01,-45.47"/>
-</a>
-</g>
 <g id="a_edge1&#45;headlabel"><a xlink:href="dir_000000_000050.html" target="_top" xlink:title="4">
 <text text-anchor="middle" x="86.34" y="-46.91" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#63b8ff">4</text>
 </a>
@@ -64,11 +51,8 @@
 <!-- dir_87a455bccb09a92130c26a11a880c98a&#45;&gt;dir_5194e5fea318fda12687127c23f8aba1 -->
 <g id="edge2" class="edge">
 <title>dir_87a455bccb09a92130c26a11a880c98a&#45;&gt;dir_5194e5fea318fda12687127c23f8aba1</title>
-<g id="a_edge2"><a xlink:href="dir_000050_000000.html" target="_top">
 <path fill="none" stroke="#63b8ff" d="M92.13,-35.09C93.64,-41.99 94.09,-51.93 93.49,-60.66"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="90,-60.38 92.17,-70.75 96.94,-61.29 90,-60.38"/>
-</a>
-</g>
 <g id="a_edge2&#45;headlabel"><a xlink:href="dir_000050_000000.html" target="_top" xlink:title="1">
 <text text-anchor="middle" x="87.65" y="-53.94" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#63b8ff">1</text>
 </a>
@@ -84,19 +68,4 @@
 </g>
 </g>
 </g>
-</svg>
-</svg>
-
-<style type='text/css'>
-<![CDATA[
-[data-mouse-over-selected='false'] { opacity: 0.7; }
-[data-mouse-over-selected='true']  { opacity: 1.0; }
-]]>
-</style>
-<script type="application/ecmascript"><![CDATA[
-document.addEventListener('DOMContentLoaded', (event) => {
-  highlightEdges();
-  highlightAdjacentNodes();
-});
-]]></script>
 </svg>

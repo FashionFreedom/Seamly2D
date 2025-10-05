@@ -9,9 +9,9 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 100)">
 <title>src/libs/xerces&#45;c/mingw/include/xercesc/dom/DOMLSSerializer.hpp</title>
 <!-- Node1 -->
-<g id="Node000001" class="node">
+<g id="node1" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="459,-96 235,-96 235,-66 459,-66 459,-96"/>
 <text text-anchor="start" x="243" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/mingw</text>
 <text text-anchor="middle" x="347" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/DOMLSSerializer.hpp</text>
@@ -19,27 +19,24 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="Node000002" class="node">
+<g id="node2" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:title=" ">
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="152,-24.5 0,-24.5 0,-5.5 152,-5.5 152,-24.5"/>
 <text text-anchor="middle" x="76" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/dom/DOMNode.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1_Node000001_Node000002" class="edge">
+<g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M287.53,-65.95C237.7,-54.19 167.59,-37.63 121.97,-26.86"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="122.6,-23.41 112.07,-24.52 120.99,-30.22 122.6,-23.41"/>
-</a>
-</g>
 </g>
 <!-- Node3 -->
-<g id="Node000003" class="node">
+<g id="node3" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:title=" ">
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="332,-30 170,-30 170,0 332,0 332,-30"/>
 <text text-anchor="start" x="178" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/dom/DOMLSSerializer</text>
 <text text-anchor="middle" x="251" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Filter.hpp</text>
@@ -47,49 +44,40 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
+<g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M325.69,-65.8C312.52,-57.01 295.41,-45.61 280.89,-35.93"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="282.51,-32.8 272.25,-30.16 278.63,-38.62 282.51,-32.8"/>
-</a>
-</g>
 </g>
 <!-- Node4 -->
-<g id="Node000004" class="node">
+<g id="node4" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:title=" ">
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="537.5,-24.5 350.5,-24.5 350.5,-5.5 537.5,-5.5 537.5,-24.5"/>
 <text text-anchor="middle" x="444" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/dom/DOMErrorHandler.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge3_Node000001_Node000004" class="edge">
+<g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M368.53,-65.8C384.48,-55.27 406.15,-40.97 422.18,-30.4"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="424.46,-33.09 430.88,-24.66 420.6,-27.24 424.46,-33.09"/>
-</a>
-</g>
 </g>
 <!-- Node5 -->
-<g id="Node000005" class="node">
+<g id="node5" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:title=" ">
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="746.5,-24.5 555.5,-24.5 555.5,-5.5 746.5,-5.5 746.5,-24.5"/>
 <text text-anchor="middle" x="651" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">xercesc/dom/DOMConfiguration.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
-<g id="edge4_Node000001_Node000005" class="edge">
+<g id="edge4" class="edge">
 <title>Node1&#45;&gt;Node5</title>
-<g id="a_edge4_Node000001_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M413.71,-65.95C470.08,-54.09 549.58,-37.35 600.71,-26.59"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="601.48,-30 610.54,-24.52 600.04,-23.15 601.48,-30"/>
-</a>
-</g>
 </g>
 </g>
 </svg>
