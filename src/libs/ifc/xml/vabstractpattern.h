@@ -477,6 +477,7 @@ signals:
      * @brief patternChanged emit if we have unsaved change.
      */
     void           patternChanged(bool saved);
+    void           patternClosed(); ///@brief emit patternClosed to clear variable table.
     void           updatePatternLabel();
     /**
      * @brief ShowTool highlight tool.

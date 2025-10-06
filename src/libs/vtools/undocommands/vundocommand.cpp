@@ -80,6 +80,7 @@ void VUndoCommand::RedoFullParsing()
     if (redoFlag)
     {
         emit NeedFullParsing();
+        emit doc->FullUpdateFromFile();
     }
     else
     {
