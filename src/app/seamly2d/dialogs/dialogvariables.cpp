@@ -130,6 +130,11 @@ DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *paren
     connect(this->doc, &VPattern::FullUpdateFromFile, this, &DialogVariables::FullUpdateFromFile);
     connect(this->doc, &VPattern::patternClosed,      this, [this](){ close(); });
 
+    connect(this->doc, &VPattern::patternClosed, [this]()
+    {
+        close();
+    });
+
     ui->tabWidget->setCurrentIndex(0);
     ui->name_LineEdit->setValidator(new QRegularExpressionValidator(QRegularExpression(
                                                                         QLatin1String("^$|")+NameRegExp()), this));
