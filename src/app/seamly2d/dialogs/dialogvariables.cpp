@@ -119,7 +119,6 @@ DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *paren
     fillArcsRadiuses();
     fillCurveAngles();
 
-
     tableList.append(QSharedPointer<QTableWidget>(ui->variables_TableWidget));
     tableList.append(QSharedPointer<QTableWidget>(ui->lineLengths_TableWidget));
     tableList.append(QSharedPointer<QTableWidget>(ui->lineAngles_TableWidget));
@@ -129,14 +128,10 @@ DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *paren
     tableList.append(QSharedPointer<QTableWidget>(ui->arcRadiuses_TableWidget));
 
     connect(this->doc, &VPattern::FullUpdateFromFile, this, &DialogVariables::FullUpdateFromFile);
-
-    connect(this->doc, &VPattern::patternClosed, [this]()
-    {
-        close();
-    });
+    connect(this->doc, &VPattern::patternClosed,      this, [this](){ close(); });
 
     ui->tabWidget->setCurrentIndex(0);
-    ui->name_LineEdit->setValidator( new QRegularExpressionValidator(QRegularExpression(
+    ui->name_LineEdit->setValidator(new QRegularExpressionValidator(QRegularExpression(
                                                                         QLatin1String("^$|")+NameRegExp()), this));
 
     connect(ui->variables_TableWidget, &QTableWidget::itemSelectionChanged, this,
