@@ -179,7 +179,9 @@ public:
     ImageItem *                    getBackgroundImage(qint32 id);
     void                           addBackgroundImage(qint32 id, ImageItem *item);
     void                           removeBackgroundImage(qint32 id);
+
     void                           clearBackgroundImageMap();
+    void                           clearHistory();
 
     QMap<GHeights, bool>           GetGradationHeights() const;
     void                           SetGradationHeights(const QMap<GHeights, bool> &options);
@@ -504,39 +506,23 @@ public slots:
     void           selectedPiece(quint32 id);
 
 protected:
-    /** @brief activeBlockName name current pattern peace. */
-    QString        m_activeDraftBlock;
-
+    QString        m_activeDraftBlock; /// @brief activeBlockName name current pattern peace.
     QString        m_DefaultLineColor;
     qreal          m_DefaultLineWeight;
     QString        m_DefaultLineType;
-
     QString        defaultBasePoint;
-
     QString        lastSavedExportFormat;
+    quint32        cursor; /// @brief cursor cursor keep id tool after which we will add new tool in file.
 
-    /** @brief cursor cursor keep id tool after which we will add new tool in file. */
-    quint32        cursor;
+    QVector<VDataTool*>       toolsOnRemove;
+    QVector<VToolRecord>      m_history;     /// @brief history history records.
+    QStringList               patternPieces; /// @brief patternPieces list of patern pieces names for combobox.
+    QMap<qint32, ImageItem *> m_imageMap{};  /// @brief m_imageMap stores the image items and their id.
+    mutable bool              modified;      /// @brief modified keep state of the document for cases that do not cover QUndoStack.
 
-    QVector<VDataTool*> toolsOnRemove;
-
-    /** @brief history history records. */
-    QVector<VToolRecord> history;
-
-    /** @brief patternPieces list of patern pieces names for combobox*/
-    QStringList    patternPieces;
-
-    /** @brief m_imageMap stores the image items and their id*/
-    QMap<qint32, ImageItem *>         m_imageMap{};
-
-    /** @brief modified keep state of the document for cases that do not cover QUndoStack*/
-    mutable bool   modified;
-
-    /** @brief tools list with pointer on tools. */
-    static QHash<quint32, VDataTool*> tools;
-    /** @brief patternLabelLines list to speed up reading a template by many pieces. */
-    static QVector<VLabelTemplateLine> patternLabelLines;
-    static bool patternLabelWasChanged;
+    static QHash<quint32, VDataTool*>  tools;             /// @brief tools list with pointer on tools.
+    static QVector<VLabelTemplateLine> patternLabelLines; /// @brief patternLabelLines list to speed up reading a template by many pieces.
+    static bool                        patternLabelWasChanged;
 
     static void       ToolExists(const quint32 &id);
     static VPiecePath ParsePathNodes(const QDomElement &domElement);

@@ -2374,7 +2374,10 @@ void MainWindow::initializeStatusToolBar()
 
     }
 
-    mouseCoordinates = new MouseCoordinates(qApp->patternUnit());
+    if (mouseCoordinates.isNull())
+    {
+        mouseCoordinates = new MouseCoordinates(qApp->patternUnit());
+    }
     ui->statusBar->addPermanentWidget((mouseCoordinates));
 
     infoToolButton = new QToolButton();
@@ -4410,6 +4413,7 @@ void MainWindow::Clear()
     CleanLayout();
     pieceList.clear(); // don't move to CleanLayout()
     doc->clearBackgroundImageMap();
+    doc->clearHistory();
     qApp->getUndoStack()->clear();
     toolProperties->clearPropertyBrowser();
     toolProperties->itemClicked(nullptr);
@@ -4418,11 +4422,19 @@ void MainWindow::Clear()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::FileClosedCorrect()
 {
-    emit doc->patternClosed();
-    
+    // Close Variables Table and History if open.
+    if (dialogTable)
+    {
+        dialogTable->close();
+    }
+    if (historyDialog)
+    {
+        historyDialog->close();
+    }
+
     WriteSettings();
 
-    //File was closed correct.
+    // File was closed correctly.
     QStringList restoreFiles = qApp->Seamly2DSettings()->GetRestoreFileList();
     restoreFiles.removeAll(qApp->getFilePath());
     qApp->Seamly2DSettings()->SetRestoreFileList(restoreFiles);
@@ -4813,8 +4825,11 @@ void MainWindow::New()
 
         addDraftBlock(draftBlockName);
 
-        mouseCoordinates = new MouseCoordinates(qApp->patternUnit());
-        ui->statusBar->addPermanentWidget((mouseCoordinates));
+        if (mouseCoordinates == nullptr)
+        {
+            mouseCoordinates = new MouseCoordinates(qApp->patternUnit());
+            ui->statusBar->addPermanentWidget((mouseCoordinates));
+        }
 
         m_curFileFormatVersion = VPatternConverter::PatternMaxVer;
         m_curFileFormatVersionStr = VPatternConverter::PatternMaxVerStr;
