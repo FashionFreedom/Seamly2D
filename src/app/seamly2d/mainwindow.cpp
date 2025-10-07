@@ -4418,6 +4418,8 @@ void MainWindow::Clear()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::FileClosedCorrect()
 {
+    emit doc->patternClosed();
+    
     WriteSettings();
 
     //File was closed correct.
