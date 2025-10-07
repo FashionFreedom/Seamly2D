@@ -112,6 +112,7 @@ var classVAbstractPattern =
     [ "ParsePieceNodes", "d8/dba/classVAbstractPattern.html#ab1dd7a2471e7300913006196b7ff5859", null ],
     [ "ParseSANode", "d8/dba/classVAbstractPattern.html#aac2f13e315763d8f2615f9238405facf", null ],
     [ "patternChanged", "d8/dba/classVAbstractPattern.html#a7d938cb0568dce72c2c34769b96ef1b2", null ],
+    [ "patternClosed", "d8/dba/classVAbstractPattern.html#aa8ca1faafcb949aaef893ba0ab6266d4", null ],
     [ "patternHasGroups", "d8/dba/classVAbstractPattern.html#afe68dbf09a046fee9737735915efd4ef", null ],
     [ "patternParsed", "d8/dba/classVAbstractPattern.html#a5dbc72bd028e5b2bc0a2406e6f9ceba0", null ],
     [ "removeBackgroundImage", "d8/dba/classVAbstractPattern.html#adc2a872dfb701fdb75bb341a357651f1", null ],
