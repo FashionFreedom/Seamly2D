@@ -88,12 +88,12 @@ void VTableSearch::find(const QString &text)
         {
             for (QTableWidgetItem *item : m_searchList)
             {
-                item->setBackground(QColor("#FFDEDE"));
+                item->setBackground(QColor("#FAFAC8"));
             }
 
             m_searchIndex = 0;
             QTableWidgetItem *item = m_searchList.at(m_searchIndex);
-            item->setBackground(QColor("#FFBABA"));
+            item->setBackground(QColor("#FAFA5A"));
             m_table->scrollToItem(item);
 
             emit hasResult(true);
@@ -185,7 +185,7 @@ void VTableSearch::refreshList(const QString &text)
 
     for (QTableWidgetItem *item : m_searchList)
     {
-        item->setBackground(QColor("#FFDEDE"));
+        item->setBackground(QColor("#FAFAC8"));
     }
 
     if (!m_searchList.isEmpty())
@@ -200,7 +200,7 @@ void VTableSearch::refreshList(const QString &text)
         }
 
         QTableWidgetItem *item = m_searchList.at(m_searchIndex);
-        item->setBackground(QColor("#FFBABA"));
+        item->setBackground(QColor("#FAFA5A"));
         m_table->scrollToItem(item);
 
         emit hasResult(true);
@@ -266,10 +266,10 @@ void VTableSearch::showNext(int newIndex)
     if (!m_searchList.isEmpty())
     {
         QTableWidgetItem *item = m_searchList.at(m_searchIndex);
-        item->setBackground(QColor("#FFDEDE"));
+        item->setBackground(QColor("#FAFAC8"));
 
         item = m_searchList.at(newIndex);
-        item->setBackground(QColor("#FFBABA"));
+        item->setBackground(QColor("#FAFA5A"));
         m_table->scrollToItem(item);
         m_searchIndex = newIndex;
     }
