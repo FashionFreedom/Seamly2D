@@ -1,5 +1,6 @@
 var NAVTREEINDEX158 =
 {
+"da/dd4/mingw_2include_2xercesc_2validators_2DTD_2DTDAttDefList_8hpp_source.html":[4,0,0,1,15,1,0,0,7,2,2],
 "da/dd5/msvc_2include_2xercesc_2dom_2impl_2DOMDeepNodeListImpl_8hpp.html":[4,0,0,1,15,2,0,0,0,0,9],
 "da/dd5/msvc_2include_2xercesc_2dom_2impl_2DOMDeepNodeListImpl_8hpp_source.html":[4,0,0,1,15,2,0,0,0,0,9],
 "da/dd6/libs_2vtest_2stable_8h.html":[4,0,0,1,12,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX158 =
 "da/dfb/classPatternPieceTool.html#a4abbd77fd2a92afbcaf66fea0d1f1638":[3,0,384,23],
 "da/dfb/classPatternPieceTool.html#a4dcfcc921c7895895d63ef6a17a7719a":[3,0,384,106],
 "da/dfb/classPatternPieceTool.html#a534a9a05cae77583dc848038f471cd6c":[3,0,384,1],
-"da/dfb/classPatternPieceTool.html#a541653fb198efcf2f2ee44b4c82541b1":[3,0,384,59],
-"da/dfb/classPatternPieceTool.html#a55e0c2668e37e52366370cdb3e36fc88":[3,0,384,92]
+"da/dfb/classPatternPieceTool.html#a541653fb198efcf2f2ee44b4c82541b1":[3,0,384,59]
 };

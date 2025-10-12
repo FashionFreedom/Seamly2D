@@ -1,5 +1,6 @@
 var NAVTREEINDEX157 =
 {
+"da/dc2/classXSObject.html#ad2194e8a34474e6e5c9c0ed6ba7e5fec":[3,0,913,24],
 "da/dc2/classXSObject.html#ad2194e8a34474e6e5c9c0ed6ba7e5fec":[3,0,913,25],
 "da/dc2/classXSObject.html#ad2194e8a34474e6e5c9c0ed6ba7e5fec":[3,0,913,26],
 "da/dc2/classXSObject.html#ad940e15b262c6a626f0876f348ed7137":[3,0,913,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX157 =
 "da/dd1/mingw_2include_2xercesc_2parsers_2SAX2XMLReaderImpl_8hpp_source.html":[4,0,0,1,15,1,0,0,3,3],
 "da/dd2/mingw_2include_2xercesc_2util_2KeyRefPair_8hpp.html":[4,0,0,1,15,1,0,0,6,31],
 "da/dd2/mingw_2include_2xercesc_2util_2KeyRefPair_8hpp_source.html":[4,0,0,1,15,1,0,0,6,31],
-"da/dd4/mingw_2include_2xercesc_2validators_2DTD_2DTDAttDefList_8hpp.html":[4,0,0,1,15,1,0,0,7,2,2],
-"da/dd4/mingw_2include_2xercesc_2validators_2DTD_2DTDAttDefList_8hpp_source.html":[4,0,0,1,15,1,0,0,7,2,2]
+"da/dd4/mingw_2include_2xercesc_2validators_2DTD_2DTDAttDefList_8hpp.html":[4,0,0,1,15,1,0,0,7,2,2]
 };

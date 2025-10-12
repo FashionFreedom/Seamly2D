@@ -1,5 +1,6 @@
 var NAVTREEINDEX235 =
 {
+"df/d35/classVAbstractPieceData.html#af09aa6c437df3596baf27fa047463c4b":[3,0,563,9],
 "df/d35/classVAbstractPieceData.html#afb5c879eedf71754c0178efea47bdae4":[3,0,563,10],
 "df/d35/vbestsquare_8h.html":[4,0,0,1,7,8],
 "df/d35/vbestsquare_8h_source.html":[4,0,0,1,7,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX235 =
 "df/d55/classXMLRecognizer.html#a62ff7dc3de49983a11791d8eeafd004c":[3,0,860,5],
 "df/d55/classXMLRecognizer.html#a93a80f9d10610eb4b92d75d41508a648":[3,0,860,30],
 "df/d55/classXMLRecognizer.html#a9d1812e3c70a415a3e8e4316e74e0f06":[3,0,860,7],
-"df/d55/classXMLRecognizer.html#a9d1812e3c70a415a3e8e4316e74e0f06":[3,0,860,10],
-"df/d55/classXMLRecognizer.html#a9d1812e3c70a415a3e8e4316e74e0f06":[3,0,860,4]
+"df/d55/classXMLRecognizer.html#a9d1812e3c70a415a3e8e4316e74e0f06":[3,0,860,10]
 };

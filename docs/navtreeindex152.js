@@ -1,5 +1,6 @@
 var NAVTREEINDEX152 =
 {
+"da/d79/classDOMEntityReferenceImpl.html#adc5feb0d531f6546a23287de391d889c":[3,0,171,80],
 "da/d79/classDOMEntityReferenceImpl.html#add342d40864dcfe36dddbc69ddaa2d8c":[3,0,171,101],
 "da/d79/classDOMEntityReferenceImpl.html#add342d40864dcfe36dddbc69ddaa2d8c":[3,0,171,99],
 "da/d79/classDOMEntityReferenceImpl.html#add342d40864dcfe36dddbc69ddaa2d8c":[3,0,171,100],
@@ -248,6 +249,5 @@ var NAVTREEINDEX152 =
 "da/d92/namespaceqmu.html#a530c023abef015ddf300e34470b7b4b7a6efe475581a0b58312bd2983d5c0f1e1":[2,0,20,50,2],
 "da/d92/namespaceqmu.html#a530c023abef015ddf300e34470b7b4b7a7445c66050c72d42713e6f3e1f26bda1":[2,0,20,50,23],
 "da/d92/namespaceqmu.html#a530c023abef015ddf300e34470b7b4b7a7829c9b0000187865c69bdc9b3abc652":[2,0,20,50,9],
-"da/d92/namespaceqmu.html#a530c023abef015ddf300e34470b7b4b7a797623a60fcdcd0e199f7164a352029e":[2,0,20,50,26],
-"da/d92/namespaceqmu.html#a530c023abef015ddf300e34470b7b4b7a83c0ffe096f5ba33c3665399fe1c4621":[2,0,20,50,10]
+"da/d92/namespaceqmu.html#a530c023abef015ddf300e34470b7b4b7a797623a60fcdcd0e199f7164a352029e":[2,0,20,50,26]
 };

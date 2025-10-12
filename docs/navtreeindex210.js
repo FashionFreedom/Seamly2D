@@ -1,5 +1,6 @@
 var NAVTREEINDEX210 =
 {
+"de/d0d/classXMLIBM1047Transcoder.html#affd3a164eb510386f4fb4ec260c93f93":[3,0,841,15],
 "de/d0d/classXMLIBM1047Transcoder.html#affd3a164eb510386f4fb4ec260c93f93":[3,0,841,16],
 "de/d0d/classXMLIBM1047Transcoder.html#affd3a164eb510386f4fb4ec260c93f93":[3,0,841,17],
 "de/d0e/classVisLine.html":[3,0,637],
@@ -248,6 +249,5 @@ var NAVTREEINDEX210 =
 "de/d0f/classVCommonSettings.html#ab00a3e21815de3cace571c03d3bf2a3f":[3,0,588,12],
 "de/d0f/classVCommonSettings.html#ab29b50aada377a4bb190eb885a52aeee":[3,0,588,217],
 "de/d0f/classVCommonSettings.html#ab3d8e61eeb3248b3a59b4adfd61bf55d":[3,0,588,294],
-"de/d0f/classVCommonSettings.html#ab4429433fee2b31d643a7df9cd751a4c":[3,0,588,83],
-"de/d0f/classVCommonSettings.html#ab50516c2a7720f04abf077a67eaedbac":[3,0,588,74]
+"de/d0f/classVCommonSettings.html#ab4429433fee2b31d643a7df9cd751a4c":[3,0,588,83]
 };
