@@ -280,14 +280,14 @@ void VPattern::setCurrentData()
             qCDebug(vXML, "Draftf block count %d", draftBlockCount());
 
             quint32 id = 0;
-            if (history.size() == 0)
+            if (m_history.size() == 0)
             {
                 qCDebug(vXML, "History is empty!");
                 return;
             }
-            for (qint32 i = 0; i < history.size(); ++i)
+            for (qint32 i = 0; i < m_history.size(); ++i)
             {
-                const VToolRecord tool = history.at(i);
+                const VToolRecord tool = m_history.at(i);
                 if (tool.getDraftBlockName() == m_activeDraftBlock)
                 {
                     id = tool.getId();
@@ -299,7 +299,7 @@ void VPattern::setCurrentData()
                 qCDebug(vXML, "Could not find record for this current draft block %s",
                         qUtf8Printable(m_activeDraftBlock));
 
-                const VToolRecord tool = history.at(history.size()-1);
+                const VToolRecord tool = m_history.at(m_history.size()-1);
                 id = tool.getId();
                 qCDebug(vXML, "Taking record with id %u from Draft block %s", id, qUtf8Printable(tool.getDraftBlockName()));
                 if (id == NULL_ID)
@@ -4110,7 +4110,7 @@ void VPattern::PrepareForParse(const Document &parse)
 
         tools.clear();
         cursor = 0;
-        history.clear();
+        clearHistory();
     }
     else if (parse == Document::LiteParse)
     {
@@ -4142,9 +4142,9 @@ QRectF VPattern::ActiveDrawBoundingRect() const
 
     QRectF rect;
 
-    for (qint32 i = 0; i< history.size(); ++i)
+    for (qint32 i = 0; i< m_history.size(); ++i)
     {
-        const VToolRecord tool = history.at(i);
+        const VToolRecord tool = m_history.at(i);
         if (tool.getDraftBlockName() == m_activeDraftBlock)
         {
             switch ( tool.getTypeTool() )

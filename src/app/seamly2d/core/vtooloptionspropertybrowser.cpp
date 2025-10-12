@@ -726,7 +726,7 @@ void VToolOptionsPropertyBrowser::addPropertyLineWeight(Tool *tool, const QStrin
     if (index == -1)
     {
         index = 6;
-        //qWarning() << "Can't find line weight" << tool->getLineWeight() <<  "in list";
+        qWarning() << "Can't find line weight" << tool->getLineWeight() <<  "in list";
     }
     lineWeightProperty->setValue(index);
     addProperty(lineWeightProperty, AttrLineWeight);
