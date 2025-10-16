@@ -101,6 +101,9 @@ InternalPathDialog::InternalPathDialog(const VContainer *data, quint32 toolId, Q
     initializeSeamAllowanceTab();
     initializeNotchesTab();
 
+    //remove linetype "No Pen" item
+    ui->lineType_ComboBox->removeItem(ui->lineType_ComboBox->findData(LineTypeNone));
+
     flagName = true;//We have default name of piece.
     flagError = isValidPath();
     CheckState();
