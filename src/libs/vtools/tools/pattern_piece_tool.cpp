@@ -1560,6 +1560,7 @@ void PatternPieceTool::RefreshGeometry()
     {
         m_cutPath = piece.SeamAllowancePath(seamAllowancePoints);
         m_cutLine->setPath(m_cutPath);
+        m_pieceRect = m_cutLine->boundingRect();
 
         QPainterPath allowancePath = path;
         allowancePath.addPath(m_cutPath);
@@ -1575,11 +1576,10 @@ void PatternPieceTool::RefreshGeometry()
     {
         m_cutLine->setPath(QPainterPath());
         m_allowanceFill->setPath(QPainterPath());
+        m_pieceRect = path.boundingRect();
     }
 
     m_notches->setPath(piece.getNotchesPath(this->getData(), seamAllowancePoints));
-
-    m_pieceRect = path.boundingRect();
 
     updatePieceDetails();
 
