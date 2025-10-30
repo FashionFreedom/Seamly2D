@@ -879,7 +879,7 @@ $(document).ready(function(){initNavTree('d8/dd9/mainwindow_8cpp_source.html','.
 <div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>        {</div>
 <div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>            <span class="comment">// Try to load HiDPI versions of the cursors if available</span></div>
 <div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>            <span class="keyword">auto</span> cursorHidpiResource = QString(cursor).replace(<span class="stringliteral">&quot;.png&quot;</span>, <span class="stringliteral">&quot;@2x.png&quot;</span>);</div>
-<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>            <span class="keywordflow">if</span> (QFileInfo(cursorResource).exists())</div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>            <span class="keywordflow">if</span> (QFileInfo(cursorHidpiResource).exists())</div>
 <div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>            {</div>
 <div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>                cursorResource = cursorHidpiResource;</div>
 <div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>            }</div>
