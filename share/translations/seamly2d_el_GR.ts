@@ -7944,8 +7944,8 @@ Press enter to temporarily add it to the list.</source>
         <translation>Αριθμός:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction. Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
-        <translation>Επιλέξτε αντικείμενα κύριας διαδρομής δεξιόστροφα, χρησιμοποιήστε το &lt;b&gt;SHIFT&lt;/b&gt; για να αντιστρέψετε την κατεύθυνση της καμπύλης ή το &lt;b&gt;CTRL&lt;/b&gt; για να διατηρήσετε την κατεύθυνση της καμπύλης. Πατήστε το &lt;b&gt;ENTER&lt;/b&gt; για να ολοκληρώσετε τη δημιουργία κομματιών </translation>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Επιλέξτε αντικείμενα κύριας διαδρομής δεξιόστροφα, χρησιμοποιήστε το &lt;b&gt;SHIFT&lt;/b&gt; για να αντιστρέψετε την κατεύθυνση της καμπύλης ή το &lt;b&gt;CTRL&lt;/b&gt; για να διατηρήσετε την κατεύθυνση της καμπύλης.</translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
@@ -8170,6 +8170,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Length can&apos;t be less than length of 2 arrows</source>
         <translation>Το μήκος δεν μπορεί να είναι μικρότερο από το μήκος 2 βελών</translation>
+    </message>
+    <message>
+        <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
+        <translation>Πατήστε το &lt;b&gt;ENTER&lt;/b&gt; για να ολοκληρώσετε τη δημιουργία κομματιών.</translation>
     </message>
 </context>
 <context>
@@ -12431,6 +12435,11 @@ load in SeamlyME as usual.
     <message>
         <source>Validation error file %1</source>
         <translation>Αρχείο σφάλματος επικύρωσης %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -7925,8 +7925,8 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Zählen:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction. Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
-        <translation>Hauptpfad Objekte im Uhrzeigersinn auswählen, mit &lt;b&gt;SHIFT&lt;/b&gt; Kurvenrichtung umkehren,  oder &lt;b&gt;Strg&lt;/b&gt; um Kurvenrichtung beizubehalten. Mit &lt;b&gt;Enter&lt;/b&gt; Teilerstellung abschließen </translation>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Hauptpfad Objekte im Uhrzeigersinn auswählen, mit &lt;b&gt;SHIFT&lt;/b&gt; Kurvenrichtung umkehren,  oder &lt;b&gt;Strg&lt;/b&gt; um Kurvenrichtung beizubehalten.</translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
@@ -8151,6 +8151,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Length can&apos;t be less than length of 2 arrows</source>
         <translation>Die Länge darf nicht kürzer sein als die Länge von 2 Pfeilen</translation>
+    </message>
+    <message>
+        <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
+        <translation>Mit &lt;b&gt;Enter&lt;/b&gt; Teilerstellung abschließen.</translation>
     </message>
 </context>
 <context>
@@ -12414,6 +12418,11 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Validation error file %1</source>
         <translation>Validierungsfehlerdatei %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

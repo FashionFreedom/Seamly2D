@@ -7940,8 +7940,8 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Počet:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction. Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
-        <translation>Vyberte objekty hlavní cesty ve směru hodinových ručiček. Pomocí klávesy &lt;b&gt;SHIFT&lt;/b&gt; obraťte směr křivky nebo klávesou &lt;b&gt;CTRL&lt;/b&gt; zachovejte směr křivky. Stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt; dokončete vytváření dílce </translation>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Vyberte objekty hlavní cesty ve směru hodinových ručiček. Pomocí klávesy &lt;b&gt;SHIFT&lt;/b&gt; obraťte směr křivky nebo klávesou &lt;b&gt;CTRL&lt;/b&gt; zachovejte směr křivky.</translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
@@ -8166,6 +8166,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Length can&apos;t be less than length of 2 arrows</source>
         <translation>Délka nesmí být menší než délka 2 šípů</translation>
+    </message>
+    <message>
+        <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
+        <translation>Stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt; dokončete vytváření dílce.</translation>
     </message>
 </context>
 <context>
@@ -12427,6 +12431,11 @@ SeamlyME jako obvykle.
     <message>
         <source>Validation error file %1</source>
         <translation>Soubor chyb ověření %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

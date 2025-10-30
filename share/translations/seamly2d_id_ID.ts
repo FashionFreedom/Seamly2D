@@ -7942,8 +7942,8 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Hitung:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction. Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
-        <translation>Pilih objek jalur utama searah jarum jam, Gunakan &lt;b&gt;SHIFT&lt;/b&gt; untuk membalikkan arah lengkung, atau &lt;b&gt;CTRL&lt;/b&gt; untuk mempertahankan arah lengkung. Tekan &lt;b&gt;ENTER&lt;/b&gt; untuk menyelesaikan pembuatan bagian </translation>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Pilih objek jalur utama searah jarum jam, Gunakan &lt;b&gt;SHIFT&lt;/b&gt; untuk membalikkan arah lengkung, atau &lt;b&gt;CTRL&lt;/b&gt; untuk mempertahankan arah lengkung.</translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
@@ -8168,6 +8168,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Length can&apos;t be less than length of 2 arrows</source>
         <translation>Panjangnya tidak boleh kurang dari panjang 2 anak panah</translation>
+    </message>
+    <message>
+        <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
+        <translation>Tekan &lt;b&gt;ENTER&lt;/b&gt; untuk menyelesaikan pembuatan bagian.</translation>
     </message>
 </context>
 <context>
@@ -12429,6 +12433,11 @@ unggah ke SeamlyME seperti biasa.
     <message>
         <source>Validation error file %1</source>
         <translation>File kesalahan validasi %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

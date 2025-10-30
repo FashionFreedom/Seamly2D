@@ -8175,6 +8175,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Length can&apos;t be less than length of 2 arrows</source>
         <translation>Длина не может быть меньше длины двух стрелок</translation>
     </message>
+    <message>
+        <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PatternPieceTool</name>
@@ -12436,6 +12440,11 @@ load in SeamlyME as usual.
     <message>
         <source>Validation error file %1</source>
         <translation>Файл ошибки проверки %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
