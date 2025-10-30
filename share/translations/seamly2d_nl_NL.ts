@@ -7925,8 +7925,8 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Aantal:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction. Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
-        <translation>Selecteer het pad van objecten met de klok mee, Gebruik &lt;b&gt;SHIFT&lt;/b&gt; om de richting van krommes om te draaien, of &lt;b&gt;Ctrl&lt;/b&gt; om de richting te bewaren. Druk &lt;b&gt;ENTER&lt;/b&gt; om het maken van het patroondeel te beëindigen </translation>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Selecteer het pad van objecten met de klok mee, Gebruik &lt;b&gt;SHIFT&lt;/b&gt; om de richting van krommes om te draaien, of &lt;b&gt;Ctrl&lt;/b&gt; om de richting te bewaren.</translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
@@ -8151,6 +8151,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Length can&apos;t be less than length of 2 arrows</source>
         <translation>Lengte mag niet kleiner zijn dan de lengte van 2 pijlen</translation>
+    </message>
+    <message>
+        <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
+        <translation>Druk &lt;b&gt;ENTER&lt;/b&gt; om het maken van het patroondeel te beëindigen.</translation>
     </message>
 </context>
 <context>
@@ -12411,6 +12415,11 @@ load in SeamlyME as usual.
     <message>
         <source>Validation error file %1</source>
         <translation>Validatiefoutbestand %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -3067,7 +3067,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Seamly2D encountered an error while computing a formula. 
+        <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7906,7 +7906,7 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction. Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8131,6 +8131,10 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Length can&apos;t be less than length of 2 arrows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12383,6 +12387,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Validation error file %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

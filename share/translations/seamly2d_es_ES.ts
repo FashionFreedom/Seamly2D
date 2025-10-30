@@ -7978,8 +7978,8 @@ Press enter to temporarily add it to the list.</source>
         <translation>Contar:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction. Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
-        <translation>Seleccione los objetos de la ruta principal en el sentido de las agujas del reloj. Utilice tecla&lt;b&gt;MAYÚS&lt;/b&gt; para invertir la dirección de la curva o la tecla &lt;b&gt;CTRL&lt;/b&gt; para mantener la dirección de la curva. Presione la tecla &lt;b&gt;ENTER&lt;/b&gt; para finalizar la creación de la pieza </translation>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Seleccione los objetos de la ruta principal en el sentido de las agujas del reloj. Utilice tecla &lt;b&gt;MAYÚS&lt;/b&gt; para invertir la dirección de la curva o la tecla &lt;b&gt;CTRL&lt;/b&gt; para mantener la dirección de la curva.</translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
@@ -8204,6 +8204,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Length can&apos;t be less than length of 2 arrows</source>
         <translation>La longitud no puede ser menor que la longitud de 2 flechas</translation>
+    </message>
+    <message>
+        <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
+        <translation>Presione la tecla &lt;b&gt;ENTER&lt;/b&gt; para finalizar la creación de la pieza.</translation>
     </message>
 </context>
 <context>
@@ -12469,6 +12473,11 @@ load in SeamlyME as usual.
     <message>
         <source>Validation error file %1</source>
         <translation>Archivo de error de validación %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

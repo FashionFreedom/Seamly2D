@@ -7942,8 +7942,8 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <translation>Lasku:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction. Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
-        <translation>Valitse pääpolun objektit myötäpäivään. Käytä &lt;b&gt;SHIFT&lt;/b&gt;-näppäintä kääntääksesi käyrän suunnan tai &lt;b&gt;CTRL&lt;/b&gt;-näppäintä säilyttääksesi käyrän suunnan. Paina &lt;b&gt;ENTER&lt;/b&gt;-näppäintä viimeistelläksesi osan luomisen </translation>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Valitse pääpolun objektit myötäpäivään. Käytä &lt;b&gt;SHIFT&lt;/b&gt;-näppäintä kääntääksesi käyrän suunnan tai &lt;b&gt;CTRL&lt;/b&gt;-näppäintä säilyttääksesi käyrän suunnan.</translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
@@ -8168,6 +8168,10 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Length can&apos;t be less than length of 2 arrows</source>
         <translation>Pituus ei voi olla pienempi kuin kahden nuolen pituus</translation>
+    </message>
+    <message>
+        <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
+        <translation>Paina &lt;b&gt;ENTER&lt;/b&gt;-näppäintä viimeistelläksesi osan luomisen.</translation>
     </message>
 </context>
 <context>
@@ -12429,6 +12433,11 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Validation error file %1</source>
         <translation>Vahvistusvirhe tiedostossa %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

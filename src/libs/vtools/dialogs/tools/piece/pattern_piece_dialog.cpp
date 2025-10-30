@@ -493,8 +493,7 @@ void PatternPieceDialog::ChosenObject(quint32 id, const SceneObject &type)
             if (p.GetPath().nodeCount() == 1)
             {
                 emit ToolTip(tr("Select main path objects clockwise, Use <b>SHIFT</b> to reverse curve direction, "
-                                " or <b>CTRL</b> to keep curve direction. "
-                                "Press <b>ENTER</b> to finish piece creation "));
+                                "or <b>CTRL</b> to keep curve direction."));
 
                 if (!qApp->getCurrentScene()->items().contains(visPath))
                 {
@@ -507,6 +506,7 @@ void PatternPieceDialog::ChosenObject(quint32 id, const SceneObject &type)
             }
             else
             {
+                emit ToolTip(tr("Press <b>ENTER</b> to finish piece creation."));
                 visPath->RefreshGeometry();
             }
         }

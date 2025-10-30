@@ -7944,8 +7944,8 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Numărătoare:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction. Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
-        <translation>Selectați obiectele principale ale căii în sensul acelor de ceasornic. Folosiți &lt;b&gt;SHIFT&lt;/b&gt; pentru a inversa direcția curbei sau &lt;b&gt;CTRL&lt;/b&gt; pentru a păstra direcția curbei. Apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a finaliza crearea piesei </translation>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Selectați obiectele principale ale căii în sensul acelor de ceasornic. Folosiți &lt;b&gt;SHIFT&lt;/b&gt; pentru a inversa direcția curbei sau &lt;b&gt;CTRL&lt;/b&gt; pentru a păstra direcția curbei.</translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
@@ -8170,6 +8170,10 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Length can&apos;t be less than length of 2 arrows</source>
         <translation>Lungimea nu poate fi mai mică decât lungimea a 2 săgeți</translation>
+    </message>
+    <message>
+        <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
+        <translation>Apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a finaliza crearea piesei.</translation>
     </message>
 </context>
 <context>
@@ -12430,6 +12434,11 @@ load in SeamlyME as usual.
     <message>
         <source>Validation error file %1</source>
         <translation>Fișier de eroare de validare %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

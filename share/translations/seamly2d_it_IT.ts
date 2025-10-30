@@ -3070,7 +3070,7 @@ p, li { white-space: pre-wrap; }
         <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
         <translation>Seamly2D ha riscontrato un errore durante il calcolo di una formula.
-Prova ad annullare l'ultima operazione o a correggere la formula non funzionante.</translation>
+Prova ad annullare l&apos;ultima operazione o a correggere la formula non funzionante.</translation>
     </message>
 </context>
 <context>
@@ -7930,8 +7930,8 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <translation>Contare:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction. Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
-        <translation>Selezionare gli oggetti del percorso principale in senso orario, Utilizzare &lt;b&gt;SHIFT&lt;/b&gt; per invertire la direzione della curva, oppure &lt;b&gt;CTRL&lt;/b&gt; per mantenere la direzione della curva. Premere &lt;b&gt;ENTER&lt;/b&gt; per terminare la creazione del pezzo </translation>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Selezionare gli oggetti del percorso principale in senso orario, Utilizzare &lt;b&gt;SHIFT&lt;/b&gt; per invertire la direzione della curva, oppure &lt;b&gt;CTRL&lt;/b&gt; per mantenere la direzione della curva.</translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
@@ -8156,6 +8156,10 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     <message>
         <source>Length can&apos;t be less than length of 2 arrows</source>
         <translation>La lunghezza non può essere inferiore alla lunghezza di 2 frecce</translation>
+    </message>
+    <message>
+        <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
+        <translation>Premere &lt;b&gt;ENTER&lt;/b&gt; per terminare la creazione del pezzo.</translation>
     </message>
 </context>
 <context>
@@ -12417,6 +12421,11 @@ caricare in SeamlyME come di consueto.
     <message>
         <source>Validation error file %1</source>
         <translation>Errore di convalida file %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
