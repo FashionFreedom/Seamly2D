@@ -776,7 +776,7 @@ void MainWindow::SetToolButton(bool checked, Tool t, const QString &cursor, cons
         {
             // Try to load HiDPI versions of the cursors if available
             auto cursorHidpiResource = QString(cursor).replace(".png", "@2x.png");
-            if (QFileInfo(cursorResource).exists())
+            if (QFileInfo(cursorHidpiResource).exists())
             {
                 cursorResource = cursorHidpiResource;
             }
