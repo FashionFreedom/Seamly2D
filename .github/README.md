@@ -19,6 +19,24 @@ Click here -->[![GitHub Stars](https://img.shields.io/github/stars/fashionfreedo
 Design what **you** want to wear. Each Seamly2D pattern can read multi-size measurement files for standardized sizes *and* read individual measurement files for custom-fit.
 Don't know how? Join our multi-lingual Discourse [forum](https://forum.seamly.io).
 
+## Measurement Examples
+### Example: Kenyan Women's Size Chart (Suggested Measurement Table)
+
+Below is an example measurement table tailored to common Kenyan sizing. Use this as a template for creating `measurements.csv` or the Seamly2D measurement file.
+
+| Size Label | Bust (cm) | Waist (cm) | Hip (cm) |
+|------------|-----------:|----------:|---------:|
+| KXS (34)   |        80  |       64  |      88 |
+| KS  (36)   |        84  |       68  |      92 |
+| KM  (38)   |        88  |       72  |      96 |
+| KL  (40)   |        92  |       76  |     100 |
+| KXL (42)   |        96  |       80  |     104 |
+
+**Notes:**
+- These values are example averages; tailors should always measure actual customers for accuracy.
+- To add these to Seamly2D, create a measurement file or CSV matching the format required by the project and import it via the Measurement dialog.
+
+
 ### Supported platforms:
    * Windows 10 & 11 (64-bit) 
    * macOS Monterey (12), Ventura (13), Sonoma (14), and Sequoia (15)
