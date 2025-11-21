@@ -1,12 +1,11 @@
 var NAVTREEINDEX194 =
 {
-"dc/d8e/classXIncludeUtils.html#a56eae3b97bc0cdabb7e7843c4afd00d6":[3,0,797,65],
 "dc/d8e/classXIncludeUtils.html#a6e77dbab5a86477c78b847f98d458dfb":[3,0,797,32],
 "dc/d8e/classXIncludeUtils.html#a6e77dbab5a86477c78b847f98d458dfb":[3,0,797,31],
 "dc/d8e/classXIncludeUtils.html#a6e77dbab5a86477c78b847f98d458dfb":[3,0,797,30],
-"dc/d8e/classXIncludeUtils.html#a6f2454f7271b5e149c9b2e24d511cf62":[3,0,797,23],
 "dc/d8e/classXIncludeUtils.html#a6f2454f7271b5e149c9b2e24d511cf62":[3,0,797,21],
 "dc/d8e/classXIncludeUtils.html#a6f2454f7271b5e149c9b2e24d511cf62":[3,0,797,22],
+"dc/d8e/classXIncludeUtils.html#a6f2454f7271b5e149c9b2e24d511cf62":[3,0,797,23],
 "dc/d8e/classXIncludeUtils.html#a73368f974ff7292f35d0d1cd2eec7623":[3,0,797,62],
 "dc/d8e/classXIncludeUtils.html#a86da71a6622c71485348bf14e758d421":[3,0,797,54],
 "dc/d8e/classXIncludeUtils.html#a905076ccf7099fd1379077c6955aa9bb":[3,0,797,27],
@@ -36,8 +35,8 @@ var NAVTREEINDEX194 =
 "dc/d8e/classXIncludeUtils.html#ae18763f55d7eb4b9885576f875a19ac9":[3,0,797,53],
 "dc/d8e/classXIncludeUtils.html#ae18763f55d7eb4b9885576f875a19ac9":[3,0,797,51],
 "dc/d8e/classXIncludeUtils.html#ae31482324058a0d84346c31b32074fc8":[3,0,797,69],
-"dc/d8e/classXIncludeUtils.html#affdaa6711afdce46b1281eae4726e4e0":[3,0,797,39],
 "dc/d8e/classXIncludeUtils.html#affdaa6711afdce46b1281eae4726e4e0":[3,0,797,41],
+"dc/d8e/classXIncludeUtils.html#affdaa6711afdce46b1281eae4726e4e0":[3,0,797,39],
 "dc/d8e/classXIncludeUtils.html#affdaa6711afdce46b1281eae4726e4e0":[3,0,797,40],
 "dc/d8f/classLocalFileFormatTarget.html":[3,0,332],
 "dc/d8f/classLocalFileFormatTarget.html#a183165eb8ffe5cb2750fc2ff8d16548a":[3,0,332,27],
@@ -249,5 +248,6 @@ var NAVTREEINDEX194 =
 "dc/d9d/classAddPiece.html":[3,0,16],
 "dc/d9d/classAddPiece.html#a2484f09e277cf5fd27263e7f8cb1130d":[3,0,16,4],
 "dc/d9d/classAddPiece.html#a5dcb589a5812d8d7beb82f20caa8a1d7":[3,0,16,2],
-"dc/d9d/classAddPiece.html#a8a5c3c7ec57fe3b272c733aa4e37f892":[3,0,16,6]
+"dc/d9d/classAddPiece.html#a8a5c3c7ec57fe3b272c733aa4e37f892":[3,0,16,6],
+"dc/d9d/classAddPiece.html#a8b9a47f660f508fd4a65b9a5bc0358d3":[3,0,16,1]
 };
