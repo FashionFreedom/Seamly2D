@@ -137,8 +137,4 @@ private:
     static QVector<QPointF>  ToEnd(const QVector<QPointF> &points, const QPointF &end, bool *ok = nullptr);
 };
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
-Q_DECLARE_TYPEINFO(VAbstractCurve, Q_MOVABLE_TYPE);
-#endif
-
 #endif // VABSTRACTCURVE_H
