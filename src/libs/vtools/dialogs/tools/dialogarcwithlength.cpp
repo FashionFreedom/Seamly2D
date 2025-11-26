@@ -163,6 +163,8 @@ DialogArcWithLength::DialogArcWithLength(const VContainer *data, const quint32 &
 
     connect(ui->centerPoint_ComboBox, &QComboBox::currentTextChanged, this, &DialogArcWithLength::pointNameChanged);
 
+    ui->plainTextEditRadius->setFocus();
+
     vis = new VisToolArcWithLength(data);
 }
 
