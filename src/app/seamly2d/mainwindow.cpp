@@ -127,6 +127,7 @@
 #include <QSettings>
 #include <QSharedPointer>
 #include <QShowEvent>
+#include <QStatusBar>
 #include <QTextCodec>
 #include <QTimer>
 #include <QToolBar>
@@ -173,7 +174,6 @@ MainWindow::MainWindow(QWidget *parent)
     , m_statusMessage(new QLabel())
     , isInitialized(false)
     , mChanges(false)
-    , mChangesAsked(true)
     , patternReadOnly(false)
     , dialogTable(nullptr)
     , dialogTool()
@@ -293,33 +293,7 @@ MainWindow::MainWindow(QWidget *parent)
         connect(ui->listWidget, &QListWidget::currentRowChanged, this, &MainWindow::showLayoutPages);
 
         // Handle changes made to a measurment file.
-        connect(watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::MeasurementsChanged);
-
-        // Sync measurements if they were changed.
-        connect(qApp, &QApplication::focusChanged, this, [this](QWidget *old, QWidget *now)
-        {
-            if (old == nullptr && isAncestorOf(now) == true)
-            {   // Focus IN
-                static bool asking = false;
-                if (!asking && mChanges && !mChangesAsked)
-                {
-                    asking = true;
-                    mChangesAsked = true;
-                    const auto answer = QMessageBox::question(this, tr("Measurements"),
-                                                            tr("Measurements were changed. Do you want to sync measurements now?"),
-                                                            QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-                    if (answer == QMessageBox::Yes)
-                    {
-                        SyncMeasurements();
-                    }
-                    asking = false;
-                }
-            }
-
-            // In case we will need it
-            // else if (isAncestorOf(old) == true && now == nullptr)
-            // focus OUT
-        });
+        connect(watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::measurementsChanged);
 
         #if defined(Q_OS_MAC)
             // Set MacOS specific icon sizes for various toolbars and unify title and toolbar.
@@ -1919,7 +1893,7 @@ void MainWindow::changeEvent(QEvent *event)
             ui->groups_DockWidget->setWindowTitle(tr("Pattern Pieces"));
         }
 
-        UpdateWindowTitle();
+        updateWindowTitle();
         initPenToolBar();
         initBasePointComboBox();
         emit pieceScene->LanguageChanged();
@@ -2095,7 +2069,7 @@ void MainWindow::LoadIndividual()
             setStatusMessage(tr("Measurements loaded"));
             doc->LiteParseTree(Document::LiteParse);
 
-            UpdateWindowTitle();
+            updateWindowTitle();
         }
     }
 
@@ -2151,7 +2125,7 @@ void MainWindow::LoadMultisize()
             setStatusMessage(tr("Measurements loaded"));
             doc->LiteParseTree(Document::LiteParse);
 
-            UpdateWindowTitle();
+            updateWindowTitle();
 
             if (qApp->patternType() == MeasurementsType::Multisize)
             {
@@ -2193,7 +2167,7 @@ void MainWindow::UnloadMeasurements()
         ui->unloadMeasurements_Action->setDisabled(true);
         setStatusMessage(tr("Measurements unloaded"));
 
-        UpdateWindowTitle();
+        updateWindowTitle();
     }
     else
     {
@@ -2203,11 +2177,15 @@ void MainWindow::UnloadMeasurements()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ShowMeasurements()
+void MainWindow::editMeasurements()
 {
+
     if (!doc->MPath().isEmpty())
     {
         const QString absoluteMPath = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
+
+        // Stop watching file while opening SeamlyMe so as to not trigger syncing.
+        watcher->removePath(absoluteMPath);
 
         QStringList arguments;
         if (qApp->patternType() == MeasurementsType::Multisize)
@@ -2236,6 +2214,13 @@ void MainWindow::ShowMeasurements()
         const QString seamlyme = qApp->seamlyMeFilePath();
         const QString workingDirectory = QFileInfo(seamlyme).absoluteDir().absolutePath();
         QProcess::startDetached(seamlyme, arguments, workingDirectory);
+
+        if (!watcher->files().contains(absoluteMPath))
+        {
+            // Allow time for SeamlyMe to open before watching file again.
+            std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+            watcher->addPath(absoluteMPath);
+        }
     }
     else
     {
@@ -2244,23 +2229,22 @@ void MainWindow::ShowMeasurements()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::MeasurementsChanged(const QString &path)
+void MainWindow::measurementsChanged(const QString &path)
 {
     mChanges = false;
     QFileInfo checkFile(path);
     if (checkFile.exists())
     {
         mChanges = true;
-        mChangesAsked = false;
     }
     else
     {
+        // Check every 10ms for upto 10 secs to see if file is done writing.
         for(int i=0; i<=1000; i=i+10)
         {
             if (checkFile.exists())
             {
                 mChanges = true;
-                mChangesAsked = false;
                 break;
             }
             else
@@ -2270,36 +2254,38 @@ void MainWindow::MeasurementsChanged(const QString &path)
         }
     }
 
-    UpdateWindowTitle();
-    ui->syncMeasurements_Action->setEnabled(mChanges);
+    if (mChanges)
+    {
+        syncMeasurements();
+    }
+    updateWindowTitle();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::SyncMeasurements()
+void MainWindow::syncMeasurements()
 {
-    if (mChanges)
+    const QString path = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
+
+    // Stop watching measurement file while updating to avoid recursive syncing.
+    watcher->removePath(path);
+
+    if(updateMeasurements(path, static_cast<int>(VContainer::size()), static_cast<int>(VContainer::height())))
     {
-        const QString path = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
-        if(updateMeasurements(path, static_cast<int>(VContainer::size()), static_cast<int>(VContainer::height())))
-        {
-            if (!watcher->files().contains(path))
-            {
-                watcher->addPath(path);
-            }
-            const QString msg = tr("Measurements have been synced");
-            qCDebug(vMainWindow, "%s", qUtf8Printable(msg));
-            setStatusMessage(msg);
-            VWidgetPopup::PopupMessage(this, msg);
-            doc->LiteParseTree(Document::LiteParse);
-            mChanges = false;
-            mChangesAsked = true;
-            UpdateWindowTitle();
-            ui->syncMeasurements_Action->setEnabled(mChanges);
-        }
-        else
-        {
-            qCWarning(vMainWindow, "%s", qUtf8Printable(tr("Couldn't sync measurements.")));
-        }
+        setStatusMessage(tr("Measurements have been synced"));
+        QApplication::beep();
+        doc->LiteParseTree(Document::LiteParse);
+        mChanges = false;
+        updateWindowTitle();
+    }
+    else
+    {
+        qCWarning(vMainWindow, "%s", qUtf8Printable(tr("Couldn't sync measurements.")));
+    }
+
+    if (!watcher->files().contains(path))
+    {
+        // Start watching measurement file again.
+        watcher->addPath(path);
     }
 }
 
@@ -5252,7 +5238,7 @@ void MainWindow::setCurrentFile(const QString &fileName)
         settings->SetRestoreFileList(restoreFiles);
     }
 
-    UpdateWindowTitle();
+    updateWindowTitle();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -6241,11 +6227,10 @@ void MainWindow::createActions()
         QProcess::startDetached(seamlyme, arguments, workingDirectory);
     });
 
-    connect(ui->editCurrent_Action, &QAction::triggered, this, &MainWindow::ShowMeasurements);
+    connect(ui->editCurrent_Action, &QAction::triggered, this, &MainWindow::editMeasurements);
     connect(ui->unloadMeasurements_Action, &QAction::triggered, this, &MainWindow::UnloadMeasurements);
     connect(ui->loadIndividual_Action, &QAction::triggered, this, &MainWindow::LoadIndividual);
     connect(ui->loadMultisize_Action, &QAction::triggered, this, &MainWindow::LoadMultisize);
-    connect(ui->syncMeasurements_Action, &QAction::triggered, this, &MainWindow::SyncMeasurements);
     connect(ui->table_Action, &QAction::triggered, this, [this](bool checked)
     {
         if (checked)
@@ -7210,7 +7195,7 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                             const bool result = measurements->SaveDocument(filename, error);
                             if (result)
                             {
-                                UpdateWindowTitle();
+                                updateWindowTitle();
                             }
                         }
                         measurements->setXMLContent(filename);// Read again after conversion
@@ -7226,7 +7211,7 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                             const bool result = measurements->SaveDocument(filename, error);
                             if (result)
                             {
-                                UpdateWindowTitle();
+                                updateWindowTitle();
                             }
                         }
                         measurements->setXMLContent(filename);// Read again after conversion
@@ -7274,6 +7259,8 @@ void MainWindow::changeDraftBlock(int index, bool zoomBestFit)
     }
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief EndVisualization try show dialog after and working with tool visualization.
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::EndVisualization(bool click)
 {
@@ -7566,20 +7553,13 @@ QString MainWindow::GetMeasurementFileName()
     else
     {
         QString shownName(" - [");
-        shownName += strippedName(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
-
-        if(mChanges)
-        {
-            shownName += QLatin1String("*");
-        }
-
-        shownName += QLatin1String("]");
+        shownName += strippedName(AbsoluteMPath(qApp->getFilePath(), doc->MPath())) + QLatin1String("]");
         return shownName;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::UpdateWindowTitle()
+void MainWindow::updateWindowTitle()
 {
     bool isFileWritable = true;
     if (!qApp->getFilePath().isEmpty())
