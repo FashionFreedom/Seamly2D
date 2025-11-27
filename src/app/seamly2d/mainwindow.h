@@ -269,9 +269,9 @@ private slots:
     void LoadIndividual();
     void LoadMultisize();
     void UnloadMeasurements();
-    void ShowMeasurements();
-    void MeasurementsChanged(const QString &path);
-    void SyncMeasurements();
+    void editMeasurements();
+    void measurementsChanged(const QString &path);
+    void syncMeasurements();
 #if defined(Q_OS_MAC)
     void OpenAt(QAction *where);
 #endif //defined(Q_OS_MAC)
@@ -281,38 +281,18 @@ private slots:
 
 private:
     Q_DISABLE_COPY(MainWindow)
-    /** @brief ui keeps information about user interface */
-    Ui::MainWindow                   *ui;
 
+    Ui::MainWindow                   *ui;              /// @brief ui keeps information about user interface.
     QFileSystemWatcher               *watcher;
-
-    /** @brief tool current tool */
-    Tool                              currentTool;
-
-    /** @brief tool last used tool */
-    Tool                              lastUsedTool;
-
-    /** @brief draftScene draft block scene. */
-    VMainGraphicsScene               *draftScene;
-
-    /** @brief pieceScene pattern piece scene. */
-    VMainGraphicsScene               *pieceScene;
-
-    /** @brief mouseCoordinates pointer to label who show mouse coordinate. */
-    QPointer<MouseCoordinates>        mouseCoordinates;
-
+    Tool                              currentTool;     /// @brief tool current tool.
+    Tool                              lastUsedTool;    /// @brief tool last used tool.
+    VMainGraphicsScene               *draftScene;      /// @brief draftScene draft block scene.
+    VMainGraphicsScene               *pieceScene;      /// @brief pieceScene pattern piece scene.
+    QPointer<MouseCoordinates>        mouseCoordinates;/// @brief pointer to mouse coordinates label.
     QPointer<QToolButton>             infoToolButton;
-
-    /** @brief helpLabel help show tooltip. */
-    QLabel                           *m_statusMessage;
-
-    /** @brief isInitialized true after first show window. */
-    bool                              isInitialized;
-
-    /** @brief mChanges true if measurement file was changed. */
-    bool                              mChanges;
-    bool                              mChangesAsked;
-
+    QLabel                           *m_statusMessage; /// @brief helpLabel help show tooltip.
+    bool                              isInitialized;   /// @brief isInitialized true after first show window.
+    bool                              mChanges;        /// @brief mChanges true if measurement file was changed.
     bool                              patternReadOnly;
 
     QPointer<DialogVariables>         dialogTable;
@@ -322,15 +302,15 @@ private:
     QFontComboBox                    *fontComboBox;
     QComboBox                        *fontSizeComboBox;
     QComboBox                        *basePointComboBox;
-    QComboBox                        *draftBlockComboBox;  /** @brief draftBlockComboBox stores names of draft blocks.*/
+    QComboBox                        *draftBlockComboBox;  /// @brief draftBlockComboBox stores names of draft blocks.
     QLabel                           *draftBlockLabel;
-    qint32                            currentBlockIndex;   /** @brief currentBlockIndex  current selected draft block.*/
-    qint32                            currentToolBoxIndex; /** @brief currentToolBoxIndex  current set of tools. */
+    qint32                            currentBlockIndex;   /// @brief currentBlockIndex  current selected draft block.
+    qint32                            currentToolBoxIndex; /// @brief currentToolBoxIndex  current set of tools.
     bool                              isToolOptionsDockVisible;
     bool                              isGroupsDockVisible;
     bool                              isLayoutsDockVisible;
     bool                              isToolboxDockVisible;
-    bool                              drawMode;            /** @brief drawMode true if draft scene active. */
+    bool                              drawMode;            /// @brief drawMode true if draft scene active.
 
     enum { MaxRecentFiles = 5 };
     QAction                          *recentFileActs[MaxRecentFiles];
@@ -351,7 +331,7 @@ private:
 
     QDoubleSpinBox                   *zoomScaleSpinBox;
 
-    PenToolBar                       *m_penToolBar; //!< for selecting the current pen
+    PenToolBar                       *m_penToolBar;        /// @brief pointer to the current pen.
     PenToolBar                       *m_penReset;
     QComboBox                        *m_zoomToPointComboBox;
 
@@ -437,9 +417,6 @@ private:
     QString            createDraftBlockName(const QString &text);
     QString            checkPathToMeasurements(const QString &patternPath, const QString &path);
     void               changeDraftBlock(int index, bool zoomBestFit = true);
-    /**
-     * @brief EndVisualization try show dialog after and working with tool visualization.
-     */
     void               EndVisualization(bool click = false);
     void               zoomFirstShow();
     void               UpdateHeightsList(const QStringList &list);
@@ -470,7 +447,7 @@ private:
     QString            GetPatternFileName();
     QString            GetMeasurementFileName();
 
-    void               UpdateWindowTitle();
+    void               updateWindowTitle();
     void               upDateScenes();
     void               updateViewToolbar();
     void               resetPanShortcuts();

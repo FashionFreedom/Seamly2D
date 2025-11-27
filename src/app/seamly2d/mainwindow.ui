@@ -133,7 +133,6 @@
     <addaction name="unloadMeasurements_Action"/>
     <addaction name="loadIndividual_Action"/>
     <addaction name="loadMultisize_Action"/>
-    <addaction name="syncMeasurements_Action"/>
     <addaction name="table_Action"/>
     <addaction name="exportVariablesToCSV_Action"/>
    </widget>
@@ -373,7 +372,6 @@
    <addaction name="actionNew"/>
    <addaction name="actionOpen"/>
    <addaction name="save_Action"/>
-   <addaction name="syncMeasurements_Action"/>
   </widget>
   <widget class="QToolBar" name="mode_ToolBar">
    <property name="enabled">
@@ -4829,8 +4827,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
   <include location="../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections/>
 </ui>
