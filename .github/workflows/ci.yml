@@ -78,11 +78,8 @@ jobs:
 
       - name: install appimage dependencies
         run: |
-          sudo apt update && sudo apt install -y libfuse2
-          sudo wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -O /usr/local/bin/linuxdeploy-x86_64.AppImage
-          sudo chmod +x /usr/local/bin/linuxdeploy-x86_64.AppImage
-          sudo wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage -O /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
-          sudo chmod +x /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
+          wget -c https://github.com/$(wget -q https://github.com/probonopd/go-appimage/releases/expanded_assets/continuous -O - | grep "appimagetool-.*-x86_64.AppImage" | head -n 1 | cut -d '"' -f 2)
+          chmod +x appimagetool-*.AppImage
 
       - name: install build dependencies
         run: |
@@ -104,6 +101,7 @@ jobs:
       - name: build Seamly2D appimage
         env:
           OUTPUT: Seamly2D-x86_64.AppImage  # linuxdeploy-x86_64.AppImage uses this env var as name for AppImage
+          VERSION: ${{ env.VERSION_NUMBER }}  # appimagetool needs version, otherwise uses github run number
         run: |
           qmake -config release CONFIG+=noTests
           make -j$(nproc)
@@ -112,7 +110,7 @@ jobs:
           cp /usr/bin/pdftops AppDir/usr/bin
           mkdir -p AppDir/usr/share/X11/xkb
           cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
-          linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
+          ./appimagetool-*.AppImage -s deploy ./AppDir/usr/share/applications/*.desktop
 
       - uses: actions/upload-artifact@v4
         with:
