@@ -110,7 +110,7 @@ jobs:
           cp /usr/bin/pdftops AppDir/usr/bin
           mkdir -p AppDir/usr/share/X11/xkb
           cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
-          ./appimagetool-*.AppImage -s deploy ./AppDir/usr/share/applications/*.desktop
+          ./appimagetool-*.AppImage -s deploy AppDir/usr/share/applications/seamly2d.desktop
 
       - uses: actions/upload-artifact@v4
         with:
