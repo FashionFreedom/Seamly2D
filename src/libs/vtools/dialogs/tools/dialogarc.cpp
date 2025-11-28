@@ -171,8 +171,8 @@ DialogArc::DialogArc(const VContainer *data, const quint32 &toolId, QWidget *par
 
     connect(ui->centerPoint_ComboBox, &QComboBox::currentTextChanged, this, &DialogArc::pointNameChanged);
 
-    ui->plainTextEditF1->setPlainText("0.0");
-    ui->plainTextEditF2->setPlainText("360.0");
+    ui->plainTextEditF1->setPlainText("0");
+    ui->plainTextEditF2->setPlainText("360");
     ui->plainTextEditFormula->setFocus();
 
     vis = new VisToolArc(data);

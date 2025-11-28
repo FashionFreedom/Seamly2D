@@ -196,9 +196,9 @@ DialogEllipticalArc::DialogEllipticalArc(const VContainer *data, const quint32 &
 
     connect(ui->centerPoint_ComboBox, &QComboBox::currentTextChanged, this, &DialogEllipticalArc::pointNameChanged);
 
-    ui->plainTextEditF1->setPlainText("0.0");
-    ui->plainTextEditF2->setPlainText("360.0");
-    ui->plainTextEditRotationAngle->setPlainText("0.0");
+    ui->plainTextEditF1->setPlainText("0");
+    ui->plainTextEditF2->setPlainText("360");
+    ui->plainTextEditRotationAngle->setPlainText("0");
     ui->plainTextEditRadius1->setFocus();
 
     vis = new VisToolEllipticalArc(data);
