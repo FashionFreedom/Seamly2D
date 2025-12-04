@@ -111,6 +111,7 @@ jobs:
           mkdir -p AppDir/usr/share/X11/xkb
           cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
           ./appimagetool-*.AppImage -s deploy AppDir/usr/share/applications/seamly2d.desktop
+          cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/256x256/apps/
           ./appimagetool-*.AppImage ./AppDir
           cp Seamly2D-*.AppImage ${OUTPUT}
 
