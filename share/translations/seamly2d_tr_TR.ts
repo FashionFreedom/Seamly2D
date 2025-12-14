@@ -5694,10 +5694,6 @@ Do you want to save your changes?</translation>
         <translation>Ölçüm dosyası &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; bulunamadı. Dosya konumunu güncellemek ister misiniz?</translation>
     </message>
     <message>
-        <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation>Ölçümler değiştirildi. Ölçümleri şimdi senkronize etmek ister misiniz?</translation>
-    </message>
-    <message>
         <source>Gradation doesn&apos;t support inches</source>
         <translation>Dereceleme inçleri desteklemiyor</translation>
     </message>
@@ -7942,10 +7938,6 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>Sayım:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
-        <translation>Ana yol nesnelerini saat yönünde seçin. Eğri yönünü tersine çevirmek için &lt;b&gt;SHIFT&lt;/b&gt;&apos;i veya eğri yönünü korumak için &lt;b&gt;CTRL&lt;/b&gt;&apos;yi kullanın.</translation>
-    </message>
-    <message>
         <source>Press OK to create pattern piece</source>
         <translation>Desen parçasını oluşturmak için Tamam&apos;a basın</translation>
     </message>
@@ -8172,6 +8164,10 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
         <translation>Parça oluşturmayı tamamlamak için &lt;b&gt;ENTER&lt;/b&gt;&apos;a basın.</translation>
+    </message>
+    <message>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Ana yol nesnelerini saat yönünde seçin. Eğri yönünü tersine çevirmek için &lt;b&gt;SHIFT&lt;/b&gt;&apos;i veya eğri yönünü korumak için &lt;b&gt;CTRL&lt;/b&gt;&apos;yi kullanın.</translation>
     </message>
 </context>
 <context>
@@ -12436,7 +12432,8 @@ load in SeamlyME as usual.
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Desen dosyası %1 açılamıyor:
+%2.</translation>
     </message>
 </context>
 <context>

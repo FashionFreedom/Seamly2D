@@ -5694,10 +5694,6 @@ Do you want to save your changes?</source>
         <translation>Файл меток &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; не найден. Хотите обновить данные о местоположении файла?</translation>
     </message>
     <message>
-        <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation>Мрки были изменены. Хотите обновить мерки сейчас?</translation>
-    </message>
-    <message>
         <source>Gradation doesn&apos;t support inches</source>
         <translation>Градация не поддерживает дюймы</translation>
     </message>
@@ -7948,10 +7944,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Число:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction. Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
-        <translation>Выберите объекты основного контура по часовой стрелке. Используйте &lt;b&gt;SHIFT&lt;/b&gt;, чтобы изменить направление кривой, или &lt;b&gt;CTRL&lt;/b&gt;, чтобы сохранить направление кривой. Нажмите &lt;b&gt;ENTER&lt;/b&gt;, чтобы завершить создание детали </translation>
-    </message>
-    <message>
         <source>Press OK to create pattern piece</source>
         <translation>Нажмите на ОК, чтобы создать выкройку</translation>
     </message>
@@ -8177,7 +8169,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Нажмите &lt;b&gt;ENTER&lt;/b&gt;, чтобы завершить создание элемента.</translation>
+    </message>
+    <message>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Выберите объекты основного контура по часовой стрелке. Используйте &lt;b&gt;SHIFT&lt;/b&gt;, чтобы изменить направление кривой, или &lt;b&gt;CTRL&lt;/b&gt;, чтобы сохранить направление кривой. Нажмите &lt;b&gt;ENTER&lt;/b&gt;, чтобы завершить создание детали </translation>
     </message>
 </context>
 <context>
@@ -12444,7 +12440,8 @@ load in SeamlyME as usual.
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось открыть файл шаблона %1:
+%2.</translation>
     </message>
 </context>
 <context>

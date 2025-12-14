@@ -5682,10 +5682,6 @@ Vuoi salvare i cambiamenti?</translation>
         <translation>Il file delle misure &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; non è stato trovato. Vuoi aggiornare la posizione del file?</translation>
     </message>
     <message>
-        <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation>Le misurazioni sono state modificate. Vuoi sincronizzare le misurazioni ora?</translation>
-    </message>
-    <message>
         <source>Gradation doesn&apos;t support inches</source>
         <translation>La gradazione non supporta i pollici</translation>
     </message>
@@ -7930,10 +7926,6 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <translation>Contare:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
-        <translation>Selezionare gli oggetti del percorso principale in senso orario, Utilizzare &lt;b&gt;SHIFT&lt;/b&gt; per invertire la direzione della curva, oppure &lt;b&gt;CTRL&lt;/b&gt; per mantenere la direzione della curva.</translation>
-    </message>
-    <message>
         <source>Press OK to create pattern piece</source>
         <translation>Premere OK per creare il pezzo del modello</translation>
     </message>
@@ -8160,6 +8152,10 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
         <translation>Premere &lt;b&gt;ENTER&lt;/b&gt; per terminare la creazione del pezzo.</translation>
+    </message>
+    <message>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Selezionare gli oggetti del percorso principale in senso orario, Utilizzare &lt;b&gt;SHIFT&lt;/b&gt; per invertire la direzione della curva, oppure &lt;b&gt;CTRL&lt;/b&gt; per mantenere la direzione della curva.</translation>
     </message>
 </context>
 <context>
@@ -12425,7 +12421,8 @@ caricare in SeamlyME come di consueto.
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile aprire il file del modello %1:
+%2.</translation>
     </message>
 </context>
 <context>

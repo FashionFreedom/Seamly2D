@@ -5714,10 +5714,6 @@ Do you want to save your changes?</source>
         <translation>El archivo de medidas &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; podría no ser encontrado. ¿Quiere actualizar la ubicación del archivo?</translation>
     </message>
     <message>
-        <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation>Las medidas estaban cambiadas. ¿Quiere sincronizar las medidas ahora?</translation>
-    </message>
-    <message>
         <source>Gradation doesn&apos;t support inches</source>
         <translation>El escalonado no spoorta pulgadas</translation>
     </message>
@@ -12477,7 +12473,8 @@ load in SeamlyME as usual.
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede abrir el archivo de patrón %1:
+%2.</translation>
     </message>
 </context>
 <context>

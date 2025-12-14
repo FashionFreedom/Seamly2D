@@ -5696,10 +5696,6 @@ Doriți să salvați modificările?</translation>
         <translation>Fișierul de măsurători &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; nu a putut fi găsit. Doriți să actualizați locația fișierului?</translation>
     </message>
     <message>
-        <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation>Măsurătorile au fost modificate. Doriți să sincronizați măsurătorile acum?</translation>
-    </message>
-    <message>
         <source>Gradation doesn&apos;t support inches</source>
         <translation>Gradația nu acceptă inci</translation>
     </message>
@@ -7944,10 +7940,6 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Numărătoare:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
-        <translation>Selectați obiectele principale ale căii în sensul acelor de ceasornic. Folosiți &lt;b&gt;SHIFT&lt;/b&gt; pentru a inversa direcția curbei sau &lt;b&gt;CTRL&lt;/b&gt; pentru a păstra direcția curbei.</translation>
-    </message>
-    <message>
         <source>Press OK to create pattern piece</source>
         <translation>Apăsați OK pentru a crea piesa din model</translation>
     </message>
@@ -8174,6 +8166,10 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
         <translation>Apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a finaliza crearea piesei.</translation>
+    </message>
+    <message>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Selectați obiectele principale ale căii în sensul acelor de ceasornic. Folosiți &lt;b&gt;SHIFT&lt;/b&gt; pentru a inversa direcția curbei sau &lt;b&gt;CTRL&lt;/b&gt; pentru a păstra direcția curbei.</translation>
     </message>
 </context>
 <context>
@@ -12438,7 +12434,8 @@ load in SeamlyME as usual.
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu se poate deschide fișierul de model %1:
+%2.</translation>
     </message>
 </context>
 <context>
