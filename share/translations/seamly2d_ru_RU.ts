@@ -8173,7 +8173,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
-        <translation>Выберите объекты основного контура по часовой стрелке. Используйте &lt;b&gt;SHIFT&lt;/b&gt;, чтобы изменить направление кривой, или &lt;b&gt;CTRL&lt;/b&gt;, чтобы сохранить направление кривой. Нажмите &lt;b&gt;ENTER&lt;/b&gt;, чтобы завершить создание детали </translation>
+        <translation>Выберите объекты основного контура по часовой стрелке. Используйте &lt;b&gt;SHIFT&lt;/b&gt;, чтобы изменить направление кривой, или &lt;b&gt;CTRL&lt;/b&gt;, чтобы сохранить направление кривой. Нажмите &lt;b&gt;ENTER&lt;/b&gt;, чтобы завершить создание детали.</translation>
     </message>
 </context>
 <context>
