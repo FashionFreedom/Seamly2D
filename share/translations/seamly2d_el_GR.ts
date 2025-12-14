@@ -5696,10 +5696,6 @@ Do you want to save your changes?</source>
         <translation>Δεν ήταν δυνατή η εύρεση του αρχείου μετρήσεων &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;. Θέλετε να ενημερώσετε την τοποθεσία του αρχείου?</translation>
     </message>
     <message>
-        <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation>Έγινε αλλαγή των μετρήσεων. Θέλετε να συγχρονίσετε τις μετρήσεις τώρα?</translation>
-    </message>
-    <message>
         <source>Gradation doesn&apos;t support inches</source>
         <translation>Η διαβάθμιση δεν υποστηρίζει ίντσες</translation>
     </message>
@@ -7944,10 +7940,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Αριθμός:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
-        <translation>Επιλέξτε αντικείμενα κύριας διαδρομής δεξιόστροφα, χρησιμοποιήστε το &lt;b&gt;SHIFT&lt;/b&gt; για να αντιστρέψετε την κατεύθυνση της καμπύλης ή το &lt;b&gt;CTRL&lt;/b&gt; για να διατηρήσετε την κατεύθυνση της καμπύλης.</translation>
-    </message>
-    <message>
         <source>Press OK to create pattern piece</source>
         <translation>Πατήστε OK για να δημιουργήσετε το κομμάτι του πατρόν</translation>
     </message>
@@ -8174,6 +8166,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
         <translation>Πατήστε το &lt;b&gt;ENTER&lt;/b&gt; για να ολοκληρώσετε τη δημιουργία κομματιών.</translation>
+    </message>
+    <message>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Επιλέξτε αντικείμενα κύριας διαδρομής δεξιόστροφα, χρησιμοποιήστε το &lt;b&gt;SHIFT&lt;/b&gt; για να αντιστρέψετε την κατεύθυνση της καμπύλης ή το &lt;b&gt;CTRL&lt;/b&gt; για να διατηρήσετε την κατεύθυνση της καμπύλης.</translation>
     </message>
 </context>
 <context>
@@ -12439,7 +12435,8 @@ load in SeamlyME as usual.
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν είναι δυνατό το άνοιγμα του αρχείου μοτίβου %1:
+%2.</translation>
     </message>
 </context>
 <context>

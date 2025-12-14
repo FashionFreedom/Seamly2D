@@ -5692,10 +5692,6 @@ Chcete uložit své změny?</translation>
         <translation>Soubor s měřeními &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; nebyl nalezen. Chcete aktualizovat umístění souboru?</translation>
     </message>
     <message>
-        <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation>Měření byla změněna. Chcete nyní synchronizovat měření?</translation>
-    </message>
-    <message>
         <source>Gradation doesn&apos;t support inches</source>
         <translation>Gradace nepodporuje palce</translation>
     </message>
@@ -7940,10 +7936,6 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Počet:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
-        <translation>Vyberte objekty hlavní cesty ve směru hodinových ručiček. Pomocí klávesy &lt;b&gt;SHIFT&lt;/b&gt; obraťte směr křivky nebo klávesou &lt;b&gt;CTRL&lt;/b&gt; zachovejte směr křivky.</translation>
-    </message>
-    <message>
         <source>Press OK to create pattern piece</source>
         <translation>Stisknutím tlačítka OK vytvoříte vzor</translation>
     </message>
@@ -8170,6 +8162,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
         <translation>Stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt; dokončete vytváření dílce.</translation>
+    </message>
+    <message>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Vyberte objekty hlavní cesty ve směru hodinových ručiček. Pomocí klávesy &lt;b&gt;SHIFT&lt;/b&gt; obraťte směr křivky nebo klávesou &lt;b&gt;CTRL&lt;/b&gt; zachovejte směr křivky.</translation>
     </message>
 </context>
 <context>
@@ -12435,7 +12431,8 @@ SeamlyME jako obvykle.
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze otevřít soubor se vzorem %1:
+%2.</translation>
     </message>
 </context>
 <context>

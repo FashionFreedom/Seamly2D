@@ -5694,10 +5694,6 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>File pengukuran &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; tidak dapat ditemukan. Apakah Anda ingin memperbarui lokasi file?</translation>
     </message>
     <message>
-        <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation>Pengukuran telah diubah. Apakah Anda ingin menyinkronkan pengukuran sekarang?</translation>
-    </message>
-    <message>
         <source>Gradation doesn&apos;t support inches</source>
         <translation>Gradasi tidak mendukung inci</translation>
     </message>
@@ -7942,10 +7938,6 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Hitung:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
-        <translation>Pilih objek jalur utama searah jarum jam, Gunakan &lt;b&gt;SHIFT&lt;/b&gt; untuk membalikkan arah lengkung, atau &lt;b&gt;CTRL&lt;/b&gt; untuk mempertahankan arah lengkung.</translation>
-    </message>
-    <message>
         <source>Press OK to create pattern piece</source>
         <translation>Tekan OK untuk membuat potongan pola</translation>
     </message>
@@ -8172,6 +8164,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
         <translation>Tekan &lt;b&gt;ENTER&lt;/b&gt; untuk menyelesaikan pembuatan bagian.</translation>
+    </message>
+    <message>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Pilih objek jalur utama searah jarum jam, Gunakan &lt;b&gt;SHIFT&lt;/b&gt; untuk membalikkan arah lengkung, atau &lt;b&gt;CTRL&lt;/b&gt; untuk mempertahankan arah lengkung.</translation>
     </message>
 </context>
 <context>
@@ -12437,7 +12433,8 @@ unggah ke SeamlyME seperti biasa.
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak dapat membuka file pola %1:
+%2.</translation>
     </message>
 </context>
 <context>

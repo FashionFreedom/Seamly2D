@@ -5677,10 +5677,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Die Maßdateien &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; konnten nicht gefunden werden. Möchtest Du den Speicherort aktualisieren?</translation>
     </message>
     <message>
-        <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation>Die Maße wurden geändert. Sollen die Maße jetzt synchronisiert werden?</translation>
-    </message>
-    <message>
         <source>Gradation doesn&apos;t support inches</source>
         <translation>Gradierung unterstützt Zoll nicht</translation>
     </message>
@@ -7925,10 +7921,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Zählen:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
-        <translation>Hauptpfad Objekte im Uhrzeigersinn auswählen, mit &lt;b&gt;SHIFT&lt;/b&gt; Kurvenrichtung umkehren,  oder &lt;b&gt;Strg&lt;/b&gt; um Kurvenrichtung beizubehalten.</translation>
-    </message>
-    <message>
         <source>Press OK to create pattern piece</source>
         <translation>OK drücken um ein Schnittteil zu erstellen</translation>
     </message>
@@ -8155,6 +8147,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
         <translation>Mit &lt;b&gt;Enter&lt;/b&gt; Teilerstellung abschließen.</translation>
+    </message>
+    <message>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Hauptpfad Objekte im Uhrzeigersinn auswählen, mit &lt;b&gt;SHIFT&lt;/b&gt; Kurvenrichtung umkehren, oder &lt;b&gt;Strg&lt;/b&gt; um Kurvenrichtung beizubehalten.</translation>
     </message>
 </context>
 <context>
@@ -12422,7 +12418,8 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Musterdatei %1 kann nicht geöffnet werden:
+%2.</translation>
     </message>
 </context>
 <context>

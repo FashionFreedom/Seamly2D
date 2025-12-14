@@ -5677,10 +5677,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Het maten bestand&lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; kon niet gevonden worden. Wil je de bestanden locatie bijwerken?</translation>
     </message>
     <message>
-        <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation>Maten zijn gewijzigd. Wil je ze nu synchroniseren?</translation>
-    </message>
-    <message>
         <source>Gradation doesn&apos;t support inches</source>
         <translation>Graderen ondersteunt geen inches</translation>
     </message>
@@ -7925,10 +7921,6 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Aantal:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
-        <translation>Selecteer het pad van objecten met de klok mee, Gebruik &lt;b&gt;SHIFT&lt;/b&gt; om de richting van krommes om te draaien, of &lt;b&gt;Ctrl&lt;/b&gt; om de richting te bewaren.</translation>
-    </message>
-    <message>
         <source>Press OK to create pattern piece</source>
         <translation>Druk OK om een patroondeel te maken</translation>
     </message>
@@ -8155,6 +8147,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
         <translation>Druk &lt;b&gt;ENTER&lt;/b&gt; om het maken van het patroondeel te beëindigen.</translation>
+    </message>
+    <message>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Selecteer het pad van objecten met de klok mee, Gebruik &lt;b&gt;SHIFT&lt;/b&gt; om de richting van krommes om te draaien, of &lt;b&gt;Ctrl&lt;/b&gt; om de richting te bewaren.</translation>
     </message>
 </context>
 <context>
@@ -12419,7 +12415,8 @@ load in SeamlyME as usual.
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan het patroonbestand %1 niet openen:
+%2.</translation>
     </message>
 </context>
 <context>

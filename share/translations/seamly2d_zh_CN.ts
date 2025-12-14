@@ -5659,10 +5659,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Gradation doesn&apos;t support inches</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7906,10 +7902,6 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Press OK to create pattern piece</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8135,6 +8127,10 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

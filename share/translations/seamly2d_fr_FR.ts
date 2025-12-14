@@ -5718,10 +5718,6 @@ Voulez-vous sauvegarder les changements ?</translation>
         <translation>Le tableau de mesure &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;est introuvable. Voulez-vous le rechercher?</translation>
     </message>
     <message>
-        <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation>Les mesures ont été modifiées. Voulez-vous synchroniser les mesures maintenant ?</translation>
-    </message>
-    <message>
         <source>Gradation doesn&apos;t support inches</source>
         <translation>La gradation ne prend pas en charge les pouces</translation>
     </message>
@@ -7970,10 +7966,6 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
         <translation>Nombre :</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
-        <translation>Sélectionnez les objets du chemin principal dans le sens des aiguilles d&apos;une montre. Utilisez &lt;b&gt;MAJ&lt;/b&gt; pour inverser le sens de la courbe ou &lt;b&gt;CTRL&lt;/b&gt; pour conserver le sens de la courbe.</translation>
-    </message>
-    <message>
         <source>Press OK to create pattern piece</source>
         <translation>Appuyez sur OK pour créer la pièce de patron</translation>
     </message>
@@ -8196,6 +8188,10 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
         <translation>Appuyez sur &lt;b&gt;ENTRÉE&lt;/b&gt; pour terminer la création de la pièce .</translation>
+    </message>
+    <message>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Sélectionnez les objets du chemin principal dans le sens des aiguilles d&apos;une montre. Utilisez &lt;b&gt;MAJ&lt;/b&gt; pour inverser le sens de la courbe ou &lt;b&gt;CTRL&lt;/b&gt; pour conserver le sens de la courbe.</translation>
     </message>
 </context>
 <context>
@@ -12465,7 +12461,8 @@ charger dans SeamlyME comme d&apos;habitude.
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible d'ouvrir le fichier de motifs %1 :
+%2.</translation>
     </message>
 </context>
 <context>

@@ -5694,10 +5694,6 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Mittaustiedostoa &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; ei löytynyt. Haluatko päivittää tiedoston sijainnin?</translation>
     </message>
     <message>
-        <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation>Mittauksia on muutettu. Haluatko synkronoida mittaukset nyt?</translation>
-    </message>
-    <message>
         <source>Gradation doesn&apos;t support inches</source>
         <translation>Sävyt eivät tue tuumia</translation>
     </message>
@@ -7942,10 +7938,6 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <translation>Lasku:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
-        <translation>Valitse pääpolun objektit myötäpäivään. Käytä &lt;b&gt;SHIFT&lt;/b&gt;-näppäintä kääntääksesi käyrän suunnan tai &lt;b&gt;CTRL&lt;/b&gt;-näppäintä säilyttääksesi käyrän suunnan.</translation>
-    </message>
-    <message>
         <source>Press OK to create pattern piece</source>
         <translation>Paina OK luodaksesi kuviopalan</translation>
     </message>
@@ -8172,6 +8164,10 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
         <translation>Paina &lt;b&gt;ENTER&lt;/b&gt;-näppäintä viimeistelläksesi osan luomisen.</translation>
+    </message>
+    <message>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Valitse pääpolun objektit myötäpäivään. Käytä &lt;b&gt;SHIFT&lt;/b&gt;-näppäintä kääntääksesi käyrän suunnan tai &lt;b&gt;CTRL&lt;/b&gt;-näppäintä säilyttääksesi käyrän suunnan.</translation>
     </message>
 </context>
 <context>
@@ -12437,7 +12433,8 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuviotiedostoa %1 ei voida avata:
+%2.</translation>
     </message>
 </context>
 <context>

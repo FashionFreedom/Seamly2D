@@ -5680,10 +5680,6 @@ Pretende guardar as suas alterações?</translation>
         <translation>O arquivo de medições &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; nâo pâde ser encontrado. Vocâ quer atualizar o local do arquivo?</translation>
     </message>
     <message>
-        <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation>As medições foram alteradas. Vocâ quer sincronizar as medições agora?</translation>
-    </message>
-    <message>
         <source>Gradation doesn&apos;t support inches</source>
         <translation>A gradação nâo suporta polegadas</translation>
     </message>
@@ -7928,10 +7924,6 @@ Prima enter para o adicionar temporariamente à lista.</translation>
         <translation>Contar:</translation>
     </message>
     <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
-        <translation>Selecionar os objectos da trajetória principal no sentido dos ponteiros do relógio, Utilizar &lt;b&gt;SHIFT&lt;/b&gt; para inverter a direção da curva, ou &lt;b&gt;CTRL&lt;/b&gt; para manter a direção da curva.</translation>
-    </message>
-    <message>
         <source>Press OK to create pattern piece</source>
         <translation>Pressione OK para criar a peâa do molde</translation>
     </message>
@@ -8159,6 +8151,10 @@ Prima enter para o adicionar temporariamente à lista.</translation>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
         <translatorcomment>Pressionar &lt;b&gt;ENTER&lt;/b&gt; para terminar a criação da peça.</translatorcomment>
         <translation></translation>
+    </message>
+    <message>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Selecionar os objectos da trajetória principal no sentido dos ponteiros do relógio, Utilizar &lt;b&gt;SHIFT&lt;/b&gt; para inverter a direção da curva, ou &lt;b&gt;CTRL&lt;/b&gt; para manter a direção da curva.</translation>
     </message>
 </context>
 <context>
@@ -12424,7 +12420,8 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível abrir o arquivo de padrão %1:
+%2.</translation>
     </message>
 </context>
 <context>
