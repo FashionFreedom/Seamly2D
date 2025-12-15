@@ -1,6 +1,5 @@
 var NAVTREEINDEX131 =
 {
-"d8/de8/mainwindowsnogui_8cpp_source.html":[4,0,0,0,0,6],
 "d8/de9/msvc_2include_2xercesc_2util_2regx_2UnionToken_8hpp.html":[4,0,0,1,15,2,0,0,6,3,24],
 "d8/de9/msvc_2include_2xercesc_2util_2regx_2UnionToken_8hpp_source.html":[4,0,0,1,15,2,0,0,6,3,24],
 "d8/de9/vistooltruedarts_8cpp.html":[4,0,0,1,13,3,0,39],
@@ -249,5 +248,6 @@ var NAVTREEINDEX131 =
 "d8/dfa/classXMLResourceIdentifier.html#a439cfcd30999d4de0c73ca12f1695f1ba566151152dcdffa3c9ba5ede269df7ef":[3,0,862,2,12],
 "d8/dfa/classXMLResourceIdentifier.html#a439cfcd30999d4de0c73ca12f1695f1ba566151152dcdffa3c9ba5ede269df7ef":[3,0,862,0,0],
 "d8/dfa/classXMLResourceIdentifier.html#a439cfcd30999d4de0c73ca12f1695f1ba6d4a6daa39580a762539524149886773":[3,0,862,0,11],
-"d8/dfa/classXMLResourceIdentifier.html#a439cfcd30999d4de0c73ca12f1695f1ba6d4a6daa39580a762539524149886773":[3,0,862,2,17]
+"d8/dfa/classXMLResourceIdentifier.html#a439cfcd30999d4de0c73ca12f1695f1ba6d4a6daa39580a762539524149886773":[3,0,862,2,17],
+"d8/dfa/classXMLResourceIdentifier.html#a439cfcd30999d4de0c73ca12f1695f1ba6d4a6daa39580a762539524149886773":[3,0,862,0,17]
 };

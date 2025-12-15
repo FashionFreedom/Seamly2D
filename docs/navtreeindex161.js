@@ -1,6 +1,5 @@
 var NAVTREEINDEX161 =
 {
-"db/d28/vsettings_8cpp.html#a4a67c673d60108adfde815b76a0a8874":[4,0,0,1,8,23,1],
 "db/d28/vsettings_8cpp.html#a4c601f9cf9e67948204f6e97c935e25b":[4,0,0,1,8,23,16],
 "db/d28/vsettings_8cpp.html#a4d6ed1da0617224523a7edd32fe36da7":[4,0,0,1,8,23,9],
 "db/d28/vsettings_8cpp.html#a5ebced3aae1c6f5f424d404e263b118f":[4,0,0,1,8,23,30],
@@ -249,5 +248,6 @@ var NAVTREEINDEX161 =
 "db/d3c/classDOMRange.html#ab23067cbb829d88ffefa610aa4c2a9ee":[3,0,216,51],
 "db/d3c/classDOMRange.html#ab23067cbb829d88ffefa610aa4c2a9ee":[3,0,216,53],
 "db/d3c/classDOMRange.html#ab59587f18cf9b1969a3f9ec8c687c950":[3,0,216,47],
-"db/d3c/classDOMRange.html#ab59587f18cf9b1969a3f9ec8c687c950":[3,0,216,46]
+"db/d3c/classDOMRange.html#ab59587f18cf9b1969a3f9ec8c687c950":[3,0,216,46],
+"db/d3c/classDOMRange.html#ab59587f18cf9b1969a3f9ec8c687c950":[3,0,216,45]
 };

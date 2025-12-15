@@ -1,6 +1,5 @@
 var NAVTREEINDEX202 =
 {
-"dd/d41/editgroup__dialog_8cpp.html":[4,0,0,1,13,0,1,71],
 "dd/d41/editgroup__dialog_8cpp_source.html":[4,0,0,1,13,0,1,71],
 "dd/d43/dialogundo_8cpp.html":[4,0,0,1,13,0,0,0],
 "dd/d43/dialogundo_8cpp_source.html":[4,0,0,1,13,0,0,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX202 =
 "dd/d54/msvc_2include_2xercesc_2util_2BitSet_8hpp.html":[4,0,0,1,15,2,0,0,6,13],
 "dd/d54/msvc_2include_2xercesc_2util_2BitSet_8hpp_source.html":[4,0,0,1,15,2,0,0,6,13],
 "dd/d55/CollectionTest_2qttestmainlambda_8cpp.html":[4,0,0,2,0,0],
-"dd/d55/CollectionTest_2qttestmainlambda_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[4,0,0,2,0,0,0]
+"dd/d55/CollectionTest_2qttestmainlambda_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[4,0,0,2,0,0,0],
+"dd/d55/CollectionTest_2qttestmainlambda_8cpp_source.html":[4,0,0,2,0,0]
 };

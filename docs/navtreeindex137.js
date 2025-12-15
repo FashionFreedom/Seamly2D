@@ -1,6 +1,5 @@
 var NAVTREEINDEX137 =
 {
-"d9/d5a/classXMLBuffer.html#aa471412cfd714f061e0831d8fd5c5949":[3,0,809,56],
 "d9/d5a/classXMLBuffer.html#aa6a4872315c100c2546d91e827cb6c33":[3,0,809,17],
 "d9/d5a/classXMLBuffer.html#aa6a4872315c100c2546d91e827cb6c33":[3,0,809,16],
 "d9/d5a/classXMLBuffer.html#aa6a4872315c100c2546d91e827cb6c33":[3,0,809,15],
@@ -249,5 +248,6 @@ var NAVTREEINDEX137 =
 "d9/d70/classdx__ifaceImg.html#afccc5dd99b35c6e2cb97b47cd6118b30":[3,0,253,2],
 "d9/d70/preferencesgraphicsviewpage_8cpp.html":[4,0,0,0,0,1,0,2],
 "d9/d70/preferencesgraphicsviewpage_8cpp_source.html":[4,0,0,0,0,1,0,2],
-"d9/d71/classInternalPathDialog.html":[3,0,312]
+"d9/d71/classInternalPathDialog.html":[3,0,312],
+"d9/d71/classInternalPathDialog.html#a0257b8f1f036a97bc6d8560f4e0214cf":[3,0,312,63]
 };

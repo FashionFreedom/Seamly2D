@@ -1,6 +1,5 @@
 var NAVTREEINDEX146 =
 {
-"da/d05/classDOMDocumentType.html#ab1e0cc333f363e4e01ce295acbc605e1":[3,0,163,27],
 "da/d05/classDOMDocumentType.html#ab1e0cc333f363e4e01ce295acbc605e1":[3,0,163,28],
 "da/d05/classDOMDocumentType.html#ab1e0cc333f363e4e01ce295acbc605e1":[3,0,163,29],
 "da/d05/classDOMDocumentType.html#adcc339f104ef10657ed642d80fc87383":[3,0,163,19],
@@ -249,5 +248,6 @@ var NAVTREEINDEX146 =
 "da/d12/msvc_2include_2xercesc_2validators_2datatype_2IDDatatypeValidator_8hpp_source.html":[4,0,0,1,15,2,0,0,7,1,19],
 "da/d13/mingw_2include_2xercesc_2util_2HexBin_8hpp.html":[4,0,0,1,15,1,0,0,6,24],
 "da/d13/mingw_2include_2xercesc_2util_2HexBin_8hpp_source.html":[4,0,0,1,15,1,0,0,6,24],
-"da/d17/libs_2tools_2stable_8h.html":[4,0,0,1,3,2]
+"da/d17/libs_2tools_2stable_8h.html":[4,0,0,1,3,2],
+"da/d17/libs_2tools_2stable_8h_source.html":[4,0,0,1,3,2]
 };

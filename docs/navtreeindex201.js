@@ -1,6 +1,5 @@
 var NAVTREEINDEX201 =
 {
-"dd/d17/classContentSpecNode.html#a9f0405069bb852db46c696939b7b0c0d":[3,0,70,27],
 "dd/d17/classContentSpecNode.html#a9f50bccdffa191a3d31c70deece53659":[3,0,70,109],
 "dd/d17/classContentSpecNode.html#a9f50bccdffa191a3d31c70deece53659":[3,0,70,108],
 "dd/d17/classContentSpecNode.html#a9f50bccdffa191a3d31c70deece53659":[3,0,70,110],
@@ -249,5 +248,6 @@ var NAVTREEINDEX201 =
 "dd/d3d/mingw_2include_2xercesc_2internal_2ReaderMgr_8hpp.html":[4,0,0,1,15,1,0,0,2,9],
 "dd/d3d/mingw_2include_2xercesc_2internal_2ReaderMgr_8hpp_source.html":[4,0,0,1,15,1,0,0,2,9],
 "dd/d40/vpatternlabeldata_8cpp.html":[4,0,0,1,10,0,7],
-"dd/d40/vpatternlabeldata_8cpp_source.html":[4,0,0,1,10,0,7]
+"dd/d40/vpatternlabeldata_8cpp_source.html":[4,0,0,1,10,0,7],
+"dd/d41/editgroup__dialog_8cpp.html":[4,0,0,1,13,0,1,71]
 };

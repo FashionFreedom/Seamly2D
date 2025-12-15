@@ -1,6 +1,5 @@
 var NAVTREEINDEX232 =
 {
-"de/dec/classDOMNodeIterator.html#a863cbd96220a85aac998d89753738cd1":[3,0,204,0],
 "de/dec/classDOMNodeIterator.html#a863cbd96220a85aac998d89753738cd1":[3,0,204,6],
 "de/dec/classDOMNodeIterator.html#a8bd215b2a079de9ee273eb8ba36301ca":[3,0,204,9],
 "de/dec/classDOMNodeIterator.html#a8bd215b2a079de9ee273eb8ba36301ca":[3,0,204,10],
@@ -249,5 +248,6 @@ var NAVTREEINDEX232 =
 "df/d18/classValueHashTableOf.html#a8ac1fc1757352c4481957e6989f4f5a5":[3,0,573,40],
 "df/d18/classValueHashTableOf.html#a8ac1fc1757352c4481957e6989f4f5a5":[3,0,573,39],
 "df/d18/classValueHashTableOf.html#a92934bf4d7d12f3a91bdade791a8659c":[3,0,573,53],
-"df/d18/classValueHashTableOf.html#a94881a83a8ac90b3aee79545a62a2ce5":[3,0,573,0]
+"df/d18/classValueHashTableOf.html#a94881a83a8ac90b3aee79545a62a2ce5":[3,0,573,0],
+"df/d18/classValueHashTableOf.html#a94881a83a8ac90b3aee79545a62a2ce5":[3,0,573,8]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX160 =
 {
-"db/d0d/classDGXMLScanner.html#a9774b39699498448fc4f94e9a3402062":[3,0,95,39],
 "db/d0d/classDGXMLScanner.html#aa7236a3f2903a4d8dc307a9ebe6bc448":[3,0,95,51],
 "db/d0d/classDGXMLScanner.html#aa7236a3f2903a4d8dc307a9ebe6bc448":[3,0,95,52],
 "db/d0d/classDGXMLScanner.html#aa7236a3f2903a4d8dc307a9ebe6bc448":[3,0,95,53],
@@ -249,5 +248,6 @@ var NAVTREEINDEX160 =
 "db/d28/vsettings_8cpp.html#a410eeaad5be31fe4c0cfe4beb1dc9fe5":[4,0,0,1,8,23,15],
 "db/d28/vsettings_8cpp.html#a438399a0cf9605103f6b11d324b91f2b":[4,0,0,1,8,23,23],
 "db/d28/vsettings_8cpp.html#a47b3d658d44fe95a9ceb63a870f83fdb":[4,0,0,1,8,23,10],
-"db/d28/vsettings_8cpp.html#a47f3dfb18c411919a02ac2b84306e326":[4,0,0,1,8,23,2]
+"db/d28/vsettings_8cpp.html#a47f3dfb18c411919a02ac2b84306e326":[4,0,0,1,8,23,2],
+"db/d28/vsettings_8cpp.html#a4a67c673d60108adfde815b76a0a8874":[4,0,0,1,8,23,1]
 };

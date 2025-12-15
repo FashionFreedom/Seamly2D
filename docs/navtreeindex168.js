@@ -1,6 +1,5 @@
 var NAVTREEINDEX168 =
 {
-"db/da4/macx_2include_2xercesc_2framework_2Wrapper4DOMLSInput_8hpp.html":[4,0,0,1,15,0,0,0,1,11],
 "db/da4/macx_2include_2xercesc_2framework_2Wrapper4DOMLSInput_8hpp_source.html":[4,0,0,1,15,0,0,0,1,11],
 "db/da6/classVPE_1_1UserChangeEvent.html":[2,0,24,7],
 "db/da6/classVPE_1_1UserChangeEvent.html":[3,0,2,7],
@@ -249,5 +248,6 @@ var NAVTREEINDEX168 =
 "db/dc4/classqmu_1_1QmuParserCallback.html#a5aea486d4ecb59452443a101974ac42d":[2,0,20,5,2],
 "db/dc4/classqmu_1_1QmuParserCallback.html#a5aea486d4ecb59452443a101974ac42d":[3,0,0,5,2],
 "db/dc4/classqmu_1_1QmuParserCallback.html#a6a591736cdf108846c5caa97bc82005a":[3,0,0,5,20],
-"db/dc4/classqmu_1_1QmuParserCallback.html#a6a591736cdf108846c5caa97bc82005a":[2,0,20,5,20]
+"db/dc4/classqmu_1_1QmuParserCallback.html#a6a591736cdf108846c5caa97bc82005a":[2,0,20,5,20],
+"db/dc4/classqmu_1_1QmuParserCallback.html#a6e26eb90b760eb8df48c2aef1e8901a7":[2,0,20,5,32]
 };

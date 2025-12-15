@@ -1,6 +1,5 @@
 var NAVTREEINDEX206 =
 {
-"dd/dce/mingw_2include_2xercesc_2validators_2schema_2identity_2IC__Key_8hpp_source.html":[4,0,0,1,15,1,0,0,7,3,0,3],
 "dd/dd2/macx_2include_2xercesc_2validators_2schema_2identity_2XPathSymbols_8hpp.html":[4,0,0,1,15,0,0,0,7,3,0,15],
 "dd/dd2/macx_2include_2xercesc_2validators_2schema_2identity_2XPathSymbols_8hpp_source.html":[4,0,0,1,15,0,0,0,7,3,0,15],
 "dd/dd3/classDOMLocator.html":[3,0,183],
@@ -249,5 +248,6 @@ var NAVTREEINDEX206 =
 "dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#af1301f4815902dae2e1a94b6e5f264f7":[4,0,0,1,15,1,0,0,6,117,62],
 "dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#af1e9d23d3bdea6596ce6b7beb6005778":[4,0,0,1,15,1,0,0,6,117,33],
 "dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#af97146fa88abd8e8f3a60fb18e92bff5":[4,0,0,1,15,1,0,0,6,117,43],
-"dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#afac598d87ddc6dfd09716761eddcaa17":[4,0,0,1,15,1,0,0,6,117,3]
+"dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#afac598d87ddc6dfd09716761eddcaa17":[4,0,0,1,15,1,0,0,6,117,3],
+"dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#aff94d3618f2a0c9ee96a31d6009c96cc":[4,0,0,1,15,1,0,0,6,117,75]
 };

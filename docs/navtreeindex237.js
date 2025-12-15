@@ -1,6 +1,5 @@
 var NAVTREEINDEX237 =
 {
-"df/d65/msvc_2include_2xercesc_2dom_2impl_2DOMDocumentFragmentImpl_8hpp.html":[4,0,0,1,15,2,0,0,0,0,12],
 "df/d65/msvc_2include_2xercesc_2dom_2impl_2DOMDocumentFragmentImpl_8hpp_source.html":[4,0,0,1,15,2,0,0,0,0,12],
 "df/d65/msvc_2include_2xercesc_2framework_2psvi_2XSTypeDefinition_8hpp.html":[4,0,0,1,15,2,0,0,1,0,25],
 "df/d65/msvc_2include_2xercesc_2framework_2psvi_2XSTypeDefinition_8hpp_source.html":[4,0,0,1,15,2,0,0,1,0,25],
@@ -249,5 +248,6 @@ var NAVTREEINDEX237 =
 "df/d89/classSAX2XMLReader.html#a0a37a3f270cfd867d174610c132a91ac":[3,0,457,52],
 "df/d89/classSAX2XMLReader.html#a0a37a3f270cfd867d174610c132a91ac":[3,0,457,53],
 "df/d89/classSAX2XMLReader.html#a1e582e31531c645181c220c9ccbbe904":[3,0,457,137],
-"df/d89/classSAX2XMLReader.html#a1e582e31531c645181c220c9ccbbe904":[3,0,457,136]
+"df/d89/classSAX2XMLReader.html#a1e582e31531c645181c220c9ccbbe904":[3,0,457,136],
+"df/d89/classSAX2XMLReader.html#a1e582e31531c645181c220c9ccbbe904":[3,0,457,135]
 };

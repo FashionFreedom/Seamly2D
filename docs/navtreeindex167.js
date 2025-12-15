@@ -1,6 +1,5 @@
 var NAVTREEINDEX167 =
 {
-"db/d85/classDTDScanner.html#a326cd2edb2f03309f384c542fed045b6a2d73972ebc540a41fc91a89a7056a846":[3,0,247,2,3],
 "db/d85/classDTDScanner.html#a326cd2edb2f03309f384c542fed045b6a49233840b3b75d7898ffc997877d1b64":[3,0,247,1,8],
 "db/d85/classDTDScanner.html#a326cd2edb2f03309f384c542fed045b6a49233840b3b75d7898ffc997877d1b64":[3,0,247,2,8],
 "db/d85/classDTDScanner.html#a326cd2edb2f03309f384c542fed045b6a49233840b3b75d7898ffc997877d1b64":[3,0,247,1,5],
@@ -249,5 +248,6 @@ var NAVTREEINDEX167 =
 "db/d9e/mingw_2include_2xercesc_2util_2MsgLoaders_2InMemory_2InMemMsgLoader_8hpp.html":[4,0,0,1,15,1,0,0,6,1,0,0],
 "db/d9e/mingw_2include_2xercesc_2util_2MsgLoaders_2InMemory_2InMemMsgLoader_8hpp_source.html":[4,0,0,1,15,1,0,0,6,1,0,0],
 "db/da1/msvc_2include_2xercesc_2validators_2schema_2SchemaAttDef_8hpp.html":[4,0,0,1,15,2,0,0,7,3,5],
-"db/da1/msvc_2include_2xercesc_2validators_2schema_2SchemaAttDef_8hpp_source.html":[4,0,0,1,15,2,0,0,7,3,5]
+"db/da1/msvc_2include_2xercesc_2validators_2schema_2SchemaAttDef_8hpp_source.html":[4,0,0,1,15,2,0,0,7,3,5],
+"db/da4/macx_2include_2xercesc_2framework_2Wrapper4DOMLSInput_8hpp.html":[4,0,0,1,15,0,0,0,1,11]
 };

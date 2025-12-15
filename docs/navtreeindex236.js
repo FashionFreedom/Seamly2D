@@ -1,6 +1,5 @@
 var NAVTREEINDEX236 =
 {
-"df/d55/classXMLRecognizer.html#a9ec692a5a31b3f3375378c59d7770cd7":[3,0,860,9],
 "df/d55/classXMLRecognizer.html#a9ec692a5a31b3f3375378c59d7770cd7":[3,0,860,3],
 "df/d55/classXMLRecognizer.html#a9ec692a5a31b3f3375378c59d7770cd7":[3,0,860,6],
 "df/d55/classXMLRecognizer.html#aa169b7dccd69c08ab499741f177f07a7":[3,0,860,28],
@@ -249,5 +248,6 @@ var NAVTREEINDEX236 =
 "df/d63/classNonScalingFillPathItem.html#adee7143d956f4d880f721b4da8fc4b33":[3,0,372,2],
 "df/d63/classNonScalingFillPathItem.html#ae6ef159ffe9690c33ea53ceb2eae558b":[3,0,372,1],
 "df/d65/mingw_2include_2xercesc_2dom_2DOMXPathNSResolver_8hpp.html":[4,0,0,1,15,1,0,0,0,52],
-"df/d65/mingw_2include_2xercesc_2dom_2DOMXPathNSResolver_8hpp_source.html":[4,0,0,1,15,1,0,0,0,52]
+"df/d65/mingw_2include_2xercesc_2dom_2DOMXPathNSResolver_8hpp_source.html":[4,0,0,1,15,1,0,0,0,52],
+"df/d65/msvc_2include_2xercesc_2dom_2impl_2DOMDocumentFragmentImpl_8hpp.html":[4,0,0,1,15,2,0,0,0,0,12]
 };

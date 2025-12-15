@@ -1,6 +1,5 @@
 var NAVTREEINDEX198 =
 {
-"dc/df5/classXSNamespaceItem.html#a2c64fcc08b020ff2bdd57685994a5095":[3,0,911,50],
 "dc/df5/classXSNamespaceItem.html#a416248009813d4a4a23866860228d43d":[3,0,911,24],
 "dc/df5/classXSNamespaceItem.html#a416248009813d4a4a23866860228d43d":[3,0,911,26],
 "dc/df5/classXSNamespaceItem.html#a416248009813d4a4a23866860228d43d":[3,0,911,25],
@@ -249,5 +248,6 @@ var NAVTREEINDEX198 =
 "dd/d0a/classDOMException.html#af80f80a377221615d84e59dd2cf71af5a1d9200984864a43f8eba841eacd89be2":[3,0,175,1,28],
 "dd/d0a/classDOMException.html#af80f80a377221615d84e59dd2cf71af5a1d9200984864a43f8eba841eacd89be2":[3,0,175,1,45],
 "dd/d0a/classDOMException.html#af80f80a377221615d84e59dd2cf71af5a1d9200984864a43f8eba841eacd89be2":[3,0,175,0,11],
-"dd/d0a/classDOMException.html#af80f80a377221615d84e59dd2cf71af5a1d9200984864a43f8eba841eacd89be2":[3,0,175,2,28]
+"dd/d0a/classDOMException.html#af80f80a377221615d84e59dd2cf71af5a1d9200984864a43f8eba841eacd89be2":[3,0,175,2,28],
+"dd/d0a/classDOMException.html#af80f80a377221615d84e59dd2cf71af5a1d9200984864a43f8eba841eacd89be2":[3,0,175,0,45]
 };

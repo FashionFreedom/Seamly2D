@@ -1,6 +1,5 @@
 var NAVTREEINDEX163 =
 {
-"db/d45/classXMLURL.html#a7a7dd194aed528fdd70b938540f29c44":[3,0,877,82],
 "db/d45/classXMLURL.html#a7a7dd194aed528fdd70b938540f29c44":[3,0,877,83],
 "db/d45/classXMLURL.html#a7b8b06b3eb27c7c5a54e1ec52f8426c0":[3,0,877,126],
 "db/d45/classXMLURL.html#a7d116ad796509faa8ff74813b164ce2d":[3,0,877,122],
@@ -249,5 +248,6 @@ var NAVTREEINDEX163 =
 "db/d5b/moveoperationlabel_8cpp.html":[4,0,0,1,13,2,0,6],
 "db/d5b/moveoperationlabel_8cpp_source.html":[4,0,0,1,13,2,0,6],
 "db/d5c/groups__widget_8cpp.html":[4,0,0,0,0,1,24],
-"db/d5c/groups__widget_8cpp_source.html":[4,0,0,0,0,1,24]
+"db/d5c/groups__widget_8cpp_source.html":[4,0,0,0,0,1,24],
+"db/d5c/msvc_2include_2xercesc_2util_2EmptyStackException_8hpp.html":[4,0,0,1,15,2,0,0,6,17]
 };

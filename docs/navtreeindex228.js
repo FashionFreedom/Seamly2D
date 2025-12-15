@@ -1,6 +1,5 @@
 var NAVTREEINDEX228 =
 {
-"de/dc5/classMonthDayDatatypeValidator.html#adfaa83017dba655f47f4604a8df40cd3":[3,0,353,0],
 "de/dc5/classMonthDayDatatypeValidator.html#adfaa83017dba655f47f4604a8df40cd3":[3,0,353,4],
 "de/dc5/classXercesNodeTest.html":[3,0,791],
 "de/dc5/classXercesNodeTest.html#a1592ef45a80aea5a9096122deada5e73":[3,0,791,8],
@@ -249,5 +248,6 @@ var NAVTREEINDEX228 =
 "de/dcf/classXSValue.html#a51d52439745495eca3b06dc46c355791a2af1d479cea7198de12959c4b8ab7141":[3,0,918,12,12],
 "de/dcf/classXSValue.html#a51d52439745495eca3b06dc46c355791a2af1d479cea7198de12959c4b8ab7141":[3,0,918,11,1],
 "de/dcf/classXSValue.html#a51d52439745495eca3b06dc46c355791a33bcd0b667e26561b8f6bd467c8d944c":[3,0,918,11,9],
-"de/dcf/classXSValue.html#a51d52439745495eca3b06dc46c355791a33bcd0b667e26561b8f6bd467c8d944c":[3,0,918,11,20]
+"de/dcf/classXSValue.html#a51d52439745495eca3b06dc46c355791a33bcd0b667e26561b8f6bd467c8d944c":[3,0,918,11,20],
+"de/dcf/classXSValue.html#a51d52439745495eca3b06dc46c355791a33bcd0b667e26561b8f6bd467c8d944c":[3,0,918,12,20]
 };

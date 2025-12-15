@@ -1,6 +1,5 @@
 var NAVTREEINDEX242 =
 {
-"df/de5/dialogspline_8cpp.html":[4,0,0,1,13,0,1,61],
 "df/de5/dialogspline_8cpp_source.html":[4,0,0,1,13,0,1,61],
 "df/de5/msvc_2include_2xercesc_2validators_2DTD_2XMLDTDDescriptionImpl_8hpp.html":[4,0,0,1,15,2,0,0,7,2,8],
 "df/de5/msvc_2include_2xercesc_2validators_2DTD_2XMLDTDDescriptionImpl_8hpp_source.html":[4,0,0,1,15,2,0,0,7,2,8],
@@ -249,5 +248,6 @@ var NAVTREEINDEX242 =
 "df/dfa/classRefHash2KeysTableOf.html#a4c75daf6918f41cb5949d33fcacdf916":[3,0,434,60],
 "df/dfa/classRefHash2KeysTableOf.html#a4c75daf6918f41cb5949d33fcacdf916":[3,0,434,62],
 "df/dfa/classRefHash2KeysTableOf.html#a5497da28b8a4ac18759fdc9635c0127e":[3,0,434,66],
-"df/dfa/classRefHash2KeysTableOf.html#a5947f18a598f61ee7fc2a13a122bc053":[3,0,434,70]
+"df/dfa/classRefHash2KeysTableOf.html#a5947f18a598f61ee7fc2a13a122bc053":[3,0,434,70],
+"df/dfa/classRefHash2KeysTableOf.html#a665c2808ef4bd8e9c1127d67b44137ef":[3,0,434,23]
 };

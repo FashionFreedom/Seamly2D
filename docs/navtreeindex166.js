@@ -1,6 +1,5 @@
 var NAVTREEINDEX166 =
 {
-"db/d76/classVisPath.html#acd2e830a9ce2dd7f86aee0cfe2d566fb":[3,0,639,3],
 "db/d79/classDOMComment.html":[3,0,150],
 "db/d79/classDOMComment.html#a0f580fef5ef570e1409666f8f066d8ff":[3,0,150,1],
 "db/d79/classDOMComment.html#a0f580fef5ef570e1409666f8f066d8ff":[3,0,150,4],
@@ -249,5 +248,6 @@ var NAVTREEINDEX166 =
 "db/d85/classDTDScanner.html#a326cd2edb2f03309f384c542fed045b6a2d73972ebc540a41fc91a89a7056a846":[3,0,247,0,0],
 "db/d85/classDTDScanner.html#a326cd2edb2f03309f384c542fed045b6a2d73972ebc540a41fc91a89a7056a846":[3,0,247,0,3],
 "db/d85/classDTDScanner.html#a326cd2edb2f03309f384c542fed045b6a2d73972ebc540a41fc91a89a7056a846":[3,0,247,1,6],
-"db/d85/classDTDScanner.html#a326cd2edb2f03309f384c542fed045b6a2d73972ebc540a41fc91a89a7056a846":[3,0,247,2,0]
+"db/d85/classDTDScanner.html#a326cd2edb2f03309f384c542fed045b6a2d73972ebc540a41fc91a89a7056a846":[3,0,247,2,0],
+"db/d85/classDTDScanner.html#a326cd2edb2f03309f384c542fed045b6a2d73972ebc540a41fc91a89a7056a846":[3,0,247,2,3]
 };
