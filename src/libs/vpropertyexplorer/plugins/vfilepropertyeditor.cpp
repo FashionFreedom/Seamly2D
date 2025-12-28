@@ -32,7 +32,7 @@
 #include <QLineEdit>
 #include <QList>
 #include <QMimeData>
-#include <QtCore5Compat/QRegExp>
+#include <QRegularExpression>
 #include <QSizePolicy>
 #include <QToolButton>
 #include <QUrl>
@@ -245,8 +245,11 @@ bool VPE::VFileEditWidget::checkFileFilter(const QString& file) const
 
     foreach(QString tmpFilter, FilterList)
     {
-        QRegExp tmpRegExpFilter(tmpFilter, Qt::CaseInsensitive, QRegExp::Wildcard);
-        if (tmpRegExpFilter.exactMatch(file))
+        QRegularExpression tmpRegExpFilter(
+            QRegularExpression::anchoredPattern(
+                QRegularExpression::wildcardToRegularExpression(tmpFilter)),
+            QRegularExpression::CaseInsensitiveOption);
+        if (tmpRegExpFilter.match(file).hasMatch())
         {
             return true;
         }
