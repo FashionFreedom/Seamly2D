@@ -42,10 +42,12 @@
 #include <QObject>
 #include <QString>
 #include <QStringList>
+#include <QStringConverter>
 #include <QVariant>
 #include <Qt>
 #include <QtGlobal>
-#include <QtCore5Compat/QTextCodec>
+
+#include <optional>
 
 #include "def.h"
 
@@ -90,13 +92,15 @@ public:
     bool removeColumn(int col, const QModelIndex& parent = QModelIndex());
     virtual bool removeColumns(int col, int count, const QModelIndex& parent = QModelIndex()) override;
 
-    void setSource(QIODevice *file, bool withHeader = false, QChar separator = ',', QTextCodec* codec = nullptr);
+    void setSource(QIODevice *file, bool withHeader = false, QChar separator = ',',
+                   std::optional<QStringConverter::Encoding> encoding = std::nullopt);
     void setSource(const QString &filename, bool withHeader = false, QChar separator = ',',
-                   QTextCodec* codec = nullptr);
+                   std::optional<QStringConverter::Encoding> encoding = std::nullopt);
 
-    void toCSV(QIODevice *file, bool withHeader = false, QChar separator = ',', QTextCodec* codec = nullptr) const;
+    void toCSV(QIODevice *file, bool withHeader = false, QChar separator = ',',
+               std::optional<QStringConverter::Encoding> encoding = std::nullopt) const;
     void toCSV(const QString &filename, bool withHeader = false, QChar separator = ',',
-               QTextCodec* codec = nullptr) const;
+               std::optional<QStringConverter::Encoding> encoding = std::nullopt) const;
 
     enum QuoteOption { NoQuotes = 0,
                        SingleQuote = 1,

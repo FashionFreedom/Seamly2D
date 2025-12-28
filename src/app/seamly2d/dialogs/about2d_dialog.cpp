@@ -63,7 +63,7 @@
 #include <QSoundEffect>
 #include <QSysInfo>
 #include <QtDebug>
-#include <QTextCodec>
+#include <QStringConverter>
 
 #include "../options.h"
 #include "../core/application_2d.h"
@@ -175,7 +175,8 @@ About2DAppDialog::About2DAppDialog(QWidget *parent)
     }
 
     ui->sysLocalDirection_value->setText(direction);
-    ui->sysCodec_value->setText(QTextCodec::codecForLocale()->name());
+    // Qt6 uses UTF-8 internally as the default encoding
+    ui->sysCodec_value->setText(QStringLiteral("UTF-8"));
     ui->sysArguments_value->setText(QCoreApplication::arguments().join(","));
 }
 
