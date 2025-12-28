@@ -60,9 +60,9 @@
 #include <QLocale>
 #include <QMessageLogger>
 #include <QString>
+#include <QStringConverter>
 #include <QVariant>
 #include <QtDebug>
-#include <QtCore5Compat/QTextCodec>
 
 #include "../ifc/ifcdef.h"
 #include "../vmisc/def.h"
@@ -1765,9 +1765,12 @@ int VCommonSettings::GetCSVCodec() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+// Returns the default encoding as a QStringConverter::Encoding value cast to int.
+// Previously used QTextCodec MIB values, now stores QStringConverter::Encoding enum values.
 int VCommonSettings::GetDefCSVCodec() const
 {
-    return QTextCodec::codecForLocale()->mibEnum();
+    // Default to UTF-8 encoding (Qt6 default)
+    return static_cast<int>(QStringConverter::Utf8);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

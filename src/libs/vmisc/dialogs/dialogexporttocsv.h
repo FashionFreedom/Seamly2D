@@ -57,6 +57,7 @@
 #define DIALOGEXPORTTOCSV_H
 
 #include <QDialog>
+#include <QStringConverter>
 
 namespace Ui {
 class DialogExportToCSV;
@@ -71,7 +72,7 @@ public:
     virtual               ~DialogExportToCSV();
 
     bool                   WithHeader() const;
-    int                    SelectedMib() const;
+    QStringConverter::Encoding SelectedEncoding() const;
     QChar                  Separator() const;
 
 protected:

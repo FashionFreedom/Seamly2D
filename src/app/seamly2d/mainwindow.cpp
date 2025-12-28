@@ -113,7 +113,6 @@
 #include <QAction>
 #include <QComboBox>
 #include <QFontComboBox>
-#include <QtCore5Compat/QTextCodec>
 #include <QDoubleSpinBox>
 #include <QFileDialog>
 #include <QFileSystemWatcher>
@@ -128,7 +127,7 @@
 #include <QSharedPointer>
 #include <QShowEvent>
 #include <QStatusBar>
-#include <QTextCodec>
+#include <QStringConverter>
 #include <QTimer>
 #include <QToolBar>
 #include <QtDebug>
@@ -2013,7 +2012,7 @@ void MainWindow::exportToCSVData(const QString &fileName, const DialogExportToCS
         csv.setText(currentRow, 2, formula); // formula
     }
 
-    csv.toCSV(fileName, dialog.WithHeader(), dialog.Separator(), QTextCodec::codecForMib(dialog.SelectedMib()));
+    csv.toCSV(fileName, dialog.WithHeader(), dialog.Separator(), dialog.SelectedEncoding());
 }
 
 void MainWindow::handleExportToCSV()

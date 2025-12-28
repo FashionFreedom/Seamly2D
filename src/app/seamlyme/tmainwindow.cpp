@@ -90,7 +90,7 @@
 #include <QPrintPreviewDialog>
 #include <QProcess>
 #include <QtNumeric>
-#include <QtCore5Compat/QTextCodec>
+#include <QStringConverter>
 
 #if defined(Q_OS_MAC)
 #include <QMimeData>
@@ -830,7 +830,7 @@ void TMainWindow::exportToCSVData(const QString &fileName, const DialogExportToC
 		}
 	}
 
-	csv.toCSV(fileName, dialog.WithHeader(), dialog.Separator(), QTextCodec::codecForMib(dialog.SelectedMib()));
+	csv.toCSV(fileName, dialog.WithHeader(), dialog.Separator(), dialog.SelectedEncoding());
 }
 
 void TMainWindow::handleExportToCSV()
