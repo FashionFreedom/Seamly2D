@@ -1751,26 +1751,26 @@ bool VCommonSettings::GetDefCSVWithHeader() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetCSVCodec(int mib)
+void VCommonSettings::SetCSVCodec(QStringConverter::Encoding encoding)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    settings.setValue(settingCSVCodec, mib);
+    settings.setValue(settingCSVCodec, encoding);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VCommonSettings::GetCSVCodec() const
+QStringConverter::Encoding VCommonSettings::GetCSVCodec() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    return settings.value(settingCSVCodec, GetDefCSVCodec()).toInt();
+    return settings.value(settingCSVCodec, GetDefCSVCodec()).value<QStringConverter::Encoding>();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 // Returns the default encoding as a QStringConverter::Encoding value cast to int.
 // Previously used QTextCodec MIB values, now stores QStringConverter::Encoding enum values.
-int VCommonSettings::GetDefCSVCodec() const
+QStringConverter::Encoding VCommonSettings::GetDefCSVCodec() const
 {
     // Default to UTF-8 encoding (Qt6 default)
-    return static_cast<int>(QStringConverter::Utf8);
+    return QStringConverter::Utf8;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
