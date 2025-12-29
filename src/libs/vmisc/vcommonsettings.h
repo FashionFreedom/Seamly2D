@@ -389,9 +389,9 @@ public:
     bool                 GetCSVWithHeader() const;
     bool                 GetDefCSVWithHeader() const;
 
-    void                 SetCSVCodec(int mib);
-    int                  GetCSVCodec() const;
-    int                  GetDefCSVCodec() const;
+    void                 SetCSVCodec(QStringConverter::Encoding encoding);
+    QStringConverter::Encoding                  GetCSVCodec() const;
+    QStringConverter::Encoding                  GetDefCSVCodec() const;
 
     void                 SetCSVSeparator(const QChar &separator);
     QChar                GetCSVSeparator() const;
