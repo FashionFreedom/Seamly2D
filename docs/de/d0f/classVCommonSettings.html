@@ -533,12 +533,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a542c501cecafa546d21e16a55233df05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2212e4ca7913c92945141f9ab0356882"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#a2212e4ca7913c92945141f9ab0356882">GetDefCSVWithHeader</a> () const</td></tr>
 <tr class="separator:a2212e4ca7913c92945141f9ab0356882"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae3e7bd450c27a484002c2107301c739"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#aae3e7bd450c27a484002c2107301c739">SetCSVCodec</a> (int mib)</td></tr>
-<tr class="separator:aae3e7bd450c27a484002c2107301c739"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a236f7c15f770ac674b8addf971793019"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#a236f7c15f770ac674b8addf971793019">GetCSVCodec</a> () const</td></tr>
-<tr class="separator:a236f7c15f770ac674b8addf971793019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f587dda53792037223a8c75e4211a57"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#a8f587dda53792037223a8c75e4211a57">GetDefCSVCodec</a> () const</td></tr>
-<tr class="separator:a8f587dda53792037223a8c75e4211a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeeeba569fe4b677b4ef80f74d8fce97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#adeeeba569fe4b677b4ef80f74d8fce97">SetCSVCodec</a> (QStringConverter::Encoding encoding)</td></tr>
+<tr class="separator:adeeeba569fe4b677b4ef80f74d8fce97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f7fbd32271b08374c48413645c336c"><td class="memItemLeft" align="right" valign="top">QStringConverter::Encoding&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#a19f7fbd32271b08374c48413645c336c">GetCSVCodec</a> () const</td></tr>
+<tr class="separator:a19f7fbd32271b08374c48413645c336c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9616e78c9b338051556869bf302784e8"><td class="memItemLeft" align="right" valign="top">QStringConverter::Encoding&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#a9616e78c9b338051556869bf302784e8">GetDefCSVCodec</a> () const</td></tr>
+<tr class="separator:a9616e78c9b338051556869bf302784e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7855efcc45968c9ea015795dafea0ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#ad7855efcc45968c9ea015795dafea0ad">SetCSVSeparator</a> (const QChar &amp;separator)</td></tr>
 <tr class="separator:ad7855efcc45968c9ea015795dafea0ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c4ea75affc6252e949c28427a8611d2"><td class="memItemLeft" align="right" valign="top">QChar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#a6c4ea75affc6252e949c28427a8611d2">GetCSVSeparator</a> () const</td></tr>
@@ -914,7 +914,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01198">1198</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -939,7 +939,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01132">1132</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -1160,14 +1160,14 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a236f7c15f770ac674b8addf971793019" name="a236f7c15f770ac674b8addf971793019"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a236f7c15f770ac674b8addf971793019">&#9670;&#160;</a></span>GetCSVCodec()</h2>
+<a id="a19f7fbd32271b08374c48413645c336c" name="a19f7fbd32271b08374c48413645c336c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19f7fbd32271b08374c48413645c336c">&#9670;&#160;</a></span>GetCSVCodec()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int VCommonSettings::GetCSVCodec </td>
+          <td class="memname">QStringConverter::Encoding VCommonSettings::GetCSVCodec </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1177,7 +1177,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01761">1761</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00253">commonIniFilename</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01768">GetDefCSVCodec()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00253">commonIniFilename</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01770">GetDefCSVCodec()</a>.</p>
 
 </div>
 </div>
@@ -1196,7 +1196,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01795">1795</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01798">1798</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00253">commonIniFilename</a>.</p>
 
@@ -1259,7 +1259,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02099">2099</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02102">2102</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -1336,9 +1336,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01907">1907</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01910">1910</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -1357,7 +1357,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01919">1919</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01922">1922</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -1376,7 +1376,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01931">1931</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01934">1934</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -1395,9 +1395,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01979">1979</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01982">1982</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -1416,7 +1416,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01991">1991</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01994">1994</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -1435,7 +1435,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02003">2003</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02006">2006</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -1454,9 +1454,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02075">2075</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02078">2078</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -1475,7 +1475,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02063">2063</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02066">2066</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -1494,7 +1494,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02087">2087</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02090">2090</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -1513,7 +1513,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02051">2051</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02054">2054</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -1590,9 +1590,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01943">1943</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01946">1946</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -1611,7 +1611,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01955">1955</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01958">1958</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -1630,7 +1630,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01967">1967</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01970">1970</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -1649,9 +1649,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02171">2171</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02174">2174</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -1670,7 +1670,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02159">2159</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02162">2162</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -1718,7 +1718,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02147">2147</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02150">2150</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -1739,7 +1739,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01210">1210</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -1806,7 +1806,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00446">446</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07059">MainWindow::checkPathToMeasurements()</a>, <a class="el" href="../../dc/d20/preferencespathpage_8cpp_source.html#l00107">PreferencesPathPage::defaultPath()</a>, <a class="el" href="../../d8/dcc/seamlymepreferencespathpage_8cpp_source.html#l00104">SeamlyMePreferencesPathPage::defaultPath()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00452">getMultisizePath()</a>, <a class="el" href="../../df/d3e/application__2d_8cpp_source.html#l00561">Application2D::initOptions()</a>, <a class="el" href="../../d8/dd0/application__me_8cpp_source.html#l00400">ApplicationME::initOptions()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00419">prepareMultisizeTables()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07058">MainWindow::checkPathToMeasurements()</a>, <a class="el" href="../../dc/d20/preferencespathpage_8cpp_source.html#l00107">PreferencesPathPage::defaultPath()</a>, <a class="el" href="../../d8/dcc/seamlymepreferencespathpage_8cpp_source.html#l00104">SeamlyMePreferencesPathPage::defaultPath()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00452">getMultisizePath()</a>, <a class="el" href="../../df/d3e/application__2d_8cpp_source.html#l00561">Application2D::initOptions()</a>, <a class="el" href="../../d8/dd0/application__me_8cpp_source.html#l00400">ApplicationME::initOptions()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00419">prepareMultisizeTables()</a>.</p>
 
 </div>
 </div>
@@ -1827,7 +1827,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01722">1722</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -1956,7 +1956,7 @@ Static Public Attributes</h2></td></tr>
 <p>returns the default seam allowance. The corresponding unit is the default unit. </p>
 <dl class="section return"><dt>Returns</dt><dd>the default seam allowance </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01829">1829</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01832">1832</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00727">getUnit()</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00731">StrToUnits()</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00256">UnitConvertor()</a>.</p>
 
@@ -1977,7 +1977,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02027">2027</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02030">2030</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -1996,9 +1996,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01871">1871</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01874">1874</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -2017,7 +2017,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01883">1883</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01886">1886</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -2036,7 +2036,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01895">1895</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01898">1898</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -2069,14 +2069,14 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a8f587dda53792037223a8c75e4211a57" name="a8f587dda53792037223a8c75e4211a57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f587dda53792037223a8c75e4211a57">&#9670;&#160;</a></span>GetDefCSVCodec()</h2>
+<a id="a9616e78c9b338051556869bf302784e8" name="a9616e78c9b338051556869bf302784e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9616e78c9b338051556869bf302784e8">&#9670;&#160;</a></span>GetDefCSVCodec()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int VCommonSettings::GetDefCSVCodec </td>
+          <td class="memname">QStringConverter::Encoding VCommonSettings::GetDefCSVCodec </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -2084,7 +2084,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01768">1768</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01770">1770</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01761">GetCSVCodec()</a>.</p>
 
@@ -2105,7 +2105,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01813">1813</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01816">1816</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -2282,7 +2282,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01490">1490</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05248">MainWindow::ReadSettings()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03080">TMainWindow::ReadSettings()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05247">MainWindow::ReadSettings()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03080">TMainWindow::ReadSettings()</a>.</p>
 
 </div>
 </div>
@@ -2301,7 +2301,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02195">2195</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02198">2198</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -2320,7 +2320,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02312">2312</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02315">2315</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -2339,7 +2339,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02219">2219</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02222">2222</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -2404,9 +2404,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02324">2324</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02327">2327</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02372">GetUserDefinedDateFormats()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02346">PredefinedDateFormats()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02375">GetUserDefinedDateFormats()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02349">PredefinedDateFormats()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00281">PreferencesPatternPage::initializeLabelsTab()</a>.</p>
 
@@ -2427,7 +2427,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02183">2183</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02186">2186</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -2469,9 +2469,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02384">2384</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02387">2387</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02416">GetUserDefinedTimeFormats()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02406">PredefinedTimeFormats()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02419">GetUserDefinedTimeFormats()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02409">PredefinedTimeFormats()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00281">PreferencesPatternPage::initializeLabelsTab()</a>.</p>
 
@@ -2673,7 +2673,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01174">1174</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -2692,7 +2692,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02207">2207</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02210">2210</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -2713,7 +2713,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01186">1186</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -2732,7 +2732,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02291">2291</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02294">2294</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -2772,7 +2772,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01246">1246</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -2793,7 +2793,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01455">1455</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05211">MainWindow::setCurrentFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05210">MainWindow::setCurrentFile()</a>.</p>
 
 </div>
 </div>
@@ -2814,7 +2814,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01478">1478</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05211">MainWindow::setCurrentFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05210">MainWindow::setCurrentFile()</a>.</p>
 
 </div>
 </div>
@@ -2930,7 +2930,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01258">1258</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -2987,7 +2987,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02267">2267</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02270">2270</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -3025,7 +3025,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02231">2231</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02234">2234</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -3044,7 +3044,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02255">2255</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02258">2258</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -3306,9 +3306,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">2427</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">2430</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01198">getAxisOrginColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01132">getBackgroundColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01907">getDefaultCutColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01979">getDefaultCutoutColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02075">getDefaultGrainlineColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01943">getDefaultInternalColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02171">getDefaultLabelColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01210">getDefaultLineColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01722">getDefaultNotchColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01871">getDefaultSeamColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01174">getPointNameColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01186">getPointNameHoverColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01246">getPrimarySupportColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01258">getSecondarySupportColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01270">getTertiarySupportColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01162">getZoomRBNegativeColor()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01150">getZoomRBPositiveColor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01198">getAxisOrginColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01132">getBackgroundColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01910">getDefaultCutColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01982">getDefaultCutoutColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02078">getDefaultGrainlineColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01946">getDefaultInternalColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02174">getDefaultLabelColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01210">getDefaultLineColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01722">getDefaultNotchColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01874">getDefaultSeamColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01174">getPointNameColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01186">getPointNameHoverColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01246">getPrimarySupportColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01258">getSecondarySupportColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01270">getTertiarySupportColor()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01162">getZoomRBNegativeColor()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01150">getZoomRBPositiveColor()</a>.</p>
 
 </div>
 </div>
@@ -3371,7 +3371,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01270">1270</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -3392,7 +3392,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01514">1514</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05248">MainWindow::ReadSettings()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03080">TMainWindow::ReadSettings()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05247">MainWindow::ReadSettings()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03080">TMainWindow::ReadSettings()</a>.</p>
 
 </div>
 </div>
@@ -3432,7 +3432,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01417">1417</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05248">MainWindow::ReadSettings()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05247">MainWindow::ReadSettings()</a>.</p>
 
 </div>
 </div>
@@ -3455,7 +3455,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00181">unitCM</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00182">unitINCH</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01652">getDefaultNotchLength()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01681">getDefaultNotchWidth()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01829">GetDefaultSeamAllowance()</a>, <a class="el" href="../../df/d69/welcome__dialog_8cpp_source.html#l00122">SeamlyWelcomeDialog::initUnits()</a>, <a class="el" href="../../dc/d74/me__welcome__dialog_8cpp_source.html#l00100">SeamlyMeWelcomeDialog::initUnits()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01819">SetDefaultSeamAllowance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01652">getDefaultNotchLength()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01681">getDefaultNotchWidth()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01832">GetDefaultSeamAllowance()</a>, <a class="el" href="../../df/d69/welcome__dialog_8cpp_source.html#l00122">SeamlyWelcomeDialog::initUnits()</a>, <a class="el" href="../../dc/d74/me__welcome__dialog_8cpp_source.html#l00100">SeamlyMeWelcomeDialog::initUnits()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01822">SetDefaultSeamAllowance()</a>.</p>
 
 </div>
 </div>
@@ -3474,9 +3474,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02372">2372</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02375">2375</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d18/dialogpatternproperties_8cpp_source.html#l00076">DialogPatternProperties::DialogPatternProperties()</a>, <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00239">PreferencesPatternPage::editDateTimeFormats()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02324">GetLabelDateFormat()</a>, and <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00281">PreferencesPatternPage::initializeLabelsTab()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d18/dialogpatternproperties_8cpp_source.html#l00076">DialogPatternProperties::DialogPatternProperties()</a>, <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00239">PreferencesPatternPage::editDateTimeFormats()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02327">GetLabelDateFormat()</a>, and <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00281">PreferencesPatternPage::initializeLabelsTab()</a>.</p>
 
 </div>
 </div>
@@ -3495,9 +3495,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02416">2416</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02419">2419</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d18/dialogpatternproperties_8cpp_source.html#l00076">DialogPatternProperties::DialogPatternProperties()</a>, <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00239">PreferencesPatternPage::editDateTimeFormats()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02384">GetLabelTimeFormat()</a>, and <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00281">PreferencesPatternPage::initializeLabelsTab()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d18/dialogpatternproperties_8cpp_source.html#l00076">DialogPatternProperties::DialogPatternProperties()</a>, <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00239">PreferencesPatternPage::editDateTimeFormats()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02387">GetLabelTimeFormat()</a>, and <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00281">PreferencesPatternPage::initializeLabelsTab()</a>.</p>
 
 </div>
 </div>
@@ -3516,7 +3516,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02279">2279</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02282">2282</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -3575,7 +3575,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01502">1502</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05248">MainWindow::ReadSettings()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03080">TMainWindow::ReadSettings()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05247">MainWindow::ReadSettings()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03080">TMainWindow::ReadSettings()</a>.</p>
 
 </div>
 </div>
@@ -3672,7 +3672,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01162">1162</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -3693,7 +3693,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01150">1150</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02427">getStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02430">getStr()</a>.</p>
 
 </div>
 </div>
@@ -3769,7 +3769,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02243">2243</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02246">2246</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -3846,9 +3846,9 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02346">2346</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02349">2349</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d18/dialogpatternproperties_8cpp_source.html#l00076">DialogPatternProperties::DialogPatternProperties()</a>, <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00239">PreferencesPatternPage::editDateTimeFormats()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02324">GetLabelDateFormat()</a>, <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00281">PreferencesPatternPage::initializeLabelsTab()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02378">SetUserDefinedDateFormats()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d18/dialogpatternproperties_8cpp_source.html#l00076">DialogPatternProperties::DialogPatternProperties()</a>, <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00239">PreferencesPatternPage::editDateTimeFormats()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02327">GetLabelDateFormat()</a>, <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00281">PreferencesPatternPage::initializeLabelsTab()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02381">SetUserDefinedDateFormats()</a>.</p>
 
 </div>
 </div>
@@ -3875,9 +3875,9 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02406">2406</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02409">2409</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d18/dialogpatternproperties_8cpp_source.html#l00076">DialogPatternProperties::DialogPatternProperties()</a>, <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00239">PreferencesPatternPage::editDateTimeFormats()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02384">GetLabelTimeFormat()</a>, <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00281">PreferencesPatternPage::initializeLabelsTab()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02422">SetUserDefinedTimeFormats()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d18/dialogpatternproperties_8cpp_source.html#l00076">DialogPatternProperties::DialogPatternProperties()</a>, <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00239">PreferencesPatternPage::editDateTimeFormats()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02387">GetLabelTimeFormat()</a>, <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00281">PreferencesPatternPage::initializeLabelsTab()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02425">SetUserDefinedTimeFormats()</a>.</p>
 
 </div>
 </div>
@@ -3909,7 +3909,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00446">getDefaultMultisizePath()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00401">MultisizeTablesPath()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07059">MainWindow::checkPathToMeasurements()</a>, <a class="el" href="../../dc/d20/preferencespathpage_8cpp_source.html#l00150">PreferencesPathPage::editPath()</a>, <a class="el" href="../../d8/dcc/seamlymepreferencespathpage_8cpp_source.html#l00134">SeamlyMePreferencesPathPage::editPath()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01053">TMainWindow::FileSaveAs()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l02084">MainWindow::LoadMultisize()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00473">TMainWindow::OpenMultisize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07058">MainWindow::checkPathToMeasurements()</a>, <a class="el" href="../../dc/d20/preferencespathpage_8cpp_source.html#l00150">PreferencesPathPage::editPath()</a>, <a class="el" href="../../d8/dcc/seamlymepreferencespathpage_8cpp_source.html#l00134">SeamlyMePreferencesPathPage::editPath()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01053">TMainWindow::FileSaveAs()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l02083">MainWindow::LoadMultisize()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00473">TMainWindow::OpenMultisize()</a>.</p>
 
 </div>
 </div>
@@ -4308,8 +4308,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aae3e7bd450c27a484002c2107301c739" name="aae3e7bd450c27a484002c2107301c739"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae3e7bd450c27a484002c2107301c739">&#9670;&#160;</a></span>SetCSVCodec()</h2>
+<a id="adeeeba569fe4b677b4ef80f74d8fce97" name="adeeeba569fe4b677b4ef80f74d8fce97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeeeba569fe4b677b4ef80f74d8fce97">&#9670;&#160;</a></span>SetCSVCodec()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4317,8 +4317,8 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">void VCommonSettings::SetCSVCodec </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>mib</em></td><td>)</td>
+          <td class="paramtype">QStringConverter::Encoding&#160;</td>
+          <td class="paramname"><em>encoding</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -4346,7 +4346,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01774">1774</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01777">1777</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00253">commonIniFilename</a>.</p>
 
@@ -4412,7 +4412,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02105">2105</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02108">2108</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4434,7 +4434,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01913">1913</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01916">1916</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4456,7 +4456,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01925">1925</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01928">1928</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4478,7 +4478,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01937">1937</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01940">1940</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4500,7 +4500,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01985">1985</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01988">1988</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4522,7 +4522,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01997">1997</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02000">2000</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4544,7 +4544,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02009">2009</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02012">2012</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4566,7 +4566,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02081">2081</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02084">2084</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4588,7 +4588,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02069">2069</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02072">2072</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4610,7 +4610,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02093">2093</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02096">2096</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4632,7 +4632,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02057">2057</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02060">2060</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4654,7 +4654,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01949">1949</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01952">1952</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4676,7 +4676,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01961">1961</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01964">1964</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4698,7 +4698,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01973">1973</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01976">1976</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4720,7 +4720,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02177">2177</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02180">2180</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4742,7 +4742,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02165">2165</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02168">2168</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4764,7 +4764,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02153">2153</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02156">2156</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -4978,7 +4978,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01819">1819</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01822">1822</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00727">getUnit()</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00731">StrToUnits()</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00256">UnitConvertor()</a>.</p>
 
@@ -5002,7 +5002,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02033">2033</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02036">2036</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -5024,7 +5024,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01877">1877</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01880">1880</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -5046,7 +5046,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01889">1889</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01892">1892</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -5068,7 +5068,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01901">1901</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01904">1904</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -5244,7 +5244,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01496">1496</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05277">MainWindow::WriteSettings()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03095">TMainWindow::WriteSettings()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05276">MainWindow::WriteSettings()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03095">TMainWindow::WriteSettings()</a>.</p>
 
 </div>
 </div>
@@ -5264,7 +5264,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02201">2201</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02204">2204</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d9/d70/preferencesgraphicsviewpage_8cpp_source.html#l00261">PreferencesGraphicsViewPage::Apply()</a>.</p>
 
@@ -5286,7 +5286,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02318">2318</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02321">2321</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d9/d70/preferencesgraphicsviewpage_8cpp_source.html#l00261">PreferencesGraphicsViewPage::Apply()</a>.</p>
 
@@ -5308,7 +5308,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02225">2225</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02228">2228</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -5396,7 +5396,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02340">2340</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02343">2343</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -5418,7 +5418,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02189">2189</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02192">2192</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d9/d70/preferencesgraphicsviewpage_8cpp_source.html#l00261">PreferencesGraphicsViewPage::Apply()</a>.</p>
 
@@ -5440,7 +5440,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02400">2400</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02403">2403</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -5726,7 +5726,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02213">2213</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02216">2216</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d9/d70/preferencesgraphicsviewpage_8cpp_source.html#l00261">PreferencesGraphicsViewPage::Apply()</a>.</p>
 
@@ -5770,7 +5770,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02306">2306</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02309">2309</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d9/d70/preferencesgraphicsviewpage_8cpp_source.html#l00261">PreferencesGraphicsViewPage::Apply()</a>.</p>
 
@@ -5836,7 +5836,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01472">1472</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05211">MainWindow::setCurrentFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05210">MainWindow::setCurrentFile()</a>.</p>
 
 </div>
 </div>
@@ -5858,7 +5858,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01484">1484</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05211">MainWindow::setCurrentFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05210">MainWindow::setCurrentFile()</a>.</p>
 
 </div>
 </div>
@@ -6052,7 +6052,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02273">2273</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02276">2276</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -6094,7 +6094,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02237">2237</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02240">2240</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -6114,7 +6114,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02261">2261</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02264">2264</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -6178,7 +6178,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02045">2045</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02048">2048</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -6220,7 +6220,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02117">2117</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02120">2120</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -6306,7 +6306,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02129">2129</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02132">2132</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -6328,7 +6328,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02141">2141</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02144">2144</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -6438,7 +6438,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02021">2021</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02024">2024</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -6616,7 +6616,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01520">1520</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05277">MainWindow::WriteSettings()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03095">TMainWindow::WriteSettings()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05276">MainWindow::WriteSettings()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03095">TMainWindow::WriteSettings()</a>.</p>
 
 </div>
 </div>
@@ -6768,9 +6768,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02378">2378</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02381">2381</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02346">PredefinedDateFormats()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02349">PredefinedDateFormats()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -6792,9 +6792,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02422">2422</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02425">2425</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02406">PredefinedTimeFormats()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02409">PredefinedTimeFormats()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d63/preferencespatternpage_8cpp_source.html#l00114">PreferencesPatternPage::Apply()</a>.</p>
 
@@ -6838,7 +6838,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02285">2285</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02288">2288</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -6902,7 +6902,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01508">1508</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05277">MainWindow::WriteSettings()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03095">TMainWindow::WriteSettings()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05276">MainWindow::WriteSettings()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03095">TMainWindow::WriteSettings()</a>.</p>
 
 </div>
 </div>
@@ -6922,7 +6922,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02249">2249</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02252">2252</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -7149,7 +7149,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02039">2039</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02042">2042</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -7168,7 +7168,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02111">2111</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02114">2114</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -7206,7 +7206,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02123">2123</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02126">2126</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -7225,7 +7225,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02135">2135</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02138">2138</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>
@@ -7263,7 +7263,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02015">2015</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l02018">2018</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
 </div>
 </div>

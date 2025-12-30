@@ -35,12 +35,12 @@ var classQxtCsvModel =
     [ "setHeaderData", "de/db3/classQxtCsvModel.html#ae573ab7181d06b06a6f69e24933510ed", null ],
     [ "setHeaderText", "de/db3/classQxtCsvModel.html#a41b453871fb3b5e5aacc530c67a4f242", null ],
     [ "setQuoteMode", "de/db3/classQxtCsvModel.html#a8d02348db441167aac885cea31a1d610", null ],
-    [ "setSource", "de/db3/classQxtCsvModel.html#aecee2eadd93d39dc8e8ee5083e07f544", null ],
-    [ "setSource", "de/db3/classQxtCsvModel.html#a6e8d0a1c64ef6cee622d3ba39fc12d47", null ],
+    [ "setSource", "de/db3/classQxtCsvModel.html#a6eac26cc302a2af47feabf6e674019cf", null ],
+    [ "setSource", "de/db3/classQxtCsvModel.html#a105710b686ac867a3f3390cd5929f8e0", null ],
     [ "setText", "de/db3/classQxtCsvModel.html#a2fc5388031aaa2ca86323359d9b4a575", null ],
     [ "text", "de/db3/classQxtCsvModel.html#ad7fb3682cf6cffea48ea06a1c4e8c34a", null ],
-    [ "toCSV", "de/db3/classQxtCsvModel.html#abdcd428f50feaaacd0b7bb839d9e2480", null ],
-    [ "toCSV", "de/db3/classQxtCsvModel.html#ada0b7779f9d81a6ff2fa7b6040f20116", null ],
+    [ "toCSV", "de/db3/classQxtCsvModel.html#ac304b5b56cbd1a919f0c7c3957e66399", null ],
+    [ "toCSV", "de/db3/classQxtCsvModel.html#a730d4301d48a88ec96d2b33197975772", null ],
     [ "QxtCsvModelPrivate", "de/db3/classQxtCsvModel.html#a94a044cf8c96dae06bb1223a536a5b6a", null ],
     [ "qxt_d", "de/db3/classQxtCsvModel.html#afb83773f74144ca39a656b5abfd5ff6d", null ]
 ];

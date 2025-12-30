@@ -1,5 +1,8 @@
 var NAVTREEINDEX194 =
 {
+"dc/d8e/classXIncludeUtils.html#a48f079351b6fb08e81a302f8910919f0":[3,0,797,63],
+"dc/d8e/classXIncludeUtils.html#a56eae3b97bc0cdabb7e7843c4afd00d6":[3,0,797,65],
+"dc/d8e/classXIncludeUtils.html#a6e77dbab5a86477c78b847f98d458dfb":[3,0,797,32],
 "dc/d8e/classXIncludeUtils.html#a6e77dbab5a86477c78b847f98d458dfb":[3,0,797,31],
 "dc/d8e/classXIncludeUtils.html#a6e77dbab5a86477c78b847f98d458dfb":[3,0,797,30],
 "dc/d8e/classXIncludeUtils.html#a6f2454f7271b5e149c9b2e24d511cf62":[3,0,797,21],
@@ -227,9 +230,9 @@ var NAVTREEINDEX194 =
 "dc/d93/vistoolarc_8cpp_source.html":[4,0,0,1,13,3,1,8],
 "dc/d94/msvc_2include_2xercesc_2util_2Janitor_8c.html":[4,0,0,1,15,2,0,0,6,28],
 "dc/d94/msvc_2include_2xercesc_2util_2Janitor_8c_source.html":[4,0,0,1,15,2,0,0,6,28],
-"dc/d94/namespaceanonymous__namespace_02vabstracttool_8cpp_03.html":[2,0,7],
-"dc/d94/namespaceanonymous__namespace_02vabstracttool_8cpp_03.html#a7236e797575617f3512429acf2adee0d":[2,0,7,0],
-"dc/d94/namespaceanonymous__namespace_02vabstracttool_8cpp_03.html#afe8ee413200e830c15092676c305cf93":[2,0,7,1],
+"dc/d94/namespaceanonymous__namespace_02vabstracttool_8cpp_03.html":[2,0,8],
+"dc/d94/namespaceanonymous__namespace_02vabstracttool_8cpp_03.html#a7236e797575617f3512429acf2adee0d":[2,0,8,0],
+"dc/d94/namespaceanonymous__namespace_02vabstracttool_8cpp_03.html#afe8ee413200e830c15092676c305cf93":[2,0,8,1],
 "dc/d95/mingw_2include_2xercesc_2util_2KeyValuePair_8c.html":[4,0,0,1,15,1,0,0,6,32],
 "dc/d95/mingw_2include_2xercesc_2util_2KeyValuePair_8c_source.html":[4,0,0,1,15,1,0,0,6,32],
 "dc/d9a/decimalchart__dialog_8h.html":[4,0,0,0,0,1,8],
@@ -246,8 +249,5 @@ var NAVTREEINDEX194 =
 "dc/d9b/classShowOperationPointName.html#af65a23426f4b3121d3f98af205012f84":[3,0,483,6],
 "dc/d9d/classAddPiece.html":[3,0,16],
 "dc/d9d/classAddPiece.html#a2484f09e277cf5fd27263e7f8cb1130d":[3,0,16,4],
-"dc/d9d/classAddPiece.html#a5dcb589a5812d8d7beb82f20caa8a1d7":[3,0,16,2],
-"dc/d9d/classAddPiece.html#a8a5c3c7ec57fe3b272c733aa4e37f892":[3,0,16,6],
-"dc/d9d/classAddPiece.html#a8b9a47f660f508fd4a65b9a5bc0358d3":[3,0,16,1],
-"dc/d9d/classAddPiece.html#a96203a6c84440472aa5a53eb85501ee4":[3,0,16,3]
+"dc/d9d/classAddPiece.html#a5dcb589a5812d8d7beb82f20caa8a1d7":[3,0,16,2]
 };

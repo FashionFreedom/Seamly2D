@@ -1,5 +1,8 @@
 var NAVTREEINDEX224 =
 {
+"de/d8d/internal__path__dialog_8cpp.html#a394f1f735699f1b1d0e822cf8d3af1d3":[4,0,0,1,13,0,1,0,0,0],
+"de/d8d/internal__path__dialog_8cpp_source.html":[4,0,0,1,13,0,1,0,0],
+"de/d8e/classShortcutsDialog.html":[3,0,480],
 "de/d8e/classShortcutsDialog.html#a055f525af67de5393f6c744db6b460cf":[3,0,480,2],
 "de/d8e/classShortcutsDialog.html#a39991c735951f34a35c68df15ce85e76":[3,0,480,1],
 "de/d8e/classShortcutsDialog.html#a64dff46391c4f77453a12abe1781df22":[3,0,480,7],
@@ -246,8 +249,5 @@ var NAVTREEINDEX224 =
 "de/d91/classXMLValidator.html#a31556fb32bd07f74e8d70cd0674071eb":[3,0,881,43],
 "de/d91/classXMLValidator.html#a31556fb32bd07f74e8d70cd0674071eb":[3,0,881,44],
 "de/d91/classXMLValidator.html#a3c919a8cd60cd8db3ab21a047b0c2382":[3,0,881,77],
-"de/d91/classXMLValidator.html#a3c919a8cd60cd8db3ab21a047b0c2382":[3,0,881,76],
-"de/d91/classXMLValidator.html#a3c919a8cd60cd8db3ab21a047b0c2382":[3,0,881,75],
-"de/d91/classXMLValidator.html#a5085e03cb0dd81b089f44f84cecbd57b":[3,0,881,11],
-"de/d91/classXMLValidator.html#a5085e03cb0dd81b089f44f84cecbd57b":[3,0,881,9]
+"de/d91/classXMLValidator.html#a3c919a8cd60cd8db3ab21a047b0c2382":[3,0,881,76]
 };
