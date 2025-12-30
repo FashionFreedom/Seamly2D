@@ -308,6 +308,7 @@ private:
     qint32                            currentToolBoxIndex; /// @brief currentToolBoxIndex  current set of tools.
     bool                              isToolOptionsDockVisible;
     bool                              isGroupsDockVisible;
+    bool                              isPiecesDockVisible;
     bool                              isLayoutsDockVisible;
     bool                              isToolboxDockVisible;
     bool                              drawMode;            /// @brief drawMode true if draft scene active.
@@ -326,7 +327,7 @@ private:
     QPointer<QLabel>                  gradationSizesLabel;
     VToolOptionsPropertyBrowser      *toolProperties;
     GroupsWidget                     *groupsWidget;
-    PiecesWidget                     *patternPiecesWidget;
+    PiecesWidget                     *piecesWidget;
     std::shared_ptr<VLockGuard<char>> lock;
 
     QDoubleSpinBox                   *zoomScaleSpinBox;
@@ -422,7 +423,6 @@ private:
     void               UpdateHeightsList(const QStringList &list);
     void               UpdateSizesList(const QStringList &list);
 
-    void               AddDocks();
     void               initializeDocksContain();
     bool               startNewSeamly2D(const QString &fileName = QString())const;
     void               FileClosedCorrect();

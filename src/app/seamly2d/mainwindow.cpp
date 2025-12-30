@@ -185,6 +185,7 @@ MainWindow::MainWindow(QWidget *parent)
     , currentToolBoxIndex(0)
     , isToolOptionsDockVisible(true)
     , isGroupsDockVisible(true)
+    , isPiecesDockVisible(true)
     , isLayoutsDockVisible(false)
     , isToolboxDockVisible(true)
     , drawMode(true)
@@ -200,7 +201,7 @@ MainWindow::MainWindow(QWidget *parent)
     , gradationSizesLabel(nullptr)
     , toolProperties(nullptr)
     , groupsWidget(nullptr)
-    , patternPiecesWidget(nullptr)
+    , piecesWidget(nullptr)
     , lock(nullptr)
     , zoomScaleSpinBox(nullptr)
     , m_penToolBar(nullptr)
@@ -326,6 +327,11 @@ MainWindow::MainWindow(QWidget *parent)
             menu->setAsDockMenu();
 
         #endif //defined(Q_OS_MAC)
+
+        ui->groups_DockWidget->setVisible(false);
+        ui->pieces_DockWidget->setVisible(false);
+        ui->toolProperties_DockWidget->setVisible(false);
+        ui->layoutPages_DockWidget->setVisible(false);
     }
 
 
@@ -1883,15 +1889,6 @@ void MainWindow::changeEvent(QEvent *event)
         setStatusMessage(QObject::tr("Changes applied."));
         draftBlockLabel->setText(tr("Draft Block:"));
 
-        if (doc->getDraftStage() == Draw::Calculation)
-        {
-            ui->groups_DockWidget->setWindowTitle(tr("Group Manager"));
-        }
-        else
-        {
-            ui->groups_DockWidget->setWindowTitle(tr("Pattern Pieces"));
-        }
-
         updateWindowTitle();
         initPenToolBar();
         initBasePointComboBox();
@@ -1941,6 +1938,7 @@ void MainWindow::CleanLayout()
     papers.clear();
     ui->listWidget->clear();
     groupsWidget->clear();
+    piecesWidget->clear();
     SetLayoutModeActions();
 }
 
@@ -3824,6 +3822,11 @@ void MainWindow::showDraftMode(bool checked)
         ui->pieceMode_Action->setChecked(false);
         ui->layoutMode_Action->setChecked(false);
 
+        ui->groups_DockWidget->setVisible(true);
+        ui->pieces_DockWidget->setVisible(false);
+        ui->toolProperties_DockWidget->setVisible(true);
+        ui->layoutPages_DockWidget->setVisible(false);
+
         SaveCurrentScene();
 
         currentScene = draftScene;
@@ -3856,8 +3859,6 @@ void MainWindow::showDraftMode(bool checked)
             gradationSizesLabel->setVisible(true);
             gradationSizes->setVisible(true);
         }
-        ui->groups_DockWidget->setWidget(groupsWidget);
-        ui->groups_DockWidget->setWindowTitle(tr("Group Manager"));
     }
     else
     {
@@ -3891,6 +3892,11 @@ void MainWindow::showPieceMode(bool checked)
         ui->pieceMode_Action->setChecked(true);
         ui->layoutMode_Action->setChecked(false);
 
+        ui->groups_DockWidget->setVisible(false);
+        ui->pieces_DockWidget->setVisible(true);
+        ui->toolProperties_DockWidget->setVisible(false);
+        ui->layoutPages_DockWidget->setVisible(false);
+
         if(!qApp->getOpeningPattern())
         {
             if (pattern->DataPieces()->count() == 0)
@@ -3903,7 +3909,7 @@ void MainWindow::showPieceMode(bool checked)
             }
         }
 
-        patternPiecesWidget->updateList();
+        piecesWidget->updateList();
 
         qCDebug(vMainWindow, "Show piece scene");
         SaveCurrentScene();
@@ -3934,8 +3940,6 @@ void MainWindow::showPieceMode(bool checked)
             gradationSizesLabel->setVisible(true);
             gradationSizes->setVisible(true);
         }
-        ui->groups_DockWidget->setWidget(patternPiecesWidget);
-        ui->groups_DockWidget->setWindowTitle(tr("Pattern Pieces"));
 
         setStatusMessage("");
     }
@@ -3970,6 +3974,11 @@ void MainWindow::showLayoutMode(bool checked)
         ui->showDraftMode->setChecked(false);
         ui->pieceMode_Action->setChecked(false);
         ui->layoutMode_Action->setChecked(true);
+
+        ui->groups_DockWidget->setVisible(false);
+        ui->pieces_DockWidget->setVisible(false);
+        ui->toolProperties_DockWidget->setVisible(false);
+        ui->layoutPages_DockWidget->setVisible(true);
 
         QHash<quint32, VPiece> pieces;
         if(!qApp->getOpeningPattern())
@@ -4362,6 +4371,7 @@ void MainWindow::Clear()
 
     //disable group actions
     ui->groups_DockWidget->setEnabled(false);
+    ui->pieces_DockWidget->setEnabled(false);
 
     //disable history menu actions
     ui->history_Action->setEnabled(false);
@@ -4402,6 +4412,11 @@ void MainWindow::Clear()
     qApp->getUndoStack()->clear();
     toolProperties->clearPropertyBrowser();
     toolProperties->itemClicked(nullptr);
+
+    ui->groups_DockWidget->setVisible(false);
+    ui->pieces_DockWidget->setVisible(false);
+    ui->toolProperties_DockWidget->setVisible(false);
+    ui->layoutPages_DockWidget->setVisible(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -4562,7 +4577,7 @@ void MainWindow::fullParseFile()
     changeDraftBlockGlobally(draftBlock);
 
     setToolsEnabled(draftBlockComboBox->count() > 0);
-    patternPiecesWidget->updateList();
+    piecesWidget->updateList();
 
     VMainGraphicsView::NewSceneRect(draftScene, qApp->getSceneView());
     VMainGraphicsView::NewSceneRect(pieceScene, qApp->getSceneView());
@@ -4714,11 +4729,13 @@ void MainWindow::setWidgetsEnabled(bool enable)
     ui->shortcuts_Action->setEnabled(enable);
 
     //enable dock widget actions
-    ui->groups_DockWidget->setEnabled(enable && designStage);
+    ui->groups_DockWidget->setEnabled(enable && draftStage);
+    ui->pieces_DockWidget->setEnabled(enable && pieceStage);
     ui->toolProperties_DockWidget->setEnabled(enable && draftStage);
     ui->layoutPages_DockWidget->setEnabled(enable && layoutStage);
-    actionDockWidgetToolOptions->setEnabled(enable && designStage);
-    actionDockWidgetGroups->setEnabled(enable && designStage);
+    actionDockWidgetToolOptions->setEnabled(enable && draftStage);
+    actionDockWidgetGroups->setEnabled(enable && draftStage);
+    actionDockWidgetPieces->setEnabled(enable && pieceStage);
     actionDockWidgetLayouts->setEnabled(enable && layoutStage);
 
     //Now we don't want allow user call context menu
@@ -5265,6 +5282,7 @@ void MainWindow::ReadSettings()
 
     isToolOptionsDockVisible = ui->toolProperties_DockWidget->isVisible();
     isGroupsDockVisible      = ui->groups_DockWidget->isVisible();
+    isPiecesDockVisible      = ui->pieces_DockWidget->isVisible();
     isLayoutsDockVisible     = ui->layoutPages_DockWidget->isVisible();
     isToolboxDockVisible     = ui->toolbox_DockWidget->isVisible();
 }
@@ -5394,12 +5412,48 @@ void MainWindow::createMenus()
     ui->edit_Menu->insertAction(ui->previousDraftBlock_Action, redoAction);
     ui->edit_Toolbar->insertAction(ui->previousDraftBlock_Action, redoAction);
 
+    // Add separator
     separatorAct = new QAction(this);
     separatorAct->setSeparator(true);
     ui->edit_Menu->insertAction(ui->previousDraftBlock_Action, separatorAct);
 
-    AddDocks();
+    //Add dock menus
+    actionDockWidgetToolOptions = ui->toolProperties_DockWidget->toggleViewAction();
+    ui->view_Menu->addAction(actionDockWidgetToolOptions);
+    connect(ui->toolProperties_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
+    {
+        isToolOptionsDockVisible = visible;
+    });
 
+    actionDockWidgetGroups = ui->groups_DockWidget->toggleViewAction();
+    ui->view_Menu->addAction(actionDockWidgetGroups);
+    connect(ui->groups_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
+    {
+        isGroupsDockVisible = visible;
+    });
+
+    actionDockWidgetPieces = ui->pieces_DockWidget->toggleViewAction();
+    ui->view_Menu->addAction(actionDockWidgetPieces);
+    connect(ui->pieces_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
+    {
+        isPiecesDockVisible = visible;
+    });
+
+    actionDockWidgetLayouts = ui->layoutPages_DockWidget->toggleViewAction();
+    ui->view_Menu->addAction(actionDockWidgetLayouts);
+    connect(ui->layoutPages_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
+    {
+        isLayoutsDockVisible = visible;
+    });
+
+    actionDockWidgetToolbox = ui->toolbox_DockWidget->toggleViewAction();
+    ui->view_Menu->addAction(actionDockWidgetToolbox);
+    connect(ui->toolbox_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
+    {
+        isToolboxDockVisible  = visible;
+    });
+
+    // Add separator
     separatorAct = new QAction(this);
     separatorAct->setSeparator(true);
     ui->view_Menu->addAction(separatorAct);
@@ -5657,41 +5711,6 @@ void MainWindow::LastUsedTool()
 QT_WARNING_POP
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::AddDocks()
-{
-    //Add dock
-    actionDockWidgetToolOptions = ui->toolProperties_DockWidget->toggleViewAction();
-    ui->view_Menu->addAction(actionDockWidgetToolOptions);
-    connect(ui->toolProperties_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
-    {
-        isToolOptionsDockVisible = visible;
-    });
-
-    actionDockWidgetGroups = ui->groups_DockWidget->toggleViewAction();
-    ui->view_Menu->addAction(actionDockWidgetGroups);
-    connect(ui->groups_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
-    {
-        isGroupsDockVisible = visible;
-    });
-
-    actionDockWidgetLayouts = ui->layoutPages_DockWidget->toggleViewAction();
-    ui->view_Menu->addAction(actionDockWidgetLayouts);
-    connect(ui->layoutPages_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
-    {
-        isLayoutsDockVisible = visible;
-    });
-
-    actionDockWidgetToolbox = ui->toolbox_DockWidget->toggleViewAction();
-    ui->view_Menu->addAction(actionDockWidgetToolbox);
-    connect(ui->toolbox_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
-    {
-        isToolboxDockVisible  = visible;
-    });
-
-    tabifyDockWidget(ui->groups_DockWidget, ui->toolProperties_DockWidget);
-	splitDockWidget(ui->toolProperties_DockWidget, ui->layoutPages_DockWidget, Qt::Vertical);
-}
-//---------------------------------------------------------------------------------------------------------------------
 void MainWindow::initializeDocksContain()
 {
     setTabPosition(Qt::RightDockWidgetArea, QTabWidget::West);
@@ -5704,12 +5723,20 @@ void MainWindow::initializeDocksContain()
     ui->groups_DockWidget->setWidget(groupsWidget);
     connect(doc, &VAbstractPattern::updateGroups, this, &MainWindow::updateGroups);
 
-    patternPiecesWidget = new PiecesWidget(pattern, doc, this);
-    connect(doc, &VPattern::FullUpdateFromFile, patternPiecesWidget, &PiecesWidget::updateList);
-    connect(doc, &VPattern::UpdateInLayoutList, patternPiecesWidget, &PiecesWidget::togglePiece);
-    connect(doc, &VPattern::showPiece, patternPiecesWidget, &PiecesWidget::selectPiece);
-    connect(patternPiecesWidget, &PiecesWidget::Highlight, pieceScene, &VMainGraphicsScene::HighlightItem);
-    patternPiecesWidget->setVisible(false);
+    piecesWidget = new PiecesWidget(pattern, doc, this);
+    ui->pieces_DockWidget->setWidget(piecesWidget);
+    connect(doc, &VPattern::FullUpdateFromFile, piecesWidget, &PiecesWidget::updateList);
+    connect(doc, &VPattern::UpdateInLayoutList, piecesWidget, &PiecesWidget::togglePiece);
+    connect(doc, &VPattern::showPiece, piecesWidget, &PiecesWidget::selectPiece);
+    connect(piecesWidget, &PiecesWidget::Highlight, pieceScene, &VMainGraphicsScene::HighlightItem);
+
+    //disable dock widget actions until pattern loaded.
+    ui->groups_DockWidget->setEnabled(false);
+    ui->pieces_DockWidget->setEnabled(false);
+    ui->toolProperties_DockWidget->setEnabled(false);
+    ui->layoutPages_DockWidget->setEnabled(false);
+
+    tabifyDockWidget(ui->groups_DockWidget, ui->toolProperties_DockWidget);
 
     ui->toolbox_StackedWidget->setCurrentIndex(0);
 }
@@ -6606,6 +6633,9 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
         qApp->setOpeningPattern();// End opening file
         return false;
     }
+
+    // Set the Property Editor dock widget as the active tab
+    ui->toolProperties_DockWidget->raise();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
