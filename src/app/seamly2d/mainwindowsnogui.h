@@ -115,6 +115,7 @@ protected:
     QAction     *redoAction;
     QAction     *actionDockWidgetToolOptions;
     QAction     *actionDockWidgetGroups;
+    QAction     *actionDockWidgetPieces;
     QAction     *actionDockWidgetLayouts;
     QAction     *actionDockWidgetToolbox;
 

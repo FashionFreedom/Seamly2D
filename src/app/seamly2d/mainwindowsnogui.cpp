@@ -130,6 +130,7 @@ MainWindowsNoGUI::MainWindowsNoGUI(QWidget *parent)
       redoAction(nullptr),
       actionDockWidgetToolOptions(nullptr),
       actionDockWidgetGroups(nullptr),
+      actionDockWidgetPieces(nullptr),
       actionDockWidgetLayouts(nullptr),
       actionDockWidgetToolbox(nullptr),
       isNoScaling(false),
