@@ -71,7 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: debian/eol:bullseye  # build on the oldest supported LTS so that resulting binaries are compatible with older and newer Linux releases
-      options: --device /dev/fuse --cap-add SYS_ADMIN
+      options: --device /dev/fuse --privileged
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
