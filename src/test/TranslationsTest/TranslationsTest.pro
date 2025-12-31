@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += testlib widgets xml printsupport core5compat
+QT       += testlib widgets xml printsupport
 
 QT       -= gui
 
