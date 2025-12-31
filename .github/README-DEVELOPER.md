@@ -1,7 +1,7 @@
 # Build Seamly2D
 
 ## Basic Software Prerequisites:  
-* [Qt 6.5.3](https://www.qt.io/download-open-source) (includes Qt, QtCreator, QtChooser, and Qt Maintenance Tool)
+* [Qt 6.8.3](https://www.qt.io/download-open-source) (includes Qt, QtCreator, QtChooser, and Qt Maintenance Tool)
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/) Qt Visual Studio Tools extension - needed to build with MSVC.
 * [Git](https://git-scm.com/downloads) or [Github Desktop for Windows and MacOS](https://desktop.github.com)
 * Compiler - MSVC 2019, gcc, and g++ are included with QtCreator, and you can add or update them using the Qt Maintenance Tool (Maintenance.exe).
@@ -30,7 +30,7 @@ ___________________________________________________
 
   _These instructions apply in general_
 
-* Install Qt 6.5.3, eg via [Qt unified installer](https://www.qt.io/download-qt-installer) or https://github.com/miurahr/aqtinstall
+* Install Qt 6.8.3, eg via [Qt unified installer](https://www.qt.io/download-qt-installer) or https://github.com/miurahr/aqtinstall
 * Install QtCreator https://wiki.qt.io/VendorPackages
 * Install Additional libraries
   - gnu compiler
@@ -66,8 +66,8 @@ ___________________________________________________
       - Select:
         * Custom Installation
         * Qt  - _Minimize your options, otherwise your download size could be in Gs_
-          * Qt 6.5.3
-            * MSVC 2019
+          * Qt 6.8.3
+            * MSVC 2022
             * Qt Debug Information Files
           * Developer and Designer Tools
             * Qt Creator
