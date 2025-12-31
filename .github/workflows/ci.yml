@@ -92,13 +92,14 @@ jobs:
           apt update
           # install poppler-utils for pdftops, gstreamer1.0-plugins-base for QtMultimedia
           # install libxerces for xml manipulation
-          # install sudo and python3-pip for jurplel/install-qt-action
-          apt install -y poppler-utils gstreamer1.0-plugins-base libxerces-c-dev sudo python3-pip
+          # install python3-pip for jurplel/install-qt-action
+          apt install -y poppler-utils gstreamer1.0-plugins-base libxerces-c-dev python3-pip
 
       - uses: jurplel/install-qt-action@v4
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
+          install-deps: nosudo
           setup-python: false
           modules: qt5compat qtmultimedia
           
