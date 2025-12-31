@@ -45,7 +45,7 @@ jobs:
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
-          modules: qt5compat qtmultimedia
+          modules: qtmultimedia
 
       - name: install build dependencies
         run: |
@@ -102,7 +102,7 @@ jobs:
           cache: true
           install-deps: nosudo
           setup-python: false
-          modules: qt5compat qtmultimedia
+          modules: qtmultimedia
           
       - name: update version
         run: |
@@ -146,7 +146,7 @@ jobs:
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
-          modules: qt5compat qtmultimedia
+          modules: qtmultimedia
 
       - name: update version
         run: |
@@ -211,7 +211,7 @@ jobs:
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
-          modules: qt5compat qtmultimedia
+          modules: qtmultimedia
 
       - name: update version
         shell: bash
