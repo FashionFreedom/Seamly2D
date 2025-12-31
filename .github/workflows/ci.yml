@@ -92,9 +92,9 @@ jobs:
           apt update
           # install poppler-utils for pdftops, gstreamer1.0-plugins-base for QtMultimedia
           # install libxerces for xml manipulation
-          # install libcups2 for print support
+          # install libcups2 for print support, libxrandr2 for multimedia
           # install python3-pip for jurplel/install-qt-action
-          apt install -y poppler-utils gstreamer1.0-plugins-base libxerces-c-dev python3-pip libcups2
+          apt install -y poppler-utils gstreamer1.0-plugins-base libxerces-c-dev python3-pip libcups2 libxrandr2
 
       - uses: jurplel/install-qt-action@v4
         with:
