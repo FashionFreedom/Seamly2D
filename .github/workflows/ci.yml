@@ -68,7 +68,8 @@ jobs:
 
   linux:
     name: 'Linux: Build AppImage'
-    runs-on: ubuntu-22.04  # build on the oldest supported LTS so that resulting binaries are compatible with older and newer Linux releases
+    runs-on: ubuntu-latest
+    container: debian/eol:bullseye # build on the oldest supported LTS so that resulting binaries are compatible with older and newer Linux releases
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
