@@ -362,7 +362,7 @@ macx{
         # we need --force as seamlyme is already signed, but we need to resign it
         QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app &&
         QMAKE_POST_LINK += codesign --deep --timestamp --options runtime --force -s $${APPLE_SIGN_IDENTITY} $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app &&
-        QMAKE_POST_LINK += codesign --verify $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+        QMAKE_POST_LINK += codesign -vvv --deep --strict $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
     }
 }
 

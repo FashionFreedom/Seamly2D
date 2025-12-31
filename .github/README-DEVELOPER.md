@@ -1,8 +1,7 @@
 # Build Seamly2D
 
-## Basic Software Prerequisites
-
-* [Qt 6.5.3](https://www.qt.io/download-open-source) (includes Qt, QtCreator, QtChooser, and Qt Maintenance Tool)
+## Basic Software Prerequisites:  
+* [Qt 6.8.3](https://www.qt.io/download-open-source) (includes Qt, QtCreator, QtChooser, and Qt Maintenance Tool)
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/) Qt Visual Studio Tools extension - needed to build with MSVC.
 * [Git](https://git-scm.com/downloads) or [Github Desktop for Windows and MacOS](https://desktop.github.com)
 * Compiler - MSVC 2019, gcc, and g++ are included with QtCreator, and you can add or update them using the Qt Maintenance Tool (Maintenance.exe).
@@ -50,8 +49,8 @@
 
 These instructions apply in general
 
-* Install Qt 6.5.3, eg via [Qt unified installer](https://www.qt.io/download-qt-installer) or [alternatively](https://github.com/miurahr/aqtinstall)
-* Install [QtCreator](https://wiki.qt.io/VendorPackages)
+* Install Qt 6.8.3, eg via [Qt unified installer](https://www.qt.io/download-qt-installer) or https://github.com/miurahr/aqtinstall
+* Install QtCreator https://wiki.qt.io/VendorPackages
 * Install Additional libraries
 
   * gnu compiler
@@ -91,18 +90,14 @@ Note: If you accidentally invoke the Qt 5 `qmake` and generate the makefile with
 
 This applies when building with your distribution's packaged Qt. If you're using the official Qt binary distribution (recommended above), `qmake` is always unversioned and the standard instructions apply.
 
-## Build on MacOSX and Windows 10/11
-
-### Setup
-
-#### Both MacOS and Windows
+#### Both MacOSX and Windows 10/11
 
 * Download & run the [Qt unified installer](https://www.qt.io/download-qt-installer). Create a Qt account for open source Community Edition if you don't have one.
 * Select:
   * Custom Installation
   * Qt. Minimize your options, otherwise your download size could be in Gs
-    * Qt 6.5.3
-    * MSVC 2019
+    * Qt 6.8.3
+    * MSVC 2022
     * Qt Debug Information Files
     * Developer and Designer Tools
     * Qt Creator
