@@ -248,7 +248,7 @@ jobs:
           project_id: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
 
       - name: Setup Google Cloud CLI (for signing)
-        uses: google-github-actions/setup-gcloud@v2
+        uses: google-github-actions/setup-gcloud@v3
         env:
           SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
         # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
