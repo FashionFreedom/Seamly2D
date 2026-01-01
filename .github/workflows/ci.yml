@@ -238,7 +238,7 @@ jobs:
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
       - name: Authenticate to Google Cloud (for signing)
-        uses: google-github-actions/auth@v2
+        uses: google-github-actions/auth@v3
         env:
           SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
         # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
