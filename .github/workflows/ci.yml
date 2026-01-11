@@ -111,6 +111,7 @@ jobs:
       - name: build Seamly2D appimage
         env:
           OUTPUT: Seamly2D-x86_64.AppImage  # linuxdeploy-x86_64.AppImage uses this env var as name for AppImage
+          EXTRA_PLATFORM_PLUGINS: libqwayland-egl.so;libqwayland-generic.so
         run: |
           qmake -config release CONFIG+=noTests
           make -j$(nproc)
