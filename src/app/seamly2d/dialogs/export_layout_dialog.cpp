@@ -159,7 +159,7 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
         const QString dir = QFileDialog::getExistingDirectory(this, tr("Select folder"), dirPath,
                                                               QFileDialog::ShowDirsOnly
                                                               | QFileDialog::DontResolveSymlinks
-                                                              | QFileDialog::DontUseNativeDialog);
+                                                              | FILEDIALOG_OPTIONS);
         if (!dir.isEmpty())
         {// If the paths are equal the slot will not be called, we will do this manually
             dir == ui->path_LineEdit->text() ? pathChanged(dir) : ui->path_LineEdit->setText(dir);

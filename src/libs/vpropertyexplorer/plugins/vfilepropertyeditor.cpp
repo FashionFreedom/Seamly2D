@@ -38,6 +38,8 @@
 #include <QUrl>
 #include <Qt>
 
+#include "../vmisc/def.h"
+
 VPE::VFileEditWidget::VFileEditWidget(QWidget *parent, bool is_directory)
     : QWidget(parent), CurrentFilePath(), ToolButton(nullptr), FileLineEdit(nullptr), FileDialogFilter(), FilterList(),
       Directory(is_directory)
@@ -113,10 +115,10 @@ void VPE::VFileEditWidget::onToolButtonClicked()
 {
     QString filepath = (Directory ? QFileDialog::getExistingDirectory(nullptr, tr("Directory"), CurrentFilePath,
                                                                       QFileDialog::ShowDirsOnly
-                                                                      | QFileDialog::DontUseNativeDialog)
+                                                                      | FILEDIALOG_OPTIONS)
                                   : QFileDialog::getOpenFileName(nullptr, tr("Open File"), CurrentFilePath,
                                                                  FileDialogFilter, nullptr,
-                                                                 QFileDialog::DontUseNativeDialog));
+                                                                 FILEDIALOG_OPTIONS));
     if (filepath.isNull() == false)
     {
         setFile(filepath, true);

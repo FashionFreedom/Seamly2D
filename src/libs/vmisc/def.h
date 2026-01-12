@@ -32,6 +32,7 @@
 #define DEF_H
 
 #include <qcompilerdetection.h>
+#include <QColorDialog>
 #include <QFileDialog>
 #include <QLineF>
 #include <QString>
@@ -44,6 +45,19 @@
 #ifdef Q_OS_WIN
     #include <windows.h>
 #endif /* Q_OS_WIN */
+
+/*
+ * Platform-dependent native dialog options.
+ * On Windows, use non-native dialogs (DontUseNativeDialog) for better consistency.
+ * On Linux and macOS, use native dialogs for a more native look and feel.
+ */
+#ifdef Q_OS_WIN
+    const QFileDialog::Options  FILEDIALOG_OPTIONS  = QFileDialog::DontUseNativeDialog;
+    const QColorDialog::ColorDialogOptions COLORDIALOG_OPTIONS = QColorDialog::DontUseNativeDialog;
+#else
+    const QFileDialog::Options  FILEDIALOG_OPTIONS  = QFileDialog::Options();
+    const QColorDialog::ColorDialogOptions COLORDIALOG_OPTIONS = QColorDialog::ColorDialogOptions();
+#endif
 
 #include "debugbreak.h"
 

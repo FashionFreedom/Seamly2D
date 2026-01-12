@@ -45,6 +45,7 @@
 #include <QtWidgets>
 
 #include "../core/application_2d.h"
+#include "../vmisc/def.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 ShortcutsDialog::ShortcutsDialog(QWidget *parent)
@@ -403,7 +404,7 @@ void ShortcutsDialog::sendToPrinter()
 void ShortcutsDialog::exportPdf()
 {
     QString filename = QFileDialog::getSaveFileName(nullptr, tr("Export PDF"), QString(),
-                                                    "*.pdf", nullptr, QFileDialog::DontUseNativeDialog);
+                                                    "*.pdf", nullptr, FILEDIALOG_OPTIONS);
 
     if (QFileInfo(filename).suffix().isEmpty())
     {
