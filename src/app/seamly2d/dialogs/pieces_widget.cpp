@@ -690,7 +690,7 @@ void PiecesWidget::unlockAllPieces()
 
 void PiecesWidget::editPieceColor(quint32 id)
 {
-    const QColor color = QColorDialog::getColor(Qt::white, this, tr("Select Color"), QColorDialog::DontUseNativeDialog);
+    const QColor color = QColorDialog::getColor(Qt::white, this, tr("Select Color"), COLORDIALOG_OPTIONS);
     if (color.isValid())
     {
         SetPieceColor *command = new SetPieceColor(id, color.name(), m_data, m_doc);

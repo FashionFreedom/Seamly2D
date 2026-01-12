@@ -47,6 +47,7 @@
 #include <QtWidgets>
 
 #include "../core/application_2d.h"
+#include "../vmisc/def.h"
 #include "../xml/vpattern.h"
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -176,7 +177,7 @@ void ShowInfoDialog::exportPdf()
     QString filters(tr("Info files") + QLatin1String("(*.pdf)"));
     QString filename = QFileDialog::getSaveFileName(this, tr("Export PDF"),
                                                     doc->GetPatternName() + tr("_info") + QLatin1String(".pdf"),
-                                                    filters, nullptr, QFileDialog::DontUseNativeDialog);
+                                                    filters, nullptr, FILEDIALOG_OPTIONS);
 
     if (QFileInfo(filename).suffix().isEmpty())
     {

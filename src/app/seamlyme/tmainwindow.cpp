@@ -519,7 +519,7 @@ void TMainWindow::CreateFromExisting()
 		usedNotExistedDir = directory.mkpath(".");
 	}
 
-    const QString filename = fileDialog(this, tr("Select file"), dir, filter, nullptr, QFileDialog::DontUseNativeDialog,
+    const QString filename = fileDialog(this, tr("Select file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
                                         QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
 	if (!filename.isEmpty())
@@ -557,7 +557,7 @@ void TMainWindow::handleBodyScanner1()
         usedNotExistedDir = directory.mkpath(".");
     }
 
-    const QString filename = fileDialog(this, tr("Import body scan"), dir, filter, nullptr, QFileDialog::DontUseNativeDialog,
+    const QString filename = fileDialog(this, tr("Import body scan"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
                                         QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
     QMessageBox messageBox(this);
@@ -1133,7 +1133,7 @@ bool TMainWindow::FileSaveAs()
 	}
 
     fileName = fileDialog(this, tr("Save as"), dir + QLatin1String("/") + fileName,
-                                        filters, nullptr, QFileDialog::DontUseNativeDialog,
+                                        filters, nullptr, FILEDIALOG_OPTIONS,
                                         QFileDialog::AnyFile, QFileDialog::AcceptSave);
 
 	auto RemoveTempDir = [usedNotExistedDir, dir]()
@@ -1644,7 +1644,7 @@ void TMainWindow::ImportFromPattern()
 	dir = VCommonSettings::PrepareStandardTemplates(dir);
 
     const QString filename = fileDialog(this, tr("Import from a pattern"), dir, filter, nullptr,
-                                        QFileDialog::DontUseNativeDialog, QFileDialog::ExistingFile,
+                                        FILEDIALOG_OPTIONS, QFileDialog::ExistingFile,
                                         QFileDialog::AcceptOpen);
 
 	if (filename.isEmpty())
@@ -3025,7 +3025,7 @@ bool TMainWindow::EvalFormula(const QString &formula, bool fromUser, VContainer 
 //---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::Open(const QString &dir, const QString &filter)
 {
-    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, QFileDialog::DontUseNativeDialog,
+    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
                                         QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
 	if (!filename.isEmpty())
