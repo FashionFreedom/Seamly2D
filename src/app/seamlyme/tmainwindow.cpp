@@ -1652,12 +1652,19 @@ void TMainWindow::ImportFromPattern()
 		return;
 	}
 
+    QMessageBox::StandardButton answer = QMessageBox::Abort;
 	VLockGuard<char> lock(filename);
-	if (!lock.IsLocked())
-	{
-		qCCritical(tMainWindow, "%s", qUtf8Printable(tr("This file already opened in another window.")));
-		return;
-	}
+    if (!lock.IsLocked())
+    {
+        answer = QMessageBox::warning(this, tr("Locking file"),
+                                      tr("This file already opened in another window. Ignore if you want "
+                                      "to continue (not recommended, can cause a data corruption)."),
+                                      QMessageBox::Abort|QMessageBox::Ignore, QMessageBox::Abort);
+        if (answer == QMessageBox::Abort)
+        {
+            return;
+        }
+    }
 
 	QStringList measurements;
 	try
