@@ -12461,7 +12461,7 @@ charger dans SeamlyME comme d&apos;habitude.
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation>Impossible d'ouvrir le fichier de motifs %1 :
+        <translation>Impossible d&apos;ouvrir le fichier de motifs %1 :
 %2.</translation>
     </message>
 </context>
