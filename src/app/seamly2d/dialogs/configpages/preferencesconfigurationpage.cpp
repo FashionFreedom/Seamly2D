@@ -1,57 +1,58 @@
-//  @file   preferencesconfigurationpage.cpp
-//  @author Douglas S Caskey
-//  @date   26 Oct, 2023
-//
-//  @brief
-//  @copyright
-//  This source code is part of the Seamly2D project, a pattern making
-//  program to create and model patterns of clothing.
-//  Copyright (C) 2017-2024 Seamly2D project
-//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
-//
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+///---------------------------------------------------------------------------------------------------------------------
+///  @file   preferencesconfigurationpage.cpp
+///  @author Douglas S Caskey
+///  @date   26 Oct, 2023
+///
+///  @brief
+///  @copyright
+///  This source code is part of the Seamly2D project, a pattern making
+///  program to create and model patterns of clothing.
+///  Copyright (C) 2017-2026 Seamly2D project
+///  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+///
+///  Seamly2D is free software: you can redistribute it and/or modify
+///  it under the terms of the GNU General Public License as published by
+///  the Free Software Foundation, either version 3 of the License, or
+///  (at your option) any later version.
+///
+///  Seamly2D is distributed in the hope that it will be useful,
+///  but WITHOUT ANY WARRANTY; without even the implied warranty of
+///  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+///  GNU General Public License for more details.
+///
+///  You should have received a copy of the GNU General Public License
+///  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+///---------------------------------------------------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   preferencesconfigurationpage.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   12 4, 2017
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2017 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  if not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+///---------------------------------------------------------------------------------------------------------------------
+///  @file   preferencesconfigurationpage.cpp
+///  @author Roman Telezhynskyi <dismine(at)gmail.com>
+///  @date   12 4, 2017
+///
+///  @brief
+///  @copyright
+///  This source code is part of the Valentina project, a pattern making
+///  program, whose allow create and modeling patterns of clothing.
+///  Copyright (C) 2017 Valentina project
+///  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+///
+///  Valentina is free software: you can redistribute it and/or modify
+///  it under the terms of the GNU General Public License as published by
+///  the Free Software Foundation, either version 3 of the License, or
+///  (at your option) any later version.
+///
+///  Valentina is distributed in the hope that it will be useful,
+///  but WITHOUT ANY WARRANTY; without even the implied warranty of
+///  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+///  GNU General Public License for more details.
+///
+///  You should have received a copy of the GNU General Public License
+///  along with Valentina.  if not, see <http://www.gnu.org/licenses/>.
+///---------------------------------------------------------------------------------------------------------------------
 
 #include "preferencesconfigurationpage.h"
 #include "ui_preferencesconfigurationpage.h"
+
 #include "../../core/application_2d.h"
 #include "../vpatterndb/pmsystems.h"
 #include "../vwidgets/export_format_combobox.h"
@@ -63,12 +64,14 @@
 #include <QRegularExpressionValidator>
 #include <QSoundEffect>
 #include <QString>
+#include <QStringList>
 #include <QTimer>
 
 //---------------------------------------------------------------------------------------------------------------------
 PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::PreferencesConfigurationPage)
+    , m_themeChanged(false)
     , m_langChanged(false)
     , m_unitChanged(false)
     , m_labelLangChanged(false)
@@ -222,6 +225,28 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
 
     // Startup
+    // Theme
+    ui->theme_ComboBox->addItem(tr("Fusion Lght"), 0);
+    ui->theme_ComboBox->addItem(tr("Fusion Dark"), 1);
+    ui->theme_ComboBox->addItem(tr("System"), 2);
+
+#if defined(Q_OS_WIN)
+    ui->theme_ComboBox->addItem(tr("Classic"), 3);
+    ui->theme_ComboBox->addItem(tr("Windows11"), 4);
+#endif
+
+    // set default theme
+    const int themeIndex = ui->theme_ComboBox->findData(qApp->Seamly2DSettings()->getAppTheme());
+    if (themeIndex != -1)
+    {
+        ui->theme_ComboBox->setCurrentIndex(themeIndex);
+    }
+
+    connect(ui->theme_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_themeChanged = true;
+    });
+
     ui->showWelcome_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowWelcome());
 
     // Language
@@ -341,6 +366,14 @@ void PreferencesConfigurationPage::apply()
     else
     {
         settings->setOsSeparator(true);
+    }
+
+    if (m_themeChanged)
+    {
+        int theme = qvariant_cast<int>(ui->theme_ComboBox->currentData());
+        settings->setAppTheme(theme);
+        qApp->setTheme();
+        m_themeChanged = false;
     }
 
     if (m_langChanged)

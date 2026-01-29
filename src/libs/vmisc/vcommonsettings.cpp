@@ -91,6 +91,7 @@ const QString settingConfigurationFax                    = QStringLiteral("graph
 const QString settingConfigurationEmail                  = QStringLiteral("graphicsview/email");
 const QString settingConfigurationWebsite                = QStringLiteral("graphicsview/website");
 
+const QString settingConfigurationAppTheme               = QStringLiteral("configuration/appTheme");
 const QString settingConfigurationShowWelcome            = QStringLiteral("configuration/showWelcome");
 const QString settingConfigurationOsSeparator            = QStringLiteral("configuration/osSeparator");
 
@@ -584,6 +585,18 @@ QString VCommonSettings::getDefaultPieceTemplate() const
 void VCommonSettings::setDefaultPieceTemplate(const QString &value)
 {
     setValue(settingDefaultPieceTemplate, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::getAppTheme() const
+{
+    return value(settingConfigurationAppTheme, 0).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setAppTheme(const int &value)
+{
+    setValue(settingConfigurationAppTheme, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

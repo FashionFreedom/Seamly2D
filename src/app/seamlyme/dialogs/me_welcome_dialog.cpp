@@ -1,26 +1,26 @@
-//  @file   me_welcome_dialog.cpp
-//  @author Douglas S Caskey
-//  @date   31 Dec, 2023
-//
-//  @brief
-//  @copyright
-//  This source code is part of the Seamly2D project, a pattern making
-//  program to create and model patterns of clothing.
-//  Copyright (C) 2017-2023 Seamly2D project
-//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
-//
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+/// @file   me_welcome_dialog.cpp
+/// @author Douglas S Caskey
+/// @date   31 Dec, 2023
+///
+/// @brief
+/// @copyright
+/// This source code is part of the Seamly2D project, a pattern making
+/// program to create and model patterns of clothing.
+/// Copyright (C) 2017-2023 Seamly2D project
+/// <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+///
+/// Seamly2D is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU General Public License as published by
+/// the Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// Seamly2D is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License
+/// along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "me_welcome_dialog.h"
 #include "ui_me_welcome_dialog.h"
@@ -36,6 +36,7 @@
 //---------------------------------------------------------------------------------------------------------------------
 SeamlyMeWelcomeDialog::SeamlyMeWelcomeDialog(QWidget *parent)
     : QDialog(parent)
+    , m_themeChanged(false)
     , ui(new Ui::SeamlyMeWelcomeDialog)
     , settings(qApp->seamlyMeSettings())
 {
@@ -61,6 +62,28 @@ SeamlyMeWelcomeDialog::SeamlyMeWelcomeDialog(QWidget *parent)
     InitLanguages(ui->language_ComboBox);
     connect(ui->language_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &SeamlyMeWelcomeDialog::languageChanged);
+
+    //-------------------- Theme setup
+    ui->theme_ComboBox->addItem(tr("Fusion Lght"), 0);
+    ui->theme_ComboBox->addItem(tr("Fusion Dark"), 1);
+    ui->theme_ComboBox->addItem(tr("System"), 2);
+
+#if defined(Q_OS_WIN)
+    ui->theme_ComboBox->addItem(tr("Classic"), 3);
+    ui->theme_ComboBox->addItem(tr("Windows11"), 4);
+#endif
+
+    // set default theme
+    const int themeIndex = ui->theme_ComboBox->findData(settings->getAppTheme());
+    if (themeIndex != -1)
+    {
+        ui->theme_ComboBox->setCurrentIndex(themeIndex);
+    }
+
+    connect(ui->theme_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_themeChanged = true;
+    });
 
     ui->doNotShow_CheckBox->setChecked(settings->getShowWelcome());
 
@@ -88,7 +111,17 @@ void SeamlyMeWelcomeDialog::apply()
     {
         settings->setOsSeparator(true);
     }
+
     settings->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+
+    if (m_themeChanged)
+    {
+        int theme = qvariant_cast<int>(ui->theme_ComboBox->currentData());
+        settings->setAppTheme(theme);
+        qApp->setTheme();
+        m_themeChanged = false;
+    }
+
     settings->setShowWelcome(ui->doNotShow_CheckBox->isChecked());
 
     done(QDialog::Accepted);

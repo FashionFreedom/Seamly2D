@@ -1,3 +1,4 @@
+//-----------------------------------------------------------------------------
 //  @file   welcome_dialog.cpp
 //  @author Douglas S Caskey
 //  @date   5 Jan, 2024
@@ -6,7 +7,7 @@
 //  @copyright
 //  This source code is part of the Seamly2D project, a pattern making
 //  program to create and model patterns of clothing.
-//  Copyright (C) 2017-2023 Seamly2D project
+//  Copyright (C) 2017-2026 Seamly2D project
 //  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
 //
 //  Seamly2D is free software: you can redistribute it and/or modify
@@ -21,6 +22,7 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 #include "welcome_dialog.h"
 #include "ui_welcome_dialog.h"
@@ -32,11 +34,11 @@
 #include <QShowEvent>
 #include <QSoundEffect>
 
-
 //---------------------------------------------------------------------------------------------------------------------
 SeamlyWelcomeDialog::SeamlyWelcomeDialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::SeamlyWelcomeDialog)
+    , m_themeChanged(false)
     , m_selectionSoundChanged(false)
     , settings(qApp->Seamly2DSettings())
 {
@@ -62,6 +64,28 @@ SeamlyWelcomeDialog::SeamlyWelcomeDialog(QWidget *parent)
     InitLanguages(ui->language_ComboBox);
     connect(ui->language_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &SeamlyWelcomeDialog::languageChanged);
+
+    //-------------------- Theme setup
+    ui->theme_ComboBox->addItem(tr("Fusion Lght"), 0);
+    ui->theme_ComboBox->addItem(tr("Fusion Dark"), 1);
+    ui->theme_ComboBox->addItem(tr("System"), 2);
+
+#if defined(Q_OS_WIN)
+    ui->theme_ComboBox->addItem(tr("Classic"), 3);
+    ui->theme_ComboBox->addItem(tr("Windows11"), 4);
+#endif
+
+    // set default theme
+    const int themeIndex = ui->theme_ComboBox->findData(settings->getAppTheme());
+    if (themeIndex != -1)
+    {
+        ui->theme_ComboBox->setCurrentIndex(themeIndex);
+    }
+
+    connect(ui->theme_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_themeChanged = true;
+    });
 
     //-------------------- Selection sound
     int index = ui->selectionSound_ComboBox->findText(settings->getSound());
@@ -105,6 +129,14 @@ void SeamlyWelcomeDialog::apply()
     }
     settings->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
     settings->setShowWelcome(ui->doNotShow_CheckBox->isChecked());
+
+    if (m_themeChanged)
+    {
+        int theme = qvariant_cast<int>(ui->theme_ComboBox->currentData());
+        settings->setAppTheme(theme);
+        qApp->setTheme();
+        m_themeChanged = false;
+    }
 
     if (m_selectionSoundChanged)
     {
