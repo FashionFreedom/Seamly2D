@@ -2913,8 +2913,8 @@ p, li { spasi: pra-bungkus; }
         <translation>berdasarkan panjang</translation>
     </message>
     <message>
-        <source>by points intersetions</source>
-        <translation>dengan titik persimpangan</translation>
+        <source>by intersection</source>
+        <translation>berdasarkan persimpangan</translation>
     </message>
     <message>
         <source>by first edge symmetry</source>

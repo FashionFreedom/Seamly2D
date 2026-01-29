@@ -2913,8 +2913,8 @@ p, li { white-space: pre-wrap; }
         <translation>pituuden mukaan</translation>
     </message>
     <message>
-        <source>by points intersetions</source>
-        <translation>pisteiden risteyksillä</translation>
+        <source>by intersection</source>
+        <translation>risteyksen mukaan</translation>
     </message>
     <message>
         <source>by first edge symmetry</source>

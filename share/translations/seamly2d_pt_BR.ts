@@ -2898,8 +2898,8 @@ p, li { white-space: pre-wrap; }
         <translation>por comprimento</translation>
     </message>
     <message>
-        <source>by points intersetions</source>
-        <translation>por pontos de intersecção</translation>
+        <source>by intersection</source>
+        <translation>por interseção</translation>
     </message>
     <message>
         <source>by first edge symmetry</source>

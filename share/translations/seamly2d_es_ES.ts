@@ -2931,8 +2931,8 @@ p, li { white-space: pre-wrap; }
         <translation>Por longitud</translation>
     </message>
     <message>
-        <source>by points intersetions</source>
-        <translation>por intersecciones de puntos</translation>
+        <source>by intersection</source>
+        <translation>por intersección</translation>
     </message>
     <message>
         <source>by first edge symmetry</source>

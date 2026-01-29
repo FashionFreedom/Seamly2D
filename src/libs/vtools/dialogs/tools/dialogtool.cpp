@@ -731,7 +731,7 @@ void DialogTool::initializeNodeAngles(QComboBox *box)
     box->clear();
 
     box->addItem(tr("by length"), static_cast<unsigned char>(PieceNodeAngle::ByLength));
-    box->addItem(tr("by points intersetions"), static_cast<unsigned char>(PieceNodeAngle::ByPointsIntersection));
+    box->addItem(tr("by intersection"), static_cast<unsigned char>(PieceNodeAngle::ByPointsIntersection));
     box->addItem(tr("by first edge symmetry"), static_cast<unsigned char>(PieceNodeAngle::ByFirstEdgeSymmetry));
     box->addItem(tr("by second edge symmetry"), static_cast<unsigned char>(PieceNodeAngle::BySecondEdgeSymmetry));
     box->addItem(tr("by first edge right angle"), static_cast<unsigned char>(PieceNodeAngle::ByFirstEdgeRightAngle));

@@ -2913,8 +2913,8 @@ p, li { boşluk: ön sarma; }
         <translation>uzunluğa göre</translation>
     </message>
     <message>
-        <source>by points intersetions</source>
-        <translation>nokta kesişimlerine göre</translation>
+        <source>by intersection</source>
+        <translation>kesişim noktasına göre</translation>
     </message>
     <message>
         <source>by first edge symmetry</source>
