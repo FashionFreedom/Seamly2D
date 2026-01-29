@@ -2913,8 +2913,8 @@ p, li { white-space: pre-wrap; }
         <translation>după lungime</translation>
     </message>
     <message>
-        <source>by points intersetions</source>
-        <translation>prin intersecții de puncte</translation>
+        <source>by intersection</source>
+        <translation>prin intersectie</translation>
     </message>
     <message>
         <source>by first edge symmetry</source>

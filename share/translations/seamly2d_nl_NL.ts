@@ -2898,8 +2898,8 @@ p, li { white-space: pre-wrap; }
         <translation>op lengte</translation>
     </message>
     <message>
-        <source>by points intersetions</source>
-        <translation>op snijpunten</translation>
+        <source>by intersection</source>
+        <translationop kruispunt</translation>
     </message>
     <message>
         <source>by first edge symmetry</source>

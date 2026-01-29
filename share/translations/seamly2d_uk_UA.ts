@@ -2913,8 +2913,8 @@ p, li { white-space: pre-wrap; }
         <translation>за довжиною</translation>
     </message>
     <message>
-        <source>by points intersetions</source>
-        <translation>за точками перетину</translation>
+        <source>by intersection</source>
+        <translation>шляхом перетину</translation>
     </message>
     <message>
         <source>by first edge symmetry</source>

@@ -2898,7 +2898,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>by points intersetions</source>
+        <source>by intersection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

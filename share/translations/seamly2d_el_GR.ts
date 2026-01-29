@@ -2913,8 +2913,8 @@ p, li { white-space: pre-wrap; }
         <translation>κατά μήκος</translation>
     </message>
     <message>
-        <source>by points intersetions</source>
-        <translation>από σημεία τομής</translation>
+        <source>by intersection</source>
+        <translation>κατά διασταύρωσης</translation>
     </message>
     <message>
         <source>by first edge symmetry</source>
