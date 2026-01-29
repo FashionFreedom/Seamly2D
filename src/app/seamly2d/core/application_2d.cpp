@@ -7,7 +7,7 @@
 //  @copyright
 //  This source code is part of the Seamly2D project, a pattern making
 //  program to create and model patterns of clothing.
-//  Copyright (C) 2017-2025 Seamly2D project
+//  Copyright (C) 2017-2026 Seamly2D project
 //  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
 //
 //  Seamly2D is free software: you can redistribute it and/or modify
@@ -59,6 +59,7 @@
 #include "../ifc/exception/vexceptionconversionerror.h"
 #include "../ifc/exception/vexceptionemptyparameter.h"
 #include "../ifc/exception/vexceptionwrongid.h"
+#include "../vmisc/def.h"
 #include "../vmisc/logging.h"
 #include "../vmisc/vmath.h"
 #include "../qmuparser/qmuparsererror.h"
@@ -73,6 +74,7 @@
 #include <QTemporaryFile>
 #include <QFile>
 #include <QStandardPaths>
+#include <QStyleHints>
 #include <QMessageBox>
 #include <QThread>
 #include <QDateTime>
@@ -282,6 +284,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     setApplicationVersion(APP_VERSION_STR);
 
     openSettings();
+    setTheme();
 
     // making sure will create new instance...just in case we will ever do 2 objects of Application2D
     VCommandLine::Reset();
@@ -297,6 +300,56 @@ Application2D::~Application2D()
     qInstallMessageHandler(nullptr); // Restore the message handler
     delete m_trVars;
     VCommandLine::Reset();
+}
+
+void Application2D::setTheme()
+{
+    QPalette palette;
+    int theme = Seamly2DSettings()->getAppTheme();
+
+    if (theme == 2)
+    {
+        // Get system mode (theme)
+        Qt::ColorScheme scheme = styleHints()->colorScheme();
+
+        if (scheme == Qt::ColorScheme::Light)
+        {
+            theme = 0;
+        }
+        else if (scheme == Qt::ColorScheme::Dark)
+        {
+            theme = 1;
+        }
+    }
+
+    switch (theme)
+    {
+        case 0:
+        {
+            setStyle("Fusion");
+            palette = lightPalette();
+            break;
+        }
+        case 1:
+        {
+            setStyle("Fusion");
+            palette = darkPalette();
+            break;
+        }
+        case 3:
+        {
+            setStyle("windowsvista");
+            palette = lightPalette();
+            break;
+        }
+        case 4:
+        {
+            setStyle("Windows11");
+            palette = darkPalette();
+            break;
+        }
+    }
+    setPalette(palette);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

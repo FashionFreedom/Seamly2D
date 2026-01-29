@@ -114,6 +114,9 @@ public:
     QString              getDefaultPieceTemplate() const;
     void                 setDefaultPieceTemplate(const QString &text);
 
+    int                  getAppTheme() const;
+    void                 setAppTheme(const int &value);
+
     bool                 getShowWelcome() const;
     void                 setShowWelcome(const bool &value);
 
