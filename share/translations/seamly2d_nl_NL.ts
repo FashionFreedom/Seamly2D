@@ -2899,7 +2899,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>by intersection</source>
-        <translationop kruispunt</translation>
+        <translation>op kruispunt</translation>
     </message>
     <message>
         <source>by first edge symmetry</source>
