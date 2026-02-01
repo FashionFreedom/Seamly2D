@@ -531,6 +531,9 @@ public:
 
     QString              getStr(QString key, const QString &defaultString) const;
 
+    bool                 autoClearFx() const;
+    void                 setAutoClearFx(bool value);
+
 private:
     Q_DISABLE_COPY(VCommonSettings)
 };

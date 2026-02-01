@@ -64,6 +64,7 @@
 #include <QLabel>
 #include <QListWidget>
 #include <QMapIterator>
+#include <QMouseEvent>
 #include <QPlainTextEdit>
 #include <QPushButton>
 #include <QSharedPointer>
@@ -544,6 +545,20 @@ void EditFormulaDialog::SetFormula(const QString &value)
 {
     m_formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     m_undoFormula = m_formula;
+
+    if (qApp->Settings()->autoClearFx())
+    {
+        bool isInt;
+        int intValue = m_formula.toInt(&isInt);
+
+        bool isDouble;
+        double doubleValue = m_formula.toDouble(&isDouble);
+
+        if(isInt || isDouble)
+        {
+            m_formula = QString();
+        }
+    }
     ui->plainTextEditFormula->setPlainText(m_formula);
     MoveCursorToEnd(ui->plainTextEditFormula);
 }

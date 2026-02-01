@@ -75,7 +75,7 @@
       <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="appearanceTab">
       <attribute name="title">
@@ -123,6 +123,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -174,6 +175,7 @@
                <property name="font">
                 <font>
                  <pointsize>9</pointsize>
+                 <bold>true</bold>
                 </font>
                </property>
                <property name="text">
@@ -198,6 +200,7 @@
                <property name="font">
                 <font>
                  <pointsize>9</pointsize>
+                 <bold>true</bold>
                 </font>
                </property>
                <property name="text">
@@ -222,6 +225,7 @@
                <property name="font">
                 <font>
                  <pointsize>9</pointsize>
+                 <bold>true</bold>
                 </font>
                </property>
                <property name="text">
@@ -246,6 +250,7 @@
                <property name="font">
                 <font>
                  <pointsize>9</pointsize>
+                 <bold>true</bold>
                 </font>
                </property>
                <property name="text">
@@ -270,6 +275,7 @@
                <property name="font">
                 <font>
                  <pointsize>9</pointsize>
+                 <bold>true</bold>
                 </font>
                </property>
                <property name="text">
@@ -294,6 +300,7 @@
                <property name="font">
                 <font>
                  <pointsize>9</pointsize>
+                 <bold>true</bold>
                 </font>
                </property>
                <property name="text">
@@ -318,6 +325,7 @@
                <property name="font">
                 <font>
                  <pointsize>9</pointsize>
+                 <bold>true</bold>
                 </font>
                </property>
                <property name="text">
@@ -342,6 +350,7 @@
                <property name="font">
                 <font>
                  <pointsize>9</pointsize>
+                 <bold>true</bold>
                 </font>
                </property>
                <property name="text">
@@ -366,6 +375,7 @@
                <property name="font">
                 <font>
                  <pointsize>9</pointsize>
+                 <bold>true</bold>
                 </font>
                </property>
                <property name="text">
@@ -395,6 +405,7 @@
          </property>
          <property name="font">
           <font>
+           <pointsize>9</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -433,6 +444,7 @@
               </property>
               <property name="font">
                <font>
+                <pointsize>9</pointsize>
                 <bold>true</bold>
                </font>
               </property>
@@ -706,6 +718,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -755,6 +768,7 @@
          </property>
          <property name="font">
           <font>
+           <pointsize>9</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -781,6 +795,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -823,6 +838,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -849,6 +865,7 @@
          </property>
          <property name="font">
           <font>
+           <pointsize>9</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -875,6 +892,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -900,7 +918,10 @@
                </size>
               </property>
               <property name="font">
-               <font/>
+               <font>
+                <pointsize>9</pointsize>
+                <bold>true</bold>
+               </font>
               </property>
               <property name="styleSheet">
                <string notr="true"/>
@@ -924,6 +945,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -957,6 +979,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="currentText">
@@ -1125,6 +1148,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -1151,6 +1175,7 @@
          </property>
          <property name="font">
           <font>
+           <pointsize>9</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -1177,6 +1202,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -1202,7 +1228,10 @@
                </size>
               </property>
               <property name="font">
-               <font/>
+               <font>
+                <pointsize>9</pointsize>
+                <bold>true</bold>
+               </font>
               </property>
               <property name="styleSheet">
                <string notr="true"/>
@@ -1226,6 +1255,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -1259,6 +1289,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="currentText">
@@ -1427,6 +1458,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -1473,6 +1505,7 @@
          </property>
          <property name="font">
           <font>
+           <pointsize>9</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -1598,6 +1631,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -1665,6 +1699,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -1757,6 +1792,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -1818,6 +1854,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -1910,6 +1947,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -1969,6 +2007,7 @@
          </property>
          <property name="font">
           <font>
+           <pointsize>9</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -1995,6 +2034,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -2056,6 +2096,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -2117,6 +2158,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -2230,6 +2272,7 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -2259,6 +2302,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -2280,6 +2324,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="styleSheet">
@@ -2313,6 +2358,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -2334,6 +2380,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -2370,6 +2417,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -2391,6 +2439,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -2427,6 +2476,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -2450,6 +2500,7 @@
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -2560,6 +2611,7 @@ border-radius: 4px;
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -2624,6 +2676,7 @@ border-radius: 4px;
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -2647,6 +2700,7 @@ border-radius: 4px;
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -2670,6 +2724,7 @@ border-radius: 4px;
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -2783,6 +2838,7 @@ border-radius: 4px;
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -2876,6 +2932,7 @@ border-radius: 4px;
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -2905,6 +2962,7 @@ border-radius: 4px;
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -2926,6 +2984,7 @@ border-radius: 4px;
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="styleSheet">
@@ -3004,6 +3063,7 @@ border-radius: 4px;
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -3019,6 +3079,7 @@ border-radius: 4px;
             <property name="font">
              <font>
               <pointsize>9</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -3066,6 +3127,7 @@ border-radius: 4px;
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -3089,6 +3151,7 @@ border-radius: 4px;
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -3205,6 +3268,7 @@ border-radius: 4px;
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -3232,6 +3296,7 @@ border-radius: 4px;
          </property>
          <property name="font">
           <font>
+           <pointsize>9</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -3250,6 +3315,34 @@ border-radius: 4px;
            <widget class="QCheckBox" name="showOnlyIso_CheckBox">
             <property name="text">
              <string>Show only ISO line weights in drop down boxes</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="title">
+          <string>Formula Editor</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_27">
+          <item>
+           <widget class="QCheckBox" name="autoClearFx_CheckBox">
+            <property name="text">
+             <string>Auto clear formula</string>
             </property>
            </widget>
           </item>

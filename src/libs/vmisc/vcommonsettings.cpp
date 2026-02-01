@@ -123,6 +123,7 @@ const QString settingGraphicsViewShowOpsToolBar          = QStringLiteral("graph
 const QString settingGraphicsViewShowPieceToolBar        = QStringLiteral("graphicsview/showPieceToolbar");
 const QString settingGraphicsViewShowDetailsToolBar      = QStringLiteral("graphicsview/showDetailsToolbar");
 const QString settingGraphicsViewShowLayoutToolBar       = QStringLiteral("graphicsview/showLayoutToolbar");
+const QString settingGraphicsAutoClearFx                 = QStringLiteral("graphicsview/autoClearFx");
 
 const QString settingGraphicsViewDialogPosition          = QStringLiteral("graphicsview/dialogPosition");
 const QString settingGraphicsUseSecondMonitor            = QStringLiteral("graphicsview/useSecondMonitor");
@@ -2435,4 +2436,14 @@ QString VCommonSettings::getStr(QString key, const QString &defaultString) const
         return string;
     }
     return defaultString;
+}
+
+bool VCommonSettings::autoClearFx() const
+{
+    return value(settingGraphicsAutoClearFx, false).toBool();
+}
+
+void VCommonSettings::setAutoClearFx(bool value)
+{
+    setValue(settingGraphicsAutoClearFx, value);
 }
