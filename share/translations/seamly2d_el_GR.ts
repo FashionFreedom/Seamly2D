@@ -9153,6 +9153,14 @@ Press enter to temporarily add it to the list.</source>
         <source>Background:</source>
         <translation>Φόντο:</translation>
     </message>
+    <message>
+        <source>Formula Editor</source>
+        <translation>Επεξεργαστής Φόρμουλας</translation>
+    </message>
+    <message>
+        <source>Auto clear formula</source>
+        <translation>Φόρμουλα αυτόματης διαγραφής</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>

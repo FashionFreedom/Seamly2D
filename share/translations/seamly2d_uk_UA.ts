@@ -9152,6 +9152,14 @@ Press enter to temporarily add it to the list.</source>
         <source>Background:</source>
         <translation>Передумова:</translation>
     </message>
+    <message>
+        <source>Formula Editor</source>
+        <translation>Редактор формул</translation>
+    </message>
+    <message>
+        <source>Auto clear formula</source>
+        <translation>Автоматичне очищення формули</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>

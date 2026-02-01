@@ -9158,6 +9158,14 @@ Press enter to temporarily add it to the list.</source>
         <source>Background:</source>
         <translation>Фон:</translation>
     </message>
+    <message>
+        <source>Formula Editor</source>
+        <translation>Редактор формул</translation>
+    </message>
+    <message>
+        <source>Auto clear formula</source>
+        <translation>Автоматическое удаление формулы</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>

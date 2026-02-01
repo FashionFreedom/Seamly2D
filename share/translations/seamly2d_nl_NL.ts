@@ -9134,6 +9134,14 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <source>Background:</source>
         <translation>Achtergrond:</translation>
     </message>
+    <message>
+        <source>Formula Editor</source>
+        <translation>Formule-editor</translation>
+    </message>
+    <message>
+        <source>Auto clear formula</source>
+        <translation>Formule automatisch wissen</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>

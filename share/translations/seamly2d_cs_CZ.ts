@@ -9149,6 +9149,14 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <source>Background:</source>
         <translation>Pozadí:</translation>
     </message>
+    <message>
+        <source>Formula Editor</source>
+        <translation>Editor vzorců</translation>
+    </message>
+    <message>
+        <source>Auto clear formula</source>
+        <translation>Automatické vymazání vzorce</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>

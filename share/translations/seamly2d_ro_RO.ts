@@ -9153,6 +9153,14 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <source>Background:</source>
         <translation>Fundal:</translation>
     </message>
+    <message>
+        <source>Formula Editor</source>
+        <translation>Editor de formule</translation>
+    </message>
+    <message>
+        <source>Auto clear formula</source>
+        <translation>Formula cu auto-claritate</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>

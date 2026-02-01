@@ -9138,6 +9138,14 @@ Prima enter para o adicionar temporariamente à lista.</translation>
         <source>Background:</source>
         <translation>Fundo:</translation>
     </message>
+    <message>
+        <source>Formula Editor</source>
+        <translation>Editor de fórmulas</translation>
+    </message>
+    <message>
+        <source>Auto clear formula</source>
+        <translation>Fórmula de limpeza automática</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>

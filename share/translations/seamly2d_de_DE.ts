@@ -9135,6 +9135,14 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Background:</source>
         <translation>Hintergrund:</translation>
     </message>
+    <message>
+        <source>Formula Editor</source>
+        <translation>Formeleditor</translation>
+    </message>
+    <message>
+        <source>Auto clear formula</source>
+        <translation>Formel automatisch löschen</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
