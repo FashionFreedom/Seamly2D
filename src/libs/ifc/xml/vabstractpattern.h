@@ -134,8 +134,8 @@ public:
 
     bool                           getActiveNodeElement(const QString &name, QDomElement &element) const;
 
-    quint32                        getCursor() const;
-    void                           setCursor(const quint32 &value);
+    quint32                        getCursorId() const;
+    void                           setCursorId(const quint32 &toolId);
 
     void                           setDefaultPen(Pen pen);
     QString                        getDefaultLineColor() const;
@@ -512,7 +512,7 @@ protected:
     QString        m_DefaultLineType;
     QString        defaultBasePoint;
     QString        lastSavedExportFormat;
-    quint32        cursor; /// @brief cursor cursor keep id tool after which we will add new tool in file.
+    quint32        m_cursorId;        /// @brief m_cursorId  keep id tool after which we will add new tool in file.
 
     QVector<VDataTool*>       toolsOnRemove;
     QVector<VToolRecord>      m_history;     /// @brief history history records.

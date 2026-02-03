@@ -63,6 +63,7 @@
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vtablesearch.h"
 #include "../vtools/tools/vabstracttool.h"
+#include "../vtools/tools/drawTools/operation/vabstractoperation.h"
 #include "../vtools/tools/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutspline.h"
 #include "../vtools/tools/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutsplinepath.h"
 #include "../vtools/tools/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutarc.h"
@@ -74,6 +75,10 @@
 #include <QDebug>
 #include <QGuiApplication>
 #include <QScreen>
+#include <QScrollBar>
+
+// We need this enum in case we will add or delete a column. It also makes code more readable.
+enum {CursorColumn = 0, IdColumn, NameColumn, DescColumn, LengthColumn, AngleColumn};
 
 //---------------------------------------------------------------------------------------------------------------------
 /// @brief HistoryDialog create dialog
@@ -92,9 +97,13 @@ HistoryDialog::HistoryDialog(VContainer *data, VPattern *doc, QWidget *parent)
     setWindowFlags(Qt::Window);
     setWindowFlags(windowFlags() & ~Qt::WindowStaysOnTopHint & ~Qt::WindowContextHelpButtonHint);
 
-    // Limit dialog height to 80% of screen size
+    // Set the position that the dialog opens based on user preference.
+    setDialogPosition();
+
+    // Limit dialog height to 80% of screen size.
     setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
+    /// Install event filter to handle key presses and mouse events for the search line edit field.
     ui->find_LineEdit->installEventFilter(this);
 
     qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
@@ -102,34 +111,38 @@ HistoryDialog::HistoryDialog(VContainer *data, VPattern *doc, QWidget *parent)
     fillTable();
     initializeTable();
 
-    ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
-    connect(ok_Button,                &QPushButton::clicked, this,  &HistoryDialog::DialogAccepted);
-    connect(ui->clipboard_ToolButton, &QToolButton::clicked, this,  &HistoryDialog::copyToClipboard);
+    QPushButton *close_Button = ui->buttonBox->button(QDialogButtonBox::Close);
+    close_Button->setDefault(false);
+    close_Button->setAutoDefault(false);
 
-
-    // Set up search
     m_search = QSharedPointer<VTableSearch>(new VTableSearch(ui->tableWidget));
-    connect(ui->find_LineEdit,    &QLineEdit::textEdited,this,  &HistoryDialog::findText);
-    connect(ui->prev_PushButton,  &QToolButton::clicked, this,  &HistoryDialog::searchPrev);
-    connect(ui->next_PushButton,  &QToolButton::clicked, this,  &HistoryDialog::searchNext);
-    connect(ui->regex_ToolButton, &QToolButton::toggled, this,  &HistoryDialog::regexToggled);
-    connect(ui->case_ToolButton,  &QToolButton::toggled, this,  &HistoryDialog::caseToggled);
-    connect(ui->word_ToolButton,  &QToolButton::toggled, this,  &HistoryDialog::wordToggled);
-    connect(m_search.data(), &VTableSearch::hasResult, this, [this] (bool state)
+
+    connect(ui->clipboard_ToolButton,    &QToolButton::clicked,       this,  &HistoryDialog::copyToClipboard);
+    connect(ui->find_LineEdit,           &QLineEdit::textEdited,      this,  &HistoryDialog::findText);
+    connect(ui->prev_PushButton,         &QToolButton::clicked,       this,  &HistoryDialog::searchPrev);
+    connect(ui->next_PushButton,         &QToolButton::clicked,       this,  &HistoryDialog::searchNext);
+    connect(ui->regex_ToolButton,        &QToolButton::toggled,       this,  &HistoryDialog::regexToggled);
+    connect(ui->case_ToolButton,         &QToolButton::toggled,       this,  &HistoryDialog::caseToggled);
+    connect(ui->word_ToolButton,         &QToolButton::toggled,       this,  &HistoryDialog::wordToggled);
+    connect(ui->moveToTop_ToolButton,    &QToolButton::clicked,       this,  &HistoryDialog::moveToTop);
+    connect(ui->moveToCursor_ToolButton, &QToolButton::clicked,       this,  &HistoryDialog::moveToCursor);
+    connect(ui->moveToBottom_ToolButton, &QToolButton::clicked,       this,  &HistoryDialog::moveToBottom);
+    connect(ui->tableWidget,             &QTableWidget::cellClicked,  this,  &HistoryDialog::cellClicked);
+    connect(close_Button,                &QPushButton::clicked,       this,  &HistoryDialog::DialogAccepted);
+    connect(m_doc,                       &VPattern::ChangedCursor,    this,  &HistoryDialog::cursorChanged);
+    connect(m_doc,                       &VPattern::patternChanged,   this,  &HistoryDialog::updateHistory);
+
+    connect(this, &HistoryDialog::showHistoryTool, m_doc, [doc](quint32 id, bool enable)
+    {
+        emit doc->ShowTool(id, enable);
+    });
+    connect(m_search.data(), &VTableSearch::hasResult,  this,  [this] (bool state)
     {
         ui->prev_PushButton->setEnabled(state);
     });
     connect(m_search.data(), &VTableSearch::hasResult, this, [this] (bool state)
     {
         ui->next_PushButton->setEnabled(state);
-    });
-
-    connect(ui->tableWidget, &QTableWidget::cellClicked,      this,  &HistoryDialog::cellClicked);
-    connect(m_doc,           &VPattern::ChangedCursor,        this,  &HistoryDialog::changedCursor);
-    connect(m_doc,           &VPattern::patternChanged,       this,  &HistoryDialog::updateHistory);
-    connect(this,            &HistoryDialog::showHistoryTool, m_doc, [doc](quint32 id, bool enable)
-    {
-        emit doc->ShowTool(id, enable);
     });
 
     showTool();
@@ -146,9 +159,13 @@ HistoryDialog::~HistoryDialog()
 //---------------------------------------------------------------------------------------------------------------------
 void HistoryDialog::DialogAccepted()
 {
-    QTableWidgetItem *item = ui->tableWidget->item(m_cursorToolRecordRow, 0);
+    QTableWidgetItem *item = ui->tableWidget->item(m_cursorToolRecordRow, IdColumn);
     quint32 id = qvariant_cast<quint32>(item->data(Qt::UserRole));
     emit showHistoryTool(id, false);
+
+    // Reset cursor to bottom of table before closing
+    m_doc->setCursorId(NULL_ID);
+
     emit DialogClosed(QDialog::Accepted);
 }
 
@@ -159,48 +176,59 @@ void HistoryDialog::DialogAccepted()
 //---------------------------------------------------------------------------------------------------------------------
 void HistoryDialog::cellClicked(int row, int column)
 {
-    if (column == 0)
+    if (column == CursorColumn)
     {
-        QTableWidgetItem *item = ui->tableWidget->item(m_cursorRow, 0);
+        // clear current cursor row icon
+        QTableWidgetItem *item = ui->tableWidget->item(m_cursorRow, CursorColumn);
         item->setIcon(QIcon());
 
-        item = ui->tableWidget->item(row, 0);
+        // set new cursor row icon
         m_cursorRow = row;
+        item = ui->tableWidget->item(m_cursorRow, CursorColumn);
         item->setIcon(QIcon("://icon/24x24/left_to_right_arrow.png"));
+
+        // set new cursor position in pattern.
+        // if cursor is at last row set id to 0, else use tool id in row.
+        item = ui->tableWidget->item(m_cursorRow, IdColumn);
         const quint32 id = qvariant_cast<quint32>(item->data(Qt::UserRole));
         m_doc->blockSignals(true);
-        row == ui->tableWidget->rowCount()-1 ? m_doc->setCursor(0) : m_doc->setCursor(id);
+        row == ui->tableWidget->rowCount()-1 ? m_doc->setCursorId(NULL_ID) : m_doc->setCursorId(id);
         m_doc->blockSignals(false);
     }
     else
     {
-        QTableWidgetItem *item = ui->tableWidget->item(m_cursorToolRecordRow, 0);
+        // Un Highlight old selected tool in draft block
+        QTableWidgetItem *item = ui->tableWidget->item(m_cursorToolRecordRow, IdColumn);
         quint32 id = qvariant_cast<quint32>(item->data(Qt::UserRole));
         emit showHistoryTool(id, false);
 
+        // Highlight new selected tool in draft block
         m_cursorToolRecordRow = row;
-        item = ui->tableWidget->item(m_cursorToolRecordRow, 0);
+        item = ui->tableWidget->item(m_cursorToolRecordRow, IdColumn);
         id = qvariant_cast<quint32>(item->data(Qt::UserRole));
         emit showHistoryTool(id, true);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief changedCursor changed cursor of input. Cursor show after which record we will insert new object
+/// @brief cursorChanged changed cursor of input. Cursor show after which record we will insert new object
 /// @param id id of object
 //---------------------------------------------------------------------------------------------------------------------
-void HistoryDialog::changedCursor(quint32 id)
+void HistoryDialog::cursorChanged(quint32 id)
 {
-    for (qint32 i = 0; i< ui->tableWidget->rowCount(); ++i)
+    for (qint32 row = 0; row < ui->tableWidget->rowCount(); ++row)
     {
-        QTableWidgetItem *item = ui->tableWidget->item(i, 0);
-        quint32 rId = qvariant_cast<quint32>(item->data(Qt::UserRole));
-        if (rId == id)
+        QTableWidgetItem *item = ui->tableWidget->item(row, IdColumn);
+        quint32 rowId = qvariant_cast<quint32>(item->data(Qt::UserRole));
+        if (rowId == id)
         {
-            QTableWidgetItem *oldCursorItem = ui->tableWidget->item(m_cursorRow, 0);
+            QTableWidgetItem *oldCursorItem = ui->tableWidget->item(m_cursorRow, CursorColumn);
             oldCursorItem->setIcon(QIcon());
-            m_cursorRow = i;
+            m_cursorRow = row;
             item->setIcon(QIcon("://icon/24x24/left_to_right_arrow.png"));
+
+            QScrollBar *verScrollBar = ui->tableWidget->verticalScrollBar();
+            verScrollBar->setSliderPosition(verScrollBar->maximum());
         }
     }
 }
@@ -208,10 +236,13 @@ void HistoryDialog::changedCursor(quint32 id)
 //---------------------------------------------------------------------------------------------------------------------
 /// @brief updateHistory update history table
 //---------------------------------------------------------------------------------------------------------------------
-void HistoryDialog::updateHistory()
+void HistoryDialog::updateHistory(bool saved)
 {
-    fillTable();
-    initializeTable();
+    if (saved)
+    {
+        fillTable();
+        initializeTable();
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -219,7 +250,13 @@ void HistoryDialog::updateHistory()
 //---------------------------------------------------------------------------------------------------------------------
 void HistoryDialog::fillTable()
 {
+    ui->draftblockName_Label->setText(m_doc->getActiveDraftBlockName());
     ui->tableWidget->clear();
+
+    // Set the description column to stretch
+    QHeaderView *header = ui->tableWidget->horizontalHeader();
+    header->setSectionResizeMode(DescColumn, QHeaderView::Stretch);
+
     QVector<VToolRecord> history = m_doc->getBlockHistory();
     qint32 currentRow = -1;
     qint32 count = 0;
@@ -235,42 +272,66 @@ void HistoryDialog::fillTable()
             currentRow++;
 
             {
+                QTableWidgetItem *item = new QTableWidgetItem(QString(""));
+                item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+                ui->tableWidget->setItem(currentRow, CursorColumn, item); //1st column is Cursor position
+            }
+
+            {
                 QTableWidgetItem *item = new QTableWidgetItem(QString().setNum(rowData.id));
-                item->setTextAlignment(Qt::AlignHCenter);
-                item->setSizeHint(QSize(80, 24));
+                item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
                 item->setData(Qt::UserRole, rowData.id);
                 item->setFlags(item->flags() ^ Qt::ItemIsEditable);
-                ui->tableWidget->setItem(currentRow, 0, item);//2nd column is Tool id
+                ui->tableWidget->setItem(currentRow, IdColumn, item); //2nd column is Tool id
             }
 
             {
                 QTableWidgetItem *item = new QTableWidgetItem(QString(rowData.name));
-                item->setTextAlignment(Qt::AlignHCenter);
-                item->setSizeHint(QSize(100, 24));
+                item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
                 item->setFlags(item->flags() ^ Qt::ItemIsEditable);
-                ui->tableWidget->setItem(currentRow, 1, item);//3rd column is Tool name
+                ui->tableWidget->setColumnWidth(NameColumn, 150);
+                ui->tableWidget->setItem(currentRow, NameColumn, item); //3rd column is Tool name or Obj names
+                ui->tableWidget->resizeRowToContents(currentRow);
             }
 
-            QTableWidgetItem *item = new QTableWidgetItem(rowData.tool);
-            item->setTextAlignment(Qt::AlignLeft);
-            item->setFlags(item->flags() ^ Qt::ItemIsEditable);
-            item->setIcon(QIcon(rowData.icon));
-            ui->tableWidget->setItem(currentRow, 2, item);//4th column is Tool description
+                QTableWidgetItem *item = new QTableWidgetItem(rowData.tool);
+                item->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+                item->setFlags(item->flags() ^ Qt::ItemIsEditable);
+                ui->tableWidget->setColumnWidth(DescColumn, 400);
+                item->setIcon(QIcon(rowData.icon));
+                ui->tableWidget->setItem(currentRow, DescColumn, item); //4th column is Tool description
+
+            {
+                QTableWidgetItem *item = new QTableWidgetItem(QString(rowData.length));
+                item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+                item->setFlags(item->flags() ^ Qt::ItemIsEditable);
+                ui->tableWidget->setColumnWidth(LengthColumn, 120);
+                ui->tableWidget->setItem(currentRow, LengthColumn, item); //5th column is Tool length formula
+                ui->tableWidget->resizeRowToContents(currentRow);
+            }
+
+            {
+                QTableWidgetItem *item = new QTableWidgetItem(QString(rowData.angle));
+                item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+                item->setFlags(item->flags() ^ Qt::ItemIsEditable);
+                ui->tableWidget->setColumnWidth(AngleColumn, 120);
+                ui->tableWidget->setItem(currentRow, AngleColumn, item); //6th column is Tool angle formula
+                ui->tableWidget->resizeRowToContents(currentRow);
+            }
             ++count;
         }
     }
+
     ui->tableWidget->setRowCount(count);//Current history records count
+
     if (count>0)
     {
         m_cursorRow = cursorRow();
-        QTableWidgetItem *item = ui->tableWidget->item(m_cursorRow, 0);
+        QTableWidgetItem *item = ui->tableWidget->item(m_cursorRow, CursorColumn);
         SCASSERT(item != nullptr)
         item->setIcon(QIcon("://icon/24x24/left_to_right_arrow.png"));//place arrow in 1st column of most recent history record
     }
 
-    ui->tableWidget->resizeColumnsToContents();
-    ui->tableWidget->resizeRowsToContents();
-    ui->tableWidget->verticalHeader()->setDefaultSectionSize(24);//Set all row heights to 20px
 }
 
 
@@ -317,250 +378,251 @@ RowData HistoryDialog::record(const VToolRecord &tool)
 
             case Tool::BasePoint:
                 rowData.icon = ":/toolicon/32x32/point_basepoint_icon.png";
-                rowData.name = getPointName(toolId);
+                rowData.name = getName(toolId);
                 rowData.tool = tr("Base Point");
                 break;
 
             case Tool::EndLine:
-                rowData.icon = ":/toolicon/32x32/segment.png";
-                rowData.name = getPointName(toolId);
-                rowData.tool = tr("Point Length and Angle from point %1")
-                                  .arg(getPointName(attrUInt(domElement, AttrBasePoint)));
-                break;
+                rowData.icon   = ":/toolicon/32x32/segment.png";
+                rowData.name   = getName(toolId);
+                rowData.length = m_doc->GetParametrString(domElement, AttrLength, QString());
+                rowData.angle  = m_doc->GetParametrString(domElement, AttrAngle, QString());
+                rowData.tool   = tr("Point Length and Angle from point %1")
+                                    .arg(getName(attrUInt(domElement, AttrBasePoint)));
+                                break;
 
             case Tool::Line:
                 rowData.icon = ":/toolicon/32x32/line.png";
                 rowData.name = tr("Line_%1_%2")
-                                  .arg(getPointName(attrUInt(domElement, AttrFirstPoint)))
-                                  .arg(getPointName(attrUInt(domElement, AttrSecondPoint)));
+                                  .arg(getName(attrUInt(domElement, AttrFirstPoint)))
+                                  .arg(getName(attrUInt(domElement, AttrSecondPoint)));
                 rowData.tool = tr("Line from %1 to %2")
-                                  .arg(getPointName(attrUInt(domElement, AttrFirstPoint)))
-                                  .arg(getPointName(attrUInt(domElement, AttrSecondPoint)));
+                                  .arg(getName(attrUInt(domElement, AttrFirstPoint)))
+                                  .arg(getName(attrUInt(domElement, AttrSecondPoint)));
                 break;
 
             case Tool::AlongLine:
                 rowData.icon = ":/toolicon/32x32/along_line.png";
-                rowData.name = getPointName(toolId);
+                rowData.name = getName(toolId);
                 rowData.tool = tr("Point On Line %1_%2")
-                                  .arg(getPointName(attrUInt(domElement, AttrFirstPoint)))
-                                  .arg(getPointName(attrUInt(domElement, AttrSecondPoint)));
+                                  .arg(getName(attrUInt(domElement, AttrFirstPoint)))
+                                  .arg(getName(attrUInt(domElement, AttrSecondPoint)));
                 break;
 
             case Tool::ShoulderPoint:
                 rowData.icon = ":/toolicon/32x32/shoulder.png";
-                rowData.name = getPointName(toolId);
+                rowData.name = getName(toolId);
                 rowData.tool = tr("Point Length to Line");
                 break;
 
             case Tool::Normal:
-                rowData.icon = ":/toolicon/32x32/normal.png";
-                rowData.name = getPointName(toolId);
-                rowData.tool = tr("Point On Perpendicular %1_%2")
-                                 .arg(getPointName(attrUInt(domElement, AttrFirstPoint)))
-                                 .arg(getPointName(attrUInt(domElement, AttrSecondPoint)));
+                rowData.icon   = ":/toolicon/32x32/normal.png";
+                rowData.name   = getName(toolId);
+                rowData.length = m_doc->GetParametrString(domElement, AttrLength, QString());
+                rowData.angle  = m_doc->GetParametrString(domElement, AttrAngle, QString());
+                rowData.tool   = tr("Point On Perpendicular %1_%2")
+                                .arg(getName(attrUInt(domElement, AttrFirstPoint)))
+                                .arg(getName(attrUInt(domElement, AttrSecondPoint)));
                 break;
 
             case Tool::Bisector:
                 rowData.icon = ":/toolicon/32x32/bisector.png";
-                rowData.name = getPointName(toolId);
+                rowData.name = getName(toolId);
                 rowData.tool = tr("Point On Bisector %1_%2_%3")
-                                 .arg(getPointName(attrUInt(domElement, AttrFirstPoint)))
-                                 .arg(getPointName(attrUInt(domElement, AttrSecondPoint)))
-                                 .arg(getPointName(attrUInt(domElement, AttrThirdPoint)));
+                                 .arg(getName(attrUInt(domElement, AttrFirstPoint)))
+                                 .arg(getName(attrUInt(domElement, AttrSecondPoint)))
+                                 .arg(getName(attrUInt(domElement, AttrThirdPoint)));
                 break;
 
             case Tool::LineIntersect:
                 rowData.icon = ":/toolicon/32x32/intersect.png";
-                rowData.name = getPointName(toolId);
+                rowData.name = getName(toolId);
                 rowData.tool = tr("Point Intersect Lines %1_%2 and %3_%4")
-                                 .arg(getPointName(attrUInt(domElement, AttrP1Line1)))
-                                 .arg(getPointName(attrUInt(domElement, AttrP2Line1)))
-                                 .arg(getPointName(attrUInt(domElement, AttrP1Line2)))
-                                 .arg(getPointName(attrUInt(domElement, AttrP2Line2)));
+                                 .arg(getName(attrUInt(domElement, AttrP1Line1)))
+                                 .arg(getName(attrUInt(domElement, AttrP2Line1)))
+                                 .arg(getName(attrUInt(domElement, AttrP1Line2)))
+                                 .arg(getName(attrUInt(domElement, AttrP2Line2)));
                 break;
 
             case Tool::Spline:
             {
-                const QSharedPointer<VSpline> spl = data->GeometricObject<VSpline>(toolId);
-                SCASSERT(!spl.isNull())
-                rowData.icon = ":/toolicon/32x32/spline.png";
-                rowData.name = spl->NameForHistory(tr("Spl_"));
-                rowData.tool = tr("Curve Interactive");
+                rowData.icon   = ":/toolicon/32x32/spline.png";
+                rowData.name   = getName(toolId);
+                rowData.length = tr("%1\n%2")
+                                   .arg(m_doc->GetParametrString(domElement, AttrLength1, QString()))
+                                   .arg(m_doc->GetParametrString(domElement, AttrLength2, QString()));
+                rowData.angle  = tr("%1\n%2")
+                                   .arg(m_doc->GetParametrString(domElement, AttrAngle1, QString()))
+                                   .arg(m_doc->GetParametrString(domElement, AttrAngle2, QString()));
+                rowData.tool   = tr("Curve Interactive");
                 break;
             }
 
             case Tool::CubicBezier:
             {
-                const QSharedPointer<VCubicBezier> spl = data->GeometricObject<VCubicBezier>(toolId);
-                SCASSERT(!spl.isNull())
                 rowData.icon = ":/toolicon/32x32/cubic_bezier.png";
-                rowData.name = spl->NameForHistory(tr("Spl_"));
+                rowData.name = getName(toolId);
                 rowData.tool = tr("Curve Fixed");
                 break;
             }
 
             case Tool::Arc:
             {
-                const QSharedPointer<VArc> arc = data->GeometricObject<VArc>(toolId);
-                SCASSERT(!arc.isNull())
-                rowData.icon = ":/toolicon/32x32/arc.png";
-                rowData.name = arc->NameForHistory(tr("Arc_"));
-                rowData.tool = tr("Arc Radius & Angles");
+                rowData.icon   = ":/toolicon/32x32/arc.png";
+                rowData.name   = getName(toolId);
+                rowData.length = m_doc->GetParametrString(domElement, AttrRadius, QString());
+                rowData.angle  = QString("%1\n %2")
+                                 .arg(m_doc->GetParametrString(domElement, AttrAngle1, QString()))
+                                 .arg(m_doc->GetParametrString(domElement, AttrAngle2, QString()));
+                rowData.tool   = tr("Arc Radius & Angles");
                 break;
             }
 
             case Tool::ArcWithLength:
             {
-                const QSharedPointer<VArc> arc = data->GeometricObject<VArc>(toolId);
-                SCASSERT(!arc.isNull())
-                rowData.icon = ":/toolicon/32x32/arc_with_length.png";
-                rowData.name = arc->NameForHistory(tr("Arc_"));
-                rowData.tool = tr("Arc Radius & Length %1") .arg(arc->NameForHistory(tr("Arc_")));
+                rowData.icon   = ":/toolicon/32x32/arc_with_length.png";
+                rowData.name   = getName(toolId);
+                rowData.length = QString("%1\n %2").arg(m_doc->GetParametrString(domElement, AttrRadius, ""))
+                                                   .arg(m_doc->GetParametrString(domElement, AttrLength, ""));
+                rowData.angle  = m_doc->GetParametrString(domElement, AttrAngle1, QString());
+                rowData.tool   = tr("Arc with Radius, Length, and Angle");
                 break;
             }
 
             case Tool::SplinePath:
             {
-                const QSharedPointer<VSplinePath> splPath = data->GeometricObject<VSplinePath>(toolId);
-                SCASSERT(!splPath.isNull())
                 rowData.icon = ":/toolicon/32x32/splinePath.png";
-                rowData.name = splPath->NameForHistory(tr("SplPath_"));
+                rowData.name = getName(toolId);
                 rowData.tool = tr("Spline Interactive");
                 break;
             }
 
             case Tool::CubicBezierPath:
             {
-                const QSharedPointer<VCubicBezierPath> splPath = data->GeometricObject<VCubicBezierPath>(toolId);
-                SCASSERT(!splPath.isNull())
                 rowData.icon = ":/toolicon/32x32/cubic_bezier_path.png";
-                rowData.name = splPath->NameForHistory(tr("SplPath_"));
+                rowData.name = getName(toolId);
                 rowData.tool = tr("Spline Fixed");
                 break;
             }
 
             case Tool::PointOfContact:
                 rowData.icon = ":/toolicon/32x32/point_intersect_arc_line.png";
-                rowData.name = getPointName(toolId);
+                rowData.name = getName(toolId);
                 rowData.tool = tr("Point Intersect Arc with center %1 & Line %2_%3")
-                                  .arg(getPointName(attrUInt(domElement, AttrCenter)))
-                                  .arg(getPointName(attrUInt(domElement, AttrFirstPoint)))
-                                  .arg(getPointName(attrUInt(domElement, AttrSecondPoint)));
+                                  .arg(getName(attrUInt(domElement, AttrCenter)))
+                                  .arg(getName(attrUInt(domElement, AttrFirstPoint)))
+                                  .arg(getName(attrUInt(domElement, AttrSecondPoint)));
                 break;
 
             case Tool::Height:
                 rowData.icon = ":/toolicon/32x32/height.png";
-                rowData.name = getPointName(toolId);
+                rowData.name = getName(toolId);
                 rowData.tool = tr("Point Intersect Line %1_%2 & Perpendicular %3")
-                                  .arg(getPointName(attrUInt(domElement, AttrP1Line)))
-                                  .arg(getPointName(attrUInt(domElement, AttrP2Line)))
-                                  .arg(getPointName(attrUInt(domElement, AttrBasePoint)));
+                                  .arg(getName(attrUInt(domElement, AttrP1Line)))
+                                  .arg(getName(attrUInt(domElement, AttrP2Line)))
+                                  .arg(getName(attrUInt(domElement, AttrBasePoint)));
                 break;
 
             case Tool::Triangle:
                 rowData.icon = ":/toolicon/32x32/triangle.png";
-                rowData.name = getPointName(toolId);
+                rowData.name = getName(toolId);
                 rowData.tool = tr("Point Intersect Axis %1_%2 & Triangle points %3 and %4")
-                                  .arg(getPointName(attrUInt(domElement, AttrAxisP1)))
-                                  .arg(getPointName(attrUInt(domElement, AttrAxisP2)))
-                                  .arg(getPointName(attrUInt(domElement, AttrFirstPoint)))
-                                  .arg(getPointName(attrUInt(domElement, AttrSecondPoint)));
+                                  .arg(getName(attrUInt(domElement, AttrAxisP1)))
+                                  .arg(getName(attrUInt(domElement, AttrAxisP2)))
+                                  .arg(getName(attrUInt(domElement, AttrFirstPoint)))
+                                  .arg(getName(attrUInt(domElement, AttrSecondPoint)));
                 break;
 
             case Tool::PointOfIntersection:
                 rowData.icon = ":/toolicon/32x32/point_intersectxy_icon.png";
-                rowData.name = getPointName(toolId);
+                rowData.name = getName(toolId);
                 rowData.tool = tr("Point Intersect XY of points %1 and %2")
-                                  .arg(getPointName(attrUInt(domElement, AttrFirstPoint)))
-                                  .arg(getPointName(attrUInt(domElement, AttrSecondPoint)));
+                                  .arg(getName(attrUInt(domElement, AttrFirstPoint)))
+                                  .arg(getName(attrUInt(domElement, AttrSecondPoint)));
                 break;
 
             case Tool::CutArc:
             {
-                const QSharedPointer<VArc> arc = data->GeometricObject<VArc>(attrUInt(domElement, AttrArc));
-                SCASSERT(!arc.isNull())
-                rowData.icon = ":/toolicon/32x32/arc_cut.png";
-                rowData.name = getPointName(toolId);
-                rowData.tool = tr("Point On Arc");
+                rowData.icon   = ":/toolicon/32x32/arc_cut.png";
+                rowData.name   = getName(toolId);
+                rowData.length = m_doc->GetParametrString(domElement, AttrLength, QString());
+                rowData.tool   = tr("Point On Arc");
                 break;
             }
 
             case Tool::CutSpline:
             {
-                const quint32 splineId = attrUInt(domElement, VToolCutSpline::AttrSpline);
-                const QSharedPointer<VAbstractCubicBezier> spl = data->GeometricObject<VAbstractCubicBezier>(splineId);
-                SCASSERT(!spl.isNull())
-                rowData.icon = ":/toolicon/32x32/spline_cut_point.png";
-                rowData.name = getPointName(toolId);
-                rowData.tool = tr("Point On Curve");
+                rowData.icon   = ":/toolicon/32x32/spline_cut_point.png";
+                rowData.name   = getName(toolId);
+                rowData.length = m_doc->GetParametrString(domElement, AttrLength, QString());
+                rowData.tool   = tr("Point On Curve");
                 break;
             }
 
             case Tool::CutSplinePath:
             {
-                const quint32 splinePathId = attrUInt(domElement, VToolCutSplinePath::AttrSplinePath);
-                const QSharedPointer<VAbstractCubicBezierPath> splPath =
-                data->GeometricObject<VAbstractCubicBezierPath>(splinePathId);
-                SCASSERT(!splPath.isNull())
-                rowData.icon = ":/toolicon/32x32/splinePath_cut_point.png";
-                rowData.name = getPointName(toolId);
-                rowData.tool = tr("Point On Spline");
+                rowData.icon   = ":/toolicon/32x32/splinePath_cut_point.png";
+                rowData.name   = getName(toolId);
+                rowData.length = m_doc->GetParametrString(domElement, AttrLength, QString());
+                rowData.tool   = tr("Point On Spline");
                 break;
             }
 
             case Tool::LineIntersectAxis:
                 rowData.icon = ":/toolicon/32x32/line_intersect_axis.png";
-                rowData.name = getPointName(toolId);
+                rowData.name = getName(toolId);
                 rowData.tool = tr("%Point Intersect Line & %1_%2 and Axis through point %3")
-                                 .arg(getPointName(attrUInt(domElement, AttrP1Line)))
-                                 .arg(getPointName(attrUInt(domElement, AttrP2Line)))
-                                 .arg(getPointName(attrUInt(domElement, AttrBasePoint)));
+                                 .arg(getName(attrUInt(domElement, AttrP1Line)))
+                                 .arg(getName(attrUInt(domElement, AttrP2Line)))
+                                 .arg(getName(attrUInt(domElement, AttrBasePoint)));
                 break;
 
             case Tool::CurveIntersectAxis:
-                rowData.icon = ":/toolicon/32x32/arc_intersect_axis.png";
-                rowData.name = getPointName(toolId);
-                rowData.tool = tr("Point Intersect Curve & Axis through point %1")
-                                  .arg(getPointName(attrUInt(domElement, AttrBasePoint)));
-                break;
+            rowData.icon   = ":/toolicon/32x32/arc_intersect_axis.png";
+            rowData.name   = getName(toolId);
+            rowData.angle  = m_doc->GetParametrString(domElement, AttrAngle, QString());
+            rowData.tool   = tr("Point Intersect Curve & Axis through point %1")
+                                .arg(getName(attrUInt(domElement, AttrBasePoint)));
+            break;
 
             case Tool::PointOfIntersectionArcs:
                 rowData.icon = ":/toolicon/32x32/point_of_intersection_arcs.png";
-                rowData.name = getPointName(toolId);
+                rowData.name = getName(toolId);
                 rowData.tool = tr("Point Intersect Arcs");
                 break;
 
             case Tool::PointOfIntersectionCircles:
                 rowData.icon = ":/toolicon/32x32/point_of_intersection_circles.png";
-                rowData.name = getPointName(toolId);
+                rowData.name = getName(toolId);
                 rowData.tool = tr("%1 - Point Intersect Circles");
                 break;
 
             case Tool::PointOfIntersectionCurves:
                 rowData.icon = ":/toolicon/32x32/intersection_curves.png";
-                rowData.name = getPointName(toolId);
+                rowData.name = getName(toolId);
                 rowData.tool = tr("Point Intersect Curves");
                 break;
 
             case Tool::PointFromCircleAndTangent:
                 rowData.icon = ":/toolicon/32x32/point_from_circle_and_tangent.png";
-                rowData.name = getPointName(toolId);
+                rowData.name = getName(toolId);
                 rowData.tool = tr("Point Intersect Circle & Tangent");
                 break;
 
             case Tool::PointFromArcAndTangent:
                 rowData.icon = ":/toolicon/32x32/point_from_arc_and_tangent.png";
-                rowData.name = getPointName(toolId);
+                rowData.name = getName(toolId);
                 rowData.tool = tr("Point Intersect Arc & Tangent");
                 break;
 
             case Tool::TrueDarts:
                 rowData.icon = ":/toolicon/32x32/true_darts.png";
-                rowData.name = QString("");
+                rowData.name = getName(attrUInt(domElement, AttrPoint1)) + QStringLiteral("\n") +
+                            getName(attrUInt(domElement, AttrPoint2));
                 rowData.tool = tr("True Dart %1_%2_%3")
-                                 .arg(getPointName(attrUInt(domElement, AttrDartP1)))
-                                 .arg(getPointName(attrUInt(domElement, AttrDartP2)))
-                                 .arg(getPointName(attrUInt(domElement, AttrDartP2)));
+                                .arg(getName(attrUInt(domElement, AttrDartP1)))
+                                .arg(getName(attrUInt(domElement, AttrDartP2)))
+                                .arg(getName(attrUInt(domElement, AttrDartP3)));
                 break;
 
             case Tool::EllipticalArc:
@@ -574,37 +636,52 @@ RowData HistoryDialog::record(const VToolRecord &tool)
 
             }
             case Tool::Rotation:
+            {
+                const QString suffix = m_doc->GetParametrString(domElement, AttrSuffix, QString());
                 rowData.icon = ":/toolicon/32x32/rotation.png";
-                rowData.name = QString("");
+                rowData.name = getDestinationNames(domElement, suffix);
                 rowData.tool = tr("Rotation around point %1. Suffix %2")
-                                  .arg(getPointName(attrUInt(domElement, AttrCenter)),
-                                       m_doc->GetParametrString(domElement, AttrSuffix, QString()));
+                                .arg(getName(attrUInt(domElement, AttrCenter)), suffix);
                 break;
+            }
 
             case Tool::MirrorByLine:
+            {
+                const QString suffix = m_doc->GetParametrString(domElement, AttrSuffix, QString());
                 rowData.icon = ":/toolicon/32x32/mirror_by_line.png";
-                rowData.name = QString("");
+                rowData.name = getDestinationNames(domElement, suffix);
                 rowData.tool = tr("Mirror by Line %1_%2. Suffix %3")
-                                  .arg(getPointName(attrUInt(domElement, AttrP1Line)))
-                                  .arg(getPointName(attrUInt(domElement, AttrP2Line)),
-                                       m_doc->GetParametrString(domElement, AttrSuffix, QString()));
+                                  .arg(getName(attrUInt(domElement, AttrP1Line)))
+                                  .arg(getName(attrUInt(domElement, AttrP2Line)), suffix);
                 break;
+            }
 
             case Tool::MirrorByAxis:
+            {
+                const QString suffix = m_doc->GetParametrString(domElement, AttrSuffix, QString());
                 rowData.icon = ":/toolicon/32x32/mirror_by_axis.png";
-                rowData.name = QString("");
+                rowData.name = getDestinationNames(domElement, suffix);
                 rowData.tool = tr("Mirror by Axis through %1 point. Suffix %2")
-                                  .arg(getPointName(attrUInt(domElement, AttrCenter)),
-                                       m_doc->GetParametrString(domElement, AttrSuffix, QString()));
+                                  .arg(getName(attrUInt(domElement, AttrCenter)), suffix);
                 break;
+            }
 
             case Tool::Move:
+            {
+                const QString suffix = m_doc->GetParametrString(domElement, AttrSuffix, QString());
                 rowData.icon = ":/toolicon/32x32/move.png";
-                rowData.name = QString("");
+                rowData.name = getDestinationNames(domElement, suffix);
+
+                quint32 id = attrUInt(domElement, AttrCenter);
+                QString pointName = tr("Center point");
+                if (id != NULL)
+                {
+                    pointName = getName(id);
+                }
                 rowData.tool = tr("Move - rotate around point %1. Suffix %2")
-                                  .arg(getPointName(attrUInt(domElement, AttrCenter)),
-                                       m_doc->GetParametrString(domElement, AttrSuffix, QString()));
+                                .arg(pointName, suffix);
                 break;
+            }
 
             //Because "history" not only shows history of pattern, but helps restore current data for each pattern's
             //piece, we need add record about details and nodes, but don't show them.
@@ -642,9 +719,12 @@ void HistoryDialog::initializeTable()
     ui->tableWidget->setSortingEnabled(false);
     ui->tableWidget->verticalHeader()->setDefaultAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     ui->tableWidget->horizontalHeader()->setDefaultAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setHorizontalHeaderItem(0, new QTableWidgetItem("Id"));
-    ui->tableWidget->setHorizontalHeaderItem(1, new QTableWidgetItem(tr("Name")));
-    ui->tableWidget->setHorizontalHeaderItem(2, new QTableWidgetItem(tr("Description")));
+    ui->tableWidget->setHorizontalHeaderItem(CursorColumn, new QTableWidgetItem(""));
+    ui->tableWidget->setHorizontalHeaderItem(IdColumn, new QTableWidgetItem("Id"));
+    ui->tableWidget->setHorizontalHeaderItem(NameColumn, new QTableWidgetItem(tr("Name")));
+    ui->tableWidget->setHorizontalHeaderItem(DescColumn, new QTableWidgetItem(tr("Description")));
+    ui->tableWidget->setHorizontalHeaderItem(LengthColumn, new QTableWidgetItem(tr("Radius / Length")));
+    ui->tableWidget->setHorizontalHeaderItem(AngleColumn, new QTableWidgetItem(tr("Angle")));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -655,25 +735,49 @@ void HistoryDialog::showTool()
     const QVector<VToolRecord> *history = m_doc->getHistory();
     if (history->size()>0)
     {
-        QTableWidgetItem *item = ui->tableWidget->item(0, 1);
-        item->setSelected(true);
+        // Select 1st tool and highlight it in draftblock
+        QTableWidgetItem *item = ui->tableWidget->item(0, CursorColumn);
         m_cursorToolRecordRow = 0;
-        item = ui->tableWidget->item(0, 0);
+        item = ui->tableWidget->item(0, IdColumn);
         quint32 id = qvariant_cast<quint32>(item->data(Qt::UserRole));
         emit showHistoryTool(id, true);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief HistoryDialog::PointName return point name by id.
+/// @brief HistoryDialog::getName get object name by id.
 ///
-/// Refacoring what hide ugly string getting point name by id.
-/// @param pointId point if in data.
-/// @return point name.
+/// This method gets the name of the VObject with the given tool id.
+///
+/// @param toolId id of object.
+/// @return name of object.
 //---------------------------------------------------------------------------------------------------------------------
-QString HistoryDialog::getPointName(quint32 pointId)
+QString HistoryDialog::getName(const quint32 &toolId)
 {
-    return data->GeometricObject<VPointF>(pointId)->name();
+    const QSharedPointer<VGObject> object = data->GetGObject(toolId);
+    return object->name();
+}
+
+QString HistoryDialog::getDestinationNames(const QDomElement &domElement, const QString &suffix)
+{
+    QString name = QString("");
+    QVector<SourceItem> source;
+    QVector<DestinationItem> destination;
+    VAbstractOperation::ExtractData(domElement, source, destination);
+
+    for(int i = 0; i < source.size(); i++)
+    {
+        if ((i > 0) && (i != source.size()))
+
+        {
+            name = name + QStringLiteral("\n") + getName(source[i].id) + suffix;
+        }
+        else
+        {
+            name = name + getName(source[i].id) + suffix;
+        }
+    }
+    return name;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -688,9 +792,14 @@ quint32 HistoryDialog::attrUInt(const QDomElement &domElement, const QString &na
 //---------------------------------------------------------------------------------------------------------------------
 void HistoryDialog::closeEvent(QCloseEvent *event)
 {
-    QTableWidgetItem *item = ui->tableWidget->item(m_cursorToolRecordRow,1);
+    // Highlight tool in draft block
+    QTableWidgetItem *item = ui->tableWidget->item(m_cursorToolRecordRow, IdColumn);
     quint32 id = qvariant_cast<quint32>(item->data(Qt::UserRole));
     emit showHistoryTool(id, false);
+
+    // Reset cursor to bottom of table before closing
+    m_doc->setCursorId(NULL_ID);
+
     DialogTool::closeEvent(event);
 }
 
@@ -716,7 +825,12 @@ bool HistoryDialog::eventFilter(QObject *object, QEvent *event)
         if (event->type() == QEvent::KeyPress)
         {
             QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
-            if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
+            if ((keyEvent->key() == Qt::Key_Enter) || (keyEvent->key() == Qt::Key_Return))
+            {
+                // Ignore Enter key
+                return true;
+            }
+            else if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
             {
                 QString separator = qApp->Settings()->getOsSeparator()
                                   ? QString(localeDecimalPoint(QLocale()))
@@ -736,43 +850,90 @@ bool HistoryDialog::eventFilter(QObject *object, QEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief showEvent Reimplement show event.
+///
+/// This method reimplemnts the showevent and resizes the dialog based on the last saved size.
+///
+/// @param event event
+//---------------------------------------------------------------------------------------------------------------------
+
+void HistoryDialog::showEvent(QShowEvent *event)
+{
+    // Skip DialogTool implementation
+    QDialog::showEvent(event);
+    if ( event->spontaneous() )
+    {
+        return;
+    }
+
+    if (isInitialized)
+    {
+        return;
+    }
+
+    const QSize size = qApp->Settings()->getHistoryDialogSize();
+    if (! size.isEmpty())
+    {
+        resize(size);
+    }
+
+    isInitialized = true;//first show windows are held
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief resizeEvent Reimplement rsize event.
+/// @param event event
+//---------------------------------------------------------------------------------------------------------------------
+void HistoryDialog::resizeEvent(QResizeEvent *event)
+{
+    // remember the size for the next time this dialog is opened, but only
+    // if widget was already initialized, which rules out the resize when
+    // dialog is created.
+    if (isInitialized)
+    {
+        qApp->Settings()->setHistoryDialogSize(size());
+    }
+    DialogTool::resizeEvent(event);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void HistoryDialog::retranslateUi()
 {
     qint32 currentRow = m_cursorRow;
-    updateHistory();
+    updateHistory(true);
 
-    QTableWidgetItem *item = ui->tableWidget->item(m_cursorRow, 0);
+    QTableWidgetItem *item = ui->tableWidget->item(m_cursorRow, CursorColumn);
     SCASSERT(item != nullptr)
     item->setIcon(QIcon(""));
 
     m_cursorRow = currentRow;
-    cellClicked(m_cursorRow, 0);
+    cellClicked(m_cursorRow, CursorColumn);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 int HistoryDialog::cursorRow() const
 {
-    const quint32 cursor = m_doc->getCursor();
-    if (cursor == 0)
+    const quint32 cursorId = m_doc->getCursorId();
+    if (cursorId == NULL_ID)
     {
         return ui->tableWidget->rowCount()-1;
     }
 
-    for (int i = 0; i < ui->tableWidget->rowCount(); ++i)
+    for (int row = 0; row < ui->tableWidget->rowCount(); ++row)
     {
-        QTableWidgetItem *item = ui->tableWidget->item(i, 0);
+        QTableWidgetItem *item = ui->tableWidget->item(row, IdColumn);
         const quint32 id = qvariant_cast<quint32>(item->data(Qt::UserRole));
-        if (cursor == id)
+        if (cursorId == id)
         {
-            return i;
+            return row;
         }
     }
-    return ui->tableWidget->rowCount()-1;
+    return ui->tableWidget->rowCount() - 1;
 }
 
 void HistoryDialog::findText(const QString &text)
 {
-    updateHistory();
+    updateHistory(true);
     m_search->find(text);
 }
 
@@ -874,4 +1035,32 @@ void HistoryDialog::wordToggled(bool checked)
 
     m_search->setMatchWord(checked);
     m_search->find(ui->find_LineEdit->text());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief moveToTop  Scroll to top of table.
+//---------------------------------------------------------------------------------------------------------------------
+void HistoryDialog::moveToTop()
+{
+    ui->tableWidget->verticalScrollBar()->setValue(ui->tableWidget->verticalScrollBar()->minimum());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief moveToCursor Scroll to cursor osition in table.
+//---------------------------------------------------------------------------------------------------------------------
+void HistoryDialog::moveToCursor()
+{
+    QTableWidgetItem *item = ui->tableWidget->item(m_cursorRow, CursorColumn);
+    if (item)
+    {
+        ui->tableWidget->scrollToItem(item, QAbstractItemView::PositionAtCenter);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief moveToBottom Scroll to bottom of table.
+//---------------------------------------------------------------------------------------------------------------------
+void HistoryDialog::moveToBottom()
+{
+    ui->tableWidget->verticalScrollBar()->setValue(ui->tableWidget->verticalScrollBar()->maximum());
 }

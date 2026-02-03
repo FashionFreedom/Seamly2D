@@ -868,13 +868,15 @@ void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
     handleArrowTool(true);
     ui->view->itemClicked(vtool);// Don't check for nullptr here
     // If insert not to the end of file call lite parse
-    if (doc->getCursor() > 0)
+    if (doc->getCursorId() > NULL_ID)
     {
+        const quint32 &toolId = vtool->getId();
         doc->LiteParseTree(Document::LiteParse);
-        if (historyDialog)
-        {
-            historyDialog->updateHistory();
-        }
+        doc->setCursorId(toolId);
+    }
+    if (historyDialog)
+    {
+        historyDialog->updateHistory(true);
     }
 }
 
@@ -7244,7 +7246,7 @@ void MainWindow::changeDraftBlock(int index, bool zoomBestFit)
         QString name = draftBlockComboBox->itemText(index);
         doc->changeActiveDraftBlock(name);
         doc->setCurrentData();
-        emit RefreshHistory();
+        emit RefreshHistory(true);
         if (drawMode)
         {
             handleArrowTool(true);

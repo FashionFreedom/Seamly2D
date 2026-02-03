@@ -289,7 +289,7 @@ VAbstractPattern::VAbstractPattern(QObject *parent)
     , m_DefaultLineType(qApp->Settings()->getDefaultLineType())
     , defaultBasePoint(QString())
     , lastSavedExportFormat(QString())
-    , cursor(0)
+    , m_cursorId(0)
     , toolsOnRemove(QVector<VDataTool*>())
     , m_history(QVector<VToolRecord>())
     , patternPieces(QStringList())
@@ -618,18 +618,18 @@ bool VAbstractPattern::appendDraftBlock(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VAbstractPattern::getCursor() const
+quint32 VAbstractPattern::getCursorId() const
 {
-    return cursor;
+    return m_cursorId;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::setCursor(const quint32 &value)
+void VAbstractPattern::setCursorId(const quint32 &toolId)
 {
-    if (cursor != value)
+    if (m_cursorId != toolId)
     {
-        cursor = value;
-        emit ChangedCursor(cursor);
+        m_cursorId = toolId;
+        emit ChangedCursor(m_cursorId);
     }
 }
 

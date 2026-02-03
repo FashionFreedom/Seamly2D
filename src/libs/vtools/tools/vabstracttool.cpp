@@ -572,7 +572,7 @@ void VAbstractTool::AddRecord(const quint32 id, const Tool &toolType, VAbstractP
         return;
     }
 
-    quint32 cursor = doc->getCursor();
+    quint32 cursor = doc->getCursorId();
     if (cursor == NULL_ID)
     {
         history->append(record);

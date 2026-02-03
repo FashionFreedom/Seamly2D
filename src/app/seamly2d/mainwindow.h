@@ -125,7 +125,7 @@ public slots:
     void         addSelectedItemsToGroup();
 
 signals:
-    void RefreshHistory();
+    void RefreshHistory(bool refresh);
     void EnableItemMove(bool move);
     void ItemsSelection(SelectionType type) const;
 

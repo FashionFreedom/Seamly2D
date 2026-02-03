@@ -224,7 +224,8 @@ const QString settingGeneralWindowState                  = QStringLiteral("windo
 const QString settingGeneralToolbarsState                = QStringLiteral("toolbarsState");
 const QString settingPreferenceDialogSize                = QStringLiteral("preferenceDialogSize");
 const QString settingToolSeamAllowanceDialogSize         = QStringLiteral("toolSeamAllowanceDialogSize");
-const QString settingVariablesDialogSize                = QStringLiteral("toolVariablesDialogSize");
+const QString settingVariablesDialogSize                 = QStringLiteral("toolVariablesDialogSize");
+const QString settingHistoryDialogSize                   = QStringLiteral("toolHistoryDialogSize");
 const QString settingFormulaWizardDialogSize             = QStringLiteral("formulaWizardDialogSize");
 const QString settingLatestSkippedVersion                = QStringLiteral("lastestSkippedVersion");
 const QString settingDateOfLastRemind                    = QStringLiteral("dateOfLastRemind");
@@ -1569,6 +1570,18 @@ QSize VCommonSettings::getVariablesDialogSize() const
 void VCommonSettings::setVariablesDialogSize(const QSize &sz)
 {
     setValue(settingVariablesDialogSize, sz);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QSize VCommonSettings::getHistoryDialogSize() const
+{
+    return value(settingHistoryDialogSize, QSize(0, 0)).toSize();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setHistoryDialogSize(const QSize &sz)
+{
+    setValue(settingHistoryDialogSize, sz);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
