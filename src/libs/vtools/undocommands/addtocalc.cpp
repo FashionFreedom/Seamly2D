@@ -63,7 +63,9 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 AddToCalc::AddToCalc(const QDomElement &xml, VAbstractPattern *doc, QUndoCommand *parent)
-    : VUndoCommand(xml, doc, parent), activeBlockName(doc->getActiveDraftBlockName()), cursor(doc->getCursor())
+    : VUndoCommand(xml, doc, parent)
+    , m_activeBlockName(doc->getActiveDraftBlockName())
+    , m_cursorId(doc->getCursorId())
 {
     setText(tr("add object"));
     nodeId = doc->getParameterId(xml);
@@ -74,7 +76,7 @@ void AddToCalc::undo()
 {
     qCDebug(vUndo, "Undo.");
 
-    doc->changeActiveDraftBlock(activeBlockName);//Without this user will not see this change
+    doc->changeActiveDraftBlock(m_activeBlockName);//Without this user will not see this change
 
     QDomElement calcElement;
     if (doc->getActiveNodeElement(VAbstractPattern::TagCalculation, calcElement))
@@ -102,7 +104,7 @@ void AddToCalc::undo()
     emit NeedFullParsing();
     emit doc->FullUpdateFromFile();
     VMainGraphicsView::NewSceneRect(qApp->getCurrentScene(), qApp->getSceneView());
-    doc->setCurrentDraftBlock(activeBlockName);//Return current pattern piece after undo
+    doc->setCurrentDraftBlock(m_activeBlockName);//Return current pattern piece after undo
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -110,19 +112,19 @@ void AddToCalc::redo()
 {
     qCDebug(vUndo, "Redo.");
 
-    doc->changeActiveDraftBlock(activeBlockName);//Without this user will not see this change
-    doc->setCursor(cursor);
+    doc->changeActiveDraftBlock(m_activeBlockName);//Without this user will not see this change
+    doc->setCursorId(m_cursorId);
 
     QDomElement calcElement;
     if (doc->getActiveNodeElement(VAbstractPattern::TagCalculation, calcElement))
     {
-        if (cursor == NULL_ID)
+        if (m_cursorId == NULL_ID)
         {
             calcElement.appendChild(xml);
         }
         else
         {
-            QDomElement refElement = doc->elementById(cursor);
+            QDomElement refElement = doc->elementById(m_cursorId);
             if (refElement.isElement())
             {
                 calcElement.insertAfter(xml, refElement);
@@ -150,7 +152,7 @@ void AddToCalc::RedoFullParsing()
     {
         emit NeedFullParsing();
         emit doc->FullUpdateFromFile();
-        doc->setCurrentDraftBlock(activeBlockName);//Return current pattern piece after undo
+        doc->setCurrentDraftBlock(m_activeBlockName);//Return current pattern piece after undo
     }
     else
     {

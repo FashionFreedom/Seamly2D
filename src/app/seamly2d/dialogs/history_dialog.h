@@ -56,6 +56,7 @@
 #include "../vtools/dialogs/tools/dialogtool.h"
 
 #include <QDomElement>
+#include <QTableWidgetItem>
 
 class VPattern;
 class VTableSearch;
@@ -68,9 +69,11 @@ namespace Ui
 struct RowData
 {
      quint32 id{NULL_ID};
-     QString icon{QString()};
-     QString name{QString()};
-     QString tool{QString()};
+     QString icon{QString("")};
+     QString name{QString("")};
+     QString tool{QString("")};
+     QString length{QString("")};
+     QString angle{QString("")};
 };
 
 class HistoryDialog : public DialogTool
@@ -82,25 +85,22 @@ public:
 
 public slots:
     virtual void            DialogAccepted() override;
-
-    // TODO ISSUE 79 : create real function
-    /// @brief DialogApply apply data and emit signal about applied dialog.
-    virtual void            DialogApply() override {}
-
     void                    cellClicked(int row, int column);
-    void                    changedCursor(quint32 id);
-    void                    updateHistory();
+    void                    cursorChanged(quint32 id);
+    void                    updateHistory(bool saved);
 
 signals:
-     /// @brief showHistoryTool signal change color of selected in records tool
-     /// @param id id of tool
-     /// @param enable true enable selection, false disable selection
+    // @brief showHistoryTool signal change to highlight selected tool in history
+    // @param id id of tool
+    // @param enable true enable selection, false disable selection
     void                    showHistoryTool(quint32 id, bool enable);
 
 protected:
-    virtual void            closeEvent ( QCloseEvent *event ) override;
-    virtual void            changeEvent(QEvent *event) override;
+    virtual void            closeEvent ( QCloseEvent * event ) override;
+    virtual void            changeEvent(QEvent* event) override;
     virtual bool            eventFilter(QObject *object, QEvent *event) override;
+    virtual void            showEvent( QShowEvent *event ) override;
+    virtual void            resizeEvent(QResizeEvent *event) override;
 
 private:
     Q_DISABLE_COPY(HistoryDialog)
@@ -113,9 +113,10 @@ private:
 
     void                    fillTable();
     RowData                 record(const VToolRecord &tool);
+    QString                 getName(const quint32 &toolId);
+    QString                 getDestinationNames(const QDomElement &domElement, const QString &suffix);
     void                    initializeTable();
     void                    showTool();
-    QString                 getPointName(quint32 pointId);
     quint32                 attrUInt(const QDomElement &domElement, const QString &name);
     void                    retranslateUi();
     int                     cursorRow() const;
@@ -126,6 +127,9 @@ private:
     void                    regexToggled(bool checked);
     void                    caseToggled(bool checked);
     void                    wordToggled(bool checked);
+    void                    moveToTop();
+    void                    moveToCursor();
+    void                    moveToBottom();
 };
 
 #endif // HISTORY_DIALOG_H

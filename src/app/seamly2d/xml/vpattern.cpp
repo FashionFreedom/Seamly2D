@@ -4109,7 +4109,7 @@ void VPattern::PrepareForParse(const Document &parse)
         toolsOnRemove.clear();
 
         tools.clear();
-        cursor = 0;
+        m_cursorId = NULL_ID;
         clearHistory();
     }
     else if (parse == Document::LiteParse)

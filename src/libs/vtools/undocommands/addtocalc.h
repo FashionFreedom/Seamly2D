@@ -73,8 +73,8 @@ protected:
     virtual void RedoFullParsing() override;
 private:
     Q_DISABLE_COPY(AddToCalc)
-    const QString     activeBlockName;
-    quint32           cursor;
+    const QString     m_activeBlockName;
+    quint32           m_cursorId;
 };
 
 #endif // ADDTOCALC_H

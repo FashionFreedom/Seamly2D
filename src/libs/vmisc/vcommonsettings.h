@@ -355,6 +355,9 @@ public:
     QSize                getVariablesDialogSize() const;
     void                 setVariablesDialogSize(const QSize& sz);
 
+    QSize                getHistoryDialogSize() const;
+    void                 setHistoryDialogSize(const QSize& sz);
+
     int                  GetLatestSkippedVersion() const;
     void                 SetLatestSkippedVersion(int value);
 
