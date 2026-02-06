@@ -4186,10 +4186,6 @@ Haluatko ladata sen?</translation>
         <translation>Piste leikkaa viivoja %1_%2 ja %3_%4</translation>
     </message>
     <message>
-        <source>Spl_</source>
-        <translation>Spl_</translation>
-    </message>
-    <message>
         <source>Curve Interactive</source>
         <translation>Käyräinteraktiivinen</translation>
     </message>
@@ -4198,20 +4194,8 @@ Haluatko ladata sen?</translation>
         <translation>Käyrä korjattu</translation>
     </message>
     <message>
-        <source>Arc_</source>
-        <translation>Kaari_</translation>
-    </message>
-    <message>
         <source>Arc Radius &amp; Angles</source>
         <translation>Kaaren säde ja kulmat</translation>
-    </message>
-    <message>
-        <source>Arc Radius &amp; Length %1</source>
-        <translation>Kaaren säde ja pituus %1</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <translation>Osapolku_</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
@@ -4336,6 +4320,30 @@ Haluatko ladata sen?</translation>
     <message>
         <source>Seach by regular expression</source>
         <translation>Hae säännöllisen lausekkeen avulla</translation>
+    </message>
+    <message>
+        <source>Draft Block:</source>
+        <translation>Luonnoslohko:</translation>
+    </message>
+    <message>
+        <source>block</source>
+        <translation>lohko</translation>
+    </message>
+    <message>
+        <source>Radius / Length</source>
+        <translation>Säde / Pituus</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Kulma</translation>
+    </message>
+    <message>
+        <source>Arc with Radius, Length, and Angle</source>
+        <translation>Kaari säteellä, pituudella ja kulmalla</translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation>Keskipiste</translation>
     </message>
 </context>
 <context>

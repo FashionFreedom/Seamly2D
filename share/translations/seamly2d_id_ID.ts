@@ -4186,10 +4186,6 @@ Apakah Anda ingin mengunduhnya?</translation>
         <translation>Titik Perpotongan Garis %1_%2 dan %3_%4</translation>
     </message>
     <message>
-        <source>Spl_</source>
-        <translation>Spl_</translation>
-    </message>
-    <message>
         <source>Curve Interactive</source>
         <translation>Kurva Interaktif</translation>
     </message>
@@ -4198,20 +4194,8 @@ Apakah Anda ingin mengunduhnya?</translation>
         <translation>Kurva Tetap</translation>
     </message>
     <message>
-        <source>Arc_</source>
-        <translation>Busur_</translation>
-    </message>
-    <message>
         <source>Arc Radius &amp; Angles</source>
         <translation>Jari-jari Busur dan Sudut</translation>
-    </message>
-    <message>
-        <source>Arc Radius &amp; Length %1</source>
-        <translation>Jari-jari Busur &amp; Panjang %1</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <translation>JalurSpl_</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
@@ -4336,6 +4320,30 @@ Apakah Anda ingin mengunduhnya?</translation>
     <message>
         <source>Seach by regular expression</source>
         <translation>Pencarian dengan ekspresi reguler</translation>
+    </message>
+    <message>
+        <source>Draft Block:</source>
+        <translation>Blok Draf:</translation>
+    </message>
+    <message>
+        <source>block</source>
+        <translation>memblokir</translation>
+    </message>
+    <message>
+        <source>Radius / Length</source>
+        <translation>Jari-jari / Panjang</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Sudut</translation>
+    </message>
+    <message>
+        <source>Arc with Radius, Length, and Angle</source>
+        <translation>Busur dengan Jari-jari, Panjang, dan Sudut</translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation>Titik tengah</translation>
     </message>
 </context>
 <context>

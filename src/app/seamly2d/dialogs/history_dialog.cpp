@@ -448,10 +448,10 @@ RowData HistoryDialog::record(const VToolRecord &tool)
             {
                 rowData.icon   = ":/toolicon/32x32/spline.png";
                 rowData.name   = getName(toolId);
-                rowData.length = tr("%1\n%2")
+                rowData.length = QString("%1\n%2")
                                    .arg(m_doc->GetParametrString(domElement, AttrLength1, QString()))
                                    .arg(m_doc->GetParametrString(domElement, AttrLength2, QString()));
-                rowData.angle  = tr("%1\n%2")
+                rowData.angle  = QString("%1\n%2")
                                    .arg(m_doc->GetParametrString(domElement, AttrAngle1, QString()))
                                    .arg(m_doc->GetParametrString(domElement, AttrAngle2, QString()));
                 rowData.tool   = tr("Curve Interactive");

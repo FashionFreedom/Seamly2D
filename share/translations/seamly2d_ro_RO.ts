@@ -4188,10 +4188,6 @@ Doriți să o descărcați?</translation>
         <translation>Punct care intersectează liniile %1_%2 și %3_%4</translation>
     </message>
     <message>
-        <source>Spl_</source>
-        <translation>Spl_</translation>
-    </message>
-    <message>
         <source>Curve Interactive</source>
         <translation>Curve Interactive</translation>
     </message>
@@ -4200,20 +4196,8 @@ Doriți să o descărcați?</translation>
         <translation>Curbă fixă</translation>
     </message>
     <message>
-        <source>Arc_</source>
-        <translation>Arc_</translation>
-    </message>
-    <message>
         <source>Arc Radius &amp; Angles</source>
         <translation>Raza și unghiurile arcului</translation>
-    </message>
-    <message>
-        <source>Arc Radius &amp; Length %1</source>
-        <translation>Raza și lungimea arcului %1</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <translation>CaleaSpl_</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
@@ -4338,6 +4322,30 @@ Doriți să o descărcați?</translation>
     <message>
         <source>Seach by regular expression</source>
         <translation>Căutare prin expresie regulată</translation>
+    </message>
+    <message>
+        <source>Draft Block:</source>
+        <translation>Bloc de schițe:</translation>
+    </message>
+    <message>
+        <source>block</source>
+        <translation>bloc</translation>
+    </message>
+    <message>
+        <source>Radius / Length</source>
+        <translation>Rază / Lungime</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Unghi</translation>
+    </message>
+    <message>
+        <source>Arc with Radius, Length, and Angle</source>
+        <translation>Arc cu Rază, Lungime și Unghi</translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation>Punct central</translation>
     </message>
 </context>
 <context>

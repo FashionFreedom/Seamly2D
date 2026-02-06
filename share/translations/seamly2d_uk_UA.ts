@@ -4188,10 +4188,6 @@ Do you want to download it?</source>
         <translation>Σημεία που τέμνουν τις ευθείες %1_%2 και %3_%4</translation>
     </message>
     <message>
-        <source>Spl_</source>
-        <translation>Спл_</translation>
-    </message>
-    <message>
         <source>Curve Interactive</source>
         <translation>Διαδραστικό Curve</translation>
     </message>
@@ -4200,20 +4196,8 @@ Do you want to download it?</source>
         <translation>Καμπύλη Σταθερή</translation>
     </message>
     <message>
-        <source>Arc_</source>
-        <translation>Ντούγκα_</translation>
-    </message>
-    <message>
         <source>Arc Radius &amp; Angles</source>
         <translation>Ακτίνα και γωνίες τόξου</translation>
-    </message>
-    <message>
-        <source>Arc Radius &amp; Length %1</source>
-        <translation>Ακτίνα και μήκος τόξου %1</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <translation>Διαδρομή____</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
@@ -4338,6 +4322,30 @@ Do you want to download it?</source>
     <message>
         <source>Seach by regular expression</source>
         <translation>Пошук за регулярним виразом</translation>
+    </message>
+    <message>
+        <source>Draft Block:</source>
+        <translation>Μπλοκ προσχέδιου:</translation>
+    </message>
+    <message>
+        <source>block</source>
+        <translation>mπλοκ</translation>
+    </message>
+    <message>
+        <source>Radius / Length</source>
+        <translation>Радіус / Довжина</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Κουτ</translation>
+    </message>
+    <message>
+        <source>Arc with Radius, Length, and Angle</source>
+        <translation>Дуга з Радіус, Довжина, та Κουτ</translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation>Точка центру</translation>
     </message>
 </context>
 <context>
@@ -4946,7 +4954,7 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
     </message>
     <message>
         <source>Radius:</source>
-        <translation>Ραδιους:</translation>
+        <translation>Радіус:</translation>
     </message>
     <message>
         <source>Value</source>
@@ -4974,7 +4982,7 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
     </message>
     <message>
         <source>Radius can&apos;t be negative</source>
-        <translation>Ραδιους δεν μπορει να ματι σημαινει</translation>
+        <translation>Радіус δεν μπορει να ματι σημαινει</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
@@ -5028,7 +5036,7 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
     </message>
     <message>
         <source>Radius:</source>
-        <translation>Ραδιους:</translation>
+        <translation>Радіус:</translation>
     </message>
     <message>
         <source>Value</source>
@@ -5068,7 +5076,7 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
     </message>
     <message>
         <source>Radius can&apos;t be negative</source>
-        <translation>Ραδιους δεν μπορει να ματι σημαινει</translation>
+        <translation>Радіус δεν μπορει να ματι σημαινει</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>

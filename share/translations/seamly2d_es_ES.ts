@@ -4206,10 +4206,6 @@ Do you want to download it?</source>
         <translation>Punto Intersección de las Líneas %1_%2 y %3_%4</translation>
     </message>
     <message>
-        <source>Spl_</source>
-        <translation>Spl_</translation>
-    </message>
-    <message>
         <source>Curve Interactive</source>
         <translation>Curva Interactiva</translation>
     </message>
@@ -4218,20 +4214,8 @@ Do you want to download it?</source>
         <translation>Curva Fija</translation>
     </message>
     <message>
-        <source>Arc_</source>
-        <translation>Arco_</translation>
-    </message>
-    <message>
         <source>Arc Radius &amp; Angles</source>
         <translation>Radio y Ángulos del Arco</translation>
-    </message>
-    <message>
-        <source>Arc Radius &amp; Length %1</source>
-        <translation>Radio y Longitud del Arco %1</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <translation>SplPath_</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
@@ -4356,6 +4340,30 @@ Do you want to download it?</source>
     <message>
         <source>Seach by regular expression</source>
         <translation>Búsqueda por expresión regular</translation>
+    </message>
+    <message>
+        <source>Draft Block:</source>
+        <translation>Bolque de borrador:</translation>
+    </message>
+    <message>
+        <source>block</source>
+        <translation>bloquear</translation>
+    </message>
+    <message>
+        <source>Radius / Length</source>
+        <translation>Radio / Longitud</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Ángulo</translation>
+    </message>
+    <message>
+        <source>Arc with Radius, Length, and Angle</source>
+        <translation>Arco con radio, longitud y ángulo</translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation>Punto central</translation>
     </message>
 </context>
 <context>
