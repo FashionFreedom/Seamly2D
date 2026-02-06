@@ -4165,10 +4165,6 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Spl_</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Curve Interactive</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4177,19 +4173,7 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Arc_</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Arc Radius &amp; Angles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arc Radius &amp; Length %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4314,6 +4298,30 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Seach by regular expression</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft Block:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radius / Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc with Radius, Length, and Angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center point</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

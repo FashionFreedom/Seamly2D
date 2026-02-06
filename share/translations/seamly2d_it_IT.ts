@@ -4173,10 +4173,6 @@ Volete scaricarla?</translation>
         <translation>Punto interseca le linee %1_%2 e %3_%4</translation>
     </message>
     <message>
-        <source>Spl_</source>
-        <translation>Spl_</translation>
-    </message>
-    <message>
         <source>Curve Interactive</source>
         <translation>Curva interattiva</translation>
     </message>
@@ -4185,20 +4181,8 @@ Volete scaricarla?</translation>
         <translation>Curva fissa</translation>
     </message>
     <message>
-        <source>Arc_</source>
-        <translation>Arco_</translation>
-    </message>
-    <message>
         <source>Arc Radius &amp; Angles</source>
         <translation>Raggio e angoli dell&apos;arco</translation>
-    </message>
-    <message>
-        <source>Arc Radius &amp; Length %1</source>
-        <translation>Raggio e lunghezza dell&apos;arco %1</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <translation>Percorso Spl_</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
@@ -4323,6 +4307,30 @@ Volete scaricarla?</translation>
     <message>
         <source>Seach by regular expression</source>
         <translation>Ricerca tramite espressione regolare</translation>
+    </message>
+    <message>
+        <source>Draft Block:</source>
+        <translation>Blocco bozza:</translation>
+    </message>
+    <message>
+        <source>block</source>
+        <translation>blocco</translation>
+    </message>
+    <message>
+        <source>Radius / Length</source>
+        <translation>Raggio / Lunghezza</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Angolo</translation>
+    </message>
+    <message>
+        <source>Arc with Radius, Length, and Angle</source>
+        <translation>Arco con Raggio, Lunghezza e Angolo</translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation>Punto centrale</translation>
     </message>
 </context>
 <context>

@@ -4184,10 +4184,6 @@ Chcete si ji stáhnout?</translation>
         <translation>Protíná čáry %1_%2 a %3_%4</translation>
     </message>
     <message>
-        <source>Spl_</source>
-        <translation>Křivka_</translation>
-    </message>
-    <message>
         <source>Curve Interactive</source>
         <translation>Interaktivní křivka</translation>
     </message>
@@ -4196,20 +4192,8 @@ Chcete si ji stáhnout?</translation>
         <translation>Křivka opravena</translation>
     </message>
     <message>
-        <source>Arc_</source>
-        <translation>Oblouková_</translation>
-    </message>
-    <message>
         <source>Arc Radius &amp; Angles</source>
         <translation>Poloměr a úhly oblouku</translation>
-    </message>
-    <message>
-        <source>Arc Radius &amp; Length %1</source>
-        <translation>Poloměr a délka oblouku %1</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <translation>SplPath_</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
@@ -4334,6 +4318,30 @@ Chcete si ji stáhnout?</translation>
     <message>
         <source>Seach by regular expression</source>
         <translation>vyhledávání podle regulárního výrazu</translation>
+    </message>
+    <message>
+        <source>Draft Block:</source>
+        <translation>Blok konceptu:</translation>
+    </message>
+    <message>
+        <source>block</source>
+        <translation>blok</translation>
+    </message>
+    <message>
+        <source>Radius / Length</source>
+        <translation>Poloměr / Délka</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Úhel</translation>
+    </message>
+    <message>
+        <source>Arc with Radius, Length, and Angle</source>
+        <translation>Oblouk s poloměrem, délkou a úhlem</translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation>Středový bod</translation>
     </message>
 </context>
 <context>

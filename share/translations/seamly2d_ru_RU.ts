@@ -4190,10 +4190,6 @@ Do you want to download it?</source>
         <translation>Точка Пересечения Линий %1_%2 и %3_%4</translation>
     </message>
     <message>
-        <source>Spl_</source>
-        <translation>Спл_</translation>
-    </message>
-    <message>
         <source>Curve Interactive</source>
         <translation>Интерактивная Кривая</translation>
     </message>
@@ -4202,20 +4198,8 @@ Do you want to download it?</source>
         <translation>Фиксированная Кривая</translation>
     </message>
     <message>
-        <source>Arc_</source>
-        <translation>Дуга_</translation>
-    </message>
-    <message>
         <source>Arc Radius &amp; Angles</source>
         <translation>Дуга Радиус и Углы</translation>
-    </message>
-    <message>
-        <source>Arc Radius &amp; Length %1</source>
-        <translation>Дуга Радиус и Длина %1</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <translation>СплКонтур_</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
@@ -4340,6 +4324,30 @@ Do you want to download it?</source>
     <message>
         <source>Seach by regular expression</source>
         <translation>Поиск по регулярному выражению</translation>
+    </message>
+    <message>
+        <source>Draft Block:</source>
+        <translation>Блок Чертежа:</translation>
+    </message>
+    <message>
+        <source>block</source>
+        <translation>блокировать</translation>
+    </message>
+    <message>
+        <source>Radius / Length</source>
+        <translation>Радиус / Длина</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Угол</translation>
+    </message>
+    <message>
+        <source>Arc with Radius, Length, and Angle</source>
+        <translation>Дуга с Радиус, Длина, и Угол.</translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation>Центральная точка</translation>
     </message>
 </context>
 <context>

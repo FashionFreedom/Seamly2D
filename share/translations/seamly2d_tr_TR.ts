@@ -4186,10 +4186,6 @@ Do you want to download it?</source>
         <translation>Nokta Kesişim Çizgileri %1_%2 ve %3_%4</translation>
     </message>
     <message>
-        <source>Spl_</source>
-        <translation>Ayrıca_</translation>
-    </message>
-    <message>
         <source>Curve Interactive</source>
         <translation>Eğri Etkileşimli</translation>
     </message>
@@ -4198,20 +4194,8 @@ Do you want to download it?</source>
         <translation>Eğri Sabitlendi</translation>
     </message>
     <message>
-        <source>Arc_</source>
-        <translation>Yay_</translation>
-    </message>
-    <message>
         <source>Arc Radius &amp; Angles</source>
         <translation>Yay Yarıçapı ve Açıları</translation>
-    </message>
-    <message>
-        <source>Arc Radius &amp; Length %1</source>
-        <translation>Yay Yarıçapı ve Uzunluğu %1</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <translation>EkYol_</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
@@ -4336,6 +4320,30 @@ Do you want to download it?</source>
     <message>
         <source>Seach by regular expression</source>
         <translation>Düzenli ifadeye göre ara</translation>
+    </message>
+    <message>
+        <source>Draft Block:</source>
+        <translation>Taslak Bloğu:</translation>
+    </message>
+    <message>
+        <source>block</source>
+        <translation>bloğu</translation>
+    </message>
+    <message>
+        <source>Radius / Length</source>
+        <translation>Yarıçap / Uzunluk</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Açı</translation>
+    </message>
+    <message>
+        <source>Arc with Radius, Length, and Angle</source>
+        <translation>Yarıçapı, Uzunluğu ve Açısı bilinen Yay</translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation>Merkez noktası</translation>
     </message>
 </context>
 <context>

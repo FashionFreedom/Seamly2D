@@ -4185,10 +4185,6 @@ Möchten Sie sie herunterladen?</translation>
         <translation>Bogen Radius &amp; Winkel</translation>
     </message>
     <message>
-        <source>Arc Radius &amp; Length %1</source>
-        <translation>Bogen Radius &amp; Länge %1</translation>
-    </message>
-    <message>
         <source>Spline Interactive</source>
         <translation>Spline interaktiv</translation>
     </message>
@@ -4285,18 +4281,6 @@ Möchten Sie sie herunterladen?</translation>
         <translation>Kann keinen Datensatz erstellen.</translation>
     </message>
     <message>
-        <source>Spl_</source>
-        <translation>Spl_</translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <translation>Bogen_</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <translation>SplPfad_</translation>
-    </message>
-    <message>
         <source>ElArc_</source>
         <translation>ElBogen_</translation>
     </message>
@@ -4319,6 +4303,30 @@ Möchten Sie sie herunterladen?</translation>
     <message>
         <source>Seach by regular expression</source>
         <translation>Suche nach regulären Ausdrücken</translation>
+    </message>
+    <message>
+        <source>Draft Block:</source>
+        <translation>Entwurfsblock:</translation>
+    </message>
+    <message>
+        <source>block</source>
+        <translation>block</translation>
+    </message>
+    <message>
+        <source>Radius / Length</source>
+        <translation>Radius / Länge</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Winkel</translation>
+    </message>
+    <message>
+        <source>Arc with Radius, Length, and Angle</source>
+        <translation>Bogen mit Radius, Länge und Winkel</translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation>Mittelpunkt</translation>
     </message>
 </context>
 <context>

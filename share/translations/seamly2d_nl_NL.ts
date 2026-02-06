@@ -4169,10 +4169,6 @@ Wilt u deze downloaden?</translation>
         <translation>Snijpunt Lijnen %1_%2 en %3_%4</translation>
     </message>
     <message>
-        <source>Spl_</source>
-        <translation>Spl_</translation>
-    </message>
-    <message>
         <source>Curve Interactive</source>
         <translation>Kromme Interactief</translation>
     </message>
@@ -4181,20 +4177,8 @@ Wilt u deze downloaden?</translation>
         <translation>Kromme Vast</translation>
     </message>
     <message>
-        <source>Arc_</source>
-        <translation>Boog_</translation>
-    </message>
-    <message>
         <source>Arc Radius &amp; Angles</source>
         <translation>Boog Straal &amp; Hoeken</translation>
-    </message>
-    <message>
-        <source>Arc Radius &amp; Length %1</source>
-        <translation>Boog Straal &amp; Lengte %1</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <translation>Splinepad_</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
@@ -4319,6 +4303,30 @@ Wilt u deze downloaden?</translation>
     <message>
         <source>Seach by regular expression</source>
         <translation>Zoeken op reguliere expressie</translation>
+    </message>
+    <message>
+        <source>Draft Block:</source>
+        <translation>Tekenblok:</translation>
+    </message>
+    <message>
+        <source>block</source>
+        <translation>Blocco</translation>
+    </message>
+    <message>
+        <source>Radius / Length</source>
+        <translation>Straal / Lengte</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Hoek</translation>
+    </message>
+    <message>
+        <source>Arc with Radius, Length, and Angle</source>
+        <translation>Boog met Straal, Lengte, en Hoek</translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation>Middelste punt</translation>
     </message>
 </context>
 <context>

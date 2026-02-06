@@ -4188,10 +4188,6 @@ Do you want to download it?</source>
         <translation>Σημεία που τέμνουν τις ευθείες %1_%2 και %3_%4</translation>
     </message>
     <message>
-        <source>Spl_</source>
-        <translation>Σπλ_</translation>
-    </message>
-    <message>
         <source>Curve Interactive</source>
         <translation>Διαδραστικό Curve</translation>
     </message>
@@ -4200,20 +4196,8 @@ Do you want to download it?</source>
         <translation>Καμπύλη Σταθερή</translation>
     </message>
     <message>
-        <source>Arc_</source>
-        <translation>Τόξο_</translation>
-    </message>
-    <message>
         <source>Arc Radius &amp; Angles</source>
         <translation>Ακτίνα και γωνίες τόξου</translation>
-    </message>
-    <message>
-        <source>Arc Radius &amp; Length %1</source>
-        <translation>Ακτίνα και μήκος τόξου %1</translation>
-    </message>
-    <message>
-        <source>SplPath_</source>
-        <translation>ΣπλΔιαδρομ_</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
@@ -4338,6 +4322,31 @@ Do you want to download it?</source>
     <message>
         <source>Seach by regular expression</source>
         <translation>Αναζήτηση με κανονική έκφραση</translation>
+    </message>
+    <message>
+        <source>Draft Block:</source>
+        <translation>Μπλοκ προσχέδιου:</translation>
+    </message>
+    <message>
+        <source>block</source>
+        <translation>φραγμός</translation>
+    </message>
+    <message>
+        <source>Radius / Length</source>
+        <translation>Ακτίνα / Μήκος</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Γωνία</translation>
+    </message>
+    <message>
+        <source>Arc with Radius, Length, and Angle</source>
+        <translation>Τόξο με ακτίνα, μήκος και γωνία
+</translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation>Κεντρικό σημείο</translation>
     </message>
 </context>
 <context>
