@@ -472,6 +472,11 @@ void VToolSplinePath::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &ob
 // @param event mouse release event.
 void VToolSplinePath::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
+    // Ignore middle button events used for panning.
+    if (event->button() == Qt::MiddleButton)
+    {
+        return;
+    }
     if (flags() & QGraphicsItem::ItemIsMovable)
     {
         if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
@@ -493,6 +498,11 @@ void VToolSplinePath::mousePressEvent(QGraphicsSceneMouseEvent *event)
 // @param event mouse release event.
 void VToolSplinePath::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
+    // Ignore middle button events used for panning.
+    if (event->button() == Qt::MiddleButton)
+    {
+        return;
+    }
     if (flags() & QGraphicsItem::ItemIsMovable)
     {
         if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
@@ -508,6 +518,11 @@ void VToolSplinePath::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 // @param event mouse move event.
 void VToolSplinePath::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
+    // Ignore middle button events used for panning.
+    if (event->button() == Qt::MiddleButton)
+    {
+        return;
+    }
     // Don't need to check if left mouse button was pressed. According to the Qt documentation "If you do receive this
     // event, you can be certain that this item also received a mouse press event, and that this item is the current
     // mouse grabber.".

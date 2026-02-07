@@ -361,6 +361,11 @@ void VToolSpline::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 // @param event mouse release event.
 void VToolSpline::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
+    // Ignore middle button events used for panning.
+    if (event->button() == Qt::MiddleButton)
+    {
+        return;
+    }
     if (flags() & QGraphicsItem::ItemIsMovable)
     {
         if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
@@ -380,6 +385,11 @@ void VToolSpline::mousePressEvent(QGraphicsSceneMouseEvent *event)
 // @param event mouse release event.
 void VToolSpline::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
+    // Ignore middle button events used for panning.
+    if (event->button() == Qt::MiddleButton)
+    {
+        return;
+    }
     if (flags() & QGraphicsItem::ItemIsMovable)
     {
         if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
@@ -397,6 +407,11 @@ void VToolSpline::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 // @param event mouse move event.
 void VToolSpline::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
+    // Ignore middle button events used for panning.
+    if (event->button() == Qt::MiddleButton)
+    {
+        return;
+    }
     if (IsMovable())
     {
         // Don't need check if left mouse button was pressed. According to the Qt documentation "If you do receive this
