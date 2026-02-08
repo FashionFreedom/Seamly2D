@@ -4341,8 +4341,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Arc with Radius, Length, and Angle</source>
-        <translation>Τόξο με ακτίνα, μήκος και γωνία
-</translation>
+        <translation>Τόξο με ακτίνα, μήκος και γωνία</translation>
     </message>
     <message>
         <source>Center point</source>
