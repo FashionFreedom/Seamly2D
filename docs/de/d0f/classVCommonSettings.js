@@ -2,6 +2,7 @@ var classVCommonSettings =
 [
     [ "VCommonSettings", "de/d0f/classVCommonSettings.html#a8564ee835738e07d5cea508280d4003e", null ],
     [ "VCommonSettings", "de/d0f/classVCommonSettings.html#a3b296a30890f8b886eae7491f817b86d", null ],
+    [ "autoClearFx", "de/d0f/classVCommonSettings.html#aa4fec08efc58c713114052c586bc356c", null ],
     [ "getAddress", "de/d0f/classVCommonSettings.html#a4b7440828add12663878c42723443bb3", null ],
     [ "getAutosaveInterval", "de/d0f/classVCommonSettings.html#a23d9a6403ef4d3a84c63484ae97e114d", null ],
     [ "GetAutosaveState", "de/d0f/classVCommonSettings.html#afcfd6789305cc57d5c36abd32132f250", null ],
@@ -152,6 +153,7 @@ var classVCommonSettings =
     [ "prepareMultisizeTables", "de/d0f/classVCommonSettings.html#acbb6a256dae291115a85fcb601037323", null ],
     [ "PrepareStandardTemplates", "de/d0f/classVCommonSettings.html#a256b75d4b4424b45d59e8049a8e782d7", null ],
     [ "setAddress", "de/d0f/classVCommonSettings.html#a1db870c0c9f25e7bb6f355ccf4c56a49", null ],
+    [ "setAutoClearFx", "de/d0f/classVCommonSettings.html#ac422854b1a4d8940e618cfba3ea16570", null ],
     [ "setAutosaveInterval", "de/d0f/classVCommonSettings.html#a5ef9bc375f971d115c1f9f0828fe6eaf", null ],
     [ "setAutosaveState", "de/d0f/classVCommonSettings.html#a7346e1dc2ad7025bb8069d736c2c4157", null ],
     [ "setAxisOrginColor", "de/d0f/classVCommonSettings.html#a7e6589404dc600d6bd24d4a6c36c6658", null ],
