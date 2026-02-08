@@ -148,6 +148,9 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     ui->useCurrentPen_checkBox->setChecked(qApp->Seamly2DSettings()->useCurrentPen());
     ui->showOnlyIso_CheckBox->setChecked(qApp->Seamly2DSettings()->showOnlyIso());
 
+    // Autoclear FX formula
+    ui->autoClearFx_CheckBox->setChecked(qApp->Seamly2DSettings()->autoClearFx());
+
     // Font preferences
     // Pattern piece labels font
     QFont labelFont = qApp->Seamly2DSettings()->getLabelFont();
@@ -335,6 +338,9 @@ void PreferencesGraphicsViewPage::Apply()
     // Pen
     settings->setUseCurrentPen(ui->useCurrentPen_checkBox->isChecked());
     settings->setShowIsoOnly(ui->showOnlyIso_CheckBox->isChecked());
+
+    // Formula Editor
+    settings->setAutoClearFx(ui->autoClearFx_CheckBox->isChecked());
 
     //Fonts
     settings->setLabelFont(ui->labelFont_ComboBox->currentFont());

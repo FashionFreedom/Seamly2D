@@ -9189,6 +9189,14 @@ actualización:</translation>
         <source>Background:</source>
         <translation>Fondo:</translation>
     </message>
+    <message>
+        <source>Formula Editor</source>
+        <translation>Editor de fórmulas</translation>
+    </message>
+    <message>
+        <source>Auto clear formula</source>
+        <translation>Fórmula de borrado automático</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>

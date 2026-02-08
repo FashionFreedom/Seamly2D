@@ -9139,6 +9139,14 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <source>Background:</source>
         <translation>Sfondo:</translation>
     </message>
+    <message>
+        <source>Formula Editor</source>
+        <translation>Editor di formule</translation>
+    </message>
+    <message>
+        <source>Auto clear formula</source>
+        <translation>Formula di pulizia automatica</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>

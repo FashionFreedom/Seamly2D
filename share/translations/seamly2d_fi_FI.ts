@@ -9151,6 +9151,14 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <source>Background:</source>
         <translation>Tausta:</translation>
     </message>
+    <message>
+        <source>Formula Editor</source>
+        <translation>Kaavaeditori</translation>
+    </message>
+    <message>
+        <source>Auto clear formula</source>
+        <translation>Automaattinen kirkas kaava</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>

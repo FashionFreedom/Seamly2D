@@ -9119,6 +9119,14 @@ Press enter to temporarily add it to the list.</source>
         <source>Background:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Formula Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto clear formula</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>

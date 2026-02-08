@@ -9177,6 +9177,14 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
         <source>Background:</source>
         <translation>Arrière-plan :</translation>
     </message>
+    <message>
+        <source>Formula Editor</source>
+        <translation>Éditeur de formules</translation>
+    </message>
+    <message>
+        <source>Auto clear formula</source>
+        <translation>Formule de suppression automatique</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>

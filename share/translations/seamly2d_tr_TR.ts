@@ -9151,6 +9151,14 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <source>Background:</source>
         <translation>Arka plan:</translation>
     </message>
+    <message>
+        <source>Formula Editor</source>
+        <translation>Formül Düzenleyici</translation>
+    </message>
+    <message>
+        <source>Auto clear formula</source>
+        <translation>Otomatik temizleme formülü</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>

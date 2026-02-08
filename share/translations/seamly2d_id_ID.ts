@@ -9151,6 +9151,14 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <source>Background:</source>
         <translation>Latar belakang:</translation>
     </message>
+    <message>
+        <source>Formula Editor</source>
+        <translation>Editor Rumus</translation>
+    </message>
+    <message>
+        <source>Auto clear formula</source>
+        <translation>Rumus pembersihan otomatis</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
