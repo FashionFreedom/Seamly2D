@@ -4343,7 +4343,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Arc with Radius, Length, and Angle</source>
-        <translation>Дуга с Радиус, Длина, и Угол.</translation>
+        <translation>Дуга с Радиус, Длина, и Угол</translation>
     </message>
     <message>
         <source>Center point</source>
