@@ -549,10 +549,12 @@ void EditFormulaDialog::SetFormula(const QString &value)
     if (qApp->Settings()->autoClearFx())
     {
         bool isInt;
-        int intValue = m_formula.toInt(&isInt);
+        // Explicitly cast to void to suppress clang warnings
+        (void)m_formula.toInt(&isInt);
 
         bool isDouble;
-        double doubleValue = m_formula.toDouble(&isDouble);
+        // Explicitly cast to void to suppress clang warnings
+        (void)m_formula.toDouble(&isDouble);
 
         if(isInt || isDouble)
         {
