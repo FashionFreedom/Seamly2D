@@ -279,17 +279,20 @@ void VAbstractApplication::loadTranslations(const QString &locale)
     pmsTranslator    = new QTranslator(this);
 
 #if defined(Q_OS_WIN) || defined(Q_OS_MAC)
-    qtTranslator->load("qt_" + locale, translationsPath(locale));
-    qtxmlTranslator->load("qtxmlpatterns_" + locale, translationsPath(locale));
-    qtBaseTranslator->load("qtbase_" + locale, translationsPath(locale));
+    // Explicitly cast to void to suppress clang warnings
+    (void)qtTranslator->load("qt_" + locale, translationsPath(locale));
+    (void)qtxmlTranslator->load("qtxmlpatterns_" + locale, translationsPath(locale));
+    (void)qtBaseTranslator->load("qtbase_" + locale, translationsPath(locale));
 #else
-    qtTranslator->load("qt_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-    qtxmlTranslator->load("qtxmlpatterns_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-    qtBaseTranslator->load("qtbase_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    // Explicitly cast to void to suppress clang warnings
+    (void)qtTranslator->load("qt_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    (void)qtxmlTranslator->load("qtxmlpatterns_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    (void)qtBaseTranslator->load("qtbase_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 #endif
 
-    appTranslator->load("seamly2d_" + locale, translationsPath(locale));
-    pmsTranslator->load("measurements_" + locale, translationsPath(locale));
+    // Explicitly cast to void to suppress clang warnings
+    (void)appTranslator->load("seamly2d_" + locale, translationsPath(locale));
+    (void)pmsTranslator->load("measurements_" + locale, translationsPath(locale));
 
     installTranslator(qtTranslator);
     installTranslator(qtxmlTranslator);

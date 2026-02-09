@@ -63,11 +63,11 @@ QString getImageFilename(QWidget *parent)
 
     const QString path = qApp->Seamly2DSettings()->getImageFilePath();
 
-    bool usedNotExistedDir = false;
     QDir directory(path);
     if (!directory.exists())
     {
-        usedNotExistedDir = directory.mkpath(".");
+        // Explicitly cast to void to suppress clang warnings
+        (void)directory.mkpath(".");
     }
 
     const QString filename = QFileDialog::getOpenFileName(parent, QObject::tr("Open Image File"), path, filter, nullptr,
