@@ -166,11 +166,11 @@ $(document).ready(function(){initNavTree('d9/da3/image__tool_8cpp_source.html','
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">const</span> QString path = <a class="code hl_define" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Seamly2DSettings()-&gt;getImageFilePath();</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">bool</span> usedNotExistedDir = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    QDir directory(path);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">if</span> (!directory.exists())</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        usedNotExistedDir = directory.mkpath(<span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    QDir directory(path);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (!directory.exists())</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="comment">// Explicitly cast to void to suppress clang warnings</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        (void)directory.mkpath(<span class="stringliteral">&quot;.&quot;</span>);</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">const</span> QString filename = QFileDialog::getOpenFileName(parent, QObject::tr(<span class="stringliteral">&quot;Open Image File&quot;</span>), path, filter, <span class="keyword">nullptr</span>,</div>
