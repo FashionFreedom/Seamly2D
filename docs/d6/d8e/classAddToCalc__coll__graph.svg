@@ -58,17 +58,17 @@ var sectionId = 'dynsection-1';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#999999" stroke="#666666" points="109.59,-0.5 109.59,-112.5 222.59,-112.5 222.59,-0.5 109.59,-0.5"/>
+<polygon fill="#999999" stroke="#666666" points="103.59,-0.5 103.59,-112.5 228.59,-112.5 228.59,-0.5 103.59,-0.5"/>
 <text text-anchor="middle" x="166.09" y="-100.5" font-family="Helvetica,sans-Serif" font-size="10.00">AddToCalc</text>
-<polyline fill="none" stroke="#666666" points="109.59,-93.5 222.59,-93.5 "/>
-<text text-anchor="start" x="117.59" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; activeBlockName</text>
-<text text-anchor="start" x="117.59" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; cursor</text>
-<polyline fill="none" stroke="#666666" points="109.59,-63.5 222.59,-63.5 "/>
-<text text-anchor="start" x="117.59" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AddToCalc()</text>
-<text text-anchor="start" x="117.59" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~AddToCalc()</text>
-<text text-anchor="start" x="117.59" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ undo()</text>
-<text text-anchor="start" x="117.59" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ redo()</text>
-<text text-anchor="start" x="117.59" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RedoFullParsing()</text>
+<polyline fill="none" stroke="#666666" points="103.59,-93.5 228.59,-93.5 "/>
+<text text-anchor="start" x="111.59" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_activeBlockName</text>
+<text text-anchor="start" x="111.59" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_cursorId</text>
+<polyline fill="none" stroke="#666666" points="103.59,-63.5 228.59,-63.5 "/>
+<text text-anchor="start" x="111.59" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AddToCalc()</text>
+<text text-anchor="start" x="111.59" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~AddToCalc()</text>
+<text text-anchor="start" x="111.59" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ undo()</text>
+<text text-anchor="start" x="111.59" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ redo()</text>
+<text text-anchor="start" x="111.59" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RedoFullParsing()</text>
 </a>
 </g>
 </g>
@@ -146,7 +146,7 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="93.09" y="-1040.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineType</text>
 <text text-anchor="start" x="93.09" y="-1029.5" font-family="Helvetica,sans-Serif" font-size="10.00"># defaultBasePoint</text>
 <text text-anchor="start" x="93.09" y="-1018.5" font-family="Helvetica,sans-Serif" font-size="10.00"># lastSavedExportFormat</text>
-<text text-anchor="start" x="93.09" y="-1007.5" font-family="Helvetica,sans-Serif" font-size="10.00"># cursor</text>
+<text text-anchor="start" x="93.09" y="-1007.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_cursorId</text>
 <text text-anchor="start" x="93.09" y="-996.5" font-family="Helvetica,sans-Serif" font-size="10.00"># toolsOnRemove</text>
 <text text-anchor="start" x="93.09" y="-985.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_history</text>
 <text text-anchor="start" x="93.09" y="-974.5" font-family="Helvetica,sans-Serif" font-size="10.00"># patternPieces</text>

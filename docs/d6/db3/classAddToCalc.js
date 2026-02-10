@@ -5,6 +5,6 @@ var classAddToCalc =
     [ "redo", "d6/db3/classAddToCalc.html#a58fbfa8f01f5e7567c34d9c090f1099d", null ],
     [ "RedoFullParsing", "d6/db3/classAddToCalc.html#a203781bfd8a4bb30f46a90d884f9fdc4", null ],
     [ "undo", "d6/db3/classAddToCalc.html#ad42ad02a55404177e7ecf836245a5565", null ],
-    [ "activeBlockName", "d6/db3/classAddToCalc.html#acc2d1c8550a0ba5552b356c3327d5f84", null ],
-    [ "cursor", "d6/db3/classAddToCalc.html#a5cd523dadf31f0c8acd2a9d299a18edc", null ]
+    [ "m_activeBlockName", "d6/db3/classAddToCalc.html#aa41fc786a5490a8a62ad843b7d3a3863", null ],
+    [ "m_cursorId", "d6/db3/classAddToCalc.html#a867df949d32125a382dde1d68c8c7c0b", null ]
 ];

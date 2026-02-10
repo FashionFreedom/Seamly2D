@@ -122,6 +122,7 @@ var vcommonsettings_8cpp =
     [ "settingGraphicsViewZoomRBNegativeColor", "d4/d11/vcommonsettings_8cpp.html#aedefb6549602aaba61af1b775475ff7b", null ],
     [ "settingGraphicsViewZoomRBPositiveColor", "d4/d11/vcommonsettings_8cpp.html#a0dfede5003a30a9408c3063eb66a92b4", null ],
     [ "settingGraphicsViewZoomSpeedFactor", "d4/d11/vcommonsettings_8cpp.html#a26cf87afb2f980c1ec7cd2fd63e9f02d", null ],
+    [ "settingHistoryDialogSize", "d4/d11/vcommonsettings_8cpp.html#ae90fc7411eaf8f8b2e52334dbd5db8d6", null ],
     [ "settingImagesPath", "d4/d11/vcommonsettings_8cpp.html#a13498b0f2dc5512d31e522096d1484ad", null ],
     [ "settingLabelDateFormat", "d4/d11/vcommonsettings_8cpp.html#a9960810b30624736af9c63c4ea1bdb78", null ],
     [ "settingLabelTimeFormat", "d4/d11/vcommonsettings_8cpp.html#a400d4d80c42541aab7c2d1572ae4339e", null ],

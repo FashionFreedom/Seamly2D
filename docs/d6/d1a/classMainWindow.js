@@ -169,7 +169,7 @@ var classMainWindow =
     [ "PrepareSceneList", "d6/d1a/classMainWindow.html#aaf173500ca5a223681e166f95c8636a1", null ],
     [ "processCommandLine", "d6/d1a/classMainWindow.html#a0afd7b6dd01b69d8ae03410e2d464019", null ],
     [ "ReadSettings", "d6/d1a/classMainWindow.html#a4abba2c52f756524c0f388d0d3e6d6ec", null ],
-    [ "RefreshHistory", "d6/d1a/classMainWindow.html#aa9a1e6c4bad557faef191df598898003", null ],
+    [ "RefreshHistory", "d6/d1a/classMainWindow.html#a9f1886bbfdd2646f97d93084892a7452", null ],
     [ "ReopenFilesAfterCrash", "d6/d1a/classMainWindow.html#a02ea472cfbbd5559f6d462c7ae16126f", null ],
     [ "resetOrigins", "d6/d1a/classMainWindow.html#a76490c604a704b0e412a96c13b1a1397", null ],
     [ "resetPanShortcuts", "d6/d1a/classMainWindow.html#a5ae2e612c17cae50e17fd0a8e6fa4887", null ],

@@ -98,6 +98,8 @@ $(document).ready(function(){initNavTree('d5/d6c/history__dialog_8cpp.html','../
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">history_dialog.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -113,6 +115,7 @@ $(document).ready(function(){initNavTree('d5/d6c/history__dialog_8cpp.html','../
 <code>#include &quot;../vmisc/vabstractapplication.h&quot;</code><br />
 <code>#include &quot;../vmisc/vtablesearch.h&quot;</code><br />
 <code>#include &quot;../vtools/tools/vabstracttool.h&quot;</code><br />
+<code>#include &quot;../vtools/tools/drawTools/operation/vabstractoperation.h&quot;</code><br />
 <code>#include &quot;../vtools/tools/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutspline.h&quot;</code><br />
 <code>#include &quot;../vtools/tools/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutsplinepath.h&quot;</code><br />
 <code>#include &quot;../vtools/tools/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutarc.h&quot;</code><br />
@@ -123,6 +126,7 @@ $(document).ready(function(){initNavTree('d5/d6c/history__dialog_8cpp.html','../
 <code>#include &lt;QDebug&gt;</code><br />
 <code>#include &lt;QGuiApplication&gt;</code><br />
 <code>#include &lt;QScreen&gt;</code><br />
+<code>#include &lt;QScrollBar&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for history_dialog.cpp:</div>
 <div class="dyncontent">
@@ -131,6 +135,46 @@ Include dependency graph for history_dialog.cpp:</div>
 </div>
 </div>
 <p><a href="../../d5/d6c/history__dialog_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="../../d5/d6c/history__dialog_8cpp.html#a06fc87d81c62e9abb8790b6e5713c55ba58e56e92facca8eb3e3a11c25dc3ef03">CursorColumn</a> = 0
+, <a class="el" href="../../d5/d6c/history__dialog_8cpp.html#a06fc87d81c62e9abb8790b6e5713c55bad2ccd87de8c7cb42843e22fca3903b56">IdColumn</a>
+, <a class="el" href="../../d5/d6c/history__dialog_8cpp.html#a06fc87d81c62e9abb8790b6e5713c55ba1800a3de9a618d254f768bcc19c348a5">NameColumn</a>
+, <a class="el" href="../../d5/d6c/history__dialog_8cpp.html#a06fc87d81c62e9abb8790b6e5713c55bac8885f6fc33454e4adf792b1e7270c12">DescColumn</a>
+, <br />
+&#160;&#160;<a class="el" href="../../d5/d6c/history__dialog_8cpp.html#a06fc87d81c62e9abb8790b6e5713c55ba92bd3f80f5228c0f2fc4360b0ff6aeb2">LengthColumn</a>
+, <a class="el" href="../../d5/d6c/history__dialog_8cpp.html#a06fc87d81c62e9abb8790b6e5713c55ba4f521a12b6f4d00d61914eb3d43b762d">AngleColumn</a>
+<br />
+ }</td></tr>
+<tr class="separator:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a06fc87d81c62e9abb8790b6e5713c55b" name="a06fc87d81c62e9abb8790b6e5713c55b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06fc87d81c62e9abb8790b6e5713c55b">&#9670;&#160;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55ba58e56e92facca8eb3e3a11c25dc3ef03" name="a06fc87d81c62e9abb8790b6e5713c55ba58e56e92facca8eb3e3a11c25dc3ef03"></a>CursorColumn&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55bad2ccd87de8c7cb42843e22fca3903b56" name="a06fc87d81c62e9abb8790b6e5713c55bad2ccd87de8c7cb42843e22fca3903b56"></a>IdColumn&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55ba1800a3de9a618d254f768bcc19c348a5" name="a06fc87d81c62e9abb8790b6e5713c55ba1800a3de9a618d254f768bcc19c348a5"></a>NameColumn&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55bac8885f6fc33454e4adf792b1e7270c12" name="a06fc87d81c62e9abb8790b6e5713c55bac8885f6fc33454e4adf792b1e7270c12"></a>DescColumn&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55ba92bd3f80f5228c0f2fc4360b0ff6aeb2" name="a06fc87d81c62e9abb8790b6e5713c55ba92bd3f80f5228c0f2fc4360b0ff6aeb2"></a>LengthColumn&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55ba4f521a12b6f4d00d61914eb3d43b762d" name="a06fc87d81c62e9abb8790b6e5713c55ba4f521a12b6f4d00d61914eb3d43b762d"></a>AngleColumn&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d6c/history__dialog_8cpp_source.html#l00081">81</a> of file <a class="el" href="../../d5/d6c/history__dialog_8cpp_source.html">history_dialog.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -58,17 +58,17 @@ var sectionId = 'dynsection-0';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#999999" stroke="#666666" points="19.5,-0.5 19.5,-112.5 132.5,-112.5 132.5,-0.5 19.5,-0.5"/>
+<polygon fill="#999999" stroke="#666666" points="13.5,-0.5 13.5,-112.5 138.5,-112.5 138.5,-0.5 13.5,-0.5"/>
 <text text-anchor="middle" x="76" y="-100.5" font-family="Helvetica,sans-Serif" font-size="10.00">AddToCalc</text>
-<polyline fill="none" stroke="#666666" points="19.5,-93.5 132.5,-93.5 "/>
-<text text-anchor="start" x="27.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; activeBlockName</text>
-<text text-anchor="start" x="27.5" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; cursor</text>
-<polyline fill="none" stroke="#666666" points="19.5,-63.5 132.5,-63.5 "/>
-<text text-anchor="start" x="27.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AddToCalc()</text>
-<text text-anchor="start" x="27.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~AddToCalc()</text>
-<text text-anchor="start" x="27.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ undo()</text>
-<text text-anchor="start" x="27.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ redo()</text>
-<text text-anchor="start" x="27.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RedoFullParsing()</text>
+<polyline fill="none" stroke="#666666" points="13.5,-93.5 138.5,-93.5 "/>
+<text text-anchor="start" x="21.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_activeBlockName</text>
+<text text-anchor="start" x="21.5" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_cursorId</text>
+<polyline fill="none" stroke="#666666" points="13.5,-63.5 138.5,-63.5 "/>
+<text text-anchor="start" x="21.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AddToCalc()</text>
+<text text-anchor="start" x="21.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~AddToCalc()</text>
+<text text-anchor="start" x="21.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ undo()</text>
+<text text-anchor="start" x="21.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ redo()</text>
+<text text-anchor="start" x="21.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RedoFullParsing()</text>
 </a>
 </g>
 </g>
