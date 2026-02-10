@@ -62,6 +62,7 @@ var classMainWindowsNoGUI =
     [ "toolLayoutSettings", "de/d1a/classMainWindowsNoGUI.html#ab9d879cd44ece72a64e4b1b34e0a501f", null ],
     [ "actionDockWidgetGroups", "de/d1a/classMainWindowsNoGUI.html#a5cca42614372a568bc0ddf435ccd824b", null ],
     [ "actionDockWidgetLayouts", "de/d1a/classMainWindowsNoGUI.html#adc9a136aa7d4a3228c9ad78d71d3f9a3", null ],
+    [ "actionDockWidgetPieces", "de/d1a/classMainWindowsNoGUI.html#ae988fa0b78b1c0f81768a4da0095cb71", null ],
     [ "actionDockWidgetToolbox", "de/d1a/classMainWindowsNoGUI.html#ab03b6af9e85edcc8a716104db235bd6a", null ],
     [ "actionDockWidgetToolOptions", "de/d1a/classMainWindowsNoGUI.html#a9b5d1f61e06e9163c09c43898b579248", null ],
     [ "currentScene", "de/d1a/classMainWindowsNoGUI.html#afdb03e326dc643a8d82e8a2c62d78438", null ],

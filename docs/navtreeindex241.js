@@ -1,5 +1,7 @@
 var NAVTREEINDEX241 =
 {
+"df/dda/macx_2include_2xercesc_2validators_2schema_2identity_2IC__Selector_8hpp.html":[4,0,0,1,15,0,0,0,7,3,0,5],
+"df/dda/macx_2include_2xercesc_2validators_2schema_2identity_2IC__Selector_8hpp_source.html":[4,0,0,1,15,0,0,0,7,3,0,5],
 "df/dda/vpatternlabeldata__p_8h.html":[4,0,0,1,10,0,9],
 "df/dda/vpatternlabeldata__p_8h_source.html":[4,0,0,1,10,0,9],
 "df/ddb/classIC__Key.html":[3,0,295],
@@ -247,7 +249,5 @@ var NAVTREEINDEX241 =
 "df/de5/classVLayoutPiece.html#ac99ac632f2d27f2c4fdbd7c46df39bb3":[3,0,677,5],
 "df/de5/classVLayoutPiece.html#ad758be2e4d0222817c22d53dfda0a595":[3,0,677,33],
 "df/de5/classVLayoutPiece.html#ad9446523bd166afbc1b468e6de4f7beb":[3,0,677,12],
-"df/de5/classVLayoutPiece.html#add6d92ef6810f411b87d9e599c2801de":[3,0,677,15],
-"df/de5/classVLayoutPiece.html#ae4c9a38fdb141daaa4f8defab5e9080a":[3,0,677,40],
-"df/de5/classVLayoutPiece.html#ae6c6fd2c0668ec8a11aaa2a0409944c6":[3,0,677,57]
+"df/de5/classVLayoutPiece.html#add6d92ef6810f411b87d9e599c2801de":[3,0,677,15]
 };

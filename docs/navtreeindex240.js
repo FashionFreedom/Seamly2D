@@ -1,5 +1,7 @@
 var NAVTREEINDEX240 =
 {
+"df/db4/classXTemplateSerializer.html#a693ebcdb175ac0eb6e386e3872ed5e36":[3,0,920,102],
+"df/db4/classXTemplateSerializer.html#a693ebcdb175ac0eb6e386e3872ed5e36":[3,0,920,104],
 "df/db4/classXTemplateSerializer.html#a693ebcdb175ac0eb6e386e3872ed5e36":[3,0,920,103],
 "df/db4/classXTemplateSerializer.html#a7099af8c359661854fad693521d0c55e":[3,0,920,153],
 "df/db4/classXTemplateSerializer.html#a7099af8c359661854fad693521d0c55e":[3,0,920,154],
@@ -247,7 +249,5 @@ var NAVTREEINDEX240 =
 "df/dd9/vlockguard_8h.html#a2ee7a5a20698739a128c0c1f4f8fecf5":[4,0,0,1,8,19,3],
 "df/dd9/vlockguard_8h.html#ac94364cffdd8822522c42d31b704d7c7":[4,0,0,1,8,19,1],
 "df/dd9/vlockguard_8h.html#ace558b6e2ddc27b1821639c6a485d2f1":[4,0,0,1,8,19,2],
-"df/dd9/vlockguard_8h_source.html":[4,0,0,1,8,19],
-"df/dda/macx_2include_2xercesc_2validators_2schema_2identity_2IC__Selector_8hpp.html":[4,0,0,1,15,0,0,0,7,3,0,5],
-"df/dda/macx_2include_2xercesc_2validators_2schema_2identity_2IC__Selector_8hpp_source.html":[4,0,0,1,15,0,0,0,7,3,0,5]
+"df/dd9/vlockguard_8h_source.html":[4,0,0,1,8,19]
 };

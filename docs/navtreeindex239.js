@@ -1,5 +1,7 @@
 var NAVTREEINDEX239 =
 {
+"df/d94/classSavePiecePathOptions.html#ad456167cc38eda73f1f63e86609ae14e":[3,0,453,2],
+"df/d94/classSavePiecePathOptions.html#af847b540978a07a6f52a27459ec54d8b":[3,0,453,1],
 "df/d94/vnodespline_8cpp.html":[4,0,0,1,13,1,1,13],
 "df/d94/vnodespline_8cpp_source.html":[4,0,0,1,13,1,1,13],
 "df/d95/classDOMDocumentFragment.html":[3,0,158],
@@ -247,7 +249,5 @@ var NAVTREEINDEX239 =
 "df/db4/classXTemplateSerializer.html#a6727b12207c793a4c8f92c5ef583897e":[3,0,920,2],
 "df/db4/classXTemplateSerializer.html#a67847b7a37ff0c016878eaf08bd24f4d":[3,0,920,138],
 "df/db4/classXTemplateSerializer.html#a67847b7a37ff0c016878eaf08bd24f4d":[3,0,920,139],
-"df/db4/classXTemplateSerializer.html#a67847b7a37ff0c016878eaf08bd24f4d":[3,0,920,140],
-"df/db4/classXTemplateSerializer.html#a693ebcdb175ac0eb6e386e3872ed5e36":[3,0,920,102],
-"df/db4/classXTemplateSerializer.html#a693ebcdb175ac0eb6e386e3872ed5e36":[3,0,920,104]
+"df/db4/classXTemplateSerializer.html#a67847b7a37ff0c016878eaf08bd24f4d":[3,0,920,140]
 };

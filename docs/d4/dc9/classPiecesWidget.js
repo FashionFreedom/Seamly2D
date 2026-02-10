@@ -5,6 +5,7 @@ var classPiecesWidget =
     [ "cellClicked", "d4/dc9/classPiecesWidget.html#a116cf928e4eb5e270e251f5634f60d0c", null ],
     [ "cellDoubleClicked", "d4/dc9/classPiecesWidget.html#ab5054a1f0a0433e85e89eea1fda34d1a", null ],
     [ "changeEvent", "d4/dc9/classPiecesWidget.html#a2bb4bd752dce347c368771824c93050a", null ],
+    [ "clear", "d4/dc9/classPiecesWidget.html#aa2ac1c84b7087b6c3bc63917f9212846", null ],
     [ "editPieceColor", "d4/dc9/classPiecesWidget.html#ae28e12fbf8b4df4072ceea995983f116", null ],
     [ "editPieceProperties", "d4/dc9/classPiecesWidget.html#a03ac107188d9f36974e032602418f6fc", null ],
     [ "excludeAllPieces", "d4/dc9/classPiecesWidget.html#a023ab01251fcd0ac7cc5a592eadec171", null ],

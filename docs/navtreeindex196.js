@@ -1,5 +1,6 @@
 var NAVTREEINDEX196 =
 {
+"dc/dbc/classVTranslateVars.html#a62973ae8fe8de6bd2a67548c15b72125":[3,0,772,32],
 "dc/dbc/classVTranslateVars.html#a64b9dc33d89be4c8cf2ae896b0536eab":[3,0,772,24],
 "dc/dbc/classVTranslateVars.html#a66adc6bbbda550a04284f4d3c47f02e9":[3,0,772,22],
 "dc/dbc/classVTranslateVars.html#a682d7ee542900989c6a85c5aa7ab7319":[3,0,772,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX196 =
 "dc/dd3/classVPatternConverter.html#ad25db1df5c89fece6e6fca440f45ebad":[3,0,700,53],
 "dc/dd3/classVPatternConverter.html#ad51ace5b3533fb57ffaf90ea7db70b85":[3,0,700,71],
 "dc/dd3/classVPatternConverter.html#ad6fae16776e08b40834697068bc95ea9":[3,0,700,59],
-"dc/dd3/classVPatternConverter.html#ada164cf764a96158a4ef23fbfca39616":[3,0,700,27],
-"dc/dd3/classVPatternConverter.html#adc23be678b51ad65c166982ad017f9a8":[3,0,700,58]
+"dc/dd3/classVPatternConverter.html#ada164cf764a96158a4ef23fbfca39616":[3,0,700,27]
 };
