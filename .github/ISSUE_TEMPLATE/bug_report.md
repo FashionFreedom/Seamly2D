@@ -1,14 +1,14 @@
 ---
 name: Bug report
 about: Report a problem to help us improve
-title: 'BUG:'
+title: ''
 labels: bug
 assignees: ''
 
 ---
 
+* ALWAYS ADD SCREENSHOTS!
 * Describe the bug 
-* How To Reproduce the bug 
 * What should have happened 
 * Screenshots 
 * What's your Desktop OS? _Windows 11_ 
