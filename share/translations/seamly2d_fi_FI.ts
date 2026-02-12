@@ -5,7 +5,15 @@
     <name>About2DAppDialog</name>
     <message>
         <source>About Seamly2D</source>
-        <translation>Tietoja Seamly2Dsta</translation>
+        <translation>Tietoja Seamly2Dstä</translation>
+    </message>
+    <message>
+        <source>Web site : %1</source>
+        <translation>Internetsivu: %1</translation>
+    </message>
+    <message>
+        <source>Cannot open your default browser</source>
+        <translation>Oletus selaimen aukaiseminen epäonnistui</translation>
     </message>
     <message>
         <source>Left to right</source>
@@ -21,7 +29,7 @@
     </message>
     <message>
         <source>Built on %1 at %2</source>
-        <translation>Rakennettu paikkaan %1 klo %2</translation>
+        <translation>Koottu paikkaan %1 klo %2</translation>
     </message>
     <message>
         <source>About</source>
@@ -41,7 +49,7 @@
     </message>
     <message>
         <source>Build date:</source>
-        <translation>Rakentamispäivämäärä:</translation>
+        <translation>Koonti päivämäärä:</translation>
     </message>
     <message>
         <source>Qt Version:</source>
@@ -73,7 +81,7 @@
     </message>
     <message>
         <source>Locale</source>
-        <translation>Kieliasetus</translation>
+        <translation>Paikallinen</translation>
     </message>
     <message>
         <source>Country:</source>
@@ -109,7 +117,7 @@
     </message>
     <message>
         <source>Negative sign:</source>
-        <translation>Negatiivinen etumerkki:</translation>
+        <translation>Negatiivinen merkki:</translation>
     </message>
     <message>
         <source>Application</source>
@@ -121,7 +129,7 @@
     </message>
     <message>
         <source>Contributors</source>
-        <translation>Avustajat</translation>
+        <translation>Edistäjät</translation>
     </message>
     <message>
         <source>Check For Updates</source>
@@ -144,7 +152,7 @@
     <name>AddDraftBlock</name>
     <message>
         <source>add draft block %1</source>
-        <translation>lisää luonnoslohko %1</translation>
+        <translation>lisää luonnospala %1</translation>
     </message>
 </context>
 <context>
@@ -205,11 +213,11 @@
     </message>
     <message>
         <source>Point:</source>
-        <translation>Kohta:</translation>
+        <translation>Piste:</translation>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>Palo:</translation>
+        <translation>Pala:</translation>
     </message>
 </context>
 <context>
@@ -227,23 +235,23 @@
     </message>
     <message>
         <source>Error bad id. Program will be terminated.</source>
-        <translation>Väärä id. Ohjelma lopetetaan.</translation>
+        <translation>Virhe, huono id. Ohjelma lopetetaan.</translation>
     </message>
     <message>
         <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation>Arvoa ei voi muuttaa. Ohjelma lopetetaan.</translation>
+        <translation>Virhe, arvoa ei voi muuttaa. Ohjelma lopetetaan.</translation>
     </message>
     <message>
         <source>Error empty parameter. Program will be terminated.</source>
-        <translation>Tyhjä parametri. Ohjelma lopetetaan.</translation>
+        <translation>Virhe, tyhjä parametri. Ohjelma lopetetaan.</translation>
     </message>
     <message>
         <source>Error wrong id. Program will be terminated.</source>
-        <translation>Väärä id. Ohjelma lopetetaan.</translation>
+        <translation>Virhe, väärä id. Ohjelma lopetetaan.</translation>
     </message>
     <message>
         <source>Something&apos;s wrong!!</source>
-        <translation>Joku on vialla!!</translation>
+        <translation>Jokin on vialla!!</translation>
     </message>
     <message>
         <source>Parser error: %1. Program will be terminated.</source>
@@ -258,27 +266,27 @@
     <name>ApplicationME</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
-        <translation>Jäsentämis virhe tiedostossa. Ohjelma lopetetaan.</translation>
+        <translation>Jäsentämisvirhe tiedostossa. Ohjelma lopetetaan.</translation>
     </message>
     <message>
         <source>Error bad id. Program will be terminated.</source>
-        <translation>Väärä id. Ohjelma lopetetaan.</translation>
+        <translation>Virhe, huono id. Ohjelma lopetetaan.</translation>
     </message>
     <message>
         <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation>Arvoa ei voi muuttaa. Ohjelma lopetetaan.</translation>
+        <translation>Virhe, arvoa ei voi muuttaa. Ohjelma lopetetaan.</translation>
     </message>
     <message>
         <source>Error empty parameter. Program will be terminated.</source>
-        <translation>Tyhjä parametri. Ohjelma lopetetaan.</translation>
+        <translation>Virhe, tyhjä parametri. Ohjelma lopetetaan.</translation>
     </message>
     <message>
         <source>Error wrong id. Program will be terminated.</source>
-        <translation>Väärä id. Ohjelma lopetetaan.</translation>
+        <translation>Virhe, väärä id. Ohjelma lopetetaan.</translation>
     </message>
     <message>
         <source>Something&apos;s wrong!!</source>
-        <translation>Joku on vialla!!</translation>
+        <translation>Jokin on vialla!!</translation>
     </message>
     <message>
         <source>Parser error: %1. Program will be terminated.</source>
@@ -294,11 +302,11 @@
     </message>
     <message>
         <source>The measurement file.</source>
-        <translation>Mittaustiedosto.</translation>
+        <translation>Mittatiedosto.</translation>
     </message>
     <message>
         <source>The base height</source>
-        <translation>Pohjan korkeus</translation>
+        <translation>Peruskorkeus</translation>
     </message>
     <message>
         <source>The base size</source>
@@ -306,11 +314,11 @@
     </message>
     <message>
         <source>Set pattern file unit: cm, mm, inch.</source>
-        <translation>Aseta kuviotiedoston yksikkö: cm, mm, tuuma.</translation>
+        <translation>Aseta kaavatiedoston yksikkö: cm, mm, tuuma.</translation>
     </message>
     <message>
         <source>The pattern unit</source>
-        <translation>Kuvioyksikkö</translation>
+        <translation>Kaavayksikkö</translation>
     </message>
     <message>
         <source>Invalid base size argument. Must be cm, mm or inch.</source>
@@ -338,11 +346,11 @@
     </message>
     <message>
         <source>Invalid base size argument. Must be %1cm.</source>
-        <translation>Virheellinen peruskokoargumentti. Sen on oltava %1cm.</translation>
+        <translation>Virheellinen peruskoon mittayksikkö. Sen on oltava %1cm.</translation>
     </message>
     <message>
         <source>Open with the base height. Valid values: %1cm.</source>
-        <translation>Avaa pohjakorkeudella. Kelvolliset arvot: %1cm.</translation>
+        <translation>Avaa peruskorkeudella. Kelvolliset arvot: %1cm.</translation>
     </message>
     <message>
         <source>Use for unit testing. Run the program and open a file without showing the main window.</source>
@@ -364,11 +372,11 @@
     <name>CalculatorUtil</name>
     <message>
         <source>Backspace</source>
-        <translation>Askelpalautin</translation>
+        <translation>Peruutusnäppäin</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Selvä</translation>
+        <translation>Tyhjennä</translation>
     </message>
     <message>
         <source>Clear All</source>
@@ -442,7 +450,7 @@ p, li { white-space: pre-wrap; }
     <name>DeleteDraftBlock</name>
     <message>
         <source>delete draft block %1</source>
-        <translation>poista luonnoslohko %1</translation>
+        <translation>poista luonnospala %1</translation>
     </message>
 </context>
 <context>
@@ -464,7 +472,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Build revision: %1</source>
-        <translation>Käännös versio: %1</translation>
+        <translation>Koonti versio: %1</translation>
     </message>
     <message>
         <source>This program is part of Seamly2D project.</source>
@@ -480,15 +488,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Cannot open your default browser</source>
-        <translation>Oletus sivuen aukaiseminen epäonnistui</translation>
+        <translation>Oletus selaimen aukaiseminen epäonnistui</translation>
     </message>
     <message>
         <source>Built on %1 at %2</source>
-        <translation>Rakennettu paikkaan %1 klo %2</translation>
+        <translation>Koottu paikkaan %1 klo %2</translation>
     </message>
     <message>
         <source>Web site : %1</source>
-        <translation>Kotisivu: %1</translation>
+        <translation>Internetsivu: %1</translation>
     </message>
     <message>
         <source>unknown</source>
@@ -499,11 +507,11 @@ p, li { white-space: pre-wrap; }
     <name>DialogAlongLine</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta viesti-ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Select second point of line</source>
-        <translation>Valitse viivan toinen piste</translation>
+        <translation>Valitse suoran toinen piste</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -527,19 +535,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First point:</source>
-        <translation>Ensimmäinen kohta:</translation>
+        <translation>Ensimmäinen piste:</translation>
     </message>
     <message>
         <source>First point of the line</source>
-        <translation>Viivan ensimmäinen piste</translation>
+        <translation>Suoran ensimmäinen piste</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Toinen kohta:</translation>
+        <translation>Toinen piste:</translation>
     </message>
     <message>
         <source>Second point of the line</source>
-        <translation>Viivan toinen piste</translation>
+        <translation>Suoran toinen piste</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -547,7 +555,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Line</source>
-        <translation>Piste - Viivalla</translation>
+        <translation>Piste - Suoralla</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -586,7 +594,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogArc</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta viesti-ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Error</source>
@@ -681,7 +689,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogArcWithLength</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta viesti-ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit radius</source>
@@ -772,7 +780,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogBisector</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta viesti-ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Select second point of angle</source>
@@ -804,15 +812,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First point:</source>
-        <translation>Ensimmäinen kohta:</translation>
+        <translation>Ensimmäinen piste:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Toinen kohta:</translation>
+        <translation>Toinen piste:</translation>
     </message>
     <message>
         <source>Third point:</source>
-        <translation>Kolmas kohta:</translation>
+        <translation>Kolmas piste:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -867,19 +875,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First point:</source>
-        <translation>Ensimmäinen kohta:</translation>
+        <translation>Ensimmäinen piste:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Toinen kohta:</translation>
+        <translation>Toinen piste:</translation>
     </message>
     <message>
         <source>Third point:</source>
-        <translation>Kolmas kohta:</translation>
+        <translation>Kolmas piste:</translation>
     </message>
     <message>
         <source>Fourth point:</source>
-        <translation>Neljäs kohta:</translation>
+        <translation>Neljäs piste:</translation>
     </message>
     <message>
         <source>Select the second point of curve</source>
@@ -922,7 +930,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogCubicBezierPath</name>
     <message>
         <source>Point:</source>
-        <translation>Kohta:</translation>
+        <translation>Piste:</translation>
     </message>
     <message>
         <source>List of points</source>
@@ -934,7 +942,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Invalid spline path</source>
-        <translation>Virheellinen spline-polku</translation>
+        <translation>Virheellinen splinen polku</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -942,7 +950,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Ura-akseli - Korjattu</translation>
+        <translation>Spline - Kiinteä</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -969,11 +977,11 @@ p, li { white-space: pre-wrap; }
     <name>DialogCurveIntersectAxis</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta viesti-ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Select axis point</source>
-        <translation>Valitse Akselipiste</translation>
+        <translation>Valitse akselipiste</translation>
     </message>
     <message>
         <source>Edit angle</source>
@@ -1005,7 +1013,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Intersect - Curve and Axis</source>
-        <translation>Leikkauspiste - Käyrän ja akselin</translation>
+        <translation>Leikkauspiste - Käyrä ja akseli</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1044,7 +1052,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogCutArc</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta viesti-ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -1119,7 +1127,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogCutSpline</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta viesti-ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -1147,7 +1155,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Curve</source>
-        <translation>Piste - Kaarteella</translation>
+        <translation>Piste - Käyrällä</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1300,7 +1308,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Calulation</source>
-        <translation>Laskenta</translation>
+        <translation>Laskelma</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -1320,7 +1328,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Rotation angle:</source>
-        <translation>Kääntökulma:</translation>
+        <translation>Kiertokulma:</translation>
     </message>
     <message>
         <source>Center point:</source>
@@ -1352,7 +1360,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit radius2</source>
-        <translation>Muokkaa säde2:ta</translation>
+        <translation>Muokkaa sädettä2</translation>
     </message>
     <message>
         <source>Edit first angle</source>
@@ -1431,7 +1439,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Base point:</source>
-        <translation>Tukikohta:</translation>
+        <translation>Peruspiste:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -1498,7 +1506,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Tab</source>
-        <translation>Välilehti</translation>
+        <translation>Tab</translation>
     </message>
     <message>
         <source>Comma</source>
@@ -1510,7 +1518,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Space</source>
-        <translation>Avaruus</translation>
+        <translation>Välilyönti</translation>
     </message>
 </context>
 <context>
@@ -1525,7 +1533,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Base point:</source>
-        <translation>Tukikohta:</translation>
+        <translation>Peruspiste:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -1553,11 +1561,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First point:</source>
-        <translation>Ensimmäinen kohta:</translation>
+        <translation>Ensimmäinen piste:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Toinen kohta:</translation>
+        <translation>Toinen piste:</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1576,7 +1584,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogLayoutProgress</name>
     <message>
         <source>Couldn&apos;t prepare data for creation layout</source>
-        <translation>Ei voitu luoda dataa somittelun luomiseen</translation>
+        <translation>Ei voitu valmistella dataa asetelman luomiseen</translation>
     </message>
     <message>
         <source>Create a Layout</source>
@@ -1584,7 +1592,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Arranged workpieces: %1 from %2</source>
-        <translation>Järjestetyt työkappaleet: %1 kohdasta %2</translation>
+        <translation>Järjestetyt työpalat: %1 kohdasta %2</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Finding best position for workpieces. Please, wait.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -1592,7 +1600,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
-        <translation>Yksi tai useampi kuviopala on valitsemaasi paperikokoa suurempi. Valitse suurempi paperikoko.</translation>
+        <translation>Yksi tai useampi kaavapala on valitsemaasi paperikokoa suurempi. Valitse suurempi paperikoko.</translation>
     </message>
 </context>
 <context>
@@ -1607,7 +1615,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Toinen kohta:</translation>
+        <translation>Toinen piste:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -1639,42 +1647,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Line_</source>
-        <translation>Viiva_</translation>
+        <translation>Suora_</translation>
     </message>
 </context>
 <context>
     <name>DialogLineIntersect</name>
     <message>
         <source>First line</source>
-        <translation>Ensimmäinen viiva</translation>
+        <translation>Ensimmäinen suora</translation>
     </message>
     <message>
         <source>Second line</source>
-        <translation>Toinen viiva</translation>
+        <translation>Toinen suora</translation>
     </message>
     <message>
         <source>Select second point of first line</source>
-        <translation>Valitse ensimmäisen viivan toinen piste</translation>
+        <translation>Valitse ensimmäisen suoran toinen piste</translation>
     </message>
     <message>
         <source>Select first point of second line</source>
-        <translation>Valitse toisen viivan ensimmäinen piste</translation>
+        <translation>Valitse toisen suoran ensimmäinen piste</translation>
     </message>
     <message>
         <source>Select second point of second line</source>
-        <translation>Valitse toisen viivan toinen piste</translation>
+        <translation>Valitse toisen suoran toinen piste</translation>
     </message>
     <message>
         <source>First point:</source>
-        <translation>Ensimmäinen kohta:</translation>
+        <translation>Ensimmäinen piste:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Toinen kohta:</translation>
+        <translation>Toinen piste:</translation>
     </message>
     <message>
         <source>Point - Intersect Lines</source>
-        <translation>Piste - Leikkaa viivoja</translation>
+        <translation>Piste - Leikkaa suoria</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1701,15 +1709,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First point of line</source>
-        <translation>Viivan ensimmäinen piste</translation>
+        <translation>Suoran ensimmäinen piste</translation>
     </message>
     <message>
         <source>Select second point of line</source>
-        <translation>Valitse viivan toinen piste</translation>
+        <translation>Valitse suoran toinen piste</translation>
     </message>
     <message>
         <source>Select axis point</source>
-        <translation>Valitse Akselipiste</translation>
+        <translation>Valitse akselipiste</translation>
     </message>
     <message>
         <source>Axis Point</source>
@@ -1717,7 +1725,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Second point of line</source>
-        <translation>Viivan toinen piste</translation>
+        <translation>Suoran toinen piste</translation>
     </message>
     <message>
         <source>Edit angle</source>
@@ -1765,11 +1773,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First point:</source>
-        <translation>Ensimmäinen kohta:</translation>
+        <translation>Ensimmäinen piste:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Toinen kohta:</translation>
+        <translation>Toinen piste:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1796,7 +1804,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>ME Database - Add known measurement</source>
-        <translation>ME-tietokanta - Lisää tunnettu mittaus</translation>
+        <translation>ME-tietokanta - Lisää tunnettu mitta</translation>
     </message>
     <message>
         <source>Find:</source>
@@ -1811,15 +1819,15 @@ p, li { white-space: pre-wrap; }
     <name>DialogMirrorByAxis</name>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Peili akselilla</translation>
+        <translation>Peilaa akselilla</translation>
     </message>
     <message>
         <source>Axis point:</source>
-        <translation>Akselin piste:</translation>
+        <translation>Akselipiste:</translation>
     </message>
     <message>
         <source>Suffix:</source>
-        <translation>Liite:</translation>
+        <translation>Loppuliite:</translation>
     </message>
     <message>
         <source>Axis type:</source>
@@ -1850,7 +1858,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogMirrorByLine</name>
     <message>
         <source>Mirror by Line</source>
-        <translation>Peili riviltä</translation>
+        <translation>Peilaa suoralla</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1858,31 +1866,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First line point:</source>
-        <translation>Ensimmäisen rivin piste:</translation>
+        <translation>Ensimmäinen suoran piste:</translation>
     </message>
     <message>
         <source>Second line point:</source>
-        <translation>Toisen linjan piste:</translation>
+        <translation>Toinen suoran piste:</translation>
     </message>
     <message>
         <source>Suffix:</source>
-        <translation>Liite:</translation>
+        <translation>Loppuliite:</translation>
     </message>
     <message>
         <source>Select first mirror line point</source>
-        <translation>Valitse ensimmäinen peiliviivan piste</translation>
+        <translation>Valitse ensimmäinen peilattavan suoran piste</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
-        <translation>Valitse ensimmäinen peiliviivan piste, joka ei ole osa objektiluetteloa</translation>
+        <translation>Valitse ensimmäinen peilattavan suoran piste, joka ei ole osa objektiluetteloa</translation>
     </message>
     <message>
         <source>Select second mirror line point</source>
-        <translation>Valitse toinen peiliviivan piste</translation>
+        <translation>Valitse toinen peilattavan suoran piste</translation>
     </message>
     <message>
         <source>Select second mirror line point that is not part of the list of objects</source>
-        <translation>Valitse toinen peiliviivan piste, joka ei ole osa objektiluetteloa</translation>
+        <translation>Valitse toinen peilattavan suoran piste, joka ei ole osa objektiluetteloa</translation>
     </message>
 </context>
 <context>
@@ -1905,7 +1913,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Suffix:</source>
-        <translation>Liite:</translation>
+        <translation>Loppuliite:</translation>
     </message>
     <message>
         <source>Edit angle</source>
@@ -1956,23 +1964,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Centimeters</source>
-        <translation>Senttimetriä</translation>
+        <translation>Senttimetrit</translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation>Tuumaa</translation>
+        <translation>Tuumat</translation>
     </message>
     <message>
         <source>Unique pattern piece name</source>
-        <translation>Ainutlaatuinen kuviokappaleen nimi</translation>
+        <translation>Yksilöllinen kaavapalan nimi</translation>
     </message>
     <message>
         <source>Choose unique pattern piece name.</source>
-        <translation>Valitse yksilöllinen kuviokappaleen nimi.</translation>
+        <translation>Valitse yksilöllinen kaavapalan nimi.</translation>
     </message>
     <message>
         <source>New pattern</source>
-        <translation>Uusi kuvio</translation>
+        <translation>Uusi kaava</translation>
     </message>
     <message>
         <source>Millimeters</source>
@@ -1980,7 +1988,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Draft block name:</source>
-        <translation>Luonnoslohkon nimi:</translation>
+        <translation>Luonnospalan nimi:</translation>
     </message>
 </context>
 <context>
@@ -2015,11 +2023,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First point:</source>
-        <translation>Ensimmäinen kohta:</translation>
+        <translation>Ensimmäinen piste:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Toinen kohta:</translation>
+        <translation>Toinen piste:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -2031,7 +2039,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Perpendicular</source>
-        <translation>Piste - Kohtisuorassa</translation>
+        <translation>Piste - Kohtisuoralla</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2086,7 +2094,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Default height and size</source>
-        <translation>Oletuskorkeus ja -koko</translation>
+        <translation>Oletuspituus ja -koko</translation>
     </message>
     <message>
         <source>Custom</source>
@@ -2094,7 +2102,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Height:</source>
-        <translation>Korkeus:</translation>
+        <translation>Pituus:</translation>
     </message>
     <message>
         <source>Size:</source>
@@ -2134,7 +2142,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Image for pattern</source>
-        <translation>Kuva kuviota varten</translation>
+        <translation>Kuva kaavaa varten</translation>
     </message>
     <message>
         <source>Images</source>
@@ -2170,11 +2178,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Pattern name:</source>
-        <translation>Kuvion nimi:</translation>
+        <translation>Kaavan nimi:</translation>
     </message>
     <message>
         <source>Pattern number:</source>
-        <translation>Kuvion numero:</translation>
+        <translation>Kaavan numero:</translation>
     </message>
     <message>
         <source>Company/Designer name:</source>
@@ -2202,11 +2210,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Label template:</source>
-        <translation>Tarrapohja:</translation>
+        <translation>Tunnisteen mallipohja:</translation>
     </message>
     <message>
         <source>Edit pattern label</source>
-        <translation>Muokkaa kuvion otsikkoa</translation>
+        <translation>Muokkaa kaavan tunnistetta</translation>
     </message>
     <message>
         <source>Edit template</source>
@@ -2222,15 +2230,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Save label data.</source>
-        <translation>Tallenna tarratiedot.</translation>
+        <translation>Tallenna tunnisteen tiedot.</translation>
     </message>
     <message>
         <source>Label data were changed. Do you want to save them before editing label template?</source>
-        <translation>Tarran tietoja on muutettu. Haluatko tallentaa ne ennen tarramallin muokkaamista?</translation>
+        <translation>Tunnisteen tietoja on muutettu. Haluatko tallentaa ne ennen tunnisteen mallipohjan muokkaamista?</translation>
     </message>
     <message>
         <source>Pattern preferences</source>
-        <translation>Kuvioasetukset</translation>
+        <translation>Kaava-asetukset</translation>
     </message>
 </context>
 <context>
@@ -2284,7 +2292,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select second point of line</source>
-        <translation>Valitse viivan toinen piste</translation>
+        <translation>Valitse suoran toinen piste</translation>
     </message>
     <message>
         <source>Edit radius</source>
@@ -2328,11 +2336,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>1st line point:</source>
-        <translation>1. rivin kohta:</translation>
+        <translation>1. suoran piste:</translation>
     </message>
     <message>
         <source>2nd line point</source>
-        <translation>toisen linjan piste</translation>
+        <translation>2. suoran piste</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2452,7 +2460,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogRotation</name>
     <message>
         <source>Rotation</source>
-        <translation>Pyöriminen</translation>
+        <translation>Kierto</translation>
     </message>
     <message>
         <source>Angle:</source>
@@ -2468,7 +2476,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Suffix:</source>
-        <translation>Liite:</translation>
+        <translation>Loppuliite:</translation>
     </message>
     <message>
         <source>Edit angle</source>
@@ -2480,7 +2488,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Rotation pt:</source>
-        <translation>Pyörimispiste:</translation>
+        <translation>Kiertopiste:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2503,7 +2511,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Configuration</source>
-        <translation>Asetukset</translation>
+        <translation>Konfigurointi</translation>
     </message>
     <message>
         <source>File Paths</source>
@@ -2518,11 +2526,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select first point of line</source>
-        <translation>Valitse viivan ensimmäinen piste</translation>
+        <translation>Valitse suoran ensimmäinen piste</translation>
     </message>
     <message>
         <source>Select second point of line</source>
-        <translation>Valitse viivan toinen piste</translation>
+        <translation>Valitse suoran toinen piste</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -2562,7 +2570,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Length to Line</source>
-        <translation>Piste - Pituus viivan mukaan</translation>
+        <translation>Piste - Pituus suoralle</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2609,7 +2617,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Base Point</source>
-        <translation>Alkupiste</translation>
+        <translation>Peruspiste</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2652,7 +2660,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First point:</source>
-        <translation>Ensimmäinen kohta:</translation>
+        <translation>Ensimmäinen piste:</translation>
     </message>
     <message>
         <source>Angle:</source>
@@ -2660,7 +2668,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Toinen kohta:</translation>
+        <translation>Toinen piste:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -2755,7 +2763,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point:</source>
-        <translation>Kohta:</translation>
+        <translation>Piste:</translation>
     </message>
     <message>
         <source>First control point</source>
@@ -2767,7 +2775,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Second control point</source>
-        <translation>Toinen ohjauspiste</translation>
+        <translation>Toinen kontrollipiste</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -2890,15 +2898,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Highest point</source>
-        <translation>Korkein kohta</translation>
+        <translation>Korkein piste</translation>
     </message>
     <message>
         <source>Lowest point</source>
-        <translation>Alin kohta</translation>
+        <translation>Alin piste</translation>
     </message>
     <message>
         <source>Leftmost point</source>
-        <translation>Vasenin piste</translation>
+        <translation>Vasemmanpuoleisin piste</translation>
     </message>
     <message>
         <source>Rightmost point</source>
@@ -2918,15 +2926,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>by second edge symmetry</source>
-        <translation>toisen reunan symmetrian avulla</translation>
+        <translation>toisen reunan symmetrian mukaan</translation>
     </message>
     <message>
         <source>by first edge right angle</source>
-        <translation>ensimmäisen reunan suorakulman mukaan</translation>
+        <translation>ensimmäisen reunan oikean kulman mukaan</translation>
     </message>
     <message>
         <source>by second edge right angle</source>
-        <translation>toisen reunan suorakulmalla</translation>
+        <translation>toisen reunan oikean kulman mukaan</translation>
     </message>
     <message>
         <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
@@ -2942,7 +2950,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Angle Calculation</source>
-        <translation>Kulman laskeminen</translation>
+        <translation>Kulman laskelma</translation>
     </message>
     <message>
         <source>Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.</source>
@@ -2965,11 +2973,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First point:</source>
-        <translation>Ensimmäinen kohta:</translation>
+        <translation>Ensimmäinen piste:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Toinen kohta:</translation>
+        <translation>Toinen piste:</translation>
     </message>
     <message>
         <source>Point - Intersect Axis and Triangle</source>
@@ -3008,15 +3016,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select the first dart point</source>
-        <translation>Valitse ensimmäinen tikanheittopiste</translation>
+        <translation>Valitse ensimmäinen laskoksen piste</translation>
     </message>
     <message>
         <source>Select the second dart point</source>
-        <translation>Valitse toinen tikanheittopiste</translation>
+        <translation>Valitse toinen laskoksen piste</translation>
     </message>
     <message>
         <source>Select the third dart point</source>
-        <translation>Valitse kolmas tikanheittopiste</translation>
+        <translation>Valitse kolmas laskoksen piste</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -3024,27 +3032,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>1st base point:</source>
-        <translation>1. peruspiste:</translation>
+        <translation>1. lähtöpiste:</translation>
     </message>
     <message>
         <source>2nd base point:</source>
-        <translation>2. peruspiste:</translation>
+        <translation>2. lähtöpiste:</translation>
     </message>
     <message>
         <source>1st dart point:</source>
-        <translation>1. tikan piste:</translation>
+        <translation>1. laskoksen piste:</translation>
     </message>
     <message>
         <source>2nd dart point:</source>
-        <translation>2. tikan piste:</translation>
+        <translation>2. laskoksen piste:</translation>
     </message>
     <message>
         <source>3rd dart point:</source>
-        <translation>3. tikan piste:</translation>
+        <translation>3. laskoksen piste:</translation>
     </message>
     <message>
         <source>True Darts</source>
-        <translation>Oikea tikanheitto</translation>
+        <translation>Tarkka laskos</translation>
     </message>
     <message>
         <source>Unique name</source>
@@ -3116,11 +3124,11 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Move measurement up</source>
-        <translation>Siirrä mittayksikköä ylöspäin</translation>
+        <translation>Siirrä mittaa ylöspäin</translation>
     </message>
     <message>
         <source>Move measurement down</source>
-        <translation>Siirrä mittausta alaspäin</translation>
+        <translation>Siirrä mittaa alaspäin</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -3152,7 +3160,7 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Kaava:</translation>
+        <translation>Matemaattinen kaava:</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -3164,7 +3172,7 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Refresh a pattern with all changes you made</source>
-        <translation>Päivitä kuvio kaikilla tekemilläsi muutoksilla</translation>
+        <translation>Päivitä kaava kaikilla tekemilläsi muutoksilla</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -3172,11 +3180,11 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Line lengths</source>
-        <translation>Viivojen pituudet</translation>
+        <translation>Suorien Pituudet</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation>Viiva</translation>
+        <translation>Suora</translation>
     </message>
     <message>
         <source>Length</source>
@@ -3184,7 +3192,7 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Line angles</source>
-        <translation>Viivakulmat</translation>
+        <translation>Suorien kulmat</translation>
     </message>
     <message>
         <source>Angle</source>
@@ -3192,7 +3200,7 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Curve lengths</source>
-        <translation>Käyrän pituudet</translation>
+        <translation>Käyrien Pituudet</translation>
     </message>
     <message>
         <source>Curve</source>
@@ -3200,7 +3208,7 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Curve angles</source>
-        <translation>Kaarrekulmat</translation>
+        <translation>Käyrien Kulmat</translation>
     </message>
     <message>
         <source>Control point lengths</source>
@@ -3224,7 +3232,7 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Empty field.</source>
-        <translation>Tyhjä kenttä.</translation>
+        <translation>Tyhjä sarake.</translation>
     </message>
     <message>
         <source>Empty field</source>
@@ -3278,24 +3286,23 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Line Lengths</source>
-        <translation>Rivien pituudet</translation>
+        <translation>Suorien Pituudet</translation>
     </message>
     <message>
         <source>Line Angles</source>
-        <translation>Viivan kulmat</translation>
+        <translation>Suorien Kulmat</translation>
     </message>
     <message>
         <source>Curve Lengths</source>
-        <translation>Käyrän pituudet</translation>
+        <translation>Käyrien Pituudet</translation>
     </message>
     <message>
         <source>Curve Angles</source>
-        <translation>Käyräkulmat</translation>
+        <translation>Käyrien Kulmat</translation>
     </message>
     <message>
         <source> Control Point Lengths</source>
-        <translation> Kontrollipisteiden
-pituudet</translation>
+        <translation> Kontrollipiste Pituudet</translation>
     </message>
     <message>
         <source>Arc Radii</source>
@@ -3307,7 +3314,7 @@ pituudet</translation>
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Kaava:</translation>
+        <translation>Matemaattinenkaava:</translation>
     </message>
     <message>
         <source>Value</source>
@@ -3319,15 +3326,15 @@ pituudet</translation>
     </message>
     <message>
         <source>Clear formula</source>
-        <translation>Selvä kaava</translation>
+        <translation>Tyhjennä matemaattinenkaava</translation>
     </message>
     <message>
         <source>Reset to original formula</source>
-        <translation>Palauta alkuperäinen kaava</translation>
+        <translation>Palauta alkuperäinen matemaattinenkaava</translation>
     </message>
     <message>
         <source>Insert variable into formula</source>
-        <translation>Lisää muuttuja kaavaa</translation>
+        <translation>Lisää muuttuja matemaattiseen kaavaan</translation>
     </message>
     <message>
         <source>Hides measurement variables that have no value</source>
@@ -3363,7 +3370,7 @@ pituudet</translation>
     </message>
     <message>
         <source>Line length</source>
-        <translation>Viivan pituus</translation>
+        <translation>Suoran pituus</translation>
     </message>
     <message>
         <source>Curve length</source>
@@ -3371,7 +3378,7 @@ pituudet</translation>
     </message>
     <message>
         <source>Line Angle</source>
-        <translation>Viiva kulma</translation>
+        <translation>Suoran Kulma</translation>
     </message>
     <message>
         <source>Arc radius</source>
@@ -3379,7 +3386,7 @@ pituudet</translation>
     </message>
     <message>
         <source>Curve angle</source>
-        <translation>Kaarrekulma</translation>
+        <translation>Käyrän kulma</translation>
     </message>
     <message>
         <source>Number</source>
@@ -3402,7 +3409,7 @@ pituudet</translation>
     </message>
     <message>
         <source>Unique pattern piece name</source>
-        <translation>Ainutlaatuinen kuviokappaleen nimi</translation>
+        <translation>yksilöllinen kaavapalan nimi</translation>
     </message>
     <message>
         <source>Unique group name</source>
@@ -3425,19 +3432,19 @@ pituudet</translation>
     <name>EditLabelTemplateDialog</name>
     <message>
         <source>Edit label template</source>
-        <translation>Muokkaa etikettipohjaa</translation>
+        <translation>Muokkaa tunnisteen mallipohjaa</translation>
     </message>
     <message>
         <source>Clear current and begin new label</source>
-        <translation>Tyhjennä nykyinen ja aloita uusi nimi</translation>
+        <translation>Tyhjennä nykyinen ja aloita uusi tunniste</translation>
     </message>
     <message>
         <source>Import from label template</source>
-        <translation>Tuo tarramallista</translation>
+        <translation>Tuo tunnistemallista</translation>
     </message>
     <message>
         <source>Export label as template</source>
-        <translation>Vie otsikko mallina</translation>
+        <translation>Vie tunniste mallina</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -3459,7 +3466,7 @@ pituudet</translation>
     </message>
     <message>
         <source>Centers horizontally in the available space</source>
-        <translation>Keskittyy vaakasuunnassa käytettävissä olevaan tilaan</translation>
+        <translation>Keskittää vaakasuunnassa käytettävissä olevaan tilaan</translation>
     </message>
     <message>
         <source>Aligns with the right edge</source>
@@ -3479,7 +3486,7 @@ pituudet</translation>
     </message>
     <message>
         <source>Insert placeholders</source>
-        <translation>Lisää paikkamerkkejä</translation>
+        <translation>Lisää paikkanpitäjän</translation>
     </message>
     <message>
         <source>Insert...</source>
@@ -3499,15 +3506,15 @@ pituudet</translation>
     </message>
     <message>
         <source>Creating new template will overwrite the current, do you want to continue?</source>
-        <translation>Uuden mallin luominen korvaa nykyisen, haluatko jatkaa?</translation>
+        <translation>Uuden mallipohjan luominen korvaa nykyisen, haluatko jatkaa?</translation>
     </message>
     <message>
         <source>Label template</source>
-        <translation>Tarrapohja</translation>
+        <translation>Tunnistemalli</translation>
     </message>
     <message>
         <source>Export label template</source>
-        <translation>Vie etikettimalli</translation>
+        <translation>Vie tunnistemalli</translation>
     </message>
     <message>
         <source>template</source>
@@ -3523,7 +3530,7 @@ pituudet</translation>
     </message>
     <message>
         <source>Import template will overwrite the current, do you want to continue?</source>
-        <translation>Tuontimalli korvaa nykyisen, haluatko jatkaa?</translation>
+        <translation>Tuo mallipohja, korvaa nykyisen, haluatko jatkaa?</translation>
     </message>
     <message>
         <source>File error.</source>
@@ -3539,11 +3546,11 @@ pituudet</translation>
     </message>
     <message>
         <source>Pattern name</source>
-        <translation>Kuvion nimi</translation>
+        <translation>Kaavan nimi</translation>
     </message>
     <message>
         <source>Pattern number</source>
-        <translation>Kuvion numero</translation>
+        <translation>Kaavan numero</translation>
     </message>
     <message>
         <source>Company name or designer name</source>
@@ -3555,11 +3562,11 @@ pituudet</translation>
     </message>
     <message>
         <source>Pattern extension</source>
-        <translation>Kuvion laajennus</translation>
+        <translation>Kaavan laajennus</translation>
     </message>
     <message>
         <source>Pattern file name</source>
-        <translation>Kuviotiedoston nimi</translation>
+        <translation>Kaavatiedoston nimi</translation>
     </message>
     <message>
         <source>Measurments file name</source>
@@ -3579,31 +3586,31 @@ pituudet</translation>
     </message>
     <message>
         <source>Piece letter</source>
-        <translation>Kirjepala</translation>
+        <translation>Palan kirjain</translation>
     </message>
     <message>
         <source>Piece annotation</source>
-        <translation>Kappaleen merkintä</translation>
+        <translation>Palan merkintä</translation>
     </message>
     <message>
         <source>Piece orientation</source>
-        <translation>Kappaleen suunta</translation>
+        <translation>Palan suunta</translation>
     </message>
     <message>
         <source>Piece rotation</source>
-        <translation>Kappaleen kierto</translation>
+        <translation>Palan kierto</translation>
     </message>
     <message>
         <source>Piece tilt</source>
-        <translation>Kappaleen kallistus</translation>
+        <translation>Palan kallistus</translation>
     </message>
     <message>
         <source>Piece fold position</source>
-        <translation>Kappaleen taittoasento</translation>
+        <translation>Palan taittoasento</translation>
     </message>
     <message>
         <source>Piece name</source>
-        <translation>Kappaleen nimi</translation>
+        <translation>Palan nimi</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -3627,15 +3634,15 @@ pituudet</translation>
     </message>
     <message>
         <source>Material: Interfacing</source>
-        <translation>Materiaali: Liitosmateriaali</translation>
+        <translation>Materiaali: Tukikangas</translation>
     </message>
     <message>
         <source>Interfacing</source>
-        <translation>Liitäntä</translation>
+        <translation>Tukikangas</translation>
     </message>
     <message>
         <source>Material: Interlining</source>
-        <translation>Materiaali: Vuori</translation>
+        <translation>Materiaali: Välivuori</translation>
     </message>
     <message>
         <source>Interlining</source>
@@ -3651,11 +3658,11 @@ pituudet</translation>
     </message>
     <message>
         <source>Word: on fold</source>
-        <translation>Sana: taitettaessa</translation>
+        <translation>Sana: taiteelta</translation>
     </message>
     <message>
         <source>on fold</source>
-        <translation>taitettaessa</translation>
+        <translation>taiteelta</translation>
     </message>
 </context>
 <context>
@@ -3713,7 +3720,7 @@ pituudet</translation>
     </message>
     <message>
         <source>File base name</source>
-        <translation>Tiedostokannan nimi</translation>
+        <translation>Tiedoston perusnimi</translation>
     </message>
     <message>
         <source>Quality (0-100):</source>
@@ -3721,7 +3728,7 @@ pituudet</translation>
     </message>
     <message>
         <source>Right:</source>
-        <translation>Oikein:</translation>
+        <translation>Oikea:</translation>
     </message>
     <message>
         <source>Left:</source>
@@ -3729,7 +3736,7 @@ pituudet</translation>
     </message>
     <message>
         <source>Top:</source>
-        <translation>Yläosa:</translation>
+        <translation>Yläreuna:</translation>
     </message>
     <message>
         <source>Bottom:</source>
@@ -3844,7 +3851,7 @@ Haluatko ladata sen?</translation>
     <name>GroupsWidget</name>
     <message>
         <source>Group Manager</source>
-        <translation>Ryhmänjohtaja</translation>
+        <translation>Ryhmäjärjestin</translation>
     </message>
     <message>
         <source>Show All Groups</source>
@@ -3936,15 +3943,15 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Line %1_%2</source>
-        <translation>Rivi %1_%2</translation>
+        <translation>Suora %1_%2</translation>
     </message>
     <message>
         <source>%1 - Point On Line</source>
-        <translation>%1 - Piste viivalla</translation>
+        <translation>%1 - Piste suoralla</translation>
     </message>
     <message>
         <source>%1 - Point Length to Line</source>
-        <translation>%1 - Pisteen pituus viivan kohdalla</translation>
+        <translation>%1 - Piste Pituus suoralle</translation>
     </message>
     <message>
         <source>%1 - Point On Perpendicular</source>
@@ -3956,7 +3963,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Lines</source>
-        <translation>%1 - Pisteiden leikkauspisteet</translation>
+        <translation>%1 - Piste Suorien leikkauspiste</translation>
     </message>
     <message>
         <source>%1 - Curve Interactive</source>
@@ -3968,7 +3975,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>%1 - Curve Fixed</source>
-        <translation>%1 - Käyrä korjattu</translation>
+        <translation>%1 - Käyrä kiinteä</translation>
     </message>
     <message>
         <source>%1 - Arc Radius &amp; Angles</source>
@@ -3984,15 +3991,15 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>%1 - Spline Interactive</source>
-        <translation>%1 - Spline Interactive</translation>
+        <translation>%1 - Spline Vuorovaikutteinen</translation>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation>Osapolku_</translation>
+        <translation>SplPolku_</translation>
     </message>
     <message>
         <source>%1 - Spline Fixed</source>
-        <translation>%1 - Spline-korjaus</translation>
+        <translation>%1 - Spline Kiinteä</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Arc &amp; Line</source>
@@ -4000,7 +4007,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Line &amp; Perpendicular</source>
-        <translation>%1 - Piste leikkaa suoran ja kohtisuoran</translation>
+        <translation>%1 - Piste Leikkaa suoran ja kohtisuoran</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Axis &amp; Triangle</source>
@@ -4020,11 +4027,11 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>%1 - Point On Spline</source>
-        <translation>%1 - Piste splinellä</translation>
+        <translation>%1 - Piste Splinellä</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Line &amp; Axis</source>
-        <translation>%1 - Piste leikkaa suoran ja akselin</translation>
+        <translation>%1 - Piste Leikkaa suoran ja akselin</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Curve &amp; Axis</source>
@@ -4040,27 +4047,27 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Curves</source>
-        <translation>%1 - Pisteiden leikkauspistekäyrät</translation>
+        <translation>%1 - Piste Leikkaa käyrät</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Circle &amp; Tangent</source>
-        <translation>%1 - Ympyrän ja tangentin leikkauspiste</translation>
+        <translation>%1 - Piste leikkaa ympyrän ja tangentin</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Arc &amp; Tangent</source>
-        <translation>%1 - Piste, joka leikkaa kaaren ja tangentin</translation>
+        <translation>%1 - Piste Leikkaa kaaren ja tangentin</translation>
     </message>
     <message>
         <source>%1 - True Dart %2_%3_%4</source>
-        <translation>%1 - Tosi tikka %2_%3_%4</translation>
+        <translation>%1 - Tarkka laskos %2_%3_%4</translation>
     </message>
     <message>
         <source>%1 - Arc Elliptical</source>
-        <translation>%1 - Kaarielliptinen</translation>
+        <translation>%1 - Kaari elliptinen</translation>
     </message>
     <message>
         <source>ElArc_</source>
-        <translation>ElArc_</translation>
+        <translation>ElKaari_</translation>
     </message>
     <message>
         <source>%1 - Rotation</source>
@@ -4072,11 +4079,11 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>%1 - Mirror by Line</source>
-        <translation>%1 - Peilaa viivoittain</translation>
+        <translation>%1 - Peilaa suoralla</translation>
     </message>
     <message>
         <source>%1 - Mirror by Axis</source>
-        <translation>%1 - Peili akselin mukaan</translation>
+        <translation>%1 - Peilaa akselilla</translation>
     </message>
     <message>
         <source>Move Group Object</source>
@@ -4155,11 +4162,11 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Line_%1_%2</source>
-        <translation>Rivi_%1_%2</translation>
+        <translation>Suora_%1_%2</translation>
     </message>
     <message>
         <source>Line from %1 to %2</source>
-        <translation>Rivi %1:stä %2:een</translation>
+        <translation>Suora %1:stä %2:een</translation>
     </message>
     <message>
         <source>Point On Line %1_%2</source>
@@ -4167,7 +4174,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Point Length to Line</source>
-        <translation>Piste pituus viivan mukaan</translation>
+        <translation>Piste Pituus suoralle</translation>
     </message>
     <message>
         <source>Point On Perpendicular %1_%2</source>
@@ -4179,15 +4186,15 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Point Intersect Lines %1_%2 and %3_%4</source>
-        <translation>Piste leikkaa viivoja %1_%2 ja %3_%4</translation>
+        <translation>Piste leikkaa suoria %1_%2 ja %3_%4</translation>
     </message>
     <message>
         <source>Curve Interactive</source>
-        <translation>Käyräinteraktiivinen</translation>
+        <translation>Käyrä interaktiivinen</translation>
     </message>
     <message>
         <source>Curve Fixed</source>
-        <translation>Käyrä korjattu</translation>
+        <translation>Käyrä kiinteä</translation>
     </message>
     <message>
         <source>Arc Radius &amp; Angles</source>
@@ -4195,11 +4202,11 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
-        <translation>Spline Interactive</translation>
+        <translation>Spline Interaktiivinen</translation>
     </message>
     <message>
         <source>Spline Fixed</source>
-        <translation>Urakorjaus</translation>
+        <translation>Spline kiinteä</translation>
     </message>
     <message>
         <source>Point Intersect Arc with center %1 &amp; Line %2_%3</source>
@@ -4231,7 +4238,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>%Point Intersect Line &amp; %1_%2 and Axis through point %3</source>
-        <translation>%Point leikkaa suoran ja %1_%2:n sekä pisteen %3 kautta kulkevan akselin</translation>
+        <translation>%Piste leikkaa viivan ja %1_%2:n sekä pisteen %3 kautta kulkevan akselin</translation>
     </message>
     <message>
         <source>Point Intersect Curve &amp; Axis through point %1</source>
@@ -4247,7 +4254,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Point Intersect Curves</source>
-        <translation>Pisteiden leikkauskäyrät</translation>
+        <translation>Piste Leikkaavat käyrät</translation>
     </message>
     <message>
         <source>Point Intersect Circle &amp; Tangent</source>
@@ -4255,35 +4262,35 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Point Intersect Arc &amp; Tangent</source>
-        <translation>Piste, joka leikkaa kaaren ja tangentin</translation>
+        <translation>Piste Leikkaa kaaren ja tangentin</translation>
     </message>
     <message>
         <source>True Dart %1_%2_%3</source>
-        <translation>Tosi tikka %1_%2_%3</translation>
+        <translation>Tarkka laskos %1_%2_%3</translation>
     </message>
     <message>
         <source>ElArc_</source>
-        <translation>ElArc_</translation>
+        <translation>ElKaari_</translation>
     </message>
     <message>
         <source>Arc Elliptical with length %1</source>
-        <translation>Elliptinen kaari, jonka pituus on %1</translation>
+        <translation>Elliptinen kaari, pituudella %1</translation>
     </message>
     <message>
         <source>Rotation around point %1. Suffix %2</source>
-        <translation>Kierto pisteen %1 ympäri. Liite %2</translation>
+        <translation>Kierto pisteen %1 ympäri. Loppuliite %2</translation>
     </message>
     <message>
         <source>Mirror by Line %1_%2. Suffix %3</source>
-        <translation>Peilaa rivillä %1_%2. Liite %3</translation>
+        <translation>Peilaa suoralla %1_%2. Loppuliite %3</translation>
     </message>
     <message>
         <source>Mirror by Axis through %1 point. Suffix %2</source>
-        <translation>Peilaa akselilla %1 pisteen kautta. Liite %2</translation>
+        <translation>Peilaa akselilla %1 pisteen kautta. Loppuliite %2</translation>
     </message>
     <message>
         <source>Move - rotate around point %1. Suffix %2</source>
-        <translation>Siirrä - kierrä pisteen %1 ympäri. Liite %2</translation>
+        <translation>Siirrä - kierrä pisteen %1 ympäri. Loppuliite %2</translation>
     </message>
     <message>
         <source>Description</source>
@@ -4295,7 +4302,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Can&apos;t create record.</source>
-        <translation>Tietuetta ei voida luoda.</translation>
+        <translation>Tallennetta ei voida luoda.</translation>
     </message>
     <message>
         <source>Find previous</source>
@@ -4319,7 +4326,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Draft Block:</source>
-        <translation>Luonnoslohko:</translation>
+        <translation>Luonnospala:</translation>
     </message>
     <message>
         <source>block</source>
@@ -4335,7 +4342,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Arc with Radius, Length, and Angle</source>
-        <translation>Kaari säteellä, pituudella ja kulmalla</translation>
+        <translation>Kaari Säteellä, Pitudella, ja Kulmalla</translation>
     </message>
     <message>
         <source>Center point</source>
@@ -4374,7 +4381,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Switch between px and pattern units</source>
-        <translation>Vaihda pikseli- ja kuvioyksiköiden välillä</translation>
+        <translation>Vaihda pikseli- ja kaavan mittayksiköiden välillä</translation>
     </message>
     <message>
         <source>Unit:</source>
@@ -4422,7 +4429,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Opacity:</source>
-        <translation>Läpinäkymättömyys:</translation>
+        <translation>Läpinäkyvyys:</translation>
     </message>
 </context>
 <context>
@@ -4437,11 +4444,11 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Tilaus</translation>
+        <translation>Järjestys</translation>
     </message>
     <message>
         <source>Bring to top</source>
-        <translation>Tuo huipulle</translation>
+        <translation>Tuo ylimmäksi</translation>
     </message>
     <message>
         <source>Move up</source>
@@ -4449,11 +4456,11 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Siirry alas</translation>
+        <translation>Siirrä alas</translation>
     </message>
     <message>
         <source>Send to bottom</source>
-        <translation>Lähetä loppuun</translation>
+        <translation>Lähetä alimmaksi</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -4469,7 +4476,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Move Origin</source>
-        <translation>Siirrä lähtöpistettä</translation>
+        <translation>Siirrä keskipistettä</translation>
     </message>
 </context>
 <context>
@@ -4519,7 +4526,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>Palo:</translation>
+        <translation>Pala:</translation>
     </message>
     <message>
         <source>Nodes:</source>
@@ -4535,11 +4542,11 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Reverse</source>
-        <translation>Käännä päin vastoin</translation>
+        <translation>Käänteinen</translation>
     </message>
     <message>
         <source>Notch</source>
-        <translation>Lovi</translation>
+        <translation>Hakki</translation>
     </message>
     <message>
         <source>None</source>
@@ -4551,19 +4558,19 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>TNotch</source>
-        <translation>TNotch</translation>
+        <translation>THakki</translation>
     </message>
     <message>
         <source>UNotch</source>
-        <translation>Yksittäinen lukko</translation>
+        <translation>UHakki</translation>
     </message>
     <message>
         <source>VInternal</source>
-        <translation>VIsperaalinen</translation>
+        <translation>VSisäpuolinen</translation>
     </message>
     <message>
         <source>VExternal</source>
-        <translation>VElternal</translation>
+        <translation>VUlkopuolinen</translation>
     </message>
     <message>
         <source>Castle</source>
@@ -4579,15 +4586,15 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>No nodes selected. Press Cancel to continue</source>
-        <translation>Ei valittuja solmuja. Jatka painamalla Peruuta</translation>
+        <translation>Ei valittuja hakkeja. Jatka painamalla Peruuta</translation>
     </message>
     <message>
         <source> was auto reversed.</source>
-        <translation> peruutettiin automaattisesti.</translation>
+        <translation> käännettiin automaattisesti.</translation>
     </message>
     <message>
         <source> may need to be manually reversed.</source>
-        <translation> suunta on ehkä peruutettava manuaalisesti.</translation>
+        <translation> suunta on ehkä käänettävä manuaalisesti.</translation>
     </message>
     <message>
         <source>Insert Nodes</source>
@@ -4606,7 +4613,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nmi:</translation>
+        <translation>Nimi:</translation>
     </message>
     <message>
         <source>Unnamed path</source>
@@ -4626,7 +4633,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>Palo:</translation>
+        <translation>Pala:</translation>
     </message>
     <message>
         <source>Move row to top of list</source>
@@ -4646,11 +4653,11 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>The path is a cut contour</source>
-        <translation>Polku on leikattu ääriviiva</translation>
+        <translation>Polku on leikattu muotoon</translation>
     </message>
     <message>
         <source>Cut on fabric</source>
-        <translation>Leikattu kankaalle</translation>
+        <translation>Leikkaus kankaalla</translation>
     </message>
     <message>
         <source>Status:</source>
@@ -4714,11 +4721,11 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Notches</source>
-        <translation>Lovet</translation>
+        <translation>Hakit</translation>
     </message>
     <message>
         <source>Notch:</source>
-        <translation>Lovi:</translation>
+        <translation>Hakki:</translation>
     </message>
     <message>
         <source>Type</source>
@@ -4730,11 +4737,11 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>T Notch</source>
-        <translation>T-lovi</translation>
+        <translation>T-hakki</translation>
     </message>
     <message>
         <source>U Notch</source>
-        <translation>U-lovi</translation>
+        <translation>U-hakki</translation>
     </message>
     <message>
         <source>V Internal</source>
@@ -4742,7 +4749,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>V External</source>
-        <translation>Ulkoinen V</translation>
+        <translation>V Ulkoinen</translation>
     </message>
     <message>
         <source>Castle</source>
@@ -4754,11 +4761,11 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Sub Type</source>
-        <translation>Alityyppi</translation>
+        <translation>Alatyyppi</translation>
     </message>
     <message>
         <source>Straightforward</source>
-        <translation>Yksinkertaista</translation>
+        <translation>Suoraaneteenpäin</translation>
     </message>
     <message>
         <source>Bisector</source>
@@ -4766,7 +4773,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Select to designate the corner point as a notch</source>
-        <translation>Valitse, jos haluat määrittää kulmapisteen loveksi</translation>
+        <translation>Valitse, jos haluat määrittää kulmapisteen hakiksi</translation>
     </message>
     <message>
         <source>Intersection</source>
@@ -4778,27 +4785,27 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Reset notch angle to default.</source>
-        <translation>Palauta loven kulma oletusarvoon.</translation>
+        <translation>Palauta hakin kulma oletusarvoon.</translation>
     </message>
     <message>
         <source>Count:</source>
-        <translation>Lasku:</translation>
+        <translation>Määrä:</translation>
     </message>
     <message>
         <source>Reset notch with to default.</source>
-        <translation>Palauta lovi oletusarvoon.</translation>
+        <translation>Palauta hakki oletusarvoon.</translation>
     </message>
     <message>
         <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
-        <translation>Tämä asetus on voimassa vain, jos saumalinjan toinen lovi on käytössä yleisissä asetuksissa. Tämä asetus auttaa poistamaan toisen loven käytöstä vain tässä lovessa.</translation>
+        <translation>Tämä asetus on voimassa vain, jos saumalinjan toinen hakki on käytössä yleisissä asetuksissa. Tämä asetus auttaa poistamaan toisen hakin käytöstä vain tässä hakissa.</translation>
     </message>
     <message>
         <source>Show second notch on seam line</source>
-        <translation>Näytä toinen lovi saumalinjassa</translation>
+        <translation>Näytä toinen hakki saumalinjassa</translation>
     </message>
     <message>
         <source>Reset notch length to default.</source>
-        <translation>Palauta loven pituus oletusarvoon.</translation>
+        <translation>Palauta hakin pituus oletusarvoon.</translation>
     </message>
     <message>
         <source> Width:</source>
@@ -4814,7 +4821,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Reverse</source>
-        <translation>Käännä päin vastoin</translation>
+        <translation>Päinvastoin</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -4826,15 +4833,15 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Edit seam allowance width</source>
-        <translation>Muokkaa saumanvaran leveyttä</translation>
+        <translation>Muokkaa saumavaran leveyttä</translation>
     </message>
     <message>
         <source>Edit seam allowance width before</source>
-        <translation>Muokkaa saumanvaran leveyttä ennen</translation>
+        <translation>Muokkaa saumavaran leveyttä ennen</translation>
     </message>
     <message>
         <source>Edit seam allowance width after</source>
-        <translation>Muokkaa saumanvaran leveyttä jälkeen</translation>
+        <translation>Muokkaa saumavaran leveyttä jälkeen</translation>
     </message>
     <message>
         <source>Internal path</source>
@@ -4850,7 +4857,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
-        <translation>&lt;b&gt;Mukautetun saumanvaran&lt;/b&gt; ensimmäinen piste ei voi olla yhtä suuri kuin viimeinen piste!</translation>
+        <translation>&lt;b&gt;Mukautetun saumavaran&lt;/b&gt; ensimmäinen piste ei voi olla yhtä suuri kuin viimeinen piste!</translation>
     </message>
     <message>
         <source>You have double points!</source>
@@ -4858,7 +4865,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
-        <translation>Jokaisen pisteen &lt;b&gt;mukautetussa saumanvarapolussa&lt;/b&gt; on oltava yksilöllinen!</translation>
+        <translation>Jokaisen pisteen &lt;b&gt;mukautetussa saumavarapolussa&lt;/b&gt; on oltava yksilöllinen!</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -4878,7 +4885,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Extend end point</source>
-        <translation>Päätepisteen laajennus</translation>
+        <translation>Laajenna päätepistettä</translation>
     </message>
     <message>
         <source>Extend start point</source>
@@ -4886,7 +4893,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>List of pieces is empty!</source>
-        <translation>Paloluettelo on tyhjä!</translation>
+        <translation>Palaluettelo on tyhjä!</translation>
     </message>
     <message>
         <source>Please, select a piece to insert into!</source>
@@ -4911,7 +4918,7 @@ All brand or product names are trademarks or registered trademarks of their resp
 Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
-        <translation>Seamly2D on sovellus tietokoneella avustettuun vaatekaavojen suunnitteluun.
+        <translation>Seamly2D on sovellus tietokone avusteiseen vaatenkaavojen suunnitteluun.
 
 Seamly2D on ilmainen (avoimen lähdekoodin) ohjelmisto.
 
@@ -5093,7 +5100,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     <name>IntersectCirclesTool</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Circles&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Ympyröiden leikkauspistettä %1 ei löydy&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Käytetään lähtöpistettä paikkamerkkinä, kunnes kuvio on korjattu.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Ympyröiden leikkauspistettä %1 ei löydy&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Käytetään lähtöpistettä paikkamerkkinä, kunnes kaava on korjattu.</translation>
     </message>
     <message>
         <source>Point Intersect Circles</source>
@@ -5104,7 +5111,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     <name>LayoutSettingsDialog</name>
     <message>
         <source>Templates:</source>
-        <translation>Mallit:</translation>
+        <translation>Mallipohjat:</translation>
     </message>
     <message>
         <source>Width:</source>
@@ -5116,7 +5123,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>Rotate workpiece</source>
-        <translation>Käännä kaavaa</translation>
+        <translation>Käännä työkappale</translation>
     </message>
     <message>
         <source>Rotate by</source>
@@ -5180,7 +5187,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>Top:</source>
-        <translation>Yläosa:</translation>
+        <translation>Yläreuna:</translation>
     </message>
     <message>
         <source>Bottom:</source>
@@ -5226,7 +5233,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>Enabling for sheets that have big height will speed up creating.</source>
-        <translation>Suurkorkeiden taulukoiden käyttöönotto nopeuttaa luontia.</translation>
+        <translation>Korkeiden arkkien käyttöönotto nopeuttaa luontia.</translation>
     </message>
     <message>
         <source>Printer:</source>
@@ -5255,7 +5262,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>Ignore margins</source>
-        <translation>Älä huomioi reunuksia</translation>
+        <translation>Älä huomioi marginaaleja</translation>
     </message>
     <message>
         <source>Layout print settings</source>
@@ -5267,7 +5274,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>Margins go beyond printing. Apply settings anyway?</source>
-        <translation>Margnereita ei voi tulostaa. Käytätkö asetuksia silti?</translation>
+        <translation>Marginaaleja ei voi tulostaa. Käytätkö asetuksia silti?</translation>
     </message>
 </context>
 <context>
@@ -5282,7 +5289,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>Dash</source>
-        <translation>Viivahdus</translation>
+        <translation>Katkoviiva</translation>
     </message>
     <message>
         <source>Dot</source>
@@ -5290,7 +5297,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>Dash Dot</source>
-        <translation>Pisteviiva</translation>
+        <translation>Katkoviiva Piste</translation>
     </message>
     <message>
         <source>Dash Dot Dot</source>
@@ -5305,7 +5312,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>Tools for creating points.</source>
-        <translation>Työkaluja pisteiden luomiseen.</translation>
+        <translation>Työkalut pisteiden luomiseen.</translation>
     </message>
     <message>
         <source>Point</source>
@@ -5313,15 +5320,15 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>Tools for creating lines.</source>
-        <translation>Työkaluja viivojen luomiseen.</translation>
+        <translation>Työkalut suorien viivojen luomiseen.</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation>Viiva</translation>
+        <translation>Suora</translation>
     </message>
     <message>
         <source>Tools for creating curves.</source>
-        <translation>Työkaluja käyrien luomiseen.</translation>
+        <translation>Työkalut käyrien luomiseen.</translation>
     </message>
     <message>
         <source>Curve</source>
@@ -5329,7 +5336,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>Tools for creating arcs.</source>
-        <translation>Työkaluja kaarien luomiseen.</translation>
+        <translation>Työkalut kaarien luomiseen.</translation>
     </message>
     <message>
         <source>Arc</source>
@@ -5341,7 +5348,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>Apua</translation>
+        <translation>&amp;Apua</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -5365,7 +5372,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>Avaa</translation>
+        <translation>&amp;Avaa</translation>
     </message>
     <message>
         <source>Open file with pattern</source>
@@ -5405,7 +5412,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>About Seamly2D</source>
-        <translation>Tietoja Seamly2Dsta</translation>
+        <translation>Tietoja Seamly2D:sta</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -5503,11 +5510,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Reopen files.</source>
-        <translation>Avaa uudelleen tiedosto.</translation>
+        <translation>Avaa uudelleen tiedostot.</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>Sommittelu</translation>
+        <translation>Asettelu</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -5519,15 +5526,15 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Print tiled PDF</source>
-        <translation>Tulosta vierekkäin laatoitettu PDF</translation>
+        <translation>Tulosta laatoitettu PDF</translation>
     </message>
     <message>
         <source>Split and print a layout into smaller pages (for regular printers)</source>
-        <translation>Jaa ja tulosta asettelu pienemmille sivuille (tavallisille tulostimille)</translation>
+        <translation>Jaa ja tulosta asettelu pienemmille arkeille (tavallisille tulostimille)</translation>
     </message>
     <message>
         <source>Print preview</source>
-        <translation>Tulostusesikatselu</translation>
+        <translation>Tulostus esikatselu</translation>
     </message>
     <message>
         <source>Print preview original layout</source>
@@ -5551,7 +5558,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>You can&apos;t export empty scene.</source>
-        <translation>Et voi viedä tyhjää kohtausta.</translation>
+        <translation>Et voi viedä tyhjää näkymää.</translation>
     </message>
     <message>
         <source>Measurement file contains invalid known measurement(s).</source>
@@ -5583,7 +5590,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Not supported size value &apos;%1&apos; for this pattern file.</source>
-        <translation>Kokoarvoa &apos;%1&apos; ei tueta tälle kuviotiedostolle.</translation>
+        <translation>Kokoarvoa &apos;%1&apos; ei tueta tälle kaavatiedostolle.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set size. File wasn&apos;t opened.</source>
@@ -5595,7 +5602,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Not supported height value &apos;%1&apos; for this pattern file.</source>
-        <translation>Korkeusarvoa &apos;%1&apos; ei tueta tälle kuviotiedostolle.</translation>
+        <translation>Pituusarvoa &apos;%1&apos; ei tueta tälle kaavatiedostolle.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set height. File wasn&apos;t opened.</source>
@@ -5611,11 +5618,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Preview tiled PDF</source>
-        <translation>Esikatsele vierekkäin asetettua PDF-tiedostoa</translation>
+        <translation>Esikatsele laatoitettu PDF-tiedosto</translation>
     </message>
     <message>
         <source>Print preview tiled layout</source>
-        <translation>Tulosta esikatselu laatoitettuun asetteluun</translation>
+        <translation>Tulostus esikatselu, laatoitettun asettelun</translation>
     </message>
     <message>
         <source>Measurements unloaded</source>
@@ -5623,15 +5630,15 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Couldn&apos;t unload measurements. Some of them are used in the pattern.</source>
-        <translation>Mittojen purkaminen epäonnistui. Joitakin niistä käytetään kuviossa.</translation>
+        <translation>Mittojen purkaminen epäonnistui. Joitakin niistä käytetään kaavassa.</translation>
     </message>
     <message>
         <source>New pattern</source>
-        <translation>Uusi kuvio</translation>
+        <translation>Uusi kaava</translation>
     </message>
     <message>
         <source>Open pattern</source>
-        <translation>Avoin kuvio</translation>
+        <translation>Avaa kaava</translation>
     </message>
     <message>
         <source>Create/Edit measurements</source>
@@ -5675,7 +5682,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Close pattern</source>
-        <translation>Sulje kuvio</translation>
+        <translation>Sulje kaava</translation>
     </message>
     <message>
         <source>Tool pointer</source>
@@ -5699,7 +5706,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Gradation doesn&apos;t support inches</source>
-        <translation>Sävyt eivät tue tuumia</translation>
+        <translation>Sarjonta eivät tue tuumia</translation>
     </message>
     <message>
         <source>Measurements have been synced</source>
@@ -5727,11 +5734,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Load Individual</source>
-        <translation>Lataa yksittäinen</translation>
+        <translation>Lataa yksilöllinen</translation>
     </message>
     <message>
         <source>Load Individual measurements file</source>
-        <translation>Lataa yksittäisten mittausten tiedosto</translation>
+        <translation>Lataa yksilöllinen mittatiedosto</translation>
     </message>
     <message>
         <source>Load Multisize</source>
@@ -5739,7 +5746,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Load multisize measurements file</source>
-        <translation>Lataa monikokoinen mittaustiedosto</translation>
+        <translation>Lataa monikokoinen mittatiedosto</translation>
     </message>
     <message>
         <source>Open SeamlyMe</source>
@@ -5751,7 +5758,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Edit linked to the pattern measurements</source>
-        <translation>Muokkaus linkitetty kuvion mittoihin</translation>
+        <translation>Muokkaus linkitetty kaavan mittoihin</translation>
     </message>
     <message>
         <source>Sync</source>
@@ -5759,11 +5766,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Synchronize linked to the pattern measurements after change</source>
-        <translation>Synkronoi linkitettynä kuvion mittauksiin muutoksen jälkeen</translation>
+        <translation>Synkronoi linkitettynä kaavan mittauksiin muutoksen jälkeen</translation>
     </message>
     <message>
         <source>Unload Current</source>
-        <translation>Poista virta</translation>
+        <translation>Poista nykyinen</translation>
     </message>
     <message>
         <source>Unload measurements if they were not used in a pattern file</source>
@@ -5775,7 +5782,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Multisize measurements</source>
-        <translation>Monikokoiset mittaukset</translation>
+        <translation>Monikokoiset mitat</translation>
     </message>
     <message>
         <source>Pattern files</source>
@@ -5807,15 +5814,15 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Application doesn&apos;t support multisize table with inches.</source>
-        <translation>Sovellus ei tue usean kokoisia taulukoita tuumilla.</translation>
+        <translation>Sovellus ei tue monikokoisia taulukoita tuumilla.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set size. Need a file with multisize measurements.</source>
-        <translation>Kokoa ei voitu asettaa. Tarvitaan tiedosto, jossa on useita eri kokoisia mittoja.</translation>
+        <translation>Kokoa ei voitu asettaa. Tarvitaan monikoinen mittatiedosto.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set height. Need a file with multisize measurements.</source>
-        <translation>Korkeutta ei voitu asettaa. Tarvitaan tiedosto, jossa on useita eri kokoisia mittoja.</translation>
+        <translation>Korkeutta ei voitu asettaa. Tarvitaan monikokoinen mittatiedosto.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -5843,83 +5850,83 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>Palo</translation>
+        <translation>Pala</translation>
     </message>
     <message>
         <source>Utilities</source>
-        <translation>Yrityspalvelut</translation>
+        <translation>Apuvälineet</translation>
     </message>
     <message>
         <source>File Toolbar</source>
-        <translation>Tiedostotyökalurivi</translation>
+        <translation>Tiedosto työkalupalkki</translation>
     </message>
     <message>
         <source>Mode ToolBar</source>
-        <translation>Tilatyökalurivi</translation>
+        <translation>Tila Työkalupalkki</translation>
     </message>
     <message>
         <source>Pattern Toolbar</source>
-        <translation>Kuviotyökalurivi</translation>
+        <translation>Kaava Työkalupalkki</translation>
     </message>
     <message>
         <source>Edit Toolbar</source>
-        <translation>Muokkaa työkalupalkkia</translation>
+        <translation>Muokkaa Työkalupalkki</translation>
     </message>
     <message>
         <source>Property Editor</source>
-        <translation>Ominaisuuseditori</translation>
+        <translation>Ominaisuus Editori</translation>
     </message>
     <message>
         <source>Layout Pages</source>
-        <translation>Sivujen asettelu</translation>
+        <translation>Sivujen Asettelu</translation>
     </message>
     <message>
         <source>Group Manager</source>
-        <translation>Ryhmänjohtaja</translation>
+        <translation>Ryhmä Järjestin</translation>
     </message>
     <message>
         <source>Zoom ToolBar</source>
-        <translation>Zoomaustyökalurivi</translation>
+        <translation>Tarkennus Työkalupalkki</translation>
     </message>
     <message>
         <source>Toolbox ToolBar</source>
-        <translation>Työkalupakin työkalupalkki</translation>
+        <translation>Työkalupakki Työkalupalkki</translation>
     </message>
     <message>
         <source>Points Toolbar</source>
-        <translation>Pistetyökalurivi</translation>
+        <translation>Pisteet Työkalupalkki</translation>
     </message>
     <message>
         <source>Lines ToolBar</source>
-        <translation>Rivien työkalupalkki</translation>
+        <translation>Suorat Työkalupalkki</translation>
     </message>
     <message>
         <source>Curves ToolBar</source>
-        <translation>Käyrät-työkalurivi</translation>
+        <translation>Käyrät Työkalupalkki</translation>
     </message>
     <message>
         <source>Arcs ToolBar</source>
-        <translation>Kaarien työkalupalkki</translation>
+        <translation>Kaaret Työkalupalkki</translation>
     </message>
     <message>
         <source>Operations ToolBar</source>
-        <translation>Toimintotyökalurivi</translation>
+        <translation>Toiminnot Työkalupalkki</translation>
     </message>
     <message>
         <source>Piece ToolBar</source>
-        <translation>Kappaleen työkalurivi</translation>
+        <translation>Palat Työkalupalkki</translation>
     </message>
     <message>
         <source>Details ToolBar</source>
-        <translation>Tiedot-työkalurivi</translation>
+        <translation>Määrittelyt-Työkalupalkki</translation>
     </message>
     <message>
         <source>Layout ToolBar</source>
-        <translation>Asettelutyökalurivi</translation>
+        <translation>Asettelu Työkalupalkki</translation>
     </message>
     <message>
         <source>Point Name ToolBar</source>
-        <translation>Pisteen nimen työkalupalkki</translation>
+        <translation>Pisteen nimi Työkalupalkki</translation>
     </message>
     <message>
         <source>Toolbox</source>
@@ -5939,19 +5946,19 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Export Draft Blocks (E, D)</source>
-        <translation>Vie luonnoslohkot (E, D)</translation>
+        <translation>Vie luonnospalat (E, D)</translation>
     </message>
     <message>
         <source>Tools for adding pattern pieces.</source>
-        <translation>Työkalut kuviopalojen lisäämiseen.</translation>
+        <translation>Työkalut kaavapalojen lisäämiseen.</translation>
     </message>
     <message>
         <source>Add Details</source>
-        <translation>Lisää tiedot</translation>
+        <translation>Lisää määrittelyt</translation>
     </message>
     <message>
         <source>Tools for adding details to pattern pieces</source>
-        <translation>Työkalut yksityiskohtien lisäämiseen kaavoihin</translation>
+        <translation>Työkalut määrittelyiden lisäämiseen kaavoihin</translation>
     </message>
     <message>
         <source>Unite 2 Pieces (U)</source>
@@ -5975,19 +5982,19 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>New Draft Block</source>
-        <translation>Uusi luonnoslohko</translation>
+        <translation>Uusi luonnospala</translation>
     </message>
     <message>
         <source>Add new draft block (Ctrl+Shift+N)</source>
-        <translation>Lisää uusi luonnoslohko (Ctrl+Shift+N)</translation>
+        <translation>Lisää uusi luonnospala (Ctrl+Shift+N)</translation>
     </message>
     <message>
         <source>Rename Draft Block</source>
-        <translation>Nimeä luonnoslohko uudelleen</translation>
+        <translation>Nimeä luonnospala uudelleen</translation>
     </message>
     <message>
         <source>Change the name of the draft block</source>
-        <translation>Muuta luonnoslohkon nimeä</translation>
+        <translation>Muuta luonnospalan nimeä</translation>
     </message>
     <message>
         <source>Variables table</source>
@@ -5995,7 +6002,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of pattern pieces. This mode is available if at least one pattern piece was created in &amp;quot;Piece mode&amp;quot;. The layout can be exported to your preferred file format and saved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tila kuviopalojen asettelun luomiseen. Tämä tila on käytettävissä, jos vähintään yksi kuviopala on luotu &quot;Kappale-tilassa&quot;. Asettelun voi viedä haluamaasi tiedostomuotoon ja tallentaa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tila kaavapalojen asettelun luomiseen. Tämä tila on käytettävissä, jos vähintään yksi kaavapala on luotu &quot;Pala-tilassa&quot;. Asettelun voi viedä haluamaasi tiedostomuotoon ja tallentaa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Rotation</source>
@@ -6003,11 +6010,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
-        <translation>Peili riviltä</translation>
+        <translation>Peilaa suoralla</translation>
     </message>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Peili akselilla</translation>
+        <translation>Peilaa akselilla</translation>
     </message>
     <message>
         <source>Move</source>
@@ -6015,7 +6022,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>True Darts</source>
-        <translation>Oikea tikanheitto</translation>
+        <translation>Tarkka laskos</translation>
     </message>
     <message>
         <source>Midpoint</source>
@@ -6055,7 +6062,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Pattern Preferences...</source>
-        <translation>Kuvioasetukset...</translation>
+        <translation>Kaavaasetukset...</translation>
     </message>
     <message>
         <source>Zoom In</source>
@@ -6083,11 +6090,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Fit All</source>
-        <translation>Sopii kaikille</translation>
+        <translation>Sovita kaikki</translation>
     </message>
     <message>
         <source>Fit</source>
-        <translation>Sopii</translation>
+        <translation>Sovita</translation>
     </message>
     <message>
         <source>Report bug...</source>
@@ -6103,7 +6110,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Last tool</source>
-        <translation>Viimeinen työkalu</translation>
+        <translation>Viimeisin työkalu</translation>
     </message>
     <message>
         <source>Curve Control Points</source>
@@ -6119,7 +6126,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Open SeamlyMe measurements app (Ctrl+M)</source>
-        <translation>Avaa SeamlyMe-mittaussovellus (Ctrl+M)</translation>
+        <translation>Avaa SeamlyMe-mittasovellus (Ctrl+M)</translation>
     </message>
     <message>
         <source>Export Variables to CSV</source>
@@ -6131,7 +6138,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Label Template Editor...</source>
-        <translation>Tarramallien muokkausohjelma...</translation>
+        <translation>Tunnisteiden pohjien editori...</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -6147,7 +6154,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Pan</source>
-        <translation>Pannu</translation>
+        <translation>Panorointi</translation>
     </message>
     <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
@@ -6159,7 +6166,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Line Tools</source>
-        <translation>Viivatyökalut</translation>
+        <translation>Suorien työkalut</translation>
     </message>
     <message>
         <source>Alt+L</source>
@@ -6175,7 +6182,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Operations Tools</source>
-        <translation>Toimintatyökalut</translation>
+        <translation>Toimintotyökalut</translation>
     </message>
     <message>
         <source>Layout Tools</source>
@@ -6183,11 +6190,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Piece tools</source>
-        <translation>Kappaletyökalut</translation>
+        <translation>Palatyökalut</translation>
     </message>
     <message>
         <source>New Pattern Piece</source>
-        <translation>Uusi kuviopala</translation>
+        <translation>Uusi kaavapala</translation>
     </message>
     <message>
         <source>New Print Layout</source>
@@ -6207,19 +6214,19 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Insert Nodes</source>
-        <translation>Lisää solmut</translation>
+        <translation>Lisää solmuja</translation>
     </message>
     <message>
         <source>Unite Pieces</source>
-        <translation>Yhdistä palaset</translation>
+        <translation>Yhdistä palat</translation>
     </message>
     <message>
         <source>Export Pieces</source>
-        <translation>Vie kappaleita</translation>
+        <translation>Vie palat</translation>
     </message>
     <message>
         <source>Detail tools</source>
-        <translation>Yksityiskohtatyökalut</translation>
+        <translation>Määrittelytyökalut</translation>
     </message>
     <message>
         <source>Point Name Text</source>
@@ -6251,7 +6258,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Axis Origin </source>
-        <translation>Akselin alkuperä </translation>
+        <translation>Akselin lähtöpiste </translation>
     </message>
     <message>
         <source>Toggle Axis Origin (V, A)</source>
@@ -6263,15 +6270,15 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Toggle Wireframe Mode (V, W)</source>
-        <translation>Vaihda rautalankatila (V, W)</translation>
+        <translation>Vaihda rautalankamalli-tila (V, W)</translation>
     </message>
     <message>
         <source>Grainlines</source>
-        <translation>Rakeusviivat</translation>
+        <translation>Langansuuntaviivat</translation>
     </message>
     <message>
         <source>Toggle Grainlines (V, G)</source>
-        <translation>Toggle Grainlines (V, G)</translation>
+        <translation>Näytä Langansuunnat (V, G)</translation>
     </message>
     <message>
         <source>Labels</source>
@@ -6279,7 +6286,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Toggle Labels (V, L)</source>
-        <translation>Näytä otsikot (V, L)</translation>
+        <translation>Näytä tunnisteet (V, L)</translation>
     </message>
     <message>
         <source>Calculator</source>
@@ -6291,7 +6298,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Export Draft Blocks</source>
-        <translation>Vie luonnoslohkot</translation>
+        <translation>Vie luonnospalat</translation>
     </message>
     <message>
         <source>Export</source>
@@ -6347,7 +6354,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Draft Block:</source>
-        <translation>Luonnoslohko:</translation>
+        <translation>Luonnospala:</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -6367,7 +6374,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Union Tool</source>
-        <translation>Liittotyökalu</translation>
+        <translation>Yhdistämistyökalu</translation>
     </message>
     <message>
         <source>Export Pattern Pieces</source>
@@ -6379,11 +6386,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Piece mode</source>
-        <translation>Kappaletila</translation>
+        <translation>Pala-tila</translation>
     </message>
     <message>
         <source>You can&apos;t use Piece mode yet. Please, create at least one pattern piece.</source>
-        <translation>Et voi vielä käyttää Pala-tilaa. Luo ainakin yksi kuviopala.</translation>
+        <translation>Et voi vielä käyttää Pala-tilaa. Luo ainakin yksi kaavapala.</translation>
     </message>
     <message>
         <source>Pattern Pieces</source>
@@ -6391,11 +6398,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, create at least one pattern piece.</source>
-        <translation>Et voi vielä käyttää asettelutilaa. Luo ainakin yksi kuviopala.</translation>
+        <translation>Et voi vielä käyttää asettelu-tilaa. Luo ainakin yksi kaavapala.</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, include at least one pattern piece in layout.</source>
-        <translation>Et voi vielä käyttää asettelutilaa. Lisää asetteluun ainakin yksi kuviopala.</translation>
+        <translation>Et voi vielä käyttää asettelu-tilaa. Lisää asetteluun ainakin yksi kaavapala.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -6403,7 +6410,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Draft block.</source>
-        <translation>Luonnosblokki.</translation>
+        <translation>Luonnospala.</translation>
     </message>
     <message>
         <source>Name Exists</source>
@@ -6411,7 +6418,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>The action can&apos;t be completed because the Draft Block name already exists.</source>
-        <translation>Toimintoa ei voida suorittaa loppuun, koska luonnoslohkon nimi on jo olemassa.</translation>
+        <translation>Toimintoa ei voida suorittaa loppuun, koska luonnospalan nimi on jo olemassa.</translation>
     </message>
     <message>
         <source>You don&apos;t have any pieces to export. Please, include at least one piece in layout.</source>
@@ -6419,11 +6426,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Export pieces</source>
-        <translation>Vie kappaleita</translation>
+        <translation>Vie paloja</translation>
     </message>
     <message>
         <source>Can&apos;t export pieces.</source>
-        <translation>Kappaleita ei voida viedä.</translation>
+        <translation>Paloja ei voida viedä.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Add New Pattern Piece:&lt;/b&gt; Select main path of objects clockwise.</source>
@@ -6447,19 +6454,19 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Draft block %1</source>
-        <translation>Luonnoslohko %1</translation>
+        <translation>Luonnospala %1</translation>
     </message>
     <message>
         <source>Draft Block %1</source>
-        <translation>Luonnoslohko %1</translation>
+        <translation>Luonnospala %1</translation>
     </message>
     <message>
         <source>Point - On Bisector (O, B)</source>
-        <translation>Piste - puolittajalla (O, B)</translation>
+        <translation>Piste - Puolittajalla (O, B)</translation>
     </message>
     <message>
         <source>Point - Length to Line (P, S)</source>
-        <translation>Piste - Pituus viivan kohdalle (P, S)</translation>
+        <translation>Piste - Pituus suoralle (P, S)</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Line (A, L)</source>
@@ -6479,7 +6486,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Axis (L, X)</source>
-        <translation>Piste - Leikkaa suora ja akseli (L, X)</translation>
+        <translation>Piste - Leikkaa suoran ja akselin (L, X)</translation>
     </message>
     <message>
         <source>Point - On Perpendicular (O, P)</source>
@@ -6491,7 +6498,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Point - On Line (O, L)</source>
-        <translation>Piste - Viivalla (Y, Y)</translation>
+        <translation>Piste - Suoralla (Y, Y)</translation>
     </message>
     <message>
         <source>Point - Midpoint on Line (Shift+O, Shift+L)</source>
@@ -6499,15 +6506,15 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Point - Intersect Lines (I, L)</source>
-        <translation>Piste - Leikkaa viivat (I, L)</translation>
+        <translation>Piste - Leikkaa suorat (I, L)</translation>
     </message>
     <message>
         <source>Curve - Interactive (Alt+C)</source>
-        <translation>Käyrä - Vuorovaikutteinen (Alt+C)</translation>
+        <translation>Käyrä - Interaktiivinen (Alt+C)</translation>
     </message>
     <message>
         <source>Spline - Interactive (Alt+S)</source>
-        <translation>Spline - Vuorovaikutteinen (Alt+S)</translation>
+        <translation>Spline - Interaktiivinen (Alt+S)</translation>
     </message>
     <message>
         <source>Curve - Fixed (Alt+Shift+C)</source>
@@ -6515,7 +6522,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Spline - Fixed (Alt+Shift+S)</source>
-        <translation>Splini - Korjattu (Alt+Shift+S)</translation>
+        <translation>Spline - Kiinteä (Alt+Shift+S)</translation>
     </message>
     <message>
         <source>Point - On Spline (O, S)</source>
@@ -6531,7 +6538,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Point - On Curve (O, C)</source>
-        <translation>Piste - Kaarteella (O, C)</translation>
+        <translation>Piste - Käyrällä (O, C)</translation>
     </message>
     <message>
         <source>Arc - Radius and Angles (Alt+A)</source>
@@ -6571,11 +6578,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Mirror Objects by Line (M, L)</source>
-        <translation>Peilaa kohteita viivalla (M, L)</translation>
+        <translation>Peilaa kohteita suoralla (M, L)</translation>
     </message>
     <message>
         <source>Mirror Objects by Axis (M, A)</source>
-        <translation>Peilaa kohteita akselin (M, A) mukaan</translation>
+        <translation>Peilaa kohteita akselilla (M, A)</translation>
     </message>
     <message>
         <source>Move Objects (Alt+M)</source>
@@ -6583,7 +6590,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>True Darts (T, D)</source>
-        <translation>Oikeita tikanheittoja (T, D)</translation>
+        <translation>Tarkka laskos (T, D)</translation>
     </message>
     <message>
         <source>Add New Pattern Piece (N, P)</source>
@@ -6607,7 +6614,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Export Pieces (E, P)</source>
-        <translation>Vie kappaleita (E, P)</translation>
+        <translation>Vie paloja (E, P)</translation>
     </message>
     <message>
         <source>New Print Layout (N, L)</source>
@@ -6643,11 +6650,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Shift+O, Shift+L</source>
-        <translation>Vaihto+O, Vaihto+L</translation>
+        <translation>Shift+O, Shift+L</translation>
     </message>
     <message>
         <source>On Line</source>
-        <translation>Verkossa</translation>
+        <translation>Suoralla</translation>
     </message>
     <message>
         <source>Length and Angle</source>
@@ -6663,7 +6670,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Length to Line</source>
-        <translation>Pituus viivan kohdalle</translation>
+        <translation>Pituus suoralle</translation>
     </message>
     <message>
         <source>Intersect  Arc and Line</source>
@@ -6683,7 +6690,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Intersect Lines</source>
-        <translation>Leikkaavat viivat</translation>
+        <translation>Leikkaavat suorat</translation>
     </message>
     <message>
         <source>Curve - Interactive</source>
@@ -6699,7 +6706,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Alt+Shift+C</source>
-        <translation>Alt+Vaihto+C</translation>
+        <translation>Alt+Shift+C</translation>
     </message>
     <message>
         <source>Spline - Interactive</source>
@@ -6715,11 +6722,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Ura-akseli - Korjattu</translation>
+        <translation>Spline - Kiinteä</translation>
     </message>
     <message>
         <source>Alt+Shift+S</source>
-        <translation>Alt+Vaihto+S</translation>
+        <translation>Alt+Shift+S</translation>
     </message>
     <message>
         <source>Intersect Curves</source>
@@ -6751,7 +6758,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Intersect Arc and Axis (A, X)</source>
-        <translation>Leikkaa kaaren ja akselin (A, X) välillä</translation>
+        <translation>Leikkaa kaaren ja akselin (A, X)</translation>
     </message>
     <message>
         <source>Intersect Arcs</source>
@@ -6767,11 +6774,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Intersect Circles (Shift+I, Shift+C)</source>
-        <translation>Leikkaa ympyröitä (Shift+I, Shift+C)</translation>
+        <translation>Leikkaavat ympyrät (Shift+I, Shift+C)</translation>
     </message>
     <message>
         <source>Shift+I, Shift+C</source>
-        <translation>Vaihto+I, Vaihto+C</translation>
+        <translation>Shift+I, Shift+C</translation>
     </message>
     <message>
         <source>Intersect Circle and Tangent</source>
@@ -6799,7 +6806,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Alt+Shift+A</source>
-        <translation>Alt+Vaihto+A</translation>
+        <translation>Alt+Shift+A</translation>
     </message>
     <message>
         <source>Activate last used tool (Ctrl+Shift+L)</source>
@@ -6807,11 +6814,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Zoom to Selected (Ctrl+Right)</source>
-        <translation>Zoomaa valittuun (Ctrl+Oikea)</translation>
+        <translation>Tarkenna valittuun (Ctrl+Oikea)</translation>
     </message>
     <message>
         <source>Zoom to selected Area (Ctrl+A)</source>
-        <translation>Zoomaa valittuun alueeseen (Ctrl+A)</translation>
+        <translation>Tarkenna valittuun alueeseen (Ctrl+A)</translation>
     </message>
     <message>
         <source>Pan Work Area (Z, P)</source>
@@ -6823,7 +6830,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Toggle Point Name Text (V, P)</source>
-        <translation>Vaihtopainikkeen nimen teksti (V, P)</translation>
+        <translation>Näytä pisteen nimiteksti (V, P)</translation>
     </message>
     <message>
         <source>Images tools</source>
@@ -6843,7 +6850,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Zoomaa pisteeseen (Ctrl + Alt + P)</translation>
+        <translation>Tarkenna pisteeseen (Ctrl + Alt + P)</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -6871,7 +6878,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length to Line:&lt;/b&gt; Select point</source>
-        <translation>&lt;b&gt;Työkalu::Piste - Pituus viivalle:&lt;/b&gt; Valitse piste</translation>
+        <translation>&lt;b&gt;Työkalu::Piste - Pituus suoralle:&lt;/b&gt; Valitse piste</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Line:&lt;/b&gt; Select first point of line</source>
@@ -6891,15 +6898,15 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Työkalu::Piste - Suoran ja akselin leikkauspiste:&lt;/b&gt; Valitse viivan ensimmäinen piste</translation>
+        <translation>&lt;b&gt;Työkalu::Piste - Suoran ja akselin leikkauspiste:&lt;/b&gt; Valitse suoran ensimmäinen piste</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
-        <translation>&lt;b&gt;Työkalu::Viiva:&lt;/b&gt;:Valitse ensimmäinen piste</translation>
+        <translation>&lt;b&gt;Työkalu::Suora:&lt;/b&gt;:Valitse ensimmäinen piste</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Työkalu::Piste - Viivojen leikkauspiste:&lt;/b&gt; Valitse ensimmäisen viivan ensimmäinen piste</translation>
+        <translation>&lt;b&gt;Työkalu::Piste - Suorien leikkauspiste:&lt;/b&gt; Valitse ensimmäisen suoran ensimmäinen piste</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>
@@ -6907,7 +6914,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Interactive:&lt;/b&gt; Select start point of spline</source>
-        <translation>&lt;b&gt;Työkalu::Spline - Vuorovaikutteinen:&lt;/b&gt; Valitse splinen aloituspiste</translation>
+        <translation>&lt;b&gt;Työkalu::Spline - Interaktiivinen:&lt;/b&gt; Valitse splinen aloituspiste</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Fixed:&lt;/b&gt; Select first point of curve</source>
@@ -6915,7 +6922,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Fixed:&lt;/b&gt; Select first point of spline</source>
-        <translation>&lt;b&gt;Työkalu::Spline - Korjattu:&lt;/b&gt; Valitse splinen ensimmäinen piste</translation>
+        <translation>&lt;b&gt;Työkalu::Spline - Kiinteä:&lt;/b&gt; Valitse splinen ensimmäinen piste</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
@@ -6927,7 +6934,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curves:&lt;/b&gt; Select first curve</source>
-        <translation>&lt;b&gt;Työkalu::Piste - Leikkauskäyrät:&lt;/b&gt; Valitse ensimmäinen käyrä</translation>
+        <translation>&lt;b&gt;Työkalu::Piste - Leikkaavat Käyrät:&lt;/b&gt; Valitse ensimmäinen käyrä</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curve and Axis:&lt;/b&gt; Select curve</source>
@@ -6947,7 +6954,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arcs:&lt;/b&gt; Select first an arc</source>
-        <translation>&lt;b&gt;Työkalu::Piste - Leikkauspistekaaret:&lt;/b&gt; Valitse ensin kaari</translation>
+        <translation>&lt;b&gt;Työkalu::Piste - Leikkavat kaaret:&lt;/b&gt; Valitse ensin kaari</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circles:&lt;/b&gt; Select first circle center</source>
@@ -6975,11 +6982,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Zoom to Point</source>
-        <translation>Zoomaa pisteeseen</translation>
+        <translation>Tarkenna pisteeseen</translation>
     </message>
     <message>
         <source>Point:</source>
-        <translation>Kohta:</translation>
+        <translation>Piste:</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
@@ -7027,11 +7034,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Pen Toolbar</source>
-        <translation>Kynätyökalurivi</translation>
+        <translation>Kynä Työkalupalkki</translation>
     </message>
     <message>
         <source>Toolbars</source>
-        <translation>Työkalurivit</translation>
+        <translation>Työkalupalkit</translation>
     </message>
     <message>
         <source>File exception.</source>
@@ -7057,19 +7064,19 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Zoom to Fit All(Ctrl+9)</source>
-        <translation>Sopivaksi kaikille (Ctrl+9)</translation>
+        <translation>Tarkenna sovittaksesi kaikki (Ctrl+9)</translation>
     </message>
     <message>
         <source>Zoom 100%</source>
-        <translation>Zoomaa 100%</translation>
+        <translation>Tarkenna 100%</translation>
     </message>
     <message>
         <source>Previous Draft Block</source>
-        <translation>Edellinen luonnoslohko</translation>
+        <translation>Edellinen luonnospala</translation>
     </message>
     <message>
         <source>Next Draft Block</source>
-        <translation>Seuraava luonnoslohko</translation>
+        <translation>Seuraava luonnospala</translation>
     </message>
 </context>
 <context>
@@ -7092,7 +7099,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>unnamed</source>
-        <translation>nimetön</translation>
+        <translation>nimeämätön</translation>
     </message>
     <message>
         <source>The layout is stale.</source>
@@ -7139,15 +7146,15 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <name>MeShortcutsDialog</name>
     <message>
         <source>Copy shortcuts to the clipboard</source>
-        <translation>Kopioi pikakuvakkeet leikepöydälle</translation>
+        <translation>Kopioi pikanäppäimet leikepöydälle</translation>
     </message>
     <message>
         <source>Export shortcuts as a PDF</source>
-        <translation>Vie pikakuvakkeet PDF-tiedostona</translation>
+        <translation>Vie pikanäppäimet PDF-tiedostona</translation>
     </message>
     <message>
         <source>Send shortcuts to the printer</source>
-        <translation>Lähetä pikakuvakkeita tulostimelle</translation>
+        <translation>Lähetä pikanäppäimet tulostimelle</translation>
     </message>
     <message>
         <source>Export PDF</source>
@@ -7167,7 +7174,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Open Individual</source>
-        <translation>Avoin yksilö</translation>
+        <translation>Avaa yksilöllinen</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
@@ -7179,7 +7186,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Ctrl+Shift+O</source>
-        <translation>Ctrl+Vaihto+0</translation>
+        <translation>Ctrl+Shift+0</translation>
     </message>
     <message>
         <source>Print</source>
@@ -7199,11 +7206,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Save as</source>
-        <translation>Talenna nimi</translation>
+        <translation>Tallenna nimellä</translation>
     </message>
     <message>
         <source>Ctrl+Shift+S</source>
-        <translation>Ctrl+Vaihto+S</translation>
+        <translation>Ctrl+Shift+S</translation>
     </message>
     <message>
         <source>Export to CSV</source>
@@ -7231,7 +7238,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>SeamlyMe Shortcuts</source>
-        <translation>SeamlyMe-pikakuvakkeet</translation>
+        <translation>SeamlyMe-pikanäppäimet</translation>
     </message>
     <message>
         <source>Find previous</source>
@@ -7239,7 +7246,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Ctrl+Shift+G</source>
-        <translation>Ctrl+Vaihto+G</translation>
+        <translation>Ctrl+Shift+G</translation>
     </message>
     <message>
         <source>Find next</source>
@@ -7254,7 +7261,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <name>MeasurementDatabaseDialog</name>
     <message>
         <source>Collapse All</source>
-        <translation>Pitkännä kaikki</translation>
+        <translation>Pienennä kaikki</translation>
     </message>
     <message>
         <source>Expand All</source>
@@ -7271,12 +7278,12 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Direct Height</source>
         <comment>Measurement section</comment>
-        <translation>Suora korkeus</translation>
+        <translation>Välitön korkeus</translation>
     </message>
     <message>
         <source>Direct Width</source>
         <comment>Measurement section</comment>
-        <translation>Suora leveys</translation>
+        <translation>välitön leveys</translation>
     </message>
     <message>
         <source>Indentation</source>
@@ -7316,17 +7323,17 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Bust</source>
         <comment>Measurement section</comment>
-        <translation>Rintakuva</translation>
+        <translation>Rintakehä</translation>
     </message>
     <message>
         <source>Balance</source>
         <comment>Measurement section</comment>
-        <translation>Saldo</translation>
+        <translation>Tasapaino</translation>
     </message>
     <message>
         <source>Arm</source>
         <comment>Measurement section</comment>
-        <translation>Varsi</translation>
+        <translation>Käsivarsi</translation>
     </message>
     <message>
         <source>Leg</source>
@@ -7336,7 +7343,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Crotch and Rise</source>
         <comment>Measurement section</comment>
-        <translation>Haaraväli ja nousu</translation>
+        <translation>Haaraväli ja istumakorkeus</translation>
     </message>
     <message>
         <source>Men &amp; Tailoring</source>
@@ -7369,7 +7376,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <name>MouseCoordinates</name>
     <message>
         <source>Form</source>
-        <translation>Lomake</translation>
+        <translation>Muoto</translation>
     </message>
     <message>
         <source> XPos:</source>
@@ -7377,7 +7384,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>xpos</source>
-        <translation>kuvaa</translation>
+        <translation>xpos</translation>
     </message>
     <message>
         <source>YPos:</source>
@@ -7389,7 +7396,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Units:</source>
-        <translation>Mittayksiköt:</translation>
+        <translation>Yksiköt:</translation>
     </message>
     <message>
         <source>units</source>
@@ -7400,32 +7407,32 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <name>MoveDoubleLabel</name>
     <message>
         <source>move the first dart label</source>
-        <translation>siirrä ensimmäisen tikan otsikko</translation>
+        <translation>siirrä ensimmäisen laskoksen tunniste</translation>
     </message>
     <message>
         <source>move the second dart label</source>
-        <translation>siirrä toisen tikan otsikko</translation>
+        <translation>siirrä toisen laskoksen tunniste</translation>
     </message>
 </context>
 <context>
     <name>MoveGroupItem</name>
     <message>
         <source>Move group item</source>
-        <translation>Siirrä ryhmän kohde</translation>
+        <translation>Siirrä ryhmä kappale</translation>
     </message>
 </context>
 <context>
     <name>MoveLabel</name>
     <message>
         <source>move point label</source>
-        <translation>siirrä pisteen otsikko</translation>
+        <translation>siirrä pisteen tunniste</translation>
     </message>
 </context>
 <context>
     <name>MoveOperationLabel</name>
     <message>
         <source>move point label</source>
-        <translation>siirrä pisteen otsikko</translation>
+        <translation>siirrä pisteen tunniste</translation>
     </message>
 </context>
 <context>
@@ -7439,7 +7446,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <name>MoveSpline</name>
     <message>
         <source>move spline</source>
-        <translation>siirrä splineä</translation>
+        <translation>siirrä spline</translation>
     </message>
 </context>
 <context>
@@ -7461,7 +7468,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Unit:</source>
-        <translation>Yksikkö:</translation>
+        <translation>Mittayksikkö:</translation>
     </message>
     <message>
         <source>Base size:</source>
@@ -7469,11 +7476,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Base height:</source>
-        <translation>Pohjan korkeus:</translation>
+        <translation>Peruskorkeus:</translation>
     </message>
     <message>
         <source>Individual</source>
-        <translation>Yksilö</translation>
+        <translation>Yksilöllinen</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -7524,7 +7531,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Roll 30in</source>
-        <translation>Rullaa 30 tuumaa</translation>
+        <translation>Rulla 30 tuumaa</translation>
     </message>
     <message>
         <source>Roll 36in</source>
@@ -7547,7 +7554,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <name>PatternPieceDialog</name>
     <message>
         <source>Pattern Piece Tool</source>
-        <translation>Kuviopalatyökalu</translation>
+        <translation>Kaavapala-Työkalu</translation>
     </message>
     <message>
         <source>Properties </source>
@@ -7571,19 +7578,19 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Grainline </source>
-        <translation>Vihreä viiva </translation>
+        <translation>Langansuunta </translation>
     </message>
     <message>
         <source>Notches </source>
-        <translation>Lovet </translation>
+        <translation>Hakit </translation>
     </message>
     <message>
         <source>Piece name:</source>
-        <translation>Kappaleen nimi:</translation>
+        <translation>Palan nimi:</translation>
     </message>
     <message>
         <source>PatternPiece</source>
-        <translation>KaavoituksenPala</translation>
+        <translation>KaavanPala</translation>
     </message>
     <message>
         <source>Name can&apos;t be empty</source>
@@ -7591,11 +7598,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Letter:</source>
-        <translation>Kirje:</translation>
+        <translation>Kirjain:</translation>
     </message>
     <message>
         <source>Letter of pattern piece</source>
-        <translation>Kaavan palan kirjain</translation>
+        <translation>Kaavapalan kirjain</translation>
     </message>
     <message>
         <source>Quantity:</source>
@@ -7603,15 +7610,15 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Placement:</source>
-        <translation>Sijoitus:</translation>
+        <translation>Sijoittelu:</translation>
     </message>
     <message>
         <source>on fold</source>
-        <translation>taitettaessa</translation>
+        <translation>taiteelta</translation>
     </message>
     <message>
         <source>Fold position:</source>
-        <translation>Taittoasento:</translation>
+        <translation>Taitteen sijainti:</translation>
     </message>
     <message>
         <source>Undefined</source>
@@ -7635,7 +7642,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Right</source>
-        <translation>Oikein</translation>
+        <translation>Oikea</translation>
     </message>
     <message>
         <source>Rotation:</source>
@@ -7655,7 +7662,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>4-Way</source>
-        <translation>4-tieinen</translation>
+        <translation>Nelisuuntainen</translation>
     </message>
     <message>
         <source>Any</source>
@@ -7679,7 +7686,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Forbid piece be mirrored in a layout.</source>
-        <translation>Kappaleen peilaaminen asettelussa on kielletty.</translation>
+        <translation>Kiellä kappaleen peilaaminen asettelussa.</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -7783,7 +7790,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Use Default</source>
-        <translation>Käytä oletusarvoa</translation>
+        <translation>Käytä oletusta</translation>
     </message>
     <message>
         <source>After:</source>
@@ -7811,11 +7818,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Piece label</source>
-        <translation>Kappaleen nimi</translation>
+        <translation>Palan nimi</translation>
     </message>
     <message>
         <source>Edit pattern label</source>
-        <translation>Muokkaa kuvion otsikkoa</translation>
+        <translation>Muokkaa kaavan tunnistetta</translation>
     </message>
     <message>
         <source>Edit template</source>
@@ -7823,7 +7830,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Show piece label</source>
-        <translation>Näytä kappaleen nimi</translation>
+        <translation>Näytä palan nimi</translation>
     </message>
     <message>
         <source>Height:</source>
@@ -7835,15 +7842,15 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Pattern label</source>
-        <translation>Kuvion otsikko</translation>
+        <translation>Kaavan tunniste</translation>
     </message>
     <message>
         <source>Show pattern label</source>
-        <translation>Näytä kuvion nimi</translation>
+        <translation>Näytä kaavan tunniste</translation>
     </message>
     <message>
         <source>Show grainline</source>
-        <translation>Näytä rakeisuus</translation>
+        <translation>Näytä langansuunta</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -7863,7 +7870,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Notch:</source>
-        <translation>Lovi:</translation>
+        <translation>Hakki:</translation>
     </message>
     <message>
         <source>Type</source>
@@ -7875,11 +7882,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>T Notch</source>
-        <translation>T-lovi</translation>
+        <translation>T-Hakki</translation>
     </message>
     <message>
         <source>U Notch</source>
-        <translation>U-lovi</translation>
+        <translation>U-Hakki</translation>
     </message>
     <message>
         <source>V Internal </source>
@@ -7887,7 +7894,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>V External</source>
-        <translation>Ulkoinen V</translation>
+        <translation>V Ulkoinen</translation>
     </message>
     <message>
         <source>Castle</source>
@@ -7903,7 +7910,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Straightforward</source>
-        <translation>Yksinkertaista</translation>
+        <translation>Suoraaneteenpäin</translation>
     </message>
     <message>
         <source>Bisector</source>
@@ -7911,7 +7918,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Select to designate a corner point as a notch</source>
-        <translation>Valitse, jos haluat määrittää kulmapisteen loveksi</translation>
+        <translation>Valitse, jos haluat määrittää kulmapisteen hakiksi</translation>
     </message>
     <message>
         <source>Intersection</source>
@@ -7927,27 +7934,27 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Reset notch length to default.</source>
-        <translation>Palauta loven pituus oletusarvoon.</translation>
+        <translation>Palauta hakin pituus oletusarvoon.</translation>
     </message>
     <message>
         <source>Reset notch with to default.</source>
-        <translation>Palauta lovi oletusarvoon.</translation>
+        <translation>Palauta hakkin leveys oletusarvoon.</translation>
     </message>
     <message>
         <source>Reset notch angle to default.</source>
-        <translation>Palauta loven kulma oletusarvoon.</translation>
+        <translation>Palauta hakin kulma oletusarvoon.</translation>
     </message>
     <message>
         <source>Count:</source>
-        <translation>Lasku:</translation>
+        <translation>Määrä:</translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
-        <translation>Paina OK luodaksesi kuviopalan</translation>
+        <translation>Paina OK luodaksesi kaavapala</translation>
     </message>
     <message>
         <source>Reverse</source>
-        <translation>Käännä päin vastoin</translation>
+        <translation>Päinvastoin</translation>
     </message>
     <message>
         <source>Duplicate</source>
@@ -7955,23 +7962,23 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Notch</source>
-        <translation>Lovi</translation>
+        <translation>Hakki</translation>
     </message>
     <message>
         <source>TNotch</source>
-        <translation>TNotch</translation>
+        <translation>THakki</translation>
     </message>
     <message>
         <source>UNotch</source>
-        <translation>Yksittäinen lukko</translation>
+        <translation>UHakki</translation>
     </message>
     <message>
         <source>VInternal</source>
-        <translation>VIsperaalinen</translation>
+        <translation>VSisäinen</translation>
     </message>
     <message>
         <source>VExternal</source>
-        <translation>VElternal</translation>
+        <translation>VUlkoinen</translation>
     </message>
     <message>
         <source>Excluded</source>
@@ -7983,11 +7990,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Options</source>
-        <translation>Asetukset</translation>
+        <translation>Valinnat</translation>
     </message>
     <message>
         <source>Error. Can&apos;t save piece path.</source>
-        <translation>Virhe. Kappaleen polkua ei voida tallentaa.</translation>
+        <translation>Virhe. Palan polkua ei voida tallentaa.</translation>
     </message>
     <message>
         <source>Infinite/undefined result</source>
@@ -8027,19 +8034,19 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Edit seam allowance width</source>
-        <translation>Muokkaa saumanvaran leveyttä</translation>
+        <translation>Muokkaa saumavaran leveyttä</translation>
     </message>
     <message>
         <source>Edit seam allowance width before</source>
-        <translation>Muokkaa saumanvaran leveyttä ennen</translation>
+        <translation>Muokkaa saumavaran leveyttä ennen</translation>
     </message>
     <message>
         <source>Edit seam allowance width after</source>
-        <translation>Muokkaa saumanvaran leveyttä jälkeen</translation>
+        <translation>Muokkaa saumavaran leveyttä jälkeen</translation>
     </message>
     <message>
         <source>Grainline</source>
-        <translation>Vihreä viiva</translation>
+        <translation>Langansuunta</translation>
     </message>
     <message>
         <source>You need more points!</source>
@@ -8079,27 +8086,27 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Just front</source>
-        <translation>Aivan edessä</translation>
+        <translation>Vain edessä</translation>
     </message>
     <message>
         <source>Just rear</source>
-        <translation>Aivan takana</translation>
+        <translation>Vain takana</translation>
     </message>
     <message>
         <source>Show notch on the cut line.</source>
-        <translation>Näytä lovi leikkausviivalla.</translation>
+        <translation>Näytä hakki leikkausviivalla.</translation>
     </message>
     <message>
         <source>Show notch on Cut Line</source>
-        <translation>Näytä lovi leikkausviivalla</translation>
+        <translation>Näytä hakki Leikkausviivalla</translation>
     </message>
     <message>
         <source>Show notch on the seam line.</source>
-        <translation>Näytä lovi saumakohdassa.</translation>
+        <translation>Näytä hakki saumaviivalla.</translation>
     </message>
     <message>
         <source>Show notch on Seam Line</source>
-        <translation>Näytä lovi saumalinjassa</translation>
+        <translation>Näytä hakki Saumaviivalla</translation>
     </message>
     <message>
         <source>Show Cut Line</source>
@@ -8107,7 +8114,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Hide Seam Line</source>
-        <translation>Piilota sauma</translation>
+        <translation>Piilota saumaviiva</translation>
     </message>
     <message>
         <source>Seam Allowance</source>
@@ -8135,7 +8142,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Forbid</source>
-        <translation>Kieltää</translation>
+        <translation>Kiellä</translation>
     </message>
     <message>
         <source>Center:</source>
@@ -8147,11 +8154,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Bottom right:</source>
-        <translation>Alhaalla oikealla:</translation>
+        <translation>Alaoikea:</translation>
     </message>
     <message>
         <source>Top:</source>
-        <translation>Yläosa:</translation>
+        <translation>Yläreuna:</translation>
     </message>
     <message>
         <source>Bottom:</source>
@@ -8159,7 +8166,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Count</source>
-        <translation>Kreivi</translation>
+        <translation>Määrä</translation>
     </message>
     <message>
         <source>Length can&apos;t be less than length of 2 arrows</source>
@@ -8167,7 +8174,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
-        <translation>Paina &lt;b&gt;ENTER&lt;/b&gt;-näppäintä viimeistelläksesi osan luomisen.</translation>
+        <translation>Paina &lt;b&gt;ENTER&lt;/b&gt;-näppäintä viimeistelläksesi palan luomisen.</translation>
     </message>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
@@ -8182,39 +8189,39 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>move pattern piece label</source>
-        <translation>siirrä kuvion palan otsikko</translation>
+        <translation>siirrä kaavapalan tunniste</translation>
     </message>
     <message>
         <source>resize pattern piece label</source>
-        <translation>muuta kuviopalan otsikon kokoa</translation>
+        <translation>muuta kaavapalan tunnisteen kokoa</translation>
     </message>
     <message>
         <source>rotate pattern piece label</source>
-        <translation>kierrä kuviopalan otsikkoa</translation>
+        <translation>kierrä kaavapalan tunnistetta</translation>
     </message>
     <message>
         <source>move pattern info label</source>
-        <translation>siirrä kuvion tietojen otsikko</translation>
+        <translation>siirrä kaavan tietotunniste</translation>
     </message>
     <message>
         <source>resize pattern info label</source>
-        <translation>muuta kuvion tietootsikon kokoa</translation>
+        <translation>muuta kaavan tietotunnisteen kokoa</translation>
     </message>
     <message>
         <source>rotate pattern info label</source>
-        <translation>pyöritä kuvion tietotarraa</translation>
+        <translation>pyöritä kuvion tietotunnistetta</translation>
     </message>
     <message>
         <source>move grainline</source>
-        <translation>move grainline</translation>
+        <translation>siirrä langansuuntaviiva</translation>
     </message>
     <message>
         <source>resize grainline</source>
-        <translation>muuta langanviivojen kokoa</translation>
+        <translation>muuta langansuuntaviivan kokoa</translation>
     </message>
     <message>
         <source>rotate grainline</source>
-        <translation>kierrä langansyitä</translation>
+        <translation>kierrä langansuuntaviivaa</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8222,7 +8229,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Lock Pattern Piece</source>
-        <translation>Lukituskuvion pala</translation>
+        <translation>Lukitse kaavapala</translation>
     </message>
     <message>
         <source>Include in Layout</source>
@@ -8234,31 +8241,31 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Raise to top</source>
-        <translation>Nosta ylös</translation>
+        <translation>Nosta ylimmäksi</translation>
     </message>
     <message>
         <source>Lower to bottom</source>
-        <translation>Alhaalta alas</translation>
+        <translation>Laske alimmaksi</translation>
     </message>
     <message>
         <source>Hide Seam Line</source>
-        <translation>Piilota sauma</translation>
+        <translation>Piilota saumaviiva</translation>
     </message>
     <message>
         <source>Show Seam Allowance</source>
-        <translation>Näytä saumanvara</translation>
+        <translation>Näytä saumavara</translation>
     </message>
     <message>
         <source>Show Grainline</source>
-        <translation>Näytä langanviivojen raja</translation>
+        <translation>Näytä langansuuntaviiva</translation>
     </message>
     <message>
         <source>Show Pattern Label</source>
-        <translation>Näytä kuvion nimi</translation>
+        <translation>Näytä kaavan nimi</translation>
     </message>
     <message>
         <source>Show Piece Label</source>
-        <translation>Näytä kappaleen nimi</translation>
+        <translation>Näytä palan tunniste</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8278,11 +8285,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Disabled</source>
-        <translation>Vammaiset</translation>
+        <translation>Pois käytöstä</translation>
     </message>
     <message>
         <source>Seam line visibility changed: </source>
-        <translation>Saumalinjan näkyvyys muuttunut: </translation>
+        <translation>Saumaviivan näkyvyys muuttunut: </translation>
     </message>
     <message>
         <source>Hide</source>
@@ -8294,7 +8301,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Show seam allowance</source>
-        <translation>Näytä saumanvara</translation>
+        <translation>Näytä saumavara</translation>
     </message>
     <message>
         <source>Seam allowance visibility changed: </source>
@@ -8302,51 +8309,51 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Show grainline</source>
-        <translation>Näytä rakeisuus</translation>
+        <translation>Näytä langansuunta</translation>
     </message>
     <message>
         <source>Grainline visibility changed: </source>
-        <translation>Villipinnan näkyvyys muuttunut: </translation>
+        <translation>Langansuunnan näkyvyys muuttunut: </translation>
     </message>
     <message>
         <source>Show pattern label</source>
-        <translation>Näytä kuvion nimi</translation>
+        <translation>Näytä kaavan tunniste</translation>
     </message>
     <message>
         <source>Pattern label visibility changed: </source>
-        <translation>Kuvion otsikon näkyvyys muuttunut: </translation>
+        <translation>Kaavan tunnisteen näkyvyys muuttunut: </translation>
     </message>
     <message>
         <source>Show piece label</source>
-        <translation>Näytä kappaleen nimi</translation>
+        <translation>Näytä palan tunniste</translation>
     </message>
     <message>
         <source>Piece label visibility changed: </source>
-        <translation>Kappaleen nimikkeen näkyvyys muuttunut: </translation>
+        <translation>Palan tunnisteen näkyvyys muuttunut: </translation>
     </message>
     <message>
         <source>Piece name:</source>
-        <translation>Kappaleen nimi:</translation>
+        <translation>Palan nimi:</translation>
     </message>
     <message>
         <source>Rename Pattern Piece</source>
-        <translation>Nimeä kuviopala uudelleen</translation>
+        <translation>Nimeä kaavapala uudelleen</translation>
     </message>
     <message>
         <source>Rename pattern piece</source>
-        <translation>Nimeä kuviopala uudelleen</translation>
+        <translation>Nimeä kaavapala uudelleen</translation>
     </message>
     <message>
         <source>Piece renamed to: </source>
-        <translation>Kappaleen nimi muutettu: </translation>
+        <translation>Palan nimi muutettu: </translation>
     </message>
     <message>
         <source>Update Node Angle</source>
-        <translation>Päivitä solmukulma</translation>
+        <translation>Päivitä solmun kulma</translation>
     </message>
     <message>
         <source>Update Notch</source>
-        <translation>Päivitä lovi</translation>
+        <translation>Päivitä hakki</translation>
     </message>
     <message>
         <source>Exclude Node</source>
@@ -8361,11 +8368,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <name>PenToolBar</name>
     <message>
         <source>Current line color</source>
-        <translation>Nykyisen viivan väri</translation>
+        <translation>Nykyinen viivan väri</translation>
     </message>
     <message>
         <source>Current line type</source>
-        <translation>Nykyinen linjatyyppi</translation>
+        <translation>Nykyinen viivan tyyppi</translation>
     </message>
     <message>
         <source>Current line weight</source>
@@ -8373,7 +8380,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Reset current pen to defaults</source>
-        <translation>Palauta nykyinen kynä oletusasetuksiin</translation>
+        <translation>Palauta nykyinen kynä oletukseksi</translation>
     </message>
     <message>
         <source>Save current pen preset</source>
@@ -8428,7 +8435,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Cross</source>
-        <translation>Risti</translation>
+        <translation>Ristiin</translation>
     </message>
     <message>
         <source>Backward Diagonal</source>
@@ -8436,18 +8443,18 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Forward Diagonal</source>
-        <translation>Eteenpäin diagonaalinen</translation>
+        <translation>Eteenpäin vinottain</translation>
     </message>
     <message>
         <source>Diagonal Cross</source>
-        <translation>Diagonaalinen risti</translation>
+        <translation>Vinottain ristiin</translation>
     </message>
 </context>
 <context>
     <name>PiecesWidget</name>
     <message>
         <source>Form</source>
-        <translation>Lomake</translation>
+        <translation>Muoto</translation>
     </message>
     <message>
         <source>Name</source>
@@ -8455,23 +8462,23 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Include all pieces</source>
-        <translation>Sisällytä kaikki osat</translation>
+        <translation>Sisällytä kaikki palat</translation>
     </message>
     <message>
         <source>Exclude all pieces</source>
-        <translation>Sulje pois kaikki osat</translation>
+        <translation>Sulje pois kaikki palat</translation>
     </message>
     <message>
         <source>Invert included pieces</source>
-        <translation>Käännä sisällytetyt osat</translation>
+        <translation>Käännä sisällytetyt palat</translation>
     </message>
     <message>
         <source>Lock all pieces</source>
-        <translation>Lukitse kaikki palaset</translation>
+        <translation>Lukitse kaikki palat</translation>
     </message>
     <message>
         <source>Unlock all pieces</source>
-        <translation>Avaa kaikki palaset</translation>
+        <translation>Avaa kaikki palat</translation>
     </message>
     <message>
         <source>Invert locked pieces</source>
@@ -8479,7 +8486,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Toggle inclusion of pattern piece in layout</source>
-        <translation>Kaavan osan sisällyttäminen asetteluun päälle/pois</translation>
+        <translation>Kaavapalan sisällyttäminen asetteluun päälle/pois</translation>
     </message>
     <message>
         <source>Select Color</source>
@@ -8487,15 +8494,15 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Edit pattern piece properties</source>
-        <translation>Muokkaa kuviokappaleen ominaisuuksia</translation>
+        <translation>Muokkaa kaavapalan ominaisuuksia</translation>
     </message>
     <message>
         <source>Included</source>
-        <translation>Sisältyy</translation>
+        <translation>Sisälytetty</translation>
     </message>
     <message>
         <source>Pattern piece is included in layout</source>
-        <translation>Kaavakappale sisältyy asetteluun</translation>
+        <translation>Kaavapala sisältyy asetteluun</translation>
     </message>
     <message>
         <source>Locked</source>
@@ -8503,7 +8510,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Pattern piece is locked</source>
-        <translation>Kaavan osa on lukittu</translation>
+        <translation>Kaavapala on lukittu</translation>
     </message>
     <message>
         <source>Color</source>
@@ -8511,23 +8518,23 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Pattern piece color</source>
-        <translation>Kaavan palan väri</translation>
+        <translation>Kaavapalan väri</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>Palo</translation>
+        <translation>Pala</translation>
     </message>
     <message>
         <source>Pattern piece letter</source>
-        <translation>Kuviokappaleen kirjain</translation>
+        <translation>Kaavapalan kirjain</translation>
     </message>
     <message>
         <source>Pattern piece name</source>
-        <translation>Kaavan osan nimi</translation>
+        <translation>Kaavapalan nimi</translation>
     </message>
     <message>
         <source>Toggle lock on pattern piece</source>
-        <translation>Kaavan osan lukitus päälle/pois</translation>
+        <translation>Kaavapalan lukitus päälle/pois</translation>
     </message>
     <message>
         <source>Double click opens color selector</source>
@@ -8535,7 +8542,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Double click opens pattern piece properties dialog</source>
-        <translation>Kaksoisnapsautus avaa kuviokappaleen ominaisuusikkunan</translation>
+        <translation>Kaksoisnapsautus avaa kaavapalan ominaisuusikkunan</translation>
     </message>
 </context>
 <context>
@@ -8593,7 +8600,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <name>PreferencesConfigurationPage</name>
     <message>
         <source>Interval:</source>
-        <translation>Valitse:</translation>
+        <translation>Toistuvuus:</translation>
     </message>
     <message>
         <source>Language</source>
@@ -8629,7 +8636,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Count step:</source>
-        <translation>Laske askel:</translation>
+        <translation>Askel määrä:</translation>
     </message>
     <message>
         <source> (0 - no limit)</source>
@@ -8637,7 +8644,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Pattern Editing Warnings</source>
-        <translation>Kuvioiden muokkausta koskevat varoitukset</translation>
+        <translation>Kaavan muokkausta koskevat varoitukset</translation>
     </message>
     <message>
         <source>Confirm Item Delete</source>
@@ -8649,23 +8656,23 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Operations Default Suffix</source>
-        <translation>Toiminnon oletusliite</translation>
+        <translation>Toiminnon oletus loppuliite</translation>
     </message>
     <message>
         <source>Mirror by axis suffix:</source>
-        <translation>Peilaa akselin mukaan -liite:</translation>
+        <translation>Peilaa akselilla loppuliite:</translation>
     </message>
     <message>
         <source>Mirror by line suffix:</source>
-        <translation>Peilaa rivin mukaan -liite:</translation>
+        <translation>Peilaa rivin mukaan loppuliite:</translation>
     </message>
     <message>
         <source>Move suffix:</source>
-        <translation>Siirtoliite:</translation>
+        <translation>Siirron loppuliite:</translation>
     </message>
     <message>
         <source>Rotate suffix:</source>
-        <translation>Kierrä-liite:</translation>
+        <translation>Kierrä loppuliite:</translation>
     </message>
     <message>
         <source>File Handling</source>
@@ -8872,15 +8879,15 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <name>PreferencesGraphicsViewPage</name>
     <message>
         <source>Appearance</source>
-        <translation>Ulkonäkö</translation>
+        <translation>Ulkoasu</translation>
     </message>
     <message>
         <source>Toolbars</source>
-        <translation>Työkalurivit</translation>
+        <translation>Työkalupalkit</translation>
     </message>
     <message>
         <source>Text label appears under the icon (recommended for beginners)</source>
-        <translation>Tekstietiketi näkyy kuvakkeen alla (suositellaan aloittelijoille)</translation>
+        <translation>Tekstitietue näkyy kuvakkeen alla (suositellaan aloittelijoille)</translation>
     </message>
     <message>
         <source>Show tool toolbars</source>
@@ -8892,11 +8899,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Point</source>
-        <translation>Rinne</translation>
+        <translation>Piste</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation>Viiva</translation>
+        <translation>Suoraviiva</translation>
     </message>
     <message>
         <source>Curve</source>
@@ -8912,19 +8919,19 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Piece</source>
-        <translation>Palo</translation>
+        <translation>Pala</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation>Yksityiskohdat</translation>
+        <translation>Määrittelyt</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>Sommermahti</translation>
+        <translation>Asettelu</translation>
     </message>
     <message>
         <source>Graphical output</source>
-        <translation>Graafinen tulos</translation>
+        <translation>Graafinen ulostulo</translation>
     </message>
     <message>
         <source>Use anti-aliasing</source>
@@ -8936,7 +8943,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Label</source>
-        <translation>Tarra</translation>
+        <translation>Tunniste</translation>
     </message>
     <message>
         <source>Font:</source>
@@ -8964,7 +8971,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Zoom Rubberband</source>
-        <translation>Zoom-kuminauha</translation>
+        <translation>Tarkennus-kuminauha</translation>
     </message>
     <message>
         <source>Positive:</source>
@@ -8980,15 +8987,15 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Hover</source>
-        <translation>Leiju</translation>
+        <translation>Kohdalla</translation>
     </message>
     <message>
         <source>Drawing</source>
-        <translation>Piirtäminen</translation>
+        <translation>Piirros</translation>
     </message>
     <message>
         <source>Axis Origin</source>
-        <translation>Akselin alkuperä</translation>
+        <translation>Akselin alkupiste</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -9053,7 +9060,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Zoom</source>
-        <translation>Zoomaa</translation>
+        <translation>Tarkenna</translation>
     </message>
     <message>
         <source>Use CTRL modifier</source>
@@ -9077,7 +9084,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Zoom to selected with double click</source>
-        <translation>Zoomaa valittuun kaksoisnapsauttamalla</translation>
+        <translation>Tarkenna valittuun kaksoisnapsauttamalla</translation>
     </message>
     <message>
         <source>Pan active while Space key is pressed</source>
@@ -9121,31 +9128,31 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Center</source>
-        <translation>Keskus</translation>
+        <translation>Keskellä</translation>
     </message>
     <message>
         <source>Bottom left</source>
-        <translation>Alhaalla vasemmalla</translation>
+        <translation>Alavasemmalla</translation>
     </message>
     <message>
         <source>Bottom right</source>
-        <translation>Alhaalla oikealla</translation>
+        <translation>Alaoikealla</translation>
     </message>
     <message>
         <source>Offset</source>
-        <translation>Siirtymä</translation>
+        <translation>Offset</translation>
     </message>
     <message>
         <source>X Offset:</source>
-        <translation>X-siirtymä:</translation>
+        <translation>X-Offset:</translation>
     </message>
     <message>
         <source>Y Offset:</source>
-        <translation>Y-offset:</translation>
+        <translation>Y-Offset:</translation>
     </message>
     <message>
         <source>Show only ISO line weights in drop down boxes</source>
-        <translation>Näytä alasvetovalikoissa vain ISO-viivan paksuudet</translation>
+        <translation>Näytä alasvetovalikoissa vain ISO-standardin-viivan paksuudet</translation>
     </message>
     <message>
         <source>Workspace</source>
@@ -9157,11 +9164,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Formula Editor</source>
-        <translation>Kaavaeditori</translation>
+        <translation>Matemaattinen kaavaeditori</translation>
     </message>
     <message>
         <source>Auto clear formula</source>
-        <translation>Automaattinen kirkas kaava</translation>
+        <translation>Tyhjennä matemaattinenkaava automaattisesti</translation>
     </message>
 </context>
 <context>
@@ -9192,11 +9199,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>My Individual Measurements</source>
-        <translation>Omat mittaukseni</translation>
+        <translation>Omat yksilölliset mittaukset</translation>
     </message>
     <message>
         <source>My Multisize Measurements</source>
-        <translation>Monikokoisten vaatteideni mitat</translation>
+        <translation>Omat monikokoiset mittaukset</translation>
     </message>
     <message>
         <source>My Images</source>
@@ -9204,11 +9211,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>My Backups</source>
-        <translation>Varmuuskopioni</translation>
+        <translation>Omat varmuuskopiot</translation>
     </message>
     <message>
         <source>My Patterns</source>
-        <translation>Omat kuvioni</translation>
+        <translation>Omat kaavat</translation>
     </message>
     <message>
         <source>My Layouts</source>
@@ -9216,11 +9223,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>My Templates</source>
-        <translation>Omat mallit</translation>
+        <translation>Omat mallipohjat</translation>
     </message>
     <message>
         <source>My Label Templates</source>
-        <translation>Omat etikettimallit</translation>
+        <translation>Omat tunniste mallipohjat</translation>
     </message>
 </context>
 <context>
@@ -9235,7 +9242,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>By default hide the main path if the seam allowance was enabled</source>
-        <translation>Piilota pääpolku oletusarvoisesti, jos saumanvara on käytössä</translation>
+        <translation>Piilota pääpolku oletusarvoisesti, jos saumavara on käytössä</translation>
     </message>
     <message>
         <source>Seam allowance</source>
@@ -9259,7 +9266,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Pattern Piece</source>
-        <translation>Kaavakappale</translation>
+        <translation>Kaavapala</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -9267,11 +9274,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Notches</source>
-        <translation>Lovet</translation>
+        <translation>Hakit</translation>
     </message>
     <message>
         <source>Show notch on both the seam allowance and seam line.</source>
-        <translation>Näytä lovi sekä saumavarassa että saumalinjassa.</translation>
+        <translation>Näytä hakki sekä saumavarassa, että saumalinjassa.</translation>
     </message>
     <message>
         <source>Type:</source>
@@ -9287,11 +9294,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Grainlines</source>
-        <translation>Rakeusviivat</translation>
+        <translation>Langansuuntaviivat</translation>
     </message>
     <message>
         <source>Show grainlines</source>
-        <translation>Näytä langanviivoja</translation>
+        <translation>Näytä langansuuntaviivat</translation>
     </message>
     <message>
         <source>Lineweight:</source>
@@ -9307,7 +9314,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Seam Line</source>
-        <translation>Saumakohta</translation>
+        <translation>Saumalinja</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -9331,7 +9338,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Label data (date/time format)</source>
-        <translation>Tarratiedot (päivämäärä/kellonaika-muodossa)</translation>
+        <translation>Tunnistetiedot (päivämäärä/kellonaika-muodossa)</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -9339,11 +9346,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>T Notch</source>
-        <translation>T-lovi</translation>
+        <translation>T-Hakki</translation>
     </message>
     <message>
         <source>U Notch</source>
-        <translation>U-lovi</translation>
+        <translation>U-Hakki</translation>
     </message>
     <message>
         <source>V Internal</source>
@@ -9351,7 +9358,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>V External</source>
-        <translation>Ulkoinen V</translation>
+        <translation>V Ulkoinen</translation>
     </message>
     <message>
         <source>Castle</source>
@@ -9367,11 +9374,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Show pattern labels</source>
-        <translation>Näytä kuvioiden otsikot</translation>
+        <translation>Näytä kaavan tunniste</translation>
     </message>
     <message>
         <source>Show piece labels</source>
-        <translation>Näytä kappaleiden nimet</translation>
+        <translation>Näytä palan tunnisteet</translation>
     </message>
     <message>
         <source>Width</source>
@@ -9387,15 +9394,15 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Pattern label:</source>
-        <translation>Kuvion otsikko:</translation>
+        <translation>Kaavan tunniste:</translation>
     </message>
     <message>
         <source>Piece label:</source>
-        <translation>Kappaleen nimi:</translation>
+        <translation>Palan tunniste:</translation>
     </message>
     <message>
         <source>Label template</source>
-        <translation>Tarrapohja</translation>
+        <translation>Tunnisteen mallipohja</translation>
     </message>
     <message>
         <source>Import template</source>
@@ -9403,11 +9410,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Show notch on Cut Line</source>
-        <translation>Näytä lovi leikkausviivalla</translation>
+        <translation>Näytä hakki leikkauslinjalla</translation>
     </message>
     <message>
         <source>Show notch on Seam Line</source>
-        <translation>Näytä lovi saumalinjassa</translation>
+        <translation>Näytä hakki saumalinjassa</translation>
     </message>
     <message>
         <source>Internals</source>
@@ -9419,7 +9426,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Hide Seam Line</source>
-        <translation>Piilota sauma</translation>
+        <translation>Piilota saumaviiva</translation>
     </message>
     <message>
         <source>Arrow length:</source>
@@ -9438,14 +9445,14 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <name>QCoreApplication</name>
     <message>
         <source>Based on Qt %1 (%2, %3 bit)</source>
-        <translation>Käännetty käyttäen Qt %1 (%2, %3 bit)</translation>
+        <translation>Perustuu Qt %1 (%2, %3 bit)</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create new pattern piece to start working.</source>
-        <translation>Aloita luomalla uusi kaava.</translation>
+        <translation>Aloita luomalla uusi kaavapala.</translation>
     </message>
     <message>
         <source>Property</source>
@@ -9467,7 +9474,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Wrong tag name &apos;%1&apos;.</source>
-        <translation>Väärä tunnisteen nimi &apos;%1&apos;.</translation>
+        <translation>Väärä tagin nimi &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Can&apos;t convert toUInt parameter</source>
@@ -9499,7 +9506,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Interfacing</source>
-        <translation>Liitäntä</translation>
+        <translation>Tukikangas</translation>
     </message>
     <message>
         <source>Interlining</source>
@@ -9511,15 +9518,15 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>on fold</source>
-        <translation>taitettaessa</translation>
+        <translation>taiteelta</translation>
     </message>
     <message>
         <source>Union piece</source>
-        <translation>Unionin yksikkö</translation>
+        <translation>Yhdistä pala</translation>
     </message>
     <message>
         <source>move piece</source>
-        <translation>siirrä nappulaa</translation>
+        <translation>siirrä pala</translation>
     </message>
     <message>
         <source>Solidline</source>
@@ -9527,7 +9534,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Dash</source>
-        <translation>Viivahdus</translation>
+        <translation>Katkoviiva</translation>
     </message>
     <message>
         <source>Dot</source>
@@ -9535,7 +9542,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Dash Dot</source>
-        <translation>Pisteviiva</translation>
+        <translation>Katkoviiva piste</translation>
     </message>
     <message>
         <source>Dash Dot Dot</source>
@@ -9778,14 +9785,14 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <name>RemoveGroupItem</name>
     <message>
         <source>Delete group item</source>
-        <translation>Poista ryhmän kohde</translation>
+        <translation>Poista ryhmä kohde</translation>
     </message>
 </context>
 <context>
     <name>RenameDraftBlock</name>
     <message>
         <source>rename pattern piece</source>
-        <translation>nimeä kuviopala uudelleen</translation>
+        <translation>nimeä kaavapala uudelleen</translation>
     </message>
 </context>
 <context>
@@ -9803,7 +9810,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <name>SavePieceOptions</name>
     <message>
         <source>save piece options</source>
-        <translation>tallenna kappaleen asetukset</translation>
+        <translation>tallenna palan asetukset</translation>
     </message>
 </context>
 <context>
@@ -9832,7 +9839,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Pattern making system</source>
-        <translation>Kaavojen tekojärjestelmä</translation>
+        <translation>Kaavajärjestelmä</translation>
     </message>
     <message>
         <source>System:</source>
@@ -9856,7 +9863,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Toolbar</source>
-        <translation>Työkalurivi</translation>
+        <translation>Työkalupalkki</translation>
     </message>
     <message>
         <source>The text appears under the icon (recommended for beginners).</source>
@@ -9864,11 +9871,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Default height and size</source>
-        <translation>Oletuskorkeus ja -koko</translation>
+        <translation>Oletuspituus ja -koko</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Korkeus:</translation>
+        <translation>Pituus:</translation>
     </message>
     <message>
         <source>Size:</source>
@@ -9943,15 +9950,15 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>My Individual Measurements</source>
-        <translation>Omat mittaukseni</translation>
+        <translation>Omat yksilölliset mittaukset</translation>
     </message>
     <message>
         <source>My Multisize Measurements</source>
-        <translation>Monikokoisten vaatteideni mitat</translation>
+        <translation>Omat monikokoiset mittaukset</translation>
     </message>
     <message>
         <source>My Templates</source>
-        <translation>Omat mallit</translation>
+        <translation>Omat mallipohjat</translation>
     </message>
     <message>
         <source>Paths that SeamlyME uses</source>
@@ -9959,7 +9966,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>My Body Scans</source>
-        <translation>Kehoni skannaukset</translation>
+        <translation>Omat kehoskannaukset</translation>
     </message>
 </context>
 <context>
@@ -9970,11 +9977,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Welcome to SeamlyME</source>
-        <translation>Tervetuloa SeamlyME:hen</translation>
+        <translation>Tervetuloa SeamlyME:hin</translation>
     </message>
     <message>
         <source>3D Look users</source>
-        <translation>3D-ulkoasun käyttäjät</translation>
+        <translation>3D-Look käyttäjät</translation>
     </message>
     <message>
         <source>To utilize a 3D Look body scan the file needs to be converted to SeamlyME format. </source>
@@ -9998,7 +10005,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Sets the default units for a new measurement file.</source>
-        <translation>Asettaa uuden mittaustiedoston oletusyksiköt.</translation>
+        <translation>Asettaa oletusyksiköt uusille mittatiedostoille.</translation>
     </message>
     <message>
         <source>GUI language:</source>
@@ -10014,7 +10021,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Centimeters</source>
-        <translation>Senttimetriä</translation>
+        <translation>Senttimetrit</translation>
     </message>
     <message>
         <source>Millimeters</source>
@@ -10022,7 +10029,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Inches</source>
-        <translation>Tuumaa</translation>
+        <translation>Tuumat</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -10085,7 +10092,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Sets the default units for a new measurement file.</source>
-        <translation>Asettaa uuden mittaustiedoston oletusyksiköt.</translation>
+        <translation>Asettaa oletus mittayksiköt uudelle mittatiedostolle.</translation>
     </message>
     <message>
         <source>GUI language:</source>
@@ -10097,7 +10104,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Centimeters</source>
-        <translation>Senttimetriä</translation>
+        <translation>Senttimetrit</translation>
     </message>
     <message>
         <source>Millimeters</source>
@@ -10105,7 +10112,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Inches</source>
-        <translation>Tuumaa</translation>
+        <translation>Tuumat</translation>
     </message>
     <message>
         <source>Sets the language used for Seamly2D.</source>
@@ -10176,22 +10183,22 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Piece color changed: </source>
-        <translation>Palikan väri muuttunut: </translation>
+        <translation>Palan väri muuttunut: </translation>
     </message>
 </context>
 <context>
     <name>ShortcutsDialog</name>
     <message>
         <source>Copy shortcuts to the clipboard</source>
-        <translation>Kopioi pikakuvakkeet leikepöydälle</translation>
+        <translation>Kopioi pikanäppäimet leikepöydälle</translation>
     </message>
     <message>
         <source>Export shortcuts as a PDF</source>
-        <translation>Vie pikakuvakkeet PDF-tiedostona</translation>
+        <translation>Vie pikanäppäimet PDF-tiedostona</translation>
     </message>
     <message>
         <source>Send shortcuts to the Printer</source>
-        <translation>Lähetä pikakuvakkeita tulostimelle</translation>
+        <translation>Lähetä pikanäppäimet tulostimelle</translation>
     </message>
     <message>
         <source>Seamly2D Shortcuts</source>
@@ -10235,11 +10242,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Save as</source>
-        <translation>Talenna nimi</translation>
+        <translation>Talenna nimellä</translation>
     </message>
     <message>
         <source>Ctrl+Shift+S</source>
-        <translation></translation>
+        <translation>Ctrl+Shift+S</translation>
     </message>
     <message>
         <source>Keyboard Shortcuts</source>
@@ -10247,7 +10254,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Print</source>
-        <translation>Tulostaja</translation>
+        <translation>Tulosta</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
@@ -10255,7 +10262,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Pattern Preferences</source>
-        <translation>Kuvioasetukset</translation>
+        <translation>Kaavan asetukset</translation>
     </message>
     <message>
         <source>Ctrl+Shift+Comma</source>
@@ -10299,23 +10306,23 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Previous Draft Block</source>
-        <translation>Edellinen luonnoslohko</translation>
+        <translation>Edellinen luonnospala</translation>
     </message>
     <message>
         <source>Ctrl+PgUp</source>
-        <translation>Ctrl+Sivu ylös</translation>
+        <translation>Ctrl+PgUp</translation>
     </message>
     <message>
         <source>Next Draft Block</source>
-        <translation>Seuraava luonnoslohko</translation>
+        <translation>Seuraava luonnospala</translation>
     </message>
     <message>
         <source>Ctrl+PgDown</source>
-        <translation>Ctrl+Sivu alas</translation>
+        <translation>Ctrl+PgDown</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Näytössä</translation>
+        <translation>Näytä</translation>
     </message>
     <message>
         <source>Draft Mode</source>
@@ -10323,15 +10330,15 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Shift+D</source>
-        <translation>Vaihto+D</translation>
+        <translation>Shift+D</translation>
     </message>
     <message>
         <source>Piece Mode</source>
-        <translation>Palotila</translation>
+        <translation>Palatila</translation>
     </message>
     <message>
         <source>Shift+P</source>
-        <translation>Vaihto+P</translation>
+        <translation>Shift+P</translation>
     </message>
     <message>
         <source>Layout Mode</source>
@@ -10339,7 +10346,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Shift+L</source>
-        <translation>Vaihto+L</translation>
+        <translation>Shift+L</translation>
     </message>
     <message>
         <source>Zoom In</source>
@@ -10351,7 +10358,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation>Loitunna</translation>
+        <translation>Loitonna</translation>
     </message>
     <message>
         <source>Ctrl+-</source>
@@ -10359,7 +10366,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Zoom 100%</source>
-        <translation>Zoomaa 100%</translation>
+        <translation>Tarkenna 100%</translation>
     </message>
     <message>
         <source>Ctrl+0</source>
@@ -10367,7 +10374,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Zoom to Point</source>
-        <translation>Zoomaa pisteeseen</translation>
+        <translation>Tarkenna pisteeseen</translation>
     </message>
     <message>
         <source>Ctrl+Alt+P</source>
@@ -10375,7 +10382,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Fit All</source>
-        <translation>Sopii kaikille</translation>
+        <translation>Sovita kaikki</translation>
     </message>
     <message>
         <source>Ctrl+9</source>
@@ -10399,7 +10406,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Area</source>
-        <translation>Arvo</translation>
+        <translation>Alue</translation>
     </message>
     <message>
         <source>Ctrl+A</source>
@@ -10407,7 +10414,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Pan</source>
-        <translation>Pannu</translation>
+        <translation>Panoroi</translation>
     </message>
     <message>
         <source>Show Name Text</source>
@@ -10451,11 +10458,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Grainlines</source>
-        <translation>Rakeusviivat</translation>
+        <translation>Langansuuntaviivat</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Tuntisteet</translation>
+        <translation>Tunnisteet</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -10491,15 +10498,15 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>New Draft Block</source>
-        <translation>Uusi luonnoslohko</translation>
+        <translation>Uusi luonnospala</translation>
     </message>
     <message>
         <source>Ctrl+Shift+N</source>
-        <translation>Ctrl+Vaihto+N</translation>
+        <translation>Ctrl+Shift+N</translation>
     </message>
     <message>
         <source>Rename Draft Block</source>
-        <translation>Nimeä luonnoslohko uudelleen</translation>
+        <translation>Nimeä luonnospala uudelleen</translation>
     </message>
     <message>
         <source>Point</source>
@@ -10511,7 +10518,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>On Line</source>
-        <translation>Verkossa</translation>
+        <translation>Suoralla</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
@@ -10519,11 +10526,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>On Bisector</source>
-        <translation>Puolittalla</translation>
+        <translation>Puolittajalla</translation>
     </message>
     <message>
         <source>Length to Line</source>
-        <translation>Pituus viivan kohdalle</translation>
+        <translation>Pituus suoralle</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
@@ -10551,7 +10558,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Shift+O, Shift+L</source>
-        <translation>Vaihto+O, Vaihto+L</translation>
+        <translation>Shift+O, Shift+L</translation>
     </message>
     <message>
         <source>Line</source>
@@ -10591,19 +10598,19 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Alt+Shift+C</source>
-        <translation>Alt+Vaihto+C</translation>
+        <translation>Alt+Shift+C</translation>
     </message>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Ura-akseli - Korjattu</translation>
+        <translation>Spline - Kiinteä</translation>
     </message>
     <message>
         <source>Alt+Shift+S</source>
-        <translation>Alt+Vaihto+S</translation>
+        <translation>Alt+Shift+S</translation>
     </message>
     <message>
         <source>Point - On Curve</source>
-        <translation>Rintä - Kaarteella</translation>
+        <translation>Piste - Käyrällä</translation>
     </message>
     <message>
         <source>Point - On Spline	</source>
@@ -10631,11 +10638,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Alt+Shift+A</source>
-        <translation>Alt+Vaihto+A</translation>
+        <translation>Alt+Shift+A</translation>
     </message>
     <message>
         <source>Point - On Arc</source>
-        <translation>Rinte - Kaarella</translation>
+        <translation>Piste - Kaarella</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Axis</source>
@@ -10651,11 +10658,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Shift+I, Shift+C</source>
-        <translation>Vaihto+I, Vaihto+C</translation>
+        <translation>Shift+I, Shift+C</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
-        <translation>Rintä - Ympyrän ja tangentin leikkauspiste</translation>
+        <translation>Piste - Ympyrän ja tangentin leikkauspiste</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent</source>
@@ -10675,19 +10682,19 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Add Objects to Group</source>
-        <translation>Lisää objekteja joukko</translation>
+        <translation>Lisää objekteja ryhmään</translation>
     </message>
     <message>
         <source>Rotation</source>
-        <translation>Pyöriminen</translation>
+        <translation>Kierto</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
-        <translation>Peili riviltä</translation>
+        <translation>Peilaa suoralla</translation>
     </message>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Peili akselilla</translation>
+        <translation>Peilaa akselilla</translation>
     </message>
     <message>
         <source>Move</source>
@@ -10699,11 +10706,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>True Darts</source>
-        <translation>Oikea tikanheitto</translation>
+        <translation>Tarkka laskos</translation>
     </message>
     <message>
         <source>Export Draft Blocks</source>
-        <translation>Vie luonnoslohkot</translation>
+        <translation>Vie luonnospalat</translation>
     </message>
     <message>
         <source>Images</source>
@@ -10719,11 +10726,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Pattern Piece</source>
-        <translation>Kaavakappale</translation>
+        <translation>Kaavapala</translation>
     </message>
     <message>
         <source>New Pattern Piece</source>
-        <translation>Uusi kuviopala</translation>
+        <translation>Uusi kaavapala</translation>
     </message>
     <message>
         <source>Anchor Point</source>
@@ -10743,7 +10750,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Toggle Lock</source>
-        <translation>Lukituskytkin</translation>
+        <translation>Lukitus päällä/pois</translation>
     </message>
     <message>
         <source>Ctrl+L</source>
@@ -10759,7 +10766,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Raise To Top</source>
-        <translation>Nosta ylös</translation>
+        <translation>Nosta ylimmäksi</translation>
     </message>
     <message>
         <source>Ctrl+Home</source>
@@ -10767,7 +10774,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Lower To Bottom</source>
-        <translation>Alhaalta alas</translation>
+        <translation>Laske alimmaksi</translation>
     </message>
     <message>
         <source>Ctrl+End</source>
@@ -10783,7 +10790,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Del</source>
-        <translation>Poista</translation>
+        <translation>Del</translation>
     </message>
     <message>
         <source>Details</source>
@@ -10791,11 +10798,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Unite Pieces</source>
-        <translation>Yhdistä palaset</translation>
+        <translation>Yhdistä palat</translation>
     </message>
     <message>
         <source>Export Pieces</source>
-        <translation>Vie kappaleita</translation>
+        <translation>Vie palat</translation>
     </message>
     <message>
         <source>Layout</source>
@@ -10807,15 +10814,15 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Export Layout</source>
-        <translation>Vie asetelma</translation>
+        <translation>Vie asetelu</translation>
     </message>
     <message>
         <source>Last Tool</source>
-        <translation>Viimeinen työkalu</translation>
+        <translation>Viimeisin työkalu</translation>
     </message>
     <message>
         <source>Ctrl+Shift+L</source>
-        <translation>Ctrl+Vaihto+L</translation>
+        <translation>Ctrl+Shift+L</translation>
     </message>
     <message>
         <source>History</source>
@@ -10827,7 +10834,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Utilities</source>
-        <translation>Yrityspalvelut</translation>
+        <translation>Apuvälineet</translation>
     </message>
     <message>
         <source>Calculator</source>
@@ -10835,7 +10842,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Ctrl+Shift+C</source>
-        <translation>Ctrl+Vaihto+C</translation>
+        <translation>Ctrl+Shift+C</translation>
     </message>
     <message>
         <source>Decimal Chart</source>
@@ -10843,7 +10850,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Ctrl+Shift+D</source>
-        <translation>Ctrl+Vaihto+D</translation>
+        <translation>Ctrl+Shift+D</translation>
     </message>
     <message>
         <source>Help</source>
@@ -10851,18 +10858,18 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Export PDF</source>
-        <translation>Katso PDF-tiedosto</translation>
+        <translation>Vie PDF-tiedosto</translation>
     </message>
 </context>
 <context>
     <name>ShowDoublePointName</name>
     <message>
         <source>toggle the first dart visibility</source>
-        <translation>ensimmäisen tikan näkyvyyden vaihtaminen</translation>
+        <translation>ensimmäisen laskoksen näkyvyys päälle/pois</translation>
     </message>
     <message>
         <source>toggle the second dart visibility</source>
-        <translation>kytkee toisen tikan näkyvyyden päälle/pois</translation>
+        <translation>toisen laskoksen näkyvyys päälle/pois</translation>
     </message>
 </context>
 <context>
@@ -10893,7 +10900,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Export PDF</source>
-        <translation>Katso PDF-tiedosto</translation>
+        <translation>Vie PDF-tiedosto</translation>
     </message>
     <message>
         <source>_info</source>
@@ -10942,7 +10949,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Ctrl+Shift+G</source>
-        <translation>Ctrl+Vaihto+G</translation>
+        <translation>Ctrl+Shift+G</translation>
     </message>
     <message>
         <source>Find Next</source>
@@ -10978,31 +10985,31 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>In sizes</source>
-        <translation>Kokoina</translation>
+        <translation>Kooissa</translation>
     </message>
     <message>
         <source>In heights</source>
-        <translation>Korkeuksissa</translation>
+        <translation>Pituuksissa</translation>
     </message>
     <message>
         <source>Move measurement top</source>
-        <translation>Siirrä mittaus ylös</translation>
+        <translation>Siirrä mitta ylimmäksi</translation>
     </message>
     <message>
         <source>Move measurement up</source>
-        <translation>Siirrä mittayksikköä ylöspäin</translation>
+        <translation>Siirrä mitta ylöspäin</translation>
     </message>
     <message>
         <source>Move measurement down</source>
-        <translation>Siirrä mittausta alaspäin</translation>
+        <translation>Siirrä mitta alaspäin</translation>
     </message>
     <message>
         <source>Move measurement bottom</source>
-        <translation>Siirrä mittausta alas</translation>
+        <translation>Siirrä mitta alimmaksi</translation>
     </message>
     <message>
         <source>Delete measurement</source>
-        <translation>Poista mittaus</translation>
+        <translation>Poista mitta</translation>
     </message>
     <message>
         <source>Details</source>
@@ -11014,11 +11021,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Measurement&apos;s name in a formula</source>
-        <translation>Mittauksen nimi kaavassa</translation>
+        <translation>Mittan nimi matemaattisessa kaavassa</translation>
     </message>
     <message>
         <source>Measurement&apos;s name in a formula.</source>
-        <translation>Mittauksen nimi kaavassa.</translation>
+        <translation>Mittan nimi matemaattisessa kaavassa.</translation>
     </message>
     <message>
         <source>Full name:</source>
@@ -11026,7 +11033,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Measurement&apos;s human-readable name.</source>
-        <translation>Mittauksen ihmisen luettavissa oleva nimi.</translation>
+        <translation>Mittan ihmisen luettavissa oleva nimi.</translation>
     </message>
     <message>
         <source>Calculated value:</source>
@@ -11034,11 +11041,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Kaava:</translation>
+        <translation>Matemaattinenkaava:</translation>
     </message>
     <message>
         <source>Function Wizard</source>
-        <translation>Funktioiden luontiavustaja</translation>
+        <translation>Kaavavelho</translation>
     </message>
     <message>
         <source>Base value:</source>
@@ -11046,11 +11053,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>In sizes:</source>
-        <translation>Kokoina:</translation>
+        <translation>Kooissa:</translation>
     </message>
     <message>
         <source>In heights:</source>
-        <translation>Korkeuksissa:</translation>
+        <translation>Pituuksissa:</translation>
     </message>
     <message>
         <source>Description:</source>
@@ -11078,7 +11085,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>PM system:</source>
-        <translation>PM-järjestelmä:</translation>
+        <translation>Kaavoitusjärjestelmä:</translation>
     </message>
     <message>
         <source>Base size:</source>
@@ -11090,11 +11097,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Base height:</source>
-        <translation>Pohjan korkeus:</translation>
+        <translation>Peruspituus:</translation>
     </message>
     <message>
         <source>Base height value</source>
-        <translation>Peruskorkeuden arvo</translation>
+        <translation>Peruspituuden arvo</translation>
     </message>
     <message>
         <source>Given name:</source>
@@ -11130,7 +11137,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Notes:</source>
-        <translation>Huomautuksia:</translation>
+        <translation>Muistiinpanoja:</translation>
     </message>
     <message>
         <source>File</source>
@@ -11154,7 +11161,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Gradation</source>
-        <translation>Sävytys</translation>
+        <translation>Sarjonta</translation>
     </message>
     <message>
         <source>Measurement diagram</source>
@@ -11166,7 +11173,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Open individual ...</source>
-        <translation>Avoin yksilö...</translation>
+        <translation>Avaa yksilöllinen...</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
@@ -11186,7 +11193,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Ctrl+Shift+S</source>
-        <translation>Ctrl+Vaihto+S</translation>
+        <translation>Ctrl+Shift+S</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -11258,7 +11265,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Import from a pattern</source>
-        <translation>Tuo kuviosta</translation>
+        <translation>Tuo kaavasta</translation>
     </message>
     <message>
         <source>Create from existing ...</source>
@@ -11270,7 +11277,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Export to CSV</source>
-        <translation>Katso CSV-tiedostoon</translation>
+        <translation>Vie CSV-tiedostoon</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -11286,7 +11293,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Print</source>
-        <translation>Tulostaja</translation>
+        <translation>Tulosta</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
@@ -11294,11 +11301,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>3D Measure Up</source>
-        <translation>3D-mittaus</translation>
+        <translation>3D Measure Up</translation>
     </message>
     <message>
         <source>3D Look</source>
-        <translation>3D-ulkoasu</translation>
+        <translation>3D Look</translation>
     </message>
     <message>
         <source>Show in Finder</source>
@@ -11366,7 +11373,7 @@ tiedoston SeamlyME:hen normaalisti.
     </message>
     <message>
         <source>Height:</source>
-        <translation>Korkeus:</translation>
+        <translation>Pituus:</translation>
     </message>
     <message>
         <source>Size:</source>
@@ -11374,7 +11381,7 @@ tiedoston SeamlyME:hen normaalisti.
     </message>
     <message>
         <source>Pattern unit:</source>
-        <translation>Kuvioyksikkö:</translation>
+        <translation>Kaava mittayksikkö:</translation>
     </message>
     <message>
         <source>untitled</source>
@@ -11458,11 +11465,11 @@ tiedoston SeamlyME:hen normaalisti.
     </message>
     <message>
         <source>File was not saved yet.</source>
-        <translation>Tiedostoa ei ole vielä.</translation>
+        <translation>Tiedostoa ei ole tallennettu vielä.</translation>
     </message>
     <message>
         <source>Unsaved changes</source>
-        <translation>Tallentamattomat keskustelut</translation>
+        <translation>Tallentamattomat muutokset</translation>
     </message>
     <message>
         <source>Measurements have been modified.
@@ -11484,7 +11491,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>read only</source>
-        <translation>turhamainen luku</translation>
+        <translation>Vain luku</translation>
     </message>
     <message>
         <source>Empty field</source>
@@ -11508,7 +11515,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Export from multisize measurements is not supported.</source>
-        <translation>Usean koon mittauksista vientiä ei tueta.</translation>
+        <translation>Monikokoisten mittausten vientiä ei tueta.</translation>
     </message>
     <message>
         <source>&amp;New Window</source>
@@ -11536,7 +11543,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file.</source>
-        <translation>Tuntematon virhe tapahtui, sillä täysin osio esti lukituksen tiedoston kirjoittamisen.</translation>
+        <translation>Tuntematon virhe tapahtui, sillä täysi osio esti lukituksen tiedoston kirjoittamisen.</translation>
     </message>
     <message>
         <source>unknown</source>
@@ -11570,11 +11577,11 @@ Haluatko tallentaa muutokset?</translation>
     <name>TogglePieceInLayout</name>
     <message>
         <source>Piece in Layout List</source>
-        <translation>Osa asetteluluettelossa</translation>
+        <translation>Pala asetteluluettelossa</translation>
     </message>
     <message>
         <source>Include piece in layout changed: </source>
-        <translation>Sisällytä pala asetteluun muuttunut: </translation>
+        <translation>Sisällytetty pala asettelussa muuttunut: </translation>
     </message>
     <message>
         <source>Include</source>
@@ -11593,7 +11600,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Piece lock changed: </source>
-        <translation>Nappulalukko muutettu: </translation>
+        <translation>Palalukko muutettu: </translation>
     </message>
     <message>
         <source>Locked</source>
@@ -11612,23 +11619,23 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>First point</source>
-        <translation>Ensimmäisen rinne</translation>
+        <translation>Ensimmäisen piste</translation>
     </message>
     <message>
         <source>Second point</source>
-        <translation>Toinen rinne</translation>
+        <translation>Toinen piste</translation>
     </message>
     <message>
         <source>Highest point</source>
-        <translation>Korkein kohta</translation>
+        <translation>Korkein piste</translation>
     </message>
     <message>
         <source>Lowest point</source>
-        <translation>Alin kohta</translation>
+        <translation>Alin piste</translation>
     </message>
     <message>
         <source>Leftmost point</source>
-        <translation>Vasenin piste</translation>
+        <translation>Vasemmanpuoleisin piste</translation>
     </message>
     <message>
         <source>Rightmost point</source>
@@ -11636,18 +11643,18 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Vertical axis</source>
-        <translation>Pystyakseli</translation>
+        <translation>Pysty-akseli</translation>
     </message>
     <message>
         <source>Horizontal axis</source>
-        <translation>Vaakasuora akseli</translation>
+        <translation>Vaaka-akseli</translation>
     </message>
 </context>
 <context>
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
-        <translation>Liittotyökalu</translation>
+        <translation>Yhdistämistyökalu</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do you really want to unite details?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -11659,7 +11666,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Pattern piece should have at least two points and three objects</source>
-        <translation>Kuviokappaleessa tulisi olla vähintään kaksi pistettä ja kolme objektia</translation>
+        <translation>Kaavapalassa tulisi olla vähintään kaksi pistettä ja kolme objektia</translation>
     </message>
     <message>
         <source>Select a second point</source>
@@ -11682,7 +11689,7 @@ Haluatko tallentaa muutokset?</translation>
     <name>UnionTool</name>
     <message>
         <source>union pieces</source>
-        <translation>yhdistyskappaleet</translation>
+        <translation>yhdistä palat</translation>
     </message>
 </context>
 <context>
@@ -11751,7 +11758,7 @@ Haluatko tallentaa muutokset?</translation>
     <name>VAbstractCubicBezierPath</name>
     <message>
         <source>Can&apos;t cut this spline</source>
-        <translation>Tätä uraa ei voi leikata</translation>
+        <translation>Tätä splineä ei voi leikata</translation>
     </message>
 </context>
 <context>
@@ -11770,7 +11777,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Export to CSV</source>
-        <translation>Katso CSV-tiedostoon</translation>
+        <translation>Vie CSV-tiedostoon</translation>
     </message>
 </context>
 <context>
@@ -11807,7 +11814,7 @@ Haluatko tallentaa muutokset?</translation>
     <name>VAbstractPieceData</name>
     <message>
         <source>Piece</source>
-        <translation>Palo</translation>
+        <translation>Pala</translation>
     </message>
 </context>
 <context>
@@ -11825,15 +11832,15 @@ Haluatko tallentaa muutokset?</translation>
     <name>VAbstractTool</name>
     <message>
         <source>Edit wrong formula</source>
-        <translation>Muokkaa väärää kaavaa</translation>
+        <translation>Muokkaa väärää matemaattistakaavaa</translation>
     </message>
     <message>
         <source>Confirm deletion</source>
-        <translation>Varmista poistaminen</translation>
+        <translation>Vahvista poistaminen</translation>
     </message>
     <message>
         <source>Do you really want to delete?</source>
-        <translation>Haluatko todella poista?</translation>
+        <translation>Haluatko todella poistaa?</translation>
     </message>
     <message>
         <source>Green</source>
@@ -11873,7 +11880,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Deep Pink</source>
-        <translation>Syvänpunainen</translation>
+        <translation>Syvänpinkki</translation>
     </message>
     <message>
         <source>Violet</source>
@@ -11941,7 +11948,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Hot Pink</source>
-        <translation>Kuumanvaaleanpunainen</translation>
+        <translation>Kirkkaanpinkki</translation>
     </message>
     <message>
         <source>Blue Violet</source>
@@ -11973,15 +11980,15 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Powder Blue</source>
-        <translation>Puuterisininen</translation>
+        <translation>Puuterin sininen</translation>
     </message>
     <message>
         <source>Light Sky Blue</source>
-        <translation>Vaaleansininen</translation>
+        <translation>Vaalea taivaansininen</translation>
     </message>
     <message>
         <source>Navy</source>
-        <translation>Laivasto</translation>
+        <translation>Laivastonsininen</translation>
     </message>
     <message>
         <source>Magenta</source>
@@ -12001,7 +12008,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Dark Sea Green</source>
-        <translation>Tummanvihreä</translation>
+        <translation>Tumma merenvihreä</translation>
     </message>
     <message>
         <source>Light Grey</source>
@@ -12021,7 +12028,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>White Smoke</source>
-        <translation>Valkoista savua</translation>
+        <translation>Valkoinen savu</translation>
     </message>
     <message>
         <source>White</source>
@@ -12041,7 +12048,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Tan</source>
-        <translation>Rusketus</translation>
+        <translation>Kellanruskea</translation>
     </message>
     <message>
         <source>Beige</source>
@@ -12052,11 +12059,11 @@ Haluatko tallentaa muutokset?</translation>
     <name>VCommandLine</name>
     <message>
         <source>Seamly2D open source patternmaking program.</source>
-        <translation>Avoimen lähdekoodin Seamly2D-kuviointiohjelma.</translation>
+        <translation>Avoimen lähdekoodin Seamly2D-kaavoitusohjelma.</translation>
     </message>
     <message>
         <source>Seamly2D pattern file (.sm2d)</source>
-        <translation>Seamly2D-kuviotiedosto (.sm2d)</translation>
+        <translation>Seamly2D-kaavatiedosto (.sm2d)</translation>
     </message>
     <message>
         <source>The base filename of exported layout files. Use it to enable console export mode.</source>
@@ -12068,7 +12075,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>The path to output destination folder. By default the directory at which the application was started.</source>
-        <translation>Polku tulosteen kohdekansioon. Oletusarvoisesti hakemisto, josta sovellus käynnistettiin.</translation>
+        <translation>Polku kohdekansioon. Oletusarvoisesti hakemisto, josta sovellus käynnistettiin.</translation>
     </message>
     <message>
         <source>The destination folder</source>
@@ -12104,23 +12111,23 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Set size value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
-        <translation>Aseta kokoarvo kuviotiedostolle, joka avattiin monikokoisilla mitoilla (vientitilassa). Kelvolliset arvot: %1cm.</translation>
+        <translation>Aseta kokoarvo kaavatiedostolle, joka avattiin monikokoisilla mitoilla (vientitilassa). Kelvolliset arvot: %1cm.</translation>
     </message>
     <message>
         <source>The size value</source>
-        <translation>Kokoarvo</translation>
+        <translation>Koonarvo</translation>
     </message>
     <message>
         <source>Set height value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
-        <translation>Aseta korkeusarvo kuviotiedostolle, joka avattiin monikokoisilla mitoilla (vientitilassa). Kelvolliset arvot: %1cm.</translation>
+        <translation>Aseta pituusarvo kaavatiedostolle, joka avattiin monikokoisilla mitoilla (vientitilassa). Kelvolliset arvot: %1cm.</translation>
     </message>
     <message>
         <source>The height value</source>
-        <translation>Korkeuden arvo</translation>
+        <translation>Pituuden arvo</translation>
     </message>
     <message>
         <source>Number corresponding to page template (default = 0, export mode):</source>
-        <translation>Sivumallia vastaava numero (oletus = 0, vientitila):</translation>
+        <translation>Sivun mallipohjaa vastaava numero (oletus = 0, vientitila):</translation>
     </message>
     <message>
         <source>Template number</source>
@@ -12152,7 +12159,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Ignore margins printing (export mode). Disable value keys: &quot;%1&quot;, &quot;%2&quot;, &quot;%3&quot;, &quot;%4&quot;. Set all margins to 0.</source>
-        <translation>Älä huomioi marginaalitulostusta (vientitila). Poista käytöstä arvoavaimet: &quot;%1&quot;, &quot;%2&quot;, &quot;%3&quot;, &quot;%4&quot;. Aseta kaikki marginaalit arvoon 0.</translation>
+        <translation>Älä huomioi marginaalien tulostusta (vientitila). Poista käytöstä arvoavaimet: &quot;%1&quot;, &quot;%2&quot;, &quot;%3&quot;, &quot;%4&quot;. Aseta kaikki marginaalit arvoon 0.</translation>
     </message>
     <message>
         <source>Page left margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
@@ -12160,7 +12167,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>The left margin</source>
-        <translation>Vasen reunus</translation>
+        <translation>Vasen marginaali</translation>
     </message>
     <message>
         <source>Page right margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
@@ -12184,7 +12191,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>The bottom margin</source>
-        <translation>Alareuna</translation>
+        <translation>Alamarginaali</translation>
     </message>
     <message>
         <source>Rotation in degrees (one of predefined, export mode). Default value is 180. 0 is no-rotate. Valid values: %1. Each value show how many times details will be rotated. For example 180 mean two times (360/180=2) by 180 degree.</source>
@@ -12240,7 +12247,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Run the program in a test mode. The program in this mode loads a single pattern file and silently quit without showing the main window. The key have priority before key &apos;%1&apos;.</source>
-        <translation>Suorita ohjelma testitilassa. Tässä tilassa ohjelma lataa yhden kuviotiedoston ja sulkeutuu hiljaa näyttämättä pääikkunaa. Avaimella on prioriteetti ennen avainta &apos;%1&apos;.</translation>
+        <translation>Suorita ohjelma testitilassa. Tässä tilassa ohjelma lataa yhden kaavatiedoston ja sulkeutuu hiljaa näyttämättä pääikkunaa. Avaimella on prioriteetti ennen avainta &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
@@ -12268,7 +12275,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Right margin must be used together with page units.</source>
-        <translation>Oikeaa reunusta on käytettävä yhdessä sivuyksiköiden kanssa.</translation>
+        <translation>Oikeaa marginaalia on käytettävä yhdessä sivuyksiköiden kanssa.</translation>
     </message>
     <message>
         <source>Top margin must be used together with page units.</source>
@@ -12284,7 +12291,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Unknown page templated selected.</source>
-        <translation>Tuntematon sivumalli valittu.</translation>
+        <translation>Tuntematon sivun mallipohja valittu.</translation>
     </message>
     <message>
         <source>Unsupported paper units.</source>
@@ -12292,7 +12299,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Unsupported layout units.</source>
-        <translation>Asetteluyksiköitä ei tueta.</translation>
+        <translation>Ei-tuettuja asetteluyksiköitä.</translation>
     </message>
     <message>
         <source>Test option can be used with single input file only.</source>
@@ -12304,11 +12311,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Invalid gradation size value.</source>
-        <translation>Virheellinen sävyn kokoarvo.</translation>
+        <translation>Virheellinen sarjonnan kokoarvo.</translation>
     </message>
     <message>
         <source>Invalid gradation height value.</source>
-        <translation>Virheellinen sävyn korkeuden arvo.</translation>
+        <translation>Virheellinen sarjonnan pituusarvo.</translation>
     </message>
 </context>
 <context>
@@ -12319,7 +12326,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>individual</source>
-        <translation>yksilö</translation>
+        <translation>yksilöllinen</translation>
     </message>
     <message>
         <source>multisize</source>
@@ -12327,7 +12334,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>templates</source>
-        <translation>mallit</translation>
+        <translation>mallipohjat</translation>
     </message>
     <message>
         <source>bodyscans</source>
@@ -12339,7 +12346,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>label templates</source>
-        <translation>tarramallit</translation>
+        <translation>Tunniste mallipohjat</translation>
     </message>
     <message>
         <source>backups</source>
@@ -12354,7 +12361,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Can&apos;t find piece: </source>
-        <translation>Paloa ei löydy: </translation>
+        <translation>Palaa ei löydy: </translation>
     </message>
     <message>
         <source>Can&apos;t find path: </source>
@@ -12445,7 +12452,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation>Kuviotiedostoa %1 ei voida avata:
+        <translation>Kaavatiedostoa %1 ei voida avata:
 %2.</translation>
     </message>
 </context>
@@ -12485,7 +12492,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Line_</source>
-        <translation>Viiva_</translation>
+        <translation>Suora_</translation>
     </message>
     <message>
         <source>Arc_</source>
@@ -12493,7 +12500,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>ElArc_</source>
-        <translation>ElArc_</translation>
+        <translation>Elkaari_</translation>
     </message>
     <message>
         <source>Spl_</source>
@@ -12501,11 +12508,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation>Osapolku_</translation>
+        <translation>SplPolku_</translation>
     </message>
     <message>
         <source>AngleLine_</source>
-        <translation>Kulmaviiva_</translation>
+        <translation>SuoranKulma_</translation>
     </message>
     <message>
         <source>Move Group Object</source>
@@ -12513,11 +12520,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>From </source>
-        <translation>Luota </translation>
+        <translation>Täältä </translation>
     </message>
     <message>
         <source> to </source>
-        <translation> että </translation>
+        <translation> tänne </translation>
     </message>
 </context>
 <context>
@@ -12538,14 +12545,14 @@ Haluatko tallentaa muutokset?</translation>
     <name>VFormulaProperty</name>
     <message>
         <source>Formula:</source>
-        <translation>Kaava:</translation>
+        <translation>Matemaattinenkaava:</translation>
     </message>
 </context>
 <context>
     <name>VLayoutPiece</name>
     <message>
         <source>Piece %1 doesn&apos;t have shape.</source>
-        <translation>Kappaleella %1 ei ole muotoa.</translation>
+        <translation>Palalla %1 ei ole muotoa.</translation>
     </message>
 </context>
 <context>
@@ -12576,15 +12583,15 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>First edge right angle</source>
-        <translation>Ensimmäisen reunan suora kulma</translation>
+        <translation>Ensimmäisen reunan oikea kulma</translation>
     </message>
     <message>
         <source>Second edge right angle</source>
-        <translation>Toisen reunan suora kulma</translation>
+        <translation>Toisen reunan oikea kulma</translation>
     </message>
     <message>
         <source>Notch</source>
-        <translation>Lovi</translation>
+        <translation>Hakki</translation>
     </message>
     <message>
         <source>Type</source>
@@ -12600,19 +12607,19 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>TNotch</source>
-        <translation>TNotch</translation>
+        <translation>THakki</translation>
     </message>
     <message>
         <source>UNotch</source>
-        <translation>Yksittäinen lukko</translation>
+        <translation>UHakki</translation>
     </message>
     <message>
         <source>VInternal</source>
-        <translation>VIsperaalinen</translation>
+        <translation>VSisäinen</translation>
     </message>
     <message>
         <source>VExternal</source>
-        <translation>Alternative</translation>
+        <translation>VUlkoinen</translation>
     </message>
     <message>
         <source>Castle</source>
@@ -12628,7 +12635,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Straightforward</source>
-        <translation>Yksinkertaista</translation>
+        <translation>Suoraaneteenpäin</translation>
     </message>
     <message>
         <source>Bisector</source>
@@ -12636,7 +12643,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Count</source>
-        <translation>Kreivi</translation>
+        <translation>Määrä</translation>
     </message>
     <message>
         <source>Excluded</source>
@@ -12655,7 +12662,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>False</source>
-        <translation>Väärin</translation>
+        <translation>Epätosi</translation>
     </message>
 </context>
 <context>
@@ -12701,7 +12708,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>Palo</translation>
+        <translation>Pala</translation>
     </message>
     <message>
         <source>white</source>
@@ -12709,11 +12716,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>nobrush</source>
-        <translation>ei harjaa</translation>
+        <translation>eisivellintä</translation>
     </message>
     <message>
         <source>Error creating or updating piece</source>
-        <translation>Virhe osan luomisessa tai päivittämisessä</translation>
+        <translation>Virhe palan luomisessa tai päivittämisessä</translation>
     </message>
     <message>
         <source>Image_name</source>
@@ -12725,7 +12732,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Error creating or updating line</source>
-        <translation>Virhe rivin luomisessa tai päivittämisessä</translation>
+        <translation>Virhe viivan luomisessa tai päivittämisessä</translation>
     </message>
     <message>
         <source>Error creating or updating single point</source>
@@ -12733,11 +12740,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Error creating or updating point of end line</source>
-        <translation>Virhe luotaessa tai päivitettäessä päätepisteen viivaa</translation>
+        <translation>Virhe luotaessa tai päivitettäessä suoran päätepistettä</translation>
     </message>
     <message>
         <source>Error creating or updating point along line</source>
-        <translation>Virhe luotaessa tai päivitettäessä pistettä viivalla</translation>
+        <translation>Virhe luotaessa tai päivitettäessä pistettä suoralla</translation>
     </message>
     <message>
         <source>Error creating or updating point of shoulder</source>
@@ -12781,11 +12788,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Error creating or updating cut spline point</source>
-        <translation>Virhe leikkauspisteen luomisessa tai päivittämisessä</translation>
+        <translation>Virhe splinen leikkauspisteen luomisessa tai päivittämisessä</translation>
     </message>
     <message>
         <source>Error creating or updating cut spline path point</source>
-        <translation>Virhe leikkaussplinen polun pisteen luomisessa tai päivittämisessä</translation>
+        <translation>Virhe leikkaa spline polun pisteen luomisessa tai päivittämisessä</translation>
     </message>
     <message>
         <source>Error creating or updating cut arc point</source>
@@ -12793,7 +12800,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Error creating or updating point of intersection line and axis</source>
-        <translation>Virhe leikkauspisteen ja akselin luomisessa tai päivittämisessä</translation>
+        <translation>Virhe leikkaa suoran ja akselin luomisessa tai päivittämisessä</translation>
     </message>
     <message>
         <source>Error creating or updating point of intersection curve and axis</source>
@@ -12821,7 +12828,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Error creating or updating true darts</source>
-        <translation>Virhe luotaessa tai päivitettäessä aitoja tikanheittoja</translation>
+        <translation>Virhe luotaessa tai päivitettäessä tarkkoja laskoksia</translation>
     </message>
     <message>
         <source>Error creating or updating simple curve</source>
@@ -12877,11 +12884,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Error creating or updating operation of mirror by line</source>
-        <translation>Virhe luotaessa tai päivitettäessä peilin toimintaa rivikohtaisesti</translation>
+        <translation>Virhe luotaessa tai päivitettäessä peilaa suoralla</translation>
     </message>
     <message>
         <source>Error creating or updating operation of mirror by axis</source>
-        <translation>Virhe luotaessa tai päivitettäessä peilin toimintaa akselin mukaan</translation>
+        <translation>Virhe luotaessa tai päivitettäessä peilaa.akselilla</translation>
     </message>
     <message>
         <source>Error creating or updating operation of moving</source>
@@ -12893,7 +12900,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Unknown arc type &apos;%1&apos;.</source>
-        <translation>Tuntematon kaarityyppi &apos;%1&apos;.</translation>
+        <translation>Tuntematon kaari-tyyppi &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Unknown elliptical arc type &apos;%1&apos;.</source>
@@ -12943,7 +12950,7 @@ Haluatko tallentaa muutokset?</translation>
     <name>VSettings</name>
     <message>
         <source>patterns</source>
-        <translation>kuviot</translation>
+        <translation>kaavat</translation>
     </message>
     <message>
         <source>layouts</source>
@@ -12992,11 +12999,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>  Päätykulma</translation>
+        <translation>  Loppukulma</translation>
     </message>
     <message>
         <source>      Label</source>
-        <translation>      Tarra</translation>
+        <translation>      Tunniste</translation>
     </message>
 </context>
 <context>
@@ -13015,7 +13022,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>  Päätykulma</translation>
+        <translation>  Loppukulma</translation>
     </message>
     <message>
         <source>      Name</source>
@@ -13041,7 +13048,7 @@ Haluatko tallentaa muutokset?</translation>
     <name>VToolCurveIntersectAxis</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can not create intersection point %1 from point %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;to curve %3 with an axis angle of %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Leikkauspistettä %1 ei voida luoda pisteestä %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;käyrään %3 akselikulmalla %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Käytetään lähtöpistettä paikkamerkkinä, kunnes kuvio on korjattu.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Leikkauspistettä %1 ei voida luoda pisteestä %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;käyrään %3 akselikulmalla %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Käytetään lähtöpistettä paikkamerkkinä, kunnes kaava on korjattu.</translation>
     </message>
     <message>
         <source>Intersection Point of Curve &amp; Axis</source>
@@ -13064,7 +13071,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>end angle</source>
-        <translation>päätykulma</translation>
+        <translation>lopetuskulma</translation>
     </message>
     <message>
         <source>radius</source>
@@ -13072,7 +13079,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>label</source>
-        <translation>tarra</translation>
+        <translation>tunniste</translation>
     </message>
 </context>
 <context>
@@ -13087,7 +13094,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>label</source>
-        <translation>tarra</translation>
+        <translation>tunniste</translation>
     </message>
 </context>
 <context>
@@ -13102,7 +13109,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>label</source>
-        <translation>tarra</translation>
+        <translation>tunniste</translation>
     </message>
 </context>
 <context>
@@ -13128,11 +13135,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>  Päätykulma</translation>
+        <translation>  Loppukulma</translation>
     </message>
     <message>
         <source>      Label</source>
-        <translation>      Tarra</translation>
+        <translation>      Tunniste</translation>
     </message>
 </context>
 <context>
@@ -13172,7 +13179,7 @@ Haluatko tallentaa muutokset?</translation>
     <name>VToolLineIntersectAxis</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Line and Axis&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Suoran ja akselin leikkauspistettä %1 ei löydy&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;b&gt;Käytetään lähtöpistettä paikkamerkkinä, kunnes kuvio on korjattu.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Suoran ja akselin leikkauspistettä %1 ei löydy&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;b&gt;Käytetään lähtöpistettä paikkamerkkinä, kunnes kaava on korjattu.</translation>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
@@ -13217,11 +13224,11 @@ Haluatko tallentaa muutokset?</translation>
     <name>VToolMirrorByLine</name>
     <message>
         <source>First line point</source>
-        <translation>Ensimmäisen linjan piste</translation>
+        <translation>Ensimmäinen suoran piste</translation>
     </message>
     <message>
         <source>Second line point</source>
-        <translation>Toisen linjan piste</translation>
+        <translation>Toinen suoran piste</translation>
     </message>
 </context>
 <context>
@@ -13240,7 +13247,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Rotation point</source>
-        <translation>Pyörimispiste</translation>
+        <translation>Kiertopiste</translation>
     </message>
     <message>
         <source>Rotation angle</source>
@@ -13255,7 +13262,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Base point</source>
-        <translation>Tukipiste</translation>
+        <translation>Peruspiste</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -13271,11 +13278,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Point - Length and Angle</source>
-        <translation>Rintä - Pituus ja kulma</translation>
+        <translation>Piste - Pituus ja kulma</translation>
     </message>
     <message>
         <source>Base point:</source>
-        <translation>Tukikohta:</translation>
+        <translation>Peruspiste:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -13307,15 +13314,15 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Point - On Line</source>
-        <translation>Rinte - Viivalla</translation>
+        <translation>Piste - Suoralla</translation>
     </message>
     <message>
         <source>First point:</source>
-        <translation>Ensimmäinen kohta:</translation>
+        <translation>Ensimmäinen piste:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Toinen kohta:</translation>
+        <translation>Toinen piste:</translation>
     </message>
     <message>
         <source>Arc - Radius and Angles</source>
@@ -13347,23 +13354,23 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Point - On Bisector</source>
-        <translation>Rinte - Puolittalla</translation>
+        <translation>Piste - Puolittajalla</translation>
     </message>
     <message>
         <source>Third point:</source>
-        <translation>Kolmas kohta:</translation>
+        <translation>Kolmas piste:</translation>
     </message>
     <message>
         <source>True darts</source>
-        <translation>Oikeita tikanheittoja</translation>
+        <translation>Tarkka laskos</translation>
     </message>
     <message>
         <source>Point 1 label:</source>
-        <translation>Pisteen 1 otsikko:</translation>
+        <translation>Pisteen 1 tunniste:</translation>
     </message>
     <message>
         <source>Point 2 label:</source>
-        <translation>Kohdan 2 nimi:</translation>
+        <translation>Kohdan 2 tunniste:</translation>
     </message>
     <message>
         <source>First base point:</source>
@@ -13375,19 +13382,19 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>First dart point:</source>
-        <translation>Ensimmäinen tikanheittopiste:</translation>
+        <translation>Ensimmäinen laskospiste:</translation>
     </message>
     <message>
         <source>Second dart point:</source>
-        <translation>Toinen tikanheittopiste:</translation>
+        <translation>Toinen laskospiste:</translation>
     </message>
     <message>
         <source>Third dart point:</source>
-        <translation>Kolmas tikanheittopiste:</translation>
+        <translation>Kolmas laskospiste:</translation>
     </message>
     <message>
         <source>Point - On Arc</source>
-        <translation>Rinte - Kaarella</translation>
+        <translation>Piste - Kaarella</translation>
     </message>
     <message>
         <source>Arc:</source>
@@ -13399,7 +13406,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Point - On Curve</source>
-        <translation>Rintä - Kaarteella</translation>
+        <translation>Piste - Kaarella</translation>
     </message>
     <message>
         <source>Curve:</source>
@@ -13415,27 +13422,27 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>First line point:</source>
-        <translation>Ensimmäisen rivin piste:</translation>
+        <translation>Ensimmäisen suoran piste:</translation>
     </message>
     <message>
         <source>Second line point:</source>
-        <translation>Toisen linjan piste:</translation>
+        <translation>Toisen suoran piste:</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation>Viiva</translation>
+        <translation>Suora</translation>
     </message>
     <message>
         <source>Point - Intersect Lines</source>
-        <translation>Piste - Leikkaa viivoja</translation>
+        <translation>Piste - Leikkaa suoria</translation>
     </message>
     <message>
         <source>First line</source>
-        <translation>Ensimmäinen viiva</translation>
+        <translation>Ensimmäinen suora</translation>
     </message>
     <message>
         <source>Second line</source>
-        <translation>Toinen viiva</translation>
+        <translation>Toinen suora</translation>
     </message>
     <message>
         <source>Point - On Perpendicular</source>
@@ -13455,11 +13462,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>1st line point:</source>
-        <translation>1. rivin kohta:</translation>
+        <translation>1. suoran kohta:</translation>
     </message>
     <message>
         <source>2nd line point:</source>
-        <translation>2. rivin piste:</translation>
+        <translation>2. suoran piste:</translation>
     </message>
     <message>
         <source>Point - Intersect XY</source>
@@ -13479,7 +13486,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Take:</source>
-        <translation>Ota:</translation>
+        <translation>Otto:</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
@@ -13519,7 +13526,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
-        <translation>Rintä - Ympyrän ja tangentin leikkauspiste</translation>
+        <translation>Piste - Ympyrän ja tangentin leikkauspiste</translation>
     </message>
     <message>
         <source>Tangent point:</source>
@@ -13535,7 +13542,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Point - Length to Line</source>
-        <translation>Piste - Pituus viivan mukaan</translation>
+        <translation>Piste - Pituus suoralle</translation>
     </message>
     <message>
         <source>Curve - Interactive</source>
@@ -13575,11 +13582,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation>Osapolku_</translation>
+        <translation>SplPolku_</translation>
     </message>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Ura-akseli - Korjattu</translation>
+        <translation>Spline - Kiinteä</translation>
     </message>
     <message>
         <source>Point - Intersect Axis and Triangle</source>
@@ -13607,15 +13614,15 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Rotation</source>
-        <translation>Pyöriminen</translation>
+        <translation>Kierto</translation>
     </message>
     <message>
         <source>Rotation point:</source>
-        <translation>Pyörimispiste:</translation>
+        <translation>Kiertopiste:</translation>
     </message>
     <message>
         <source>Suffix:</source>
-        <translation>Liite:</translation>
+        <translation>Loppuliite:</translation>
     </message>
     <message>
         <source>Move</source>
@@ -13631,11 +13638,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
-        <translation>Peili riviltä</translation>
+        <translation>Peilaa suoralla</translation>
     </message>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Peili akselilla</translation>
+        <translation>Peilaa akselilla</translation>
     </message>
     <message>
         <source>Axis type:</source>
@@ -13647,14 +13654,14 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Line_</source>
-        <translation>Viiva_</translation>
+        <translation>Suora_</translation>
     </message>
 </context>
 <context>
     <name>VToolPointFromArcAndTangent</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;%2 and Tangent&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Leikkauspistettä %1 ei löydy&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;b&gt;&lt;big&gt;%2:sta ja tangentista&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Käytetään lähtöpistettä paikkamerkkinä, kunnes kuvio on korjattu.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Leikkauspistettä %1 ei löydy&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;b&gt;&lt;big&gt;%2:sta ja tangentista&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Käytetään lähtöpistettä paikkamerkkinä, kunnes kaava on korjattu.</translation>
     </message>
     <message>
         <source>Intersect Arc and Tangent</source>
@@ -13684,18 +13691,18 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Point Intersect Arcs</source>
-        <translation>Piste leikkaa kaaria</translation>
+        <translation>Piste leikkaavat kaaret</translation>
     </message>
 </context>
 <context>
     <name>VToolPointOfIntersectionCurves</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Curves&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Käyrien leikkauspistettä %1 ei löydy&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Käytetään lähtöpistettä paikkamerkkinä, kunnes kuvio on korjattu.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Käyrien leikkauspistettä %1 ei löydy&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Käytetään lähtöpistettä paikkamerkkinä, kunnes kaava on korjattu.</translation>
     </message>
     <message>
         <source>Point Intersect Curves</source>
-        <translation>Pisteiden leikkauskäyrät</translation>
+        <translation>Piste Leikkaavat käyrät</translation>
     </message>
 </context>
 <context>
@@ -13734,12 +13741,12 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Bunka Fashion College</source>
         <comment>Author name</comment>
-        <translation>Bunka-muotiopisto</translation>
+        <translation>Bunka Fashion College</translation>
     </message>
     <message>
         <source>Fundamentals of Garment Design</source>
         <comment>Book name</comment>
-        <translation>Vaatesuunnittelun perusteet</translation>
+        <translation>Fundamentals of Garment Design</translation>
     </message>
     <message>
         <source>Barnfield and Richard</source>
@@ -13754,22 +13761,22 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Pattern Making Primer</source>
         <comment>Book name</comment>
-        <translation>Kaavojen tekemisen alkeiskurssi</translation>
+        <translation>Pattern Making Primer</translation>
     </message>
     <message>
         <source>Friendship/Women</source>
         <comment>System name</comment>
-        <translation>Ystävyys/Naiset</translation>
+        <translation>Friendship/Women</translation>
     </message>
     <message>
         <source>Elizabeth Friendship</source>
         <comment>Author name</comment>
-        <translation>Elisabet Ystävyys</translation>
+        <translation>lizabeth Friendship</translation>
     </message>
     <message>
         <source>Creating Historical Clothes - Pattern Cutting from the 16th to the 19th Centuries</source>
         <comment>Book name</comment>
-        <translation>Historiallisten vaatteiden luominen - kaavojen leikkaus 1500-luvulta 1800-luvulle</translation>
+        <translation>Creating Historical Clothes - Pattern Cutting from the 16th to the 19th Centuries</translation>
     </message>
     <message>
         <source>Morris, K.</source>
@@ -13784,7 +13791,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Sewing Lingerie that Fits</source>
         <comment>Book name</comment>
-        <translation>Isojen alusvaatteiden ompelu</translation>
+        <translation>Sewing Lingerie that Fits</translation>
     </message>
     <message>
         <source>Castro</source>
@@ -13799,12 +13806,12 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Patternmaking in Practic</source>
         <comment>Book name</comment>
-        <translation>Kuvioiden teko käytännössä</translation>
+        <translation>Patternmaking in Practic</translation>
     </message>
     <message>
         <source>Kim &amp; Uh</source>
         <comment>System name</comment>
-        <translation>Kim ja öö</translation>
+        <translation>Kim ja Uh</translation>
     </message>
     <message>
         <source>Injoo Kim and Mykyung Uh</source>
@@ -13814,7 +13821,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Apparel Making in Fashion Design</source>
         <comment>Book name</comment>
-        <translation>Vaatteiden valmistus muotisuunnittelussa</translation>
+        <translation>Apparel Making in Fashion Design</translation>
     </message>
     <message>
         <source>Waugh</source>
@@ -13829,7 +13836,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Corsets and Crinolines</source>
         <comment>Book name</comment>
-        <translation>Korsetit ja krinoliinit</translation>
+        <translation>Corsets and Crinolines</translation>
     </message>
     <message>
         <source>Grimble</source>
@@ -13844,12 +13851,12 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Fashions of the Gilded Age</source>
         <comment>Book name</comment>
-        <translation>Kullatun ajan muodit</translation>
+        <translation>Fashions of the Gilded Age</translation>
     </message>
     <message>
         <source>Thornton&apos;s International System</source>
         <comment>System name</comment>
-        <translation>Thorntonin kansainvälinen järjestelmä</translation>
+        <translation>Thornton&apos;s International System</translation>
     </message>
     <message>
         <source>ed. R. L. Shep</source>
@@ -13859,7 +13866,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>The Great War: Styles and Patterns of the 1910s</source>
         <comment>Book name</comment>
-        <translation>Suuri sota: 1910-luvun tyylit ja kaavat</translation>
+        <translation>The Great War: Styles and Patterns of the 1910s</translation>
     </message>
     <message>
         <source>Hillhouse &amp; Mansfield</source>
@@ -13874,7 +13881,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Dress Design: Draping and Flat Pattern Making</source>
         <comment>Book name</comment>
-        <translation>Mekon suunnittelu: Drapeeraus ja kaavojen luominen</translation>
+        <translation>Dress Design: Draping and Flat Pattern Making</translation>
     </message>
     <message>
         <source>Pivnick</source>
@@ -13889,22 +13896,22 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>How to Design Beautiful Clothes: Designing and Pattern Making</source>
         <comment>Book name</comment>
-        <translation>Kuinka suunnitella kauniita vaatteita: Suunnittelu ja kaavoitus</translation>
+        <translation>How to Design Beautiful Clothes: Designing and Pattern Making</translation>
     </message>
     <message>
         <source>Minister &amp; Son</source>
         <comment>System name</comment>
-        <translation>Ministeri ja poika</translation>
+        <translation>Minister &amp; Son</translation>
     </message>
     <message>
         <source>Edward Minister &amp; Son, ed. R. L. Shep</source>
         <comment>Author name</comment>
-        <translation>Edward Minister ja poika, toim. RL Shep</translation>
+        <translation>Edward Minister ja Son, toim. RL Shep</translation>
     </message>
     <message>
         <source>The Complete Guide to Practical Cutting (1853)</source>
         <comment>Book name</comment>
-        <translation>Täydellinen opas käytännön leikkaamiseen (1853)</translation>
+        <translation>The Complete Guide to Practical Cutting (1853)</translation>
     </message>
     <message>
         <source>Strickland</source>
@@ -13919,7 +13926,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>A Tailoring Manual</source>
         <comment>Book name</comment>
-        <translation>Räätälin käsikirja</translation>
+        <translation>A Tailoring Manual</translation>
     </message>
     <message>
         <source>Loh &amp; Lewis</source>
@@ -13934,7 +13941,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Patternless Fashion Design</source>
         <comment>Book name</comment>
-        <translation>Kaavoimaton muotisuunnittelu</translation>
+        <translation>Patternless Fashion Design</translation>
     </message>
     <message>
         <source>Morris, F. R.</source>
@@ -13944,12 +13951,12 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>F. R. Morris</source>
         <comment>Author name</comment>
-        <translation>FR Morris</translation>
+        <translation>F. R Morris</translation>
     </message>
     <message>
         <source>Ladies Garment Cutting and Making</source>
         <comment>Book name</comment>
-        <translation>Naisten vaatteiden leikkaus ja valmistus</translation>
+        <translation>Ladies Garment Cutting and Making</translation>
     </message>
     <message>
         <source>Mason</source>
@@ -13964,7 +13971,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Gertrude Mason&apos;s Patternmaking Book</source>
         <comment>Book name</comment>
-        <translation>Gertrude Masonin kaavoituskirja</translation>
+        <translation>Gertrude Mason&apos;s Patternmaking Book</translation>
     </message>
     <message>
         <source>Kimata</source>
@@ -13979,22 +13986,22 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>K.Kimata&apos;s Simplified Drafting Book for Dressmaking</source>
         <comment>Book name</comment>
-        <translation>K.Kimatan yksinkertaistettu ompeluohjekirja</translation>
+        <translation>K.Kimata&apos;s Simplified Drafting Book for Dressmaking</translation>
     </message>
     <message>
         <source>Master Designer</source>
         <comment>System name</comment>
-        <translation>Mestaarinen suunnittelija</translation>
+        <translation>Master Designer</translation>
     </message>
     <message>
         <source>The Master Designer (Chicago, IL)</source>
         <comment>Author name</comment>
-        <translation>Pääsuunnittelija (Chicago, IL)</translation>
+        <translation>The Master Designer (Chicago, IL)</translation>
     </message>
     <message>
         <source>Master Designer&apos;s System of Designing, Cutting and Grading</source>
         <comment>Book name</comment>
-        <translation>Suunnittelun, leikkauksen ja laadun mestarijärjestelmä</translation>
+        <translation>Master Designer&apos;s System of Designing, Cutting and Grading</translation>
     </message>
     <message>
         <source>Kopp</source>
@@ -14009,7 +14016,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>How to Draft Basic Patterns</source>
         <comment>Book name</comment>
-        <translation>Kuinka piirtää peruskuvioita</translation>
+        <translation>How to Draft Basic Patterns</translation>
     </message>
     <message>
         <source>Ekern</source>
@@ -14024,7 +14031,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Slacks Cut-to-Fit for Your Figure</source>
         <comment>Book name</comment>
-        <translation>Vartalon mukaan leikattavat housut</translation>
+        <translation>Slacks Cut-to-Fit for Your Figure</translation>
     </message>
     <message>
         <source>Doyle</source>
@@ -14039,7 +14046,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Sarah&apos;s Key to Pattern Drafting</source>
         <comment>Book name</comment>
-        <translation>Sarahin avain kaavojen piirtämiseen</translation>
+        <translation>Sarah&apos;s Key to Pattern Drafting</translation>
     </message>
     <message>
         <source>Shelton</source>
@@ -14054,17 +14061,17 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Design and Sew Jeans</source>
         <comment>Book name</comment>
-        <translation>Suunnittele ja ompele farkkuja</translation>
+        <translation>Design and Sew Jeans</translation>
     </message>
     <message>
         <source>Lady Boutique</source>
         <comment>System name</comment>
-        <translation>Naisten putiikki</translation>
+        <translation>Lady Boutique</translation>
     </message>
     <message>
         <source>Lady Boutique</source>
         <comment>Author name</comment>
-        <translation>Naisten putiikki</translation>
+        <translation>Lady Boutique</translation>
     </message>
     <message>
         <source>Lady Boutique magazine (Japan)</source>
@@ -14084,7 +14091,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Pattern Drafting and Grading: Women&apos;s nd Misses&apos; Garment Design</source>
         <comment>Book name</comment>
-        <translation>Kaavojen piirtäminen ja arviointi: Naisten ja neitien vaatesuunnittelu</translation>
+        <translation>Pattern Drafting and Grading: Women&apos;s nd Misses&apos; Garment Design</translation>
     </message>
     <message>
         <source>Moore</source>
@@ -14099,7 +14106,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Dorothy Moore&apos;s Pattern Drafting and Dressmaking</source>
         <comment>Book name</comment>
-        <translation>Dorothy Mooren kaavojen piirtäminen ja ompelu</translation>
+        <translation>Dorothy Moore&apos;s Pattern Drafting and Dressmaking</translation>
     </message>
     <message>
         <source>Abling</source>
@@ -14114,7 +14121,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Integrating Draping, Drafting and Drawing</source>
         <comment>Book name</comment>
-        <translation>Verhoilun, luonnostelun ja piirtämisen integrointi</translation>
+        <translation>Integrating Draping, Drafting and Drawing</translation>
     </message>
     <message>
         <source>Fukomoto</source>
@@ -14129,17 +14136,17 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Scientific Pattern Drafting as taught at Style Center School of Costume Design, Dressmaking and Millinery</source>
         <comment>Book name</comment>
-        <translation>Tieteellistä kaavojen piirtämistä Style Center School of Costume Design, Dressmaking and Hattukoulun opetussuunnitelman mukaisesti</translation>
+        <translation>Scientific Pattern Drafting as taught at Style Center School of Costume Design, Dressmaking and Millinery</translation>
     </message>
     <message>
         <source>Dressmaking International</source>
         <comment>System name</comment>
-        <translation>Vaatteiden valmistus kansainvälisesti</translation>
+        <translation>Dressmaking International</translation>
     </message>
     <message>
         <source>Dressmaking International</source>
         <comment>Author name</comment>
-        <translation>Vaatteiden valmistus kansainvälisesti</translation>
+        <translation>Dressmaking International</translation>
     </message>
     <message>
         <source>Dressmaking International magazine (Japan)</source>
@@ -14159,12 +14166,12 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Practical Dress Design</source>
         <comment>Book name</comment>
-        <translation>Käytännönmukaista mekkosuunnittelua</translation>
+        <translation>Practical Dress Design</translation>
     </message>
     <message>
         <source>Gough</source>
         <comment>System name</comment>
-        <translation>Mönjä</translation>
+        <translation>Gough</translation>
     </message>
     <message>
         <source>E. L. G. Gough</source>
@@ -14174,7 +14181,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Principles of Garment Cutting</source>
         <comment>Book name</comment>
-        <translation>Vaatteiden leikkaamisen periaatteet</translation>
+        <translation>Principles of Garment Cutting</translation>
     </message>
     <message>
         <source>Allemong</source>
@@ -14189,7 +14196,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>European Cut</source>
         <comment>Book name</comment>
-        <translation>Eurooppalainen leikkaus</translation>
+        <translation>European Cut</translation>
     </message>
     <message>
         <source>McCunn</source>
@@ -14204,7 +14211,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>How to Make Your Own Sewing Patterns</source>
         <comment>Book name</comment>
-        <translation>Kuinka tehdä omia ompelukaavoja</translation>
+        <translation>How to Make Your Own Sewing Patterns</translation>
     </message>
     <message>
         <source>Zarapkar</source>
@@ -14219,7 +14226,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Zarapkar System of Cutting</source>
         <comment>Book name</comment>
-        <translation>Zarapkarin leikkausjärjestelmä</translation>
+        <translation>Zarapkar System of Cutting</translation>
     </message>
     <message>
         <source>Kunick</source>
@@ -14234,7 +14241,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Sizing, Pattern Construction and Grading for Women&apos;s and Children&apos;s Garments</source>
         <comment>Book name</comment>
-        <translation>Naisten ja lasten vaatteiden mitoitus, kaavojen rakenne ja asteikot</translation>
+        <translation>Sizing, Pattern Construction and Grading for Women&apos;s and Children&apos;s Garments</translation>
     </message>
     <message>
         <source>Handford</source>
@@ -14249,7 +14256,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Professional Patternmaking for Designers: Women&apos;s Wear, Men&apos;s Casual Wear</source>
         <comment>Book name</comment>
-        <translation>Ammattimainen kaavoituksen suunnittelu: Naisten vaatteet, miesten vapaa-ajan vaatteet</translation>
+        <translation>Professional Patternmaking for Designers: Women&apos;s Wear, Men&apos;s Casual Wear</translation>
     </message>
     <message>
         <source>Davis</source>
@@ -14259,12 +14266,12 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>R. I. Davis</source>
         <comment>Author name</comment>
-        <translation>RI Davis</translation>
+        <translation>R. I Davis</translation>
     </message>
     <message>
         <source>Men&apos;s 17th &amp; 18th Century Costume, Cut &amp; Fashion</source>
         <comment>Book name</comment>
-        <translation>Miesten 1600- ja 1700-luvun asut, leikkaus ja muoti</translation>
+        <translation>Men&apos;s 17th &amp; 18th Century Costume, Cut &amp; Fashion</translation>
     </message>
     <message>
         <source>MacLochlainn</source>
@@ -14279,7 +14286,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>The Victorian Tailor: An Introduction to Period Tailoring</source>
         <comment>Book name</comment>
-        <translation>Viktoriaaninen räätäli: Johdatus ajan räätälintyöhön</translation>
+        <translation>The Victorian Tailor: An Introduction to Period Tailoring</translation>
     </message>
     <message>
         <source>Joseph-Armstrong</source>
@@ -14294,12 +14301,12 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Patternmaking for Fashion Design</source>
         <comment>Book name</comment>
-        <translation>Kaavoitus muotisuunnittelussa</translation>
+        <translation>Patternmaking for Fashion Design</translation>
     </message>
     <message>
         <source>Supreme System</source>
         <comment>System name</comment>
-        <translation>Ylin järjestelmä</translation>
+        <translation>Supreme System</translation>
     </message>
     <message>
         <source>Frederick T. Croonberg</source>
@@ -14309,7 +14316,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>The Blue Book of Men&apos;s Tailoring, Grand Edition of Supreme System for Producing Mens Garments (1907)</source>
         <comment>Book name</comment>
-        <translation>Miesten räätälöinnin sininen kirja, miesten vaatteiden tuotantojärjestelmän suurin painos (1907)</translation>
+        <translation>The Blue Book of Men&apos;s Tailoring, Grand Edition of Supreme System for Producing Mens Garments (1907)</translation>
     </message>
     <message>
         <source>Sugino</source>
@@ -14319,27 +14326,27 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Dressmaking</source>
         <comment>Author name</comment>
-        <translation>Vaatteiden valmistus</translation>
+        <translation>Dressmaking</translation>
     </message>
     <message>
         <source>Pattern Drafting Vols. I, II, III (Japan)</source>
         <comment>Book name</comment>
-        <translation>Kaavojen piirtäminen, osat I, II, III (Japani)</translation>
+        <translation>Pattern Drafting Osat. I, II, III (Japani)</translation>
     </message>
     <message>
         <source>Centre Point System</source>
         <comment>System name</comment>
-        <translation>Keskipistejärjestelmä</translation>
+        <translation>Centre Point System</translation>
     </message>
     <message>
         <source>Louis Devere</source>
         <comment>Author name</comment>
-        <translation>Louis Devère</translation>
+        <translation>Louis Devere</translation>
     </message>
     <message>
         <source>The Handbook of Practical Cutting on the Centre Point System</source>
         <comment>Book name</comment>
-        <translation>Käytännön katkaisun käsikirja keskipistejärjestelmällä</translation>
+        <translation>The Handbook of Practical Cutting on the Centre Point System</translation>
     </message>
     <message>
         <source>Aldrich/Men</source>
@@ -14354,7 +14361,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Metric Pattern Cutting for Menswear</source>
         <comment>Book name</comment>
-        <translation>Metrinen kaavojen leikkaus miesten vaatteille</translation>
+        <translation>Metric Pattern Cutting for Menswear</translation>
     </message>
     <message>
         <source>Aldrich/Women</source>
@@ -14364,7 +14371,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Metric Pattern Cutting for Women&apos;s Wear</source>
         <comment>Book name</comment>
-        <translation>Metrinen kaavaleikkaus naisten vaatteille</translation>
+        <translation>Metric Pattern Cutting for Women&apos;s Wear</translation>
     </message>
     <message>
         <source>Kershaw</source>
@@ -14379,7 +14386,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Patternmaking for Menswear</source>
         <comment>Book name</comment>
-        <translation>Miesten vaatteiden kaavojen valmistus</translation>
+        <translation>Patternmaking for Menswear</translation>
     </message>
     <message>
         <source>Gilewska</source>
@@ -14394,7 +14401,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Pattern-Drafting for Fashion: The Basics</source>
         <comment>Book name</comment>
-        <translation>Kaavojen piirtäminen muotialalla: Perusteet</translation>
+        <translation>Pattern-Drafting for Fashion: The Basics</translation>
     </message>
     <message>
         <source>Lo</source>
@@ -14409,7 +14416,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Pattern Cutting</source>
         <comment>Book name</comment>
-        <translation>Kaavojen leikkaus</translation>
+        <translation>Pattern Cutting</translation>
     </message>
     <message>
         <source>Bray</source>
@@ -14424,12 +14431,12 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Dress Pattern Designing: The Basic Principles of Cut and Fit</source>
         <comment>Book name</comment>
-        <translation>Mekon kaavojen suunnittelu: leikkauksen ja istuvuuden perusperiaatteet</translation>
+        <translation>Dress Pattern Designing: The Basic Principles of Cut and Fit</translation>
     </message>
     <message>
         <source>Knowles/Men</source>
         <comment>System name</comment>
-        <translation>Knowles/Men</translation>
+        <translation>Knowles/Miehet</translation>
     </message>
     <message>
         <source>Lori A. Knowles</source>
@@ -14439,22 +14446,22 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>The Practical Guide to Patternmaking for Fashion Designers: Menswear</source>
         <comment>Book name</comment>
-        <translation>Käytännön opas kaavojen valmistukseen muotisuunnittelijoille: Miesten vaatteet</translation>
+        <translation>The Practical Guide to Patternmaking for Fashion Designers: Menswear</translation>
     </message>
     <message>
         <source>Friendship/Men</source>
         <comment>System name</comment>
-        <translation>Ystävyys/Miehet</translation>
+        <translation>Friendship/Miehet</translation>
     </message>
     <message>
         <source>Pattern Cutting for Men&apos;s Costume</source>
         <comment>Book name</comment>
-        <translation>Miesten asun kaavojen leikkaus</translation>
+        <translation>Pattern Cutting for Men&apos;s Costume</translation>
     </message>
     <message>
         <source>Brown</source>
         <comment>System name</comment>
-        <translation>Ruskea</translation>
+        <translation>Brown</translation>
     </message>
     <message>
         <source>P. Clement Brown</source>
@@ -14464,7 +14471,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Art in Dress</source>
         <comment>Book name</comment>
-        <translation>Taidetta pukeutumisessa</translation>
+        <translation>Art in Dress</translation>
     </message>
     <message>
         <source>Mitchell</source>
@@ -14479,7 +14486,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>&quot;Standard&quot; Work on Cutting (Men&apos;s Garments) 1886: The Art and Science of Garment Cutting</source>
         <comment>Book name</comment>
-        <translation>&quot;Standard&quot; -työ leikkaamisesta (miesten vaatteet) 1886: Vaatteiden leikkaamisen taide ja tiede</translation>
+        <translation>&quot;Standard&quot; Work on Cutting (Men&apos;s Garments) 1886: The Art and Science of Garment Cutting</translation>
     </message>
     <message>
         <source>GOST 17917-86</source>
@@ -14509,7 +14516,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Pattern and Dress Design</source>
         <comment>Book name</comment>
-        <translation>Kaavojen ja mekkojen suunnittelu</translation>
+        <translation>Pattern and Dress Design</translation>
     </message>
     <message>
         <source>Knowles/Women</source>
@@ -14519,12 +14526,12 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Practical Guide to Patternmaking for Fashion Designers: Juniors, Misses, and Women</source>
         <comment>Book name</comment>
-        <translation>Käytännön opas kaavojen valmistukseen muotisuunnittelijoille: junioreille, neitille ja naisille</translation>
+        <translation>Practical Guide to Patternmaking for Fashion Designers: Juniors, Misses, and Women</translation>
     </message>
     <message>
         <source>American Garment Cutter</source>
         <comment>System name</comment>
-        <translation>Amerikkalainen vaateleikkuri</translation>
+        <translation>American Garment Cutter</translation>
     </message>
     <message>
         <source>None</source>
@@ -14554,12 +14561,12 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Line_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Viiva_</translation>
+        <translation>Suora_</translation>
     </message>
     <message>
         <source>AngleLine_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Kulmaviiva_</translation>
+        <translation>KulmaSuora_</translation>
     </message>
     <message>
         <source>Arc_</source>
@@ -14569,7 +14576,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>ElArc_</translation>
+        <translation>ElKaari_</translation>
     </message>
     <message>
         <source>Spl_</source>
@@ -14579,22 +14586,22 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>Osapolku</translation>
+        <translation>SplPolku</translation>
     </message>
     <message>
         <source>RadiusArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>RadiusArc_</translation>
+        <translation>SädeKaari_</translation>
     </message>
     <message>
         <source>Radius1ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Radius1ElArc_</translation>
+        <translation>Säde1ElKaari_</translation>
     </message>
     <message>
         <source>Radius2ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Radius2ElArc_</translation>
+        <translation>Säde2ElKaari_</translation>
     </message>
     <message>
         <source>Angle1Arc_</source>
@@ -14609,17 +14616,17 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Angle1ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Angle1ElArc_</translation>
+        <translation>Kulma1ElKaari_</translation>
     </message>
     <message>
         <source>Angle2ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Angle2ElArc_</translation>
+        <translation>Kulma2ElKaari_</translation>
     </message>
     <message>
         <source>Angle1Spl_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Kulma1Epäsuora_</translation>
+        <translation>Kulma1Spl_</translation>
     </message>
     <message>
         <source>Angle2Spl_</source>
@@ -14629,17 +14636,17 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Angle1SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>Kulma1ErittäinPolku</translation>
+        <translation>Kulma1SplPolku</translation>
     </message>
     <message>
         <source>Angle2SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>Kulma2ErittäinPolku</translation>
+        <translation>Kulma2SplPolku</translation>
     </message>
     <message>
         <source>Seg_</source>
         <comment>Segment. Leave the _ symbol in translation</comment>
-        <translation>Segmentti_</translation>
+        <translation>Seg_</translation>
     </message>
     <message>
         <source>CurrentLength</source>
@@ -14654,22 +14661,22 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>C1LengthSpl_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>C1Pituusero_</translation>
+        <translation>C1PituusSpl_</translation>
     </message>
     <message>
         <source>C2LengthSpl_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>C2Pituusero_</translation>
+        <translation>C2PituusSpl_</translation>
     </message>
     <message>
         <source>C1LengthSplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>C1PituusErillispolku</translation>
+        <translation>C1PituusSplPolku</translation>
     </message>
     <message>
         <source>C2LengthSplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>C2PituusErillispolku</translation>
+        <translation>C2PituusSplPolku</translation>
     </message>
     <message>
         <source>degTorad</source>
@@ -14690,21 +14697,21 @@ Example: radTodeg(3.14159) = 180</comment>
         <comment>Sine function working with radians
 Usage: sin(angle θ in radians) → returns a number between -1 and 1
 Example: sin(90) = 0.893997</comment>
-        <translation>synti</translation>
+        <translation>sin</translation>
     </message>
     <message>
         <source>cos</source>
         <comment>Cosine function working with radians
 Usage: cos(angle θ in radians) → returns a number between -1 and 1
 Example: cos(1) = 0.540302</comment>
-        <translation>koska</translation>
+        <translation>cos</translation>
     </message>
     <message>
         <source>tan</source>
         <comment>Tangent function working with radians
 Usage: tan(angle θ in radians)
 Example: tan(1) = 1.55741</comment>
-        <translation>rusketus</translation>
+        <translation>tan</translation>
     </message>
     <message>
         <source>asin</source>
@@ -14739,7 +14746,7 @@ Example: sinh(1) = 1.1752</comment>
         <comment>Hyperbolic cosine
 Usage: cosh(θ) → returns a number greater than or equal to 1
 Example: cosh(0) = 1</comment>
-        <translation>kosh</translation>
+        <translation>cosh</translation>
     </message>
     <message>
         <source>tanh</source>
@@ -14788,7 +14795,7 @@ Example: cosD(180) = -1</comment>
         <comment>Tangent function working with degrees
 Usage: tanD(angle θ in degrees)
 Example: tanD(45) = 1</comment>
-        <translation>rusketus</translation>
+        <translation>tanD</translation>
     </message>
     <message>
         <source>asinD</source>
@@ -14830,77 +14837,77 @@ Example: log10(10) = 1</comment>
         <comment>Logarithm to the base 10
 Usage: log(x greater than 0)
 Example: log(10) = 1</comment>
-        <translation>loki</translation>
+        <translation>log</translation>
     </message>
     <message>
         <source>ln</source>
         <comment>Logarithm to base e (2.71828...)
 Usage: ln(x greater than 0)
 Example: ln(10) = 2.30259</comment>
-        <translation>sisään</translation>
+        <translation>ln</translation>
     </message>
     <message>
         <source>exp</source>
         <comment>e raised to the power of x where e = 2.718
 Usage: exp(x) → returns a positive number
 Example: exp(2) = 7.38906</comment>
-        <translation>kokemus</translation>
+        <translation>exp</translation>
     </message>
     <message>
         <source>sqrt</source>
         <comment>Square root of a value
 Usage: sqrt(x greater than or equal to 0) → returns a positive number
 Example: sqrt(4) = 2</comment>
-        <translation>neliö</translation>
+        <translation>sqrt</translation>
     </message>
     <message>
         <source>sign</source>
         <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
 Usage: sign(x) → returns -1, 0 or 1
 Example: sign(-3) = -1</comment>
-        <translation>merkki</translation>
+        <translation>sign</translation>
     </message>
     <message>
         <source>rint</source>
         <comment>Round to nearest integer
 Usage: rint(x) → returns an integer number
 Example: rint(2.3) = 2</comment>
-        <translation>tuloste</translation>
+        <translation>rint</translation>
     </message>
     <message>
         <source>abs</source>
         <comment>Absolute value
 Usage: abs(x) → returns a positive number
 Example: abs(-5) = 5</comment>
-        <translation>vatsalihakset</translation>
+        <translation>abs</translation>
     </message>
     <message>
         <source>min</source>
         <comment>Min of all arguments
 Usage: min(arg 1; arg 2; ... arg n)
 Example: min(2;3;4) = 2</comment>
-        <translation>minuutti</translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>max</source>
         <comment>Max of all arguments
 Usage: max(arg 1; arg 2; ... arg n)
 Example: max(2;3;4) = 4</comment>
-        <translation>maksimi</translation>
+        <translation>max</translation>
     </message>
     <message>
         <source>sum</source>
         <comment>Sum of all arguments
 Usage: sum(arg 1; arg 2; ... arg n)
 Example: sum(2;3;4) = 9</comment>
-        <translation>summa</translation>
+        <translation>sum</translation>
     </message>
     <message>
         <source>avg</source>
         <comment>Mean value of all arguments
 Usage: avg(arg 1; arg 2; ... arg n)
 Example: avg(2;3;4) = 3</comment>
-        <translation>keskiarvo</translation>
+        <translation>avg</translation>
     </message>
     <message>
         <source>fmod</source>
@@ -14932,7 +14939,7 @@ Example: fmod(3.3;2) = 1.3</comment>
     <message>
         <source>height</source>
         <comment>placeholder</comment>
-        <translation>korkeus</translation>
+        <translation>pituus</translation>
     </message>
     <message>
         <source>date</source>
@@ -14947,12 +14954,12 @@ Example: fmod(3.3;2) = 1.3</comment>
     <message>
         <source>patternName</source>
         <comment>placeholder</comment>
-        <translation>kuvionNimi</translation>
+        <translation>kaavanNimi</translation>
     </message>
     <message>
         <source>patternNumber</source>
         <comment>placeholder</comment>
-        <translation>kuvionumero</translation>
+        <translation>kaavanNumero</translation>
     </message>
     <message>
         <source>author</source>
@@ -14987,17 +14994,17 @@ Example: fmod(3.3;2) = 1.3</comment>
     <message>
         <source>pLetter</source>
         <comment>placeholder</comment>
-        <translation>pKirjain</translation>
+        <translation>pLetter</translation>
     </message>
     <message>
         <source>pAnnotation</source>
         <comment>placeholder</comment>
-        <translation>pAnnotaatio</translation>
+        <translation>pAnnotation</translation>
     </message>
     <message>
         <source>pOrientation</source>
         <comment>placeholder</comment>
-        <translation>pSuunta</translation>
+        <translation>pOrientation</translation>
     </message>
     <message>
         <source>pRotation</source>
@@ -15017,42 +15024,42 @@ Example: fmod(3.3;2) = 1.3</comment>
     <message>
         <source>pName</source>
         <comment>placeholder</comment>
-        <translation>pNimi</translation>
+        <translation>pName</translation>
     </message>
     <message>
         <source>pQuantity</source>
         <comment>placeholder</comment>
-        <translation>pMäärä</translation>
+        <translation>pQuantity</translation>
     </message>
     <message>
         <source>mFabric</source>
         <comment>placeholder</comment>
-        <translation>mFabric</translation>
+        <translation>mKangas</translation>
     </message>
     <message>
         <source>mLining</source>
         <comment>placeholder</comment>
-        <translation>mLining</translation>
+        <translation>mVuori</translation>
     </message>
     <message>
         <source>mInterfacing</source>
         <comment>placeholder</comment>
-        <translation>mLiitäntä</translation>
+        <translation>mTukikangas</translation>
     </message>
     <message>
         <source>mInterlining</source>
         <comment>placeholder</comment>
-        <translation>mInterline</translation>
+        <translation>mValivuori</translation>
     </message>
     <message>
         <source>wCut</source>
         <comment>placeholder</comment>
-        <translation>wCut</translation>
+        <translation>wLeikkaa</translation>
     </message>
     <message>
         <source>wOnFold</source>
         <comment>placeholder</comment>
-        <translation>wTaitto</translation>
+        <translation>wTaitteelta</translation>
     </message>
 </context>
 <context>
@@ -15088,14 +15095,14 @@ Example: fmod(3.3;2) = 1.3</comment>
     <name>VisToolLineIntersectAxis</name>
     <message>
         <source>&lt;b&gt;Intersection line and axis&lt;/b&gt;: angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Leikkausviivan ja akselin leikkauspiste&lt;/b&gt;: kulma = %1°, pidä &lt;b&gt;SHIFT&lt;/b&gt;-näppäintä painettuna kulman rajoittamiseksi, paina &lt;b&gt;ENTER&lt;/b&gt;-näppäintä työkalun luomisen loppuun saattamiseksi</translation>
+        <translation>&lt;b&gt;Suoran ja akselin leikkauspiste&lt;/b&gt;: kulma = %1°, pidä &lt;b&gt;SHIFT&lt;/b&gt;-näppäintä painettuna kulman rajoittamiseksi, paina &lt;b&gt;ENTER&lt;/b&gt;-näppäintä työkalun luomisen loppuun saattamiseksi</translation>
     </message>
 </context>
 <context>
     <name>VisToolMove</name>
     <message>
         <source>Length = %1%2, angle = %3°, &lt;b&gt;Shift&lt;/b&gt; to constrain angle, &lt;b&gt;Mouse click&lt;/b&gt; - finish selecting a position</source>
-        <translation>Pituus = %1%2, kulma = %3°, &lt;b&gt;Siirto&lt;/b&gt; kulman rajoittamiseksi, &lt;b&gt;Hiiren napsautus&lt;/b&gt; - sijainnin valinta loppuun</translation>
+        <translation>Pituus = %1%2, kulma = %3°, &lt;b&gt;Shift&lt;/b&gt; kulman rajoittamiseksi, &lt;b&gt;Hiiren napsautus&lt;/b&gt; - sijainnin valinta loppuun</translation>
     </message>
     <message>
         <source>Length = %1%2, angle = %3°, rotation angle = %4° Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle,&lt;b&gt;CTRL&lt;/b&gt; - change rotation origin point, &lt;b&gt;Mouse click&lt;/b&gt; - finish creating</source>
@@ -15120,11 +15127,11 @@ Example: fmod(3.3;2) = 1.3</comment>
     <name>VisToolSplinePath</name>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select three or more points</source>
-        <translation>&lt;b&gt;Kaareva polku&lt;/b&gt;: valitse kolme tai useampia pisteitä</translation>
+        <translation>&lt;b&gt;Käyrä polku&lt;/b&gt;: valitse kolme tai useampia pisteitä</translation>
     </message>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select three or more points, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Kaareva polku&lt;/b&gt;: valitse kolme tai useampia pisteitä, paina &lt;b&gt;ENTER&lt;/b&gt; viimeistelläksesi työkalun luomisen</translation>
+        <translation>&lt;b&gt;Käyrä polku&lt;/b&gt;: valitse kolme tai useampia pisteitä, paina &lt;b&gt;ENTER&lt;/b&gt; viimeistelläksesi työkalun luomisen</translation>
     </message>
     <message>
         <source>Use &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle</source>
@@ -15135,7 +15142,7 @@ Example: fmod(3.3;2) = 1.3</comment>
     <name>mNoisyHandler</name>
     <message>
         <source>DEBUG:</source>
-        <translation>VIERÄHDYS:</translation>
+        <translation>DEBUG:</translation>
     </message>
     <message>
         <source>WARNING:</source>
@@ -15147,11 +15154,11 @@ Example: fmod(3.3;2) = 1.3</comment>
     </message>
     <message>
         <source>FATAL:</source>
-        <translation>KOHTALAKKAAN:</translation>
+        <translation>FATAALI:</translation>
     </message>
     <message>
         <source>INFO:</source>
-        <translation>TIEDOT:</translation>
+        <translation>INFO:</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -15163,7 +15170,7 @@ Example: fmod(3.3;2) = 1.3</comment>
     </message>
     <message>
         <source>Fatal Error</source>
-        <translation>Kohtalokas virhe</translation>
+        <translation>Fataali virhe</translation>
     </message>
     <message>
         <source>Information</source>
@@ -15174,7 +15181,7 @@ Example: fmod(3.3;2) = 1.3</comment>
     <name>vNoisyHandler</name>
     <message>
         <source>DEBUG:</source>
-        <translation>VIERÄHDYS:</translation>
+        <translation>DEBUG:</translation>
     </message>
     <message>
         <source>WARNING:</source>
@@ -15186,11 +15193,11 @@ Example: fmod(3.3;2) = 1.3</comment>
     </message>
     <message>
         <source>FATAL:</source>
-        <translation>KOHTALAKKAAN:</translation>
+        <translation>FATAALI:</translation>
     </message>
     <message>
         <source>INFO:</source>
-        <translation>TIEDOT:</translation>
+        <translation>INFO:</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -15202,7 +15209,7 @@ Example: fmod(3.3;2) = 1.3</comment>
     </message>
     <message>
         <source>Fatal Error</source>
-        <translation>Kohtalokas virhe</translation>
+        <translation>Fataali virhe</translation>
     </message>
     <message>
         <source>Information</source>
