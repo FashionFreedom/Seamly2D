@@ -868,6 +868,10 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
                 }
                 else
                 {
+                    if (postfix == degreeSymbol)
+                    {
+                        result = normalize(result, 0, 360);
+                    }
                     label->setText(qApp->LocaleToString(result) + " " +postfix);
                     flag = true;
                     ChangeColor(labelEditFormula, okColor);
