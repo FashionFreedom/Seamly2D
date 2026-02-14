@@ -4904,7 +4904,7 @@ Alle merk- of productnamen zijn handelsmerken of geregistreerde handelsmerken va
 
 Delen van deze software © 2008-2026 The Qt Company Ltd.
 
-Het programma wordt geleverd in de staat waarin het zich bevindt, zonder enige garantie, inclusief de garantie van het ontwerp, de verkoopbaarheid en geschiktheid voor een bepaald doel. {2D?} {2D?} {2017-2026 ?} {2D?} {2008-2026 ?}</translation>
+Het programma wordt geleverd in de staat waarin het zich bevindt, zonder enige garantie, inclusief de garantie van het ontwerp, de verkoopbaarheid en geschiktheid voor een bepaald doel.</translation>
     </message>
 </context>
 <context>

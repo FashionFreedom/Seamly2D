@@ -4904,7 +4904,7 @@ Alle Marken- oder Produktnamen sind Marken oder eingetragene Marken der jeweilig
 
 Teile dieser Software © 2008-2026 The Qt Company Ltd.
 
-Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLICH DER GARANTIE FÜR DESIGN, GEBRAUCHSFÄHIGKEIT UND EIGNUNG FÜR EINEN BESTIMMTEN ZWECK zur Verfügung gestellt. {2D?} {2D?} {2017-2026 ?} {2D?} {2008-2026 ?}</translation>
+Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLICH DER GARANTIE FÜR DESIGN, GEBRAUCHSFÄHIGKEIT UND EIGNUNG FÜR EINEN BESTIMMTEN ZWECK zur Verfügung gestellt.</translation>
     </message>
 </context>
 <context>

@@ -4921,7 +4921,7 @@ Kaikki tuotemerkit tai tuotenimet ovat omistajiensa tavaramerkkejä tai rekister
 
 Osat tästä ohjelmistosta © 2008-2026 The Qt Company Ltd.
 
-Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SUUNNITTELUN, MYYNTIKELPOISUUDEN JA TIETTYYN TARKOITUKSEEN SOPIVUUDEN TAKUU. {2D?} {2D?} {2017-2026 ?} {2D?} {2008-2026 ?}</translation>
+Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SUUNNITTELUN, MYYNTIKELPOISUUDEN JA TIETTYYN TARKOITUKSEEN SOPIVUUDEN TAKUU.</translation>
     </message>
 </context>
 <context>

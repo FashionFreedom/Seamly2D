@@ -4923,7 +4923,7 @@ Toate numele de mărci sau produse sunt mărci comerciale sau mărci comerciale 
 
 Porțiuni ale acestui software © 2008-2026 The Qt Company Ltd.
 
-Programul este furnizat CA ATARE, FĂRĂ NICIUN FEL DE GARANȚIE, INCLUSIV GARANȚIA DE DESIGN, VANDABILITATE ȘI POTRIVIRE PENTRU UN ANUMIT SCOP. {2D?} {2D?} {2017-2026 ?} {2D?} {2008-2026 ?}</translation>
+Programul este furnizat CA ATARE, FĂRĂ NICIUN FEL DE GARANȚIE, INCLUSIV GARANȚIA DE DESIGN, VANDABILITATE ȘI POTRIVIRE PENTRU UN ANUMIT SCOP.</translation>
     </message>
 </context>
 <context>

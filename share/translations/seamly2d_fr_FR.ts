@@ -4944,7 +4944,7 @@ Tous les noms de marques ou de produits sont des marques commerciales ou des mar
 
 Certaines parties de ce logiciel © 2008-2026 The Qt Company Ltd.
 
-Le programme est fourni &quot;TEL QUEL&quot;sans aucune garantie, y compris la garantie de conception, de qualité marchande et d&apos;adéquation à un usage particulier. {2D?} {2D?} {2017-2026 ?} {2D?} {2008-2026 ?}</translation>
+Le programme est fourni &quot;TEL QUEL&quot;sans aucune garantie, y compris la garantie de conception, de qualité marchande et d&apos;adéquation à un usage particulier.</translation>
     </message>
 </context>
 <context>
