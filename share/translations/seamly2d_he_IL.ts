@@ -8,14 +8,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Web site : %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Left to right</source>
         <translation type="unfinished"></translation>
     </message>
@@ -141,6 +133,10 @@
     </message>
     <message>
         <source>unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Website:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2898,10 +2894,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>by points intersetions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>by first edge symmetry</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2935,6 +2927,10 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by intersection</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4889,9 +4885,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2025 Seamly2D Project.
+© 2017-2026 Seamly2D Project.
 
-Portions of this software © 2008-2025 The Qt Company Ltd.
+Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation type="unfinished"></translation>

@@ -127,14 +127,6 @@
         <translation>Compilé le %1 à %2</translation>
     </message>
     <message>
-        <source>Web site : %1</source>
-        <translation>Site web : %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation>Impossible d&apos;ouvrir votre navigateur par défaut</translation>
-    </message>
-    <message>
         <source>Left to right</source>
         <translation>De gauche à droite</translation>
     </message>
@@ -145,6 +137,10 @@
     <message>
         <source>Automatic</source>
         <translation>Automatique</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation>Site internet :</translation>
     </message>
 </context>
 <context>
@@ -4933,9 +4929,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2025 Seamly2D Project.
+© 2017-2026 Seamly2D Project.
 
-Portions of this software © 2008-2025 The Qt Company Ltd.
+Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D est une application de conception assistée par ordinateur de patrons de vêtements.
@@ -4944,11 +4940,11 @@ Seamly2D est un logiciel gratuit (open source).
 
 Tous les noms de marques ou de produits sont des marques commerciales ou des marques déposées de leurs détenteurs respectifs.
 
-© 2017-2025 Projet Seamly2D.
+© 2017-2026 Projet Seamly2D.
 
-Certaines parties de ce logiciel © 2008-2025 The Qt Company Ltd.
+Certaines parties de ce logiciel © 2008-2026 The Qt Company Ltd.
 
-Le programme est fourni &quot;TEL QUEL&quot;sans aucune garantie, y compris la garantie de conception, de qualité marchande et d&apos;adéquation à un usage particulier.</translation>
+Le programme est fourni &quot;TEL QUEL&quot;sans aucune garantie, y compris la garantie de conception, de qualité marchande et d&apos;adéquation à un usage particulier. {2D?} {2D?} {2017-2026 ?} {2D?} {2008-2026 ?}</translation>
     </message>
 </context>
 <context>

@@ -8,14 +8,6 @@
         <translation>Seamly2D Hakkında</translation>
     </message>
     <message>
-        <source>Web site : %1</source>
-        <translation>Web sitesi : %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation>Varsayılan tarayıcınız açılamıyor</translation>
-    </message>
-    <message>
         <source>Left to right</source>
         <translation>Soldan sağa</translation>
     </message>
@@ -142,6 +134,10 @@
     <message>
         <source>unknown</source>
         <translation>bilinmiyor</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation>Web sitesi:</translation>
     </message>
 </context>
 <context>
@@ -4910,9 +4906,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2025 Seamly2D Project.
+© 2017-2026 Seamly2D Project.
 
-Portions of this software © 2008-2025 The Qt Company Ltd.
+Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D, giysi kalıplarının bilgisayar destekli tasarımı için bir uygulamadır.
@@ -4921,11 +4917,11 @@ Seamly2D ücretsiz (açık kaynaklı) bir yazılımdır.
 
 Tüm marka veya ürün adları, ilgili sahiplerinin ticari markaları veya tescilli ticari markalarıdır.
 
-© 2017-2025 Seamly2D Projesi.
+© 2017-2026 Seamly2D Projesi.
 
-Bu yazılımın bölümleri © 2008-2025 The Qt Company Ltd.
+Bu yazılımın bölümleri © 2008-2026 The Qt Company Ltd.
 
-Program, TASARIM, SATILABİLİRLİK VE BELİRLİ BİR AMACA UYGUNLUK GARANTİSİ DAHİL OLMAK ÜZERE HİÇBİR TÜRLÜ GARANTİ OLMADAN OLDUĞU GİBİ sunulmaktadır.</translation>
+Program, TASARIM, SATILABİLİRLİK VE BELİRLİ BİR AMACA UYGUNLUK GARANTİSİ DAHİL OLMAK ÜZERE HİÇBİR TÜRLÜ GARANTİ OLMADAN OLDUĞU GİBİ sunulmaktadır. {2D?} {2D?} {2017-2026 ?} {2D?} {2008-2026 ?}</translation>
     </message>
 </context>
 <context>

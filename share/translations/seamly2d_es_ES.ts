@@ -8,14 +8,6 @@
         <translation>Sobre Seamly2D</translation>
     </message>
     <message>
-        <source>Web site : %1</source>
-        <translation>Sitio web: %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation>No se puede abrir su navegador por defecto</translation>
-    </message>
-    <message>
         <source>Left to right</source>
         <translation>De izquierda a derecha</translation>
     </message>
@@ -142,6 +134,10 @@
     <message>
         <source>unknown</source>
         <translation>desconocido</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation>Sitio web:</translation>
     </message>
 </context>
 <context>
@@ -4930,9 +4926,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2025 Seamly2D Project.
+© 2017-2026 Seamly2D Project.
 
-Portions of this software © 2008-2025 The Qt Company Ltd.
+Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D es una aplicación para el diseño asistido por ordenador de patrones de prendas de vestir.
@@ -4941,11 +4937,11 @@ Seamly2D es un software gratuito (de código abierto).
 
 Todos los nombres de marcas o productos son marcas comerciales o marcas registradas de sus respectivos propietarios.
 
-2017-2025 Proyecto Seamly2D.
+2017-2026 Proyecto Seamly2D.
 
-Partes de este software © 2008-2025 The Qt Company Ltd.
+Partes de este software © 2008-2026 The Qt Company Ltd.
 
-El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LAS GARANTÍAS DE DISEÑO, COMERCIABILIDAD E IDONEIDAD PARA UN PROPÓSITO PARTICULAR.</translation>
+El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LAS GARANTÍAS DE DISEÑO, COMERCIABILIDAD E IDONEIDAD PARA UN PROPÓSITO PARTICULAR. {2D?} {2D?} {2017-2026 ?} {2D?} {2008-2026 ?}</translation>
     </message>
 </context>
 <context>

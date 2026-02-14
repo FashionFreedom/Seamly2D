@@ -8,14 +8,6 @@
         <translation>O programu Seamly2D</translation>
     </message>
     <message>
-        <source>Web site : %1</source>
-        <translation>Stránky: %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation>Nelze otevřít váš výchozí prohlížeč</translation>
-    </message>
-    <message>
         <source>Left to right</source>
         <translation>Zleva doprava</translation>
     </message>
@@ -142,6 +134,10 @@
     <message>
         <source>unknown</source>
         <translation>neznámý</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation>Webová stránka:</translation>
     </message>
 </context>
 <context>
@@ -4908,9 +4904,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2025 Seamly2D Project.
+© 2017-2026 Seamly2D Project.
 
-Portions of this software © 2008-2025 The Qt Company Ltd.
+Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D je aplikace pro počítačem podporovaný návrh oděvních střihů.
@@ -4919,11 +4915,11 @@ Seamly2D je bezplatný (open source) software.
 
 Všechny názvy značek nebo produktů jsou ochrannými známkami nebo registrovanými ochrannými známkami příslušných vlastníků.
 
-© 2017–2025 Seamly2D Project.
+© 2017–2026 Seamly2D Project.
 
-Části tohoto softwaru © 2008–2025 The Qt Company Ltd.
+Části tohoto softwaru © 2008–2026 The Qt Company Ltd.
 
-Program je poskytován TAK, JAK JE, BEZ JAKÉKOLI ZÁRUKY, VČETNĚ ZÁRUKY DESIGNU, OBCHODOVATELNOSTI A VHODNOSTI PRO URČITÝ ÚČEL.</translation>
+Program je poskytován TAK, JAK JE, BEZ JAKÉKOLI ZÁRUKY, VČETNĚ ZÁRUKY DESIGNU, OBCHODOVATELNOSTI A VHODNOSTI PRO URČITÝ ÚČEL. {2D?} {2D?} {2017-2026 ?} {2D?} {2008-2026 ?}</translation>
     </message>
 </context>
 <context>
