@@ -86,12 +86,18 @@ About2DAppDialog::About2DAppDialog(QWidget *parent)
     //About Tab
     connect(ui->copyToClipbaord_toolButton, &QToolButton::clicked, this, &About2DAppDialog::copyToClipboard);
 
+	ui->version_value->setText(QString("Seamly2D %1").arg(APP_VERSION_STR));
+
+    ui->websiteUrl_Label->setText(tr("<a href=\"%1\">%1</a>").arg(VER_COMPANYDOMAIN_STR));
+    ui->websiteUrl_Label->setTextFormat(Qt::RichText);                         // Ensure rich text is interpreted
+    ui->websiteUrl_Label->setTextInteractionFlags(Qt::TextBrowserInteraction); // Makes links clickable
+    ui->websiteUrl_Label->setOpenExternalLinks(true);                          // Automatically opens external links in default browser
+
     QString revision = BUILD_REVISION;
     if (revision == QString("unknown"))
     {
         revision = tr("unknown");
     }
-	ui->version_value->setText(QString("Seamly2D %1").arg(APP_VERSION_STR));
 	ui->revision_value->setText(revision);
 
 	QDate date = QLocale::c().toDate(QString(__DATE__).simplified(), QLatin1String("MMM d yyyy"));
@@ -104,21 +110,12 @@ About2DAppDialog::About2DAppDialog(QWidget *parent)
 									  "Seamly2D is an application for computer-aided design of garment patterns.\n\n"
                                       "Seamly2D is a free (open source) software.\n\n"
                                       "All brand or product names are trademarks or registered trademarks of their respective holders.\n\n"
-                                      "© 2017-2025 Seamly2D Project.\n\n"
-                                      "Portions of this software © 2008-2025 The Qt Company Ltd.\n\n"
+                                      "© 2017-2026 Seamly2D Project.\n\n"
+                                      "Portions of this software © 2008-2026 The Qt Company Ltd.\n\n"
                                       "The program is provided AS IS with NO WARRANTY OF ANY "
 									  "KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY "
 									  "AND FITNESS FOR A PARTICULAR PURPOSE."));
 
-
-	ui->pushButton_Web_Site->setText(tr("Web site : %1").arg(VER_COMPANYDOMAIN_STR));
-	connect(ui->pushButton_Web_Site, &QPushButton::clicked, this, [this]()
-	{
-		if ( QDesktopServices::openUrl(QUrl(VER_COMPANYDOMAIN_STR)) == false)
-		{
-			qWarning() << tr("Cannot open your default browser");
-		}
-	});
 
 	connect(ui->pushButtonCheckUpdate, &QPushButton::clicked, []()
 	{
