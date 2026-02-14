@@ -4921,7 +4921,7 @@ Tüm marka veya ürün adları, ilgili sahiplerinin ticari markaları veya tesci
 
 Bu yazılımın bölümleri © 2008-2026 The Qt Company Ltd.
 
-Program, TASARIM, SATILABİLİRLİK VE BELİRLİ BİR AMACA UYGUNLUK GARANTİSİ DAHİL OLMAK ÜZERE HİÇBİR TÜRLÜ GARANTİ OLMADAN OLDUĞU GİBİ sunulmaktadır. {2D?} {2D?} {2017-2026 ?} {2D?} {2008-2026 ?}</translation>
+Program, TASARIM, SATILABİLİRLİK VE BELİRLİ BİR AMACA UYGUNLUK GARANTİSİ DAHİL OLMAK ÜZERE HİÇBİR TÜRLÜ GARANTİ OLMADAN OLDUĞU GİBİ sunulmaktadır.</translation>
     </message>
 </context>
 <context>

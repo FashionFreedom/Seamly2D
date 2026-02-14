@@ -4919,7 +4919,7 @@ Všechny názvy značek nebo produktů jsou ochrannými známkami nebo registrov
 
 Části tohoto softwaru © 2008–2026 The Qt Company Ltd.
 
-Program je poskytován TAK, JAK JE, BEZ JAKÉKOLI ZÁRUKY, VČETNĚ ZÁRUKY DESIGNU, OBCHODOVATELNOSTI A VHODNOSTI PRO URČITÝ ÚČEL. {2D?} {2D?} {2017-2026 ?} {2D?} {2008-2026 ?}</translation>
+Program je poskytován TAK, JAK JE, BEZ JAKÉKOLI ZÁRUKY, VČETNĚ ZÁRUKY DESIGNU, OBCHODOVATELNOSTI A VHODNOSTI PRO URČITÝ ÚČEL.</translation>
     </message>
 </context>
 <context>

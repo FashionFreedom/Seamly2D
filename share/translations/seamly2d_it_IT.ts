@@ -4909,7 +4909,7 @@ Tutti i nomi di marchi o prodotti sono marchi o marchi registrati dei rispettivi
 
 Parti di questo software © 2008-2026 The Qt Company Ltd.
 
-Il programma viene fornito così com&apos;è, senza alcuna garanzia di alcun tipo, comprese le garanzie di progettazione, commerciabilità e idoneità a uno scopo particolare. {2D?} {2D?} {2017-2026 ?} {2D?} {2008-2026 ?}</translation>
+Il programma viene fornito così com&apos;è, senza alcuna garanzia di alcun tipo, comprese le garanzie di progettazione, commerciabilità e idoneità a uno scopo particolare.</translation>
     </message>
 </context>
 <context>

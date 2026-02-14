@@ -4907,7 +4907,7 @@ Todas as marcas ou nomes de produtos são marcas comerciais ou marcas registadas
 
 Partes deste software © 2008-2026 The Qt Company Ltd.
 
-O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER TIPO, INCLUINDO A GARANTIA DE DESIGN, COMERCIALIZAÇÃO E ADEQUAÇÃO A UM DETERMINADO FIM. {2D?} {2D?} {2017-2026 ?} {2D?} {2008-2026 ?}</translation>
+O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER TIPO, INCLUINDO A GARANTIA DE DESIGN, COMERCIALIZAÇÃO E ADEQUAÇÃO A UM DETERMINADO FIM.</translation>
     </message>
 </context>
 <context>

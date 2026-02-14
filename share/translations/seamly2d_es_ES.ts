@@ -4941,7 +4941,7 @@ Todos los nombres de marcas o productos son marcas comerciales o marcas registra
 
 Partes de este software © 2008-2026 The Qt Company Ltd.
 
-El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LAS GARANTÍAS DE DISEÑO, COMERCIABILIDAD E IDONEIDAD PARA UN PROPÓSITO PARTICULAR. {2D?} {2D?} {2017-2026 ?} {2D?} {2008-2026 ?}</translation>
+El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LAS GARANTÍAS DE DISEÑO, COMERCIABILIDAD E IDONEIDAD PARA UN PROPÓSITO PARTICULAR.</translation>
     </message>
 </context>
 <context>

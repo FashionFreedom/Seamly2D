@@ -4921,7 +4921,7 @@ Semua nama merek atau produk adalah merek dagang atau merek dagang terdaftar dar
 
 Bagian dari perangkat lunak ini © 2008-2026 The Qt Company Ltd.
 
-Program ini disediakan SEBAGAIMANA ADANYA TANPA JAMINAN DALAM BENTUK APA PUN, TERMASUK JAMINAN DESAIN, KEMAMPUAN UNTUK DIPERDAGANGKAN, DAN KESESUAIAN UNTUK TUJUAN TERTENTU. {2D?} {2D?} {2017-2026 ?} {2D?} {2008-2026 ?}</translation>
+Program ini disediakan SEBAGAIMANA ADANYA TANPA JAMINAN DALAM BENTUK APA PUN, TERMASUK JAMINAN DESAIN, KEMAMPUAN UNTUK DIPERDAGANGKAN, DAN KESESUAIAN UNTUK TUJUAN TERTENTU.</translation>
     </message>
 </context>
 <context>
