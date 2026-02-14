@@ -88,7 +88,7 @@ About2DAppDialog::About2DAppDialog(QWidget *parent)
 
 	ui->version_value->setText(QString("Seamly2D %1").arg(APP_VERSION_STR));
 
-    ui->websiteUrl_Label->setText(tr("<a href=\"%1\">%1</a>").arg(VER_COMPANYDOMAIN_STR));
+    ui->websiteUrl_Label->setText(QString("<a href=\"%1\">%1</a>").arg(VER_COMPANYDOMAIN_STR));
     ui->websiteUrl_Label->setTextFormat(Qt::RichText);                         // Ensure rich text is interpreted
     ui->websiteUrl_Label->setTextInteractionFlags(Qt::TextBrowserInteraction); // Makes links clickable
     ui->websiteUrl_Label->setOpenExternalLinks(true);                          // Automatically opens external links in default browser

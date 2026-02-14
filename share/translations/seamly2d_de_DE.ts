@@ -8,14 +8,6 @@
         <translation>Über Seamly2D</translation>
     </message>
     <message>
-        <source>Web site : %1</source>
-        <translation>Webseite: %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation>Standardbrowser kann nicht geöffnet werden</translation>
-    </message>
-    <message>
         <source>Left to right</source>
         <translation>Von links nach rechts</translation>
     </message>
@@ -142,6 +134,10 @@
     <message>
         <source>unknown</source>
         <translation>unbekannt</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation>Webseite:</translation>
     </message>
 </context>
 <context>
@@ -4893,9 +4889,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2025 Seamly2D Project.
+© 2017-2026 Seamly2D Project.
 
-Portions of this software © 2008-2025 The Qt Company Ltd.
+Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D ist eine Anwendung für den computergestützten Entwurf von Bekleidungsmustern.
@@ -4904,11 +4900,11 @@ Seamly2D ist eine kostenlose (Open Source) Software.
 
 Alle Marken- oder Produktnamen sind Marken oder eingetragene Marken der jeweiligen Inhaber.
 
-© 2017-2025 Seamly2D Project.
+© 2017-2026 Seamly2D Project.
 
-Teile dieser Software © 2008-2025 The Qt Company Ltd.
+Teile dieser Software © 2008-2026 The Qt Company Ltd.
 
-Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLICH DER GARANTIE FÜR DESIGN, GEBRAUCHSFÄHIGKEIT UND EIGNUNG FÜR EINEN BESTIMMTEN ZWECK zur Verfügung gestellt.</translation>
+Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLICH DER GARANTIE FÜR DESIGN, GEBRAUCHSFÄHIGKEIT UND EIGNUNG FÜR EINEN BESTIMMTEN ZWECK zur Verfügung gestellt. {2D?} {2D?} {2017-2026 ?} {2D?} {2008-2026 ?}</translation>
     </message>
 </context>
 <context>
@@ -8788,7 +8784,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>Website:</source>
-        <translation>Website:</translation>
+        <translation>Webseite:</translation>
     </message>
     <message>
         <source>Email verification</source>
