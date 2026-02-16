@@ -8,14 +8,6 @@
         <translation>Tietoja Seamly2Dsta</translation>
     </message>
     <message>
-        <source>Web site : %1</source>
-        <translation>Kotisivu: %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation>Oletus selaimen aukaiseminen epäonnistui</translation>
-    </message>
-    <message>
         <source>Left to right</source>
         <translation>Vasemmalta oikealle</translation>
     </message>
@@ -142,6 +134,10 @@
     <message>
         <source>unknown</source>
         <translation>tuntematon</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation>Kotisivu:</translation>
     </message>
 </context>
 <context>
@@ -4910,9 +4906,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2025 Seamly2D Project.
+© 2017-2026 Seamly2D Project.
 
-Portions of this software © 2008-2025 The Qt Company Ltd.
+Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D on sovellus tietokoneella avustettuun vaatekaavojen suunnitteluun.
@@ -4921,9 +4917,9 @@ Seamly2D on ilmainen (avoimen lähdekoodin) ohjelmisto.
 
 Kaikki tuotemerkit tai tuotenimet ovat omistajiensa tavaramerkkejä tai rekisteröityjä tavaramerkkejä.
 
-© 2017-2025 Seamly2D Project.
+© 2017-2026 Seamly2D Project.
 
-Osat tästä ohjelmistosta © 2008-2025 The Qt Company Ltd.
+Osat tästä ohjelmistosta © 2008-2026 The Qt Company Ltd.
 
 Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SUUNNITTELUN, MYYNTIKELPOISUUDEN JA TIETTYYN TARKOITUKSEEN SOPIVUUDEN TAKUU.</translation>
     </message>

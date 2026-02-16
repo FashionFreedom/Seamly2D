@@ -8,14 +8,6 @@
         <translation>Progetto Seamly2D</translation>
     </message>
     <message>
-        <source>Web site : %1</source>
-        <translation>Sito web : %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation>Non è possibile aprire il browser predefinito</translation>
-    </message>
-    <message>
         <source>Left to right</source>
         <translation>Da sinistra a destra</translation>
     </message>
@@ -142,6 +134,10 @@
     <message>
         <source>unknown</source>
         <translation>sconosciuto</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation>Sito web:</translation>
     </message>
 </context>
 <context>
@@ -4898,9 +4894,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2025 Seamly2D Project.
+© 2017-2026 Seamly2D Project.
 
-Portions of this software © 2008-2025 The Qt Company Ltd.
+Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D è un&apos;applicazione per la progettazione assistita da computer di modelli di abbigliamento.
@@ -4909,9 +4905,9 @@ Seamly2D è un software libero (open source).
 
 Tutti i nomi di marchi o prodotti sono marchi o marchi registrati dei rispettivi proprietari.
 
-© 2017-2025 Progetto Seamly2D.
+© 2017-2026 Progetto Seamly2D.
 
-Parti di questo software © 2008-2025 The Qt Company Ltd.
+Parti di questo software © 2008-2026 The Qt Company Ltd.
 
 Il programma viene fornito così com&apos;è, senza alcuna garanzia di alcun tipo, comprese le garanzie di progettazione, commerciabilità e idoneità a uno scopo particolare.</translation>
     </message>

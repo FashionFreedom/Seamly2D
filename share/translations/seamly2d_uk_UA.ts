@@ -8,14 +8,6 @@
         <translation>Про Seamly2D</translation>
     </message>
     <message>
-        <source>Web site : %1</source>
-        <translation>Веб сайт : %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation>Не можу відкрити браузер по замовчуванню</translation>
-    </message>
-    <message>
         <source>Left to right</source>
         <translation>Από αριστερά προς δεξιά</translation>
     </message>
@@ -142,6 +134,10 @@
     <message>
         <source>unknown</source>
         <translation>невідомий</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation>Веб-сайт:</translation>
     </message>
 </context>
 <context>
@@ -4912,9 +4908,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2025 Seamly2D Project.
+© 2017-2026 Seamly2D Project.
 
-Portions of this software © 2008-2025 The Qt Company Ltd.
+Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Το Seamly2D είναι μια εφαρμογή για σχεδιασμό πατρόν ενδυμάτων με τη βοήθεια υπολογιστή.
@@ -4923,9 +4919,9 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
 
 Όλα τα ονόματα επωνυμιών ή προϊόντων είναι εμπορικά σήματα ή σήματα κατατεθέντα των αντίστοιχων κατόχων τους.
 
-© 2017-2025 Seamly2D Project.
+© 2017-2026 Seamly2D Project.
 
-Τμήματα αυτού του λογισμικού © 2008-2025 The Qt Company Ltd.
+Τμήματα αυτού του λογισμικού © 2008-2026 The Qt Company Ltd.
 
 Το πρόγραμμα παρέχεται ΩΣ ΕΧΕΙ χωρίς ΚΑΜΙΑ ΕΓΓΥΗΣΗ ΚΑΝΕΝΟΣ ΕΙΔΟΥΣ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ ΤΗΣ ΕΓΓΥΗΣΗΣ ΣΧΕΔΙΑΣΜΟΥ, ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ ΚΑΙ ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟ.</translation>
     </message>

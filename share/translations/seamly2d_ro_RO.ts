@@ -8,14 +8,6 @@
         <translation>Despre Seamly2D</translation>
     </message>
     <message>
-        <source>Web site : %1</source>
-        <translation>Site Web: %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation>Nu pot deschide browser-ul implicit</translation>
-    </message>
-    <message>
         <source>Left to right</source>
         <translation>De la stânga la dreapta</translation>
     </message>
@@ -142,6 +134,10 @@
     <message>
         <source>unknown</source>
         <translation>necunoscut</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation>Site web:</translation>
     </message>
 </context>
 <context>
@@ -4912,9 +4908,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2025 Seamly2D Project.
+© 2017-2026 Seamly2D Project.
 
-Portions of this software © 2008-2025 The Qt Company Ltd.
+Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D este o aplicație pentru proiectarea asistată de calculator a tiparelor de îmbrăcăminte.
@@ -4923,9 +4919,9 @@ Seamly2D este un software gratuit (open source).
 
 Toate numele de mărci sau produse sunt mărci comerciale sau mărci comerciale înregistrate ale deținătorilor respectivi.
 
-© 2017-2025 Seamly2D Project.
+© 2017-2026 Seamly2D Project.
 
-Porțiuni ale acestui software © 2008-2025 The Qt Company Ltd.
+Porțiuni ale acestui software © 2008-2026 The Qt Company Ltd.
 
 Programul este furnizat CA ATARE, FĂRĂ NICIUN FEL DE GARANȚIE, INCLUSIV GARANȚIA DE DESIGN, VANDABILITATE ȘI POTRIVIRE PENTRU UN ANUMIT SCOP.</translation>
     </message>
