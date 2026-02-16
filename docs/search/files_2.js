@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['calculator_2ecpp_0',['calculator.cpp',['../df/df3/vwidgets_2calculator_2calculator_8cpp.html',1,'(Global Namespace)'],['../db/d8e/vpatterndb_2calculator_8cpp.html',1,'(Global Namespace)']]],
+  ['calculator_2ecpp_0',['calculator.cpp',['../db/d8e/vpatterndb_2calculator_8cpp.html',1,'(Global Namespace)'],['../df/df3/vwidgets_2calculator_2calculator_8cpp.html',1,'(Global Namespace)']]],
   ['calculator_2eh_1',['calculator.h',['../db/d96/vwidgets_2calculator_2calculator_8h.html',1,'(Global Namespace)'],['../db/db8/vpatterndb_2calculator_8h.html',1,'(Global Namespace)']]],
   ['calculator_5fdialog_2ecpp_2',['calculator_dialog.cpp',['../d7/dfa/calculator__dialog_8cpp.html',1,'']]],
   ['calculator_5fdialog_2eh_3',['calculator_dialog.h',['../d7/d73/calculator__dialog_8h.html',1,'']]],
   ['chartoken_2ehpp_4',['CharToken.hpp',['../d0/d87/msvc_2include_2xercesc_2util_2regx_2CharToken_8hpp.html',1,'(Global Namespace)'],['../dc/d5d/mingw_2include_2xercesc_2util_2regx_2CharToken_8hpp.html',1,'(Global Namespace)'],['../dd/de3/macx_2include_2xercesc_2util_2regx_2CharToken_8hpp.html',1,'(Global Namespace)']]],
-  ['chartypetables_2ehpp_5',['CharTypeTables.hpp',['../dc/deb/msvc_2include_2xercesc_2internal_2CharTypeTables_8hpp.html',1,'(Global Namespace)'],['../de/d84/mingw_2include_2xercesc_2internal_2CharTypeTables_8hpp.html',1,'(Global Namespace)'],['../d3/d9f/macx_2include_2xercesc_2internal_2CharTypeTables_8hpp.html',1,'(Global Namespace)']]],
+  ['chartypetables_2ehpp_5',['CharTypeTables.hpp',['../d3/d9f/macx_2include_2xercesc_2internal_2CharTypeTables_8hpp.html',1,'(Global Namespace)'],['../de/d84/mingw_2include_2xercesc_2internal_2CharTypeTables_8hpp.html',1,'(Global Namespace)'],['../dc/deb/msvc_2include_2xercesc_2internal_2CharTypeTables_8hpp.html',1,'(Global Namespace)']]],
   ['checkablemessagebox_2ecpp_6',['checkablemessagebox.cpp',['../d3/d84/checkablemessagebox_8cpp.html',1,'']]],
   ['checkablemessagebox_2eh_7',['checkablemessagebox.h',['../d3/d22/checkablemessagebox_8h.html',1,'']]],
   ['closuretoken_2ehpp_8',['ClosureToken.hpp',['../de/dae/macx_2include_2xercesc_2util_2regx_2ClosureToken_8hpp.html',1,'(Global Namespace)'],['../d2/d4c/mingw_2include_2xercesc_2util_2regx_2ClosureToken_8hpp.html',1,'(Global Namespace)'],['../d2/df1/msvc_2include_2xercesc_2util_2regx_2ClosureToken_8hpp.html',1,'(Global Namespace)']]],
