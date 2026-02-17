@@ -8,14 +8,6 @@
         <translation>Mengenai Seamly2D</translation>
     </message>
     <message>
-        <source>Web site : %1</source>
-        <translation>Situs web : %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation>Tidak dapat membuka peramban bawaan Anda</translation>
-    </message>
-    <message>
         <source>Left to right</source>
         <translation>Kiri ke kanan</translation>
     </message>
@@ -142,6 +134,10 @@
     <message>
         <source>unknown</source>
         <translation>tidak diketahui</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation>Situs Web:</translation>
     </message>
 </context>
 <context>
@@ -4910,9 +4906,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2025 Seamly2D Project.
+© 2017-2026 Seamly2D Project.
 
-Portions of this software © 2008-2025 The Qt Company Ltd.
+Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D adalah aplikasi untuk desain pola pakaian dengan bantuan komputer.
@@ -4921,9 +4917,9 @@ Seamly2D adalah perangkat lunak gratis (sumber terbuka).
 
 Semua nama merek atau produk adalah merek dagang atau merek dagang terdaftar dari pemiliknya masing-masing.
 
-© 2017-2025 Seamly2D Project.
+© 2017-2026 Seamly2D Project.
 
-Bagian dari perangkat lunak ini © 2008-2025 The Qt Company Ltd.
+Bagian dari perangkat lunak ini © 2008-2026 The Qt Company Ltd.
 
 Program ini disediakan SEBAGAIMANA ADANYA TANPA JAMINAN DALAM BENTUK APA PUN, TERMASUK JAMINAN DESAIN, KEMAMPUAN UNTUK DIPERDAGANGKAN, DAN KESESUAIAN UNTUK TUJUAN TERTENTU.</translation>
     </message>

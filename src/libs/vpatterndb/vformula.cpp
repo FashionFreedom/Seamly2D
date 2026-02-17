@@ -266,7 +266,7 @@ void VFormula::Eval()
         {
             QScopedPointer<Calculator> cal(new Calculator());
             QString expression = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
-            const qreal result = cal->EvalFormula(data->DataVariables(), expression);
+            qreal result = cal->EvalFormula(data->DataVariables(), expression);
 
             if (qIsInf(result) || qIsNaN(result))
             {
@@ -285,6 +285,10 @@ void VFormula::Eval()
                 }
                 else
                 {
+                    if (postfix == degreeSymbol)
+                    {
+                        result = result - 360.0 * qFloor(result / 360.0);
+                    }
                     dValue = result;
                     value = QString(qApp->LocaleToString(result) + " " + postfix);
                     _error = false;
