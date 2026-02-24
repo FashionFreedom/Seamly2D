@@ -1,8 +1,9 @@
 ---
 name: 'UI/Workflow Redesign: '
 about: 'Change  the UI/Workflow '
-title: 'NEW UI/WORKFLOW:'
+title: 'Enter Title Here'
 labels: New UI feature, workflow
+type: task
 assignees: ''
 
 ---
