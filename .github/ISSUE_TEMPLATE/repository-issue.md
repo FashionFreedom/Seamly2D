@@ -1,8 +1,9 @@
 ---
 name: Repository issue
 about: Report an issue with the github repository
-title: 'Repo:'
+title: 'Enter Title Here'
 labels: repository
+type: bug
 assignees: ''
 
 ---

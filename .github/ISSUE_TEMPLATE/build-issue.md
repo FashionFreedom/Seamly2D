@@ -1,8 +1,9 @@
 ---
 name: Build issue
 about: Report an issue with the Github Actions build pipeline
-title: 'Build: '
+title: 'Enter Title Here'
 labels: build
+type: bug
 assignees: ''
 
 ---
