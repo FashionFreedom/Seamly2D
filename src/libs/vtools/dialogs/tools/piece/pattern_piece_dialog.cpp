@@ -622,7 +622,6 @@ bool PatternPieceDialog::eventFilter(QObject *object, QEvent *event)
             if (keyEvent->key() == Qt::Key_Delete)
             {
                 delete rowItem;
-                return true;
             }
             if (keyEvent->modifiers() & Qt::ControlModifier)
             {
@@ -631,17 +630,17 @@ bool PatternPieceDialog::eventFilter(QObject *object, QEvent *event)
                     case Qt::Key_R:
                     {
                         reverseNode(rowItem);
-                        return true;
+                        break;
                     }
                     case Qt::Key_D:
                     {
                         duplicateNode(rowItem);
-                        return true;
+                        break;
                     }
                     case Qt::Key_E:
                     {
                         excludeNode(rowItem);
-                        return true;
+                        break;
                     }
                 }
             }
@@ -657,60 +656,65 @@ bool PatternPieceDialog::eventFilter(QObject *object, QEvent *event)
                     case Qt::Key_N:
                     {
                         setNotch(rowItem, false, NotchType::Slit, notchSubType, notchCount);
-                        return true;
+                        break;
                     }
                     case Qt::Key_S:
                     {
                         setNotch(rowItem, true, NotchType::Slit, notchSubType, notchCount);
-                        return true;
+                        break;
                     }
                     case Qt::Key_T:
                     {
                         setNotch(rowItem, true, NotchType::TNotch, notchSubType, notchCount);
-                        return true;
+                        break;
                     }
                     case Qt::Key_U:
                     {
                         setNotch(rowItem, true, NotchType::UNotch, notchSubType, notchCount);
-                        return true;
+                        break;
                     }
                     case Qt::Key_I:
                     {
                         setNotch(rowItem, true, NotchType::VInternal, notchSubType, notchCount);
-                        return true;
+                        break;
                     }
                     case Qt::Key_E:
                     {
                         setNotch(rowItem, true, NotchType::VExternal, notchSubType, notchCount);
-                        return true;
+                        break;
                     }
                     case Qt::Key_C:
                     {
                         setNotch(rowItem, true, NotchType::Castle, notchSubType, notchCount);
-                        return true;
+                        break;
                     }
                     case Qt::Key_D:
                     {
                         setNotch(rowItem, true, NotchType::Diamond, notchSubType, notchCount);
-                        return true;
+                        break;
                     }
                     case Qt::Key_F:
                     {
                         setNotch(rowItem, true, notchType, NotchSubType::Straightforward, notchCount);
-                        return true;
+                        break;
                     }
                     case Qt::Key_B:
                     {
                         setNotch(rowItem, true, notchType, NotchSubType::Bisector, notchCount);
-                        return true;
+                        break;
                     }
                     case Qt::Key_X:
                     {
                         setNotch(rowItem, true, notchType, NotchSubType::Intersection, notchCount);
-                        return true;
+                        break;
                     }
+                    default:
+                        break;
                 }
             }
+            validateObjects(isMainPathValid());
+            nodeListChanged();
+            return true;
         }
     }
     else
