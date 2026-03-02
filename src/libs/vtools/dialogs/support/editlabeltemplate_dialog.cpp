@@ -4,7 +4,7 @@
 //  @date   17 Sep, 2023
 //
 //  @copyright
-//  Copyright (C) 2017 - 2022 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -473,14 +473,24 @@ void EditLabelTemplateDialog::SetupControls()
 void EditLabelTemplateDialog::InitPlaceholdersMenu()
 {
     QChar per('%');
+
+    // Sort the QPair part of the m_placeholders items.
+    QMap<QString, QString> sortedItems;
     auto i = m_placeholders.constBegin();
     while (i != m_placeholders.constEnd())
     {
-        auto value = i.value();
-        QAction *action = m_placeholdersMenu->addAction(value.first);
-        action->setData(per + qApp->translateVariables()->PlaceholderToUser(i.key()) + per);
-        connect(action, &QAction::triggered, this, &EditLabelTemplateDialog::InsertPlaceholder);
+        sortedItems.insert(i.value().first, per + i.key() + per);
         ++i;
+    }
+
+    // Insert sorted items into popup menu. 
+    auto j = sortedItems.constBegin();
+    while (j != sortedItems.constEnd())
+    {
+        QAction *action = m_placeholdersMenu->addAction(j.key());
+        action->setData(j.value());
+        connect(action, &QAction::triggered, this, &EditLabelTemplateDialog::InsertPlaceholder);
+        ++j;
     }
 }
 
@@ -501,33 +511,30 @@ void EditLabelTemplateDialog::InitPlaceholders()
     m_placeholders.insert(pl_author, qMakePair(tr("Company name or designer name"),
                                                            m_doc->GetCompanyName()));
     m_placeholders.insert(pl_customer, qMakePair(tr("Customer name"), m_doc->GetCustomerName()));
-    m_placeholders.insert(pl_pExt, qMakePair(tr("Pattern extension"), QString("val")));
 
     const QString patternFilePath = QFileInfo(qApp->getFilePath()).baseName();
     m_placeholders.insert(pl_pFileName, qMakePair(tr("Pattern file name"), patternFilePath));
+    m_placeholders.insert(pl_pExt, qMakePair(tr("Pattern file extension"), QFileInfo(qApp->getFilePath()).suffix()));
 
     const QString measurementsFilePath = QFileInfo(m_doc->MPath()).baseName();
-    m_placeholders.insert(pl_mFileName, qMakePair(tr("Measurments file name"), measurementsFilePath));
+    m_placeholders.insert(pl_mFileName, qMakePair(tr("Measurements file name"), measurementsFilePath));
+    m_placeholders.insert(pl_mExt, qMakePair(tr("Measurements file extension"), QFileInfo(m_doc->MPath()).suffix()));
 
     QString curSize;
     QString curHeight;
-    QString mExt;
     if (qApp->patternType() == MeasurementsType::Multisize)
     {
         curSize = QString::number(VContainer::size());
         curHeight = QString::number(VContainer::height());
-        mExt = "vst";
     }
     else if (qApp->patternType() == MeasurementsType::Individual)
     {
         curSize = QString::number(VContainer::size());
         curHeight = QString::number(VContainer::height());
-        mExt = "vit";
     }
 
     m_placeholders.insert(pl_size, qMakePair(tr("Size"), curSize));
     m_placeholders.insert(pl_height, qMakePair(tr("Height"), curHeight));
-    m_placeholders.insert(pl_mExt, qMakePair(tr("Measurments extension"), mExt));
 
     // Piece tags
     m_placeholders.insert(pl_pLetter, qMakePair(tr("Piece letter"), QString("")));
