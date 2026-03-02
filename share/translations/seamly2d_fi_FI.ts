@@ -3561,15 +3561,15 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
         <translation>Asiakkaan nimi</translation>
     </message>
     <message>
-        <source>Pattern extension</source>
-        <translation>Kaavan laajennus</translation>
+        <source>Pattern file extension</source>
+        <translation>Kaavan tiedostopääte</translation>
     </message>
     <message>
         <source>Pattern file name</source>
         <translation>Kaavatiedoston nimi</translation>
     </message>
     <message>
-        <source>Measurments file name</source>
+        <source>Measurements file name</source>
         <translation>Mittaustiedoston nimi</translation>
     </message>
     <message>
@@ -3581,8 +3581,8 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
         <translation>Pituus</translation>
     </message>
     <message>
-        <source>Measurments extension</source>
-        <translation>Mittausten laajennus</translation>
+        <source>Measurements file extension</source>
+        <translation>Mittausten tiedostopääte</translation>
     </message>
     <message>
         <source>Piece letter</source>

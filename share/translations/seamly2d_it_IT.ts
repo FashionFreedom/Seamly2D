@@ -3540,15 +3540,15 @@ punti di controllo</translation>
         <translation>Nome del cliente</translation>
     </message>
     <message>
-        <source>Pattern extension</source>
-        <translation>Estensione del modello</translation>
+        <source>Pattern file extension</source>
+        <translation>Estensione del file modello</translation>
     </message>
     <message>
         <source>Pattern file name</source>
         <translation>Nome del file modello</translation>
     </message>
     <message>
-        <source>Measurments file name</source>
+        <source>Measurements file name</source>
         <translation>Nome file misurazioni</translation>
     </message>
     <message>
@@ -3560,8 +3560,8 @@ punti di controllo</translation>
         <translation>Altezza</translation>
     </message>
     <message>
-        <source>Measurments extension</source>
-        <translation>Estensione delle misure</translation>
+        <source>Measurements file extension</source>
+        <translation>Estensione del file di misurazione</translation>
     </message>
     <message>
         <source>Piece letter</source>

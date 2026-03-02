@@ -3573,15 +3573,15 @@ points de contrôle</translation>
         <translation>Nom du client</translation>
     </message>
     <message>
-        <source>Pattern extension</source>
-        <translation>Extension du patron</translation>
+        <source>Pattern file extension</source>
+        <translation>Extension du fichier de patron</translation>
     </message>
     <message>
         <source>Pattern file name</source>
         <translation>Nom du fichier de patron</translation>
     </message>
     <message>
-        <source>Measurments file name</source>
+        <source>Measurements file name</source>
         <translation>Nom du fichier de mesures</translation>
     </message>
     <message>
@@ -3593,7 +3593,7 @@ points de contrôle</translation>
         <translation>Stature</translation>
     </message>
     <message>
-        <source>Measurments extension</source>
+        <source>Measurements file extension</source>
         <translation>Extension du fichier de mesure</translation>
     </message>
     <message>

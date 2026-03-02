@@ -3553,15 +3553,15 @@ Silakan coba batalkan operasi terakhir atau perbaiki rumus yang rusak.</translat
         <translation>Nama pelanggan</translation>
     </message>
     <message>
-        <source>Pattern extension</source>
-        <translation>Perpanjangan pola</translation>
+        <source>Pattern file extension</source>
+        <translation>Perpanjangan file pola</translation>
     </message>
     <message>
         <source>Pattern file name</source>
         <translation>Nama file pola</translation>
     </message>
     <message>
-        <source>Measurments file name</source>
+        <source>Measurements file name</source>
         <translation>Nama file pengukuran</translation>
     </message>
     <message>
@@ -3573,8 +3573,8 @@ Silakan coba batalkan operasi terakhir atau perbaiki rumus yang rusak.</translat
         <translation>Tinggi</translation>
     </message>
     <message>
-        <source>Measurments extension</source>
-        <translation>Perpanjangan pengukuran</translation>
+        <source>Measurements file extension</source>
+        <translation>Perpanjangan file pengukuran</translation>
     </message>
     <message>
         <source>Piece letter</source>

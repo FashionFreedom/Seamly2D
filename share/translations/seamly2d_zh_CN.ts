@@ -3545,7 +3545,7 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Measurments file name</source>
+        <source>Measurements file name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3557,7 +3557,7 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished">高度</translation>
     </message>
     <message>
-        <source>Measurments extension</source>
+        <source>Measurements extension</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

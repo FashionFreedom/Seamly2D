@@ -3553,15 +3553,15 @@ Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.<
         <translation>Jméno zákazníka</translation>
     </message>
     <message>
-        <source>Pattern extension</source>
-        <translation>Rozšíření vzoru</translation>
+        <source>Pattern file extension</source>
+        <translation>Rozšíření souboru vzoru</translation>
     </message>
     <message>
         <source>Pattern file name</source>
         <translation>Název souboru se vzorem</translation>
     </message>
     <message>
-        <source>Measurments file name</source>
+        <source>Measurements file name</source>
         <translation>Název souboru s měřeními</translation>
     </message>
     <message>
@@ -3573,8 +3573,8 @@ Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.<
         <translation>Výška</translation>
     </message>
     <message>
-        <source>Measurments extension</source>
-        <translation>Rozšíření měření</translation>
+        <source>Measurements file extension</source>
+        <translation>Rozšíření souboru měření</translation>
     </message>
     <message>
         <source>Piece letter</source>

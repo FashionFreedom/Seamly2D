@@ -3555,15 +3555,15 @@ Vă rugăm să încercați să anulați ultima operațiune sau să remediați fo
         <translation>Nume client</translation>
     </message>
     <message>
-        <source>Pattern extension</source>
-        <translation>Extensie de model</translation>
+        <source>Pattern file extension</source>
+        <translation>Extensie de fișier de model</translation>
     </message>
     <message>
         <source>Pattern file name</source>
         <translation>Nume fișier model</translation>
     </message>
     <message>
-        <source>Measurments file name</source>
+        <source>Measurements file name</source>
         <translation>Nume fișier măsurători</translation>
     </message>
     <message>
@@ -3575,8 +3575,8 @@ Vă rugăm să încercați să anulați ultima operațiune sau să remediați fo
         <translation>Înălțime</translation>
     </message>
     <message>
-        <source>Measurments extension</source>
-        <translation>Extensie măsurători</translation>
+        <source>Measurements file extension</source>
+        <translation>Extensie de fișier măsurători</translation>
     </message>
     <message>
         <source>Piece letter</source>

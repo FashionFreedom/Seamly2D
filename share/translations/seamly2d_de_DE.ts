@@ -3538,15 +3538,15 @@ Bitte versuchen Sie, den letzten Vorgang rückgängig zu machen oder die fehlerh
         <translation>Name des Kunden</translation>
     </message>
     <message>
-        <source>Pattern extension</source>
-        <translation>Schnittmustererweiterung</translation>
+        <source>Pattern file extension</source>
+        <translation>Schnittmuster datei erweiterung</translation>
     </message>
     <message>
         <source>Pattern file name</source>
         <translation>Schnittmusterdateiname</translation>
     </message>
     <message>
-        <source>Measurments file name</source>
+        <source>Measurements file name</source>
         <translation>Maßsatz Dateiname</translation>
     </message>
     <message>
@@ -3558,8 +3558,8 @@ Bitte versuchen Sie, den letzten Vorgang rückgängig zu machen oder die fehlerh
         <translation>Körperhöhe</translation>
     </message>
     <message>
-        <source>Measurments extension</source>
-        <translation>Maßsatz Erweiterung</translation>
+        <source>Measurements file extension</source>
+        <translation>Maßsatz datei erweiterung</translation>
     </message>
     <message>
         <source>Piece letter</source>

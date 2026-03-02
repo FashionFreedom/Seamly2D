@@ -3557,15 +3557,15 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation>Имя клиента</translation>
     </message>
     <message>
-        <source>Pattern extension</source>
-        <translation>Расширение выкройки</translation>
+        <source>Pattern file extension</source>
+        <translation>Расширение файла шаблона</translation>
     </message>
     <message>
         <source>Pattern file name</source>
         <translation>Название файла выкройки</translation>
     </message>
     <message>
-        <source>Measurments file name</source>
+        <source>Measurements file name</source>
         <translation>Название файла мерок</translation>
     </message>
     <message>
@@ -3577,8 +3577,8 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation>Рост</translation>
     </message>
     <message>
-        <source>Measurments extension</source>
-        <translation>Расширение мерок</translation>
+        <source>Measurements file extension</source>
+        <translation>Расширение файла измерений</translation>
     </message>
     <message>
         <source>Piece letter</source>
