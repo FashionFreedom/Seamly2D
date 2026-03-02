@@ -3538,15 +3538,15 @@ Probeer de laatste bewerking ongedaan te maken of de defecte formule te herstell
         <translation>Klant naam</translation>
     </message>
     <message>
-        <source>Pattern extension</source>
-        <translation>Patroon uitbreiding</translation>
+        <source>Pattern file extension</source>
+        <translation>Patroon bestandsextensie</translation>
     </message>
     <message>
         <source>Pattern file name</source>
         <translation>Naam patroonbestand</translation>
     </message>
     <message>
-        <source>Measurments file name</source>
+        <source>Measurements file name</source>
         <translation>Naam matenbestand</translation>
     </message>
     <message>
@@ -3558,8 +3558,8 @@ Probeer de laatste bewerking ongedaan te maken of de defecte formule te herstell
         <translation>Hoogte</translation>
     </message>
     <message>
-        <source>Measurments extension</source>
-        <translation>Maten uitbreiding</translation>
+        <source>Measurements file extension</source>
+        <translation>Maten Bestandsextensie</translation>
     </message>
     <message>
         <source>Piece letter</source>

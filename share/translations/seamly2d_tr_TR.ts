@@ -3553,15 +3553,15 @@ Lütfen son işlemi geri almayı veya bozuk formülü düzeltmeyi deneyin.</tran
         <translation>Müşteri adı</translation>
     </message>
     <message>
-        <source>Pattern extension</source>
-        <translation>Desen uzantısı</translation>
+        <source>Pattern file extension</source>
+        <translation>Desen dosya uzantısı</translation>
     </message>
     <message>
         <source>Pattern file name</source>
         <translation>Desen dosyası adı</translation>
     </message>
     <message>
-        <source>Measurments file name</source>
+        <source>Measurements file name</source>
         <translation>Ölçüm dosyası adı</translation>
     </message>
     <message>
@@ -3573,8 +3573,8 @@ Lütfen son işlemi geri almayı veya bozuk formülü düzeltmeyi deneyin.</tran
         <translation>Yükseklik</translation>
     </message>
     <message>
-        <source>Measurments extension</source>
-        <translation>Ölçüm uzantısı</translation>
+        <source>Measurements file extension</source>
+        <translation>Ölçümler dosya uzantısı</translation>
     </message>
     <message>
         <source>Piece letter</source>

@@ -3573,15 +3573,15 @@ Intente deshacer la última operación o corregir la fórmula defectuosa.</trans
         <translation>Nombre personalizado</translation>
     </message>
     <message>
-        <source>Pattern extension</source>
-        <translation>Extensión de patrón</translation>
+        <source>Pattern file extension</source>
+        <translation>Extensión de archivo de patrón</translation>
     </message>
     <message>
         <source>Pattern file name</source>
         <translation>Nombre del archivo de patrón</translation>
     </message>
     <message>
-        <source>Measurments file name</source>
+        <source>Measurements file name</source>
         <translation>Nombre del archivo de medidas</translation>
     </message>
     <message>
@@ -3593,8 +3593,8 @@ Intente deshacer la última operación o corregir la fórmula defectuosa.</trans
         <translation>Altura</translation>
     </message>
     <message>
-        <source>Measurments extension</source>
-        <translation>Extención de medidas</translation>
+        <source>Measurements file extension</source>
+        <translation>Extensión de archivo de medidas</translation>
     </message>
     <message>
         <source>Piece letter</source>

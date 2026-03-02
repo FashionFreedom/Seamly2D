@@ -3555,15 +3555,15 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation>Όνομα πελάτη</translation>
     </message>
     <message>
-        <source>Pattern extension</source>
-        <translation>Επέκταση μοτίβου</translation>
+        <source>Pattern file extension</source>
+        <translation>Επέκταση αρχείου μοτίβου</translation>
     </message>
     <message>
         <source>Pattern file name</source>
         <translation>Όνομα αρχείου μοτίβου</translation>
     </message>
     <message>
-        <source>Measurments file name</source>
+        <source>Measurements file name</source>
         <translation>Όνομα αρχείου μετρήσεων</translation>
     </message>
     <message>
@@ -3575,8 +3575,8 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation>Ύψος</translation>
     </message>
     <message>
-        <source>Measurments extension</source>
-        <translation>Επέκταση μετρήσεων</translation>
+        <source>Measurements file extension</source>
+        <translation>Επέκταση αρχείου μετρήσεων</translation>
     </message>
     <message>
         <source>Piece letter</source>
