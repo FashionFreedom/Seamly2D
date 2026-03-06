@@ -823,6 +823,9 @@
               <property name="styleSheet">
                <string notr="true"/>
               </property>
+              <property name="fontFilters">
+               <set>QFontComboBox::ScalableFonts</set>
+              </property>
              </widget>
             </item>
            </layout>
@@ -925,6 +928,9 @@
               </property>
               <property name="styleSheet">
                <string notr="true"/>
+              </property>
+              <property name="fontFilters">
+               <set>QFontComboBox::ScalableFonts</set>
               </property>
              </widget>
             </item>
@@ -1235,6 +1241,9 @@
               </property>
               <property name="styleSheet">
                <string notr="true"/>
+              </property>
+              <property name="fontFilters">
+               <set>QFontComboBox::ScalableFonts</set>
               </property>
              </widget>
             </item>
