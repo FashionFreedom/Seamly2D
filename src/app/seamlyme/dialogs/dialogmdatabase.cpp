@@ -474,6 +474,7 @@ QTreeWidgetItem *MeasurementDatabaseDialog::addMeasurementGroup(const QString &g
         group->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
         group->setCheckState(0, Qt::Unchecked);
         group->setBackground(0, QBrush(Qt::lightGray));
+        group->setForeground(0, QBrush(Qt::black));
     }
     return group;
 }

@@ -182,6 +182,10 @@ int VObjPaintDevice::metric(QPaintDevice::PaintDeviceMetric metric) const
         case QPaintDevice::PdmDevicePixelRatio:
         case QPaintDevice::PdmDevicePixelRatioScaled:
             return 1;
+        case QPaintDevice::PdmDevicePixelRatioF_EncodedA:
+            return QPaintDevice::encodeMetricF(QPaintDevice::PdmDevicePixelRatioF_EncodedA, 1.0);
+        case QPaintDevice::PdmDevicePixelRatioF_EncodedB:
+            return QPaintDevice::encodeMetricF(QPaintDevice::PdmDevicePixelRatioF_EncodedB, 1.0);
         default:
             qWarning("VObjPaintDevice::metric(), unhandled metric %d\n", metric);
             break;

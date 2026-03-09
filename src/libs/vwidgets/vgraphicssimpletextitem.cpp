@@ -1,53 +1,52 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vgraphicssimpletextitem.cpp
+//  @author Douglas S Caskey
+//  @date   20 May, 2026
+//
+//  @copyright
+//  Copyright (C) 2017 - 2026 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
- ************************************************************************
- **
- **  @file   vgraphicssimpletextitem.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vgraphicssimpletextitem.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   15 Nov, 2013
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2015 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "vgraphicssimpletextitem.h"
 
@@ -64,6 +63,7 @@
 #include <QPoint>
 #include <QPolygonF>
 #include <QRectF>
+#include <QStyleOptionGraphicsItem>
 #include <Qt>
 #include <QtDebug>
 
@@ -74,10 +74,9 @@
 #include "../vmisc/vabstractapplication.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VGraphicsSimpleTextItem default constructor.
- * @param parent parent object.
- */
+/// @brief VGraphicsSimpleTextItem default constructor.
+/// @param parent parent object.
+//---------------------------------------------------------------------------------------------------------------------
 VGraphicsSimpleTextItem::VGraphicsSimpleTextItem(QColor textColor, QGraphicsItem *parent)
     : QGraphicsSimpleTextItem(parent)
     , m_fontSize(qApp->Settings()->getPointNameSize())
@@ -91,11 +90,10 @@ VGraphicsSimpleTextItem::VGraphicsSimpleTextItem(QColor textColor, QGraphicsItem
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VGraphicsSimpleTextItem constructor.
- * @param text text.
- * @param parent parent object.
- */
+/// @brief VGraphicsSimpleTextItem constructor.
+/// @param text text.
+/// @param parent parent object.
+//---------------------------------------------------------------------------------------------------------------------
 VGraphicsSimpleTextItem::VGraphicsSimpleTextItem(const QString &text, QColor textColor,  QGraphicsItem *parent)
     : QGraphicsSimpleTextItem(text, parent)
     , m_fontSize(qApp->Settings()->getPointNameSize())
@@ -111,6 +109,14 @@ VGraphicsSimpleTextItem::VGraphicsSimpleTextItem(const QString &text, QColor tex
 //---------------------------------------------------------------------------------------------------------------------
 void VGraphicsSimpleTextItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
+    // Get the current zoom level
+    qreal lod = option->levelOfDetailFromTransform(painter->worldTransform());
+
+    // Qt 6.8.3 If zoomed out beyond a safe threshold, skip rendering entirely
+    if (lod < .1)
+    {
+        return;
+    }
     QGraphicsScene *scene = this->scene();
     const qreal scale = sceneScale(scene);
 
@@ -169,12 +175,11 @@ void VGraphicsSimpleTextItem::setShowParentTooltip(bool show)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief itemChange handle item change.
- * @param change change.
- * @param value value.
- * @return value.
- */
+/// @brief itemChange handle item change.
+/// @param change change.
+/// @param value value.
+/// @return value.
+//---------------------------------------------------------------------------------------------------------------------
 QVariant VGraphicsSimpleTextItem::itemChange(GraphicsItemChange change, const QVariant &value)
 {
      if (change == ItemPositionChange  && scene())
@@ -242,10 +247,9 @@ QVariant VGraphicsSimpleTextItem::itemChange(GraphicsItemChange change, const QV
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief hoverEnterEvent handle hover enter events.
- * @param event hover enter event.
- */
+/// @brief hoverEnterEvent handle hover enter events.
+/// @param event hover enter event.
+//---------------------------------------------------------------------------------------------------------------------
 void VGraphicsSimpleTextItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     m_isNameHovered = true;
@@ -268,10 +272,9 @@ void VGraphicsSimpleTextItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief hoverLeaveEvent handle hover leave events.
- * @param event hover leave event.
- */
+/// @brief hoverLeaveEvent handle hover leave events.
+/// @param event hover leave event.
+//---------------------------------------------------------------------------------------------------------------------
 void VGraphicsSimpleTextItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
     m_isNameHovered = false;
@@ -284,10 +287,9 @@ void VGraphicsSimpleTextItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief contextMenuEvent handle context menu events.
- * @param event context menu event.
- */
+/// @brief contextMenuEvent handle context menu events.
+/// @param event context menu event.
+//---------------------------------------------------------------------------------------------------------------------
 void VGraphicsSimpleTextItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
     emit showContextMenu(event);
@@ -408,10 +410,9 @@ void VGraphicsSimpleTextItem::initItem()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief scalePointName handle point name scaling to maintain same size when scene scale changes.
- * @param scale parent scene scale.
- */
+/// @brief scalePointName handle point name scaling to maintain same size when scene scale changes.
+/// @param scale parent scene scale.
+//---------------------------------------------------------------------------------------------------------------------
  void VGraphicsSimpleTextItem::scalePointName(const qreal &scale)
 {
     setScale(1/scale);
@@ -421,9 +422,8 @@ void VGraphicsSimpleTextItem::initItem()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief scalePosition handle point name position scaling to maintain same distance when scene scale changes.
- */
+/// @brief scalePosition handle point name position scaling to maintain same distance when scene scale changes.
+//---------------------------------------------------------------------------------------------------------------------
  void VGraphicsSimpleTextItem::scalePosition()
 {
     const qreal scale = sceneScale(scene());
