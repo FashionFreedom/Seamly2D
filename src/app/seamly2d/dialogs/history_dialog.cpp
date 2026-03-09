@@ -813,6 +813,12 @@ void HistoryDialog::changeEvent(QEvent *event)
         retranslateUi();
     }
 
+    if (event->type() == QEvent::ApplicationPaletteChange)
+    {
+        updateHistory(true);
+        m_search->find(ui->find_LineEdit->text());
+    }
+
     // remember to call base class implementation
     QDialog::changeEvent(event);
 }

@@ -87,6 +87,16 @@ enum DialogSource : quint16
     MeasurementDialog = 257  // 0000 0001 0000 0001
 };
 
+enum class AppTheme 
+{
+    LightFusion = 0,
+    DarkFusion,
+    TwilightFusion,
+    System,
+    classic,
+    Windows11
+};
+
 enum class Position : char
 {
     TopLeft = 0,
@@ -595,6 +605,7 @@ Q_REQUIRED_RESULT QStringList SupportedLocales();
 
 QPalette  lightPalette();
 QPalette  darkPalette();
+QPalette  twilightPalette();
 
 QString makeHeaderName(const QString &name);
 Q_REQUIRED_RESULT QString strippedName(const QString &fullFileName);

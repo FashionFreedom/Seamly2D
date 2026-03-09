@@ -58,6 +58,7 @@
 #include "../ifc/exception/vexceptionconversionerror.h"
 #include "../ifc/exception/vexceptionemptyparameter.h"
 #include "../ifc/exception/vexceptionwrongid.h"
+#include "../vmisc/def.h"
 #include "../vmisc/logging.h"
 #include "../vmisc/vsysexits.h"
 #include "../vmisc/diagnostic.h"
@@ -294,7 +295,7 @@ void ApplicationME::setTheme()
     QPalette palette;
     int theme = seamlyMeSettings()->getAppTheme();
 
-    if (theme == 2)
+    if (theme == 3)
     {
         // Get system mode (theme)
         Qt::ColorScheme scheme = styleHints()->colorScheme();
@@ -323,13 +324,19 @@ void ApplicationME::setTheme()
             palette = darkPalette();
             break;
         }
-        case 3:
+        case 2:
+        {
+            setStyle("Fusion");
+            palette = twilightPalette();
+            break;
+        }
+        case 4:
         {
             setStyle("windowsvista");
             palette = lightPalette();
             break;
         }
-        case 4:
+        case 5:
         {
             setStyle("Windows11");
             palette = darkPalette();

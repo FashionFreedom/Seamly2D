@@ -418,9 +418,9 @@ QPalette darkPalette()
     palette.setColor(QPalette::Window, QColor(53, 53, 53)); // A common light background color
     palette.setColor(QPalette::WindowText, Qt::white);
     palette.setColor(QPalette::Base, QColor(25, 25, 25));
-    palette.setColor(QPalette::AlternateBase, QColor(64, 64, 64));
-    palette.setColor(QPalette::ToolTipBase, QColor(53, 53, 53));
-    palette.setColor(QPalette::ToolTipText, Qt::white);
+    palette.setColor(QPalette::AlternateBase, QColor(53, 53, 53));
+    palette.setColor(QPalette::ToolTipBase, Qt::white);
+    palette.setColor(QPalette::ToolTipText, Qt::black);
     palette.setColor(QPalette::Text, Qt::white);
     palette.setColor(QPalette::Button, QColor(53, 53, 53));
     palette.setColor(QPalette::ButtonText, Qt::white);
@@ -430,6 +430,46 @@ QPalette darkPalette()
     palette.setColor(QPalette::HighlightedText, Qt::black);
     return palette;
 }
+
+QPalette twilightPalette()
+{
+    QPalette palette;
+    // Breeze  Twilight inspired dark colors
+    palette.setColor(QPalette::Window, QColor(49, 77, 127));         // Flat Dark Blue
+    palette.setColor(QPalette::WindowText, QColor(230, 230, 230));   // Light Gray for text
+    palette.setColor(QPalette::Base, QColor(30, 30, 30));
+    palette.setColor(QPalette::AlternateBase, QColor(78, 112, 147)); // Kashmir Blue
+    palette.setColor(QPalette::ToolTipBase, QColor(230, 230, 230));  // Light Gray for text
+    palette.setColor(QPalette::ToolTipText, QColor(49, 77, 127));    // Flat Dark Blue
+    palette.setColor(QPalette::Text,QColor(230, 230, 230));          // Light Gray for text
+    palette.setColor(QPalette::Button, QColor(78, 112, 147));        // Kashmir Blue
+    palette.setColor(QPalette::ButtonText, Qt::white);
+    palette.setColor(QPalette::BrightText, Qt::red);
+    palette.setColor(QPalette::Highlight, QColor(155, 111, 110));    // Dark Rose Gold accent
+    palette.setColor(QPalette::HighlightedText, Qt::white);
+    return palette;
+}
+
+/*
+// Base colors (Dark Blue/Grey)
+QColor background = QColor(49, 77, 127); // Flat Dark Blue [2]
+QColor text = Qt::white;
+QColor window = QColor(30, 30, 40); // Darker tone
+QColor highlight = QColor(128, 100, 160); // Accent
+
+twilight.setColor(QPalette::Window, window);
+twilight.setColor(QPalette::WindowText, text);
+twilight.setColor(QPalette::Base, QColor(25, 25, 35));
+twilight.setColor(QPalette::AlternateBase, background);
+twilight.setColor(QPalette::ToolTipBase, text);
+twilight.setColor(QPalette::ToolTipText, window);
+twilight.setColor(QPalette::Text, text);
+twilight.setColor(QPalette::Button, background);
+twilight.setColor(QPalette::ButtonText, text);
+twilight.setColor(QPalette::BrightText, Qt::red);
+twilight.setColor(QPalette::Highlight, highlight);
+twilight.setColor(QPalette::HighlightedText, Qt::white);
+*/
 
 //---------------------------------------------------------------------------------------------------------------------
 /**

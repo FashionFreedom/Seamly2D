@@ -1,30 +1,52 @@
-/************************************************************************
- **
- **  @file   vtextgraphicsitem.cpp
- **  @author Bojan Kverh
- **  @date   June 16, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vtextgraphicsitem.cpp
+//  @author Douglas S Caskey
+//  @date   20 May, 2026
+//
+//  @copyright
+//  Copyright (C) 2017 - 2026 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vtextgraphicsitem.cpp
+//  @author Bojan Kverh
+//  @date   16 Jun, 2016
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2016 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include <QApplication>
 #include <QColor>
@@ -48,25 +70,25 @@
 
 const qreal resizeSquare = (3./*mm*/ / 25.4) * PrintDPI;
 const qreal rotateCircle = (2./*mm*/ / 25.4) * PrintDPI;
-#define ROTATE_RECT                 60
-#define ROTATE_ARC                  50
 const qreal minW = (4./*mm*/ / 25.4) * PrintDPI + resizeSquare;
 const qreal minH = (4./*mm*/ / 25.4) * PrintDPI + resizeSquare;
-#define ACTIVE_Z                    10
+
+#define ROTATE_RECT 60
+#define ROTATE_ARC  50
+#define ACTIVE_Z    10
 
 namespace
 {
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetBoundingRect calculates the bounding box around rectBB rectangle, rotated around its center by rotation degrees
- * @param rectBB rectangle of interest
- * @param rotation rectangle rotation
- * @return bounding box around rectBB rotated by rotation
- */
-QRectF GetBoundingRect(QRectF rectBB, qreal rotation)
+/// @brief getBoundingRect calculates the bounding box around a rectangle, rotated around its center by rotation degrees
+/// @param rect rectangle of interest
+/// @param rotation rectangle rotation
+/// @return bounding box around rect rotated by rotation
+//---------------------------------------------------------------------------------------------------------------------
+QRectF getBoundingRect(QRectF rect, qreal rotation)
 {
-    QPointF apt[4] = { rectBB.topLeft(), rectBB.topRight(), rectBB.bottomLeft(), rectBB.bottomRight() };
-    QPointF ptCenter = rectBB.center();
+    QPointF points[4] = { rect.topLeft(), rect.topRight(), rect.bottomLeft(), rect.bottomRight() };
+    QPointF centerPoint = rect.center();
 
     qreal xPos1 = 0;
     qreal xPos2 = 0;
@@ -76,9 +98,9 @@ QRectF GetBoundingRect(QRectF rectBB, qreal rotation)
     double angle = qDegreesToRadians(rotation);
     for (int i = 0; i < 4; ++i)
     {
-        QPointF pt = apt[i] - ptCenter;
-        qreal xPos = pt.x()*cos(angle) + pt.y()*sin(angle);
-        qreal yPos = -pt.x()*sin(angle) + pt.y()*cos(angle);
+        QPointF point = points[i] - centerPoint;
+        qreal xPos = point.x()*cos(angle) + point.y()*sin(angle);
+        qreal yPos = -point.x()*sin(angle) + point.y()*cos(angle);
 
         if (i == 0)
         {
@@ -105,19 +127,18 @@ QRectF GetBoundingRect(QRectF rectBB, qreal rotation)
             }
         }
     }
-    QRectF rect;
-    rect.setTopLeft(ptCenter + QPointF(xPos1, yPos1));
-    rect.setWidth(xPos2 - xPos1);
-    rect.setHeight(yPos2 - yPos1);
-    return rect;
+    QRectF boundingRect;
+    boundingRect.setTopLeft(centerPoint + QPointF(xPos1, yPos1));
+    boundingRect.setWidth(xPos2 - xPos1);
+    boundingRect.setHeight(yPos2 - yPos1);
+    return boundingRect;
 }
 }//static functions
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::VTextGraphicsItem constructor
- * @param parent pointer to the parent item
- */
+/// @brief VTextGraphicsItem::VTextGraphicsItem constructor
+/// @param parent pointer to the parent item
+//---------------------------------------------------------------------------------------------------------------------
 VTextGraphicsItem::VTextGraphicsItem(QGraphicsItem *parent)
     : VPieceItem(parent)
     , m_startPos()
@@ -134,26 +155,31 @@ VTextGraphicsItem::VTextGraphicsItem(QGraphicsItem *parent)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::SetFont sets the item font
- * @param font font to be used in item
- */
+/// @brief VTextGraphicsItem::SetFont sets the item font
+/// @param font font to be used in item
+//---------------------------------------------------------------------------------------------------------------------
 void VTextGraphicsItem::setFont(const QFont &font)
 {
     m_textMananger.setFont(font);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::paint redraws the item content
- * @param painter pointer to the QPainter in use
- * @param option pointer to the object containing the actual label rectangle
- * @param widget not used
- */
+/// @brief VTextGraphicsItem::paint redraws the item content
+/// @param painter pointer to the QPainter in use
+/// @param option pointer to the object containing the actual label rectangle
+/// @param widget not used
+//---------------------------------------------------------------------------------------------------------------------
 void VTextGraphicsItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(widget)
-    Q_UNUSED(option)
+    // Get the current zoom level
+    qreal lod = option->levelOfDetailFromTransform(painter->worldTransform());
+
+    // Qt 6.8.3 If zoomed out beyond a safe threshold, skip rendering entirely
+    if (lod < .1)
+    {
+        return;
+    }
 
     QColor color  = QColor(qApp->Settings()->getDefaultLabelColor());
 
@@ -241,12 +267,11 @@ void VTextGraphicsItem::paint(QPainter *painter, const QStyleOptionGraphicsItem 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::setSize Tries to set the label size to (width, height).
- * If either of those is too small, the labelsize does not change.
- * @param width label width
- * @param height label height
- */
+/// @brief VTextGraphicsItem::setSize Tries to set the label size to (width, height).
+/// If either of those is too small, the labelsize does not change.
+/// @param width label width
+/// @param height label height
+//---------------------------------------------------------------------------------------------------------------------
 void VTextGraphicsItem::setSize(qreal width, qreal height)
 {
     // Take into account the rotation of the bounding rectangle
@@ -286,9 +311,8 @@ void VTextGraphicsItem::setSize(qreal width, qreal height)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::updateItem sets the correct size and font size and redraws the label
- */
+/// @brief VTextGraphicsItem::updateItem sets the correct size and font size and redraws the label
+//---------------------------------------------------------------------------------------------------------------------
 void VTextGraphicsItem::updateItem()
 {
     correctLabel();
@@ -296,20 +320,19 @@ void VTextGraphicsItem::updateItem()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::isContained checks if the bounding box around rotated rectBB is contained in
- * the parent. If that is not the case, it calculates the amount of movement needed to put it inside the parent
- * and write it into xPos, yPos
- * @param rectBB bounding box in question
- * @param rotation bounding box rotation in degrees
- * @param xPos horizontal translation needed to put the box inside parent item
- * @param yPos vertical translation needed to put the box inside parent item
- * @return true, if rectBB is contained in parent item and false otherwise
- */
+/// @brief VTextGraphicsItem::isContained checks if the bounding box around rotated rectBB is contained in
+/// the parent. If that is not the case, it calculates the amount of movement needed to put it inside the parent
+/// and write it into xPos, yPos
+/// @param rectBB bounding box in question
+/// @param rotation bounding box rotation in degrees
+/// @param xPos horizontal translation needed to put the box inside parent item
+/// @param yPos vertical translation needed to put the box inside parent item
+/// @return true, if rectBB is contained in parent item and false otherwise
+//---------------------------------------------------------------------------------------------------------------------
 bool VTextGraphicsItem::isContained(QRectF rectBB, qreal rotation, qreal &xPos, qreal &yPos) const
 {
     QRectF rectParent = parentItem()->boundingRect();
-    rectBB = GetBoundingRect(rectBB, rotation);
+    rectBB = getBoundingRect(rectBB, rotation);
     xPos = 0;
     yPos = 0;
 
@@ -339,51 +362,46 @@ bool VTextGraphicsItem::isContained(QRectF rectBB, qreal rotation, qreal &xPos, 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::updateData Updates the detail label
- * @param name name of detail
- * @param data reference to VPatternPieceData
- */
+/// @brief VTextGraphicsItem::updateData Updates the detail label
+/// @param name name of detail
+/// @param data reference to VPatternPieceData
+//---------------------------------------------------------------------------------------------------------------------
 void VTextGraphicsItem::updateData(const QString &name, const VPieceLabelData &data)
 {
     m_textMananger.Update(name, data);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::updateData Updates the pattern label
- * @param doc pointer to the pattern object
- */
+/// @brief VTextGraphicsItem::updateData Updates the pattern label
+/// @param doc pointer to the pattern object
+//---------------------------------------------------------------------------------------------------------------------
 void VTextGraphicsItem::updateData(VAbstractPattern *doc)
 {
     m_textMananger.Update(doc);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::getTextLines returns the number of lines of text to show
- * @return number of lines of text
- */
+/// @brief VTextGraphicsItem::getTextLines returns the number of lines of text to show
+/// @return number of lines of text
+//---------------------------------------------------------------------------------------------------------------------
 int VTextGraphicsItem::getTextLines() const
 {
     return m_textMananger.GetSourceLinesCount();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::getFontSize returns the currentextLiney used text base font size
- * @return current text base font size
- */
+/// @brief VTextGraphicsItem::getFontSize returns the currentextLiney used text base font size
+/// @return current text base font size
+//---------------------------------------------------------------------------------------------------------------------
 int VTextGraphicsItem::getFontSize() const
 {
     return m_textMananger.GetFont().pixelSize();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::mousePressEvent handles left button mouse press events
- * @param event pointer to QGraphicsSceneMouseEvent object
- */
+/// @brief VTextGraphicsItem::mousePressEvent handles left button mouse press events
+/// @param event pointer to QGraphicsSceneMouseEvent object
+//---------------------------------------------------------------------------------------------------------------------
 void VTextGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     qDebug() << "VTextGraphicsItem::mousePressEvent\n";
@@ -475,10 +493,9 @@ void VTextGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::mouseMoveEvent handles mouse move events
- * @param event  pointer to QGraphicsSceneMouseEvent object
- */
+/// @brief VTextGraphicsItem::mouseMoveEvent handles mouse move events
+/// @param event  pointer to QGraphicsSceneMouseEvent object
+//---------------------------------------------------------------------------------------------------------------------
 void VTextGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event )
 {
     qDebug() << "VTextGraphicsItem::mouseMoveEvent\n";
@@ -572,10 +589,9 @@ void VTextGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event )
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::mouseReleaseEvent handles left button mouse release events
- * @param event  pointer to QGraphicsSceneMouseEvent object
- */
+/// @brief VTextGraphicsItem::mouseReleaseEvent handles left button mouse release events
+/// @param event  pointer to QGraphicsSceneMouseEvent object
+//---------------------------------------------------------------------------------------------------------------------
 void VTextGraphicsItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event )
 {
     if (event ->button() == Qt::LeftButton)
@@ -629,10 +645,9 @@ void VTextGraphicsItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event )
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::hoverMoveEvent checks if cursor has to be changed
- * @param event pointer to the scene hover event
- */
+/// @brief VTextGraphicsItem::hoverMoveEvent checks if cursor has to be changed
+/// @param event pointer to the scene hover event
+//---------------------------------------------------------------------------------------------------------------------
 void VTextGraphicsItem::hoverMoveEvent(QGraphicsSceneHoverEvent *event)
 {
     if (m_mode == Mode::Resize && m_moveType & IsResizable)
@@ -650,10 +665,9 @@ void VTextGraphicsItem::hoverMoveEvent(QGraphicsSceneHoverEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::hoverLeaveEvent tries to restore normal mouse cursor
- * @param event pointer to the scene hover event
- */
+/// @brief VTextGraphicsItem::hoverLeaveEvent tries to restore normal mouse cursor
+/// @param event pointer to the scene hover event
+//---------------------------------------------------------------------------------------------------------------------
 void VTextGraphicsItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
     setCursor(QCursor());
@@ -661,19 +675,17 @@ void VTextGraphicsItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::UpdateBox redraws the label content
- */
+/// @brief VTextGraphicsItem::UpdateBox redraws the label content
+//---------------------------------------------------------------------------------------------------------------------
 void VTextGraphicsItem::UpdateBox()
 {
     update(m_boundingRect);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief VTextGraphicsItem::UpdateFont sets the text font size, so that the entire text will
- *  just fit into the label bounding box
- */
+/// @brief VTextGraphicsItem::UpdateFont sets the text font size, so that the entire text will
+///  just fit into the label bounding box
+//---------------------------------------------------------------------------------------------------------------------
 void VTextGraphicsItem::correctLabel()
 {
     qreal xPos;

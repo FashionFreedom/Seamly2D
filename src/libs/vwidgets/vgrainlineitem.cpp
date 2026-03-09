@@ -4,7 +4,7 @@
 //  @date   11 Nov, 2024
 //
 //  @copyright
-//  Copyright (C) 2017 - 2025 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -125,8 +125,15 @@ QPainterPath VGrainlineItem::shape() const
 //---------------------------------------------------------------------------------------------------------------------
 void VGrainlineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    Q_UNUSED(option)
     Q_UNUSED(widget)
+    // Get the current zoom level
+    qreal lod = option->levelOfDetailFromTransform(painter->worldTransform());
+
+    // Qt 6.8.3 If zoomed out beyond a safe threshold, skip rendering entirely
+    if (lod < .1)
+    {
+        return;
+    }
 
     painter->save();
     QColor color  = QColor(qApp->Settings()->getDefaultGrainlineColor());

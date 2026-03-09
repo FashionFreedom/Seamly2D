@@ -801,10 +801,13 @@ void VMainGraphicsView::mouseDoubleClickEvent(QMouseEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VMainGraphicsView::MinScale()
 {
-    const QRect screenRect(QGuiApplication::primaryScreen()->availableGeometry());
-    const qreal screenSize = qMin(screenRect.width(), screenRect.height());
+    //const QRect screenRect(QGuiApplication::primaryScreen()->availableGeometry());
+    //const qreal screenSize = qMin(screenRect.width(), screenRect.height());
+    //return screenSize / maxSceneSize;
 
-    return screenSize / maxSceneSize;
+    // Since Qt 6.8.3 has some rendering defects when zooming out too far,
+    // causing excessive QPainter warnings and crashing, we limit the scale to 2%.
+    return 0.05;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
