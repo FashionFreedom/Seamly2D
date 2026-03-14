@@ -231,7 +231,7 @@ jobs:
       - name: make seamly2d.exe and seamlyme.exe
         shell: bash
         run: |
-          qmake.exe Seamly2D.pro -config release CONFIG+=noTests
+          ${QT_HOST_PATH}/bin/qmake.exe Seamly2D.pro -config release CONFIG+=noTests
           nmake
 
       - name: install NSIS
