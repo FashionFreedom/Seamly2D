@@ -229,8 +229,9 @@ jobs:
           ./scripts/version.sh ${VERSION_NUMBER}
 
       - name: make seamly2d.exe and seamlyme.exe
+        shell: bash
         run: |
-          $Env:QT_HOST_PATH\bin\qmake.exe Seamly2D.pro -config release CONFIG+=noTests
+          qmake.exe Seamly2D.pro -config release CONFIG+=noTests
           nmake
 
       - name: install NSIS
