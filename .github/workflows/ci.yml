@@ -194,22 +194,32 @@ jobs:
           if-no-files-found: error
 
   windows:
-    name: 'Windows 64-Bit: Build'
+    name: 'Windows Build'
     runs-on: windows-latest
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+    strategy:
+      matrix:
+        include:
+          - msvc-arch: x64
+            qt-arch: win64_msvc2019_64
+            release-file: Seamly2D-windows.zip
+          - msvc-arch: amd64_arm64
+            qt-arch: win64_msvc2019_arm64
+            release-file: Seamly2D-windows-arm64.zip
 
     steps:
       - uses: actions/checkout@v6
 
       - uses: ilammy/msvc-dev-cmd@v1
         with:
-          arch: x64
+          arch: ${{ matrix.msvc-arch }}
 
       - uses: jurplel/install-qt-action@v4
         with:
           version: ${{ env.QT_VERSION }}
+          arch: ${{ matrix.qt-arch }}
           cache: true
           modules: qtmultimedia
 
@@ -220,7 +230,7 @@ jobs:
 
       - name: make seamly2d.exe and seamlyme.exe
         run: |
-          qmake.exe Seamly2D.pro -config release CONFIG+=noTests
+          qmake Seamly2D.pro -config release CONFIG+=noTests
           nmake
 
       - name: install NSIS
@@ -284,13 +294,13 @@ jobs:
       - name: pack installer file into .zip
         run: |
           cd ..\windows-build\
-          C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
-          copy Seamly2D-windows.zip ..\Seamly2D\
+          C:\"Program Files"\7-Zip\7z.exe a ${{ matrix.release-file }} Seamly2D-installer.exe
+          copy ${{ matrix.release-file }} ..\Seamly2D\
 
       - uses: actions/upload-artifact@v6
         with:
-          name: Seamly2D-windows.zip
-          path: Seamly2D-windows.zip
+          name: ${{ matrix.release-file }}
+          path: ${{ matrix.release-file }}
           if-no-files-found: error
 
   publish:
@@ -311,6 +321,10 @@ jobs:
         uses: actions/download-artifact@v7
         with:
           name: Seamly2D-windows.zip
+      - name: Download unsigned Windows artifacts
+        uses: actions/download-artifact@v7
+        with:
+          name: Seamly2D-windows-arm64.zip
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ env.VERSION_NUMBER }}
@@ -322,6 +336,7 @@ jobs:
             Seamly2D-x86_64.AppImage
             Seamly2D-macos.zip
             Seamly2D-windows.zip
+            Seamly2D-windows-arm64.zip
 
   document:
     # Deploy Doxygen documentation for scheduled releases (schedule) and manual releases (workflow_dispatch) and pre-releases (push)
