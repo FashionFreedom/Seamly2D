@@ -46,9 +46,12 @@ win32 {
                        ../../../dist/win/libssl-1_1.dll
 }
 
-# Ensure xerces-c_3_2.xll is deployed into the target fodler
-win32 {
-    INSTALL_XERCES = ../../libs/xerces-c/msvc/lib/xerces-c_3_2.dll
+# Ensure xerces-c_3_3.dll is deployed into the target folder
+win32-msvc {
+    INSTALL_XERCES = ../../libs/xerces-c/msvc/lib/xerces-c_3_3.dll
+}
+win32-arm64-msvc {
+    INSTALL_XERCES = ../../libs/xerces-c/msvc-arm64/lib/xerces-c_3_3.dll
 }
 
 # MSVC: force utf-8 source for ° symbol and other utf-8 strings in source files
