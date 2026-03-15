@@ -9,6 +9,12 @@
 
 XERCES_CPP_NAMESPACE_BEGIN
 
+// Ignore warning about private constructor
+#if defined __GNUC__ && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ > 5))
+#  pragma GCC diagnostic push
+#  pragma GCC diagnostic ignored "-Wctor-dtor-privacy"
+#endif
+
 class XMLErrs
 {
 public :
@@ -344,6 +350,10 @@ private:
     // -----------------------------------------------------------------------
     XMLErrs();
 };
+
+#if defined __GNUC__ && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ > 5))
+#  pragma GCC diagnostic pop
+#endif
 
 XERCES_CPP_NAMESPACE_END
 

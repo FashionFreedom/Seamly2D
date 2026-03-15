@@ -163,16 +163,6 @@ inline XMLCh* KVStringPair::getValue()
 // ---------------------------------------------------------------------------
 //  KVStringPair: Setters
 // ---------------------------------------------------------------------------
-inline void KVStringPair::setKey(const XMLCh* const newKey)
-{
-    setKey(newKey, XMLString::stringLen(newKey));
-}
-
-inline void KVStringPair::setValue(const XMLCh* const newValue)
-{
-    setValue(newValue, XMLString::stringLen(newValue));
-}
-
 inline void KVStringPair::setKey(  const XMLCh* const newKey
                                  , const XMLSize_t    newKeyLength)
 {
@@ -199,6 +189,16 @@ inline void KVStringPair::setValue(  const XMLCh* const newValue
     }
 
     memcpy(fValue, newValue, (newValueLength+1) * sizeof(XMLCh)); // len+1 because of the 0 at the end
+}
+
+inline void KVStringPair::setKey(const XMLCh* const newKey)
+{
+    setKey(newKey, XMLString::stringLen(newKey));
+}
+
+inline void KVStringPair::setValue(const XMLCh* const newValue)
+{
+    setValue(newValue, XMLString::stringLen(newValue));
 }
 
 inline void KVStringPair::set(  const   XMLCh* const    newKey

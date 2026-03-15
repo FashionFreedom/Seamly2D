@@ -350,6 +350,20 @@ public :
       */
     const XMLSize_t& getLowWaterMark() const;
 
+    /** Get the 'Disallow DOCTYPE (DTD)' flag
+      *
+      * This method returns the state of the parser's disallowed DOCTYPE
+      * flag.
+      *
+      * @return false, if the parser is currently configured to
+      *         allow DOCTYPE, true otherwise.
+      *
+      * @see #setDisallowDoctype()
+      * @see #getLoadExternalDTD
+      * @see #getValidationScheme
+      */
+    bool getDisallowDoctype() const;
+
     /** Get the 'Loading External DTD' flag
       *
       * This method returns the state of the parser's loading external DTD
@@ -359,6 +373,7 @@ public :
       *         ignore external DTD completely, true otherwise.
       *
       * @see #setLoadExternalDTD
+      * @see #getDisallowDoctype
       * @see #getValidationScheme
       */
     bool getLoadExternalDTD() const;
@@ -793,6 +808,23 @@ public :
       */
     void setLowWaterMark(XMLSize_t lwm);
 
+    /** Set the 'Disallow DOCTYPE (DTD)' flag
+      *
+      * This method allows users to disable the processing of DOCTYPE (DTD).
+      * When set to true, the parser will throw an exception if the document
+      * contains the DOCTYPE node.
+      *
+      * The parser's default state is: false.
+      *
+      * @param newState The value specifying whether to disallow DOCTYPE
+      *                 or not.
+      *
+      * @see #setDisallowDoctype()
+      * @see #getLoadExternalDTD
+      * @see #getValidationScheme
+      */
+    void setDisallowDoctype(const bool newState);
+
     /** Set the 'Loading External DTD' flag
       *
       * This method allows users to enable or disable the loading of external DTD.
@@ -807,6 +839,7 @@ public :
       *                 be loaded or not.
       *
       * @see #getLoadExternalDTD
+      * @see #setDisallowDoctype
       * @see #setValidationScheme
       */
     void setLoadExternalDTD(const bool newState);
