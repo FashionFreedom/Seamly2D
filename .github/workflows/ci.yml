@@ -205,11 +205,9 @@ jobs:
           - msvc-arch: x64
             qt-arch: win64_msvc2019_64
             release-file: Seamly2D-windows.zip
-            qmake-spec: win32-msvc
           - msvc-arch: amd64_arm64
             qt-arch: win64_msvc2019_arm64
             release-file: Seamly2D-windows-arm64.zip
-            qmake-spec: win32-arm64-msvc
 
     steps:
       - uses: actions/checkout@v6
@@ -232,7 +230,7 @@ jobs:
 
       - name: make seamly2d.exe and seamlyme.exe
         run: |
-          qmake -spec ${{ matrix.qmake-spec }} Seamly2D.pro -config release CONFIG+=noTests
+          qmake Seamly2D.pro -config release CONFIG+=noTests
           nmake
 
       - name: install NSIS
