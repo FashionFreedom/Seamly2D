@@ -342,7 +342,8 @@ else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$$
 # xerces library
 macx: LIBS += -L$${PWD}/../../libs/xerces-c/macx/lib -lxerces-c
 else:unix: LIBS += -lxerces-c
-win32:!win32-g++: LIBS += -L$${PWD}/../../libs/xerces-c/msvc/lib -lxerces-c_3
+win32-msvc: LIBS += -L$${PWD}/../../libs/xerces-c/msvc/lib -lxerces-c_3
+win32-arm64-msvc: LIBS += -L$${PWD}/../../libs/xerces-c/msvc-arm64/lib -lxerces-c_3
 win32-g++: LIBS += -L$${PWD}/../../libs/xerces-c/mingw/lib -lxerces-c
 
 win32 {
@@ -367,5 +368,6 @@ macx{
 
 win32{
     # run windeployqt to include all qt libraries and vc_redist in $${DESTDIR}
-    QMAKE_POST_LINK += windeployqt $$shell_path($$DESTDIR/$${TARGET}.exe)
+    qtPrepareTool(WINDEPLOYQT, windeployqt)
+    QMAKE_POST_LINK += $$WINDEPLOYQT $$shell_path($$DESTDIR/$${TARGET}.exe)
 }
