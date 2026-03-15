@@ -160,6 +160,12 @@ public :
                 XMLReader* const        reader
         ,       XMLEntityDecl* const    entity
     );
+    bool pushReaderAdoptEntity
+    (
+                XMLReader* const        reader
+        ,       XMLEntityDecl* const    entity
+        ,       const bool              adoptEntity = true
+    );
     void reset();
 
 
@@ -209,15 +215,71 @@ private :
     ReaderMgr& operator=(const ReaderMgr&);
 
     // -----------------------------------------------------------------------
+    //  Private data types
+    // -----------------------------------------------------------------------
+    class ReaderData : public XMemory
+    {
+    public  :
+        // ---------------------------------------------------------------------
+        //  Constructors and Destructor
+        // ---------------------------------------------------------------------
+        ReaderData
+        (    XMLReader* const     reader
+           , XMLEntityDecl* const entity
+           , const bool           adoptEntity
+        );
+
+        ~ReaderData();
+
+        // ----------------------------------------------------------------------
+        //  Getter methods
+        // ----------------------------------------------------------------------
+        XMLReader* getReader() const;
+        XMLEntityDecl* getEntity() const;
+        bool getEntityAdopted() const;
+
+        XMLEntityDecl* releaseEntity();
+
+    private :
+        // ---------------------------------------------------------------------
+        //  Unimplemented constructors and operators
+        // ---------------------------------------------------------------------
+        ReaderData();
+        ReaderData(const ReaderData&);
+        ReaderData& operator=(const ReaderData&);
+
+        // ---------------------------------------------------------------------
+        //  Private data members
+        //
+        //  fReader
+        //      This is the pointer to the reader object that must be destroyed
+        //      when this object is destroyed.
+        //
+        //  fEntity
+        //  fEntityAdopted
+        //      This is the pointer to the entity object that, if adopted, must
+        //      be destroyed when this object is destroyed.
+        //
+        //      Note that we need to keep up with which of the pushed readers
+        //      are pushed entity values that are being spooled. This is done
+        //      to avoid the problem of recursive definitions.
+        // ---------------------------------------------------------------------
+        XMLReader*     fReader;
+        XMLEntityDecl* fEntity;
+        bool           fEntityAdopted;
+    };
+
+    // -----------------------------------------------------------------------
     //  Private data members
     //
-    //  fCurEntity
-    //      This is the current top of stack entity. We pull it off the stack
-    //      and store it here for efficiency.
+    //  fCurReaderData
+    //      This is the current top of the reader data stack. We pull it off
+    //      the stack and store it here for efficiency.
     //
     //  fCurReader
-    //      This is the current top of stack reader. We pull it off the
-    //      stack and store it here for efficiency.
+    //      This is the reader of the current top of the reader data stack.
+    //      It contains the same value as fCurReaderData->fReader or NULL,
+    //      if fCurReaderData is NULL. We store it here for efficiency.
     //
     //  fEntityHandler
     //      This is the installed entity handler. Its installed via the
@@ -225,10 +287,14 @@ private :
     //      process of creating external entity readers.
     //
     //  fEntityStack
-    //      We need to keep up with which of the pushed readers are pushed
-    //      entity values that are being spooled. This is done to avoid the
-    //      problem of recursive definitions. This stack consists of refs to
-    //      EntityDecl objects for the pushed entities.
+    //      This is a storage of orphaned XMLEntityDecl objects. The
+    //      popReader() function adds a reader manager-adopted entity object
+    //      to this storage before passing its pointer to the constructor
+    //      of the being thrown EndOfEntityException exception. This makes
+    //      sure that the life-time of an entity exposed to the exception
+    //      handlers is the same as the life-time of reader manager (and so
+    //      normally the life-time of the scanner which embeds the reader
+    //      manager).
     //
     //  fNextReaderNum
     //      This is the reader serial number value. Each new reader that is
@@ -236,8 +302,8 @@ private :
     //      us catch things like partial markup errors and such.
     //
     //  fReaderStack
-    //      This is the stack of reader references. We own all the readers
-    //      and destroy them when they are used up.
+    //      This is the stack of reader data references. We own all the
+    //      entries and destroy them when they are used up.
     //
     //  fThrowEOE
     //      This flag controls whether we throw an exception when we hit an
@@ -252,12 +318,12 @@ private :
     //  fStandardUriConformant
     //      This flag controls whether we force conformant URI
     // -----------------------------------------------------------------------
-    XMLEntityDecl*              fCurEntity;
+    ReaderData*                 fCurReaderData;
     XMLReader*                  fCurReader;
     XMLEntityHandler*           fEntityHandler;
     RefStackOf<XMLEntityDecl>*  fEntityStack;
     unsigned int                fNextReaderNum;
-    RefStackOf<XMLReader>*      fReaderStack;
+    RefStackOf<ReaderData>*     fReaderStack;
     bool                        fThrowEOE;
     XMLReader::XMLVersion       fXMLVersion;
     bool                        fStandardUriConformant;

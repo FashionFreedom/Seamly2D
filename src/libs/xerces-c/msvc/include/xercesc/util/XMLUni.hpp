@@ -224,6 +224,7 @@ public :
     static const XMLCh fgXercesSchemaExternalSchemaLocation[];
     static const XMLCh fgXercesSchemaExternalNoNameSpaceSchemaLocation[];
     static const XMLCh fgXercesSecurityManager[];
+    static const XMLCh fgXercesDisallowDoctype[]; // DOMDisallowDoctype equivalent for SAX.
     static const XMLCh fgXercesLoadExternalDTD[];
     static const XMLCh fgXercesContinueAfterFatalError[];
     static const XMLCh fgXercesValidationErrorAsFatal[];

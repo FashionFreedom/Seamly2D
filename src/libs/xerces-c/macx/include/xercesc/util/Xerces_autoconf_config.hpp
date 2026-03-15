@@ -65,7 +65,7 @@
 #define XERCES_U16BIT_INT uint16_t
 #define XERCES_U32BIT_INT uint32_t
 #define XERCES_U64BIT_INT uint64_t
-#define XERCES_XMLCH_T uint16_t
+#define XERCES_XMLCH_T char16_t
 #define XERCES_SIZE_T size_t
 #define XERCES_SSIZE_T ssize_t
 
