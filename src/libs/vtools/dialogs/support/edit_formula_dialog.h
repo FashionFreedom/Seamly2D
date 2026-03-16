@@ -138,6 +138,8 @@ private:
 
     template <class key, class val>
     void         showVariable(const QMap<key, val> &var);
+    template <class key, class val>
+    void         showCustomVariable(const QMap<key, val> &var);
     void         showMeasurements(const QMap<QString, QSharedPointer<MeasurementVariable> > &var);
     void         showFunctions();
     void         showInsertionButtons(const bool &visible);
