@@ -1,53 +1,55 @@
-/***************************************************************************
- **  @file   dialogvariables.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   dialogvariables.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
+//  Copyright (C) 2017-2023 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
-/************************************************************************
- **  @file   dialogvariables.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   dialogvariables.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   November 15, 2013
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2015 Valentina project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
+
 #include "dialogvariables.h"
 #include "ui_dialogvariables.h"
 #include "../vwidgets/vwidgetpopup.h"
@@ -211,7 +213,8 @@ void DialogVariables::fillCustomVariables(bool freshCall)
         currentRow++;
 
         addCell(ui->variables_TableWidget, variable->GetName(), currentRow, 0, Qt::AlignVCenter); // name
-        addCell(ui->variables_TableWidget, qApp->LocaleToString(*variable->GetValue()), currentRow, 1,
+        addCell(ui->variables_TableWidget, variable->GetDescription(), currentRow, 1, Qt::AlignVCenter); // description
+        addCell(ui->variables_TableWidget, qApp->LocaleToString(*variable->GetValue()), currentRow, 2,
                 Qt::AlignHCenter | Qt::AlignVCenter, variable->IsFormulaOk()); // calculated value
 
         QString formula;
@@ -225,16 +228,16 @@ void DialogVariables::fillCustomVariables(bool freshCall)
             formula = variable->GetFormula();
         }
 
-        addCell(ui->variables_TableWidget, formula, currentRow, 2, Qt::AlignVCenter); // formula
+        addCell(ui->variables_TableWidget, formula, currentRow, 3, Qt::AlignVCenter); // formula
     }
 
     if (freshCall)
     {
         ui->variables_TableWidget->resizeColumnsToContents();
         ui->variables_TableWidget->resizeRowsToContents();
+        ui->variables_TableWidget->setColumnWidth(1, 350);
     }
 
-    ui->variables_TableWidget->setColumnWidth(0, 350);
     ui->variables_TableWidget->horizontalHeader()->setStretchLastSection(true);
     ui->variables_TableWidget->blockSignals(false);
 }
@@ -320,8 +323,8 @@ void DialogVariables::showUnits()
 {
     const QString unit = UnitsToStr(qApp->patternUnit());
 
-    showHeaderUnits(ui->variables_TableWidget, 1, unit);           // calculated value
-    showHeaderUnits(ui->variables_TableWidget, 2, unit);           // formula
+    showHeaderUnits(ui->variables_TableWidget, 2, unit);           // calculated value
+    showHeaderUnits(ui->variables_TableWidget, 3, unit);           // formula
 
     showHeaderUnits(ui->lineLengths_TableWidget, 1, unit);         // line lengths
     showHeaderUnits(ui->lineAngles_TableWidget, 1, degreeSymbol);  // line angle
@@ -336,7 +339,9 @@ void DialogVariables::showHeaderUnits(QTableWidget *table, int column, const QSt
 {
     SCASSERT(table != nullptr)
 
-    const QString header = table->horizontalHeaderItem(column)->text();
+    QString header = table->horizontalHeaderItem(column)->text();
+    // Need to strip text of any umits so we don't recursively add units to the header string
+    header = header.section('(', 0, 0);
     const QString unitHeader = QString("%1 (%2)").arg(header).arg(unit);
     table->horizontalHeaderItem(column)->setText(unitHeader);
 }
@@ -353,6 +358,7 @@ void DialogVariables::addCell(QTableWidget *table, const QString &text, int row,
     Qt::ItemFlags flags = item->flags();
     flags &= ~(Qt::ItemIsEditable); // reset/clear the flag
     item->setFlags(flags);
+    item->setToolTip(text);
 
     if (!ok)
     {
@@ -896,6 +902,7 @@ void DialogVariables::changeEvent(QEvent *event)
     {
         // retranslate designer form (single inheritance approach)
         ui->retranslateUi(this);
+        showUnits();
         FullUpdateFromFile();
     }
     // remember to call base class implementation
