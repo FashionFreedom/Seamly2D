@@ -131,14 +131,17 @@
           <property name="wordWrap">
            <bool>true</bool>
           </property>
+          <property name="columnCount">
+           <number>4</number>
+          </property>
           <attribute name="horizontalHeaderCascadingSectionResizes">
            <bool>false</bool>
           </attribute>
           <attribute name="horizontalHeaderMinimumSectionSize">
-           <number>180</number>
+           <number>100</number>
           </attribute>
           <attribute name="horizontalHeaderDefaultSectionSize">
-           <number>180</number>
+           <number>100</number>
           </attribute>
           <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
            <bool>true</bool>
@@ -165,36 +168,20 @@
            <property name="text">
             <string>Name</string>
            </property>
-           <property name="background">
-            <color>
-             <red>210</red>
-             <green>210</green>
-             <blue>210</blue>
-            </color>
+          </column>
+          <column>
+           <property name="text">
+            <string>Description</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>The calculated value</string>
-           </property>
-           <property name="background">
-            <color>
-             <red>210</red>
-             <green>210</green>
-             <blue>210</blue>
-            </color>
+            <string>Value</string>
            </property>
           </column>
           <column>
            <property name="text">
             <string>Formula</string>
-           </property>
-           <property name="background">
-            <color>
-             <red>210</red>
-             <green>210</green>
-             <blue>210</blue>
-            </color>
            </property>
           </column>
          </widget>
@@ -391,7 +378,7 @@
               </size>
              </property>
              <property name="text">
-              <string>Calculated value:</string>
+              <string>Value:</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
