@@ -249,7 +249,7 @@ jobs:
 
       - name: List contents of installer
         shell: bash
-        run: tree ../windows-build/
+        run: ls -lR ../windows-build/
 
       - name: Authenticate to Google Cloud (for signing)
         uses: google-github-actions/auth@v3
