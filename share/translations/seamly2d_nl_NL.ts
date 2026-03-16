@@ -3092,10 +3092,6 @@ Probeer de laatste bewerking ongedaan te maken of de defecte formule te herstell
         <translation>Naam</translation>
     </message>
     <message>
-        <source>The calculated value</source>
-        <translation>De berekende waarde</translation>
-    </message>
-    <message>
         <source>Formula</source>
         <translation>Formule</translation>
     </message>
@@ -3132,8 +3128,8 @@ Probeer de laatste bewerking ongedaan te maken of de defecte formule te herstell
         <translation>Unieke naam voor variabele</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Berekende waarde:</translation>
+        <source>Value:</source>
+        <translation>Waarde:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -3230,6 +3226,10 @@ Probeer de laatste bewerking ongedaan te maken of de defecte formule te herstell
     <message>
         <source>Edit variable</source>
         <translation>Bewerk variabele</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beschrijving</translation>
     </message>
 </context>
 <context>
@@ -3372,6 +3372,10 @@ Probeer de laatste bewerking ongedaan te maken of de defecte formule te herstell
     <message>
         <source>Custom</source>
         <translation>Aangepast</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beschrijving</translation>
     </message>
 </context>
 <context>
@@ -10908,8 +10912,8 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Naam</translation>
     </message>
     <message>
-        <source>Calculated value</source>
-        <translation>Berekende waarde</translation>
+        <source>Value</source>
+        <translation>Waarde</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -10964,8 +10968,8 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Verplaats maten omlaag</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Bereken waarde:</translation>
+        <source>Value:</source>
+        <translation>Waarde:</translation>
     </message>
     <message>
         <source>Full name:</source>
@@ -11160,10 +11164,6 @@ Wil je deze veranderingen opslaan?</translation>
     <message>
         <source>Empty field</source>
         <translation>Leeg veld</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Waarde</translation>
     </message>
     <message>
         <source>Open file</source>

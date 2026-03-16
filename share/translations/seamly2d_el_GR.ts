@@ -3107,10 +3107,6 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation>Όνομα</translation>
     </message>
     <message>
-        <source>The calculated value</source>
-        <translation>Η υπολογισμένη τιμή</translation>
-    </message>
-    <message>
         <source>Formula</source>
         <translation>Φόρμουλα</translation>
     </message>
@@ -3147,8 +3143,8 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation>Μοναδικό όνομα μεταβλητής</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Υπολογισμένη τιμή:</translation>
+        <source>Value:</source>
+        <translation>Τιμή:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -3245,6 +3241,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <message>
         <source>Edit variable</source>
         <translation>Επεξεργασία μεταβλητής</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Περιγραφή</translation>
     </message>
 </context>
 <context>
@@ -3389,6 +3389,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <message>
         <source>Custom</source>
         <translation>Προσαρμογή</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Περιγραφή</translation>
     </message>
 </context>
 <context>
@@ -10927,8 +10931,8 @@ Press enter to temporarily add it to the list.</source>
         <translation>Όνομα</translation>
     </message>
     <message>
-        <source>Calculated value</source>
-        <translation>Υπολογισμένη τιμή</translation>
+        <source>Value</source>
+        <translation>Τιμή</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -10983,8 +10987,8 @@ Press enter to temporarily add it to the list.</source>
         <translation>Μετακίνηση μέτρησης προς τα κάτω</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Υπολογισμένη τιμή:</translation>
+        <source>Value:</source>
+        <translation>Τιμή:</translation>
     </message>
     <message>
         <source>Full name:</source>
@@ -11179,10 +11183,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Empty field</source>
         <translation>Κενό πεδίο</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Τιμή</translation>
     </message>
     <message>
         <source>Open file</source>

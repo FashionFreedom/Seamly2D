@@ -8,14 +8,6 @@
         <translation>Tietoja Seamly2Dstä</translation>
     </message>
     <message>
-        <source>Web site : %1</source>
-        <translation>Internetsivu: %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation>Oletus selaimen aukaiseminen epäonnistui</translation>
-    </message>
-    <message>
         <source>Left to right</source>
         <translation>Vasemmalta oikealle</translation>
     </message>
@@ -3115,10 +3107,6 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
         <translation>Nimi</translation>
     </message>
     <message>
-        <source>The calculated value</source>
-        <translation>Laskettu arvo</translation>
-    </message>
-    <message>
         <source>Formula</source>
         <translation>Matemaattinen kaava</translation>
     </message>
@@ -3155,8 +3143,8 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
         <translation>Yksilöllinen muuttujan nimi</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Laskettu arvo:</translation>
+        <source>Value:</source>
+        <translation>Arvo:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -3253,6 +3241,10 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     <message>
         <source>Edit variable</source>
         <translation>Muokkaa muuttujaa</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Kuvaus</translation>
     </message>
 </context>
 <context>
@@ -3395,6 +3387,10 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     <message>
         <source>Custom</source>
         <translation>Mukautettu</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Kuvaus</translation>
     </message>
 </context>
 <context>
@@ -10972,8 +10968,8 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <translation>Koko nimi</translation>
     </message>
     <message>
-        <source>Calculated value</source>
-        <translation>Laskettu arvo</translation>
+        <source>Value</source>
+        <translation>Arvo</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -11034,10 +11030,6 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Measurement&apos;s human-readable name.</source>
         <translation>Mittan ihmisen luettavissa oleva nimi.</translation>
-    </message>
-    <message>
-        <source>Calculated value:</source>
-        <translation>Laskettu arvo:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -11502,10 +11494,6 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Virheellinen tulos. Arvo on ääretön tai NaN. Tarkista laskelmasi.</translation>
     </message>
     <message>
-        <source>Value</source>
-        <translation>Arvo</translation>
-    </message>
-    <message>
         <source>Parser error: %1</source>
         <translation>Jäsennysvirhe: %1</translation>
     </message>
@@ -11571,6 +11559,10 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Seach by regular expression</source>
         <translation>Hae säännöllisen lausekkeen avulla</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Arvo:</translation>
     </message>
 </context>
 <context>

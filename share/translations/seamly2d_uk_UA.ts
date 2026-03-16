@@ -3107,10 +3107,6 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation>όνομα</translation>
     </message>
     <message>
-        <source>The calculated value</source>
-        <translation>Розраховане значення</translation>
-    </message>
-    <message>
         <source>Formula</source>
         <translation>Formula</translation>
     </message>
@@ -3147,8 +3143,8 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation>Μοναδικό όνομα μεταβλητής</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Розраховане значення:</translation>
+        <source>Value:</source>
+        <translation>Значення:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -3245,6 +3241,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <message>
         <source>Edit variable</source>
         <translation>Επεξεργασία μεταβλητής</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Περιγραφή</translation>
     </message>
 </context>
 <context>
@@ -3389,6 +3389,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <message>
         <source>Custom</source>
         <translation>Κορίστους</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Περιγραφή</translation>
     </message>
 </context>
 <context>
@@ -10926,8 +10930,12 @@ Press enter to temporarily add it to the list.</source>
         <translation>Позначення</translation>
     </message>
     <message>
-        <source>Calculated value</source>
-        <translation>Розраховане значення</translation>
+        <source>Value</source>
+        <translation>Значення</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Значення:</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -10980,10 +10988,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Move measurement down</source>
         <translation>Перемістити мірку вниз</translation>
-    </message>
-    <message>
-        <source>Calculated value:</source>
-        <translation>Розраховане значення:</translation>
     </message>
     <message>
         <source>Full name:</source>
@@ -11178,10 +11182,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Empty field</source>
         <translation>Пусте поле</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Значення</translation>
     </message>
     <message>
         <source>Open file</source>

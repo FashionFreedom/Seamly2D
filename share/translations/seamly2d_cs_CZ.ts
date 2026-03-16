@@ -3107,10 +3107,6 @@ Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.<
         <translation>Název</translation>
     </message>
     <message>
-        <source>The calculated value</source>
-        <translation>Vypočítaná hodnota</translation>
-    </message>
-    <message>
         <source>Formula</source>
         <translation>Vzorec</translation>
     </message>
@@ -3147,8 +3143,8 @@ Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.<
         <translation>Unikátní název proměnné</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Vypočítaná hodnota:</translation>
+        <source>Value</source>
+        <translation>Hodnota:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -3235,16 +3231,20 @@ Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.<
         <translation>Neplatný výsledek. Hodnota je nekonečná nebo NaN. Zkontrolujte prosím své výpočty.</translation>
     </message>
     <message>
-        <source>Value</source>
-        <translation>Hodnota</translation>
-    </message>
-    <message>
         <source>Parser error: %1</source>
         <translation>Chyba zpracování: %1</translation>
     </message>
     <message>
         <source>Edit variable</source>
         <translation>Upravit proměnnou</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Popis</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Hodnota:</translation>
     </message>
 </context>
 <context>
@@ -3387,6 +3387,10 @@ Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.<
     <message>
         <source>Custom</source>
         <translation>Vlastní</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Popis</translation>
     </message>
 </context>
 <context>
@@ -10923,8 +10927,8 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Název</translation>
     </message>
     <message>
-        <source>Calculated value</source>
-        <translation>Vypočítaná hodnota</translation>
+        <source>Value</source>
+        <translation>Hodnota</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -10979,8 +10983,8 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Přesunout měření dolů</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Vypočítaná hodnota:</translation>
+        <source>Value:</source>
+        <translation>Hodnota:</translation>
     </message>
     <message>
         <source>Full name:</source>
@@ -11175,10 +11179,6 @@ Chcete změny uložit?</translation>
     <message>
         <source>Empty field</source>
         <translation>Prázdné pole</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Hodnota</translation>
     </message>
     <message>
         <source>Open file</source>
