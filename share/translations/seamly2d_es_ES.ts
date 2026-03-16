@@ -3125,10 +3125,6 @@ Intente deshacer la última operación o corregir la fórmula defectuosa.</trans
         <translation>Nombre</translation>
     </message>
     <message>
-        <source>The calculated value</source>
-        <translation>El valor calculado</translation>
-    </message>
-    <message>
         <source>Formula</source>
         <translation>Fórmula</translation>
     </message>
@@ -3165,8 +3161,8 @@ Intente deshacer la última operación o corregir la fórmula defectuosa.</trans
         <translation>Nombre único de variable</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Valor calculado:</translation>
+        <source>Value:</source>
+        <translation>Valor:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -3263,6 +3259,10 @@ Intente deshacer la última operación o corregir la fórmula defectuosa.</trans
     <message>
         <source>Edit variable</source>
         <translation>Editar variable</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descripción</translation>
     </message>
 </context>
 <context>
@@ -3405,6 +3405,10 @@ Intente deshacer la última operación o corregir la fórmula defectuosa.</trans
     <message>
         <source>Custom</source>
         <translation>Personalizado</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descripción</translation>
     </message>
 </context>
 <context>
@@ -10964,8 +10968,8 @@ actualización:</translation>
         <translation>Nombre</translation>
     </message>
     <message>
-        <source>Calculated value</source>
-        <translation>Valor calculado</translation>
+        <source>Value</source>
+        <translation>Valor</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -11020,12 +11024,8 @@ actualización:</translation>
         <translation>Mover medida abajo</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Valor calculado:</translation>
-    </message>
-    <message>
-        <source>Full name:</source>
-        <translation>Nombre completo:</translation>
+        <source>Value:</source>
+        <translation>Valor:</translation>
     </message>
     <message>
         <source>Information</source>
@@ -11215,10 +11215,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Empty field</source>
         <translation>Campo vacío</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Valor</translation>
     </message>
     <message>
         <source>Open file</source>
@@ -11604,6 +11600,10 @@ load in SeamlyME as usual.
     <message>
         <source>Seach by regular expression</source>
         <translation>Búsqueda por expresión regular</translation>
+    </message>
+    <message>
+        <source>Full name:</source>
+        <translation>Nombre completo:</translation>
     </message>
 </context>
 <context>

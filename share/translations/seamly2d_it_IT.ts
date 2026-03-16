@@ -3092,10 +3092,6 @@ Prova ad annullare l&apos;ultima operazione o a correggere la formula non funzio
         <translation>Nome</translation>
     </message>
     <message>
-        <source>The calculated value</source>
-        <translation>Il valore calcolato</translation>
-    </message>
-    <message>
         <source>Formula</source>
         <translation>Formula</translation>
     </message>
@@ -3132,8 +3128,8 @@ Prova ad annullare l&apos;ultima operazione o a correggere la formula non funzio
         <translation>Nome variabile univoco</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Valore calcolato:</translation>
+        <source>Value:</source>
+        <translation>Valore:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -3231,6 +3227,10 @@ di controllo</translation>
     <message>
         <source>Edit variable</source>
         <translation>Modifica variabile</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descrizione</translation>
     </message>
 </context>
 <context>
@@ -3374,6 +3374,10 @@ punti di controllo</translation>
     <message>
         <source>Custom</source>
         <translation>Costume</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descrizione</translation>
     </message>
 </context>
 <context>
@@ -10913,8 +10917,8 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <translation>Nome</translation>
     </message>
     <message>
-        <source>Calculated value</source>
-        <translation>Valore calcolato</translation>
+        <source>Value</source>
+        <translation>Valore</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -10967,10 +10971,6 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     <message>
         <source>Move measurement down</source>
         <translation>Sposta la misura sotto</translation>
-    </message>
-    <message>
-        <source>Calculated value:</source>
-        <translation>Valore calcolato:</translation>
     </message>
     <message>
         <source>Full name:</source>
@@ -11165,10 +11165,6 @@ Vuoi salvare le tue modifiche?</translation>
     <message>
         <source>Empty field</source>
         <translation>Campo vuoto</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Valore</translation>
     </message>
     <message>
         <source>Open file</source>
@@ -11552,6 +11548,10 @@ caricare in SeamlyME come di consueto.
     <message>
         <source>Seach by regular expression</source>
         <translation>Ricerca tramite espressione regolare</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valore:</translation>
     </message>
 </context>
 <context>

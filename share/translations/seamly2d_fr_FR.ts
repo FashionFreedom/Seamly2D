@@ -3123,10 +3123,6 @@ Veuillez essayer d&apos;annuler la dernière opération ou de corriger la formul
         <translation>Nom</translation>
     </message>
     <message>
-        <source>The calculated value</source>
-        <translation>Valeur calculée</translation>
-    </message>
-    <message>
         <source>Formula</source>
         <translation>Formule</translation>
     </message>
@@ -3163,8 +3159,8 @@ Veuillez essayer d&apos;annuler la dernière opération ou de corriger la formul
         <translation>Nom de variable unique</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Valeur calculée :</translation>
+        <source>Value:</source>
+        <translation>Valeur :</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -3261,6 +3257,10 @@ Veuillez essayer d&apos;annuler la dernière opération ou de corriger la formul
     <message>
         <source>Edit variable</source>
         <translation>Modifier la variable</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Description</translation>
     </message>
 </context>
 <context>
@@ -3405,6 +3405,10 @@ points de contrôle</translation>
     <message>
         <source>Custom</source>
         <translation>Personnalisé</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Description</translation>
     </message>
 </context>
 <context>
@@ -10954,8 +10958,12 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
         <translation>Nom</translation>
     </message>
     <message>
-        <source>Calculated value</source>
-        <translation>Valeur calculée</translation>
+        <source>Value</source>
+        <translation>Valeur</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valeur :</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -11008,10 +11016,6 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>Move measurement down</source>
         <translation>Déplacer la mesure vers le bas</translation>
-    </message>
-    <message>
-        <source>Calculated value:</source>
-        <translation>Valeur calculée :</translation>
     </message>
     <message>
         <source>Full name:</source>
@@ -11206,10 +11210,6 @@ Voulez-vous enregistrer les changements?</translation>
     <message>
         <source>Empty field</source>
         <translation>Champ vide</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Valeur</translation>
     </message>
     <message>
         <source>Open file</source>

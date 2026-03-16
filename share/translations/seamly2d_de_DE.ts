@@ -3092,10 +3092,6 @@ Bitte versuchen Sie, den letzten Vorgang rückgängig zu machen oder die fehlerh
         <translation>Bezeichnung</translation>
     </message>
     <message>
-        <source>The calculated value</source>
-        <translation>Der berechnete Wert</translation>
-    </message>
-    <message>
         <source>Formula</source>
         <translation>Formel</translation>
     </message>
@@ -3132,8 +3128,8 @@ Bitte versuchen Sie, den letzten Vorgang rückgängig zu machen oder die fehlerh
         <translation>Eindeutige Variablenbezeichnung</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Berechneter Wert:</translation>
+        <source>Value:</source>
+        <translation>Wert:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -3230,6 +3226,10 @@ Bitte versuchen Sie, den letzten Vorgang rückgängig zu machen oder die fehlerh
     <message>
         <source>Edit variable</source>
         <translation>Variable bearbeiten</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beschreibung</translation>
     </message>
 </context>
 <context>
@@ -3372,6 +3372,10 @@ Bitte versuchen Sie, den letzten Vorgang rückgängig zu machen oder die fehlerh
     <message>
         <source>Custom</source>
         <translation>Benutzerdefiniert</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beschreibung</translation>
     </message>
 </context>
 <context>
@@ -10909,8 +10913,8 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Bezeichnung</translation>
     </message>
     <message>
-        <source>Calculated value</source>
-        <translation>Berechneter Wert</translation>
+        <source>Value</source>
+        <translation>Wert</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -10963,10 +10967,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Move measurement down</source>
         <translation>Maß nach unten bewegen</translation>
-    </message>
-    <message>
-        <source>Calculated value:</source>
-        <translation>Berechneter Wert:</translation>
     </message>
     <message>
         <source>Full name:</source>
@@ -11160,10 +11160,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Empty field</source>
         <translation>Leeres Eingabefeld</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Wert</translation>
     </message>
     <message>
         <source>Open file</source>
@@ -11547,6 +11543,10 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Seach by regular expression</source>
         <translation>Suche nach regulären Ausdrücken</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Wert:</translation>
     </message>
 </context>
 <context>
