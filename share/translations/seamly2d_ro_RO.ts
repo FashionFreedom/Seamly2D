@@ -3107,10 +3107,6 @@ Vă rugăm să încercați să anulați ultima operațiune sau să remediați fo
         <translation>Număr</translation>
     </message>
     <message>
-        <source>The calculated value</source>
-        <translation>Valoarea calculată</translation>
-    </message>
-    <message>
         <source>Formula</source>
         <translation>Formulă</translation>
     </message>
@@ -3147,8 +3143,8 @@ Vă rugăm să încercați să anulați ultima operațiune sau să remediați fo
         <translation>Nume unic de variabilă</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Valoare calculată:</translation>
+        <source>Value:</source>
+        <translation>Valoare:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -3246,6 +3242,10 @@ Vă rugăm să încercați să anulați ultima operațiune sau să remediați fo
     <message>
         <source>Edit variable</source>
         <translation>Editați variabila</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descrie</translation>
     </message>
 </context>
 <context>
@@ -3389,6 +3389,10 @@ Vă rugăm să încercați să anulați ultima operațiune sau să remediați fo
     <message>
         <source>Custom</source>
         <translation>Personalizat</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descrie</translation>
     </message>
 </context>
 <context>
@@ -10927,8 +10931,8 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Nume</translation>
     </message>
     <message>
-        <source>Calculated value</source>
-        <translation>Valoare calculată</translation>
+        <source>Value</source>
+        <translation>Valoare</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -10981,10 +10985,6 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Move measurement down</source>
         <translation>Mută măsurătoarea în jos</translation>
-    </message>
-    <message>
-        <source>Calculated value:</source>
-        <translation>Valoare calculată:</translation>
     </message>
     <message>
         <source>Full name:</source>
@@ -11175,10 +11175,6 @@ Doriți să salvați modificările?</translation>
     <message>
         <source>Empty field</source>
         <translation>Câmp gol</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Valoare</translation>
     </message>
     <message>
         <source>Open file</source>
@@ -11565,6 +11561,10 @@ load in SeamlyME as usual.
     <message>
         <source>Seach by regular expression</source>
         <translation>Căutare prin expresie regulată</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valoare:</translation>
     </message>
 </context>
 <context>

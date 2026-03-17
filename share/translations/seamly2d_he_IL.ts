@@ -3091,10 +3091,6 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The calculated value</source>
-        <translation type="unfinished">הערך המחושב</translation>
-    </message>
-    <message>
         <source>Formula</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3131,7 +3127,7 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Calculated value:</source>
+        <source>Value:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3228,6 +3224,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Edit variable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3370,6 +3370,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3537,10 +3541,6 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Pattern extension</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Pattern file name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3554,10 +3554,6 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Height</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Measurements extension</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3638,6 +3634,14 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>on fold</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern file extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements file extension</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10889,7 +10893,7 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Calculated value</source>
+        <source>Value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10942,10 +10946,6 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Move measurement down</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Calculated value:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11135,10 +11135,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Empty field</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11520,6 +11516,10 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Seach by regular expression</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

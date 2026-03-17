@@ -3107,10 +3107,6 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation>Имя</translation>
     </message>
     <message>
-        <source>The calculated value</source>
-        <translation>Рассчитанное значение</translation>
-    </message>
-    <message>
         <source>Formula</source>
         <translation>Формула</translation>
     </message>
@@ -3147,8 +3143,8 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation>Выберите уникальное название</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Рассчитанное значение:</translation>
+        <source>Value:</source>
+        <translation>Значение:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -3245,6 +3241,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <message>
         <source>Edit variable</source>
         <translation>Редактировать переменную</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Описание</translation>
     </message>
 </context>
 <context>
@@ -3389,6 +3389,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <message>
         <source>Custom</source>
         <translation>Пользовательские</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Описание</translation>
     </message>
 </context>
 <context>
@@ -10932,8 +10936,8 @@ Press enter to temporarily add it to the list.</source>
         <translation>Название</translation>
     </message>
     <message>
-        <source>Calculated value</source>
-        <translation>Рассчитанное значение</translation>
+        <source>Value</source>
+        <translation>Значение</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -10988,8 +10992,8 @@ Press enter to temporarily add it to the list.</source>
         <translation>Переместить мерку ниже</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Рассчитанное значение:</translation>
+        <source>Value:</source>
+        <translation>Значение:</translation>
     </message>
     <message>
         <source>Full name:</source>
@@ -11184,10 +11188,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Empty field</source>
         <translation>Пустое поле</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Значение</translation>
     </message>
     <message>
         <source>Open file</source>

@@ -104,7 +104,7 @@
 
 template <class T> class QSharedPointer;
 
-enum {ColumnNumber = 0, ColumnName, ColumnValue, ColumnFullName};
+enum {NumberColumn = 0, NameColumn, DescriptionColumn, ValueColumn, FullNameColumn};
 
 //---------------------------------------------------------------------------------------------------------------------
 EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &toolId, const quint16 &source,
@@ -241,7 +241,7 @@ void EditFormulaDialog::valueChanged(int row)
         ui->description_Label->setText("");
         return;
     }
-    QTableWidgetItem *item = ui->tableWidget->item( row, ColumnName );
+    QTableWidgetItem *item = ui->tableWidget->item( row, NameColumn );
 
     switch (ui->menuTab_ListWidget->currentRow())
     {
@@ -381,14 +381,14 @@ void EditFormulaDialog::insertVariable(const QString &rotation)
             if (cursor.hasSelection())
             {
                 QString selected = cursor.selectedText();
-                cursor.insertText(ui->tableWidget->item(item->row(), ColumnName)->text() +
+                cursor.insertText(ui->tableWidget->item(item->row(), NameColumn)->text() +
                                   QStringLiteral("(") + selected + QStringLiteral(")"));
                 cursor.movePosition(QTextCursor::End, QTextCursor::MoveAnchor);
                 ui->plainTextEditFormula->setTextCursor(cursor);
             }
             else
             {
-                cursor.insertText(ui->tableWidget->item(item->row(), ColumnName)->text() + QStringLiteral("()"));
+                cursor.insertText(ui->tableWidget->item(item->row(), NameColumn)->text() + QStringLiteral("()"));
                 cursor.setPosition(cursor.position() - 1);
             }
         }
@@ -396,11 +396,11 @@ void EditFormulaDialog::insertVariable(const QString &rotation)
         {
             if (rotation.isEmpty())
             {
-                cursor.insertText(ui->tableWidget->item(item->row(), ColumnName)->text());
+                cursor.insertText(ui->tableWidget->item(item->row(), NameColumn)->text());
             }
             else
             {
-                cursor.insertText(QStringLiteral("(") + ui->tableWidget->item(item->row(), ColumnName)->text() +
+                cursor.insertText(QStringLiteral("(") + ui->tableWidget->item(item->row(), NameColumn)->text() +
                                   rotation + QStringLiteral(")"));
             }
         }
@@ -494,7 +494,7 @@ void EditFormulaDialog::customVariables()
     ui->checkBoxHideEmpty->setVisible(false);
     showHeaderUnits(ui->tableWidget, UnitsToStr(qApp->patternUnit()));
     showInsertionButtons(false);
-    showVariable(data->variablesData());
+    showCustomVariable(data->variablesData());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -632,10 +632,11 @@ void EditFormulaDialog::showVariable(const QMap<key, val> &var)
     ui->tableWidget->blockSignals(true);
     ui->tableWidget->clearContents();
     ui->tableWidget->setRowCount(0);
-    ui->tableWidget->setColumnHidden(ColumnName, false);
-    ui->tableWidget->setColumnHidden(ColumnValue, false);
-    ui->tableWidget->setColumnHidden(ColumnNumber, true);
-    ui->tableWidget->setColumnHidden(ColumnFullName, true);
+    ui->tableWidget->setColumnHidden(NameColumn, false);
+    ui->tableWidget->setColumnHidden(DescriptionColumn, true);
+    ui->tableWidget->setColumnHidden(ValueColumn, false);
+    ui->tableWidget->setColumnHidden(NumberColumn, true);
+    ui->tableWidget->setColumnHidden(FullNameColumn, true);
     ui->description_Label->setText("");
 
     QMapIterator<key, val> iMap(var);
@@ -650,19 +651,73 @@ void EditFormulaDialog::showVariable(const QMap<key, val> &var)
         {// If we create this variable don't show
             ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
             QTableWidgetItem *item = new QTableWidgetItem(iMap.key());
-            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnName, item);
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, NameColumn, item);
 
             qreal length = *iMap.value()->GetValue();
             QTableWidgetItem *itemValue = new QTableWidgetItem(qApp->LocaleToString(length));
             itemValue->setSizeHint(QSize(70, 20));
             itemValue->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnValue, itemValue);
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ValueColumn, itemValue);
         }
     }
     ui->tableWidget->blockSignals(false);
     ui->tableWidget->selectRow(0);
     ui->tableWidget->resizeColumnsToContents();
-    ui->tableWidget->horizontalHeader()->setStretchLastSection(false);
+    ui->tableWidget->horizontalHeader()->setSectionResizeMode(NameColumn, QHeaderView::Stretch);
+    ui->tableWidget->setColumnWidth(ValueColumn, 80);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief showCustomVariable show variables in list
+/// @param var container with variables
+//---------------------------------------------------------------------------------------------------------------------
+template <class key, class val>
+void EditFormulaDialog::showCustomVariable(const QMap<key, val> &var)
+{
+    ui->tableWidget->blockSignals(true);
+    ui->tableWidget->clearContents();
+    ui->tableWidget->setRowCount(0);
+    ui->tableWidget->setColumnHidden(NameColumn, false);
+    ui->tableWidget->setColumnHidden(DescriptionColumn, false);
+    ui->tableWidget->setColumnHidden(ValueColumn, false);
+    ui->tableWidget->setColumnHidden(NumberColumn, true);
+    ui->tableWidget->setColumnHidden(FullNameColumn, true);
+    ui->description_Label->setText("");
+
+    QMapIterator<key, val> iMap(var);
+    while (iMap.hasNext())
+    {
+        iMap.next();
+        if (ui->checkBoxHideEmpty->isEnabled() && ui->checkBoxHideEmpty->isChecked() && iMap.value()->isNotUsed())
+        {
+            continue; //skip this measurement
+        }
+        if (iMap.value()->Filter(toolId) == false)
+        {// If we create this variable don't show
+            ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
+            QTableWidgetItem *item = new QTableWidgetItem(iMap.key());
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, NameColumn, item);
+
+            QString desc = iMap.value()->GetDescription();
+            QTableWidgetItem *itemDesc = new QTableWidgetItem(desc);
+            itemDesc->setSizeHint(QSize(70, 20));
+            itemDesc->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, DescriptionColumn, itemDesc);
+
+            qreal length = *iMap.value()->GetValue();
+            QTableWidgetItem *itemValue = new QTableWidgetItem(qApp->LocaleToString(length));
+            itemValue->setSizeHint(QSize(70, 20));
+            itemValue->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ValueColumn, itemValue);
+        }
+    }
+    ui->tableWidget->blockSignals(false);
+    ui->tableWidget->selectRow(0);
+    ui->tableWidget->setColumnWidth(NameColumn, 80);
+    ui->tableWidget->resizeColumnsToContents();
+    ui->tableWidget->horizontalHeader()->setSectionResizeMode(NameColumn, QHeaderView::Fixed);
+    ui->tableWidget->horizontalHeader()->setSectionResizeMode(DescriptionColumn, QHeaderView::Stretch);
+    ui->tableWidget->setColumnWidth(ValueColumn, 80);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -674,10 +729,11 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<Meas
     ui->tableWidget->blockSignals(true);
     ui->tableWidget->clearContents();
     ui->tableWidget->setRowCount(0);
-    ui->tableWidget->setColumnHidden(ColumnNumber, false);
-    ui->tableWidget->setColumnHidden(ColumnName, false);
-    ui->tableWidget->setColumnHidden(ColumnValue, false);
-    ui->tableWidget->setColumnHidden(ColumnFullName, false);
+    ui->tableWidget->setColumnHidden(NumberColumn, false);
+    ui->tableWidget->setColumnHidden(NameColumn, false);
+    ui->tableWidget->setColumnHidden(DescriptionColumn, true);
+    ui->tableWidget->setColumnHidden(ValueColumn, false);
+    ui->tableWidget->setColumnHidden(FullNameColumn, false);
     ui->description_Label->setText("");
 
     QMapIterator<QString, QSharedPointer<MeasurementVariable>> iMap(var);
@@ -727,16 +783,17 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<Meas
                                            "<p align=\"center\"><b>%2</b></p>"
                                            "</body></html>").arg(imgUrl, number));
 
-            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnNumber, itemNumber);
-            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnName, itemName);
-            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnValue, itemValue);
-            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnFullName, itemFullName);
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, NumberColumn, itemNumber);
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, NameColumn, itemName);
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ValueColumn, itemValue);
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, FullNameColumn, itemFullName);
         }
     }
     ui->tableWidget->blockSignals(false);
-    ui->tableWidget->resizeColumnsToContents();
     ui->tableWidget->selectRow(0);
-    ui->tableWidget->horizontalHeader()->setStretchLastSection(true);
+    ui->tableWidget->resizeColumnsToContents();
+    ui->tableWidget->horizontalHeader()->setSectionResizeMode(NameColumn, QHeaderView::Stretch);
+    ui->tableWidget->setColumnWidth(ValueColumn, 80);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -747,10 +804,11 @@ void EditFormulaDialog::showFunctions()
     ui->tableWidget->blockSignals(true);
     ui->tableWidget->clearContents();
     ui->tableWidget->setRowCount(0);
-    ui->tableWidget->setColumnHidden(ColumnNumber, true);
-    ui->tableWidget->setColumnHidden(ColumnName, false);
-    ui->tableWidget->setColumnHidden(ColumnValue, true);
-    ui->tableWidget->setColumnHidden(ColumnFullName, true);
+    ui->tableWidget->setColumnHidden(NumberColumn, true);
+    ui->tableWidget->setColumnHidden(NameColumn, false);
+    ui->tableWidget->setColumnHidden(DescriptionColumn, true);
+    ui->tableWidget->setColumnHidden(ValueColumn, true);
+    ui->tableWidget->setColumnHidden(FullNameColumn, true);
     ui->description_Label->setText("");
 
     QMap<QString, qmu::QmuTranslation>::const_iterator i = qApp->translateVariables()->getFunctions().constBegin();
@@ -758,14 +816,14 @@ void EditFormulaDialog::showFunctions()
     {
         ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
         QTableWidgetItem *item = new QTableWidgetItem(i.value().translate());
-        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnName, item);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, NameColumn, item);
         item->setToolTip(i.value().getMdisambiguation());
         ++i;
     }
 
     ui->tableWidget->blockSignals(false);
-    ui->tableWidget->resizeColumnsToContents();
     ui->tableWidget->selectRow(0);
+    ui->tableWidget->resizeColumnsToContents();
     ui->tableWidget->horizontalHeader()->setStretchLastSection(false);
 }
 
@@ -786,7 +844,7 @@ void EditFormulaDialog::showInsertionButtons(const bool &visible)
 
 /// @brief showHeaderUnits Show the variable units in the header
 ///
-/// This method sets and shows the variables'unit type for the Value header column.
+/// This method sets and shows the variables'unit type for the translated Value header column.
 ///
 /// @param table Table widget of variable data.
 /// @param unit Unit type to set in the Value header.
@@ -794,7 +852,11 @@ void EditFormulaDialog::showHeaderUnits(QTableWidget *table, const QString &unit
 {
     SCASSERT(table != nullptr)
 
-    table->horizontalHeaderItem(ColumnValue)->setText(QString("Value (%1)").arg(unit));
+    QString header = table->horizontalHeaderItem(ValueColumn)->text();
+    // Need to strip text of any umits so we don't recursively add units to the header string
+    header = header.section('(', 0, 0);
+    const QString unitHeader = QString("%1 (%2)").arg(header).arg(unit);
+    table->horizontalHeaderItem(ValueColumn)->setText(unitHeader);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

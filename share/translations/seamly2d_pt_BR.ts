@@ -3092,10 +3092,6 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
         <translation>Nome</translation>
     </message>
     <message>
-        <source>The calculated value</source>
-        <translation>O valor calculado</translation>
-    </message>
-    <message>
         <source>Formula</source>
         <translation>Fârmula</translation>
     </message>
@@ -3132,8 +3128,8 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
         <translation>Nome de variâvel exclusivo</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Valor calculado:</translation>
+        <source>Value:</source>
+        <translation>Valor:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -3230,6 +3226,10 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
     <message>
         <source>Edit variable</source>
         <translation>Editar variâvel</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descrição</translation>
     </message>
 </context>
 <context>
@@ -3373,6 +3373,10 @@ pontos de controle</translation>
     <message>
         <source>Custom</source>
         <translation>Personalizado</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descrição</translation>
     </message>
 </context>
 <context>
@@ -10912,8 +10916,8 @@ Prima enter para o adicionar temporariamente à lista.</translation>
         <translation>Nome</translation>
     </message>
     <message>
-        <source>Calculated value</source>
-        <translation>Valor calculado</translation>
+        <source>Value</source>
+        <translation>Valor</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -10968,8 +10972,8 @@ Prima enter para o adicionar temporariamente à lista.</translation>
         <translation>Mover medição para baixo</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Valor calculado:</translation>
+        <source>Value:</source>
+        <translation>Valor:</translation>
     </message>
     <message>
         <source>Full name:</source>
@@ -11164,10 +11168,6 @@ Pretende guardar as suas alterações?</translation>
     <message>
         <source>Empty field</source>
         <translation>Campo vazio</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Valor</translation>
     </message>
     <message>
         <source>Open file</source>
