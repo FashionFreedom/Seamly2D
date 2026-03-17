@@ -223,15 +223,6 @@ jobs:
           cache: true
           modules: qtmultimedia
 
-      - name: print qmake config
-        run: |
-          qmake -query QT_INSTALL_PREFIX
-          qmake -query QT_INSTALL_BINS
-          qmake -query QT_INSTALL_DATA
-          qmake -query QT_HOST_PREFIX
-          qmake -query QT_HOST_BINS
-          qmake -query QT_HOST_DATA
-
       - name: update version
         shell: bash
         run: |
@@ -255,10 +246,6 @@ jobs:
           Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
-
-      - name: List contents of installer
-        shell: bash
-        run: ls -lR ../windows-build/
 
       - name: Authenticate to Google Cloud (for signing)
         uses: google-github-actions/auth@v3
