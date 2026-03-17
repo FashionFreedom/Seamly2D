@@ -3107,10 +3107,6 @@ Lütfen son işlemi geri almayı veya bozuk formülü düzeltmeyi deneyin.</tran
         <translation>İsim</translation>
     </message>
     <message>
-        <source>The calculated value</source>
-        <translation>Hesaplanan değer</translation>
-    </message>
-    <message>
         <source>Formula</source>
         <translation>Formül</translation>
     </message>
@@ -3147,8 +3143,8 @@ Lütfen son işlemi geri almayı veya bozuk formülü düzeltmeyi deneyin.</tran
         <translation>Benzersiz değişken adı</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Hesaplanan değer:</translation>
+        <source>Value:</source>
+        <translation>Değer:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -3245,6 +3241,10 @@ Lütfen son işlemi geri almayı veya bozuk formülü düzeltmeyi deneyin.</tran
     <message>
         <source>Edit variable</source>
         <translation>Değişkeni düzenle</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Açıklama</translation>
     </message>
 </context>
 <context>
@@ -3387,6 +3387,10 @@ Lütfen son işlemi geri almayı veya bozuk formülü düzeltmeyi deneyin.</tran
     <message>
         <source>Custom</source>
         <translation>Özel</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Açıklama</translation>
     </message>
 </context>
 <context>
@@ -10925,8 +10929,8 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>İsim</translation>
     </message>
     <message>
-        <source>Calculated value</source>
-        <translation>Hesaplanan değer</translation>
+        <source>Value</source>
+        <translation>Değer</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -10981,8 +10985,8 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>Ölçümü aşağı taşı</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Hesaplanan değer:</translation>
+        <source>Value:</source>
+        <translation>Değer:</translation>
     </message>
     <message>
         <source>Full name:</source>
@@ -11177,10 +11181,6 @@ Do you want to save your changes?</translation>
     <message>
         <source>Empty field</source>
         <translation>Boş alan</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Değer</translation>
     </message>
     <message>
         <source>Open file</source>

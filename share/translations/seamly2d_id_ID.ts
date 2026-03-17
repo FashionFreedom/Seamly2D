@@ -3107,10 +3107,6 @@ Silakan coba batalkan operasi terakhir atau perbaiki rumus yang rusak.</translat
         <translation>Nama</translation>
     </message>
     <message>
-        <source>The calculated value</source>
-        <translation>Nilai yang dihitung</translation>
-    </message>
-    <message>
         <source>Formula</source>
         <translation>rumus</translation>
     </message>
@@ -3147,8 +3143,8 @@ Silakan coba batalkan operasi terakhir atau perbaiki rumus yang rusak.</translat
         <translation>Nama variabel unik</translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation>Nilai yang dihitung:</translation>
+        <source>Value:</source>
+        <translation>Nilai:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -3245,6 +3241,10 @@ Silakan coba batalkan operasi terakhir atau perbaiki rumus yang rusak.</translat
     <message>
         <source>Edit variable</source>
         <translation>Edit variabel</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Deskripsi</translation>
     </message>
 </context>
 <context>
@@ -3387,6 +3387,10 @@ Silakan coba batalkan operasi terakhir atau perbaiki rumus yang rusak.</translat
     <message>
         <source>Custom</source>
         <translation>Kustom</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Deskripsi</translation>
     </message>
 </context>
 <context>
@@ -10925,8 +10929,12 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Nama</translation>
     </message>
     <message>
-        <source>Calculated value</source>
-        <translation>Nilai yang dihitung</translation>
+        <source>Value</source>
+        <translation>Nilai</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Nilai:</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -10979,10 +10987,6 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Move measurement down</source>
         <translation>Pindahkan pengukuran ke bawah</translation>
-    </message>
-    <message>
-        <source>Calculated value:</source>
-        <translation>Nilai yang dihitung:</translation>
     </message>
     <message>
         <source>Full name:</source>
@@ -11173,10 +11177,6 @@ Apakah Anda ingin menyimpan perubahan Anda?</translation>
     <message>
         <source>Empty field</source>
         <translation>Lapangan kosong</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Nilai</translation>
     </message>
     <message>
         <source>Open file</source>

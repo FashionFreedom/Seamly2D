@@ -840,11 +840,7 @@ QListWidget::item:selected {
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QScrollBar:vertical {
-  background: rgb(200, 217, 232);
-  width: 14px;
-}
-</string>
+               <string notr="true"/>
               </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
@@ -871,16 +867,16 @@ QListWidget::item:selected {
                <bool>false</bool>
               </property>
               <property name="columnCount">
-               <number>4</number>
+               <number>5</number>
               </property>
               <attribute name="horizontalHeaderMinimumSectionSize">
-               <number>70</number>
+               <number>100</number>
               </attribute>
               <attribute name="horizontalHeaderDefaultSectionSize">
-               <number>70</number>
+               <number>100</number>
               </attribute>
               <attribute name="horizontalHeaderStretchLastSection">
-               <bool>true</bool>
+               <bool>false</bool>
               </attribute>
               <attribute name="verticalHeaderVisible">
                <bool>false</bool>
@@ -899,6 +895,11 @@ QListWidget::item:selected {
               <column>
                <property name="text">
                 <string>Name</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Description</string>
                </property>
               </column>
               <column>

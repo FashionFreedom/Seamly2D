@@ -239,7 +239,7 @@
           </column>
           <column>
            <property name="text">
-            <string>Calculated value</string>
+            <string>Value</string>
            </property>
           </column>
           <column>
@@ -497,7 +497,7 @@
                 </size>
                </property>
                <property name="text">
-                <string>Calculated value:</string>
+                <string>Value:</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -519,7 +519,7 @@
                 </size>
                </property>
                <property name="toolTip">
-                <string>Calculated value</string>
+                <string>Value</string>
                </property>
                <property name="text">
                 <string notr="true"/>

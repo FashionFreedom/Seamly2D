@@ -3091,10 +3091,6 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished">Name</translation>
     </message>
     <message>
-        <source>The calculated value</source>
-        <translation type="unfinished">The calculated value</translation>
-    </message>
-    <message>
         <source>Formula</source>
         <translation type="unfinished">Formula</translation>
     </message>
@@ -3131,8 +3127,8 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Calculated value:</source>
-        <translation type="unfinished">Calculated value:</translation>
+        <source>Value:</source>
+        <translation type="unfinished">Value:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -3229,6 +3225,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <message>
         <source>Edit variable</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished">Description</translation>
     </message>
 </context>
 <context>
@@ -3371,6 +3371,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <message>
         <source>Custom</source>
         <translation type="unfinished">Custom</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished">Description</translation>
     </message>
 </context>
 <context>
@@ -10893,8 +10897,12 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished">Name</translation>
     </message>
     <message>
-        <source>Calculated value</source>
-        <translation type="unfinished"></translation>
+        <source>Value</source>
+        <translation type="unfinished">Value</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Value:</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -10947,10 +10955,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Move measurement down</source>
         <translation type="unfinished">Move measurement down</translation>
-    </message>
-    <message>
-        <source>Calculated value:</source>
-        <translation type="unfinished">Calculated value:</translation>
     </message>
     <message>
         <source>Full name:</source>
@@ -11145,10 +11149,6 @@ Do you want to save your changes?</translation>
     <message>
         <source>Empty field</source>
         <translation type="unfinished">Empty field</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="unfinished">Value</translation>
     </message>
     <message>
         <source>Open file</source>
