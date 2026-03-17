@@ -16,7 +16,7 @@ permissions:
   contents: write
 
 env:
-  QT_VERSION: '6.8.3' # quotes required or YAML parser will interpret as float
+  QT_VERSION: '6.5.3' # quotes required or YAML parser will interpret as float
 
 jobs:
 
@@ -302,6 +302,11 @@ jobs:
           name: ${{ matrix.release-file }}
           path: ${{ matrix.release-file }}
           if-no-files-found: error
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: windows-build-${{ matrix.msvc-arch }}
+          path: ../windows-build/
 
   publish:
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop'
