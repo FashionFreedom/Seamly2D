@@ -247,8 +247,11 @@ macx{
     }
 }
 
-win32{
-    # run windeployqt to include all qt libraries and vc_redist in $${DESTDIR}
+# run windeployqt to include all qt libraries and vc_redist in $${DESTDIR}
+win32-msvc{
+    QMAKE_POST_LINK += windeployqt $$shell_path($$DESTDIR/$${TARGET}.exe)
+}
+win32-arm64-msvc{
     qtPrepareTool(WINDEPLOYQT, windeployqt)
-    QMAKE_POST_LINK += $$WINDEPLOYQT $$shell_path($$DESTDIR/$${TARGET}.exe)
+    QMAKE_POST_LINK += $$WINDEPLOYQT --qtpaths $$shell_path($$[QT_INSTALL_BINS]/qtpaths.bat) $$shell_path($$DESTDIR/$${TARGET}.exe)
 }
