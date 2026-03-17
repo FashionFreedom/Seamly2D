@@ -3144,7 +3144,7 @@ Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.<
     </message>
     <message>
         <source>Value</source>
-        <translation>Hodnota:</translation>
+        <translation>Hodnota</translation>
     </message>
     <message>
         <source>Formula:</source>
