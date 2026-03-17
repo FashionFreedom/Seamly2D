@@ -223,6 +223,16 @@ jobs:
           cache: true
           modules: qtmultimedia
 
+      - name: print qmake config
+        run: |
+          qmake -query QT_INSTALL_PREFIX
+          qmake -query QT_INSTALL_BINS
+          qmake -query QT_INSTALL_DATA
+          qmake -query QT_HOST_PREFIX
+          qmake -query QT_HOST_BINS
+          qmake -query QT_HOST_DATA
+          qmake -query QT_SYSROOT
+
       - name: update version
         shell: bash
         run: |

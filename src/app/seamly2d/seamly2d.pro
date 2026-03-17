@@ -366,8 +366,12 @@ macx{
     }
 }
 
-win32{
+win32-msvc{
     # run windeployqt to include all qt libraries and vc_redist in $${DESTDIR}
-    qtPrepareTool(WINDEPLOYQT, windeployqt)
-    QMAKE_POST_LINK += $$WINDEPLOYQT $$shell_path($$DESTDIR/$${TARGET}.exe)
+    QMAKE_POST_LINK += windeployqt $$shell_path($$DESTDIR/$${TARGET}.exe)
+}
+
+win32-arm64-msvc{
+    # run windeployqt to include all qt libraries and vc_redist in $${DESTDIR}
+    QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/windeployqt --qtpaths D:\a\Seamly2D\Qt\6.5.3\msvc2019_arm64\bin\qtpaths.bat $$shell_path($$DESTDIR/$${TARGET}.exe)
 }
