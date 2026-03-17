@@ -204,9 +204,11 @@ jobs:
         include:
           - msvc-arch: x64
             qt-arch: win64_msvc2019_64
+            qmake-spec: win32-msvc
             release-file: Seamly2D-windows.zip
           - msvc-arch: amd64_arm64
             qt-arch: win64_msvc2019_arm64
+            qmake-spec: win32-arm64-msvc
             release-file: Seamly2D-windows-arm64.zip
 
     steps:
@@ -230,7 +232,7 @@ jobs:
 
       - name: make seamly2d.exe and seamlyme.exe
         run: |
-          qmake Seamly2D.pro -config release CONFIG+=noTests
+          qmake Seamly2D.pro -spec ${{ matrix.qmake-spec }} -config release CONFIG+=noTests
           nmake
 
       - name: install NSIS
@@ -240,11 +242,11 @@ jobs:
         # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
         # uses parameters in seamly2d-installer.nsi to create the installer exe
         run: |
-          mkdir ..\windows-build
-          Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
-          Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
-          Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
-          cd ..\windows-build\
+          mkdir windows-build
+          Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination windows-build -Recurse
+          Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination windows-build -Recurse -Force
+          Copy-Item -Path dist\seamly2d-installer.nsi -Destination windows-build
+          cd windows-build
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
       - name: Authenticate to Google Cloud (for signing)
@@ -284,24 +286,27 @@ jobs:
           --alias "${{ secrets.SEAMLY_SIGNING_KEY_NAME }}" \
           --certfile .github/workflows/signing/codesign-chain.pem \
           --tsaurl http://timestamp.sectigo.com \
-          ../windows-build/Seamly2D-installer.exe
+          windows-build/Seamly2D-installer.exe
 
       - name: Print installer signature
         run: |
-          cd ..\windows-build\
-          Get-AuthenticodeSignature Seamly2D-installer.exe
+          Get-AuthenticodeSignature windows-build\Seamly2D-installer.exe
 
       - name: pack installer file into .zip
         run: |
-          cd ..\windows-build\
+          cd windows-build
           C:\"Program Files"\7-Zip\7z.exe a ${{ matrix.release-file }} Seamly2D-installer.exe
-          copy ${{ matrix.release-file }} ..\Seamly2D\
 
       - uses: actions/upload-artifact@v6
         with:
           name: ${{ matrix.release-file }}
-          path: ${{ matrix.release-file }}
+          path: windows-build/${{ matrix.release-file }}
           if-no-files-found: error
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: windows-build-${{ matrix.msvc-arch }}
+          path: windows-build/
 
   publish:
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop'
