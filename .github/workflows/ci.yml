@@ -223,6 +223,9 @@ jobs:
           cache: true
           modules: qtmultimedia
 
+      - name: debug qtpaths
+        run: qtpaths
+
       - name: update version
         shell: bash
         run: |
