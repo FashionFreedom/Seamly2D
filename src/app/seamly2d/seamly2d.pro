@@ -371,5 +371,6 @@ win32-msvc{
     QMAKE_POST_LINK += windeployqt $$shell_path($$DESTDIR/$${TARGET}.exe)
 }
 win32-arm64-msvc{
-    QMAKE_POST_LINK += $$[QT_HOST_BINS]/windeployqt --qtpaths $$shell_path($$[QT_INSTALL_BINS]/qtpaths.bat) $$shell_path($$DESTDIR/$${TARGET}.exe)
+    qtPrepareTool(WINDEPLOYQT, windeployqt)
+    QMAKE_POST_LINK += $$WINDEPLOYQT --qtpaths $$shell_path($$[QT_INSTALL_BINS]/qtpaths.bat) $$shell_path($$DESTDIR/$${TARGET}.exe)
 }
