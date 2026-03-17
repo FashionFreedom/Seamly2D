@@ -1,5 +1,6 @@
 var NAVTREEINDEX71 =
 {
+"d5/d6f/classVToolMove.html#ae53b8e76c64ded48eae11589c2f1a4fe":[3,0,756,26],
 "d5/d6f/classVToolMove.html#ae69fecd9221f319b96b048268ab65479":[3,0,756,23],
 "d5/d6f/classVToolMove.html#aed8310445cdac6338d8f564c9c9e403e":[3,0,756,22],
 "d5/d6f/classVToolMove.html#af0a7b91f2600e776182711e2959bd6a1":[3,0,756,30],
@@ -248,6 +249,5 @@ var NAVTREEINDEX71 =
 "d5/d82/classDOMMemoryManager.html#a204df2f42dde53d6b6c30c3ca46e27b1a77bafe33bb8e829ae06c01671b005a33":[3,0,197,2,1],
 "d5/d82/classDOMMemoryManager.html#a204df2f42dde53d6b6c30c3ca46e27b1a77bafe33bb8e829ae06c01671b005a33":[3,0,197,2,27],
 "d5/d82/classDOMMemoryManager.html#a204df2f42dde53d6b6c30c3ca46e27b1a77bafe33bb8e829ae06c01671b005a33":[3,0,197,0,1],
-"d5/d82/classDOMMemoryManager.html#a204df2f42dde53d6b6c30c3ca46e27b1a77bafe33bb8e829ae06c01671b005a33":[3,0,197,1,1],
-"d5/d82/classDOMMemoryManager.html#a204df2f42dde53d6b6c30c3ca46e27b1a77bafe33bb8e829ae06c01671b005a33":[3,0,197,1,14]
+"d5/d82/classDOMMemoryManager.html#a204df2f42dde53d6b6c30c3ca46e27b1a77bafe33bb8e829ae06c01671b005a33":[3,0,197,1,1]
 };

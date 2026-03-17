@@ -1,5 +1,6 @@
 var NAVTREEINDEX146 =
 {
+"da/d05/classDOMDocumentType.html#a4febb5a2a52fde5787fe0e1574514f9a":[3,0,163,4],
 "da/d05/classDOMDocumentType.html#a4febb5a2a52fde5787fe0e1574514f9a":[3,0,163,7],
 "da/d05/classDOMDocumentType.html#a7bf59359982a559b2fde790e6bfeedcb":[3,0,163,21],
 "da/d05/classDOMDocumentType.html#a7bf59359982a559b2fde790e6bfeedcb":[3,0,163,22],
@@ -248,6 +249,5 @@ var NAVTREEINDEX146 =
 "da/d11/classTST__MeasurementRegExp.html#a950810cfba3040ece4f7d4e4743518a7":[3,0,512,5],
 "da/d11/classTST__MeasurementRegExp.html#a9dd5b20e317f5a403ccd7c59bb44e6e0":[3,0,512,15],
 "da/d11/classTST__MeasurementRegExp.html#a9df0ed209bac0a14329ef148034ce567":[3,0,512,16],
-"da/d11/classTST__MeasurementRegExp.html#aa08eb4a1565ee0f66773609cd4cd4f36":[3,0,512,0],
-"da/d11/classTST__MeasurementRegExp.html#aa0f599a249c7a554fc1989df5263ec28":[3,0,512,7]
+"da/d11/classTST__MeasurementRegExp.html#aa08eb4a1565ee0f66773609cd4cd4f36":[3,0,512,0]
 };

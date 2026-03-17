@@ -1,5 +1,6 @@
 var NAVTREEINDEX195 =
 {
+"dc/d9a/decimalchart__dialog_8h.html":[4,0,0,0,0,1,8],
 "dc/d9a/decimalchart__dialog_8h_source.html":[4,0,0,0,0,1,8],
 "dc/d9b/classShowOperationPointName.html":[3,0,483],
 "dc/d9b/classShowOperationPointName.html#a02839cc9747e43797194aa1947a74951":[3,0,483,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX195 =
 "dc/dbc/classVTranslateVars.html#a0bb6d5416ac5b839c1b5782505d04617":[3,0,772,17],
 "dc/dbc/classVTranslateVars.html#a0e105d54415b006f3efd7159bc75f61a":[3,0,772,25],
 "dc/dbc/classVTranslateVars.html#a190d6da4bc9238aa85fdcd1cc99694f6":[3,0,772,23],
-"dc/dbc/classVTranslateVars.html#a270e75fa3e7f3a229927006386a41825":[3,0,772,29],
-"dc/dbc/classVTranslateVars.html#a2c710d6522b3546b1817135688f92e53":[3,0,772,14]
+"dc/dbc/classVTranslateVars.html#a270e75fa3e7f3a229927006386a41825":[3,0,772,29]
 };

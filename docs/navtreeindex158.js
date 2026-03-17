@@ -1,5 +1,6 @@
 var NAVTREEINDEX158 =
 {
+"da/dd0/classDialogVariables.html#ac6d0dc039c329fad6bc700bab1bf2756":[3,0,137,33],
 "da/dd0/classDialogVariables.html#acbcd9bffca7884ed2afbf02933932ae9":[3,0,137,36],
 "da/dd0/classDialogVariables.html#acdf4239a4ba07d9ff2bb3236a6844b54":[3,0,137,25],
 "da/dd0/classDialogVariables.html#ad3929244203afb58c08f5e1874c3d557":[3,0,137,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX158 =
 "da/dfb/classPatternPieceTool.html#a2bc697f8f37cf552fd9f07e748adca3a":[3,0,384,101],
 "da/dfb/classPatternPieceTool.html#a3300a2706cff94ccf280c4064ca507f9":[3,0,384,94],
 "da/dfb/classPatternPieceTool.html#a36f29d56a36c903ebffd4d78911c7837":[3,0,384,52],
-"da/dfb/classPatternPieceTool.html#a377bbc573882512bb4eee36c859748a2":[3,0,384,32],
-"da/dfb/classPatternPieceTool.html#a385ccdf475e852d551956038f18679c4":[3,0,384,5]
+"da/dfb/classPatternPieceTool.html#a377bbc573882512bb4eee36c859748a2":[3,0,384,32]
 };

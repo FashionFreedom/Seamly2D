@@ -1,5 +1,6 @@
 var NAVTREEINDEX149 =
 {
+"da/d57/classXMLUTF8Transcoder.html#abe09fad3c58e9153a908ea95ef0738fa":[3,0,879,16],
 "da/d57/classXMLUTF8Transcoder.html#ac8d4ca92193e19362fb1ce3f8d671273":[3,0,879,6],
 "da/d57/classXMLUTF8Transcoder.html#ac8d4ca92193e19362fb1ce3f8d671273":[3,0,879,3],
 "da/d57/classXMLUTF8Transcoder.html#ac8d4ca92193e19362fb1ce3f8d671273":[3,0,879,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX149 =
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a9fb151ff521ba37491645fa4f9ad43fb":[3,0,236,1,24],
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a9fb151ff521ba37491645fa4f9ad43fb":[3,0,236,0,11],
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a9fb151ff521ba37491645fa4f9ad43fb":[3,0,236,0,24],
-"da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a9fb151ff521ba37491645fa4f9ad43fb":[3,0,236,1,11],
-"da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a9fb151ff521ba37491645fa4f9ad43fb":[3,0,236,0,37]
+"da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a9fb151ff521ba37491645fa4f9ad43fb":[3,0,236,1,11]
 };

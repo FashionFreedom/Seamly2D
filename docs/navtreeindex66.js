@@ -1,5 +1,6 @@
 var NAVTREEINDEX66 =
 {
+"d5/d1d/msvc_2include_2xercesc_2util_2XMLWin1252Transcoder_8hpp_source.html":[4,0,0,1,15,2,0,0,6,122],
 "d5/d1d/msvc_2include_2xercesc_2util_2regx_2RegxUtil_8hpp.html":[4,0,0,1,15,2,0,0,6,3,17],
 "d5/d1d/msvc_2include_2xercesc_2util_2regx_2RegxUtil_8hpp_source.html":[4,0,0,1,15,2,0,0,6,3,17],
 "d5/d1e/msvc_2include_2xercesc_2validators_2datatype_2YearMonthDatatypeValidator_8hpp.html":[4,0,0,1,15,2,0,0,7,1,35],
@@ -248,6 +249,5 @@ var NAVTREEINDEX66 =
 "d5/d35/classDocumentHandler.html#af2732a86367efbc82c8ebaec1f041276":[3,0,139,19],
 "d5/d35/classDocumentHandler.html#af2732a86367efbc82c8ebaec1f041276":[3,0,139,20],
 "d5/d35/vlabeltemplateconverter_8h.html":[4,0,0,1,1,1,13],
-"d5/d35/vlabeltemplateconverter_8h_source.html":[4,0,0,1,1,1,13],
-"d5/d36/classDOMLSInput.html":[3,0,186]
+"d5/d35/vlabeltemplateconverter_8h_source.html":[4,0,0,1,1,1,13]
 };

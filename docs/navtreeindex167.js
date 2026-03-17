@@ -1,5 +1,6 @@
 var NAVTREEINDEX167 =
 {
+"db/d85/classDTDScanner.html#a2596a1fdd85ae23de6b2ce8d9a543271":[3,0,247,110],
 "db/d85/classDTDScanner.html#a2596a1fdd85ae23de6b2ce8d9a543271":[3,0,247,109],
 "db/d85/classDTDScanner.html#a2596a1fdd85ae23de6b2ce8d9a543271":[3,0,247,108],
 "db/d85/classDTDScanner.html#a25e8ed2c7dce6705f944146e86a522bf":[3,0,247,72],
@@ -248,6 +249,5 @@ var NAVTREEINDEX167 =
 "db/d96/vwidgets_2calculator_2calculator_8h.html":[4,0,0,1,14,0,3],
 "db/d96/vwidgets_2calculator_2calculator_8h_source.html":[4,0,0,1,14,0,3],
 "db/d97/macx_2include_2xercesc_2dom_2DOMStringList_8hpp.html":[4,0,0,1,15,0,0,0,0,43],
-"db/d97/macx_2include_2xercesc_2dom_2DOMStringList_8hpp_source.html":[4,0,0,1,15,0,0,0,0,43],
-"db/d98/msvc_2include_2xercesc_2validators_2datatype_2DayDatatypeValidator_8hpp.html":[4,0,0,1,15,2,0,0,7,1,12]
+"db/d97/macx_2include_2xercesc_2dom_2DOMStringList_8hpp_source.html":[4,0,0,1,15,0,0,0,0,43]
 };

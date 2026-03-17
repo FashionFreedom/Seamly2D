@@ -1,5 +1,6 @@
 var NAVTREEINDEX137 =
 {
+"d9/d5a/classXMLBuffer.html#a68fe2a28f3e2e6c64cfc9836b754242c":[3,0,809,59],
 "d9/d5a/classXMLBuffer.html#a759f62ad617222250a9942b5290dd739":[3,0,809,2],
 "d9/d5a/classXMLBuffer.html#a759f62ad617222250a9942b5290dd739":[3,0,809,8],
 "d9/d5a/classXMLBuffer.html#a759f62ad617222250a9942b5290dd739":[3,0,809,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX137 =
 "d9/d6f/classVPiecePathData.html#a39f3bc1b6015c694282ecf27d753196a":[3,0,711,11],
 "d9/d6f/classVPiecePathData.html#a3e5453ab4f32137e8f1a8cf51064628b":[3,0,711,13],
 "d9/d6f/classVPiecePathData.html#a3f234ccd27507c7365a9f844fbce53f7":[3,0,711,5],
-"d9/d6f/classVPiecePathData.html#a47b0abdeecc288985b52693f0a4466e3":[3,0,711,4],
-"d9/d6f/classVPiecePathData.html#a4de461b1f419acc0d4b2a3c8f6e17799":[3,0,711,9]
+"d9/d6f/classVPiecePathData.html#a47b0abdeecc288985b52693f0a4466e3":[3,0,711,4]
 };

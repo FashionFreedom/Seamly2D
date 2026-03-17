@@ -1,5 +1,6 @@
 var NAVTREEINDEX164 =
 {
+"db/d57/classVPointF.html#a88edd1678d8a96491aa85dc23f1544ce":[3,0,712,15],
 "db/d57/classVPointF.html#a8c2bba0832e74582e35f55904bfc845f":[3,0,712,3],
 "db/d57/classVPointF.html#aa2124a8469c6a99052c267a1501f9912":[3,0,712,19],
 "db/d57/classVPointF.html#abc43653b42695e82d69fa37bf9630c74":[3,0,712,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX164 =
 "db/d62/classqmu_1_1QmuParserBase.html#acba1aa3824bb417a69d7e20036c9f47f":[3,0,0,3,66],
 "db/d62/classqmu_1_1QmuParserBase.html#ad5bf8e075341868f126c5c24f538ca7f":[2,0,21,3,82],
 "db/d62/classqmu_1_1QmuParserBase.html#ad5bf8e075341868f126c5c24f538ca7f":[3,0,0,3,82],
-"db/d62/classqmu_1_1QmuParserBase.html#ad7c076d140abd8b9394b7f62f0d9f442":[2,0,21,3,61],
-"db/d62/classqmu_1_1QmuParserBase.html#ad7c076d140abd8b9394b7f62f0d9f442":[3,0,0,3,61]
+"db/d62/classqmu_1_1QmuParserBase.html#ad7c076d140abd8b9394b7f62f0d9f442":[2,0,21,3,61]
 };

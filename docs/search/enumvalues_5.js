@@ -85,7 +85,7 @@ var searchData=
   ['facet_5fposint_5ftotaldigit_82',['FACET_PosInt_TotalDigit',['../dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80adfc19057447044bd2c20848aed2c3096',1,'XMLExcepts']]],
   ['facet_5ftotaldigit_5fbase_5ffixed_83',['FACET_totalDigit_base_fixed',['../dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80a1bbcb4c78b7c962e5278f41ba97686ed',1,'XMLExcepts']]],
   ['facet_5ftotaldigit_5fbase_5ftotaldigit_84',['FACET_totalDigit_base_totalDigit',['../dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80a67b8f097e1ce62b4894c1a4c86b5637a',1,'XMLExcepts']]],
-  ['facet_5ftotaldigits_85',['FACET_TOTALDIGITS',['../d3/d52/classXSSimpleTypeDefinition.html#abf93afa37a40fd7b8a92d571375a0b8ead50e360c960a873cd9b9b19cf2230599',1,'XSSimpleTypeDefinition::FACET_TOTALDIGITS()'],['../d9/db9/classDatatypeValidator.html#a9f91f12de98cda8dd16a94eeacedf97cae9fb0d14234d9d9a9b22e9a731b8fa13',1,'DatatypeValidator::FACET_TOTALDIGITS()']]],
+  ['facet_5ftotaldigits_85',['FACET_TOTALDIGITS',['../d9/db9/classDatatypeValidator.html#a9f91f12de98cda8dd16a94eeacedf97cae9fb0d14234d9d9a9b22e9a731b8fa13',1,'DatatypeValidator::FACET_TOTALDIGITS()'],['../d3/d52/classXSSimpleTypeDefinition.html#abf93afa37a40fd7b8a92d571375a0b8ead50e360c960a873cd9b9b19cf2230599',1,'XSSimpleTypeDefinition::FACET_TOTALDIGITS()']]],
   ['facet_5ftotdigit_5ffractdigit_86',['FACET_TotDigit_FractDigit',['../dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80a2922eaae77a74225f2b9477dccf9ea2c',1,'XMLExcepts']]],
   ['facet_5funion_5finvalid_5fbasevalidatortype_87',['FACET_Union_invalid_baseValidatorType',['../dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80a7ad125ab0cc66967b6053e5bc904e9b6',1,'XMLExcepts']]],
   ['facet_5funion_5fnull_5fbasevalidator_88',['FACET_Union_Null_baseValidator',['../dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80ac9a65c5f662483e91130c546a00648a1',1,'XMLExcepts']]],
@@ -128,7 +128,7 @@ var searchData=
   ['filter_5faccept_125',['FILTER_ACCEPT',['../df/df9/classDOMLSParserFilter.html#adae984d01a925a7d5fe15cef9458a675afeb7cbcbcc7bb474278cca7d6895f0ef',1,'DOMLSParserFilter::FILTER_ACCEPT()'],['../dc/d83/classDOMNodeFilter.html#ac0f76a10c908b2562fb430c69a8d6811a6e1785891a42beb096df183c4a1f3bef',1,'DOMNodeFilter::FILTER_ACCEPT()']]],
   ['filter_5finterrupt_126',['FILTER_INTERRUPT',['../df/df9/classDOMLSParserFilter.html#adae984d01a925a7d5fe15cef9458a675a03787788d10e237368f7b1361968b518',1,'DOMLSParserFilter']]],
   ['filter_5freject_127',['FILTER_REJECT',['../df/df9/classDOMLSParserFilter.html#adae984d01a925a7d5fe15cef9458a675a9e5eda6fa5f320ae734f49483e7d39cd',1,'DOMLSParserFilter::FILTER_REJECT()'],['../dc/d83/classDOMNodeFilter.html#ac0f76a10c908b2562fb430c69a8d6811a16f252aff6fd5a05fcb0414b01cccf09',1,'DOMNodeFilter::FILTER_REJECT()']]],
-  ['filter_5fskip_128',['FILTER_SKIP',['../dc/d83/classDOMNodeFilter.html#ac0f76a10c908b2562fb430c69a8d6811ad2a6a6023febd1b2aa899326b08da2b0',1,'DOMNodeFilter::FILTER_SKIP()'],['../df/df9/classDOMLSParserFilter.html#adae984d01a925a7d5fe15cef9458a675a4cba912daecbff1ccacc33eadd3566ac',1,'DOMLSParserFilter::FILTER_SKIP()']]],
+  ['filter_5fskip_128',['FILTER_SKIP',['../df/df9/classDOMLSParserFilter.html#adae984d01a925a7d5fe15cef9458a675a4cba912daecbff1ccacc33eadd3566ac',1,'DOMLSParserFilter::FILTER_SKIP()'],['../dc/d83/classDOMNodeFilter.html#ac0f76a10c908b2562fb430c69a8d6811ad2a6a6023febd1b2aa899326b08da2b0',1,'DOMNodeFilter::FILTER_SKIP()']]],
   ['final_5fpunctuation_129',['FINAL_PUNCTUATION',['../dd/d02/classXMLUniCharacter.html#a1ab8b1de68bfcb71e9029d1ff4c1bfc4a1e6b2fb64a0babb3fc4cd3e528c29c46',1,'XMLUniCharacter']]],
   ['first_5fordered_5fnode_5ftype_130',['FIRST_ORDERED_NODE_TYPE',['../da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a0b36447a53e56229b0ca8f985a9367d5',1,'DOMXPathResult']]],
   ['first_5fresult_5ftype_131',['FIRST_RESULT_TYPE',['../da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a0958cdb56895598e994c30a1d2df0bc8',1,'DOMXPathResult']]],
@@ -136,7 +136,7 @@ var searchData=
   ['fix_133',['Fix',['../d0/d29/dialogundo_8h.html#ac195b3af2ae694e22fe0c38122781ac2a2de1239f236684c5bee75bd524a38a51',1,'dialogundo.h']]],
   ['fixed_134',['Fixed',['../df/d1f/classXMLAttDef.html#adbac7febf3455722cc9736f1dc03c02fae7aec17b0bafc7741b80d7bd7e575c07',1,'XMLAttDef']]],
   ['fixeddifferentfromactual_135',['FixedDifferentFromActual',['../d5/dc5/classXMLValid.html#ac30e7f5d9612c52f5f1208c83f090c86a05e97b7c1bdebb28a9ad909d02639897',1,'XMLValid']]],
-  ['float_136',['Float',['../d5/d4b/classXMLNumber.html#a5c61954fb1fcef027fed8dccc826f8eba8c6c62b1449a3dc291dc0bca3af982b6',1,'XMLNumber::Float()'],['../d9/db9/classDatatypeValidator.html#a3fbf8d58a1883dd3b6b2e83660eedf8da3feea41f15ba744a9da01ffb7b381263',1,'DatatypeValidator::Float()']]],
+  ['float_136',['Float',['../d9/db9/classDatatypeValidator.html#a3fbf8d58a1883dd3b6b2e83660eedf8da3feea41f15ba744a9da01ffb7b381263',1,'DatatypeValidator::Float()'],['../d5/d4b/classXMLNumber.html#a5c61954fb1fcef027fed8dccc826f8eba8c6c62b1449a3dc291dc0bca3af982b6',1,'XMLNumber::Float()']]],
   ['follow_137',['Follow',['../d2/df2/classVDrawTool.html#a69bf2b95d209765b25d9ea6931ad34a2a3903aab323863bd2e9b68218a7a65ebd',1,'VDrawTool']]],
   ['forbiddenderivation_138',['ForbiddenDerivation',['../d7/d8e/classXMLErrs.html#aefe9817ef5442905d86fd17cb0c35e47a3aad8dee1000f6a63cef134251aa0af7',1,'XMLErrs']]],
   ['forbiddenderivationbyextension_139',['ForbiddenDerivationByExtension',['../d7/d8e/classXMLErrs.html#aefe9817ef5442905d86fd17cb0c35e47a4dd8dc96c4ada4969c42df6827dc86dc',1,'XMLErrs']]],
@@ -148,6 +148,7 @@ var searchData=
   ['fromtool_145',['FromTool',['../d4/da4/def_8h.html#abb74e322e1c4daef3e3ff32f5f7be820a95f330e7d71abcef52e6522fa0fa7a2c',1,'def.h']]],
   ['fromuser_146',['FromUser',['../d9/d47/vformula_8h.html#a6aae6ae899c773f46678c91a20defb5cae42b2488bd10664b5021e733a408078e',1,'vformula.h']]],
   ['ftp_147',['FTP',['../db/d45/classXMLURL.html#a314ff3369f7369da7b682e18808abbcea073db01e56f54dfd7ad13768d4f7a6e2',1,'XMLURL']]],
-  ['fullparse_148',['FullParse',['../d0/d89/vabstractpattern_8h.html#a3a0d470ad581388370a4d6fd71b8d202aed73e6ca0421aba7b2a904510d597785',1,'vabstractpattern.h']]],
-  ['functions_149',['Functions',['../d7/d4c/edit__formula__dialog_8h.html#a81e56be3c50376239982abe0269ec928a60fe6c4c525893f09d49fb65b21e81a8',1,'edit_formula_dialog.h']]]
+  ['fullnamecolumn_148',['FullNameColumn',['../d7/d8d/edit__formula__dialog_8cpp.html#a385c44f6fb256e5716a2302a5b940388aef777654982e56f11382695f8736f9b4',1,'edit_formula_dialog.cpp']]],
+  ['fullparse_149',['FullParse',['../d0/d89/vabstractpattern_8h.html#a3a0d470ad581388370a4d6fd71b8d202aed73e6ca0421aba7b2a904510d597785',1,'vabstractpattern.h']]],
+  ['functions_150',['Functions',['../d7/d4c/edit__formula__dialog_8h.html#a81e56be3c50376239982abe0269ec928a60fe6c4c525893f09d49fb65b21e81a8',1,'edit_formula_dialog.h']]]
 ];

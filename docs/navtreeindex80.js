@@ -1,5 +1,6 @@
 var NAVTREEINDEX80 =
 {
+"d5/dc7/classDialogRotation.html#af5921bcac1d795074b407b9ebbc48422":[3,0,127,17],
 "d5/dc7/classDialogRotation.html#afb76796ff61196058d3da0a3e333ae57":[3,0,127,24],
 "d5/dc7/classDialogRotation.html#afc8fc45a5cc6cbd43d0b02a01761d71f":[3,0,127,27],
 "d5/dc7/classDialogRotation.html#afdbdc4997719c4fff7ea87ce9d078852":[3,0,127,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX80 =
 "d5/de4/classPanicHandler.html#aace4c4f408d68f168e1c2537e0ba5be2a5cace59a8aadf31e193795ffd85d5ed6":[3,0,379,1,23],
 "d5/de4/classPanicHandler.html#aace4c4f408d68f168e1c2537e0ba5be2a5cace59a8aadf31e193795ffd85d5ed6":[3,0,379,2,3],
 "d5/de4/classPanicHandler.html#aace4c4f408d68f168e1c2537e0ba5be2a5cace59a8aadf31e193795ffd85d5ed6":[3,0,379,0,3],
-"d5/de4/classPanicHandler.html#aace4c4f408d68f168e1c2537e0ba5be2a5cace59a8aadf31e193795ffd85d5ed6":[3,0,379,0,13],
-"d5/de4/classPanicHandler.html#aace4c4f408d68f168e1c2537e0ba5be2a5cace59a8aadf31e193795ffd85d5ed6":[3,0,379,0,23]
+"d5/de4/classPanicHandler.html#aace4c4f408d68f168e1c2537e0ba5be2a5cace59a8aadf31e193795ffd85d5ed6":[3,0,379,0,13]
 };

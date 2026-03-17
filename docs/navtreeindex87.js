@@ -1,5 +1,6 @@
 var NAVTREEINDEX87 =
 {
+"d6/d47/mingw_2include_2xercesc_2validators_2datatype_2UnionDatatypeValidator_8hpp_source.html":[4,0,0,1,15,1,0,0,7,1,32],
 "d6/d48/mingw_2include_2xercesc_2dom_2impl_2DOMAttrMapImpl_8hpp.html":[4,0,0,1,15,1,0,0,0,0,1],
 "d6/d48/mingw_2include_2xercesc_2dom_2impl_2DOMAttrMapImpl_8hpp_source.html":[4,0,0,1,15,1,0,0,0,0,1],
 "d6/d49/togglepieceinlayout_8cpp.html":[4,0,0,1,13,2,47],
@@ -248,6 +249,5 @@ var NAVTREEINDEX87 =
 "d6/d6b/classDOMDocumentTypeImpl.html#a51a03febeda1d4b9f62cc780998fb06d":[3,0,164,138],
 "d6/d6b/classDOMDocumentTypeImpl.html#a51a03febeda1d4b9f62cc780998fb06d":[3,0,164,139],
 "d6/d6b/classDOMDocumentTypeImpl.html#a51a03febeda1d4b9f62cc780998fb06d":[3,0,164,140],
-"d6/d6b/classDOMDocumentTypeImpl.html#a5286de985c64bb6c981fe17ec3741903":[3,0,164,3],
-"d6/d6b/classDOMDocumentTypeImpl.html#a5286de985c64bb6c981fe17ec3741903":[3,0,164,7]
+"d6/d6b/classDOMDocumentTypeImpl.html#a5286de985c64bb6c981fe17ec3741903":[3,0,164,3]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX116 =
 {
+"d7/ded/mingw_2include_2xercesc_2util_2BinFileInputStream_8hpp_source.html":[4,0,0,1,15,1,0,0,6,9],
 "d7/def/msvc_2include_2xercesc_2util_2XMLFileMgr_8hpp.html":[4,0,0,1,15,2,0,0,6,102],
 "d7/def/msvc_2include_2xercesc_2util_2XMLFileMgr_8hpp.html#a6738b6a1cc86fbf4c231eac94e357446":[4,0,0,1,15,2,0,0,6,102,2],
 "d7/def/msvc_2include_2xercesc_2util_2XMLFileMgr_8hpp.html#aeb1328bd78b488d252f2aa52f4cc912d":[4,0,0,1,15,2,0,0,6,102,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX116 =
 "d8/d0d/macx_2include_2xercesc_2framework_2psvi_2XSConstants_8hpp.html#af9679171055324a036b9a810c20249df":[4,0,0,1,15,0,0,0,1,0,10,3],
 "d8/d0d/macx_2include_2xercesc_2framework_2psvi_2XSConstants_8hpp.html#afcadf64027fb9bdea7b1937931a81d19":[4,0,0,1,15,0,0,0,1,0,10,4],
 "d8/d0d/macx_2include_2xercesc_2framework_2psvi_2XSConstants_8hpp_source.html":[4,0,0,1,15,0,0,0,1,0,10],
-"d8/d0d/mingw_2include_2xercesc_2util_2Mutexes_8hpp.html":[4,0,0,1,15,1,0,0,6,36],
-"d8/d0d/mingw_2include_2xercesc_2util_2Mutexes_8hpp_source.html":[4,0,0,1,15,1,0,0,6,36]
+"d8/d0d/mingw_2include_2xercesc_2util_2Mutexes_8hpp.html":[4,0,0,1,15,1,0,0,6,36]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX95 =
 {
+"d6/dd7/classXMLEBCDICTranscoder.html#a97f62af9ee531c6306b5606e816eae80":[3,0,824,6],
 "d6/dd7/classXMLEBCDICTranscoder.html#a9854b3d772f76606789ca52850944198":[3,0,824,12],
 "d6/dd7/classXMLEBCDICTranscoder.html#a9854b3d772f76606789ca52850944198":[3,0,824,13],
 "d6/dd7/classXMLEBCDICTranscoder.html#a9854b3d772f76606789ca52850944198":[3,0,824,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX95 =
 "d6/dfd/classqmu_1_1QmuParser.html#ac95b361ae09ef46bbd2a1c976f76ab2c":[3,0,0,2,9],
 "d6/dfd/classqmu_1_1QmuParser.html#ad0d229bf2f2f2508dd0372e31c9e13dd":[2,0,21,2,14],
 "d6/dfd/classqmu_1_1QmuParser.html#ad0d229bf2f2f2508dd0372e31c9e13dd":[3,0,0,2,14],
-"d6/dfd/classqmu_1_1QmuParser.html#ad646bdc0938d2edddb3ba35ccae704e5":[3,0,0,2,30],
-"d6/dfd/classqmu_1_1QmuParser.html#ad646bdc0938d2edddb3ba35ccae704e5":[2,0,21,2,30]
+"d6/dfd/classqmu_1_1QmuParser.html#ad646bdc0938d2edddb3ba35ccae704e5":[3,0,0,2,30]
 };

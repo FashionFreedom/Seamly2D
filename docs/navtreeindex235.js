@@ -1,5 +1,6 @@
 var NAVTREEINDEX235 =
 {
+"df/d34/classDOMStringList.html#ad22f47d41c002c1a0e08795bf877a8f3":[3,0,219,3],
 "df/d34/classDOMStringList.html#ad61c613084922aa1e35c1bedd90136f9":[3,0,219,12],
 "df/d34/classDOMStringList.html#ad61c613084922aa1e35c1bedd90136f9":[3,0,219,13],
 "df/d34/classDOMStringList.html#ad61c613084922aa1e35c1bedd90136f9":[3,0,219,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX235 =
 "df/d53/classVFormulaProperty.html#a63cceba0dea7c4ad0dfd7035c574607f":[3,0,623,10],
 "df/d53/classVFormulaProperty.html#a65d67edb2fc788e70a938786dc86a1df":[3,0,623,1],
 "df/d53/classVFormulaProperty.html#a936cd51e49c85dfb6c47c78c5a654494":[3,0,623,5],
-"df/d53/classVFormulaProperty.html#ac020eb3391b1096e92a35537dd09285a":[3,0,623,9],
-"df/d53/classVFormulaProperty.html#ad1b18a836d20b7da8aa6be16a478bb4b":[3,0,623,8]
+"df/d53/classVFormulaProperty.html#ac020eb3391b1096e92a35537dd09285a":[3,0,623,9]
 };

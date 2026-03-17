@@ -1,5 +1,6 @@
 var NAVTREEINDEX157 =
 {
+"da/dc2/classXSObject.html#a1b33f8dffbe8812c14705f98fa6e34d8":[3,0,913,32],
 "da/dc2/classXSObject.html#a36f2f2acb032472e546a10dad3e4fb21":[3,0,913,8],
 "da/dc2/classXSObject.html#a36f2f2acb032472e546a10dad3e4fb21":[3,0,913,5],
 "da/dc2/classXSObject.html#a36f2f2acb032472e546a10dad3e4fb21":[3,0,913,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX157 =
 "da/dd0/classDialogVariables.html#aa975d4c8d9d8a5079f0b0aaba6f19fd1":[3,0,137,39],
 "da/dd0/classDialogVariables.html#aab3fcbc9b08b4e636af604a485e3aa14":[3,0,137,13],
 "da/dd0/classDialogVariables.html#aab8dc75bbeb6ead3a8a12a55312abe8e":[3,0,137,32],
-"da/dd0/classDialogVariables.html#ab84fe7766be3cb96a796b272a611c473":[3,0,137,38],
-"da/dd0/classDialogVariables.html#ac6d0dc039c329fad6bc700bab1bf2756":[3,0,137,33]
+"da/dd0/classDialogVariables.html#ab84fe7766be3cb96a796b272a611c473":[3,0,137,38]
 };

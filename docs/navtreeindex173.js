@@ -1,5 +1,6 @@
 var NAVTREEINDEX173 =
 {
+"dc/d10/classDialogCurveIntersectAxis.html#a9578cab56942d37ba82869055cae6b26":[3,0,103,25],
 "dc/d10/classDialogCurveIntersectAxis.html#a95934db2a5c881184406f982de04dfa3":[3,0,103,26],
 "dc/d10/classDialogCurveIntersectAxis.html#aa39df92271d0a216e61666ea5eb26098":[3,0,103,14],
 "dc/d10/classDialogCurveIntersectAxis.html#aacb1517c0cfe21e8ca158e5ea8199d7b":[3,0,103,18],
@@ -248,6 +249,5 @@ var NAVTREEINDEX173 =
 "dc/d20/classHandlerBase.html#a61c412c75f519e67c8086c8d38f1c368":[3,0,284,56],
 "dc/d20/classHandlerBase.html#a662e6528eacda8192816cb4ce110a173":[3,0,284,9],
 "dc/d20/classHandlerBase.html#a7749cf16edd88cfa604a3054201f4053":[3,0,284,35],
-"dc/d20/classHandlerBase.html#a7749cf16edd88cfa604a3054201f4053":[3,0,284,34],
-"dc/d20/classHandlerBase.html#a7db28a48ee23b826262020381ebf4abf":[3,0,284,37]
+"dc/d20/classHandlerBase.html#a7749cf16edd88cfa604a3054201f4053":[3,0,284,34]
 };

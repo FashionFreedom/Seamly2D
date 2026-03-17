@@ -1,5 +1,6 @@
 var NAVTREEINDEX194 =
 {
+"dc/d8e/classXIncludeUtils.html#a0b60f64c5164a4d1a7019ac9dbf5f1ee":[3,0,797,64],
 "dc/d8e/classXIncludeUtils.html#a13efaa1c2e59475d5716a9810ebd524f":[3,0,797,57],
 "dc/d8e/classXIncludeUtils.html#a1990f9c8ea2bf911bac75854c37db1f5":[3,0,797,59],
 "dc/d8e/classXIncludeUtils.html#a1fea3aec880f9dc19ffa692e725b4a5a":[3,0,797,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX194 =
 "dc/d94/namespaceanonymous__namespace_02vabstracttool_8cpp_03.html#a7236e797575617f3512429acf2adee0d":[2,0,8,0],
 "dc/d94/namespaceanonymous__namespace_02vabstracttool_8cpp_03.html#afe8ee413200e830c15092676c305cf93":[2,0,8,1],
 "dc/d95/mingw_2include_2xercesc_2util_2KeyValuePair_8c.html":[4,0,0,1,15,1,0,0,6,32],
-"dc/d95/mingw_2include_2xercesc_2util_2KeyValuePair_8c_source.html":[4,0,0,1,15,1,0,0,6,32],
-"dc/d9a/decimalchart__dialog_8h.html":[4,0,0,0,0,1,8]
+"dc/d95/mingw_2include_2xercesc_2util_2KeyValuePair_8c_source.html":[4,0,0,1,15,1,0,0,6,32]
 };

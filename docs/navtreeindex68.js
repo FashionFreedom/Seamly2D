@@ -1,5 +1,6 @@
 var NAVTREEINDEX68 =
 {
+"d5/d41/classPatternPieceDialog.html#aa376688ccd5cde7cdbf0ea28250e1ebe":[3,0,383,150],
 "d5/d41/classPatternPieceDialog.html#aa663544d60f67bbd6b0fc0cbe4ce6f5b":[3,0,383,125],
 "d5/d41/classPatternPieceDialog.html#aa7eae1d085a23f39a57cd424936d4a5e":[3,0,383,159],
 "d5/d41/classPatternPieceDialog.html#aa98e145e2c6e19c5c790d45307076f01":[3,0,383,51],
@@ -248,6 +249,5 @@ var NAVTREEINDEX68 =
 "d5/d47/classVPE_1_1VPropertyModel.html#a19c867298ebaafb23e124e14cae44ec1":[3,0,2,30,14],
 "d5/d47/classVPE_1_1VPropertyModel.html#a19c867298ebaafb23e124e14cae44ec1":[2,0,25,30,14],
 "d5/d47/classVPE_1_1VPropertyModel.html#a27f79caf648e639498565cdcfdeb6e42":[3,0,2,30,2],
-"d5/d47/classVPE_1_1VPropertyModel.html#a27f79caf648e639498565cdcfdeb6e42":[2,0,25,30,2],
-"d5/d47/classVPE_1_1VPropertyModel.html#a290ff6d047bf94c0b93fb8436832053c":[2,0,25,30,25]
+"d5/d47/classVPE_1_1VPropertyModel.html#a27f79caf648e639498565cdcfdeb6e42":[2,0,25,30,2]
 };

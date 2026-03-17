@@ -27,6 +27,7 @@ var classEditFormulaDialog =
     [ "setDescription", "d1/d7d/classEditFormulaDialog.html#afd8baea0a09ee020cfe1e538965c7a8d", null ],
     [ "SetFormula", "d1/d7d/classEditFormulaDialog.html#a12d55a01172c71337afb2e346a39b843", null ],
     [ "setPostfix", "d1/d7d/classEditFormulaDialog.html#ad1aea8c58778ba445c27fecba1f1fd20", null ],
+    [ "showCustomVariable", "d1/d7d/classEditFormulaDialog.html#ad9a6708f1bf1031b6d743e87b3b15218", null ],
     [ "showEvent", "d1/d7d/classEditFormulaDialog.html#a3949e10e3e659fdfb9641c3b279d577e", null ],
     [ "showFunctions", "d1/d7d/classEditFormulaDialog.html#aa4bc382d202b07ba90fb20e0f0d6478c", null ],
     [ "showHeaderUnits", "d1/d7d/classEditFormulaDialog.html#afac87050318b0b715a7924344750ae2b", null ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX206 =
 {
+"dd/dcb/classVControlPointSpline.html#a7fff1eace21e4219022ac49359e07066":[3,0,593,13],
 "dd/dcb/classVControlPointSpline.html#a84b7bb11f5ea10ca13192cc32202b239":[3,0,593,12],
 "dd/dcb/classVControlPointSpline.html#a84dab00cae5c854ffeb2a36f4e4e96bc":[3,0,593,20],
 "dd/dcb/classVControlPointSpline.html#a84e6656056a357238d07fe2bef9ba397":[3,0,593,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX206 =
 "dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#ac58fa958f41e761025817daf2613f585":[4,0,0,1,15,1,0,0,6,117,4],
 "dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#ac83d612cb590116dbaf256c6030079e0":[4,0,0,1,15,1,0,0,6,117,85],
 "dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#ac9c5b41ded919db1961f69266adca485":[4,0,0,1,15,1,0,0,6,117,9],
-"dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#aca183cc5f77c70c93ab425ca012b759b":[4,0,0,1,15,1,0,0,6,117,72],
-"dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#ace0e809ab192b3ae2311dc0108471b97":[4,0,0,1,15,1,0,0,6,117,96]
+"dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#aca183cc5f77c70c93ab425ca012b759b":[4,0,0,1,15,1,0,0,6,117,72]
 };

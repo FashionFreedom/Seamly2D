@@ -1,5 +1,6 @@
 var NAVTREEINDEX239 =
 {
+"df/d93/classVNodeArc.html#af758f95d16079e5d78d9e9591f8015f0":[3,0,690,8],
 "df/d94/classSavePiecePathOptions.html":[3,0,453],
 "df/d94/classSavePiecePathOptions.html#a0079337ffd649d229be4d76dec9eac94":[3,0,453,4],
 "df/d94/classSavePiecePathOptions.html#a03201816623001d28fb8046f27c0c39d":[3,0,453,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX239 =
 "df/db4/classXTemplateSerializer.html#a51d94b7459579fc4fbde367830c5cdc6":[3,0,920,17],
 "df/db4/classXTemplateSerializer.html#a52ef83ecaf264f8293b0efd110120fe1":[3,0,920,177],
 "df/db4/classXTemplateSerializer.html#a52ef83ecaf264f8293b0efd110120fe1":[3,0,920,178],
-"df/db4/classXTemplateSerializer.html#a52ef83ecaf264f8293b0efd110120fe1":[3,0,920,179],
-"df/db4/classXTemplateSerializer.html#a5806535a9f5c1d9104d2653fccdea24c":[3,0,920,145]
+"df/db4/classXTemplateSerializer.html#a52ef83ecaf264f8293b0efd110120fe1":[3,0,920,179]
 };

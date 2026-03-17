@@ -1,5 +1,6 @@
 var NAVTREEINDEX150 =
 {
+"da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a9fb151ff521ba37491645fa4f9ad43fb":[3,0,236,0,37],
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1aa49a9e9083d2e2f787d3c45ae89efca4":[3,0,236,2,29],
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1aa49a9e9083d2e2f787d3c45ae89efca4":[3,0,236,0,16],
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1aa49a9e9083d2e2f787d3c45ae89efca4":[3,0,236,0,29],
@@ -248,6 +249,5 @@ var NAVTREEINDEX150 =
 "da/d67/classDOMLSException.html#ab9f26393d8400e135914eef60d484727a007a39fce50ac84d5d219a6ebac593d9":[3,0,185,1,0],
 "da/d67/classDOMLSException.html#ab9f26393d8400e135914eef60d484727a007a39fce50ac84d5d219a6ebac593d9":[3,0,185,0,4],
 "da/d67/classDOMLSException.html#ab9f26393d8400e135914eef60d484727a7fa73db328328294f05054b12272b066":[3,0,185,2,5],
-"da/d67/classDOMLSException.html#ab9f26393d8400e135914eef60d484727a7fa73db328328294f05054b12272b066":[3,0,185,2,1],
-"da/d67/classDOMLSException.html#ab9f26393d8400e135914eef60d484727a7fa73db328328294f05054b12272b066":[3,0,185,2,3]
+"da/d67/classDOMLSException.html#ab9f26393d8400e135914eef60d484727a7fa73db328328294f05054b12272b066":[3,0,185,2,1]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX118 =
 {
+"d8/d2c/classShowPointName.html#aecee0d15a0deea2e30010c4438b1950e":[3,0,484,6],
 "d8/d2c/classXMLInteger.html":[3,0,844],
 "d8/d2c/classXMLInteger.html#a5c12a1ddb32fcfbdc67f84531251513f":[3,0,844,11],
 "d8/d2c/classXMLInteger.html#a5c12a1ddb32fcfbdc67f84531251513f":[3,0,844,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX118 =
 "d8/d4b/classIGXMLScanner.html#a1e0660bca0a465dc9d2b81d47075c16e":[3,0,304,157],
 "d8/d4b/classIGXMLScanner.html#a1f18242e079910be8f855faac7d428b1":[3,0,304,33],
 "d8/d4b/classIGXMLScanner.html#a20b4eeb1c02bb1cb7402d90970814f1c":[3,0,304,17],
-"d8/d4b/classIGXMLScanner.html#a20b4eeb1c02bb1cb7402d90970814f1c":[3,0,304,16],
-"d8/d4b/classIGXMLScanner.html#a20b4eeb1c02bb1cb7402d90970814f1c":[3,0,304,15]
+"d8/d4b/classIGXMLScanner.html#a20b4eeb1c02bb1cb7402d90970814f1c":[3,0,304,16]
 };

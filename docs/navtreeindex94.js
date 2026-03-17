@@ -1,5 +1,6 @@
 var NAVTREEINDEX94 =
 {
+"d6/dac/classDOMConfigurationImpl.html#afc5ba55d7a27b57b657d3abb38662a4e":[3,0,153,59],
 "d6/dad/classLexicalHandler.html":[3,0,327],
 "d6/dad/classLexicalHandler.html#a0d4c4c6e8cd2a1d459c54e3bb644f3b7":[3,0,327,27],
 "d6/dad/classLexicalHandler.html#a0d4c4c6e8cd2a1d459c54e3bb644f3b7":[3,0,327,29],
@@ -248,6 +249,5 @@ var NAVTREEINDEX94 =
 "d6/dd7/classXMLEBCDICTranscoder.html#a7cc20677bf10d23ebb9b2584b1531fd2":[3,0,824,1],
 "d6/dd7/classXMLEBCDICTranscoder.html#a7cc20677bf10d23ebb9b2584b1531fd2":[3,0,824,5],
 "d6/dd7/classXMLEBCDICTranscoder.html#a97f62af9ee531c6306b5606e816eae80":[3,0,824,10],
-"d6/dd7/classXMLEBCDICTranscoder.html#a97f62af9ee531c6306b5606e816eae80":[3,0,824,2],
-"d6/dd7/classXMLEBCDICTranscoder.html#a97f62af9ee531c6306b5606e816eae80":[3,0,824,6]
+"d6/dd7/classXMLEBCDICTranscoder.html#a97f62af9ee531c6306b5606e816eae80":[3,0,824,2]
 };

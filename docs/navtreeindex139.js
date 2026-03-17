@@ -1,5 +1,6 @@
 var NAVTREEINDEX139 =
 {
+"d9/d77/classXMLEntityDecl.html#abd85de87223965021d6922f1b4bcfde3":[3,0,826,57],
 "d9/d77/classXMLEntityDecl.html#abd85de87223965021d6922f1b4bcfde3":[3,0,826,58],
 "d9/d77/classXMLEntityDecl.html#abd85de87223965021d6922f1b4bcfde3":[3,0,826,59],
 "d9/d77/classXMLEntityDecl.html#ac131b065fce4ce58e864c3ea20142cf9":[3,0,826,36],
@@ -248,6 +249,5 @@ var NAVTREEINDEX139 =
 "d9/d93/classVPieceNodeData.html#adbab82fecc92bd0a9b45a348fe857870":[3,0,709,3],
 "d9/d93/classVPieceNodeData.html#adf13499da7c102bbda827badd5226564":[3,0,709,19],
 "d9/d93/classVPieceNodeData.html#afec71e3fdfad8dc77fbef2b44b79e500":[3,0,709,20],
-"d9/d93/macx_2include_2xercesc_2util_2Hash2KeysSetOf_8c.html":[4,0,0,1,15,0,0,0,6,21],
-"d9/d93/macx_2include_2xercesc_2util_2Hash2KeysSetOf_8c_source.html":[4,0,0,1,15,0,0,0,6,21]
+"d9/d93/macx_2include_2xercesc_2util_2Hash2KeysSetOf_8c.html":[4,0,0,1,15,0,0,0,6,21]
 };

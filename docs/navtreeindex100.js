@@ -1,5 +1,6 @@
 var NAVTREEINDEX100 =
 {
+"d7/d5e/classDialogMirrorByAxis.html#a69c3a991a9c833f21fc65a49282d2ccb":[3,0,116,2],
 "d7/d5e/classDialogMirrorByAxis.html#a7b5dc6d70a628c08f9285c43d649288d":[3,0,116,13],
 "d7/d5e/classDialogMirrorByAxis.html#a7daa2b01fdbba4d58715f8c125870648":[3,0,116,1],
 "d7/d5e/classDialogMirrorByAxis.html#a849de4e5ff62b18db3907e70b2dc9f20":[3,0,116,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX100 =
 "d7/d7d/msvc_2include_2xercesc_2dom_2DOMConfiguration_8hpp.html":[4,0,0,1,15,2,0,0,0,6],
 "d7/d7d/msvc_2include_2xercesc_2dom_2DOMConfiguration_8hpp_source.html":[4,0,0,1,15,2,0,0,0,6],
 "d7/d7d/vtoolcut_8h.html":[4,0,0,1,13,1,0,2,1,0,1],
-"d7/d7d/vtoolcut_8h_source.html":[4,0,0,1,13,1,0,2,1,0,1],
-"d7/d7f/classCMUnaryOp.html":[3,0,64]
+"d7/d7d/vtoolcut_8h_source.html":[4,0,0,1,13,1,0,2,1,0,1]
 };

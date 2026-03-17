@@ -1,5 +1,6 @@
 var NAVTREEINDEX226 =
 {
+"de/dac/mingw_2include_2xercesc_2internal_2ValidationContextImpl_8hpp.html":[4,0,0,1,15,1,0,0,2,11],
 "de/dac/mingw_2include_2xercesc_2internal_2ValidationContextImpl_8hpp_source.html":[4,0,0,1,15,1,0,0,2,11],
 "de/dac/msvc_2include_2xercesc_2util_2XMLDouble_8hpp.html":[4,0,0,1,15,2,0,0,6,96],
 "de/dac/msvc_2include_2xercesc_2util_2XMLDouble_8hpp_source.html":[4,0,0,1,15,2,0,0,6,96],
@@ -248,6 +249,5 @@ var NAVTREEINDEX226 =
 "de/dbd/classExportLayoutDialog.html#a212ce58f1c02935143d44fad1f0a59a3":[3,0,268,11],
 "de/dbd/classExportLayoutDialog.html#a24aa783fe5082f6229a48543447245cc":[3,0,268,21],
 "de/dbd/classExportLayoutDialog.html#a2f5c242f89a886ab3d7bfe55ab6c3ad8":[3,0,268,26],
-"de/dbd/classExportLayoutDialog.html#a3d7d27452e39ee1a410c464a3ff92080":[3,0,268,10],
-"de/dbd/classExportLayoutDialog.html#a453eb61793b3b1135e2b956d5f712d7c":[3,0,268,6]
+"de/dbd/classExportLayoutDialog.html#a3d7d27452e39ee1a410c464a3ff92080":[3,0,268,10]
 };
