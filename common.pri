@@ -38,12 +38,10 @@ macx{
 # Qt from scratch without OpenSSL support.
 #
 # Source of the openssl binaries: http://wiki.overbyte.eu/wiki/index.php/ICS_Download
-win32 {
+win32-msvc {
     INSTALL_OPENSSL += \
                        ../../../dist/win/libcrypto-1_1-x64.dll \
-                       ../../../dist/win/libcrypto-1_1.dll \
-                       ../../../dist/win/libssl-1_1-x64.dll \
-                       ../../../dist/win/libssl-1_1.dll
+                       ../../../dist/win/libssl-1_1-x64.dll
 }
 
 # Ensure xerces-c_3_3.dll is deployed into the target folder
