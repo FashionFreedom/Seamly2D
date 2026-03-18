@@ -240,11 +240,11 @@ jobs:
         # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
         # uses parameters in seamly2d-installer.nsi to create the installer exe
         run: |
-          mkdir ..\windows-build
-          Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
-          Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
-          Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
-          cd ..\windows-build\
+          mkdir ${{ runner.temp }}\windows-build
+          Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ${{ runner.temp }}\windows-build -Recurse
+          Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ${{ runner.temp }}\windows-build -Recurse -Force
+          Copy-Item -Path dist\seamly2d-installer.nsi -Destination ${{ runner.temp }}\windows-build
+          cd ${{ runner.temp }}\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
       - name: Authenticate to Google Cloud (for signing)
@@ -284,18 +284,18 @@ jobs:
           --alias "${{ secrets.SEAMLY_SIGNING_KEY_NAME }}" \
           --certfile .github/workflows/signing/codesign-chain.pem \
           --tsaurl http://timestamp.sectigo.com \
-          ../windows-build/Seamly2D-installer.exe
+          ${{ runner.temp }}/windows-build/Seamly2D-installer.exe
 
       - name: Print installer signature
         run: |
-          cd ..\windows-build\
+          cd ${{ runner.temp }}\windows-build\
           Get-AuthenticodeSignature Seamly2D-installer.exe
 
       - name: pack installer file into .zip
         run: |
-          cd ..\windows-build\
+          cd ${{ runner.temp }}\windows-build\
           C:\"Program Files"\7-Zip\7z.exe a ${{ matrix.release-file }} Seamly2D-installer.exe
-          copy ${{ matrix.release-file }} ..\Seamly2D\
+          copy ${{ matrix.release-file }} ${{ github.workspace }}\
 
       - uses: actions/upload-artifact@v6
         with:
@@ -306,7 +306,7 @@ jobs:
       - uses: actions/upload-artifact@v6
         with:
           name: windows-build-${{ matrix.msvc-arch }}
-          path: ../windows-build/
+          path: ${{ runner.temp }}/windows-build/
 
   publish:
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop'
