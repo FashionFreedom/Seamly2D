@@ -230,8 +230,9 @@ jobs:
         run: |
           qmake Seamly2D.pro -config release CONFIG+=noTests
           nmake
-          # Explicitly call windeployqt from the installed Qt path
-          $deployTool = "${{ env.Qt6_DIR }}\bin\windeployqt.exe"
+          # Use windeployqt from the installed Qt path
+          # QT_ROOT_DIR points to the Qt installation root (not Qt6_DIR which is the CMake config dir)
+          $deployTool = "${{ env.QT_ROOT_DIR }}\bin\windeployqt.exe"
           & $deployTool --release --no-opengl-sw src\app\seamly2d\bin\seamly2d.exe
 
       - name: install NSIS
