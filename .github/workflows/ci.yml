@@ -209,7 +209,7 @@ jobs:
           - msvc-arch: amd64_arm64
             qt-arch: win64_msvc2019_arm64
             qmake-spec: win32-arm64-msvc
-            release-file: Seamly2D-windows-arm64.zip
+            release-file: Seamly2D-win-arm64.zip
 
     steps:
       - uses: actions/checkout@v6
@@ -322,14 +322,12 @@ jobs:
       - uses: actions/download-artifact@v7
         with:
           name: Seamly2D-macos.zip
-      - name: Download unsigned Windows artifacts
-        uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v7
         with:
           name: Seamly2D-windows.zip
-      - name: Download unsigned Windows artifacts
-        uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v7
         with:
-          name: Seamly2D-windows-arm64.zip
+          name: Seamly2D-win-arm64.zip
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ env.VERSION_NUMBER }}
@@ -341,7 +339,7 @@ jobs:
             Seamly2D-x86_64.AppImage
             Seamly2D-macos.zip
             Seamly2D-windows.zip
-            Seamly2D-windows-arm64.zip
+            Seamly2D-win-arm64.zip
 
   document:
     # Deploy Doxygen documentation for scheduled releases (schedule) and manual releases (workflow_dispatch) and pre-releases (push)
