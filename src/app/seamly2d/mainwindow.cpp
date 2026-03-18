@@ -105,7 +105,6 @@
 #include <QAction>
 #include <QProcess>
 #include <QSettings>
-#include <QTimer>
 #include <QtGlobal>
 #include <QDesktopServices>
 #include <chrono>
@@ -163,7 +162,7 @@ const QString strCtrl      = QStringLiteral("Ctrl");
 MainWindow::MainWindow(QWidget *parent)
     : MainWindowsNoGUI(parent)
     , ui(new Ui::MainWindow)
-    , watcher(new QFileSystemWatcher(this))
+    , m_watcher(new QFileSystemWatcher(this))
     , currentTool(Tool::Arrow)
     , lastUsedTool(Tool::Arrow)
     , draftScene(nullptr)
@@ -172,7 +171,7 @@ MainWindow::MainWindow(QWidget *parent)
     , infoToolButton(nullptr)
     , m_statusMessage(new QLabel())
     , isInitialized(false)
-    , mChanges(false)
+    , m_changes(false)
     , patternReadOnly(false)
     , dialogTable(nullptr)
     , dialogTool()
@@ -202,11 +201,12 @@ MainWindow::MainWindow(QWidget *parent)
     , toolProperties(nullptr)
     , groupsWidget(nullptr)
     , piecesWidget(nullptr)
-    , lock(nullptr)
+    , m_lock(nullptr)
     , zoomScaleSpinBox(nullptr)
     , m_penToolBar(nullptr)
     , m_penReset(nullptr)
     , m_zoomToPointComboBox(nullptr)
+    , m_measurements(nullptr)
 
     // define Seamly2D main window
     {
@@ -293,7 +293,22 @@ MainWindow::MainWindow(QWidget *parent)
         connect(ui->listWidget, &QListWidget::currentRowChanged, this, &MainWindow::showLayoutPages);
 
         // Handle changes made to a measurment file.
-        connect(watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::measurementsChanged);
+        connect(m_watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::measurementsChanged);
+
+        connect(qApp, &QApplication::focusChanged, this, [this](QWidget *old, QWidget *now)
+        {
+            if (old == nullptr && isAncestorOf(now) == true)
+            {// focus IN
+                if (m_changes)
+                {
+                    syncMeasurements();
+                }
+            }
+
+            // In case we will need it
+            // else if (isAncestorOf(old) == true && now == nullptr)
+            // focus OUT
+        });
 
         #if defined(Q_OS_MAC)
             // Set MacOS specific icon sizes for various toolbars and unify title and toolbar.
@@ -586,7 +601,6 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File exception.")),
                     qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
-        measurements->clear();
         if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
@@ -599,14 +613,14 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindow::loadMeasurements(const QString &fileName)
 {
-    QSharedPointer<MeasurementDoc> measurements = openMeasurementFile(fileName);
+    m_measurements = openMeasurementFile(fileName);
 
-    if (measurements->isNull())
+    if (m_measurements->isNull())
     {
         return false;
     }
 
-    if (qApp->patternUnit() == Unit::Inch && measurements->Type() == MeasurementsType::Multisize)
+    if (qApp->patternUnit() == Unit::Inch && m_measurements->Type() == MeasurementsType::Multisize)
     {
         qWarning() << tr("Gradation doesn't support inches");
         return false;
@@ -614,11 +628,11 @@ bool MainWindow::loadMeasurements(const QString &fileName)
 
     try
     {
-        qApp->setPatternType(measurements->Type());
+        qApp->setPatternType(m_measurements->Type());
         initializeStatusToolBar();
 
         pattern->ClearVariables(VarType::Measurement);
-        measurements->readMeasurements();
+        m_measurements->readMeasurements();
     }
 
     catch (VExceptionEmptyParameter &exception)
@@ -633,23 +647,21 @@ bool MainWindow::loadMeasurements(const QString &fileName)
         return false;
     }
 
-    if (measurements->Type() == MeasurementsType::Multisize)
+    if (m_measurements->Type() == MeasurementsType::Multisize)
     {
-
-        VContainer::setSize(UnitConvertor(measurements->BaseSize(), measurements->measurementUnits(),
-                                          *measurements->GetData()->GetPatternUnit()));
+        VContainer::setSize(UnitConvertor(m_measurements->BaseSize(), m_measurements->measurementUnits(),
+                                          *m_measurements->GetData()->GetPatternUnit()));
 
         qCInfo(vMainWindow, "Multisize file %s was loaded.", qUtf8Printable(fileName));
 
-        VContainer::setHeight(UnitConvertor(measurements->BaseHeight(), measurements->measurementUnits(),
-                                            *measurements->GetData()->GetPatternUnit()));
+        VContainer::setHeight(UnitConvertor(m_measurements->BaseHeight(), m_measurements->measurementUnits(),
+                                            *m_measurements->GetData()->GetPatternUnit()));
 
         doc->SetPatternWasChanged(true);
         emit doc->updatePatternLabel();
     }
-    else if (measurements->Type() == MeasurementsType::Individual)
+    else if (m_measurements->Type() == MeasurementsType::Individual)
     {
-
         setSizeHeightForIndividualM();
 
         qCInfo(vMainWindow, "Individual file %s was loaded.", qUtf8Printable(fileName));
@@ -661,14 +673,14 @@ bool MainWindow::loadMeasurements(const QString &fileName)
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindow::updateMeasurements(const QString &fileName, int size, int height)
 {
-    QSharedPointer<MeasurementDoc> measurements = openMeasurementFile(fileName);
+    m_measurements = openMeasurementFile(fileName);
 
-    if (measurements->isNull())
+    if (m_measurements->isNull())
     {
         return false;
     }
 
-    if (qApp->patternType() != measurements->Type())
+    if (qApp->patternType() != m_measurements->Type())
     {
         qCCritical(vMainWindow, "%s", qUtf8Printable(tr("Measurement files types have not match.")));
         if (!Application2D::isGUIMode())
@@ -681,7 +693,7 @@ bool MainWindow::updateMeasurements(const QString &fileName, int size, int heigh
     try
     {
         pattern->ClearVariables(VarType::Measurement);
-        measurements->readMeasurements();
+        m_measurements->readMeasurements();
     }
 
     catch (VExceptionEmptyParameter &exception)
@@ -696,7 +708,7 @@ bool MainWindow::updateMeasurements(const QString &fileName, int size, int heigh
         return false;
     }
 
-    if (measurements->Type() == MeasurementsType::Multisize)
+    if (m_measurements->Type() == MeasurementsType::Multisize)
     {
         VContainer::setSize(size);
         VContainer::setHeight(height);
@@ -704,7 +716,7 @@ bool MainWindow::updateMeasurements(const QString &fileName, int size, int heigh
         doc->SetPatternWasChanged(true);
         emit doc->updatePatternLabel();
     }
-    else if (measurements->Type() == MeasurementsType::Individual)
+    else if (m_measurements->Type() == MeasurementsType::Individual)
     {
         setSizeHeightForIndividualM();
     }
@@ -2035,13 +2047,7 @@ void MainWindow::LoadIndividual()
     //Use standard path to individual measurements
     const QString dir = qApp->Seamly2DSettings()->getIndividualSizePath();
 
-    bool usedNotExistedDir = false;
     QDir directory(dir);
-
-    if (!directory.exists())
-    {
-        usedNotExistedDir = directory.mkpath(".");
-    }
 
     const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
                                         QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
@@ -2051,9 +2057,9 @@ void MainWindow::LoadIndividual()
     {
         if (loadMeasurements(filename))
         {
-            if (!doc->MPath().isEmpty())
+            if (!doc->MPath().isEmpty() && !m_watcher->files().isEmpty())
             {
-                watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
+                m_watcher->removePaths(m_watcher->files());
             }
 
             qCInfo(vMainWindow, "Individual file %s was loaded.", qUtf8Printable(filename));
@@ -2061,7 +2067,7 @@ void MainWindow::LoadIndividual()
             ui->unloadMeasurements_Action->setEnabled(true);
 
             doc->SetMPath(RelativeMPath(qApp->getFilePath(), filename));
-            watcher->addPath(filename);
+            m_watcher->addPath(filename);
             patternChangesWereSaved(false);
 
             ui->editCurrent_Action->setEnabled(true);
@@ -2070,12 +2076,6 @@ void MainWindow::LoadIndividual()
 
             updateWindowTitle();
         }
-    }
-
-    if (usedNotExistedDir)
-    {
-        QDir directory(dir);
-        directory.rmpath(".");
     }
 }
 
@@ -2107,9 +2107,9 @@ void MainWindow::LoadMultisize()
 
         if(loadMeasurements(filename))
         {
-            if (!doc->MPath().isEmpty())
+            if (!doc->MPath().isEmpty() && !m_watcher->files().isEmpty())
             {
-                watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
+                m_watcher->removePaths(m_watcher->files());
             }
 
             qCInfo(vMainWindow, "Multisize file %s was loaded.", qUtf8Printable(filename));
@@ -2117,7 +2117,7 @@ void MainWindow::LoadMultisize()
             ui->unloadMeasurements_Action->setEnabled(true);
 
             doc->SetMPath(RelativeMPath(qApp->getFilePath(), filename));
-            watcher->addPath(filename);
+            m_watcher->addPath(filename);
             patternChangesWereSaved(false);
 
             ui->editCurrent_Action->setEnabled(true);
@@ -2153,11 +2153,17 @@ void MainWindow::UnloadMeasurements()
 
     if (doc->ListMeasurements().isEmpty())
     {
-        watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
+        if (!m_watcher->files().isEmpty())
+        {
+            m_watcher->removePaths(m_watcher->files());
+        }
         if (qApp->patternType() == MeasurementsType::Multisize)
         {
             initializeStatusToolBar();
         }
+
+        m_measurements.clear();
+
         qApp->setPatternType(MeasurementsType::Unknown);
         doc->SetMPath(QString());
         emit doc->updatePatternLabel();
@@ -2182,9 +2188,6 @@ void MainWindow::editMeasurements()
     if (!doc->MPath().isEmpty())
     {
         const QString absoluteMPath = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
-
-        // Stop watching file while opening SeamlyMe so as to not trigger syncing.
-        watcher->removePath(absoluteMPath);
 
         QStringList arguments;
         if (qApp->patternType() == MeasurementsType::Multisize)
@@ -2213,13 +2216,6 @@ void MainWindow::editMeasurements()
         const QString seamlyme = qApp->seamlyMeFilePath();
         const QString workingDirectory = QFileInfo(seamlyme).absoluteDir().absolutePath();
         QProcess::startDetached(seamlyme, arguments, workingDirectory);
-
-        if (!watcher->files().contains(absoluteMPath))
-        {
-            // Allow time for SeamlyMe to open before watching file again.
-            std::this_thread::sleep_for(std::chrono::milliseconds(3000));
-            watcher->addPath(absoluteMPath);
-        }
     }
     else
     {
@@ -2230,11 +2226,11 @@ void MainWindow::editMeasurements()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::measurementsChanged(const QString &path)
 {
-    mChanges = false;
+    m_changes = false;
     QFileInfo checkFile(path);
     if (checkFile.exists())
     {
-        mChanges = true;
+        m_changes = true;
     }
     else
     {
@@ -2243,7 +2239,7 @@ void MainWindow::measurementsChanged(const QString &path)
         {
             if (checkFile.exists())
             {
-                mChanges = true;
+                m_changes = true;
                 break;
             }
             else
@@ -2252,39 +2248,42 @@ void MainWindow::measurementsChanged(const QString &path)
             }
         }
     }
-
-    if (mChanges)
-    {
-        syncMeasurements();
-    }
     updateWindowTitle();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::syncMeasurements()
 {
-    const QString path = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
-
-    // Stop watching measurement file while updating to avoid recursive syncing.
-    watcher->removePath(path);
-
-    if(updateMeasurements(path, static_cast<int>(VContainer::size()), static_cast<int>(VContainer::height())))
+    if (m_changes)
     {
-        setStatusMessage(tr("Measurements have been synced"));
-        QApplication::beep();
-        doc->LiteParseTree(Document::LiteParse);
-        mChanges = false;
-        updateWindowTitle();
-    }
-    else
-    {
-        qCWarning(vMainWindow, "%s", qUtf8Printable(tr("Couldn't sync measurements.")));
-    }
+        QString path = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
 
-    if (!watcher->files().contains(path))
-    {
-        // Start watching measurement file again.
-        watcher->addPath(path);
+        // Stop watching measurement file while updating to avoid recursive syncing.
+        if (! m_watcher->files().contains(path))
+        {
+            m_watcher->removePath(path);
+        }
+
+        if(updateMeasurements(path, static_cast<int>(VContainer::size()), static_cast<int>(VContainer::height())))
+        {
+            const QString msg = tr("Measurements have been synced");
+            setStatusMessage(msg + QString(" - ") + path);
+            WidgetPopup::popupMessage(msg, 4000, this);
+            QApplication::beep();
+            doc->LiteParseTree(Document::LiteParse);
+            m_changes = false;
+            updateWindowTitle();
+        }
+        else
+        {
+            qCWarning(vMainWindow, "%s", qUtf8Printable(tr("Couldn't sync measurements.")));
+        }
+
+        if (!m_watcher->files().contains(path))
+        {
+            // Start watching measurement file again.
+            m_watcher->addPath(path);
+        }
     }
 }
 
@@ -4098,7 +4097,7 @@ bool MainWindow::SaveAs()
     QString filePath = qApp->getFilePath();
     QString dir;
     QString fileName;
-    bool usedNotExistedDir = false;
+
     if (filePath.isEmpty())
     {
         dir = qApp->Seamly2DSettings()->getPatternPath();
@@ -4110,21 +4109,6 @@ bool MainWindow::SaveAs()
         fileName = QFileInfo(filePath).baseName();
     }
 
-    auto RemoveTempDir = [usedNotExistedDir, dir]()
-    {
-        if (usedNotExistedDir)
-        {
-            QDir directory(dir);
-            directory.rmpath(".");
-        }
-    };
-
-    QDir directory(dir);
-    if (!directory.exists())
-    {
-        usedNotExistedDir = directory.mkpath(".");
-    }
-
     fileName = fileDialog(this, tr("Save as"),
                                         dir + QLatin1String("/") + fileName + QLatin1String(".") + sm2dExt,
                                         filters, nullptr, FILEDIALOG_OPTIONS, QFileDialog::AnyFile,
@@ -4132,7 +4116,6 @@ bool MainWindow::SaveAs()
 
     if (fileName.isEmpty())
     {
-        RemoveTempDir();
         return false;
     }
 
@@ -4151,7 +4134,6 @@ bool MainWindow::SaveAs()
         {
             qCWarning(vMainWindow, "%s",
                        qUtf8Printable(tr("Failed to lock. File with this name is opened in another window.")));
-            RemoveTempDir();
             return false;
         }
     }
@@ -4173,7 +4155,6 @@ bool MainWindow::SaveAs()
         // Restoring previous state
         doc->SetModified(wasModified);
 
-        RemoveTempDir();
         return result;
     }
 
@@ -4183,17 +4164,15 @@ bool MainWindow::SaveAs()
 
     if (fileName != filePath)
     {
-        VlpCreateLock(lock, fileName);
-	    if (!lock->IsLocked())
+        VlpCreateLock(m_lock, fileName);
+	    if (!m_lock->IsLocked())
         {
             qCWarning(vMainWindow, "%s", qUtf8Printable(tr("Failed to lock. This file already opened in another window. "
 														    "Expect collisions when running 2 copies of the program.")));
-		    RemoveTempDir();
 	        return false;
 	    }
     }
 
-    RemoveTempDir();
     return result;
 }
 
@@ -4231,6 +4210,9 @@ bool MainWindow::Save()
         qt_ntfs_permission_lookup++; // turn checking on
 #endif /*Q_OS_WIN32*/
         const bool isFileWritable = QFileInfo(qApp->getFilePath()).isWritable();
+#ifdef Q_OS_WIN32
+        qt_ntfs_permission_lookup--; // turn it off again
+#endif /*Q_OS_WIN32*/
 
         if (!isFileWritable)
         {
@@ -4243,6 +4225,9 @@ bool MainWindow::Save()
 
             if (messageBox.exec() == QMessageBox::Yes)
             {
+#ifdef Q_OS_WIN32
+                qt_ntfs_permission_lookup++; // turn checking on
+#endif /*Q_OS_WIN32*/
                 bool changed = QFile::setPermissions(qApp->getFilePath(),
                                                     QFileInfo(qApp->getFilePath()).permissions() | QFileDevice::WriteUser);
 #ifdef Q_OS_WIN32
@@ -4331,17 +4316,19 @@ void MainWindow::Open()
 void MainWindow::Clear()
 {
     qCDebug(vMainWindow, "Resetting main window.");
-    lock.reset();
+    m_lock.reset();
     qCDebug(vMainWindow, "Unlocked pattern file.");
     showDraftMode(true);
     qCDebug(vMainWindow, "Returned to Draft mode.");
     setCurrentFile(QString());
     pattern->Clear();
     qCDebug(vMainWindow, "Clearing pattern.");
-    if (!qApp->getFilePath().isEmpty() && not doc->MPath().isEmpty())
+
+    if (!m_watcher->files().isEmpty())
     {
-        watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
+        m_watcher->removePaths(m_watcher->files());
     }
+
     doc->clear();
     qCDebug(vMainWindow, "Clearing scenes.");
     draftScene->clear();
@@ -4867,6 +4854,15 @@ void MainWindow::patternChangesWereSaved(bool saved)
 void MainWindow::ChangedSize(int index)
 {
     const int size = static_cast<int>(VContainer::size());
+/*
+    if (m_mmeasurements->isNull())
+    {
+        const QString patternPath = qApp->getFilePath();
+        QString mPath = AbsoluteMPath(patternPath, doc->MPath());
+        m_measurements = OpenMeasurementFile(patternPath, mPath);
+    }
+*/
+
     if (updateMeasurements(AbsoluteMPath(qApp->getFilePath(), doc->MPath()),
                            gradationSizes.data()->itemText(index).toInt(),
                            static_cast<int>(VContainer::height())))
@@ -5174,10 +5170,10 @@ bool MainWindow::SavePattern(const QString &fileName, QString &error)
     qCDebug(vMainWindow, "Saving pattern file %s.", qUtf8Printable(fileName));
     QFileInfo tempInfo(fileName);
 
-    const QString filename = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
-    if (!filename.isEmpty() && qApp->getFilePath() != fileName)
+    const QString mPath = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
+    if (!mPath.isEmpty() && qApp->getFilePath() != fileName)
     {
-        doc->SetMPath(RelativeMPath(fileName, filename));
+        doc->SetMPath(RelativeMPath(fileName, mPath));
     }
 
     const bool result = doc->SaveDocument(fileName, error);
@@ -5193,7 +5189,7 @@ bool MainWindow::SavePattern(const QString &fileName, QString &error)
     }
     else
     {
-        doc->SetMPath(filename);
+        doc->SetMPath(mPath);
         emit doc->updatePatternLabel();
         qCWarning(vMainWindow, "Could not save file %s. %s.", qUtf8Printable(fileName), qUtf8Printable(error));
     }
@@ -6521,15 +6517,15 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
     }
 
     qCDebug(vMainWindow, "Locking file");
-    VlpCreateLock(lock, fileName);
+    VlpCreateLock(m_lock, fileName);
 
-    if (lock->IsLocked())
+    if (m_lock->IsLocked())
     {
         qCInfo(vMainWindow, "Pattern file %s was locked.", qUtf8Printable(fileName));
     }
     else
     {
-        if (!IgnoreLocking(lock->GetLockError(), fileName))
+        if (!IgnoreLocking(m_lock->GetLockError(), fileName))
         {
             return false;
         }
@@ -6585,7 +6581,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
             else
             {
                 ui->unloadMeasurements_Action->setEnabled(true);
-                watcher->addPath(path);
+                m_watcher->addPath(path);
                 ui->editCurrent_Action->setEnabled(true);
             }
         }
@@ -6641,7 +6637,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList MainWindow::GetUnlokedRestoreFileList() const
+QStringList MainWindow::getUnlockedRestoreFileList() const
 {
     QStringList restoreFiles;
     //Take all files that need to be restored
@@ -6651,8 +6647,8 @@ QStringList MainWindow::GetUnlokedRestoreFileList() const
         for (int i = 0; i < files.size(); ++i)
         {
             // Seeking file that really needs reopen
-            VLockGuard<char> lock(files.at(i));
-            if (lock.IsLocked())
+            VLockGuard<char> tempLock(files.at(i));
+            if (tempLock.IsLocked())
             {
                 restoreFiles.append(files.at(i));
             }
@@ -7036,9 +7032,9 @@ void MainWindow::exportDraftBlocksAs()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ReopenFilesAfterCrash(QStringList &args)
+void MainWindow::reopenFilesAfterCrash(QStringList &args)
 {
-    const QStringList files = GetUnlokedRestoreFileList();
+    const QStringList files = getUnlockedRestoreFileList();
     if (files.size() > 0)
     {
         qCDebug(vMainWindow, "Reopen files after crash.");
@@ -7095,7 +7091,7 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
     }
 
     QFileInfo table(path);
-    if (table.exists() == false)
+    if (!table.exists())
     {
         if (!Application2D::isGUIMode())
         {
@@ -7501,7 +7497,7 @@ void MainWindow::processCommandLine()
 
     if (Application2D::isGUIMode())
     {
-        ReopenFilesAfterCrash(args);
+        reopenFilesAfterCrash(args);
     }
     else
     {

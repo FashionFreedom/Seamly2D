@@ -11640,7 +11640,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Line_</source>
-        <translation>>Line_</translation>
+        <translation>Line_</translation>
     </message>
 </context>
 <context>

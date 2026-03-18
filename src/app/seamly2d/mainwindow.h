@@ -283,7 +283,7 @@ private:
     Q_DISABLE_COPY(MainWindow)
 
     Ui::MainWindow                   *ui;              /// @brief ui keeps information about user interface.
-    QFileSystemWatcher               *watcher;
+    QFileSystemWatcher               *m_watcher;
     Tool                              currentTool;     /// @brief tool current tool.
     Tool                              lastUsedTool;    /// @brief tool last used tool.
     VMainGraphicsScene               *draftScene;      /// @brief draftScene draft block scene.
@@ -292,7 +292,7 @@ private:
     QPointer<QToolButton>             infoToolButton;
     QLabel                           *m_statusMessage; /// @brief helpLabel help show tooltip.
     bool                              isInitialized;   /// @brief isInitialized true after first show window.
-    bool                              mChanges;        /// @brief mChanges true if measurement file was changed.
+    bool                              m_changes;        /// @brief m_changes true if measurement file was changed.
     bool                              patternReadOnly;
 
     QPointer<DialogVariables>         dialogTable;
@@ -328,13 +328,15 @@ private:
     VToolOptionsPropertyBrowser      *toolProperties;
     GroupsWidget                     *groupsWidget;
     PiecesWidget                     *piecesWidget;
-    std::shared_ptr<VLockGuard<char>> lock;
+    std::shared_ptr<VLockGuard<char>> m_lock;
 
     QDoubleSpinBox                   *zoomScaleSpinBox;
 
     PenToolBar                       *m_penToolBar;        /// @brief pointer to the current pen.
     PenToolBar                       *m_penReset;
     QComboBox                        *m_zoomToPointComboBox;
+
+    QSharedPointer<MeasurementDoc>    m_measurements;
 
     void                              SetDefaultHeight();
     void                              SetDefaultSize();
@@ -426,7 +428,7 @@ private:
     void               initializeDocksContain();
     bool               startNewSeamly2D(const QString &fileName = QString())const;
     void               FileClosedCorrect();
-    QStringList        GetUnlokedRestoreFileList()const;
+    QStringList        getUnlockedRestoreFileList()const;
 
     void               addDraftBlock(const QString &blockName);
     QPointF            draftBlockStartPosition() const;
@@ -438,7 +440,7 @@ private:
     bool               updateMeasurements(const QString &fileName, int size, int height);
     void               checkRequiredMeasurements(const MeasurementDoc *m);
 
-    void               ReopenFilesAfterCrash(QStringList &args);
+    void               reopenFilesAfterCrash(QStringList &args);
     void               DoExport(const VCommandLinePtr& expParams);
 
     bool               setSize(const QString &text);
