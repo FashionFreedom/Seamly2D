@@ -306,7 +306,7 @@ jobs:
       - uses: actions/upload-artifact@v6
         with:
           name: windows-build-${{ matrix.msvc-arch }}
-          path: ${{ runner.temp }}/windows-build/
+          path: ${{ runner.temp }}/windows-build/Seamly2D-installer.exe
 
   publish:
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop'
