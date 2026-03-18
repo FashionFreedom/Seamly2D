@@ -664,32 +664,6 @@ void VDomDocument::ValidateXML(const QString &schema, const QString &fileName)
 
     QTextStream patternIn(&patternFile);
     std::string xmlString = patternIn.readAll().toStdString();
-
-    // Fix files with invalid lineweight. 
-    size_t startPos = 0;
-    std::string fromString = "lineWeight=\"1.00\"";
-    std::string toString = "lineWeight=\"1\"";
-    while((startPos = xmlString.find(fromString, startPos)) != std::string::npos)
-    {
-        xmlString.replace(startPos, fromString.length(), toString);
-        // Advance startPos past the newly inserted 'toString' to avoid infinite loops
-        // if 'fromString' is a substring of 'toString' (e.g., replacing "a" with "aa").
-        startPos += toString.length();
-    }
-    // If any replacements were made write the changes back to the pattern file.
-    if (startPos > 0)
-    {
-        patternFile.close();
-        if (patternFile.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate) == false)
-        {
-            const QString errorMsg(tr("Can't open pattern file %1:\n%2.").arg(fileName).arg(patternFile.errorString()));
-            throw VException(errorMsg);
-        }
-
-        QTextStream patternOut(&patternFile);
-        patternOut << QString::fromStdString(xmlString);
-    }
-
     xercesc::MemBufInputSource inputBuffer((XMLByte*)xmlString.c_str(), xmlString.size(), "/input.xml");
 
     domParser->parse(inputBuffer);
@@ -705,23 +679,27 @@ void VDomDocument::setXMLContent(const QString &fileName)
 {
     QFile file(fileName);
     // cppcheck-suppress ConfigurationNotChecked
-    if (file.open(QIODevice::ReadOnly) == false)
+    if (!file.open(QIODevice::ReadOnly))
     {
         const QString errorMsg(tr("Can't open file %1:\n%2.").arg(fileName).arg(file.errorString()));
         throw VException(errorMsg);
     }
 
-    QString errorMsg;
-    int errorLine = -1;
-    int errorColumn = -1;
-    if (QDomDocument::setContent(&file, &errorMsg, &errorLine, &errorColumn) == false)
+    // Use setContent (introduced in Qt 6.5)
+    // Returns QDomDocument::ParseResult which evaluates to true on success
+    QDomDocument::ParseResult result = QDomDocument::setContent(&file);
+
+    if (!result)
     {
-        file.close();
-        VException e(errorMsg);
-        e.AddMoreInformation(tr("Parsing error file %3 in line %1 column %2").arg(errorLine).arg(errorColumn)
-                             .arg(fileName));
-        throw e;
+    // Failure: result.errorMessage, result.errorLine, result.errorColumn are available
+    VException error(result.errorMessage );
+    error.AddMoreInformation(tr("Parsing error file %3 in line %1 column %2").arg(result.errorLine)
+                                                                             .arg(result.errorColumn)
+                                                                             .arg(fileName));
+    throw error;
     }
+
+    file.close(); // Optional: QFile destructor handles this
 }
 
 ///--------------------------------------------------------------------------------------------------------------------
