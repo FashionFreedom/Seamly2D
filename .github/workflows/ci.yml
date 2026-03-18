@@ -193,6 +193,7 @@ jobs:
 
   windows:
     name: "Windows Build"
+    runs-on: windows-latest
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
@@ -202,12 +203,11 @@ jobs:
           - msvc-arch: x64
             qt-arch: win64_msvc2019_64
             release-file: Seamly2D-windows.zip
-            runner: windows-latest
-          - msvc-arch: arm64
+            qmake-args: ""
+          - msvc-arch: amd64_arm64
             qt-arch: win64_msvc2019_arm64
             release-file: Seamly2D-windows-arm64.zip
-            runner: windows-11-arm
-    runs-on: ${{ matrix.runner }}
+            qmake-args: "-spec win32-arm64-msvc"
 
     steps:
       - uses: actions/checkout@v6
@@ -230,12 +230,8 @@ jobs:
 
       - name: make seamly2d.exe and seamlyme.exe
         run: |
-          qmake Seamly2D.pro -config release CONFIG+=noTests
+          qmake Seamly2D.pro ${{ matrix.qmake-args }} -config release CONFIG+=noTests
           nmake
-          # Use windeployqt from the installed Qt path
-          # QT_ROOT_DIR points to the Qt installation root (not Qt6_DIR which is the CMake config dir)
-          $deployTool = "${{ env.QT_ROOT_DIR }}\bin\windeployqt.exe"
-          & $deployTool --release --no-opengl-sw src\app\seamly2d\bin\seamly2d.exe
 
       - name: install NSIS
         run: choco install nsis -y
