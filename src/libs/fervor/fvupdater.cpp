@@ -521,7 +521,11 @@ void FvUpdater::getPLatformSpecificInstaller(QJsonArray assets)
 	searchPattern = "AppImage";
 #elif defined(Q_OS_MAC)   // Defined on macOS
     searchPattern = "macos";
-#elif defined(Q_OS_WIN)   // Defined on Windows 64-bit only.
+#elif defined(Q_OS_WIN) && defined(Q_PROCESSOR_ARM_64)  // Defined on Windows ARM 64-bit only.
+	// The artifact does not include the full name "windows" so that is does not accidentally
+	// match what the old intel versions search for.
+	searchPattern = "win-arm64";
+#elif defined(Q_OS_WIN) // Defined on Windows 64-bit only.
 	searchPattern = "windows";
 #endif
 
