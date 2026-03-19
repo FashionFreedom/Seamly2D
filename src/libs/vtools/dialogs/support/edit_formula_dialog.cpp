@@ -855,7 +855,7 @@ void EditFormulaDialog::showHeaderUnits(QTableWidget *table, const QString &unit
     QString header = table->horizontalHeaderItem(ValueColumn)->text();
     // Need to strip text of any umits so we don't recursively add units to the header string
     header = header.section('(', 0, 0);
-    const QString unitHeader = QString("%1 (%2)").arg(header).arg(unit);
+    const QString unitHeader = QString("%1(%2)").arg(header).arg(unit);
     table->horizontalHeaderItem(ValueColumn)->setText(unitHeader);
 }
 
