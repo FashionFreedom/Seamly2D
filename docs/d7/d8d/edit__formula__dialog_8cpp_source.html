@@ -958,7 +958,7 @@ $(document).ready(function(){initNavTree('d7/d8d/edit__formula__dialog_8cpp_sour
 <div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>    QString header = table-&gt;horizontalHeaderItem(<a class="code hl_enumvalue" href="../../d7/d8d/edit__formula__dialog_8cpp.html#a385c44f6fb256e5716a2302a5b940388a52e3462fe4fa03a183d24ae3fb3b897e">ValueColumn</a>)-&gt;text();</div>
 <div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>    <span class="comment">// Need to strip text of any umits so we don&#39;t recursively add units to the header string</span></div>
 <div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>    header = header.section(<span class="charliteral">&#39;(&#39;</span>, 0, 0);</div>
-<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>    <span class="keyword">const</span> QString unitHeader = QString(<span class="stringliteral">&quot;%1 (%2)&quot;</span>).arg(header).arg(unit);</div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>    <span class="keyword">const</span> QString unitHeader = QString(<span class="stringliteral">&quot;%1(%2)&quot;</span>).arg(header).arg(unit);</div>
 <div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>    table-&gt;horizontalHeaderItem(<a class="code hl_enumvalue" href="../../d7/d8d/edit__formula__dialog_8cpp.html#a385c44f6fb256e5716a2302a5b940388a52e3462fe4fa03a183d24ae3fb3b897e">ValueColumn</a>)-&gt;setText(unitHeader);</div>
 <div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>}</div>
 <div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span> </div>
