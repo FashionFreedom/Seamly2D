@@ -55,7 +55,7 @@ var searchData=
   ['regx_5ft_5fxmlschema_5fcc_5fsubtraction_52',['REGX_T_XMLSCHEMA_CC_SUBTRACTION',['../d7/d48/classRegxParser.html#ac2b68c0c2e9c860723cee39db9b86fadad30abbbd554b68525e4940885f7dfe52',1,'RegxParser']]],
   ['renamedraftblock_53',['RenameDraftBlock',['../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6ab3ac850020a8828e0c9408a37ee10ebe',1,'vundocommand.h']]],
   ['repeleminmixed_54',['RepElemInMixed',['../d5/dc5/classXMLValid.html#ac30e7f5d9612c52f5f1208c83f090c86ada82e318e2e1433eec3a37e066f0d66d',1,'XMLValid']]],
-  ['replace_55',['REPLACE',['../d9/db9/classDatatypeValidator.html#ac6b28c5223f7210be3898ee82919cd75a980302dc2a457f357ba9f36aa29e9385',1,'DatatypeValidator']]],
+  ['replace_55',['REPLACE',['../d9/db9/classDatatypeValidator.html#a39b66343281679b0741a371b061a6250a980302dc2a457f357ba9f36aa29e9385',1,'DatatypeValidator']]],
   ['required_56',['Required',['../df/d1f/classXMLAttDef.html#adbac7febf3455722cc9736f1dc03c02fa6649a43d879d80a0bcfc513b60dcc569',1,'XMLAttDef']]],
   ['required_5fand_5ffixed_57',['Required_And_Fixed',['../df/d1f/classXMLAttDef.html#adbac7febf3455722cc9736f1dc03c02fab9eff5bfa8beb5471e87c674ee41476f',1,'XMLAttDef']]],
   ['requiredattrnotprovided_58',['RequiredAttrNotProvided',['../d5/dc5/classXMLValid.html#ac30e7f5d9612c52f5f1208c83f090c86a5ead8f590508b768d00376d595492107',1,'XMLValid']]],

@@ -23,7 +23,7 @@ var macx_2include_2xercesc_2util_2Xerces__autoconf__config_8hpp =
     [ "XERCES_U32BIT_INT", "d1/dbb/macx_2include_2xercesc_2util_2Xerces__autoconf__config_8hpp.html#a7cb331eae8278a1f842d4eaf30fd4a35", null ],
     [ "XERCES_U64BIT_INT", "d1/dbb/macx_2include_2xercesc_2util_2Xerces__autoconf__config_8hpp.html#a93053ea1cf494f29e1c4053c2835dfa4", null ],
     [ "XERCES_XMLCH_T", "d1/dbb/macx_2include_2xercesc_2util_2Xerces__autoconf__config_8hpp.html#a56319f2eb1f5a713e9ebf811b1eb50e5", null ],
-    [ "XMLCh", "d1/dbb/macx_2include_2xercesc_2util_2Xerces__autoconf__config_8hpp.html#a198ad26f18efc3a0062b226024375719", null ],
+    [ "XMLCh", "d1/dbb/macx_2include_2xercesc_2util_2Xerces__autoconf__config_8hpp.html#a3f186d2088b3d524216406ad82d50f40", null ],
     [ "XMLFileLoc", "d1/dbb/macx_2include_2xercesc_2util_2Xerces__autoconf__config_8hpp.html#add2d542a6583db767febf57446daa50d", null ],
     [ "XMLFilePos", "d1/dbb/macx_2include_2xercesc_2util_2Xerces__autoconf__config_8hpp.html#a7647261a546ac47bda863a51d24ad898", null ],
     [ "XMLInt16", "d1/dbb/macx_2include_2xercesc_2util_2Xerces__autoconf__config_8hpp.html#a116b187269aecdd84e38131876afba9a", null ],

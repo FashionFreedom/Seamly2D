@@ -3,6 +3,7 @@ var classXPathSymbols =
     [ "XPathSymbols", "d5/dd8/classXPathSymbols.html#a7d89da06103177ff7bd1d0eb7efcbb7a", null ],
     [ "XPathSymbols", "d5/dd8/classXPathSymbols.html#a7d89da06103177ff7bd1d0eb7efcbb7a", null ],
     [ "XPathSymbols", "d5/dd8/classXPathSymbols.html#a7d89da06103177ff7bd1d0eb7efcbb7a", null ],
+    [ "XPathSymbols", "d5/dd8/classXPathSymbols.html#a7d89da06103177ff7bd1d0eb7efcbb7a", null ],
     [ "fgSYMBOL_ANCESTOR", "d5/dd8/classXPathSymbols.html#a5781a3c9adf3cd5206829d9f1ca7fdc0", null ],
     [ "fgSYMBOL_ANCESTOR_OR_SELF", "d5/dd8/classXPathSymbols.html#a6a131deb8b9b6295ede28c33edb3a96c", null ],
     [ "fgSYMBOL_AND", "d5/dd8/classXPathSymbols.html#a39f47f949bd2205f8a666506ea93dfb2", null ],

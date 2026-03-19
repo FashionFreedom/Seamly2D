@@ -1,0 +1,25 @@
+var dir_75764ab598671c97a90def3f79eda944 =
+[
+    [ "identity", "dir_12136533577012245e79e0373c5882d3.html", "dir_12136533577012245e79e0373c5882d3" ],
+    [ "ComplexTypeInfo.hpp", "d5/dd8/msvc-arm64_2include_2xercesc_2validators_2schema_2ComplexTypeInfo_8hpp.html", "d5/dd8/msvc-arm64_2include_2xercesc_2validators_2schema_2ComplexTypeInfo_8hpp" ],
+    [ "GeneralAttributeCheck.hpp", "df/dca/msvc-arm64_2include_2xercesc_2validators_2schema_2GeneralAttributeCheck_8hpp.html", "df/dca/msvc-arm64_2include_2xercesc_2validators_2schema_2GeneralAttributeCheck_8hpp" ],
+    [ "NamespaceScope.hpp", "de/d1e/msvc-arm64_2include_2xercesc_2validators_2schema_2NamespaceScope_8hpp.html", "de/d1e/msvc-arm64_2include_2xercesc_2validators_2schema_2NamespaceScope_8hpp" ],
+    [ "PSVIDefs.hpp", "dc/d8b/msvc-arm64_2include_2xercesc_2validators_2schema_2PSVIDefs_8hpp.html", "dc/d8b/msvc-arm64_2include_2xercesc_2validators_2schema_2PSVIDefs_8hpp" ],
+    [ "SchemaAttDef.hpp", "df/d66/msvc-arm64_2include_2xercesc_2validators_2schema_2SchemaAttDef_8hpp.html", "df/d66/msvc-arm64_2include_2xercesc_2validators_2schema_2SchemaAttDef_8hpp" ],
+    [ "SchemaAttDefList.hpp", "d5/d49/msvc-arm64_2include_2xercesc_2validators_2schema_2SchemaAttDefList_8hpp.html", "d5/d49/msvc-arm64_2include_2xercesc_2validators_2schema_2SchemaAttDefList_8hpp" ],
+    [ "SchemaElementDecl.hpp", "d3/d80/msvc-arm64_2include_2xercesc_2validators_2schema_2SchemaElementDecl_8hpp.html", "d3/d80/msvc-arm64_2include_2xercesc_2validators_2schema_2SchemaElementDecl_8hpp" ],
+    [ "SchemaGrammar.hpp", "db/db9/msvc-arm64_2include_2xercesc_2validators_2schema_2SchemaGrammar_8hpp.html", "db/db9/msvc-arm64_2include_2xercesc_2validators_2schema_2SchemaGrammar_8hpp" ],
+    [ "SchemaInfo.hpp", "d2/dfb/msvc-arm64_2include_2xercesc_2validators_2schema_2SchemaInfo_8hpp.html", "d2/dfb/msvc-arm64_2include_2xercesc_2validators_2schema_2SchemaInfo_8hpp" ],
+    [ "SchemaSymbols.hpp", "d9/d1c/msvc-arm64_2include_2xercesc_2validators_2schema_2SchemaSymbols_8hpp.html", "d9/d1c/msvc-arm64_2include_2xercesc_2validators_2schema_2SchemaSymbols_8hpp" ],
+    [ "SchemaValidator.hpp", "dd/dd9/msvc-arm64_2include_2xercesc_2validators_2schema_2SchemaValidator_8hpp.html", "dd/dd9/msvc-arm64_2include_2xercesc_2validators_2schema_2SchemaValidator_8hpp" ],
+    [ "SubstitutionGroupComparator.hpp", "da/da5/msvc-arm64_2include_2xercesc_2validators_2schema_2SubstitutionGroupComparator_8hpp.html", "da/da5/msvc-arm64_2include_2xercesc_2validators_2schema_2SubstitutionGroupComparator_8hpp" ],
+    [ "TraverseSchema.hpp", "d9/d85/msvc-arm64_2include_2xercesc_2validators_2schema_2TraverseSchema_8hpp.html", "d9/d85/msvc-arm64_2include_2xercesc_2validators_2schema_2TraverseSchema_8hpp" ],
+    [ "XercesAttGroupInfo.hpp", "dc/de7/msvc-arm64_2include_2xercesc_2validators_2schema_2XercesAttGroupInfo_8hpp.html", "dc/de7/msvc-arm64_2include_2xercesc_2validators_2schema_2XercesAttGroupInfo_8hpp" ],
+    [ "XercesElementWildcard.hpp", "d3/d2f/msvc-arm64_2include_2xercesc_2validators_2schema_2XercesElementWildcard_8hpp.html", "d3/d2f/msvc-arm64_2include_2xercesc_2validators_2schema_2XercesElementWildcard_8hpp" ],
+    [ "XercesGroupInfo.hpp", "d3/d48/msvc-arm64_2include_2xercesc_2validators_2schema_2XercesGroupInfo_8hpp.html", "d3/d48/msvc-arm64_2include_2xercesc_2validators_2schema_2XercesGroupInfo_8hpp" ],
+    [ "XMLSchemaDescriptionImpl.hpp", "da/d1c/msvc-arm64_2include_2xercesc_2validators_2schema_2XMLSchemaDescriptionImpl_8hpp.html", "da/d1c/msvc-arm64_2include_2xercesc_2validators_2schema_2XMLSchemaDescriptionImpl_8hpp" ],
+    [ "XSDDOMParser.hpp", "d7/d33/msvc-arm64_2include_2xercesc_2validators_2schema_2XSDDOMParser_8hpp.html", "d7/d33/msvc-arm64_2include_2xercesc_2validators_2schema_2XSDDOMParser_8hpp" ],
+    [ "XSDErrorReporter.hpp", "de/db8/msvc-arm64_2include_2xercesc_2validators_2schema_2XSDErrorReporter_8hpp.html", "de/db8/msvc-arm64_2include_2xercesc_2validators_2schema_2XSDErrorReporter_8hpp" ],
+    [ "XSDLocator.hpp", "d0/da2/msvc-arm64_2include_2xercesc_2validators_2schema_2XSDLocator_8hpp.html", "d0/da2/msvc-arm64_2include_2xercesc_2validators_2schema_2XSDLocator_8hpp" ],
+    [ "XUtil.hpp", "d0/db8/msvc-arm64_2include_2xercesc_2validators_2schema_2XUtil_8hpp.html", "d0/db8/msvc-arm64_2include_2xercesc_2validators_2schema_2XUtil_8hpp" ]
+];
