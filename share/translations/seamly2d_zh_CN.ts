@@ -33,7 +33,7 @@
     </message>
     <message>
         <source>Seamly 2D</source>
-        <translation>无缝二维</translation>
+        <translation>Seamly 2D</translation>
     </message>
     <message>
         <source>Version</source>
@@ -41,7 +41,7 @@
     </message>
     <message>
         <source>Build date:</source>
-        <translation>建造日期:</translation>
+        <translation>构建日期:</translation>
     </message>
     <message>
         <source>Qt Version:</source>
@@ -65,7 +65,7 @@
     </message>
     <message>
         <source>Architecture</source>
-        <translation>建筑学</translation>
+        <translation>架构</translation>
     </message>
     <message>
         <source>OS Version:</source>
@@ -73,7 +73,7 @@
     </message>
     <message>
         <source>Locale</source>
-        <translation>当地的</translation>
+        <translation>区域设置</translation>
     </message>
     <message>
         <source>Country:</source>
@@ -101,11 +101,11 @@
     </message>
     <message>
         <source>Name:</source>
-        <translation>姓名:</translation>
+        <translation>名称:</translation>
     </message>
     <message>
         <source>Positive sign:</source>
-        <translation>积极信号:</translation>
+        <translation>正号:</translation>
     </message>
     <message>
         <source>Negative sign:</source>
@@ -117,7 +117,7 @@
     </message>
     <message>
         <source>Arguments:</source>
-        <translation>论据:</translation>
+        <translation>参数:</translation>
     </message>
     <message>
         <source>Contributors</source>
@@ -144,7 +144,7 @@
     <name>AddDraftBlock</name>
     <message>
         <source>add draft block %1</source>
-        <translation>添加草稿块 %1</translation>
+        <translation>添加样板 %1</translation>
     </message>
 </context>
 <context>
@@ -172,7 +172,7 @@
     <name>AddPiece</name>
     <message>
         <source>add piece</source>
-        <translation>添加一块</translation>
+        <translation>添加裁片</translation>
     </message>
 </context>
 <context>
@@ -205,11 +205,11 @@
     </message>
     <message>
         <source>Point:</source>
-        <translation>观点:</translation>
+        <translation>点:</translation>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>片:</translation>
+        <translation>裁片:</translation>
     </message>
 </context>
 <context>
@@ -247,11 +247,11 @@
     </message>
     <message>
         <source>Parser error: %1. Program will be terminated.</source>
-        <translation>解析器错误：%1。计划将被终止.</translation>
+        <translation>解析器错误:%1。计划将被终止.</translation>
     </message>
     <message>
         <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation>抛出异常：%1。计划将被终止.</translation>
+        <translation>抛出异常:%1。计划将被终止.</translation>
     </message>
 </context>
 <context>
@@ -282,11 +282,11 @@
     </message>
     <message>
         <source>Parser error: %1. Program will be terminated.</source>
-        <translation>解析器错误：%1。计划将被终止.</translation>
+        <translation>解析器错误:%1。计划将被终止.</translation>
     </message>
     <message>
         <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation>抛出异常：%1。计划将被终止.</translation>
+        <translation>抛出异常:%1。计划将被终止.</translation>
     </message>
     <message>
         <source>Seamly2D&apos;s measurements editor.</source>
@@ -306,7 +306,7 @@
     </message>
     <message>
         <source>Set pattern file unit: cm, mm, inch.</source>
-        <translation>设置花样文件单位：厘米、毫米、英寸.</translation>
+        <translation>设置花样文件单位:厘米、毫米、英寸.</translation>
     </message>
     <message>
         <source>The pattern unit</source>
@@ -330,7 +330,7 @@
     </message>
     <message>
         <source>Open with the base size. Valid values: %1cm.</source>
-        <translation>以基本尺寸打开。有效值：%1cm.</translation>
+        <translation>以基本尺寸打开。有效值:%1cm.</translation>
     </message>
     <message>
         <source>Invalid base height argument. Must be %1cm.</source>
@@ -342,7 +342,7 @@
     </message>
     <message>
         <source>Open with the base height. Valid values: %1cm.</source>
-        <translation>以底座高度打开。有效值：%1cm.</translation>
+        <translation>以底座高度打开。有效值:%1cm.</translation>
     </message>
     <message>
         <source>Use for unit testing. Run the program and open a file without showing the main window.</source>
@@ -400,7 +400,7 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;15/16 = .9375&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { 空白：预换行； }
+p, li { 空白:预换行； }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot;font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;palign=&quot;center&quot;style=&quot;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;-qt-block-indent:0;text-indent:0px;&quot;&gt;&lt;span style=&quot;font-size:12pt;&quot;&gt;1/16 = .0625&lt;/span&gt;&lt;/p&gt;
 &lt;palign=&quot;center&quot;style=&quot;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;-qt-block-indent:0;text-indent:0px;&quot;&gt;&lt;span style=&quot;font-size:12pt;&quot;&gt;3/16 = .1875&lt;/span&gt;&lt;/p&gt;
@@ -419,7 +419,7 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;br /&gt;2/8 = .250&lt;br /&gt;3/8 = .375&lt;br /&gt;4/8 = .500&lt;br /&gt;5/8 = .625&lt;br /&gt;6/8 = .750&lt;br /&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { 空白：预换行； }
+p, li { 空白:预换行； }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot;font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;br /&gt;2/8 = .250&lt;br /&gt;3/8 = .375&lt;br /&gt;4/8 = .500&lt;br /&gt;5/8 = .625&lt;br /&gt;6/8 = .750&lt;br /&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -442,7 +442,7 @@ p, li { 空白：预换行； }
     <name>DeleteDraftBlock</name>
     <message>
         <source>delete draft block %1</source>
-        <translation>删除草稿块%1</translation>
+        <translation>删除样板%1</translation>
     </message>
 </context>
 <context>
@@ -464,7 +464,7 @@ p, li { 空白：预换行； }
     </message>
     <message>
         <source>Build revision: %1</source>
-        <translation>版本修订：%1</translation>
+        <translation>版本修订:%1</translation>
     </message>
     <message>
         <source>This program is part of Seamly2D project.</source>
@@ -488,7 +488,7 @@ p, li { 空白：预换行； }
     </message>
     <message>
         <source>Web site : %1</source>
-        <translation>网站：%1</translation>
+        <translation>网站:%1</translation>
     </message>
     <message>
         <source>unknown</source>
@@ -922,7 +922,7 @@ p, li { 空白：预换行； }
     <name>DialogCubicBezierPath</name>
     <message>
         <source>Point:</source>
-        <translation>观点:</translation>
+        <translation>点:</translation>
     </message>
     <message>
         <source>List of points</source>
@@ -1482,7 +1482,7 @@ p, li { 空白：预换行； }
     </message>
     <message>
         <source>Export</source>
-        <translation>出口</translation>
+        <translation>导出</translation>
     </message>
     <message>
         <source>With header</source>
@@ -1576,23 +1576,23 @@ p, li { 空白：预换行； }
     <name>DialogLayoutProgress</name>
     <message>
         <source>Couldn&apos;t prepare data for creation layout</source>
-        <translation>无法为创建布局准备数据</translation>
+        <translation>无法为创建排版准备数据</translation>
     </message>
     <message>
         <source>Create a Layout</source>
-        <translation>创建布局</translation>
+        <translation>创建排版</translation>
     </message>
     <message>
         <source>Arranged workpieces: %1 from %2</source>
-        <translation>已排列的工件：%1 来自 %2</translation>
+        <translation>已排列的裁片:%1 来自 %2</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Finding best position for workpieces. Please, wait.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;寻找工件的最佳位置。请稍等。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;寻找裁片的最佳位置。请稍等。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
-        <translation>一个或多个样片大于您选择的纸张格式。请选择更大的纸张格式.</translation>
+        <translation>一个或多个裁片大于您选择的纸张格式。请选择更大的纸张格式.</translation>
     </message>
 </context>
 <context>
@@ -1964,15 +1964,15 @@ p, li { 空白：预换行； }
     </message>
     <message>
         <source>Unique pattern piece name</source>
-        <translation>独特的图案名称</translation>
+        <translation>独特的样板名称</translation>
     </message>
     <message>
         <source>Choose unique pattern piece name.</source>
-        <translation>选择独特的图案名称.</translation>
+        <translation>选择独特的样板名称.</translation>
     </message>
     <message>
         <source>New pattern</source>
-        <translation>新格局</translation>
+        <translation>新样板</translation>
     </message>
     <message>
         <source>Millimeters</source>
@@ -1980,7 +1980,7 @@ p, li { 空白：预换行； }
     </message>
     <message>
         <source>Draft block name:</source>
-        <translation>草稿区块名称:</translation>
+        <translation>样板名称:</translation>
     </message>
 </context>
 <context>
@@ -2759,7 +2759,7 @@ p, li { 空白：预换行； }
     </message>
     <message>
         <source>Point:</source>
-        <translation>观点:</translation>
+        <translation>点:</translation>
     </message>
     <message>
         <source>First control point</source>
@@ -2791,7 +2791,7 @@ p, li { 空白：预换行； }
     </message>
     <message>
         <source>Value</source>
-        <translation>价值</translation>
+        <translation>数值</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -2878,7 +2878,7 @@ p, li { 空白：预换行； }
     </message>
     <message>
         <source>Parser error: %1</source>
-        <translation>解析器错误：%1</translation>
+        <translation>解析器错误:%1</translation>
     </message>
     <message>
         <source>First point</source>
@@ -3236,7 +3236,7 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Parser error: %1</source>
-        <translation>解析器错误：%1</translation>
+        <translation>解析器错误:%1</translation>
     </message>
     <message>
         <source>Edit variable</source>
@@ -3409,7 +3409,7 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Unique pattern piece name</source>
-        <translation>独特的图案名称</translation>
+        <translation>独特的样板名称</translation>
     </message>
     <message>
         <source>Unique group name</source>
@@ -3574,31 +3574,31 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Piece letter</source>
-        <translation>件信</translation>
+        <translation>裁片标识</translation>
     </message>
     <message>
         <source>Piece annotation</source>
-        <translation>件注释</translation>
+        <translation>裁片注释</translation>
     </message>
     <message>
         <source>Piece orientation</source>
-        <translation>工件方向</translation>
+        <translation>裁片方向</translation>
     </message>
     <message>
         <source>Piece rotation</source>
-        <translation>工件轮换</translation>
+        <translation>裁片轮换</translation>
     </message>
     <message>
         <source>Piece tilt</source>
-        <translation>工件倾斜</translation>
+        <translation>裁片倾斜</translation>
     </message>
     <message>
         <source>Piece fold position</source>
-        <translation>片折位置</translation>
+        <translation>裁片折位置</translation>
     </message>
     <message>
         <source>Piece name</source>
-        <translation>作品名称</translation>
+        <translation>裁片名称</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -3622,7 +3622,7 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Material: Interfacing</source>
-        <translation>材质：接口</translation>
+        <translation>材质:接口</translation>
     </message>
     <message>
         <source>Interfacing</source>
@@ -3638,7 +3638,7 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Word: Cut</source>
-        <translation>词语： 切</translation>
+        <translation>词语: 切</translation>
     </message>
     <message>
         <source>Cut</source>
@@ -3646,7 +3646,7 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Word: on fold</source>
-        <translation>词语： 对折</translation>
+        <translation>词语: 对折</translation>
     </message>
     <message>
         <source>on fold</source>
@@ -3676,7 +3676,7 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <name>ExportLayoutDialog</name>
     <message>
         <source>Export Layout</source>
-        <translation>导出布局</translation>
+        <translation>导出排版</translation>
     </message>
     <message>
         <source>Binary form</source>
@@ -3815,7 +3815,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>File download failed: %1.</source>
-        <translation>文件下载失败：%1.</translation>
+        <translation>文件下载失败:%1.</translation>
     </message>
     <message>
         <source>Download has started, the installer will open once it&apos;s finished downloading</source>
@@ -3823,7 +3823,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Feed download failed: %1.</source>
-        <translation>源下载失败：%1.</translation>
+        <translation>源下载失败:%1.</translation>
     </message>
     <message>
         <source>No new releases available.</source>
@@ -3992,7 +3992,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation>SplPath_</translation>
+        <translation>Spl路径</translation>
     </message>
     <message>
         <source>%1 - Spline Fixed</source>
@@ -4323,7 +4323,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Draft Block:</source>
-        <translation>草案块:</translation>
+        <translation>样板:</translation>
     </message>
     <message>
         <source>block</source>
@@ -4465,7 +4465,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>&lt;b&gt;Image (%7)&lt;/b&gt;: Size(%2%1, %3%1); Pos(%4%1, %5%1); Rot(%6°)%8</source>
-        <translation>&lt;b&gt;图像（%7）&lt;/b&gt;：大小（%2%1，%3%1）；位置(%4%1,%5%1);旋转(%6°)%8</translation>
+        <translation>&lt;b&gt;图像（%7）&lt;/b&gt;:大小（%2%1，%3%1）；位置(%4%1,%5%1);旋转(%6°)%8</translation>
     </message>
     <message>
         <source> - &lt;b&gt;Aspect ratio locked&lt;/b&gt;</source>
@@ -4523,7 +4523,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>片:</translation>
+        <translation>裁片:</translation>
     </message>
     <message>
         <source>Nodes:</source>
@@ -4630,7 +4630,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>片:</translation>
+        <translation>裁片:</translation>
     </message>
     <message>
         <source>Move row to top of list</source>
@@ -4662,7 +4662,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Ready!</source>
-        <translation type="unfinished">准备好!</translation>
+        <translation>准备好!</translation>
     </message>
     <message>
         <source>Seam allowance</source>
@@ -4890,11 +4890,11 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>List of pieces is empty!</source>
-        <translation>作品列表为空!</translation>
+        <translation>裁片列表为空!</translation>
     </message>
     <message>
         <source>Please, select a piece to insert into!</source>
-        <translation>请选择要插入的一块!</translation>
+        <translation>请选择要插入的裁片!</translation>
     </message>
 </context>
 <context>
@@ -5120,7 +5120,7 @@ Seamly2D 是一款免费（开源）软件。
     </message>
     <message>
         <source>Rotate workpiece</source>
-        <translation>旋转工件</translation>
+        <translation>旋转裁片</translation>
     </message>
     <message>
         <source>Rotate by</source>
@@ -5132,11 +5132,11 @@ Seamly2D 是一款免费（开源）软件。
     </message>
     <message>
         <source>Three groups: big, middle, small</source>
-        <translation>三组：大、中、小</translation>
+        <translation>三组:大、中、小</translation>
     </message>
     <message>
         <source>Two groups: big, small</source>
-        <translation>两组：大、小</translation>
+        <translation>两组:大、小</translation>
     </message>
     <message>
         <source>Descending area</source>
@@ -5200,13 +5200,13 @@ Seamly2D 是一款免费（开源）软件。
 	Two groups: big, small = 1;
 	Descending area = 2</source>
         <translation>
-	三组：大、中、小=0；
-	两组：大、小=1；
+	三组:大、中、小=0；
+	两组:大、小=1；
 	下降面积 = 2</translation>
     </message>
     <message>
         <source>Layout options</source>
-        <translation>布局选项</translation>
+        <translation>排版选项</translation>
     </message>
     <message>
         <source>Shift/Offset length:</source>
@@ -5214,7 +5214,7 @@ Seamly2D 是一款免费（开源）软件。
     </message>
     <message>
         <source>Rule for choosing the next workpiece</source>
-        <translation>选择下一个工件的规则</translation>
+        <translation>选择下一个裁片的规则</translation>
     </message>
     <message>
         <source>Divide into strips</source>
@@ -5226,7 +5226,7 @@ Seamly2D 是一款免费（开源）软件。
     </message>
     <message>
         <source>Set multiplier for length of the biggest workpiece in layout.</source>
-        <translation>设置布局中最大工件长度的乘数.</translation>
+        <translation>设置排版中最大裁片长度的乘数.</translation>
     </message>
     <message>
         <source>Enabling for sheets that have big height will speed up creating.</source>
@@ -5263,7 +5263,7 @@ Seamly2D 是一款免费（开源）软件。
     </message>
     <message>
         <source>Layout print settings</source>
-        <translation>布局打印设置</translation>
+        <translation>排版打印设置</translation>
     </message>
     <message>
         <source>Millimeters</source>
@@ -5313,7 +5313,7 @@ Seamly2D 是一款免费（开源）软件。
     </message>
     <message>
         <source>Point</source>
-        <translation>观点</translation>
+        <translation>点</translation>
     </message>
     <message>
         <source>Tools for creating lines.</source>
@@ -5341,11 +5341,11 @@ Seamly2D 是一款免费（开源）软件。
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>＆文件</translation>
+        <translation>文件(&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>＆帮助</translation>
+        <translation>帮助(&amp;H)</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -5357,7 +5357,7 @@ Seamly2D 是一款免费（开源）软件。
     </message>
     <message>
         <source>&amp;New</source>
-        <translation>＆新的</translation>
+        <translation>新的</translation>
     </message>
     <message>
         <source>Create a new pattern</source>
@@ -5369,7 +5369,7 @@ Seamly2D 是一款免费（开源）软件。
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>＆打开</translation>
+        <translation>打开</translation>
     </message>
     <message>
         <source>Open file with pattern</source>
@@ -5413,7 +5413,7 @@ Seamly2D 是一款免费（开源）软件。
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>出口</translation>
+        <translation>退出</translation>
     </message>
     <message>
         <source>Preferences</source>
@@ -5511,7 +5511,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Layout</source>
-        <translation>布局</translation>
+        <translation>排版</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -5527,7 +5527,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Split and print a layout into smaller pages (for regular printers)</source>
-        <translation>将布局拆分并打印为较小的页面（对于常规打印机）</translation>
+        <translation>将排版拆分并打印为较小的页面（对于常规打印机）</translation>
     </message>
     <message>
         <source>Print preview</source>
@@ -5535,15 +5535,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Print preview original layout</source>
-        <translation>打印预览原始布局</translation>
+        <translation>打印预览原始排版</translation>
     </message>
     <message>
         <source>Export Layout As...</source>
-        <translation>将布局导出为...</translation>
+        <translation>将排版导出为...</translation>
     </message>
     <message>
         <source>Layout mode</source>
-        <translation>布局方式</translation>
+        <translation>排版方式</translation>
     </message>
     <message>
         <source>Unsaved changes</source>
@@ -5611,7 +5611,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Print an original layout</source>
-        <translation>打印原始布局</translation>
+        <translation>打印原始排版</translation>
     </message>
     <message>
         <source>Preview tiled PDF</source>
@@ -5619,7 +5619,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Print preview tiled layout</source>
-        <translation>打印预览平铺布局</translation>
+        <translation>打印预览平铺排版</translation>
     </message>
     <message>
         <source>Measurements unloaded</source>
@@ -5631,11 +5631,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>New pattern</source>
-        <translation>新格局</translation>
+        <translation>新样板</translation>
     </message>
     <message>
         <source>Open pattern</source>
-        <translation>开放式格局</translation>
+        <translation>打开新样板</translation>
     </message>
     <message>
         <source>Create/Edit measurements</source>
@@ -5675,7 +5675,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Operations</source>
-        <translation>运营</translation>
+        <translation>操作</translation>
     </message>
     <message>
         <source>Close pattern</source>
@@ -5683,7 +5683,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Tool pointer</source>
-        <translation>工具指针</translation>
+        <translation>指针工具</translation>
     </message>
     <message>
         <source>Original zoom</source>
@@ -5787,7 +5787,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Wiki</source>
-        <translation>一周</translation>
+        <translation>维基</translation>
     </message>
     <message>
         <source>Forum</source>
@@ -5807,7 +5807,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet.</source>
-        <translation>您还不能使用布局模式.</translation>
+        <translation>您还不能使用排版模式.</translation>
     </message>
     <message>
         <source>Application doesn&apos;t support multisize table with inches.</source>
@@ -5827,7 +5827,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>View</source>
-        <translation>看法</translation>
+        <translation>视图</translation>
     </message>
     <message>
         <source>Point Names</source>
@@ -5843,15 +5843,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&amp;Operations</source>
-        <translation>＆运营</translation>
+        <translation>＆操作</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>片</translation>
+        <translation>裁片</translation>
     </message>
     <message>
         <source>Utilities</source>
-        <translation>公用事业</translation>
+        <translation>实用工具</translation>
     </message>
     <message>
         <source>File Toolbar</source>
@@ -5875,7 +5875,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Layout Pages</source>
-        <translation>布局页面</translation>
+        <translation>排版页面</translation>
     </message>
     <message>
         <source>Group Manager</source>
@@ -5911,7 +5911,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Piece ToolBar</source>
-        <translation>片段工具栏</translation>
+        <translation>裁片工具栏</translation>
     </message>
     <message>
         <source>Details ToolBar</source>
@@ -5919,7 +5919,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Layout ToolBar</source>
-        <translation>布局工具栏</translation>
+        <translation>排版工具栏</translation>
     </message>
     <message>
         <source>Point Name ToolBar</source>
@@ -5943,7 +5943,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Export Draft Blocks (E, D)</source>
-        <translation>导出草稿块（E、D）</translation>
+        <translation>导出样板（E、D）</translation>
     </message>
     <message>
         <source>Tools for adding pattern pieces.</source>
@@ -5955,43 +5955,43 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Tools for adding details to pattern pieces</source>
-        <translation>用于向样片添加细节的工具</translation>
+        <translation>用于向样板添加细节的工具</translation>
     </message>
     <message>
         <source>Unite 2 Pieces (U)</source>
-        <translation>合并 2 件 (U)</translation>
+        <translation>合并 2裁片 (U)</translation>
     </message>
     <message>
         <source>View Toolbar</source>
-        <translation>查看工具栏</translation>
+        <translation>工具栏视图</translation>
     </message>
     <message>
         <source>Draft</source>
-        <translation>草稿</translation>
+        <translation>样板</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with draft blocks. These draft blocks are the base for going to the next stage &amp;quot;Piece mode&amp;quot;. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用草稿块的模式。这些草稿块是进入下一阶段“碎片模式”的基础。在启用“片段模式”之前，您需要创建至少一个图案片段。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用样板的模式。这些原型是进入下一阶段“裁片模式”的基础。在启用“裁片片模式”之前，您需要创建至少一个样板.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with pattern pieces. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece on the stage &amp;quot;Draft mode&amp;quot;. Pattern pieces created on this stage will be used for creating a layout. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;处理样片的模式。在启用“片段模式”之前，您需要在舞台“草稿模式”上创建至少一个样片。在此阶段创建的图案片段将用于创建布局。 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;处理裁片的模式。在启用“裁片模式”之前，您需要在舞台“原型模式”上创建至少一个裁片.在此阶段创建的裁片段将用于创建排版. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>New Draft Block</source>
-        <translation>新草案块</translation>
+        <translation>新样板</translation>
     </message>
     <message>
         <source>Add new draft block (Ctrl+Shift+N)</source>
-        <translation>添加新草稿块（Ctrl+Shift+N）</translation>
+        <translation>添加新样板（Ctrl+Shift+N）</translation>
     </message>
     <message>
         <source>Rename Draft Block</source>
-        <translation>重命名草稿块</translation>
+        <translation>重命名样板</translation>
     </message>
     <message>
         <source>Change the name of the draft block</source>
-        <translation>更改草稿块的名称</translation>
+        <translation>更改样板的名称</translation>
     </message>
     <message>
         <source>Variables table</source>
@@ -5999,7 +5999,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of pattern pieces. This mode is available if at least one pattern piece was created in &amp;quot;Piece mode&amp;quot;. The layout can be exported to your preferred file format and saved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于创建图案片布局的模式。如果在“裁片模式”下至少创建了一个样片，则此模式可用。布局可以导出为您喜欢的文件格式并保存。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于创建裁片排版的模式。如果在“裁片模式”下至少创建了一个样片，则此模式可用。排版可以导出为您喜欢的文件格式并保存。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Rotation</source>
@@ -6067,7 +6067,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>In</source>
-        <translation>在</translation>
+        <translation>放大</translation>
     </message>
     <message>
         <source>Zoom In (Ctrl++)</source>
@@ -6079,7 +6079,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Out</source>
-        <translation>出去</translation>
+        <translation>缩小</translation>
     </message>
     <message>
         <source>Zoom Out (Ctrl+-)</source>
@@ -6091,7 +6091,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Fit</source>
-        <translation>合身</translation>
+        <translation>适合窗口</translation>
     </message>
     <message>
         <source>Report bug...</source>
@@ -6131,7 +6131,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Selected</source>
-        <translation>已选择</translation>
+        <translation>选中项</translation>
     </message>
     <message>
         <source>Label Template Editor...</source>
@@ -6139,7 +6139,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Previous</source>
-        <translation>以前的</translation>
+        <translation>上一个</translation>
     </message>
     <message>
         <source>Zoom to Previous (Ctrl+Left)</source>
@@ -6151,7 +6151,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Pan</source>
-        <translation>平底锅</translation>
+        <translation>平移</translation>
     </message>
     <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
@@ -6183,11 +6183,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Layout Tools</source>
-        <translation>布局工具</translation>
+        <translation>排版工具</translation>
     </message>
     <message>
         <source>Piece tools</source>
-        <translation>件工具</translation>
+        <translation>裁片工具</translation>
     </message>
     <message>
         <source>New Pattern Piece</source>
@@ -6195,11 +6195,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>New Print Layout</source>
-        <translation>新的打印布局</translation>
+        <translation>新的打印排版</translation>
     </message>
     <message>
         <source>Export Layout</source>
-        <translation>导出布局</translation>
+        <translation>导出排版</translation>
     </message>
     <message>
         <source>Anchor Point</source>
@@ -6215,15 +6215,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Unite Pieces</source>
-        <translation>团结起来</translation>
+        <translation>拼接裁片</translation>
     </message>
     <message>
         <source>Export Pieces</source>
-        <translation>出口件</translation>
+        <translation>拆分裁片</translation>
     </message>
     <message>
         <source>Detail tools</source>
-        <translation>详细工具</translation>
+        <translation>细节工具</translation>
     </message>
     <message>
         <source>Point Name Text</source>
@@ -6247,11 +6247,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Use Tool Color</source>
-        <translation>使用工具颜色</translation>
+        <translation>使用颜色工具</translation>
     </message>
     <message>
         <source>Use Tool Color (T)</source>
-        <translation>使用工具颜色 (T)</translation>
+        <translation>使用颜色工具 (T)</translation>
     </message>
     <message>
         <source>Axis Origin </source>
@@ -6259,7 +6259,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Toggle Axis Origin (V, A)</source>
-        <translation>切换轴原点（V、A)</translation>
+        <translation>切换轴原点（V、A）</translation>
     </message>
     <message>
         <source>Wireframe Mode</source>
@@ -6295,11 +6295,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Export Draft Blocks</source>
-        <translation>导出草稿块</translation>
+        <translation>导出样板</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>出口</translation>
+        <translation>导出</translation>
     </message>
     <message>
         <source>Seam Allowance</source>
@@ -6323,23 +6323,23 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
-        <translation>&lt;b&gt;工具::操作 - 创建组：&lt;/b&gt;选择一个或多个对象 - 按住&lt;b&gt;%1&lt;/b&gt;进行多项选择，按&lt;b&gt;ENTER&lt;/b&gt;完成组创建 </translation>
+        <translation>&lt;b&gt;工具::操作 - 创建组:&lt;/b&gt;选择一个或多个对象 - 按住&lt;b&gt;%1&lt;/b&gt;进行多项选择，按&lt;b&gt;ENTER&lt;/b&gt;完成组创建 </translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;工具::操作 - 旋转：&lt;/b&gt; 选择一个或多个对象 - 按住&lt;b&gt;%1&lt;/b&gt;进行多项选择，按&lt;b&gt;ENTER&lt;/b&gt;确认选择</translation>
+        <translation>&lt;b&gt;工具::操作 - 旋转:&lt;/b&gt; 选择一个或多个对象 - 按住&lt;b&gt;%1&lt;/b&gt;进行多项选择，按&lt;b&gt;ENTER&lt;/b&gt;确认选择</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;工具::操作 - 按线镜像：&lt;/b&gt; 选择一个或多个对象 - 按住 &lt;b&gt;%1&lt;/b&gt; 进行多项选择，按 &lt;b&gt;ENTER&lt;/b&gt; 确认选择</translation>
+        <translation>&lt;b&gt;工具::操作 - 按线镜像:&lt;/b&gt; 选择一个或多个对象 - 按住 &lt;b&gt;%1&lt;/b&gt; 进行多项选择，按 &lt;b&gt;ENTER&lt;/b&gt; 确认选择</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;工具::操作 - 按轴镜像：&lt;/b&gt; 选择一个或多个对象 - 按住 &lt;b&gt;%1&lt;/b&gt; 进行多项选择，按 &lt;b&gt;ENTER&lt;/b&gt; 确认选择</translation>
+        <translation>&lt;b&gt;工具::操作 - 按轴镜像:&lt;/b&gt; 选择一个或多个对象 - 按住 &lt;b&gt;%1&lt;/b&gt; 进行多项选择，按 &lt;b&gt;ENTER&lt;/b&gt; 确认选择</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;工具::操作 - 移动：&lt;/b&gt; 选择一个或多个对象 - 按住&lt;b&gt;%1&lt;/b&gt;进行多项选择，按&lt;b&gt;ENTER&lt;/b&gt;确认选择</translation>
+        <translation>&lt;b&gt;工具::操作 - 移动:&lt;/b&gt; 选择一个或多个对象 - 按住&lt;b&gt;%1&lt;/b&gt;进行多项选择，按&lt;b&gt;ENTER&lt;/b&gt;确认选择</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -6351,7 +6351,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Draft Block:</source>
-        <translation>草案块:</translation>
+        <translation>样板:</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -6375,7 +6375,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Export Pattern Pieces</source>
-        <translation>导出样片</translation>
+        <translation>导出样板</translation>
     </message>
     <message>
         <source>Import Image</source>
@@ -6383,23 +6383,23 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Piece mode</source>
-        <translation>计件模式</translation>
+        <translation>裁片模式</translation>
     </message>
     <message>
         <source>You can&apos;t use Piece mode yet. Please, create at least one pattern piece.</source>
-        <translation>您还不能使用 Piece 模式。请至少制作一件图案作品.</translation>
+        <translation>您还不能使用裁片模式.请至少制作一个样板.</translation>
     </message>
     <message>
         <source>Pattern Pieces</source>
-        <translation>样板件</translation>
+        <translation>样板</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, create at least one pattern piece.</source>
-        <translation>您还不能使用布局模式。请至少制作一件图案作品.</translation>
+        <translation>您还不能使用排版模式.请至少制作一个裁片.</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, include at least one pattern piece in layout.</source>
-        <translation>您还不能使用布局模式。请在布局中至少包含一件图案.</translation>
+        <translation>您还不能使用排版模式.请在排版中至少包含一件裁片.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -6407,7 +6407,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Draft block.</source>
-        <translation>草稿块.</translation>
+        <translation>样板.</translation>
     </message>
     <message>
         <source>Name Exists</source>
@@ -6415,47 +6415,47 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>The action can&apos;t be completed because the Draft Block name already exists.</source>
-        <translation>该操作无法完成，因为草稿块名称已存在.</translation>
+        <translation>该操作无法完成，因为样板名称已存在.</translation>
     </message>
     <message>
         <source>You don&apos;t have any pieces to export. Please, include at least one piece in layout.</source>
-        <translation>您没有任何要导出的作品。请在布局中至少包含一件作品.</translation>
+        <translation>您没有任何要导出的裁片.请在排版中至少包含一个裁片.</translation>
     </message>
     <message>
         <source>Export pieces</source>
-        <translation>出口件</translation>
+        <translation>导出裁片</translation>
     </message>
     <message>
         <source>Can&apos;t export pieces.</source>
-        <translation>无法导出件.</translation>
+        <translation>无法导出裁片.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Add New Pattern Piece:&lt;/b&gt; Select main path of objects clockwise.</source>
-        <translation>&lt;b&gt;工具::片 - 添加新图案片：&lt;/b&gt; 顺时针选择对象的主路径.</translation>
+        <translation>&lt;b&gt;工具::裁片 - 添加新样板:&lt;/b&gt; 顺时针选择对象的主路径.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Add Anchor Point:&lt;/b&gt; Select anchor point</source>
-        <translation>&lt;b&gt;工具::片段 - 添加锚点：&lt;/b&gt;选择锚点</translation>
+        <translation>&lt;b&gt;工具::裁片 - 添加锚点:&lt;/b&gt;选择锚点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Internal Path:&lt;/b&gt; Select path objects, use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction</source>
-        <translation>&lt;b&gt;Tool::Piece - Internal Path：&lt;/b&gt;选择路径对象，使用&lt;b&gt;SHIFT&lt;/b&gt;反转曲线方向</translation>
+        <translation>&lt;b&gt;Tool::裁片 - 内部线条:&lt;/b&gt;选择路径对象，使用&lt;b&gt;SHIFT&lt;/b&gt;反转曲线方向</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Insert Nodes:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;工具::片段 - 插入节点：&lt;/b&gt; 选择一个或多个对象 - 按住&lt;b&gt;%1&lt;/b&gt;进行多项选择，按&lt;b&gt;ENTER&lt;/b&gt;确认选择</translation>
+        <translation>&lt;b&gt;工具::裁片 - 插入节点:&lt;/b&gt; 选择一个或多个对象 - 按住&lt;b&gt;%1&lt;/b&gt;进行多项选择，按&lt;b&gt;ENTER&lt;/b&gt;确认选择</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Details - Union:&lt;/b&gt; Select pattern piece</source>
-        <translation>&lt;b&gt;工具::详细信息 - 联合：&lt;/b&gt;选择图案片</translation>
+        <translation>&lt;b&gt;工具::详细信息 - 联合:&lt;/b&gt;选择样板</translation>
     </message>
     <message>
         <source>Draft block %1</source>
-        <translation>草稿块%1</translation>
+        <translation>样板%1</translation>
     </message>
     <message>
         <source>Draft Block %1</source>
-        <translation>草稿块%1</translation>
+        <translation>样板%1</translation>
     </message>
     <message>
         <source>Point - On Bisector (O, B)</source>
@@ -6591,7 +6591,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Add New Pattern Piece (N, P)</source>
-        <translation>添加新样片（N、P）</translation>
+        <translation>添加新样板（N、P）</translation>
     </message>
     <message>
         <source>Add Anchor Point (A, P)</source>
@@ -6611,15 +6611,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Export Pieces (E, P)</source>
-        <translation>出口件（E、P）</translation>
+        <translation>导出裁片（E、P）</translation>
     </message>
     <message>
         <source>New Print Layout (N, L)</source>
-        <translation>新的打印布局（N、L）</translation>
+        <translation>新的打印排版（N、L）</translation>
     </message>
     <message>
         <source>Export Layout (E, L)</source>
-        <translation>导出布局（E、L）</translation>
+        <translation>导出排版（E、L）</translation>
     </message>
     <message>
         <source>Contains information about custom and internal variables</source>
@@ -6823,7 +6823,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Create New Print Layout (N, L)</source>
-        <translation>创建新的打印布局（N、L）</translation>
+        <translation>创建新的打印排版（N、L）</translation>
     </message>
     <message>
         <source>Toggle Point Name Text (V, P)</source>
@@ -6851,39 +6851,39 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
-        <translation>请提供附加测量值：%1</translation>
+        <translation>请提供附加测量值:%1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Midpoint on Line&lt;/b&gt;: Select first point</source>
-        <translation>&lt;b&gt;工具::点 - 直线中点&lt;/b&gt;：选择第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 直线中点&lt;/b&gt;:选择第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length and Angle&lt;/b&gt;: Select point</source>
-        <translation>&lt;b&gt;工具::点 - 长度和角度&lt;/b&gt;：选择点</translation>
+        <translation>&lt;b&gt;工具::点 - 长度和角度&lt;/b&gt;:选择点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;工具::点 - 在线：&lt;/b&gt;选择第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 在线:&lt;/b&gt;选择第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;工具::点 - 垂直：&lt;/b&gt;选择直线的第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 垂直:&lt;/b&gt;选择直线的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
-        <translation>&lt;b&gt;工具::点 - 在平分线上：&lt;/b&gt;选择角度的第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 在平分线上:&lt;/b&gt;选择角度的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length to Line:&lt;/b&gt; Select point</source>
-        <translation>&lt;b&gt;工具::点 - 线长度：&lt;/b&gt; 选择点</translation>
+        <translation>&lt;b&gt;工具::点 - 线长度:&lt;/b&gt; 选择点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Line:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;工具::点 - 圆弧与直线相交：&lt;/b&gt;选择直线的第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 圆弧与直线相交:&lt;/b&gt;选择直线的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Axis and Triangle:&lt;/b&gt; Select first point of axis</source>
-        <translation>&lt;b&gt;工具::点 - 轴与三角形相交：&lt;/b&gt;选择轴的第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 轴与三角形相交:&lt;/b&gt;选择轴的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect XY&lt;/b&gt; Select point for X value (vertical)</source>
@@ -6891,11 +6891,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Line and Perpendicular:&lt;/b&gt; Select base point</source>
-        <translation>&lt;b&gt;工具::点 - 相交线和垂线：&lt;/b&gt; 选择基点</translation>
+        <translation>&lt;b&gt;工具::点 - 相交线和垂线:&lt;/b&gt; 选择基点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;工具::点 - 线与轴相交：&lt;/b&gt;选择线的第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 线与轴相交:&lt;/b&gt;选择线的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
@@ -6903,75 +6903,75 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;工具::点 - 相交线：&lt;/b&gt;选择第一条线的第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 相交线:&lt;/b&gt;选择第一条线的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>
-        <translation>&lt;b&gt;工具::曲线 - 交互：&lt;/b&gt;选择曲线的起点</translation>
+        <translation>&lt;b&gt;工具::曲线 - 交互:&lt;/b&gt;选择曲线的起点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Interactive:&lt;/b&gt; Select start point of spline</source>
-        <translation>&lt;b&gt;工具::样条线 - 交互：&lt;/b&gt;选择样条线的起点</translation>
+        <translation>&lt;b&gt;工具::样条线 - 交互:&lt;/b&gt;选择样条线的起点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Fixed:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;工具::曲线 - 固定：&lt;/b&gt;选择曲线的第一个点</translation>
+        <translation>&lt;b&gt;工具::曲线 - 固定:&lt;/b&gt;选择曲线的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Fixed:&lt;/b&gt; Select first point of spline</source>
-        <translation>&lt;b&gt;工具::样条线 - 固定：&lt;/b&gt;选择样条线的第一个点</translation>
+        <translation>&lt;b&gt;工具::样条线 - 固定:&lt;/b&gt;选择样条线的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;工具::点 - 曲线上：&lt;/b&gt;选择曲线的第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 曲线上:&lt;/b&gt;选择曲线的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>
-        <translation>&lt;b&gt;工具::点 - 样条曲线上：&lt;/b&gt; 选择样条曲线</translation>
+        <translation>&lt;b&gt;工具::点 - 样条曲线上:&lt;/b&gt; 选择样条曲线</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curves:&lt;/b&gt; Select first curve</source>
-        <translation>&lt;b&gt;工具::点 - 相交曲线：&lt;/b&gt;选择第一条曲线</translation>
+        <translation>&lt;b&gt;工具::点 - 相交曲线:&lt;/b&gt;选择第一条曲线</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curve and Axis:&lt;/b&gt; Select curve</source>
-        <translation>&lt;b&gt;工具::点 - 曲线与轴相交：&lt;/b&gt;选择曲线</translation>
+        <translation>&lt;b&gt;工具::点 - 曲线与轴相交:&lt;/b&gt;选择曲线</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Angles:&lt;/b&gt; Select point of center of arc</source>
-        <translation>&lt;b&gt;工具::圆弧 - 半径和角度：&lt;/b&gt;选择圆弧中心点</translation>
+        <translation>&lt;b&gt;工具::圆弧 - 半径和角度:&lt;/b&gt;选择圆弧中心点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Arc:&lt;/b&gt; Select arc</source>
-        <translation>&lt;b&gt;工具::点 - 在弧上：&lt;/b&gt; 选择弧</translation>
+        <translation>&lt;b&gt;工具::点 - 在弧上:&lt;/b&gt; 选择弧</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Axis:&lt;/b&gt; Select arc</source>
-        <translation>&lt;b&gt;工具::点 - 圆弧与轴相交：&lt;/b&gt; 选择圆弧</translation>
+        <translation>&lt;b&gt;工具::点 - 圆弧与轴相交:&lt;/b&gt; 选择圆弧</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arcs:&lt;/b&gt; Select first an arc</source>
-        <translation>&lt;b&gt;工具::点 - 相交弧：&lt;/b&gt;首先选择一条弧</translation>
+        <translation>&lt;b&gt;工具::点 - 相交弧:&lt;/b&gt;首先选择一条弧</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circles:&lt;/b&gt; Select first circle center</source>
-        <translation>&lt;b&gt;工具::点 - 相交圆：&lt;/b&gt;选择第一个圆中心</translation>
+        <translation>&lt;b&gt;工具::点 - 相交圆:&lt;/b&gt;选择第一个圆中心</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circle and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation>&lt;b&gt;工具::点 - 圆与切线相交：&lt;/b&gt;选择切线上的点</translation>
+        <translation>&lt;b&gt;工具::点 - 圆与切线相交:&lt;/b&gt;选择切线上的点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation>&lt;b&gt;工具::点 - 圆弧与切线相交：&lt;/b&gt; 选择切线上的点</translation>
+        <translation>&lt;b&gt;工具::点 - 圆弧与切线相交:&lt;/b&gt; 选择切线上的点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Length:&lt;/b&gt; Select point of the center of the arc</source>
-        <translation>&lt;b&gt;工具::圆弧 - 半径和长度：&lt;/b&gt;选择圆弧中心点</translation>
+        <translation>&lt;b&gt;工具::圆弧 - 半径和长度:&lt;/b&gt;选择圆弧中心点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Elliptical:&lt;/b&gt; Select point of center of elliptical arc</source>
-        <translation>&lt;b&gt;工具::弧 - 椭圆：选择椭圆弧的中心点</translation>
+        <translation>&lt;b&gt;工具::弧 - 椭圆:选择椭圆弧的中心点</translation>
     </message>
     <message>
         <source>Images</source>
@@ -6983,7 +6983,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point:</source>
-        <translation>观点:</translation>
+        <translation>点:</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
@@ -7069,11 +7069,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Previous Draft Block</source>
-        <translation>上一个草案块</translation>
+        <translation>上一个样板</translation>
     </message>
     <message>
         <source>Next Draft Block</source>
-        <translation>下一个草案块</translation>
+        <translation>下一个样板</translation>
     </message>
 </context>
 <context>
@@ -7100,15 +7100,15 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>The layout is stale.</source>
-        <translation>布局陈旧.</translation>
+        <translation>排版陈旧.</translation>
     </message>
     <message>
         <source>The layout was not updated since last pattern modification. Do you want to continue?</source>
-        <translation>自上次图案修改以来，布局未更新。您想继续吗?</translation>
+        <translation>自上次裁片修改以来，排版未更新。您想继续吗?</translation>
     </message>
     <message>
         <source>Couldn&apos;t prepare data for creation layout</source>
-        <translation>无法为创建布局准备数据</translation>
+        <translation>无法为创建排版准备数据</translation>
     </message>
     <message>
         <source>Can&apos;t open printer %1</source>
@@ -7136,7 +7136,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
-        <translation>一个或多个样片大于您选择的纸张格式。请选择更大的纸张格式.</translation>
+        <translation>一个或多个样板大于您选择的纸张格式。请选择更大的纸张格式.</translation>
     </message>
 </context>
 <context>
@@ -7219,7 +7219,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation>出口</translation>
+        <translation>退出</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -7583,11 +7583,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Piece name:</source>
-        <translation>作品名称:</translation>
+        <translation>裁片名称:</translation>
     </message>
     <message>
         <source>PatternPiece</source>
-        <translation>图案片</translation>
+        <translation>样板</translation>
     </message>
     <message>
         <source>Name can&apos;t be empty</source>
@@ -7599,7 +7599,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Letter of pattern piece</source>
-        <translation>样片字母</translation>
+        <translation>样板字母</translation>
     </message>
     <message>
         <source>Quantity:</source>
@@ -7683,7 +7683,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Forbid piece be mirrored in a layout.</source>
-        <translation>禁止在布局中镜像片段.</translation>
+        <translation>禁止在排版中镜像裁片.</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -7815,7 +7815,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Piece label</source>
-        <translation>件标签</translation>
+        <translation>裁片标签</translation>
     </message>
     <message>
         <source>Edit pattern label</source>
@@ -7827,7 +7827,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Show piece label</source>
-        <translation>显示单件标签</translation>
+        <translation>显示裁片标签</translation>
     </message>
     <message>
         <source>Height:</source>
@@ -7947,7 +7947,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
-        <translation>按“确定”创建样片</translation>
+        <translation>按“确定”创建样板</translation>
     </message>
     <message>
         <source>Reverse</source>
@@ -7991,7 +7991,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Error. Can&apos;t save piece path.</source>
-        <translation>错误。无法保存片段路径.</translation>
+        <translation>错误。无法保存裁片路径.</translation>
     </message>
     <message>
         <source>Infinite/undefined result</source>
@@ -8007,7 +8007,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Parser error: %1</source>
-        <translation>解析器错误：%1</translation>
+        <translation>解析器错误:%1</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -8171,7 +8171,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
-        <translation>按&lt;b&gt;ENTER&lt;/b&gt;完成作品创建.</translation>
+        <translation>按&lt;b&gt;ENTER&lt;/b&gt;完成裁片创建.</translation>
     </message>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
@@ -8186,15 +8186,15 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>move pattern piece label</source>
-        <translation>移动图案片标签</translation>
+        <translation>移动样板标签</translation>
     </message>
     <message>
         <source>resize pattern piece label</source>
-        <translation>调整图案片标签大小</translation>
+        <translation>调整样板标签大小</translation>
     </message>
     <message>
         <source>rotate pattern piece label</source>
-        <translation>旋转图案片标签</translation>
+        <translation>旋转样板标签</translation>
     </message>
     <message>
         <source>move pattern info label</source>
@@ -8226,11 +8226,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Lock Pattern Piece</source>
-        <translation>锁型件</translation>
+        <translation>锁定样板</translation>
     </message>
     <message>
         <source>Include in Layout</source>
-        <translation>包含在布局中</translation>
+        <translation>包含在排版中</translation>
     </message>
     <message>
         <source>Forbid Flipping</source>
@@ -8262,7 +8262,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Show Piece Label</source>
-        <translation>显示作品标签</translation>
+        <translation>显示裁片标签</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8322,27 +8322,27 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Show piece label</source>
-        <translation>显示单件标签</translation>
+        <translation>显示裁片标签</translation>
     </message>
     <message>
         <source>Piece label visibility changed: </source>
-        <translation>件标签可见性已更改: </translation>
+        <translation>裁片标签可见性已更改: </translation>
     </message>
     <message>
         <source>Piece name:</source>
-        <translation>作品名称:</translation>
+        <translation>裁片名称:</translation>
     </message>
     <message>
         <source>Rename Pattern Piece</source>
-        <translation>重命名样片</translation>
+        <translation>重命名样板</translation>
     </message>
     <message>
         <source>Rename pattern piece</source>
-        <translation>重命名图案片</translation>
+        <translation>重命名样板</translation>
     </message>
     <message>
         <source>Piece renamed to: </source>
-        <translation>作品更名为: </translation>
+        <translation>裁片更名为: </translation>
     </message>
     <message>
         <source>Update Node Angle</source>
@@ -8459,31 +8459,31 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Include all pieces</source>
-        <translation>包括所有作品</translation>
+        <translation>包括所有裁片</translation>
     </message>
     <message>
         <source>Exclude all pieces</source>
-        <translation>排除所有部分</translation>
+        <translation>排除所有裁片</translation>
     </message>
     <message>
         <source>Invert included pieces</source>
-        <translation>反转包含的部件</translation>
+        <translation>反转包含的裁片</translation>
     </message>
     <message>
         <source>Lock all pieces</source>
-        <translation>锁定所有棋子</translation>
+        <translation>锁定所有裁片</translation>
     </message>
     <message>
         <source>Unlock all pieces</source>
-        <translation>解锁所有碎片</translation>
+        <translation>解锁所有裁片</translation>
     </message>
     <message>
         <source>Invert locked pieces</source>
-        <translation>反转锁定件</translation>
+        <translation>反转锁定裁片</translation>
     </message>
     <message>
         <source>Toggle inclusion of pattern piece in layout</source>
-        <translation>切换布局中图案块的包含</translation>
+        <translation>切换排版中包含的样板</translation>
     </message>
     <message>
         <source>Select Color</source>
@@ -8491,7 +8491,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Edit pattern piece properties</source>
-        <translation>编辑样片属性</translation>
+        <translation>编辑样板属性</translation>
     </message>
     <message>
         <source>Included</source>
@@ -8499,7 +8499,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Pattern piece is included in layout</source>
-        <translation>图案部分包含在布局中</translation>
+        <translation>样板包含在排版中</translation>
     </message>
     <message>
         <source>Locked</source>
@@ -8515,19 +8515,19 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Pattern piece color</source>
-        <translation>样片颜色</translation>
+        <translation>样板颜色</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>片</translation>
+        <translation>裁片</translation>
     </message>
     <message>
         <source>Pattern piece letter</source>
-        <translation>图案片字母</translation>
+        <translation>样板字母</translation>
     </message>
     <message>
         <source>Pattern piece name</source>
-        <translation>样片名称</translation>
+        <translation>样板名称</translation>
     </message>
     <message>
         <source>Toggle lock on pattern piece</source>
@@ -8539,7 +8539,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Double click opens pattern piece properties dialog</source>
-        <translation>双击打开样片属性对话框</translation>
+        <translation>双击打开样板属性对话框</translation>
     </message>
 </context>
 <context>
@@ -8637,7 +8637,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source> (0 - no limit)</source>
-        <translation> （0 - 无限制）</translation>
+        <translation> （0 - 无限制)</translation>
     </message>
     <message>
         <source>Pattern Editing Warnings</source>
@@ -8869,7 +8869,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Positive Sign</source>
-        <translation>积极信号</translation>
+        <translation>正号</translation>
     </message>
 </context>
 <context>
@@ -8896,7 +8896,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Point</source>
-        <translation>观点</translation>
+        <translation>点</translation>
     </message>
     <message>
         <source>Line</source>
@@ -8912,11 +8912,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Operations</source>
-        <translation>运营</translation>
+        <translation>操作</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>片</translation>
+        <translation>裁片</translation>
     </message>
     <message>
         <source>Details</source>
@@ -8924,7 +8924,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Layout</source>
-        <translation>布局</translation>
+        <translation>排版</translation>
     </message>
     <message>
         <source>Graphical output</source>
@@ -9089,7 +9089,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Export</source>
-        <translation>出口</translation>
+        <translation>导出</translation>
     </message>
     <message>
         <source>Quality:</source>
@@ -9216,7 +9216,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>My Layouts</source>
-        <translation>我的布局</translation>
+        <translation>我的排版</translation>
     </message>
     <message>
         <source>My Templates</source>
@@ -9235,7 +9235,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>By default forbid flipping for all new created workpieces</source>
-        <translation>默认情况下禁止所有新创建的工件翻转</translation>
+        <translation>默认情况下禁止所有新创建的裁片翻转</translation>
     </message>
     <message>
         <source>By default hide the main path if the seam allowance was enabled</source>
@@ -9379,7 +9379,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Show piece labels</source>
-        <translation>显示单品标签</translation>
+        <translation>显示裁片标签</translation>
     </message>
     <message>
         <source>Width</source>
@@ -9399,7 +9399,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Piece label:</source>
-        <translation>件标签:</translation>
+        <translation>裁片标签:</translation>
     </message>
     <message>
         <source>Label template</source>
@@ -9519,11 +9519,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Union piece</source>
-        <translation>联合件</translation>
+        <translation>联合裁片</translation>
     </message>
     <message>
         <source>move piece</source>
-        <translation>移动棋子</translation>
+        <translation>移动裁片</translation>
     </message>
     <message>
         <source>Solidline</source>
@@ -9789,7 +9789,7 @@ Press enter to temporarily add it to the list.</source>
     <name>RenameDraftBlock</name>
     <message>
         <source>rename pattern piece</source>
-        <translation>重命名图案片</translation>
+        <translation>重命名样板</translation>
     </message>
 </context>
 <context>
@@ -9807,7 +9807,7 @@ Press enter to temporarily add it to the list.</source>
     <name>SavePieceOptions</name>
     <message>
         <source>save piece options</source>
-        <translation>保存件选项</translation>
+        <translation>保存裁片选项</translation>
     </message>
 </context>
 <context>
@@ -9920,7 +9920,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Positive Sign</source>
-        <translation>积极信号</translation>
+        <translation>正号</translation>
     </message>
 </context>
 <context>
@@ -10070,7 +10070,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Positive Sign</source>
-        <translation>积极信号</translation>
+        <translation>正号</translation>
     </message>
 </context>
 <context>
@@ -10169,18 +10169,18 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Positive Sign</source>
-        <translation>积极信号</translation>
+        <translation>正号</translation>
     </message>
 </context>
 <context>
     <name>SetPieceColor</name>
     <message>
         <source>Change piece color</source>
-        <translation>改变单品颜色</translation>
+        <translation>改变裁片颜色</translation>
     </message>
     <message>
         <source>Piece color changed: </source>
-        <translation>棋子颜色改变: </translation>
+        <translation>裁片颜色已改变: </translation>
     </message>
 </context>
 <context>
@@ -10271,7 +10271,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation>出口</translation>
+        <translation>退出</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -10299,7 +10299,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>View</source>
-        <translation>看法</translation>
+        <translation>视图</translation>
     </message>
     <message>
         <source>Draft Mode</source>
@@ -10311,11 +10311,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Piece Mode</source>
-        <translation>计件模式</translation>
+        <translation>裁片模式</translation>
     </message>
     <message>
         <source>Layout Mode</source>
-        <translation>布局模式</translation>
+        <translation>排版模式</translation>
     </message>
     <message>
         <source>Shift+L</source>
@@ -10355,7 +10355,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Previous</source>
-        <translation>以前的</translation>
+        <translation>上一个</translation>
     </message>
     <message>
         <source>Ctrl+Left</source>
@@ -10363,7 +10363,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Selected</source>
-        <translation>已选择</translation>
+        <translation>选中项</translation>
     </message>
     <message>
         <source>Ctrl+Right</source>
@@ -10379,7 +10379,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Pan</source>
-        <translation>平底锅</translation>
+        <translation>平移</translation>
     </message>
     <message>
         <source>Show Name Text</source>
@@ -10463,7 +10463,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>New Draft Block</source>
-        <translation>新草案块</translation>
+        <translation>新样板</translation>
     </message>
     <message>
         <source>Ctrl+Shift+N</source>
@@ -10471,11 +10471,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Rename Draft Block</source>
-        <translation>重命名草稿块</translation>
+        <translation>重命名样板</translation>
     </message>
     <message>
         <source>Point</source>
-        <translation>观点</translation>
+        <translation>点</translation>
     </message>
     <message>
         <source>Length and Angle</source>
@@ -10643,7 +10643,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Operations</source>
-        <translation>运营</translation>
+        <translation>操作</translation>
     </message>
     <message>
         <source>Add Objects to Group</source>
@@ -10675,7 +10675,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Export Draft Blocks</source>
-        <translation>导出草稿块</translation>
+        <translation>导出样板</translation>
     </message>
     <message>
         <source>Images</source>
@@ -10719,7 +10719,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Include in Layout</source>
-        <translation>包含在布局中</translation>
+        <translation>包含在排版中</translation>
     </message>
     <message>
         <source>Forbid Flipping</source>
@@ -10759,23 +10759,23 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Unite Pieces</source>
-        <translation>团结起来</translation>
+        <translation>拼接裁片</translation>
     </message>
     <message>
         <source>Export Pieces</source>
-        <translation>出口件</translation>
+        <translation>导出裁片</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>布局</translation>
+        <translation>排版</translation>
     </message>
     <message>
         <source>New Layout</source>
-        <translation>新布局</translation>
+        <translation>新排版</translation>
     </message>
     <message>
         <source>Export Layout</source>
-        <translation>导出布局</translation>
+        <translation>导出排版</translation>
     </message>
     <message>
         <source>Last Tool</source>
@@ -10795,7 +10795,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Utilities</source>
-        <translation>公用事业</translation>
+        <translation>实用工具</translation>
     </message>
     <message>
         <source>Calculator</source>
@@ -10843,7 +10843,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Previous Draft Block</source>
-        <translation>上一个草案块</translation>
+        <translation>上一个样板</translation>
     </message>
     <message>
         <source>Ctrl+PgUp</source>
@@ -10851,7 +10851,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Next Draft Block</source>
-        <translation>下一个草案块</translation>
+        <translation>下一个样板</translation>
     </message>
     <message>
         <source>Ctrl+PgDown</source>
@@ -10889,7 +10889,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>&lt;table style=font-size:11pt; font-weight:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Company:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Customer:    &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Pattern Name:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Pattern No:  &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Version:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Units:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Measurements:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Description: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Notes:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Image:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/table&gt;</source>
-        <translation>&lt;表格样式=字体大小：11pt； font-weight:600&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;公司：&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;客户：&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;图案名称：&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;模式编号：&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;版本：&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;单位： &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;测量值：&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;描述：&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;注释： &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;图片：&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/table&gt;</translation>
+        <translation>&lt;表格样式=字体大小:11pt； font-weight:600&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;公司:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;客户:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;图案名称:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;模式编号:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;版本:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;单位: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;测量值:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;描述:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;注释: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;tdalign=right&gt;&lt;b&gt;图片:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/table&gt;</translation>
     </message>
     <message>
         <source>Info files</source>
@@ -11154,7 +11154,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Parser error: %1</source>
-        <translation>解析器错误：%1</translation>
+        <translation>解析器错误:%1</translation>
     </message>
     <message>
         <source>Individual measurements</source>
@@ -11431,7 +11431,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation>出口</translation>
+        <translation>退出</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -11570,11 +11570,11 @@ load in SeamlyME as usual.
     <name>TogglePieceInLayout</name>
     <message>
         <source>Piece in Layout List</source>
-        <translation>布局列表中的部分</translation>
+        <translation>排版中的裁片列表</translation>
     </message>
     <message>
         <source>Include piece in layout changed: </source>
-        <translation>布局中包含已更改的部分: </translation>
+        <translation>排版中包含已更改的裁片部分: </translation>
     </message>
     <message>
         <source>Include</source>
@@ -11589,11 +11589,11 @@ load in SeamlyME as usual.
     <name>TogglePieceLock</name>
     <message>
         <source>Pattern piece lock</source>
-        <translation>图案片锁</translation>
+        <translation>锁定样板</translation>
     </message>
     <message>
         <source>Piece lock changed: </source>
-        <translation>片锁变更: </translation>
+        <translation>裁片锁变更: </translation>
     </message>
     <message>
         <source>Locked</source>
@@ -11640,7 +11640,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Line_</source>
-        <translation>Line_</translation>
+        <translation>>Line_</translation>
     </message>
 </context>
 <context>
@@ -11659,7 +11659,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Pattern piece should have at least two points and three objects</source>
-        <translation>样片应至少有两个点和三个物体</translation>
+        <translation>样板应至少有两个点和三个板</translation>
     </message>
     <message>
         <source>Select a second point</source>
@@ -11671,7 +11671,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Select a piece</source>
-        <translation>选择一块</translation>
+        <translation>选择裁片</translation>
     </message>
     <message>
         <source>Select a point on edge</source>
@@ -11682,7 +11682,7 @@ load in SeamlyME as usual.
     <name>UnionTool</name>
     <message>
         <source>union pieces</source>
-        <translation>联合件</translation>
+        <translation>联合裁片</translation>
     </message>
 </context>
 <context>
@@ -11736,7 +11736,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Error creating a reserv copy: %1.</source>
-        <translation>创建保留副本时出错：%1.</translation>
+        <translation>创建保留副本时出错:%1.</translation>
     </message>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>
@@ -11744,7 +11744,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Error Opening a temp file: %1.</source>
-        <translation>打开临时文件时出错：%1.</translation>
+        <translation>打开临时文件时出错:%1.</translation>
     </message>
 </context>
 <context>
@@ -11762,7 +11762,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>This file is using previous format version v%1. The current is v%2. Saving the file with this app version will update the format version for this file. This may prevent you from be able to open the file with older app versions. Do you really want to continue?</source>
-        <translation>该文件使用以前的格式版本 v%1。当前为 v%2。使用此应用程序版本保存文件将更新此文件的格式版本。这可能会阻止您使用较旧的应用程序版本打开该文件。你真的想继续吗?</translation>
+        <translation>该文件使用上一个格式版本 v%1。当前为 v%2。使用此应用程序版本保存文件将更新此文件的格式版本。这可能会阻止您使用较旧的应用程序版本打开该文件。你真的想继续吗?</translation>
     </message>
     <message>
         <source>Comma-Separated Values</source>
@@ -11807,7 +11807,7 @@ load in SeamlyME as usual.
     <name>VAbstractPieceData</name>
     <message>
         <source>Piece</source>
-        <translation>片</translation>
+        <translation>裁片</translation>
     </message>
 </context>
 <context>
@@ -12084,7 +12084,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Layout units (as paper&apos;s one except px, export mode).</source>
-        <translation>布局单位（与纸张一样，除了 px、导出模式）.</translation>
+        <translation>排版单位（与纸张一样，除了 px、导出模式）.</translation>
     </message>
     <message>
         <source>The unit</source>
@@ -12120,7 +12120,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Unsupported layout units.</source>
-        <translation>不支持的布局单元.</translation>
+        <translation>不支持的排版单元.</translation>
     </message>
     <message>
         <source>Export options can be used with single input file only.</source>
@@ -12132,11 +12132,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>The base filename of exported layout files. Use it to enable console export mode.</source>
-        <translation>导出的布局文件的基本文件名。使用它来启用控制台导出模式.</translation>
+        <translation>导出的排版文件的基本文件名。使用它来启用控制台导出模式.</translation>
     </message>
     <message>
         <source>The base filename of layout files</source>
-        <translation>布局文件的基本文件名</translation>
+        <translation>排版文件的基本文件名</translation>
     </message>
     <message>
         <source>The destination folder</source>
@@ -12192,11 +12192,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Page height/width measure units (cannot be used with &quot;%1&quot;, export mode). Valid values: %2.</source>
-        <translation>页面高度/宽度测量单位（不能与“%1”、导出模式一起使用）。有效值：%2.</translation>
+        <translation>页面高度/宽度测量单位（不能与“%1”、导出模式一起使用）。有效值:%2.</translation>
     </message>
     <message>
         <source>Ignore margins printing (export mode). Disable value keys: &quot;%1&quot;, &quot;%2&quot;, &quot;%3&quot;, &quot;%4&quot;. Set all margins to 0.</source>
-        <translation>忽略边距打印（导出模式）。禁用值键：“%1”、“%2”、“%3”、“%4”。将所有边距设置为 0.</translation>
+        <translation>忽略边距打印（导出模式）。禁用值键:“%1”、“%2”、“%3”、“%4”。将所有边距设置为 0.</translation>
     </message>
     <message>
         <source>Page left margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
@@ -12216,7 +12216,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Rotation in degrees (one of predefined, export mode). Default value is 180. 0 is no-rotate. Valid values: %1. Each value show how many times details will be rotated. For example 180 mean two times (360/180=2) by 180 degree.</source>
-        <translation>以度为单位的旋转（预定义的导出模式之一）。默认值为 180。0 表示不旋转。有效值：%1。每个值显示详细信息将旋转多少次。例如，180 表示两倍 (360/180=2) 乘以 180 度.</translation>
+        <translation>以度为单位的旋转（预定义的导出模式之一）。默认值为 180。0 表示不旋转。有效值:%1。每个值显示详细信息将旋转多少次。例如，180 表示两倍 (360/180=2) 乘以 180 度.</translation>
     </message>
     <message>
         <source>Unite pages if possible (export mode). Maximum value limited by QImage that supports only a maximum of 32768x32768 px images.</source>
@@ -12224,15 +12224,15 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Save length of the sheet if set (export mode). The option tells the program to use as much as possible width of sheet. Quality of a layout can be worse when this option was used.</source>
-        <translation>保存纸张长度（如果设置）（导出模式）。该选项告诉程序使用尽可能多的纸张宽度。使用此选项时布局的质量可能会更差.</translation>
+        <translation>保存纸张长度（如果设置）（导出模式）。该选项告诉程序使用尽可能多的纸张宽度。使用此选项时排版的质量可能会更差.</translation>
     </message>
     <message>
         <source>The layout gap width x2, measured in layout units (export mode). Set distance between details and a detail and a sheet.</source>
-        <translation>布局间隙宽度 x2，以布局单位测量（导出模式）。设置细节与细节和图纸之间的距离.</translation>
+        <translation>排版间隙宽度 x2，以排版单位测量（导出模式）。设置细节与细节和图纸之间的距离.</translation>
     </message>
     <message>
         <source>Sets layout groupping cases (export mode): %1.</source>
-        <translation>设置布局分组情况（导出模式）：%1.</translation>
+        <translation>设置排版分组情况（导出模式）:%1.</translation>
     </message>
     <message>
         <source>Run the program in a test mode. The program in this mode loads a single pattern file and silently quit without showing the main window. The key have priority before key &apos;%1&apos;.</source>
@@ -12240,7 +12240,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Shift/Offset layout length measured in layout units (export mode). The option show how many points along edge will be used in creating a layout.</source>
-        <translation>以布局单位测量的平移/偏移布局长度（导出模式）。该选项显示在创建布局时将使用沿边缘的多少个点.</translation>
+        <translation>以排版单位测量的平移/偏移排版长度（导出模式）。该选项显示在创建排版时将使用沿边缘的多少个点.</translation>
     </message>
     <message>
         <source>Shift/Offset length</source>
@@ -12272,15 +12272,15 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Export only details. Export details as they positioned in the details mode. Any layout related options will be ignored.</source>
-        <translation>仅导出详细信息。按其在详细信息模式中的位置导出详细信息。任何与布局相关的选项都将被忽略.</translation>
+        <translation>仅导出详细信息。按其在详细信息模式中的位置导出详细信息。任何与排版相关的选项都将被忽略.</translation>
     </message>
     <message>
         <source>Set size value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
-        <translation>设置使用多尺寸测量（导出模式）打开的图案文件的尺寸值。有效值：%1cm.</translation>
+        <translation>设置使用多尺寸测量（导出模式）打开的图案文件的尺寸值。有效值:%1cm.</translation>
     </message>
     <message>
         <source>Set height value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
-        <translation>将高度值设置为使用多尺寸测量（导出模式）打开的图案文件。有效值：%1cm.</translation>
+        <translation>将高度值设置为使用多尺寸测量（导出模式）打开的图案文件。有效值:%1cm.</translation>
     </message>
     <message>
         <source>Seamly2D open source patternmaking program.</source>
@@ -12374,7 +12374,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Can&apos;t find piece: </source>
-        <translation>找不到片段: </translation>
+        <translation>找不到裁片: </translation>
     </message>
     <message>
         <source>Can&apos;t find path: </source>
@@ -12524,7 +12524,7 @@ load in SeamlyME as usual.
     <name>VException</name>
     <message>
         <source>Exception: %1</source>
-        <translation>异常：%1</translation>
+        <translation>异常:%1</translation>
     </message>
 </context>
 <context>
@@ -12545,7 +12545,7 @@ load in SeamlyME as usual.
     <name>VLayoutPiece</name>
     <message>
         <source>Piece %1 doesn&apos;t have shape.</source>
-        <translation>块 %1 没有形状.</translation>
+        <translation>裁片 %1 没有形状.</translation>
     </message>
 </context>
 <context>
@@ -12877,7 +12877,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Error creating or updating a piece path</source>
-        <translation>创建或更新片段路径时出错</translation>
+        <translation>创建或更新裁片段路径时出错</translation>
     </message>
     <message>
         <source>Error creating or updating anchor point</source>
@@ -12897,7 +12897,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Piece</source>
-        <translation>片</translation>
+        <translation>裁片</translation>
     </message>
     <message>
         <source>white</source>
@@ -12909,11 +12909,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Error creating or updating piece</source>
-        <translation>创建或更新片段时出错</translation>
+        <translation>创建或更新裁片时出错</translation>
     </message>
     <message>
         <source>Error creating or updating union pieces</source>
-        <translation>创建或更新联合片段时出错</translation>
+        <translation>创建或更新联合裁片时出错</translation>
     </message>
     <message>
         <source>Image_name</source>
@@ -12921,7 +12921,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Piece path doesn&apos;t contain nodes</source>
-        <translation>片段路径不包含节点</translation>
+        <translation>裁片路径不包含节点</translation>
     </message>
 </context>
 <context>
@@ -12947,7 +12947,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>layouts</source>
-        <translation>布局</translation>
+        <translation>排版</translation>
     </message>
 </context>
 <context>
@@ -13375,19 +13375,19 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>C1: angle:</source>
-        <translation>C1：角度:</translation>
+        <translation>C1:角度:</translation>
     </message>
     <message>
         <source>C1: length:</source>
-        <translation>C1：长度:</translation>
+        <translation>C1:长度:</translation>
     </message>
     <message>
         <source>C2: angle:</source>
-        <translation>C2：角度:</translation>
+        <translation>C2:角度:</translation>
     </message>
     <message>
         <source>C2: length:</source>
-        <translation>C2：长度:</translation>
+        <translation>C2:长度:</translation>
     </message>
     <message>
         <source>Axis point:</source>
@@ -14574,12 +14574,12 @@ load in SeamlyME as usual.
     <message>
         <source>Seg_</source>
         <comment>Segment. Leave the _ symbol in translation</comment>
-        <translation>说_</translation>
+        <translation>Seg_</translation>
     </message>
     <message>
         <source>CurrentLength</source>
         <comment>Do not add space between words</comment>
-        <translation>当前长度</translation>
+        <translation>CurrentLength</translation>
     </message>
     <message>
         <source>size</source>
@@ -14604,7 +14604,7 @@ load in SeamlyME as usual.
     <message>
         <source>CurrentSeamAllowance</source>
         <comment>Do not add space between words</comment>
-        <translation>当前缝份</translation>
+        <translation>CurrentSeamAllowance</translation>
     </message>
     <message>
         <source>date</source>
@@ -15059,36 +15059,36 @@ Example: fmod(3.3;2) = 1.3</comment>
     <name>VisToolCubicBezierPath</name>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select seven or more points</source>
-        <translation>&lt;b&gt;曲线路径&lt;/b&gt;：选择七个或更多点</translation>
+        <translation>&lt;b&gt;曲线路径&lt;/b&gt;:选择七个或更多点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select more points for complete segment</source>
-        <translation>&lt;b&gt;曲线路径&lt;/b&gt;：为完整的线段选择更多点</translation>
+        <translation>&lt;b&gt;曲线路径&lt;/b&gt;:为完整的线段选择更多点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select seven or more points, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;曲线路径&lt;/b&gt;：选择七个或更多点，按&lt;b&gt;ENTER&lt;/b&gt;完成工具创建</translation>
+        <translation>&lt;b&gt;曲线路径&lt;/b&gt;:选择七个或更多点，按&lt;b&gt;ENTER&lt;/b&gt;完成工具创建</translation>
     </message>
 </context>
 <context>
     <name>VisToolCurveIntersectAxis</name>
     <message>
         <source>&lt;b&gt;Intersection curve and axis&lt;/b&gt;: angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation </source>
-        <translation>&lt;b&gt;曲线与轴相交&lt;/b&gt;：角度 = %1°，按住&lt;b&gt;SHIFT&lt;/b&gt;约束角度，按&lt;b&gt;ENTER&lt;/b&gt;完成工具创建 </translation>
+        <translation>&lt;b&gt;曲线与轴相交&lt;/b&gt;:角度 = %1°，按住&lt;b&gt;SHIFT&lt;/b&gt;约束角度，按&lt;b&gt;ENTER&lt;/b&gt;完成工具创建 </translation>
     </message>
 </context>
 <context>
     <name>VisToolEndLine</name>
     <message>
         <source>&lt;b&gt;Point Length and Angle&lt;/b&gt;: angle = %1°, length = %2%3; Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;点长度和角度&lt;/b&gt;：角度 = %1°，长度 = %2%3；按住&lt;b&gt;SHIFT&lt;/b&gt;约束角度，按&lt;b&gt;ENTER&lt;/b&gt;完成工具创建</translation>
+        <translation>&lt;b&gt;点长度和角度&lt;/b&gt;:角度 = %1°，长度 = %2%3；按住&lt;b&gt;SHIFT&lt;/b&gt;约束角度，按&lt;b&gt;ENTER&lt;/b&gt;完成工具创建</translation>
     </message>
 </context>
 <context>
     <name>VisToolLineIntersectAxis</name>
     <message>
         <source>&lt;b&gt;Intersection line and axis&lt;/b&gt;: angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;交线与轴&lt;/b&gt;：角度 = %1°，按住&lt;b&gt;SHIFT&lt;/b&gt;约束角度，按&lt;b&gt;ENTER&lt;/b&gt;完成工具创建</translation>
+        <translation>&lt;b&gt;交线与轴&lt;/b&gt;:角度 = %1°，按住&lt;b&gt;SHIFT&lt;/b&gt;约束角度，按&lt;b&gt;ENTER&lt;/b&gt;完成工具创建</translation>
     </message>
 </context>
 <context>
@@ -15120,11 +15120,11 @@ Example: fmod(3.3;2) = 1.3</comment>
     <name>VisToolSplinePath</name>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select three or more points</source>
-        <translation>&lt;b&gt;曲线路径&lt;/b&gt;：选择三个或更多点</translation>
+        <translation>&lt;b&gt;曲线路径&lt;/b&gt;:选择三个或更多点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select three or more points, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;曲线路径&lt;/b&gt;：选择三个或更多点，按&lt;b&gt;ENTER&lt;/b&gt;完成工具创建</translation>
+        <translation>&lt;b&gt;曲线路径&lt;/b&gt;:选择三个或更多点，按&lt;b&gt;ENTER&lt;/b&gt;完成工具创建</translation>
     </message>
     <message>
         <source>Use &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle</source>
