@@ -98,6 +98,12 @@ DialogAboutSeamlyMe::DialogAboutSeamlyMe(QWidget *parent)
         FvUpdater::sharedUpdater()->checkForUpdatesNotSilent();
     });
 
+    // hide update button if running in flatpak, as flatpaks update outside the app
+    if (QFileInfo::exists("/.flatpak-info"))
+    {
+        ui->pushButtonCheckUpdate->hide();
+    }
+
     // By default on Windows font point size 8 points we need 11 like on Linux.
     FontPointSize(ui->label_Legal_Stuff, 11);
     FontPointSize(ui->label_SeamlyMe_Built, 11);
