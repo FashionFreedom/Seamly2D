@@ -303,11 +303,6 @@ jobs:
           path: windows-build/${{ matrix.release-file }}
           if-no-files-found: error
 
-      - uses: actions/upload-artifact@v6
-        with:
-          name: windows-build-${{ matrix.msvc-arch }}
-          path: windows-build/
-
   publish:
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'develop'
     runs-on: ubuntu-latest
