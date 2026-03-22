@@ -128,6 +128,12 @@ About2DAppDialog::About2DAppDialog(QWidget *parent)
 	ui->downloadProgress->setValue(0);
 	connect(FvUpdater::sharedUpdater(), &FvUpdater::setProgress, this, &About2DAppDialog::setProgressValue);
 
+    // hide update button if running in flatpak, as flatpaks update outside the app
+    if (QFileInfo::exists("/.flatpak-info"))
+    {
+        ui->pushButtonCheckUpdate->hide();
+    }
+
     //System Tab
     ui->sysVersion_value->setText(QString("Seamly2D %1").arg(APP_VERSION_STR));
     ui->sysRevision_value->setText(revision);
