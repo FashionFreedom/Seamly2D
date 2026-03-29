@@ -9,6 +9,7 @@ HEADERS += \
     $$PWD/dialogs.h \
     $$PWD/dialogpatternproperties.h \
     $$PWD/dialognewpattern.h \
+    $$PWD/export_progress_dialog.h \
     $$PWD/layoutsettings_dialog.h \
     $$PWD/dialoglayoutprogress.h \
     $$PWD/dialogvariables.h \
@@ -33,6 +34,7 @@ SOURCES += \
     $$PWD/decimalchart_dialog.cpp \
     $$PWD/dialogpatternproperties.cpp \
     $$PWD/dialognewpattern.cpp \
+    $$PWD/export_progress_dialog.cpp \
     $$PWD/layoutsettings_dialog.cpp \
     $$PWD/dialoglayoutprogress.cpp \
     $$PWD/dialogvariables.cpp \
@@ -59,6 +61,7 @@ FORMS += \
     $$PWD/dialoglayoutprogress.ui \
     $$PWD/dialogvariables.ui \
     $$PWD/export_layout_dialog.ui \
+    $$PWD/export_progress_dialog.ui \
     $$PWD/groups_widget.ui \
     $$PWD/history_dialog.ui \
     $$PWD/layoutsettings_dialog.ui \

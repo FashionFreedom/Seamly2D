@@ -61,6 +61,7 @@
 #include "dialogs/dialogs.h"
 #include "dialogs/calculator_dialog.h"
 #include "dialogs/decimalchart_dialog.h"
+#include "dialogs/export_progress_dialog.h"
 #include "../ifc/exception/vexceptionobjecterror.h"
 #include "../ifc/exception/vexceptionconversionerror.h"
 #include "../ifc/exception/vexceptionemptyparameter.h"
@@ -121,6 +122,7 @@
 #include <QLabel>
 #include <QMessageBox>
 #include <QProcess>
+#include <QProgressDialog>
 #include <QScrollBar>
 #include <QSettings>
 #include <QSharedPointer>
@@ -6798,8 +6800,7 @@ void MainWindow::exportLayoutAs()
         // Populate size selection if multisize pattern
         if (qApp->patternType() == MeasurementsType::Multisize)
         {
-            const QStringList sizes = MeasurementVariable::ListSizes(
-                doc->GetGradationSizes(), qApp->patternUnit());
+            const QStringList sizes = MeasurementVariable::ListSizes(doc->GetGradationSizes(), qApp->patternUnit());
             dialog.setAvailableSizes(sizes);
         }
 
@@ -6809,7 +6810,7 @@ void MainWindow::exportLayoutAs()
             return;
         }
 
-        if (!dialog.isBatchSizeExport())
+        if (!dialog.isBatchExport())
         {
             // Original single-export path (unchanged)
             ExportData(QVector<VLayoutPiece>(), dialog);
@@ -6826,27 +6827,33 @@ void MainWindow::exportLayoutAs()
             const QString measurementPath = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
 
             int exportedCount = 0;
-            QStringList failedSizes;
+            bool exportFailed = false;
 
-            for (const QString &sizeStr : sizes)
+            ExportProgressDialog *progressDialog = new ExportProgressDialog(0, sizes.size(), this);
+            progressDialog->showProgressBar(false);
+
+            for (const QString &size : sizes)
             {
                 bool ok;
-                const int newSize = sizeStr.toInt(&ok);
+                const int newSize = size.toInt(&ok);
                 if (!ok)
                 {
-                    failedSizes.append(sizeStr);
+                    exportFailed = true;
                     continue;
                 }
 
                 // Apply new size
                 if (!updateMeasurements(measurementPath, newSize, currentHeight))
                 {
-                    failedSizes.append(sizeStr);
+                    exportFailed = true;
                     continue;
                 }
                 doc->LiteParseTree(Document::LiteParse);
 
                 // Regenerate piece list for new size
+                const QString exportFilename = originalFileName + QStringLiteral("_") + size;
+                setStatusMessage(tr("Expoting... ") + exportFilename + ExportLayoutDialog::exportFormatSuffix(dialog.format()));
+
                 const QHash<quint32, VPiece> *allPieces = pattern->DataPieces();
                 QHash<quint32, VPiece> piecesInLayout;
                 QHash<quint32, VPiece>::const_iterator it = allPieces->constBegin();
@@ -6888,15 +6895,29 @@ void MainWindow::exportLayoutAs()
 
                 if (!LayoutSettings(lGenerator))
                 {
-                    failedSizes.append(sizeStr);
-                    continue;
+                    exportFailed = true;
                 }
 
                 // Set filename with size suffix and export
-                dialog.setFileName(originalFileName + QStringLiteral("_") + sizeStr);
+                dialog.setFileName(exportFilename);
                 ExportData(QVector<VLayoutPiece>(), dialog);
+
+                // Insert current file
+                progressDialog->insertFileName(exportFilename + ExportLayoutDialog::exportFormatSuffix(dialog.format()));
+                if (exportFailed)
+                {
+                    progressDialog->setFileStatus(ProgressStatus::Failed);
+                    exportFailed = false;
+                }
+                else
+                {
+                    progressDialog->setFileStatus(ProgressStatus::Completed);
+                }
+
                 exportedCount++;
+                progressDialog->setProgress(exportedCount);
             }
+            setStatusMessage("");
 
             // Restore original size
             if (updateMeasurements(measurementPath, originalSize, currentHeight))
@@ -6948,21 +6969,7 @@ void MainWindow::exportLayoutAs()
             dialog.setFileName(originalFileName);
 
             // Show summary
-            QString message;
-            if (exportedCount > 0)
-            {
-                message = tr("Successfully exported %1 size(s) to %2.")
-                    .arg(exportedCount).arg(dialog.path());
-            }
-            if (!failedSizes.isEmpty())
-            {
-                if (!message.isEmpty())
-                {
-                    message += QStringLiteral("\n");
-                }
-                message += tr("Failed to export sizes: %1.").arg(failedSizes.join(QStringLiteral(", ")));
-            }
-            QMessageBox::information(this, tr("Batch Export Complete"), message);
+            progressDialog->show();
         }
     }
 
@@ -7027,8 +7034,7 @@ void MainWindow::exportPiecesAs()
         // Populate size selection if multisize pattern
         if (qApp->patternType() == MeasurementsType::Multisize)
         {
-            const QStringList sizes = MeasurementVariable::ListSizes(
-                doc->GetGradationSizes(), qApp->patternUnit());
+            const QStringList sizes = MeasurementVariable::ListSizes(doc->GetGradationSizes(), qApp->patternUnit());
             dialog.setAvailableSizes(sizes);
         }
 
@@ -7038,24 +7044,25 @@ void MainWindow::exportPiecesAs()
             return;
         }
 
-        if (dialog.isBatchSizeExport())
+        if (dialog.isBatchExport())
         {
             const QStringList selectedSizes = dialog.selectedSizes();
             const QString baseName = FileName();
             const qreal originalSize = VContainer::size();
-            const QString measurementPath = AbsoluteMPath(qApp->getFilePath(),
-                                                          doc->MPath());
-            int exported = 0;
-            QStringList failures;
+            const QString measurementPath = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
+            int exportCount = 0;
+            bool  failed = false;
 
-            for (const QString &sizeStr : selectedSizes)
+            ExportProgressDialog *exportProgress = new ExportProgressDialog(0, selectedSizes.size(), this);
+            exportProgress->showProgressBar(true);
+            exportProgress->show();
+
+            for (const QString &size : selectedSizes)
             {
-                const int sizeVal = qRound(UnitConvertor(sizeStr.toDouble(),
-                                                         qApp->patternUnit(), Unit::Cm));
+                const int sizeValue = qRound(UnitConvertor(size.toDouble(), qApp->patternUnit(), Unit::Cm));
 
                 // Switch to this size
-                updateMeasurements(measurementPath, sizeVal,
-                                   static_cast<int>(VContainer::height()));
+                updateMeasurements(measurementPath, sizeValue, static_cast<int>(VContainer::height()));
                 doc->LiteParseTree(Document::LiteParse);
 
                 // Rebuild piece list for this size
@@ -7076,30 +7083,36 @@ void MainWindow::exportPiecesAs()
                 }
                 catch (VException &)
                 {
-                    failures << sizeStr;
+                    failed = true;
                     continue;
                 }
 
                 // Set size-suffixed filename and export
-                const QFileInfo fi(baseName);
-                const QString sizeName = fi.baseName() + "_" + sizeStr;
+                const QFileInfo fileInfo(baseName);
+                const QString sizeName = fileInfo.baseName() + "_" + size;
                 dialog.setFileName(sizeName);
                 ExportData(sizePieceList, dialog);
-                ++exported;
+
+                // Insert current file
+                exportProgress->insertFileName(sizeName + ExportLayoutDialog::exportFormatSuffix(dialog.format()));
+                if (failed)
+                {
+                    exportProgress->setFileStatus(ProgressStatus::Failed);
+                    failed = false;
+                }
+                else
+                {
+                    exportProgress->setFileStatus(ProgressStatus::Completed);
+                }
+
+                ++exportCount;
+                exportProgress->setProgress(exportCount);
+                QCoreApplication::processEvents();
             }
 
             // Restore original size
-            updateMeasurements(measurementPath, static_cast<int>(originalSize),
-                               static_cast<int>(VContainer::height()));
+            updateMeasurements(measurementPath, static_cast<int>(originalSize), static_cast<int>(VContainer::height()));
             doc->LiteParseTree(Document::LiteParse);
-
-            QString msg = tr("Exported %1 of %2 sizes.")
-                              .arg(exported).arg(selectedSizes.size());
-            if (!failures.isEmpty())
-            {
-                msg += "\n" + tr("Failed sizes: %1").arg(failures.join(", "));
-            }
-            QMessageBox::information(this, tr("Batch Export"), msg);
         }
         else
         {
