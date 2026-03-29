@@ -6795,13 +6795,175 @@ void MainWindow::exportLayoutAs()
     {
         ExportLayoutDialog dialog(scenes.size(), Draw::Layout, FileName(), this);
 
+        // Populate size selection if multisize pattern
+        if (qApp->patternType() == MeasurementsType::Multisize)
+        {
+            const QStringList sizes = MeasurementVariable::ListSizes(
+                doc->GetGradationSizes(), qApp->patternUnit());
+            dialog.setAvailableSizes(sizes);
+        }
+
         if (dialog.exec() == QDialog::Rejected)
         {
             ui->exportLayout_ToolButton->setChecked(false);
             return;
         }
 
-        ExportData(QVector<VLayoutPiece>(), dialog);
+        if (!dialog.isBatchSizeExport())
+        {
+            // Original single-export path (unchanged)
+            ExportData(QVector<VLayoutPiece>(), dialog);
+        }
+        else
+        {
+            // Batch export: iterate over selected sizes
+            const QStringList sizes = dialog.selectedSizes();
+            const QString originalFileName = dialog.fileName();
+
+            // Save current state
+            const int originalSize = static_cast<int>(VContainer::size());
+            const int currentHeight = static_cast<int>(VContainer::height());
+            const QString measurementPath = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
+
+            int exportedCount = 0;
+            QStringList failedSizes;
+
+            for (const QString &sizeStr : sizes)
+            {
+                bool ok;
+                const int newSize = sizeStr.toInt(&ok);
+                if (!ok)
+                {
+                    failedSizes.append(sizeStr);
+                    continue;
+                }
+
+                // Apply new size
+                if (!updateMeasurements(measurementPath, newSize, currentHeight))
+                {
+                    failedSizes.append(sizeStr);
+                    continue;
+                }
+                doc->LiteParseTree(Document::LiteParse);
+
+                // Regenerate piece list for new size
+                const QHash<quint32, VPiece> *allPieces = pattern->DataPieces();
+                QHash<quint32, VPiece> piecesInLayout;
+                QHash<quint32, VPiece>::const_iterator it = allPieces->constBegin();
+                while (it != allPieces->constEnd())
+                {
+                    if (it.value().isInLayout())
+                    {
+                        piecesInLayout.insert(it.key(), it.value());
+                    }
+                    ++it;
+                }
+                pieceList = preparePiecesForLayout(piecesInLayout);
+
+                // Recreate layout generator with saved settings
+                VLayoutGenerator lGenerator;
+                const VSettings *settings = qApp->Seamly2DSettings();
+                lGenerator.setLayoutGap(settings->getLayoutGap());
+                lGenerator.setCaseType(settings->GetLayoutGroup());
+                lGenerator.SetPaperHeight(settings->GetLayoutPaperHeight());
+                lGenerator.SetPaperWidth(settings->GetLayoutPaperWidth());
+                lGenerator.SetShift(static_cast<quint32>(qFloor(settings->GetLayoutShift())));
+                lGenerator.SetRotate(settings->GetLayoutRotate());
+                lGenerator.SetRotationIncrease(settings->GetLayoutRotationIncrease());
+                lGenerator.SetAutoCrop(settings->GetLayoutAutoCrop());
+                lGenerator.SetSaveLength(settings->GetLayoutSaveLength());
+                lGenerator.SetUnitePages(settings->GetLayoutUnitePages());
+                lGenerator.setStripOptimization(settings->useStripOptimization());
+                lGenerator.SetMultiplier(settings->GetMultiplier());
+                lGenerator.setTextAsPaths(settings->GetTextAsPaths());
+
+                if (settings->GetIgnoreAllFields())
+                {
+                    lGenerator.SetPrinterFields(false, QMarginsF());
+                }
+                else
+                {
+                    lGenerator.SetPrinterFields(true, settings->GetFields(QMarginsF()));
+                }
+
+                if (!LayoutSettings(lGenerator))
+                {
+                    failedSizes.append(sizeStr);
+                    continue;
+                }
+
+                // Set filename with size suffix and export
+                dialog.setFileName(originalFileName + QStringLiteral("_") + sizeStr);
+                ExportData(QVector<VLayoutPiece>(), dialog);
+                exportedCount++;
+            }
+
+            // Restore original size
+            if (updateMeasurements(measurementPath, originalSize, currentHeight))
+            {
+                doc->LiteParseTree(Document::LiteParse);
+                emit pieceScene->DimensionsChanged();
+            }
+
+            // Regenerate original layout
+            const QHash<quint32, VPiece> *allPieces = pattern->DataPieces();
+            QHash<quint32, VPiece> piecesInLayout;
+            QHash<quint32, VPiece>::const_iterator it = allPieces->constBegin();
+            while (it != allPieces->constEnd())
+            {
+                if (it.value().isInLayout())
+                {
+                    piecesInLayout.insert(it.key(), it.value());
+                }
+                ++it;
+            }
+            pieceList = preparePiecesForLayout(piecesInLayout);
+
+            VLayoutGenerator lGenerator;
+            const VSettings *settings = qApp->Seamly2DSettings();
+            lGenerator.setLayoutGap(settings->getLayoutGap());
+            lGenerator.setCaseType(settings->GetLayoutGroup());
+            lGenerator.SetPaperHeight(settings->GetLayoutPaperHeight());
+            lGenerator.SetPaperWidth(settings->GetLayoutPaperWidth());
+            lGenerator.SetShift(static_cast<quint32>(qFloor(settings->GetLayoutShift())));
+            lGenerator.SetRotate(settings->GetLayoutRotate());
+            lGenerator.SetRotationIncrease(settings->GetLayoutRotationIncrease());
+            lGenerator.SetAutoCrop(settings->GetLayoutAutoCrop());
+            lGenerator.SetSaveLength(settings->GetLayoutSaveLength());
+            lGenerator.SetUnitePages(settings->GetLayoutUnitePages());
+            lGenerator.setStripOptimization(settings->useStripOptimization());
+            lGenerator.SetMultiplier(settings->GetMultiplier());
+            lGenerator.setTextAsPaths(settings->GetTextAsPaths());
+            if (settings->GetIgnoreAllFields())
+            {
+                lGenerator.SetPrinterFields(false, QMarginsF());
+            }
+            else
+            {
+                lGenerator.SetPrinterFields(true, settings->GetFields(QMarginsF()));
+            }
+            LayoutSettings(lGenerator);
+
+            // Restore original filename in dialog
+            dialog.setFileName(originalFileName);
+
+            // Show summary
+            QString message;
+            if (exportedCount > 0)
+            {
+                message = tr("Successfully exported %1 size(s) to %2.")
+                    .arg(exportedCount).arg(dialog.path());
+            }
+            if (!failedSizes.isEmpty())
+            {
+                if (!message.isEmpty())
+                {
+                    message += QStringLiteral("\n");
+                }
+                message += tr("Failed to export sizes: %1.").arg(failedSizes.join(QStringLiteral(", ")));
+            }
+            QMessageBox::information(this, tr("Batch Export Complete"), message);
+        }
     }
 
     catch (const VException &exception)
