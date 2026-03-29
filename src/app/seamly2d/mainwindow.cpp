@@ -7024,13 +7024,87 @@ void MainWindow::exportPiecesAs()
         ExportLayoutDialog dialog(1, Draw::Modeling, FileName(), this);
         dialog.setWindowTitle("Export Pattern Pieces");
 
+        // Populate size selection if multisize pattern
+        if (qApp->patternType() == MeasurementsType::Multisize)
+        {
+            const QStringList sizes = MeasurementVariable::ListSizes(
+                doc->GetGradationSizes(), qApp->patternUnit());
+            dialog.setAvailableSizes(sizes);
+        }
+
         if (dialog.exec() == QDialog::Rejected)
         {
             ui->exportPiecesAs_ToolButton->setChecked(false);
             return;
         }
 
-        ExportData(pieceList, dialog);
+        if (dialog.isBatchSizeExport())
+        {
+            const QStringList selectedSizes = dialog.selectedSizes();
+            const QString baseName = FileName();
+            const qreal originalSize = VContainer::size();
+            const QString measurementPath = AbsoluteMPath(qApp->getFilePath(),
+                                                          doc->MPath());
+            int exported = 0;
+            QStringList failures;
+
+            for (const QString &sizeStr : selectedSizes)
+            {
+                const int sizeVal = qRound(UnitConvertor(sizeStr.toDouble(),
+                                                         qApp->patternUnit(), Unit::Cm));
+
+                // Switch to this size
+                updateMeasurements(measurementPath, sizeVal,
+                                   static_cast<int>(VContainer::height()));
+                doc->LiteParseTree(Document::LiteParse);
+
+                // Rebuild piece list for this size
+                const QHash<quint32, VPiece> *pieces = pattern->DataPieces();
+                QHash<quint32, VPiece> inLayout;
+                for (auto it = pieces->constBegin(); it != pieces->constEnd(); ++it)
+                {
+                    if (it.value().isInLayout())
+                    {
+                        inLayout.insert(it.key(), it.value());
+                    }
+                }
+
+                QVector<VLayoutPiece> sizePieceList;
+                try
+                {
+                    sizePieceList = preparePiecesForLayout(inLayout);
+                }
+                catch (VException &)
+                {
+                    failures << sizeStr;
+                    continue;
+                }
+
+                // Set size-suffixed filename and export
+                const QFileInfo fi(baseName);
+                const QString sizeName = fi.baseName() + "_" + sizeStr;
+                dialog.setFileName(sizeName);
+                ExportData(sizePieceList, dialog);
+                ++exported;
+            }
+
+            // Restore original size
+            updateMeasurements(measurementPath, static_cast<int>(originalSize),
+                               static_cast<int>(VContainer::height()));
+            doc->LiteParseTree(Document::LiteParse);
+
+            QString msg = tr("Exported %1 of %2 sizes.")
+                              .arg(exported).arg(selectedSizes.size());
+            if (!failures.isEmpty())
+            {
+                msg += "\n" + tr("Failed sizes: %1").arg(failures.join(", "));
+            }
+            QMessageBox::information(this, tr("Batch Export"), msg);
+        }
+        else
+        {
+            ExportData(pieceList, dialog);
+        }
     }
 
     catch (const VException &exception)
