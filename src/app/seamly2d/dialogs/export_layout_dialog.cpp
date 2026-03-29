@@ -185,6 +185,12 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
 
     initTemplates(ui->templates_ComboBox);
 
+    // Size selection group box: hidden by default, shown when setAvailableSizes() is called
+    ui->sizeSelection_GroupBox->setVisible(false);
+
+    connect(ui->selectAll_PushButton, &QPushButton::clicked, this, &ExportLayoutDialog::selectAllSizes);
+    connect(ui->deselectAll_PushButton, &QPushButton::clicked, this, &ExportLayoutDialog::deselectAllSizes);
+
     readSettings();
     showExportFiles(); //Show example for current format.
     enableBinaryDXFFormatCheckbox();
@@ -485,6 +491,12 @@ QString ExportLayoutDialog::fileName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void ExportLayoutDialog::setFileName(const QString &name)
+{
+    ui->filename_LineEdit->setText(name);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 LayoutExportFormat ExportLayoutDialog::format() const
 {
     return static_cast<LayoutExportFormat>(ui->format_ComboBox->currentData().toInt());
@@ -592,28 +604,69 @@ void ExportLayoutDialog::showExportFiles()
     ui->export_Frame->show();
     adjustSize();
 
+    const QStringList checkedSizes = selectedSizes();
+    const bool batchMode = !checkedSizes.isEmpty();
+
     if (currentFormat == LayoutExportFormat::PDFTiled)
     {
-        const QString name = QString("%1%2")
-        .arg(fileName())                     //1
-        .arg(exportFormatSuffix(format()));  //2
-
-        QListWidgetItem *item = new QListWidgetItem(name);
-        SCASSERT(item != nullptr)
-        ui->exportFiles_ListWidget->addItem(item);
-    }
-    else
-    {
-        for (int i=0; i < m_count; ++i)
+        if (batchMode)
         {
-            const QString name = QString("%1_0%2%3")
+            for (const QString &size : checkedSizes)
+            {
+                const QString name = QString("%1_%2%3")
+                .arg(fileName())                     //1
+                .arg(size)                           //2
+                .arg(exportFormatSuffix(format()));  //3
+
+                QListWidgetItem *item = new QListWidgetItem(name);
+                SCASSERT(item != nullptr)
+                ui->exportFiles_ListWidget->addItem(item);
+            }
+        }
+        else
+        {
+            const QString name = QString("%1%2")
             .arg(fileName())                     //1
-            .arg(QString::number(i+1))           //2
-            .arg(exportFormatSuffix(format()));  //3
+            .arg(exportFormatSuffix(format()));  //2
 
             QListWidgetItem *item = new QListWidgetItem(name);
             SCASSERT(item != nullptr)
             ui->exportFiles_ListWidget->addItem(item);
+        }
+    }
+    else
+    {
+        if (batchMode)
+        {
+            for (const QString &size : checkedSizes)
+            {
+                for (int i=0; i < m_count; ++i)
+                {
+                    const QString name = QString("%1_%2_0%3%4")
+                    .arg(fileName())                     //1
+                    .arg(size)                           //2
+                    .arg(QString::number(i+1))           //3
+                    .arg(exportFormatSuffix(format()));  //4
+
+                    QListWidgetItem *item = new QListWidgetItem(name);
+                    SCASSERT(item != nullptr)
+                    ui->exportFiles_ListWidget->addItem(item);
+                }
+            }
+        }
+        else
+        {
+            for (int i=0; i < m_count; ++i)
+            {
+                const QString name = QString("%1_0%2%3")
+                .arg(fileName())                     //1
+                .arg(QString::number(i+1))           //2
+                .arg(exportFormatSuffix(format()));  //3
+
+                QListWidgetItem *item = new QListWidgetItem(name);
+                SCASSERT(item != nullptr)
+                ui->exportFiles_ListWidget->addItem(item);
+            }
         }
     }
 
@@ -845,4 +898,87 @@ QString ExportLayoutDialog::modeString() const
         }
     }
     return modeStr;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void ExportLayoutDialog::setAvailableSizes(const QStringList &sizes)
+{
+    ui->sizeList_ListWidget->clear();
+
+    if (sizes.isEmpty())
+    {
+        ui->sizeNote_Label->setVisible(true);
+        ui->sizeList_ListWidget->setVisible(false);
+        ui->selectAll_PushButton->setEnabled(false);
+        ui->deselectAll_PushButton->setEnabled(false);
+        ui->sizeSelection_GroupBox->setVisible(false);
+        return;
+    }
+
+    ui->sizeNote_Label->setVisible(false);
+    ui->sizeList_ListWidget->setVisible(true);
+    ui->selectAll_PushButton->setEnabled(true);
+    ui->deselectAll_PushButton->setEnabled(true);
+    ui->sizeSelection_GroupBox->setVisible(true);
+
+    for (const QString &size : sizes)
+    {
+        QListWidgetItem *item = new QListWidgetItem(size);
+        SCASSERT(item != nullptr)
+        item->setFlags(item->flags() | Qt::ItemIsUserCheckable);
+        item->setCheckState(Qt::Unchecked);
+        ui->sizeList_ListWidget->addItem(item);
+    }
+
+    // Reconnect to update file preview when sizes change
+    connect(ui->sizeList_ListWidget, &QListWidget::itemChanged, this, &ExportLayoutDialog::showExportFiles);
+
+    adjustSize();
+    setMinimumHeight(this->height());
+    setMaximumHeight(16777215); // Allow expansion
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QStringList ExportLayoutDialog::selectedSizes() const
+{
+    QStringList sizes;
+    for (int i = 0; i < ui->sizeList_ListWidget->count(); ++i)
+    {
+        QListWidgetItem *item = ui->sizeList_ListWidget->item(i);
+        if (item->checkState() == Qt::Checked)
+        {
+            sizes.append(item->text());
+        }
+    }
+    return sizes;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool ExportLayoutDialog::isBatchSizeExport() const
+{
+    return !selectedSizes().isEmpty();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void ExportLayoutDialog::selectAllSizes()
+{
+    ui->sizeList_ListWidget->blockSignals(true);
+    for (int i = 0; i < ui->sizeList_ListWidget->count(); ++i)
+    {
+        ui->sizeList_ListWidget->item(i)->setCheckState(Qt::Checked);
+    }
+    ui->sizeList_ListWidget->blockSignals(false);
+    showExportFiles();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void ExportLayoutDialog::deselectAllSizes()
+{
+    ui->sizeList_ListWidget->blockSignals(true);
+    for (int i = 0; i < ui->sizeList_ListWidget->count(); ++i)
+    {
+        ui->sizeList_ListWidget->item(i)->setCheckState(Qt::Unchecked);
+    }
+    ui->sizeList_ListWidget->blockSignals(false);
+    showExportFiles();
 }

@@ -16,7 +16,7 @@
   <property name="maximumSize">
    <size>
     <width>900</width>
-    <height>400</height>
+    <height>600</height>
    </size>
   </property>
   <property name="font">
@@ -484,6 +484,72 @@ border-radius: 4px;
          </widget>
         </item>
        </layout>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="sizeSelection_GroupBox">
+        <property name="title">
+         <string>Export Selected Sizes</string>
+        </property>
+        <layout class="QVBoxLayout" name="sizeSelection_VLayout">
+         <item>
+          <widget class="QLabel" name="sizeNote_Label">
+           <property name="text">
+            <string>No multisize measurements loaded.</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="sizeList_ListWidget">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>120</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="sizeButtons_HLayout">
+           <item>
+            <widget class="QPushButton" name="selectAll_PushButton">
+             <property name="text">
+              <string>Select All</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="deselectAll_PushButton">
+             <property name="text">
+              <string>Deselect All</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="sizeButtons_Spacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
       </item>
      </layout>
     </widget>

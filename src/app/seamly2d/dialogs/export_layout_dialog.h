@@ -57,6 +57,7 @@ public:
 
     QString               path() const;
     QString               fileName() const;
+    void                  setFileName(const QString &name);
     QString               modeString() const;
 
     LayoutExportFormat    format() const;
@@ -76,6 +77,10 @@ public:
     bool                  isTextAsPaths() const;
     void                  setTextAsPaths(bool textAsPaths);
 
+    void                  setAvailableSizes(const QStringList &sizes);
+    QStringList           selectedSizes() const;
+    bool                  isBatchSizeExport() const;
+
 protected:
     virtual void          showEvent(QShowEvent *event) override;
     void                  initTemplates(QComboBox *templates);
@@ -84,6 +89,8 @@ private slots:
     void                  save();
     void                  pathChanged(const QString &text);
     void                  showExportFiles();
+    void                  selectAllSizes();
+    void                  deselectAllSizes();
 
 private:
     Q_DISABLE_COPY(ExportLayoutDialog)
