@@ -3794,6 +3794,45 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
         <source>Paper format (tiled PDF only)</source>
         <translation>Paperimuoto (vain laatoitettu PDF)</translation>
     </message>
+    <message>
+        <source>Export Selected Sizes</source>
+        <translation>Vie valitut koot</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Valitse Kaikki</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Vie</translation>
+    </message>
+</context>
+<context>
+    <name>ExportProgressDialog</name>
+    <message>
+        <source>Exporting files...</source>
+        <translation>Viedään tiedostoja...</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Tiedosto</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Odottaa</translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation>Valmis</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Epäonnistui</translation>
+    </message>
 </context>
 <context>
     <name>FvUpdater</name>
@@ -7073,6 +7112,10 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Next Draft Block</source>
         <translation>Seuraava luonnospala</translation>
+    </message>
+    <message>
+        <source>Exporting...</source>
+        <translation>Viedään...</translation>
     </message>
 </context>
 <context>

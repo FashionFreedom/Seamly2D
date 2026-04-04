@@ -6852,7 +6852,7 @@ void MainWindow::exportLayoutAs()
 
                 // Regenerate piece list for new size
                 const QString exportFilename = originalFileName + QStringLiteral("_") + size;
-                setStatusMessage(tr("Expoting... ") + exportFilename + ExportLayoutDialog::exportFormatSuffix(dialog.format()));
+                setStatusMessage(tr("Exporting...") + exportFilename + ExportLayoutDialog::exportFormatSuffix(dialog.format()));
 
                 const QHash<quint32, VPiece> *allPieces = pattern->DataPieces();
                 QHash<quint32, VPiece> piecesInLayout;

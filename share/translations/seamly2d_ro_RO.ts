@@ -3796,6 +3796,45 @@ Vă rugăm să încercați să anulați ultima operațiune sau să remediați fo
         <source>Paper format (tiled PDF only)</source>
         <translation>Format hârtie (doar PDF cu tile)</translation>
     </message>
+    <message>
+        <source>Export Selected Sizes</source>
+        <translation>Exportați dimensiunile selectate</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Selectați Toate</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportare</translation>
+    </message>
+</context>
+<context>
+    <name>ExportProgressDialog</name>
+    <message>
+        <source>Exporting files...</source>
+        <translation>Se exportă fișiere...</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fișier</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stare</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>În așteptare</translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation>Terminat</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>A eșuat</translation>
+    </message>
 </context>
 <context>
     <name>FvUpdater</name>
@@ -7076,6 +7115,10 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Next Draft Block</source>
         <translation>Următorul bloc de schițe</translation>
+    </message>
+    <message>
+        <source>Exporting...</source>
+        <translation>Exportator...</translation>
     </message>
 </context>
 <context>

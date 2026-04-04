@@ -3794,6 +3794,45 @@ Lütfen son işlemi geri almayı veya bozuk formülü düzeltmeyi deneyin.</tran
         <source>Paper format (tiled PDF only)</source>
         <translation>Kağıt formatı (sadece döşenmiş PDF)</translation>
     </message>
+    <message>
+        <source>Export Selected Sizes</source>
+        <translation>Seçili Boyutları Dışa Aktar</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Tümünü Seç</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Dışa Aktar</translation>
+    </message>
+</context>
+<context>
+    <name>ExportProgressDialog</name>
+    <message>
+        <source>Exporting files...</source>
+        <translation>Dosyalar dışa aktarılıyor...</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Dosya</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Durum</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Askıda olması</translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation>Tamamlanmış</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Arızalı</translation>
+    </message>
 </context>
 <context>
     <name>FvUpdater</name>
@@ -7074,6 +7113,10 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Next Draft Block</source>
         <translation>Sonraki Taslak Bloğu</translation>
+    </message>
+    <message>
+        <source>Exporting...</source>
+        <translation>Dışa aktarılıyor...</translation>
     </message>
 </context>
 <context>

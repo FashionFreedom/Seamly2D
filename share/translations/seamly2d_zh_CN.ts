@@ -3794,6 +3794,45 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <source>Paper format (tiled PDF only)</source>
         <translation>纸张格式（仅限平铺 PDF）</translation>
     </message>
+    <message>
+        <source>Export Selected Sizes</source>
+        <translation>导出选定尺寸</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>全选</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>导出</translation>
+    </message>
+</context>
+<context>
+    <name>ExportProgressDialog</name>
+    <message>
+        <source>Exporting files...</source>
+        <translation>正在导出文件...</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>文件</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>地位</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>待办的</translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation>完全的</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失败的</translation>
+    </message>
 </context>
 <context>
     <name>FvUpdater</name>
@@ -7074,6 +7113,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Next Draft Block</source>
         <translation>下一个样板</translation>
+    </message>
+    <message>
+        <source>Exporting...</source>
+        <translation>出口...</translation>
     </message>
 </context>
 <context>

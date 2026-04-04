@@ -3814,6 +3814,45 @@ Intente deshacer la última operación o corregir la fórmula defectuosa.</trans
         <source>Paper format (tiled PDF only)</source>
         <translation>Formato de papel (solo PDF en mosaico)</translation>
     </message>
+    <message>
+        <source>Export Selected Sizes</source>
+        <translation>Exportar tamaños seleccionados</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Seleccionar todo</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportar</translation>
+    </message>
+</context>
+<context>
+    <name>ExportProgressDialog</name>
+    <message>
+        <source>Exporting files...</source>
+        <translation>Exportando archivos...</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Archivo</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Estado</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pendiente</translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation>Terminado</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fallido</translation>
+    </message>
 </context>
 <context>
     <name>FvUpdater</name>
@@ -7093,6 +7132,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Next Draft Block</source>
         <translation>Próximo Bloque de borrador</translation>
+    </message>
+    <message>
+        <source>Exporting...</source>
+        <translation>Exportador...</translation>
     </message>
 </context>
 <context>

@@ -3778,6 +3778,45 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <source>Paper format (tiled PDF only)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Export Selected Sizes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished">Export</translation>
+    </message>
+</context>
+<context>
+    <name>ExportProgressDialog</name>
+    <message>
+        <source>Exporting files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FvUpdater</name>
@@ -7041,6 +7080,10 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Next Draft Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exporting...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
