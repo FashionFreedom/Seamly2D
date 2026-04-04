@@ -300,7 +300,6 @@ var searchData=
   ['vundocommand_297',['VUndoCommand',['../de/d04/classVUndoCommand.html',1,'']]],
   ['vvariable_298',['VVariable',['../da/d49/classVVariable.html',1,'']]],
   ['vvariabledata_299',['VVariableData',['../d5/d81/classVVariableData.html',1,'']]],
-  ['vwidgetpopup_300',['VWidgetPopup',['../db/d1a/classVWidgetPopup.html',1,'']]],
-  ['vwidgetproperty_301',['VWidgetProperty',['../df/d07/classVPE_1_1VWidgetProperty.html',1,'VPE']]],
-  ['vwidgetpropertyprivate_302',['VWidgetPropertyPrivate',['../df/da8/classVPE_1_1VWidgetPropertyPrivate.html',1,'VPE']]]
+  ['vwidgetproperty_300',['VWidgetProperty',['../df/d07/classVPE_1_1VWidgetProperty.html',1,'VPE']]],
+  ['vwidgetpropertyprivate_301',['VWidgetPropertyPrivate',['../df/da8/classVPE_1_1VWidgetPropertyPrivate.html',1,'VPE']]]
 ];

@@ -767,339 +767,317 @@ $(document).ready(function(){initNavTree('d7/d49/vdomdocument_8cpp_source.html',
 <div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span> </div>
 <div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>    QTextStream patternIn(&amp;patternFile);</div>
 <div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>    std::string xmlString = patternIn.readAll().toStdString();</div>
-<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span> </div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>    <span class="comment">// Fix files with invalid lineweight. </span></div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>    <span class="keywordtype">size_t</span> startPos = 0;</div>
-<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>    std::string fromString = <span class="stringliteral">&quot;lineWeight=\&quot;1.00\&quot;&quot;</span>;</div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>    std::string toString = <span class="stringliteral">&quot;lineWeight=\&quot;1\&quot;&quot;</span>;</div>
-<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>    <span class="keywordflow">while</span>((startPos = xmlString.find(fromString, startPos)) != std::string::npos)</div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    {</div>
-<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>        xmlString.replace(startPos, fromString.length(), toString);</div>
-<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>        <span class="comment">// Advance startPos past the newly inserted &#39;toString&#39; to avoid infinite loops</span></div>
-<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>        <span class="comment">// if &#39;fromString&#39; is a substring of &#39;toString&#39; (e.g., replacing &quot;a&quot; with &quot;aa&quot;).</span></div>
-<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>        startPos += toString.length();</div>
-<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>    }</div>
-<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>    <span class="comment">// If any replacements were made write the changes back to the pattern file.</span></div>
-<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>    <span class="keywordflow">if</span> (startPos &gt; 0)</div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>    {</div>
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>        patternFile.close();</div>
-<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>        <span class="keywordflow">if</span> (patternFile.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate) == <span class="keyword">false</span>)</div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>        {</div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>            <span class="keyword">const</span> QString errorMsg(tr(<span class="stringliteral">&quot;Can&#39;t open pattern file %1:\n%2.&quot;</span>).arg(fileName).arg(patternFile.errorString()));</div>
-<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>            <span class="keywordflow">throw</span> <a class="code hl_class" href="../../de/d09/classVException.html">VException</a>(errorMsg);</div>
-<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>        }</div>
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span> </div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>        QTextStream patternOut(&amp;patternFile);</div>
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>        patternOut &lt;&lt; QString::fromStdString(xmlString);</div>
-<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>    }</div>
-<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span> </div>
-<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>    xercesc::MemBufInputSource inputBuffer((<a class="code hl_typedef" href="../../db/df6/macx_2include_2xercesc_2util_2XercesDefs_8hpp.html#a7470c7a32c59355685ebcd878a33f126">XMLByte</a>*)xmlString.c_str(), xmlString.size(), <span class="stringliteral">&quot;/input.xml&quot;</span>);</div>
-<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span> </div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>    domParser-&gt;parse(inputBuffer);</div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>    <span class="keywordflow">if</span> (domParser-&gt;getErrorCount() != 0)</div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>    {</div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>        <span class="keyword">const</span> QString errorMsg(tr(<span class="stringliteral">&quot;Validation error file %1&quot;</span>).arg(fileName));</div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>        <span class="keywordflow">throw</span> <a class="code hl_class" href="../../de/d09/classVException.html">VException</a>(errorMsg);</div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>    xercesc::MemBufInputSource inputBuffer((<a class="code hl_typedef" href="../../db/df6/macx_2include_2xercesc_2util_2XercesDefs_8hpp.html#a7470c7a32c59355685ebcd878a33f126">XMLByte</a>*)xmlString.c_str(), xmlString.size(), <span class="stringliteral">&quot;/input.xml&quot;</span>);</div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span> </div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>    domParser-&gt;parse(inputBuffer);</div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>    <span class="keywordflow">if</span> (domParser-&gt;getErrorCount() != 0)</div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>    {</div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>        <span class="keyword">const</span> QString errorMsg(tr(<span class="stringliteral">&quot;Validation error file %1&quot;</span>).arg(fileName));</div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>        <span class="keywordflow">throw</span> <a class="code hl_class" href="../../de/d09/classVException.html">VException</a>(errorMsg);</div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>    }</div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>}</div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span> </div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span><span class="comment">// ///--------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#ad316cde19d3383a783936544c822b750">  678</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#ad316cde19d3383a783936544c822b750">VDomDocument::setXMLContent</a>(<span class="keyword">const</span> QString &amp;fileName)</div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>{</div>
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>    QFile file(fileName);</div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>    <span class="comment">// cppcheck-suppress ConfigurationNotChecked</span></div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>    <span class="keywordflow">if</span> (!file.open(QIODevice::ReadOnly))</div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>    {</div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>        <span class="keyword">const</span> QString errorMsg(tr(<span class="stringliteral">&quot;Can&#39;t open file %1:\n%2.&quot;</span>).arg(fileName).arg(file.errorString()));</div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>        <span class="keywordflow">throw</span> <a class="code hl_class" href="../../de/d09/classVException.html">VException</a>(errorMsg);</div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>    }</div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span> </div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>    <span class="comment">// Use setContent (introduced in Qt 6.5)</span></div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>    <span class="comment">// Returns QDomDocument::ParseResult which evaluates to true on success</span></div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>    QDomDocument::ParseResult result = QDomDocument::setContent(&amp;file);</div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span> </div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>    <span class="keywordflow">if</span> (!result)</div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>    {</div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>    <span class="comment">// Failure: result.errorMessage, result.errorLine, result.errorColumn are available</span></div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>    <a class="code hl_class" href="../../de/d09/classVException.html">VException</a> error(result.errorMessage );</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>    error.<a class="code hl_function" href="../../de/d09/classVException.html#a6a82b04f0ecd7ffc2e1807339a10648d">AddMoreInformation</a>(tr(<span class="stringliteral">&quot;Parsing error file %3 in line %1 column %2&quot;</span>).arg(result.errorLine)</div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>                                                                             .arg(result.errorColumn)</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>                                                                             .arg(fileName));</div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>    <span class="keywordflow">throw</span> error;</div>
 <div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>    }</div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>}</div>
-<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span> </div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span><span class="comment">// ///--------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#ad316cde19d3383a783936544c822b750">  704</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#ad316cde19d3383a783936544c822b750">VDomDocument::setXMLContent</a>(<span class="keyword">const</span> QString &amp;fileName)</div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>{</div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>    QFile file(fileName);</div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>    <span class="comment">// cppcheck-suppress ConfigurationNotChecked</span></div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>    <span class="keywordflow">if</span> (file.open(QIODevice::ReadOnly) == <span class="keyword">false</span>)</div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>    {</div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>        <span class="keyword">const</span> QString errorMsg(tr(<span class="stringliteral">&quot;Can&#39;t open file %1:\n%2.&quot;</span>).arg(fileName).arg(file.errorString()));</div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>        <span class="keywordflow">throw</span> <a class="code hl_class" href="../../de/d09/classVException.html">VException</a>(errorMsg);</div>
-<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>    }</div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span> </div>
-<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>    QString errorMsg;</div>
-<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>    <span class="keywordtype">int</span> errorLine = -1;</div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>    <span class="keywordtype">int</span> errorColumn = -1;</div>
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>    <span class="keywordflow">if</span> (QDomDocument::setContent(&amp;file, &amp;errorMsg, &amp;errorLine, &amp;errorColumn) == <span class="keyword">false</span>)</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>    {</div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>        file.close();</div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>        <a class="code hl_class" href="../../de/d09/classVException.html">VException</a> e(errorMsg);</div>
-<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>        e.<a class="code hl_function" href="../../de/d09/classVException.html#a6a82b04f0ecd7ffc2e1807339a10648d">AddMoreInformation</a>(tr(<span class="stringliteral">&quot;Parsing error file %3 in line %1 column %2&quot;</span>).arg(errorLine).arg(errorColumn)</div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>                             .arg(fileName));</div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>        <span class="keywordflow">throw</span> e;</div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>    }</div>
-<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>}</div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span><span class="comment"></span> </div>
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00728" name="l00728"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#a6012d50aa31b2aafbf513a89c1320daf">  728</a></span><span class="comment"></span>QString <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a6012d50aa31b2aafbf513a89c1320daf">VDomDocument::UnitsHelpString</a>()</div>
-<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>{</div>
-<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>    QString r;</div>
-<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Unit::Mm), last = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Unit::LAST_UNIT_DO_NOT_USE); i &lt; last;++i)</div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span> </div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>    file.close(); <span class="comment">// Optional: QFile destructor handles this</span></div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>}</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span><span class="comment"></span> </div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#a6012d50aa31b2aafbf513a89c1320daf">  706</a></span><span class="comment"></span>QString <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a6012d50aa31b2aafbf513a89c1320daf">VDomDocument::UnitsHelpString</a>()</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>{</div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>    QString r;</div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Unit::Mm), last = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Unit::LAST_UNIT_DO_NOT_USE); i &lt; last;++i)</div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>    {</div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>        r += <a class="code hl_function" href="../../d6/d0b/def_8cpp.html#aafc4aaa15256940018257a94e1740cd0">UnitsToStr</a>(<span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889">Unit</a><span class="keyword">&gt;</span>(i));</div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>        <span class="keywordflow">if</span> (i &lt; last - 1)</div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>        {</div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>            r += <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>        }</div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>    }</div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>    <span class="keywordflow">return</span> r;</div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>}</div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span><span class="comment"></span> </div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#aeaf681ea2c0d1efb06557f18e00f49c6">  721</a></span><span class="comment"></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#aeaf681ea2c0d1efb06557f18e00f49c6">VDomDocument::SaveDocument</a>(<span class="keyword">const</span> QString &amp;fileName, QString &amp;error)</div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>{</div>
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>    <span class="keywordflow">if</span> (fileName.isEmpty())</div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>    {</div>
+<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Got empty file name.&quot;</span>;</div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>    }</div>
+<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>    <span class="keywordtype">bool</span> success = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>    QSaveFile file(fileName);</div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>    <span class="comment">// cppcheck-suppress ConfigurationNotChecked</span></div>
+<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>    <span class="keywordflow">if</span> (file.open(QIODevice::WriteOnly))</div>
 <div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>    {</div>
-<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>        r += <a class="code hl_function" href="../../d6/d0b/def_8cpp.html#aafc4aaa15256940018257a94e1740cd0">UnitsToStr</a>(<span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889">Unit</a><span class="keyword">&gt;</span>(i));</div>
-<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>        <span class="keywordflow">if</span> (i &lt; last - 1)</div>
-<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>        {</div>
-<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>            r += <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>        }</div>
-<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>    }</div>
-<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>    <span class="keywordflow">return</span> r;</div>
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>}</div>
-<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span><span class="comment"></span> </div>
-<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00743" name="l00743"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#aeaf681ea2c0d1efb06557f18e00f49c6">  743</a></span><span class="comment"></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#aeaf681ea2c0d1efb06557f18e00f49c6">VDomDocument::SaveDocument</a>(<span class="keyword">const</span> QString &amp;fileName, QString &amp;error)</div>
-<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>{</div>
-<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>    <span class="keywordflow">if</span> (fileName.isEmpty())</div>
-<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>    {</div>
-<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Got empty file name.&quot;</span>;</div>
-<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>    }</div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>    <span class="keywordtype">bool</span> success = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>    QSaveFile file(fileName);</div>
-<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>    <span class="comment">// cppcheck-suppress ConfigurationNotChecked</span></div>
-<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>    <span class="keywordflow">if</span> (file.open(QIODevice::WriteOnly))</div>
-<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>    {</div>
-<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>        <span class="comment">// See issue #666. QDomDocument produces random attribute order.</span></div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> indent = 4;</div>
-<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>        <span class="keywordflow">if</span> (not <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a86fe2212ec54746e3e0b01dbb676e130">SaveCanonicalXML</a>(&amp;file, indent, error))</div>
-<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>        {</div>
-<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>        }</div>
-<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>        <span class="comment">// Left these strings in case we will need them for testing purposes</span></div>
-<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>        <span class="comment">// QTextStream out(&amp;file);</span></div>
-<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>        <span class="comment">// out.setCodec(&quot;UTF-8&quot;);</span></div>
-<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>        <span class="comment">// save(out, indent);</span></div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span> </div>
-<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>        success = file.commit();</div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>    }</div>
-<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span> </div>
-<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>    <span class="keywordflow">if</span> (not success)</div>
-<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>    {</div>
-<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>        error = file.errorString();</div>
-<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>    }</div>
-<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span> </div>
-<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>    <span class="keywordflow">return</span> success;</div>
-<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>}</div>
-<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span><span class="comment"></span> </div>
-<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span><span class="comment"></span><span class="comment">// cppcheck-suppress unusedFunction</span></div>
-<div class="line"><a id="l00779" name="l00779"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#a278a792a3d216ccd935a4fd163d0d0a8">  779</a></span>QString <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a278a792a3d216ccd935a4fd163d0d0a8">VDomDocument::Major</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>    QString version = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#abd6e5a84e0b9db4e16e1e49062565cc5">UniqueTagText</a>(<a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#ab8e9f3f325f6e16787f1729059fd3f14">TagVersion</a>, <span class="stringliteral">&quot;0.0.0&quot;</span>);</div>
-<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>    QStringList v = version.split(<span class="stringliteral">&quot;.&quot;</span>);</div>
-<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>    <span class="keywordflow">return</span> v.at(0);</div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>}</div>
-<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span><span class="comment"></span> </div>
-<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span><span class="comment"></span><span class="comment">// cppcheck-suppress unusedFunction</span></div>
-<div class="line"><a id="l00788" name="l00788"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#a595506656459aaf6825c1cab2c9b7238">  788</a></span>QString <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a595506656459aaf6825c1cab2c9b7238">VDomDocument::Minor</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>    QString version = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#abd6e5a84e0b9db4e16e1e49062565cc5">UniqueTagText</a>(<a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#ab8e9f3f325f6e16787f1729059fd3f14">TagVersion</a>, <span class="stringliteral">&quot;0.0.0&quot;</span>);</div>
-<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>    QStringList v = version.split(<span class="stringliteral">&quot;.&quot;</span>);</div>
-<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>    <span class="keywordflow">return</span> v.at(1);</div>
-<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>}</div>
-<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span><span class="comment"></span> </div>
-<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span><span class="comment"></span><span class="comment">// cppcheck-suppress unusedFunction</span></div>
-<div class="line"><a id="l00797" name="l00797"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#aae68e283291deaac9ea862c0ada06c06">  797</a></span>QString <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#aae68e283291deaac9ea862c0ada06c06">VDomDocument::Patch</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>    QString version = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#abd6e5a84e0b9db4e16e1e49062565cc5">UniqueTagText</a>(<a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#ab8e9f3f325f6e16787f1729059fd3f14">TagVersion</a>, <span class="stringliteral">&quot;0.0.0&quot;</span>);</div>
-<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>    QStringList v = version.split(<span class="stringliteral">&quot;.&quot;</span>);</div>
-<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>    <span class="keywordflow">return</span> v.at(2);</div>
-<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>}</div>
-<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span><span class="comment"></span> </div>
-<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00805" name="l00805"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#a988591c04a3fcf92472ad456a82c1e63">  805</a></span><span class="comment"></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a988591c04a3fcf92472ad456a82c1e63">VDomDocument::setTagText</a>(<span class="keyword">const</span> QString &amp;tag, <span class="keyword">const</span> QString &amp;text)</div>
-<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>{</div>
-<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>    <span class="keyword">const</span> QDomNodeList nodeList = this-&gt;elementsByTagName(tag);</div>
-<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>    <span class="keywordflow">if</span> (nodeList.isEmpty())</div>
-<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>    {</div>
-<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Can&#39;t save tag &quot;</span> &lt;&lt; tag &lt;&lt; Q_FUNC_INFO;</div>
-<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>    }</div>
-<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>    {</div>
-<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>        <span class="keyword">const</span> QDomNode domNode = nodeList.at(0);</div>
-<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>        <span class="keywordflow">if</span> (domNode.isNull() == <span class="keyword">false</span> &amp;&amp; domNode.isElement())</div>
-<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>        {</div>
-<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>            <span class="keyword">const</span> QDomElement domElement = domNode.toElement();</div>
-<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a988591c04a3fcf92472ad456a82c1e63">setTagText</a>(domElement, text);</div>
-<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>        }</div>
-<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>    }</div>
-<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>}</div>
-<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span><span class="comment"></span> </div>
-<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00825" name="l00825"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#a553f050145886b403697c0a2b43b0f05">  825</a></span><span class="comment"></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a988591c04a3fcf92472ad456a82c1e63">VDomDocument::setTagText</a>(<span class="keyword">const</span> QDomElement &amp;domElement, <span class="keyword">const</span> QString &amp;text)</div>
-<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>{</div>
-<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>    <span class="keywordflow">if</span> (domElement.isNull() == <span class="keyword">false</span>)</div>
-<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>    {</div>
-<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>        QDomElement parent = domElement.parentNode().toElement();</div>
-<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>        QDomElement newTag = createElement(domElement.tagName());</div>
-<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span> </div>
-<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>        <span class="keyword">const</span> QDomText newTagText = createTextNode(text);</div>
-<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>        newTag.appendChild(newTagText);</div>
-<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span> </div>
-<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>        parent.replaceChild(newTag, domElement);</div>
-<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>    }</div>
-<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>        <span class="comment">// See issue #666. QDomDocument produces random attribute order.</span></div>
+<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> indent = 4;</div>
+<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>        <span class="keywordflow">if</span> (not <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a86fe2212ec54746e3e0b01dbb676e130">SaveCanonicalXML</a>(&amp;file, indent, error))</div>
+<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>        {</div>
+<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>        }</div>
+<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>        <span class="comment">// Left these strings in case we will need them for testing purposes</span></div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>        <span class="comment">// QTextStream out(&amp;file);</span></div>
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>        <span class="comment">// out.setCodec(&quot;UTF-8&quot;);</span></div>
+<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>        <span class="comment">// save(out, indent);</span></div>
+<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span> </div>
+<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>        success = file.commit();</div>
+<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>    }</div>
+<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span> </div>
+<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>    <span class="keywordflow">if</span> (not success)</div>
+<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>    {</div>
+<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>        error = file.errorString();</div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>    }</div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span> </div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>    <span class="keywordflow">return</span> success;</div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>}</div>
+<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span><span class="comment"></span> </div>
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span><span class="comment"></span><span class="comment">// cppcheck-suppress unusedFunction</span></div>
+<div class="line"><a id="l00757" name="l00757"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#a278a792a3d216ccd935a4fd163d0d0a8">  757</a></span>QString <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a278a792a3d216ccd935a4fd163d0d0a8">VDomDocument::Major</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>    QString version = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#abd6e5a84e0b9db4e16e1e49062565cc5">UniqueTagText</a>(<a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#ab8e9f3f325f6e16787f1729059fd3f14">TagVersion</a>, <span class="stringliteral">&quot;0.0.0&quot;</span>);</div>
+<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>    QStringList v = version.split(<span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>    <span class="keywordflow">return</span> v.at(0);</div>
+<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>}</div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span><span class="comment"></span> </div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span><span class="comment"></span><span class="comment">// cppcheck-suppress unusedFunction</span></div>
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#a595506656459aaf6825c1cab2c9b7238">  766</a></span>QString <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a595506656459aaf6825c1cab2c9b7238">VDomDocument::Minor</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>    QString version = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#abd6e5a84e0b9db4e16e1e49062565cc5">UniqueTagText</a>(<a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#ab8e9f3f325f6e16787f1729059fd3f14">TagVersion</a>, <span class="stringliteral">&quot;0.0.0&quot;</span>);</div>
+<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>    QStringList v = version.split(<span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>    <span class="keywordflow">return</span> v.at(1);</div>
+<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>}</div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span><span class="comment"></span> </div>
+<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span><span class="comment"></span><span class="comment">// cppcheck-suppress unusedFunction</span></div>
+<div class="line"><a id="l00775" name="l00775"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#aae68e283291deaac9ea862c0ada06c06">  775</a></span>QString <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#aae68e283291deaac9ea862c0ada06c06">VDomDocument::Patch</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>    QString version = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#abd6e5a84e0b9db4e16e1e49062565cc5">UniqueTagText</a>(<a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#ab8e9f3f325f6e16787f1729059fd3f14">TagVersion</a>, <span class="stringliteral">&quot;0.0.0&quot;</span>);</div>
+<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>    QStringList v = version.split(<span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>    <span class="keywordflow">return</span> v.at(2);</div>
+<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>}</div>
+<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span><span class="comment"></span> </div>
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#a988591c04a3fcf92472ad456a82c1e63">  783</a></span><span class="comment"></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a988591c04a3fcf92472ad456a82c1e63">VDomDocument::setTagText</a>(<span class="keyword">const</span> QString &amp;tag, <span class="keyword">const</span> QString &amp;text)</div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>{</div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>    <span class="keyword">const</span> QDomNodeList nodeList = this-&gt;elementsByTagName(tag);</div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>    <span class="keywordflow">if</span> (nodeList.isEmpty())</div>
+<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>    {</div>
+<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Can&#39;t save tag &quot;</span> &lt;&lt; tag &lt;&lt; Q_FUNC_INFO;</div>
+<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>    }</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>    {</div>
+<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>        <span class="keyword">const</span> QDomNode domNode = nodeList.at(0);</div>
+<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>        <span class="keywordflow">if</span> (domNode.isNull() == <span class="keyword">false</span> &amp;&amp; domNode.isElement())</div>
+<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>        {</div>
+<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>            <span class="keyword">const</span> QDomElement domElement = domNode.toElement();</div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a988591c04a3fcf92472ad456a82c1e63">setTagText</a>(domElement, text);</div>
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>        }</div>
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>    }</div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>}</div>
+<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span><span class="comment"></span> </div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#a553f050145886b403697c0a2b43b0f05">  803</a></span><span class="comment"></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a988591c04a3fcf92472ad456a82c1e63">VDomDocument::setTagText</a>(<span class="keyword">const</span> QDomElement &amp;domElement, <span class="keyword">const</span> QString &amp;text)</div>
+<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>{</div>
+<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>    <span class="keywordflow">if</span> (domElement.isNull() == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>    {</div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>        QDomElement parent = domElement.parentNode().toElement();</div>
+<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>        QDomElement newTag = createElement(domElement.tagName());</div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span> </div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>        <span class="keyword">const</span> QDomText newTagText = createTextNode(text);</div>
+<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>        newTag.appendChild(newTagText);</div>
+<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span> </div>
+<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>        parent.replaceChild(newTag, domElement);</div>
+<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>    }</div>
+<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>}</div>
+<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span><span class="comment"></span> </div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span><span class="comment">/// @brief RemoveAllChildren remove all children from file.</span></div>
+<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span><span class="comment">/// @param domElement tag in xml tree.</span></div>
+<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00823" name="l00823"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#ae93f9e4a2d9b64ad6433886358b105d9">  823</a></span><span class="comment"></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#ae93f9e4a2d9b64ad6433886358b105d9">VDomDocument::RemoveAllChildren</a>(QDomElement &amp;domElement)</div>
+<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>{</div>
+<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>    <span class="keywordflow">if</span> ( domElement.hasChildNodes() )</div>
+<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>    {</div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>        <span class="keywordflow">while</span> ( domElement.childNodes().length() &gt;= 1 )</div>
+<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>        {</div>
+<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>            domElement.removeChild( domElement.firstChild() );</div>
+<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>        }</div>
+<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>    }</div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>}</div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span><span class="comment"></span> </div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00835" name="l00835"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#ac01614ab160d642abb95fdf1dc90f978">  835</a></span><span class="comment"></span>QDomNode <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#ac01614ab160d642abb95fdf1dc90f978">VDomDocument::ParentNodeById</a>(<span class="keyword">const</span> quint32 &amp;nodeId)</div>
+<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>{</div>
+<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>    QDomElement domElement = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#ab41f21975c59bfa7ca249cb3fd95e367">NodeById</a>(nodeId);</div>
+<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>    <span class="keywordflow">return</span> domElement.parentNode();</div>
 <div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>}</div>
 <div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span><span class="comment"></span> </div>
 <div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span><span class="comment">/// @brief RemoveAllChildren remove all children from file.</span></div>
-<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span><span class="comment">/// @param domElement tag in xml tree.</span></div>
-<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00845" name="l00845"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#ae93f9e4a2d9b64ad6433886358b105d9">  845</a></span><span class="comment"></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#ae93f9e4a2d9b64ad6433886358b105d9">VDomDocument::RemoveAllChildren</a>(QDomElement &amp;domElement)</div>
-<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>{</div>
-<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>    <span class="keywordflow">if</span> ( domElement.hasChildNodes() )</div>
-<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>    {</div>
-<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>        <span class="keywordflow">while</span> ( domElement.childNodes().length() &gt;= 1 )</div>
-<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>        {</div>
-<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>            domElement.removeChild( domElement.firstChild() );</div>
-<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>        }</div>
-<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>    }</div>
-<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>}</div>
-<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span><span class="comment"></span> </div>
-<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00857" name="l00857"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#ac01614ab160d642abb95fdf1dc90f978">  857</a></span><span class="comment"></span>QDomNode <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#ac01614ab160d642abb95fdf1dc90f978">VDomDocument::ParentNodeById</a>(<span class="keyword">const</span> quint32 &amp;nodeId)</div>
-<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>{</div>
-<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>    QDomElement domElement = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#ab41f21975c59bfa7ca249cb3fd95e367">NodeById</a>(nodeId);</div>
-<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>    <span class="keywordflow">return</span> domElement.parentNode();</div>
-<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>}</div>
-<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span><span class="comment"></span> </div>
-<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00864" name="l00864"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#a6b5a395b56c42f809d7803f61777cead">  864</a></span><span class="comment"></span>QDomElement <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a6b5a395b56c42f809d7803f61777cead">VDomDocument::CloneNodeById</a>(<span class="keyword">const</span> quint32 &amp;nodeId)</div>
-<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>{</div>
-<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>    QDomElement domElement = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#ab41f21975c59bfa7ca249cb3fd95e367">NodeById</a>(nodeId);</div>
-<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>    <span class="keywordflow">return</span> domElement.cloneNode().toElement();</div>
-<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>}</div>
-<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span><span class="comment"></span> </div>
-<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00871" name="l00871"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#ab41f21975c59bfa7ca249cb3fd95e367">  871</a></span><span class="comment"></span>QDomElement <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#ab41f21975c59bfa7ca249cb3fd95e367">VDomDocument::NodeById</a>(<span class="keyword">const</span> quint32 &amp;nodeId)</div>
-<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>{</div>
-<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>    QDomElement domElement = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a035e4a009f8f79f3f8e04e8aa43d56dc">elementById</a>(nodeId);</div>
-<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>    <span class="keywordflow">if</span> (domElement.isNull() || domElement.isElement() == <span class="keyword">false</span>)</div>
-<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>    {</div>
-<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>        <span class="keywordflow">throw</span> <a class="code hl_class" href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a>(tr(<span class="stringliteral">&quot;Couldn&#39;t get node&quot;</span>), nodeId);</div>
-<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>    }</div>
-<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>    <span class="keywordflow">return</span> domElement;</div>
-<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>}</div>
-<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span><span class="comment"></span> </div>
-<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00882" name="l00882"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#ab7e2c541d5f3b0a74e88de301223f4cd">  882</a></span><span class="comment"></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#ab7e2c541d5f3b0a74e88de301223f4cd">VDomDocument::SafeCopy</a>(<span class="keyword">const</span> QString &amp;source, <span class="keyword">const</span> QString &amp;destination, QString &amp;error)</div>
-<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>{</div>
-<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>    <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span> </div>
-<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span><span class="preprocessor">#ifdef Q_OS_WIN32</span></div>
-<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>    qt_ntfs_permission_lookup++; <span class="comment">// turn checking on</span></div>
-<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span><span class="preprocessor">#endif </span><span class="comment">/*Q_OS_WIN32*/</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span> </div>
-<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>    QTemporaryFile destFile(destination + QLatin1String(<span class="stringliteral">&quot;.XXXXXX&quot;</span>));</div>
-<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>    destFile.setAutoRemove(<span class="keyword">false</span>);<span class="comment">// Will be renamed to be destination file</span></div>
-<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>    <span class="comment">// cppcheck-suppress ConfigurationNotChecked</span></div>
-<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span>    <span class="keywordflow">if</span> (not destFile.open())</div>
-<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span>    {</div>
-<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span>        error = destFile.errorString();</div>
-<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>    }</div>
-<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span>    {</div>
-<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span>        QFile sourceFile(source);</div>
-<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span>        <span class="comment">// cppcheck-suppress ConfigurationNotChecked</span></div>
-<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>        <span class="keywordflow">if</span> (sourceFile.open(QIODevice::ReadOnly))</div>
-<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>        {</div>
-<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>            result = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span>            <span class="keywordtype">char</span> block[4096];</div>
-<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>            qint64 bytes;</div>
-<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>            <span class="keywordflow">while</span> ((bytes = sourceFile.read(block, <span class="keyword">sizeof</span>(block))) &gt; 0)</div>
-<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span>            {</div>
-<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>                <span class="keywordflow">if</span> (bytes != destFile.write(block, bytes))</div>
+<div class="line"><a id="l00842" name="l00842"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#a6b5a395b56c42f809d7803f61777cead">  842</a></span><span class="comment"></span>QDomElement <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a6b5a395b56c42f809d7803f61777cead">VDomDocument::CloneNodeById</a>(<span class="keyword">const</span> quint32 &amp;nodeId)</div>
+<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>{</div>
+<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>    QDomElement domElement = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#ab41f21975c59bfa7ca249cb3fd95e367">NodeById</a>(nodeId);</div>
+<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>    <span class="keywordflow">return</span> domElement.cloneNode().toElement();</div>
+<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>}</div>
+<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span><span class="comment"></span> </div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#ab41f21975c59bfa7ca249cb3fd95e367">  849</a></span><span class="comment"></span>QDomElement <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#ab41f21975c59bfa7ca249cb3fd95e367">VDomDocument::NodeById</a>(<span class="keyword">const</span> quint32 &amp;nodeId)</div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>{</div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>    QDomElement domElement = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a035e4a009f8f79f3f8e04e8aa43d56dc">elementById</a>(nodeId);</div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>    <span class="keywordflow">if</span> (domElement.isNull() || domElement.isElement() == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>    {</div>
+<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>        <span class="keywordflow">throw</span> <a class="code hl_class" href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a>(tr(<span class="stringliteral">&quot;Couldn&#39;t get node&quot;</span>), nodeId);</div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>    }</div>
+<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>    <span class="keywordflow">return</span> domElement;</div>
+<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>}</div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span><span class="comment"></span> </div>
+<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00860" name="l00860"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#ab7e2c541d5f3b0a74e88de301223f4cd">  860</a></span><span class="comment"></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#ab7e2c541d5f3b0a74e88de301223f4cd">VDomDocument::SafeCopy</a>(<span class="keyword">const</span> QString &amp;source, <span class="keyword">const</span> QString &amp;destination, QString &amp;error)</div>
+<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>{</div>
+<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>    <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span> </div>
+<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span><span class="preprocessor">#ifdef Q_OS_WIN32</span></div>
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>    qt_ntfs_permission_lookup++; <span class="comment">// turn checking on</span></div>
+<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span><span class="preprocessor">#endif </span><span class="comment">/*Q_OS_WIN32*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span> </div>
+<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>    QTemporaryFile destFile(destination + QLatin1String(<span class="stringliteral">&quot;.XXXXXX&quot;</span>));</div>
+<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>    destFile.setAutoRemove(<span class="keyword">false</span>);<span class="comment">// Will be renamed to be destination file</span></div>
+<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>    <span class="comment">// cppcheck-suppress ConfigurationNotChecked</span></div>
+<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>    <span class="keywordflow">if</span> (not destFile.open())</div>
+<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>    {</div>
+<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>        error = destFile.errorString();</div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>    }</div>
+<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>    {</div>
+<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>        QFile sourceFile(source);</div>
+<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>        <span class="comment">// cppcheck-suppress ConfigurationNotChecked</span></div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>        <span class="keywordflow">if</span> (sourceFile.open(QIODevice::ReadOnly))</div>
+<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>        {</div>
+<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>            result = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>            <span class="keywordtype">char</span> block[4096];</div>
+<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>            qint64 bytes;</div>
+<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>            <span class="keywordflow">while</span> ((bytes = sourceFile.read(block, <span class="keyword">sizeof</span>(block))) &gt; 0)</div>
+<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>            {</div>
+<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>                <span class="keywordflow">if</span> (bytes != destFile.write(block, bytes))</div>
+<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>                {</div>
+<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>                    error = destFile.errorString();</div>
+<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>                    result = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>                }</div>
+<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>            }</div>
+<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span> </div>
+<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span>            <span class="keywordflow">if</span> (bytes == -1)</div>
+<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span>            {</div>
+<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>                error = sourceFile.errorString();</div>
+<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span>                result = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span>            }</div>
+<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span> </div>
+<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span>            <span class="keywordflow">if</span> (result)</div>
+<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>            {</div>
+<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>                QFile::remove(destination);</div>
+<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>                <span class="keywordflow">if</span> (not destFile.rename(destination))</div>
+<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span>                {</div>
+<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>                    error = destFile.errorString();</div>
+<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>                    result = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span>                }</div>
+<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>                <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>                {</div>
-<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>                    error = destFile.errorString();</div>
-<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span>                    result = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span>                }</div>
-<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span>            }</div>
-<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span> </div>
-<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span>            <span class="keywordflow">if</span> (bytes == -1)</div>
-<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span>            {</div>
-<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span>                error = sourceFile.errorString();</div>
-<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>                result = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span>            }</div>
-<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span> </div>
-<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span>            <span class="keywordflow">if</span> (result)</div>
-<div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>            {</div>
-<div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span>                QFile::remove(destination);</div>
-<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>                <span class="keywordflow">if</span> (not destFile.rename(destination))</div>
-<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>                {</div>
-<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>                    error = destFile.errorString();</div>
-<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span>                    result = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>                }</div>
-<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>                <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span>                {</div>
-<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span>                    result = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span>                }</div>
-<div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span>            }</div>
-<div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span>        }</div>
-<div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span>        {</div>
-<div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span>            error = sourceFile.errorString();</div>
-<div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span>        }</div>
-<div class="line"><a id="l00940" name="l00940"></a><span class="lineno">  940</span>    }</div>
-<div class="line"><a id="l00941" name="l00941"></a><span class="lineno">  941</span> </div>
-<div class="line"><a id="l00942" name="l00942"></a><span class="lineno">  942</span><span class="preprocessor">#ifdef Q_OS_WIN32</span></div>
-<div class="line"><a id="l00943" name="l00943"></a><span class="lineno">  943</span>    qt_ntfs_permission_lookup--; <span class="comment">// turn off check permission again</span></div>
-<div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span><span class="preprocessor">#endif </span><span class="comment">/*Q_OS_WIN32*/</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span> </div>
-<div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span>}</div>
-<div class="line"><a id="l00948" name="l00948"></a><span class="lineno">  948</span><span class="comment"></span> </div>
-<div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00950" name="l00950"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#af3e96f8b2c46248b00e5fb4a2775a4e9">  950</a></span><span class="comment"></span>QVector&lt;VLabelTemplateLine&gt; <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#af3e96f8b2c46248b00e5fb4a2775a4e9">VDomDocument::GetLabelTemplate</a>(<span class="keyword">const</span> QDomElement &amp;element)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span>    <span class="comment">// We use implicit conversion. That&#39;s why check if values are still the same as excpected.</span></div>
-<div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span>    Q_STATIC_ASSERT(Qt::AlignLeft == 1);</div>
-<div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>    Q_STATIC_ASSERT(Qt::AlignRight == 2);</div>
-<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>    Q_STATIC_ASSERT(Qt::AlignHCenter == 4);</div>
-<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span> </div>
-<div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span>    QVector&lt;VLabelTemplateLine&gt; lines;</div>
-<div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span> </div>
-<div class="line"><a id="l00959" name="l00959"></a><span class="lineno">  959</span>    <span class="keywordflow">if</span> (not element.isNull())</div>
-<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span>    {</div>
-<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span>        QDomElement tagLine = element.firstChildElement();</div>
-<div class="line"><a id="l00962" name="l00962"></a><span class="lineno">  962</span>        <span class="keywordflow">while</span> (tagLine.isNull() == <span class="keyword">false</span>)</div>
-<div class="line"><a id="l00963" name="l00963"></a><span class="lineno">  963</span>        {</div>
-<div class="line"><a id="l00964" name="l00964"></a><span class="lineno">  964</span>            <span class="keywordflow">if</span> (tagLine.tagName() == <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#ad4777ec1d5af22e6fe90565e29e73872">TagLine</a>)</div>
-<div class="line"><a id="l00965" name="l00965"></a><span class="lineno">  965</span>            {</div>
-<div class="line"><a id="l00966" name="l00966"></a><span class="lineno">  966</span>                <a class="code hl_struct" href="../../dc/daa/structVLabelTemplateLine.html">VLabelTemplateLine</a> line;</div>
-<div class="line"><a id="l00967" name="l00967"></a><span class="lineno">  967</span>                line.<a class="code hl_variable" href="../../dc/daa/structVLabelTemplateLine.html#a0cd50ffd0ed628e0d43874f71ced50bf">line</a> = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a0529f100ec3ca1152a296f9cc59ef7f3">GetParametrString</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#ad9015d6f1665acce0a77172006150120">AttrText</a>, tr(<span class="stringliteral">&quot;&lt;empty&gt;&quot;</span>));</div>
-<div class="line"><a id="l00968" name="l00968"></a><span class="lineno">  968</span>                line.<a class="code hl_variable" href="../../dc/daa/structVLabelTemplateLine.html#a044c7f9d6cebbea41933955ef9947235">bold</a> = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a882aaf932772cc4357a29822a0bb36dc">getParameterBool</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#a0c5421eaa5675ae09a895f78d87026eb">AttrBold</a>, <a class="code hl_variable" href="../../d6/d0b/def_8cpp.html#add2311fa670dce61b8bbdd6baf9841bb">falseStr</a>);</div>
-<div class="line"><a id="l00969" name="l00969"></a><span class="lineno">  969</span>                line.<a class="code hl_variable" href="../../dc/daa/structVLabelTemplateLine.html#a002b6f9f8075396961dae2b25718c060">italic</a> = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a882aaf932772cc4357a29822a0bb36dc">getParameterBool</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#a027f643caba00844bf80a64d352efb8f">AttrItalic</a>, <a class="code hl_variable" href="../../d6/d0b/def_8cpp.html#add2311fa670dce61b8bbdd6baf9841bb">falseStr</a>);</div>
-<div class="line"><a id="l00970" name="l00970"></a><span class="lineno">  970</span>                line.<a class="code hl_variable" href="../../dc/daa/structVLabelTemplateLine.html#a959e663200d6a9eafdd99ca0aa08c5a4">alignment</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a14e129a4d0d66b87adb48c38e46c0f37">GetParametrUInt</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#a3190cc38f15720c8204d00716fad8469">AttrAlignment</a>, <span class="stringliteral">&quot;0&quot;</span>));</div>
-<div class="line"><a id="l00971" name="l00971"></a><span class="lineno">  971</span>                line.<a class="code hl_variable" href="../../dc/daa/structVLabelTemplateLine.html#a911cdff76bc8a2fd777df4b16a6cd380">fontSizeIncrement</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a14e129a4d0d66b87adb48c38e46c0f37">GetParametrUInt</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#af7c022eef84545253b696838417963e2">AttrFSIncrement</a>, <span class="stringliteral">&quot;0&quot;</span>));</div>
-<div class="line"><a id="l00972" name="l00972"></a><span class="lineno">  972</span>                lines.append(line);</div>
-<div class="line"><a id="l00973" name="l00973"></a><span class="lineno">  973</span>            }</div>
-<div class="line"><a id="l00974" name="l00974"></a><span class="lineno">  974</span>            tagLine = tagLine.nextSiblingElement(<a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#ad4777ec1d5af22e6fe90565e29e73872">TagLine</a>);</div>
+<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>                    result = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span>                }</div>
+<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>            }</div>
+<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span>        }</div>
+<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span>        {</div>
+<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span>            error = sourceFile.errorString();</div>
+<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span>        }</div>
+<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span>    }</div>
+<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span> </div>
+<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span><span class="preprocessor">#ifdef Q_OS_WIN32</span></div>
+<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span>    qt_ntfs_permission_lookup--; <span class="comment">// turn off check permission again</span></div>
+<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span><span class="preprocessor">#endif </span><span class="comment">/*Q_OS_WIN32*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span> </div>
+<div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>}</div>
+<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span><span class="comment"></span> </div>
+<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00928" name="l00928"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#af3e96f8b2c46248b00e5fb4a2775a4e9">  928</a></span><span class="comment"></span>QVector&lt;VLabelTemplateLine&gt; <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#af3e96f8b2c46248b00e5fb4a2775a4e9">VDomDocument::GetLabelTemplate</a>(<span class="keyword">const</span> QDomElement &amp;element)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>    <span class="comment">// We use implicit conversion. That&#39;s why check if values are still the same as excpected.</span></div>
+<div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span>    Q_STATIC_ASSERT(Qt::AlignLeft == 1);</div>
+<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span>    Q_STATIC_ASSERT(Qt::AlignRight == 2);</div>
+<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span>    Q_STATIC_ASSERT(Qt::AlignHCenter == 4);</div>
+<div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span> </div>
+<div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span>    QVector&lt;VLabelTemplateLine&gt; lines;</div>
+<div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span> </div>
+<div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span>    <span class="keywordflow">if</span> (not element.isNull())</div>
+<div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span>    {</div>
+<div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span>        QDomElement tagLine = element.firstChildElement();</div>
+<div class="line"><a id="l00940" name="l00940"></a><span class="lineno">  940</span>        <span class="keywordflow">while</span> (tagLine.isNull() == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00941" name="l00941"></a><span class="lineno">  941</span>        {</div>
+<div class="line"><a id="l00942" name="l00942"></a><span class="lineno">  942</span>            <span class="keywordflow">if</span> (tagLine.tagName() == <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#ad4777ec1d5af22e6fe90565e29e73872">TagLine</a>)</div>
+<div class="line"><a id="l00943" name="l00943"></a><span class="lineno">  943</span>            {</div>
+<div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span>                <a class="code hl_struct" href="../../dc/daa/structVLabelTemplateLine.html">VLabelTemplateLine</a> line;</div>
+<div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span>                line.<a class="code hl_variable" href="../../dc/daa/structVLabelTemplateLine.html#a0cd50ffd0ed628e0d43874f71ced50bf">line</a> = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a0529f100ec3ca1152a296f9cc59ef7f3">GetParametrString</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#ad9015d6f1665acce0a77172006150120">AttrText</a>, tr(<span class="stringliteral">&quot;&lt;empty&gt;&quot;</span>));</div>
+<div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span>                line.<a class="code hl_variable" href="../../dc/daa/structVLabelTemplateLine.html#a044c7f9d6cebbea41933955ef9947235">bold</a> = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a882aaf932772cc4357a29822a0bb36dc">getParameterBool</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#a0c5421eaa5675ae09a895f78d87026eb">AttrBold</a>, <a class="code hl_variable" href="../../d6/d0b/def_8cpp.html#add2311fa670dce61b8bbdd6baf9841bb">falseStr</a>);</div>
+<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span>                line.<a class="code hl_variable" href="../../dc/daa/structVLabelTemplateLine.html#a002b6f9f8075396961dae2b25718c060">italic</a> = <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a882aaf932772cc4357a29822a0bb36dc">getParameterBool</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#a027f643caba00844bf80a64d352efb8f">AttrItalic</a>, <a class="code hl_variable" href="../../d6/d0b/def_8cpp.html#add2311fa670dce61b8bbdd6baf9841bb">falseStr</a>);</div>
+<div class="line"><a id="l00948" name="l00948"></a><span class="lineno">  948</span>                line.<a class="code hl_variable" href="../../dc/daa/structVLabelTemplateLine.html#a959e663200d6a9eafdd99ca0aa08c5a4">alignment</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a14e129a4d0d66b87adb48c38e46c0f37">GetParametrUInt</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#a3190cc38f15720c8204d00716fad8469">AttrAlignment</a>, <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span>                line.<a class="code hl_variable" href="../../dc/daa/structVLabelTemplateLine.html#a911cdff76bc8a2fd777df4b16a6cd380">fontSizeIncrement</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a14e129a4d0d66b87adb48c38e46c0f37">GetParametrUInt</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#af7c022eef84545253b696838417963e2">AttrFSIncrement</a>, <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span>                lines.append(line);</div>
+<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span>            }</div>
+<div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span>            tagLine = tagLine.nextSiblingElement(<a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#ad4777ec1d5af22e6fe90565e29e73872">TagLine</a>);</div>
+<div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span>        }</div>
+<div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>    }</div>
+<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span> </div>
+<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>    <span class="keywordflow">return</span> lines;</div>
+<div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span>}</div>
+<div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span><span class="comment"></span> </div>
+<div class="line"><a id="l00959" name="l00959"></a><span class="lineno">  959</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00960" name="l00960"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#a0adad76775f408c27ded217805c2b6a2">  960</a></span><span class="comment"></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a0adad76775f408c27ded217805c2b6a2">VDomDocument::SetLabelTemplate</a>(QDomElement &amp;element, <span class="keyword">const</span> QVector&lt;VLabelTemplateLine&gt; &amp;lines)</div>
+<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span>{</div>
+<div class="line"><a id="l00962" name="l00962"></a><span class="lineno">  962</span>    <span class="keywordflow">if</span> (not element.isNull())</div>
+<div class="line"><a id="l00963" name="l00963"></a><span class="lineno">  963</span>    {</div>
+<div class="line"><a id="l00964" name="l00964"></a><span class="lineno">  964</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i &lt; lines.size(); ++i)</div>
+<div class="line"><a id="l00965" name="l00965"></a><span class="lineno">  965</span>        {</div>
+<div class="line"><a id="l00966" name="l00966"></a><span class="lineno">  966</span>            QDomElement tagLine = createElement(<a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#ad4777ec1d5af22e6fe90565e29e73872">TagLine</a>);</div>
+<div class="line"><a id="l00967" name="l00967"></a><span class="lineno">  967</span> </div>
+<div class="line"><a id="l00968" name="l00968"></a><span class="lineno">  968</span>            <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#abfb7369f8b0ebd8da3625a8c347cc2bc">SetAttribute</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#ad9015d6f1665acce0a77172006150120">AttrText</a>, lines.at(i).line);</div>
+<div class="line"><a id="l00969" name="l00969"></a><span class="lineno">  969</span>            <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#abfb7369f8b0ebd8da3625a8c347cc2bc">SetAttribute</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#a0c5421eaa5675ae09a895f78d87026eb">AttrBold</a>, lines.at(i).bold);</div>
+<div class="line"><a id="l00970" name="l00970"></a><span class="lineno">  970</span>            <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#abfb7369f8b0ebd8da3625a8c347cc2bc">SetAttribute</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#a027f643caba00844bf80a64d352efb8f">AttrItalic</a>, lines.at(i).italic);</div>
+<div class="line"><a id="l00971" name="l00971"></a><span class="lineno">  971</span>            <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#abfb7369f8b0ebd8da3625a8c347cc2bc">SetAttribute</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#a3190cc38f15720c8204d00716fad8469">AttrAlignment</a>, lines.at(i).alignment);</div>
+<div class="line"><a id="l00972" name="l00972"></a><span class="lineno">  972</span>            <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#abfb7369f8b0ebd8da3625a8c347cc2bc">SetAttribute</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#af7c022eef84545253b696838417963e2">AttrFSIncrement</a>, lines.at(i).fontSizeIncrement);</div>
+<div class="line"><a id="l00973" name="l00973"></a><span class="lineno">  973</span> </div>
+<div class="line"><a id="l00974" name="l00974"></a><span class="lineno">  974</span>            element.appendChild(tagLine);</div>
 <div class="line"><a id="l00975" name="l00975"></a><span class="lineno">  975</span>        }</div>
 <div class="line"><a id="l00976" name="l00976"></a><span class="lineno">  976</span>    }</div>
-<div class="line"><a id="l00977" name="l00977"></a><span class="lineno">  977</span> </div>
-<div class="line"><a id="l00978" name="l00978"></a><span class="lineno">  978</span>    <span class="keywordflow">return</span> lines;</div>
-<div class="line"><a id="l00979" name="l00979"></a><span class="lineno">  979</span>}</div>
-<div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span><span class="comment"></span> </div>
-<div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span><span class="comment">///--------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00982" name="l00982"></a><span class="lineno"><a class="line" href="../../d6/deb/classVDomDocument.html#a0adad76775f408c27ded217805c2b6a2">  982</a></span><span class="comment"></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#a0adad76775f408c27ded217805c2b6a2">VDomDocument::SetLabelTemplate</a>(QDomElement &amp;element, <span class="keyword">const</span> QVector&lt;VLabelTemplateLine&gt; &amp;lines)</div>
-<div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span>{</div>
-<div class="line"><a id="l00984" name="l00984"></a><span class="lineno">  984</span>    <span class="keywordflow">if</span> (not element.isNull())</div>
-<div class="line"><a id="l00985" name="l00985"></a><span class="lineno">  985</span>    {</div>
-<div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i &lt; lines.size(); ++i)</div>
-<div class="line"><a id="l00987" name="l00987"></a><span class="lineno">  987</span>        {</div>
-<div class="line"><a id="l00988" name="l00988"></a><span class="lineno">  988</span>            QDomElement tagLine = createElement(<a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#ad4777ec1d5af22e6fe90565e29e73872">TagLine</a>);</div>
-<div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span> </div>
-<div class="line"><a id="l00990" name="l00990"></a><span class="lineno">  990</span>            <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#abfb7369f8b0ebd8da3625a8c347cc2bc">SetAttribute</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#ad9015d6f1665acce0a77172006150120">AttrText</a>, lines.at(i).line);</div>
-<div class="line"><a id="l00991" name="l00991"></a><span class="lineno">  991</span>            <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#abfb7369f8b0ebd8da3625a8c347cc2bc">SetAttribute</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#a0c5421eaa5675ae09a895f78d87026eb">AttrBold</a>, lines.at(i).bold);</div>
-<div class="line"><a id="l00992" name="l00992"></a><span class="lineno">  992</span>            <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#abfb7369f8b0ebd8da3625a8c347cc2bc">SetAttribute</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#a027f643caba00844bf80a64d352efb8f">AttrItalic</a>, lines.at(i).italic);</div>
-<div class="line"><a id="l00993" name="l00993"></a><span class="lineno">  993</span>            <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#abfb7369f8b0ebd8da3625a8c347cc2bc">SetAttribute</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#a3190cc38f15720c8204d00716fad8469">AttrAlignment</a>, lines.at(i).alignment);</div>
-<div class="line"><a id="l00994" name="l00994"></a><span class="lineno">  994</span>            <a class="code hl_function" href="../../d6/deb/classVDomDocument.html#abfb7369f8b0ebd8da3625a8c347cc2bc">SetAttribute</a>(tagLine, <a class="code hl_variable" href="../../d6/deb/classVDomDocument.html#af7c022eef84545253b696838417963e2">AttrFSIncrement</a>, lines.at(i).fontSizeIncrement);</div>
-<div class="line"><a id="l00995" name="l00995"></a><span class="lineno">  995</span> </div>
-<div class="line"><a id="l00996" name="l00996"></a><span class="lineno">  996</span>            element.appendChild(tagLine);</div>
-<div class="line"><a id="l00997" name="l00997"></a><span class="lineno">  997</span>        }</div>
-<div class="line"><a id="l00998" name="l00998"></a><span class="lineno">  998</span>    }</div>
-<div class="line"><a id="l00999" name="l00999"></a><span class="lineno">  999</span>}</div>
+<div class="line"><a id="l00977" name="l00977"></a><span class="lineno">  977</span>}</div>
 <div class="ttc" id="aclassCErrorHandler_html"><div class="ttname"><a href="../../db/d94/classCErrorHandler.html">CErrorHandler</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00575">vdomdocument.cpp:576</a></div></div>
 <div class="ttc" id="aclassCErrorHandler_html_a2b24e183280ba31fb8e52e84277912f6"><div class="ttname"><a href="../../db/d94/classCErrorHandler.html#a2b24e183280ba31fb8e52e84277912f6">CErrorHandler::resetErrors</a></div><div class="ttdeci">void resetErrors()</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00603">vdomdocument.cpp:603</a></div></div>
 <div class="ttc" id="aclassCErrorHandler_html_a6e61c564dc746cfb4cb34b0f60df6382"><div class="ttname"><a href="../../db/d94/classCErrorHandler.html#a6e61c564dc746cfb4cb34b0f60df6382">CErrorHandler::error</a></div><div class="ttdeci">void error(const xercesc::SAXParseException &amp;ex)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00595">vdomdocument.cpp:595</a></div></div>
@@ -1111,42 +1089,42 @@ $(document).ready(function(){initNavTree('d7/d49/vdomdocument_8cpp_source.html',
 <div class="ttc" id="aclassVDomDocument_html_a027f643caba00844bf80a64d352efb8f"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a027f643caba00844bf80a64d352efb8f">VDomDocument::AttrItalic</a></div><div class="ttdeci">static const QString AttrItalic</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da5/vdomdocument_8h_source.html#l00110">vdomdocument.h:110</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_a035e4a009f8f79f3f8e04e8aa43d56dc"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a035e4a009f8f79f3f8e04e8aa43d56dc">VDomDocument::elementById</a></div><div class="ttdeci">QDomElement elementById(quint32 id, const QString &amp;tagName=QString())</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00167">vdomdocument.cpp:167</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_a0529f100ec3ca1152a296f9cc59ef7f3"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a0529f100ec3ca1152a296f9cc59ef7f3">VDomDocument::GetParametrString</a></div><div class="ttdeci">static QString GetParametrString(const QDomElement &amp;domElement, const QString &amp;name, const QString &amp;defValue=QString())</div><div class="ttdoc">Returns the string value of the given attribute. RENAME: see above.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00401">vdomdocument.cpp:401</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_a0adad76775f408c27ded217805c2b6a2"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a0adad76775f408c27ded217805c2b6a2">VDomDocument::SetLabelTemplate</a></div><div class="ttdeci">void SetLabelTemplate(QDomElement &amp;element, const QVector&lt; VLabelTemplateLine &gt; &amp;lines)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00982">vdomdocument.cpp:982</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_a0adad76775f408c27ded217805c2b6a2"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a0adad76775f408c27ded217805c2b6a2">VDomDocument::SetLabelTemplate</a></div><div class="ttdeci">void SetLabelTemplate(QDomElement &amp;element, const QVector&lt; VLabelTemplateLine &gt; &amp;lines)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00960">vdomdocument.cpp:960</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_a0c5421eaa5675ae09a895f78d87026eb"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a0c5421eaa5675ae09a895f78d87026eb">VDomDocument::AttrBold</a></div><div class="ttdeci">static const QString AttrBold</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da5/vdomdocument_8h_source.html#l00109">vdomdocument.h:109</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_a14e129a4d0d66b87adb48c38e46c0f37"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a14e129a4d0d66b87adb48c38e46c0f37">VDomDocument::GetParametrUInt</a></div><div class="ttdeci">static quint32 GetParametrUInt(const QDomElement &amp;domElement, const QString &amp;name, const QString &amp;defValue)</div><div class="ttdoc">Returns the long long value of the given attribute. RENAME: GetParameterLongLong?</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00297">vdomdocument.cpp:297</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_a2267524a506a06da9664911c0f0760ea"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a2267524a506a06da9664911c0f0760ea">VDomDocument::GetParametrEmptyString</a></div><div class="ttdeci">static QString GetParametrEmptyString(const QDomElement &amp;domElement, const QString &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00422">vdomdocument.cpp:422</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_a278a792a3d216ccd935a4fd163d0d0a8"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a278a792a3d216ccd935a4fd163d0d0a8">VDomDocument::Major</a></div><div class="ttdeci">QString Major() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00779">vdomdocument.cpp:779</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_a278a792a3d216ccd935a4fd163d0d0a8"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a278a792a3d216ccd935a4fd163d0d0a8">VDomDocument::Major</a></div><div class="ttdeci">QString Major() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00757">vdomdocument.cpp:757</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_a3190cc38f15720c8204d00716fad8469"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a3190cc38f15720c8204d00716fad8469">VDomDocument::AttrAlignment</a></div><div class="ttdeci">static const QString AttrAlignment</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da5/vdomdocument_8h_source.html#l00111">vdomdocument.h:111</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_a49eb5f686268f8ecab6faab3ee4ae1f0"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a49eb5f686268f8ecab6faab3ee4ae1f0">VDomDocument::ValidateXML</a></div><div class="ttdeci">static void ValidateXML(const QString &amp;schema, const QString &amp;fileName)</div><div class="ttdoc">ValidateXML validate xml file by xsd schema.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00612">vdomdocument.cpp:612</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_a595506656459aaf6825c1cab2c9b7238"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a595506656459aaf6825c1cab2c9b7238">VDomDocument::Minor</a></div><div class="ttdeci">QString Minor() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00788">vdomdocument.cpp:788</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_a595506656459aaf6825c1cab2c9b7238"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a595506656459aaf6825c1cab2c9b7238">VDomDocument::Minor</a></div><div class="ttdeci">QString Minor() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00766">vdomdocument.cpp:766</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_a59c47296c3a1e728d95dc125b12014d5"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a59c47296c3a1e728d95dc125b12014d5">VDomDocument::find</a></div><div class="ttdeci">bool find(const QDomElement &amp;node, quint32 id)</div><div class="ttdoc">Map used for finding element by id.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00226">vdomdocument.cpp:226</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_a6012d50aa31b2aafbf513a89c1320daf"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a6012d50aa31b2aafbf513a89c1320daf">VDomDocument::UnitsHelpString</a></div><div class="ttdeci">static QString UnitsHelpString()</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00728">vdomdocument.cpp:728</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_a6b5a395b56c42f809d7803f61777cead"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a6b5a395b56c42f809d7803f61777cead">VDomDocument::CloneNodeById</a></div><div class="ttdeci">QDomElement CloneNodeById(const quint32 &amp;nodeId)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00864">vdomdocument.cpp:864</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_a6012d50aa31b2aafbf513a89c1320daf"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a6012d50aa31b2aafbf513a89c1320daf">VDomDocument::UnitsHelpString</a></div><div class="ttdeci">static QString UnitsHelpString()</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00706">vdomdocument.cpp:706</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_a6b5a395b56c42f809d7803f61777cead"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a6b5a395b56c42f809d7803f61777cead">VDomDocument::CloneNodeById</a></div><div class="ttdeci">QDomElement CloneNodeById(const quint32 &amp;nodeId)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00842">vdomdocument.cpp:842</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_a7281671f7a4a0bb0465d62b150cd00a2"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a7281671f7a4a0bb0465d62b150cd00a2">VDomDocument::CollectId</a></div><div class="ttdeci">void CollectId(const QDomElement &amp;node, QVector&lt; quint32 &gt; &amp;vector) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00552">vdomdocument.cpp:552</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_a78e5ffde77275389652c56349dd0288a"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a78e5ffde77275389652c56349dd0288a">VDomDocument::measurementUnits</a></div><div class="ttdeci">Unit measurementUnits() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00499">vdomdocument.cpp:499</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_a86fe2212ec54746e3e0b01dbb676e130"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a86fe2212ec54746e3e0b01dbb676e130">VDomDocument::SaveCanonicalXML</a></div><div class="ttdeci">bool SaveCanonicalXML(QIODevice *file, int indent, QString &amp;error) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00261">vdomdocument.cpp:261</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_a882aaf932772cc4357a29822a0bb36dc"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a882aaf932772cc4357a29822a0bb36dc">VDomDocument::getParameterBool</a></div><div class="ttdeci">static bool getParameterBool(const QDomElement &amp;domElement, const QString &amp;name, const QString &amp;defValue)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00326">vdomdocument.cpp:326</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_a8dd4b44bf243c35092c40916985f894f"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a8dd4b44bf243c35092c40916985f894f">VDomDocument::TestUniqueId</a></div><div class="ttdeci">void TestUniqueId() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00545">vdomdocument.cpp:545</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_a988591c04a3fcf92472ad456a82c1e63"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a988591c04a3fcf92472ad456a82c1e63">VDomDocument::setTagText</a></div><div class="ttdeci">bool setTagText(const QString &amp;tag, const QString &amp;text)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00805">vdomdocument.cpp:805</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_a988591c04a3fcf92472ad456a82c1e63"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a988591c04a3fcf92472ad456a82c1e63">VDomDocument::setTagText</a></div><div class="ttdeci">bool setTagText(const QString &amp;tag, const QString &amp;text)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00783">vdomdocument.cpp:783</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_aa7bdee99abde0346b9fe3f94b7a03449"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#aa7bdee99abde0346b9fe3f94b7a03449">VDomDocument::map</a></div><div class="ttdeci">QHash&lt; quint32, QDomElement &gt; map</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da5/vdomdocument_8h_source.html#l00169">vdomdocument.h:169</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_aabb51f8c078c47bcc31a75a98d5f0fa4"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#aabb51f8c078c47bcc31a75a98d5f0fa4">VDomDocument::SetParametrUsage</a></div><div class="ttdeci">static void SetParametrUsage(QDomElement &amp;domElement, const QString &amp;name, const NodeUsage &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00382">vdomdocument.cpp:382</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_aae68e283291deaac9ea862c0ada06c06"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#aae68e283291deaac9ea862c0ada06c06">VDomDocument::Patch</a></div><div class="ttdeci">QString Patch() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00797">vdomdocument.cpp:797</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_aae68e283291deaac9ea862c0ada06c06"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#aae68e283291deaac9ea862c0ada06c06">VDomDocument::Patch</a></div><div class="ttdeci">QString Patch() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00775">vdomdocument.cpp:775</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_ab2491ade24937b5eb6d11244f1dda895"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ab2491ade24937b5eb6d11244f1dda895">VDomDocument::GetParametrDouble</a></div><div class="ttdeci">static qreal GetParametrDouble(const QDomElement &amp;domElement, const QString &amp;name, const QString &amp;defValue)</div><div class="ttdoc">Returns the double value of the given attribute.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00442">vdomdocument.cpp:442</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_ab41f21975c59bfa7ca249cb3fd95e367"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ab41f21975c59bfa7ca249cb3fd95e367">VDomDocument::NodeById</a></div><div class="ttdeci">QDomElement NodeById(const quint32 &amp;nodeId)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00871">vdomdocument.cpp:871</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_ab7e2c541d5f3b0a74e88de301223f4cd"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ab7e2c541d5f3b0a74e88de301223f4cd">VDomDocument::SafeCopy</a></div><div class="ttdeci">static bool SafeCopy(const QString &amp;source, const QString &amp;destination, QString &amp;error)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00882">vdomdocument.cpp:882</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_ab41f21975c59bfa7ca249cb3fd95e367"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ab41f21975c59bfa7ca249cb3fd95e367">VDomDocument::NodeById</a></div><div class="ttdeci">QDomElement NodeById(const quint32 &amp;nodeId)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00849">vdomdocument.cpp:849</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_ab7e2c541d5f3b0a74e88de301223f4cd"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ab7e2c541d5f3b0a74e88de301223f4cd">VDomDocument::SafeCopy</a></div><div class="ttdeci">static bool SafeCopy(const QString &amp;source, const QString &amp;destination, QString &amp;error)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00860">vdomdocument.cpp:860</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_ab8e9f3f325f6e16787f1729059fd3f14"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ab8e9f3f325f6e16787f1729059fd3f14">VDomDocument::TagVersion</a></div><div class="ttdeci">static const QString TagVersion</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da5/vdomdocument_8h_source.html#l00114">vdomdocument.h:114</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_abcef727e02159612a30a9363a04158e4"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#abcef727e02159612a30a9363a04158e4">VDomDocument::TagUnit</a></div><div class="ttdeci">static const QString TagUnit</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da5/vdomdocument_8h_source.html#l00115">vdomdocument.h:115</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_abd6e5a84e0b9db4e16e1e49062565cc5"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#abd6e5a84e0b9db4e16e1e49062565cc5">VDomDocument::UniqueTagText</a></div><div class="ttdeci">QString UniqueTagText(const QString &amp;tagName, const QString &amp;defVal=QString()) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00512">vdomdocument.cpp:512</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_abfb7369f8b0ebd8da3625a8c347cc2bc"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#abfb7369f8b0ebd8da3625a8c347cc2bc">VDomDocument::SetAttribute</a></div><div class="ttdeci">void SetAttribute(QDomElement &amp;domElement, const QString &amp;name, const T &amp;value) const</div><div class="ttdoc">SetAttribute set attribute in pattern file. Replace &quot;,&quot; by &quot;.&quot;.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da5/vdomdocument_8h_source.html#l00182">vdomdocument.h:182</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_ac01614ab160d642abb95fdf1dc90f978"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ac01614ab160d642abb95fdf1dc90f978">VDomDocument::ParentNodeById</a></div><div class="ttdeci">QDomNode ParentNodeById(const quint32 &amp;nodeId)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00857">vdomdocument.cpp:857</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_ac01614ab160d642abb95fdf1dc90f978"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ac01614ab160d642abb95fdf1dc90f978">VDomDocument::ParentNodeById</a></div><div class="ttdeci">QDomNode ParentNodeById(const quint32 &amp;nodeId)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00835">vdomdocument.cpp:835</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_ad06b8e03afd3169050953c4b4cfa758e"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ad06b8e03afd3169050953c4b4cfa758e">VDomDocument::AttrId</a></div><div class="ttdeci">static const QString AttrId</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da5/vdomdocument_8h_source.html#l00107">vdomdocument.h:107</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_ad316cde19d3383a783936544c822b750"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ad316cde19d3383a783936544c822b750">VDomDocument::setXMLContent</a></div><div class="ttdeci">virtual void setXMLContent(const QString &amp;fileName)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00704">vdomdocument.cpp:704</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_ad316cde19d3383a783936544c822b750"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ad316cde19d3383a783936544c822b750">VDomDocument::setXMLContent</a></div><div class="ttdeci">virtual void setXMLContent(const QString &amp;fileName)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00678">vdomdocument.cpp:678</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_ad4777ec1d5af22e6fe90565e29e73872"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ad4777ec1d5af22e6fe90565e29e73872">VDomDocument::TagLine</a></div><div class="ttdeci">static const QString TagLine</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da5/vdomdocument_8h_source.html#l00116">vdomdocument.h:116</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_ad9015d6f1665acce0a77172006150120"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ad9015d6f1665acce0a77172006150120">VDomDocument::AttrText</a></div><div class="ttdeci">static const QString AttrText</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da5/vdomdocument_8h_source.html#l00108">vdomdocument.h:108</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_ae93f9e4a2d9b64ad6433886358b105d9"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ae93f9e4a2d9b64ad6433886358b105d9">VDomDocument::RemoveAllChildren</a></div><div class="ttdeci">static void RemoveAllChildren(QDomElement &amp;domElement)</div><div class="ttdoc">RemoveAllChildren remove all children from file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00845">vdomdocument.cpp:845</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_aeaf681ea2c0d1efb06557f18e00f49c6"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#aeaf681ea2c0d1efb06557f18e00f49c6">VDomDocument::SaveDocument</a></div><div class="ttdeci">virtual bool SaveDocument(const QString &amp;fileName, QString &amp;error)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00743">vdomdocument.cpp:743</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_ae93f9e4a2d9b64ad6433886358b105d9"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ae93f9e4a2d9b64ad6433886358b105d9">VDomDocument::RemoveAllChildren</a></div><div class="ttdeci">static void RemoveAllChildren(QDomElement &amp;domElement)</div><div class="ttdoc">RemoveAllChildren remove all children from file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00823">vdomdocument.cpp:823</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_aeaf681ea2c0d1efb06557f18e00f49c6"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#aeaf681ea2c0d1efb06557f18e00f49c6">VDomDocument::SaveDocument</a></div><div class="ttdeci">virtual bool SaveDocument(const QString &amp;fileName, QString &amp;error)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00721">vdomdocument.cpp:721</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_aeb472b427a54a831c69cb9dd3ffb3d87"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#aeb472b427a54a831c69cb9dd3ffb3d87">VDomDocument::GetParametrUsage</a></div><div class="ttdeci">static NodeUsage GetParametrUsage(const QDomElement &amp;domElement, const QString &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00368">vdomdocument.cpp:368</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_af3e96f8b2c46248b00e5fb4a2775a4e9"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#af3e96f8b2c46248b00e5fb4a2775a4e9">VDomDocument::GetLabelTemplate</a></div><div class="ttdeci">QVector&lt; VLabelTemplateLine &gt; GetLabelTemplate(const QDomElement &amp;element) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00950">vdomdocument.cpp:950</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_af3e96f8b2c46248b00e5fb4a2775a4e9"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#af3e96f8b2c46248b00e5fb4a2775a4e9">VDomDocument::GetLabelTemplate</a></div><div class="ttdeci">QVector&lt; VLabelTemplateLine &gt; GetLabelTemplate(const QDomElement &amp;element) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00928">vdomdocument.cpp:928</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_af5620d4ba0735e6ccf747d5dc85e377a"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#af5620d4ba0735e6ccf747d5dc85e377a">VDomDocument::getParameterId</a></div><div class="ttdeci">static quint32 getParameterId(const QDomElement &amp;domElement)</div><div class="ttdoc">getParameterId return value id attribute.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00474">vdomdocument.cpp:474</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_af7c022eef84545253b696838417963e2"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#af7c022eef84545253b696838417963e2">VDomDocument::AttrFSIncrement</a></div><div class="ttdeci">static const QString AttrFSIncrement</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da5/vdomdocument_8h_source.html#l00112">vdomdocument.h:112</a></div></div>
 <div class="ttc" id="aclassVExceptionBadId_html"><div class="ttname"><a href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a></div><div class="ttdoc">The VExceptionBadId class for exception bad id.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d13/vexceptionbadid_8h_source.html#l00065">vexceptionbadid.h:66</a></div></div>

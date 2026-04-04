@@ -422,7 +422,7 @@ var hierarchy =
       [ "qmu::QmuParserError", "df/ddc/classqmu_1_1QmuParserError.html", null ]
     ] ],
     [ "QFrame", null, [
-      [ "VWidgetPopup", "db/d1a/classVWidgetPopup.html", null ]
+      [ "WidgetPopup", "d1/dbc/classWidgetPopup.html", null ]
     ] ],
     [ "QGraphicsEllipseItem", null, [
       [ "VScaledEllipse", "d8/dbf/classVScaledEllipse.html", null ],
@@ -833,6 +833,7 @@ var hierarchy =
     [ "QSharedPointer< T >", "dd/daa/classQSharedPointer.html", null ],
     [ "QSharedPointer< DialogTool >", "dd/daa/classQSharedPointer.html", null ],
     [ "QSharedPointer< dx_iface >", "dd/daa/classQSharedPointer.html", null ],
+    [ "QSharedPointer< MeasurementDoc >", "dd/daa/classQSharedPointer.html", null ],
     [ "QSharedPointer< QCursor >", "dd/daa/classQSharedPointer.html", null ],
     [ "QSharedPointer< QDomDocument >", "dd/daa/classQSharedPointer.html", null ],
     [ "QSharedPointer< QFile >", "dd/daa/classQSharedPointer.html", null ],
