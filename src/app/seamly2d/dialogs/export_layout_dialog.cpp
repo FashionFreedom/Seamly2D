@@ -1,33 +1,53 @@
-/************************************************************************
- **
- **  @file   export_layout_dialog.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   22 1, 2015
- **
- **  @author Douglas S Caskey
- **  @date   Nov 4, 2022
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2022 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   export_layout_dialog.cpp
+//  @author Douglas S Caskey
+//  @date   Apr 1, 2026
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2026 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//  @file   export_layout_dialog.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   22 1, 2015
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
+//  Copyright (C) 2017-2026 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 #include "export_layout_dialog.h"
 #include "ui_export_layout_dialog.h"
@@ -70,6 +90,7 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
     m_SaveButton = ui->buttonBox->button(QDialogButtonBox::Save);
     SCASSERT(m_SaveButton != nullptr)
     m_SaveButton->setEnabled(false);
+    m_SaveButton->setText(tr("Export"));
 
     ui->filename_LineEdit->setValidator( new QRegularExpressionValidator(QRegularExpression(fileNameRegExp), this));
 
@@ -184,6 +205,21 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
     ui->path_LineEdit->setText(qApp->Seamly2DSettings()->getLayoutPath());
 
     initTemplates(ui->templates_ComboBox);
+
+    // Size selection group box: hidden by default, shown when setAvailableSizes() is called
+    ui->sizeSelection_GroupBox->setVisible(false);
+
+    connect(ui->selectAll_CheckBox, &QCheckBox::toggled, [=](bool checked)
+    {
+        if (checked)
+        {
+            selectAllSizes();
+        }
+        else
+        {
+            deselectAllSizes();
+        }
+    });
 
     readSettings();
     showExportFiles(); //Show example for current format.
@@ -485,6 +521,12 @@ QString ExportLayoutDialog::fileName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void ExportLayoutDialog::setFileName(const QString &name)
+{
+    ui->filename_LineEdit->setText(name);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 LayoutExportFormat ExportLayoutDialog::format() const
 {
     return static_cast<LayoutExportFormat>(ui->format_ComboBox->currentData().toInt());
@@ -594,26 +636,66 @@ void ExportLayoutDialog::showExportFiles()
 
     if (currentFormat == LayoutExportFormat::PDFTiled)
     {
-        const QString name = QString("%1%2")
-        .arg(fileName())                     //1
-        .arg(exportFormatSuffix(format()));  //2
-
-        QListWidgetItem *item = new QListWidgetItem(name);
-        SCASSERT(item != nullptr)
-        ui->exportFiles_ListWidget->addItem(item);
-    }
-    else
-    {
-        for (int i=0; i < m_count; ++i)
+        // Batch mode
+        if (!selectedSizes().isEmpty())
         {
-            const QString name = QString("%1_0%2%3")
+            for (const QString &size : selectedSizes())
+            {
+                const QString name = QString("%1_%2%3")
+                .arg(fileName())                     //1
+                .arg(size)                           //2
+                .arg(exportFormatSuffix(format()));  //3
+
+                QListWidgetItem *item = new QListWidgetItem(name);
+                SCASSERT(item != nullptr)
+                ui->exportFiles_ListWidget->addItem(item);
+            }
+        }
+        else
+        {
+            const QString name = QString("%1%2")
             .arg(fileName())                     //1
-            .arg(QString::number(i+1))           //2
-            .arg(exportFormatSuffix(format()));  //3
+            .arg(exportFormatSuffix(format()));  //2
 
             QListWidgetItem *item = new QListWidgetItem(name);
             SCASSERT(item != nullptr)
             ui->exportFiles_ListWidget->addItem(item);
+        }
+    }
+    else
+    {
+        // Batch mode
+        if (!selectedSizes().isEmpty())
+        {
+            for (const QString &size : selectedSizes())
+            {
+                for (int i=0; i < m_count; ++i)
+                {
+                    const QString name = QString("%1_%2_0%3%4")
+                    .arg(fileName())                     //1
+                    .arg(size)                           //2
+                    .arg(QString::number(i+1))           //3
+                    .arg(exportFormatSuffix(format()));  //4
+
+                    QListWidgetItem *item = new QListWidgetItem(name);
+                    SCASSERT(item != nullptr)
+                    ui->exportFiles_ListWidget->addItem(item);
+                }
+            }
+        }
+        else
+        {
+            for (int i=0; i < m_count; ++i)
+            {
+                const QString name = QString("%1_0%2%3")
+                .arg(fileName())                     //1
+                .arg(QString::number(i+1))           //2
+                .arg(exportFormatSuffix(format()));  //3
+
+                QListWidgetItem *item = new QListWidgetItem(name);
+                SCASSERT(item != nullptr)
+                ui->exportFiles_ListWidget->addItem(item);
+            }
         }
     }
 
@@ -719,13 +801,12 @@ void ExportLayoutDialog::removeFormatFromList(LayoutExportFormat format)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * Reads the values of the variables needed for the save layout dialog, for instance
- * the margins, teamplte and orientation of tiled pdf. Then sets the corresponding
- * elements of the dialog to these values.
- *
- * @brief ExportLayoutDialog::readSettings
- */
+//  Reads the values of the variables needed for the save layout dialog, for instance
+//  the margins, teamplte and orientation of tiled pdf. Then sets the corresponding
+//  elements of the dialog to these values.
+//
+//  @brief ExportLayoutDialog::readSettings
+//---------------------------------------------------------------------------------------------------------------------
 void ExportLayoutDialog::readSettings()
 {
     VSettings *settings = qApp->Seamly2DSettings();
@@ -769,12 +850,11 @@ void ExportLayoutDialog::readSettings()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * Writes the values of some variables (like the margins, template and orientation of tiled pdf).
- * of the save layout dialog into the settings.
- *
- * @brief ExportLayoutDialog::writeSettings
- */
+//  Writes the values of some variables (like the margins, template and orientation of tiled pdf).
+//  of the save layout dialog into the settings.
+//
+//  @brief ExportLayoutDialog::writeSettings
+//---------------------------------------------------------------------------------------------------------------------
 void ExportLayoutDialog::writeSettings() const
 {
     VSettings *settings = qApp->Seamly2DSettings();
@@ -815,10 +895,9 @@ void ExportLayoutDialog::writeSettings() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief modeString()
- * @return Returns a string that is the mode type
- */
+//  @brief modeString()
+//  @return Returns a string that is the mode type
+//---------------------------------------------------------------------------------------------------------------------
 QString ExportLayoutDialog::modeString() const
 {
     QString modeStr = QStringLiteral("");
@@ -845,4 +924,83 @@ QString ExportLayoutDialog::modeString() const
         }
     }
     return modeStr;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void ExportLayoutDialog::setAvailableSizes(const QStringList &sizes)
+{
+    ui->sizes_ListWidget->clear();
+
+    if (sizes.isEmpty())
+    {
+        ui->sizeSelection_GroupBox->setVisible(false);
+        setMinimumHeight(380);
+        adjustSize();
+        return;
+    }
+
+    ui->sizeSelection_GroupBox->setVisible(true);
+    setMinimumHeight(470);
+    adjustSize();
+    if (m_mode != Draw::Layout)
+    {
+        setMinimumHeight(400);
+    }
+
+    for (const QString &size : sizes)
+    {
+        QListWidgetItem *item = new QListWidgetItem(size + QString(" "));
+        SCASSERT(item != nullptr)
+        item->setFlags(item->flags() | Qt::ItemIsUserCheckable);
+        item->setCheckState(Qt::Unchecked);
+        ui->sizes_ListWidget->addItem(item);
+    }
+
+    // Reconnect to update file preview when sizes change
+    connect(ui->sizes_ListWidget, &QListWidget::itemChanged, this, &ExportLayoutDialog::showExportFiles);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QStringList ExportLayoutDialog::selectedSizes() const
+{
+    QStringList sizes;
+    for (int i = 0; i < ui->sizes_ListWidget->count(); ++i)
+    {
+        QListWidgetItem *item = ui->sizes_ListWidget->item(i);
+        if (item->checkState() == Qt::Checked)
+        {
+            sizes.append(item->text());
+        }
+    }
+    return sizes;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool ExportLayoutDialog::isBatchExport() const
+{
+    return !selectedSizes().isEmpty();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void ExportLayoutDialog::selectAllSizes()
+{
+    ui->sizes_ListWidget->blockSignals(true);
+    for (int i = 0; i < ui->sizes_ListWidget->count(); ++i)
+    {
+        ui->sizes_ListWidget->item(i)->setCheckState(Qt::Checked);
+    }
+    ui->sizes_ListWidget->blockSignals(false);
+    showExportFiles();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void ExportLayoutDialog::deselectAllSizes()
+{
+    ui->sizes_ListWidget->blockSignals(true);
+    for (int i = 0; i < ui->sizes_ListWidget->count(); ++i)
+    {
+        ui->sizes_ListWidget->item(i)->setCheckState(Qt::Unchecked);
+    }
+    ui->sizes_ListWidget->blockSignals(false);
+    showExportFiles();
 }

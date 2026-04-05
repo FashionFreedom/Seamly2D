@@ -3796,6 +3796,45 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <source>Paper format (tiled PDF only)</source>
         <translation>Μορφή χαρτιού (μόνο PDF με πλακίδια)</translation>
     </message>
+    <message>
+        <source>Export Selected Sizes</source>
+        <translation>Εξαγωγή επιλεγμένων μεγεθών</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Επιλέξτε Όλα</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Εξαγωγή</translation>
+    </message>
+</context>
+<context>
+    <name>ExportProgressDialog</name>
+    <message>
+        <source>Exporting files...</source>
+        <translation>Εξαγωγή αρχείων...</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Αρχείο</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Κατάσταση</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Εκκρεμής</translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation>Ολοκληρώθηκε το</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Αποτυχημένος</translation>
+    </message>
 </context>
 <context>
     <name>FvUpdater</name>
@@ -7076,6 +7115,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Next Draft Block</source>
         <translation>Επόμενο μπλοκάρισμα στο προσχέδιο</translation>
+    </message>
+    <message>
+        <source>Exporting...</source>
+        <translation>Εξαγωγή...</translation>
     </message>
 </context>
 <context>
