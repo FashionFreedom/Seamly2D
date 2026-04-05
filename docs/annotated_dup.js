@@ -333,6 +333,7 @@ var annotated_dup =
     [ "ExpandingTextEdit", "db/dac/classExpandingTextEdit.html", "db/dac/classExpandingTextEdit" ],
     [ "ExportFormatCombobox", "d4/d06/classExportFormatCombobox.html", "d4/d06/classExportFormatCombobox" ],
     [ "ExportLayoutDialog", "de/dbd/classExportLayoutDialog.html", "de/dbd/classExportLayoutDialog" ],
+    [ "ExportProgressDialog", "d7/deb/classExportProgressDialog.html", "d7/deb/classExportProgressDialog" ],
     [ "face_s", "d3/d07/structface__s.html", "d3/d07/structface__s" ],
     [ "FieldActivator", "dd/d05/classFieldActivator.html", "dd/d05/classFieldActivator" ],
     [ "FieldMatcher", "dc/dbe/classFieldMatcher.html", "dc/dbe/classFieldMatcher" ],

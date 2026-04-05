@@ -134,8 +134,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae8ddcf722aa88bd4f6a7ba71c2a8f846"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d29e095660e51edee81f86a6d427f86"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#a4d29e095660e51edee81f86a6d427f86">fileName</a> () const</td></tr>
 <tr class="separator:a4d29e095660e51edee81f86a6d427f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ce128e12b36a80a7ea3b5320f2fb83f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#a5ce128e12b36a80a7ea3b5320f2fb83f">setFileName</a> (const QString &amp;name)</td></tr>
+<tr class="separator:a5ce128e12b36a80a7ea3b5320f2fb83f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a212ce58f1c02935143d44fad1f0a59a3"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#a212ce58f1c02935143d44fad1f0a59a3">modeString</a> () const</td></tr>
-<tr class="memdesc:a212ce58f1c02935143d44fad1f0a59a3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#a212ce58f1c02935143d44fad1f0a59a3" title="modeString()">modeString()</a>  <br /></td></tr>
 <tr class="separator:a212ce58f1c02935143d44fad1f0a59a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06f64cfe19ccdde0b4607f83a842b75b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8">LayoutExportFormat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#a06f64cfe19ccdde0b4607f83a842b75b">format</a> () const</td></tr>
 <tr class="separator:a06f64cfe19ccdde0b4607f83a842b75b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,6 +158,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a56920dec6078e1aba9f42156097979c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85d7846d094b7691bafef2b4dc60e603"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#a85d7846d094b7691bafef2b4dc60e603">setTextAsPaths</a> (bool textAsPaths)</td></tr>
 <tr class="separator:a85d7846d094b7691bafef2b4dc60e603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8724d67c6472b021ae8a49b7884bef2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#a8724d67c6472b021ae8a49b7884bef2a">setAvailableSizes</a> (const QStringList &amp;sizes)</td></tr>
+<tr class="separator:a8724d67c6472b021ae8a49b7884bef2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97bc77b796f2ad5a92976af3ccec73e3"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#a97bc77b796f2ad5a92976af3ccec73e3">selectedSizes</a> () const</td></tr>
+<tr class="separator:a97bc77b796f2ad5a92976af3ccec73e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2159043346c5a6a1c052d7479d23ccd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#ae2159043346c5a6a1c052d7479d23ccd">isBatchExport</a> () const</td></tr>
+<tr class="separator:ae2159043346c5a6a1c052d7479d23ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classAbstractLayoutDialog"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classAbstractLayoutDialog')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../df/dc3/classAbstractLayoutDialog.html">AbstractLayoutDialog</a></td></tr>
 <tr class="memitem:a603fab080ba0182f253b35dbb4e51f92 inherit pub_methods_classAbstractLayoutDialog"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dc3/classAbstractLayoutDialog.html#a603fab080ba0182f253b35dbb4e51f92">AbstractLayoutDialog</a> (QWidget *parent=nullptr)</td></tr>
 <tr class="separator:a603fab080ba0182f253b35dbb4e51f92 inherit pub_methods_classAbstractLayoutDialog"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,16 +194,18 @@ Private Slots</h2></td></tr>
 <tr class="separator:a4a9960ccddad697413167572bac691f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07800061e1ca0bcfa01a245e65cdccc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#a07800061e1ca0bcfa01a245e65cdccc5">showExportFiles</a> ()</td></tr>
 <tr class="separator:a07800061e1ca0bcfa01a245e65cdccc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94d2bdfbc736340bff213322c70fa319"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#a94d2bdfbc736340bff213322c70fa319">selectAllSizes</a> ()</td></tr>
+<tr class="separator:a94d2bdfbc736340bff213322c70fa319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a055ed79951b2dfb797ad31bf6afd4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#a6a055ed79951b2dfb797ad31bf6afd4d">deselectAllSizes</a> ()</td></tr>
+<tr class="separator:a6a055ed79951b2dfb797ad31bf6afd4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aa3d24041e9e4a364bed2e5a9e2ce53de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#aa3d24041e9e4a364bed2e5a9e2ce53de">removeFormatFromList</a> (<a class="el" href="../../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8">LayoutExportFormat</a> <a class="el" href="../../de/dbd/classExportLayoutDialog.html#a06f64cfe19ccdde0b4607f83a842b75b">format</a>)</td></tr>
 <tr class="separator:aa3d24041e9e4a364bed2e5a9e2ce53de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a5efe09de3ef0d949bbabb83bcd017b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#a1a5efe09de3ef0d949bbabb83bcd017b">readSettings</a> ()</td></tr>
-<tr class="memdesc:a1a5efe09de3ef0d949bbabb83bcd017b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#a1a5efe09de3ef0d949bbabb83bcd017b" title="ExportLayoutDialog::readSettings.">ExportLayoutDialog::readSettings</a>.  <br /></td></tr>
 <tr class="separator:a1a5efe09de3ef0d949bbabb83bcd017b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acddbbe1458589ca2c1fdb96ce369b225"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#acddbbe1458589ca2c1fdb96ce369b225">writeSettings</a> () const</td></tr>
-<tr class="memdesc:acddbbe1458589ca2c1fdb96ce369b225"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../de/dbd/classExportLayoutDialog.html#acddbbe1458589ca2c1fdb96ce369b225" title="ExportLayoutDialog::writeSettings.">ExportLayoutDialog::writeSettings</a>.  <br /></td></tr>
 <tr class="separator:acddbbe1458589ca2c1fdb96ce369b225"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -214,7 +223,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00048">48</a> of file <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html">export_layout_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00069">69</a> of file <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html">export_layout_dialog.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a78f4fd4af94b19f96ee7dafee837b06c" name="a78f4fd4af94b19f96ee7dafee837b06c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a78f4fd4af94b19f96ee7dafee837b06c">&#9670;&#160;</a></span>ExportLayoutDialog()</h2>
@@ -262,9 +271,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00054">54</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00074">74</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00325">enableBinaryDXFFormatCheckbox()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00058">FILEDIALOG_OPTIONS</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00482">fileName()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00051">fileNameRegExp</a>, <a class="el" href="../../df/d3e/application__2d_8cpp_source.html#l00718">Application2D::isGUIMode()</a>, <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00093">m_mode</a>, <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00094">m_SaveButton</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00822">modeString()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00711">removeFormatFromList()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00500">save()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00437">SCASSERT</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00576">showExportFiles()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00361">enableBinaryDXFFormatCheckbox()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00058">FILEDIALOG_OPTIONS</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00518">fileName()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00071">fileNameRegExp</a>, <a class="el" href="../../df/d3e/application__2d_8cpp_source.html#l00718">Application2D::isGUIMode()</a>, <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00122">m_mode</a>, <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00123">m_SaveButton</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00901">modeString()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00793">removeFormatFromList()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00542">save()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00437">SCASSERT</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00618">showExportFiles()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
 </div>
 </div>
@@ -291,13 +300,42 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00470">470</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00506">506</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6a055ed79951b2dfb797ad31bf6afd4d" name="a6a055ed79951b2dfb797ad31bf6afd4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a055ed79951b2dfb797ad31bf6afd4d">&#9670;&#160;</a></span>deselectAllSizes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExportLayoutDialog::deselectAllSizes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00997">997</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00618">showExportFiles()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
+
+</div>
+</div>
 <a id="af0c6264f6d4efb098b6088ddd8071dee" name="af0c6264f6d4efb098b6088ddd8071dee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af0c6264f6d4efb098b6088ddd8071dee">&#9670;&#160;</a></span>enableBinaryDXFFormatCheckbox()</h2>
 
@@ -313,11 +351,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00325">325</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00361">361</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00488">format()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00530">format()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00054">ExportLayoutDialog()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00074">ExportLayoutDialog()</a>.</p>
 
 </div>
 </div>
@@ -345,11 +383,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00411">411</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00447">447</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00488">format()</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00530">format()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00259">MainWindowsNoGUI::ExportData()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06888">MainWindow::exportDraftBlocksAs()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00308">MainWindowsNoGUI::ExportFlatLayout()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00464">MainWindowsNoGUI::exportPiecesAsApparelLayout()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l01610">MainWindowsNoGUI::ExportScene()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00500">save()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00576">showExportFiles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00259">MainWindowsNoGUI::ExportData()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07136">MainWindow::exportDraftBlocksAs()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00308">MainWindowsNoGUI::ExportFlatLayout()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06782">MainWindow::exportLayoutAs()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06986">MainWindow::exportPiecesAs()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00464">MainWindowsNoGUI::exportPiecesAsApparelLayout()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l01610">MainWindowsNoGUI::ExportScene()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00542">save()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00618">showExportFiles()</a>.</p>
 
 </div>
 </div>
@@ -368,11 +406,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00482">482</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00518">518</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00259">MainWindowsNoGUI::ExportData()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06888">MainWindow::exportDraftBlocksAs()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00308">MainWindowsNoGUI::ExportFlatLayout()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00054">ExportLayoutDialog()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00464">MainWindowsNoGUI::exportPiecesAsApparelLayout()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l01610">MainWindowsNoGUI::ExportScene()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00500">save()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00576">showExportFiles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00259">MainWindowsNoGUI::ExportData()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07136">MainWindow::exportDraftBlocksAs()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00308">MainWindowsNoGUI::ExportFlatLayout()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06782">MainWindow::exportLayoutAs()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00074">ExportLayoutDialog()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00464">MainWindowsNoGUI::exportPiecesAsApparelLayout()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l01610">MainWindowsNoGUI::ExportScene()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00542">save()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00618">showExportFiles()</a>.</p>
 
 </div>
 </div>
@@ -391,11 +429,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00488">488</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00530">530</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00325">enableBinaryDXFFormatCheckbox()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00401">MainWindowsNoGUI::ExportApparelLayout()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00259">MainWindowsNoGUI::ExportData()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06888">MainWindow::exportDraftBlocksAs()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00308">MainWindowsNoGUI::ExportFlatLayout()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00411">exportFormatSuffix()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00464">MainWindowsNoGUI::exportPiecesAsApparelLayout()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l01610">MainWindowsNoGUI::ExportScene()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00276">isBinaryDXFFormat()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00711">removeFormatFromList()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00500">save()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00207">selectFormat()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00225">setBinaryDXFFormat()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00576">showExportFiles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00361">enableBinaryDXFFormatCheckbox()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00401">MainWindowsNoGUI::ExportApparelLayout()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00259">MainWindowsNoGUI::ExportData()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07136">MainWindow::exportDraftBlocksAs()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00308">MainWindowsNoGUI::ExportFlatLayout()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00447">exportFormatSuffix()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06782">MainWindow::exportLayoutAs()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06986">MainWindow::exportPiecesAs()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00464">MainWindowsNoGUI::exportPiecesAsApparelLayout()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l01610">MainWindowsNoGUI::ExportScene()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00312">isBinaryDXFFormat()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00793">removeFormatFromList()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00542">save()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00243">selectFormat()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00261">setBinaryDXFFormat()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00618">showExportFiles()</a>.</p>
 
 </div>
 </div>
@@ -414,11 +452,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00494">494</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00536">536</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00778">writeSettings()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00858">writeSettings()</a>.</p>
 
 </div>
 </div>
@@ -446,7 +484,30 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00197">197</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00233">233</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae2159043346c5a6a1c052d7479d23ccd" name="ae2159043346c5a6a1c052d7479d23ccd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2159043346c5a6a1c052d7479d23ccd">&#9670;&#160;</a></span>isBatchExport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ExportLayoutDialog::isBatchExport </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00979">979</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00964">selectedSizes()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06782">MainWindow::exportLayoutAs()</a>, and <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06986">MainWindow::exportPiecesAs()</a>.</p>
 
 </div>
 </div>
@@ -465,9 +526,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00276">276</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00312">312</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00488">format()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00530">format()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00401">MainWindowsNoGUI::ExportApparelLayout()</a>, and <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l01610">MainWindowsNoGUI::ExportScene()</a>.</p>
 
@@ -488,9 +549,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00675">675</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00757">757</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00464">MainWindowsNoGUI::exportPiecesAsApparelLayout()</a>, and <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00342">MainWindowsNoGUI::exportPiecesAsFlatLayout()</a>.</p>
 
@@ -511,9 +572,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00405">405</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00441">441</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00093">m_mode</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00122">m_mode</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00259">MainWindowsNoGUI::ExportData()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00308">MainWindowsNoGUI::ExportFlatLayout()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00464">MainWindowsNoGUI::exportPiecesAsApparelLayout()</a>, and <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l01610">MainWindowsNoGUI::ExportScene()</a>.</p>
 
@@ -534,14 +595,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="../../de/dbd/classExportLayoutDialog.html#a212ce58f1c02935143d44fad1f0a59a3" title="modeString()">modeString()</a> </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns a string that is the mode type </dd></dl>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00901">901</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00822">822</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00122">m_mode</a>, and <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00093">m_mode</a>, and <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00054">ExportLayoutDialog()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00074">ExportLayoutDialog()</a>.</p>
 
 </div>
 </div>
@@ -560,11 +618,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00476">476</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00512">512</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00401">MainWindowsNoGUI::ExportApparelLayout()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00259">MainWindowsNoGUI::ExportData()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06888">MainWindow::exportDraftBlocksAs()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00308">MainWindowsNoGUI::ExportFlatLayout()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00464">MainWindowsNoGUI::exportPiecesAsApparelLayout()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l01610">MainWindowsNoGUI::ExportScene()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00500">save()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00378">setDestinationPath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00401">MainWindowsNoGUI::ExportApparelLayout()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00259">MainWindowsNoGUI::ExportData()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07136">MainWindow::exportDraftBlocksAs()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00308">MainWindowsNoGUI::ExportFlatLayout()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00464">MainWindowsNoGUI::exportPiecesAsApparelLayout()</a>, <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l01610">MainWindowsNoGUI::ExportScene()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00542">save()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00414">setDestinationPath()</a>.</p>
 
 </div>
 </div>
@@ -592,9 +650,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00555">555</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00597">597</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00094">m_SaveButton</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00123">m_SaveButton</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
 </div>
 </div>
@@ -621,12 +679,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="../../de/dbd/classExportLayoutDialog.html#a1a5efe09de3ef0d949bbabb83bcd017b" title="ExportLayoutDialog::readSettings.">ExportLayoutDialog::readSettings</a>. </p>
-<p>Reads the values of the variables needed for the save layout dialog, for instance the margins, teamplte and orientation of tiled pdf. Then sets the corresponding elements of the dialog to these values. </p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00810">810</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00729">729</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01116">VCommonSettings::getExportQuality()</a>, <a class="el" href="../../dd/db4/abstractlayout__dialog_8cpp_source.html#l00034">AbstractLayoutDialog::getTemplateSize()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00657">VSettings::GetTiledPDFMargins()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00753">VSettings::getTiledPDFOrientation()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00692">VSettings::getTiledPDFPaperHeight()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00724">VSettings::getTiledPDFPaperWidth()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01116">VCommonSettings::getExportQuality()</a>, <a class="el" href="../../dd/db4/abstractlayout__dialog_8cpp_source.html#l00034">AbstractLayoutDialog::getTemplateSize()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00657">VSettings::GetTiledPDFMargins()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00753">VSettings::getTiledPDFOrientation()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00692">VSettings::getTiledPDFPaperHeight()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00724">VSettings::getTiledPDFPaperWidth()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
 </div>
 </div>
@@ -654,11 +709,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00711">711</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00793">793</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00488">format()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00530">format()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00054">ExportLayoutDialog()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00074">ExportLayoutDialog()</a>.</p>
 
 </div>
 </div>
@@ -685,11 +740,63 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00500">500</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00542">542</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00411">exportFormatSuffix()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00482">fileName()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00488">format()</a>, <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00091">m_count</a>, <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00093">m_mode</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00476">path()</a>, <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00778">writeSettings()</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00447">exportFormatSuffix()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00518">fileName()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00530">format()</a>, <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00120">m_count</a>, <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00122">m_mode</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00512">path()</a>, <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00858">writeSettings()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00054">ExportLayoutDialog()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00074">ExportLayoutDialog()</a>.</p>
+
+</div>
+</div>
+<a id="a94d2bdfbc736340bff213322c70fa319" name="a94d2bdfbc736340bff213322c70fa319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94d2bdfbc736340bff213322c70fa319">&#9670;&#160;</a></span>selectAllSizes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExportLayoutDialog::selectAllSizes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00985">985</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00618">showExportFiles()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
+
+</div>
+</div>
+<a id="a97bc77b796f2ad5a92976af3ccec73e3" name="a97bc77b796f2ad5a92976af3ccec73e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97bc77b796f2ad5a92976af3ccec73e3">&#9670;&#160;</a></span>selectedSizes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList ExportLayoutDialog::selectedSizes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00964">964</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06782">MainWindow::exportLayoutAs()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06986">MainWindow::exportPiecesAs()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00979">isBatchExport()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00618">showExportFiles()</a>.</p>
 
 </div>
 </div>
@@ -709,11 +816,35 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00207">207</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00243">243</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00488">format()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00530">format()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07336">MainWindow::DoExport()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07584">MainWindow::DoExport()</a>.</p>
+
+</div>
+</div>
+<a id="a8724d67c6472b021ae8a49b7884bef2a" name="a8724d67c6472b021ae8a49b7884bef2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8724d67c6472b021ae8a49b7884bef2a">&#9670;&#160;</a></span>setAvailableSizes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExportLayoutDialog::setAvailableSizes </td>
+          <td>(</td>
+          <td class="paramtype">const QStringList &amp;&#160;</td>
+          <td class="paramname"><em>sizes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00930">930</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00122">m_mode</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00437">SCASSERT</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00618">showExportFiles()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06782">MainWindow::exportLayoutAs()</a>, and <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06986">MainWindow::exportPiecesAs()</a>.</p>
 
 </div>
 </div>
@@ -733,11 +864,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00225">225</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00261">261</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00488">format()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00530">format()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07336">MainWindow::DoExport()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07584">MainWindow::DoExport()</a>.</p>
 
 </div>
 </div>
@@ -757,11 +888,35 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00378">378</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00414">414</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00476">path()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00512">path()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07336">MainWindow::DoExport()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07584">MainWindow::DoExport()</a>.</p>
+
+</div>
+</div>
+<a id="a5ce128e12b36a80a7ea3b5320f2fb83f" name="a5ce128e12b36a80a7ea3b5320f2fb83f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ce128e12b36a80a7ea3b5320f2fb83f">&#9670;&#160;</a></span>setFileName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExportLayoutDialog::setFileName </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00524">524</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06782">MainWindow::exportLayoutAs()</a>, and <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06986">MainWindow::exportPiecesAs()</a>.</p>
 
 </div>
 </div>
@@ -781,11 +936,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00681">681</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00763">763</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00093">m_mode</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00122">m_mode</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07336">MainWindow::DoExport()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07584">MainWindow::DoExport()</a>.</p>
 
 </div>
 </div>
@@ -813,9 +968,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00694">694</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00776">776</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00092">m_isInitialized</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00121">m_isInitialized</a>.</p>
 
 </div>
 </div>
@@ -842,11 +997,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00576">576</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00618">618</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00411">exportFormatSuffix()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00482">fileName()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00488">format()</a>, <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00091">m_count</a>, <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00093">m_mode</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00437">SCASSERT</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00447">exportFormatSuffix()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00518">fileName()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00530">format()</a>, <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00120">m_count</a>, <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00122">m_mode</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00437">SCASSERT</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00964">selectedSizes()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00054">ExportLayoutDialog()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00997">deselectAllSizes()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00074">ExportLayoutDialog()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00985">selectAllSizes()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00930">setAvailableSizes()</a>.</p>
 
 </div>
 </div>
@@ -873,14 +1028,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="../../de/dbd/classExportLayoutDialog.html#acddbbe1458589ca2c1fdb96ce369b225" title="ExportLayoutDialog::writeSettings.">ExportLayoutDialog::writeSettings</a>. </p>
-<p>Writes the values of some variables (like the margins, template and orientation of tiled pdf). of the save layout dialog into the settings. </p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00858">858</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00778">778</a> of file <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html">export_layout_dialog.cpp</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00536">formatText()</a>, <a class="el" href="../../dd/db4/abstractlayout__dialog_8cpp_source.html#l00034">AbstractLayoutDialog::getTemplateSize()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01122">VCommonSettings::setExportQuality()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00678">VSettings::setTiledPDFMargins()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00763">VSettings::setTiledPDFOrientation()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00713">VSettings::setTiledPDFPaperHeight()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00747">VSettings::setTiledPDFPaperWidth()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00494">formatText()</a>, <a class="el" href="../../dd/db4/abstractlayout__dialog_8cpp_source.html#l00034">AbstractLayoutDialog::getTemplateSize()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01122">VCommonSettings::setExportQuality()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00678">VSettings::setTiledPDFMargins()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00763">VSettings::setTiledPDFOrientation()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00713">VSettings::setTiledPDFPaperHeight()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00747">VSettings::setTiledPDFPaperWidth()</a>, and <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">ui</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00500">save()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00542">save()</a>.</p>
 
 </div>
 </div>
@@ -905,9 +1057,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00091">91</a> of file <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html">export_layout_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00120">120</a> of file <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html">export_layout_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00500">save()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00576">showExportFiles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00542">save()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00618">showExportFiles()</a>.</p>
 
 </div>
 </div>
@@ -931,9 +1083,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00092">92</a> of file <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html">export_layout_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00121">121</a> of file <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html">export_layout_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00694">showEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00776">showEvent()</a>.</p>
 
 </div>
 </div>
@@ -957,9 +1109,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00093">93</a> of file <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html">export_layout_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00122">122</a> of file <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html">export_layout_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00054">ExportLayoutDialog()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00405">mode()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00822">modeString()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00500">save()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00681">setTextAsPaths()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00576">showExportFiles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00074">ExportLayoutDialog()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00441">mode()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00901">modeString()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00542">save()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00930">setAvailableSizes()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00763">setTextAsPaths()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00618">showExportFiles()</a>.</p>
 
 </div>
 </div>
@@ -983,9 +1135,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00094">94</a> of file <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html">export_layout_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00123">123</a> of file <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html">export_layout_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00054">ExportLayoutDialog()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00555">pathChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00074">ExportLayoutDialog()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00597">pathChanged()</a>.</p>
 
 </div>
 </div>
@@ -1009,9 +1161,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00090">90</a> of file <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html">export_layout_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html#l00119">119</a> of file <a class="el" href="../../d1/d8e/export__layout__dialog_8h_source.html">export_layout_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00325">enableBinaryDXFFormatCheckbox()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00054">ExportLayoutDialog()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00482">fileName()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00488">format()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00494">formatText()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00276">isBinaryDXFFormat()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00675">isTextAsPaths()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00476">path()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00555">pathChanged()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00729">readSettings()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00711">removeFormatFromList()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00500">save()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00207">selectFormat()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00225">setBinaryDXFFormat()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00378">setDestinationPath()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00681">setTextAsPaths()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00576">showExportFiles()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00778">writeSettings()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00470">~ExportLayoutDialog()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00997">deselectAllSizes()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00361">enableBinaryDXFFormatCheckbox()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00074">ExportLayoutDialog()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00518">fileName()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00530">format()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00536">formatText()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00312">isBinaryDXFFormat()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00757">isTextAsPaths()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00512">path()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00597">pathChanged()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00810">readSettings()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00793">removeFormatFromList()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00542">save()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00985">selectAllSizes()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00964">selectedSizes()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00243">selectFormat()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00930">setAvailableSizes()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00261">setBinaryDXFFormat()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00414">setDestinationPath()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00524">setFileName()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00763">setTextAsPaths()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00618">showExportFiles()</a>, <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00858">writeSettings()</a>, and <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00506">~ExportLayoutDialog()</a>.</p>
 
 </div>
 </div>

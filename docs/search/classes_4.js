@@ -14,5 +14,6 @@ var searchData=
   ['errorhandler_11',['ErrorHandler',['../d8/d53/classErrorHandler.html',1,'']]],
   ['expandingtextedit_12',['ExpandingTextEdit',['../db/dac/classExpandingTextEdit.html',1,'']]],
   ['exportformatcombobox_13',['ExportFormatCombobox',['../d4/d06/classExportFormatCombobox.html',1,'']]],
-  ['exportlayoutdialog_14',['ExportLayoutDialog',['../de/dbd/classExportLayoutDialog.html',1,'']]]
+  ['exportlayoutdialog_14',['ExportLayoutDialog',['../de/dbd/classExportLayoutDialog.html',1,'']]],
+  ['exportprogressdialog_15',['ExportProgressDialog',['../d7/deb/classExportProgressDialog.html',1,'']]]
 ];

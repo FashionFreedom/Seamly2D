@@ -376,6 +376,7 @@ var hierarchy =
       ] ],
       [ "DialogUndo", "de/d7f/classDialogUndo.html", null ],
       [ "EditLabelTemplateDialog", "d7/df1/classEditLabelTemplateDialog.html", null ],
+      [ "ExportProgressDialog", "d7/deb/classExportProgressDialog.html", null ],
       [ "ImageDialog", "d3/db4/classImageDialog.html", null ],
       [ "MeShortcutsDialog", "dd/d67/classMeShortcutsDialog.html", null ],
       [ "MeasurementDatabaseDialog", "d3/d63/classMeasurementDatabaseDialog.html", null ],

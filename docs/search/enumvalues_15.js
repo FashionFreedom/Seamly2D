@@ -39,7 +39,7 @@ var searchData=
   ['value_5furi_5fmalformed_36',['VALUE_URI_Malformed',['../dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80a6b0ecb9d5834498c70a2fc44c5ee2750',1,'XMLExcepts']]],
   ['value_5fws_5fcollapsed_37',['VALUE_WS_collapsed',['../dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80a3841a0ec6251aa78358c98f3d7e8ca91',1,'XMLExcepts']]],
   ['value_5fws_5freplaced_38',['VALUE_WS_replaced',['../dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80aa091e2907ed2d95fecd9392ec5038351',1,'XMLExcepts']]],
-  ['valuecolumn_39',['ValueColumn',['../d7/d8d/edit__formula__dialog_8cpp.html#a385c44f6fb256e5716a2302a5b940388a52e3462fe4fa03a183d24ae3fb3b897e',1,'edit_formula_dialog.cpp']]],
+  ['valuecolumn_39',['ValueColumn',['../d7/d8d/edit__formula__dialog_8cpp.html#abc5c98fcc1211af2b80116dd6e0a035da52e3462fe4fa03a183d24ae3fb3b897e',1,'edit_formula_dialog.cpp']]],
   ['variable_40',['Variable',['../d4/da4/def_8h.html#a76d9a90fa899857cf4616065998e6178a47c14840d8e15331fa420b9b2f757cd9',1,'def.h']]],
   ['variabledialog_41',['VariableDialog',['../d4/da4/def_8h.html#a2ace20f64b3456b610d7b2d85ea3418ea0d8f2a9b908c5c0f0e712bba782f2b03',1,'def.h']]],
   ['variety_5fabsent_42',['VARIETY_ABSENT',['../d3/d52/classXSSimpleTypeDefinition.html#a41edfb74df5ad1915f8c74914de7b5d3a255e501b6793f0b52d3a39d0bc72dfee',1,'XSSimpleTypeDefinition']]],

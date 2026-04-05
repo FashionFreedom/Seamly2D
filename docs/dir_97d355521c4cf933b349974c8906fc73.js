@@ -24,6 +24,8 @@ var dir_97d355521c4cf933b349974c8906fc73 =
     [ "dialogvariables.h", "de/d7c/dialogvariables_8h.html", "de/d7c/dialogvariables_8h" ],
     [ "export_layout_dialog.cpp", "dd/d54/export__layout__dialog_8cpp.html", "dd/d54/export__layout__dialog_8cpp" ],
     [ "export_layout_dialog.h", "d1/d8e/export__layout__dialog_8h.html", "d1/d8e/export__layout__dialog_8h" ],
+    [ "export_progress_dialog.cpp", "db/d07/export__progress__dialog_8cpp.html", null ],
+    [ "export_progress_dialog.h", "d3/d79/export__progress__dialog_8h.html", "d3/d79/export__progress__dialog_8h" ],
     [ "groups_widget.cpp", "db/d5c/groups__widget_8cpp.html", null ],
     [ "groups_widget.h", "df/da7/groups__widget_8h.html", "df/da7/groups__widget_8h" ],
     [ "history_dialog.cpp", "d5/d6c/history__dialog_8cpp.html", null ],
