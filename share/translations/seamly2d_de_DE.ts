@@ -4241,7 +4241,7 @@ Möchten Sie sie herunterladen?</translation>
     </message>
     <message>
         <source>Point Intersect Axis %1_%2 &amp; Triangle points %3 and %4</source>
-        <translation>Punkt schneidet Achse  %1_%2 &amp; Dreieckspunkte %3 und %4</translation>
+        <translation>Punkt schneidet Achse %1_%2 &amp; Dreieckspunkte %3 und %4</translation>
     </message>
     <message>
         <source>Point Intersect XY of points %1 and %2</source>
