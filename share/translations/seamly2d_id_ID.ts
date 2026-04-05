@@ -3794,6 +3794,45 @@ Silakan coba batalkan operasi terakhir atau perbaiki rumus yang rusak.</translat
         <source>Paper format (tiled PDF only)</source>
         <translation>Format kertas (hanya PDF yang diubin)</translation>
     </message>
+    <message>
+        <source>Export Selected Sizes</source>
+        <translation>Ekspor Ukuran Terpilih</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Pilih Semua</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Ekspor</translation>
+    </message>
+</context>
+<context>
+    <name>ExportProgressDialog</name>
+    <message>
+        <source>Exporting files...</source>
+        <translation>Mengekspor file...</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Berkas</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Tertunda</translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation>Selesai</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gagal</translation>
+    </message>
 </context>
 <context>
     <name>FvUpdater</name>
@@ -7074,6 +7113,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Next Draft Block</source>
         <translation>Blok Draf Berikutnya</translation>
+    </message>
+    <message>
+        <source>Exporting...</source>
+        <translation>Sedang mengekspor...</translation>
     </message>
 </context>
 <context>

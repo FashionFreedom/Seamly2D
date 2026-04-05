@@ -3779,6 +3779,45 @@ Probeer de laatste bewerking ongedaan te maken of de defecte formule te herstell
         <source>Paper format (tiled PDF only)</source>
         <translation>Papierformaat (alleen betegelde PDF)</translation>
     </message>
+    <message>
+        <source>Export Selected Sizes</source>
+        <translation>Geselecteerde maten exporteren</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Alles selecteren</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exporteren</translation>
+    </message>
+</context>
+<context>
+    <name>ExportProgressDialog</name>
+    <message>
+        <source>Exporting files...</source>
+        <translation>Bestanden exporteren...</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Bestand</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>In behandeling</translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation>Voltooid</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislukt</translation>
+    </message>
 </context>
 <context>
     <name>FvUpdater</name>
@@ -7057,6 +7096,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Next Draft Block</source>
         <translation>Volgende ontwerpblok</translation>
+    </message>
+    <message>
+        <source>Exporting...</source>
+        <translation>Exporteren...</translation>
     </message>
 </context>
 <context>

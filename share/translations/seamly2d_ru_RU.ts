@@ -3798,6 +3798,45 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <source>Paper format (tiled PDF only)</source>
         <translation>Формат бумаги (только мозаичный PDF)</translation>
     </message>
+    <message>
+        <source>Export Selected Sizes</source>
+        <translation>Экспортировать выбранные размеры</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Выбрать всё</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Экспорт</translation>
+    </message>
+</context>
+<context>
+    <name>ExportProgressDialog</name>
+    <message>
+        <source>Exporting files...</source>
+        <translation>Экспорт файлов...</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>В ожидании</translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation>Завершенный</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Неуспешный</translation>
+    </message>
 </context>
 <context>
     <name>FvUpdater</name>
@@ -7078,6 +7117,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Next Draft Block</source>
         <translation>Следующий черновик блока</translation>
+    </message>
+    <message>
+        <source>Exporting...</source>
+        <translation>Экспорт...</translation>
     </message>
 </context>
 <context>

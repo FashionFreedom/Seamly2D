@@ -3794,6 +3794,45 @@ Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.<
         <source>Paper format (tiled PDF only)</source>
         <translation>Papírový formát (pouze dlaždicově sladěné PDF)</translation>
     </message>
+    <message>
+        <source>Export Selected Sizes</source>
+        <translation>Export vybraných velikostí</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Vyberte Vše</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportovat</translation>
+    </message>
+</context>
+<context>
+    <name>ExportProgressDialog</name>
+    <message>
+        <source>Exporting files...</source>
+        <translation>Exportování souborů...</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Soubor</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stav</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Čeká na vyřízení</translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation>Dokončeno</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nepodařilo se</translation>
+    </message>
 </context>
 <context>
     <name>FvUpdater</name>
@@ -7072,6 +7111,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Next Draft Block</source>
         <translation>Další koncept bloku</translation>
+    </message>
+    <message>
+        <source>Exporting...</source>
+        <translation>Exportování...</translation>
     </message>
 </context>
 <context>

@@ -3779,6 +3779,45 @@ Bitte versuchen Sie, den letzten Vorgang rückgängig zu machen oder die fehlerh
         <source>Paper format (tiled PDF only)</source>
         <translation>Papierformat (nur gekacheltes PDF)</translation>
     </message>
+    <message>
+        <source>Export Selected Sizes</source>
+        <translation>Ausgewählte Größen exportieren</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Alles auswählen</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Export</translation>
+    </message>
+</context>
+<context>
+    <name>ExportProgressDialog</name>
+    <message>
+        <source>Exporting files...</source>
+        <translation>Dateien werden exportiert...</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ausstehend</translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation>Vollendet</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fehlgeschlagen</translation>
+    </message>
 </context>
 <context>
     <name>FvUpdater</name>
@@ -7057,6 +7096,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Next Draft Block</source>
         <translation>Nächster Entwurfsblock</translation>
+    </message>
+    <message>
+        <source>Exporting...</source>
+        <translation>Exportiere...</translation>
     </message>
 </context>
 <context>

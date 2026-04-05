@@ -3780,6 +3780,45 @@ pontos de controle</translation>
         <source>Paper format (tiled PDF only)</source>
         <translation>Formato de papel (somente PDF em mosaico)</translation>
     </message>
+    <message>
+        <source>Export Selected Sizes</source>
+        <translation>Exportar tamanhos selecionados</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Selecionar tudo</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportar</translation>
+    </message>
+</context>
+<context>
+    <name>ExportProgressDialog</name>
+    <message>
+        <source>Exporting files...</source>
+        <translation>Exportando arquivos...</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Arquivo</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pendente</translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation>Concluído</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fracassado</translation>
+    </message>
 </context>
 <context>
     <name>FvUpdater</name>
@@ -7060,6 +7099,10 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>Next Draft Block</source>
         <translation>Prâximo bloco de rascunho</translation>
+    </message>
+    <message>
+        <source>Exporting...</source>
+        <translation>Exportador...</translation>
     </message>
 </context>
 <context>
