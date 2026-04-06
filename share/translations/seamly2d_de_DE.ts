@@ -4876,7 +4876,7 @@ Möchten Sie sie herunterladen?</translation>
     </message>
     <message>
         <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
-        <translation>Startpunkt der&lt;b&gt;individuellen Nahtzugabe/b&gt; kann nicht gleichzeitig der Endpunkt sein!</translation>
+        <translation>Startpunkt der&lt;b&gt;individuellen Nahtzugabe&lt;/b&gt; kann nicht gleichzeitig der Endpunkt sein!</translation>
     </message>
     <message>
         <source>You have double points!</source>
@@ -5483,7 +5483,7 @@ Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLIC
     </message>
     <message>
         <source>Error parsing file (std::bad_alloc).</source>
-        <translation>Fehler beim Auswerten der Datei  (std::bad_alloc).</translation>
+        <translation>Fehler beim Auswerten der Datei (std::bad_alloc).</translation>
     </message>
     <message>
         <source>Bad id.</source>
@@ -5993,7 +5993,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with draft blocks. These draft blocks are the base for going to the next stage &amp;quot;Piece mode&amp;quot;. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modus  zur Arbeit mit Entwurfsblöcken. Diese Entwursblöcke sind die Basis um in die nächste Phase zu gehen. &amp;quot;Teil Modus&amp;quot;. Bevor Du die diesen Teil Modus &amp;quot;aktivieren kannst&amp;quot; Musst Du mindestens ein Teil erstellt haben.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modus zur Arbeit mit Entwurfsblöcken. Diese Entwurfsblöcke sind die Basis für den nächsten Modus &amp;quot;Teil-Modus&amp;quot;. Bevor Du die diesen &amp;quot;Teil-Modus&amp;quot; aktivieren kannst, musst Du mindestens ein Teil erstellt haben.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with pattern pieces. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece on the stage &amp;quot;Draft mode&amp;quot;. Pattern pieces created on this stage will be used for creating a layout. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -6345,7 +6345,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
-        <translation>&lt;b&gt;Werkzeug::Operationen - Gruppe erstellen:&lt;/b&gt; Wähle ein oder mehrere Opbjekte aus - Halten b&gt;%1&lt;/b&gt;für Mehrfachauswahl, mit &lt;&gt;ENTER &lt;/b&gt; die Gruppenerstellung abschließen </translation>
+        <translation>&lt;b&gt;Werkzeug::Operationen - Gruppe erstellen:&lt;/b&gt; Wähle ein oder mehrere Objekte aus - Halte &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl, mit &lt;b&gt;ENTER&lt;/b&gt; die Gruppenerstellung abschließen </translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
@@ -6449,7 +6449,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Add New Pattern Piece:&lt;/b&gt; Select main path of objects clockwise.</source>
-        <translation>&lt;b&gt;Werkzeug: Schnittteil - Neues Schnittteil hinzufügen&lt;/b&gt; Hauptpfad der Objekte im Uhrzeigersinn auswählen.</translation>
+        <translation>&lt;b&gt;Werkzeug: Schnittteil - Neues Schnittteil hinzufügen:&lt;/b&gt; Hauptpfad der Objekte im Uhrzeigersinn auswählen.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Add Anchor Point:&lt;/b&gt; Select anchor point</source>
@@ -6461,11 +6461,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Insert Nodes:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Werkzeug::Schnitteil-Knoten einfügen:&lt;/b&gt; wähle ein oder mehrere Objekte aus, Halten &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl,&lt;b&gt;ENTER &gt;um Auswahl zu bestätigen</translation>
+        <translation>&lt;b&gt;Werkzeug::Schnitteil-Knoten einfügen:&lt;/b&gt; Wähle ein oder mehrere Objekte aus, halte &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl, &lt;b&gt;ENTER&lt;/b&gt;um Auswahl zu bestätigen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Details - Union:&lt;/b&gt; Select pattern piece</source>
-        <translation>&lt;b&gt;Werkzeug: Details Vereinigung /b&gt; wähle ein Schnittteil</translation>
+        <translation>&lt;b&gt;Werkzeug::Details - Vereinigung:&lt;/b&gt; Wähle ein Schnittteil</translation>
     </message>
     <message>
         <source>Draft block %1</source>
@@ -6573,7 +6573,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Point - Intersect Circles (Shift+I, Shift+C)</source>
-        <translation>Punkt - Schneidet Kreise  (Umschalt+I, Umschalt+C)</translation>
+        <translation>Punkt - Schneidet Kreise (Umschalt+I, Umschalt+C)</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent (C, T)</source>
@@ -6621,7 +6621,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Add Internal Path (I, P)</source>
-        <translation>Unterverzeichnis hinzufügen  (I, P)</translation>
+        <translation>Unterpfad hinzufügen (I, P)</translation>
     </message>
     <message>
         <source>Import Image (Alt + I)</source>
@@ -6833,7 +6833,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Zoom to selected Area (Ctrl+A)</source>
-        <translation>Zoom zum  ausgewählten Bereich  (Ctrl+A)</translation>
+        <translation>Zoom zum ausgewählten Bereich (Strg+A)</translation>
     </message>
     <message>
         <source>Pan Work Area (Z, P)</source>
@@ -6873,123 +6873,123 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Midpoint on Line&lt;/b&gt;: Select first point</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Mittelpunkt auf der Linie :&lt;/b&gt; Wähle den ersten Punkt</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Mittelpunkt auf der Linie:&lt;/b&gt; Wähle den ersten Punkt</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length and Angle&lt;/b&gt;: Select point</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Länge und Winkel&lt;/b&gt;: Punkt auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Länge und Winkel:&lt;/b&gt; Punkt auswählen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt -auf einer Linie&lt;/b&gt; Wähle den ersten Punkt</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - auf einer Linie:&lt;/b&gt; Wähle den ersten Punkt</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Auf einer Senkrechten:&lt;/b&gt; Wähle den ersten Punkt der Linie</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Auf einer Senkrechten:&lt;/b&gt; Wähle den ersten Punkt der Linie</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Auf einer Winkelhalbierenden:&lt;/b&gt; Wähle den ersten Punkt des Winkels</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Auf einer Winkelhalbierenden:&lt;/b&gt; Wähle den ersten Punkt des Winkels</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length to Line:&lt;/b&gt; Select point</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt  - Länge zur Linie:&lt;/b&gt; Wähle einen Punkt</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Länge zur Linie:&lt;/b&gt; Wähle einen Punkt</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Line:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Bogen und Linie:&lt;/b&gt; Wähle den ersten Punkt der Linie</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Schneidet Bogen und Linie:&lt;/b&gt; Wähle den ersten Punkt der Linie</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Axis and Triangle:&lt;/b&gt; Select first point of axis</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Achse und Dreieck:&lt;/b&gt; Wähle den ersten Punkt der Achse</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Schneidet Achse und Dreieck:&lt;/b&gt; Wähle den ersten Punkt der Achse</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect XY&lt;/b&gt; Select point for X value (vertical)</source>
-        <translation>&lt;b&gt;Wekzeug: Punkt - Schneidet XY&lt;/b&gt; Wähle einen Punkt für den X Wert (vertikal</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Schneidet XY&lt;/b&gt; Wähle einen Punkt für den X Wert (vertikal)</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Line and Perpendicular:&lt;/b&gt; Select base point</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Linie und Senkrechte:&lt;/b&gt; Wähle den Basispunkt</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Schneidet Linie und Senkrechte:&lt;/b&gt; Wähle den Basispunkt</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>b&gt;Werkzeug: Punkt - Schneidet Linie und Achse:&lt;/b&gt; Wähle den ersten Punkt der Linie</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Schneidet Linie und Achse:&lt;/b&gt; Wähle den ersten Punkt der Linie</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
-        <translation>&lt;b&gt;Werkzeug: Linie  &lt;/b&gt;:Wähle den ersten Punkt</translation>
+        <translation>&lt;b&gt;Werkzeug::Linie:&lt;/b&gt; Wähle den ersten Punkt</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Linien:&lt;/b&gt; Wähle den ersten Punkt der ersten Linie</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Schneidet Linien:&lt;/b&gt; Wähle den ersten Punkt der ersten Linie</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>
-        <translation>&lt;b&gt; Werkzeug: Kurve - Interaktiv b&gt; Wähle den Startpunkt der Kurve</translation>
+        <translation>&lt;b&gt; Werkzeug::Kurve - Interaktiv:&lt;/b&gt; Wähle den Startpunkt der Kurve</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Interactive:&lt;/b&gt; Select start point of spline</source>
-        <translation>&lt;b&gt;Werkzeug: Spline - Interaktiv:&lt;/b&gt; Wähle den Startpunkt der Spline</translation>
+        <translation>&lt;b&gt;Werkzeug::Spline - Interaktiv:&lt;/b&gt; Wähle den Startpunkt der Spline</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Fixed:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt; Werkzeug : Kurve  - Fixiert &lt;/b&gt; Wähle den ersten Punkt der Kurve</translation>
+        <translation>&lt;b&gt; Werkzeug::Kurve - Fixiert:&lt;/b&gt; Wähle den ersten Punkt der Kurve</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Fixed:&lt;/b&gt; Select first point of spline</source>
-        <translation>&lt;b&gt;Werkzeug: Spline - Fixiert:&lt;/b&gt; Wähle den ersten Punkt der Spline</translation>
+        <translation>&lt;b&gt;Werkzeug::Spline - Fixiert:&lt;/b&gt; Wähle den ersten Punkt der Spline</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - auf einer Kurve:&lt;/b&gt; Wähle den ersten Punkt der Kurve</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - auf einer Kurve:&lt;/b&gt; Wähle den ersten Punkt der Kurve</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - auf Spline&lt;/b&gt; Wähle die Spline</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - auf Spline:&lt;/b&gt; Wähle die Spline</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curves:&lt;/b&gt; Select first curve</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Kurven:&lt;/b&gt; Wähle die erste Kurve</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Schneidet Kurven:&lt;/b&gt; Wähle die erste Kurve</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curve and Axis:&lt;/b&gt; Select curve</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Kurve und Achse:&lt;/b&gt; Wähle die Kurve</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Schneidet Kurve und Achse:&lt;/b&gt; Wähle die Kurve</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Angles:&lt;/b&gt; Select point of center of arc</source>
-        <translation>&lt;b&gt; Werkzeug:Bogen - Radius und Winkel &lt;/b&gt; Wähle den Mittelpunkt des Bogens</translation>
+        <translation>&lt;b&gt;Werkzeug::Bogen - Radius und Winkel:&lt;/b&gt; Wähle den Mittelpunkt des Bogens</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Arc:&lt;/b&gt; Select arc</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Auf einem Bogen :&lt;/b&gt; Wähle den Bogen</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Auf einem Bogen:&lt;/b&gt; Wähle den Bogen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Axis:&lt;/b&gt; Select arc</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Bogen und Achse:&lt;/b&gt; Wähle den Bogen</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Schneidet Bogen und Achse:&lt;/b&gt; Wähle den Bogen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arcs:&lt;/b&gt; Select first an arc</source>
-        <translation>&lt;b&gt;Werkzeug:Punkt - Schneidet Bögen:&lt;/b&gt; Wähle den ersten Bogen</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Schneidet Bögen:&lt;/b&gt; Wähle den ersten Bogen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circles:&lt;/b&gt; Select first circle center</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Kreise :&lt;/b&gt; Wähle den ersten Kreismittelpunkt</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Schneidet Kreise:&lt;/b&gt; Wähle den ersten Kreismittelpunkt</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circle and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Kreis und Tangente&lt;/b&gt; Wähle einen  Punkt auf der Tangente</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Schneidet Kreis und Tangente:&lt;/b&gt; Wähle einen Punkt auf der Tangente</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Bogen und Tangente:&lt;/b&gt; Wähle einen Punkt auf der Tangente</translation>
+        <translation>&lt;b&gt;Werkzeug::Punkt - Schneidet Bogen und Tangente:&lt;/b&gt; Wähle einen Punkt auf der Tangente</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Length:&lt;/b&gt; Select point of the center of the arc</source>
-        <translation>&lt;b&gt;Werkzeug: Bogen - Radius und Länge &lt;/b Wähle den Mittelpunkt des Bogens</translation>
+        <translation>&lt;b&gt;Werkzeug::Bogen - Radius und Länge:&lt;/b&gt; Wähle den Mittelpunkt des Bogens</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Elliptical:&lt;/b&gt; Select point of center of elliptical arc</source>
-        <translation>&lt;b&gt;Werkzeug:l::Bogen - Elliptisch:&lt;/b&gt; Wähle den Mittelpunkt des Ellipsenbogens</translation>
+        <translation>&lt;b&gt;Werkzeug::Bogen - Elliptisch:&lt;/b&gt; Wähle den Mittelpunkt des Ellipsenbogens</translation>
     </message>
     <message>
         <source>Images</source>
@@ -9302,7 +9302,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>Show notch on both the seam allowance and seam line.</source>
-        <translation>Markierung sowohl auf der Nahtzugabe als auch auf der  Nahtlinie anzeigen.</translation>
+        <translation>Markierung sowohl auf der Nahtzugabe als auch auf der Nahtlinie anzeigen.</translation>
     </message>
     <message>
         <source>Type:</source>
@@ -9627,7 +9627,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Unexpected token &quot;$TOK$&quot; found at position $POS$.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot; and $POS$</comment>
-        <translation>Unerwartetes Token  &quot;$TOK$&quot; an Position $POS$ gefunden.</translation>
+        <translation>Unerwartetes Token &quot;$TOK$&quot; an Position $POS$ gefunden.</translation>
     </message>
     <message>
         <source>Internal error</source>
@@ -9827,7 +9827,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center, &lt;b&gt;SHIFT&lt;/b&gt; to scale uniformly.</source>
-        <translation>Drücken Sie &lt;b&gt;CTRL&lt;/b&gt;, um um die Mitte herum zu skalieren, &lt;b&gt;SHIFT&lt;/b&gt;, um gleichmäßig zu skalieren.</translation>
+        <translation>Drücken Sie &lt;b&gt;Strg&lt;/b&gt;, um um die Mitte herum zu skalieren, &lt;b&gt;Umschalt&lt;/b&gt;, um gleichmäßig zu skalieren.</translation>
     </message>
 </context>
 <context>
@@ -10893,7 +10893,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>toggle the second dart visibility</source>
-        <translation>Umschalten der zweiten  Abnäher Sichtbarkeit</translation>
+        <translation>Umschalten der Sichtbarkeit der zweiten Abnäher</translation>
     </message>
 </context>
 <context>
@@ -11198,7 +11198,8 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Measurements have been modified.
 Do you want to save your changes?</source>
-        <translation>Maße wurden geändert. Sollen die Änderungen gespeichert werden?</translation>
+        <translation>Maße wurden geändert.
+Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Empty field</source>
@@ -11318,7 +11319,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>About Qt</source>
-        <translation>Über QT</translation>
+        <translation>Über Qt</translation>
     </message>
     <message>
         <source>File was not saved yet.</source>
@@ -11754,7 +11755,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Error no unique id.</source>
-        <translation>Fehler: uneindeutige ID.</translation>
+        <translation>Fehler: Uneindeutige ID.</translation>
     </message>
     <message>
         <source>Could not change version.</source>
@@ -12434,7 +12435,8 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Can&apos;t open file %1:
 %2.</source>
-        <translation>Konnte Datei nicht öffnen %1: %2.</translation>
+        <translation>Konnte Datei nicht öffnen %1:
+%2.</translation>
     </message>
     <message>
         <source>Can&apos;t open schema file %1:
@@ -12713,11 +12715,11 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Error wrong id.</source>
-        <translation>Fehler: falsche ID.</translation>
+        <translation>Fehler: Falsche ID.</translation>
     </message>
     <message>
         <source>Error parsing file (std::bad_alloc).</source>
-        <translation>Fehler beim Auswerten der Datei  (std::bad_alloc).</translation>
+        <translation>Fehler beim Auswerten der Datei (std::bad_alloc).</translation>
     </message>
     <message>
         <source>Error creating or updating single point</source>
@@ -12797,15 +12799,15 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Error creating or updating modeling curve path</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren der Modellierung des  vom Typ &quot;Pfad Detail&quot;</translation>
+        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Kurvenpfad&quot;</translation>
     </message>
     <message>
         <source>Error creating or updating simple arc</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des einfachen Bogens&quot;</translation>
+        <translation>Fehler beim Anlegen oder Aktualisieren des einfachen Bogens</translation>
     </message>
     <message>
         <source>Error creating or updating modeling arc</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren der Bogenmodellierung &quot;</translation>
+        <translation>Fehler beim Anlegen oder Aktualisieren der Bogenmodellierung</translation>
     </message>
     <message>
         <source>Error creating or updating point of intersection arcs</source>
@@ -12829,7 +12831,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Wrong tag name &apos;%1&apos;.</source>
-        <translation>Falsche  Markenbezeichnung &apos;%1&apos;.</translation>
+        <translation>Falscher XML-Tag &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Unknown point type &apos;%1&apos;.</source>
