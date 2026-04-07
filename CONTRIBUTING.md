@@ -6,6 +6,9 @@ Thanks for contributing to Seamly code, documentation, translations, website, an
 If you need any help or have any questions, need a lengthy discussion or share documentation, ask on the forum at https://forum.seamly.io. Our users and coders hang out there frequently. You can always find someone there.
 Alternatively, if you leave a comment on a repo issue we'll quickly get back to you.
 
+## Translations
+We use Weblate for translating Seamly: https://hosted.weblate.org/engage/seamly/
+
 ## How we work
 Our workflow is based on **Git Flow**, outlined in the steps below.    
 As always, please fix only one issue at a time.   
