@@ -5,7 +5,7 @@
     <name>About2DAppDialog</name>
     <message>
         <source>About Seamly2D</source>
-        <translation>Tietoja Seamly2Dstä</translation>
+        <translation>Tietoja Seamly2D:stä</translation>
     </message>
     <message>
         <source>Left to right</source>
@@ -2550,11 +2550,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Toinen kohta:</translation>
+        <translation>Toinen piste:</translation>
     </message>
     <message>
         <source>Third point:</source>
-        <translation>Kolmas kohta:</translation>
+        <translation>Kolmas piste:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -3848,8 +3848,9 @@ ei voitu avata kirjoittamista varten</translation>
         <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation>Tiedostoon
-%1 ei saada yksinoikeutta. Tiedostoa ladataan mahdollisesti jo.</translation>
+        <translation>Tiedostoon ei saada yksinoikeutta
+%1
+ Tiedosto on mahdollisesti ladattu jo.</translation>
     </message>
     <message>
         <source>File download failed: %1.</source>
@@ -5383,7 +5384,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Apua</translation>
+        <translation>&amp;Ohjeet</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -5447,7 +5448,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
     <message>
         <source>About Seamly2D</source>
-        <translation>Tietoja Seamly2D:sta</translation>
+        <translation>Tietoja Seamly2D:stä</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -5516,7 +5517,7 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     <message>
         <source>The pattern has been modified.
 Do you want to save your changes?</source>
-        <translation>Kaavaa on muutettu
+        <translation>Kaavaa on muutettu.
 Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
@@ -5809,7 +5810,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Unload measurements if they were not used in a pattern file</source>
-        <translation>Poista mittaukset, jos niitä ei käytetty kuviotiedostossa</translation>
+        <translation>Poista mittaukset, jos niitä ei käytetty kaavatiedostossa</translation>
     </message>
     <message>
         <source>Individual measurements</source>
@@ -5893,7 +5894,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>File Toolbar</source>
-        <translation>Tiedosto työkalupalkki</translation>
+        <translation>Tiedosto Työkalupalkki</translation>
     </message>
     <message>
         <source>Mode ToolBar</source>
@@ -5909,7 +5910,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Property Editor</source>
-        <translation>Ominaisuus Editori</translation>
+        <translation>Ominaisuuseditori</translation>
     </message>
     <message>
         <source>Layout Pages</source>
@@ -5917,7 +5918,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Group Manager</source>
-        <translation>Ryhmä Järjestin</translation>
+        <translation>Ryhmäjärjestin</translation>
     </message>
     <message>
         <source>Zoom ToolBar</source>
@@ -5953,7 +5954,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Details ToolBar</source>
-        <translation>Määrittelyt-Työkalupalkki</translation>
+        <translation>Määrittelyt Työkalupalkki</translation>
     </message>
     <message>
         <source>Layout ToolBar</source>
@@ -6009,11 +6010,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with draft blocks. These draft blocks are the base for going to the next stage &amp;quot;Piece mode&amp;quot;. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Luonnoslohkojen käsittelytila. Nämä luonnoslohkot ovat perusta siirtymiselle seuraavaan vaiheeseen &quot;Kappaletila&quot;. Ennen kuin voit ottaa käyttöön &quot;Kappaletilan&quot;, sinun on luotava ainakin yksi kuviopala.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Luonnoslohkojen käsittelytila. Nämä luonnoslohkot ovat perusta siirtymiselle seuraavaan vaiheeseen &quot;Kappaletila&quot;. Ennen kuin voit ottaa käyttöön &quot;Palatilan&quot;, sinun on luotava ainakin yksi kaavapala.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with pattern pieces. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece on the stage &amp;quot;Draft mode&amp;quot;. Pattern pieces created on this stage will be used for creating a layout. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tila kuviopalojen käsittelyyn. Ennen kuin voit ottaa käyttöön &quot;Kappaletilan&quot;, sinun on luotava vähintään yksi kuviopala luonnostilassa. Tässä vaiheessa luotuja kuviopaloja käytetään asettelun luomiseen. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tila kaavapalojen käsittelyyn. Ennen kuin voit ottaa käyttöön &quot;Palatilan&quot;, sinun on luotava vähintään yksi kaavapala luonnostilassa. Tässä vaiheessa luotuja kaavapaloja käytetään asettelun luomiseen. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>New Draft Block</source>
@@ -6057,7 +6058,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>True Darts</source>
-        <translation>Tarkka laskos</translation>
+        <translation>Tarkkalaskos</translation>
     </message>
     <message>
         <source>Midpoint</source>
@@ -6097,7 +6098,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Pattern Preferences...</source>
-        <translation>Kaavaasetukset...</translation>
+        <translation>Kaava-asetukset...</translation>
     </message>
     <message>
         <source>Zoom In</source>
@@ -6153,7 +6154,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Toggle Control Points and Curve Direction (V, C)</source>
-        <translation>Ohjauspisteiden ja käyrän suunnan (V, C) vaihto</translation>
+        <translation>Ohjauspisteiden ja käyrän suunnan vaihto (V, C)</translation>
     </message>
     <message>
         <source>Load multisize</source>
@@ -6173,7 +6174,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Label Template Editor...</source>
-        <translation>Tunnisteiden pohjien editori...</translation>
+        <translation>Tunnisteiden mallipohjien editori...</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -6297,7 +6298,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Toggle Axis Origin (V, A)</source>
-        <translation>Akselin lähtöpisteen (V, A) vaihtaminen</translation>
+        <translation>Akselin lähtöpisteen vaihtaminen (V, A)</translation>
     </message>
     <message>
         <source>Wireframe Mode</source>
@@ -6305,7 +6306,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Toggle Wireframe Mode (V, W)</source>
-        <translation>Vaihda rautalankamalli-tila (V, W)</translation>
+        <translation>Vaihda rautalankamallitila (V, W)</translation>
     </message>
     <message>
         <source>Grainlines</source>
@@ -6341,7 +6342,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Seam Allowance</source>
-        <translation>Saumavara</translation>
+        <translation>Saumanvara</translation>
     </message>
     <message>
         <source>Document Info...</source>
@@ -6413,7 +6414,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Export Pattern Pieces</source>
-        <translation>Vie kaavan palat</translation>
+        <translation>Vie kaavapalat</translation>
     </message>
     <message>
         <source>Import Image</source>
@@ -6429,7 +6430,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Pattern Pieces</source>
-        <translation>Kaavojen palat</translation>
+        <translation>Kaavapalat</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, create at least one pattern piece.</source>
@@ -6457,7 +6458,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>You don&apos;t have any pieces to export. Please, include at least one piece in layout.</source>
-        <translation>Sinulla ei ole vietäviä osia. Lisää asetteluun ainakin yksi osa.</translation>
+        <translation>Sinulla ei ole vietäviä paloja. Lisää asetteluun ainakin yksi pala.</translation>
     </message>
     <message>
         <source>Export pieces</source>
@@ -6629,7 +6630,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Add New Pattern Piece (N, P)</source>
-        <translation>Lisää uusi kuviopala (N, P)</translation>
+        <translation>Lisää uusi kaavapala (N, P)</translation>
     </message>
     <message>
         <source>Add Anchor Point (A, P)</source>
@@ -6857,7 +6858,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Pan Work Area (Z, P)</source>
-        <translation>Panoroinnin työalue (Z, P)</translation>
+        <translation>Panoroi työalue (Z, P)</translation>
     </message>
     <message>
         <source>Create New Print Layout (N, L)</source>
@@ -6953,7 +6954,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Fixed:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Työkalu::Käyrä - Korjattu:&lt;/b&gt; Valitse käyrän ensimmäinen piste</translation>
+        <translation>&lt;b&gt;Työkalu::Käyrä - Kiinteä:&lt;/b&gt; Valitse käyrän ensimmäinen piste</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Fixed:&lt;/b&gt; Select first point of spline</source>
@@ -7053,7 +7054,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Pattern is read only.</source>
-        <translation>Kuvio on vain luku -tilassa.</translation>
+        <translation>Kaava on vain luku -tilassa.</translation>
     </message>
     <message>
         <source>Failed to lock. File with this name is opened in another window.</source>
@@ -7317,12 +7318,12 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Direct Height</source>
         <comment>Measurement section</comment>
-        <translation>Välitön korkeus</translation>
+        <translation>Suorakorkeus</translation>
     </message>
     <message>
         <source>Direct Width</source>
         <comment>Measurement section</comment>
-        <translation>välitön leveys</translation>
+        <translation>Suoraleveys</translation>
     </message>
     <message>
         <source>Indentation</source>
@@ -9642,7 +9643,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Unexpected token &quot;$TOK$&quot; found at position $POS$.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot; and $POS$</comment>
-        <translation>Odottomaton ilmimuoto &quot;$TOK$&quot;  paikassa $POS$.</translation>
+        <translation>Odottomaton ilmimuoto &quot;$TOK$&quot; paikassa $POS$.</translation>
     </message>
     <message>
         <source>Internal error</source>
@@ -9652,7 +9653,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Invalid function-, variable- or constant name: &quot;$TOK$&quot;.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot;</comment>
-        <translation>Väärä funktio, muuttuja tai vakio nimeltä:  &quot;$TOK$&quot;.</translation>
+        <translation>Väärä funktio, muuttuja tai vakio nimeltä: &quot;$TOK$&quot;.</translation>
     </message>
     <message>
         <source>Invalid binary operator identifier: &quot;$TOK$&quot;.</source>
@@ -11060,15 +11061,15 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Measurement&apos;s name in a formula</source>
-        <translation>Mittan nimi matemaattisessa kaavassa</translation>
+        <translation>Mitan nimi matemaattisessa kaavassa</translation>
     </message>
     <message>
         <source>Measurement&apos;s name in a formula.</source>
-        <translation>Mittan nimi matemaattisessa kaavassa.</translation>
+        <translation>Mitan nimi matemaattisessa kaavassa.</translation>
     </message>
     <message>
         <source>Full name:</source>
-        <translation>Koko nimi:</translation>
+        <translation>Kokonimi:</translation>
     </message>
     <message>
         <source>Measurement&apos;s human-readable name.</source>
@@ -11076,11 +11077,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Matemaattinenkaava:</translation>
+        <translation>Matemaattinen kaava:</translation>
     </message>
     <message>
         <source>Function Wizard</source>
-        <translation>Kaavavelho</translation>
+        <translation>Funktiovelho</translation>
     </message>
     <message>
         <source>Base value:</source>
@@ -11188,7 +11189,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Help</source>
-        <translation>Apua</translation>
+        <translation>Ohjeet</translation>
     </message>
     <message>
         <source>Menu</source>
@@ -11216,7 +11217,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Save</source>
-        <translation>Talenna</translation>
+        <translation>Tallenna</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
@@ -11464,7 +11465,7 @@ tiedoston SeamlyME:hen normaalisti.
     </message>
     <message>
         <source>Pattern files</source>
-        <translation>Kaava tiedostot</translation>
+        <translation>Kaavatiedostot</translation>
     </message>
     <message>
         <source>This file already opened in another window.</source>
@@ -11484,7 +11485,7 @@ tiedoston SeamlyME:hen normaalisti.
     </message>
     <message>
         <source>Empty field.</source>
-        <translation>Tyhjä kenttä.</translation>
+        <translation>Tyhjäkenttä.</translation>
     </message>
     <message>
         <source>The full name of known measurement forbidden to change.</source>
@@ -13896,7 +13897,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>ed. R. L. Shep</source>
         <comment>Author name</comment>
-        <translation>toim. RL Shep</translation>
+        <translation>toim. R. L. Shep</translation>
     </message>
     <message>
         <source>The Great War: Styles and Patterns of the 1910s</source>
@@ -13941,7 +13942,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Edward Minister &amp; Son, ed. R. L. Shep</source>
         <comment>Author name</comment>
-        <translation>Edward Minister ja Son, toim. RL Shep</translation>
+        <translation>Edward Minister ja Son, toim. R. L. Shep</translation>
     </message>
     <message>
         <source>The Complete Guide to Practical Cutting (1853)</source>
@@ -14211,7 +14212,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>E. L. G. Gough</source>
         <comment>Author name</comment>
-        <translation>ELG Gough</translation>
+        <translation>E. L. G. Gough</translation>
     </message>
     <message>
         <source>Principles of Garment Cutting</source>
@@ -14256,7 +14257,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Shri K. R. Zarapkar and Shri Arvind K. Zarapkar</source>
         <comment>Author name</comment>
-        <translation>Shri KR Zarapkar ja Shri Arvind K. Zarapkar</translation>
+        <translation>Shri K. R. Zarapkar ja Shri Arvind K. Zarapkar</translation>
     </message>
     <message>
         <source>Zarapkar System of Cutting</source>
@@ -14546,7 +14547,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Josephine F. Eddy and Elizabeth C. B. Wiley</source>
         <comment>Author name</comment>
-        <translation>Josephine F. Eddy ja Elizabeth CB Wiley</translation>
+        <translation>Josephine F. Eddy ja Elizabeth C. B. Wiley</translation>
     </message>
     <message>
         <source>Pattern and Dress Design</source>
