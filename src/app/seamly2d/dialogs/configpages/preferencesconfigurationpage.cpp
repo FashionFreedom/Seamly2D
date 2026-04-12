@@ -178,8 +178,35 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     // File handling
     // Backups
     ui->convertBackupEnabled_CheckBox->setChecked(qApp->Seamly2DSettings()->getConvertBackupEnabled());
+
+    // If conversion backups are emabled set backup limit to a mi-n of 2
+    connect(ui->convertBackupEnabled_CheckBox, &QCheckBox::stateChanged, this, [=](int newState)
+    {
+        if (newState == Qt::Checked && ui->maxBackusp_SpinBox->value() < 2)
+        {
+            ui->maxBackusp_SpinBox->blockSignals(true);
+            ui->maxBackusp_SpinBox->setValue(2);
+            ui->maxBackusp_SpinBox->blockSignals(false);
+        }
+    });
+
     ui->autoSave_CheckBox->setChecked(qApp->Seamly2DSettings()->GetAutosaveState());
     ui->autoInterval_Spinbox->setValue(qApp->Seamly2DSettings()->getAutosaveInterval());
+    if (ui->convertBackupEnabled_CheckBox->isChecked())
+    {
+        qApp->Seamly2DSettings()->setMaxBackups(2);
+    }
+    ui->maxBackusp_SpinBox->setValue(qApp->Seamly2DSettings()->getMaxBackups());
+
+    connect(ui->maxBackusp_SpinBox, QOverload<int>::of(&QSpinBox::valueChanged), [=](int newValue)
+    {
+        if (ui->convertBackupEnabled_CheckBox->isChecked() && ui->maxBackusp_SpinBox->value() < 2)
+        {
+            ui->maxBackusp_SpinBox->blockSignals(true);
+            ui->maxBackusp_SpinBox->setValue(2);
+            ui->maxBackusp_SpinBox->blockSignals(false);
+        }
+    });
 
     // Export Format
     ui->useModeType_CheckBox->setChecked(qApp->Seamly2DSettings()->useModeType());
@@ -289,6 +316,7 @@ void PreferencesConfigurationPage::apply()
 
     settings->setAutosaveState(ui->autoSave_CheckBox->isChecked());
     settings->setAutosaveInterval(ui->autoInterval_Spinbox->value());
+    settings->setMaxBackups(ui->maxBackusp_SpinBox->value());
 
     QTimer *autoSaveTimer = qApp->getAutoSaveTimer();
     SCASSERT(autoSaveTimer)

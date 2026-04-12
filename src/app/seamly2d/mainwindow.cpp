@@ -112,6 +112,7 @@
 #include <thread>
 #include <QAction>
 #include <QComboBox>
+#include <QDateTime>
 #include <QFontComboBox>
 #include <QDoubleSpinBox>
 #include <QFileDialog>
@@ -614,6 +615,9 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindow::loadMeasurements(const QString &fileName)
 {
+    // remove any extraneous LF's or trailing white space.
+    removeEmptyLinesText(fileName, false);
+
     m_measurements = openMeasurementFile(fileName);
 
     if (m_measurements->isNull())
@@ -6461,9 +6465,12 @@ MainWindow::~MainWindow()
  * @brief LoadPattern open pattern file.
  * @param fileName name of file.
  */
-bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasureFile)
+bool MainWindow::LoadPattern(const QString &fileName, const QString &customMeasureFile)
 {
     qCInfo(vMainWindow, "Loading new file %s.", qUtf8Printable(fileName));
+
+    // remove any extraneous LF's or trailing white space.
+    removeEmptyLinesText(fileName, true);
 
     //We have unsaved changes or load more then one file per time
     if (startNewSeamly2D(fileName))
@@ -6635,6 +6642,108 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
     // Set the Property Editor dock widget as the active tab
     ui->toolProperties_DockWidget->raise();
+}
+
+void MainWindow::removeEmptyLinesText(const QString &filename, bool isPattern)
+{
+    // backup file
+    saveBackupFile(filename);
+
+    QFile file(filename);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
+
+    QString cleanedContent;
+    QTextStream in(&file);
+    while (!in.atEnd())
+    {
+        QString line = in.readLine();
+        if (isPattern)
+        {
+            line.replace(QString("lineWeight=\"1.00\""), QString("lineWeight=\"1\""));
+        }
+        // trimmed().isEmpty() checks if line is empty or only whitespace
+        if (!line.trimmed().isEmpty())
+        {
+            cleanedContent += line + "\n";
+        }
+    }
+    file.close();
+
+    if (file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text))
+    {
+        QTextStream out(&file);
+        out << cleanedContent;
+        file.close();
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::saveBackupFile(const QString &filename) const
+{
+    QString error;
+    const QFileInfo info(filename);
+
+    QString path = qApp->Settings()->getBackupFilePath();
+    if (!info.exists(path))
+    {
+        path = info.absoluteDir().absolutePath();
+    }
+
+    QDir dir(path);
+    if (!dir.exists())
+    {
+        return;
+    }
+
+    QString baseFileName = info.baseName();
+
+    // replace any spaces in filename with underscore to pevent
+    // errors when opening file in Linux through the command line.
+    baseFileName.replace(" ", "_");
+
+    // Filter files by baseFileName
+    QFileInfoList allFiles = dir.entryInfoList(QDir::Files | QDir::NoDotAndDotDot);
+    QFileInfoList filteredList;
+
+    // Get list, sorting by creation time (Time) descending (Reversed)
+    for (const QFileInfo &fileInfo : allFiles)
+    {
+        if (fileInfo.baseName().contains(baseFileName, Qt::CaseInsensitive))
+        {
+            filteredList.append(fileInfo);
+        }
+    }
+
+    // Sort by modification time (Oldest first)
+    // Use std::sort with a lambda for comparison
+    std::sort(filteredList.begin(), filteredList.end(), [](const QFileInfo &a, const QFileInfo &b)
+    {
+        return a.lastModified() < b.lastModified();
+    });
+
+    // Delete oldest if over limit
+    int maxFiles = qApp->Seamly2DSettings()->getMaxBackups();
+    int filesToDelete = filteredList.size() - maxFiles + 1;
+
+    for (int i = 0; i < filesToDelete; ++i)
+    {
+        const QFileInfo &toDelete = filteredList.at(i);
+        QFile::remove(toDelete.absoluteFilePath());
+    }
+
+    QString backupFileName;
+    QString timestamp = QDateTime::currentDateTime().toString("ddMMyyyy-hhmmss");
+
+    backupFileName = QString("%1/%2_%3%4.%5").arg(path, baseFileName, timestamp, "(backup)", info.completeSuffix());
+
+    if (!VDomDocument::SafeCopy(filename, backupFileName, error))
+    {
+        if (info.isWritable())
+        {
+            const QString errorMsg(tr("Error creating a reserv copy: %1.").arg(error));
+            throw VException(errorMsg);
+        }
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------

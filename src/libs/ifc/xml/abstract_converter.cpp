@@ -52,6 +52,7 @@
 
 #include "abstract_converter.h"
 
+#include <QDateTime>
 #include <QDir>
 #include <QDomElement>
 #include <QDomNode>
@@ -236,7 +237,8 @@ void VAbstractConverter::saveBackupFile() const
             path = info.absoluteDir().absolutePath();
         }
         QString backupFileName;
-        backupFileName = QString("%1/%2%3.%4").arg(path, baseFileName, "_(backup)", info.completeSuffix());
+        QString timestamp = QDateTime::currentDateTime().toString("ddMMyyyy-hhmmss");
+        backupFileName = QString("%1/%2_%3%4.%5").arg(path, baseFileName, timestamp, "(backup)", info.completeSuffix());
 
         if (!SafeCopy(m_convertedFileName, backupFileName, error))
         {

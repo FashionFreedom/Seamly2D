@@ -129,6 +129,9 @@ public:
     int                  getAutosaveInterval() const;
     void                 setAutosaveInterval(const int &value);
 
+    int                  getMaxBackups() const;
+    void                 setMaxBackups(const int &value);
+
     bool                 useModeType() const;
     void                 setUseModeType(const bool &value);
 
