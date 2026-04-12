@@ -614,6 +614,9 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindow::loadMeasurements(const QString &fileName)
 {
+    // remove any extraneous LF's or trailing white space.
+    removeEmptyLinesText(fileName);
+
     m_measurements = openMeasurementFile(fileName);
 
     if (m_measurements->isNull())
@@ -6461,9 +6464,12 @@ MainWindow::~MainWindow()
  * @brief LoadPattern open pattern file.
  * @param fileName name of file.
  */
-bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasureFile)
+bool MainWindow::LoadPattern(const QString &fileName, const QString &customMeasureFile)
 {
     qCInfo(vMainWindow, "Loading new file %s.", qUtf8Printable(fileName));
+
+    // remove any extraneous LF's or trailing white space.
+    removeEmptyLinesText(fileName);
 
     //We have unsaved changes or load more then one file per time
     if (startNewSeamly2D(fileName))
@@ -6635,6 +6641,33 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
     // Set the Property Editor dock widget as the active tab
     ui->toolProperties_DockWidget->raise();
+}
+
+void MainWindow::removeEmptyLinesText(const QString &filePath)
+{
+    QFile file(filePath);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
+
+    QString cleanedContent;
+    QTextStream in(&file);
+    while (!in.atEnd())
+    {
+        QString line = in.readLine();
+        line.replace(QString("lineWeight=\"1.00\""), QString("lineWeight=\"1\""));
+        // trimmed().isEmpty() checks if line is empty or only whitespace
+        if (!line.trimmed().isEmpty())
+        {
+            cleanedContent += line + "\n";
+        }
+    }
+    file.close();
+
+    if (file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text))
+    {
+        QTextStream out(&file);
+        out << cleanedContent;
+        file.close();
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------

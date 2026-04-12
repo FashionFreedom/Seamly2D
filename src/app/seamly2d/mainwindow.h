@@ -338,6 +338,8 @@ private:
 
     QSharedPointer<MeasurementDoc>    m_measurements;
 
+    void                              removeEmptyLinesText(const QString &filePath);
+
     void                              SetDefaultHeight();
     void                              SetDefaultSize();
 
