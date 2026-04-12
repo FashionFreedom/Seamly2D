@@ -327,6 +327,11 @@ public:
     static qreal       height();
     static qreal      *rheight();
 
+    static void        setSizeAliases(const QMap<int, QString> &aliases);
+    static void        setHeightAliases(const QMap<int, QString> &aliases);
+    static const QMap<int, QString> &sizeAliases();
+    static const QMap<int, QString> &heightAliases();
+
     void               removeCustomVariable(const QString& name);
 
     const QHash<quint32, QSharedPointer<VGObject> >         *DataGObjects() const;
@@ -352,6 +357,8 @@ private:
     static quint32 _id;
     static qreal   _size;
     static qreal   _height;
+    static QMap<int, QString> m_sizeAliases;
+    static QMap<int, QString> m_heightAliases;
     static QSet<QString> uniqueNames;
 
     QSharedDataPointer<VContainerData> d;

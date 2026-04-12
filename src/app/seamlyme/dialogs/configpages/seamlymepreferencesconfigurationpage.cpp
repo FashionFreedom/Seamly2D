@@ -128,7 +128,7 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
     ui->toolBarStyle_CheckBox->setChecked(qApp->seamlyMeSettings()->getToolBarStyle());
 
     //---------------------------Default height and size
-    ui->defHeightCombo->addItems(MeasurementVariable::WholeListHeights(Unit::Cm));
+    ui->defHeightCombo->addItems(MeasurementVariable::allHeightsList(Unit::Cm));
     index = ui->defHeightCombo->findText(QString().setNum(qApp->seamlyMeSettings()->GetDefHeight()));
     if (index != -1)
     {
@@ -143,7 +143,7 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
     connect(ui->defHeightCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
             DefGradationChanged);
 
-    ui->defSizeCombo->addItems(MeasurementVariable::WholeListSizes(Unit::Cm));
+    ui->defSizeCombo->addItems(MeasurementVariable::allSizesList(Unit::Cm));
     index = ui->defSizeCombo->findText(QString().setNum(qApp->seamlyMeSettings()->GetDefSize()));
     if (index != -1)
     {

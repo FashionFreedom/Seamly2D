@@ -102,6 +102,7 @@ public:
     void                    setAvailableSizes(const QStringList &sizes);
     QStringList             selectedSizes() const;
     bool                    isBatchExport() const;
+    void                    setSizeAliases(const QMap<int, QString> &aliases);
 
 protected:
     virtual void            showEvent(QShowEvent *event) override;
@@ -121,6 +122,7 @@ private:
     bool                    m_isInitialized;
     Draw                    m_mode;
     QPushButton            *m_SaveButton;
+    QMap<int, QString>      m_sizeAliases;
 
     void                    removeFormatFromList(LayoutExportFormat format);
 

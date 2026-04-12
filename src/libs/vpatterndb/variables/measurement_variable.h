@@ -1,57 +1,54 @@
-/******************************************************************************
- *   @file   measurement_variable.h
- **  @author Douglas S Caskey
- **  @date   16 Jul, 2023
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program to create and model patterns of clothing.
- **  Copyright (C) 2017-2023 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   measurement_variable.h
+//  @author Douglas S Caskey
+//  @date   16 Jul, 2023
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2026 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   vstandardtablecell.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   vstandardtablecell.h
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   15 Nov, 2013
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 #ifndef MEASUREMENT_VARIABLE_H
 #define MEASUREMENT_VARIABLE_H
@@ -63,10 +60,13 @@
 #include <QStringList>
 #include <QTypeInfo>
 #include <QtGlobal>
+#include <QVector>
 
 #include "../vmisc/def.h"
 #include "../ifc/ifcdef.h"
 #include "vvariable.h"
+
+#include "grade_break.h"
 
 class VContainer;
 class MeasurementVariableData;
@@ -129,10 +129,22 @@ public:
     qreal              GetKheight() const;
     void               SetKheight(const qreal &value);
 
-    static QStringList ListHeights(QMap<GHeights, bool> heights, Unit patternUnit);
-    static QStringList ListSizes(QMap<GSizes, bool> sizes, Unit patternUnit);
-    static QStringList WholeListHeights(Unit patternUnit);
-    static QStringList WholeListSizes(Unit patternUnit);
+    QVector<GradeBreak> GetSizeBreaks() const;
+    void               SetSizeBreaks(const QVector<GradeBreak> &breaks);
+
+    QVector<GradeBreak> GetHeightBreaks() const;
+    void               SetHeightBreaks(const QVector<GradeBreak> &breaks);
+
+    bool               HasGradeBreaks() const;
+
+    static qreal       calcPiecewiseOffset(qreal current, qreal base, qreal step,
+                                           qreal defaultIncrement,
+                                           const QVector<GradeBreak> &breaks);
+
+    static QStringList patternHeightsList(QMap<GHeights, bool> heights, Unit patternUnit);
+    static QStringList patternSizesList(QMap<GSizes, bool> sizes, Unit patternUnit);
+    static QStringList allHeightsList(Unit patternUnit);
+    static QStringList allSizesList(Unit patternUnit);
     static bool        IsGradationSizeValid(const QString &size);
     static bool        IsGradationHeightValid(const QString &height);
 

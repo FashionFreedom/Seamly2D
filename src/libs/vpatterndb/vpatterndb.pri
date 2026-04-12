@@ -33,6 +33,7 @@ SOURCES += \
 HEADERS += \
     $$PWD/variables/custom_variable.h \
     $$PWD/variables/custom_variable_p.h \
+    $$PWD/variables/grade_break.h \
     $$PWD/variables/measurement_variable.h \
     $$PWD/variables/measurement_variable_p.h \
     $$PWD/vcontainer.h \

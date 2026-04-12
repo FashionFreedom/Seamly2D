@@ -7,7 +7,7 @@
 //  @copyright
 //  This source code is part of the Seamly2D project, a pattern making
 //  program, whose allow create and modeling patterns of clothing.
-//  Copyright (C) 2013-2022 Seamly2D project
+//  Copyright (C) 2013-2026 Seamly2D project
 //  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
 //
 //  Seamly2D is free software: you can redistribute it and/or modify
@@ -27,7 +27,7 @@
 //-----------------------------------------------------------------------------
 //  @file   mainwindow.cpp
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
-//  @date   November 15, 2013
+//  @date   15 Nox, 2013
 //
 //  @brief
 //  @copyright
@@ -199,6 +199,12 @@ MainWindow::MainWindow(QWidget *parent)
     , gradationSizes(nullptr)
     , gradationHeightsLabel(nullptr)
     , gradationSizesLabel(nullptr)
+    , m_measurementSizeMin(0)
+    , m_measurementSizeMax(0)
+    , m_measurementHeightMin(0)
+    , m_measurementHeightMax(0)
+    , m_sizeAliases()
+    , m_heightAliases()
     , toolProperties(nullptr)
     , groupsWidget(nullptr)
     , piecesWidget(nullptr)
@@ -630,6 +636,18 @@ bool MainWindow::loadMeasurements(const QString &fileName)
     try
     {
         qApp->setPatternType(m_measurements->Type());
+
+        if (m_measurements->Type() == MeasurementsType::Multisize)
+        {
+            m_measurementSizeMin = m_measurements->minSize();
+            m_measurementSizeMax = m_measurements->maxSize();
+            m_measurementHeightMin = m_measurements->minHeight();
+            m_measurementHeightMax = m_measurements->maxHeight();
+            m_sizeAliases = m_measurements->sizeAliases();
+            m_heightAliases = m_measurements->heightAliases();
+            VContainer::setSizeAliases(m_sizeAliases);
+            VContainer::setHeightAliases(m_heightAliases);
+        }
         initializeStatusToolBar();
 
         pattern->ClearVariables(VarType::Measurement);
@@ -650,12 +668,12 @@ bool MainWindow::loadMeasurements(const QString &fileName)
 
     if (m_measurements->Type() == MeasurementsType::Multisize)
     {
-        VContainer::setSize(UnitConvertor(m_measurements->BaseSize(), m_measurements->measurementUnits(),
+        VContainer::setSize(UnitConvertor(m_measurements->getBaseSize(), m_measurements->measurementUnits(),
                                           *m_measurements->GetData()->GetPatternUnit()));
 
         qCInfo(vMainWindow, "Multisize file %s was loaded.", qUtf8Printable(fileName));
 
-        VContainer::setHeight(UnitConvertor(m_measurements->BaseHeight(), m_measurements->measurementUnits(),
+        VContainer::setHeight(UnitConvertor(m_measurements->getBaseHeight(), m_measurements->measurementUnits(),
                                             *m_measurements->GetData()->GetPatternUnit()));
 
         doc->SetPatternWasChanged(true);
@@ -711,6 +729,14 @@ bool MainWindow::updateMeasurements(const QString &fileName, int size, int heigh
 
     if (m_measurements->Type() == MeasurementsType::Multisize)
     {
+        m_measurementSizeMin = m_measurements->minSize();
+        m_measurementSizeMax = m_measurements->maxSize();
+        m_measurementHeightMin = m_measurements->minHeight();
+        m_measurementHeightMax = m_measurements->maxHeight();
+        m_sizeAliases = m_measurements->sizeAliases();
+        m_heightAliases = m_measurements->heightAliases();
+        VContainer::setSizeAliases(m_sizeAliases);
+        VContainer::setHeightAliases(m_heightAliases);
         VContainer::setSize(size);
         VContainer::setHeight(height);
 
@@ -2095,15 +2121,16 @@ void MainWindow::LoadMultisize()
 
     if (!filename.isEmpty())
     {
-        QString hText;
-        if (!gradationHeights.isNull())
+        int savedHeight = 0;
+        if (!gradationHeights.isNull() && gradationHeights->currentIndex() != -1)
         {
-            hText = gradationHeights->currentText();
+            savedHeight = gradationHeights->currentData().toInt();
         }
-        QString sText;
-        if (!gradationSizes.isNull())
+
+        int savedSize = 0;
+        if (!gradationSizes.isNull() && gradationSizes->currentIndex() != -1)
         {
-            sText = gradationSizes->currentText();
+             savedSize = gradationSizes->currentData().toInt();
         }
 
         if(loadMeasurements(filename))
@@ -2129,14 +2156,22 @@ void MainWindow::LoadMultisize()
 
             if (qApp->patternType() == MeasurementsType::Multisize)
             {
-                if (!hText.isEmpty() && not gradationHeights.isNull())
+                 if (savedHeight > 0 && not gradationHeights.isNull())
                 {
-                    gradationHeights->setCurrentText(hText);
+                    const int index = gradationHeights->findData(savedHeight);
+                    if (index != -1)
+                    {
+                        gradationHeights->setCurrentIndex(index);
+                    }
                 }
 
-                if (!sText.isEmpty() && not gradationSizes.isNull())
+                if (savedSize > 0 && not gradationSizes.isNull())
                 {
-                    gradationSizes->setCurrentText(sText);
+                    const int index = gradationSizes->findData(savedSize);
+                    if (index != -1)
+                    {
+                        gradationSizes->setCurrentIndex(index);
+                    }
                 }
             }
         }
@@ -2336,11 +2371,11 @@ void MainWindow::initializeStatusToolBar()
 
     if (qApp->patternType() == MeasurementsType::Multisize)
     {
-        const QStringList listHeights = MeasurementVariable::ListHeights(doc->GetGradationHeights(), qApp->patternUnit());
-        const QStringList listSizes = MeasurementVariable::ListSizes(doc->GetGradationSizes(), qApp->patternUnit());
+        const QStringList listHeights = MeasurementVariable::patternHeightsList(doc->GetGradationHeights(), qApp->patternUnit());
+        const QStringList listSizes = MeasurementVariable::patternSizesList(doc->GetGradationSizes(), qApp->patternUnit());
 
         gradationHeightsLabel = new QLabel(tr("Height:"), this);
-        gradationHeights = SetGradationList(gradationHeightsLabel, listHeights);
+        gradationHeights = SetGradationList(gradationHeightsLabel, listHeights, m_heightAliases);
 
         // set default height
         SetDefaultHeight();
@@ -2349,7 +2384,7 @@ void MainWindow::initializeStatusToolBar()
                 this, &MainWindow::ChangedHeight);
 
         gradationSizesLabel = new QLabel(tr("Size:"), this);
-        gradationSizes = SetGradationList(gradationSizesLabel, listSizes);
+        gradationSizes = SetGradationList(gradationSizesLabel, listSizes, m_sizeAliases);
 
         // set default size
         SetDefaultSize();
@@ -2371,10 +2406,15 @@ void MainWindow::initializeStatusToolBar()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QComboBox *MainWindow::SetGradationList(QLabel *label, const QStringList &list)
+QComboBox *MainWindow::SetGradationList(QLabel *label, const QStringList &list, const QMap<int, QString> &aliases)
 {
     QComboBox *comboBox = new QComboBox(this);
-    comboBox->addItems(list);
+    for (const QString &string : list)
+    {
+        const int value = string.toInt();
+        const QString display = MeasurementDoc::sizeDisplayAlias(value, aliases);
+        comboBox->addItem(display, value);
+    }
     ui->statusBar->addPermanentWidget(label);
     ui->statusBar->addPermanentWidget(comboBox);
 
@@ -4737,18 +4777,22 @@ void MainWindow::setWidgetsEnabled(bool enable)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::UpdateHeightsList(const QStringList &list)
 {
-    QString value;
+    int savedValue = 0;
     if (gradationHeights->currentIndex() != -1)
     {
-        value = gradationHeights->currentText();
+        savedValue = gradationHeights->currentData().toInt();
     }
 
     gradationHeights->blockSignals(true);
     gradationHeights->clear();
-    gradationHeights->addItems(list);
+    for (const QString &string : list)
+    {
+        const int value = string.toInt();
+        gradationHeights->addItem(MeasurementDoc::sizeDisplayAlias(value, m_heightAliases), value);
+    }
     gradationHeights->blockSignals(false);
 
-    int index = gradationHeights->findText(value);
+    int index = gradationHeights->findData(savedValue);
     if (index != -1)
     {
         gradationHeights->setCurrentIndex(index);
@@ -4762,18 +4806,22 @@ void MainWindow::UpdateHeightsList(const QStringList &list)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::UpdateSizesList(const QStringList &list)
 {
-    QString value;
+    int savedValue = 0;
     if (gradationSizes->currentIndex() != -1)
     {
-        value = gradationSizes->currentText();
+        savedValue = gradationSizes->currentData().toInt();
     }
 
     gradationSizes->blockSignals(true);
     gradationSizes->clear();
-    gradationSizes->addItems(list);
+    for (const QString &string : list)
+    {
+        const int value = string.toInt();
+        gradationSizes->addItem(MeasurementDoc::sizeDisplayAlias(value, m_sizeAliases), value);
+    }
     gradationSizes->blockSignals(false);
 
-    int index = gradationSizes->findText(value);
+    int index = gradationSizes->findData(savedValue);
     if (index != -1)
     {
         gradationSizes->setCurrentIndex(index);
@@ -4855,17 +4903,9 @@ void MainWindow::patternChangesWereSaved(bool saved)
 void MainWindow::ChangedSize(int index)
 {
     const int size = static_cast<int>(VContainer::size());
-/*
-    if (m_mmeasurements->isNull())
-    {
-        const QString patternPath = qApp->getFilePath();
-        QString mPath = AbsoluteMPath(patternPath, doc->MPath());
-        m_measurements = OpenMeasurementFile(patternPath, mPath);
-    }
-*/
 
     if (updateMeasurements(AbsoluteMPath(qApp->getFilePath(), doc->MPath()),
-                           gradationSizes.data()->itemText(index).toInt(),
+                           gradationSizes.data()->itemData(index).toInt(),
                            static_cast<int>(VContainer::height())))
     {
         doc->LiteParseTree(Document::LiteParse);
@@ -4875,7 +4915,7 @@ void MainWindow::ChangedSize(int index)
     {
         qCWarning(vMainWindow, "%s", qUtf8Printable(tr("Couldn't update measurements.")));
 
-        const qint32 index = gradationSizes->findText(QString().setNum(size));
+        const qint32 index = gradationSizes->findData(size);
         if (index != -1)
         {
             gradationSizes->setCurrentIndex(index);
@@ -4896,7 +4936,7 @@ void MainWindow::ChangedHeight(int index)
 {
     const int height = static_cast<int>(VContainer::height());
     if (updateMeasurements(AbsoluteMPath(qApp->getFilePath(), doc->MPath()), static_cast<int>(VContainer::size()),
-                           gradationHeights.data()->itemText(index).toInt()))
+                           gradationHeights.data()->itemData(index).toInt()))
     {
         doc->LiteParseTree(Document::LiteParse);
         emit pieceScene->DimensionsChanged();
@@ -4905,7 +4945,7 @@ void MainWindow::ChangedHeight(int index)
     {
         qCWarning(vMainWindow, "%s", qUtf8Printable(tr("Couldn't update measurements.")));
 
-        const qint32 index = gradationHeights->findText(QString().setNum(height));
+        const qint32 index = gradationHeights->findData(height);
         if (index != -1)
         {
             gradationHeights->setCurrentIndex(index);
@@ -4920,41 +4960,39 @@ void MainWindow::ChangedHeight(int index)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::SetDefaultHeight()
 {
-    const QString defHeight = QString().setNum(doc->GetDefCustomHeight());
-    int index = gradationHeights->findText(defHeight);
+    int index = gradationHeights->findData(doc->GetDefCustomHeight());
     if (index != -1)
     {
         gradationHeights->setCurrentIndex(index);
     }
     else
     {
-        index = gradationHeights->findText(QString().setNum(VContainer::height()));
+        index = gradationHeights->findData(static_cast<int>(VContainer::height()));
         if (index != -1)
         {
             gradationHeights->setCurrentIndex(index);
         }
     }
-    VContainer::setHeight(gradationHeights->currentText().toInt());
+    VContainer::setHeight(gradationHeights->currentData().toInt());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::SetDefaultSize()
 {
-    const QString defSize = QString().setNum(doc->GetDefCustomSize());
-    int index = gradationSizes->findText(defSize);
+    int index = gradationSizes->findData(doc->GetDefCustomSize());
     if (index != -1)
     {
         gradationSizes->setCurrentIndex(index);
     }
     else
     {
-        index = gradationSizes->findText(QString().setNum(VContainer::size()));
+        index = gradationSizes->findData(static_cast<int>(VContainer::size()));
         if (index != -1)
         {
             gradationSizes->setCurrentIndex(index);
         }
     }
-    VContainer::setSize(gradationSizes->currentText().toInt());
+    VContainer::setSize(gradationSizes->currentData().toInt());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5782,8 +5820,8 @@ void MainWindow::createActions()
         DialogPatternProperties proper(doc, pattern, this);
         connect(&proper, &DialogPatternProperties::UpdateGradation, this, [this]()
         {
-            UpdateHeightsList(MeasurementVariable::ListHeights(doc->GetGradationHeights(), qApp->patternUnit()));
-            UpdateSizesList(MeasurementVariable::ListSizes(doc->GetGradationSizes(), qApp->patternUnit()));
+            UpdateHeightsList(MeasurementVariable::patternHeightsList(doc->GetGradationHeights(), qApp->patternUnit()));
+            UpdateSizesList(MeasurementVariable::patternSizesList(doc->GetGradationSizes(), qApp->patternUnit()));
         });
         proper.exec();
     });
@@ -6795,11 +6833,12 @@ void MainWindow::exportLayoutAs()
     try
     {
         ExportLayoutDialog dialog(scenes.size(), Draw::Layout, FileName(), this);
+        dialog.setSizeAliases(m_sizeAliases);
 
         // Populate size selection if multisize pattern
         if (qApp->patternType() == MeasurementsType::Multisize)
         {
-            const QStringList sizes = MeasurementVariable::ListSizes(doc->GetGradationSizes(), qApp->patternUnit());
+            const QStringList sizes = MeasurementVariable::patternSizesList(doc->GetGradationSizes(), qApp->patternUnit());
             dialog.setAvailableSizes(sizes);
         }
 
@@ -7033,7 +7072,7 @@ void MainWindow::exportPiecesAs()
         // Populate size selection if multisize pattern
         if (qApp->patternType() == MeasurementsType::Multisize)
         {
-            const QStringList sizes = MeasurementVariable::ListSizes(doc->GetGradationSizes(), qApp->patternUnit());
+            const QStringList sizes = MeasurementVariable::patternSizesList(doc->GetGradationSizes(), qApp->patternUnit());
             dialog.setAvailableSizes(sizes);
         }
 
@@ -7659,7 +7698,7 @@ bool MainWindow::setSize(const QString &text)
             if (qApp->patternType() == MeasurementsType::Multisize)
             {
                 const int size = static_cast<int>(UnitConvertor(text.toInt(), Unit::Cm, *pattern->GetPatternUnit()));
-                const qint32 index = gradationSizes->findText(QString().setNum(size));
+                const qint32 index = gradationSizes->findData(size);
                 if (index != -1)
                 {
                     gradationSizes->setCurrentIndex(index);
@@ -7702,7 +7741,7 @@ bool MainWindow::setHeight(const QString &text)
             if (qApp->patternType() == MeasurementsType::Multisize)
             {
                 const int height = static_cast<int>(UnitConvertor(text.toInt(), Unit::Cm, *pattern->GetPatternUnit()));
-                const qint32 index = gradationHeights->findText(QString().setNum(height));
+                const qint32 index = gradationHeights->findData(height);
                 if (index != -1)
                 {
                     gradationHeights->setCurrentIndex(index);

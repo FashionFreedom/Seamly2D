@@ -1,57 +1,54 @@
-/******************************************************************************
-*   @file   measurements.h
-**  @author Douglas S Caskey
-**  @date   25 Jan, 2024
-**
-**  @brief
-**  @copyright
-**  This source code is part of the Seamly2D project, a pattern making
-**  program to create and model patterns of clothing.
-**  Copyright (C) 2017-2024 Seamly2D project
-**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
-**
-**  Seamly2D is free software: you can redistribute it and/or modify
-**  it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation, either version 3 of the License, or
-**  (at your option) any later version.
-**
-**  Seamly2D is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
-**
-*************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   measurements.h
+//  @author Douglas S Caskey
+//  @date   25 Jan, 2024
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2026 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   vmeasurements.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   14 7, 2015
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   vmeasurements.h
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+// @date   14 Jul, 2015
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 #ifndef MEASUREMENTS_H
 #define MEASUREMENTS_H
@@ -59,13 +56,16 @@
 #include <qcompilerdetection.h>
 #include <QCoreApplication>
 #include <QDomElement>
+#include <QMap>
 #include <QString>
 #include <QStringList>
 #include <QtGlobal>
+#include <QVector>
 
 #include "../ifc/xml/vdomdocument.h"
 #include "../vmisc/def.h"
 #include "../vpatterndb/vcontainer.h"
+#include "../vpatterndb/variables/grade_break.h"
 
 enum class GenderType : char { Male, Female, Unknown };
 
@@ -93,8 +93,21 @@ public:
     void             ClearForExport();
 
     MeasurementsType Type() const;
-    int              BaseSize() const;
-    int              BaseHeight() const;
+    int              getBaseSize() const;
+    int              getBaseHeight() const;
+
+    int              minSize() const;
+    int              maxSize() const;
+    int              sizeStep() const;
+    void             setSizeRange(int min, int max, int step);
+
+    int              minHeight() const;
+    int              maxHeight() const;
+    int              heightStep() const;
+    void             setHeightRange(int min, int max, int step);
+
+    QStringList      activeSizes(Unit patternUnit) const;
+    QStringList      activeHeights(Unit patternUnit) const;
 
     QString          Notes() const;
     void             SetNotes(const QString &text);
@@ -131,6 +144,15 @@ public:
     void             SetMDescription(const QString &name, const QString &text);
     void             SetMFullName(const QString &name, const QString &text);
 
+    void             SetMSizeBreaks(const QString &name, const QVector<GradeBreak> &breaks);
+    void             SetMHeightBreaks(const QString &name, const QVector<GradeBreak> &breaks);
+
+    QMap<int, QString> sizeAliases() const;
+    void               setSizes(const QMap<int, QString> &aliases, const QMap<int, QString> &colors);
+    QMap<int, QString> heightAliases() const;
+    void               setHeightAliases(const QMap<int, QString> &aliases);
+    QMap<int, QString> sizeColors() const;
+
     static const QString TagVST;
     static const QString TagVIT;
     static const QString TagSMMS;
@@ -150,12 +172,27 @@ public:
     static const QString TagMeasurement;
 
     static const QString AttrBase;
-    static const QString AttrValue;
+    static const QString AttrAliasValue;
     static const QString AttrSizeIncrease;
     static const QString AttrHeightIncrease;
     static const QString AttrDescription;
     static const QString AttrName;
     static const QString AttrFullName;
+
+    static const QString TagSizeBreaks;
+    static const QString TagHeightBreaks;
+    static const QString TagBreak;
+    static const QString AttrMin;
+    static const QString AttrMax;
+    static const QString AttrStep;
+    static const QString AttrThreshold;
+    static const QString AttrIncrement;
+    static const QString AttrAliasText;
+    static const QString AttrColor;
+
+    static const QString TagSizes;
+    static const QString TagHeights;
+    static const QString TagAlias;
 
     static const QString GenderMale;
     static const QString GenderFemale;
@@ -163,6 +200,8 @@ public:
 
     static QString       GenderToStr(const GenderType &sex);
     static GenderType    StrToGender(const QString &sex);
+
+    static QString       sizeDisplayAlias(int valueInCm, const QMap<int, QString> &aliases);
 
     QStringList          ListAll() const;
     QStringList          listKnown() const;

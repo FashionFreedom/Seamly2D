@@ -55,6 +55,7 @@
 #include "../ifc/xml/vlabeltemplateconverter.h"
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/exception/vexception.h"
+#include "../vformat/measurements.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vpiece.h"
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
@@ -483,7 +484,7 @@ void EditLabelTemplateDialog::InitPlaceholdersMenu()
         ++i;
     }
 
-    // Insert sorted items into popup menu. 
+    // Insert sorted items into popup menu.
     auto j = sortedItems.constBegin();
     while (j != sortedItems.constEnd())
     {
@@ -535,6 +536,12 @@ void EditLabelTemplateDialog::InitPlaceholders()
 
     m_placeholders.insert(pl_size, qMakePair(tr("Size"), curSize));
     m_placeholders.insert(pl_height, qMakePair(tr("Height"), curHeight));
+    m_placeholders.insert(pl_sizeAlias, qMakePair(tr("Size alias"),
+                          MeasurementDoc::sizeDisplayAlias(static_cast<int>(VContainer::size()),
+                          VContainer::sizeAliases())));
+    m_placeholders.insert(pl_heightAlias, qMakePair(tr("Height alias"),
+                          MeasurementDoc::sizeDisplayAlias(static_cast<int>(VContainer::height()),
+                          VContainer::heightAliases())));
 
     // Piece tags
     m_placeholders.insert(pl_pLetter, qMakePair(tr("Piece letter"), QString("")));

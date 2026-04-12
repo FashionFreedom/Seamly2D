@@ -56,6 +56,7 @@
 #include "../vmisc/def.h"
 #include "../vmisc/vsettings.h"
 #include "../ifc/exception/vexception.h"
+#include "../vformat/measurements.h"
 #include "../vwidgets/export_format_combobox.h"
 #include "../vwidgets/page_format_combobox.h"
 
@@ -641,9 +642,10 @@ void ExportLayoutDialog::showExportFiles()
         {
             for (const QString &size : selectedSizes())
             {
+                const QString sizeAlias = MeasurementDoc::sizeDisplayAlias(size.toInt(), m_sizeAliases);
                 const QString name = QString("%1_%2%3")
                 .arg(fileName())                     //1
-                .arg(size)                           //2
+                .arg(sizeAlias)                      //2
                 .arg(exportFormatSuffix(format()));  //3
 
                 QListWidgetItem *item = new QListWidgetItem(name);
@@ -671,9 +673,10 @@ void ExportLayoutDialog::showExportFiles()
             {
                 for (int i=0; i < m_count; ++i)
                 {
+                    const QString sizeAlias = MeasurementDoc::sizeDisplayAlias(size.toInt(), m_sizeAliases);
                     const QString name = QString("%1_%2_0%3%4")
                     .arg(fileName())                     //1
-                    .arg(size)                           //2
+                    .arg(sizeAlias)                      //2
                     .arg(QString::number(i+1))           //3
                     .arg(exportFormatSuffix(format()));  //4
 
@@ -990,6 +993,13 @@ void ExportLayoutDialog::selectAllSizes()
         ui->sizes_ListWidget->item(i)->setCheckState(Qt::Checked);
     }
     ui->sizes_ListWidget->blockSignals(false);
+    showExportFiles();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void ExportLayoutDialog::setSizeAliases(const QMap<int, QString> &aliases)
+{
+    m_sizeAliases = aliases;
     showExportFiles();
 }
 

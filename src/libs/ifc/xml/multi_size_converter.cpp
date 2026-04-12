@@ -78,8 +78,8 @@
  */
 
 const QString MultiSizeConverter::MeasurementMinVerStr = QStringLiteral("0.3.0");
-const QString MultiSizeConverter::MeasurementMaxVerStr = QStringLiteral("0.4.5");
-const QString MultiSizeConverter::CurrentSchema        = QStringLiteral("://schema/multi_size_measurements/v0.4.5.xsd");
+const QString MultiSizeConverter::MeasurementMaxVerStr = QStringLiteral("0.4.6");
+const QString MultiSizeConverter::CurrentSchema        = QStringLiteral("://schema/multi_size_measurements/v0.4.6.xsd");
 
 //MultiSizeConverter::MeasurementMinVer; // <== DON'T FORGET TO UPDATE TOO!!!!
 //MultiSizeConverter::MeasurementMaxVer; // <== DON'T FORGET TO UPDATE TOO!!!!
@@ -111,6 +111,8 @@ QString MultiSizeConverter::getSchema(int ver) const
         case (0x000404):
             return QStringLiteral("://schema/multi_size_measurements/v0.4.4.xsd");
         case (0x000405):
+            return QStringLiteral("://schema/multi_size_measurements/v0.4.5.xsd");
+        case (0x000406):
             return CurrentSchema;
         default:
             InvalidVersion(ver);
@@ -149,6 +151,10 @@ void MultiSizeConverter::applyPatches()
             ValidateXML(getSchema(0x000405), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000405):
+            convertToVer0_4_6();
+            ValidateXML(getSchema(0x000406), m_convertedFileName);
+            V_FALLTHROUGH
+        case (0x000406):
             break;
         default:
             InvalidVersion(m_ver);
@@ -167,7 +173,7 @@ void MultiSizeConverter::downgradeToCurrentMaxVersion()
 bool MultiSizeConverter::isReadOnly() const
 {
     // Check if attribute read-only was not changed in file format
-    Q_STATIC_ASSERT_X(MultiSizeConverter::MeasurementMaxVer == CONVERTER_VERSION_CHECK(0, 4, 5),
+    Q_STATIC_ASSERT_X(MultiSizeConverter::MeasurementMaxVer == CONVERTER_VERSION_CHECK(0, 4, 6),
                       "Check attribute read-only.");
 
     // Possibly in future attribute read-only will change position etc.
@@ -426,5 +432,18 @@ void MultiSizeConverter::convertToVer0_4_5()
     }
 
     setVersion(QStringLiteral("0.4.5"));
+    Save();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MultiSizeConverter::convertToVer0_4_6()
+{
+    // TODO. Delete if minimal supported version is 0.4.6
+    Q_STATIC_ASSERT_X(MultiSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 6),
+                      "Time to refactor the code.");
+
+    // v0.4.6 adds optional <size_breaks> and <height_breaks> child elements to <m>.
+    // No data migration needed — new elements are optional.
+    setVersion(QStringLiteral("0.4.6"));
     Save();
 }

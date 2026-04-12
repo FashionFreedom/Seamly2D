@@ -72,8 +72,8 @@ public:
 
     MeasurementsType           type() const;
     Unit                       measurementUnits() const;
-    int                        baseSize() const;
-    int                        baseHeight() const;
+    int                        getBaseSize() const;
+    int                        getBaseHeight() const;
 
 protected:
     virtual void               changeEvent(QEvent* event) override;

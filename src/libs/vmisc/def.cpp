@@ -114,6 +114,8 @@ const QStringList builInPostfixOperators = QStringList() << cm_Oprt
 
 const QString pl_size          = QStringLiteral("size");
 const QString pl_height        = QStringLiteral("height");
+const QString pl_sizeAlias     = QStringLiteral("sizeAlias");
+const QString pl_heightAlias   = QStringLiteral("heightAlias");
 const QString pl_date          = QStringLiteral("date");
 const QString pl_time          = QStringLiteral("time");
 const QString pl_patternName   = QStringLiteral("patternName");

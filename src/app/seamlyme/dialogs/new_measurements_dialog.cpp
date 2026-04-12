@@ -115,13 +115,13 @@ Unit NewMeasurementsDialog::measurementUnits() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int NewMeasurementsDialog::baseSize() const
+int NewMeasurementsDialog::getBaseSize() const
 {
     return ui->comboBoxBaseSize->currentText().toInt();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int NewMeasurementsDialog::baseHeight() const
+int NewMeasurementsDialog::getBaseHeight() const
 {
     return ui->comboBoxBaseHeight->currentText().toInt();
 }
@@ -213,7 +213,7 @@ void NewMeasurementsDialog::initializeHeightsList()
     ui->comboBoxBaseHeight->clear();
     if (measurementUnits() != Unit::Inch)
     {
-        const QStringList list = MeasurementVariable::WholeListHeights(measurementUnits());
+        const QStringList list = MeasurementVariable::allHeightsList(measurementUnits());
         ui->comboBoxBaseHeight->addItems(list);
     }
 }
@@ -224,7 +224,7 @@ void NewMeasurementsDialog::initializeSizesList()
     ui->comboBoxBaseSize->clear();
     if (measurementUnits() != Unit::Inch)
     {
-        const QStringList list = MeasurementVariable::WholeListSizes(measurementUnits());
+        const QStringList list = MeasurementVariable::allSizesList(measurementUnits());
         ui->comboBoxBaseSize->addItems(list);
     }
 }

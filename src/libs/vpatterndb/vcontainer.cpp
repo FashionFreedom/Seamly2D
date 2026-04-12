@@ -88,6 +88,8 @@ QT_WARNING_POP
 quint32 VContainer::_id = NULL_ID;
 qreal VContainer::_size = 50;
 qreal VContainer::_height = 176;
+QMap<int, QString> VContainer::m_sizeAliases = QMap<int, QString>();
+QMap<int, QString> VContainer::m_heightAliases = QMap<int, QString>();
 QSet<QString> VContainer::uniqueNames = QSet<QString>();
 
 #ifdef Q_COMPILER_RVALUE_REFS
@@ -1245,6 +1247,30 @@ qreal VContainer::height()
 qreal *VContainer::rheight()
 {
     return &_height;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VContainer::setSizeAliases(const QMap<int, QString> &aliases)
+{
+    m_sizeAliases = aliases;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VContainer::setHeightAliases(const QMap<int, QString> &aliases)
+{
+    m_heightAliases = aliases;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+const QMap<int, QString> &VContainer::sizeAliases()
+{
+    return m_sizeAliases;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+const QMap<int, QString> &VContainer::heightAliases()
+{
+    return m_heightAliases;
 }
 
 /**

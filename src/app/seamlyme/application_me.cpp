@@ -559,12 +559,12 @@ void ApplicationME::parseCommandLine(const SocketConnection &connection, const Q
     //-----
     QCommandLineOption heightOption(QStringList() << "e" << "height",
             tr("Open with the base height. Valid values: %1cm.")
-                                    .arg(MeasurementVariable::WholeListHeights(Unit::Cm).join(", ")),
+                                    .arg(MeasurementVariable::allHeightsList(Unit::Cm).join(", ")),
             tr("The base height"));
     parser.addOption(heightOption);
     //-----
     QCommandLineOption sizeOption(QStringList() << "s" << "size",
-            tr("Open with the base size. Valid values: %1cm.").arg(MeasurementVariable::WholeListSizes(Unit::Cm).join(", ")),
+            tr("Open with the base size. Valid values: %1cm.").arg(MeasurementVariable::allSizesList(Unit::Cm).join(", ")),
             tr("The base size"));
     parser.addOption(sizeOption);
     //-----
@@ -604,7 +604,7 @@ void ApplicationME::parseCommandLine(const SocketConnection &connection, const Q
         {
             qCCritical(mApp, "%s\n",
                     qPrintable(tr("Invalid base height argument. Must be %1cm.")
-                               .arg(MeasurementVariable::WholeListHeights(Unit::Cm).join(", "))));
+                               .arg(MeasurementVariable::allHeightsList(Unit::Cm).join(", "))));
             parser.showHelp(V_EX_USAGE);
         }
     }
@@ -621,7 +621,7 @@ void ApplicationME::parseCommandLine(const SocketConnection &connection, const Q
         {
             qCCritical(mApp, "%s\n",
                     qPrintable(tr("Invalid base size argument. Must be %1cm.")
-                               .arg(MeasurementVariable::WholeListSizes(Unit::Cm).join(", "))));
+                               .arg(MeasurementVariable::allSizesList(Unit::Cm).join(", "))));
             parser.showHelp(V_EX_USAGE);
         }
     }

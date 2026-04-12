@@ -1,57 +1,54 @@
-/******************************************************************************
-*   @file   measurements.cpp
-**  @author Douglas S Caskey
-**  @date   25 Jan, 2024
-**
-**  @brief
-**  @copyright
-**  This source code is part of the Seamly2D project, a pattern making
-**  program to create and model patterns of clothing.
-**  Copyright (C) 2017-2024 Seamly2D project
-**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
-**
-**  Seamly2D is free software: you can redistribute it and/or modify
-**  it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation, either version 3 of the License, or
-**  (at your option) any later version.
-**
-**  Seamly2D is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
-**
-*************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   measurements.cpp
+//  @author Douglas S Caskey
+//  @date   25 Jan, 2024
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2026 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   vmeasurements.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   14 7, 2015
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   vmeasurements.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+// @date   14 Jul, 2015
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 #include "measurements.h"
 
@@ -75,6 +72,7 @@
 #include "../qmuparser/qmuparsererror.h"
 #include "../vpatterndb/calculator.h"
 #include "../vpatterndb/variables/measurement_variable.h"
+#include "../vpatterndb/variables/grade_break.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/measurements_def.h"
 #include "../vpatterndb/pmsystems.h"
@@ -99,12 +97,28 @@ const QString MeasurementDoc::TagReadOnly         = QStringLiteral("read-only");
 const QString MeasurementDoc::TagMeasurement      = QStringLiteral("m");
 
 const QString MeasurementDoc::AttrBase            = QStringLiteral("base");
-const QString MeasurementDoc::AttrValue           = QStringLiteral("value");
+
 const QString MeasurementDoc::AttrSizeIncrease    = QStringLiteral("size_increase");
 const QString MeasurementDoc::AttrHeightIncrease  = QStringLiteral("height_increase");
 const QString MeasurementDoc::AttrDescription     = QStringLiteral("description");
 const QString MeasurementDoc::AttrName            = QStringLiteral("name");
 const QString MeasurementDoc::AttrFullName        = QStringLiteral("full_name");
+
+const QString MeasurementDoc::AttrMin              = QStringLiteral("min");
+const QString MeasurementDoc::AttrMax              = QStringLiteral("max");
+const QString MeasurementDoc::AttrStep             = QStringLiteral("step");
+const QString MeasurementDoc::TagSizeBreaks        = QStringLiteral("sizeRules");
+const QString MeasurementDoc::TagHeightBreaks      = QStringLiteral("heightRules");
+const QString MeasurementDoc::TagBreak             = QStringLiteral("break");
+const QString MeasurementDoc::AttrThreshold        = QStringLiteral("threshold");
+const QString MeasurementDoc::AttrIncrement        = QStringLiteral("increment");
+const QString MeasurementDoc::AttrAliasValue       = QStringLiteral("value");
+const QString MeasurementDoc::AttrAliasText        = QStringLiteral("alias");
+const QString MeasurementDoc::AttrColor             = QStringLiteral("color");
+
+const QString MeasurementDoc::TagSizes             = QStringLiteral("sizes");
+const QString MeasurementDoc::TagHeights           = QStringLiteral("heights");
+const QString MeasurementDoc::TagAlias             = QStringLiteral("alias");
 
 const QString MeasurementDoc::GenderMale          = QStringLiteral("male");
 const QString MeasurementDoc::GenderFemale        = QStringLiteral("female");
@@ -217,13 +231,13 @@ void MeasurementDoc::Remove(const QString &name)
 void MeasurementDoc::MoveTop(const QString &name)
 {
     const QDomElement node = FindM(name);
-    if (not node.isNull())
+    if (!node.isNull())
     {
         const QDomNodeList mList = elementsByTagName(TagMeasurement);
         if (mList.size() >= 2)
         {
             const QDomNode top = mList.at(0);
-            if (not top.isNull())
+            if (!top.isNull())
             {
                 const QDomNodeList list = elementsByTagName(TagBodyMeasurements);
                 list.at(0).insertBefore(node, top);
@@ -236,10 +250,10 @@ void MeasurementDoc::MoveTop(const QString &name)
 void MeasurementDoc::MoveUp(const QString &name)
 {
     const QDomElement node = FindM(name);
-    if (not node.isNull())
+    if (!node.isNull())
     {
         const QDomElement prSibling = node.previousSiblingElement(TagMeasurement);
-        if (not prSibling.isNull())
+        if (!prSibling.isNull())
         {
             const QDomNodeList list = elementsByTagName(TagBodyMeasurements);
             list.at(0).insertBefore(node, prSibling);
@@ -251,10 +265,10 @@ void MeasurementDoc::MoveUp(const QString &name)
 void MeasurementDoc::MoveDown(const QString &name)
 {
     const QDomElement node = FindM(name);
-    if (not node.isNull())
+    if (!node.isNull())
     {
         const QDomElement nextSibling = node.nextSiblingElement(TagMeasurement);
-        if (not nextSibling.isNull())
+        if (!nextSibling.isNull())
         {
             const QDomNodeList list = elementsByTagName(TagBodyMeasurements);
             list.at(0).insertAfter(node, nextSibling);
@@ -266,13 +280,13 @@ void MeasurementDoc::MoveDown(const QString &name)
 void MeasurementDoc::MoveBottom(const QString &name)
 {
     const QDomElement node = FindM(name);
-    if (not node.isNull())
+    if (!node.isNull())
     {
         const QDomNodeList mList = elementsByTagName(TagMeasurement);
         if (mList.size() >= 2)
         {
             const QDomNode bottom = mList.at(mList.size()-1);
-            if (not bottom.isNull())
+            if (!bottom.isNull())
             {
                 const QDomNodeList list = elementsByTagName(TagBodyMeasurements);
                 list.at(0).insertAfter(node, bottom);
@@ -325,8 +339,40 @@ void MeasurementDoc::readMeasurements() const
             qreal ksize = GetParametrDouble(dom, AttrSizeIncrease, "0");
             qreal kheight = GetParametrDouble(dom, AttrHeightIncrease, "0");
 
-            tempMeash = QSharedPointer<MeasurementVariable>(new MeasurementVariable(static_cast<quint32>(i), name, BaseSize(),
-                                                                      BaseHeight(), base, ksize, kheight));
+            // Read optional grade breaks
+            QVector<GradeBreak> sizeBreaks;
+            QVector<GradeBreak> heightBreaks;
+
+            const QDomElement sizeBreaksElem = dom.firstChildElement(TagSizeBreaks);
+            if (!sizeBreaksElem.isNull())
+            {
+                QDomElement brk = sizeBreaksElem.firstChildElement(TagBreak);
+                while (!brk.isNull())
+                {
+                    const qreal threshold = GetParametrDouble(brk, AttrThreshold, "0");
+                    const qreal increment = GetParametrDouble(brk, AttrIncrement, "0");
+                    sizeBreaks.append(GradeBreak(threshold, increment));
+                    brk = brk.nextSiblingElement(TagBreak);
+                }
+            }
+
+            const QDomElement heightBreaksElem = dom.firstChildElement(TagHeightBreaks);
+            if (!heightBreaksElem.isNull())
+            {
+                QDomElement brk = heightBreaksElem.firstChildElement(TagBreak);
+                while (!brk.isNull())
+                {
+                    const qreal threshold = GetParametrDouble(brk, AttrThreshold, "0");
+                    const qreal increment = GetParametrDouble(brk, AttrIncrement, "0");
+                    heightBreaks.append(GradeBreak(threshold, increment));
+                    brk = brk.nextSiblingElement(TagBreak);
+                }
+            }
+
+            tempMeash = QSharedPointer<MeasurementVariable>(new MeasurementVariable(static_cast<quint32>(i), name,
+                                                            getBaseSize(), getBaseHeight(), base, ksize, kheight));
+            tempMeash->SetSizeBreaks(sizeBreaks);
+            tempMeash->SetHeightBreaks(heightBreaks);
             tempMeash->setSize(m_currentSize);
             tempMeash->setHeight(m_currentHeight);
             tempMeash->SetUnit(data->GetPatternUnit());
@@ -335,18 +381,37 @@ void MeasurementDoc::readMeasurements() const
             ksize = UnitConvertor(ksize, measurementUnits(), *data->GetPatternUnit());
             kheight = UnitConvertor(kheight, measurementUnits(), *data->GetPatternUnit());
 
-            const qreal baseSize = UnitConvertor(BaseSize(), measurementUnits(), *data->GetPatternUnit());
-            const qreal baseHeight = UnitConvertor(BaseHeight(), measurementUnits(), *data->GetPatternUnit());
+            // Convert grade break thresholds and increments to pattern units
+            QVector<GradeBreak> convSizeBreaks;
+            for (const GradeBreak &gb : sizeBreaks)
+            {
+                convSizeBreaks.append(GradeBreak(
+                    UnitConvertor(gb.threshold, measurementUnits(), *data->GetPatternUnit()),
+                    UnitConvertor(gb.increment, measurementUnits(), *data->GetPatternUnit())));
+            }
+
+            QVector<GradeBreak> convHeightBreaks;
+            for (const GradeBreak &gb : heightBreaks)
+            {
+                convHeightBreaks.append(GradeBreak(
+                    UnitConvertor(gb.threshold, measurementUnits(), *data->GetPatternUnit()),
+                    UnitConvertor(gb.increment, measurementUnits(), *data->GetPatternUnit())));
+            }
+
+            const qreal baseSize = UnitConvertor(getBaseSize(), measurementUnits(), *data->GetPatternUnit());
+            const qreal baseHeight = UnitConvertor(getBaseHeight(), measurementUnits(), *data->GetPatternUnit());
 
             meash = QSharedPointer<MeasurementVariable>(new MeasurementVariable(static_cast<quint32>(i), name, baseSize, baseHeight,
                                                                   base, ksize, kheight, fullName, description));
+            meash->SetSizeBreaks(convSizeBreaks);
+            meash->SetHeightBreaks(convHeightBreaks);
             meash->setSize(m_currentSize);
             meash->setHeight(m_currentHeight);
             meash->SetUnit(data->GetPatternUnit());
         }
         else
         {
-            const QString formula = GetParametrString(dom, AttrValue, "0");
+            const QString formula = GetParametrString(dom, AttrAliasValue, "0");
             bool ok = false;
             qreal value = EvalFormula(tempData.data(), formula, &ok);
 
@@ -372,9 +437,9 @@ void MeasurementDoc::ClearForExport()
         QDomElement domElement = list.at(i).toElement();
         if (domElement.isNull() == false)
         {
-            if (qmu::QmuTokenParser::IsSingle(domElement.attribute(AttrValue)))
+            if (qmu::QmuTokenParser::IsSingle(domElement.attribute(AttrAliasValue)))
             {
-                SetAttribute(domElement, AttrValue, QString("0"));
+                SetAttribute(domElement, AttrAliasValue, QString("0"));
             }
         }
     }
@@ -387,7 +452,7 @@ MeasurementsType MeasurementDoc::Type() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int MeasurementDoc::BaseSize() const
+int MeasurementDoc::getBaseSize() const
 {
     if (type == MeasurementsType::Multisize)
     {
@@ -400,7 +465,7 @@ int MeasurementDoc::BaseSize() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int MeasurementDoc::BaseHeight() const
+int MeasurementDoc::getBaseHeight() const
 {
     if (type == MeasurementsType::Multisize)
     {
@@ -413,6 +478,389 @@ int MeasurementDoc::BaseHeight() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+int MeasurementDoc::minSize() const
+{
+    if (type == MeasurementsType::Multisize)
+    {
+        const QDomNodeList nodeList = this->elementsByTagName(TagSize);
+        if (!nodeList.isEmpty())
+        {
+            const QDomElement element = nodeList.at(0).toElement();
+            if (element.hasAttribute(AttrMin))
+            {
+                return element.attribute(AttrMin).toInt();
+            }
+        }
+        return static_cast<int>(GSizes::S22);
+    }
+    return 0;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int MeasurementDoc::maxSize() const
+{
+    if (type == MeasurementsType::Multisize)
+    {
+        const QDomNodeList nodeList = this->elementsByTagName(TagSize);
+        if (!nodeList.isEmpty())
+        {
+            const QDomElement element = nodeList.at(0).toElement();
+            if (element.hasAttribute(AttrMax))
+            {
+                return element.attribute(AttrMax).toInt();
+            }
+        }
+        return static_cast<int>(GSizes::S72);
+    }
+    return 0;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int MeasurementDoc::sizeStep() const
+{
+    if (type == MeasurementsType::Multisize)
+    {
+        const QDomNodeList nodeList = this->elementsByTagName(TagSize);
+        if (!nodeList.isEmpty())
+        {
+            const QDomElement element = nodeList.at(0).toElement();
+            if (element.hasAttribute(AttrStep))
+            {
+                return element.attribute(AttrStep).toInt();
+            }
+        }
+    }
+    return 2;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MeasurementDoc::setSizeRange(int min, int max, int step)
+{
+    if (isReadOnly())
+    {
+        return;
+    }
+
+    const QDomNodeList nodeList = this->elementsByTagName(TagSize);
+    if (nodeList.isEmpty())
+    {
+        return;
+    }
+
+    QDomElement element = nodeList.at(0).toElement();
+    if (element.isNull())
+    {
+        return;
+    }
+
+    const int base = getBaseSize();
+    if (min > base || max < base)
+    {
+        return;
+    }
+
+    SetAttribute(element, AttrMin, min);
+    SetAttribute(element, AttrMax, max);
+    SetAttribute(element, AttrStep, step);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int MeasurementDoc::minHeight() const
+{
+    if (type == MeasurementsType::Multisize)
+    {
+        const QDomNodeList nodeList = this->elementsByTagName(TagHeight);
+        if (!nodeList.isEmpty())
+        {
+            const QDomElement element = nodeList.at(0).toElement();
+            if (element.hasAttribute(AttrMin))
+            {
+                return element.attribute(AttrMin).toInt();
+            }
+        }
+        return static_cast<int>(GHeights::H50);
+    }
+    return 0;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int MeasurementDoc::maxHeight() const
+{
+    if (type == MeasurementsType::Multisize)
+    {
+        const QDomNodeList nodeList = this->elementsByTagName(TagHeight);
+        if (!nodeList.isEmpty())
+        {
+            const QDomElement element = nodeList.at(0).toElement();
+            if (element.hasAttribute(AttrMax))
+            {
+                return element.attribute(AttrMax).toInt();
+            }
+        }
+        return static_cast<int>(GHeights::H200);
+    }
+    return 0;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int MeasurementDoc::heightStep() const
+{
+    if (type == MeasurementsType::Multisize)
+    {
+        const QDomNodeList nodeList = this->elementsByTagName(TagHeight);
+        if (!nodeList.isEmpty())
+        {
+            const QDomElement element = nodeList.at(0).toElement();
+            if (element.hasAttribute(AttrStep))
+            {
+                return element.attribute(AttrStep).toInt();
+            }
+        }
+    }
+    return 6;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MeasurementDoc::setHeightRange(int min, int max, int step)
+{
+    if (isReadOnly())
+    {
+        return;
+    }
+
+    const QDomNodeList nodeList = this->elementsByTagName(TagHeight);
+    if (nodeList.isEmpty())
+    {
+        return;
+    }
+
+    QDomElement element = nodeList.at(0).toElement();
+    if (element.isNull())
+    {
+        return;
+    }
+
+    const int base = getBaseHeight();
+    if (min > base || max < base)
+    {
+        return;
+    }
+
+    SetAttribute(element, AttrMin, min);
+    SetAttribute(element, AttrMax, max);
+    SetAttribute(element, AttrStep, step);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QMap<int, QString> MeasurementDoc::sizeAliases() const
+{
+    QMap<int, QString> map;
+    const QDomNodeList nodeList = this->elementsByTagName(TagSizes);
+    if (nodeList.isEmpty())
+    {
+        return map;
+    }
+
+    const QDomElement container = nodeList.at(0).toElement();
+    QDomElement element = container.firstChildElement(TagSize);
+    while (!element.isNull())
+    {
+        const int value = element.attribute(AttrAliasValue).toInt();
+        const QString text = element.attribute(AttrAliasText);
+        if (value > 0 && !text.isEmpty())
+        {
+            map.insert(value, text);
+        }
+        element = element.nextSiblingElement(TagSize);
+    }
+    return map;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MeasurementDoc::setSizes(const QMap<int, QString> &aliases, const QMap<int, QString> &colors)
+{
+    if (isReadOnly())
+    {
+        return;
+    }
+
+    // Remove existing size-aliases element if any
+    const QDomNodeList nodeList = this->elementsByTagName(TagSizes);
+    if (!nodeList.isEmpty())
+    {
+        documentElement().removeChild(nodeList.at(0));
+    }
+
+    if (!aliases.isEmpty())
+    {
+        QDomElement container = createElement(TagSizes);
+        for (auto it = aliases.constBegin(); it != aliases.constEnd(); ++it)
+        {
+            QString color = colors.value(it.key(), QString("#000000"));
+            QDomElement element = createElement(TagSize);
+            SetAttribute(element, AttrAliasValue, it.key());
+            SetAttribute(element, AttrAliasText, it.value());
+            SetAttribute(element, AttrColor, color);
+            container.appendChild(element);
+        }
+
+        // Insert before body-measurements
+        const QDomNodeList bmList = elementsByTagName(TagBodyMeasurements);
+        if (!bmList.isEmpty())
+        {
+            documentElement().insertBefore(container, bmList.at(0));
+        }
+        else
+        {
+            documentElement().appendChild(container);
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QMap<int, QString> MeasurementDoc::heightAliases() const
+{
+    QMap<int, QString> map;
+    const QDomNodeList nodeList = this->elementsByTagName(TagHeights);
+    if (nodeList.isEmpty())
+    {
+        return map;
+    }
+
+    const QDomElement container = nodeList.at(0).toElement();
+    QDomElement element = container.firstChildElement(TagHeight);
+    while (!element.isNull())
+    {
+        const int value = element.attribute(AttrAliasValue).toInt();
+        const QString text = element.attribute(AttrAliasText);
+        if (value > 0 && !text.isEmpty())
+        {
+            map.insert(value, text);
+        }
+        element = element.nextSiblingElement(TagHeight);
+    }
+    return map;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MeasurementDoc::setHeightAliases(const QMap<int, QString> &aliases)
+{
+    if (isReadOnly())
+    {
+        return;
+    }
+
+    // Remove existing height-aliases element if any
+    const QDomNodeList nodeList = this->elementsByTagName(TagHeights);
+    if (!nodeList.isEmpty())
+    {
+        documentElement().removeChild(nodeList.at(0));
+    }
+
+    if (!aliases.isEmpty())
+    {
+        QDomElement container = createElement(TagHeights);
+        for (auto it = aliases.constBegin(); it != aliases.constEnd(); ++it)
+        {
+            QDomElement element = createElement(TagHeight);
+            SetAttribute(element, AttrAliasValue, it.key());
+            SetAttribute(element, AttrAliasText, it.value());
+            container.appendChild(element);
+        }
+
+        // Insert before body-measurements
+        const QDomNodeList bmList = elementsByTagName(TagBodyMeasurements);
+        if (!bmList.isEmpty())
+        {
+            documentElement().insertBefore(container, bmList.at(0));
+        }
+        else
+        {
+            documentElement().appendChild(container);
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QMap<int, QString> MeasurementDoc::sizeColors() const
+{
+    QMap<int, QString> map;
+    const QDomNodeList nodeList = this->elementsByTagName(TagSizes);
+    if (nodeList.isEmpty())
+    {
+        return map;
+    }
+
+    const QDomElement container = nodeList.at(0).toElement();
+    QDomElement element = container.firstChildElement(TagSize);
+    while (!element.isNull())
+    {
+        const int value = element.attribute(AttrAliasValue).toInt();
+        const QString color =  GetParametrString(element, AttrColor, "#000000");
+        if (value > 0 && !color.isEmpty())
+        {
+            map.insert(value, color);
+        }
+        element = element.nextSiblingElement(TagSize);
+    }
+    return map;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString MeasurementDoc::sizeDisplayAlias(int valueInCm, const QMap<int, QString> &aliases)
+{
+    return aliases.value(valueInCm, QString::number(valueInCm));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QStringList MeasurementDoc::activeSizes(Unit patternUnit) const
+{
+    const QStringList all = MeasurementVariable::allSizesList(patternUnit);
+    const int min = minSize();
+    const int max = maxSize();
+
+    if (min == static_cast<int>(GSizes::S22) && max == static_cast<int>(GSizes::S72))
+    {
+        return all;
+    }
+
+    QStringList filtered;
+    for (const QString &string : all)
+    {
+        const int val = string.toInt();
+        if (val >= min && val <= max)
+        {
+            filtered.append(string);
+        }
+    }
+    return filtered;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QStringList MeasurementDoc::activeHeights(Unit patternUnit) const
+{
+    const QStringList all = MeasurementVariable::allHeightsList(patternUnit);
+    const int min = minHeight();
+    const int max = maxHeight();
+
+    if (min == static_cast<int>(GHeights::H50) && max == static_cast<int>(GHeights::H200))
+    {
+        return all;
+    }
+
+    QStringList filtered;
+    for (const QString &string : all)
+    {
+        const int val = string.toInt();
+        if (val >= min && val <= max)
+        {
+            filtered.append(string);
+        }
+    }
+    return filtered;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QString MeasurementDoc::Notes() const
 {
     return UniqueTagText(TagNotes, "");
@@ -421,7 +869,7 @@ QString MeasurementDoc::Notes() const
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDoc::SetNotes(const QString &text)
 {
-    if (not isReadOnly())
+    if (!isReadOnly())
     {
         setTagText(TagNotes, text);
     }
@@ -436,7 +884,7 @@ QString MeasurementDoc::FamilyName() const
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDoc::SetFamilyName(const QString &text)
 {
-    if (not isReadOnly())
+    if (!isReadOnly())
     {
         setTagText(TagFamilyName, text);
     }
@@ -451,7 +899,7 @@ QString MeasurementDoc::GivenName() const
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDoc::SetGivenName(const QString &text)
 {
-    if (not isReadOnly())
+    if (!isReadOnly())
     {
         setTagText(TagGivenName, text);
     }
@@ -466,7 +914,7 @@ QDate MeasurementDoc::BirthDate() const
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDoc::SetBirthDate(const QDate &date)
 {
-    if (not isReadOnly())
+    if (!isReadOnly())
     {
         setTagText(TagBirthDate, date.toString("yyyy-MM-dd"));
     }
@@ -481,7 +929,7 @@ GenderType MeasurementDoc::Gender() const
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDoc::SetGender(const GenderType &gender)
 {
-    if (not isReadOnly())
+    if (!isReadOnly())
     {
         setTagText(TagGender, GenderToStr(gender));
     }
@@ -496,7 +944,7 @@ QString MeasurementDoc::PMSystem() const
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDoc::SetPMSystem(const QString &system)
 {
-    if (not isReadOnly())
+    if (!isReadOnly())
     {
         setTagText(TagPMSystem, ClearPMCode(system));
     }
@@ -511,7 +959,7 @@ QString MeasurementDoc::Email() const
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDoc::SetEmail(const QString &text)
 {
-    if (not isReadOnly())
+    if (!isReadOnly())
     {
         setTagText(TagEmail, text);
     }
@@ -552,7 +1000,7 @@ void MeasurementDoc::setHeight(qreal *height)
 void MeasurementDoc::SetMName(const QString &name, const QString &text)
 {
     QDomElement node = FindM(name);
-    if (not node.isNull())
+    if (!node.isNull())
     {
         SetAttribute(node, AttrName, text);
     }
@@ -566,9 +1014,9 @@ void MeasurementDoc::SetMName(const QString &name, const QString &text)
 void MeasurementDoc::SetMValue(const QString &name, const QString &text)
 {
     QDomElement node = FindM(name);
-    if (not node.isNull())
+    if (!node.isNull())
     {
-        SetAttribute(node, AttrValue, text);
+        SetAttribute(node, AttrAliasValue, text);
     }
     else
     {
@@ -580,7 +1028,7 @@ void MeasurementDoc::SetMValue(const QString &name, const QString &text)
 void MeasurementDoc::SetMBaseValue(const QString &name, double value)
 {
     QDomElement node = FindM(name);
-    if (not node.isNull())
+    if (!node.isNull())
     {
         SetAttribute(node, AttrBase, value);
     }
@@ -594,7 +1042,7 @@ void MeasurementDoc::SetMBaseValue(const QString &name, double value)
 void MeasurementDoc::SetMSizeIncrease(const QString &name, double value)
 {
     QDomElement node = FindM(name);
-    if (not node.isNull())
+    if (!node.isNull())
     {
         SetAttribute(node, AttrSizeIncrease, value);
     }
@@ -608,7 +1056,7 @@ void MeasurementDoc::SetMSizeIncrease(const QString &name, double value)
 void MeasurementDoc::SetMHeightIncrease(const QString &name, double value)
 {
     QDomElement node = FindM(name);
-    if (not node.isNull())
+    if (!node.isNull())
     {
         SetAttribute(node, AttrHeightIncrease, value);
     }
@@ -622,7 +1070,7 @@ void MeasurementDoc::SetMHeightIncrease(const QString &name, double value)
 void MeasurementDoc::SetMDescription(const QString &name, const QString &text)
 {
     QDomElement node = FindM(name);
-    if (not node.isNull())
+    if (!node.isNull())
     {
         SetAttribute(node, AttrDescription, text);
     }
@@ -636,13 +1084,84 @@ void MeasurementDoc::SetMDescription(const QString &name, const QString &text)
 void MeasurementDoc::SetMFullName(const QString &name, const QString &text)
 {
     QDomElement node = FindM(name);
-    if (not node.isNull())
+    if (!node.isNull())
     {
         SetAttribute(node, AttrFullName, text);
     }
     else
     {
         qWarning() << tr("Can't find measurement '%1'").arg(name);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MeasurementDoc::SetMSizeBreaks(const QString &name, const QVector<GradeBreak> &breaks)
+{
+    QDomElement node = FindM(name);
+    if (node.isNull())
+    {
+        qWarning() << tr("Can't find measurement '%1'").arg(name);
+        return;
+    }
+
+    // Remove existing size_breaks element if any
+    QDomElement existing = node.firstChildElement(TagSizeBreaks);
+    if (!existing.isNull())
+    {
+        node.removeChild(existing);
+    }
+
+    if (!breaks.isEmpty())
+    {
+        QDomElement sizeBreaksElem = createElement(TagSizeBreaks);
+        for (const GradeBreak &gb : breaks)
+        {
+            QDomElement brkElem = createElement(TagBreak);
+            SetAttribute(brkElem, AttrThreshold, gb.threshold);
+            SetAttribute(brkElem, AttrIncrement, gb.increment);
+            sizeBreaksElem.appendChild(brkElem);
+        }
+        node.insertBefore(sizeBreaksElem, node.firstChildElement());
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MeasurementDoc::SetMHeightBreaks(const QString &name, const QVector<GradeBreak> &breaks)
+{
+    QDomElement node = FindM(name);
+    if (node.isNull())
+    {
+        qWarning() << tr("Can't find measurement '%1'").arg(name);
+        return;
+    }
+
+    // Remove existing height_breaks element if any
+    QDomElement existing = node.firstChildElement(TagHeightBreaks);
+    if (!existing.isNull())
+    {
+        node.removeChild(existing);
+    }
+
+    if (!breaks.isEmpty())
+    {
+        QDomElement heightBreaksElem = createElement(TagHeightBreaks);
+        for (const GradeBreak &gb : breaks)
+        {
+            QDomElement brkElem = createElement(TagBreak);
+            SetAttribute(brkElem, AttrThreshold, gb.threshold);
+            SetAttribute(brkElem, AttrIncrement, gb.increment);
+            heightBreaksElem.appendChild(brkElem);
+        }
+        // Insert after size_breaks if it exists, otherwise as first child
+        QDomElement sizeBreaksElem = node.firstChildElement(TagSizeBreaks);
+        if (!sizeBreaksElem.isNull())
+        {
+            node.insertAfter(heightBreaksElem, sizeBreaksElem);
+        }
+        else
+        {
+            node.insertBefore(heightBreaksElem, node.firstChildElement());
+        }
     }
 }
 
@@ -725,7 +1244,7 @@ bool MeasurementDoc::eachKnownNameIsValid() const
     names = listKnown();
     foreach (const QString &var, names)
     {
-        if (not set.contains(var))
+        if (!set.contains(var))
         {
             return false;
         }
@@ -874,11 +1393,11 @@ QDomElement MeasurementDoc::MakeEmpty(const QString &name, const QString &formul
     {
         if (formula.isEmpty())
         {
-            SetAttribute(element, AttrValue, QString("0"));
+            SetAttribute(element, AttrAliasValue, QString("0"));
         }
         else
         {
-            SetAttribute(element, AttrValue, formula);
+            SetAttribute(element, AttrAliasValue, formula);
         }
     }
 

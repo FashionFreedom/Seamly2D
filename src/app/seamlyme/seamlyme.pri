@@ -3,9 +3,11 @@
 
 SOURCES  += \
     $$PWD/application_me.cpp \
+    $$PWD/dialogs/grade_breaks_dialog.cpp \
     $$PWD/dialogs/me_shortcuts_dialog.cpp \
     $$PWD/dialogs/me_welcome_dialog.cpp \
     $$PWD/dialogs/new_measurements_dialog.cpp \
+    $$PWD/dialogs/size_range_dialog.cpp \
     $$PWD/main.cpp \
     $$PWD/tmainwindow.cpp \
     $$PWD/dialogs/dialogaboutseamlyme.cpp \
@@ -19,9 +21,11 @@ SOURCES  += \
 
 HEADERS  += \
     $$PWD/application_me.h \
+    $$PWD/dialogs/grade_breaks_dialog.h \
     $$PWD/dialogs/me_shortcuts_dialog.h \
     $$PWD/dialogs/me_welcome_dialog.h \
     $$PWD/dialogs/new_measurements_dialog.h \
+    $$PWD/dialogs/size_range_dialog.h \
     $$PWD/tmainwindow.h \
     $$PWD/stable.h \
     $$PWD/dialogs/dialogaboutseamlyme.h \
@@ -36,6 +40,7 @@ FORMS    += \
     $$PWD/dialogs/me_shortcuts_dialog.ui \
     $$PWD/dialogs/me_welcome_dialog.ui \
     $$PWD/dialogs/new_measurements_dialog.ui \
+    $$PWD/dialogs/size_range_dialog.ui \
     $$PWD/tmainwindow.ui \
     $$PWD/dialogs/dialogaboutseamlyme.ui \
     $$PWD/dialogs/dialogmdatabase.ui \

@@ -1,63 +1,62 @@
-/******************************************************************************
- *   @file   tmainwindow.h
- **  @author Douglas S Caskey
- **  @date   25 Jan, 2024
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program to create and model patterns of clothing.
- **  Copyright (C) 2017-2024 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   tmainwindow.h
+//  @author Douglas S Caskey
+//  @date   25 Jan, 2024
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2026 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
- /************************************************************************
- **
- **  @file   tmainwindow.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   10 7, 2015
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   tmainwindow.h
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   10 7, 2015
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 #ifndef TMAINWINDOW_H
 #define TMAINWINDOW_H
 
+#include <QMap>
 #include <QTableWidget>
 
+#include "../vformat/measurements.h"
 #include "../vmisc/def.h"
 #include "../vmisc/vlockguard.h"
 #include "../vmisc/vtablesearch.h"
@@ -148,8 +147,8 @@ private slots:
     void                AddKnown();
     void                ImportFromPattern();
 
-    void                ChangedSize(int index);
-    void                ChangedHeight(int index);
+    void                sizecChanged(int index);
+    void                heightChanged(int index);
 
     void                ShowMData();
 
@@ -158,6 +157,9 @@ private slots:
     void                SaveMBaseValue(double value);
     void                SaveMSizeIncrease(double value);
     void                SaveMHeightIncrease(double value);
+    void                EditSizeGradeBreaks();
+    void                EditHeightGradeBreaks();
+    void                editSizeRange();
     void                SaveMDescription();
     void                SaveMFullName();
 
@@ -174,9 +176,12 @@ private:
     qreal               currentSize;
     qreal               currentHeight;
     QString             curFile;
-    QComboBox          *gradationHeights;
-    QComboBox          *gradationSizes;
+    QComboBox          *m_gradationHeights;
+    QComboBox          *m_gradationSizes;
     QComboBox          *comboBoxUnits;
+    QMap<int, QString>  m_sizeAliases;
+    QMap<int, QString>  m_heightAliases;
+    QMap<int, QString>  m_sizeColors;
 
     std::shared_ptr<VLockGuard<char>> lock;
     QSharedPointer<VTableSearch>      m_search;
@@ -206,7 +211,7 @@ private:
     void                ShowHeaderUnits(QTableWidget *table, int column, const QString &unit);
     void                UpdateRecentFileActions();
 
-    void                MeasurementsWasSaved(bool saved);
+    void                measurementsWereSaved(bool saved);
     void                SetCurrentFile(const QString &fileName);
     bool                SaveMeasurements(const QString &fileName, QString &error);
 
@@ -214,10 +219,12 @@ private:
 
     QTableWidgetItem   *AddCell(const QString &text, int row, int column, int aligment, bool ok = true);
 
-    Q_REQUIRED_RESULT QComboBox *SetGradationList(QLabel *label, const QStringList &list);
+    Q_REQUIRED_RESULT QComboBox *setGradationComboBox(QLabel *label, const QStringList &list,
+                                                      const QMap<int, QString> &aliases = QMap<int, QString>());
 
-    void                SetDefaultHeight(int value);
-    void                SetDefaultSize(int value);
+    void                setDefaultHeight(int value);
+    void                setDefaultSize(int value);
+    void                refreshGradationComboBoxes();
 
     void                RefreshData(bool freshCall = false);
     void                RefreshTable(bool freshCall = false);

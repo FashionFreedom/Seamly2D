@@ -1,57 +1,54 @@
-/******************************************************************************
- *   @file   tmainwindow.cpp
- **  @author Douglas S Caskey
- **  @date   25 Jan, 2024
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program to create and model patterns of clothing.
- **  Copyright (C) 2017-2024 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   tmainwindow.cpp
+//  @author Douglas S Caskey
+//  @date   25 Jan, 2024
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2026 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
- /************************************************************************
- **
- **  @file   tmainwindow.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   10 7, 2015
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   tmainwindow.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   10 7, 2015
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 #include "tmainwindow.h"
 #include "ui_tmainwindow.h"
@@ -61,8 +58,12 @@
 #include "dialogs/dialogseamlymepreferences.h"
 #include "dialogs/dialogexporttocsv.h"
 #include "dialogs/me_shortcuts_dialog.h"
+#include "dialogs/grade_breaks_dialog.h"
+#include "dialogs/size_range_dialog.h"
 #include "../vpatterndb/calculator.h"
 #include "../vpatterndb/pmsystems.h"
+#include "../vpatterndb/variables/measurement_variable.h"
+#include "../vpatterndb/variables/grade_break.h"
 #include "../ifc/ifcdef.h"
 #include "../ifc/xml/individual_size_converter.h"
 #include "../ifc/xml/multi_size_converter.h"
@@ -122,9 +123,12 @@ TMainWindow::TMainWindow(QWidget *parent)
 	  currentSize(0),
 	  currentHeight(0),
 	  curFile(),
-	  gradationHeights(nullptr),
-	  gradationSizes(nullptr),
+	  m_gradationHeights(nullptr),
+	  m_gradationSizes(nullptr),
 	  comboBoxUnits(nullptr),
+      m_sizeAliases(),
+      m_heightAliases(),
+      m_sizeColors(),
 	  lock(nullptr),
 	  m_search(),
 	  labelGradationHeights(nullptr),
@@ -327,8 +331,8 @@ bool TMainWindow::LoadFile(const QString &path)
 			mUnit = individualMeasurements->measurementUnits();
 			pUnit = mUnit;
 
-			currentSize = individualMeasurements->BaseSize();
-			currentHeight = individualMeasurements->BaseHeight();
+			currentSize = individualMeasurements->getBaseSize();
+			currentHeight = individualMeasurements->getBaseHeight();
 
 			ui->labelToolTip->setVisible(false);
 			ui->tabWidget->setVisible(true);
@@ -408,12 +412,12 @@ void TMainWindow::FileNew()
 		mType = measurements.type();
 
 		data = new VContainer(qApp->translateVariables(), &mUnit);
-		currentHeight = measurements.baseHeight();
-		currentSize = measurements.baseSize();
+		currentHeight = measurements.getBaseHeight();
+		currentSize   = measurements.getBaseSize();
 
 		if (mType == MeasurementsType::Multisize)
 		{
-			individualMeasurements = new MeasurementDoc(mUnit, measurements.baseSize(), measurements.baseHeight(), data);
+			individualMeasurements = new MeasurementDoc(mUnit, measurements.getBaseSize(), measurements.getBaseHeight(), data);
 			individualMeasurements->setSize(&currentSize);
 			individualMeasurements->setHeight(&currentHeight);
 			m_curFileFormatVersion = MultiSizeConverter::MeasurementMaxVer;
@@ -430,7 +434,7 @@ void TMainWindow::FileNew()
 		UpdatePadlock(m_isReadOnly);
 
 		SetCurrentFile("");
-		MeasurementsWasSaved(false);
+		measurementsWereSaved(false);
 
 		InitWindow();
 
@@ -653,9 +657,9 @@ void TMainWindow::changeEvent(QEvent *event)
 		if (mType == MeasurementsType::Multisize)
 		{
 			ui->labelMType->setText(tr("Multisize measurements"));
-			ui->labelBaseSizeValue->setText(QString().setNum(individualMeasurements->BaseSize()) + QLatin1String(" ") +
+			ui->labelBaseSizeValue->setText(QString().setNum(individualMeasurements->getBaseSize()) + QLatin1String(" ") +
 											UnitsToStr(individualMeasurements->measurementUnits(), true));
-			ui->labelBaseHeightValue->setText(QString().setNum(individualMeasurements->BaseHeight()) + QLatin1String(" ") +
+			ui->labelBaseHeightValue->setText(QString().setNum(individualMeasurements->getBaseHeight()) + QLatin1String(" ") +
 											  UnitsToStr(individualMeasurements->measurementUnits(), true));
 
 			labelGradationHeights = new QLabel(tr("Height:"));
@@ -1280,7 +1284,7 @@ void TMainWindow::SaveGivenName()
 	if (individualMeasurements->GivenName() != ui->lineEditGivenName->text())
 	{
 		individualMeasurements->SetGivenName(ui->lineEditGivenName->text());
-		MeasurementsWasSaved(false);
+		measurementsWereSaved(false);
 	}
 }
 
@@ -1290,7 +1294,7 @@ void TMainWindow::SaveFamilyName()
 	if (individualMeasurements->FamilyName() != ui->lineEditFamilyName->text())
 	{
 		individualMeasurements->SetFamilyName(ui->lineEditFamilyName->text());
-		MeasurementsWasSaved(false);
+		measurementsWereSaved(false);
 	}
 }
 
@@ -1300,7 +1304,7 @@ void TMainWindow::SaveEmail()
 	if (individualMeasurements->Email() != ui->lineEditEmail->text())
 	{
 		individualMeasurements->SetEmail(ui->lineEditEmail->text());
-		MeasurementsWasSaved(false);
+		measurementsWereSaved(false);
 	}
 }
 
@@ -1311,7 +1315,7 @@ void TMainWindow::SaveGender(int index)
 	if (individualMeasurements->Gender() != type)
 	{
 		individualMeasurements->SetGender(type);
-		MeasurementsWasSaved(false);
+		measurementsWereSaved(false);
 	}
 }
 
@@ -1321,7 +1325,7 @@ void TMainWindow::SaveBirthDate(const QDate &date)
 	if (individualMeasurements->BirthDate() != date)
 	{
 		individualMeasurements->SetBirthDate(date);
-		MeasurementsWasSaved(false);
+		measurementsWereSaved(false);
 	}
 }
 
@@ -1331,7 +1335,7 @@ void TMainWindow::SaveNotes()
 	if (individualMeasurements->Notes() != ui->plainTextEditNotes->toPlainText())
 	{
 		individualMeasurements->SetNotes(ui->plainTextEditNotes->toPlainText());
-		MeasurementsWasSaved(false);
+		measurementsWereSaved(false);
 	}
 }
 
@@ -1344,7 +1348,7 @@ void TMainWindow::SavePMSystem(int index)
 	if (individualMeasurements->PMSystem() != system)
 	{
 		individualMeasurements->SetPMSystem(system);
-		MeasurementsWasSaved(false);
+		measurementsWereSaved(false);
 	}
 }
 
@@ -1361,7 +1365,7 @@ void TMainWindow::Remove()
 	const QTableWidgetItem *nameField = ui->tableWidget->item(ui->tableWidget->currentRow(), 0);
 	individualMeasurements->Remove(nameField->data(Qt::UserRole).toString());
 
-	MeasurementsWasSaved(false);
+	measurementsWereSaved(false);
 
 	m_search->removeRow(row);
 	RefreshData();
@@ -1431,7 +1435,7 @@ void TMainWindow::MoveTop()
 
 	const QTableWidgetItem *nameField = ui->tableWidget->item(row, ColumnName);
 	individualMeasurements->MoveTop(nameField->data(Qt::UserRole).toString());
-	MeasurementsWasSaved(false);
+	measurementsWereSaved(false);
 	RefreshData();
 	m_search->refreshList(ui->find_LineEdit->text());
 	ui->tableWidget->selectRow(0);
@@ -1449,7 +1453,7 @@ void TMainWindow::MoveUp()
 
 	const QTableWidgetItem *nameField = ui->tableWidget->item(row, ColumnName);
 	individualMeasurements->MoveUp(nameField->data(Qt::UserRole).toString());
-	MeasurementsWasSaved(false);
+	measurementsWereSaved(false);
 	RefreshData();
 	m_search->refreshList(ui->find_LineEdit->text());
 	ui->tableWidget->selectRow(row-1);
@@ -1467,7 +1471,7 @@ void TMainWindow::MoveDown()
 
 	const QTableWidgetItem *nameField = ui->tableWidget->item(row, ColumnName);
 	individualMeasurements->MoveDown(nameField->data(Qt::UserRole).toString());
-	MeasurementsWasSaved(false);
+	measurementsWereSaved(false);
 	RefreshData();
 	m_search->refreshList(ui->find_LineEdit->text());
 	ui->tableWidget->selectRow(row+1);
@@ -1485,7 +1489,7 @@ void TMainWindow::MoveBottom()
 
 	const QTableWidgetItem *nameField = ui->tableWidget->item(row, ColumnName);
 	individualMeasurements->MoveBottom(nameField->data(Qt::UserRole).toString());
-	MeasurementsWasSaved(false);
+	measurementsWereSaved(false);
 	RefreshData();
 	m_search->refreshList(ui->find_LineEdit->text());
 	ui->tableWidget->selectRow(ui->tableWidget->rowCount()-1);
@@ -1532,7 +1536,7 @@ void TMainWindow::Fx()
 		const QTableWidgetItem *nameField = ui->tableWidget->item(row, ColumnName);
 		individualMeasurements->SetMValue(nameField->data(Qt::UserRole).toString(), dialog->GetFormula());
 
-		MeasurementsWasSaved(false);
+		measurementsWereSaved(false);
 
 		RefreshData();
 
@@ -1569,7 +1573,7 @@ void TMainWindow::AddCustom()
 
 	ui->actionExportToCSV->setEnabled(true);
 
-	MeasurementsWasSaved(false);
+	measurementsWereSaved(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1625,7 +1629,7 @@ void TMainWindow::AddKnown()
 
 		ui->actionExportToCSV->setEnabled(true);
 
-		MeasurementsWasSaved(false);
+		measurementsWereSaved(false);
 	}
 }
 
@@ -1712,24 +1716,24 @@ void TMainWindow::ImportFromPattern()
 
 	ui->tableWidget->selectRow(currentRow);
 
-	MeasurementsWasSaved(false);
+	measurementsWereSaved(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::ChangedSize(int index)
+void TMainWindow::sizecChanged(int index)
 {
 	const int row = ui->tableWidget->currentRow();
-    currentSize = gradationSizes->itemText(index).toInt();
+    currentSize = m_gradationSizes->itemData(index).toInt();
 	RefreshData();
 	m_search->refreshList(ui->find_LineEdit->text());
 	ui->tableWidget->selectRow(row);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::ChangedHeight(int index)
+void TMainWindow::heightChanged(int index)
 {
 	const int row = ui->tableWidget->currentRow();
-    currentHeight = gradationHeights->itemText(index).toInt();
+    currentHeight = m_gradationHeights->itemData(index).toInt();
 	RefreshData();
 	m_search->refreshList(ui->find_LineEdit->text());
 	ui->tableWidget->selectRow(row);
@@ -1803,6 +1807,17 @@ void TMainWindow::ShowNewMData(bool fresh)
 				ui->doubleSpinBoxInSizes->setValue(meash->GetKsize());
 				ui->doubleSpinBoxInHeights->setValue(meash->GetKheight());
 			}
+
+			// Update grade break button indicators — highlight when breaks exist
+			const bool hasSizeBreaks = !meash->GetSizeBreaks().isEmpty();
+			ui->toolButtonSizeBreaks->setStyleSheet(hasSizeBreaks
+				? QStringLiteral("QToolButton { border: 2px solid palette(highlight); }")
+				: QString());
+
+			const bool hasHeightBreaks = !meash->GetHeightBreaks().isEmpty();
+			ui->toolButtonHeightBreaks->setStyleSheet(hasHeightBreaks
+				? QStringLiteral("QToolButton { border: 2px solid palette(highlight); }")
+				: QString());
 
 			ui->labelCalculatedValue->blockSignals(false);
 			ui->doubleSpinBoxBaseValue->blockSignals(false);
@@ -1915,7 +1930,7 @@ void TMainWindow::SaveMName(const QString &text)
 		}
 
 		individualMeasurements->SetMName(nameField->text(), newName);
-		MeasurementsWasSaved(false);
+		measurementsWereSaved(false);
 		RefreshData();
 		m_search->refreshList(ui->find_LineEdit->text());
 
@@ -1992,7 +2007,7 @@ void TMainWindow::SaveMValue()
 		return;
 	}
 
-	MeasurementsWasSaved(false);
+	measurementsWereSaved(false);
 
 	const QTextCursor cursor = ui->plainTextEditFormula->textCursor();
 
@@ -2019,7 +2034,7 @@ void TMainWindow::SaveMBaseValue(double value)
 	const QTableWidgetItem *nameField = ui->tableWidget->item(ui->tableWidget->currentRow(), ColumnName);
 	individualMeasurements->SetMBaseValue(nameField->data(Qt::UserRole).toString(), value);
 
-	MeasurementsWasSaved(false);
+	measurementsWereSaved(false);
 
 	RefreshData();
 	m_search->refreshList(ui->find_LineEdit->text());
@@ -2044,7 +2059,7 @@ void TMainWindow::SaveMSizeIncrease(double value)
 	const QTableWidgetItem *nameField = ui->tableWidget->item(ui->tableWidget->currentRow(), ColumnName);
 	individualMeasurements->SetMSizeIncrease(nameField->data(Qt::UserRole).toString(), value);
 
-	MeasurementsWasSaved(false);
+	measurementsWereSaved(false);
 
 	RefreshData();
 	m_search->refreshList(ui->find_LineEdit->text());
@@ -2069,7 +2084,7 @@ void TMainWindow::SaveMHeightIncrease(double value)
 	const QTableWidgetItem *nameField = ui->tableWidget->item(ui->tableWidget->currentRow(), ColumnName);
 	individualMeasurements->SetMHeightIncrease(nameField->data(Qt::UserRole).toString(), value);
 
-	MeasurementsWasSaved(false);
+	measurementsWereSaved(false);
 
 	RefreshData();
 	m_search->refreshList(ui->find_LineEdit->text());
@@ -2079,6 +2094,131 @@ void TMainWindow::SaveMHeightIncrease(double value)
 	ui->tableWidget->blockSignals(false);
 
 	ShowNewMData(false);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TMainWindow::EditSizeGradeBreaks()
+{
+	const int row = ui->tableWidget->currentRow();
+	if (row == -1)
+	{
+		return;
+	}
+
+	const QTableWidgetItem *nameField = ui->tableWidget->item(row, 0);
+	const QString name = nameField->data(Qt::UserRole).toString();
+
+	QSharedPointer<MeasurementVariable> meash;
+	try
+	{
+		meash = data->getVariable<MeasurementVariable>(name);
+	}
+	catch(const VExceptionBadId &)
+	{
+		return;
+	}
+
+	const QStringList activeSizes = individualMeasurements->activeSizes(mUnit);
+	const qreal baseSize = UnitConvertor(individualMeasurements->getBaseSize(), Unit::Cm, mUnit);
+
+	GradeBreaksDialog dialog(GradeBreaksDialog::Dimension::Size,
+							 meash->GetName(),
+							 activeSizes,
+							 baseSize,
+							 meash->GetKsize(),
+							 meash->GetBase(),
+							 meash->GetSizeBreaks(),
+							 mUnit,
+                             m_sizeAliases,
+							 this);
+
+	if (dialog.exec() == QDialog::Accepted)
+	{
+		const QVector<GradeBreak> breaks = dialog.gradeBreaks();
+		individualMeasurements->SetMSizeBreaks(name, breaks);
+		measurementsWereSaved(false);
+		RefreshData();
+		m_search->refreshList(ui->find_LineEdit->text());
+		ui->tableWidget->blockSignals(true);
+		ui->tableWidget->selectRow(row);
+		ui->tableWidget->blockSignals(false);
+		ShowNewMData(false);
+	}
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TMainWindow::EditHeightGradeBreaks()
+{
+	const int row = ui->tableWidget->currentRow();
+	if (row == -1)
+	{
+		return;
+	}
+
+	const QTableWidgetItem *nameField = ui->tableWidget->item(row, 0);
+	const QString name = nameField->data(Qt::UserRole).toString();
+
+	QSharedPointer<MeasurementVariable> meash;
+	try
+	{
+		meash = data->getVariable<MeasurementVariable>(name);
+	}
+	catch(const VExceptionBadId &)
+	{
+		return;
+	}
+
+	const QStringList activeHeights = individualMeasurements->activeHeights(mUnit);
+	const qreal baseHeight = UnitConvertor(individualMeasurements->getBaseHeight(), Unit::Cm, mUnit);
+
+	GradeBreaksDialog dialog(GradeBreaksDialog::Dimension::Height,
+							 meash->GetName(),
+							 activeHeights,
+							 baseHeight,
+							 meash->GetKheight(),
+							 meash->GetBase(),
+							 meash->GetHeightBreaks(),
+							 mUnit,
+                             m_heightAliases,
+							 this);
+
+	if (dialog.exec() == QDialog::Accepted)
+	{
+		const QVector<GradeBreak> breaks = dialog.gradeBreaks();
+		individualMeasurements->SetMHeightBreaks(name, breaks);
+		measurementsWereSaved(false);
+		RefreshData();
+		m_search->refreshList(ui->find_LineEdit->text());
+		ui->tableWidget->blockSignals(true);
+		ui->tableWidget->selectRow(row);
+		ui->tableWidget->blockSignals(false);
+		ShowNewMData(false);
+	}
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TMainWindow::editSizeRange()
+{
+	if (individualMeasurements == nullptr || mType != MeasurementsType::Multisize)
+	{
+		return;
+	}
+
+	const QStringList allSizes   = MeasurementVariable::allSizesList(mUnit);
+	const QStringList allHeights = MeasurementVariable::allHeightsList(mUnit);
+
+	SizeRangeDialog dialog(individualMeasurements, allSizes, allHeights, m_sizeAliases,
+                           m_heightAliases, m_sizeColors, this);
+
+	if (dialog.exec() == QDialog::Accepted)
+	{
+		individualMeasurements->setSizeRange(dialog.minSize(), dialog.maxSize(), dialog.sizeStep());
+		individualMeasurements->setHeightRange(dialog.minHeight(), dialog.maxHeight(), dialog.heightStep());
+		individualMeasurements->setSizes(dialog.sizeAliases(), dialog.sizeColors());
+		individualMeasurements->setHeightAliases(dialog.heightAliases());
+		measurementsWereSaved(false);
+		refreshGradationComboBoxes();
+	}
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2094,7 +2234,7 @@ void TMainWindow::SaveMDescription()
 	const QTableWidgetItem *nameField = ui->tableWidget->item(ui->tableWidget->currentRow(), ColumnName);
 	individualMeasurements->SetMDescription(nameField->data(Qt::UserRole).toString(), ui->plainTextEditDescription->toPlainText());
 
-	MeasurementsWasSaved(false);
+	measurementsWereSaved(false);
 
 	const QTextCursor cursor = ui->plainTextEditDescription->textCursor();
 
@@ -2140,7 +2280,7 @@ void TMainWindow::SaveMFullName()
 	{
 		individualMeasurements->SetMFullName(nameField->data(Qt::UserRole).toString(), ui->lineEditFullName->text());
 
-		MeasurementsWasSaved(false);
+		measurementsWereSaved(false);
 
 		RefreshData();
 
@@ -2179,13 +2319,13 @@ void TMainWindow::SetupMenu()
     connect(ui->actionSave, &QAction::triggered, this, &TMainWindow::FileSave);
 	connect(ui->actionSaveAs, &QAction::triggered, this, &TMainWindow::FileSaveAs);
 	connect(ui->actionExportToCSV, &QAction::triggered, this, &TMainWindow::handleExportToCSV);
-	connect(ui->actionReadOnly, &QAction::triggered, this, [this](bool ro)
+	connect(ui->actionReadOnly, &QAction::triggered, this, [this](bool readOnly)
 	{
 		if (!m_isReadOnly)
 		{
-			individualMeasurements->SetReadOnly(ro);
-			MeasurementsWasSaved(false);
-			UpdatePadlock(ro);
+			individualMeasurements->SetReadOnly(readOnly);
+			measurementsWereSaved(false);
+			UpdatePadlock(readOnly);
 			UpdateWindowTitle();
 		}
 		else
@@ -2196,6 +2336,7 @@ void TMainWindow::SetupMenu()
 			}
 		}
 	});
+	connect(ui->editSizeRange_Action, &QAction::triggered, this, &TMainWindow::editSizeRange);
 	connect(ui->actionPreferences, &QAction::triggered, this, &TMainWindow::Preferences);
 
 	for (int i = 0; i < MaxRecentFiles; ++i)
@@ -2281,9 +2422,9 @@ void TMainWindow::InitWindow()
 	if (mType == MeasurementsType::Multisize)
 	{
 		ui->labelMType->setText(tr("Multisize measurements"));
-		ui->labelBaseSizeValue->setText(QString().setNum(individualMeasurements->BaseSize()) + " " +
+		ui->labelBaseSizeValue->setText(QString().setNum(individualMeasurements->getBaseSize()) + " " +
 										UnitsToStr(individualMeasurements->measurementUnits(), true));
-		ui->labelBaseHeightValue->setText(QString().setNum(individualMeasurements->BaseHeight()) + " " +
+		ui->labelBaseHeightValue->setText(QString().setNum(individualMeasurements->getBaseHeight()) + " " +
 										  UnitsToStr(individualMeasurements->measurementUnits(), true));
 
 		// Because Qt Designer doesn't know about our deleting we will create empty objects for correct
@@ -2305,20 +2446,24 @@ void TMainWindow::InitWindow()
 		HackWidget(&ui->labelGender);
 		HackWidget(&ui->labelEmail);
 
-		const QStringList listHeights = MeasurementVariable::WholeListHeights(mUnit);
-		const QStringList listSizes = MeasurementVariable::WholeListSizes(mUnit);
+		const QStringList listHeights = individualMeasurements->activeHeights(mUnit);
+		const QStringList listSizes = individualMeasurements->activeSizes(mUnit);
+
+        m_heightAliases = individualMeasurements->heightAliases();
+        m_sizeAliases = individualMeasurements->sizeAliases();
+        m_sizeColors = individualMeasurements->sizeColors();
 
 		labelGradationHeights = new QLabel(tr("Height:"));
-		gradationHeights = SetGradationList(labelGradationHeights, listHeights);
-		SetDefaultHeight(static_cast<int>(VContainer::height()));
-		connect(gradationHeights, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-                this, &TMainWindow::ChangedHeight);
+		m_gradationHeights = setGradationComboBox(labelGradationHeights, listHeights, m_heightAliases);
+		setDefaultHeight(static_cast<int>(VContainer::height()));
+		connect(m_gradationHeights, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+                this, &TMainWindow::heightChanged);
 
 		labelGradationSizes = new QLabel(tr("Size:"));
-		gradationSizes = SetGradationList(labelGradationSizes, listSizes);
-		SetDefaultSize(static_cast<int>(VContainer::size()));
-		connect(gradationSizes, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-                this, &TMainWindow::ChangedSize);
+		m_gradationSizes = setGradationComboBox(labelGradationSizes, listSizes, m_sizeAliases);
+		setDefaultSize(static_cast<int>(VContainer::size()));
+		connect(m_gradationSizes, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+                this, &TMainWindow::sizecChanged);
 
 		connect(ui->doubleSpinBoxBaseValue,
 				static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged),
@@ -2329,6 +2474,12 @@ void TMainWindow::InitWindow()
 		connect(ui->doubleSpinBoxInHeights,
 				static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged),
 				this, &TMainWindow::SaveMHeightIncrease);
+
+		// Grade Breaks buttons — defined in .ui, just wire signals
+		connect(ui->toolButtonSizeBreaks, &QToolButton::clicked, this, &TMainWindow::EditSizeGradeBreaks);
+		connect(ui->toolButtonHeightBreaks, &QToolButton::clicked, this, &TMainWindow::EditHeightGradeBreaks);
+
+		ui->editSizeRange_Action->setEnabled(true);
 
 		SetDecimals();
 	}
@@ -2537,7 +2688,7 @@ void TMainWindow::ShowHeaderUnits(QTableWidget *table, int column, const QString
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::MeasurementsWasSaved(bool saved)
+void TMainWindow::measurementsWereSaved(bool saved)
 {
 	setWindowModified(!saved);
 	!m_isReadOnly ? ui->actionSave->setEnabled(!saved): ui->actionSave->setEnabled(false);
@@ -2582,7 +2733,7 @@ bool TMainWindow::SaveMeasurements(const QString &fileName, QString &error)
 	if (result)
 	{
 		SetCurrentFile(fileName);
-		MeasurementsWasSaved(result);
+		measurementsWereSaved(result);
 	}
 	return result;
 }
@@ -2662,43 +2813,114 @@ QTableWidgetItem *TMainWindow::AddCell(const QString &text, int row, int column,
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QComboBox *TMainWindow::SetGradationList(QLabel *label, const QStringList &list)
+QComboBox *TMainWindow::setGradationComboBox(QLabel *label, const QStringList &list, const QMap<int, QString> &aliases)
 {
 	ui->toolBarGradation->addWidget(label);
 
 	QComboBox *comboBox = new QComboBox;
-	comboBox->addItems(list);
+    for (const QString &string : list)
+	{
+		const int value = string.toInt();
+		const QString display = MeasurementDoc::sizeDisplayAlias(value, aliases);
+		comboBox->addItem(display, value);
+	}
 	ui->toolBarGradation->addWidget(comboBox);
 
 	return comboBox;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::SetDefaultHeight(int value)
+void TMainWindow::setDefaultHeight(int value)
 {
-	const qint32 index = gradationHeights->findText(QString("%1").arg(value));
+	const qint32 index = m_gradationHeights->findData(value);
 	if (index != -1)
 	{
-		gradationHeights->setCurrentIndex(index);
+		m_gradationHeights->setCurrentIndex(index);
 	}
 	else
 	{
-		currentHeight = gradationHeights->currentText().toInt();
+		currentHeight = m_gradationHeights->currentData().toInt();
 	}
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::SetDefaultSize(int value)
+void TMainWindow::setDefaultSize(int value)
 {
-	const qint32 index = gradationSizes->findText(QString("%1").arg(value));
+	const qint32 index = m_gradationSizes->findData(value);
 	if (index != -1)
 	{
-		gradationSizes->setCurrentIndex(index);
+		m_gradationSizes->setCurrentIndex(index);
 	}
 	else
 	{
-		currentSize = gradationSizes->currentText().toInt();
+		currentSize = m_gradationSizes->currentData().toInt();
 	}
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TMainWindow::refreshGradationComboBoxes()
+{
+	if (m_gradationSizes == nullptr || m_gradationHeights == nullptr || individualMeasurements == nullptr)
+	{
+		return;
+	}
+
+    // Reload aliases from file
+    m_sizeAliases = individualMeasurements->sizeAliases();
+    m_heightAliases = individualMeasurements->heightAliases();
+
+	// Save current selections
+    const int savedSize = m_gradationSizes->currentData().toInt();
+    const int savedHeight = m_gradationHeights->currentData().toInt();
+
+	// Rebuild sizes
+	m_gradationSizes->blockSignals(true);
+	m_gradationSizes->clear();
+    const QStringList sizes = individualMeasurements->activeSizes(mUnit);
+	for (const QString &string : sizes)
+	{
+        const int value = string.toInt();
+		m_gradationSizes->addItem(MeasurementDoc::sizeDisplayAlias(value, m_sizeAliases), string.toInt());
+	}
+
+	// Restore or clamp size selection
+    int index = m_gradationSizes->findData(savedSize);
+	if (index != -1)
+	{
+		m_gradationSizes->setCurrentIndex(index);
+	}
+	else
+	{
+		// Clamp to nearest valid value
+		m_gradationSizes->setCurrentIndex(m_gradationSizes->count() - 1);
+	}
+    currentSize = m_gradationSizes->currentData().toInt();
+	m_gradationSizes->blockSignals(false);
+
+	// Rebuild heights
+	m_gradationHeights->blockSignals(true);
+	m_gradationHeights->clear();
+    const QStringList heights = individualMeasurements->activeHeights(mUnit);
+	for (const QString &string : heights)
+	{
+        const int value = string.toInt();
+		m_gradationHeights->addItem(MeasurementDoc::sizeDisplayAlias(value, m_heightAliases), string.toInt());
+	}
+
+    index = m_gradationHeights->findData(savedHeight);
+	if (index != -1)
+	{
+		m_gradationHeights->setCurrentIndex(index);
+	}
+	else
+	{
+		m_gradationHeights->setCurrentIndex(m_gradationHeights->count() - 1);
+	}
+    currentHeight = m_gradationHeights->currentData().toInt();
+	m_gradationHeights->blockSignals(false);
+
+	// Trigger data refresh with new size/height
+	RefreshData();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2796,11 +3018,25 @@ void TMainWindow::RefreshTable(bool freshCall)
 			AddCell(locale().toString(meash->GetBase()), currentRow, ColumnBaseValue,
 					Qt::AlignHCenter | Qt::AlignVCenter); // base value
 
-			AddCell(locale().toString(meash->GetKsize()), currentRow, ColumnInSizes,
-					Qt::AlignHCenter | Qt::AlignVCenter); // in sizes
+			{
+				QString sizeText = locale().toString(meash->GetKsize());
+				if (!meash->GetSizeBreaks().isEmpty())
+				{
+					sizeText += QStringLiteral(" *");
+				}
+				AddCell(sizeText, currentRow, ColumnInSizes,
+						Qt::AlignHCenter | Qt::AlignVCenter); // in sizes
+			}
 
-			AddCell(locale().toString(meash->GetKheight()), currentRow, ColumnInHeights,
-					Qt::AlignHCenter | Qt::AlignVCenter); // in heights
+			{
+				QString heightText = locale().toString(meash->GetKheight());
+				if (!meash->GetHeightBreaks().isEmpty())
+				{
+					heightText += QStringLiteral(" *");
+				}
+				AddCell(heightText, currentRow, ColumnInHeights,
+						Qt::AlignHCenter | Qt::AlignVCenter); // in heights
+			}
 		}
 	}
 
@@ -2889,6 +3125,8 @@ void TMainWindow::MFields(bool enabled)
 		ui->doubleSpinBoxBaseValue->setEnabled(enabled);
 		ui->doubleSpinBoxInSizes->setEnabled(enabled);
 		ui->doubleSpinBoxInHeights->setEnabled(enabled);
+		ui->toolButtonSizeBreaks->setEnabled(enabled);
+		ui->toolButtonHeightBreaks->setEnabled(enabled);
 	}
 	else
 	{
@@ -3049,10 +3287,10 @@ void TMainWindow::Open(const QString &dir, const QString &filter)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::UpdatePadlock(bool ro)
+void TMainWindow::UpdatePadlock(bool readOnly)
 {
-	ui->actionReadOnly->setChecked(ro);
-	if (ro)
+	ui->actionReadOnly->setChecked(readOnly);
+	if (readOnly)
 	{
 		ui->actionReadOnly->setIcon(QIcon("://seamlymeicon/24x24/padlock_locked.png"));
 	}
@@ -3062,6 +3300,11 @@ void TMainWindow::UpdatePadlock(bool ro)
 	}
 
 	ui->actionReadOnly->setDisabled(m_isReadOnly);
+
+	if (mType == MeasurementsType::Multisize)
+	{
+		ui->editSizeRange_Action->setEnabled(!readOnly && !m_isReadOnly);
+	}
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3206,8 +3449,8 @@ bool TMainWindow::LoadFromExistingFile(const QString &path)
 			mUnit = individualMeasurements->measurementUnits();
 			pUnit = mUnit;
 
-			currentHeight = individualMeasurements->BaseHeight();
-			currentSize = individualMeasurements->BaseSize();
+			currentHeight = individualMeasurements->getBaseHeight();
+			currentSize = individualMeasurements->getBaseSize();
 
 			ui->labelToolTip->setVisible(false);
 			ui->tabWidget->setVisible(true);

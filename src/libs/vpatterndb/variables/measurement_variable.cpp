@@ -1,63 +1,61 @@
-/******************************************************************************
- *   @file   measurement_variable.cpp
- **  @author Douglas S Caskey
- **  @date   16 Jul, 2023
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program to create and model patterns of clothing.
- **  Copyright (C) 2017-2023 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   measurement_variable.cpp
+//  @author Douglas S Caskey
+//  @date   16 Jul, 2023
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2026 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   vstandardtablecell.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   vstandardtablecell.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   15 Nov, 2013
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 #include "measurement_variable.h"
 
 #include <QMap>
 #include <QMessageLogger>
 #include <QtDebug>
+#include <algorithm>
 
 #include "../ifc/ifcdef.h"
 #include "vvariable.h"
@@ -134,7 +132,7 @@ MeasurementVariable::~MeasurementVariable()
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList MeasurementVariable::ListHeights(QMap<GHeights, bool> heights, Unit patternUnit)
+QStringList MeasurementVariable::patternHeightsList(QMap<GHeights, bool> heights, Unit patternUnit)
 {
     QStringList list;
 
@@ -150,13 +148,13 @@ QStringList MeasurementVariable::ListHeights(QMap<GHeights, bool> heights, Unit 
 
     if (list.isEmpty())
     {
-        list = MeasurementVariable::WholeListHeights(patternUnit);
+        list = MeasurementVariable::allHeightsList(patternUnit);
     }
     return list;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList MeasurementVariable::ListSizes(QMap<GSizes, bool> sizes, Unit patternUnit)
+QStringList MeasurementVariable::patternSizesList(QMap<GSizes, bool> sizes, Unit patternUnit)
 {
     QStringList list;
 
@@ -172,13 +170,13 @@ QStringList MeasurementVariable::ListSizes(QMap<GSizes, bool> sizes, Unit patter
 
     if (list.isEmpty())
     {
-        list = MeasurementVariable::WholeListSizes(patternUnit);
+        list = MeasurementVariable::allSizesList(patternUnit);
     }
     return list;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList MeasurementVariable::WholeListHeights(Unit patternUnit)
+QStringList MeasurementVariable::allHeightsList(Unit patternUnit)
 {
     QStringList list;
 
@@ -191,7 +189,7 @@ QStringList MeasurementVariable::WholeListHeights(Unit patternUnit)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList MeasurementVariable::WholeListSizes(Unit patternUnit)
+QStringList MeasurementVariable::allSizesList(Unit patternUnit)
 {
     QStringList list;
 
@@ -208,7 +206,7 @@ bool MeasurementVariable::IsGradationSizeValid(const QString &size)
 {
     if (not size.isEmpty())
     {
-        const QStringList sizes = MeasurementVariable::WholeListSizes(Unit::Cm);
+        const QStringList sizes = MeasurementVariable::allSizesList(Unit::Cm);
         return sizes.contains(size);
     }
     else
@@ -222,7 +220,7 @@ bool MeasurementVariable::IsGradationHeightValid(const QString &height)
 {
     if (not height.isEmpty())
     {
-        const QStringList heights = MeasurementVariable::WholeListHeights(Unit::Cm);
+        const QStringList heights = MeasurementVariable::allHeightsList(Unit::Cm);
         return heights.contains(height);
     }
     else
@@ -245,13 +243,37 @@ qreal MeasurementVariable::CalcValue() const
         return 0;
     }
 
-    const qreal sizeIncrement = UnitConvertor(2.0, Unit::Cm, *d->currentUnit);
-    const qreal heightIncrement = UnitConvertor(6.0, Unit::Cm, *d->currentUnit);
+    const qreal sizeStep = UnitConvertor(2.0, Unit::Cm, *d->currentUnit);
+    const qreal heightStep = UnitConvertor(6.0, Unit::Cm, *d->currentUnit);
 
-    // Formula for calculation gradation
-    const qreal k_size    = ( *d->currentSize - d->baseSize ) / sizeIncrement;
-    const qreal k_height  = ( *d->currentHeight - d->baseHeight ) / heightIncrement;
-    return d->base + k_size * d->ksize + k_height * d->kheight;
+    qreal sizeOffset = 0;
+    qreal heightOffset = 0;
+
+    if (d->sizeBreaks.isEmpty())
+    {
+        // Original linear formula for size dimension
+        const qreal k_size = (*d->currentSize - d->baseSize) / sizeStep;
+        sizeOffset = k_size * d->ksize;
+    }
+    else
+    {
+        sizeOffset = calcPiecewiseOffset(*d->currentSize, d->baseSize, sizeStep,
+                                         d->ksize, d->sizeBreaks);
+    }
+
+    if (d->heightBreaks.isEmpty())
+    {
+        // Original linear formula for height dimension
+        const qreal k_height = (*d->currentHeight - d->baseHeight) / heightStep;
+        heightOffset = k_height * d->kheight;
+    }
+    else
+    {
+        heightOffset = calcPiecewiseOffset(*d->currentHeight, d->baseHeight, heightStep,
+                                           d->kheight, d->heightBreaks);
+    }
+
+    return d->base + sizeOffset + heightOffset;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -311,7 +333,8 @@ bool MeasurementVariable::IsFormulaOk() const
 //---------------------------------------------------------------------------------------------------------------------
 bool MeasurementVariable::isNotUsed() const
 {
-    return qFuzzyIsNull(d->base) && qFuzzyIsNull(d->ksize) && qFuzzyIsNull(d->kheight);
+    return qFuzzyIsNull(d->base) && qFuzzyIsNull(d->ksize) && qFuzzyIsNull(d->kheight)
+           && d->sizeBreaks.isEmpty() && d->heightBreaks.isEmpty();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -399,4 +422,89 @@ qreal MeasurementVariable::GetKheight() const
 void MeasurementVariable::SetKheight(const qreal &value)
 {
     d->kheight = value;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVector<GradeBreak> MeasurementVariable::GetSizeBreaks() const
+{
+    return d->sizeBreaks;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MeasurementVariable::SetSizeBreaks(const QVector<GradeBreak> &breaks)
+{
+    d->sizeBreaks = breaks;
+    std::sort(d->sizeBreaks.begin(), d->sizeBreaks.end());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVector<GradeBreak> MeasurementVariable::GetHeightBreaks() const
+{
+    return d->heightBreaks;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MeasurementVariable::SetHeightBreaks(const QVector<GradeBreak> &breaks)
+{
+    d->heightBreaks = breaks;
+    std::sort(d->heightBreaks.begin(), d->heightBreaks.end());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool MeasurementVariable::HasGradeBreaks() const
+{
+    return !d->sizeBreaks.isEmpty() || !d->heightBreaks.isEmpty();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief calcPiecewiseOffset walks from base to current in step-sized increments,
+ * looking up the applicable increment from the breaks vector at each step.
+ * @param current current size/height value
+ * @param base base size/height value
+ * @param step step size (e.g. 2.0 for sizes, 6.0 for heights) in current unit
+ * @param defaultIncrement the uniform ksize/kheight value
+ * @param breaks sorted vector of grade breaks
+ * @return total offset from base
+ */
+qreal MeasurementVariable::calcPiecewiseOffset(qreal current, qreal base, qreal step,
+                                                qreal defaultIncrement,
+                                                const QVector<GradeBreak> &breaks)
+{
+    if (qFuzzyCompare(current, base) || qFuzzyIsNull(step))
+    {
+        return 0;
+    }
+
+    const bool gradingUp = (current > base);
+    const int numSteps = qRound(qAbs(current - base) / step);
+    qreal totalOffset = 0;
+
+    for (int i = 0; i < numSteps; ++i)
+    {
+        // The size/height at the start of this step
+        const qreal pos = gradingUp ? (base + i * step) : (base - i * step);
+
+        // Find the applicable increment for this position
+        qreal increment = defaultIncrement;
+        for (int b = breaks.size() - 1; b >= 0; --b)
+        {
+            if (pos >= breaks[b].threshold - 0.001) // small epsilon for floating point
+            {
+                increment = breaks[b].increment;
+                break;
+            }
+        }
+
+        if (gradingUp)
+        {
+            totalOffset += increment;
+        }
+        else
+        {
+            totalOffset -= increment;
+        }
+    }
+
+    return totalOffset;
 }

@@ -523,6 +523,8 @@ extern const QStringList builInPostfixOperators;
 // Placeholders
 extern const QString pl_size;
 extern const QString pl_height;
+extern const QString pl_sizeAlias;
+extern const QString pl_heightAlias;
 extern const QString pl_date;
 extern const QString pl_time;
 extern const QString pl_patternName;

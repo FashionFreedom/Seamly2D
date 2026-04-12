@@ -78,10 +78,10 @@ public:
 // GCC 4.6 doesn't allow constexpr and const together
 #if !defined(__INTEL_COMPILER) && !defined(__clang__) && defined(__GNUC__) && (__GNUC__ * 100 + __GNUC_MINOR__) <= 406
     static constexpr int MeasurementMinVer = CONVERTER_VERSION_CHECK(0, 3, 0);
-    static constexpr int MeasurementMaxVer = CONVERTER_VERSION_CHECK(0, 4, 5);
+    static constexpr int MeasurementMaxVer = CONVERTER_VERSION_CHECK(0, 4, 6);
 #else
     static constexpr const int MeasurementMinVer = CONVERTER_VERSION_CHECK(0, 3, 0);
-    static constexpr const int MeasurementMaxVer = CONVERTER_VERSION_CHECK(0, 4, 5);
+    static constexpr const int MeasurementMaxVer = CONVERTER_VERSION_CHECK(0, 4, 6);
 #endif
 
 protected:
@@ -113,6 +113,7 @@ private:
     void convertToVer0_4_3();
     void convertToVer0_4_4();
     void convertToVer0_4_5();
+    void convertToVer0_4_6();
 };
 
 //---------------------------------------------------------------------------------------------------------------------

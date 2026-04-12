@@ -57,6 +57,7 @@
 #include <QDebug>
 
 #include "../ifc/xml/vabstractpattern.h"
+#include "../vformat/measurements.h"
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vmath.h"
@@ -120,8 +121,13 @@ QMap<QString, QString> PreparePlaceholders(const VAbstractPattern *doc)
 
     placeholders.insert(pl_size, curSize);
     placeholders.insert(pl_height, curHeight);
+    placeholders.insert(pl_sizeAlias,
+                        MeasurementDoc::sizeDisplayAlias(static_cast<int>(VContainer::size()),
+                        VContainer::sizeAliases()));
+    placeholders.insert(pl_heightAlias,
+                        MeasurementDoc::sizeDisplayAlias(static_cast<int>(VContainer::height()),
+                        VContainer::heightAliases()));
 
-    // Piece tags
     placeholders.insert(pl_pLetter, "");
     placeholders.insert(pl_pAnnotation, "");
     placeholders.insert(pl_pOrientation, "");

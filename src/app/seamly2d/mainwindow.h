@@ -1,57 +1,54 @@
-/******************************************************************************
- *   @file   mainwindow.h
- **  @author Douglas S Caskey
- **  @date   14 Jul, 2023
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2022 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   mainwindow.h
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2026 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   mainwindow.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   mainwindow.h
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   15 Nox, 2013
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
@@ -325,6 +322,12 @@ private:
     QPointer<QComboBox>               gradationSizes;
     QPointer<QLabel>                  gradationHeightsLabel;
     QPointer<QLabel>                  gradationSizesLabel;
+    int                               m_measurementSizeMin;
+    int                               m_measurementSizeMax;
+    int                               m_measurementHeightMin;
+    int                               m_measurementHeightMax;
+    QMap<int, QString>                m_sizeAliases;
+    QMap<int, QString>                m_heightAliases;
     VToolOptionsPropertyBrowser      *toolProperties;
     GroupsWidget                     *groupsWidget;
     PiecesWidget                     *piecesWidget;
@@ -416,7 +419,8 @@ private:
     void               initializeAutoSave();
     QString            PatternPieceName(const QString &text);
     QString            CheckPathToMeasurements(const QString &patternPath, const QString &path);
-    QComboBox         *SetGradationList(QLabel *label, const QStringList &list);
+    QComboBox         *SetGradationList(QLabel *label, const QStringList &list,
+                                       const QMap<int, QString> &aliases = QMap<int, QString>());
     QString            createDraftBlockName(const QString &text);
     QString            checkPathToMeasurements(const QString &patternPath, const QString &path);
     void               changeDraftBlock(int index, bool zoomBestFit = true);
@@ -424,6 +428,7 @@ private:
     void               zoomFirstShow();
     void               UpdateHeightsList(const QStringList &list);
     void               UpdateSizesList(const QStringList &list);
+    QStringList        FilterByMeasurementRange(const QStringList &list, int min, int max) const;
 
     void               initializeDocksContain();
     bool               startNewSeamly2D(const QString &fileName = QString())const;

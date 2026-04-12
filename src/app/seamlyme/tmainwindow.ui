@@ -724,6 +724,30 @@
               </widget>
              </item>
              <item>
+              <widget class="QLabel" name="labelGradeRulesSizes">
+               <property name="text">
+                <string>Grade rules:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButtonSizeBreaks">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="toolTip">
+                <string>Edit grade rules for sizes</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+                 <normaloff>:/icon/32x32/table.png</normaloff>:/icon/32x32/table.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
               <spacer name="horizontalSpacer_3">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
@@ -778,6 +802,30 @@
                </property>
                <property name="maximum">
                 <double>10000.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="labelGradeRulesHeights">
+               <property name="text">
+                <string>Grade rules:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButtonHeightBreaks">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="toolTip">
+                <string>Edit grade rules for heights</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+                 <normaloff>:/icon/32x32/table.png</normaloff>:/icon/32x32/table.png</iconset>
                </property>
               </widget>
              </item>
@@ -1308,6 +1356,7 @@
     <addaction name="actionAddCustom"/>
     <addaction name="actionDatabase"/>
     <addaction name="actionImportFromPattern"/>
+    <addaction name="editSizeRange_Action"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="measurements_Menu"/>
@@ -1686,6 +1735,22 @@
   <action name="bodyScanner2_Action">
    <property name="text">
     <string>3D Look</string>
+   </property>
+  </action>
+  <action name="actionGradationRange">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Gradation Range...</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="editSizeRange_Action">
+   <property name="text">
+    <string>Edit Size Range</string>
    </property>
   </action>
  </widget>
