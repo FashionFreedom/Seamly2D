@@ -6674,7 +6674,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Arc -Elliptical</source>
-        <translation>Kaari - Elliptinen</translation>
+        <translation>Kaari -Elliptinen</translation>
     </message>
     <message>
         <source>Alt+E</source>
