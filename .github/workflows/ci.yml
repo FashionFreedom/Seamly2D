@@ -323,7 +323,7 @@ jobs:
       - uses: actions/download-artifact@v7
         with:
           name: Seamly2D-win-arm64.zip
-      - uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@v3
         with:
           tag_name: v${{ env.VERSION_NUMBER }}
           name: ${{ env.VERSION_NUMBER }}
