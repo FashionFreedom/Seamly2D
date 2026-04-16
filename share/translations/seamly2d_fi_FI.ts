@@ -4705,7 +4705,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Seam allowance</source>
-        <translation>Saumavara</translation>
+        <translation>Saumanvara</translation>
     </message>
     <message>
         <source>Width:</source>
@@ -4865,19 +4865,19 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Current seam allowance</source>
-        <translation>Nykyinen saumavara</translation>
+        <translation>Nykyinen saumanvara</translation>
     </message>
     <message>
         <source>Edit seam allowance width</source>
-        <translation>Muokkaa saumavaran leveyttä</translation>
+        <translation>Muokkaa saumanvaran leveyttä</translation>
     </message>
     <message>
         <source>Edit seam allowance width before</source>
-        <translation>Muokkaa saumavaran leveyttä ennen</translation>
+        <translation>Muokkaa saumanvaran leveyttä ennen</translation>
     </message>
     <message>
         <source>Edit seam allowance width after</source>
-        <translation>Muokkaa saumavaran leveyttä jälkeen</translation>
+        <translation>Muokkaa saumanvaran leveyttä jälkeen</translation>
     </message>
     <message>
         <source>Internal path</source>
@@ -4885,7 +4885,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Custom seam allowance</source>
-        <translation>Mukautettu saumavara</translation>
+        <translation>Mukautettu saumanvara</translation>
     </message>
     <message>
         <source>You need more points!</source>
@@ -4893,7 +4893,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
-        <translation>&lt;b&gt;Mukautetun saumavaran&lt;/b&gt; ensimmäinen piste ei voi olla yhtä suuri kuin viimeinen piste!</translation>
+        <translation>&lt;b&gt;Mukautetun saumanvaran&lt;/b&gt; ensimmäinen piste ei voi olla yhtä suuri kuin viimeinen piste!</translation>
     </message>
     <message>
         <source>You have double points!</source>
@@ -4901,7 +4901,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
-        <translation>Jokaisen pisteen &lt;b&gt;mukautetussa saumavarapolussa&lt;/b&gt; on oltava yksilöllinen!</translation>
+        <translation>Jokaisen pisteen &lt;b&gt;mukautetussa saumanvarapolussa&lt;/b&gt; on oltava yksilöllinen!</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -7606,7 +7606,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Seam Allowance </source>
-        <translation>Saumavara </translation>
+        <translation>Saumanvara </translation>
     </message>
     <message>
         <source>Labels </source>
@@ -7778,7 +7778,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>The seam allowance is part of main path</source>
-        <translation>Saumavara on osa pääpolkua</translation>
+        <translation>Saumanvara on osa pääpolkua</translation>
     </message>
     <message>
         <source>Built in</source>
@@ -8070,19 +8070,19 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Current seam allowance</source>
-        <translation>Nykyinen saumavara</translation>
+        <translation>Nykyinen saumanvara</translation>
     </message>
     <message>
         <source>Edit seam allowance width</source>
-        <translation>Muokkaa saumavaran leveyttä</translation>
+        <translation>Muokkaa saumanvaran leveyttä</translation>
     </message>
     <message>
         <source>Edit seam allowance width before</source>
-        <translation>Muokkaa saumavaran leveyttä ennen</translation>
+        <translation>Muokkaa saumanvaran leveyttä ennen</translation>
     </message>
     <message>
         <source>Edit seam allowance width after</source>
-        <translation>Muokkaa saumavaran leveyttä jälkeen</translation>
+        <translation>Muokkaa saumanvaran leveyttä jälkeen</translation>
     </message>
     <message>
         <source>Grainline</source>
@@ -8118,7 +8118,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>custom seam allowance</source>
-        <translation>mukautettu saumavara</translation>
+        <translation>mukautettu saumanvara</translation>
     </message>
     <message>
         <source>Both</source>
@@ -8158,7 +8158,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Seam Allowance</source>
-        <translation>Saumavara</translation>
+        <translation>Saumanvara</translation>
     </message>
     <message>
         <source>Paths</source>
@@ -8225,7 +8225,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <name>PatternPieceTool</name>
     <message>
         <source>Current seam allowance</source>
-        <translation>Nykyinen saumavara</translation>
+        <translation>Nykyinen saumanvara</translation>
     </message>
     <message>
         <source>move pattern piece label</source>
@@ -8293,7 +8293,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Show Seam Allowance</source>
-        <translation>Näytä saumavara</translation>
+        <translation>Näytä saumanvara</translation>
     </message>
     <message>
         <source>Show Grainline</source>
@@ -8341,11 +8341,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Show seam allowance</source>
-        <translation>Näytä saumavara</translation>
+        <translation>Näytä saumanvara</translation>
     </message>
     <message>
         <source>Seam allowance visibility changed: </source>
-        <translation>Saumavaran näkyvyys muuttunut: </translation>
+        <translation>Saumanvaran näkyvyys muuttunut: </translation>
     </message>
     <message>
         <source>Show grainline</source>
@@ -9282,11 +9282,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>By default hide the main path if the seam allowance was enabled</source>
-        <translation>Piilota pääpolku oletusarvoisesti, jos saumavara on käytössä</translation>
+        <translation>Piilota pääpolku oletusarvoisesti, jos saumanvara on käytössä</translation>
     </message>
     <message>
         <source>Seam allowance</source>
-        <translation>Saumavara</translation>
+        <translation>Saumanvara</translation>
     </message>
     <message>
         <source>Default value:</source>
@@ -9318,7 +9318,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Show notch on both the seam allowance and seam line.</source>
-        <translation>Näytä hakki sekä saumavarassa, että saumalinjassa.</translation>
+        <translation>Näytä hakki sekä saumanvarassa, että saumalinjassa.</translation>
     </message>
     <message>
         <source>Type:</source>
@@ -9570,7 +9570,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Solidline</source>
-        <translation>Jatkuva viiva</translation>
+        <translation>Jatkuvaviiva</translation>
     </message>
     <message>
         <source>Dash</source>
@@ -10494,7 +10494,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Seam Allowance</source>
-        <translation>Saumavara</translation>
+        <translation>Saumanvara</translation>
     </message>
     <message>
         <source>Grainlines</source>
@@ -12599,7 +12599,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Seam Allowance Angle</source>
-        <translation>Saumavaran kulma</translation>
+        <translation>Saumanvaran kulma</translation>
     </message>
     <message>
         <source>By length</source>
@@ -14692,7 +14692,7 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>CurrentSeamAllowance</source>
         <comment>Do not add space between words</comment>
-        <translation>NykyinenSaumavara</translation>
+        <translation>NykyinenSaumanvara</translation>
     </message>
     <message>
         <source>C1LengthSpl_</source>
