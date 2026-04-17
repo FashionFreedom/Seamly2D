@@ -6675,7 +6675,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Arc - Elliptical</source>
-        <translationΤόξο - Ελλειπτικό</translation>
+        <translation>Τόξο - Ελλειπτικό</translation>
     </message>
     <message>
         <source>Alt+E</source>
