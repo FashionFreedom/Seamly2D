@@ -6673,8 +6673,8 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>Elips</translation>
     </message>
     <message>
-        <source>Arc -Elliptical</source>
-        <translation>Busur-Elips</translation>
+        <source>Arc - Elliptical</source>
+        <translation>Busur - Elips</translation>
     </message>
     <message>
         <source>Alt+E</source>

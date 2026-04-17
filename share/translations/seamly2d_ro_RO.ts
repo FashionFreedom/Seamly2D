@@ -6675,8 +6675,8 @@ Doriți să salvați modificările?</translation>
         <translation>Eliptică</translation>
     </message>
     <message>
-        <source>Arc -Elliptical</source>
-        <translation>Arc eliptic</translation>
+        <source>Arc - Elliptical</source>
+        <translation>Arc - Eliptic</translation>
     </message>
     <message>
         <source>Alt+E</source>

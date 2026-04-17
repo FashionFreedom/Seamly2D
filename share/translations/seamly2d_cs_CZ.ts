@@ -6671,7 +6671,7 @@ Chcete uložit své změny?</translation>
         <translation>Eliptický</translation>
     </message>
     <message>
-        <source>Arc -Elliptical</source>
+        <source>Arc - Elliptical</source>
         <translation>Oblouk - eliptický</translation>
     </message>
     <message>

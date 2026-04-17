@@ -6661,7 +6661,7 @@ Vuoi salvare i cambiamenti?</translation>
         <translation>Ellittica</translation>
     </message>
     <message>
-        <source>Arc -Elliptical</source>
+        <source>Arc - Elliptical</source>
         <translation>Arco - Ellittica</translation>
     </message>
     <message>

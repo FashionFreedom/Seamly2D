@@ -6689,7 +6689,7 @@ Do you want to save your changes?</source>
         <translation>Elíptico</translation>
     </message>
     <message>
-        <source>Arc -Elliptical</source>
+        <source>Arc - Elliptical</source>
         <translation>Arco - Elíptico</translation>
     </message>
     <message>

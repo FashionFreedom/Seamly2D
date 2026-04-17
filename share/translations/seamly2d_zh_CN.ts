@@ -6673,8 +6673,8 @@ Do you want to save your changes?</source>
         <translation>椭圆形</translation>
     </message>
     <message>
-        <source>Arc -Elliptical</source>
-        <translation>圆弧-椭圆</translation>
+        <source>Arc - Elliptical</source>
+        <translation>圆弧 - 椭圆</translation>
     </message>
     <message>
         <source>Alt+E</source>

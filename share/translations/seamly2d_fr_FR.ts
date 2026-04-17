@@ -6693,8 +6693,8 @@ Voulez-vous sauvegarder les changements ?</translation>
         <translation>Ellipse</translation>
     </message>
     <message>
-        <source>Arc -Elliptical</source>
-        <translation>Arc-Ellipse</translation>
+        <source>Arc - Elliptical</source>
+        <translation>Arc - Ellipse</translation>
     </message>
     <message>
         <source>Alt+E</source>
