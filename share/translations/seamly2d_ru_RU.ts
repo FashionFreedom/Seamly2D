@@ -6610,7 +6610,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Arc - Elliptical (Alt+E)</source>
-        <translation>Эллиптическая Дуга (Alt+E)</translation>
+        <translation>Дуга – Эллиптическая (Alt+E)</translation>
     </message>
     <message>
         <source>Mirror Objects by Line (M, L)</source>
@@ -6673,7 +6673,7 @@ Do you want to save your changes?</source>
         <translation>Эллиптическая</translation>
     </message>
     <message>
-        <source>Arc -Elliptical</source>
+        <source>Arc - Elliptical</source>
         <translation>Дуга – Эллиптическая</translation>
     </message>
     <message>

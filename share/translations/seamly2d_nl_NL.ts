@@ -6656,7 +6656,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Ellipsvormig</translation>
     </message>
     <message>
-        <source>Arc -Elliptical</source>
+        <source>Arc - Elliptical</source>
         <translation>Boog - Ellipsvormig</translation>
     </message>
     <message>

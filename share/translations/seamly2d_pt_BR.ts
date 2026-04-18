@@ -6659,8 +6659,8 @@ Pretende guardar as suas alterações?</translation>
         <translation>Elâptico</translation>
     </message>
     <message>
-        <source>Arc -Elliptical</source>
-        <translation>Arco -Elâptico</translation>
+        <source>Arc - Elliptical</source>
+        <translation>Arco - Elâptico</translation>
     </message>
     <message>
         <source>Alt+E</source>

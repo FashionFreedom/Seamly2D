@@ -6673,8 +6673,8 @@ Do you want to save your changes?</translation>
         <translation>Eliptik</translation>
     </message>
     <message>
-        <source>Arc -Elliptical</source>
-        <translation>Yay-Eliptik</translation>
+        <source>Arc - Elliptical</source>
+        <translation>Yay - Eliptik</translation>
     </message>
     <message>
         <source>Alt+E</source>

@@ -6652,7 +6652,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Elliptisch</translation>
     </message>
     <message>
-        <source>Arc -Elliptical</source>
+        <source>Arc - Elliptical</source>
         <translation>Bogen - Elliptisch</translation>
     </message>
     <message>

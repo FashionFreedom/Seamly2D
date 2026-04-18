@@ -6673,7 +6673,7 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Elliptinen</translation>
     </message>
     <message>
-        <source>Arc -Elliptical</source>
+        <source>Arc - Elliptical</source>
         <translation>Kaari - Elliptinen</translation>
     </message>
     <message>
