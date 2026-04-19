@@ -7118,6 +7118,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <source>Exporting...</source>
         <translation>Sedang mengekspor...</translation>
     </message>
+    <message>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>Gagal membuat salinan cadangan: %1.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8913,6 +8917,14 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Tanda positif</translation>
+    </message>
+    <message>
+        <source>Max number of backups:</source>
+        <translation>Jumlah maksimum cadangan:</translation>
+    </message>
+    <message>
+        <source> per file</source>
+        <translation>per berkas</translation>
     </message>
 </context>
 <context>
@@ -11778,8 +11790,8 @@ unggah ke SeamlyME seperti biasa.
         <translation>Tidak dapat mengubah versi.</translation>
     </message>
     <message>
-        <source>Error creating a reserv copy: %1.</source>
-        <translation>Kesalahan saat membuat salinan cadangan: %1.</translation>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>Error creating a backup copy: %1.</translation>
     </message>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>

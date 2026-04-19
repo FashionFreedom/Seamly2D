@@ -7116,6 +7116,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <source>Exporting...</source>
         <translation>Exportování...</translation>
     </message>
+    <message>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>Chyba při vytváření záložní kopie: %1.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8911,6 +8915,14 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Pozitivní signál</translation>
+    </message>
+    <message>
+        <source>Max number of backups:</source>
+        <translation>Maximální počet záloh:</translation>
+    </message>
+    <message>
+        <source> per file</source>
+        <translation> na soubor</translation>
     </message>
 </context>
 <context>
@@ -11776,8 +11788,8 @@ SeamlyME jako obvykle.
         <translation>Nebylo možné změnit verzi.</translation>
     </message>
     <message>
-        <source>Error creating a reserv copy: %1.</source>
-        <translation>Chyba při vytváření rezervní kopie: %1.</translation>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>Chyba při vytváření záložní kopie: %1.</translation>
     </message>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>

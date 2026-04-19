@@ -7101,6 +7101,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Exporting...</source>
         <translation>Exportiere...</translation>
     </message>
+    <message>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>Fehler bei der Erstellung einer Sicherungskopie: %1.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8897,6 +8901,14 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Positive Sign</source>
         <translation>Positives Vorzeichen</translation>
+    </message>
+    <message>
+        <source>Max number of backups:</source>
+        <translation>Maximale Anzahl an Backups:</translation>
+    </message>
+    <message>
+        <source> per file</source>
+        <translation>pro Datei</translation>
     </message>
 </context>
 <context>
@@ -11762,8 +11774,8 @@ wie gewohnt in SeamlyME laden können.
         <translation>Versionsnummer konnte nicht geändert werden.</translation>
     </message>
     <message>
-        <source>Error creating a reserv copy: %1.</source>
-        <translation>Fehler bei der Erstellung einer Reservekopie : %1.</translation>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>Fehler bei der Erstellung einer Sicherungskopie: %1.</translation>
     </message>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>

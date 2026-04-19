@@ -7118,6 +7118,10 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <source>Exporting...</source>
         <translation>Dışa aktarılıyor...</translation>
     </message>
+    <message>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>Yedek kopyası oluşturulurken hata oluştu: %1.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8913,6 +8917,14 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Olumlu Işaret</translation>
+    </message>
+    <message>
+        <source>Max number of backups:</source>
+        <translation>Maksimum yedekleme sayısı:</translation>
+    </message>
+    <message>
+        <source> per file</source>
+        <translation> dosya başına</translation>
     </message>
 </context>
 <context>
@@ -11777,8 +11789,8 @@ load in SeamlyME as usual.
         <translation>Sürüm değiştirilemedi.</translation>
     </message>
     <message>
-        <source>Error creating a reserv copy: %1.</source>
-        <translation>Rezerv kopyası oluşturulurken hata oluştu: %1.</translation>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>Yedek kopyası oluşturulurken hata oluştu: %1.</translation>
     </message>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>

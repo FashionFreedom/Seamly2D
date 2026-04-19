@@ -7118,6 +7118,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Exporting...</source>
         <translation>出口...</translation>
     </message>
+    <message>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>创建备份副本出错:%1.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8913,6 +8917,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Positive Sign</source>
         <translation>正号</translation>
+    </message>
+    <message>
+        <source>Max number of backups:</source>
+        <translation>最大备份数量</translation>
+    </message>
+    <message>
+        <source> per file</source>
+        <translation> 按文件</translation>
     </message>
 </context>
 <context>
@@ -11778,8 +11790,8 @@ load in SeamlyME as usual.
         <translation>无法更改版本.</translation>
     </message>
     <message>
-        <source>Error creating a reserv copy: %1.</source>
-        <translation>创建保留副本时出错:%1.</translation>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>创建备份副本出错:%1.</translation>
     </message>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>

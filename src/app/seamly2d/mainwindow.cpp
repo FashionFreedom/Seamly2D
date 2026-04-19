@@ -6740,7 +6740,7 @@ void MainWindow::saveBackupFile(const QString &filename) const
     {
         if (info.isWritable())
         {
-            const QString errorMsg(tr("Error creating a reserv copy: %1.").arg(error));
+            const QString errorMsg(tr("Error creating a backup copy: %1.").arg(error));
             throw VException(errorMsg);
         }
     }

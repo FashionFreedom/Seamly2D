@@ -7122,6 +7122,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Exporting...</source>
         <translation>Экспорт...</translation>
     </message>
+    <message>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>Ошибка создания резервной копии: %1.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8919,6 +8923,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Positive Sign</source>
         <translation>Положительный Знак</translation>
+    </message>
+    <message>
+        <source>Max number of backups:</source>
+        <translation>Максимальное количество резервных копий:</translation>
+    </message>
+    <message>
+        <source> per file</source>
+        <translation> за файл</translation>
     </message>
 </context>
 <context>
@@ -11785,7 +11797,7 @@ load in SeamlyME as usual.
         <translation>Не удалось изменить версию.</translation>
     </message>
     <message>
-        <source>Error creating a reserv copy: %1.</source>
+        <source>Error creating a backup copy: %1.</source>
         <translation>Ошибка создания резервной копии: %1.</translation>
     </message>
     <message>

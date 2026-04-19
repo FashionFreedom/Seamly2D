@@ -252,7 +252,7 @@ void VAbstractConverter::saveBackupFile() const
 
             if (!isReadOnly() && isFileWritable)
             {
-                const QString errorMsg(tr("Error creating a reserv copy: %1.").arg(error));
+                const QString errorMsg(tr("Error creating a backup copy: %1.").arg(error));
                 throw VException(errorMsg);
             }
         }

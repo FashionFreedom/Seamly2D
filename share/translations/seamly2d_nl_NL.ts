@@ -7101,6 +7101,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <source>Exporting...</source>
         <translation>Exporteren...</translation>
     </message>
+    <message>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>Fout bij het maken van een back-upkopie: %1.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8896,6 +8900,14 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Positief Teken</translation>
+    </message>
+    <message>
+        <source>Max number of backups:</source>
+        <translation>Maximum aantal back-ups:</translation>
+    </message>
+    <message>
+        <source> per file</source>
+        <translation> per bestand</translation>
     </message>
 </context>
 <context>
@@ -11760,8 +11772,8 @@ load in SeamlyME as usual.
         <translation>Kon de versie niet veranderen.</translation>
     </message>
     <message>
-        <source>Error creating a reserv copy: %1.</source>
-        <translation>Fout bij het maken van reserve bestand: %1.</translation>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>Fout bij het maken van een back-upkopie: %1.</translation>
     </message>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>
