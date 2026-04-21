@@ -9,6 +9,8 @@ Alternatively, if you leave a comment on a repo issue we'll quickly get back to 
 ## Translations
 We use Weblate for translating Seamly: https://hosted.weblate.org/engage/seamly/
 
+For details how to contribute translations, please see https://github.com/FashionFreedom/Seamly2D/wiki/Translations-with-Weblate
+
 ## How we work
 Our workflow is based on **Git Flow**, outlined in the steps below.    
 As always, please fix only one issue at a time.   
