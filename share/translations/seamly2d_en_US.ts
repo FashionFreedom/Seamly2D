@@ -5,15 +5,15 @@
     <name>About2DAppDialog</name>
     <message>
         <source>About Seamly2D</source>
-        <translation type="unfinished">About Seamly2D</translation>
+        <translation>About Seamly2D</translation>
     </message>
     <message>
         <source>Left to right</source>
-        <translation type="unfinished"></translation>
+        <translation>Left to Right</translation>
     </message>
     <message>
         <source>Right to left</source>
-        <translation type="unfinished"></translation>
+        <translation>Right to Left</translation>
     </message>
     <message>
         <source>Automatic</source>
@@ -25,79 +25,79 @@
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>About</translation>
     </message>
     <message>
         <source>Copy build data to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copy build data to clipboard</translation>
     </message>
     <message>
         <source>Seamly 2D</source>
-        <translation type="unfinished"></translation>
+        <translation>Seamly 2D</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Version</translation>
     </message>
     <message>
         <source>Build date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Build date:</translation>
     </message>
     <message>
         <source>Qt Version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt version:</translation>
     </message>
     <message>
         <source>Compiler:</source>
-        <translation type="unfinished"></translation>
+        <translation>Compiler:</translation>
     </message>
     <message>
         <source>System</source>
-        <translation type="unfinished"></translation>
+        <translation>System</translation>
     </message>
     <message>
         <source>Revision:</source>
-        <translation type="unfinished"></translation>
+        <translation>Revision:</translation>
     </message>
     <message>
         <source>Version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Version:</translation>
     </message>
     <message>
         <source>Architecture</source>
-        <translation type="unfinished"></translation>
+        <translation>Architecture</translation>
     </message>
     <message>
         <source>OS Version:</source>
-        <translation type="unfinished"></translation>
+        <translation>OS Version:</translation>
     </message>
     <message>
         <source>Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Locale</translation>
     </message>
     <message>
         <source>Country:</source>
-        <translation type="unfinished"></translation>
+        <translation>Country:</translation>
     </message>
     <message>
         <source>Decimal point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Decimal point:</translation>
     </message>
     <message>
         <source>Script name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Script name:</translation>
     </message>
     <message>
         <source>System codec:</source>
-        <translation type="unfinished"></translation>
+        <translation>System codec:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Language:</translation>
     </message>
     <message>
         <source>Text direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Text direction:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -105,23 +105,23 @@
     </message>
     <message>
         <source>Positive sign:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Positive sign:</translation>
     </message>
     <message>
         <source>Negative sign:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Negative sign:</translation>
     </message>
     <message>
         <source>Application</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Application</translation>
     </message>
     <message>
         <source>Arguments:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Arguments:</translation>
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Contributors</translation>
     </message>
     <message>
         <source>Check For Updates</source>
@@ -129,7 +129,7 @@
     </message>
     <message>
         <source>Downloading installer %p% complete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Downloading installer %p% complete</translation>
     </message>
     <message>
         <source>unknown</source>
@@ -137,56 +137,56 @@
     </message>
     <message>
         <source>Website:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Website:</translation>
     </message>
 </context>
 <context>
     <name>AddDraftBlock</name>
     <message>
         <source>add draft block %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">add draft block %1</translation>
     </message>
 </context>
 <context>
     <name>AddGroup</name>
     <message>
         <source>add group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">add group</translation>
     </message>
 </context>
 <context>
     <name>AddGroupItem</name>
     <message>
         <source>Add item to group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Add item to group</translation>
     </message>
 </context>
 <context>
     <name>AddImage</name>
     <message>
         <source>add image</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">add image</translation>
     </message>
 </context>
 <context>
     <name>AddPiece</name>
     <message>
         <source>add piece</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">add piece</translation>
     </message>
 </context>
 <context>
     <name>AddToCalc</name>
     <message>
         <source>add object</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">add object</translation>
     </message>
 </context>
 <context>
     <name>AddToGroupDialog</name>
     <message>
         <source>Add to Group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Add to Group</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -197,11 +197,11 @@
     <name>AnchorPointDialog</name>
     <message>
         <source>Anchor Point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Anchor Point</translation>
     </message>
     <message>
         <source>Anchor Point tool</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Anchor Point tool</translation>
     </message>
     <message>
         <source>Point:</source>
@@ -216,174 +216,174 @@
     <name>AnchorPointTool</name>
     <message>
         <source>add anchor point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">add anchor point</translation>
     </message>
 </context>
 <context>
     <name>Application2D</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Error parsing file. Program will be terminated.</translation>
     </message>
     <message>
         <source>Error bad id. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Error bad id. Program will be terminated.</translation>
     </message>
     <message>
         <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Error can&apos;t convert value. Program will be terminated.</translation>
     </message>
     <message>
         <source>Error empty parameter. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Error empty parameter. Program will be terminated.</translation>
     </message>
     <message>
         <source>Error wrong id. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Error wrong id. Program will be terminated.</translation>
     </message>
     <message>
         <source>Something&apos;s wrong!!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Something&apos;s wrong!!</translation>
     </message>
     <message>
         <source>Parser error: %1. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Parser error: %1. Program will be terminated.</translation>
     </message>
     <message>
         <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Exception thrown: %1. Program will be terminated.</translation>
     </message>
 </context>
 <context>
     <name>ApplicationME</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Error parsing file. Program will be terminated.</translation>
     </message>
     <message>
         <source>Error bad id. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Error bad id. Program will be terminated.</translation>
     </message>
     <message>
         <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Error can&apos;t convert value. Program will be terminated.</translation>
     </message>
     <message>
         <source>Error empty parameter. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Error empty parameter. Program will be terminated.</translation>
     </message>
     <message>
         <source>Error wrong id. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Error wrong id. Program will be terminated.</translation>
     </message>
     <message>
         <source>Something&apos;s wrong!!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Something&apos;s wrong!!</translation>
     </message>
     <message>
         <source>Parser error: %1. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Parser error: %1. Program will be terminated.</translation>
     </message>
     <message>
         <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Exception thrown: %1. Program will be terminated.</translation>
     </message>
     <message>
         <source>Seamly2D&apos;s measurements editor.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seamly2D&apos;s measurements editor.</translation>
     </message>
     <message>
         <source>The measurement file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The measurement file.</translation>
     </message>
     <message>
         <source>The base height</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The base height</translation>
     </message>
     <message>
         <source>The base size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The base size</translation>
     </message>
     <message>
         <source>Set pattern file unit: cm, mm, inch.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Set pattern file unit: cm, mm, inch.</translation>
     </message>
     <message>
         <source>The pattern unit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The pattern unit</translation>
     </message>
     <message>
         <source>Invalid base size argument. Must be cm, mm or inch.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Invalid base size argument. Must be cm, mm or inch.</translation>
     </message>
     <message>
         <source>Can&apos;t begin to listen for incoming connections on name &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Can&apos;t begin to listen for incoming connections on name &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Test mode doesn&apos;t support Opening several files.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Test mode doesn&apos;t support Opening several files.</translation>
     </message>
     <message>
         <source>Please, provide one input file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Please, provide one input file.</translation>
     </message>
     <message>
         <source>Open with the base size. Valid values: %1cm.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open with the base size. Valid values: %1cm.</translation>
     </message>
     <message>
         <source>Invalid base height argument. Must be %1cm.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Invalid base height argument. Must be %1cm.</translation>
     </message>
     <message>
         <source>Invalid base size argument. Must be %1cm.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Invalid base size argument. Must be %1cm.</translation>
     </message>
     <message>
         <source>Open with the base height. Valid values: %1cm.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open with the base height. Valid values: %1cm.</translation>
     </message>
     <message>
         <source>Use for unit testing. Run the program and open a file without showing the main window.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Use for unit testing. Run the program and open a file without showing the main window.</translation>
     </message>
     <message>
         <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</translation>
     </message>
 </context>
 <context>
     <name>CalculatorDialog</name>
     <message>
         <source>Calculator</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Calculator</translation>
     </message>
 </context>
 <context>
     <name>CalculatorUtil</name>
     <message>
         <source>Backspace</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Backspace</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Clear</translation>
     </message>
     <message>
         <source>Clear All</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Clear All</translation>
     </message>
     <message>
         <source>Calculator</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Calculator</translation>
     </message>
 </context>
 <context>
     <name>DecimalChartDialog</name>
     <message>
         <source>Decimal Chart</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Decimal Chart</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -398,7 +398,18 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;11/16 = .6875&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;13/16 = .8125&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;15/16 = .9375&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 1/16 = .0625&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 3/16 = .1875&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 5/16 = .3125&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 7/16 = .4375&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 9/16 = .5625&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;11/16 = .6875&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;13/16 = .8125&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;15/16 = .9375&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -406,35 +417,39 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot;  font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;br /&gt;2/8 = .250&lt;br /&gt;3/8 = .375&lt;br /&gt;4/8 = .500&lt;br /&gt;5/8 = .625&lt;br /&gt;6/8 = .750&lt;br /&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot;  font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;br /&gt;2/8 = .250&lt;br /&gt;3/8 = .375&lt;br /&gt;4/8 = .500&lt;br /&gt;5/8 = .625&lt;br /&gt;6/8 = .750&lt;br /&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>DelGroup</name>
     <message>
         <source>delete group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">delete group</translation>
     </message>
 </context>
 <context>
     <name>DelTool</name>
     <message>
         <source>delete tool</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">delete tool</translation>
     </message>
 </context>
 <context>
     <name>DeleteDraftBlock</name>
     <message>
         <source>delete draft block %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">delete draft block %1</translation>
     </message>
 </context>
 <context>
     <name>DeletePiece</name>
     <message>
         <source>delete tool</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">delete tool</translation>
     </message>
 </context>
 <context>
@@ -457,7 +472,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Downloading installer %p% complete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Downloading installer %p% complete</translation>
     </message>
     <message>
         <source>Check For Updates</source>
@@ -488,7 +503,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select second point of line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Select second point of line</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -524,11 +539,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Second point of the line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Second point of the line</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Linetype:</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -536,31 +551,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Point - On Line</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Selection</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Unique name</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Choose unique name.</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Geometry</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Attributes</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lineweight:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -575,15 +590,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Error</translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Radius can&apos;t be negative</source>
-        <translation type="unfinished">Radius can&apos;t be negative</translation>
+        <translation>Radius can&apos;t be negative</translation>
     </message>
     <message>
         <source>Angles equal</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Angles equal</translation>
     </message>
     <message>
         <source>Edit radius</source>
@@ -591,11 +606,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit first angle</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Edit first angle</translation>
     </message>
     <message>
         <source>Edit second angle</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Edit second angle</translation>
     </message>
     <message>
         <source>Radius:</source>
@@ -611,7 +626,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First angle:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">First angle:</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -619,7 +634,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Second angle:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Second angle:</translation>
     </message>
     <message>
         <source>Center point:</source>
@@ -627,7 +642,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select center point of the arc</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Select center point of the arc</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -635,27 +650,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Linetype:</translation>
     </message>
     <message>
         <source>Arc - Radius and Angles</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Arc - Radius and Angles</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Selection</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Geometry</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Attributes</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lineweight:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -674,11 +689,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit the first angle</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Edit the first angle</translation>
     </message>
     <message>
         <source>Edit the arc length</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Edit the arc length</translation>
     </message>
     <message>
         <source>Error</source>
@@ -690,7 +705,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length can&apos;t be equal 0</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Length can&apos;t be equal 0</translation>
     </message>
     <message>
         <source>Radius:</source>
@@ -710,7 +725,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First angle:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">First angle:</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -726,27 +741,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Linetype:</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Arc - Radius and Length</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Selection</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Geometry</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Attributes</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lineweight:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -761,11 +776,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select second point of angle</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Select second point of angle</translation>
     </message>
     <message>
         <source>Select third point of angle</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Select third point of angle</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -797,11 +812,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Third point:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Third point:</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Linetype:</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -809,31 +824,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Bisector</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Point - On Bisector</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Selection</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Unique name</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Choose unique name.</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Geometry</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Attributes</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lineweight:</translation>
     </message>
     <message>
         <source>Name:</source>
