@@ -77,10 +77,12 @@ public slots:
 
 signals:
     void                         penChanged(Pen pen);
+    void                         paintToolActivated(Pen pen);
 
 private:
     QAction                     *resetAction;
     QAction                     *savePresetAction;
+    void                         activatePaintTool();
 };
 
 #endif

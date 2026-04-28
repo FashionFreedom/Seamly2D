@@ -86,6 +86,12 @@ PenToolBar::PenToolBar( const QString &title, QWidget *parent )
     savePresetButton->setToolTip(tr("Save current pen preset"));
     addWidget(savePresetButton);
     connect(savePresetButton, &QToolButton::clicked, this, &PenToolBar::savePreset);
+
+    QToolButton *paintToolButton = new QToolButton;
+    paintToolButton->setIcon(QIcon(":/icons/win.icon.theme/24x24/actions/document-save-as.png"));
+    paintToolButton->setToolTip(tr("Paint Tool"));
+    addWidget(paintToolButton);
+    connect(paintToolButton, &QToolButton::clicked, this, &PenToolBar::activatePaintTool);
 }
 
 
@@ -171,4 +177,13 @@ void PenToolBar::savePreset()
     qApp->Settings()->setDefaultLineColor(currentPen.color);
     qApp->Settings()->setDefaultLineType(currentPen.lineType);
     qApp->Settings()->setDefaultLineWeight(currentPen.lineWeight);
+}
+
+/**
+ * savePreset() Save the current pen to the preferences.
+ */
+void PenToolBar::activatePaintTool()
+{
+    qDebug("PenToolBar::activatePaintTool - Paint tool activation\n");
+    emit paintToolActivated(currentPen);
 }
