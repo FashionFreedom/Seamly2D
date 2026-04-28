@@ -2706,6 +2706,62 @@ void MainWindow::penChanged(Pen pen)
 void MainWindow::handlePaintTool(bool checked, Pen pen)
 {
     qDebug("MainWindow::handlePaintTool has been called");
+
+    if (checked)
+    {
+        CancelTool();
+        emit EnableItemMove(false);
+        currentTool = lastUsedTool = Tool::Paint;
+
+        // auto cursorResource = cursor;
+        // if (qApp->devicePixelRatio() >= 2)
+        // {
+        //     // Try to load HiDPI versions of the cursors if available
+        //     auto cursorHidpiResource = QString(cursor).replace(".png", "@2x.png");
+        //     if (QFileInfo(cursorResource).exists())
+        //     {
+        //         cursorResource = cursorHidpiResource;
+        //     }
+        // }
+        // QPixmap pixmap(cursorResource);
+        // QCursor cur(pixmap, 2, 2);
+        // ui->view->viewport()->setCursor(cur);
+
+        setStatusMessage(tr("Paint tool : click on objects to paint them according to the color selected in the pen toolbar"));
+        ui->view->setShowToolOptions(false);
+
+
+        VMainGraphicsScene *scene = qobject_cast<VMainGraphicsScene *>(currentScene);
+        SCASSERT(scene != nullptr)
+
+        connect(scene, &VMainGraphicsScene::ChosenObject, this, &MainWindow::paintObject);
+        emit ui->view->itemClicked(nullptr);  // Clear Property Editor with non valid tool selection
+    }
+    else
+    {
+        // if (QToolButton *tButton = qobject_cast< QToolButton * >(this->sender()))
+        // {
+        //     tButton->setChecked(true);
+        // }
+    }
+}
+
+void MainWindow::paintObject(quint32 id, SceneObject type)
+{
+    switch (type)
+    {
+        case SceneObject::Point:
+            break;
+        case SceneObject::Line:
+        case SceneObject::Spline:
+        case SceneObject::Arc:
+        case SceneObject::ElArc:
+        case SceneObject::SplinePath:
+        case SceneObject::Piece:
+        case SceneObject::Unknown:
+        default:
+            break;
+    }
 }
 
 void MainWindow::basePointChanged()
