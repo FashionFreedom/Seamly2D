@@ -8920,7 +8920,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Max number of backups:</source>
-        <translation>最大备份数量</translation>
+        <translation>最大备份数量:</translation>
     </message>
     <message>
         <source> per file</source>
