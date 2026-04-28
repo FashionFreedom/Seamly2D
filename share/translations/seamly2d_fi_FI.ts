@@ -7120,7 +7120,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Error creating a backup copy: %1.</source>
-        <translation>Virhe luotaessa varakopiota: %1.</translation>
+        <translation>Virhe luotaessa varmuuskopiota: %1.</translation>
     </message>
 </context>
 <context>
@@ -8924,7 +8924,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source> per file</source>
-        <translation> tiedosto</translation>
+        <translation> tiedostoa kohden</translation>
     </message>
 </context>
 <context>
@@ -11779,7 +11779,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Error creating a backup copy: %1.</source>
-        <translation>Virhe luotaessa varakopiota: %1.</translation>
+        <translation>Virhe luotaessa varmuuskopiota: %1.</translation>
     </message>
     <message>
         <source>Invalid version. Minimum supported version is %1</source>
