@@ -2673,6 +2673,7 @@ void MainWindow::initPenToolBar()
     this->addToolBar(Qt::TopToolBarArea, m_penToolBar);
 
     connect(m_penToolBar, &PenToolBar::penChanged, this, &MainWindow::penChanged);
+    connect(m_penToolBar, &PenToolBar::paintToolActivated, this, &MainWindow::handlePaintTool);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2700,6 +2701,11 @@ void MainWindow::initPropertyEditor()
 void MainWindow::penChanged(Pen pen)
 {
     doc->setDefaultPen(pen);
+}
+
+void MainWindow::handlePaintTool(Pen pen)
+{
+    qDebug("MainWindow::handlePaintTool has been called");
 }
 
 void MainWindow::basePointChanged()
