@@ -2718,19 +2718,19 @@ void MainWindow::handlePaintTool(bool checked, Pen pen = Pen())
         emit EnableItemMove(false);
         currentTool = lastUsedTool = Tool::Paint;
 
-        // auto cursorResource = cursor;
-        // if (qApp->devicePixelRatio() >= 2)
-        // {
-        //     // Try to load HiDPI versions of the cursors if available
-        //     auto cursorHidpiResource = QString(cursor).replace(".png", "@2x.png");
-        //     if (QFileInfo(cursorResource).exists())
-        //     {
-        //         cursorResource = cursorHidpiResource;
-        //     }
-        // }
-        // QPixmap pixmap(cursorResource);
-        // QCursor cur(pixmap, 2, 2);
-        // ui->view->viewport()->setCursor(cur);
+        QString cursorResource("://cursor/paint_tool_cursor.png");
+        if (qApp->devicePixelRatio() >= 2)
+        {
+            // Try to load HiDPI versions of the cursor if available
+            auto cursorHidpiResource = cursorResource.replace(".png", "@2x.png");
+            if (QFileInfo(cursorHidpiResource).exists())
+            {
+                cursorResource = cursorHidpiResource;
+            }
+        }
+        QPixmap pixmap(cursorResource);
+        QCursor cur(pixmap, 2, 2);
+        ui->view->viewport()->setCursor(cur);
 
         setStatusMessage(tr("Paint tool : click on objects to paint them according to the color selected in the pen toolbar"));
         ui->view->setShowToolOptions(false);
