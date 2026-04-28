@@ -67,6 +67,7 @@ public:
     QPointer<ColorComboBox>      colorBox;
     QPointer<LineTypeComboBox>   lineTypeBox;
     QPointer<LineWeightComboBox> lineWeightBox;
+    QToolButton *                paintToolButton;
 
 public slots:
     void                         colorChanged(const QString &color);

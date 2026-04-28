@@ -87,7 +87,7 @@ PenToolBar::PenToolBar( const QString &title, QWidget *parent )
     addWidget(savePresetButton);
     connect(savePresetButton, &QToolButton::clicked, this, &PenToolBar::savePreset);
 
-    QToolButton *paintToolButton = new QToolButton;
+    paintToolButton = new QToolButton;
     paintToolButton->setIcon(QIcon("://icon/svg/paint_can.svg"));
     paintToolButton->setIconSize(QSize(24, 24));
     paintToolButton->setToolTip(tr("Paint Tool"));
