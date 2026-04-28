@@ -122,6 +122,7 @@ protected slots:
     virtual void      showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
 
 protected:
+    SceneObject       m_sceneType;
     virtual void      contextMenuEvent(QGraphicsSceneContextMenuEvent * event ) override;
     virtual void      AddToFile() override;
     virtual void      hoverEnterEvent(QGraphicsSceneHoverEvent * event ) override;
@@ -134,6 +135,8 @@ protected:
     virtual void      ReadToolAttributes(const QDomElement &domElement) override;
     virtual void      SetVisualization() override;
     virtual QString   makeToolTip() const override;
+    virtual void      mouseReleaseEvent ( QGraphicsSceneMouseEvent * event ) override;
+
 
 private:
     Q_DISABLE_COPY(VToolLine)

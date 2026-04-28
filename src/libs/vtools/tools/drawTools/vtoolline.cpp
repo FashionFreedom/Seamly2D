@@ -100,6 +100,8 @@ VToolLine::VToolLine(VAbstractPattern *doc, VContainer *data, quint32 id, quint3
     , lineColor(lineColor)
     , m_isHovered(false)
 {
+    m_sceneType = SceneObject::Line;
+
     this->m_lineType = lineType;
     this->m_lineWeight = lineWeight;
     //Line
@@ -595,4 +597,16 @@ void VToolLine::RefreshGeometry()
     const QSharedPointer<VPointF> first = VAbstractTool::data.GeometricObject<VPointF>(firstPoint);
     const QSharedPointer<VPointF> second = VAbstractTool::data.GeometricObject<VPointF>(secondPoint);
     this->setLine(QLineF(static_cast<QPointF>(*first), static_cast<QPointF>(*second)));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// @brief mouseReleaseEvent  handle mouse release events.
+// @param event mouse release event.
+void VToolLine::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton)
+    {
+        emit chosenTool(m_id, SceneObject::Line);
+    }
+    QGraphicsLineItem::mouseReleaseEvent(event);
 }
