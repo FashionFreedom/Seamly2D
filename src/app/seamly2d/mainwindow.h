@@ -338,6 +338,8 @@ private:
 
     QSharedPointer<MeasurementDoc>    m_measurements;
 
+    void                              removeEmptyLinesText(const QString &filename, bool isPattern);
+    void                              saveBackupFile(const QString &filename) const;
     void                              SetDefaultHeight();
     void                              SetDefaultSize();
 

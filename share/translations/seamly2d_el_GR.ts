@@ -7120,6 +7120,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Exporting...</source>
         <translation>Εξαγωγή...</translation>
     </message>
+    <message>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>Σφάλμα κατά τη δημιουργία αντιγράφου ασφαλείας: %1.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8915,6 +8919,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Positive Sign</source>
         <translation>Θετικό Πρόσημο</translation>
+    </message>
+    <message>
+        <source>Max number of backups:</source>
+        <translation>Μέγιστος αριθμός αντιγράφων ασφαλείας:</translation>
+    </message>
+    <message>
+        <source> per file</source>
+        <translation> ανά αρχείο</translation>
     </message>
 </context>
 <context>
@@ -11780,8 +11792,8 @@ load in SeamlyME as usual.
         <translation>Δεν είναι δυνατή η αλλαγή έκδοσης.</translation>
     </message>
     <message>
-        <source>Error creating a reserv copy: %1.</source>
-        <translation>Σφάλμα κατά τη δημιουργία ενός εφεδρικού αντιγράφου: %1.</translation>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>Σφάλμα κατά τη δημιουργία αντιγράφου ασφαλείας: %1.</translation>
     </message>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>

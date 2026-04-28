@@ -7120,6 +7120,10 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <source>Exporting...</source>
         <translation>Exportator...</translation>
     </message>
+    <message>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>Eroare la crearea unei copii rezervate: %1.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8915,6 +8919,14 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Semn Pozitiv</translation>
+    </message>
+    <message>
+        <source>Max number of backups:</source>
+        <translation>Număr maxim de copii de rezervă:</translation>
+    </message>
+    <message>
+        <source> per file</source>
+        <translation> pe fișier</translation>
     </message>
 </context>
 <context>
@@ -11779,7 +11791,7 @@ load in SeamlyME as usual.
         <translation>Nu s-a putut schimba versiunea.</translation>
     </message>
     <message>
-        <source>Error creating a reserv copy: %1.</source>
+        <source>Error creating a backup copy: %1.</source>
         <translation>Eroare la crearea unei copii rezervate: %1.</translation>
     </message>
     <message>

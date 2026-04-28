@@ -7086,6 +7086,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Exporting...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Error creating a backup copy: %1.</source>
+        <translation type="unfinished">Error creating a backup copy: %1.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8880,6 +8884,14 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Positive Sign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max number of backups:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> per file</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11740,8 +11752,8 @@ load in SeamlyME as usual.
         <translation>Could not change version.</translation>
     </message>
     <message>
-        <source>Error creating a reserv copy: %1.</source>
-        <translation>Error creating a reserv copy: %1.</translation>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>Error creating a backup copy: %1.</translation>
     </message>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>

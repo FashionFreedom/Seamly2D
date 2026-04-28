@@ -97,6 +97,7 @@ const QString settingConfigurationOsSeparator            = QStringLiteral("confi
 const QString settingConfigurationConvertBackup          = QStringLiteral("configuration/backup/convertBackupEnabled");
 const QString settingConfigurationAutosaveState          = QStringLiteral("configuration/autosave/state");
 const QString settingConfigurationAutosaveTime           = QStringLiteral("configuration/autosave/time");
+const QString settingConfigurationMaxBackups             = QStringLiteral("configuration/autosave/maxBackups");
 
 const QString settingConfigurationUseModeType            = QStringLiteral("configuration/autosave/useModeType");
 const QString settingConfigurationUseLastExportFormat    = QStringLiteral("configuration/autosave/useLastExportFormat");
@@ -651,6 +652,24 @@ int VCommonSettings::getAutosaveInterval() const
 void VCommonSettings::setAutosaveInterval(const int &value)
 {
     setValue(settingConfigurationAutosaveTime, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::getMaxBackups() const
+{
+    bool ok = false;
+    int val = value(settingConfigurationMaxBackups, 1).toInt(&ok);
+    if (ok == false)
+    {
+        val = 1;
+    }
+    return val;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setMaxBackups(const int &value)
+{
+    setValue(settingConfigurationMaxBackups, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

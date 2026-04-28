@@ -7086,6 +7086,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Exporting...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Error creating a backup copy: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8880,6 +8884,14 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Positive Sign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max number of backups:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> per file</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11740,7 +11752,7 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Error creating a reserv copy: %1.</source>
+        <source>Error creating a backup copy: %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

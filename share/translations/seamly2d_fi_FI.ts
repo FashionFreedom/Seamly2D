@@ -7118,6 +7118,10 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <source>Exporting...</source>
         <translation>Viedään...</translation>
     </message>
+    <message>
+        <source>Error creating a backup copy: %1.</source>
+        <translation>Virhe luotaessa varakopiota: %1.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8913,6 +8917,14 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Positive Sign</source>
         <translation>Positiivinen merkki</translation>
+    </message>
+    <message>
+        <source>Max number of backups:</source>
+        <translation>Varmuuskopioiden enimmäismäärä:</translation>
+    </message>
+    <message>
+        <source> per file</source>
+        <translation> tiedosto</translation>
     </message>
 </context>
 <context>
@@ -11766,7 +11778,7 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Versio &quot;0.0.0&quot; on virheellinen.</translation>
     </message>
     <message>
-        <source>Error creating a reserv copy: %1.</source>
+        <source>Error creating a backup copy: %1.</source>
         <translation>Virhe luotaessa varakopiota: %1.</translation>
     </message>
     <message>
