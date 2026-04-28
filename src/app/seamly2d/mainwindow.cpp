@@ -2727,10 +2727,13 @@ void MainWindow::handlePaintTool(bool checked, Pen pen = Pen())
 
 void MainWindow::paintObject(quint32 id, SceneObject type)
 {
+    // This check helps to find missed tools
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 55, "Not all tools were handled in paint tool.");
+
     Pen pen = m_penToolBar->getPen();
     const QString &color = pen.color;
 
-    VDataTool *baseTool = doc->getTool(id);
+    VDataTool *baseTool = doc->getTool(id); // TODO : Crashes with operation tools
 
     switch (type)
     {
@@ -2753,9 +2756,13 @@ void MainWindow::paintObject(quint32 id, SceneObject type)
             {
                 tool->setLineColor(color);
             }
+            else if (auto *tool = qobject_cast<VToolSinglePoint*>(baseTool))
+            {
+                // VToolSinglePoint has no color attribute
+            }
             else if (auto *tool = qobject_cast<VToolCut*>(baseTool))
             {
-                tool->setLineColor(color);
+                //tool->setLineColor(color); --> does nothing TODO
             }
             else if (auto *tool = qobject_cast<DoubleLinePointTool*>(baseTool))
             {
