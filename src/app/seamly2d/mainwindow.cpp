@@ -2751,25 +2751,105 @@ void MainWindow::handlePaintTool(bool checked, Pen pen)
 void MainWindow::paintObject(quint32 id, SceneObject type)
 {
     Pen pen = m_penToolBar->getPen();
-    QString color = pen.color;
+    const QString &color = pen.color;
+
+    VDataTool *baseTool = doc->getTool(id);
 
     switch (type)
     {
         case SceneObject::Line:
         {
-            VToolLine * tool = qobject_cast<VToolLine*>(doc->getTool(id));
-            tool->setLineColor(color);
+            if (auto *tool = qobject_cast<VToolLine*>(baseTool))
+            {
+                tool->setLineColor(color);
+            }
+            else
+            {
+                qWarning() << "paintObject: Failed to cast to VToolLine for id =" << id;
+            }
             break;
         }
+
         case SceneObject::Point:
+        {
+            if (auto *tool = qobject_cast<VToolLinePoint*>(baseTool))
+            {
+                tool->setLineColor(color);
+            }
+            else if (auto *tool = qobject_cast<VToolCut*>(baseTool))
+            {
+                tool->setLineColor(color);
+            }
+            else if (auto *tool = qobject_cast<DoubleLinePointTool*>(baseTool))
+            {
+                tool->setLineColor(color);
+            }
+            else
+            {
+                qWarning() << "paintObject: Failed to cast to VToolLinePoint for id =" << id;
+            }
+            break;
+        }
+
         case SceneObject::Spline:
+        {
+            if (auto *tool = qobject_cast<VAbstractSpline*>(baseTool))
+            {
+                tool->setLineColor(color);
+            }
+            else
+            {
+                qWarning() << "paintObject: Failed to cast to VToolSpline for id =" << id;
+            }
+            break;
+        }
+
         case SceneObject::Arc:
+        {
+            if (auto *tool = qobject_cast<VAbstractSpline*>(baseTool))
+            {
+                tool->setLineColor(color);
+            }
+            else
+            {
+                qWarning() << "paintObject: Failed to cast to VToolArc for id =" << id;
+            }
+            break;
+        }
+
         case SceneObject::ElArc:
+        {
+            if (auto *tool = qobject_cast<VAbstractSpline*>(baseTool))
+            {
+                tool->setLineColor(color);
+            }
+            else
+            {
+                qWarning() << "paintObject: Failed to cast to VToolEllipticalArc for id =" << id;
+            }
+            break;
+        }
+
         case SceneObject::SplinePath:
+        {
+            if (auto *tool = qobject_cast<VAbstractSpline*>(baseTool))
+            {
+                tool->setLineColor(color);
+            }
+            else
+            {
+                qWarning() << "paintObject: Failed to cast to VToolSplinePath for id =" << id;
+            }
+            break;
+        }
+
         case SceneObject::Piece:
         case SceneObject::Unknown:
         default:
+        {
+            qWarning() << "paintObject: Unhandled or unknown SceneObject type (" << static_cast<int>(type) << ")";
             break;
+        }
     }
 }
 
