@@ -20,6 +20,7 @@ var vcommonsettings_8cpp =
     [ "settingConfigurationExportFormat", "d4/d11/vcommonsettings_8cpp.html#a97304289062448ab19cf7f468ff251db", null ],
     [ "settingConfigurationFax", "d4/d11/vcommonsettings_8cpp.html#a432e70947dc777475bd71f014d59f8a7", null ],
     [ "settingConfigurationLocale", "d4/d11/vcommonsettings_8cpp.html#a466e58d60d4df94c653ae24efd557bed", null ],
+    [ "settingConfigurationMaxBackups", "d4/d11/vcommonsettings_8cpp.html#a4e96bad712d4954fdc97041ed3125574", null ],
     [ "settingConfigurationMirrorByAxisSuffix", "d4/d11/vcommonsettings_8cpp.html#acea79ab1f171b09b76c99884725b0a5a", null ],
     [ "settingConfigurationMirrorByLineSuffix", "d4/d11/vcommonsettings_8cpp.html#a8463c1243a8c59bfb78650df8b04e890", null ],
     [ "settingConfigurationMoveSuffix", "d4/d11/vcommonsettings_8cpp.html#a6d068bb3eeec138734b8a4c3d9329808", null ],
