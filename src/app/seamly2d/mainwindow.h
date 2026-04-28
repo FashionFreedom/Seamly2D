@@ -110,7 +110,7 @@ public:
 public slots:
     void processCommandLine();
     void penChanged(Pen pen);
-    void handlePaintTool(Pen pen);
+    void handlePaintTool(bool checked, Pen pen);
     void basePointChanged();
 
     virtual void setStatusMessage(const QString &message) override;

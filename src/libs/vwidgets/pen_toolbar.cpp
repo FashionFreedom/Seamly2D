@@ -90,6 +90,7 @@ PenToolBar::PenToolBar( const QString &title, QWidget *parent )
     QToolButton *paintToolButton = new QToolButton;
     paintToolButton->setIcon(QIcon(":/icons/win.icon.theme/24x24/actions/document-save-as.png"));
     paintToolButton->setToolTip(tr("Paint Tool"));
+    paintToolButton->setCheckable(true);
     addWidget(paintToolButton);
     connect(paintToolButton, &QToolButton::clicked, this, &PenToolBar::activatePaintTool);
 }
@@ -182,8 +183,8 @@ void PenToolBar::savePreset()
 /**
  * savePreset() Save the current pen to the preferences.
  */
-void PenToolBar::activatePaintTool()
+void PenToolBar::activatePaintTool(bool checked)
 {
     qDebug("PenToolBar::activatePaintTool - Paint tool activation\n");
-    emit paintToolActivated(currentPen);
+    emit paintToolActivated(checked, currentPen);
 }

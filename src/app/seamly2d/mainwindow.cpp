@@ -2703,7 +2703,7 @@ void MainWindow::penChanged(Pen pen)
     doc->setDefaultPen(pen);
 }
 
-void MainWindow::handlePaintTool(Pen pen)
+void MainWindow::handlePaintTool(bool checked, Pen pen)
 {
     qDebug("MainWindow::handlePaintTool has been called");
 }
