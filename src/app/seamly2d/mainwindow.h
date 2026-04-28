@@ -475,6 +475,7 @@ private:
     void ToolSelectPointArc() const;
     void ToolSelectCurve() const;
     void selectAllDraftObjectsTool() const;
+    void selectPaintTool() const;
     void ToolSelectOperationObjects() const;
     void ToolSelectGroupObjects() const;
     void selectPieceTool() const;
