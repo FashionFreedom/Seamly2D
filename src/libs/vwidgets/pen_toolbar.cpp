@@ -88,7 +88,8 @@ PenToolBar::PenToolBar( const QString &title, QWidget *parent )
     connect(savePresetButton, &QToolButton::clicked, this, &PenToolBar::savePreset);
 
     QToolButton *paintToolButton = new QToolButton;
-    paintToolButton->setIcon(QIcon(":/icons/win.icon.theme/24x24/actions/document-save-as.png"));
+    paintToolButton->setIcon(QIcon("://icon/svg/paint_can.svg"));
+    paintToolButton->setIconSize(QSize(24, 24));
     paintToolButton->setToolTip(tr("Paint Tool"));
     paintToolButton->setCheckable(true);
     addWidget(paintToolButton);
