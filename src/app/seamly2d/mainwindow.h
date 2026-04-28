@@ -479,6 +479,8 @@ private:
     void ToolSelectOperationObjects() const;
     void ToolSelectGroupObjects() const;
     void selectPieceTool() const;
+
+    QCursor loadCursor(const QString& cursorPath) const;
 };
 
 #endif // MAINWINDOW_H

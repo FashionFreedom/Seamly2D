@@ -767,19 +767,10 @@ void MainWindow::SetToolButton(bool checked, Tool t, const QString &cursor, cons
         CancelTool();
         emit EnableItemMove(false);
         currentTool = lastUsedTool = t;
-        auto cursorResource = cursor;
-        if (qApp->devicePixelRatio() >= 2)
-        {
-            // Try to load HiDPI versions of the cursors if available
-            auto cursorHidpiResource = QString(cursor).replace(".png", "@2x.png");
-            if (QFileInfo(cursorHidpiResource).exists())
-            {
-                cursorResource = cursorHidpiResource;
-            }
-        }
-        QPixmap pixmap(cursorResource);
-        QCursor cur(pixmap, 2, 2);
+
+        QCursor cur = loadCursor(cursor);
         ui->view->viewport()->setCursor(cur);
+
         setStatusMessage(toolTip);
         ui->view->setShowToolOptions(false);
         dialogTool = QSharedPointer<Dialog>(new Dialog(pattern, 0, this));
@@ -2718,18 +2709,7 @@ void MainWindow::handlePaintTool(bool checked, Pen pen = Pen())
         emit EnableItemMove(false);
         currentTool = lastUsedTool = Tool::Paint;
 
-        QString cursorResource("://cursor/paint_tool_cursor.png");
-        if (qApp->devicePixelRatio() >= 2)
-        {
-            // Try to load HiDPI versions of the cursor if available
-            auto cursorHidpiResource = cursorResource.replace(".png", "@2x.png");
-            if (QFileInfo(cursorHidpiResource).exists())
-            {
-                cursorResource = cursorHidpiResource;
-            }
-        }
-        QPixmap pixmap(cursorResource);
-        QCursor cur(pixmap, 2, 2);
+        QCursor cur = loadCursor(QString("://cursor/paint_tool_cursor.png"));
         ui->view->viewport()->setCursor(cur);
 
         setStatusMessage(tr("Paint tool : click on objects to paint them according to the color selected in the pen toolbar"));
@@ -8576,4 +8556,24 @@ void MainWindow::selectPieceTool() const
     emit ItemsSelection(SelectionType::ByMouseRelease);
 
     ui->view->allowRubberBand(false);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QCursor MainWindow::loadCursor(const QString& cursorPath) const
+{
+    QString resource = cursorPath;
+    if (qApp->devicePixelRatio() >= 2)
+    {
+        // Try to load HiDPI versions of the cursor if available
+        const QString highDpiResource = resource.replace(".png", "@2x.png");
+        if (QFile::exists(highDpiResource))
+        {
+            resource = highDpiResource;
+        }
+    }
+
+    QPixmap pixmap(resource);
+    QCursor cur(pixmap, 2, 2);
+
+    return cur;
 }
