@@ -616,7 +616,7 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
 bool MainWindow::loadMeasurements(const QString &fileName)
 {
     // remove any extraneous LF's or trailing white space.
-    removeEmptyLinesText(fileName);
+    removeEmptyLinesText(fileName, false);
 
     m_measurements = openMeasurementFile(fileName);
 
@@ -6470,7 +6470,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString &customMeasu
     qCInfo(vMainWindow, "Loading new file %s.", qUtf8Printable(fileName));
 
     // remove any extraneous LF's or trailing white space.
-    removeEmptyLinesText(fileName);
+    removeEmptyLinesText(fileName, true);
 
     //We have unsaved changes or load more then one file per time
     if (startNewSeamly2D(fileName))
