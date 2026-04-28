@@ -2750,11 +2750,18 @@ void MainWindow::handlePaintTool(bool checked, Pen pen)
 
 void MainWindow::paintObject(quint32 id, SceneObject type)
 {
+    Pen pen = m_penToolBar->getPen();
+    QString color = pen.color;
+
     switch (type)
     {
-        case SceneObject::Point:
-            break;
         case SceneObject::Line:
+        {
+            VToolLine * tool = qobject_cast<VToolLine*>(doc->getTool(id));
+            tool->setLineColor(color);
+            break;
+        }
+        case SceneObject::Point:
         case SceneObject::Spline:
         case SceneObject::Arc:
         case SceneObject::ElArc:
