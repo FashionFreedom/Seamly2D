@@ -287,7 +287,15 @@ void VFormula::Eval()
                 {
                     if (postfix == degreeSymbol)
                     {
-                        result = result - 360.0 * qFloor(result / 360.0);
+                        qreal value = result - 360.0 * qFloor(result / 360.0);
+                        if (result != 0.0 && value == 360.0)
+                        {
+                            result = 360.0;
+                        }
+                        else
+                        {
+                            result = value;
+                        }
                     }
                     dValue = result;
                     value = QString(qApp->LocaleToString(result) + " " + postfix);
