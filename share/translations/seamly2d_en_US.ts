@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>Right to left</source>
-        <translation type="unfinished">Right to Left</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Automatic</source>
