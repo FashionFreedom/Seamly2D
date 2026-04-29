@@ -9,11 +9,11 @@
     </message>
     <message>
         <source>Left to right</source>
-        <translation>Left to Right</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Right to left</source>
-        <translation>Right to Left</translation>
+        <translation type="unfinished">Right to Left</translation>
     </message>
     <message>
         <source>Automatic</source>
@@ -45,7 +45,7 @@
     </message>
     <message>
         <source>Qt Version:</source>
-        <translation>Qt version:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Compiler:</source>
