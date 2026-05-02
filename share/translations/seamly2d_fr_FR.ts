@@ -3410,6 +3410,14 @@ points de contrôle</translation>
         <source>Description</source>
         <translation>Description</translation>
     </message>
+    <message>
+        <source>Full Name:</source>
+        <translation>Nom Complet :</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Description :</translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>

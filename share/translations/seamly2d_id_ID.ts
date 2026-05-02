@@ -3392,6 +3392,14 @@ Silakan coba batalkan operasi terakhir atau perbaiki rumus yang rusak.</translat
         <source>Description</source>
         <translation>Deskripsi</translation>
     </message>
+    <message>
+        <source>Full Name:</source>
+        <translation>Nama Lengkap:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Deskripsi:</translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>

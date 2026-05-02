@@ -3394,6 +3394,14 @@ Vă rugăm să încercați să anulați ultima operațiune sau să remediați fo
         <source>Description</source>
         <translation>Descrie</translation>
     </message>
+    <message>
+        <source>Full Name:</source>
+        <translation>Nume Complet:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Descriere:</translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>

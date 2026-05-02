@@ -3392,6 +3392,14 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
         <source>Description</source>
         <translation>Kuvaus</translation>
     </message>
+    <message>
+        <source>Full Name:</source>
+        <translation>Kokonimi:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Kuvaus:</translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>

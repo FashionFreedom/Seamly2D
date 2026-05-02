@@ -3376,6 +3376,14 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <source>Description</source>
         <translation type="unfinished">Description</translation>
     </message>
+    <message>
+        <source>Full Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation type="unfinished">Description:</translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>

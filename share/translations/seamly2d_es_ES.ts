@@ -3410,6 +3410,14 @@ Intente deshacer la última operación o corregir la fórmula defectuosa.</trans
         <source>Description</source>
         <translation>Descripción</translation>
     </message>
+    <message>
+        <source>Full Name:</source>
+        <translation>Nombre Completo:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Descripción:</translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>
