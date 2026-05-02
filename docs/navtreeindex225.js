@@ -1,5 +1,7 @@
 var NAVTREEINDEX225 =
 {
+"dc/d31/msvc-arm64_2include_2xercesc_2framework_2MemoryManager_8hpp.html":[4,0,0,1,15,3,0,0,1,6],
+"dc/d31/msvc-arm64_2include_2xercesc_2framework_2MemoryManager_8hpp_source.html":[4,0,0,1,15,3,0,0,1,6],
 "dc/d32/vlinetypeproperty_8cpp.html":[4,0,0,1,11,0,27],
 "dc/d32/vlinetypeproperty_8cpp_source.html":[4,0,0,1,11,0,27],
 "dc/d33/msvc-arm64_2include_2xercesc_2framework_2LocalFileFormatTarget_8hpp.html":[4,0,0,1,15,3,0,0,1,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX225 =
 "dc/d42/classRefHash3KeysIdPool.html#abb607aae5d15dc9b3e86f249dc653d85":[3,0,437,17],
 "dc/d42/classRefHash3KeysIdPool.html#abb607aae5d15dc9b3e86f249dc653d85":[3,0,437,11],
 "dc/d42/classRefHash3KeysIdPool.html#abb607aae5d15dc9b3e86f249dc653d85":[3,0,437,5],
-"dc/d42/classRefHash3KeysIdPool.html#abcaa8490d75ef58f8de075b677797160":[3,0,437,59],
-"dc/d42/classRefHash3KeysIdPool.html#abcaa8490d75ef58f8de075b677797160":[3,0,437,58],
-"dc/d42/classRefHash3KeysIdPool.html#abcaa8490d75ef58f8de075b677797160":[3,0,437,56]
+"dc/d42/classRefHash3KeysIdPool.html#abcaa8490d75ef58f8de075b677797160":[3,0,437,59]
 };

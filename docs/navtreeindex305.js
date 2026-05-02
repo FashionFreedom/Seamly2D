@@ -1,5 +1,7 @@
 var NAVTREEINDEX305 =
 {
+"de/ddd/classVToolBasePoint.html#a5a4d8aa44cc3d9c2cae5db03583ec3c9":[3,0,738,19],
+"de/ddd/classVToolBasePoint.html#a5c813b14c423f5716cc57748bd0cd8a0":[3,0,738,14],
 "de/ddd/classVToolBasePoint.html#a72e08446ad1ea2bfff767eecad146eb3":[3,0,738,23],
 "de/ddd/classVToolBasePoint.html#a771aae9604b3804776b4678b53150f53":[3,0,738,20],
 "de/ddd/classVToolBasePoint.html#a8d7783c430144d6c9dfb21d1fe6a971e":[3,0,738,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX305 =
 "df/d03/classVSplinePoint.html#a7088d30ad5e7e16f96addf5f56cfd71f":[3,0,729,19],
 "df/d03/classVSplinePoint.html#a7a34859c8792242b95cc79e14438bd87":[3,0,729,17],
 "df/d03/classVSplinePoint.html#a84addf0f389db0aa0107063a3096d275":[3,0,729,12],
-"df/d03/classVSplinePoint.html#a8c14ce5a7719c458318a2e565aec8daf":[3,0,729,5],
-"df/d03/classVSplinePoint.html#a9b3f2aa5496906203902dbce9b2ee839":[3,0,729,18],
-"df/d03/classVSplinePoint.html#aa8674b38346de02314ed8fb286c06771":[3,0,729,4]
+"df/d03/classVSplinePoint.html#a8c14ce5a7719c458318a2e565aec8daf":[3,0,729,5]
 };

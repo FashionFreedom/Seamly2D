@@ -1,5 +1,7 @@
 var NAVTREEINDEX296 =
 {
+"de/da7/classDOMImplementationLS.html#a5b85d7ce116a4899436783bc4364495fabf99be427aa356bfced8288129c270eb":[3,0,180,3,5],
+"de/da7/classDOMImplementationLS.html#a61a141a85c8dc0ed89eb9bafca4e3f3e":[3,0,180,30],
 "de/da7/classDOMImplementationLS.html#a61a141a85c8dc0ed89eb9bafca4e3f3e":[3,0,180,31],
 "de/da7/classDOMImplementationLS.html#a61a141a85c8dc0ed89eb9bafca4e3f3e":[3,0,180,29],
 "de/da7/classDOMImplementationLS.html#a61a141a85c8dc0ed89eb9bafca4e3f3e":[3,0,180,28],
@@ -247,7 +249,5 @@ var NAVTREEINDEX296 =
 "de/db4/classBinMemInputStream.html#a939fb86f3143d1857e1134ad4d73bc69a3ae3a79455bff6820cfa644854743522":[3,0,39,1,2],
 "de/db4/classBinMemInputStream.html#a939fb86f3143d1857e1134ad4d73bc69a3ae3a79455bff6820cfa644854743522":[3,0,39,0,5],
 "de/db4/classBinMemInputStream.html#a939fb86f3143d1857e1134ad4d73bc69a3ae3a79455bff6820cfa644854743522":[3,0,39,2,8],
-"de/db4/classBinMemInputStream.html#a939fb86f3143d1857e1134ad4d73bc69a3ae3a79455bff6820cfa644854743522":[3,0,39,3,8],
-"de/db4/classBinMemInputStream.html#a939fb86f3143d1857e1134ad4d73bc69a3ae3a79455bff6820cfa644854743522":[3,0,39,0,11],
-"de/db4/classBinMemInputStream.html#a939fb86f3143d1857e1134ad4d73bc69a3ae3a79455bff6820cfa644854743522":[3,0,39,2,11]
+"de/db4/classBinMemInputStream.html#a939fb86f3143d1857e1134ad4d73bc69a3ae3a79455bff6820cfa644854743522":[3,0,39,3,8]
 };

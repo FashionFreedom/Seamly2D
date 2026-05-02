@@ -1,5 +1,7 @@
 var NAVTREEINDEX182 =
 {
+"d9/da7/msvc-arm64_2include_2xercesc_2util_2RefHash2KeysTableOf_8c.html":[4,0,0,1,15,3,0,0,6,52],
+"d9/da7/msvc-arm64_2include_2xercesc_2util_2RefHash2KeysTableOf_8c_source.html":[4,0,0,1,15,3,0,0,6,52],
 "d9/da8/macx_2include_2xercesc_2framework_2XMLEntityDecl_8hpp.html":[4,0,0,1,15,0,0,0,1,22],
 "d9/da8/macx_2include_2xercesc_2framework_2XMLEntityDecl_8hpp_source.html":[4,0,0,1,15,0,0,0,1,22],
 "d9/dac/classXMLDOMMsg.html":[3,0,821],
@@ -247,7 +249,5 @@ var NAVTREEINDEX182 =
 "d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdea33bfe06d1f9f0f26923a5def869f6170":[3,0,821,2,132],
 "d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdea33bfe06d1f9f0f26923a5def869f6170":[3,0,821,2,9],
 "d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdea33bfe06d1f9f0f26923a5def869f6170":[3,0,821,0,50],
-"d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdea33bfe06d1f9f0f26923a5def869f6170":[3,0,821,1,91],
-"d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdea33bfe06d1f9f0f26923a5def869f6170":[3,0,821,0,91],
-"d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdea33bfe06d1f9f0f26923a5def869f6170":[3,0,821,3,50]
+"d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdea33bfe06d1f9f0f26923a5def869f6170":[3,0,821,1,91]
 };

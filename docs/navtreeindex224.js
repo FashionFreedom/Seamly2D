@@ -1,5 +1,7 @@
 var NAVTREEINDEX224 =
 {
+"dc/d1d/classVToolLinePoint.html#ad9e9a45931794ebc35ceb35f45e8385f":[3,0,754,24],
+"dc/d1d/classVToolLinePoint.html#add01dcee4ce85a001a6f837f0c3ad516":[3,0,754,17],
 "dc/d1d/classVToolLinePoint.html#aeafa93d79576d6eb67be12d966dba541":[3,0,754,19],
 "dc/d1d/classVToolLinePoint.html#af1ec7fe40363e81a0a0aa3b9753f1deb":[3,0,754,23],
 "dc/d1d/tst__vcommandline_8cpp.html":[4,0,0,2,2,19],
@@ -247,7 +249,5 @@ var NAVTREEINDEX224 =
 "dc/d30/mingw_2include_2xercesc_2validators_2common_2AllContentModel_8hpp.html":[4,0,0,1,15,1,0,0,7,0,0],
 "dc/d30/mingw_2include_2xercesc_2validators_2common_2AllContentModel_8hpp_source.html":[4,0,0,1,15,1,0,0,7,0,0],
 "dc/d31/mingw_2include_2xercesc_2validators_2common_2SimpleContentModel_8hpp.html":[4,0,0,1,15,1,0,0,7,0,14],
-"dc/d31/mingw_2include_2xercesc_2validators_2common_2SimpleContentModel_8hpp_source.html":[4,0,0,1,15,1,0,0,7,0,14],
-"dc/d31/msvc-arm64_2include_2xercesc_2framework_2MemoryManager_8hpp.html":[4,0,0,1,15,3,0,0,1,6],
-"dc/d31/msvc-arm64_2include_2xercesc_2framework_2MemoryManager_8hpp_source.html":[4,0,0,1,15,3,0,0,1,6]
+"dc/d31/mingw_2include_2xercesc_2validators_2common_2SimpleContentModel_8hpp_source.html":[4,0,0,1,15,1,0,0,7,0,14]
 };

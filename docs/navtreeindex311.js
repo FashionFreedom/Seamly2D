@@ -1,5 +1,7 @@
 var NAVTREEINDEX311 =
 {
+"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a1af3d22033637c604f9e99fe1b9eee6d":[3,0,861,2,20],
+"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a1af3d22033637c604f9e99fe1b9eee6d":[3,0,861,3,32],
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a1af3d22033637c604f9e99fe1b9eee6d":[3,0,861,2,32],
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a1af3d22033637c604f9e99fe1b9eee6d":[3,0,861,2,44],
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a1af3d22033637c604f9e99fe1b9eee6d":[3,0,861,3,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX311 =
 "df/d5e/classDialogSplinePath.html#ad65707a56989e43cf6f8fe46ca79e620":[3,0,132,12],
 "df/d5e/classDialogSplinePath.html#ad75039500386dc57cbd89f5182012ac3":[3,0,132,20],
 "df/d5e/classDialogSplinePath.html#ad8731a83a3696e177bf2be5786bf8734":[3,0,132,30],
-"df/d5e/classDialogSplinePath.html#adce00e1fd2e6c0b64150628289713f61":[3,0,132,25],
-"df/d5e/classDialogSplinePath.html#add151ff24c186c035d0f6d7516f6439f":[3,0,132,49],
-"df/d5e/classDialogSplinePath.html#aea35b7ea4ec5c8b12becd71eb8c0bc2f":[3,0,132,6]
+"df/d5e/classDialogSplinePath.html#adce00e1fd2e6c0b64150628289713f61":[3,0,132,25]
 };

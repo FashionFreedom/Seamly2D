@@ -1,5 +1,7 @@
 var NAVTREEINDEX128 =
 {
+"d7/d8c/classXMLBigDecimal.html#a83b5a96cdaa07cffbf668e4038ed168d":[3,0,807,15],
+"d7/d8c/classXMLBigDecimal.html#a83b5a96cdaa07cffbf668e4038ed168d":[3,0,807,7],
 "d7/d8c/classXMLBigDecimal.html#a850bec303bffabdec2493eb8e0c6d85e":[3,0,807,41],
 "d7/d8c/classXMLBigDecimal.html#a850bec303bffabdec2493eb8e0c6d85e":[3,0,807,42],
 "d7/d8c/classXMLBigDecimal.html#a850bec303bffabdec2493eb8e0c6d85e":[3,0,807,43],
@@ -247,7 +249,5 @@ var NAVTREEINDEX128 =
 "d7/d8c/classXMLString.html#a8469910df491a22a95b0b9993dc111f9":[3,0,868,7],
 "d7/d8c/classXMLString.html#a8469910df491a22a95b0b9993dc111f9":[3,0,868,5],
 "d7/d8c/classXMLString.html#a8469910df491a22a95b0b9993dc111f9":[3,0,868,3],
-"d7/d8c/classXMLString.html#a8469910df491a22a95b0b9993dc111f9":[3,0,868,1],
-"d7/d8c/classXMLString.html#a87abed2b2baf335e4fbc09182989c07d":[3,0,868,356],
-"d7/d8c/classXMLString.html#a87abed2b2baf335e4fbc09182989c07d":[3,0,868,357]
+"d7/d8c/classXMLString.html#a8469910df491a22a95b0b9993dc111f9":[3,0,868,1]
 };

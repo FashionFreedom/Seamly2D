@@ -1,5 +1,7 @@
 var NAVTREEINDEX261 =
 {
+"dc/deb/msvc_2include_2xercesc_2internal_2CharTypeTables_8hpp.html#a0a16ac8275dcdbd22ea7d08012591d88":[4,0,0,1,15,2,0,0,2,2,11],
+"dc/deb/msvc_2include_2xercesc_2internal_2CharTypeTables_8hpp.html#a0f99d74faad8fb7f29dbfbc4798b89f0":[4,0,0,1,15,2,0,0,2,2,4],
 "dc/deb/msvc_2include_2xercesc_2internal_2CharTypeTables_8hpp.html#a389e023b5d0498fed82b6b6eb4d59d4c":[4,0,0,1,15,2,0,0,2,2,10],
 "dc/deb/msvc_2include_2xercesc_2internal_2CharTypeTables_8hpp.html#a3c956dda80792e2d8079a4afb16c6141":[4,0,0,1,15,2,0,0,2,2,0],
 "dc/deb/msvc_2include_2xercesc_2internal_2CharTypeTables_8hpp.html#a578890f08bffaa921612519791d95383":[4,0,0,1,15,2,0,0,2,2,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX261 =
 "dc/dfe/classIntersectCircleTangentDialog.html#a17fde6f4d21cbcdadaa11ed91b644c0d":[3,0,319,15],
 "dc/dfe/classIntersectCircleTangentDialog.html#a30e851cda7160d94de7294c5341075a0":[3,0,319,1],
 "dc/dfe/classIntersectCircleTangentDialog.html#a35df5d66fb30441a66a4745f3a57130a":[3,0,319,9],
-"dc/dfe/classIntersectCircleTangentDialog.html#a3a0d6ca684b87c8ab89e75b87af3495d":[3,0,319,8],
-"dc/dfe/classIntersectCircleTangentDialog.html#a400d03fe263a7df3076c5d62e03ee965":[3,0,319,14],
-"dc/dfe/classIntersectCircleTangentDialog.html#a47880c4901b5e4cdf0ccb240b8d40fea":[3,0,319,0]
+"dc/dfe/classIntersectCircleTangentDialog.html#a3a0d6ca684b87c8ab89e75b87af3495d":[3,0,319,8]
 };

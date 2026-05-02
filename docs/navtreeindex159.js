@@ -1,5 +1,7 @@
 var NAVTREEINDEX159 =
 {
+"d8/d6b/structGroupAttributes.html#a04138b4624a8b7f3f7d4ba8d8d5a1e0c":[3,0,281,1],
+"d8/d6b/structGroupAttributes.html#a0c1c4f04e9d565df4f54605370cd2f29":[3,0,281,4],
 "d8/d6b/structGroupAttributes.html#a41f68739ef7cbe70c847ab56aacb72a5":[3,0,281,3],
 "d8/d6b/structGroupAttributes.html#a4cd669641496d697360af0d5aeef4c0c":[3,0,281,0],
 "d8/d6b/structGroupAttributes.html#a8b2cfbabf8b1452e49f1c4e490286dd9":[3,0,281,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX159 =
 "d8/d73/classXMLUri.html#a8123c3df9b51117a6713d73a9ccd6fdd":[3,0,877,196],
 "d8/d73/classXMLUri.html#a8123c3df9b51117a6713d73a9ccd6fdd":[3,0,877,197],
 "d8/d73/classXMLUri.html#a8123c3df9b51117a6713d73a9ccd6fdd":[3,0,877,198],
-"d8/d73/classXMLUri.html#a8123c3df9b51117a6713d73a9ccd6fdd":[3,0,877,199],
-"d8/d73/classXMLUri.html#a897c9bc1e41e76ac3efad9a572578b5e":[3,0,877,119],
-"d8/d73/classXMLUri.html#a897c9bc1e41e76ac3efad9a572578b5e":[3,0,877,118]
+"d8/d73/classXMLUri.html#a8123c3df9b51117a6713d73a9ccd6fdd":[3,0,877,199]
 };

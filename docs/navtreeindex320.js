@@ -1,5 +1,7 @@
 var NAVTREEINDEX320 =
 {
+"df/dfe/classDOMAttrMapImpl.html#ac423ca4297de02b18df51ca903b1c151":[3,0,142,48],
+"df/dfe/classDOMAttrMapImpl.html#ac7d12c5cb3b638fb36c1669ba58279e4":[3,0,142,76],
 "df/dfe/classDOMAttrMapImpl.html#ac7d12c5cb3b638fb36c1669ba58279e4":[3,0,142,77],
 "df/dfe/classDOMAttrMapImpl.html#ac7d12c5cb3b638fb36c1669ba58279e4":[3,0,142,78],
 "df/dfe/classDOMAttrMapImpl.html#ac7d12c5cb3b638fb36c1669ba58279e4":[3,0,142,79],
@@ -247,7 +249,5 @@ var NAVTREEINDEX320 =
 "functions_enum_n.html":[3,3,4,11],
 "functions_enum_o.html":[3,3,4,12],
 "functions_enum_p.html":[3,3,4,13],
-"functions_enum_q.html":[3,3,4,14],
-"functions_enum_r.html":[3,3,4,15],
-"functions_enum_s.html":[3,3,4,16]
+"functions_enum_q.html":[3,3,4,14]
 };

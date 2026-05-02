@@ -1,5 +1,7 @@
 var NAVTREEINDEX321 =
 {
+"functions_enum_r.html":[3,3,4,15],
+"functions_enum_s.html":[3,3,4,16],
 "functions_enum_t.html":[3,3,4,17],
 "functions_enum_u.html":[3,3,4,18],
 "functions_enum_v.html":[3,3,4,19],

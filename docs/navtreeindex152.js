@@ -1,5 +1,7 @@
 var NAVTREEINDEX152 =
 {
+"d7/df5/classVMainGraphicsScene.html":[3,0,689],
+"d7/df5/classVMainGraphicsScene.html#a05746c1d15375a7c3a219c183064cd21":[3,0,689,25],
 "d7/df5/classVMainGraphicsScene.html#a0a56837cf2173ce8becd995fec5e8404":[3,0,689,2],
 "d7/df5/classVMainGraphicsScene.html#a0ae5273ffac95ee265876215648d030a":[3,0,689,75],
 "d7/df5/classVMainGraphicsScene.html#a129927e4b5aa68b990410cd473e2a3db":[3,0,689,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX152 =
 "d8/d1f/classXMLInternalErrorHandler.html#a7a6dc4f358438d1a397c49d56cd51eb8":[3,0,846,1],
 "d8/d1f/classXMLInternalErrorHandler.html#a7a6dc4f358438d1a397c49d56cd51eb8":[3,0,846,10],
 "d8/d1f/classXMLInternalErrorHandler.html#a7a6dc4f358438d1a397c49d56cd51eb8":[3,0,846,7],
-"d8/d1f/classXMLInternalErrorHandler.html#a7a7529d22eb564e15bf35b2e5b713739":[3,0,846,45],
-"d8/d1f/classXMLInternalErrorHandler.html#a81983ef34c732a6e16909572db43e252":[3,0,846,43],
-"d8/d1f/classXMLInternalErrorHandler.html#a81983ef34c732a6e16909572db43e252":[3,0,846,40]
+"d8/d1f/classXMLInternalErrorHandler.html#a7a7529d22eb564e15bf35b2e5b713739":[3,0,846,45]
 };

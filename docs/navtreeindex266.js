@@ -1,5 +1,7 @@
 var NAVTREEINDEX266 =
 {
+"dd/d17/classContentSpecNode.html#a9f50bccdffa191a3d31c70deece53659":[3,0,70,144],
+"dd/d17/classContentSpecNode.html#a9f50bccdffa191a3d31c70deece53659":[3,0,70,146],
 "dd/d17/classContentSpecNode.html#aab5de1987b81bcdb515e570726d65173":[3,0,70,7],
 "dd/d17/classContentSpecNode.html#aab5de1987b81bcdb515e570726d65173":[3,0,70,14],
 "dd/d17/classContentSpecNode.html#aab5de1987b81bcdb515e570726d65173":[3,0,70,21],
@@ -247,7 +249,5 @@ var NAVTREEINDEX266 =
 "dd/d3b/classVObjPaintDevice.html#aff41de10b996f35a2d1b9be902e5a403":[3,0,699,4],
 "dd/d3b/classVisToolBisector.html":[3,0,644],
 "dd/d3b/classVisToolBisector.html#a04b5ffd6921bd1f091b27f034af23e01":[3,0,644,3],
-"dd/d3b/classVisToolBisector.html#a0fd7f37e87b3f42e79f9901fd08da86e":[3,0,644,9],
-"dd/d3b/classVisToolBisector.html#a30a3ecdaa243348ec05855d776799072":[3,0,644,13],
-"dd/d3b/classVisToolBisector.html#a42a27888a96f234c81979aa8a6b9a02e":[3,0,644,10]
+"dd/d3b/classVisToolBisector.html#a0fd7f37e87b3f42e79f9901fd08da86e":[3,0,644,9]
 };

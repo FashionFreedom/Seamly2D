@@ -1,5 +1,7 @@
 var NAVTREEINDEX272 =
 {
+"dd/dd3/classDOMLocator.html#ad26dfeff2c836a3b8370f9634be15236":[3,0,183,17],
+"dd/dd3/classDOMLocator.html#ad26dfeff2c836a3b8370f9634be15236":[3,0,183,16],
 "dd/dd3/mingw_2include_2xercesc_2validators_2datatype_2DoubleDatatypeValidator_8hpp.html":[4,0,0,1,15,1,0,0,7,1,14],
 "dd/dd3/mingw_2include_2xercesc_2validators_2datatype_2DoubleDatatypeValidator_8hpp_source.html":[4,0,0,1,15,1,0,0,7,1,14],
 "dd/dd3/vshortcutpropertyeditor_8cpp.html":[4,0,0,1,11,0,37],
@@ -247,7 +249,5 @@ var NAVTREEINDEX272 =
 "dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#a96f7ca448fa922ac3c836c503be3f910":[4,0,0,1,15,1,0,0,6,117,92],
 "dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#a9be406b187af53aa54068cbe6a29d385":[4,0,0,1,15,1,0,0,6,117,88],
 "dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#aa7c1b130ba96d43e3e5dcc5fb7dc4d64":[4,0,0,1,15,1,0,0,6,117,104],
-"dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#aa7f9f9abedf1c31501083faf1a1cc5d6":[4,0,0,1,15,1,0,0,6,117,38],
-"dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#aa8f4615041a36d9f9989da858d12f980":[4,0,0,1,15,1,0,0,6,117,29],
-"dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#aaa427658add2c69db00f137371a0242d":[4,0,0,1,15,1,0,0,6,117,32]
+"dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#aa7f9f9abedf1c31501083faf1a1cc5d6":[4,0,0,1,15,1,0,0,6,117,38]
 };

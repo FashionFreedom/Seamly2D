@@ -1,5 +1,7 @@
 var NAVTREEINDEX209 =
 {
+"db/d32/classLayoutSettingsDialog.html#a8cab137c7c35c784afd5111e1346fb39":[3,0,327,47],
+"db/d32/classLayoutSettingsDialog.html#a8ee9c5561632c749ef41ec02f676d57c":[3,0,327,32],
 "db/d32/classLayoutSettingsDialog.html#a9186b4901f56eec9c0d2c0fbe91f550b":[3,0,327,55],
 "db/d32/classLayoutSettingsDialog.html#a94adc895582802f7d1536bb39e2eed5d":[3,0,327,66],
 "db/d32/classLayoutSettingsDialog.html#a9d0b3066cb5477de82b7a0183ee1d120":[3,0,327,25],
@@ -247,7 +249,5 @@ var NAVTREEINDEX209 =
 "db/d3c/namespaceUi.html":[2,0,23],
 "db/d3d/classVToolShoulderPoint.html":[3,0,766],
 "db/d3d/classVToolShoulderPoint.html#a012d608f6b0f8d1f08f55f20564e3a69":[3,0,766,2],
-"db/d3d/classVToolShoulderPoint.html#a097609a4135a150b72defddf9c090e32":[3,0,766,16],
-"db/d3d/classVToolShoulderPoint.html#a12f1eefb2f1a4aa5de016f3fd4072bab":[3,0,766,13],
-"db/d3d/classVToolShoulderPoint.html#a17020c5246071910e379185b6a57e3f5":[3,0,766,10]
+"db/d3d/classVToolShoulderPoint.html#a097609a4135a150b72defddf9c090e32":[3,0,766,16]
 };

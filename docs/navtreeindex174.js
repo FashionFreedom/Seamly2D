@@ -1,5 +1,7 @@
 var NAVTREEINDEX174 =
 {
+"d9/d49/classXSDElementNSImpl.html#a2fc3660563b897eb7450ca1f6f2d74c8":[3,0,898,19],
+"d9/d49/classXSDElementNSImpl.html#a2fc3660563b897eb7450ca1f6f2d74c8":[3,0,898,18],
 "d9/d49/classXSDElementNSImpl.html#a2fc3660563b897eb7450ca1f6f2d74c8":[3,0,898,17],
 "d9/d49/classXSDElementNSImpl.html#a4f97db8c1ff7df5ead3f254625dbb1bd":[3,0,898,29],
 "d9/d49/classXSDElementNSImpl.html#a5d890ccb04699cfcf6ebf18d12e6cf40":[3,0,898,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX174 =
 "d9/d54/classVAbstractArc.html#afe862f50e5d74694f2232029a3b8b189":[3,0,548,19],
 "d9/d54/dialoggroup_8h.html":[4,0,0,1,13,0,1,30],
 "d9/d54/dialoggroup_8h_source.html":[4,0,0,1,13,0,1,30],
-"d9/d58/mingw_2include_2xercesc_2util_2KeyValuePair_8hpp.html":[4,0,0,1,15,1,0,0,6,33],
-"d9/d58/mingw_2include_2xercesc_2util_2KeyValuePair_8hpp_source.html":[4,0,0,1,15,1,0,0,6,33],
-"d9/d58/msvc_2include_2xercesc_2framework_2XMLGrammarDescription_8hpp.html":[4,0,0,1,15,2,0,0,1,27]
+"d9/d58/mingw_2include_2xercesc_2util_2KeyValuePair_8hpp.html":[4,0,0,1,15,1,0,0,6,33]
 };

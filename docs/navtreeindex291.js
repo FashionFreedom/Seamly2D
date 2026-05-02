@@ -1,5 +1,7 @@
 var NAVTREEINDEX291 =
 {
+"de/d7a/classTraverseSchema.html#a8834d24a8ee29d5c4cb3ef43426cb1ac":[3,0,509,312],
+"de/d7a/classTraverseSchema.html#a892d0a30c8c7b83a3b91eb4e5c6cc69e":[3,0,509,371],
 "de/d7a/classTraverseSchema.html#a892d0a30c8c7b83a3b91eb4e5c6cc69e":[3,0,509,370],
 "de/d7a/classTraverseSchema.html#a892d0a30c8c7b83a3b91eb4e5c6cc69e":[3,0,509,368],
 "de/d7a/classTraverseSchema.html#a892d0a30c8c7b83a3b91eb4e5c6cc69e":[3,0,509,369],
@@ -247,7 +249,5 @@ var NAVTREEINDEX291 =
 "de/d7d/classDOMXPathExpression.html#abf2860100eddc2f1db3ee856ecbb0bc7":[3,0,231,19],
 "de/d7d/classDOMXPathExpression.html#abf2860100eddc2f1db3ee856ecbb0bc7":[3,0,231,16],
 "de/d7d/classDOMXPathExpression.html#abf59d7dff5c3ea39ffd78abd76d10ce9":[3,0,231,6],
-"de/d7d/classDOMXPathExpression.html#abf59d7dff5c3ea39ffd78abd76d10ce9":[3,0,231,9],
-"de/d7d/classDOMXPathExpression.html#abf59d7dff5c3ea39ffd78abd76d10ce9":[3,0,231,3],
-"de/d7d/classDOMXPathExpression.html#abf59d7dff5c3ea39ffd78abd76d10ce9":[3,0,231,0]
+"de/d7d/classDOMXPathExpression.html#abf59d7dff5c3ea39ffd78abd76d10ce9":[3,0,231,9]
 };

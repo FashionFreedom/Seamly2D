@@ -1,5 +1,7 @@
 var NAVTREEINDEX202 =
 {
+"da/db1/mingw_2include_2xercesc_2util_2XMLException_8hpp.html#aa8b7d7004b2f9e45e451c2744164a19e":[4,0,0,1,15,1,0,0,6,100,7],
+"da/db1/mingw_2include_2xercesc_2util_2XMLException_8hpp.html#ab9a06c5ffd2be5553ae38aa0e1b1247a":[4,0,0,1,15,1,0,0,6,100,3],
 "da/db1/mingw_2include_2xercesc_2util_2XMLException_8hpp.html#ac3b09f5020fc06a2c4254b627b6da8fb":[4,0,0,1,15,1,0,0,6,100,6],
 "da/db1/mingw_2include_2xercesc_2util_2XMLException_8hpp.html#acc9f472354a8f6b4501b6abd86a3ce61":[4,0,0,1,15,1,0,0,6,100,11],
 "da/db1/mingw_2include_2xercesc_2util_2XMLException_8hpp_source.html":[4,0,0,1,15,1,0,0,6,100],
@@ -247,7 +249,5 @@ var NAVTREEINDEX202 =
 "da/db5/classDOMNotationImpl.html#af0aa3dcc7a51192b560efc7eacf539bb":[3,0,211,71],
 "da/db5/classDOMNotationImpl.html#af0aa3dcc7a51192b560efc7eacf539bb":[3,0,211,68],
 "da/db5/classDOMNotationImpl.html#af0aa3dcc7a51192b560efc7eacf539bb":[3,0,211,70],
-"da/db5/classDOMNotationImpl.html#af0aa3dcc7a51192b560efc7eacf539bb":[3,0,211,69],
-"da/db5/classDOMNotationImpl.html#afa1421a2e10dae9ea854f98f0d1da8f2":[3,0,211,194],
-"da/db5/classDOMNotationImpl.html#afa1421a2e10dae9ea854f98f0d1da8f2":[3,0,211,193]
+"da/db5/classDOMNotationImpl.html#af0aa3dcc7a51192b560efc7eacf539bb":[3,0,211,69]
 };

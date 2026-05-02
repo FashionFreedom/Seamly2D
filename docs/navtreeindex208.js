@@ -1,5 +1,7 @@
 var NAVTREEINDEX208 =
 {
+"db/d26/classRangeOp.html#a58a8f0ac54da8d3b4ca3bf5bede79658":[3,0,426,7],
+"db/d26/classRangeOp.html#a58a8f0ac54da8d3b4ca3bf5bede79658":[3,0,426,4],
 "db/d26/classRangeOp.html#a8f592cfe598ad0ee10c05e42dc375da6":[3,0,426,20],
 "db/d26/classRangeOp.html#ab7ac6b2c6960861501d607bcc1fe6871":[3,0,426,0],
 "db/d26/classRangeOp.html#ab7ac6b2c6960861501d607bcc1fe6871":[3,0,426,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX208 =
 "db/d32/classLayoutSettingsDialog.html#a7fb948fef2fed46d2c8e754039503b2d":[3,0,327,65],
 "db/d32/classLayoutSettingsDialog.html#a86fe021377eb535ea32c2f3eab376c06":[3,0,327,31],
 "db/d32/classLayoutSettingsDialog.html#a884b605797f7b450d14ff7f20104c812":[3,0,327,40],
-"db/d32/classLayoutSettingsDialog.html#a8a734cb22982232fb21c3f1e54ec05d3":[3,0,327,45],
-"db/d32/classLayoutSettingsDialog.html#a8cab137c7c35c784afd5111e1346fb39":[3,0,327,47],
-"db/d32/classLayoutSettingsDialog.html#a8ee9c5561632c749ef41ec02f676d57c":[3,0,327,32]
+"db/d32/classLayoutSettingsDialog.html#a8a734cb22982232fb21c3f1e54ec05d3":[3,0,327,45]
 };

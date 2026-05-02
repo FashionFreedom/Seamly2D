@@ -1,5 +1,7 @@
 var NAVTREEINDEX190 =
 {
+"da/d05/classXMLPlatformUtils.html#a4d315cfa7b9ec38b47b458fde5f2f443":[3,0,856,28],
+"da/d05/classXMLPlatformUtils.html#a4d315cfa7b9ec38b47b458fde5f2f443":[3,0,856,29],
 "da/d05/classXMLPlatformUtils.html#a4d315cfa7b9ec38b47b458fde5f2f443":[3,0,856,30],
 "da/d05/classXMLPlatformUtils.html#a4d315cfa7b9ec38b47b458fde5f2f443":[3,0,856,31],
 "da/d05/classXMLPlatformUtils.html#a560fd9eecc8651995a4d6af70d71f23a":[3,0,856,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX190 =
 "da/d18/macx_2include_2xercesc_2framework_2psvi_2XSModelGroup_8hpp.html":[4,0,0,1,15,0,0,0,1,0,15],
 "da/d18/macx_2include_2xercesc_2framework_2psvi_2XSModelGroup_8hpp_source.html":[4,0,0,1,15,0,0,0,1,0,15],
 "da/d19/classGraphicsViewZoom.html":[3,0,280],
-"da/d19/classGraphicsViewZoom.html#a04a708978c8f281138b4f6884dcff389":[3,0,280,0],
-"da/d19/classGraphicsViewZoom.html#a05cd3c1b93ff588d7fdec99a3e5595f9":[3,0,280,32],
-"da/d19/classGraphicsViewZoom.html#a06773d0da98811e3459d38ab144dc99a":[3,0,280,27]
+"da/d19/classGraphicsViewZoom.html#a04a708978c8f281138b4f6884dcff389":[3,0,280,0]
 };

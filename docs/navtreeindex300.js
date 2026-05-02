@@ -1,5 +1,7 @@
 var NAVTREEINDEX300 =
 {
+"de/dcd/classXPathScanner.html#afbac01d6d3487128a9699486bad12553":[3,0,886,19],
+"de/dcd/classXPathScanner.html#afbac01d6d3487128a9699486bad12553":[3,0,886,18],
 "de/dcd/classXPathScanner.html#afbac01d6d3487128a9699486bad12553":[3,0,886,17],
 "de/dcd/classXPathScanner.html#afbac01d6d3487128a9699486bad12553":[3,0,886,16],
 "de/dcf/classPreferencesPatternPage.html":[3,0,402],
@@ -247,7 +249,5 @@ var NAVTREEINDEX300 =
 "de/dcf/classXSValue.html#a7c84743faf12081bdff03f1d8538098e":[3,0,919,96],
 "de/dcf/classXSValue.html#a7c84743faf12081bdff03f1d8538098e":[3,0,919,97],
 "de/dcf/classXSValue.html#a880f133a9c88fd26ef61556e01cfa62e":[3,0,919,5],
-"de/dcf/classXSValue.html#a880f133a9c88fd26ef61556e01cfa62e":[3,0,919,3],
-"de/dcf/classXSValue.html#a880f133a9c88fd26ef61556e01cfa62e":[3,0,919,2],
-"de/dcf/classXSValue.html#a880f133a9c88fd26ef61556e01cfa62e":[3,0,919,4]
+"de/dcf/classXSValue.html#a880f133a9c88fd26ef61556e01cfa62e":[3,0,919,3]
 };

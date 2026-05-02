@@ -1,5 +1,7 @@
 var NAVTREEINDEX315 =
 {
+"df/da4/vseamlymesettings_8h_source.html":[4,0,0,1,8,22],
+"df/da5/macx_2include_2xercesc_2util_2FlagJanitor_8hpp.html":[4,0,0,1,15,0,0,0,6,20],
 "df/da5/macx_2include_2xercesc_2util_2FlagJanitor_8hpp_source.html":[4,0,0,1,15,0,0,0,6,20],
 "df/da6/mingw_2include_2xercesc_2util_2CountedPointer_8c.html":[4,0,0,1,15,1,0,0,6,14],
 "df/da6/mingw_2include_2xercesc_2util_2CountedPointer_8c_source.html":[4,0,0,1,15,1,0,0,6,14],
@@ -247,7 +249,5 @@ var NAVTREEINDEX315 =
 "df/db4/classXTemplateSerializer.html#a9fc54bcf3d3f16d4b5c045fbe0c3c7b4":[3,0,921,34],
 "df/db4/classXTemplateSerializer.html#a9fc54bcf3d3f16d4b5c045fbe0c3c7b4":[3,0,921,35],
 "df/db4/classXTemplateSerializer.html#aa737eeb1477cfb3da390fef5b75c12be":[3,0,921,66],
-"df/db4/classXTemplateSerializer.html#aa737eeb1477cfb3da390fef5b75c12be":[3,0,921,67],
-"df/db4/classXTemplateSerializer.html#aa737eeb1477cfb3da390fef5b75c12be":[3,0,921,65],
-"df/db4/classXTemplateSerializer.html#aa737eeb1477cfb3da390fef5b75c12be":[3,0,921,64]
+"df/db4/classXTemplateSerializer.html#aa737eeb1477cfb3da390fef5b75c12be":[3,0,921,67]
 };

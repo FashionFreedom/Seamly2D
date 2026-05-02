@@ -1,5 +1,7 @@
 var NAVTREEINDEX214 =
 {
+"db/d6f/classElemStack.html#a458279f9753ec7934218d688376103a8ad63fc233aa1a6df7483da9984c9de1e1":[3,0,258,4,4],
+"db/d6f/classElemStack.html#a458279f9753ec7934218d688376103a8ad63fc233aa1a6df7483da9984c9de1e1":[3,0,258,2,2],
 "db/d6f/classElemStack.html#a458279f9753ec7934218d688376103a8ad63fc233aa1a6df7483da9984c9de1e1":[3,0,258,1,4],
 "db/d6f/classElemStack.html#a458279f9753ec7934218d688376103a8ad63fc233aa1a6df7483da9984c9de1e1":[3,0,258,3,4],
 "db/d6f/classElemStack.html#a458279f9753ec7934218d688376103a8ad63fc233aa1a6df7483da9984c9de1e1":[3,0,258,4,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX214 =
 "db/d7f/classXMLBigInteger.html#adff0b76ac49ebb55e8deb90ae36bb8c4":[3,0,808,1],
 "db/d7f/classXMLBigInteger.html#adff0b76ac49ebb55e8deb90ae36bb8c4":[3,0,808,10],
 "db/d7f/classXMLBigInteger.html#ae71b7d886ddf7fee80794cd20ca2ed48":[3,0,808,24],
-"db/d7f/classXMLBigInteger.html#ae71b7d886ddf7fee80794cd20ca2ed48":[3,0,808,25],
-"db/d7f/classXMLBigInteger.html#ae71b7d886ddf7fee80794cd20ca2ed48":[3,0,808,27],
-"db/d7f/classXMLBigInteger.html#ae71b7d886ddf7fee80794cd20ca2ed48":[3,0,808,26]
+"db/d7f/classXMLBigInteger.html#ae71b7d886ddf7fee80794cd20ca2ed48":[3,0,808,25]
 };

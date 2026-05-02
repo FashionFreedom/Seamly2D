@@ -1,5 +1,7 @@
 var NAVTREEINDEX166 =
 {
+"d8/dba/classVAbstractPattern.html#ae851ba1788259138864d64abcbc55274":[3,0,562,65],
+"d8/dba/classVAbstractPattern.html#ae9e0cab50c1c9ed0d39b45556b2e978c":[3,0,562,38],
 "d8/dba/classVAbstractPattern.html#aea3325cda214b61b101f019e1f9d3383":[3,0,562,211],
 "d8/dba/classVAbstractPattern.html#aeb8987286fed0a278bb17b75f1464a18":[3,0,562,95],
 "d8/dba/classVAbstractPattern.html#aebbf3e4f5e8bd35f41f1679e9a5432c4":[3,0,562,330],
@@ -247,7 +249,5 @@ var NAVTREEINDEX166 =
 "d8/dbf/macx_2include_2xercesc_2framework_2psvi_2XSAttributeGroupDefinition_8hpp_source.html":[4,0,0,1,15,0,0,0,1,0,7],
 "d8/dc0/macx_2include_2xercesc_2framework_2XMLErrorReporter_8hpp.html":[4,0,0,1,15,0,0,0,1,25],
 "d8/dc0/macx_2include_2xercesc_2framework_2XMLErrorReporter_8hpp_source.html":[4,0,0,1,15,0,0,0,1,25],
-"d8/dc1/tst__qmutokenparser_8cpp.html":[4,0,0,2,2,9],
-"d8/dc1/tst__qmutokenparser_8cpp_source.html":[4,0,0,2,2,9],
-"d8/dc6/msvc_2include_2xercesc_2validators_2datatype_2BooleanDatatypeValidator_8hpp.html":[4,0,0,1,15,2,0,0,7,1,6]
+"d8/dc1/tst__qmutokenparser_8cpp.html":[4,0,0,2,2,9]
 };

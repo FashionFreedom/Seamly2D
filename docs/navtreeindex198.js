@@ -1,5 +1,7 @@
 var NAVTREEINDEX198 =
 {
+"da/d80/classDOMDeepNodeListPool.html#ae9a30abd40b74f3fbe8b4efcda9c7a0a":[3,0,155,46],
+"da/d80/classDOMDeepNodeListPool.html#ae9a30abd40b74f3fbe8b4efcda9c7a0a":[3,0,155,47],
 "da/d80/classDOMDeepNodeListPool.html#af367e2c900feadc88af8a3be80498611":[3,0,155,69],
 "da/d80/classDOMDeepNodeListPool.html#af367e2c900feadc88af8a3be80498611":[3,0,155,68],
 "da/d80/classDOMDeepNodeListPool.html#af367e2c900feadc88af8a3be80498611":[3,0,155,70],
@@ -247,7 +249,5 @@ var NAVTREEINDEX198 =
 "da/d96/classXercesXPath.html#a565fea889de8b0b0a660b11c21ba3cfe":[3,0,794,29],
 "da/d96/classXercesXPath.html#a565fea889de8b0b0a660b11c21ba3cfe":[3,0,794,28],
 "da/d96/classXercesXPath.html#a565fea889de8b0b0a660b11c21ba3cfe":[3,0,794,30],
-"da/d96/classXercesXPath.html#a58ef78db71d2631db2c5972f6a4e09af":[3,0,794,26],
-"da/d96/classXercesXPath.html#a58ef78db71d2631db2c5972f6a4e09af":[3,0,794,27],
-"da/d96/classXercesXPath.html#a58ef78db71d2631db2c5972f6a4e09af":[3,0,794,25]
+"da/d96/classXercesXPath.html#a58ef78db71d2631db2c5972f6a4e09af":[3,0,794,26]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX151 =
 {
+"d7/dd8/classModifierOp.html#abbab1cd2ea4caba12928dcf54d22df1e":[3,0,352,23],
+"d7/dd8/classModifierOp.html#ac17f19dd8ceb7e2ad13bc283bae2ce8a":[3,0,352,24],
 "d7/dd8/classModifierOp.html#adc4365296b13214c690c9009e3f9cc90":[3,0,352,10],
 "d7/dd8/classModifierOp.html#adc4365296b13214c690c9009e3f9cc90":[3,0,352,7],
 "d7/dd8/classModifierOp.html#adc4365296b13214c690c9009e3f9cc90":[3,0,352,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX151 =
 "d7/df4/structHash2KeysSetBucketElem.html":[3,0,289],
 "d7/df4/structHash2KeysSetBucketElem.html#a108fcc8eb12ae223bfd282bb3b03b13f":[3,0,289,2],
 "d7/df4/structHash2KeysSetBucketElem.html#a546279d40c5465afe2477f56fda31f3b":[3,0,289,1],
-"d7/df4/structHash2KeysSetBucketElem.html#a9ec8ad5808a8a542be4f4fa4650ba310":[3,0,289,0],
-"d7/df5/classVMainGraphicsScene.html":[3,0,689],
-"d7/df5/classVMainGraphicsScene.html#a05746c1d15375a7c3a219c183064cd21":[3,0,689,25]
+"d7/df4/structHash2KeysSetBucketElem.html#a9ec8ad5808a8a542be4f4fa4650ba310":[3,0,289,0]
 };

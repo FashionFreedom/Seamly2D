@@ -1,5 +1,7 @@
 var NAVTREEINDEX205 =
 {
+"da/dd0/classDialogVariables.html#a7251acefe1ab7e151b5348cd06ab7218":[3,0,137,41],
+"da/dd0/classDialogVariables.html#a775037198c18b3a7aa63bd15bf69691d":[3,0,137,45],
 "da/dd0/classDialogVariables.html#a7c42f251163cb27927b5a97c966126e6":[3,0,137,26],
 "da/dd0/classDialogVariables.html#a7e05b66606150c4d9c5ad5d2d58d783d":[3,0,137,24],
 "da/dd0/classDialogVariables.html#a7f282dbd16076b28d3f6a343f1545ddc":[3,0,137,15],
@@ -247,7 +249,5 @@ var NAVTREEINDEX205 =
 "da/dfb/classHash2KeysSetOf.html#ab5276bad50338c378af5e1f7047bd5a5":[3,0,290,71],
 "da/dfb/classHash2KeysSetOf.html#ab5276bad50338c378af5e1f7047bd5a5":[3,0,290,69],
 "da/dfb/classHash2KeysSetOf.html#aba665a2ebbdc6ee26ab28537380c23b5":[3,0,290,20],
-"da/dfb/classHash2KeysSetOf.html#aba665a2ebbdc6ee26ab28537380c23b5":[3,0,290,23],
-"da/dfb/classHash2KeysSetOf.html#aba665a2ebbdc6ee26ab28537380c23b5":[3,0,290,22],
-"da/dfb/classHash2KeysSetOf.html#aba665a2ebbdc6ee26ab28537380c23b5":[3,0,290,21]
+"da/dfb/classHash2KeysSetOf.html#aba665a2ebbdc6ee26ab28537380c23b5":[3,0,290,23]
 };

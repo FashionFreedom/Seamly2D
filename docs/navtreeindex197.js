@@ -1,5 +1,7 @@
 var NAVTREEINDEX197 =
 {
+"da/d79/classDOMEntityReferenceImpl.html#a818a7e146dc92e89210f4bb99acf6d51":[3,0,171,101],
+"da/d79/classDOMEntityReferenceImpl.html#a818a7e146dc92e89210f4bb99acf6d51":[3,0,171,103],
 "da/d79/classDOMEntityReferenceImpl.html#a818a7e146dc92e89210f4bb99acf6d51":[3,0,171,102],
 "da/d79/classDOMEntityReferenceImpl.html#a96ff5368a990315f9531a3cbe2d208d1":[3,0,171,7],
 "da/d79/classDOMEntityReferenceImpl.html#a96ff5368a990315f9531a3cbe2d208d1":[3,0,171,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX197 =
 "da/d80/classDOMDeepNodeListPool.html#ac5eebadab3fe23387c6af4ecdec85a04":[3,0,155,41],
 "da/d80/classDOMDeepNodeListPool.html#ac75e5e932ebad538473cd63af4bc4320":[3,0,155,75],
 "da/d80/classDOMDeepNodeListPool.html#ae9a30abd40b74f3fbe8b4efcda9c7a0a":[3,0,155,44],
-"da/d80/classDOMDeepNodeListPool.html#ae9a30abd40b74f3fbe8b4efcda9c7a0a":[3,0,155,45],
-"da/d80/classDOMDeepNodeListPool.html#ae9a30abd40b74f3fbe8b4efcda9c7a0a":[3,0,155,46],
-"da/d80/classDOMDeepNodeListPool.html#ae9a30abd40b74f3fbe8b4efcda9c7a0a":[3,0,155,47]
+"da/d80/classDOMDeepNodeListPool.html#ae9a30abd40b74f3fbe8b4efcda9c7a0a":[3,0,155,45]
 };

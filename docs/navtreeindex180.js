@@ -1,5 +1,7 @@
 var NAVTREEINDEX180 =
 {
+"d9/d83/classASCIIRangeFactory.html#ad9e9d59ab1398db759a49a36ccca02fb":[3,0,29,23],
+"d9/d83/classASCIIRangeFactory.html#ad9e9d59ab1398db759a49a36ccca02fb":[3,0,29,22],
 "d9/d83/classASCIIRangeFactory.html#ad9e9d59ab1398db759a49a36ccca02fb":[3,0,29,21],
 "d9/d83/classASCIIRangeFactory.html#ad9e9d59ab1398db759a49a36ccca02fb":[3,0,29,20],
 "d9/d83/namespaceanonymous__namespace_02vnodedetail_8cpp_03.html":[2,0,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX180 =
 "d9/d96/classDOMConfiguration.html#afa77dad79085286f13ea1506ec564d90":[3,0,152,6],
 "d9/d96/classDOMConfiguration.html#afa77dad79085286f13ea1506ec564d90":[3,0,152,9],
 "d9/d96/classDOMConfiguration.html#afa77dad79085286f13ea1506ec564d90":[3,0,152,3],
-"d9/d96/macx_2include_2xercesc_2util_2XMLUni_8hpp.html":[4,0,0,1,15,0,0,0,6,116],
-"d9/d96/macx_2include_2xercesc_2util_2XMLUni_8hpp_source.html":[4,0,0,1,15,0,0,0,6,116],
-"d9/d96/structSourceItem.html":[3,0,487]
+"d9/d96/macx_2include_2xercesc_2util_2XMLUni_8hpp.html":[4,0,0,1,15,0,0,0,6,116]
 };

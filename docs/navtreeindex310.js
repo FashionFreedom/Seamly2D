@@ -1,5 +1,7 @@
 var NAVTREEINDEX310 =
 {
+"df/d4b/vmaingraphicsview_8h.html":[4,0,0,1,14,52],
+"df/d4b/vmaingraphicsview_8h_source.html":[4,0,0,1,14,52],
 "df/d4b/vsplinepoint_8h.html":[4,0,0,1,6,40],
 "df/d4b/vsplinepoint_8h.html#ab85b1a47fd57766611915f54dddd4ff0":[4,0,0,1,6,40,2],
 "df/d4b/vsplinepoint_8h.html#ae62f2d377d9298d7d97f9b6b8c8aadea":[4,0,0,1,6,40,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX310 =
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a1af3d22033637c604f9e99fe1b9eee6d":[3,0,861,3,44],
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a1af3d22033637c604f9e99fe1b9eee6d":[3,0,861,0,44],
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a1af3d22033637c604f9e99fe1b9eee6d":[3,0,861,3,20],
-"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a1af3d22033637c604f9e99fe1b9eee6d":[3,0,861,0,8],
-"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a1af3d22033637c604f9e99fe1b9eee6d":[3,0,861,2,20],
-"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a1af3d22033637c604f9e99fe1b9eee6d":[3,0,861,3,32]
+"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a1af3d22033637c604f9e99fe1b9eee6d":[3,0,861,0,8]
 };

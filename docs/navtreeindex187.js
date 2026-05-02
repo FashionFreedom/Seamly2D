@@ -1,5 +1,7 @@
 var NAVTREEINDEX187 =
 {
+"d9/db9/classDatatypeValidator.html#a6f211c89f583d39ef2b03175a790d40f":[3,0,75,164],
+"d9/db9/classDatatypeValidator.html#a6f211c89f583d39ef2b03175a790d40f":[3,0,75,165],
 "d9/db9/classDatatypeValidator.html#a6f211c89f583d39ef2b03175a790d40f":[3,0,75,166],
 "d9/db9/classDatatypeValidator.html#a6f211c89f583d39ef2b03175a790d40f":[3,0,75,167],
 "d9/db9/classDatatypeValidator.html#a7a59984d2634978da4165126224359b9":[3,0,75,192],
@@ -247,7 +249,5 @@ var NAVTREEINDEX187 =
 "d9/dc4/msvc-arm64_2include_2xercesc_2util_2regx_2CharToken_8hpp.html":[4,0,0,1,15,3,0,0,6,3,3],
 "d9/dc4/msvc-arm64_2include_2xercesc_2util_2regx_2CharToken_8hpp_source.html":[4,0,0,1,15,3,0,0,6,3,3],
 "d9/dc6/classDateTimeValidator.html":[3,0,79],
-"d9/dc6/classDateTimeValidator.html#a1fef90f08dc8d0f553e634ab6140efbd":[3,0,79,59],
-"d9/dc6/classDateTimeValidator.html#a1fef90f08dc8d0f553e634ab6140efbd":[3,0,79,58],
-"d9/dc6/classDateTimeValidator.html#a1fef90f08dc8d0f553e634ab6140efbd":[3,0,79,57]
+"d9/dc6/classDateTimeValidator.html#a1fef90f08dc8d0f553e634ab6140efbd":[3,0,79,59]
 };

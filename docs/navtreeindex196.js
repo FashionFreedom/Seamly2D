@@ -1,5 +1,7 @@
 var NAVTREEINDEX196 =
 {
+"da/d68/msvc-arm64_2include_2xercesc_2util_2CountedPointer_8c.html":[4,0,0,1,15,3,0,0,6,14],
+"da/d68/msvc-arm64_2include_2xercesc_2util_2CountedPointer_8c_source.html":[4,0,0,1,15,3,0,0,6,14],
 "da/d69/classFieldValueMap.html":[3,0,273],
 "da/d69/classFieldValueMap.html#a148f919bd6011b4abe2fd4464221246b":[3,0,273,55],
 "da/d69/classFieldValueMap.html#a148f919bd6011b4abe2fd4464221246b":[3,0,273,54],
@@ -247,7 +249,5 @@ var NAVTREEINDEX196 =
 "da/d79/classDOMEntityReferenceImpl.html#a7fe0fb841623125b319eeb543993a7d9":[3,0,171,165],
 "da/d79/classDOMEntityReferenceImpl.html#a7fe0fb841623125b319eeb543993a7d9":[3,0,171,166],
 "da/d79/classDOMEntityReferenceImpl.html#a7fe0fb841623125b319eeb543993a7d9":[3,0,171,167],
-"da/d79/classDOMEntityReferenceImpl.html#a818a7e146dc92e89210f4bb99acf6d51":[3,0,171,100],
-"da/d79/classDOMEntityReferenceImpl.html#a818a7e146dc92e89210f4bb99acf6d51":[3,0,171,101],
-"da/d79/classDOMEntityReferenceImpl.html#a818a7e146dc92e89210f4bb99acf6d51":[3,0,171,103]
+"da/d79/classDOMEntityReferenceImpl.html#a818a7e146dc92e89210f4bb99acf6d51":[3,0,171,100]
 };

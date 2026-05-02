@@ -1,5 +1,7 @@
 var NAVTREEINDEX195 =
 {
+"da/d5b/classShowInfoDialog.html#a5acc920f383fb6fd6e8ea51e12c1ce2e":[3,0,483,2],
+"da/d5b/classShowInfoDialog.html#a66997c5dc28fa1bfe9fcfae314a4f95b":[3,0,483,6],
 "da/d5b/classShowInfoDialog.html#a6a5807a3535feaf84a4e13604de398c0":[3,0,483,1],
 "da/d5b/classShowInfoDialog.html#abacaa3209f4cb20060fff97da0bdb1a1":[3,0,483,3],
 "da/d5b/mingw_2include_2xercesc_2dom_2impl_2DOMAttrNSImpl_8hpp.html":[4,0,0,1,15,1,0,0,0,0,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX195 =
 "da/d67/classDOMLSException.html#af055e994c347568e7d2b89bb96cf1368":[3,0,185,21],
 "da/d67/classDOMLSException.html#af055e994c347568e7d2b89bb96cf1368":[3,0,185,20],
 "da/d67/mingw_2include_2xercesc_2sax_2EntityResolver_8hpp.html":[4,0,0,1,15,1,0,0,4,3],
-"da/d67/mingw_2include_2xercesc_2sax_2EntityResolver_8hpp_source.html":[4,0,0,1,15,1,0,0,4,3],
-"da/d68/msvc-arm64_2include_2xercesc_2util_2CountedPointer_8c.html":[4,0,0,1,15,3,0,0,6,14],
-"da/d68/msvc-arm64_2include_2xercesc_2util_2CountedPointer_8c_source.html":[4,0,0,1,15,3,0,0,6,14]
+"da/d67/mingw_2include_2xercesc_2sax_2EntityResolver_8hpp_source.html":[4,0,0,1,15,1,0,0,4,3]
 };

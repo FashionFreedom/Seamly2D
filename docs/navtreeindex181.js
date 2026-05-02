@@ -1,5 +1,7 @@
 var NAVTREEINDEX181 =
 {
+"d9/d96/macx_2include_2xercesc_2util_2XMLUni_8hpp_source.html":[4,0,0,1,15,0,0,0,6,116],
+"d9/d96/structSourceItem.html":[3,0,487],
 "d9/d96/structSourceItem.html#a56eb318c4f3c385757975f3ebb86493a":[3,0,487,1],
 "d9/d96/structSourceItem.html#a712a2194ff47d3c1661d9c3268e7e1b8":[3,0,487,3],
 "d9/d96/structSourceItem.html#aa160eb4302e10c28310cdafd28a9fc22":[3,0,487,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX181 =
 "d9/da7/classMovePiece.html#ab26d572a05bbb80db726a1caeab351ad":[3,0,361,13],
 "d9/da7/classMovePiece.html#ab4e25c28917a5b4a6a10f7cbf5712556":[3,0,361,8],
 "d9/da7/classMovePiece.html#aea8aa3af38f1e0284b8bf948d7d6d5b7":[3,0,361,7],
-"d9/da7/classMovePiece.html#af41722edd8cd54fe0899e6463b833ef7":[3,0,361,6],
-"d9/da7/msvc-arm64_2include_2xercesc_2util_2RefHash2KeysTableOf_8c.html":[4,0,0,1,15,3,0,0,6,52],
-"d9/da7/msvc-arm64_2include_2xercesc_2util_2RefHash2KeysTableOf_8c_source.html":[4,0,0,1,15,3,0,0,6,52]
+"d9/da7/classMovePiece.html#af41722edd8cd54fe0899e6463b833ef7":[3,0,361,6]
 };

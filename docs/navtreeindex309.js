@@ -1,5 +1,7 @@
 var NAVTREEINDEX309 =
 {
+"df/d1f/classXMLAttDef.html#adbac7febf3455722cc9736f1dc03c02fabe49f99b0517c00de3f4e74feefdab74":[3,0,804,8,17],
+"df/d1f/classXMLAttDef.html#adbac7febf3455722cc9736f1dc03c02fabe49f99b0517c00de3f4e74feefdab74":[3,0,804,11,4],
 "df/d1f/classXMLAttDef.html#adbac7febf3455722cc9736f1dc03c02fabe49f99b0517c00de3f4e74feefdab74":[3,0,804,8,4],
 "df/d1f/classXMLAttDef.html#adbac7febf3455722cc9736f1dc03c02fae7aec17b0bafc7741b80d7bd7e575c07":[3,0,804,11,1],
 "df/d1f/classXMLAttDef.html#adbac7febf3455722cc9736f1dc03c02fae7aec17b0bafc7741b80d7bd7e575c07":[3,0,804,9,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX309 =
 "df/d49/vlineedit_8cpp.html":[4,0,0,1,14,47],
 "df/d49/vlineedit_8cpp_source.html":[4,0,0,1,14,47],
 "df/d4b/vcolorpropertyeditor_8h.html":[4,0,0,1,11,0,14],
-"df/d4b/vcolorpropertyeditor_8h_source.html":[4,0,0,1,11,0,14],
-"df/d4b/vmaingraphicsview_8h.html":[4,0,0,1,14,52],
-"df/d4b/vmaingraphicsview_8h_source.html":[4,0,0,1,14,52]
+"df/d4b/vcolorpropertyeditor_8h_source.html":[4,0,0,1,11,0,14]
 };

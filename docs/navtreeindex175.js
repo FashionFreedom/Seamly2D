@@ -1,5 +1,7 @@
 var NAVTREEINDEX175 =
 {
+"d9/d58/mingw_2include_2xercesc_2util_2KeyValuePair_8hpp_source.html":[4,0,0,1,15,1,0,0,6,33],
+"d9/d58/msvc_2include_2xercesc_2framework_2XMLGrammarDescription_8hpp.html":[4,0,0,1,15,2,0,0,1,27],
 "d9/d58/msvc_2include_2xercesc_2framework_2XMLGrammarDescription_8hpp_source.html":[4,0,0,1,15,2,0,0,1,27],
 "d9/d5a/classDOMDocumentImpl.html":[3,0,160],
 "d9/d5a/classDOMDocumentImpl.html#a007bb2293ea408d54725f74c9a42ec81":[3,0,160,523],
@@ -247,7 +249,5 @@ var NAVTREEINDEX175 =
 "d9/d5a/classDOMDocumentImpl.html#a6dc1ece51f007d6bfbcecaa13deae503":[3,0,160,346],
 "d9/d5a/classDOMDocumentImpl.html#a6f8524ad68c089bd33fa062869149516":[3,0,160,62],
 "d9/d5a/classDOMDocumentImpl.html#a6f8524ad68c089bd33fa062869149516":[3,0,160,63],
-"d9/d5a/classDOMDocumentImpl.html#a6f8524ad68c089bd33fa062869149516":[3,0,160,60],
-"d9/d5a/classDOMDocumentImpl.html#a6f8524ad68c089bd33fa062869149516":[3,0,160,61],
-"d9/d5a/classDOMDocumentImpl.html#a6fdd83d4f366ce463a0cdcb75b1bffe3":[3,0,160,72]
+"d9/d5a/classDOMDocumentImpl.html#a6f8524ad68c089bd33fa062869149516":[3,0,160,60]
 };
