@@ -3392,6 +3392,14 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <source>Description</source>
         <translation>描述</translation>
     </message>
+    <message>
+        <source>Full Name:</source>
+        <translation>姓名:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>描述:</translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>

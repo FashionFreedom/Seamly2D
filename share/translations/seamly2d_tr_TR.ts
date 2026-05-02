@@ -3392,6 +3392,14 @@ Lütfen son işlemi geri almayı veya bozuk formülü düzeltmeyi deneyin.</tran
         <source>Description</source>
         <translation>Açıklama</translation>
     </message>
+    <message>
+        <source>Full Name:</source>
+        <translation>Tam Adınız:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Açıklama:</translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>

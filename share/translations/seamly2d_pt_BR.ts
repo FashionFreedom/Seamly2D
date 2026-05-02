@@ -3378,6 +3378,14 @@ pontos de controle</translation>
         <source>Description</source>
         <translation>Descrição</translation>
     </message>
+    <message>
+        <source>Full Name:</source>
+        <translation>Nome Completo:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Descrição:</translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>

@@ -3377,6 +3377,14 @@ Bitte versuchen Sie, den letzten Vorgang rückgängig zu machen oder die fehlerh
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
+    <message>
+        <source>Full Name:</source>
+        <translation>Vollständige Bezeichnung:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Beschreibung:</translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>

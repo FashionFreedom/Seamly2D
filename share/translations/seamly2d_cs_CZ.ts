@@ -3392,6 +3392,14 @@ Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.<
         <source>Description</source>
         <translation>Popis</translation>
     </message>
+    <message>
+        <source>Full Name:</source>
+        <translation>Celé Jméno:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Popis:</translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>

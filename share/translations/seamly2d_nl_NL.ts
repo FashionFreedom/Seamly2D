@@ -3377,6 +3377,14 @@ Probeer de laatste bewerking ongedaan te maken of de defecte formule te herstell
         <source>Description</source>
         <translation>Beschrijving</translation>
     </message>
+    <message>
+        <source>Full Name:</source>
+        <translation>Volledige Naam:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Beschrijving:</translation>
+    </message>
 </context>
 <context>
     <name>EditGroupDialog</name>
