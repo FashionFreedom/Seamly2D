@@ -170,10 +170,9 @@ EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &tool
     connect(ui->tableWidget,&QTableWidget::itemDoubleClicked,
             this, [this, rotation = QString("")]() {insertVariable(rotation);});
 
-    connect(ui->clear_PushButton,         &QPushButton::clicked,            this, &EditFormulaDialog::clearFormula);
-    connect(ui->undo_PushButton,          &QPushButton::clicked,            this, &EditFormulaDialog::undoFormula);
-
-    connect(ui->plainTextEditFormula,     &QPlainTextEdit::textChanged,     this, &EditFormulaDialog::FormulaChanged);
+    connect(ui->clear_PushButton,     &QPushButton::clicked,        this, &EditFormulaDialog::clearFormula);
+    connect(ui->undo_PushButton,      &QPushButton::clicked,        this, &EditFormulaDialog::undoFormula);
+    connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &EditFormulaDialog::FormulaChanged);
 
     //Disable Qt::WaitCursor
 #ifndef QT_NO_CURSOR
@@ -191,6 +190,8 @@ EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &tool
     ui->tableWidget->setEditTriggers(QTableWidget::NoEditTriggers);
     ui->tableWidget->verticalHeader()->hide();
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+
+    ui->info_Label->setTextInteractionFlags(Qt::TextSelectableByMouse);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -238,7 +239,7 @@ void EditFormulaDialog::valueChanged(int row)
 {
     if (ui->tableWidget->rowCount() == 0)
     {
-        ui->description_Label->setText("");
+        ui->info_Label->setText("");
         return;
     }
     QTableWidgetItem *item = ui->tableWidget->item( row, NameColumn );
@@ -248,58 +249,61 @@ void EditFormulaDialog::valueChanged(int row)
         case VariableTab::Measurements:
         {
             const QString name = qApp->translateVariables()->VarFromUser(item->text());
-            const QSharedPointer<MeasurementVariable> measurements = data->getVariable<MeasurementVariable>(name);
-            const QString desc = (measurements->getGuiText() == "") ? "" : QString("\nDescription: %1").arg(measurements->getGuiText());
-            setDescription(item->text(), *data->DataVariables()->value(name)->GetValue(),
-                           UnitsToStr(qApp->patternUnit(), true), tr("Measurement"), desc);
+            const QSharedPointer<MeasurementVariable> measurement = data->getVariable<MeasurementVariable>(item->text());
+
+            setInfo(item->text(), *data->DataVariables()->value(name)->GetValue(),
+                    UnitsToStr(qApp->patternUnit(), true), tr("Measurement"),
+                    description(measurement), fullName(measurement));
             break;
         }
         case VariableTab::Custom:
         {
-            const QSharedPointer<CustomVariable> variables = data->getVariable<CustomVariable>(item->text());
-            const QString desc =(variables->GetDescription() == "") ? "" : QString("\nDescription: %1").arg(variables->GetDescription());
-            setDescription(item->text(), *data->DataVariables()->value(item->text())->GetValue(),
-                           UnitsToStr(qApp->patternUnit(), true), tr("Custom Variable"), desc);
+            const QString name = item->text();
+            const QSharedPointer<CustomVariable> variable = data->getVariable<CustomVariable>(item->text());
+            const QString desc = variable->GetDescription();
+            setInfo(name, *data->DataVariables()->value(item->text())->GetValue(),
+                    UnitsToStr(qApp->patternUnit(), true), tr("Custom Variable"),
+                    desc, "");
             break;
         }
         case VariableTab::LineLengths:
             {
-                setDescription(item->text(),
+                setInfo(item->text(),
                         *data->getVariable<VLengthLine>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
-                        UnitsToStr(qApp->patternUnit(), true), tr("Line length"), "");
+                        UnitsToStr(qApp->patternUnit(), true), tr("Line length"), "", "");
                 break;
             }
         case VariableTab::CurveLengths:
         {
-            setDescription(item->text(),
-                           *data->getVariable<VCurveLength>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
-                           UnitsToStr(qApp->patternUnit(), true), tr("Curve length"), "");
+            setInfo(item->text(),
+                    *data->getVariable<VCurveLength>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
+                     UnitsToStr(qApp->patternUnit(), true), tr("Curve length"), "", "");
             break;
         }
         case VariableTab::LineAngles:
         {
-            setDescription(item->text(),
-                           *data->getVariable<VLineAngle>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
-                           degreeSymbol, tr("Line Angle"), "");
+            setInfo(item->text(),
+                    *data->getVariable<VLineAngle>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
+                    degreeSymbol, tr("Line Angle"), "", "");
             break;
         }
         case VariableTab::ArcRadii:
         {
-            setDescription(item->text(),
-                           *data->getVariable<VArcRadius>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
-                           UnitsToStr(qApp->patternUnit(), true), tr("Arc radius"), "");
+            setInfo(item->text(),
+                    *data->getVariable<VArcRadius>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
+                    UnitsToStr(qApp->patternUnit(), true), tr("Arc radius"), "", "");
             break;
         }
         case VariableTab::CurveAngles:
         {
-            setDescription(item->text(),
-                           *data->getVariable<VCurveAngle>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
-                           degreeSymbol, tr("Curve angle"), "");
+            setInfo(item->text(),
+                    *data->getVariable<VCurveAngle>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
+                    degreeSymbol, tr("Curve angle"), "", "");
         break;
         }
         case VariableTab::Functions:
         {
-            ui->description_Label->setText(item->toolTip());
+            ui->info_Label->setText(item->toolTip());
             break;
         }
     }
@@ -615,11 +619,21 @@ void EditFormulaDialog::initializeVariables()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void EditFormulaDialog::setDescription(const QString &name, qreal value, const QString &unit,
-                                            const QString &type, const QString &description)
+void EditFormulaDialog::setInfo(const QString &name, qreal value, const QString &unit, const QString &type,
+                                const QString &description, const QString &fullName)
 {
-    const QString desc = QString("%5: %1(%2 %3)%4").arg(name).arg(value).arg(unit).arg(description).arg(type);
-    ui->description_Label->setText(desc);
+    QString desc = QString("%1: %2 = %3 %4\n").arg(type, name, QString::number(value), unit);
+    if (!fullName.isEmpty())
+    {
+        desc += QString("%1: %2\n").arg(tr("Full Name:"), fullName);
+    }
+
+    if (!description.isEmpty())
+    {
+        desc += QString("%1: %2").arg(tr("Description:"), description);
+    }
+
+    ui->info_Label->setText(desc);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -637,7 +651,7 @@ void EditFormulaDialog::showVariable(const QMap<key, val> &var)
     ui->tableWidget->setColumnHidden(ValueColumn, false);
     ui->tableWidget->setColumnHidden(NumberColumn, true);
     ui->tableWidget->setColumnHidden(FullNameColumn, true);
-    ui->description_Label->setText("");
+    ui->info_Label->setText("");
 
     QMapIterator<key, val> iMap(var);
     while (iMap.hasNext())
@@ -682,7 +696,7 @@ void EditFormulaDialog::showCustomVariable(const QMap<key, val> &var)
     ui->tableWidget->setColumnHidden(ValueColumn, false);
     ui->tableWidget->setColumnHidden(NumberColumn, true);
     ui->tableWidget->setColumnHidden(FullNameColumn, true);
-    ui->description_Label->setText("");
+    ui->info_Label->setText("");
 
     QMapIterator<key, val> iMap(var);
     while (iMap.hasNext())
@@ -692,30 +706,33 @@ void EditFormulaDialog::showCustomVariable(const QMap<key, val> &var)
         {
             continue; //skip this measurement
         }
-        if (iMap.value()->Filter(toolId) == false)
-        {// If we create this variable don't show
-            ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
-            QTableWidgetItem *item = new QTableWidgetItem(iMap.key());
-            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, NameColumn, item);
 
-            QString desc = iMap.value()->GetDescription();
-            QTableWidgetItem *itemDesc = new QTableWidgetItem(desc);
-            itemDesc->setSizeHint(QSize(70, 20));
-            itemDesc->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, DescriptionColumn, itemDesc);
+        // Name
+        ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
+        QTableWidgetItem *item = new QTableWidgetItem(iMap.key());
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, NameColumn, item);
 
-            qreal length = *iMap.value()->GetValue();
-            QTableWidgetItem *itemValue = new QTableWidgetItem(qApp->LocaleToString(length));
-            itemValue->setSizeHint(QSize(70, 20));
-            itemValue->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ValueColumn, itemValue);
-        }
+        //Description
+        QString desc = iMap.value()->GetDescription();
+        QTableWidgetItem *itemDesc = new QTableWidgetItem(desc);
+        itemDesc->setToolTip(desc);
+        itemDesc->setSizeHint(QSize(70, 20));
+        itemDesc->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, DescriptionColumn, itemDesc);
+
+        // Value
+        qreal length = *iMap.value()->GetValue();
+        QTableWidgetItem *itemValue = new QTableWidgetItem(qApp->LocaleToString(length));
+        itemValue->setSizeHint(QSize(70, 20));
+        itemValue->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ValueColumn, itemValue);
     }
+
     ui->tableWidget->blockSignals(false);
     ui->tableWidget->selectRow(0);
     ui->tableWidget->setColumnWidth(NameColumn, 80);
     ui->tableWidget->resizeColumnsToContents();
-    ui->tableWidget->horizontalHeader()->setSectionResizeMode(NameColumn, QHeaderView::Fixed);
+    ui->tableWidget->horizontalHeader()->setSectionResizeMode(NameColumn, QHeaderView::Stretch);
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(DescriptionColumn, QHeaderView::Stretch);
     ui->tableWidget->setColumnWidth(ValueColumn, 80);
 }
@@ -731,10 +748,10 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<Meas
     ui->tableWidget->setRowCount(0);
     ui->tableWidget->setColumnHidden(NumberColumn, false);
     ui->tableWidget->setColumnHidden(NameColumn, false);
-    ui->tableWidget->setColumnHidden(DescriptionColumn, true);
+    ui->tableWidget->setColumnHidden(DescriptionColumn, false);
     ui->tableWidget->setColumnHidden(ValueColumn, false);
     ui->tableWidget->setColumnHidden(FullNameColumn, false);
-    ui->description_Label->setText("");
+    ui->info_Label->setText("");
 
     QMapIterator<QString, QSharedPointer<MeasurementVariable>> iMap(var);
     while (iMap.hasNext())
@@ -744,55 +761,66 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<Meas
         {
             continue; //skip this measurement
         }
-        if (iMap.value()->Filter(toolId) == false)
-        {// If we create this variable don't show
-            ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
-            QTableWidgetItem *itemName = new QTableWidgetItem(iMap.key());
-            itemName->setSizeHint(QSize(70, 20));
-            itemName->setToolTip(itemName->text());
 
-            qreal length = *iMap.value()->GetValue();
-            QTableWidgetItem *itemValue = new QTableWidgetItem(qApp->LocaleToString(length));
-            itemValue->setSizeHint(QSize(70, 20));
-            itemValue->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        // Name
+        ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
+        QTableWidgetItem *itemName = new QTableWidgetItem(iMap.key());
+        itemName->setSizeHint(QSize(80, 20));
+        itemName->setToolTip(itemName->text());
 
-            QTableWidgetItem *itemNumber = new QTableWidgetItem();
-            itemNumber->setSizeHint(QSize(70, 20));
-            itemNumber->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        // Description
+        const QString desc = description(iMap.value());
+        QTableWidgetItem *itemDesc = new QTableWidgetItem(desc);
+        itemDesc->setToolTip(desc);
+        itemDesc->setSizeHint(QSize(100, 20));
+        itemDesc->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
-            QTableWidgetItem *itemFullName = new QTableWidgetItem();
+        // Value
+        qreal length = *iMap.value()->GetValue();
+        QTableWidgetItem *itemValue = new QTableWidgetItem(qApp->LocaleToString(length));
+        itemValue->setSizeHint(QSize(70, 20));
+        itemValue->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
 
+        // Diagram number
+        QTableWidgetItem *itemNumber = new QTableWidgetItem();
+        itemNumber->setSizeHint(QSize(70, 20));
+        itemNumber->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
 
-            QString number =tr("Custom");
-            QString imgUrl = QString(":/diagrams/custom.svg");
-            if (iMap.value()->isCustom())
-            {
-                itemNumber->setText(QStringLiteral("na"));
-                itemFullName->setText(iMap.value()->getGuiText());
-            }
-            else
-            {
-                number = qApp->translateVariables()->MNumber(iMap.value()->GetName());
-                imgUrl = QString(":/diagrams/%1.svg").arg(MapDiagrams(qApp->translateVariables(), number));
-                itemNumber->setText(number);
-                itemFullName->setText(qApp->translateVariables()->guiText(iMap.value()->GetName()));
-            }
-
-            itemNumber->setToolTip(QString("<html><head/><body>"
-                                           "<p align=\"center\"><img src=%1/></p>"
-                                           "<p align=\"center\"><b>%2</b></p>"
-                                           "</body></html>").arg(imgUrl, number));
-
-            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, NumberColumn, itemNumber);
-            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, NameColumn, itemName);
-            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ValueColumn, itemValue);
-            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, FullNameColumn, itemFullName);
+        // Fullname
+        QString number =tr("Custom");
+        QString imgUrl = QString(":/diagrams/custom.svg");
+        QTableWidgetItem *itemFullName = new QTableWidgetItem();
+        if (iMap.value()->isCustom())
+        {
+            itemNumber->setText(QStringLiteral("na"));
+            itemFullName->setText(iMap.value()->getGuiText());
         }
+        else
+        {
+            number = qApp->translateVariables()->MNumber(iMap.value()->GetName());
+            imgUrl = QString(":/diagrams/%1.svg").arg(MapDiagrams(qApp->translateVariables(), number));
+            itemNumber->setText(number);
+            itemFullName->setText(qApp->translateVariables()->guiText(iMap.value()->GetName()));
+        }
+
+        itemNumber->setToolTip(QString("<html><head/><body>"
+                                       "<p align=\"center\"><img src=%1/></p>"
+                                       "<p align=\"center\"><b>%2</b></p>"
+                                       "</body></html>").arg(imgUrl, number));
+
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, NumberColumn, itemNumber);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, NameColumn, itemName);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, DescriptionColumn, itemDesc);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ValueColumn, itemValue);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, FullNameColumn, itemFullName);
     }
+
     ui->tableWidget->blockSignals(false);
     ui->tableWidget->selectRow(0);
     ui->tableWidget->resizeColumnsToContents();
+    ui->tableWidget->setColumnWidth(NameColumn, 80);
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(NameColumn, QHeaderView::Stretch);
+    ui->tableWidget->horizontalHeader()->setSectionResizeMode(DescriptionColumn, QHeaderView::Stretch);
     ui->tableWidget->setColumnWidth(ValueColumn, 80);
 }
 
@@ -809,7 +837,7 @@ void EditFormulaDialog::showFunctions()
     ui->tableWidget->setColumnHidden(DescriptionColumn, true);
     ui->tableWidget->setColumnHidden(ValueColumn, true);
     ui->tableWidget->setColumnHidden(FullNameColumn, true);
-    ui->description_Label->setText("");
+    ui->info_Label->setText("");
 
     QMap<QString, qmu::QmuTranslation>::const_iterator i = qApp->translateVariables()->getFunctions().constBegin();
     while (i != qApp->translateVariables()->getFunctions().constEnd())
@@ -903,4 +931,44 @@ void EditFormulaDialog::clearFormula()
 void EditFormulaDialog::undoFormula()
 {
      ui->plainTextEditFormula->setPlainText(m_undoFormula);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief description get the description text.
+/// @param measurement measurment variable.
+/// @return description text.
+//---------------------------------------------------------------------------------------------------------------------
+QString EditFormulaDialog::description(QSharedPointer<MeasurementVariable> measurement)
+{
+    QString desc = QString("");
+
+    if (measurement->isCustom())
+    {
+        desc = measurement->GetDescription();
+    }
+    else
+    {
+        desc = qApp->translateVariables()->Description(measurement->GetName());
+    }
+    return desc;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief fullName get the fullName text.
+/// @param measurement measurment variable.
+/// @return fullName text.
+//---------------------------------------------------------------------------------------------------------------------
+QString EditFormulaDialog::fullName(QSharedPointer<MeasurementVariable> measurement)
+{
+    QString fullName = QString("");
+
+    if (measurement->isCustom())
+    {
+        fullName = measurement->getGuiText();
+    }
+    else
+    {
+        fullName = qApp->translateVariables()->guiText(measurement->GetName());
+    }
+    return fullName;
 }

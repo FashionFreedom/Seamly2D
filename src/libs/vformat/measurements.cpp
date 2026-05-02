@@ -326,7 +326,7 @@ void MeasurementDoc::readMeasurements() const
             qreal kheight = GetParametrDouble(dom, AttrHeightIncrease, "0");
 
             tempMeash = QSharedPointer<MeasurementVariable>(new MeasurementVariable(static_cast<quint32>(i), name, BaseSize(),
-                                                                      BaseHeight(), base, ksize, kheight));
+                                                                      BaseHeight(), base, ksize, kheight, fullName, description));
             tempMeash->setSize(m_currentSize);
             tempMeash->setHeight(m_currentHeight);
             tempMeash->SetUnit(data->GetPatternUnit());
@@ -351,7 +351,7 @@ void MeasurementDoc::readMeasurements() const
             qreal value = EvalFormula(tempData.data(), formula, &ok);
 
             tempMeash = QSharedPointer<MeasurementVariable>(new MeasurementVariable(tempData.data(), static_cast<quint32>(i), name,
-                                                                      value, formula, ok));
+                                                                      value, formula, ok, fullName, description));
 
             value = UnitConvertor(value, measurementUnits(), *data->GetPatternUnit());
             meash = QSharedPointer<MeasurementVariable>(new MeasurementVariable(data, static_cast<quint32>(i), name, value, formula,
