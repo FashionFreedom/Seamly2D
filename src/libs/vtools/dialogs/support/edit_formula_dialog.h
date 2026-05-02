@@ -145,10 +145,14 @@ private:
     void         showInsertionButtons(const bool &visible);
     void         showHeaderUnits(QTableWidget *table, const QString &unit);
 
-    void         setDescription(const QString &name, qreal value, const QString &unit,
-                                const QString &type, const QString &description);
+    void         setInfo(const QString &name, qreal value, const QString &unit, const QString &type,
+                         const QString &description, const QString &fullName);
     void         clearFormula();
     void         undoFormula();
+
+    QString      description(QSharedPointer<MeasurementVariable> measurement);
+    QString      fullName(QSharedPointer<MeasurementVariable> measurement);
+
 };
 
 
