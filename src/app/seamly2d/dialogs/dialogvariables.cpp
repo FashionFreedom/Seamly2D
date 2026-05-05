@@ -126,7 +126,7 @@ public:
             m_textEdit->setPlainText(text);
         });
 
-        m_textEdit->setPlaceholderText(QObject::tr("Paste CSV here. Supported columns: Name, Value, Unit, Formula, Description."));
+        m_textEdit->setPlaceholderText(QObject::tr("Paste CSV here. Supported format:\nName, Formula, Description."));
         m_preview->setColumnCount(4);
         m_preview->setHorizontalHeaderLabels(QStringList() << QObject::tr("Name") << QObject::tr("Formula")
                                                            << QObject::tr("Description") << QObject::tr("Status"));

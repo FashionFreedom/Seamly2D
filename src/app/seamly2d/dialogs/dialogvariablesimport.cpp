@@ -7,11 +7,15 @@
 
 #include "../ifc/ifcdef.h"
 #include "../qmuparser/qmudef.h"
+#include "../qmuparser/qmuparsererror.h"
+#include "../vpatterndb/calculator.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/variables/custom_variable.h"
 
 #include <QFile>
 #include <QRegularExpression>
+#include <QScopedPointer>
+#include <QtNumeric>
 
 namespace DialogVariablesImport
 {
@@ -180,17 +184,90 @@ bool splitValueAndUnit(const QString &text, qreal *value, Unit *unit)
     }
     return parseNumber(match.captured(1), value) && parseUnit(match.captured(2), unit);
 }
+
+bool hasHeader(const QList<QStringList> &rows)
+{
+    return !rows.isEmpty() && (cellText(rows, 0, 0).trimmed().toLower() == QLatin1String("name")
+                               || cellText(rows, 0, 0).trimmed().toLower() == QObject::tr("name").toLower());
 }
 
-bool looksLikeHeader(const QList<QStringList> &rows)
+bool looksLikeExportedTable(const QList<QStringList> &rows, int firstDataRow)
 {
-    if (rows.isEmpty())
+    if (columnCount(rows) != 3)
     {
         return false;
     }
 
-    const QString first = cellText(rows, 0, 0).trimmed().toLower();
-    return first == QLatin1String("name") || first == QObject::tr("name").toLower();
+    for (int row = firstDataRow; row < rows.size(); ++row)
+    {
+        qreal value = 0;
+        if (!cellText(rows, row, 0).trimmed().startsWith(CustomIncrSign)
+            || !parseNumber(cellText(rows, row, 1), &value)
+            || cellText(rows, row, 2).trimmed().isEmpty())
+        {
+            return false;
+        }
+    }
+
+    return rows.size() > firstDataRow;
+}
+
+QSet<QString> importNames(const QList<QStringList> &rows, int firstDataRow, int nameColumn)
+{
+    QSet<QString> names;
+    for (int row = firstDataRow; row < rows.size(); ++row)
+    {
+        const QString displayName = cellText(rows, row, nameColumn).trimmed();
+        const QString cleanName = displayName.startsWith(CustomIncrSign) ? displayName.mid(1) : displayName;
+        if (!cleanName.isEmpty() && QRegularExpression(NameRegExp()).match(cleanName).hasMatch())
+        {
+            names.insert(CustomIncrSign + cleanName);
+        }
+    }
+
+    return names;
+}
+
+bool validateFormula(const QString &formula, VContainer *data, const QSet<QString> &availableImportNames,
+                     QString *status)
+{
+    if (data == nullptr)
+    {
+        return true;
+    }
+
+    QHash<QString, QSharedPointer<VInternalVariable>> variables = *data->DataVariables();
+    for (const QString &name : availableImportNames)
+    {
+        if (!variables.contains(name))
+        {
+            variables.insert(name, QSharedPointer<VInternalVariable>(new CustomVariable(data, name, 0, 0, QStringLiteral("0"), true)));
+        }
+    }
+
+    try
+    {
+        QScopedPointer<Calculator> cal(new Calculator());
+        const qreal result = cal->EvalFormula(&variables, formula);
+        if (qIsInf(result) || qIsNaN(result))
+        {
+            *status = QObject::tr("Invalid result");
+            return false;
+        }
+    }
+    catch (qmu::QmuParserError &error)
+    {
+        *status = QObject::tr("Parser error: %1").arg(error.GetMsg());
+        return false;
+    }
+
+    return true;
+}
+}
+
+bool looksLikeHeader(const QList<QStringList> &rows)
+{
+    return hasHeader(rows);
 }
 
 int columnByHeader(const QList<QStringList> &rows, const QStringList &needles, int fallback)
@@ -244,15 +321,20 @@ QList<ImportedVariable> parseImportedVariables(const QString &text, VContainer *
 
     const QList<QStringList> rows = parseSeparatedText(text, detectCsvSeparator(text));
     const int firstDataRow = looksLikeHeader(rows) ? 1 : 0;
+    const bool header = looksLikeHeader(rows);
     const int columns = columnCount(rows);
     const int nameColumn = columnByHeader(rows, QStringList() << QStringLiteral("name"), 0);
-    const int valueColumn = columnByHeader(rows, QStringList() << QStringLiteral("value") << QStringLiteral("calculated"), 1);
-    const int formulaColumn = columnByHeader(rows, QStringList() << QStringLiteral("formula"), columns > 2 ? 2 : -1);
-    const int unitColumn = columnByHeader(rows, QStringList() << QStringLiteral("unit"), -1);
-    const int descriptionColumn = columnByHeader(rows, QStringList() << QStringLiteral("description"), columns > 3 ? 3 : -1);
+    const bool exportedTable = !header && looksLikeExportedTable(rows, firstDataRow);
+    const int valueColumn = columnByHeader(rows, QStringList() << QStringLiteral("value") << QStringLiteral("calculated"),
+                                           exportedTable ? 1 : -1);
+    const int formulaColumn = columnByHeader(rows, QStringList() << QStringLiteral("formula"),
+                                             exportedTable ? 2 : !header && columns > 1 ? 1 : -1);
+    const int descriptionColumn = columnByHeader(rows, QStringList() << QStringLiteral("description"),
+                                                 !exportedTable && !header && columns > 2 ? 2 : -1);
     const QMap<QString, QSharedPointer<CustomVariable>> existing = data != nullptr
             ? data->variablesData()
             : QMap<QString, QSharedPointer<CustomVariable>>();
+    const QSet<QString> availableImportNames = importNames(rows, firstDataRow, nameColumn);
     QSet<QString> seen;
 
     for (int row = firstDataRow; row < rows.size(); ++row)
@@ -282,25 +364,23 @@ QList<ImportedVariable> parseImportedVariables(const QString &text, VContainer *
         else
         {
             const QString rawFormula = formulaColumn >= 0 ? cellText(rows, row, formulaColumn).trimmed() : QString();
-            QString valueText = valueColumn >= 0 ? cellText(rows, row, valueColumn).trimmed() : QString();
             Unit valueUnit = targetUnit;
             qreal value = 0;
+            QString formulaToValidate;
 
-            if (unitColumn >= 0 && parseUnit(cellText(rows, row, unitColumn), &valueUnit) && parseNumber(valueText, &value))
+            if (rawFormula.isEmpty() && valueColumn >= 0)
             {
-                valueText = cNumber(value);
-            }
-            else if (splitValueAndUnit(valueText, &value, &valueUnit))
-            {
-                valueText = cNumber(value);
+                imported.status = QObject::tr("Missing formula");
             }
 
-            if (!rawFormula.isEmpty() && !splitValueAndUnit(rawFormula, &value, &valueUnit))
+            if (!imported.status.isEmpty())
             {
-                imported.formula = rawFormula;
+                imported.valid = false;
             }
-            else if (!valueText.isEmpty())
+            else if (!rawFormula.isEmpty() && splitValueAndUnit(rawFormula, &value, &valueUnit))
             {
+                const QString valueText = cNumber(value);
+                formulaToValidate = valueText;
                 if (valueUnit == targetUnit)
                 {
                     imported.formula = valueText;
@@ -312,15 +392,35 @@ QList<ImportedVariable> parseImportedVariables(const QString &text, VContainer *
                     imported.formula = QStringLiteral("%1 * %2").arg(valueText, convertName);
                 }
             }
+            else if (!rawFormula.isEmpty() && valueUnit != targetUnit)
+            {
+                formulaToValidate = rawFormula;
+                const QString convertName = unitConvertVariableName(valueUnit, targetUnit);
+                convertVariables->insert(convertName);
+                imported.formula = QStringLiteral("(%1) * %2").arg(rawFormula, convertName);
+            }
+            else if (!rawFormula.isEmpty())
+            {
+                formulaToValidate = rawFormula;
+                imported.formula = rawFormula;
+            }
             else
             {
-                imported.formula = QStringLiteral("0");
+                imported.status = QObject::tr("Missing formula");
             }
 
-            imported.valid = true;
-            imported.exists = existing.contains(imported.name);
-            imported.status = imported.exists ? QObject::tr("Update") : QObject::tr("Add");
-            seen.insert(imported.name);
+            if (imported.status.isEmpty() && !validateFormula(formulaToValidate, data, availableImportNames, &imported.status))
+            {
+                imported.valid = false;
+            }
+
+            if (imported.status.isEmpty())
+            {
+                imported.valid = true;
+                imported.exists = existing.contains(imported.name);
+                imported.status = imported.exists ? QObject::tr("Update") : QObject::tr("Add");
+                seen.insert(imported.name);
+            }
         }
 
         result.append(imported);
