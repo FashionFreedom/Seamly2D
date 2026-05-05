@@ -261,6 +261,26 @@
             </widget>
            </item>
            <item alignment="Qt::AlignRight">
+            <widget class="QToolButton" name="importCustomVariables_ToolButton">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="toolTip">
+              <string>Import custom variables from CSV</string>
+             </property>
+             <property name="text">
+              <string notr="true">...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../../../libs/vmisc/share/resources/theme.qrc">
+               <normaloff>:/icons/win.icon.theme/24x24/actions/document-open.png</normaloff>:/icons/win.icon.theme/24x24/actions/document-open.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignRight">
             <widget class="QToolButton" name="addCustomVariable_ToolButton">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
