@@ -253,7 +253,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="497"/>
         <source>Vertical distance from Bustpoint to the floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Pystysuora korkeus rinntapisteestä(rinnankorkeinkohta) lattiaan.</translation>
+        <translation>Pystysuora korkeus rinntapisteestä (rinnankorkeinkohta) lattiaan.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="501"/>
@@ -2275,7 +2275,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1549"/>
         <source>From Waist Side to Hip Side.</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished">Vyötärön tasolta lantion tasolle kylkeä pitkin.</translation>
+        <translation>Vyötärön tasolta lantion tasolle kylkeä pitkin.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1552"/>
@@ -2533,13 +2533,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1693"/>
         <source>across_back_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>selän_poikki_t</translation>
+        <translation>selän_leveys_t</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1695"/>
         <source>Across Back</source>
         <comment>Full measurement name.</comment>
-        <translation>Selän poikki</translation>
+        <translation>Selän leveys</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1696"/>
@@ -2587,19 +2587,19 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1715"/>
         <source>across_back_half_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>selän_poikki_t</translation>
+        <translation>selän_leveys_puolikas_t</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1717"/>
         <source>Across Back, half</source>
         <comment>Full measurement name.</comment>
-        <translation>Selän poikki, puolikas</translation>
+        <translation>Selän leveys, puolikas</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1718"/>
         <source>Half of &apos;Across Back&apos;. (&apos;Across Back&apos; / 2).</source>
         <comment>Full measurement description.</comment>
-        <translation>Puolet &apos;selän poikki&apos;. (&apos;selänpoikki&apos; / 2).</translation>
+        <translation>Puolet &apos;selän leveys&apos;. (&apos;selän leveys&apos; / 2).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1722"/>
@@ -4327,7 +4327,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2648"/>
         <source>Measure in a curve from Armfold Left Front through Bust Front curved back up to Armfold Right Front.</source>
         <comment>Full measurement description.</comment>
-        <translation>Mittaa kaaressa käsivarren alusta vasemmalta rinnan etuosan yli kaarevana käsivarren alkuun oikealle, edessä.</translation>
+        <translation>Mittaa kaaressa käsivarren alusta vasemmalta rinnan etuosan yli kaarevana käsivarren alkuun oikealle edessä.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2652"/>
@@ -4339,13 +4339,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2654"/>
         <source>Armfold to Bust Front</source>
         <comment>Full measurement name.</comment>
-        <translation>Kädentieltä keskelle eteen rinnankorkeudelle</translation>
+        <translation>Kädentieltä keskelle-eteen rinnankorkeudelle</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2655"/>
         <source>Measure from Armfold Front to Bust Front, shortest distance between the two, as straight as possible.</source>
         <comment>Full measurement description.</comment>
-        <translation>Mittaa kädentieltä keskelle eteen, lyhin etäisyys näiden välillä, mahdollisimman suorana.</translation>
+        <translation>Mittaa kädentieltä keskelle-eteen, lyhin etäisyys näiden välillä, mahdollisimman suorana.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2659"/>
@@ -4357,7 +4357,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2661"/>
         <source>Highbust Back, over Shoulder, to Highbust level</source>
         <comment>Full measurement name.</comment>
-        <translation>Ylempi rinnanympärys takana, olkapään yli, ylemmän rinnanympäryksen tasolle edessä</translation>
+        <translation>Ylempi rinnanympärys takana, olkapään yli ylemmän rinnanympäryksen tasolle edessä</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2663"/>
@@ -4381,7 +4381,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2671"/>
         <source>From Armscye at Across Chest over ShoulderTip  to Armscye at Across Back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Kädentie, Ylemmältä rinnan korkeudelta olkapään yli selän korkeuspisteeseen.</translation>
+        <translation>Kädentie ylemmältä rinnan korkeudelta olkapään yli selän korkeuspisteeseen.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2701"/>
@@ -4393,7 +4393,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2703"/>
         <source>Dart Width: Shoulder</source>
         <comment>Full measurement name.</comment>
-        <translation>Muotolaskoksen  leveys: Olkapää</translation>
+        <translation>Muotolaskoksen leveys: Olkapää</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2704"/>
