@@ -11245,7 +11245,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Open individual ...</source>
-        <translation>Otwórz indywidualnie…</translation>
+        <translation>Otwórz indywidualnie ...</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
@@ -11305,7 +11305,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Open multisize ...</source>
-        <translation>Otwórz wiele rozmiarów…</translation>
+        <translation>Otwórz wiele rozmiarów ...</translation>
     </message>
     <message>
         <source>Ctrl+Shift+O</source>
@@ -11341,7 +11341,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Create from existing ...</source>
-        <translation>Utwórz z istniejącego …</translation>
+        <translation>Utwórz z istniejącego ...</translation>
     </message>
     <message>
         <source>Create from existing file</source>
