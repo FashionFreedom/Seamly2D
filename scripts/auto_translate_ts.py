@@ -41,7 +41,11 @@ def translate_ts_file(ts_path, dest_lang):
             source = message.find('source')
             translation = message.find('translation')
             if translation is not None and (translation.text is None or translation.text.strip() == ''):
-                translated = translator.translate(source.text, dest=dest_lang).text
+                try:
+                    translated = translator.translate(source.text, dest=dest_lang).text
+                except Exception as e:
+                    print(f"[ERROR] Failed to translate '{source.text}' to '{dest_lang}': {e}")
+                    translated = source.text  # fallback to original
                 translation.text = translated
                 changed = True
 
