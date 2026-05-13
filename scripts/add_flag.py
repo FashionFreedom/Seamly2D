@@ -6,40 +6,42 @@ Checks if a flag PNG for a given lang_code exists in flags.qrc and the flags fol
 
 Usage: python add_flag.py <lang_code>
 """
+
 import sys
 import os
 import requests
 import xml.etree.ElementTree as ET
 from PIL import Image
 from io import BytesIO
+try:
+    import pycountry
+except ImportError:
+    print("pycountry is required. Install with: pip install pycountry")
+    sys.exit(1)
 
 FLAGS_QRC = os.path.join(os.path.dirname(__file__), '../src/libs/vmisc/share/resources/flags.qrc')
 FLAGS_DIR = os.path.join(os.path.dirname(__file__), '../src/libs/vmisc/share/resources/flags')
 
-COUNTRY_MAP = {
-    'US': 'United States', 'GB': 'United Kingdom', 'BR': 'Brazil', 'FR': 'France', 'DE': 'Germany',
-    'IT': 'Italy', 'ES': 'Spain', 'RU': 'Russia', 'UA': 'Ukraine', 'PL': 'Poland', 'FI': 'Finland',
-    'NL': 'Netherlands', 'ID': 'Indonesia', 'IL': 'Israel', 'TR': 'Turkey', 'RO': 'Romania',
-    'EL': 'Greece', 'CN': 'China', 'CA': 'Canada', 'IN': 'India', 'CZ': 'CzechRepublic',
-    'HE': 'Israel', 'PT': 'Brazil', 'HU': 'Hungary', 'SE': 'Sweden', 'SK': 'Slovakia',
-    'HR': 'Croatia', 'RS': 'Serbia', 'CO': 'Colombia', 'DO': 'Dominican-Republic',
-    'BS': 'Bosnia And Herzegowina',
-}
-
-WIKI_FLAG_API = "https://commons.wikimedia.org/w/api.php"
+def get_country_map():
+    """Return a dict mapping ISO 3166-1 alpha-2 codes to country names, with XK for Kosovo."""
+    country_map = {country.alpha_2: country.name for country in pycountry.countries}
+    country_map['XK'] = 'Kosovo'  # XK is not officially in ISO, but used for Kosovo
+    return country_map
 
 
 def get_country_from_lang_code(lang_code):
-    """Extract country from lang_code (e.g., pt_BR -> Brazil)."""
+    """Extract country code and name from lang_code (e.g., pt_BR -> (BR, Brazil))."""
     parts = lang_code.split('_')
     if len(parts) == 2:
-        country = COUNTRY_MAP.get(parts[1].upper(), parts[1].capitalize())
-        return country
-    return None
+        code = parts[1].upper()
+        country_map = get_country_map()
+        country = country_map.get(code)
+        return code, country
+    return None, None
 
-def flag_exists(country):
+def flag_exists(code):
     """Check if flag PNG exists in both qrc and folder."""
-    png_name = f"{country}.png"
+    png_name = f"{code}.png"
     # Check file
     if not os.path.exists(os.path.join(FLAGS_DIR, png_name)):
         return False
@@ -51,41 +53,29 @@ def flag_exists(country):
             return True
     return False
 
-def search_flag_on_commons(country):
-    """Search Wikimedia Commons for a PNG flag for the country."""
-    params = {
-        'action': 'query',
-        'format': 'json',
-        'prop': 'imageinfo',
-        'iiprop': 'url',
-        'generator': 'search',
-        'gsrsearch': f"Flag of {country} filetype:png", # prioritize PNG
-        'gsrlimit': 1
-    }
-    r = requests.get(WIKI_FLAG_API, params=params)
-    data = r.json()
-    pages = data.get('query', {}).get('pages', {})
-    for page in pages.values():
-        info = page.get('imageinfo', [{}])[0]
-        url = info.get('url')
-        if url and url.lower().endswith('.png'):
-            return url
-    return None
+def download_flag_from_flagpedia(code):
+    """Download PNG flag from flagpedia.net (flagcdn.com) for the given country code."""
+    url = f"https://flagcdn.com/24x24/{code.lower()}.png"
+    r = requests.get(url, timeout=10)
+    if r.status_code == 200:
+        return r.content
+    else:
+        print(f"Flag not found for {code} at {url}")
+        return None
 
-def download_and_resize_flag(url, country):
-    """Download PNG, resize to 24x24, 144dpi, save to flags dir."""
-    r = requests.get(url)
-    img = Image.open(BytesIO(r.content)).convert('RGBA')
+def save_flag_png(png_bytes, code):
+    """Save PNG bytes to flags dir as code.png, ensure 24x24, 144dpi."""
+    img = Image.open(BytesIO(png_bytes)).convert('RGBA')
     img = img.resize((24, 24), Image.LANCZOS)
-    img.save(os.path.join(FLAGS_DIR, f"{country}.png"), dpi=(144, 144))
-    print(f"Saved {country}.png")
+    img.save(os.path.join(FLAGS_DIR, f"{code}.png"), dpi=(144, 144))
+    print(f"Saved {code}.png")
 
-def add_flag_to_qrc(country):
+def add_flag_to_qrc(code):
     """Add PNG to flags.qrc if not present."""
     tree = ET.parse(FLAGS_QRC)
     root = tree.getroot()
     qresource = root.find('qresource')
-    png_name = f"flags/{country}.png"
+    png_name = f"flags/{code}.png"
     for file_elem in qresource.iter('file'):
         if file_elem.text == png_name:
             return
@@ -100,19 +90,19 @@ def main():
         print("Usage: python add_flag.py <lang_code>")
         sys.exit(1)
     lang_code = sys.argv[1]
-    country = get_country_from_lang_code(lang_code)
-    if not country:
+    code, country = get_country_from_lang_code(lang_code)
+    if not code or not country:
         print(f"Could not determine country for lang_code: {lang_code}")
         sys.exit(1)
-    if flag_exists(country):
-        print(f"Flag for {country} already exists.")
+    if flag_exists(code):
+        print(f"Flag for {country} ({code}) already exists.")
         return
-    url = search_flag_on_commons(country)
-    if not url:
-        print(f"Could not find flag for {country} on Wikimedia Commons.")
+    png_bytes = download_flag_from_flagpedia(code)
+    if not png_bytes:
+        print(f"Could not find flag for {country} ({code}) on flagpedia.net.")
         sys.exit(1)
-    download_and_resize_flag(url, country)
-    add_flag_to_qrc(country)
+    save_flag_png(png_bytes, code)
+    add_flag_to_qrc(code)
 
 if __name__ == "__main__":
     main()
