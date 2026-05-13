@@ -39,9 +39,9 @@ def get_country_from_lang_code(lang_code):
         return code, country
     return None, None
 
-def flag_exists(code):
+def flag_exists(country):
     """Check if flag PNG exists in both qrc and folder."""
-    png_name = f"{code}.png"
+    png_name = f"{country}.png"
     # Check file
     if not os.path.exists(os.path.join(FLAGS_DIR, png_name)):
         return False
@@ -54,28 +54,28 @@ def flag_exists(code):
     return False
 
 def download_flag_from_flagpedia(code):
-    """Download PNG flag from flagpedia.net (flagcdn.com) for the given country code."""
-    url = f"https://flagcdn.com/24x24/{code.lower()}.png"
+    """Download PNG flag from flagpedia.net (flagcdn.com) for the given country code, 24px height."""
+    code = code.lower()
+    url = f"https://flagcdn.com/24x18/{code}.png"  # 24px height, width varies (usually 24x18)
     r = requests.get(url, timeout=10)
     if r.status_code == 200:
         return r.content
     else:
-        print(f"Flag not found for {code} at {url}")
+        print(f"Flag not found for {code.upper()} at {url}")
         return None
 
-def save_flag_png(png_bytes, code):
-    """Save PNG bytes to flags dir as code.png, ensure 24x24, 144dpi."""
+def save_flag_png(png_bytes, country):
+    """Save PNG bytes to flags dir as <country>.png, keep original size and DPI."""
     img = Image.open(BytesIO(png_bytes)).convert('RGBA')
-    img = img.resize((24, 24), Image.LANCZOS)
-    img.save(os.path.join(FLAGS_DIR, f"{code}.png"), dpi=(144, 144))
-    print(f"Saved {code}.png")
+    img.save(os.path.join(FLAGS_DIR, f"{country}.png"))
+    print(f"Saved {country}.png")
 
-def add_flag_to_qrc(code):
+def add_flag_to_qrc(country):
     """Add PNG to flags.qrc if not present."""
     tree = ET.parse(FLAGS_QRC)
     root = tree.getroot()
     qresource = root.find('qresource')
-    png_name = f"flags/{code}.png"
+    png_name = f"flags/{country}.png"
     for file_elem in qresource.iter('file'):
         if file_elem.text == png_name:
             return
@@ -94,15 +94,15 @@ def main():
     if not code or not country:
         print(f"Could not determine country for lang_code: {lang_code}")
         sys.exit(1)
-    if flag_exists(code):
+    if flag_exists(country):
         print(f"Flag for {country} ({code}) already exists.")
         return
     png_bytes = download_flag_from_flagpedia(code)
     if not png_bytes:
         print(f"Could not find flag for {country} ({code}) on flagpedia.net.")
         sys.exit(1)
-    save_flag_png(png_bytes, code)
-    add_flag_to_qrc(code)
+    save_flag_png(png_bytes, country)
+    add_flag_to_qrc(country)
 
 if __name__ == "__main__":
     main()
