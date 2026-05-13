@@ -158,11 +158,15 @@ if __name__ == '__main__':
     """
     @brief Main entry point. Usage: python create_new_ts.py <lang_code>
     """
+    print("[DEBUG] Starting create_new_ts.py...")
+    print(f"[DEBUG] sys.argv: {sys.argv}")
     if len(sys.argv) < 2:
         print("Usage: python create_new_ts.py <lang_code>")
         sys.exit(1)
     lang_code = sys.argv[1]
+    print(f"[DEBUG] lang_code: {lang_code}")
     measurements_pro = os.path.join('share', 'translations', 'measurements.pro')
+    print(f"[DEBUG] Checking if {lang_code} exists in {measurements_pro}")
     # Check if lang_code already exists in measurements.pro
     with open(measurements_pro, 'r', encoding='utf-8') as f:
         pro_contents = f.read()
@@ -170,4 +174,6 @@ if __name__ == '__main__':
         print(f"Language code {lang_code} already exists in measurements.pro. Exiting.")
         sys.exit(0)
     dest_dir = os.path.join('share', 'translations')
+    print(f"[DEBUG] dest_dir: {dest_dir}")
     create_new_translation_files(lang_code, dest_dir)
+    print("[DEBUG] Finished create_new_ts.py.")

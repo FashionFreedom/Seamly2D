@@ -67,7 +67,15 @@ jobs:
 
       - name: Auto-translate new .ts files (on virtual server, not in code branch)
         run: |
+          set -x
           LANG_SHORT=$(echo "${{ github.event.inputs.lang_code }}" | cut -d'_' -f1)
+          echo "LANG_SHORT=$LANG_SHORT"
+          ls -l share/translations/
+          echo "Checking measurements_${{ github.event.inputs.lang_code }}.ts:"
+          cat share/translations/measurements_${{ github.event.inputs.lang_code }}.ts || echo "File not found!"
+          echo "Checking seamly2d_${{ github.event.inputs.lang_code }}.ts:"
+          cat share/translations/seamly2d_${{ github.event.inputs.lang_code }}.ts || echo "File not found!"
+          echo "About to run auto_translate_ts.py..."
           python -u scripts/auto_translate_ts.py $LANG_SHORT share/translations/measurements_${{ github.event.inputs.lang_code }}.ts share/translations/seamly2d_${{ github.event.inputs.lang_code }}.ts
 
       - name: Install Qt with QT Multimedia module
