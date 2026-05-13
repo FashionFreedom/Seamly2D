@@ -123,15 +123,20 @@ def create_new_translation_files(lang_code, dest_dir):
     @param lang_code Language code to add (e.g., 'pl_PL').
     @param dest_dir Directory containing translation templates and .pro files.
     """
+    # Check if any new translation file already exists
+    for template in TEMPLATE_FILES:
+        src = os.path.join(dest_dir, template)
+        new_file = src.replace('en_US', lang_code)
+        if os.path.exists(new_file):
+            print(f"File already exists: {new_file}. Exiting.")
+            sys.exit(1)
+    # Proceed to create new translation files
     for template in TEMPLATE_FILES:
         src = os.path.join(dest_dir, template)
         if not os.path.exists(src):
             print(f"Template file not found: {src}")
             continue
         new_file = src.replace('en_US', lang_code)
-        if os.path.exists(new_file):
-            print(f"File already exists: {new_file}")
-            continue
         shutil.copy(src, new_file)
         # Clear all <translation> tags in the new file
         tree = ET.parse(new_file)
@@ -157,5 +162,12 @@ if __name__ == '__main__':
         print("Usage: python create_new_ts.py <lang_code>")
         sys.exit(1)
     lang_code = sys.argv[1]
+    measurements_pro = os.path.join('share', 'translations', 'measurements.pro')
+    # Check if lang_code already exists in measurements.pro
+    with open(measurements_pro, 'r', encoding='utf-8') as f:
+        pro_contents = f.read()
+    if lang_code in pro_contents:
+        print(f"Language code {lang_code} already exists in measurements.pro. Exiting.")
+        sys.exit(0)
     dest_dir = os.path.join('share', 'translations')
     create_new_translation_files(lang_code, dest_dir)
