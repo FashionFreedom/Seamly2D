@@ -57,7 +57,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install googletrans==4.0.0-rc1
-          pip install pillow requests
+          pip install pillow requests pycountry
 
       - name: Ensure flag icon for language
         run: python scripts/add_flag.py ${{ github.event.inputs.lang_code }}
