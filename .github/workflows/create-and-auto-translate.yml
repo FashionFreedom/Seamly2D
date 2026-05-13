@@ -36,6 +36,10 @@ on:
         required: true
         default: 'pl_PL'
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   create-and-translate:
     runs-on: ubuntu-latest
