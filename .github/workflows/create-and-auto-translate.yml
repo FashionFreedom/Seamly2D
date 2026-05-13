@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -60,7 +60,7 @@ jobs:
           pip install pillow requests pycountry
 
       - name: Ensure flag icon for language
-        run: python scripts/add_flag.py ${{ github.event.inputs.lang_code }}
+        run: python -u scripts/add_flag.py ${{ github.event.inputs.lang_code }}
 
       - name: Create new .ts files for language (on virtual server, not in code branch)
         run: python scripts/create_new_ts.py ${{ github.event.inputs.lang_code }}
@@ -68,7 +68,7 @@ jobs:
       - name: Auto-translate new .ts files (on virtual server, not in code branch)
         run: |
           LANG_SHORT=$(echo "${{ github.event.inputs.lang_code }}" | cut -d'_' -f1)
-          python scripts/auto_translate_ts.py $LANG_SHORT share/translations/measurements_${{ github.event.inputs.lang_code }}.ts share/translations/seamly2d_${{ github.event.inputs.lang_code }}.ts
+          python -u scripts/auto_translate_ts.py $LANG_SHORT share/translations/measurements_${{ github.event.inputs.lang_code }}.ts share/translations/seamly2d_${{ github.event.inputs.lang_code }}.ts
 
       - name: Install Qt with QT Multimedia module
         uses: jurplel/install-qt-action@v4.3.1
