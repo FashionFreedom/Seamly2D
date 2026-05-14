@@ -36,14 +36,17 @@ on:
         required: true
         default: 'pl_PL'
 
-env:
-  QT_VERSION: '6.5.3' # quotes required or YAML parser will interpret as float
 
-jobs:
-  create-and-translate:
-    permissions:
-      contents: write
       pull-requests: write
+  push:
+    branches:
+      - '**'
+  workflow_dispatch:
+    inputs:
+      lang_code:
+        description: 'Target language code (e.g., pl_PL for Polish)'
+        required: true
+        default: 'pl_PL'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
