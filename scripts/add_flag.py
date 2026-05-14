@@ -46,44 +46,58 @@ def flag_exists(country):
     if not os.path.exists(os.path.join(FLAGS_DIR, png_name)):
         return False
     # Check qrc
-    tree = ET.parse(FLAGS_QRC)
-    root = tree.getroot()
-    for file_elem in root.iter('file'):
-        if file_elem.text == f"flags/{png_name}":
-            return True
+    try:
+        tree = ET.parse(FLAGS_QRC)
+        root = tree.getroot()
+        for file_elem in root.iter('file'):
+            if file_elem.text == f"flags/{png_name}":
+                return True
+    except Exception as e:
+        print(f"[ERROR] Could not parse {FLAGS_QRC}: {e}")
+        return False
     return False
 
 def download_flag_from_flagpedia(code):
     """Download PNG flag from flagpedia.net (flagcdn.com) for the given country code, 24px height."""
     code = code.lower()
     url = f"https://flagcdn.com/24x18/{code}.png"  # 24px height, width varies (usually 24x18)
-    r = requests.get(url, timeout=10)
-    if r.status_code == 200:
-        return r.content
-    else:
-        print(f"Flag not found for {code.upper()} at {url}")
+    try:
+        r = requests.get(url, timeout=10)
+        if r.status_code == 200:
+            return r.content
+        else:
+            print(f"Flag not found for {code.upper()} at {url}")
+            return None
+    except Exception as e:
+        print(f"[ERROR] Failed to download flag for {code.upper()} from {url}: {e}")
         return None
 
 def save_flag_png(png_bytes, country):
     """Save PNG bytes to flags dir as <country>.png, keep original size and DPI."""
-    img = Image.open(BytesIO(png_bytes)).convert('RGBA')
-    img.save(os.path.join(FLAGS_DIR, f"{country}.png"))
-    print(f"Saved {country}.png")
+    try:
+        img = Image.open(BytesIO(png_bytes)).convert('RGBA')
+        img.save(os.path.join(FLAGS_DIR, f"{country}.png"))
+        print(f"Saved {country}.png")
+    except Exception as e:
+        print(f"[ERROR] Could not save PNG for {country}: {e}")
 
 def add_flag_to_qrc(country):
     """Add PNG to flags.qrc if not present."""
-    tree = ET.parse(FLAGS_QRC)
-    root = tree.getroot()
-    qresource = root.find('qresource')
-    png_name = f"flags/{country}.png"
-    for file_elem in qresource.iter('file'):
-        if file_elem.text == png_name:
-            return
-    new_elem = ET.Element('file')
-    new_elem.text = png_name
-    qresource.append(new_elem)
-    tree.write(FLAGS_QRC, encoding='utf-8', xml_declaration=True)
-    print(f"Added {png_name} to flags.qrc")
+    try:
+        tree = ET.parse(FLAGS_QRC)
+        root = tree.getroot()
+        qresource = root.find('qresource')
+        png_name = f"flags/{country}.png"
+        for file_elem in qresource.iter('file'):
+            if file_elem.text == png_name:
+                return
+        new_elem = ET.Element('file')
+        new_elem.text = png_name
+        qresource.append(new_elem)
+        tree.write(FLAGS_QRC, encoding='utf-8', xml_declaration=True)
+        print(f"Added {png_name} to flags.qrc")
+    except Exception as e:
+        print(f"[ERROR] Could not update {FLAGS_QRC}: {e}")
 
 def main():
     if len(sys.argv) < 2:

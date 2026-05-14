@@ -43,8 +43,12 @@ def add_lang_to_pro_file(filepath, lang_code):
     @param filepath Path to the .pro file.
     @param lang_code Language code to add (e.g., 'pl_PL').
     """
-    with open(filepath, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+    except Exception as e:
+        print(f"[ERROR] Could not read {filepath}: {e}")
+        return
     new_lines = []
     added = False
     for line in lines:
@@ -61,9 +65,12 @@ def add_lang_to_pro_file(filepath, lang_code):
     if not added:
         # Fallback: append at end if not found
         new_lines.append('    ' + lang_code + '\n')
-    with open(filepath, 'w', encoding='utf-8') as f:
-        f.writelines(new_lines)
-    print(f"Added {lang_code} to {filepath}")
+    try:
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.writelines(new_lines)
+        print(f"Added {lang_code} to {filepath}")
+    except Exception as e:
+        print(f"[ERROR] Could not write to {filepath}: {e}")
 
 def add_lang_to_translations_pri(filepath, lang_code):
     """
@@ -71,8 +78,12 @@ def add_lang_to_translations_pri(filepath, lang_code):
     @param filepath Path to the .pri file.
     @param lang_code Language code to add (e.g., 'pl_PL').
     """
-    with open(filepath, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+    except Exception as e:
+        print(f"[ERROR] Could not read {filepath}: {e}")
+        return
     added = False
     for i, line in enumerate(lines):
         # Look for the LANGUAGES += block
@@ -88,9 +99,12 @@ def add_lang_to_translations_pri(filepath, lang_code):
     if not added:
         # Fallback: append at end if not found
         lines.append('    ' + lang_code + '\n')
-    with open(filepath, 'w', encoding='utf-8') as f:
-        f.writelines(lines)
-    print(f"Added {lang_code} to {filepath}")
+    try:
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.writelines(lines)
+        print(f"Added {lang_code} to {filepath}")
+    except Exception as e:
+        print(f"[ERROR] Could not write to {filepath}: {e}")
 
 def add_locale_to_def_cpp(filepath, lang_code):
     """
@@ -98,8 +112,12 @@ def add_locale_to_def_cpp(filepath, lang_code):
     @param filepath Path to def.cpp.
     @param lang_code Language code to add (e.g., 'pl_PL').
     """
-    with open(filepath, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+    except Exception as e:
+        print(f"[ERROR] Could not read {filepath}: {e}")
+        return
     added = False
     for i, line in enumerate(lines):
         # Look for the locales QStringList
@@ -113,9 +131,12 @@ def add_locale_to_def_cpp(filepath, lang_code):
                 lines[j] = lines[j].rstrip() + f"\n                                              << QStringLiteral(\"{lang_code}\");\n"
                 added = True
             break
-    with open(filepath, 'w', encoding='utf-8') as f:
-        f.writelines(lines)
-    print(f"Added {lang_code} to SupportedLocales() in {filepath}")
+    try:
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.writelines(lines)
+        print(f"Added {lang_code} to SupportedLocales() in {filepath}")
+    except Exception as e:
+        print(f"[ERROR] Could not write to {filepath}: {e}")
 
 def create_new_translation_files(lang_code, dest_dir):
     """
@@ -130,6 +151,27 @@ def create_new_translation_files(lang_code, dest_dir):
         if os.path.exists(new_file):
             print(f"File already exists: {new_file}. Exiting.")
             sys.exit(1)
+        if not os.path.exists(src):
+            print(f"[ERROR] Template file not found: {src}")
+            continue
+        try:
+            shutil.copy(src, new_file)
+        except Exception as e:
+            print(f"[ERROR] Could not copy {src} to {new_file}: {e}")
+            continue
+        try:
+            tree = ET.parse(new_file)
+            root = tree.getroot()
+            for context in root.findall('context'):
+                for message in context.findall('message'):
+                    translation = message.find('translation')
+                    if translation is not None:
+                        translation.text = ''
+            tree.write(new_file, encoding='utf-8')
+            print(f"Created: {new_file}")
+        except Exception as e:
+            print(f"[ERROR] Could not process XML for {new_file}: {e}")
+            continue
     # Proceed to create new translation files
     for template in TEMPLATE_FILES:
         src = os.path.join(dest_dir, template)
