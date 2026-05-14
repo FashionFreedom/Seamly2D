@@ -118,5 +118,7 @@ def main():
     save_flag_png(png_bytes, country)
     add_flag_to_qrc(country)
 
+#========BEGIN========
 if __name__ == "__main__":
     main()
+#========END========

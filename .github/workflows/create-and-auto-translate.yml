@@ -34,24 +34,34 @@ jobs:
           pip install googletrans==4.0.0-rc1
           pip install pillow requests pycountry
 
+      - name: Set LANG_CODE
+        run: |
+          if [ -n "${{ github.event.inputs.lang_code }}" ]; then
+            echo "LANG_CODE=${{ github.event.inputs.lang_code }}" >> $GITHUB_ENV
+          else
+            BRANCH_NAME="${GITHUB_REF##*/}"
+            LANG_CODE="${BRANCH_NAME#auto/translation-}"
+            echo "LANG_CODE=$LANG_CODE" >> $GITHUB_ENV
+          fi
+
       - name: Ensure flag icon for language
-        run: python -u scripts/add_flag.py ${{ github.event.inputs.lang_code }}
+        run: python -u scripts/add_flag.py ${{ env.LANG_CODE }}
 
       - name: Create new .ts files for language (on virtual server, not in code branch)
-        run: python scripts/create_new_ts.py ${{ github.event.inputs.lang_code }}
+        run: python scripts/create_new_ts.py ${{ env.LANG_CODE }}
 
       - name: Auto-translate new .ts files (on virtual server, not in code branch)
         run: |
           set -x
-          LANG_SHORT=$(echo "${{ github.event.inputs.lang_code }}" | cut -d'_' -f1)
+          LANG_SHORT=$(echo "$LANG_CODE" | cut -d'_' -f1)
           echo "LANG_SHORT=$LANG_SHORT"
           ls -l share/translations/
-          echo "Checking measurements_${{ github.event.inputs.lang_code }}.ts:"
-          cat share/translations/measurements_${{ github.event.inputs.lang_code }}.ts || echo "File not found!"
-          echo "Checking seamly2d_${{ github.event.inputs.lang_code }}.ts:"
-          cat share/translations/seamly2d_${{ github.event.inputs.lang_code }}.ts || echo "File not found!"
+          echo "Checking measurements_${LANG_CODE}.ts:"
+          cat share/translations/measurements_${LANG_CODE}.ts || echo "File not found!"
+          echo "Checking seamly2d_${LANG_CODE}.ts:"
+          cat share/translations/seamly2d_${LANG_CODE}.ts || echo "File not found!"
           echo "About to run auto_translate_ts.py..."
-          python -u scripts/auto_translate_ts.py $LANG_SHORT share/translations/measurements_${{ github.event.inputs.lang_code }}.ts share/translations/seamly2d_${{ github.event.inputs.lang_code }}.ts
+          python -u scripts/auto_translate_ts.py $LANG_SHORT share/translations/measurements_${LANG_CODE}.ts share/translations/seamly2d_${LANG_CODE}.ts
 
       - name: Install Qt with QT Multimedia module
         uses: jurplel/install-qt-action@v4.3.1
