@@ -1,54 +1,50 @@
-/***************************************************************************
- **  @file   vformula.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+// @file   vformula.cpp
+// @author Douglas S Caskey
+// @date   14 May, 2026
+//
+// @copyright
+// Copyright (C) 2017 - 2026 Seamly, LLC
+// https://github.com/fashionfreedom/seamly2d
+//
+// @brief
+// Seamly2D is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Seamly2D is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
 
-/************************************************************************
- **
- **  @file   vformula.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   28 8, 2014
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2014 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//
+//  @file   vformula.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   28 Aug, 2014
+//
+//  @copyright
+//  Copyright (C) 2014 Valentina project.
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published
+//  by the Free Software Foundation, either version 3 of the License,
+//  or (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 #include "vformula.h"
 
@@ -69,22 +65,28 @@
 //VFormula
 //---------------------------------------------------------------------------------------------------------------------
 VFormula::VFormula()
-    :formula(QString()), value(tr("Error")), checkZero(true), data(nullptr), toolId(NULL_ID),
-      postfix(QString()), _error(true), dValue(0)
+    : m_formula(QString())
+    , m_valueStr(tr("Error"))
+    , m_checkZero(true)
+    , m_data(nullptr)
+    , m_toolId(NULL_ID)
+    , m_postfix(QString())
+    , m_error(true)
+    , m_value(0)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
 VFormula::VFormula(const QString &formula, const VContainer *container)
-    : formula(qApp->translateVariables()->FormulaToUser(formula, qApp->Settings()->getOsSeparator())),
-      value(tr("Error")),
-      checkZero(true),
-      data(container),
-      toolId(NULL_ID),
-      postfix(QString()),
-      _error(true),
-      dValue(0)
+    : m_formula(qApp->translateVariables()->FormulaToUser(formula, qApp->Settings()->getOsSeparator()))
+    , m_valueStr(tr("Error"))
+    , m_checkZero(true)
+    , m_data(container)
+    , m_toolId(NULL_ID)
+    , m_postfix(QString())
+    , m_error(true)
+    , m_value(0)
 {
-    this->formula.replace("\n", " ");// Replace line return with spaces for calc if exist
+    m_formula.replace("\n", " ");// Replace line return with spaces for calc if exist
     Eval();
 }
 
@@ -95,32 +97,37 @@ VFormula &VFormula::operator=(const VFormula &formula)
     {
         return *this;
     }
-    this->formula = formula.GetFormula();
-    this->value = formula.getStringValue();
-    this->checkZero = formula.getCheckZero();
-    this->data = formula.getData();
-    this->toolId = formula.getToolId();
-    this->postfix = formula.getPostfix();
-    this->_error = formula.error();
-    this->dValue = formula.getDoubleValue();
+    m_formula   = formula.GetFormula();
+    m_valueStr  = formula.getStringValue();
+    m_checkZero = formula.getCheckZero();
+    m_data      = formula.getData();
+    m_toolId    = formula.getToolId();
+    m_postfix   = formula.getPostfix();
+    m_error     = formula.error();
+    m_value     = formula.getDoubleValue();
     return *this;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 VFormula::VFormula(const VFormula &formula)
-    :formula(formula.GetFormula()), value(formula.getStringValue()), checkZero(formula.getCheckZero()),
-      data(formula.getData()), toolId(formula.getToolId()), postfix(formula.getPostfix()), _error(formula.error()),
-      dValue(formula.getDoubleValue())
+    : m_formula(formula.GetFormula())
+    , m_valueStr(formula.getStringValue())
+    , m_checkZero(formula.getCheckZero())
+    , m_data(formula.getData())
+    , m_toolId(formula.getToolId())
+    , m_postfix(formula.getPostfix())
+    , m_error(formula.error())
+    , m_value(formula.getDoubleValue())
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
 bool VFormula::operator==(const VFormula &formula) const
 {
     bool isEqual = false;
-    if (this->formula == formula.GetFormula() && this->value == formula.getStringValue() &&
-        this->checkZero == formula.getCheckZero() && this->data == formula.getData() &&
-        this->toolId == formula.getToolId() && this->postfix == formula.getPostfix() &&
-        this->_error == formula.error() && VFuzzyComparePossibleNulls(this->dValue, formula.getDoubleValue()))
+    if (m_formula == formula.GetFormula() && m_valueStr == formula.getStringValue() &&
+        m_checkZero == formula.getCheckZero() && m_data == formula.getData() &&
+        m_toolId == formula.getToolId() && m_postfix == formula.getPostfix() &&
+        m_error == formula.error() && VFuzzyComparePossibleNulls(m_value, formula.getDoubleValue()))
     {
         isEqual = true;
     }
@@ -137,28 +144,28 @@ QString VFormula::GetFormula(FormulaType type) const
 {
     if (type == FormulaType::ToUser)
     {
-        return formula;
+        return m_formula;
     }
     else
     {
-        return qApp->translateVariables()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+        return qApp->translateVariables()->TryFormulaFromUser(m_formula, qApp->Settings()->getOsSeparator());
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VFormula::SetFormula(const QString &value, FormulaType type)
+void VFormula::SetFormula(const QString &text, FormulaType type)
 {
-    if (formula != value)
+    if (m_formula != text)
     {
         if (type == FormulaType::ToUser)
         {
-            formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+            m_formula = qApp->translateVariables()->FormulaToUser(text, qApp->Settings()->getOsSeparator());
         }
         else
         {
-            formula = value;
+            m_formula = text;
         }
-        formula.replace("\n", " ");// Replace line return with spaces for calc if exist
+        m_formula.replace("\n", " ");// Replace line return with spaces for calc if exist
         Eval();
     }
 }
@@ -166,27 +173,27 @@ void VFormula::SetFormula(const QString &value, FormulaType type)
 //---------------------------------------------------------------------------------------------------------------------
 QString VFormula::getStringValue() const
 {
-    return value;
+    return m_valueStr;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 qreal VFormula::getDoubleValue() const
 {
-    return dValue;
+    return m_value;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 bool VFormula::getCheckZero() const
 {
-    return checkZero;
+    return m_checkZero;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VFormula::setCheckZero(bool value)
 {
-    if (checkZero != value)
+    if (m_checkZero != value)
     {
-        checkZero = value;
+        m_checkZero = value;
         Eval();
     }
 }
@@ -194,15 +201,15 @@ void VFormula::setCheckZero(bool value)
 //---------------------------------------------------------------------------------------------------------------------
 const VContainer *VFormula::getData() const
 {
-    return data;
+    return m_data;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VFormula::setData(const VContainer *value)
 {
-    if (data != value && value != nullptr)
+    if (m_data != value && value != nullptr)
     {
-        data = value;
+        m_data = value;
         Eval();
     }
 }
@@ -210,27 +217,27 @@ void VFormula::setData(const VContainer *value)
 //---------------------------------------------------------------------------------------------------------------------
 quint32 VFormula::getToolId() const
 {
-    return toolId;
+    return m_toolId;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VFormula::setToolId(const quint32 &value)
 {
-    toolId = value;
+    m_toolId = value;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString VFormula::getPostfix() const
 {
-    return postfix;
+    return m_postfix;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VFormula::setPostfix(const QString &value)
+void VFormula::setPostfix(const QString &text)
 {
-    if (postfix != value)
+    if (m_postfix != text)
     {
-        postfix = value;
+        m_postfix = text;
         Eval();
     }
 }
@@ -238,7 +245,7 @@ void VFormula::setPostfix(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 bool VFormula::error() const
 {
-    return _error;
+    return m_error;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -250,64 +257,56 @@ int VFormula::FormulaTypeId()
 //---------------------------------------------------------------------------------------------------------------------
 void VFormula::Eval()
 {
-    if (data == nullptr)
+    if (m_data == nullptr)
     {
         return;
     }
-    if (formula.isEmpty())
+    if (m_formula.isEmpty())
     {
-        value = tr("Error");
-        _error = true;
-        dValue = 0;
+        m_valueStr = tr("Error");
+        m_error = true;
+        m_value = 0;
     }
     else
     {
         try
         {
             QScopedPointer<Calculator> cal(new Calculator());
-            QString expression = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
-            qreal result = cal->EvalFormula(data->DataVariables(), expression);
+            QString expression = qApp->translateVariables()->FormulaFromUser(m_formula, qApp->Settings()->getOsSeparator());
+            qreal result = cal->EvalFormula(m_data->DataVariables(), expression);
 
             if (qIsInf(result) || qIsNaN(result))
             {
-                value = tr("Error");
-                _error = true;
-                dValue = 0;
+                m_valueStr = tr("Error");
+                m_error = true;
+                m_value = 0;
             }
             else
             {
                 //if result equal 0
-                if (checkZero && qFuzzyIsNull(result))
+                if (m_checkZero && qFuzzyIsNull(result))
                 {
-                    value = QString("0");
-                    _error = true;
-                    dValue = 0;
+                    m_valueStr = QString("0");
+                    m_error = true;
+                    m_value = 0;
                 }
                 else
                 {
-                    if (postfix == degreeSymbol)
+                    if (m_postfix == degreeSymbol)
                     {
-                        qreal value = result - 360.0 * qFloor(result / 360.0);
-                        if (result != 0.0 && value == 360.0)
-                        {
-                            result = 360.0;
-                        }
-                        else
-                        {
-                            result = value;
-                        }
+                        result = normalize(result, 0.0, 360.0);
                     }
-                    dValue = result;
-                    value = QString(qApp->LocaleToString(result) + " " + postfix);
-                    _error = false;
+                    m_value = result;
+                    m_valueStr = QString(qApp->LocaleToString(result) + " " + m_postfix);
+                    m_error = false;
                 }
             }
         }
         catch (qmu::QmuParserError &error)
         {
-            value = tr("Error");
-            _error = true;
-            dValue = 0;
+            m_valueStr = tr("Error");
+            m_error = true;
+            m_value = 0;
             qDebug() << "\nMath parser error:\n"
                        << "--------------------------------------\n"
                        << "Message:     " << error.GetMsg()  << "\n"

@@ -92,6 +92,7 @@
 #include "../vgeometry/vpointf.h"
 #include "../vgeometry/vabstractcurve.h"
 #include "../vgeometry/vgobject.h"
+#include "../vmisc/def.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/calculator.h"
@@ -897,23 +898,6 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
     }
     CheckState(); // Disable Ok and Apply buttons if something wrong.
     return result;
-}
-
-// Normalizes any number to an arbitrary range
-// by assuming the range wraps around when going below min or above max
-qreal DialogTool::normalize( const qreal value, const qreal start, const qreal end )
-{
-    // check if value is evenly divisble by end value
-    if (qFabs(value) != start && std::fmod(qFabs(value), end) < 1e-9)
-    {
-        return end;
-    }
-
-    const qreal range       = end - start   ;   //
-    const qreal offsetValue = value - start ;   // value relative to 0
-
-    // add start to reset back to start of original range
-    return ( offsetValue - ( floor( offsetValue / range ) * range ) ) + start ;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
