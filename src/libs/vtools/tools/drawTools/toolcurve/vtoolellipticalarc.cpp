@@ -176,9 +176,9 @@ VToolEllipticalArc* VToolEllipticalArc::Create(const quint32 _id, const quint32 
     calcRadius1 = qApp->toPixel(CheckFormula(_id, radius1, data));
     calcRadius2 = qApp->toPixel(CheckFormula(_id, radius2, data));
 
-    calcF1 = CheckFormula(_id, f1, data);
-    calcF2 = CheckFormula(_id, f2, data);
-    calcRotationAngle = CheckFormula(_id, rotationAngle, data);
+    calcF1 = normalize(CheckFormula(_id, f1, data), 0.0, 360.0);
+    calcF2 = normalize(CheckFormula(_id, f2, data), 0.0, 360.0);
+    calcRotationAngle = normalize(CheckFormula(_id, rotationAngle, data), 0.0, 360.0);
 
     const VPointF c = *data->GeometricObject<VPointF>(center);
     VEllipticalArc *elArc = new VEllipticalArc(c, calcRadius1, calcRadius2, radius1, radius2, calcF1, f1, calcF2, f2,
