@@ -138,6 +138,8 @@ private:
     void               updateFromHandles(QRectF rect);
     void               setPixmap(const QPixmap &pixmap);
     void               showImageStatusMessage();
+    void               stopCalibration();
+    void               stopOriginSelection();
 
     QTransform         computePerspectiveTransformation(const QPolygonF &source, const QPolygonF &destination);
 };

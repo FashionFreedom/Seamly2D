@@ -57,6 +57,10 @@
 #include <Qt>
 #include <QGraphicsItem>
 
+namespace
+{
+    constexpr qreal calibrationIconRadius = 8;
+}
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief ImageItem default constructor.
@@ -260,13 +264,14 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
         painter->save();
         painter->setRenderHint(QPainter::Antialiasing);
         painter->setPen(QPen(Qt::black, 2));
-        painter->setBrush(QColor(0, 0, 255, 100));
+        painter->setBrush(Qt::transparent);
 
         auto drawCalibrationSymbol = [&painter](QPointF p) 
         {
-            painter->drawEllipse(p, 6, 6);
-            painter->drawLine(QLineF(p.x() - 8, p.y(), p.x() + 8, p.y()));
-            painter->drawLine(QLineF(p.x(), p.y() - 8, p.x(), p.y() + 8));
+            painter->drawEllipse(p, calibrationIconRadius, calibrationIconRadius);
+            constexpr qreal crossSize = calibrationIconRadius + 2;
+            painter->drawLine(QLineF(p.x() - crossSize, p.y(), p.x() + crossSize, p.y()));
+            painter->drawLine(QLineF(p.x(), p.y() - crossSize, p.x(), p.y() + crossSize));
         };
 
         for (const QPointF &p : m_calibrationPoints)
@@ -350,6 +355,16 @@ void ImageItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
         m_resizeHandles->hide();
     }
 
+    if (m_selectNewOrigin)
+    {
+        stopOriginSelection();
+    }
+
+    if (m_isCalibrating)
+    {
+        stopCalibration();
+    }
+
     QGraphicsItem::hoverLeaveEvent(event);
 }
 
@@ -377,14 +392,13 @@ void ImageItem::hoverMoveEvent(QGraphicsSceneHoverEvent *event)
  */
 void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
-    if (!m_selectable)
+    if (!m_selectable || m_isCalibrating || m_selectNewOrigin)
     {
         return;
     }
 
     QMenu menu;
     QAction *actionProperties = menu.addAction(QIcon::fromTheme("preferences-other"), tr("Properties"));
-    actionProperties->setEnabled(!m_selectNewOrigin);
 
     QAction *actionLock = menu.addAction(tr("Lock"));
     if (m_image.locked){
@@ -395,7 +409,6 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     }
     actionLock->setCheckable(true);
     actionLock->setChecked(m_image.locked);
-    actionLock->setEnabled(!m_selectNewOrigin);
 
     // QAction *actionShow = menu.addAction(QIcon("://icon/32x32/visible_on.png"), tr("Show"));
     // actionShow->setCheckable(true);
@@ -404,13 +417,13 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
     QAction *actionOrigin = menu.addAction(tr("Move Origin"));
     actionOrigin->setIcon(QIcon(cursorImageOrigin));
-    actionOrigin->setEnabled(!m_image.locked && !m_selectNewOrigin);
+    actionOrigin->setEnabled(!m_image.locked);
 
     QAction *actionCalibrate = menu.addAction(tr("Perspective correction"));
     actionCalibrate->setIcon(QIcon(cursorImageCalibration));
-    actionCalibrate->setEnabled(!m_image.locked && !m_isCalibrating);
+    actionCalibrate->setEnabled(!m_image.locked);
     actionCalibrate->setCheckable(true);
-    actionCalibrate->setChecked(m_isCalibrating || !transform().isIdentity());
+    actionCalibrate->setChecked(!transform().isIdentity());
 
     QAction *actionSeparator = new QAction(this);
     actionSeparator->setSeparator(true);
@@ -423,11 +436,11 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     QAction *actionMoveDn = orderMenu->addAction(tr("Move down"));
     QAction *actionMoveBottom = orderMenu->addAction(tr("Send to bottom"));
 
-    orderMenu->setEnabled(!m_image.locked && !m_selectNewOrigin);
-    actionMoveTop->setEnabled(!m_image.locked && !m_selectNewOrigin);
-    actionMoveUp->setEnabled(!m_image.locked && !m_selectNewOrigin);
-    actionMoveDn->setEnabled(!m_image.locked && !m_selectNewOrigin);
-    actionMoveBottom->setEnabled(!m_image.locked && !m_selectNewOrigin);
+    orderMenu->setEnabled(!m_image.locked);
+    actionMoveTop->setEnabled(!m_image.locked);
+    actionMoveUp->setEnabled(!m_image.locked);
+    actionMoveDn->setEnabled(!m_image.locked);
+    actionMoveBottom->setEnabled(!m_image.locked);
 
     //actionMoveTop->setShortcut(QKeySequence(Qt::ControlModifier + Qt::Key_Home));
     //actionMoveUp->setShortcut(QKeySequence(Qt::ControlModifier + Qt::Key_PageUp));
@@ -439,7 +452,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     menu.addAction(actionSeparator);
 
     QAction *actionDelete = menu.addAction(QIcon("://icon/32x32/trashcan.png"), tr("Delete"));
-    actionDelete->setEnabled(!m_image.locked && !m_selectNewOrigin);
+    actionDelete->setEnabled(!m_image.locked);
 
     QAction *selectedAction = menu.exec(event->screenPos());
 
@@ -645,6 +658,7 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             m_clickOffset = event->scenePos() - mapToScene(m_origin);
         }
     }
+
     if (m_selectionType == SelectionType::ByMouseRelease)
     {
         event->accept(); // This help for non selectable items still receive mouseReleaseEvent events
@@ -658,7 +672,7 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         }
     }
 
-    if(m_selectNewOrigin)
+    if(m_selectNewOrigin && event->button() == Qt::LeftButton)
     {
         m_image.xOrigin = event->pos().x() - m_boundingRect.topLeft().x();
         m_image.yOrigin = event->pos().y() - m_boundingRect.topLeft().y();
@@ -667,6 +681,8 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
         m_image.xPos = mapToScene(event->pos()).x();
         m_image.yPos = mapToScene(event->pos()).y();
+
+        emit imageNeedsSave();
     }
 }
 
@@ -691,7 +707,8 @@ void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 void ImageItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
-    if(m_imageWasMoved){
+    if(m_imageWasMoved)
+    {
         m_imageWasMoved = false;
         emit imageNeedsSave();
     }
@@ -711,11 +728,7 @@ void ImageItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
     if(m_selectNewOrigin)
     {
-        m_selectNewOrigin = false;
-        setFlag(QGraphicsItem::ItemIsMovable, true);
-        SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
-        m_resizeHandles->show();
-        emit imageNeedsSave();
+        stopOriginSelection();
     }
 
     m_mousePressed = false;
@@ -733,13 +746,8 @@ void ImageItem::keyReleaseEvent(QKeyEvent *event)
                 emit deleteImage(m_image.id);
             }
         case Qt::Key_Escape:
-            if (m_selectNewOrigin)
-            {
-                m_selectNewOrigin = false;
-                setFlag(QGraphicsItem::ItemIsMovable, true);
-                SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
-                m_resizeHandles->show();
-            }
+            stopOriginSelection();
+            stopCalibration();
         default:
             break;
     }
@@ -937,4 +945,27 @@ void ImageItem::startCalibration()
     setFlag(QGraphicsItem::ItemIsMovable, false);
     m_resizeHandles->hide();
     update();
+}
+
+void ImageItem::stopCalibration()
+{
+    if (m_isCalibrating)
+    {
+        m_isCalibrating = false;
+        m_calibrationPoints.clear();
+        setFlag(QGraphicsItem::ItemIsMovable, true);
+        SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
+        m_resizeHandles->show();
+    }
+}
+
+void ImageItem::stopOriginSelection()
+{
+    if (m_selectNewOrigin)
+    {
+        m_selectNewOrigin = false;
+        setFlag(QGraphicsItem::ItemIsMovable, true);
+        SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
+        m_resizeHandles->show();
+    }
 }
