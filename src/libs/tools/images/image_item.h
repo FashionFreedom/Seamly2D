@@ -106,7 +106,7 @@ protected:
 
 private:
     VAbstractPattern  *m_doc;
-    QPointF            m_offset;
+    QPointF            m_clickOffset;
     QPointF            m_origin;
     QRectF             m_boundingRect;
     QRectF             m_handleRect;

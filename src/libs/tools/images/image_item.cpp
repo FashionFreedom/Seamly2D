@@ -59,7 +59,7 @@
 ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
     : QObject(parent)
     , m_doc(doc)
-    , m_offset(QPointF(0.0, 0.0))
+    , m_clickOffset(QPointF(0.0, 0.0))
     , m_boundingRect(QRectF())
     , m_handleRect(QRectF())
     , m_actualRect(QRectF())
@@ -176,7 +176,10 @@ void  ImageItem::updateImage()
     setTransformOriginPoint(m_origin);
     setRotation(m_image.rotation);
 
-    setPos(m_image.xPos - m_origin.x(), m_image.yPos - m_origin.y());
+    const QPointF currentOriginScene = mapToScene(m_origin);
+    const QPointF desiredOriginScene(m_image.xPos, m_image.yPos);
+    const QPointF originDelta = desiredOriginScene - currentOriginScene;
+    setPos(pos() + originDelta); // we do a relative move to take into account the current transform
 
     m_boundingRect.setSize(QSizeF(m_image.width, m_image.height));
 
@@ -562,7 +565,7 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
         {
             SetItemOverrideCursor(this, cursorArrowCloseHand, 1, 1);
-            m_offset = event->pos() - m_origin;
+            m_clickOffset = event->scenePos() - mapToScene(m_origin);
         }
     }
     if (m_selectionType == SelectionType::ByMouseRelease)
@@ -598,8 +601,9 @@ void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
     {
         m_imageWasMoved = true;
 
-        m_image.xPos = mapToScene(event->pos() - m_offset).x();
-        m_image.yPos = mapToScene(event->pos() - m_offset).y();
+        QPointF new_image_pos = event->scenePos() - m_clickOffset;
+        m_image.xPos = new_image_pos.x();
+        m_image.yPos = new_image_pos.y();
 
         showImageStatusMessage();
         updateImage();
