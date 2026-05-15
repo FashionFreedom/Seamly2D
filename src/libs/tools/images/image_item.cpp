@@ -47,6 +47,12 @@
 #include <QPointF>
 #include <QRectF>
 #include <QPixmap>
+#include <QInputDialog>
+#include <QDialog>
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QDoubleSpinBox>
+#include <QDialogButtonBox>
 #include <QStyleOptionGraphicsItem>
 #include <Qt>
 #include <QGraphicsItem>
@@ -520,25 +526,77 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             QPolygonF source;
             source << A << B << C << D;
 
-            // TODO : ask real distances in a dialog
-            qreal distBC = QLineF(B, C).length();
-            qreal distAB = distBC;
+            qreal pixelDistAB = QLineF(A, B).length();
+            qreal pixelDistBC = QLineF(B, C).length();
+            qreal defaultAB = qApp->fromPixel(pixelDistAB);
+            qreal defaultBC = qApp->fromPixel(pixelDistBC);
+            bool ok = false;
 
-            QPolygonF destination;
-            destination << QPointF(0, 0) << QPointF(0, distAB)
-                        << QPointF(distBC, distAB) << QPointF(distBC, 0);
+            // Custom dialog to retreive the two calibration distances
+            QDialog dialog(qApp->getMainWindow());
+            dialog.setWindowTitle(tr("Enter calibration distances"));
+            dialog.setModal(true);
 
-            m_transform = computePerspectiveTransformation(source, destination);
-            
-            // Apply the transform to the item so it affects the entire item including resize handles
-            setTransform(m_transform);
-            prepareGeometryChange();
+            QVBoxLayout *layout = new QVBoxLayout(&dialog);
 
-            setFlag(QGraphicsItem::ItemIsMovable, !m_image.locked);
-            if (!m_image.locked)
-                m_resizeHandles->show();
+            QLabel *labelAB = new QLabel(tr("Enter vertical distance (%1):").arg(UnitsToStr(m_image.units)));
+            QDoubleSpinBox *spinAB = new QDoubleSpinBox();
+            spinAB->setRange(0.0001, 1000000.0);
+            spinAB->setValue(defaultAB);
+            spinAB->setDecimals(3);
+            spinAB->setSingleStep(0.1);
 
-            emit imageNeedsSave();
+            QLabel *labelBC = new QLabel(tr("Enter horizontal distance (%1):").arg(UnitsToStr(m_image.units)));
+            QDoubleSpinBox *spinBC = new QDoubleSpinBox();
+            spinBC->setRange(0.0001, 1000000.0);
+            spinBC->setValue(defaultBC);
+            spinBC->setDecimals(3);
+            spinBC->setSingleStep(0.1);
+
+            QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+            connect(buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+            connect(buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+
+            layout->addWidget(labelAB);
+            layout->addWidget(spinAB);
+            layout->addWidget(labelBC);
+            layout->addWidget(spinBC);
+            layout->addWidget(buttonBox);
+
+            dialog.adjustSize();
+            if (dialog.exec() == QDialog::Accepted)
+            {
+                qreal inputAB = spinAB->value();
+                qreal inputBC = spinBC->value();
+                ok = true;
+
+                qreal distAB = qApp->toPixel(inputAB);
+                qreal distBC = qApp->toPixel(inputBC);
+
+                QPolygonF destination;
+                destination << QPointF(0, 0) << QPointF(0, distAB)
+                            << QPointF(distBC, distAB) << QPointF(distBC, 0);
+
+                m_transform = computePerspectiveTransformation(source, destination);
+                
+                // Apply the transform to the item so it affects the entire item including resize handles
+                setTransform(m_transform);
+                prepareGeometryChange();
+
+                setFlag(QGraphicsItem::ItemIsMovable, !m_image.locked);
+                if (!m_image.locked)
+                    m_resizeHandles->show();
+
+                emit imageNeedsSave();
+            }
+            else
+            {
+                setFlag(QGraphicsItem::ItemIsMovable, !m_image.locked);
+                if (!m_image.locked)
+                    m_resizeHandles->show();
+                update();
+                return;
+            }
         }
         update();
         return;
