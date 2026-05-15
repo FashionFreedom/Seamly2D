@@ -53,7 +53,7 @@
 #include <QGraphicsItem>
 
 
-constexpr qreal OriginMarkerRadius = 6.0;
+constexpr qreal OriginMarkerWidth = 12.0;
 constexpr qreal RotationHandleDistance = 40.0;
 constexpr qreal RotationHandleRadius = 7.0;
 constexpr qreal HandleHitRadius = 10.0;
@@ -135,8 +135,7 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
 //---------------------------------------------------------------------------------------------------------------------
 QRectF ImageItem::boundingRect() const
 {
-    qreal extra = qMax(RotationHandleDistance + RotationHandleRadius, OriginMarkerRadius + 2.0);
-    return m_boundingRect.adjusted(-extra, -extra, extra, extra);
+    return m_boundingRect;
 }
 
 
@@ -246,18 +245,18 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     {
         painter->save();
         painter->setRenderHint(QPainter::Antialiasing);
-        painter->setPen(QPen(Qt::blue, 2, Qt::SolidLine));
 
+        painter->setPen(QPen(Qt::black, 1, Qt::SolidLine));
         const QPointF rotationCenter = m_origin + QPointF(0.0, -RotationHandleDistance);
         painter->drawLine(QLineF(m_origin, rotationCenter));
 
-        painter->setBrush(Qt::white);
+        painter->setPen(QPen(Qt::white, 1, Qt::SolidLine));
+        painter->setBrush(Qt::black);
         painter->drawEllipse(rotationCenter, RotationHandleRadius, RotationHandleRadius);
 
-        painter->setBrush(QBrush(Qt::blue));
-        painter->drawEllipse(m_origin, OriginMarkerRadius, OriginMarkerRadius);
-        painter->drawLine(QLineF(m_origin.x() - OriginMarkerRadius, m_origin.y(), m_origin.x() + OriginMarkerRadius, m_origin.y()));
-        painter->drawLine(QLineF(m_origin.x(), m_origin.y() - OriginMarkerRadius, m_origin.x(), m_origin.y() + OriginMarkerRadius));
+        painter->setPen(QPen(Qt::black, 1, Qt::SolidLine));
+        painter->setBrush(QBrush(Qt::darkGray));
+        painter->drawRect(m_origin.x()-OriginMarkerWidth/2, m_origin.y()-OriginMarkerWidth/2, OriginMarkerWidth, OriginMarkerWidth);
         painter->restore();
     }
 }
@@ -347,7 +346,7 @@ void ImageItem::hoverMoveEvent(QGraphicsSceneHoverEvent *event)
         {
             SetItemOverrideCursor(this, cursorResizeArrow, 16, 16);
         }
-        else if (originDistance <= OriginMarkerRadius + 2.0)
+        else if (originDistance <= OriginMarkerWidth + 2.0)
         {
             SetItemOverrideCursor(this, cursorImageOrigin, 16, 16);
         }
@@ -516,7 +515,7 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             return;
         }
 
-        if (originDistance <= OriginMarkerRadius + 2.0)
+        if (originDistance <= OriginMarkerWidth + 2.0)
         {
             m_selectNewOrigin = true;
             setFlag(QGraphicsItem::ItemIsMovable, false);
