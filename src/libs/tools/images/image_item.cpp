@@ -403,6 +403,8 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     QAction *actionCalibrate = menu.addAction(tr("Perspective correction"));
     actionCalibrate->setIcon(QIcon(cursorImageOrigin));
     actionCalibrate->setEnabled(!m_image.locked && !m_isCalibrating);
+    actionCalibrate->setCheckable(true);
+    actionCalibrate->setChecked(m_isCalibrating || !transform().isIdentity());
 
     QAction *actionSeparator = new QAction(this);
     actionSeparator->setSeparator(true);
@@ -467,9 +469,20 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     }
     else if (selectedAction == actionCalibrate)
     {
-        if (!m_image.locked)
+        if (actionCalibrate->isChecked())
         {
-            startCalibration();
+            // Start calibration
+            if (!m_image.locked)
+            {
+                startCalibration();
+            }
+        }
+        else
+        {
+            // Remove transformation
+            setTransform(QTransform());
+            prepareGeometryChange();
+            emit imageNeedsSave();
         }
     }
     else if (selectedAction == actionDelete)
