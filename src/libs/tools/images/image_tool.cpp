@@ -98,6 +98,19 @@ ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene 
     image.filename = filename;
     image.units = qApp->patternUnit();
 
+    QImageReader imageReader(image.filename);
+
+    if(!imageReader.canRead())
+    {
+        qCDebug(vImageTool, "Can't read image");
+        QMessageBox::critical(nullptr, tr("Import Image"), tr("Could not read the image.") + "\n" + tr("File may be corrupted..."), QMessageBox::Ok);
+        return;
+    }
+
+    // Set the origin to the center of the image by default
+    image.xOrigin = imageReader.size().width() / 2.0;
+    image.yOrigin = imageReader.size().height() / 2.0;
+
     image.id = VContainer::getNextId();
 
     addImage();
@@ -163,12 +176,6 @@ ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene 
         image.name = fileInfo.baseName();
     }
 
-    addImage();
-}
-
-
-void  ImageTool::addImage()
-{
     QImageReader imageReader(image.filename);
 
     if(!imageReader.canRead())
@@ -178,6 +185,12 @@ void  ImageTool::addImage()
         return;
     }
 
+    addImage();
+}
+
+
+void  ImageTool::addImage()
+{
     imageItem = new ImageItem(this, m_doc, image);
     m_doc->addBackgroundImage(image.id, imageItem);
     m_draftScene->addItem(imageItem);
