@@ -92,15 +92,19 @@ signals:
     void             imageSelected(quint32 id);
     void             setStatusMessage(QString message);
 
+private slots:
+    void             onSceneItemClicked(QGraphicsItem *item);
+
 protected:
-    virtual void     hoverEnterEvent (QGraphicsSceneHoverEvent *event) override;
-    virtual void     hoverMoveEvent (QGraphicsSceneHoverEvent *event) override;
-    virtual void     hoverLeaveEvent (QGraphicsSceneHoverEvent *event) override;
-    virtual void     contextMenuEvent (QGraphicsSceneContextMenuEvent *event) override;
-    virtual void     mousePressEvent(QGraphicsSceneMouseEvent *event) override;
-    virtual void     mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
-    virtual void     mouseReleaseEvent (QGraphicsSceneMouseEvent *event) override;
-    virtual void     keyReleaseEvent (QKeyEvent *event) override;
+    virtual QVariant   itemChange(GraphicsItemChange change, const QVariant &value) override;
+    virtual void       hoverEnterEvent(QGraphicsSceneHoverEvent *event) override;
+    virtual void       hoverMoveEvent(QGraphicsSceneHoverEvent *event) override;
+    virtual void       hoverLeaveEvent(QGraphicsSceneHoverEvent *event) override;
+    virtual void       contextMenuEvent(QGraphicsSceneContextMenuEvent *event) override;
+    virtual void       mousePressEvent(QGraphicsSceneMouseEvent *event) override;
+    virtual void       mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
+    virtual void       mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
+    virtual void       keyReleaseEvent(QKeyEvent *event) override;
 
 private:
     VAbstractPattern  *m_doc;
@@ -119,6 +123,7 @@ private:
     bool               m_draggingRotation;
     qreal              m_initialRotation;
     bool               m_isHovered;
+    bool               m_showHandles;
     SelectionType      m_selectionType;
     bool               m_transformationMode;
     DraftImage         m_image;
@@ -130,11 +135,13 @@ private:
     qreal              m_maxDimension;
     bool               m_selectNewOrigin;
     bool               m_imageWasMoved;
+    qreal              m_rotationHandleDistance;
 
     void               initializeItem();
     void               updateFromHandles(QRectF rect);
     void               setPixmap(const QPixmap &pixmap);
     void               showImageStatusMessage();
+    void               hideHandles();
 };
 
 #endif // IMAGE_ITEM_H

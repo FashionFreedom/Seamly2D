@@ -53,9 +53,8 @@
 #include <QGraphicsItem>
 
 
-constexpr qreal OriginMarkerWidth = 12.0;
-constexpr qreal RotationHandleDistance = 40.0;
-constexpr qreal RotationHandleRadius = 7.0;
+constexpr qreal OriginMarkerRadius = 6.0;
+constexpr qreal RotationHandleWidth = 12.0;
 constexpr qreal HandleHitRadius = 10.0;
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -80,6 +79,7 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
     , m_draggingRotation(false)
     , m_initialRotation(0.0)
     , m_isHovered(false)
+    , m_showHandles(false)
     , m_selectionType(SelectionType::ByMouseRelease)
     , m_transformationMode(Qt::SmoothTransformation)
     , m_image(image)
@@ -106,7 +106,7 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
     m_boundingRect = QRectF(m_image.xPos - m_image.xOrigin, m_image.yPos - m_image.yOrigin, m_image.width, m_image.height);
     m_handleRect   = m_boundingRect.adjusted(HANDLE_SIZE/2, HANDLE_SIZE/2, -HANDLE_SIZE/2, -HANDLE_SIZE/2);
     m_origin = m_boundingRect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
-
+    m_rotationHandleDistance = qMin(m_image.width, m_image.height)/2;
 
     if (m_image.order == 0)
     {
@@ -129,6 +129,20 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
     connect(m_resizeHandles, &ResizeHandlesItem::imageNeedsSave, this, [this]() {emit imageNeedsSave();});
     connect(m_resizeHandles, &ResizeHandlesItem::sizeChangedFromHandles, this, &ImageItem::updateFromHandles);
     connect(m_resizeHandles, &ResizeHandlesItem::setStatusMessage, this, [this](QString message) {emit setStatusMessage(message);});
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVariant ImageItem::itemChange(GraphicsItemChange change, const QVariant &value)
+{
+    if (change == QGraphicsItem::ItemSceneChange || change == QGraphicsItem::ItemSceneHasChanged)
+    {
+        if (scene())
+        {
+            connect(scene(), SIGNAL(ItemClicked(QGraphicsItem*)), this, SLOT(onSceneItemClicked(QGraphicsItem*)), Qt::UniqueConnection);
+        }
+    }
+
+    return QGraphicsItem::itemChange(change, value);
 }
 
 
@@ -228,7 +242,7 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
         painter->restore();
     }
 
-    if (!m_image.locked && m_isHovered)
+    if (!m_image.locked && m_showHandles)
     {
         painter->save();
         QColor color = QColor(qApp->Settings()->getTertiarySupportColor());
@@ -242,22 +256,22 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     painter->setRenderHint(QPainter::SmoothPixmapTransform, (m_transformationMode == Qt::SmoothTransformation));
     painter->drawPixmap(m_boundingRect.x(), m_boundingRect.y(), m_image.width, m_image.height, m_pixmap);
 
-    if (!m_image.locked && m_isHovered)
+    if (!m_image.locked && m_showHandles)
     {
         painter->save();
         painter->setRenderHint(QPainter::Antialiasing);
 
         painter->setPen(QPen(Qt::black, 1, Qt::SolidLine));
-        const QPointF rotationCenter = m_origin + QPointF(0.0, -RotationHandleDistance);
-        painter->drawLine(QLineF(m_origin, rotationCenter));
+        const QPointF rotationHandlePosition = m_origin + QPointF(0.0, -m_rotationHandleDistance);
+        painter->drawLine(QLineF(m_origin, rotationHandlePosition));
 
-        painter->setPen(QPen(Qt::white, 1, Qt::SolidLine));
-        painter->setBrush(Qt::black);
-        painter->drawEllipse(rotationCenter, RotationHandleRadius, RotationHandleRadius);
+        painter->setBrush(Qt::darkGray);
+        painter->drawRect(rotationHandlePosition.x()-RotationHandleWidth/2, rotationHandlePosition.y()-RotationHandleWidth/2, RotationHandleWidth, RotationHandleWidth);
 
-        painter->setPen(QPen(Qt::black, 1, Qt::SolidLine));
-        painter->setBrush(QBrush(Qt::darkGray));
-        painter->drawRect(m_origin.x()-OriginMarkerWidth/2, m_origin.y()-OriginMarkerWidth/2, OriginMarkerWidth, OriginMarkerWidth);
+        painter->setBrush(QBrush(Qt::transparent));
+        painter->drawEllipse(m_origin, OriginMarkerRadius, OriginMarkerRadius);
+        painter->drawLine(QLineF(m_origin.x()-OriginMarkerRadius, m_origin.y(), m_origin.x()+OriginMarkerRadius, m_origin.y()));
+        painter->drawLine(QLineF(m_origin.x(), m_origin.y()-OriginMarkerRadius, m_origin.x(), m_origin.y()+OriginMarkerRadius));
         painter->restore();
     }
 }
@@ -303,7 +317,7 @@ void ImageItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
     {
         if (!m_selectNewOrigin)
         {
-            m_resizeHandles->show();
+            // m_resizeHandles->show(); // Removed: handles now show on click
         }
         showImageStatusMessage();
     }
@@ -327,7 +341,7 @@ void ImageItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
     if(!m_image.locked)
     {
         emit setStatusMessage("");
-        m_resizeHandles->hide();
+        // m_resizeHandles->hide(); // Removed: handles now hide on click outside
     }
 
     QGraphicsItem::hoverLeaveEvent(event);
@@ -339,15 +353,15 @@ void ImageItem::hoverMoveEvent(QGraphicsSceneHoverEvent *event)
     if (!m_image.locked)
     {
         const QPointF mousePos = event->pos();
-        const QPointF rotationHandleCenter = m_origin + QPointF(0.0, -RotationHandleDistance);
+        const QPointF rotationHandleCenter = m_origin + QPointF(0.0, -m_rotationHandleDistance);
         const qreal originDistance = QLineF(mousePos, m_origin).length();
         const qreal rotationDistance = QLineF(mousePos, rotationHandleCenter).length();
 
-        if (rotationDistance <= RotationHandleRadius + 2.0)
+        if (rotationDistance <= RotationHandleWidth + 2.0)
         {
             SetItemOverrideCursor(this, cursorResizeArrow, 16, 16);
         }
-        else if (originDistance <= OriginMarkerWidth + 2.0)
+        else if (originDistance <= OriginMarkerRadius + 2.0)
         {
             SetItemOverrideCursor(this, cursorImageOrigin, 16, 16);
         }
@@ -534,13 +548,13 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
     }
 
     const QPointF mousePos = event->pos();
-    const QPointF rotationHandleCenter = m_origin + QPointF(0.0, -RotationHandleDistance);
+    const QPointF rotationHandleCenter = m_origin + QPointF(0.0, -m_rotationHandleDistance);
     const qreal originDistance = QLineF(mousePos, m_origin).length();
     const qreal rotationDistance = QLineF(mousePos, rotationHandleCenter).length();
 
     if (event->button() == Qt::LeftButton && !m_image.locked)
     {
-        if (rotationDistance <= RotationHandleRadius + 2.0)
+        if (rotationDistance <= RotationHandleWidth + 2.0)
         {
             m_draggingRotation = true;
             m_initialRotation = m_image.rotation;
@@ -692,6 +706,7 @@ void ImageItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
         setFlag(QGraphicsItem::ItemIsMovable, true);
         if (!m_image.locked)
         {
+            m_showHandles = true;
             m_resizeHandles->show();
         }
         emit imageNeedsSave();
@@ -702,6 +717,7 @@ void ImageItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
         m_selectNewOrigin = false;
         setFlag(QGraphicsItem::ItemIsMovable, true);
         SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
+        m_showHandles = true;
         m_resizeHandles->show();
         emit imageNeedsSave();
     }
@@ -896,4 +912,29 @@ void ImageItem::showImageStatusMessage()
                           .arg(!m_image.aspectLocked ? "" : tr(" - <b>Aspect ratio locked</b>"));
 
     emit setStatusMessage(message);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void ImageItem::hideHandles()
+{
+    m_showHandles = false;
+    m_resizeHandles->hide();
+    update(); // to repaint without handles
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void ImageItem::onSceneItemClicked(QGraphicsItem *item)
+{
+    // Hide handles only when the clicked item is not this image or one of its children.
+    QGraphicsItem *clickedItem = item;
+    while (clickedItem)
+    {
+        if (clickedItem == this)
+        {
+            return;
+        }
+        clickedItem = clickedItem->parentItem();
+    }
+
+    hideHandles();
 }
