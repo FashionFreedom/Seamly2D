@@ -242,6 +242,7 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     painter->setRenderHint(QPainter::SmoothPixmapTransform, (m_transformationMode == Qt::SmoothTransformation));
     painter->drawPixmap(m_boundingRect.x(), m_boundingRect.y(), m_image.width, m_image.height, m_pixmap);
 
+    if (!m_image.locked && m_isHovered)
     {
         painter->save();
         painter->setRenderHint(QPainter::Antialiasing);
