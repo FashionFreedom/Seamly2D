@@ -554,6 +554,7 @@ extern const QString cursorArrowOpenHand;
 extern const QString cursorArrowCloseHand;
 extern const QString cursorResizeArrow;
 extern const QString cursorImageOrigin;
+extern const QString cursorImageCalibration;
 
 extern const QString degreeSymbol;
 extern const QString trueStr;

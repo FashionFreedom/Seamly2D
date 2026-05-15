@@ -259,18 +259,24 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     {
         painter->save();
         painter->setRenderHint(QPainter::Antialiasing);
-        painter->setPen(QPen(Qt::blue, 2));
+        painter->setPen(QPen(Qt::black, 2));
         painter->setBrush(QColor(0, 0, 255, 100));
+
+        auto drawCalibrationSymbol = [&painter](QPointF p) 
+        {
+            painter->drawEllipse(p, 6, 6);
+            painter->drawLine(QLineF(p.x() - 8, p.y(), p.x() + 8, p.y()));
+            painter->drawLine(QLineF(p.x(), p.y() - 8, p.x(), p.y() + 8));
+        };
 
         for (const QPointF &p : m_calibrationPoints)
         {
-            painter->drawEllipse(p, 6, 6);
+            drawCalibrationSymbol(p);
         }
 
-        if (m_isHovered)
+        if (!m_image.locked && m_isHovered)
         {
-            painter->setBrush(QColor(0, 0, 255, 180));
-            painter->drawEllipse(m_currentMousePos, 8, 8);
+            drawCalibrationSymbol(m_currentMousePos);
         }
         painter->restore();
     }
@@ -401,7 +407,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     actionOrigin->setEnabled(!m_image.locked && !m_selectNewOrigin);
 
     QAction *actionCalibrate = menu.addAction(tr("Perspective correction"));
-    actionCalibrate->setIcon(QIcon(cursorImageOrigin));
+    actionCalibrate->setIcon(QIcon(cursorImageCalibration));
     actionCalibrate->setEnabled(!m_image.locked && !m_isCalibrating);
     actionCalibrate->setCheckable(true);
     actionCalibrate->setChecked(m_isCalibrating || !transform().isIdentity());
