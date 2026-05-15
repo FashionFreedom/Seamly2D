@@ -54,13 +54,13 @@
 <polygon fill="white" stroke="#666666" points="93.5,-182.5 93.5,-426.5 206.5,-426.5 206.5,-182.5 93.5,-182.5"/>
 <text text-anchor="middle" x="150" y="-414.5" font-family="Helvetica,sans-Serif" font-size="10.00">VFormula</text>
 <polyline fill="none" stroke="#666666" points="93.5,-407.5 206.5,-407.5 "/>
-<text text-anchor="start" x="101.5" y="-395.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formula</text>
-<text text-anchor="start" x="101.5" y="-384.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; value</text>
-<text text-anchor="start" x="101.5" y="-373.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; checkZero</text>
-<text text-anchor="start" x="101.5" y="-362.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toolId</text>
-<text text-anchor="start" x="101.5" y="-351.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; postfix</text>
-<text text-anchor="start" x="101.5" y="-340.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; _error</text>
-<text text-anchor="start" x="101.5" y="-329.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; dValue</text>
+<text text-anchor="start" x="101.5" y="-395.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_formula</text>
+<text text-anchor="start" x="101.5" y="-384.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_valueStr</text>
+<text text-anchor="start" x="101.5" y="-373.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_checkZero</text>
+<text text-anchor="start" x="101.5" y="-362.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_toolId</text>
+<text text-anchor="start" x="101.5" y="-351.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_postfix</text>
+<text text-anchor="start" x="101.5" y="-340.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_error</text>
+<text text-anchor="start" x="101.5" y="-329.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_value</text>
 <polyline fill="none" stroke="#666666" points="93.5,-322.5 206.5,-322.5 "/>
 <text text-anchor="start" x="101.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VFormula()</text>
 <text text-anchor="start" x="101.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VFormula()</text>
@@ -136,7 +136,7 @@
 <title>Node4&#45;&gt;Node3</title>
 <path fill="none" stroke="#404040" d="M150,-474.27C150,-462.33 150,-450.51 150,-439"/>
 <polygon fill="none" stroke="#404040" points="150,-438.64 146,-432.64 150,-426.64 154,-432.64 150,-438.64"/>
-<text text-anchor="middle" x="164.5" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;data</text>
+<text text-anchor="middle" x="172" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_data</text>
 </g>
 </g>
 </svg>

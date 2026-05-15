@@ -11,6 +11,7 @@ var def_8cpp =
     [ "InitLanguages", "d6/d0b/def_8cpp.html#aaf08b4a7d0085a255e1dde1ce3b7206e", null ],
     [ "IsOptionSet", "d6/d0b/def_8cpp.html#a9d0bfb211c7efe9986367b0de5883ad9", null ],
     [ "makeHeaderName", "d6/d0b/def_8cpp.html#a0d388d3b034a1f7b4f3618163b213f73", null ],
+    [ "normalize", "d6/d0b/def_8cpp.html#affcdee97a378cb969bf1ba715330ca32", null ],
     [ "notchSubTypeToString", "d6/d0b/def_8cpp.html#a45306c2fc908e7e89e2bd49fd6df23b0", null ],
     [ "notchTypeToString", "d6/d0b/def_8cpp.html#af49aeb9df96488d2b90dece1756b1d2c", null ],
     [ "PreparePrinter", "d6/d0b/def_8cpp.html#a6eb0d4dad36bafd7d2a592086c560c6a", null ],

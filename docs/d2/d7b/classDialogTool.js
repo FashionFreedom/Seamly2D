@@ -74,7 +74,6 @@ var classDialogTool =
     [ "NamePointChanged", "d2/d7b/classDialogTool.html#a2a6070cab102675260601eb6fdaf61a2", null ],
     [ "newNodeItem", "d2/d7b/classDialogTool.html#a720450bced2cbb0fbff11d2f638d2078", null ],
     [ "NodeFont", "d2/d7b/classDialogTool.html#a85e03f7e768ff5534af1888c09d3704a", null ],
-    [ "normalize", "d2/d7b/classDialogTool.html#a0eab9de855cc29e63f22aa5e087a25f3", null ],
     [ "PointNameChanged", "d2/d7b/classDialogTool.html#ad0735fb82a3aa73ec2eb8efdd7276084", null ],
     [ "PrepareList", "d2/d7b/classDialogTool.html#a60b9a53cf72829a083fec2c3bdbb7214", null ],
     [ "SaveData", "d2/d7b/classDialogTool.html#aa197a256d8d19a03878816f138e4e248", null ],

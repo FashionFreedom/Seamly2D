@@ -373,6 +373,7 @@ var def_8h =
     [ "InitLanguages", "d4/da4/def_8h.html#aaf08b4a7d0085a255e1dde1ce3b7206e", null ],
     [ "IsOptionSet", "d4/da4/def_8h.html#a9d0bfb211c7efe9986367b0de5883ad9", null ],
     [ "makeHeaderName", "d4/da4/def_8h.html#a0d388d3b034a1f7b4f3618163b213f73", null ],
+    [ "normalize", "d4/da4/def_8h.html#affcdee97a378cb969bf1ba715330ca32", null ],
     [ "notchSubTypeToString", "d4/da4/def_8h.html#a45306c2fc908e7e89e2bd49fd6df23b0", null ],
     [ "notchTypeToString", "d4/da4/def_8h.html#af49aeb9df96488d2b90dece1756b1d2c", null ],
     [ "PreparePrinter", "d4/da4/def_8h.html#a4d48e08b62697a4d46199919f131efb2", null ],
