@@ -973,18 +973,18 @@ void VPattern::parseImageElement(QDomElement &domElement, const Document &parse)
     image.id = getParameterId(domElement);
     image.name = GetParametrString(domElement, AttrName, tr("Image_name"));
     image.filename = GetParametrString(domElement, AttrSource);
-    image.width = GetParametrDouble(domElement, AttrWidth, "0.0");
-    image.height = GetParametrDouble(domElement, AttrHeight, "0.0");
-    image.xPos = GetParametrDouble(domElement, AttrXPos, "0.0");
-    image.yPos = GetParametrDouble(domElement, AttrYPos, "0.0");
+    image.size.setWidth(GetParametrDouble(domElement, AttrWidth, "0.0"));
+    image.size.setHeight(GetParametrDouble(domElement, AttrHeight, "0.0"));
+    image.pos.setX(GetParametrDouble(domElement, AttrXPos, "0.0"));
+    image.pos.setY(GetParametrDouble(domElement, AttrYPos, "0.0"));
     image.rotation = GetParametrDouble(domElement, AttrRotation, "0.0");
     image.aspectLocked = getParameterBool(domElement, AttrAspectRatio, falseStr);
     image.locked = getParameterBool(domElement, AttrLocked, falseStr);
     image.units = StrToUnits(GetParametrString(domElement, AttrUnits, "px"));
     image.opacity = GetParametrDouble(domElement, AttrOpacity, "1.0");
     image.order = qint32(GetParametrDouble(domElement, AttrOrder, "0"));
-    image.xOrigin = GetParametrDouble(domElement, AttrXOffset, "0.0");
-    image.yOrigin = GetParametrDouble(domElement, AttrYOffset, "0.0");
+    image.origin.setX(GetParametrDouble(domElement, AttrXOffset, "0.0"));
+    image.origin.setY(GetParametrDouble(domElement, AttrYOffset, "0.0"));
     image.basepoint = GetParametrUInt(domElement, AttrBasepoint, 0);
     image.visible = getParameterBool(domElement, AttrVisible, trueStr);
 

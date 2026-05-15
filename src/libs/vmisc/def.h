@@ -183,45 +183,22 @@ enum class PieceNodeAngle : unsigned char
 
 struct DraftImage
 {
-    DraftImage()
-    : id(0),
-      name(""),
-      filename(""),
-      locked(false),
-      xOrigin(0.0),
-      yOrigin(0.0),
-      xPos(0.0),
-      yPos(0.0),
-      width(0.0),
-      height(0.0),
-      aspectLocked(false),
-      units(Unit::Px),
-      rotation(0.0),
-      visible(true),
-      opacity(100.0),
-      order(0),
-      basepoint(0)
-     {}
+    DraftImage() = default; 
 
-    quint32        id;
-    QString        name;
-    QString        filename;
-    bool           locked;
-    qreal          xOrigin;
-    qreal          yOrigin;
-    qreal          xPos;
-    qreal          yPos;
-    qreal          width;
-    qreal          height;
-    qreal          xScale;
-    qreal          yScale;
-    bool           aspectLocked;
-    Unit           units;
-    qreal          rotation;
-    bool           visible;
-    qreal          opacity;
-    qint32         order;
-    quint32        basepoint;
+    quint32             id{0};
+    QString             name{""};
+    QString             filename{""};
+    bool                locked{false};
+    QPointF             origin{0.0, 0.0};
+    QPointF             pos{0.0, 0.0};
+    QSizeF              size{0.0, 0.0};
+    bool                aspectLocked{false};
+    Unit                units{Unit::Px};
+    qreal               rotation{0.0};
+    bool                visible{true};
+    qreal               opacity{100.0};
+    qint32              order{0};
+    quint32             basepoint{0};
 };
 
 Q_DECLARE_METATYPE(DraftImage)

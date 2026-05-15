@@ -76,8 +76,8 @@ ImageDialog::ImageDialog(DraftImage image, qreal minDimension, qreal maxDimensio
 
     updateUnits();
 
-    setXScale(m_image.width / m_pixmapWidth * 100);
-    setYScale(m_image.height / m_pixmapHeight * 100);
+    setXScale(m_image.size.width() / m_pixmapWidth * 100);
+    setYScale(m_image.size.height() / m_pixmapHeight * 100);
 
     updateImage();
 
@@ -128,10 +128,10 @@ void ImageDialog::updateImage()
     ui->idText_Label->setNum(static_cast<double>(m_image.id));
     ui->name_LineEdit->setText(m_image.name);
     ui->lockImage_ToolButton->setChecked(m_image.locked);
-    setXPos(m_image.xPos);
-    setYPos(m_image.yPos);
-    setWidth(m_image.width);
-    setHeight(m_image.height);
+    setXPos(m_image.pos.x());
+    setYPos(m_image.pos.y());
+    setWidth(m_image.size.width());
+    setHeight(m_image.size.height());
     setAspectLocked(m_image.aspectLocked);
     setRotation(m_image.rotation);
     setVisibility(m_image.visible);
@@ -143,10 +143,10 @@ void ImageDialog::updateImage()
     qDebug("Name = %s", qUtf8Printable(m_image.name));
     qDebug("Filename = %s", qUtf8Printable(m_image.filename));
     qDebug("lock Image = %s", m_image.locked ? "True" : "False");
-    qDebug("Xpos = %f", m_image.xPos);
-    qDebug("YPos = %f", m_image.yPos);
-    qDebug("Width = %f", m_image.width);
-    qDebug("Height = %f", m_image.height);
+    qDebug("Xpos = %f", m_image.pos.x());
+    qDebug("YPos = %f", m_image.pos.y());
+    qDebug("Width = %f", m_image.size.width());
+    qDebug("Height = %f", m_image.size.height());
     qDebug("lock Image Aspect = %s",  m_image.aspectLocked ? "True" : "False");
     qDebug("Units = %d", static_cast<int>(m_image.units));
     qDebug("Rotation = %f", m_image.rotation);
@@ -194,14 +194,14 @@ void ImageDialog::setOriginPoint(const int &index)
 //---------------------------------------------------------------------------------------------------------------------
 qreal ImageDialog::getXPos() const
 {
-    return m_image.xPos;
+    return m_image.pos.x();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void ImageDialog::setXPos(const qreal &value)
 {
     ui->xPosition_DoubleSpinBox->blockSignals(true);
-    m_image.xPos = value;
+    m_image.pos.setX(value);
     if (m_image.units == Unit::Px)
     {
         ui->xPosition_DoubleSpinBox->setValue(value);
@@ -216,14 +216,14 @@ void ImageDialog::setXPos(const qreal &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal ImageDialog::getYPos() const
 {
-    return m_image.yPos;
+    return m_image.pos.y();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void ImageDialog::setYPos(const qreal &value)
 {
     ui->yPosition_DoubleSpinBox->blockSignals(true);
-    m_image.yPos = value;
+    m_image.pos.setY(value);
     if (m_image.units == Unit::Px)
     {
         ui->yPosition_DoubleSpinBox->setValue(value);
@@ -232,13 +232,13 @@ void ImageDialog::setYPos(const qreal &value)
     {
         ui->yPosition_DoubleSpinBox->setValue(qApp->fromPixel(value));
     }
-    ui->yPosition_DoubleSpinBox->blockSignals(true);
+    ui->yPosition_DoubleSpinBox->blockSignals(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 qreal ImageDialog::getWidth() const
 {
-    return m_image.width;
+    return m_image.size.width();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -246,7 +246,7 @@ void ImageDialog::setWidth(const qreal &value)
 {
     ui->yPosition_DoubleSpinBox->blockSignals(true);
 
-    m_image.width = value;
+    m_image.size.setWidth(value);
 
     if (m_image.units == Unit::Px)
     {
@@ -263,7 +263,7 @@ void ImageDialog::setWidth(const qreal &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal ImageDialog::getHeight() const
 {
-    return m_image.height;
+    return m_image.size.height();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -271,7 +271,7 @@ void ImageDialog::setHeight(const qreal &value)
 {
     ui->height_DoubleSpinBox->blockSignals(true);
 
-    m_image.height = value;
+    m_image.size.setHeight(value);
     if (m_image.units == Unit::Px)
     {
         if (ui->height_DoubleSpinBox->value() != value) {ui->height_DoubleSpinBox->setValue(value);};
@@ -446,11 +446,11 @@ void ImageDialog::xPosChanged(qreal value)
     blockSignals(true);
     if (m_image.units == Unit::Px)
     {
-        m_image.xPos = value;
+        m_image.pos.setX(value);
     }
     else
     {
-        m_image.xPos = qApp->toPixel(value);
+        m_image.pos.setX(qApp->toPixel(value));
     }
     blockSignals(false);
     emit imageUpdated(m_image);
@@ -462,11 +462,11 @@ void ImageDialog::yPosChanged(qreal value)
     blockSignals(true);
     if (m_image.units == Unit::Px)
     {
-        m_image.yPos = value;
+        m_image.pos.setY(value);
     }
     else
     {
-        m_image.yPos = qApp->toPixel(value);
+        m_image.pos.setY(qApp->toPixel(value));
     }
     blockSignals(false);
     emit imageUpdated(m_image);
@@ -476,8 +476,8 @@ void ImageDialog::yPosChanged(qreal value)
 void ImageDialog::widthChanged(qreal width)
 {
     blockSignals(true);
-    qreal oldWidth = m_image.width;
-    qreal height = m_image.height;
+    qreal oldWidth = m_image.size.width();
+    qreal height = m_image.size.height();
 
     if (m_image.units != Unit::Px)
     {
@@ -489,24 +489,24 @@ void ImageDialog::widthChanged(qreal width)
 
     if (m_image.aspectLocked)
     {
-        height = m_image.height * width / oldWidth;
+        height = m_image.size.height() * width / oldWidth;
 
         if (height > m_maxDimension)
         {
-            width = m_maxDimension * oldWidth / m_image.height;
+            width = m_maxDimension * oldWidth / m_image.size.height();
             height = m_maxDimension;
         }
         else if (height < m_minDimension)
         {
-            width = m_minDimension * oldWidth / m_image.height;
+            width = m_minDimension * oldWidth / m_image.size.height();
             height = m_minDimension;
         }
     }
 
     setWidth(width);
-    setXScale(m_image.width / m_pixmapWidth * 100);
+    setXScale(m_image.size.width() / m_pixmapWidth * 100);
     setHeight(height);
-    setYScale(m_image.height / m_pixmapHeight * 100);
+    setYScale(m_image.size.height() / m_pixmapHeight * 100);
 
     blockSignals(false);
     emit imageUpdated(m_image);
@@ -516,8 +516,8 @@ void ImageDialog::widthChanged(qreal width)
 void ImageDialog::heightChanged(qreal height)
 {
     blockSignals(true);
-    qreal oldHeight = m_image.height;
-    qreal width = m_image.width;
+    qreal oldHeight = m_image.size.height();
+    qreal width = m_image.size.width();
 
     if (m_image.units != Unit::Px)
     {
@@ -529,24 +529,24 @@ void ImageDialog::heightChanged(qreal height)
 
     if (m_image.aspectLocked)
     {
-        width = m_image.width * height / oldHeight;
+        width = m_image.size.width() * height / oldHeight;
 
         if (width > m_maxDimension)
         {
-            height = m_maxDimension * oldHeight / m_image.width;
+            height = m_maxDimension * oldHeight / m_image.size.width();
             width = m_maxDimension;
         }
         else if (width < m_minDimension)
         {
-            height = m_minDimension * oldHeight / m_image.width;
+            height = m_minDimension * oldHeight / m_image.size.width();
             width = m_minDimension;
         }
     }
 
     setWidth(width);
-    setXScale(m_image.width / m_pixmapWidth * 100);
+    setXScale(m_image.size.width() / m_pixmapWidth * 100);
     setHeight(height);
-    setYScale(m_image.height / m_pixmapHeight * 100);
+    setYScale(m_image.size.height() / m_pixmapHeight * 100);
 
     blockSignals(false);
     emit imageUpdated(m_image);
@@ -690,10 +690,10 @@ void ImageDialog::updateSpinboxesRanges()
 void ImageDialog::unitsChanged()
 {
     blockSignals(true);
-    qreal tempHeight = m_image.height;
-    qreal tempWidth = m_image.width;
-    qreal tempXPos = m_image.xPos;
-    qreal tempYPos = m_image.yPos;
+    qreal tempHeight = m_image.size.height();
+    qreal tempWidth = m_image.size.width();
+    qreal tempXPos = m_image.pos.x();
+    qreal tempYPos = m_image.pos.y();
 
     if (m_image.units != Unit::Px)
     {

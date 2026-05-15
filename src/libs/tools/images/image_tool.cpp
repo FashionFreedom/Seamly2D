@@ -268,11 +268,11 @@ void ImageTool::saveOptions(QDomElement &tag)
     m_doc->SetAttribute(tag, VDomDocument::AttrId, image.id);
     m_doc->SetAttribute(tag, VAbstractPattern::AttrName,  image.name);
     m_doc->SetAttribute(tag, VAbstractPattern::AttrSource, image.filename);
-    m_doc->SetAttribute(tag, VAbstractPattern::AttrWidth,  image.width);
-    m_doc->SetAttribute(tag, VAbstractPattern::AttrHeight, image.height);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrWidth,  image.size.width());
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrHeight, image.size.height());
     m_doc->SetAttribute(tag, VAbstractPattern::AttrUnits,  UnitsToStr(image.units));
-    m_doc->SetAttribute(tag, VAbstractPattern::AttrXPos,   image.xPos);
-    m_doc->SetAttribute(tag, VAbstractPattern::AttrYPos,   image.yPos);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrXPos,   image.pos.x());
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrYPos,   image.pos.y());
     m_doc->SetAttribute(tag, VAbstractPattern::AttrOpacity, image.opacity);
     m_doc->SetAttribute(tag, VAbstractPattern::AttrRotation, image.rotation);
     m_doc->SetAttribute(tag, VAbstractPattern::AttrAspectRatio, image.aspectLocked);
@@ -280,8 +280,8 @@ void ImageTool::saveOptions(QDomElement &tag)
     m_doc->SetAttribute(tag, VAbstractPattern::AttrLocked, image.locked);
     m_doc->SetAttribute(tag, VAbstractPattern::AttrBasepoint, image.basepoint);
     m_doc->SetAttribute(tag, VAbstractPattern::AttrOrder, qreal(image.order));
-    m_doc->SetAttribute(tag, VAbstractPattern::AttrXOffset, image.xOrigin);
-    m_doc->SetAttribute(tag, VAbstractPattern::AttrYOffset, image.yOrigin);
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrXOffset, image.origin.x());
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrYOffset, image.origin.y());
 }
 
 void ImageTool::saveChanges()

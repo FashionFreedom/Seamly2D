@@ -98,15 +98,15 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
     m_pixmapWidth = m_pixmap.width();
     m_pixmapHeight = m_pixmap.height();
 
-    if (m_image.width == 0 || m_image.height == 0)
+    if (m_image.size.width() == 0 || m_image.size.height() == 0)
     {
-        m_image.width  = m_pixmapWidth;
-        m_image.height = m_pixmapHeight;
+        m_image.size.setWidth(m_pixmapWidth);
+        m_image.size.setHeight(m_pixmapHeight);
     }
 
-    m_boundingRect = QRectF(m_image.xPos - m_image.xOrigin, m_image.yPos - m_image.yOrigin, m_image.width, m_image.height);
+    m_boundingRect = QRectF(m_image.pos.x() - m_image.origin.x(), m_image.pos.y() - m_image.origin.y(), m_image.size.width(), m_image.size.height());
     m_handleRect   = m_boundingRect.adjusted(HANDLE_SIZE/2, HANDLE_SIZE/2, -HANDLE_SIZE/2, -HANDLE_SIZE/2);
-    m_origin = m_boundingRect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
+    m_origin = m_boundingRect.topLeft() + m_image.origin;
 
 
     if (m_image.order == 0)
@@ -148,10 +148,10 @@ void ImageItem::setPixmap(const QPixmap &pixmap)
 
     m_pixmapWidth  = pixmap.width();
     m_pixmapHeight = pixmap.height();
-    m_image.width  = pixmap.width();
-    m_image.height = pixmap.height();
+    m_image.size.setWidth(pixmap.width());
+    m_image.size.setHeight(pixmap.height());
 
-    m_boundingRect = QRectF(m_image.xPos, m_image.yPos, m_image.xPos + m_pixmapWidth, m_image.yPos + m_pixmapHeight);
+    m_boundingRect = QRectF(m_image.pos.x(), m_image.pos.y(), m_image.pos.x() + m_pixmapWidth, m_image.pos.y() + m_pixmapHeight);
 
     m_handleRect   = m_boundingRect.adjusted(HANDLE_SIZE/2, HANDLE_SIZE/2, -HANDLE_SIZE/2, -HANDLE_SIZE/2);
 }
@@ -172,10 +172,10 @@ void ImageItem::setOrigin(qreal xOrigin, qreal yOrigin)
     //m_image.xOrigin / m_image.yOrigin  is the distance between the top left corner of the image and the image origin
     //m_origin is the distance between the real origin of the QGraphicsItem and the image origin
 
-    m_image.xOrigin = xOrigin;
-    m_image.yOrigin = yOrigin;
+    m_image.origin.setX(xOrigin);
+    m_image.origin.setY(yOrigin);
 
-    m_origin = m_boundingRect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
+    m_origin = m_boundingRect.topLeft() + QPointF(m_image.origin.x(), m_image.origin.y());
 }
 
 
@@ -187,11 +187,11 @@ void  ImageItem::updateImage()
     setRotation(m_image.rotation);
 
     const QPointF currentOriginScene = mapToScene(m_origin);
-    const QPointF desiredOriginScene(m_image.xPos, m_image.yPos);
+    const QPointF desiredOriginScene = m_image.pos;
     const QPointF originDelta = desiredOriginScene - currentOriginScene;
     setPos(pos() + originDelta); // we do a relative move to take into account the current transform
 
-    m_boundingRect.setSize(QSizeF(m_image.width, m_image.height));
+    m_boundingRect.setSize(QSizeF(m_image.size.width(), m_image.size.height()));
 
     setVisible(m_image.visible);
     setOpacity(m_image.opacity/100);
@@ -244,7 +244,7 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     }
 
     painter->setRenderHint(QPainter::SmoothPixmapTransform, (m_transformationMode == Qt::SmoothTransformation));
-    painter->drawPixmap(m_boundingRect.x(), m_boundingRect.y(), m_image.width, m_image.height, m_pixmap);
+    painter->drawPixmap(m_boundingRect.x(), m_boundingRect.y(), m_image.size.width(), m_image.size.height(), m_pixmap);
 
     if (m_origin != m_boundingRect.topLeft())
     {
@@ -674,13 +674,11 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
     if(m_selectNewOrigin && event->button() == Qt::LeftButton)
     {
-        m_image.xOrigin = event->pos().x() - m_boundingRect.topLeft().x();
-        m_image.yOrigin = event->pos().y() - m_boundingRect.topLeft().y();
+        m_image.origin = event->pos() - m_boundingRect.topLeft();
 
-        m_origin = m_boundingRect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
+        m_origin = m_boundingRect.topLeft() + m_image.origin;
 
-        m_image.xPos = mapToScene(event->pos()).x();
-        m_image.yPos = mapToScene(event->pos()).y();
+        m_image.pos = mapToScene(event->pos());
 
         emit imageNeedsSave();
     }
@@ -695,8 +693,7 @@ void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         m_imageWasMoved = true;
 
         QPointF new_image_pos = event->scenePos() - m_clickOffset;
-        m_image.xPos = new_image_pos.x();
-        m_image.yPos = new_image_pos.y();
+        m_image.pos = new_image_pos;
 
         showImageStatusMessage();
         updateImage();
@@ -770,17 +767,16 @@ void ImageItem::updateFromHandles(QRectF rect)
 
     //The image origin is moved so that it stays at the same place on the image
     //The image origin is different from the QGraphicsItem origin, see below
-    m_image.xOrigin = m_image.xOrigin / m_image.width * rect.width();
-    m_image.yOrigin = m_image.yOrigin / m_image.height * rect.height();
+    m_image.origin.setX(m_image.origin.x() / m_image.size.width() * rect.width());
+    m_image.origin.setY(m_image.origin.y() / m_image.size.height() * rect.height());
 
     //m_image.xOrigin / m_image.yOrigin  is the distance between the top left corner of the image and the image origin
     //m_origin is the distance between the real origin of the QGraphicsItem and the image origin
-    m_origin = rect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
+    m_origin = rect.topLeft() + m_image.origin;
 
-    m_image.xPos = mapToScene(m_origin).x();
-    m_image.yPos = mapToScene(m_origin).y();
-    m_image.width = rect.width();
-    m_image.height = rect.height();
+    m_image.pos = mapToScene(m_origin);
+    m_image.size.setWidth(rect.width());
+    m_image.size.setHeight(rect.height());
 
     m_boundingRect.setTopLeft(rect.topLeft());
 
@@ -792,7 +788,7 @@ void ImageItem::updateFromHandles(QRectF rect)
 void ImageItem::updateImageAndHandles(DraftImage image)
 {
     m_image = image;
-    m_origin = m_boundingRect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
+    m_origin = m_boundingRect.topLeft() + m_image.origin;
     updateImage();
     m_resizeHandles->setParentRect(m_boundingRect);
     m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
@@ -892,17 +888,17 @@ void ImageItem::showImageStatusMessage()
 
     if (m_image.units == Unit::Px)
     {
-        width = QString::number(m_image.width);
-        height = QString::number(m_image.height);
-        posX = QString::number(m_image.xPos);
-        posY = QString::number(m_image.yPos);
+        width = QString::number(m_image.size.width());
+        height = QString::number(m_image.size.height());
+        posX = QString::number(m_image.pos.x());
+        posY = QString::number(m_image.pos.y());
     }
     else
     {
-        width = QString::number(qApp->fromPixel(m_image.width));
-        height = QString::number(qApp->fromPixel(m_image.height));
-        posX = QString::number(qApp->fromPixel(m_image.xPos));
-        posY = QString::number(qApp->fromPixel(m_image.yPos));
+        width = QString::number(qApp->fromPixel(m_image.size.width()));
+        height = QString::number(qApp->fromPixel(m_image.size.height()));
+        posX = QString::number(qApp->fromPixel(m_image.pos.x()));
+        posY = QString::number(qApp->fromPixel(m_image.pos.y()));
     }
 
     QString message = QString(tr("<b>Image (%7)</b>: Size(%2%1, %3%1); Pos(%4%1, %5%1); Rot(%6°)%8"))
