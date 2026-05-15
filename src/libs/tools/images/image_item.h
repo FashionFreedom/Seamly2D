@@ -85,6 +85,8 @@ public:
 
     void             deleteImageItem();
 
+    void             startCalibration();
+
 signals:
     void             imageNeedsSave();
     void             showContextMenu(QGraphicsSceneContextMenuEvent *event);
@@ -127,6 +129,10 @@ private:
     qreal              m_maxDimension;
     bool               m_selectNewOrigin;
     bool               m_imageWasMoved;
+    bool               m_isCalibrating;
+    QVector<QPointF>   m_calibrationPoints;
+    QPointF            m_currentMousePos;
+    QTransform         m_transform;
 
     void               initializeItem();
     void               updateFromHandles(QRectF rect);

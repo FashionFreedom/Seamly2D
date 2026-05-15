@@ -79,6 +79,7 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
     , m_minDimension(16)
     , m_maxDimension(60000)
     , m_selectNewOrigin(false)
+    , m_isCalibrating(false)
 {
     initializeItem();
 
@@ -244,6 +245,26 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
         painter->drawLine(QLineF(m_origin.x(), y1, m_origin.x(), y2));
         painter->restore();
     }
+
+    if (m_isCalibrating)
+    {
+        painter->save();
+        painter->setRenderHint(QPainter::Antialiasing);
+        painter->setPen(QPen(Qt::blue, 2));
+        painter->setBrush(QColor(0, 0, 255, 100));
+
+        for (const QPointF &p : m_calibrationPoints)
+        {
+            painter->drawEllipse(p, 6, 6);
+        }
+
+        if (m_isHovered)
+        {
+            painter->setBrush(QColor(0, 0, 255, 180));
+            painter->drawEllipse(m_currentMousePos, 8, 8);
+        }
+        painter->restore();
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -320,6 +341,12 @@ void ImageItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 
 void ImageItem::hoverMoveEvent(QGraphicsSceneHoverEvent *event)
 {
+    if (m_isCalibrating) 
+    {
+        m_currentMousePos = event->pos();
+        update();
+    }
+
     if (!m_image.locked)
     {
         showImageStatusMessage();
@@ -363,6 +390,10 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     QAction *actionOrigin = menu.addAction(tr("Move Origin"));
     actionOrigin->setIcon(QIcon(cursorImageOrigin));
     actionOrigin->setEnabled(!m_image.locked && !m_selectNewOrigin);
+
+    QAction *actionCalibrate = menu.addAction(tr("Perspective correction"));
+    actionCalibrate->setIcon(QIcon(cursorImageOrigin));
+    actionCalibrate->setEnabled(!m_image.locked && !m_isCalibrating);
 
     QAction *actionSeparator = new QAction(this);
     actionSeparator->setSeparator(true);
@@ -425,6 +456,13 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
             m_resizeHandles->hide();
         }
     }
+    else if (selectedAction == actionCalibrate)
+    {
+        if (!m_image.locked)
+        {
+            startCalibration();
+        }
+    }
     else if (selectedAction == actionDelete)
     {
         if (!m_image.locked)
@@ -461,6 +499,48 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
+    if (m_isCalibrating && event->button() == Qt::LeftButton)
+    {
+        m_calibrationPoints.append(event->pos());
+
+        if (m_calibrationPoints.size() == 3)
+        {
+            // End of selection
+            m_isCalibrating = false;
+
+            // We compute the 4th point
+            QPointF A = m_calibrationPoints[0];
+            QPointF B = m_calibrationPoints[1]; // Right angle
+            QPointF C = m_calibrationPoints[2];
+            QPointF D = A + C - B;
+
+            QPolygonF source;
+            source << A << B << C << D;
+
+            // TODO : ask real distances in a dialog
+            qreal distBC = QLineF(B, C).length();
+            qreal distAB = distBC;
+
+            QPolygonF destination;
+            destination << QPointF(0, 0) << QPointF(0, distAB)
+                        << QPointF(distBC, distAB) << QPointF(distBC, 0);
+
+            m_transform = computePerspectiveTransformation(source, destination);
+            
+            // Apply the transform to the item so it affects the entire item including resize handles
+            setTransform(m_transform);
+            prepareGeometryChange();
+
+            setFlag(QGraphicsItem::ItemIsMovable, !m_image.locked);
+            if (!m_image.locked)
+                m_resizeHandles->show();
+
+            emit imageNeedsSave();
+        }
+        update();
+        return;
+    }
+
     if (!m_selectable)
     {
         event->ignore();
@@ -767,4 +847,13 @@ QTransform ImageItem::computePerspectiveTransformation(const QPolygonF &source, 
     }
 
     return transform;
+}
+
+void ImageItem::startCalibration() 
+{
+    m_isCalibrating = true;
+    m_calibrationPoints.clear();
+    setFlag(QGraphicsItem::ItemIsMovable, false);
+    m_resizeHandles->hide();
+    update();
 }
