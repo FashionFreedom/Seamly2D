@@ -200,6 +200,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
 
     connect(ui->maxBackusp_SpinBox, QOverload<int>::of(&QSpinBox::valueChanged), [=](int newValue)
     {
+        Q_UNUSED(newValue);
         if (ui->convertBackupEnabled_CheckBox->isChecked() && ui->maxBackusp_SpinBox->value() < 2)
         {
             ui->maxBackusp_SpinBox->blockSignals(true);
