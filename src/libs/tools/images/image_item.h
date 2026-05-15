@@ -115,6 +115,9 @@ private:
     QPolygonF          m_angleHandle;
     qreal              m_angle;
     bool               m_mousePressed;
+    bool               m_draggingOrigin;
+    bool               m_draggingRotation;
+    qreal              m_initialRotation;
     bool               m_isHovered;
     SelectionType      m_selectionType;
     bool               m_transformationMode;

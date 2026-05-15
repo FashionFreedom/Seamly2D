@@ -47,9 +47,16 @@
 #include <QPointF>
 #include <QRectF>
 #include <QPixmap>
+#include <QCursor>
 #include <QStyleOptionGraphicsItem>
 #include <Qt>
 #include <QGraphicsItem>
+
+
+constexpr qreal OriginMarkerRadius = 6.0;
+constexpr qreal RotationHandleDistance = 40.0;
+constexpr qreal RotationHandleRadius = 7.0;
+constexpr qreal HandleHitRadius = 10.0;
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -69,6 +76,9 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
     , m_angleHandle()
     , m_angle()
     , m_mousePressed(false)
+    , m_draggingOrigin(false)
+    , m_draggingRotation(false)
+    , m_initialRotation(0.0)
     , m_isHovered(false)
     , m_selectionType(SelectionType::ByMouseRelease)
     , m_transformationMode(Qt::SmoothTransformation)
@@ -125,7 +135,8 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
 //---------------------------------------------------------------------------------------------------------------------
 QRectF ImageItem::boundingRect() const
 {
-    return m_boundingRect;
+    qreal extra = qMax(RotationHandleDistance + RotationHandleRadius, OriginMarkerRadius + 2.0);
+    return m_boundingRect.adjusted(-extra, -extra, extra, extra);
 }
 
 
@@ -232,16 +243,21 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     painter->setRenderHint(QPainter::SmoothPixmapTransform, (m_transformationMode == Qt::SmoothTransformation));
     painter->drawPixmap(m_boundingRect.x(), m_boundingRect.y(), m_image.width, m_image.height, m_pixmap);
 
-    if (m_origin != m_boundingRect.topLeft())
     {
         painter->save();
+        painter->setRenderHint(QPainter::Antialiasing);
         painter->setPen(QPen(Qt::blue, 2, Qt::SolidLine));
-        qreal x1 = qMax(m_origin.x() - 8, m_boundingRect.x());
-        qreal y1 = qMax(m_origin.y() - 8, m_boundingRect.y());
-        qreal x2 = qMin(m_origin.x() + 8, m_boundingRect.x() + m_boundingRect.width());
-        qreal y2 = qMin(m_origin.y() + 8, m_boundingRect.y() + m_boundingRect.height());
-        painter->drawLine(QLineF(x1, m_origin.y(), x2, m_origin.y()));
-        painter->drawLine(QLineF(m_origin.x(), y1, m_origin.x(), y2));
+
+        const QPointF rotationCenter = m_origin + QPointF(0.0, -RotationHandleDistance);
+        painter->drawLine(QLineF(m_origin, rotationCenter));
+
+        painter->setBrush(Qt::white);
+        painter->drawEllipse(rotationCenter, RotationHandleRadius, RotationHandleRadius);
+
+        painter->setBrush(QBrush(Qt::blue));
+        painter->drawEllipse(m_origin, OriginMarkerRadius, OriginMarkerRadius);
+        painter->drawLine(QLineF(m_origin.x() - OriginMarkerRadius, m_origin.y(), m_origin.x() + OriginMarkerRadius, m_origin.y()));
+        painter->drawLine(QLineF(m_origin.x(), m_origin.y() - OriginMarkerRadius, m_origin.x(), m_origin.y() + OriginMarkerRadius));
         painter->restore();
     }
 }
@@ -322,7 +338,23 @@ void ImageItem::hoverMoveEvent(QGraphicsSceneHoverEvent *event)
 {
     if (!m_image.locked)
     {
-        showImageStatusMessage();
+        const QPointF mousePos = event->pos();
+        const QPointF rotationHandleCenter = m_origin + QPointF(0.0, -RotationHandleDistance);
+        const qreal originDistance = QLineF(mousePos, m_origin).length();
+        const qreal rotationDistance = QLineF(mousePos, rotationHandleCenter).length();
+
+        if (rotationDistance <= RotationHandleRadius + 2.0)
+        {
+            SetItemOverrideCursor(this, cursorResizeArrow, 16, 16);
+        }
+        else if (originDistance <= OriginMarkerRadius + 2.0)
+        {
+            SetItemOverrideCursor(this, cursorImageOrigin, 16, 16);
+        }
+        else
+        {
+            showImageStatusMessage();
+        }
     }
     QGraphicsItem::hoverMoveEvent(event);
 }
@@ -467,6 +499,74 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         return;
     }
 
+    const QPointF mousePos = event->pos();
+    const QPointF rotationHandleCenter = m_origin + QPointF(0.0, -RotationHandleDistance);
+    const qreal originDistance = QLineF(mousePos, m_origin).length();
+    const qreal rotationDistance = QLineF(mousePos, rotationHandleCenter).length();
+
+    if (event->button() == Qt::LeftButton && !m_image.locked)
+    {
+        if (rotationDistance <= RotationHandleRadius + 2.0)
+        {
+            m_draggingRotation = true;
+            m_initialRotation = m_image.rotation;
+            setFlag(QGraphicsItem::ItemIsMovable, false);
+            m_resizeHandles->hide();
+            event->accept();
+            return;
+        }
+
+        if (originDistance <= OriginMarkerRadius + 2.0)
+        {
+            m_selectNewOrigin = true;
+            setFlag(QGraphicsItem::ItemIsMovable, false);
+            m_resizeHandles->hide();
+            m_image.xOrigin = event->pos().x() - m_boundingRect.topLeft().x();
+            m_image.yOrigin = event->pos().y() - m_boundingRect.topLeft().y();
+            m_origin = m_boundingRect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
+            m_image.xPos = mapToScene(event->pos()).x();
+            m_image.yPos = mapToScene(event->pos()).y();
+            updateImage();
+            scene()->update();
+            event->accept();
+            return;
+        }
+    }
+
+    const QPointF mousePos = event->pos();
+    const QPointF rotationHandleCenter = m_origin + QPointF(0.0, -RotationHandleDistance);
+    const qreal originDistance = QLineF(mousePos, m_origin).length();
+    const qreal rotationDistance = QLineF(mousePos, rotationHandleCenter).length();
+
+    if (event->button() == Qt::LeftButton && !m_image.locked)
+    {
+        if (rotationDistance <= RotationHandleRadius + 2.0)
+        {
+            m_draggingRotation = true;
+            m_initialRotation = m_image.rotation;
+            setFlag(QGraphicsItem::ItemIsMovable, false);
+            m_resizeHandles->hide();
+            event->accept();
+            return;
+        }
+
+        if (originDistance <= OriginMarkerRadius + 2.0)
+        {
+            m_selectNewOrigin = true;
+            setFlag(QGraphicsItem::ItemIsMovable, false);
+            m_resizeHandles->hide();
+            m_image.xOrigin = event->pos().x() - m_boundingRect.topLeft().x();
+            m_image.yOrigin = event->pos().y() - m_boundingRect.topLeft().y();
+            m_origin = m_boundingRect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
+            m_image.xPos = mapToScene(event->pos()).x();
+            m_image.yPos = mapToScene(event->pos()).y();
+            updateImage();
+            scene()->update();
+            event->accept();
+            return;
+        }
+    }
+
     // Special for not selectable item first need to call standard mousePressEvent then accept event
     //QGraphicsItem::mousePressEvent(event);
 
@@ -514,6 +614,44 @@ void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     prepareGeometryChange();
 
+    if (m_draggingRotation && event->buttons() & Qt::LeftButton)
+    {
+        const QPointF delta = event->pos() - m_origin;
+        if (!qFuzzyIsNull(delta.x()) || !qFuzzyIsNull(delta.y()))
+        {
+            qreal angle = qAtan2(delta.y(), delta.x()) * 180.0 / M_PI;
+            qreal newRotation = angle + 90.0;
+            if (newRotation > 180.0)
+            {
+                newRotation -= 360.0;
+            }
+            else if (newRotation <= -180.0)
+            {
+                newRotation += 360.0;
+            }
+            m_image.rotation = newRotation;
+            updateImage();
+            scene()->update();
+        }
+        event->accept();
+        return;
+    }
+
+    if (m_selectNewOrigin && event->buttons() & Qt::LeftButton)
+    {
+        m_image.xOrigin = event->pos().x() - m_boundingRect.topLeft().x();
+        m_image.yOrigin = event->pos().y() - m_boundingRect.topLeft().y();
+        m_origin = m_boundingRect.topLeft() + QPointF(m_image.xOrigin, m_image.yOrigin);
+        m_image.xPos = mapToScene(event->pos()).x();
+        m_image.yPos = mapToScene(event->pos()).y();
+
+        showImageStatusMessage();
+        updateImage();
+        scene()->update();
+        event->accept();
+        return;
+    }
+
     if (flags() & QGraphicsItem::ItemIsMovable && event->buttons() & Qt::LeftButton)
     {
         m_imageWasMoved = true;
@@ -546,6 +684,17 @@ void ImageItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     if (m_selectionType == SelectionType::ByMouseRelease)
     {
         emit imageSelected(m_image.id);
+    }
+
+    if (m_draggingRotation)
+    {
+        m_draggingRotation = false;
+        setFlag(QGraphicsItem::ItemIsMovable, true);
+        if (!m_image.locked)
+        {
+            m_resizeHandles->show();
+        }
+        emit imageNeedsSave();
     }
 
     if(m_selectNewOrigin)
