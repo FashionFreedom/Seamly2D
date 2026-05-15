@@ -748,3 +748,23 @@ void ImageItem::showImageStatusMessage()
 
     emit setStatusMessage(message);
 }
+
+/**
+ * @brief Computes the perspective transformation matrix between two quadrilaterals.
+ * @param source The 4 vertices of the distorted shape (from the photo).
+ * @param destination The 4 vertices of the target shape (perfect rectangle/square).
+ * @return The QTransform matrix to map source to destination.
+ */
+QTransform ImageItem::computePerspectiveTransformation(const QPolygonF &source, const QPolygonF &destination)
+{
+    QTransform transform;
+    
+    bool success = QTransform::quadToQuad(source, destination, transform);
+
+    if (!success) {
+        qWarning() << "Error: The transformation could not be calculated. Check if points are valid, not aligned etc.";
+        return QTransform(); // Returns identity matrix
+    }
+
+    return transform;
+}
