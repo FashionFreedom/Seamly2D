@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       lang_code:
-        description: 'Target language code (e.g., pl_PL for Polish)'
+        description: 'language code parameter (e.g., pl_PL for Polish)'
         required: true
         default: 'pl_PL'
   push:
