@@ -221,13 +221,6 @@ jobs:
         with:
           arch: ${{ matrix.msvc-arch }}
 
-      # FIX: Strip the unreadable App Store path out of the environment
-      - name: Purge WindowsApps from PATH
-        shell: powershell
-        run: |
-          $filteredPath = ($env:PATH -split ';' | Where-Object { $_ -notlike '*WindowsApps*' }) -join ';'
-          echo "PATH=$filteredPath" >> $env:GITHUB_ENV
-
       - uses: jurplel/install-qt-action@v4
         with:
           version: ${{ env.QT_VERSION }}
