@@ -249,7 +249,7 @@ void EditFormulaDialog::valueChanged(int row)
         case VariableTab::Measurements:
         {
             const QString name = qApp->translateVariables()->VarFromUser(item->text());
-            const QSharedPointer<MeasurementVariable> measurement = data->getVariable<MeasurementVariable>(item->text());
+            const QSharedPointer<MeasurementVariable> measurement = data->getVariable<MeasurementVariable>(name);
 
             setInfo(item->text(), *data->DataVariables()->value(name)->GetValue(),
                     UnitsToStr(qApp->patternUnit(), true), tr("Measurement"),

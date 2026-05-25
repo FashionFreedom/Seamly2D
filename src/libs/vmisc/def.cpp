@@ -32,6 +32,7 @@
 
 #include "vabstractapplication.h"
 
+#include <qnumeric.h>
 #include <QApplication>
 #include <QChar>
 #include <QColor>
@@ -54,6 +55,7 @@
 #include <QRgb>
 #include <QString>
 #include <QtDebug>
+#include <QtMath>
 #include <QPixmapCache>
 #include <QGraphicsItem>
 #include <QDesktopServices>
@@ -343,6 +345,22 @@ QMarginsF UnitConvertor(const QMarginsF &margins, const Unit &from, const Unit &
     return QMarginsF(left, top, right, bottom);
 }
 
+// Normalizes any number to an arbitrary range
+// by assuming the range wraps around when going below min or above max
+qreal normalize(const qreal value, const qreal start, const qreal end)
+{
+    // check if value is not start && is evenly divisble by end value
+    if (qFabs(value) != start && std::fmod(qFabs(value), end) < 1e-9)
+    {
+        return end;
+    }
+
+    const qreal range       = end - start   ;   //
+    const qreal offsetValue = value - start ;   // value relative to 0
+
+    // add start to reset back to start of original range
+    return (offsetValue - (floor(offsetValue / range) * range)) + start ;
+}
 
 //---------------------------------------------------------------------------------------------------------------------
 QStringList SupportedLocales()
@@ -366,7 +384,8 @@ QStringList SupportedLocales()
                                               << QStringLiteral("pt_BR")
                                               << QStringLiteral("el_GR")
                                               << QStringLiteral("en_GB")
-                                              << QStringLiteral("tr_TR");
+                                              << QStringLiteral("tr_TR")
+                                              << QStringLiteral("pl_PL");
     return locales;
 }
 

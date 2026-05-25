@@ -587,6 +587,8 @@ Q_REQUIRED_RESULT double FromPixel(double pix, const Unit &unit);
 Q_REQUIRED_RESULT qreal UnitConvertor(qreal value, const Unit &from, const Unit &to);
 Q_REQUIRED_RESULT QMarginsF UnitConvertor(const QMarginsF &margins, const Unit &from, const Unit &to);
 
+qreal normalize(const qreal value, const qreal start, const qreal end);
+
 void InitLanguages(QComboBox *combobox);
 Q_REQUIRED_RESULT QStringList SupportedLocales();
 
@@ -778,6 +780,5 @@ inline QList<T> convertToList(const C<T> &set)
 {
     return QList<T>(set.begin(), set.end());
 }
-
 
 #endif // DEF_H
