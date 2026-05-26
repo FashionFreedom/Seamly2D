@@ -9,7 +9,8 @@ on:
       - 'feat-*'
   workflow_dispatch:
 
-permissions: {}
+permissions:
+  contents: read
 
 env:
   QT_VERSION: '6.5.3'
