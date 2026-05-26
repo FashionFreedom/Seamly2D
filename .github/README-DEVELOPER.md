@@ -57,7 +57,7 @@ On some Linux distributions (e.g. Arch Linux), the `qmake` binary still points t
 Make sure to create the Makefile with `qmake6`:
 
 ```
-  $ qmake 6
+  $ qmake6
   $ make -j$(nproc)
   $ sudo make install
 ```
