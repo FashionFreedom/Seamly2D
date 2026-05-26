@@ -1,6 +1,6 @@
 # Build Seamly2D
 
-## Basic Software Prerequisites:  
+## Basic Software Prerequisites:
 * [Qt 6.5.3](https://www.qt.io/download-open-source) (includes Qt, QtCreator, QtChooser, and Qt Maintenance Tool)
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/) Qt Visual Studio Tools extension - needed to build with MSVC.
 * [Git](https://git-scm.com/downloads) or [Github Desktop for Windows and MacOS](https://desktop.github.com)
@@ -39,7 +39,7 @@ ___________________________________________________
     ```
     $ sudo apt install -y build-essential git poppler-tools
     ```
-* Build and install:  
+* Build and install:
   ```
   $ qmake
   $ make -j$(nproc)
@@ -50,6 +50,21 @@ ___________________________________________________
     $ sudo make INSTALL_ROOT=/usr/local install
     ```
 * Copy pdftops to Seamly build directory if you need to create post script (.ps and .eps) pattern piece layouts.
+
+### Note for distributions where `qmake` defaults is not Qt 6
+
+On some Linux distributions (e.g. Arch Linux), the `qmake` binary still points to Qt 5.
+Make sure to create the Makefile with `qmake6`:
+
+```
+  $ qmake6
+  $ make -j$(nproc)
+  $ sudo make install
+```
+
+  _Note: If you accidentally invoke the Qt 5 `qmake` and generate the makefile with it, run `make distclean` to remove all generated files, then re-run with `qmake6`._
+
+  _This applies when building with your distribution's packaged Qt. If you're using the official Qt binary distribution (recommended above), `qmake` is always unversioned and the standard instructions apply._
 
 ## Build on MacOSX and Windows 10/11
 1. MacOS only:
@@ -62,7 +77,7 @@ ___________________________________________________
     * Install Xpdf: `sudo port install xpdf`
 
 2. Both MacOS and Windows:
-    * Download & run the [Qt unified installer](https://www.qt.io/download-qt-installer). Create a Qt account for open source Community Edition if you don't have one.  
+    * Download & run the [Qt unified installer](https://www.qt.io/download-qt-installer). Create a Qt account for open source Community Edition if you don't have one.
       - Select:
         * Custom Installation
         * Qt  - _Minimize your options, otherwise your download size could be in Gs_
@@ -79,7 +94,7 @@ ___________________________________________________
 3. Windows only:
     * Download [XpdfReader](http://www.xpdfreader.com/download.html) for Windows. Extract to `C:/Program Files`. Rename folder to `C:/Program Files/Xpdf`.
     * Read about Qt for Windows [here](https://doc.qt.io/qt-5/windows.html).
-    * Add Qt and QtCreator directories to the Windows PATH environment variable through Control Panel:  
+    * Add Qt and QtCreator directories to the Windows PATH environment variable through Control Panel:
       `[Control Panel | System And Security | System | Advanced Tab | Environment Variables button]`
 
 4. Mac only for signing and notarizing:
@@ -91,12 +106,12 @@ ___________________________________________________
 5. Both MacOS and Windows:
     * Build the Seamly2D project
       * To build with Qt's *QtCreator* IDE:
-        * Create your compiler kit.  Read more about adding compilers [on the Qt website](https://doc.qt.io/qtcreator/creator-tool-chains.html).  
+        * Create your compiler kit.  Read more about adding compilers [on the Qt website](https://doc.qt.io/qtcreator/creator-tool-chains.html).
         * Complete your build settings.  Read more about build settings [here](https://doc.qt.io/qtcreator/creator-build-settings.html).
         * Open the Seamly2D project with 'File > Open File or Project'. Navigate to the 'seamly2d/src' directory and select 'Seamly2D.pro'.
-        * Open the Configure Project tab and select your compiler kit. Read more [here](https://doc.qt.io/qtcreator/creator-project-opening.html).      
+        * Open the Configure Project tab and select your compiler kit. Read more [here](https://doc.qt.io/qtcreator/creator-project-opening.html).
         * Build with the 'Build and Run Kit Selector' icon, or use 'Build' and 'Run' from the Tools menu. Read more [here](https://doc.qt.io/qtcreator/creator-building-targets.html).
-      * To build with Qt's *qmake* from a terminal window:  
+      * To build with Qt's *qmake* from a terminal window:
         * Read more about jom [here](https://wiki.qt.io/Jom)
         * Read more about nmake [here](https://learn.microsoft.com/en-us/cpp/build/reference/nmake-reference?view=msvc-170)
           ```
@@ -110,5 +125,5 @@ _______________________________________________________________
 ## Fonts, Icons, Images
 1. Seamly uses the user's system font by default.
 2. Application preferences allow the user to select from installed fonts for use in pattern labels.
-3. For icons and pixmaps use an svg, unless the svg contains text, in which case use a png to avoid missing font issues for the user. 
-4. Images imported into a pattern can be in either png, jpg, or bmp format, and are stored in the pattern file as a bytearray. 
+3. For icons and pixmaps use an svg, unless the svg contains text, in which case use a png to avoid missing font issues for the user.
+4. Images imported into a pattern can be in either png, jpg, or bmp format, and are stored in the pattern file as a bytearray.
