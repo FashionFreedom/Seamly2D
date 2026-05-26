@@ -210,7 +210,7 @@ jobs:
             qmake-spec: win32-msvc
             release-file: Seamly2D-windows.zip
           - msvc-arch: amd64_arm64
-            qt-arch: win64_msvc2022_arm64
+            qt-arch: win64_msvc2022_arm64_cross_compiled
             qmake-spec: win32-arm64-msvc
             release-file: Seamly2D-win-arm64.zip
 
