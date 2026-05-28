@@ -316,6 +316,6 @@ var searchData=
   ['numberformatexception_2ehpp_313',['NumberFormatException.hpp',['../d0/dd5/msvc_2include_2xercesc_2util_2NumberFormatException_8hpp.html',1,'(Global Namespace)'],['../d6/df9/macx_2include_2xercesc_2util_2NumberFormatException_8hpp.html',1,'(Global Namespace)'],['../db/d0e/mingw_2include_2xercesc_2util_2NumberFormatException_8hpp.html',1,'(Global Namespace)'],['../d5/d36/msvc-arm64_2include_2xercesc_2util_2NumberFormatException_8hpp.html',1,'(Global Namespace)']]],
   ['numberp_314',['numberP',['../d0/dc3/classUnionDialog.html#a172c21bafdd0d977b9a180ffa087b72c',1,'UnionDialog']]],
   ['numbertype_315',['NumberType',['../d5/d4b/classXMLNumber.html#a5c61954fb1fcef027fed8dccc826f8eb',1,'XMLNumber::NumberType()'],['../d5/d4b/classXMLNumber.html#a5c61954fb1fcef027fed8dccc826f8eb',1,'XMLNumber::NumberType()'],['../d5/d4b/classXMLNumber.html#a5c61954fb1fcef027fed8dccc826f8eb',1,'XMLNumber::NumberType()'],['../d5/d4b/classXMLNumber.html#a5c61954fb1fcef027fed8dccc826f8eb',1,'XMLNumber::NumberType()']]],
-  ['numdigitbuttons_316',['NumDigitButtons',['../d7/deb/classCalculatorUtil.html#a001886299a0e3dbd820cb5ac4177a3dda519d31007d7af4d4a83ac8a493c904d5',1,'CalculatorUtil']]],
+  ['numdigitbuttons_316',['NumDigitButtons',['../d7/deb/classCalculatorUtil.html#a14d21e7d2840a2e14e57275f58d2baefa519d31007d7af4d4a83ac8a493c904d5',1,'CalculatorUtil']]],
   ['numericsign_317',['numericSign',['../de/dcf/classXSValue.html#a2e374ca45b0e3e75efb9e629d5b1e1da',1,'XSValue']]]
 ];
