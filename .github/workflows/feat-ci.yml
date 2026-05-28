@@ -138,13 +138,13 @@ jobs:
           brew install xerces-c
 
       - name: macOS - install Qt
-        uses: jurplel/install-qt-action@v4
+        uses: jurplel/install-qt-action@v4.3.1
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
           modules: qtmultimedia
 
-      - name: update version
+      - name: macOS - update version
         run: |
           ./scripts/version.sh ${VERSION_NUMBER}
 

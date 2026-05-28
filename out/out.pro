@@ -16,6 +16,7 @@ macx{
     }
 
     seamlymedmg.target = SeamlyME.dmg
+    seamlymedmg.depends = seamly2ddmg  # updated by slspencer on 20260527 - serialize hdiutil to avoid "Resource busy" under make -j
     seamlymedmg.commands = hdiutil create -fs HFS+ -srcfolder $${OUT_PWD}/../src/app/seamlyme/bin/seamlyme.app -volname "SeamlyME" $$seamlymedmg.target
 
     macSign {
