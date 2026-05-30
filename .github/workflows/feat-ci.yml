@@ -124,7 +124,7 @@ jobs:
 
   macos:
     name: 'macOS: Build'
-    runs-on: macos-latest
+    runs-on: macos-15  # pin to macos-15 due to https://qt-project.atlassian.net/browse/QTBUG-137687
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
