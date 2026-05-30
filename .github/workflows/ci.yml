@@ -130,7 +130,7 @@ jobs:
 
   macos:
     name: 'macOS: Build'
-    runs-on: macos-latest
+    runs-on: macos-26
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
