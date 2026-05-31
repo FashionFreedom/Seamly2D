@@ -35,6 +35,7 @@ HEADERS += \
     $$PWD/tools/dialogpointofintersectioncurves.h \
     $$PWD/tools/dialogcubicbezier.h \
     $$PWD/tools/dialogcubicbezierpath.h \
+    $$PWD/tools/dialogcubicbezierlength.h \
     $$PWD/tools/dialogrotation.h \
     $$PWD/tools/dialogmirrorbyline.h \
     $$PWD/tools/dialogmirrorbyaxis.h \
@@ -82,6 +83,7 @@ SOURCES += \
     $$PWD/tools/dialogpointofintersectioncurves.cpp \
     $$PWD/tools/dialogcubicbezier.cpp \
     $$PWD/tools/dialogcubicbezierpath.cpp \
+    $$PWD/tools/dialogcubicbezierlength.cpp \
     $$PWD/tools/dialogrotation.cpp \
     $$PWD/tools/dialogmirrorbyline.cpp \
     $$PWD/tools/dialogmirrorbyaxis.cpp \
@@ -128,6 +130,7 @@ FORMS += \
     $$PWD/tools/dialogpointofintersectioncurves.ui \
     $$PWD/tools/dialogcubicbezier.ui \
     $$PWD/tools/dialogcubicbezierpath.ui \
+    $$PWD/tools/dialogcubicbezierlength.ui \
     $$PWD/tools/dialogrotation.ui \
     $$PWD/tools/dialogmirrorbyline.ui \
     $$PWD/tools/dialogmirrorbyaxis.ui \

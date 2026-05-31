@@ -280,11 +280,15 @@ void VAbstractApplication::loadTranslations(const QString &locale)
 
 #if defined(Q_OS_WIN) || defined(Q_OS_MAC)
     qtTranslator->load("qt_" + locale, translationsPath(locale));
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     qtxmlTranslator->load("qtxmlpatterns_" + locale, translationsPath(locale));
+#endif
     qtBaseTranslator->load("qtbase_" + locale, translationsPath(locale));
 #else
     qtTranslator->load("qt_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     qtxmlTranslator->load("qtxmlpatterns_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+#endif
     qtBaseTranslator->load("qtbase_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 #endif
 

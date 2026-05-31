@@ -67,6 +67,7 @@
 #include "toolcurve/vtoolcubicbezier.h"
 #include "toolcurve/vtoolsplinepath.h"
 #include "toolcurve/vtoolcubicbezierpath.h"
+#include "toolcurve/vtoolcubicbezierlength.h"
 #include "vtoolline.h"
 #include "toolpoint/toolsinglepoint/toolcut/vtoolcutspline.h"
 #include "toolpoint/toolsinglepoint/toolcut/vtoolcutsplinepath.h"

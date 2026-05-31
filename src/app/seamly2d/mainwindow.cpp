@@ -1239,6 +1239,21 @@ void MainWindow::handleCurveWithControlPointsTool(bool checked)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void MainWindow::handleCubicBezierLengthTool(bool checked)
+{
+    ToolSelectPointByRelease();
+    SetToolButtonWithApply<DialogCubicBezierLength>
+    (
+        checked,
+        Tool::CubicBezierLength,
+        ":/cursor/cubic_bezier_length_cursor.png",
+        tr("<b>Tool::Curve - Matched Length:</b> Select start point of curve"),
+        &MainWindow::ClosedDrawDialogWithApply<VToolCubicBezierLength>,
+        &MainWindow::ApplyDrawDialog<VToolCubicBezierLength>
+    );
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void MainWindow::handleSplineWithControlPointsTool(bool checked)
 {
     ToolSelectPointByRelease();
@@ -2894,8 +2909,9 @@ void MainWindow::initializeToolButtons()
     connect(ui->bisector_ToolButton,       &QToolButton::clicked, this, &MainWindow::handleBisectorTool);
     connect(ui->lineIntersect_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleLineIntersectTool);
     connect(ui->curve_ToolButton,          &QToolButton::clicked, this, &MainWindow::handleCurveTool);
-    connect(ui->curveWithCPs_ToolButton,   &QToolButton::clicked, this, &MainWindow::handleCurveWithControlPointsTool);
-    connect(ui->arc_ToolButton,            &QToolButton::clicked, this, &MainWindow::handleArcTool);
+    connect(ui->curveWithCPs_ToolButton,        &QToolButton::clicked, this, &MainWindow::handleCurveWithControlPointsTool);
+    connect(ui->cubicBezierLength_ToolButton,   &QToolButton::clicked, this, &MainWindow::handleCubicBezierLengthTool);
+    connect(ui->arc_ToolButton,                 &QToolButton::clicked, this, &MainWindow::handleArcTool);
     connect(ui->spline_ToolButton,         &QToolButton::clicked, this, &MainWindow::handleSplineTool);
     connect(ui->splineWithCPs_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleSplineWithControlPointsTool);
     connect(ui->pointOfContact_ToolButton, &QToolButton::clicked, this, &MainWindow::handlePointOfContactTool);
@@ -3496,6 +3512,9 @@ void MainWindow::CancelTool()
             break;
         case Tool::CubicBezier:
             ui->curveWithCPs_ToolButton->setChecked(false);
+            break;
+        case Tool::CubicBezierLength:
+            ui->cubicBezierLength_ToolButton->setChecked(false);
             break;
         case Tool::Arc:
             ui->arc_ToolButton->setChecked(false);
@@ -4992,6 +5011,7 @@ void MainWindow::setToolsEnabled(bool enable)
     ui->curve_ToolButton->setEnabled(draftTools);
     ui->spline_ToolButton->setEnabled(draftTools);
     ui->curveWithCPs_ToolButton->setEnabled(draftTools);
+    ui->cubicBezierLength_ToolButton->setEnabled(draftTools);
     ui->splineWithCPs_ToolButton->setEnabled(draftTools);
     ui->pointAlongCurve_ToolButton->setEnabled(draftTools);
     ui->pointAlongSpline_ToolButton->setEnabled(draftTools);
@@ -5526,6 +5546,10 @@ void MainWindow::LastUsedTool()
         case Tool::CubicBezier:
             ui->curveWithCPs_ToolButton->setChecked(true);
             handleCurveWithControlPointsTool(true);
+            break;
+        case Tool::CubicBezierLength:
+            ui->cubicBezierLength_ToolButton->setChecked(true);
+            handleCubicBezierLengthTool(true);
             break;
         case Tool::Arc:
             ui->arc_ToolButton->setChecked(true);
