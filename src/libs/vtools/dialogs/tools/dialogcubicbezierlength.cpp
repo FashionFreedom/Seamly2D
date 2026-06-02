@@ -137,7 +137,7 @@ quint32 DialogCubicBezierLength::GetPoint1() const
 //---------------------------------------------------------------------------------------------------------------------
 void DialogCubicBezierLength::SetPoint1(const quint32 &value)
 {
-    ChangeCurrentData(ui->startPoint_ComboBox, value);
+    changeCurrentData(ui->startPoint_ComboBox, value);
     vis->setObject1Id(value);
 }
 
@@ -150,7 +150,7 @@ quint32 DialogCubicBezierLength::GetPoint4() const
 //---------------------------------------------------------------------------------------------------------------------
 void DialogCubicBezierLength::SetPoint4(const quint32 &value)
 {
-    ChangeCurrentData(ui->endPoint_ComboBox, value);
+    changeCurrentData(ui->endPoint_ComboBox, value);
     auto visual = qobject_cast<VisToolCubicBezierLength *>(vis);
     if (visual) visual->setObject4Id(value);
 }
@@ -226,34 +226,34 @@ void DialogCubicBezierLength::SetTargetLength(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogCubicBezierLength::getPenStyle() const
 {
-    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+    return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 void DialogCubicBezierLength::setPenStyle(const QString &value)
 {
-    ChangeCurrentData(ui->lineType_ComboBox, value);
+    changeCurrentData(ui->lineType_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogCubicBezierLength::getLineWeight() const
 {
-    return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+    return getComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
 }
 
 void DialogCubicBezierLength::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    changeCurrentData(ui->lineWeight_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogCubicBezierLength::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 void DialogCubicBezierLength::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -266,8 +266,7 @@ void DialogCubicBezierLength::ChosenObject(quint32 id, const SceneObject &type)
         return;
 
     // First click: start point P1
-    if (getCurrentObjectId(ui->startPoint_ComboBox) == NULL_ID ||
-        !vis->isVisible())
+    if (getCurrentObjectId(ui->startPoint_ComboBox) == NULL_ID)
     {
         if (SetObject(id, ui->startPoint_ComboBox, tr("Select end point")))
         {
@@ -318,7 +317,7 @@ void DialogCubicBezierLength::Angle1Changed()
 {
     labelEditFormula = ui->labelEditAngle1;
     labelResultCalculation = ui->labelResultAngle1;
-    ValFormulaChanged(flagAngle1, ui->plainTextEditAngle1, timerAngle1, degreeSymbol);
+    formulaValueChanged(flagAngle1, ui->plainTextEditAngle1, timerAngle1, degreeSymbol);
 }
 
 void DialogCubicBezierLength::C1LengthChanged()
@@ -326,14 +325,14 @@ void DialogCubicBezierLength::C1LengthChanged()
     labelEditFormula = ui->labelEditC1Length;
     labelResultCalculation = ui->labelResultC1Length;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagC1Length, ui->plainTextEditC1Length, timerC1Length, postfix);
+    formulaValueChanged(flagC1Length, ui->plainTextEditC1Length, timerC1Length, postfix);
 }
 
 void DialogCubicBezierLength::Angle2Changed()
 {
     labelEditFormula = ui->labelEditAngle2;
     labelResultCalculation = ui->labelResultAngle2;
-    ValFormulaChanged(flagAngle2, ui->plainTextEditAngle2, timerAngle2, degreeSymbol);
+    formulaValueChanged(flagAngle2, ui->plainTextEditAngle2, timerAngle2, degreeSymbol);
 }
 
 void DialogCubicBezierLength::TargetLengthChanged()
@@ -341,7 +340,7 @@ void DialogCubicBezierLength::TargetLengthChanged()
     labelEditFormula = ui->labelEditTargetLength;
     labelResultCalculation = ui->labelResultTargetLength;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagTargetLength, ui->plainTextEditTargetLength, timerTargetLength, postfix);
+    formulaValueChanged(flagTargetLength, ui->plainTextEditTargetLength, timerTargetLength, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

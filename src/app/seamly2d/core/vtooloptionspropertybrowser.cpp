@@ -117,7 +117,7 @@ void VToolOptionsPropertyBrowser::clearPropertyBrowser()
 void VToolOptionsPropertyBrowser::showItemOptions(QGraphicsItem *item)
 {
     // This check helps to find missing tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used in switch.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 55, "Not all tools were used in switch.");
 
     switch (item->type())
     {
@@ -190,6 +190,8 @@ void VToolOptionsPropertyBrowser::showItemOptions(QGraphicsItem *item)
         case VToolCubicBezierPath::Type:
             showOptionsToolCubicBezierPath(item);
             break;
+        case VToolCubicBezierLength::Type:
+            break;
         case VToolTriangle::Type:
             showOptionsToolTriangle(item);
             break;
@@ -244,7 +246,7 @@ void VToolOptionsPropertyBrowser::updateOptions()
     }
 
     // This check helps to find missing tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used in switch.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 55, "Not all tools were used in switch.");
 
     switch (currentItem->type())
     {
@@ -316,6 +318,8 @@ void VToolOptionsPropertyBrowser::updateOptions()
             break;
         case VToolCubicBezierPath::Type:
             updateOptionsToolCubicBezierPath();
+            break;
+        case VToolCubicBezierLength::Type:
             break;
         case VToolTriangle::Type:
             updateOptionsToolTriangle();
@@ -389,7 +393,7 @@ void VToolOptionsPropertyBrowser::userChangedData(VPE::VProperty *property)
     }
 
     // This check helps to find missing tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used in switch.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 55, "Not all tools were used in switch.");
 
     switch (currentItem->type())
     {
@@ -461,6 +465,8 @@ void VToolOptionsPropertyBrowser::userChangedData(VPE::VProperty *property)
             break;
         case VToolCubicBezierPath::Type:
             changeDataToolCubicBezierPath(prop);
+            break;
+        case VToolCubicBezierLength::Type:
             break;
         case VToolTriangle::Type:
             changeDataToolTriangle(prop);

@@ -34,6 +34,7 @@
 #include "vabstractspline.h"
 
 class VCubicBezier;
+class VFormula;
 template <class T> class QSharedPointer;
 
 class VToolCubicBezierLength : public VAbstractSpline
