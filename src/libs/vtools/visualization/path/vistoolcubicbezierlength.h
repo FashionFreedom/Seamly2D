@@ -37,6 +37,7 @@ public:
     void         setAngle2(const QString &value);
     void         setC1Length(const QString &value);
     void         setTargetLength(const QString &value);
+    void         setC2Length(qreal value);   // actual computed c2 for Show mode
 
     virtual int  type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Vis::ToolCubicBezierLength)};
@@ -49,9 +50,12 @@ protected:
     QString         m_angle2;
     QString         m_c1Length;
     QString         m_targetLength;
+    qreal           m_c2Length;    // actual computed c2 (pixels); -1 means unknown
 
     VScaledEllipse *point1;
     VScaledEllipse *point4;
+    VScaledEllipse *point2;    // visual dot for P2
+    VScaledEllipse *point3;    // visual dot for P3 (computed)
     VScaledLine    *helpLine1;
     VScaledLine    *helpLine2;
 };

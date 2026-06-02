@@ -72,6 +72,11 @@ public:
     VFormula             GetFormulaTargetLength() const;
     void                 SetFormulaTargetLength(const VFormula &value);
 
+    QString              getMinLengthString() const; // min arc length (c2=0) formatted for display
+
+    QString              GetP1Name() const;
+    QString              GetP4Name() const;
+
     virtual void         ShowVisualization(bool show) Q_DECL_OVERRIDE;
 
 protected slots:

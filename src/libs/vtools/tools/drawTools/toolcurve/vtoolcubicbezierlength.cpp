@@ -356,6 +356,10 @@ void VToolCubicBezierLength::SetVisualization()
         visual->setAngle2(m_angle2);
         visual->setC1Length(m_c1Length);
         visual->setTargetLength(m_targetLength);
+        // Pass actual computed c2Length so P3 handle is drawn correctly
+        const QLineF c2Line(static_cast<QPointF>(spl->GetP4()),
+                            static_cast<QPointF>(spl->GetP3()));
+        visual->setC2Length(c2Line.length());
         visual->setLineStyle(lineTypeToPenStyle(spl->GetPenStyle()));
         visual->setLineWeight(spl->getLineWeight());
         visual->SetMode(Mode::Show);
@@ -369,6 +373,31 @@ void VToolCubicBezierLength::refreshGeometry()
     const auto spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
     this->setPath(spl->GetPath());
     SetVisualization();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VToolCubicBezierLength::getMinLengthString() const
+{
+    // Minimum arc length is achieved when c2Length == 0 (P3 == P4)
+    const auto spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
+    VCubicBezier minSpl(spl->GetP1(), spl->GetP2(), spl->GetP4(), spl->GetP4());
+    const qreal minPx = minSpl.GetLength();
+    const qreal minMm = qApp->fromPixel(minPx);
+    return QString::number(minMm, 'f', 2) + " " + UnitsToStr(qApp->patternUnit(), true);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VToolCubicBezierLength::GetP1Name() const
+{
+    const auto spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
+    return spl->GetP1().name();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VToolCubicBezierLength::GetP4Name() const
+{
+    const auto spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
+    return spl->GetP4().name();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

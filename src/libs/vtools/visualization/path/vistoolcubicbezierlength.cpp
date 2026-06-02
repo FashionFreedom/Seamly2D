@@ -35,8 +35,11 @@ VisToolCubicBezierLength::VisToolCubicBezierLength(const VContainer *data, QGrap
     , m_angle2(QString())
     , m_c1Length(QString())
     , m_targetLength(QString())
+    , m_c2Length(-1.0)
     , point1(nullptr)
     , point4(nullptr)
+    , point2(nullptr)
+    , point3(nullptr)
     , helpLine1(nullptr)
     , helpLine2(nullptr)
 {
@@ -44,6 +47,8 @@ VisToolCubicBezierLength::VisToolCubicBezierLength(const VContainer *data, QGrap
     helpLine2 = InitItem<VScaledLine>(mainColor, this);
     point1    = InitPoint(supportColor, this);
     point4    = InitPoint(supportColor, this);
+    point2    = InitPoint(mainColor,    this);
+    point3    = InitPoint(Qt::gray,     this);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -77,6 +82,9 @@ void VisToolCubicBezierLength::RefreshGeometry()
         // Parameters not yet set — just show a line from P1 to P4
         DrawLine(helpLine1, QLineF(static_cast<QPointF>(*p1), static_cast<QPointF>(*p4)),
                  mainColor, lineWeight, Qt::DashLine);
+        point2->setVisible(false);
+        point3->setVisible(false);
+        helpLine2->setVisible(false);
         return;
     }
 
@@ -85,16 +93,20 @@ void VisToolCubicBezierLength::RefreshGeometry()
     h1.setAngle(angle1);
     const VPointF p2(h1.p2());
 
-    // Build a provisional P3 from P4 + handle2 with some reasonable length for the preview
-    // Use the current c1Len as a stand-in for c2Len in the live preview
-    QLineF h2(static_cast<QPointF>(*p4), static_cast<QPointF>(*p4) + QPointF(c1Len, 0));
+    // Build P3 from P4 + handle2.
+    // In Show mode use the actual computed c2Length; during placement use c1Len as approximation.
+    const qreal c2Len = (m_c2Length >= 0.0) ? m_c2Length : c1Len;
+    QLineF h2(static_cast<QPointF>(*p4), static_cast<QPointF>(*p4) + QPointF(c2Len, 0));
     h2.setAngle(angle2);
     const VPointF p3(h2.p2());
 
     DrawLine(helpLine1, QLineF(static_cast<QPointF>(*p1), static_cast<QPointF>(p2)),
              mainColor, lineWeight, Qt::DashLine);
     DrawLine(helpLine2, QLineF(static_cast<QPointF>(*p4), static_cast<QPointF>(p3)),
-             mainColor, lineWeight, Qt::DashLine);
+             Qt::gray,  lineWeight, Qt::DashLine);
+
+    DrawPoint(point2, static_cast<QPointF>(p2), mainColor);
+    DrawPoint(point3, static_cast<QPointF>(p3), Qt::gray);
 
     VCubicBezier spline(*p1, p2, p3, *p4);
     DrawPath(this, spline.GetPath(), mainColor, lineStyle, lineWeight, Qt::RoundCap);
@@ -129,3 +141,11 @@ void VisToolCubicBezierLength::setTargetLength(const QString &value)
 {
     m_targetLength = value;
 }
+
+//---------------------------------------------------------------------------------------------------------------------
+void VisToolCubicBezierLength::setC2Length(qreal value)
+{
+    m_c2Length = value;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
