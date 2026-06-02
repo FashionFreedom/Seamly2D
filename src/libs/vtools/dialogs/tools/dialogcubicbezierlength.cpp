@@ -265,29 +265,33 @@ void DialogCubicBezierLength::ChosenObject(quint32 id, const SceneObject &type)
     if (type != SceneObject::Point)
         return;
 
-    // First click: start point P1
-    if (getCurrentObjectId(ui->startPoint_ComboBox) == NULL_ID)
+    switch (number)
     {
-        if (SetObject(id, ui->startPoint_ComboBox, tr("Select end point")))
-        {
-            vis->VisualMode(id);
-            auto visual = qobject_cast<VisToolCubicBezierLength *>(vis);
-            if (visual) visual->setObject1Id(id);
-        }
-        return;
-    }
-
-    // Second click: end point P4
-    if (getCurrentObjectId(ui->startPoint_ComboBox) != id)
-    {
-        if (SetObject(id, ui->endPoint_ComboBox, QString()))
-        {
-            auto visual = qobject_cast<VisToolCubicBezierLength *>(vis);
-            if (visual) visual->setObject4Id(id);
-            prepare = true;
-            this->setModal(true);
-            this->show();
-        }
+        case 0:
+            if (SetObject(id, ui->startPoint_ComboBox, tr("Select end point")))
+            {
+                ++number;
+                vis->VisualMode(id);
+                auto visual = qobject_cast<VisToolCubicBezierLength *>(vis);
+                if (visual) visual->setObject1Id(id);
+            }
+            break;
+        case 1:
+            if (getCurrentObjectId(ui->startPoint_ComboBox) != id)
+            {
+                if (SetObject(id, ui->endPoint_ComboBox, QString()))
+                {
+                    ++number;
+                    auto visual = qobject_cast<VisToolCubicBezierLength *>(vis);
+                    if (visual) visual->setObject4Id(id);
+                    prepare = true;
+                    this->setModal(true);
+                    this->show();
+                }
+            }
+            break;
+        default:
+            break;
     }
 }
 
