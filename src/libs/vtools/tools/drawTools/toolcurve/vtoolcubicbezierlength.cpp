@@ -352,14 +352,20 @@ void VToolCubicBezierLength::SetVisualization()
         const auto spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
         visual->setObject1Id(spl->GetP1().id());
         visual->setObject4Id(spl->GetP4().id());
-        visual->setAngle1(m_angle1);
-        visual->setAngle2(m_angle2);
-        visual->setC1Length(m_c1Length);
-        visual->setTargetLength(m_targetLength);
-        // Pass actual computed c2Length so P3 handle is drawn correctly
+
+        // Extract computed handle geometry directly from the stored spline so
+        // the visualization is correct regardless of formula complexity.
+        // c1Length is passed in user-units (toPixel() is applied in RefreshGeometry).
+        // c2Length is passed in pixels (used directly in RefreshGeometry).
+        const QLineF c1Line(static_cast<QPointF>(spl->GetP1()),
+                            static_cast<QPointF>(spl->GetP2()));
         const QLineF c2Line(static_cast<QPointF>(spl->GetP4()),
                             static_cast<QPointF>(spl->GetP3()));
+        visual->setAngle1(QString::number(c1Line.angle()));
+        visual->setAngle2(QString::number(c2Line.angle()));
+        visual->setC1Length(QString::number(qApp->fromPixel(c1Line.length())));
         visual->setC2Length(c2Line.length());
+
         visual->setLineStyle(lineTypeToPenStyle(spl->GetPenStyle()));
         visual->setLineWeight(spl->getLineWeight());
         visual->SetMode(Mode::Show);

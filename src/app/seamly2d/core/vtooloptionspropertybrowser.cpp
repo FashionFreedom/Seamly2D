@@ -2980,6 +2980,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolCubicBezierPath(QGraphicsItem *
 void VToolOptionsPropertyBrowser::showOptionsToolCubicBezierLength(QGraphicsItem *item)
 {
     VToolCubicBezierLength *tool = qgraphicsitem_cast<VToolCubicBezierLength *>(item);
+    SCASSERT(tool != nullptr)
     tool->ShowVisualization(true);
 
     formView->setTitle(tr("Curve - Matched Length"));
@@ -3969,6 +3970,7 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezier()
 void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezierLength()
 {
     VToolCubicBezierLength *tool = qgraphicsitem_cast<VToolCubicBezierLength *>(currentItem);
+    SCASSERT(tool != nullptr)
     idToProperty[AttrObjName]->setValue(tr("Spl_") + tool->GetP1Name() + "_" + tool->GetP4Name());
 
     QVariant vAngle1; vAngle1.setValue(tool->GetFormulaAngle1());
