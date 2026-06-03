@@ -284,7 +284,6 @@ enum class Tool : ToolVisHolderType
     ArcWithLength,
     SplinePath,
     CubicBezierPath,
-    CubicBezierLength,
     CutSplinePath,
     PointOfContact,
     Piece,
@@ -316,6 +315,7 @@ enum class Tool : ToolVisHolderType
     EllipticalArc,
     AnchorPoint,
     InsertNodes,
+    CubicBezierLength,
     BackgroundImage,
     LAST_ONE_DO_NOT_USE //add new stuffs above this, this constant must be last and never used
 };
