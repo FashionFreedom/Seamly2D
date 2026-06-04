@@ -36,7 +36,8 @@ LANGUAGES += \
     pt_BR \
     el_GR \
     tr_TR \
-    pl_PL
+    pl_PL \ 
+    hu_HU
 
 for(lang, LANGUAGES) {
     TRANSLATIONS += measurements_$${lang}.ts
