@@ -70,40 +70,39 @@
 #include "ui_dialogellipticalarc.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief DialogEllipticalArc create dialog
- * @param data container with data
- * @param parent parent widget
- */
+/// @brief DialogEllipticalArc create dialog
+/// @param data container with data
+/// @param parent parent widget
+//---------------------------------------------------------------------------------------------------------------------
 DialogEllipticalArc::DialogEllipticalArc(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : DialogTool(data, toolId, parent)
     , ui(new Ui::DialogEllipticalArc)
-    , flagRadius1(false)
-    , flagRadius2(false)
-    , flagF1(false)
-    , flagF2(false)
-    , flagRotationAngle(false)
-    , timerRadius1(nullptr)
-    , timerRadius2(nullptr)
-    , timerF1(nullptr)
-    , timerF2(nullptr)
-    , timerRotationAngle(nullptr)
-    , radius1()
-    , radius2()
-    , f1()
-    , f2()
-    , rotationAngle()
-    , formulaBaseHeightRadius1(0)
-    , formulaBaseHeightRadius2(0)
-    , formulaBaseHeightF1(0)
-    , formulaBaseHeightF2(0)
-    , formulaBaseHeightRotationAngle(0)
-    , angleF1(INT_MIN)
-    , angleF2(INT_MIN)
-    , angleRotation(INT_MIN)
+    , m_flagRadius1(false)
+    , m_flagRadius2(false)
+    , m_flagAngle1(false)
+    , m_flagAngle2(false)
+    , m_flagRotation(false)
+    , m_timerRadius1(nullptr)
+    , m_timerRadius2(nullptr)
+    , m_timerAngle1(nullptr)
+    , m_timerAngle2(nullptr)
+    , m_timerRotation(nullptr)
+    , m_radius1Fx()
+    , m_radius2Fx()
+    , m_angle1Fx()
+    , m_angle2Fx()
+    , m_rotationFx()
+    , m_baseHeightRadius1(0)
+    , m_baseHeightRadius2(0)
+    , m_baseHeightAngle1(0)
+    , m_baseHeightAngle2(0)
+    , m_baseHeightRotation(0)
+    , m_angleF1(INT_MIN)
+    , m_angleF2(INT_MIN)
+    , m_rotationAngle(INT_MIN)
     , m_arc()
     , m_Id()
-    , newDuplicate(-1)
+    , m_newDuplicate(-1)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -114,11 +113,11 @@ DialogEllipticalArc::DialogEllipticalArc(const VContainer *data, const quint32 &
 
     m_Id  = data->getId() + 1;
 
-    this->formulaBaseHeightRadius1 = ui->plainTextEditRadius1->height();
-    this->formulaBaseHeightRadius2 = ui->plainTextEditRadius2->height();
-    this->formulaBaseHeightF1 = ui->plainTextEditF1->height();
-    this->formulaBaseHeightF2 = ui->plainTextEditF2->height();
-    this->formulaBaseHeightRotationAngle = ui->plainTextEditRotationAngle->height();
+    this->m_baseHeightRadius1 = ui->plainTextEditRadius1->height();
+    this->m_baseHeightRadius2 = ui->plainTextEditRadius2->height();
+    this->m_baseHeightAngle1 = ui->plainTextEditF1->height();
+    this->m_baseHeightAngle2 = ui->plainTextEditF2->height();
+    this->m_baseHeightRotation = ui->plainTextEditRotationAngle->height();
 
     ui->plainTextEditRadius1->installEventFilter(this);
     ui->plainTextEditRadius2->installEventFilter(this);
@@ -129,20 +128,20 @@ DialogEllipticalArc::DialogEllipticalArc(const VContainer *data, const quint32 &
     ui->plainTextEditRotationAngle->installEventFilter(this);
     ui->plainTextEditRotationAngle->setToolTip(makeAngleTooltip());
 
-    timerRadius1 = new QTimer(this);
-    connect(timerRadius1, &QTimer::timeout, this, &DialogEllipticalArc::EvalRadiuses);
+    m_timerRadius1 = new QTimer(this);
+    connect(m_timerRadius1, &QTimer::timeout, this, &DialogEllipticalArc::evalRadiuses);
 
-    timerRadius2 = new QTimer(this);
-    connect(timerRadius2, &QTimer::timeout, this, &DialogEllipticalArc::EvalRadiuses);
+    m_timerRadius2 = new QTimer(this);
+    connect(m_timerRadius2, &QTimer::timeout, this, &DialogEllipticalArc::evalRadiuses);
 
-    timerF1 = new QTimer(this);
-    connect(timerF1, &QTimer::timeout, this, &DialogEllipticalArc::EvalAngles);
+    m_timerAngle1 = new QTimer(this);
+    connect(m_timerAngle1, &QTimer::timeout, this, &DialogEllipticalArc::evalAngles);
 
-    timerF2 = new QTimer(this);
-    connect(timerF2, &QTimer::timeout, this, &DialogEllipticalArc::EvalAngles);
+    m_timerAngle2 = new QTimer(this);
+    connect(m_timerAngle2, &QTimer::timeout, this, &DialogEllipticalArc::evalAngles);
 
-    timerRotationAngle = new QTimer(this);
-    connect(timerRotationAngle, &QTimer::timeout, this, &DialogEllipticalArc::EvalAngles);
+    m_timerRotation = new QTimer(this);
+    connect(m_timerRotation, &QTimer::timeout, this, &DialogEllipticalArc::evalAngles);
 
     initializeOkCancelApply(ui);
 
@@ -172,34 +171,38 @@ DialogEllipticalArc::DialogEllipticalArc(const VContainer *data, const quint32 &
         ui->lineType_ComboBox->setCurrentIndex(index);
     }
 
-    CheckState();
-
-    connect(ui->toolButtonExprRadius1, &QPushButton::clicked, this, &DialogEllipticalArc::FXRadius1);
-    connect(ui->toolButtonExprRadius2, &QPushButton::clicked, this, &DialogEllipticalArc::FXRadius2);
-    connect(ui->toolButtonExprF1, &QPushButton::clicked, this, &DialogEllipticalArc::FXF1);
-    connect(ui->toolButtonExprF2, &QPushButton::clicked, this, &DialogEllipticalArc::FXF2);
+    connect(ui->toolButtonExprRadius1,       &QPushButton::clicked, this, &DialogEllipticalArc::FXRadius1);
+    connect(ui->toolButtonExprRadius2,       &QPushButton::clicked, this, &DialogEllipticalArc::FXRadius2);
+    connect(ui->toolButtonExprF1,            &QPushButton::clicked, this, &DialogEllipticalArc::FXF1);
+    connect(ui->toolButtonExprF2,            &QPushButton::clicked, this, &DialogEllipticalArc::FXF2);
     connect(ui->toolButtonExprRotationAngle, &QPushButton::clicked, this, &DialogEllipticalArc::FXRotationAngle);
 
-    connect(ui->plainTextEditRadius1, &QPlainTextEdit::textChanged, this, &DialogEllipticalArc::Radius1Changed);
-    connect(ui->plainTextEditRadius2, &QPlainTextEdit::textChanged, this, &DialogEllipticalArc::Radius2Changed);
-    connect(ui->plainTextEditF1, &QPlainTextEdit::textChanged, this, &DialogEllipticalArc::F1Changed);
-    connect(ui->plainTextEditF2, &QPlainTextEdit::textChanged, this, &DialogEllipticalArc::F2Changed);
-    connect(ui->plainTextEditRotationAngle, &QPlainTextEdit::textChanged,
-            this, &DialogEllipticalArc::RotationAngleChanged);
+    connect(ui->plainTextEditRadius1, &QPlainTextEdit::textChanged, this,
+            [this]() {m_timerRadius1->start(std::chrono::milliseconds(300));});
+    connect(ui->plainTextEditRadius2, &QPlainTextEdit::textChanged, this,
+            [this]() {m_timerRadius2->start(std::chrono::milliseconds(300));});
+    connect(ui->plainTextEditF1, &QPlainTextEdit::textChanged, this,
+            [this]() {m_timerAngle1->start(std::chrono::milliseconds(300));});
+    connect(ui->plainTextEditF2, &QPlainTextEdit::textChanged, this,
+            [this]() {m_timerAngle2->start(std::chrono::milliseconds(300));});
+    connect(ui->plainTextEditRotationAngle, &QPlainTextEdit::textChanged, this,
+            [this]() {m_timerRotation->start(std::chrono::milliseconds(300));});
 
-    connect(ui->pushButtonGrowLengthRadius1, &QPushButton::clicked, this, &DialogEllipticalArc::DeployRadius1TextEdit);
-    connect(ui->pushButtonGrowLengthRadius2, &QPushButton::clicked, this, &DialogEllipticalArc::DeployRadius2TextEdit);
-    connect(ui->pushButtonGrowLengthF1, &QPushButton::clicked, this, &DialogEllipticalArc::DeployF1TextEdit);
-    connect(ui->pushButtonGrowLengthF2, &QPushButton::clicked, this, &DialogEllipticalArc::DeployF2TextEdit);
-    connect(ui->pushButtonGrowLengthRotationAngle, &QPushButton::clicked,
-            this, &DialogEllipticalArc::DeployRotationAngleTextEdit);
+    connect(ui->radius1_PushButton,  &QPushButton::clicked, this, &DialogEllipticalArc::deployRadius1TextEdit);
+    connect(ui->radius2_PushButton,  &QPushButton::clicked, this, &DialogEllipticalArc::deployRadius2TextEdit);
+    connect(ui->angle1_PushButton,   &QPushButton::clicked, this, &DialogEllipticalArc::deployF1TextEdit);
+    connect(ui->angle2_PushButton,   &QPushButton::clicked, this, &DialogEllipticalArc::deployF2TextEdit);
+    connect(ui->rotation_PushButton, &QPushButton::clicked, this, &DialogEllipticalArc::deployRotationAngleTextEdit);
 
     connect(ui->centerPoint_ComboBox, &QComboBox::currentTextChanged, this, &DialogEllipticalArc::pointNameChanged);
 
+    // Set default values angles
     ui->plainTextEditF1->setPlainText("0");
     ui->plainTextEditF2->setPlainText("360");
     ui->plainTextEditRotationAngle->setPlainText("0");
     ui->plainTextEditRadius1->setFocus();
+
+    CheckState();
 
     vis = new VisToolEllipticalArc(data);
 }
@@ -224,20 +227,18 @@ void DialogEllipticalArc::setArc(const VEllipticalArc &arc)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetCenter return id of center point
- * @return id id
- */
+/// @brief GetCenter return id of center point
+/// @return id id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogEllipticalArc::GetCenter() const
 {
     return getCurrentObjectId(ui->centerPoint_ComboBox);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetCenter set id of center point
- * @param value id
- */
+/// @brief SetCenter set id of center point
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::SetCenter(const quint32 &value)
 {
     changeCurrentData(ui->centerPoint_ComboBox, value);
@@ -245,161 +246,151 @@ void DialogEllipticalArc::SetCenter(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetRadius1 return formula of radius1
- * @return formula
- */
+/// @brief GetRadius1 return formula of m_radius1Fx
+/// @return formula
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogEllipticalArc::GetRadius1() const
 {
-    return qApp->translateVariables()->TryFormulaFromUser(radius1, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(m_radius1Fx, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetRadius1 set formula of radius1
- * @param value formula
- */
+/// @brief SetRadius1 set formula of m_radius1Fx
+/// @param value formula
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::SetRadius1(const QString &value)
 {
-    radius1 = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    m_radius1Fx = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
-    if (radius1.length() > 80)
+    if (m_radius1Fx.length() > 80)
     {
-        this->DeployRadius1TextEdit();
+        this->deployRadius1TextEdit();
     }
-    ui->plainTextEditRadius1->setPlainText(radius1);
+    ui->plainTextEditRadius1->setPlainText(m_radius1Fx);
 
     VisToolEllipticalArc *path = qobject_cast<VisToolEllipticalArc *>(vis);
     SCASSERT(path != nullptr)
-    path->setRadius1(radius1);
+    path->setRadius1(m_radius1Fx);
 
     MoveCursorToEnd(ui->plainTextEditRadius1);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetRadius2 return formula of radius2
- * @return formula
- */
+/// @brief GetRadius2 return formula of m_radius2Fx
+/// @return formula
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogEllipticalArc::GetRadius2() const
 {
-    return qApp->translateVariables()->TryFormulaFromUser(radius2, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(m_radius2Fx, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetRadius2 set formula of radius2
- * @param value formula
- */
+/// @brief SetRadius2 set formula of m_radius2Fx
+/// @param value formula
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::SetRadius2(const QString &value)
 {
-    radius2 = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    m_radius2Fx = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
-    if (radius2.length() > 80)
+    if (m_radius2Fx.length() > 80)
     {
-        this->DeployRadius2TextEdit();
+        this->deployRadius2TextEdit();
     }
-    ui->plainTextEditRadius2->setPlainText(radius2);
+    ui->plainTextEditRadius2->setPlainText(m_radius2Fx);
 
     VisToolEllipticalArc *path = qobject_cast<VisToolEllipticalArc *>(vis);
     SCASSERT(path != nullptr)
-    path->setRadius2(radius2);
+    path->setRadius2(m_radius2Fx);
 
     MoveCursorToEnd(ui->plainTextEditRadius2);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetF1 return formula first angle of elliptical arc
- * @return formula
- */
+/// @brief GetF1 return formula first angle of elliptical arc
+/// @return formula
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogEllipticalArc::GetF1() const
 {
-    return qApp->translateVariables()->TryFormulaFromUser(f1, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(m_angle1Fx, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetF1 set formula first angle of elliptical arc
- * @param value formula
- */
+/// @brief SetF1 set formula first angle of elliptical arc
+/// @param value formula
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::SetF1(const QString &value)
 {
-    f1 = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    m_angle1Fx = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
-    if (f1.length() > 80)
+    if (m_angle1Fx.length() > 80)
     {
-        this->DeployF1TextEdit();
+        this->deployF1TextEdit();
     }
-    ui->plainTextEditF1->setPlainText(f1);
+    ui->plainTextEditF1->setPlainText(m_angle1Fx);
 
     VisToolEllipticalArc *path = qobject_cast<VisToolEllipticalArc *>(vis);
     SCASSERT(path != nullptr)
-    path->setF1(f1);
+    path->setF1(m_angle1Fx);
 
     MoveCursorToEnd(ui->plainTextEditF1);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetF2 return formula second angle of elliptical arc
- * @return formula
- */
+/// @brief GetF2 return formula second angle of elliptical arc
+/// @return formula
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogEllipticalArc::GetF2() const
 {
-    return qApp->translateVariables()->TryFormulaFromUser(f2, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(m_angle2Fx, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetF2 set formula second angle of elliptical arc
- * @param value formula
- */
+/// @brief SetF2 set formula second angle of elliptical arc
+/// @param value formula
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::SetF2(const QString &value)
 {
-    f2 = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    m_angle2Fx = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
-    if (f2.length() > 80)
+    if (m_angle2Fx.length() > 80)
     {
-        this->DeployF2TextEdit();
+        this->deployF2TextEdit();
     }
-    ui->plainTextEditF2->setPlainText(f2);
+    ui->plainTextEditF2->setPlainText(m_angle2Fx);
 
     VisToolEllipticalArc *path = qobject_cast<VisToolEllipticalArc *>(vis);
     SCASSERT(path != nullptr)
-    path->setF2(f2);
+    path->setF2(m_angle2Fx);
 
     MoveCursorToEnd(ui->plainTextEditF2);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getRotationAngle return formula rotation angle of elliptical arc
- * @return formula
- */
+/// @brief getRotationAngle return formula rotation angle of elliptical arc
+/// @return formula
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogEllipticalArc::getRotationAngle() const
 {
-    return qApp->translateVariables()->TryFormulaFromUser(rotationAngle, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(m_rotationFx, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetRotationAngle set formula rotation angle of elliptical arc
- * @param value formula
- */
+/// @brief SetRotationAngle set formula rotation angle of elliptical arc
+/// @param value formula
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::SetRotationAngle(const QString &value)
 {
-    rotationAngle = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    m_rotationFx = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
-    if (rotationAngle.length() > 80)
+    if (m_rotationFx.length() > 80)
     {
-        this->DeployRotationAngleTextEdit();
+        this->deployRotationAngleTextEdit();
     }
-    ui->plainTextEditRotationAngle->setPlainText(rotationAngle);
+    ui->plainTextEditRotationAngle->setPlainText(m_rotationFx);
 
     VisToolEllipticalArc *path = qobject_cast<VisToolEllipticalArc *>(vis);
     SCASSERT(path != nullptr)
-    path->setRotationAngle(rotationAngle);
+    path->setRotationAngle(m_rotationFx);
 
     MoveCursorToEnd(ui->plainTextEditRotationAngle);
 }
@@ -417,58 +408,53 @@ void DialogEllipticalArc::setPenStyle(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getLineWeight return weight of the lines
- * @return type
- */
+/// @brief getLineWeight return weight of the lines
+/// @return type
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogEllipticalArc::getLineWeight() const
 {
         return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setLineWeight set weight of the lines
- * @param value type
- */
+/// @brief setLineWeight set weight of the lines
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::setLineWeight(const QString &value)
 {
     changeCurrentData(ui->lineWeight_ComboBox, value);
     vis->setLineWeight(value);
 }
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetColor return color of elliptical arc
- * @return formula
- */
+/// @brief GetColor return color of elliptical arc
+/// @return formula
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogEllipticalArc::getLineColor() const
 {
     return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setLineColor set color of elliptical arc
- * @param value formula
- */
+/// @brief setLineColor set color of elliptical arc
+/// @param value formula
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::setLineColor(const QString &value)
 {
     changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief EvalRadiuses calculate value of radiuses
- */
-void DialogEllipticalArc::EvalRadiuses()
+/// @brief evalRadiuses calculate value of radiuses
+//---------------------------------------------------------------------------------------------------------------------
+void DialogEllipticalArc::evalRadiuses()
 {
     labelEditFormula = ui->labelEditRadius1;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    const qreal radius_1 = Eval(ui->plainTextEditRadius1->toPlainText(), flagRadius1, ui->labelResultRadius1, postfix);
+    const qreal radius_1 = Eval(ui->plainTextEditRadius1->toPlainText(), m_flagRadius1, ui->labelResultRadius1, postfix);
 
     if (radius_1 < 0)
     {
-        flagRadius1 = false;
+        m_flagRadius1 = false;
         ChangeColor(labelEditFormula, Qt::red);
         ui->labelResultRadius1->setText(tr("Error"));
         ui->labelResultRadius1->setToolTip(tr("Radius can't be negative"));
@@ -477,10 +463,10 @@ void DialogEllipticalArc::EvalRadiuses()
     }
 
     labelEditFormula = ui->labelEditRadius2;
-    const qreal radius_2 = Eval(ui->plainTextEditRadius2->toPlainText(), flagRadius2, ui->labelResultRadius2, postfix);
+    const qreal radius_2 = Eval(ui->plainTextEditRadius2->toPlainText(), m_flagRadius2, ui->labelResultRadius2, postfix);
     if (radius_2 < 0)
     {
-        flagRadius2 = false;
+        m_flagRadius2 = false;
         ChangeColor(labelEditFormula, Qt::red);
         ui->labelResultRadius2->setText(tr("Error"));
         ui->labelResultRadius2->setToolTip(tr("Radius can't be negative"));
@@ -490,40 +476,39 @@ void DialogEllipticalArc::EvalRadiuses()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief EvalAngles calculate value of angles
- */
-void DialogEllipticalArc::EvalAngles()
+/// @brief evalAngles calculate value of angles
+//---------------------------------------------------------------------------------------------------------------------
+void DialogEllipticalArc::evalAngles()
 {
     labelEditFormula = ui->labelEditF1;
-    angleF1 = Eval(ui->plainTextEditF1->toPlainText(), flagF1, ui->labelResultF1, degreeSymbol, false);
+    m_angleF1 = Eval(ui->plainTextEditF1->toPlainText(), m_flagAngle1, ui->labelResultF1, degreeSymbol, false);
 
     labelEditFormula = ui->labelEditF2;
-    angleF2 = Eval(ui->plainTextEditF2->toPlainText(), flagF2, ui->labelResultF2, degreeSymbol, false);
+    m_angleF2 = Eval(ui->plainTextEditF2->toPlainText(), m_flagAngle2, ui->labelResultF2, degreeSymbol, false);
 
     labelEditFormula = ui->labelEditRotationAngle;
-    angleRotation = Eval(ui->plainTextEditRotationAngle->toPlainText(), flagRotationAngle,
-                         ui->labelResultRotationAngle, degreeSymbol, false);
+    m_rotationAngle = Eval(ui->plainTextEditRotationAngle->toPlainText(), m_flagRotation,
+                           ui->labelResultRotationAngle, degreeSymbol, false);
 
-    CheckAngles();
+    checkAngles();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogEllipticalArc::CheckAngles()
+void DialogEllipticalArc::checkAngles()
 {
-    if (static_cast<int>(angleF1) == INT_MIN || static_cast<int>(angleF2) == INT_MIN)
+    if (static_cast<int>(m_angleF1) == INT_MIN || static_cast<int>(m_angleF2) == INT_MIN)
     {
         return;
     }
 
-    if (VFuzzyComparePossibleNulls(angleF1, angleF2))
+    if (VFuzzyComparePossibleNulls(m_angleF1, m_angleF2))
     {
-        flagF1 = false;
+        m_flagAngle1 = false;
         ChangeColor(ui->labelEditF1, Qt::red);
         ui->labelResultF1->setText(tr("Error"));
         ui->labelResultF1->setToolTip(tr("Angles equal"));
 
-        flagF2 = false;
+        m_flagAngle2 = false;
         ChangeColor(ui->labelEditF2, Qt::red);
         ui->labelResultF2->setText(tr("Error"));
         ui->labelResultF2->setToolTip(tr("Angles equal"));
@@ -603,118 +588,70 @@ void DialogEllipticalArc::FXRotationAngle()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Radius1Changed after change formula of radius1 calculate value and show result
- */
-void DialogEllipticalArc::Radius1Changed()
+/// @brief deployRadius1TextEdit grow or shrink formula input
+//---------------------------------------------------------------------------------------------------------------------
+void DialogEllipticalArc::deployRadius1TextEdit()
 {
-    labelEditFormula = ui->labelEditRadius1;
-    labelResultCalculation = ui->labelResultRadius1;
-    const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    formulaValueChanged(flagRadius1, ui->plainTextEditRadius1, timerRadius1, postfix);
+    DeployFormula(ui->plainTextEditRadius1, ui->radius1_PushButton, m_baseHeightRadius1);
+    collapseFormula(ui->plainTextEditRadius2, ui->radius2_PushButton, m_baseHeightRadius2);
+    collapseFormula(ui->plainTextEditF1, ui->angle1_PushButton, m_baseHeightAngle1);
+    collapseFormula(ui->plainTextEditF2, ui->angle2_PushButton, m_baseHeightAngle2);
+    collapseFormula(ui->plainTextEditRotationAngle, ui->rotation_PushButton,m_baseHeightRotation);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Radius2Changed after change formula of radius2 calculate value and show result
- */
-void DialogEllipticalArc::Radius2Changed()
+/// @brief deployRadius1TextEdit grow or shrink formula input
+//---------------------------------------------------------------------------------------------------------------------
+void DialogEllipticalArc::deployRadius2TextEdit()
 {
-    labelEditFormula = ui->labelEditRadius2;
-    labelResultCalculation = ui->labelResultRadius2;
-    const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    formulaValueChanged(flagRadius2, ui->plainTextEditRadius2, timerRadius2, postfix);
+    collapseFormula(ui->plainTextEditRadius1, ui->radius1_PushButton, m_baseHeightRadius1);
+    DeployFormula(ui->plainTextEditRadius2, ui->radius2_PushButton, m_baseHeightRadius2);
+    collapseFormula(ui->plainTextEditF1, ui->angle1_PushButton, m_baseHeightAngle1);
+    collapseFormula(ui->plainTextEditF2, ui->angle2_PushButton, m_baseHeightAngle2);
+    collapseFormula(ui->plainTextEditRotationAngle, ui->rotation_PushButton,m_baseHeightRotation);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief F1Changed after change formula of first angle calculate value and show result
- */
-void DialogEllipticalArc::F1Changed()
+/// @brief deployF1TextEdit grow or shrink formula input
+//---------------------------------------------------------------------------------------------------------------------
+void DialogEllipticalArc::deployF1TextEdit()
 {
-    labelEditFormula = ui->labelEditF1;
-    labelResultCalculation = ui->labelResultF1;
-    formulaValueChanged(flagF1, ui->plainTextEditF1, timerF1, degreeSymbol);
+    collapseFormula(ui->plainTextEditRadius1, ui->radius1_PushButton, m_baseHeightRadius1);
+    collapseFormula(ui->plainTextEditRadius2, ui->radius2_PushButton, m_baseHeightRadius2);
+    DeployFormula(ui->plainTextEditF1, ui->angle1_PushButton, m_baseHeightAngle1);
+    collapseFormula(ui->plainTextEditF2, ui->angle2_PushButton, m_baseHeightAngle2);
+    collapseFormula(ui->plainTextEditRotationAngle, ui->rotation_PushButton,m_baseHeightRotation);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief F2Changed after change formula of second angle calculate value and show result
- */
-void DialogEllipticalArc::F2Changed()
+/// @brief deployF2TextEdit grow or shrink formula input
+//---------------------------------------------------------------------------------------------------------------------
+void DialogEllipticalArc::deployF2TextEdit()
 {
-    labelEditFormula = ui->labelEditF2;
-    labelResultCalculation = ui->labelResultF2;
-    formulaValueChanged(flagF2, ui->plainTextEditF2, timerF2, degreeSymbol);
+    collapseFormula(ui->plainTextEditRadius1, ui->radius1_PushButton, m_baseHeightRadius1);
+    collapseFormula(ui->plainTextEditRadius2, ui->radius2_PushButton, m_baseHeightRadius2);
+    collapseFormula(ui->plainTextEditF1, ui->angle1_PushButton, m_baseHeightAngle1);
+    DeployFormula(ui->plainTextEditF2, ui->angle2_PushButton, m_baseHeightAngle2);
+    collapseFormula(ui->plainTextEditRotationAngle, ui->rotation_PushButton,m_baseHeightRotation);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief RotationAngleChanged after change formula of rotation angle calculate value and show result
- */
-void DialogEllipticalArc::RotationAngleChanged()
+/// @brief deployRotationAngleTextEdit grow or shrink formula input
+//---------------------------------------------------------------------------------------------------------------------
+void DialogEllipticalArc::deployRotationAngleTextEdit()
 {
-    labelEditFormula = ui->labelEditRotationAngle;
-    labelResultCalculation = ui->labelResultF2;
-    formulaValueChanged(flagRotationAngle, ui->plainTextEditRotationAngle, timerRotationAngle, degreeSymbol);
+    collapseFormula(ui->plainTextEditRadius1, ui->radius1_PushButton, m_baseHeightRadius1);
+    collapseFormula(ui->plainTextEditRadius2, ui->radius2_PushButton, m_baseHeightRadius2);
+    collapseFormula(ui->plainTextEditF1, ui->angle1_PushButton, m_baseHeightAngle1);
+    collapseFormula(ui->plainTextEditF2, ui->angle2_PushButton, m_baseHeightAngle2);
+    DeployFormula(ui->plainTextEditRotationAngle, ui->rotation_PushButton,m_baseHeightRotation);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogEllipticalArc::DeployRadius1TextEdit()
-{
-    DeployFormula(ui->plainTextEditRadius1, ui->pushButtonGrowLengthRadius1, formulaBaseHeightRadius1);
-    collapseFormula(ui->plainTextEditRadius2, ui->pushButtonGrowLengthRadius2, formulaBaseHeightRadius2);
-    collapseFormula(ui->plainTextEditF1, ui->pushButtonGrowLengthF1, formulaBaseHeightF1);
-    collapseFormula(ui->plainTextEditF2, ui->pushButtonGrowLengthF2, formulaBaseHeightF2);
-    collapseFormula(ui->plainTextEditRotationAngle, ui->pushButtonGrowLengthRotationAngle,formulaBaseHeightRotationAngle);
-}
-
+/// @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
+/// @param id id of point or detail
+/// @param type type of object
 //---------------------------------------------------------------------------------------------------------------------
-void DialogEllipticalArc::DeployRadius2TextEdit()
-{
-    collapseFormula(ui->plainTextEditRadius1, ui->pushButtonGrowLengthRadius1, formulaBaseHeightRadius1);
-    DeployFormula(ui->plainTextEditRadius2, ui->pushButtonGrowLengthRadius2, formulaBaseHeightRadius2);
-    collapseFormula(ui->plainTextEditF1, ui->pushButtonGrowLengthF1, formulaBaseHeightF1);
-    collapseFormula(ui->plainTextEditF2, ui->pushButtonGrowLengthF2, formulaBaseHeightF2);
-    collapseFormula(ui->plainTextEditRotationAngle, ui->pushButtonGrowLengthRotationAngle,formulaBaseHeightRotationAngle);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogEllipticalArc::DeployF1TextEdit()
-{
-    collapseFormula(ui->plainTextEditRadius1, ui->pushButtonGrowLengthRadius1, formulaBaseHeightRadius1);
-    collapseFormula(ui->plainTextEditRadius2, ui->pushButtonGrowLengthRadius2, formulaBaseHeightRadius2);
-    DeployFormula(ui->plainTextEditF1, ui->pushButtonGrowLengthF1, formulaBaseHeightF1);
-    collapseFormula(ui->plainTextEditF2, ui->pushButtonGrowLengthF2, formulaBaseHeightF2);
-    collapseFormula(ui->plainTextEditRotationAngle, ui->pushButtonGrowLengthRotationAngle,formulaBaseHeightRotationAngle);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogEllipticalArc::DeployF2TextEdit()
-{
-    collapseFormula(ui->plainTextEditRadius1, ui->pushButtonGrowLengthRadius1, formulaBaseHeightRadius1);
-    collapseFormula(ui->plainTextEditRadius2, ui->pushButtonGrowLengthRadius2, formulaBaseHeightRadius2);
-    collapseFormula(ui->plainTextEditF1, ui->pushButtonGrowLengthF1, formulaBaseHeightF1);
-    DeployFormula(ui->plainTextEditF2, ui->pushButtonGrowLengthF2, formulaBaseHeightF2);
-    collapseFormula(ui->plainTextEditRotationAngle, ui->pushButtonGrowLengthRotationAngle,formulaBaseHeightRotationAngle);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogEllipticalArc::DeployRotationAngleTextEdit()
-{
-    collapseFormula(ui->plainTextEditRadius1, ui->pushButtonGrowLengthRadius1, formulaBaseHeightRadius1);
-    collapseFormula(ui->plainTextEditRadius2, ui->pushButtonGrowLengthRadius2, formulaBaseHeightRadius2);
-    collapseFormula(ui->plainTextEditF1, ui->pushButtonGrowLengthF1, formulaBaseHeightF1);
-    collapseFormula(ui->plainTextEditF2, ui->pushButtonGrowLengthF2, formulaBaseHeightF2);
-    DeployFormula(ui->plainTextEditRotationAngle, ui->pushButtonGrowLengthRotationAngle,formulaBaseHeightRotationAngle);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
- * @param id id of point or detail
- * @param type type of object
- */
 void DialogEllipticalArc::ChosenObject(quint32 id, const SceneObject &type)
 {
     if (prepare == false)// After first choose we ignore all objects
@@ -742,7 +679,7 @@ void DialogEllipticalArc::pointNameChanged()
 
     if (getCurrentObjectId(ui->centerPoint_ComboBox) == m_arc.GetCenter().id())
     {
-        newDuplicate = -1;
+        m_newDuplicate = -1;
         ui->name_LineEdit->setText(qApp->translateVariables()->VarToUser(m_arc.name()));
     }
     else
@@ -756,8 +693,8 @@ void DialogEllipticalArc::pointNameChanged()
 
         if (!data->IsUnique(arc.name()))
         {
-            newDuplicate = static_cast<qint32>(DNumber(arc.name()));
-            arc.SetDuplicate(static_cast<quint32>(newDuplicate));
+            m_newDuplicate = static_cast<qint32>(DNumber(arc.name()));
+            arc.SetDuplicate(static_cast<quint32>(m_newDuplicate));
         }
         ui->name_LineEdit->setText(qApp->translateVariables()->VarToUser(arc.name() + "_" + QString().setNum(m_Id)));
     }
@@ -768,15 +705,14 @@ void DialogEllipticalArc::pointNameChanged()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief CheckState if all is right enable button ok
- */
+/// @brief CheckState if all is right enable button ok
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::CheckState()
 {
     SCASSERT(ok_Button != nullptr)
-    ok_Button->setEnabled(flagRadius1 && flagRadius2 && flagF1 && flagF2 && flagRotationAngle);
+    ok_Button->setEnabled(m_flagRadius1 && m_flagRadius2 && m_flagAngle1 && m_flagAngle2 && m_flagRotation);
     SCASSERT(apply_Button != nullptr)
-    apply_Button->setEnabled(flagRadius1 && flagRadius2 && flagF1 && flagF2 && flagRotationAngle);
+    apply_Button->setEnabled(m_flagRadius1 && m_flagRadius2 && m_flagAngle1 && m_flagAngle2 && m_flagRotation);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -786,28 +722,30 @@ void DialogEllipticalArc::ShowVisualization()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogEllipticalArc::SaveData()
+/// @brief SaveData Put dialog data in local variables
+//---------------------------------------------------------------------------------------------------------------------
+ void DialogEllipticalArc::SaveData()
 {
-    radius1 = ui->plainTextEditRadius1->toPlainText();
-    radius1.replace("\n", " ");
-    radius2 = ui->plainTextEditRadius2->toPlainText();
-    radius2.replace("\n", " ");
-    f1 = ui->plainTextEditF1->toPlainText();
-    f1.replace("\n", " ");
-    f2 = ui->plainTextEditF2->toPlainText();
-    f2.replace("\n", " ");
-    rotationAngle = ui->plainTextEditRotationAngle->toPlainText();
-    rotationAngle.replace("\n", " ");
+    m_radius1Fx = ui->plainTextEditRadius1->toPlainText();
+    m_radius1Fx.replace("\n", " ");
+    m_radius2Fx = ui->plainTextEditRadius2->toPlainText();
+    m_radius2Fx.replace("\n", " ");
+    m_angle1Fx = ui->plainTextEditF1->toPlainText();
+    m_angle1Fx.replace("\n", " ");
+    m_angle2Fx = ui->plainTextEditF2->toPlainText();
+    m_angle2Fx.replace("\n", " ");
+    m_rotationFx = ui->plainTextEditRotationAngle->toPlainText();
+    m_rotationFx.replace("\n", " ");
 
     VisToolEllipticalArc *path = qobject_cast<VisToolEllipticalArc *>(vis);
     SCASSERT(path != nullptr)
 
     path->setObject1Id(GetCenter());
-    path->setRadius1(radius1);
-    path->setRadius2(radius2);
-    path->setF1(f1);
-    path->setF2(f2);
-    path->setRotationAngle(rotationAngle);
+    path->setRadius1(m_radius1Fx);
+    path->setRadius2(m_radius2Fx);
+    path->setF1(m_angle1Fx);
+    path->setF2(m_angle2Fx);
+    path->setRotationAngle(m_rotationFx);
     path->RefreshGeometry();
 }
 

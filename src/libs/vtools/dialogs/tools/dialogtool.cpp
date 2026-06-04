@@ -878,7 +878,6 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
                     flag = true;
                     ChangeColor(labelEditFormula, okColor);
                     label->setToolTip(tr("Result Value"));
-                    emit ToolTip("");
                 }
             }
         }

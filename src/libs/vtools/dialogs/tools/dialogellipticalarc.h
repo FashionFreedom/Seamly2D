@@ -1,47 +1,51 @@
-/******************************************************************************
- *   @file   dialogellipticalarc.h
- **  @author Douglas S Caskey
- **  @date   21 Mar, 2023
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program to create and model patterns of clothing.
- **  Copyright (C) 2017-2023 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *****************************************************************************/
-/************************************************************************
- **
- **  @file   dialogellipticalarc.h
- **  @author Valentina Zhuravska <zhuravska19(at)gmail.com>
- **  @date   15 9, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   dialogellipticalarc.h
+//  @author Douglas S Caskey
+//  @date   14 Aug, 2023
+//
+//  @copyright
+//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+//  @file   dialogellipticalarc.h
+//  @author Valentina Zhuravska <zhuravska19(at)gmail.com>
+//  @date   15 Sep, 2013
+//
+//  @copyright
+//  Copyright (C) 2013 Valentina project.
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published
+//  by the Free Software Foundation, either version 3 of the License,
+//  or (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 #ifndef DIALOGELLIPTICALARC_H
 #define DIALOGELLIPTICALARC_H
@@ -64,6 +68,7 @@ namespace Ui
 class DialogEllipticalArc : public DialogTool
 {
     Q_OBJECT
+
 public:
     DialogEllipticalArc(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
     virtual ~DialogEllipticalArc() override;
@@ -98,23 +103,14 @@ public:
     QString        getLineColor() const;
     void           setLineColor(const QString &value);
 
-
 public slots:
     virtual void   ChosenObject(quint32 id, const SceneObject &type) override;
-    /**
-     * @brief DeployFormulaTextEdit grow or shrink formula input
-     */
-    void           DeployRadius1TextEdit();
-    void           DeployRadius2TextEdit();
-    void           DeployF1TextEdit();
-    void           DeployF2TextEdit();
-    void           DeployRotationAngleTextEdit();
 
-    void           Radius1Changed();
-    void           Radius2Changed();
-    void           F1Changed();
-    void           F2Changed();
-    void           RotationAngleChanged();
+    void           deployRadius1TextEdit();
+    void           deployRadius2TextEdit();
+    void           deployF1TextEdit();
+    void           deployF2TextEdit();
+    void           deployRotationAngleTextEdit();
 
     void           FXRadius1();
     void           FXRadius2();
@@ -126,80 +122,51 @@ protected:
     void           pointNameChanged();
     virtual void   CheckState() final;
     virtual void   ShowVisualization() override;
-    /**
-     * @brief SaveData Put dialog data in local variables
-     */
+
     virtual void   SaveData() override;
     virtual void   closeEvent(QCloseEvent *event) override;
 
 private:
     Q_DISABLE_COPY(DialogEllipticalArc)
 
-    /** @brief ui keeps information about user interface */
-    Ui::DialogEllipticalArc *ui;
+    Ui::DialogEllipticalArc *ui;     /// @brief ui keeps information about user interface
 
-    /** @brief flagRadius1 true if value of radius1 is correct */
-    bool           flagRadius1;
+    bool           m_flagRadius1;    /// @brief m_flagRadius1 true if value of radius1 is correct
+    bool           m_flagRadius2;    /// @brief m_flagRadius2 true if value of radius2 is correct
+    bool           m_flagAngle1;     /// @brief m_flagAngle1 true if value of first angle is correct
+    bool           m_flagAngle2;     /// @brief m_flagAngle2 true if value of second angle is correct
+    bool           m_flagRotation;   /// @brief m_flagRotation true if value of rotation angle is correct
 
-    /** @brief flagRadius2 true if value of radius2 is correct */
-    bool           flagRadius2;
+    QTimer         *m_timerRadius1;  /// @brief m_timerRadius1 timer of check formula of radius1
+    QTimer         *m_timerRadius2;  /// @brief m_timerRadius2 timer of check formula of radius2
+    QTimer         *m_timerAngle1;   /// @brief m_timerAngle1 timer of check formula of first angle
+    QTimer         *m_timerAngle2;   /// @brief m_timerAngle2 timer of check formula of second angle
+    QTimer         *m_timerRotation; /// @brief m_timerRotation timer of check formula of rotation angle
 
-    /** @brief flagF1 true if value of first angle is correct */
-    bool           flagF1;
 
-    /** @brief flagF2 true if value of second angle is correct */
-    bool           flagF2;
+    QString        m_radius1Fx;      /// @brief m_radius1Fx formula of radius1
+    QString        m_radius2Fx;      /// @brief radius2 formula of radius2
+    QString        m_angle1Fx;       /// @brief m_angle1Fx formula of first angle
+    QString        m_angle2Fx;       /// @brief m_angle2Fx formula of second angle
+    QString        m_rotationFx;     /// @brief m_rotationFx formula of rotation angle
 
-    /** @brief flagRotationAngle true if value of rotation angle is correct */
-    bool           flagRotationAngle;
+    /// @brief formulaBaseHeight base height defined by dialogui
+    int            m_baseHeightRadius1;
+    int            m_baseHeightRadius2;
+    int            m_baseHeightAngle1;
+    int            m_baseHeightAngle2;
+    int            m_baseHeightRotation;
 
-    /** @brief timerRadius1 timer of check formula of radius1 */
-    QTimer         *timerRadius1;
-
-    /** @brief timerRadius2 timer of check formula of radius2 */
-    QTimer         *timerRadius2;
-
-    /** @brief timerF1 timer of check formula of first angle */
-    QTimer         *timerF1;
-
-    /** @brief timerF2 timer of check formula of second angle */
-    QTimer         *timerF2;
-
-    /** @brief timerRotationAngle timer of check formula of rotation angle */
-    QTimer         *timerRotationAngle;
-
-    /** @brief radius1 formula of radius1 */
-    QString        radius1;
-
-    /** @brief radius2 formula of radius2 */
-    QString        radius2;
-
-    /** @brief f1 formula of first angle */
-    QString        f1;
-
-    /** @brief f2 formula of second angle */
-    QString        f2;
-
-    /** @brief rotationAngle formula of rotation angle */
-    QString        rotationAngle;
-
-    /** @brief formulaBaseHeight base height defined by dialogui */
-    int            formulaBaseHeightRadius1;
-    int            formulaBaseHeightRadius2;
-    int            formulaBaseHeightF1;
-    int            formulaBaseHeightF2;
-    int            formulaBaseHeightRotationAngle;
-
-    qreal          angleF1;
-    qreal          angleF2;
-    qreal          angleRotation;
+    qreal          m_angleF1;
+    qreal          m_angleF2;
+    qreal          m_rotationAngle;
     VEllipticalArc m_arc;
     qint32         m_Id;
-    qint32         newDuplicate;
+    qint32         m_newDuplicate;
 
-    void           EvalRadiuses();
-    void           EvalAngles();
-    void           CheckAngles();
+    void           evalRadiuses();
+    void           evalAngles();
+    void           checkAngles();
     void           collapseFormula(QPlainTextEdit *textEdit, QPushButton *pushButton, int height);
 };
 
