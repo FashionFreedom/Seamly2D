@@ -898,6 +898,7 @@ void PatternPieceTool::paint(QPainter *painter, const QStyleOptionGraphicsItem *
 
         //set pattern piece color & brush style
         int index = fills().indexOf(piece.getFill());
+        if (index < 0) { index = 0; } // empty/unknown fill -> Qt::NoBrush; avoids invalid BrushStyle(-1) crash on Qt 6.11
         brush.setStyle(static_cast<Qt::BrushStyle>(index));
         brush.setTransform(brush.transform().scale(150.0, 150.0));
         brush.setTransform(painter->combinedTransform().inverted());
@@ -1530,6 +1531,7 @@ void PatternPieceTool::RefreshGeometry()
 
     //set pattern piece color & brush style
     int index = fills().indexOf(piece.getFill());
+    if (index < 0) { index = 0; } // empty/unknown fill -> Qt::NoBrush; avoids invalid BrushStyle(-1) crash on Qt 6.11
     QBrush newBrush = QBrush(QColor(pieceColor), static_cast<Qt::BrushStyle>(index));
     this->setBrush(newBrush);
 
