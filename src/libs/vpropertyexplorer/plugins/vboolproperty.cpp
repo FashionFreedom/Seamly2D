@@ -20,8 +20,11 @@
 
 #include "vboolproperty.h"
 
+#include <QCheckBox>
+#include <QCoreApplication>
 #include <QFlags>
 #include <QObject>
+#include <QWidget>
 
 #include "../vproperty_p.h"
 
@@ -50,9 +53,12 @@ VPE::VBoolProperty::VBoolProperty(const QString& name) :
 //! Get the data how it should be displayed
 QVariant VPE::VBoolProperty::data (int column, int role) const
 {
+    // Return the raw bool so the form view's commit logic (getEditorData vs
+    // data(EditRole)) and the tool option handlers (data(DisplayRole).toBool())
+    // work correctly with the QCheckBox editor.
     if (column == DPC_Data && (Qt::DisplayRole == role || Qt::EditRole == role))
     {
-        return d_ptr->VariantValue.toBool() ? TrueText : FalseText;
+        return d_ptr->VariantValue.toBool();
     }
     if (column == DPC_Data && Qt::CheckStateRole == role)
     {
@@ -60,6 +66,25 @@ QVariant VPE::VBoolProperty::data (int column, int role) const
     }
     else
         return VProperty::data(column, role);
+}
+
+//! Returns an editor widget (a QCheckBox) used by the form view
+QWidget* VPE::VBoolProperty::createEditor(QWidget* parent, const QStyleOptionViewItem& options,
+                                          const QAbstractItemDelegate* delegate)
+{
+    Q_UNUSED(options)
+    Q_UNUSED(delegate)
+
+    QCheckBox* tmpEditor = new QCheckBox(parent);
+    tmpEditor->setChecked(d_ptr->VariantValue.toBool());
+    connect(tmpEditor, &QCheckBox::toggled, this, [this]()
+    {
+        UserChangeEvent* event = new UserChangeEvent();
+        QCoreApplication::postEvent(d_ptr->editor, event);
+    });
+
+    d_ptr->editor = tmpEditor;
+    return d_ptr->editor;
 }
 
 bool VPE::VBoolProperty::setData(const QVariant &data, int role)

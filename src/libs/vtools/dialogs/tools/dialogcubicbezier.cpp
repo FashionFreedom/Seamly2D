@@ -270,9 +270,7 @@ void DialogCubicBezier::ChosenObject(quint32 id, const SceneObject &type)
                             path->setObject4Id(id);
                             path->RefreshGeometry();
                             prepare = true;
-                            // Show dialog for optional adjustments (instead of auto-accept)
-                            this->setModal(true);
-                            this->show();
+                            DialogAccepted();
                         }
                     }
                     break;

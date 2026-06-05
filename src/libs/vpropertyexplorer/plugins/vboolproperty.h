@@ -55,6 +55,10 @@ public:
     //! \return Returns true, if the data was changed, false if not.
     virtual bool setData (const QVariant& data, int role = Qt::EditRole) override;
 
+    //! Returns an editor widget (a QCheckBox) used by the form view
+    virtual QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& options,
+                                  const QAbstractItemDelegate* delegate) override;
+
     //! Returns item flags
     virtual Qt::ItemFlags flags(int column = DPC_Name) const override;
 

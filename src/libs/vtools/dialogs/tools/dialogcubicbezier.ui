@@ -106,6 +106,7 @@
    <!-- Options Group: Checkboxes + optional target length -->
    <item>
     <widget class="QGroupBox" name="options_GroupBox">
+     <property name="visible"><bool>false</bool></property>
      <property name="font"><font><pointsize>9</pointsize><bold>true</bold></font></property>
      <property name="title"><string>Options</string></property>
      <layout class="QVBoxLayout" name="verticalLayout_opts">

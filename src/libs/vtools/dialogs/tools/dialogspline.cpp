@@ -611,17 +611,7 @@ void DialogSpline::ShowDialog(bool click)
 
         ui->lineEditSplineName->setText(qApp->translateVariables()->VarToUser(spl.name()));
 
-        // Force immediate formula evaluation so the OK button is enabled when the dialog opens.
-        timerAngle1->stop();  EvalAngle1();
-        timerAngle2->stop();  EvalAngle2();
-        timerLength1->stop(); EvalLength1();
-        timerLength2->stop(); EvalLength2();
-
-        // Show the dialog so the user can set the optional checkboxes
-        // (target length / auto-smooth) before the curve is finalized.
-        setModal(true);
-        emit ToolTip(QString());
-        show();
+        DialogAccepted();
     }
 }
 
