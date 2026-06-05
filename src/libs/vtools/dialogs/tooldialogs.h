@@ -67,7 +67,6 @@
 #include "tools/dialogsinglepoint.h"
 #include "tools/dialogspline.h"
 #include "tools/dialogcubicbezier.h"
-#include "tools/dialogcubicbezierlength.h"
 #include "tools/dialogsplinepath.h"
 #include "tools/dialogcubicbezierpath.h"
 #include "tools/dialogheight.h"

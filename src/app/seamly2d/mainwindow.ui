@@ -1506,32 +1506,6 @@
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0">
-                <widget class="QToolButton" name="cubicBezierLength_ToolButton">
-                 <property name="enabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="toolTip">
-                  <string>Curve - Matched Length</string>
-                 </property>
-                 <property name="text">
-                  <string notr="true">...</string>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="share/resources/toolicon.qrc">
-                   <normaloff>:/toolicon/32x32/cubic_bezier.png</normaloff>:/toolicon/32x32/cubic_bezier.png</iconset>
-                 </property>
-                 <property name="iconSize">
-                  <size>
-                   <width>32</width>
-                   <height>32</height>
-                  </size>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
                <item row="6" column="1">
                 <widget class="QToolButton" name="pointAlongSpline_ToolButton">
                  <property name="enabled">

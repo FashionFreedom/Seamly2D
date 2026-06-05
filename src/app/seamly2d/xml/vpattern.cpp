@@ -2498,74 +2498,106 @@ void VPattern::ParseToolCubicBezier(VMainGraphicsScene *scene, const QDomElement
     try
     {
         quint32 id = 0;
-
         ToolsCommonAttributes(domElement, id);
-        const quint32 point1 = GetParametrUInt(domElement, AttrPoint1, NULL_ID_STR);
-        const quint32 point2 = GetParametrUInt(domElement, AttrPoint2, NULL_ID_STR);
-        const quint32 point3 = GetParametrUInt(domElement, AttrPoint3, NULL_ID_STR);
-        const quint32 point4 = GetParametrUInt(domElement, AttrPoint4, NULL_ID_STR);
 
         const QString color      = GetParametrString(domElement, AttrColor,      ColorBlack);
         const QString penStyle   = GetParametrString(domElement, AttrPenStyle,   LineTypeSolidLine);
         const QString lineWeight = GetParametrString(domElement, AttrLineWeight, DefaultLineWeight);
-        const quint32 duplicate  = GetParametrUInt(domElement, AttrDuplicate,    "0");
 
-        auto p1 = data->GeometricObject<VPointF>(point1);
-        auto p2 = data->GeometricObject<VPointF>(point2);
-        auto p3 = data->GeometricObject<VPointF>(point3);
-        auto p4 = data->GeometricObject<VPointF>(point4);
+        QString angle1, angle2, c1Length, c2Length, targetLength;
+        bool autoSmooth = false;
 
-        VCubicBezier *spline = new VCubicBezier(*p1, *p2, *p3, *p4);
-        if (duplicate > 0)
+        const QString type = domElement.attribute(AttrType);
+
+        if (domElement.hasAttribute(AttrPoint2))
         {
-            spline->SetDuplicate(duplicate);
-        }
-        spline->setLineColor(color);
-        spline->SetPenStyle(penStyle);
-        spline->setLineWeight(lineWeight);
+            // -----------------------------------------------------------------------
+            // OLD 4-POINT FORMAT: derive parametric values from coordinate geometry.
+            // Backward compatibility for pre-merge .sm2d files.
+            // -----------------------------------------------------------------------
+            const quint32 point1Id = GetParametrUInt(domElement, AttrPoint1, NULL_ID_STR);
+            const quint32 point2Id = GetParametrUInt(domElement, AttrPoint2, NULL_ID_STR);
+            const quint32 point3Id = GetParametrUInt(domElement, AttrPoint3, NULL_ID_STR);
+            const quint32 point4Id = GetParametrUInt(domElement, AttrPoint4, NULL_ID_STR);
 
-        VToolCubicBezier::Create(id, spline, scene, this, data, parse, Source::FromFile);
+            const auto p1 = data->GeometricObject<VPointF>(point1Id);
+            const auto p2 = data->GeometricObject<VPointF>(point2Id);
+            const auto p3 = data->GeometricObject<VPointF>(point3Id);
+            const auto p4 = data->GeometricObject<VPointF>(point4Id);
+
+            // Derive handle geometry from the stored control points
+            const QLineF handle1(static_cast<QPointF>(*p1), static_cast<QPointF>(*p2));
+            const QLineF handle2(static_cast<QPointF>(*p4), static_cast<QPointF>(*p3));
+
+            angle1   = QString::number(handle1.angle());
+            c1Length = QString::number(qApp->fromPixel(handle1.length()));
+            angle2   = QString::number(handle2.angle());
+            c2Length = QString::number(qApp->fromPixel(handle2.length()));
+            // targetLength remains empty → State 1 (fully manual)
+
+            // Duplicate attribute was valid in the old format; preserve it
+            const quint32 duplicate = GetParametrUInt(domElement, AttrDuplicate, "0");
+            Q_UNUSED(duplicate)   // TODO: re-handle if needed post-migration
+
+            VToolCubicBezier::Create(id, point1Id, point4Id,
+                                     angle1, angle2, c1Length, c2Length,
+                                     targetLength, autoSmooth,
+                                     color, penStyle, lineWeight,
+                                     scene, this, data, parse, Source::FromFile);
+        }
+        else if (type == QStringLiteral("cubicBezierLength"))
+        {
+            // -----------------------------------------------------------------------
+            // LEGACY BRANCH FORMAT: type="cubicBezierLength" — treat as State 2
+            // (target length, no auto-smooth). Merged into the standard tool.
+            // -----------------------------------------------------------------------
+            const quint32 point1Id = GetParametrUInt(domElement, AttrPoint1, NULL_ID_STR);
+            const quint32 point4Id = GetParametrUInt(domElement, AttrPoint4, NULL_ID_STR);
+            angle1       = GetParametrString(domElement, AttrAngle1,  "0");
+            angle2       = GetParametrString(domElement, AttrAngle2,  "0");
+            c1Length     = GetParametrString(domElement, AttrLength1, "0");
+            targetLength = GetParametrString(domElement, AttrLength,  "0");
+            // c2Length stays empty, autoSmooth stays false → State 2
+
+            VToolCubicBezier::Create(id, point1Id, point4Id,
+                                     angle1, angle2, c1Length, c2Length,
+                                     targetLength, autoSmooth,
+                                     color, penStyle, lineWeight,
+                                     scene, this, data, parse, Source::FromFile);
+        }
+        else
+        {
+            // -----------------------------------------------------------------------
+            // NEW PARAMETRIC FORMAT: read angle1, angle2 + length1/2/target + autoSmooth
+            // -----------------------------------------------------------------------
+            const quint32 point1Id = GetParametrUInt(domElement, AttrPoint1, NULL_ID_STR);
+            const quint32 point4Id = GetParametrUInt(domElement, AttrPoint4, NULL_ID_STR);
+            angle1   = GetParametrString(domElement, AttrAngle1,  "0");
+            angle2   = GetParametrString(domElement, AttrAngle2,  "0");
+
+            autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
+
+            if (!autoSmooth)
+            {
+                c1Length = GetParametrString(domElement, AttrLength1, "0");
+                if (domElement.hasAttribute(AttrLength2))
+                    c2Length = GetParametrString(domElement, AttrLength2, "0");
+                // else c2Length stays empty → State 2 with target
+            }
+
+            if (domElement.hasAttribute(AttrLength))
+                targetLength = GetParametrString(domElement, AttrLength, "0");
+
+            VToolCubicBezier::Create(id, point1Id, point4Id,
+                                     angle1, angle2, c1Length, c2Length,
+                                     targetLength, autoSmooth,
+                                     color, penStyle, lineWeight,
+                                     scene, this, data, parse, Source::FromFile);
+        }
     }
     catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating cubic bezier curve"), domElement);
-        excep.AddMoreInformation(error.ErrorMessage());
-        throw excep;
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VPattern::ParseToolCubicBezierLength(VMainGraphicsScene *scene, const QDomElement &domElement,
-                                           const Document &parse)
-{
-    SCASSERT(scene != nullptr)
-    Q_ASSERT_X(not domElement.isNull(), Q_FUNC_INFO, "domElement is null");
-
-    try
-    {
-        quint32 id = 0;
-        ToolsCommonAttributes(domElement, id);
-
-        const quint32 point1Id   = GetParametrUInt(domElement, AttrPoint1,  NULL_ID_STR);
-        const quint32 point4Id   = GetParametrUInt(domElement, AttrPoint4,  NULL_ID_STR);
-        QString angle1            = GetParametrString(domElement, AttrAngle1,  "0");
-        QString angle2            = GetParametrString(domElement, AttrAngle2,  "0");
-        QString c1Length          = GetParametrString(domElement, AttrLength1, "0");
-        QString targetLength      = GetParametrString(domElement, AttrLength,  "0");
-
-        const QString color      = GetParametrString(domElement, AttrColor,      ColorBlack);
-        const QString penStyle   = GetParametrString(domElement, AttrPenStyle,   LineTypeSolidLine);
-        const QString lineWeight = GetParametrString(domElement, AttrLineWeight, "1.00");
-
-        VToolCubicBezierLength::Create(id, point1Id, point4Id,
-                                        angle1, angle2, c1Length, targetLength,
-                                        color, penStyle, lineWeight,
-                                        scene, this, data, parse, Source::FromFile);
-    }
-    catch (const VExceptionBadId &error)
-    {
-        VExceptionObjectError excep(tr("Error creating or updating cubic bezier curve with matched length"),
-                                    domElement);
         excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
@@ -3372,9 +3404,9 @@ void VPattern::ParseSplineElement(VMainGraphicsScene *scene, QDomElement &domEle
                                         << VToolSplinePath::ToolType          /*3*/
                                         << VNodeSpline::ToolType              /*4*/
                                         << VNodeSplinePath::ToolType          /*5*/
-                                        << VToolCubicBezier::ToolType         /*6*/
-                                        << VToolCubicBezierPath::ToolType     /*7*/
-                                        << VToolCubicBezierLength::ToolType;  /*8*/
+                                        << VToolCubicBezier::ToolType                   /*6*/
+                                        << VToolCubicBezierPath::ToolType               /*7*/
+                                        << QStringLiteral("cubicBezierLength");         /*8 legacy, merged into cubicBezier*/
     switch (splines.indexOf(type))
     {
         case 0: //VToolSpline::OldToolType
@@ -3409,9 +3441,9 @@ void VPattern::ParseSplineElement(VMainGraphicsScene *scene, QDomElement &domEle
             qCDebug(vXML, "VToolCubicBezierPath.");
             ParseToolCubicBezierPath(scene, domElement, parse);
             break;
-        case 8: //VToolCubicBezierLength::ToolType
-            qCDebug(vXML, "VToolCubicBezierLength.");
-            ParseToolCubicBezierLength(scene, domElement, parse);
+        case 8: //legacy "cubicBezierLength" — merged into VToolCubicBezier (State 2)
+            qCDebug(vXML, "VToolCubicBezier (legacy cubicBezierLength).");
+            ParseToolCubicBezier(scene, domElement, parse);
             break;
         default:
             VException e(tr("Unknown spline type '%1'.").arg(type));
@@ -4180,7 +4212,7 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
 QRectF VPattern::ActiveDrawBoundingRect() const
 {
     // This check helps to find missed tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 55, "Not all tools were used.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used.");
 
     QRectF rect;
 
@@ -4233,7 +4265,6 @@ QRectF VPattern::ActiveDrawBoundingRect() const
                     break;
                 case Tool::Spline:
                 case Tool::CubicBezier:
-                case Tool::CubicBezierLength:
                 case Tool::Arc:
                 case Tool::SplinePath:
                 case Tool::CubicBezierPath:

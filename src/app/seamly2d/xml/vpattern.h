@@ -229,7 +229,6 @@ private:
 
     void ParseToolSpline(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse);
     void ParseToolCubicBezier(VMainGraphicsScene *scene, const QDomElement &domElement, const Document &parse);
-    void ParseToolCubicBezierLength(VMainGraphicsScene *scene, const QDomElement &domElement, const Document &parse);
 
     // TODO. Delete if minimal supported version is 0.2.7
     Q_STATIC_ASSERT_X(VPatternConverter::PatternMinVer < CONVERTER_VERSION_CHECK(0, 2, 7),

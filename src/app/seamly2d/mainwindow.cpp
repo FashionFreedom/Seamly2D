@@ -1239,21 +1239,6 @@ void MainWindow::handleCurveWithControlPointsTool(bool checked)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::handleCubicBezierLengthTool(bool checked)
-{
-    ToolSelectPointByRelease();
-    SetToolButtonWithApply<DialogCubicBezierLength>
-    (
-        checked,
-        Tool::CubicBezierLength,
-        ":/cursor/cubic_bezier_length_cursor.png",
-        tr("<b>Tool::Curve - Matched Length:</b> Select start point of curve"),
-        &MainWindow::ClosedDrawDialogWithApply<VToolCubicBezierLength>,
-        &MainWindow::ApplyDrawDialog<VToolCubicBezierLength>
-    );
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 void MainWindow::handleSplineWithControlPointsTool(bool checked)
 {
     ToolSelectPointByRelease();
@@ -2898,7 +2883,7 @@ void MainWindow::initializeToolButtons()
     connect(ui->arrowPointer_ToolButton, &QToolButton::clicked, this, &MainWindow::handleArrowTool);
 
     // This check helps to find missed tools
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 55, "Check if all tools were connected.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Check if all tools were connected.");
 
     connect(ui->pointAtDistanceAngle_ToolButton, &QToolButton::clicked,
             this, &MainWindow::handlePointAtDistanceAngleTool);
@@ -2910,7 +2895,7 @@ void MainWindow::initializeToolButtons()
     connect(ui->lineIntersect_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleLineIntersectTool);
     connect(ui->curve_ToolButton,          &QToolButton::clicked, this, &MainWindow::handleCurveTool);
     connect(ui->curveWithCPs_ToolButton,        &QToolButton::clicked, this, &MainWindow::handleCurveWithControlPointsTool);
-    connect(ui->cubicBezierLength_ToolButton,   &QToolButton::clicked, this, &MainWindow::handleCubicBezierLengthTool);
+    // cubicBezierLength_ToolButton removed — merged into standard cubic bezier
     connect(ui->arc_ToolButton,                 &QToolButton::clicked, this, &MainWindow::handleArcTool);
     connect(ui->spline_ToolButton,         &QToolButton::clicked, this, &MainWindow::handleSplineTool);
     connect(ui->splineWithCPs_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleSplineWithControlPointsTool);
@@ -3439,7 +3424,7 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
 void MainWindow::CancelTool()
 {
     // This check helps to find missed tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 55, "Not all tools were handled.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were handled.");
 
     qCDebug(vMainWindow, "Canceling tool.");
     dialogTool.clear();
@@ -3513,9 +3498,7 @@ void MainWindow::CancelTool()
         case Tool::CubicBezier:
             ui->curveWithCPs_ToolButton->setChecked(false);
             break;
-        case Tool::CubicBezierLength:
-            ui->cubicBezierLength_ToolButton->setChecked(false);
-            break;
+        // Tool::CubicBezierLength removed — merged into Tool::CubicBezier
         case Tool::Arc:
             ui->arc_ToolButton->setChecked(false);
             break;
@@ -4987,7 +4970,7 @@ void MainWindow::setToolsEnabled(bool enable)
     }
 
     // This check helps to find missed tools
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 55, "Not all tools were handled.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were handled.");
 
     //Toolbox Drafting Tools
     //Points
@@ -5011,7 +4994,7 @@ void MainWindow::setToolsEnabled(bool enable)
     ui->curve_ToolButton->setEnabled(draftTools);
     ui->spline_ToolButton->setEnabled(draftTools);
     ui->curveWithCPs_ToolButton->setEnabled(draftTools);
-    ui->cubicBezierLength_ToolButton->setEnabled(draftTools);
+    // cubicBezierLength_ToolButton removed
     ui->splineWithCPs_ToolButton->setEnabled(draftTools);
     ui->pointAlongCurve_ToolButton->setEnabled(draftTools);
     ui->pointAlongSpline_ToolButton->setEnabled(draftTools);
@@ -5477,7 +5460,7 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
 void MainWindow::LastUsedTool()
 {
     // This check helps to find missed tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 55, "Not all tools were handled.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were handled.");
 
     if (currentTool == lastUsedTool)
     {
@@ -5547,10 +5530,7 @@ void MainWindow::LastUsedTool()
             ui->curveWithCPs_ToolButton->setChecked(true);
             handleCurveWithControlPointsTool(true);
             break;
-        case Tool::CubicBezierLength:
-            ui->cubicBezierLength_ToolButton->setChecked(true);
-            handleCubicBezierLengthTool(true);
-            break;
+        // Tool::CubicBezierLength removed — merged into Tool::CubicBezier
         case Tool::Arc:
             ui->arc_ToolButton->setChecked(true);
             handleArcTool(true);

@@ -64,8 +64,17 @@
 #include "vabstractspline.h"
 
 class VCubicBezier;
+class VFormula;
 template <class T> class QSharedPointer;
 
+//---------------------------------------------------------------------------------------------------------------------
+// VToolCubicBezier — parametric cubic Bézier with four optional computation modes:
+//
+//  State 1  (targetLength empty,  autoSmooth false): manual c1 + c2 from formulas
+//  State 2  (targetLength set,    autoSmooth false): bisection finds c2 so arc-length == target
+//  State 3  (targetLength empty,  autoSmooth true ): Hobby algorithm computes both c1 and c2
+//  State 4  (targetLength set,    autoSmooth true ): Hobby proportions + bisection for scale factor
+//---------------------------------------------------------------------------------------------------------------------
 class VToolCubicBezier : public VAbstractSpline
 {
     Q_OBJECT
@@ -73,26 +82,53 @@ public:
     virtual             ~VToolCubicBezier() Q_DECL_EQ_DEFAULT;
     virtual void         setDialog() override;
 
+    // Create from GUI dialog
     static VToolCubicBezier *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
                                     VAbstractPattern *doc, VContainer *data);
-    static VToolCubicBezier *Create(const quint32 _id, VCubicBezier *spline, VMainGraphicsScene *scene,
-                                    VAbstractPattern *doc, VContainer *data, const Document &parse,
+
+    // Create from XML (used by both the new and the legacy formats)
+    static VToolCubicBezier *Create(const quint32 _id,
+                                    const quint32 point1Id, const quint32 point4Id,
+                                    QString &angle1, QString &angle2,
+                                    QString &c1Length, QString &c2Length,
+                                    QString &targetLength, bool autoSmooth,
+                                    const QString &color, const QString &penStyle,
+                                    const QString &lineWeight,
+                                    VMainGraphicsScene *scene, VAbstractPattern *doc,
+                                    VContainer *data, const Document &parse,
                                     const Source &typeCreation);
-                                    
+
     static const QString ToolType;
     virtual int          type() const override {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::CubicBezier)};
 
-    QString              FirstPointName() const;
-    QString              SecondPointName() const;
-    QString              ThirdPointName() const;
-    QString              ForthPointName() const;
+    // Point name accessors (used by property browser and history)
+    QString              GetP1Name() const;
+    QString              GetP4Name() const;
 
-    VCubicBezier         getSpline()const;
-    void                 setSpline(const VCubicBezier &spl);
+    // Formula accessors (used by property browser)
+    VFormula             GetFormulaAngle1() const;
+    void                 SetFormulaAngle1(const VFormula &value);
+
+    VFormula             GetFormulaAngle2() const;
+    void                 SetFormulaAngle2(const VFormula &value);
+
+    VFormula             GetFormulaC1Length() const;
+    void                 SetFormulaC1Length(const VFormula &value);
+
+    VFormula             GetFormulaC2Length() const;
+    void                 SetFormulaC2Length(const VFormula &value);
+
+    VFormula             GetFormulaTargetLength() const;
+    void                 SetFormulaTargetLength(const VFormula &value);
+
+    bool                 GetAutoSmooth() const;
+    void                 SetAutoSmooth(bool value);
+
+    // Minimum arc length string (c2=0 degenerate) for UI hint in State 2/4
+    QString              getMinLengthString() const;
 
     virtual void         ShowVisualization(bool show) override;
-
 
 protected slots:
     virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
@@ -107,8 +143,19 @@ protected:
 private:
     Q_DISABLE_COPY(VToolCubicBezier)
 
-                         VToolCubicBezier(VAbstractPattern *doc, VContainer *data, quint32 id,
-                                          const Source &typeCreation, QGraphicsItem * parent = nullptr);
+    // Formula strings — the VCubicBezier in the container holds computed geometry only.
+    QString              m_angle1;
+    QString              m_angle2;
+    QString              m_c1Length;      // empty when autoSmooth=true
+    QString              m_c2Length;      // empty unless State 1 (both checkboxes off)
+    QString              m_targetLength;  // empty when "enforce target length" checkbox is off
+    bool                 m_autoSmooth;    // true when "Auto-Smooth (Hobby)" checkbox is on
+
+    VToolCubicBezier(VAbstractPattern *doc, VContainer *data, quint32 id,
+                     const QString &angle1, const QString &angle2,
+                     const QString &c1Length, const QString &c2Length,
+                     const QString &targetLength, bool autoSmooth,
+                     const Source &typeCreation, QGraphicsItem *parent = nullptr);
 
     void                 SetSplineAttributes(QDomElement &domElement, const VCubicBezier &spl);
 };

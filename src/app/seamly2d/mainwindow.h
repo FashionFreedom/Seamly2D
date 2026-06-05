@@ -207,7 +207,6 @@ private slots:
     void handleCurveTool(bool checked);
     void handleSplineTool(bool checked);
     void handleCurveWithControlPointsTool(bool checked);
-    void handleCubicBezierLengthTool(bool checked);
     void handleSplineWithControlPointsTool(bool checked);
     void handlePointAlongCurveTool(bool checked);
     void handlePointAlongSplineTool(bool checked);

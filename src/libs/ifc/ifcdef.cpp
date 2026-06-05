@@ -109,6 +109,7 @@ const QString AttrAngle1      = QStringLiteral("angle1");
 const QString AttrAngle2      = QStringLiteral("angle2");
 const QString AttrLength1     = QStringLiteral("length1");
 const QString AttrLength2     = QStringLiteral("length2");
+const QString AttrAutoSmooth  = QStringLiteral("autoSmooth");
 const QString AttrP1Line      = QStringLiteral("p1Line");
 const QString AttrP2Line      = QStringLiteral("p2Line");
 const QString AttrP1Line1     = QStringLiteral("p1Line1");

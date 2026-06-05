@@ -40,7 +40,6 @@ HEADERS += \
     $$PWD/path/vistoolpointofintersectioncurves.h \
     $$PWD/path/vistoolcubicbezier.h \
     $$PWD/path/vistoolcubicbezierpath.h \
-    $$PWD/path/vistoolcubicbezierlength.h \
     $$PWD/line/operation/visoperation.h \
     $$PWD/line/operation/vistoolmove.h \
     $$PWD/path/vistoolellipticalarc.h
@@ -84,7 +83,6 @@ SOURCES += \
     $$PWD/path/vistoolpointofintersectioncurves.cpp \
     $$PWD/path/vistoolcubicbezier.cpp \
     $$PWD/path/vistoolcubicbezierpath.cpp \
-    $$PWD/path/vistoolcubicbezierlength.cpp \
     $$PWD/line/operation/visoperation.cpp \
     $$PWD/line/operation/vistoolmove.cpp \
     $$PWD/path/vistoolellipticalarc.cpp

@@ -284,7 +284,7 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
 RowData HistoryDialog::record(const VToolRecord &tool)
 {
     // This check helps to find missed tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 55, "Not all tools were used in history.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used in history.");
 
     RowData rowData;
     const quint32 &toolId = tool.getId();
@@ -436,16 +436,6 @@ RowData HistoryDialog::record(const VToolRecord &tool)
                 rowData.icon = ":/toolicon/32x32/cubic_bezier_path.png";
                 rowData.name = splPath->NameForHistory(tr("SplPath_"));
                 rowData.tool = tr("Spline Fixed");
-                break;
-            }
-
-            case Tool::CubicBezierLength:
-            {
-                const QSharedPointer<VCubicBezier> spl = data->GeometricObject<VCubicBezier>(toolId);
-                SCASSERT(!spl.isNull())
-                rowData.icon = ":/toolicon/32x32/cubic_bezier.png";
-                rowData.name = spl->NameForHistory(tr("Spl_"));
-                rowData.tool = tr("Spline Matched Length");
                 break;
             }
 

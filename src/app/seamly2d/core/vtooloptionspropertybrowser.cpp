@@ -117,7 +117,7 @@ void VToolOptionsPropertyBrowser::clearPropertyBrowser()
 void VToolOptionsPropertyBrowser::showItemOptions(QGraphicsItem *item)
 {
     // This check helps to find missing tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 55, "Not all tools were used in switch.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used in switch.");
 
     switch (item->type())
     {
@@ -190,9 +190,6 @@ void VToolOptionsPropertyBrowser::showItemOptions(QGraphicsItem *item)
         case VToolCubicBezierPath::Type:
             showOptionsToolCubicBezierPath(item);
             break;
-        case VToolCubicBezierLength::Type:
-            showOptionsToolCubicBezierLength(item);
-            break;
         case VToolTriangle::Type:
             showOptionsToolTriangle(item);
             break;
@@ -247,7 +244,7 @@ void VToolOptionsPropertyBrowser::updateOptions()
     }
 
     // This check helps to find missing tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 55, "Not all tools were used in switch.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used in switch.");
 
     switch (currentItem->type())
     {
@@ -319,9 +316,6 @@ void VToolOptionsPropertyBrowser::updateOptions()
             break;
         case VToolCubicBezierPath::Type:
             updateOptionsToolCubicBezierPath();
-            break;
-        case VToolCubicBezierLength::Type:
-            updateOptionsToolCubicBezierLength();
             break;
         case VToolTriangle::Type:
             updateOptionsToolTriangle();
@@ -395,7 +389,7 @@ void VToolOptionsPropertyBrowser::userChangedData(VPE::VProperty *property)
     }
 
     // This check helps to find missing tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 55, "Not all tools were used in switch.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used in switch.");
 
     switch (currentItem->type())
     {
@@ -467,9 +461,6 @@ void VToolOptionsPropertyBrowser::userChangedData(VPE::VProperty *property)
             break;
         case VToolCubicBezierPath::Type:
             changeDataToolCubicBezierPath(prop);
-            break;
-        case VToolCubicBezierLength::Type:
-            changeDataToolCubicBezierLength(prop);
             break;
         case VToolTriangle::Type:
             changeDataToolTriangle(prop);
@@ -2021,64 +2012,10 @@ void VToolOptionsPropertyBrowser::changeDataToolSpline(VPE::VProperty *property)
 void VToolOptionsPropertyBrowser::changeDataToolCubicBezier(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
-
     const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
     VToolCubicBezier *tool = qgraphicsitem_cast<VToolCubicBezier *>(currentItem);
-    SCASSERT(tool != nullptr)
-
-    auto spline = tool->getSpline();
-    VPointF point;
-
-    switch (propertiesList().indexOf(id))
-    {
-        case 0: // AttrName
-            Q_UNREACHABLE();//The attribute is read only
-            break;
-        case 27: // AttrColor
-            tool->setLineColor(value.toString());
-            break;
-        case 59: // AttrPenStyle
-            tool->SetPenStyle(value.toString());
-            break;
-        case 60: // AttrLineWeight
-            tool->setLineWeight(value.toString());
-            break;
-        case 55: // AttrPoint1
-            point = *m_data->GeometricObject<VPointF>(value.toInt());
-            spline.SetP1(point);
-            tool->setSpline(spline);
-            break;
-        case 56: // AttrPoint2
-            point = *m_data->GeometricObject<VPointF>(value.toInt());
-            spline.SetP2(point);
-            tool->setSpline(spline);
-            break;
-        case 57: // AttrPoint3
-            point = *m_data->GeometricObject<VPointF>(value.toInt());
-            spline.SetP3(point);
-            tool->setSpline(spline);
-            break;
-        case 58: // AttrPoint4
-            point = *m_data->GeometricObject<VPointF>(value.toInt());
-            spline.SetP4(point);
-            tool->setSpline(spline);
-            break;
-        default:
-            qWarning() << "Unknown property type. id = "<<id;
-            break;
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::changeDataToolCubicBezierLength(VPE::VProperty *property)
-{
-    SCASSERT(property != nullptr)
-    const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
-    const QString id = propertyToId[property];
-
-    VToolCubicBezierLength *tool = qgraphicsitem_cast<VToolCubicBezierLength *>(currentItem);
     SCASSERT(tool != nullptr)
 
     switch (propertiesList().indexOf(id))
@@ -2095,14 +2032,15 @@ void VToolOptionsPropertyBrowser::changeDataToolCubicBezierLength(VPE::VProperty
         case 10: // AttrAngle2
             tool->SetFormulaAngle2(value.value<VFormula>());
             break;
+        case 37: // AttrLength2 → c2Length
+            tool->SetFormulaC2Length(value.value<VFormula>());
+            break;
         case 4: // AttrLength → targetLength
             tool->SetFormulaTargetLength(value.value<VFormula>());
             break;
-        case 37: // AttrLength2 → min length, read only
+        case 55: // AttrPoint1 — read only
             break;
-        case 55: // AttrPoint1 — read only (start point fixed)
-            break;
-        case 58: // AttrPoint4 — read only (end point fixed)
+        case 58: // AttrPoint4 — read only
             break;
         case 27: // AttrColor
             tool->setLineColor(value.toString());
@@ -2926,16 +2864,21 @@ void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
 void VToolOptionsPropertyBrowser::showOptionsToolCubicBezier(QGraphicsItem *item)
 {
     VToolCubicBezier *tool = qgraphicsitem_cast<VToolCubicBezier *>(item);
+    SCASSERT(tool != nullptr)
     tool->ShowVisualization(true);
-    const auto spl = tool->getSpline();
 
-    formView->setTitle(tr("Curve - Fixed"));
+    formView->setTitle(tr("Curve - Cubic Bézier"));
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyCurveName(tool, tr("Name:"), tr("Spl_"), spl.GetP1().name(), spl.GetP4().name(), true);
-    addObjectProperty(tool, spl.GetP1().name(), tr("First point:"),  AttrPoint1, GOType::Point);
-    addObjectProperty(tool, spl.GetP2().name(), tr("Second point:"), AttrPoint2, GOType::Point);
-    addObjectProperty(tool, spl.GetP3().name(), tr("Third point:"),  AttrPoint3, GOType::Point);
-    addObjectProperty(tool, spl.GetP4().name(), tr("Fourth point:"), AttrPoint4, GOType::Point);
+    addPropertyCurveName(tool, tr("Name:"), tr("Spl_"), tool->GetP1Name(), tool->GetP4Name(), true);
+    addObjectProperty(tool, tool->GetP1Name(), tr("Start point:"), AttrPoint1, GOType::Point);
+    addObjectProperty(tool, tool->GetP4Name(), tr("End point:"),   AttrPoint4, GOType::Point);
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Start angle:"),    tool->GetFormulaAngle1(),   AttrAngle1);
+    addPropertyFormula(tr("Handle 1 length:"),tool->GetFormulaC1Length(), AttrLength1);
+    addPropertyFormula(tr("End angle:"),      tool->GetFormulaAngle2(),   AttrAngle2);
+    addPropertyFormula(tr("Handle 2 length:"),tool->GetFormulaC2Length(), AttrLength2);
+    addPropertyFormula(tr("Target length:"),  tool->GetFormulaTargetLength(), AttrLength);
 
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
@@ -2970,38 +2913,6 @@ void VToolOptionsPropertyBrowser::showOptionsToolCubicBezierPath(QGraphicsItem *
     formView->setTitle(tr("Spline - Fixed"));
     addPropertyLabel(tr("Selection"), AttrName);
     addPropertyCurveName(tool, tr("Name:"), tr("SplPath_"), spl.FirstPoint().name(), spl.LastPoint().name(), true);
-    addPropertyLabel(tr("Attributes"), AttrName);
-    addPropertyLineColor(tool, tr("Color:"), AttrColor);
-    addPropertyCurveLineType(tool, tr("Linetype:"));
-    addPropertyLineWeight(tool, tr("Lineweight:"));
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::showOptionsToolCubicBezierLength(QGraphicsItem *item)
-{
-    VToolCubicBezierLength *tool = qgraphicsitem_cast<VToolCubicBezierLength *>(item);
-    SCASSERT(tool != nullptr)
-    tool->ShowVisualization(true);
-
-    formView->setTitle(tr("Curve - Matched Length"));
-    addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyCurveName(tool, tr("Name:"), tr("Spl_"), tool->GetP1Name(), tool->GetP4Name(), true);
-    addObjectProperty(tool, tool->GetP1Name(), tr("Start point:"), AttrPoint1, GOType::Point);
-    addObjectProperty(tool, tool->GetP4Name(), tr("End point:"),   AttrPoint4, GOType::Point);
-
-    addPropertyLabel(tr("Geometry"), AttrName);
-    addPropertyFormula(tr("Start angle:"),    tool->GetFormulaAngle1(),      AttrAngle1);
-    addPropertyFormula(tr("Handle 1 length:"),tool->GetFormulaC1Length(),    AttrLength1);
-    addPropertyFormula(tr("End angle:"),      tool->GetFormulaAngle2(),      AttrAngle2);
-    addPropertyFormula(tr("Target length:"),  tool->GetFormulaTargetLength(),AttrLength);
-
-    // C) Show minimum length (when computed handle c2 = 0) — read-only display
-    VPE::VStringProperty *minLenProp = new VPE::VStringProperty(tr("Min length (c2=0):"));
-    minLenProp->setValue(tool->getMinLengthString());
-    minLenProp->setReadOnly(true);
-    minLenProp->setClearButtonEnable(false);
-    addProperty(minLenProp, AttrLength2);
-
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
     addPropertyCurveLineType(tool, tr("Linetype:"));
@@ -3925,51 +3836,6 @@ void VToolOptionsPropertyBrowser::updateOptionsToolSpline()
 void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezier()
 {
     VToolCubicBezier *tool = qgraphicsitem_cast<VToolCubicBezier *>(currentItem);
-    const auto spl = tool->getSpline();
-    idToProperty[AttrObjName]->setValue(tr("Spl_") + spl.GetP1().name() + "_" + spl.GetP4().name());
-
-    idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(),
-                                                                            tool->getLineColor()));
-
-    {
-        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeNoPenRemovedList(), tool->GetPenStyle());
-        idToProperty[AttrPenStyle]->setValue(index);
-    }
-
-    {
-        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
-        idToProperty[AttrLineWeight]->setValue(index);
-    }
-
-    {
-        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
-                                                                               spl.GetP1().name());
-        idToProperty[AttrPoint1]->setValue(index);
-    }
-
-    {
-        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
-                                                                               spl.GetP2().name());
-        idToProperty[AttrPoint2]->setValue(index);
-    }
-
-    {
-        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
-                                                                               spl.GetP3().name());
-        idToProperty[AttrPoint3]->setValue(index);
-    }
-
-    {
-        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
-                                                                               spl.GetP4().name());
-        idToProperty[AttrPoint4]->setValue(index);
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezierLength()
-{
-    VToolCubicBezierLength *tool = qgraphicsitem_cast<VToolCubicBezierLength *>(currentItem);
     SCASSERT(tool != nullptr)
     idToProperty[AttrObjName]->setValue(tr("Spl_") + tool->GetP1Name() + "_" + tool->GetP4Name());
 
@@ -3982,10 +3848,11 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezierLength()
     QVariant vAngle2; vAngle2.setValue(tool->GetFormulaAngle2());
     idToProperty[AttrAngle2]->setValue(vAngle2);
 
+    QVariant vC2Length; vC2Length.setValue(tool->GetFormulaC2Length());
+    idToProperty[AttrLength2]->setValue(vC2Length);
+
     QVariant vTarget; vTarget.setValue(tool->GetFormulaTargetLength());
     idToProperty[AttrLength]->setValue(vTarget);
-
-    idToProperty[AttrLength2]->setValue(tool->getMinLengthString());
 
     {
         const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
@@ -3998,8 +3865,8 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezierLength()
         idToProperty[AttrPoint4]->setValue(index);
     }
     {
-        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
-        idToProperty[AttrColor]->setValue(index);
+        idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(),
+                                                                                tool->getLineColor()));
     }
     {
         const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeNoPenRemovedList(), tool->GetPenStyle());

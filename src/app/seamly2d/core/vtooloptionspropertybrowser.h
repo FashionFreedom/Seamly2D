@@ -213,7 +213,6 @@ private:
     void changeDataToolShoulderPoint(VPE::VProperty *property);
     void changeDataToolSpline(VPE::VProperty *property);
     void changeDataToolCubicBezier(VPE::VProperty *property);
-    void changeDataToolCubicBezierLength(VPE::VProperty *property);
     void changeDataToolSplinePath(VPE::VProperty *property);
     void changeDataToolCubicBezierPath(VPE::VProperty *property);
     void changeDataToolTriangle(VPE::VProperty *property);
@@ -249,7 +248,6 @@ private:
     void showOptionsToolShoulderPoint(QGraphicsItem *item);
     void showOptionsToolSpline(QGraphicsItem *item);
     void showOptionsToolCubicBezier(QGraphicsItem *item);
-    void showOptionsToolCubicBezierLength(QGraphicsItem *item);
     void showOptionsToolSplinePath(QGraphicsItem *item);
     void showOptionsToolCubicBezierPath(QGraphicsItem *item);
     void showOptionsToolTriangle(QGraphicsItem *item);
@@ -285,7 +283,6 @@ private:
     void updateOptionsToolShoulderPoint();
     void updateOptionsToolSpline();
     void updateOptionsToolCubicBezier();
-    void updateOptionsToolCubicBezierLength();
     void updateOptionsToolSplinePath();
     void updateOptionsToolCubicBezierPath();
     void updateOptionsToolTriangle();
