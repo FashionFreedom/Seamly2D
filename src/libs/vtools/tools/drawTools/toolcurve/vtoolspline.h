@@ -81,7 +81,8 @@ public:
     static VToolSpline *Create(const quint32 _id, quint32 point1, quint32 point4, QString &a1, QString &a2, QString &l1,
                                QString &l2, quint32 duplicate, const QString &color, const QString &penStyle,
                                const QString &lineWeight, VMainGraphicsScene *scene, VAbstractPattern *doc,
-                               VContainer *data, const Document &parse, const Source &typeCreation);
+                               VContainer *data, const Document &parse, const Source &typeCreation,
+                               const QString &targetLength = QString(), bool autoSmooth = false);
     static const QString ToolType;
     static const QString OldToolType;
     virtual int   type() const override {return Type;}
@@ -89,6 +90,12 @@ public:
 
     VSpline       getSpline()const;
     void          setSpline(const VSpline &spl);
+
+    // Optional features added to "Kurve Interaktiv"
+    QString       GetTargetLength() const { return m_targetLength; }
+    void          SetTargetLength(const QString &value);
+    bool          GetAutoSmooth() const { return m_autoSmooth; }
+    void          SetAutoSmooth(bool value);
 
     virtual void  ShowVisualization(bool show) override;
 
@@ -116,7 +123,12 @@ private:
     Q_DISABLE_COPY(VToolSpline)
     QPointF       oldPosition;
 
+    // Optional features: empty/false = classic behavior (State 1)
+    QString       m_targetLength;
+    bool          m_autoSmooth;
+
                   VToolSpline (VAbstractPattern *doc, VContainer *data, quint32 id,
+                               const QString &targetLength, bool autoSmooth,
                                const Source &typeCreation, QGraphicsItem * parent = nullptr );
 
     bool          IsMovable() const;

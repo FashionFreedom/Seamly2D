@@ -83,6 +83,12 @@ public:
     VSpline       GetSpline() const;
     void          SetSpline(const VSpline &spline);
 
+    // Optional features
+    QString       GetTargetLength() const;
+    void          SetTargetLength(const QString &value);
+    bool          GetAutoSmooth() const;
+    void          SetAutoSmooth(bool value);
+
     QString       getPenStyle() const;
     void          setPenStyle(const QString &value);
 
@@ -121,6 +127,12 @@ private slots:
     void          FXAngle2();
     void          FXLength1();
     void          FXLength2();
+    void          FXTargetLength();
+
+    void          DeployTargetLengthTextEdit();
+    void          TargetLengthChanged();
+    void          OnTargetLengthToggled(bool checked);
+    void          OnAutoSmoothToggled(bool checked);
 
 private:
     Q_DISABLE_COPY(DialogSpline)
@@ -134,18 +146,23 @@ private:
     int               formulaBaseHeightAngle2;
     int               formulaBaseHeightLength1;
     int               formulaBaseHeightLength2;
+    int               formulaBaseHeightTargetLength;
 
-    /** @brief timerAngle1 timer of check first angle formula */
+    /** @brief timers for formula evaluation */
     QTimer           *timerAngle1;
     QTimer           *timerAngle2;
     QTimer           *timerLength1;
     QTimer           *timerLength2;
+    QTimer           *timerTargetLength;
 
-    /** @brief flagAngle1 true if value of first angle is correct */
+    /** @brief validation flags */
     bool              flagAngle1;
     bool              flagAngle2;
     bool              flagLength1;
     bool              flagLength2;
+    bool              flagTargetLength;
+
+    QString           m_targetLength;
 
     const QSharedPointer<VPointF> GetP1() const;
     const QSharedPointer<VPointF> GetP4() const;
@@ -154,8 +171,11 @@ private:
     void              EvalAngle2();
     void              EvalLength1();
     void              EvalLength2();
+    void              EvalTargetLength();
 
     VSpline           CurrentSpline() const;
+    void              updateTargetLengthVisible(bool visible);
+    void              updateLengthFieldsEnabled();
 };
 
 #endif // DIALOGSPLINE_H

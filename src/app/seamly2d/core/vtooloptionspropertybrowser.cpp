@@ -2018,29 +2018,30 @@ void VToolOptionsPropertyBrowser::changeDataToolCubicBezier(VPE::VProperty *prop
     VToolCubicBezier *tool = qgraphicsitem_cast<VToolCubicBezier *>(currentItem);
     SCASSERT(tool != nullptr)
 
+    auto spline = tool->getSpline();
+    VPointF point;
+
     switch (propertiesList().indexOf(id))
     {
-        case 61: // AttrObjName — read only
+        case 0:  // AttrName — read only
             Q_UNREACHABLE();
             break;
-        case 9: // AttrAngle1
-            tool->SetFormulaAngle1(value.value<VFormula>());
+        case 55: // AttrPoint1 — first canvas point, read-only via property browser
             break;
-        case 36: // AttrLength1 → c1Length
-            tool->SetFormulaC1Length(value.value<VFormula>());
+        case 56: // AttrPoint2 — second canvas point
+            point = *m_data->GeometricObject<VPointF>(value.toInt());
+            spline.SetP2(point);
+            tool->setSpline(spline);
             break;
-        case 10: // AttrAngle2
-            tool->SetFormulaAngle2(value.value<VFormula>());
+        case 57: // AttrPoint3 — third canvas point
+            point = *m_data->GeometricObject<VPointF>(value.toInt());
+            spline.SetP3(point);
+            tool->setSpline(spline);
             break;
-        case 37: // AttrLength2 → c2Length
-            tool->SetFormulaC2Length(value.value<VFormula>());
+        case 58: // AttrPoint4 — fourth canvas point, read-only via property browser
             break;
-        case 4: // AttrLength → targetLength
+        case 4:  // AttrLength → target length formula
             tool->SetFormulaTargetLength(value.value<VFormula>());
-            break;
-        case 55: // AttrPoint1 — read only
-            break;
-        case 58: // AttrPoint4 — read only
             break;
         case 27: // AttrColor
             tool->setLineColor(value.toString());
@@ -2866,19 +2867,19 @@ void VToolOptionsPropertyBrowser::showOptionsToolCubicBezier(QGraphicsItem *item
     VToolCubicBezier *tool = qgraphicsitem_cast<VToolCubicBezier *>(item);
     SCASSERT(tool != nullptr)
     tool->ShowVisualization(true);
+    const auto spl = tool->getSpline();
 
-    formView->setTitle(tr("Curve - Cubic Bézier"));
+    formView->setTitle(tr("Curve - Fixed"));
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyCurveName(tool, tr("Name:"), tr("Spl_"), tool->GetP1Name(), tool->GetP4Name(), true);
-    addObjectProperty(tool, tool->GetP1Name(), tr("Start point:"), AttrPoint1, GOType::Point);
-    addObjectProperty(tool, tool->GetP4Name(), tr("End point:"),   AttrPoint4, GOType::Point);
+    addPropertyCurveName(tool, tr("Name:"), tr("Spl_"), spl.GetP1().name(), spl.GetP4().name(), true);
+    addObjectProperty(tool, tool->FirstPointName(),  tr("First point:"),  AttrPoint1, GOType::Point);
+    addObjectProperty(tool, tool->SecondPointName(), tr("Second point:"), AttrPoint2, GOType::Point);
+    addObjectProperty(tool, tool->ThirdPointName(),  tr("Third point:"),  AttrPoint3, GOType::Point);
+    addObjectProperty(tool, tool->ForthPointName(),  tr("Fourth point:"), AttrPoint4, GOType::Point);
 
-    addPropertyLabel(tr("Geometry"), AttrName);
-    addPropertyFormula(tr("Start angle:"),    tool->GetFormulaAngle1(),   AttrAngle1);
-    addPropertyFormula(tr("Handle 1 length:"),tool->GetFormulaC1Length(), AttrLength1);
-    addPropertyFormula(tr("End angle:"),      tool->GetFormulaAngle2(),   AttrAngle2);
-    addPropertyFormula(tr("Handle 2 length:"),tool->GetFormulaC2Length(), AttrLength2);
-    addPropertyFormula(tr("Target length:"),  tool->GetFormulaTargetLength(), AttrLength);
+    // Always show target length formula (empty = no target set)
+    addPropertyLabel(tr("Options"), AttrName);
+    addPropertyFormula(tr("Target length:"), tool->GetFormulaTargetLength(), AttrLength);
 
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
@@ -3837,36 +3838,40 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezier()
 {
     VToolCubicBezier *tool = qgraphicsitem_cast<VToolCubicBezier *>(currentItem);
     SCASSERT(tool != nullptr)
-    idToProperty[AttrObjName]->setValue(tr("Spl_") + tool->GetP1Name() + "_" + tool->GetP4Name());
-
-    QVariant vAngle1; vAngle1.setValue(tool->GetFormulaAngle1());
-    idToProperty[AttrAngle1]->setValue(vAngle1);
-
-    QVariant vC1Length; vC1Length.setValue(tool->GetFormulaC1Length());
-    idToProperty[AttrLength1]->setValue(vC1Length);
-
-    QVariant vAngle2; vAngle2.setValue(tool->GetFormulaAngle2());
-    idToProperty[AttrAngle2]->setValue(vAngle2);
-
-    QVariant vC2Length; vC2Length.setValue(tool->GetFormulaC2Length());
-    idToProperty[AttrLength2]->setValue(vC2Length);
-
-    QVariant vTarget; vTarget.setValue(tool->GetFormulaTargetLength());
-    idToProperty[AttrLength]->setValue(vTarget);
+    const auto spl = tool->getSpline();
+    idToProperty[AttrObjName]->setValue(tr("Spl_") + spl.GetP1().name() + "_" + spl.GetP4().name());
 
     {
         const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
-                                                                               tool->GetP1Name());
+                                                                               tool->FirstPointName());
         idToProperty[AttrPoint1]->setValue(index);
     }
     {
         const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
-                                                                               tool->GetP4Name());
-        idToProperty[AttrPoint4]->setValue(index);
+                                                                               tool->SecondPointName());
+        idToProperty[AttrPoint2]->setValue(index);
     }
     {
-        idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(),
-                                                                                tool->getLineColor()));
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->ThirdPointName());
+        idToProperty[AttrPoint3]->setValue(index);
+    }
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->ForthPointName());
+        idToProperty[AttrPoint4]->setValue(index);
+    }
+
+    // Target length (only if property exists in the panel)
+    if (idToProperty.contains(AttrLength))
+    {
+        QVariant vTarget; vTarget.setValue(tool->GetFormulaTargetLength());
+        idToProperty[AttrLength]->setValue(vTarget);
+    }
+
+    {
+        idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(
+            VAbstractTool::ColorsList(), tool->getLineColor()));
     }
     {
         const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeNoPenRemovedList(), tool->GetPenStyle());

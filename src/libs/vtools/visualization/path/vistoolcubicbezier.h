@@ -54,11 +54,16 @@ public:
 
     virtual void RefreshGeometry() override;
 
+    // IDs for creation-mode point selection (4-click flow)
+    void         setObject2Id(const quint32 &value);
+    void         setObject3Id(const quint32 &value);
     void         setObject4Id(const quint32 &value);
+
+    // Angle/length for Show mode (after creation, states 2/3/4)
     void         setAngle1(const QString &value);
     void         setAngle2(const QString &value);
     void         setC1Length(const QString &value);
-    void         setC2Length(qreal value);   // actual computed c2 in pixels for Show mode
+    void         setC2Length(qreal value);   // actual computed c2 in pixels
 
     virtual int  type() const override {return Type;}
     enum { Type = UserType + static_cast<int>(Vis::ToolCubicBezier)};
@@ -66,11 +71,13 @@ public:
 protected:
     Q_DISABLE_COPY(VisToolCubicBezier)
 
-    quint32         object4Id;
-    QString         m_angle1;
-    QString         m_angle2;
-    QString         m_c1Length;
-    qreal           m_c2Length;    // actual computed c2 (pixels); -1 means unknown
+    quint32         object2Id;     // P2 canvas point (creation mode)
+    quint32         object3Id;     // P3 canvas point (creation mode)
+    quint32         object4Id;     // P4 endpoint
+    QString         m_angle1;      // Show mode: angle from computed P1→P2'
+    QString         m_angle2;      // Show mode: angle from computed P4→P3'
+    QString         m_c1Length;    // Show mode: c1 length (user units string)
+    qreal           m_c2Length;    // Show mode: c2 length (pixels); -1 = use c1 as proxy
 
     VScaledEllipse *point1;
     VScaledEllipse *point4;

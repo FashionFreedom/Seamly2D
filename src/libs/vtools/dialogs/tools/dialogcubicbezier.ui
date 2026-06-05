@@ -3,197 +3,114 @@
  <class>DialogCubicBezier</class>
  <widget class="QDialog" name="DialogCubicBezier">
   <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>360</width>
-    <height>720</height>
-   </rect>
+   <rect><x>0</x><y>0</y><width>350</width><height>520</height></rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>270</width>
-    <height>0</height>
-   </size>
-  </property>
-  <property name="windowTitle">
-   <string>Curve - Cubic Bézier</string>
-  </property>
+  <property name="minimumSize"><size><width>270</width><height>0</height></size></property>
+  <property name="windowTitle"><string>Curve - Fixed</string></property>
   <property name="windowIcon">
    <iconset resource="../../../vmisc/share/resources/icon.qrc">
     <normaloff>:/icon/64x64/icon64x64.png</normaloff>:/icon/64x64/icon64x64.png</iconset>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_3">
+  <layout class="QVBoxLayout" name="verticalLayout_2">
 
-   <!-- Selection Group -->
+   <!-- Selection Group: 4 canvas points -->
    <item>
     <widget class="QGroupBox" name="selection_GroupBox">
      <property name="font"><font><pointsize>9</pointsize><bold>true</bold></font></property>
      <property name="title"><string>Selection</string></property>
-     <layout class="QFormLayout" name="formLayout">
-      <property name="labelAlignment"><set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set></property>
-      <item row="0" column="0">
-       <widget class="QLabel" name="labelName">
-        <property name="minimumSize"><size><width>100</width><height>0</height></size></property>
-        <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
-        <property name="text"><string>Name:</string></property>
-        <property name="alignment"><set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set></property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEditSplineName">
-        <property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Fixed"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property>
-        <property name="minimumSize"><size><width>80</width><height>0</height></size></property>
-        <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
-        <property name="readOnly"><bool>true</bool></property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="startPoint_Label">
-        <property name="minimumSize"><size><width>100</width><height>0</height></size></property>
-        <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
-        <property name="text"><string>Start point:</string></property>
-        <property name="alignment"><set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set></property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QComboBox" name="startPoint_ComboBox">
-        <property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Fixed"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property>
-        <property name="minimumSize"><size><width>80</width><height>0</height></size></property>
-        <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="endPoint_Label">
-        <property name="minimumSize"><size><width>100</width><height>0</height></size></property>
-        <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
-        <property name="text"><string>End point:</string></property>
-        <property name="alignment"><set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set></property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QComboBox" name="endPoint_ComboBox">
-        <property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Fixed"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property>
-        <property name="minimumSize"><size><width>80</width><height>0</height></size></property>
-        <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
-       </widget>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QFormLayout" name="formLayout">
+        <property name="labelAlignment"><set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set></property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="labelName">
+          <property name="minimumSize"><size><width>100</width><height>0</height></size></property>
+          <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
+          <property name="text"><string>Name:</string></property>
+          <property name="alignment"><set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set></property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="lineEditSplineName">
+          <property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Fixed"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property>
+          <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
+          <property name="readOnly"><bool>true</bool></property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="labelFirstPoint">
+          <property name="minimumSize"><size><width>100</width><height>0</height></size></property>
+          <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
+          <property name="text"><string>First point:</string></property>
+          <property name="alignment"><set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set></property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="comboBoxP1">
+          <property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Fixed"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property>
+          <property name="minimumSize"><size><width>80</width><height>0</height></size></property>
+          <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="labelSecondPoint">
+          <property name="minimumSize"><size><width>100</width><height>0</height></size></property>
+          <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
+          <property name="text"><string>Second point:</string></property>
+          <property name="alignment"><set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set></property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QComboBox" name="comboBoxP2">
+          <property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Fixed"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property>
+          <property name="minimumSize"><size><width>80</width><height>0</height></size></property>
+          <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="labelThirdPoint">
+          <property name="minimumSize"><size><width>100</width><height>0</height></size></property>
+          <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
+          <property name="text"><string>Third point:</string></property>
+          <property name="alignment"><set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set></property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QComboBox" name="comboBoxP3">
+          <property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Fixed"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property>
+          <property name="minimumSize"><size><width>80</width><height>0</height></size></property>
+          <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="labelForthPoint">
+          <property name="minimumSize"><size><width>100</width><height>0</height></size></property>
+          <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
+          <property name="text"><string>Fourth point:</string></property>
+          <property name="alignment"><set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set></property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QComboBox" name="comboBoxP4">
+          <property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Fixed"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property>
+          <property name="minimumSize"><size><width>80</width><height>0</height></size></property>
+          <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
    </item>
 
-   <!-- Geometry Group -->
+   <!-- Options Group: Checkboxes + optional target length -->
    <item>
-    <widget class="QGroupBox" name="geometry_GroupBox">
+    <widget class="QGroupBox" name="options_GroupBox">
      <property name="font"><font><pointsize>9</pointsize><bold>true</bold></font></property>
-     <property name="title"><string>Geometry</string></property>
-     <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="title"><string>Options</string></property>
+     <layout class="QVBoxLayout" name="verticalLayout_opts">
 
-      <!-- Angle 1 -->
-      <item>
-       <layout class="QHBoxLayout" name="hLayoutAngle1Label">
-        <item alignment="Qt::AlignLeft">
-         <widget class="QLabel" name="labelEditAngle1">
-          <property name="minimumSize"><size><width>100</width><height>0</height></size></property>
-          <property name="palette"><palette><active><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>255</red><green>0</green><blue>0</blue></color></brush></colorrole></active><inactive><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>255</red><green>0</green><blue>0</blue></color></brush></colorrole></inactive><disabled><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>159</red><green>158</green><blue>158</blue></color></brush></colorrole></disabled></palette></property>
-          <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
-          <property name="text"><string>Angle 1 (°):</string></property>
-          <property name="alignment"><set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set></property>
-         </widget>
-        </item>
-        <item><widget class="QLabel" name="labelResultAngle1"><property name="minimumSize"><size><width>85</width><height>0</height></size></property><property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property><property name="text"><string notr="true">_</string></property></widget></item>
-        <item><spacer name="hSpacerAngle1"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>10</width><height>20</height></size></property></spacer></item>
-        <item alignment="Qt::AlignRight"><widget class="QToolButton" name="toolButtonExprAngle1"><property name="text"><string notr="true">...</string></property><property name="icon"><iconset resource="../../../vmisc/share/resources/icon.qrc"><normaloff>:/icon/24x24/fx.png</normaloff>:/icon/24x24/fx.png</iconset></property><property name="iconSize"><size><width>24</width><height>24</height></size></property></widget></item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="hLayoutAngle1Edit">
-        <item><widget class="QPushButton" name="pushButtonGrowAngle1"><property name="maximumSize"><size><width>18</width><height>18</height></size></property><property name="text"><string notr="true"/></property><property name="icon"><iconset theme="go-down"><normaloff>.</normaloff>.</iconset></property><property name="iconSize"><size><width>16</width><height>16</height></size></property><property name="flat"><bool>true</bool></property></widget></item>
-        <item><widget class="QPlainTextEdit" name="plainTextEditAngle1"><property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Preferred"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property><property name="maximumSize"><size><width>16777215</width><height>28</height></size></property><property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property><property name="tabChangesFocus"><bool>true</bool></property></widget></item>
-       </layout>
-      </item>
-
-      <!-- C1 Length — disabled when Auto-Smooth is on -->
-      <item>
-       <layout class="QHBoxLayout" name="hLayoutC1LenLabel">
-        <item alignment="Qt::AlignLeft">
-         <widget class="QLabel" name="labelEditC1Length">
-          <property name="minimumSize"><size><width>100</width><height>0</height></size></property>
-          <property name="palette"><palette><active><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>255</red><green>0</green><blue>0</blue></color></brush></colorrole></active><inactive><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>255</red><green>0</green><blue>0</blue></color></brush></colorrole></inactive><disabled><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>159</red><green>158</green><blue>158</blue></color></brush></colorrole></disabled></palette></property>
-          <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
-          <property name="text"><string>Handle 1 length:</string></property>
-          <property name="alignment"><set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set></property>
-         </widget>
-        </item>
-        <item><widget class="QLabel" name="labelResultC1Length"><property name="minimumSize"><size><width>85</width><height>0</height></size></property><property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property><property name="text"><string notr="true">_</string></property></widget></item>
-        <item><spacer name="hSpacerC1Len"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>10</width><height>20</height></size></property></spacer></item>
-        <item alignment="Qt::AlignRight"><widget class="QToolButton" name="toolButtonExprC1Length"><property name="text"><string notr="true">...</string></property><property name="icon"><iconset resource="../../../vmisc/share/resources/icon.qrc"><normaloff>:/icon/24x24/fx.png</normaloff>:/icon/24x24/fx.png</iconset></property><property name="iconSize"><size><width>24</width><height>24</height></size></property></widget></item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="hLayoutC1LenEdit">
-        <item><widget class="QPushButton" name="pushButtonGrowC1Length"><property name="maximumSize"><size><width>18</width><height>18</height></size></property><property name="text"><string notr="true"/></property><property name="icon"><iconset theme="go-down"><normaloff>.</normaloff>.</iconset></property><property name="iconSize"><size><width>16</width><height>16</height></size></property><property name="flat"><bool>true</bool></property></widget></item>
-        <item><widget class="QPlainTextEdit" name="plainTextEditC1Length"><property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Preferred"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property><property name="maximumSize"><size><width>16777215</width><height>28</height></size></property><property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property><property name="tabChangesFocus"><bool>true</bool></property></widget></item>
-       </layout>
-      </item>
-
-      <!-- Angle 2 -->
-      <item>
-       <layout class="QHBoxLayout" name="hLayoutAngle2Label">
-        <item alignment="Qt::AlignLeft">
-         <widget class="QLabel" name="labelEditAngle2">
-          <property name="minimumSize"><size><width>100</width><height>0</height></size></property>
-          <property name="palette"><palette><active><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>255</red><green>0</green><blue>0</blue></color></brush></colorrole></active><inactive><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>255</red><green>0</green><blue>0</blue></color></brush></colorrole></inactive><disabled><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>159</red><green>158</green><blue>158</blue></color></brush></colorrole></disabled></palette></property>
-          <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
-          <property name="text"><string>Angle 2 (°):</string></property>
-          <property name="alignment"><set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set></property>
-         </widget>
-        </item>
-        <item><widget class="QLabel" name="labelResultAngle2"><property name="minimumSize"><size><width>85</width><height>0</height></size></property><property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property><property name="text"><string notr="true">_</string></property></widget></item>
-        <item><spacer name="hSpacerAngle2"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>10</width><height>20</height></size></property></spacer></item>
-        <item alignment="Qt::AlignRight"><widget class="QToolButton" name="toolButtonExprAngle2"><property name="text"><string notr="true">...</string></property><property name="icon"><iconset resource="../../../vmisc/share/resources/icon.qrc"><normaloff>:/icon/24x24/fx.png</normaloff>:/icon/24x24/fx.png</iconset></property><property name="iconSize"><size><width>24</width><height>24</height></size></property></widget></item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="hLayoutAngle2Edit">
-        <item><widget class="QPushButton" name="pushButtonGrowAngle2"><property name="maximumSize"><size><width>18</width><height>18</height></size></property><property name="text"><string notr="true"/></property><property name="icon"><iconset theme="go-down"><normaloff>.</normaloff>.</iconset></property><property name="iconSize"><size><width>16</width><height>16</height></size></property><property name="flat"><bool>true</bool></property></widget></item>
-        <item><widget class="QPlainTextEdit" name="plainTextEditAngle2"><property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Preferred"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property><property name="maximumSize"><size><width>16777215</width><height>28</height></size></property><property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property><property name="tabChangesFocus"><bool>true</bool></property></widget></item>
-       </layout>
-      </item>
-
-      <!-- C2 Length — disabled when Checkbox A (target) OR Checkbox B (autoSmooth) is on -->
-      <item>
-       <layout class="QHBoxLayout" name="hLayoutC2LenLabel">
-        <item alignment="Qt::AlignLeft">
-         <widget class="QLabel" name="labelEditC2Length">
-          <property name="minimumSize"><size><width>100</width><height>0</height></size></property>
-          <property name="palette"><palette><active><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>255</red><green>0</green><blue>0</blue></color></brush></colorrole></active><inactive><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>255</red><green>0</green><blue>0</blue></color></brush></colorrole></inactive><disabled><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>159</red><green>158</green><blue>158</blue></color></brush></colorrole></disabled></palette></property>
-          <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
-          <property name="text"><string>Handle 2 length:</string></property>
-          <property name="alignment"><set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set></property>
-         </widget>
-        </item>
-        <item><widget class="QLabel" name="labelResultC2Length"><property name="minimumSize"><size><width>85</width><height>0</height></size></property><property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property><property name="text"><string notr="true">_</string></property></widget></item>
-        <item><spacer name="hSpacerC2Len"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>10</width><height>20</height></size></property></spacer></item>
-        <item alignment="Qt::AlignRight"><widget class="QToolButton" name="toolButtonExprC2Length"><property name="text"><string notr="true">...</string></property><property name="icon"><iconset resource="../../../vmisc/share/resources/icon.qrc"><normaloff>:/icon/24x24/fx.png</normaloff>:/icon/24x24/fx.png</iconset></property><property name="iconSize"><size><width>24</width><height>24</height></size></property></widget></item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="hLayoutC2LenEdit">
-        <item><widget class="QPushButton" name="pushButtonGrowC2Length"><property name="maximumSize"><size><width>18</width><height>18</height></size></property><property name="text"><string notr="true"/></property><property name="icon"><iconset theme="go-down"><normaloff>.</normaloff>.</iconset></property><property name="iconSize"><size><width>16</width><height>16</height></size></property><property name="flat"><bool>true</bool></property></widget></item>
-        <item><widget class="QPlainTextEdit" name="plainTextEditC2Length"><property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Preferred"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property><property name="maximumSize"><size><width>16777215</width><height>28</height></size></property><property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property><property name="tabChangesFocus"><bool>true</bool></property></widget></item>
-       </layout>
-      </item>
-
-      <!-- Separator line -->
-      <item>
-       <widget class="QFrame" name="line_separator">
-        <property name="frameShape"><enum>QFrame::HLine</enum></property>
-        <property name="frameShadow"><enum>QFrame::Sunken</enum></property>
-       </widget>
-      </item>
-
-      <!-- Checkbox A: Enforce target length -->
+      <!-- Checkbox A: target length -->
       <item>
        <widget class="QCheckBox" name="checkBoxTargetLength">
         <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
@@ -202,10 +119,10 @@
        </widget>
       </item>
 
-      <!-- Target Length row — only visible when Checkbox A is on -->
+      <!-- Target length formula row (initially hidden) -->
       <item>
        <layout class="QHBoxLayout" name="hLayoutTargetLenLabel">
-        <item alignment="Qt::AlignLeft">
+        <item>
          <widget class="QLabel" name="labelEditTargetLength">
           <property name="minimumSize"><size><width>100</width><height>0</height></size></property>
           <property name="palette"><palette><active><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>255</red><green>0</green><blue>0</blue></color></brush></colorrole></active><inactive><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>255</red><green>0</green><blue>0</blue></color></brush></colorrole></inactive><disabled><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>159</red><green>158</green><blue>158</blue></color></brush></colorrole></disabled></palette></property>
@@ -215,15 +132,47 @@
           <property name="visible"><bool>false</bool></property>
          </widget>
         </item>
-        <item><widget class="QLabel" name="labelResultTargetLength"><property name="minimumSize"><size><width>85</width><height>0</height></size></property><property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property><property name="text"><string notr="true">_</string></property><property name="visible"><bool>false</bool></property></widget></item>
-        <item><spacer name="hSpacerTargetLen"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>10</width><height>20</height></size></property></spacer></item>
-        <item alignment="Qt::AlignRight"><widget class="QToolButton" name="toolButtonExprTargetLength"><property name="text"><string notr="true">...</string></property><property name="icon"><iconset resource="../../../vmisc/share/resources/icon.qrc"><normaloff>:/icon/24x24/fx.png</normaloff>:/icon/24x24/fx.png</iconset></property><property name="iconSize"><size><width>24</width><height>24</height></size></property><property name="visible"><bool>false</bool></property></widget></item>
+        <item>
+         <widget class="QLabel" name="labelResultTargetLength">
+          <property name="minimumSize"><size><width>85</width><height>0</height></size></property>
+          <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
+          <property name="text"><string notr="true">_</string></property>
+          <property name="visible"><bool>false</bool></property>
+         </widget>
+        </item>
+        <item><spacer name="hSpacerTarget"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>10</width><height>20</height></size></property></spacer></item>
+        <item>
+         <widget class="QToolButton" name="toolButtonExprTargetLength">
+          <property name="text"><string notr="true">...</string></property>
+          <property name="icon"><iconset resource="../../../vmisc/share/resources/icon.qrc"><normaloff>:/icon/24x24/fx.png</normaloff>:/icon/24x24/fx.png</iconset></property>
+          <property name="iconSize"><size><width>24</width><height>24</height></size></property>
+          <property name="visible"><bool>false</bool></property>
+         </widget>
+        </item>
        </layout>
       </item>
       <item>
        <layout class="QHBoxLayout" name="hLayoutTargetLenEdit">
-        <item><widget class="QPushButton" name="pushButtonGrowTargetLength"><property name="maximumSize"><size><width>18</width><height>18</height></size></property><property name="text"><string notr="true"/></property><property name="icon"><iconset theme="go-down"><normaloff>.</normaloff>.</iconset></property><property name="iconSize"><size><width>16</width><height>16</height></size></property><property name="flat"><bool>true</bool></property><property name="visible"><bool>false</bool></property></widget></item>
-        <item><widget class="QPlainTextEdit" name="plainTextEditTargetLength"><property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Preferred"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property><property name="maximumSize"><size><width>16777215</width><height>28</height></size></property><property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property><property name="tabChangesFocus"><bool>true</bool></property><property name="visible"><bool>false</bool></property></widget></item>
+        <item>
+         <widget class="QPushButton" name="pushButtonGrowTargetLength">
+          <property name="maximumSize"><size><width>18</width><height>18</height></size></property>
+          <property name="text"><string notr="true"/></property>
+          <property name="icon"><iconset theme="go-down"><normaloff>.</normaloff>.</iconset></property>
+          <property name="iconSize"><size><width>16</width><height>16</height></size></property>
+          <property name="flat"><bool>true</bool></property>
+          <property name="visible"><bool>false</bool></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="plainTextEditTargetLength">
+          <property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Preferred"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property>
+          <property name="maximumSize"><size><width>16777215</width><height>28</height></size></property>
+          <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
+          <property name="tabChangesFocus"><bool>true</bool></property>
+          <property name="toolTip"><string>Target arc length formula</string></property>
+          <property name="visible"><bool>false</bool></property>
+         </widget>
+        </item>
        </layout>
       </item>
 
@@ -231,8 +180,8 @@
       <item>
        <widget class="QCheckBox" name="checkBoxAutoSmooth">
         <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
-        <property name="text"><string>Auto-Smooth (Hobby)</string></property>
-        <property name="toolTip"><string>Use John Hobby's algorithm to compute ideal handle lengths from the given angles</string></property>
+        <property name="text"><string>Auto-Smooth (Hobby) — optimizes handle lengths</string></property>
+        <property name="toolTip"><string>P2 and P3 define handle directions; Hobby sets optimal lengths for smoothest curve</string></property>
         <property name="checked"><bool>false</bool></property>
        </widget>
       </item>
@@ -243,7 +192,7 @@
 
    <!-- Attributes Group -->
    <item>
-    <widget class="QGroupBox" name="attributes_GroupBox">
+    <widget class="QGroupBox" name="attributes_GroupBox_2">
      <property name="minimumSize"><size><width>240</width><height>0</height></size></property>
      <property name="font"><font><pointsize>9</pointsize><bold>true</bold></font></property>
      <property name="title"><string>Attributes</string></property>
@@ -305,7 +254,7 @@
    <item>
     <spacer name="verticalSpacer">
      <property name="orientation"><enum>Qt::Vertical</enum></property>
-     <property name="sizeHint" stdset="0"><size><width>20</width><height>9</height></size></property>
+     <property name="sizeHint" stdset="0"><size><width>20</width><height>30</height></size></property>
     </spacer>
    </item>
    <item>
@@ -339,24 +288,14 @@
  </resources>
  <connections>
   <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>DialogCubicBezier</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel"><x>248</x><y>254</y></hint>
-    <hint type="destinationlabel"><x>157</x><y>274</y></hint>
-   </hints>
+   <sender>buttonBox</sender><signal>accepted()</signal>
+   <receiver>DialogCubicBezier</receiver><slot>accept()</slot>
+   <hints><hint type="sourcelabel"><x>248</x><y>254</y></hint><hint type="destinationlabel"><x>157</x><y>274</y></hint></hints>
   </connection>
   <connection>
-   <sender>buttonBox</sender>
-   <signal>rejected()</signal>
-   <receiver>DialogCubicBezier</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel"><x>316</x><y>260</y></hint>
-    <hint type="destinationlabel"><x>286</x><y>274</y></hint>
-   </hints>
+   <sender>buttonBox</sender><signal>rejected()</signal>
+   <receiver>DialogCubicBezier</receiver><slot>reject()</slot>
+   <hints><hint type="sourcelabel"><x>316</x><y>260</y></hint><hint type="destinationlabel"><x>286</x><y>274</y></hint></hints>
   </connection>
  </connections>
 </ui>

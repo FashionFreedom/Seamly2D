@@ -93,14 +93,18 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
     , formulaBaseHeightAngle2(0)
     , formulaBaseHeightLength1(0)
     , formulaBaseHeightLength2(0)
+    , formulaBaseHeightTargetLength(0)
     , timerAngle1(new QTimer(this))
     , timerAngle2(new QTimer(this))
     , timerLength1(new QTimer(this))
     , timerLength2(new QTimer(this))
+    , timerTargetLength(new QTimer(this))
     , flagAngle1(false)
     , flagAngle2(false)
     , flagLength1(false)
     , flagLength2(false)
+    , flagTargetLength(false)
+    , m_targetLength(QString())
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -111,10 +115,11 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
 
     plainTextEditFormula = ui->plainTextEditAngle1F;
 
-    formulaBaseHeightAngle1 = ui->plainTextEditAngle1F->height();
-    formulaBaseHeightAngle2 = ui->plainTextEditAngle2F->height();
-    formulaBaseHeightLength1 = ui->plainTextEditLength1F->height();
-    formulaBaseHeightLength2 = ui->plainTextEditLength2F->height();
+    formulaBaseHeightAngle1       = ui->plainTextEditAngle1F->height();
+    formulaBaseHeightAngle2       = ui->plainTextEditAngle2F->height();
+    formulaBaseHeightLength1      = ui->plainTextEditLength1F->height();
+    formulaBaseHeightLength2      = ui->plainTextEditLength2F->height();
+    formulaBaseHeightTargetLength = ui->plainTextEditTargetLength->height();
 
     ui->plainTextEditAngle1F->installEventFilter(this);
     ui->plainTextEditAngle1F->setToolTip(makeAngleTooltip());
@@ -122,11 +127,13 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
     ui->plainTextEditAngle2F->setToolTip(makeAngleTooltip());
     ui->plainTextEditLength1F->installEventFilter(this);
     ui->plainTextEditLength2F->installEventFilter(this);
+    ui->plainTextEditTargetLength->installEventFilter(this);
 
-    connect(timerAngle1, &QTimer::timeout, this, &DialogSpline::EvalAngle1);
-    connect(timerAngle2, &QTimer::timeout, this, &DialogSpline::EvalAngle2);
-    connect(timerLength1, &QTimer::timeout, this, &DialogSpline::EvalLength1);
-    connect(timerLength2, &QTimer::timeout, this, &DialogSpline::EvalLength2);
+    connect(timerAngle1,       &QTimer::timeout, this, &DialogSpline::EvalAngle1);
+    connect(timerAngle2,       &QTimer::timeout, this, &DialogSpline::EvalAngle2);
+    connect(timerLength1,      &QTimer::timeout, this, &DialogSpline::EvalLength1);
+    connect(timerLength2,      &QTimer::timeout, this, &DialogSpline::EvalLength2);
+    connect(timerTargetLength, &QTimer::timeout, this, &DialogSpline::EvalTargetLength);
 
     initializeOkCancelApply(ui);
 
@@ -162,20 +169,26 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
     connect(ui->comboBoxP1, &QComboBox::currentTextChanged, this, &DialogSpline::PointNameChanged);
     connect(ui->comboBoxP4, &QComboBox::currentTextChanged, this, &DialogSpline::PointNameChanged);
 
-    connect(ui->toolButtonExprAngle1, &QPushButton::clicked, this, &DialogSpline::FXAngle1);
-    connect(ui->toolButtonExprAngle2, &QPushButton::clicked, this, &DialogSpline::FXAngle2);
-    connect(ui->toolButtonExprLength1, &QPushButton::clicked, this, &DialogSpline::FXLength1);
-    connect(ui->toolButtonExprLength2, &QPushButton::clicked, this, &DialogSpline::FXLength2);
+    connect(ui->toolButtonExprAngle1,       &QPushButton::clicked, this, &DialogSpline::FXAngle1);
+    connect(ui->toolButtonExprAngle2,       &QPushButton::clicked, this, &DialogSpline::FXAngle2);
+    connect(ui->toolButtonExprLength1,      &QPushButton::clicked, this, &DialogSpline::FXLength1);
+    connect(ui->toolButtonExprLength2,      &QPushButton::clicked, this, &DialogSpline::FXLength2);
+    connect(ui->toolButtonExprTargetLength, &QPushButton::clicked, this, &DialogSpline::FXTargetLength);
 
-    connect(ui->plainTextEditAngle1F, &QPlainTextEdit::textChanged, this, &DialogSpline::Angle1Changed);
-    connect(ui->plainTextEditAngle2F, &QPlainTextEdit::textChanged, this, &DialogSpline::Angle2Changed);
-    connect(ui->plainTextEditLength1F, &QPlainTextEdit::textChanged, this, &DialogSpline::Length1Changed);
-    connect(ui->plainTextEditLength2F, &QPlainTextEdit::textChanged, this, &DialogSpline::Length2Changed);
+    connect(ui->plainTextEditAngle1F,      &QPlainTextEdit::textChanged, this, &DialogSpline::Angle1Changed);
+    connect(ui->plainTextEditAngle2F,      &QPlainTextEdit::textChanged, this, &DialogSpline::Angle2Changed);
+    connect(ui->plainTextEditLength1F,     &QPlainTextEdit::textChanged, this, &DialogSpline::Length1Changed);
+    connect(ui->plainTextEditLength2F,     &QPlainTextEdit::textChanged, this, &DialogSpline::Length2Changed);
+    connect(ui->plainTextEditTargetLength, &QPlainTextEdit::textChanged, this, &DialogSpline::TargetLengthChanged);
 
-    connect(ui->pushButtonGrowAngle1, &QPushButton::clicked, this, &DialogSpline::DeployAngle1TextEdit);
-    connect(ui->pushButtonGrowAngle2, &QPushButton::clicked, this, &DialogSpline::DeployAngle2TextEdit);
-    connect(ui->pushButtonGrowLength1, &QPushButton::clicked, this, &DialogSpline::DeployLength1TextEdit);
-    connect(ui->pushButtonGrowLength2, &QPushButton::clicked, this, &DialogSpline::DeployLength2TextEdit);
+    connect(ui->pushButtonGrowAngle1,        &QPushButton::clicked, this, &DialogSpline::DeployAngle1TextEdit);
+    connect(ui->pushButtonGrowAngle2,        &QPushButton::clicked, this, &DialogSpline::DeployAngle2TextEdit);
+    connect(ui->pushButtonGrowLength1,       &QPushButton::clicked, this, &DialogSpline::DeployLength1TextEdit);
+    connect(ui->pushButtonGrowLength2,       &QPushButton::clicked, this, &DialogSpline::DeployLength2TextEdit);
+    connect(ui->pushButtonGrowTargetLength,  &QPushButton::clicked, this, &DialogSpline::DeployTargetLengthTextEdit);
+
+    connect(ui->checkBoxTargetLength, &QCheckBox::toggled, this, &DialogSpline::OnTargetLengthToggled);
+    connect(ui->checkBoxAutoSmooth,   &QCheckBox::toggled, this, &DialogSpline::OnAutoSmoothToggled);
 
     vis = new VisToolSpline(data);
     auto path = qobject_cast<VisToolSpline *>(vis);
@@ -242,6 +255,10 @@ void DialogSpline::ChosenObject(quint32 id, const SceneObject &type)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSpline::SaveData()
 {
+    // Capture the target length formula text (user may have typed directly)
+    m_targetLength = ui->plainTextEditTargetLength->toPlainText();
+    m_targetLength.replace("\n", " ");
+
     const quint32 d = spl.GetDuplicate();//Save previous value
     spl = CurrentSpline();
 
@@ -268,6 +285,7 @@ void DialogSpline::closeEvent(QCloseEvent *event)
     ui->plainTextEditAngle2F->blockSignals(true);
     ui->plainTextEditLength1F->blockSignals(true);
     ui->plainTextEditLength2F->blockSignals(true);
+    ui->plainTextEditTargetLength->blockSignals(true);
     DialogTool::closeEvent(event);
 }
 
@@ -601,12 +619,110 @@ void DialogSpline::ShowDialog(bool click)
 void DialogSpline::CheckState()
 {
     SCASSERT(ok_Button != nullptr)
-    ok_Button->setEnabled(flagAngle1 && flagAngle2 && flagLength1 && flagLength2 && flagError);
-    // In case dialog does not have an apply button
+
+    const bool autoSmooth = ui->checkBoxAutoSmooth->isChecked();
+    const bool useTarget  = ui->checkBoxTargetLength->isChecked();
+
+    // Angles always required
+    const bool anglesOk = flagAngle1 && flagAngle2 && flagError;
+
+    bool lengthsOk = false;
+    if (autoSmooth && useTarget)
+        lengthsOk = flagTargetLength;               // State 4
+    else if (autoSmooth)
+        lengthsOk = true;                           // State 3
+    else if (useTarget)
+        lengthsOk = flagLength1 && flagTargetLength; // State 2
+    else
+        lengthsOk = flagLength1 && flagLength2;      // State 1
+
+    ok_Button->setEnabled(anglesOk && lengthsOk);
     if (apply_Button != nullptr)
-    {
         apply_Button->setEnabled(ok_Button->isEnabled());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::DeployTargetLengthTextEdit()
+{
+    DeployFormula(ui->plainTextEditTargetLength, ui->pushButtonGrowTargetLength,
+                  formulaBaseHeightTargetLength);
+}
+
+void DialogSpline::TargetLengthChanged()
+{
+    labelEditFormula       = ui->labelEditTargetLength;
+    labelResultCalculation = ui->labelResultTargetLength;
+    const QString postfix  = UnitsToStr(qApp->patternUnit(), true);
+    formulaValueChanged(flagTargetLength, ui->plainTextEditTargetLength, timerTargetLength, postfix);
+}
+
+void DialogSpline::FXTargetLength()
+{
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
+    dialog->setWindowTitle(tr("Edit target curve length"));
+    const bool sep = qApp->Settings()->getOsSeparator();
+    dialog->SetFormula(qApp->translateVariables()->TryFormulaFromUser(m_targetLength, sep));
+    dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
+    if (dialog->exec() == QDialog::Accepted)
+    {
+        m_targetLength = qApp->translateVariables()->FormulaToUser(dialog->GetFormula(), sep);
+        ui->plainTextEditTargetLength->setPlainText(m_targetLength);
+        MoveCursorToEnd(ui->plainTextEditTargetLength);
     }
+    delete dialog;
+}
+
+void DialogSpline::OnTargetLengthToggled(bool checked)
+{
+    updateTargetLengthVisible(checked);
+    CheckState();
+}
+
+void DialogSpline::OnAutoSmoothToggled(bool checked)
+{
+    updateLengthFieldsEnabled();
+    Q_UNUSED(checked)
+    CheckState();
+}
+
+void DialogSpline::EvalTargetLength()
+{
+    labelEditFormula = ui->labelEditTargetLength;
+    const QString postfix = UnitsToStr(qApp->patternUnit(), true);
+    const qreal val = Eval(ui->plainTextEditTargetLength->toPlainText(),
+                           flagTargetLength, ui->labelResultTargetLength, postfix);
+    if (val <= 0.0)
+    {
+        flagTargetLength = false;
+        ChangeColor(labelEditFormula, Qt::red);
+        ui->labelResultTargetLength->setText(tr("Error"));
+        ui->labelResultTargetLength->setToolTip(tr("Target length must be positive"));
+        CheckState();
+    }
+}
+
+void DialogSpline::updateTargetLengthVisible(bool visible)
+{
+    ui->labelEditTargetLength->setVisible(visible);
+    ui->labelResultTargetLength->setVisible(visible);
+    ui->toolButtonExprTargetLength->setVisible(visible);
+    ui->pushButtonGrowTargetLength->setVisible(visible);
+    ui->plainTextEditTargetLength->setVisible(visible);
+}
+
+void DialogSpline::updateLengthFieldsEnabled()
+{
+    const bool autoSmooth = ui->checkBoxAutoSmooth->isChecked();
+    // Hobby computes both lengths — disable manual length fields
+    ui->plainTextEditLength1F->setEnabled(!autoSmooth);
+    ui->pushButtonGrowLength1->setEnabled(!autoSmooth);
+    ui->toolButtonExprLength1->setEnabled(!autoSmooth);
+    ui->labelEditLength1->setEnabled(!autoSmooth);
+
+    ui->plainTextEditLength2F->setEnabled(!autoSmooth);
+    ui->pushButtonGrowLength2->setEnabled(!autoSmooth);
+    ui->toolButtonExprLength2->setEnabled(!autoSmooth);
+    ui->labelEditLength2->setEnabled(!autoSmooth);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -656,6 +772,42 @@ void DialogSpline::SetSpline(const VSpline &spline)
     path->SetKAsm1(spl.GetKasm1());
     path->SetKAsm2(spl.GetKasm2());
     path->SetKCurve(spl.GetKcurve());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString DialogSpline::GetTargetLength() const
+{
+    if (!ui->checkBoxTargetLength->isChecked())
+        return QString();
+    return qApp->translateVariables()->TryFormulaFromUser(m_targetLength,
+                                                          qApp->Settings()->getOsSeparator());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::SetTargetLength(const QString &value)
+{
+    m_targetLength = qApp->translateVariables()->FormulaToUser(value,
+                                                              qApp->Settings()->getOsSeparator());
+    if (!value.isEmpty())
+    {
+        ui->checkBoxTargetLength->setChecked(true);
+        updateTargetLengthVisible(true);
+    }
+    ui->plainTextEditTargetLength->setPlainText(m_targetLength);
+    MoveCursorToEnd(ui->plainTextEditTargetLength);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool DialogSpline::GetAutoSmooth() const
+{
+    return ui->checkBoxAutoSmooth->isChecked();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::SetAutoSmooth(bool value)
+{
+    ui->checkBoxAutoSmooth->setChecked(value);
+    updateLengthFieldsEnabled();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -1249,6 +1249,46 @@
      </item>
     </layout>
    </item>
+   <!-- Options Group: Checkboxes for target length and auto-smooth -->
+   <item>
+    <widget class="QGroupBox" name="options_GroupBox">
+     <property name="font"><font><pointsize>9</pointsize><bold>true</bold></font></property>
+     <property name="title"><string>Options</string></property>
+     <layout class="QVBoxLayout" name="verticalLayout_opts">
+      <item>
+       <widget class="QCheckBox" name="checkBoxTargetLength">
+        <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
+        <property name="text"><string>Enforce target length</string></property>
+        <property name="checked"><bool>false</bool></property>
+       </widget>
+      </item>
+      <!-- Target length formula row (hidden initially) -->
+      <item>
+       <layout class="QHBoxLayout" name="hLayoutTargetLenLabel">
+        <item><widget class="QLabel" name="labelEditTargetLength"><property name="palette"><palette><active><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>255</red><green>0</green><blue>0</blue></color></brush></colorrole></active><inactive><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>255</red><green>0</green><blue>0</blue></color></brush></colorrole></inactive><disabled><colorrole role="WindowText"><brush brushstyle="SolidPattern"><color alpha="255"><red>159</red><green>158</green><blue>158</blue></color></brush></colorrole></disabled></palette></property><property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property><property name="text"><string>Target length:</string></property><property name="visible"><bool>false</bool></property></widget></item>
+        <item><widget class="QLabel" name="labelResultTargetLength"><property name="minimumSize"><size><width>85</width><height>0</height></size></property><property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property><property name="text"><string notr="true">_</string></property><property name="visible"><bool>false</bool></property></widget></item>
+        <item><spacer name="hSpacerTL"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>10</width><height>20</height></size></property></spacer></item>
+        <item><widget class="QToolButton" name="toolButtonExprTargetLength"><property name="text"><string notr="true">...</string></property><property name="icon"><iconset resource="../../../vmisc/share/resources/icon.qrc"><normaloff>:/icon/24x24/fx.png</normaloff>:/icon/24x24/fx.png</iconset></property><property name="iconSize"><size><width>24</width><height>24</height></size></property><property name="visible"><bool>false</bool></property></widget></item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="hLayoutTargetLenEdit">
+        <item><widget class="QPushButton" name="pushButtonGrowTargetLength"><property name="maximumSize"><size><width>18</width><height>18</height></size></property><property name="text"><string notr="true"/></property><property name="icon"><iconset theme="go-down"><normaloff>.</normaloff>.</iconset></property><property name="iconSize"><size><width>16</width><height>16</height></size></property><property name="flat"><bool>true</bool></property><property name="visible"><bool>false</bool></property></widget></item>
+        <item><widget class="QPlainTextEdit" name="plainTextEditTargetLength"><property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Preferred"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property><property name="maximumSize"><size><width>16777215</width><height>28</height></size></property><property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property><property name="tabChangesFocus"><bool>true</bool></property><property name="visible"><bool>false</bool></property></widget></item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBoxAutoSmooth">
+        <property name="font"><font><pointsize>9</pointsize><bold>false</bold></font></property>
+        <property name="text"><string>Auto-Smooth (Hobby) — computes optimal handle lengths</string></property>
+        <property name="toolTip"><string>Hobby algorithm sets handle lengths for maximum smoothness given the specified angles</string></property>
+        <property name="checked"><bool>false</bool></property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+
    <item>
     <spacer name="verticalSpacer">
      <property name="orientation">
