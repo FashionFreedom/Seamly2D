@@ -371,8 +371,7 @@ VFormula VToolCubicBezier::GetFormulaTargetLength() const
 void VToolCubicBezier::SetFormulaTargetLength(const VFormula &value)
 {
     m_targetLength = value.GetFormula(FormulaType::FromUser);
-    auto obj = VAbstractTool::data.GetGObject(m_id);
-    SaveOption(obj);
+    recomputeGeometry();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -385,8 +384,33 @@ bool VToolCubicBezier::GetAutoSmooth() const
 void VToolCubicBezier::SetAutoSmooth(bool value)
 {
     m_autoSmooth = value;
-    auto obj = VAbstractTool::data.GetGObject(m_id);
-    SaveOption(obj);
+    recomputeGeometry();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolCubicBezier::recomputeGeometry()
+{
+    // Rebuild the stored VCubicBezier from the original canvas points + active state.
+    const auto stored = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
+    const VPointF p1 = stored->GetP1();
+    const VPointF p4 = stored->GetP4();
+    const VPointF p2 = *VAbstractTool::data.GeometricObject<VPointF>(m_p2Id);
+    const VPointF p3 = *VAbstractTool::data.GeometricObject<VPointF>(m_p3Id);
+
+    qreal targetPx = 0.0;
+    if (!m_targetLength.isEmpty())
+    {
+        QString tl = m_targetLength;
+        targetPx = qApp->toPixel(CheckFormula(m_id, tl, &(VAbstractTool::data)));
+    }
+
+    VCubicBezier rebuilt = computeSplineGeometry(p1, p2, p3, p4, targetPx, m_autoSmooth);
+    rebuilt.setLineColor(stored->getLineColor());
+    rebuilt.SetPenStyle(stored->GetPenStyle());
+    rebuilt.setLineWeight(stored->getLineWeight());
+    rebuilt.SetDuplicate(stored->GetDuplicate());
+
+    setSpline(rebuilt);   // updates container + SaveOption
 }
 
 //---------------------------------------------------------------------------------------------------------------------

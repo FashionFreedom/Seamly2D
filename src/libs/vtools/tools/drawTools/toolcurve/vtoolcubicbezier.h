@@ -117,6 +117,7 @@ private:
                       const Source &typeCreation, QGraphicsItem *parent = nullptr);
 
     void                  SetSplineAttributes(QDomElement &domElement, const VCubicBezier &spl);
+    void                  recomputeGeometry();
 };
 
 #endif // VTOOLCUBICBEZIER_H

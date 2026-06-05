@@ -640,6 +640,15 @@ void VToolOptionsPropertyBrowser::addPropertyLabel(const QString &propertyName, 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::addPropertyBool(const QString &propertyName, bool value,
+                                                  const QString &propertyAttribute)
+{
+    auto *boolProperty = new VPE::VBoolProperty(propertyName);
+    boolProperty->setValue(value);
+    addProperty(boolProperty, propertyAttribute);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
 void VToolOptionsPropertyBrowser::addPropertyCrossPoint(Tool *tool, const QString &propertyName)
 {
@@ -1993,6 +2002,13 @@ void VToolOptionsPropertyBrowser::changeDataToolSpline(VPE::VProperty *property)
                 tool->setSpline(spl);
             }
             break;
+        case 4: // AttrLength → target length formula
+            if (not f.error())
+                tool->SetTargetLength(f.GetFormula(FormulaType::FromUser));
+            break;
+        case 63: // AttrAutoSmooth
+            tool->SetAutoSmooth(value.toBool());
+            break;
         case 27: // AttrColor
             tool->setLineColor(value.toString());
             break;
@@ -2042,6 +2058,9 @@ void VToolOptionsPropertyBrowser::changeDataToolCubicBezier(VPE::VProperty *prop
             break;
         case 4:  // AttrLength → target length formula
             tool->SetFormulaTargetLength(value.value<VFormula>());
+            break;
+        case 63: // AttrAutoSmooth
+            tool->SetAutoSmooth(value.toBool());
             break;
         case 27: // AttrColor
             tool->setLineColor(value.toString());
@@ -2855,6 +2874,15 @@ void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
     angle2.setPostfix(degreeSymbol);
     addPropertyFormula(tr("C2: angle:"), angle2, AttrAngle2);
 
+    // Optional features
+    addPropertyLabel(tr("Options"), AttrName);
+    addPropertyBool(tr("Auto-Smooth (Hobby):"), tool->GetAutoSmooth(), AttrAutoSmooth);
+    VFormula targetLen(tool->GetTargetLength(), tool->getData());
+    targetLen.setCheckZero(false);
+    targetLen.setToolId(tool->getId());
+    targetLen.setPostfix(UnitsToStr(qApp->patternUnit()));
+    addPropertyFormula(tr("Target length:"), targetLen, AttrLength);
+
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
     addPropertyCurveLineType(tool, tr("Linetype:"));
@@ -2877,8 +2905,9 @@ void VToolOptionsPropertyBrowser::showOptionsToolCubicBezier(QGraphicsItem *item
     addObjectProperty(tool, tool->ThirdPointName(),  tr("Third point:"),  AttrPoint3, GOType::Point);
     addObjectProperty(tool, tool->ForthPointName(),  tr("Fourth point:"), AttrPoint4, GOType::Point);
 
-    // Always show target length formula (empty = no target set)
+    // Optional features
     addPropertyLabel(tr("Options"), AttrName);
+    addPropertyBool(tr("Auto-Smooth (Hobby):"), tool->GetAutoSmooth(), AttrAutoSmooth);
     addPropertyFormula(tr("Target length:"), tool->GetFormulaTargetLength(), AttrLength);
 
     addPropertyLabel(tr("Attributes"), AttrName);
@@ -3817,7 +3846,18 @@ void VToolOptionsPropertyBrowser::updateOptionsToolSpline()
     length2.setValue(length2F);
     idToProperty[AttrLength2]->setValue(length2);
 
+    if (idToProperty.contains(AttrAutoSmooth))
+        idToProperty[AttrAutoSmooth]->setValue(tool->GetAutoSmooth());
 
+    if (idToProperty.contains(AttrLength))
+    {
+        VFormula targetLen(tool->GetTargetLength(), tool->getData());
+        targetLen.setCheckZero(false);
+        targetLen.setToolId(tool->getId());
+        targetLen.setPostfix(UnitsToStr(qApp->patternUnit()));
+        QVariant vTarget; vTarget.setValue(targetLen);
+        idToProperty[AttrLength]->setValue(vTarget);
+    }
 
     idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(),
                                                                             tool->getLineColor()));
@@ -3862,7 +3902,9 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezier()
         idToProperty[AttrPoint4]->setValue(index);
     }
 
-    // Target length (only if property exists in the panel)
+    if (idToProperty.contains(AttrAutoSmooth))
+        idToProperty[AttrAutoSmooth]->setValue(tool->GetAutoSmooth());
+
     if (idToProperty.contains(AttrLength))
     {
         QVariant vTarget; vTarget.setValue(tool->GetFormulaTargetLength());
@@ -4229,6 +4271,7 @@ QStringList VToolOptionsPropertyBrowser::propertiesList() const
                                             << AttrPenStyle                       /* 59 */
                                             << AttrLineWeight                     /* 60 */
                                             << AttrObjName                        /* 61 */
-                                            << AttrDirection;                     /* 62 */
+                                            << AttrDirection                      /* 62 */
+                                            << AttrAutoSmooth;                    /* 63 */
     return attr;
 }
