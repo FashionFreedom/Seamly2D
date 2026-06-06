@@ -2019,9 +2019,12 @@ void VToolOptionsPropertyBrowser::changeDataToolSpline(VPE::VProperty *property)
                 tool->SetTargetLength(formula);
             break;
         }
-        case 63: // AttrAutoSmooth
-            tool->SetAutoSmooth(value.toInt() == 1);
+        case 63: // AttrAutoSmooth — use EditRole to get integer index (DisplayRole gives string)
+        {
+            const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
+            tool->SetAutoSmooth(enumVal.toInt() == 1);
             break;
+        }
         case 27: // AttrColor
             tool->setLineColor(value.toString());
             break;
@@ -2072,9 +2075,12 @@ void VToolOptionsPropertyBrowser::changeDataToolCubicBezier(VPE::VProperty *prop
         case 4:  // AttrLength → target length formula
             tool->SetFormulaTargetLength(value.value<VFormula>());
             break;
-        case 63: // AttrAutoSmooth
-            tool->SetAutoSmooth(value.toInt() == 1);
+        case 63: // AttrAutoSmooth — use EditRole to get integer index (DisplayRole gives string)
+        {
+            const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
+            tool->SetAutoSmooth(enumVal.toInt() == 1);
             break;
+        }
         case 27: // AttrColor
             tool->setLineColor(value.toString());
             break;
