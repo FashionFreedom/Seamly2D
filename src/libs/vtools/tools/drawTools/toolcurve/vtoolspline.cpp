@@ -150,17 +150,24 @@ static QPair<qreal, qreal> hobbyHandleLengthsForSpline(const VPointF &p1, const 
     while (phi   >  M_PI) phi   -= twoPi;
     while (phi   < -M_PI) phi   += twoPi;
 
-    const qreal sq2 = qSqrt(2.0);
-    auto f = [&](qreal a, qreal b) -> qreal {
-        return (2.0 + sq2 * (qSin(a) - qSin(b)/16.0) * (qSin(b) - qSin(a)/16.0)
-                         * (qCos(a) - qCos(b))) / 3.0;
+    // Standard Hobby/MetaPost velocity function — same fix as vtoolcubicbezier.
+    // The earlier code dropped the denominator factor and inverted the velocity,
+    // producing handles ~3x too long.
+    const qreal sq2   = qSqrt(2.0);
+    const qreal sqrt5 = qSqrt(5.0);
+    const qreal cA    = 0.5 * (sqrt5 - 1.0);   // ~0.618
+    const qreal cB    = 0.5 * (3.0 - sqrt5);   // ~0.382
+
+    auto velocity = [&](qreal a, qreal b) -> qreal {
+        const qreal num = 2.0 + sq2 * (qSin(a) - qSin(b)/16.0)
+                                    * (qSin(b) - qSin(a)/16.0)
+                                    * (qCos(a) - qCos(b));
+        const qreal den = 3.0 * (1.0 + cA*qCos(a) + cB*qCos(b));
+        return (qAbs(den) > 1e-9) ? num / den : (1.0/3.0);
     };
 
-    const qreal ftp = f(theta, phi);
-    const qreal fpt = f(phi, theta);
-    const qreal fb  = d / 3.0;
-    const qreal c1  = (ftp > 1e-9) ? qBound(1e-4, d * 2.0 / (3.0 * ftp), d * 8.0) : fb;
-    const qreal c2  = (fpt > 1e-9) ? qBound(1e-4, d * 2.0 / (3.0 * fpt), d * 8.0) : fb;
+    const qreal c1 = qBound(1e-4, velocity(theta, phi) * d, d * 8.0);
+    const qreal c2 = qBound(1e-4, velocity(phi, theta) * d, d * 8.0);
     return {c1, c2};
 }
 
