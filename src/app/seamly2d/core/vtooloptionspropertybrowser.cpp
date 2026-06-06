@@ -649,6 +649,16 @@ void VToolOptionsPropertyBrowser::addPropertyBool(const QString &propertyName, b
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::addPropertyEnum(const QString &propertyName, const QStringList &options,
+                                                  int currentIndex, const QString &propertyAttribute)
+{
+    auto *enumProp = new VPE::VEnumProperty(propertyName);
+    enumProp->setLiterals(options);
+    enumProp->setValue(currentIndex);
+    addProperty(enumProp, propertyAttribute);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
 void VToolOptionsPropertyBrowser::addPropertyCrossPoint(Tool *tool, const QString &propertyName)
 {
@@ -2002,12 +2012,15 @@ void VToolOptionsPropertyBrowser::changeDataToolSpline(VPE::VProperty *property)
                 tool->setSpline(spl);
             }
             break;
-        case 4: // AttrLength → target length formula
-            if (not f.error())
-                tool->SetTargetLength(f.GetFormula(FormulaType::FromUser));
+        case 4: // AttrLength → target length formula (empty = disabled)
+        {
+            const QString formula = f.GetFormula(FormulaType::FromUser);
+            if (formula.isEmpty() || not f.error())
+                tool->SetTargetLength(formula);
             break;
+        }
         case 63: // AttrAutoSmooth
-            tool->SetAutoSmooth(value.toBool());
+            tool->SetAutoSmooth(value.toInt() == 1);
             break;
         case 27: // AttrColor
             tool->setLineColor(value.toString());
@@ -2060,7 +2073,7 @@ void VToolOptionsPropertyBrowser::changeDataToolCubicBezier(VPE::VProperty *prop
             tool->SetFormulaTargetLength(value.value<VFormula>());
             break;
         case 63: // AttrAutoSmooth
-            tool->SetAutoSmooth(value.toBool());
+            tool->SetAutoSmooth(value.toInt() == 1);
             break;
         case 27: // AttrColor
             tool->setLineColor(value.toString());
@@ -2876,7 +2889,8 @@ void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
 
     // Optional features
     addPropertyLabel(tr("Options"), AttrName);
-    addPropertyBool(tr("Auto-Smooth (Hobby):"), tool->GetAutoSmooth(), AttrAutoSmooth);
+    addPropertyEnum(tr("Smooth curve:"), {tr("No"), tr("Yes")},
+                    tool->GetAutoSmooth() ? 1 : 0, AttrAutoSmooth);
     VFormula targetLen(tool->GetTargetLength(), tool->getData());
     targetLen.setCheckZero(false);
     targetLen.setToolId(tool->getId());
@@ -2907,7 +2921,8 @@ void VToolOptionsPropertyBrowser::showOptionsToolCubicBezier(QGraphicsItem *item
 
     // Optional features
     addPropertyLabel(tr("Options"), AttrName);
-    addPropertyBool(tr("Auto-Smooth (Hobby):"), tool->GetAutoSmooth(), AttrAutoSmooth);
+    addPropertyEnum(tr("Smooth curve:"), {tr("No"), tr("Yes")},
+                    tool->GetAutoSmooth() ? 1 : 0, AttrAutoSmooth);
     addPropertyFormula(tr("Target length:"), tool->GetFormulaTargetLength(), AttrLength);
 
     addPropertyLabel(tr("Attributes"), AttrName);
@@ -3847,7 +3862,7 @@ void VToolOptionsPropertyBrowser::updateOptionsToolSpline()
     idToProperty[AttrLength2]->setValue(length2);
 
     if (idToProperty.contains(AttrAutoSmooth))
-        idToProperty[AttrAutoSmooth]->setValue(tool->GetAutoSmooth());
+        idToProperty[AttrAutoSmooth]->setValue(tool->GetAutoSmooth() ? 1 : 0);
 
     if (idToProperty.contains(AttrLength))
     {
@@ -3903,7 +3918,7 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezier()
     }
 
     if (idToProperty.contains(AttrAutoSmooth))
-        idToProperty[AttrAutoSmooth]->setValue(tool->GetAutoSmooth());
+        idToProperty[AttrAutoSmooth]->setValue(tool->GetAutoSmooth() ? 1 : 0);
 
     if (idToProperty.contains(AttrLength))
     {
