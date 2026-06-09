@@ -8,6 +8,19 @@
 * Pdftops (from XpdfReader or poppler) - Required to create PS or EPS layout files.
 * Check the sections below for your operating system to find additional installation requirements.
 
+## Code Style
+* Applies to new and edited code going forward (as of 2026/06/09)
+* Follow JSF code styling for readability and maintainability
+* Exceptions:
+  * variables: snake_case
+  * functions: lower_Camel_Case
+  * classes: Upper_Camel_Case
+  * pointers: int* correct_pointer (bind the asterisk to the type not the name)
+  * braces: sit on a new line, can't be omitted
+  * line limit: 120 chars max
+  * indents: spaces, no tabs, for uniformity in rendering
+  * comments: single line // only, not /*...*/ multiline to prevent accidently nesting
+
 ## Code Documentation
    * [Doxygen Docs](https://fashionfreedom.github.io/Seamly2D/)
 
