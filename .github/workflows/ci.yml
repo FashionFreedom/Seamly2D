@@ -195,7 +195,7 @@ jobs:
 
   windows:
     name: 'Windows Build'
-    runs-on: windows-latest
+    runs-on: windows-2022
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
