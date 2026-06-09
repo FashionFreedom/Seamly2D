@@ -4,7 +4,7 @@
 //  @date   14 Aug, 2023
 //
 //  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -25,10 +25,10 @@
 //-----------------------------------------------------------------------------
 //  @file   dialogellipticalarc.cpp
 //  @author Valentina Zhuravska <zhuravska19(at)gmail.com>
-//  @date   15 Sep, 2013
+//  @date   15 Sep, 2016
 //
 //  @copyright
-//  Copyright (C) 2013 Valentina project.
+//  Copyright (C) 2016 Valentina project.
 //  This source code is part of the Valentina project, a pattern making
 //  program, whose allow create and modeling patterns of clothing.
 //  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
