@@ -1,51 +1,54 @@
-/******************************************************************************
- *   @file   dialogarc.h
- **  @author Douglas S Caskey
- **  @date   21 Mar, 2023
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program to create and model patterns of clothing.
- **  Copyright (C) 2017-2023 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *****************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   dialogarc.h
+//  @author Douglas S Caskey
+//  @date   21 Mar, 2023
+//
+//  @copyright
+//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   dialogarc.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   dialogarc.h
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   November 15, 2013
+//
+//  @copyright
+//  Copyright (C) 2013 Valentina project.
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published
+//  by the Free Software Foundation, either version 3 of the License,
+//  or (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
-#ifndef DIALOGARC_H
-#define DIALOGARC_H
+#ifndef DIALOG_ARC_H
+#define DIALOG_ARC_H
 
 #include <qcompilerdetection.h>
 #include <QMetaObject>
@@ -62,15 +65,12 @@ namespace Ui
     class DialogArc;
 }
 
-/**
- * @brief The DialogArc class dialog for ToolArc. Help create arc and edit option.
- */
 class DialogArc : public DialogTool
 {
     Q_OBJECT
 public:
-    DialogArc(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
-    virtual ~DialogArc() override;
+                  DialogArc(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
+    virtual      ~DialogArc() override;
 
     VArc          getArc() const;
     void          setArc(const VArc &arc);
@@ -98,77 +98,52 @@ public:
 
 public slots:
     virtual void  ChosenObject(quint32 id, const SceneObject &type) override;
-    /**
-     * @brief DeployFormulaTextEdit grow or shrink formula input
-     */
-    void          DeployFormulaTextEdit();
-    void          DeployF1TextEdit();
-    void          DeployF2TextEdit();
-    void          RadiusChanged();
-    void          F1Changed();
-    void          F2Changed();
 
-    void          FXRadius();
-    void          FXF1();
-    void          FXF2();
+    void          deployRadiusTextEdit();
+    void          deployAngle1TextEdit();
+    void          deployAngle2TextEdit();
+
+    void          radiusFX();
+    void          angle1FX();
+    void          angle2FX();
 
 protected:
     void          pointNameChanged();
     virtual void  CheckState() final;
     virtual void  ShowVisualization() override;
-    /**
-     * @brief SaveData Put dialog data in local variables
-     */
+
     virtual void  SaveData() override;
     virtual void  closeEvent(QCloseEvent *event) override;
 
 private:
     Q_DISABLE_COPY(DialogArc)
 
-    /** @brief ui keeps information about user interface */
-    Ui::DialogArc *ui;
+    Ui::DialogArc *ui;            /// @brief ui keeps information about user interface
+    bool          m_flagRadius;   /// @brief m_flagRadius true if value of radius is correct
+    bool          m_flagAngle1;   /// @brief m_flagAngle1 true if value of first angle is correct
+    bool          m_flagAngle2;   /// @brief flagF2 true if value of second angle is correct
 
-    /** @brief flagRadius true if value of radius is correct */
-    bool          flagRadius;
+    QTimer        *m_timerRadius; /// @brief m_timerRadius timer of check formula of radius
+    QTimer        *m_timerAngle1; /// @brief m_timerAngle1 timer of check formula of first angle
+    QTimer        *m_timerAngle2; /// @brief m_timerAngle2 timer of check formula of second angle
 
-    /** @brief flagF1 true if value of first angle is correct */
-    bool          flagF1;
+    QString       m_radiusFx;     /// @brief m_radiusFx formula of radius
+    QString       m_angle1Fx;     /// @brief m_angle1Fx formula of first angle
+    QString       m_angle2Fx;     /// @brief m_angle2Fx formula of second angle
 
-    /** @brief flagF2 true if value of second angle is correct */
-    bool          flagF2;
+    int           m_baseHeightRadius; /// @brief m_baseHeightRadius base height defined by dialogui
+    int           m_baseHeightAngle1; /// @brief m_baseHeightAngle1 base height defined by dialogui
+    int           m_baseHeightAngle2; /// @brief m_baseHeightAngle2 base height defined by dialogui
 
-    /** @brief timerRadius timer of check formula of radius */
-    QTimer        *timerRadius;
-
-    /** @brief timerF1 timer of check formula of first angle */
-    QTimer        *timerF1;
-
-    /** @brief timerF2 timer of check formula of second angle */
-    QTimer        *timerF2;
-
-    /** @brief radius formula of radius */
-    QString       radius;
-
-    /** @brief f1 formula of first angle */
-    QString       f1;
-
-    /** @brief f2 formula of second angle */
-    QString       f2;
-
-    /** @brief formulaBaseHeight base height defined by dialogui */
-    int           formulaBaseHeight;
-    int           formulaBaseHeightF1;
-    int           formulaBaseHeightF2;
-
-    qreal         angleF1;
-    qreal         angleF2;
+    qreal         m_angle1;
+    qreal         m_angle2;
     VArc          m_arc;
     qint32        m_Id;
-    qint32        newDuplicate;
+    qint32        m_newDuplicate;
 
-    void          EvalRadius();
-    void          EvalF();
-    void          CheckAngles();
+    void          evalRadius();
+    void          evalAngles();
+    void          checkAngles();
 };
 
-#endif // DIALOGARC_H
+#endif // DIALOG_ARC_H
