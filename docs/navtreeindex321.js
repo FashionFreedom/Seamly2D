@@ -1,15 +1,7 @@
 var NAVTREEINDEX321 =
 {
-"functions_enum_q.html":[3,3,4,14],
-"functions_enum_r.html":[3,3,4,15],
-"functions_enum_s.html":[3,3,4,16],
-"functions_enum_t.html":[3,3,4,17],
-"functions_enum_u.html":[3,3,4,18],
-"functions_enum_v.html":[3,3,4,19],
-"functions_enum_w.html":[3,3,4,20],
-"functions_enum_x.html":[3,3,4,21],
-"functions_eval.html":[3,3,5,0],
 "functions_eval.html":[3,3,5],
+"functions_eval.html":[3,3,5,0],
 "functions_eval_b.html":[3,3,5,1],
 "functions_eval_c.html":[3,3,5,2],
 "functions_eval_d.html":[3,3,5,3],

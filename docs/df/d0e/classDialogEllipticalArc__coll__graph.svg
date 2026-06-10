@@ -58,52 +58,52 @@ var sectionId = 'dynsection-1';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#999999" stroke="#666666" points="118,-0.5 118,-497.5 296,-497.5 296,-0.5 118,-0.5"/>
+<polygon fill="#999999" stroke="#666666" points="119,-0.5 119,-497.5 295,-497.5 295,-0.5 119,-0.5"/>
 <text text-anchor="middle" x="207" y="-485.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogEllipticalArc</text>
-<polyline fill="none" stroke="#666666" points="118,-478.5 296,-478.5 "/>
-<text text-anchor="start" x="126" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="126" y="-455.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagRadius1</text>
-<text text-anchor="start" x="126" y="-444.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagRadius2</text>
-<text text-anchor="start" x="126" y="-433.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagF1</text>
-<text text-anchor="start" x="126" y="-422.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagF2</text>
-<text text-anchor="start" x="126" y="-411.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagRotationAngle</text>
-<text text-anchor="start" x="126" y="-400.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; timerRadius1</text>
-<text text-anchor="start" x="126" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; timerRadius2</text>
-<text text-anchor="start" x="126" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; timerF1</text>
-<text text-anchor="start" x="126" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; timerF2</text>
-<text text-anchor="start" x="126" y="-356.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 16 more...</text>
-<polyline fill="none" stroke="#666666" points="118,-349.5 296,-349.5 "/>
-<text text-anchor="start" x="126" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogEllipticalArc()</text>
-<text text-anchor="start" x="126" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogEllipticalArc()</text>
-<text text-anchor="start" x="126" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getArc()</text>
-<text text-anchor="start" x="126" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setArc()</text>
-<text text-anchor="start" x="126" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCenter()</text>
-<text text-anchor="start" x="126" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetCenter()</text>
-<text text-anchor="start" x="126" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetRadius1()</text>
-<text text-anchor="start" x="126" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetRadius1()</text>
-<text text-anchor="start" x="126" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetRadius2()</text>
-<text text-anchor="start" x="126" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetRadius2()</text>
-<text text-anchor="start" x="126" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 12 more...</text>
-<text text-anchor="start" x="126" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
-<text text-anchor="start" x="126" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DeployRadius1TextEdit()</text>
-<text text-anchor="start" x="126" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DeployRadius2TextEdit()</text>
-<text text-anchor="start" x="126" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DeployF1TextEdit()</text>
-<text text-anchor="start" x="126" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DeployF2TextEdit()</text>
-<text text-anchor="start" x="126" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DeployRotationAngleTextEdit()</text>
-<text text-anchor="start" x="126" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Radius1Changed()</text>
-<text text-anchor="start" x="126" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Radius2Changed()</text>
-<text text-anchor="start" x="126" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ F1Changed()</text>
-<text text-anchor="start" x="126" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ F2Changed()</text>
-<text text-anchor="start" x="126" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 6 more...</text>
-<text text-anchor="start" x="126" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># pointNameChanged()</text>
-<text text-anchor="start" x="126" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CheckState()</text>
-<text text-anchor="start" x="126" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
-<text text-anchor="start" x="126" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
-<text text-anchor="start" x="126" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
-<text text-anchor="start" x="126" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; EvalRadiuses()</text>
-<text text-anchor="start" x="126" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; EvalAngles()</text>
-<text text-anchor="start" x="126" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CheckAngles()</text>
-<text text-anchor="start" x="126" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; collapseFormula()</text>
+<polyline fill="none" stroke="#666666" points="119,-478.5 295,-478.5 "/>
+<text text-anchor="start" x="127" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="127" y="-455.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_flagRadius1</text>
+<text text-anchor="start" x="127" y="-444.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_flagRadius2</text>
+<text text-anchor="start" x="127" y="-433.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_flagAngle1</text>
+<text text-anchor="start" x="127" y="-422.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_flagAngle2</text>
+<text text-anchor="start" x="127" y="-411.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_flagRotation</text>
+<text text-anchor="start" x="127" y="-400.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_timerRadius1</text>
+<text text-anchor="start" x="127" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_timerRadius2</text>
+<text text-anchor="start" x="127" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_timerAngle1</text>
+<text text-anchor="start" x="127" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_timerAngle2</text>
+<text text-anchor="start" x="127" y="-356.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 16 more...</text>
+<polyline fill="none" stroke="#666666" points="119,-349.5 295,-349.5 "/>
+<text text-anchor="start" x="127" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogEllipticalArc()</text>
+<text text-anchor="start" x="127" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogEllipticalArc()</text>
+<text text-anchor="start" x="127" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getArc()</text>
+<text text-anchor="start" x="127" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setArc()</text>
+<text text-anchor="start" x="127" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCenter()</text>
+<text text-anchor="start" x="127" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetCenter()</text>
+<text text-anchor="start" x="127" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetRadius1()</text>
+<text text-anchor="start" x="127" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetRadius1()</text>
+<text text-anchor="start" x="127" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetRadius2()</text>
+<text text-anchor="start" x="127" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetRadius2()</text>
+<text text-anchor="start" x="127" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 12 more...</text>
+<text text-anchor="start" x="127" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
+<text text-anchor="start" x="127" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ deployRadius1TextEdit()</text>
+<text text-anchor="start" x="127" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ deployRadius2TextEdit()</text>
+<text text-anchor="start" x="127" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ deployF1TextEdit()</text>
+<text text-anchor="start" x="127" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ deployF2TextEdit()</text>
+<text text-anchor="start" x="127" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ deployRotationAngleTextEdit()</text>
+<text text-anchor="start" x="127" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FXRadius1()</text>
+<text text-anchor="start" x="127" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FXRadius2()</text>
+<text text-anchor="start" x="127" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FXF1()</text>
+<text text-anchor="start" x="127" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FXF2()</text>
+<text text-anchor="start" x="127" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FXRotationAngle()</text>
+<text text-anchor="start" x="127" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># pointNameChanged()</text>
+<text text-anchor="start" x="127" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CheckState()</text>
+<text text-anchor="start" x="127" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
+<text text-anchor="start" x="127" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
+<text text-anchor="start" x="127" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
+<text text-anchor="start" x="127" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; evalRadiuses()</text>
+<text text-anchor="start" x="127" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; evalAngles()</text>
+<text text-anchor="start" x="127" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; checkAngles()</text>
+<text text-anchor="start" x="127" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; collapseFormula()</text>
 </a>
 </g>
 </g>
