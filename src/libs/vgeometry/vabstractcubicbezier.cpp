@@ -563,7 +563,22 @@ QVector<QPointF> VAbstractCubicBezier::GetCubicBezierPoints(const QPointF &p1, c
  */
 qreal VAbstractCubicBezier::LengthBezier(const QPointF &p1, const QPointF &p2, const QPointF &p3, const QPointF &p4)
 {
-    return PathLength(GetCubicBezierPoints(p1, p2, p3, p4));
+    // 8-point Gauss-Legendre arc-length — replaces recursive subdivision + QPainterPath::length()
+    static const qreal t[] = {0.01985071506835568, 0.10166676129318664,
+                               0.23723379504183550, 0.40828267875217509,
+                               0.59171732124782494, 0.76276620495816450,
+                               0.89833323870681336, 0.98014928493164430};
+    static const qreal w[] = {0.05061426814518813, 0.11119051722668723,
+                               0.15685332293894364, 0.18134189168918099,
+                               0.18134189168918099, 0.15685332293894364,
+                               0.11119051722668723, 0.05061426814518813};
+    qreal len = 0.0;
+    for (int i = 0; i < 8; ++i) {
+        const qreal s = t[i], q = 1.0 - s;
+        const QPointF d = 3.0*(p2-p1)*(q*q) + 6.0*(p3-p2)*(q*s) + 3.0*(p4-p3)*(s*s);
+        len += w[i] * qSqrt(d.x()*d.x() + d.y()*d.y());
+    }
+    return len;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
