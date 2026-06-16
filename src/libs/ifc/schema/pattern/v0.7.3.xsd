@@ -320,6 +320,7 @@
                           <xs:attribute name="penStyle" type="curvePenStyle"/>
                           <xs:attribute name="lineWeight" type="lineWeights"/>
                           <xs:attribute name="duplicate" type="xs:unsignedInt"/>
+                          <xs:attribute name="autoSmooth" type="xs:boolean"/>
                         </xs:complexType>
                       </xs:element>
                     </xs:choice>

@@ -79,12 +79,13 @@ if (Test-Path $src2Exe) { Copy-Item $src2Exe $OutDir }
 # 2) Run windeployqt
 $env:PATH = "$QtDir\bin;$MingwDir;$Msys2Dir;" + $env:PATH
 Write-Host "Running windeployqt..." -ForegroundColor Yellow
-try { & "$QtDir\bin\windeployqt.exe" --no-translations (Join-Path $OutDir "seamly2d.exe") 2>&1 | ForEach-Object { Write-Host $_ } }
-catch { Write-Host "windeployqt warning (non-fatal)" -ForegroundColor Yellow }
+$prevEAP = $ErrorActionPreference
+$ErrorActionPreference = "Continue"
+& "$QtDir\bin\windeployqt.exe" --no-translations (Join-Path $OutDir "seamly2d.exe")
 if (Test-Path $src2Exe) {
-    try { & "$QtDir\bin\windeployqt.exe" --no-translations (Join-Path $OutDir "seamlyme.exe") 2>&1 | Out-Null }
-    catch { <# warnings are non-fatal #> }
+    & "$QtDir\bin\windeployqt.exe" --no-translations (Join-Path $OutDir "seamlyme.exe") 2>$null
 }
+$ErrorActionPreference = $prevEAP
 
 # 3) Transitive DLL walk for Xerces 3.3 + ICU + MinGW runtime
 Write-Host "Collecting transitive DLL dependencies..." -ForegroundColor Yellow
