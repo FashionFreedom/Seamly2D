@@ -1328,9 +1328,10 @@ void TMainWindow::SaveBirthDate(const QDate &date)
 //---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::SaveNotes()
 {
-	if (individualMeasurements->Notes() != ui->plainTextEditNotes->toPlainText())
+	const QString text = ui->plainTextEditNotes->toPlainText().trimmed();
+	if (individualMeasurements->Notes() != text)
 	{
-		individualMeasurements->SetNotes(ui->plainTextEditNotes->toPlainText());
+		individualMeasurements->SetNotes(text);
 		MeasurementsWasSaved(false);
 	}
 }
@@ -2447,7 +2448,7 @@ void TMainWindow::InitWindow()
 		ui->toolButtonFindNext->setEnabled(state);
 	});
 
-	ui->plainTextEditNotes->setPlainText(individualMeasurements->Notes());
+	ui->plainTextEditNotes->setPlainText(individualMeasurements->Notes().trimmed());
 	connect(ui->plainTextEditNotes, &QPlainTextEdit::textChanged, this, &TMainWindow::SaveNotes);
 
 	ui->actionAddCustom->setEnabled(true);
