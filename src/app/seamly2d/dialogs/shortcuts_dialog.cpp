@@ -130,17 +130,17 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                  .arg(tr("Previous")).arg(tr("Ctrl+Left"))                   //18 & 19
                                  .arg(tr("Selected")).arg(tr("Ctrl+Right"))                  //20 & 21
                                  .arg(tr("Area")).arg(tr("Ctrl+A"))                          //22 & 23
-                                 .arg(tr("Pan")).arg("Z, P")                                 //24 & 25
-                                 .arg(tr("Show Name Text")).arg("V, P")                      //26 & 27
+                                 .arg(tr("Pan")).arg(QString("Z, P"))                             //24 & 25
+                                 .arg(tr("Show Name Text")).arg(QString("V, P"))                  //26 & 27
                                  .arg(tr("Increase Text Size")).arg(tr("Ctrl+]"))            //28 & 29
                                  .arg(tr("Decrease Text Size")).arg(tr("Ctrl+["))            //30 & 31
-                                 .arg(tr("Use Tool Color")).arg("T")                         //32 & 33
-                                 .arg(tr("Wireframe")).arg("V, W")                           //34 & 35
-                                 .arg(tr("Curve Control Points")).arg("V, C")                //36 & 37
-                                 .arg(tr("Axis Origin")).arg("V, A")                         //38 & 39
-                                 .arg(tr("Seam Allowance")).arg("V, S")                      //40 & 41
-                                 .arg(tr("Grainlines")).arg("V, G")                          //42 & 43
-                                 .arg(tr("Labels")).arg("V, L");                             //44 & 45
+                                 .arg(tr("Use Tool Color")).arg(QString("T"))                     //32 & 33
+                                 .arg(tr("Wireframe")).arg(QString("V, W"))                       //34 & 35
+                                 .arg(tr("Curve Control Points")).arg(QString("V, C"))            //36 & 37
+                                 .arg(tr("Axis Origin")).arg(QString("V, A"))                     //38 & 39
+                                 .arg(tr("Seam Allowance")).arg(QString("V, S"))                  //40 & 41
+                                 .arg(tr("Grainlines")).arg(QString("V, G"))                      //42 & 43
+                                 .arg(tr("Labels")).arg(QString("V, L"));                         //44 & 45
 
     const QString measurements = QString("<table style=font-size:11pt; font-weight:600>"
                                     "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
@@ -177,17 +177,17 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                     "<tr><td width = 50%>%22       </td><td>%23<br></td></tr>"
                                  "</table>")
                                  .arg(tr("Point"))                                           //1
-                                 .arg(tr("Length and Angle")).arg("L, A")                    //2 & 3
-                                 .arg(tr("On Line")).arg("O, L")                             //4 & 5
-                                 .arg(tr("On Perpendicular")).arg("O, P")                    //6 & 7
-                                 .arg(tr("On Bisector")).arg("O, B")                         //8 & 9
-                                 .arg(tr("Length to Line")).arg("P, S")                      //10 & 11
-                                 .arg(tr("Intersect Arc and Line")).arg("A, L")              //12 & 13
-                                 .arg(tr("Intersect Axis and Triangle")).arg("X, T")         //14 & 15
-                                 .arg(tr("Intersect XY")).arg("X, Y")                        //16 & 17
-                                 .arg(tr("Intersect Line and Perpendicular")).arg("L, P")    //18 & 19
-                                 .arg(tr("Intersect Line and Axis")).arg("L, X")             //20 & 21
-                                 .arg(tr("Midpoint On Line")).arg(tr("Shift+O, Shift+L"));   //22 & 23
+                                 .arg(tr("Length and Angle")).arg(QString("L, A"))                //2 & 3
+                                 .arg(tr("On Line")).arg(QString("O, L"))                         //4 & 5
+                                 .arg(tr("On Perpendicular")).arg(QString("O, P"))                //6 & 7
+                                 .arg(tr("On Bisector")).arg(QString("O, B"))                     //8 & 9
+                                 .arg(tr("Length to Line")).arg(QString("P, S"))                  //10 & 11
+                                 .arg(tr("Intersect Arc and Line")).arg(QString("A, L"))          //12 & 13
+                                 .arg(tr("Intersect Axis and Triangle")).arg(QString("X, T"))     //14 & 15
+                                 .arg(tr("Intersect XY")).arg(QString("X, Y"))                    //16 & 17
+                                 .arg(tr("Intersect Line and Perpendicular")).arg(QString("L, P"))//18 & 19
+                                 .arg(tr("Intersect Line and Axis")).arg(QString("L, X"))         //20 & 21
+                                 .arg(tr("Midpoint On Line")).arg(tr("Shift+O, Shift+L"));        //22 & 23
 
 
     const QString line = QString("<table style=font-size:11pt; font-weight:600>"
@@ -197,7 +197,7 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                  "</table>")
                                  .arg(tr("Line"))                                            //1
                                  .arg(tr("Line")).arg(tr("Alt+L"))                           //2 & 3
-                                 .arg(tr("Point - Intersect Lines")).arg("I, L");            //4 & 5
+                                 .arg(tr("Point - Intersect Lines")).arg(QString("I, L"));   //4 & 5
 
     const QString curves = QString("<table style=font-size:11pt; font-weight:600>"
                                     "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
@@ -210,15 +210,15 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                     "<tr><td width = 50%>%14       </td><td>%15</td></tr>"
                                     "<tr><td width = 50%>%16       </td><td>%17<br></td></tr>"
                                   "</table>")
-                                 .arg(tr("Curves"))                                          //1
-                                 .arg(tr("Curve - Interactive")).arg(tr("Alt+C"))            //2 &3
-                                 .arg(tr("Spline - Interactive")).arg(tr("Alt+S"))           //4 & 5
-                                 .arg(tr("Curve - Fixed")).arg(tr("Alt+Shift+C"))            //6 & 7
-                                 .arg(tr("Spline - Fixed")).arg(tr("Alt+Shift+S"))           //8 & 9
-                                 .arg(tr("Point - On Curve")).arg("O, C")                    //10 & 11
-                                 .arg(tr("Point - On Spline	")).arg("O, S")                  //12 & 13
-                                 .arg(tr("Point - Intersect Curves")).arg("I, C")            //14 & 15
-                                 .arg(tr("Point - Intersect Curve and Axis")).arg("C, X");   //16 & 17
+                                 .arg(tr("Curves"))                                                      //1
+                                 .arg(tr("Curve - Interactive")).arg(tr("Alt+C"))                        //2 &3
+                                 .arg(tr("Spline - Interactive")).arg(tr("Alt+S"))                       //4 & 5
+                                 .arg(tr("Curve - Fixed")).arg(tr("Alt+Shift+C"))                        //6 & 7
+                                 .arg(tr("Spline - Fixed")).arg(tr("Alt+Shift+S"))                       //8 & 9
+                                 .arg(tr("Point - On Curve")).arg(QString("O, C"))                       //10 & 11
+                                 .arg(tr("Point - On Spline	")).arg(QString("O, S"))                     //12 & 13
+                                 .arg(tr("Point - Intersect Curves")).arg(QString("I, C"))               //14 & 15
+                                 .arg(QString("Point - Intersect Curve and Axis")).arg(QString("C, X")); //16 & 17
 
 
     const QString arcs = QString("<table style=font-size:11pt; font-weight:600>"
@@ -233,16 +233,16 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                     "<tr><td width = 50%>%16       </td><td>%17</td></tr>"
                                     "<tr><td width = 50%>%18       </td><td>%19<br></td></tr>"
                                   "</table>")
-                                  .arg(tr("Arcs"))                                                  //1
-                                  .arg(tr("Arc - Radius and Angle")).arg(tr("Alt+A"))               //2 & 3
-                                  .arg(tr("Arc - Radius and Length")).arg(tr("Alt+Shift+A"))        //4 & 5
-                                  .arg(tr("Point - On Arc")).arg("O, A")                            //6 & 7
-                                  .arg(tr("Point - Intersect Arc and Axis")).arg("A, X")            //8 & 9
-                                  .arg(tr("Point - Intersect Arcs")).arg("I, A")                    //10 & 11
-                                  .arg(tr("Point - Intersect Circles")).arg(tr("Shift+I, Shift+C")) //12 & 13
-                                  .arg(tr("Point - Intersect Circle and Tangent")).arg("C, T")      //14 & 15
-                                  .arg(tr("Point - Intersect Arc and Tangent")).arg("A, T")         //16 & 17
-                                  .arg(tr("Elliptical Arc")).arg(tr("Alt+E"));                      //18 & 19
+                                  .arg(tr("Arcs"))                                                      //1
+                                  .arg(tr("Arc - Radius and Angle")).arg(tr("Alt+A"))                   //2 & 3
+                                  .arg(tr("Arc - Radius and Length")).arg(tr("Alt+Shift+A"))            //4 & 5
+                                  .arg(tr("Point - On Arc")).arg(QString("O, A"))                       //6 & 7
+                                  .arg(tr("Point - Intersect Arc and Axis")).arg(QString("A, X"))       //8 & 9
+                                  .arg(tr("Point - Intersect Arcs")).arg(QString("I, A"))               //10 & 11
+                                  .arg(tr("Point - Intersect Circles")).arg(tr("Shift+I, Shift+C"))     //12 & 13
+                                  .arg(tr("Point - Intersect Circle and Tangent")).arg(QString("C, T")) //14 & 15
+                                  .arg(tr("Point - Intersect Arc and Tangent")).arg(QString("A, T"))    //16 & 17
+                                  .arg(tr("Elliptical Arc")).arg(tr("Alt+E"));                          //18 & 19
 
 
     const QString operations = QString("<table style=font-size:11pt; font-weight:600>"
@@ -255,21 +255,21 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                     "<tr><td width = 50%>%12       </td><td>%13</td></tr>"
                                     "<tr><td width = 50%>%14       </td><td>%15<br></td></tr>"
                                  "</table>")
-                                 .arg(tr("Operations"))                                      //1
-                                 .arg(tr("Add Objects to Group")).arg("G")                   //2 & 3
-                                 .arg(tr("Rotation")).arg("R")                               //4 & 5
-                                 .arg(tr("Mirror by Line")).arg("M, L")                      //6 & 7
-                                 .arg(tr("Mirror by Axis")).arg("M, A")                      //8 & 9
-                                 .arg(tr("Move")).arg(tr("Alt+M"))                           //10 & 11
-                                 .arg(tr("True Darts")).arg("T, D")                          //12 & 13
-                                 .arg(tr("Export Draft Blocks")).arg("E, D");                //14 & 15
+                                 .arg(tr("Operations"))                                //1
+                                 .arg(tr("Add Objects to Group")).arg(QString("G"))    //2 & 3
+                                 .arg(tr("Rotation")).arg(QString("R"))                //4 & 5
+                                 .arg(tr("Mirror by Line")).arg(QString("M, L"))       //6 & 7
+                                 .arg(tr("Mirror by Axis")).arg(QString("M, A"))       //8 & 9
+                                 .arg(tr("Move")).arg(tr("Alt+M"))                     //10 & 11
+                                 .arg(tr("True Darts")).arg(QString("T, D"))           //12 & 13
+                                 .arg(tr("Export Draft Blocks")).arg(QString("E, D")); //14 & 15
 
     const QString images = QString("<table style=font-size:11pt; font-weight:600>"
                                        "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
                                        "<tr><td width = 50%>%2       </td><td>%3<br></td></tr>"
                                        "</table>")
-                                   .arg(tr("Images"))                                      //1
-                                   .arg(tr("Import Image")).arg(tr("Alt + I"));            //2 & 3
+                                   .arg(tr("Images"))                                  //1
+                                   .arg(tr("Import Image")).arg(tr("Alt + I"));        //2 & 3
 
     const QString pattern = QString("<table style=font-size:11pt; font-weight:600>"
                                     "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
@@ -286,19 +286,19 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                     "<tr><td width = 50%>%22       </td><td>%23</td></tr>"
                                     "<tr><td width = 50%>%24       </td><td>%25<br></td></tr>"
                                   "</table>")
-                                  .arg(tr("Pattern Piece"))                                   //1
-                                  .arg(tr("New Pattern Piece")).arg("N, P")                   //2 & 3
-                                  .arg(tr("Anchor Point")).arg("A, P")                        //4 & 5
-                                  .arg(tr("Internal Path")).arg("I, P")                       //6 & 7
-                                  .arg(tr("Insert Nodes")).arg("I, N")                        //8 & 9
-                                  .arg(tr("Edit Properties")).arg("P")                        //10 & 11
-                                  .arg(tr("Toggle Lock")).arg(tr("Ctrl+L"))                   //12 & 13
-                                  .arg(tr("Include in Layout")).arg("I")                      //14 & 15
-                                  .arg(tr("Forbid Flipping")).arg("F")                        //16 & 17
-                                  .arg(tr("Raise To Top")).arg(tr("Ctrl+Home"))               //18 & 19
-                                  .arg(tr("Lower To Bottom")).arg(tr("Ctrl+End"))             //20 & 21
-                                  .arg(tr("Rename")).arg("F2")                                //21 & 23
-                                  .arg(tr("Delete")).arg(tr("Del"));                          //24 & 25
+                                  .arg(tr("Pattern Piece"))                           //1
+                                  .arg(tr("New Pattern Piece")).arg(QString("N, P"))  //2 & 3
+                                  .arg(tr("Anchor Point")).arg(QString("A, P"))       //4 & 5
+                                  .arg(tr("Internal Path")).arg(QString("I, P"))      //6 & 7
+                                  .arg(tr("Insert Nodes")).arg(QString("I, N"))       //8 & 9
+                                  .arg(tr("Edit Properties")).arg(QString("P"))       //10 & 11
+                                  .arg(tr("Toggle Lock")).arg(tr("Ctrl+L"))           //12 & 13
+                                  .arg(tr("Include in Layout")).arg(QString("I"))     //14 & 15
+                                  .arg(tr("Forbid Flipping")).arg(QString("F"))       //16 & 17
+                                  .arg(tr("Raise To Top")).arg(tr("Ctrl+Home"))       //18 & 19
+                                  .arg(tr("Lower To Bottom")).arg(tr("Ctrl+End"))     //20 & 21
+                                  .arg(tr("Rename")).arg(QString("F2"))                    //21 & 23
+                                  .arg(tr("Delete")).arg(tr("Del"));                  //24 & 25
 
     const QString details = QString("<table style=font-size:11pt; font-weight:600>"
                                     "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
@@ -306,8 +306,8 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                     "<tr><td width = 50%>%4       </td><td>%5<br></td></tr>"
                                  "</table>")
                                  .arg(tr("Details"))                                         //1
-                                 .arg(tr("Unite Pieces")).arg("U")                           //2 & 3
-                                 .arg(tr("Export Pieces")).arg("E, P");                      //4 & 5
+                                 .arg(tr("Unite Pieces")).arg(QString("U"))                  //2 & 3
+                                 .arg(tr("Export Pieces")).arg(QString("E, P"));             //4 & 5
 
     const QString layout = QString("<table style=font-size:11pt; font-weight:600>"
                                     "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
@@ -316,8 +316,8 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                     "<tr><td width = 50%>%6       </td><td>%7<br></td></tr>"
                                  "</table>")
                                  .arg(tr("Layout"))                                          //1
-                                 .arg(tr("New Layout")).arg("N, L")                          //2 & 3
-                                 .arg(tr("Export Layout")).arg("E, L")                       //4 & 5
+                                 .arg(tr("New Layout")).arg(QString("N, L"))                 //2 & 3
+                                 .arg(tr("Export Layout")).arg(QString("E, L"))              //4 & 5
                                  .arg(tr("Last Tool")).arg(tr("Ctrl+Shift+L"));              //6 & 7
 
 
@@ -343,7 +343,7 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                     "<tr><td width = 50%>%2       </td><td>%3<br></td></tr>"
                                  "</table>")
                                  .arg(tr("Help"))                                            //1
-                                 .arg(tr("Keyboard Shortcuts")).arg("K");                    //2 & 3
+                                 .arg(tr("Keyboard Shortcuts")).arg(QString("K"));           //2 & 3
 
     ui->shortcuts_TextBrowser->setHtml(file + edit + view + measurements + tools + points + line + curves +
                                        arcs + operations + images + pattern + details + layout + history + utilities + help);

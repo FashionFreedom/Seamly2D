@@ -53,6 +53,8 @@
 #ifndef PREFERENCESCONFIGURATIONPAGE_H
 #define PREFERENCESCONFIGURATIONPAGE_H
 
+#include <QLocale>
+#include <QRadioButton>
 #include <QWidget>
 
 namespace Ui
@@ -71,7 +73,7 @@ public:
     void         apply();
 
 protected:
-    virtual void changeEvent(QEvent* event) Q_DECL_OVERRIDE;
+    virtual void changeEvent(QEvent* event) override;
 
 private:
     Q_DISABLE_COPY(PreferencesConfigurationPage)
@@ -89,6 +91,8 @@ private:
     void setPointNameComboBox(const QStringList &list);
     void initUnits();
     void adjustTextColor();
+    void setLocaleTooltip(QLocale locale, QRadioButton *button);
+
 };
 
 #endif // PREFERENCESCONFIGURATIONPAGE_H

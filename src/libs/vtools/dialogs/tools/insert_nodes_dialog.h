@@ -56,7 +56,7 @@
 #include "dialogtool.h"
 #include "../vpatterndb/vpiecenode.h"
 
-#include <QSound>
+#include <QSoundEffect>
 
 class VPieceNode;
 
@@ -73,23 +73,23 @@ public:
     explicit              InsertNodesDialog(const VContainer *data, quint32 toolId, QWidget *parent = nullptr);
     virtual              ~InsertNodesDialog();
 
-    virtual void          SetPiecesList(const QVector<quint32> &list) Q_DECL_OVERRIDE;
+    virtual void          SetPiecesList(const QVector<quint32> &list) override;
 
     quint32               getPieceId() const;
 
     QVector<VPieceNode>   getNodes() const;
 
-    virtual void          ShowDialog(bool click) Q_DECL_OVERRIDE;
+    virtual void          ShowDialog(bool click) override;
 
 public slots:
-    virtual void          SelectedObject(bool selected, quint32 object, quint32 tool) Q_DECL_OVERRIDE;
+    virtual void          SelectedObject(bool selected, quint32 object, quint32 tool) override;
 
 private slots:
     void                  showContextMenu(const QPoint &pos);
 
 protected:
-    virtual void          checkState() Q_DECL_FINAL;
-    virtual bool          eventFilter(QObject *object, QEvent *event) Q_DECL_OVERRIDE;
+    virtual void          checkState() final;
+    virtual bool          eventFilter(QObject *object, QEvent *event) override;
 
 private:
                           Q_DISABLE_COPY(InsertNodesDialog)
@@ -98,7 +98,7 @@ private:
     QVector<VPieceNode>   m_nodes;
     bool                  m_nodeFlag;
     bool                  m_piecesFlag;
-    QSound               *m_beep;
+    QSoundEffect          *m_beep;
     void                  validatePieces();
     void                  validateNodes();
     quint32               getLastNodeId() const;

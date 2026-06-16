@@ -39,8 +39,8 @@ public:
                  ExpandingTextEdit(const QString &contents, QWidget *parent = nullptr);
 
 protected:
-    virtual void focusInEvent(QFocusEvent *event) Q_DECL_OVERRIDE;
-    virtual void focusOutEvent(QFocusEvent *event) Q_DECL_OVERRIDE;
+    virtual void focusInEvent(QFocusEvent *event) override;
+    virtual void focusOutEvent(QFocusEvent *event) override;
 
 private:
     Q_DISABLE_COPY(ExpandingTextEdit)

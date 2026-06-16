@@ -64,9 +64,7 @@
 #include <QMessageLogger>
 #include <QScopedPointer>
 #include <QSet>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QtDebug>
 
 #include "../ifc/exception/vexceptionemptyparameter.h"

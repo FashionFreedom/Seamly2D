@@ -163,3 +163,12 @@ $RECYCLE.BIN/
 target_wrapper.sh
 *.bak
 
+# test key files
+*seamly-signing-key.json
+# Allow xerces lib
+!xerces-c_3D.lib
+!xerces-c_3_2D.dll
+# QT creator files
+.qtc_clangd/
+.vscode/
+.qmake.stash

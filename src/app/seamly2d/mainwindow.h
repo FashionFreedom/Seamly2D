@@ -88,6 +88,10 @@ class LayoutToolBox;
 class QToolButton;
 class QDoubleSpinBox;
 class QFontComboBox;
+
+struct DraftImage;
+class ImageItem;
+
 class MouseCoordinates;
 class PenToolBar;
 
@@ -99,7 +103,7 @@ class MainWindow : public MainWindowsNoGUI
     Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    virtual ~MainWindow() Q_DECL_OVERRIDE;
+    virtual ~MainWindow() override;
 
     bool LoadPattern(const QString &fileName, const QString &customMeasureFile = QString());
 
@@ -108,9 +112,9 @@ public slots:
     void penChanged(Pen pen);
     void basePointChanged();
 
-    virtual void ShowToolTip(const QString &toolTip) Q_DECL_OVERRIDE;
-    virtual void updateGroups() Q_DECL_OVERRIDE;
-    virtual void zoomToSelected() Q_DECL_OVERRIDE;
+    virtual void setStatusMessage(const QString &message) override;
+    virtual void updateGroups() override;
+    virtual void zoomToSelected() override;
     void         showAllGroups();
     void         hideAllGroups();
     void         lockAllGroups();
@@ -152,15 +156,15 @@ signals:
     void signalZoomPanActive(bool enable) const;
 
 protected:
-    virtual void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
-    virtual void keyReleaseEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
-    virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
-    virtual void changeEvent(QEvent* event) Q_DECL_OVERRIDE;
-    virtual void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
-    virtual void customEvent(QEvent * event) Q_DECL_OVERRIDE;
-    virtual void CleanLayout() Q_DECL_OVERRIDE;
-    virtual void PrepareSceneList() Q_DECL_OVERRIDE;
-    virtual void exportToCSVData(const QString &fileName, const DialogExportToCSV &dialog) Q_DECL_FINAL;
+    virtual void keyPressEvent(QKeyEvent *event) override;
+    virtual void keyReleaseEvent(QKeyEvent *event) override;
+    virtual void showEvent(QShowEvent *event) override;
+    virtual void changeEvent(QEvent* event) override;
+    virtual void closeEvent(QCloseEvent *event) override;
+    virtual void customEvent(QEvent * event) override;
+    virtual void CleanLayout() override;
+    virtual void PrepareSceneList() override;
+    virtual void exportToCSVData(const QString &fileName, const DialogExportToCSV &dialog) final;
     void         handleExportToCSV();
 
 private slots:
@@ -233,8 +237,6 @@ private slots:
 
     void handleImageTool();
 
-    void setStatusMessage(QString message);
-
     void handlePatternPieceTool(bool checked);
     void handleUnionTool(bool checked);
 
@@ -267,9 +269,9 @@ private slots:
     void LoadIndividual();
     void LoadMultisize();
     void UnloadMeasurements();
-    void ShowMeasurements();
-    void MeasurementsChanged(const QString &path);
-    void SyncMeasurements();
+    void editMeasurements();
+    void measurementsChanged(const QString &path);
+    void syncMeasurements();
 #if defined(Q_OS_MAC)
     void OpenAt(QAction *where);
 #endif //defined(Q_OS_MAC)
@@ -279,38 +281,18 @@ private slots:
 
 private:
     Q_DISABLE_COPY(MainWindow)
-    /** @brief ui keeps information about user interface */
-    Ui::MainWindow                   *ui;
 
+    Ui::MainWindow                   *ui;              /// @brief ui keeps information about user interface.
     QFileSystemWatcher               *watcher;
-
-    /** @brief tool current tool */
-    Tool                              currentTool;
-
-    /** @brief tool last used tool */
-    Tool                              lastUsedTool;
-
-    /** @brief draftScene draft block scene. */
-    VMainGraphicsScene               *draftScene;
-
-    /** @brief pieceScene pattern piece scene. */
-    VMainGraphicsScene               *pieceScene;
-
-    /** @brief mouseCoordinates pointer to label who show mouse coordinate. */
-    QPointer<MouseCoordinates>        mouseCoordinates;
-
+    Tool                              currentTool;     /// @brief tool current tool.
+    Tool                              lastUsedTool;    /// @brief tool last used tool.
+    VMainGraphicsScene               *draftScene;      /// @brief draftScene draft block scene.
+    VMainGraphicsScene               *pieceScene;      /// @brief pieceScene pattern piece scene.
+    QPointer<MouseCoordinates>        mouseCoordinates;/// @brief pointer to mouse coordinates label.
     QPointer<QToolButton>             infoToolButton;
-
-    /** @brief helpLabel help show tooltip. */
-    QLabel                           *helpLabel;
-
-    /** @brief isInitialized true after first show window. */
-    bool                              isInitialized;
-
-    /** @brief mChanges true if measurement file was changed. */
-    bool                              mChanges;
-    bool                              mChangesAsked;
-
+    QLabel                           *m_statusMessage; /// @brief helpLabel help show tooltip.
+    bool                              isInitialized;   /// @brief isInitialized true after first show window.
+    bool                              mChanges;        /// @brief mChanges true if measurement file was changed.
     bool                              patternReadOnly;
 
     QPointer<DialogVariables>         dialogTable;
@@ -320,15 +302,15 @@ private:
     QFontComboBox                    *fontComboBox;
     QComboBox                        *fontSizeComboBox;
     QComboBox                        *basePointComboBox;
-    QComboBox                        *draftBlockComboBox;  /** @brief draftBlockComboBox stores names of draft blocks.*/
+    QComboBox                        *draftBlockComboBox;  /// @brief draftBlockComboBox stores names of draft blocks.
     QLabel                           *draftBlockLabel;
-    qint32                            currentBlockIndex;   /** @brief currentBlockIndex  current selected draft block.*/
-    qint32                            currentToolBoxIndex; /** @brief currentToolBoxIndex  current set of tools. */
+    qint32                            currentBlockIndex;   /// @brief currentBlockIndex  current selected draft block.
+    qint32                            currentToolBoxIndex; /// @brief currentToolBoxIndex  current set of tools.
     bool                              isToolOptionsDockVisible;
     bool                              isGroupsDockVisible;
     bool                              isLayoutsDockVisible;
     bool                              isToolboxDockVisible;
-    bool                              drawMode;            /** @brief drawMode true if draft scene active. */
+    bool                              drawMode;            /// @brief drawMode true if draft scene active.
 
     enum { MaxRecentFiles = 5 };
     QAction                          *recentFileActs[MaxRecentFiles];
@@ -349,7 +331,7 @@ private:
 
     QDoubleSpinBox                   *zoomScaleSpinBox;
 
-    PenToolBar                       *m_penToolBar; //!< for selecting the current pen
+    PenToolBar                       *m_penToolBar;        /// @brief pointer to the current pen.
     PenToolBar                       *m_penReset;
     QComboBox                        *m_zoomToPointComboBox;
 
@@ -388,8 +370,10 @@ private:
     void               setToolsEnabled(bool enable);
     void               SetLayoutModeActions();
 
+    void               setSceneBackgroundColor();
     void               SaveCurrentScene();
     void               RestoreCurrentScene();
+
     void               MinimumScrollBar();
 
     template <typename Dialog, typename Func>
@@ -433,9 +417,6 @@ private:
     QString            createDraftBlockName(const QString &text);
     QString            checkPathToMeasurements(const QString &patternPath, const QString &path);
     void               changeDraftBlock(int index, bool zoomBestFit = true);
-    /**
-     * @brief EndVisualization try show dialog after and working with tool visualization.
-     */
     void               EndVisualization(bool click = false);
     void               zoomFirstShow();
     void               UpdateHeightsList(const QStringList &list);
@@ -466,7 +447,7 @@ private:
     QString            GetPatternFileName();
     QString            GetMeasurementFileName();
 
-    void               UpdateWindowTitle();
+    void               updateWindowTitle();
     void               upDateScenes();
     void               updateViewToolbar();
     void               resetPanShortcuts();

@@ -1,20 +1,24 @@
-/******************************************************************************
- *   @file   dialogarcwithlength.cpp
- **  @author Douglas S Caskey
- **  @date   21 Mar, 2023
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program to create and model patterns of clothing.
- **  Copyright (C) 2017-2023 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *****************************************************************************/
+// @file   dialogarcwithlength.cpp
+// @author Douglas S Caskey
+// @date   26 Jun, 2024
+//
+// @copyright
+// Copyright (C) 2017 - 2024 Seamly, LLC
+// https://github.com/fashionfreedom/seamly2d
+//
+// @brief
+// Seamly2D is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Seamly2D is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
 
 /************************************************************************
  **
@@ -103,6 +107,7 @@ DialogArcWithLength::DialogArcWithLength(const VContainer *data, const quint32 &
 
     ui->plainTextEditRadius->installEventFilter(this);
     ui->plainTextEditF1->installEventFilter(this);
+    ui->plainTextEditF1->setToolTip(makeAngleTooltip());
     ui->plainTextEditLength->installEventFilter(this);
 
     timerRadius = new QTimer(this);
@@ -158,6 +163,8 @@ DialogArcWithLength::DialogArcWithLength(const VContainer *data, const quint32 &
 
     connect(ui->centerPoint_ComboBox, &QComboBox::currentTextChanged, this, &DialogArcWithLength::pointNameChanged);
 
+    ui->plainTextEditRadius->setFocus();
+
     vis = new VisToolArcWithLength(data);
 }
 
@@ -189,7 +196,7 @@ quint32 DialogArcWithLength::GetCenter() const
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArcWithLength::SetCenter(const quint32 &value)
 {
-    ChangeCurrentData(ui->centerPoint_ComboBox, value);
+    changeCurrentData(ui->centerPoint_ComboBox, value);
     vis->setObject1Id(value);
 }
 
@@ -267,13 +274,13 @@ void DialogArcWithLength::SetLength(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogArcWithLength::getPenStyle() const
 {
-    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+    return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArcWithLength::setPenStyle(const QString &value)
 {
-    ChangeCurrentData(ui->lineType_ComboBox, value);
+    changeCurrentData(ui->lineType_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -283,7 +290,7 @@ void DialogArcWithLength::setPenStyle(const QString &value)
  */
 QString DialogArcWithLength::getLineWeight() const
 {
-        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -293,19 +300,19 @@ QString DialogArcWithLength::getLineWeight() const
  */
 void DialogArcWithLength::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    changeCurrentData(ui->lineWeight_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogArcWithLength::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArcWithLength::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -350,7 +357,7 @@ void DialogArcWithLength::RadiusChanged()
     labelEditFormula = ui->labelEditRadius;
     labelResultCalculation = ui->labelResultRadius;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagRadius, ui->plainTextEditRadius, timerRadius, postfix);
+    formulaValueChanged(flagRadius, ui->plainTextEditRadius, timerRadius, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -358,7 +365,7 @@ void DialogArcWithLength::F1Changed()
 {
     labelEditFormula = ui->labelEditF1;
     labelResultCalculation = ui->labelResultF1;
-    ValFormulaChanged(flagF1, ui->plainTextEditF1, timerF1, degreeSymbol);
+    formulaValueChanged(flagF1, ui->plainTextEditF1, timerF1, degreeSymbol);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -367,7 +374,7 @@ void DialogArcWithLength::LengthChanged()
     labelEditFormula = ui->labelEditLength;
     labelResultCalculation = ui->labelResultLength;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagLength, ui->plainTextEditLength, timerLength, postfix);
+    formulaValueChanged(flagLength, ui->plainTextEditLength, timerLength, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

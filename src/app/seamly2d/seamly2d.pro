@@ -12,7 +12,7 @@ include(../../../common.pri)
 
 # Here we don't see "network" library, but, i think, "printsupport" depend on this library, so we still need this
 # library in installer.
-QT       += core gui widgets xml svg printsupport xmlpatterns multimedia
+QT       += core gui widgets xml svg printsupport network multimedia
 
 # We want create executable file
 TEMPLATE = app
@@ -339,6 +339,16 @@ DEPENDPATH += $${PWD}/../../libs/vpropertyexplorer
 win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/vpropertyexplorer.lib
 else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/libvpropertyexplorer.a
 
+# xerces library
+macx: LIBS += -L$${PWD}/../../libs/xerces-c/macx/lib -lxerces-c
+else:unix: LIBS += -lxerces-c
+win32:!win32-g++: LIBS += -L$${PWD}/../../libs/xerces-c/msvc/lib -lxerces-c_3
+win32-g++: LIBS += -L$${PWD}/../../libs/xerces-c/mingw/lib -lxerces-c
+
+win32 {
+    copyToDestdir($${PWD}/$$INSTALL_XERCES, $$shell_path($${OUT_PWD}/$$DESTDIR))
+}
+
 macx{
     APPLE_SIGN_IDENTITY_UNQUOTED = $(APPLE_SIGN_IDENTITY)
     APPLE_SIGN_IDENTITY = $$shell_quote($(APPLE_SIGN_IDENTITY))
@@ -351,7 +361,7 @@ macx{
         # we need --force as seamlyme is already signed, but we need to resign it
         QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app &&
         QMAKE_POST_LINK += codesign --deep --timestamp --options runtime --force -s $${APPLE_SIGN_IDENTITY} $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app &&
-        QMAKE_POST_LINK += codesign --verify $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+        QMAKE_POST_LINK += codesign -vvv --deep --strict $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
     }
 }
 

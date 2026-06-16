@@ -32,12 +32,11 @@
 #include <QLatin1String>
 #include <QLocale>
 #include <QSizePolicy>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QWidget>
 
 #include "expandingtextedit.h"
+#include "../qmuparser/qmudef.h"
 #include "../vproperty_p.h"
 
 
@@ -202,11 +201,11 @@ bool VPE::PlainTextProperty::eventFilter(QObject *object, QEvent *event)
             {
                 if (m_osSeparator)
                 {
-                    textEdit->insertPlainText(QLocale().decimalPoint());
+                    textEdit->insertPlainText(localeDecimalPoint(QLocale()));
                 }
                 else
                 {
-                    textEdit->insertPlainText(QLocale::c().decimalPoint());
+                    textEdit->insertPlainText(localeDecimalPoint(QLocale::c()));
                 }
                 return true;
             }

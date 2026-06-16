@@ -56,7 +56,7 @@
 #include <qcompilerdetection.h>
 #include <QMetaObject>
 #include <QObject>
-#include <QSound>
+#include <QSoundEffect>
 #include <QString>
 #include <QtGlobal>
 
@@ -77,7 +77,7 @@ class UnionDialog : public DialogTool
 public:
                  UnionDialog(const VContainer *data, const quint32 &toolId,
                              QWidget *parent = nullptr);
-    virtual     ~UnionDialog() Q_DECL_OVERRIDE;
+    virtual     ~UnionDialog() override;
 
     quint32      getPiece1Id() const;
     quint32      getPiece2Id() const;
@@ -85,7 +85,7 @@ public:
     int          getPiece2Index() const;
 
 public slots:
-    virtual void ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
+    virtual void ChosenObject(quint32 id, const SceneObject &type) override;
 
 private:
     Q_DISABLE_COPY(UnionDialog)
@@ -100,7 +100,7 @@ private:
     qint32   numberP;      /** @brief numberP number of points, what we already have */
     quint32  p1;           /** @brief p1 id first point of piece */
     quint32  p2;           /** @brief p2 id second point of piece */
-    QSound  *m_beep;
+    QSoundEffect *m_beep;
 
     bool     CheckObject(const quint32 &id, const quint32 &pieceId) const;
     bool     isPieceValid(const quint32 &pieceId) const;

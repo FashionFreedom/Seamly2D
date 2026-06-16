@@ -1,54 +1,54 @@
- //  @file   vapplication.cpp
- //  @author Douglas S Caskey
- //  @date   7 Mar, 2024
- //
- //  @brief
- //  @copyright
- //  This source code is part of the Seamly2D project, a pattern making
- //  program to create and model patterns of clothing.
- //  Copyright (C) 2017-2024 Seamly2D project
- //  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- //
- //  Seamly2D is free software: you can redistribute it and/or modify
- //  it under the terms of the GNU General Public License as published by
- //  the Free Software Foundation, either version 3 of the License, or
- //  (at your option) any later version.
- //
- //  Seamly2D is distributed in the hope that it will be useful,
- //  but WITHOUT ANY WARRANTY; without even the implied warranty of
- //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- //  GNU General Public License for more details.
- //
- //  You should have received a copy of the GNU General Public License
- //  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vapplication.cpp
+//  @author Douglas S Caskey
+//  @date   7 Mar, 2024
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
+//  Copyright (C) 2017-2025 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+// ---------------------------------------------------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   vapplication.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vapplication.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   November 15, 2013
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2015 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "application_2d.h"
 
@@ -76,7 +76,6 @@
 #include <QMessageBox>
 #include <QThread>
 #include <QDateTime>
-#include <QtXmlPatterns>
 #include <QIcon>
 
 QT_WARNING_PUSH
@@ -87,9 +86,9 @@ Q_LOGGING_CATEGORY(vApp, "v.application")
 
 QT_WARNING_POP
 
-Q_DECL_CONSTEXPR auto DAYS_TO_KEEP_LOGS = 3;
+constexpr auto DAYS_TO_KEEP_LOGS = 3;
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
     // Why on earth didn't Qt want to make failed signal/slot connections qWarning?
@@ -260,14 +259,14 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     }
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 
 #define DefWidth 1.2//mm
 
-//  --------------------
-// @brief Application2D constructor.
-// @param argc number arguments.
-// @param argv command line.
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief Application2D constructor.
+/// @param argc number arguments.
+/// @param argv command line.
  Application2D::Application2D(int &argc, char **argv)
     : VAbstractApplication(argc, argv)
     , m_trVars(nullptr)
@@ -291,7 +290,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     undoStack = new QUndoStack(this);
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 Application2D::~Application2D()
 {
     qCDebug(vApp, "Application closing.");
@@ -300,9 +299,9 @@ Application2D::~Application2D()
     VCommandLine::Reset();
 }
 
-//  --------------------
-// @brief startNewSeamly2D start Seamly2D in new process, send path to pattern file in argument.
-// @param fileName path to pattern file.
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief startNewSeamly2D start Seamly2D in new process, send path to pattern file in argument.
+/// @param fileName path to pattern file.
 void Application2D::startNewSeamly2D(const QString &fileName)
 {
     qCDebug(vApp, "Open new detached process.");
@@ -336,12 +335,12 @@ void Application2D::startNewSeamly2D(const QString &fileName)
     }
 }
 
-//  --------------------
-// @brief notify Reimplemented from QApplication::notify().
-// @param receiver receiver.
-// @param event event.
-// @return value that is returned from the receiver's event handler.
-// reimplemented from QApplication so we can throw exceptions in slots
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief notify Reimplemented from QApplication::notify().
+/// @param receiver receiver.
+/// @param event event.
+/// @return value that is returned from the receiver's event handler.
+/// reimplemented from QApplication so we can throw exceptions in slots
 bool Application2D::notify(QObject *receiver, QEvent *event)
 {
     try
@@ -407,7 +406,7 @@ bool Application2D::notify(QObject *receiver, QEvent *event)
     return false;
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 QString Application2D::seamlyMeFilePath() const
 {
     const QString seamlyme = QStringLiteral("seamlyme");
@@ -460,7 +459,7 @@ QString Application2D::seamlyMeFilePath() const
 #endif
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 QString Application2D::logDirPath() const
 {
 #if defined(Q_OS_WIN) || defined(Q_OS_OSX)
@@ -474,13 +473,13 @@ QString Application2D::logDirPath() const
     return logDirPath;
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 QString Application2D::logPath() const
 {
     return QString("%1/seamly2d-pid%2.log").arg(logDirPath()).arg(applicationPid());
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 bool Application2D::createLogDir() const
 {
     QDir logDir(logDirPath());
@@ -491,7 +490,7 @@ bool Application2D::createLogDir() const
     return true;
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 void Application2D::beginLogging()
 {
     VlpCreateLock(m_lockLog, logPath(), [this](){return new QFile(logPath());});
@@ -516,7 +515,7 @@ void Application2D::beginLogging()
     }
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 void Application2D::clearOldLogs() const
 {
     QDir logsDir(logDirPath());
@@ -558,7 +557,7 @@ void Application2D::clearOldLogs() const
     }
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 void Application2D::initOptions()
 {
     // Run creation log after sending crash report
@@ -597,7 +596,7 @@ void Application2D::initOptions()
     QDir().mkpath(settings->getDefaultBackupFilePath());
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 QStringList Application2D::pointNameLanguages()
 {
     QStringList list = QStringList()  <<  "de" // German
@@ -611,7 +610,7 @@ QStringList Application2D::pointNameLanguages()
     return list;
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 void Application2D::startLogging()
 {
     if (createLogDir())
@@ -621,19 +620,19 @@ void Application2D::startLogging()
     }
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 QTextStream *Application2D::logFile()
 {
     return m_out.get();
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 const VTranslateVars *Application2D::translateVariables()
 {
     return m_trVars;
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 void Application2D::initTranslateVariables()
 {
     if (m_trVars == nullptr)
@@ -642,7 +641,7 @@ void Application2D::initTranslateVariables()
     }
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 bool Application2D::event(QEvent *event)
 {
     switch(event->type())
@@ -680,37 +679,56 @@ bool Application2D::event(QEvent *event)
     return VAbstractApplication::event(event);
 }
 
-//  --------------------
-// @brief openSettings get access to application settings.
-// Because we can create object in constructor we open file separately.
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief openSettings get access to application settings.
+/// Because we can create object in constructor we open file separately.
 void Application2D::openSettings()
 {
-    settings = new VSettings(QSettings::IniFormat, QSettings::UserScope, QCoreApplication::organizationName(),
-                             QCoreApplication::applicationName(), this);
+    QSettings settings(QSettings::IniFormat, QSettings::UserScope,
+                       QCoreApplication::organizationName(),
+                       QCoreApplication::applicationName());
+
+    const QString qt5Settings = settings.fileName();
+    const QString dir = QFileInfo(qt5Settings).absolutePath();
+    const QString qt5Common   = dir + "/common.ini";
+    const QString qt6Settings = dir + "/qt6_seamly2d.ini";
+    const QString qt6Common   = dir + "/qt6_common.ini";
+
+    if (!QFileInfo::exists(qt6Common) && QFileInfo::exists(qt5Common))
+    {
+        QFile::copy(qt5Common, qt6Common);
+    }
+
+    if (!QFileInfo::exists(qt6Settings) && QFileInfo::exists(qt5Settings))
+    {
+        QFile::copy(qt5Settings, qt6Settings);
+    }
+
+    m_settings = new VSettings(qt6Settings, QSettings::IniFormat, this);
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 VSettings *Application2D::Seamly2DSettings()
 {
-    SCASSERT(settings != nullptr)
-    return qobject_cast<VSettings *>(settings);
+    SCASSERT(m_settings != nullptr)
+    return qobject_cast<VSettings *>(m_settings);
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 bool Application2D::isGUIMode()
 {
     return (VCommandLine::commandLine != nullptr) && VCommandLine::commandLine->IsGuiEnabled();
 }
 
-// @brief isAppInGUIMode little hack that allows to have access to application state from VAbstractApplication class.
+/// @brief isAppInGUIMode little hack that allows to have access to application state from VAbstractApplication class.
 bool Application2D::isAppInGUIMode() const
 {
     return isGUIMode();
 }
 
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------
 const VCommandLinePtr Application2D::commandLine() const
 {
     return VCommandLine::commandLine;
 }
-//  --------------------
+//---------------------------------------------------------------------------------------------------------------------

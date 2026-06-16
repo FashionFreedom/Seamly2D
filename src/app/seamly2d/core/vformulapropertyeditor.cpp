@@ -99,7 +99,7 @@ VFormulaPropertyEditor::VFormulaPropertyEditor(QWidget *parent)
     // Add label, spacer & button to a horizontal layout)
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->setSpacing(3);
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(textLabel);
     layout->addItem(spacer);
     layout->addWidget(toolButton);

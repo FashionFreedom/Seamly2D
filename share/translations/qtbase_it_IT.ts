@@ -3926,7 +3926,7 @@ Verifica che sia stato inserito il nome corretto del file.</translation>
     </message>
     <message>
         <source>character value in \u.... sequence is too large</source>
-        <translation>valore del carattere troppo grande nella sequenza \u....</translation>
+        <translation>il valore del carattere nella sequenza \u.... è troppo grande</translation>
     </message>
     <message>
         <source>invalid range in character class</source>

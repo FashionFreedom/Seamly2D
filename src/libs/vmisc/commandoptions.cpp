@@ -52,9 +52,7 @@
 #include "commandoptions.h"
 #include "def.h"
 
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QStringList>
 
 const QString LONG_OPTION_BASENAME          = QStringLiteral("basename");

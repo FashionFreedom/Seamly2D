@@ -640,6 +640,25 @@ void VToolOptionsPropertyBrowser::addPropertyLabel(const QString &propertyName, 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::addPropertyBool(const QString &propertyName, bool value,
+                                                  const QString &propertyAttribute)
+{
+    auto *boolProperty = new VPE::VBoolProperty(propertyName);
+    boolProperty->setValue(value);
+    addProperty(boolProperty, propertyAttribute);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::addPropertyEnum(const QString &propertyName, const QStringList &options,
+                                                  int currentIndex, const QString &propertyAttribute)
+{
+    auto *enumProp = new VPE::VEnumProperty(propertyName);
+    enumProp->setLiterals(options);
+    enumProp->setValue(currentIndex);
+    addProperty(enumProp, propertyAttribute);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
 void VToolOptionsPropertyBrowser::addPropertyCrossPoint(Tool *tool, const QString &propertyName)
 {
@@ -726,7 +745,7 @@ void VToolOptionsPropertyBrowser::addPropertyLineWeight(Tool *tool, const QStrin
     if (index == -1)
     {
         index = 6;
-        //qWarning() << "Can't find line weight" << tool->getLineWeight() <<  "in list";
+        qWarning() << "Can't find line weight" << tool->getLineWeight() <<  "in list";
     }
     lineWeightProperty->setValue(index);
     addProperty(lineWeightProperty, AttrLineWeight);
@@ -1993,6 +2012,19 @@ void VToolOptionsPropertyBrowser::changeDataToolSpline(VPE::VProperty *property)
                 tool->setSpline(spl);
             }
             break;
+        case 4: // AttrLength → target length formula (empty = disabled)
+        {
+            const QString formula = f.GetFormula(FormulaType::FromUser);
+            if (formula.isEmpty() || not f.error())
+                tool->SetTargetLength(formula);
+            break;
+        }
+        case 63: // AttrAutoSmooth — use EditRole to get integer index (DisplayRole gives string)
+        {
+            const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
+            tool->SetAutoSmooth(enumVal.toInt() == 1);
+            break;
+        }
         case 27: // AttrColor
             tool->setLineColor(value.toString());
             break;
@@ -2012,7 +2044,6 @@ void VToolOptionsPropertyBrowser::changeDataToolSpline(VPE::VProperty *property)
 void VToolOptionsPropertyBrowser::changeDataToolCubicBezier(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
-
     const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
@@ -2024,9 +2055,32 @@ void VToolOptionsPropertyBrowser::changeDataToolCubicBezier(VPE::VProperty *prop
 
     switch (propertiesList().indexOf(id))
     {
-        case 0: // AttrName
-            Q_UNREACHABLE();//The attribute is read only
+        case 0:  // AttrName — read only
+            Q_UNREACHABLE();
             break;
+        case 55: // AttrPoint1 — first canvas point, read-only via property browser
+            break;
+        case 56: // AttrPoint2 — second canvas point
+            point = *m_data->GeometricObject<VPointF>(value.toInt());
+            spline.SetP2(point);
+            tool->setSpline(spline);
+            break;
+        case 57: // AttrPoint3 — third canvas point
+            point = *m_data->GeometricObject<VPointF>(value.toInt());
+            spline.SetP3(point);
+            tool->setSpline(spline);
+            break;
+        case 58: // AttrPoint4 — fourth canvas point, read-only via property browser
+            break;
+        case 4:  // AttrLength → target length formula
+            tool->SetFormulaTargetLength(value.value<VFormula>());
+            break;
+        case 63: // AttrAutoSmooth — use EditRole to get integer index (DisplayRole gives string)
+        {
+            const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
+            tool->SetAutoSmooth(enumVal.toInt() == 1);
+            break;
+        }
         case 27: // AttrColor
             tool->setLineColor(value.toString());
             break;
@@ -2036,28 +2090,8 @@ void VToolOptionsPropertyBrowser::changeDataToolCubicBezier(VPE::VProperty *prop
         case 60: // AttrLineWeight
             tool->setLineWeight(value.toString());
             break;
-        case 55: // AttrPoint1
-            point = *m_data->GeometricObject<VPointF>(value.toInt());
-            spline.SetP1(point);
-            tool->setSpline(spline);
-            break;
-        case 56: // AttrPoint2
-            point = *m_data->GeometricObject<VPointF>(value.toInt());
-            spline.SetP2(point);
-            tool->setSpline(spline);
-            break;
-        case 57: // AttrPoint3
-            point = *m_data->GeometricObject<VPointF>(value.toInt());
-            spline.SetP3(point);
-            tool->setSpline(spline);
-            break;
-        case 58: // AttrPoint4
-            point = *m_data->GeometricObject<VPointF>(value.toInt());
-            spline.SetP4(point);
-            tool->setSpline(spline);
-            break;
         default:
-            qWarning() << "Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = " << id;
             break;
     }
 }
@@ -2859,6 +2893,16 @@ void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
     angle2.setPostfix(degreeSymbol);
     addPropertyFormula(tr("C2: angle:"), angle2, AttrAngle2);
 
+    // Optional features
+    addPropertyLabel(tr("Options"), AttrName);
+    addPropertyEnum(tr("Smooth curve:"), {tr("No"), tr("Yes")},
+                    tool->GetAutoSmooth() ? 1 : 0, AttrAutoSmooth);
+    VFormula targetLen(tool->GetTargetLength(), tool->getData());
+    targetLen.setCheckZero(false);
+    targetLen.setToolId(tool->getId());
+    targetLen.setPostfix(UnitsToStr(qApp->patternUnit()));
+    addPropertyFormula(tr("Target length:"), targetLen, AttrLength);
+
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
     addPropertyCurveLineType(tool, tr("Linetype:"));
@@ -2869,16 +2913,23 @@ void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
 void VToolOptionsPropertyBrowser::showOptionsToolCubicBezier(QGraphicsItem *item)
 {
     VToolCubicBezier *tool = qgraphicsitem_cast<VToolCubicBezier *>(item);
+    SCASSERT(tool != nullptr)
     tool->ShowVisualization(true);
     const auto spl = tool->getSpline();
 
     formView->setTitle(tr("Curve - Fixed"));
     addPropertyLabel(tr("Selection"), AttrName);
     addPropertyCurveName(tool, tr("Name:"), tr("Spl_"), spl.GetP1().name(), spl.GetP4().name(), true);
-    addObjectProperty(tool, spl.GetP1().name(), tr("First point:"),  AttrPoint1, GOType::Point);
-    addObjectProperty(tool, spl.GetP2().name(), tr("Second point:"), AttrPoint2, GOType::Point);
-    addObjectProperty(tool, spl.GetP3().name(), tr("Third point:"),  AttrPoint3, GOType::Point);
-    addObjectProperty(tool, spl.GetP4().name(), tr("Fourth point:"), AttrPoint4, GOType::Point);
+    addObjectProperty(tool, tool->FirstPointName(),  tr("First point:"),  AttrPoint1, GOType::Point);
+    addObjectProperty(tool, tool->SecondPointName(), tr("Second point:"), AttrPoint2, GOType::Point);
+    addObjectProperty(tool, tool->ThirdPointName(),  tr("Third point:"),  AttrPoint3, GOType::Point);
+    addObjectProperty(tool, tool->ForthPointName(),  tr("Fourth point:"), AttrPoint4, GOType::Point);
+
+    // Optional features
+    addPropertyLabel(tr("Options"), AttrName);
+    addPropertyEnum(tr("Smooth curve:"), {tr("No"), tr("Yes")},
+                    tool->GetAutoSmooth() ? 1 : 0, AttrAutoSmooth);
+    addPropertyFormula(tr("Target length:"), tool->GetFormulaTargetLength(), AttrLength);
 
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
@@ -3816,7 +3867,18 @@ void VToolOptionsPropertyBrowser::updateOptionsToolSpline()
     length2.setValue(length2F);
     idToProperty[AttrLength2]->setValue(length2);
 
+    if (idToProperty.contains(AttrAutoSmooth))
+        idToProperty[AttrAutoSmooth]->setValue(tool->GetAutoSmooth() ? 1 : 0);
 
+    if (idToProperty.contains(AttrLength))
+    {
+        VFormula targetLen(tool->GetTargetLength(), tool->getData());
+        targetLen.setCheckZero(false);
+        targetLen.setToolId(tool->getId());
+        targetLen.setPostfix(UnitsToStr(qApp->patternUnit()));
+        QVariant vTarget; vTarget.setValue(targetLen);
+        idToProperty[AttrLength]->setValue(vTarget);
+    }
 
     idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(),
                                                                             tool->getLineColor()));
@@ -3836,44 +3898,51 @@ void VToolOptionsPropertyBrowser::updateOptionsToolSpline()
 void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezier()
 {
     VToolCubicBezier *tool = qgraphicsitem_cast<VToolCubicBezier *>(currentItem);
+    SCASSERT(tool != nullptr)
     const auto spl = tool->getSpline();
     idToProperty[AttrObjName]->setValue(tr("Spl_") + spl.GetP1().name() + "_" + spl.GetP4().name());
 
-    idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(),
-                                                                            tool->getLineColor()));
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->FirstPointName());
+        idToProperty[AttrPoint1]->setValue(index);
+    }
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->SecondPointName());
+        idToProperty[AttrPoint2]->setValue(index);
+    }
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->ThirdPointName());
+        idToProperty[AttrPoint3]->setValue(index);
+    }
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->ForthPointName());
+        idToProperty[AttrPoint4]->setValue(index);
+    }
 
+    if (idToProperty.contains(AttrAutoSmooth))
+        idToProperty[AttrAutoSmooth]->setValue(tool->GetAutoSmooth() ? 1 : 0);
+
+    if (idToProperty.contains(AttrLength))
+    {
+        QVariant vTarget; vTarget.setValue(tool->GetFormulaTargetLength());
+        idToProperty[AttrLength]->setValue(vTarget);
+    }
+
+    {
+        idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(
+            VAbstractTool::ColorsList(), tool->getLineColor()));
+    }
     {
         const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeNoPenRemovedList(), tool->GetPenStyle());
         idToProperty[AttrPenStyle]->setValue(index);
     }
-
     {
         const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
         idToProperty[AttrLineWeight]->setValue(index);
-    }
-
-    {
-        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
-                                                                               spl.GetP1().name());
-        idToProperty[AttrPoint1]->setValue(index);
-    }
-
-    {
-        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
-                                                                               spl.GetP2().name());
-        idToProperty[AttrPoint2]->setValue(index);
-    }
-
-    {
-        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
-                                                                               spl.GetP3().name());
-        idToProperty[AttrPoint3]->setValue(index);
-    }
-
-    {
-        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
-                                                                               spl.GetP4().name());
-        idToProperty[AttrPoint4]->setValue(index);
     }
 }
 
@@ -4223,6 +4292,7 @@ QStringList VToolOptionsPropertyBrowser::propertiesList() const
                                             << AttrPenStyle                       /* 59 */
                                             << AttrLineWeight                     /* 60 */
                                             << AttrObjName                        /* 61 */
-                                            << AttrDirection;                     /* 62 */
+                                            << AttrDirection                      /* 62 */
+                                            << AttrAutoSmooth;                    /* 63 */
     return attr;
 }

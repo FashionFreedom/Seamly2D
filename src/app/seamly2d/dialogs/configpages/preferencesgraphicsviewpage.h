@@ -28,6 +28,7 @@
 #define PREFERENCES_GRAPHICSVIEWPAGE_H
 
 #include <QWidget>
+#include <QComboBox>
 
 namespace Ui
 {
@@ -46,19 +47,13 @@ public:
 
 protected:
     void                              enableOffsets();
-    virtual void                      changeEvent(QEvent* event) Q_DECL_OVERRIDE;
+    virtual void                      changeEvent(QEvent *event) override;
 
 private:
     Q_DISABLE_COPY(PreferencesGraphicsViewPage )
     Ui::PreferencesGraphicsViewPage  *ui;
-    bool                              m_zrbPositiveColorChanged;
-    bool                              m_zrbNegativeColorChanged;
-    bool                              m_pointNameColorChanged;
-    bool                              m_pointNameHoverColorChanged;
-    bool                              m_orginAxisColorChanged;
-    bool                              m_primarySupportColorChanged;
-    bool                              m_secondarySupportColorChanged;
-    bool                              m_tertiarySupportColorChanged;
+
+    void                              setIndex(QComboBox *box, const QString &text);
 };
 
 #endif // PREFERENCES_GRAPHICSVIEWPAGE_H

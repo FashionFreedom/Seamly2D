@@ -114,7 +114,7 @@ IntersectCirclesDialog::IntersectCirclesDialog(const VContainer *data, const qui
 
     fillComboBoxPoints(ui->comboBoxCircle1Center);
     fillComboBoxPoints(ui->comboBoxCircle2Center);
-    FillComboBoxCrossCirclesPoints(ui->comboBoxResult);
+    fillComboBoxCrossCirclesPoints(ui->comboBoxResult);
 
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged,
             this, &IntersectCirclesDialog::NamePointChanged);
@@ -310,7 +310,7 @@ void IntersectCirclesDialog::Circle1RadiusChanged()
     labelEditFormula = ui->labelEditCircle1Radius;
     labelResultCalculation = ui->labelResultCircle1Radius;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagCircle1Radius, ui->plainTextEditCircle1Radius, timerCircle1Radius, postfix);
+    formulaValueChanged(flagCircle1Radius, ui->plainTextEditCircle1Radius, timerCircle1Radius, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -319,7 +319,7 @@ void IntersectCirclesDialog::Circle2RadiusChanged()
     labelEditFormula = ui->labelEditCircle2Radius;
     labelResultCalculation = ui->labelResultCircle2Radius;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagCircle2Radius, ui->plainTextEditCircle2Radius, timerCircle2Radius, postfix);
+    formulaValueChanged(flagCircle2Radius, ui->plainTextEditCircle2Radius, timerCircle2Radius, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

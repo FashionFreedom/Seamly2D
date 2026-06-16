@@ -66,12 +66,12 @@ class RenameDraftBlock :public VUndoCommand
     Q_OBJECT
 public:
     RenameDraftBlock(VAbstractPattern *doc, const QString &newBlockName, QComboBox *combo, QUndoCommand *parent = nullptr);
-    virtual     ~RenameDraftBlock() Q_DECL_OVERRIDE;
+    virtual     ~RenameDraftBlock() override;
 
-    virtual void undo() Q_DECL_OVERRIDE;
-    virtual void redo() Q_DECL_OVERRIDE;
-    virtual bool mergeWith(const QUndoCommand *command) Q_DECL_OVERRIDE;
-    virtual int  id() const Q_DECL_OVERRIDE;
+    virtual void undo() override;
+    virtual void redo() override;
+    virtual bool mergeWith(const QUndoCommand *command) override;
+    virtual int  id() const override;
     QString      getNewName() const;
     QString      getOldName() const;
 private:

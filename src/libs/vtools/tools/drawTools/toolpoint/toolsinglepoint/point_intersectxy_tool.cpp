@@ -68,9 +68,7 @@
 
 #include <QPointF>
 #include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <new>
 
 template <class T> class QSharedPointer;
@@ -292,7 +290,7 @@ void PointIntersectXYTool::SaveOptions(QDomElement &tag, QSharedPointer<VGObject
 void PointIntersectXYTool::ReadToolAttributes(const QDomElement &domElement)
 {
     m_lineType    = doc->GetParametrString(domElement, AttrLineType,    LineTypeDashLine);
-    m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight,  "0.35");
+    m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight,  DefaultLineWeight); 
     lineColor     = doc->GetParametrString(domElement, AttrLineColor,   ColorBlack);
     firstPointId  = doc->GetParametrUInt(domElement,   AttrFirstPoint,  NULL_ID_STR);
     secondPointId = doc->GetParametrUInt(domElement,   AttrSecondPoint, NULL_ID_STR);

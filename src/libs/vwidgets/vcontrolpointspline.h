@@ -77,11 +77,11 @@ public:
                                             QGraphicsItem *parent = nullptr);
     virtual            ~VControlPointSpline() = default;
 
-    virtual int         type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int         type() const override {return Type;}
     enum                { Type = UserType + static_cast<int>(Vis::ControlPointSpline)};
 
     virtual void        paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
-                              QWidget *widget = nullptr) Q_DECL_OVERRIDE;
+                              QWidget *widget = nullptr) override;
 signals:
     // @brief controlPointPositionChanged emit when control point change position.
     // @param splineIndex index spline in list.
@@ -102,12 +102,12 @@ public slots:
 protected:
     VScaledLine        *m_controlLine; /*!< @brief m_controlLine pointer to line control point. */
 
-    virtual void        hoverEnterEvent(QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;
-    virtual void        hoverLeaveEvent(QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;
-    QVariant            itemChange(GraphicsItemChange change, const QVariant &value) Q_DECL_OVERRIDE;
-    virtual void        mousePressEvent(QGraphicsSceneMouseEvent *event) Q_DECL_OVERRIDE;
-    virtual void        mouseReleaseEvent(QGraphicsSceneMouseEvent *event) Q_DECL_OVERRIDE;
-    virtual void        contextMenuEvent(QGraphicsSceneContextMenuEvent *event) Q_DECL_OVERRIDE;
+    virtual void        hoverEnterEvent(QGraphicsSceneHoverEvent *event) override;
+    virtual void        hoverLeaveEvent(QGraphicsSceneHoverEvent *event) override;
+    QVariant            itemChange(GraphicsItemChange change, const QVariant &value) override;
+    virtual void        mousePressEvent(QGraphicsSceneMouseEvent *event) override;
+    virtual void        mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
+    virtual void        contextMenuEvent(QGraphicsSceneContextMenuEvent *event) override;
 
 private:
     Q_DISABLE_COPY(VControlPointSpline)

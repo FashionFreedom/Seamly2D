@@ -63,10 +63,10 @@ public:
                          VContainer *data, quint32 id, QUndoCommand *parent = nullptr);
     virtual ~SavePiecePathOptions();
 
-    virtual void undo() Q_DECL_OVERRIDE;
-    virtual void redo() Q_DECL_OVERRIDE;
-    virtual bool mergeWith(const QUndoCommand *command) Q_DECL_OVERRIDE;
-    virtual int  id() const Q_DECL_OVERRIDE;
+    virtual void undo() override;
+    virtual void redo() override;
+    virtual bool mergeWith(const QUndoCommand *command) override;
+    virtual int  id() const override;
     quint32      pathId() const;
     VPiecePath   newPath() const;
 

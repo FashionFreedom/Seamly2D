@@ -477,7 +477,7 @@ void TST_VEllipticalArc::TestRotation()
 
     QCOMPARE(arcOrigin.GetRadius1(), rotatedArc.GetRadius1());
     QCOMPARE(arcOrigin.GetRadius2(), rotatedArc.GetRadius2());
-    QCOMPARE(arcOrigin.GetRotationAngle(), rotatedArc.GetRotationAngle());
+    QCOMPARE(arcOrigin.getRotationAngle(), rotatedArc.getRotationAngle());
     const QString errorMsg = QString("The name doesn't contain the prefix '%1'.").arg(prefix);
     QVERIFY2(rotatedArc.name().endsWith(prefix), qUtf8Printable(errorMsg));
 }

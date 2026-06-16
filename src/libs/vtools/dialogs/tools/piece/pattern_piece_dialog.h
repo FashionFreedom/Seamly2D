@@ -4,6 +4,8 @@
 //  @date   17 Sep, 2023
 //
 //  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
 //  Copyright (C) 2017 - 2025 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
@@ -57,7 +59,7 @@
 #include "../vpatterndb/floatItemData/vpatternlabeldata.h"
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
 
-#include <QSound>
+#include <QSoundEffect>
 
 enum TabOrder {Properties=0, Paths=1, SeamAllowance= 2, Labels=3, AnchorPoints=4, Grainline=5, Notches=6, Count=7};
 
@@ -186,6 +188,7 @@ private:
     bool                        flagPieceLabelAnchor;
     bool                        flagPatternLabelAnchor;
     bool                        flagGrainlineFormula;
+    bool                        flagGrainlineArrow;
     bool                        flagPieceLabelAngle;
     bool                        flagPieceLabelFormula;
     bool                        flagPatternLabelAngle;
@@ -211,7 +214,7 @@ private:
     qreal                       m_saWidth;
     QVector<VLabelTemplateLine> m_patternLabelLines;
     QVector<VLabelTemplateLine> m_pieceLabelLines;
-    QSound                     *m_beep;
+    QSoundEffect               *m_beep;
     QVector<QPointer<VUndoCommand>> m_undoStack;
 
     VPiece                      CreatePiece() const;
@@ -271,6 +274,7 @@ private:
 
     void                        setGrainlineAngle(QString angleFormula);
     void                        setGrainlineLength(QString lengthFormula);
+    void                        setGrainlineArrowLength(QString lengthFormula);
 
     void                        setPieceLabelWidth(QString widthFormula);
     void                        setPieceLabelHeight(QString heightFormula);

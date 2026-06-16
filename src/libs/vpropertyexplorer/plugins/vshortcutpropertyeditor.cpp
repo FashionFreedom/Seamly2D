@@ -41,7 +41,7 @@ VPE::VShortcutEditWidget::VShortcutEditWidget(QWidget *parent)
     // The layout (a horizontal layout)
     QHBoxLayout* layout = new QHBoxLayout(this);
     layout->setSpacing(0);
-    layout->setMargin(0);
+    // layout->setMargin(0); Obsolete?
     layout->addWidget(LineEdit);
 }
 

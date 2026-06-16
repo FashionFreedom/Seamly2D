@@ -48,10 +48,10 @@ public:
 
     VPatternLabelData &operator=(const VPatternLabelData &data);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VPatternLabelData &operator=(VPatternLabelData &&data) Q_DECL_NOTHROW;
+	VPatternLabelData &operator=(VPatternLabelData &&data) noexcept;
 #endif
 
-	void    Swap(VPatternLabelData &data) Q_DECL_NOTHROW;
+	void    Swap(VPatternLabelData &data) noexcept;
 
     // methods, which set up label parameters
     QString GetLabelWidth() const;
@@ -63,7 +63,7 @@ public:
     int     getFontSize() const;
     void    SetFontSize(int iSize);
 
-    QString GetRotation() const;
+    QString getRotation() const;
     void    SetRotation(const QString &dRot);
 
     quint32 centerAnchorPoint() const;

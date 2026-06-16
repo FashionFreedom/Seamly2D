@@ -50,6 +50,7 @@
 
 #include "internal_path_dialog.h"
 #include "ui_internal_path_dialog.h"
+#include "../ifc/ifcdef.h"
 #include "../vpatterndb/vpiecenode.h"
 #include "visualization/path/internal_path_visual.h"
 #include "../../../tools/vabstracttool.h"
@@ -99,6 +100,9 @@ InternalPathDialog::InternalPathDialog(const VContainer *data, quint32 toolId, Q
     initializePathTab();
     initializeSeamAllowanceTab();
     initializeNotchesTab();
+
+    //remove linetype "No Pen" item
+    ui->lineType_ComboBox->removeItem(ui->lineType_ComboBox->findData(LineTypeNone));
 
     flagName = true;//We have default name of piece.
     flagError = isValidPath();
@@ -778,7 +782,7 @@ void InternalPathDialog::defaultWidthChanged()
     labelEditFormula = ui->widthEdit_Label;
     labelResultCalculation = ui->widthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagFormula, ui->widthFormula_PlainTextEdit, m_timerWidth, postfix);
+    formulaValueChanged(flagFormula, ui->widthFormula_PlainTextEdit, m_timerWidth, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -788,7 +792,7 @@ void InternalPathDialog::beforeWidthChanged()
     labelResultCalculation = ui->beforeWidthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
     bool flagFormula = false;
-    ValFormulaChanged(flagFormula, ui->beforeWidthFormula_PlainTextEdit, m_timerWidthBefore, postfix);
+    formulaValueChanged(flagFormula, ui->beforeWidthFormula_PlainTextEdit, m_timerWidthBefore, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -798,7 +802,7 @@ void InternalPathDialog::afterWidthChanged()
     labelResultCalculation = ui->afterWidthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
     bool flagFormula = false;
-    ValFormulaChanged(flagFormula, ui->afterWidthFormula_PlainTextEdit, m_timerWidthAfter, postfix);
+    formulaValueChanged(flagFormula, ui->afterWidthFormula_PlainTextEdit, m_timerWidthAfter, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1062,28 +1066,28 @@ void InternalPathDialog::setType(PiecePathType type)
 /// @return line color
  QString InternalPathDialog::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 /// @brief setLineColor set color of the line
 /// @param value type
 void InternalPathDialog::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 /// @brief getLineType get the type of line
 /// @param linetype as a QT::Penstyle
 Qt::PenStyle InternalPathDialog::getLineType() const
 {
-    return lineTypeToPenStyle(GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine));
+    return lineTypeToPenStyle(getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine));
 }
 
 /// @brief setLineType set type of the line
 /// @param value linetype
 void InternalPathDialog::setLineType(const Qt::PenStyle &type)
 {
-    ChangeCurrentData(ui->lineType_ComboBox, PenStyleToLineType(type));
+    changeCurrentData(ui->lineType_ComboBox, PenStyleToLineType(type));
     vis->setLineStyle(type);
 }
 
@@ -1091,14 +1095,14 @@ void InternalPathDialog::setLineType(const Qt::PenStyle &type)
 /// @return lineweight
 QString InternalPathDialog::getLineWeight() const
 {
-        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "1.00");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 /// @brief setLineWeight set weight of the lines
 /// @param value type
 void InternalPathDialog::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    changeCurrentData(ui->lineWeight_ComboBox, value);
     vis->setLineWeight(value);
 }
 
@@ -1264,7 +1268,7 @@ QString InternalPathDialog::getSeamAllowanceWidthFormula() const
 //---------------------------------------------------------------------------------------------------------------------
 void InternalPathDialog::SetPiecesList(const QVector<quint32> &list)
 {
-    FillComboBoxPiecesList(ui->piece_ComboBox, list);
+    fillComboBoxPiecesList(ui->piece_ComboBox, list);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1280,9 +1284,9 @@ VPiecePath InternalPathDialog::createPath() const
     const bool isInternalPath = (getType() == PiecePathType::InternalPath);
     path.setType(getType());
     path.setName(ui->pathName_LineEdit->text());
-    path.setLineColor(isInternalPath ? getLineColor() : "Black");
+    path.setLineColor(isInternalPath ? getLineColor() : "black");
     path.setLineType(isInternalPath ? getLineType() : Qt::SolidLine);
-    path.setLineWeight(isInternalPath ? getLineWeight() :"1.00");
+    path.setLineWeight(isInternalPath ? getLineWeight() :"1");
     path.setCutPath(isInternalPath ? isCutPath() : false);
     path.setExtendStartPoint(isInternalPath ? ui->extendStartPoint_CheckBox->isChecked() : false);
     path.setExtendEndPoint(isInternalPath ? ui->extendEndPoint_CheckBox->isChecked() : false);

@@ -106,7 +106,7 @@ IntersectCircleTangentDialog::IntersectCircleTangentDialog(const VContainer *dat
 
     fillComboBoxPoints(ui->comboBoxCircleCenter);
     fillComboBoxPoints(ui->comboBoxTangentPoint);
-    FillComboBoxCrossCirclesPoints(ui->comboBoxResult);
+    fillComboBoxCrossCirclesPoints(ui->comboBoxResult);
 
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged,
             this, &IntersectCircleTangentDialog::NamePointChanged);
@@ -287,7 +287,7 @@ void IntersectCircleTangentDialog::CircleRadiusChanged()
     labelEditFormula = ui->labelEditRadius;
     labelResultCalculation = ui->labelResultCircleRadius;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagCircleRadius, ui->plainTextEditRadius, timerCircleRadius, postfix);
+    formulaValueChanged(flagCircleRadius, ui->plainTextEditRadius, timerCircleRadius, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

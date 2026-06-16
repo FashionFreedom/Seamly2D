@@ -53,10 +53,10 @@
 #include "vinternalvariable_p.h"
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VInternalVariable &VInternalVariable::operator=(VInternalVariable &&var) Q_DECL_NOTHROW { Swap(var); return *this; }
+VInternalVariable &VInternalVariable::operator=(VInternalVariable &&var) noexcept { Swap(var); return *this; }
 #endif
 
-void VInternalVariable::Swap(VInternalVariable &var) Q_DECL_NOTHROW
+void VInternalVariable::Swap(VInternalVariable &var) noexcept
 { std::swap(d, var.d); }
 
 //---------------------------------------------------------------------------------------------------------------------

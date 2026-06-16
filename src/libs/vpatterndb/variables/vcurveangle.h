@@ -72,7 +72,7 @@ public:
                 CurveAngle angle, qint32 segment);
     VCurveAngle(const VCurveAngle &var);
     VCurveAngle &operator=(const VCurveAngle &var);
-    virtual ~VCurveAngle() Q_DECL_OVERRIDE;
+    virtual ~VCurveAngle() override;
 };
 
 #endif // VCURVEANGLE_H

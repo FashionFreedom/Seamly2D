@@ -78,7 +78,7 @@ extern const QString APP_VERSION_STR;
 
 #define VER_INTERNALNAME_2D_STR     "Seamly2D"
 #define VER_COMPANYNAME_STR         "Seamly2DTeam"
-#define VER_LEGALCOPYRIGHT_STR      "Copyright © 2014-2022 Seamly2D Team"
+#define VER_LEGALCOPYRIGHT_STR      "Copyright © 2014-2025 Seamly2D Team"
 #define VER_LEGALTRADEMARKS1_STR    "All Rights Reserved"
 #define VER_LEGALTRADEMARKS2_STR    VER_LEGALTRADEMARKS1_STR
 #define VER_COMPANYDOMAIN_STR       "https://seamly.io"

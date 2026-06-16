@@ -123,8 +123,11 @@ DialogEllipticalArc::DialogEllipticalArc(const VContainer *data, const quint32 &
     ui->plainTextEditRadius1->installEventFilter(this);
     ui->plainTextEditRadius2->installEventFilter(this);
     ui->plainTextEditF1->installEventFilter(this);
+    ui->plainTextEditF1->setToolTip(makeAngleTooltip());
     ui->plainTextEditF2->installEventFilter(this);
+    ui->plainTextEditF2->setToolTip(makeAngleTooltip());
     ui->plainTextEditRotationAngle->installEventFilter(this);
+    ui->plainTextEditRotationAngle->setToolTip(makeAngleTooltip());
 
     timerRadius1 = new QTimer(this);
     connect(timerRadius1, &QTimer::timeout, this, &DialogEllipticalArc::EvalRadiuses);
@@ -193,6 +196,11 @@ DialogEllipticalArc::DialogEllipticalArc(const VContainer *data, const quint32 &
 
     connect(ui->centerPoint_ComboBox, &QComboBox::currentTextChanged, this, &DialogEllipticalArc::pointNameChanged);
 
+    ui->plainTextEditF1->setPlainText("0");
+    ui->plainTextEditF2->setPlainText("360");
+    ui->plainTextEditRotationAngle->setPlainText("0");
+    ui->plainTextEditRadius1->setFocus();
+
     vis = new VisToolEllipticalArc(data);
 }
 
@@ -232,7 +240,7 @@ quint32 DialogEllipticalArc::GetCenter() const
  */
 void DialogEllipticalArc::SetCenter(const quint32 &value)
 {
-    ChangeCurrentData(ui->centerPoint_ComboBox, value);
+    changeCurrentData(ui->centerPoint_ComboBox, value);
     vis->setObject1Id(value);
 }
 
@@ -366,10 +374,10 @@ void DialogEllipticalArc::SetF2(const QString &value)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetRotationAngle return formula rotation angle of elliptical arc
+ * @brief getRotationAngle return formula rotation angle of elliptical arc
  * @return formula
  */
-QString DialogEllipticalArc::GetRotationAngle() const
+QString DialogEllipticalArc::getRotationAngle() const
 {
     return qApp->translateVariables()->TryFormulaFromUser(rotationAngle, qApp->Settings()->getOsSeparator());
 }
@@ -399,13 +407,13 @@ void DialogEllipticalArc::SetRotationAngle(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogEllipticalArc::getPenStyle() const
 {
-    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+    return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::setPenStyle(const QString &value)
 {
-    ChangeCurrentData(ui->lineType_ComboBox, value);
+    changeCurrentData(ui->lineType_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -415,7 +423,7 @@ void DialogEllipticalArc::setPenStyle(const QString &value)
  */
 QString DialogEllipticalArc::getLineWeight() const
 {
-        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -425,7 +433,7 @@ QString DialogEllipticalArc::getLineWeight() const
  */
 void DialogEllipticalArc::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    changeCurrentData(ui->lineWeight_ComboBox, value);
     vis->setLineWeight(value);
 }
 //---------------------------------------------------------------------------------------------------------------------
@@ -435,7 +443,7 @@ void DialogEllipticalArc::setLineWeight(const QString &value)
  */
 QString DialogEllipticalArc::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -445,7 +453,7 @@ QString DialogEllipticalArc::getLineColor() const
  */
 void DialogEllipticalArc::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -585,7 +593,7 @@ void DialogEllipticalArc::FXRotationAngle()
 {
     EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit rotation angle"));
-    dialog->SetFormula(GetRotationAngle());
+    dialog->SetFormula(getRotationAngle());
     dialog->setPostfix(degreeSymbol);
     if (dialog->exec() == QDialog::Accepted)
     {
@@ -603,7 +611,7 @@ void DialogEllipticalArc::Radius1Changed()
     labelEditFormula = ui->labelEditRadius1;
     labelResultCalculation = ui->labelResultRadius1;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagRadius1, ui->plainTextEditRadius1, timerRadius1, postfix);
+    formulaValueChanged(flagRadius1, ui->plainTextEditRadius1, timerRadius1, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -615,7 +623,7 @@ void DialogEllipticalArc::Radius2Changed()
     labelEditFormula = ui->labelEditRadius2;
     labelResultCalculation = ui->labelResultRadius2;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagRadius2, ui->plainTextEditRadius2, timerRadius2, postfix);
+    formulaValueChanged(flagRadius2, ui->plainTextEditRadius2, timerRadius2, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -626,7 +634,7 @@ void DialogEllipticalArc::F1Changed()
 {
     labelEditFormula = ui->labelEditF1;
     labelResultCalculation = ui->labelResultF1;
-    ValFormulaChanged(flagF1, ui->plainTextEditF1, timerF1, degreeSymbol);
+    formulaValueChanged(flagF1, ui->plainTextEditF1, timerF1, degreeSymbol);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -637,7 +645,7 @@ void DialogEllipticalArc::F2Changed()
 {
     labelEditFormula = ui->labelEditF2;
     labelResultCalculation = ui->labelResultF2;
-    ValFormulaChanged(flagF2, ui->plainTextEditF2, timerF2, degreeSymbol);
+    formulaValueChanged(flagF2, ui->plainTextEditF2, timerF2, degreeSymbol);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -648,7 +656,7 @@ void DialogEllipticalArc::RotationAngleChanged()
 {
     labelEditFormula = ui->labelEditRotationAngle;
     labelResultCalculation = ui->labelResultF2;
-    ValFormulaChanged(flagRotationAngle, ui->plainTextEditRotationAngle, timerRotationAngle, degreeSymbol);
+    formulaValueChanged(flagRotationAngle, ui->plainTextEditRotationAngle, timerRotationAngle, degreeSymbol);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -744,7 +752,7 @@ void DialogEllipticalArc::pointNameChanged()
                            GetRadius2().toDouble(),
                            GetF1().toDouble(),
                            GetF2().toDouble(),
-                           GetRotationAngle().toDouble());
+                           getRotationAngle().toDouble());
 
         if (!data->IsUnique(arc.name()))
         {

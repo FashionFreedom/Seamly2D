@@ -56,10 +56,6 @@
         <translation>Qt-Version:</translation>
     </message>
     <message>
-        <source>CPU:</source>
-        <translation>CPU:</translation>
-    </message>
-    <message>
         <source>Compiler:</source>
         <translation>Compiler:</translation>
     </message>
@@ -78,10 +74,6 @@
     <message>
         <source>Architecture</source>
         <translation>Architektur</translation>
-    </message>
-    <message>
-        <source>OS:</source>
-        <translation>OS:</translation>
     </message>
     <message>
         <source>OS Version:</source>
@@ -375,14 +367,6 @@
 <context>
     <name>CalculatorUtil</name>
     <message>
-        <source>.</source>
-        <translation>.</translation>
-    </message>
-    <message>
-        <source>±</source>
-        <translation>±</translation>
-    </message>
-    <message>
         <source>Backspace</source>
         <translation>Rücktaste</translation>
     </message>
@@ -395,60 +379,8 @@
         <translation>Alle löschen</translation>
     </message>
     <message>
-        <source>MC</source>
-        <translation>MC</translation>
-    </message>
-    <message>
-        <source>MR</source>
-        <translation>MR</translation>
-    </message>
-    <message>
-        <source>MS</source>
-        <translation>MS</translation>
-    </message>
-    <message>
-        <source>M+</source>
-        <translation>M+</translation>
-    </message>
-    <message>
-        <source>÷</source>
-        <translation>÷</translation>
-    </message>
-    <message>
-        <source>×</source>
-        <translation>×</translation>
-    </message>
-    <message>
-        <source>-</source>
-        <translation>-</translation>
-    </message>
-    <message>
-        <source>+</source>
-        <translation>+</translation>
-    </message>
-    <message>
-        <source>Sqrt</source>
-        <translation>Sqrt</translation>
-    </message>
-    <message>
-        <source>x²</source>
-        <translation>x²</translation>
-    </message>
-    <message>
-        <source>1/x</source>
-        <translation>1/x</translation>
-    </message>
-    <message>
-        <source>=</source>
-        <translation>=</translation>
-    </message>
-    <message>
         <source>Calculator</source>
         <translation>Taschenrechner</translation>
-    </message>
-    <message>
-        <source>####</source>
-        <translation>####</translation>
     </message>
 </context>
 <context>
@@ -733,15 +665,6 @@ p, li { white-space: pre-wrap; }
         <source>Name:</source>
         <translation>Bezeichnung:</translation>
     </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berechnung des ersten Winkels&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berechnung des Winkels&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
 </context>
 <context>
     <name>DialogArcWithLength</name>
@@ -820,12 +743,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Geometry</source>
         <translation>Geometrie</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width= 370&gt;&lt;tr&gt;&lt;td align =left width=300&gt;&lt;b&gt;Winkelberechnung&lt;/b&gt;&lt;br&gt;Winkel sind in Grad angegeben, d.h. ein kompletter Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position.&lt;/td&gt;&lt;td align = rechts valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1098,11 +1015,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Geometry</source>
         <translation>Geometrie</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Winkelberechnung&lt;/b&gt;&lt;br&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1468,18 +1380,6 @@ p, li { white-space: pre-wrap; }
         <translation>Bezeichnung:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berechnung des ersten Winkels&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Second Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berechnung des zweiten Winkels&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersin. Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berechnung des Drehwinkels&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Radius can&apos;t be negative</source>
         <translation>Radius kann nicht negativ sein</translation>
     </message>
@@ -1549,11 +1449,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Geometry</source>
         <translation>Geometrie</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Winkelberechnung&lt;/b&gt;&lt;br&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1870,12 +1765,6 @@ p, li { white-space: pre-wrap; }
         <translation>Geometrie</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Winkelberechnung&lt;/b&gt;&lt;br&gt;Winkel werden in Grad angegeben, d.h. ein vollständiger Kreis entspricht 360 Grad, positive Werte bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Attributes</source>
         <translation>Eigenschaften</translation>
     </message>
@@ -2047,15 +1936,6 @@ p, li { white-space: pre-wrap; }
         <source>Edit rotation</source>
         <translation>Drehung bearbeiten</translation>
     </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Winkelberechnung&lt;/b&gt;&lt;br&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotationswinkelberechnung&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
 </context>
 <context>
     <name>DialogNewPattern</name>
@@ -2169,10 +2049,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation>Linienstärke:</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotatation Angle&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. &lt;br/&gt;&lt;br/&gt;Rotation angle is added to the angle of the perpendicular.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotationswinkel&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -2606,11 +2482,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select rotation point that is not part of the list of objects</source>
         <translation>Achsendrehpunkt wählen, der nicht zur Liste der Objekte gehört</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Winkelberechnung&lt;/b&gt;&lt;br&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -3058,6 +2929,14 @@ p, li { white-space: pre-wrap; }
         <source>Result Value</source>
         <translation>Ergebniswert</translation>
     </message>
+    <message>
+        <source>Angle Calculation</source>
+        <translation>Berechnung des Winkels</translation>
+    </message>
+    <message>
+        <source>Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.</source>
+        <translation>Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position .</translation>
+    </message>
 </context>
 <context>
     <name>DialogTriangle</name>
@@ -3188,12 +3067,10 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Formel festlegen</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Abbrechen</translation>
-    </message>
-    <message>
-        <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
-        <translation>Fehler beim Berechnen der Formel. Du kannst versuchen, den letzten Schritt rückgängig zu machen, oder die defekte Formel festlegen.</translation>
+        <source>Seamly2D encountered an error while computing a formula.
+Please try to undo the latest operation or fix the broken formula.</source>
+        <translation>Beim Berechnen einer Formel ist in Seamly2D ein Fehler aufgetreten.
+Bitte versuchen Sie, den letzten Vorgang rückgängig zu machen oder die fehlerhafte Formel zu reparieren.</translation>
     </message>
 </context>
 <context>
@@ -3831,18 +3708,6 @@ p, li { white-space: pre-wrap; }
         <translation>Qualität (0-100):</translation>
     </message>
     <message>
-        <source>-</source>
-        <translation>-</translation>
-    </message>
-    <message>
-        <source>+</source>
-        <translation>+</translation>
-    </message>
-    <message>
-        <source>Margins</source>
-        <translation>Ränder</translation>
-    </message>
-    <message>
         <source>Right:</source>
         <translation>Rechts:</translation>
     </message>
@@ -3857,10 +3722,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Bottom:</source>
         <translation>Unten:</translation>
-    </message>
-    <message>
-        <source>Paper format</source>
-        <translation>Papierformat</translation>
     </message>
     <message>
         <source>Templates: </source>
@@ -3909,6 +3770,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Export files:</source>
         <translation>Dateien exportieren:</translation>
+    </message>
+    <message>
+        <source>Margins (tiled PDF only)</source>
+        <translation>Ränder (nur gekacheltes PDF)</translation>
+    </message>
+    <message>
+        <source>Paper format (tiled PDF only)</source>
+        <translation>Papierformat (nur gekacheltes PDF)</translation>
     </message>
 </context>
 <context>
@@ -4272,10 +4141,6 @@ Möchten Sie sie herunterladen?</translation>
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <source>%1</source>
-        <translation>%1</translation>
-    </message>
-    <message>
         <source>Base Point</source>
         <translation>Basispunkt</translation>
     </message>
@@ -4435,6 +4300,26 @@ Möchten Sie sie herunterladen?</translation>
         <source>ElArc_</source>
         <translation>ElBogen_</translation>
     </message>
+    <message>
+        <source>Find previous</source>
+        <translation>Vorheriges finden</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation>Nächstes finden</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Groß- und Kleinschreibung beachten</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Suche nach vollständigem Wort</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Suche nach regulären Ausdrücken</translation>
+    </message>
 </context>
 <context>
     <name>ImageDialog</name>
@@ -4471,20 +4356,12 @@ Möchten Sie sie herunterladen?</translation>
         <translation>Umschalten zwischen px- und Muster-Einheiten</translation>
     </message>
     <message>
-        <source>PX</source>
-        <translation>PX</translation>
-    </message>
-    <message>
         <source>Unit:</source>
         <translation>Einheit:</translation>
     </message>
     <message>
         <source>X Position:</source>
         <translation>X Position:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>Y Position:</source>
@@ -4511,20 +4388,12 @@ Möchten Sie sie herunterladen?</translation>
         <translation>X Skala:</translation>
     </message>
     <message>
-        <source>%</source>
-        <translation>%</translation>
-    </message>
-    <message>
         <source>Y Scale:</source>
         <translation>Y Skala:</translation>
     </message>
     <message>
         <source>Rotation:</source>
         <translation>Drehung:</translation>
-    </message>
-    <message>
-        <source>°</source>
-        <translation>°</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -4763,8 +4632,8 @@ Möchten Sie sie herunterladen?</translation>
         <translation>Auf dem Zuschnitt anzeigen</translation>
     </message>
     <message>
-        <source>Staus:</source>
-        <translation>Status:</translation>
+        <source>Status:</source>
+        <translation>Zustand:</translation>
     </message>
     <message>
         <source>Ready!</source>
@@ -5016,9 +4885,9 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2024 Seamly2D Project.
+© 2017-2025 Seamly2D Project.
 
-Portions of this software © 2008-2024 The Qt Company Ltd.
+Portions of this software © 2008-2025 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
         <translation>Seamly2D ist eine Anwendung für den computergestützten Entwurf von Bekleidungsmustern.
@@ -5027,9 +4896,9 @@ Seamly2D ist eine kostenlose (Open Source) Software.
 
 Alle Marken- oder Produktnamen sind Marken oder eingetragene Marken der jeweiligen Inhaber.
 
-© 2017-2024 Seamly2D Project.
+© 2017-2025 Seamly2D Project.
 
-Teile dieser Software © 2008-2024 The Qt Company Ltd.
+Teile dieser Software © 2008-2025 The Qt Company Ltd.
 
 Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLICH DER GARANTIE FÜR DESIGN, GEBRAUCHSFÄHIGKEIT UND EIGNUNG FÜR EINEN BESTIMMTEN ZWECK zur Verfügung gestellt.</translation>
     </message>
@@ -5486,16 +5355,12 @@ Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLIC
         <translation>Speichern</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Speichern</translation>
-    </message>
-    <message>
         <source>Save pattern</source>
         <translation>Schnittmuster speichern</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>Speichern &amp;als...</translation>
+        <source>Save As...</source>
+        <translation>Speichern als...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5518,8 +5383,8 @@ Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLIC
         <translation>Über &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>&amp;Über Seamly2D</translation>
+        <source>About Seamly2D</source>
+        <translation>Über Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -5648,8 +5513,8 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Druckvorschau mit Originallayout</translation>
     </message>
     <message>
-        <source>Export As...</source>
-        <translation>Exportieren als...</translation>
+        <source>Export Layout As...</source>
+        <translation>Layout exportieren als...</translation>
     </message>
     <message>
         <source>Layout mode</source>
@@ -5812,10 +5677,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Die Maßdateien &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; konnten nicht gefunden werden. Möchtest Du den Speicherort aktualisieren?</translation>
     </message>
     <message>
-        <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation>Die Maße wurden geändert. Sollen die Maße jetzt synchronisiert werden?</translation>
-    </message>
-    <message>
         <source>Gradation doesn&apos;t support inches</source>
         <translation>Gradierung unterstützt Zoll nicht</translation>
     </message>
@@ -5957,7 +5818,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&amp;Operations</source>
-        <translation>&amp;Abläufe</translation>
+        <translation>Abläufe</translation>
     </message>
     <message>
         <source>Piece</source>
@@ -6116,32 +5977,16 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modus um ein Layout aus Schnittteilen zu erstellen. Dieser Modus ist verfügbar wenn mindestens ein Schnittteil im Schnitzel Modus erstellt worden ist.&amp;quot;Teil Modus&amp;quot;. Das Layout kann in Dein bevorzugtes Dateiformat exportiert und gespeichert werden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>G</source>
-        <translation>G</translation>
-    </message>
-    <message>
         <source>Rotation</source>
         <translation>Drehung</translation>
-    </message>
-    <message>
-        <source>R</source>
-        <translation>R</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
         <translation>Spiegeln an einer Linie</translation>
     </message>
     <message>
-        <source>M, L</source>
-        <translation>M, L</translation>
-    </message>
-    <message>
         <source>Mirror by Axis</source>
         <translation>Spiegeln an einer Achse</translation>
-    </message>
-    <message>
-        <source>M, A</source>
-        <translation>M, A</translation>
     </message>
     <message>
         <source>Move</source>
@@ -6152,28 +5997,12 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Abnäherlängen ausgleichen</translation>
     </message>
     <message>
-        <source>T, D</source>
-        <translation>T, D,</translation>
-    </message>
-    <message>
         <source>Midpoint</source>
         <translation>Mittelpunkt</translation>
     </message>
     <message>
-        <source>P, S</source>
-        <translation>P, S</translation>
-    </message>
-    <message>
         <source>Intersect XY</source>
         <translation>Schneidet XY</translation>
-    </message>
-    <message>
-        <source>X, Y</source>
-        <translation>X, Y</translation>
-    </message>
-    <message>
-        <source>I, L</source>
-        <translation>I, L</translation>
     </message>
     <message>
         <source>Alt+C</source>
@@ -6188,40 +6017,12 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Alt+A</translation>
     </message>
     <message>
-        <source>A, X</source>
-        <translation>A, X</translation>
-    </message>
-    <message>
-        <source>I, A</source>
-        <translation>I, A</translation>
-    </message>
-    <message>
-        <source>I, C</source>
-        <translation>I, C</translation>
-    </message>
-    <message>
-        <source>C, T</source>
-        <translation>C, T</translation>
-    </message>
-    <message>
-        <source>A, T</source>
-        <translation>A, T</translation>
-    </message>
-    <message>
-        <source>A, L</source>
-        <translation>A, L</translation>
-    </message>
-    <message>
         <source>Tools for inserting or modifying images.</source>
         <translation>Werkzeuge zum Einfügen oder Ändern von Bildern.</translation>
     </message>
     <message>
         <source>Point on Curve (O, C)</source>
         <translation>Punkt auf Kurve (O, C)</translation>
-    </message>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>Über Seamly2D</translation>
     </message>
     <message>
         <source>Exit the Application</source>
@@ -6278,10 +6079,6 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Shortcuts</source>
         <translation>Verknüpfungen</translation>
-    </message>
-    <message>
-        <source>K</source>
-        <translation>K</translation>
     </message>
     <message>
         <source>Last tool</source>
@@ -6372,64 +6169,32 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Neues Schnittteil</translation>
     </message>
     <message>
-        <source>N, P</source>
-        <translation>N;P</translation>
-    </message>
-    <message>
         <source>New Print Layout</source>
         <translation>Neues Drucklayout</translation>
-    </message>
-    <message>
-        <source>N, L</source>
-        <translation>N;L</translation>
     </message>
     <message>
         <source>Export Layout</source>
         <translation>Layout exportieren</translation>
     </message>
     <message>
-        <source>E, L</source>
-        <translation>E, L</translation>
-    </message>
-    <message>
         <source>Anchor Point</source>
         <translation>Anker Punkt</translation>
-    </message>
-    <message>
-        <source>A, P</source>
-        <translation>A, P</translation>
     </message>
     <message>
         <source>Internal Path</source>
         <translation>Internes Verzeichnis</translation>
     </message>
     <message>
-        <source>I, P</source>
-        <translation>I;P</translation>
-    </message>
-    <message>
         <source>Insert Nodes</source>
         <translation>Füge Knoten ein</translation>
-    </message>
-    <message>
-        <source>I, N</source>
-        <translation>I;N</translation>
     </message>
     <message>
         <source>Unite Pieces</source>
         <translation>Füge Teile zusammen</translation>
     </message>
     <message>
-        <source>U</source>
-        <translation>U</translation>
-    </message>
-    <message>
         <source>Export Pieces</source>
         <translation>Schnittteile exportieren</translation>
-    </message>
-    <message>
-        <source>E, P</source>
-        <translation>E;P</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -6440,20 +6205,12 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Punktbezeichnung Text</translation>
     </message>
     <message>
-        <source>V, P</source>
-        <translation>V, P</translation>
-    </message>
-    <message>
         <source>Increase Text Size</source>
         <translation>Textgröße erhöhen</translation>
     </message>
     <message>
         <source>Increase Text Size (Ctrl+])</source>
         <translation>Textgröße erhöhen (Strg+])</translation>
-    </message>
-    <message>
-        <source>Ctrl+]</source>
-        <translation>Strg+]</translation>
     </message>
     <message>
         <source>Decrease Text Size</source>
@@ -6464,20 +6221,12 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Textgröße verringern (Strg+[)</translation>
     </message>
     <message>
-        <source>Ctrl+[</source>
-        <translation>Strg+[</translation>
-    </message>
-    <message>
         <source>Use Tool Color</source>
         <translation>Benutze Werkzeugfarbe</translation>
     </message>
     <message>
         <source>Use Tool Color (T)</source>
         <translation>Benutze Werkzeugfarbe (T)</translation>
-    </message>
-    <message>
-        <source>V, T</source>
-        <translation>V, T</translation>
     </message>
     <message>
         <source>Axis Origin </source>
@@ -6488,20 +6237,12 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Achsenursprung umschalten (V, A)</translation>
     </message>
     <message>
-        <source>V, A</source>
-        <translation>V,A</translation>
-    </message>
-    <message>
         <source>Wireframe Mode</source>
         <translation>Wireframe Modus</translation>
     </message>
     <message>
         <source>Toggle Wireframe Mode (V, W)</source>
         <translation>Wireframe Modus umschalten (V,W)</translation>
-    </message>
-    <message>
-        <source>V, W</source>
-        <translation>V, W</translation>
     </message>
     <message>
         <source>Grainlines</source>
@@ -6512,10 +6253,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Fadenlauf umschalten (V, G)</translation>
     </message>
     <message>
-        <source>V, G</source>
-        <translation>V,G</translation>
-    </message>
-    <message>
         <source>Labels</source>
         <translation>Etiketten</translation>
     </message>
@@ -6524,32 +6261,16 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Etiketten umschalten (V, L)</translation>
     </message>
     <message>
-        <source>V, L</source>
-        <translation>V, L</translation>
-    </message>
-    <message>
         <source>Calculator</source>
         <translation>Taschenrechner</translation>
-    </message>
-    <message>
-        <source>Ctrl+Shift+C</source>
-        <translation>Strg+Umschalt+C</translation>
     </message>
     <message>
         <source>Decimal Chart</source>
         <translation>Dezimatabelle</translation>
     </message>
     <message>
-        <source>Ctrl+Shift+D</source>
-        <translation>Strg+Umschalt+D</translation>
-    </message>
-    <message>
         <source>Export Draft Blocks</source>
         <translation>Exportiere Entwurfsblöcke</translation>
-    </message>
-    <message>
-        <source>E, D</source>
-        <translation>E;D</translation>
     </message>
     <message>
         <source>Export</source>
@@ -6558,10 +6279,6 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Seam Allowance</source>
         <translation>Nahtzugabe</translation>
-    </message>
-    <message>
-        <source>V, S</source>
-        <translation>V, S</translation>
     </message>
     <message>
         <source>Document Info...</source>
@@ -6574,10 +6291,6 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Display document Info</source>
         <translation>Dokument Info anzeigen</translation>
-    </message>
-    <message>
-        <source>Ctrl+I</source>
-        <translation>Strg+I</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
@@ -6912,32 +6625,16 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Auf Linie</translation>
     </message>
     <message>
-        <source>O, L</source>
-        <translation>O, L</translation>
-    </message>
-    <message>
         <source>Length and Angle</source>
         <translation>Länge und Winkel</translation>
-    </message>
-    <message>
-        <source>L, A</source>
-        <translation>L, A</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
         <translation>Auf Senkrechter</translation>
     </message>
     <message>
-        <source>O, P</source>
-        <translation>O, P</translation>
-    </message>
-    <message>
         <source>On Bisector</source>
         <translation>Auf Winkelhalbierender</translation>
-    </message>
-    <message>
-        <source>O, B</source>
-        <translation>O, B</translation>
     </message>
     <message>
         <source>Length to Line</source>
@@ -6952,20 +6649,12 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Schneidet Achse und Dreieck</translation>
     </message>
     <message>
-        <source>X, T</source>
-        <translation>X, T</translation>
-    </message>
-    <message>
         <source>Intersect Line and Perpendicular</source>
         <translation>Schneidet Linie und Senkrechte</translation>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
         <translation>Schneidet Linie und Achse</translation>
-    </message>
-    <message>
-        <source>L, X</source>
-        <translation>L, X</translation>
     </message>
     <message>
         <source>Intersect Lines</source>
@@ -6978,10 +6667,6 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Point on Curve</source>
         <translation>Punkt auf Kurve</translation>
-    </message>
-    <message>
-        <source>O, C</source>
-        <translation>O, C</translation>
     </message>
     <message>
         <source>Curve - Fixed</source>
@@ -7004,10 +6689,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Punkt auf Spline (O, S)</translation>
     </message>
     <message>
-        <source>O, S</source>
-        <translation>O, S</translation>
-    </message>
-    <message>
         <source>Spline - Fixed</source>
         <translation>Spline - Fixiert</translation>
     </message>
@@ -7024,10 +6705,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Schneidet Kurve und Achse</translation>
     </message>
     <message>
-        <source>C, X</source>
-        <translation>C, X</translation>
-    </message>
-    <message>
         <source>Radius and Angles</source>
         <translation>Radius und Winkel</translation>
     </message>
@@ -7042,10 +6719,6 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Point on Arc (O, A)</source>
         <translation>Punkt auf Bogen (O, A)</translation>
-    </message>
-    <message>
-        <source>O, A</source>
-        <translation>O, A</translation>
     </message>
     <message>
         <source>Intersect Arc and Axis</source>
@@ -7146,10 +6819,6 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Zoom to point (Ctrl + Alt + P)</source>
         <translation>Zoom zum Punkt (Strg + Alt + P)</translation>
-    </message>
-    <message>
-        <source>Alt+I</source>
-        <translation>Alt+I</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -7324,10 +6993,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Sperren ist fehlgeschlagen. Datei mit diesem Namen ist in einem anderen Fenster geöffnet.</translation>
     </message>
     <message>
-        <source>Ctrl+E</source>
-        <translation>Strg+E</translation>
-    </message>
-    <message>
         <source>untitled</source>
         <translation>unbenannt</translation>
     </message>
@@ -7356,10 +7021,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Schnittmuster</translation>
     </message>
     <message>
-        <source>L, P</source>
-        <translation>L, P</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Werkzeug::Operationen - Drehung:&lt;/b&gt; Wähle ein oder mehrere Opbjekte aus - Halten &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl, mit &lt;b&gt;ENTER&lt;/b&gt; die Auswahl bestätigen</translation>
     </message>
@@ -7380,10 +7041,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Zoom 100%</source>
         <translation>Zoom 100%</translation>
-    </message>
-    <message>
-        <source>100%</source>
-        <translation>100%</translation>
     </message>
     <message>
         <source>Previous Draft Block</source>
@@ -7550,10 +7207,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Keyboard Shortcuts</source>
         <translation>Tastaturkurzbefehle</translation>
-    </message>
-    <message>
-        <source>K</source>
-        <translation>K</translation>
     </message>
     <message>
         <source>SeamlyMe Shortcuts</source>
@@ -7821,26 +7474,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
 <context>
     <name>PageFormatCombobox</name>
     <message>
-        <source>A0</source>
-        <translation>A0</translation>
-    </message>
-    <message>
-        <source>A1</source>
-        <translation>A1</translation>
-    </message>
-    <message>
-        <source>A2</source>
-        <translation>A2</translation>
-    </message>
-    <message>
-        <source>A3</source>
-        <translation>A3</translation>
-    </message>
-    <message>
-        <source>A4</source>
-        <translation>A4</translation>
-    </message>
-    <message>
         <source>Letter</source>
         <translation>Brief</translation>
     </message>
@@ -7922,10 +7555,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Notches </source>
         <translation>Markierungen </translation>
-    </message>
-    <message>
-        <source>Poperties</source>
-        <translation>Eigenschaften</translation>
     </message>
     <message>
         <source>Piece name:</source>
@@ -8014,14 +7643,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Tilt:</source>
         <translation>Neigung:</translation>
-    </message>
-    <message>
-        <source>CW X</source>
-        <translation>Im Uhrzeigersinn X</translation>
-    </message>
-    <message>
-        <source>CCW X</source>
-        <translation>Gegen den Uhrzeigersinn X</translation>
     </message>
     <message>
         <source>Annotation:</source>
@@ -8193,7 +7814,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>Pattern label</source>
-        <translation>Schnittteil Etikett</translation>
+        <translation>Schnittmuster Etikett</translation>
     </message>
     <message>
         <source>Show pattern label</source>
@@ -8284,10 +7905,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation> Breite:</translation>
     </message>
     <message>
-        <source>  °</source>
-        <translation>  °</translation>
-    </message>
-    <message>
         <source>Reset notch length to default.</source>
         <translation>Markierungslänge auf Standard zurücksetzen.</translation>
     </message>
@@ -8302,10 +7919,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Count:</source>
         <translation>Zählen:</translation>
-    </message>
-    <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction. Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
-        <translation>Hauptpfad Objekte im Uhrzeigersinn auswählen, mit &lt;b&gt;SHIFT&lt;/b&gt; Kurvenrichtung umkehren,  oder &lt;b&gt;Strg&lt;/b&gt; um Kurvenrichtung beizubehalten. Mit &lt;b&gt;Enter&lt;/b&gt; Teilerstellung abschließen </translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
@@ -8526,6 +8139,18 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Count</source>
         <translation>Zählen</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be less than length of 2 arrows</source>
+        <translation>Die Länge darf nicht kürzer sein als die Länge von 2 Pfeilen</translation>
+    </message>
+    <message>
+        <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
+        <translation>Mit &lt;b&gt;Enter&lt;/b&gt; Teilerstellung abschließen.</translation>
+    </message>
+    <message>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Hauptpfad Objekte im Uhrzeigersinn auswählen, mit &lt;b&gt;SHIFT&lt;/b&gt; Kurvenrichtung umkehren, oder &lt;b&gt;Strg&lt;/b&gt; um Kurvenrichtung beizubehalten.</translation>
     </message>
 </context>
 <context>
@@ -9058,10 +8683,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Standard:</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Dezimaltrennzeichen:</translation>
-    </message>
-    <message>
         <source>None</source>
         <translation>Keine</translation>
     </message>
@@ -9170,10 +8791,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Anschrift:</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Gebietsschema des Benutzers</translation>
-    </message>
-    <message>
         <source>Email format is not valid.</source>
         <translation>Das E-Mail-Format ist nicht gültig.</translation>
     </message>
@@ -9193,6 +8810,42 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Point name text:</source>
         <translation>Punktbezeichnung Text:</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Trennzeichen Gebietsschema:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>System des Benutzers</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Standort</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Gruppentrennzeichen</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Dezimalpunkt</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Negatives Vorzeichen</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Positives Vorzeichen</translation>
     </message>
 </context>
 <context>
@@ -9272,122 +8925,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Size:</source>
         <translation>Größe:</translation>
-    </message>
-    <message>
-        <source>6</source>
-        <translation>6</translation>
-    </message>
-    <message>
-        <source>7</source>
-        <translation>7</translation>
-    </message>
-    <message>
-        <source>8</source>
-        <translation>8</translation>
-    </message>
-    <message>
-        <source>9</source>
-        <translation>9</translation>
-    </message>
-    <message>
-        <source>10</source>
-        <translation>10</translation>
-    </message>
-    <message>
-        <source>10.5</source>
-        <translation>10,5</translation>
-    </message>
-    <message>
-        <source>11</source>
-        <translation>11</translation>
-    </message>
-    <message>
-        <source>12</source>
-        <translation>12</translation>
-    </message>
-    <message>
-        <source>13</source>
-        <translation>1313</translation>
-    </message>
-    <message>
-        <source>14</source>
-        <translation>14</translation>
-    </message>
-    <message>
-        <source>15</source>
-        <translation>15</translation>
-    </message>
-    <message>
-        <source>16</source>
-        <translation>16</translation>
-    </message>
-    <message>
-        <source>18</source>
-        <translation>18</translation>
-    </message>
-    <message>
-        <source>20</source>
-        <translation>20</translation>
-    </message>
-    <message>
-        <source>22</source>
-        <translation>22</translation>
-    </message>
-    <message>
-        <source>24</source>
-        <translation>24</translation>
-    </message>
-    <message>
-        <source>26</source>
-        <translation>26</translation>
-    </message>
-    <message>
-        <source>28</source>
-        <translation>28</translation>
-    </message>
-    <message>
-        <source>32</source>
-        <translation>32</translation>
-    </message>
-    <message>
-        <source>36</source>
-        <translation>36</translation>
-    </message>
-    <message>
-        <source>40</source>
-        <translation>40</translation>
-    </message>
-    <message>
-        <source>44</source>
-        <translation>44</translation>
-    </message>
-    <message>
-        <source>48</source>
-        <translation>48</translation>
-    </message>
-    <message>
-        <source>54</source>
-        <translation>54</translation>
-    </message>
-    <message>
-        <source>60</source>
-        <translation>60</translation>
-    </message>
-    <message>
-        <source>66</source>
-        <translation>66</translation>
-    </message>
-    <message>
-        <source>72</source>
-        <translation>72</translation>
-    </message>
-    <message>
-        <source>80</source>
-        <translation>80</translation>
-    </message>
-    <message>
-        <source>96</source>
-        <translation>96</translation>
     </message>
     <message>
         <source>The quick brown fox jumps over the lazy dog</source>
@@ -9495,14 +9032,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Geschwindigkeit:</translation>
     </message>
     <message>
-        <source>-</source>
-        <translation>-</translation>
-    </message>
-    <message>
-        <source>+</source>
-        <translation>+</translation>
-    </message>
-    <message>
         <source>Zoom</source>
         <translation>Zoom</translation>
     </message>
@@ -9597,6 +9126,14 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Show only ISO line weights in drop down boxes</source>
         <translation>Nur ISO-Liniengewichte in Dropdown-Boxen anzeigen</translation>
+    </message>
+    <message>
+        <source>Workspace</source>
+        <translation>Arbeitsplatz</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Hintergrund:</translation>
     </message>
 </context>
 <context>
@@ -9749,7 +9286,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Nahtlinie</translation>
     </message>
     <message>
-        <source>LInetype:</source>
+        <source>Linetype:</source>
         <translation>Linientyp:</translation>
     </message>
     <message>
@@ -9883,18 +9420,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Erstelle ein neues Schnittteil, um mit der Arbeit zu beginnen.</translation>
     </message>
     <message>
-        <source>mm</source>
-        <translation>mm</translation>
-    </message>
-    <message>
-        <source>cm</source>
-        <translation>cm</translation>
-    </message>
-    <message>
-        <source>inch</source>
-        <translation>zoll</translation>
-    </message>
-    <message>
         <source>Property</source>
         <extracomment>The text that appears in the first column header</extracomment>
         <translation>Eigenschaft</translation>
@@ -9903,10 +9428,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Value</source>
         <extracomment>The text that appears in the second column header</extracomment>
         <translation>Wert</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>add node</source>
@@ -10023,6 +9544,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Can not extend internal path &apos;%1&apos; end point to cut line.</source>
         <translation>Interner Pfad &apos;%1&apos; Endpunkt kann nicht bis zur Schnittlinie verlängert werden.</translation>
+    </message>
+    <message>
+        <source>inch</source>
+        <translation>zoll</translation>
     </message>
 </context>
 <context>
@@ -10330,12 +9855,40 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Willkommensbildschirm nicht anzeigen</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Dezimaltrennzeichen:</translation>
+        <source>Separator Locale:</source>
+        <translation>Trennzeichen Gebietsschema:</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Gebietsschema des Benutzers</translation>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>System des Benutzers</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Standort</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Gruppentrennzeichen</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Dezimalpunkt</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Negatives Vorzeichen</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Positives Vorzeichen</translation>
     </message>
 </context>
 <context>
@@ -10420,10 +9973,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Legt die Standardeinheiten für eine neue Messdatei fest.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Dezimaltrennzeichen:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Sprache der Benutzeroberfläche:</translation>
     </message>
@@ -10434,10 +9983,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Do not show again</source>
         <translation>Nicht mehr anzeigen</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Gebietsschema des Benutzers</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -10452,15 +9997,48 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Zoll</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt. Sie können diese Einstellung in den SeamlyMe-Einstellungen ändern.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed.
-You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
+        <source>Separator Locale:</source>
+        <translation>Trennzeichen Gebietsschema:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>System des Benutzers</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Standort</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Sprache</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Gruppentrennzeichen</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Dezimalpunkt</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Negatives Vorzeichen</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Positives Vorzeichen</translation>
     </message>
 </context>
 <context>
@@ -10482,20 +10060,12 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Legt die Standardeinheiten für eine neue Messdatei fest.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Dezimaltrennzeichen:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Sprache der Benutzeroberfläche:</translation>
     </message>
     <message>
         <source>Do not show again</source>
         <translation>Nicht mehr anzeigen</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Gebietsschema des Benutzers</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -10526,15 +10096,48 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Legt den Klickton für die Knotenauswahl fest.</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt. Sie können diese Einstellung in den Seamly2D-Einstellungen ändern.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed.
-You can change this setting in the Seamly2D preferences.</source>
-        <translation type="unfinished"></translation>
+        <source>Separator Locale:</source>
+        <translation>Trennzeichen Gebietsschema:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>System des Benutzers</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Standort</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Sprache</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Gruppentrennzeichen</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Dezimalpunkt</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Negatives Vorzeichen</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Positives Vorzeichen</translation>
     </message>
 </context>
 <context>
@@ -10945,10 +10548,6 @@ You can change this setting in the Seamly2D preferences.</source>
     <message>
         <source>Point - Intersect Curves</source>
         <translation>Punkt - Schneidet Kurven</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Curve and Axis</source>
-        <translation>Punkt - Schneidet Kurve und Achse</translation>
     </message>
     <message>
         <source>Arcs</source>
@@ -11925,6 +11524,18 @@ wie gewohnt in SeamlyME laden können.
         <source>Convert 3DLook file:</source>
         <translation>3DLook-Datei konvertieren:</translation>
     </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Groß- und Kleinschreibung beachten</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Suche nach vollständigem Wort</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Suche nach regulären Ausdrücken</translation>
+    </message>
 </context>
 <context>
     <name>TogglePieceInLayout</name>
@@ -12373,11 +11984,6 @@ wie gewohnt in SeamlyME laden können.
         <translation>Helles Stahlblau</translation>
     </message>
     <message>
-        <source>Biege</source>
-        <translatorcomment>ist schon deutsch</translatorcomment>
-        <translation>Beige</translation>
-    </message>
-    <message>
         <source>Thistle</source>
         <translation>Distelfarben</translation>
     </message>
@@ -12409,6 +12015,10 @@ wie gewohnt in SeamlyME laden können.
         <source>Tan</source>
         <translatorcomment>oder auch Gelbbraun</translatorcomment>
         <translation>Hellbraun</translation>
+    </message>
+    <message>
+        <source>Beige</source>
+        <translation>Beige</translation>
     </message>
 </context>
 <context>
@@ -12530,14 +12140,6 @@ wie gewohnt in SeamlyME laden können.
         <translation>Ungültiges Längen Körperhöhen Gradierungsmaß.</translation>
     </message>
     <message>
-        <source>Pattern making program.</source>
-        <translation>Schnittmusterprogramm.</translation>
-    </message>
-    <message>
-        <source>Pattern file.</source>
-        <translation>Schnittmusterdatei.</translation>
-    </message>
-    <message>
         <source>Gap width must be used together with shift units.</source>
         <translation>Die Spaltenbreite muss zusammen mit Verschiebungseinheiten genutzt werden.</translation>
     </message>
@@ -12653,6 +12255,35 @@ wie gewohnt in SeamlyME laden können.
         <source>Set height value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
         <translation>Körperhöhenwert einer Schnittteildatei setzen, die mit Standardmaßen (Exportmodus) geöffnet wurde. Gültige Werte: %1cm.</translation>
     </message>
+    <message>
+        <source>Seamly2D open source patternmaking program.</source>
+        <translation>Open-Source-Programm zur Mustererstellung Seamly2D.</translation>
+    </message>
+    <message>
+        <source>Seamly2D pattern file (.sm2d)</source>
+        <translation>Seamly2D-Musterdatei (.sm2d)</translation>
+    </message>
+    <message>
+        <source>The page height</source>
+        <translation>Die Seitenhöhe</translation>
+    </message>
+    <message>
+        <source>The left margin</source>
+        <translation>Der linke Rand</translation>
+    </message>
+    <message>
+        <source>The right margin</source>
+        <translation>Der rechte Rand</translation>
+    </message>
+    <message>
+        <source>The top margin</source>
+        <translatorcomment>Der untere Rand</translatorcomment>
+        <translation>Der obere Rand</translation>
+    </message>
+    <message>
+        <source>The bottom margin</source>
+        <translation></translation>
+    </message>
 </context>
 <context>
     <name>VCommonSettings</name>
@@ -12757,10 +12388,6 @@ wie gewohnt in SeamlyME laden können.
 %2.</translation>
     </message>
     <message>
-        <source>Validation error file %3 in line %1 column %2</source>
-        <translation>Fehler bei der Gültigkeitsprüfung in Datei %3, Zeile %1, Spalte %2</translation>
-    </message>
-    <message>
         <source>Parsing error file %3 in line %1 column %2</source>
         <translation>Auswertungsfehler in Datei %3, Zeile %1, Spalte %2</translation>
     </message>
@@ -12773,16 +12400,26 @@ wie gewohnt in SeamlyME laden können.
         <translation>Diese ID ist nicht eindeutig.</translation>
     </message>
     <message>
-        <source>Could not load schema file &apos;%1&apos;.</source>
-        <translation>Konnte Schemadatei %1 nicht laden.</translation>
-    </message>
-    <message>
         <source>Fail to write Canonical XML.</source>
         <translation>Canonical XML kann nicht geschrieben werden.</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
         <translation>&lt;leer&gt;</translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t load schema</source>
+        <translation>Schema konnte nicht geladen werden</translation>
+    </message>
+    <message>
+        <source>Validation error file %1</source>
+        <translation>Validierungsfehlerdatei %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation>Die Musterdatei %1 kann nicht geöffnet werden:
+%2.</translation>
     </message>
 </context>
 <context>
@@ -12842,6 +12479,18 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>AngleLine_</source>
         <translation>WinkelLinie_</translation>
+    </message>
+    <message>
+        <source>Move Group Object</source>
+        <translation>Gruppenobjekt bewegen</translation>
+    </message>
+    <message>
+        <source>From </source>
+        <translation>Aus </translation>
+    </message>
+    <message>
+        <source> to </source>
+        <translation> zu </translation>
     </message>
 </context>
 <context>
@@ -14878,7 +14527,7 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>in</source>
         <comment>inch</comment>
-        <translation>zoll</translation>
+        <translation>in</translation>
     </message>
     <message>
         <source>CurrentLength</source>

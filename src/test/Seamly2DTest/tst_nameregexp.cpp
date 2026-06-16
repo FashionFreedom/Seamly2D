@@ -1,53 +1,53 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//-------------------------------------------------------------------------------------------------
+//  @file   tst_nameregexp.cpp
+//  @author Douglas S Caskey
+//  @date   14 Jul, 2025
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2025 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-------------------------------------------------------------------------------------------------
 
- ************************************************************************
- **
- **  @file   tst_nameregexp.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   11 5, 2015
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-------------------------------------------------------------------------------------------------
+//  @file   tst_nameregexp.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   11 5, 2015
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-------------------------------------------------------------------------------------------------
 
 #include "tst_nameregexp.h"
 #include "../qmuparser/qmudef.h"
@@ -69,8 +69,9 @@ void TST_NameRegExp::TestNameRegExp_data()
     QTest::addColumn<QString>("name");
     QTest::addColumn<bool>("result");
 
-    const QList<QLocale> allLocales =
-            QLocale::matchingLocales(QLocale::AnyLanguage, QLocale::AnyScript, QLocale::AnyCountry);
+    const QList<QLocale> allLocales = QLocale::matchingLocales(QLocale::AnyLanguage,
+                                                               QLocale::AnyScript,
+                                                               QLocale::AnyCountry);
 
     for(int i = 0; i < allLocales.size(); ++i)
     {
@@ -80,55 +81,55 @@ void TST_NameRegExp::TestNameRegExp_data()
         Q_UNUSED(expLower)
 
         const QString localeName = allLocales.at(i).name();
-        QString tag = localeName+QLatin1String(". First character can't be ")+sign0;
-        QTest::newRow(qUtf8Printable(tag)) << sign0+QLatin1String("a") << false;
+        QString tag = localeName + QLatin1String(". First character can't be ") + char0;
+        QTest::newRow(qUtf8Printable(tag)) << char0 + QLatin1String("a") << false;
 
-        tag = localeName+QLatin1String(". First character can't be ")+sign1;
-        QTest::newRow(qUtf8Printable(tag)) << sign1+QLatin1String("a") << false;
+        tag = localeName + QLatin1String(". First character can't be ") + char1;
+        QTest::newRow(qUtf8Printable(tag)) << char1 + QLatin1String("a") << false;
 
-        tag = localeName+QLatin1String(". First character can't be ")+sign2;
-        QTest::newRow(qUtf8Printable(tag)) << sign2+QLatin1String("a") << false;
+        tag = localeName + QLatin1String(". First character can't be ") + char2;
+        QTest::newRow(qUtf8Printable(tag)) << char2 + QLatin1String("a") << false;
 
-        tag = localeName+QLatin1String(". First character can't be ")+sign3;
-        QTest::newRow(qUtf8Printable(tag)) << sign3+QLatin1String("a") << false;
+        tag = localeName + QLatin1String(". First character can't be ") + char3;
+        QTest::newRow(qUtf8Printable(tag)) << char3 + QLatin1String("a") << false;
 
-        tag = localeName+QLatin1String(". First character can't be ")+sign4;
-        QTest::newRow(qUtf8Printable(tag)) << sign4+QLatin1String("a") << false;
+        tag = localeName + QLatin1String(". First character can't be ") + char4;
+        QTest::newRow(qUtf8Printable(tag)) << char4 + QLatin1String("a") << false;
 
-        tag = localeName+QLatin1String(". First character can't be ")+sign5;
-        QTest::newRow(qUtf8Printable(tag)) << sign5+QLatin1String("a") << false;
+        tag = localeName + QLatin1String(". First character can't be ") + char5;
+        QTest::newRow(qUtf8Printable(tag)) << char5 + QLatin1String("a") << false;
 
-        tag = localeName+QLatin1String(". First character can't be ")+sign6;
-        QTest::newRow(qUtf8Printable(tag)) << sign6+QLatin1String("a") << false;
+        tag = localeName + QLatin1String(". First character can't be ") + char6;
+        QTest::newRow(qUtf8Printable(tag)) << char6 + QLatin1String("a") << false;
 
-        tag = localeName+QLatin1String(". First character can't be ")+sign7;
-        QTest::newRow(qUtf8Printable(tag)) << sign7+QLatin1String("a") << false;
+        tag = localeName + QLatin1String(". First character can't be ") + char7;
+        QTest::newRow(qUtf8Printable(tag)) << char7 + QLatin1String("a") << false;
 
-        tag = localeName+QLatin1String(". First character can't be ")+sign8;
-        QTest::newRow(qUtf8Printable(tag)) << sign8+QLatin1String("a") << false;
+        tag = localeName + QLatin1String(". First character can't be ") + char8;
+        QTest::newRow(qUtf8Printable(tag)) << char8 + QLatin1String("a") << false;
 
-        tag = localeName+QLatin1String(". First character can't be ")+sign9;
-        QTest::newRow(qUtf8Printable(tag)) << sign9+QLatin1String("a") << false;
+        tag = localeName + QLatin1String(". First character can't be ") + char9;
+        QTest::newRow(qUtf8Printable(tag)) << char9 + QLatin1String("a") << false;
 
-        tag = localeName+QLatin1String(". First character can't be \"")+negativeSign+QLatin1String("\"");
-        QTest::newRow(qUtf8Printable(tag)) << negativeSign+QLatin1String("a") << false;
+        tag = localeName + QLatin1String(". First character can't be \"") + negativeSign + QLatin1String("\"");
+        QTest::newRow(qUtf8Printable(tag)) << negativeSign + QLatin1String("a") << false;
 
-        tag = localeName+QLatin1String(". First character can't be \"")+decimalPoint+QLatin1String("\"");
-        QTest::newRow(qUtf8Printable(tag)) << decimalPoint+QLatin1String("a") << false;
+        tag = localeName + QLatin1String(". First character can't be \"") + decimalPoint + QLatin1String("\"");
+        QTest::newRow(qUtf8Printable(tag)) << decimalPoint + QLatin1String("a") << false;
 
-        tag = localeName+QLatin1String(". First character can't be \"")+groupSeparator+QLatin1String("\"");
-        QTest::newRow(qUtf8Printable(tag)) << groupSeparator+QLatin1String("a") << false;
+        tag = localeName + QLatin1String(". First character can't be \"") + groupSeparator + QLatin1String("\"");
+        QTest::newRow(qUtf8Printable(tag)) << groupSeparator + QLatin1String("a") << false;
 
-        tag = localeName+QLatin1String(". Any next character can't be \"")+negativeSign+QLatin1String("\"");
-        QTest::newRow(qUtf8Printable(tag)) << QLatin1String("a")+negativeSign << false;
+        tag = localeName + QLatin1String(". Any next character can't be \"") + negativeSign + QLatin1String("\"");
+        QTest::newRow(qUtf8Printable(tag)) << QLatin1String("a") + negativeSign << false;
 
-        tag = localeName+QLatin1String(". Any next character can't be \"")+decimalPoint+QLatin1String("\"");
-        QTest::newRow(qUtf8Printable(tag)) << QLatin1String("a")+decimalPoint << false;
+        tag = localeName + QLatin1String(". Any next character can't be \"") + decimalPoint + QLatin1String("\"");
+        QTest::newRow(qUtf8Printable(tag)) << QLatin1String("a") + decimalPoint << false;
 
         if (groupSeparator != '\'')
         {
-            tag = localeName+QLatin1String(". Any next character can't be \"")+groupSeparator+QLatin1String("\"");
-            QTest::newRow(qUtf8Printable(tag)) << QLatin1String("a")+groupSeparator << false;
+            tag = localeName + QLatin1String(". Any next character can't be \"") + groupSeparator + QLatin1String("\"");
+            QTest::newRow(qUtf8Printable(tag)) << QLatin1String("a") + groupSeparator << false;
         }
     }
 

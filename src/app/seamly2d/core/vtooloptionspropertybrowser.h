@@ -186,6 +186,9 @@ private:
                                     const QString &propertyAttribute);
 
     void addPropertyLabel(const QString &propertyName, const QString &propertyAttribute);
+    void addPropertyBool(const QString &propertyName, bool value, const QString &propertyAttribute);
+    void addPropertyEnum(const QString &propertyName, const QStringList &options,
+                         int currentIndex, const QString &propertyAttribute);
 
     QStringList propertiesList() const;
 

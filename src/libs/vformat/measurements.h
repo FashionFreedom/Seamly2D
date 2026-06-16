@@ -78,8 +78,8 @@ public:
                      MeasurementDoc(Unit unit, int baseSize, int baseHeight, VContainer *data);
     virtual         ~MeasurementDoc() Q_DECL_EQ_DEFAULT;
 
-    virtual void     setXMLContent(const QString &fileName) Q_DECL_OVERRIDE;
-    virtual bool     SaveDocument(const QString &fileName, QString &error) Q_DECL_OVERRIDE;
+    virtual void     setXMLContent(const QString &fileName) override;
+    virtual bool     SaveDocument(const QString &fileName, QString &error) override;
 
     void             addEmpty(const QString &name, const QString &formula = QString());
     void             AddEmptyAfter(const QString &after, const QString &name, const QString &formula = QString());

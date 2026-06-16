@@ -69,7 +69,7 @@ void RemoveGroupItem::undo()
         emit qApp->getCurrentDocument()->patternChanged(true);
 
         QDomElement groups = doc->createGroups();
-        if (not groups.isNull())
+        if (!groups.isNull())
         {
             doc->parseGroups(groups);
         } else
@@ -78,7 +78,8 @@ void RemoveGroupItem::undo()
             return;
         }
 
-        emit updateGroups();
+        //emit updateGroups();
+        emit NeedFullParsing();
     }
     else
     {
@@ -116,7 +117,7 @@ void RemoveGroupItem::redo()
         tool->GroupVisibility(objectId,true);
 
         QDomElement groups = doc->createGroups();
-        if (not groups.isNull())
+        if (!groups.isNull())
         {
             doc->parseGroups(groups);
         } else
@@ -125,7 +126,8 @@ void RemoveGroupItem::redo()
             return;
         }
 
-        emit updateGroups();
+        //emit updateGroups();
+        emit NeedFullParsing();
     }
     else
     {

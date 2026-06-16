@@ -71,6 +71,8 @@ public:
                          VCommonSettings(Format format, Scope scope, const QString &organization,
                                          const QString &application = QString(), QObject *parent = nullptr);
 
+                         VCommonSettings(const QString &fileName, Format format, QObject *parent = nullptr);
+
     static QString       SharePath(const QString &shareItem);
     static QString       MultisizeTablesPath();
     static QString       StandardTemplatesPath();
@@ -244,6 +246,9 @@ public:
     int                  getExportQuality() const;
     void                 setExportQuality(const int &value);
 
+    QString              getBackgroundColor() const;
+    void                 setBackgroundColor(const QString &color);
+
     QString              getZoomRBPositiveColor() const;
     void                 setZoomRBPositiveColor(const QString &value);
 
@@ -384,9 +389,9 @@ public:
     bool                 GetCSVWithHeader() const;
     bool                 GetDefCSVWithHeader() const;
 
-    void                 SetCSVCodec(int mib);
-    int                  GetCSVCodec() const;
-    int                  GetDefCSVCodec() const;
+    void                 SetCSVCodec(QStringConverter::Encoding encoding);
+    QStringConverter::Encoding                  GetCSVCodec() const;
+    QStringConverter::Encoding                  GetDefCSVCodec() const;
 
     void                 SetCSVSeparator(const QChar &separator);
     QChar                GetCSVSeparator() const;
@@ -523,6 +528,8 @@ public:
     static QStringList   PredefinedTimeFormats();
     QStringList          GetUserDefinedTimeFormats() const;
     void                 SetUserDefinedTimeFormats(const QStringList &formats);
+
+    QString              getStr(QString key, const QString &defaultString) const;
 
 private:
     Q_DISABLE_COPY(VCommonSettings)

@@ -98,6 +98,8 @@ DialogNormal::DialogNormal(const VContainer *data, const quint32 &toolId, QWidge
     this->formulaBaseHeight = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
 
+    ui->doubleSpinBoxAngle->setToolTip(makeAngleTooltip());
+
     initializeOkCancelApply(ui);
     flagFormula = false;
     DialogTool::CheckState();
@@ -137,7 +139,7 @@ DialogNormal::DialogNormal(const VContainer *data, const quint32 &toolId, QWidge
     if(!qApp->Settings()->useCurrentPen())
     {
         setLineType(LineTypeDashLine);
-        setLineWeight("0.35");
+        setLineWeight(DefaultLineWeight);
     }
 }
 
@@ -341,7 +343,7 @@ void DialogNormal::SetFormula(const QString &value)
  */
 QString DialogNormal::getLineType() const
 {
-    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+    return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -351,7 +353,7 @@ QString DialogNormal::getLineType() const
  */
 void DialogNormal::setLineType(const QString &value)
 {
-    ChangeCurrentData(ui->lineType_ComboBox, value);
+    changeCurrentData(ui->lineType_ComboBox, value);
     vis->setLineStyle(lineTypeToPenStyle(value));
 }
 
@@ -362,7 +364,7 @@ void DialogNormal::setLineType(const QString &value)
  */
 QString DialogNormal::getLineWeight() const
 {
-        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -372,20 +374,20 @@ QString DialogNormal::getLineWeight() const
  */
 void DialogNormal::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    changeCurrentData(ui->lineWeight_ComboBox, value);
     vis->setLineWeight(value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogNormal::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogNormal::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

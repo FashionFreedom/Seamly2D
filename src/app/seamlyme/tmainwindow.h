@@ -80,7 +80,7 @@ class TMainWindow : public VAbstractMainWindow
 
 public:
     explicit            TMainWindow(QWidget *parent = nullptr);
-    virtual            ~TMainWindow() Q_DECL_OVERRIDE;
+    virtual            ~TMainWindow() override;
 
     QString             CurrentFile() const;
 
@@ -88,21 +88,21 @@ public:
 
     void                SetBaseMHeight(int height);
     void                SetBaseMSize(int size);
-    void                SetPUnit(Unit unit);
+    void                setPUnit(Unit unit);
 
     bool                LoadFile(const QString &path);
 
 public slots:
-    virtual void        ShowToolTip(const QString &toolTip) Q_DECL_OVERRIDE;
-    virtual void        zoomToSelected() Q_DECL_OVERRIDE;
-    virtual void        updateGroups() Q_DECL_OVERRIDE;
+    virtual void        setStatusMessage(const QString &toolTip) override;
+    virtual void        zoomToSelected() override;
+    virtual void        updateGroups() override;
 
 protected:
-    virtual void        closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
-    virtual void        changeEvent(QEvent* event) Q_DECL_OVERRIDE;
-    virtual void        showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
-    virtual bool        eventFilter(QObject *object, QEvent *event) Q_DECL_OVERRIDE;
-    virtual void        exportToCSVData(const QString &fileName, const DialogExportToCSV &dialog) Q_DECL_FINAL;
+    virtual void        closeEvent(QCloseEvent *event) override;
+    virtual void        changeEvent(QEvent* event) override;
+    virtual void        showEvent(QShowEvent *event) override;
+    virtual bool        eventFilter(QObject *object, QEvent *event) override;
+    virtual void        exportToCSVData(const QString &fileName, const DialogExportToCSV &dialog) final;
     void                handleExportToCSV();
 
 private slots:
@@ -161,7 +161,7 @@ private slots:
     void                SaveMDescription();
     void                SaveMFullName();
 
-    void                PatternUnitChanged(int index);
+    void                patternUnitsChanged(int index);
 
 private:
     Q_DISABLE_COPY(TMainWindow)
@@ -179,7 +179,7 @@ private:
     QComboBox          *comboBoxUnits;
 
     std::shared_ptr<VLockGuard<char>> lock;
-    QSharedPointer<VTableSearch>      search;
+    QSharedPointer<VTableSearch>      m_search;
     QLabel             *labelGradationHeights;
     QLabel             *labelGradationSizes;
     QLabel             *labelPatternUnit;
@@ -197,6 +197,7 @@ private:
     void                initializeTable();
     void                SetDecimals();
     void                initUnits();
+    void                setCurrentPatternUnits();
     void                InitComboBoxUnits();
     void                InitGender(QComboBox *gender);
 
@@ -240,7 +241,7 @@ private:
 
     QStringList         FilterMeasurements(const QStringList &mNew, const QStringList &mFilter);
 
-    void                UpdatePatternUnit();
+    void                updatePatternUnit();
 
     bool                LoadFromExistingFile(const QString &path);
 

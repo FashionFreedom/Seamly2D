@@ -1,53 +1,12 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
  **  @file   dialogcubicbezier.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   10 3, 2016
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com> / Seamly2D contributors
  **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+ **  Dialog for "Kurve Fixiert" — the user clicks 4 canvas points.
+ **  Two optional checkboxes modify the curve computation:
+ **    Checkbox A: scale both handles to hit a target arc length
+ **    Checkbox B: Hobby algorithm sets optimal handle lengths (direction from P2/P3)
+ ***************************************************************************/
 
 #ifndef DIALOGCUBICBEZIER_H
 #define DIALOGCUBICBEZIER_H
@@ -55,32 +14,43 @@
 #include <qcompilerdetection.h>
 #include <QMetaObject>
 #include <QObject>
-#include <QSharedPointer>
 #include <QString>
 #include <QtGlobal>
 
-#include "../vgeometry/vcubicbezier.h"
 #include "../vmisc/def.h"
 #include "dialogtool.h"
 
-template <class T> class QSharedPointer;
-
-namespace Ui
-{
-    class DialogCubicBezier;
-}
+namespace Ui { class DialogCubicBezier; }
 
 class DialogCubicBezier : public DialogTool
 {
     Q_OBJECT
-
 public:
-    explicit      DialogCubicBezier(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
-    virtual      ~DialogCubicBezier();
+    explicit DialogCubicBezier(const VContainer *data, const quint32 &toolId,
+                                QWidget *parent = nullptr);
+    virtual ~DialogCubicBezier();
 
-    VCubicBezier  GetSpline() const;
-    void          SetSpline(const VCubicBezier &spline);
+    // The 4 original canvas point IDs
+    quint32       GetP1Id() const;
+    void          SetP1Id(const quint32 &value);
 
+    quint32       GetP2Id() const;
+    void          SetP2Id(const quint32 &value);
+
+    quint32       GetP3Id() const;
+    void          SetP3Id(const quint32 &value);
+
+    quint32       GetP4Id() const;
+    void          SetP4Id(const quint32 &value);
+
+    // Optional target length formula (empty = Checkbox A off)
+    QString       GetTargetLength() const;
+    void          SetTargetLength(const QString &value);
+
+    bool          GetAutoSmooth() const;
+    void          SetAutoSmooth(bool value);
+
+    // Line attributes
     QString       getPenStyle() const;
     void          setPenStyle(const QString &value);
 
@@ -92,28 +62,35 @@ public:
 
 public slots:
     virtual void  ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
-    virtual void  PointNameChanged() Q_DECL_OVERRIDE;
+
+    void          DeployTargetLengthTextEdit();
+    void          TargetLengthChanged();
+    void          FXTargetLength();
+    void          OnTargetLengthToggled(bool checked);
+    void          OnAutoSmoothToggled(bool checked);
 
 protected:
+    void          PointNameChanged();
+    virtual void  CheckState() Q_DECL_FINAL;
     virtual void  ShowVisualization() Q_DECL_OVERRIDE;
-    /**
-     * @brief SaveData Put dialog data in local variables
-     */
     virtual void  SaveData() Q_DECL_OVERRIDE;
+    virtual void  closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
 
 private:
     Q_DISABLE_COPY(DialogCubicBezier)
     Ui::DialogCubicBezier *ui;
 
-    /** @brief spl spline */
-    VCubicBezier  spl;
+    bool          flagTargetLength;
+    bool          flagError;
+
+    QTimer       *timerTargetLength;
+    QString       m_targetLength;
+    int           formulaBaseHeightTargetLength;
 
     qint32        newDuplicate;
 
-    const QSharedPointer<VPointF> GetP1() const;
-    const QSharedPointer<VPointF> GetP2() const;
-    const QSharedPointer<VPointF> GetP3() const;
-    const QSharedPointer<VPointF> GetP4() const;
+    void          EvalTargetLength();
+    void          updateTargetLengthVisible(bool visible);
 };
 
 #endif // DIALOGCUBICBEZIER_H

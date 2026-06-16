@@ -20,18 +20,18 @@ Design what **you** want to wear. Each Seamly2D pattern can read multi-size meas
 Don't know how? Join our multi-lingual Discourse [forum](https://forum.seamly.io).
 
 ### Supported platforms:
-   * Windows 10 & 11 (32-bit and 64-bit) 
-   * macOS 64-bit Ventura (13) and Sonoma (14)
+   * Windows 10 & 11 (64-bit) 
+   * macOS Monterey (12), Ventura (13), Sonoma (14), and Sequoia (15)
    * Most current Linux distros as Flatpak via [Flathub](https://flathub.org/apps/io.seamly.seamly2d)
    * Most current Linux distros as AppImage
 ___________________________________________________
 ### Download:
 
-| Windows 64-bit | Windows 32-bit | MacOS | Linux AppImage | Linux Flatpak |
-| :---:          | :---:          | :---: | :---:          | :---:         |
-| [![Seamly2D-windows.zip](./img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [![Seamly2D-win32.zip](./img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-win32.zip) | [![Seamly2D-macos.zip](./img/MacOS_logo_60x60.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [![Seamly2D AppImage](./img/linux-svgrepo-com-60x71.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-x86_64.AppImage) | [![Seamly2D Flatpak](./img/flathub-badge-en.png)](https://flathub.org/apps/io.seamly.seamly2d) |
-| Intel or AMD 64bit | Intel or AMD 32bit | | GCC 10 or later | GCC 10 or later |
-| Windows 10<br>Windows 11 | Windows 10 | macOS 13 Ventura<br>macOS 14 Sonoma | Debian 10 Buster<br>Debian 11 Bullseye<br>Debian 12 Bookworm<br>Ubuntu 22.04 Jammy<br>Ubuntu 23.04 Lunar<br>Up-to-date Arch Linux -<br>Manjaro<br>ArcoLinux<br>EndeavourOS<br>Anarchy<br>ArchLabs|Debian 10 Buster<br>Debian 11 Bullseye<br>Debian 12 Bookworm<br>Ubuntu 22.04 Jammy<br>Ubuntu 23.04 Lunar<br>Up-to-date Arch Linux -<br>Manjaro<br>ArcoLinux<br>EndeavourOS<br>Anarchy,<br>ArchLabs|
+| Windows 64-bit | MacOS | Linux AppImage | Linux Flatpak |
+| :---:          | :---: | :---:          | :---:         |
+| [![Seamly2D-windows.zip](./img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [![Seamly2D-macos.zip](./img/MacOS_logo_60x60.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [![Seamly2D AppImage](./img/linux-svgrepo-com-60x71.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-x86_64.AppImage) | [![Seamly2D Flatpak](./img/flathub-badge-en.png)](https://flathub.org/apps/io.seamly.seamly2d) |
+| Intel or AMD 64bit | Apple Silicon or Intel | Intel or AMD 64bit | Intel or AMD 64bit |
+| Windows 10<br>Windows 11 | macos 12 Monterey<br>macOS 13 Ventura<br>macOS 14 Sonoma<br>macOS 15 Sequoia| Debian 10 Buster<br>Debian 11 Bullseye<br>Debian 12 Bookworm<br>Ubuntu 22.04 Jammy<br>Ubuntu 23.04 Lunar<br>Up-to-date Arch Linux -<br>Manjaro<br>ArcoLinux<br>EndeavourOS<br>Anarchy<br>ArchLabs|Debian 10 Buster<br>Debian 11 Bullseye<br>Debian 12 Bookworm<br>Ubuntu 22.04 Jammy<br>Ubuntu 23.04 Lunar<br>Up-to-date Arch Linux -<br>Manjaro<br>ArcoLinux<br>EndeavourOS<br>Anarchy,<br>ArchLabs|
 
 ___________________________________________________
 ### Community :
@@ -54,3 +54,4 @@ See [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl
 Other components and licensing:
 * QMuParser - [Simplified BSD license](https://opensource.org/licenses/BSD-2-Clause)
 * VPropertyExplorer - [LGPLv2.1 license](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html)
+* xerces-c - [Apache License, Version 2.0](https://apache.org/licenses/LICENSE-2.0)

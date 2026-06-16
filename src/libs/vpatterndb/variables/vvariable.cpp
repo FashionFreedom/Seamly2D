@@ -58,11 +58,11 @@
 #include "vvariable_p.h"
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VVariable &VVariable::operator=(VVariable &&var) Q_DECL_NOTHROW
+VVariable &VVariable::operator=(VVariable &&var) noexcept
 { Swap(var); return *this; }
 #endif
 
-void VVariable::Swap(VVariable &var) Q_DECL_NOTHROW
+void VVariable::Swap(VVariable &var) noexcept
 { VInternalVariable::Swap(var); std::swap(d, var.d); }
 
 //---------------------------------------------------------------------------------------------------------------------

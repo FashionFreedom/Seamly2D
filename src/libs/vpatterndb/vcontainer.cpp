@@ -91,7 +91,7 @@ qreal VContainer::_height = 176;
 QSet<QString> VContainer::uniqueNames = QSet<QString>();
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VContainer &VContainer::operator=(VContainer &&data) Q_DECL_NOTHROW
+VContainer &VContainer::operator=(VContainer &&data) noexcept
 { Swap(data); return *this; }
 #endif
 
@@ -107,7 +107,7 @@ VContainer &VContainer::operator=(VContainer &&data) Q_DECL_NOTHROW
  * - This method uses `std::swap` to exchange the data pointers of the two VContainer instances.
  * - It ensures that the swap operation is performed without throwing exceptions.
  */
-void VContainer::Swap(VContainer &data) Q_DECL_NOTHROW
+void VContainer::Swap(VContainer &data) noexcept
 { std::swap(d, data.d); }
 
 /**

@@ -39,6 +39,7 @@
 #include <QIODevice>
 #include <QList>
 #include <QTextStream>
+#include <QStringConverter>
 
 #include "../vmisc/diagnostic.h"
 
@@ -174,16 +175,17 @@ QVariant QxtCsvModel::headerData(int section, Qt::Orientation orientation, int r
 /*!
   \overload
 
-  Reads in a CSV file from the provided \a file using \a codec.
+  Reads in a CSV file from the provided \a file using \a encoding.
   */
-void QxtCsvModel::setSource(const QString &filename, bool withHeader, QChar separator, QTextCodec* codec)
+void QxtCsvModel::setSource(const QString &filename, bool withHeader, QChar separator,
+                            std::optional<QStringConverter::Encoding> encoding)
 {
     QFile src(filename);
-    setSource(&src, withHeader, separator, codec);
+    setSource(&src, withHeader, separator, encoding);
 }
 
 /*!
-  Reads in a CSV file from the provided \a file using \a codec.
+  Reads in a CSV file from the provided \a file using \a encoding.
 
   The value of \a separator will be used to delimit fields, subject to the specified \a quoteMode.
   If \a withHeader is set to true, the first line of the file will be used to populate the model's
@@ -191,7 +193,8 @@ void QxtCsvModel::setSource(const QString &filename, bool withHeader, QChar sepa
 
   \sa quoteMode
   */
-void QxtCsvModel::setSource(QIODevice *file, bool withHeader, QChar separator, QTextCodec* codec)
+void QxtCsvModel::setSource(QIODevice *file, bool withHeader, QChar separator,
+                            std::optional<QStringConverter::Encoding> encoding)
 {
     QxtCsvModelPrivate* d_ptr = &qxt_d();
     bool headerSet = !withHeader;
@@ -214,9 +217,9 @@ void QxtCsvModel::setSource(QIODevice *file, bool withHeader, QChar separator, Q
     QChar ch, buffer(0);
     bool readCR = false;
     QTextStream stream(file);
-    if (codec)
+    if (encoding.has_value())
     {
-        stream.setCodec(codec);
+        stream.setEncoding(encoding.value());
     }
     else
     {
@@ -585,13 +588,14 @@ static QString qxt_addCsvQuotes(QxtCsvModel::QuoteMode mode, QString field)
 }
 
 /*!
-  Outputs the content of the model as a CSV file to the device \a dest using \a codec.
+  Outputs the content of the model as a CSV file to the device \a dest using \a encoding.
 
   Fields in the output file will be separated by \a separator. Set \a withHeader to true
   to output a row of headers at the top of the file.
  */
 // cppcheck-suppress funcArgNamesDifferent
-void QxtCsvModel::toCSV(QIODevice* dest, bool withHeader, QChar separator, QTextCodec* codec) const
+void QxtCsvModel::toCSV(QIODevice* dest, bool withHeader, QChar separator,
+                        std::optional<QStringConverter::Encoding> encoding) const
 {
     const QxtCsvModelPrivate& d_ptr = qxt_d();
     int row, col, rows, cols;
@@ -603,9 +607,14 @@ void QxtCsvModel::toCSV(QIODevice* dest, bool withHeader, QChar separator, QText
         dest->open(QIODevice::WriteOnly | QIODevice::Truncate);
     }
     QTextStream stream(dest);
-    if (codec)
+    if (encoding.has_value())
     {
-        stream.setCodec(codec);
+        stream.setEncoding(encoding.value());
+    }
+    else
+    {
+        // Default to UTF-8 for consistent output encoding
+        stream.setEncoding(QStringConverter::Utf8);
     }
     if (withHeader)
     {
@@ -648,15 +657,16 @@ void QxtCsvModel::toCSV(QIODevice* dest, bool withHeader, QChar separator, QText
 /*!
   \overload
 
-  Outputs the content of the model as a CSV file to the file specified by \a filename using \a codec.
+  Outputs the content of the model as a CSV file to the file specified by \a filename using \a encoding.
 
   Fields in the output file will be separated by \a separator. Set \a withHeader to true
   to output a row of headers at the top of the file.
  */
-void QxtCsvModel::toCSV(const QString &filename, bool withHeader, QChar separator, QTextCodec* codec) const
+void QxtCsvModel::toCSV(const QString &filename, bool withHeader, QChar separator,
+                        std::optional<QStringConverter::Encoding> encoding) const
 {
     QFile dest(filename);
-    toCSV(&dest, withHeader, separator, codec);
+    toCSV(&dest, withHeader, separator, encoding);
 }
 
 /*!

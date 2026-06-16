@@ -68,9 +68,7 @@
 #include <QPointF>
 #include <QRectF>
 #include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QStyle>
 #include <QUndoStack>
 #include <QVector>
@@ -439,7 +437,7 @@ QMap<QString, QString> VAbstractTool::backgroundColorsList()
     map.insert("lightgrey", tr("Light Grey"));
     map.insert("darkslategrey", tr("Dark Slate Grey"));
     map.insert("lightsteelblue", tr("Light Steel Blue"));
-    map.insert("biege", tr("Biege"));
+    map.insert("beige", tr("Beige"));
     map.insert("thistle", tr("Thistle"));
     map.insert("silver", tr("Silver"));
     map.insert("whitesmoke", tr("White Smoke"));

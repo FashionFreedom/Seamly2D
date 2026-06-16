@@ -72,7 +72,7 @@ class MainWindowsNoGUI : public VAbstractMainWindow
     Q_OBJECT
 public:
     explicit MainWindowsNoGUI(QWidget *parent = nullptr);
-    virtual ~MainWindowsNoGUI() Q_DECL_OVERRIDE;
+    virtual ~MainWindowsNoGUI() override;
 
 public slots:
     void toolLayoutSettings(QToolButton *tButton, bool checked);

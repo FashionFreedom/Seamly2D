@@ -51,9 +51,7 @@
 
 #include "calculator.h"
 
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QStringList>
 
 #include "../vmisc/def.h"

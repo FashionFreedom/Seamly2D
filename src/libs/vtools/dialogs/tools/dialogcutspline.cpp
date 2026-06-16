@@ -96,7 +96,7 @@ DialogCutSpline::DialogCutSpline(const VContainer *data, const quint32 &toolId, 
     flagFormula = false;
     DialogTool::CheckState();
 
-    FillComboBoxSplines(ui->comboBoxSpline);
+    fillComboBoxSplines(ui->comboBoxSpline);
 
     int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
     if (index != -1)
@@ -137,7 +137,7 @@ void DialogCutSpline::setPointName(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogCutSpline::setDirection(const QString &value)
 {
-    ChangeCurrentData(ui->direction_ComboBox, value);
+    changeCurrentData(ui->direction_ComboBox, value);
     VisToolCutSpline *path = qobject_cast<VisToolCutSpline *>(vis);
     SCASSERT(path != nullptr)
     path->setDirection(value);
@@ -150,7 +150,7 @@ void DialogCutSpline::setDirection(const QString &value)
 
 QString DialogCutSpline::getDirection() const
 {
-    return GetComboBoxCurrentData(ui->direction_ComboBox, "forward");
+    return getComboBoxCurrentData(ui->direction_ComboBox, "forward");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -194,7 +194,7 @@ void DialogCutSpline::setSplineId(const quint32 &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogCutSpline::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -203,7 +203,7 @@ QString DialogCutSpline::getLineColor() const
 //---------------------------------------------------------------------------------------------------------------------
 void DialogCutSpline::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

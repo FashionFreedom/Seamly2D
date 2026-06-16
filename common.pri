@@ -11,6 +11,8 @@ win32{
 
     unset(QMAKE_INSTALL_PROGRAM)
     QMAKE_INSTALL_PROGRAM = xcopy /y
+
+    VCOPY = $$QMAKE_COPY /D
 }
 
 unix{
@@ -21,8 +23,8 @@ unix{
     }
 }
 
-win32{
-    VCOPY = $$QMAKE_COPY /D
+macx{
+    QMAKE_APPLE_DEVICE_ARCHS = x86_64 arm64
 }
 
 # See question on StackOwerflow "QSslSocket error when SSL is NOT used" (http://stackoverflow.com/a/31277055/3045403)
@@ -42,6 +44,11 @@ win32 {
                        ../../../dist/win/libcrypto-1_1.dll \
                        ../../../dist/win/libssl-1_1-x64.dll \
                        ../../../dist/win/libssl-1_1.dll
+}
+
+# Ensure xerces-c_3_2.xll is deployed into the target fodler
+win32 {
+    INSTALL_XERCES = ../../libs/xerces-c/msvc/lib/xerces-c_3_2.dll
 }
 
 # MSVC: force utf-8 source for ° symbol and other utf-8 strings in source files

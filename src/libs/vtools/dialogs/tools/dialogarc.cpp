@@ -114,7 +114,9 @@ DialogArc::DialogArc(const VContainer *data, const quint32 &toolId, QWidget *par
 
     ui->plainTextEditFormula->installEventFilter(this);
     ui->plainTextEditF1->installEventFilter(this);
+    ui->plainTextEditF1->setToolTip(makeAngleTooltip());
     ui->plainTextEditF2->installEventFilter(this);
+    ui->plainTextEditF2->setToolTip(makeAngleTooltip());
 
     timerRadius = new QTimer(this);
     connect(timerRadius, &QTimer::timeout, this, &DialogArc::EvalRadius);
@@ -169,6 +171,10 @@ DialogArc::DialogArc(const VContainer *data, const quint32 &toolId, QWidget *par
 
     connect(ui->centerPoint_ComboBox, &QComboBox::currentTextChanged, this, &DialogArc::pointNameChanged);
 
+    ui->plainTextEditF1->setPlainText("0");
+    ui->plainTextEditF2->setPlainText("360");
+    ui->plainTextEditFormula->setFocus();
+
     vis = new VisToolArc(data);
 }
 
@@ -216,7 +222,7 @@ void DialogArc::setArc(const VArc &arc)
  */
 void DialogArc::setCenter(const quint32 &value)
 {
-    ChangeCurrentData(ui->centerPoint_ComboBox, value);
+    changeCurrentData(ui->centerPoint_ComboBox, value);
     vis->setObject1Id(value);
 }
 
@@ -245,13 +251,13 @@ void DialogArc::setF2(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogArc::getPenStyle() const
 {
-    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+    return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArc::setPenStyle(const QString &value)
 {
-    ChangeCurrentData(ui->lineType_ComboBox, value);
+    changeCurrentData(ui->lineType_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -261,7 +267,7 @@ void DialogArc::setPenStyle(const QString &value)
  */
 QString DialogArc::getLineWeight() const
 {
-        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -271,19 +277,19 @@ QString DialogArc::getLineWeight() const
  */
 void DialogArc::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    changeCurrentData(ui->lineWeight_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogArc::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArc::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -397,7 +403,7 @@ void DialogArc::RadiusChanged()
     labelEditFormula = ui->labelEditRadius;
     labelResultCalculation = ui->labelResultRadius;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagRadius, ui->plainTextEditFormula, timerRadius, postfix);
+    formulaValueChanged(flagRadius, ui->plainTextEditFormula, timerRadius, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -408,7 +414,7 @@ void DialogArc::F1Changed()
 {
     labelEditFormula = ui->labelEditF1;
     labelResultCalculation = ui->labelResultF1;
-    ValFormulaChanged(flagF1, ui->plainTextEditF1, timerF1, degreeSymbol);
+    formulaValueChanged(flagF1, ui->plainTextEditF1, timerF1, degreeSymbol);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -419,7 +425,7 @@ void DialogArc::F2Changed()
 {
     labelEditFormula = ui->labelEditF2;
     labelResultCalculation = ui->labelResultF2;
-    ValFormulaChanged(flagF2, ui->plainTextEditF2, timerF2, degreeSymbol);
+    formulaValueChanged(flagF2, ui->plainTextEditF2, timerF2, degreeSymbol);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

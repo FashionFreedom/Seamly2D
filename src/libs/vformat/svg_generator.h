@@ -38,9 +38,8 @@ class SvgGenerator
 {
 public:
     SvgGenerator(QGraphicsRectItem *paper, QString name, QString description, int resolution);
-    void addSvgFromScene(QGraphicsScene *scene);
+    void addSvgFromScene(QGraphicsScene *scene, QGraphicsItem *item = nullptr);
     void generate();
-
 
 private:
     QDomDocument mergeSvgDoms();
@@ -48,6 +47,7 @@ private:
     void removeEmptyGroups(QDomElement &mainGroup);
     void removeEmptyOriginPath(QDomElement &mainGroup);
     void cleanSvg(QDomElement &mainGroup);
+    void setAttribute(QDomElement element, const QString &attr, const QString &value);
 
     QGraphicsRectItem *m_paper;
     QString m_filepath;

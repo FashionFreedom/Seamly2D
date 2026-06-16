@@ -125,7 +125,7 @@ quint32 DialogMirrorByLine::getFirstLinePointId() const
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMirrorByLine::setFirstLinePointId(quint32 value)
 {
-    ChangeCurrentData(ui->firstLinePoint_ComboBox, value);
+    changeCurrentData(ui->firstLinePoint_ComboBox, value);
     VisToolMirrorByLine *operation = qobject_cast<VisToolMirrorByLine *>(vis);
     SCASSERT(operation != nullptr)
     operation->setFirstLinePointId(value);
@@ -140,7 +140,7 @@ quint32 DialogMirrorByLine::getSecondLinePointId() const
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMirrorByLine::setSecondLinePointId(quint32 value)
 {
-    ChangeCurrentData(ui->secondLinePoint_ComboBox, value);
+    changeCurrentData(ui->secondLinePoint_ComboBox, value);
     VisToolMirrorByLine *operation = qobject_cast<VisToolMirrorByLine *>(vis);
     SCASSERT(operation != nullptr)
     operation->setSecondLinePointId(value);

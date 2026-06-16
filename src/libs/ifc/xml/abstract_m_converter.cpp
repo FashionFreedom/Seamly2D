@@ -56,9 +56,7 @@
 #include "abstract_m_converter.h"
 
 #include <QDomElement>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 
 #include "abstract_converter.h"
 

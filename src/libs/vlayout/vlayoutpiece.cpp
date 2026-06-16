@@ -56,7 +56,7 @@
 #include <QFontMetrics>
 #include <QGraphicsPathItem>
 #include <QList>
-#include <QMatrix>
+#include <QTransform>
 #include <QMessageLogger>
 #include <QPainterPath>
 #include <QPoint>
@@ -78,6 +78,8 @@
 #include "vlayoutpiece_p.h"
 #include "vtextmanager.h"
 #include "vgraphicsfillitem.h"
+
+static const int ObjectName = 0;
 
 namespace
 {
@@ -119,7 +121,7 @@ bool findLabelGeometry(const VPatternLabelData &labelData, const VContainer *pat
     try
     {
         Calculator cal1;
-        rotationAngle = cal1.EvalFormula(pattern->DataVariables(), labelData.GetRotation());
+        rotationAngle = cal1.EvalFormula(pattern->DataVariables(), labelData.getRotation());
     }
     catch(qmu::QmuParserError &error)
     {
@@ -156,9 +158,11 @@ bool findLabelGeometry(const VPatternLabelData &labelData, const VContainer *pat
     {
         Calculator cal1;
         labelWidth = cal1.EvalFormula(pattern->DataVariables(), labelData.GetLabelWidth());
+        labelWidth = ToPixel(labelWidth, *pattern->GetPatternUnit());
 
         Calculator cal2;
         labelHeight = cal2.EvalFormula(pattern->DataVariables(), labelData.GetLabelHeight());
+        labelHeight = ToPixel(labelHeight, *pattern->GetPatternUnit());
     }
     catch(qmu::QmuParserError &error)
     {
@@ -172,11 +176,7 @@ bool findLabelGeometry(const VPatternLabelData &labelData, const VContainer *pat
         try
         {
             const auto centerAnchorPoint = pattern->GeometricObject<VPointF>(centerAnchor);
-
-            const qreal lWidth = ToPixel(labelWidth, *pattern->GetPatternUnit());
-            const qreal lHeight = ToPixel(labelHeight, *pattern->GetPatternUnit());
-
-            pos = static_cast<QPointF>(*centerAnchorPoint) - QRectF(0, 0, lWidth, lHeight).center();
+            pos = static_cast<QPointF>(*centerAnchorPoint) - QRectF(0, 0, labelWidth, labelHeight).center();
         }
         catch(const VExceptionBadId &)
         {
@@ -193,7 +193,7 @@ bool findLabelGeometry(const VPatternLabelData &labelData, const VContainer *pat
 
 //---------------------------------------------------------------------------------------------------------------------
 bool findGrainlineGeometry(const VGrainlineData& data, const VContainer *pattern, qreal &length, qreal &rotationAngle,
-                           QPointF &pos)
+                           qreal &arrowLength, QPointF &pos)
 {
     SCASSERT(pattern != nullptr)
 
@@ -210,6 +210,10 @@ bool findGrainlineGeometry(const VGrainlineData& data, const VContainer *pattern
             QLineF grainline(static_cast<QPointF>(*bottomAnchor_Point), static_cast<QPointF>(*topAnchor_Point));
             length = grainline.length();
             rotationAngle = grainline.angle();
+
+            Calculator cal3;
+            arrowLength = cal3.EvalFormula(pattern->DataVariables(), data.getArrowLength());
+            arrowLength = ToPixel(arrowLength, *pattern->GetPatternUnit());
 
             if (!VFuzzyComparePossibleNulls(rotationAngle, 0))
             {
@@ -236,6 +240,10 @@ bool findGrainlineGeometry(const VGrainlineData& data, const VContainer *pattern
         Calculator cal2;
         length = cal2.EvalFormula(pattern->DataVariables(), data.getLength());
         length = ToPixel(length, *pattern->GetPatternUnit());
+
+        Calculator cal3;
+        arrowLength = cal3.EvalFormula(pattern->DataVariables(), data.getArrowLength());
+        arrowLength = ToPixel(arrowLength, *pattern->GetPatternUnit());
     }
     catch(qmu::QmuParserError &error)
     {
@@ -380,10 +388,10 @@ QStringList PieceLabelText(const QVector<QPointF> &labelShape, const VTextManage
 //---------------------------------------------------------------------------------------------------------------------
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VLayoutPiece &VLayoutPiece::operator=(VLayoutPiece &&piece) Q_DECL_NOTHROW { Swap(piece); return *this; }
+VLayoutPiece &VLayoutPiece::operator=(VLayoutPiece &&piece) noexcept { Swap(piece); return *this; }
 #endif
 
-void VLayoutPiece::Swap(VLayoutPiece &piece) Q_DECL_NOTHROW
+void VLayoutPiece::Swap(VLayoutPiece &piece) noexcept
 { VAbstractPiece::Swap(piece); std::swap(d, piece.d); }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -438,20 +446,20 @@ VLayoutPiece VLayoutPiece::Create(const VPiece &piece, const VContainer *pattern
     }
 
     const VPieceLabelData& pieceLabelData = piece.GetPatternPieceData();
-    if (pieceLabelData.IsVisible() == true)
+    if (pieceLabelData.IsVisible() & qApp->Settings()->showLabels())
     {
         layoutPiece.SetPieceText(piece.GetName(), pieceLabelData, qApp->Settings()->getLabelFont(), pattern);
     }
 
     const VPatternLabelData& patternLabelData = piece.GetPatternInfo();
-    if (patternLabelData.IsVisible() == true)
+    if (patternLabelData.IsVisible() & qApp->Settings()->showLabels())
     {
         VAbstractPattern* pDoc = qApp->getCurrentDocument();
         layoutPiece.SetPatternInfo(pDoc, patternLabelData, qApp->Settings()->getLabelFont(), pattern);
     }
 
     const VGrainlineData& grainlineGeom = piece.GetGrainlineGeometry();
-    if (grainlineGeom.IsVisible() == true)
+    if (grainlineGeom.IsVisible() & qApp->Settings()->showGrainlines())
     {
         layoutPiece.setGrainline(grainlineGeom, pattern);
     }
@@ -541,9 +549,6 @@ void VLayoutPiece::SetPieceText(const QString& qsName, const VPieceLabelData& da
         return;
     }
 
-    labelWidth = ToPixel(labelWidth, *pattern->GetPatternUnit());
-    labelHeight = ToPixel(labelHeight, *pattern->GetPatternUnit());
-
     QVector<QPointF> v;
     v << ptPos
       << QPointF(ptPos.x() + labelWidth, ptPos.y())
@@ -565,6 +570,7 @@ void VLayoutPiece::SetPieceText(const QString& qsName, const VPieceLabelData& da
     d->m_tmPiece.setFont(font);
     d->m_tmPiece.SetFontSize(data.getFontSize());
     d->m_tmPiece.Update(qsName, data);
+
     // this will generate the lines of text
     d->m_tmPiece.SetFontSize(data.getFontSize());
     d->m_tmPiece.FitFontSize(labelWidth, labelHeight);
@@ -602,9 +608,6 @@ void VLayoutPiece::SetPatternInfo(VAbstractPattern* pDoc, const VPatternLabelDat
         return;
     }
 
-    labelWidth = ToPixel(labelWidth, *pattern->GetPatternUnit());
-    labelHeight = ToPixel(labelHeight, *pattern->GetPatternUnit());
-
     QVector<QPointF> v;
     v << ptPos
       << QPointF(ptPos.x() + labelWidth, ptPos.y())
@@ -623,7 +626,6 @@ void VLayoutPiece::SetPatternInfo(VAbstractPattern* pDoc, const VPatternLabelDat
     // Generate text
     d->m_tmPattern.setFont(font);
     d->m_tmPattern.SetFontSize(data.getFontSize());
-
     d->m_tmPattern.Update(pDoc);
 
     // generate lines of text
@@ -639,47 +641,39 @@ void VLayoutPiece::setGrainline(const VGrainlineData& data, const VContainer* pa
     QPointF pt1;
     qreal rotationAngle = 0;
     qreal length = 0;
-    if (!findGrainlineGeometry(data, pattern, length, rotationAngle, pt1))
+    qreal arrowLength = 0;
+    if (!findGrainlineGeometry(data, pattern, length, rotationAngle, arrowLength, pt1))
     {
         return;
     }
 
-    const qreal arrowLength = 45;
-    const qreal arrowAngle = M_PI/9;
-
-    QPointF pt2(pt1.x() + arrowLength * qCos(rotationAngle),
-                pt1.y() - arrowLength * qSin(rotationAngle));
-    QPointF pt3(pt1.x() + length * qCos(rotationAngle),
+    QPointF pt2(pt1.x() + length * qCos(rotationAngle),
                 pt1.y() - length * qSin(rotationAngle));
-    QPointF pt4(pt1.x() + (length - arrowLength) * qCos(rotationAngle),
-                pt1.y() - (length - arrowLength) * qSin(rotationAngle));
 
-    QVector<QPointF> v;
-    v << pt2;
+    QVector<QPointF> path;
+    path << pt1;
     if (data.getArrowType() != ArrowType::Top)
     {
-        v << QPointF(pt1.x() + arrowLength * qCos(rotationAngle + arrowAngle),
-                     pt1.y() - arrowLength * qSin(rotationAngle + arrowAngle));
-        v << pt1;
-        v << QPointF(pt1.x() + arrowLength * qCos(rotationAngle - arrowAngle),
-                     pt1.y() - arrowLength * qSin(rotationAngle - arrowAngle));
-        v << pt2;
-    }
+        path << QPointF(pt1.x() + arrowLength * cos(rotationAngle + M_PI / 9),
+                        pt1.y() - arrowLength * sin(rotationAngle + M_PI / 9));
 
-    v << pt4;
+        path << QPointF(pt1.x() + arrowLength * cos(rotationAngle - M_PI / 9),
+                        pt1.y() - arrowLength * sin(rotationAngle - M_PI / 9));
+    }
+    path << pt1 << pt2;
+
     if (data.getArrowType() != ArrowType::Bottom)
     {
-        rotationAngle += M_PI;
-        v << QPointF(pt3.x() + arrowLength * qCos(rotationAngle + arrowAngle),
-                     pt3.y() - arrowLength * qSin(rotationAngle + arrowAngle));
-        v << pt3;
-        v << QPointF(pt3.x() + arrowLength * qCos(rotationAngle - arrowAngle),
-                     pt3.y() - arrowLength * qSin(rotationAngle - arrowAngle));
-        v << pt4;
+        path << QPointF(pt2.x() + arrowLength * cos(M_PI + rotationAngle + M_PI / 9),
+                        pt2.y() - arrowLength * sin(M_PI + rotationAngle + M_PI / 9));
+
+        path << QPointF(pt2.x() + arrowLength * cos(M_PI + rotationAngle - M_PI / 9),
+                        pt2.y() - arrowLength * sin(M_PI + rotationAngle - M_PI / 9));
     }
+    path << pt2;
 
     QScopedPointer<QGraphicsItem> item(getMainPathItem());
-    d->grainlinePoints = CorrectPosition(item->boundingRect(), v);
+    d->grainlinePoints = CorrectPosition(item->boundingRect(), path);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1089,6 +1083,8 @@ QPainterPath VLayoutPiece::LayoutAllowancePath() const
 QGraphicsItem *VLayoutPiece::GetItem(bool textAsPaths) const
 {
     QGraphicsPathItem *item = createMainItem();
+    item->setData(ObjectName, GetName());
+
     createAllowanceItem(item);
     createNotchesItem(item);
 
@@ -1186,6 +1182,7 @@ void VLayoutPiece::createLabelItem(QGraphicsItem *parent, const QVector<QPointF>
                 path.addText(0, - static_cast<qreal>(fm.ascent())/6., fnt, qsText);
 
                 QGraphicsPathItem* item = new QGraphicsPathItem(parent);
+                item->setData(ObjectName, QString("label"));
                 item->setPath(path);
                 item->setPen(QPen(color, widthHairLine));
                 item->setBrush(QBrush(Qt::NoBrush));
@@ -1196,6 +1193,7 @@ void VLayoutPiece::createLabelItem(QGraphicsItem *parent, const QVector<QPointF>
             else
             {
                 QGraphicsSimpleTextItem* item = new QGraphicsSimpleTextItem(parent);
+                item->setData(ObjectName, QString("label"));
                 item->setFont(fnt);
                 item->setText(qsText);
                 item->setTransform(labelTransform);
@@ -1219,6 +1217,8 @@ void VLayoutPiece::createGrainlineItem(QGraphicsItem *parent, bool textAsPaths) 
         return;
     }
     VGraphicsFillItem* item = new VGraphicsFillItem(color, textAsPaths, parent);
+    item->setData(ObjectName, QString("grainline"));
+
     QPainterPath path;
 
     QVector<QPointF> gPoints = getGrainline();
@@ -1262,6 +1262,7 @@ QGraphicsPathItem *VLayoutPiece::createMainItem() const
         lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
     }
     QGraphicsPathItem *item = new QGraphicsPathItem();
+    item->setData(ObjectName, QString("seamline"));
     item->setPath(createMainPath());
     item->setPen(QPen(color, lineWeight, lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
     return item;
@@ -1275,6 +1276,7 @@ void VLayoutPiece::createAllowanceItem(QGraphicsItem *parent) const
     qreal   lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
 
     QGraphicsPathItem *item = new QGraphicsPathItem(parent);
+    item->setData(ObjectName, QString("cutline"));
     item->setPath(createAllowancePath());
     item->setPen(QPen(color, lineWeight, lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
 }
@@ -1286,6 +1288,7 @@ void VLayoutPiece::createNotchesItem(QGraphicsItem *parent) const
     qreal  lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
 
     QGraphicsPathItem *item = new QGraphicsPathItem(parent);
+    item->setData(ObjectName, QString("notches"));
     item->setPath(createNotchesPath());
     item->setPen(QPen(color, lineWeight, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
 }

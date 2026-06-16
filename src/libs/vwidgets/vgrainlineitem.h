@@ -4,7 +4,7 @@
 //  @date   11 Nov, 2024
 //
 //  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  Copyright (C) 2017 - 2025 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -62,12 +62,12 @@ public:
     explicit             VGrainlineItem(QGraphicsItem* parent = nullptr);
     virtual             ~VGrainlineItem() Q_DECL_EQ_DEFAULT;
 
-    virtual QPainterPath shape() const Q_DECL_OVERRIDE;
+    virtual QPainterPath shape() const override;
 
-    virtual void         paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) Q_DECL_OVERRIDE;
-    void                 updateGeometry(const QPointF& pos, qreal rotation, qreal length, ArrowType type);
+    virtual void         paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
+    void                 updateGeometry(const QPointF& pos, qreal rotation, qreal length, ArrowType type, qreal arrowLength);
 
-    virtual int          type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int          type() const override {return Type;}
     enum                 {Type = UserType + static_cast<int>(Vis::GrainlineItem)};
 
     bool                 isContained(const QPointF &pt, qreal dRot, qreal &dX, qreal &dY) const;
@@ -77,15 +77,15 @@ signals:
     void                 itemRotated(qreal dRot, const QPointF& ptNewPos);
 
 protected:
-    virtual void         mousePressEvent(QGraphicsSceneMouseEvent* pME) Q_DECL_OVERRIDE;
-    virtual void         mouseMoveEvent(QGraphicsSceneMouseEvent* pME) Q_DECL_OVERRIDE;
-    virtual void         mouseReleaseEvent(QGraphicsSceneMouseEvent* pME) Q_DECL_OVERRIDE;
-    virtual void         hoverEnterEvent(QGraphicsSceneHoverEvent* pME) Q_DECL_OVERRIDE;
-    virtual void         hoverLeaveEvent(QGraphicsSceneHoverEvent* pME) Q_DECL_OVERRIDE;
-    virtual void         updateItem() Q_DECL_OVERRIDE;
+    virtual void         mousePressEvent(QGraphicsSceneMouseEvent* pME) override;
+    virtual void         mouseMoveEvent(QGraphicsSceneMouseEvent* pME) override;
+    virtual void         mouseReleaseEvent(QGraphicsSceneMouseEvent* pME) override;
+    virtual void         hoverEnterEvent(QGraphicsSceneHoverEvent* pME) override;
+    virtual void         hoverLeaveEvent(QGraphicsSceneHoverEvent* pME) override;
+    virtual void         updateItem() override;
     void                 updateRectangle();
 
-    virtual double       GetAngle(const QPointF &pt) const Q_DECL_OVERRIDE;
+    virtual double       GetAngle(const QPointF &pt) const override;
 
     QPointF              rotate(const QPointF& pt, const QPointF& ptCenter, qreal dAng) const;
     QPointF              getInsideCorner(int i, qreal dDist) const;
@@ -105,12 +105,12 @@ private:
     QPointF              m_centerPoint;
     qreal                m_angle;
     ArrowType            m_arrowType;
+    qreal                m_arrowLength;
     qreal                m_penWidth;
 
     QLineF               mainLine() const;
-    QPolygonF            firstArrow() const;
-    QPolygonF            secondArrow() const;
-
+    void                 drawArrow(QPainter *painter, const QPointF &point, const qreal &addValue) const;
+    QPolygonF            arrow(const QPointF &point, const qreal &addValue) const;
     QPainterPath         mainShape() const;
 
     void                 allUserModifications(const QPointF &pos);

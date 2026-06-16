@@ -139,7 +139,7 @@ DialogShoulderPoint::DialogShoulderPoint(const VContainer *data, const quint32 &
     if(!qApp->Settings()->useCurrentPen())
     {
         setLineType(LineTypeDashLine);
-        setLineWeight("0.35");
+        setLineWeight(DefaultLineWeight);
     }
 }
 
@@ -311,13 +311,13 @@ void DialogShoulderPoint::SetP3(const quint32 &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogShoulderPoint::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogShoulderPoint::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -376,7 +376,7 @@ void DialogShoulderPoint::SetFormula(const QString &value)
  */
 QString DialogShoulderPoint::getLineType() const
 {
-    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+    return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -386,7 +386,7 @@ QString DialogShoulderPoint::getLineType() const
  */
 void DialogShoulderPoint::setLineType(const QString &value)
 {
-    ChangeCurrentData(ui->lineType_ComboBox, value);
+    changeCurrentData(ui->lineType_ComboBox, value);
     vis->setLineStyle(lineTypeToPenStyle(value));
 }
 
@@ -397,7 +397,7 @@ void DialogShoulderPoint::setLineType(const QString &value)
  */
 QString DialogShoulderPoint::getLineWeight() const
 {
-        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -407,7 +407,7 @@ QString DialogShoulderPoint::getLineWeight() const
  */
 void DialogShoulderPoint::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    changeCurrentData(ui->lineWeight_ComboBox, value);
     vis->setLineWeight(value);
 }
 

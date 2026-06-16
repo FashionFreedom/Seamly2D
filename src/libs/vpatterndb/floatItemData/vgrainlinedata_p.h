@@ -54,6 +54,7 @@
 #include <QPointF>
 #include <QSharedData>
 
+#include "../vmisc/vcommonsettings.h"
 #include "../vmisc/diagnostic.h"
 #include "floatitemdef.h"
 #include "../ifc/ifcdef.h"
@@ -69,6 +70,7 @@ public:
         : m_length()
         , m_rotation()
         , m_arrowType(ArrowType::Both)
+        , m_arrowLength()
         , m_centerAnchorPoint(NULL_ID)
         , m_topAnchorPoint(NULL_ID)
         , m_bottomAnchorPoint(NULL_ID)
@@ -79,6 +81,7 @@ public:
         , m_length(data.m_length)
         , m_rotation(data.m_rotation)
         , m_arrowType(data.m_arrowType)
+        , m_arrowLength(data.m_arrowLength)
         , m_centerAnchorPoint(data.m_centerAnchorPoint)
         , m_topAnchorPoint(data.m_topAnchorPoint)
         , m_bottomAnchorPoint(data.m_bottomAnchorPoint)
@@ -86,12 +89,13 @@ public:
 
     ~VGrainlineDataPrivate() Q_DECL_EQ_DEFAULT;
 
-    QString   m_length;            /** @brief m_dLength formula to calculate the length of grainline */
-    QString   m_rotation;          /** @brief m_rotation formula to calculate the rotation of grainline in [degrees] */
-    ArrowType m_arrowType;         /** @brief m_arrowType type of arrow on the grainline */
-    quint32   m_centerAnchorPoint; /** @brief m_centerAnchorPoint center anchor point id */
-    quint32   m_topAnchorPoint;    /** @brief m_topAnchorPoint top anchor point id */
-    quint32   m_bottomAnchorPoint; /** @brief m_bottomAnchorPoint bottom anchor point id */
+    QString   m_length;            /// @brief m_length formula to calculate the length of grainline */
+    QString   m_rotation;          /// @brief m_rotation formula to calculate the rotation of grainline in [degrees] */
+    ArrowType m_arrowType;         /// @brief m_arrowType type of arrow on the grainline */
+    QString   m_arrowLength;       /// @brief m_arrowLength formula to calculate the length of arrowheads */
+    quint32   m_centerAnchorPoint; /// @brief m_centerAnchorPoint center anchor point id */
+    quint32   m_topAnchorPoint;    /// @brief m_topAnchorPoint top anchor point id */
+    quint32   m_bottomAnchorPoint; /// @brief m_bottomAnchorPoint bottom anchor point id */
 
 private:
     VGrainlineDataPrivate &operator=(const VGrainlineDataPrivate &) Q_DECL_EQ_DELETE;

@@ -26,7 +26,8 @@ isEmpty(LOCALES){
         ro_RO \
         zh_CN \
         pt_BR \
-        el_GR
+        el_GR \
+        tr_TR
 } else {
     LANGUAGES = $${LOCALES}
 }

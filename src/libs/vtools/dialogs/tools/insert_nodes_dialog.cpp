@@ -1,26 +1,24 @@
-//-----------------------------------------------------------------------------
-//  @file   dialoginsertnode.cpp
-//  @author Douglas S Caskey
-//  @date  17 Sep, 2023
+// @file   insert_nodes_dialog.cpp
+// @author Douglas S Caskey
+// @date   26 Jun, 2024
 //
-//  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
+// @copyright
+// Copyright (C) 2017 - 2024 Seamly, LLC
+// https://github.com/fashionfreedom/seamly2d
 //
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
+// @brief
+// Seamly2D is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
 //
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
+// Seamly2D is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
 //
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+// You should have received a copy of the GNU General Public License
+// along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
 
 //-----------------------------------------------------------------------------
 //  @file   dialoginsertnode.cpp
@@ -56,7 +54,7 @@
 
 #include <QMenu>
 #include <QKeyEvent>
-#include <QSound>
+#include <QSoundEffect>
 
 //---------------------------------------------------------------------------------------------------------------------
 InsertNodesDialog::InsertNodesDialog(const VContainer *data, quint32 toolId, QWidget *parent)
@@ -65,8 +63,10 @@ InsertNodesDialog::InsertNodesDialog(const VContainer *data, quint32 toolId, QWi
     , m_nodes({})
     , m_nodeFlag(false)
     , m_piecesFlag(false)
-    , m_beep(new QSound(qApp->Settings()->getSelectionSound()))
+    , m_beep(new QSoundEffect())
 {
+    m_beep->setSource(QUrl(qApp->Settings()->getSelectionSound()));
+
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/insert_nodes_icon.png"));
@@ -94,12 +94,13 @@ InsertNodesDialog::InsertNodesDialog(const VContainer *data, quint32 toolId, QWi
 InsertNodesDialog::~InsertNodesDialog()
 {
     delete ui;
+    delete m_beep;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void InsertNodesDialog::SetPiecesList(const QVector<quint32> &list)
 {
-    FillComboBoxPiecesList(ui->piece_ComboBox, list);
+    fillComboBoxPiecesList(ui->piece_ComboBox, list);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

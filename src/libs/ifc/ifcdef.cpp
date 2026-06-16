@@ -58,16 +58,16 @@
 #include <QBrush>
 #include <QIcon>
 #include <QMap>
+#include <QObject>
 #include <QPainter>
 #include <QPen>
 #include <QPixmap>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 
 #include "../vmisc/diagnostic.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
+#include "qobject.h"
 
 const QString CustomMSign    = QStringLiteral("@");
 const QString CustomIncrSign = QStringLiteral("#");
@@ -109,6 +109,7 @@ const QString AttrAngle1      = QStringLiteral("angle1");
 const QString AttrAngle2      = QStringLiteral("angle2");
 const QString AttrLength1     = QStringLiteral("length1");
 const QString AttrLength2     = QStringLiteral("length2");
+const QString AttrAutoSmooth  = QStringLiteral("autoSmooth");
 const QString AttrP1Line      = QStringLiteral("p1Line");
 const QString AttrP2Line      = QStringLiteral("p2Line");
 const QString AttrP1Line1     = QStringLiteral("p1Line1");
@@ -166,6 +167,8 @@ const QString LineTypeDashLine       = QStringLiteral("dashLine");
 const QString LineTypeDotLine        = QStringLiteral("dotLine");
 const QString LineTypeDashDotLine    = QStringLiteral("dashDotLine");
 const QString LineTypeDashDotDotLine = QStringLiteral("dashDotDotLine");
+
+const QString DefaultLineWeight      = QStringLiteral("0.35");
 
 //---------------------------------------------------------------------------------------------------------------------
 /**

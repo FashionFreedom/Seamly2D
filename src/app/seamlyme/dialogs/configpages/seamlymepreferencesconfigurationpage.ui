@@ -7,8 +7,20 @@
     <x>0</x>
     <y>0</y>
     <width>485</width>
-    <height>567</height>
+    <height>579</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>485</width>
+    <height>0</height>
+   </size>
   </property>
   <property name="maximumSize">
    <size>
@@ -37,7 +49,7 @@
      <property name="title">
       <string>Startup</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_7">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
        <widget class="QCheckBox" name="showWelcome_CheckBox">
         <property name="font">
@@ -58,7 +70,13 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox_2">
+    <widget class="QGroupBox" name="language_GroupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="font">
       <font>
        <bold>true</bold>
@@ -69,12 +87,12 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QLabel" name="label_2">
+       <layout class="QFormLayout" name="language_FormLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="guiLang_Label">
           <property name="minimumSize">
            <size>
-            <width>130</width>
+            <width>160</width>
             <height>0</height>
            </size>
           </property>
@@ -91,7 +109,7 @@
           </property>
          </widget>
         </item>
-        <item>
+        <item row="0" column="1">
          <widget class="QComboBox" name="langCombo">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -101,7 +119,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>300</width>
+            <width>220</width>
             <height>0</height>
            </size>
           </property>
@@ -112,15 +130,11 @@
           </property>
          </widget>
         </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QLabel" name="label_3">
+        <item row="1" column="0">
+         <widget class="QLabel" name="locale_Label">
           <property name="minimumSize">
            <size>
-            <width>130</width>
+            <width>160</width>
             <height>0</height>
            </size>
           </property>
@@ -130,39 +144,59 @@
            </font>
           </property>
           <property name="text">
-           <string>Decimal separator:</string>
+           <string>Separator Locale:</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QCheckBox" name="osOption_CheckBox">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>300</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string notr="true">&lt; User locale &gt;</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
+        <item row="1" column="1">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QRadioButton" name="cLocale_RadioButton">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Default</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="userLocale_RadioButton">
+            <property name="font">
+             <font>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>User's System</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
         </item>
        </layout>
       </item>
@@ -170,7 +204,13 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox_3">
+    <widget class="QGroupBox" name="pms_GroupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="font">
       <font>
        <pointsize>10</pointsize>
@@ -180,14 +220,14 @@
      <property name="title">
       <string>Pattern making system</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
+     <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QLabel" name="label_6">
+       <layout class="QFormLayout" name="pms_FormLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="system_Label">
           <property name="minimumSize">
            <size>
-            <width>130</width>
+            <width>160</width>
             <height>0</height>
            </size>
           </property>
@@ -205,7 +245,7 @@
           </property>
          </widget>
         </item>
-        <item>
+        <item row="0" column="1">
          <widget class="QComboBox" name="systemCombo">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -215,7 +255,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>300</width>
+            <width>220</width>
             <height>0</height>
            </size>
           </property>
@@ -227,15 +267,11 @@
           </property>
          </widget>
         </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_4">
-        <item>
-         <widget class="QLabel" name="label_7">
+        <item row="1" column="0">
+         <widget class="QLabel" name="author_Label">
           <property name="minimumSize">
            <size>
-            <width>130</width>
+            <width>160</width>
             <height>0</height>
            </size>
           </property>
@@ -253,7 +289,7 @@
           </property>
          </widget>
         </item>
-        <item>
+        <item row="1" column="1">
          <widget class="QLabel" name="systemAuthorValueLabel">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -278,15 +314,11 @@
           </property>
          </widget>
         </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_5">
-        <item>
-         <widget class="QLabel" name="label_9">
+        <item row="2" column="0">
+         <widget class="QLabel" name="book_Label">
           <property name="minimumSize">
            <size>
-            <width>130</width>
+            <width>160</width>
             <height>0</height>
            </size>
           </property>
@@ -304,7 +336,7 @@
           </property>
          </widget>
         </item>
-        <item>
+        <item row="2" column="1">
          <widget class="QPlainTextEdit" name="systemBookValueLabel">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -314,7 +346,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>300</width>
+            <width>220</width>
             <height>0</height>
            </size>
           </property>
@@ -335,7 +367,13 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox">
+    <widget class="QGroupBox" name="heightSize_GroupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="font">
       <font>
        <pointsize>10</pointsize>
@@ -345,14 +383,14 @@
      <property name="title">
       <string>Default height and size</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_4">
+     <layout class="QVBoxLayout" name="verticalLayout_5">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_6">
-        <item>
-         <widget class="QLabel" name="label">
+       <layout class="QFormLayout" name="heightSize_FormLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="heigh_Label">
           <property name="minimumSize">
            <size>
-            <width>130</width>
+            <width>160</width>
             <height>0</height>
            </size>
           </property>
@@ -370,7 +408,7 @@
           </property>
          </widget>
         </item>
-        <item>
+        <item row="0" column="1">
          <widget class="QComboBox" name="defHeightCombo">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -380,7 +418,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>300</width>
+            <width>220</width>
             <height>0</height>
            </size>
           </property>
@@ -392,15 +430,11 @@
           </property>
          </widget>
         </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_7">
-        <item>
-         <widget class="QLabel" name="label_4">
+        <item row="1" column="0">
+         <widget class="QLabel" name="size_Label">
           <property name="minimumSize">
            <size>
-            <width>130</width>
+            <width>160</width>
             <height>0</height>
            </size>
           </property>
@@ -418,7 +452,7 @@
           </property>
          </widget>
         </item>
-        <item>
+        <item row="1" column="1">
          <widget class="QComboBox" name="defSizeCombo">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -428,7 +462,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>300</width>
+            <width>220</width>
             <height>0</height>
            </size>
           </property>
@@ -446,7 +480,13 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox_5">
+    <widget class="QGroupBox" name="editing_groupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="font">
       <font>
        <pointsize>10</pointsize>
@@ -460,7 +500,7 @@
       <item>
        <widget class="QPushButton" name="resetWarningsButton">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -480,7 +520,13 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox_6">
+    <widget class="QGroupBox" name="toolbar_GroupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="font">
       <font>
        <pointsize>10</pointsize>
@@ -490,7 +536,7 @@
      <property name="title">
       <string>Toolbar</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_5">
+     <layout class="QVBoxLayout" name="verticalLayout_7">
       <item>
        <widget class="QCheckBox" name="toolBarStyle_CheckBox">
         <property name="font">
@@ -509,19 +555,6 @@
       </item>
      </layout>
     </widget>
-   </item>
-   <item>
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
    </item>
   </layout>
  </widget>

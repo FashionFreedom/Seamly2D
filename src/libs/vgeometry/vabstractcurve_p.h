@@ -69,7 +69,7 @@ public:
         : duplicate(0)
         , color(ColorBlack)
         , penStyle(LineTypeSolidLine)
-        , lineWeight("0.35")
+        , lineWeight(DefaultLineWeight)
     {}
 
     VAbstractCurveData(const VAbstractCurveData &curve)

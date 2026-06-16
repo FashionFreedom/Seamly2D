@@ -143,7 +143,7 @@ void VAbstractMainWindow::exportToCSV(QString &file)
         exportToCSVData(fileName, dialog);
 
         qApp->Settings()->SetCSVSeparator(dialog.Separator());
-        qApp->Settings()->SetCSVCodec(dialog.SelectedMib());
+        qApp->Settings()->SetCSVCodec(dialog.SelectedEncoding());
         qApp->Settings()->SetCSVWithHeader(dialog.WithHeader());
     }
 }

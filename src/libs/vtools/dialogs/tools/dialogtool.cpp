@@ -1,26 +1,24 @@
-//-----------------------------------------------------------------------------
-//  @file   dialogtool.cpp
-//  @author Douglas S Caskey
-//  @date   17 Sep, 2023
+// @file   dialogtool.cpp
+// @author Douglas S Caskey
+// @date   17 Sep, 2023
 //
-//  @copyright
-//  Copyright (C) 2017 - 2022 Seamly, LLC
-//  https://github.com/fashionfreedom/seamly2d
+// @copyright
+// Copyright (C) 2017 - 2024 Seamly, LLC
+// https://github.com/fashionfreedom/seamly2d
 //
-//  @brief
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
+// @brief
+// Seamly2D is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
 //
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
+// Seamly2D is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
 //
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+// You should have received a copy of the GNU General Public License
+// along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
 
 //-----------------------------------------------------------------------------
 //
@@ -234,7 +232,7 @@ void DialogTool::showEvent(QShowEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogTool::FillComboBoxPiecesList(QComboBox *box, const QVector<quint32> &list)
+void DialogTool::fillComboBoxPiecesList(QComboBox *box, const QVector<quint32> &list)
 {
     SCASSERT(box != nullptr)
     box->blockSignals(true);
@@ -258,13 +256,13 @@ void DialogTool::fillComboBoxPoints(QComboBox *box, FillComboBox rule, const qui
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogTool::FillComboBoxArcs(QComboBox *box, FillComboBox rule, const quint32 &ch1, const quint32 &ch2) const
+void DialogTool::fillComboBoxArcs(QComboBox *box, FillComboBox rule, const quint32 &ch1, const quint32 &ch2) const
 {
     FillCombo<VAbstractCurve>(box, GOType::Arc, rule, ch1, ch2);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogTool::FillComboBoxSplines(QComboBox *box) const
+void DialogTool::fillComboBoxSplines(QComboBox *box) const
 {
     SCASSERT(box != nullptr)
     box->blockSignals(true);
@@ -288,7 +286,7 @@ void DialogTool::FillComboBoxSplines(QComboBox *box) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogTool::FillComboBoxSplinesPath(QComboBox *box) const
+void DialogTool::fillComboBoxSplinesPath(QComboBox *box) const
 {
     SCASSERT(box != nullptr)
     box->blockSignals(true);
@@ -312,7 +310,7 @@ void DialogTool::FillComboBoxSplinesPath(QComboBox *box) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogTool::FillComboBoxCurves(QComboBox *box) const
+void DialogTool::fillComboBoxCurves(QComboBox *box) const
 {
     SCASSERT(box != nullptr)
     const auto objs = data->DataGObjects();
@@ -339,10 +337,10 @@ void DialogTool::FillComboBoxCurves(QComboBox *box) const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief FillComboBoxTypeLine fill comboBox list of type lines
+ * @brief fillComboBoxLineType fill comboBox list of type lines
  * @param box comboBox
  */
-void DialogTool::FillComboBoxTypeLine(QComboBox *box, const QMap<QString, QIcon> &stylesPics) const
+void DialogTool::fillComboBoxLineType(QComboBox *box, const QMap<QString, QIcon> &stylesPics) const
 {
     SCASSERT(box != nullptr)
     QMap<QString, QIcon>::const_iterator i = stylesPics.constBegin();
@@ -360,7 +358,7 @@ void DialogTool::FillComboBoxTypeLine(QComboBox *box, const QMap<QString, QIcon>
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogTool::FillComboBoxLineColors(QComboBox *box) const
+void DialogTool::fillComboBoxLineColors(QComboBox *box) const
 {
     SCASSERT(box != nullptr)
 
@@ -383,7 +381,7 @@ void DialogTool::FillComboBoxLineColors(QComboBox *box) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogTool::FillComboBoxCrossCirclesPoints(QComboBox *box) const
+void DialogTool::fillComboBoxCrossCirclesPoints(QComboBox *box) const
 {
     SCASSERT(box != nullptr)
 
@@ -392,7 +390,7 @@ void DialogTool::FillComboBoxCrossCirclesPoints(QComboBox *box) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogTool::FillComboBoxVCrossCurvesPoint(QComboBox *box) const
+void DialogTool::fillComboBoxVCrossCurvesPoint(QComboBox *box) const
 {
     SCASSERT(box != nullptr)
 
@@ -401,7 +399,7 @@ void DialogTool::FillComboBoxVCrossCurvesPoint(QComboBox *box) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogTool::FillComboBoxHCrossCurvesPoint(QComboBox *box) const
+void DialogTool::fillComboBoxHCrossCurvesPoint(QComboBox *box) const
 {
     SCASSERT(box != nullptr)
 
@@ -410,7 +408,7 @@ void DialogTool::FillComboBoxHCrossCurvesPoint(QComboBox *box) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogTool::GetComboBoxCurrentData(const QComboBox *box, const QString &def) const
+QString DialogTool::getComboBoxCurrentData(const QComboBox *box, const QString &def) const
 {
     SCASSERT(box != nullptr)
     QString value;
@@ -425,11 +423,11 @@ QString DialogTool::GetComboBoxCurrentData(const QComboBox *box, const QString &
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ChangeCurrentData select item in combobox by id
+ * @brief changeCurrentData select item in combobox by id
  * @param box combobox
  * @param value id of item
  */
-void DialogTool::ChangeCurrentData(QComboBox *box, const QVariant &value) const
+void DialogTool::changeCurrentData(QComboBox *box, const QVariant &value) const
 {
     SCASSERT(box != nullptr)
     const qint32 index = box->findData(value);
@@ -467,11 +465,11 @@ bool DialogTool::eventFilter(QObject *object, QEvent *event)
             {
                 if (qApp->Settings()->getOsSeparator())
                 {
-                    plainTextEdit->insertPlainText(QLocale().decimalPoint());
+                    plainTextEdit->insertPlainText(localeDecimalPoint(QLocale()));
                 }
                 else
                 {
-                    plainTextEdit->insertPlainText(QLocale::c().decimalPoint());
+                    plainTextEdit->insertPlainText(localeDecimalPoint(QLocale::c()));
                 }
                 return true;
             }
@@ -749,12 +747,12 @@ bool DialogTool::IsSplinePath(const QSharedPointer<VGObject> &obj) const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ValFormulaChanged handle change formula
+ * @brief formulaValueChanged handle change formula
  * @param flag flag state of formula
  * @param edit LineEdit
  * @param timer timer of formula
  */
-void DialogTool::ValFormulaChanged(bool &flag, QLineEdit *edit, QTimer *timer, const QString& postfix)
+void DialogTool::formulaValueChanged(bool &flag, QLineEdit *edit, QTimer *timer, const QString& postfix)
 {
     SCASSERT(edit != nullptr)
     SCASSERT(timer != nullptr)
@@ -779,7 +777,7 @@ void DialogTool::ValFormulaChanged(bool &flag, QLineEdit *edit, QTimer *timer, c
     timer->start(1000);
 }
 //---------------------------------------------------------------------------------------------------------------------
-void DialogTool::ValFormulaChanged(bool &flag, QPlainTextEdit *edit, QTimer *timer, const QString& postfix)
+void DialogTool::formulaValueChanged(bool &flag, QPlainTextEdit *edit, QTimer *timer, const QString& postfix)
 {
     SCASSERT(edit != nullptr)
     SCASSERT(timer != nullptr)
@@ -837,8 +835,10 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
             // Replace line return character with spaces for calc if exist
             QString formula = text;
             formula.replace("\n", " ");
+
             // Translate to internal look.
             formula = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+
             QScopedPointer<Calculator> cal(new Calculator());
             result = cal->EvalFormula(data->DataVariables(), formula);
 
@@ -914,7 +914,7 @@ void DialogTool::setCurrentPointId(QComboBox *box, const quint32 &value, FillCom
     box->blockSignals(true);
 
     fillComboBoxPoints(box, rule, ch1, ch2);
-    ChangeCurrentData(box, value);
+    changeCurrentData(box, value);
 
     box->blockSignals(false);
 }
@@ -926,8 +926,8 @@ void DialogTool::setCurrentPointId(QComboBox *box, const quint32 &value, FillCom
 void DialogTool::setCurrentSplineId(QComboBox *box, const quint32 &value) const
 {
     SCASSERT(box != nullptr)
-    FillComboBoxSplines(box);
-    ChangeCurrentData(box, value);
+    fillComboBoxSplines(box);
+    changeCurrentData(box, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -938,8 +938,8 @@ void DialogTool::setCurrentArcId(QComboBox *box, const quint32 &value, FillCombo
                                  const quint32 &ch1, const quint32 &ch2) const
 {
     SCASSERT(box != nullptr)
-    FillComboBoxArcs(box, rule, ch1, ch2);
-    ChangeCurrentData(box, value);
+    fillComboBoxArcs(box, rule, ch1, ch2);
+    changeCurrentData(box, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -951,16 +951,16 @@ void DialogTool::setCurrentArcId(QComboBox *box, const quint32 &value, FillCombo
 void DialogTool::setCurrentSplinePathId(QComboBox *box, const quint32 &value) const
 {
     SCASSERT(box != nullptr)
-    FillComboBoxSplinesPath(box);
-    ChangeCurrentData(box, value);
+    fillComboBoxSplinesPath(box);
+    changeCurrentData(box, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogTool::setCurrentCurveId(QComboBox *box, const quint32 &value) const
 {
     SCASSERT(box != nullptr)
-    FillComboBoxCurves(box);
-    ChangeCurrentData(box, value);
+    fillComboBoxCurves(box);
+    changeCurrentData(box, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1187,7 +1187,7 @@ void DialogTool::FormulaChanged()
     QPlainTextEdit* edit = qobject_cast<QPlainTextEdit*>(sender());
     if (edit)
     {
-        ValFormulaChanged(flagFormula, edit, timerFormula, UnitsToStr(qApp->patternUnit()));
+        formulaValueChanged(flagFormula, edit, timerFormula, UnitsToStr(qApp->patternUnit()));
     }
 }
 //---------------------------------------------------------------------------------------------------------------------
@@ -1196,7 +1196,7 @@ void DialogTool::FormulaChangedPlainText() //-V524
     QPlainTextEdit* edit = qobject_cast<QPlainTextEdit*>(sender());
     if (edit)
     {
-        ValFormulaChanged(flagFormula, edit, timerFormula, UnitsToStr(qApp->patternUnit()));
+        formulaValueChanged(flagFormula, edit, timerFormula, UnitsToStr(qApp->patternUnit()));
     }
 }
 
@@ -1506,4 +1506,19 @@ void  DialogTool::setDialogPosition()
             break;
         }
     }
+}
+QString DialogTool::makeAngleTooltip() const
+{
+    const QString toolTip = QString("<table width = 370>"
+                                     "<tr>"
+                                       "<td align = left width =300><b>%1</b><br>%2</td>"
+                                       "<td align = right valign = middle><img src=%3/></td>"
+                                     "</tr>"
+                                    "</table>")
+                                    .arg(tr("Angle Calculation"))
+                                    .arg(tr("Angles are specified in degrees, i.e. a full circle equals 360 deg. "
+                                            "Positive values for an  angle means counter-clockwise while a negative "
+                                            "value means the clockwise direction. Zero degrees is at the 3 o'clock position."))
+                                    .arg(":/icon/64x64/rotation.png");
+    return toolTip;
 }

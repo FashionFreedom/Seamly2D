@@ -56,6 +56,8 @@
 #ifndef SEAMLYMEPREFERENCESCONFIGURATIONPAGE_H
 #define SEAMLYMEPREFERENCESCONFIGURATIONPAGE_H
 
+#include <QLocale>
+#include <QRadioButton>
 #include <QWidget>
 
 namespace Ui
@@ -74,7 +76,7 @@ public:
     void          Apply();
 
 protected:
-    virtual void  changeEvent(QEvent* event) Q_DECL_OVERRIDE;
+    virtual void  changeEvent(QEvent* event) override;
 
 private:
     Q_DISABLE_COPY(SeamlyMePreferencesConfigurationPage)
@@ -82,6 +84,7 @@ private:
     bool          m_langChanged;
     bool          m_systemChanged;
     bool          m_defGradationChanged;
+    void          setLocaleTooltip(QLocale locale, QRadioButton *button);
 };
 
 #endif // SEAMLYMEPREFERENCESCONFIGURATIONPAGE_H

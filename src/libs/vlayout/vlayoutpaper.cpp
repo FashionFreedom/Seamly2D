@@ -73,14 +73,14 @@
 #include "vposition.h"
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VLayoutPaper &VLayoutPaper::operator=(VLayoutPaper &&paper) Q_DECL_NOTHROW
+VLayoutPaper &VLayoutPaper::operator=(VLayoutPaper &&paper) noexcept
 {
     Swap(paper);
     return *this;
 }
 #endif
 
-void VLayoutPaper::Swap(VLayoutPaper &paper) Q_DECL_NOTHROW
+void VLayoutPaper::Swap(VLayoutPaper &paper) noexcept
 { std::swap(d, paper.d); }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -251,13 +251,13 @@ void VLayoutPaper::SetRotate(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief GetRotationIncrease gets the rotation increment.
+/// @brief getRotationIncrease gets the rotation increment.
 ///
 /// This method gets the rotation increment.
 ///
 /// @returns int rotation increment.
 //---------------------------------------------------------------------------------------------------------------------
-int VLayoutPaper::GetRotationIncrease() const
+int VLayoutPaper::getRotationIncrease() const
 {
     return d->globalRotationIncrease;
 }

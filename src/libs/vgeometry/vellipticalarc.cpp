@@ -41,10 +41,10 @@
 #include "vspline.h"
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VEllipticalArc &VEllipticalArc::operator=(VEllipticalArc &&arc) Q_DECL_NOTHROW { Swap(arc); return *this; }
+VEllipticalArc &VEllipticalArc::operator=(VEllipticalArc &&arc) noexcept { Swap(arc); return *this; }
 #endif
 
-void VEllipticalArc::Swap(VEllipticalArc &arc) Q_DECL_NOTHROW
+void VEllipticalArc::Swap(VEllipticalArc &arc) noexcept
 { VAbstractArc::Swap(arc); std::swap(d, arc.d); }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -142,7 +142,7 @@ VEllipticalArc VEllipticalArc::Rotate(QPointF originPoint, qreal degrees, const 
     t.translate(-originPoint.x(), -originPoint.y());
 
     VEllipticalArc elArc(VAbstractArc::GetCenter(), GetRadius1(), GetRadius2(), VAbstractArc::GetStartAngle(),
-                         VAbstractArc::GetEndAngle(), GetRotationAngle());
+                         VAbstractArc::GetEndAngle(), getRotationAngle());
     elArc.setName(name() + prefix);
     elArc.setLineColor(getLineColor());
     elArc.SetPenStyle(GetPenStyle());
@@ -156,7 +156,7 @@ VEllipticalArc VEllipticalArc::Rotate(QPointF originPoint, qreal degrees, const 
 VEllipticalArc VEllipticalArc::Flip(const QLineF &axis, const QString &prefix) const
 {
     VEllipticalArc elArc(VAbstractArc::GetCenter(), GetRadius1(), GetRadius2(), VAbstractArc::GetStartAngle(),
-                         VAbstractArc::GetEndAngle(), GetRotationAngle());
+                         VAbstractArc::GetEndAngle(), getRotationAngle());
     elArc.setName(name() + prefix);
     elArc.setLineColor(getLineColor());
     elArc.SetPenStyle(GetPenStyle());
@@ -179,7 +179,7 @@ VEllipticalArc VEllipticalArc::Move(qreal length, qreal angle, const QString &pr
     t.translate(position.x(), position.y());
 
     VEllipticalArc elArc(oldCenter, GetRadius1(), GetRadius2(), VAbstractArc::GetStartAngle(),
-                         VAbstractArc::GetEndAngle(), GetRotationAngle());
+                         VAbstractArc::GetEndAngle(), getRotationAngle());
     elArc.setName(name() + prefix);
     elArc.setLineColor(getLineColor());
     elArc.SetPenStyle(GetPenStyle());
@@ -281,7 +281,7 @@ QPointF VEllipticalArc::getPoint(qreal angle) const
     QLineF line2(QPointF(), p);
     SCASSERT(VFuzzyComparePossibleNulls(line2.angle(), line.angle()))
 
-    line2.setAngle(line2.angle() + GetRotationAngle());
+    line2.setAngle(line2.angle() + getRotationAngle());
     return line2.p2() + VAbstractArc::GetCenter().toQPointF();
 }
 
@@ -314,7 +314,7 @@ QVector<QPointF> VEllipticalArc::getPoints() const
 
     QTransform t = d->m_transform;
     t.translate(center.x(), center.y());
-    t.rotate(-GetRotationAngle());
+    t.rotate(-getRotationAngle());
     t.translate(-center.x(), -center.y());
 
     path = t.map(path);
@@ -336,13 +336,13 @@ QVector<QPointF> VEllipticalArc::getPoints() const
 //---------------------------------------------------------------------------------------------------------------------
 qreal VEllipticalArc::GetStartAngle() const
 {
-    return QLineF(GetCenter().toQPointF(), GetP1()).angle() - GetRotationAngle();
+    return QLineF(GetCenter().toQPointF(), GetP1()).angle() - getRotationAngle();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 qreal VEllipticalArc::GetEndAngle() const
 {
-    return QLineF(GetCenter().toQPointF(), GetP2()).angle() - GetRotationAngle();
+    return QLineF(GetCenter().toQPointF(), GetP2()).angle() - getRotationAngle();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -424,53 +424,43 @@ void VEllipticalArc::CreateName()
 //---------------------------------------------------------------------------------------------------------------------
 void VEllipticalArc::FindF2(qreal length)
 {
-    qreal gap = 180;
-    if (length < 0)
-    {
-        SetFlipped(true);
-        gap = -gap;
+    const bool flipped = (length < 0);
+    if (flipped) SetFlipped(true);
+    qreal absLen = qAbs(length);
+    if (absLen > MaxLength()) absLen = MaxLength();
+
+    const qreal eps = ToPixel(0.05, Unit::Mm);
+    const qreal startAngle = GetStartAngle();
+    const qreal dir = flipped ? -1.0 : 1.0;
+
+    QLineF radius(GetCenter().x(), GetCenter().y(),
+                  GetCenter().x() + d->radius1, GetCenter().y());
+
+    // Secant method on delta ∈ [0°, 360°] where endAngle = startAngle ± delta.
+    // f(delta) = GetLength() - absLen; converges in ~5 iterations vs. ~100 for bisection.
+    auto evalAt = [&](qreal delta) -> qreal {
+        radius.setAngle(startAngle + dir * delta);
+        SetFormulaF2(QString::number(radius.angle()), radius.angle());
+        return GetLength();
+    };
+
+    // x0 = 0 (virtual, no arc → length = 0), x1 = 180° first guess
+    qreal x0 = 0.0, f0 = -absLen;
+    qreal x1 = 180.0, f1 = evalAt(180.0) - absLen;
+    if (f1 < 0) {   // 180° not enough — extend to full circle
+        x0 = x1; f0 = f1;
+        x1 = 360.0; f1 = evalAt(360.0) - absLen;
     }
-    while (length > MaxLength())
-    {
-        length = MaxLength();
+
+    for (int i = 0; i < 15; ++i) {
+        if (qAbs(f1 - f0) < 1e-12) break;
+        qreal xn = x1 - f1 * (x1 - x0) / (f1 - f0);
+        xn = qBound(0.0, xn, 360.0);
+        const qreal fn = evalAt(xn) - absLen;
+        if (qAbs(fn) < eps) break;
+        x0 = x1; f0 = f1; x1 = xn; f1 = fn;
     }
-
-    // We need to calculate the second angle
-    // first approximation of angle between start and end angles
-
-    QLineF radius1(GetCenter().x(), GetCenter().y(), GetCenter().x() + d->radius1, GetCenter().y());
-    radius1.setAngle(GetStartAngle());
-    radius1.setAngle(radius1.angle() + gap);
-    qreal endAngle = radius1.angle();
-
-    // we need to set the end angle, because we want to use GetLength()
-    SetFormulaF2(QString::number(endAngle), endAngle);
-
-    qreal bezLength = GetLength(); // first approximation of length
-
-    const qreal eps = ToPixel(0.001, Unit::Mm);
-
-    while (qAbs(bezLength - length) > eps)
-    {
-        gap = gap/2;
-        if (gap < 0.0001)
-        {
-            break;
-        }
-        if (bezLength > length)
-        { // we selected too big end angle
-            radius1.setAngle(endAngle - qAbs(gap));
-        }
-        else
-        { // we selected too little end angle
-            radius1.setAngle(endAngle + qAbs(gap));
-        }
-        endAngle = radius1.angle();
-        // we need to set d->f2, because we use it when we calculate GetLength
-        SetFormulaF2(QString::number(endAngle), endAngle);
-        bezLength = GetLength();
-    }
-    SetFormulaLength(QString::number(qApp->fromPixel(bezLength)));
+    SetFormulaLength(QString::number(qApp->fromPixel(GetLength())));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -554,10 +544,10 @@ qreal VEllipticalArc::GetRadius2() const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetRotationAngle return rotation angle.
+ * @brief getRotationAngle return rotation angle.
  * @return rotationAngle.
  */
-qreal VEllipticalArc::GetRotationAngle() const
+qreal VEllipticalArc::getRotationAngle() const
 {
     return d->rotationAngle;
 }

@@ -55,10 +55,10 @@
 #include "vvariable.h"
 
 #ifdef Q_COMPILER_RVALUE_REFS
-CustomVariable &CustomVariable::operator=(CustomVariable &&variable) Q_DECL_NOTHROW { Swap(variable); return *this; }
+CustomVariable &CustomVariable::operator=(CustomVariable &&variable) noexcept { Swap(variable); return *this; }
 #endif
 
-void CustomVariable::Swap(CustomVariable &variable) Q_DECL_NOTHROW
+void CustomVariable::Swap(CustomVariable &variable) noexcept
 { VVariable::Swap(variable); std::swap(d, variable.d); }
 
 //---------------------------------------------------------------------------------------------------------------------

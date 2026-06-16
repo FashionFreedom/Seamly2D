@@ -42,9 +42,11 @@ AddToGroupDialog::AddToGroupDialog(VContainer *data, const quint32 &toolId, QWid
     , ui(new Ui::AddToGroupDialog)
     , m_doc(qApp->getCurrentDocument())
     , m_groupData()
-    , m_beep(new QSound(qApp->Settings()->getSelectionSound()))
+    , m_beep(new QSoundEffect())
 {
     ui->setupUi(this);
+
+    m_beep->setSource(QUrl(qApp->Settings()->getSelectionSound()));
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/icon/32x32/group.png"));
 
@@ -60,6 +62,7 @@ AddToGroupDialog::AddToGroupDialog(VContainer *data, const quint32 &toolId, QWid
  AddToGroupDialog::~AddToGroupDialog()
 {
     delete ui;
+    delete m_beep;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

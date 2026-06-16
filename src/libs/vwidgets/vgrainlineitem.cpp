@@ -4,7 +4,7 @@
 //  @date   11 Nov, 2024
 //
 //  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  Copyright (C) 2017 - 2025 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -65,7 +65,9 @@
 
 #include "vgrainlineitem.h"
 
-#define ARROW_ANGLE                     M_PI/9
+#define TOP_ARROW                       0
+#define BOTTOM_ARROW                    M_PI
+#define ARROW_ANGLE                     M_PI / 9
 #define RECT_WIDTH                      30
 #define RESIZE_RECT_SIZE                10
 #define ROTATE_CIRC_R                   7
@@ -91,6 +93,7 @@ VGrainlineItem::VGrainlineItem(QGraphicsItem* parent)
     , m_centerPoint()
     , m_angle(0)
     , m_arrowType(ArrowType::Both)
+    , m_arrowLength(qApp->Settings()->getDefaultArrowLength()) // length in pixels
     , m_penWidth(LINE_PEN_WIDTH)
 {
     setAcceptHoverEvents(true);
@@ -137,15 +140,14 @@ void VGrainlineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
 
     painter->setBrush(color);
 
-    if (m_arrowType != ArrowType::Bottom)
-    {
-        // first arrow
-        painter->drawPolygon(firstArrow());
-    }
     if (m_arrowType != ArrowType::Top)
     {
-        // second arrow
-        painter->drawPolygon(secondArrow());
+        drawArrow(painter, mainLine().p1(), TOP_ARROW);
+    }
+
+    if (m_arrowType != ArrowType::Bottom)
+    {
+        drawArrow(painter, mainLine().p2(), BOTTOM_ARROW);
     }
 
     if (m_mode != Mode::Normal)
@@ -202,10 +204,13 @@ void VGrainlineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
 /// @param length length of the grainline in user's units.
 /// @param type type of arrowhead.
 //---------------------------------------------------------------------------------------------------------------------
-void VGrainlineItem::updateGeometry(const QPointF& position, qreal rotation, qreal length, ArrowType type)
+void VGrainlineItem::updateGeometry(const QPointF& position, qreal rotation, qreal length,
+                                    ArrowType type, qreal arrowLength)
 {
     m_rotation = qDegreesToRadians(rotation);
     m_length = length;
+    m_arrowLength = arrowLength;
+    m_arrowType = type;
 
     qreal dX;
     qreal dY;
@@ -216,7 +221,6 @@ void VGrainlineItem::updateGeometry(const QPointF& position, qreal rotation, qre
         point.setY(point.y() + dY);
     }
     setPos(point);
-    m_arrowType = type;
 
     updateRectangle();
     updateItem();
@@ -402,7 +406,7 @@ void VGrainlineItem::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
             deltaLength *= 2;
         }
         // limit length of grainline to twice the length of the arrowheads.
-        qreal minLength = qApp->Settings()->getDefaultArrowLength() * 2.0;
+        qreal minLength = m_arrowLength * 2.0;
         if (m_startLength + deltaLength < minLength)
         {
             return;
@@ -634,31 +638,21 @@ QLineF VGrainlineItem::mainLine() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPolygonF VGrainlineItem::firstArrow() const
+void VGrainlineItem::drawArrow(QPainter *painter, const QPointF &point, const qreal &addValue) const
 {
-    qreal arrowLength = qApp->Settings()->getDefaultArrowLength();
-    QPointF point2 = mainLine().p2();
-    QPolygonF polygon;
-    polygon << point2;
-    polygon << QPointF(point2.x() + arrowLength * cos(M_PI + m_rotation + ARROW_ANGLE),
-                       point2.y() - arrowLength * sin(M_PI + m_rotation + ARROW_ANGLE));
-    polygon << QPointF(point2.x() + arrowLength * cos(M_PI + m_rotation - ARROW_ANGLE),
-                       point2.y() - arrowLength * sin(M_PI + m_rotation - ARROW_ANGLE));
-    return polygon;
+    painter->drawPolygon(arrow(point, addValue));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPolygonF VGrainlineItem::secondArrow() const
+QPolygonF VGrainlineItem::arrow(const QPointF &point, const qreal &addValue) const
 {
-    qreal arrowLength = qApp->Settings()->getDefaultArrowLength();
-    QPointF point1 = mainLine().p1();
     QPolygonF polygon;
-    polygon << point1;
-    polygon << QPointF(point1.x() + arrowLength * cos(m_rotation + ARROW_ANGLE),
-                       point1.y() - arrowLength * sin(m_rotation + ARROW_ANGLE));
-    polygon << QPointF(point1.x() + arrowLength * cos(m_rotation - ARROW_ANGLE),
-                       point1.y() - arrowLength * sin(m_rotation - ARROW_ANGLE));
-    return polygon;
+    polygon << point;
+    polygon << QPointF(point.x() + m_arrowLength * cos(addValue + m_rotation + ARROW_ANGLE),
+                       point.y() - m_arrowLength * sin(addValue + m_rotation + ARROW_ANGLE));
+    polygon << QPointF(point.x() + m_arrowLength * cos(addValue + m_rotation - ARROW_ANGLE),
+                       point.y() - m_arrowLength * sin(addValue + m_rotation - ARROW_ANGLE));
+     return polygon;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -677,20 +671,18 @@ QPainterPath VGrainlineItem::mainShape() const
     path.addPath((stroker.createStroke(linePath) + linePath).simplified());
     path.closeSubpath();
 
-    if (m_arrowType != ArrowType::Bottom)
+    if (m_arrowType != ArrowType::Top)
     {
-        // first arrow
         QPainterPath polyPath;
-        polyPath.addPolygon(firstArrow());
+        polyPath.addPolygon(arrow(mainLine().p1(), TOP_ARROW));
         path.addPath((stroker.createStroke(polyPath) + polyPath).simplified());
         path.closeSubpath();
     }
 
-    if (m_arrowType != ArrowType::Top)
+    if (m_arrowType != ArrowType::Bottom)
     {
-        // second arrow
         QPainterPath polyPath;
-        polyPath.addPolygon(secondArrow());
+        polyPath.addPolygon(arrow(mainLine().p2(), BOTTOM_ARROW));
         path.addPath((stroker.createStroke(polyPath) + polyPath).simplified());
         path.closeSubpath();
     }

@@ -81,14 +81,14 @@ public:
                               const Draw &mode = Draw::Calculation);
                       VPointF(const QPointF &point, const QString &name, qreal mx, qreal my, quint32 idObject = 0,
                               const Draw &mode = Draw::Calculation);
-    virtual          ~VPointF() Q_DECL_OVERRIDE;
+    virtual          ~VPointF() override;
 
     VPointF &operator=(const VPointF &point);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VPointF &operator=(VPointF &&point) Q_DECL_NOTHROW;
+	VPointF &operator=(VPointF &&point) noexcept;
 #endif
 
-	void              Swap(VPointF &point) Q_DECL_NOTHROW;
+	void              Swap(VPointF &point) noexcept;
 
     explicit operator QPointF() const;
     VPointF           Rotate(const QPointF &originPoint, qreal degrees, const QString &prefix = QString()) const;

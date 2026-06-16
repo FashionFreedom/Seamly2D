@@ -1,61 +1,60 @@
-/***************************************************************************
- **  @file   vabstractpattern.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+/// @file   vabstractpattern.cpp
+/// @author Douglas S Caskey
+/// @date   17 Sep, 2023
+///
+/// @copyright
+/// Copyright (C) 2017 - 2023 Seamly, LLC
+/// https://github.com/fashionfreedom/seamly2d
+///
+/// @brief
+/// Seamly2D is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU General Public License as published by
+/// the Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// Seamly2D is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License
+/// along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   vabstractpattern.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   15 6, 2015
- **
- **  @author Douglas S Caskey
- **  @date   7.31.2022
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2022 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+///
+/// @file   vabstractpattern.cpp
+/// @author Roman Telezhynskyi <dismine(at)gmail.com>
+/// @date   15 6, 2015
+///
+/// @author Douglas S Caskey
+/// @date   7.31.2022
+///
+/// @brief
+/// @copyright
+/// This source code is part of the Seamly2D project, a pattern making
+/// program, whose allow create and modeling patterns of clothing.
+/// Copyright (C) 2013-2022 Seamly2D project
+/// <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+/// This source code is part of the Valentina project, a pattern making
+/// program, whose allow create and modeling patterns of clothing.
+/// Copyright (C) 2015 Valentina project
+/// <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+///
+/// Valentina is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU General Public License as published by
+/// the Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// Valentina is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License
+/// along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "vabstractpattern.h"
 
@@ -71,6 +70,7 @@
 #include "../vmisc/vabstractapplication.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vpiecenode.h"
+#include "../vtools/tools/vabstracttool.h"
 #include "../vtools/tools/vdatatool.h"
 
 #include <QDomNode>
@@ -80,9 +80,7 @@
 #include <QMessageBox>
 #include <QMessageLogger>
 #include <QSet>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QtDebug>
 
 class QDomElement;
@@ -163,6 +161,7 @@ const QString VAbstractPattern::AttrOnFold              = QStringLiteral("onFold
 const QString VAbstractPattern::AttrDateFormat          = QStringLiteral("dateFormat");
 const QString VAbstractPattern::AttrTimeFormat          = QStringLiteral("timeFormat");
 const QString VAbstractPattern::AttrArrows              = QStringLiteral("arrows");
+const QString VAbstractPattern::AttrArrowLength         = QStringLiteral("arrowLength");
 const QString VAbstractPattern::AttrNodeReverse         = QStringLiteral("reverse");
 const QString VAbstractPattern::AttrNodeExcluded        = QStringLiteral("excluded");
 const QString VAbstractPattern::AttrNodeIsNotch         = QStringLiteral("notch");
@@ -292,7 +291,7 @@ VAbstractPattern::VAbstractPattern(QObject *parent)
     , lastSavedExportFormat(QString())
     , cursor(0)
     , toolsOnRemove(QVector<VDataTool*>())
-    , history(QVector<VToolRecord>())
+    , m_history(QVector<VToolRecord>())
     , patternPieces(QStringList())
     , modified(false)
 {}
@@ -350,11 +349,10 @@ QStringList VAbstractPattern::ListMeasurements() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief changeActiveDraftBlock set new active draft block name.
- * @param name new name.
- * @param parse parser file mode.
- */
+/// @brief changeActiveDraftBlock set new active draft block name.
+/// @param name new name.
+/// @param parse parser file mode.
+//---------------------------------------------------------------------------------------------------------------------
 void VAbstractPattern::changeActiveDraftBlock(const QString &name, const Document &parse)
 {
     Q_ASSERT_X(!name.isEmpty(), Q_FUNC_INFO, "name draft block is empty");
@@ -369,21 +367,19 @@ void VAbstractPattern::changeActiveDraftBlock(const QString &name, const Documen
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getActiveDraftBlockName return current draft block name.
- * @return draft block name.
- */
+/// @brief getActiveDraftBlockName return current draft block name.
+/// @return draft block name.
+//---------------------------------------------------------------------------------------------------------------------
 QString VAbstractPattern::getActiveDraftBlockName() const
 {
     return m_activeDraftBlock;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getActiveDraftElement return draftBlock element for current draft block.
- * @param element draftBlock element.
- * @return true if found.
- */
+/// @brief getActiveDraftElement return draftBlock element for current draft block.
+/// @param element draftBlock element.
+/// @return true if found.
+//---------------------------------------------------------------------------------------------------------------------
 bool VAbstractPattern::getActiveDraftElement(QDomElement &element) const
 {
     if (m_activeDraftBlock.isEmpty() == false)
@@ -411,11 +407,10 @@ bool VAbstractPattern::getActiveDraftElement(QDomElement &element) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief draftBlockNameExists check if draft block with this name exists.
- * @param name draft block name.
- * @return true if exist.
- */
+/// @brief draftBlockNameExists check if draft block with this name exists.
+/// @param name draft block name.
+/// @return true if exist.
+//---------------------------------------------------------------------------------------------------------------------
 bool VAbstractPattern::draftBlockNameExists(const QString &name) const
 {
     Q_ASSERT_X(!name.isEmpty(), Q_FUNC_INFO, "draft block name is empty");
@@ -439,12 +434,11 @@ bool VAbstractPattern::draftBlockNameExists(const QString &name) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getActiveNodeElement find element in current draft block by name.
- * @param name name tag.
- * @param element element.
- * @return true if found.
- */
+/// @brief getActiveNodeElement find element in current draft block by name.
+/// @param name name tag.
+/// @param element element.
+/// @return true if found.
+//---------------------------------------------------------------------------------------------------------------------
 bool VAbstractPattern::getActiveNodeElement(const QString &name, QDomElement &element) const
 {
     Q_ASSERT_X(!name.isEmpty(), Q_FUNC_INFO, "draft block name is empty");
@@ -559,12 +553,11 @@ QDomElement VAbstractPattern::getDraftBlockElement(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief renameDraftBlock change draft block name.
- * @param oldName old draft block name.
- * @param newName new draft block name.
- * @return true if success.
- */
+/// @brief renameDraftBlock change draft block name.
+/// @param oldName old draft block name.
+/// @param newName new draft block name.
+/// @return true if success.
+//---------------------------------------------------------------------------------------------------------------------
 bool VAbstractPattern::renameDraftBlock(const QString &oldName, const QString &newName)
 {
     Q_ASSERT_X(!newName.isEmpty(), Q_FUNC_INFO, "new name draft block is empty");
@@ -602,14 +595,13 @@ bool VAbstractPattern::renameDraftBlock(const QString &oldName, const QString &n
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief appendDraftBlock add new draft block.
- *
- * Method check if not exist draft block with the same name and change name active draft block name, send signal
- * about change draft block. Doen't add draft block to file structure. This task make SPoint tool.
- * @param name draft block name.
- * @return true if success.
- */
+/// @brief appendDraftBlock add new draft block.
+///
+/// Method check if not exist draft block with the same name and change name active draft block name, send signal
+/// about change draft block. Doen't add draft block to file structure. This task make SPoint tool.
+/// @param name draft block name.
+/// @return true if success.
+//---------------------------------------------------------------------------------------------------------------------
 bool VAbstractPattern::appendDraftBlock(const QString &name)
 {
     Q_ASSERT_X(!name.isEmpty(), Q_FUNC_INFO, "name draft block is empty");
@@ -675,11 +667,10 @@ QString VAbstractPattern::getDefaultLineType() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getTool return tool from tool list.
- * @param id tool id.
- * @return tool.
- */
+/// @brief getTool return tool from tool list.
+/// @param id tool id.
+/// @return tool.
+//---------------------------------------------------------------------------------------------------------------------
 VDataTool *VAbstractPattern::getTool(quint32 id)
 {
     ToolExists(id);
@@ -687,11 +678,10 @@ VDataTool *VAbstractPattern::getTool(quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief AddTool add tool to list tools.
- * @param id tool id.
- * @param tool tool.
- */
+/// @brief AddTool add tool to list tools.
+/// @param id tool id.
+/// @param tool tool.
+//---------------------------------------------------------------------------------------------------------------------
 void VAbstractPattern::AddTool(quint32 id, VDataTool *tool)
 {
     Q_ASSERT_X(id != 0, Q_FUNC_INFO, "id == 0");
@@ -870,22 +860,21 @@ void VAbstractPattern::AddToolOnRemove(VDataTool *tool)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getHistory return list with list of history records.
- * @return list of history records.
- */
+/// @brief getHistory return list with list of history records.
+/// @return list of history records.
+//---------------------------------------------------------------------------------------------------------------------
 QVector<VToolRecord> *VAbstractPattern::getHistory()
 {
-    return &history;
+    return &m_history;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QVector<VToolRecord> VAbstractPattern::getBlockHistory() const
 {
     QVector<VToolRecord> draftBlockHistory;
-    for (qint32 i = 0; i< history.size(); ++i)
+    for (qint32 i = 0; i< m_history.size(); ++i)
     {
-        const VToolRecord tool = history.at(i);
+        const VToolRecord tool = m_history.at(i);
         if (tool.getDraftBlockName() != getActiveDraftBlockName())
         {
             continue;
@@ -899,9 +888,9 @@ QVector<VToolRecord> VAbstractPattern::getBlockHistory() const
 QMap<quint32, Tool> VAbstractPattern::getGroupObjHistory() const
 {
     QMap<quint32, Tool> draftBlockHistory;
-    for (qint32 i = 0; i< history.size(); ++i)
+    for (qint32 i = 0; i< m_history.size(); ++i)
     {
-        const VToolRecord tool = history.at(i);
+        const VToolRecord tool = m_history.at(i);
         if (tool.getDraftBlockName() != getActiveDraftBlockName())
         {
             continue;
@@ -1617,12 +1606,11 @@ void VAbstractPattern::setVersion()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getOpItems get vector of operation tool obects.
- * @param toolId operation tool id.
- * @param itemType  type of item - either source or destination.
- * @return vector of item element object ids.
- */
+/// @brief getOpItems get vector of operation tool obects.
+/// @param toolId operation tool id.
+/// @param itemType  type of item - either source or destination.
+/// @return vector of item element object ids.
+//---------------------------------------------------------------------------------------------------------------------
 QVector<quint32> VAbstractPattern::getOpItems(const quint32 &toolId, const QString &itemType)
 {
     QVector<quint32> items;
@@ -1667,9 +1655,8 @@ QVector<quint32> VAbstractPattern::getDartItems(const quint32 &toolId)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief haveLiteChange we have unsaved change.
- */
+/// @brief haveLiteChange we have unsaved change.
+//---------------------------------------------------------------------------------------------------------------------
 void VAbstractPattern::haveLiteChange()
 {
     emit patternChanged(false);
@@ -1725,10 +1712,9 @@ VPiecePath VAbstractPattern::ParsePathNodes(const QDomElement &domElement)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setActiveDraftBlock set current draft block.
- * @param name draft block name.
- */
+/// @brief setActiveDraftBlock set current draft block.
+/// @param name draft block name.
+//---------------------------------------------------------------------------------------------------------------------
 void VAbstractPattern::setActiveDraftBlock(const QString &name)
 {
     Q_ASSERT_X(!name.isEmpty(), Q_FUNC_INFO, "name draft block is empty");
@@ -2198,10 +2184,9 @@ QPair<bool, QMap<quint32, quint32> > VAbstractPattern::parseItemElement(const QD
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/*
- * @brief IsModified state of the document for cases that do not cover QUndoStack.
- * @return true if the document was modified without using QUndoStack.
- */
+/// @brief IsModified state of the document for cases that do not cover QUndoStack.
+/// @return true if the document was modified without using QUndoStack.
+//---------------------------------------------------------------------------------------------------------------------
 bool VAbstractPattern::IsModified() const
 {
     return modified;
@@ -2412,7 +2397,7 @@ QMap<quint32, GroupAttributes> VAbstractPattern::getGroups()
                             const bool locked = getParameterBool(group, AttrGroupLocked, trueStr);
                             const QString color = GetParametrString(group, AttrGroupColor, ColorBlack);
                             const QString linetype = GetParametrString(group, AttrLineType, LineTypeSolidLine);
-                            const QString lineweight = GetParametrString(group, AttrLineWeight, "0.35");
+                            const QString lineweight = GetParametrString(group, AttrLineWeight, DefaultLineWeight);
 
                             groupData.name = name;
                             groupData.visible = visible;
@@ -2443,13 +2428,12 @@ QMap<quint32, GroupAttributes> VAbstractPattern::getGroups()
 }
 
 
-/*---------------------------------------------------------------------------------------------------------------------
- * @brief  Gets List of Groups for the current Draft Block
- *
- * @return  AttrName - Group Name.
- * @throw   VExceptionConversionError if group error.
- */
-
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief  Gets List of Groups for the current Draft Block
+///
+/// @return  AttrName - Group Name.
+/// @throw   VExceptionConversionError if group error.
+//---------------------------------------------------------------------------------------------------------------------
 QStringList VAbstractPattern::groupListByName()
 {
     QStringList groupList;
@@ -2495,11 +2479,11 @@ QStringList VAbstractPattern::groupListByName()
     return groupList;
 }
 
-/*---------------------------------------------------------------------------------------------------------------------
- * @brief  Gets Dom Element for a given group name.
- *
- * @return  group - group Dom Element.
- */
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief  Gets Dom Element for a given group name.
+///
+/// @return  group - group Dom Element.
+//---------------------------------------------------------------------------------------------------------------------
 QDomElement VAbstractPattern::getGroupByName(const QString &name)
 {
 
@@ -2539,11 +2523,11 @@ QDomElement VAbstractPattern::getGroupByName(const QString &name)
     return groups;
 }
 
-/*---------------------------------------------------------------------------------------------------------------------
- * @brief  Gets groupId for a given group name.
- *
- * @return  groupId - group Id.
- */
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief  Gets groupId for a given group name.
+///
+/// @return  groupId - group Id.
+//---------------------------------------------------------------------------------------------------------------------
 quint32 VAbstractPattern::getGroupIdByName(const QString &name)
 {
 
@@ -2583,13 +2567,12 @@ quint32 VAbstractPattern::getGroupIdByName(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Returns the groups that contain or do not contain the item identified by the toolid and the objectid
- * @param toolId
- * @param objectId
- * @param containsItem |true if the groups contain the given item, false if they don't contain the item
- * @return
- */
+/// @brief Returns the groups that contain or do not contain the item identified by the toolid and the objectid
+/// @param toolId
+/// @param objectId
+/// @param containsItem |true if the groups contain the given item, false if they don't contain the item
+/// @return
+//---------------------------------------------------------------------------------------------------------------------
 QMap<quint32, QString> VAbstractPattern::getGroupsContainingItem(quint32 toolId, quint32 objectId, bool containsItem)
 {
     QMap<quint32, QString> data;
@@ -2632,14 +2615,14 @@ QMap<quint32, QString> VAbstractPattern::getGroupsContainingItem(quint32 toolId,
 
     return data;
 }
+
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Checks if the given group has the item with the given toolId and objectId
- * @param groupDomElement
- * @param toolId
- * @param objectId
- * @return
- */
+/// @brief Checks if the given group has the item with the given toolId and objectId
+/// @param groupDomElement
+/// @param toolId
+/// @param objectId
+/// @return
+//---------------------------------------------------------------------------------------------------------------------
 bool VAbstractPattern::hasGroupItem(const QDomElement &groupDomElement, quint32 toolId, quint32 objectId)
 {
     bool result = false;
@@ -2667,10 +2650,10 @@ bool VAbstractPattern::hasGroupItem(const QDomElement &groupDomElement, quint32 
     return result;
 }
 
-/**
- * @brief Deletes an item from the group containing the toolId
- * @param toolId
- */
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief Deletes an item from the group containing the toolId
+/// @param toolId
+//---------------------------------------------------------------------------------------------------------------------
 void VAbstractPattern::deleteToolFromGroup(quint32 toolId)
 {
     QMap<quint32,QString> groupsContainingItem = getGroupsContainingItem(toolId, 0, true);
@@ -2687,10 +2670,10 @@ void VAbstractPattern::deleteToolFromGroup(quint32 toolId)
     QDomElement group = removeGroupItem(toolId, 0, groupId);
 }
 
-/**
- * @brief Adds an item to the given group with the given toolId and objectId
- * @param toolId
- */
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief Adds an item to the given group with the given toolId and objectId
+/// @param toolId
+//---------------------------------------------------------------------------------------------------------------------
 void VAbstractPattern::addToolToGroup(quint32 toolId, quint32 objectId, const QString &groupName)
 {
     quint32 groupId = getGroupIdByName(groupName);
@@ -2734,12 +2717,11 @@ void VAbstractPattern::addToolToGroup(quint32 toolId, quint32 objectId, const QS
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Adds an item to the given group with the given toolId and objectId
- * @param toolId
- * @param objectId
- * @param groupId
- */
+/// @brief Adds an item to the given group with the given toolId and objectId
+/// @param toolId
+/// @param objectId
+/// @param groupId
+//---------------------------------------------------------------------------------------------------------------------
 QDomElement VAbstractPattern::addGroupItem(quint32 toolId, quint32 objectId, quint32 groupId)
 {
 
@@ -2785,12 +2767,11 @@ QDomElement VAbstractPattern::addGroupItem(quint32 toolId, quint32 objectId, qui
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Removes the item of given toolId and objectId from the group of given groupId
- * @param toolId
- * @param objectId
- * @param groupId
- */
+/// @brief Removes the item of given toolId and objectId from the group of given groupId
+/// @param toolId
+/// @param objectId
+/// @param groupId
+//---------------------------------------------------------------------------------------------------------------------
 QDomElement VAbstractPattern::removeGroupItem(quint32 toolId, quint32 objectId, quint32 groupId)
 {
     QDomElement group = elementById(groupId, TagGroup);
@@ -2835,6 +2816,9 @@ QDomElement VAbstractPattern::removeGroupItem(quint32 toolId, quint32 objectId, 
                         if (!groups.isNull())
                         {
                             parseGroups(groups);
+
+                            VAbstractTool *tool = qobject_cast<VAbstractTool *>(VAbstractPattern::getTool(toolId));
+                            tool->GroupVisibility(objectId, true);
                         }
 
                         return item;
@@ -2853,11 +2837,10 @@ QDomElement VAbstractPattern::removeGroupItem(quint32 toolId, quint32 objectId, 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Returns true if the given group is empty
- * @param id
- * @return
- */
+/// @brief Returns true if the given group is empty
+/// @param id
+/// @return
+//---------------------------------------------------------------------------------------------------------------------
 bool VAbstractPattern::isGroupEmpty(quint32 id)
 {
     QDomElement group = elementById(id, TagGroup);
@@ -2911,13 +2894,12 @@ void VAbstractPattern::setGroupVisibility(quint32 id, bool visible)
 }
 
 
-/*---------------------------------------------------------------------------------------------------------------------
- * @brief  Gets whether a Group is locked or not
- * @param  id - Tool Id.
- * @return AttrGroupLocked - True if locked False if unlocked.
- * @return True if can't find group by id.
-*/
-
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief  Gets whether a Group is locked or not
+/// @param  id - Tool Id.
+/// @return AttrGroupLocked - True if locked False if unlocked.
+/// @return True if can't find group by id.
+//---------------------------------------------------------------------------------------------------------------------
 bool VAbstractPattern::getGroupLock(quint32 id)
 {
     QDomElement group = elementById(id, TagGroup);
@@ -2955,13 +2937,12 @@ void VAbstractPattern::setGroupLock(quint32 id, bool locked)
     }
 }
 
-/*---------------------------------------------------------------------------------------------------------------------
- * @brief  Gets the Group color
- * @param  id - Tool Id.
- * @return AttrGroupColor - Color of the group.
- * @return color  - group color.
-*/
-
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief  Gets the Group color
+/// @param  id - Tool Id.
+/// @return AttrGroupColor - Color of the group.
+/// @return color  - group color.
+//---------------------------------------------------------------------------------------------------------------------
 QString VAbstractPattern::getGroupColor(quint32 id)
 {
     QDomElement group = elementById(id, TagGroup);
@@ -2995,13 +2976,12 @@ void VAbstractPattern::setGroupColor(quint32 id, QString color)
     }
 }
 
-/*---------------------------------------------------------------------------------------------------------------------
- * @brief  Gets the Group Line Type
- * @param  id - Tool Id.
- * @return AttrLineType - Line type of the group.
- * @return type  - group line type.
-*/
-
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief  Gets the Group Line Type
+/// @param  id - Tool Id.
+/// @return AttrLineType - Line type of the group.
+/// @return type  - group line type.
+//---------------------------------------------------------------------------------------------------------------------
 QString VAbstractPattern::getGroupLineType(quint32 id)
 {
     QDomElement group = elementById(id, TagGroup);
@@ -3035,13 +3015,12 @@ void VAbstractPattern::setGroupLineType(quint32 id, QString type)
     }
 }
 
-/*---------------------------------------------------------------------------------------------------------------------
- * @brief  Gets the Group Line Weight
- * @param  id - Tool Id.
- * @return AttrLineWeight - Linw weight of the group.
- * @return weight  - group line weight.
-*/
-
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief  Gets the Group Line Weight
+/// @param  id - Tool Id.
+/// @return AttrLineWeight - Linw weight of the group.
+/// @return weight  - group line weight.
+//---------------------------------------------------------------------------------------------------------------------
 QString VAbstractPattern::getGroupLineWeight(quint32 id)
 {
     QDomElement group = elementById(id, TagGroup);
@@ -3049,7 +3028,7 @@ QString VAbstractPattern::getGroupLineWeight(quint32 id)
     if (group.isElement())
     {
 
-        weight = GetParametrString(group, AttrLineWeight, "0.35");
+        weight = GetParametrString(group, AttrLineWeight, DefaultLineWeight);
         return weight;
     }
     else
@@ -3075,11 +3054,11 @@ void VAbstractPattern::setGroupLineWeight(quint32 id, QString weight)
     }
 }
 
-/*---------------------------------------------------------------------------------------------------------------------
- * @brief  Gets whether a group name already exists
- * @param  groupName - group name.
- * @return exists - True id name exists False if it does not.
-*/
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief  Gets whether a group name already exists
+/// @param  groupName - group name.
+/// @return exists - True id name exists False if it does not.
+//---------------------------------------------------------------------------------------------------------------------
 bool VAbstractPattern::groupNameExists(const QString &groupName)
 {
     QStringList groupList = groupListByName();
@@ -3093,16 +3072,11 @@ QString VAbstractPattern::useGroupColor(quint32 toolId, QString color)
     QStringList list = QStringList(groupsContainingItem.values());
     QString  groupName = list.value(0);
 
-    //qCDebug(vbstractPattern,"VAbstractPattern::useGroupColor - Group Name = %s",qUtf8Printable(groupName));
-    //qCDebug(vbstractPattern,"VAbstractPattern::useGroupColor - Tool ID = %d",toolId);
-    //qCDebug(vbstractPattern,"VAbstractPattern::useGroupColor - Tool Color = %s",qUtf8Printable(color));
     quint32 objectId = toolId;
     bool groupHasItem = hasGroupItem(getGroupByName(groupName), toolId, objectId);
-    //qCDebug(vbstractPattern,"VAbstractPattern::useGroupColor - Group has item = %d",groupHasItem);
     if ((color == ColorByGroup) && groupHasItem)
     {
         QString groupColor = getGroupColor(getGroupIdByName(groupName));
-        //qCDebug(vbstractPattern,"VAbstractPattern::useGroupColor - Group Color = %s",qUtf8Printable(groupColor));
         return groupColor;
     }
     else
@@ -3117,16 +3091,12 @@ QString VAbstractPattern::useGroupLineType(quint32 toolId, QString type)
     QStringList list = QStringList(groupsContainingItem.values());
     QString  groupName = list.value(0);
 
-    //qCDebug(vbstractPattern,"VAbstractPattern::useGroupLineType - Group Name = %s",qUtf8Printable(groupName));
-    //qCDebug(vbstractPattern,"VAbstractPattern::useGroupLineType - Tool ID = %d",toolId);
-    //qCDebug(vbstractPattern,"VAbstractPattern::useGroupLineType - Tool Color = %s",qUtf8Printable(type));
     quint32 objectId = toolId;
     bool groupHasItem = hasGroupItem(getGroupByName(groupName), toolId, objectId);
-    //qCDebug(vbstractPattern,"VAbstractPattern::useGroupLineType - Group has item = %d",groupHasItem);
+
     if ((type == LineTypeByGroup) && groupHasItem)
     {
         QString groupLineType = getGroupLineType(getGroupIdByName(groupName));
-        //qCDebug(vbstractPattern,"VAbstractPattern::useGroupLineType - Group Linetpe = %s",qUtf8Printable(groupLineType));
         return groupLineType;
     }
     else
@@ -3154,31 +3124,72 @@ QString VAbstractPattern::useGroupLineWeight(quint32 toolId, QString weight)
     }
 }
 
-
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief getBackgroundImageMap Get the image map.
+///
+/// This method gets the image map of image ids and ImageItems.
+///
+/// @return Qmap of image ids and ImageItems.
+//---------------------------------------------------------------------------------------------------------------------
 QMap<qint32, ImageItem *> VAbstractPattern::getBackgroundImageMap()
 {
     return m_imageMap;
 }
 
-
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief addBackgroundImage Add image to image map by id.
+///
+/// This method adds the image to image map.
+///
+/// @param id Id of image.
+/// @param item ImageItem data struct of image.
+//---------------------------------------------------------------------------------------------------------------------
 void VAbstractPattern::addBackgroundImage(qint32 id, ImageItem *item)
 {
     m_imageMap.insert(id, item);
 }
 
-
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief removeBackgroundImage Remove image from image map by id.
+///
+/// This method removes the image from the image map.
+///
+/// @param id Id of image.
+//---------------------------------------------------------------------------------------------------------------------
 void VAbstractPattern::removeBackgroundImage(qint32 id)
 {
     m_imageMap.remove(id);
 }
 
-
-ImageItem* VAbstractPattern::getBackgroundImage(qint32 id)
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief getBackgroundImage Get image by id.
+///
+/// This method gets an ImageItem data struct by id.
+///
+/// @param id Image id.
+/// @return ImgaeItem data struct for image.
+//---------------------------------------------------------------------------------------------------------------------
+ImageItem *VAbstractPattern::getBackgroundImage(qint32 id)
 {
     return m_imageMap.value(id);
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief clearBackgroundImageMap  Clear the image map.
+///
+/// This method clears the image map of all image items. Needed when closing a pattern.
+//---------------------------------------------------------------------------------------------------------------------
 void VAbstractPattern::clearBackgroundImageMap()
 {
     m_imageMap.clear();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief clearHistory Clear the tool history.
+///
+/// This method clears the History vector of all too records. Needed when closing a pattern.
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPattern::clearHistory()
+{
+    m_history.clear();
 }

@@ -63,12 +63,12 @@ public:
     explicit VisToolMirrorByLine(const VContainer *data, QGraphicsItem *parent = nullptr);
     virtual ~VisToolMirrorByLine() = default;
 
-    virtual void   RefreshGeometry() Q_DECL_OVERRIDE;
+    virtual void   RefreshGeometry() override;
 
     void setFirstLinePointId(quint32 value);
     void setSecondLinePointId(quint32 value);
 
-    virtual int type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int type() const override {return Type;}
     enum { Type = UserType + static_cast<int>(Vis::ToolMirrorByLine)};
 private:
     Q_DISABLE_COPY(VisToolMirrorByLine)

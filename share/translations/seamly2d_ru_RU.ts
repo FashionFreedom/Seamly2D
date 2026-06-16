@@ -17,11 +17,11 @@
     </message>
     <message>
         <source>Left to right</source>
-        <translation type="unfinished"></translation>
+        <translation>Слева направо</translation>
     </message>
     <message>
         <source>Right to left</source>
-        <translation type="unfinished"></translation>
+        <translation>Справа налево</translation>
     </message>
     <message>
         <source>Automatic</source>
@@ -33,11 +33,11 @@
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>О нас</translation>
     </message>
     <message>
         <source>Copy build data to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Копировать данные сборки в буфер обмена</translation>
     </message>
     <message>
         <source>Seamly 2D</source>
@@ -45,51 +45,43 @@
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Версия</translation>
     </message>
     <message>
         <source>Build date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Дата сборки:</translation>
     </message>
     <message>
         <source>Qt Version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>CPU:</source>
-        <translation>CPU:</translation>
+        <translation>Версия Qt:</translation>
     </message>
     <message>
         <source>Compiler:</source>
-        <translation type="unfinished"></translation>
+        <translation>Компилятор:</translation>
     </message>
     <message>
         <source>System</source>
-        <translation type="unfinished"></translation>
+        <translation>Система</translation>
     </message>
     <message>
         <source>Revision:</source>
-        <translation type="unfinished"></translation>
+        <translation>Редакция:</translation>
     </message>
     <message>
         <source>Version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Версия:</translation>
     </message>
     <message>
         <source>Architecture</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OS:</source>
-        <translation>OS:</translation>
+        <translation>Архитектура</translation>
     </message>
     <message>
         <source>OS Version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Версия ОС:</translation>
     </message>
     <message>
         <source>Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Локальный</translation>
     </message>
     <message>
         <source>Country:</source>
@@ -97,23 +89,23 @@
     </message>
     <message>
         <source>Decimal point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Десятичная точка:</translation>
     </message>
     <message>
         <source>Script name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя скрипта:</translation>
     </message>
     <message>
         <source>System codec:</source>
-        <translation type="unfinished"></translation>
+        <translation>Системный кодек:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык:</translation>
     </message>
     <message>
         <source>Text direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Направление текста:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -121,23 +113,23 @@
     </message>
     <message>
         <source>Positive sign:</source>
-        <translation type="unfinished"></translation>
+        <translation>Положительный знак:</translation>
     </message>
     <message>
         <source>Negative sign:</source>
-        <translation type="unfinished"></translation>
+        <translation>Знак минус:</translation>
     </message>
     <message>
         <source>Application</source>
-        <translation type="unfinished"></translation>
+        <translation>Приложение</translation>
     </message>
     <message>
         <source>Arguments:</source>
-        <translation type="unfinished"></translation>
+        <translation>Аргументы:</translation>
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Участники</translation>
     </message>
     <message>
         <source>Check For Updates</source>
@@ -177,7 +169,7 @@
     <name>AddImage</name>
     <message>
         <source>add image</source>
-        <translation type="unfinished"></translation>
+        <translation>добавить изображение</translation>
     </message>
 </context>
 <context>
@@ -228,7 +220,7 @@
     <name>AnchorPointTool</name>
     <message>
         <source>add anchor point</source>
-        <translation type="unfinished"></translation>
+        <translation>добавить точку привязки</translation>
     </message>
 </context>
 <context>
@@ -375,14 +367,6 @@
 <context>
     <name>CalculatorUtil</name>
     <message>
-        <source>.</source>
-        <translation>.</translation>
-    </message>
-    <message>
-        <source>±</source>
-        <translation>±</translation>
-    </message>
-    <message>
         <source>Backspace</source>
         <translation>Удалить последнюю</translation>
     </message>
@@ -395,60 +379,8 @@
         <translation>Удалить всё</translation>
     </message>
     <message>
-        <source>MC</source>
-        <translation>MC</translation>
-    </message>
-    <message>
-        <source>MR</source>
-        <translation>MR</translation>
-    </message>
-    <message>
-        <source>MS</source>
-        <translation>MS</translation>
-    </message>
-    <message>
-        <source>M+</source>
-        <translation>M+</translation>
-    </message>
-    <message>
-        <source>÷</source>
-        <translation>÷</translation>
-    </message>
-    <message>
-        <source>×</source>
-        <translation>×</translation>
-    </message>
-    <message>
-        <source>-</source>
-        <translation>-</translation>
-    </message>
-    <message>
-        <source>+</source>
-        <translation>+</translation>
-    </message>
-    <message>
-        <source>Sqrt</source>
-        <translation>Sqrt</translation>
-    </message>
-    <message>
-        <source>x²</source>
-        <translation>x²</translation>
-    </message>
-    <message>
-        <source>1/x</source>
-        <translation>1/x</translation>
-    </message>
-    <message>
-        <source>=</source>
-        <translation>=</translation>
-    </message>
-    <message>
         <source>Calculator</source>
         <translation>Калькулятор</translation>
-    </message>
-    <message>
-        <source>####</source>
-        <translation>####</translation>
     </message>
 </context>
 <context>
@@ -737,16 +669,6 @@ p, li { white-space: pre-wrap; }
         <translation>Геометрия</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Углы указаны в градусах, т.е. полный круг равен 360 градусам. Положительные значения угла означают направление против часовой стрелки, а отрицательное значение — направление по часовой стрелке. Ноль градусов находится в положении «3 часа».&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Расчет угла&lt;/b&gt;&lt;br&gt;Углы указываются в градусах, т.е. полный круг равен 360 градусам. Положительные значения угла означают направление против часовой стрелки, а отрицательное значение — направление по часовой стрелке. Ноль градусов находится в положении «3 часа».&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Attributes</source>
         <translation>Свойства</translation>
     </message>
@@ -836,12 +758,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Geometry</source>
         <translation>Геометрия</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Расчет угла&lt;/b&gt;&lt;br&gt;Углы указываются в градусах, т.е. полный круг равен 360 градусам. Положительные значения угла означают направление против часовой стрелки, а отрицательное значение — направление по часовой стрелке. Ноль градусов находится в положении «3 часа».&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1116,12 +1032,6 @@ p, li { white-space: pre-wrap; }
         <translation>Геометрия</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Расчет угла&lt;/b&gt;&lt;br&gt;Углы указываются в градусах, т.е. полный круг равен 360 градусам. Положительные значения угла означают направление против часовой стрелки, а отрицательное значение — направление по часовой стрелке. Ноль градусов находится на отметке «3 часа».&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt; /table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Attributes</source>
         <translation>Свойства</translation>
     </message>
@@ -1190,15 +1100,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Direction :</source>
-        <translation type="unfinished"></translation>
+        <translation>Направление:</translation>
     </message>
     <message>
         <source>Forward (from start point)</source>
-        <translation type="unfinished"></translation>
+        <translation>Вперед (от начальной точки)</translation>
     </message>
     <message>
         <source>Backward (from end point)</source>
-        <translation type="unfinished"></translation>
+        <translation>Назад (от конечной точки)</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1265,15 +1175,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Direction :</source>
-        <translation type="unfinished"></translation>
+        <translation>Направление:</translation>
     </message>
     <message>
         <source>Forward (from start point)</source>
-        <translation type="unfinished"></translation>
+        <translation>Вперед (от начальной точки)</translation>
     </message>
     <message>
         <source>Backward (from end point)</source>
-        <translation type="unfinished"></translation>
+        <translation>Назад (от конечной точки)</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1340,15 +1250,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Direction :</source>
-        <translation type="unfinished"></translation>
+        <translation>Направление:</translation>
     </message>
     <message>
         <source>Forward (from start point)</source>
-        <translation type="unfinished"></translation>
+        <translation>Вперед (от начальной точки)</translation>
     </message>
     <message>
         <source>Backward (from end point)</source>
-        <translation type="unfinished"></translation>
+        <translation>Назад (от конечной точки)</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1485,18 +1395,6 @@ p, li { white-space: pre-wrap; }
         <translation>Геометрия</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Углы указаны в градусах, т.е. полный круг равен 360 градусам. Положительные значения угла означают направление против часовой стрелки, а отрицательное значение — направление по часовой стрелке. Ноль градусов находится в положении «3 часа».&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Second Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Second Angle Calculation&lt;/span&gt;&lt;br/&gt;Углы указаны в градусах, т.е. полный круг равен 360 градусам. Положительные значения угла означают направление против часовой стрелки, а отрицательное значение — направление по часовой стрелке. Ноль градусов находится в положении «3 часа».&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Углы указаны в градусах, т.е. полный круг равен 360 градусам. Положительные значения угла означают направление против часовой стрелки, а отрицательное значение — направление по часовой стрелке. Ноль градусов находится в положении «3 часа».&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Name:</source>
         <translation>Название:</translation>
     </message>
@@ -1566,14 +1464,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Geometry</source>
         <translation>Геометрия</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translatorcomment>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Расчет угла&lt;/b&gt;&lt;br&gt;Углы указываются в градусах, т.е. полный круг равен 360 градусам. Положительные значения угла означают направление против часовой стрелки, а отрицательное значение — направление по часовой стрелке. Ноль градусов находится в положении «3 часа».&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translatorcomment>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1890,12 +1780,6 @@ p, li { white-space: pre-wrap; }
         <translation>Геометрия</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Расчет угла&lt;/b&gt;&lt;br&gt;Углы указываются в градусах, т.е. полный круг равен 360 градусам. Положительные значения угла означают направление против часовой стрелки, а отрицательное значение — направление по часовой стрелке. Ноль градусов находится в положении «3 часа».&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Attributes</source>
         <translation>Свойства</translation>
     </message>
@@ -2067,16 +1951,6 @@ p, li { white-space: pre-wrap; }
         <source>Edit rotation</source>
         <translation>Изменить вращение</translation>
     </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Расчет угла&lt;/b&gt;&lt;br&gt;Углы указываются в градусах, т.е. полный круг равен 360 градусам. Положительные значения угла означают направление против часовой стрелки, а отрицательное значение — направление по часовой стрелке. Ноль градусов находится в положении «3 часа».&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Углы указаны в градусах, т.е. полный круг равен 360 градусам. Положительные значения угла означают направление против часовой стрелки, а отрицательное значение — направление по часовой стрелке. Ноль градусов находится в положении «3 часа».&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
 </context>
 <context>
     <name>DialogNewPattern</name>
@@ -2190,10 +2064,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation>Толщина Линии:</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotatation Angle&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. &lt;br/&gt;&lt;br/&gt;Rotation angle is added to the angle of the perpendicular.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Second Angle Calculation&lt;/span&gt;&lt;br/&gt;Углы указаны в градусах, т.е. полный круг равен 360 градусам. Положительные значения угла означают направление против часовой стрелки, а отрицательное значение — направление по часовой стрелке. Ноль градусов находится в положении «3 часа».&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -2627,12 +2497,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select rotation point that is not part of the list of objects</source>
         <translation>Выберите точку вращения, которая не входит в список объектов</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Расчет угла&lt;/b&gt;&lt;br&gt;Углы указываются в градусах, т.е. полный круг равен 360 градусам. Положительные значения угла означают направление против часовой стрелки, а отрицательное значение — направление по часовой стрелке. Ноль градусов находится в положении «3 часа».&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -3080,6 +2944,14 @@ p, li { white-space: pre-wrap; }
         <source>Result Value</source>
         <translation>Значение результата</translation>
     </message>
+    <message>
+        <source>Angle Calculation</source>
+        <translation>Расчет угла</translation>
+    </message>
+    <message>
+        <source>Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.</source>
+        <translation>Углы указываются в градусах, т. е. полный круг равен 360 градусам. Положительные значения угла означают направление против часовой стрелки, а отрицательные значения — по часовой стрелке. Ноль градусов соответствует положению 3 часов.</translation>
+    </message>
 </context>
 <context>
     <name>DialogTriangle</name>
@@ -3210,12 +3082,10 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Исправить формулу</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Отмена</translation>
-    </message>
-    <message>
-        <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
-        <translation>Ошибка при расчете формулы. Вы можете попробовать отменить последнюю операцию или исправить неисправную формулу.</translation>
+        <source>Seamly2D encountered an error while computing a formula.
+Please try to undo the latest operation or fix the broken formula.</source>
+        <translation>Seamly2D обнаружил ошибку при вычислении формулы.
+Попробуйте отменить последнюю операцию или исправить некорректную формулу.</translation>
     </message>
 </context>
 <context>
@@ -3408,7 +3278,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Custom Variables</source>
-        <translation>Пользовательские переменные</translation>
+        <translation>Пользовательские
+переменные</translation>
     </message>
     <message>
         <source>Line Lengths</source>
@@ -3428,7 +3299,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source> Control Point Lengths</source>
-        <translation> Длина между контрольными точками</translation>
+        <translation> Длина между
+контрольными точками</translation>
     </message>
     <message>
         <source>Arc Radii</source>
@@ -3855,18 +3727,6 @@ p, li { white-space: pre-wrap; }
         <translation>Качество (0-100):</translation>
     </message>
     <message>
-        <source>-</source>
-        <translation>-</translation>
-    </message>
-    <message>
-        <source>+</source>
-        <translation>+</translation>
-    </message>
-    <message>
-        <source>Margins</source>
-        <translation>Поля</translation>
-    </message>
-    <message>
         <source>Right:</source>
         <translation>Правое:</translation>
     </message>
@@ -3881,10 +3741,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Bottom:</source>
         <translation>Нижнее:</translation>
-    </message>
-    <message>
-        <source>Paper format</source>
-        <translation>Формат листа</translation>
     </message>
     <message>
         <source>Templates: </source>
@@ -3934,6 +3790,14 @@ p, li { white-space: pre-wrap; }
         <source>Export files:</source>
         <translation>Экспортировать файлы:</translation>
     </message>
+    <message>
+        <source>Margins (tiled PDF only)</source>
+        <translation>Поля (только для мозаичных PDF-файлов)</translation>
+    </message>
+    <message>
+        <source>Paper format (tiled PDF only)</source>
+        <translation>Формат бумаги (только мозаичный PDF)</translation>
+    </message>
 </context>
 <context>
     <name>FvUpdater</name>
@@ -3949,28 +3813,31 @@ for writing</source>
         <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно получить эксклюзивный доступ к файлу
+%1
+Возможно, файл уже загружается.</translation>
     </message>
     <message>
         <source>File download failed: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось загрузить файл: %1.</translation>
     </message>
     <message>
         <source>Download has started, the installer will open once it&apos;s finished downloading</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузка началась, установщик откроется после завершения загрузки</translation>
     </message>
     <message>
         <source>Feed download failed: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузка ленты не удалась: %1.</translation>
     </message>
     <message>
         <source>No new releases available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Новых релизов нет.</translation>
     </message>
     <message>
         <source>A new release %1 is available.
 Do you want to download it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Доступен новый релиз %1.
+Вы хотите его загрузить?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -4201,7 +4068,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>ElArc_</source>
-        <translation>Дуга_</translation>
+        <translation>ЕлДуга_</translation>
     </message>
     <message>
         <source>%1 - Rotation</source>
@@ -4289,10 +4156,6 @@ Do you want to download it?</source>
     <message>
         <source>Name</source>
         <translation>Название</translation>
-    </message>
-    <message>
-        <source>%1</source>
-        <translation>%1</translation>
     </message>
     <message>
         <source>Base Point</source>
@@ -4424,7 +4287,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>ElArc_</source>
-        <translation>Дуга_</translation>
+        <translation>ЕлДуга_</translation>
     </message>
     <message>
         <source>Arc Elliptical with length %1</source>
@@ -4456,14 +4319,34 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Can&apos;t create record.</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно создать запись.</translation>
+    </message>
+    <message>
+        <source>Find previous</source>
+        <translation>Найти предыдущий</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation>Найти следующий</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>С учетом регистра</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Поиск по полному слову</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Поиск по регулярному выражению</translation>
     </message>
 </context>
 <context>
     <name>ImageDialog</name>
     <message>
         <source>Image Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Свойства изображения</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -4471,7 +4354,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Id:</source>
-        <translation type="unfinished"></translation>
+        <translation>Идентификатор:</translation>
     </message>
     <message>
         <source>Id</source>
@@ -4483,7 +4366,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Lock Image:</source>
-        <translation type="unfinished"></translation>
+        <translation>Заблокировать изображение:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -4491,11 +4374,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Switch between px and pattern units</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>PX</source>
-        <translation type="unfinished"></translation>
+        <translation>Переключение между единицами измерения px и pattern</translation>
     </message>
     <message>
         <source>Unit:</source>
@@ -4503,19 +4382,15 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>X Position:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
+        <translation>Позиция X:</translation>
     </message>
     <message>
         <source>Y Position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Позиция Y:</translation>
     </message>
     <message>
         <source>Lock aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Заблокировать соотношение сторон</translation>
     </message>
     <message>
         <source>Lock Aspect:</source>
@@ -4527,27 +4402,19 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Рост:</translation>
     </message>
     <message>
         <source>X Scale:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>Масштаб X:</translation>
     </message>
     <message>
         <source>Y Scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>Шкала Y:</translation>
     </message>
     <message>
         <source>Rotation:</source>
         <translation>Вращение:</translation>
-    </message>
-    <message>
-        <source>°</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -4555,7 +4422,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Opacity:</source>
-        <translation type="unfinished"></translation>
+        <translation>Непрозрачность:</translation>
     </message>
 </context>
 <context>
@@ -4566,27 +4433,27 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Блокировка</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation type="unfinished"></translation>
+        <translation>Заказать</translation>
     </message>
     <message>
         <source>Bring to top</source>
-        <translation type="unfinished"></translation>
+        <translation>Вывести наверх</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation type="unfinished"></translation>
+        <translation>Подняться</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation type="unfinished"></translation>
+        <translation>Переместить вниз</translation>
     </message>
     <message>
         <source>Send to bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Отправить вниз</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -4594,34 +4461,34 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>&lt;b&gt;Image (%7)&lt;/b&gt;: Size(%2%1, %3%1); Pos(%4%1, %5%1); Rot(%6°)%8</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Изображение (%7)&lt;/b&gt;: Размер(%2%1, %3%1); Поз.(%4%1, %5%1); Поворот(%6°)%8</translation>
     </message>
     <message>
         <source> - &lt;b&gt;Aspect ratio locked&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> - &lt;b&gt;Соотношение сторон заблокировано&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Move Origin</source>
-        <translation type="unfinished"></translation>
+        <translation>Переместить начало</translation>
     </message>
 </context>
 <context>
     <name>ImageTool</name>
     <message>
         <source>Import Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортировать изображение</translation>
     </message>
     <message>
         <source>Could not load the image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось загрузить изображение.</translation>
     </message>
     <message>
         <source>Could not read the image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось прочитать изображение.</translation>
     </message>
     <message>
         <source>File may be corrupted...</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл может быть поврежден...</translation>
     </message>
     <message>
         <source>Confirm deletion</source>
@@ -4633,15 +4500,15 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>The image &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
-        <translation type="unfinished"></translation>
+        <translation>Изображение &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; не найдено. Хотите обновить местоположение файла?</translation>
     </message>
     <message>
         <source>Loading image</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузка изображения</translation>
     </message>
     <message>
         <source>No image was selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Изображение не выбрано...</translation>
     </message>
 </context>
 <context>
@@ -4786,7 +4653,7 @@ Do you want to download it?</source>
         <translation>Вырезать на ткани</translation>
     </message>
     <message>
-        <source>Staus:</source>
+        <source>Status:</source>
         <translation>Стаус:</translation>
     </message>
     <message>
@@ -4995,35 +4862,35 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished">Выбрать</translation>
+        <translation>Выбрать</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation type="unfinished">Свойства</translation>
+        <translation>Свойства</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation type="unfinished">Толщина Линии:</translation>
+        <translation>Толщина Линии:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Цвет:</translation>
+        <translation>Цвет:</translation>
     </message>
     <message>
         <source>Extend end point</source>
-        <translation type="unfinished"></translation>
+        <translation>Расширить конечную точку</translation>
     </message>
     <message>
         <source>Extend start point</source>
-        <translation type="unfinished"></translation>
+        <translation>Расширить начальную точку</translation>
     </message>
     <message>
         <source>List of pieces is empty!</source>
-        <translation type="unfinished"></translation>
+        <translation>Список произведений пуст!</translation>
     </message>
     <message>
         <source>Please, select a piece to insert into!</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожалуйста, выберите деталь для вставки!</translation>
     </message>
 </context>
 <context>
@@ -5039,12 +4906,22 @@ Seamly2D is a free (open source) software.
 
 All brand or product names are trademarks or registered trademarks of their respective holders.
 
-© 2017-2024 Seamly2D Project.
+© 2017-2025 Seamly2D Project.
 
-Portions of this software © 2008-2024 The Qt Company Ltd.
+Portions of this software © 2008-2025 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seamly2D — это приложение для автоматизированного проектирования выкроек одежды.
+
+Seamly2D — это бесплатное программное обеспечение (с открытым исходным кодом).
+
+Все названия брендов или продуктов являются товарными знаками или зарегистрированными товарными знаками их соответствующих владельцев.
+
+© 2017-2025 Seamly2D Project.
+
+Части этого программного обеспечения © 2008-2025 The Qt Company Ltd.
+
+Программа предоставляется «КАК ЕСТЬ» БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ, ВКЛЮЧАЯ ГАРАНТИЮ ДИЗАЙНА, ТОВАРНОЙ ПРИГОДНОСТИ И ПРИГОДНОСТИ ДЛЯ КОНКРЕТНОЙ ЦЕЛИ.</translation>
     </message>
 </context>
 <context>
@@ -5391,7 +5268,7 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
     </message>
     <message>
         <source>Margins go beyond printing. Apply settings anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>Поля выходят за пределы печати. Применить настройки в любом случае?</translation>
     </message>
 </context>
 <context>
@@ -5500,16 +5377,12 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Сохранить</translation>
     </message>
     <message>
-        <source>&amp;Save</source>
-        <translation>&amp;Сохранить</translation>
-    </message>
-    <message>
         <source>Save pattern</source>
         <translation>Сохранить выкройку</translation>
     </message>
     <message>
-        <source>Save &amp;As...</source>
-        <translation>Сохранить &amp;как...</translation>
+        <source>Save As...</source>
+        <translation>Сохранить как...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
@@ -5532,8 +5405,8 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Про &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Seamly2D</source>
-        <translation>&amp;Про Seamly2D</translation>
+        <source>About Seamly2D</source>
+        <translation>Про Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -5657,8 +5530,8 @@ Do you want to save your changes?</source>
         <translation>Предварительный просмотр исходного макета</translation>
     </message>
     <message>
-        <source>Export As...</source>
-        <translation>Экспортировать как...</translation>
+        <source>Export Layout As...</source>
+        <translation>Экспортировать макет как...</translation>
     </message>
     <message>
         <source>Layout mode</source>
@@ -5819,10 +5692,6 @@ Do you want to save your changes?</source>
     <message>
         <source>The measurements file &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
         <translation>Файл меток &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; не найден. Хотите обновить данные о местоположении файла?</translation>
-    </message>
-    <message>
-        <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation>Мрки были изменены. Хотите обновить мерки сейчас?</translation>
     </message>
     <message>
         <source>Gradation doesn&apos;t support inches</source>
@@ -6125,32 +5994,16 @@ Do you want to save your changes?</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Режим создания макета деталей выкройки. Этот режим доступен, если хотя бы одна деталь выкройки была создана в «Режиме Деталь». Макет можно экспортировать в предпочитаемый вами формат файла и сохранить.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>G</source>
-        <translation>G</translation>
-    </message>
-    <message>
         <source>Rotation</source>
         <translation>Вращение</translation>
-    </message>
-    <message>
-        <source>R</source>
-        <translation>R</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
         <translation>Отражение по Линии</translation>
     </message>
     <message>
-        <source>M, L</source>
-        <translation>M, L</translation>
-    </message>
-    <message>
         <source>Mirror by Axis</source>
         <translation>Отражение по Оси</translation>
-    </message>
-    <message>
-        <source>M, A</source>
-        <translation>M, A</translation>
     </message>
     <message>
         <source>Move</source>
@@ -6161,28 +6014,12 @@ Do you want to save your changes?</source>
         <translation>Правильная вытачка</translation>
     </message>
     <message>
-        <source>T, D</source>
-        <translation>T, D</translation>
-    </message>
-    <message>
         <source>Midpoint</source>
         <translation>Точка по середине</translation>
     </message>
     <message>
-        <source>P, S</source>
-        <translation>P, S</translation>
-    </message>
-    <message>
         <source>Intersect XY</source>
         <translation>Пересечение осей XY</translation>
-    </message>
-    <message>
-        <source>X, Y</source>
-        <translation>X, Y</translation>
-    </message>
-    <message>
-        <source>I, L</source>
-        <translation>I, L</translation>
     </message>
     <message>
         <source>Alt+C</source>
@@ -6197,40 +6034,12 @@ Do you want to save your changes?</source>
         <translation>Alt+A</translation>
     </message>
     <message>
-        <source>A, X</source>
-        <translation>A, X</translation>
-    </message>
-    <message>
-        <source>I, A</source>
-        <translation>I, A</translation>
-    </message>
-    <message>
-        <source>I, C</source>
-        <translation>I, C</translation>
-    </message>
-    <message>
-        <source>C, T</source>
-        <translation>C, T</translation>
-    </message>
-    <message>
-        <source>A, T</source>
-        <translation>A, T</translation>
-    </message>
-    <message>
-        <source>A, L</source>
-        <translation>A, L</translation>
-    </message>
-    <message>
         <source>Tools for inserting or modifying images.</source>
-        <translation type="unfinished"></translation>
+        <translation>Инструменты для вставки или изменения изображений.</translation>
     </message>
     <message>
         <source>Point on Curve (O, C)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About Seamly2D</source>
-        <translation>О проекте Seamly2D</translation>
+        <translation>Точка на кривой (O, C)</translation>
     </message>
     <message>
         <source>Exit the Application</source>
@@ -6287,10 +6096,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Shortcuts</source>
         <translation>Ярлыки</translation>
-    </message>
-    <message>
-        <source>K</source>
-        <translation>K</translation>
     </message>
     <message>
         <source>Last tool</source>
@@ -6381,64 +6186,32 @@ Do you want to save your changes?</source>
         <translation>Новая Деталь выкройки</translation>
     </message>
     <message>
-        <source>N, P</source>
-        <translation>N, P</translation>
-    </message>
-    <message>
         <source>New Print Layout</source>
         <translation>Новый макет печати</translation>
-    </message>
-    <message>
-        <source>N, L</source>
-        <translation>N, L</translation>
     </message>
     <message>
         <source>Export Layout</source>
         <translation>Экспортировать Макет</translation>
     </message>
     <message>
-        <source>E, L</source>
-        <translation>E, L</translation>
-    </message>
-    <message>
         <source>Anchor Point</source>
         <translation>Шпильки</translation>
-    </message>
-    <message>
-        <source>A, P</source>
-        <translation>A, P</translation>
     </message>
     <message>
         <source>Internal Path</source>
         <translation>Внутренний контур</translation>
     </message>
     <message>
-        <source>I, P</source>
-        <translation>I, P</translation>
-    </message>
-    <message>
         <source>Insert Nodes</source>
         <translation>Вставить узлы</translation>
-    </message>
-    <message>
-        <source>I, N</source>
-        <translation>I, N</translation>
     </message>
     <message>
         <source>Unite Pieces</source>
         <translation>Соеденить детали</translation>
     </message>
     <message>
-        <source>U</source>
-        <translation>U</translation>
-    </message>
-    <message>
         <source>Export Pieces</source>
         <translation>Экспортировать детали</translation>
-    </message>
-    <message>
-        <source>E, P</source>
-        <translation>E, P</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -6449,20 +6222,12 @@ Do you want to save your changes?</source>
         <translation>Текст названия точки</translation>
     </message>
     <message>
-        <source>V, P</source>
-        <translation>V, P</translation>
-    </message>
-    <message>
         <source>Increase Text Size</source>
         <translation>Увеличить размер текста</translation>
     </message>
     <message>
         <source>Increase Text Size (Ctrl+])</source>
         <translation>Увеличить размер текста (Ctrl+])</translation>
-    </message>
-    <message>
-        <source>Ctrl+]</source>
-        <translation>Ctrl+]</translation>
     </message>
     <message>
         <source>Decrease Text Size</source>
@@ -6473,20 +6238,12 @@ Do you want to save your changes?</source>
         <translation>Уменьшить размер текста (Ctrl+[)</translation>
     </message>
     <message>
-        <source>Ctrl+[</source>
-        <translation>Ctrl+[</translation>
-    </message>
-    <message>
         <source>Use Tool Color</source>
         <translation>Использовать инструмента цвета</translation>
     </message>
     <message>
         <source>Use Tool Color (T)</source>
         <translation>Использовать инструмента цвета (T)</translation>
-    </message>
-    <message>
-        <source>V, T</source>
-        <translation>V, T</translation>
     </message>
     <message>
         <source>Axis Origin </source>
@@ -6497,20 +6254,12 @@ Do you want to save your changes?</source>
         <translation>Переключить начало оси (V, A)</translation>
     </message>
     <message>
-        <source>V, A</source>
-        <translation>V, A</translation>
-    </message>
-    <message>
         <source>Wireframe Mode</source>
         <translation>Каркасный режим</translation>
     </message>
     <message>
         <source>Toggle Wireframe Mode (V, W)</source>
         <translation>Переключить каркасный режим (V, W)</translation>
-    </message>
-    <message>
-        <source>V, W</source>
-        <translation>V, W</translation>
     </message>
     <message>
         <source>Grainlines</source>
@@ -6521,10 +6270,6 @@ Do you want to save your changes?</source>
         <translation>Переключить линии долевой нити (V, A)</translation>
     </message>
     <message>
-        <source>V, G</source>
-        <translation>V, G</translation>
-    </message>
-    <message>
         <source>Labels</source>
         <translation>Метки</translation>
     </message>
@@ -6533,32 +6278,16 @@ Do you want to save your changes?</source>
         <translation>Переключить Метки(V, L)</translation>
     </message>
     <message>
-        <source>V, L</source>
-        <translation>V, L</translation>
-    </message>
-    <message>
         <source>Calculator</source>
         <translation>Калькулятор</translation>
-    </message>
-    <message>
-        <source>Ctrl+Shift+C</source>
-        <translation>Ctrl+Shift+C</translation>
     </message>
     <message>
         <source>Decimal Chart</source>
         <translation>Десятичная диаграмма</translation>
     </message>
     <message>
-        <source>Ctrl+Shift+D</source>
-        <translation>Ctrl+Shift+D</translation>
-    </message>
-    <message>
         <source>Export Draft Blocks</source>
         <translation>Экспорировать  блоки чертежа</translation>
-    </message>
-    <message>
-        <source>E, D</source>
-        <translation>E, D</translation>
     </message>
     <message>
         <source>Export</source>
@@ -6567,10 +6296,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Seam Allowance</source>
         <translation>Прибавки на швы</translation>
-    </message>
-    <message>
-        <source>V, S</source>
-        <translation>V, S</translation>
     </message>
     <message>
         <source>Document Info...</source>
@@ -6583,10 +6308,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Display document Info</source>
         <translation>Отображение информации о документе</translation>
-    </message>
-    <message>
-        <source>Ctrl+I</source>
-        <translation>Ctrl+I</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
@@ -6618,7 +6339,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Could not load the image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось загрузить изображение.</translation>
     </message>
     <message>
         <source>Draft Block:</source>
@@ -6650,7 +6371,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Import Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортировать изображение</translation>
     </message>
     <message>
         <source>Piece mode</source>
@@ -6878,7 +6599,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Import Image (Alt + I)</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортировать изображение (Alt + I)</translation>
     </message>
     <message>
         <source>Export Pieces (E, P)</source>
@@ -6894,7 +6615,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Contains information about custom and internal variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Содержит информацию о пользовательских и внутренних переменных</translation>
     </message>
     <message>
         <source>Alt+M</source>
@@ -6925,32 +6646,16 @@ Do you want to save your changes?</source>
         <translation>На Линии</translation>
     </message>
     <message>
-        <source>O, L</source>
-        <translation>O, L</translation>
-    </message>
-    <message>
         <source>Length and Angle</source>
         <translation>Длина и Угол</translation>
-    </message>
-    <message>
-        <source>L, A</source>
-        <translation>L, A</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
         <translation>на Перпендикуляре</translation>
     </message>
     <message>
-        <source>O, P</source>
-        <translation>O, P</translation>
-    </message>
-    <message>
         <source>On Bisector</source>
         <translation>на биссектрисе</translation>
-    </message>
-    <message>
-        <source>O, B</source>
-        <translation>O, B</translation>
     </message>
     <message>
         <source>Length to Line</source>
@@ -6965,24 +6670,12 @@ Do you want to save your changes?</source>
         <translation>Пересечение Оси и Треугольника</translation>
     </message>
     <message>
-        <source>X, T</source>
-        <translation>X, T</translation>
-    </message>
-    <message>
         <source>Intersect Line and Perpendicular</source>
         <translation>Пересечение Линии и Перпендикуляра</translation>
     </message>
     <message>
-        <source>L, P</source>
-        <translation>L, P</translation>
-    </message>
-    <message>
         <source>Intersect Line and Axis</source>
         <translation>Пересечение Линии и Оси</translation>
-    </message>
-    <message>
-        <source>L, X</source>
-        <translation>L, X</translation>
     </message>
     <message>
         <source>Intersect Lines</source>
@@ -6995,10 +6688,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Point on Curve</source>
         <translation>Точка на кривой</translation>
-    </message>
-    <message>
-        <source>O, C</source>
-        <translation>O, C</translation>
     </message>
     <message>
         <source>Curve - Fixed</source>
@@ -7021,10 +6710,6 @@ Do you want to save your changes?</source>
         <translation>Точка на сплайне (O, S)</translation>
     </message>
     <message>
-        <source>O, S</source>
-        <translation>O, S</translation>
-    </message>
-    <message>
         <source>Spline - Fixed</source>
         <translation>Сплайн- Фиксированный</translation>
     </message>
@@ -7041,10 +6726,6 @@ Do you want to save your changes?</source>
         <translation>Пересечение кривой и оси</translation>
     </message>
     <message>
-        <source>C, X</source>
-        <translation>C, X</translation>
-    </message>
-    <message>
         <source>Radius and Angles</source>
         <translation>Радиус и Углы</translation>
     </message>
@@ -7059,10 +6740,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Point on Arc (O, A)</source>
         <translation>Точка на Дуге (O, A)</translation>
-    </message>
-    <message>
-        <source>O, A</source>
-        <translation>O, A</translation>
     </message>
     <message>
         <source>Intersect Arc and Axis</source>
@@ -7142,11 +6819,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Toggle Point Name Text (V, P)</source>
-        <translation type="unfinished"></translation>
+        <translation>Переключить текст имени точки (V, P)</translation>
     </message>
     <message>
         <source>Images tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Инструменты для работы с изображениями</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -7154,19 +6831,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Align</source>
-        <translation type="unfinished"></translation>
+        <translation>Выровнять</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Блокировка</translation>
     </message>
     <message>
         <source>Zoom to point (Ctrl + Alt + P)</source>
         <translation>Приблизить к точке (Ctrl + Alt + P)</translation>
-    </message>
-    <message>
-        <source>Alt+I</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -7341,10 +7014,6 @@ Do you want to save your changes?</source>
         <translation>Не удалось заблокировать. Файл с таким именем открыт в другом окне.</translation>
     </message>
     <message>
-        <source>Ctrl+E</source>
-        <translation>Ctrl+E</translation>
-    </message>
-    <message>
         <source>untitled</source>
         <translation>без названия</translation>
     </message>
@@ -7379,7 +7048,8 @@ Do you want to save your changes?</source>
     <message>
         <source>Base name used for new points.
 Press enter to temporarily add it to the list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Базовое имя, используемое для новых точек.
+Нажмите Enter, чтобы временно добавить его в список.</translation>
     </message>
     <message>
         <source>Default</source>
@@ -7387,23 +7057,19 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Zoom to Fit All(Ctrl+9)</source>
-        <translation type="unfinished"></translation>
+        <translation>Увеличить до размеров всего (Ctrl+9)</translation>
     </message>
     <message>
         <source>Zoom 100%</source>
         <translation>Зум 100%</translation>
     </message>
     <message>
-        <source>100%</source>
-        <translation>100%</translation>
-    </message>
-    <message>
         <source>Previous Draft Block</source>
-        <translation type="unfinished"></translation>
+        <translation>Предыдущий черновик блока</translation>
     </message>
     <message>
         <source>Next Draft Block</source>
-        <translation type="unfinished"></translation>
+        <translation>Следующий черновик блока</translation>
     </message>
 </context>
 <context>
@@ -7562,10 +7228,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Keyboard Shortcuts</source>
         <translation>Горячие клавиши</translation>
-    </message>
-    <message>
-        <source>K</source>
-        <translation>K</translation>
     </message>
     <message>
         <source>SeamlyMe Shortcuts</source>
@@ -7835,26 +7497,6 @@ Press enter to temporarily add it to the list.</source>
 <context>
     <name>PageFormatCombobox</name>
     <message>
-        <source>A0</source>
-        <translation>A0</translation>
-    </message>
-    <message>
-        <source>A1</source>
-        <translation>A1</translation>
-    </message>
-    <message>
-        <source>A2</source>
-        <translation>A2</translation>
-    </message>
-    <message>
-        <source>A3</source>
-        <translation>A3</translation>
-    </message>
-    <message>
-        <source>A4</source>
-        <translation>A4</translation>
-    </message>
-    <message>
         <source>Letter</source>
         <translation>Буква/символ</translation>
     </message>
@@ -7936,10 +7578,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Notches </source>
         <translation>Надсечки </translation>
-    </message>
-    <message>
-        <source>Poperties</source>
-        <translation>Свойства</translation>
     </message>
     <message>
         <source>Piece name:</source>
@@ -8028,14 +7666,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Tilt:</source>
         <translation>Наклон:</translation>
-    </message>
-    <message>
-        <source>CW X</source>
-        <translation>CW X</translation>
-    </message>
-    <message>
-        <source>CCW X</source>
-        <translation>CCW X</translation>
     </message>
     <message>
         <source>Annotation:</source>
@@ -8298,10 +7928,6 @@ Press enter to temporarily add it to the list.</source>
         <translation> Ширина:</translation>
     </message>
     <message>
-        <source>  °</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Reset notch length to default.</source>
         <translation>Восстановить длину надсечки по умолчанию.</translation>
     </message>
@@ -8316,10 +7942,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Count:</source>
         <translation>Число:</translation>
-    </message>
-    <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction. Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
-        <translation>Выберите объекты основного контура по часовой стрелке. Используйте &lt;b&gt;SHIFT&lt;/b&gt;, чтобы изменить направление кривой, или &lt;b&gt;CTRL&lt;/b&gt;, чтобы сохранить направление кривой. Нажмите &lt;b&gt;ENTER&lt;/b&gt;, чтобы завершить создание детали </translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
@@ -8539,7 +8161,19 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Count</source>
-        <translation type="unfinished"></translation>
+        <translation>Граф</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be less than length of 2 arrows</source>
+        <translation>Длина не может быть меньше длины двух стрелок</translation>
+    </message>
+    <message>
+        <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
+        <translation>Нажмите &lt;b&gt;ENTER&lt;/b&gt;, чтобы завершить создание элемента.</translation>
+    </message>
+    <message>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation>Выберите объекты основного контура по часовой стрелке. Используйте &lt;b&gt;SHIFT&lt;/b&gt;, чтобы изменить направление кривой, или &lt;b&gt;CTRL&lt;/b&gt;, чтобы сохранить направление кривой. Нажмите &lt;b&gt;ENTER&lt;/b&gt;, чтобы завершить создание детали.</translation>
     </message>
 </context>
 <context>
@@ -8710,19 +8344,19 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Update Node Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Обновить угол узла</translation>
     </message>
     <message>
         <source>Update Notch</source>
-        <translation type="unfinished"></translation>
+        <translation>Обновить Notch</translation>
     </message>
     <message>
         <source>Exclude Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Исключить узел</translation>
     </message>
     <message>
         <source>Delete Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить узел</translation>
     </message>
 </context>
 <context>
@@ -9041,11 +8675,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Backups</source>
-        <translation type="unfinished"></translation>
+        <translation>Резервные копии</translation>
     </message>
     <message>
         <source>Create backup file when converting</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать файл резервной копии при конвертации</translation>
     </message>
     <message>
         <source>Enable Autosave</source>
@@ -9074,10 +8708,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Default:</source>
         <translation>По умолчанию:</translation>
-    </message>
-    <message>
-        <source>Decimal separator:</source>
-        <translation>Десятичный Разделитель:</translation>
     </message>
     <message>
         <source>None</source>
@@ -9184,10 +8814,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Адрес:</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Пользовательская локаль</translation>
-    </message>
-    <message>
         <source>Email format is not valid.</source>
         <translation>Формат электронной почты не соответствует действительности.</translation>
     </message>
@@ -9205,7 +8831,43 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Point name text:</source>
-        <translation type="unfinished"></translation>
+        <translation>Текст имени точки:</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation>Разделитель Язык:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>По умолчанию</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Система пользователя</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Локальный</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Страна</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Разделитель Групп</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Десятичная Точка</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Знак Минус</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Положительный Знак</translation>
     </message>
 </context>
 <context>
@@ -9285,122 +8947,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Size:</source>
         <translation>Размер:</translation>
-    </message>
-    <message>
-        <source>6</source>
-        <translation>6</translation>
-    </message>
-    <message>
-        <source>7</source>
-        <translation>7</translation>
-    </message>
-    <message>
-        <source>8</source>
-        <translation>8</translation>
-    </message>
-    <message>
-        <source>9</source>
-        <translation>9</translation>
-    </message>
-    <message>
-        <source>10</source>
-        <translation>10</translation>
-    </message>
-    <message>
-        <source>10.5</source>
-        <translation>10.5</translation>
-    </message>
-    <message>
-        <source>11</source>
-        <translation>11</translation>
-    </message>
-    <message>
-        <source>12</source>
-        <translation>12</translation>
-    </message>
-    <message>
-        <source>13</source>
-        <translation>13</translation>
-    </message>
-    <message>
-        <source>14</source>
-        <translation>14</translation>
-    </message>
-    <message>
-        <source>15</source>
-        <translation>15</translation>
-    </message>
-    <message>
-        <source>16</source>
-        <translation>16</translation>
-    </message>
-    <message>
-        <source>18</source>
-        <translation>18</translation>
-    </message>
-    <message>
-        <source>20</source>
-        <translation>20</translation>
-    </message>
-    <message>
-        <source>22</source>
-        <translation>22</translation>
-    </message>
-    <message>
-        <source>24</source>
-        <translation>24</translation>
-    </message>
-    <message>
-        <source>26</source>
-        <translation>26</translation>
-    </message>
-    <message>
-        <source>28</source>
-        <translation>28</translation>
-    </message>
-    <message>
-        <source>32</source>
-        <translation>32</translation>
-    </message>
-    <message>
-        <source>36</source>
-        <translation>36</translation>
-    </message>
-    <message>
-        <source>40</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>44</source>
-        <translation>44</translation>
-    </message>
-    <message>
-        <source>48</source>
-        <translation>48</translation>
-    </message>
-    <message>
-        <source>54</source>
-        <translation>54</translation>
-    </message>
-    <message>
-        <source>60</source>
-        <translation>60</translation>
-    </message>
-    <message>
-        <source>66</source>
-        <translation>66</translation>
-    </message>
-    <message>
-        <source>72</source>
-        <translation>72</translation>
-    </message>
-    <message>
-        <source>80</source>
-        <translation>80</translation>
-    </message>
-    <message>
-        <source>96</source>
-        <translation>96</translation>
     </message>
     <message>
         <source>The quick brown fox jumps over the lazy dog</source>
@@ -9509,14 +9055,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Скорость:</translation>
     </message>
     <message>
-        <source>-</source>
-        <translation>-</translation>
-    </message>
-    <message>
-        <source>+</source>
-        <translation>+</translation>
-    </message>
-    <message>
         <source>Zoom</source>
         <translation>Зум</translation>
     </message>
@@ -9558,59 +9096,67 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Ручка</translation>
     </message>
     <message>
         <source>Always use current pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Всегда использовать текущую ручку</translation>
     </message>
     <message>
         <source>Dialogs</source>
-        <translation type="unfinished"></translation>
+        <translation>Диалоги</translation>
     </message>
     <message>
         <source>Open on second monitor if available</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть на втором мониторе, если он доступен</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Позиция</translation>
     </message>
     <message>
         <source>Top left</source>
-        <translation type="unfinished"></translation>
+        <translation>Вверху слева</translation>
     </message>
     <message>
         <source>Top right</source>
-        <translation type="unfinished"></translation>
+        <translation>Вверху справа</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Центр</translation>
     </message>
     <message>
         <source>Bottom left</source>
-        <translation type="unfinished"></translation>
+        <translation>Внизу слева</translation>
     </message>
     <message>
         <source>Bottom right</source>
-        <translation type="unfinished"></translation>
+        <translation>Внизу справа</translation>
     </message>
     <message>
         <source>Offset</source>
-        <translation type="unfinished"></translation>
+        <translation>Смещение</translation>
     </message>
     <message>
         <source>X Offset:</source>
-        <translation type="unfinished"></translation>
+        <translation>Смещение по оси X:</translation>
     </message>
     <message>
         <source>Y Offset:</source>
-        <translation type="unfinished"></translation>
+        <translation>Смещение по оси Y:</translation>
     </message>
     <message>
         <source>Show only ISO line weights in drop down boxes</source>
-        <translation type="unfinished"></translation>
+        <translation>Показывать только веса линий ISO в раскрывающихся списках</translation>
+    </message>
+    <message>
+        <source>Workspace</source>
+        <translation>Рабочее пространство</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Фон:</translation>
     </message>
 </context>
 <context>
@@ -9649,11 +9195,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>My Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Мои изображения</translation>
     </message>
     <message>
         <source>My Backups</source>
-        <translation type="unfinished"></translation>
+        <translation>Мои резервные копии</translation>
     </message>
     <message>
         <source>My Patterns</source>
@@ -9763,7 +9309,7 @@ Press enter to temporarily add it to the list.</source>
         <translation>Линию Шва</translation>
     </message>
     <message>
-        <source>LInetype:</source>
+        <source>Linetype:</source>
         <translation>Тип линии:</translation>
     </message>
     <message>
@@ -9876,11 +9422,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Arrow length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Длина стрелы:</translation>
     </message>
     <message>
         <source> px</source>
-        <translation type="unfinished"> пиксели</translation>
+        <translation> px</translation>
     </message>
 </context>
 <context>
@@ -9897,18 +9443,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Создайте новую выкройку для начала работы.</translation>
     </message>
     <message>
-        <source>mm</source>
-        <translation>мм</translation>
-    </message>
-    <message>
-        <source>cm</source>
-        <translation>см</translation>
-    </message>
-    <message>
-        <source>inch</source>
-        <translation>дюймы</translation>
-    </message>
-    <message>
         <source>Property</source>
         <extracomment>The text that appears in the first column header</extracomment>
         <translation>Свойства</translation>
@@ -9917,10 +9451,6 @@ Press enter to temporarily add it to the list.</source>
         <source>Value</source>
         <extracomment>The text that appears in the second column header</extracomment>
         <translation>Значение</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>add node</source>
@@ -10011,16 +9541,12 @@ Press enter to temporarily add it to the list.</source>
         <translation>Без карандаша</translation>
     </message>
     <message>
-        <source>%1</source>
-        <translation>%1</translation>
-    </message>
-    <message>
         <source>Forward (from start point)</source>
-        <translation type="unfinished"></translation>
+        <translation>Вперед (от начальной точки)</translation>
     </message>
     <message>
         <source>Backward (from end point)</source>
-        <translation type="unfinished"></translation>
+        <translation>Назад (от конечной точки)</translation>
     </message>
     <message>
         <source>Images</source>
@@ -10028,15 +9554,23 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Open Image File</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть файл изображения</translation>
     </message>
     <message>
         <source>Can not extend internal path &apos;%1&apos; start point to cut line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно расширить начальную точку внутреннего пути &apos;%1&apos; до линии разреза.</translation>
     </message>
     <message>
         <source>Can not extend internal path &apos;%1&apos; end point to cut line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно расширить конечную точку внутреннего пути &apos;%1&apos; до линии разреза.</translation>
+    </message>
+    <message>
+        <source>%1</source>
+        <translation>%1</translation>
+    </message>
+    <message>
+        <source>inch</source>
+        <translation>дюйм</translation>
     </message>
 </context>
 <context>
@@ -10253,18 +9787,18 @@ Press enter to temporarily add it to the list.</source>
     <name>ResizeHandlesItem</name>
     <message>
         <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center - &lt;b&gt; Aspect ratio locked &lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Нажмите &lt;b&gt;CTRL&lt;/b&gt; для масштабирования вокруг центра - &lt;b&gt; Соотношение сторон зафиксировано &lt;/b&gt;</translation>
     </message>
     <message>
         <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center, &lt;b&gt;SHIFT&lt;/b&gt; to scale uniformly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Нажмите &lt;b&gt;CTRL&lt;/b&gt; для масштабирования вокруг центра, &lt;b&gt;SHIFT&lt;/b&gt; для равномерного масштабирования.</translation>
     </message>
 </context>
 <context>
     <name>SavePieceOptions</name>
     <message>
         <source>save piece options</source>
-        <translation type="unfinished"></translation>
+        <translation>сохранить параметры детали</translation>
     </message>
 </context>
 <context>
@@ -10344,12 +9878,40 @@ Press enter to temporarily add it to the list.</source>
         <translation>Не показывать экран приветствия</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Десятичный Разделитель:</translation>
+        <source>Separator Locale:</source>
+        <translation>Разделитель Язык:</translation>
     </message>
     <message>
-        <source>User locale</source>
-        <translation>Пользовательская локаль</translation>
+        <source>Default</source>
+        <translation>По умолчанию</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Система пользователя</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Локальный</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Страна</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Разделитель Групп</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Десятичная Точка</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Знак Минус</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Положительный Знак</translation>
     </message>
 </context>
 <context>
@@ -10434,10 +9996,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Устанавливает единицы измерения по умолчанию для нового файла измерений.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Десятичный Разделитель:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Язык интерфейса:</translation>
     </message>
@@ -10448,10 +10006,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Do not show again</source>
         <translation>Больше не показывать</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Пользовательская локаль</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -10466,15 +10020,48 @@ Press enter to temporarily add it to the list.</source>
         <translation>Дюймы</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Если этот флажок установлен, окно приветствия отображаться не будет. Вы можете изменить эту настройку в настройках SeamlyMe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
-You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
+        <source>Separator Locale:</source>
+        <translation>Разделитель Язык:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>По умолчанию</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Система пользователя</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Локальный</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Страна</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Язык</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Разделитель Групп</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Десятичная Точка</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Знак Минус</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Положительный Знак</translation>
     </message>
 </context>
 <context>
@@ -10496,20 +10083,12 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Устанавливает единицы измерения по умолчанию для нового файла измерений.</translation>
     </message>
     <message>
-        <source>Decimal separator:</source>
-        <translation>Десятичный Разделитель:</translation>
-    </message>
-    <message>
         <source>GUI language:</source>
         <translation>Язык интерфейса:</translation>
     </message>
     <message>
         <source>Do not show again</source>
         <translation>Больше не показывать</translation>
-    </message>
-    <message>
-        <source>User locale</source>
-        <translation>Пользовательская локаль</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -10540,15 +10119,48 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Устанавливает звук щелчка при выборе узла.</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Если этот флажок установлен, окно приветствия отображаться не будет. Вы можете изменить эту настройку в настройках Seamly2D.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
-You can change this setting in the Seamly2D preferences.</source>
-        <translation type="unfinished"></translation>
+        <source>Separator Locale:</source>
+        <translation>Разделитель Язык:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>По умолчанию</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation>Система пользователя</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Локальный</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Страна</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Язык</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation>Разделитель Групп</translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation>Десятичная Точка</translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation>Знак Минус</translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation>Положительный Знак</translation>
     </message>
 </context>
 <context>
@@ -10965,10 +10577,6 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>Точка — Пересечения Кривых</translation>
     </message>
     <message>
-        <source>Point - Intersect Curve and Axis</source>
-        <translation>Точка Пересечения Кривой и Оси</translation>
-    </message>
-    <message>
         <source>Arcs</source>
         <translation>Дуги</translation>
     </message>
@@ -11066,7 +10674,7 @@ You can change this setting in the Seamly2D preferences.</source>
     </message>
     <message>
         <source>Import Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортировать изображение</translation>
     </message>
     <message>
         <source>Alt + I</source>
@@ -11226,19 +10834,19 @@ You can change this setting in the Seamly2D preferences.</source>
     </message>
     <message>
         <source>Previous Draft Block</source>
-        <translation type="unfinished"></translation>
+        <translation>Предыдущий черновик блока</translation>
     </message>
     <message>
         <source>Ctrl+PgUp</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+PgUp</translation>
     </message>
     <message>
         <source>Next Draft Block</source>
-        <translation type="unfinished"></translation>
+        <translation>Следующий черновик блока</translation>
     </message>
     <message>
         <source>Ctrl+PgDown</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+PgDown</translation>
     </message>
 </context>
 <context>
@@ -11940,6 +11548,18 @@ load in SeamlyME as usual.
         <source>Convert 3DLook file:</source>
         <translation>Конвертируйте файл 3DLook:</translation>
     </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>С учетом регистра</translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation>Поиск по полному слову</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation>Поиск по регулярному выражению</translation>
+    </message>
 </context>
 <context>
     <name>TogglePieceInLayout</name>
@@ -12387,10 +12007,6 @@ load in SeamlyME as usual.
         <translation>Светло-стальной синий</translation>
     </message>
     <message>
-        <source>Biege</source>
-        <translation>Бежевый</translation>
-    </message>
-    <message>
         <source>Thistle</source>
         <translation>Чертополох</translation>
     </message>
@@ -12421,6 +12037,10 @@ load in SeamlyME as usual.
     <message>
         <source>Tan</source>
         <translation>Светло-Бежевый</translation>
+    </message>
+    <message>
+        <source>Beige</source>
+        <translation>Бежевый</translation>
     </message>
 </context>
 <context>
@@ -12542,14 +12162,6 @@ load in SeamlyME as usual.
         <translation>Неверная градация значения высоты.</translation>
     </message>
     <message>
-        <source>Pattern making program.</source>
-        <translation>Программа создания выкроек.</translation>
-    </message>
-    <message>
-        <source>Pattern file.</source>
-        <translation>Файл выкройки.</translation>
-    </message>
-    <message>
         <source>Gap width must be used together with shift units.</source>
         <translation>Ширина зазора между деталями должна быть использована вместе с единицами измерения смещения.</translation>
     </message>
@@ -12665,6 +12277,34 @@ load in SeamlyME as usual.
         <source>Set height value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
         <translation>Установить значение высоты файла выкройки, который был открыт с мультиразмерными измерениями (режим экспорта). Допустимые значения: %1см.</translation>
     </message>
+    <message>
+        <source>Seamly2D open source patternmaking program.</source>
+        <translation>Программа для создания выкроек Seamly2D с открытым исходным кодом.</translation>
+    </message>
+    <message>
+        <source>Seamly2D pattern file (.sm2d)</source>
+        <translation>Файл шаблона Seamly2D (.sm2d)</translation>
+    </message>
+    <message>
+        <source>The page height</source>
+        <translation>Высота страницы</translation>
+    </message>
+    <message>
+        <source>The left margin</source>
+        <translation>Левое поле</translation>
+    </message>
+    <message>
+        <source>The right margin</source>
+        <translation>Правое поле</translation>
+    </message>
+    <message>
+        <source>The top margin</source>
+        <translation>Верхнее поле</translation>
+    </message>
+    <message>
+        <source>The bottom margin</source>
+        <translation>Нижнее поле</translation>
+    </message>
 </context>
 <context>
     <name>VCommonSettings</name>
@@ -12686,7 +12326,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>images</source>
-        <translation type="unfinished"></translation>
+        <translation>изображения</translation>
     </message>
     <message>
         <source>label templates</source>
@@ -12694,7 +12334,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>backups</source>
-        <translation type="unfinished"></translation>
+        <translation>резервные копии</translation>
     </message>
     <message>
         <source>bodyscans</source>
@@ -12770,10 +12410,6 @@ load in SeamlyME as usual.
 %2.</translation>
     </message>
     <message>
-        <source>Validation error file %3 in line %1 column %2</source>
-        <translation>Ошибка валидации файла %3 в строке %1 столбца %2</translation>
-    </message>
-    <message>
         <source>Parsing error file %3 in line %1 column %2</source>
         <translation>Ошибка разбора файла %3 в строке %1 столбца %2</translation>
     </message>
@@ -12786,16 +12422,26 @@ load in SeamlyME as usual.
         <translation>Этот id не уникальный.</translation>
     </message>
     <message>
-        <source>Could not load schema file &apos;%1&apos;.</source>
-        <translation>Не удалось открыть файл схемы &apos;%1&apos;.</translation>
-    </message>
-    <message>
         <source>Fail to write Canonical XML.</source>
         <translation>Не удалось записать канонический XML.</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
         <translation>&lt;пусто&gt;</translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t load schema</source>
+        <translation>Не удалось загрузить схему</translation>
+    </message>
+    <message>
+        <source>Validation error file %1</source>
+        <translation>Файл ошибки проверки %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open pattern file %1:
+%2.</source>
+        <translation>Не удалось открыть файл шаблона %1:
+%2.</translation>
     </message>
 </context>
 <context>
@@ -12822,39 +12468,51 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Line_</source>
-        <translation type="unfinished">Линия_</translation>
+        <translation>Линия_</translation>
     </message>
     <message>
         <source>Arc_</source>
-        <translation type="unfinished">Дуга_</translation>
+        <translation>Дуга_</translation>
     </message>
     <message>
         <source>ElArc_</source>
-        <translation type="unfinished">Дуга_</translation>
+        <translation>ЕлДуга_</translation>
     </message>
     <message>
         <source>Spl_</source>
-        <translation type="unfinished">Спл_</translation>
+        <translation>Спл_</translation>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation type="unfinished">СплКонтур_</translation>
+        <translation>СплКонтур_</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Копировать</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished">Длина</translation>
+        <translation>Длина</translation>
     </message>
     <message>
         <source>Angle</source>
-        <translation type="unfinished">Угол</translation>
+        <translation>Угол</translation>
     </message>
     <message>
         <source>AngleLine_</source>
-        <translation type="unfinished">УголЛинии_</translation>
+        <translation>УголЛинии_</translation>
+    </message>
+    <message>
+        <source>Move Group Object</source>
+        <translation>Переместить Группу Объектов</translation>
+    </message>
+    <message>
+        <source>From </source>
+        <translation>От </translation>
+    </message>
+    <message>
+        <source> to </source>
+        <translation> к </translation>
     </message>
 </context>
 <context>
@@ -12893,95 +12551,95 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Seam Allowance Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Угол припуска на шов</translation>
     </message>
     <message>
         <source>By length</source>
-        <translation type="unfinished"></translation>
+        <translation>По длине</translation>
     </message>
     <message>
         <source>Intersection</source>
-        <translation type="unfinished">Пересечение</translation>
+        <translation>Пересечение</translation>
     </message>
     <message>
         <source>First edge symmetry</source>
-        <translation type="unfinished"></translation>
+        <translation>Первая симметрия края</translation>
     </message>
     <message>
         <source>Second edge symmetry</source>
-        <translation type="unfinished"></translation>
+        <translation>Симметрия второго края</translation>
     </message>
     <message>
         <source>First edge right angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Первый край, прямой угол</translation>
     </message>
     <message>
         <source>Second edge right angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Второй край, прямой угол</translation>
     </message>
     <message>
         <source>Notch</source>
-        <translation type="unfinished">Надсечка</translation>
+        <translation>Надсечка</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished">Тип</translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет</translation>
     </message>
     <message>
         <source>Slit</source>
-        <translation type="unfinished">Щель</translation>
+        <translation>Щель</translation>
     </message>
     <message>
         <source>TNotch</source>
-        <translation type="unfinished">Т-Надсечка</translation>
+        <translation>Т-Надсечка</translation>
     </message>
     <message>
         <source>UNotch</source>
-        <translation type="unfinished">U-Надсечка</translation>
+        <translation>У-Надсечка</translation>
     </message>
     <message>
         <source>VInternal</source>
-        <translation type="unfinished">V Внутренний</translation>
+        <translation>V Внутренний</translation>
     </message>
     <message>
         <source>VExternal</source>
-        <translation type="unfinished">V Внешний</translation>
+        <translation>V Внешний вид</translation>
     </message>
     <message>
         <source>Castle</source>
-        <translation type="unfinished">Замок</translation>
+        <translation>Замок</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation type="unfinished">Алмаз</translation>
+        <translation>Алмаз</translation>
     </message>
     <message>
         <source>Subtype</source>
-        <translation type="unfinished">Тип</translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <source>Straightforward</source>
-        <translation type="unfinished">Прямой</translation>
+        <translation>Прямой</translation>
     </message>
     <message>
         <source>Bisector</source>
-        <translation type="unfinished">Биссектриса</translation>
+        <translation>Биссектриса</translation>
     </message>
     <message>
         <source>Count</source>
-        <translation type="unfinished"></translation>
+        <translation>Граф</translation>
     </message>
     <message>
         <source>Excluded</source>
-        <translation type="unfinished">Исключён</translation>
+        <translation>Исключён</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Удалить</translation>
+        <translation>Удалить</translation>
     </message>
 </context>
 <context>
@@ -13254,11 +12912,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Image_name</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя_изображения</translation>
     </message>
     <message>
         <source>Piece path doesn&apos;t contain nodes</source>
-        <translation type="unfinished"></translation>
+        <translation>Путь к фрагменту не содержит узлов</translation>
     </message>
 </context>
 <context>
@@ -13984,7 +13642,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Направление:</translation>
     </message>
 </context>
 <context>
@@ -15096,7 +14754,7 @@ load in SeamlyME as usual.
     <message>
         <source>ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Дуга_</translation>
+        <translation>ЕлДуга_</translation>
     </message>
     <message>
         <source>Spl_</source>

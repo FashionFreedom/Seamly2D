@@ -8,7 +8,7 @@ message("Entering seamlyme.pro")
 # File with common stuff for whole project
 include(../../../common.pri)
 
-QT       += core gui widgets network xml xmlpatterns printsupport svg
+QT       += core gui widgets network xml printsupport svg
 
 # Name of binary file
 TARGET = seamlyme
@@ -225,14 +225,24 @@ DEPENDPATH += $${PWD}/../../libs/vpropertyexplorer
 win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/vpropertyexplorer.lib
 else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/libvpropertyexplorer.a
 
+# xerces library
+macx: LIBS += -L$${PWD}/../../libs/xerces-c/macx/lib -lxerces-c
+else:unix: LIBS += -lxerces-c
+win32:!win32-g++: LIBS += -L$${PWD}/../../libs/xerces-c/msvc/lib -lxerces-c_3
+win32-g++: LIBS += -L$${PWD}/../../libs/xerces-c/mingw/lib -lxerces-c
+
+win32 {
+    copyToDestdir($${PWD}/$$INSTALL_XERCES, $$shell_path($${OUT_PWD}/$$DESTDIR))
+}
+
 macx{
     APPLE_SIGN_IDENTITY = $$shell_quote($(APPLE_SIGN_IDENTITY))
 
     QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
 
     macSign {
-        QMAKE_POST_LINK += && codesign --deep --timestamp --options runtime -s $${APPLE_SIGN_IDENTITY} $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
-        QMAKE_POST_LINK += && codesign --verify $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+        QMAKE_POST_LINK += && codesign --deep --timestamp --options runtime --force -s $${APPLE_SIGN_IDENTITY} $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+        QMAKE_POST_LINK += && codesign -vvv --deep --strict $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
     }
 }
 

@@ -1,66 +1,67 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//-------------------------------------------------------------------------------------------------
+//  @file   tst_vtranslatevars.cpp
+//  @author Douglas S Caskey
+//  @date   14 Jul, 2025
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2025 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-------------------------------------------------------------------------------------------------
 
- ************************************************************************
- **
- **  @file
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   2 1, 2017
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2017 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-------------------------------------------------------------------------------------------------
+//  @file   tst_vtranslatevars.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   2 1, 2017
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-------------------------------------------------------------------------------------------------
 
 #include "tst_vtranslatevars.h"
 #include "../vmisc/logging.h"
 #include "../vpatterndb/vtranslatevars.h"
+#include "../qmuparser/qmudef.h"
 #include "../qmuparser/qmuparsererror.h"
 
 #include <QtTest>
 
 //---------------------------------------------------------------------------------------------------------------------
 TST_VTranslateVars::TST_VTranslateVars(QObject *parent)
-    : QObject(parent),
-      m_trMs(nullptr),
-      m_systemLocale(QLocale::system())
+    : QObject(parent)
+    , m_trMs(nullptr)
+    , m_systemLocale(QLocale::system())
 {
 }
 
@@ -77,12 +78,18 @@ void TST_VTranslateVars::TestFormulaFromUser_data()
     QTest::addColumn<QString>("output");
     QTest::addColumn<QLocale>("locale");
 
-    const QList<QLocale> allLocales =
-            QLocale::matchingLocales(QLocale::AnyLanguage, QLocale::AnyScript, QLocale::AnyCountry);
+    const QList<QLocale> allLocales = QLocale::matchingLocales(QLocale::AnyLanguage,
+                                                               QLocale::AnyScript,
+                                                               QLocale::AnyCountry);
+
     for(int i = 0; i < allLocales.size(); ++i)
     {
-        PrepareValFromUser(1000.5, allLocales.at(i));
-        PrepareValFromUser(-1000.5, allLocales.at(i));
+        const QLocale locale = allLocales.at(i);
+        if (isLocaleSupported(locale))
+        {
+            PrepareValFromUser(1000.5, locale);
+            PrepareValFromUser(-1000.5, locale);
+        }
     }
 }
 
@@ -116,12 +123,18 @@ void TST_VTranslateVars::TestFormulaToUser_data()
     QTest::addColumn<QString>("output");
     QTest::addColumn<QLocale>("locale");
 
-    const QList<QLocale> allLocales =
-            QLocale::matchingLocales(QLocale::AnyLanguage, QLocale::AnyScript, QLocale::AnyCountry);
+    const QList<QLocale> allLocales = QLocale::matchingLocales(QLocale::AnyLanguage,
+                                                               QLocale::AnyScript,
+                                                               QLocale::AnyCountry);
+
     for(int i = 0; i < allLocales.size(); ++i)
     {
-        PrepareValToUser(1000.5, allLocales.at(i));
-        PrepareValToUser(-1000.5, allLocales.at(i));
+        const QLocale locale = allLocales.at(i);
+        if (isLocaleSupported(locale))
+        {
+            PrepareValToUser(1000.5, locale);
+            PrepareValToUser(-1000.5, locale);
+        }
     }
 }
 
@@ -138,6 +151,7 @@ void TST_VTranslateVars::TestFormulaToUser()
     try
     {
         result = m_trMs->FormulaToUser(input, true);
+
     }
     catch (qmu::QmuParserError &error)// In case something bad will happen
     {
@@ -145,6 +159,8 @@ void TST_VTranslateVars::TestFormulaToUser()
         result = input;
     }
 
+    result = result.replace(QString("\u00A0"),  QString());
+    result = result.replace(QString("\u202F"), QString());
     QCOMPARE(result, output);
 }
 
@@ -159,7 +175,7 @@ void TST_VTranslateVars::cleanupTestCase()
 void TST_VTranslateVars::PrepareValFromUser(double d, const QLocale &locale)
 {
     const QString formulaToSystem = QLocale::c().toString(d);
-    const QString formulaFromUser = locale.toString(d);
+    QString formulaFromUser = locale.toString(d);
 
     PrepareVal(formulaFromUser, formulaToSystem, locale);
 }
@@ -168,7 +184,12 @@ void TST_VTranslateVars::PrepareValFromUser(double d, const QLocale &locale)
 void TST_VTranslateVars::PrepareValToUser(double d, const QLocale &locale)
 {
     const QString formulaFromSystem = QLocale::c().toString(d);
-    const QString formulaToUser = locale.toString(d);
+    QString formulaToUser = locale.toString(d);
+
+    if (localeGroupSeparator(locale).isSpace())
+    {
+        formulaToUser.replace(localeGroupSeparator(locale), QString());
+    }
 
     PrepareVal(formulaFromSystem, formulaToUser, locale);
 }

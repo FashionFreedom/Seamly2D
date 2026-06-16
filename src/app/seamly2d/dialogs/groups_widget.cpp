@@ -1115,7 +1115,7 @@ QString GroupsWidget::getObjName(quint32 toolId)
 
     if(!groupsNotContainingItem.empty())
     {
-        QMenu *menuMoveGroupItem = menu.addMenu(QIcon("://icon/32x32/list-move_32.png"), tr("Move Group Object"));
+        QMenu *menuMoveGroupItem = menu.addMenu(QIcon("://icon/svg/list-move.svg"), tr("Move Group Object"));
         QStringList list = QStringList(groupsNotContainingItem.values());
         list.sort(Qt::CaseInsensitive);
 

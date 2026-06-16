@@ -197,11 +197,11 @@ bool intersectsWithCutLine(const QVector<QPointF> &cutPath, const QVector<QPoint
 //---------------------------------------------------------------------------------------------------------------------
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VPiecePath &VPiecePath::operator=(VPiecePath &&path) Q_DECL_NOTHROW
+VPiecePath &VPiecePath::operator=(VPiecePath &&path) noexcept
 { Swap(path); return *this; }
 #endif
 
-void VPiecePath::Swap(VPiecePath &path) Q_DECL_NOTHROW
+void VPiecePath::Swap(VPiecePath &path) noexcept
 { std::swap(d, path.d); }
 
 //---------------------------------------------------------------------------------------------------------------------

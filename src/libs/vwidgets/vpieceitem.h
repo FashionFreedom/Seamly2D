@@ -74,7 +74,7 @@ public:
     explicit              VPieceItem(QGraphicsItem* pParent = nullptr);
     virtual              ~VPieceItem();
 
-    virtual QRectF        boundingRect() const Q_DECL_OVERRIDE;
+    virtual QRectF        boundingRect() const override;
 
     virtual void          updateItem() =0;
 
@@ -84,7 +84,7 @@ public:
     VPieceItem::MoveTypes getMoveType() const;
     void                  setMoveType(const VPieceItem::MoveTypes &moveType);
 
-    virtual int           type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int           type() const override {return Type;}
     enum                  {Type = UserType + static_cast<int>(Vis::PieceItem)};
 
 signals:

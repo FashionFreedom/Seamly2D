@@ -121,23 +121,23 @@ public:
     static const QString NodeTypeContour;
     static const QString NodeTypeModeling;
 
-    virtual QString getTagName() const Q_DECL_OVERRIDE;
-    virtual void ShowVisualization(bool show) Q_DECL_OVERRIDE;
-    virtual void incrementReferens() Q_DECL_OVERRIDE;
-    virtual void decrementReferens() Q_DECL_OVERRIDE;
-    virtual void GroupVisibility(quint32 object, bool visible) Q_DECL_OVERRIDE;
+    virtual QString getTagName() const override;
+    virtual void ShowVisualization(bool show) override;
+    virtual void incrementReferens() override;
+    virtual void decrementReferens() override;
+    virtual void GroupVisibility(quint32 object, bool visible) override;
 
 public slots:
     /**
      * @brief FullUpdateFromFile update tool data form file.
      */
-    virtual void FullUpdateFromFile () Q_DECL_OVERRIDE {}
-    virtual void AllowHover(bool) Q_DECL_OVERRIDE {}
-    virtual void AllowSelecting(bool) Q_DECL_OVERRIDE {}
+    virtual void FullUpdateFromFile () override {}
+    virtual void AllowHover(bool) override {}
+    virtual void AllowSelecting(bool) override {}
 
 protected:
-    virtual void AddToFile() Q_DECL_OVERRIDE;
-    virtual void SetVisualization() Q_DECL_OVERRIDE {}
+    virtual void AddToFile() override;
+    virtual void SetVisualization() override {}
 
 private:
     Q_DISABLE_COPY(UnionTool)

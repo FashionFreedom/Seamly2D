@@ -4,6 +4,8 @@
 //  @date   17 Sep, 2023
 //
 //  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
 //  Copyright (C) 2017 - 2025 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
@@ -76,8 +78,8 @@
 #include <QMenu>
 #include <QPixmap>
 #include <QScreen>
-#include <QSound>
 #include <QtDebug>
+#include <QSoundEffect>
 #include <QTimer>
 #include <QtNumeric>
 
@@ -113,6 +115,7 @@ PatternPieceDialog::PatternPieceDialog(const VContainer *data, const quint32 &to
     , ui(new Ui::PatternPieceDialog)
     , applyAllowed(false)// By default disabled
     , flagGrainlineAnchor(true)
+    , flagGrainlineArrow(true)
     , flagPieceLabelAnchor(true)
     , flagPatternLabelAnchor(true)
     , flagGrainlineFormula(true)
@@ -139,9 +142,11 @@ PatternPieceDialog::PatternPieceDialog(const VContainer *data, const quint32 &to
     , m_saWidth(0)
     , m_patternLabelLines()
     , m_pieceLabelLines()
-    , m_beep(new QSound(qApp->Settings()->getSelectionSound()))
+    , m_beep(new QSoundEffect())
     , m_undoStack()
 {
+    m_beep->setSource(QUrl(qApp->Settings()->getSelectionSound()));
+
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/new_piece.png"));
@@ -185,6 +190,7 @@ PatternPieceDialog::PatternPieceDialog(const VContainer *data, const quint32 &to
 PatternPieceDialog::~PatternPieceDialog()
 {
     delete m_anchorPoints;
+    delete m_beep;
     delete ui;
 
     for (auto &command : m_undoStack)
@@ -315,7 +321,7 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
     ui->letter_LineEdit->setText(m_oldData.GetLetter());
     ui->annotation_LineEdit->setText(m_oldData.GetAnnotation());
     ui->orientation_ComboBox->setCurrentText(m_oldData.GetOrientation());
-    ui->rotation_ComboBox->setCurrentText(m_oldData.GetRotationWay());
+    ui->rotation_ComboBox->setCurrentText(m_oldData.getRotationWay());
     ui->tilt_ComboBox->setCurrentText(m_oldData.GetTilt());
     ui->foldPosition_ComboBox->setCurrentText(m_oldData.GetFoldPosition());
 
@@ -326,29 +332,32 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
     ui->arrow_ComboBox->setCurrentIndex(int(piece.GetGrainlineGeometry().getArrowType()));
 
     ui->pieceLabel_GroupBox->setChecked(m_oldData.IsVisible());
-    ChangeCurrentData(ui->pieceLabelCenterAnchor_ComboBox, m_oldData.centerAnchorPoint());
-    ChangeCurrentData(ui->pieceLabelTopLeftAnchor_ComboBox, m_oldData.topLeftAnchorPoint());
-    ChangeCurrentData(ui->pieceLabelBottomRightAnchor_ComboBox, m_oldData.bottomRightAnchorPoint());
+    changeCurrentData(ui->pieceLabelCenterAnchor_ComboBox, m_oldData.centerAnchorPoint());
+    changeCurrentData(ui->pieceLabelTopLeftAnchor_ComboBox, m_oldData.topLeftAnchorPoint());
+    changeCurrentData(ui->pieceLabelBottomRightAnchor_ComboBox, m_oldData.bottomRightAnchorPoint());
     setPieceLabelWidth(m_oldData.GetLabelWidth());
     setPieceLabelHeight(m_oldData.GetLabelHeight());
-    setPieceLabelAngle(m_oldData.GetRotation());
+    setPieceLabelAngle(m_oldData.getRotation());
 
     m_oldGeom = piece.GetPatternInfo();
     ui->patternLabel_GroupBox->setChecked(m_oldGeom.IsVisible());
-    ChangeCurrentData(ui->patternLabelCenterAnchor_ComboBox, m_oldGeom.centerAnchorPoint());
-    ChangeCurrentData(ui->patternLabelTopLeftAnchor_ComboBox, m_oldGeom.topLeftAnchorPoint());
-    ChangeCurrentData(ui->patternLabelBottomRightAnchor_ComboBox, m_oldGeom.bottomRightAnchorPoint());
+    changeCurrentData(ui->patternLabelCenterAnchor_ComboBox, m_oldGeom.centerAnchorPoint());
+    changeCurrentData(ui->patternLabelTopLeftAnchor_ComboBox, m_oldGeom.topLeftAnchorPoint());
+    changeCurrentData(ui->patternLabelBottomRightAnchor_ComboBox, m_oldGeom.bottomRightAnchorPoint());
     setPatternLabelWidth(m_oldGeom.GetLabelWidth());
     setPatternLabelHeight(m_oldGeom.GetLabelHeight());
-    setPatternLabelAngle(m_oldGeom.GetRotation());
+    setPatternLabelAngle(m_oldGeom.getRotation());
 
     m_oldGrainline = piece.GetGrainlineGeometry();
-    ui->grainline_GroupBox->setChecked(m_oldGrainline.IsVisible());
-    ChangeCurrentData(ui->grainlineCenterAnchor_ComboBox, m_oldGrainline.centerAnchorPoint());
-    ChangeCurrentData(ui->grainlineTopAnchor_ComboBox, m_oldGrainline.topAnchorPoint());
-    ChangeCurrentData(ui->grainlineBottomAnchor_ComboBox, m_oldGrainline.bottomAnchorPoint());
+    ui->showGrainline_CheckBox->setChecked(m_oldGrainline.IsVisible());
+    ui->anchorPoints_GroupBox->setEnabled(m_oldGrainline.IsVisible());
+    ui->arrows_GroupBox->setEnabled(m_oldGrainline.IsVisible());
+    changeCurrentData(ui->grainlineCenterAnchor_ComboBox, m_oldGrainline.centerAnchorPoint());
+    changeCurrentData(ui->grainlineTopAnchor_ComboBox, m_oldGrainline.topAnchorPoint());
+    changeCurrentData(ui->grainlineBottomAnchor_ComboBox, m_oldGrainline.bottomAnchorPoint());
     setGrainlineAngle(m_oldGrainline.getRotation());
     setGrainlineLength(m_oldGrainline.getLength());
+    setGrainlineArrowLength(m_oldGrainline.getArrowLength());
 
     validateObjects(isMainPathValid());
     enabledGrainline();
@@ -484,8 +493,7 @@ void PatternPieceDialog::ChosenObject(quint32 id, const SceneObject &type)
             if (p.GetPath().nodeCount() == 1)
             {
                 emit ToolTip(tr("Select main path objects clockwise, Use <b>SHIFT</b> to reverse curve direction, "
-                                " or <b>CTRL</b> to keep curve direction. "
-                                "Press <b>ENTER</b> to finish piece creation "));
+                                "or <b>CTRL</b> to keep curve direction."));
 
                 if (!qApp->getCurrentScene()->items().contains(visPath))
                 {
@@ -498,6 +506,7 @@ void PatternPieceDialog::ChosenObject(quint32 id, const SceneObject &type)
             }
             else
             {
+                emit ToolTip(tr("Press <b>ENTER</b> to finish piece creation."));
                 visPath->RefreshGeometry();
             }
         }
@@ -538,7 +547,7 @@ void PatternPieceDialog::CheckState()
     ok_Button->setEnabled(flagName
                     && flagFormula
                     && flagMainPath
-                    && (flagGrainlineFormula || flagGrainlineAnchor)
+                    && flagGrainlineArrow && (flagGrainlineFormula || flagGrainlineAnchor)
                     && flagPieceLabelAngle && (flagPieceLabelFormula || flagPieceLabelAnchor)
                     && flagPatternLabelAngle && (flagPatternLabelFormula || flagPatternLabelAnchor));
 
@@ -719,6 +728,7 @@ void PatternPieceDialog::closeEvent(QCloseEvent *event)
     ui->afterWidthFormula_PlainTextEdit->blockSignals(true);
     ui->rotationFormula_LineEdit->blockSignals(true);
     ui->lengthFormula_LineEdit->blockSignals(true);
+    ui->arrowlLengthFormula_LineEdit->blockSignals(true);
     DialogTool::closeEvent(event);
 }
 
@@ -1105,7 +1115,7 @@ void PatternPieceDialog::enableSeamAllowance(bool enable)
     }
     else
     {
-        ui->builtIn_CheckBox->toggled(ui->builtIn_CheckBox->isChecked());
+        emit ui->builtIn_CheckBox->toggled(ui->builtIn_CheckBox->isChecked());
     }
 }
 
@@ -1703,24 +1713,30 @@ void PatternPieceDialog::notchCountChanged(int value)
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::updateGrainlineValues()
 {
-    QPlainTextEdit *lineEdit[2] = {ui->rotationFormula_LineEdit, ui->lengthFormula_LineEdit};
-    bool formulasOK[2] = {true, true};
+    QPlainTextEdit *lineEdit[3] = {ui->rotationFormula_LineEdit, ui->lengthFormula_LineEdit, ui->arrowlLengthFormula_LineEdit};
+    bool formulasOK[3] = {true, true, true};
 
-    for (int i = 0; i < 2; ++i)
+    for (int i = 0; i < 3; ++i)
     {
         QLabel *labelValue;
         QLabel *labelText;
         QString labelUnits;
         if (i == 0)
         {
-            labelValue = ui->labelRot;
-            labelText  = ui->labelEditRot;
+            labelValue = ui->rotationCalc_Label;
+            labelText  = ui->rotation_Label;
             labelUnits = degreeSymbol;
+        }
+        else if (i == 1)
+        {
+            labelValue = ui->lengthCalc_Label;
+            labelText  = ui->length_Label;
+            labelUnits = QLatin1String(" ") + UnitsToStr(qApp->patternUnit());
         }
         else
         {
-            labelValue = ui->labelLen;
-            labelText  = ui->labelEditLen;
+            labelValue = ui->arowLengthCalc_Label;
+            labelText  = ui->arrowLength_Label;
             labelUnits = QLatin1String(" ") + UnitsToStr(qApp->patternUnit());
         }
 
@@ -1734,11 +1750,22 @@ void PatternPieceDialog::updateGrainlineValues()
             formula = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
             Calculator calculation;
             qreal calculatedValue = calculation.EvalFormula(data->DataVariables(), formula);
+
+            QString arrowFormula = lineEdit[2]->toPlainText().simplified();
+            arrowFormula.replace("\n", " ");
+            arrowFormula = qApp->translateVariables()->FormulaFromUser(arrowFormula, qApp->Settings()->getOsSeparator());
+            Calculator arrowCalculation;
+            qreal arrowCalculatedValue = arrowCalculation.EvalFormula(data->DataVariables(), arrowFormula);
+
             if (qIsInf(calculatedValue) == true || qIsNaN(calculatedValue) == true)
             {
                 throw qmu::QmuParserError(tr("Infinite/undefined result"));
             }
-            else if (i == 1 && calculatedValue <= 0.0)
+            else if (i == 1 && calculatedValue < arrowCalculatedValue * 2.0)
+            {
+                throw qmu::QmuParserError(tr("Length can't be less than length of 2 arrows"));
+            }
+            else if (i ==2 && calculatedValue <= 0.0)
             {
                 throw qmu::QmuParserError(tr("Length should be positive"));
             }
@@ -1763,8 +1790,9 @@ void PatternPieceDialog::updateGrainlineValues()
         labelValue->setText(formulaValueStr);
     }
 
+    flagGrainlineArrow = formulasOK[2];
     flagGrainlineFormula = formulasOK[0] && formulasOK[1];
-    if (!flagGrainlineFormula && !flagGrainlineAnchor)
+    if (!flagGrainlineArrow || !(flagGrainlineFormula || flagGrainlineAnchor))
     {
         setErrorText(TabOrder::Grainline, tr("Grainline"));
     }
@@ -1948,7 +1976,12 @@ void PatternPieceDialog::updatePatternLabelValues()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::enabledGrainline()
 {
-    if (ui->grainline_GroupBox->isChecked() == true)
+    bool showGrainline = ui->showGrainline_CheckBox->isChecked();
+    ui->grainlineGeometry_GroupBox->setEnabled(showGrainline);
+    ui->anchorPoints_GroupBox->setEnabled(showGrainline);
+    ui->arrows_GroupBox->setEnabled(showGrainline);
+
+    if (showGrainline)
     {
         updateGrainlineValues();
         grainlineAnchorChanged();
@@ -1956,6 +1989,7 @@ void PatternPieceDialog::enabledGrainline()
     else
     {
         flagGrainlineFormula = true;
+        flagGrainlineArrow = true;
         resetGrainlineWarning();
         CheckState();
     }
@@ -2014,6 +2048,12 @@ void PatternPieceDialog::editGrainlineFormula()
         checkForZero = false;
         title = tr("Edit angle");
     }
+    else if (sender() == ui->arrowLength_PushButton)
+    {
+        labelFormula = ui->arrowlLengthFormula_LineEdit;
+        checkForZero = false;
+        title = tr("Edit length");
+    }
     else
     {
         // should not get here!
@@ -2036,6 +2076,10 @@ void PatternPieceDialog::editGrainlineFormula()
         else if (sender() == ui->rotation_PushButton)
         {
             setGrainlineAngle(formula);
+        }
+        else if (sender() == ui->arrowLength_PushButton)
+        {
+            setGrainlineArrowLength(formula);
         }
         else
         {
@@ -2169,7 +2213,7 @@ void PatternPieceDialog::editPatternLabelFormula()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::resetGrainlineWarning()
 {
-    if (flagGrainlineFormula || flagGrainlineAnchor)
+    if (flagGrainlineArrow && (flagGrainlineFormula || flagGrainlineAnchor))
     {
         clearErrorText(TabOrder::Grainline, tr("Grainline "));
     }
@@ -2295,7 +2339,7 @@ void PatternPieceDialog::defaultWidthChanged()
     labelEditFormula = ui->widthEdit_Label;
     labelResultCalculation = ui->widthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagFormula, ui->widthFormula_PlainTextEdit, m_timerWidth, postfix);
+    formulaValueChanged(flagFormula, ui->widthFormula_PlainTextEdit, m_timerWidth, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2305,7 +2349,7 @@ void PatternPieceDialog::beforeWidthChanged()
     labelResultCalculation = ui->beforeWidthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
 
-    ValFormulaChanged(flagBeforeFormula, ui->beforeWidthFormula_PlainTextEdit, m_timerWidthBefore, postfix);
+    formulaValueChanged(flagBeforeFormula, ui->beforeWidthFormula_PlainTextEdit, m_timerWidthBefore, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2315,7 +2359,7 @@ void PatternPieceDialog::afterWidthChanged()
     labelResultCalculation = ui->afterWidthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
 
-    ValFormulaChanged(flagAfterFormula, ui->afterWidthFormula_PlainTextEdit, m_timerWidthAfter, postfix);
+    formulaValueChanged(flagAfterFormula, ui->afterWidthFormula_PlainTextEdit, m_timerWidthAfter, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2324,7 +2368,11 @@ void PatternPieceDialog::grainlineAnchorChanged()
     QColor color = okColor;
     const quint32 topAnchorId = getCurrentObjectId(ui->grainlineTopAnchor_ComboBox);
     const quint32 bottomAnchorId = getCurrentObjectId(ui->grainlineBottomAnchor_ComboBox);
-    if (topAnchorId != NULL_ID && bottomAnchorId != NULL_ID && topAnchorId != bottomAnchorId)
+    bool enabled = topAnchorId != NULL_ID && bottomAnchorId != NULL_ID && topAnchorId != bottomAnchorId;
+
+    ui->grainlineGeometry_GroupBox->setEnabled(!enabled);
+
+    if (enabled)
     {
         flagGrainlineAnchor = true;
         color = okColor;
@@ -2336,7 +2384,7 @@ void PatternPieceDialog::grainlineAnchorChanged()
         flagGrainlineAnchor = false;
         topAnchorId == NULL_ID && bottomAnchorId == NULL_ID ? color = okColor : color = errorColor;
 
-        if (!flagGrainlineFormula && !flagGrainlineAnchor)
+        if (!flagGrainlineArrow || !(flagGrainlineFormula || flagGrainlineAnchor))
         {
             ui->menuTab_ListWidget->item(TabOrder::Grainline)->setText(QString(tr("Grainline")));
         }
@@ -2492,9 +2540,10 @@ VPiece PatternPieceDialog::CreatePiece() const
     piece.GetPatternInfo().setBottomRightAnchorPoint(getCurrentObjectId(ui->patternLabelBottomRightAnchor_ComboBox));
 
     piece.GetGrainlineGeometry() = m_oldGrainline;
-    piece.GetGrainlineGeometry().SetVisible(ui->grainline_GroupBox->isChecked());
+    piece.GetGrainlineGeometry().SetVisible(ui->showGrainline_CheckBox->isChecked());
     piece.GetGrainlineGeometry().setRotation(getFormulaFromUser(ui->rotationFormula_LineEdit));
     piece.GetGrainlineGeometry().setLength(getFormulaFromUser(ui->lengthFormula_LineEdit));
+    piece.GetGrainlineGeometry().setArrowLength(getFormulaFromUser(ui->arrowlLengthFormula_LineEdit));
     piece.GetGrainlineGeometry().setArrowType(static_cast<ArrowType>(ui->arrow_ComboBox->currentIndex()));
     piece.GetGrainlineGeometry().setCenterAnchorPoint(getCurrentObjectId(ui->grainlineCenterAnchor_ComboBox));
     piece.GetGrainlineGeometry().setTopAnchorPoint(getCurrentObjectId(ui->grainlineTopAnchor_ComboBox));
@@ -2517,7 +2566,6 @@ VPiece PatternPieceDialog::CreatePiece() const
 
         xPos = rect.center().x();
         yPos = rect.center().y() + getFormulaValue(ui->lengthFormula_LineEdit)/2.0;
-
         piece.GetGrainlineGeometry().SetPos(QPointF(xPos, yPos));
     }
     return piece;
@@ -2606,14 +2654,14 @@ void PatternPieceDialog::setPieceColor(const QString &color)
 //---------------------------------------------------------------------------------------------------------------------
 QString PatternPieceDialog::getPieceFill() const
 {
-    QString value =  GetComboBoxCurrentData(ui->fill_ComboBox, FillNone);
+    QString value =  getComboBoxCurrentData(ui->fill_ComboBox, FillNone);
     return value;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::setPieceFill(const QString &value)
 {
-    ChangeCurrentData(ui->fill_ComboBox, value);
+    changeCurrentData(ui->fill_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2944,8 +2992,8 @@ void PatternPieceDialog::initializeSeamAllowanceTab()
     m_timerWidthAfter = new QTimer(this);
     connect(m_timerWidthAfter, &QTimer::timeout, this, &PatternPieceDialog::evaluateAfterWidth);
 
-    connect(ui->seams_CheckBox, &QCheckBox::toggled, this, &PatternPieceDialog::enableSeamAllowance);
-    connect(ui->builtIn_CheckBox, &QCheckBox::toggled, this, &PatternPieceDialog::enableBuiltIn);
+    connect(ui->seams_CheckBox,   &QCheckBox::stateChanged, this, &PatternPieceDialog::enableSeamAllowance);
+    connect(ui->builtIn_CheckBox, &QCheckBox::stateChanged, this, &PatternPieceDialog::enableBuiltIn);
 
     // Initialize the default seam allowance, convert the value if app unit is different than pattern unit
     m_saWidth = UnitConvertor(qApp->Settings()->GetDefaultSeamAllowance(),
@@ -3077,8 +3125,8 @@ void PatternPieceDialog::initializeLabelsTab()
     //Piece label
     ui->pieceLabel_GroupBox->setChecked(qApp->Settings()->showPieceLabels());
 
-    ui->pieceLabelWidthFormula_LineEdit->setPlainText(QString::number(qApp->Settings()->getDefaultLabelWidth()));
-    ui->pieceLabelHeightFormula_LineEdit->setPlainText(QString::number(qApp->Settings()->getDefaultLabelHeight()));
+    ui->pieceLabelWidthFormula_LineEdit->setPlainText(qApp->LocaleToString(qApp->Settings()->getDefaultLabelWidth()));
+    ui->pieceLabelHeightFormula_LineEdit->setPlainText(qApp->LocaleToString(qApp->Settings()->getDefaultLabelHeight()));
 
     connect(ui->pieceLabel_GroupBox, &QGroupBox::toggled, this, &PatternPieceDialog::enabledPieceLabel);
     initAnchorPoint(ui->pieceLabelCenterAnchor_ComboBox);
@@ -3111,7 +3159,7 @@ void PatternPieceDialog::initializeLabelsTab()
     {
         VLabelTemplate labelTemplate;
         QString filename = qApp->Settings()->getDefaultPieceTemplate();
-        if (QFileInfo(filename).exists())
+        if (QFileInfo::exists(filename))
         {
             labelTemplate.setXMLContent(VLabelTemplateConverter(filename).Convert());
             m_pieceLabelLines = labelTemplate.ReadLines();
@@ -3123,8 +3171,8 @@ void PatternPieceDialog::initializeLabelsTab()
     //Pattern label
     ui->patternLabel_GroupBox->setChecked(qApp->Settings()->showPatternLabels());
 
-    ui->patternLabelWidthFormula_LineEdit->setPlainText(QString::number(qApp->Settings()->getDefaultLabelWidth()));
-    ui->patternLabelHeightFormula_LineEdit->setPlainText(QString::number(qApp->Settings()->getDefaultLabelHeight()));
+    ui->patternLabelWidthFormula_LineEdit->setPlainText(qApp->LocaleToString(qApp->Settings()->getDefaultLabelWidth()));
+    ui->patternLabelHeightFormula_LineEdit->setPlainText(qApp->LocaleToString(qApp->Settings()->getDefaultLabelHeight()));
 
     connect(ui->patternLabel_GroupBox, &QGroupBox::toggled, this, &PatternPieceDialog::enabledPatternLabel);
     initAnchorPoint(ui->patternLabelCenterAnchor_ComboBox);
@@ -3175,18 +3223,32 @@ void PatternPieceDialog::initializeLabelsTab()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::initializeGrainlineTab()
 {
-    ui->grainline_GroupBox->setChecked(qApp->Settings()->getDefaultGrainlineVisibilty());
+    bool enabled = qApp->Settings()->getDefaultGrainlineVisibilty();
+    ui->showGrainline_CheckBox->setChecked(enabled);
+    ui->grainlineGeometry_GroupBox->setEnabled(enabled);
+    ui->anchorPoints_GroupBox->setEnabled(enabled);
+    ui->arrows_GroupBox->setEnabled(enabled);
 
-    ui->lengthFormula_LineEdit->setPlainText(QString::number(qApp->Settings()->getDefaultGrainlineLength()));
+    qreal arrowLength = FromPixel(qApp->Settings()->getDefaultArrowLength(), *data->GetPatternUnit());
+    ui->arrowlLengthFormula_LineEdit->setPlainText(qApp->LocaleToString(arrowLength));
 
-    connect(ui->grainline_GroupBox,  &QGroupBox::toggled,   this, &PatternPieceDialog::enabledGrainline);
-    connect(ui->rotation_PushButton, &QPushButton::clicked, this, &PatternPieceDialog::editGrainlineFormula);
-    connect(ui->length_PushButton,   &QPushButton::clicked, this, &PatternPieceDialog::editGrainlineFormula);
-    connect(ui->lengthFormula_LineEdit, &QPlainTextEdit::textChanged, this,
-            &PatternPieceDialog::updateGrainlineValues);
+    qreal grainlineLength = qApp->Settings()->getDefaultGrainlineLength();
+    if (grainlineLength < arrowLength * 2)
+    {
+        grainlineLength = arrowLength * 2.1;
+    }
+    ui->lengthFormula_LineEdit->setPlainText(qApp->LocaleToString(grainlineLength));
 
-    connect(ui->rotationFormula_LineEdit, &QPlainTextEdit::textChanged, this,
-            &PatternPieceDialog::updateGrainlineValues);
+    connect(ui->showGrainline_CheckBox, &QCheckBox::stateChanged, this, &PatternPieceDialog::enabledGrainline);
+    connect(ui->rotation_PushButton,    &QPushButton::clicked,    this, &PatternPieceDialog::editGrainlineFormula);
+    connect(ui->length_PushButton,      &QPushButton::clicked,    this, &PatternPieceDialog::editGrainlineFormula);
+    connect(ui->arrowLength_PushButton, &QPushButton::clicked,    this, &PatternPieceDialog::editGrainlineFormula);
+    connect(ui->lengthFormula_LineEdit, &QPlainTextEdit::textChanged,
+            this, &PatternPieceDialog::updateGrainlineValues);
+    connect(ui->rotationFormula_LineEdit, &QPlainTextEdit::textChanged,
+            this, &PatternPieceDialog::updateGrainlineValues);
+    connect(ui->arrowlLengthFormula_LineEdit, &QPlainTextEdit::textChanged,
+            this, &PatternPieceDialog::updateGrainlineValues);
 
     enabledGrainline();
 
@@ -3208,6 +3270,13 @@ void PatternPieceDialog::initializeGrainlineTab()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::initializeAnchorsTab()
 {
+    const quint32 topAnchorId = getCurrentObjectId(ui->grainlineTopAnchor_ComboBox);
+    const quint32 bottomAnchorId = getCurrentObjectId(ui->grainlineBottomAnchor_ComboBox);
+
+    if (topAnchorId != NULL_ID && bottomAnchorId != NULL_ID && topAnchorId != bottomAnchorId)
+    {
+        ui->grainlineGeometry_GroupBox->setEnabled(false);
+    }
     ui->anchorPoints_ListWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(ui->anchorPoints_ListWidget, &QListWidget::customContextMenuRequested, this,
             &PatternPieceDialog::showAnchorsContextMenu);
@@ -3385,6 +3454,20 @@ void PatternPieceDialog::setGrainlineLength(QString lengthFormula)
     ui->lengthFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->lengthFormula_LineEdit);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PatternPieceDialog::setGrainlineArrowLength(QString lengthFormula)
+{
+    if (lengthFormula.isEmpty())
+    {
+        lengthFormula = QString().setNum(UnitConvertor(1, Unit::Cm, *data->GetPatternUnit()));
+    }
+
+    const QString formula = qApp->translateVariables()->FormulaToUser(lengthFormula, qApp->Settings()->getOsSeparator());
+    ui->arrowlLengthFormula_LineEdit->setPlainText(formula);
+
+    MoveCursorToEnd(ui->arrowlLengthFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

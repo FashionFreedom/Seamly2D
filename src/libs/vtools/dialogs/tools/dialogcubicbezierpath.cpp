@@ -167,13 +167,13 @@ void DialogCubicBezierPath::SetPath(const VCubicBezierPath &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogCubicBezierPath::getPenStyle() const
 {
-    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+    return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogCubicBezierPath::setPenStyle(const QString &value)
 {
-    ChangeCurrentData(ui->lineType_ComboBox, value);
+    changeCurrentData(ui->lineType_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -183,7 +183,7 @@ void DialogCubicBezierPath::setPenStyle(const QString &value)
  */
 QString DialogCubicBezierPath::getLineWeight() const
 {
-        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+        return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -193,19 +193,19 @@ QString DialogCubicBezierPath::getLineWeight() const
  */
 void DialogCubicBezierPath::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    changeCurrentData(ui->lineWeight_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogCubicBezierPath::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogCubicBezierPath::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->lineColor_ComboBox, value);
+    changeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -232,7 +232,7 @@ void DialogCubicBezierPath::ChosenObject(quint32 id, const SceneObject &type)
             visPath->VisualMode(NULL_ID);
             VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
             SCASSERT(window != nullptr)
-            connect(visPath, &VisToolCubicBezierPath::ToolTip, window, &VAbstractMainWindow::ShowToolTip);
+            connect(visPath, &VisToolCubicBezierPath::ToolTip, window, &VAbstractMainWindow::setStatusMessage);
         }
         else
         {
@@ -365,7 +365,7 @@ void DialogCubicBezierPath::NewItem(const VPointF &point)
 void DialogCubicBezierPath::DataPoint(const VPointF &p)
 {
     ui->comboBoxPoint->blockSignals(true);
-    ChangeCurrentData(ui->comboBoxPoint, p.id());
+    changeCurrentData(ui->comboBoxPoint, p.id());
     ui->comboBoxPoint->blockSignals(false);
 }
 

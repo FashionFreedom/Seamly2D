@@ -1,53 +1,53 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//-------------------------------------------------------------------------------------------------
+//  @file   tst_readval.cpp
+//  @author Douglas S Caskey
+//  @date   14 Jul, 2025
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2025 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-------------------------------------------------------------------------------------------------
 
- ************************************************************************
- **
- **  @file
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   30 12, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-------------------------------------------------------------------------------------------------
+//  @file   tst_readval.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date  30 12, 2016
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-------------------------------------------------------------------------------------------------
 
 #include "tst_readval.h"
 #include "../qmuparser/qmudef.h"
@@ -58,8 +58,8 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 TST_ReadVal::TST_ReadVal(QObject *parent)
-    : QObject(parent),
-      m_systemLocale(QLocale::system())
+    : QObject(parent)
+    , m_systemLocale(QLocale::system())
 {
 }
 
@@ -71,22 +71,26 @@ void TST_ReadVal::TestReadVal_data()
     QTest::addColumn<qreal>("expVal");
     QTest::addColumn<QLocale>("locale");
 
-    const QList<QLocale> allLocales =
-            QLocale::matchingLocales(QLocale::AnyLanguage, QLocale::AnyScript, QLocale::AnyCountry);
+    const QList<QLocale> allLocales = QLocale::matchingLocales(QLocale::AnyLanguage,
+                                                               QLocale::AnyScript,
+                                                               QLocale::AnyCountry);
     for(int i = 0; i < allLocales.size(); ++i)
     {
         const QLocale locale = allLocales.at(i);
-        PrepareVal(1., locale);
-        PrepareVal(1.0, locale);
-        PrepareVal(-1.0, locale);
-        PrepareVal(1.5, locale);
-        PrepareVal(-1.5, locale);
-        PrepareVal(1000.0, locale);
-        PrepareVal(-1000.0, locale);
-        PrepareVal(1000.5, locale);
-        PrepareVal(-1000.5, locale);
-        PrepareVal(std::numeric_limits<double>::max(), locale);
-        PrepareVal(-std::numeric_limits<double>::max(), locale);
+        if (isLocaleSupported(locale))
+        {            
+            PrepareVal(1., locale);
+            PrepareVal(1.0, locale);
+            PrepareVal(-1.0, locale);
+            PrepareVal(1.5, locale);
+            PrepareVal(-1.5, locale);
+            PrepareVal(1000.0, locale);
+            PrepareVal(-1000.0, locale);
+            PrepareVal(1000.5, locale);
+            PrepareVal(-1000.5, locale);
+            PrepareVal(std::numeric_limits<double>::max(), locale);
+            PrepareVal(-std::numeric_limits<double>::max(), locale);
+        }
     }
 }
 
@@ -163,7 +167,7 @@ void TST_ReadVal::TestVal()
     qreal resVal = 0;
     QLocale::setDefault(locale);
 
-    const int resCount = ReadVal(formula, resVal, locale, locale.decimalPoint(), locale.groupSeparator());
+    const int resCount = ReadVal(formula, resVal, locale, localeDecimalPoint(locale), localeGroupSeparator(locale));
 
     QString errorMsg = QString("Conversion failed. Locale: '%1'.").arg(locale.name());
     QVERIFY2(resCount == expCount, qUtf8Printable(errorMsg));

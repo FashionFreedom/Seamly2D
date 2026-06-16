@@ -78,10 +78,10 @@ public:
                 CustomVariable &operator=(const CustomVariable &variable);
 
 #ifdef Q_COMPILER_RVALUE_REFS
-	            CustomVariable &operator=(CustomVariable &&variable) Q_DECL_NOTHROW;
+	            CustomVariable &operator=(CustomVariable &&variable) noexcept;
 #endif
 
-    void        Swap(CustomVariable &variable) Q_DECL_NOTHROW;
+    void        Swap(CustomVariable &variable) noexcept;
     quint32     getIndex() const;
     QString     GetFormula() const;
     bool        IsFormulaOk() const;

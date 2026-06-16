@@ -26,6 +26,8 @@
 #define ME_WELCOME_DIALOG_H
 
 #include <QDialog>
+#include <QLocale>
+#include <QRadioButton>
 
 #include "../vmisc/def.h"
 #include "../vmisc/vseamlymesettings.h"
@@ -44,17 +46,14 @@ public:
                               ~SeamlyMeWelcomeDialog();
     void                       apply();
 
-protected:
-    virtual void               changeEvent(QEvent* event) Q_DECL_OVERRIDE;
-    void                       seperatorChanged();
-
 private:
     Q_DISABLE_COPY(SeamlyMeWelcomeDialog)
     Ui::SeamlyMeWelcomeDialog *ui;
-    bool                       m_langChanged;
     VSeamlyMeSettings         *settings;
 
     void                       initUnits();
+    void                       languageChanged(int index);
+    void                       setLocaleTooltip(QLocale locale, QRadioButton *button);
 };
 
 #endif // ME_WELCOME_DIALOG_H

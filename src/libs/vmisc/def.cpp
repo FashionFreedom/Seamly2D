@@ -52,9 +52,7 @@
 #include <QPrinterInfo>
 #include <QProcess>
 #include <QRgb>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QtDebug>
 #include <QPixmapCache>
 #include <QGraphicsItem>
@@ -367,7 +365,8 @@ QStringList SupportedLocales()
                                               << QStringLiteral("zh_CN")
                                               << QStringLiteral("pt_BR")
                                               << QStringLiteral("el_GR")
-                                              << QStringLiteral("en_GB");
+                                              << QStringLiteral("en_GB")
+                                              << QStringLiteral("tr_TR");
     return locales;
 }
 
@@ -767,17 +766,17 @@ QString UnitsToStr(const Unit &unit, const bool translate)
     switch (unit)
     {
         case Unit::Mm:
-            translate ? result = QObject::tr("mm") : result = unitMM;
+            result = unitMM;
             break;
         case Unit::Inch:
             translate ? result = QObject::tr("inch") : result = unitINCH;
             break;
         case Unit::Px:
-            translate ? result = QObject::tr("px") : result = unitPX;
+            result = unitPX;
             break;
         case Unit::Cm:
         default:
-            translate ? result = QObject::tr("cm") : result = unitCM;
+            result = unitCM;
             break;
     }
     return result;

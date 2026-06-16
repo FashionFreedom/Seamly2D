@@ -75,7 +75,7 @@ class VLayoutGenerator :public QObject
     Q_OBJECT
 public:
     explicit     VLayoutGenerator(QObject *parent = nullptr);
-    virtual     ~VLayoutGenerator() Q_DECL_OVERRIDE;
+    virtual     ~VLayoutGenerator() override;
 
     void         setPieces(const QVector<VLayoutPiece> &details);
     void         setLayoutGap(qreal width);
@@ -107,7 +107,7 @@ public:
     bool         GetRotate() const;
     void         SetRotate(bool value);
 
-    int          GetRotationIncrease() const;
+    int          getRotationIncrease() const;
     void         SetRotationIncrease(int value);
 
     bool         GetAutoCrop() const;

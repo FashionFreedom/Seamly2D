@@ -51,10 +51,10 @@ public:
 
     VPieceLabelData &operator=(const VPieceLabelData &data);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VPieceLabelData &operator=(VPieceLabelData &&data) Q_DECL_NOTHROW;
+	VPieceLabelData &operator=(VPieceLabelData &&data) noexcept;
 #endif
 
-	void Swap(VPieceLabelData &data) Q_DECL_NOTHROW;
+	void Swap(VPieceLabelData &data) noexcept;
 
     void Clear();
 
@@ -68,7 +68,7 @@ public:
     QString GetOrientation() const;
     void    SetOrientation(const QString &val);
 
-    QString GetRotationWay() const;
+    QString getRotationWay() const;
     void    SetRotationWay(const QString &val);
 
     QString GetTilt() const;

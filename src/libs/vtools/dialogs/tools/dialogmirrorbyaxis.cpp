@@ -124,7 +124,7 @@ quint32 DialogMirrorByAxis::getOriginPointId() const
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMirrorByAxis::setOriginPointId(quint32 value)
 {
-    ChangeCurrentData(ui->originPoint_ComboBox, value);
+    changeCurrentData(ui->originPoint_ComboBox, value);
     VisToolMirrorByAxis *operation = qobject_cast<VisToolMirrorByAxis *>(vis);
     SCASSERT(operation != nullptr)
     operation->setOriginPointId(value);

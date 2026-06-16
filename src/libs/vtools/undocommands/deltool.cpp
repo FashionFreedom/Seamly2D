@@ -81,6 +81,7 @@ void DelTool::undo()
 
     UndoDeleteAfterSibling(parentNode, siblingId);
     emit NeedFullParsing();
+    emit doc->FullUpdateFromFile();
     //Keep last!
     doc->setCurrentDraftBlock(activeBlockName);//Without this user will not see this change
 }
@@ -95,4 +96,5 @@ void DelTool::redo()
     QDomElement domElement = doc->NodeById(nodeId);
     parentNode.removeChild(domElement);
     emit NeedFullParsing();
+    emit doc->FullUpdateFromFile();
 }

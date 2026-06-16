@@ -62,9 +62,7 @@
 #include <QPoint>
 #include <QRectF>
 #include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <Qt>
 #include <QIcon>
 #include <QMenu>

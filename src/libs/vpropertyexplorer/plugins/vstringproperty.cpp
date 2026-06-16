@@ -25,11 +25,11 @@
 #include <QLineEdit>
 #include <QLocale>
 #include <QSizePolicy>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
+#include <QVariant>
 #include <QWidget>
 
+#include "../qmuparser/qmudef.h"
 #include "../vproperty_p.h"
 
 VPE::VStringProperty::VStringProperty(const QString &name, const QMap<QString, QVariant> &settings)
@@ -171,11 +171,11 @@ bool VPE::VStringProperty::eventFilter(QObject *object, QEvent *event)
             {
                 if (m_osSeparator)
                 {
-                    textEdit->insert(QLocale().decimalPoint());
+                    textEdit->insert(localeDecimalPoint(QLocale()));
                 }
                 else
                 {
-                    textEdit->insert(QLocale::c().decimalPoint());
+                    textEdit->insert(localeDecimalPoint(QLocale::c()));
                 }
                 return true;
             }

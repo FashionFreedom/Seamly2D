@@ -4,7 +4,7 @@
 #include <string>
 #include <QtGlobal>
 
-class QTextCodec;
+#include <QStringConverter>
 
 class DRW_TextCodec
 {
@@ -26,7 +26,7 @@ private:
     Q_DISABLE_COPY(DRW_TextCodec)
     int version;
     std::string cp;
-    QTextCodec *conv;
+    std::optional<QStringConverter::Encoding> conv;
 };
 
 #endif // DRW_TEXTCODEC_H

@@ -73,12 +73,11 @@
 #define DIALOG_MAX_FORMULA_HEIGHT 64
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief DialogVariables create dialog
- * @param data container with data
- * @param doc dom document container
- * @param parent parent widget
- */
+/// @brief DialogVariables create dialog
+/// @param data container with data
+/// @param doc dom document container
+/// @param parent parent widget
+//---------------------------------------------------------------------------------------------------------------------
 DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *parent)
     : DialogTool(data, NULL_ID, parent)
     , ui(new Ui::DialogVariables)
@@ -94,7 +93,7 @@ DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *paren
     ui->setupUi(this);
 
     setWindowFlags(Qt::Window);
-    setWindowFlags((windowFlags() | Qt::WindowStaysOnTopHint) & ~Qt::WindowContextHelpButtonHint);
+    setWindowFlags(windowFlags() & ~Qt::WindowStaysOnTopHint & ~Qt::WindowContextHelpButtonHint);
 
     //Limit dialog height to 80% of screen size
     setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
@@ -119,7 +118,6 @@ DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *paren
     fillArcsRadiuses();
     fillCurveAngles();
 
-
     tableList.append(QSharedPointer<QTableWidget>(ui->variables_TableWidget));
     tableList.append(QSharedPointer<QTableWidget>(ui->lineLengths_TableWidget));
     tableList.append(QSharedPointer<QTableWidget>(ui->lineAngles_TableWidget));
@@ -129,9 +127,10 @@ DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *paren
     tableList.append(QSharedPointer<QTableWidget>(ui->arcRadiuses_TableWidget));
 
     connect(this->doc, &VPattern::FullUpdateFromFile, this, &DialogVariables::FullUpdateFromFile);
+    connect(this->doc, &VPattern::patternClosed,      this, [this](){ close(); });
 
     ui->tabWidget->setCurrentIndex(0);
-    ui->name_LineEdit->setValidator( new QRegularExpressionValidator(QRegularExpression(
+    ui->name_LineEdit->setValidator(new QRegularExpressionValidator(QRegularExpression(
                                                                         QLatin1String("^$|")+NameRegExp()), this));
 
     connect(ui->variables_TableWidget, &QTableWidget::itemSelectionChanged, this,
@@ -185,9 +184,8 @@ DialogVariables::~DialogVariables()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief fillCustomVariables fill data for variables table
- */
+/// @brief fillCustomVariables fill data for variables table
+//---------------------------------------------------------------------------------------------------------------------
 void DialogVariables::fillCustomVariables(bool freshCall)
 {
     ui->variables_TableWidget->blockSignals(true);
@@ -270,14 +268,15 @@ void DialogVariables::fillTable(const QMap<QString, T> &varTable, QTableWidget *
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief FillLengthLines fill data for table of lines lengths
- */
+/// @brief FillLengthLines fill variables table with data for line lengths
+//---------------------------------------------------------------------------------------------------------------------
 void DialogVariables::fillLineLengths()
 {
     fillTable(data->lineLengthsData(), ui->lineLengths_TableWidget);
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief fillLineAngles fill variables table with data for line angles.
 //---------------------------------------------------------------------------------------------------------------------
 void DialogVariables::fillLineAngles()
 {
@@ -285,14 +284,15 @@ void DialogVariables::fillLineAngles()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief FillLengthSplines fill data for table of splines lengths
- */
+/// @brief fillCurveLengths fill variables table with data for curve lengths.
+//---------------------------------------------------------------------------------------------------------------------
 void DialogVariables::fillCurveLengths()
 {
     fillTable(data->curveLengthsData(), ui->curveLengths_TableWidget);
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief fillControlPointLengths fill variables table with data for control point lengths.
 //---------------------------------------------------------------------------------------------------------------------
 void DialogVariables::fillControlPointLengths()
 {
@@ -300,11 +300,15 @@ void DialogVariables::fillControlPointLengths()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief fillArcsRadiuses fill variables table with data for arc radii.
+//---------------------------------------------------------------------------------------------------------------------
 void DialogVariables::fillArcsRadiuses()
 {
     fillTable(data->arcRadiusesData(), ui->arcRadiuses_TableWidget);
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief fillCurveAngles fill variables table with data for curve angles.
 //---------------------------------------------------------------------------------------------------------------------
 void DialogVariables::fillCurveAngles()
 {
@@ -316,15 +320,15 @@ void DialogVariables::showUnits()
 {
     const QString unit = UnitsToStr(qApp->patternUnit());
 
-    showHeaderUnits(ui->variables_TableWidget, 1, unit);// calculated value
-    showHeaderUnits(ui->variables_TableWidget, 2, unit);// formula
+    showHeaderUnits(ui->variables_TableWidget, 1, unit);           // calculated value
+    showHeaderUnits(ui->variables_TableWidget, 2, unit);           // formula
 
-    showHeaderUnits(ui->lineLengths_TableWidget, 1, unit);// lengths
-    showHeaderUnits(ui->curveLengths_TableWidget, 1, unit);// lengths
-    showHeaderUnits(ui->controlPointLengths_TableWidget, 1, unit);// lengths
-    showHeaderUnits(ui->lineAngles_TableWidget, 1, degreeSymbol);// angle
-    showHeaderUnits(ui->arcRadiuses_TableWidget, 1, unit);// radius
-    showHeaderUnits(ui->curveAngles_TableWidget, 1, degreeSymbol);// angle
+    showHeaderUnits(ui->lineLengths_TableWidget, 1, unit);         // line lengths
+    showHeaderUnits(ui->lineAngles_TableWidget, 1, degreeSymbol);  // line angle
+    showHeaderUnits(ui->curveLengths_TableWidget, 1, unit);        // curve lengths
+    showHeaderUnits(ui->curveAngles_TableWidget, 1, degreeSymbol); // curve angle
+    showHeaderUnits(ui->controlPointLengths_TableWidget, 1, unit); // CP lengths
+    showHeaderUnits(ui->arcRadiuses_TableWidget, 1, unit);         // arc radii
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -350,7 +354,7 @@ void DialogVariables::addCell(QTableWidget *table, const QString &text, int row,
     flags &= ~(Qt::ItemIsEditable); // reset/clear the flag
     item->setFlags(flags);
 
-    if (not ok)
+    if (!ok)
     {
         QBrush brush = item->foreground();
         brush.setColor(Qt::red);
@@ -369,7 +373,7 @@ QString DialogVariables::getCustomVariableName() const
     {
         name = CustomIncrSign + qApp->translateVariables()->InternalVarToUser(variable_) + QString().number(num);
         num++;
-    } while (not data->IsUnique(name));
+    } while (!data->IsUnique(name));
     return name;
 }
 
@@ -448,7 +452,7 @@ void DialogVariables::setMoveControls()
         const QTableWidgetItem *name = ui->variables_TableWidget->item(ui->variables_TableWidget->currentRow(), 0);
         SCASSERT(name != nullptr)
 
-        ui->removeCustomVariable_ToolButton->setEnabled(not variableUsed(name->text()));
+        ui->removeCustomVariable_ToolButton->setEnabled(!variableUsed(name->text()));
     }
     else
     {
@@ -495,7 +499,7 @@ void DialogVariables::enablePieces(bool enabled)
         ui->toolButtonDown->setEnabled(enabled);
     }
 
-    if (not enabled)
+    if (!enabled)
     { // Clear
         ui->name_LineEdit->blockSignals(true);
         ui->name_LineEdit->clear();
@@ -573,9 +577,9 @@ void DialogVariables::renameCache(const QString &name, const QString &newName)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief FullUpdateFromFile update information in tables form file
- */
+/// @brief FullUpdateFromFile update information in tables form file
+//---------------------------------------------------------------------------------------------------------------------
+
 void DialogVariables::FullUpdateFromFile()
 {
     hasChanges = false;
@@ -620,9 +624,9 @@ void DialogVariables::refreshPattern()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief clickedToolButtonAdd create new row in table
- */
+/// @brief clickedToolButtonAdd create new row in table
+//---------------------------------------------------------------------------------------------------------------------
+
 void DialogVariables::addCustomVariable()
 {
     qCDebug(vDialog, "Add a new custom variable");
@@ -649,9 +653,9 @@ void DialogVariables::addCustomVariable()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief clickedToolButtonRemove remove one row from table
- */
+/// @brief clickedToolButtonRemove remove one row from table
+//---------------------------------------------------------------------------------------------------------------------
+
 void DialogVariables::removeCustomVariable()
 {
     const int row = ui->variables_TableWidget->currentRow();
@@ -729,7 +733,7 @@ void DialogVariables::saveCustomVariableName(const QString &text)
 
     QString newName = text.isEmpty() ? getCustomVariableName() : CustomIncrSign + text;
 
-    if (not data->IsUnique(newName))
+    if (!data->IsUnique(newName))
     {
         qint32 num = 2;
         QString tempName = newName;
@@ -737,7 +741,7 @@ void DialogVariables::saveCustomVariableName(const QString &text)
         {
             tempName = tempName + QLatin1String("_") + QString().number(num);
             num++;
-        } while (not data->IsUnique(tempName));
+        } while (!data->IsUnique(tempName));
         newName = tempName;
     }
 
@@ -811,7 +815,7 @@ void DialogVariables::saveCustomVariableFormula()
     }
 
     QSharedPointer<CustomVariable> variable = data->getVariable<CustomVariable>(name->text());
-    if (not evalVariableFormula(text, true, variable->GetData(), ui->calculatedValue_Label))
+    if (!evalVariableFormula(text, true, variable->GetData(), ui->calculatedValue_Label))
     {
         return;
     }
@@ -908,14 +912,11 @@ bool DialogVariables::eventFilter(QObject *object, QEvent *event)
             QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
             if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
             {
-                if (qApp->Settings()->getOsSeparator())
-                {
-                    textEdit->insert(QLocale().decimalPoint());
-                }
-                else
-                {
-                    textEdit->insert(QLocale::c().decimalPoint());
-                }
+                QString separator = qApp->Settings()->getOsSeparator()
+                                  ? QString(localeDecimalPoint(QLocale()))
+                                  : QString(localeDecimalPoint(QLocale::c()));
+
+                textEdit->insert(separator);
                 return true;
             }
         }
@@ -942,23 +943,23 @@ void DialogVariables::showEvent(QShowEvent *event)
     {
         return;
     }
-    // do your init stuff here
 
+    // Initialize Dialog to last used size.
     const QSize sz = qApp->Settings()->getVariablesDialogSize();
-    if (not sz.isEmpty())
+    if (!sz.isEmpty())
     {
         resize(sz);
     }
 
-    isInitialized = true;//first show windows are held
+    isInitialized = true; //first show windows are held
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogVariables::resizeEvent(QResizeEvent *event)
 {
-    // remember the size for the next time this dialog is opened, but only
-    // if widget was already initialized, which rules out the resize at
-    // dialog creating, which would
+    // Save the size for the next time this dialog is opened, but only
+    // if dialog was already initialized, which rules out the resize at
+    // dialog creation.
     if (isInitialized)
     {
         qApp->Settings()->setVariablesDialogSize(size());

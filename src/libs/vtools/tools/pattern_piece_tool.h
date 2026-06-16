@@ -201,7 +201,7 @@ private:
                                             qreal &labelHeight, QPointF &pos);
 
     VPieceItem::MoveTypes findGrainlineGeometry(const VGrainlineData &geom, qreal &length, qreal &rotationAngle,
-                                                QPointF &pos);
+                                                qreal &arrowLength, QPointF &pos);
 
     void                  initializeNodes(const VPiece &piece, VMainGraphicsScene *scene);
     static void           initializeNode(const VPieceNode &node, VMainGraphicsScene *scene, VContainer *data,
@@ -226,7 +226,7 @@ private:
     void                  togglePatternLabel(bool checked);
     void                  togglePieceLabel(bool checked);
     void                  renamePiece(VPiece piece);
-    void                  showStatus(QString toolTip);
+    void                  showStatus(QString message);
     void                  raiseItemToTop(QGraphicsItem *item);
     void                  lowerItemToBottom(QGraphicsItem *item);
 };

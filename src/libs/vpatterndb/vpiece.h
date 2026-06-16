@@ -73,7 +73,7 @@ struct NotchData
 
 class VPieceData;
 class VPieceNode;
-template <class T> class QVector;
+// template <class T> class QVector;
 template <class T>class QSharedPointer;
 class VPiecePath;
 class VPatternLabelData;
@@ -94,10 +94,10 @@ public:
     VPiece                  &operator=(const VPiece &piece);
 
 #ifdef Q_COMPILER_RVALUE_REFS
-    VPiece                  &operator=(VPiece &&piece) Q_DECL_NOTHROW;
+    VPiece                  &operator=(VPiece &&piece) noexcept;
 #endif
 
-    void                     Swap(VPiece &piece) Q_DECL_NOTHROW;
+    void                     Swap(VPiece &piece) noexcept;
 
     VPiecePath               GetPath() const;
     VPiecePath              &GetPath();

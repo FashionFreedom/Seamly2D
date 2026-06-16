@@ -71,6 +71,7 @@
 #include "../vpatterndb/floatItemData/vpatternlabeldata.h"
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
 #include "../vpatterndb/floatItemData/vgrainlinedata.h"
+#include "../vtools/tools/vdatatool.h"
 #include "../qmuparser/qmutokenparser.h"
 #include "../undocommands/addpiece.h"
 #include "../undocommands/deletepiece.h"
@@ -90,7 +91,6 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QPainterPathStroker>
-
 
 // Current version of seam allowance tag need for backward compatibility
 const quint8 PatternPieceTool::pieceVersion = 2;
@@ -350,7 +350,7 @@ void PatternPieceTool::addPieceLabel(VAbstractPattern *doc, QDomElement &domElem
     doc->SetAttribute(domData, VAbstractPattern::AttrLetter,       data.GetLetter());
     doc->SetAttribute(domData, VAbstractPattern::AttrAnnotation,   data.GetAnnotation());
     doc->SetAttribute(domData, VAbstractPattern::AttrOrientation,  data.GetOrientation());
-    doc->SetAttribute(domData, VAbstractPattern::AttrRotationWay,  data.GetRotationWay());
+    doc->SetAttribute(domData, VAbstractPattern::AttrRotationWay,  data.getRotationWay());
     doc->SetAttribute(domData, VAbstractPattern::AttrTilt,         data.GetTilt());
     doc->SetAttribute(domData, VAbstractPattern::AttrFoldPosition, data.GetFoldPosition());
     doc->SetAttribute(domData, VAbstractPattern::AttrQuantity,     data.GetQuantity());
@@ -361,7 +361,7 @@ void PatternPieceTool::addPieceLabel(VAbstractPattern *doc, QDomElement &domElem
     doc->SetAttribute(domData, VAbstractPattern::AttrWidth,        data.GetLabelWidth());
     doc->SetAttribute(domData, AttrHeight,                         data.GetLabelHeight());
     doc->SetAttribute(domData, AttrFont,                           data.getFontSize());
-    doc->SetAttribute(domData, VAbstractPattern::AttrRotation,     data.GetRotation());
+    doc->SetAttribute(domData, VAbstractPattern::AttrRotation,     data.getRotation());
 
     if (data.centerAnchorPoint() > NULL_ID)
     {
@@ -406,7 +406,7 @@ void PatternPieceTool::addPatternLabel(VAbstractPattern *doc, QDomElement &domEl
     doc->SetAttribute(domData, VAbstractPattern::AttrWidth,    data.GetLabelWidth());
     doc->SetAttribute(domData, AttrHeight,                     data.GetLabelHeight());
     doc->SetAttribute(domData, AttrFont,                       data.getFontSize());
-    doc->SetAttribute(domData, VAbstractPattern::AttrRotation, data.GetRotation());
+    doc->SetAttribute(domData, VAbstractPattern::AttrRotation, data.getRotation());
 
     if (data.centerAnchorPoint() > NULL_ID)
     {
@@ -444,12 +444,13 @@ void PatternPieceTool::addGrainline(VAbstractPattern *doc, QDomElement &domEleme
     // grainline
     QDomElement domData = doc->createElement(VAbstractPattern::TagGrainline);
     const VGrainlineData &data = piece.GetGrainlineGeometry();
-    doc->SetAttribute(domData, VAbstractPattern::AttrVisible,  data.IsVisible());
-    doc->SetAttribute(domData, AttrMx,                         data.GetPos().x());
-    doc->SetAttribute(domData, AttrMy,                         data.GetPos().y());
-    doc->SetAttribute(domData, AttrLength,                     data.getLength());
-    doc->SetAttribute(domData, VAbstractPattern::AttrRotation, data.getRotation());
-    doc->SetAttribute(domData, VAbstractPattern::AttrArrows,   int(data.getArrowType()));
+    doc->SetAttribute(domData, VAbstractPattern::AttrVisible,     data.IsVisible());
+    doc->SetAttribute(domData, AttrMx,                            data.GetPos().x());
+    doc->SetAttribute(domData, AttrMy,                            data.GetPos().y());
+    doc->SetAttribute(domData, AttrLength,                        data.getLength());
+    doc->SetAttribute(domData, VAbstractPattern::AttrRotation,    data.getRotation());
+    doc->SetAttribute(domData, VAbstractPattern::AttrArrows,      int(data.getArrowType()));
+    doc->SetAttribute(domData, VAbstractPattern::AttrArrowLength, data.getArrowLength());
 
     if (data.centerAnchorPoint() > NULL_ID)
     {
@@ -686,10 +687,11 @@ void PatternPieceTool::updateGrainline()
     if (data.IsVisible() & qApp->Settings()->showGrainlines())
     {
         QPointF pos;
-        qreal dRotation = 0;
-        qreal dLength = 0;
+        qreal rotation = 0;
+        qreal length = 0;
+        qreal arrowLength = 0;
 
-        const VGrainlineItem::MoveTypes type = findGrainlineGeometry(data, dLength, dRotation, pos);
+        const VGrainlineItem::MoveTypes type = findGrainlineGeometry(data, length, rotation, arrowLength, pos);
         if (type & VGrainlineItem::Error)
         {
             m_grainLine->hide();
@@ -697,8 +699,8 @@ void PatternPieceTool::updateGrainline()
         }
 
         m_grainLine->setMoveType(type);
-        m_grainLine->updateGeometry(pos, dRotation, ToPixel(dLength, *VDataTool::data.GetPatternUnit()),
-                                    data.getArrowType());
+        m_grainLine->updateGeometry(pos, rotation, ToPixel(length, *VDataTool::data.GetPatternUnit()),
+                                    data.getArrowType(), ToPixel(arrowLength, *VDataTool::data.GetPatternUnit()));
         m_grainLine->show();
     }
     else
@@ -893,7 +895,11 @@ void PatternPieceTool::paint(QPainter *painter, const QStyleOptionGraphicsItem *
                                 lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
 
         QBrush brush = QBrush(QColor(piece.getColor()));
-        brush.setStyle(static_cast<Qt::BrushStyle>(fills().indexOf(QRegExp(piece.getFill()))));
+
+        //set pattern piece color & brush style
+        int index = fills().indexOf(piece.getFill());
+        if (index < 0) { index = 0; } // empty/unknown fill -> Qt::NoBrush; avoids invalid BrushStyle(-1) crash on Qt 6.11
+        brush.setStyle(static_cast<Qt::BrushStyle>(index));
         brush.setTransform(brush.transform().scale(150.0, 150.0));
         brush.setTransform(painter->combinedTransform().inverted());
         this->setBrush(brush);
@@ -1521,6 +1527,14 @@ void PatternPieceTool::RefreshGeometry()
 
     const VPiece piece = VAbstractTool::data.GetPiece(m_id);
 
+    QString pieceColor = piece.getColor();
+
+    //set pattern piece color & brush style
+    int index = fills().indexOf(piece.getFill());
+    if (index < 0) { index = 0; } // empty/unknown fill -> Qt::NoBrush; avoids invalid BrushStyle(-1) crash on Qt 6.11
+    QBrush newBrush = QBrush(QColor(pieceColor), static_cast<Qt::BrushStyle>(index));
+    this->setBrush(newBrush);
+
     QPainterPath path = piece.MainPathPath(this->getData());
 
     if (!piece.isHideSeamLine() || !piece.IsSeamAllowance() || piece.IsSeamAllowanceBuiltIn())
@@ -1548,6 +1562,7 @@ void PatternPieceTool::RefreshGeometry()
     {
         m_cutPath = piece.SeamAllowancePath(seamAllowancePoints);
         m_cutLine->setPath(m_cutPath);
+        m_pieceRect = m_cutLine->boundingRect();
 
         QPainterPath allowancePath = path;
         allowancePath.addPath(m_cutPath);
@@ -1563,11 +1578,10 @@ void PatternPieceTool::RefreshGeometry()
     {
         m_cutLine->setPath(QPainterPath());
         m_allowanceFill->setPath(QPainterPath());
+        m_pieceRect = path.boundingRect();
     }
 
     m_notches->setPath(piece.getNotchesPath(this->getData(), seamAllowancePoints));
-
-    m_pieceRect = path.boundingRect();
 
     updatePieceDetails();
 
@@ -1751,13 +1765,13 @@ VPieceItem::MoveTypes PatternPieceTool::findLabelGeometry(const VPatternLabelDat
     VPieceItem::MoveTypes restrictions = VPieceItem::AllModifications;
     try
     {
-        if (!qmu::QmuTokenParser::IsSingle(labelData.GetRotation()))
+        if (!qmu::QmuTokenParser::IsSingle(labelData.getRotation()))
         {
             restrictions &= ~ VPieceItem::IsRotatable;
         }
 
         Calculator cal1;
-        rotationAngle = cal1.EvalFormula(VAbstractTool::data.DataVariables(), labelData.GetRotation());
+        rotationAngle = cal1.EvalFormula(VAbstractTool::data.DataVariables(), labelData.getRotation());
     }
     catch(qmu::QmuParserError &error)
     {
@@ -1799,14 +1813,13 @@ VPieceItem::MoveTypes PatternPieceTool::findLabelGeometry(const VPatternLabelDat
 
         Calculator cal1;
         labelWidth = cal1.EvalFormula(VAbstractTool::data.DataVariables(), labelData.GetLabelWidth());
-        qDebug() << " Label width: " << labelWidth;
-        qDebug() << " Label width is single: " << widthIsSingle;
+
         const bool heightIsSingle = qmu::QmuTokenParser::IsSingle(labelData.GetLabelHeight());
 
         Calculator cal2;
         labelHeight = cal2.EvalFormula(VAbstractTool::data.DataVariables(), labelData.GetLabelHeight());
-        qDebug() << " Label height: " << labelHeight;
-        qDebug() << " Label height is single: " << heightIsSingle;
+
+
         if (!widthIsSingle || not heightIsSingle)
         {
             restrictions &= ~ VPieceItem::IsResizable;
@@ -1824,13 +1837,11 @@ VPieceItem::MoveTypes PatternPieceTool::findLabelGeometry(const VPatternLabelDat
         try
         {
             const auto centerAnchorPoint = VAbstractTool::data.GeometricObject<VPointF>(centerAnchor);
-            qDebug() << " Anchor center point: " << centerAnchorPoint;
+
             const qreal lWidth = ToPixel(labelWidth, *VDataTool::data.GetPatternUnit());
             const qreal lHeight = ToPixel(labelHeight, *VDataTool::data.GetPatternUnit());
-            qDebug() << " Label pixel width: " << lWidth;
-            qDebug() << " Label pixel height: " << lHeight;
             pos = static_cast<QPointF>(*centerAnchorPoint) - QRectF(0, 0, lWidth, lHeight).center();
-            qDebug() << " Anchor point position: " << pos;
+
             restrictions &= ~ VPieceItem::IsMovable;
         }
         catch(const VExceptionBadId &)
@@ -1848,7 +1859,7 @@ VPieceItem::MoveTypes PatternPieceTool::findLabelGeometry(const VPatternLabelDat
 
 //---------------------------------------------------------------------------------------------------------------------
 VPieceItem::MoveTypes PatternPieceTool::findGrainlineGeometry(const VGrainlineData &data, qreal &length,
-                                                               qreal &rotationAngle, QPointF &pos)
+                                                              qreal &rotationAngle, qreal &arrowLength, QPointF &pos)
 {
     const quint32 topAnchorPoint = data.topAnchorPoint();
     const quint32 bottomAnchorPoint = data.bottomAnchorPoint();
@@ -1863,6 +1874,16 @@ VPieceItem::MoveTypes PatternPieceTool::findGrainlineGeometry(const VGrainlineDa
             QLineF grainline(static_cast<QPointF>(*bottomAnchor_Point), static_cast<QPointF>(*topAnchor_Point));
             length = FromPixel(grainline.length(), *VDataTool::data.GetPatternUnit());
             rotationAngle = grainline.angle();
+
+            Calculator cal3;
+            arrowLength = cal3.EvalFormula(VAbstractTool::data.DataVariables(), data.getArrowLength());
+
+            // override arrow length formula to ensure that the arrow length does not excede
+            // 1/2 the length of the grainline length when using the top and bottom anchor points.
+            if (arrowLength > length / 2)
+            {
+                arrowLength = length / 2.1;
+            }
 
             if (!VFuzzyComparePossibleNulls(rotationAngle, 0))
             {
@@ -1897,6 +1918,9 @@ VPieceItem::MoveTypes PatternPieceTool::findGrainlineGeometry(const VGrainlineDa
 
         Calculator cal2;
         length = cal2.EvalFormula(VAbstractTool::data.DataVariables(), data.getLength());
+
+        Calculator cal3;
+        arrowLength = cal3.EvalFormula(VAbstractTool::data.DataVariables(), data.getArrowLength());
     }
     catch(qmu::QmuParserError &error)
     {
@@ -2347,12 +2371,12 @@ void PatternPieceTool::renamePiece(VPiece piece)
     }
 }
 
-void PatternPieceTool::showStatus(QString toolTip)
+void PatternPieceTool::showStatus(QString message)
 {
     VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
     SCASSERT(window != nullptr)
 
-    window->ShowToolTip(toolTip);
+    window->setStatusMessage(message);
 }
 
 

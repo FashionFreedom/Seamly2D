@@ -67,7 +67,7 @@ class QGraphicsRectItem;
 class QRectF;
 class QGraphicsItem;
 template <typename T> class QList;
-template <typename T> class QVector;
+// template <typename T> class QVector;
 
 class VLayoutPaper
 {
@@ -82,10 +82,10 @@ public:
     
 //check if the current compiler supports C++11's rvalue references
 #ifdef Q_COMPILER_RVALUE_REFS
-	VLayoutPaper &operator=(VLayoutPaper &&paper) Q_DECL_NOTHROW;
+	VLayoutPaper &operator=(VLayoutPaper &&paper) noexcept;
 #endif
 
-	void    Swap(VLayoutPaper &paper) Q_DECL_NOTHROW;
+	void    Swap(VLayoutPaper &paper) noexcept;
 
     int     GetHeight() const;
     void    setHeight(int height);
@@ -102,7 +102,7 @@ public:
     bool    GetRotate() const;
     void    SetRotate(bool value);
 
-    int     GetRotationIncrease() const;
+    int     getRotationIncrease() const;
     void    SetRotationIncrease(int value);
 
     bool    IsSaveLength() const;

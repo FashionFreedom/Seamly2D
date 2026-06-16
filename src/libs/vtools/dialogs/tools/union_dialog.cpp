@@ -76,8 +76,10 @@ UnionDialog::UnionDialog(const VContainer *data, const quint32 &toolId, QWidget 
     , numberP(0)
     , p1(NULL_ID)
     , p2(NULL_ID)
-    , m_beep(new QSound(qApp->Settings()->getSelectionSound()))
+    , m_beep(new QSoundEffect())
 {
+    m_beep->setSource(QUrl(qApp->Settings()->getSelectionSound()));
+
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/union.png"));
@@ -92,6 +94,7 @@ UnionDialog::UnionDialog(const VContainer *data, const quint32 &toolId, QWidget 
 UnionDialog::~UnionDialog()
 {
     delete ui;
+    delete m_beep;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

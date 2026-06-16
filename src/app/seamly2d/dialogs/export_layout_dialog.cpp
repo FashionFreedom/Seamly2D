@@ -123,6 +123,8 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
         //removeFormatFromList(LayoutExportFormat::PS);
         //removeFormatFromList(LayoutExportFormat::PDF);
         //removeFormatFromList(LayoutExportFormat::EPS);
+
+        ui->binaryDXF_CheckBox->hide();
     }
 #ifdef V_NO_ASSERT // Temporarily unavailable
     removeFormatFromList(LayoutExportFormat::OBJ);
@@ -131,6 +133,7 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
     if (m_mode != Draw::Layout)
     {
         removeFormatFromList(LayoutExportFormat::PDFTiled);
+        ui->tiledPDF_Widget->hide();
     }
     else
     {
@@ -141,6 +144,8 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
     connect(ui->filename_LineEdit, &QLineEdit::textChanged, this, &ExportLayoutDialog::showExportFiles);
     connect(ui->format_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &ExportLayoutDialog::showExportFiles);
+    connect(ui->format_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+            this, &ExportLayoutDialog::enableBinaryDXFFormatCheckbox);
     connect(ui->browse_PushButton, &QPushButton::clicked, this, [this]()
     {
         const QString dirPath = qApp->Seamly2DSettings()->getLayoutPath();
@@ -181,7 +186,11 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
     initTemplates(ui->templates_ComboBox);
 
     readSettings();
-    showExportFiles();//Show example for current format.
+    showExportFiles(); //Show example for current format.
+    enableBinaryDXFFormatCheckbox();
+
+    adjustSize();
+    setFixedHeight(this->height());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -309,6 +318,59 @@ bool ExportLayoutDialog::isBinaryDXFFormat() const
         case LayoutExportFormat::TIF:
         default:
             return false;
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void ExportLayoutDialog::enableBinaryDXFFormatCheckbox()
+{
+    const LayoutExportFormat currentFormat = format();
+
+    switch(currentFormat)
+    {
+    case LayoutExportFormat::DXF_AC1006_Flat:
+    case LayoutExportFormat::DXF_AC1009_Flat:
+    case LayoutExportFormat::DXF_AC1012_Flat:
+    case LayoutExportFormat::DXF_AC1014_Flat:
+    case LayoutExportFormat::DXF_AC1015_Flat:
+    case LayoutExportFormat::DXF_AC1018_Flat:
+    case LayoutExportFormat::DXF_AC1021_Flat:
+    case LayoutExportFormat::DXF_AC1024_Flat:
+    case LayoutExportFormat::DXF_AC1027_Flat:
+    case LayoutExportFormat::DXF_AC1006_AAMA:
+    case LayoutExportFormat::DXF_AC1009_AAMA:
+    case LayoutExportFormat::DXF_AC1012_AAMA:
+    case LayoutExportFormat::DXF_AC1014_AAMA:
+    case LayoutExportFormat::DXF_AC1015_AAMA:
+    case LayoutExportFormat::DXF_AC1018_AAMA:
+    case LayoutExportFormat::DXF_AC1021_AAMA:
+    case LayoutExportFormat::DXF_AC1024_AAMA:
+    case LayoutExportFormat::DXF_AC1027_AAMA:
+    case LayoutExportFormat::DXF_AC1006_ASTM:
+    case LayoutExportFormat::DXF_AC1009_ASTM:
+    case LayoutExportFormat::DXF_AC1012_ASTM:
+    case LayoutExportFormat::DXF_AC1014_ASTM:
+    case LayoutExportFormat::DXF_AC1015_ASTM:
+    case LayoutExportFormat::DXF_AC1018_ASTM:
+    case LayoutExportFormat::DXF_AC1021_ASTM:
+    case LayoutExportFormat::DXF_AC1024_ASTM:
+    case LayoutExportFormat::DXF_AC1027_ASTM:
+        ui->binaryDXF_CheckBox->setEnabled(true);
+        break;
+    case LayoutExportFormat::PDFTiled:
+    case LayoutExportFormat::PNG:
+    case LayoutExportFormat::JPG:
+    case LayoutExportFormat::PDF:
+    case LayoutExportFormat::SVG:
+    case LayoutExportFormat::BMP:
+    case LayoutExportFormat::PPM:
+    case LayoutExportFormat::OBJ:
+    case LayoutExportFormat::PS:
+    case LayoutExportFormat::EPS:
+    case LayoutExportFormat::TIF:
+    default:
+        ui->binaryDXF_CheckBox->setEnabled(false);
+        break;
     }
 }
 
@@ -518,7 +580,7 @@ void ExportLayoutDialog::showExportFiles()
     if (m_mode != Draw::Layout)
     {
 
-        ui->export_GroupBox->hide();
+        ui->export_Frame->hide();
         adjustSize();
         return;
     }
@@ -526,9 +588,8 @@ void ExportLayoutDialog::showExportFiles()
     const LayoutExportFormat currentFormat = format();
     ui->textAsPaths_Checkbox->setEnabled(true);
     ui->quality_Slider->setEnabled(false);
-    ui->paperFormat_GroupBox->setEnabled(false);
-    ui->margins_GroupBox->setEnabled(false);
-    ui->export_GroupBox->show();
+    ui->tiledPDF_Widget->setEnabled(false);
+    ui->export_Frame->show();
     adjustSize();
 
     if (currentFormat == LayoutExportFormat::PDFTiled)
@@ -588,8 +649,7 @@ void ExportLayoutDialog::showExportFiles()
             ui->binaryDXF_CheckBox->setEnabled(true);
             break;
         case LayoutExportFormat::PDFTiled:
-            ui->paperFormat_GroupBox->setEnabled(true);
-            ui->margins_GroupBox->setEnabled(true);
+            ui->tiledPDF_Widget->setEnabled(true);
             break;
         case LayoutExportFormat::PNG:
             ui->quality_Slider->setEnabled(true);
@@ -643,8 +703,6 @@ void ExportLayoutDialog::showEvent(QShowEvent *event)
     {
         return;
     }
-
-    setFixedHeight(size().height());
 
     m_isInitialized = true;//first show windows are held
 }
@@ -763,7 +821,7 @@ void ExportLayoutDialog::writeSettings() const
  */
 QString ExportLayoutDialog::modeString() const
 {
-    QString modeStr = QStringLiteral("");
+    QString modeStr = QStringLiteral();
     if (qApp->Seamly2DSettings()->useModeType())
     {
         switch (m_mode)

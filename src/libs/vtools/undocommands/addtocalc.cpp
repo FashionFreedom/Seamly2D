@@ -100,6 +100,7 @@ void AddToCalc::undo()
         return;
     }
     emit NeedFullParsing();
+    emit doc->FullUpdateFromFile();
     VMainGraphicsView::NewSceneRect(qApp->getCurrentScene(), qApp->getSceneView());
     doc->setCurrentDraftBlock(activeBlockName);//Return current pattern piece after undo
 }
@@ -148,6 +149,7 @@ void AddToCalc::RedoFullParsing()
     if (redoFlag)
     {
         emit NeedFullParsing();
+        emit doc->FullUpdateFromFile();
         doc->setCurrentDraftBlock(activeBlockName);//Return current pattern piece after undo
     }
     else

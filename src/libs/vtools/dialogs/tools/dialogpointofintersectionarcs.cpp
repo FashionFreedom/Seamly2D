@@ -82,9 +82,9 @@ DialogPointOfIntersectionArcs::DialogPointOfIntersectionArcs(const VContainer *d
     initializeOkCancelApply(ui);
     DialogTool::CheckState();
 
-    FillComboBoxArcs(ui->comboBoxArc1);
-    FillComboBoxArcs(ui->comboBoxArc2);
-    FillComboBoxCrossCirclesPoints(ui->comboBoxResult);
+    fillComboBoxArcs(ui->comboBoxArc1);
+    fillComboBoxArcs(ui->comboBoxArc2);
+    fillComboBoxCrossCirclesPoints(ui->comboBoxResult);
 
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged,  this, &DialogPointOfIntersectionArcs::NamePointChanged);
     connect(ui->comboBoxArc1,      &QComboBox::currentTextChanged, this, &DialogPointOfIntersectionArcs::ArcChanged);

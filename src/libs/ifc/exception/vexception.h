@@ -71,17 +71,17 @@ public:
     VException &operator=(const VException &error);
     virtual ~VException() V_NOEXCEPT_EXPR (true) Q_DECL_EQ_DEFAULT;
 
-    Q_NORETURN virtual void raise() const Q_DECL_OVERRIDE;
+    Q_NORETURN virtual void raise() const override;
 
     // cppcheck-suppress unusedFunction
-    Q_REQUIRED_RESULT virtual VException *clone() const Q_DECL_OVERRIDE;
+    Q_REQUIRED_RESULT virtual VException *clone() const override;
 
     virtual QString ErrorMessage() const;
     virtual QString DetailedInformation() const;
     QString         WhatUtf8() const V_NOEXCEPT_EXPR (true);
     void            AddMoreInformation(const QString &info);
     QString         MoreInformation() const;
-    virtual const char* what() const V_NOEXCEPT_EXPR (true) Q_DECL_OVERRIDE;
+    virtual const char* what() const V_NOEXCEPT_EXPR (true) override;
 
 protected:
     /** @brief error string with error */
@@ -123,9 +123,9 @@ public:
     VExceptionToolWasDeleted &operator=(const VExceptionToolWasDeleted &error);
     virtual ~VExceptionToolWasDeleted() V_NOEXCEPT_EXPR (true) Q_DECL_EQ_DEFAULT;
 
-    Q_NORETURN virtual void raise() const Q_DECL_OVERRIDE;
+    Q_NORETURN virtual void raise() const override;
     // cppcheck-suppress unusedFunction
-    virtual VExceptionToolWasDeleted *clone() const Q_DECL_OVERRIDE;
+    virtual VExceptionToolWasDeleted *clone() const override;
 };
 
 #endif // VEXCEPTION_H

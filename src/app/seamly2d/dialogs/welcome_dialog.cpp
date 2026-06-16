@@ -26,17 +26,17 @@
 #include "ui_welcome_dialog.h"
 
 #include "../core/application_2d.h"
+#include "../qmuparser/qmudef.h"
 
 #include <QPushButton>
 #include <QShowEvent>
-#include <QSound>
+#include <QSoundEffect>
 
 
 //---------------------------------------------------------------------------------------------------------------------
 SeamlyWelcomeDialog::SeamlyWelcomeDialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::SeamlyWelcomeDialog)
-    , m_langChanged(false)
     , m_selectionSoundChanged(false)
     , settings(qApp->Seamly2DSettings())
 {
@@ -47,17 +47,21 @@ SeamlyWelcomeDialog::SeamlyWelcomeDialog(QWidget *parent)
     initUnits();
 
     //-------------------- Decimal separator setup
-    ui->separator_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
-    ui->separator_CheckBox->setChecked(settings->getOsSeparator());
-    connect(ui->separator_CheckBox, &QCheckBox::stateChanged, this, &SeamlyWelcomeDialog::seperatorChanged);
+    if (settings->getOsSeparator())
+    {
+        ui->userLocale_RadioButton->setChecked(true);
+    }
+    else
+    {
+        ui->cLocale_RadioButton->setChecked(true);
+    }
+    setLocaleTooltip(QLocale::c(), ui->cLocale_RadioButton);
+    setLocaleTooltip(QLocale(), ui->userLocale_RadioButton);
 
     //-------------------- Languages setup
     InitLanguages(ui->language_ComboBox);
     connect(ui->language_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, [this]()
-    {
-        m_langChanged = true;
-    });
+            this, &SeamlyWelcomeDialog::languageChanged);
 
     //-------------------- Selection sound
     int index = ui->selectionSound_ComboBox->findText(settings->getSound());
@@ -68,7 +72,9 @@ SeamlyWelcomeDialog::SeamlyWelcomeDialog(QWidget *parent)
     connect(ui->selectionSound_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
     {
         m_selectionSoundChanged = true;
-        QSound::play("qrc:/sounds/" + ui->selectionSound_ComboBox->currentText() + ".wav");
+        QSoundEffect effect;
+        effect.setSource(QUrl("qrc:/sounds/" + ui->selectionSound_ComboBox->currentText() + ".wav"));
+        effect.play();
     });
 
     ui->doNotShow_CheckBox->setChecked(settings->getShowWelcome());
@@ -89,16 +95,16 @@ SeamlyWelcomeDialog::~SeamlyWelcomeDialog()
 void SeamlyWelcomeDialog::apply()
 {
     settings->SetUnit(qvariant_cast<QString>(ui->units_ComboBox->currentData()));
-    settings->setOsSeparator(ui->separator_CheckBox->isChecked());
+    if (ui->cLocale_RadioButton->isChecked())
+    {
+        settings->setOsSeparator(false);
+    }
+    else
+    {
+        settings->setOsSeparator(true);
+    }
     settings->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
     settings->setShowWelcome(ui->doNotShow_CheckBox->isChecked());
-
-    if (m_langChanged)
-    {
-        const QString locale = qvariant_cast<QString>(ui->language_ComboBox->currentData());
-        settings->setLocale(locale);
-        m_langChanged = false;
-    }
 
     if (m_selectionSoundChanged)
     {
@@ -108,31 +114,6 @@ void SeamlyWelcomeDialog::apply()
     }
 
     done(QDialog::Accepted);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-// @brief changeEvent handle event changes
-//---------------------------------------------------------------------------------------------------------------------
-void SeamlyWelcomeDialog::changeEvent(QEvent *event)
-{
-    if (event->type() == QEvent::LanguageChange)
-    {
-        // retranslate designer form (single inheritance approach)
-        ui->retranslateUi(this);
-        ui->separator_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
-    }
-
-    // remember to call base class implementation
-    QDialog::changeEvent(event);
-}
-
-// @brief seperatorChanged handle change in decimal seperator
-void SeamlyWelcomeDialog::seperatorChanged()
-{
-    QString seperator = ui->separator_CheckBox->isChecked() ? QString(QLocale().decimalPoint())
-                                                            : QString(QLocale::c().decimalPoint());
-
-    ui->separator_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(seperator));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -150,4 +131,44 @@ void SeamlyWelcomeDialog::initUnits()
     {
         ui->units_ComboBox->setCurrentIndex(index);
     }
+}
+
+void SeamlyWelcomeDialog::languageChanged(int index)
+{
+    const QString locale = qvariant_cast<QString>(ui->language_ComboBox->itemData(index));
+    settings->setLocale(locale);
+    qApp->loadTranslations(locale);
+    ui->retranslateUi(this);
+    ui->units_ComboBox->setItemText(0, tr("Centimeters"));
+    ui->units_ComboBox->setItemText(1, tr("Millimeters"));
+    ui->units_ComboBox->setItemText(2, tr("Inches"));
+}
+
+void SeamlyWelcomeDialog::setLocaleTooltip(QLocale locale, QRadioButton *button)
+{
+    const QString toolTipStr = QString("<table style=font-size:12pt; font-weight:600>"
+                                       "<tr> <td><b>%1: </b></b></td><td> %2</td> </tr>"
+                                       "<tr> <td><b>%3: </b></b></td><td> %4</td> </tr>"
+                                       "<tr> <td><b>%5: </b></b></td><td> %6</td> </tr>"
+                                       "<tr> <td><b>%7: </b></b></td><td> %8</td> </tr>"
+                                       "<tr> <td><b>%9: </b></b></td><td> %10</td> </tr>"
+                                       "<tr> <td><b>%11: </b></b></td><td> %12</td> </tr>"
+                                       "<tr> <td><b>%13: </b></b></td><td> %14</td> </tr>"
+                                       "</table>")
+                                       .arg(tr("Locale"))                                 //1
+                                       .arg(locale.name())                                //2
+                                       .arg(tr("Country"))                                //3
+                                       .arg(QLocale::countryToString(locale.country()))   //4
+                                       .arg(tr("Language"))                               //5
+                                       .arg(QLocale::languageToString(locale.language())) //6
+                                       .arg(tr("Group Separator"))                        //7
+                                       .arg(locale.groupSeparator())                      //8
+                                       .arg(tr("Decimal Point"))                          //9
+                                       .arg(locale.decimalPoint())                        //10
+                                       .arg(tr("Negative Sign"))                          //11
+                                       .arg(locale.negativeSign())                        //12
+                                       .arg(tr("Positive Sign"))                          //13
+                                       .arg(locale.positiveSign());                       //14
+
+    button->setToolTip(toolTipStr);
 }

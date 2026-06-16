@@ -72,7 +72,7 @@ class VToolSpline:public VAbstractSpline
     Q_OBJECT
 public:
     virtual      ~VToolSpline() = default;
-    virtual void  setDialog() Q_DECL_OVERRIDE;
+    virtual void  setDialog() override;
     static VToolSpline *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene, VAbstractPattern *doc,
                                VContainer *data);
     static VToolSpline *Create(const quint32 _id, VSpline *spline,
@@ -81,42 +81,54 @@ public:
     static VToolSpline *Create(const quint32 _id, quint32 point1, quint32 point4, QString &a1, QString &a2, QString &l1,
                                QString &l2, quint32 duplicate, const QString &color, const QString &penStyle,
                                const QString &lineWeight, VMainGraphicsScene *scene, VAbstractPattern *doc,
-                               VContainer *data, const Document &parse, const Source &typeCreation);
+                               VContainer *data, const Document &parse, const Source &typeCreation,
+                               const QString &targetLength = QString(), bool autoSmooth = false);
     static const QString ToolType;
     static const QString OldToolType;
-    virtual int   type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int   type() const override {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::Spline)};
 
     VSpline       getSpline()const;
     void          setSpline(const VSpline &spl);
 
-    virtual void  ShowVisualization(bool show) Q_DECL_OVERRIDE;
+    // Optional features added to "Kurve Interaktiv"
+    QString       GetTargetLength() const { return m_targetLength; }
+    void          SetTargetLength(const QString &value);
+    bool          GetAutoSmooth() const { return m_autoSmooth; }
+    void          SetAutoSmooth(bool value);
+
+    virtual void  ShowVisualization(bool show) override;
 
 public slots:
     void          controlPointPositionChanged(const qint32 &splineIndex, const SplinePointPosition &position,
                                              const QPointF &pos);
-    virtual void  EnableToolMove(bool move) Q_DECL_OVERRIDE;
+    virtual void  EnableToolMove(bool move) override;
 
 protected slots:
-    virtual void  showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) Q_DECL_OVERRIDE;
+    virtual void  showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
 
 protected:
-    virtual void  RemoveReferens() Q_DECL_OVERRIDE;
-    virtual void  SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void  SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
-    virtual void  mousePressEvent(QGraphicsSceneMouseEvent * event) Q_DECL_OVERRIDE;
-    virtual void  mouseReleaseEvent ( QGraphicsSceneMouseEvent * event ) Q_DECL_OVERRIDE;
-    virtual void  mouseMoveEvent(QGraphicsSceneMouseEvent * event) Q_DECL_OVERRIDE;
-    virtual void  hoverEnterEvent ( QGraphicsSceneHoverEvent * event ) Q_DECL_OVERRIDE;
-    virtual void  hoverLeaveEvent ( QGraphicsSceneHoverEvent * event ) Q_DECL_OVERRIDE;
-    virtual void  SetVisualization() Q_DECL_OVERRIDE;
-    virtual void  refreshCtrlPoints() Q_DECL_OVERRIDE;
+    virtual void  RemoveReferens() override;
+    virtual void  SaveDialog(QDomElement &domElement) override;
+    virtual void  SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
+    virtual void  mousePressEvent(QGraphicsSceneMouseEvent * event) override;
+    virtual void  mouseReleaseEvent ( QGraphicsSceneMouseEvent * event ) override;
+    virtual void  mouseMoveEvent(QGraphicsSceneMouseEvent * event) override;
+    virtual void  hoverEnterEvent ( QGraphicsSceneHoverEvent * event ) override;
+    virtual void  hoverLeaveEvent ( QGraphicsSceneHoverEvent * event ) override;
+    virtual void  SetVisualization() override;
+    virtual void  refreshCtrlPoints() override;
 
 private:
     Q_DISABLE_COPY(VToolSpline)
     QPointF       oldPosition;
 
+    // Optional features: empty/false = classic behavior (State 1)
+    QString       m_targetLength;
+    bool          m_autoSmooth;
+
                   VToolSpline (VAbstractPattern *doc, VContainer *data, quint32 id,
+                               const QString &targetLength, bool autoSmooth,
                                const Source &typeCreation, QGraphicsItem * parent = nullptr );
 
     bool          IsMovable() const;

@@ -325,7 +325,7 @@ QListWidget::item:selected {
         <enum>QFrame::Sunken</enum>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>5</number>
        </property>
        <widget class="QWidget" name="properties_Page">
         <layout class="QVBoxLayout" name="verticalLayout_19">
@@ -350,7 +350,7 @@ QListWidget::item:selected {
             </font>
            </property>
            <property name="title">
-            <string>Poperties</string>
+            <string>Properties</string>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_31">
             <item>
@@ -776,12 +776,12 @@ QListWidget::item:selected {
                 </item>
                 <item>
                  <property name="text">
-                  <string>CW X</string>
+                  <string notr="true">CW X</string>
                  </property>
                 </item>
                 <item>
                  <property name="text">
-                  <string>CCW X</string>
+                  <string notr="true">CCW X</string>
                  </property>
                 </item>
                </widget>
@@ -4107,7 +4107,17 @@ QListWidget::item:selected {
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_15">
          <item>
-          <widget class="QGroupBox" name="grainline_GroupBox">
+          <widget class="QCheckBox" name="showGrainline_CheckBox">
+           <property name="text">
+            <string>Show grainline</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="grainlineGeometry_GroupBox">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -4121,10 +4131,10 @@ QListWidget::item:selected {
             </font>
            </property>
            <property name="title">
-            <string>Show grainline</string>
+            <string>Geometry</string>
            </property>
            <property name="checkable">
-            <bool>true</bool>
+            <bool>false</bool>
            </property>
            <property name="checked">
             <bool>false</bool>
@@ -4133,7 +4143,7 @@ QListWidget::item:selected {
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_11">
               <item alignment="Qt::AlignLeft">
-               <widget class="QLabel" name="labelEditRot">
+               <widget class="QLabel" name="rotation_Label">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                   <horstretch>0</horstretch>
@@ -4198,7 +4208,7 @@ QListWidget::item:selected {
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="labelRot">
+               <widget class="QLabel" name="rotationCalc_Label">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                   <horstretch>0</horstretch>
@@ -4323,7 +4333,7 @@ QListWidget::item:selected {
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_13">
               <item alignment="Qt::AlignLeft">
-               <widget class="QLabel" name="labelEditLen">
+               <widget class="QLabel" name="length_Label">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                   <horstretch>0</horstretch>
@@ -4388,7 +4398,7 @@ QListWidget::item:selected {
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="labelLen">
+               <widget class="QLabel" name="lengthCalc_Label">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                   <horstretch>0</horstretch>
@@ -4700,7 +4710,7 @@ QListWidget::item:selected {
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>0</height>
+             <height>150</height>
             </size>
            </property>
            <property name="font">
@@ -4762,6 +4772,141 @@ QListWidget::item:selected {
                   <pointsize>9</pointsize>
                   <bold>false</bold>
                  </font>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <item>
+               <widget class="QLabel" name="arrowLength_Label">
+                <property name="minimumSize">
+                 <size>
+                  <width>90</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>9</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Length:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="arowLengthCalc_Label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>40</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string notr="true">_</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_30">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QToolButton" name="arrowLength_PushButton">
+                <property name="maximumSize">
+                 <size>
+                  <width>24</width>
+                  <height>24</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>Formula wizard</string>
+                </property>
+                <property name="text">
+                 <string notr="true">...</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../../../../vmisc/share/resources/icon.qrc">
+                  <normaloff>:/icon/24x24/fx.png</normaloff>:/icon/24x24/fx.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>24</width>
+                  <height>24</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QFormLayout" name="formLayout_16">
+              <item row="0" column="0">
+               <spacer name="horizontalSpacer_31">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>90</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="1">
+               <widget class="QPlainTextEdit" name="arrowlLengthFormula_LineEdit">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>80</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>9</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="toolTip">
+                 <string>Calculation</string>
+                </property>
+                <property name="tabChangesFocus">
+                 <bool>true</bool>
+                </property>
+                <property name="plainText">
+                 <string notr="true">.5</string>
                 </property>
                </widget>
               </item>
@@ -5369,7 +5514,7 @@ QListWidget::item:selected {
                      <bool>false</bool>
                     </property>
                     <property name="suffix">
-                     <string>  °</string>
+                     <string notr="true">  °</string>
                     </property>
                     <property name="decimals">
                      <number>3</number>
@@ -5727,8 +5872,8 @@ QListWidget::item:selected {
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../../../vmisc/share/resources/icon.qrc"/>
   <include location="../../../../vmisc/share/resources/theme.qrc"/>
+  <include location="../../../../vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections>
   <connection>

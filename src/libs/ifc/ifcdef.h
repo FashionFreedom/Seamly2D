@@ -129,6 +129,7 @@ extern const QString AttrAngle2;
 extern const QString AttrRotationAngle;
 extern const QString AttrLength1;
 extern const QString AttrLength2;
+extern const QString AttrAutoSmooth;
 extern const QString AttrP1Line;
 extern const QString AttrP2Line;
 extern const QString AttrP1Line1;
@@ -185,6 +186,8 @@ extern const QString LineTypeDashLine;
 extern const QString LineTypeDotLine;
 extern const QString LineTypeDashDotLine;
 extern const QString LineTypeDashDotDotLine;
+
+extern const QString DefaultLineWeight;
 
 QStringList            LineTypes();
 Qt::PenStyle           lineTypeToPenStyle(const QString &lineType);

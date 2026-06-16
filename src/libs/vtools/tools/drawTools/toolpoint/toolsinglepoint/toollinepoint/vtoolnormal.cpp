@@ -53,9 +53,7 @@
 
 #include <QLineF>
 #include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <new>
 
 #include "../../../../../dialogs/tools/dialognormal.h"
@@ -317,7 +315,7 @@ void VToolNormal::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 void VToolNormal::ReadToolAttributes(const QDomElement &domElement)
 {
     m_lineType    = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
-    m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight,  "0.35");
+    m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight,  DefaultLineWeight); 
     lineColor     = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
     formulaLength = doc->GetParametrString(domElement, AttrLength, "");
     basePointId   = doc->GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);

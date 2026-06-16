@@ -61,7 +61,28 @@
 
 #include <QPushButton>
 #include <QShowEvent>
-#include <QTextCodec>
+#include <QStringConverter>
+
+namespace
+{
+// Helper function to get encoding name as QString
+QString encodingName(QStringConverter::Encoding encoding)
+{
+    switch (encoding)
+    {
+        case QStringConverter::Utf8: return QStringLiteral("UTF-8");
+        case QStringConverter::Utf16: return QStringLiteral("UTF-16");
+        case QStringConverter::Utf16BE: return QStringLiteral("UTF-16BE");
+        case QStringConverter::Utf16LE: return QStringLiteral("UTF-16LE");
+        case QStringConverter::Utf32: return QStringLiteral("UTF-32");
+        case QStringConverter::Utf32BE: return QStringLiteral("UTF-32BE");
+        case QStringConverter::Utf32LE: return QStringLiteral("UTF-32LE");
+        case QStringConverter::Latin1: return QStringLiteral("ISO-8859-1");
+        case QStringConverter::System: return QStringLiteral("System");
+        default: return QStringLiteral("UTF-8");
+    }
+}
+} // anonymous namespace
 
 //---------------------------------------------------------------------------------------------------------------------
 DialogExportToCSV::DialogExportToCSV(QWidget *parent)
@@ -74,9 +95,22 @@ DialogExportToCSV::DialogExportToCSV(QWidget *parent)
 
     ui->checkBoxWithHeader->setChecked(qApp->Settings()->GetCSVWithHeader());
 
-    foreach (int mib, QTextCodec::availableMibs())
+    // Populate combo box with available QStringConverter encodings
+    const QList<QStringConverter::Encoding> encodings = {
+        QStringConverter::Utf8,
+        QStringConverter::Utf16,
+        QStringConverter::Utf16BE,
+        QStringConverter::Utf16LE,
+        QStringConverter::Utf32,
+        QStringConverter::Utf32BE,
+        QStringConverter::Utf32LE,
+        QStringConverter::Latin1,
+        QStringConverter::System
+    };
+
+    for (const QStringConverter::Encoding encoding : encodings)
     {
-        ui->comboBoxCodec->addItem(QTextCodec::codecForMib(mib)->name(), mib);
+        ui->comboBoxCodec->addItem(encodingName(encoding), static_cast<int>(encoding));
     }
 
     ui->comboBoxCodec->setCurrentIndex(ui->comboBoxCodec->findData(qApp->Settings()->GetCSVCodec()));
@@ -107,9 +141,9 @@ bool DialogExportToCSV::WithHeader() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int DialogExportToCSV::SelectedMib() const
+QStringConverter::Encoding DialogExportToCSV::SelectedEncoding() const
 {
-    return ui->comboBoxCodec->currentData().toInt();
+    return static_cast<QStringConverter::Encoding>(ui->comboBoxCodec->currentData().toInt());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -66,10 +66,10 @@
 const double VGObject::accuracyPointOnLine = (0.1555/*mm*/ / 25.4) * 96.0;
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VGObject &VGObject::operator=(VGObject &&obj) Q_DECL_NOTHROW { Swap(obj); return *this; }
+VGObject &VGObject::operator=(VGObject &&obj) noexcept { Swap(obj); return *this; }
 #endif
 
-void VGObject::Swap(VGObject &obj) Q_DECL_NOTHROW
+void VGObject::Swap(VGObject &obj) noexcept
 { std::swap(d, obj.d); }
 
 //---------------------------------------------------------------------------------------------------------------------
