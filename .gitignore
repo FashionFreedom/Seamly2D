@@ -172,3 +172,10 @@ target_wrapper.sh
 .qtc_clangd/
 .vscode/
 .qmake.stash
+
+# Local build artifacts
+build_log*.txt
+crashlog.txt
+fix_test.txt
+deploy-portable/
+
