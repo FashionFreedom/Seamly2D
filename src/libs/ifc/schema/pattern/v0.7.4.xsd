@@ -309,6 +309,7 @@
                           <xs:attribute name="kAsm2" type="xs:double"/>
                           <xs:attribute name="angle1" type="xs:string"/>
                           <xs:attribute name="angle2" type="xs:string"/>
+                          <xs:attribute name="length" type="xs:string"/>
                           <xs:attribute name="length1" type="xs:string"/>
                           <xs:attribute name="length2" type="xs:string"/>
                           <xs:attribute name="point1" type="xs:unsignedInt"/>
@@ -319,6 +320,7 @@
                           <xs:attribute name="penStyle" type="curvePenStyle"/>
                           <xs:attribute name="lineWeight" type="lineWeights"/>
                           <xs:attribute name="duplicate" type="xs:unsignedInt"/>
+                          <xs:attribute name="autoSmooth" type="xs:boolean"/>
                         </xs:complexType>
                       </xs:element>
                     </xs:choice>
