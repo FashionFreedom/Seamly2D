@@ -266,6 +266,30 @@ void VToolSpline::setSpline(const VSpline &spl)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+bool VToolSpline::GetAutoSmooth() const
+{
+    return false;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolSpline::SetAutoSmooth(bool value)
+{
+    Q_UNUSED(value)
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VToolSpline::GetTargetLength() const
+{
+    return QString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolSpline::SetTargetLength(const QString &value)
+{
+    Q_UNUSED(value)
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VToolSpline::ShowVisualization(bool show)
 {
     ShowToolVisualization<VisToolSpline>(show);

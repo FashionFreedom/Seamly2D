@@ -640,6 +640,16 @@ void VToolOptionsPropertyBrowser::addPropertyLabel(const QString &propertyName, 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::addPropertyEnum(const QString &propertyName, const QStringList &options,
+                                                   int currentIndex, const QString &propertyAttribute)
+{
+    VPE::VEnumProperty *property = new VPE::VEnumProperty(propertyName);
+    property->setLiterals(options);
+    property->setValue(currentIndex);
+    addProperty(property, propertyAttribute);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
 void VToolOptionsPropertyBrowser::addPropertyCrossPoint(Tool *tool, const QString &propertyName)
 {
@@ -2859,6 +2869,16 @@ void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
     angle2.setPostfix(degreeSymbol);
     addPropertyFormula(tr("C2: angle:"), angle2, AttrAngle2);
 
+    addPropertyLabel(tr("Options"), AttrName);
+    addPropertyEnum(tr("Smooth curve:"), {tr("No"), tr("Yes")},
+                    tool->GetAutoSmooth() ? 1 : 0, AttrAutoSmooth);
+
+    VFormula curveLen(tool->GetTargetLength(), tool->getData());
+    curveLen.setCheckZero(false);
+    curveLen.setToolId(tool->getId());
+    curveLen.setPostfix(UnitsToStr(qApp->patternUnit()));
+    addPropertyFormula(tr("Curve length:"), curveLen, AttrLength);
+
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
     addPropertyCurveLineType(tool, tr("Linetype:"));
@@ -2879,6 +2899,16 @@ void VToolOptionsPropertyBrowser::showOptionsToolCubicBezier(QGraphicsItem *item
     addObjectProperty(tool, spl.GetP2().name(), tr("Second point:"), AttrPoint2, GOType::Point);
     addObjectProperty(tool, spl.GetP3().name(), tr("Third point:"),  AttrPoint3, GOType::Point);
     addObjectProperty(tool, spl.GetP4().name(), tr("Fourth point:"), AttrPoint4, GOType::Point);
+
+    addPropertyLabel(tr("Options"), AttrName);
+    addPropertyEnum(tr("Smooth curve:"), {tr("No"), tr("Yes")},
+                    tool->GetAutoSmooth() ? 1 : 0, AttrAutoSmooth);
+
+    VFormula curveLen(tool->GetTargetLength(), tool->getData());
+    curveLen.setCheckZero(false);
+    curveLen.setToolId(tool->getId());
+    curveLen.setPostfix(UnitsToStr(qApp->patternUnit()));
+    addPropertyFormula(tr("Curve length:"), curveLen, AttrLength);
 
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
@@ -4223,6 +4253,7 @@ QStringList VToolOptionsPropertyBrowser::propertiesList() const
                                             << AttrPenStyle                       /* 59 */
                                             << AttrLineWeight                     /* 60 */
                                             << AttrObjName                        /* 61 */
-                                            << AttrDirection;                     /* 62 */
+                                            << AttrDirection                      /* 62 */
+                                            << AttrAutoSmooth;                    /* 63 */
     return attr;
 }
