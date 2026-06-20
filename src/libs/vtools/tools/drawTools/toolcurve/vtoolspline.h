@@ -90,6 +90,12 @@ public:
     VSpline       getSpline()const;
     void          setSpline(const VSpline &spl);
 
+    bool          GetAutoSmooth() const;
+    void          SetAutoSmooth(bool value);
+
+    QString       GetTargetLength() const;
+    void          SetTargetLength(const QString &value);
+
     virtual void  ShowVisualization(bool show) override;
 
 public slots:

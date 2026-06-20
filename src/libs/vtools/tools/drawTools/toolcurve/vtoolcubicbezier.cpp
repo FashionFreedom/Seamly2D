@@ -206,6 +206,30 @@ void VToolCubicBezier::setSpline(const VCubicBezier &spl)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+bool VToolCubicBezier::GetAutoSmooth() const
+{
+    return false;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolCubicBezier::SetAutoSmooth(bool value)
+{
+    Q_UNUSED(value)
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VToolCubicBezier::GetTargetLength() const
+{
+    return QString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolCubicBezier::SetTargetLength(const QString &value)
+{
+    Q_UNUSED(value)
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VToolCubicBezier::ShowVisualization(bool show)
 {
     ShowToolVisualization<VisToolCubicBezier>(show);

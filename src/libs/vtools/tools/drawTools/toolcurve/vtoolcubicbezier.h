@@ -91,6 +91,12 @@ public:
     VCubicBezier         getSpline()const;
     void                 setSpline(const VCubicBezier &spl);
 
+    bool                 GetAutoSmooth() const;
+    void                 SetAutoSmooth(bool value);
+
+    QString              GetTargetLength() const;
+    void                 SetTargetLength(const QString &value);
+
     virtual void         ShowVisualization(bool show) override;
 
 
