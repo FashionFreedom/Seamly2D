@@ -2012,6 +2012,14 @@ void VToolOptionsPropertyBrowser::changeDataToolSpline(VPE::VProperty *property)
         case 60: // AttrLineWeight
             tool->setLineWeight(value.toString());
             break;
+        case 4: // AttrLength — curve length formula (not yet functional)
+            break;
+        case 63: // AttrAutoSmooth
+        {
+            const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
+            tool->SetAutoSmooth(enumVal.toInt() == 1);
+            break;
+        }
         default:
             qWarning() << "Unknown property type. id = "<<id;
             break;
@@ -2066,6 +2074,14 @@ void VToolOptionsPropertyBrowser::changeDataToolCubicBezier(VPE::VProperty *prop
             spline.SetP4(point);
             tool->setSpline(spline);
             break;
+        case 4: // AttrLength — curve length formula (not yet functional)
+            break;
+        case 63: // AttrAutoSmooth
+        {
+            const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
+            tool->SetAutoSmooth(enumVal.toInt() == 1);
+            break;
+        }
         default:
             qWarning() << "Unknown property type. id = "<<id;
             break;
@@ -3860,6 +3876,11 @@ void VToolOptionsPropertyBrowser::updateOptionsToolSpline()
         const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
         idToProperty[AttrLineWeight]->setValue(index);
     }
+
+    if (idToProperty.contains(AttrAutoSmooth))
+    {
+        idToProperty[AttrAutoSmooth]->setValue(tool->GetAutoSmooth() ? 1 : 0);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3904,6 +3925,11 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezier()
         const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
                                                                                spl.GetP4().name());
         idToProperty[AttrPoint4]->setValue(index);
+    }
+
+    if (idToProperty.contains(AttrAutoSmooth))
+    {
+        idToProperty[AttrAutoSmooth]->setValue(tool->GetAutoSmooth() ? 1 : 0);
     }
 }
 

@@ -79,8 +79,10 @@ const QString VToolCubicBezier::ToolType = QStringLiteral("cubicBezier");
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolCubicBezier::VToolCubicBezier(VAbstractPattern *doc, VContainer *data, quint32 id,
+                                   bool autoSmooth,
                                    const Source &typeCreation, QGraphicsItem *parent)
     : VAbstractSpline(doc, data, id, parent)
+    , m_autoSmooth(autoSmooth)
 {
     m_sceneType = SceneObject::Spline;
 
@@ -97,6 +99,7 @@ void VToolCubicBezier::setDialog()
     SCASSERT(dialogTool != nullptr)
     const auto spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
     dialogTool->SetSpline(*spl);
+    dialogTool->SetAutoSmooth(m_autoSmooth);
     dialogTool->setLineColor(spl->getLineColor());
     dialogTool->setPenStyle(spl->GetPenStyle());
     dialogTool->setLineWeight(spl->getLineWeight());
@@ -114,8 +117,9 @@ VToolCubicBezier *VToolCubicBezier::Create(QSharedPointer<DialogTool> dialog, VM
     spline->setLineColor(dialogTool->getLineColor());
     spline->SetPenStyle(dialogTool->getPenStyle());
     spline->setLineWeight(dialogTool->getLineWeight());
+    const bool autoSmooth = dialogTool->GetAutoSmooth();
 
-    auto spl = Create(0, spline, scene, doc, data, Document::FullParse, Source::FromGui);
+    auto spl = Create(0, spline, autoSmooth, scene, doc, data, Document::FullParse, Source::FromGui);
 
     if (spl != nullptr)
     {
@@ -125,9 +129,11 @@ VToolCubicBezier *VToolCubicBezier::Create(QSharedPointer<DialogTool> dialog, VM
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolCubicBezier *VToolCubicBezier::Create(const quint32 _id, VCubicBezier *spline, VMainGraphicsScene *scene,
-                                           VAbstractPattern *doc, VContainer *data, const Document &parse,
-                                           const Source &typeCreation)
+VToolCubicBezier *VToolCubicBezier::Create(const quint32 _id, VCubicBezier *spline,
+                                           bool autoSmooth,
+                                           VMainGraphicsScene *scene,
+                                           VAbstractPattern *doc, VContainer *data,
+                                           const Document &parse, const Source &typeCreation)
 {
     quint32 id = _id;
     if (typeCreation == Source::FromGui)
@@ -148,13 +154,13 @@ VToolCubicBezier *VToolCubicBezier::Create(const quint32 _id, VCubicBezier *spli
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::CubicBezier, doc);
-        auto _spl = new VToolCubicBezier(doc, data, id, typeCreation);
+        auto _spl = new VToolCubicBezier(doc, data, id, autoSmooth, typeCreation);
         scene->addItem(_spl);
         initSplineToolConnections(scene, _spl);
         VAbstractPattern::AddTool(id, _spl);
         doc->IncrementReferens(spline->GetP1().getIdTool());
-        doc->IncrementReferens(spline->GetP1().getIdTool());
-        doc->IncrementReferens(spline->GetP1().getIdTool());
+        doc->IncrementReferens(spline->GetP2().getIdTool());
+        doc->IncrementReferens(spline->GetP3().getIdTool());
         doc->IncrementReferens(spline->GetP4().getIdTool());
         return _spl;
     }
@@ -208,13 +214,15 @@ void VToolCubicBezier::setSpline(const VCubicBezier &spl)
 //---------------------------------------------------------------------------------------------------------------------
 bool VToolCubicBezier::GetAutoSmooth() const
 {
-    return false;
+    return m_autoSmooth;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolCubicBezier::SetAutoSmooth(bool value)
 {
-    Q_UNUSED(value)
+    m_autoSmooth = value;
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+    SaveOption(obj);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -269,6 +277,7 @@ void VToolCubicBezier::SaveDialog(QDomElement &domElement)
     SCASSERT(dialogTool != nullptr)
 
     const VCubicBezier spl = dialogTool->GetSpline();
+    m_autoSmooth = dialogTool->GetAutoSmooth();
 
     SetSplineAttributes(domElement, spl);
     doc->SetAttribute(domElement, AttrColor,      dialogTool->getLineColor());
@@ -336,5 +345,14 @@ void VToolCubicBezier::SetSplineAttributes(QDomElement &domElement, const VCubic
         {
             domElement.removeAttribute(AttrDuplicate);
         }
+    }
+
+    if (m_autoSmooth)
+    {
+        doc->SetAttribute(domElement, AttrAutoSmooth, QStringLiteral("true"));
+    }
+    else
+    {
+        domElement.removeAttribute(AttrAutoSmooth);
     }
 }
