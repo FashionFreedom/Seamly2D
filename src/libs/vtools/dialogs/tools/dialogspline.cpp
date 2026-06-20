@@ -622,6 +622,18 @@ VSpline DialogSpline::GetSpline() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+bool DialogSpline::GetAutoSmooth() const
+{
+    return ui->comboBoxAutoSmooth->currentIndex() == 1;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::SetAutoSmooth(bool value)
+{
+    ui->comboBoxAutoSmooth->setCurrentIndex(value ? 1 : 0);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void DialogSpline::SetSpline(const VSpline &spline)
 {
     spl = spline;

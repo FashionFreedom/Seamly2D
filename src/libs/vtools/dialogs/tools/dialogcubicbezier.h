@@ -81,6 +81,9 @@ public:
     VCubicBezier  GetSpline() const;
     void          SetSpline(const VCubicBezier &spline);
 
+    bool          GetAutoSmooth() const;
+    void          SetAutoSmooth(bool value);
+
     QString       getPenStyle() const;
     void          setPenStyle(const QString &value);
 

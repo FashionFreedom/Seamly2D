@@ -132,6 +132,18 @@ VCubicBezier DialogCubicBezier::GetSpline() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+bool DialogCubicBezier::GetAutoSmooth() const
+{
+    return ui->comboBoxAutoSmooth->currentIndex() == 1;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogCubicBezier::SetAutoSmooth(bool value)
+{
+    ui->comboBoxAutoSmooth->setCurrentIndex(value ? 1 : 0);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCubicBezier::SetSpline(const VCubicBezier &spline)
 {
     spl = spline;

@@ -77,11 +77,13 @@ public:
                                VContainer *data);
     static VToolSpline *Create(const quint32 _id, VSpline *spline,
                                VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
-                               const Document &parse, const Source &typeCreation);
+                               const Document &parse, const Source &typeCreation,
+                               bool autoSmooth = false);
     static VToolSpline *Create(const quint32 _id, quint32 point1, quint32 point4, QString &a1, QString &a2, QString &l1,
                                QString &l2, quint32 duplicate, const QString &color, const QString &penStyle,
                                const QString &lineWeight, VMainGraphicsScene *scene, VAbstractPattern *doc,
-                               VContainer *data, const Document &parse, const Source &typeCreation);
+                               VContainer *data, const Document &parse, const Source &typeCreation,
+                               bool autoSmooth = false);
     static const QString ToolType;
     static const QString OldToolType;
     virtual int   type() const override {return Type;}
@@ -121,9 +123,11 @@ protected:
 private:
     Q_DISABLE_COPY(VToolSpline)
     QPointF       oldPosition;
+    bool          m_autoSmooth;
 
                   VToolSpline (VAbstractPattern *doc, VContainer *data, quint32 id,
-                               const Source &typeCreation, QGraphicsItem * parent = nullptr );
+                               bool autoSmooth,
+                               const Source &typeCreation, QGraphicsItem *parent = nullptr);
 
     bool          IsMovable() const;
     void          SetSplineAttributes(QDomElement &domElement, const VSpline &spl);

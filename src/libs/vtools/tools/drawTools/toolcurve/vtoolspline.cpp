@@ -96,10 +96,12 @@ const QString VToolSpline::OldToolType = QStringLiteral("simple");
 // @param id object id in container.
 // @param typeCreation way we create this tool.
 // @param parent parent object.
-VToolSpline::VToolSpline(VAbstractPattern *doc, VContainer *data, quint32 id, const Source &typeCreation,
+VToolSpline::VToolSpline(VAbstractPattern *doc, VContainer *data, quint32 id,
+                         bool autoSmooth, const Source &typeCreation,
                          QGraphicsItem *parent)
     : VAbstractSpline(doc, data, id, parent)
     , oldPosition()
+    , m_autoSmooth(autoSmooth)
 {
     m_sceneType = SceneObject::Spline;
 
@@ -145,6 +147,7 @@ void VToolSpline::setDialog()
     SCASSERT(!dialogTool.isNull())
     const auto spl = VAbstractTool::data.GeometricObject<VSpline>(m_id);
     dialogTool->SetSpline(*spl);
+    dialogTool->SetAutoSmooth(m_autoSmooth);
     dialogTool->setLineColor(spl->getLineColor());
     dialogTool->setLineWeight(spl->getLineWeight());
     dialogTool->setPenStyle(spl->GetPenStyle());
@@ -167,8 +170,9 @@ VToolSpline* VToolSpline::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
     spline->setLineColor(dialogTool->getLineColor());
     spline->SetPenStyle(dialogTool->getPenStyle());
     spline->setLineWeight(dialogTool->getLineWeight());
+    const bool autoSmooth = dialogTool->GetAutoSmooth();
 
-    auto spl = Create(0, spline, scene, doc, data, Document::FullParse, Source::FromGui);
+    auto spl = Create(0, spline, scene, doc, data, Document::FullParse, Source::FromGui, autoSmooth);
 
     if (spl != nullptr)
     {
@@ -187,7 +191,8 @@ VToolSpline* VToolSpline::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
 // @param typeCreation way we create this tool.
 // @return the created tool
 VToolSpline* VToolSpline::Create(const quint32 _id, VSpline *spline, VMainGraphicsScene *scene, VAbstractPattern *doc,
-                                 VContainer *data, const Document &parse, const Source &typeCreation)
+                                 VContainer *data, const Document &parse, const Source &typeCreation,
+                                 bool autoSmooth)
 {
     quint32 id = _id;
 
@@ -209,7 +214,7 @@ VToolSpline* VToolSpline::Create(const quint32 _id, VSpline *spline, VMainGraphi
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::Spline, doc);
-        auto _spl = new VToolSpline(doc, data, id, typeCreation);
+        auto _spl = new VToolSpline(doc, data, id, autoSmooth, typeCreation);
         scene->addItem(_spl);
         initSplineToolConnections(scene, _spl);
         VAbstractPattern::AddTool(id, _spl);
@@ -225,7 +230,7 @@ VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 poin
                                  QString &l1, QString &l2, quint32 duplicate, const QString &color,
                                  const QString &penStyle, const QString &lineWeight, VMainGraphicsScene *scene,
                                  VAbstractPattern *doc, VContainer *data, const Document &parse,
-                                 const Source &typeCreation)
+                                 const Source &typeCreation, bool autoSmooth)
 {
     const qreal calcAngle1 = CheckFormula(_id, a1, data);
     const qreal calcAngle2 = CheckFormula(_id, a2, data);
@@ -246,7 +251,7 @@ VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 poin
     spline->SetPenStyle(penStyle);
     spline->setLineWeight(lineWeight);
 
-    return VToolSpline::Create(_id, spline, scene, doc, data, parse, typeCreation);
+    return VToolSpline::Create(_id, spline, scene, doc, data, parse, typeCreation, autoSmooth);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -268,13 +273,15 @@ void VToolSpline::setSpline(const VSpline &spl)
 //---------------------------------------------------------------------------------------------------------------------
 bool VToolSpline::GetAutoSmooth() const
 {
-    return false;
+    return m_autoSmooth;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolSpline::SetAutoSmooth(bool value)
 {
-    Q_UNUSED(value)
+    m_autoSmooth = value;
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+    SaveOption(obj);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -355,6 +362,7 @@ void VToolSpline::SaveDialog(QDomElement &domElement)
     SCASSERT(dialogTool != nullptr)
 
     const VSpline spl = dialogTool->GetSpline();
+    m_autoSmooth = dialogTool->GetAutoSmooth();
 
     m_controlPoints[0]->blockSignals(true);
     m_controlPoints[1]->blockSignals(true);
@@ -654,5 +662,14 @@ void VToolSpline::SetSplineAttributes(QDomElement &domElement, const VSpline &sp
     if (domElement.hasAttribute(AttrKAsm2))
     {
         domElement.removeAttribute(AttrKAsm2);
+    }
+
+    if (m_autoSmooth)
+    {
+        doc->SetAttribute(domElement, AttrAutoSmooth, QStringLiteral("true"));
+    }
+    else
+    {
+        domElement.removeAttribute(AttrAutoSmooth);
     }
 }
