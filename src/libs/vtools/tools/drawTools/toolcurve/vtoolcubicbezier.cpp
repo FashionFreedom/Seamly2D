@@ -272,11 +272,24 @@ void VToolCubicBezier::SetAutoSmooth(bool value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VToolCubicBezier::GetTargetLength() const
 {
-    return QString();
+    const auto spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
+    return QString::number(qApp->fromPixel(spl->GetLength()));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolCubicBezier::SetTargetLength(const QString &value)
+{
+    Q_UNUSED(value)
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VToolCubicBezier::GetLengthMode() const
+{
+    return 0;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolCubicBezier::SetLengthMode(int value)
 {
     Q_UNUSED(value)
 }

@@ -99,6 +99,9 @@ public:
     QString              GetTargetLength() const;
     void                 SetTargetLength(const QString &value);
 
+    int                  GetLengthMode() const;
+    void                 SetLengthMode(int value);
+
     virtual void         ShowVisualization(bool show) override;
 
 

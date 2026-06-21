@@ -130,6 +130,7 @@ extern const QString AttrRotationAngle;
 extern const QString AttrLength1;
 extern const QString AttrLength2;
 extern const QString AttrAutoSmooth;
+extern const QString AttrLengthMode;
 extern const QString AttrP1Line;
 extern const QString AttrP2Line;
 extern const QString AttrP1Line1;
