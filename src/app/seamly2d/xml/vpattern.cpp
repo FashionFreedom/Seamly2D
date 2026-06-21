@@ -2528,8 +2528,10 @@ void VPattern::ParseToolCubicBezier(VMainGraphicsScene *scene, const QDomElement
         spline->setLineWeight(lineWeight);
 
         const bool autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
+        const int lengthMode = domElement.attribute(AttrLengthMode, QStringLiteral("0")).toInt();
+        const QString targetLength = domElement.attribute(AttrLength, QString());
 
-        VToolCubicBezier::Create(id, spline, autoSmooth, scene, this, data, parse, Source::FromFile);
+        VToolCubicBezier::Create(id, spline, autoSmooth, lengthMode, targetLength, scene, this, data, parse, Source::FromFile);
     }
     catch (const VExceptionBadId &error)
     {

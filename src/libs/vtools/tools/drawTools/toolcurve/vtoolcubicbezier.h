@@ -76,7 +76,8 @@ public:
     static VToolCubicBezier *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
                                     VAbstractPattern *doc, VContainer *data);
     static VToolCubicBezier *Create(const quint32 _id, VCubicBezier *spline,
-                                    bool autoSmooth,
+                                    bool autoSmooth, int lengthMode,
+                                    const QString &targetLength,
                                     VMainGraphicsScene *scene,
                                     VAbstractPattern *doc, VContainer *data,
                                     const Document &parse, const Source &typeCreation);
@@ -120,10 +121,13 @@ private:
     Q_DISABLE_COPY(VToolCubicBezier)
 
                          VToolCubicBezier(VAbstractPattern *doc, VContainer *data, quint32 id,
-                                          bool autoSmooth,
+                                          bool autoSmooth, int lengthMode,
+                                          const QString &targetLength,
                                           const Source &typeCreation, QGraphicsItem *parent = nullptr);
 
     bool                 m_autoSmooth;
+    int                  m_lengthMode;
+    QString              m_targetLength;
     quint32              m_p2Id;
     quint32              m_p3Id;
 

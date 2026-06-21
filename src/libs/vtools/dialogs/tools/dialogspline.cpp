@@ -657,6 +657,12 @@ void DialogSpline::SetLengthMode(int value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QString DialogSpline::GetTargetLength() const
+{
+    return ui->plainTextEditCurveLength->toPlainText().trimmed();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void DialogSpline::updateCurveLengthEnabled()
 {
     Q_UNUSED(0)

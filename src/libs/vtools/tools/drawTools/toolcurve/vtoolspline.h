@@ -128,9 +128,12 @@ private:
     Q_DISABLE_COPY(VToolSpline)
     QPointF       oldPosition;
     bool          m_autoSmooth;
+    int           m_lengthMode;
+    QString       m_targetLength;
 
                   VToolSpline (VAbstractPattern *doc, VContainer *data, quint32 id,
-                               bool autoSmooth,
+                               bool autoSmooth, int lengthMode,
+                               const QString &targetLength,
                                const Source &typeCreation, QGraphicsItem *parent = nullptr);
 
     bool          IsMovable() const;

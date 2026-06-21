@@ -321,6 +321,7 @@
                           <xs:attribute name="lineWeight" type="lineWeights"/>
                           <xs:attribute name="duplicate" type="xs:unsignedInt"/>
                           <xs:attribute name="autoSmooth" type="xs:boolean"/>
+                          <xs:attribute name="lengthMode" type="xs:unsignedInt"/>
                         </xs:complexType>
                       </xs:element>
                     </xs:choice>
