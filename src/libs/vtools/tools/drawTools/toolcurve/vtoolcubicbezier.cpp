@@ -110,10 +110,13 @@ static void applyHobbyToSpline(VCubicBezier *spline, const VContainer *data,
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolCubicBezier::VToolCubicBezier(VAbstractPattern *doc, VContainer *data, quint32 id,
-                                   bool autoSmooth,
+                                   bool autoSmooth, int lengthMode,
+                                   const QString &targetLength,
                                    const Source &typeCreation, QGraphicsItem *parent)
     : VAbstractSpline(doc, data, id, parent)
     , m_autoSmooth(autoSmooth)
+    , m_lengthMode(lengthMode)
+    , m_targetLength(targetLength)
     , m_p2Id(0)
     , m_p3Id(0)
 {
@@ -136,6 +139,7 @@ void VToolCubicBezier::setDialog()
     const auto spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
     dialogTool->SetSpline(*spl);
     dialogTool->SetAutoSmooth(m_autoSmooth);
+    dialogTool->SetLengthMode(m_lengthMode);
     dialogTool->setLineColor(spl->getLineColor());
     dialogTool->setPenStyle(spl->GetPenStyle());
     dialogTool->setLineWeight(spl->getLineWeight());
@@ -154,8 +158,10 @@ VToolCubicBezier *VToolCubicBezier::Create(QSharedPointer<DialogTool> dialog, VM
     spline->SetPenStyle(dialogTool->getPenStyle());
     spline->setLineWeight(dialogTool->getLineWeight());
     const bool autoSmooth = dialogTool->GetAutoSmooth();
+    const int lengthMode = dialogTool->GetLengthMode();
+    const QString targetLength = dialogTool->GetTargetLength();
 
-    auto spl = Create(0, spline, autoSmooth, scene, doc, data, Document::FullParse, Source::FromGui);
+    auto spl = Create(0, spline, autoSmooth, lengthMode, targetLength, scene, doc, data, Document::FullParse, Source::FromGui);
 
     if (spl != nullptr)
     {
@@ -166,7 +172,8 @@ VToolCubicBezier *VToolCubicBezier::Create(QSharedPointer<DialogTool> dialog, VM
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolCubicBezier *VToolCubicBezier::Create(const quint32 _id, VCubicBezier *spline,
-                                           bool autoSmooth,
+                                           bool autoSmooth, int lengthMode,
+                                           const QString &targetLength,
                                            VMainGraphicsScene *scene,
                                            VAbstractPattern *doc, VContainer *data,
                                            const Document &parse, const Source &typeCreation)
@@ -198,7 +205,7 @@ VToolCubicBezier *VToolCubicBezier::Create(const quint32 _id, VCubicBezier *spli
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::CubicBezier, doc);
-        auto _spl = new VToolCubicBezier(doc, data, id, autoSmooth, typeCreation);
+        auto _spl = new VToolCubicBezier(doc, data, id, autoSmooth, lengthMode, targetLength, typeCreation);
         scene->addItem(_spl);
         initSplineToolConnections(scene, _spl);
         VAbstractPattern::AddTool(id, _spl);
@@ -272,26 +279,34 @@ void VToolCubicBezier::SetAutoSmooth(bool value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VToolCubicBezier::GetTargetLength() const
 {
-    const auto spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
-    return QString::number(qApp->fromPixel(spl->GetLength()));
+    if (m_targetLength.isEmpty())
+    {
+        const auto spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
+        return QString::number(qApp->fromPixel(spl->GetLength()));
+    }
+    return m_targetLength;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolCubicBezier::SetTargetLength(const QString &value)
 {
-    Q_UNUSED(value)
+    m_targetLength = value;
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+    SaveOption(obj);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 int VToolCubicBezier::GetLengthMode() const
 {
-    return 0;
+    return m_lengthMode;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolCubicBezier::SetLengthMode(int value)
 {
-    Q_UNUSED(value)
+    m_lengthMode = value;
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+    SaveOption(obj);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -320,6 +335,8 @@ void VToolCubicBezier::showContextMenu(QGraphicsSceneContextMenuEvent *event, qu
 void VToolCubicBezier::ReadToolAttributes(const QDomElement &domElement)
 {
     m_autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
+    m_lengthMode = domElement.attribute(AttrLengthMode, QStringLiteral("0")).toInt();
+    m_targetLength = domElement.attribute(AttrLength, QString());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -341,6 +358,8 @@ void VToolCubicBezier::SaveDialog(QDomElement &domElement)
 
     const VCubicBezier spl = dialogTool->GetSpline();
     m_autoSmooth = dialogTool->GetAutoSmooth();
+    m_lengthMode = dialogTool->GetLengthMode();
+    m_targetLength = dialogTool->GetTargetLength();
 
     SetSplineAttributes(domElement, spl);
     doc->SetAttribute(domElement, AttrColor,      dialogTool->getLineColor());
@@ -422,5 +441,19 @@ void VToolCubicBezier::SetSplineAttributes(QDomElement &domElement, const VCubic
     else
     {
         domElement.removeAttribute(AttrAutoSmooth);
+    }
+
+    if (m_lengthMode > 0)
+    {
+        doc->SetAttribute(domElement, AttrLengthMode, m_lengthMode);
+        if (!m_targetLength.isEmpty())
+        {
+            doc->SetAttribute(domElement, AttrLength, m_targetLength);
+        }
+    }
+    else
+    {
+        domElement.removeAttribute(AttrLengthMode);
+        domElement.removeAttribute(AttrLength);
     }
 }

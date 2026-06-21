@@ -87,6 +87,8 @@ public:
     int           GetLengthMode() const;
     void          SetLengthMode(int value);
 
+    QString       GetTargetLength() const;
+
     QString       getPenStyle() const;
     void          setPenStyle(const QString &value);
 

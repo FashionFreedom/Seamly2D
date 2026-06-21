@@ -169,6 +169,12 @@ void DialogCubicBezier::SetLengthMode(int value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QString DialogCubicBezier::GetTargetLength() const
+{
+    return ui->plainTextEditCurveLength->toPlainText().trimmed();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCubicBezier::updateCurveLengthEnabled()
 {
     Q_UNUSED(0)

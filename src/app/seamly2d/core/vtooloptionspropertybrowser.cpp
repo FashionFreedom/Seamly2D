@@ -2012,8 +2012,26 @@ void VToolOptionsPropertyBrowser::changeDataToolSpline(VPE::VProperty *property)
         case 60: // AttrLineWeight
             tool->setLineWeight(value.toString());
             break;
-        case 4: // AttrLength — curve length formula (not yet functional)
+        case 4: // AttrLength — curve length formula
+        {
+            const VFormula f = value.value<VFormula>();
+            if (!f.error())
+            {
+                // Raise the mode BEFORE persisting the length. The length attribute is
+                // only written when lengthMode > 0, and each setter triggers a LiteParse
+                // round-trip that would otherwise reset m_targetLength back to empty.
+                if (tool->GetLengthMode() == 0)
+                {
+                    tool->SetLengthMode(3);
+                    if (idToProperty.contains(AttrLengthMode))
+                    {
+                        idToProperty[AttrLengthMode]->setValue(3);
+                    }
+                }
+                tool->SetTargetLength(f.GetFormula(FormulaType::FromUser));
+            }
             break;
+        }
         case 63: // AttrAutoSmooth
         {
             const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
@@ -2080,8 +2098,26 @@ void VToolOptionsPropertyBrowser::changeDataToolCubicBezier(VPE::VProperty *prop
             spline.SetP4(point);
             tool->setSpline(spline);
             break;
-        case 4: // AttrLength — curve length formula (not yet functional)
+        case 4: // AttrLength — curve length formula
+        {
+            const VFormula f = value.value<VFormula>();
+            if (!f.error())
+            {
+                // Raise the mode BEFORE persisting the length. The length attribute is
+                // only written when lengthMode > 0, and each setter triggers a LiteParse
+                // round-trip that would otherwise reset m_targetLength back to empty.
+                if (tool->GetLengthMode() == 0)
+                {
+                    tool->SetLengthMode(3);
+                    if (idToProperty.contains(AttrLengthMode))
+                    {
+                        idToProperty[AttrLengthMode]->setValue(3);
+                    }
+                }
+                tool->SetTargetLength(f.GetFormula(FormulaType::FromUser));
+            }
             break;
+        }
         case 63: // AttrAutoSmooth
         {
             const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
