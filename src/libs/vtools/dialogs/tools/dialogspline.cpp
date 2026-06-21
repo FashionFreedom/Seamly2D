@@ -668,6 +668,11 @@ void DialogSpline::SetSpline(const VSpline &spline)
     path->SetKAsm1(spl.GetKasm1());
     path->SetKAsm2(spl.GetKasm2());
     path->SetKCurve(spl.GetKcurve());
+    path->setShowPoints(static_cast<QPointF>(spl.GetP1()),
+                        static_cast<QPointF>(spl.GetP2()),
+                        static_cast<QPointF>(spl.GetP3()),
+                        static_cast<QPointF>(spl.GetP4()));
+    path->SetMode(Mode::Show);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -241,7 +241,18 @@ VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 poin
     auto p1 = data->GeometricObject<VPointF>(point1);
     auto p4 = data->GeometricObject<VPointF>(point4);
 
-    auto spline = new VSpline(*p1, *p4, calcAngle1, a1, calcAngle2, a2, calcLength1, l1, calcLength2, l2);
+    qreal finalLength1 = calcLength1;
+    qreal finalLength2 = calcLength2;
+
+    if (autoSmooth)
+    {
+        const QPair<qreal, qreal> hobby = VAbstractCubicBezier::HobbyHandleLengths(
+            static_cast<QPointF>(*p1), static_cast<QPointF>(*p4), calcAngle1, calcAngle2);
+        finalLength1 = hobby.first;
+        finalLength2 = hobby.second;
+    }
+
+    auto spline = new VSpline(*p1, *p4, calcAngle1, a1, calcAngle2, a2, finalLength1, l1, finalLength2, l2);
     if (duplicate > 0)
     {
         spline->SetDuplicate(duplicate);
@@ -344,6 +355,12 @@ void VToolSpline::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32
         Q_UNUSED(error)
         return;//Leave this method immediately!!!
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolSpline::ReadToolAttributes(const QDomElement &domElement)
+{
+    m_autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
 }
 
 // @brief RemoveReferens decrement value of reference.
@@ -565,6 +582,10 @@ void VToolSpline::SetVisualization()
         visual->SetKAsm2(spl->GetKasm2());
         visual->SetKCurve(spl->GetKcurve());
         visual->setLineStyle(lineTypeToPenStyle(spl->GetPenStyle()));
+        visual->setShowPoints(static_cast<QPointF>(spl->GetP1()),
+                              static_cast<QPointF>(spl->GetP2()),
+                              static_cast<QPointF>(spl->GetP3()),
+                              static_cast<QPointF>(spl->GetP4()));
         visual->SetMode(Mode::Show);
         visual->RefreshGeometry();
     }
