@@ -106,6 +106,7 @@ protected slots:
     virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
 
 protected:
+    virtual void         ReadToolAttributes(const QDomElement &domElement) override;
     virtual void         RemoveReferens() override;
     virtual void         SaveDialog(QDomElement &domElement) override;
     virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
@@ -120,6 +121,8 @@ private:
                                           const Source &typeCreation, QGraphicsItem *parent = nullptr);
 
     bool                 m_autoSmooth;
+    quint32              m_p2Id;
+    quint32              m_p3Id;
 
     void                 SetSplineAttributes(QDomElement &domElement, const VCubicBezier &spl);
 };

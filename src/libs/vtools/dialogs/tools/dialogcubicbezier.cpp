@@ -69,6 +69,8 @@ DialogCubicBezier::DialogCubicBezier(const VContainer *data, const quint32 &tool
     : DialogTool(data, toolId, parent)
     , ui(new Ui::DialogCubicBezier)
     , spl()
+    , m_computedSpl()
+    , m_hasComputedSpl(false)
     , newDuplicate(-1)
 {
     ui->setupUi(this);
@@ -162,6 +164,14 @@ void DialogCubicBezier::SetSpline(const VCubicBezier &spline)
     path->setObject2Id(spl.GetP2().id());
     path->setObject3Id(spl.GetP3().id());
     path->setObject4Id(spl.GetP4().id());
+    path->setShowPoints(static_cast<QPointF>(spl.GetP1()),
+                        static_cast<QPointF>(spl.GetP2()),
+                        static_cast<QPointF>(spl.GetP3()),
+                        static_cast<QPointF>(spl.GetP4()));
+    path->SetMode(Mode::Show);
+
+    m_computedSpl = spline;
+    m_hasComputedSpl = true;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -334,6 +344,14 @@ void DialogCubicBezier::SaveData()
     path->setObject2Id(p2->id());
     path->setObject3Id(p3->id());
     path->setObject4Id(p4->id());
+
+    // Preview the final geometry: the Hobby-computed spline when auto-smooth is on,
+    // otherwise the spline built directly from the selected canvas points.
+    const VCubicBezier &preview = (GetAutoSmooth() && m_hasComputedSpl) ? m_computedSpl : spl;
+    path->setShowPoints(static_cast<QPointF>(preview.GetP1()),
+                        static_cast<QPointF>(preview.GetP2()),
+                        static_cast<QPointF>(preview.GetP3()),
+                        static_cast<QPointF>(preview.GetP4()));
     path->SetMode(Mode::Show);
     path->RefreshGeometry();
 }
