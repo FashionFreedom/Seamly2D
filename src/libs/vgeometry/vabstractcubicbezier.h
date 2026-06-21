@@ -88,6 +88,14 @@ public:
     static QPair<qreal, qreal> HobbyHandleLengths(const QPointF &p1, const QPointF &p4,
                                                     qreal angle1Deg, qreal angle2Deg);
 
+    static qreal CubicBezierLengthGL(const QPointF &p1, const QPointF &p2,
+                                      const QPointF &p3, const QPointF &p4);
+
+    static QPair<qreal, qreal> SolveHandleLengths(const QPointF &p1, const QPointF &p4,
+                                                    qreal angle1Deg, qreal angle2Deg,
+                                                    qreal baseC1, qreal baseC2,
+                                                    qreal targetPx, int mode);
+
 protected:
     virtual void CreateName() override;
 
