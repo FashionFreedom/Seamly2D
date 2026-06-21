@@ -53,6 +53,7 @@
 #define VABSTRACTCUBICBEZIER_H
 
 #include <qcompilerdetection.h>
+#include <QPair>
 #include <QPointF>
 #include <QString>
 #include <QVector>
@@ -83,6 +84,9 @@ public:
 
     qreal GetParmT(qreal length) const;
     qreal LengthT(qreal t) const;
+
+    static QPair<qreal, qreal> HobbyHandleLengths(const QPointF &p1, const QPointF &p4,
+                                                    qreal angle1Deg, qreal angle2Deg);
 
 protected:
     virtual void CreateName() override;
