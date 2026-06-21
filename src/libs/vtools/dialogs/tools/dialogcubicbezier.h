@@ -110,6 +110,8 @@ private:
 
     /** @brief spl spline */
     VCubicBezier  spl;
+    VCubicBezier  m_computedSpl;
+    bool          m_hasComputedSpl;
 
     qint32        newDuplicate;
 

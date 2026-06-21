@@ -56,6 +56,7 @@
 #include <QGraphicsItem>
 #include <QMetaObject>
 #include <QObject>
+#include <QPointF>
 #include <QString>
 #include <QtGlobal>
 
@@ -75,6 +76,9 @@ public:
     void         setObject3Id(const quint32 &value);
     void         setObject4Id(const quint32 &value);
 
+    void         setShowPoints(const QPointF &p1, const QPointF &p2,
+                               const QPointF &p3, const QPointF &p4);
+
     virtual int  type() const override {return Type;}
     enum { Type = UserType + static_cast<int>(Vis::ToolCubicBezier)};
 protected:
@@ -82,6 +86,11 @@ protected:
     quint32         object2Id;
     quint32         object3Id;
     quint32         object4Id;
+    bool            m_showPointsSet;
+    QPointF         m_showP1;
+    QPointF         m_showP2;
+    QPointF         m_showP3;
+    QPointF         m_showP4;
     VScaledEllipse *point1;
     VScaledEllipse *point2;
     VScaledEllipse *point3;
