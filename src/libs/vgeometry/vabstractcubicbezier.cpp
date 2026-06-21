@@ -55,6 +55,7 @@
 #include <QMessageLogger>
 #include <QPoint>
 #include <QtDebug>
+#include <QtMath>
 
 #include "../vmisc/def.h"
 #include "../vmisc/vmath.h"
@@ -599,4 +600,58 @@ qreal VAbstractCubicBezier::LengthT(qreal t) const
     const QPointF p1234 = seg123_234.p2();
 
     return LengthBezier ( static_cast<QPointF>(GetP1()), p12, p123, p1234);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QPair<qreal, qreal> VAbstractCubicBezier::HobbyHandleLengths(const QPointF &p1, const QPointF &p4,
+                                                              qreal angle1Deg, qreal angle2Deg)
+{
+    const QLineF chord(p1, p4);
+    const qreal d = chord.length();
+
+    if (qFuzzyIsNull(d))
+    {
+        return {0.0, 0.0};
+    }
+
+    const qreal chordRad = qDegreesToRadians(chord.angle());
+    qreal theta = qDegreesToRadians(angle1Deg) - chordRad;
+    qreal phi   = qDegreesToRadians(angle2Deg) - qDegreesToRadians(chord.angle() + 180.0);
+
+    const qreal twoPi = 2.0 * M_PI;
+    while (theta >  M_PI)
+    {
+        theta -= twoPi;
+    }
+    while (theta < -M_PI)
+    {
+        theta += twoPi;
+    }
+    while (phi >  M_PI)
+    {
+        phi -= twoPi;
+    }
+    while (phi < -M_PI)
+    {
+        phi += twoPi;
+    }
+
+    const qreal sq2   = qSqrt(2.0);
+    const qreal sqrt5 = qSqrt(5.0);
+    const qreal cA    = 0.5 * (sqrt5 - 1.0);
+    const qreal cB    = 0.5 * (3.0 - sqrt5);
+
+    auto velocity = [&](qreal a, qreal b) -> qreal
+    {
+        const qreal num = 2.0 + sq2 * (qSin(a) - qSin(b) / 16.0)
+                                    * (qSin(b) - qSin(a) / 16.0)
+                                    * (qCos(a) - qCos(b));
+        const qreal den = 3.0 * (1.0 + cA * qCos(a) + cB * qCos(b));
+        return (qAbs(den) > 1e-9) ? num / den : (1.0 / 3.0);
+    };
+
+    const qreal c1 = qBound(1e-4, velocity(theta, phi) * d, d * 8.0);
+    const qreal c2 = qBound(1e-4, velocity(phi, theta) * d, d * 8.0);
+
+    return {c1, c2};
 }

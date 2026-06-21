@@ -53,11 +53,9 @@
 
 #include <QDomElement>
 #include <QLineF>
-#include <QPair>
 #include <QPen>
 #include <QSharedPointer>
 #include <QString>
-#include <QtMath>
 #include <Qt>
 #include <new>
 
@@ -81,60 +79,6 @@
 const QString VToolCubicBezier::ToolType = QStringLiteral("cubicBezier");
 
 //---------------------------------------------------------------------------------------------------------------------
-static QPair<qreal, qreal> hobbyHandleLengths(const VPointF &p1, const VPointF &p4,
-                                               qreal angle1Deg, qreal angle2Deg)
-{
-    const QLineF chord(static_cast<QPointF>(p1), static_cast<QPointF>(p4));
-    const qreal d = chord.length();
-
-    if (qFuzzyIsNull(d))
-    {
-        return {0.0, 0.0};
-    }
-
-    const qreal chordRad = qDegreesToRadians(chord.angle());
-    qreal theta = qDegreesToRadians(angle1Deg) - chordRad;
-    qreal phi   = qDegreesToRadians(angle2Deg) - qDegreesToRadians(chord.angle() + 180.0);
-
-    const qreal twoPi = 2.0 * M_PI;
-    while (theta >  M_PI)
-    {
-        theta -= twoPi;
-    }
-    while (theta < -M_PI)
-    {
-        theta += twoPi;
-    }
-    while (phi >  M_PI)
-    {
-        phi -= twoPi;
-    }
-    while (phi < -M_PI)
-    {
-        phi += twoPi;
-    }
-
-    const qreal sq2   = qSqrt(2.0);
-    const qreal sqrt5 = qSqrt(5.0);
-    const qreal cA    = 0.5 * (sqrt5 - 1.0);
-    const qreal cB    = 0.5 * (3.0 - sqrt5);
-
-    auto velocity = [&](qreal a, qreal b) -> qreal
-    {
-        const qreal num = 2.0 + sq2 * (qSin(a) - qSin(b) / 16.0)
-                                    * (qSin(b) - qSin(a) / 16.0)
-                                    * (qCos(a) - qCos(b));
-        const qreal den = 3.0 * (1.0 + cA * qCos(a) + cB * qCos(b));
-        return (qAbs(den) > 1e-9) ? num / den : (1.0 / 3.0);
-    };
-
-    const qreal c1 = qBound(1e-4, velocity(theta, phi) * d, d * 8.0);
-    const qreal c2 = qBound(1e-4, velocity(phi, theta) * d, d * 8.0);
-
-    return {c1, c2};
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 static void applyHobbyToSpline(VCubicBezier *spline, const VContainer *data,
                                quint32 p2Id, quint32 p3Id)
 {
@@ -146,7 +90,7 @@ static void applyHobbyToSpline(VCubicBezier *spline, const VContainer *data,
     const QLineF h1(static_cast<QPointF>(p1), static_cast<QPointF>(*p2canvas));
     const QLineF h2(static_cast<QPointF>(p4), static_cast<QPointF>(*p3canvas));
 
-    const QPair<qreal, qreal> hobby = hobbyHandleLengths(p1, p4, h1.angle(), h2.angle());
+    const QPair<qreal, qreal> hobby = VAbstractCubicBezier::HobbyHandleLengths(static_cast<QPointF>(p1), static_cast<QPointF>(p4), h1.angle(), h2.angle());
 
     QLineF newH1(static_cast<QPointF>(p1), static_cast<QPointF>(p1) + QPointF(hobby.first, 0.0));
     newH1.setAngle(h1.angle());
