@@ -298,11 +298,24 @@ void VToolSpline::SetAutoSmooth(bool value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VToolSpline::GetTargetLength() const
 {
-    return QString();
+    const auto spl = VAbstractTool::data.GeometricObject<VSpline>(m_id);
+    return QString::number(qApp->fromPixel(spl->GetLength()));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolSpline::SetTargetLength(const QString &value)
+{
+    Q_UNUSED(value)
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VToolSpline::GetLengthMode() const
+{
+    return 0;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolSpline::SetLengthMode(int value)
 {
     Q_UNUSED(value)
 }

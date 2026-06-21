@@ -66,6 +66,7 @@
 
 #include "../../tools/vabstracttool.h"
 #include "../../visualization/visualization.h"
+#include "../ifc/ifcdef.h"
 #include "../../visualization/path/vistoolspline.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../support/edit_formula_dialog.h"
@@ -176,6 +177,16 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
     connect(ui->pushButtonGrowAngle2, &QPushButton::clicked, this, &DialogSpline::DeployAngle2TextEdit);
     connect(ui->pushButtonGrowLength1, &QPushButton::clicked, this, &DialogSpline::DeployLength1TextEdit);
     connect(ui->pushButtonGrowLength2, &QPushButton::clicked, this, &DialogSpline::DeployLength2TextEdit);
+
+    connect(ui->comboBoxLengthMode, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &DialogSpline::updateCurveLengthEnabled);
+    connect(ui->plainTextEditCurveLength, &QPlainTextEdit::textChanged, this, [this]()
+    {
+        if (ui->comboBoxLengthMode->currentIndex() == 0)
+        {
+            ui->comboBoxLengthMode->setCurrentIndex(3);
+        }
+    });
+    updateCurveLengthEnabled();
 
     vis = new VisToolSpline(data);
     auto path = qobject_cast<VisToolSpline *>(vis);
@@ -634,6 +645,24 @@ void DialogSpline::SetAutoSmooth(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+int DialogSpline::GetLengthMode() const
+{
+    return ui->comboBoxLengthMode->currentIndex();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::SetLengthMode(int value)
+{
+    ui->comboBoxLengthMode->setCurrentIndex(value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::updateCurveLengthEnabled()
+{
+    Q_UNUSED(0)
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void DialogSpline::SetSpline(const VSpline &spline)
 {
     spl = spline;
@@ -657,6 +686,13 @@ void DialogSpline::SetSpline(const VSpline &spline)
     ui->plainTextEditLength1F->setPlainText(length1F);
     ui->plainTextEditLength2F->setPlainText(length2F);
     ui->lineEditSplineName->setText(qApp->translateVariables()->VarToUser(spl.name()));
+
+    const QString curLen = QString::number(qApp->fromPixel(spl.GetLength()));
+    const QString unit = UnitsToStr(qApp->patternUnit(), true);
+    ui->plainTextEditCurveLength->blockSignals(true);
+    ui->plainTextEditCurveLength->setPlainText(curLen);
+    ui->plainTextEditCurveLength->blockSignals(false);
+    ui->labelResultCurveLength->setText(curLen + QLatin1Char(' ') + unit);
 
     auto path = qobject_cast<VisToolSpline *>(vis);
     SCASSERT(path != nullptr)

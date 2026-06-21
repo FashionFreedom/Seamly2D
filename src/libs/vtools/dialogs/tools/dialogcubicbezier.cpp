@@ -57,6 +57,7 @@
 #include <new>
 
 #include "../../tools/vabstracttool.h"
+#include "../ifc/ifcdef.h"
 #include "../../visualization/path/vistoolcubicbezier.h"
 #include "../../visualization/visualization.h"
 #include "../vgeometry/vpointf.h"
@@ -118,6 +119,16 @@ DialogCubicBezier::DialogCubicBezier(const VContainer *data, const quint32 &tool
     connect(ui->comboBoxP3, &QComboBox::currentTextChanged, this, &DialogCubicBezier::PointNameChanged);
     connect(ui->comboBoxP4, &QComboBox::currentTextChanged, this, &DialogCubicBezier::PointNameChanged);
 
+    connect(ui->comboBoxLengthMode, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &DialogCubicBezier::updateCurveLengthEnabled);
+    connect(ui->plainTextEditCurveLength, &QPlainTextEdit::textChanged, this, [this]()
+    {
+        if (ui->comboBoxLengthMode->currentIndex() == 0)
+        {
+            ui->comboBoxLengthMode->setCurrentIndex(3);
+        }
+    });
+    updateCurveLengthEnabled();
+
     vis = new VisToolCubicBezier(data);
 }
 
@@ -146,6 +157,24 @@ void DialogCubicBezier::SetAutoSmooth(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+int DialogCubicBezier::GetLengthMode() const
+{
+    return ui->comboBoxLengthMode->currentIndex();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogCubicBezier::SetLengthMode(int value)
+{
+    ui->comboBoxLengthMode->setCurrentIndex(value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogCubicBezier::updateCurveLengthEnabled()
+{
+    Q_UNUSED(0)
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCubicBezier::SetSpline(const VCubicBezier &spline)
 {
     spl = spline;
@@ -156,6 +185,13 @@ void DialogCubicBezier::SetSpline(const VCubicBezier &spline)
     setCurrentPointId(ui->comboBoxP4, spl.GetP4().id());
 
     ui->lineEditSplineName->setText(qApp->translateVariables()->VarToUser(spl.name()));
+
+    const QString curLen = QString::number(qApp->fromPixel(spl.GetLength()));
+    const QString unit = UnitsToStr(qApp->patternUnit(), true);
+    ui->plainTextEditCurveLength->blockSignals(true);
+    ui->plainTextEditCurveLength->setPlainText(curLen);
+    ui->plainTextEditCurveLength->blockSignals(false);
+    ui->labelResultCurveLength->setText(curLen + QLatin1Char(' ') + unit);
 
     auto path = qobject_cast<VisToolCubicBezier *>(vis);
     SCASSERT(path != nullptr)

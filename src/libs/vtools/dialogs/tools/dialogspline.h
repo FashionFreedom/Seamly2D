@@ -86,6 +86,9 @@ public:
     bool          GetAutoSmooth() const;
     void          SetAutoSmooth(bool value);
 
+    int           GetLengthMode() const;
+    void          SetLengthMode(int value);
+
     QString       getPenStyle() const;
     void          setPenStyle(const QString &value);
 
@@ -99,6 +102,7 @@ public slots:
     virtual void  ChosenObject(quint32 id, const SceneObject &type) override;
     virtual void  PointNameChanged() override;
     virtual void  ShowDialog(bool click) override;
+    void          updateCurveLengthEnabled();
 
 protected:
     virtual void  CheckState() final;

@@ -2020,6 +2020,12 @@ void VToolOptionsPropertyBrowser::changeDataToolSpline(VPE::VProperty *property)
             tool->SetAutoSmooth(enumVal.toInt() == 1);
             break;
         }
+        case 64: // AttrLengthMode (not yet functional)
+        {
+            const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
+            tool->SetLengthMode(enumVal.toInt());
+            break;
+        }
         default:
             qWarning() << "Unknown property type. id = "<<id;
             break;
@@ -2080,6 +2086,12 @@ void VToolOptionsPropertyBrowser::changeDataToolCubicBezier(VPE::VProperty *prop
         {
             const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
             tool->SetAutoSmooth(enumVal.toInt() == 1);
+            break;
+        }
+        case 64: // AttrLengthMode (not yet functional)
+        {
+            const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
+            tool->SetLengthMode(enumVal.toInt());
             break;
         }
         default:
@@ -2888,6 +2900,8 @@ void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
     addPropertyLabel(tr("Options"), AttrName);
     addPropertyEnum(tr("Smooth curve:"), {tr("No"), tr("Yes")},
                     tool->GetAutoSmooth() ? 1 : 0, AttrAutoSmooth);
+    addPropertyEnum(tr("Adjust length:"), {tr("Off"), tr("Start"), tr("End"), tr("Both")},
+                    tool->GetLengthMode(), AttrLengthMode);
 
     VFormula curveLen(tool->GetTargetLength(), tool->getData());
     curveLen.setCheckZero(false);
@@ -2919,6 +2933,8 @@ void VToolOptionsPropertyBrowser::showOptionsToolCubicBezier(QGraphicsItem *item
     addPropertyLabel(tr("Options"), AttrName);
     addPropertyEnum(tr("Smooth curve:"), {tr("No"), tr("Yes")},
                     tool->GetAutoSmooth() ? 1 : 0, AttrAutoSmooth);
+    addPropertyEnum(tr("Adjust length:"), {tr("Off"), tr("Start"), tr("End"), tr("Both")},
+                    tool->GetLengthMode(), AttrLengthMode);
 
     VFormula curveLen(tool->GetTargetLength(), tool->getData());
     curveLen.setCheckZero(false);
@@ -3881,6 +3897,11 @@ void VToolOptionsPropertyBrowser::updateOptionsToolSpline()
     {
         idToProperty[AttrAutoSmooth]->setValue(tool->GetAutoSmooth() ? 1 : 0);
     }
+
+    if (idToProperty.contains(AttrLengthMode))
+    {
+        idToProperty[AttrLengthMode]->setValue(tool->GetLengthMode());
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3930,6 +3951,11 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezier()
     if (idToProperty.contains(AttrAutoSmooth))
     {
         idToProperty[AttrAutoSmooth]->setValue(tool->GetAutoSmooth() ? 1 : 0);
+    }
+
+    if (idToProperty.contains(AttrLengthMode))
+    {
+        idToProperty[AttrLengthMode]->setValue(tool->GetLengthMode());
     }
 }
 
@@ -4280,6 +4306,7 @@ QStringList VToolOptionsPropertyBrowser::propertiesList() const
                                             << AttrLineWeight                     /* 60 */
                                             << AttrObjName                        /* 61 */
                                             << AttrDirection                      /* 62 */
-                                            << AttrAutoSmooth;                    /* 63 */
+                                            << AttrAutoSmooth                     /* 63 */
+                                            << AttrLengthMode;                    /* 64 */
     return attr;
 }
