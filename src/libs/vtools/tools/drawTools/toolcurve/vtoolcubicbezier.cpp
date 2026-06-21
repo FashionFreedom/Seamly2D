@@ -186,6 +186,39 @@ VToolCubicBezier *VToolCubicBezier::Create(const quint32 _id, VCubicBezier *spli
         applyHobbyToSpline(spline, data, origP2Id, origP3Id);
     }
 
+    if (lengthMode > 0 && !targetLength.isEmpty())
+    {
+        QString tl = targetLength;
+        const qreal targetPx = qApp->toPixel(CheckFormula(_id, tl, data));
+        if (targetPx > 0.0)
+        {
+            const QPointF p1pt = static_cast<QPointF>(spline->GetP1());
+            const QPointF p2pt = static_cast<QPointF>(spline->GetP2());
+            const QPointF p3pt = static_cast<QPointF>(spline->GetP3());
+            const QPointF p4pt = static_cast<QPointF>(spline->GetP4());
+            const QLineF h1(p1pt, p2pt);
+            const QLineF h2(p4pt, p3pt);
+
+            const QPair<qreal, qreal> solved = VAbstractCubicBezier::SolveHandleLengths(
+                p1pt, p4pt, h1.angle(), h2.angle(),
+                h1.length(), h2.length(), targetPx, lengthMode);
+
+            QLineF newH1(p1pt, p1pt + QPointF(solved.first, 0.0));
+            newH1.setAngle(h1.angle());
+            QLineF newH2(p4pt, p4pt + QPointF(solved.second, 0.0));
+            newH2.setAngle(h2.angle());
+
+            VPointF newP2(newH1.p2(), spline->GetP2().name(), spline->GetP2().mx(),
+                          spline->GetP2().my(), spline->GetP2().getIdObject(), spline->GetP2().getMode());
+            newP2.setId(origP2Id);
+            VPointF newP3(newH2.p2(), spline->GetP3().name(), spline->GetP3().mx(),
+                          spline->GetP3().my(), spline->GetP3().getIdObject(), spline->GetP3().getMode());
+            newP3.setId(origP3Id);
+            spline->SetP2(newP2);
+            spline->SetP3(newP3);
+        }
+    }
+
     quint32 id = _id;
     if (typeCreation == Source::FromGui)
     {

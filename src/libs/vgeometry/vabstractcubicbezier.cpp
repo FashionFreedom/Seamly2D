@@ -655,3 +655,144 @@ QPair<qreal, qreal> VAbstractCubicBezier::HobbyHandleLengths(const QPointF &p1, 
 
     return {c1, c2};
 }
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VAbstractCubicBezier::CubicBezierLengthGL(const QPointF &p1, const QPointF &p2,
+                                                 const QPointF &p3, const QPointF &p4)
+{
+    static const qreal t[] = {0.01985071506835568, 0.10166676129318664,
+                               0.23723379504183550, 0.40828267875217509,
+                               0.59171732124782494, 0.76276620495816450,
+                               0.89833323870681336, 0.98014928493164430};
+    static const qreal w[] = {0.05061426814518813, 0.11119051722668723,
+                               0.15685332293894364, 0.18134189168918099,
+                               0.18134189168918099, 0.15685332293894364,
+                               0.11119051722668723, 0.05061426814518813};
+    qreal len = 0.0;
+    for (int i = 0; i < 8; ++i)
+    {
+        const qreal s = t[i];
+        const qreal q = 1.0 - s;
+        const QPointF d = 3.0 * (p2 - p1) * (q * q)
+                        + 6.0 * (p3 - p2) * (q * s)
+                        + 3.0 * (p4 - p3) * (s * s);
+        len += w[i] * qSqrt(d.x() * d.x() + d.y() * d.y());
+    }
+    return len;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// Secant solver: find handle lengths (c1, c2) such that the arc length of
+// the cubic Bezier equals targetPx.
+//
+// mode: 1=vary start only, 2=vary end only, 3=vary both proportionally
+QPair<qreal, qreal> VAbstractCubicBezier::SolveHandleLengths(
+    const QPointF &p1, const QPointF &p4,
+    qreal angle1Deg, qreal angle2Deg,
+    qreal baseC1, qreal baseC2,
+    qreal targetPx, int mode)
+{
+    const qreal eps = ToPixel(0.05, Unit::Mm);
+
+    if (baseC1 <= 0.0 && baseC2 <= 0.0)
+    {
+        return {baseC1, baseC2};
+    }
+
+    const qreal a1rad = qDegreesToRadians(angle1Deg);
+    const qreal a2rad = qDegreesToRadians(angle2Deg);
+    const qreal cos1 = qCos(a1rad), sin1 = qSin(a1rad);
+    const qreal cos2 = qCos(a2rad), sin2 = qSin(a2rad);
+
+    auto curveLen = [&](qreal scale) -> qreal
+    {
+        qreal c1 = baseC1;
+        qreal c2 = baseC2;
+        if (mode == 1)
+        {
+            c1 = baseC1 * scale;
+        }
+        else if (mode == 2)
+        {
+            c2 = baseC2 * scale;
+        }
+        else
+        {
+            c1 = baseC1 * scale;
+            c2 = baseC2 * scale;
+        }
+        return CubicBezierLengthGL(p1,
+                                   p1 + QPointF(c1 * cos1, -c1 * sin1),
+                                   p4 + QPointF(c2 * cos2, -c2 * sin2),
+                                   p4);
+    };
+
+    const qreal minLen = curveLen(0.0);
+    if (targetPx <= minLen)
+    {
+        return {0.0, 0.0};
+    }
+
+    qreal hi = 1.0;
+    qreal f_hi = curveLen(hi) - targetPx;
+    for (int guard = 0; guard < 64 && f_hi < 0.0; ++guard)
+    {
+        hi *= 2.0;
+        f_hi = curveLen(hi) - targetPx;
+    }
+
+    qreal x0 = 0.0,  f0 = minLen - targetPx;
+    qreal x1 = hi,    f1 = f_hi;
+
+    for (int i = 0; i < 10; ++i)
+    {
+        if (qAbs(f1 - f0) < 1e-12)
+        {
+            break;
+        }
+        qreal xn = x1 - f1 * (x1 - x0) / (f1 - f0);
+        if (xn < 0.0)
+        {
+            xn = x1 * 0.5;
+        }
+        const qreal fn = curveLen(xn) - targetPx;
+        if (qAbs(fn) < eps)
+        {
+            qreal c1 = baseC1;
+            qreal c2 = baseC2;
+            if (mode == 1)
+            {
+                c1 = baseC1 * xn;
+            }
+            else if (mode == 2)
+            {
+                c2 = baseC2 * xn;
+            }
+            else
+            {
+                c1 = baseC1 * xn;
+                c2 = baseC2 * xn;
+            }
+            return {c1, c2};
+        }
+        x0 = x1; f0 = f1;
+        x1 = xn; f1 = fn;
+    }
+
+    qreal c1 = baseC1;
+    qreal c2 = baseC2;
+    if (mode == 1)
+    {
+        c1 = baseC1 * x1;
+    }
+    else if (mode == 2)
+    {
+        c2 = baseC2 * x1;
+    }
+    else
+    {
+        c1 = baseC1 * x1;
+        c2 = baseC2 * x1;
+    }
+    return {c1, c2};
+}
