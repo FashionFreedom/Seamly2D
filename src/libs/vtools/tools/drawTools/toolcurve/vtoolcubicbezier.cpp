@@ -176,6 +176,12 @@ VToolCubicBezier *VToolCubicBezier::Create(const quint32 _id, VCubicBezier *spli
     const quint32 origP2Id = spline->GetP2().id();
     const quint32 origP3Id = spline->GetP3().id();
 
+    // Mutual-exclusive dispatch: the three handle-computation modes (Hobby,
+    // length-solver, combined tension-solver) each produce a DIFFERENT set of
+    // handle lengths from the SAME inputs. Running them sequentially (Hobby
+    // first, then solver on the result) would feed solver inputs that are
+    // already transformed, producing wrong geometry. The if/else-if ensures
+    // exactly one code-path modifies the handles per Create() call.
     {
         const QPointF p1pt = static_cast<QPointF>(spline->GetP1());
         const QPointF p4pt = static_cast<QPointF>(spline->GetP4());
