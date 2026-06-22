@@ -151,7 +151,7 @@
     <message>
         <source>Vertical distance from the deepest indentation of the back of the ankle to the floor.</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Distância vertical do sulco mais profundo da parte traseira do calcanhar até o chão.</translation>
     </message>
     <message>
         <source>height_ankle</source>
@@ -246,77 +246,77 @@
     <message>
         <source>height_neck_side</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation type="unfinished"></translation>
+        <translation>altura_lado_pescoço</translation>
     </message>
     <message>
         <source>Height: Neck Side</source>
         <comment>Full measurement name.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Altura: Lado do Pescoço</translation>
     </message>
     <message>
         <source>Vertical distance from the Neck Side to the floor.</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Distância vertical do Lado do Pescoço até o chão.</translation>
     </message>
     <message>
         <source>height_neck_back_to_knee</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation type="unfinished"></translation>
+        <translation>altura_nuca_até_joelho</translation>
     </message>
     <message>
         <source>Height: Neck Back to Knee</source>
         <comment>Full measurement name.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Altura: Nuca até Joelho</translation>
     </message>
     <message>
         <source>Vertical distance from the Neck Back (cervicale vertebra) to the fold at the back of the knee.</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Distância vertical da nuca (vértebras cervicais) até a dobra na parte de trás do joelho.</translation>
     </message>
     <message>
         <source>height_waist_side_to_knee</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation type="unfinished"></translation>
+        <translation>altura_lado_cintura_até_joelho</translation>
     </message>
     <message>
         <source>Height: Waist Side to Knee</source>
         <comment>Full measurement name.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Altura: Lado da Cintura até Joelho</translation>
     </message>
     <message>
         <source>Vertical distance from the Waist Side to the fold at the back of the knee.</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Distância vertical do Lado da Cintura até a dobra na parte de trás do joelho.</translation>
     </message>
     <message>
         <source>height_waist_side_to_hip</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation type="unfinished"></translation>
+        <translation>altura_lado_cintura_até_quadril</translation>
     </message>
     <message>
         <source>Height: Waist Side to Hip</source>
         <comment>Full measurement name.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Altura: Lado da Cintura até Quadril</translation>
     </message>
     <message>
         <source>Vertical distance from the Waist Side to the Hip level.</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Distância vertical do Lado da Cintura até o Quadril.</translation>
     </message>
     <message>
         <source>height_knee_to_ankle</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation type="unfinished"></translation>
+        <translation>altura_joelho_até_calcanhar</translation>
     </message>
     <message>
         <source>Height: Knee to Ankle</source>
         <comment>Full measurement name.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Altura: Joelho até Calcanhar</translation>
     </message>
     <message>
         <source>Vertical distance from the fold at the back of the knee to the point where the front leg meets the top of the foot.</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Distância vertical da dobra na parte de trás do joelho até o ponto onde a parte da frente da perna encontra o dorso do pé.</translation>
     </message>
     <message>
         <source>height_neck_back_to_waist_side</source>
