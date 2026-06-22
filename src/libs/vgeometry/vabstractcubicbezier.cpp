@@ -604,7 +604,8 @@ qreal VAbstractCubicBezier::LengthT(qreal t) const
 
 //---------------------------------------------------------------------------------------------------------------------
 QPair<qreal, qreal> VAbstractCubicBezier::HobbyHandleLengths(const QPointF &p1, const QPointF &p4,
-                                                              qreal angle1Deg, qreal angle2Deg)
+                                                              qreal angle1Deg, qreal angle2Deg,
+                                                              qreal tensionStart, qreal tensionEnd)
 {
     const QLineF chord(p1, p4);
     const qreal d = chord.length();
@@ -650,8 +651,12 @@ QPair<qreal, qreal> VAbstractCubicBezier::HobbyHandleLengths(const QPointF &p1, 
         return (qAbs(den) > 1e-9) ? num / den : (1.0 / 3.0);
     };
 
-    const qreal c1 = qBound(1e-4, velocity(theta, phi) * d, d * 8.0);
-    const qreal c2 = qBound(1e-4, velocity(phi, theta) * d, d * 8.0);
+    // Hobby tension divides the velocity: higher tension -> shorter handles
+    // (curve held tighter to the chord), lower tension -> longer, bulgier handles.
+    const qreal tauStart = (tensionStart > 1e-6) ? tensionStart : 1e-6;
+    const qreal tauEnd   = (tensionEnd   > 1e-6) ? tensionEnd   : 1e-6;
+    const qreal c1 = qBound(1e-4, velocity(theta, phi) * d / tauStart, d * 8.0);
+    const qreal c2 = qBound(1e-4, velocity(phi, theta) * d / tauEnd,   d * 8.0);
 
     return {c1, c2};
 }
@@ -795,4 +800,99 @@ QPair<qreal, qreal> VAbstractCubicBezier::SolveHandleLengths(
         c2 = baseC2 * x1;
     }
     return {c1, c2};
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// Combined auto-smooth + curve-length: instead of scaling the finished Hobby
+// handles linearly, vary the Hobby tension parameter so the curve keeps its
+// natural Hobby shape at the found tension. Arc length decreases monotonically
+// as tension increases.
+//
+// mode: 1=vary start tension (rho), 2=vary end tension (sigma), 3=both equally
+QPair<qreal, qreal> VAbstractCubicBezier::SolveHobbyTension(
+    const QPointF &p1, const QPointF &p4,
+    qreal angle1Deg, qreal angle2Deg,
+    qreal targetPx, int mode)
+{
+    const qreal eps = ToPixel(0.05, Unit::Mm);
+    const qreal a1rad = qDegreesToRadians(angle1Deg);
+    const qreal a2rad = qDegreesToRadians(angle2Deg);
+    const qreal cos1 = qCos(a1rad), sin1 = qSin(a1rad);
+    const qreal cos2 = qCos(a2rad), sin2 = qSin(a2rad);
+
+    auto handlesForTau = [&](qreal tau) -> QPair<qreal, qreal>
+    {
+        qreal tauStart = 1.0, tauEnd = 1.0;
+        if (mode == 1)
+        {
+            tauStart = tau;
+        }
+        else if (mode == 2)
+        {
+            tauEnd = tau;
+        }
+        else
+        {
+            tauStart = tau;
+            tauEnd = tau;
+        }
+        return HobbyHandleLengths(p1, p4, angle1Deg, angle2Deg, tauStart, tauEnd);
+    };
+
+    auto lenForTau = [&](qreal tau) -> qreal
+    {
+        const QPair<qreal, qreal> h = handlesForTau(tau);
+        const QPointF c1pt = p1 + QPointF(h.first  * cos1, -h.first  * sin1);
+        const QPointF c2pt = p4 + QPointF(h.second * cos2, -h.second * sin2);
+        return CubicBezierLengthGL(p1, c1pt, c2pt, p4);
+    };
+
+    const qreal lenAt1 = lenForTau(1.0);
+    if (qAbs(lenAt1 - targetPx) < eps)
+    {
+        return handlesForTau(1.0);
+    }
+
+    qreal lo, hi;
+    if (lenAt1 > targetPx)
+    {
+        // curve too long -> need higher tension to shorten it
+        lo = 1.0;
+        hi = 2.0;
+        for (int g = 0; g < 64 && lenForTau(hi) > targetPx; ++g)
+        {
+            hi *= 2.0;
+        }
+    }
+    else
+    {
+        // curve too short -> need lower tension to lengthen it
+        hi = 1.0;
+        lo = 0.5;
+        for (int g = 0; g < 64 && lenForTau(lo) < targetPx; ++g)
+        {
+            lo *= 0.5;
+        }
+    }
+
+    qreal tau = 1.0;
+    for (int i = 0; i < 40; ++i)
+    {
+        tau = 0.5 * (lo + hi);
+        const qreal f = lenForTau(tau) - targetPx;
+        if (qAbs(f) < eps)
+        {
+            break;
+        }
+        if (f > 0.0)
+        {
+            lo = tau;
+        }
+        else
+        {
+            hi = tau;
+        }
+    }
+
+    return handlesForTau(tau);
 }
