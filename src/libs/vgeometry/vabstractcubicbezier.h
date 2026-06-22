@@ -86,7 +86,8 @@ public:
     qreal LengthT(qreal t) const;
 
     static QPair<qreal, qreal> HobbyHandleLengths(const QPointF &p1, const QPointF &p4,
-                                                    qreal angle1Deg, qreal angle2Deg);
+                                                    qreal angle1Deg, qreal angle2Deg,
+                                                    qreal tensionStart = 1.0, qreal tensionEnd = 1.0);
 
     static qreal CubicBezierLengthGL(const QPointF &p1, const QPointF &p2,
                                       const QPointF &p3, const QPointF &p4);
@@ -95,6 +96,10 @@ public:
                                                     qreal angle1Deg, qreal angle2Deg,
                                                     qreal baseC1, qreal baseC2,
                                                     qreal targetPx, int mode);
+
+    static QPair<qreal, qreal> SolveHobbyTension(const QPointF &p1, const QPointF &p4,
+                                                   qreal angle1Deg, qreal angle2Deg,
+                                                   qreal targetPx, int mode);
 
 protected:
     virtual void CreateName() override;

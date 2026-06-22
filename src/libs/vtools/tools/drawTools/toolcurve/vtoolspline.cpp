@@ -249,27 +249,37 @@ VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 poin
     qreal finalLength1 = calcLength1;
     qreal finalLength2 = calcLength2;
 
-    if (autoSmooth)
-    {
-        const QPair<qreal, qreal> hobby = VAbstractCubicBezier::HobbyHandleLengths(
-            static_cast<QPointF>(*p1), static_cast<QPointF>(*p4), calcAngle1, calcAngle2);
-        finalLength1 = hobby.first;
-        finalLength2 = hobby.second;
-    }
-
-    if (lengthMode > 0 && !targetLength.isEmpty())
+    const bool hasTarget = (lengthMode > 0 && !targetLength.isEmpty());
+    qreal targetPx = 0.0;
+    if (hasTarget)
     {
         QString tl = targetLength;
-        const qreal targetPx = qApp->toPixel(CheckFormula(_id, tl, data));
-        if (targetPx > 0.0)
-        {
-            const QPair<qreal, qreal> solved = VAbstractCubicBezier::SolveHandleLengths(
-                static_cast<QPointF>(*p1), static_cast<QPointF>(*p4),
-                calcAngle1, calcAngle2, finalLength1, finalLength2,
-                targetPx, lengthMode);
-            finalLength1 = solved.first;
-            finalLength2 = solved.second;
-        }
+        targetPx = qApp->toPixel(CheckFormula(_id, tl, data));
+    }
+
+    if (autoSmooth && hasTarget && targetPx > 0.0)
+    {
+        // Combined: vary Hobby tension to hit the target length.
+        const QPair<qreal, qreal> s = VAbstractCubicBezier::SolveHobbyTension(
+            static_cast<QPointF>(*p1), static_cast<QPointF>(*p4),
+            calcAngle1, calcAngle2, targetPx, lengthMode);
+        finalLength1 = s.first;
+        finalLength2 = s.second;
+    }
+    else if (autoSmooth)
+    {
+        const QPair<qreal, qreal> s = VAbstractCubicBezier::HobbyHandleLengths(
+            static_cast<QPointF>(*p1), static_cast<QPointF>(*p4), calcAngle1, calcAngle2);
+        finalLength1 = s.first;
+        finalLength2 = s.second;
+    }
+    else if (hasTarget && targetPx > 0.0)
+    {
+        const QPair<qreal, qreal> s = VAbstractCubicBezier::SolveHandleLengths(
+            static_cast<QPointF>(*p1), static_cast<QPointF>(*p4),
+            calcAngle1, calcAngle2, calcLength1, calcLength2, targetPx, lengthMode);
+        finalLength1 = s.first;
+        finalLength2 = s.second;
     }
 
     auto spline = new VSpline(*p1, *p4, calcAngle1, a1, calcAngle2, a2, finalLength1, l1, finalLength2, l2);

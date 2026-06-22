@@ -79,29 +79,24 @@
 const QString VToolCubicBezier::ToolType = QStringLiteral("cubicBezier");
 
 //---------------------------------------------------------------------------------------------------------------------
-static void applyHobbyToSpline(VCubicBezier *spline, const VContainer *data,
-                               quint32 p2Id, quint32 p3Id)
+// Set the spline's control points from handle lengths (c1, c2) along the given
+// directions, preserving the original canvas point IDs.
+static void setHandlesFromLengths(VCubicBezier *spline, const QPointF &p1pt, const QPointF &p4pt,
+                                  qreal angle1, qreal angle2, qreal c1, qreal c2,
+                                  quint32 p2Id, quint32 p3Id)
 {
-    const VPointF p1 = spline->GetP1();
-    const VPointF p4 = spline->GetP4();
-    const auto p2canvas = data->GeometricObject<VPointF>(p2Id);
-    const auto p3canvas = data->GeometricObject<VPointF>(p3Id);
+    QLineF newH1(p1pt, p1pt + QPointF(c1, 0.0));
+    newH1.setAngle(angle1);
+    QLineF newH2(p4pt, p4pt + QPointF(c2, 0.0));
+    newH2.setAngle(angle2);
 
-    const QLineF h1(static_cast<QPointF>(p1), static_cast<QPointF>(*p2canvas));
-    const QLineF h2(static_cast<QPointF>(p4), static_cast<QPointF>(*p3canvas));
-
-    const QPair<qreal, qreal> hobby = VAbstractCubicBezier::HobbyHandleLengths(static_cast<QPointF>(p1), static_cast<QPointF>(p4), h1.angle(), h2.angle());
-
-    QLineF newH1(static_cast<QPointF>(p1), static_cast<QPointF>(p1) + QPointF(hobby.first, 0.0));
-    newH1.setAngle(h1.angle());
-    QLineF newH2(static_cast<QPointF>(p4), static_cast<QPointF>(p4) + QPointF(hobby.second, 0.0));
-    newH2.setAngle(h2.angle());
-
-    VPointF newP2(newH1.p2(), p2canvas->name(), p2canvas->mx(), p2canvas->my(),
-                  p2canvas->getIdObject(), p2canvas->getMode());
+    const VPointF oldP2 = spline->GetP2();
+    const VPointF oldP3 = spline->GetP3();
+    VPointF newP2(newH1.p2(), oldP2.name(), oldP2.mx(), oldP2.my(),
+                  oldP2.getIdObject(), oldP2.getMode());
     newP2.setId(p2Id);
-    VPointF newP3(newH2.p2(), p3canvas->name(), p3canvas->mx(), p3canvas->my(),
-                  p3canvas->getIdObject(), p3canvas->getMode());
+    VPointF newP3(newH2.p2(), oldP3.name(), oldP3.mx(), oldP3.my(),
+                  oldP3.getIdObject(), oldP3.getMode());
     newP3.setId(p3Id);
 
     spline->SetP2(newP2);
@@ -181,41 +176,55 @@ VToolCubicBezier *VToolCubicBezier::Create(const quint32 _id, VCubicBezier *spli
     const quint32 origP2Id = spline->GetP2().id();
     const quint32 origP3Id = spline->GetP3().id();
 
-    if (autoSmooth)
     {
-        applyHobbyToSpline(spline, data, origP2Id, origP3Id);
-    }
+        const QPointF p1pt = static_cast<QPointF>(spline->GetP1());
+        const QPointF p4pt = static_cast<QPointF>(spline->GetP4());
+        const QLineF h1(p1pt, static_cast<QPointF>(spline->GetP2()));
+        const QLineF h2(p4pt, static_cast<QPointF>(spline->GetP3()));
+        const qreal angle1 = h1.angle();
+        const qreal angle2 = h2.angle();
 
-    if (lengthMode > 0 && !targetLength.isEmpty())
-    {
-        QString tl = targetLength;
-        const qreal targetPx = qApp->toPixel(CheckFormula(_id, tl, data));
-        if (targetPx > 0.0)
+        const bool hasTarget = (lengthMode > 0 && !targetLength.isEmpty());
+        qreal targetPx = 0.0;
+        if (hasTarget)
         {
-            const QPointF p1pt = static_cast<QPointF>(spline->GetP1());
-            const QPointF p2pt = static_cast<QPointF>(spline->GetP2());
-            const QPointF p3pt = static_cast<QPointF>(spline->GetP3());
-            const QPointF p4pt = static_cast<QPointF>(spline->GetP4());
-            const QLineF h1(p1pt, p2pt);
-            const QLineF h2(p4pt, p3pt);
+            QString tl = targetLength;
+            targetPx = qApp->toPixel(CheckFormula(_id, tl, data));
+        }
 
-            const QPair<qreal, qreal> solved = VAbstractCubicBezier::SolveHandleLengths(
-                p1pt, p4pt, h1.angle(), h2.angle(),
-                h1.length(), h2.length(), targetPx, lengthMode);
+        qreal c1 = h1.length();
+        qreal c2 = h2.length();
+        bool modified = false;
 
-            QLineF newH1(p1pt, p1pt + QPointF(solved.first, 0.0));
-            newH1.setAngle(h1.angle());
-            QLineF newH2(p4pt, p4pt + QPointF(solved.second, 0.0));
-            newH2.setAngle(h2.angle());
+        if (autoSmooth && hasTarget && targetPx > 0.0)
+        {
+            // Combined: vary Hobby tension to hit the target length.
+            const QPair<qreal, qreal> s = VAbstractCubicBezier::SolveHobbyTension(
+                p1pt, p4pt, angle1, angle2, targetPx, lengthMode);
+            c1 = s.first;
+            c2 = s.second;
+            modified = true;
+        }
+        else if (autoSmooth)
+        {
+            const QPair<qreal, qreal> s = VAbstractCubicBezier::HobbyHandleLengths(
+                p1pt, p4pt, angle1, angle2);
+            c1 = s.first;
+            c2 = s.second;
+            modified = true;
+        }
+        else if (hasTarget && targetPx > 0.0)
+        {
+            const QPair<qreal, qreal> s = VAbstractCubicBezier::SolveHandleLengths(
+                p1pt, p4pt, angle1, angle2, h1.length(), h2.length(), targetPx, lengthMode);
+            c1 = s.first;
+            c2 = s.second;
+            modified = true;
+        }
 
-            VPointF newP2(newH1.p2(), spline->GetP2().name(), spline->GetP2().mx(),
-                          spline->GetP2().my(), spline->GetP2().getIdObject(), spline->GetP2().getMode());
-            newP2.setId(origP2Id);
-            VPointF newP3(newH2.p2(), spline->GetP3().name(), spline->GetP3().mx(),
-                          spline->GetP3().my(), spline->GetP3().getIdObject(), spline->GetP3().getMode());
-            newP3.setId(origP3Id);
-            spline->SetP2(newP2);
-            spline->SetP3(newP3);
+        if (modified)
+        {
+            setHandlesFromLengths(spline, p1pt, p4pt, angle1, angle2, c1, c2, origP2Id, origP3Id);
         }
     }
 
