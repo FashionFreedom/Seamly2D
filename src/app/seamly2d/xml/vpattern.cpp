@@ -2455,10 +2455,12 @@ void VPattern::ParseToolSpline(VMainGraphicsScene *scene, QDomElement &domElemen
         const quint32 duplicate  = GetParametrUInt(domElement,   AttrDuplicate,  "0");
 
         const bool autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
+        const int lengthMode = domElement.attribute(AttrLengthMode, QStringLiteral("0")).toInt();
+        const QString targetLength = domElement.attribute(AttrLength, QString());
 
         VToolSpline *spl = VToolSpline::Create(id, point1, point4, a1, a2, l1, l2, duplicate, color, penStyle,
                                                lineWeight, scene, this, data, parse, Source::FromFile,
-                                               autoSmooth);
+                                               autoSmooth, lengthMode, targetLength);
 
         if (spl != nullptr)
         {
