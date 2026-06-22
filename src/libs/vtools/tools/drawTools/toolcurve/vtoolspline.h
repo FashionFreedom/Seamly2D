@@ -83,7 +83,8 @@ public:
                                QString &l2, quint32 duplicate, const QString &color, const QString &penStyle,
                                const QString &lineWeight, VMainGraphicsScene *scene, VAbstractPattern *doc,
                                VContainer *data, const Document &parse, const Source &typeCreation,
-                               bool autoSmooth = false);
+                               bool autoSmooth = false, int lengthMode = 0,
+                               const QString &targetLength = QString());
     static const QString ToolType;
     static const QString OldToolType;
     virtual int   type() const override {return Type;}

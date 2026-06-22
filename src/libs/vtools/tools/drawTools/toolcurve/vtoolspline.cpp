@@ -234,7 +234,8 @@ VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 poin
                                  QString &l1, QString &l2, quint32 duplicate, const QString &color,
                                  const QString &penStyle, const QString &lineWeight, VMainGraphicsScene *scene,
                                  VAbstractPattern *doc, VContainer *data, const Document &parse,
-                                 const Source &typeCreation, bool autoSmooth)
+                                 const Source &typeCreation, bool autoSmooth,
+                                 int lengthMode, const QString &targetLength)
 {
     const qreal calcAngle1 = CheckFormula(_id, a1, data);
     const qreal calcAngle2 = CheckFormula(_id, a2, data);
@@ -254,6 +255,21 @@ VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 poin
             static_cast<QPointF>(*p1), static_cast<QPointF>(*p4), calcAngle1, calcAngle2);
         finalLength1 = hobby.first;
         finalLength2 = hobby.second;
+    }
+
+    if (lengthMode > 0 && !targetLength.isEmpty())
+    {
+        QString tl = targetLength;
+        const qreal targetPx = qApp->toPixel(CheckFormula(_id, tl, data));
+        if (targetPx > 0.0)
+        {
+            const QPair<qreal, qreal> solved = VAbstractCubicBezier::SolveHandleLengths(
+                static_cast<QPointF>(*p1), static_cast<QPointF>(*p4),
+                calcAngle1, calcAngle2, finalLength1, finalLength2,
+                targetPx, lengthMode);
+            finalLength1 = solved.first;
+            finalLength2 = solved.second;
+        }
     }
 
     auto spline = new VSpline(*p1, *p4, calcAngle1, a1, calcAngle2, a2, finalLength1, l1, finalLength2, l2);
@@ -726,14 +742,20 @@ void VToolSpline::SetSplineAttributes(QDomElement &domElement, const VSpline &sp
     if (m_lengthMode > 0)
     {
         doc->SetAttribute(domElement, AttrLengthMode, m_lengthMode);
-        if (!m_targetLength.isEmpty())
-        {
-            doc->SetAttribute(domElement, AttrLength, m_targetLength);
-        }
     }
     else
     {
         domElement.removeAttribute(AttrLengthMode);
+    }
+
+    // Persist the target length independently of the mode so toggling the mode
+    // Off and back On does not lose the user's entered value.
+    if (!m_targetLength.isEmpty())
+    {
+        doc->SetAttribute(domElement, AttrLength, m_targetLength);
+    }
+    else
+    {
         domElement.removeAttribute(AttrLength);
     }
 }

@@ -479,14 +479,20 @@ void VToolCubicBezier::SetSplineAttributes(QDomElement &domElement, const VCubic
     if (m_lengthMode > 0)
     {
         doc->SetAttribute(domElement, AttrLengthMode, m_lengthMode);
-        if (!m_targetLength.isEmpty())
-        {
-            doc->SetAttribute(domElement, AttrLength, m_targetLength);
-        }
     }
     else
     {
         domElement.removeAttribute(AttrLengthMode);
+    }
+
+    // Persist the target length independently of the mode so toggling the mode
+    // Off and back On does not lose the user's entered value.
+    if (!m_targetLength.isEmpty())
+    {
+        doc->SetAttribute(domElement, AttrLength, m_targetLength);
+    }
+    else
+    {
         domElement.removeAttribute(AttrLength);
     }
 }
