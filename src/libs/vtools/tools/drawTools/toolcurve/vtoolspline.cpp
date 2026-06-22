@@ -249,6 +249,12 @@ VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 poin
     qreal finalLength1 = calcLength1;
     qreal finalLength2 = calcLength2;
 
+    // Mutual-exclusive dispatch: the three handle-computation modes (Hobby,
+    // length-solver, combined tension-solver) each produce a DIFFERENT set of
+    // handle lengths from the SAME inputs. Running them sequentially (Hobby
+    // first, then solver on the result) would feed solver inputs that are
+    // already transformed, producing wrong geometry. The if/else-if ensures
+    // exactly one code-path modifies the handles per Create() call.
     const bool hasTarget = (lengthMode > 0 && !targetLength.isEmpty());
     qreal targetPx = 0.0;
     if (hasTarget)
