@@ -805,8 +805,8 @@ QPair<qreal, qreal> VAbstractCubicBezier::SolveHandleLengths(
 //---------------------------------------------------------------------------------------------------------------------
 // Combined auto-smooth + curve-length: instead of scaling the finished Hobby
 // handles linearly, vary the Hobby tension parameter so the curve keeps its
-// natural Hobby shape at the found tension. Arc length decreases monotonically
-// as tension increases.
+// natural Hobby shape at the found tension. Uses secant method with bracket
+// search, same approach as SolveHandleLengths.
 //
 // mode: 1=vary start tension (rho), 2=vary end tension (sigma), 3=both equally
 QPair<qreal, qreal> VAbstractCubicBezier::SolveHobbyTension(
@@ -875,24 +875,28 @@ QPair<qreal, qreal> VAbstractCubicBezier::SolveHobbyTension(
         }
     }
 
-    qreal tau = 1.0;
-    for (int i = 0; i < 40; ++i)
+    qreal x0 = lo,  f0 = lenForTau(lo) - targetPx;
+    qreal x1 = hi,  f1 = lenForTau(hi) - targetPx;
+
+    for (int i = 0; i < 10; ++i)
     {
-        tau = 0.5 * (lo + hi);
-        const qreal f = lenForTau(tau) - targetPx;
-        if (qAbs(f) < eps)
+        if (qAbs(f1 - f0) < 1e-12)
         {
             break;
         }
-        if (f > 0.0)
+        qreal xn = x1 - f1 * (x1 - x0) / (f1 - f0);
+        if (xn <= lo || xn >= hi)
         {
-            lo = tau;
+            xn = 0.5 * (lo + hi);
         }
-        else
+        const qreal fn = lenForTau(xn) - targetPx;
+        if (qAbs(fn) < eps)
         {
-            hi = tau;
+            return handlesForTau(xn);
         }
+        x0 = x1; f0 = f1;
+        x1 = xn; f1 = fn;
     }
 
-    return handlesForTau(tau);
+    return handlesForTau(x1);
 }
