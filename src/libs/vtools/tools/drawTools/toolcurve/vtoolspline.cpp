@@ -152,6 +152,7 @@ void VToolSpline::setDialog()
     dialogTool->SetSpline(*spl);
     dialogTool->SetAutoSmooth(m_autoSmooth);
     dialogTool->SetLengthMode(m_lengthMode);
+    dialogTool->SetTargetLength(m_targetLength);
     dialogTool->setLineColor(spl->getLineColor());
     dialogTool->setLineWeight(spl->getLineWeight());
     dialogTool->setPenStyle(spl->GetPenStyle());
