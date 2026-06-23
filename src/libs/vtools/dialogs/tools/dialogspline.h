@@ -90,6 +90,7 @@ public:
     void          SetLengthMode(int value);
 
     QString       GetTargetLength() const;
+    void          SetTargetLength(const QString &formula);
 
     QString       getPenStyle() const;
     void          setPenStyle(const QString &value);
@@ -130,6 +131,7 @@ private slots:
     void          FXAngle2();
     void          FXLength1();
     void          FXLength2();
+    void          FXCurveLength();
 
 private:
     Q_DISABLE_COPY(DialogSpline)

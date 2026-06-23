@@ -53,17 +53,23 @@
 #include <QComboBox>
 #include <QLabel>
 #include <QLineEdit>
+#include <QPlainTextEdit>
 #include <QPointer>
+#include <QPushButton>
 #include <new>
 
 #include "../../tools/vabstracttool.h"
 #include "../ifc/ifcdef.h"
 #include "../../visualization/path/vistoolcubicbezier.h"
 #include "../../visualization/visualization.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vgeometry/vpointf.h"
+#include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vcontainer.h"
 #include "dialogtool.h"
 #include "ui_dialogcubicbezier.h"
+#include "vtranslatevars.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 DialogCubicBezier::DialogCubicBezier(const VContainer *data, const quint32 &toolId, QWidget *parent)
@@ -119,6 +125,7 @@ DialogCubicBezier::DialogCubicBezier(const VContainer *data, const quint32 &tool
     connect(ui->comboBoxP3, &QComboBox::currentTextChanged, this, &DialogCubicBezier::PointNameChanged);
     connect(ui->comboBoxP4, &QComboBox::currentTextChanged, this, &DialogCubicBezier::PointNameChanged);
 
+    connect(ui->toolButtonExprCurveLength, &QPushButton::clicked, this, &DialogCubicBezier::FXCurveLength);
     connect(ui->comboBoxLengthMode, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &DialogCubicBezier::updateCurveLengthEnabled);
     connect(ui->plainTextEditCurveLength, &QPlainTextEdit::textChanged, this, [this]()
     {
@@ -172,6 +179,37 @@ void DialogCubicBezier::SetLengthMode(int value)
 QString DialogCubicBezier::GetTargetLength() const
 {
     return ui->plainTextEditCurveLength->toPlainText().trimmed();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogCubicBezier::SetTargetLength(const QString &formula)
+{
+    if (formula.isEmpty())
+    {
+        return;
+    }
+    const QString f = qApp->translateVariables()->FormulaToUser(formula, qApp->Settings()->getOsSeparator());
+    ui->plainTextEditCurveLength->blockSignals(true);
+    ui->plainTextEditCurveLength->setPlainText(f);
+    ui->plainTextEditCurveLength->blockSignals(false);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogCubicBezier::FXCurveLength()
+{
+    auto dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
+    dialog->setWindowTitle(tr("Edit curve length"));
+    QString lengthF = qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditCurveLength->toPlainText(),
+                                                         qApp->Settings()->getOsSeparator());
+    dialog->SetFormula(lengthF);
+    dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
+    if (dialog->exec() == QDialog::Accepted)
+    {
+        lengthF = qApp->translateVariables()->FormulaToUser(dialog->GetFormula(), qApp->Settings()->getOsSeparator());
+        ui->plainTextEditCurveLength->setPlainText(lengthF);
+        MoveCursorToEnd(ui->plainTextEditCurveLength);
+    }
+    delete dialog;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

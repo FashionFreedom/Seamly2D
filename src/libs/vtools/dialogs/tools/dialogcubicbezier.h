@@ -88,6 +88,7 @@ public:
     void          SetLengthMode(int value);
 
     QString       GetTargetLength() const;
+    void          SetTargetLength(const QString &formula);
 
     QString       getPenStyle() const;
     void          setPenStyle(const QString &value);
@@ -109,6 +110,9 @@ protected:
      * @brief SaveData Put dialog data in local variables
      */
     virtual void  SaveData() override;
+
+private slots:
+    void          FXCurveLength();
 
 private:
     Q_DISABLE_COPY(DialogCubicBezier)

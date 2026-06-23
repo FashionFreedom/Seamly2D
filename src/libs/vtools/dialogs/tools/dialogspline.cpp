@@ -167,6 +167,7 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
     connect(ui->toolButtonExprAngle2, &QPushButton::clicked, this, &DialogSpline::FXAngle2);
     connect(ui->toolButtonExprLength1, &QPushButton::clicked, this, &DialogSpline::FXLength1);
     connect(ui->toolButtonExprLength2, &QPushButton::clicked, this, &DialogSpline::FXLength2);
+    connect(ui->toolButtonExprCurveLength, &QPushButton::clicked, this, &DialogSpline::FXCurveLength);
 
     connect(ui->plainTextEditAngle1F, &QPlainTextEdit::textChanged, this, &DialogSpline::Angle1Changed);
     connect(ui->plainTextEditAngle2F, &QPlainTextEdit::textChanged, this, &DialogSpline::Angle2Changed);
@@ -433,6 +434,24 @@ void DialogSpline::FXLength2()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::FXCurveLength()
+{
+    auto dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
+    dialog->setWindowTitle(tr("Edit curve length"));
+    QString lengthF = qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditCurveLength->toPlainText(),
+                                                         qApp->Settings()->getOsSeparator());
+    dialog->SetFormula(lengthF);
+    dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
+    if (dialog->exec() == QDialog::Accepted)
+    {
+        lengthF = qApp->translateVariables()->FormulaToUser(dialog->GetFormula(), qApp->Settings()->getOsSeparator());
+        ui->plainTextEditCurveLength->setPlainText(lengthF);
+        MoveCursorToEnd(ui->plainTextEditCurveLength);
+    }
+    delete dialog;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 const QSharedPointer<VPointF> DialogSpline::GetP1() const
 {
     return data->GeometricObject<VPointF>(getCurrentObjectId(ui->comboBoxP1));
@@ -660,6 +679,19 @@ void DialogSpline::SetLengthMode(int value)
 QString DialogSpline::GetTargetLength() const
 {
     return ui->plainTextEditCurveLength->toPlainText().trimmed();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::SetTargetLength(const QString &formula)
+{
+    if (formula.isEmpty())
+    {
+        return;
+    }
+    const QString f = qApp->translateVariables()->FormulaToUser(formula, qApp->Settings()->getOsSeparator());
+    ui->plainTextEditCurveLength->blockSignals(true);
+    ui->plainTextEditCurveLength->setPlainText(f);
+    ui->plainTextEditCurveLength->blockSignals(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
