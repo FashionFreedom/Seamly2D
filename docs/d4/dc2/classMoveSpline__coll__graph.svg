@@ -417,38 +417,42 @@ var sectionId = 'dynsection-1';
 <g id="node12" class="node">
 <title>Node12</title>
 <g id="a_node12"><a xlink:href="../../dd/d51/classVAbstractCubicBezier.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="508,-777 508,-1032 656,-1032 656,-777 508,-777"/>
-<text text-anchor="middle" x="582" y="-1020" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractCubicBezier</text>
-<polyline fill="none" stroke="#666666" points="508,-1013 656,-1013 "/>
-<text text-anchor="middle" x="582" y="-1001" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#666666" points="508,-994 656,-994 "/>
-<text text-anchor="start" x="516" y="-982" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractCubicBezier()</text>
-<text text-anchor="start" x="516" y="-971" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractCubicBezier()</text>
-<text text-anchor="start" x="516" y="-960" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="516" y="-949" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractCubicBezier()</text>
-<text text-anchor="start" x="516" y="-938" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP1()</text>
-<text text-anchor="start" x="516" y="-927" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP2()</text>
-<text text-anchor="start" x="516" y="-916" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP3()</text>
-<text text-anchor="start" x="516" y="-905" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP4()</text>
-<text text-anchor="start" x="516" y="-894" font-family="Helvetica,sans-Serif" font-size="10.00">+ CutSpline()</text>
-<text text-anchor="start" x="516" y="-883" font-family="Helvetica,sans-Serif" font-size="10.00">+ NameForHistory()</text>
-<text text-anchor="start" x="516" y="-872" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetParmT()</text>
-<text text-anchor="start" x="516" y="-861" font-family="Helvetica,sans-Serif" font-size="10.00">+ LengthT()</text>
-<text text-anchor="start" x="516" y="-850" font-family="Helvetica,sans-Serif" font-size="10.00"># CreateName()</text>
-<text text-anchor="start" x="516" y="-839" font-family="Helvetica,sans-Serif" font-size="10.00"># GetControlPoint1()</text>
-<text text-anchor="start" x="516" y="-828" font-family="Helvetica,sans-Serif" font-size="10.00"># GetControlPoint2()</text>
-<text text-anchor="start" x="516" y="-817" font-family="Helvetica,sans-Serif" font-size="10.00"># CalcSqDistance()</text>
-<text text-anchor="start" x="516" y="-806" font-family="Helvetica,sans-Serif" font-size="10.00"># PointBezier_r()</text>
-<text text-anchor="start" x="516" y="-795" font-family="Helvetica,sans-Serif" font-size="10.00"># GetCubicBezierPoints()</text>
-<text text-anchor="start" x="516" y="-784" font-family="Helvetica,sans-Serif" font-size="10.00"># LengthBezier()</text>
+<polygon fill="white" stroke="#666666" points="508,-755 508,-1054 656,-1054 656,-755 508,-755"/>
+<text text-anchor="middle" x="582" y="-1042" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractCubicBezier</text>
+<polyline fill="none" stroke="#666666" points="508,-1035 656,-1035 "/>
+<text text-anchor="middle" x="582" y="-1023" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#666666" points="508,-1016 656,-1016 "/>
+<text text-anchor="start" x="516" y="-1004" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractCubicBezier()</text>
+<text text-anchor="start" x="516" y="-993" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractCubicBezier()</text>
+<text text-anchor="start" x="516" y="-982" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="516" y="-971" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractCubicBezier()</text>
+<text text-anchor="start" x="516" y="-960" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP1()</text>
+<text text-anchor="start" x="516" y="-949" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP2()</text>
+<text text-anchor="start" x="516" y="-938" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP3()</text>
+<text text-anchor="start" x="516" y="-927" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP4()</text>
+<text text-anchor="start" x="516" y="-916" font-family="Helvetica,sans-Serif" font-size="10.00">+ CutSpline()</text>
+<text text-anchor="start" x="516" y="-905" font-family="Helvetica,sans-Serif" font-size="10.00">+ NameForHistory()</text>
+<text text-anchor="start" x="516" y="-894" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetParmT()</text>
+<text text-anchor="start" x="516" y="-883" font-family="Helvetica,sans-Serif" font-size="10.00">+ LengthT()</text>
+<text text-anchor="start" x="516" y="-872" font-family="Helvetica,sans-Serif" font-size="10.00">+ HobbyHandleLengths()</text>
+<text text-anchor="start" x="516" y="-861" font-family="Helvetica,sans-Serif" font-size="10.00">+ CubicBezierLengthGL()</text>
+<text text-anchor="start" x="516" y="-850" font-family="Helvetica,sans-Serif" font-size="10.00">+ SolveHandleLengths()</text>
+<text text-anchor="start" x="516" y="-839" font-family="Helvetica,sans-Serif" font-size="10.00">+ SolveHobbyTension()</text>
+<text text-anchor="start" x="516" y="-828" font-family="Helvetica,sans-Serif" font-size="10.00"># CreateName()</text>
+<text text-anchor="start" x="516" y="-817" font-family="Helvetica,sans-Serif" font-size="10.00"># GetControlPoint1()</text>
+<text text-anchor="start" x="516" y="-806" font-family="Helvetica,sans-Serif" font-size="10.00"># GetControlPoint2()</text>
+<text text-anchor="start" x="516" y="-795" font-family="Helvetica,sans-Serif" font-size="10.00"># CalcSqDistance()</text>
+<text text-anchor="start" x="516" y="-784" font-family="Helvetica,sans-Serif" font-size="10.00"># PointBezier_r()</text>
+<text text-anchor="start" x="516" y="-773" font-family="Helvetica,sans-Serif" font-size="10.00"># GetCubicBezierPoints()</text>
+<text text-anchor="start" x="516" y="-762" font-family="Helvetica,sans-Serif" font-size="10.00"># LengthBezier()</text>
 </a>
 </g>
 </g>
 <!-- Node12&#45;&gt;Node11 -->
 <g id="edge12" class="edge">
 <title>Node12&#45;&gt;Node11</title>
-<path fill="none" stroke="#63b8ff" d="M555.96,-767.09C536.87,-667.07 511.23,-532.75 493.12,-437.91"/>
-<polygon fill="none" stroke="#63b8ff" points="552.53,-767.8 557.85,-776.96 559.41,-766.49 552.53,-767.8"/>
+<path fill="none" stroke="#63b8ff" d="M551.74,-744.97C533.2,-647.86 509.89,-525.75 493.09,-437.73"/>
+<polygon fill="none" stroke="#63b8ff" points="548.32,-745.72 553.63,-754.88 555.19,-744.4 548.32,-745.72"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node">
@@ -471,7 +475,7 @@ var sectionId = 'dynsection-1';
 <!-- Node13&#45;&gt;Node12 -->
 <g id="edge13" class="edge">
 <title>Node13&#45;&gt;Node12</title>
-<path fill="none" stroke="#63b8ff" d="M675.34,-1537.15C658.33,-1422 622.73,-1181.09 600.74,-1032.33"/>
+<path fill="none" stroke="#63b8ff" d="M675.36,-1537.29C659.16,-1427.64 626.06,-1203.64 603.95,-1054"/>
 <polygon fill="none" stroke="#63b8ff" points="671.91,-1537.84 676.83,-1547.22 678.83,-1536.82 671.91,-1537.84"/>
 </g>
 <!-- Node14 -->

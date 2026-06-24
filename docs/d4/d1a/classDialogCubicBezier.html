@@ -102,6 +102,7 @@ $(document).ready(function(){initNavTree('d4/d1a/classDialogCubicBezier.html','.
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../df/d69/classDialogCubicBezier-members.html">List of all members</a>  </div>
@@ -129,6 +130,8 @@ Public Slots</h2></td></tr>
 <tr class="separator:a0785c989b1b15f3d69f2dafb177bfd4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac307242f53bc1e38b59e9b6c88033724"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#ac307242f53bc1e38b59e9b6c88033724">PointNameChanged</a> () override</td></tr>
 <tr class="separator:ac307242f53bc1e38b59e9b6c88033724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad752a7b529af0f3e70f759eaaffda2d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#ad752a7b529af0f3e70f759eaaffda2d5">updateCurveLengthEnabled</a> ()</td></tr>
+<tr class="separator:ad752a7b529af0f3e70f759eaaffda2d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_slots_classDialogTool"><td colspan="2" onclick="javascript:toggleInherit('pub_slots_classDialogTool')"><img src="../../closed.png" alt="-"/>&#160;Public Slots inherited from <a class="el" href="../../d2/d7b/classDialogTool.html">DialogTool</a></td></tr>
 <tr class="memitem:a230903cc2885e3126cc71f175cba6b52 inherit pub_slots_classDialogTool"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#a230903cc2885e3126cc71f175cba6b52">ChosenObject</a> (quint32 id, const <a class="el" href="../../d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2af">SceneObject</a> &amp;type)</td></tr>
 <tr class="memdesc:a230903cc2885e3126cc71f175cba6b52 inherit pub_slots_classDialogTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">ChosenObject gets id and type of selected object. Save right data and ignore wrong.  <br /></td></tr>
@@ -193,6 +196,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a57128e39138e369e0e8018b1ed311d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35834f7203a515a5d0b2b730e9118fef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#a35834f7203a515a5d0b2b730e9118fef">SetSpline</a> (const <a class="el" href="../../d0/dab/classVCubicBezier.html">VCubicBezier</a> &amp;spline)</td></tr>
 <tr class="separator:a35834f7203a515a5d0b2b730e9118fef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42a9464859dd848eaaceb4848733b325"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#a42a9464859dd848eaaceb4848733b325">GetAutoSmooth</a> () const</td></tr>
+<tr class="separator:a42a9464859dd848eaaceb4848733b325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d151b534f1af6648c6cafd7e9a93af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#a87d151b534f1af6648c6cafd7e9a93af">SetAutoSmooth</a> (bool value)</td></tr>
+<tr class="separator:a87d151b534f1af6648c6cafd7e9a93af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af97f0b128320a4add93b6210d8ae6a05"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#af97f0b128320a4add93b6210d8ae6a05">GetLengthMode</a> () const</td></tr>
+<tr class="separator:af97f0b128320a4add93b6210d8ae6a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a725317ac7605444ecb07cc47aa2391ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#a725317ac7605444ecb07cc47aa2391ce">SetLengthMode</a> (int value)</td></tr>
+<tr class="separator:a725317ac7605444ecb07cc47aa2391ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ff17c291e3206f9239aa0156ecbef93"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#a6ff17c291e3206f9239aa0156ecbef93">GetTargetLength</a> () const</td></tr>
+<tr class="separator:a6ff17c291e3206f9239aa0156ecbef93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4656182f528f020d90f8cbcf2a0eee6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#a4656182f528f020d90f8cbcf2a0eee6e">SetTargetLength</a> (const QString &amp;formula)</td></tr>
+<tr class="separator:a4656182f528f020d90f8cbcf2a0eee6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7548932c28eea03885047bb13a4e8a14"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#a7548932c28eea03885047bb13a4e8a14">getPenStyle</a> () const</td></tr>
 <tr class="separator:a7548932c28eea03885047bb13a4e8a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a510840a25cfb369e4583b232667ebe19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#a510840a25cfb369e4583b232667ebe19">setPenStyle</a> (const QString &amp;value)</td></tr>
@@ -351,6 +366,11 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a4516064f164836b807a8501b6d17381f inherit pro_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#a4516064f164836b807a8501b6d17381f">makeAngleTooltip</a> () const</td></tr>
 <tr class="separator:a4516064f164836b807a8501b6d17381f inherit pro_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:abcc3543322fb1e89702d76f116c8a350"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#abcc3543322fb1e89702d76f116c8a350">FXCurveLength</a> ()</td></tr>
+<tr class="separator:abcc3543322fb1e89702d76f116c8a350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a79da3b9214b0b82ecba13ae2f9fe5f5d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../dd/daa/classQSharedPointer.html">QSharedPointer</a>&lt; <a class="el" href="../../db/d57/classVPointF.html">VPointF</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#a79da3b9214b0b82ecba13ae2f9fe5f5d">GetP1</a> () const</td></tr>
@@ -369,6 +389,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a846d233d835dc4d0196b6f5fc4bf76e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dab/classVCubicBezier.html">VCubicBezier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#a846d233d835dc4d0196b6f5fc4bf76e8">spl</a></td></tr>
 <tr class="memdesc:a846d233d835dc4d0196b6f5fc4bf76e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">spl spline  <br /></td></tr>
 <tr class="separator:a846d233d835dc4d0196b6f5fc4bf76e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af83d2a41e574dbd68210e3a36dd81b67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dab/classVCubicBezier.html">VCubicBezier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#af83d2a41e574dbd68210e3a36dd81b67">m_computedSpl</a></td></tr>
+<tr class="separator:af83d2a41e574dbd68210e3a36dd81b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30fddc3f23cf99c04d8bd2e748a96c69"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#a30fddc3f23cf99c04d8bd2e748a96c69">m_hasComputedSpl</a></td></tr>
+<tr class="separator:a30fddc3f23cf99c04d8bd2e748a96c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85e49f220caa093c0c759b140f2c3f70"><td class="memItemLeft" align="right" valign="top">qint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1a/classDialogCubicBezier.html#a85e49f220caa093c0c759b140f2c3f70">newDuplicate</a></td></tr>
 <tr class="separator:a85e49f220caa093c0c759b140f2c3f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -515,9 +539,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00068">68</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00075">75</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01082">DialogTool::CheckState()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00174">DialogTool::data</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00255">DialogTool::fillComboBoxPoints()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00362">DialogTool::initializeOkCancelApply()</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00163">LineTypeNone</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00258">PointNameChanged()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01452">DialogTool::setDialogPosition()</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00106">ui</a>, and <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00233">DialogTool::vis</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01082">DialogTool::CheckState()</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00255">DialogTool::fillComboBoxPoints()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00198">FXCurveLength()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00362">DialogTool::initializeOkCancelApply()</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00165">LineTypeNone</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00360">PointNameChanged()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01452">DialogTool::setDialogPosition()</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00216">updateCurveLengthEnabled()</a>.</p>
 
 </div>
 </div>
@@ -544,9 +568,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00123">123</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00143">143</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00106">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
 
 </div>
 </div>
@@ -585,9 +609,84 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00200">200</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00302">302</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01153">DialogTool::DialogAccepted()</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00966">DialogTool::getCurrentObjectId()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00231">DialogTool::number</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00225">DialogTool::prepare</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00437">SCASSERT</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00981">DialogTool::SetObject()</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00106">ui</a>, and <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00233">DialogTool::vis</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01153">DialogTool::DialogAccepted()</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00966">DialogTool::getCurrentObjectId()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00231">DialogTool::number</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00225">DialogTool::prepare</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00437">SCASSERT</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00981">DialogTool::SetObject()</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>, and <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00233">DialogTool::vis</a>.</p>
+
+</div>
+</div>
+<a id="abcc3543322fb1e89702d76f116c8a350" name="abcc3543322fb1e89702d76f116c8a350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcc3543322fb1e89702d76f116c8a350">&#9670;&#160;</a></span>FXCurveLength</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DialogCubicBezier::FXCurveLength </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00198">198</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00174">DialogTool::data</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00445">DialogTool::MoveCursorToEnd()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00084">ToolDialog</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00222">DialogTool::toolId</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00786">UnitsToStr()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00075">DialogCubicBezier()</a>.</p>
+
+</div>
+</div>
+<a id="a42a9464859dd848eaaceb4848733b325" name="a42a9464859dd848eaaceb4848733b325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42a9464859dd848eaaceb4848733b325">&#9670;&#160;</a></span>GetAutoSmooth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DialogCubicBezier::GetAutoSmooth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00155">155</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00408">SaveData()</a>.</p>
+
+</div>
+</div>
+<a id="af97f0b128320a4add93b6210d8ae6a05" name="af97f0b128320a4add93b6210d8ae6a05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af97f0b128320a4add93b6210d8ae6a05">&#9670;&#160;</a></span>GetLengthMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DialogCubicBezier::GetLengthMode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00167">167</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
 
 </div>
 </div>
@@ -606,9 +705,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00188">188</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00290">290</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00461">ColorBlack</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00413">DialogTool::getComboBoxCurrentData()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00106">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00463">ColorBlack</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00413">DialogTool::getComboBoxCurrentData()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
 
 </div>
 </div>
@@ -630,9 +729,9 @@ Additional Inherited Members</h2></td></tr>
 <p>getLineWeight return weight of the lines </p>
 <dl class="section return"><dt>Returns</dt><dd>type </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00172">172</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00274">274</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00170">DefaultLineWeight</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00413">DialogTool::getComboBoxCurrentData()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00106">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00172">DefaultLineWeight</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00413">DialogTool::getComboBoxCurrentData()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
 
 </div>
 </div>
@@ -659,11 +758,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00330">330</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00440">440</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00174">DialogTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00966">DialogTool::getCurrentObjectId()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00106">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00174">DialogTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00966">DialogTool::getCurrentObjectId()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00258">PointNameChanged()</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00306">SaveData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00360">PointNameChanged()</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00408">SaveData()</a>.</p>
 
 </div>
 </div>
@@ -690,11 +789,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00336">336</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00446">446</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00174">DialogTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00966">DialogTool::getCurrentObjectId()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00106">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00174">DialogTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00966">DialogTool::getCurrentObjectId()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00258">PointNameChanged()</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00306">SaveData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00360">PointNameChanged()</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00408">SaveData()</a>.</p>
 
 </div>
 </div>
@@ -721,11 +820,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00342">342</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00452">452</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00174">DialogTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00966">DialogTool::getCurrentObjectId()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00106">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00174">DialogTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00966">DialogTool::getCurrentObjectId()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00258">PointNameChanged()</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00306">SaveData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00360">PointNameChanged()</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00408">SaveData()</a>.</p>
 
 </div>
 </div>
@@ -752,11 +851,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00348">348</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00458">458</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00174">DialogTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00966">DialogTool::getCurrentObjectId()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00106">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00174">DialogTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00966">DialogTool::getCurrentObjectId()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00258">PointNameChanged()</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00306">SaveData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00360">PointNameChanged()</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00408">SaveData()</a>.</p>
 
 </div>
 </div>
@@ -775,9 +874,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00156">156</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00258">258</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00413">DialogTool::getComboBoxCurrentData()</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00164">LineTypeSolidLine</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00106">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00413">DialogTool::getComboBoxCurrentData()</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00166">LineTypeSolidLine</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
 
 </div>
 </div>
@@ -796,9 +895,30 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00129">129</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00149">149</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00109">spl</a>.</p>
+<p class="reference">References <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00122">spl</a>.</p>
+
+</div>
+</div>
+<a id="a6ff17c291e3206f9239aa0156ecbef93" name="a6ff17c291e3206f9239aa0156ecbef93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ff17c291e3206f9239aa0156ecbef93">&#9670;&#160;</a></span>GetTargetLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString DialogCubicBezier::GetTargetLength </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00179">179</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
 
 </div>
 </div>
@@ -825,11 +945,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00258">258</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00360">360</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01141">DialogTool::ChangeColor()</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01082">DialogTool::CheckState()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00174">DialogTool::data</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00489">DialogTool::DNumber()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00217">DialogTool::errorColor</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00190">DialogTool::flagError</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00966">DialogTool::getCurrentObjectId()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00330">GetP1()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00149">VCubicBezier::GetP1()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00336">GetP2()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00342">GetP3()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00348">GetP4()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00185">VCubicBezier::GetP4()</a>, <a class="el" href="../../da/d37/vgobject_8cpp_source.html#l00205">VGObject::id()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01032">VContainer::IsUnique()</a>, <a class="el" href="../../da/d37/vgobject_8cpp_source.html#l00148">VGObject::name()</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00111">newDuplicate</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00216">DialogTool::okColor</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d3/d4f/vabstractcurve_8cpp_source.html#l00304">VAbstractCurve::SetDuplicate()</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00109">spl</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00106">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01141">DialogTool::ChangeColor()</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01082">DialogTool::CheckState()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00174">DialogTool::data</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00489">DialogTool::DNumber()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00217">DialogTool::errorColor</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00190">DialogTool::flagError</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00966">DialogTool::getCurrentObjectId()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00440">GetP1()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00149">VCubicBezier::GetP1()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00446">GetP2()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00452">GetP3()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00458">GetP4()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00185">VCubicBezier::GetP4()</a>, <a class="el" href="../../da/d37/vgobject_8cpp_source.html#l00205">VGObject::id()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01032">VContainer::IsUnique()</a>, <a class="el" href="../../da/d37/vgobject_8cpp_source.html#l00148">VGObject::name()</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00126">newDuplicate</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00216">DialogTool::okColor</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d3/d4f/vabstractcurve_8cpp_source.html#l00304">VAbstractCurve::SetDuplicate()</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00122">spl</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00068">DialogCubicBezier()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00075">DialogCubicBezier()</a>.</p>
 
 </div>
 </div>
@@ -860,9 +980,53 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d2/d7b/classDialogTool.html#aa197a256d8d19a03878816f138e4e248">DialogTool</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00306">306</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00408">408</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d3/d4f/vabstractcurve_8cpp_source.html#l00298">VAbstractCurve::GetDuplicate()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00330">GetP1()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00336">GetP2()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00342">GetP3()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00348">GetP4()</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00111">newDuplicate</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00437">SCASSERT</a>, <a class="el" href="../../d3/d4f/vabstractcurve_8cpp_source.html#l00304">VAbstractCurve::SetDuplicate()</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00109">spl</a>, and <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00233">DialogTool::vis</a>.</p>
+<p class="reference">References <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00155">GetAutoSmooth()</a>, <a class="el" href="../../d3/d4f/vabstractcurve_8cpp_source.html#l00298">VAbstractCurve::GetDuplicate()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00440">GetP1()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00149">VCubicBezier::GetP1()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00446">GetP2()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00161">VCubicBezier::GetP2()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00452">GetP3()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00173">VCubicBezier::GetP3()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00458">GetP4()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00185">VCubicBezier::GetP4()</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00123">m_computedSpl</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00124">m_hasComputedSpl</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00126">newDuplicate</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00437">SCASSERT</a>, <a class="el" href="../../d3/d4f/vabstractcurve_8cpp_source.html#l00304">VAbstractCurve::SetDuplicate()</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00122">spl</a>, and <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00233">DialogTool::vis</a>.</p>
+
+</div>
+</div>
+<a id="a87d151b534f1af6648c6cafd7e9a93af" name="a87d151b534f1af6648c6cafd7e9a93af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87d151b534f1af6648c6cafd7e9a93af">&#9670;&#160;</a></span>SetAutoSmooth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DialogCubicBezier::SetAutoSmooth </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00161">161</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
+
+</div>
+</div>
+<a id="a725317ac7605444ecb07cc47aa2391ce" name="a725317ac7605444ecb07cc47aa2391ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a725317ac7605444ecb07cc47aa2391ce">&#9670;&#160;</a></span>SetLengthMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DialogCubicBezier::SetLengthMode </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00173">173</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
 
 </div>
 </div>
@@ -882,9 +1046,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00194">194</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00296">296</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00432">DialogTool::changeCurrentData()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00106">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00432">DialogTool::changeCurrentData()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
 
 </div>
 </div>
@@ -912,9 +1076,9 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00182">182</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00284">284</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00432">DialogTool::changeCurrentData()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00106">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00432">DialogTool::changeCurrentData()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
 
 </div>
 </div>
@@ -934,9 +1098,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00162">162</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00264">264</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00432">DialogTool::changeCurrentData()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00106">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00432">DialogTool::changeCurrentData()</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
 
 </div>
 </div>
@@ -956,9 +1120,31 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00135">135</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00222">222</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00149">VCubicBezier::GetP1()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00161">VCubicBezier::GetP2()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00173">VCubicBezier::GetP3()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00185">VCubicBezier::GetP4()</a>, <a class="el" href="../../da/d37/vgobject_8cpp_source.html#l00205">VGObject::id()</a>, <a class="el" href="../../da/d37/vgobject_8cpp_source.html#l00148">VGObject::name()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00437">SCASSERT</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00903">DialogTool::setCurrentPointId()</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00109">spl</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00106">ui</a>, and <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00233">DialogTool::vis</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00213">VCubicBezier::GetLength()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00149">VCubicBezier::GetP1()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00161">VCubicBezier::GetP2()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00173">VCubicBezier::GetP3()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00185">VCubicBezier::GetP4()</a>, <a class="el" href="../../da/d37/vgobject_8cpp_source.html#l00205">VGObject::id()</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00123">m_computedSpl</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00124">m_hasComputedSpl</a>, <a class="el" href="../../da/d37/vgobject_8cpp_source.html#l00148">VGObject::name()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00437">SCASSERT</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00903">DialogTool::setCurrentPointId()</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00122">spl</a>, <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00786">UnitsToStr()</a>, and <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00233">DialogTool::vis</a>.</p>
+
+</div>
+</div>
+<a id="a4656182f528f020d90f8cbcf2a0eee6e" name="a4656182f528f020d90f8cbcf2a0eee6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4656182f528f020d90f8cbcf2a0eee6e">&#9670;&#160;</a></span>SetTargetLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DialogCubicBezier::SetTargetLength </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>formula</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00185">185</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, and <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">ui</a>.</p>
 
 </div>
 </div>
@@ -987,11 +1173,92 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d2/d7b/classDialogTool.html#a27c61eab1bc3d32f6917983612ab8594">DialogTool</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00300">300</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00402">402</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad752a7b529af0f3e70f759eaaffda2d5" name="ad752a7b529af0f3e70f759eaaffda2d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad752a7b529af0f3e70f759eaaffda2d5">&#9670;&#160;</a></span>updateCurveLengthEnabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DialogCubicBezier::updateCurveLengthEnabled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00216">216</a> of file <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html">dialogcubicbezier.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00075">DialogCubicBezier()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="af83d2a41e574dbd68210e3a36dd81b67" name="af83d2a41e574dbd68210e3a36dd81b67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af83d2a41e574dbd68210e3a36dd81b67">&#9670;&#160;</a></span>m_computedSpl</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/dab/classVCubicBezier.html">VCubicBezier</a> DialogCubicBezier::m_computedSpl</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00123">123</a> of file <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html">dialogcubicbezier.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00408">SaveData()</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00222">SetSpline()</a>.</p>
+
+</div>
+</div>
+<a id="a30fddc3f23cf99c04d8bd2e748a96c69" name="a30fddc3f23cf99c04d8bd2e748a96c69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30fddc3f23cf99c04d8bd2e748a96c69">&#9670;&#160;</a></span>m_hasComputedSpl</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DialogCubicBezier::m_hasComputedSpl</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00124">124</a> of file <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html">dialogcubicbezier.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00408">SaveData()</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00222">SetSpline()</a>.</p>
+
+</div>
+</div>
 <a id="a85e49f220caa093c0c759b140f2c3f70" name="a85e49f220caa093c0c759b140f2c3f70"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a85e49f220caa093c0c759b140f2c3f70">&#9670;&#160;</a></span>newDuplicate</h2>
 
@@ -1012,9 +1279,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00111">111</a> of file <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html">dialogcubicbezier.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00126">126</a> of file <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html">dialogcubicbezier.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00258">PointNameChanged()</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00306">SaveData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00360">PointNameChanged()</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00408">SaveData()</a>.</p>
 
 </div>
 </div>
@@ -1040,9 +1307,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>spl spline </p>
 
-<p class="definition">Definition at line <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00109">109</a> of file <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html">dialogcubicbezier.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00122">122</a> of file <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html">dialogcubicbezier.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00129">GetSpline()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00258">PointNameChanged()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00306">SaveData()</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00135">SetSpline()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00149">GetSpline()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00360">PointNameChanged()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00408">SaveData()</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00222">SetSpline()</a>.</p>
 
 </div>
 </div>
@@ -1066,9 +1333,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00106">106</a> of file <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html">dialogcubicbezier.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html#l00119">119</a> of file <a class="el" href="../../de/db2/dialogcubicbezier_8h_source.html">dialogcubicbezier.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00200">ChosenObject()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00068">DialogCubicBezier()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00188">getLineColor()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00172">getLineWeight()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00330">GetP1()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00336">GetP2()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00342">GetP3()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00348">GetP4()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00156">getPenStyle()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00258">PointNameChanged()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00194">setLineColor()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00182">setLineWeight()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00162">setPenStyle()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00135">SetSpline()</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00123">~DialogCubicBezier()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00302">ChosenObject()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00075">DialogCubicBezier()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00198">FXCurveLength()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00155">GetAutoSmooth()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00167">GetLengthMode()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00290">getLineColor()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00274">getLineWeight()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00440">GetP1()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00446">GetP2()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00452">GetP3()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00458">GetP4()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00258">getPenStyle()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00179">GetTargetLength()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00360">PointNameChanged()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00161">SetAutoSmooth()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00173">SetLengthMode()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00296">setLineColor()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00284">setLineWeight()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00264">setPenStyle()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00222">SetSpline()</a>, <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00185">SetTargetLength()</a>, and <a class="el" href="../../da/db7/dialogcubicbezier_8cpp_source.html#l00143">~DialogCubicBezier()</a>.</p>
 
 </div>
 </div>

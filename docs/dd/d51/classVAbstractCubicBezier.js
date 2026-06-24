@@ -5,6 +5,7 @@ var classVAbstractCubicBezier =
     [ "~VAbstractCubicBezier", "dd/d51/classVAbstractCubicBezier.html#aec748525f5d01ae99a106aec4f507776", null ],
     [ "CalcSqDistance", "dd/d51/classVAbstractCubicBezier.html#aa3ea9835bb76c41c98d033cf350e31b1", null ],
     [ "CreateName", "dd/d51/classVAbstractCubicBezier.html#a5505813d1baba4e5b99a81a347801967", null ],
+    [ "CubicBezierLengthGL", "dd/d51/classVAbstractCubicBezier.html#aca2efc0a9df7827d1708ba1e8d824645", null ],
     [ "CutSpline", "dd/d51/classVAbstractCubicBezier.html#aa357988e7d0c8686a329225ec03ec794", null ],
     [ "GetControlPoint1", "dd/d51/classVAbstractCubicBezier.html#ac4f098ca3e5ac1bacdf251d689a7963f", null ],
     [ "GetControlPoint2", "dd/d51/classVAbstractCubicBezier.html#aa626096d0a567d677963f9160e9e9a1d", null ],
@@ -14,9 +15,12 @@ var classVAbstractCubicBezier =
     [ "GetP3", "dd/d51/classVAbstractCubicBezier.html#a80da5defeb82d04a07a1d3bcc0150bb8", null ],
     [ "GetP4", "dd/d51/classVAbstractCubicBezier.html#ae2c54b1599c35358b3ebe6beff43111f", null ],
     [ "GetParmT", "dd/d51/classVAbstractCubicBezier.html#a82ebd5a0d5100ac69418c01fa89ff84e", null ],
+    [ "HobbyHandleLengths", "dd/d51/classVAbstractCubicBezier.html#af3f338f9700aaf1d08f21f5c666adc0d", null ],
     [ "LengthBezier", "dd/d51/classVAbstractCubicBezier.html#a68a6dd911bd8ba0fc0b78efc450c5d4f", null ],
     [ "LengthT", "dd/d51/classVAbstractCubicBezier.html#a44b9e4905deaa22da9437a5f2112e944", null ],
     [ "NameForHistory", "dd/d51/classVAbstractCubicBezier.html#a990344140d191826acbfa1541511740f", null ],
     [ "operator=", "dd/d51/classVAbstractCubicBezier.html#a1b2d6c7b854a6ee08d874e4307bd1ece", null ],
-    [ "PointBezier_r", "dd/d51/classVAbstractCubicBezier.html#ad7ecdd5b74c1e2468b0a9a20d3cbafc0", null ]
+    [ "PointBezier_r", "dd/d51/classVAbstractCubicBezier.html#ad7ecdd5b74c1e2468b0a9a20d3cbafc0", null ],
+    [ "SolveHandleLengths", "dd/d51/classVAbstractCubicBezier.html#a6a0d974ccfb5aba0e14854c5d72bb21f", null ],
+    [ "SolveHobbyTension", "dd/d51/classVAbstractCubicBezier.html#a6498b6f12bd46690dab8897c75915d4d", null ]
 ];

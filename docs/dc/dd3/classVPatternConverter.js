@@ -95,6 +95,7 @@ var classVPatternConverter =
     [ "toVersion0_7_1", "dc/dd3/classVPatternConverter.html#a95acbe9e46bb2b1f8abf3cb647e1270c", null ],
     [ "toVersion0_7_2", "dc/dd3/classVPatternConverter.html#a7ba7d266da7efebe2a750adae3163ee8", null ],
     [ "toVersion0_7_3", "dc/dd3/classVPatternConverter.html#a53964c28231534ec69b65a5f5df95f8e", null ],
+    [ "toVersion0_7_4", "dc/dd3/classVPatternConverter.html#a8da7d17cccfc8efc21d4bf4b6502d9de", null ],
     [ "CurrentSchema", "dc/dd3/classVPatternConverter.html#a007507fc592c953033b5abb868f6a6d0", null ],
     [ "PatternMaxVer", "dc/dd3/classVPatternConverter.html#ac414abb1883176280ec0dd1a89d42a8a", null ],
     [ "PatternMaxVerStr", "dc/dd3/classVPatternConverter.html#a3864d17988224b9a79f058456de8b99c", null ],

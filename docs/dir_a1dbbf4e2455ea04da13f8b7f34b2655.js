@@ -6,7 +6,7 @@ var dir_a1dbbf4e2455ea04da13f8b7f34b2655 =
     [ "vtoolarc.h", "d3/d19/vtoolarc_8h.html", "d3/d19/vtoolarc_8h" ],
     [ "vtoolarcwithlength.cpp", "d3/d33/vtoolarcwithlength_8cpp.html", null ],
     [ "vtoolarcwithlength.h", "de/dd9/vtoolarcwithlength_8h.html", "de/dd9/vtoolarcwithlength_8h" ],
-    [ "vtoolcubicbezier.cpp", "db/dcd/vtoolcubicbezier_8cpp.html", null ],
+    [ "vtoolcubicbezier.cpp", "db/dcd/vtoolcubicbezier_8cpp.html", "db/dcd/vtoolcubicbezier_8cpp" ],
     [ "vtoolcubicbezier.h", "d4/df1/vtoolcubicbezier_8h.html", "d4/df1/vtoolcubicbezier_8h" ],
     [ "vtoolcubicbezierpath.cpp", "d4/d49/vtoolcubicbezierpath_8cpp.html", null ],
     [ "vtoolcubicbezierpath.h", "d6/d25/vtoolcubicbezierpath_8h.html", "d6/d25/vtoolcubicbezierpath_8h" ],

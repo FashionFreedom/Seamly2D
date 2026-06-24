@@ -98,11 +98,14 @@ $(document).ready(function(){initNavTree('db/dcd/vtoolcubicbezier_8cpp.html','..
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">vtoolcubicbezier.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d4/df1/vtoolcubicbezier_8h_source.html">vtoolcubicbezier.h</a>&quot;</code><br />
 <code>#include &lt;QDomElement&gt;</code><br />
+<code>#include &lt;QLineF&gt;</code><br />
 <code>#include &lt;QPen&gt;</code><br />
 <code>#include &lt;QSharedPointer&gt;</code><br />
 <code>#include &lt;QString&gt;</code><br />
@@ -132,6 +135,97 @@ Include dependency graph for vtoolcubicbezier.cpp:</div>
 </div>
 </div>
 <p><a href="../../db/dcd/vtoolcubicbezier_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a52109a6008955816bf12e7e7611fec5e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dcd/vtoolcubicbezier_8cpp.html#a52109a6008955816bf12e7e7611fec5e">setHandlesFromLengths</a> (<a class="el" href="../../d0/dab/classVCubicBezier.html">VCubicBezier</a> *spline, const QPointF &amp;p1pt, const QPointF &amp;p4pt, qreal angle1, qreal angle2, qreal c1, qreal c2, quint32 p2Id, quint32 p3Id)</td></tr>
+<tr class="separator:a52109a6008955816bf12e7e7611fec5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a52109a6008955816bf12e7e7611fec5e" name="a52109a6008955816bf12e7e7611fec5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52109a6008955816bf12e7e7611fec5e">&#9670;&#160;</a></span>setHandlesFromLengths()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void setHandlesFromLengths </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/dab/classVCubicBezier.html">VCubicBezier</a> *&#160;</td>
+          <td class="paramname"><em>spline</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPointF &amp;&#160;</td>
+          <td class="paramname"><em>p1pt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPointF &amp;&#160;</td>
+          <td class="paramname"><em>p4pt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qreal&#160;</td>
+          <td class="paramname"><em>angle1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qreal&#160;</td>
+          <td class="paramname"><em>angle2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qreal&#160;</td>
+          <td class="paramname"><em>c1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qreal&#160;</td>
+          <td class="paramname"><em>c2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">quint32&#160;</td>
+          <td class="paramname"><em>p2Id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">quint32&#160;</td>
+          <td class="paramname"><em>p3Id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../db/dcd/vtoolcubicbezier_8cpp_source.html#l00084">84</a> of file <a class="el" href="../../db/dcd/vtoolcubicbezier_8cpp_source.html">vtoolcubicbezier.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../da/d37/vgobject_8cpp_source.html#l00128">VGObject::getIdObject()</a>, <a class="el" href="../../da/d37/vgobject_8cpp_source.html#l00168">VGObject::getMode()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00161">VCubicBezier::GetP2()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00173">VCubicBezier::GetP3()</a>, <a class="el" href="../../dd/da8/vpointf_8cpp_source.html#l00177">VPointF::mx()</a>, <a class="el" href="../../dd/da8/vpointf_8cpp_source.html#l00187">VPointF::my()</a>, <a class="el" href="../../da/d37/vgobject_8cpp_source.html#l00148">VGObject::name()</a>, <a class="el" href="../../da/d37/vgobject_8cpp_source.html#l00215">VGObject::setId()</a>, <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00167">VCubicBezier::SetP2()</a>, and <a class="el" href="../../d2/d26/vcubicbezier_8cpp_source.html#l00179">VCubicBezier::SetP3()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/dcd/vtoolcubicbezier_8cpp_source.html#l00170">VToolCubicBezier::Create()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
