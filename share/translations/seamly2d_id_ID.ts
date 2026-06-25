@@ -917,6 +917,58 @@ p, li { spasi: pra-bungkus; }
         <source>Lineweight:</source>
         <translation>Ketebalan garis:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>pilihan</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation> Kurva halus:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Tidak</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ya</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Sesuaikan panjang:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Mati</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Mulai</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Selesai</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Keduanya</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Panjang kurva:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Penyihir rumus</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Rumus panjang busur kurva (diterapkan jika kolom diisi)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Ubah panjang kurva</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -2741,6 +2793,54 @@ p, li { spasi: pra-bungkus; }
     <message>
         <source>Geometry</source>
         <translation>Geometri</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>pilihan</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Kurva halus:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Tidak</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ya</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Sesuaikan panjang:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Mati</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Mulai</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Selesai</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Keduanya</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Panjang kurva:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation> Rumus panjang busur kurva (diterapkan jika kolom diisi)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Ubah panjang kurva</translation>
     </message>
 </context>
 <context>
@@ -13711,6 +13811,46 @@ unggah ke SeamlyME seperti biasa.
     <message>
         <source>Direction:</source>
         <translation>Arah:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>pilihan</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Kurva halus:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Tidak</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ya</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Sesuaikan panjang:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Mati</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Mulai</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Selesai</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Keduanya</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Panjang kurva:</translation>
     </message>
 </context>
 <context>

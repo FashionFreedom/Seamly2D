@@ -917,6 +917,58 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation>Groime linie:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Opțiuni</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Curbă netedă:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Ajustare lungime:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Dezactivat</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Sfârșit</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Ambele</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Lungime curbă:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Asistent Formulă</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Formula lungimii arcului de curbă (se aplică dacă câmpul este completat)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Editare lungime curbă</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -2741,6 +2793,54 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Geometry</source>
         <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Opțiuni</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Curbă netedă:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Ajustare lungime:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Dezactivat</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Sfârșit</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Ambele</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Lungime curbă:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Formula lungimii arcului de curbă (se aplică dacă câmpul este completat)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Editare lungime curbă</translation>
     </message>
 </context>
 <context>
@@ -13712,6 +13812,46 @@ load in SeamlyME as usual.
     <message>
         <source>Direction:</source>
         <translation>Indicație:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Opțiuni</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Curbă netedă:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Ajustare lungime:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Dezactivat</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Sfârșit</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Ambele</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Lungime curbă:</translation>
     </message>
 </context>
 <context>

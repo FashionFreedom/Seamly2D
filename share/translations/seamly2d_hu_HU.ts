@@ -917,6 +917,58 @@ p, li { white-space: pre-wrap; }
         <source>Invalid spline</source>
         <translation>Érvénytelen spline</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Beállítások</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Simított görbe:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nem</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Igen</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Hossz igazítása:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Kikapcsolva</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Kezdet</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Vég</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Mindkettő</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Görbe hossza:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Képletvarázsló</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation> Görbeív hosszának képlete (akkor érvényes, ha a mező ki van töltve)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Görbe hosszának szerkesztése</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -2741,6 +2793,54 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Invalid spline</source>
         <translation>Érvénytelen spline</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Beállítások</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Simított görbe:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nem</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Igen</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Hossz igazítása:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Kikapcsolva</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Kezdet</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Vég</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Mindkettő</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Görbe hossza:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Görbeív hosszának képlete (akkor érvényes, ha a mező ki van töltve)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Görbe hosszának szerkesztése</translation>
     </message>
 </context>
 <context>
@@ -11754,11 +11854,11 @@ Menti a módosításokat?</translation>
     </message>
     <message>
         <source>Do not &amp;ask again</source>
-        <translation type="unfinished">Ne kérdezd meg újra</translation>
+        <translation>Ne kérdezd meg újra</translation>
     </message>
     <message>
         <source>Do not &amp;show again</source>
-        <translation type="unfinished">Ne mutasd meg újra</translation>
+        <translation>Ne mutasd meg újra</translation>
     </message>
 </context>
 <context>
@@ -13710,6 +13810,46 @@ Menti a módosításokat?</translation>
         <source>Line_</source>
         <translation>Sor_</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Beállítások</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Simított görbe:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nem</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Igen</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Hossz igazítása:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Kikapcsolva</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Kezdet</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Vég</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Mindkettő</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Görbe hossza:</translation>
+    </message>
 </context>
 <context>
     <name>VToolPointFromArcAndTangent</name>
@@ -14728,11 +14868,6 @@ Menti a módosításokat?</translation>
         <translation>C1HosszElrendezésiÚtvonal</translation>
     </message>
     <message>
-        <source>C2LengthSplPath</source>
-        <comment>sto the end of the name</comment>
-        <translation>C2HosszElérésiÚt</translation>
-    </message>
-    <message>
         <source>degTorad</source>
         <comment>Converts degrees to radians
 Usage: degTorad(angle θ in degrees) → returns an angle in radians
@@ -15114,6 +15249,11 @@ Example: fmod(3.3;2) = 1.3</comment>
         <source>wOnFold</source>
         <comment>placeholder</comment>
         <translation>wHajtogatáson</translation>
+    </message>
+    <message>
+        <source>C2LengthSplPath</source>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation>C2HosszElérésiÚt</translation>
     </message>
 </context>
 <context>

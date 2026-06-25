@@ -917,6 +917,58 @@ p, li { boşluk: ön sarma; }
         <source>Lineweight:</source>
         <translation>Çizgi ağırlığı:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished">Seçenekler</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation type="unfinished">Her ikisi de</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation type="unfinished">Formül sihirbazı</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -2741,6 +2793,54 @@ p, li { boşluk: ön sarma; }
     <message>
         <source>Geometry</source>
         <translation>Geometri</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished">Seçenekler</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation type="unfinished">Her ikisi de</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13710,6 +13810,46 @@ load in SeamlyME as usual.
     <message>
         <source>Direction:</source>
         <translation>Yön:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished">Seçenekler</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation type="unfinished">Her ikisi de</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

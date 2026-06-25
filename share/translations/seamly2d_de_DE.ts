@@ -902,6 +902,58 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation>Linienstärke:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Optionen</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Glatte Kurve:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nien</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Länge anpassen:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Aus</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Ende</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Beide</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Kurvenlänge:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Formelassistent</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Formel für Kurvenbogenlänge (wird angewendet, wenn Feld ausgefüllt ist)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Kurvenlänge bearbeiten</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -2726,6 +2778,54 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Geometry</source>
         <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Optionen</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Glatte Kurve:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nien</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Länge anpassen:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Aus</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Ende</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Beide</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Kurvenlänge:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Formel für Kurvenbogenlänge (wird angewendet, wenn Feld ausgefüllt ist)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Kurvenlänge bearbeiten</translation>
     </message>
 </context>
 <context>
@@ -13698,6 +13798,46 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Line_</source>
         <translation>Linie_</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Optionen</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Glatte Kurve:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nien</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Länge anpassen:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Aus</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Ende</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Beide</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Kurvenlänge:</translation>
     </message>
 </context>
 <context>

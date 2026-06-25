@@ -917,6 +917,58 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation>Πάχος γραμμής:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Επιλογές</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Ομαλή καμπύλη:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Οχι</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ναί</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Προσαρμογή μήκους:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Μακριά από</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Αρχή</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Τέλος</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Και τα δύο</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Μήκος καμπύλης:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Βοηθός φόρμουλας</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Τύπος μήκους τόξου καμπύλης (εφαρμόζεται εάν το πεδίο είναι συμπληρωμένο)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Επεξεργασία μήκους καμπύλης</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -2741,6 +2793,54 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Geometry</source>
         <translation>Γεωμετρία</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Επιλογές</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Ομαλή καμπύλη:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Οχι</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ναί</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Προσαρμογή μήκους:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Μακριά από</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Αρχή</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Τέλος</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Και τα δύο</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Μήκος καμπύλης:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Τύπος μήκους τόξου καμπύλης (εφαρμόζεται εάν το πεδίο είναι συμπληρωμένο)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>ΜΕπεξεργασία μήκους καμπύλης</translation>
     </message>
 </context>
 <context>
@@ -13713,6 +13813,46 @@ load in SeamlyME as usual.
     <message>
         <source>Direction:</source>
         <translation>Κατεύθυνση:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Επιλογές</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Ομαλή καμπύλη:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Οχι</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ναί</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Προσαρμογή μήκους:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Μακριά από</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Αρχή</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Τέλος</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Και τα δύο</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Μήκος καμπύλης:</translation>
     </message>
 </context>
 <context>

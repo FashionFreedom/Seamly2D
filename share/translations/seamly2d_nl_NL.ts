@@ -902,6 +902,58 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation>Lijnbreedte:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Opties</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Vloeiende curve:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nee</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Lengte aanpassen:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Uitgeschakeld</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Einde</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Beide</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Curvelengte:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Formule wizard</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Formule voor booglengte van curve (toegepast als veld is ingevuld)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Curvelengte bewerken</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -2726,6 +2778,54 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Geometry</source>
         <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Opties</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Vloeiende curve:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nee</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Lengte aanpassen:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Uitgeschakeld</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Einde</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Beide</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Curvelengte:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Formule voor booglengte van curve (toegepast als veld is ingevuld)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Curvelengte bewerken</translation>
     </message>
 </context>
 <context>
@@ -13693,6 +13793,46 @@ load in SeamlyME as usual.
     <message>
         <source>Direction:</source>
         <translation>Richting:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Opties</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Vloeiende curve:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nee</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Lengte aanpassen:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Uitgeschakeld</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Einde</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Beide</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Curvelengte:</translation>
     </message>
 </context>
 <context>
