@@ -98,10 +98,12 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
     , timerAngle2(new QTimer(this))
     , timerLength1(new QTimer(this))
     , timerLength2(new QTimer(this))
+    , timerCurveLength(new QTimer(this))
     , flagAngle1(false)
     , flagAngle2(false)
     , flagLength1(false)
     , flagLength2(false)
+    , flagCurveLength(true)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -128,6 +130,7 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
     connect(timerAngle2, &QTimer::timeout, this, &DialogSpline::EvalAngle2);
     connect(timerLength1, &QTimer::timeout, this, &DialogSpline::EvalLength1);
     connect(timerLength2, &QTimer::timeout, this, &DialogSpline::EvalLength2);
+    connect(timerCurveLength, &QTimer::timeout, this, &DialogSpline::EvalCurveLength);
 
     initializeOkCancelApply(ui);
 
@@ -180,13 +183,7 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
     connect(ui->pushButtonGrowLength2, &QPushButton::clicked, this, &DialogSpline::DeployLength2TextEdit);
 
     connect(ui->comboBoxLengthMode, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &DialogSpline::updateCurveLengthEnabled);
-    connect(ui->plainTextEditCurveLength, &QPlainTextEdit::textChanged, this, [this]()
-    {
-        if (ui->comboBoxLengthMode->currentIndex() == 0)
-        {
-            ui->comboBoxLengthMode->setCurrentIndex(3);
-        }
-    });
+    connect(ui->plainTextEditCurveLength, &QPlainTextEdit::textChanged, this, &DialogSpline::CurveLengthChanged);
     updateCurveLengthEnabled();
 
     vis = new VisToolSpline(data);
@@ -280,6 +277,7 @@ void DialogSpline::closeEvent(QCloseEvent *event)
     ui->plainTextEditAngle2F->blockSignals(true);
     ui->plainTextEditLength1F->blockSignals(true);
     ui->plainTextEditLength2F->blockSignals(true);
+    ui->plainTextEditCurveLength->blockSignals(true);
     DialogTool::closeEvent(event);
 }
 
@@ -631,7 +629,7 @@ void DialogSpline::ShowDialog(bool click)
 void DialogSpline::CheckState()
 {
     SCASSERT(ok_Button != nullptr)
-    ok_Button->setEnabled(flagAngle1 && flagAngle2 && flagLength1 && flagLength2 && flagError);
+    ok_Button->setEnabled(flagAngle1 && flagAngle2 && flagLength1 && flagLength2 && flagCurveLength && flagError);
     // In case dialog does not have an apply button
     if (apply_Button != nullptr)
     {
@@ -695,9 +693,45 @@ void DialogSpline::SetTargetLength(const QString &formula)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::CurveLengthChanged()
+{
+    if (ui->comboBoxLengthMode->currentIndex() == 0)
+    {
+        ui->comboBoxLengthMode->setCurrentIndex(3);
+    }
+    labelEditFormula = ui->labelEditCurveLength;
+    labelResultCalculation = ui->labelResultCurveLength;
+    const QString postfix = UnitsToStr(qApp->patternUnit(), true);
+    formulaValueChanged(flagCurveLength, ui->plainTextEditCurveLength, timerCurveLength, postfix);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::EvalCurveLength()
+{
+    labelEditFormula = ui->labelEditCurveLength;
+    const QString postfix = UnitsToStr(qApp->patternUnit(), true);
+    const qreal length = Eval(ui->plainTextEditCurveLength->toPlainText(), flagCurveLength,
+                              ui->labelResultCurveLength, postfix, false);
+
+    if (length < 0)
+    {
+        flagCurveLength = false;
+        ChangeColor(labelEditFormula, Qt::red);
+        ui->labelResultCurveLength->setText(tr("Error") + " (" + postfix + ")");
+        ui->labelResultCurveLength->setToolTip(tr("Length can't be negative"));
+
+        DialogSpline::CheckState();
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void DialogSpline::updateCurveLengthEnabled()
 {
-    Q_UNUSED(0)
+    if (ui->comboBoxLengthMode->currentIndex() == 0)
+    {
+        flagCurveLength = true;
+    }
+    CheckState();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
