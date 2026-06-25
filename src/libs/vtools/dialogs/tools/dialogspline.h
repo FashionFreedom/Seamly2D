@@ -132,6 +132,7 @@ private slots:
     void          FXLength1();
     void          FXLength2();
     void          FXCurveLength();
+    void          CurveLengthChanged();
 
 private:
     Q_DISABLE_COPY(DialogSpline)
@@ -151,12 +152,14 @@ private:
     QTimer           *timerAngle2;
     QTimer           *timerLength1;
     QTimer           *timerLength2;
+    QTimer           *timerCurveLength;
 
     /** @brief flagAngle1 true if value of first angle is correct */
     bool              flagAngle1;
     bool              flagAngle2;
     bool              flagLength1;
     bool              flagLength2;
+    bool              flagCurveLength;
 
     const QSharedPointer<VPointF> GetP1() const;
     const QSharedPointer<VPointF> GetP4() const;
@@ -165,6 +168,7 @@ private:
     void              EvalAngle2();
     void              EvalLength1();
     void              EvalLength2();
+    void              EvalCurveLength();
 
     VSpline           CurrentSpline() const;
 };

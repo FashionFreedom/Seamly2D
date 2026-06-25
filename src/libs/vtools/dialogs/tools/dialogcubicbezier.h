@@ -105,6 +105,7 @@ public slots:
     void          updateCurveLengthEnabled();
 
 protected:
+    virtual void  CheckState() final;
     virtual void  ShowVisualization() override;
     /**
      * @brief SaveData Put dialog data in local variables
@@ -113,6 +114,7 @@ protected:
 
 private slots:
     void          FXCurveLength();
+    void          CurveLengthChanged();
 
 private:
     Q_DISABLE_COPY(DialogCubicBezier)
@@ -125,10 +127,15 @@ private:
 
     qint32        newDuplicate;
 
+    QTimer       *timerCurveLength;
+    bool          flagCurveLength;
+
     const QSharedPointer<VPointF> GetP1() const;
     const QSharedPointer<VPointF> GetP2() const;
     const QSharedPointer<VPointF> GetP3() const;
     const QSharedPointer<VPointF> GetP4() const;
+
+    void          EvalCurveLength();
 };
 
 #endif // DIALOGCUBICBEZIER_H

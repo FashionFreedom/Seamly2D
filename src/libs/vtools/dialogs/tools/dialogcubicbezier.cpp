@@ -56,6 +56,7 @@
 #include <QPlainTextEdit>
 #include <QPointer>
 #include <QPushButton>
+#include <QTimer>
 #include <new>
 
 #include "../../tools/vabstracttool.h"
@@ -79,6 +80,8 @@ DialogCubicBezier::DialogCubicBezier(const VContainer *data, const quint32 &tool
     , m_computedSpl()
     , m_hasComputedSpl(false)
     , newDuplicate(-1)
+    , timerCurveLength(new QTimer(this))
+    , flagCurveLength(true)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -118,7 +121,7 @@ DialogCubicBezier::DialogCubicBezier(const VContainer *data, const quint32 &tool
         ui->lineType_ComboBox->setCurrentIndex(index);
     }
 
-    DialogTool::CheckState();
+    CheckState();
 
     connect(ui->comboBoxP1, &QComboBox::currentTextChanged, this, &DialogCubicBezier::PointNameChanged);
     connect(ui->comboBoxP2, &QComboBox::currentTextChanged, this, &DialogCubicBezier::PointNameChanged);
@@ -126,14 +129,9 @@ DialogCubicBezier::DialogCubicBezier(const VContainer *data, const quint32 &tool
     connect(ui->comboBoxP4, &QComboBox::currentTextChanged, this, &DialogCubicBezier::PointNameChanged);
 
     connect(ui->toolButtonExprCurveLength, &QPushButton::clicked, this, &DialogCubicBezier::FXCurveLength);
+    connect(timerCurveLength, &QTimer::timeout, this, &DialogCubicBezier::EvalCurveLength);
     connect(ui->comboBoxLengthMode, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &DialogCubicBezier::updateCurveLengthEnabled);
-    connect(ui->plainTextEditCurveLength, &QPlainTextEdit::textChanged, this, [this]()
-    {
-        if (ui->comboBoxLengthMode->currentIndex() == 0)
-        {
-            ui->comboBoxLengthMode->setCurrentIndex(3);
-        }
-    });
+    connect(ui->plainTextEditCurveLength, &QPlainTextEdit::textChanged, this, &DialogCubicBezier::CurveLengthChanged);
     updateCurveLengthEnabled();
 
     vis = new VisToolCubicBezier(data);
@@ -213,9 +211,56 @@ void DialogCubicBezier::FXCurveLength()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void DialogCubicBezier::CheckState()
+{
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagCurveLength && flagError);
+    if (apply_Button != nullptr)
+    {
+        apply_Button->setEnabled(ok_Button->isEnabled());
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogCubicBezier::CurveLengthChanged()
+{
+    if (ui->comboBoxLengthMode->currentIndex() == 0)
+    {
+        ui->comboBoxLengthMode->setCurrentIndex(3);
+    }
+    labelEditFormula = ui->labelEditCurveLength;
+    labelResultCalculation = ui->labelResultCurveLength;
+    const QString postfix = UnitsToStr(qApp->patternUnit(), true);
+    formulaValueChanged(flagCurveLength, ui->plainTextEditCurveLength, timerCurveLength, postfix);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogCubicBezier::EvalCurveLength()
+{
+    labelEditFormula = ui->labelEditCurveLength;
+    const QString postfix = UnitsToStr(qApp->patternUnit(), true);
+    const qreal length = Eval(ui->plainTextEditCurveLength->toPlainText(), flagCurveLength,
+                              ui->labelResultCurveLength, postfix, false);
+
+    if (length < 0)
+    {
+        flagCurveLength = false;
+        ChangeColor(labelEditFormula, Qt::red);
+        ui->labelResultCurveLength->setText(tr("Error") + " (" + postfix + ")");
+        ui->labelResultCurveLength->setToolTip(tr("Length can't be negative"));
+
+        DialogCubicBezier::CheckState();
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCubicBezier::updateCurveLengthEnabled()
 {
-    Q_UNUSED(0)
+    if (ui->comboBoxLengthMode->currentIndex() == 0)
+    {
+        flagCurveLength = true;
+    }
+    CheckState();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
