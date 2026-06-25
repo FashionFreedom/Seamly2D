@@ -917,6 +917,58 @@ p, li { 空白:预换行； }
         <source>Lineweight:</source>
         <translation>线宽:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>选项</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>平滑曲线:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>否</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>是</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>调整长度:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>关闭</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>起点</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>终点</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>两个都</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>曲线长度:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>公式向导</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>曲线弧长公式（字段填充时应用)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>编辑曲线长度</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -2741,6 +2793,54 @@ p, li { 空白:预换行； }
     <message>
         <source>Geometry</source>
         <translation>几何学</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>选项</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>平滑曲线:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>否</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>是</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>调整长度:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>关闭</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>起点</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>终点</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>两个都</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>曲线长度:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>曲线弧长公式（字段填充时应用)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>编辑曲线长度</translation>
     </message>
 </context>
 <context>
@@ -13711,6 +13811,46 @@ load in SeamlyME as usual.
     <message>
         <source>Direction:</source>
         <translation>方向:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>选项</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>平滑曲线:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>否</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>是</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>调整长度:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>关闭</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>起点</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>终点</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>两个都</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>曲线长度:</translation>
     </message>
 </context>
 <context>

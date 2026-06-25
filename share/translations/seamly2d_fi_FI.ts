@@ -917,6 +917,58 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation>Viivanleveys:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Valinnat</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Tasainen kaari:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ei</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Kyllä</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Säädä pituus:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Pois</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Alku</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Loppu</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Molemmat</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Käyrän pituus:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Kaavavelho</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Käyrän kaaren pituuden kaava (käytetään, jos kenttä on täytetty)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Muokkaa käyrän pituutta</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -2741,6 +2793,54 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Color:</source>
         <translation>Väri:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Valinnat</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Tasainen kaari:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ei</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Kyllä</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Säädä pituus:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Pois</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Alku</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Loppu</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Molemmat</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Käyrän pituus:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Käyrän kaaren pituuden kaava (käytetään, jos kenttä on täytetty)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Muokkaa käyrän pituutta</translation>
     </message>
 </context>
 <context>
@@ -13711,6 +13811,46 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Line_</source>
         <translation>Suora_</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Valinnat</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Tasainen kaari:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ei</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Kyllä</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Säädä pituus:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Pois</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Alku</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Loppu</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Molemmat</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Käyrän pituus:</translation>
     </message>
 </context>
 <context>

@@ -917,6 +917,58 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation>Πάχος γραμμής:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Παραμετρίες</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Згладжена крива:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ні</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Так</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Налаштування довжини:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Вимкнено</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Початок</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Кінець</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Προσδοκία</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Довжина кривої:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Мастер формул</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Формула довжини дуги кривої (застосовується, якщо поле заповнено)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Редагувати довжину кривої</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -2741,6 +2793,54 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Geometry</source>
         <translation>Γεωμετρία</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Παραμετρίες</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Згладжена крива:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ні</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Так</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Налаштування довжини:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Вимкнено</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Початок</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Кінець</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Προσδοκία</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Довжина кривої:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Формула довжини дуги кривої (застосовується, якщо поле заповнено)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Редагувати довжину кривої</translation>
     </message>
 </context>
 <context>
@@ -13711,6 +13811,46 @@ load in SeamlyME as usual.
     <message>
         <source>Direction:</source>
         <translation>Κατεύθυνση:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Παραμετρίες</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Згладжена крива:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ні</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Так</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Налаштування довжини:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Вимкнено</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Початок</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Кінець</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Προσδοκία</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Довжина кривої:</translation>
     </message>
 </context>
 <context>

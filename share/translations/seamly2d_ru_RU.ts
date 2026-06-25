@@ -917,6 +917,58 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation>Толщина Линии:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Параметры</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Сглаженная кривая:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Нет</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Да</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Настройка длины:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Выкл</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Начало</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Конец</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Обе</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Длина кривой:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Мастер формул</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Формула длины дуги кривой (применяется, если поле заполнено)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Редактировать длину кривой</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -2741,6 +2793,54 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Geometry</source>
         <translation>Геометрия</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Параметры</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Сглаженная кривая:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Нет</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Да</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Настройка длины:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Выкл</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Начало</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Конец</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Обе</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Длина кривой:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Формула длины дуги кривой (применяется, если поле заполнено)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Редактировать длину кривой</translation>
     </message>
 </context>
 <context>
@@ -13718,6 +13818,46 @@ load in SeamlyME as usual.
     <message>
         <source>Direction:</source>
         <translation>Направление:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Параметры</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Сглаженная кривая:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Нет</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Да</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Настройка длины:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Выкл</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Начало</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Конец</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Обе</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Длина кривой:</translation>
     </message>
 </context>
 <context>
