@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<TS version="2.1" language="cs_CZ">
 <context>
     <name>About2DAppDialog</name>
     <message>
@@ -968,6 +968,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Edit curve length</source>
         <translation>Upravit délku křivky</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Chyba</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>Délka nemůže být záporná</translation>
     </message>
 </context>
 <context>

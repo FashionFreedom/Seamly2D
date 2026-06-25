@@ -954,6 +954,14 @@ p, li { white-space: pre-wrap; }
         <source>Edit curve length</source>
         <translation>Editar comprimento da curva</translation>
     </message>
+    <message>
+        <source>Error</source>
+        <translation>Erro</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>O comprimento nâo pode ser negativo</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>

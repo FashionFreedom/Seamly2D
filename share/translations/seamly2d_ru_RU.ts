@@ -969,6 +969,14 @@ p, li { white-space: pre-wrap; }
         <source>Edit curve length</source>
         <translation>Редактировать длину кривой</translation>
     </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Ошибка</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation type="unfinished">Длина не может быть отрицательной</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>

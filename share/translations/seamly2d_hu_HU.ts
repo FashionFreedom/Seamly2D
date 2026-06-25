@@ -969,6 +969,14 @@ p, li { white-space: pre-wrap; }
         <source>Edit curve length</source>
         <translation>Görbe hosszának szerkesztése</translation>
     </message>
+    <message>
+        <source>Error</source>
+        <translation>Hiba</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>A hossz nem lehet negatív</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>

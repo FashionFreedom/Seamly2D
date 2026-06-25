@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="id">
+<TS version="2.1" language="id_ID">
 <context>
     <name>About2DAppDialog</name>
     <message>
@@ -968,6 +968,14 @@ p, li { spasi: pra-bungkus; }
     <message>
         <source>Edit curve length</source>
         <translation>Ubah panjang kurva</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Kesalahan</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>Panjangnya tidak bisa negatif</translation>
     </message>
 </context>
 <context>

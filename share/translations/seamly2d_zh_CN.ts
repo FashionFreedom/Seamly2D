@@ -969,6 +969,14 @@ p, li { 空白:预换行； }
         <source>Edit curve length</source>
         <translation>编辑曲线长度</translation>
     </message>
+    <message>
+        <source>Error</source>
+        <translation>错误</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>长度不能为负数</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>

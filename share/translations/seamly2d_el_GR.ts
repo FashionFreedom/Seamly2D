@@ -969,6 +969,14 @@ p, li { white-space: pre-wrap; }
         <source>Edit curve length</source>
         <translation>Επεξεργασία μήκους καμπύλης</translation>
     </message>
+    <message>
+        <source>Error</source>
+        <translation>Σφάλμα</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>Το μήκος δεν είναι δυνατό να έχει αρνητική τιμή</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
