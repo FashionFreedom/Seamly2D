@@ -256,7 +256,8 @@ void DialogCubicBezier::EvalCurveLength()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogCubicBezier::updateCurveLengthEnabled()
 {
-    if (ui->comboBoxLengthMode->currentIndex() == 0)
+    if (ui->comboBoxLengthMode->currentIndex() == 0
+        && ui->plainTextEditCurveLength->toPlainText().trimmed().isEmpty())
     {
         flagCurveLength = true;
     }
