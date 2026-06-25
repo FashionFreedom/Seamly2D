@@ -1,5 +1,10 @@
 var NAVTREEINDEX84 =
 {
+"d5/d36/msvc-arm64_2include_2xercesc_2util_2NumberFormatException_8hpp_source.html":[4,0,0,1,15,3,0,0,6,41],
+"d5/d38/classMeasurementVariable.html":[3,0,344],
+"d5/d38/classMeasurementVariable.html#a09218a83f45fe207cb4b2d0cea7b205e":[3,0,344,13],
+"d5/d38/classMeasurementVariable.html#a0f7bece879663ac4851eb2409aa4d268":[3,0,344,18],
+"d5/d38/classMeasurementVariable.html#a12526fb720192df2ea74e474cd9a71b9":[3,0,344,1],
 "d5/d38/classMeasurementVariable.html#a1677e78e867bbd9756b2dd344d9ea813":[3,0,344,2],
 "d5/d38/classMeasurementVariable.html#a1e1d81d6982c422c7d7f1c000f1ae9bf":[3,0,344,21],
 "d5/d38/classMeasurementVariable.html#a26530404c44850f808552d9e024ef894":[3,0,344,29],
@@ -72,9 +77,9 @@ var NAVTREEINDEX84 =
 "d5/d3f/classXMLBufferFullHandler.html#a02eb8b3db9cfacda46dddbf676df63d5":[3,0,811,5],
 "d5/d3f/classXMLBufferFullHandler.html#a02eb8b3db9cfacda46dddbf676df63d5":[3,0,811,4],
 "d5/d3f/classXMLBufferFullHandler.html#a1a908aaa5a3e44998651d77e4abb403c":[3,0,811,2],
-"d5/d3f/classXMLBufferFullHandler.html#a1a908aaa5a3e44998651d77e4abb403c":[3,0,811,0],
 "d5/d3f/classXMLBufferFullHandler.html#a1a908aaa5a3e44998651d77e4abb403c":[3,0,811,3],
 "d5/d3f/classXMLBufferFullHandler.html#a1a908aaa5a3e44998651d77e4abb403c":[3,0,811,1],
+"d5/d3f/classXMLBufferFullHandler.html#a1a908aaa5a3e44998651d77e4abb403c":[3,0,811,0],
 "d5/d3f/msvc_2include_2xercesc_2dom_2DOMLSInput_8hpp.html":[4,0,0,1,15,2,0,0,0,25],
 "d5/d3f/msvc_2include_2xercesc_2dom_2DOMLSInput_8hpp_source.html":[4,0,0,1,15,2,0,0,0,25],
 "d5/d40/mingw_2include_2xercesc_2sax_2DocumentHandler_8hpp.html":[4,0,0,1,15,1,0,0,4,1],
@@ -244,10 +249,5 @@ var NAVTREEINDEX84 =
 "d5/d41/classPatternPieceDialog.html#afaf76ec7ad21bfcb38fcb28094002131":[3,0,384,147],
 "d5/d41/classPatternPieceDialog.html#afcc2b19213d78242e565b894fed7d317":[3,0,384,161],
 "d5/d41/classPatternPieceDialog.html#afdc90c6732fab0fc005b05af30f6c4a7":[3,0,384,72],
-"d5/d41/classPatternPieceDialog.html#affc11b2a59967a22949037609766bb50":[3,0,384,156],
-"d5/d41/msvc-arm64_2include_2xercesc_2util_2BinMemInputStream_8hpp.html":[4,0,0,1,15,3,0,0,6,11],
-"d5/d41/msvc-arm64_2include_2xercesc_2util_2BinMemInputStream_8hpp_source.html":[4,0,0,1,15,3,0,0,6,11],
-"d5/d42/msvc_2include_2xercesc_2util_2NullPointerException_8hpp.html":[4,0,0,1,15,2,0,0,6,40],
-"d5/d42/msvc_2include_2xercesc_2util_2NullPointerException_8hpp_source.html":[4,0,0,1,15,2,0,0,6,40],
-"d5/d43/msvc-arm64_2include_2xercesc_2util_2regx_2XMLRangeFactory_8hpp.html":[4,0,0,1,15,3,0,0,6,3,25]
+"d5/d41/classPatternPieceDialog.html#affc11b2a59967a22949037609766bb50":[3,0,384,156]
 };

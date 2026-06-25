@@ -334,43 +334,48 @@
 <g id="node9" class="node">
 <title>Node9</title>
 <g id="a_node9"><a xlink:href="../../d4/d1a/classDialogCubicBezier.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="963,-154.5 963,-475.5 1133,-475.5 1133,-154.5 963,-154.5"/>
-<text text-anchor="middle" x="1048" y="-463.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogCubicBezier</text>
-<polyline fill="none" stroke="#666666" points="963,-456.5 1133,-456.5 "/>
-<text text-anchor="start" x="971" y="-444.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="971" y="-433.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; spl</text>
-<text text-anchor="start" x="971" y="-422.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_computedSpl</text>
-<text text-anchor="start" x="971" y="-411.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_hasComputedSpl</text>
-<text text-anchor="start" x="971" y="-400.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; newDuplicate</text>
-<polyline fill="none" stroke="#666666" points="963,-393.5 1133,-393.5 "/>
-<text text-anchor="start" x="971" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogCubicBezier()</text>
-<text text-anchor="start" x="971" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogCubicBezier()</text>
-<text text-anchor="start" x="971" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSpline()</text>
-<text text-anchor="start" x="971" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSpline()</text>
-<text text-anchor="start" x="971" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetAutoSmooth()</text>
-<text text-anchor="start" x="971" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetAutoSmooth()</text>
-<text text-anchor="start" x="971" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetLengthMode()</text>
-<text text-anchor="start" x="971" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetLengthMode()</text>
-<text text-anchor="start" x="971" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetTargetLength()</text>
-<text text-anchor="start" x="971" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetTargetLength()</text>
-<text text-anchor="start" x="971" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 6 more...</text>
-<text text-anchor="start" x="971" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
-<text text-anchor="start" x="971" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PointNameChanged()</text>
-<text text-anchor="start" x="971" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ updateCurveLengthEnabled()</text>
-<text text-anchor="start" x="971" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
-<text text-anchor="start" x="971" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
-<text text-anchor="start" x="971" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetP1()</text>
-<text text-anchor="start" x="971" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetP2()</text>
-<text text-anchor="start" x="971" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetP3()</text>
-<text text-anchor="start" x="971" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetP4()</text>
-<text text-anchor="start" x="971" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FXCurveLength()</text>
+<polygon fill="white" stroke="#666666" points="963,-127 963,-503 1133,-503 1133,-127 963,-127"/>
+<text text-anchor="middle" x="1048" y="-491" font-family="Helvetica,sans-Serif" font-size="10.00">DialogCubicBezier</text>
+<polyline fill="none" stroke="#666666" points="963,-484 1133,-484 "/>
+<text text-anchor="start" x="971" y="-472" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="971" y="-461" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; spl</text>
+<text text-anchor="start" x="971" y="-450" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_computedSpl</text>
+<text text-anchor="start" x="971" y="-439" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_hasComputedSpl</text>
+<text text-anchor="start" x="971" y="-428" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; newDuplicate</text>
+<text text-anchor="start" x="971" y="-417" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; timerCurveLength</text>
+<text text-anchor="start" x="971" y="-406" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagCurveLength</text>
+<polyline fill="none" stroke="#666666" points="963,-399 1133,-399 "/>
+<text text-anchor="start" x="971" y="-387" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogCubicBezier()</text>
+<text text-anchor="start" x="971" y="-376" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogCubicBezier()</text>
+<text text-anchor="start" x="971" y="-365" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSpline()</text>
+<text text-anchor="start" x="971" y="-354" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSpline()</text>
+<text text-anchor="start" x="971" y="-343" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetAutoSmooth()</text>
+<text text-anchor="start" x="971" y="-332" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetAutoSmooth()</text>
+<text text-anchor="start" x="971" y="-321" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetLengthMode()</text>
+<text text-anchor="start" x="971" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetLengthMode()</text>
+<text text-anchor="start" x="971" y="-299" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetTargetLength()</text>
+<text text-anchor="start" x="971" y="-288" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetTargetLength()</text>
+<text text-anchor="start" x="971" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">and 6 more...</text>
+<text text-anchor="start" x="971" y="-266" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
+<text text-anchor="start" x="971" y="-255" font-family="Helvetica,sans-Serif" font-size="10.00">+ PointNameChanged()</text>
+<text text-anchor="start" x="971" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">+ updateCurveLengthEnabled()</text>
+<text text-anchor="start" x="971" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00"># CheckState()</text>
+<text text-anchor="start" x="971" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
+<text text-anchor="start" x="971" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
+<text text-anchor="start" x="971" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetP1()</text>
+<text text-anchor="start" x="971" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetP2()</text>
+<text text-anchor="start" x="971" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetP3()</text>
+<text text-anchor="start" x="971" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetP4()</text>
+<text text-anchor="start" x="971" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; EvalCurveLength()</text>
+<text text-anchor="start" x="971" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FXCurveLength()</text>
+<text text-anchor="start" x="971" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CurveLengthChanged()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node9 -->
 <g id="edge8" class="edge">
 <title>Node1&#45;&gt;Node9</title>
-<path fill="none" stroke="#63b8ff" d="M3543.67,-1006.28C3132.02,-999.08 1511.15,-950.51 1142,-630 1097.31,-591.2 1073.42,-532.1 1060.8,-475.6"/>
+<path fill="none" stroke="#63b8ff" d="M3543.67,-1006.28C3132.02,-999.08 1511.15,-950.51 1142,-630 1104.51,-597.45 1081.66,-550.61 1067.82,-503.01"/>
 <polygon fill="none" stroke="#63b8ff" points="3543.69,-1009.78 3553.75,-1006.45 3543.81,-1002.78 3543.69,-1009.78"/>
 </g>
 <!-- Node10 -->
@@ -1258,71 +1263,69 @@
 <g id="node32" class="node">
 <title>Node32</title>
 <g id="a_node32"><a xlink:href="../../de/d10/classDialogSpline.html" target="_top" xlink:title="The DialogSpline class dialog for ToolSpline. Help create spline and edit option.">
-<polygon fill="white" stroke="#666666" points="4837,-0.5 4837,-629.5 5007,-629.5 5007,-0.5 4837,-0.5"/>
-<text text-anchor="middle" x="4922" y="-617.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogSpline</text>
-<polyline fill="none" stroke="#666666" points="4837,-610.5 5007,-610.5 "/>
-<text text-anchor="start" x="4845" y="-598.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="4845" y="-587.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; spl</text>
-<text text-anchor="start" x="4845" y="-576.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; newDuplicate</text>
-<text text-anchor="start" x="4845" y="-565.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeightAngle1</text>
-<text text-anchor="start" x="4845" y="-554.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeightAngle2</text>
-<text text-anchor="start" x="4845" y="-543.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeightLength1</text>
-<text text-anchor="start" x="4845" y="-532.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeightLength2</text>
-<text text-anchor="start" x="4845" y="-521.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; timerAngle1</text>
-<text text-anchor="start" x="4845" y="-510.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; timerAngle2</text>
-<text text-anchor="start" x="4845" y="-499.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; timerLength1</text>
-<text text-anchor="start" x="4845" y="-488.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; timerLength2</text>
-<text text-anchor="start" x="4845" y="-477.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagAngle1</text>
-<text text-anchor="start" x="4845" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagAngle2</text>
-<text text-anchor="start" x="4845" y="-455.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagLength1</text>
-<text text-anchor="start" x="4845" y="-444.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagLength2</text>
-<polyline fill="none" stroke="#666666" points="4837,-437.5 5007,-437.5 "/>
-<text text-anchor="start" x="4845" y="-425.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogSpline()</text>
-<text text-anchor="start" x="4845" y="-414.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogSpline()</text>
-<text text-anchor="start" x="4845" y="-403.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSpline()</text>
-<text text-anchor="start" x="4845" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSpline()</text>
-<text text-anchor="start" x="4845" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetAutoSmooth()</text>
-<text text-anchor="start" x="4845" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetAutoSmooth()</text>
-<text text-anchor="start" x="4845" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetLengthMode()</text>
-<text text-anchor="start" x="4845" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetLengthMode()</text>
-<text text-anchor="start" x="4845" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetTargetLength()</text>
-<text text-anchor="start" x="4845" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetTargetLength()</text>
-<text text-anchor="start" x="4845" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 6 more...</text>
-<text text-anchor="start" x="4845" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
-<text text-anchor="start" x="4845" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PointNameChanged()</text>
-<text text-anchor="start" x="4845" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowDialog()</text>
-<text text-anchor="start" x="4845" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ updateCurveLengthEnabled()</text>
-<text text-anchor="start" x="4845" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CheckState()</text>
-<text text-anchor="start" x="4845" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
-<text text-anchor="start" x="4845" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
-<text text-anchor="start" x="4845" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
-<text text-anchor="start" x="4845" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetP1()</text>
-<text text-anchor="start" x="4845" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetP4()</text>
-<text text-anchor="start" x="4845" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; EvalAngle1()</text>
-<text text-anchor="start" x="4845" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; EvalAngle2()</text>
-<text text-anchor="start" x="4845" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; EvalLength1()</text>
-<text text-anchor="start" x="4845" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; EvalLength2()</text>
-<text text-anchor="start" x="4845" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CurrentSpline()</text>
-<text text-anchor="start" x="4845" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; DeployAngle1TextEdit()</text>
-<text text-anchor="start" x="4845" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; DeployAngle2TextEdit()</text>
-<text text-anchor="start" x="4845" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; DeployLength1TextEdit()</text>
-<text text-anchor="start" x="4845" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; DeployLength2TextEdit()</text>
-<text text-anchor="start" x="4845" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Angle1Changed()</text>
-<text text-anchor="start" x="4845" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Angle2Changed()</text>
-<text text-anchor="start" x="4845" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Length1Changed()</text>
-<text text-anchor="start" x="4845" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Length2Changed()</text>
-<text text-anchor="start" x="4845" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FXAngle1()</text>
-<text text-anchor="start" x="4845" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FXAngle2()</text>
-<text text-anchor="start" x="4845" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FXLength1()</text>
-<text text-anchor="start" x="4845" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FXLength2()</text>
-<text text-anchor="start" x="4845" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FXCurveLength()</text>
+<polygon fill="white" stroke="#666666" points="4837,-11.5 4837,-618.5 5007,-618.5 5007,-11.5 4837,-11.5"/>
+<text text-anchor="middle" x="4922" y="-606.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogSpline</text>
+<polyline fill="none" stroke="#666666" points="4837,-599.5 5007,-599.5 "/>
+<text text-anchor="start" x="4845" y="-587.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="4845" y="-576.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; spl</text>
+<text text-anchor="start" x="4845" y="-565.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; newDuplicate</text>
+<text text-anchor="start" x="4845" y="-554.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeightAngle1</text>
+<text text-anchor="start" x="4845" y="-543.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeightAngle2</text>
+<text text-anchor="start" x="4845" y="-532.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeightLength1</text>
+<text text-anchor="start" x="4845" y="-521.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeightLength2</text>
+<text text-anchor="start" x="4845" y="-510.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; timerAngle1</text>
+<text text-anchor="start" x="4845" y="-499.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; timerAngle2</text>
+<text text-anchor="start" x="4845" y="-488.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; timerLength1</text>
+<text text-anchor="start" x="4845" y="-477.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
+<polyline fill="none" stroke="#666666" points="4837,-470.5 5007,-470.5 "/>
+<text text-anchor="start" x="4845" y="-458.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogSpline()</text>
+<text text-anchor="start" x="4845" y="-447.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogSpline()</text>
+<text text-anchor="start" x="4845" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSpline()</text>
+<text text-anchor="start" x="4845" y="-425.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSpline()</text>
+<text text-anchor="start" x="4845" y="-414.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetAutoSmooth()</text>
+<text text-anchor="start" x="4845" y="-403.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetAutoSmooth()</text>
+<text text-anchor="start" x="4845" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetLengthMode()</text>
+<text text-anchor="start" x="4845" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetLengthMode()</text>
+<text text-anchor="start" x="4845" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetTargetLength()</text>
+<text text-anchor="start" x="4845" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetTargetLength()</text>
+<text text-anchor="start" x="4845" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 6 more...</text>
+<text text-anchor="start" x="4845" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
+<text text-anchor="start" x="4845" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PointNameChanged()</text>
+<text text-anchor="start" x="4845" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowDialog()</text>
+<text text-anchor="start" x="4845" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ updateCurveLengthEnabled()</text>
+<text text-anchor="start" x="4845" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CheckState()</text>
+<text text-anchor="start" x="4845" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
+<text text-anchor="start" x="4845" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
+<text text-anchor="start" x="4845" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
+<text text-anchor="start" x="4845" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetP1()</text>
+<text text-anchor="start" x="4845" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetP4()</text>
+<text text-anchor="start" x="4845" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; EvalAngle1()</text>
+<text text-anchor="start" x="4845" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; EvalAngle2()</text>
+<text text-anchor="start" x="4845" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; EvalLength1()</text>
+<text text-anchor="start" x="4845" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; EvalLength2()</text>
+<text text-anchor="start" x="4845" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; EvalCurveLength()</text>
+<text text-anchor="start" x="4845" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CurrentSpline()</text>
+<text text-anchor="start" x="4845" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; DeployAngle1TextEdit()</text>
+<text text-anchor="start" x="4845" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; DeployAngle2TextEdit()</text>
+<text text-anchor="start" x="4845" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; DeployLength1TextEdit()</text>
+<text text-anchor="start" x="4845" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; DeployLength2TextEdit()</text>
+<text text-anchor="start" x="4845" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Angle1Changed()</text>
+<text text-anchor="start" x="4845" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Angle2Changed()</text>
+<text text-anchor="start" x="4845" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Length1Changed()</text>
+<text text-anchor="start" x="4845" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Length2Changed()</text>
+<text text-anchor="start" x="4845" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FXAngle1()</text>
+<text text-anchor="start" x="4845" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FXAngle2()</text>
+<text text-anchor="start" x="4845" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FXLength1()</text>
+<text text-anchor="start" x="4845" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FXLength2()</text>
+<text text-anchor="start" x="4845" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FXCurveLength()</text>
+<text text-anchor="start" x="4845" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CurveLengthChanged()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node32 -->
 <g id="edge31" class="edge">
 <title>Node1&#45;&gt;Node32</title>
-<path fill="none" stroke="#63b8ff" d="M3734.38,-1005.83C3958.17,-996.63 4521.19,-941.93 4828,-630 4831.09,-626.86 4834.08,-623.61 4836.98,-620.28"/>
+<path fill="none" stroke="#63b8ff" d="M3734.38,-1005.83C3958.17,-996.63 4521.19,-941.93 4828,-630 4831.59,-626.35 4835.05,-622.57 4838.37,-618.67"/>
 <polygon fill="none" stroke="#63b8ff" points="3734.16,-1002.34 3724.3,-1006.23 3734.43,-1009.33 3734.16,-1002.34"/>
 </g>
 <!-- Node33 -->

@@ -2,7 +2,10 @@ var classDialogCubicBezier =
 [
     [ "DialogCubicBezier", "d4/d1a/classDialogCubicBezier.html#a6d119f76b3c36504e9a7dfe42ba8ad03", null ],
     [ "~DialogCubicBezier", "d4/d1a/classDialogCubicBezier.html#af3a612fb3ae917c59ac6d03b77d3e09f", null ],
+    [ "CheckState", "d4/d1a/classDialogCubicBezier.html#a55fdf9556566299012d9c55d20417081", null ],
     [ "ChosenObject", "d4/d1a/classDialogCubicBezier.html#a0785c989b1b15f3d69f2dafb177bfd4d", null ],
+    [ "CurveLengthChanged", "d4/d1a/classDialogCubicBezier.html#afc9688afea0e2fe44e05ae9c3c9e3fba", null ],
+    [ "EvalCurveLength", "d4/d1a/classDialogCubicBezier.html#a84617541d0cd1ecb4d75ea85646b698e", null ],
     [ "FXCurveLength", "d4/d1a/classDialogCubicBezier.html#abcc3543322fb1e89702d76f116c8a350", null ],
     [ "GetAutoSmooth", "d4/d1a/classDialogCubicBezier.html#a42a9464859dd848eaaceb4848733b325", null ],
     [ "GetLengthMode", "d4/d1a/classDialogCubicBezier.html#af97f0b128320a4add93b6210d8ae6a05", null ],
@@ -26,9 +29,11 @@ var classDialogCubicBezier =
     [ "SetTargetLength", "d4/d1a/classDialogCubicBezier.html#a4656182f528f020d90f8cbcf2a0eee6e", null ],
     [ "ShowVisualization", "d4/d1a/classDialogCubicBezier.html#a7a8051c8ac6eaa8ab1d37b69b61216da", null ],
     [ "updateCurveLengthEnabled", "d4/d1a/classDialogCubicBezier.html#ad752a7b529af0f3e70f759eaaffda2d5", null ],
+    [ "flagCurveLength", "d4/d1a/classDialogCubicBezier.html#ad2b01ab4ce8b73b38ec366056e94c11b", null ],
     [ "m_computedSpl", "d4/d1a/classDialogCubicBezier.html#af83d2a41e574dbd68210e3a36dd81b67", null ],
     [ "m_hasComputedSpl", "d4/d1a/classDialogCubicBezier.html#a30fddc3f23cf99c04d8bd2e748a96c69", null ],
     [ "newDuplicate", "d4/d1a/classDialogCubicBezier.html#a85e49f220caa093c0c759b140f2c3f70", null ],
     [ "spl", "d4/d1a/classDialogCubicBezier.html#a846d233d835dc4d0196b6f5fc4bf76e8", null ],
+    [ "timerCurveLength", "d4/d1a/classDialogCubicBezier.html#a1041e4c2da81332dfc37dfe13479136f", null ],
     [ "ui", "d4/d1a/classDialogCubicBezier.html#a873cb39daee5567a60ba16a3ae9422c8", null ]
 ];
