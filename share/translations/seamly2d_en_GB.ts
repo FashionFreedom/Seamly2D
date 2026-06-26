@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="en_US">
+<TS version="2.1" language="en_GB">
 <context>
     <name>About2DAppDialog</name>
     <message>
@@ -952,6 +952,14 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit curve length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Error</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

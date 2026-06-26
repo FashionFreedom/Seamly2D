@@ -970,11 +970,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Curve arc length formula (applied if filled)</source>
-        <translation>Formule de longueur d'arc de courbe (appliquée si le champ est rempli)</translation>
+        <translation>Formule de longueur d&apos;arc de courbe (appliquée si le champ est rempli)</translation>
     </message>
     <message>
         <source>Edit curve length</source>
         <translation>Modifier la longueur de la courbe</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Erreur</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>Une longueur ne peut être négative</translation>
     </message>
 </context>
 <context>
@@ -2850,7 +2858,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Curve arc length formula (applied if filled)</source>
-        <translation>Formule de longueur d'arc de courbe (appliquée si le champ est rempli)</translation>
+        <translation>Formule de longueur d&apos;arc de courbe (appliquée si le champ est rempli)</translation>
     </message>
     <message>
         <source>Edit curve length</source>
