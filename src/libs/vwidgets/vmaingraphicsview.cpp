@@ -690,6 +690,14 @@ void VMainGraphicsView::mousePressEvent(QMouseEvent *event)
                             }
                             else
                             {
+                                QGraphicsItem *parent = list.at(i)->parentItem();
+                                if (parent != nullptr
+                                    && parent->type() > QGraphicsItem::UserType
+                                    && parent->type() <= VSimpleCurve::Type)
+                                {
+                                    emit itemClicked(parent);
+                                    break;
+                                }
                                 emit itemClicked(nullptr);
                             }
                         }

@@ -57,11 +57,12 @@
 #include "options.h"
 #include "version.h"
 #include "core/application_2d.h"
+#include "core/vpieceoptionspropertybrowser.h"
 #include "core/vtooloptionspropertybrowser.h"
 #include "dialogs/dialogs.h"
 #include "dialogs/calculator_dialog.h"
 #include "dialogs/decimalchart_dialog.h"
-#include "../fervor/fvupdater.h"
+#include "dialogs/export_progress_dialog.h"
 #include "../ifc/exception/vexceptionobjecterror.h"
 #include "../ifc/exception/vexceptionconversionerror.h"
 #include "../ifc/exception/vexceptionemptyparameter.h"
@@ -106,13 +107,13 @@
 #include <QAction>
 #include <QProcess>
 #include <QSettings>
-#include <QTimer>
 #include <QtGlobal>
 #include <QDesktopServices>
 #include <chrono>
 #include <thread>
 #include <QAction>
 #include <QComboBox>
+#include <QDateTime>
 #include <QFontComboBox>
 #include <QDoubleSpinBox>
 #include <QFileDialog>
@@ -164,7 +165,7 @@ const QString strCtrl      = QStringLiteral("Ctrl");
 MainWindow::MainWindow(QWidget *parent)
     : MainWindowsNoGUI(parent)
     , ui(new Ui::MainWindow)
-    , watcher(new QFileSystemWatcher(this))
+    , m_watcher(new QFileSystemWatcher(this))
     , currentTool(Tool::Arrow)
     , lastUsedTool(Tool::Arrow)
     , draftScene(nullptr)
@@ -173,7 +174,7 @@ MainWindow::MainWindow(QWidget *parent)
     , infoToolButton(nullptr)
     , m_statusMessage(new QLabel())
     , isInitialized(false)
-    , mChanges(false)
+    , m_changes(false)
     , patternReadOnly(false)
     , dialogTable(nullptr)
     , dialogTool()
@@ -186,6 +187,7 @@ MainWindow::MainWindow(QWidget *parent)
     , currentToolBoxIndex(0)
     , isToolOptionsDockVisible(true)
     , isGroupsDockVisible(true)
+    , isPiecesDockVisible(true)
     , isLayoutsDockVisible(false)
     , isToolboxDockVisible(true)
     , drawMode(true)
@@ -200,13 +202,17 @@ MainWindow::MainWindow(QWidget *parent)
     , gradationHeightsLabel(nullptr)
     , gradationSizesLabel(nullptr)
     , toolProperties(nullptr)
+    , m_pieceProperties(nullptr)
+    , m_fabricTopLine(nullptr)
+    , m_fabricBottomLine(nullptr)
     , groupsWidget(nullptr)
-    , patternPiecesWidget(nullptr)
-    , lock(nullptr)
+    , piecesWidget(nullptr)
+    , m_lock(nullptr)
     , zoomScaleSpinBox(nullptr)
     , m_penToolBar(nullptr)
     , m_penReset(nullptr)
     , m_zoomToPointComboBox(nullptr)
+    , m_measurements(nullptr)
 
     // define Seamly2D main window
     {
@@ -293,7 +299,22 @@ MainWindow::MainWindow(QWidget *parent)
         connect(ui->listWidget, &QListWidget::currentRowChanged, this, &MainWindow::showLayoutPages);
 
         // Handle changes made to a measurment file.
-        connect(watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::measurementsChanged);
+        connect(m_watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::measurementsChanged);
+
+        connect(qApp, &QApplication::focusChanged, this, [this](QWidget *old, QWidget *now)
+        {
+            if (old == nullptr && isAncestorOf(now) == true)
+            {// focus IN
+                if (m_changes)
+                {
+                    syncMeasurements();
+                }
+            }
+
+            // In case we will need it
+            // else if (isAncestorOf(old) == true && now == nullptr)
+            // focus OUT
+        });
 
         #if defined(Q_OS_MAC)
             // Set MacOS specific icon sizes for various toolbars and unify title and toolbar.
@@ -327,6 +348,12 @@ MainWindow::MainWindow(QWidget *parent)
             menu->setAsDockMenu();
 
         #endif //defined(Q_OS_MAC)
+
+        ui->groups_DockWidget->setVisible(false);
+        ui->pieces_DockWidget->setVisible(false);
+        ui->toolProperties_DockWidget->setVisible(false);
+        ui->pieceProperties_DockWidget->setVisible(false);
+        ui->layoutPages_DockWidget->setVisible(false);
     }
 
 
@@ -581,7 +608,6 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File exception.")),
                     qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
-        measurements->clear();
         if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
@@ -594,14 +620,17 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindow::loadMeasurements(const QString &fileName)
 {
-    QSharedPointer<MeasurementDoc> measurements = openMeasurementFile(fileName);
+    // remove any extraneous LF's or trailing white space.
+    removeEmptyLinesText(fileName, false);
 
-    if (measurements->isNull())
+    m_measurements = openMeasurementFile(fileName);
+
+    if (m_measurements->isNull())
     {
         return false;
     }
 
-    if (qApp->patternUnit() == Unit::Inch && measurements->Type() == MeasurementsType::Multisize)
+    if (qApp->patternUnit() == Unit::Inch && m_measurements->Type() == MeasurementsType::Multisize)
     {
         qWarning() << tr("Gradation doesn't support inches");
         return false;
@@ -609,11 +638,11 @@ bool MainWindow::loadMeasurements(const QString &fileName)
 
     try
     {
-        qApp->setPatternType(measurements->Type());
+        qApp->setPatternType(m_measurements->Type());
         initializeStatusToolBar();
 
         pattern->ClearVariables(VarType::Measurement);
-        measurements->readMeasurements();
+        m_measurements->readMeasurements();
     }
 
     catch (VExceptionEmptyParameter &exception)
@@ -628,23 +657,21 @@ bool MainWindow::loadMeasurements(const QString &fileName)
         return false;
     }
 
-    if (measurements->Type() == MeasurementsType::Multisize)
+    if (m_measurements->Type() == MeasurementsType::Multisize)
     {
-
-        VContainer::setSize(UnitConvertor(measurements->BaseSize(), measurements->measurementUnits(),
-                                          *measurements->GetData()->GetPatternUnit()));
+        VContainer::setSize(UnitConvertor(m_measurements->BaseSize(), m_measurements->measurementUnits(),
+                                          *m_measurements->GetData()->GetPatternUnit()));
 
         qCInfo(vMainWindow, "Multisize file %s was loaded.", qUtf8Printable(fileName));
 
-        VContainer::setHeight(UnitConvertor(measurements->BaseHeight(), measurements->measurementUnits(),
-                                            *measurements->GetData()->GetPatternUnit()));
+        VContainer::setHeight(UnitConvertor(m_measurements->BaseHeight(), m_measurements->measurementUnits(),
+                                            *m_measurements->GetData()->GetPatternUnit()));
 
         doc->SetPatternWasChanged(true);
         emit doc->updatePatternLabel();
     }
-    else if (measurements->Type() == MeasurementsType::Individual)
+    else if (m_measurements->Type() == MeasurementsType::Individual)
     {
-
         setSizeHeightForIndividualM();
 
         qCInfo(vMainWindow, "Individual file %s was loaded.", qUtf8Printable(fileName));
@@ -656,14 +683,14 @@ bool MainWindow::loadMeasurements(const QString &fileName)
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindow::updateMeasurements(const QString &fileName, int size, int height)
 {
-    QSharedPointer<MeasurementDoc> measurements = openMeasurementFile(fileName);
+    m_measurements = openMeasurementFile(fileName);
 
-    if (measurements->isNull())
+    if (m_measurements->isNull())
     {
         return false;
     }
 
-    if (qApp->patternType() != measurements->Type())
+    if (qApp->patternType() != m_measurements->Type())
     {
         qCCritical(vMainWindow, "%s", qUtf8Printable(tr("Measurement files types have not match.")));
         if (!Application2D::isGUIMode())
@@ -676,7 +703,7 @@ bool MainWindow::updateMeasurements(const QString &fileName, int size, int heigh
     try
     {
         pattern->ClearVariables(VarType::Measurement);
-        measurements->readMeasurements();
+        m_measurements->readMeasurements();
     }
 
     catch (VExceptionEmptyParameter &exception)
@@ -691,7 +718,7 @@ bool MainWindow::updateMeasurements(const QString &fileName, int size, int heigh
         return false;
     }
 
-    if (measurements->Type() == MeasurementsType::Multisize)
+    if (m_measurements->Type() == MeasurementsType::Multisize)
     {
         VContainer::setSize(size);
         VContainer::setHeight(height);
@@ -699,7 +726,7 @@ bool MainWindow::updateMeasurements(const QString &fileName, int size, int heigh
         doc->SetPatternWasChanged(true);
         emit doc->updatePatternLabel();
     }
-    else if (measurements->Type() == MeasurementsType::Individual)
+    else if (m_measurements->Type() == MeasurementsType::Individual)
     {
         setSizeHeightForIndividualM();
     }
@@ -869,13 +896,15 @@ void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
     handleArrowTool(true);
     ui->view->itemClicked(vtool);// Don't check for nullptr here
     // If insert not to the end of file call lite parse
-    if (doc->getCursor() > 0)
+    if (doc->getCursorId() > NULL_ID)
     {
+        const quint32 &toolId = vtool->getId();
         doc->LiteParseTree(Document::LiteParse);
-        if (historyDialog)
-        {
-            historyDialog->updateHistory();
-        }
+        doc->setCursorId(toolId);
+    }
+    if (historyDialog)
+    {
+        historyDialog->updateHistory(true);
     }
 }
 
@@ -1884,15 +1913,6 @@ void MainWindow::changeEvent(QEvent *event)
         setStatusMessage(QObject::tr("Changes applied."));
         draftBlockLabel->setText(tr("Draft Block:"));
 
-        if (doc->getDraftStage() == Draw::Calculation)
-        {
-            ui->groups_DockWidget->setWindowTitle(tr("Group Manager"));
-        }
-        else
-        {
-            ui->groups_DockWidget->setWindowTitle(tr("Pattern Pieces"));
-        }
-
         updateWindowTitle();
         initPenToolBar();
         initBasePointComboBox();
@@ -1942,6 +1962,7 @@ void MainWindow::CleanLayout()
     papers.clear();
     ui->listWidget->clear();
     groupsWidget->clear();
+    piecesWidget->clear();
     SetLayoutModeActions();
 }
 
@@ -2036,15 +2057,9 @@ void MainWindow::LoadIndividual()
     //Use standard path to individual measurements
     const QString dir = qApp->Seamly2DSettings()->getIndividualSizePath();
 
-    bool usedNotExistedDir = false;
     QDir directory(dir);
 
-    if (!directory.exists())
-    {
-        usedNotExistedDir = directory.mkpath(".");
-    }
-
-    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, QFileDialog::DontUseNativeDialog,
+    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
                                         QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
 
@@ -2052,9 +2067,9 @@ void MainWindow::LoadIndividual()
     {
         if (loadMeasurements(filename))
         {
-            if (!doc->MPath().isEmpty())
+            if (!doc->MPath().isEmpty() && !m_watcher->files().isEmpty())
             {
-                watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
+                m_watcher->removePaths(m_watcher->files());
             }
 
             qCInfo(vMainWindow, "Individual file %s was loaded.", qUtf8Printable(filename));
@@ -2062,7 +2077,7 @@ void MainWindow::LoadIndividual()
             ui->unloadMeasurements_Action->setEnabled(true);
 
             doc->SetMPath(RelativeMPath(qApp->getFilePath(), filename));
-            watcher->addPath(filename);
+            m_watcher->addPath(filename);
             patternChangesWereSaved(false);
 
             ui->editCurrent_Action->setEnabled(true);
@@ -2071,12 +2086,6 @@ void MainWindow::LoadIndividual()
 
             updateWindowTitle();
         }
-    }
-
-    if (usedNotExistedDir)
-    {
-        QDir directory(dir);
-        directory.rmpath(".");
     }
 }
 
@@ -2090,7 +2099,7 @@ void MainWindow::LoadMultisize()
     QString dir = qApp->Seamly2DSettings()->getMultisizePath();
     dir = VCommonSettings::prepareMultisizeTables(dir);
 
-    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, QFileDialog::DontUseNativeDialog,
+    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
                                         QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
     if (!filename.isEmpty())
@@ -2108,9 +2117,9 @@ void MainWindow::LoadMultisize()
 
         if(loadMeasurements(filename))
         {
-            if (!doc->MPath().isEmpty())
+            if (!doc->MPath().isEmpty() && !m_watcher->files().isEmpty())
             {
-                watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
+                m_watcher->removePaths(m_watcher->files());
             }
 
             qCInfo(vMainWindow, "Multisize file %s was loaded.", qUtf8Printable(filename));
@@ -2118,7 +2127,7 @@ void MainWindow::LoadMultisize()
             ui->unloadMeasurements_Action->setEnabled(true);
 
             doc->SetMPath(RelativeMPath(qApp->getFilePath(), filename));
-            watcher->addPath(filename);
+            m_watcher->addPath(filename);
             patternChangesWereSaved(false);
 
             ui->editCurrent_Action->setEnabled(true);
@@ -2154,11 +2163,17 @@ void MainWindow::UnloadMeasurements()
 
     if (doc->ListMeasurements().isEmpty())
     {
-        watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
+        if (!m_watcher->files().isEmpty())
+        {
+            m_watcher->removePaths(m_watcher->files());
+        }
         if (qApp->patternType() == MeasurementsType::Multisize)
         {
             initializeStatusToolBar();
         }
+
+        m_measurements.clear();
+
         qApp->setPatternType(MeasurementsType::Unknown);
         doc->SetMPath(QString());
         emit doc->updatePatternLabel();
@@ -2183,9 +2198,6 @@ void MainWindow::editMeasurements()
     if (!doc->MPath().isEmpty())
     {
         const QString absoluteMPath = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
-
-        // Stop watching file while opening SeamlyMe so as to not trigger syncing.
-        watcher->removePath(absoluteMPath);
 
         QStringList arguments;
         if (qApp->patternType() == MeasurementsType::Multisize)
@@ -2214,13 +2226,6 @@ void MainWindow::editMeasurements()
         const QString seamlyme = qApp->seamlyMeFilePath();
         const QString workingDirectory = QFileInfo(seamlyme).absoluteDir().absolutePath();
         QProcess::startDetached(seamlyme, arguments, workingDirectory);
-
-        if (!watcher->files().contains(absoluteMPath))
-        {
-            // Allow time for SeamlyMe to open before watching file again.
-            std::this_thread::sleep_for(std::chrono::milliseconds(3000));
-            watcher->addPath(absoluteMPath);
-        }
     }
     else
     {
@@ -2231,11 +2236,11 @@ void MainWindow::editMeasurements()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::measurementsChanged(const QString &path)
 {
-    mChanges = false;
+    m_changes = false;
     QFileInfo checkFile(path);
     if (checkFile.exists())
     {
-        mChanges = true;
+        m_changes = true;
     }
     else
     {
@@ -2244,7 +2249,7 @@ void MainWindow::measurementsChanged(const QString &path)
         {
             if (checkFile.exists())
             {
-                mChanges = true;
+                m_changes = true;
                 break;
             }
             else
@@ -2253,39 +2258,42 @@ void MainWindow::measurementsChanged(const QString &path)
             }
         }
     }
-
-    if (mChanges)
-    {
-        syncMeasurements();
-    }
     updateWindowTitle();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::syncMeasurements()
 {
-    const QString path = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
-
-    // Stop watching measurement file while updating to avoid recursive syncing.
-    watcher->removePath(path);
-
-    if(updateMeasurements(path, static_cast<int>(VContainer::size()), static_cast<int>(VContainer::height())))
+    if (m_changes)
     {
-        setStatusMessage(tr("Measurements have been synced"));
-        QApplication::beep();
-        doc->LiteParseTree(Document::LiteParse);
-        mChanges = false;
-        updateWindowTitle();
-    }
-    else
-    {
-        qCWarning(vMainWindow, "%s", qUtf8Printable(tr("Couldn't sync measurements.")));
-    }
+        QString path = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
 
-    if (!watcher->files().contains(path))
-    {
-        // Start watching measurement file again.
-        watcher->addPath(path);
+        // Stop watching measurement file while updating to avoid recursive syncing.
+        if (! m_watcher->files().contains(path))
+        {
+            m_watcher->removePath(path);
+        }
+
+        if(updateMeasurements(path, static_cast<int>(VContainer::size()), static_cast<int>(VContainer::height())))
+        {
+            const QString msg = tr("Measurements have been synced");
+            setStatusMessage(msg + QString(" - ") + path);
+            WidgetPopup::popupMessage(msg, 4000, this);
+            QApplication::beep();
+            doc->LiteParseTree(Document::LiteParse);
+            m_changes = false;
+            updateWindowTitle();
+        }
+        else
+        {
+            qCWarning(vMainWindow, "%s", qUtf8Printable(tr("Couldn't sync measurements.")));
+        }
+
+        if (!m_watcher->files().contains(path))
+        {
+            // Start watching measurement file again.
+            m_watcher->addPath(path);
+        }
     }
 }
 
@@ -2690,6 +2698,130 @@ void MainWindow::initPropertyEditor()
     connect(doc, &VPattern::FullUpdateFromFile, toolProperties, &VToolOptionsPropertyBrowser::updateOptions);
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::initPiecePropertyEditor()
+{
+    qCDebug(vMainWindow, "Initialize the Piece Property Editor.");
+    if (m_pieceProperties != nullptr)
+    {
+        disconnect(m_pieceProperties, nullptr, this, nullptr);
+        delete m_pieceProperties;
+    }
+    m_pieceProperties = new VPieceOptionsPropertyBrowser(doc, ui->pieceProperties_DockWidget);
+
+    connect(ui->view, &VMainGraphicsView::itemClicked,
+            m_pieceProperties, &VPieceOptionsPropertyBrowser::itemClicked);
+    connect(doc, &VPattern::FullUpdateFromFile,
+            m_pieceProperties, &VPieceOptionsPropertyBrowser::updateOptions);
+    connect(doc, &VAbstractPattern::patternChanged, this, &MainWindow::updateFabricWidthLines);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::updateFabricWidthLines()
+{
+    const VFabricSettings settings = doc->GetFabricSettings();
+    const Unit unit = qApp->patternUnit();
+    const qreal width = ToPixel(settings.fabricWidth, unit);
+    const qreal lineLength = 100000.0;
+
+    // --- Clear old rapport lines ---
+    for (QGraphicsLineItem *line : m_rapportLines)
+    {
+        pieceScene->removeItem(line);
+        delete line;
+    }
+    m_rapportLines.clear();
+
+    // --- Fabric width edges ---
+    if (qFuzzyIsNull(width))
+    {
+        if (m_fabricTopLine != nullptr)
+        {
+            m_fabricTopLine->setVisible(false);
+        }
+        if (m_fabricBottomLine != nullptr)
+        {
+            m_fabricBottomLine->setVisible(false);
+        }
+    }
+    else
+    {
+        QPen fabricPen(QColor(Qt::darkCyan), 2.0, Qt::DashDotLine);
+
+        if (m_fabricTopLine == nullptr)
+        {
+            m_fabricTopLine = pieceScene->addLine(-lineLength / 2.0, 0, lineLength / 2.0, 0, fabricPen);
+            m_fabricTopLine->setZValue(-0.5);
+        }
+        else
+        {
+            m_fabricTopLine->setPen(fabricPen);
+            m_fabricTopLine->setLine(-lineLength / 2.0, 0, lineLength / 2.0, 0);
+        }
+        m_fabricTopLine->setVisible(true);
+
+        if (m_fabricBottomLine == nullptr)
+        {
+            m_fabricBottomLine = pieceScene->addLine(-lineLength / 2.0, width, lineLength / 2.0, width, fabricPen);
+            m_fabricBottomLine->setZValue(-0.5);
+        }
+        else
+        {
+            m_fabricBottomLine->setPen(fabricPen);
+            m_fabricBottomLine->setLine(-lineLength / 2.0, width, lineLength / 2.0, width);
+        }
+        m_fabricBottomLine->setVisible(true);
+    }
+
+    // --- Rapport grid lines ---
+    const qreal hRepeat = ToPixel(settings.heightRepeat, unit);
+    const qreal lRepeat = ToPixel(settings.lengthRepeat, unit);
+
+    QPen rapportPen(QColor(Qt::darkCyan), 1.0, Qt::DotLine);
+
+    if (hRepeat > 1.0 && width > 1.0)
+    {
+        for (qreal y = hRepeat; y < width - 0.5; y += hRepeat)
+        {
+            QGraphicsLineItem *line = pieceScene->addLine(-lineLength / 2.0, y, lineLength / 2.0, y, rapportPen);
+            line->setZValue(-0.5);
+            m_rapportLines.append(line);
+        }
+    }
+
+    if (lRepeat > 1.0)
+    {
+        const qreal yMin = 0;
+        const qreal yMax = qFuzzyIsNull(width) ? lineLength : width;
+        for (qreal x = 0; x < lineLength / 2.0; x += lRepeat)
+        {
+            if (x > 0)
+            {
+                QGraphicsLineItem *line = pieceScene->addLine(x, yMin, x, yMax, rapportPen);
+                line->setZValue(-0.5);
+                m_rapportLines.append(line);
+            }
+            QGraphicsLineItem *lineNeg = pieceScene->addLine(-x, yMin, -x, yMax, rapportPen);
+            lineNeg->setZValue(-0.5);
+            m_rapportLines.append(lineNeg);
+        }
+    }
+
+    // --- Shrinkage/Stretch scaling ---
+    const qreal shrinkScale = 1.0 + (settings.shrinkagePercent / 100.0);
+    const qreal stretchScale = 1.0 - (settings.stretchPercent / 100.0);
+    const qreal totalScale = shrinkScale * stretchScale;
+
+    const QList<QGraphicsItem *> items = pieceScene->items();
+    for (QGraphicsItem *item : items)
+    {
+        if (item->type() == PatternPieceTool::Type)
+        {
+            item->setScale(totalScale);
+        }
+    }
+}
+
 /**
  * Called when something changed in the pen tool bar
  * (e.g. color, weight, or type).
@@ -2895,9 +3027,8 @@ void MainWindow::initializeToolButtons()
     connect(ui->bisector_ToolButton,       &QToolButton::clicked, this, &MainWindow::handleBisectorTool);
     connect(ui->lineIntersect_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleLineIntersectTool);
     connect(ui->curve_ToolButton,          &QToolButton::clicked, this, &MainWindow::handleCurveTool);
-    connect(ui->curveWithCPs_ToolButton,        &QToolButton::clicked, this, &MainWindow::handleCurveWithControlPointsTool);
-    // cubicBezierLength_ToolButton removed — merged into standard cubic bezier
-    connect(ui->arc_ToolButton,                 &QToolButton::clicked, this, &MainWindow::handleArcTool);
+    connect(ui->curveWithCPs_ToolButton,   &QToolButton::clicked, this, &MainWindow::handleCurveWithControlPointsTool);
+    connect(ui->arc_ToolButton,            &QToolButton::clicked, this, &MainWindow::handleArcTool);
     connect(ui->spline_ToolButton,         &QToolButton::clicked, this, &MainWindow::handleSplineTool);
     connect(ui->splineWithCPs_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleSplineWithControlPointsTool);
     connect(ui->pointOfContact_ToolButton, &QToolButton::clicked, this, &MainWindow::handlePointOfContactTool);
@@ -3499,7 +3630,6 @@ void MainWindow::CancelTool()
         case Tool::CubicBezier:
             ui->curveWithCPs_ToolButton->setChecked(false);
             break;
-        // Tool::CubicBezierLength removed — merged into Tool::CubicBezier
         case Tool::Arc:
             ui->arc_ToolButton->setChecked(false);
             break;
@@ -3827,6 +3957,12 @@ void MainWindow::showDraftMode(bool checked)
         ui->pieceMode_Action->setChecked(false);
         ui->layoutMode_Action->setChecked(false);
 
+        ui->groups_DockWidget->setVisible(true);
+        ui->pieces_DockWidget->setVisible(false);
+        ui->toolProperties_DockWidget->setVisible(true);
+        ui->pieceProperties_DockWidget->setVisible(false);
+        ui->layoutPages_DockWidget->setVisible(false);
+
         SaveCurrentScene();
 
         currentScene = draftScene;
@@ -3859,8 +3995,6 @@ void MainWindow::showDraftMode(bool checked)
             gradationSizesLabel->setVisible(true);
             gradationSizes->setVisible(true);
         }
-        ui->groups_DockWidget->setWidget(groupsWidget);
-        ui->groups_DockWidget->setWindowTitle(tr("Group Manager"));
     }
     else
     {
@@ -3894,6 +4028,12 @@ void MainWindow::showPieceMode(bool checked)
         ui->pieceMode_Action->setChecked(true);
         ui->layoutMode_Action->setChecked(false);
 
+        ui->groups_DockWidget->setVisible(false);
+        ui->pieces_DockWidget->setVisible(true);
+        ui->toolProperties_DockWidget->setVisible(false);
+        ui->pieceProperties_DockWidget->setVisible(true);
+        ui->layoutPages_DockWidget->setVisible(false);
+
         if(!qApp->getOpeningPattern())
         {
             if (pattern->DataPieces()->count() == 0)
@@ -3906,7 +4046,7 @@ void MainWindow::showPieceMode(bool checked)
             }
         }
 
-        patternPiecesWidget->updateList();
+        piecesWidget->updateList();
 
         qCDebug(vMainWindow, "Show piece scene");
         SaveCurrentScene();
@@ -3925,6 +4065,7 @@ void MainWindow::showPieceMode(bool checked)
         setWidgetsEnabled(true);
 
         pieceScene->setOriginsVisible(qApp->Settings()->getShowAxisOrigin());
+        updateFabricWidthLines();
 
         updateViewToolbar();
 
@@ -3937,8 +4078,6 @@ void MainWindow::showPieceMode(bool checked)
             gradationSizesLabel->setVisible(true);
             gradationSizes->setVisible(true);
         }
-        ui->groups_DockWidget->setWidget(patternPiecesWidget);
-        ui->groups_DockWidget->setWindowTitle(tr("Pattern Pieces"));
 
         setStatusMessage("");
     }
@@ -3973,6 +4112,12 @@ void MainWindow::showLayoutMode(bool checked)
         ui->showDraftMode->setChecked(false);
         ui->pieceMode_Action->setChecked(false);
         ui->layoutMode_Action->setChecked(true);
+
+        ui->groups_DockWidget->setVisible(false);
+        ui->pieces_DockWidget->setVisible(false);
+        ui->toolProperties_DockWidget->setVisible(false);
+        ui->pieceProperties_DockWidget->setVisible(false);
+        ui->layoutPages_DockWidget->setVisible(true);
 
         QHash<quint32, VPiece> pieces;
         if(!qApp->getOpeningPattern())
@@ -4090,7 +4235,7 @@ bool MainWindow::SaveAs()
     QString filePath = qApp->getFilePath();
     QString dir;
     QString fileName;
-    bool usedNotExistedDir = false;
+
     if (filePath.isEmpty())
     {
         dir = qApp->Seamly2DSettings()->getPatternPath();
@@ -4102,29 +4247,13 @@ bool MainWindow::SaveAs()
         fileName = QFileInfo(filePath).baseName();
     }
 
-    auto RemoveTempDir = [usedNotExistedDir, dir]()
-    {
-        if (usedNotExistedDir)
-        {
-            QDir directory(dir);
-            directory.rmpath(".");
-        }
-    };
-
-    QDir directory(dir);
-    if (!directory.exists())
-    {
-        usedNotExistedDir = directory.mkpath(".");
-    }
-
     fileName = fileDialog(this, tr("Save as"),
                                         dir + QLatin1String("/") + fileName + QLatin1String(".") + sm2dExt,
-                                        filters, nullptr, QFileDialog::DontUseNativeDialog, QFileDialog::AnyFile,
+                                        filters, nullptr, FILEDIALOG_OPTIONS, QFileDialog::AnyFile,
                                         QFileDialog::AcceptSave);
 
     if (fileName.isEmpty())
     {
-        RemoveTempDir();
         return false;
     }
 
@@ -4143,7 +4272,6 @@ bool MainWindow::SaveAs()
         {
             qCWarning(vMainWindow, "%s",
                        qUtf8Printable(tr("Failed to lock. File with this name is opened in another window.")));
-            RemoveTempDir();
             return false;
         }
     }
@@ -4165,7 +4293,6 @@ bool MainWindow::SaveAs()
         // Restoring previous state
         doc->SetModified(wasModified);
 
-        RemoveTempDir();
         return result;
     }
 
@@ -4175,17 +4302,15 @@ bool MainWindow::SaveAs()
 
     if (fileName != filePath)
     {
-        VlpCreateLock(lock, fileName);
-	    if (!lock->IsLocked())
+        VlpCreateLock(m_lock, fileName);
+	    if (!m_lock->IsLocked())
         {
             qCWarning(vMainWindow, "%s", qUtf8Printable(tr("Failed to lock. This file already opened in another window. "
 														    "Expect collisions when running 2 copies of the program.")));
-		    RemoveTempDir();
 	        return false;
 	    }
     }
 
-    RemoveTempDir();
     return result;
 }
 
@@ -4223,6 +4348,9 @@ bool MainWindow::Save()
         qt_ntfs_permission_lookup++; // turn checking on
 #endif /*Q_OS_WIN32*/
         const bool isFileWritable = QFileInfo(qApp->getFilePath()).isWritable();
+#ifdef Q_OS_WIN32
+        qt_ntfs_permission_lookup--; // turn it off again
+#endif /*Q_OS_WIN32*/
 
         if (!isFileWritable)
         {
@@ -4235,6 +4363,9 @@ bool MainWindow::Save()
 
             if (messageBox.exec() == QMessageBox::Yes)
             {
+#ifdef Q_OS_WIN32
+                qt_ntfs_permission_lookup++; // turn checking on
+#endif /*Q_OS_WIN32*/
                 bool changed = QFile::setPermissions(qApp->getFilePath(),
                                                     QFileInfo(qApp->getFilePath()).permissions() | QFileDevice::WriteUser);
 #ifdef Q_OS_WIN32
@@ -4306,7 +4437,7 @@ void MainWindow::Open()
     }
     qCDebug(vMainWindow, "Run QFileDialog::getOpenFileName: dir = %s.", qUtf8Printable(dir));
 
-    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, QFileDialog::DontUseNativeDialog,
+    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
                                         QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
     if (filename.isEmpty())
@@ -4323,17 +4454,19 @@ void MainWindow::Open()
 void MainWindow::Clear()
 {
     qCDebug(vMainWindow, "Resetting main window.");
-    lock.reset();
+    m_lock.reset();
     qCDebug(vMainWindow, "Unlocked pattern file.");
     showDraftMode(true);
     qCDebug(vMainWindow, "Returned to Draft mode.");
     setCurrentFile(QString());
     pattern->Clear();
     qCDebug(vMainWindow, "Clearing pattern.");
-    if (!qApp->getFilePath().isEmpty() && not doc->MPath().isEmpty())
+
+    if (!m_watcher->files().isEmpty())
     {
-        watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
+        m_watcher->removePaths(m_watcher->files());
     }
+
     doc->clear();
     qCDebug(vMainWindow, "Clearing scenes.");
     draftScene->clear();
@@ -4365,6 +4498,7 @@ void MainWindow::Clear()
 
     //disable group actions
     ui->groups_DockWidget->setEnabled(false);
+    ui->pieces_DockWidget->setEnabled(false);
 
     //disable history menu actions
     ui->history_Action->setEnabled(false);
@@ -4405,6 +4539,12 @@ void MainWindow::Clear()
     qApp->getUndoStack()->clear();
     toolProperties->clearPropertyBrowser();
     toolProperties->itemClicked(nullptr);
+
+    ui->groups_DockWidget->setVisible(false);
+    ui->pieces_DockWidget->setVisible(false);
+    ui->toolProperties_DockWidget->setVisible(false);
+    ui->pieceProperties_DockWidget->setVisible(false);
+    ui->layoutPages_DockWidget->setVisible(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -4565,7 +4705,7 @@ void MainWindow::fullParseFile()
     changeDraftBlockGlobally(draftBlock);
 
     setToolsEnabled(draftBlockComboBox->count() > 0);
-    patternPiecesWidget->updateList();
+    piecesWidget->updateList();
 
     VMainGraphicsView::NewSceneRect(draftScene, qApp->getSceneView());
     VMainGraphicsView::NewSceneRect(pieceScene, qApp->getSceneView());
@@ -4715,14 +4855,16 @@ void MainWindow::setWidgetsEnabled(bool enable)
 
     //enable help menu
     ui->shortcuts_Action->setEnabled(enable);
-    ui->checkForUpdates_Action->setEnabled(enable);
 
     //enable dock widget actions
-    ui->groups_DockWidget->setEnabled(enable && designStage);
+    ui->groups_DockWidget->setEnabled(enable && draftStage);
+    ui->pieces_DockWidget->setEnabled(enable && pieceStage);
     ui->toolProperties_DockWidget->setEnabled(enable && draftStage);
+    ui->pieceProperties_DockWidget->setEnabled(enable && pieceStage);
     ui->layoutPages_DockWidget->setEnabled(enable && layoutStage);
-    actionDockWidgetToolOptions->setEnabled(enable && designStage);
-    actionDockWidgetGroups->setEnabled(enable && designStage);
+    actionDockWidgetToolOptions->setEnabled(enable && draftStage);
+    actionDockWidgetGroups->setEnabled(enable && draftStage);
+    actionDockWidgetPieces->setEnabled(enable && pieceStage);
     actionDockWidgetLayouts->setEnabled(enable && layoutStage);
 
     //Now we don't want allow user call context menu
@@ -4852,6 +4994,15 @@ void MainWindow::patternChangesWereSaved(bool saved)
 void MainWindow::ChangedSize(int index)
 {
     const int size = static_cast<int>(VContainer::size());
+/*
+    if (m_mmeasurements->isNull())
+    {
+        const QString patternPath = qApp->getFilePath();
+        QString mPath = AbsoluteMPath(patternPath, doc->MPath());
+        m_measurements = OpenMeasurementFile(patternPath, mPath);
+    }
+*/
+
     if (updateMeasurements(AbsoluteMPath(qApp->getFilePath(), doc->MPath()),
                            gradationSizes.data()->itemText(index).toInt(),
                            static_cast<int>(VContainer::height())))
@@ -4996,7 +5147,6 @@ void MainWindow::setToolsEnabled(bool enable)
     ui->curve_ToolButton->setEnabled(draftTools);
     ui->spline_ToolButton->setEnabled(draftTools);
     ui->curveWithCPs_ToolButton->setEnabled(draftTools);
-    // cubicBezierLength_ToolButton removed
     ui->splineWithCPs_ToolButton->setEnabled(draftTools);
     ui->pointAlongCurve_ToolButton->setEnabled(draftTools);
     ui->pointAlongSpline_ToolButton->setEnabled(draftTools);
@@ -5160,10 +5310,10 @@ bool MainWindow::SavePattern(const QString &fileName, QString &error)
     qCDebug(vMainWindow, "Saving pattern file %s.", qUtf8Printable(fileName));
     QFileInfo tempInfo(fileName);
 
-    const QString filename = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
-    if (!filename.isEmpty() && qApp->getFilePath() != fileName)
+    const QString mPath = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
+    if (!mPath.isEmpty() && qApp->getFilePath() != fileName)
     {
-        doc->SetMPath(RelativeMPath(fileName, filename));
+        doc->SetMPath(RelativeMPath(fileName, mPath));
     }
 
     const bool result = doc->SaveDocument(fileName, error);
@@ -5179,7 +5329,7 @@ bool MainWindow::SavePattern(const QString &fileName, QString &error)
     }
     else
     {
-        doc->SetMPath(filename);
+        doc->SetMPath(mPath);
         emit doc->updatePatternLabel();
         qCWarning(vMainWindow, "Could not save file %s. %s.", qUtf8Printable(fileName), qUtf8Printable(error));
     }
@@ -5270,6 +5420,7 @@ void MainWindow::ReadSettings()
 
     isToolOptionsDockVisible = ui->toolProperties_DockWidget->isVisible();
     isGroupsDockVisible      = ui->groups_DockWidget->isVisible();
+    isPiecesDockVisible      = ui->pieces_DockWidget->isVisible();
     isLayoutsDockVisible     = ui->layoutPages_DockWidget->isVisible();
     isToolboxDockVisible     = ui->toolbox_DockWidget->isVisible();
 }
@@ -5399,12 +5550,48 @@ void MainWindow::createMenus()
     ui->edit_Menu->insertAction(ui->previousDraftBlock_Action, redoAction);
     ui->edit_Toolbar->insertAction(ui->previousDraftBlock_Action, redoAction);
 
+    // Add separator
     separatorAct = new QAction(this);
     separatorAct->setSeparator(true);
     ui->edit_Menu->insertAction(ui->previousDraftBlock_Action, separatorAct);
 
-    AddDocks();
+    //Add dock menus
+    actionDockWidgetToolOptions = ui->toolProperties_DockWidget->toggleViewAction();
+    ui->view_Menu->addAction(actionDockWidgetToolOptions);
+    connect(ui->toolProperties_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
+    {
+        isToolOptionsDockVisible = visible;
+    });
 
+    actionDockWidgetGroups = ui->groups_DockWidget->toggleViewAction();
+    ui->view_Menu->addAction(actionDockWidgetGroups);
+    connect(ui->groups_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
+    {
+        isGroupsDockVisible = visible;
+    });
+
+    actionDockWidgetPieces = ui->pieces_DockWidget->toggleViewAction();
+    ui->view_Menu->addAction(actionDockWidgetPieces);
+    connect(ui->pieces_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
+    {
+        isPiecesDockVisible = visible;
+    });
+
+    actionDockWidgetLayouts = ui->layoutPages_DockWidget->toggleViewAction();
+    ui->view_Menu->addAction(actionDockWidgetLayouts);
+    connect(ui->layoutPages_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
+    {
+        isLayoutsDockVisible = visible;
+    });
+
+    actionDockWidgetToolbox = ui->toolbox_DockWidget->toggleViewAction();
+    ui->view_Menu->addAction(actionDockWidgetToolbox);
+    connect(ui->toolbox_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
+    {
+        isToolboxDockVisible  = visible;
+    });
+
+    // Add separator
     separatorAct = new QAction(this);
     separatorAct->setSeparator(true);
     ui->view_Menu->addAction(separatorAct);
@@ -5532,7 +5719,6 @@ void MainWindow::LastUsedTool()
             ui->curveWithCPs_ToolButton->setChecked(true);
             handleCurveWithControlPointsTool(true);
             break;
-        // Tool::CubicBezierLength removed — merged into Tool::CubicBezier
         case Tool::Arc:
             ui->arc_ToolButton->setChecked(true);
             handleArcTool(true);
@@ -5663,59 +5849,34 @@ void MainWindow::LastUsedTool()
 QT_WARNING_POP
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::AddDocks()
-{
-    //Add dock
-    actionDockWidgetToolOptions = ui->toolProperties_DockWidget->toggleViewAction();
-    ui->view_Menu->addAction(actionDockWidgetToolOptions);
-    connect(ui->toolProperties_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
-    {
-        isToolOptionsDockVisible = visible;
-    });
-
-    actionDockWidgetGroups = ui->groups_DockWidget->toggleViewAction();
-    ui->view_Menu->addAction(actionDockWidgetGroups);
-    connect(ui->groups_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
-    {
-        isGroupsDockVisible = visible;
-    });
-
-    actionDockWidgetLayouts = ui->layoutPages_DockWidget->toggleViewAction();
-    ui->view_Menu->addAction(actionDockWidgetLayouts);
-    connect(ui->layoutPages_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
-    {
-        isLayoutsDockVisible = visible;
-    });
-
-    actionDockWidgetToolbox = ui->toolbox_DockWidget->toggleViewAction();
-    ui->view_Menu->addAction(actionDockWidgetToolbox);
-    connect(ui->toolbox_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
-    {
-        isToolboxDockVisible  = visible;
-    });
-
-    tabifyDockWidget(ui->groups_DockWidget, ui->toolProperties_DockWidget);
-	splitDockWidget(ui->toolProperties_DockWidget, ui->layoutPages_DockWidget, Qt::Vertical);
-}
-//---------------------------------------------------------------------------------------------------------------------
 void MainWindow::initializeDocksContain()
 {
     setTabPosition(Qt::RightDockWidgetArea, QTabWidget::West);
     setTabPosition(Qt::LeftDockWidgetArea, QTabWidget::East);
 
     initPropertyEditor();
+    initPiecePropertyEditor();
 
     qCDebug(vMainWindow, "Initialize Groups manager.");
     groupsWidget = new GroupsWidget(pattern, doc, this);
     ui->groups_DockWidget->setWidget(groupsWidget);
     connect(doc, &VAbstractPattern::updateGroups, this, &MainWindow::updateGroups);
 
-    patternPiecesWidget = new PiecesWidget(pattern, doc, this);
-    connect(doc, &VPattern::FullUpdateFromFile, patternPiecesWidget, &PiecesWidget::updateList);
-    connect(doc, &VPattern::UpdateInLayoutList, patternPiecesWidget, &PiecesWidget::togglePiece);
-    connect(doc, &VPattern::showPiece, patternPiecesWidget, &PiecesWidget::selectPiece);
-    connect(patternPiecesWidget, &PiecesWidget::Highlight, pieceScene, &VMainGraphicsScene::HighlightItem);
-    patternPiecesWidget->setVisible(false);
+    piecesWidget = new PiecesWidget(pattern, doc, this);
+    ui->pieces_DockWidget->setWidget(piecesWidget);
+    connect(doc, &VPattern::FullUpdateFromFile, piecesWidget, &PiecesWidget::updateList);
+    connect(doc, &VPattern::UpdateInLayoutList, piecesWidget, &PiecesWidget::togglePiece);
+    connect(doc, &VPattern::showPiece, piecesWidget, &PiecesWidget::selectPiece);
+    connect(piecesWidget, &PiecesWidget::Highlight, pieceScene, &VMainGraphicsScene::HighlightItem);
+
+    //disable dock widget actions until pattern loaded.
+    ui->groups_DockWidget->setEnabled(false);
+    ui->pieces_DockWidget->setEnabled(false);
+    ui->toolProperties_DockWidget->setEnabled(false);
+    ui->pieceProperties_DockWidget->setEnabled(false);
+    ui->layoutPages_DockWidget->setEnabled(false);
+
+    tabifyDockWidget(ui->groups_DockWidget, ui->toolProperties_DockWidget);
 
     ui->toolbox_StackedWidget->setCurrentIndex(0);
 }
@@ -6309,12 +6470,6 @@ void MainWindow::createActions()
         shortcutsDialog->setAttribute(Qt::WA_DeleteOnClose, true);
         shortcutsDialog->show();
     });
-    connect(ui->checkForUpdates_Action, &QAction::triggered, this, [this]()
-    {
-        FvUpdater::sharedUpdater()->setFeedURL(defaultFeedURL);
-        FvUpdater::sharedUpdater()->setParent(this);
-        FvUpdater::sharedUpdater()->checkForUpdatesSilent();
-    });
     connect(ui->wiki_Action, &QAction::triggered, this, []()
     {
         qCDebug(vMainWindow, "Showing online help");
@@ -6447,9 +6602,12 @@ MainWindow::~MainWindow()
  * @brief LoadPattern open pattern file.
  * @param fileName name of file.
  */
-bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasureFile)
+bool MainWindow::LoadPattern(const QString &fileName, const QString &customMeasureFile)
 {
     qCInfo(vMainWindow, "Loading new file %s.", qUtf8Printable(fileName));
+
+    // remove any extraneous LF's or trailing white space.
+    removeEmptyLinesText(fileName, true);
 
     //We have unsaved changes or load more then one file per time
     if (startNewSeamly2D(fileName))
@@ -6504,15 +6662,15 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
     }
 
     qCDebug(vMainWindow, "Locking file");
-    VlpCreateLock(lock, fileName);
+    VlpCreateLock(m_lock, fileName);
 
-    if (lock->IsLocked())
+    if (m_lock->IsLocked())
     {
         qCInfo(vMainWindow, "Pattern file %s was locked.", qUtf8Printable(fileName));
     }
     else
     {
-        if (!IgnoreLocking(lock->GetLockError(), fileName))
+        if (!IgnoreLocking(m_lock->GetLockError(), fileName))
         {
             return false;
         }
@@ -6568,7 +6726,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
             else
             {
                 ui->unloadMeasurements_Action->setEnabled(true);
-                watcher->addPath(path);
+                m_watcher->addPath(path);
                 ui->editCurrent_Action->setEnabled(true);
             }
         }
@@ -6618,10 +6776,115 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
         qApp->setOpeningPattern();// End opening file
         return false;
     }
+
+    // Set the Property Editor dock widget as the active tab
+    ui->toolProperties_DockWidget->raise();
+}
+
+void MainWindow::removeEmptyLinesText(const QString &filename, bool isPattern)
+{
+    // backup file
+    saveBackupFile(filename);
+
+    QFile file(filename);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
+
+    QString cleanedContent;
+    QTextStream in(&file);
+    while (!in.atEnd())
+    {
+        QString line = in.readLine();
+        if (isPattern)
+        {
+            line.replace(QString("lineWeight=\"1.00\""), QString("lineWeight=\"1\""));
+        }
+        // trimmed().isEmpty() checks if line is empty or only whitespace
+        if (!line.trimmed().isEmpty())
+        {
+            cleanedContent += line + "\n";
+        }
+    }
+    file.close();
+
+    if (file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text))
+    {
+        QTextStream out(&file);
+        out << cleanedContent;
+        file.close();
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList MainWindow::GetUnlokedRestoreFileList() const
+void MainWindow::saveBackupFile(const QString &filename) const
+{
+    QString error;
+    const QFileInfo info(filename);
+
+    QString path = qApp->Settings()->getBackupFilePath();
+    if (!info.exists(path))
+    {
+        path = info.absoluteDir().absolutePath();
+    }
+
+    QDir dir(path);
+    if (!dir.exists())
+    {
+        return;
+    }
+
+    QString baseFileName = info.baseName();
+
+    // replace any spaces in filename with underscore to pevent
+    // errors when opening file in Linux through the command line.
+    baseFileName.replace(" ", "_");
+
+    // Filter files by baseFileName
+    QFileInfoList allFiles = dir.entryInfoList(QDir::Files | QDir::NoDotAndDotDot);
+    QFileInfoList filteredList;
+
+    // Get list, sorting by creation time (Time) descending (Reversed)
+    for (const QFileInfo &fileInfo : allFiles)
+    {
+        if (fileInfo.baseName().contains(baseFileName, Qt::CaseInsensitive))
+        {
+            filteredList.append(fileInfo);
+        }
+    }
+
+    // Sort by modification time (Oldest first)
+    // Use std::sort with a lambda for comparison
+    std::sort(filteredList.begin(), filteredList.end(), [](const QFileInfo &a, const QFileInfo &b)
+    {
+        return a.lastModified() < b.lastModified();
+    });
+
+    // Delete oldest if over limit
+    int maxFiles = qApp->Seamly2DSettings()->getMaxBackups();
+    int filesToDelete = filteredList.size() - maxFiles + 1;
+
+    for (int i = 0; i < filesToDelete; ++i)
+    {
+        const QFileInfo &toDelete = filteredList.at(i);
+        QFile::remove(toDelete.absoluteFilePath());
+    }
+
+    QString backupFileName;
+    QString timestamp = QDateTime::currentDateTime().toString("ddMMyyyy-hhmmss");
+
+    backupFileName = QString("%1/%2_%3%4.%5").arg(path, baseFileName, timestamp, "(backup)", info.completeSuffix());
+
+    if (!VDomDocument::SafeCopy(filename, backupFileName, error))
+    {
+        if (info.isWritable())
+        {
+            const QString errorMsg(tr("Error creating a backup copy: %1.").arg(error));
+            throw VException(errorMsg);
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QStringList MainWindow::getUnlockedRestoreFileList() const
 {
     QStringList restoreFiles;
     //Take all files that need to be restored
@@ -6631,8 +6894,8 @@ QStringList MainWindow::GetUnlokedRestoreFileList() const
         for (int i = 0; i < files.size(); ++i)
         {
             // Seeking file that really needs reopen
-            VLockGuard<char> lock(files.at(i));
-            if (lock.IsLocked())
+            VLockGuard<char> tempLock(files.at(i));
+            if (tempLock.IsLocked())
             {
                 restoreFiles.append(files.at(i));
             }
@@ -6737,6 +7000,7 @@ void MainWindow::updatePreferences()
     updateViewToolbar();
     resetPanShortcuts();
     initPropertyEditor();
+    initPiecePropertyEditor();
     initBasePointComboBox();
     initPenToolBar();
     ui->view->resetScrollBars();
@@ -6779,13 +7043,180 @@ void MainWindow::exportLayoutAs()
     {
         ExportLayoutDialog dialog(scenes.size(), Draw::Layout, FileName(), this);
 
+        // Populate size selection if multisize pattern
+        if (qApp->patternType() == MeasurementsType::Multisize)
+        {
+            const QStringList sizes = MeasurementVariable::ListSizes(doc->GetGradationSizes(), qApp->patternUnit());
+            dialog.setAvailableSizes(sizes);
+        }
+
         if (dialog.exec() == QDialog::Rejected)
         {
             ui->exportLayout_ToolButton->setChecked(false);
             return;
         }
 
-        ExportData(QVector<VLayoutPiece>(), dialog);
+        if (!dialog.isBatchExport())
+        {
+            // Original single-export path (unchanged)
+            ExportData(QVector<VLayoutPiece>(), dialog);
+        }
+        else
+        {
+            // Batch export: iterate over selected sizes
+            const QStringList sizes = dialog.selectedSizes();
+            const QString originalFileName = dialog.fileName();
+
+            // Save current state
+            const int originalSize = static_cast<int>(VContainer::size());
+            const int currentHeight = static_cast<int>(VContainer::height());
+            const QString measurementPath = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
+
+            int exportedCount = 0;
+            bool exportFailed = false;
+
+            ExportProgressDialog *progressDialog = new ExportProgressDialog(0, sizes.size(), this);
+            progressDialog->showProgressBar(false);
+
+            for (const QString &size : sizes)
+            {
+                bool ok;
+                const int newSize = size.toInt(&ok);
+                if (!ok)
+                {
+                    exportFailed = true;
+                    continue;
+                }
+
+                // Apply new size
+                if (!updateMeasurements(measurementPath, newSize, currentHeight))
+                {
+                    exportFailed = true;
+                    continue;
+                }
+                doc->LiteParseTree(Document::LiteParse);
+
+                // Regenerate piece list for new size
+                const QString exportFilename = originalFileName + QStringLiteral("_") + size;
+                setStatusMessage(tr("Exporting...") + exportFilename + ExportLayoutDialog::exportFormatSuffix(dialog.format()));
+
+                const QHash<quint32, VPiece> *allPieces = pattern->DataPieces();
+                QHash<quint32, VPiece> piecesInLayout;
+                QHash<quint32, VPiece>::const_iterator it = allPieces->constBegin();
+                while (it != allPieces->constEnd())
+                {
+                    if (it.value().isInLayout())
+                    {
+                        piecesInLayout.insert(it.key(), it.value());
+                    }
+                    ++it;
+                }
+                pieceList = preparePiecesForLayout(piecesInLayout);
+
+                // Recreate layout generator with saved settings
+                VLayoutGenerator lGenerator;
+                const VSettings *settings = qApp->Seamly2DSettings();
+                lGenerator.setLayoutGap(settings->getLayoutGap());
+                lGenerator.setCaseType(settings->GetLayoutGroup());
+                lGenerator.SetPaperHeight(settings->GetLayoutPaperHeight());
+                lGenerator.SetPaperWidth(settings->GetLayoutPaperWidth());
+                lGenerator.SetShift(static_cast<quint32>(qFloor(settings->GetLayoutShift())));
+                lGenerator.SetRotate(settings->GetLayoutRotate());
+                lGenerator.SetRotationIncrease(settings->GetLayoutRotationIncrease());
+                lGenerator.SetAutoCrop(settings->GetLayoutAutoCrop());
+                lGenerator.SetSaveLength(settings->GetLayoutSaveLength());
+                lGenerator.SetUnitePages(settings->GetLayoutUnitePages());
+                lGenerator.setStripOptimization(settings->useStripOptimization());
+                lGenerator.SetMultiplier(settings->GetMultiplier());
+                lGenerator.setTextAsPaths(settings->GetTextAsPaths());
+
+                if (settings->GetIgnoreAllFields())
+                {
+                    lGenerator.SetPrinterFields(false, QMarginsF());
+                }
+                else
+                {
+                    lGenerator.SetPrinterFields(true, settings->GetFields(QMarginsF()));
+                }
+
+                if (!LayoutSettings(lGenerator))
+                {
+                    exportFailed = true;
+                }
+
+                // Set filename with size suffix and export
+                dialog.setFileName(exportFilename);
+                ExportData(QVector<VLayoutPiece>(), dialog);
+
+                // Insert current file
+                progressDialog->insertFileName(exportFilename + ExportLayoutDialog::exportFormatSuffix(dialog.format()));
+                if (exportFailed)
+                {
+                    progressDialog->setFileStatus(ProgressStatus::Failed);
+                    exportFailed = false;
+                }
+                else
+                {
+                    progressDialog->setFileStatus(ProgressStatus::Completed);
+                }
+
+                exportedCount++;
+                progressDialog->setProgress(exportedCount);
+            }
+            setStatusMessage("");
+
+            // Restore original size
+            if (updateMeasurements(measurementPath, originalSize, currentHeight))
+            {
+                doc->LiteParseTree(Document::LiteParse);
+                emit pieceScene->DimensionsChanged();
+            }
+
+            // Regenerate original layout
+            const QHash<quint32, VPiece> *allPieces = pattern->DataPieces();
+            QHash<quint32, VPiece> piecesInLayout;
+            QHash<quint32, VPiece>::const_iterator it = allPieces->constBegin();
+            while (it != allPieces->constEnd())
+            {
+                if (it.value().isInLayout())
+                {
+                    piecesInLayout.insert(it.key(), it.value());
+                }
+                ++it;
+            }
+            pieceList = preparePiecesForLayout(piecesInLayout);
+
+            VLayoutGenerator lGenerator;
+            const VSettings *settings = qApp->Seamly2DSettings();
+            lGenerator.setLayoutGap(settings->getLayoutGap());
+            lGenerator.setCaseType(settings->GetLayoutGroup());
+            lGenerator.SetPaperHeight(settings->GetLayoutPaperHeight());
+            lGenerator.SetPaperWidth(settings->GetLayoutPaperWidth());
+            lGenerator.SetShift(static_cast<quint32>(qFloor(settings->GetLayoutShift())));
+            lGenerator.SetRotate(settings->GetLayoutRotate());
+            lGenerator.SetRotationIncrease(settings->GetLayoutRotationIncrease());
+            lGenerator.SetAutoCrop(settings->GetLayoutAutoCrop());
+            lGenerator.SetSaveLength(settings->GetLayoutSaveLength());
+            lGenerator.SetUnitePages(settings->GetLayoutUnitePages());
+            lGenerator.setStripOptimization(settings->useStripOptimization());
+            lGenerator.SetMultiplier(settings->GetMultiplier());
+            lGenerator.setTextAsPaths(settings->GetTextAsPaths());
+            if (settings->GetIgnoreAllFields())
+            {
+                lGenerator.SetPrinterFields(false, QMarginsF());
+            }
+            else
+            {
+                lGenerator.SetPrinterFields(true, settings->GetFields(QMarginsF()));
+            }
+            LayoutSettings(lGenerator);
+
+            // Restore original filename in dialog
+            dialog.setFileName(originalFileName);
+
+            // Show summary
+            progressDialog->show();
+        }
     }
 
     catch (const VException &exception)
@@ -6846,13 +7277,93 @@ void MainWindow::exportPiecesAs()
         ExportLayoutDialog dialog(1, Draw::Modeling, FileName(), this);
         dialog.setWindowTitle("Export Pattern Pieces");
 
+        // Populate size selection if multisize pattern
+        if (qApp->patternType() == MeasurementsType::Multisize)
+        {
+            const QStringList sizes = MeasurementVariable::ListSizes(doc->GetGradationSizes(), qApp->patternUnit());
+            dialog.setAvailableSizes(sizes);
+        }
+
         if (dialog.exec() == QDialog::Rejected)
         {
             ui->exportPiecesAs_ToolButton->setChecked(false);
             return;
         }
 
-        ExportData(pieceList, dialog);
+        if (dialog.isBatchExport())
+        {
+            const QStringList selectedSizes = dialog.selectedSizes();
+            const QString baseName = FileName();
+            const qreal originalSize = VContainer::size();
+            const QString measurementPath = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
+            int exportCount = 0;
+            bool  failed = false;
+
+            ExportProgressDialog *exportProgress = new ExportProgressDialog(0, selectedSizes.size(), this);
+            exportProgress->showProgressBar(true);
+            exportProgress->show();
+
+            for (const QString &size : selectedSizes)
+            {
+                const int sizeValue = qRound(UnitConvertor(size.toDouble(), qApp->patternUnit(), Unit::Cm));
+
+                // Switch to this size
+                updateMeasurements(measurementPath, sizeValue, static_cast<int>(VContainer::height()));
+                doc->LiteParseTree(Document::LiteParse);
+
+                // Rebuild piece list for this size
+                const QHash<quint32, VPiece> *pieces = pattern->DataPieces();
+                QHash<quint32, VPiece> inLayout;
+                for (auto it = pieces->constBegin(); it != pieces->constEnd(); ++it)
+                {
+                    if (it.value().isInLayout())
+                    {
+                        inLayout.insert(it.key(), it.value());
+                    }
+                }
+
+                QVector<VLayoutPiece> sizePieceList;
+                try
+                {
+                    sizePieceList = preparePiecesForLayout(inLayout);
+                }
+                catch (VException &)
+                {
+                    failed = true;
+                    continue;
+                }
+
+                // Set size-suffixed filename and export
+                const QFileInfo fileInfo(baseName);
+                const QString sizeName = fileInfo.baseName() + "_" + size;
+                dialog.setFileName(sizeName);
+                ExportData(sizePieceList, dialog);
+
+                // Insert current file
+                exportProgress->insertFileName(sizeName + ExportLayoutDialog::exportFormatSuffix(dialog.format()));
+                if (failed)
+                {
+                    exportProgress->setFileStatus(ProgressStatus::Failed);
+                    failed = false;
+                }
+                else
+                {
+                    exportProgress->setFileStatus(ProgressStatus::Completed);
+                }
+
+                ++exportCount;
+                exportProgress->setProgress(exportCount);
+                QCoreApplication::processEvents();
+            }
+
+            // Restore original size
+            updateMeasurements(measurementPath, static_cast<int>(originalSize), static_cast<int>(VContainer::height()));
+            doc->LiteParseTree(Document::LiteParse);
+        }
+        else
+        {
+            ExportData(pieceList, dialog);
+        }
     }
 
     catch (const VException &exception)
@@ -7016,9 +7527,9 @@ void MainWindow::exportDraftBlocksAs()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ReopenFilesAfterCrash(QStringList &args)
+void MainWindow::reopenFilesAfterCrash(QStringList &args)
 {
-    const QStringList files = GetUnlokedRestoreFileList();
+    const QStringList files = getUnlockedRestoreFileList();
     if (files.size() > 0)
     {
         qCDebug(vMainWindow, "Reopen files after crash.");
@@ -7075,7 +7586,7 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
     }
 
     QFileInfo table(path);
-    if (table.exists() == false)
+    if (!table.exists())
     {
         if (!Application2D::isGUIMode())
         {
@@ -7117,7 +7628,7 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                     //Use standard path to multisize measurements
                     QString dir = qApp->Seamly2DSettings()->getMultisizePath();
                     dir = VCommonSettings::prepareMultisizeTables(dir);
-                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, QFileDialog::DontUseNativeDialog,
+                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
                                           QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
                 }
@@ -7137,7 +7648,7 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                         usedNotExistedDir = directory.mkpath(".");
                     }
 
-                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, QFileDialog::DontUseNativeDialog,
+                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
                                           QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
                     if (usedNotExistedDir)
@@ -7166,7 +7677,7 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                         usedNotExistedDir = directory.mkpath(".");
                     }
 
-                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, QFileDialog::DontUseNativeDialog,
+                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
                                           QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
                     if (usedNotExistedDir)
@@ -7256,7 +7767,7 @@ void MainWindow::changeDraftBlock(int index, bool zoomBestFit)
         QString name = draftBlockComboBox->itemText(index);
         doc->changeActiveDraftBlock(name);
         doc->setCurrentData();
-        emit RefreshHistory();
+        emit RefreshHistory(true);
         if (drawMode)
         {
             handleArrowTool(true);
@@ -7481,7 +7992,7 @@ void MainWindow::processCommandLine()
 
     if (Application2D::isGUIMode())
     {
-        ReopenFilesAfterCrash(args);
+        reopenFilesAfterCrash(args);
     }
     else
     {

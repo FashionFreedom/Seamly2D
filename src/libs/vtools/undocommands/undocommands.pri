@@ -31,6 +31,7 @@ HEADERS += \
     $$PWD/addimage.h \
     $$PWD/deletepiece.h \
     $$PWD/movepiece.h \
+    $$PWD/savepatternfabricsettings.h \
     $$PWD/savepieceoptions.h \
     $$PWD/togglepieceinlayout.h \
     $$PWD/savepiecepathoptions.h
@@ -65,6 +66,7 @@ SOURCES += \
     $$PWD/addimage.cpp \
     $$PWD/deletepiece.cpp \
     $$PWD/movepiece.cpp \
+    $$PWD/savepatternfabricsettings.cpp \
     $$PWD/savepieceoptions.cpp \
     $$PWD/togglepieceinlayout.cpp \
     $$PWD/savepiecepathoptions.cpp

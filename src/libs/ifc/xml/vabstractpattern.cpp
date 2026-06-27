@@ -116,6 +116,7 @@ const QString VAbstractPattern::TagPatternNum           = QStringLiteral("patter
 const QString VAbstractPattern::TagCustomerName         = QStringLiteral("customer");
 const QString VAbstractPattern::TagCompanyName          = QStringLiteral("company");
 const QString VAbstractPattern::TagPatternLabel         = QStringLiteral("patternLabel");
+const QString VAbstractPattern::TagFabricSettings       = QStringLiteral("fabricSettings");
 const QString VAbstractPattern::TagGrainline            = QStringLiteral("grainline");
 const QString VAbstractPattern::TagPath                 = QStringLiteral("path");
 const QString VAbstractPattern::TagNodes                = QStringLiteral("nodes");
@@ -158,6 +159,12 @@ const QString VAbstractPattern::AttrTilt                = QStringLiteral("tilt")
 const QString VAbstractPattern::AttrFoldPosition        = QStringLiteral("foldPosition");
 const QString VAbstractPattern::AttrQuantity            = QStringLiteral("quantity");
 const QString VAbstractPattern::AttrOnFold              = QStringLiteral("onFold");
+const QString VAbstractPattern::AttrFabricWidth          = QStringLiteral("fabricWidth");
+const QString VAbstractPattern::AttrHeightRepeat         = QStringLiteral("heightRepeat");
+const QString VAbstractPattern::AttrLengthRepeat         = QStringLiteral("lengthRepeat");
+const QString VAbstractPattern::AttrShrinkagePercent     = QStringLiteral("shrinkagePercent");
+const QString VAbstractPattern::AttrStretchPercent       = QStringLiteral("stretchPercent");
+const QString VAbstractPattern::AttrDefaultSAWidth       = QStringLiteral("defaultSAWidth");
 const QString VAbstractPattern::AttrDateFormat          = QStringLiteral("dateFormat");
 const QString VAbstractPattern::AttrTimeFormat          = QStringLiteral("timeFormat");
 const QString VAbstractPattern::AttrArrows              = QStringLiteral("arrows");
@@ -1358,6 +1365,38 @@ void VAbstractPattern::SetGradationSizes(const QMap<GSizes, bool> &options)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+VFabricSettings VAbstractPattern::GetFabricSettings() const
+{
+    VFabricSettings settings;
+    const QDomNodeList list = elementsByTagName(TagFabricSettings);
+    if (!list.isEmpty())
+    {
+        const QDomElement element = list.at(0).toElement();
+        settings.fabricWidth      = element.attribute(AttrFabricWidth, QStringLiteral("0")).toDouble();
+        settings.heightRepeat     = element.attribute(AttrHeightRepeat, QStringLiteral("0")).toDouble();
+        settings.lengthRepeat     = element.attribute(AttrLengthRepeat, QStringLiteral("0")).toDouble();
+        settings.shrinkagePercent = element.attribute(AttrShrinkagePercent, QStringLiteral("0")).toDouble();
+        settings.stretchPercent   = element.attribute(AttrStretchPercent, QStringLiteral("0")).toDouble();
+        settings.defaultSAWidth   = element.attribute(AttrDefaultSAWidth, QStringLiteral("0")).toDouble();
+    }
+    return settings;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPattern::SetFabricSettings(const VFabricSettings &settings)
+{
+    QDomElement element = CheckTagExists(TagFabricSettings);
+    SetAttribute(element, AttrFabricWidth, settings.fabricWidth);
+    SetAttribute(element, AttrHeightRepeat, settings.heightRepeat);
+    SetAttribute(element, AttrLengthRepeat, settings.lengthRepeat);
+    SetAttribute(element, AttrShrinkagePercent, settings.shrinkagePercent);
+    SetAttribute(element, AttrStretchPercent, settings.stretchPercent);
+    SetAttribute(element, AttrDefaultSAWidth, settings.defaultSAWidth);
+    modified = true;
+    emit patternChanged(false);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QString VAbstractPattern::GetDescription() const
 {
     return UniqueTagText(TagDescription);
@@ -1731,7 +1770,8 @@ QDomElement VAbstractPattern::CheckTagExists(const QString &tag)
     {
         const QStringList tags = QStringList() << TagUnit << TagImage << TagDescription << TagNotes
                                          << TagGradation << TagPatternName << TagPatternNum << TagCompanyName
-                                         << TagCustomerName << TagPatternLabel << TagDraftImages;
+                                         << TagCustomerName << TagPatternLabel << TagFabricSettings
+                                         << TagDraftImages;
         switch (tags.indexOf(tag))
         {
             case 1: //TagImage
@@ -1771,7 +1811,10 @@ QDomElement VAbstractPattern::CheckTagExists(const QString &tag)
             case 9: // TagPatternLabel
                 element = createElement(TagPatternLabel);
                 break;
-            case 10: // TagDraftImages
+            case 10: // TagFabricSettings
+                element = createElement(TagFabricSettings);
+                break;
+            case 11: // TagDraftImages
                 element = createElement(TagDraftImages);
                 break;
             case 0: //TagUnit (Mandatory tag)

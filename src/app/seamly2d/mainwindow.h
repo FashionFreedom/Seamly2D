@@ -70,6 +70,7 @@ namespace Ui
 }
 
 class VToolOptionsPropertyBrowser;
+class VPieceOptionsPropertyBrowser;
 class MeasurementDoc;
 class QFileSystemWatcher;
 class QLabel;
@@ -325,6 +326,10 @@ private:
     QPointer<QLabel>                  gradationHeightsLabel;
     QPointer<QLabel>                  gradationSizesLabel;
     VToolOptionsPropertyBrowser      *toolProperties;
+    VPieceOptionsPropertyBrowser    *m_pieceProperties;
+    QGraphicsLineItem                *m_fabricTopLine;
+    QGraphicsLineItem                *m_fabricBottomLine;
+    QVector<QGraphicsLineItem *>      m_rapportLines;
     GroupsWidget                     *groupsWidget;
     PiecesWidget                     *patternPiecesWidget;
     std::shared_ptr<VLockGuard<char>> lock;
@@ -346,6 +351,8 @@ private:
     void                              initializeToolBarVisibility();
     void                              initPenToolBar();
     void                              initPropertyEditor();
+    void                              initPiecePropertyEditor();
+    void                              updateFabricWidthLines();
     void                              initBasePointComboBox();
 
     void                              updateToolBarVisibility();
