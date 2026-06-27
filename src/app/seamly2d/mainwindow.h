@@ -329,6 +329,8 @@ private:
     VPieceOptionsPropertyBrowser    *m_pieceProperties;
     QGraphicsLineItem                *m_fabricTopLine;
     QGraphicsLineItem                *m_fabricBottomLine;
+    QGraphicsLineItem                *m_selvedgeTopLine;
+    QGraphicsLineItem                *m_selvedgeBottomLine;
     QVector<QGraphicsLineItem *>      m_rapportLines;
     GroupsWidget                     *groupsWidget;
     PiecesWidget                     *patternPiecesWidget;

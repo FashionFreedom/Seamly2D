@@ -205,6 +205,8 @@ MainWindow::MainWindow(QWidget *parent)
     , m_pieceProperties(nullptr)
     , m_fabricTopLine(nullptr)
     , m_fabricBottomLine(nullptr)
+    , m_selvedgeTopLine(nullptr)
+    , m_selvedgeBottomLine(nullptr)
     , groupsWidget(nullptr)
     , piecesWidget(nullptr)
     , m_lock(nullptr)
@@ -2773,6 +2775,42 @@ void MainWindow::updateFabricWidthLines()
         m_fabricBottomLine->setVisible(true);
     }
 
+    // --- Selvedge lines ---
+    const qreal selvedge = m_fabricDoc.isNull() ? 0 : ToPixel(m_fabricDoc->GetSelvedge(), unit);
+    if (selvedge > 0.5 && width > selvedge * 2)
+    {
+        QPen selvedgePen(QColor(Qt::darkYellow), 1.5, Qt::DashLine);
+
+        if (m_selvedgeTopLine == nullptr)
+        {
+            m_selvedgeTopLine = pieceScene->addLine(-lineLength / 2.0, selvedge, lineLength / 2.0, selvedge, selvedgePen);
+            m_selvedgeTopLine->setZValue(-0.5);
+        }
+        else
+        {
+            m_selvedgeTopLine->setPen(selvedgePen);
+            m_selvedgeTopLine->setLine(-lineLength / 2.0, selvedge, lineLength / 2.0, selvedge);
+        }
+        m_selvedgeTopLine->setVisible(true);
+
+        if (m_selvedgeBottomLine == nullptr)
+        {
+            m_selvedgeBottomLine = pieceScene->addLine(-lineLength / 2.0, width - selvedge, lineLength / 2.0, width - selvedge, selvedgePen);
+            m_selvedgeBottomLine->setZValue(-0.5);
+        }
+        else
+        {
+            m_selvedgeBottomLine->setPen(selvedgePen);
+            m_selvedgeBottomLine->setLine(-lineLength / 2.0, width - selvedge, lineLength / 2.0, width - selvedge);
+        }
+        m_selvedgeBottomLine->setVisible(true);
+    }
+    else
+    {
+        if (m_selvedgeTopLine != nullptr) { m_selvedgeTopLine->setVisible(false); }
+        if (m_selvedgeBottomLine != nullptr) { m_selvedgeBottomLine->setVisible(false); }
+    }
+
     // --- Rapport grid lines ---
     const qreal hRepeat = ToPixel(settings.heightRepeat, unit);
     const qreal lRepeat = ToPixel(settings.lengthRepeat, unit);
@@ -4066,6 +4104,26 @@ void MainWindow::showPieceMode(bool checked)
 
         pieceScene->setOriginsVisible(qApp->Settings()->getShowAxisOrigin());
         updateFabricWidthLines();
+
+        // Zoom to pieces, not the entire scene (which includes fabric lines)
+        {
+            QRectF piecesRect;
+            const QList<QGraphicsItem *> allItems = pieceScene->items();
+            for (QGraphicsItem *item : allItems)
+            {
+                if (item->type() == PatternPieceTool::Type)
+                {
+                    piecesRect = piecesRect.united(item->sceneBoundingRect());
+                }
+            }
+            if (!piecesRect.isNull())
+            {
+                const qreal margin = 50.0;
+                piecesRect.adjust(-margin, -margin, margin, margin);
+                ui->view->fitInView(piecesRect, Qt::KeepAspectRatio);
+                zoomScaleChanged(ui->view->transform().m11());
+            }
+        }
 
         updateViewToolbar();
 

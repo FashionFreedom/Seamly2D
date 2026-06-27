@@ -371,9 +371,20 @@ void VPieceOptionsPropertyBrowser::showPatternSettings()
     clearPropertyBrowser();
     m_showingPatternSettings = true;
 
-    m_formView->setTitle(tr("Fabric Settings"));
-
     const VFabricSettings settings = m_doc->GetFabricSettings();
+    const bool hasFabric = !qFuzzyIsNull(settings.fabricWidth);
+
+    if (!hasFabric)
+    {
+        m_formView->setTitle(tr("No Fabric Loaded"));
+        auto *infoLabel = new VPE::VLabelProperty(tr("Use Fabric > Edit Fabric... to load a fabric file."));
+        infoLabel->setValue(QString());
+        infoLabel->setPropertyType(VPE::Property::Label);
+        addProperty(infoLabel, QStringLiteral("infoNoFabric"));
+        return;
+    }
+
+    m_formView->setTitle(tr("Fabric Settings"));
     const QString units = UnitsToStr(qApp->patternUnit());
 
     auto *labelFabric = new VPE::VLabelProperty(QStringLiteral("<b>") + tr("Fabric") + QStringLiteral("</b>"));
