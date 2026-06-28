@@ -515,7 +515,34 @@ void VPieceOptionsPropertyBrowser::changePatternSettingsData(VPE::VProperty *pro
     }
     else if (id == IdDefaultSAWidth)
     {
-        newSettings.defaultSAWidth = value.toDouble();
+        const qreal newSA = value.toDouble();
+        newSettings.defaultSAWidth = newSA;
+
+        // Update all pieces' SA width to the new default
+        if (!qFuzzyIsNull(newSA))
+        {
+            QGraphicsScene *scene = qApp->getCurrentScene();
+            if (scene != nullptr)
+            {
+                const QList<QGraphicsItem *> items = scene->items();
+                for (QGraphicsItem *item : items)
+                {
+                    if (item->type() == PatternPieceTool::Type)
+                    {
+                        PatternPieceTool *tool = qgraphicsitem_cast<PatternPieceTool *>(item);
+                        if (tool == nullptr) { continue; }
+                        const quint32 pieceId = tool->getId();
+                        VPiece oldPiece = tool->getData()->GetPiece(pieceId);
+                        VPiece updatedPiece = oldPiece;
+                        updatedPiece.setSeamAllowanceWidthFormula(
+                            qApp->LocaleToString(newSA), newSA);
+                        SavePieceOptions *cmd = new SavePieceOptions(
+                            oldPiece, updatedPiece, m_doc, pieceId);
+                        qApp->getUndoStack()->push(cmd);
+                    }
+                }
+            }
+        }
     }
     else
     {
