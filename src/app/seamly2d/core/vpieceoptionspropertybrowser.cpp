@@ -442,7 +442,8 @@ void VPieceOptionsPropertyBrowser::showPatternSettings()
     defaultSA->setValue(saDefault);
     defaultSA->setSetting(QStringLiteral("Min"), 0.0);
     defaultSA->setSetting(QStringLiteral("Max"), 100000.0);
-    defaultSA->setSetting(QStringLiteral("Precision"), 2);
+    defaultSA->setSetting(QStringLiteral("Step"), 0.1);
+    defaultSA->setSetting(QStringLiteral("Precision"), 1);
     addProperty(defaultSA, IdDefaultSAWidth);
 }
 
